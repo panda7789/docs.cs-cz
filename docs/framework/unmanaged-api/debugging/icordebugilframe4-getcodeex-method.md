@@ -14,17 +14,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: edaea49d95eeb9856b949f118f16aa49e528f7ca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 24be4507e8ad6cde1e9c50582e352f0fc9b12ed3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421031"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483746"
 ---
 # <a name="icordebugilframe4getcodeex-method"></a>ICorDebugILFrame4::GetCodeEx – metoda
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
   
- Získá ukazatel na kód, který spouští tento rámce zásobníku.  
+ Získá ukazatel na kód, který spouští tento rámec zásobníku.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT GetCodeEx(
   
 #### <a name="parameters"></a>Parametry  
  `flags`  
- [v] [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) člen výčtu, která určuje, zda převodní jazyk (IL) definované profileru ReJIT požadavku je součástí rámečku.  
+ [in] [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) člen výčtu, který určuje, zda je v rámci zahrnuta (IL intermediate language) určené profileru ReJIT požadavku.  
   
  `ppCode`  
- [out] Ukazatel na adresu "ICorDebugCode" objekt, který představuje kód, který spouští tento rámce zásobníku.  
+ [out] Ukazatel na adresu objektu "ICorDebugCode", který představuje kód, který spouští tento rámec zásobníku.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je podobná [icordebugframe::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcode-method.md) metoda, s výjimkou toho, aby volitelně přistupuje kódu, které jsou definované profileru ReJIT požadavku. Voláním této metody se `flags` hodnotu `ILCODE_ORIGINAL_IL` je ekvivalentní volání [getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcode-method.md); Pokud je metoda instrumentována, jeho IL nebudou přístupné. `ILCODE_REJIT_IL` Umožňuje pro přístup k IL definované profileru ReJIT požadavku ladicího programu. Pokud IL není instrumentována, `ppCode` je **null**, a vrátí metodu `S_OK`.  
+ Tato metoda je podobný [icordebugframe::getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcode-method.md) metody, s tím rozdílem, že se volitelně přistupuje k určené požadavek ReJIT profileru kód. Volání této metody `flags` hodnotu `ILCODE_ORIGINAL_IL` je ekvivalentní volání [getcode –](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcode-method.md); Pokud je instrumentováno metodu, jeho IL nebude přístupná. `ILCODE_REJIT_IL` Umožňuje ladicího programu pro přístup k IL určené profileru ReJIT požadavku. Pokud není instrumentovaný IL, `ppCode` je **null**, a vrátí metodu `S_OK`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -57,4 +57,4 @@ HRESULT GetCodeEx(
 ## <a name="see-also"></a>Viz také  
  [ICorDebugILFrame4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)  
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [ReJIT: Postupy: Průvodce](http://blogs.msdn.com/b/davbr/archive/2011/10/12/rejit-a-how-to-guide.aspx)
+ [ReJIT: Nepředstavuje Průvodce](https://blogs.msdn.com/b/davbr/archive/2011/10/12/rejit-a-how-to-guide.aspx)

@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 30802eff0b960c2a19e5cebb4757bfeff809d322
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a9fefa302a269e08300f0393434b66ca8738a27b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394729"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481284"
 ---
 # <a name="lttypeinstantiationgt-element-net-native"></a>Element &lt;TypeInstantiation&gt; (.NET Native)
-Platí zásady reflexe modulu runtime pro vytvořený obecného typu.  
+Platí pro Konstruovaný obecný typ zásady reflexe modulu runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,71 +39,71 @@ Platí zásady reflexe modulu runtime pro vytvořený obecného typu.
 |Atribut|Typ atributu|Popis|  
 |---------------|--------------------|-----------------|  
 |`Name`|Obecné|Požadovaný atribut. Určuje název typu.|  
-|`Arguments`|Obecné|Požadovaný atribut. Určuje argumenty obecného typu. Pokud jsou v něm více argumentů, jsou oddělené čárkami.|  
-|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory povolit aktivace instancí.|  
-|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky dotazování na informace o programu elementů, ale nepovolí žádné přístup k modulu runtime.|  
-|`Dynamic`|Reflexe|Nepovinný atribut. Řídí přístup k modulu runtime pro všechny členy typu, včetně konstruktory, metody, polí, vlastnosti a události, chcete-li povolit dynamické programování.|  
-|`Serialize`|Serializace|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory, pole a vlastnosti, aby instance typu serializovat a deserializovat pomocí knihovny například serializátor Newtonsoft JSON.|  
-|`DataContractSerializer`|Serializace|Nepovinný atribut. Zásady pro serializaci, který používá ovládací prvky <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
-|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Zásady pro serializaci JSON, který používá ovládací prvky <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
-|`XmlSerializer`|Serializace|Nepovinný atribut. Zásady pro serializaci XML, který používá ovládací prvky <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
-|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásady pro zařazování odkazové typy prostředí Windows Runtime a COM.|  
-|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásady pro zařazování delegáta typy jako ukazatelů na funkce do nativního kódu.|  
-|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásady pro zařazování struktur nativního kódu.|  
+|`Arguments`|Obecné|Požadovaný atribut. Určuje argumenty obecného typu. Pokud je více argumentů, jsou odděleny čárkami.|  
+|`Activate`|Reflexe|Nepovinný atribut. Ovládací prvky runtime přístup k konstruktory Povolit aktivaci instancí.|  
+|`Browse`|Reflexe|Nepovinný atribut. Ovládací prvky, zadávání dotazů na informace o prvcích program, ale neumožňuje přístup modulu runtime.|  
+|`Dynamic`|Reflexe|Nepovinný atribut. Ovládací prvky přístupu modulu runtime pro všechny členy typu, včetně konstruktorů, metod, pole, vlastnosti a události, chcete povolit dynamické programování.|  
+|`Serialize`|Serializace|Nepovinný atribut. Řídí přístup k modulu runtime pro konstruktory, polí a vlastností, aby instance typu k serializaci a deserializaci knihovnami, jako je například serializátor Newtonsoft JSON.|  
+|`DataContractSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci, který používá <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> třídy.|  
+|`DataContractJsonSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci JSON, který používá <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> třídy.|  
+|`XmlSerializer`|Serializace|Nepovinný atribut. Určuje zásady pro serializaci kódu XML, který používá <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> třídy.|  
+|`MarshalObject`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Ovládací prvky zásad pro zařazování odkazové typy Windows Runtime a modelu COM.|  
+|`MarshalDelegate`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování typy delegátů jako ukazatelů na funkce do nativního kódu.|  
+|`MarshalStructure`|Zprostředkovatel komunikace s objekty|Nepovinný atribut. Určuje zásady pro zařazování struktur do nativního kódu.|  
   
-## <a name="name-attribute"></a>Atribut Name.  
+## <a name="name-attribute"></a>Název atributu  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*type_name*|Název typu. Pokud `<TypeInstantiation>` element je podřízeným [ \<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md) elementu [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) element nebo jiné `<TypeInstantiation>` elementu *type_ název* můžete zadat název typu bez jeho obor názvů. V opačném *type_name* musí obsahovat typ plně kvalifikovaný název. Název typu není dekorované. Například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> objekt, `<TypeInstantiation>` element může vypadat takto:<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
+|*type_name*|Název typu. Pokud tento `<TypeInstantiation>` element je podřízeným [ \<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md) elementu, [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) element nebo jiného `<TypeInstantiation>` elementu, *type_ název* můžete zadat název typu bez svůj obor názvů. V opačném případě *type_name* musí obsahovat plně kvalifikovaného názvu. Název typu není upravena. Třeba <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> objektu, `<TypeInstantiation>` element může vypadat následovně:<br /><br /> `\<TypeInstantiation Name=System.Collections.Generic.List Dynamic="Required Public" />`|  
   
 ## <a name="arguments-attribute"></a>Argumenty atributu  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*type_argument*|Určuje argumenty obecného typu. Pokud jsou v něm více argumentů, jsou oddělené čárkami. Každý argument musí obsahovat plně kvalifikovaného názvu.|  
+|*type_argument*|Určuje argumenty obecného typu. Pokud je více argumentů, jsou odděleny čárkami. Každý argument musí obsahovat plně kvalifikovaného názvu.|  
   
 ## <a name="all-other-attributes"></a>Všechny ostatní atributy  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|*policy_setting*|Nastavení, které chcete použít pro tento typ zásad pro vytvořený obecného typu. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
+|*policy_setting*|Toto nastavení platí pro tento typ zásad pro Konstruovaný obecný typ. Možné hodnoty jsou `All`, `Auto`, `Excluded`, `Public`, `PublicAndInternal`, `Required Public`, `Required PublicAndInternal`, a `Required All`. Další informace najdete v tématu [nastavení zásad direktivy modulu Runtime](../../../docs/framework/net-native/runtime-directive-policy-settings.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Událost >](../../../docs/framework/net-native/event-element-net-native.md)|Reflexe zásady se vztahují k události, které patří k tomuto typu.|  
-|[\<Pole >](../../../docs/framework/net-native/field-element-net-native.md)|Reflexe zásada se vztahuje na pole, které patří k tomuto typu.|  
-|[\<ImpliesType >](../../../docs/framework/net-native/impliestype-element-net-native.md)|Platí zásady pro typu, v případě, že zásada na typ zastoupený obsahující `<TypeInstantiation>` elementu.|  
-|[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Reflexe zásad platí pro metodu patřící do tohoto typu.|  
-|[\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Reflexe zásada se vztahuje na sestavené obecné metody, které patří k tomuto typu.|  
-|[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)|Reflexe zásad platí pro vlastnosti, které patří k tomuto typu.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Reflexe zásad platí pro vnořené typy.|  
-|`<TypeInstantiation>`|Reflexe zásad platí pro vnořené sestavené obecného typu.|  
+|[\<Událost >](../../../docs/framework/net-native/event-element-net-native.md)|Použije zásady reflexe pro událost, které patří k tomuto typu.|  
+|[\<pole >](../../../docs/framework/net-native/field-element-net-native.md)|Použije zásady reflexe pro pole, které patří k tomuto typu.|  
+|[\<ImpliesType >](../../../docs/framework/net-native/impliestype-element-net-native.md)|Použije zásady na typ, pokud byl použit tyto zásady na typ zastoupený obsahující `<TypeInstantiation>` elementu.|  
+|[\<Metoda >](../../../docs/framework/net-native/method-element-net-native.md)|Použije zásady reflexe pro metody, které patří k tomuto typu.|  
+|[\<MethodInstantiation >](../../../docs/framework/net-native/methodinstantiation-element-net-native.md)|Použije zásady reflexe konstruované obecné metody, které patří k tomuto typu.|  
+|[\<Vlastnost >](../../../docs/framework/net-native/property-element-net-native.md)|Použije zásady reflexe pro vlastnosti, které patří k tomuto typu.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe vnořeného typu.|  
+|`<TypeInstantiation>`|Použije zásady reflexe pro vnořené Konstruovaný obecný typ.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|Slouží jako kontejner pro celou aplikaci typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu.|  
-|[\<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Reflexe zásad platí pro všechny typy v zadaném sestavení.|  
-|[\<Knihovna >](../../../docs/framework/net-native/library-element-net-native.md)|Definuje sestavení, které obsahuje typy a členy typu jejichž metadata jsou k dispozici pro reflexi za běhu.|  
-|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Reflexe zásad platí pro všechny typy v oboru názvů.|  
-|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Reflexe zásada se vztahuje na typ a všechny její členy.|  
-|`<TypeInstantiation>`|Reflexe zásada se vztahuje na sestavené obecné typy a všechny její členy.|  
+|[\<Aplikace >](../../../docs/framework/net-native/application-element-net-native.md)|Slouží jako kontejner pro celou aplikaci typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu.|  
+|[\<Sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md)|Použije zásady reflexe pro všechny typy v zadané sestavení.|  
+|[\<Knihovny >](../../../docs/framework/net-native/library-element-net-native.md)|Určuje sestavení, který obsahuje typy a členy typu, jehož metadata jsou k dispozici pro účely reflexe v době běhu.|  
+|[\<Namespace>](../../../docs/framework/net-native/namespace-element-net-native.md)|Použije zásady reflexe pro všechny typy v oboru názvů.|  
+|[\<Typ >](../../../docs/framework/net-native/type-element-net-native.md)|Použije zásady reflexe pro typ a všechny její členy.|  
+|`<TypeInstantiation>`|Použije zásady reflexe pro Konstruovaný obecný typ a všechny její členy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Reflexe, serializace a atributů spolupráce jsou nepovinné. Alespoň jeden však musí být přítomen.  
+ Reflexe, serializace a atributů spolupráce jsou nepovinné. Alespoň jeden musí však být k dispozici.  
   
- Pokud `<TypeInstantiation>` element je podřízeným [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md), [ \<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md), nebo [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md), elementu přepíše nastavení zásad, které jsou definované v nadřazeném prvku. Pokud [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) element definuje odpovídající definice obecného typu, `<TypeInstantiation>` element přednost před zásadami reflexe runtime pouze u instancí možnosti zadaný sestavené obecného typu.  
+ Pokud `<TypeInstantiation>` element je podřízeným [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md), [ \<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md), nebo [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md), elementu přepíše nastavení zásad, které jsou definované v nadřazeném prvku. Pokud [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) element definuje odpovídající definici obecného typu, `<TypeInstantiation>` přepisuje zásady reflexe modulu runtime pouze pro konkretizací zadané Konstruovaný obecný typ elementu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá reflexe načíst definici obecného typu z vytvořený <xref:System.Collections.Generic.Dictionary%602> objektu. Reflexe také používá k zobrazení informací o <xref:System.Type> objekty, které představují sestavené obecné typy a definice obecného typu. Proměnná `b` v tomto příkladu je [TextBlock](http://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) ovládacího prvku.  
+ Následující příklad používá reflexi k načtení definice obecného typu z vytvořeného <xref:System.Collections.Generic.Dictionary%602> objektu. Také používá reflexi pro zobrazení informací o <xref:System.Type> objekty, které představují sestavené obecné typy a definice obecného typu. Proměnná `b` v tomto příkladu je [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) ovládacího prvku.  
   
  [!code-csharp[ProjectN_Reflection#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/makegenerictype1.cs#2)]  
   
- Po sestavení s [!INCLUDE[net_native](../../../includes/net-native-md.md)] vyvolá nástroj řetězu příklad [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky na řádek, který volá <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=nameWithType> metoda. Můžete eliminovat výjimku a poskytnout nezbytné metadata přidáním následující `<TypeInstantiation>` elementu, který chcete soubor direktivy modulu runtime:  
+ Po kompilaci s [!INCLUDE[net_native](../../../includes/net-native-md.md)] řetězce nástrojů, příklad vyvolá [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky na řádku, který volá <xref:System.Type.GetGenericTypeDefinition%2A?displayProperty=nameWithType> metoda. Můžete vyloučit výjimku a zadat potřebná metadata přidáním následujícího kódu `<TypeInstantiation>` element do souboru direktiv modulu runtime:  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  

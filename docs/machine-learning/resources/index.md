@@ -1,18 +1,19 @@
 ---
-title: ML.NET prostředky
-description: V těchto zdrojích ML.NET vám pomůže při vytváření řešení vlastní AI a integrace do aplikací .NET.
-ms.date: 06/05/2018
-ms.openlocfilehash: 8cda1321e1b4a5d16e14ca73e709498341fe04e9
-ms.sourcegitcommit: fc70fcb9c789b6a4aefcdace46f3643fd076450f
+title: Prostředky ML.NET
+description: Prozkoumejte tyto prostředky ML.NET, která vám pomůže s vlastní vytvoření řešení AI a integraci do svých aplikací .NET.
+ms.date: 07/27/2018
+ms.openlocfilehash: cea0f8fe30e01340c5eb671f39f28a6cbf33884c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "35017276"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43485003"
 ---
-# <a name="mlnet-resources"></a>ML.NET prostředky
+# <a name="mlnet-resources"></a>Prostředky ML.NET
 
-Následující [ML.NET](../index.md) prostředky, může být užitečné vytvářet vlastní řešení AI a jejich integraci do svých aplikací rozhraní .NET:
+Následující [ML.NET](../index.md) prostředků mohou být užitečné k sestavení vlastních řešení AI a integrovat do vašich aplikací .NET:
 
-- [Machine learning Glosář](glossary.md): obsahuje definice důležité machine learning podmínky.
-- [Strojového učení Základy](basics.md): obsahuje odkazy na studijní materiály začít pracovat s machine learning.
-- [Strojového učení úlohy](tasks.md): Popisuje různé strojového učení nepodporuje ML.NET scénáře použití.
+- [Machine learning Glosář](glossary.md): obsahuje definice podmínek důležité machine learning.
+- [Základy služby Machine learning](basics.md): odkazy na studijních materiálů, abyste mohli začít s machine learningem.
+- [Služby Machine learning úlohy](tasks.md): Popisuje různé strojového učení podporované ML.NET scénáře použití.
+- [Transformace dat](transforms.md): poskytuje přehled transformací dat nepodporuje ML.NET.

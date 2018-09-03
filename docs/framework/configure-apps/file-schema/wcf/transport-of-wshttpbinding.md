@@ -2,20 +2,20 @@
 title: '&lt;transport&gt; – &lt;wsHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 21e38acf-450a-4bda-82b6-de305e1f7cd8
-ms.openlocfilehash: d6095c2cc9a315855db03f3a3f44547b1f64b9df
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 771866a83d54ca9e4fc7f3ed6d351b4a6c755b4c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767580"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483850"
 ---
 # <a name="lttransportgt-of-ltwshttpbindinggt"></a>&lt;transport&gt; – &lt;wsHttpBinding&gt;
-Definuje nastavení ověřování pro přenos HTTP.  
+Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.  
   
  \<system.serviceModel>  
 \<vazby >  
 \<wsHttpBinding>  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
 \<přenos >  
   
@@ -48,32 +48,32 @@ Definuje nastavení ověřování pro přenos HTTP.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`clientCredentialType`|Určuje, že pověření použitá k ověření klienta ke službě. Tento atribut je typu <xref:System.ServiceModel.HttpClientCredentialType>.|  
-|`proxyCredentialType`|Určuje, že pověření použitá k ověření klienta pro proxy server domény. Tento atribut je typu <xref:System.ServiceModel.HttpProxyCredentialType>.|  
-|`realm`|Řetězec, který určuje sféru ověřování hodnotou hash nebo základní ověřování. Výchozí hodnota je prázdný řetězec.<br /><br /> Sféra ověření určuje alespoň název hostitele, který provádí ověřování. Můžete také specifikovat kolekci uživatelů, který má přístup. Uživatele můžete dotazovat sféry ověření, který z nich několik možných uživatelská jména a hesla je možné zjistit.|  
-|`policyEnforcement`|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucují jenom v případě, že klient podporuje rozšířené ochrany.<br />3.  Vždy – je vždy tato zásada vynucená. Klienti, které nepodporují rozšířené ochrany se nepodaří ověřit.|  
+|`clientCredentialType`|Určuje přihlašovací údaje pro ověření klienta ke službě. Tento atribut je typu <xref:System.ServiceModel.HttpClientCredentialType>.|  
+|`proxyCredentialType`|Určuje přihlašovací údaje pro ověření klienta pro proxy server domény. Tento atribut je typu <xref:System.ServiceModel.HttpProxyCredentialType>.|  
+|`realm`|Řetězec určující sféru ověřování hodnotou hash nebo základní ověřování. Výchozí hodnota je prázdný řetězec.<br /><br /> Sféra ověření určuje nejméně název hostitele, který provádí ověřování. Můžete také určit kolekci uživatelů, který má přístup. Sféra ověření pro ověření, který z nich několik možných uživatelská jména a hesla je možné dotazovat uživatele.|  
+|`policyEnforcement`|Tento výčet Určuje, kdy <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> by se měly vynucovat.<br /><br /> 1.  Nikdy – zásady se vynucují nikdy (rozšířené ochrany je zakázáno).<br />2.  WhenSupported – zásady se vynucuje jenom v případě, že klient podporuje rozšířenou ochranu.<br />3.  Vždy – je vždy zásady vynucují. K ověření se nezdaří klientů, kteří nepodporují rozšířenou ochranu.|  
   
-## <a name="clientcredentialtype-attribute"></a>clientCredentialType atribut  
+## <a name="clientcredentialtype-attribute"></a>Typ clientCredentialType atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`None`|Zabezpečení je vypnuté.|  
+|`None`|Zabezpečení je zakázaná.|  
 |`Basic`|Používá základní ověřování.|  
 |`Digest`|Použití ověřování algoritmem digest.|  
-|`Ntlm`|Ověřování protokolem NTLM se používá jako nouzové řešení s doménou systému Windows.|  
-|`Windows`|Používá integrované ověřování systému Windows.|  
-|`Certificate`|K ověření klienta používá certifikáty X.509.|  
+|`Ntlm`|Ověřování protokolem NTLM se používá jako nouzové řešení pomocí domény Windows.|  
+|`Windows`|Používá integrované ověřování Windows.|  
+|`Certificate`|Certifikáty X.509 používá k ověření klienta.|  
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`None`|Zabezpečení je vypnuté.|  
+|`None`|Zabezpečení je zakázaná.|  
 |`Basic`|Používá základní ověřování.|  
 |`Digest`|Použití ověřování algoritmem digest.|  
-|`Ntlm`|Používá protokol NTLM jako nouzové řešení s doménou systému Windows.|  
-|`Windows`|Používá integrované ověřování systému Windows.|  
-|`Certificate`|K ověření klienta používá certifikáty X.509.|  
+|`Ntlm`|Používá NTLM jako nouzové řešení pomocí domény Windows.|  
+|`Windows`|Používá integrované ověřování Windows.|  
+|`Certificate`|Certifikáty X.509 používá k ověření klienta.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -92,5 +92,5 @@ Definuje nastavení ověřování pro přenos HTTP.
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

@@ -9,34 +9,34 @@ helpviewer_keywords:
 - keyboard events
 - events [Windows Forms], keyboard
 ms.assetid: d3f3e14b-a459-4ee6-9875-8957e34f8ee9
-ms.openlocfilehash: 706b4d87ddbb6afadfd90af866520e6feaa58ca7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2c6059e5d0957de09dd2c4832573c784935eb510
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33542259"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484906"
 ---
 # <a name="using-keyboard-events"></a>Použití událostí klávesnice
-Zpracování události klávesnice zpracování většiny programů Windows Forms vstup z klávesnice. Toto téma obsahuje základní informace o události klávesnice, včetně podrobnosti o použití každé události a data, která je zadána pro každou jednotlivou událost.  Viz také [Přehled obslužných rutin událostí (Windows Forms)](http://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\)), [Přehled událostí (Windows Forms)](http://msdn.microsoft.com/library/1h12f09z\(v=vs.110\)).  
+Většina aplikací Windows Forms zpracovávat vstup z klávesnice ve zpracování událostí klávesnice. Toto téma obsahuje základní informace o události klávesnice, včetně podrobností o použití každé události a data, která je zadána pro každou jednotlivou událost.  Viz také [Přehled obslužných rutin událostí (Windows Forms)](https://msdn.microsoft.com/library/be6fx1bb\(v=vs.110\)), [Přehled událostí (Windows Forms)](https://msdn.microsoft.com/library/1h12f09z\(v=vs.110\)).  
   
 ## <a name="keyboard-events"></a>Události klávesnice  
- Windows Forms poskytuje dvě události, ke kterým došlo po stisknutí kláves a jedné události po uvolnění tlačítka klávesnice:  
+ Windows Forms poskytuje dvě události, ke kterým dochází, když uživatel stiskne klávesu a jedna událost, když uživatel uvolní klávesu:  
   
--   <xref:System.Windows.Forms.Control.KeyDown> Události dojde jednou  
+-   <xref:System.Windows.Forms.Control.KeyDown> Jednou dojde k události.  
   
--   <xref:System.Windows.Forms.Control.KeyPress> Událost, která může dojít vícekrát, když uživatel obsahuje dolů stejný klíč.  
+-   <xref:System.Windows.Forms.Control.KeyPress> Událost, která může dojít vícekrát, když uživatel obsahuje stejné klávesy.  
   
--   <xref:System.Windows.Forms.Control.KeyUp> Událost nastane jednou při uvolnění klíče.  
+-   <xref:System.Windows.Forms.Control.KeyUp> Událost proběhne jednou, když uživatel uvolní klávesu.  
   
- Po stisknutí klávesy, určuje Windows Forms, která událost se má vyvolat podle jestli určuje zpráva klávesnice znak nebo fyzické klíče. Další informace o znak a fyzické klíčů najdete v tématu [jak funguje vstup klávesnice](../../../docs/framework/winforms/how-keyboard-input-works.md).  
+ Když uživatel stiskne klávesu, Windows Forms Určuje, která událost pro vyvolání podle Určuje, zda zpráva klávesnice určuje znak klíč nebo klíč do fyzické. Další informace o znak a fyzické klíče najdete v tématu [jak funguje vstup klávesnice](../../../docs/framework/winforms/how-keyboard-input-works.md).  
   
  Následující tabulka popisuje tři klávesnice události.  
   
-|Události klávesnice|Popis|Výsledky|  
+|Události klávesnice|Popis|výsledky|  
 |--------------------|-----------------|-------------|  
-|<xref:System.Windows.Forms.Control.KeyDown>|Tato událost se vyvolá, když uživatel stiskne klávesu fyzické.|Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyDown> obdrží:<br /><br /> <ul><li>A <xref:System.Windows.Forms.KeyEventArgs> parametr, který poskytuje <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> (který určuje fyzické klávesnice tlačítko).</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> Vlastnost (SHIFT, CTRL nebo ALT).</li><li><xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> (Který spojuje klíče kódu a modifikátor). <xref:System.Windows.Forms.KeyEventArgs> Parametr také poskytuje:<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs.Handled%2A> Vlastnosti, která může být nastaven na zakázat přijímání klíč základní ovládacího prvku.</li><li><xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A> Vlastnosti, která můžete použít k potlačení <xref:System.Windows.Forms.Control.KeyPress> a <xref:System.Windows.Forms.Control.KeyUp> události pro tento klávesu.</li></ul></li></ul>|  
-|<xref:System.Windows.Forms.Control.KeyPress>|Tato událost se vyvolá, když klíče nebo klíče stisknuto výsledek znak. Například uživatel stiskne klávesu SHIFT a malá "a" klíčů, které "A" znak za následek velké písmeno.|<xref:System.Windows.Forms.Control.KeyPress> je vyvolána po <xref:System.Windows.Forms.Control.KeyDown>.<br /><br /> <ul><li>Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyPress> obdrží:</li><li>A <xref:System.Windows.Forms.KeyPressEventArgs> parametr, který obsahuje kód znaku klíče, která byla stisknuta. Tento kód znak je jedinečný pro každou kombinaci znak klíče a modifikační klávesy.<br /><br />     Například "A" klíč vygeneruje:<br /><br /> <ul><li>Kód znaku 65, pokud je stisknutí pomocí klávesy SHIFT</li><li>Klávesa CAPS LOCK 97 při stisknutí samostatně, nebo</li><li>A 1, pokud je stisknutí s klávesu CTRL.</li></ul></li></ul>|  
-|<xref:System.Windows.Forms.Control.KeyUp>|Tato událost se vyvolá, když uživatel uvolní fyzické klíč.|Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyUp> obdrží:<br /><br /> <ul><li>A <xref:System.Windows.Forms.KeyEventArgs> parametr:<br /><br /> <ul><li>Který nabízí <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> (který určuje fyzické klávesnice tlačítko).</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> Vlastnost (SHIFT, CTRL nebo ALT).</li><li><xref:System.Globalization.SortKey.KeyData%2A> (Který spojuje klíče kódu a modifikátor).</li></ul></li></ul>|  
+|<xref:System.Windows.Forms.Control.KeyDown>|Tato událost je aktivována, když uživatel stiskne klávesu fyzické.|Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyDown> přijímá:<br /><br /> <ul><li>A <xref:System.Windows.Forms.KeyEventArgs> parametr, který poskytuje <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> (který určuje tlačítko fyzické klávesnice).</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> Vlastnosti (SHIFT, CTRL nebo ALT).</li><li><xref:System.Windows.Forms.KeyEventArgs.KeyData%2A> Vlastnosti (která kombinuje kód klávesy a modifikátoru). <xref:System.Windows.Forms.KeyEventArgs> Parametr také poskytuje:<br /><br /> <ul><li><xref:System.Windows.Forms.KeyEventArgs.Handled%2A> Vlastnost, která může být nastaven na zabránit příjem klíč základní ovládacího prvku.</li><li><xref:System.Windows.Forms.KeyEventArgs.SuppressKeyPress%2A> Vlastnost, která slouží k potlačení <xref:System.Windows.Forms.Control.KeyPress> a <xref:System.Windows.Forms.Control.KeyUp> události pro tento stisk klávesy.</li></ul></li></ul>|  
+|<xref:System.Windows.Forms.Control.KeyPress>|Tato událost je aktivována při stisknutí klávesy nebo klávesy výsledek ve znaku. Například uživatel stiskne klávesu SHIFT a malým "a" klíče, které vedou na velké písmeno "A" znak.|<xref:System.Windows.Forms.Control.KeyPress> je aktivována po <xref:System.Windows.Forms.Control.KeyDown>.<br /><br /> <ul><li>Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyPress> přijímá:</li><li>A <xref:System.Windows.Forms.KeyPressEventArgs> parametr, který obsahuje kód znaku klávesy, která byla stisknuta v okamžiku. Tento kód znaku je jedinečný pro každou kombinaci znaků klíč a modifikační klávesa.<br /><br />     Například "A" klíč vygeneruje:<br /><br /> <ul><li>Kód znaku 65, pokud se stiskne pomocí klávesy SHIFT</li><li>Klávesa CAPS LOCK, 97, pokud se stiskne samostatně, nebo</li><li>A 1, pokud se stiskne pomocí klávesy CTRL.</li></ul></li></ul>|  
+|<xref:System.Windows.Forms.Control.KeyUp>|Tato událost je aktivována, když uživatel uvolní klávesu fyzické.|Obslužná rutina pro <xref:System.Windows.Forms.Control.KeyUp> přijímá:<br /><br /> <ul><li>A <xref:System.Windows.Forms.KeyEventArgs> parametr:<br /><br /> <ul><li>Která zajišťuje <xref:System.Windows.Forms.KeyEventArgs.KeyCode%2A> (který určuje tlačítko fyzické klávesnice).</li><li><xref:System.Windows.Forms.KeyEventArgs.Modifiers%2A> Vlastnosti (SHIFT, CTRL nebo ALT).</li><li><xref:System.Globalization.SortKey.KeyData%2A> Vlastnosti (která kombinuje kód klávesy a modifikátoru).</li></ul></li></ul>|  
   
 ## <a name="see-also"></a>Viz také  
  [Vstup z klávesnice v aplikaci Windows Forms](../../../docs/framework/winforms/keyboard-input-in-a-windows-forms-application.md)  

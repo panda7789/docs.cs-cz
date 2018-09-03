@@ -12,38 +12,38 @@ helpviewer_keywords:
 - True keyword [Visual Basic]
 - Boolean values [Visual Basic], True keyword
 ms.assetid: 4858e630-4813-4216-a55e-f4d0feb884e4
-ms.openlocfilehash: 00f77fe5e98099868e02d74fe1adc7690cb95cca
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bbd914d8b4239bbae1de7031e68b2900cf5ad6a3
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590274"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43478042"
 ---
 # <a name="boolean-data-type-visual-basic"></a>Boolean – datový typ (Visual Basic)
-Blokování hodnoty, které může být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dva stavy `Boolean` proměnné.  
+Obsahuje hodnoty, které mohou být pouze `True` nebo `False`. Klíčová slova `True` a `False` odpovídají dvěma stavy `Boolean` proměnné.  
   
 ## <a name="remarks"></a>Poznámky  
- Použití [logický datový typ (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) tak, aby obsahovala hodnoty dvou stavů například true nebo false, Ano/Ne, nebo zapnutí nebo vypnutí.  
+ Použití [datový typ Boolean (Visual Basic)](../../../visual-basic/language-reference/data-types/boolean-data-type.md) tak, aby obsahovala hodnoty dvou stavů, jako je true nebo false, Ano/Ne, nebo zapnuto/vypnuto.  
   
  Výchozí hodnota `Boolean` je `False`.  
   
- `Boolean` hodnoty nejsou uložené jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní na čísla. Nikdy byste měli zapsat kód, který závisí na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, měli byste omezit využití `Boolean` proměnné logické hodnoty, pro které jsou navrženy.  
+ `Boolean` hodnoty nejsou uložené jako čísla a uložené hodnoty nejsou určeny jako ekvivalentní čísla. Nikdy by měl napsat kód, který závisí na ekvivalentní číselné hodnoty pro `True` a `False`. Kdykoli je to možné, byste měli omezit využití `Boolean` proměnné logické hodnoty, které jsou určeny.  
   
 ## <a name="type-conversions"></a>Převody typu  
- Když jazyka Visual Basic převádí hodnoty číselný datový typ pro `Boolean`, stane 0 `False` a všechny ostatní hodnoty přestat `True`. Když Visual Basic převede `Boolean` hodnot na číselné typy `False` se změní na 0 a `True` se změní na hodnotu -1.  
+ Když Visual Basic převede číselný datový typ hodnoty na `Boolean`, stane 0 `False` a Staňte se všechny ostatní hodnoty `True`. Když Visual Basic převede `Boolean` hodnoty pro číselné typy `False` stane 0 a `True` stane hodnota -1.  
   
- Při převodu mezi `Boolean` hodnoty a číselné datové typy, mějte na paměti, že conversion metod rozhraní .NET Framework vždy nevedou stejné výsledky jako klíčová slova převodu jazyka Visual Basic. To je proto, že conversion jazyka Visual Basic uchovává chování, které jsou kompatibilní s předchozími verzemi. Další informace najdete v tématu "Logický typ nemá není převést na číselný typ přesně" v [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+ Při převodu mezi `Boolean` hodnoty a číselné datové typy, mějte na paměti, že převod metod rozhraní .NET Framework vždy neposkytují stejné výsledky jako klíčová slova převodu jazyka Visual Basic. Je to proto, že převod jazyka Visual Basic zachovává chování, které jsou kompatibilní s předchozími verzemi. Další informace najdete v tématu "Logická typ nemá není převést na číselný typ přesně" v [řešení potíží s datovými typy](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
   
 ## <a name="programming-tips"></a>Tipy k programování  
   
--   **Záporná čísla.** `Boolean` není číselného typu a nesmí představovat zápornou hodnotu. V každém případě byste neměli používat `Boolean` pro uložení číselné hodnoty.  
+-   **Záporná čísla.** `Boolean` není číselného typu a nemůže představovat záporné hodnoty. V každém případě byste neměli používat `Boolean` pro uložení číselné hodnoty.  
   
--   **Znaky typu.** `Boolean` nemá žádnou – znak typu literálu nebo – znak typu identifikátoru.  
+-   **Znaky typu.** `Boolean` nemá žádný – znak typu literálu nebo – znak typu identifikátoru.  
   
--   **Typ Framework.** Typ odpovídající v rozhraní .NET Framework je <xref:System.Boolean?displayProperty=nameWithType> struktura.  
+-   **Typ architektury.** Odpovídajícím typem v rozhraní .NET Framework je <xref:System.Boolean?displayProperty=nameWithType> struktury.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu `runningVB` je `Boolean` proměnné, která ukládá jednoduché nastavení Ano/Ne.  
+ V následujícím příkladu `runningVB` je `Boolean` proměnnou, která ukládá jednoduché nastavení Ano/Ne.  
   
 ```  
 Dim runningVB As Boolean  
@@ -55,7 +55,7 @@ End If
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Boolean?displayProperty=nameWithType>  
- [Datové typy](../../../visual-basic/language-reference/data-types/data-type-summary.md)  
+ [Datové typy](../../../visual-basic/language-reference/data-types/index.md)  
  [Funkce pro převod typů](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
  [Souhrn převodu](../../../visual-basic/language-reference/keywords/conversion-summary.md)  
  [Účinné používání datových typů](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)  

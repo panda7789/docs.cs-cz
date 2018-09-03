@@ -8,11 +8,11 @@ helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
 ms.openlocfilehash: 84a3bc49b6eea047d518edc01dab7f2301854b6a
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43256125"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484154"
 ---
 # <a name="public-c-reference"></a>public (Referenční dokumentace jazyka C#)
 

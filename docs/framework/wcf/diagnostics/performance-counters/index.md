@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: 1d9e6b83a78967193c4cb0343f6c77560354a837
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: d0ad7ee0bc3ea1d15197e6b8d9888d60b21a2f15
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33805165"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480033"
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
-Windows Communication Foundation (WCF) obsahuje velké sady čítačů výkonu můžete měřit výkon vaší aplikace.  
+Windows Communication Foundation (WCF) obsahuje velké sady čítače výkonu umožňují měřit výkon vaší aplikace.  
   
 ## <a name="enabling-performance-counters"></a>Povolení čítače výkonu  
  Čítače výkonu služby WCF pomocí konfiguračního souboru app.config služby WCF můžete povolit následujícím způsobem:  
@@ -25,7 +25,7 @@ Windows Communication Foundation (WCF) obsahuje velké sady čítačů výkonu m
 </configuration>  
 ```  
   
- `performanceCounters` Atributu můžete nastavit pro povolení určitý typ čítače výkonu. Platné hodnoty jsou  
+ `performanceCounters` Atribut můžete nastavit pro povolení konkrétní typ čítače výkonu. Platné hodnoty jsou  
   
 -   All: Všechny kategorie čítače (ServiceModelService, ServiceModelEndpoint a ServiceModelOperation) jsou povoleny.  
   
@@ -33,9 +33,9 @@ Windows Communication Foundation (WCF) obsahuje velké sady čítačů výkonu m
   
 -   Vypnuto: Čítače výkonu ServiceModel * jsou zakázány.  
   
- Pokud chcete povolit čítače výkonu pro všechny aplikace, WCF, můžete umístit nastavení konfigurace v souboru Machine.config.  Najdete v tématu **zvýšit velikost paměti pro čítače výkonu** části níže pro další informace o konfiguraci dostatek paměti pro čítače výkonu v počítači.  
+ Pokud chcete povolit čítače výkonu pro všechny aplikace, WCF, můžete umístit nastavení konfigurace v souboru Machine.config.  Podrobnosti najdete **zvýšit velikost paměti pro čítače výkonu** níže v části Další informace o konfiguraci na svém počítači dostatek paměti pro čítače výkonu.  
   
- Pokud používáte body rozšiřitelnosti WCF například vlastní operaci invokers, by také emitování čítače výkonu. Je to proto, že pokud budete implementovat bod rozšiřitelnosti, WCF může už negeneruje data čítače výkonu standardní ve výchozí cestě. Pokud jste neimplementuje podporu čítače výkonu ruční, nemusíte vidět data čítače výkonu, které očekáváte.  
+ Pokud používáte bodů rozšiřitelnosti WCF, jako je vlastní operace invokers, by měly taky vydávat vlastní čítače výkonu. Je to proto, že pokud se rozhodnete implementovat bod rozšiřitelnosti, WCF může už negeneruje data čítače výkonu ve výchozí cestě. Pokud implementujete není podpora čítače výkonu ruční, nemusíte vidět data čítače výkonu, které očekáváte.  
   
  Můžete také povolit čítače výkonu ve vašem kódu následujícím způsobem  
   
@@ -51,17 +51,17 @@ config.Save();
 ```  
   
 ## <a name="viewing-performance-data"></a>Zobrazení dat výkonu  
- Chcete-li zobrazit data zaznamenaná podle čítače výkonu, můžete použít sledování výkonu (Perfmon.exe), která se dodává s Windows. Tento nástroj můžete spustit přechodem na **spustit**a klikněte na tlačítko **spustit** a typ `perfmon.exe` v dialogovém okně.  
+ Chcete-li zobrazit data zachycená pomocí čítačů výkonu, můžete použít sledování výkonu (Perfmon.exe), který je součástí Windows. Tento nástroj můžete spustit tak, že přejdete do **Start**a klikněte na tlačítko **spustit** a typ `perfmon.exe` v dialogovém okně.  
   
 > [!NOTE]
->  Instance čítače výkonu se může uvolnit před poslední zprávy byly zpracovány dispečera koncový bod. Výsledkem může být data výkonu není zaznamenaná pro několik zprávy.  
+>  Instance čítače výkonu může uvolnit před poslední zprávy byly zpracovány Dispečer koncového bodu. Výsledkem může být údaje o výkonu není zachycena pro několik zpráv.  
   
-## <a name="increasing-memory-size-for-performance-counters"></a>Zvýšit velikost paměti pro čítače výkonu  
- WCF používá samostatné sdílené paměti pro jeho kategorie čítače výkonu.  
+## <a name="increasing-memory-size-for-performance-counters"></a>Zvětšení velikosti paměti pro čítače výkonu  
+ WCF používá samostatné sdílené paměti pro své kategorie čítače výkonu.  
   
- Ve výchozím nastavení je samostatnou sdílené paměti hodnotu čtvrtletí velikost globálního výkonu čítače paměti. Výchozí globální výkonu čítač paměť je 524,288 bajtů. Tři kategorie čítače výkonu WCF tedy mít výchozí velikost přibližně 128KB. V závislosti na modulu runtime charakteristiky aplikací WCF na počítači, může být vyčerpání paměti čítače výkonu. V takovém případě WCF zapíše chybu do protokolu událostí aplikace. Obsah chyba stavy nebyla načtena čítače výkonu, a položka obsahuje výjimku "System.InvalidOperationException: vlastní čítače souboru zobrazení je nedostatek paměti." Pokud je trasování povoleno na úrovni chyba, toto selhání je také trasovat. Pokud dojde k vyčerpání paměti čítače výkonu, pokračování v používání aplikace WCF s čítače výkonu, které jsou povolené mohlo způsobit snížení výkonu. Pokud jste správce počítače, byste ho měli nakonfigurovat přidělit dostatek paměti pro podporu maximální počet čítače výkonu, které může existovat kdykoli.  
+ Ve výchozím nastavení je samostatnou sdílenou paměť nastavit čtvrtletí velikost globálního výkonu čítače paměti. Výchozí globálního výkonu čítače paměti je 524,288 bajtů. Proto se tři kategorie čítače výkonu WCF mají výchozí velikost přibližně 128 kB. V závislosti na vlastnosti modul runtime WCF aplikací na počítači, může být vyčerpání paměti čítače výkonu. Pokud k tomu dojde, WCF zapíše chybu do protokolu událostí aplikace. Obsah chyba uvádí, že čítač výkonu nebyl načten a položka obsahuje výjimku "System.InvalidOperationException: zobrazení souboru vlastních čítačů je nedostatek paměti." Pokud je povoleno trasování na úrovni chyby, je také sledovat toto selhání. Pokud dojde k vyčerpání paměti čítače výkonu, pokračování a spouštění aplikací WCF pomocí čítačů výkonu povolena by mohlo způsobit snížení výkonu. Pokud jste správcem počítače, měli byste nakonfigurovat ji přidělit dostatek paměti pro podporu maximální počet čítačů výkonu, které mohou existovat v každém okamžiku.  
   
- Můžete změnit velikost paměti čítače výkonu WCF kategorií v registru. To pokud chcete udělat, je nutné přidat novou hodnotu DWORD s názvem `FileMappingSize` do tří následujících umístění a nastavte ji na požadovanou hodnotu v bajtech. Restartujte svůj počítač tak, aby se projevily změny.  
+ Můžete změnit velikost paměti čítače výkonu WCF kategorií v registru. Uděláte to tak, budete muset přidat novou hodnotu DWORD s názvem `FileMappingSize` do tří následujících umístění a nastavte ji na požadovanou hodnotu v bajtech. Po restartování počítače, aby tyto změny jsou přijata platit.  
   
 -   HKLM\System\CurrentControlSet\Services\ServiceModelEndpoint 4.0.0.0\Performance  
   
@@ -69,62 +69,62 @@ config.Save();
   
 -   HKLM\System\CurrentControlSet\Services\ServiceModelService 4.0.0.0\Performance  
   
- Když jsou odstraněny velký počet objektů (například ServiceHost), ale čeká na uklizeny, `PrivateBytes` čítače výkonu se registrují neobvykle vysoké číslo. Chcete-li vyřešit tento problém, můžete buď přidejte vlastní čítače specifické pro aplikace nebo použijte `performanceCounters` atribut pro povolení čítače pouze úrovně služby.  
+ Když jsou odstraněny velký počet objektů (například hostitel služby) ale čeká na prováděno uvolnění paměti `PrivateBytes` čítače výkonu se registrují neobvykle velký počet. Chcete-li vyřešit tento problém, můžete buď přidat čítače specifické pro aplikaci nebo použijte `performanceCounters` atribut pro povolení pouze SLA čítače.  
   
 ## <a name="types-of-performance-counters"></a>Typy čítačů výkonu  
- Čítače výkonu jsou omezená na tři různé úrovně: služby, koncový bod a operace.  
+ Čítače výkonu jsou omezená na třech různých úrovních: služba, koncový bod a operace.  
   
- Můžete načíst název instance čítače výkonu služby WMI. Například  
+ Chcete-li načíst název instance čítače výkonu můžete použít rozhraní WMI. Například  
   
--   Název instance čítače služby můžete získat prostřednictvím služby WMI [služby](../../../../../docs/framework/wcf/diagnostics/wmi/service.md) "CounterInstanceName" vlastnost instance.  
+-   Název instance čítače služby můžete získat prostřednictvím rozhraní WMI [služby](../../../../../docs/framework/wcf/diagnostics/wmi/service.md) vlastnost "CounterInstanceName" instance.  
   
--   Název instance čítače koncového bodu můžete získat prostřednictvím služby WMI [koncový bod](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) "CounterInstanceName" vlastnost instance.  
+-   Název instance čítače koncového bodu můžete získat prostřednictvím rozhraní WMI [koncový bod](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) vlastnost "CounterInstanceName" instance.  
   
--   Název instance čítače operace můžete získat prostřednictvím služby WMI [koncový bod](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) metodu instance "GetOperationCounterInstanceName".  
+-   Název instance čítače operace můžete získat prostřednictvím rozhraní WMI [koncový bod](../../../../../docs/framework/wcf/diagnostics/wmi/endpoint.md) "GetOperationCounterInstanceName" metodu instance.  
   
- Další informace o rozhraní WMI najdete v tématu [pomocí rozhraní Windows Management Instrumentation pro diagnostiku](../../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
+ Další informace o rozhraní WMI najdete v tématu [pomocí Windows Management Instrumentation k diagnostice](../../../../../docs/framework/wcf/diagnostics/wmi/index.md).  
   
 ### <a name="service-performance-counters"></a>Čítače výkonu služby  
- Čítače výkonu služby měřit chování služby jako celek a umožňuje diagnostikovat provádění celou služeb. Najdete v části `ServiceModelService 4.0.0.0` objekt výkonu při zobrazení pomocí sledování výkonu. Instance jsou pojmenované pomocí následujícího vzorce:  
+ Čítače výkonu služby měření chování služby jako celek a slouží k diagnostice výkonu celou službu. Najdete v části `ServiceModelService 4.0.0.0` objekt výkonu při zobrazení pomocí sledování výkonu. Tyto instance jsou pojmenovány pomocí následujícího vzorce:  
   
 ```  
 ServiceName@ServiceBaseAddress  
 ```  
   
- Čítače v oboru služby se shromažďují z čítače v kolekci koncových bodů.  
+ Čítače v oboru služby se shromažďuje od čítače v kolekce koncových bodů.  
   
- Čítače výkonu pro vytvoření instance služby se zvýší, když se vytvoří nový objekt InstanceContext. Všimněte si, že i když obdržíte zprávu bez aktivace (s existující službu), nebo při připojení k instanci z jedné relace, ukončením relace a poté znovu připojit z jiné relace je vytvořen nový objekt InstanceContext.  
+ Čítače výkonu pro vytvoření instance služby se zvýší, když se vytvoří nová třída InstanceContext. Všimněte si, že se vytvoří nová třída InstanceContext, i když obdržíte zprávu bez aktivace (s existující služby), nebo když připojit k instanci služby z jedné relace, ukončit relaci a potom se znova připojit z jiné relace.  
   
 ### <a name="endpoint-performance-counters"></a>Čítače výkonu koncového bodu  
- Čítače výkonu koncového bodu umožňují podívejte se na data, která znázorňuje, jak koncový bod přijímá zprávy. Najdete v části `ServiceModelEndpoint 4.0.0.0` objekt výkonu při zobrazení pomocí sledování výkonu. Instance jsou pojmenované pomocí následujícího vzorce:  
+ Čítače výkonu koncového bodu umožňují podívat se na data, která odráží, jak koncový bod přijímá zprávy. Najdete v části `ServiceModelEndpoint 4.0.0.0` objekt výkonu při prohlížení použití nástroje Sledování výkonu. Tyto instance jsou pojmenovány pomocí následujícího vzorce:  
   
 ```  
 (ServiceName).(ContractName)@(endpoint listener address)  
 ```  
   
- Data je podobná co se shromažďují pro jednotlivé operace, ale je pouze agregován přes koncový bod.  
+ Data jsou podobné, co se shromažďují pro jednotlivé operace, ale pouze se agreguje přes koncový bod.  
   
- Čítače v oboru koncový bod se shromažďují z čítačů v kolekci operací.  
+ Čítače v oboru koncový bod se shromažďuje od čítače v kolekci operací.  
   
 > [!NOTE]
->  Pokud dva koncové body mají stejné kontrakt názvy a adresy, jsou namapované na stejnou instanci čítače.  
+>  Pokud dva koncové body mají stejné kontraktu jména a adresy, jsou mapovány na stejnou instanci čítače.  
   
 ### <a name="operation-performance-counters"></a>Čítače provozního výkonu  
- Čítače provozního výkonu se nacházejí v části `ServiceModelOperation 4.0.0.0` objekt výkonu při zobrazení pomocí sledování výkonu. Každá operace má jednotlivé instance. To znamená Pokud danou zakázku má 10 operace, 10 instancí čítače operace jsou přidruženy k této smlouvy. Instance objektů jsou pojmenované pomocí následujícího vzorce:  
+ Čítače provozního výkonu se nacházejí v rámci `ServiceModelOperation 4.0.0.0` objekt výkonu při zobrazení pomocí nástroje Sledování výkonu. Každá operace má jednotlivé instance. To znamená že pokud má daný kontrakt 10 operací, jsou 10 instancí čítače operace spojené s touto smlouvou. Instance objektů jsou pojmenovány pomocí následujícího vzorce:  
   
 ```  
 (ServiceName).(ContractName).(OperationName)@(first endpoint listener address)  
 ```  
   
- Tento čítač umožňuje měření využití volání a jak dobře fungují operaci.  
+ Tento čítač umožňuje měřit využití volání a jak dobře fungují operace.  
   
- Pokud čítače jsou viditelné na víc oborů, jsou data shromážděná z vyššího oboru agregován s daty z nižší oborů. Například `Calls` na koncový bod představuje součet hodnot všechna volání operace v rámci koncový bod; `Calls` na službu představuje součet hodnot všechna volání všechny koncové body v rámci služby.  
+ Když čítače jsou viditelné v několika oborech, dat shromážděných z vyššího oboru se agregují s daty z nižší obory. Například `Calls` na koncový bod představuje součet všech volání operace v rámci koncový bod; `Calls` na službu představuje součet všech volání pro všechny koncové body v rámci služby.  
   
 > [!NOTE]
->  Pokud máte operaci duplicitní názvy na kontraktu, zobrazí pouze jedna instance čítače pro obě operace.  
+>  Pokud máte na kontrakt operace duplicitní názvy, získáte jenom jedna instance čítačů pro obě operace.  
   
 ## <a name="programming-the-wcf-performance-counters"></a>Programování čítače výkonu WCF  
- Několik souborů jsou nainstalovány ve složce instalace sady SDK, aby mohli používat čítače výkonu WCF prostřednictvím kódu programu. Tyto soubory jsou uvedené následujícím způsobem.  
+ Několik souborů se instalují do složky instalace sady SDK tak, aby čítače výkonu WCF můžete přistupovat prostřednictvím kódu programu. Tyto soubory jsou uvedeny následovně.  
   
 -   _ServiceModelEndpointPerfCounters.vrg  
   
@@ -136,7 +136,7 @@ ServiceName@ServiceBaseAddress
   
 -   _TransactionBridgePerfCounters.vrg  
   
- Další informace o tom, jak počítadla přístup prostřednictvím kódu programu najdete v tématu [architektura programování čítače výkonu](http://go.microsoft.com/fwlink/?LinkId=95179).  
+ Další informace o tom, jak programově přístup k čítačům najdete v tématu [programovací architektura čítače výkonu](https://go.microsoft.com/fwlink/?LinkId=95179).  
   
 ## <a name="see-also"></a>Viz také  
  [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)

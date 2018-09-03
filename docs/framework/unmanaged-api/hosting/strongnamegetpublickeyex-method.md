@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03e3ff2adc238640034309e0f9eab6e786472631
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 82dbacdcf89a44455bb4963e73dc5e91bda1cbc7
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33446083"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482447"
 ---
 # <a name="strongnamegetpublickeyex-method"></a>StrongNameGetPublicKeyEx – metoda
-Získá veřejný klíč z páru veřejného a privátního klíče RSA a určuje algoritmus hash a algoritmus podpisu.  
+Získá veřejný klíč z dvojice veřejného/soukromého klíče a určuje algoritmus hash a algoritmus podpisu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,49 +43,49 @@ HRESULT StrongNameGetPublicKey (
   
 #### <a name="parameters"></a>Parametry  
  `pwzKeyContainer`  
- [v] Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče. Pokud `pbKeyBlob` má hodnotu null, `szKeyContainer` musíte zadat platný kontejner v rámci zprostředkovatele kryptografických služeb (CSP). V takovém případě `StrongNameGetPublicKeyEx` metoda extrahuje veřejný klíč z tohoto páru klíčů ukládat do kontejneru.  
+ [in] Název kontejneru klíčů, který obsahuje pár veřejného a privátního klíče. Pokud `pbKeyBlob` má hodnotu null, `szKeyContainer` musíte zadat platný kontejner v rámci zprostředkovatele kryptografických služeb (CSP). V takovém případě `StrongNameGetPublicKeyEx` metoda extrahuje veřejný klíč z páru klíčů ukládat do kontejneru.  
   
- Pokud `pbKeyBlob` nemá hodnotu null, dvojici klíčů se předpokládá, že mají být obsažena v klíče binární rozsáhlý objekt (binární rozsáhlý OBJEKT).  
+ Pokud `pbKeyBlob` nemá hodnotu null, pár klíčů se předpokládá, že mají být obsažena v klíče binární velkých objektů (BLOB).  
   
- Klíče musí být Rivest-Shamir-Adleman 1024 bitů (RSA) podpisových klíčů. Žádné jiné typy klíčů jsou podporovány v tuto chvíli.  
+ Klíče musí být Rivest-Shamir-Adleman 1024 bitů (RSA) podpisových klíčů. Jiné typy klíčů jsou v tuto chvíli nepodporuje.  
   
  `pbKeyBlob`  
- [v] Ukazatel na pár veřejného a privátního klíče. Tato dvojice je ve formátu vytvořené Win32 `CryptExportKey` funkce. Pokud `pbKeyBlob` je null, kontejner klíčů určeného `szKeyContainer` se předpokládá, že obsahovat dvojici klíčů.  
+ [in] Ukazatel na pár veřejného a privátního klíče. Tento pár je ve formátu vytvořené Win32 `CryptExportKey` funkce. Pokud `pbKeyBlob` je null, použije kontejneru klíčů určeném parametrem `szKeyContainer` se předpokládá, že obsahuje pár klíčů.  
   
  `cbKeyBlob`  
- [v] Velikost v bajtech z `pbKeyBlob`.  
+ [in] Velikost v bajtech, z `pbKeyBlob`.  
   
  `ppbPublicKeyBlob`  
- [out] Vrácený veřejný klíč objektu BLOB. `ppbPublicKeyBlob` Parametr je přidělena modul common language runtime a vrácen volajícímu. Volající musí uvolnění paměti pomocí [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metoda.  
+ [out] Vrácené veřejného klíče objektu BLOB. `ppbPublicKeyBlob` Parametr je přidělí modul common language runtime a vrátit zpět volajícímu. Volající musí uvolnit paměť pomocí [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metody.  
   
  `pcbPublicKeyBlob`  
  [out] Velikost veřejného klíče vráceného objektu BLOB.  
   
  `uHashAlgId`  
- [v] Algoritmus hash sestavení. Najdete v části poznámky seznam možné hodnoty.  
+ [in] Algoritmus hash sestavení. V části poznámky pro seznam platných hodnot.  
   
  `uReserved`  
- [v] Vyhrazeno pro budoucí použití; Výchozí hodnota je null.  
+ [in] Vyhrazeno pro budoucí použití; Výchozí hodnota je null.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- Veřejný klíč je součástí [PublicKeyBlob](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) struktury.  
+ Veřejný klíč je součástí [publickeyblob –](../../../../docs/framework/unmanaged-api/strong-naming/publickeyblob-structure.md) struktury.  
   
 ## <a name="remarks"></a>Poznámky  
- V následující tabulce jsou uvedeny sadu přijaté hodnoty pro `uHashAlgId` parametr.  
+ V následující tabulce jsou uvedeny sada platných hodnot pro `uHashAlgId` parametru.  
   
 |Název|Hodnota|  
 |----------|-----------|  
 |Žádné|0|  
 |SHA-1|0x8004|  
-|ALGORITMUS SHA-256|0x800c|  
+|SHA-256|0x800c|  
 |SHA-384|0x800d|  
 |SHA-512|0x800e|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

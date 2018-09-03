@@ -9,31 +9,31 @@ ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 219f460906d2892ae6cd76d13a2b17378e02b9b7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3736d1e8b23b8e05882a3fe016be0ac1a18ef51d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399326"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484188"
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>Implementace vzoru ovládacích prvků RangeValue pro automatizaci uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma představuje pokyny a konvence pro implementaci <xref:System.Windows.Automation.Provider.IRangeValueProvider>, včetně informací o události a vlastnosti. Na konci tohoto tématu jsou uvedeny odkazy na další odkazy.  
+ Toto téma popisuje pravidla a zásady pro implementaci <xref:System.Windows.Automation.Provider.IRangeValueProvider>, včetně informací o události a vlastnosti. Odkazy na další odkazy jsou uvedeny na konci tohoto tématu.  
   
- <xref:System.Windows.Automation.RangeValuePattern> – Vzor ovládacích prvků se používá pro podporu ovládací prvky, které lze nastavit na hodnotu v rozsahu. Příklady ovládacích prvků, které implementují tento vzor ovládacích prvků najdete v tématu [řízení vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
+ <xref:System.Windows.Automation.RangeValuePattern> – Vzor ovládacích prvků slouží k podpoře ovládací prvky, které lze nastavit na hodnotu v rozsahu. Příklady ovládacích prvků, které tento ovládací prvek model implementovat, najdete v článku [ovládací prvek vzor mapování pro klienty automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
-## <a name="implementation-guidelines-and-conventions"></a>Postup implementace a konvence  
- Při implementaci hodnotu rozsahu – vzor ovládacích prvků, poznamenejte si následující pokyny a konvence:  
+## <a name="implementation-guidelines-and-conventions"></a>Pokyny pro implementaci a konvence  
+ Pokud implementace vzoru ovládacích prvků hodnota rozsahu, mějte na paměti následující pokyny a konvence:  
   
--   Ovládací prvky umožňují překalibrování jejich podporovaných vlastností na základě předvoleb národního prostředí nebo uživatele. Příkladem je teploměru ovládací prvek, který lze nastavit pro zobrazení teploty v Fahrenheita nebo c.  
+-   Ovládací prvky umožňují překalibrování jejich podporovaných vlastností na základě národního prostředí nebo uživatelských předvoleb. Příkladem je teploměru – ovládací prvek, který lze nastavit pro zobrazení teploty ve stupních Fahrenheita nebo ve stupních Celsia.  
   
--   Ovládací prvky, které mají nejednoznačný rozsah hodnot, například indikátory průběhu nebo posuvníky, by měl mít tyto hodnoty normalized.  
+-   Ovládací prvky, které mají nejednoznačný rozsah hodnot, například indikátory průběhu nebo posuvníky, by měly být tyto hodnoty normalizovat.  
   
- ![Indikátor průběhu. ] (../../../docs/framework/ui-automation/media/uia-rangevaluepattern-progress-bar.PNG "UIA_RangeValuePattern_Progress_Bar")  
-Příklad indikátor průběhu, kde hodnota je celé číslo typ a vlastnost minimální a maximální hodnoty jsou normalizovány na 0 a 100,  
+ ![Indikátor průběhu. ](../../../docs/framework/ui-automation/media/uia-rangevaluepattern-progress-bar.PNG "UIA_RangeValuePattern_Progress_Bar")  
+Příklad indikátor průběhu, kde je hodnota typu celé číslo a minimální a maximální hodnoty vlastností jsou normalizovány na 0 a 100  
   
 <a name="Required_Members_for_the_IRangeValueProvider"></a>   
 ## <a name="required-members-for-irangevalueprovider"></a>Požadované členy pro IRangeValueProvider  
@@ -48,15 +48,15 @@ Příklad indikátor průběhu, kde hodnota je celé číslo typ a vlastnost min
 |<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|Vlastnost|Žádné|  
 |<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|Metody|Žádné|  
   
- Tento vzor ovládacích prvků nemá žádné přidružené události.  
+ Tento model ovládací prvek nemá žádné přidružené události.  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Výjimky  
- Zprostředkovatelé musí throw následující výjimky.  
+ Poskytovatelé musí vyvolání následující výjimky.  
   
 |Typ výjimky|Podmínka|  
 |--------------------|---------------|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A> je volána s hodnotu, která je větší než <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> nebo menší než <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A> je volána s hodnotou, která je větší než <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> nebo menší než <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>.|  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  

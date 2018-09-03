@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <seealso> XML tag
 - seealso XML tag
 ms.assetid: 36050c95-1af2-4284-b9b6-1a70691ed978
-ms.openlocfilehash: 1d45c0c5fa95de9cfa345c0bdbf496aa227b9af5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a792bbea108bcdf33d430c47773466ef3dccdb0c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604676"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484877"
 ---
 # <a name="ltseealsogt-visual-basic"></a>&lt;Viz také&gt; (Visual Basic)
 Určuje odkaz, který se zobrazí v části Viz také.  
@@ -23,17 +23,17 @@ Určuje odkaz, který se zobrazí v části Viz také.
   
 #### <a name="parameters"></a>Parametry  
  `member`  
- Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor ověří, že element daného kódu existuje a předá `member` k názvu elementu ve výstupu XML. `member` musí být v rámci dvojitých uvozovek nahoře ("").  
+ Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje a předá `member` do názvu prvku ve výstupním souboru XML. `member` musí být uvedena v uvozovkách ("").  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `<seealso>` značku a zadejte text, který se má zobrazit v části Viz také. Použití [ \<najdete v části >](../../../visual-basic/language-reference/xmldoc/see.md) zadat odkaz z v textu.  
+ Použití `<seealso>` značka, které určuje text, který se má zobrazit v části Viz také. Použití [ \<naleznete v tématu >](../../../visual-basic/language-reference/xmldoc/see.md) zadat odkaz v rámci textu.  
   
  Kompilovat s [/doc](../../../visual-basic/reference/command-line-compiler/doc.md) pro zpracování dokumentačních komentářů do souboru.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá `<seealso>` značky v `DoesRecordExist` remarks části k odkazování na `UpdateRecord` metoda.  
+ V tomto příkladu `<seealso>` značku `DoesRecordExist` poznámky část neodkazuje na `UpdateRecord` metoda.  
   
  [!code-vb[VbVbcnXmlDocComments#6](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/seealso_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+ [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)

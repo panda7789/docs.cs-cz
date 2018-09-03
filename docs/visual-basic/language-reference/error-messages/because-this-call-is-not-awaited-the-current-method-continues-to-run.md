@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
-ms.openlocfilehash: 754fc6750e63f6d9f39da94041fc452829bca46d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a07955363ea5ca1ca8785c241b0de58149f329ba
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591431"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480890"
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání.
-Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání. Zvažte použití operátoru 'Await' na výsledek volání.  
+Protože toto volání neočekává, vykonávání aktuální metody pokračuje před dokončením volání. Jestli nebude lepší uplatňovat operátor 'Await' na výsledek volání.  
   
- Aktuální metoda volá asynchronní metody, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a se nevztahuje [Await](../../../visual-basic/language-reference/operators/await-operator.md) operátor na výsledek. Volání asynchronní metody spustí asynchronní úlohu. Ale protože žádné `Await` operátor se použije, program bude pokračovat bez čekání na dokončení úlohy. Ve většině případů není očekáván daná chování. Obvykle další aspekty volání metody závisí na výsledcích volání nebo minimálně zavolat metoda očekává se dokončit před vrácením z metody, která obsahuje volání.  
+ Aktuální metoda volání asynchronní metody vracející <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> a nevztahuje se [Await](../../../visual-basic/language-reference/operators/await-operator.md) operátor k výsledku. Volání asynchronní metody spustí asynchronní úlohu. Ale protože žádné `Await` je použit operátor, program bude pokračovat bez čekání na dokončení úkolu. Ve většině případů se neočekává chování. Obvykle další aspekty volání metody závisí na výsledky volání nebo minimálně volané metody se očekává před vrácení z metody, která obsahuje volání.  
   
- Co se stane s výjimkami, které jsou vyvolány v volané asynchronní metody je stejně důležité problém. Výjimka, která se vyvolá metoda, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> je uložen v vrácený úloh. Pokud nemáte await úlohu nebo explicitně zkontrolovala pro výjimky, dojde ke ztrátě výjimku. Pokud jste await úkol, je znovu vyvolány svou výjimku.  
+ Stejně důležité je, co se stane s výjimkami, které jsou vyvolány v volané asynchronní metody. Výjimka, která je vyvolána metoda, která vrací <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> je uložen v rámci vrácené úlohy. Pokud nevidíte await úkolu nebo explicitně zjišťovat výjimky, dojde ke ztrátě výjimku. Pokud očekáváte úkol, je jeho výjimka znovu vyvolána.  
   
- Jako osvědčený postup by měla vždycky await volání.  
+ Jako osvědčený postup můžete vždy měli očekávat volání.  
   
- Ve výchozím nastavení je tato zpráva upozornění. Další informace o zobrazení nebo skrytí upozornění práce upozornění jako chyby najdete v tématu [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
+ Ve výchozím nastavení tato zpráva je upozornění. Další informace o zobrazení nebo skrytí upozornění zpracování upozornění jako chyby, najdete v části [Konfigurace upozornění v jazyce Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).  
   
  **ID chyby:** BC42358  
   
-### <a name="to-address-this-warning"></a>Pro vyřešení tohoto upozornění  
+### <a name="to-address-this-warning"></a>Chcete-li vyřešit tato upozornění  
   
--   Měli byste zvážit potlačení upozornění pouze v případě, že jste si jisti, že nechcete čekat na dokončení asynchronního volání a že zavolat metodu nevydá jakékoli výjimky. V takovém případě můžete potlačit upozornění přiřazením úkolů výsledek volání proměnné.  
+-   Měli byste zvážit potlačení upozornění pouze v případě, že jste si jisti, že nechcete čekat na dokončení asynchronního volání a že volané metody nevyvolá žádné výjimky. V takovém případě lze potlačit upozornění přiřazením úkolu výsledek volání do proměnné.  
   
-     Následující příklad ukazuje, jak způsobit upozornění, jak ho potlačit a postup await volání.  
+     Následující příklad ukazuje, jak vyvolat upozornění, jak ho potlačit a jak očekávat volání.  
   
     ```vb  
     Async Function CallingMethodAsync() As Task  
@@ -81,7 +81,7 @@ Protože toto volání není očekáváno, spouštění aktuální metody pokra�
     End Function  
     ```  
   
-     V příkladu, pokud se rozhodnete č. 1 volání nebo volání č. 2, unawaited asynchronní metody (`CalledMethodAsync`) dokončení po obou jeho volající (`CallingMethodAsync`) a volající volajícího (`StartButton_Click`) jsou dokončeny. Po dokončení zavolat metodu ukazuje na posledním řádku následující výstup. Vstupu a výstupu z obslužné rutiny události, která volá `CallingMethodAsync` v Úplný příklad označené ve výstupu.  
+     V příkladu, pokud se rozhodnete volání č. 1 nebo volání č. 2, unawaited asynchronní metody (`CalledMethodAsync`) skončí za oba volající funkci (`CallingMethodAsync`) a volající volajícího (`StartButton_Click`) jsou dokončeny. Poslední řádek v následující výstup ukazuje dokončení volané metody. Vstupu a výstupu z obslužné rutiny události, která volá `CallingMethodAsync` v úplném příkladu jsou označeny jako výstup.  
   
     ```  
     Entering the Click event handler.  
@@ -93,15 +93,15 @@ Protože toto volání není očekáváno, spouštění aktuální metody pokra�
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující aplikace Windows Presentation Foundation (WPF) obsahuje metody, které z předchozího příkladu. Následující postup nastavení aplikace.  
+ Následující aplikace Windows Presentation Foundation (WPF) obsahuje metodu z předchozího příkladu. Následující kroky nastavení aplikace.  
   
-1.  Vytvoření aplikace WPF a pojmenujte ji `AsyncWarning`.  
+1.  Vytvoření aplikace WPF a pojmenujte ho `AsyncWarning`.  
   
-2.  V editoru Visual Studio Code, vyberte **MainWindow.xaml** kartě.  
+2.  V editoru Visual Studio Code, vyberte **souboru MainWindow.xaml** kartu.  
   
-     Pokud na kartě není zobrazena, otevřete místní nabídku pro MainWindow.xaml v **Průzkumníku řešení**a potom zvolte **kód zobrazení**.  
+     Pokud karta není zobrazena, otevřete místní nabídku souboru mainwindow.XAML v **Průzkumníka řešení**a klikněte na tlačítko **zobrazit kód**.  
   
-3.  Nahraďte kód v **XAML** zobrazení MainWindow.xaml následujícím kódem.  
+3.  Nahraďte kód v **XAML** zobrazení souboru mainwindow.XAML následujícím kódem.  
   
     ```vb  
     <Window x:Class="MainWindow"  
@@ -115,11 +115,11 @@ Protože toto volání není očekáváno, spouštění aktuální metody pokra�
     </Window>  
     ```  
   
-     Jednoduché okno, které obsahuje tlačítka a v textovém poli se zobrazí v **návrhu** zobrazení MainWindow.xaml.  
+     Jednoduché okno obsahující tlačítko a textové pole se zobrazí v **návrhu** zobrazení souboru MainWindow.xaml.  
   
-     Další informace o návrháři XAML najdete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio). Informace o tom, jak vytvořit jednoduché uživatelské rozhraní najdete v tématu "postup vytvoření aplikace WPF" a "návrhu jednoduché MainWindow WPF" části [návod: přístup k webu pomocí modifikátoru Async a Await](http://msdn.microsoft.com/library/25879a6d-fdee-4a38-bc98-bb8c24d16042).  
+     Další informace o návrháři XAML, naleznete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio). Informace o tom, jak vytvořit jednoduché uživatelské rozhraní, najdete v článku "postup vytvoření aplikace WPF" a "pro návrh jednoduchého hlavního okna MainWindow WPF" části [návod: přístup k webu pomocí Async a Await](https://msdn.microsoft.com/library/25879a6d-fdee-4a38-bc98-bb8c24d16042).  
   
-4.  Nahraďte kód v MainWindow.xaml.vb následujícím kódem.  
+4.  Nahraďte kód v souboru MainWindow.xaml.vb následujícím kódem.  
   
     ```vb  
     Class MainWindow   
@@ -199,9 +199,9 @@ Protože toto volání není očekáváno, spouštění aktuální metody pokra�
     ' Exiting the Click event handler.  
     ```  
   
-5.  Zvolte klávesy F5 spusťte program a potom vyberte **spustit** tlačítko.  
+5.  Stisknutím klávesy F5 spusťte program a klikněte na tlačítko **Start** tlačítko.  
   
-     Očekávaný výstup se zobrazí na konci kód.  
+     Kódu na konci se zobrazuje očekávaný výstup.  
   
 ## <a name="see-also"></a>Viz také  
  [Operátor Await](../../../visual-basic/language-reference/operators/await-operator.md)  

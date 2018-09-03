@@ -12,30 +12,30 @@ helpviewer_keywords:
 - controls [Windows Forms], positioning
 - z-order
 ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
-ms.openlocfilehash: 1a2a25f2e7eaa6618c0bf535a34f7dc6a28d51fa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d67d9b204c316dce5f3818496d791ed4c1b352f2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33533683"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43478038"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>Postupy: Vrstvení objektů ve formulářích Windows
-Při vytváření složitých uživatelského rozhraní nebo pracovat s více formuláře rozhraní (MDI) dokumentu, často můžete vrstvy ovládacích prvků a podřízených formulářů, chcete-li vytvořit složitější uživatelská rozhraní (UI). Přesunutí a uchovávání informací o ovládací prvky a systému windows v rámci skupiny, můžete upravit pořadí vykreslování. *Pořadí Z-order* je vizuální rozvržení ovládací prvky ve formuláři podél osy z formuláře (hloubku). V horní části pořadí z-order okno překrývá všechny ostatní systémy windows. Všechny ostatní systémy windows překrývat okna v dolní části pořadí.  
+Při vytváření složitých uživatelského rozhraní nebo pracovat s více formulář dokumentu (MDI interface), budete často vrstvy ovládací prvky a podřízené formuláře, chcete-li vytvořit složitější uživatelská rozhraní (UI). Přesunout a mějte přehled o ovládací prvky a windows v rámci skupiny, manipulaci s jejich pořadí vykreslování. *Pořadí vykreslování* je vizuální rozvržení ovládací prvky ve formuláři podél osy z formuláře (hloubku). V horní části pořadí vykreslování okna se překrývá všech ostatních oken. Všechny ostatní okna překrývat okno v dolní části pořadí vykreslování.  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ### <a name="to-layer-controls-at-design-time"></a>K ovládacím prvkům vrstvy v době návrhu  
   
 1.  Vyberte ovládací prvek, který chcete vrstvy.  
   
-2.  Na **formátu** nabídky, přejděte na příkaz **pořadí**a potom klikněte na **přenést dopředu** nebo **odeslat zpět**.  
+2.  Na **formátu** nabídky, přejděte k **pořadí**a potom klikněte na tlačítko **přenést dopředu** nebo **odeslat zpět**.  
   
-### <a name="to-layer-controls-programmatically"></a>Chcete-li vrstvy ovládacích prvků prostřednictvím kódu programu  
+### <a name="to-layer-controls-programmatically"></a>Ovládací prvky vrstvy prostřednictvím kódu programu  
   
 -   Použití <xref:System.Windows.Forms.Control.BringToFront%2A> a <xref:System.Windows.Forms.Control.SendToBack%2A> metody pro manipulaci s pořadí vykreslování ovládacích prvků.  
   
-     Například pokud <xref:System.Windows.Forms.TextBox> řízení, `txtFirstName`, je pod jinou řízení a chcete mít v horní části, použijte následující kód:  
+     Například pokud <xref:System.Windows.Forms.TextBox> ovládacího prvku, `txtFirstName`, je pod jiného ovládacího prvku a chcete mít v horní části, použijte následující kód:  
   
     ```vb  
     txtFirstName.BringToFront()  
@@ -50,7 +50,7 @@ Při vytváření složitých uživatelského rozhraní nebo pracovat s více fo
     ```  
   
 > [!NOTE]
->  Windows Forms podporuje *kontejnerů ovládacích prvků*. Uzavření ovládacího prvku zahrnuje umístění řadu ovládacích prvků v rámci nadřazeného ovládacího prvku, například počtu <xref:System.Windows.Forms.RadioButton> ovládací prvky v rámci <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Potom můžete vrstvy ovládací prvky v rámci nadřazeného ovládacího prvku. Ovládací prvky taky přesunutím skupinový rámeček přesunete, protože se nacházejí v jeho.  
+>  Podporuje formuláře Windows *používání kontejnerů ovládacích prvků*. Používání kontejnerů ovládacích prvků zahrnuje umístění celé řady kontrolních mechanismů v rámci nadřazeného ovládacího prvku, třeba počet <xref:System.Windows.Forms.RadioButton> ovládací prvky v rámci <xref:System.Windows.Forms.GroupBox> ovládacího prvku. Potom můžete vrstvy ovládací prvky v rámci nadřazeného ovládacího prvku. Přesunutí skupinový rámeček přesune ovládací prvky, protože se nacházejí uvnitř.  
   
 ## <a name="see-also"></a>Viz také  
  [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  

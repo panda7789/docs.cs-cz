@@ -21,11 +21,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 29077a1c0f2b803270adb730e0d810143095e709
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43330877"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484977"
 ---
 # <a name="managing-connections"></a>Správa připojení
 Aplikace, které používají protokol HTTP pro připojení k datovým prostředkům můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a aby to pomohl ostatním dosažení optimálního škálování a výkon.  

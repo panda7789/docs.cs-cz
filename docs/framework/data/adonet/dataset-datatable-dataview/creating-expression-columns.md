@@ -1,29 +1,29 @@
 ---
-title: Vytváření výraz sloupce
+title: Vytváření sloupců výrazů
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0af3bd64-92a2-4b47-ae62-f5df35f131a6
-ms.openlocfilehash: 11bacf436daf2a77a9cf46b4883d282143572e27
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9c7a656e82198568c39b9bb58f8708f563d6caa2
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32756394"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482312"
 ---
-# <a name="creating-expression-columns"></a>Vytváření výraz sloupce
-Můžete definovat výraz pro sloupec, mu umožní obsahovat hodnotu vypočítat z jiné hodnoty sloupců na stejném řádku nebo z hodnoty ve sloupcích více řádků v tabulce. Chcete-li definovat výraz, který se vyhodnotí, použijte <xref:System.Data.DataColumn.Expression%2A> vlastnost cílového sloupce použijte <xref:System.Data.DataColumn.ColumnName%2A> vlastnost, která má odkazovat na jiné sloupce ve výrazu. <xref:System.Data.DataColumn.DataType%2A> Sloupec musí být výraz odpovídající hodnotu, která vrací výraz.  
+# <a name="creating-expression-columns"></a>Vytváření sloupců výrazů
+Výraz pro sloupec můžete definovat, díky tomu se může obsahovat hodnotu počítá z jiných hodnot sloupců na stejném řádku nebo z hodnoty ve sloupcích více řádků v tabulce. Chcete-li definovat výraz, který má být vyhodnocen, použijte <xref:System.Data.DataColumn.Expression%2A> vlastnost cílového sloupce a jeho používání <xref:System.Data.DataColumn.ColumnName%2A> vlastnost k odkazování na ostatní sloupce ve výrazu. <xref:System.Data.DataColumn.DataType%2A> Sloupec musí být výraz odpovídající hodnotu, která vrací výraz.  
   
- Následující tabulka uvádí několik možných používá pro výraz sloupce v tabulce.  
+ Následující tabulka uvádí několik možných použití výrazu sloupce v tabulce.  
   
 |Typ výrazu|Příklad|  
 |---------------------|-------------|  
 |Srovnání|"Celkový > = 500"|  
-|Výpočet|"UnitPrice * množství"|  
+|Výpočet|"UnitPrice * Quantity"|  
 |Agregace|Výraz sum(price)|  
   
- Můžete nastavit **výraz** vlastnost na existujícím **DataColumn** objekt, nebo můžete zahrnout vlastnost jako třetí argument předaný <xref:System.Data.DataColumn> konstruktoru, jak je znázorněno v následujícím příkladu.  
+ Můžete nastavit **výraz** vlastnost na existující **DataColumn** objektu, nebo můžete zahrnout vlastnost jako třetí argument předaný do <xref:System.Data.DataColumn> konstruktoru, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 workTable.Columns.Add("Total",Type.GetType("System.Double"))  
@@ -36,7 +36,7 @@ workTable.Columns.Add("Total", typeof(Double));
 workTable.Columns.Add("SalesTax", typeof(Double), "Total * 0.086");  
 ```  
   
- Výrazy mohou odkazovat na jiné výrazu sloupce; Cyklický odkaz, ve kterém dvou výrazů odkazovat na sebe, ale vygeneruje výjimku. Pravidla o zapisují se výrazy, najdete v článku <xref:System.Data.DataColumn.Expression%2A> vlastnost **DataColumn** třídy.  
+ Výrazy mohou odkazovat na jiné sloupce výrazu; Cyklický odkaz, ve kterém dvou výrazů odkazovat na sebe navzájem, ale bude generovat výjimku. Pravidla týkající se vytváření výrazů, najdete v článku <xref:System.Data.DataColumn.Expression%2A> vlastnost **DataColumn** třídy.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.DataColumn>  
@@ -44,4 +44,4 @@ workTable.Columns.Add("SalesTax", typeof(Double), "Total * 0.086");
  <xref:System.Data.DataTable>  
  [Definice schématu datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-schema-definition.md)  
  [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

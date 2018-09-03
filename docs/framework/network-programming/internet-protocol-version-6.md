@@ -11,12 +11,12 @@ ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 8842bb47ad32ae1e26eaa503398ea91afb7fd1dd
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: 2c9b3b1c647d74444fed01e38b65c1b2fe8364c6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43257975"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480945"
 ---
 # <a name="internet-protocol-version-6"></a>Protokol IPv6
 Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro síťové vrstvy z Internetu. Protokol IPv6 je navržená k řešení mnoha problémů je aktuální verze sady Internet Protocol (označují se termínem IPv4) s ohledem na plnění vyčerpávání, zabezpečení, automatickou konfiguraci, rozšíření a tak dále. Protokol IPv6 se rozšiřují možnosti Internetu povolit nové typy aplikací, jako jsou třeba aplikace peer-to-peer a mobilní. Toto jsou hlavní problémy aktuální protokolu IPv4:  
@@ -58,7 +58,7 @@ Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro sí�
   
 -   RFC 2374 formátu agregovatelné globální adresy jednosměrového vysílání IPv6.  
   
- Můžete také najít informace související s IPv6 na [oblasti IPv6 na webu Technet](http://go.microsoft.com/fwlink/?LinkID=179658).  
+ Můžete také najít informace související s IPv6 na [oblasti IPv6 na webu Technet](https://go.microsoft.com/fwlink/?LinkID=179658).  
   
 ## <a name="see-also"></a>Viz také  
  [Ukázka sokety IPv6](https://msdn.microsoft.com/library/ms180981(v=vs.85).aspx)  

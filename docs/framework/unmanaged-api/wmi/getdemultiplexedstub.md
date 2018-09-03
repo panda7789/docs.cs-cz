@@ -1,6 +1,6 @@
 ---
 title: Funkce GetDemultiplexedStub (referenční dokumentace nespravovaného rozhraní API)
-description: Funkce GetDemultiplexedStub vytvoří předávání podřízený objekt klienta jako pomůcku při přijímání asynchronní volání od Správa systému Windows.
+description: Funkce GetDemultiplexedStub vytvoří pomáhat klientovi v přijetí byla zahájena asynchronní volání ze správy službou Windows Server pro předávání jímky objektu.
 ms.date: 11/06/2017
 api_name:
 - GetDemultiplexedStub
@@ -16,15 +16,15 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b195d3a512c537ca409bd2039add9e69abaf4df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4311a77c9159428bf7beacc99d4479acb28b91b6
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33456359"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482353"
 ---
 # <a name="getdemultiplexedstub-function"></a>GetDemultiplexedStub – funkce
-Vytvoří předávání podřízený objekt klienta jako pomůcku při přijímání asynchronní volání od Správa systému Windows.
+Vytvoří pomáhat klientovi v přijetí byla zahájena asynchronní volání ze správy službou Windows Server pro předávání jímky objektu.
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
@@ -41,26 +41,26 @@ HRESULT GetDemultiplexedStub (
 ## <a name="parameters"></a>Parametry
 
 `pObject`  
-[v] Ukazatel na implementaci klienta v rámci procesu [IWbemObjectSink](https://msdn.microsoft.com/library/aa391787(v=vs.85).aspx).
+[in] Ukazatel na implementaci klienta v rámci procesu [IWbemObjectSink](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemobjectsink).
 
 `isLocal`  
-[v] Příznak, který určuje, zda je místní události (`true`), jinak hodnota `false`.
+[in] Příznak označující, zda je místní události (`true`); v opačném případě `false`.
 
 `ppObject`  
-[out] Podřízený objekt předávání klienta jako pomůcku při přijímání asynchronní volání od Správa systému Windows.
+[out] Objekt jímky předávání pomáhat klientovi v přijetí byla zahájena asynchronní volání ze správy Windows.
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Pokud funkci úspěšné, je vrácenou hodnotu `S_OK` (0).
+Pokud funkce uspěje, vrácená hodnota je `S_OK` (0).
 
-V případě selhání funkce návratovou hodnotu je kód chyby nulová. Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.
+Pokud funkce selže, vrácená hodnota je kód chyby. Chcete-li získat rozšířené informace o chybě, zavolejte [GetErrorInfo –](geterrorinfo.md) funkce.
     
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.idl  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

@@ -9,64 +9,64 @@ ms.assetid: 4e0eeefb-e09b-46d2-b83b-0a7e35543ab8
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 19e9eba730891d5d066a1435b4f8abe7c8046dee
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf6b6d7ebabc8e6cec52993c9a837f81f34669df
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33409427"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43483934"
 ---
 # <a name="ui-automation-support-for-the-image-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku obrázek
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma obsahuje informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podporu pro typ ovládacího prvku obrázek. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], typ ovládacího prvku je sadu podmínek, které ovládacího prvku musí splnit, aby bylo možné používat <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> vlastnost. Podmínky zahrnují konkrétní pokyny pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností a vzory ovládacích prvků.  
+ Toto téma obsahuje informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] podpora pro typ ovládacího prvku obrázek. V [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], typ ovládacího prvku je představují sadu podmínek, které ovládací prvek musí splnit, aby bylo možné používat <xref:System.Windows.Automation.AutomationElement.ControlTypeProperty> vlastnost. Podmínky zahrnují konkrétní pokyny ke [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromová struktura, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] hodnoty vlastností a vzorů ovládacích prvků.  
   
- Ovládací prvky obrázků použít jako ikony, informační grafika a grafy bude podporovat typ ovládacího prvku obrázek. Ovládací prvky použít jako pozadí nebo vodoznak Image nebude podporovat typ ovládacího prvku obrázek.  
+ Typ ovládacího prvku obrázek bude podporovat Image prvky používané jako ikony, informační grafika a grafy. Ovládací prvky používat jako pozadí nebo vodoznak Image nebude podporovat typ ovládacího prvku obrázek.  
   
- Následující části zadejte požadované [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, vlastností, vzory ovládacích prvků a události pro typ ovládacího prvku obrázek. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Požadavky platí pro všechny ovládací prvky obrázků, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Následující části definují požadovaný [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, vlastnosti, vzorů ovládacích prvků a události pro typ ovládacího prvku obrázek. [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Požadavky platí pro všechny ovládací prvky obrázků, zda [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)], nebo [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
-## <a name="required-ui-automation-tree-structure"></a>Struktura stromu automatizace požadované uživatelského rozhraní  
- Následující tabulka znázorňuje zobrazení ovládacího prvku a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, která se vztahují na ovládací prvky obrázků a popisuje, co může být obsažený v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu najdete v tématu [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
+## <a name="required-ui-automation-tree-structure"></a>Požadované uživatelské rozhraní automatizace stromová struktura  
+ Následující tabulka popisuje ovládací prvek zobrazení a zobrazení obsahu [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu, které se vztahují na ovládacích prvcích obrázků a popisuje, co mohou být obsaženy v každém zobrazení. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, přečtěte si téma [Přehled stromu automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-tree-overview.md).  
   
-|Zobrazení ovládacího prvku|Zobrazení obsahu|  
+|Ovládací prvek zobrazení|Zobrazení obsahu|  
 |------------------|------------------|  
 |Image|Bitové kopie (závisí, zda bitová kopie obsahuje informace (na základě hodnoty z `IsContentElement` vlastnosti))|  
   
 <a name="Required_UI_Automation_Properties"></a>   
-## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace požadované uživatelského rozhraní  
- Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řízení typu vlastnosti, jehož hodnota nebo definice je obzvláště důležité pro bitovou kopii. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] najdete v části vlastnosti, [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
+## <a name="required-ui-automation-properties"></a>Vlastnosti automatizace uživatelského rozhraní vyžaduje  
+ Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řídit typ vlastnosti, jejichž hodnota nebo definice je obzvláště důležité pro bitovou kopii. Další informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnosti, viz [vlastnosti automatizace uživatelského rozhraní pro klienty](../../../docs/framework/ui-automation/ui-automation-properties-for-clients.md).  
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Vlastnost|Hodnota|Poznámky|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|V části poznámky.|Hodnota této vlastnosti musí být jedinečný v rámci všech ovládacích prvků v aplikaci.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Nejkrajnější obdélníku, který obsahuje celý ovládací prvek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|V části poznámky.|Můžete kliknout bod ovládacího prvku Obrázek musí být bod v rámci ohraničující obdélník ovládacího prvku obrázek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|V části poznámky.|Pokud ovládací prvek může přijímat fokus klávesnice, musí podporovat tuto vlastnost.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|V části poznámky.|Vlastnost názvu musí být vystaveny pro všechny ovládací prvky obrázků, které obsahují informace. Programový přístup k těmto informacím vyžaduje, aby textovou ekvivalentní na grafiku poskytnuta. Pokud je čistě dekorativní ovládacího prvku obrázek, se musí pouze zobrazí v zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu a není nutné mít název. Rozhraní uživatelského rozhraní musí podporovat ALT nebo alternativní text vlastnost bitové kopie, které může být v rozsahu v rámci jejich framework. Tato vlastnost bude poté budou mapovány [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] název vlastnosti.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|V části poznámky.|Pokud je statický text popisku této vlastnosti musí vystavit odkaz u daného ovládacího prvku.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Image|Tato hodnota je stejný pro všechny rozhraní uživatelského rozhraní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|V části poznámky.|Nejkrajnější obdélník, který obsahuje celý ovládací prvek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|V části poznámky.|Bod umožňující kliknutí na tento ovládací prvek obrázku musí být bod ovládacím prvkem obrázku v rámci ohraničující obdélník.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|V části poznámky.|Pokud ovládací prvek může získat fokus klávesnice, musí podporovat tuto vlastnost.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|V části poznámky.|Vlastnost Name musí být vystaveny pro všechny ovládací prvky obrázků, které obsahují informace. Programový přístup k těmto informacím vyžaduje, aby textový ekvivalent obrázek poskytnuta. Pokud tento ovládací prvek obrázku je čistě dekorativní, se musí pouze zobrazí v ovládacím zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu a není nutné mít název. Architektury uživatelského rozhraní musí podporovat ALT nebo alternativní text vlastnosti bitové kopie, které můžete nastavit od jejich rámci. Tato vlastnost bude poté budou mapovány [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vlastnost Name.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|V části poznámky.|Pokud je statický text popisku této vlastnosti musí vystavit odkaz na tento ovládací prvek.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Image|Tato hodnota je stejný pro všechny architektury uživatelského rozhraní.|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|"image"|Lokalizovaný řetězec odpovídající typ ovládacího prvku obrázek.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|V části poznámky.|Ovládací prvek Obrázek musí být součástí obsahu zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu, pokud obsahuje důležité informace, které ještě není vystavený pro koncového uživatele.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Hodnota TRUE|Ovládací prvek Obrázek je vždy součástí zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|V části poznámky.|Vlastnost text nápovědy zpřístupní lokalizované řetězce, který popisuje skutečné vzhled ovládacího prvku (například červený čtvereček obsahující bílý znak "X") nebo jiné popisek informace spojené s bitovou kopii.<br /><br /> Tato vlastnost musí být podporována potřeby dlouhý popis udávající Další informace o řízení bitové kopie. Pro příklad, složitý graf nebo diagram. Tato vlastnost se mapuje na značku HTML LongDesc a značky Desc škálovatelné grafiky SVG (Vector). Vývojáře, kteří pracují s ovládací prvky obrázků musí podporovat vlastnosti, které chcete povolit visual popis, který má být nastavena na ovládací prvek. Tato vlastnost musí být namapována na vlastnost VisualDescription automatizace uživatelského rozhraní.|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|V části poznámky.|Pokud ovládacího prvku obrázek představuje stav informace o konkrétní položky na obrazovce, ovládacího prvku by měly být obsaženy v rámci položky. Když bitovou kopii je obsažena v položku Položka musí podporovat vlastnost stav a vyvolat příslušné oznámení, kdy se stav změní.<br /><br /> Pokud obrázek ovládacího prvku samostatné a je zdůraznění stav musí být tato vlastnost podporována.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|V části poznámky.|Tento ovládací prvek obrázku musí být součástí obsahu zobrazení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromové struktury, pokud obsahuje důležité informace, které ještě není vystavený pro koncového uživatele.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|Hodnota TRUE|Tento ovládací prvek obrázku je vždy součástí zobrazení ovládacího prvku [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|V části poznámky.|Vlastnost HelpText zpřístupňuje lokalizovaný řetězec, který popisuje skutečné vzhled ovládacího prvku (například červený čtvereček obsahující bílý znak "X") nebo jiné informace popisu tlačítka, které jsou spojené s imagí.<br /><br /> Tato vlastnost musí být podporováni, když dlouhý popis, je potřeba sdělit Další informace o ovládacím prvku obrázek. Například na složité graf nebo diagram. Tato vlastnost mapuje na značku HTML LongDesc a značky Desc grafiky SVG (Scalable Vector). Vývojáři pracující s ovládacími prvky obrázků musí podporovat vlastnost umožňující visual popis, který má být nastavena na ovládacím prvku. Tato vlastnost musí být mapována na vlastnost VisualDescription automatizace uživatelského rozhraní.|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty>|V části poznámky.|Pokud tento ovládací prvek obrázku představuje informace o konkrétní položku na obrazovce stavu, ovládací prvek by měly být obsaženy v rámci položky. Pokud je na obrázku je obsažen v položku položky musí podporovat vlastnost stavu a vyvolat příslušné oznámení, kdy se stav změní.<br /><br /> Pokud bitovou kopii je samostatný ovládací prvek a je takzvané stavu musí tato vlastnost podporována.|  
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
-## <a name="required-ui-automation-control-patterns"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní požadované  
- Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řízení vzory potřeba podporovat všechny ovládací prvky obrázků. Další informace o vzory ovládacích prvků najdete v tématu [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
+## <a name="required-ui-automation-control-patterns"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní vyžaduje  
+ Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] řídit vzory vyžaduje to, že všechny ovládací prvky obrázků. Další informace o vzorů ovládacích prvků naleznete v tématu [přehled vzorů ovládacích prvků automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md).  
   
-|Vzor ovládacích prvků|Podpora|Poznámky|  
+|– Vzor ovládacích prvků|Podpora|Poznámky|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Závisí|Ovládacího prvku obrázek podporuje vzor položky v mřížce, pokud je ovládací prvek v rámci kontejneru mřížky.|  
-|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Závisí|Ovládacího prvku obrázek podporuje vzor položka tabulky, pokud je ovládací prvek v rámci kontejneru, který má ovládací prvky hlavičky.|  
-|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Nikdy|Pokud ovládacího prvku obrázek obsahuje bitovou kopii lze klepnout, by měly podporovat ovládacího prvku typu ovládacího prvku, který podporuje Invoke vzor, jako je například typ ovládacího prvku tlačítko.|  
-|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Nikdy|Ovládací prvky obrázků nesmí podporují vzor položka výběru.|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider>|Závisí|Tento ovládací prvek obrázku podporuje položky mřížky vzor, pokud je ovládací prvek v rámci kontejneru mřížky.|  
+|<xref:System.Windows.Automation.Provider.ITableItemProvider>|Závisí|Tento ovládací prvek obrázku podporuje vzor položka tabulky, pokud je ovládací prvek do kontejneru, který obsahuje ovládací prvky záhlaví.|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|Nikdy|Pokud tento ovládací prvek obrázku obsahuje bitovou kopii lze kliknout, by měl ovládací prvek podporovat typ ovládacího prvku, který podporuje Invoke vzor, jako je například typ ovládacího prvku tlačítko.|  
+|<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|Nikdy|Ovládací prvky obrázků by neměl podporují vzor výběru položky.|  
   
 <a name="Required_UI_Automation_Events"></a>   
-## <a name="required-ui-automation-events"></a>Události automatizace požadované uživatelského rozhraní  
- Následující tabulka uvádí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události potřeba podporovat všechny ovládací prvky obrázků. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
+## <a name="required-ui-automation-events"></a>Události automatizace uživatelského rozhraní vyžaduje  
+ Následující tabulce jsou uvedeny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] události potřebné to, že všechny ovládací prvky obrázků. Další informace o událostech najdete v tématu [Přehled událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-events-overview.md).  
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] Události|Podpora|Poznámky|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
@@ -74,10 +74,10 @@ ms.locfileid: "33409427"
 |<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|Nikdy|Žádné|  
 |<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|Nikdy|Žádné|  
 |<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|Nikdy|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> událost změny vlastnosti.|Požadováno|Žádné|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> událost změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> události změny vlastnosti.|Požadováno|Žádné|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> události změny vlastnosti.|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|Požadováno|Žádné|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|Požadováno|Žádné|  
   

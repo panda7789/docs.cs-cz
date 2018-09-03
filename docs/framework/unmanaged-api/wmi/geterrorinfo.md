@@ -1,6 +1,6 @@
 ---
 title: GetErrorInfo – funkce (referenční dokumentace nespravovaného rozhraní API)
-description: GetErrorInfo – funkce načte informace o chybě z předchozího volání funkce.
+description: Funkce GetErrorInfo – načte informace o chybě z předchozího volání funkce.
 ms.date: 11/06/2017
 api_name:
 - GetErrorInfo
@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ef52a4e503597e08eae407571f02bf63adafc4e4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5f25777402fa31e72cbbf36f58a6c4cc65542979
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33455952"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482233"
 ---
 # <a name="geterrorinfo-function"></a>GetErrorInfo – funkce
 Načte informace o chybě z předchozího volání funkce.  
@@ -36,18 +36,18 @@ IErrorInfo* GetErrorInfo();
 
 ## <a name="return-value"></a>Návratová hodnota
 
-Ukazatel na [IErrorInfo](https://msdn.microsoft.com/library/windows/desktop/ms221233(v=vs.85).aspx) objektu, pokud je úspěšné volání funkce, nebo `null` Pokud selže.
+Ukazatel na [IErrorInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-ierrorinfo) objektu, pokud bude volání funkce úspěšné, nebo `null` Pokud selže.
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zabalí volání [IComThreadingInfo::GetErrorInfo](https://msdn.microsoft.com/library/windows/desktop/ms683752(v=vs.85).aspx) metoda.
+Tato funkce zalamuje volání na [IComThreadingInfo::GetErrorInfo](/windows/desktop/api/objidlbase/nf-objidlbase-icomthreadinginfo-getcurrentapartmenttype) metody.
 
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** WMINet_Utils.def  
   
  **Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
-## <a name="see-also"></a>Viz také  
-[Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)
+## <a name="see-also"></a>Viz také:  
+[WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)](index.md)

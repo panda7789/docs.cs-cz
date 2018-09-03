@@ -13,15 +13,15 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-ms.openlocfilehash: 8d30afa0b517f31ded2bc5229927c698e476f790
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bd79008275f3c0176d8ffea9e5de3b53eae3ad2b
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592025"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43479955"
 ---
 # <a name="examples-of-xml-serialization"></a>Příklady serializace XML
-Serializace XML může trvat více než jeden formulář z snadno komplexní. Například může serializovat třídu, která jednoduše se skládá z veřejného polí a vlastností, jak je znázorněno v [představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).  
+Serializace XML může trvat více než jeden formulář z snadno komplexní. Například může serializovat třídu, která jednoduše se skládá z veřejných polí a vlastností, jak je znázorněno v [představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).  
   
 ## <a name="serializing-a-dataset"></a>Serializace na sadu dat  
  Kromě serializaci instancí veřejnou třídu instance <xref:System.Data.DataSet> lze také serializovat, jak je znázorněno v následujícím příkladu kódu.  
@@ -119,7 +119,7 @@ private void SerializeNode(string filename){
 ```  
   
 ## <a name="serializing-a-class-that-contains-a-field-returning-a-complex-object"></a>Serializace třídu, která obsahuje pole vrácení komplexního objektu  
- Pokud vlastnost nebo pole vrátí komplexní objekt (například pole nebo instance třídy), [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) převede ji na element vnořené hlavní dokument XML. Můžete například první třídou v následujícím příkladu vrací instanci třídy sekundu.  
+ Pokud vlastnost nebo pole vrátí komplexního objektu (například pole nebo instanci třídy), [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx) převede ho na prvek vnořené hlavní dokument XML. Můžete například první třídou v následujícím příkladu vrací instanci třídy sekundu.  
   
 ```vb  
 Public Class PurchaseOrder  
@@ -197,7 +197,7 @@ public class Item
 ```  
   
 ## <a name="serializing-a-class-that-implements-the-icollection-interface"></a>Serializace třídu tohoto implementuje rozhraní ICollection  
- Můžete vytvořit vlastní třídy kolekce implementující <xref:System.Collections.ICollection> rozhraní a používat <xref:System.Xml.Serialization.XmlSerializer> k serializaci instance těchto tříd. Všimněte si, že při implementuje třídu <xref:System.Collections.ICollection> rozhraní, pouze kolekce obsažené třídou je serializována. Všechny veřejné vlastnosti nebo pole přidán do třídy nesmí být serializován. Musí obsahovat třídu **přidat** metoda a **položky** vlastnost (indexeru C#), která má být serializován.  
+ Můžete vytvořit vlastní třídy kolekce implementující <xref:System.Collections.ICollection> rozhraní a používat <xref:System.Xml.Serialization.XmlSerializer> k serializaci instance těchto tříd. Všimněte si, že při implementuje třídu <xref:System.Collections.ICollection> rozhraní, pouze kolekce obsažené třídou je serializována. Všechny veřejné vlastnosti nebo pole přidán do třídy nesmí být serializován. Třída musí obsahovat **přidat** metoda a **položky** vlastnost (indexeru C#) k serializaci.  
   
 ```vb  
 Imports System  
@@ -296,7 +296,7 @@ using System.IO;
 using System.Collections;  
 using System.Xml.Serialization;  
   
-public class Test{  
+public class Test {  
     static void Main(){  
         Test t = new Test();  
         t.SerializeCollection("coll.xml");  
@@ -314,7 +314,7 @@ public class Test{
         x.Serialize(writer, Emps);  
     }  
 }  
-public class Employees:ICollection{  
+public class Employees:ICollection {  
     public string CollectionName;  
     private ArrayList empArray = new ArrayList();   
   
@@ -343,7 +343,7 @@ public class Employees:ICollection{
     }  
 }  
   
-public class Employee{  
+public class Employee {  
     public string EmpName;  
     public string EmpID;  
     public Employee(){}  
@@ -355,13 +355,13 @@ public class Employee{
 ```  
   
 ## <a name="purchase-order-example"></a>Příklad pořadí nákupu  
- Můžete vyjmout a vložit následující příklad kódu do textového souboru s příponou názvu souboru cs nebo VB přejmenovat. Použijte kompilátor jazyka C# nebo Visual Basic pro kompilaci souboru. Spusťte ji pomocí názvu spustitelného souboru.  
+ Můžete vyjmout a vložit následující příklad kódu do textového souboru přejmenován s cs nebo VB příponu názvu souboru. Použijte kompilátor jazyka C# nebo Visual Basic pro kompilaci souboru. Spusťte ji pomocí názvu spustitelného souboru.  
   
  V tomto příkladu je jednoduché scénáře k předvedení jak instance objektu je vytvořena a serializován do souboru pomocí datového proudu <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> metody. Datový proud XML je uložen na soubor a stejný soubor je poté číst zpět a znovu vytvořena do kopii původní objekt pomocí <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metody.  
   
  V tomto příkladu třída s názvem `PurchaseOrder` je serializaci a potom deserializaci. Druhé třídu s názvem `Address` je rovněž obsažena, protože veřejné pole s názvem `ShipTo` musí být nastavena na `Address`. Podobně `OrderedItem` třída je zahrnuta, protože pole `OrderedItem` objekty musí být nastaven na `OrderedItems` pole. Na závěr třída s názvem `Test` obsahuje kód, který serializuje a deserializuje třídy.  
   
- `CreatePO` Metoda vytvoří `PurchaseOrder`, `Address`, a `OrderedItem` objekty třídy a nastaví hodnoty veřejného polí. Metoda také vytvoří instanci objektu <xref:System.Xml.Serialization.XmlSerializer> třídu, která se používá k serializaci a deserializaci `PurchaseOrder`. Všimněte si, že kód předá konstruktoru typu třídy, která bude serializována. Kód také vytvoří `FileStream` používané k zápisu datový proud XML do dokumentu XML.  
+ `CreatePO` Metoda vytvoří `PurchaseOrder`, `Address`, a `OrderedItem` objekty třídy a nastaví hodnoty veřejného polí. Metoda také vytvoří instanci objektu <xref:System.Xml.Serialization.XmlSerializer> třídu, která se používá k serializaci a deserializaci `PurchaseOrder`. Všimněte si, že kód předá konstruktoru typu třídy, která bude serializována. Kód vytvoří také `FileStream` , který se používá k zápisu do dokumentu XML datový proud XML.  
   
  `ReadPo` Metoda je o něco jednodušší. Stačí vytvoří objekty k deserializaci a přečte jejich hodnoty. Stejně jako u `CreatePo` metody, je nutné nejprve vytvořit <xref:System.Xml.Serialization.XmlSerializer>, předejte typ třídy k deserializaci do konstruktoru. Také <xref:System.IO.FileStream> je vyžadována pro čtení dokumentu XML. K deserializaci objektů, zavolejte <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu se <xref:System.IO.FileStream> jako argument. Deserializovaný objekt musí být přetypovat na proměnné objektu typu `PurchaseOrder`. Kód poté načte hodnoty deserializovat `PurchaseOrder`. Všimněte si, můžete si také přečíst soubor PO.xml, který je vytvořen zobrazíte skutečný XML výstupu.  
   

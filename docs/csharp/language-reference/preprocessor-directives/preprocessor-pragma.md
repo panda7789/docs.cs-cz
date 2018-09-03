@@ -1,20 +1,20 @@
 ---
-title: '#Direktiva pragma (referenční dokumentace jazyka C#)'
+title: '#direktivy pragma (referenční dokumentace jazyka C#)'
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma'
 helpviewer_keywords:
 - '#pragma directive [C#]'
 ms.assetid: 5b7944cd-d402-46a1-ad8f-feffb2d83673
-ms.openlocfilehash: a4829d5062474922d45a2f4f8e1cddf9023b6ad8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ae397cc61e0c6b58ed2079369131ebb7e352eae
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33278806"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43482932"
 ---
 # <a name="pragma-c-reference"></a>#pragma (referenční dokumentace jazyka C#)
-`#pragma` poskytuje kompilátor zvláštní pokyny pro kompilaci souboru, ve kterém se zobrazí. Kompilátor musí podporovat pokynů. Jinými slovy, nemůžete použít `#pragma` k vytvoření vlastních pokynů předběžného zpracování. Kompilátor jazyka Microsoft C# podporuje následující dva `#pragma` pokyny:  
+`#pragma` kompilátor poskytuje zvláštní pokyny pro kompilaci souboru, ve kterém se zobrazí. Kompilátor musí podporovat pokynů. Jinými slovy, nemůžete použít `#pragma` můžete vytvořit vlastní pokyny k předběžného zpracování. Kompilátor jazyka Microsoft C# podporuje následující dva `#pragma` pokyny:  
   
  [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)  
   
@@ -28,14 +28,15 @@ ms.locfileid: "33278806"
   
 #### <a name="parameters"></a>Parametry  
  `pragma-name`  
- Název známá Direktiva pragma.  
+ Název rozpoznaný direktivy pragma.  
   
  `pragma-arguments`  
- Direktiva pragma specifické argumenty.  
+ Argumenty direktivy pragma specifické.  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
- [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)  
- [#pragma checksum](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [C# Direktivy preprocesoru](../../../csharp/language-reference/preprocessor-directives/index.md)  
+- [#pragma warning](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)  
+- [#pragma checksum](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)

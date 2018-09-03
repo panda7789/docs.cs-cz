@@ -12,15 +12,15 @@ helpviewer_keywords:
 - -doc compiler option [C#]
 - /doc compiler option [C#]
 ms.assetid: 849eea59-c936-4311-bad8-d07404480f2a
-ms.openlocfilehash: ac1275285a8ba403297e51438fbf0d47d811ca61
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 24eb3b1a70c420fd0008ea9c202c774592e1d346
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216145"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43484433"
 ---
 # <a name="-doc-c-compiler-options"></a>-doc (možnosti kompilátoru C#)
-**-Doc** možnost vám umožňuje umístit dokumentační komentáře v souboru XML.  
+**-Doc** možnost umožňuje umístit komentáře dokumentace do souboru XML.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,36 +30,37 @@ ms.locfileid: "33216145"
   
 ## <a name="arguments"></a>Arguments  
  `file`  
- Výstupní soubor pro formát XML, který je naplněn komentáře ve zdrojových souborech kód kompilace.  
+ Výstupní soubor pro XML, který je naplněn komentáře v souborech zdrojového kódu kompilace.  
   
 ## <a name="remarks"></a>Poznámky  
- V soubory zdrojového kódu můžete zpracovat a přidat do souboru XML dokumentační komentáře, které předcházejí následující:  
+ V souborech zdrojového kódu je možné zpracovat a přidat do souboru XML dokumentační komentáře, které předcházet následující:  
   
--   Uživatelem definované typy jako [třída](../../../csharp/language-reference/keywords/class.md), [delegovat](../../../csharp/language-reference/keywords/delegate.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md)  
+-   Uživatelem definované typy jako [třídy](../../../csharp/language-reference/keywords/class.md), [delegovat](../../../csharp/language-reference/keywords/delegate.md), nebo [rozhraní](../../../csharp/language-reference/keywords/interface.md)  
   
--   Členy jako pole, [událostí](../../../csharp/language-reference/keywords/event.md), [vlastnost](../../../csharp/programming-guide/classes-and-structs/using-properties.md), nebo – metoda  
+-   Členy jako pole, [události](../../../csharp/language-reference/keywords/event.md), [vlastnost](../../../csharp/programming-guide/classes-and-structs/using-properties.md), nebo – metoda  
   
- Výstup souboru zdrojového kódu, který obsahuje hlavní nejprve je do souboru XML.  
+ Výstup souboru se zdrojovým kódem, který obsahuje hlavní je nejdříve do souboru XML.  
   
- Chcete použít soubor .xml vygenerovaný pro použití s [IntelliSense](/visualstudio/ide/using-intellisense) funkci, ponechte název souboru .xml být stejný jako název sestavení, které chcete podporovat a zkontrolujte soubor .xml nachází ve stejném adresáři jako sestavení. Proto při odkazování na sestavení v sadě Visual Studio projektu, soubor .xml nalezen také. V tématu [podporované komentáře kódu](/visualstudio/ide/supplying-xml-code-comments) a další informace.  
+ Použít soubor generovaný XML pro použití se službou [IntelliSense](/visualstudio/ide/using-intellisense) funkcí, ponechte název souboru .xml být stejný jako název sestavení, které chcete podporovat a zkontrolujte, že soubor .xml nachází ve stejném adresáři jako sestavení. Proto když sestavení se odkazuje v projektu sady Visual Studio, soubor .xml nenajde také. Zobrazit [zadávání komentářů ke kódu](/visualstudio/ide/supplying-xml-code-comments) a další informace.  
   
- Pokud je kompilovat s [-target: module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), `file` bude obsahovat \<sestavení >\</assembly > značky zadáním názvu souboru, který obsahuje manifest sestavení pro výstupní soubor kompilace.  
+ Pokud kompilujete s [-target: module](../../../csharp/language-reference/compiler-options/target-module-compiler-option.md), `file` bude obsahovat \<sestavení > \< /Assembly > značky zadání názvu souboru, který obsahuje manifest sestavení pro výstupní soubor kompilace.  
   
 > [!NOTE]
->  -Doc možnost se vztahuje na všechny vstupní soubory; nebo, pokud v nastavení projektu, všechny soubory v projektu. Chcete-li zakázat upozornění související s dokumentační komentáře pro konkrétní soubor nebo části kódu, použijte [#pragma – upozornění](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md).  
+>  -Doc – možnost platí pro všechny vstupní soubory. nebo, pokud v nastavení projektu, všechny soubory v projektu. Chcete-li vypnout upozornění související s komentáře dokumentace pro konkrétní soubor nebo části kódu, použijte [varování #pragma](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md).  
   
- V tématu [doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md) pro způsoby, jak generovat dokumentaci z komentářů v kódu.  
+ Zobrazit [doporučené značky pro dokumentační komentáře](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md) způsoby, jak generovat dokumentaci z komentáře v kódu.  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevření projektu **vlastnosti** stránky.  
+1.  Otevřete v projektu **vlastnosti** stránky.  
   
-2.  Klikněte **sestavení** kartě.  
+2.  Klikněte na tlačítko **sestavení** kartu.  
   
-3.  Změnit **souborů dokumentace XML** vlastnost.  
+3.  Upravit **soubor dokumentace XML** vlastnost.  
   
- Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>.  
+ Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DocumentationFile%2A>.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

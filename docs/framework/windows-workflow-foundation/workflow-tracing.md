@@ -1,31 +1,31 @@
 ---
-title: Pracovní postup trasování
+title: Trasování pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-ms.openlocfilehash: f4ce25efae0e42fa7c95ce5dffe8da8e31db05a6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 27e56933043c9eb955500cdd1c5bbd06cb33bde8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518174"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43480867"
 ---
-# <a name="workflow-tracing"></a>Pracovní postup trasování
-Pracovní postup trasování nabízí způsob, jak zachytit diagnostických informací s použitím rozhraní .NET Framework trasování – moduly naslouchání. Trasování můžete povolit, pokud se zjistí problém s aplikací a zakázané znovu, jakmile je problém vyřešen. Existují dva způsoby, které může povolit trasování ladění pro pracovní postupy. Můžete nakonfigurovat pomocí prohlížeče událostí trasování, nebo můžete použít <xref:System.Diagnostics> odesílat události trasování do souboru.  
+# <a name="workflow-tracing"></a>Trasování pracovních postupů
+Trasování pracovních postupů nabízí způsob, jak k zaznamenání diagnostických informací s použitím rozhraní .NET Framework naslouchacích procesů trasování. Trasování může povolit, pokud byl zjištěn problém s aplikací a zakázané znovu, až se problém vyřeší. Existují dva způsoby, jak může povolit trasování ladění pracovních postupů. Můžete je nakonfigurovat pomocí prohlížeče událostí trasování nebo můžete použít <xref:System.Diagnostics> k odesílání trasování událostí do souboru.  
   
-## <a name="enabling-debug-tracing-in-etw"></a>Povolení ladění, trasování v trasování událostí pro Windows  
- Pokud chcete povolit trasování pomocí trasování událostí pro Windows, povolte ladění kanál v prohlížeči událostí:  
+## <a name="enabling-debug-tracing-in-etw"></a>Povolení ladění trasování v trasování událostí pro Windows  
+ Pokud chcete povolit, trasování pomocí trasování událostí pro Windows, povolte ladění kanálu v prohlížeči událostí:  
   
-1.  Přejděte na analytické a ladicí uzlu protokoly v prohlížeči událostí.  
+1.  Přejděte do analýzy a ladit protokoly uzlu v prohlížeči událostí.  
   
-2.  Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí -> aplikace a protokoly služby -> Microsoft -> Windows -> serveru aplikace – aplikace**. Klikněte pravým tlačítkem na **serveru aplikace – aplikace** a vyberte **-zobrazení > Zobrazit protokoly pro ladění a**. Klikněte pravým tlačítkem na **ladění** a vyberte **povolit protokol**.  
+2.  Ve stromovém zobrazení v prohlížeči událostí, přejděte na **Prohlížeč událostí -> aplikace a služby protokoly -> Microsoft -> Windows -> aplikace Server-**. Klikněte pravým tlačítkem na **aplikace Server-** a vyberte **zobrazení -> Zobrazit protokoly ladění a analýzu**. Klikněte pravým tlačítkem na **ladění** a vyberte **povolit protokol**.  
   
-3.  Při spuštění pracovního postupu ladění a trasování jsou vygenerované kanálu ladění, trasování událostí pro Windows, lze zobrazit v prohlížeči událostí. Přejděte na **Prohlížeč událostí -> aplikace a protokoly služby -> Microsoft -> Windows -> serveru aplikace – aplikace**. Klikněte pravým tlačítkem na **ladění** a vyberte **aktualizovat**.  
+3.  Při spuštění pracovního postupu, ladění a trasování, které jsou emitovány do kanálu ladění trasování událostí pro Windows, můžete zobrazit v prohlížeči událostí. Přejděte do **Prohlížeč událostí -> aplikace a služby protokoly -> Microsoft -> Windows -> aplikace Server-**. Klikněte pravým tlačítkem na **ladění** a vyberte **aktualizovat**.  
   
-4.  Výchozí velikost vyrovnávací paměti analytického trasování je jenom 4 kilobajtů (KB); Doporučujeme zvýšit velikost 32 KB. Chcete-li to provést, proveďte následující kroky.  
+4.  Výchozí velikost vyrovnávací paměti analytického trasování je jenom 4 kilobajtů (KB); se doporučuje zvýšit velikost na 32 KB. Chcete-li to provést, postupujte následovně.  
   
-    1.  V aktuálním adresáři framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz: `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`  
+    1.  V aktuálním adresáři rozhraní framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz: `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`  
   
-    2.  Změna \<bufferSize > v souboru Windows.ApplicationServer.Applications.man 32 znaků. hodnota.  
+    2.  Změnit \<bufferSize > hodnota v souboru Windows.ApplicationServer.Applications.man 32.  
   
         ```xml  
         <channel name="Microsoft-Windows-Application Server-Applications/Analytic" chid="ANALYTIC_CHANNEL" symbol="ANALYTIC_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ANALYTIC_CHANNEL.message)" >  
@@ -35,13 +35,13 @@ Pracovní postup trasování nabízí způsob, jak zachytit diagnostických info
                   </channel>  
         ```  
   
-    3.  V aktuálním adresáři framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz: `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`  
+    3.  V aktuálním adresáři rozhraní framework (například C:\Windows\Microsoft.NET\Framework\v4.0.21203) spusťte následující příkaz: `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`  
   
 > [!NOTE]
->  Pokud používáte profil klienta rozhraní .NET Framework 4, je nutné zaregistrovat manifest trasování událostí pro Windows tak, že spustíte následující příkaz z adresáře, rozhraní .NET Framework 4: `ServiceModelReg.exe –i –c:etw`  
+>  Pokud používáte rozhraní .NET Framework 4 Client Profile, musíte se nejprve zaregistrovat manifestu trasování událostí pro Windows spuštěním následujícího příkazu v adresáři rozhraní .NET Framework 4: `ServiceModelReg.exe –i –c:etw`  
   
-## <a name="enabling-debug-tracing-using-systemdiagnostics"></a>Povolení ladění trasování pomocí System.Diagnostics  
- Tyto moduly pro naslouchání lze nakonfigurovat v souboru App.config pracovní postup aplikace nebo souboru Web.config pro službu pracovního postupu. V tomto příkladu [TextWriterTraceListener](http://go.microsoft.com/fwlink/?LinkId=165424) nakonfigurovaný tak, aby se uložily informace o trasování do souboru MyTraceLog.txt v aktuálním adresáři.  
+## <a name="enabling-debug-tracing-using-systemdiagnostics"></a>Povolení ladění trasování System.Diagnostics pomocí  
+ Tyto moduly pro naslouchání lze nastavit v souboru App.config aplikace pracovního postupu nebo soubor Web.config pro službu pracovního postupu. V tomto příkladu [TextWriterTraceListener](https://go.microsoft.com/fwlink/?LinkId=165424) je nakonfigurovaný k ukládání informací o trasování do souboru MyTraceLog.txt v aktuálním adresáři.  
   
 ```xml  
 <configuration>  
@@ -70,5 +70,5 @@ Pracovní postup trasování nabízí způsob, jak zachytit diagnostických info
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Windows Server App Fabric monitorování](http://go.microsoft.com/fwlink/?LinkId=201273)  
- [Monitorování aplikací pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=201275)
+ [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)  
+ [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

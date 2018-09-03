@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 05006ff3-02dc-410e-831e-54ec3e7e24ef
 ms.openlocfilehash: c0c9010a71877d2c9757a2c9cf2d5c1fec8aedf7
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253320"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481267"
 ---
 # <a name="defining-wcf-data-services"></a>Definování datových služeb WCF
 

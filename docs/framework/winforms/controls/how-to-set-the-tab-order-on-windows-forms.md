@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Windows Forms, setting tab order
 ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
 ms.openlocfilehash: 74244ae4e3692ed210b2a8f1513b035c85e98376
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43332562"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486828"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Postupy: Nastavení pořadí karet ve formulářích Windows
 Pořadí je v tom pořadí, ve kterém uživatel přesune fokus z jednoho ovládacího prvku na jiný stisknutím klávesy TAB. Každý formulář má svůj vlastní pořadí. Výchozí pořadí je stejné jako pořadí, ve které jste vytvořili ovládací prvky. Pořadí karet číslování začíná nulou.  

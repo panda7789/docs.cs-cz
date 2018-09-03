@@ -1,26 +1,26 @@
 ---
-title: Sledování účastníků
+title: Sledování účastníci
 ms.date: 03/30/2017
 ms.assetid: f13e360c-eeb7-4a49-98a0-8f6a52d64f68
-ms.openlocfilehash: 34f807cd8c6c227e5e60b40d1ecc01ef693f31f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e346e0df3417f6ac83854bd96d6e64dcf103ea93
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519809"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43488271"
 ---
-# <a name="tracking-participants"></a>Sledování účastníků
-Sledování účastníků jsou body rozšiřitelnosti, které umožňují vývojář pracovního postupu pro přístup k <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> objekty a jejich zpracování. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] obsahuje standardní sledování člena, který zapíše sledování záznamů jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník.  
+# <a name="tracking-participants"></a>Sledování účastníci
+Sledování účastníci jsou body rozšiřitelnosti, které umožňují vývojář pracovního postupu pro přístup k <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> objektů a jejich zpracování. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník.  
   
-## <a name="tracking-participants"></a>Sledování účastníků  
- Sledování infrastruktury umožňuje použití filtru v odchozí záznamy sledování tak, aby účastník se mohou přihlásit k podmnožině záznamy. Mechanismus, který chcete použít filtr je prostřednictvím profil sledování.  
+## <a name="tracking-participants"></a>Sledování účastníci  
+ Sledování infrastruktury umožňuje aplikaci filtru na odchozí záznamy sledování, tak, aby účastníka se přihlásit k odběru podmnožinu záznamů. Mechanismus, který chcete použít filtr je prostřednictvím profilu sledování.  
   
- Windows Workflow Foundation (WF) v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] poskytuje sledování člena, který zapíše záznamy sledování relaci trasování událostí pro Windows. Účastník není konfigurována služba pracovního postupu přidáním specifické pro sledování chování v konfiguračním souboru. Povolení ETW umožňuje sledování účastník sledování záznamů, které mají být zobrazeny v události prohlížeč. Ukázka sady SDK pro sledování na základě trasování událostí pro Windows je dobrý způsob, jak Seznamte se s WF sledování pomocí účastník na základě trasování událostí pro Windows Sledování.  
+ Windows Workflow Foundation (WF) v [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] poskytuje sledování účastník, který zapíše záznamy sledování k relaci ETW. Účastník není konfigurována služba pracovního postupu přidáním specifické pro sledování chování v konfiguračním souboru. Povolení ETW umožňuje sledování účastník sledování záznamů, které mají být zobrazeny v události prohlížeč. Ukázka sady SDK pro sledování na základě trasování událostí pro Windows je dobrým způsobem, jak Seznamte se s pomocí trasování událostí pro Windows na základě sledování účastník sledování WF.  
   
-## <a name="etw-tracking-participant"></a>Trasování událostí pro Windows Sledování účastník  
- [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] zahrnuje trasování událostí pro Windows Sledování člena, který zapíše záznamy sledování relaci trasování událostí pro Windows. Důvodem je velmi efektivní způsobem s minimálním dopadem na výkon aplikace a propustnost serveru. Výhodou použití standardní sledování účastník trasování událostí pro Windows je, že záznamy sledování, které obdrží lze zobrazit v jiné aplikaci a systém zaprotokoluje v prohlížeči událostí systému Windows.  
+## <a name="etw-tracking-participant"></a>Účastník sledování ETW  
+ [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] zahrnuje účastník sledování ETW, který zapíše záznamy sledování k relaci ETW. To je velice efektivním způsobem s minimálním dopadem na výkon vaší aplikace a propustnosti serveru. Výhodou použití standardní účastník sledování ETW je, že záznamy sledování, které obdrží lze zobrazit v aplikaci a systém zaprotokoluje v prohlížeči událostí Windows.  
   
- Standardní sledování účastník trasování událostí pro Windows je nakonfigurovat v souboru Web.config, jak je znázorněno v následujícím příkladu.  
+ Standardní účastník sledování ETW konfigurován v souboru Web.config, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <configuration>  
@@ -47,52 +47,52 @@ Sledování účastníků jsou body rozšiřitelnosti, které umožňují vývoj
 ```  
   
 > [!NOTE]
->  Pokud `trackingProfile` není zadán název, například právě `<etwTracking/>` nebo `<etwTracking profileName=""/>`, pak výchozí sledování nainstalovaný s profil [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] v souboru Machine.config soubor je používán.  
+>  Pokud `trackingProfile` název není zadaný, jako například právě `<etwTracking/>` nebo `<etwTracking profileName=""/>`, pak výchozí profil sledování tracking profile součástí [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] v souboru Machine.config soubor se používá.  
   
- V souboru Machine.config. výchozí sledování profil jako odběratel u záznamů instance pracovního postupu a chyb.  
+ V souboru Machine.config výchozí profil sledování tracking profile přihlásí k záznamům instance pracovního postupu a chyb.  
   
- Trasování událostí pro Windows události se zapisují do relace trasování pomocí ID zprostředkovatele. Zprostředkovatel ID trasování sledování účastnické používá k zápisu sledování zaznamenává do trasování událostí pro Windows je definována v části Diagnostika v souboru Web.config (v části `<system.serviceModel><diagnostics>`). Ve výchozím nastavení účastník sledování ETW používá výchozí zprostředkovatel ID při nebyl zadán jeden, jak je znázorněno v následujícím příkladu.  
+ V trasování událostí pro Windows události se zapisují do relace ETW pomocí ID zprostředkovatele. Poskytovatel ID, které trasování událostí pro Windows pro sledování účastníka používá k zápisu sledování záznamy do trasování událostí pro Windows je definovaná v části Diagnostika souboru Web.config (v části `<system.serviceModel><diagnostics>`). Ve výchozím nastavení účastník sledování ETW používá výchozí ID poskytovatele když nebyl zadán jeden, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <system.serviceModel>  
         <diagnostics etwProviderId="52A3165D-4AD9-405C-B1E8-7D9A257EAC9F" />  
 ```  
   
- Následující obrázek znázorňuje tok data prostřednictvím účastník sledování ETW sledování. Jakmile se data sledování dosáhne relace trasování událostí pro Windows, můžete získat přístup v mnoha různými způsoby. Jedním z nejužitečnějších způsobů pro přístup k těmto událostem je prostřednictvím prohlížeče událostí, běžné nástroj Windows používá k zobrazení protokolů a tras z aplikací a služeb.  
+ Následující obrázek znázorňuje tok dat prostřednictvím účastník sledování ETW sledování. Jakmile se data sledování dosáhne relace trasování událostí pro Windows, můžete získat přístup v několika způsoby. Jedním z nejužitečnějších způsobů pro přístup k těmto událostem je prostřednictvím prohlížeče událostí, běžné nástroje Windows používá k zobrazení protokolů a trasování z aplikací a služeb.  
   
- ![Tok sledování a zprostředkovatele trasování událostí pro Windows Sledování](../../../docs/framework/windows-workflow-foundation/media/trackingdatathroughetwparticipant.gif "TrackingDatathroughETWParticipant")  
+ ![Tok pro sledování a trasování událostí pro Windows Sledování poskytovatele](../../../docs/framework/windows-workflow-foundation/media/trackingdatathroughetwparticipant.gif "TrackingDatathroughETWParticipant")  
   
-## <a name="tracking-participant-event-data"></a>Sledování dat účastnické událostí  
- Sledování účastník, který serializuje data sledovaných událostí na relaci trasování událostí pro Windows ve formátu jedna událost na záznam o sledování.  Událost je identifikován pomocí ID, které v rozsahu 100 až 199. Definice sledování události záznamy vygenerované sledování účastník, najdete v článku [sledování událostí odkaz](../../../docs/framework/windows-workflow-foundation/tracking-events-reference.md) tématu.  
+## <a name="tracking-participant-event-data"></a>Data sledování účastníků události  
+ Sledování účastník serializuje data sledovaných událostí do relace trasování událostí pro Windows ve formátu jednu událost za každou sledování záznamů.  Událost je identifikována pomocí ID v rozsahu od 100 do 199. Definice událostí sledování záznamů, protože ho vygeneroval sledování účastník, najdete v článku [sledování události – referenční informace](../../../docs/framework/windows-workflow-foundation/tracking-events-reference.md) tématu.  
   
- Velikost událost trasování událostí pro Windows je omezena velikost vyrovnávací paměti ETW, nebo podle maximální datové části pro událost trasování událostí pro Windows, podle toho, která hodnota je menší. Pokud velikost události překročí některý z těchto mezních hodnot trasování událostí pro Windows, se zkrátí události a její obsah odebrat libovolný způsobem. Selektivně se neodeberou proměnné, argumenty, poznámky a vlastní data. V případě zkrácení všechny z nich se zkrátí bez ohledu na hodnotu, která způsobila, že na velikost události překročila omezení trasování událostí pro Windows.  Odebrané data se nahradí `<item>..<item>`.  
+ Velikost události trasování událostí pro Windows je omezena velikost vyrovnávací paměti trasování událostí pro Windows, nebo maximální velikost datové části události trasování událostí pro Windows, podle toho, která hodnota je menší. Pokud velikost události překračuje jednu z těchto omezení trasování událostí pro Windows, událostí je zkrácena a její obsah odebrat libovolné způsobem. Selektivně se neodeberou proměnné, argumenty, poznámky a vlastní data. V případě zkrácení všechny z nich se zkrátí bez ohledu na hodnotu, která způsobila velikost události k překročení limitu trasování událostí pro Windows.  Odebrání dat je nahrazena `<item>..<item>`.  
   
- Komplexní typy, které do proměnné, argumenty, a vlastní datové položky se serializují na záznam události trasování událostí pro Windows pomocí [NetDataContractSerializer třída](http://go.microsoft.com/fwlink/?LinkId=177537). Tato třída obsahuje informace o typu CLR v serializovaný datový proud XML.  
+ Komplexní typy, které do proměnné, argumenty a vlastní datové položky se serializují pomocí záznamu události trasování událostí pro Windows [NetDataContractSerializer třídy](https://go.microsoft.com/fwlink/?LinkId=177537). Tato třída obsahuje informace o typu modulu CLR v serializovaná datový proud XML.  
   
- Zkrácení datové části z důvodu omezení trasování událostí pro Windows může způsobit duplicitní sledování záznamů odesílána relaci trasování událostí pro Windows. Tato situace může nastat, pokud naslouchá více než jednu relaci události, a přihlásit se k relacím omezení různé datové části události.  
+ Zkrácení datové části kvůli omezení trasování událostí pro Windows může způsobit duplicitní sledování záznamů odesílané do relace trasování událostí pro Windows. Tato situace může nastat, pokud více než jedna relace přijímá události a relace mají různé datové části limity pro události.  
   
- Pro relaci s nižší limit události mohou být zkráceny. Účastník sledování ETW nemá žádnou znalost počet relací, naslouchání událostem; Pokud událost se zkrátí pro relaci pak účastnické opakování ETW jednou odeslání události. Relace, který je nakonfigurovaný tak, aby přijímal větší velikost datové části v tomto případě získají dvakrát událostí (událost-zkrácen a zkrácený). Duplikace se dá zabránit tak, že nakonfigurujete všechny relace trasování událostí pro Windows s stejné omezení velikosti vyrovnávací paměti.  
+ Pro relace s dolní mez události můžou být zkrácené. Účastník sledování ETW nemá žádnou znalost počet relací naslouchání událostem; Pokud je událost zkrácenému pro relaci pak účastníka opakované pokusy trasování událostí pro Windows po odeslání události. Relace, který je nakonfigurovaný tak, aby přijímal větší velikost datové části v tomto případě se zobrazí dvakrát událostí (event-zkrátí a zkrácený). Duplikace jde zakázat tím, že nakonfigurujete všechny relace trasování událostí pro Windows pomocí stejného omezení velikosti vyrovnávací paměti.  
   
-## <a name="accessing-tracking-data-from-an-etw-participant-in-the-event-viewer"></a>Přístup ke sledování dat od účastníka trasování událostí pro Windows v prohlížeči událostí  
- Události, které se zapisují do relaci trasování událostí pro Windows účastníkem sledování, trasování událostí pro Windows je přístupná prostřednictvím prohlížeče událostí (při použití výchozí zprostředkovatel ID). To umožňuje rychle zobrazení sledování záznamů, které vyvolaly pracovního postupu.  
+## <a name="accessing-tracking-data-from-an-etw-participant-in-the-event-viewer"></a>Přístup k Data sledování z účastníkovi trasování událostí pro Windows v prohlížeči událostí  
+ Události, které jsou zapsány do relace trasování událostí pro Windows pomocí účastník sledování ETW je možný prostřednictvím prohlížeče událostí (při použití výchozí zprostředkovatel ID). To umožňuje rychlé zobrazení sledování záznamů, které bylo aktivováno tímto pracovním postupem.  
   
 > [!NOTE]
->  Sledování záznamů události vygenerované pro událost použití relace ID trasování událostí pro Windows v rozsahu 100 až 199.  
+>  Sledování vyzařovaného události použití relace ID trasování událostí pro Windows v rozsahu od 100 do 199 zaznamenávat události.  
   
 #### <a name="to-enable-viewing-the-tracking-records-in-event-viewer"></a>Chcete-li povolit zobrazení záznamů sledování v prohlížeči událostí  
   
-1.  Spuštění prohlížeče událostí (EVENTVWR. SOUBOR EXE)  
+1.  Spusťte Prohlížeč událostí (EVENTVWR. SOUBOR EXE)  
   
-2.  Vyberte **Prohlížeč událostí, protokoly aplikací a služeb, aplikací společnosti Microsoft, Windows Server – aplikace**.  
+2.  Vyberte **Prohlížeč událostí, protokoly aplikací a služeb, Microsoft, Windows, aplikace Server-**.  
   
-3.  Klikněte pravým tlačítkem a ujistěte se, že **zobrazení, zobrazit ladění protokoly a** je vybrána. Pokud ne, vyberte ho tak zaškrtnutí se zobrazí vedle sebe. Zobrazí se **analytické**, **výkonu**, a **ladění** protokoly.  
+3.  Klikněte pravým tlačítkem a ujistěte se, že **zobrazení, zobrazení a analýzu protokolů ladění** zaškrtnuto. Pokud tomu tak není, vyberte ho, aby se vedle něj zobrazí zaškrtávací políčko. Zobrazí se **analytické**, **výkonu**, a **ladění** protokoly.  
   
-4.  Klikněte pravým tlačítkem myši **analytické** protokolu a potom vyberte **povolit protokol**. V protokolu budou existovat v souboru Server-Applications%4Analytic.etl %SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Application.  
+4.  Klikněte pravým tlačítkem myši **analytické** přihlaste a pak vyberte **povolit protokol**. V souboru Server-Applications%4Analytic.etl %SystemRoot%\System32\Winevt\Logs\Microsoft-Windows-Application bude existovat do protokolu.  
   
 ## <a name="custom-tracking-participant"></a>Vlastní sledování účastník  
- Sledování účastník rozhraní API umožňuje rozšíření modulu runtime sledování s účastníkem sledování zadaný uživatelem, který může obsahovat vlastní logiky pro zpracování sledování záznamy vygenerované modulem runtime pracovního postupu. Zápis vlastní sledování účastník, musí vývojář implementovat `Track` metodu <xref:System.Activities.Tracking.TrackingParticipant> třída. Tato metoda je volána, když je záznam sledování vygenerované modulem runtime pracovního postupu.  
+ Účastník sledování rozhraní API umožňuje rozšíření modulu runtime sledování s uživatelem zadaný sledování účastník, který může obsahovat vlastní logiku ke zpracování záznamů sledování vyzařovaného modulu runtime pracovního postupu. Chcete-li napsat vlastní sledování účastník, musí implementovat Vývojář `Track` metodu <xref:System.Activities.Tracking.TrackingParticipant> třídy. Tato metoda je volána, když modul runtime pracovního postupu je vyzařovaného záznamem sledování.  
   
- Sledování účastníků odvozena od <xref:System.Activities.Tracking.TrackingParticipant> třídy. Poskytované systémem <xref:System.Activities.Tracking.EtwTrackingParticipant> vydá událost událostí sledování pro Windows (ETW) pro každý záznam sledování, které se získaly. Pokud chcete vytvořit vlastní sledování účastník, třídu je vytvořen, který je odvozen od <xref:System.Activities.Tracking.TrackingParticipant>. Pro zajištění základních sledování, přepsání <xref:System.Activities.Tracking.TrackingParticipant.Track%2A>. <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> je volána, když záznam sledování odesílají modulu runtime a lze ji zpracovat požadované způsobem. V následujícím příkladu je definována účastnické třídu vlastní sledování, který vysílá všechny záznamy sledování do okna konzoly. Můžete taky implementovat <xref:System.Activities.Tracking.TrackingParticipant> objekt, který zpracovává sledování zaznamenává asynchronně pomocí jeho `BeginTrack` a `EndTrack` metody  
+ Sledování účastníci odvozovat <xref:System.Activities.Tracking.TrackingParticipant> třídy. Pokud systém <xref:System.Activities.Tracking.EtwTrackingParticipant> vydá událost událostí sledování pro Windows (ETW) pro jednotlivé záznamy sledování, přijaté. Vytvoření vlastního účastníka sledování, je vytvořená třída, která je odvozena z <xref:System.Activities.Tracking.TrackingParticipant>. K zajištění funkce základní sledování, přepsat <xref:System.Activities.Tracking.TrackingParticipant.Track%2A>. <xref:System.Activities.Tracking.TrackingParticipant.Track%2A> je volána, když záznamem sledování posílá modulem runtime a může zpracovat požadované způsobem. V následujícím příkladu vlastní sledování účastníka třída je definována, který vysílá všechny záznamy sledování v okně konzoly. Můžete také implementovat <xref:System.Activities.Tracking.TrackingParticipant> objekt, který zpracovává sledování záznamů asynchronně pomocí jeho `BeginTrack` a `EndTrack` metody  
   
 ```csharp  
 class ConsoleTrackingParticipant : TrackingParticipant  
@@ -108,13 +108,13 @@ class ConsoleTrackingParticipant : TrackingParticipant
 }  
 ```  
   
- Pokud chcete používat konkrétní sledování účastník, zaregistrujte ji pomocí k instanci pracovního postupu, který chcete sledovat, jak je znázorněno v následujícím příkladu.  
+ Pokud chcete použít konkrétní sledování účastník, zaregistrujte ho s instancí pracovního postupu, který chcete sledovat, jak je znázorněno v následujícím příkladu.  
   
 ```csharp  
 myInstance.Extensions.Add(new ConsoleTrackingParticipant());  
 ```  
   
- V následujícím příkladu, pracovní postup, se skládá z <xref:System.Activities.Statements.Sequence> aktivity, která obsahuje <xref:System.Activities.Statements.WriteLine> vytvoření aktivity. `ConsoleTrackingParticipant` Se přidá do rozšíření a volána pracovního postupu.  
+ V následujícím příkladu, pracovní postup, který se skládá z <xref:System.Activities.Statements.Sequence> aktivitu, která obsahuje <xref:System.Activities.Statements.WriteLine> vytvoření aktivity. `ConsoleTrackingParticipant` Se přidá do rozšíření a je vyvolána pracovního postupu.  
   
 ```csharp  
 Activity activity= new Sequence()  
@@ -141,5 +141,5 @@ instance.Extensions.Add(new ConsoleTrackingParticipant());
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Windows Server App Fabric monitorování](http://go.microsoft.com/fwlink/?LinkId=201273)  
- [Monitorování aplikací pomocí App Fabric](http://go.microsoft.com/fwlink/?LinkId=201275)
+ [Windows Server App Fabric monitorování](https://go.microsoft.com/fwlink/?LinkId=201273)  
+ [Monitorování aplikací pomocí App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)

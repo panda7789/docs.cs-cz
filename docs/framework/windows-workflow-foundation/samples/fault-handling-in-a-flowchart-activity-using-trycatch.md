@@ -1,48 +1,48 @@
 ---
-title: Selhání zpracování v aktivitě sady vývojový diagram pomocí TryCatch
+title: Zpracování chyb v aktivitě Flowchart pomocí TryCatch
 ms.date: 03/30/2017
 ms.assetid: 50922964-bfe0-4ba8-9422-0e7220d514fd
-ms.openlocfilehash: cc7630be868a5bdc1a07e8d935e5dd3269b4ae22
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e89c80ecfa8ec93fdde82b5638c504ded681a4fc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518060"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43487020"
 ---
-# <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>Selhání zpracování v aktivitě sady vývojový diagram pomocí TryCatch
-Tento příklad ukazuje, jak <xref:System.Activities.Statements.TryCatch> aktivitu je možné v rámci aktivitu toku řízení komplexní.  
+# <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>Zpracování chyb v aktivitě Flowchart pomocí TryCatch
+Tato ukázka předvádí, jak <xref:System.Activities.Statements.TryCatch> aktivita se dá použít v rámci aktivity toku řízení komplexní.  
   
- V této ukázce kódu povýšení a počet podřízených jsou předány jako proměnné, které chcete <xref:System.Activities.Statements.Flowchart> aktivity, která vypočítá slevu podle vzorce, které odpovídají propagační kód. Ukázka zahrnuje imperativní kódu a pracovní postup návrháře verze vzorku.  
+ V této ukázce propagační kód, který a počet podřízených jsou předány jako proměnné <xref:System.Activities.Statements.Flowchart> aktivitu, která vypočítá a uplatnit tak slevu podle vzorce, které odpovídají propagační kód. Ukázka zahrnuje imperativního kódu pracovního postupu návrháře verze a ukázky.  
   
- V následující tabulce jsou proměnné pro `CreateFlowchartWithFaults` aktivity.  
+ Následující tabulka obsahuje podrobnosti o proměnné pro `CreateFlowchartWithFaults` aktivity.  
   
 |Parametry|Popis|  
 |----------------|-----------------|  
-|promoCode|Propagační kód. Typ: řetězec<br /><br /> Možné hodnoty s Popis v závorkách:<br /><br /> -Jedním (jednoduchý)<br />-MNK (Ženatý s žádné dětí.)<br />-MWK (Ženatý s dětí.)|  
-|numKids|Počet podřízených prvků. Typ: int|  
+|promoCode|Propagační kód. Typ: řetězec<br /><br /> Možné hodnoty s popisem v závorkách:<br /><br /> -Jednou (jednoduchý)<br />-MNK (vdaná s žádné děti.)<br />-MWK (vdaná s děti.)|  
+|numKids|Počet podřízených. Typ: int|  
   
- `CreateFlowchartWithFaults` Používá aktivitu <xref:System.Activities.Statements.FlowSwitch%601> aktivity, která přepne na `promoCode` argument a vypočítá slevu pomocí následujícího vzorce.  
+ `CreateFlowchartWithFaults` Používá aktivitu <xref:System.Activities.Statements.FlowSwitch%601> aktivitu, která se přepne na `promoCode` argument a vypočítá slevu pomocí tohoto vzorce.  
   
-|Hodnota `promoCode`|Diskontní (%)|  
+|Hodnota `promoCode`|Slevy (%)|  
 |--------------------------|--------------------|  
 |Single|10|  
 |MNK|15|  
-|MWK|15 + (1 – 1 /`numberOfKids`)\*10 **Poznámka:** potenciálně, může tento výpočet throw <xref:System.DivideByZeroException>. Ano, je výpočet slevy uzavřen do <xref:System.Activities.Statements.TryCatch> aktivity, který zachytí <xref:System.DivideByZeroException> výjimky a nastaví sleva na nula.|  
+|MWK|15 + (1 – 1 /`numberOfKids`)\*10 **Poznámka:** potenciálně, může tento výpočet vyvolat <xref:System.DivideByZeroException>. Ano, je výpočet slevy zabalené v <xref:System.Activities.Statements.TryCatch> aktivitu, která zachytává <xref:System.DivideByZeroException> výjimky a nastaví slevy na nulu.|  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení FlowchartWithFaultHandling.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Pokud chcete spustit řešení, stisknutím klávesy F5.  
+3.  Abyste mohli spustit řešení, stiskněte klávesu F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\FlowChartWithFaultHandling`  
   

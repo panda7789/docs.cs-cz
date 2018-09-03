@@ -1,19 +1,19 @@
 ---
-title: ChildViews a vztahy
+title: ChildViews a relace
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d475d356-6abb-4701-8fd1-2906fb93dfba
-ms.openlocfilehash: e55e28fd3acdb145e03f0916e3681e95cc7a041a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e27ef72f0341524524a8f267eeeb13a6f46deb52
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32755380"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43486539"
 ---
-# <a name="childviews-and-relations"></a>ChildViews a vztahy
-Pokud existuje relace mezi tabulkami <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky z tabulky souvisejících podřízených pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> řádků v nadřazené tabulce. Například následující kód zobrazí **kategorie** a jejich související **produkty** v abecedním pořadí seřazené podle **CategoryName** a **ProductName** .  
+# <a name="childviews-and-relations"></a>ChildViews a relace
+Pokud existuje relace mezi tabulkami v <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky ze související podřízené tabulce pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> pro řádky v nadřazené tabulce. Například následující kód zobrazí **kategorie** a jejich souvisejících **produkty** abecedně seřazené podle **CategoryName** a **ProductName** .  
   
 ```vb  
 Dim catTable As DataTable = catDS.Tables("Categories")  
@@ -78,4 +78,4 @@ foreach (DataRowView catDRV in catView)
  <xref:System.Data.DataView>  
  <xref:System.Data.DataRowView>  
  [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -2,107 +2,107 @@
 title: Overview2 zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 4e8d1502096dc452d21158e4fb3684298be9b982
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 18a7496d39cd08e8b340e23c57fcd10dae5ed281
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33361936"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481728"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
-Zabezpečení aplikace je nepřetržitý proces. Nikdy bude bod, kde vývojář může zaručit, že aplikace je bezpečné ze všech útoky, protože není možné předpovědět, jaké druhy budoucím útokům nové technologie povede. Naopak právě, protože nemá nikdo nedostatky zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená žádný existují nebo mohou existovat. Budete muset plánování zabezpečení během fáze návrhu projektu a také naplánovat, jak se zachová zabezpečení během životního cyklu aplikace.  
+Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář může zaručit, že je aplikace bezpečné útoky, protože není možné předpovědět, jaké druhy nové technologie budoucím útokům přinese. Naopak pouze z důvodu nemá nikdo chybám zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená, že žádný neexistuje, nebo může existovat. Budete muset plánování zabezpečení během fáze návrhu projektu, jakož i plánování, jak se zachová zabezpečení během životního cyklu aplikace.  
   
-## <a name="design-for-security"></a>Návrh pro zabezpečení  
- Jeden z největších problémů při vývoji zabezpečení aplikací je, že zabezpečení je často chodím, něco implementovat po dokončení kód projektu. Vytváření není zabezpečení na aplikaci na začátku vede k nezabezpečené aplikace, protože nebyla zadána málo myšlenku kterým je aplikace zabezpečené.  
+## <a name="design-for-security"></a>Návrh pro zajištění zabezpečení  
+ Jeden z největších problémů při vývoji bezpečných aplikací je zabezpečení je často opomíjet něco, co můžete implementovat po dokončení kódu projektu. Není vytváření zabezpečení do aplikace zaměřeným na vede k nezabezpečené aplikace, protože bylo přiděleno trochu přiměje Čím aplikace zabezpečené.  
   
- Implementace zabezpečení poslední minutu vede k více chyb, jako zalomení software v části nová omezení, nebo musí být přepsány tak, aby dokázala pojmout neočekávané funkce. Každý jednotlivý řádek kódu revidovaný obsahuje možnost zavedení nové chyby. Z tohoto důvodu byste měli zvážit zabezpečení již v rané fázi v procesu vývoje, můžete pokračovat v kombinaci s vývojem nových funkcí.  
+ Implementace zabezpečení poslední minutu vede k více chyb, jako konce software v části nová omezení nebo má přepsat tak, aby vyhovovaly neočekávané funkce. Každý jednotlivý řádek upravený kód obsahuje možnost zavlečení nových chyb. Z tohoto důvodu byste měli zvážit zabezpečení v rané fázi vývojového procesu, můžete pokračovat v kombinaci s vývojem nových funkcí.  
   
 ### <a name="threat-modeling"></a>Modelování hrozeb  
- Pokud nerozumíte možných útoků, které je vystaven nelze chránit systém proti útokům. Proces hodnocení bezpečnostní hrozby, nazývá *modelování hrozeb*, je třeba určit pravděpodobnost a následky narušení zabezpečení ve vaší aplikaci ADO.NET.  
+ Systém proti útoku nelze chránit, pokud nerozumíte potenciální útoky, které je přístupný. Proces hodnocení ohrožení zabezpečení, nazývá *modelování hrozeb*, je třeba určit pravděpodobnost, že a důsledky porušením zabezpečení v aplikaci ADO.NET.  
   
- Modelování hrozeb se skládá ze tří kroků: Principy zobrazení nežádoucí osoba, charakterizuje zabezpečení systému a zjišťování hrozeb.  
+ Modelování hrozeb se skládá ze tří kroků: Principy zobrazení nežádoucí osoby, charakterizuje zabezpečení systému a zjištění hrozby.  
   
- Modelování hrozeb je iterativní přístup k vyhodnocování ohrožení zabezpečení ve vaší aplikaci a zjistěte, které jsou nejvíce nebezpečné, protože potenciálně zobrazovat nejcitlivější data. Po identifikování chyb zabezpečení, můžete je zařadit v pořadí podle závažnosti a vytvořit sadu protiopatření pro čítače hrozby seřazený podle priority.  
+ Modelování ohrožení je iteračního postupu pro posouzení ohrožení zabezpečení v aplikaci najít ty, které jsou nejvíce nebezpečné, protože zveřejňovaly nejcitlivější data. Po identifikování chyb zabezpečení Ohodnoťte je podle závažnosti a vytvořit seřazený podle priority sadu protiopatření čítači hrozby.  
   
- Další informace najdete v následujících zdrojích informací.  
-  
-|Prostředek|Popis|  
-|--------------|-----------------|  
-|[Modelování hrozeb](http://go.microsoft.com/fwlink/?LinkId=98353) webu v Centru pro vývojáře MSDN zabezpečení|Prostředky na této stránce vám pomůže pochopit riziko, že proces modelování a vytvářet modely hrozeb, které můžete použít k zabezpečení vaše vlastní aplikace|  
-  
-## <a name="the-principle-of-least-privilege"></a>Princip nejnižších nutných oprávnění  
- Při návrhu, vytvoření a nasazení aplikace, musí předpokládat, že vaše aplikace bude napadení. Tyto útoky často pocházet z škodlivý kód, který se spustí s oprávněními uživatel, který spouští kód. Ostatní můžete pocházejí z úmyslného kód, který má byla zneužití uživatelem se zlými úmysly. Při plánování zabezpečení, vždy předpokládejte, že dojde k nejhorším případě.  
-  
- Jeden protiopatření, které můžete použít se pokusí postavit tolik bariéry kolem kódu nejdříve spuštěním s nejnižší oprávnění. Princip nejnižších nutných oprávnění říká, že všechna oprávnění, která daný udělení minimem kódu, které jsou nezbytné pro nejkratší doba, která je nutný k provedení úlohy.  
-  
- Doporučený postup pro vytváření zabezpečených aplikací má začínat vůbec žádná oprávnění a poté přidejte nejbližší oprávnění pro provedení úkolu během provádění. Naopak počínaje všechna oprávnění a potom odepření jednotlivých ty vede k nezabezpečené aplikace, které je obtížné testování a udržovat, protože celistvosti může existovat z neúmyslnému přidělování větší oprávnění než nezbytné.  
-  
- Další informace o zabezpečení vaší aplikací najdete v následujících zdrojích informací.  
+ Další informace najdete v tématu následující prostředky.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Zabezpečování aplikací](/visualstudio/ide/securing-applications)|Obsahuje odkazy na témata obecné zabezpečení. Obsahuje taky odkazy na témata pro zabezpečení distribuovaných aplikací, webových aplikací, mobilní aplikace a aplikací klasické pracovní plochy.|  
+|[Pro modelování hrozeb](https://go.microsoft.com/fwlink/?LinkId=98353) lokality na Security Center pro vývojáře MSDN|Prostředky na této stránce vám pomůže porozumět před internetovými útoky proces modelování a vytvářet modely hrozeb, které můžete použít k zabezpečení vašich vlastních aplikací|  
+  
+## <a name="the-principle-of-least-privilege"></a>Princip nejnižších oprávnění  
+ Když navrhovat, sestavovat a nasazovat aplikace, musíte předpokládat, že vaše aplikace bude napaden. Tyto útoky často pocházejí od škodlivý kód, který se spustí s oprávněním uživatel, který spouští kód. Ostatní můžou pocházet úmyslného kódem, který má byla ze strany útočníka zneužít. Při plánování zabezpečení, vždy předpokládejte, že že nejhorším případě dojde.  
+  
+ Jeden protiopatření, které můžete použít je pokusit se postavit tolik stěn kolem kódu nejvíce spuštěním s nejnižšími oprávněními. Princip nejnižších oprávnění říká, že všechna oprávnění, která daný udělení minimální množství kódu potřebného pro nejkratší dobu trvání doby potřebné k dosažení.  
+  
+ Osvědčené postupy pro vytváření zabezpečených aplikací má začínat vůbec žádná oprávnění a pak přidejte nejužší oprávnění pro konkrétní úkol právě probíhá. Naopak počínaje všechna oprávnění a pak zamítnutí jednotlivých ty vede k nezabezpečené aplikace, které je obtížné pro testování a udržovat, protože můžou existovat bezpečnostní díry neúmyslně poskytnout větší oprávnění než nezbytné.  
+  
+ Další informace o zabezpečení vašich aplikací najdete v následující prostředky.  
+  
+|Prostředek|Popis|  
+|--------------|-----------------|  
+|[Zabezpečování aplikací](/visualstudio/ide/securing-applications)|Obsahuje odkazy na témata o obecných zabezpečení. Obsahuje taky odkazy na témata pro zabezpečení distribuované aplikace, webové aplikace, mobilní aplikace a desktopové aplikace.|  
   
 ## <a name="code-access-security-cas"></a>Zabezpečení přístupu kódu (CAS)  
- Zabezpečení přístupu kódu (CAS) je mechanismus, který pomáhá omezit přístup k chráněným prostředkům a operace. Certifikační Autority v rozhraní .NET Framework, provádí následující funkce:  
+ Zabezpečení přístupu kódu (CAS) je mechanismus, který pomáhá omezit přístup, který má kód k chráněným prostředkům a operacím. V rozhraní .NET Framework certifikačních Autorit provádí následující funkce:  
   
 -   Definuje oprávnění a sady oprávnění, které představují práva pro přístup k různým prostředkům systému.  
   
--   Umožňuje správci nakonfigurovat zásady zabezpečení tím, že přidružíte sady oprávnění se skupinami kódu (skupiny kódu).  
+-   Umožňuje správcům konfigurovat zásady zabezpečení tím, že přidružíte sady oprávnění se skupinami kódu (skupiny kódu).  
   
--   Umožňuje kód požádat o oprávnění vyžaduje, aby bylo možné spustit, jakož i oprávnění, které by byly užitečné používat a určuje, jaká oprávnění kód musí mít nikdy.  
+-   Umožňuje kódu požádat o oprávnění vyžaduje, aby bylo možné spustit, jakož i oprávnění, která může být užitečné mít a určuje, jaká oprávnění kód musí mít nikdy.  
   
--   Uděluje oprávnění pro každé sestavení, které je načtena, na základě oprávnění požadovaná tímto kódem a na operace povolené zásady zabezpečení.  
+-   Uděluje oprávnění ke každému sestavení, který je načten, na základě oprávnění požadovaná tímto kódem a na operace povolena zásadami zabezpečení.  
   
--   Umožňuje kódu požadovat, aby jeho volající mít specifické oprávnění.  
+-   Umožňuje poptávku, že jeho volající nemá oprávnění kódu.  
   
--   Umožňuje kódu požadovat, jeho volající měl digitální podpis, což umožňuje volání chráněného kódu pouze volajícím z určité organizace nebo webu.  
+-   Umožňuje kódu na vyžádání, že jeho volající nemá digitální podpis, což umožní volat chráněné kód pouze volající z konkrétní organizace nebo webu.  
   
--   Porovnání udělená oprávnění každého volajícího v zásobníku volání oprávnění, které volající musí mít vynucuje omezení kódu v době běhu.  
+-   Vynucuje omezení kódu v době běhu porovnáním udělená oprávnění každý volající v zásobníku volání, které volající musí mít oprávnění.  
   
- Chcete-li minimalizovat objem škody, které může dojít, pokud se podaří útoku, zvolte kontext zabezpečení pro váš kód, který uděluje přístup pouze k prostředkům, musí ke své práci Hotovo a žádné další.  
+ Chcete-li minimalizovat množství škody, které může dojít, pokud útok úspěšně, zvolte kontext zabezpečení pro kód, který uděluje přístup jenom na prostředky, které potřebuje ke své práci Hotovo a nesmí mít víc.  
   
- Další informace najdete v následujících zdrojích informací.  
+ Další informace najdete v tématu následující prostředky.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Zabezpečení přístupu ke kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|Popisuje interakce mezi zabezpečení přístupu kódu, na základě rolí zabezpečení a částečně důvěryhodného prostředí z hlediska aplikace ADO.NET.|  
-|[Zabezpečení přístupu kódu](http://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)|Obsahuje odkazy na další témata s popisem certifikační Autority v rozhraní .NET Framework.|  
+|[Zabezpečení přístupu ke kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|Najdete popis interakcí mezi zabezpečení přístupu kódu, na základě rolí zabezpečení a částečně důvěryhodného prostředí z hlediska aplikaci ADO.NET.|  
+|[Zabezpečení přístupu kódu](https://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)|Obsahuje odkazy na další témata popisující certifikační Autority v rozhraní .NET Framework.|  
   
 ## <a name="database-security"></a>Zabezpečení databáze  
- Princip nejnižších nutných oprávnění platí také pro zdroj dat. Některé obecné pokyny pro zabezpečení databáze patří:  
+ Princip nejnižších oprávnění platí také pro zdroj dat. Některé obecné pokyny pro zabezpečení databáze patří:  
   
--   Vytvořte účty s nejnižšími možnými oprávněními.  
+-   Vytvoření účtů s nejnižší možná oprávnění.  
   
--   Nepovolte uživatelům přístup k účty pro správu jenom k začít pracovat kódu.  
+-   Nepovolte uživatelům přístup k účtům správců jen k získání kódu.  
   
--   Nevrátí serverové chybové zprávy pro klientské aplikace.  
+-   Nevkládejte do klientské aplikace na straně serveru chybové zprávy.  
   
--   Ověřte všechny vstupu v klientovi i na serveru.  
+-   Ověřte všechny vstupy u klienta a serveru.  
   
--   Použít parametrizované příkazy a vyhnout se dynamických příkazů SQL.  
+-   Používat příkazy s parametry a vyhnout se dynamické příkazů jazyka SQL.  
   
--   Povolte zabezpečení, auditování a protokolování pro databázi, kterou používáte tak, aby upozorní na jakékoli porušení zabezpečení.  
+-   Povolte zabezpečení, auditování a protokolování pro databáze, kterou používáte tak, aby se zobrazí upozornění na jakékoli porušením zabezpečení.  
   
- Další informace najdete v následujících zdrojích informací.  
-  
-|Prostředek|Popis|  
-|--------------|-----------------|  
-|[SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|Poskytuje přehled zabezpečení systému SQL Server s aplikačními scénáři, které obsahují pokyny pro vytváření aplikací pro zabezpečené ADO.NET cílených systému SQL Server.|  
-|[Doporučení pro strategií přístupu dat](http://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
-  
-## <a name="security-policy-and-administration"></a>Zásady zabezpečení a správy  
- Nesprávná Správa zásady (CAS) zabezpečení přístupu kódu může potenciálně vytvořit slabá místa zabezpečení. Jakmile je aplikace nasazena, by měl použít techniky pro monitorování zabezpečení a rizika vyhodnoceny jako nové hrozby vznikat.  
-  
- Další informace najdete v následujících zdrojích informací.  
+ Další informace najdete v tématu následující prostředky.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[NIB: Správa zásad zabezpečení](http://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|Obsahuje informace o vytváření a správu zásad zabezpečení.|  
-|[NIB: Osvědčené postupy pro zásady zabezpečení](http://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|Obsahuje odkazy popisující, jak spravovat zásady zabezpečení.|  
+|[SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)|Poskytuje přehled zabezpečení systému SQL Server s aplikačními scénáři, které poskytují pokyny pro vytváření zabezpečených aplikací ADO.NET, které cílí na systém SQL Server.|  
+|[Doporučení pro strategií přístupu dat](https://msdn.microsoft.com/library/72411f32-d12a-4de8-b961-e54fca7faaf5)|Poskytuje doporučení pro přístup k datům a provádění databázových operací.|  
+  
+## <a name="security-policy-and-administration"></a>Zásady zabezpečení a Správa  
+ Nesprávně správu zásad zabezpečení (CAS) pro přístup kód by mohl vytvořit slabé stránky zabezpečení. Jakmile je aplikace nasazená, se má použít techniky pro monitorování zabezpečení a tom rizika vyhodnotí jako nové hrozby.  
+  
+ Další informace najdete v tématu následující prostředky.  
+  
+|Prostředek|Popis|  
+|--------------|-----------------|  
+|[NIB: Správa zásad zabezpečení](https://msdn.microsoft.com/library/d754e05d-29dc-4d3a-a2c2-95eaaf1b82b9)|Obsahuje informace o vytváření a správě zásad zabezpečení.|  
+|[NIB: Osvědčené postupy pro zásady zabezpečení](https://msdn.microsoft.com/library/d49bc4d5-efb7-4caa-a2fe-e4d3cec63c05)|Obsahuje odkazy, které popisují, jak spravovat zásady zabezpečení.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [Připravte si kód pro rozhraní .NET Framework a zabezpečení v nativním režimu](http://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
+ [PAVE zabezpečení v nativním a kódu rozhraní .NET Framework](https://msdn.microsoft.com/library/bd61be84-c143-409a-a75a-44253724f784)  
  [SQL Server – zabezpečení](../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

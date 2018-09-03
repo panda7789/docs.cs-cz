@@ -8,96 +8,96 @@ ms.assetid: c2caaf45-e59c-42a1-bc9b-77a6de520171
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 3e700e7e726b5cb71d3b7d863bdb31951aacd885
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9994f6a3026c790acdb35af3300379786f615607
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399199"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43481981"
 ---
 # <a name="obtaining-ui-automation-elements"></a>Získání elementů automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma popisuje různé způsoby, kterými se dá získat <xref:System.Windows.Automation.AutomationElement> objekty pro [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy.  
+ Toto téma popisuje různé způsoby, jak se dá získat <xref:System.Windows.Automation.AutomationElement> objekty pro [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy.  
   
 > [!CAUTION]
->  Pokud klientské aplikace může pokus o vyhledání elementy v jeho vlastní uživatelské rozhraní, musíte udělat všechny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] volání na samostatné vlákno. Další informace najdete v tématu [problémy dělení na vlákna automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
+>  Pokud vaše klientská aplikace může pokusí vyhledat prvky ve své vlastní uživatelské rozhraní, musíte udělat všechny [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] volá na samostatném vlákně. Další informace najdete v tématu [problémy dělení na vlákna uživatelského rozhraní automatizace](../../../docs/framework/ui-automation/ui-automation-threading-issues.md).  
   
 <a name="The_Root_Element"></a>   
 ## <a name="root-element"></a>Kořenový Element  
- Vyhledá všechny <xref:System.Windows.Automation.AutomationElement> objekty musí mít od místní. Může to být libovolný element, včetně plochy, okna aplikace nebo ovládacího prvku.  
+ Všechna vyhledávání <xref:System.Windows.Automation.AutomationElement> objekty musí mít počáteční místě. To může být libovolný element, včetně plochy, okna aplikace nebo ovládacího prvku.  
   
- Kořenový element pro stolní počítače, ve kterém jsou všechny elementy který, se získávají z statických <xref:System.Windows.Automation.AutomationElement.RootElement%2A?displayProperty=nameWithType> vlastnost.  
+ Kořenový element pro stolní počítače, ze kterého jsou všechny prvky umístění, se získávají z statické <xref:System.Windows.Automation.AutomationElement.RootElement%2A?displayProperty=nameWithType> vlastnost.  
   
 > [!CAUTION]
->  Obecně platí, že byste měli zkusit získat jen přímé podřízené objekty daného <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Vyhledejte následníky může iterovat stovky nebo dokonce tisíce elementy, což může způsobit k přetečení zásobníku. Pokud se pokoušíte získat konkrétní element na nižší úrovni, měli byste začít vyhledávání z okna aplikace nebo z kontejneru na nižší úrovni.  
+>  Obecně platí, pokuste se získat jen přímé podřízené objekty daného <xref:System.Windows.Automation.AutomationElement.RootElement%2A>. Vyhledání potomků může iterovat stovky nebo i tisíce elementů, což může vést k přetečení zásobníku. Pokud se pokoušíte získat konkrétní elementu na nižší úrovni, měli byste začít hledání v okně aplikace nebo z kontejneru na nižší úrovni.  
   
 <a name="Using_Conditions"></a>   
 ## <a name="conditions"></a>Podmínky  
- Pro většinu techniky, kterou můžete použít k načtení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementy, je nutné zadat <xref:System.Windows.Automation.Condition>, což je sada kritérií definování přizpůsobitelné prvky, které chcete načíst.  
+ Pro většinu techniky slouží k načtení [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] prvků, je nutné zadat <xref:System.Windows.Automation.Condition>, což je sada kritérií definování jaké prvky, které chcete načíst.  
   
- Nejjednodušší podmínka je <xref:System.Windows.Automation.Condition.TrueCondition>, objekt předdefinované určující, zda mají být vráceny všechny elementy v rámci oboru vyhledávání. <xref:System.Windows.Automation.Condition.FalseCondition>, konverzace z <xref:System.Windows.Automation.Condition.TrueCondition>, je méně užitečné, protože ho by bránily všechny elementy jsou zjištěny.  
+ Nejjednodušší podmínka je <xref:System.Windows.Automation.Condition.TrueCondition>, předdefinovaný objekt určující, zda mají být vráceny všechny prvky v rámci rozsahu vyhledávání. <xref:System.Windows.Automation.Condition.FalseCondition>, první z <xref:System.Windows.Automation.Condition.TrueCondition>, je méně vhodné, protože to by jinak znemožňovaly všechny prvky z jsou zjištěny.  
   
- Tři předem definované podmínky může být použito samostatně nebo v kombinaci s jinými podmínkami: <xref:System.Windows.Automation.Automation.ContentViewCondition>, <xref:System.Windows.Automation.Automation.ControlViewCondition>, a <xref:System.Windows.Automation.Automation.RawViewCondition>. <xref:System.Windows.Automation.Automation.RawViewCondition>, použitý samostatně, je ekvivalentní <xref:System.Windows.Automation.Condition.TrueCondition>, protože nefiltruje elementy podle jejich <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsControlElement%2A> nebo <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A> vlastnosti.  
+ Tři předdefinované podmínky můžete použít samostatně nebo v kombinaci s další podmínky: <xref:System.Windows.Automation.Automation.ContentViewCondition>, <xref:System.Windows.Automation.Automation.ControlViewCondition>, a <xref:System.Windows.Automation.Automation.RawViewCondition>. <xref:System.Windows.Automation.Automation.RawViewCondition>, použitý samostatně, je ekvivalentní <xref:System.Windows.Automation.Condition.TrueCondition>, protože nefiltruje elementy podle jejich <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsControlElement%2A> nebo <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A> vlastnosti.  
   
- Další podmínky sestavují z jedné nebo více <xref:System.Windows.Automation.PropertyCondition> objektů, z nichž každý Určuje hodnotu vlastnosti. Například <xref:System.Windows.Automation.PropertyCondition> může určit, že je povoleno element nebo že podporuje určité – vzor ovládacích prvků.  
+ Další podmínky jsou sestaveny z jedné nebo více <xref:System.Windows.Automation.PropertyCondition> objektů, z nichž každý Určuje hodnotu vlastnosti. Například <xref:System.Windows.Automation.PropertyCondition> může určit, že je povoleno elementu nebo že podporuje určité vzoru ovládacích prvků.  
   
- Podmínky lze spojovat pomocí vytváření objektů typu Boolean logiku <xref:System.Windows.Automation.AndCondition>, <xref:System.Windows.Automation.OrCondition>, a <xref:System.Windows.Automation.NotCondition>.  
+ Podmínky lze kombinovat pomocí logické tak, že vytváří objekty typů <xref:System.Windows.Automation.AndCondition>, <xref:System.Windows.Automation.OrCondition>, a <xref:System.Windows.Automation.NotCondition>.  
   
 <a name="Search_Scope"></a>   
 ## <a name="search-scope"></a>Obor vyhledávání  
- Vyhledávání pomocí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A> musí mít obor, jakož i spouštění místní.  
+ Vyhledávání pomocí provádí <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> nebo <xref:System.Windows.Automation.AutomationElement.FindAll%2A> musí mít v oboru, jakož i od místa.  
   
- Obor definuje prostor kolem spuštění místní, které má být prohledán. To může obsahovat elementu samotného, uzly na stejné úrovni, jeho nadřazený objekt, jeho předchůdců, jeho přímé podřízené objekty a jeho následníky.  
+ Obor definuje prostor kolem spuštění místní, který má být prohledán. To může zahrnovat elementu samotného, na stejné úrovni, svého nadřazeného objektu, jeho předchůdce, její přímé podřízené objekty a jejích potomků.  
   
- Obor vyhledávání je definována bitovou kombinaci hodnot z <xref:System.Windows.Automation.TreeScope> výčtu.  
+ Bitová kombinace hodnot z je definován obor hledání <xref:System.Windows.Automation.TreeScope> výčtu.  
   
 <a name="Finding_a_Known_Element"></a>   
 ## <a name="finding-a-known-element"></a>Hledání známých Element  
- K hledání známých prvku identifikovaný jeho <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>, <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>, nebo jinou vlastností nebo kombinaci vlastností, je to nejjednodušší provádět používat <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> metoda. Pokud je element žádá o okna aplikace, může být výchozího bodu hledání <xref:System.Windows.Automation.AutomationElement.RootElement%2A>.  
+ K vyhledání známý prvek identifikován jeho <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Name%2A>, <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.AutomationId%2A>, nebo některé jiné vlastnosti nebo kombinaci těchto vlastností je nejjednodušší použití <xref:System.Windows.Automation.AutomationElement.FindFirst%2A> metoda. Pokud je element žádá o okně aplikace, může být výchozího bodu hledání <xref:System.Windows.Automation.AutomationElement.RootElement%2A>.  
   
- Tímto způsobem hledání [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementy je velmi užitečné v situacích automatizované testování.  
+ Tímto způsobem hledání [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] elementů je nejužitečnější v automatizovaných testovacích scénářů.  
   
 <a name="Finding_Elements_in_a_Subtree"></a>   
-## <a name="finding-elements-in-a-subtree"></a>Vyhledávání elementů v podstrom  
- Chcete-li najít všechny elementy schůzku určitá kritéria, které se vztahují k prvku známé, můžete použít <xref:System.Windows.Automation.AutomationElement.FindAll%2A>. Můžete například použít tuto metodu můžete načíst položky seznamu nebo položky nabídky ze seznamu nebo nabídky, nebo zjistit všechny ovládací prvky v dialogovém okně.  
+## <a name="finding-elements-in-a-subtree"></a>Hledání elementů v podstrom  
+ Pokud chcete najít všechny prvky schůzky určitá kritéria, které se týkají známý prvek, můžete použít <xref:System.Windows.Automation.AutomationElement.FindAll%2A>. Například můžete použít tuto metodu pro načtení seznamu položky nebo položek nabídky ze seznamu nebo v nabídce, nebo k identifikaci všech ovládacích prvků v dialogovém okně.  
   
 <a name="Walking_a_Subtree"></a>   
-## <a name="walking-a-subtree"></a>Proti podstrom  
- Pokud nemáte žádné předchozí znalosti z aplikací, které lze použít s vašeho klienta, můžete vytvořit podstrom všech elementů vás zajímají pomocí <xref:System.Windows.Automation.TreeWalker> třídy. Aplikace se může provést v reakci na událost o změně fokus; To znamená když aplikace nebo ovládací prvek obdrží zaměření pro vstup, prověří automatizace uživatelského rozhraní klienta, děti a případně všech potomků cílených elementu.  
+## <a name="walking-a-subtree"></a>Procházení podstrom  
+ Pokud nemáte žádné předchozí znalosti, které váš klient může být použit s aplikací, musíte postavit podstrom všechny prvky pomocí <xref:System.Windows.Automation.TreeWalker> třídy. Vaše aplikace se může provést v reakci na událost změnit fokus; To znamená když aplikace nebo ovládacího prvku nastaven vstupní fokus, automatizace uživatelského rozhraní klienta prozkoumá děti a možná všechny následníky elementu zaměřené.  
   
- Dalším způsobem, ve kterém <xref:System.Windows.Automation.TreeWalker> lze je identifikovat nadřazených elementu. Můžete například rámci nahoru k identifikovat nadřazené okno ovládacího prvku.  
+ Jiný způsob, jakým <xref:System.Windows.Automation.TreeWalker> je možné identifikovat předchůdce prvku. Například můžete procházením směrem nahoru identifikovat nadřazené okno ovládacího prvku.  
   
- Můžete použít <xref:System.Windows.Automation.TreeWalker> buď tak, že vytvoříte objekt třídy (definování elementů vás zajímají předáním <xref:System.Windows.Automation.Condition>), nebo pomocí jedné z těchto předdefinovaných objektů, které jsou definovány jako pole <xref:System.Windows.Automation.TreeWalker>.  
+ Můžete použít <xref:System.Windows.Automation.TreeWalker> buď tak, že vytvoříte objekt třídy (definováním prvků, které vás zajímají předáním <xref:System.Windows.Automation.Condition>), nebo pomocí jedné z těchto předdefinovaných objektů, které se definují jako pole <xref:System.Windows.Automation.TreeWalker>.  
   
 |||  
 |-|-|  
-|<xref:System.Windows.Automation.TreeWalker.ContentViewWalker>|Vyhledá pouze elementy, jejichž <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A> vlastnost je `true`.|  
-|<xref:System.Windows.Automation.TreeWalker.ControlViewWalker>|Vyhledá pouze elementy, jejichž <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsControlElement%2A> vlastnost je `true`.|  
+|<xref:System.Windows.Automation.TreeWalker.ContentViewWalker>|Vyhledá pouze elementy jehož <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A> vlastnost `true`.|  
+|<xref:System.Windows.Automation.TreeWalker.ControlViewWalker>|Vyhledá pouze elementy jehož <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsControlElement%2A> vlastnost `true`.|  
 |<xref:System.Windows.Automation.TreeWalker.RawViewWalker>|Vyhledá všechny elementy.|  
   
- Po získání <xref:System.Windows.Automation.TreeWalker>, jeho použití je jednoduché. Jednoduše volání `Get` metody pro pohyb mezi elementy podstrom.  
+ Po získání <xref:System.Windows.Automation.TreeWalker>, jeho použití je jednoduché. Jednoduše zavoláte `Get` metody k navigaci mezi elementy podstrom.  
   
- <xref:System.Windows.Automation.TreeWalker.Normalize%2A> Metodu lze použít pro navigaci na element v podstromě z jiný element, který není součástí zobrazení. Předpokládejme například, že jste vytvořili zobrazení podstrom pomocí <xref:System.Windows.Automation.TreeWalker.ContentViewWalker>. Aplikace pak obdrží oznámení, že posuvník přijal zaměření pro vstup. Protože posuvníku není element obsahu, není přítomen v zobrazení podstrom. Však můžete předat <xref:System.Windows.Automation.AutomationElement> představující posuvníku <xref:System.Windows.Automation.TreeWalker.Normalize%2A> a načtení nejbližším podřízeném objektu, který je v zobrazení obsahu.  
+ <xref:System.Windows.Automation.TreeWalker.Normalize%2A> Metodu lze použít pro přechod na prvek v připojeném podstromu z jiného elementu, který není součástí zobrazení. Předpokládejme například, že vytvoříte zobrazení podstrom pomocí <xref:System.Windows.Automation.TreeWalker.ContentViewWalker>. Aplikace pak obdrží oznámení, že posuvník přijal zaměření pro vstup. Vzhledem k tomu, že posuvník není content element, není k dispozici v zobrazení podstrom. Můžete však předat <xref:System.Windows.Automation.AutomationElement> představující posuvník pro <xref:System.Windows.Automation.TreeWalker.Normalize%2A> a načíst nejbližším podřízeném objektu, který je v zobrazení obsahu.  
   
 <a name="Other_Ways_to_Retrieve_an_Element"></a>   
-## <a name="other-ways-to-retrieve-an-element"></a>Další způsoby, jak načíst elementu  
- Kromě hledání a navigace, můžete načíst <xref:System.Windows.Automation.AutomationElement> následujícím způsobem.  
+## <a name="other-ways-to-retrieve-an-element"></a>Další možnosti, jak načíst prvek  
+ Kromě hledání a navigaci, můžete načíst <xref:System.Windows.Automation.AutomationElement> následujícími způsoby.  
   
 ### <a name="from-an-event"></a>Z události  
- Pokud vaše aplikace přijímá [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událost, je zdrojový objekt předaný vaší obslužné rutiny událostí <xref:System.Windows.Automation.AutomationElement>. Například pokud jste přihlášení k odběru události změny fokus, zdroj předaný vaší <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> je elementu, který fokus.  
+ Když aplikace obdrží [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] událostí, je zdrojový objekt předaný obslužné rutině události <xref:System.Windows.Automation.AutomationElement>. Například pokud se přihlášení k odběru události změny fokus, zdroj předán vaší <xref:System.Windows.Automation.AutomationFocusChangedEventHandler> je prvek, který přijal fokus.  
   
- Další informace najdete v tématu [přihlásit k odběru událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md).  
+ Další informace najdete v tématu [přihlášení k odběru událostí automatizace uživatelského rozhraní](../../../docs/framework/ui-automation/subscribe-to-ui-automation-events.md).  
   
 ### <a name="from-a-point"></a>Z bodu  
- Pokud máte souřadnice obrazovky (například pozice kurzoru), můžete načíst <xref:System.Windows.Automation.AutomationElement> pomocí statické <xref:System.Windows.Automation.AutomationElement.FromPoint%2A> metoda.  
+ Pokud máte souřadnice obrazovky (například pozice kurzoru), můžete načíst <xref:System.Windows.Automation.AutomationElement> pomocí statické <xref:System.Windows.Automation.AutomationElement.FromPoint%2A> metody.  
   
 ### <a name="from-a-window-handle"></a>Z popisovač okna  
- Načtení <xref:System.Windows.Automation.AutomationElement> popisovačem HWND používat statickou <xref:System.Windows.Automation.AutomationElement.FromHandle%2A> metoda.  
+ K načtení <xref:System.Windows.Automation.AutomationElement> od HWND, použít statické <xref:System.Windows.Automation.AutomationElement.FromHandle%2A> metody.  
   
-### <a name="from-the-focused-control"></a>Z ovládacího prvku s fokusem  
- Můžete načíst <xref:System.Windows.Automation.AutomationElement> představující cílených ovládací prvek z statických <xref:System.Windows.Automation.AutomationElement.FocusedElement%2A> vlastnost.  
+### <a name="from-the-focused-control"></a>Z ovládacího prvku fokusem  
+ Můžete načíst <xref:System.Windows.Automation.AutomationElement> cílené ovládací prvek, který představuje ze statické <xref:System.Windows.Automation.AutomationElement.FocusedElement%2A> vlastnost.  
   
 ## <a name="see-also"></a>Viz také  
  [Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost](../../../docs/framework/ui-automation/find-a-ui-automation-element-based-on-a-property-condition.md)  
