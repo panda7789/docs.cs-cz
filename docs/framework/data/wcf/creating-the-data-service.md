@@ -1,106 +1,106 @@
 ---
-title: Vytváření datové služby
-ms.date: 03/30/2017
+title: Vytvoření datové služby WCF v sadě Visual Studio
+ms.date: 08/24/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: bb6e2f7c1160fa51cd897cc953ad0ed721559294
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7ab227a19eeb9bf054700f8d932b75cf3c1ddc9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33362833"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417824"
 ---
-# <a name="creating-the-data-service"></a><span data-ttu-id="c352d-102">Vytváření datové služby</span><span class="sxs-lookup"><span data-stu-id="c352d-102">Creating the Data Service</span></span>
-<span data-ttu-id="c352d-103">V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vystavit [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, který je založen na ukázková databáze Northwind.</span><span class="sxs-lookup"><span data-stu-id="c352d-103">In this task, you will create a sample data service that uses [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] to expose an [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feed that is based on the Northwind sample database.</span></span> <span data-ttu-id="c352d-104">Úloha zahrnuje následující základní kroky:</span><span class="sxs-lookup"><span data-stu-id="c352d-104">The task involves the following basic steps:</span></span>  
-  
-1.  <span data-ttu-id="c352d-105">Vytvoření [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="c352d-105">Create an [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web application.</span></span>  
-  
-2.  <span data-ttu-id="c352d-106">Definují model dat pomocí [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje.</span><span class="sxs-lookup"><span data-stu-id="c352d-106">Define the data model by using the [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] tools.</span></span>  
-  
-3.  <span data-ttu-id="c352d-107">Přidáte službu data do webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="c352d-107">Add the data service to the Web application.</span></span>  
-  
-4.  <span data-ttu-id="c352d-108">Povolte přístup ke službě data.</span><span class="sxs-lookup"><span data-stu-id="c352d-108">Enable access to the data service.</span></span>  
-  
-> [!NOTE]
->  <span data-ttu-id="c352d-109">[!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Spuštění webové aplikace, který vytvoříte po dokončení této úlohy [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server poskytované sadě Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c352d-109">The [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web application that you create when you complete this task runs on the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Development Server provided by Visual Studio.</span></span> [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)]<span data-ttu-id="c352d-110"> Vývojový Server podporuje pouze přístup z místního počítače.</span><span class="sxs-lookup"><span data-stu-id="c352d-110"> Development Server only supports access from the local computer.</span></span> <span data-ttu-id="c352d-111">Chcete-li také usnadňují testování a řešení potíží s službu data během vývoje, zvažte spuštění aplikace, který je hostitelem služby data pomocí Internetové informační služby (IIS).</span><span class="sxs-lookup"><span data-stu-id="c352d-111">To also make it easier to test and troubleshoot the data service during development, consider running the application that hosts the data service by using Internet Information Services (IIS).</span></span> <span data-ttu-id="c352d-112">Další informace najdete v tématu [postup: vývoj WCF Data Service spuštěna ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).</span><span class="sxs-lookup"><span data-stu-id="c352d-112">For more information, see [How to: Develop a WCF Data Service Running on IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).</span></span>  
-  
-### <a name="to-create-the-aspnet-web-application"></a><span data-ttu-id="c352d-113">K vytvoření aplikace technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="c352d-113">To create the ASP.NET Web application</span></span>  
-  
-1.  <span data-ttu-id="c352d-114">V sadě Visual Studio na **soubor** nabídce vyberte možnost **nový**a potom vyberte **projektu**.</span><span class="sxs-lookup"><span data-stu-id="c352d-114">In Visual Studio, on the **File** menu, select **New**, and then select **Project**.</span></span>  
-  
-2.  <span data-ttu-id="c352d-115">V **nový projekt** dialogové okno, v části jazyka Visual Basic a Visual C# vyberte **webové** šablony a potom vyberte **webové aplikace ASP.NET**.</span><span class="sxs-lookup"><span data-stu-id="c352d-115">In the **New Project** dialog box, under either Visual Basic or Visual C# select the **Web** template, and then select **ASP.NET Web Application**.</span></span>  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="c352d-116">Pokud používáte Visual Studio Web Developer, musíte vytvořit nový web místo novou webovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="c352d-116">If you use Visual Studio Web Developer, you must create a new Web site instead of a new Web application.</span></span>  
-  
-3.  <span data-ttu-id="c352d-117">Typ `NorthwindService` jako název projektu.</span><span class="sxs-lookup"><span data-stu-id="c352d-117">Type `NorthwindService` as the name of the project.</span></span>  
-  
-4.  <span data-ttu-id="c352d-118">Click **OK**.</span><span class="sxs-lookup"><span data-stu-id="c352d-118">Click **OK**.</span></span>  
-  
-5.  <span data-ttu-id="c352d-119">(Volitelné) Zadejte číslo portu specifické pro vaši webovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="c352d-119">(Optional) Specify a specific port number for your Web application.</span></span> <span data-ttu-id="c352d-120">Poznámka: číslo portu `12345` se používá ve zbývající části rychlý start.</span><span class="sxs-lookup"><span data-stu-id="c352d-120">Note: the port number `12345` is used in the rest of the quickstart.</span></span>  
-  
-    1.  <span data-ttu-id="c352d-121">V **Průzkumníku řešení**, klikněte pravým tlačítkem [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu, že jste právě vytvořili a potom klikněte na **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="c352d-121">In **Solution Explorer**, right-click the name of the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] project that you just created, and then click **Properties**.</span></span>  
-  
-    2.  <span data-ttu-id="c352d-122">Vyberte **webové** kartě a nastavte hodnotu **specifického portu** textové pole k `12345`.</span><span class="sxs-lookup"><span data-stu-id="c352d-122">Select the **Web** tab, and set the value of the **Specific port** text box to `12345`.</span></span>  
-  
-### <a name="to-define-the-data-model"></a><span data-ttu-id="c352d-123">Chcete-li definovat datový model</span><span class="sxs-lookup"><span data-stu-id="c352d-123">To define the data model</span></span>  
-  
-1.  <span data-ttu-id="c352d-124">V **Průzkumníku řešení**, klikněte pravým tlačítkem [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu a pak klikněte na tlačítko **přidat novou položku.**</span><span class="sxs-lookup"><span data-stu-id="c352d-124">In **Solution Explorer**, right-click the name of the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] project, and then click **Add New Item.**</span></span>  
-  
-2.  <span data-ttu-id="c352d-125">V **přidat novou položku** dialogové okno, klikněte **Data** šablony a potom vyberte **ADO.NET Entity Data Model**.</span><span class="sxs-lookup"><span data-stu-id="c352d-125">In the **Add New Item** dialog box, click the **Data** template and then select **ADO.NET Entity Data Model**.</span></span>  
-  
-3.  <span data-ttu-id="c352d-126">Zadejte název datového modelu, `Northwind.edmx`.</span><span class="sxs-lookup"><span data-stu-id="c352d-126">For the name of the data model, type `Northwind.edmx`.</span></span>  
-  
-4.  <span data-ttu-id="c352d-127">V [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] průvodce vyberte **generování z databáze**a potom klikněte na **Další**.</span><span class="sxs-lookup"><span data-stu-id="c352d-127">In the [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] Wizard, select **Generate from Database**, and then click **Next**.</span></span>  
-  
-5.  <span data-ttu-id="c352d-128">Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na **Další**:</span><span class="sxs-lookup"><span data-stu-id="c352d-128">Connect the data model to the database by doing one of the following steps, and then click **Next**:</span></span>  
-  
-    -   <span data-ttu-id="c352d-129">Pokud jste připojení k databázi již nakonfigurována, klikněte na tlačítko **nové připojení** a vytvořit nové připojení.</span><span class="sxs-lookup"><span data-stu-id="c352d-129">If you do not have a database connection already configured, click **New Connection** and create a new connection.</span></span> <span data-ttu-id="c352d-130">Další informace najdete v tématu [postupy: vytvoření připojení databáze serveru SQL Server](http://go.microsoft.com/fwlink/?LinkId=123631).</span><span class="sxs-lookup"><span data-stu-id="c352d-130">For more information, see [How to: Create Connections to SQL Server Databases](http://go.microsoft.com/fwlink/?LinkId=123631).</span></span> <span data-ttu-id="c352d-131">Tato instance systému SQL Server musí mít ukázková databáze Northwind připojen.</span><span class="sxs-lookup"><span data-stu-id="c352d-131">This SQL Server instance must have the Northwind sample database attached.</span></span>  
-  
-         <span data-ttu-id="c352d-132">\- nebo –</span><span class="sxs-lookup"><span data-stu-id="c352d-132">\- or -</span></span>  
-  
-    -   <span data-ttu-id="c352d-133">Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte ze seznamu připojení toto připojení.</span><span class="sxs-lookup"><span data-stu-id="c352d-133">If you have a database connection already configured to connect to the Northwind database, select that connection from the list of connections.</span></span>  
-  
-6.  <span data-ttu-id="c352d-134">Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políčka pro zobrazení a uložených procedur.</span><span class="sxs-lookup"><span data-stu-id="c352d-134">On the final page of the wizard, select the check boxes for all tables in the database, and clear the check boxes for views and stored procedures.</span></span>  
-  
-7.  <span data-ttu-id="c352d-135">Klikněte na tlačítko **Dokončit** zavřete průvodce.</span><span class="sxs-lookup"><span data-stu-id="c352d-135">Click **Finish** to close the wizard.</span></span>  
-  
-    > [!NOTE]
-    >  <span data-ttu-id="c352d-136">Tento model generované datové zpřístupní vlastnosti cizího klíče v typech entit.</span><span class="sxs-lookup"><span data-stu-id="c352d-136">This generated data model exposes foreign key properties on entity types.</span></span> <span data-ttu-id="c352d-137">Datové modely, které jsou vytvořené pomocí sady Visual Studio 2008 nezahrnují tyto vlastnosti cizího klíče.</span><span class="sxs-lookup"><span data-stu-id="c352d-137">Data models created using Visual Studio 2008 do not include these foreign key properties.</span></span> <span data-ttu-id="c352d-138">Z toho důvodu je třeba aktualizovat třídy klienta služby data všech klientských aplikací, které byly vytvořeny pro přístup ke službě Northwind data, která byla vytvořena pomocí sady Visual Studio 2008 před pokusem o přístup k této verzi datové služby Northwind.</span><span class="sxs-lookup"><span data-stu-id="c352d-138">Because of this, you must update the client data service classes of any client applications that were created to access the Northwind data service that was created using Visual Studio 2008 before attempting to access this version of the Northwind data service.</span></span>  
-  
-### <a name="to-create-the-data-service"></a><span data-ttu-id="c352d-139">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="c352d-139">To create the data service</span></span>  
-  
-1.  <span data-ttu-id="c352d-140">V **Průzkumníku řešení**, klikněte pravým tlačítkem na název vaší [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu a pak klikněte na **přidat novou položku**.</span><span class="sxs-lookup"><span data-stu-id="c352d-140">In **Solution Explorer**, right-click the name of your [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] project, and then click **Add New Item**.</span></span>  
-  
-2.  <span data-ttu-id="c352d-141">V **přidat novou položku** dialogové okno, vyberte **služby WCF Data Service**.</span><span class="sxs-lookup"><span data-stu-id="c352d-141">In the **Add New Item** dialog box, select **WCF Data Service**.</span></span>  
-  
-3.  <span data-ttu-id="c352d-142">Název služby, zadejte `Northwind`.</span><span class="sxs-lookup"><span data-stu-id="c352d-142">For the name of the service, type `Northwind`.</span></span>  
-  
-     <span data-ttu-id="c352d-143">Visual StudioVisual Studio vytvoří soubory značek a kódu XML pro novou službu.</span><span class="sxs-lookup"><span data-stu-id="c352d-143">Visual StudioVisual Studio creates the XML markup and code files for the new service.</span></span> <span data-ttu-id="c352d-144">Ve výchozím nastavení otevře se okno editoru kódu.</span><span class="sxs-lookup"><span data-stu-id="c352d-144">By default, the code-editor window opens.</span></span> <span data-ttu-id="c352d-145">V **Průzkumníku**, služba bude mít název, Northwind, s příponou. svc.cs nebo. svc.vb.</span><span class="sxs-lookup"><span data-stu-id="c352d-145">In **Solution Explorer**, the service will have the name, Northwind, with the extension .svc.cs or .svc.vb.</span></span>  
-  
-4.  <span data-ttu-id="c352d-146">V kódu pro službu data, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje službu data s typem, který je kontejneru entit datového modelu, který v tomto případě je `NorthwindEntities`.</span><span class="sxs-lookup"><span data-stu-id="c352d-146">In the code for the data service, replace the comment `/* TODO: put your data source class name here */` in the definition of the class that defines the data service with the type that is the entity container of the data model, which in this case is `NorthwindEntities`.</span></span> <span data-ttu-id="c352d-147">Definice třídy by měl vypadat to následující:</span><span class="sxs-lookup"><span data-stu-id="c352d-147">The class definition should look this the following:</span></span>  
-  
+# <a name="create-the-data-service"></a><span data-ttu-id="23a1f-102">Vytvoření datové služby</span><span class="sxs-lookup"><span data-stu-id="23a1f-102">Create the data service</span></span>
+
+<span data-ttu-id="23a1f-103">V tomto tématu vytvoříte ukázkové datových služeb WCF Data Services využívá k tomu, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanál, který je založen na ukázkovou databázi Northwind.</span><span class="sxs-lookup"><span data-stu-id="23a1f-103">In this topic, you create a sample data service that uses WCF Data Services to expose an [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] feed that's based on the Northwind sample database.</span></span> <span data-ttu-id="23a1f-104">Úloha zahrnuje následující základní kroky:</span><span class="sxs-lookup"><span data-stu-id="23a1f-104">The task involves the following basic steps:</span></span>
+
+1. <span data-ttu-id="23a1f-105">Vytvoření webové aplikace ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="23a1f-105">Create an ASP.NET Web application.</span></span>
+
+2. <span data-ttu-id="23a1f-106">Definování datového modelu s použitím nástroje modelu Entity Data Model.</span><span class="sxs-lookup"><span data-stu-id="23a1f-106">Define the data model by using the Entity Data Model tools.</span></span>
+
+3. <span data-ttu-id="23a1f-107">Přidáte datové služby na webovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="23a1f-107">Add the data service to the Web application.</span></span>
+
+4. <span data-ttu-id="23a1f-108">Povolení přístupu k datové službě.</span><span class="sxs-lookup"><span data-stu-id="23a1f-108">Enable access to the data service.</span></span>
+
+## <a name="create-the-aspnet-web-app"></a><span data-ttu-id="23a1f-109">Vytvoření webové aplikace ASP.NET</span><span class="sxs-lookup"><span data-stu-id="23a1f-109">Create the ASP.NET web app</span></span>
+
+1. <span data-ttu-id="23a1f-110">V sadě Visual Studio na **souboru** nabídce vyberte možnost **nový** > **projektu**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-110">In Visual Studio, on the **File** menu, select **New** > **Project**.</span></span>
+
+1. <span data-ttu-id="23a1f-111">V **nový projekt** dialogové okno, v rámci jazyka Visual Basic nebo Visual C# vyberte **webové** kategorie a pak vyberte **webová aplikace ASP.NET**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-111">In the **New Project** dialog box, under either Visual Basic or Visual C# select the **Web** category, and then select **ASP.NET Web Application**.</span></span>
+
+1. <span data-ttu-id="23a1f-112">Zadejte `NorthwindService` jako název projektu a pak vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-112">Enter `NorthwindService` as the name of the project and then select **OK**.</span></span>
+
+1. <span data-ttu-id="23a1f-113">V **nová webová aplikace ASP.NET** dialogového okna, vyberte **prázdný** a pak vyberte **OK**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-113">In the **New ASP.NET Web Application** dialog, select **Empty** and then select **OK**.</span></span>
+
+1. <span data-ttu-id="23a1f-114">(Volitelné) Zadejte číslo portu specifické pro vaši webovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="23a1f-114">(Optional) Specify a specific port number for your Web application.</span></span> <span data-ttu-id="23a1f-115">Poznámka: číslo portu `12345` slouží v této sérii témat rychlý start.</span><span class="sxs-lookup"><span data-stu-id="23a1f-115">Note: the port number `12345` is used in this series of quickstart topics.</span></span>
+
+    1. <span data-ttu-id="23a1f-116">V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt ASP.NET, který jste právě vytvořili a klikněte na tlačítko **vlastnosti**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-116">In **Solution Explorer**, right-click on the ASP.NET project that you just created, and then choose **Properties**.</span></span>
+
+    2. <span data-ttu-id="23a1f-117">Vyberte **webové** kartu a nastavte hodnotu **specifického portu** textové pole pro `12345`.</span><span class="sxs-lookup"><span data-stu-id="23a1f-117">Select the **Web** tab, and set the value of the **Specific port** text box to `12345`.</span></span>
+
+## <a name="define-the-data-model"></a><span data-ttu-id="23a1f-118">Definování datového modelu</span><span class="sxs-lookup"><span data-stu-id="23a1f-118">Define the data model</span></span>
+
+1. <span data-ttu-id="23a1f-119">V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu technologie ASP.NET a potom klikněte na tlačítko **přidat** > **nová položka**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-119">In **Solution Explorer**, right-click the name of the ASP.NET project, and then click **Add** > **New Item**.</span></span>
+
+2. <span data-ttu-id="23a1f-120">V **přidat novou položku** dialogové okno, vyberte **Data** kategorie a pak vyberte **datový Model Entity ADO.NET**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-120">In the **Add New Item** dialog box, select the **Data** category, and then select **ADO.NET Entity Data Model**.</span></span>
+
+3. <span data-ttu-id="23a1f-121">Název datového modelu, zadejte `Northwind.edmx`.</span><span class="sxs-lookup"><span data-stu-id="23a1f-121">For the name of the data model, enter `Northwind.edmx`.</span></span>
+
+4. <span data-ttu-id="23a1f-122">V **Průvodce datovým modelem Entity**vyberte **EF designeru z databáze**a potom klikněte na tlačítko **Další**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-122">In the **Entity Data Model Wizard**, select **EF Designer from Database**, and then click **Next**.</span></span>
+
+5. <span data-ttu-id="23a1f-123">Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na tlačítko **Další**:</span><span class="sxs-lookup"><span data-stu-id="23a1f-123">Connect the data model to the database by doing one of the following steps, and then click **Next**:</span></span>
+
+    -   <span data-ttu-id="23a1f-124">Pokud nemáte připojení k databázi, která jsou už nakonfigurovaná, klikněte na tlačítko **nové připojení** a vytvořit nové připojení.</span><span class="sxs-lookup"><span data-stu-id="23a1f-124">If you don't have a database connection already configured, click **New Connection** and create a new connection.</span></span> <span data-ttu-id="23a1f-125">Další informace najdete v tématu [postupy: vytvoření připojení k databázím SQL Server](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)).</span><span class="sxs-lookup"><span data-stu-id="23a1f-125">For more information, see [How to: Create Connections to SQL Server Databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)).</span></span> <span data-ttu-id="23a1f-126">Tato instance systému SQL Server musí mít připojené ukázkové databáze Northwind.</span><span class="sxs-lookup"><span data-stu-id="23a1f-126">This SQL Server instance must have the Northwind sample database attached.</span></span>
+
+         <span data-ttu-id="23a1f-127">\- nebo –</span><span class="sxs-lookup"><span data-stu-id="23a1f-127">\- or -</span></span>
+
+    -   <span data-ttu-id="23a1f-128">Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte v seznamu připojení toto připojení.</span><span class="sxs-lookup"><span data-stu-id="23a1f-128">If you have a database connection already configured to connect to the Northwind database, select that connection from the list of connections.</span></span>
+
+6. <span data-ttu-id="23a1f-129">Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políček pro zobrazení a uložených procedur.</span><span class="sxs-lookup"><span data-stu-id="23a1f-129">On the final page of the wizard, select the check boxes for all tables in the database, and clear the check boxes for views and stored procedures.</span></span>
+
+7. <span data-ttu-id="23a1f-130">Klikněte na tlačítko **Dokončit** zavřete průvodce.</span><span class="sxs-lookup"><span data-stu-id="23a1f-130">Click **Finish** to close the wizard.</span></span>
+
+## <a name="create-the-wcf-data-service"></a><span data-ttu-id="23a1f-131">Vytvoření datové služby WCF</span><span class="sxs-lookup"><span data-stu-id="23a1f-131">Create the WCF data service</span></span>
+
+1. <span data-ttu-id="23a1f-132">V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt ASP.NET a klikněte na tlačítko **přidat** > **nová položka**.</span><span class="sxs-lookup"><span data-stu-id="23a1f-132">In **Solution Explorer**, right-click on the ASP.NET project, and then choose **Add** > **New Item**.</span></span>
+
+2. <span data-ttu-id="23a1f-133">V **přidat novou položku** dialogové okno, vyberte **službu WCF Data Service** šablony položky z **webové** kategorie.</span><span class="sxs-lookup"><span data-stu-id="23a1f-133">In the **Add New Item** dialog box, select the **WCF Data Service** item template from the **Web** category.</span></span>
+
+   ![Služby WCF Data Service šablony položky v sadě Visual Studio 2015](media/wcf-data-service-item-template.png)
+
+   > [!NOTE]
+   > <span data-ttu-id="23a1f-135">**Službu WCF Data Service** šablona je k dispozici v sadě Visual Studio 2015, ale ne v sadě Visual Studio 2017.</span><span class="sxs-lookup"><span data-stu-id="23a1f-135">The **WCF Data Service** template is available in Visual Studio 2015, but not in Visual Studio 2017.</span></span>
+
+3. <span data-ttu-id="23a1f-136">Název služby zadáte `Northwind`.</span><span class="sxs-lookup"><span data-stu-id="23a1f-136">For the name of the service, type `Northwind`.</span></span>
+
+     <span data-ttu-id="23a1f-137">Visual Studio vytvoří soubory značek a kódu XML pro novou službu.</span><span class="sxs-lookup"><span data-stu-id="23a1f-137">Visual Studio creates the XML markup and code files for the new service.</span></span> <span data-ttu-id="23a1f-138">Ve výchozím nastavení otevře se okno editoru kódu.</span><span class="sxs-lookup"><span data-stu-id="23a1f-138">By default, the code-editor window opens.</span></span> <span data-ttu-id="23a1f-139">V **Průzkumníka řešení**, službu s názvem Northwind s příponou *. svc.cs* nebo *. svc.vb*.</span><span class="sxs-lookup"><span data-stu-id="23a1f-139">In **Solution Explorer**, the service has the name Northwind with the extension *.svc.cs* or *.svc.vb*.</span></span>
+
+4. <span data-ttu-id="23a1f-140">V kódu pro datovou službu, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje datové služby s typem, který je kontejner entit datového modelu, který v tomto případě je `NorthwindEntities`.</span><span class="sxs-lookup"><span data-stu-id="23a1f-140">In the code for the data service, replace the comment `/* TODO: put your data source class name here */` in the definition of the class that defines the data service with the type that is the entity container of the data model, which in this case is `NorthwindEntities`.</span></span> <span data-ttu-id="23a1f-141">Definice třídy by měl vypadat to následující:</span><span class="sxs-lookup"><span data-stu-id="23a1f-141">The class definition should look this the following:</span></span>
+
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#servicedefinition)]
-     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]  
-  
-### <a name="to-enable-access-to-data-service-resources"></a><span data-ttu-id="c352d-148">Chcete-li povolit přístup k datovým prostředkům služby</span><span class="sxs-lookup"><span data-stu-id="c352d-148">To enable access to data service resources</span></span>  
-  
-1.  <span data-ttu-id="c352d-149">V kódu pro službu data, nahraďte zástupný symbol kód v `InitializeService` funkce následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="c352d-149">In the code for the data service, replace the placeholder code in the `InitializeService` function with the following:</span></span>  
-  
+     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]
+
+## <a name="enable-access-to-data-service-resources"></a><span data-ttu-id="23a1f-142">Povolení přístupu k prostředkům datové služby</span><span class="sxs-lookup"><span data-stu-id="23a1f-142">Enable access to data service resources</span></span>
+
+1. <span data-ttu-id="23a1f-143">V kódu pro datovou službu, nahraďte zástupný symbol kód v `InitializeService` funkce následujícím kódem:</span><span class="sxs-lookup"><span data-stu-id="23a1f-143">In the code for the data service, replace the placeholder code in the `InitializeService` function with the following:</span></span>
+
      [!code-csharp[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#allreadconfig)]
-     [!code-vb[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#allreadconfig)]  
-  
-     <span data-ttu-id="c352d-150">To umožňuje autorizovaným klientům ke čtení a zápisu přístup k prostředkům pro zadanou entitu sady.</span><span class="sxs-lookup"><span data-stu-id="c352d-150">This enables authorized clients to have read and write access to resources for the specified entity sets.</span></span>  
-  
+     [!code-vb[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#allreadconfig)]
+
+     <span data-ttu-id="23a1f-144">To umožňuje autorizovaným klientům ke čtení a zápis k prostředkům určené sady entit.</span><span class="sxs-lookup"><span data-stu-id="23a1f-144">This enables authorized clients to have read and write access to resources for the specified entity sets.</span></span>
+
     > [!NOTE]
-    >  <span data-ttu-id="c352d-151">Libovolného klienta, kterému mají přístup [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace může také přístup k prostředkům vystavené službu data.</span><span class="sxs-lookup"><span data-stu-id="c352d-151">Any client that can access the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] application can also access the resources exposed by the data service.</span></span> <span data-ttu-id="c352d-152">V produkčním datové služby aby se zabránilo neoprávněnému přístupu k prostředkům byste měli také zabezpečit vlastní aplikace.</span><span class="sxs-lookup"><span data-stu-id="c352d-152">In a production data service, to prevent unauthorized access to resources you should also secure the application itself.</span></span> <span data-ttu-id="c352d-153">Další informace najdete v tématu [zabezpečení služby WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="c352d-153">For more information, see [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span></span>  
-  
-## <a name="next-steps"></a><span data-ttu-id="c352d-154">Další kroky</span><span class="sxs-lookup"><span data-stu-id="c352d-154">Next Steps</span></span>  
- <span data-ttu-id="c352d-155">Úspěšně jste vytvořili novou službu data, která zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, který je založen na ukázková databáze Northwind a jste povolili přístup k informačnímu kanálu pro klienty, kteří mají oprávnění na [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace.</span><span class="sxs-lookup"><span data-stu-id="c352d-155">You have successfully created a new data service that exposes an [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed that is based on the Northwind sample database, and you have enabled access to the feed for clients that have permissions on the [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Web application.</span></span> <span data-ttu-id="c352d-156">V dalším kroku se spustí službu data ze sady Visual Studio a budou přistupovat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu odesláním požadavky HTTP GET prostřednictvím webového prohlížeče:</span><span class="sxs-lookup"><span data-stu-id="c352d-156">Next, you will start the data service from Visual Studio and you will access the [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] feed by submitting HTTP GET requests through a Web browser:</span></span>  
-  
- [<span data-ttu-id="c352d-157">Přístup ke službě z webového prohlížeče</span><span class="sxs-lookup"><span data-stu-id="c352d-157">Accessing the Service from a Web Browser</span></span>](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
-  
-## <a name="see-also"></a><span data-ttu-id="c352d-158">Viz také</span><span class="sxs-lookup"><span data-stu-id="c352d-158">See Also</span></span>  
- [<span data-ttu-id="c352d-159">Nástroje modelu ADO.NET Entity Data Model</span><span class="sxs-lookup"><span data-stu-id="c352d-159">ADO.NET Entity Data Model  Tools</span></span>](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)
+    > <span data-ttu-id="23a1f-145">Libovolného klienta, který má přístup k aplikaci technologie ASP.NET můžete také přístup k prostředkům vystavené datové služby.</span><span class="sxs-lookup"><span data-stu-id="23a1f-145">Any client that can access the ASP.NET application can also access the resources exposed by the data service.</span></span> <span data-ttu-id="23a1f-146">V produkčním datové služby chcete-li zabránit neoprávněnému přístupu k prostředkům byste měli také zabezpečit samotná aplikace.</span><span class="sxs-lookup"><span data-stu-id="23a1f-146">In a production data service, to prevent unauthorized access to resources you should also secure the application itself.</span></span> <span data-ttu-id="23a1f-147">Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span><span class="sxs-lookup"><span data-stu-id="23a1f-147">For more information, see [Securing WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).</span></span>
+
+## <a name="next-steps"></a><span data-ttu-id="23a1f-148">Další kroky</span><span class="sxs-lookup"><span data-stu-id="23a1f-148">Next steps</span></span>
+
+<span data-ttu-id="23a1f-149">Úspěšně jste vytvořili novou službu data, která vystavuje kanál OData, která je založena na ukázkovou databázi Northwind a povolíte přístup ke kanálu pro klienty, kteří mají oprávnění na webovou aplikaci ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="23a1f-149">You have successfully created a new data service that exposes an OData feed that is based on the Northwind sample database, and you have enabled access to the feed for clients that have permissions on the ASP.NET Web application.</span></span> <span data-ttu-id="23a1f-150">Teď se spustit službu data ze sady Visual Studio a přístup, odešlete požadavky HTTP GET přes webový prohlížeč datového kanálu OData:</span><span class="sxs-lookup"><span data-stu-id="23a1f-150">Next, you'll start the data service from Visual Studio and access the OData feed by submitting HTTP GET requests through a Web browser:</span></span>
+
+> [!div class="nextstepaction"]
+> [<span data-ttu-id="23a1f-151">Přístup ke službě z webového prohlížeče</span><span class="sxs-lookup"><span data-stu-id="23a1f-151">Access the service from a web browser</span></span>](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
+
+## <a name="see-also"></a><span data-ttu-id="23a1f-152">Viz také:</span><span class="sxs-lookup"><span data-stu-id="23a1f-152">See also</span></span>
+
+- [<span data-ttu-id="23a1f-153">Datový Model Entity ADO.NET nástroje</span><span class="sxs-lookup"><span data-stu-id="23a1f-153">ADO.NET Entity Data Model Tools</span></span>](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)
