@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 76f7b53f800bc8c5c23f49a0781287a38bf8c959
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 342739f6c71e9c576e557433dc6abd0adbf38c8c
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33421513"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43468349"
 ---
-# <a name="icordebugmodule3createreaderforinmemorysymbols-method"></a><span data-ttu-id="57ab3-102">ICorDebugModule3::CreateReaderForInMemorySymbols – metoda</span><span class="sxs-lookup"><span data-stu-id="57ab3-102">ICorDebugModule3::CreateReaderForInMemorySymbols Method</span></span>
-<span data-ttu-id="57ab3-103">Vytvoří symbol čtečku ladění pro dynamické modul.</span><span class="sxs-lookup"><span data-stu-id="57ab3-103">Creates a debug symbol reader for a dynamic module.</span></span>  
+# <a name="icordebugmodule3createreaderforinmemorysymbols-method"></a><span data-ttu-id="bccd4-102">ICorDebugModule3::CreateReaderForInMemorySymbols – metoda</span><span class="sxs-lookup"><span data-stu-id="bccd4-102">ICorDebugModule3::CreateReaderForInMemorySymbols Method</span></span>
+<span data-ttu-id="bccd4-103">Vytvoří čtečku symbolů ladění pro dynamický modul.</span><span class="sxs-lookup"><span data-stu-id="bccd4-103">Creates a debug symbol reader for a dynamic module.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="57ab3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="57ab3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="bccd4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="bccd4-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateReaderForInMemorySymbols (  
@@ -35,44 +35,44 @@ HRESULT CreateReaderForInMemorySymbols (
       [out][iid_is(riid)] void **    ppObj  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="57ab3-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="57ab3-105">Parameters</span></span>  
- <span data-ttu-id="57ab3-106">riid</span><span class="sxs-lookup"><span data-stu-id="57ab3-106">riid</span></span>  
- <span data-ttu-id="57ab3-107">[v] Identifikátory IID rozhraní COM vrátit.</span><span class="sxs-lookup"><span data-stu-id="57ab3-107">[in] The IID of the COM interface to return.</span></span> <span data-ttu-id="57ab3-108">Obvykle se jedná [ISymUnmanagedReader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).</span><span class="sxs-lookup"><span data-stu-id="57ab3-108">Typically, this is an [ISymUnmanagedReader Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="bccd4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="bccd4-105">Parameters</span></span>  
+ <span data-ttu-id="bccd4-106">riid</span><span class="sxs-lookup"><span data-stu-id="bccd4-106">riid</span></span>  
+ <span data-ttu-id="bccd4-107">[in] Identifikátor IID rozhraní COM se vraťte.</span><span class="sxs-lookup"><span data-stu-id="bccd4-107">[in] The IID of the COM interface to return.</span></span> <span data-ttu-id="bccd4-108">Obvykle se jedná [isymunmanagedreader – rozhraní](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).</span><span class="sxs-lookup"><span data-stu-id="bccd4-108">Typically, this is an [ISymUnmanagedReader Interface](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md).</span></span>  
   
- <span data-ttu-id="57ab3-109">ppObj</span><span class="sxs-lookup"><span data-stu-id="57ab3-109">ppObj</span></span>  
- <span data-ttu-id="57ab3-110">[out] Ukazatel na ukazatel na vrácený rozhraní.</span><span class="sxs-lookup"><span data-stu-id="57ab3-110">[out] Pointer to a pointer to the returned interface.</span></span>  
+ <span data-ttu-id="bccd4-109">ppObj</span><span class="sxs-lookup"><span data-stu-id="bccd4-109">ppObj</span></span>  
+ <span data-ttu-id="bccd4-110">[out] Ukazatel na ukazatel na vrácené rozhraní.</span><span class="sxs-lookup"><span data-stu-id="bccd4-110">[out] Pointer to a pointer to the returned interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="57ab3-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="57ab3-111">Return Value</span></span>  
- <span data-ttu-id="57ab3-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="57ab3-112">S_OK</span></span>  
- <span data-ttu-id="57ab3-113">Čtečka se úspěšně vytvořil.</span><span class="sxs-lookup"><span data-stu-id="57ab3-113">Successfully created the reader.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="bccd4-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="bccd4-111">Return Value</span></span>  
+ <span data-ttu-id="bccd4-112">S_OK</span><span class="sxs-lookup"><span data-stu-id="bccd4-112">S_OK</span></span>  
+ <span data-ttu-id="bccd4-113">Čtecí modul se úspěšně vytvořil.</span><span class="sxs-lookup"><span data-stu-id="bccd4-113">Successfully created the reader.</span></span>  
   
- <span data-ttu-id="57ab3-114">CORDBG_E_MODULE_LOADED_FROM_DISK</span><span class="sxs-lookup"><span data-stu-id="57ab3-114">CORDBG_E_MODULE_LOADED_FROM_DISK</span></span>  
- <span data-ttu-id="57ab3-115">Modul není modul v paměti nebo dynamické.</span><span class="sxs-lookup"><span data-stu-id="57ab3-115">The module is not an in-memory or dynamic module.</span></span>  
+ <span data-ttu-id="bccd4-114">CORDBG_E_MODULE_LOADED_FROM_DISK</span><span class="sxs-lookup"><span data-stu-id="bccd4-114">CORDBG_E_MODULE_LOADED_FROM_DISK</span></span>  
+ <span data-ttu-id="bccd4-115">Modul není v paměti nebo dynamický modul.</span><span class="sxs-lookup"><span data-stu-id="bccd4-115">The module is not an in-memory or dynamic module.</span></span>  
   
- <span data-ttu-id="57ab3-116">CORDBG_E_SYMBOLS_NOT_AVAILABLE</span><span class="sxs-lookup"><span data-stu-id="57ab3-116">CORDBG_E_SYMBOLS_NOT_AVAILABLE</span></span>  
- <span data-ttu-id="57ab3-117">Symboly aplikací, nebyla zadána nebo ještě nejsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="57ab3-117">Symbols have not been supplied by the application or are not yet available.</span></span>  
+ <span data-ttu-id="bccd4-116">CORDBG_E_SYMBOLS_NOT_AVAILABLE</span><span class="sxs-lookup"><span data-stu-id="bccd4-116">CORDBG_E_SYMBOLS_NOT_AVAILABLE</span></span>  
+ <span data-ttu-id="bccd4-117">Symboly nebyly poskytnuté aplikací nebo dosud nejsou k dispozici.</span><span class="sxs-lookup"><span data-stu-id="bccd4-117">Symbols have not been supplied by the application or are not yet available.</span></span>  
   
- <span data-ttu-id="57ab3-118">E_FAIL (nebo ostatní návratové kódy E_)</span><span class="sxs-lookup"><span data-stu-id="57ab3-118">E_FAIL (or other E_ return codes)</span></span>  
- <span data-ttu-id="57ab3-119">Nelze vytvořit program pro čtení.</span><span class="sxs-lookup"><span data-stu-id="57ab3-119">Unable to create the reader.</span></span>  
+ <span data-ttu-id="bccd4-118">E_FAIL (nebo jiné E_ návratové kódy)</span><span class="sxs-lookup"><span data-stu-id="bccd4-118">E_FAIL (or other E_ return codes)</span></span>  
+ <span data-ttu-id="bccd4-119">Nelze vytvořit čtecí modul.</span><span class="sxs-lookup"><span data-stu-id="bccd4-119">Unable to create the reader.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="57ab3-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="57ab3-120">Remarks</span></span>  
- <span data-ttu-id="57ab3-121">Tato metoda může být také použít k vytvoření objektu čtečky symbol pro moduly (bez dynamické) v paměti, ale pouze po symboly jsou k dispozici nejprve (indikován [updatemodulesymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) zpětného volání).</span><span class="sxs-lookup"><span data-stu-id="57ab3-121">This method can also be used to create a symbol reader object for in-memory (non-dynamic) modules, but only after the symbols are first available (indicated by the [UpdateModuleSymbols Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) callback).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="bccd4-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="bccd4-120">Remarks</span></span>  
+ <span data-ttu-id="bccd4-121">Tato metoda může také být použité k vytvoření objektu čtečky symbolů pro moduly (nedynamickou) v paměti, ale pouze po symboly jsou k dispozici nejprve (indikován [updatemodulesymbols – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) zpětného volání).</span><span class="sxs-lookup"><span data-stu-id="bccd4-121">This method can also be used to create a symbol reader object for in-memory (non-dynamic) modules, but only after the symbols are first available (indicated by the [UpdateModuleSymbols Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-updatemodulesymbols-method.md) callback).</span></span>  
   
- <span data-ttu-id="57ab3-122">Tato metoda vrátí novou instanci čtečky pokaždé, když je volána (jako je [CComPtrBase::CoCreateInstance](http://msdn.microsoft.com/library/c0965041-6cb6-40c5-b272-2b99f02668a6)).</span><span class="sxs-lookup"><span data-stu-id="57ab3-122">This method returns a new reader instance every time it is called (like [CComPtrBase::CoCreateInstance](http://msdn.microsoft.com/library/c0965041-6cb6-40c5-b272-2b99f02668a6)).</span></span> <span data-ttu-id="57ab3-123">Proto by měl ladicího programu mezipaměti výsledek a jenom v případě, že mohlo dojít ke změně v základních datech požádat o novou instanci (to znamená, když [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) přijetí zpětného volání).</span><span class="sxs-lookup"><span data-stu-id="57ab3-123">Therefore, the debugger should cache the result and request a new instance only when the underlying data may have changed (that is, when a [LoadClass Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) callback is received).</span></span>  
+ <span data-ttu-id="bccd4-122">Tato metoda vrací novou instanci čtečky pokaždé, když je volána (jako je [CComPtrBase::CoCreateInstance](https://msdn.microsoft.com/library/c0965041-6cb6-40c5-b272-2b99f02668a6)).</span><span class="sxs-lookup"><span data-stu-id="bccd4-122">This method returns a new reader instance every time it is called (like [CComPtrBase::CoCreateInstance](https://msdn.microsoft.com/library/c0965041-6cb6-40c5-b272-2b99f02668a6)).</span></span> <span data-ttu-id="bccd4-123">Proto by měl ladicí program uložte do mezipaměti výsledek a požádat o novou instanci pouze v případě, že mohlo dojít ke změně podkladová data (to znamená, když [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) přijetí zpětné volání).</span><span class="sxs-lookup"><span data-stu-id="bccd4-123">Therefore, the debugger should cache the result and request a new instance only when the underlying data may have changed (that is, when a [LoadClass Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) callback is received).</span></span>  
   
- <span data-ttu-id="57ab3-124">Dynamických modulech nemají žádné symboly, které jsou k dispozici, dokud se načetl první typ (jak [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) zpětného volání).</span><span class="sxs-lookup"><span data-stu-id="57ab3-124">Dynamic modules do not have any symbols available until the first type has been loaded (as indicated by the [LoadClass Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) callback).</span></span>  
+ <span data-ttu-id="bccd4-124">Dynamické moduly nemají žádné symboly k dispozici, dokud se načetl první typ (jak je uvedeno ve [loadclass – metoda](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) zpětného volání).</span><span class="sxs-lookup"><span data-stu-id="bccd4-124">Dynamic modules do not have any symbols available until the first type has been loaded (as indicated by the [LoadClass Method](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadclass-method.md) callback).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="57ab3-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="57ab3-125">Requirements</span></span>  
- <span data-ttu-id="57ab3-126">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="57ab3-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="bccd4-125">Požadavky</span><span class="sxs-lookup"><span data-stu-id="bccd4-125">Requirements</span></span>  
+ <span data-ttu-id="bccd4-126">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="bccd4-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="57ab3-127">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="57ab3-127">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="bccd4-127">**Záhlaví:** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="bccd4-127">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="57ab3-128">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="57ab3-128">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="bccd4-128">**Knihovna:** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="bccd4-128">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="57ab3-129">**Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="57ab3-129">**.NET Framework Versions:** 4.5, 4, 3.5 SP1</span></span>  
+ <span data-ttu-id="bccd4-129">**Verze rozhraní .NET framework:** 4.5, 4, 3.5 SP1</span><span class="sxs-lookup"><span data-stu-id="bccd4-129">**.NET Framework Versions:** 4.5, 4, 3.5 SP1</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="57ab3-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="57ab3-130">See Also</span></span>  
- [<span data-ttu-id="57ab3-131">ICorDebugRemoteTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="57ab3-131">ICorDebugRemoteTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
- [<span data-ttu-id="57ab3-132">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="57ab3-132">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
+## <a name="see-also"></a><span data-ttu-id="bccd4-130">Viz také</span><span class="sxs-lookup"><span data-stu-id="bccd4-130">See Also</span></span>  
+ [<span data-ttu-id="bccd4-131">ICorDebugRemoteTarget – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bccd4-131">ICorDebugRemoteTarget Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebugremotetarget-interface.md)  
+ [<span data-ttu-id="bccd4-132">ICorDebug – rozhraní</span><span class="sxs-lookup"><span data-stu-id="bccd4-132">ICorDebug Interface</span></span>](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)  
     
- [<span data-ttu-id="57ab3-133">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="57ab3-133">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+ [<span data-ttu-id="bccd4-133">Rozhraní pro ladění</span><span class="sxs-lookup"><span data-stu-id="bccd4-133">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
