@@ -63,6 +63,7 @@
 
 <!-- .NET Core Content -->
 # [Průvodce platformou .NET Core](core/index.md)
+## [O platformě .NET Core](core/about.md)
 ## [Začínáme](core/get-started.md)
 ### [Začínáme s jazykem C# a nástrojem Visual Studio Code](core/tutorials/with-visual-studio-code.md)
 ### [Vytvoření aplikace Hello World v jazyce C# pomocí .NET Core v sadě Visual Studio 2017](core/tutorials/with-visual-studio.md)
@@ -108,6 +109,7 @@
 ### [Vytváření imagí Dockeru pro aplikace .NET Core](core/docker/building-net-docker-images.md)
 ### [Nástroje sady Visual Studio pro Docker](/aspnet/core/publishing/visual-studio-tools-for-docker)
 ## [Testování částí](core/testing/index.md)
+### [Osvědčené postupy pro testování částí](core/testing/unit-testing-best-practices.md)
 ### [Testy jednotek v C# s použitím xUnit](core/testing/unit-testing-with-dotnet-test.md)
 ### [Testy jednotek v C# s použitím NUnit](core/testing/unit-testing-with-nunit.md)
 ### [Testy jednotek v C# s použitím MSTest](core/testing/unit-testing-with-mstest.md)
@@ -121,7 +123,10 @@
 ### [Publikovaný výstup testování částí](core/testing/unit-testing-published-output.md)
 ### [Live Unit Testing pro projekty .NET Core pomocí sady Visual Studio](/visualstudio/test/live-unit-testing-start)
 ## [Správa verzí](core/versions/index.md)
+### [Historie verzí .NET Core](core/versions/version-history.md)
 ### [Výběr verze .NET Core](core/versions/selection.md)
+### [Správa instalace .NET Core](core/versions/install-management.md)
+### [Odebrání zastaralých modulů runtime a sad SDK](core/versions/remove-runtime-sdk-versions.md)
 ## [Katalog identifikátorů modulu runtime](core/rid-catalog.md)
 ## [Přehled sady .NET Core SDK](core/sdk.md)
 ## [Nástroje CLI platformy .NET Core](core/tools/index.md)
@@ -177,7 +182,7 @@
 <!--### [🔧 NuGet packages](core/porting/nuget-packages.md)-->
 ## [Sestavení .NET Core ze zdroje](core/build/index.md)
 ### [Vytváření distribučních balíčků .NET Core](core/build/distribution-packaging.md)
-## [Dokumentace k VS 2015/project.json](project-json.md)
+## [Dokumenty VS 2015/project.json](project-json.md)
 <!-- End .NET Core Content -->
 
 <!-- .NET Framework Content -->
@@ -293,7 +298,6 @@
 <!-- F# Content -->
 # [Průvodce jazykem F#](fsharp/index.md)
 
-## [Prohlídka jazyka F#](fsharp/tour.md)
 ## [Začínáme](fsharp/get-started/index.md)
 ### [Instalace F#](fsharp/get-started/install-fsharp.md)
 ### [Začínáme se sadou Visual Studio](fsharp/get-started/get-started-visual-studio.md)
@@ -301,38 +305,19 @@
 ### [Začínáme s nástrojem Visual Studio Code a Ionide](fsharp/get-started/get-started-vscode.md)
 ### [Začínáme s CLI pro .NET Core](fsharp/get-started/get-started-command-line.md)
 
-## [Příručka stylu jazyka F#](fsharp/style-guide/index.md)
-### [Pravidla formátování kódu F#](fsharp/style-guide/formatting.md)
-### [Zásady kódování jazyka F#](fsharp/style-guide/conventions.md)
-### [Pravidla návrhu komponent jazyka F#](fsharp/style-guide/component-design-guidelines.md)
+## [Co je F #](fsharp/what-is-fsharp.md)
+## [Prohlídka jazyka F#](fsharp/tour.md)
 
 ## Kurzy
-### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
+### Úvod do funkčního programování
+#### [Funkce jako hodnoty první třídy](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
+### Asynchronní a souběžné programování
+#### [Asynchronní programování](fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
 ### [Zprostředkovatelé typů](fsharp/tutorials/type-providers/index.md)
 #### [Vytvoření zprostředkovatele typu](fsharp/tutorials/type-providers/creating-a-type-provider.md)
 #### [Zabezpečení zprostředkovatele typů](fsharp/tutorials/type-providers/type-provider-security.md)
 #### [Řešení potíží se zprostředkovateli typů](fsharp/tutorials/type-providers/troubleshooting-type-providers.md)
-
-<!--## [Introduction to Functional Programming](fsharp/introduction-to-functional-programming/index.md)-->
-## Úvod do funkčního programování
-### [Funkce jako hodnoty první třídy](fsharp/introduction-to-functional-programming/functions-as-first-class-values.md)
-
-<!--### [Asynchronous and Concurrent Programming](fsharp/tutorials/asynchronous-and-concurrent-programming/index.md)-->
-### Asynchronní a souběžné programování
-#### [Asynchronní programování](fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)
-
-<!--## [Using F# in Visual Studio](fsharp/using-fsharp-in-visual-studio/index.md)-->
-### [Funkce vývojového prostředí Visual F#](fsharp/using-fsharp-in-visual-studio/visual-fsharp-development-environment-features.md)
-### [Konfigurace projektů](fsharp/using-fsharp-in-visual-studio/configuring-projects.md)
-### [Cílení na starší verze technologie .NET](fsharp/using-fsharp-in-visual-studio/targeting-older-versions-of-net.md)
-
-## [Použití F# na Azure](fsharp/using-fsharp-on-azure/index.md)
-### [Začínáme s Azure Blob Storage s využitím F#](fsharp/using-fsharp-on-azure/blob-storage.md)
-### [Začínáme s Azure File Storage s využitím F#](fsharp/using-fsharp-on-azure/file-storage.md)
-### [Začínáme s Azure Queue Storage s využitím F#](fsharp/using-fsharp-on-azure/queue-storage.md)
-### [Začínáme s Azure Table Storage s využitím F#](fsharp/using-fsharp-on-azure/table-storage.md)
-<!--### [Using F# on Azure Service Fabric](fsharp/using-fsharp-on-azure/using-fsharp-on-azure-service-fabric.md)-->
-### [Správa balíčků pro závislosti Azure F#](fsharp/using-fsharp-on-azure/package-management.md)
+### [F# Interactive](fsharp/tutorials/fsharp-interactive/index.md)
 
 ## [Referenční dokumentace jazyka F#](fsharp/language-reference/index.md)
 ### [Referenční dokumentace klíčových slov](fsharp/language-reference/keyword-reference.md)
@@ -361,6 +346,7 @@
 ### [Typy kolekcí F#](fsharp/language-reference/fsharp-collection-types.md)
 ### [Seznamy](fsharp/language-reference/lists.md)
 ### [Možnosti](fsharp/language-reference/options.md)
+### [Možnosti pro hodnoty](fsharp/language-reference/value-options.md)
 ### [Výsledky](fsharp/language-reference/results.md)
 ### [Sekvence](fsharp/language-reference/sequences.md)
 ### [Pole](fsharp/language-reference/arrays.md)
@@ -431,26 +417,37 @@
 ### [Identifikátory zdrojového řádku, souboru a cesty](fsharp/language-reference/source-line-file-path-identifiers.md)
 ### [Informace o volající funkci](fsharp/language-reference/caller-information.md)
 ### [Podrobná syntaxe](fsharp/language-reference/verbose-syntax.md)
-### [Pravidla formátování kódu](fsharp/language-reference/code-formatting-guidelines.md)
+
+## [Příručka stylu jazyka F#](fsharp/style-guide/index.md)
+### [Pravidla formátování kódu F#](fsharp/style-guide/formatting.md)
+### [Zásady kódování jazyka F#](fsharp/style-guide/conventions.md)
+### [Pravidla návrhu komponent jazyka F#](fsharp/style-guide/component-design-guidelines.md)
+
+## [Použití F# na Azure](fsharp/using-fsharp-on-azure/index.md)
+### [Začínáme s Azure Blob Storage s využitím F#](fsharp/using-fsharp-on-azure/blob-storage.md)
+### [Začínáme s Azure File Storage s využitím F#](fsharp/using-fsharp-on-azure/file-storage.md)
+### [Začínáme s Azure Queue Storage s využitím F#](fsharp/using-fsharp-on-azure/queue-storage.md)
+### [Začínáme s Azure Table Storage s využitím F#](fsharp/using-fsharp-on-azure/table-storage.md)
+### [Správa balíčků pro závislosti Azure F#](fsharp/using-fsharp-on-azure/package-management.md)
 <!-- End F# Content -->
 
 <!-- VB Content -->
 # [Průvodce jazykem Visual Basic](visual-basic/index.md)
+## [Co je nového v jazyce Visual Basic](visual-basic/getting-started/whats-new.md)
 ## [Začínáme](visual-basic/getting-started/index.md)
-### [Co je nového v jazyce Visual Basic](visual-basic/getting-started/whats-new.md)
 ### [Zásadní změny v jazyce Visual Basic v sadě Visual Studio](visual-basic/getting-started/breaking-changes-in-visual-studio.md)
 ### [Další zdroje informací pro programátory, kteří používají Visual Basic](visual-basic/getting-started/additional-resources.md)
 
 ## [Vývoj aplikací](visual-basic/developing-apps/index.md)
 
 ### [Programování v jazyce Visual Basic](visual-basic/developing-apps/programming/index.md)
-#### [Přístup k prostředkům počítače](visual-basic/developing-apps/programming/computer-resources/computer-resources.md)
-#### [Protokolování informací z aplikace](visual-basic/developing-apps/programming/log-info/logging-information-from-the-application.md)
+#### [Přístup k prostředkům počítače](visual-basic/developing-apps/programming/computer-resources/index.md)
+#### [Protokolování informací z aplikace](visual-basic/developing-apps/programming/log-info/index.md)
 #### [Přístup k uživatelským datům](visual-basic/developing-apps/programming/accessing-user-data.md)
 #### [Přístup k formulářům aplikace](visual-basic/developing-apps/programming/accessing-application-forms.md)
 #### [Přístup k aplikačním webovým službám](visual-basic/developing-apps/programming/accessing-application-web-services.md)
 ##### [Postupy: Asynchronní volání webové služby](visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)
-#### [Přístup k nastavení aplikace](visual-basic/developing-apps/programming/app-settings/accessing-application-settings.md)
+#### [Přístup k nastavení aplikace](visual-basic/developing-apps/programming/app-settings/index.md)
 #### [Zpracování jednotek, adresářů a souborů](visual-basic/developing-apps/programming/drives-directories-files/processing.md)
 
 ### [Vývoj s použitím oboru názvů My](visual-basic/developing-apps/development-with-my/index.md)
@@ -463,7 +460,7 @@
 ### [Přístup k datům](visual-basic/developing-apps/accessing-data.md)
 ### [Vytváření a používání komponent](visual-basic/developing-apps/creating-and-using-components.md)
 
-### [Tisk a vytváření sestav](visual-basic/developing-apps/printing/printing-and-reporting.md)
+### [Tisk a vytváření sestav](visual-basic/developing-apps/printing/index.md)
 #### [Komponenta PrintForm](visual-basic/developing-apps/printing/printform-component.md)
 #### [Postupy: Tisk posuvného formuláře](visual-basic/developing-apps/printing/how-to-print-a-scrollable-form.md)
 #### [Postupy: Tisk klientských i neklientských oblastí formuláře](visual-basic/developing-apps/printing/how-to-print-client-and-non-client-areas-of-a-form.md)
@@ -472,29 +469,9 @@
 #### [Nasazení aplikací odkazujících na komponentu PrintForm](visual-basic/developing-apps/printing/deploying-applications-that-reference-the-printform-component.md)
 #### [Přidávání tisknutelných sestav do aplikací sady Visual Studio](visual-basic/developing-apps/printing/adding-printable-reports-to-visual-studio-applications.md)
 
-### [Základy formulářové aplikace Windows](visual-basic/developing-apps/windows-forms/windows-forms-application-basics.md)
-### [Ovládací prvky Power Packs](visual-basic/developing-apps/windows-forms/power-packs-controls.md)
-### [Ovládací prvek DataRepeater](visual-basic/developing-apps/windows-forms/datarepeater-control-visual-studio.md)
-#### [Úvod do ovládacího prvku DataRepeater](visual-basic/developing-apps/windows-forms/introduction-to-the-datarepeater-control-visual-studio.md)
-#### [Virtuální režim v ovládacím prvku DataRepeater](visual-basic/developing-apps/windows-forms/virtual-mode-in-the-datarepeater-control-visual-studio.md)
-#### [Postupy: Zobrazení vázaných dat v ovládacím prvku DataRepeater](visual-basic/developing-apps/windows-forms/how-to-display-bound-data-in-a-datarepeater-control-visual-studio.md)
-#### [Postupy: Zobrazení nevázaných ovládacích prvků v ovládacím prvku DataRepeater](visual-basic/developing-apps/windows-forms/how-to-display-unbound-controls-in-a-datarepeater-control-visual-studio.md)
-#### [Postupy: Změna rozložení ovládacího prvku DataRepeater](visual-basic/developing-apps/windows-forms/how-to-change-the-layout-of-a-datarepeater-control-visual-studio.md)
-#### [Postupy: Změna vzhledu ovládacího prvku DataRepeater](visual-basic/developing-apps/windows-forms/how-to-change-the-appearance-of-a-datarepeater-control-visual-studio.md)
-#### [Postupy: Zobrazení záhlaví položek v ovládacím prvku DataRepeater](visual-basic/developing-apps/windows-forms/how-to-display-item-headers-in-a-datarepeater-control-visual-studio.md)
-#### [Postupy: Zákaz přidávání a odstraňování položek DataRepeater](visual-basic/developing-apps/windows-forms/how-to-disable-adding-and-deleting-datarepeater-items-visual-studio.md)
-#### [Postupy: Vyhledávání dat v ovládacím prvku DataRepeater](visual-basic/developing-apps/windows-forms/how-to-search-data-in-a-datarepeater-control-visual-studio.md)
-#### [Postupy: Vytvoření hlavního a podrobného formuláře pomocí dvou ovládacích prvků DataRepeater](visual-basic/developing-apps/windows-forms/how-to-create-a-master-detail-form-by-using-two-datarepeater-controls.md)
-#### [Návod: Zobrazení dat v ovládacím prvku DataRepeater](visual-basic/developing-apps/windows-forms/walkthrough-displaying-data-in-a-datarepeater-control-visual-studio.md)
-#### [Řešení potíží s ovládacím prvkem DataRepeater](visual-basic/developing-apps/windows-forms/troubleshooting-the-datarepeater-control-visual-studio.md)
-### [Ovládací prvky Čára a Tvar](visual-basic/developing-apps/windows-forms/line-and-shape-controls-visual-studio.md)
-#### [Úvod k ovládacím prvkům Čára a Tvar](visual-basic/developing-apps/windows-forms/introduction-to-the-line-and-shape-controls-visual-studio.md)
-#### [Postupy: Kreslení čar pomocí ovládacího prvku LineShape](visual-basic/developing-apps/windows-forms/how-to-draw-lines-with-the-lineshape-control-visual-studio.md)
-#### [Postupy: Kreslení obrazců pomocí ovládacích prvků OvalShape a RectangleShape](visual-basic/developing-apps/windows-forms/how-to-draw-shapes-with-the-ovalshape-and-rectangleshape-controls.md)
-#### [Postupy: Povolení přecházení mezi tvary pomocí tabulátoru](visual-basic/developing-apps/windows-forms/how-to-enable-tabbing-between-shapes-visual-studio.md)
-#### [Nasazení aplikací odkazujících na ovládací prvky Power Packs](visual-basic/developing-apps/windows-forms/deploying-applications-that-reference-power-packs-controls-visual-studio.md)
+### [Základy formulářové aplikace Windows](visual-basic/developing-apps/windows-forms/index.md)
 
-### [Přizpůsobení projektů a rozšíření oboru názvů My v jazyce Visual Basic](visual-basic/developing-apps/customizing-extending-my/customizing-projects-and-extending-my.md)
+### [Přizpůsobení projektů a rozšíření oboru názvů My v jazyce Visual Basic](visual-basic/developing-apps/customizing-extending-my/index.md)
 #### [Rozšíření oboru názvů My](visual-basic/developing-apps/customizing-extending-my/extending-the-my-namespace.md)
 #### [Balení a nasazení vlastních rozšíření oboru názvů My](visual-basic/developing-apps/customizing-extending-my/packaging-and-deploying-custom-my-extensions.md)
 #### [Rozšíření aplikačního modelu jazyka Visual Basic](visual-basic/developing-apps/customizing-extending-my/extending-the-visual-basic-application-model.md)
@@ -588,7 +565,7 @@
 #### [Souhrn manipulace s řetězci](visual-basic/language-reference/keywords/string-manipulation-summary.md)
 ### [Atributy](visual-basic/language-reference/attributes.md)
 ### [Konstanty a výčty](visual-basic/language-reference/constants-and-enumerations.md)
-### [Souhrn datových typů](visual-basic/language-reference/data-types/data-type-summary.md)
+### [Souhrn datových typů](visual-basic/language-reference/data-types/index.md)
 #### [Datový typ Boolean](visual-basic/language-reference/data-types/boolean-data-type.md)
 #### [Datový typ Byte](visual-basic/language-reference/data-types/byte-data-type.md)
 #### [Datový typ Char](visual-basic/language-reference/data-types/char-data-type.md)
@@ -606,7 +583,7 @@
 #### [Datový typ ULong](visual-basic/language-reference/data-types/ulong-data-type.md)
 #### [Uživatelský datový typ](visual-basic/language-reference/data-types/user-defined-data-type.md)
 #### [Datový typ UShort](visual-basic/language-reference/data-types/ushort-data-type.md)
-### [Direktivy](visual-basic/language-reference/directives/directives.md)
+### [Direktivy](visual-basic/language-reference/directives/index.md)
 #### [Direktiva #Const](visual-basic/language-reference/directives/const-directive.md)
 #### [Direktiva #ExternalSource](visual-basic/language-reference/directives/externalsource-directive.md)
 #### [Direktivy #If...Then...#Else](visual-basic/language-reference/directives/if-then-else-directives.md)
@@ -737,7 +714,7 @@
 #### [Logické bitové operátory](visual-basic/language-reference/operators/logical-bitwise-operators.md)
 #### [Různé operátory](visual-basic/language-reference/operators/miscellaneous-operators.md)
 ### [Vlastnosti](visual-basic/language-reference/properties.md)
-### [Dotazy](visual-basic/language-reference/queries/queries.md)
+### [Dotazy](visual-basic/language-reference/queries/index.md)
 #### [Klauzule Aggregate](visual-basic/language-reference/queries/aggregate-clause.md)
 #### [Klauzule Distinct](visual-basic/language-reference/queries/distinct-clause.md)
 #### [Klauzule Equals](visual-basic/language-reference/queries/equals-clause.md)
@@ -827,7 +804,7 @@
 #### [Seznam atributů](visual-basic/language-reference/statements/attribute-list.md)
 #### [Seznam parametrů](visual-basic/language-reference/statements/parameter-list.md)
 #### [Seznam typů](visual-basic/language-reference/statements/type-list.md)
-### [Značky pro komentáře XML](visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)
+### [Značky pro komentáře XML](visual-basic/language-reference/xmldoc/index.md)
 #### [<c>](visual-basic/language-reference/xmldoc/c.md)
 #### [<code>](visual-basic/language-reference/xmldoc/code.md)
 #### [<example>](visual-basic/language-reference/xmldoc/example.md)
@@ -845,7 +822,7 @@
 #### [<summary>](visual-basic/language-reference/xmldoc/summary.md)
 #### [<typeparam>](visual-basic/language-reference/xmldoc/typeparam.md)
 #### [<value>](visual-basic/language-reference/xmldoc/value.md)
-### [Vlastnosti osy XML](visual-basic/language-reference/xml-axis/xml-axis-properties.md)
+### [Vlastnosti osy XML](visual-basic/language-reference/xml-axis/index.md)
 #### [Vlastnost osy atributu XML](visual-basic/language-reference/xml-axis/xml-attribute-axis-property.md)
 #### [Vlastnost osy podřízeného XML](visual-basic/language-reference/xml-axis/xml-child-axis-property.md)
 #### [Vlastnost osy nástupce XML](visual-basic/language-reference/xml-axis/xml-descendant-axis-property.md)
@@ -1140,6 +1117,7 @@
 ### [Glosář strojového učení](machine-learning/resources/glossary.md)
 ### [Základy strojového učení](machine-learning/resources/basics.md)
 ### [Úkoly strojového učení](machine-learning/resources/tasks.md)
+### [Transformace dat](machine-learning/resources/transforms.md)
 
 <!-- End ML.NET Content -->
 

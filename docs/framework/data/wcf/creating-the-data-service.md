@@ -1,106 +1,106 @@
 ---
-title: Vytváření datové služby
-ms.date: 03/30/2017
+title: Vytvoření datové služby WCF v sadě Visual Studio
+ms.date: 08/24/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: bb6e2f7c1160fa51cd897cc953ad0ed721559294
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7ab227a19eeb9bf054700f8d932b75cf3c1ddc9
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33362833"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417824"
 ---
-# <a name="creating-the-data-service"></a>Vytváření datové služby
-V této úloze se vytvoří služba ukázková data, která využívá [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vystavit [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu, který je založen na ukázková databáze Northwind. Úloha zahrnuje následující základní kroky:  
-  
-1.  Vytvoření [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace.  
-  
-2.  Definují model dat pomocí [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] nástroje.  
-  
-3.  Přidáte službu data do webové aplikace.  
-  
-4.  Povolte přístup ke službě data.  
-  
-> [!NOTE]
->  [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Spuštění webové aplikace, který vytvoříte po dokončení této úlohy [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] vývojový Server poskytované sadě Visual Studio. [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] Vývojový Server podporuje pouze přístup z místního počítače. Chcete-li také usnadňují testování a řešení potíží s službu data během vývoje, zvažte spuštění aplikace, který je hostitelem služby data pomocí Internetové informační služby (IIS). Další informace najdete v tématu [postup: vývoj WCF Data Service spuštěna ve službě IIS](../../../../docs/framework/data/wcf/how-to-develop-a-wcf-data-service-running-on-iis.md).  
-  
-### <a name="to-create-the-aspnet-web-application"></a>K vytvoření aplikace technologie ASP.NET  
-  
-1.  V sadě Visual Studio na **soubor** nabídce vyberte možnost **nový**a potom vyberte **projektu**.  
-  
-2.  V **nový projekt** dialogové okno, v části jazyka Visual Basic a Visual C# vyberte **webové** šablony a potom vyberte **webové aplikace ASP.NET**.  
-  
-    > [!NOTE]
-    >  Pokud používáte Visual Studio Web Developer, musíte vytvořit nový web místo novou webovou aplikaci.  
-  
-3.  Typ `NorthwindService` jako název projektu.  
-  
-4.  Click **OK**.  
-  
-5.  (Volitelné) Zadejte číslo portu specifické pro vaši webovou aplikaci. Poznámka: číslo portu `12345` se používá ve zbývající části rychlý start.  
-  
-    1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu, že jste právě vytvořili a potom klikněte na **vlastnosti**.  
-  
-    2.  Vyberte **webové** kartě a nastavte hodnotu **specifického portu** textové pole k `12345`.  
-  
-### <a name="to-define-the-data-model"></a>Chcete-li definovat datový model  
-  
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu a pak klikněte na tlačítko **přidat novou položku.**  
-  
-2.  V **přidat novou položku** dialogové okno, klikněte **Data** šablony a potom vyberte **ADO.NET Entity Data Model**.  
-  
-3.  Zadejte název datového modelu, `Northwind.edmx`.  
-  
-4.  V [!INCLUDE[adonet_edm](../../../../includes/adonet-edm-md.md)] průvodce vyberte **generování z databáze**a potom klikněte na **Další**.  
-  
-5.  Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na **Další**:  
-  
-    -   Pokud jste připojení k databázi již nakonfigurována, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [postupy: vytvoření připojení databáze serveru SQL Server](http://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít ukázková databáze Northwind připojen.  
-  
-         \- nebo –  
-  
-    -   Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte ze seznamu připojení toto připojení.  
-  
-6.  Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políčka pro zobrazení a uložených procedur.  
-  
-7.  Klikněte na tlačítko **Dokončit** zavřete průvodce.  
-  
-    > [!NOTE]
-    >  Tento model generované datové zpřístupní vlastnosti cizího klíče v typech entit. Datové modely, které jsou vytvořené pomocí sady Visual Studio 2008 nezahrnují tyto vlastnosti cizího klíče. Z toho důvodu je třeba aktualizovat třídy klienta služby data všech klientských aplikací, které byly vytvořeny pro přístup ke službě Northwind data, která byla vytvořena pomocí sady Visual Studio 2008 před pokusem o přístup k této verzi datové služby Northwind.  
-  
-### <a name="to-create-the-data-service"></a>Vytvoření datové služby  
-  
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na název vaší [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projektu a pak klikněte na **přidat novou položku**.  
-  
-2.  V **přidat novou položku** dialogové okno, vyberte **služby WCF Data Service**.  
-  
-3.  Název služby, zadejte `Northwind`.  
-  
-     Visual StudioVisual Studio vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu. V **Průzkumníku**, služba bude mít název, Northwind, s příponou. svc.cs nebo. svc.vb.  
-  
-4.  V kódu pro službu data, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje službu data s typem, který je kontejneru entit datového modelu, který v tomto případě je `NorthwindEntities`. Definice třídy by měl vypadat to následující:  
-  
+# <a name="create-the-data-service"></a>Vytvoření datové služby
+
+V tomto tématu vytvoříte ukázkové datových služeb WCF Data Services využívá k tomu, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanál, který je založen na ukázkovou databázi Northwind. Úloha zahrnuje následující základní kroky:
+
+1. Vytvoření webové aplikace ASP.NET.
+
+2. Definování datového modelu s použitím nástroje modelu Entity Data Model.
+
+3. Přidáte datové služby na webovou aplikaci.
+
+4. Povolení přístupu k datové službě.
+
+## <a name="create-the-aspnet-web-app"></a>Vytvoření webové aplikace ASP.NET
+
+1. V sadě Visual Studio na **souboru** nabídce vyberte možnost **nový** > **projektu**.
+
+1. V **nový projekt** dialogové okno, v rámci jazyka Visual Basic nebo Visual C# vyberte **webové** kategorie a pak vyberte **webová aplikace ASP.NET**.
+
+1. Zadejte `NorthwindService` jako název projektu a pak vyberte **OK**.
+
+1. V **nová webová aplikace ASP.NET** dialogového okna, vyberte **prázdný** a pak vyberte **OK**.
+
+1. (Volitelné) Zadejte číslo portu specifické pro vaši webovou aplikaci. Poznámka: číslo portu `12345` slouží v této sérii témat rychlý start.
+
+    1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt ASP.NET, který jste právě vytvořili a klikněte na tlačítko **vlastnosti**.
+
+    2. Vyberte **webové** kartu a nastavte hodnotu **specifického portu** textové pole pro `12345`.
+
+## <a name="define-the-data-model"></a>Definování datového modelu
+
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu technologie ASP.NET a potom klikněte na tlačítko **přidat** > **nová položka**.
+
+2. V **přidat novou položku** dialogové okno, vyberte **Data** kategorie a pak vyberte **datový Model Entity ADO.NET**.
+
+3. Název datového modelu, zadejte `Northwind.edmx`.
+
+4. V **Průvodce datovým modelem Entity**vyberte **EF designeru z databáze**a potom klikněte na tlačítko **Další**.
+
+5. Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na tlačítko **Další**:
+
+    -   Pokud nemáte připojení k databázi, která jsou už nakonfigurovaná, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [postupy: vytvoření připojení k databázím SQL Server](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90)). Tato instance systému SQL Server musí mít připojené ukázkové databáze Northwind.
+
+         \- nebo –
+
+    -   Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte v seznamu připojení toto připojení.
+
+6. Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políček pro zobrazení a uložených procedur.
+
+7. Klikněte na tlačítko **Dokončit** zavřete průvodce.
+
+## <a name="create-the-wcf-data-service"></a>Vytvoření datové služby WCF
+
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt ASP.NET a klikněte na tlačítko **přidat** > **nová položka**.
+
+2. V **přidat novou položku** dialogové okno, vyberte **službu WCF Data Service** šablony položky z **webové** kategorie.
+
+   ![Služby WCF Data Service šablony položky v sadě Visual Studio 2015](media/wcf-data-service-item-template.png)
+
+   > [!NOTE]
+   > **Službu WCF Data Service** šablona je k dispozici v sadě Visual Studio 2015, ale ne v sadě Visual Studio 2017.
+
+3. Název služby zadáte `Northwind`.
+
+     Visual Studio vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu. V **Průzkumníka řešení**, službu s názvem Northwind s příponou *. svc.cs* nebo *. svc.vb*.
+
+4. V kódu pro datovou službu, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje datové služby s typem, který je kontejner entit datového modelu, který v tomto případě je `NorthwindEntities`. Definice třídy by měl vypadat to následující:
+
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#servicedefinition)]
-     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]  
-  
-### <a name="to-enable-access-to-data-service-resources"></a>Chcete-li povolit přístup k datovým prostředkům služby  
-  
-1.  V kódu pro službu data, nahraďte zástupný symbol kód v `InitializeService` funkce následujícím kódem:  
-  
+     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]
+
+## <a name="enable-access-to-data-service-resources"></a>Povolení přístupu k prostředkům datové služby
+
+1. V kódu pro datovou službu, nahraďte zástupný symbol kód v `InitializeService` funkce následujícím kódem:
+
      [!code-csharp[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#allreadconfig)]
-     [!code-vb[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#allreadconfig)]  
-  
-     To umožňuje autorizovaným klientům ke čtení a zápisu přístup k prostředkům pro zadanou entitu sady.  
-  
+     [!code-vb[Astoria Quickstart Service#AllReadConfig](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#allreadconfig)]
+
+     To umožňuje autorizovaným klientům ke čtení a zápis k prostředkům určené sady entit.
+
     > [!NOTE]
-    >  Libovolného klienta, kterému mají přístup [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] aplikace může také přístup k prostředkům vystavené službu data. V produkčním datové služby aby se zabránilo neoprávněnému přístupu k prostředkům byste měli také zabezpečit vlastní aplikace. Další informace najdete v tématu [zabezpečení služby WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).  
-  
-## <a name="next-steps"></a>Další kroky  
- Úspěšně jste vytvořili novou službu data, která zveřejňuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, který je založen na ukázková databáze Northwind a jste povolili přístup k informačnímu kanálu pro klienty, kteří mají oprávnění na [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webové aplikace. V dalším kroku se spustí službu data ze sady Visual Studio a budou přistupovat [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] kanálu odesláním požadavky HTTP GET prostřednictvím webového prohlížeče:  
-  
- [Přístup ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)  
-  
-## <a name="see-also"></a>Viz také  
- [Nástroje modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)
+    > Libovolného klienta, který má přístup k aplikaci technologie ASP.NET můžete také přístup k prostředkům vystavené datové služby. V produkčním datové služby chcete-li zabránit neoprávněnému přístupu k prostředkům byste měli také zabezpečit samotná aplikace. Další informace najdete v tématu [zabezpečení služeb WCF Data Services](../../../../docs/framework/data/wcf/securing-wcf-data-services.md).
+
+## <a name="next-steps"></a>Další kroky
+
+Úspěšně jste vytvořili novou službu data, která vystavuje kanál OData, která je založena na ukázkovou databázi Northwind a povolíte přístup ke kanálu pro klienty, kteří mají oprávnění na webovou aplikaci ASP.NET. Teď se spustit službu data ze sady Visual Studio a přístup, odešlete požadavky HTTP GET přes webový prohlížeč datového kanálu OData:
+
+> [!div class="nextstepaction"]
+> [Přístup ke službě z webového prohlížeče](../../../../docs/framework/data/wcf/accessing-the-service-from-a-web-browser-wcf-data-services-quickstart.md)
+
+## <a name="see-also"></a>Viz také:
+
+- [Datový Model Entity ADO.NET nástroje](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)
