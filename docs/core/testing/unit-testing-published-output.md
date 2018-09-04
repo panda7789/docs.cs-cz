@@ -5,11 +5,11 @@ author: kendrahavens
 ms.author: kehavens
 ms.date: 10/18/2017
 ms.openlocfilehash: e99000996f5dfa9f9d4f9b823e36ecbe325da835
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404712"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43508130"
 ---
 # <a name="test-published-output-with-dotnet-vstest"></a>Testování publikované výstup s dotnet test
 

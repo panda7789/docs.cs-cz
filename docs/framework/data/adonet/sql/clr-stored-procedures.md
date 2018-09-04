@@ -3,11 +3,11 @@ title: Uložené procedury CLR
 ms.date: 03/30/2017
 ms.assetid: fd7eea9b-218a-4988-8c9a-8abcc6031c66
 ms.openlocfilehash: 1f8aa6fb9243706d07caa4527af0c4c880aa70a6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43424331"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503108"
 ---
 # <a name="clr-stored-procedures"></a>Uložené procedury CLR
 Uložené procedury jsou rutiny, které nelze použít v skalární výrazy. Můžete vrácena klientovi tabulkové výsledky a zprávy, vyvolání jazyka pro definici dat (DDL) a příkazy jazyka (DML) zpracování dat a vrátí výstupní parametry.  

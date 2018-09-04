@@ -3,11 +3,11 @@ title: Element &lt;httpDigest&gt;
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
 ms.openlocfilehash: 4f3edb4a525429bfc55c4e4cfaffbfc5726dcef8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43477955"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521984"
 ---
 # <a name="lthttpdigestgt-element"></a>Element &lt;httpDigest&gt;
 Určuje výběru pověření používaný při ověřování klienta ke službě zadejte.  

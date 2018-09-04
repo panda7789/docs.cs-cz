@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: serializace použití DataContractSerializer (C#)'
+title: 'Postupy: serializace pomocí třídy DataContractSerializer (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: 1b2ec431698f23ea0c3e690cd57261bad8b1e4a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2c0324b1eeeab9f6cf9223e2a3e201771b188749
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33329281"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510988"
 ---
-# <a name="how-to-serialize-using-datacontractserializer-c"></a>Postupy: serializace použití DataContractSerializer (C#)
+# <a name="how-to-serialize-using-datacontractserializer-c"></a>Postupy: serializace pomocí třídy DataContractSerializer (C#)
 Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Runtime.Serialization.DataContractSerializer>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří mnoho objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Pak je serializuje do textových souborů a pak je deserializuje z textových souborů.  
+ Následující příklad vytvoří několik objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. K textovým souborům je serializuje a deserializuje je z textových souborů.  
   
 ```csharp  
 using System;  
@@ -91,5 +91,6 @@ Testing for type: XElementNullContainer
   Deserialized type: XElementNullContainer  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Serializace grafů objektů, které obsahují XElement objekty (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+## <a name="see-also"></a>Viz také
+
+- [Serializace grafů objektů, které obsahují objekty XElement (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)

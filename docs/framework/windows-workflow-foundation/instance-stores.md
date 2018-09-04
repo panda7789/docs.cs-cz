@@ -1,31 +1,31 @@
 ---
-title: Instance úložiště
+title: Úložiště instancí
 ms.date: 03/30/2017
 ms.assetid: f2629668-0923-4987-b943-67477131c1e0
-ms.openlocfilehash: 0d59daeee318aaf82897517a23343065dc97d69f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7ea29c3604042d773590448e31ce4ea95125ca1f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518772"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519575"
 ---
-# <a name="instance-stores"></a>Instance úložiště
-Instance úložiště je logický kontejner instancí. Je na místě, kde je uložena instance data a metadata. Instance úložiště neznamená vyhrazené fyzické úložiště. Instance úložiště může obsahovat trvanlivý informace v databázi systému SQL Server nebo informace o stavu netrvalý v paměti. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Se dodává s SQL úložiště Instance pracovního postupu, který je na konkrétní implementace úložiště instance, které umožňuje pracovní postupy pro zachování dat instance a metadat do databáze systému SQL Server 2005 nebo SQL Server 2008. Windows Server App Fabric kromě poskytuje konkrétní implementaci instance úložiště. Další informace najdete v tématu [Windows Server App Fabric Instance Store, dotazů a poskytovatelé řízení](http://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409).  
+# <a name="instance-stores"></a>Úložiště instancí
+Úložiště instance je logický kontejner instancí. Je to místo, kde je uložena instance data a metadata. Úložiště instance neznamená vyhrazené fyzické úložiště. Úložiště instance může obsahovat trvalý informace v databázi serveru SQL Server nebo informace o stavu bez trvale v paměti. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] Dodává s SQL Store Instance pracovního postupu, který je na konkrétní implementace úložiště instance, která umožňuje pracovní postupy pro zachování dat instance a metadat do databáze serveru SQL Server 2005 nebo SQL Server 2008. Windows Server App Fabric kromě toho také poskytuje konkrétní implementaci úložiště instancí. Další informace najdete v tématu [systému Windows Server App Fabric Instance Store, dotaz a poskytovatelé správy](https://go.microsoft.com/fwlink/?LinkID=201201&clcid=0x409).  
   
- Trvalost rozhraní API je rozhraní mezi hostitelem a úložiště instance, které umožňuje hostitele k odeslání příkazu požadavky (například <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> a <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>) do úložiště instance. Konkrétní implementaci toto rozhraní API se nazývá zprostředkovatele trvalost. Zprostředkovatel trvalost přijímá požadavky z hostitele a upraví ukládání instance.  
+ Trvalost rozhraní API je rozhraní mezi hostitelem a úložiště instance, která umožňuje hostitele má odesílat požadavky na příkazu (například <xref:System.Activities.DurableInstancing.LoadWorkflowCommand> a <xref:System.Activities.DurableInstancing.SaveWorkflowCommand>) do úložiště instancí. Konkrétní implementace tohoto rozhraní API se nazývá poskytovatele trvalého chování. Poskytovatel trvalého přijímat žádosti z hostitele a změní v úložišti instancí.  
   
- Hostitelé a instance úložišť jsou modulární tak, aby hostitel lze použít s mnoha instance úložiště a úložišti instanci lze použít s mnoha hostitele. Instance úložiště je obvykle optimalizována pro způsobu použití konkrétního hostitele, i když ukládání instance a hostitele může vyvíjet na nezávislé životní cykly. Například **hostitele služby pracovního postupu** a **SqlWorkflowInstanceStore** jsou navrženy pro práci a současně. Můžete vytvořit vlastní úložiště instance zachovat data a metadata instancí služby pracovního postupu a používat toto úložiště instance s **hostitele služby pracovního postupu**. Můžete například vytvořit OracleWorkflowInstanceStore, která umožní pracovní postupy zachování informace do databáze Oracle místo jejich uložení do databáze systému SQL Server.  
+ Hostitelé a úložiště instancí jsou modulární tak, aby hostitele je možné s mnoha úložiště instancí a úložiště instance je možné s mnoha hostitelích. Úložiště instance je obvykle optimalizované pro vzory používání konkrétního hostitele, i když ukládání instance a hostitele může vyvíjet na nezávislý životní cykly. Například **hostitele služby pracovního postupu** a **SqlWorkflowInstanceStore** jsou navrženy pro práci dobře spolupracovaly. Můžete vytvořit vlastní úložiště instance k zachování dat a metadat instance služby pracovního postupu a použít tuto instanci úložiště s **hostitele služby pracovního postupu**. Můžete například vytvořit OracleWorkflowInstanceStore, který umožňuje pracovní postupy zachování informací do databáze Oracle místo je ukládá do databáze SQL serveru.  
   
- Je běžné pro hostitele potřeba rozšířit o další funkce, která upraví trvalé objekty. Například instanci trvalost systému může být hostitel pracovního postupu rozšíření, které podporuje "Pozastavit" operace a úložiště instance SQL.  Hostitele pracovního postupu může odeslat standardní příkaz například uložit nebo načíst, uložit nebo načíst z úložiště instance pracovního postupu a uložení do úložiště instanci pracovního postupu. Rozšíření pozastavit může přidat další sémantiku příkazy pro ukládání a načítání instance pracovního postupu tak, aby nelze načíst instanci pracovního postupu pozastavený. Trvalost zprostředkovatele pro ukládání instance SQL rozumí příkazy pro ukládání a načítání instance pracovního postupu a implementuje příkazy voláním příslušné uložené procedury, které mění tabulky trvalé objekty v databázi systému SQL Server.  
+ Je běžné, že hostitelé mají být rozšířena o další funkce, která upravuje trvalé objekty. Například systém trvalých instancí může mít hostitele pracovního postupu, rozšíření, které podporuje "Pozastavené" operace a úložiště instance SQL.  Hostitele pracovního postupu můžou odesílat standardní příkaz například uložit nebo načíst, uložit nebo načíst z úložiště instance pracovního postupu a uložení do úložiště instance pracovního postupu. Pozastavit rozšíření může přidat další sémantiku příkazy pro ukládání a načítání instance pracovního postupu tak, aby nelze načíst instanci pracovního postupu pozastavené. Poskytovatele trvalého chování pro úložiště instancí SQL rozumí příkazy pro ukládání a načítání instance pracovního postupu a implementuje příkazy voláním příslušné uložené procedury, které se mění tabulky trvalé objekty v databázi SQL serveru.  
   
- Hostitel funguje jako vlastníka instance v rámci úložiště instance. Hostitel může fungovat jako více než jednoho vlastníka instance s více než jedno úložiště instance ve stejnou dobu. Hostitel poskytuje identifikátory GUID pro instanci klíče související s instancí. Klíčem instance je jedinečný odkaz, který identifikuje instance. Trvalost systém vytvoří, aktualizuje a odstraní instanci vlastníka informace, jak se spouští příkazy požadoval hostitele.  
+ Hostitel funguje jako vlastníka instance v úložišti instancí. Hostitel může fungovat jako více než jednoho vlastníka instance s více než jednu instanci úložiště ve stejnou dobu. Hostitel poskytuje identifikátory GUID pro instanci klíče asociované s instancí. Klíč instance s je jedinečný alias, který identifikuje instanci. Systém trvalých vytvoří, aktualizuje a odstraní informace vlastníka instance spouští příkazy požadoval hostitele.  
   
- Následující seznam obsahuje důležité kroky hostitele interakci s instance úložiště:  
+ Následující seznam obsahuje důležité kroky hostitele interakci s úložišti instancí:  
   
-1.  Získat **InstanceStore** od zprostředkovatele trvalost.  
+1.  Získat **třídy InstanceStore** z poskytovatele trvalého chování.  
 
-2.  Získat popisovač do instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A> metodu **InstanceStore**.  
+2.  Získat popisovač instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.CreateInstanceHandle%2A> metodu **třídy InstanceStore**.  
   
-3.  Použít příkazy proti popisovač instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A> metodu **InstanceStore**.  
+3.  Vyvolat příkazy spouštěly pro popisovač instance voláním <xref:System.Runtime.DurableInstancing.InstanceStore.Execute%2A> metodu **třídy InstanceStore**.  
   
-4.  Zkontrolujte <xref:System.Runtime.DurableInstancing.InstanceView> vrácený **InstanceStore.Execute** k určení výsledky příkazy.
+4.  Zkontrolujte <xref:System.Runtime.DurableInstancing.InstanceView> vrácený **InstanceStore.Execute** určit výsledky příkazů.

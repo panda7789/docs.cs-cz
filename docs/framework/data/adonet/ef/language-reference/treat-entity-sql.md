@@ -3,11 +3,11 @@ title: POVAŽOVAT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 5b77f156-55de-4cb4-8154-87f707d4c635
 ms.openlocfilehash: c3291dc6d5bc79430c8bf011ee6a2f4dc213ffad
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486893"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510404"
 ---
 # <a name="treat-entity-sql"></a>POVAŽOVAT (Entity SQL)
 Zpracovává konkrétní základního typu objektu jako objekt zadaného typu odvozené.  

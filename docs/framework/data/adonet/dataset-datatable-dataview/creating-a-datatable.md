@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: eecf9d78-60e3-4fdc-8de0-e56c13a89414
 ms.openlocfilehash: ad3f8bc6b42c5a54b42100a5d010e097ba80adc2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386910"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521130"
 ---
 # <a name="creating-a-datatable"></a>Vytvoření datové tabulky
 A <xref:System.Data.DataTable>, která představuje jednu tabulku relační data v paměti, lze vytvořit a používat samostatně nebo mohou využívat jiné objekty rozhraní .NET Framework nejčastěji jako člen <xref:System.Data.DataSet>.  

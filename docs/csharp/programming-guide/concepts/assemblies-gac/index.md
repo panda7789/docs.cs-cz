@@ -2,12 +2,12 @@
 title: Sestavení a globální mezipaměti sestavení (C#)
 ms.date: 07/20/2015
 ms.assetid: 149f5ca5-5b34-4746-9542-1ae43b2d0256
-ms.openlocfilehash: 07ee54fc19abecba5e8335f063277418ede80b36
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: ed5ecff57035b4d3cf47f8325fe5c172180f9d40
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408915"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534320"
 ---
 # <a name="assemblies-and-the-global-assembly-cache-c"></a>Sestavení a globální mezipaměti sestavení (C#)
 Tvoří základní jednotku nasazení, správu verzí, opětovného použití, rozsahu platnosti při aktivaci a oprávnění zabezpečení pro sestavení. Aplikace založené na síť. Sestavení podobu spustitelný soubor (.exe) nebo soubor dynamické knihovny (.dll) a jsou stavební kameny nástroje rozhraní .NET Framework. Modul common language runtime poskytují informace, musí se jednat o seznámen typu implementace. Si můžete představit jako kolekce typů a prostředků, které tvoří logickou jednotku funkčnosti a jsou sestaveny vzájemnou spolupráci sestavení.  
@@ -50,13 +50,14 @@ Tvoří základní jednotku nasazení, správu verzí, opětovného použití, r
 > [!NOTE]
 >  K vytvoření sestavení v sadě Visual Studio na **sestavení** nabídku zvolte **sestavení**.  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
- [Sestavení v modulu CLR (Common Language Runtime)](../../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- [Přátelská sestavení (C#)](friend-assemblies.md)  
- [Postupy: sdílení sestavení s jinými aplikacemi (C#)](how-to-share-an-assembly-with-other-applications.md)  
- [Postupy: zavedení a uvolnění sestavení (C#)](how-to-load-and-unload-assemblies.md)  
- [Postupy: určení, zda je soubor sestavení (C#)](how-to-determine-if-a-file-is-an-assembly.md)  
- [Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (C#)](how-to-create-and-use-assemblies-using-the-command-line.md)  
- [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
+- [Sestavení v modulu CLR (Common Language Runtime)](../../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+- [Přátelská sestavení (C#)](friend-assemblies.md)  
+- [Postupy: sdílení sestavení s jinými aplikacemi (C#)](how-to-share-an-assembly-with-other-applications.md)  
+- [Postupy: zavedení a uvolnění sestavení (C#)](how-to-load-and-unload-assemblies.md)  
+- [Postupy: určení, zda je soubor sestavení (C#)](how-to-determine-if-a-file-is-an-assembly.md)  
+- [Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (C#)](how-to-create-and-use-assemblies-using-the-command-line.md)  
+- [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
+- [Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)](walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)

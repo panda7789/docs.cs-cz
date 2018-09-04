@@ -5,11 +5,11 @@ helpviewer_keywords:
 - false literal keyword [C#]
 ms.assetid: fcc1c1a5-0e42-4226-a128-81492a9bf719
 ms.openlocfilehash: f0743ead2836a4570d1b2dc0fc4cf20d2343a9a1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408531"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507975"
 ---
 # <a name="false-literal-c-reference"></a>false – literál (referenční dokumentace jazyka C#)
 

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
 ms.openlocfilehash: d3b051c7ea152606721388ea35b6f508eada1c5d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43385174"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524362"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Postupy: vytváření dočasných certifikátů pro použití během vývoje.
 Při vývoji zabezpečenou službu nebo klienta s použitím Windows Communication Foundation (WCF), je často nutné zadat certifikát X.509, které se použijí jako přihlašovací údaje. Certifikát je obvykle součástí řetěz certifikátů s kořenovou autoritou nalezen v úložišti důvěryhodných kořenových certifikačních autorit počítače. S řetěz certifikátů umožňuje určit obor sady certifikátů, kdy obvykle kořenová autorita je z vaší organizace nebo organizační jednotka. Pro emulaci to při vývoji, vytvoříte dva certifikáty splňovat požadavky na zabezpečení. První je certifikát podepsaný svým držitelem, který je umístěn v úložišti Důvěryhodné kořenové certifikační autority, a druhý certifikát je vytvořený z první a je umístěn v osobním úložišti umístění místního počítače nebo osobním úložišti Aktuální umístění uživatele. Toto téma vás provede kroky k vytvoření těchto dvou certifikáty pomocí [Certificate Creation Tool (MakeCert.exe)](https://go.microsoft.com/fwlink/?LinkId=248185), která poskytuje [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] SDK.  

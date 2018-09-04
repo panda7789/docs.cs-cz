@@ -3,11 +3,11 @@ title: Odvození textu elementu
 ms.date: 03/30/2017
 ms.assetid: 789799e5-716f-459f-a168-76c5cf22178b
 ms.openlocfilehash: b70f76d2702ebcb098c64ea84900b723fbc137ab
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43405785"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516491"
 ---
 # <a name="inferring-element-text"></a>Odvození textu elementu
 Pokud element obsahuje text a nemá žádný podřízený element odvození podle tabulky jako je například (elementy s atributy) nebo opakované prvků, nový sloupec s názvem **TableName_Text** se přidá do tabulky, kterou si odvozuje pro element. Text obsažen v elementu bude přidána na řádek v tabulce a uložená v novém sloupci. **ColumnMapping** vlastnost nového sloupce, který bude nastavena na **MappingType.SimpleContent**.  

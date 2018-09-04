@@ -2,12 +2,12 @@
 title: 'Postupy: zápis dat objektů do souboru XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7681eb98-703d-4005-a369-26a7bca0f894
-ms.openlocfilehash: 1c8bfd00452cee63456bc3bf64ccf4a0c61aa06e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 081c7cf2e621aad2458421a287cbef1b57fb644d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33320545"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518143"
 ---
 # <a name="how-to-write-object-data-to-an-xml-file-c"></a>Postupy: zápis dat objektů do souboru XML (C#)
 Tento příklad zapíše objekt ze třídy do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
@@ -50,7 +50,7 @@ public class XMLWrite
 ## <a name="robust-programming"></a>Robustní programování  
  Následující podmínky mohou způsobit výjimku:  
   
--   Třída serializována nemá veřejný konstruktor bez parametrů.  
+-   Serializovaná třída nemá veřejný konstruktor bez parametrů.  
   
 -   Soubor existuje a je jen pro čtení (<xref:System.IO.IOException>).  
   
@@ -59,9 +59,10 @@ public class XMLWrite
 -   Disk je plný (<xref:System.IO.IOException>).  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Tento příklad vytvoří nový soubor, pokud soubor již neexistuje. Pokud aplikace potřebuje k vytvoření souboru, tato aplikace potřebuje `Create` přístup ke složce. Pokud soubor již existuje, aplikace potřebuje pouze `Write` přístup nižší úrovní oprávnění. Pokud je to možné, je bezpečnější k vytvoření tohoto souboru během nasazení a udělit pouze `Read` přístup do jednoho souboru místo `Create` přístup pro složku.  
+ Tento příklad vytvoří nový soubor, pokud soubor již neexistuje. Pokud aplikace potřebuje vytvořit soubor, pak tato aplikace potřebuje `Create` přístup ke složce. Pokud soubor již existuje, aplikace potřebuje pouze `Write` přístup, a menší oprávnění. Kde je to možné, je bezpečnější vytvořit soubor při nasazení a udělit pouze `Read` přístup do jednoho souboru, spíše než `Create` přístup ke složce.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IO.StreamWriter>  
- [Postupy: čtení dat objektů ze souboru XML (C#)](../../../../csharp/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)  
- [Serializace (C# )](../../../../csharp/programming-guide/concepts/serialization/index.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.IO.StreamWriter>  
+- [Postupy: čtení dat objektů ze souboru XML (C#)](../../../../csharp/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)  
+- [Serializace (C# )](../../../../csharp/programming-guide/concepts/serialization/index.md)

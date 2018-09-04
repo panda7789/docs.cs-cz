@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
 ms.openlocfilehash: 2f3c9daf98bfe77ea9462c8126f7a8368016875c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468862"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516663"
 ---
 # <a name="-main-c-compiler-options"></a>-main (možnosti kompilátoru C#)
 Tato možnost určuje třídu, která obsahuje položku, přejděte na program, pokud obsahuje více než jedné třídy **hlavní** metody.  

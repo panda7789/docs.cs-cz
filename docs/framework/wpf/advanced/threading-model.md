@@ -19,11 +19,11 @@ helpviewer_keywords:
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
 ms.openlocfilehash: 9e8bcd4503ec840e46022a55cc08dc0610eaa60b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468208"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43512463"
 ---
 # <a name="threading-model"></a>Model vláken
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] slouží k uložení vývojáři z obtížné dělení na vlákna. V důsledku toho většina [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vývojáři nebudete muset psát rozhraní, které používá více než jedno vlákno. Protože s více vlákny jsou složité a těžko ladění, mělo by se vyhnout při existují řešení s jedním vláknem.  

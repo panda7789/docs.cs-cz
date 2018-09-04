@@ -3,11 +3,11 @@ title: Technologie LINQ to SQL s úzce Spárovanými klient-server
 ms.date: 03/30/2017
 ms.assetid: e083d805-dcf6-459d-b9af-9ef0563f2dd7
 ms.openlocfilehash: 9c36fc1f402d3791611af47a3a6d997db4f31167
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408957"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521877"
 ---
 # <a name="linq-to-sql-with-tightly-coupled-client-server-applications"></a>Technologie LINQ to SQL s úzce Spárovanými klient-server
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je možné ve střední vrstvě s úzce spárovanými inteligentní klienti v prezentační vrstvě. Ve scénářích, které se týkají přístupu k datům jen pro čtení, žádné kontroly optimistického řízení souběžnosti nebo optimistického řízení souběžnosti ovládacím prvkem časová razítka není větší složitostí oproti pomocí jiné vzdálené scénáře. Ale pokud databáze vyžaduje kontroly optimistického řízení souběžnosti s původní hodnoty [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] neposkytuje úroveň podpory pro dopad na dobu odezvy data, která nenajdete v datových sadách. Ale [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] střední vrstvy si mohou vyměňovat data s klienty na libovolné platformě.  

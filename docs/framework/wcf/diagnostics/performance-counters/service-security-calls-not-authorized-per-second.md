@@ -5,11 +5,11 @@ ms.assetid: 1eeade5a-ea62-4757-b1f9-1b1b1746abd1
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: f2c921991f059d7dfe5661dfe688ec9675d0d5fe
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43399410"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536923"
 ---
 # <a name="service-security-calls-not-authorized-per-second"></a>Služba: Počet neautorizovaných volání zabezpečení za sekundu
 Název čítače: zabezpečení volání není autorizovaný za sekundu  

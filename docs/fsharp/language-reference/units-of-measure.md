@@ -1,17 +1,17 @@
 ---
 title: Měrné jednotky (F#)
-description: 'Zjistěte, jak plovoucí desetinná čárka a číslo se znaménkem hodnoty v jazyce F # mohou být přidruženy jednotky míry, které jsou obvykle používány k označení Délka svazku a velkokapacitních.'
+description: 'Zjistěte, jak plovoucí desetinnou čárkou a celé číslo se znaménkem hodnoty v jazyce F # můžete mít přidružené jednotky měření, které se obvykle používají k označení délku, svazek a velkokapacitních.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 3e47c92100c1dd99161be709a065913f501854f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6075742ec80d9510be51d4565e3397931c9f68c7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564948"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517423"
 ---
 # <a name="units-of-measure"></a>Měrné jednotky
 
-Plovoucí desetinná čárka a číslo se znaménkem hodnoty v jazyce F # může mít přidružené jednotky míry, které jsou obvykle používány k označení délku svazku, hromadně, a tak dále. Pomocí počty jednotek, povolíte kompilátor ověřit, že aritmetické vztahy mají správnou jednotky, která pomáhá zabránit programování chyby.
+Plovoucí desetinná čárka a číslo se znaménkem hodnoty v jazyce F # můžete mít přidružené jednotky měření, které se obvykle používají k označení délku, svazek, hmotnost, a tak dále. Pomocí množství s jednotkami povolíte kompilátor ověřte, že aritmetické vztahy mají správnou jednotek, která pomáhá zabránit programovací chyby.
 
 
 ## <a name="syntax"></a>Syntaxe
@@ -21,65 +21,65 @@ Plovoucí desetinná čárka a číslo se znaménkem hodnoty v jazyce F # může
 ```
 
 ## <a name="remarks"></a>Poznámky
-Definuje předchozí syntaxe *název jednotky* jako jednotku míry. Volitelná součást se používá k definování novou míru z hlediska dříve definovaném jednotky. Například následující řádek definuje míry `cm` (centimetr).
+Předchozí syntaxe definuje *název jednotky* jako měrné jednotky. Volitelná součást se používá k definování novou míru dříve definované jednotkách. Například následující řádek určuje míru `cm` (centimetr).
 
 ```fsharp
 [<Measure>] type cm
 ```
 
-Následující řádek definuje míry `ml` (milliliter) jako krychlový centimetru (`cm^3`).
+Následující řádek určuje míru `ml` (milliliter) jako kubické centimetru (`cm^3`).
 
 ```fsharp
 [<Measure>] type ml = cm^3
 ```
 
-V předchozích syntaxi *měr* je vzorec, který zahrnuje jednotky. Ve vzorcích, které zahrnují jednotky, integrální zajišťuje jsou podporovány (kladné a záporné), mezery mezi jednotky znamenat součin dvou jednotky `*` také určuje produktem jednotky, a `/` označuje podíl jednotky. Pro vzájemné jednotku, můžete použít buď power záporné celé číslo nebo `/` určující oddělení mezi čítači a jmenovatel vzorec jednotky. Několik jednotek v jmenovatel by měl být uzavřeny v závorkách. Jednotky oddělené mezerami po `/` se interpretují jako součást jmenovatel, ale žádné jednotky následující `*` se interpretují jako součást čítači.
+V předchozí syntaxi *míru* je vzorec, který zahrnuje jednotky. Ve vzorcích, které se týkají jednotky, integrální mocniny podporují (kladné a záporné) mezery mezi jednotkami určete, součin dvou jednotky `*` také určuje produkt jednotek a `/` označuje podíl jednotky. Pro vzájemné jednotek, můžete použít buď power záporné celé číslo nebo `/` určující oddělení mezi čitatelem a jmenovatelem částí vzorce. Několik jednotek v jmenovatel by měl být uzavřen v závorkách. Jednotky oddělené mezerami po `/` jsou interpretovány jako součást jmenovatel, ale všechny jednotky po `*` jsou interpretovány jako součást čítač.
 
-1 můžete použít ve výrazech jednotek, buď udávajících bezrozměrný množství, samostatně nebo společně s další jednotky, například v čítači. Například jednotky pro na míru by byla zapsána jako `1/s`, kde `s` určuje v sekundách. V jednotce vzorce nejsou použity závorky. Nezadáte číselný převod konstanty ve vzorcích jednotky; Můžete však definovat převod konstanty u jednotek samostatně a použít na jednotku zaškrtnutí výpočty.
+1 můžete použít ve výrazech jednotek, buď samostatně k označení bezrozměrná množství nebo společně s další jednotky, jako je například čítač. Například jednotky pro mírou by byla zapsána jako `1/s`, kde `s` označuje sekund. Ve vzorcích jednotek nejsou použity závorky. Ve vzorcích jednotek; není zadán číselný převod konstanty ale můžete definovat převod konstanty s jednotkami samostatně a jejich použití v částí kontroluje výpočty.
 
-Jednotka vzorce, které mají stejný význam může být napsán v různých způsobů ekvivalentní. Proto kompilátor převede jednotky vzorce konzistentní formulář, který převede záporné zajišťuje recipročních, jednotky skupiny na jednom čítači a jmenovatel a seřadí podle abecedy jednotky v čítači a jmenovatel.
+Jednotka vzorce, které mají stejný význam je možné psát v různých ekvivalentní způsoby. Proto kompilátor převede částí vzorce konzistentní formulář, který převede negativní mocniny recipročních, skupiny jednotky do jednoho čitatelem a jmenovatelem a seřadí podle abecedy jednotek v čitatelem a jmenovatelem.
 
-Například jednotky vzorce `kg m s^-2` a `m /s s * kg` se převedou na `kg m/s^2`.
+Například jednotky vzorce `kg m s^-2` a `m /s s * kg` jsou převedeny na `kg m/s^2`.
 
-Ve výrazech plovoucí bod použijete měrné jednotky. Pomocí čísla s plovoucí desetinnou společně s přidružené jednotky míry zvyšuje úroveň zabezpečení typů a pomáhá zabránit chybách neshoda jednotky, ke kterým může dojít ve vzorcích, když používáte slabě typovaná čísla s plovoucí desetinnou. Pokud píšete plovoucí bodu výraz, který používá jednotky, musí odpovídat jednotky ve výrazu.
+Ve výrazech s plovoucí desetinnou čárkou bod použijete měrné jednotky. Pomocí čísel s plovoucí desetinnou spolu s přidružené jednotky měření přidává další úroveň bezpečnost typů a pomáhá zabránit jednotky chybám, které se mohou vyskytnout ve vzorcích, když použijete slabě typované čísel s plovoucí desetinnou. Pokud píšete plovoucí bodu výraz, který používá jednotky, musí odpovídat jednotky ve výrazu.
 
-Literály se vzorcem jednotky v lomených závorkách může opatřit poznámkami, jak je znázorněno v následujících příkladech.
+Literály s částí vzorce v lomených závorkách, může opatřit poznámkami, jak je znázorněno v následujícím příkladu.
 
 ```fsharp
 1.0<cm>
 55.0<miles/hour>
 ```
 
-Nevkládejte mezeru mezi číslo a lomená závorka; však může zahrnovat příponou literálu, jako `f`, jako v následujícím příkladu.
+Není vložíme mezeru mezi číslo a ostré závorky; však může zahrnovat přípona literálu jako `f`, jako v následujícím příkladu.
 
 ```fsharp
 // The f indicates single-precision floating point.
 55.0f<miles/hour>
 ```
 
-Tyto poznámky změní typ literálové z jeho primitivní typ (například `float`) typu rozměry, jako `float<cm>` nebo v tomto případě `float<miles/hour>`. Jednotka anotaci objektu `<1>` označuje bezrozměrný množství a její typ je ekvivalentní primitivní typ bez parametru jednotky.
+Taková anotace změní typ literálu z jeho primitivního typu (například `float`) rozměrový typ jako `float<cm>` nebo v tomto případě `float<miles/hour>`. Jednotka anotace `<1>` označuje bezrozměrná množství a její typ je ekvivalentní primitivní typ bez parametru jednotky.
 
-Typ měrné jednotky plovoucí desetinné čárky nebo podepsané integrální typ společně s poznámky další jednotky, uvedeným v závorkách. Proto při psaní typ převodu z `g` (gram) k `kg` (kg), které popisují typy následujícím způsobem.
+Typ měrné jednotky se plovoucí desetinnou čárkou nebo společně s další jednotky anotaci, uvedené v závorkách celočíselný typ se znaménkem. Proto při psaní typ převodu z `g` (g) k `kg` (kg), které popisují typy následujícím způsobem.
 
 ```fsharp
 let convertg2kg (x : float<g>) = x / 1000.0<g/kg>
 ```
 
-Měrné jednotky se používají pro jednotku kompilace kontrola ale nejsou trvalé v běhové prostředí. Proto že nemají vliv výkon.
+Měrné jednotky se používají pro jednotku kompilace kontrolu, ale nejsou zachované v prostředí za běhu. Proto neovlivňují výkon.
 
-Měrné jednotky lze použít k libovolnému typu, nikoli pouze plovoucí typy bodů; však pouze plovoucí typy bodů podepsané integrální typy a počty podporu dimenzovány decimal typy. Proto pouze má smysl používat jednotky, na primitivní typy a agregace, které obsahují tyto primitivní typy.
+Měrné jednotky lze použít u libovolného typu, ne jenom plovoucí typy bodů; pouze typy plovoucího bodu, ale podepsané celočíselných typů a desítkové typy podporu dimenzovanými počty. Proto pouze má smysl použít měrné jednotky na primitivní typy a agregátů, které obsahují tyto primitivní typy.
 
 Následující příklad ukazuje použití měrné jednotky.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6901.fs)]
     
-Následující příklad kódu ukazuje, jak převést z bezrozměrný číslo s plovoucí desetinnou čárkou rozměry hodnotu s plovoucí desetinnou čárkou. Jste právě vynásobit 1.0, dimenze použití rozhraní 1.0. Můžete to abstraktní do funkce jako `degreesFahrenheit`.
+Následující příklad kódu ukazuje, jak převést bezrozměrná číslo s plovoucí desetinnou čárkou na dimenzované hodnotu s plovoucí desetinnou čárkou. Můžete pouze vynásobit 1.0, použití dimenze pro rozhraní příkazového řádku 1.0. Můžete to abstraktní do funkce, jako je `degreesFahrenheit`.
 
-Navíc pokud předáte rozměry hodnoty na funkce, které očekávají bezrozměrný čísla s plovoucí desetinnou, musíte zrušit jednotky nebo přetypovat na `float` pomocí `float` operátor. V tomto příkladu budete provádět dělení po `1.0<degC>` pro argumenty, které mají `printf` protože `printf` očekává bezrozměrný počty.
+Navíc při předání dimenzované hodnoty do funkce, které očekávají. bezrozměrná čísel s plovoucí desetinnou musíte zrušit jednotky nebo přetypován na `float` pomocí `float` operátor. V tomto příkladu budete dělit `1.0<degC>` pro argumenty, které mají `printf` protože `printf` očekává, že. bezrozměrná množství.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6902.fs)]
 
-Následující příklad relace se zobrazuje výstup z a vstupy pro tento kód.
+Následující příklad relace ukazuje vytvořené jako výstupy z a vstupy pro tento kód.
 
 ```
 Enter a temperature in degrees Fahrenheit.
@@ -87,31 +87,31 @@ Enter a temperature in degrees Fahrenheit.
 That temperature in degrees Celsius is    32.22.
 ```
 
-## <a name="using-generic-units"></a>Pomocí obecné jednotky
-Obecné funkce, které provozují může zapisovat na data, která je přidružená Měrná jednotka má. To uděláte tak, že zadáte typu společně s Obecné jednotky jako parametr typu, jak je znázorněno v následujícím příkladu kódu.
+## <a name="using-generic-units"></a>Použití obecného jednotek
+Můžete napsat obecné funkce, které pracují s daty, která má související jednotka měření. To provedete tak, že zadáte typ spolu s Obecné jednotky jako parametr typu, jak je znázorněno v následujícím příkladu kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6903.fs)]
     
-## <a name="creating-aggregate-types-with-generic-units"></a>Vytváření typů agregace s Obecné jednotky
-Následující kód ukazuje, jak vytvořit typ agregace, který se skládá z jednotlivých hodnot s plovoucí desetinnou mající jednotkách, které jsou obecné. To umožňuje vytvořit jeden typ, který funguje s různými jednotky. Obecné jednotky navíc zachovávají bezpečnost typů tím zajistí, že obecného typu, který má jednu sadu jednotky je jiného typu než stejné obecného typu pomocí jiné sady jednotky. Základ pro tento postup je, že `Measure` atribut lze použít pro parametr typu.
+## <a name="creating-aggregate-types-with-generic-units"></a>Vytvoření agregované typy pomocí obecného jednotky
+Následující kód ukazuje, jak vytvořit agregační typ, který se skládá z jednotlivých hodnot s plovoucí desetinnou, které mají jednotek, které jsou obecné. To umožňuje jeden typ má být vytvořen, který spolupracuje s řadou jednotky. Obecné jednotky také zachovat bezpečnost typů tím, že zajišťuje, že je obecný typ, který má jednu sadu jednotky jiného typu než stejný obecný typ s jinou sadu jednotky. Základ této techniky je, že `Measure` atribut lze použít pro parametr typu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6904.fs)]
     
-## <a name="units-at-runtime"></a>Jednotky při běhu
-Měrné jednotky se používají pro kontrolu statického typu. Když hodnot s plovoucí desetinnou kompilovány, jednotky, jsou odstraněny, tak s jednotkami jsou ztraceny za běhu. Pokusy o implementovat funkce, které závisí na Kontrola jednotky v době běhu proto není možné. Například implementace `ToString` funkce vytiskněte jednotky není možné.
+## <a name="units-at-runtime"></a>Jednotky za běhu
+Měrné jednotky se používají pro kontrolu statického typu. Po zkompilování hodnoty s plovoucí desetinnou měrné jednotky jsou odstraněny, tak, aby v době běhu byly ztraceny jednotky. Jakékoli pokusy o implementaci funkcí, které závisí na kontrolu za běhu jednotky proto není možné. Příklad implementace `ToString` funkce, který vytiskne jednotky není možné.
 
 
 ## <a name="conversions"></a>Převody
-Převést typ, který má jednotky (například `float<'u>`) na typ, který nemá jednotky, můžete použít funkci standardní převod. Například můžete použít `float` převést `float` hodnotu, která nemá jednotek, jak je znázorněno v následujícím kódu.
+Převést typ, který má jednotky (například `float<'u>`) na typ, který nemá jednotek, můžete použít funkci standardní převod. Například můžete použít `float` pro převod na `float` hodnotu, která nemá žádné jednotky, jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6905.fs)]
 
-Převést hodnotu unitless na hodnotu, která má jednotky, můžete hodnotu 1 nebo 1.0, která je označena vynásobit v odpovídajících jednotkách. Pro psaní interoperabilita vrstev, existují však také některé explicitní funkce, které můžete použít k převodu unitless hodnoty na hodnoty s jednotky. Toto jsou v [Microsoft.FSharp.Core.LanguagePrimitives](https://msdn.microsoft.com/library/69d08ac5-5d51-4c20-bf1e-850fd312ece3) modulu. Například pro převod unitless `float` k `float<cm>`, použijte [floatwithmeasure –](https://msdn.microsoft.com/library/69520bc7-d67b-46b8-9004-7cac9646b8d9), jak je znázorněno v následujícím kódu.
+Pro převedení unitless hodnoty na hodnotu, která má jednotky, můžete hodnotu 1 nebo 1.0, která je označena vynásobit se vhodné jednotky. Pro psaní vrstvy vzájemná funkční spolupráce, existují však také některé explicitní funkce, které můžete použít k převodu unitless hodnot na hodnoty s jednotkami. Toto jsou v [Microsoft.FSharp.Core.LanguagePrimitives](https://msdn.microsoft.com/library/69d08ac5-5d51-4c20-bf1e-850fd312ece3) modulu. Například chcete převést unitless `float` k `float<cm>`, použijte [floatwithmeasure –](https://msdn.microsoft.com/library/69520bc7-d67b-46b8-9004-7cac9646b8d9), jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6906.fs)]
     
-## <a name="units-of-measure-in-the-f-power-pack"></a>Jednotky, v F # Power Pack
-Jednotka knihovny je k dispozici v PowerPack F #. Jednotka knihovny zahrnuje jednotek SI a fyzické konstanty.
+## <a name="units-of-measure-in-the-f-core-library"></a>Měrné jednotky v knihovně F # Core
+Je k dispozici v knihovně jednotky `FSharp.Data.UnitSystems.SI` oboru názvů. V obou jejich symbol formulář obsahuje jednotek SI (podobně jako `m` pro měření) v `UnitSymbols` podřízeném oboru názvů a jejich úplný název (jako `meter` pro měření) v `UnitNames` podřízeném oboru názvů.
 
 
 ## <a name="see-also"></a>Viz také

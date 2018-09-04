@@ -3,11 +3,11 @@ title: '&lt;msmqTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: 19d89f35-76ac-49dc-832b-e8bec2d5e33b
 ms.openlocfilehash: 8a210fb1e5f1a7b661d45a32c38e5f99b97320d8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480127"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521864"
 ---
 # <a name="ltmsmqtransportgt"></a>&lt;msmqTransport&gt;
 Způsobí, že přenos zpráv kanálu službou MSMQ při je součástí vlastní vazby.  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 236cebc0-bd71-4f18-9fd6-5d0e592375df
 ms.openlocfilehash: 6ab459f37e825d71163e375e10f30fbe3e23911a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43397600"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525533"
 ---
 # <a name="developing-custom-windows-forms-controls-with-the-net-framework"></a>Vývoj vlastních ovládacích prvků Windows Forms pomocí rozhraní .NET Framework
 Ovládací prvky Windows Forms jsou opakovaně použitelné komponenty, které zapouzdřují funkce uživatelského rozhraní a se používají v aplikacích založených na Windows na straně klienta. Nejen Windows Forms poskytuje mnoho ovládacích prvků připravené k použití, navíc poskytuje infrastrukturu pro vývoj vlastních ovládacích prvků. Můžete kombinovat existující ovládací prvky, rozšířit existující ovládací prvky nebo vytvořit vlastní ovládací prvky. Tato část obsahuje základní informace a ukázky, které vám pomůžou s vývojem ovládacích prvků Windows Forms.  

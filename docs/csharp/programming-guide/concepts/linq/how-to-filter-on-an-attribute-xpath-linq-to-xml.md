@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: filtrování na atribut (XPath-technologie LINQ to XML) (C#)'
+title: 'Postupy: filtrování atributu (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-ms.openlocfilehash: 12ecf4c2c4b74cd58c4df0c355351232d09a84ab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9d99387be6683dcc46d36b5fdefbcd09f998eab1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33326115"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516234"
 ---
-# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Postupy: filtrování na atribut (XPath-technologie LINQ to XML) (C#)
-Toto téma ukazuje, jak získat následnickým elementům se zadaným názvem a atribut se zadanou hodnotou.  
+# <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>Postupy: filtrování atributu (XPath – LINQ to XML) (C#)
+Toto téma ukazuje, jak získat Následnické prvky se zadaným názvem a atribut se zadanou hodnotou.  
   
  Výraz XPath je:  
   
  `.//Address[@Type='Shipping']`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá všech potomků elementů s názvem `Address`a s `Type` atributu s hodnotou "Přesouvání".  
+ Tento příklad vyhledá všechny následníky elementů s názvem `Address`a `Type` atributu s hodnotou "Dodací".  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -72,5 +72,6 @@ Results are identical
 </Address>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

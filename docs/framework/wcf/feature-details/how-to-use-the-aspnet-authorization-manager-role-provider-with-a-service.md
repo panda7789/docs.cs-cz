@@ -3,11 +3,11 @@ title: 'Postupy: použití zprostředkovatele Role Správce autorizací ASP.NET 
 ms.date: 03/30/2017
 ms.assetid: f21deb81-91ef-49ef-94d6-494785143271
 ms.openlocfilehash: c21c1a80468bd81f2df69009afd2be86ee714250
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386703"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516705"
 ---
 # <a name="how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service"></a>Postupy: použití zprostředkovatele Role Správce autorizací ASP.NET se službou
 Když [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] hostuje webovou službu, můžete začlenit do aplikace a poskytovalo autorizace ve službě Správce autorizací. Správce autorizací umožňuje vývojář aplikace definovat jednotlivé operace, které mohou být seskupeny do formuláře úlohy. Správce pak může autorizovat role provádět konkrétní úlohy nebo jednotlivé operace. Správce autorizací poskytuje nástroje pro správu jako modul snap-in konzoly Microsoft Management Console (MMC) ke správě rolí, úloh, oddělení a uživatelů. Správci konfigurovat úložiště Správce autorizací zásady v souboru XML, Active Directory, nebo v režimu aplikace Active Directory (ADAM) s aplikacemi.  

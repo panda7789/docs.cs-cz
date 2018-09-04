@@ -2,37 +2,37 @@
 title: Validátor hesel pro uživatelská jména
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: 8fefa1556f853ab1f3a6f7664bdf7ffc5fc79850
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c5e99cf1768abbd2ab0472f5d2193a5d5e751fe4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33508316"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43512320"
 ---
 # <a name="user-name-password-validator"></a>Validátor hesel pro uživatelská jména
-Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor. To je užitečné v případech, kdy žádný z předdefinovaných režimy ověřování UserNamePassword je vhodné pro požadavky na aplikace; Pokud jsou například páry uživatelského jména a hesla uloženy v některé externí úložiště, jako je databáze. Tento příklad ukazuje služba, která má vlastní validátor, která vyhledává dvě dvojice konkrétní uživatelské jméno a heslo. Klient používá dvojici uživatelské jméno a heslo k ověření služby.  
+Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor. To je užitečné v případech, kdy se žádná z předdefinovaných režimy ověřování UserNamePassword je vhodné pro požadavky na aplikaci. například když páry uživatelského jména a hesla ukládají v některé externí úložiště, například do databáze. Tento příklad ukazuje služba, která má vlastní validátor, který kontroluje dvě dvojice konkrétního uživatelského jména a hesla. Klient používá k ověření ve službě dvojici uživatelského jména a hesla.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\UserNamePasswordValidator`  
   
 > [!NOTE]
->  Protože každý, kdo může provést pověření uživatelské jméno, které používá páry uživatelského jména a hesla, které přijímá vlastní validátor, služba je méně bezpečné než výchozí chování poskytuje standardní UserNamePassword validátoru. Validátor standardní UserNamePassword se pokouší mapovat pár zadané uživatelské jméno a heslo pro účet systému Windows a ověřování se nezdaří, pokud tato mapování se nezdaří. Vlastní UserNamePassword validátor v této ukázce není musí použít v produkčním kódu, je obrázek pouze pro účely.  
+>  Vzhledem k tomu, že kdokoli může vytvořit uživatelské jméno pověření, která používá následující páry uživatelského jména a hesla, které přijímá vlastní validátor, tato služba je méně bezpečné než výchozí chování poskytuje standardní UserNamePassword validátoru. Validátor standardní UserNamePassword pokusí mapovat pár zadané uživatelské jméno a heslo k účtu Windows a ověřování se nezdaří, pokud tato mapování se nezdaří. Vlastní UserNamePassword validátor v této ukázce musí není se dá použít v produkčním kódu, je jen jako ukázka.  
   
- V souhrnu tento příklad ukazuje, jak:  
+ V souhrnu Tato ukázka předvádí, jak:  
   
--   Klienta můžete ověřit pomocí tokenu uživatelské jméno.  
+-   Klient lze ověřit pomocí tokenu uživatelské jméno.  
   
--   Server ověřuje pověření klienta proti vlastní objekt UserNamePasswordValidator a postup rozšíření vlastních chyb z logiku ověření uživatelského jména a hesla do klienta.  
+-   Server ověří klienta přihlašovacích údajů, kteří vlastní objekt UserNamePasswordValidator a tom, jak rozšířit vlastní chyby z logiku ověřování uživatelského jména a hesla ke klientovi.  
   
 -   Server byl ověřovaný pomocí certifikátu X.509 serveru.  
   
- Službu zpřístupní jeden koncový bod pro komunikaci se službou, definovat pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována s standardní `wsHttpBinding` který ve výchozím nastavení používá ověřování uživatelským jménem WS-Securityand. Určuje chování služby `Custom` režimu pro ověřování klienta páry uživatelského jména a hesla společně s typ validátoru třídu. Chování také Určuje certifikát serveru pomocí `serviceCertificate` elementu. Certifikát serveru musí obsahovat stejné hodnoty `SubjectName` jako `findValue` v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).  
+ Služba poskytuje jeden koncový bod pro komunikaci se službou, definované pomocí konfiguračního souboru App.config. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována se standardní `wsHttpBinding` , která ve výchozím nastavení používá ověřování uživatelským jménem WS Securityand. Určuje chování služby `Custom` režimu pro ověřování klienta páry uživatelského jména a hesla společně s typem třídy program pro ověření. Také určuje chování serveru pomocí certifikátu `serviceCertificate` elementu. Certifikát serveru musí obsahovat stejnou hodnotu pro `SubjectName` jako `findValue` v [ \<serviceCertificate >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md).  
   
 ```xml  
 <system.serviceModel>  
@@ -88,7 +88,7 @@ Tento příklad ukazuje, jak implementovat vlastní UserNamePassword validátor.
 </system.serviceModel>  
 ```  
   
- Konfigurace klienta koncový bod se skládá z názvu konfigurace absolutní adresu pro koncový bod služby, vazby a kontrakt. Klient vazba je konfigurován s odpovídající režim a zpráva `clientCredentialType`.  
+ Konfigurace koncového bodu klienta se skládá z názvu konfigurace absolutní adresu pro koncový bod služby, vazba a kontrakt. Klient vazby je nakonfigurován příslušný režim, zpráva `clientCredentialType`.  
   
 ```xml  
 <system.serviceModel>  
@@ -137,7 +137,7 @@ address="http://localhost:8001/servicemodelsamples/service/username"
   </system.serviceModel>  
 ```  
   
- Implementace klienta zobrazí výzvu k zadání uživatelského jména a hesla.  
+ Implementace klienta se zobrazí výzva k zadání uživatelského jména a hesla.  
   
 ```  
 // Get the username and password  
@@ -197,7 +197,7 @@ try
 }  
 ```  
   
- Tato ukázka používá vlastní objekt UserNamePasswordValidator k ověření uživatelského jména a hesla páry. Ukázka implementuje `CustomUserNamePasswordValidator`, odvozené z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. Najdete v dokumentaci k <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> Další informace. Tato ukázka konkrétní vlastní validátor implementuje `Validate` metoda tak, aby přijímal dvě dvojice konkrétního uživatelského jména a hesla, jak je znázorněno v následujícím kódu.  
+ Tato ukázka používá vlastní objekt UserNamePasswordValidator k ověření uživatelského jména a hesla dvojice. Implementuje vzorek `CustomUserNamePasswordValidator`odvozenou z <xref:System.IdentityModel.Selectors.UserNamePasswordValidator>. Najdete v dokumentaci k <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> Další informace. Tato ukázka konkrétní vlastní validátor implementuje `Validate` metodu tak, aby přijímal dvě dvojice konkrétního uživatelského jména a hesla, jak je znázorněno v následujícím kódu.  
   
 ```  
 public class CustomUserNameValidator : UserNamePasswordValidator  
@@ -222,7 +222,7 @@ public class CustomUserNameValidator : UserNamePasswordValidator
  }  
 ```  
   
- Po validátor je implementovaná v kódu služby, hostitele služby musí být informováni o instanci program pro ověření používat. To se provádí pomocí následujícího kódu.  
+ Jakmile se v kódu služby validátoru, hostitele služby musí být informováni o instance program pro ověření, kterou chcete použít. To se provádí pomocí následujícího kódu.  
   
 ```  
 serviceHost.Credentials.UserNameAuthentication.UserNamePasswordValidationMode = UserNamePasswordValidationMode.Custom;  
@@ -247,16 +247,16 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 </behaviors>  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Klient úspěšně by měly volat všechny metody. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Klient úspěšně by měly volat všechny metody. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-## <a name="setup-batch-file"></a>Instalační program dávkového souboru  
- Dávkový soubor Setup.bat zahrnutá v této ukázce umožňuje nakonfigurovat server se příslušné certifikáty spuštění vlastním hostováním aplikace, která vyžaduje zabezpečení na základě certifikátu serveru. Tento dávkový soubor je nutné upravit v počítačích nebo pracovat v případě bez samoobslužné hostitele.  
+## <a name="setup-batch-file"></a>Instalační dávkový soubor  
+ Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat server se příslušné certifikáty ke spuštění aplikace v místním prostředí, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upravena fungovat na všech počítačích nebo pro práci v případě bez vlastního hostitele.  
   
- Následující poskytuje stručný přehled různých oddílů dávkové soubory, takže může být změněn na spouštění v příslušné konfiguraci.  
+ Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.  
   
--   Vytvoření certifikátu serveru:  
+-   Vytváří se certifikát serveru:  
   
-     Následující řádky z dávkového souboru Setup.bat vytvořit certifikát serveru, který chcete použít. Proměnná % název_serveru % Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota je localhost.  
+     Následující řádky z dávkový soubor Setup.bat vytvořte certifikát serveru, který se má použít. % Proměnná % název_serveru Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. Výchozí hodnota je localhost.  
   
     ```  
     echo ************  
@@ -270,55 +270,55 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
   
 -   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:  
   
-     Následující řádky do Setup.bat batch soubor zkopírujte certifikát serveru do důvěryhodných osob klienta úložiště. Tento krok je povinný, protože certifikáty generované infrastrukturou Makecert.exe nejsou důvěryhodný implicitně systému klienta. Pokud již máte certifikát, který je integrován do důvěryhodného kořenového certifikátu klienta – například certifikát vydaný Microsoft – v tomto kroku naplnění úložišti certifikátů klienta s certifikátem serveru se nevyžaduje.  
+     Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   
     ```  
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
-#### <a name="to-set-up-and-build-the-sample"></a>Jak nastavit a sestavit ukázku  
+#### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku  
   
-1.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+1.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2.  Spustit ukázku v konfiguraci s jedním nebo mezi počítače, použijte následující pokyny.  
+2.  Ke spuštění ukázky v konfiguraci s jedním nebo více počítačů, použijte následující pokyny.  
   
-#### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky na stejném počítači  
+#### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Spusťte Setup.bat ze složky instalace ukázkové uvnitř [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Tím se nainstaluje všechny certifikáty, které jsou potřebné ke spuštění ukázky.  
+1.  Spustit Setup.bat z instalační složky Ukázky uvnitř [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky.  
   
     > [!NOTE]
-    >  Dávkový soubor Setup.bat slouží ke spouštění z [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Nastavit proměnné prostředí PATH v rámci [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazový řádek odkazuje na adresář, který obsahuje požadované skriptem Setup.bat spustitelné soubory.  
+    >  Dávkový soubor Setup.bat slouží ke spuštění z [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Nastavte proměnné prostředí PATH v rámci [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazový řádek odkazuje na adresář, který obsahuje požadované skript Setup.bat spustitelné soubory.  
   
 2.  Spusťte Service.exe z service\bin.  
   
-3.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientskou aplikaci konzoly.  
+3.  Spusťte Client.exe z \client\bin. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-4.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+4.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky mezi počítači  
+#### <a name="to-run-the-sample-across-machines"></a>Ke spuštění ukázky v počítačích  
   
-1.  Vytvoření adresáře na počítač služby pro binární soubory služby.  
+1.  Vytvoření adresáře v počítači služby pro binární soubory služby.  
   
-2.  Zkopírujte soubory programu služby adresář služby v počítači služby. Taky zkopírujte soubory Setup.bat a Cleanup.bat k počítači služby.  
+2.  Kopírování souborů program služby adresáře služby v počítači služby. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-3.  Budete potřebovat certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Konfigurační soubor serveru musí aktualizovat tak, aby odrážela tento nový název certifikátu.  
+3.  Budete potřebovat certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Konfigurační soubor serveru musí být aktualizovány tak, aby odrážely tento nový název certifikátu.  
   
-4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Je třeba provést pouze v případě, že certifikát serveru není vystavený důvěryhodných vystavitelů.  
+4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople klienta. Budete muset provést pouze v případě, že certifikát serveru není vystavený důvěryhodného vystavitele.  
   
-5.  V souboru App.config v počítači služby změňte hodnotu z bázové adresy k zadání názvu počítače plně kvalifikovaný místo localhost.  
+5.  V souboru App.config v počítači služby změňte hodnotu z bázové adresy pro zadejte název počítače plně kvalifikovaný místo localhost.  
   
 6.  Na počítači služby spusťte Service.exe z okna příkazového řádku.  
   
-7.  Zkopírujte soubory programu klienta ve složce \client\bin\ ve složce jazyka na klientský počítač.  
+7.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
   
-8.  V souboru Client.exe.config na klientský počítač změňte hodnotu adresa koncového bodu tak, aby odpovídala nové adresy vaší služby.  
+8.  V souboru Client.exe.config v klientském počítači. Změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
   
-9. V klientském počítači spusťte Client.exe z okna příkazového řádku.  
+9. Na klientském počítači a spusťte Client.exe z okna příkazového řádku.  
   
-10. Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
+#### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Po dokončení spuštění ukázky, spusťte Cleanup.bat ve složce Ukázky. Odebere certifikát serveru z úložiště certifikátů.  
+1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky. Tím certifikát serveru z úložiště certifikátů.  
   
 ## <a name="see-also"></a>Viz také

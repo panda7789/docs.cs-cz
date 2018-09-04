@@ -2,16 +2,16 @@
 title: Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 ms.date: 03/30/2017
 ms.assetid: 92fd6f92-23a1-4adf-b96a-2754ea93ad3e
-ms.openlocfilehash: a98dedace72ef9d43d9b65335b462f6ad4f649b0
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: 4d107188bbcb46006ba6a6eab491ccb97aa4a83d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254404"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503404"
 ---
 # <a name="externalized-policy-activity-in-net-framework-45"></a>Externalizovaná aktivita Policy v rozhraní .NET Framework 4.5
 
-Tato ukázka předvádí, jak aktivity ExternalizedPolicy4 umožňuje provádění existujících [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Windows Workflow Foundation (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objekty v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4.5) přímo s použitím stroje pravidel která je dodávána s prostředím v WF 3.5. Pomocí této aktivity můžete otevřít a spustit všechny existující 3.5 WF <xref:System.Workflow.Activities.Rules.RuleSet>. Další informace o stroj pravidel 3.5 WF zahrnutý jako součást modelu Windows Workflow Foundation, přečtěte si prosím [Úvod do modul Windows Workflow Foundation pravidla](http://go.microsoft.com/fwlink/?LinkId=166079). Další informace o migraci pravidla pro [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], přečtěte si pokyny k migraci na [pokyny k migraci](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).
+Tato ukázka předvádí, jak aktivity ExternalizedPolicy4 umožňuje provádění existujících [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] Windows Workflow Foundation (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objekty v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] Windows Workflow Foundation (WF 4.5) přímo s použitím stroje pravidel která je dodávána s prostředím v WF 3.5. Pomocí této aktivity můžete otevřít a spustit všechny existující 3.5 WF <xref:System.Workflow.Activities.Rules.RuleSet>. Další informace o stroj pravidel 3.5 WF zahrnutý jako součást modelu Windows Workflow Foundation, přečtěte si prosím [Úvod do modul Windows Workflow Foundation pravidla](https://go.microsoft.com/fwlink/?LinkId=166079). Další informace o migraci pravidla pro [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)], přečtěte si pokyny k migraci na [pokyny k migraci](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).
 
 ## <a name="projects-in-this-sample"></a>Projekty v této ukázce
 
@@ -87,7 +87,7 @@ Tato ukázka obsahuje dva klientské aplikace: ImperativeCodeClientSample a Desi
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.
+> Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.
 >
 > Tato ukázka se nachází v následujícím adresáři:
 >

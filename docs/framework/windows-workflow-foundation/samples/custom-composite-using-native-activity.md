@@ -3,11 +3,11 @@ title: Vlastní skládání využívající nativní aktivitu
 ms.date: 03/30/2017
 ms.assetid: ef9e739c-8a8a-4d11-9e25-cb42c62e3c76
 ms.openlocfilehash: d9caa6e950af8f800644793db84aa85cc8255914
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43406833"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43528683"
 ---
 # <a name="custom-composite-using-native-activity"></a>Vlastní skládání využívající nativní aktivitu
 Tato ukázka předvádí, jak psát <xref:System.Activities.NativeActivity> , která plánuje další <xref:System.Activities.Activity> objekty pro řízení toku provádění pracovního postupu. Tento příklad používá dva běžné toky ovládacího prvku, pořadí a současně přitom, aby ukazují, jak to provést.  

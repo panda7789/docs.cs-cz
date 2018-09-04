@@ -6,11 +6,11 @@ helpviewer_keywords:
 - <paramref> XML tag
 ms.assetid: 8979d53b-beb1-41b7-b41e-6bbea1c17a03
 ms.openlocfilehash: 153f5ddeeb7d09159049af4d466b0695f5cb6f23
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43393442"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503199"
 ---
 # <a name="ltparamrefgt-visual-basic"></a>&lt;paramref&gt; (Visual Basic)
 Formátuje slova jako parametr.  

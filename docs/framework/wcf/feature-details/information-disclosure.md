@@ -2,59 +2,59 @@
 title: Zpřístupnění informací
 ms.date: 03/30/2017
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-ms.openlocfilehash: 1f6c33787f920fbe7e795e27ff10d7a0c83db21e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 057984dada86019cd8e0a619523d717d0045062f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495980"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43508007"
 ---
 # <a name="information-disclosure"></a>Zpřístupnění informací
-Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, které informace jsou odhalil a zda jej lze použít uživatelem se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a jejich zmírnění pro každý.  
+Zpřístupnění informací umožňuje útočníkovi získat cenné informace o systému. Proto vždy zvažte, jaké informace jsou odhalení a určuje, zda je možné uživatele se zlými úmysly. Následující informace o možných útoků zpřístupnění obsahuje seznam a způsoby zmírnění rizik pro každý.  
   
 ## <a name="message-security-and-http"></a>Zabezpečení zpráv a HTTP  
- Pokud používáte zabezpečení na úrovni zpráv přes přenosové vrstvy protokolu HTTP, mějte na paměti, že zabezpečení na úrovni zpráv nechrání hlavičky protokolu HTTP. Jediný způsob, jak chránit hlavičky protokolu HTTP je použití přenos HTTPS místo protokolu HTTP. Přenos HTTPS způsobí, že celé zprávy, včetně hlavičky protokolu HTTP k šifrování pomocí protokolu Secure Sockets Layer (SSL).  
+ Pokud používáte zabezpečení na úrovni zprávy v přenosové vrstvě HTTP, mějte na paměti, že zabezpečení na úrovni zprávy nechrání hlavičky protokolu HTTP. Jediný způsob, jak chránit hlavičky protokolu HTTP je použití přenos protokolu HTTPS místo protokolu HTTP. Přenos protokolu HTTPS způsobí, že celá zpráva, včetně hlavičky protokolu HTTP k šifrování pomocí protokolu vrstvy SSL (Secure Sockets).  
   
 ## <a name="policy-information"></a>Informace o zásadách  
- Zachování zásady zabezpečení je důležité, zejména v federační scénáře, kde je v zásadách vystaven citlivé vydán token požadavky nebo informace o tokenu vystavitele. V těchto případech doporučujeme zabezpečit koncový bod zásad federované služby pro aby útočníci nemohli získat informace o službě, jako je typ deklarace identity se umístí vystavený token, nebo přesměrovat klienty na škodlivý tokenu vystavitelů. Například může útočník zjistit párů jméno a heslo uživatele změnou řetězu federovaného vztahu důvěryhodnosti ukončit v vystavitele, provést útok man-in-the-middle. Dále je doporučeno, federované klienti, kteří získat jejich vazby prostřednictvím načtení zásad ověřte, zda důvěřují vystavitele v řetězu získaných federovaný vztah důvěryhodnosti. Další informace o scénářích federační najdete v tématu [Federation](../../../../docs/framework/wcf/feature-details/federation.md).  
+ Zásady zabezpečení je důležité, zejména ve scénářích s federací kde citlivé token vystavený požadavky nebo informace o vydavateli token vystavený v zásadách. V těchto případech doporučujeme k zabezpečení koncového bodu služby federované zásady bránící útočníkům v získání informací o službě, jako je typ deklarace identity se umístí vydaný token, nebo přesměrovat klienty na škodlivý vystavitele tokenu. Útočník může například zjistit párů jméno/heslo uživatele překonfigurováním řetězu federovaný vztah důvěryhodnosti k ukončení v vystavitele, který proveden útok man-in-the-middle. Doporučujeme také federované klienty, kteří získat jejich vazby prostřednictvím načtení zásad ověřte, zda důvěřují vystavitele v řetězu získaného federovaný vztah důvěryhodnosti. Další informace o scénářích s federací, naleznete v tématu [federace](../../../../docs/framework/wcf/feature-details/federation.md).  
   
-## <a name="memory-dumps-can-reveal-claim-information"></a>Výpisy paměti může odhalit informace o deklaraci identity  
- Pokud se aplikace nezdaří, přihlaste se soubory, jako jsou ty vyprodukované zotavení po havárii. Watson, může obsahovat informace o deklaraci identity. Tyto informace by neměl být exportovány do jinými entitami, jako je například týmy podpory; jinak informace o deklaraci identity, obsahující privátní data taky exportovat. Můžete zmírnit není poslat soubory protokolu na neznámý entity. Další informace najdete v tématu [systému Windows Server 2003](http://go.microsoft.com/fwlink/?LinkId=89160).  
+## <a name="memory-dumps-can-reveal-claim-information"></a>Výpisy paměti můžete zobrazit informace o deklaraci identity  
+ Pokud aplikace selže, protokolovat soubory, jako jsou ty vytvářených zotavení po havárii. Watson, může obsahovat informace o deklaraci identity. Tyto informace nesmí exportovat do jiné entity, jako je například týmy podpory; v opačném případě se exportují také informace o deklaraci identity, která obsahuje osobní data. Tento problém můžete zmírnit odesláním souborů protokolu na neznámý entity. Další informace najdete v tématu [systému Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=89160).  
   
 ## <a name="endpoint-addresses"></a>Adresy koncových bodů  
- Adresy koncového bodu obsahuje informace potřebné ke komunikaci s koncovým bodem. Zabezpečení protokolu SOAP musí obsahovat adresu plně ve zprávách vyjednávání zabezpečení, které se vyměňují aby bylo možné vyjednávání symetrického klíče mezi klientem a serverem. Protože vyjednávání zabezpečení je spuštění procesu, hlavičky adresy nelze zašifrovat během tohoto procesu. Proto adresa nesmí obsahovat žádné důvěrných dat; jinak hodnota vede k útokům zpřístupnění informací.  
+ Adresy koncového bodu obsahuje informace potřebné ke komunikaci s koncovým bodem. Zabezpečení protokolu SOAP musí obsahovat adresu plně ve zprávách vyjednávání zabezpečení, které se vyměňují, aby bylo možné vyjednávání symetrického klíče mezi klientem a serverem. Protože vyjednávání zabezpečení je spuštění procesu, záhlaví adres nelze zašifrovat během tohoto procesu. Proto adresa nesmí obsahovat jakákoli důvěrná data, v opačném případě vede k útokům zpřístupnění informací.  
   
-## <a name="certificates-transferred-unencrypted"></a>Certifikáty přenáší nezašifrovaná  
- Při použití certifikátu X.509. certifikát pro ověření klienta, certifikát se přenáší v nešifrované podobě, v hlavičce protokolu SOAP. Pamatujte na to jako potenciální zpřístupnění identifikovatelné osobní údaje (PII). Toto není problém pro `TransportWithMessageCredential` režimu, kde celé zprávy zašifrované pomocí zabezpečení na úrovni přenosu.  
+## <a name="certificates-transferred-unencrypted"></a>Přenést nešifrované certifikáty  
+ Pokud certifikát X.509, který použijete k ověření klienta, certifikát se přenesou v nezašifrované podobě, v záhlaví SOAP. Mějte na paměti tohoto jako potenciální zpřístupnění identifikovatelné osobní údaje (PII). To není problém pro `TransportWithMessageCredential` režimu, kde je zašifrovaná celá zpráva se zabezpečením na úrovni přenosu.  
   
-## <a name="service-references"></a>Odkazy na službu  
- Odkaz na službu je odkaz na jinou službu. Služba může například předat odkazu na službu pro klienta v průběhu operace. Odkaz na službu se také používá s *důvěřovat identity ověřovatele*, interní součásti, které zajišťuje, aby identita cílový hlavní před odhalení informací, jako jsou data aplikace nebo přihlašovací údaje k cíli. Pokud identitu vzdáleného důvěryhodnosti nelze ověřit nebo není správný, odesílatel zkontrolujte, že se žádná data budou mít přístup, které by mohly ohrozit sám sebe, aplikace nebo uživatele.  
+## <a name="service-references"></a>Odkazy na služby  
+ Odkaz na službu je odkazem na jinou službu. Služba může například předat odkaz na službu klienta v průběhu operace. Odkaz na službu se také používá s *důvěřovat ověřovatele identity*, vnitřní komponenta, která zajišťuje identita cílového objektu zabezpečení před zveřejnění informací o jako data aplikací nebo přihlašovací údaje k cíli. Pokud vzdálené důvěryhodnosti identity nelze ověřit nebo není správná, odesílatel zajistil, že žádná data byl zveřejněn, které by mohly ohrozit samotné, aplikaci nebo uživatele.  
   
- Způsoby zmírnění zahrnují následující:  
+ Zmírnění rizik, patří:  
   
--   Odkazy na službu, jsou považovány za důvěryhodné. Vezměte v potaz při každém přenosu instance služby odkaz zajistit, aby nebyly zaměněny.  
+-   Odkazy na služby, jsou považovány za důvěryhodné. Je třeba dbát pokaždé, když se přenos odkaz instance služby k zajištění, že nebylo manipulováno.  
   
--   Některé aplikace může být činnost koncového uživatele, který umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v referenčním a důvěryhodnosti data služby prokazuje vzdáleného hostitele. WCF poskytuje body rozšiřitelnosti pro taková zařízení, ale uživatel je musí implementovat.  
+-   Některé aplikace mohou představovat uživatelské prostředí, která umožňuje interaktivní navázání vztahu důvěryhodnosti na základě dat v odkazu a důvěryhodnost data služby ověřené vzdáleným hostitelem. WCF poskytuje body rozšiřitelnosti pro taková zařízení, ale uživatel je musí implementovat.  
   
 ## <a name="ntlm"></a>NTLM  
- Ve výchozím nastavení v prostředí domény systému Windows, ověřování systému Windows používá protokol Kerberos k ověřování a autorizaci uživatelů. Pokud z nějakého důvodu nelze použít protokol Kerberos, použije se jako zálohu NT LAN Manager (NTLM). Tuto funkci můžete zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`. Problémy na vzít na vědomí při povolení protokolu NTLM patří:  
+ Ve výchozím nastavení v prostředí domény Windows, Windows ověřování používá protokol Kerberos k ověřování a autorizaci uživatelů. Pokud z nějakého důvodu nelze použít protokol Kerberos, NT LAN Manager (NTLM) se používá jako záložní. Toto chování lze zakázat nastavením <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> vlastnost `false`. Problémy, které je potřeba při povolení protokolu NTLM patří:  
   
--   NTLM zpřístupní uživatelské jméno klienta. Pokud uživatelské jméno musí být důvěrné, nastavte `AllowNTLM` vlastnost vazby ke `false`.  
+-   NTLM zpřístupňuje klientské uživatelské jméno. Pokud uživatelské jméno musí být důvěrný, nastavte `AllowNTLM` vlastnost pro vazbu k `false`.  
   
--   NTLM neumožňuje ověřování serveru. Klient nemůže proto zkontrolujte, že ho komunikuje s správné služby při použití jako ověřovací protokol NTLM.  
+-   NTLM neposkytuje ověřování serveru. Klient nemůže proto ujistěte se, že při použití jako ověřovací protokol NTLM, to je nekomunikují s požadovanou službu.  
   
-### <a name="specifying-client-credentials-or-invalid-identity-forces-ntlm-usage"></a>Zadání pověření klienta nebo neplatná identita vynutí použití protokolu NTLM  
- Při vytváření klienta, zadání přihlašovacích údajů klienta bez názvu domény, nebo zadáte neplatný server identity, způsobí, že protokol NTLM namísto protokolu Kerberos použita (Pokud `AlllowNtlm` je nastavena na `true`). Protože protokol NTLM neprovádí ověřování serveru, může být odhalena potenciálně informace.  
+### <a name="specifying-client-credentials-or-invalid-identity-forces-ntlm-usage"></a>Zadání přihlašovacích údajů klienta nebo neplatná identita vynutí používání protokolu NTLM  
+ Při vytváření klienta, když zadáváte přihlašovací údaje klienta bez názvu domény nebo určení identity serveru je neplatný, způsobí, že protokolu NTLM namísto protokolu Kerberos použita (Pokud `AlllowNtlm` je nastavena na `true`). Protože protokol NTLM neprovádí ověřování serveru, může být odhalena potenciálně informace.  
   
- Například je možné zadat pověření klienta Windows bez názvu domény, jak je znázorněno v následujícím kódu jazyka Visual C#.  
+ Například je možné zadat přihlašovací údaje pro klienta Windows bez názvu domény, jak je znázorněno v následujícím kódu jazyka Visual C#.  
   
 ```  
 MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCredential("username", "password");  
 ```  
   
- Kód není uveden název domény, a proto se použije protokol NTLM.  
+ Kód neurčuje název domény, a proto se použije protokol NTLM.  
   
- Pokud je zadané doméně, ale neplatný hlavní název služby je zadán pomocí funkce identitu koncového bodu, se používá protokol NTLM. Další informace o tom, jak je zadán identitu koncového bodu najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Pokud je zadané doméně, ale na neplatný hlavní název služby je určen pomocí funkce identity koncový bod, je použit protokol NTLM. Další informace o tom, jak je zadána identitě koncového bodu najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Důležité informace o zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  

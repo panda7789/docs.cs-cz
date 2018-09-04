@@ -14,11 +14,11 @@ helpviewer_keywords:
 - permissions [.NET Framework], Internet
 author: blowdart
 ms.openlocfilehash: a45d57af1069bba9e3afe8c2e6e6d463115a4e39
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43389774"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536466"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 

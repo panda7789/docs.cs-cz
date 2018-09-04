@@ -8,11 +8,11 @@ helpviewer_keywords:
 - volatile keyword [C#]
 ms.assetid: 78089bc7-7b38-4cfd-9e49-87ac036af009
 ms.openlocfilehash: be7e081b18702710c00b5b86a9bc152800f0cf3d
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43253164"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526216"
 ---
 # <a name="volatile-c-reference"></a>volatile (Referenční dokumentace jazyka C#)
 `volatile` – Klíčové slovo určuje, že pole může být upraveno ve víc vláknech, které jsou spuštěny ve stejnou dobu. Pole, které jsou deklarovány `volatile` se nevyprázdňuje optimalizace kompilátoru, které se předpokládá přístup podle jednoho vlákna. Tato omezení Ujistěte se, že všechna vlákna budou sledovat volatile zápisy provádí ostatní vlákna v pořadí, ve kterém byly provedeny. Není zaručeno jeden celkový řazení volatile zápisů pohledu ze všech vláken, která.  

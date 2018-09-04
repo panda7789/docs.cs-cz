@@ -13,21 +13,21 @@ ms.assetid: a03af4d9-2771-43cc-b07b-d468dca23190
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 166a2aa72fb718ee38fb6ef964179a6cd112deb3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 41dde3d63c95ae95e64dadb7658db7299ba53646
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400702"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524230"
 ---
 # <a name="register-a-client-side-provider-assembly"></a>Registrace sestavení zprostředkovatele na straně klienta
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma ukazuje, jak registrace knihovny DLL, která obsahuje zprostředkovatele automatizace uživatelského rozhraní na straně klienta.  
+ Toto téma ukazuje, jak zaregistrovat knihovnu DLL, která obsahuje zprostředkovatele automatizace uživatelského rozhraní na straně klienta.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zaregistrovat sestavení, které obsahuje poskytovatele okna konzoly.  
+ Následující příklad ukazuje, jak zaregistrovat sestavení, která obsahuje zprostředkovatele pro okno konzoly.  
   
  [!code-csharp[UIAClientSideProvider_snip#102](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClientSideProvider_snip/CSharp/CSClientProgram.cs#102)]
  [!code-vb[UIAClientSideProvider_snip#102](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClientSideProvider_snip/visualbasic/csclientprogram.vb#102)]  

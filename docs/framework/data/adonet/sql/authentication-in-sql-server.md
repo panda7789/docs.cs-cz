@@ -3,11 +3,11 @@ title: Ověřování v systému SQL Server
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
 ms.openlocfilehash: 8d7fcb149059c06b7875663e4df5272312121c87
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394092"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521514"
 ---
 # <a name="authentication-in-sql-server"></a>Ověřování v systému SQL Server
 SQL Server podporuje dva režimy ověřování, režimu ověřování Windows a ve smíšeném režimu.  

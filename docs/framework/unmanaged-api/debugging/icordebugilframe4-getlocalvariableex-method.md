@@ -14,17 +14,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a82f092a0f10fd621ac4facdee201fa239e1c1b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a1de5287331e196355932d20daabe103914cd564
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33414526"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43520009"
 ---
 # <a name="icordebugilframe4getlocalvariableex-method"></a>ICorDebugILFrame4::GetLocalVariableEx – metoda
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
   
- Získá hodnotu zadaného místní proměnné v této rámce zásobníku převodní jazyk (IL) a volitelně přistupuje k proměnné přidali v ReJIT instrumentace profileru.  
+ Získá hodnotu místní proměnné zadané v tomto bloku zásobníku (IL intermediate language) a volitelně přistupuje k proměnné přidány v profileru ReJIT instrumentace.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetLocalVariableEx(
   
 #### <a name="parameters"></a>Parametry  
  `flags`  
- [v] [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) člen výčtu, která určuje, zda proměnné přidali v ReJIT instrumentace profileru je součástí rámečku.  
+ [in] [ILCodeKind](../../../../docs/framework/unmanaged-api/debugging/ilcodekind-enumeration.md) člen výčtu, který určuje, zda je proměnná přidán v profileru instrumentace ReJIT zahrnuta v rámci.  
   
  `dwIndex`  
- [v] Index místní proměnné v rámci zásobníku IL.  
+ [in] Index lokální proměnné v bloku zásobníku IL.  
   
  `ppValue`  
- [out] Ukazatel na adresu "ICorDebugValue" objekt, který reprezentuje načtené hodnoty.  
+ [out] Ukazatel na adresu objektu "ICorDebugValue", který představuje načtené hodnoty.  
   
 ## <a name="remarks"></a>Poznámky  
- Tato metoda je podobná [getlocalvariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) metoda, s tím rozdílem, že IT oddělení volitelně přistupuje k proměnné přidali v ReJIT instrumentace profileru. Voláním této metody se `flags` hodnotu `ILCODE_ORIGINAL_IL` je ekvivalentní volání [getlocalvariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md); Pokud je metoda instrumentovány s další místní proměnné, tyto proměnné nelze získat přístup. `ILCODE_REJIT_IL` Umožňuje pro přístup k místní proměnné přidali v ReJIT instrumentace profileru ladicího programu. Pokud není instrumentována IL, vrátí metoda `E_INVALIDARG`.  
+ Tato metoda je podobný [getlocalvariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md) metody, s tím rozdílem, že se volitelně přistupuje k proměnné přidány v profileru instrumentace ReJIT. Volání této metody `flags` hodnotu `ILCODE_ORIGINAL_IL` je ekvivalentní volání [getlocalvariable –](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-getlocalvariable-method.md); Pokud je metoda neinstrumentují službou další místní proměnné, tyto proměnné není přístupný. `ILCODE_REJIT_IL` umožňuje přistupovat k místním proměnným přidán v profileru instrumentace ReJIT ladicí program. Pokud není instrumentovaný IL, metoda vrátí `E_INVALIDARG`.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   
@@ -61,4 +61,4 @@ HRESULT GetLocalVariableEx(
 ## <a name="see-also"></a>Viz také  
  [ICorDebugILFrame4 – rozhraní](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe4-interface.md)  
  [Rozhraní pro ladění](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)  
- [ReJIT: Postupy: Průvodce](http://blogs.msdn.com/b/davbr/archive/2011/10/12/rejit-a-how-to-guide.aspx)
+ [ReJIT: Nepředstavuje Průvodce](https://blogs.msdn.com/b/davbr/archive/2011/10/12/rejit-a-how-to-guide.aspx)

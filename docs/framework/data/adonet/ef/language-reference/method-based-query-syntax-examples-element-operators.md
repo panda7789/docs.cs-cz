@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 8438b995-bd07-4223-b22d-13adadef33fb
 ms.openlocfilehash: 4215dcddf44647d98ee70c6f2d06345737cba5de
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384587"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503225"
 ---
 # <a name="method-based-query-syntax-examples-element-operators"></a>Příklady syntaxe dotazů založených na volání metody: Operátory elementů
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.First%2A> metodu dotazu [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe dotazů založených na volání metody. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 97afc121-fb8b-465b-bab3-6d844420badb
 ms.openlocfilehash: 4370a7a700a01943548bf067827e6640245caf4e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43482161"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516788"
 ---
 # <a name="retrieving-data-using-a-datareader"></a>Načítání dat pomocí čtečky dat
 Načítání dat pomocí **DataReader** zahrnuje vytvoření instance **příkaz** objektu a pak vytvořit **DataReader** voláním  **Command.ExecuteReader** načíst ze zdroje dat řádků. Následující příklad ukazuje použití **DataReader** kde `reader` představuje platné čtečky dat a `command` představuje objekt platný příkaz.  

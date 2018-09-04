@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: projektu nový typ (technologie LINQ to XML) (C#)'
+title: 'Postupy: projektování nového typu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 48145cf9-1e0b-4e73-bbfd-28fc04800dc4
-ms.openlocfilehash: f9a46e78a0f80f33764e9f87e3e8ce3560a8e0f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 889396dbcc44b685945eaafdf85cfe2510ddcde3
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33323768"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510331"
 ---
-# <a name="how-to-project-a-new-type-linq-to-xml-c"></a>Postupy: projektu nový typ (technologie LINQ to XML) (C#)
-Další příklady v této části ukázaly, dotazy, které vracejí výsledky jako <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> z `string`, a <xref:System.Collections.Generic.IEnumerable%601> z `int`. Toto jsou běžné typy výsledků, ale nejsou vhodná pro každý scénář. V mnoha případech můžete své dotazy vrátit <xref:System.Collections.Generic.IEnumerable%601> některé typu.  
+# <a name="how-to-project-a-new-type-linq-to-xml-c"></a>Postupy: projektování nového typu (LINQ to XML) (C#)
+Další příklady v této části ukázaly, dotazy, které vracejí výsledky jako <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, <xref:System.Collections.Generic.IEnumerable%601> z `string`, a <xref:System.Collections.Generic.IEnumerable%601> z `int`. Toto jsou běžné typy výsledků, ale nejsou vhodná pro každý scénář. V mnoha případech můžete vrátit dotazech <xref:System.Collections.Generic.IEnumerable%601> nějakého jiného typu.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak k vytváření instancí objektů v `select` klauzule. Kód nejdřív definuje novou třídu s konstruktor a pak upravením `select` příkaz tak, aby výraz novou instanci třídy novou třídu.  
+ Tento příklad ukazuje, jak vytvořit instanci objektů v `select` klauzuli. Kód nejdřív definuje novou třídu s konstruktorem a pak změní `select` příkaz tak, aby novou instanci třídy nový výraz.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: typické nákupní objednávka (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Typická nákupní objednávka (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 class NameQty {  
@@ -45,7 +45,7 @@ class Program {
 }  
 ```  
   
- Tento příklad používá `M:System.Xml.Linq.XElement.Element` metoda, která byla zavedená v tématu [postupy: načtení jeden podřízený Element (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-retrieve-a-single-child-element-linq-to-xml.md). Také používá k načtení hodnoty prvků, které se vrátí pomocí položky CAST `M:System.Xml.Linq.XElement.Element` metoda.  
+ V tomto příkladu `M:System.Xml.Linq.XElement.Element` metodu, která byla zavedena v tématu [postupy: Načtení jednoho podřízeného elementu (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-retrieve-a-single-child-element-linq-to-xml.md). Také používá k načtení hodnoty prvků, které jsou vráceny pomocí přetypování `M:System.Xml.Linq.XElement.Element` metody.  
   
  Tento příklad vytvoří následující výstup:  
   
@@ -54,5 +54,6 @@ Lawnmower:1
 Baby Monitor:2  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Projekce a transformace (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Projekce a transformace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

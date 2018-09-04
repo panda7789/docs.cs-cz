@@ -3,11 +3,11 @@ title: Funkce zjednodušení WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
 ms.openlocfilehash: 010f941850dedd73e9cc203ea2b180dae7d4742c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43406696"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526350"
 ---
 # <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 Toto téma popisuje nové funkce, které usnadňují zápis WCF aplikací jednodušší.  

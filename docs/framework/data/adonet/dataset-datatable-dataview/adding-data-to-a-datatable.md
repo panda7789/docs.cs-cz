@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
 ms.openlocfilehash: c1ebe2d735924c559f450f4041884dc9845e4fe0
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396082"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514512"
 ---
 # <a name="adding-data-to-a-datatable"></a>Přidání dat do datové tabulky
 Po vytvoření <xref:System.Data.DataTable> a definovat jeho strukturu pomocí sloupců a omezení, můžete přidat nové řádky dat do tabulky. Chcete-li přidat nový řádek, deklarovat novou proměnnou jako typ <xref:System.Data.DataRow>. Nový **DataRow** objekt je vrácen při volání <xref:System.Data.DataTable.NewRow%2A> metody. **DataTable** vytvoří **DataRow** objektu na základě struktury tabulky, tak jak je definoval <xref:System.Data.DataColumnCollection>.  

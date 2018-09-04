@@ -5,11 +5,11 @@ helpviewer_keywords:
 - graphics [WPF], translations
 ms.assetid: 461c8273-15df-42f6-8672-89ba22887cc0
 ms.openlocfilehash: 04e1e8288bcccc4a310f05abff01fbdf160cdb11
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43421000"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505905"
 ---
 # <a name="how-to-translate-an-element"></a>Postupy: Překlad elementu
 Tento příklad ukazuje způsob převodu (přesunout) elementu s použitím <xref:System.Windows.Media.TranslateTransform>.  

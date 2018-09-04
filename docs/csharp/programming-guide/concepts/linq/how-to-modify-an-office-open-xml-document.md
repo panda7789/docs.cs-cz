@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Úprava dokument Office Open XML (C#)'
+title: 'Postupy: Změna dokumentu Office Open XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-ms.openlocfilehash: 94304d506218117469d9abd213e6a844c1fb3be3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a85341ee64c71a3f57b71b3db82889aee667040
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321649"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517625"
 ---
-# <a name="how-to-modify-an-office-open-xml-document-c"></a>Postupy: Úprava dokument Office Open XML (C#)
-Toto téma představuje příklad, který otevře dokument Office Open XML, upraví se a uloží ho.  
+# <a name="how-to-modify-an-office-open-xml-document-c"></a>Postupy: Změna dokumentu Office Open XML (C#)
+Toto téma představuje příklad, který otevře dokumentu Office Open XML, změní se a ukládá ji.  
   
- Další informace o Office Open XML, najdete v části [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) a [www.ericwhite.com](http://ericwhite.com/).  
+ Další informace o Office Open XML naleznete v tématu [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) a [www.ericwhite.com](http://ericwhite.com/).  
   
 ## <a name="example"></a>Příklad  
- Tento příklad vyhledá první element odstavce do dokumentu. Načte text z odstavce a pak odstranění veškerého textu spustí v odstavci. Vytvoří nový text spuštění, který se skládá z první text odstavce, který byl převeden na velká písmena. Poté serializuje změněné XML do balíčku Open XML a zavře.  
+ Tento příklad vyhledá první element odstavce v dokumentu. Získá text ze odstavce a poté odstraní veškerý text běží v odstavci. Vytvoří nový text spuštění, který se skládá z první odstavec text, který byl převeden na velká písmena. Poté serializuje změněné XML do balíčku Open XML a zavře.  
   
  Tento příklad používá třídy v sestavení WindowsBase. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -139,13 +139,14 @@ class Program
 }  
 ```  
   
- Pokud otevřete `SampleDoc.docx` po spuštění tohoto programu, uvidíte, že tento program převeden na velká prvním odstavci v dokumentu.  
+ Pokud otevřete `SampleDoc.docx` po spuštění tohoto programu, uvidíte, že tento program převeden na velká písmena první odstavec v dokumentu.  
   
- Spuštění s popsané v dokumentu Open XML ukázka [vytváření zdroj Office otevřít dokument XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
+ Při spuštění s ukázkový dokument Open XML je popsáno v [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md), tento příklad vytvoří následující výstup:  
   
 ```  
 New first paragraph: >PARSING WORDPROCESSINGML WITH LINQ TO XML<  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

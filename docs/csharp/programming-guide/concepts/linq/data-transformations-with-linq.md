@@ -10,12 +10,12 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: c165f78c53cec0417d39320580b812ff01fef68b
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: cbb4583d7eceb1410450cd9c953c3431f25dd60b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199310"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513449"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformace dat pomocí LINQ (C#)
 [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] není jenom o načítání dat Je také výkonné nástroje pro transformaci dat. Pomocí [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, můžete použít zdrojové sekvence, stejně jako vstup a upravit v mnoha způsoby, jak vytvořit nové pořadí výstupu. Můžete změnit pořadí samotné beze změny samotné prvky řazení a seskupení. Ale možná procesorově nejvýkonnější funkce [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů je schopnost vytvářet nové typy. To lze provést v [vyberte](../../../../csharp/language-reference/keywords/select-clause.md) klauzuli. Například můžete provádět následující úlohy:  
@@ -97,10 +97,11 @@ ms.locfileid: "39199310"
   
  [!code-csharp[CsLINQGettingStarted#10](../../../../csharp/programming-guide/concepts/linq/codesnippet/CSharp/data-transformations-with-linq_4.cs)]  
   
-## <a name="see-also"></a>Viz také  
- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
- [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
- [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [select – klauzule](../../../../csharp/language-reference/keywords/select-clause.md)
+## <a name="see-also"></a>Viz také
+
+- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
+- [LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
+- [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+- [Technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
+- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
+- [select – klauzule](../../../../csharp/language-reference/keywords/select-clause.md)

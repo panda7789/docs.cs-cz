@@ -6,11 +6,11 @@ helpviewer_keywords:
 - animation [WPF], Opacity property
 ms.assetid: 572af23b-39dd-48d1-9db5-4bca56a4b3d3
 ms.openlocfilehash: 549d3eab0d6d75403e962eeb146be8d7995cc931
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43421799"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525850"
 ---
 # <a name="how-to-animate-the-opacity-of-an-element-or-brush"></a>Postupy: Animace krytí elementu nebo štětce
 Chcete-li prvek framework fade do zobrazení, lze animovat jeho <xref:System.Windows.UIElement.Opacity%2A> lze animovat vlastnost, nebo můžete <xref:System.Windows.Media.Brush.Opacity%2A> vlastnost <xref:System.Windows.Media.Brush> (nebo stopy) používá k malování ho. Animace krytí elementu umožňuje fade své podřízené objekty do a z zobrazení, ale štětce použít k vykreslení elementu animace umožňuje měli pečlivěji jaká část elementu sníží (zesvětlí). Například lze animovat neprůhlednost štětce použít k vykreslení pozadí tlačítka. To by způsobilo pozadí tlačítka, která má vyblednout a oddálení zobrazení, ale zároveň je nechává jeho textu v úplně neprůhledné.  

@@ -12,20 +12,20 @@ ms.assetid: 55d419c0-2201-4101-90c9-2888df4dbb47
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 9700b9cfef92da48a61b033ecf7b7357c113a994
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6180a5091b6072af97fd108b27a8dbe6cfd71324
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400377"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43501270"
 ---
 # <a name="expose-a-server-side-ui-automation-provider"></a>Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma obsahuje ukázkový kód, který ukazuje, jak vystavit zprostředkovatele automatizace uživatelského rozhraní na straně serveru, který je hostován v <xref:System.Windows.Forms.Control?displayProperty=nameWithType> okno.  
+ Toto téma obsahuje ukázkový kód, který ukazuje, jak vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru, který je hostován v <xref:System.Windows.Forms.Control?displayProperty=nameWithType> okna.  
   
- Příklad přepsání okno postup depeše WM_GETOBJECT, což je zpráva odeslána pomocí [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] základní služby, pokud klientská aplikace požádá o informace o okně.  
+ Příklad přepsání proceduru okna na depeše WM_GETOBJECT, což je zprávy odeslané [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] základní službu, když klientská aplikace požaduje informace o okně.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[UIAFragmentProvider_snip#116](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAFragmentProvider_snip/CSharp/ListFragment.cs#116)]

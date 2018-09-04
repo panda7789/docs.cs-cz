@@ -4,11 +4,11 @@ description: Další informace o vzoru porovnávání výrazů v jazyce C#
 ms.date: 01/24/2017
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
 ms.openlocfilehash: fa327dafe3f924d22b5f0d459eb0b6c7ba60a684
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255338"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43522023"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů #
 

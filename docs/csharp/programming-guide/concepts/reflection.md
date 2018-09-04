@@ -2,17 +2,17 @@
 title: Reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
-ms.openlocfilehash: fc5c3f6af1a089d824289a55f6781e887b7cfc56
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d04fb15add465d0a04ac6b38b1c47aa408c81eaa
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33340434"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521669"
 ---
 # <a name="reflection-c"></a>Reflexe (C#)
-Reflexe poskytuje objekty (typu <xref:System.Type>) popisují sestavení, moduly a typy. Reflexe můžete dynamicky vytvořit instanci typu, typ vazby s existujícím objektem, nebo z existujícího objektu získat typ a volat její metody nebo přístup k jeho polí a vlastností. Pokud používáte atributy ve vašem kódu, reflexe umožňuje přistupovat k nim. Další informace najdete v tématu [atributy](../../../../docs/standard/attributes/index.md).  
+Reflexe poskytuje objekty (typu <xref:System.Type>), které popisují sestavení, modulů a typů. Vám pomůže odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím. Pokud používáte atributy ve vašem kódu, reflexe umožňuje přistupovat k nim. Další informace najdete v tématu [atributy](../../../../docs/standard/attributes/index.md).  
   
- Zde je jednoduchý příklad použití statické metody reflexe `GetType` – zděděné z pro všechny typy `Object` základní třída - získat požadovaný typ proměnné:  
+ Tady je jednoduchý příklad použití statické metody reflexe `GetType` – zděděný všechny typy z `Object` základní třídy – získat typ proměnné:  
   
 ```csharp  
 // Using GetType to obtain type information:  
@@ -21,11 +21,11 @@ System.Type type = i.GetType();
 System.Console.WriteLine(type);  
 ```  
   
- Výstup je:  
+ Výstup bude:  
   
  `System.Int32`  
   
- Následující příklad používá reflexe získat úplný název načíst sestavení.  
+ Následující příklad používá reflexi získat úplný název načteného sestavení.  
   
 ```csharp  
 // Using Reflection to get information from an Assembly:  
@@ -33,23 +33,23 @@ System.Reflection.Assembly info = typeof(System.Int32).Assembly;
 System.Console.WriteLine(info);  
 ```  
   
- Výstup je:  
+ Výstup bude:  
   
  `mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089`  
   
 > [!NOTE]
->  Klíčová slova jazyka C# `protected` a `internal` mít žádný význam v IL a nepoužívají se v rozhraní API reflexe. Odpovídající podmínky v IL *rodiny* a *sestavení*. K identifikaci `internal` metoda pomocí reflexe, použijte <xref:System.Reflection.MethodBase.IsAssembly%2A> vlastnost. K identifikaci `protected internal` metoda, použijte <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>.  
+>  Klíčová slova jazyka C# `protected` a `internal` nemají význam IL a nepoužívají se v rozhraní API reflexe. Odpovídající výrazy v IL jsou *řady* a *sestavení*. K identifikaci `internal` pomocí reflexe, použijte metodu <xref:System.Reflection.MethodBase.IsAssembly%2A> vlastnost. K identifikaci `protected internal` metody, použijte <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>.  
   
 ## <a name="reflection-overview"></a>Přehled reflexe  
- Reflexe je užitečné v následujících situacích:  
+ Reflexe je užitečná v následujících situacích:  
   
--   Pokud máte přístup k atributům v metadatech vašeho programu. Další informace najdete v tématu [načítání informace uložené v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
+-   Pokud máte přístup k atributům v metadatech váš program. Další informace najdete v tématu [načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md).  
   
--   Pro zkoumání a vytváření instancí typy v sestavení.  
+-   Pro prozkoumání a vytvoření instance typů v sestavení.  
   
--   Pro vytváření nových typů za běhu. Použití třídy v <xref:System.Reflection.Emit>.  
+-   Pro vytváření nových typů v době běhu. Použití tříd v <xref:System.Reflection.Emit>.  
   
--   K provedení pozdní vazba, přístup k metody pro typy vytvořené v době běhu. Podívejte se na téma [dynamické načtení a použití typů](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
+-   Pro provádění pozdní vazby, přístup k metodám na typy vytvořené v době běhu. Naleznete v tématu [dynamické načtení a použití typů](../../../framework/reflection-and-codedom/dynamically-loading-and-using-types.md).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
@@ -64,6 +64,7 @@ System.Console.WriteLine(info);
   
 -   [Načítání informací uložených v atributech](../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Sestavení v modulu CLR (Common Language Runtime)](../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Sestavení v modulu CLR (Common Language Runtime)](../../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)

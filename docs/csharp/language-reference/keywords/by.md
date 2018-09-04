@@ -8,11 +8,11 @@ helpviewer_keywords:
 - by keyword [C#]
 ms.assetid: efe6f0e3-be40-4df2-a144-c7db968ae052
 ms.openlocfilehash: b2d9b08378dd0edf37c07663b3fe37a09f8acf47
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394584"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524499"
 ---
 # <a name="by-c-reference"></a>by (Referenční dokumentace jazyka C#)
 

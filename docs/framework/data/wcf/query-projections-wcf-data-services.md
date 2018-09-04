@@ -11,11 +11,11 @@ helpviewer_keywords:
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
 ms.openlocfilehash: d53892f9823474ea14640e352548b55432e7744b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43461060"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526685"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projekce dotazů (WCF Data Services)
 Poskytuje mechanismus v projekci [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] snížit objem dat v informačním kanálu vrácených dotazem tak, že určíte, které jsou vráceny pouze určité vlastnosti entity v odpovědi. Další informace najdete v tématu [OData: Vyberte možností dotazu systému ($select)](https://go.microsoft.com/fwlink/?LinkId=186076).  

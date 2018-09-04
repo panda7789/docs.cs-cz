@@ -11,11 +11,11 @@ helpviewer_keywords:
 - tab dialog boxes
 ms.assetid: 915091af-93ac-4d3d-8283-738dd2d21ea7
 ms.openlocfilehash: 75f0fc416ad29137c119b571acd658a7e56fc009
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384951"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534844"
 ---
 # <a name="tabcontrol-control-windows-forms"></a>TabControl – ovládací prvek (Windows Forms)
 Windows Forms `TabControl` zobrazí několik karet, stejně jako oddělovače v poznámkovém bloku nebo popisky v sadě složek v souboru CAB podání. Karty mohou obsahovat obrázky a další ovládací prvky. Použití `TabControl` k vytvoření stránky vlastností.  

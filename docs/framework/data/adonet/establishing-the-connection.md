@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 3af512f3-87d9-4005-9e2f-abb1060ff43f
 ms.openlocfilehash: 29db884a88f5150cd93571ba8fa7bf72be2b8c69
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43423673"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514565"
 ---
 # <a name="establishing-the-connection"></a>Navazování připojení
 Pro připojení k serveru Microsoft SQL Server, použijte <xref:System.Data.SqlClient.SqlConnection> objektu zprostředkovatele dat .NET Framework pro SQL Server. Pro připojení ke zdroji dat OLE DB, použijte <xref:System.Data.OleDb.OleDbConnection> objektu zprostředkovatele dat .NET Framework pro OLE DB. Chcete-li se připojit ke zdroji dat rozhraní ODBC, použijte <xref:System.Data.Odbc.OdbcConnection> objektu zprostředkovatele dat .NET Framework pro ODBC. Chcete-li se připojit ke zdroji dat Oracle, použijte <xref:System.Data.OracleClient.OracleConnection> objektu zprostředkovatele dat .NET Framework pro Oracle. Bezpečné ukládání a načítání připojovacích řetězců najdete v tématu [chrání informace o připojení](../../../../docs/framework/data/adonet/protecting-connection-information.md).  

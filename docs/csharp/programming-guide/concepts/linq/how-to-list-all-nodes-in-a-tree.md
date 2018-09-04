@@ -2,12 +2,12 @@
 title: 'Postupy: výpis všech uzlů ve stromu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3e934371-f4c6-458b-9f6b-f9061b596f5b
-ms.openlocfilehash: 0ee4c51946ff6116fa37f4ca61bc42deed562532
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: e014de90935830df3ea5454dcd4d5a840f4d04ad
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37959478"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513681"
 ---
 # <a name="how-to-list-all-nodes-in-a-tree-c"></a>Postupy: výpis všech uzlů ve stromu (C#)
 Někdy je užitečné pro výpis všech uzlů ve stromu. To může být užitečné při učení, přesně jak metodu nebo vlastnost ovlivňuje stromu. Jedním z přístupů k výpisu všech uzlů v textové formě je generovat výraz XPath, který právě a konkrétně identifikuje libovolný uzel ve stromu.  
@@ -348,5 +348,6 @@ class Program
 /Root/aw:ElementInNamespace/aw:ChildInNamespace  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

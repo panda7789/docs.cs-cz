@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Reader
 ms.assetid: 60e5848d-7d9c-4ea5-bed9-22758c9ac16c
-ms.openlocfilehash: 48dd0ddaaac3f0d25129f622b570e330192be565
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ce5c03d7bd169ee166e9444ee070c32df6e2801c
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33506885"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43520943"
 ---
 # <a name="xmlreader-sample"></a>Ukázka třídy XmlReader
-Ukázka třídy XmlReader ukazuje zpracování textu zprávy pomocí <xref:System.Xml.XmlReader>. Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje službu kalkulačky. Operace další služby `Sum`, byl přidán, přijme zprávu, která obsahuje pole hodnot přidat společně. Služba přečte zprávu pomocí <xref:System.Xml.XmlReader>.  
+Ukázka třídy XmlReader ukazuje zpracování textu zprávy pomocí <xref:System.Xml.XmlReader>. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje Kalkulačka služby. Operace další službu `Sum`, byla přidána, který přijme zprávu, která obsahuje pole hodnot, které chcete přidat najednou. Služba načte zprávy pomocí <xref:System.Xml.XmlReader>.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Rozhraní kalkulačky zahrnuje operace služby s názvem `Sum` který přijme <xref:System.ServiceModel.Channels.Message> parametr, jak je znázorněno v následujícím ukázkovém kódu.  
+ Kalkulačka rozhraní zahrnuje operace služby s názvem `Sum` , který přijme <xref:System.ServiceModel.Channels.Message> parametru, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 public interface ICalculator  
@@ -35,7 +35,7 @@ public interface ICalculator
 }  
 ```  
   
- Klient přistupuje k `Sum` nejdříve vytvořením pole celočíselné hodnoty, pak vytvořením zprávu z pole a pak volání `Sum` metodu pomocí vytvořenou zprávu, jak je znázorněno v následujícím ukázkovém kódu.  
+ Klient přistupuje k `Sum` prvním vytvoření pole celočíselných hodnot, pak vytváření zprávy z pole a potom voláním `Sum` metodu pomocí vytvořenou zprávu, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 CalculatorClient client = new CalculatorClient();  
@@ -52,7 +52,7 @@ using (new OperationContextScope(client.InnerChannel))
 }  
 ```  
   
- V rámci služby, provádění operace služby `Sum` přistupuje k pomocí tělo zprávy <xref:System.Xml.XmlReader> objektu k iteraci v rámci hodnoty tak, aby součet. <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> Metoda je volána pro přístup k textu zprávy, jak je znázorněno v následujícím ukázkovém kódu.  
+ Ve službě, provádění operace služby `Sum` přistupuje k textu zprávy použijte <xref:System.Xml.XmlReader> objektu k iteraci v rámci hodnoty tak, aby součet. <xref:System.ServiceModel.Channels.Message.GetReaderAtBodyContents%2A> Metoda je volána pro přístup k textu zprávy, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 public int Sum(Message message)  
@@ -79,7 +79,7 @@ public int Sum(Message message)
 }  
 ```  
   
- Když spustíte ukázku, požadavky a odpovědi operace se zobrazují v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Když spustíte ukázku, požadavky a odpovědi z operace se zobrazují v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -91,20 +91,20 @@ Sum(1,2,3,4,5) = 15
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\XmlReader`  
   

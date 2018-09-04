@@ -5,12 +5,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 91020886e381d8410358cae9511107e28c51452a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 2e678886162196c3a0fe4762bf766596cdc02225
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43464905"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43501400"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Implicitně typované lokální proměnné (Průvodce programováním v C#)
 Lokální proměnné mohou být deklarovány bez explicitního typu. `var` – Klíčové slovo instruuje kompilátor k odvození typu proměnné z výrazu na pravé straně výrazu inicializace. Odvozený typ může být předdefinovaný typ, anonymního typu, uživatelem definovaný typ nebo typ definovaný v knihovně tříd rozhraní .NET Framework. Další informace o tom, jak inicializovat pole s `var`, naleznete v tématu [implicitně typované pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md).  
@@ -73,15 +73,16 @@ Lokální proměnné mohou být deklarovány bez explicitního typu. `var` – K
   
  Nicméně použití `var` mohou mít alespoň potenciálně ztížit váš kód pochopit pro jiné vývojáře. Z tohoto důvodu dokumentace jazyka C# obecně používá `var` pouze pokud je povinný.  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Implicitně typovaná pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)  
- [Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu.](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)  
- [Anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
- [var](../../../csharp/language-reference/keywords/var.md)  
- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [LINQ (Language-Integrated Query)](../../../csharp/linq/index.md)  
- [for](../../../csharp/language-reference/keywords/for.md)  
- [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
- [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Implicitně typovaná pole](../../../csharp/programming-guide/arrays/implicitly-typed-arrays.md)  
+- [Postupy: Použití implicitně typovaných lokálních proměnných a polí ve výrazu dotazu.](../../../csharp/programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)  
+- [Anonymní typy](../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)  
+- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)  
+- [var](../../../csharp/language-reference/keywords/var.md)  
+- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
+- [LINQ (Language-Integrated Query)](../../../csharp/linq/index.md)  
+- [for](../../../csharp/language-reference/keywords/for.md)  
+- [foreach, in](../../../csharp/language-reference/keywords/foreach-in.md)  
+- [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)

@@ -5,11 +5,11 @@ f1_keywords:
 - vbrTextFieldParser_IllegalDelimiter
 ms.assetid: ab8a0c3a-b89c-4617-9e31-7e81f5dca433
 ms.openlocfilehash: faa42c2fec5851857496b321dbdb53c16c43e8c1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43389647"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525934"
 ---
 # <a name="unable-to-read-delimited-fields-because-a-double-quote-is-not-a-legal-delimiter-when-escapequotes-is-set-to-true"></a>Nelze číst pole oddělená oddělovačem, protože dvojité uvozovky nepředstavují platný oddělovač při EscapeQuotes nastavena na hodnotu True
 `TextFieldParser` Nelze číst ze souboru, protože byl zadán jako oddělovač znak uvozovek (") a `EscapeQuotes` je nastavena na `True`.  

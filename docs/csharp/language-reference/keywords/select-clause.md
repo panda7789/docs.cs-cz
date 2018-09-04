@@ -9,11 +9,11 @@ helpviewer_keywords:
 - select clause [C#]
 ms.assetid: df01e266-5781-4aaa-80c4-67cf28ea093f
 ms.openlocfilehash: dcab29cdbe98b5e49463d9a2781d43d4b9ee9544
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467338"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516478"
 ---
 # <a name="select-clause-c-reference"></a>select – klauzule (Referenční dokumentace jazyka C#)
 Ve výrazu dotazu `select` klauzule určuje typ hodnoty, které se budou vytvářet při spuštění dotazu. Výsledkem je založeno na vyhodnocení všechny předchozí klauzule a na všechny výrazy v `select` klauzule samotný. Buď musí končit výrazu dotazu `select` klauzule nebo [skupiny](../../../csharp/language-reference/keywords/group-clause.md) klauzuli.  

@@ -6,101 +6,102 @@ helpviewer_keywords:
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-ms.openlocfilehash: f0d470d2c38a07db9a936fc645b7a97aa12a7f84
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 50dda6a27081762a4e8b407ca5af94659b47da45
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33339745"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515851"
 ---
 # <a name="using-properties-c-programming-guide"></a>Použití vlastností (Průvodce programováním v C#)
-Vlastnosti kombinovat aspektů pole a metody. Uživateli objektu, zdá být pole, vlastnosti přístupu k vlastnosti vyžaduje stejná syntaxe. Implementátor třídy, vlastnosti je jeden nebo dva bloky kódu představující [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu nebo [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Blok kódu pro `get` přistupujícího objektu je spuštěn, když je vlastnost číst; blokovat kód pro `set` přistupujícího objektu je spuštěn, když vlastnost je přiřazena nová hodnota. Vlastnost bez `set` přistupujícího objektu je považován za jen pro čtení. Vlastnost bez `get` přistupujícího objektu je považován za jen pro zápis. Vlastnost, která má oba přístupových objektů je pro čtení a zápis.  
+Vlastnosti zkombinovat prvky pole a metody. Uživateli objekt vlastnost se zobrazí jako pole, přístup k vlastnosti vyžaduje podle stejné syntaxe. Implementátor třídy, vlastnosti je jeden nebo dva bloky kódu představují [získat](../../../csharp/language-reference/keywords/get.md) přístupového objektu a/nebo [nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu. Blok kódu pro `get` přístupový objekt se spouští při čtení vlastnosti; kód zablokuje `set` přístupový objekt se spouští při vlastnost je přiřazena nová hodnota. Vlastnost bez `set` přístupový objekt je považován za jen pro čtení. Vlastnost bez `get` přístupový objekt je považován za jen pro zápis. Vlastnost, která má oba přístupové objekty je pro čtení i zápis.  
   
- Na rozdíl od polí a vlastností nejsou klasifikovaný proměnné. Proto nelze předat jako vlastnost [ref](../../../csharp/language-reference/keywords/ref.md) nebo [out](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametr.  
+ Na rozdíl od pole vlastnosti nejsou klasifikovaná jako proměnné. Proto nelze předat vlastnost jako [ref](../../../csharp/language-reference/keywords/ref.md) nebo [si](../../../csharp/language-reference/keywords/out-parameter-modifier.md) parametru.  
   
- Vlastnosti mají mnoho používá: jejich můžete ověřit data před povolením změnu; transparentně se můžou zpřístupnit data pro třídu, pokud je ve skutečnosti načíst data ze jiný zdroj, například do databáze; jejich zajištění může trvat akce při změně dat, jako je například vyvolání události nebo změně hodnoty nebo jiné pole.  
+ Vlastnosti mají celou řadu uplatnění: se může ověřovat data předtím, než změnu; zveřejňovaly můžete transparentně data ve třídě, kterých se tato data ve skutečnosti načítají z nějakého jiného zdroje, jako je například databázi. Při změně dat, jako je například vyvolání události nebo změna hodnoty ostatních polí, můžete provedení akce.  
   
- Vlastnosti jsou deklarované v bloku třída zadáním úroveň přístupu tohoto pole, následovaný typem vlastnosti, a název vlastnosti a následuje blok kódu, který deklaruje `get`-přistupujícího objektu nebo `set` přistupujícího objektu. Příklad:  
+ Vlastnosti jsou deklarované v bloku třídy tak, že zadáte úroveň přístupu pole, za nímž následuje typu vlastnosti, za nímž následuje název vlastnosti a za nímž následuje blok kódu, který deklaruje `get`-přistupujícího objektu a/nebo `set` přistupujícího objektu. Příklad:  
   
  [!code-csharp[csProgGuideProperties#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_1.cs)]  
   
- V tomto příkladu `Month` je deklarován jako vlastnost, která `set` přistupující objekt můžete Ujistěte se, že `Month` hodnota mezi 1 a 12. `Month` Vlastnost používá soukromé pole ke sledování skutečnou hodnotu. Skutečné umístění dat vlastnost se často označuje jako vlastnosti "zálohování úložiště." Je běžné pro vlastnosti, které chcete používat privátní pole jako úložiště zálohování. Pokud chcete mít jistotu, že ho lze změnit pouze voláním vlastnost privátní je označeno pole. Další informace o omezení přístupu veřejné a privátní najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ V tomto příkladu `Month` je deklarován jako vlastnost tak, která `set` přístupového objektu můžete Ujistěte se, že `Month` hodnotu od 1 do 12. `Month` Vlastnost používá soukromé pole ke sledování skutečnou hodnotu. Skutečné umístění dat vlastnost se často označuje jako vlastnosti "záložního úložiště." Je běžné, že vlastnosti, které chcete použít privátní pole jako záložního úložiště. Pole je označeno privátní, pokud chcete mít jistotu, že ho můžete změnit jenom pomocí volání vlastnost. Další informace o omezeních veřejné a privátní přístup, najdete v části [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
- Automaticky implementované vlastnosti poskytují zjednodušenou syntaxi pro jednoduché vlastnosti deklarací. Další informace najdete v tématu [Auto-Implemented vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md).  
+ Automaticky implementované vlastnosti poskytují zjednodušenou syntaxi pro jednoduchou vlastnost deklarace. Další informace najdete v tématu [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md).  
   
-## <a name="the-get-accessor"></a>Přistupující objekt get  
- Text `get` přistupujícího objektu podobá se metodu. Musí vracet hodnoty typu vlastnost. Provádění `get` přistupujícího objektu je ekvivalentní čtení hodnoty pole. Například když vracíte soukromé proměnné z `get` přistupujícího objektu a optimalizace, které jsou povolené, volání `get` metoda přistupujícího objektu je vložená kompilátorem, takže neexistuje žádný režijní náklady na volání metody. Však virtuální `get` metoda přistupujícího objektu nemůže být vloženou obslužnou, protože kompilátor nebude vědět, v době kompilace, která metoda může být volána ve skutečnosti za běhu. Následuje `get` přistupujícího objektu, která vrátí hodnotu pole private `name`:  
+## <a name="the-get-accessor"></a>Přístupový objekt get  
+ Text `get` přistupující objekt podobná signatuře metody. Musí vracet hodnotu typu vlastnosti. Provedení příkazu `get` přístupový objekt je ekvivalentní k čtení hodnoty pole. Například když vracíte soukromé proměnné z `get` přístupového objektu a optimalizace povolena, volání `get` přístupové metody je vložená v kompilátoru, takže neexistuje žádný režijní náklady na volání metody. Nicméně virtuální `get` přístupové metody nemůže být vložená, protože kompilátor nezná v době kompilace, která metoda může být volána ve skutečnosti v době běhu. Tady je `get` přístupový objekt, který vrací hodnotu soukromé pole `name`:  
   
  [!code-csharp[csProgGuideProperties#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_2.cs)]  
   
- Když odkazujete vlastnost, s výjimkou jako cíl přiřazení, `get` přistupujícího objektu je volána načíst hodnotu vlastnosti. Příklad:  
+ Při odkazování na vlastnost, s výjimkou jako cílem přiřazení, `get` přístupového objektu je vyvolán načíst hodnotu vlastnosti. Příklad:  
   
  [!code-csharp[csProgGuideProperties#9](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_3.cs)]  
   
- `get` Přistupujícího objektu musí končit [vrátit](../../../csharp/language-reference/keywords/return.md) nebo [throw](../../../csharp/language-reference/keywords/throw.md) údajů a řízení nelze toku vypnout textu přistupujícího objektu.  
+ `get` Přístupového objektu musí končit [vrátit](../../../csharp/language-reference/keywords/return.md) nebo [throw](../../../csharp/language-reference/keywords/throw.md) příkazu a ovládací prvek nelze flow mimo tělo přístupového objektu.  
   
- Je chybný stylu programování na změnu stavu objektu pomocí `get` přistupujícího objektu. Například následující přistupujícího objektu vytváří vedlejším účinkem pokaždé, když změny stavu objektu, který `number` pole je přístupné.  
+ Je špatný styl programování ke změně stavu objektu pomocí `get` přistupujícího objektu. Například následující přístupový objekt vytváří vedlejším účinkem změna pokaždé, když se stav objektu, který `number` pole je přístupné.  
   
  [!code-csharp[csProgGuideProperties#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_4.cs)]  
   
- `get` Přistupujícího objektu lze vrátit hodnotu pole nebo ho výpočetní a obnoví v něm. Příklad:  
+ `get` Přístupového objektu lze vrátit hodnotu pole nebo ho compute a vrácení. Příklad:  
   
  [!code-csharp[csProgGuideProperties#11](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_5.cs)]  
   
- V předchozí segment kódu, pokud nepřiřadíte hodnota `Name` vlastnost, vrátí hodnotu NA.  
+ V předchozí segment kódu, pokud nelze přiřadit hodnotu `Name` vlastnosti, vrátí hodnotu NA.  
   
 ## <a name="the-set-accessor"></a>Sada přístupového objektu  
- `set` Přistupujícího objektu vypadá takto: metoda, jejíž návratový typ [void](../../../csharp/language-reference/keywords/void.md). Použije implicitní parametr s názvem `value`, jejichž typ je typ vlastnosti. V následujícím příkladu `set` přistupujícího objektu je přidán do `Name` vlastnost:  
+ `set` Přístupový objekt se podobá metodou, jejíž návratový typ je [void](../../../csharp/language-reference/keywords/void.md). Používá implicitní parametr s názvem `value`, jehož typ je typ proměnné. V následujícím příkladu `set` přístupový objekt se přidá do `Name` vlastnost:  
   
  [!code-csharp[csProgGuideProperties#12](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_6.cs)]  
   
- Přiřadíte-li hodnotu pro vlastnost, `set` přistupujícího objektu je vyvolán pomocí argument, který poskytuje novou hodnotu. Příklad:  
+ Když přiřadíte hodnotu k vlastnosti, `set` přístupového objektu je vyvolán pomocí argument, který obsahuje novou hodnotu. Příklad:  
   
  [!code-csharp[csProgGuideProperties#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_7.cs)]  
   
- Jedná se o chybu pro použití názvu implicitní parametr `value`, pro místní deklarace proměnné v `set` přistupujícího objektu.  
+ Jedná se o chybu použít implicitní parametr název `value`, pro místní deklarace proměnné v `set` přistupujícího objektu.  
   
 ## <a name="remarks"></a>Poznámky  
- Vlastnosti může být označen jako `public`, `private`, `protected`, `internal`, `protected internal` nebo `private protected`. Tyto modifikátory přístupu definovat třídy pro přístup uživatelů vlastnost. `get` a `set` přístupových objektů pro stejnou vlastnost může mít jiný přístup modifikátory. Například `get` může být `public` povolit přístup jen pro čtení z mimo typu a `set` může být `private` nebo `protected`. Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
+ Vlastnosti může být označený jako `public`, `private`, `protected`, `internal`, `protected internal` nebo `private protected`. Tyto modifikátory přístupu definují, jak se uživatelé třídy můžete přistupovat k vlastnosti. `get` a `set` přístupové objekty pro stejnou vlastnost může mít různé přístupu modifikátory přístupu. Například `get` může být `public` povolit přístup jen pro čtení z mimo typ a `set` může být `private` nebo `protected`. Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).  
   
- Vlastnost může být deklarován jako pomocí statické vlastnosti pomocí `static` – klíčové slovo. To zpřístupňuje vlastnost pro volající kdykoli, i v případě, že neexistuje žádná instance třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
+ Vlastnosti mohou být deklarovány jako statická vlastnost s použitím `static` – klíčové slovo. To zpřístupňuje vlastnost volajícím v okamžiku, i v případě, že neexistuje žádná instance třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
   
- Vlastnosti mohou být označeny jako virtuální vlastnost pomocí [virtuální](../../../csharp/language-reference/keywords/virtual.md) – klíčové slovo. To umožňuje odvozené třídy k potlačení chování vlastnost pomocí [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo. Další informace o těchto možnostech najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
+ Vlastnost může být označena jako virtuální vlastnost s použitím [virtuální](../../../csharp/language-reference/keywords/virtual.md) – klíčové slovo. To umožňuje odvozeným třídám přepsat vlastnost chování pomocí [přepsat](../../../csharp/language-reference/keywords/override.md) – klíčové slovo. Další informace o těchto možnostech najdete v tématu [dědičnosti](../../../csharp/programming-guide/classes-and-structs/inheritance.md).  
   
- Vlastnost přepisování virtuální vlastnosti může být také [zapečetěné](../../../csharp/language-reference/keywords/sealed.md), určení, že odvozené třídy jej již virtuální. Nakonec lze deklarovat vlastnost [abstraktní](../../../csharp/language-reference/keywords/abstract.md). To znamená, že neexistuje žádná implementace ve třídě a odvozené třídy musíte napsat vlastní implementaci. Další informace o těchto možnostech najdete v tématu [abstraktní a zapečetěné třídy a jejich členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
+ Vlastnost přepisování virtuální vlastnosti může být také [zapečetěné](../../../csharp/language-reference/keywords/sealed.md), určení, že odvozené třídy jej již není virtuální. A konečně, lze deklarovat vlastnost [abstraktní](../../../csharp/language-reference/keywords/abstract.md). To znamená, že neexistuje žádná implementace třídy a odvozené třídy musí zapsat vlastní implementaci. Další informace o těchto možnostech najdete v tématu [abstraktní a zapečetěné třídy a členové](../../../csharp/programming-guide/classes-and-structs/abstract-and-sealed-classes-and-class-members.md).  
   
 > [!NOTE]
->  Jedná se o chybu používat [virtuální](../../../csharp/language-reference/keywords/virtual.md), [abstraktní](../../../csharp/language-reference/keywords/abstract.md), nebo [přepsat](../../../csharp/language-reference/keywords/override.md) modifikátor na přistupující objekt služby [statické](../../../csharp/language-reference/keywords/static.md) vlastnost.  
+>  Jedná se o chybu použití [virtuální](../../../csharp/language-reference/keywords/virtual.md), [abstraktní](../../../csharp/language-reference/keywords/abstract.md), nebo [přepsat](../../../csharp/language-reference/keywords/override.md) modifikátor přistupující objekt z [statické](../../../csharp/language-reference/keywords/static.md) vlastnost.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje vlastnosti instance, statické a jen pro čtení. Přijímá jméno zaměstnance z klávesnice, zvýší `NumberOfEmployees` 1 a zobrazí zaměstnanec název a číslo.  
+ Tento příklad ukazuje vlastnosti instance, statické a jen pro čtení. Přijímá název zaměstnance z klávesnice, přírůstky `NumberOfEmployees` 1 a zobrazí zaměstnanec název a číslo.  
   
  [!code-csharp[csProgGuideProperties#2](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_8.cs)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak získat přístup k vlastnosti v základní třídu, která je skrytý na základě další vlastnost, která má stejný název v odvozené třídě.  
+ Tento příklad ukazuje, jak získat přístup k vlastnosti v základní třídě, který je skryt další vlastnost, která má stejný název v odvozené třídě.  
   
  [!code-csharp[csProgGuideProperties#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_9.cs)]  
   
  Tady jsou důležité body v předchozím příkladu:  
   
--   Vlastnost `Name` v odvozené třídě skryje vlastnost `Name` v základní třídě. V takovém případě `new` modifikátor se používá v deklaraci vlastnosti v odvozené třídě:  
+-   Vlastnost `Name` odvozené třídy skryje vlastnost `Name` v základní třídě. V takovém případě `new` modifikátor se používá v deklarace vlastností v odvozené třídě:  
   
      [!code-csharp[csProgGuideProperties#4](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_10.cs)]  
   
--   Přetypování `(Employee)` se používá pro přístup k vlastnost skryté v základní třídě:  
+-   Přetypování `(Employee)` slouží k přístupu k skrytá vlastnost v základní třídě:  
   
      [!code-csharp[csProgGuideProperties#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_11.cs)]  
   
-     Další informace o skrývání členy, najdete v článku [new – modifikátor](../../../csharp/language-reference/keywords/new-modifier.md).  
+     Další informace o skrývání členů, najdete v článku [new – modifikátor](../../../csharp/language-reference/keywords/new-modifier.md).  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu dvě třídy `Cube` a `Square`, implementovat abstraktní třídu, `Shape`a přepsat její abstraktní `Area` vlastnost. Všimněte si použití [přepsat](../../../csharp/language-reference/keywords/override.md) modifikátor ve vlastnostech. Program, přijímá jako vstup na straně a vypočítá oblasti pro hranaté a datové krychle. Také přijímá oblasti jako vstup a vypočítá odpovídající straně hranaté a datové krychle.  
+ V tomto příkladu dvě třídy `Cube` a `Square`, implementace abstraktní třídy `Shape`a přepsat její abstraktní `Area` vlastnost. Všimněte si, [přepsat](../../../csharp/language-reference/keywords/override.md) modifikátor ve vlastnostech. Program přijímá jako vstup na straně a vypočítá oblasti pro hranaté a datové krychle. Také přijímá jako vstup oblasti a vypočítá odpovídající na straně pro hranaté a datové krychle.  
   
  [!code-csharp[csProgGuideProperties#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-properties_12.cs)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
- [Vlastnosti rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
- [Automaticky implementované vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Vlastnosti rozhraní](../../../csharp/programming-guide/classes-and-structs/interface-properties.md)  
+- [Automaticky implementované vlastnosti](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md)

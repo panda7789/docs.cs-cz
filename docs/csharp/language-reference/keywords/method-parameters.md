@@ -7,11 +7,11 @@ helpviewer_keywords:
 - parameters [C#]
 ms.assetid: 680e39ff-775b-48b0-9f47-4186a5bfc4a1
 ms.openlocfilehash: 446a5239fa1de8559dea50f7e8b8869aed0297c5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43389997"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43512782"
 ---
 # <a name="method-parameters-c-reference"></a>Parametry metody (Referenční dokumentace jazyka C#)
 

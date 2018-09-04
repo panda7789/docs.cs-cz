@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
 ms.openlocfilehash: f77864d827ce12d40971dd7f7159e985ab4096ae
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43417901"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43520971"
 ---
 # <a name="guide-to-the-documentation"></a>Průvodce dokumentací
 Pokud je zde pokyny týkající se dokumentace ke službě Windows Communication Foundation (WCF). Odkazované dokumenty se doporučuje počáteční body seskupený podle konkrétní zájmech a úrovně odborných znalostí.  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - basicHttpBinding Element
 ms.assetid: 85cf1a4f-26c2-48c7-bda6-6c960d5d3fb3
 ms.openlocfilehash: cde75b44f30d445a00007dac617b898ea5dcb254
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43395204"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43511241"
 ---
 # <a name="ltbasichttpbindinggt"></a>&lt;BasicHttpBinding&gt;
 Představuje vazbu, která služby Windows Communication Foundation (WCF) můžete použít ke konfiguraci a zpřístupňují koncové body, které jsou schopny komunikovat s asmx webovými službami a klienty a dalším službám, které odpovídají WS-I Basic Profile 1.1.  

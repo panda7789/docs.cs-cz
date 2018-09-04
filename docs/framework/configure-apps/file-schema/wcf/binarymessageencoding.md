@@ -2,20 +2,20 @@
 title: '&lt;binaryMessageEncoding&gt;'
 ms.date: 03/30/2017
 ms.assetid: e4ae3cd4-6b67-4ce1-af4b-9400e0a38dba
-ms.openlocfilehash: 298f211eca12d0e76821a2172d93d432dc830507
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b3b359c9d3e80186e0296e6fbb0ba5683210f2a6
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32746264"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510243"
 ---
 # <a name="ltbinarymessageencodinggt"></a>&lt;binaryMessageEncoding&gt;
-Definuje kodéru zprávy v binární, která kóduje zprávy Windows Communication Foundation (WCF) v binárním v drátové síti.  
+Definuje kodér binárních zpráv, který binárně kóduje zprávy služby Windows Communication Foundation (WCF) v binárním souboru na lince.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
 \<binaryMessageEncoding >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,27 +34,27 @@ Definuje kodéru zprávy v binární, která kóduje zprávy Windows Communicati
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|maxReadPoolSize|Celé číslo, které definuje počet zpráv lze číst souběžně bez přidělení nového čtečky. Větší velikosti fondu se systém odolnější vůči špičky aktivity za cenu větší pracovní sady. Výchozí hodnota je 64.|  
-|maxSessionSize|Kladné celé číslo, které nastavuje velikost v bajtech vyrovnávací paměti používané pro kódování. Větší vyrovnávací paměť zvyšuje rychlost kódování za cenu velikost pracovní sady. Výchozí hodnota je 2048.|  
-|maxWritePoolSize|Celé číslo, které definuje počet zpráv lze najednou odeslat bez přiděluje nový zapisovače. Větší velikosti fondu se systém odolnější vůči špičky aktivity za cenu větší pracovní sady. Výchozí hodnota je 16.|  
-|verze messageVersion|Určuje zprávu protokolu SOAP a WS-Addressing verze, které se nepoužívají nebo se očekává.|  
+|maxReadPoolSize|Celé číslo, které definuje počet zpráv lze souběžně číst bez přidělení nových čtecích zařízení. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 64.|  
+|maxSessionSize|Celé kladné číslo nastavující velikost v bajtech, použité pro kódování vyrovnávací paměti. Větší vyrovnávací paměť zvyšuje kódování rychlost na úkor velikost pracovní sady. Výchozí hodnota je hodnotu 2048.|  
+|maxWritePoolSize|Celé číslo, které definuje počet zpráv souběžně poslaných bez přidělení nových modulů pro zápis. Větší velikosti fondů byl systém odolnější vůči špičky aktivity za cenu větší pracovní sadu. Výchozí hodnota je 16.|  
+|verze messageVersion|Určuje zprávu protokolu SOAP a WS-Addressing verze, které jsou používány nebo očekávání.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<readerQuotas>](http://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení na složitosti protokolu SOAP zprávy, které lze zpracovat koncovými body, které jsou konfigurovány pomocí této vazby. Tento element je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
+|[\<readerQuotas>](https://msdn.microsoft.com/library/3e5e42ff-cef8-478f-bf14-034449239bfd)|Definuje omezení složitosti zpráv SOAP, které mohou být zpracovány koncovými body nakonfigurovaným s touto vazbou. Tento prvek je typu <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vazba >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vazba vlastní vazby.|  
+|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Proces transformace zprávu do pořadí bajtů kódování je. Dekódování je zpětné proces. Windows Communication Foundation (WCF) zahrnuje tři typy kódování pro protokolu SOAP zprávy: Text, Binary a zpráva přenosu optimalizace mechanismus (MTOM).  
+ Kódování je proces transformace zprávu do sekvence bajtů. Dekódování je opačný proces. Windows Communication Foundation (WCF) zahrnuje tři typy kódování zprávy protokolu SOAP: Text, binární soubor a zpráv přenosu optimalizace mechanismus (MTOM).  
   
- `binaryMessageEncoding` Element Určuje binární formát, .NET pro formát XML a má možností, které určují kódování znaků a verzi protokolu SOAP a adresování WS má být použit. Kodér zprávy v binární kódování zpráv Windows Communication Foundation (WCF) v binárním v drátové síti. Když toto kódování výsledkem velmi rychlé přenos zpráv, interoperabilita založené na protokolu WS-* dojde ke ztrátě standardů.  
+ `binaryMessageEncoding` Prvek Určuje binární formát .NET pro XML a má možností určení kódování znaků a verze protokolu SOAP a WS-Addressing má být použit. Kodér binárních zpráv kóduje zprávy služby Windows Communication Foundation (WCF) v binárním souboru na lince. Když toto kódování má za následek velmi rychlé zpracování přenos zpráv, vzájemná funkční spolupráce podle WS-* standardů se ztratí.  
   
 ## <a name="example"></a>Příklad  
   
@@ -74,4 +74,4 @@ Definuje kodéru zprávy v binární, která kóduje zprávy Windows Communicati
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

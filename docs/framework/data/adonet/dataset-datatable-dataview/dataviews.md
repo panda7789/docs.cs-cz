@@ -3,11 +3,11 @@ title: Zobrazení dat
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
 ms.openlocfilehash: 75719e91daba189c1d93491a1db26acc80100bea
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43409167"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514749"
 ---
 # <a name="dataviews"></a>Zobrazení dat
 A <xref:System.Data.DataView> vám umožní vytvářet různá zobrazení dat uložených v <xref:System.Data.DataTable>, funkce, která se často používá v aplikacích datové vazby. Použití **DataView**, můžete zpřístupnit data v tabulce s jiné pořadí řazení a data lze filtrovat podle stavu nebo podle výraz filtru řádků.  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - -keycontainer compiler option [C#]
 ms.assetid: b3982b6d-2382-4f7e-bebd-ce98eaa30763
 ms.openlocfilehash: 57d3acb4fe128e07020bfe7c85ed86563b16f40a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467542"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518400"
 ---
 # <a name="-keycontainer-c-compiler-options"></a>-keycontainer (možnosti kompilátoru C#)
 Určuje název kontejneru kryptografických klíčů.  

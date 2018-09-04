@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: zápis LINQ metodě osy XML (C#)'
+title: 'Postupy: zápis metody osy XML (C#) LINQ'
 ms.date: 07/20/2015
 ms.assetid: 50aef06b-1d22-4718-a18a-21237e26d7c1
-ms.openlocfilehash: 51adbc9f0771f8925e5e16c61f48bbb5f8bedf05
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 74ed60fa3c78bcbc233e27868b1abe357a85c62a
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33322780"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510530"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Postupy: zápis LINQ metodě osy XML (C#)
-Můžete napsat vlastní metody osy načíst kolekce z strom XML. Jedním z nejlepší způsobů, jak to udělat je zápis metody rozšíření, která vrátí kolekci elementy nebo atributy. Můžete napsat rozšíření metodu vrátit konkrétní podmnožiny elementy nebo atributy, v závislosti na požadavcích vaší aplikace.  
+# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a>Postupy: zápis metody osy XML (C#) LINQ
+Můžete napsat vlastní metody osy pro načtení kolekce ze stromu XML. Jedním z nejlepších způsobů je zápis metody rozšíření, která vrátí kolekci elementy nebo atributy. Můžete napsat metodu rozšíření k vrácení konkrétním podmnožinám elementy nebo atributy, na základě požadavků vaší aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá dvě metody rozšíření. První metoda rozšíření `GetXPath`, funguje na <xref:System.Xml.Linq.XObject>a vrátí výraz XPath, který při vyhodnocení vrátí uzlu nebo atributu. Druhý metoda rozšíření `Find`, funguje na <xref:System.Xml.Linq.XElement>. Vrátí kolekci <xref:System.Xml.Linq.XAttribute> objekty a <xref:System.Xml.Linq.XElement> objekty, které obsahují některé zadaný text.  
+ Následující příklad používá dvě metody rozšíření. První metoda rozšíření `GetXPath`, pracuje <xref:System.Xml.Linq.XObject>a vrátí výraz XPath, který při vyhodnocování vrátí uzlu nebo atributu. Druhá metoda rozšíření `Find`, pracuje <xref:System.Xml.Linq.XElement>. Vrátí kolekci <xref:System.Xml.Linq.XAttribute> objekty a <xref:System.Xml.Linq.XElement> objektů, které obsahují některé zadaný text.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: více nákupních objednávek (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).  
   
 ```csharp  
 public static class MyExtensions  
@@ -291,5 +291,6 @@ class Program
 1999-10-22  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

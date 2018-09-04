@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: ověření pomocí XSD (technologie LINQ to XML) (C#)'
+title: 'Postupy: ověření pomocí XSD (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6a7f83a9-2d74-4c2b-8417-0a8595879516
-ms.openlocfilehash: 9b26481eb1e0fd103f92ed56e0e2f7c83d2ccbb5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e58005d80cf763f773efa67530c14d199b0b5bfb
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321594"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505791"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-c"></a>Postupy: ověření pomocí XSD (technologie LINQ to XML) (C#)
-<xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověření strom XML proti soubor schématu definice jazyka XML (XSD). Další informace najdete v tématu <xref:System.Xml.Schema.Extensions.Validate%2A> metoda dokumentaci.  
+# <a name="how-to-validate-using-xsd-linq-to-xml-c"></a>Postupy: ověření pomocí XSD (LINQ to XML) (C#)
+<xref:System.Xml.Schema> Obor názvů obsahuje rozšiřující metody, které usnadňují ověřit stromu XML pro soubor jazyka pro definici schématu XML (XSD). Další informace najdete v tématu <xref:System.Xml.Schema.Extensions.Validate%2A> metoda dokumentaci.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>, pak ověří dva <xref:System.Xml.Linq.XDocument> objektů pro sadu schématu. Jeden z dokumentů je platný, druhý není.  
+ Následující příklad vytvoří <xref:System.Xml.Schema.XmlSchemaSet>, pak ověří dvě <xref:System.Xml.Linq.XDocument> objekty oproti sadě schémat. Jeden z dokumentů je platný, druhý není.  
   
 ```csharp  
 string xsdMarkup =  
@@ -76,9 +76,9 @@ doc2 did not validate
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ověří, že dokument XML z [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md) platný podle schématu z [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md). Pak upravením zdrojový dokument XML. Změní `CustomerID` atribut na první zákazníka. Po provedení změny objednávky bude pak odkazovat zákazníkovi, který neexistuje, abyste v dokumentu XML se už ověřit.  
+ Následující příklad ověří, že dokument XML z [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md) je platný podle schématu z [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md). Poté změní zdrojovém dokumentu XML. Změní `CustomerID` atribut na první zákazníka. Po provedení změny objednávky pak vrátíme se k zákazníkovi, který neexistuje, tak se již neověřují dokumentu XML.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
  Tento příklad používá následující schéma XSD: [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md).  
   
@@ -120,6 +120,7 @@ The key sequence 'AAAAA' in Keyref fails to refer to some key.
 custOrdDoc did not validate  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Schema.Extensions.Validate%2A>  
- [Vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Xml.Schema.Extensions.Validate%2A>  
+- [Vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)

@@ -2,12 +2,12 @@
 title: Přehled LINQ to XML osy (C#)
 ms.date: 07/20/2015
 ms.assetid: 516792fb-461d-40a8-8a50-9993a51258fc
-ms.openlocfilehash: 9b771e0157d1fcfbbb4643d24ccdbf096787f08b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: b3bc828e5163b048b3d5ccb513d985bd3c0ca36d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486854"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43537120"
 ---
 # <a name="linq-to-xml-axes-overview-c"></a>Přehled LINQ to XML osy (C#)
 Po vytvoření stromu XML nebo načíst dokument XML do stromu XML, můžete ho najít prvky a atributy a jejich hodnoty získat dotazovat. Načtení kolekce prostřednictvím *metody osy*, označované také jako *osy*. Některé osy jsou metody v <xref:System.Xml.Linq.XElement> a <xref:System.Xml.Linq.XDocument> třídy, který vrací <xref:System.Collections.Generic.IEnumerable%601> kolekce. Některé osy jsou metody rozšíření v <xref:System.Xml.Linq.Extensions> třídy. Osy, které jsou implementovány jako metody rozšíření pracují s kolekcemi a vrací kolekce.  
@@ -54,5 +54,6 @@ Po vytvoření stromu XML nebo načíst dokument XML do stromu XML, můžete ho 
 |------------|-----------------|  
 |<xref:System.Xml.Linq.XElement.Attribute%2A?displayProperty=nameWithType>|Vrátí <xref:System.Xml.Linq.XAttribute> , který má zadaný <xref:System.Xml.Linq.XName>.|  
   
-## <a name="see-also"></a>Viz také  
- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+## <a name="see-also"></a>Viz také
+
+- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

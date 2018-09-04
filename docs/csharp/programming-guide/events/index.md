@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-ms.openlocfilehash: 5b844b20ac62b4cbc2a73931eecab95f22b4b1de
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 03c2ffc37bc6c2e820b8e28599f415cde1be9be5
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199440"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521954"
 ---
 # <a name="events-c-programming-guide"></a>Události (Průvodce programováním v C#)
 Události umožňují [třída](../../../csharp/language-reference/keywords/class.md) nebo objektům upozornit ostatní třídy nebo objektů, dojde-li něco, které vás zajímají. Třída, která odesílá (nebo *vyvolá*) události je volána *vydavatele* a třídy, které přijímají (nebo *zpracování*) události se nazývají *předplatitele* .  
@@ -58,9 +58,9 @@ Události umožňují [třída](../../../csharp/language-reference/keywords/clas
   
  [Delegáti a události](https://msdn.microsoft.com/library/orm-9780596521066-01-17.aspx) v [Learning C# 3.0: Master Základy C# 3.0](https://msdn.microsoft.com/library/orm-9780596521066-01.aspx)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.EventHandler>  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
- [Vytváření obslužných rutin událostí ve Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  
- [Vícevláknové programování s asynchronním vzorem založeným na událostech](../../../../docs/standard/asynchronous-programming-patterns/multithreaded-programming-with-the-event-based-asynchronous-pattern.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.EventHandler>  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+- [Vytváření obslužných rutin událostí ve Windows Forms](../../../../docs/framework/winforms/creating-event-handlers-in-windows-forms.md)  

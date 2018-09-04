@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
 ms.openlocfilehash: fdda1bd4d3aca440558998231f411b614bd5542e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43392088"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43506173"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>Získání DbProviderFactory
 Proces získání <xref:System.Data.Common.DbProviderFactory> zahrnuje předávání informací o zprostředkovateli dat k <xref:System.Data.Common.DbProviderFactories> třídy. Na základě těchto informací, <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> metoda vytvoří objekt pro vytváření zprostředkovatele silného typu. Například, chcete-li vytvořit <xref:System.Data.SqlClient.SqlClientFactory>, můžete předat `GetFactory` řetězec s názvem zprostředkovatele zadán jako "System.Data.SqlClient". Další přetížení `GetFactory` přijímá <xref:System.Data.DataRow>. Jakmile vytvoříte objekt pro vytváření zprostředkovatele, pak můžete jeho metody vytvářet další objekty. Některé z metod `SqlClientFactory` zahrnují <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>, <xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A>, a <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>.  

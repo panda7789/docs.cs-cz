@@ -3,11 +3,11 @@ title: Q-Z – příkazy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 32a9e547-c1b7-40f2-8118-7eef1d19649e
 ms.openlocfilehash: e26f4d1c8ad4620fd739354ebac9c65b25776377
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42999845"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43530425"
 ---
 # <a name="q-z-statements"></a>Q-Z – příkazy
 Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  

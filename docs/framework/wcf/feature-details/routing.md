@@ -6,31 +6,31 @@ helpviewer_keywords:
 - WCF [WCF], routing
 - Windows communication Foundation [WCF], routing
 ms.assetid: bd56516c-420d-4c4e-97f9-f72d28d149a9
-ms.openlocfilehash: 108e65f733100cd07e23e6436285463e9138dbcf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 065bbb5e20ddf1b26e98934d94c764e83969cc8a
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33494934"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518901"
 ---
 # <a name="routing"></a>Směrování
-Témata v této části se týkají služby směrování. Je služba Směrování Obecné konfigurovat SOAP prostředník, umožňuje nakonfigurovat na základě obsahu směrování, nastavení protokolu přemostění, zpracovávat chyby komunikace a dynamicky aktualizovat směrování logiku za běhu.  
+Témata v této části se týkají služby směrování. Směrovací služba je obecného konfigurovatelné SOAP zprostředkovatele, že umožňuje, aby obsah směrování na základě, nastavení protokolu přemostění Datacenter, zpracování chyb, které komunikace a dynamicky aktualizovat logiku směrování v době běhu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Směrovací služba](../../../../docs/framework/wcf/feature-details/routing-service.md)  
- Obsahuje přehled funkce služby směrování.  
+ Poskytuje přehled funkcí služby směrování.  
   
- [Směrovací služba](http://msdn.microsoft.com/library/5ac8718c-bcef-456f-bfd5-1e60a30d6eaa)  
+ [Směrovací služba](https://msdn.microsoft.com/library/5ac8718c-bcef-456f-bfd5-1e60a30d6eaa)  
  Popisuje funkce služby směrování.  
   
  [Úvod do směrování](../../../../docs/framework/wcf/feature-details/routing-introduction.md)  
- Popisuje konfiguraci služby směrování.  
+ Tento článek popisuje konfiguraci služby směrování.  
   
  [Kontrakty pro směrování](../../../../docs/framework/wcf/feature-details/routing-contracts.md)  
- Popisuje vzory zprávy, které může zpracovat směrovací služby.  
+ Popisuje vzory zprávy, které služba směrování může zpracovat.  
   
  [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)  
- Popisuje, jak se používají filtry zpráv pro směrování na základě obsahu.  
+ Tento článek popisuje, jak se používají filtry zprávy pro směrování na základě obsahu.  
   
  [Scénáře směrování](../../../../docs/framework/wcf/feature-details/routing-scenarios.md)  
- Popisuje běžné situace směrování.
+ Popisuje běžné scénáře.

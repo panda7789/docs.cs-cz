@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: ccfac6bd2688a2e02a1b3fcc14748d357acb1aa2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 2720ea223005227c2d6156ed77f517b698ca9004
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43464334"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515662"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Argumenty příkazového řádku (Průvodce programováním v C#)
 Argumenty můžete poslat `Main` metoda definováním metody jedním z následujících způsobů:  
@@ -73,11 +73,12 @@ long num = Convert.ToInt64(s);
   
  Další příklady o tom, jak používat argumenty příkazového řádku najdete v tématu [postupy: vytvoření a použití sestavení pomocí řádek příkazu](https://msdn.microsoft.com/library/70f65026-3687-4e9c-ab79-c18b97dd8be4).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Environment?displayProperty=nameWithType>  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
- [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)  
- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
- [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)  
- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Environment?displayProperty=nameWithType>  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Argumenty Main() a příkazového řádku](../../../csharp/programming-guide/main-and-command-args/index.md)  
+- [Postupy: Zobrazení argumentů příkazového řádku](../../../csharp/programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)  
+- [Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach](../../../csharp/programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)  
+- [Návratové hodnoty Main()](../../../csharp/programming-guide/main-and-command-args/main-return-values.md)  
+- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)

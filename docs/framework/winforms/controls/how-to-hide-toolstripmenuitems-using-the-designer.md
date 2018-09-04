@@ -7,11 +7,11 @@ helpviewer_keywords:
 - menu items [Windows Forms], hiding
 ms.assetid: 8f1b057e-3d8a-4f11-88df-935f7b29a836
 ms.openlocfilehash: 37371269ef9db929573efff0a8e62c86a51b2c35
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43423871"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523574"
 ---
 # <a name="how-to-hide-toolstripmenuitems-using-the-designer"></a>Postupy: Skrývání ToolStripMenuItems pomocí Návrháře
 Skrytí položek nabídky je způsob, jak ovládací prvek uživatelského rozhraní (UI) aplikace a omezit uživatelských příkazů. Často můžete skrýt celou nabídku, když jsou všechny položky nabídky na něm není k dispozici. To představuje méně rozptýlení pro daného uživatele. Kromě toho můžete chtít skrýt i zakázat nabídky nebo položku nabídky, protože skrytí samostatně nebrání uživateli přístup k příkazu nabídky pomocí klávesové zkratky. Další informace o deaktivace položek nabídky, naleznete v tématu [postupy: zakázání ToolStripMenuItems pomocí návrháře](../../../../docs/framework/winforms/controls/how-to-disable-toolstripmenuitems-using-the-designer.md).  

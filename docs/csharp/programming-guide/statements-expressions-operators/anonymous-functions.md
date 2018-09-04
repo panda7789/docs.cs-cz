@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: e368105c090f95435a4529470bdf1b41346d039c
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 90a5a71f83a7117a7468bab0d9fe9d013685ebbe
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936747"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515236"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>Anonymní funkce (Průvodce programováním v C#)
 Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kdykoli se očekává typ delegáta. Slouží k inicializaci pojmenovaný delegát nebo předat místo pojmenovaný delegát typu jako parametr metody.  
@@ -35,9 +35,9 @@ Anonymní funkce je "vloženě" příkaz nebo výraz, který se dá použít, kd
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-[Příkazy, výrazy a operátory](../../../csharp/programming-guide/statements-expressions-operators/index.md)  
-[Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
-[Delegáti](../../../csharp/programming-guide/delegates/index.md)  
-[Stromy výrazů (C#)](../concepts/expression-trees/index.md)  
+- [Příkazy, výrazy a operátory](../../../csharp/programming-guide/statements-expressions-operators/index.md)  
+- [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+- [Stromy výrazů (C#)](../concepts/expression-trees/index.md)  

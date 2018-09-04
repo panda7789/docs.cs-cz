@@ -3,11 +3,11 @@ title: Podpora víc vazeb webu IIS
 ms.date: 03/30/2017
 ms.assetid: 40440495-254d-45c8-a8c6-b29f364892ba
 ms.openlocfilehash: 2c42ba7cf3713e5d165d10ce7049df8200d612fb
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43482204"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517871"
 ---
 # <a name="supporting-multiple-iis-site-bindings"></a>Podpora víc vazeb webu IIS
 Při hostování služby Windows Communication Foundation (WCF) v části Internet Information Services (IIS) 7.0, můžete chtít poskytnout více základní adresy, které používají stejný protokol na stejném místě. To umožňuje stejnou službu reagovat na celou řadou různých identifikátorů URI. To je užitečné, pokud chcete hostovat službu, která naslouchá na http://www.contoso.com a http://contoso.com. Je také užitečné, pokud chcete vytvořit službu, která má bázové adresy pro interní uživatele a samostatné základní adresu pro externí uživatele. Příklad: http://internal.contoso.com a http://www.contoso.com.  

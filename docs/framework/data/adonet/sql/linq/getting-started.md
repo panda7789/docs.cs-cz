@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: db8a557a-fef8-4f4f-bb91-8cff7250ee25
 ms.openlocfilehash: 17b014a5a56a2c60359f6fb0b60df29feb97f2a7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43419022"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43529408"
 ---
 # <a name="getting-started"></a>Začínáme
 S použitím [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)], můžete použít [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] technologie pro přístup k SQL databáze, stejně jako by přístup ke kolekci v paměti.  

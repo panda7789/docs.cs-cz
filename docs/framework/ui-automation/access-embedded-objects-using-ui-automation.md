@@ -12,32 +12,32 @@ ms.assetid: a5b513ec-7fa6-4460-869f-c18ff04f7cf2
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: dc6426276d354dc3334013235cda45df8e7bb383
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 05f9359aa055019b517abb1b7c86ca386d630e41
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33408730"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534746"
 ---
 # <a name="access-embedded-objects-using-ui-automation"></a>Přístup k vloženým objektům s použitím automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
- Toto téma ukazuje, jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] můžete použít k vystavení objektů vloženým do ovládacího prvku typu textový obsah.  
+ Toto téma ukazuje, jak [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] lze použít ke zveřejnění objekty vložené v obsahu prvku textu.  
   
 > [!NOTE]
->  Vložené objekty mohou obsahovat bitové kopie, hypertextové odkazy, tlačítka, tabulky nebo ovládací prvky ActiveX.  
+>  Vložené objekty mohou obsahovat obrázky, hypertextové odkazy, tlačítka, tabulek nebo ovládací prvky ActiveX.  
   
- Vložené objekty se považují za podřízené objekty [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] text zprostředkovatele. To umožňuje, aby zpřístupnit prostřednictvím stejná struktura stromu automatizace uživatelského rozhraní jako všechny ostatní [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy. Funkce, pak je k dispozici prostřednictvím vzory ovládacích prvků, který je obvykle vyžaduje typ ovládacího prvku vložené objekty (například vzhledem k tomu, že jsou hypertextové odkazy založený na textu se podporují <xref:System.Windows.Automation.TextPattern>).  
+ Vložené objekty jsou považovány za podřízené objekty [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatele textu. To jim zpřístupní prostřednictvím stejnou strukturu stromu automatizace uživatelského rozhraní jako všechny ostatní umožňuje [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elementy. Funkce, pak je k dispozici prostřednictvím vzorů ovládacích prvků, které jsou obvykle vyžaduje vložené objekty – typ ovládacího prvku (například protože hypertextové odkazy jsou založeny na text se bude podporovat <xref:System.Windows.Automation.TextPattern>).  
   
- ![Vložené objekty v zásobníku textu. ] (../../../docs/framework/ui-automation/media/uia-textpattern-embeddedobjects.PNG "UIA_TextPattern_EmbeddedObjects")  
-Ukázka dokument s textový obsah, ("Věděli jste,?" ...) a dvě vložené objekty (obrázek velryba a hypertextový odkaz text), používá jako cíl pro příklady kódu.  
+ ![Vložené objekty v zásobník textu. ](../../../docs/framework/ui-automation/media/uia-textpattern-embeddedobjects.PNG "UIA_TextPattern_EmbeddedObjects")  
+Ukázkový dokument s textový obsah ("Věděli jste?" ...) a dvě vložené objekty (obrázek velryba a text hypertextového odkazu), použít jako cíl pro příklady kódu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak načíst prostřednictvím kolekce vložené objekty [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] text zprostředkovatele. Dva objekty pro ukázkové dokumentu součástí zavedení by být vrácen (element bitové kopie a textový element).  
+ Následující příklad kódu ukazuje, jak načíst kolekce vložené objekty v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatele textu. Pro ukázkový dokument v úvodu k dispozici bude vrácen dva objekty (image element a textový element).  
   
 > [!NOTE]
->  Element obrázku by měl mít některé vnitřní text související s ním, který popisuje bitovou kopii, obvykle v jeho <xref:System.Windows.Automation.AutomationElement.NameProperty> (například "blue velryba."). Ale když se získávají rozsah textu pokrývání uzlů objekt bitovou kopii, bitovou kopii, ani tento popisný text se vrátí do proudu textu.  
+>  Elementu obrázku by měl mít některé vnitřní text související s tím, který popisuje bitovou kopii, obvykle v jeho <xref:System.Windows.Automation.AutomationElement.NameProperty> (například "modrá velryba."). Ale při se získá rozsah textu pokrývání uzlů objektu image, image ani tento popisný text se vrací do toku textu.  
   
  [!code-csharp[FindText#StartApp](../../../samples/snippets/csharp/VS_Snippets_Wpf/FindText/CSharp/SearchWindow.cs#startapp)]
  [!code-vb[FindText#StartApp](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FindText/VisualBasic/SearchWindow.vb#startapp)]  
@@ -47,10 +47,10 @@ Ukázka dokument s textový obsah, ("Věděli jste,?" ...) a dvě vložené obje
 [!code-vb[FindText#GetChildren](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FindText/VisualBasic/SearchWindow.vb#getchildren)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak získat rozsah textu z vložený objekt v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] text zprostředkovatele. Rozsah text načíst je prázdného rozsahu kde výchozí koncový bod odpovídá "... oceánu. (místo) "a koncová koncový bod předchází ukončovací". "představující embedded hypertextový odkaz (jak je uvedeno image poskytnutou v úvodu). I když je to prázdného rozsahu, degenerovanou rozsah se nepovažuje, protože obsahuje nenulovou rozpětí.  
+ Následující příklad kódu ukazuje, jak získat rozsah textu z vloženého objektu v rámci [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] poskytovatele textu. Rozsah textu, načíst je prázdného rozsahu, kde výchozí koncový bod odpovídá "... na oceánských. (místo) "a koncové koncový bod předchází uzavírací". "představující embedded hypertextový odkaz (jak je uvedeno na obrázku v úvodu k dispozici). I když je to prázdný rozsah, to se nepovažuje za degenerovanou rozsah vzhledem k tomu, že má nenulovou rozpětí.  
   
 > [!NOTE]
->  <xref:System.Windows.Automation.TextPattern> můžete načíst založený na textu vložený objekt například hypertextový odkaz; ale sekundární <xref:System.Windows.Automation.TextPattern> bude mít ho získat od vložený objekt vystavit plnou funkčnost.  
+>  <xref:System.Windows.Automation.TextPattern> můžete načíst textový vložený objekt například hypertextový odkaz. ale sekundární <xref:System.Windows.Automation.TextPattern> muset získat z vloženého objektu vystavit plnou funkčnost.  
   
  [!code-csharp[UIATextPattern_snip#GetRangeFromChild](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATextPattern_snip/CSharp/SearchWindow.cs#getrangefromchild)]
  [!code-vb[UIATextPattern_snip#GetRangeFromChild](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATextPattern_snip/VisualBasic/SearchWindow.vb#getrangefromchild)]  

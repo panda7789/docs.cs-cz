@@ -12,11 +12,11 @@ helpviewer_keywords:
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
 ms.openlocfilehash: bc91e3bde54eedb4d9dbcfcb9f7faa0ccc98e397
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43398690"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505621"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři základní a přidání nových ovládacích prvků. V tomto návodu vytvoříte základní formulář a zkompilovat ji do knihovny tříd. Bude import této knihovně tříd do jiného projektu a vytvoření nového formuláře, která dědí ze základního formuláře. V tomto návodu se dozvíte, jak:  

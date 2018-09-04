@@ -14,11 +14,11 @@ ms.assetid: c5f786a0-969b-4f14-9f02-e77c3384d9af
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3650de934cb3d2940d0e8e971d03aff856bddfd7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394462"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515476"
 ---
 # <a name="how-to-view-the-contents-of-the-global-assembly-cache"></a>Postupy: Zobrazení obsahu globální mezipaměti sestavení
 Použití [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md) k zobrazení obsahu globální mezipaměti sestavení.  

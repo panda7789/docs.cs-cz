@@ -6,11 +6,11 @@ helpviewer_keywords:
 - controls [WPF], Menu
 ms.assetid: 67df6de5-db96-4c71-b752-af90729a6537
 ms.openlocfilehash: a1074d09c195a78dcc79df0841123672b716bcfe
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43423109"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536421"
 ---
 # <a name="menu-overview"></a>Přehled nabídky
 <xref:System.Windows.Controls.Menu> Třída umožňuje uspořádat prvky, které jsou spojené s příkazy a obslužnými rutinami událostí v hierarchickém pořadí. Každý <xref:System.Windows.Controls.Menu> kolekce obsahuje element <xref:System.Windows.Controls.MenuItem> elementy.  

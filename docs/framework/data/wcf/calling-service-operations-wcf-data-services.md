@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
 ms.openlocfilehash: 62e2d05ec724b633de42c4b8e7183676d411791d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468823"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513588"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>Operace volání služeb (WCF Data Services)
 [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] Definuje operace služby pro službu data. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Umožňuje definovat tyto operace jako metody na datovou službu. Stejně jako ostatní prostředkům datové služby se tak vyřeší tyto operace služby pomocí identifikátorů URI. Operace služby může vrátit kolekce typů entit, instance typu jednu entitu a primitivní typy, jako je například celé číslo a řetězec. Operace služby mohou také vrátit `null` (`Nothing` v jazyce Visual Basic). [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Klientské knihovny lze použít pro přístup k operace služby, které podporují požadavky HTTP GET. Tyto druhy operací služby jsou definovány jako metody, které mají <xref:System.ServiceModel.Web.WebGetAttribute> použít. Další informace najdete v tématu [operací služby](../../../../docs/framework/data/wcf/service-operations-wcf-data-services.md).  

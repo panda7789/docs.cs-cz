@@ -19,11 +19,11 @@ helpviewer_keywords:
 - declaring user-defined events
 ms.assetid: 306ff8ed-74dd-4b6a-bd2f-e91b17474042
 ms.openlocfilehash: 5ae25cbca73f7c8e767cad0ac332d77c306724a1
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43256801"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538904"
 ---
 # <a name="event-statement"></a>Event – příkaz
 Deklaruje uživatelem definovanou událost.  

@@ -11,11 +11,11 @@ ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d9df1aa781bd54468d2273a335b3fda7d701854d
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254181"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519405"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>Postupy: Konfigurace bezregistrační aktivace komponent využívajících rozhraní .NET Framework
 Bezregistrační aktivace komponent využívajících rozhraní .NET Framework je jenom o něco složitější než pro komponenty modelu COM. Instalace vyžaduje dva manifesty:  

@@ -3,11 +3,11 @@ title: DataContractResolver
 ms.date: 03/30/2017
 ms.assetid: 6c200c02-bc14-4b8d-bbab-9da31185b805
 ms.openlocfilehash: 54f1de5fbd750e5a102f3876210b302c69aaeacd
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403370"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519658"
 ---
 # <a name="datacontractresolver"></a>DataContractResolver
 Tato ukázka předvádí, jak lze přizpůsobit procesů serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy. Tento příklad ukazuje způsob použití modulu DataContractResolver Mapovat typy CLR do a z reprezentaci xsi: type během serializace a deserializace.  

@@ -3,11 +3,11 @@ title: 'Postupy: použití EdmGen.exe pro ověření modelu a souborů mapován�
 ms.date: 03/30/2017
 ms.assetid: 2641906a-971a-4d0b-8aee-13fabc02a1cc
 ms.openlocfilehash: fda8698381e98c64318f1a26f77f0263e9085074
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43471923"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43512442"
 ---
 # <a name="how-to-use-edmgenexe-to-validate-model-and-mapping-files"></a>Postupy: použití EdmGen.exe pro ověření modelu a souborů mapování
 Toto téma ukazuje, jak používat [generátor EDM (EdmGen.exe)](../../../../../docs/framework/data/adonet/ef/edm-generator-edmgen-exe.md) nástroje pro ověření modelu a souborů mapování. Další informace najdete v tématu [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  

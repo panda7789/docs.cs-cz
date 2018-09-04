@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: a084c16b-9b55-4690-aefd-f8e0810a92c3
 ms.openlocfilehash: 4828aafc4e19b9a9d1c74a215dc255caa2dae01d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43456818"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518767"
 ---
 # <a name="method-based-query-syntax-examples-conversion-operators-linq-to-dataset"></a>Příklady syntaxe dotazů založených na volání metody: Operátory převodu (LINQ to DataSet)
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.ToArray%2A>, <xref:System.Linq.Enumerable.ToDictionary%2A>, a <xref:System.Linq.Enumerable.ToList%2A> metody okamžitě spustit výraz dotazu.  

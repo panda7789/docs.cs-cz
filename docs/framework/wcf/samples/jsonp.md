@@ -2,21 +2,21 @@
 title: JSONP
 ms.date: 03/30/2017
 ms.assetid: c13b4d7b-dac7-4ffd-9f84-765c903511e1
-ms.openlocfilehash: 9002597ef662c78b6519ab0c04700cddf7ee3714
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: bd5d9afcfa35e598191db1d125418686f5dd0af1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33804568"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510355"
 ---
 # <a name="jsonp"></a>JSONP
-Tento příklad ukazuje, jak podporovala JSON s odsazení (JSONP) ve službě WCF REST services. JSONP je konvence používaná k vyvolání skripty napříč doménami a generování značek skriptu v aktuálním dokumentu. Výsledkem je vrácený v zadané zpětného volání funkce. JSONP je založena na nápad, které přidá značky, jako `<script src="http://..." >` můžete vyhodnotit skriptů z jakékoli domény a skriptu načíst tyto značky je vyhodnocován v rámci oboru, ve kterém může již definována dalších funkcí.  
+Tato ukázka předvádí, jak podporovat JSON s odsazení (JSONP) služby WCF REST. JSONP je konvence používaná k vyvolání mezi doménami skriptů a generování značek skriptu v aktuálním dokumentu. Výsledek se vrátí v zadané zpětného volání funkce. JSONP vychází z myšlenky, které přidá značky, jako `<script src="http://..." >` můžete vyhodnotit skriptů z jakékoli domény a skript načte tyto visačky se vyhodnotí v rámci oboru, ve kterém může již definována dalších funkcí.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  Mezi doménami skriptování s JSONP.  
   
-## <a name="discussion"></a>Diskusní  
- Ukázka zahrnuje webové stránky, která dynamicky přidá blok skriptu po vykreslena stránku v prohlížeči. Tento blok skriptu volání WCF REST služba, která má jednu operaci `GetCustomer`. Služby WCF REST vrátí název a adresu uzavřen do název funkce zpětného volání zákazníka. Pokud službu WCF REST odpoví, vyvolání funkce zpětného volání na webové stránce zákaznická data a funkce zpětného volání zobrazí data na webové stránce. Vkládání značky script a spouštění funkce zpětného volání automaticky zpracováván pomocí prvku ASP.NET AJAX ScriptManager. Vzor používání je stejný jako s všechny proxy servery prvku ASP.NET AJAX, a uveďte jeden řádek povolit JSONP, jak je znázorněno v následujícím kódu:  
+## <a name="discussion"></a>Diskuse  
+ Ukázka zahrnuje webovou stránku, která dynamicky přidá blok skriptu po byl vykreslen na stránce v prohlížeči. Tento blok skriptu volání služby WCF REST, který má jednu operaci `GetCustomer`. Služba WCF REST vrátí název zákazníka a adresa zabalené v názvu funkce zpětného volání. Pokud odpovídá službě WCF REST, je vyvolána funkce zpětného volání na webové stránce s zákaznická data a funkce zpětného volání zobrazí data na webové stránce. Vkládání značky skriptu a provádění funkce zpětného volání je automaticky zpracována ovládacího prvku ScriptManager technologie ASP.NET AJAX. Vzor využití je stejná jako u všech proxy technologie ASP.NET AJAX, a uveďte jeden řádek umožňující JSONP, jak je znázorněno v následujícím kódu:  
   
 ```csharp  
 var proxy = new JsonpAjaxService.CustomerService();  
@@ -24,7 +24,7 @@ proxy.set_enableJsonp(true);
 proxy.GetCustomer(onSuccess, onFail, null);  
 ```  
   
- Webové stránky můžete volat službu WCF REST, protože služba používá technologii <xref:System.ServiceModel.Description.WebScriptEndpoint> s `crossDomainScriptAccessEnabled` nastavena na `true`. Obě tyto konfigurace se provádějí v souboru Web.config pod \<system.serviceModel > elementu.  
+ Webové stránky můžete volat službu WCF REST, protože je používán službou <xref:System.ServiceModel.Description.WebScriptEndpoint> s `crossDomainScriptAccessEnabled` nastavena na `true`. Oba tyto konfigurace se provádí v souboru Web.config v rámci \<system.serviceModel > element.  
   
 ```xml  
 <system.serviceModel>  
@@ -37,28 +37,28 @@ proxy.GetCustomer(onSuccess, onFail, null);
 </system.serviceModel>  
 ```  
   
- ScriptManager spravuje interakci se službou a rychle skrývá složitosti implementace ručně JSONP přístup. Když `crossDomainScriptAccessEnabled` je nastaven na `true` a formát odpovědi operace je JSON, WCF infrastruktury zkontroluje identifikátor URI požadavku pro parametr řetězce dotazu zpětného volání a zabalí odpověď JSON s hodnotou řetězce dotazu zpětného volání parametr. V ukázce webová stránka volá službu WCF REST s následující identifikátor URI.  
+ Správce skriptů spravuje interakci se službou a maskuje složitost ručně implementace JSONP přístup okamžitě. Když `crossDomainScriptAccessEnabled` je nastavena na `true` a formátu odpovědi pro operaci je JSON, infrastruktura WCF zkontroluje identifikátor URI požadavku pro parametr řetězce dotazu zpětného volání a zabalí odpověď JSON s hodnotou řetězce dotazu zpětného volání parametr. Ve vzorku volá webovou stránku služby WCF REST s následujícím identifikátorem URI.  
   
 ```  
 http://localhost:33695/CustomerService/GetCustomer?callback=Sys._json0  
 ```  
   
- Vzhledem k tomu, že parametr řetězce dotazu zpětného volání má hodnotu `JsonPCallback`, služby WCF vrátí odpověď JSONP vidět v následujícím příkladu.  
+ Protože má hodnotu parametru řetězce dotazu zpětného volání `JsonPCallback`, služba WCF vrátí odpověď JSONP je znázorněno v následujícím příkladu.  
   
 ```  
 Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Way","Name":"Bob"});  
 ```  
   
- Tato odpověď JSONP obsahuje data zákazníků formátu JSON, obklopeno název funkce zpětného volání, která požadované webové stránky. ScriptManager bude provedení tohoto zpětného volání pomocí značky script k provádění požadavku napříč doménami a výsledek předat onSuccess obslužná rutina, která byla předána operaci GetCustomer proxy prvku ASP.NET AJAX.  
+ Tato odpověď JSONP obsahuje zákaznická data naformátovaná jako JSON zabalena název funkce zpětného volání, která požadované webové stránky. Ovládacímu prvku ScriptManager spustí toto zpětné volání pomocí značky skriptu k provedení žádosti napříč doménami a předat výsledek do onSuccess obslužná rutina, která byla předána GetCustomer operace proxy technologie ASP.NET AJAX.  
   
- Ukázkový soubor obsahuje dva webové aplikace ASP.NET: jeden právě služby WCF a obsahuje jinou webová stránka .aspx, který zavolá službu. Při spuštění tohoto řešení [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] bude hostitelem dvou webů na jiné porty, které vytvoří prostředí, kde klienta a služby za provozu na různých doménách.  
+ Ukázka se skládá ze dvou webové aplikace ASP.NET: jeden obsahuje jenom službu WCF a obsahuje jiný webová stránka .aspx, která volá službu. Při spuštění řešení, [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] bude hostovat dva weby na jiném portu, který vytvoří prostředí, ve kterém klienta a služby live v různých doménách.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\AJAX\JSONP`  
   
@@ -68,4 +68,4 @@ Sys._json0({"__type":"Customer:#Microsoft.Samples.Jsonp","Address":"1 Example Wa
   
 2.  Stisknutím klávesy F5 spusťte `http://localhost:26648/JSONPClientPage.aspx` v prohlížeči.  
   
-3.  Všimněte si, že po načtení stránky vstupy text "Název" a "Address" jsou naplněny podle hodnot.  Tyto hodnoty nebyly zadány volání služby WCF po vykreslení stránky v prohlížeči.
+3.  Všimněte si, že po načtení stránky textovými vstupy pro "Name" a "Address" se vyplní podle hodnot.  Tyto hodnoty byly zadány volání služby WCF po vykreslení stránky v prohlížeči.

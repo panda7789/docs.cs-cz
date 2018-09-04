@@ -3,11 +3,11 @@ title: '&lt;transport&gt; – &lt;netHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 3b180006-1661-43bf-a699-96fd3da469af
 ms.openlocfilehash: 03e245acd8cb31630d6154e01d934ce6d293f4e4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386877"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507961"
 ---
 # <a name="lttransportgt-of-ltnethttpbindinggt"></a>&lt;transport&gt; – &lt;netHttpBinding&gt;
 Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí protokolu HTTP.  

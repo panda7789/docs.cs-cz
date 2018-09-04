@@ -1,48 +1,48 @@
 ---
-title: Vlastní složený Designer - přednášejícího položky pracovního postupu
+title: Návrháři vlastního - skládání položky pracovního postupu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: e78a738bf74f49eaa192b45324db5e4bb7a3e872
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 708b62290900db3e668de81c31f3a1dc85eb6d19
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516520"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43528933"
 ---
-# <a name="custom-composite-designers---workflow-items-presenter"></a>Vlastní složený Designer - přednášejícího položky pracovního postupu
-<xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> Je typ klíče v WF návrháře programovací model, který umožňuje úpravu kolekci elementů obsažené. Tento příklad ukazuje, jak sestavit Návrhář aktivity, která vyvolá upravitelné kolekce.  
+# <a name="custom-composite-designers---workflow-items-presenter"></a>Návrháři vlastního - skládání položky pracovního postupu
+<xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> Je typ klíče v WF návrháře programovací model, který umožňuje úpravy kolekci elementů obsažených. Tato ukázka předvádí, jak vytvářet návrháře aktivit, který poskytuje informace o upravitelné kolekce.  
   
- Tento příklad znázorňuje:  
+ V této ukázce:  
   
--   Vytváření Návrháře vlastních aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>.  
+-   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>.  
   
--   Vytvoření Návrhář aktivity se zobrazením "sbalené" a "Rozšířená".  
+-   Vytváření návrháře aktivit se zobrazením "sbalené" a "Rozšířená".  
   
--   Přepíše výchozí Návrhář v opětovné hostování nástroje aplikace.  
+-   Přepsání výchozího návrháře v provádění se změněným hostováním aplikací.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Otevřete **UsingWorkflowItemsPresenter.sln** ukázkové řešení pro jazyk C# nebo VB v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+1.  Otevřít **UsingWorkflowItemsPresenter.sln** ukázkové řešení pro jazyk C# nebo vb v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Sestavení a spuštění řešení. Opětovné hostování nástroje pracovního postupu návrháře aplikace by měla otevřít a aktivity můžete přetáhněte na plátno.  
+2.  Sestavte a spusťte řešení. By měla otevřít návrháře aplikaci provádění se změněným hostováním pracovního postupu a můžete přetáhnout aktivity na plátno.  
   
-## <a name="sample-highlights"></a>Ukázka označuje  
- Kód pro tato ukázka obsahuje následující informace:  
+## <a name="sample-highlights"></a>Stručný přehled ukázky  
+ Kód pro tento příklad ukazuje následující:  
   
--   Návrhář aktivity je vytvořené pro:  `Parallel`  
+-   Návrhář aktivity je sestaven pro:  `Parallel`  
   
--   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>. Pár věcí tak, aby odkazoval:  
+-   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType>. Pár věcí, které upozorňují na:  
   
-    -   Všimněte si použití datové vazby WPF k vytvoření vazby `ModelItem.Branches`. `ModelItem` je vlastnost na `WorkflowElementDesigner` který odkazuje na základní objekt návrháře se používá, v takovém případě naší `Parallel`.  
+    -   Všimněte si použití datové vazby WPF vytvořit vazbu na `ModelItem.Branches`. `ModelItem` je vlastnost na `WorkflowElementDesigner` , který odkazuje na základní objekt návrháře se používá, v tomto případě naší `Parallel`.  
   
-    -   <xref:System.Activities.Presentation.WorkflowItemsPresenter.SpacerTemplate?displayProperty=nameWithType> Lze uvést visual zobrazíte mezi jednotlivé položky v kolekci.  
+    -   <xref:System.Activities.Presentation.WorkflowItemsPresenter.SpacerTemplate?displayProperty=nameWithType> Je možné do vizuálu zobrazit mezi jednotlivých položek v kolekci.  
   
-    -   <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> je šablonu, která může být k dispozici pro určení rozložení položek v kolekci. V takovém případě se používá panel vodorovné zásobníku.  
+    -   <xref:System.Activities.Presentation.WorkflowItemsPresenter.ItemsPanel?displayProperty=nameWithType> je šablonu, která je možné poskytnout určit rozložení položek v kolekci. V takovém případě se používá panel vodorovné zásobníku.  
   
- Tato následující příklad kódu ukazuje to.  
+ Tento následující příklad kódu ukazuje to.  
   
 ```xaml  
 <sad:WorkflowItemsPresenter HintText="Drop Activities Here"  
@@ -60,11 +60,11 @@ ms.locfileid: "33516520"
   </sad:WorkflowItemsPresenter>  
 ```  
   
--   Provést přidružením `DesignerAttribute` k `Parallel` typu a potom výstup hlášené atributy.  
+-   Provedení sdružení `DesignerAttribute` k `Parallel` typu a potom výstup hlášené atributy.  
   
-    -   Nejprve zaregistrujte všechny výchozí Designer.  
+    -   Nejprve zaregistrujte všechny výchozí návrháře.  
   
- Následuje příklad kódu.  
+ Tady je příklad kódu.  
   
 ```csharp  
 // register metadata  
@@ -80,7 +80,7 @@ metadata.Register()
 RegisterCustomMetadata()  
 ```  
   
-    -   Potom přepsat paralelní v `RegisterCustomMetadata` metoda.  
+    -   Potom přepsat paralelní v `RegisterCustomMetadata` metody.  
   
  Následující kód ukazuje to v C# a Visual Basic.  
  
@@ -101,9 +101,9 @@ Sub RegisterCustomMetadata()
 End Sub  
 ```  
   
--   Nakonec, Všimněte si použití různé šablony dat a aktivační události a vyberte příslušnou šablonu na základě `IsRootDesigner` vlastnost.  
+-   A konečně, Všimněte si použití odlišné datové šablony a aktivační události vyberte příslušnou šablonu na základě `IsRootDesigner` vlastnost.  
   
- Následuje příklad kódu.  
+ Tady je příklad kódu.  
   
 ```xaml  
 <sad:ActivityDesigner x:Class="Microsoft.Samples.CustomParallelDesigner"  
@@ -149,11 +149,11 @@ End Sub
 ```  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemsPresenter`  
   

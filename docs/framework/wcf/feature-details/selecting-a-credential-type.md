@@ -3,11 +3,11 @@ title: Výběr typu pověření
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
 ms.openlocfilehash: c2ee1b9062d14eaa44de0651985c2a385fe02f8e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396609"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503388"
 ---
 # <a name="selecting-a-credential-type"></a>Výběr typu pověření
 *Přihlašovací údaje* jsou data Windows Communication Foundation (WCF) používá k navázání uváděné identity nebo funkce. Passport je například přihlašovací údaje, které státní instituce problémy prokázání citizenship v zemi nebo oblast. Ve službě WCF přihlašovací údaje mohou mít mnoho forem, jako je například název tokeny uživatele a certifikáty X.509. Toto téma popisuje přihlašovací údaje, jak se používají v WCF a tom, jak vybrat správné přihlašovací údaje pro vaše aplikace.  

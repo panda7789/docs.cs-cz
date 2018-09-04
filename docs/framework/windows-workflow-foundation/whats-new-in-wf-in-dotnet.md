@@ -3,11 +3,11 @@ title: Co&#39;nového ve Windows Workflow Foundation v rozhraní .NET 4.5
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
 ms.openlocfilehash: cfc8be396e9327ee38ea20e8757993aafe7e2151
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396045"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513573"
 ---
 # <a name="what39s-new-in-windows-workflow-foundation-in-net-45"></a>Co&#39;nového ve Windows Workflow Foundation v rozhraní .NET 4.5
 Windows Workflow Foundation (WF) v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] přináší mnoho nových funkcí, jako jsou nové aktivity, návrháře funkce a pracovní postup vývoje modelů. Mnoho, ale ne všechny nový pracovní postup funkcí představených v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jsou podporovány v Návrháři znovu hostovaných pracovních postupů. Další informace o nových funkcích, které jsou podporovány, naleznete v tématu [podpora nových funkcí Workflow Foundation 4.5 v Návrháři postupu provádění se změněným hostováním](../../../docs/framework/windows-workflow-foundation/wf-features-in-the-rehosted-workflow-designer.md). Další informace o migraci .NET 3.0 a 3.5 rozhraní .NET aplikace pracovního postupu chcete používat nejnovější verzi najdete v tématu [pokyny k migraci](../../../docs/framework/windows-workflow-foundation/migration-guidance.md). Toto téma obsahuje přehled o nové funkce pracovního postupu v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  

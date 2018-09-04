@@ -2,35 +2,35 @@
 title: Trvanlivý kontext instance
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-ms.openlocfilehash: fb331fc0e5f384f0ffb268c1c6f7a5ffc99478ec
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: f5c066ae06e44f6cac4b9a7b98487aa6226b969f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808605"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524423"
 ---
 # <a name="durable-instance-context"></a>Trvanlivý kontext instance
-Tento příklad znázorňuje postup přizpůsobení povolit kontexty trvanlivý instanci modulu runtime Windows Communication Foundation (WCF). SQL Server 2005 používá jako své úložiště zálohování (SQL Server 2005 Express v tomto případě). Však také poskytuje přístup k vlastní úložiště mechanismy.  
+Tento příklad ukazuje, jak přizpůsobit modul runtime Windows Communication Foundation (WCF) umožňuje trvalý instance kontexty. Jako svůj záložní úložiště (SQL Server 2005 Express v tomto případě) používá SQL Server 2005. Ale také poskytuje způsob, jak přistupovat k mechanismy vlastního úložiště.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Tato ukázka zahrnuje rozšíření vrstvy kanálu a vrstva modelu služby WCF. Proto je potřeba pochopit základní koncepty před přechodem do podrobnosti implementace.  
+ Tento příklad zahrnuje rozšíření vrstvy kanálu a vrstva modelu služby WCF. Proto je potřeba pochopit základní koncepty před přechodem k podrobnostem implementace.  
   
- Trvanlivý instance kontexty naleznete ve skutečných scénářích velmi často. Aplikaci nákupního košíku například má možnost pozastavit shopping polovině vzdálenosti prostřednictvím a pokračovat na další den. Takže když jsme navštěvovat nákupní košík následujícího dne, je obnoven naše původní kontextu. Je důležité si uvědomit, nákupní košík aplikace (na serveru) při jsme jsou odpojené nespravuje nákupní košík instance. Místo toho potrvají stavu do média odolná úložiště a použije při vytváření nové instance pro obnovené kontext. Instance služby, která může obsluhovat stejný kontextu není stejný jako předchozí instanci (to znamená, nemá stejnou adresu paměti).  
+ Kontexty trvalý instance najdete ve skutečných scénářích velmi často. Nákupní košík aplikaci například má schopnost pozastavit nákupní uprostřed prostřednictvím a pokračovat na další den. Takže pokud používáte nákupního košíku dalšího dne, naše původního kontextu se obnoví. Je důležité si uvědomit, že aplikaci nákupního košíku (na serveru) nespravuje nákupního košíku instance odpojené jsme se. Místo toho uchovává stavu do trvalého úložiště médií a používá se při vytváření nové instance pro obnovený kontext. Proto instance služby, která může obsluhovat pro stejný kontext není stejný jako předchozí instanci (to znamená, nemá stejnou adresu paměti).  
   
- Trvanlivý kontext instance je možné díky malé protokol, který výměny ID kontextu mezi klientem a službou. Toto ID kontextu je vytvořen v klientovi a odesílané informace ke službě. Při vytvoření instance služby je běh služby se pokusí načíst trvalého stavu, která odpovídá toto ID kontextu z trvalého úložiště (ve výchozím nastavení je databáze systému SQL Server 2005). Pokud je k dispozici žádný stav má novou instanci výchozího stavu. Implementace služby používá k označení operace, které změní stav implementace služby tak, aby modul runtime můžete uložit instanci služby po vyvolání je vlastní atribut.  
+ Trvanlivý kontext instance je možné díky malé protokol, který vyměňuje ID kontextu mezi klientem a službou. Toto ID kontextu je vytvořen na straně klienta a do služby. Při vytvoření instance služby je modul runtime služby se pokouší načíst trvalého stavu, který odpovídá toto ID kontextu z trvalého úložiště (ve výchozím nastavení je databáze systému SQL Server 2005). Pokud je k dispozici žádný stav má novou instanci výchozího stavu. Implementace služby používá k označení operace, které změní stav implementace služby tak, aby modul runtime můžete uložit instanci služby po vyvolání je vlastní atribut.  
   
- Podle předchozích popis může být snadno odlišena dva kroky k dosažení cíle:  
+ Podle předchozího popisu lze dva kroky snadno rozlišit k dosažení cíle:  
   
-1.  Změnit zprávu, která přejde na sítě pro přenos ID kontextu.  
+1.  Změňte zprávu, která přejde na lince provádět ID kontextu.  
   
-2.  Změňte chování místní služby k implementaci vlastní logiky zřizování instancí.  
+2.  Místní chování služby k implementaci vlastní logiky vytvoření instance změňte.  
   
- Vzhledem k tomu, že první z nich v seznamu ovlivňuje zprávy v drátové síti by měla být implementována jako vlastní kanál a být připojených k vrstvy kanálu. Druhá možnost se týká pouze místní chování služby a proto může být implementováno tím, že rozšíří několik bodů rozšiřitelnosti služby. V následujících částech několik každý z těchto rozšíření jsou popsané.  
+ Vzhledem k tomu, že první z nich v seznamu ovlivňuje zpráv na lince by měla být implementována jako vlastního kanálu a připojili k vrstvě kanálu. Druhá možnost se týká pouze místní chování služby a proto může být implementována rozšíření několik bodů rozšiřitelnosti služby. V následujících částech jsou popsány každý z těchto rozšíření.  
   
-## <a name="durable-instancecontext-channel"></a>Trvale InstanceContext kanálu  
- Nejprve si prohlédněte si je rozšíření vrstvy kanálu. Prvním krokem při psaní vlastní kanál, který se má rozhodnout strukturu komunikační kanál. Jako nový protokol přenosu je uvedena kanál by měla spolupracovat s téměř jakoukoli kanál v zásobníku kanálu. Proto má podporovat všechny vzorky exchange zprávu. Základní funkce služby kanál je však stejný bez ohledu na jeho struktura komunikace. Přesněji řečeno z klienta se zapíše ID kontextu zprávy a ze služby by měl čtení toto ID kontextu ze zprávy a předejte ji do vyšší úrovně. Z tohoto důvodu `DurableInstanceContextChannelBase` vytvořit třídu, která funguje jako abstraktní základní třída pro všechny instance trvanlivý kontext kanál implementace. Tato třída obsahuje běžné funkce správy stavu počítač a dva chráněné členy pro použití a přečtěte si informace o kontextu do a z zprávy.  
+## <a name="durable-instancecontext-channel"></a>Kanál kontextu InstanceContext durable  
+ První věc, kterou si prohlédnout je rozšíření vrstvy kanálu. Prvním krokem při psaní vlastního kanálu je rozhodnout strukturu komunikační kanál. Jak je uvedena nová přenosový protokol kanálu by měla fungovat s téměř jakémkoli jiném kanálu v zásobníku kanálu. Proto má podporovat všechny vzorky zprávy exchange. Základní funkce kanálu je však stejný bez ohledu na jeho strukturu komunikace. Přesněji řečeno z klienta by měl zápis ID kontextu do zprávy a ze služby by toto ID kontextu četlo zprávy a předejte jej do vyšší úrovně. Proto `DurableInstanceContextChannelBase` je vytvořená třída, která slouží jako abstraktní základní třída pro všechny implementace kanálu kontextu trvalé instanci. Tato třída obsahuje běžným funkcím správy stavu počítače a dvou chráněné členy pro použití a přečtěte si informace o kontextu do a ze zprávy.  
   
 ```  
 class DurableInstanceContextChannelBase  
@@ -47,13 +47,13 @@ class DurableInstanceContextChannelBase
 }  
 ```  
   
- Ujistěte se, tyto dvě metody použití `IContextManager` implementace k zápisu a čtení ID kontextu do nebo ze zprávy. (`IContextManager` je vlastní rozhraní používá k definování kontraktu pro všechny správce kontextu.) Kanál může obsahovat buď ID kontextu, ve vlastní hlavičky SOAP nebo v hlavičce souboru cookie HTTP. Každá implementace manager kontextu dědí z `ContextManagerBase` třídu, která obsahuje funkci společné pro všechny správce kontextu. `GetContextId` Metoda v tato třída se používá k pocházejí ID kontextu z klienta. Kontext, ve kterém je ID pochází poprvé, když tato metoda uloží ho do textového souboru, jehož název je vytvořený pomocí adresy vzdálený koncový bod (název souboru je neplatný. znaky v typické identifikátory URI jsou nahrazeny @ znaků).  
+ Tyto dvě metody využívání `IContextManager` implementace pro zápis a čtení ID kontextu do nebo ze zprávy. (`IContextManager` je vlastní rozhraní používá k definování kontraktů pro všechny místní správce.) Kanál může obsahovat buď ID kontextu, v záhlaví SOAP, které vlastní nebo v hlavičce souboru cookie HTTP. Každá implementace správce kontextu dědí z `ContextManagerBase` třídu, která obsahuje běžné funkce pro všechny správce kontextu. `GetContextId` Metody této třídy se používá k pocházejí z ID kontextové z klienta. Když kontextu, který je ID pochází poprvé, tato metoda uloží ho do textového souboru, jehož název je vytvářený adresu vzdáleného koncového bodu (neplatné znaky názvu souboru v typické identifikátory URI jsou nahrazeny @ znaků).  
   
- Později je požadováno pro stejné vzdálený koncový bod ID kontextu, zkontroluje, zda existuje příslušný soubor. Pokud ano, přečte ID kontextu a vrátí. V opačném případě vrátí ID nově generovaným kontextem a uloží do souboru. U výchozí konfigurace tyto soubory jsou umístěny v adresář s názvem ContextStore, který se nachází v adresáři temp aktuálního uživatele. Toto umístění je ale možné konfigurovat pomocí prvku vazby.  
+ Později je vyžadováno pro stejný koncový bod vzdáleného ID kontextu, zkontroluje, zda existuje příslušný soubor. Pokud ano, přečte ID kontextu a vrátí. V opačném případě vrátí ID nově generovaným kontextem a uloží jej do souboru. Ve výchozí konfiguraci tyto soubory jsou umístěny v adresáři s názvem ContextStore, který je umístěný v adresáři temp aktuálního uživatele. Ale toto umístění je možné konfigurovat pomocí elementu vazby.  
   
- Tento mechanismus používá k přenosu ID kontextu je možné konfigurovat. Ho může buď zapsat hlavička cookie HTTP nebo vlastní hlavičku protokolu SOAP. Vlastní hlavička přístup protokolu SOAP umožňuje tento protokol pomocí jiných protokolů než HTTP (například TCP nebo pojmenované kanály). Existují dvě třídy, konkrétně `MessageHeaderContextManager` a `HttpCookieContextManager`, který implementovat tyto dvě možnosti.  
+ Mechanismus, který se používá k přenosu ID kontextu je možné konfigurovat. To může být buď napsaná hlavičky souborů cookie protokolu HTTP nebo vlastní hlavičky SOAP. Vlastní přístup záhlaví SOAP umožňuje tento protokol pomocí jiných protokolů než HTTP (například TCP nebo pojmenované kanály). Existují dvě třídy, a to `MessageHeaderContextManager` a `HttpCookieContextManager`, který implementovat tyto dvě možnosti.  
   
- Oba dva zapisovat ID kontextu zpráva správně. Například `MessageHeaderContextManager` třída zapíše ho do hlavičku protokolu SOAP v `WriteContext` metoda.  
+ Jejich zapsat kontextu ID zprávy odpovídajícím způsobem. Například `MessageHeaderContextManager` zapíše do záhlaví SOAP ve třídě `WriteContext` metoda.  
   
 ```  
 public override void WriteContext(Message message)  
@@ -70,7 +70,7 @@ public override void WriteContext(Message message)
 }   
 ```  
   
- Jak `ApplyContext` a `ReadContextId` metody v `DurableInstanceContextChannelBase` vyvolání třídy `IContextManager.ReadContext` a `IContextManager.WriteContext`, v uvedeném pořadí. Však těmito manažery kontextu nejsou vytvořené přímo `DurableInstanceContextChannelBase` třídy. Místo toho použije `ContextManagerFactory` třídy provést tuto úlohu.  
+ Jak `ApplyContext` a `ReadContextId` metody v `DurableInstanceContextChannelBase` vyvolání třídy `IContextManager.ReadContext` a `IContextManager.WriteContext`v uvedeném pořadí. Ale tyto místní správci nejsou vytvořené přímo `DurableInstanceContextChannelBase` třídy. Místo toho používá `ContextManagerFactory` třídě, aby provedl tuto úlohu.  
   
 ```  
 IContextManager contextManager =  
@@ -79,15 +79,15 @@ IContextManager contextManager =
                 this.endpointAddress);  
 ```  
   
- `ApplyContext` Metoda je volána pomocí odesílání kanály. Se vloží ID kontextu do odesílaných zpráv. `ReadContextId` Je volána metoda podle přijímající kanály. Tato metoda zajišťuje, že ID kontextu je k dispozici v příchozí zprávy a přidává ji k `Properties` kolekce `Message` třídy. Také vyvolá `CommunicationException` v případě selhání čtení ID kontextu a proto způsobí, že kanál přerušena.  
+ `ApplyContext` Vyvolá metodu odesílajícího kanály. Ho vkládá ID kontextu pro odchozí zprávy. `ReadContextId` Vyvolá metoda přijímající kanály. Tato metoda zajišťuje, že ID kontextu je k dispozici v příchozích zprávách a přidá jej do `Properties` kolekce `Message` třídy. Také vyvolá výjimku `CommunicationException` v případě selhání přečíst ID kontextu a proto způsobí, že kanál ho.  
   
 ```  
 message.Properties.Add(DurableInstanceContextUtility.ContextIdProperty, contextId);  
 ```  
   
- Než budete pokračovat, je důležité si uvědomit, použití `Properties` kolekce v `Message` třídy. Obvykle to `Properties` kolekce se používá při předávání dat z snížit na horní úrovně z vrstvy kanálu. Tímto způsobem k požadovaným datům lze zadat do vyšší úrovně konzistentním způsobem bez ohledu na podrobnosti protokolu. Jinými slovy vrstvy kanálu můžete odesílat a přijímat ID kontextu buď jako hlavičku protokolu SOAP nebo soubor cookie hlavičku protokolu HTTP. Není nutné pro vyšší úrovně vědět o tyto podrobnosti, protože vrstvy kanálu zpřístupní tyto informace v, ale `Properties` kolekce.  
+ Než budete pokračovat, je důležité porozumět využití `Properties` kolekce `Message` třídy. Obvykle to `Properties` kolekce se používá při předání dat z snížit na vyšší úrovně z vrstvy kanálu. Tímto způsobem požadovaná data je možné poskytnout vyšší úrovně konzistentním způsobem bez ohledu na podrobnosti protokolu. Jinými slovy vrstvy kanálu můžete odesílat a přijímat ID kontextu jako záhlaví SOAP nebo Hlavička cookie HTTP. Ale to není nezbytné pro vyšší úrovně vědět o tyto podrobnosti, protože vrstvy kanálu zpřístupňuje tyto informace v `Properties` kolekce.  
   
- Teď se `DurableInstanceContextChannelBase` třídy zavedené všechny deset rozhraní potřebná (IOutputChannel IInputChannel, IOutputSessionChannel, IInputSessionChannel, třídu IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, Musí být implementované IDuplexChannel, IDuplexSessionChannel). Se podobají každých vzorce výměny zpráv k dispozici (datagram, simplex, duplexní režim a jejich relacemi varianty). Každý z těchto implementace dědění základní třída popsaných výše a volání `ApplyContext` a `ReadContexId` správně. Například `DurableInstanceContextOutputChannel` - který implementuje rozhraní IOutputChannel - volá `ApplyContext` metoda z každé metody, která odesílá zprávy.  
+ Teď se `DurableInstanceContextChannelBase` třídy v místě všech deset rozhraní nezbytné (IOutputChannel IInputChannel, IOutputSessionChannel, IInputSessionChannel, třídu IRequestChannel, IReplyChannel, IRequestSessionChannel, IReplySessionChannel, Musí být implementované IDuplexChannel, IDuplexSessionChannel). Se podobají každý vzoru výměny zpráv k dispozici (datagramu, simplexně, duplexní režim a jejich s relacemi varianty). Každá z těchto implementací základní třídy výše popsaný a volání Zdědit `ApplyContext` a `ReadContexId` odpovídajícím způsobem. Například `DurableInstanceContextOutputChannel` – který implementuje rozhraní IOutputChannel – zavolá `ApplyContext` metoda z každé metody, která odesílá zprávy.  
   
 ```  
 public void Send(Message message, TimeSpan timeout)  
@@ -98,7 +98,7 @@ public void Send(Message message, TimeSpan timeout)
 }   
 ```  
   
- Na druhé straně `DurableInstanceContextInputChannel` – které implementuje `IInputChannel` rozhraní - volání `ReadContextId` metoda dané metody, která přijímá zprávy.  
+ Na druhé straně `DurableInstanceContextInputChannel` – která implementuje `IInputChannel` rozhraní - volání `ReadContextId` metoda v každé metodě, která přijímá zprávy.  
   
 ```  
 public Message Receive(TimeSpan timeout)  
@@ -109,7 +109,7 @@ public Message Receive(TimeSpan timeout)
 }  
 ```  
   
- Kromě toho tyto implementace kanál delegovat volání metod kanálu uvedenou pod nimi v zásobníku kanálu. Relacemi variant však mít základní logika a ujistěte se, že ID kontextu je odeslán a se čtou jenom pro první zprávu, která způsobí, že relace, který se má vytvořit.  
+ Kromě toho tyto implementace kanálu delegáta volání metod na kanál pod nimi v zásobníku kanálu. S relacemi varianty však mít základní logiku, abyste měli jistotu, že ID kontextu se odesílají a je pro čtení jenom pro první zprávu, která způsobí, že relace, který se má vytvořit.  
   
 ```  
 if (isFirstMessage)  
@@ -120,10 +120,10 @@ if (isFirstMessage)
 }  
 ```  
   
- Tyto implementace kanál se pak přidají do kanálu runtime WCF pomocí `DurableInstanceContextBindingElement` třídy a `DurableInstanceContextBindingElementSection` třídy správně. Najdete v článku [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) kanálu ukázková dokumentace pro další podrobnosti o elementů vazby a vazby element oddíly.  
+ Tyto implementace kanálu se pak přidá do modulu runtime kanál WCF `DurableInstanceContextBindingElement` třídy a `DurableInstanceContextBindingElementSection` třídy odpovídajícím způsobem. Zobrazit [HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md) ukázková dokumentace pro další podrobnosti o elementů vazby a oddíly elementů vazby kanálu.  
   
-## <a name="service-model-layer-extensions"></a>Rozšíření vrstvy modelu služby  
- Teď, když má ID kontextu cesty prostřednictvím vrstvy kanálu, můžete k přizpůsobení instance implementovat chování služby. V této ukázce Správce úložiště slouží k načtení a uložení stavu z nebo do trvalého úložiště. Jak je popsáno dříve, tato ukázka poskytuje správce úložiště, který používá systém SQL Server 2005 jako své úložiště zálohování. Je však také možné přidat vlastní úložiště mechanismy pro tuto příponu. K tomu veřejné rozhraní je deklarovaná, který musí implementovat všechny správce úložiště.  
+## <a name="service-model-layer-extensions"></a>Rozšíření modelu vrstvy služeb  
+ Teď, když má ID kontextu přenést přes kanál vrstvu, je možné implementovat chování služby k přizpůsobení instance. V této ukázce Správce úložiště slouží k načtení a uložení stavu z nebo do trvalého úložiště. Jak jsme vysvětlili dříve, tato ukázka poskytuje správce úložiště, který používá SQL Server 2005 jako svůj záložní úložiště. Je však také možné přidat vlastní úložiště mechanismy pro toto rozšíření. K tomu veřejného rozhraní je teď deklarována, který musí implementovat všechny správce úložiště.  
   
 ```  
 public interface IStorageManager  
@@ -168,7 +168,7 @@ using (SqlConnection connection = new SqlConnection(GetConnectionString()))
 }  
 ```  
   
- V `GetInstance` metoda serializovaná data je pro čtení pro daný kontext ID a je objekt vytvořený z něj vrácen volajícímu.  
+ V `GetInstance` metoda serializovaných dat je pro čtení pro daný kontext ID a přiřazený objekt vytvořený z něj je vrátit zpět volajícímu.  
   
 ```  
 object data;  
@@ -195,7 +195,7 @@ if (data != null)
 }  
 ```  
   
- Uživatelé těchto úložiště správci nemají co dělat vytvořit přímo instanci. Používají `StorageManagerFactory` třída, která abstrahuje z podrobnosti vytváření Správce úložiště. Tato třída obsahuje jeden statický člen `GetStorageManager`, která vytvoří instanci typu manager dané úložiště. Pokud je parametr typu `null`, tato metoda vytvoří instanci výchozí `SqlServerStorageManager` třídy a vrátí ji. Zároveň ověří, abyste měli jistotu, že implementuje daného typu `IStorageManager` rozhraní.  
+ Uživatelé těchto úložiště správce neměl konkretizovat přímo. Používají `StorageManagerFactory` třídy, který abstrahuje od podrobnosti o vytvoření Správce úložiště. Tato třída obsahuje jeden statický člen `GetStorageManager`, která vytvoří instanci typu správce daného úložiště. Pokud je parametr typu `null`, tato metoda vytvoří instanci výchozí `SqlServerStorageManager` třídy a vrátí jej. Také ověří daného typu, abyste měli jistotu, že implementuje `IStorageManager` rozhraní.  
   
 ```  
 public static IStorageManager GetStorageManager(Type storageManagerType)  
@@ -227,19 +227,19 @@ else
 }   
 ```  
   
- Potřebnou infrastrukturu pro čtení a zápisu instancí z trvalého úložiště je implementováno. Nyní musí vzít potřebné kroky, chcete-li změnit chování služby.  
+ Je implementován potřebnou infrastrukturu pro čtení a zápis instance z trvalého úložiště. Teď mají nezbytné kroky, chcete-li změnit chování služby mají být provedeny.  
   
- Jako první krok tohoto procesu se musí uložit ID kontextu, které pochází z vrstvy kanálu pro aktuální objekt InstanceContext. Parametr InstanceContext je komponenty modulu runtime, která slouží jako propojení mezi dispečera WCF a instance služby. Slouží k poskytování dalších stavu a chování v instanci služby. To je důležité, protože komunikaci mezi relacemi ID kontextu jsou odeslány pouze s první zprávu.  
+ Prvním krokem tohoto procesu máme uložte kontextu ID, které pochází z vrstvy kanálu na aktuálním kontextu InstanceContext. Třída InstanceContext je součástí modulu runtime, který slouží jako propojení mezi dispečer WCF a instance služby. Je možné poskytnout další stav a chování v instanci služby. To je nezbytné, protože při komunikaci s relacemi je odesláno ID kontext pouze s první zprávou.  
   
- WCF umožňuje rozšíření jeho komponenty runtime InstanceContext přidáním nového stavu a chování pomocí jeho vzor extensible objektu. Vzor extensible objektu se používá v WCF buď rozšířit existující třídy runtime s novými funkcemi, nebo při přidání nových funkcí stavu do objektu. Existují tři rozhraní ve vzoru extensible objekt - IExtensibleObject\<T >, IExtension\<T > a IExtensionCollection\<T >:  
+ WCF umožňuje rozšíření komponenty modulu runtime InstanceContext tak, že přidáte nový stav a chování pomocí způsobu rozšiřitelném objektu. Vzor rozšiřitelném objektu se používá ve službě WCF buď rozšířit existující třídy modulu runtime s novými funkcemi nebo přidávání nových funkcí stavu k objektu. Existují tři rozhraní ve vzoru extensible object - IExtensibleObject\<T >, IExtension\<T > a IExtensionCollection\<T >:  
   
--   IExtensibleObject\<T > rozhraní je implementováno modulem objekty, které umožňují rozšíření, které přizpůsobit jejich funkce.  
+-   IExtensibleObject\<T > rozhraní implementují objekty, které umožňují rozšíření, která přizpůsobit jejich funkce.  
   
--   IExtension\<T > rozhraní je implementováno modulem objekty, které jsou rozšíření třídy typu T.  
+-   IExtension\<T > rozhraní implementují objekty, které jsou rozšíření třídy typu T.  
   
--   IExtensionCollection\<T > rozhraní je kolekce IExtensions, která umožňuje načítání IExtensions dle jejich typu.  
+-   IExtensionCollection\<T > rozhraní je kolekce IExtensions, který umožňuje načítání IExtensions podle jejich typu.  
   
- Proto třídu InstanceContextExtension by měl být vytvořen, který implementuje rozhraní IExtension a definuje stav vyžaduje pro uložení ID kontextu. Tato třída rovněž poskytuje stav pro uložení úložiště správce používá. Po uložení nového stavu, neměl by být možné ji upravit. Stav jsou proto zadat a uložit do instance v době, kdy se vytvořený a potom dostupné jenom pomocí vlastnosti jen pro čtení.  
+ Proto třídu InstanceContextExtension by měl být vytvořen, který implementuje rozhraní IExtension a definuje požadovaný stav uložení ID kontextu. Tato třída rovněž poskytuje stavu k uložení úložiště správce používá. Po uložení nového stavu by neměla být možné jej upravit. Stav je proto k dispozici a uloží do instance v době, kdy je právě vytvořený a pak dostupná jenom pomocí vlastnosti jen pro čtení.  
   
 ```  
 // Constructor  
@@ -262,7 +262,7 @@ public IStorageManager StorageManager
 }   
 ```  
   
- Třída InstanceContextInitializer implementuje rozhraní IInstanceContextInitializer a přidá do kolekce rozšíření InstanceContext vytvářen rozšíření místní instance.  
+ InstanceContextInitializer třída implementuje rozhraní IInstanceContextInitializer a přidá do kolekce rozšíření kontextu InstanceContext vytváří rozšíření místní instance.  
   
 ```  
 public void Initialize(InstanceContext instanceContext, Message message)  
@@ -277,9 +277,9 @@ public void Initialize(InstanceContext instanceContext, Message message)
 }  
 ```  
   
- Jak bylo popsáno dříve ID kontextu je pro čtení z `Properties` kolekce `Message` třídy a předaný konstruktoru třídy extension. Tento příklad ukazuje, jak nelze vyměňovat informace mezi vrstvami konzistentním způsobem.  
+ Jak bylo popsáno dříve ID kontextu je číst z `Properties` kolekce `Message` třídy a předat konstruktoru třídy rozšíření. Tento příklad ukazuje, jak nelze vyměňovat informace mezi vrstvami konzistentním způsobem.  
   
- Další důležitý krok přepisují proces vytvoření instance služby. WCF umožňuje implementace chování vlastní vytváření instancí a jejich zapojování až modulu runtime použijte rozhraní IInstanceProvider. Nové `InstanceProvider` implementaci třídy chcete tuto úlohu. V konstruktoru byla přijata od instance zprostředkovatele je očekáván typ služby. To se později používá k vytvoření nové instance. V `GetInstance` implementace instance Správce úložiště je vytvořena hledá trvalou instance. Vrátí-li `null` pak novou instanci typu služby vytvořena a vrácena volajícímu.  
+ Dalším důležitým krokem přepisuje proces vytvoření instance služby. WCF umožňuje implementovat vlastní instance chování a zapojení do modulu runtime pomocí IInstanceProvider rozhraní. Nové `InstanceProvider` třídy je implementováno s cílem provést tuto úlohu. V konstruktoru je přijat typ služby očekává od instance zprostředkovatele. Později to slouží k vytvoření nové instance. V `GetInstance` implementace Správce úložiště je vytvořena instance hledáte trvalé instanci. Vrátí-li `null` novou instanci daného typu služby je vytvořena instance a vrátit zpět volajícímu.  
   
 ```  
 public object GetInstance(InstanceContext instanceContext, Message message)  
@@ -303,11 +303,11 @@ public object GetInstance(InstanceContext instanceContext, Message message)
 }  
 ```  
   
- Dalším důležitým krokem je instalace `InstanceContextExtension`, `InstanceContextInitializer` a `InstanceProvider` tříd do modulu runtime modelu služby. Vlastní atribut může označit implementace třídy služeb pro instalaci chování. `DurableInstanceContextAttribute` Obsahuje implementaci pro tento atribut a implementuje `IServiceBehavior` rozhraní rozšíření modulu runtime celé služby.  
+ Dalším důležitým krokem je instalace `InstanceContextExtension`, `InstanceContextInitializer` a `InstanceProvider` třídy do modulu runtime service model. Vlastní atribut může použít k označení třídy implementace služby k instalaci chování. `DurableInstanceContextAttribute` Obsahuje implementaci pro tento atribut a implementuje `IServiceBehavior` rozhraní pro rozšíření modulu runtime celé služby.  
   
  Tato třída obsahuje vlastnosti, která přijímá typ Správce úložiště, který se má použít. Tímto způsobem implementace umožňuje uživatelům zadat vlastní `IStorageManager` implementace jako parametr tohoto atributu.  
   
- V `ApplyDispatchBehavior` implementace `InstanceContextMode` aktuálního `ServiceBehavior` atribut ověření. Pokud je nastavena na Singleton, povolení trvanlivý vytváření instancí není možné a `InvalidOperationException` je vyvolána oznámit hostitele.  
+ V `ApplyDispatchBehavior` implementace `InstanceContextMode` aktuálního `ServiceBehavior` atribut se ověřuje. Pokud tato vlastnost nastavená na jednotlivý prvek, povolení trvalý vytváření instancí není možné a `InvalidOperationException` je vyvolána výjimka, aby upozornil hostitele.  
   
 ```  
 ServiceBehaviorAttribute serviceBehavior =  
@@ -321,7 +321,7 @@ if (serviceBehavior != null &&
 }  
 ```  
   
- Po této instance Správce úložiště, instance kontextu inicializátoru a poskytovateli instance se vytváří a nainstalované v `DispatchRuntime` vytvořit pro každý koncový bod.  
+ Po této instance Správce úložiště, inicializátor instance kontextu a poskytovatele instance jsou vytvořeny a nainstalován v `DispatchRuntime` vytvořena pro každý koncový bod.  
   
 ```  
 IStorageManager storageManager =   
@@ -348,17 +348,17 @@ foreach (ChannelDispatcherBase cdb in serviceHostBase.ChannelDispatchers)
 }  
 ```  
   
- V souhrnu, pokud tato ukázka má vytvořeného kanálu, který je povolený protokol vlastní přenosu pro kontext vlastní ID exchange a taky přepíše výchozí chování instance načíst z trvalého úložiště vytváření instancí.  
+ Stručně řečeno, pokud tuto ukázku vytvořil kanál, který povolené vlastní přenosový protokol pro kontext vlastní ID exchange a přepíše výchozí chování pro načtení instance z trvalého úložiště vytváření instancí.  
   
- Co je ponechán je způsob, jak uložit instanci služby do trvalého úložiště. Jak je popsáno dříve, již existuje požadované funkce pro uložení stavu v `IStorageManager` implementace. Jsme teď musíte integrovat to s modulem runtime WCF. Jiný atribut je požadován, se vztahuje na metody ve třídě implementace služby. Tento atribut by měl použít pro metody, které změní stav instance služby.  
+ Co je ponecháno je způsob, jak ušetřit instance služby do trvalého úložiště. Jak je popsáno výše, již existuje požadovanou funkci pro uložení stavu v `IStorageManager` implementace. Nyní musíte integrujeme to s modulem runtime WCF. Je vyžadován jiný atribut, který se vztahuje na metody ve třídě implementaci služby. Tento atribut se má použít pro metody, které ke změně stavu instance služby.  
   
- `SaveStateAttribute` Třída implementuje tuto funkci. Také implementuje `IOperationBehavior` třída k úpravě runtime WCF pro každou operaci. Když se tento atribut je označen metodu, vyvolá WCF runtime `ApplyBehavior` metoda při odpovídající `DispatchOperation` je vytvářen. V této implementaci metoda je jediný řádek kódu:  
+ `SaveStateAttribute` Třída implementuje tuto funkci. Implementuje navíc `IOperationBehavior` třídy změnit modul runtime WCF pro každou operaci. Když metoda je označena pomocí tohoto atributu, vyvolá modul runtime WCF `ApplyBehavior` metody odpovídající `DispatchOperation` se vytváří. V této implementaci metody je jediný řádek kódu:  
   
 ```  
 dispatch.Invoker = new OperationInvoker(dispatch.Invoker);  
 ```  
   
- Tento pokyn vytvoří instanci `OperationInvoker` zadejte a přiřadí ji k `Invoker` vlastnost `DispatchOperation` vytvářen. `OperationInvoker` Třída je obálka pro původce volání operace výchozí pro vytvořit `DispatchOperation`. Tato třída implementuje `IOperationInvoker` rozhraní. V `Invoke` implementace metod volání metody skutečné je delegovaný jako původce vnitřní operace. Nicméně před vrácením výsledky Správce úložiště v `InstanceContext` se používá pro uložení instance služby.  
+ Tento pokyn vytvoří instanci `OperationInvoker` zadejte a přiřadí ji k `Invoker` vlastnost `DispatchOperation` vytváří. `OperationInvoker` Třídy tvoří obálku pro původce volání operace výchozí vytvořené pro `DispatchOperation`. Tato třída implementuje `IOperationInvoker` rozhraní. V `Invoke` implementace metody volání skutečné metody se deleguje na původce volání vnitřní operace. Však teprve potom se informuje správce úložiště v výsledky `InstanceContext` se používá pro uložení instance služby.  
   
 ```  
 object result = innerOperationInvoker.Invoke(instance,  
@@ -374,7 +374,7 @@ return result;
 ```  
   
 ## <a name="using-the-extension"></a>Pomocí rozšíření  
- Jak provádí vrstvy kanálu a rozšíření vrstva modelu služby a můžete je teď používat v aplikacích WCF. Služby mít do zásobníku kanál použití vlastní vazby, přidejte kanál a potom označit implementace třídy služeb s odpovídajícími atributy.  
+ Dokončení vrstvy kanálu a rozšíření modelu vrstvy služeb i se teď dá v aplikacích WCF. Služby se mají přidat do kanálu zásobníku použití vlastní vazby kanálu a pak označit třídy implementace služby s příslušnými atributy.  
   
 ```  
 [DurableInstanceContext]  
@@ -391,7 +391,7 @@ public class ShoppingCart : IShoppingCart
  }  
 ```  
   
- Klientské aplikace, musíte přidat DurableInstanceContextChannel do zásobníku kanál použití vlastní vazby. Ke konfiguraci kanálu deklarativně v konfiguračním souboru, musí být přidán do kolekce element rozšíření vazby sekce prvku vazby.  
+ Klientské aplikace, musíte přidat DurableInstanceContextChannel do zásobníku kanál použití vlastní vazby. Ke konfiguraci kanálu deklarativně v konfiguračním souboru, v části elementu vazby musí být přidán do kolekce rozšíření elementu vazby.  
   
 ```xml  
 <system.serviceModel>  
@@ -403,7 +403,7 @@ type="Microsoft.ServiceModel.Samples.DurableInstanceContextBindingElementSection
  </extensions>  
 ```  
   
- Nyní prvku vazby použít s vlastní vazby stejně jako další prvky standardní vazby:  
+ Prvek vazby můžete jej použít s vlastní vazby, stejně jako ostatní standardní vazbu prvky:  
   
 ```xml  
 <bindings>  
@@ -419,13 +419,13 @@ type="Microsoft.ServiceModel.Samples.DurableInstanceContextBindingElementSection
 ```  
   
 ## <a name="conclusion"></a>Závěr  
- Tato ukázka vám ukázal, jak vytvořit vlastní protokol kanál a postup přizpůsobení chování služby povolit.  
+ Tuto ukázku jsme si ukázali, jak vytvořit vlastní protokol kanál a přizpůsobit chování služby, aby je.  
   
- Rozšíření lze dále zvýšit tím, že uživatelé, zadejte `IStorageManager` implementace pomocí konfigurační oddíl. Díky tomu je možné upravit záložní úložiště bez nutnosti rekompilace kódu služby.  
+ Rozšíření lze dále zvýšit tím, že uživatelům určit, `IStorageManager` implementace pomocí konfiguračního oddílu. Díky tomu je možné změnit bez opětovné kompilace kódu služby záložního úložiště.  
   
- Kromě toho mohou zkuste implementace třídy (například `StateBag`), který zapouzdří stav instance. Třídy je zodpovědná za uložením stavu, vždy, když se změní. Tímto způsobem můžete vyhnout použitím `SaveState` atribut a provádět zachování pracovní přesněji (například může stav zachována, když je ve skutečnosti změnil stav místo uložení každý čas při metodu s `SaveState` atribut voláno).  
+ Kromě toho by se mohl pokusit implementace třídy (například `StateBag`), který zapouzdří stav instance. Třídy je zodpovědné za trvalost stavu pokaždé, když se změní. Díky tomu můžete předejít použití `SaveState` atribut a přesněji provedení zachování práce (například může zachování stavu, když ve skutečnosti je změněn stav místo uložení pokaždé, když při metodu s `SaveState` atribut volá se).  
   
- Při spuštění ukázky, zobrazí se následující výstup. Klient přidá dvě položky do jeho nákupní košík a pak získá seznam položek v jeho nákupní košík ze služby. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby.  
+ Když spustíte ukázku, zobrazí se následující výstup. Klient přidá dvě položky do jeho nákupního košíku a potom získá seznam položek v jeho nákupního košíku ze služby. Stisknutím klávesy ENTER v každé okno konzoly pro vypnutí klienta a služby.  
   
 ```  
 Enter the name of the product: apples  
@@ -438,25 +438,25 @@ Press ENTER to shut down client
 ```  
   
 > [!NOTE]
->  Znovu sestavit službu přepíše soubor databáze. Chcete-li sledovat stav zachována napříč více spustí vzorku, nezapomeňte znovu sestavit ukázku mezi spustí.  
+>  Znovu sestavit službu přepíše soubor databáze. Sledovat stavů zachovaný během různých spuštění ukázky, se ujistěte, že znovu sestavte ukázku mezi spuštění.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!NOTE]
->  SQL Server 2005 nebo SQL Express 2005. Chcete tuto ukázku spustit, musíte používat. Pokud používáte systém SQL Server 2005, musíte změnit konfiguraci služby připojovací řetězec. Při spuštění počítače napříč, SQL Server je potřeba jenom na počítači serveru.  
+>  SQL Server 2005 nebo SQL Express 2005. tuto ukázku spustit, musí běžet. Pokud používáte systém SQL Server 2005, je třeba upravit konfigurace služby připojovací řetězec. Při spuštění mezi počítači systému SQL Server je potřeba jenom na počítači serveru.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`  
   

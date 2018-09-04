@@ -2,12 +2,12 @@
 title: Změna stromů XML (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 8ec47e6d-2363-4694-be46-8d5ca4d15fc9
-ms.openlocfilehash: 4afb071b5229b3a585ea032effc2985c9a9f7c3a
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 55e75762772a071b97eecb7d6d78e28c3002a179
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39198533"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505716"
 ---
 # <a name="modifying-xml-trees-linq-to-xml-c"></a>Změna stromů XML (LINQ to XML) (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] je úložiště v paměti pro stromu XML. Po načtení nebo parsovat stromu XML ze zdroje, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] umožňuje měnit stromové struktuře na místě a potom serializaci stromu, možná ukládají do souboru nebo v odesílání dat ke vzdálenému serveru.  
@@ -27,5 +27,6 @@ ms.locfileid: "39198533"
 |[Zachování dvojic název/hodnota (C#)](../../../../csharp/programming-guide/concepts/linq/maintaining-name-value-pairs.md)|Popisuje, jak udržovat informace o aplikaci, která nejlépe se ukládají jako dvojice název/hodnota, například informace o konfiguraci nebo globální nastavení.|  
 |[Postupy: Změna Namespace pro celý strom XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-change-the-namespace-for-an-entire-xml-tree.md)|Ukazuje, jak přesunout do jiného stromu XML z jednoho oboru názvů.|  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

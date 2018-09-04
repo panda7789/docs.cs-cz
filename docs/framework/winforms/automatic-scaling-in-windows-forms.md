@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
 ms.openlocfilehash: d3981be7977b56af0b60f9796519b78dc9ac5db3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43456649"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505763"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Automatická změna měřítka ve Windows Forms
 

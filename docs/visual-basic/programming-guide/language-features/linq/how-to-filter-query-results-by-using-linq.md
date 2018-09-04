@@ -12,11 +12,11 @@ helpviewer_keywords:
 - filtering data [Visual Basic]
 ms.assetid: ef103092-9bed-4134-97f4-2db696e83c12
 ms.openlocfilehash: f9854650b1f89a2330cfa81910187e3fb01c54b4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43424435"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519645"
 ---
 # <a name="how-to-filter-query-results-by-using-linq-visual-basic"></a>Postupy: Filtrování výsledků dotazu pomocí LINQ (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů.  

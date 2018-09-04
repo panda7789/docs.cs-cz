@@ -3,11 +3,11 @@ title: Ukázka koncového bodu správy pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 3ac6e08f-c43d-4bb7-83c3-e3890a4dac03
 ms.openlocfilehash: 3d99cbef20895381f5e40ee939e1d94a409f1391
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43416578"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536711"
 ---
 # <a name="workflow-management-endpoint-sample"></a>Ukázka koncového bodu správy pracovního postupu
 Tento příklad ukazuje použití ovládacího prvku koncový bod pracovního postupu vytvoření a spuštění pracovních postupů, místně i vzdáleně. Vzorek ukazuje, jak hostovat koncové body typu ovládacího prvku a zápis klientů, které volají kontrolní koncový bod pro vytvoření a spuštění instance pracovního postupu. Pracovní postup není služba.  

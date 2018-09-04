@@ -2,53 +2,53 @@
 title: Zabezpečení služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 53f84ad5-1ed1-4114-8d0d-b12e8a021c6e
-ms.openlocfilehash: 5dbd724f3a2f8febfc74719584f4d69cbf75b567
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 28c34ecf7d6d781bfa461b2737cb9325a657f47e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806666"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524332"
 ---
 # <a name="securing-workflow-services"></a>Zabezpečení služeb pracovních postupů
-Ukázka zabezpečené služby pracovního postupu ukazuje následujících postupů:  
+V ukázce Zabezpečená služba pracovního postupu najdete v následujících postupech:  
   
 -   Vytváření s použitím služby základní pracovní postup <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> aktivity.  
   
--   Pomocí konfigurace Windows Communication Foundation (WCF), abyste definovali zabezpečení koncových bodů pro použití službou pracovního postupu.  
+-   Chcete-li definovat zabezpečené koncové body pro použití službou pracovního postupu pomocí konfigurace Windows Communication Foundation (WCF).  
   
--   Deklarace identity uvnitř vlastní zásady pro vytváření a používání <xref:System.ServiceModel.ServiceAuthorizationManager> ověřit deklarace identity.  
+-   Deklarace identity uvnitř vlastní zásady pro vytváření a používání <xref:System.ServiceModel.ServiceAuthorizationManager> k ověřování deklarací identity.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- Pomocí zabezpečení WCF pro zabezpečení komunikace mezi klientem a službou pracovního postupu, na základě deklarací autorizace  
+ Pomocí zabezpečení WCF pro zabezpečení komunikace mezi klientem a služby pracovních postupů, autorizace deklarovaných identit  
   
-## <a name="discussion"></a>Diskusní  
- Tento příklad znázorňuje použití Infrastruktura zabezpečení WCF pro zabezpečení služby pracovního postupu, stejně jako normální službou WCF. Konkrétně používá vlastních deklarací identity pro ověřování. V takovém případě se použije <xref:System.ServiceModel.WSHttpBinding> a zpráv režim zabezpečení pomocí pověření systému Windows.  
+## <a name="discussion"></a>Diskuse  
+ Tento příklad znázorňuje používání infrastruktury zabezpečení WCF pro zabezpečení služby pracovního postupu, stejně jako normální službou WCF. Konkrétně používá vlastní deklarace identity pro autorizaci. V tomto případě používá <xref:System.ServiceModel.WSHttpBinding> a zprávu režim zabezpečení pomocí přihlašovacích údajů Windows.  
   
- Vlastní <xref:System.IdentityModel.Policy.IAuthorizationPolicy> (`CustomNameCheckerPolicy`) ověří uživatelské jméno systému Windows klienta a pro konkrétní znak. Pokud se nachází tento znak, vytvoří a přidá se <xref:System.IdentityModel.Policy.EvaluationContext>. Díky tomu vlastní zásady je provedení příkazu, klient má tento znak v uživatelské jméno. Tento požadavek můžete položit dotaz na po celou dobu volání. Můžete najít tento znak v `Constants.cs`.  
+ Vlastní <xref:System.IdentityModel.Policy.IAuthorizationPolicy> (`CustomNameCheckerPolicy`) ověří uživatelské jméno klienta Windows a pro konkrétní znak. Pokud tento znak je k dispozici, vytvoří a přidá deklaraci do <xref:System.IdentityModel.Policy.EvaluationContext>. Tímto způsobem, vlastní zásady provádí příkaz, který má klient tento znak uživatelské jméno. Tato deklarace identity může být dotazována v celém životním volání. Můžete najít znaku v `Constants.cs`.  
   
- Zásady autorizace hledá deklarace identity uvnitř `SecureWorkFlowAuthZManager`. Pokud najde ho, vrátí `true` a povolit v pracovním postupu pokračovat. Funkce `false`, což způsobí, že zpráva o odepření přístupu má být vrácen do klienta. Další deklarace identity jsou k dispozici v kontextu a může být prověřen také uvnitř `SecureWorkFlowAuthZManager`.  
+ Zásady autorizace hledá deklarace identity uvnitř `SecureWorkFlowAuthZManager`. Pokud se ho najde, vrátí `true` a povolit pracovní postup, aby bylo možné pokračovat. V opačném případě vrátí `false`, což způsobí, že zprávu "Přístup byl odepřen" má být vrácena klientovi. Další deklarace identity jsou k dispozici v kontextu a lze jej prozkoumat také uvnitř `SecureWorkFlowAuthZManager`.  
   
-#### <a name="to-run-this-sample"></a>Chcete tuto ukázku spustit  
+#### <a name="to-run-this-sample"></a>Tuto ukázku spustit  
   
 1.  Spustit [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] s oprávněními správce.  
   
 2.  Načíst SecuringWorkflowServices.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-3.  Stisknutím kombinace kláves CTRL + SHIFT + B řešení zkompilovat.  
+3.  Stiskněte kombinaci kláves CTRL + SHIFT + B pro kompilaci řešení.  
   
-4.  Nastavte projekt služby jako spuštění projektu pro řešení.  
+4.  Nastavte jako spouštěcí projekt pro řešení projekt služby.  
   
-5.  Stisknutím CTRL + F5 a spusťte službu bez ladění.  
+5.  Stisknutím kláves CTRL + F5 ke spuštění služby bez ladění.  
   
-6.  Nastavte klientského projektu jako spuštění projektu pro řešení.  
+6.  Nastavte klientský projekt jako projekt spuštění pro řešení.  
   
-7.  Stisknutím CTRL + F5 a spusťte službu klienta bez ladění.  
+7.  Stisknutím kláves CTRL + F5 spusťte klienta bez ladění.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\SecuringWorkflowServices`

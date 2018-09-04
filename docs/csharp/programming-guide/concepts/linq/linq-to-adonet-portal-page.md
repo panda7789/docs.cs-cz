@@ -2,12 +2,12 @@
 title: LINQ to ADO.NET (stránka portálu)
 ms.date: 07/20/2015
 ms.assetid: 6bd269b4-3509-4688-b672-836008704182
-ms.openlocfilehash: 0d8fd3834f4d44e266f7925dcf02a6fee9d05f3b
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
+ms.openlocfilehash: aa8a5922ab33bf571f96d7b2dc3ea7d5877464cb
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43331981"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526229"
 ---
 # <a name="linq-to-adonet-portal-page"></a>LINQ to ADO.NET (stránka portálu)
 [!INCLUDE[linq_adonet](~/includes/linq-adonet-md.md)] umožňuje dotazování přes jakýkoli vyčíslitelný objekt v [!INCLUDE[vstecado](~/includes/vstecado-md.md)] pomocí [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] programovací model.  
@@ -34,6 +34,7 @@ ms.locfileid: "43331981"
 ## <a name="linq-to-entities"></a>LINQ to Entities  
  Až [!INCLUDE[adonet_edm](~/includes/adonet-edm-md.md)], je přístupný relačních dat jako objektů v prostředí .NET. Tím je objekt vrstvy ideální cíl pro [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] podporu umožňující vývojářům formulovali dotazy na databázi z jazyk používaný k vytváření obchodní logiku. Tato schopnost je známá jako [!INCLUDE[linq_entities](~/includes/linq-entities-md.md)]. Zobrazit [technologii LINQ to Entities](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md) Další informace.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ a ADO.NET](https://msdn.microsoft.com/library/bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec)  
- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ a ADO.NET](https://msdn.microsoft.com/library/bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec)  
+- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)

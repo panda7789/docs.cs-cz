@@ -5,11 +5,11 @@ author: rlander
 ms.author: mairaw
 ms.date: 07/16/2018
 ms.openlocfilehash: 7b3b7ca5709008260ea284602a3ed8d2b288c410
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43397690"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515192"
 ---
 # <a name="install-the-net-framework-35-on-windows-10-windows-81-and-windows-8"></a>Instalace rozhraní .NET Framework 3.5 ve Windows 10, Windows 8.1 a Windows 8
 

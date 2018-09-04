@@ -7,11 +7,11 @@ helpviewer_keywords:
 - '#region directive [C#]'
 ms.assetid: 672c87d1-9771-4f64-ab3f-0ad3d4ffb2b4
 ms.openlocfilehash: 3edc4fe757ab1f5cbf42e67ab74cd8032a82d853
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43463270"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518275"
 ---
 # <a name="region-c-reference"></a>#region (referenční dokumentace jazyka C#)
 `#region` Umožňuje určit blok kódu, které můžete rozbalit nebo sbalit při použití [sbalování](/visualstudio/ide/outlining) funkce z editoru kódu sady Visual Studio. V souborech kódu delší dobu je vhodné sbalit nebo skrýt jedné nebo více oblastí, aby vám umožní soustředit se u souboru, který jste právě pracujete. Následující příklad ukazuje, jak definovat oblasti:  

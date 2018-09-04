@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Visual Basic code, documenting with XML
 ms.assetid: a0d35dc7-c5f9-4d74-92ff-a1c6f28d5235
 ms.openlocfilehash: b99c37f30d595e114bb4625a2881a9f0b463f5e6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43405176"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524404"
 ---
 # <a name="documenting-your-code-with-xml-visual-basic"></a>Dokumentace kódu s XML (Visual Basic)
 V jazyce Visual Basic můžete dokumentaci kódu pomocí XML  

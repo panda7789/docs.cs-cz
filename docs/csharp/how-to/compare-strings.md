@@ -6,11 +6,11 @@ helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
 ms.openlocfilehash: 3c841a1152613ec877bb6172dc8d053bf060b33b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484099"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515277"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Jak bude probíhat porovnávání řetězců v jazyce C\#
 

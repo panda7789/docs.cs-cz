@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 314ceb86219ce143e84a00392727d610c0779e48
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: bdec49d077a41ea0b578aaff9ce7fcf9e0c7dc8c
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258066"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505829"
 ---
 # <a name="securing-method-access"></a>Zabezpečení přístupu k metodě
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -30,7 +30,7 @@ ms.locfileid: "43258066"
   
 -   Omezte její obor usnadnění přístupu pro třídy, sestavení nebo odvozené třídy, pokud se může považovat za důvěryhodné. Toto je nejjednodušší způsob, jak omezit přístup k metodě. Všimněte si, že obecně odvozené třídy mohou být méně důvěryhodné než třídy, které vyplývají z, i když v některých případech sdílejí identity nadřazené třídy. Zejména nelze odvodit vztah důvěryhodnosti z klíčového slova **chráněné**, což není nutně použít v kontextu zabezpečení.  
   
--   Omezit přístup k metodě volajícím zadané identity – v podstatě žádné konkrétní [důkazy](http://msdn.microsoft.com/library/64ceb7c8-a0b4-46c4-97dc-6c22da0539da) (silný název, vydavatele, zóny a podobně) vyberete.  
+-   Omezit přístup k metodě volajícím zadané identity – v podstatě žádné konkrétní [důkazy](https://msdn.microsoft.com/library/64ceb7c8-a0b4-46c4-97dc-6c22da0539da) (silný název, vydavatele, zóny a podobně) vyberete.  
   
 -   Omezte přístup metoda volajícím mají všechna oprávnění, které jste vybrali.  
   

@@ -13,11 +13,11 @@ helpviewer_keywords:
 - Group By clause [Visual Basic]
 ms.assetid: b1b5dcea-6654-473b-a2db-01f7e4c265d7
 ms.openlocfilehash: 88707ed6c0e3e5a0ecf1f0812d31634bbdca3123
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43462516"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534604"
 ---
 # <a name="group-by-clause-visual-basic"></a>Group By – klauzule (Visual Basic)
 Seskupuje prvky sady výsledků dotazu. Můžete také použít k aplikaci agregačních funkcí na každou skupinu. Operace seskupení je založená na jeden nebo více klíčů.  

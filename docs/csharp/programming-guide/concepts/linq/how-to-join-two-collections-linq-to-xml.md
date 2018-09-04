@@ -1,37 +1,37 @@
 ---
-title: 'Postupy: připojení dvě kolekce (technologie LINQ to XML) (C#)'
+title: 'Postupy: spojení dvou kolekcí (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7b817ede-911a-4cff-9dd3-639c3fc228c9
-ms.openlocfilehash: d4e7c73262cce234dc8373d42b2a8cb366316622
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 00db2decfb8595c32e86f76c8aa139d91e75d112
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33324821"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513527"
 ---
-# <a name="how-to-join-two-collections-linq-to-xml-c"></a>Postupy: připojení dvě kolekce (technologie LINQ to XML) (C#)
-Elementu nebo atributu v dokumentu XML mohou někdy odkazovat na jiné elementu nebo atributu. Například [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md) dokumentu XML obsahuje seznam zákazníků a seznam objednávky. Každý `Customer` obsahuje element `CustomerID` atribut. Každý `Order` obsahuje element `CustomerID` elementu. `CustomerID` Element v každé pořadí odkazuje `CustomerID` atribut v zákazníka.  
+# <a name="how-to-join-two-collections-linq-to-xml-c"></a>Postupy: spojení dvou kolekcí (LINQ to XML) (C#)
+Prvek nebo atribut v dokumentu XML mohou někdy odkazovat na jiné elementu nebo atributu. Například [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md) dokument XML obsahuje seznam zákazníků a seznam objednávek. Každý `Customer` obsahuje element `CustomerID` atribut. Každý `Order` obsahuje element `CustomerID` elementu. `CustomerID` Element z každé objednávky odkazuje `CustomerID` atribut v zákazníka.  
   
- Téma [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md) obsahuje XSD, který slouží k ověření tohoto dokumentu. Použije `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` element a `CustomerID` atribut v každé `Customer` elementu.  
+ Téma [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md) obsahuje XSD, který slouží k ověření tohoto dokumentu. Používá `xs:key` a `xs:keyref` funkce XSD zajistit, že `CustomerID` atribut `Customer` element je klíč a k vytvoření vztahu mezi `CustomerID` element v každé `Order` elementu a `CustomerID` atributy v každém `Customer` elementu.  
   
- S [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete využít výhod této relace pomocí `join` klauzule.  
+ S [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], pomocí můžete využít tuto relaci `join` klauzuli.  
   
- Všimněte si, protože není k dispozici žádný index, takové připojení že běhový snížený výkon.  
+ Mějte na paměti, protože není k dispozici žádný index, tato připojení budou mít runtime nízký výkon.  
   
- Podrobné informace o `join`, najdete v části [připojení operace (C#)](../../../../csharp/programming-guide/concepts/linq/join-operations.md).  
+ Podrobné informace o `join`, naleznete v tématu [operace Join (C#)](../../../../csharp/programming-guide/concepts/linq/join-operations.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad spojení `Customer` elementů `Order` prvky a vygeneruje nový dokument XML, který zahrnuje `CompanyName` element v objednávky.  
+ Následující příklad připojí `Customer` prvků, které mají `Order` prvky a vytvoří nový dokument XML, který zahrnuje `CompanyName` prvek objednávky.  
   
- Před provedením dotazu, příklad ověří, že dokument v souladu se schéma v [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md). Tím se zajistí, že bude vždy fungovat klauzuli join.  
+ Před provedením dotazu, v příkladu ověřuje, že dokument vyhovuje schématu v [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md). Tím se zajistí, že budou vždy fungovat klauzule join.  
   
- Tento dotaz nejprve načte všechny `Customer` prvky a potom připojí, aby `Order` elementy. Vybere pouze příkazy pro zákazníky s `CustomerID` větší než "K". Ji pak projekty novou `Order` elementu, který obsahuje informace o zákazníkovi v rámci každé pořadí.  
+ Tento dotaz načte prvních všechny `Customer` prvky a poté je připojen `Order` prvky. Vybere pouze příkazy pro zákazníky s `CustomerID` větší než "K". To potom projekty nový `Order` element, který obsahuje informace o zákaznících v rámci každé objednávky.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml-2.md).  
   
  Tento příklad používá následující schéma XSD: [ukázkový soubor XSD: Zákazníci a objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders1.md).  
   
- Všimněte si, že připojení tímto způsobem nebude provádět velmi dobře. Spojení se provádí prostřednictvím lineárního hledání. Neexistují žádné tabulky hash nebo indexy, které pomáhají s výkonem.  
+ Všimněte si, že připojení tímto způsobem nebude fungují velmi dobře. Spojení se provádí prostřednictvím lineárního hledání. Neexistují žádné zatřiďovacích tabulek nebo indexy, které vám pomůžou s výkonem.  
   
 ```csharp  
 XmlSchemaSet schemas = new XmlSchemaSet();  
@@ -124,5 +124,6 @@ Attempting to validate, custOrdDoc validated
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

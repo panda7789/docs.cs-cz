@@ -11,11 +11,11 @@ ms.assetid: d60f19fe-7bec-47ba-b60e-ba9ce66abf8c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e09391af9b5d71cfa423b3bf1a2b307117d0dee1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43385884"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517595"
 ---
 # <a name="axlrsakeyvaluetopublickeytoken-function"></a>\_AxlRSAKeyValueToPublicKeyToken – funkce
 

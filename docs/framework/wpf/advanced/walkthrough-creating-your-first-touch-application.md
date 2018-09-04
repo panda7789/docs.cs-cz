@@ -11,11 +11,11 @@ helpviewer_keywords:
 - creating a touchscreen application [WPF]
 ms.assetid: d69e602e-9a25-4e24-950b-e89eaa2a906b
 ms.openlocfilehash: ee2eddf0ad0818658920aff19919c4b5fef807b9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43390272"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43511405"
 ---
 # <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím na dotykového ovládání. Například můžete pracovat s aplikací pomocí jedné nebo více prsty na dotyk zařízení, např. k tomu dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživateli přesunutí, změna velikosti nebo otočení jednoho objektu pomocí touch.  

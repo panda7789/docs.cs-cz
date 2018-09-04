@@ -3,11 +3,11 @@ title: Modely transakcí
 ms.date: 03/30/2017
 ms.assetid: 48a8bc1b-128b-4cf1-a421-8cc73223c340
 ms.openlocfilehash: 8731b72d0657aa420dbb020e216c3af059916ce9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43474223"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517780"
 ---
 # <a name="transaction-models"></a>Modely transakcí
 Toto téma popisuje vztah mezi programovací modely transakcí a komponent infrastruktury, které společnost Microsoft poskytuje.  

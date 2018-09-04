@@ -3,11 +3,11 @@ title: Víc koncových bodů na jedné adrese ListenUri
 ms.date: 03/30/2017
 ms.assetid: 911ffad4-4d47-4430-b7c2-79192ce6bcbd
 ms.openlocfilehash: 45963bcf03a6734b85a1213c99facd9023711bf5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480386"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523821"
 ---
 # <a name="multiple-endpoints-at-a-single-listenuri"></a>Víc koncových bodů na jedné adrese ListenUri
 Tato ukázka předvádí, služby, který je hostitelem více koncových bodů na jedné `ListenUri`. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  

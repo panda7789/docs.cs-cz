@@ -3,11 +3,11 @@ title: Základní služba HTTP
 ms.date: 03/30/2017
 ms.assetid: 27048b43-8a54-4f2a-9952-594bbfab10ad
 ms.openlocfilehash: 914ad5f04d980fd53cd07251461367356f00b4cc
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43390377"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516624"
 ---
 # <a name="basic-http-service"></a>Základní služba HTTP
 Tento příklad ukazuje, jak implementovat služby založené na protokolu HTTP, na základě RPC - popularly označuje jako služba "POX" (Plain Old XML) – pomocí služby Windows Communication Foundation (WCF) REST programovacího modelu. Tato ukázka obsahuje dvě součásti: v místním prostředí služby WCF HTTP (Service.cs) a Konzolová aplikace (Program.cs), který vytvoří službu a provede volání do něj.  

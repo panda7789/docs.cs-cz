@@ -11,26 +11,26 @@ helpviewer_keywords:
 - Thumb control [WPF]
 - Canvas control [WPF]
 ms.assetid: 7dc9f435-726c-4d4d-be41-eb24cfe17bef
-ms.openlocfilehash: c3e7176b0578c8fdc5f4331ad8f3b464f3a88b51
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: be267e832180b49686079f426dfa5c30ffdd81b0
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33555061"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518060"
 ---
 # <a name="how-to-resize-a-canvas-by-using-a-thumb"></a>Postupy: Změna velikosti plátna použitím jezdce
-Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.Primitives.Thumb> řízení ke změně velikosti <xref:System.Windows.Controls.Canvas> ovládacího prvku.  
+Tento příklad ukazuje způsob použití <xref:System.Windows.Controls.Primitives.Thumb> ovládací prvek pro změnu velikosti <xref:System.Windows.Controls.Canvas> ovládacího prvku.  
   
 ## <a name="example"></a>Příklad  
- <xref:System.Windows.Controls.Primitives.Thumb> Řízení poskytuje přetažení funkce, které slouží k přesunutí nebo změna velikosti ovládacích prvků pomocí monitorování <xref:System.Windows.Controls.Primitives.Thumb.DragStarted>, <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> a <xref:System.Windows.Controls.Primitives.Thumb.DragCompleted> události <xref:System.Windows.Controls.Primitives.Thumb>.  
+ <xref:System.Windows.Controls.Primitives.Thumb> Ovládacího prvku poskytuje funkce přetažení, kterého chcete přesunout nebo změna velikosti ovládacích prvků při sledování <xref:System.Windows.Controls.Primitives.Thumb.DragStarted>, <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> a <xref:System.Windows.Controls.Primitives.Thumb.DragCompleted> události <xref:System.Windows.Controls.Primitives.Thumb>.  
   
- Uživatel začne operaci přetažení stisknutím levé tlačítko myši, když ukazatel myši je pozastaven na <xref:System.Windows.Controls.Primitives.Thumb> ovládacího prvku. Operaci přetažení pokračuje tak dlouho, dokud zůstává levé tlačítko myši stisknuté. Během operace tažení <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> může dojít, více než jednou. Pokaždé, když k ní dojde, <xref:System.Windows.Controls.Primitives.DragDeltaEventArgs> třída poskytuje změnu v hodnotě pozice, který odpovídá změnu v pozici myši. Když uživatel uvolní levé tlačítko myši, dokončení operace přetažení. Operaci přetažení pouze poskytuje nové souřadnice; není automaticky přemístit <xref:System.Windows.Controls.Primitives.Thumb>.  
+ Uživatel začne operace přetažení. stisknutím klávesy levé tlačítko myši při umístění ukazatele myši je pozastaven na <xref:System.Windows.Controls.Primitives.Thumb> ovládacího prvku. Operace přetažení pokračuje tak dlouho, dokud zůstává levé tlačítko myši stisknuté. Během operace přetažení <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> mohou vyskytovat více než jednou. Pokaždé, když k ní dojde, <xref:System.Windows.Controls.Primitives.DragDeltaEventArgs> třída poskytuje změn v pozici, která odpovídá změně pozice myši. Když uživatel uvolní levé tlačítko myši, dokončení operace přetažení. Operace přetažení pouze poskytuje nové souřadnice; nepřemístí automaticky <xref:System.Windows.Controls.Primitives.Thumb>.  
   
- Následující příklad ukazuje <xref:System.Windows.Controls.Primitives.Thumb> prvek, který je o podřízený prvek <xref:System.Windows.Controls.Canvas> ovládacího prvku. Obslužné rutiny události pro jeho <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> událostí obsahuje logiku pro přesun <xref:System.Windows.Controls.Primitives.Thumb> a změňte velikost <xref:System.Windows.Controls.Canvas>. Obslužné rutiny událostí <xref:System.Windows.Controls.Primitives.Thumb.DragStarted> a <xref:System.Windows.Controls.Primitives.Thumb.DragCompleted> událostí Změna barvy <xref:System.Windows.Controls.Primitives.Thumb> během operace přetažení. V následujícím příkladu je definován <xref:System.Windows.Controls.Primitives.Thumb>.  
+ Následující příklad ukazuje <xref:System.Windows.Controls.Primitives.Thumb> prvek, který je podřízený prvek <xref:System.Windows.Controls.Canvas> ovládacího prvku. Obslužnou rutinu události pro jeho <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> událostí obsahuje logiku a přesunout <xref:System.Windows.Controls.Primitives.Thumb> a změňte jeho velikost <xref:System.Windows.Controls.Canvas>. Obslužné rutiny událostí pro <xref:System.Windows.Controls.Primitives.Thumb.DragStarted> a <xref:System.Windows.Controls.Primitives.Thumb.DragCompleted> události změnit barvu <xref:System.Windows.Controls.Primitives.Thumb> během operace přetažení. Následující příklad definuje <xref:System.Windows.Controls.Primitives.Thumb>.  
   
  [!code-xaml[Thumb#thumb](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml#thumb)]  
   
- Následující příklad ukazuje <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> obslužné rutiny události, která přemísťuje <xref:System.Windows.Controls.Primitives.Thumb> a změní <xref:System.Windows.Controls.Canvas> v reakci na pohybu myši.  
+ Následující příklad ukazuje <xref:System.Windows.Controls.Primitives.Thumb.DragDelta> obslužná rutina události, který přesouvá <xref:System.Windows.Controls.Primitives.Thumb> a změní velikost <xref:System.Windows.Controls.Canvas> v reakci na pohybu myši.  
   
  [!code-csharp[Thumb#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml.cs#2)]  
   
@@ -44,7 +44,7 @@ Tento příklad ukazuje, jak používat <xref:System.Windows.Controls.Primitives
  [!code-csharp[Thumb#DragCompletedHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/Thumb/CSharp/Pane1.xaml.cs#dragcompletedhandler)]
  [!code-vb[Thumb#DragCompletedHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Thumb/VisualBasic/Pane1.xaml.vb#dragcompletedhandler)]  
   
- Kompletní příklad, najdete v části [jezdec přetažení funkce ukázka](http://go.microsoft.com/fwlink/?LinkID=160042).  
+ Úplnou ukázku najdete v tématu [ukázkové funkce přetáhněte Thumb](https://go.microsoft.com/fwlink/?LinkID=160042).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Controls.Primitives.Thumb>  

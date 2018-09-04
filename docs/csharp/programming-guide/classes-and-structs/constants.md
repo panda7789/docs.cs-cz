@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: 90423c868ca303f8e94c16f44bc5e0b23615fc17
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 0ae8ca8b1bc9259ab259ed8fdfea450e4471891e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199375"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513852"
 ---
 # <a name="constants-c-programming-guide"></a>Konstanty (Průvodce programováním v C#)
 Konstanty jsou neměnné hodnoty, které jsou v době kompilace znám a nemění po celou dobu životnosti programu. Konstanty jsou deklarovány pomocí [const](../../../csharp/language-reference/keywords/const.md) modifikátor. Jenom C# předdefinovaných typů (s výjimkou <xref:System.Object?displayProperty=nameWithType>) mohou být deklarovány jako `const`. Seznam předdefinovaných typů najdete v tématu [tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md). Uživatelem definované typy, včetně třídy, struktury a pole, nemohou být `const`. Použití [jen pro čtení](../../../csharp/language-reference/keywords/readonly.md) modifikátor vytvořit třídu, strukturu nebo pole, která je inicializována jednou za běhu (například v konstruktoru) a po tomto datu se nedá změnit.  
@@ -45,10 +45,11 @@ Konstanty jsou neměnné hodnoty, které jsou v době kompilace znám a nemění
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
- [Typy](../../../csharp/programming-guide/types/index.md)  
- [readonly](../../../csharp/language-reference/keywords/readonly.md)  
- [První část neměnnosti v jazyce C#: druhy neměnnosti](https://blogs.msdn.microsoft.com/ericlippert/2007/11/13/immutability-in-c-part-one-kinds-of-immutability)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Typy](../../../csharp/programming-guide/types/index.md)  
+- [readonly](../../../csharp/language-reference/keywords/readonly.md)  
+- [První část neměnnosti v jazyce C#: druhy neměnnosti](https://blogs.msdn.microsoft.com/ericlippert/2007/11/13/immutability-in-c-part-one-kinds-of-immutability)

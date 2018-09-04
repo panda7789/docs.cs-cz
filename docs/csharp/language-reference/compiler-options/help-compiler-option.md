@@ -12,15 +12,15 @@ helpviewer_keywords:
 - /help compiler option [C#]
 - -? compiler option [C#]
 ms.assetid: 8d53f6ba-5c3b-4183-976e-9c0f26fd3680
-ms.openlocfilehash: 77b2f4a78f52edc63b14796065880adc397cba80
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0dea384092a738ebcf139a065431505247c02873
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33210974"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525984"
 ---
 # <a name="-help---c-compiler-options"></a>-help,-? (Možnosti kompilátoru C#)
-Tato možnost odešle do stdout seznam – možnosti kompilátoru a stručný popis jednotlivých možností.  
+Tuto možnost odešle stdout seznam možností kompilátoru a stručný popis jednotlivých možností.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,10 +30,11 @@ Tato možnost odešle do stdout seznam – možnosti kompilátoru a stručný po
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud tato možnost je zahrnuta v kompilaci, vytvoří se žádná výstupní soubor a žádná kompilace neproběhne.  
+ Pokud tato možnost je součástí kompilace, se nevytvoří žádný výstupní soubor a bez kompilace neproběhne.  
   
  Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

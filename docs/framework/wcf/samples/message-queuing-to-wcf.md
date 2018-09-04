@@ -3,11 +3,11 @@ title: Řízení front zpráv do WCF
 ms.date: 03/30/2017
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
 ms.openlocfilehash: 983fd2ef7338e24c67e3556849e73c2feaf97a60
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43423371"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525695"
 ---
 # <a name="message-queuing-to-windows-communication-foundation"></a>Řízení front zpráv do WCF
 Tato ukázka předvádí, jak aplikace služby Řízení front zpráv (MSMQ) zprávy MSMQ odeslat do služby Windows Communication Foundation (WCF). Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.  

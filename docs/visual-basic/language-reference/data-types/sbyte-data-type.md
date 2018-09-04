@@ -17,11 +17,11 @@ ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 94ab72b2ac2678640697e3cfab426e5a7d6d889a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467173"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518582"
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte – datový typ (Visual Basic)
 

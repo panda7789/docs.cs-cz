@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 5d1860a5703c79bd77331cfd821c3bff69f317ff
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: b98d5eac29f498672000a7b0354734c15fd7400c
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925815"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526032"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finalizační metody (C# Programming Guide)
 Finalizační metody se používají k destrukci instancí tříd.  
@@ -85,8 +85,9 @@ protected override void Finalize()
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IDisposable>  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
- [Uvolňování paměti](../../../standard/garbage-collection/index.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.IDisposable>  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+- [Uvolňování paměti](../../../standard/garbage-collection/index.md)

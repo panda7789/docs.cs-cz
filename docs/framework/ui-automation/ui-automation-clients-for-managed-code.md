@@ -11,11 +11,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: e7ae01ae597d189166352230da4b80770d6518ae
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43488154"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526095"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Klienti automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]

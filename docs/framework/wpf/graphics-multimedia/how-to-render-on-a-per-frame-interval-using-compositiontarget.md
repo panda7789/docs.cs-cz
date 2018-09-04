@@ -9,11 +9,11 @@ helpviewer_keywords:
 - rendering per frame using CompositionTarget objects [WPF]
 ms.assetid: 701246cd-66b7-4d69-ada9-17b3b433d95d
 ms.openlocfilehash: cc043e6d225ad3dbe57a0924593fac0f68af7eb1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43473915"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526438"
 ---
 # <a name="how-to-render-on-a-per-frame-interval-using-compositiontarget"></a>Postupy: Vykreslení intervalu podle snímků pomocí CompositionTarget
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Animace modul obsahuje řadu funkcí pro vytváření založených na snímcích animace. Existují však aplikačních scénářů, ve kterých je nutné citlivější kontrolu nad vykreslování na základě na rámce. <xref:System.Windows.Media.CompositionTarget> Objekt poskytuje možnost vytvářet vlastní animace založené na zpětné volání na rámce.  

@@ -3,11 +3,11 @@ title: Syntaxe připojovacího řetězce
 ms.date: 05/22/2018
 ms.assetid: 0977aeee-04d1-4cce-bbed-750c77fce06e
 ms.openlocfilehash: 3d8b37315ab3ceea2ddedd139787627e86b6a131
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43469918"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43522470"
 ---
 # <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
 Každý poskytovatel dat rozhraní .NET Framework má `Connection` objekt, který dědí z <xref:System.Data.Common.DbConnection> a také konkrétního zprostředkovatele <xref:System.Data.Common.DbConnection.ConnectionString%2A> vlastnost. Syntaxe specifické připojovacího řetězce pro každého zprostředkovatele je popsána v jeho `ConnectionString` vlastnost. V následující tabulce jsou uvedeny zprostředkovatelé čtyři dat, které jsou zahrnuty v rozhraní .NET Framework.  

@@ -2,12 +2,12 @@
 title: Ukázkové dokumenty XML (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 9ec89809-41a1-484c-b1e3-6c4ecdca7b8d
-ms.openlocfilehash: 1d9e45e3d7e3131cf37b3373156a6a136d0a5cfd
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: e109a6e2a236e2c20f7ea54dfba491082426a7dc
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43420220"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515692"
 ---
 # <a name="sample-xml-documents-linq-to-xml"></a>Ukázkové dokumenty XML (LINQ to XML)
 Následující příklad soubory se používají v ukázky kódu a fragmenty kódu v průběhu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.  
@@ -33,5 +33,6 @@ Následující příklad soubory se používají v ukázky kódu a fragmenty kó
 |[Ukázkový soubor XML: Knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)|Dokument XML, který obsahuje katalog knih.|  
 |[Ukázkový soubor XML: Konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md)|Představuje dokument XML, který obsahuje nákupních objednávek, které jsou v různých oborech názvů.|  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

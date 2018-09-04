@@ -2,84 +2,84 @@
 title: Základní informace
 ms.date: 03/30/2017
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
-ms.openlocfilehash: 66d2047a064663cfe93823d92d30f682d557c493
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cd2531dd141cfc6f0b67d1f58766327c218610f5
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363214"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515629"
 ---
 # <a name="background-information"></a>Základní informace
 Témata v této části se týkají koncepty a postupy, které přesahují základní informace o používání [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
- Postupujte podle těchto kroků najít další příklady [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kód a aplikace:  
+ Postupujte podle těchto pokynů vyhledejte další příklady [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] kód a aplikace:  
   
--   Microsoft Docs vyhledejte konkrétní problémy.  
+-   Microsoft Docs vyhledávání pro specifické problémy.  
   
--   Účastnit [LINQ fórum](http://go.microsoft.com/fwlink/?LinkId=76488), kde můžete složitější témata podrobně popisují s odborníky.  
+-   Účastnit [LINQ fórum](https://go.microsoft.com/fwlink/?LinkId=76488), kde můžete diskutovat o složitějších tématech podrobně s odborníky.  
   
--   Prostudovali v dokumentu White Paper podrobně [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie kompletní s příklady kódu jazyka Visual Basic a C#. Další informace najdete v tématu [technologie LINQ to SQL: .NET Language-Integrated dotaz na relační Data](http://go.microsoft.com/fwlink/?LinkId=93205).  
+-   Studie dokumentu whitepaper popisujícím [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] technologie, s příklady kódu jazyka Visual Basic a C#. Další informace najdete v tématu [technologie LINQ to SQL: .NET Language-Integrated dotazu pro relační Data](https://go.microsoft.com/fwlink/?LinkId=93205).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ADO.NET a LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/ado-net-and-linq-to-sql.md)  
- Popisuje vztah [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ Popisuje vztah mezi [!INCLUDE[vstecado](../../../../../../includes/vstecado-md.md)] a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [Analýza zdrojového kódu LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/analyzing-linq-to-sql-source-code.md)  
- Popisuje, jak analyzovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapování generování a zobrazením zdrojového kódu z ukázková databáze Northwind.  
+ Popisuje, jak analyzovat [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] mapování tak, že generování a zobrazení zdrojového kódu z ukázkové databáze Northwind.  
   
  [Přizpůsobení operací vložení, aktualizace a odstranění](../../../../../../docs/framework/data/adonet/sql/linq/customizing-insert-update-and-delete-operations.md)  
- Popisuje postup přidání ověřovacího kódu a další přizpůsobení.  
+ Popisuje, jak přidat kód pro ověření a další vlastní nastavení.  
   
  [Datová vazba](../../../../../../docs/framework/data/adonet/sql/linq/data-binding.md)  
- Popisuje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá <xref:System.ComponentModel.IListSource> pro podporu datové vazby.  
+ Popisuje, jak [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] používá <xref:System.ComponentModel.IListSource> pro podporu vytváření datových vazeb.  
   
  [Podpora dědičnosti](../../../../../../docs/framework/data/adonet/sql/linq/inheritance-support.md)  
- Popisuje roli dědičnosti v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model a jak používat související operátorů v dotazech.  
+ Popisuje roli v dědičnosti [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektový model a způsob použití související operátorů v dotazech.  
   
  [Volání místních metod](../../../../../../docs/framework/data/adonet/sql/linq/local-method-calls.md)  
- Popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporu pro volání metod místní.  
+ Popisuje [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporu pro volání místních metod.  
   
  [N-vrstvé a vzdálené aplikace s LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/n-tier-and-remote-applications-with-linq-to-sql.md)  
- Obsahuje podrobné informace o vícevrstvé aplikace, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
+ Obsahuje podrobné informace o vícevrstvých aplikací, které používají [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
  [Identita objektu](../../../../../../docs/framework/data/adonet/sql/linq/object-identity.md)  
- Popisuje identity objektu v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektu modelu a vysvětluje, jak se tato funkce se liší od identity objektu v databázi.  
+ Popisuje objekt identity v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] objektu modelu a vysvětluje, jak tato funkce se liší od identity objektů v databázi.  
   
  [Objektový model LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/the-linq-to-sql-object-model.md)  
- Popisuje model objektu a jeho relace pro relační datový model.  
+ Popisuje objektový model a jeho vztah k relačním datovým modelem.  
   
  [Stavy objektů a sledování změn](../../../../../../docs/framework/data/adonet/sql/linq/object-states-and-change-tracking.md)  
  Poskytuje podrobné informace o tom [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] sleduje změny.  
   
  [Optimistická metoda souběžného zpracování: Přehled](../../../../../../docs/framework/data/adonet/sql/linq/optimistic-concurrency-overview.md)  
- Popisuje optimistickou metodu souběžného a definuje termíny.  
+ Popisuje optimistického řízení souběžnosti a definuje podmínky.  
   
  [Koncepty dotazů](../../../../../../docs/framework/data/adonet/sql/linq/query-concepts.md)  
- Popisuje aspekty dotazů v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] které se liší od dotazy v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
+ Popisuje aspekty dotazů v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] , která se liší od dotazy v [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
   
  [Načítání objektů z mezipaměti identit](../../../../../../docs/framework/data/adonet/sql/linq/retrieving-objects-from-the-identity-cache.md)  
- Popisuje typy dotazů, které načtení objektů z mezipaměti identity.  
+ Popisuje typy dotazů, které načtení objektů z mezipaměti identit.  
   
  [Zabezpečení v LINQ to SQL](../../../../../../docs/framework/data/adonet/sql/linq/security-in-linq-to-sql.md)  
- Popisuje správný přístup k zabezpečení připojení databáze.  
+ Popisuje správný přístup k zabezpečení v připojení k databázi.  
   
  [Serializace](../../../../../../docs/framework/data/adonet/sql/linq/serialization.md)  
- Popisuje proces serializace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikace.  
+ Popisuje proces serializace v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací.  
   
  [Uložené procedury](../../../../../../docs/framework/data/adonet/sql/linq/stored-procedures.md)  
- Popisuje způsob namapování uložené procedury v době návrhu a jak je volat z vaší aplikace.  
+ Popisuje způsob mapování uložené procedury v době návrhu a jak volat z vaší aplikace.  
   
  [Podpora transakcí](../../../../../../docs/framework/data/adonet/sql/linq/transaction-support.md)  
- Popisuje tři modely transakce, [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje.  
+ Popisuje tři modely transakce, která [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje.  
   
  [Neshody typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-type-mismatches.md)  
- Popisuje výzvám identitě systémy jiného typu.  
+ Popisuje problémy mingling systémy jiného typu.  
   
  [Mapování vlastních typů SQL a CLR](../../../../../../docs/framework/data/adonet/sql/linq/sql-clr-custom-type-mappings.md)  
  Obsahuje pokyny k přizpůsobení mapování typů.  
   
  [Uživatelem definované funkce](../../../../../../docs/framework/data/adonet/sql/linq/user-defined-functions.md)  
- Popisuje způsob namapování uživatelsky definované funkce v době návrhu a jak je volat z vaší aplikace.  
+ Popisuje, jak namapovat uživatelsky definovaných funkcí v době návrhu a jak volat z vaší aplikace.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Průvodce programováním](../../../../../../docs/framework/data/adonet/sql/linq/programming-guide.md)  

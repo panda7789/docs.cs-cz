@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /delaysign compiler option [C#]
 ms.assetid: bcb058eb-2933-4e7f-b356-5c941db4de75
 ms.openlocfilehash: 105f564d40799c1c006caf8b59d6199dbd8e9318
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43400193"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518327"
 ---
 # <a name="-delaysign-c-compiler-options"></a>-delaysign (možnosti kompilátoru C#)
 

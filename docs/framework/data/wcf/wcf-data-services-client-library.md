@@ -7,11 +7,11 @@ helpviewer_keywords:
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
 ms.openlocfilehash: 4f389530b287d1c7a11a88972ef948347d3ea533
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43421592"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43508957"
 ---
 # <a name="wcf-data-services-client-library"></a>Klientské knihovny WCF Data Services
 Všechny aplikace mohou komunikovat s [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]– na základě dat služby, pokud může odeslat požadavek HTTP a procesu služby [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu, vrací datovou službu. Tato spolupráce umožňuje získat přístup k [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě služby z široké povolené rozsahu webových aplikací. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] obsahuje klientské knihovny, které poskytují pohodlnější a pestřejší prostředí programovací spotřebuje [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informační kanály z rozhraní .NET Framework nebo aplikací založené na technologii Silverlight.  

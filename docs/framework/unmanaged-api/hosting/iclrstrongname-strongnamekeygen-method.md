@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 55b4fbb8785f788c9eb34f32b5078201f8253066
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d925e30786c742708f345fc23f14c79521cbc6f3
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433325"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519949"
 ---
 # <a name="iclrstrongnamestrongnamekeygen-method"></a>ICLRStrongName::StrongNameKeyGen – metoda
-Vytvoří nový pár veřejného a privátního klíče pro silné jméno použití.  
+Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,29 +40,29 @@ HRESULT StrongNameKeyGen (
   
 #### <a name="parameters"></a>Parametry  
  `wszKeyContainer`  
- [v] Název požadovaný kontejner klíčů. `wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
+ [in] Název požadovaný kontejner klíče. `wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.  
   
  `dwFlags`  
- [v] Hodnota, která určuje, zda chcete ponechat klíč zaregistrován. Podporovány jsou následující hodnoty:  
+ [in] Hodnota, která určuje, zda má zůstat zkratku zaregistrovanou. Podporovány jsou následující hodnoty:  
   
--   0x00000000 - použít, když `wszKeyContainer` má hodnotu null při generování názvu dočasné kontejneru klíčů.  
+-   0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.  
   
--   0x00000001 (`SN_LEAVE_KEY`)-určuje, které by měl být klíč vlevo registrován.  
+-   0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.  
   
  `ppbKeyBlob`  
- [out] Vrácený veřejného a privátního klíče RSA.  
+ [out] Vrácený pár veřejného a privátního klíče.  
   
  `pcbKeyBlob`  
- [out] Velikost v bajtech z `ppbKeyBlob`.  
+ [out] Velikost v bajtech, z `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="remarks"></a>Poznámky  
- [Iclrstrongname::strongnamekeygen –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) metoda vytvoří klíč 1024 bitů. Po načtení klíč by měly volat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělenou paměť.  
+ [Iclrstrongname::strongnamekeygen –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) metoda vytvoří klíče 1 024 bitů. Po načtení klíče, měli byste zavolat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělené paměti.  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

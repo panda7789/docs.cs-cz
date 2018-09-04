@@ -9,11 +9,11 @@ helpviewer_keywords:
 - transformations [WPF], 3-D
 ms.assetid: e45e555d-ac1e-4b36-aced-e433afe7f27f
 ms.openlocfilehash: d27e1bda296a153343b450c84c65fa35d55d72f2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43483720"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43520589"
 ---
 # <a name="3-d-transformations-overview"></a>Přehled 3D transformací
 Toto téma popisuje způsob použití transformací na 3D modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] grafiky systému. Transformace umožňuje vývojářům změnit umístění, velikost a orientaci modely beze změny základní hodnoty, které jejich definování.  

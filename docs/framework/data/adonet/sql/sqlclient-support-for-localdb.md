@@ -1,29 +1,29 @@
 ---
-title: Podpora SqlClient LocalDB
+title: Podpora klienta SqlClient pro LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
-ms.openlocfilehash: 33368ca4b2dc5397087d29e515db6c1094e350bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ef75def3f3de44b5e23cb1197a4410dcf6b547f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33359794"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43532706"
 ---
-# <a name="sqlclient-support-for-localdb"></a>Podpora SqlClient LocalDB
-Od systému SQL Server s kódovým názvem Denali, bude k dispozici Odlehčená verze systému SQL Server, názvem databáze LocalDB. Toto téma popisuje, jak se připojit k databázi LocalDB.  
+# <a name="sqlclient-support-for-localdb"></a>Podpora klienta SqlClient pro LocalDB
+SQL Server s kódovým názvem Denali počínaje, bude k dispozici Odlehčená verze systému SQL Server LocalDB, volá. Toto téma popisuje, jak se připojit k databázi LocalDB.  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o LocalDB, včetně toho, jak k LocalDB instalaci a konfiguraci vaší instanci LocalDB, najdete v části SQL Server Books Online.  
+ Další informace o databázi LocalDB, včetně LocalDB nainstalovat a nakonfigurovat instanci LocalDB, naleznete v tématu knihy Online SQL Server.  
   
- Chcete-li shrnout, co můžete dělat s LocalDB:  
+ Slouží ke shrnutí, co můžete dělat s LocalDB:  
   
--   Vytvořte a spusťte LocalDB instancí s sqllocaldb.exe nebo souboru app.config.  
+-   Vytvoření a spuštění instance LocalDB s sqllocaldb.exe nebo v souboru app.config.  
   
--   Pomocí sqlcmd.exe přidání a změna databáze v instanci LocalDB. Například `sqlcmd -S (localdb)\myinst`.  
+-   Pro přidání a úpravu databáze v instanci LocalDB pomocí sqlcmd.exe. Například `sqlcmd -S (localdb)\myinst`.  
   
--   Použití `AttachDBFilename` klíčové slovo připojovacího řetězce pro přidání do databáze k vaší instanci LocalDB. Při použití `AttachDBFilename`, pokud není zadán název databáze s `Database` klíčové slovo připojovacího řetězce databáze bude odebrána z instanci LocalDB, až se aplikace zavře.  
+-   Použití `AttachDBFilename` klíčové slovo připojovacího řetězce pro přidání databázi k instanci LocalDB. Při použití `AttachDBFilename`, pokud není zadán název databáze s `Database` klíčové slovo připojovacího řetězce databáze bude nebyla odebrána od LocalDB instance, až se aplikace zavře.  
   
--   V připojovacím řetězci zadejte instanci LocalDB. Například je název vaší instance `myInstance`, by mělo zahrnovat připojovací řetězec:  
+-   V připojovacím řetězci zadejte instanci LocalDB. Například je název vaší instance `myInstance`, připojovací řetězec bude zahrnovat:  
   
     ```  
     server=(localdb)\\myInstance  
@@ -31,12 +31,12 @@ Od systému SQL Server s kódovým názvem Denali, bude k dispozici Odlehčená 
   
  `User Instance=True` Při připojení k databázi LocalDB není povolen.  
   
- Můžete si stáhnout LocalDB z [Microsoft SQL Server 2012 Feature Pack](http://www.microsoft.com/download/en/details.aspx?id=29065). Pokud budete používat sqlcmd.exe ke změně dat ve vaší instanci LocalDB, budete potřebovat sqlcmd z SQL serveru 2012, který můžete získat z SQL Server 2012 Feature Pack.  
+ Můžete si stáhnout LocalDB z [Microsoft SQL Server 2012 Feature Pack](https://www.microsoft.com/download/en/details.aspx?id=29065). Pokud použijete sqlcmd.exe upravovat data v instanci LocalDB, budete potřebovat sqlcmd ze systému SQL Server 2012, který můžete získat také z SQL Server 2012 Feature Pack.  
   
-## <a name="programmatically-create-a-named-instance"></a>Vytváření pojmenovanou instanci prostřednictvím kódu programu  
- Aplikace můžete vytvořit pojmenovanou instanci a zadejte databázi, následujícím způsobem:  
+## <a name="programmatically-create-a-named-instance"></a>Prostřednictvím kódu programu vytvořit pojmenovanou instanci  
+ Aplikace můžete vytvořit pojmenovanou instanci a zadejte databázi následujícím způsobem:  
   
--   Zadejte instance LocalDB vytvořit v souboru app.config takto.  Číslo verze instance by měla být stejná jako číslo verze instalace LocalDB.  
+-   Zadejte instance LocalDB následujícím způsobem vytvořte v souboru app.config.  Číslo verze instance by měla být stejná jako číslo verze instalace LocalDB.  
   
     ```xml  
     <?xml version="1.0" encoding="utf-8" ?>  
@@ -54,10 +54,10 @@ Od systému SQL Server s kódovým názvem Denali, bude k dispozici Odlehčená 
     </configuration>  
     ```  
   
--   Zadejte název instance pomocí `server` klíčové slovo připojovacího řetězce.  Název instance zadané v `server` klíčové slovo připojovacího řetězce musí odpovídat názvu zadaná v souboru app.config.  
+-   Zadejte název instance pomocí `server` klíčové slovo připojovacího řetězce.  Název instance zadané v `server` klíčové slovo připojovacího řetězce musí odpovídat názvu zadanému v souboru app.config.  
   
 -   Použití `AttachDBFilename` klíčové slovo připojovacího řetězce k určení. Soubor MDF.  
   
 ## <a name="see-also"></a>Viz také  
  [Funkce SQL Serveru a ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-features-and-adonet.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

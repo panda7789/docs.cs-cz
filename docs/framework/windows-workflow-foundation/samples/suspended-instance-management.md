@@ -3,11 +3,11 @@ title: Správa pozastavené Instance
 ms.date: 03/30/2017
 ms.assetid: f5ca3faa-ba1f-4857-b92c-d927e4b29598
 ms.openlocfilehash: f614770121185644c3395f923cf7835141653f55
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394597"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524912"
 ---
 # <a name="suspended-instance-management"></a>Správa pozastavené Instance
 Tento příklad ukazuje, jak spravovat instancí pracovních postupů, které byly pozastaveny.  Výchozí akce pro <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> je `AbandonAndSuspend`. To znamená, že ve výchozím nastavení, neošetřené výjimky vyvolané z instance pracovního postupu hostitelem <xref:System.ServiceModel.WorkflowServiceHost> způsobí, že instance, která má být uvolněn z paměti (opuštěných) a verze durable/trvalé instance, kterou chcete označit, jak je pozastavena. Instance pracovního postupu pozastavené nebude možné spustit až po jejím nezruší.  

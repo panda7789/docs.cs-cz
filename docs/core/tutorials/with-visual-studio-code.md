@@ -5,11 +5,11 @@ author: kendrahavens
 ms.author: mairaw
 ms.date: 09/27/2017
 ms.openlocfilehash: 321edcebdea141b7290fa57b47c8d9fc91d3521c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484665"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538877"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s C# a Visual Studio Code
 

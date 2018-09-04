@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: práce s slovník pomocí technologie LINQ to XML (C#)'
+title: 'Postupy: práce se slovníky pomocí LINQ to XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
-ms.openlocfilehash: 3f3b2a19f2527ef5d2fececf916c09256e90af7b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: afe4fafb9963b4fc429f441349f8190c9a1e5bac
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33319868"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43531978"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Postupy: práce s slovník pomocí technologie LINQ to XML (C#)
-Často je vhodnější převést zpět na jiné datové struktury typy datové struktury XML a XML. Toto téma ukazuje na konkrétní implementace tento obecné přístup tím, že převedete <xref:System.Collections.Generic.Dictionary%602> do XML a zpět.  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Postupy: práce se slovníky pomocí LINQ to XML (C#)
+Často je vhodné převést zpět na další datové struktury typy prvků datové struktury do XML a XML. Toto téma popisuje konkrétní implementaci tohoto přístupu obecné převedením <xref:System.Collections.Generic.Dictionary%602> XML a naopak.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá formu funkční konstrukce, ve kterém dotazu nové projekty <xref:System.Xml.Linq.XElement> objekty a výsledný kolekci, je jako argument předaný konstruktoru kořenové <xref:System.Xml.Linq.XElement> objektu.  
+ Tento příklad používá určitou formu funkční konstrukce, ve kterém dotaz nové projekty <xref:System.Xml.Linq.XElement> objekty a výsledné kolekce je předán jako argument pro konstruktor kořenové <xref:System.Xml.Linq.XElement> objektu.  
   
 ```csharp  
 Dictionary<string, string> dict = new Dictionary<string, string>();  
@@ -40,7 +40,7 @@ Console.WriteLine(root);
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující kód vytvoří adresář ze souboru XML.  
+ Následující kód vytvoří slovník ze souboru XML.  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -66,5 +66,6 @@ Child3:Value3
 Child4:Value4  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Projekce a transformace (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Projekce a transformace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

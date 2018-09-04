@@ -3,11 +3,11 @@ title: Důležité informace o nasazení (rozhraní Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 3a847a22-4eb8-4565-b18b-453bbca070db
 ms.openlocfilehash: 628e0787e0e586a901c0ba24ccf5d63822c884b6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43405494"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43511034"
 ---
 # <a name="deployment-considerations-entity-framework"></a>Důležité informace o nasazení (rozhraní Entity Framework)
 Toto téma obsahuje informace o nasazení aplikace, které používají rozhraní ADO.NET Entity Framework pro přístup k datům. Další informace o rozhraní Entity Framework naleznete v tématu [Začínáme](../../../../../docs/framework/data/adonet/ef/getting-started.md).  

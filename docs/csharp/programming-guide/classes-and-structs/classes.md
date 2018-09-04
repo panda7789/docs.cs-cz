@@ -6,12 +6,12 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: 5f4bcf9957f91fe3ee8a62a8dc68448188df4188
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 070288d40501dbaebd5e5fbc27ea53fa1a03df30
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467039"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523157"
 ---
 # <a name="classes-c-programming-guide"></a>Třídy (Průvodce programováním v C#)
 A *třídy* je konstrukce, která umožňuje vytvořit vlastní typy prostřednictvím seskupování proměnné jiné typy, metody a události. Třída je jako matrice. Definuje data a chování typu. Pokud třída není deklarována jako statická, můžete vytvořit kód klienta *instance* ho. Tyto instance jsou *objekty* které jsou přiřazeny proměnné. Instance třídy zůstanou v paměti, dokud se všechny odkazy na něj dostanou mimo rozsah. V tu chvíli CLR ho označí jako oprávněné pro uvolnění paměti. Pokud je tato třída deklarovaná jako [statické](../../../csharp/language-reference/keywords/static.md), nelze vytvořit instance a klientský kód pouze k němu přístup pomocí vlastní třídy. Další informace najdete v tématu [statické třídy a statické členy třídy](../../../csharp/programming-guide/classes-and-structs/static-classes-and-static-class-members.md).  
@@ -96,12 +96,13 @@ Při vytvoření objektu je dostatečná paměť je přidělena na spravované h
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Objektově orientované programování](../concepts/object-oriented-programming.md)  
- [Polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
- [Členové](../../../csharp/programming-guide/classes-and-structs/members.md)  
- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
- [Objekty](../../../csharp/programming-guide/classes-and-structs/objects.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Objektově orientované programování](../concepts/object-oriented-programming.md)  
+- [Polymorfismus](../../../csharp/programming-guide/classes-and-structs/polymorphism.md)  
+- [Členové](../../../csharp/programming-guide/classes-and-structs/members.md)  
+- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+- [Konstruktory](../../../csharp/programming-guide/classes-and-structs/constructors.md)  
+- [Finalizační metody](../../../csharp/programming-guide/classes-and-structs/destructors.md)  
+- [Objekty](../../../csharp/programming-guide/classes-and-structs/objects.md)

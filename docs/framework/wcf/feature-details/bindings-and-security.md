@@ -10,11 +10,11 @@ ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: a7d2e55f84ed99ccb25e9966dc72112c0113eabc
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43487252"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519803"
 ---
 # <a name="bindings-and-security"></a>Vazby a zabezpečení
 Vazby poskytované systémem zahrnuté Windows Communication Foundation (WCF) nabízí rychlý způsob, jak programovat aplikace WCF. S jednou výjimkou mají všechny vazby výchozí schéma zabezpečení povoleno. Toto téma vám pomůže vybrat správné vazba pro vaše požadavky na zabezpečení.  

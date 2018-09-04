@@ -5,11 +5,11 @@ author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
 ms.openlocfilehash: ae1c9b1569b5fb6784f50ec9d78a44380242fcd8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484964"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43518245"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 

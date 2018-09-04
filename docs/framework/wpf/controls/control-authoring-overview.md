@@ -9,11 +9,11 @@ helpviewer_keywords:
 - authoring overview for controls [WPF]
 ms.assetid: 3d864748-cff0-4e63-9b23-d8e5a635b28f
 ms.openlocfilehash: ca11a5787dfd3e5f3089d44689d96ec64c75e4f3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394065"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513168"
 ---
 # <a name="control-authoring-overview"></a>Přehled řízeného vytváření
 Rozšiřitelnost [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] model řízení výrazně snižuje potřebu vytvářet nový ovládací prvek. Ale v některých případech budete stále muset vytvořit vlastní ovládací prvek. Toto téma popisuje funkce, které minimalizují potřeba k vytvoření vlastního ovládacího prvku a jiného ovládacího prvku pro vytváření modelů v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Toto téma ukazuje, jak vytvořit nový ovládací prvek.  

@@ -3,11 +3,11 @@ title: Technologie LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 73d13345-eece-471a-af40-4cc7a2f11655
 ms.openlocfilehash: 499311f4db9d36f9f95d20c6ef0441ff42f0029b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384650"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43529379"
 ---
 # <a name="linq-to-sql"></a>Technologie LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] je součástí [!INCLUDE[dnprdnshort](../../../../../../includes/dnprdnshort-md.md)] verze 3.5, která poskytuje infrastrukturu prostředí run-time pro správu relačních dat jako objektů.  

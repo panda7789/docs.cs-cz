@@ -1,25 +1,25 @@
 ---
-title: Vlastní šablony pro nové dotnet.
-description: Další informace o vlastních šablon pro jakýkoli typ rozhraní .NET projektu nebo soubory.
+title: Vlastních šablon pro dotnet nové
+description: Další informace o vlastních šablon pro jakýkoli druh projektu .NET nebo soubory.
 author: guardrex
 ms.author: mairaw
 ms.date: 08/11/2017
-ms.openlocfilehash: fe888d0bfeeb51d77b73ec481b93fec9b40aa6ad
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5cb160683ad373f1192945163495bf3e7957567b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33217318"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525964"
 ---
-# <a name="custom-templates-for-dotnet-new"></a>Vlastní šablony pro nové dotnet.
+# <a name="custom-templates-for-dotnet-new"></a>Vlastních šablon pro dotnet nové
 
-[.NET Core SDK](https://www.microsoft.com/net/download/core) se dodává s mnoha šablony pro použití s předinstalovaným [ `dotnet new` příkaz](dotnet-new.md). Od verze rozhraní .NET Core 2.0, můžete vytvořit vlastní šablony pro jakýkoli typ projektu, například aplikace, služby, nástroj nebo knihovny tříd. Můžete dokonce vytvořit šablonu, která výstupy jeden nebo více nezávislých souborech, jako je konfigurační soubor.
+[.NET Core SDK](https://www.microsoft.com/net/download/core) se dodává s mnoha šablon pro použití s předinstalovaným [ `dotnet new` příkaz](dotnet-new.md). Od verze rozhraní .NET Core 2.0, můžete vytvořit vlastní šablony pro každý typ projektu, například aplikace, služby, nástroje nebo knihovny tříd. Můžete dokonce vytvořit šablonu, jejichž výstupem jsou jeden nebo více nezávislých souborech, jako je konfigurační soubor.
 
-Vlastní šablony můžete nainstalovat z balíčku NuGet na všechny NuGet kanálu pod položkou NuGet *nupkg* souboru přímo, nebo určením adresář systému souborů, který obsahuje šablonu. Modul šablony nabízí funkce, které vám umožní nahradit hodnoty, zahrnout a vyloučit soubory a oblastí, souborů a provedení operací vlastní zpracování, pokud je vaše šablony.
+Vlastní šablony můžete nainstalovat z balíčku NuGet na jakékoli NuGet kanálu pomocí odkazu na NuGet *nupkg* souboru přímo, nebo zadáním systémový adresář souboru, který obsahuje šablonu. Modul šablon nabízí funkce, které umožňují nahraďte hodnotami, zahrnout a vyloučit soubory a oblasti souborů a provádění vlastního zpracování operací při použití šablony.
 
-Modul šablony je open source a je úložiště online kódu na [dotnet/ukázka](https://github.com/dotnet/templating/) na Githubu. Přejděte [dotnet/dotnet šablony samples](https://github.com/dotnet/dotnet-template-samples) úložišti pro ukázky šablon. Více šablon, včetně šablon od jiných výrobců, které se nacházejí v [dostupných šablon pro dotnet nové](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new) na Githubu. Další informace o vytváření a používání vlastních šablon najdete v tématu [postup vytvoření nové vlastní šablony pro dotnet](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/) a [úložiště GitHub dotnet/ukázka Wiki](https://github.com/dotnet/templating/wiki).
+Modul šablon je typu open source a úložiště online kódu je na [dotnet/šablonování](https://github.com/dotnet/templating/) na Githubu. Přejděte [dotnet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples) úložiště pro ukázky šablon. Další šablony, včetně šablon od třetích stran, se nacházejí v [dostupných šablon pro dotnet nové](https://github.com/dotnet/templating/wiki/Available-templates-for-dotnet-new) na Githubu. Další informace o vytváření a používání vlastních šablon najdete v tématu [tom, jak vytvořit nové vlastní šablony pro dotnet](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/) a [úložiště GitHub dotnet/šablonování Wiki](https://github.com/dotnet/templating/wiki).
 
-Postupujte podle návod a vytvoření šablony najdete v tématu [vytvoření nové vlastní šablony pro dotnet](~/docs/core/tutorials/create-custom-template.md) kurzu.
+Postupujte podle průvodce a vytvoření šablony najdete v tématu [vytvořit nové vlastní šablony pro dotnet](~/docs/core/tutorials/create-custom-template.md) kurzu.
 
 ## <a name="configuration"></a>Konfigurace
 
@@ -30,27 +30,27 @@ Postupujte podle návod a vytvoření šablony najdete v tématu [vytvoření no
 
 ### <a name="source-files-and-folders"></a>Zdrojové soubory a složky
 
-Zdrojové soubory a složky patří, ať soubory a složky, které chcete šablonu modul má použít při `dotnet new <TEMPLATE>` se spustí příkaz. Modul šablony slouží k použití *spustitelného projekty* jako zdrojový kód k vytvoření projektů. To má několik výhod:
+Zdrojové soubory a složky patří libovolné soubory a složky šablona modul mají použít, když `dotnet new <TEMPLATE>` spuštění příkazu. Modul šablon je navržen pro použití *spustitelné projekty* jako zdrojový kód k vytvoření projektů. To má několik výhod:
 
-- Modul šablony nevyžaduje speciální tokeny vložit do vašeho projektu zdrojového kódu.
-- Soubory kódu jsou speciální soubory nebo upravena žádným způsobem pro práci s modulem šablony. Ano nástroje, které standardně používáte při práci s projekty také pracovat se obsah šablony.
-- Sestavení, spuštění a ladění vašich projektů šablony stejně, jako je tomu u žádné jiné projekty.
-- Můžete rychle vytvořit šablonu z existující projekt právě přidáním *template.json* konfigurační soubor do projektu.
+- Modul šablon nevyžaduje vložit speciální tokeny do zdrojového kódu.
+- Soubory kódu nejsou speciální soubory nebo pro práci s modulem šablony žádným způsobem upravit. Nástroje, které standardně používáte při práci s projekty tedy také pracovat obsah šablony.
+- Sestavení, spouštět a ladit vaše projekty ze šablony, stejně, jako je tomu u vašich projektů.
+- Můžete rychle vytvořit šablonu z existujícího projektu pouhým přidáním *template.json* konfigurační soubor do projektu.
 
-Soubory a složky v šabloně nejsou omezeny na formální projektu typy .NET, jako je řešení pro .NET Core a rozhraní .NET Framework. Veškerý obsah, který chcete vytvořit, když šablona se používá, i v případě, že modul šablona vytváří jenom jeden soubor pro její výstup, jako je konfigurační soubor nebo soubor řešení může obsahovat zdrojové soubory a složky. Můžete například vytvořit šablonu, která obsahuje *web.config* zdrojového souboru a vytvoří upravené *web.config* soubor pro projekty, kde se používá šablonu. Úpravy na zdrojové soubory jsou založené na logiku a nastavení, které jste zadali v *template.json* předaný konfigurační soubor společně s hodnoty zadané uživatelem jako možnosti k `dotnet new <TEMPLATE>` příkaz.
+Soubory a složky uložené v šabloně nejsou omezené na formální typy projektů .NET, jako jsou například řešení .NET Core nebo .NET Framework. Veškerý obsah, který chcete vytvořit při použití této šablony i v případě, že modul šablony vytvoří jenom jeden soubor pro její výstup, jako je například konfigurační soubor nebo soubor řešení může obsahovat zdrojové soubory a složky. Můžete například vytvořit šablonu, která obsahuje *web.config* zdrojového souboru a vytvoří upravené *web.config* souboru pro projekty, ve kterém se používá šablonu. Změny zdrojové soubory jsou založeny na logiku a jste zadali v nastavení *template.json* konfiguračního souboru spolu s uživatelem zadané hodnoty předané jako možnosti k `dotnet new <TEMPLATE>` příkazu.
 
 ### <a name="templatejson"></a>Template.JSON
 
-*Template.json* soubor je umístěn v *. template.config* složku v kořenovém adresáři šablony. Soubor obsahuje informace o konfiguraci k modulu šablony. Minimální konfigurace vyžaduje členy zobrazené v následující tabulce, což je dostačující k vytvoření šablony funkční.
+*Template.json* soubor umístěn v *. template.config* složku v kořenovém adresáři šablony. Soubor obsahuje informace o konfiguraci pro modul šablony. Minimální požadavky na konfiguraci vyžaduje členů je znázorněno v následující tabulce, což je dostatečná pro vytvoření funkční šablony.
 
 | Člen            | Typ          | Popis |
 | ----------------- | ------------- | ----------- |
-| `$schema`         | Identifikátor URI           | Schéma JSON pro *template.json* souboru. Editory, které podporují JSON schémata JSON úpravy funkce povolit, když je zadané schéma. Například [Visual Studio Code](https://code.visualstudio.com/) vyžaduje povolení IntelliSense tohoto člena. Použít hodnotu `http://json.schemastore.org/template`. |
+| `$schema`         | Identifikátor URI           | Schéma JSON pro *template.json* souboru. Editory, které podporují schémat JSON povolte úpravy v editoru JSON funkce-li zadána schématu. Například [Visual Studio Code](https://code.visualstudio.com/) vyžaduje tento člen pro povolení technologie IntelliSense. Použijte hodnotu `http://json.schemastore.org/template`. |
 | `author`          | odkazy řetězců        | Autor šablony. |
-| `classifications` | Array(String) | Nula nebo více vlastností šablony, která uživatel může použít při hledání se najít šablonu. Klasifikace se zobrazí také v *značky* sloupce, když se objeví v seznamu šablon vytvořeného pomocí <code>dotnet new -l&#124;--list</code> příkaz. |
+| `classifications` | Array(String) | Nula nebo více vlastností šablony, která uživatel může použít k vyhledávání pro něj najít šablonu. Klasifikace se také zobrazují v *značky* sloupce, když se objeví v seznamu šablon vytvořený pomocí <code>dotnet new -l&#124;--list</code> příkazu. |
 | `identity`        | odkazy řetězců        | Jedinečný název pro tuto šablonu. |
-| `name`            | odkazy řetězců        | Název pro šablonu, která uživatelé měli vidět. |
-| `shortName`       | odkazy řetězců        | Sdružená vlastnost výchozí pro výběr šablony, která platí pro prostředí, kde je název šablony zadanou uživatelem, není vybrána prostřednictvím grafickým uživatelským rozhraním. Například krátký název je užitečné při použití šablony z příkazového řádku pomocí rozhraní příkazového řádku. |
+| `name`            | odkazy řetězců        | Název pro šablonu, kterou uživatelé měli vidět. |
+| `shortName`       | odkazy řetězců        | Výchozí zkratka pro výběr šablonu, která se vztahuje na prostředí, kde název šablony je uživatel zadá, není vybrána přes grafické uživatelské rozhraní. Krátký název například je užitečné při použití šablony z příkazového řádku pomocí příkazů rozhraní příkazového řádku. |
 
 #### <a name="example"></a>Příklad:
 
@@ -65,11 +65,11 @@ Soubory a složky v šabloně nejsou omezeny na formální projektu typy .NET, j
 }
 ```
 
-Úplné schéma pro *template.json* soubor se nachází zde [úložiště schématu JSON](http://json.schemastore.org/template).
+Úplného schématu pro *template.json* soubor se nachází v umístění [Store schématu JSON](http://json.schemastore.org/template).
 
-## <a name="net-default-templates"></a>Rozhraní .NET výchozí šablony
+## <a name="net-default-templates"></a>Výchozí šablony .NET
 
-Při instalaci [.NET Core SDK](https://www.microsoft.com/net/download/core), dostanete přes tucet integrované šablony pro vytváření projektů a soubory, včetně aplikace konzoly, knihovny tříd, jednotky testování projektů ASP.NET Core aplikace (včetně [úhlová](https://angular.io/) a [reagovat](https://facebook.github.io/react/) projekty) a konfigurační soubory. Seznam integrovaných šablon, spusťte `dotnet new` s `-l|--list` možnost:
+Při instalaci [.NET Core SDK](https://www.microsoft.com/net/download/core), obdržíte více než tucet předdefinovaných šablon pro vytváření projektů a souborů, včetně konzolové aplikace, knihovny tříd, jednotky testování projektů, aplikace ASP.NET Core (včetně [Angular](https://angular.io/) a [React](https://facebook.github.io/react/) projekty) a konfigurační soubory. Seznam předdefinovaných šablon, spusťte `dotnet new` příkazů `-l|--list` možnost:
 
 ```console
 dotnet new -l
@@ -77,51 +77,51 @@ dotnet new -l
 
 ## <a name="packing-a-template-into-a-nuget-package-nupkg-file"></a>Balení šablonu do balíčku NuGet (soubor nupkg)
 
-V současné době je vlastní šablony mnoha funkcemi v systému Windows se [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) (ne [dotnet pack](dotnet-pack.md)). Pro různé platformy balení, zvažte použití [NuGetizer 3000](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
+V současné době je zabalena vlastní šablony na Windows s [nuget.exe](https://dist.nuget.org/win-x86-commandline/latest/nuget.exe) (ne [balíčku dotnet](dotnet-pack.md)). Pro různé platformy balení, zvažte použití [NuGetizer 3000](https://github.com/NuGet/Home/wiki/NuGetizer-3000).
 
-Obsah složky projektu, společně s jeho *.template.config/template.json* souboru, se umístí do složky s názvem *obsah*. Vedle položky *obsah* složky, přidejte [ *nuspec* souboru](/nuget/create-packages/creating-a-package), což je soubor XML manifestu, který popisuje obsah balíčku a disky proces vytvoření balíčku NuGet. Uvnitř  **\<packageTypes >** element v *nuspec* souboru, zahrnout  **\<packageType >** element s `name` Hodnota atributu `Template`. Obě *obsah* složky a *nuspec* soubor by měl být uložený ve stejném adresáři. V tabulce jsou uvedeny minimální *nuspec* souboru elementy, které jsou potřebné k vytvoření šablony jako balíčku NuGet.
+Obsah složky projektu, který je společně s jeho *.template.config/template.json* souboru, se umístí do složky s názvem *obsah*. Vedle položky *obsah* složky, přidejte [ *nuspec* souboru](/nuget/create-packages/creating-a-package), souboru manifestu XML, který popisuje obsah balíčku a řídí proces vytvoření balíčku NuGet. Uvnitř  **\<packageTypes >** element v *nuspec* souboru, zahrnují  **\<packageType >** element s `name` Hodnota atributu `Template`. Oba *obsah* složky a *nuspec* soubor by měl být uložený ve stejném adresáři. V tabulce jsou uvedeny minimální *nuspec* souboru prvků vyžadovaných pro vytvoření šablony jako balíček NuGet.
 
 | Prvek            | Typ   | Popis |
 | ------------------ | ------ | ----------- |
-| **\<Autoři >**     | odkazy řetězců | Seznam balíčků autoři, odpovídající profil názvy v nuget.org oddělených čárkami. Autoři jsou zobrazeny v galerii NuGet v nuget.org a jsou používané pro křížovou balíčky autory stejné. |
-| **\<Popis >** | odkazy řetězců | Dlouhý popis balíčku pro zobrazení uživatelského rozhraní. |
-| **\<id>**          | odkazy řetězců | Identifikátor balíčku velká a malá písmena, která musí být jedinečný v rámci nuget.org nebo jiná bude balíček nacházet v galerii. ID nesmí obsahovat mezery ani znaky, které nejsou platné pro adresu URL a obecně se řídí pravidly obor názvů .NET. V tématu [výběr balíčku jedinečný identifikátor a nastavení číslo verze](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) pokyny. |
-| **\<packageType>** | odkazy řetězců | Umístěte tento element uvnitř  **\<packageTypes >** element mezi  **\<metadata >** elementy. Nastavte `name` atribut  **\<packageType >** element `Template`. |
-| **\<verze >**     | odkazy řetězců | Verze balíčku, následující vzoru major.minor.patch. Čísla verzí může zahrnovat příponu předběžné verze, jak je popsáno v [předprodejní verze](/nuget/create-packages/prerelease-packages#semantic-versioning) tématu. |
+| **\<Autoři >**     | odkazy řetězců | Čárkou oddělený seznam autorů balíčků, odpovídající názvy profilů na nuget.org. Autoři se zobrazí v galerii NuGet na nuget.org a slouží k křížový odkaz balíčky stejné autory. |
+| **\<Popis >** | odkazy řetězců | Dlouhý popis balíčku zobrazí v uživatelském rozhraní. |
+| **\<id>**          | odkazy řetězců | Identifikátor balíčku velká a malá písmena, která musí být jedinečný v rámci nuget.org nebo cokoli, co se bude balíček nacházet v galerii. ID nesmí obsahovat mezery nebo znaky, které nejsou platné pro adresu URL a obvykle postupují podle pravidla oboru názvů .NET. Zobrazit [výběr balíčku jedinečný identifikátor a nastaví číslo verze](/nuget/create-packages/creating-a-package#choosing-a-unique-package-identifier-and-setting-the-version-number) pokyny. |
+| **\<packageType>** | odkazy řetězců | Umístit tento element uvnitř,  **\<packageTypes >** element mezi  **\<metadat >** elementy. Nastavte `name` atribut  **\<packageType >** elementu `Template`. |
+| **\<verze >**     | odkazy řetězců | Verze balíčku, následující vzor hlavníverze.podverze.oprava. Čísla verzí může obsahovat příponu předběžné verze, jak je popsáno v [předběžných verzí](/nuget/create-packages/prerelease-packages#semantic-versioning) tématu. |
 
-Najdete v článku [odkaz příponou .nuspec](/nuget/schema/nuspec) pro kompletní *nuspec* schéma souboru. Příklad *nuspec* soubor pro šablonu se zobrazí v [vytvoření nové vlastní šablony pro dotnet](~/docs/core/tutorials/create-custom-template.md) kurzu.
+Najdete v článku [souboru .nuspec odkaz](/nuget/schema/nuspec) pro kompletní *nuspec* schéma souboru reklamy. Příklad *nuspec* souborů pro šablony se zobrazí v [vytvořit nové vlastní šablony pro dotnet](~/docs/core/tutorials/create-custom-template.md) kurzu.
 
-[Vytvoření balíčku](/nuget/create-packages/creating-a-package#creating-the-package) pomocí `nuget pack <PATH_TO_NUSPEC_FILE>` příkaz.
+[Vytvoření balíčku](/nuget/create-packages/creating-a-package#creating-the-package) pomocí `nuget pack <PATH_TO_NUSPEC_FILE>` příkazu.
 
 ## <a name="installing-a-template"></a>Instalace šablony
 
-Nainstalujte vlastní šablonu z balíčku NuGet na všechny NuGet kanálu odkazem *nupkg* souboru přímo, nebo zadáním adresář systému souborů, který obsahuje konfiguraci ukázka. Použití `-i|--install` možnost s [dotnet nové](dotnet-new.md) příkaz.
+Nainstalujte vlastní šablonu z balíčku NuGet na jakékoli NuGet kanálu odkazováním *nupkg* souboru přímo nebo tak, že určíte adresář systému souboru, který obsahuje konfiguraci šablon. Použití `-i|--install` spolu s možností [dotnet nové](dotnet-new.md) příkazu.
 
-### <a name="to-install-a-template-from-a-nuget-package-stored-at-nugetorg"></a>Chcete-li nainstalovat šablonu z balíčku NuGet uložené v nuget.org
+### <a name="to-install-a-template-from-a-nuget-package-stored-at-nugetorg"></a>Chcete-li nainstalovat šablony z balíčku NuGet uloženou v nuget.org
 
 ```console
 dotnet new -i <NUGET_PACKAGE_ID>
 ```
 
-### <a name="to-install-a-template-from-a-local-nupkg-file"></a>Instalace šablony ze souboru místní nupkg
+### <a name="to-install-a-template-from-a-local-nupkg-file"></a>Chcete-li nainstalovat šablony ze souboru místní nupkg
 
 ```console
 dotnet new -i <PATH_TO_NUPKG_FILE>
 ```
 
-### <a name="to-install-a-template-from-a-file-system-directory"></a>Chcete-li nainstalovat šablonu z adresáře systému souborů
+### <a name="to-install-a-template-from-a-file-system-directory"></a>Chcete-li nainstalovat šablony z adresáře systému souborů
 
-`FILE_SYSTEM_DIRECTORY` Je složka projekt obsahující projekt a *. template.config* složky:
+`FILE_SYSTEM_DIRECTORY` Je projekt složku obsahující projekt a *. template.config* složky:
 
 ```console
 dotnet new -i <FILE_SYSTEM_DIRECTORY>
 ```
 
-## <a name="uninstalling-a-template"></a>Odinstalace šablonu
+## <a name="uninstalling-a-template"></a>Odinstalace šablony
 
-Odinstalujte vlastní šablony pomocí odkazující na balíček NuGet podle jeho `id` nebo zadáním adresář systému souborů, který obsahuje konfiguraci ukázka. Použití `-u|--uninstall` nainstalovat možnost s [dotnet nové](dotnet-new.md) příkaz.
+Odinstalace vlastní šablonu pomocí odkazu na balíček NuGet podle jeho `id` nebo tak, že určíte adresář systému souboru, který obsahuje konfiguraci šablon. Použití `-u|--uninstall` možnost pomocí instalace [dotnet nové](dotnet-new.md) příkaz.
 
-### <a name="to-uninstall-a-template-from-a-nuget-package-stored-at-nugetorg"></a>Chcete-li odinstalovat šablonu z balíčku NuGet uložené v nuget.org
+### <a name="to-uninstall-a-template-from-a-nuget-package-stored-at-nugetorg"></a>Chcete-li odinstalovat šablonu z balíčku NuGet uloženou v nuget.org
 
 ```console
 dotnet new -u <NUGET_PACKAGE_ID>
@@ -129,7 +129,7 @@ dotnet new -u <NUGET_PACKAGE_ID>
 
 ### <a name="to-uninstall-a-template-from-a-local-nupkg-file"></a>Chcete-li odinstalovat šablony ze souboru místní nupkg
 
-Pokud chcete odinstalovat šablony, nemusíte pokus o použití cesty k *nupkg* souboru. *Probíhá pokus o odinstalaci šablony pomocí `dotnet new -u <PATH_TO_NUPKG_FILE>` selže.* Odkazují na balíček podle jeho `id`:
+Pokud chcete odinstalovat šablony, nepokoušejte se použít cestu k *nupkg* souboru. *Pokus o odinstalaci šablony pomocí `dotnet new -u <PATH_TO_NUPKG_FILE>` selže.* Odkázat na balíček podle jeho `id`:
 
 ```console
 dotnet new -u <NUGET_PACKAGE_ID>
@@ -137,24 +137,24 @@ dotnet new -u <NUGET_PACKAGE_ID>
 
 ### <a name="to-uninstall-a-template-from-a-file-system-directory"></a>Chcete-li odinstalovat šablonu z adresáře systému souborů
 
-`FILE_SYSTEM_DIRECTORY` Je složka projekt obsahující projekt a *. template.config* složky:
+`FILE_SYSTEM_DIRECTORY` Je projekt složku obsahující projekt a *. template.config* složky:
 
 ```console
 dotnet new -u <FILE_SYSTEM_DIRECTORY>
 ```
 
-## <a name="create-a-project-using-a-custom-template"></a>Vytvoření projektu pomocí vlastní šablony
+## <a name="create-a-project-using-a-custom-template"></a>Vytvořte projekt pomocí vlastní šablony
 
-Po instalaci šablony, použijte šablonu spuštěním `dotnet new <TEMPLATE>` příkaz stejně jako u jiných předem nainstalované šablony. Můžete také zadat [možnosti](dotnet-new.md#options) k `dotnet new` příkazu, včetně šablony konkrétní možnosti jste nakonfigurovali v nastavení šablony. Zadejte krátký název šablony přímo k příkazu:
+Po instalaci šablony, použijte šablonu pomocí provádí `dotnet new <TEMPLATE>` příkaz stejně jako u jiných předem nainstalovaných šablon. Můžete také určit [možnosti](dotnet-new.md#options) k `dotnet new` příkazu, včetně možnosti konkrétní šablony jste nakonfigurovali v nastavení šablony. Zadejte krátký název šablony přímo k příkazu:
 
 ```console
 dotnet new <TEMPLATE>
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Vytvořit vlastní šablonu pro nové dotnet (kurz)](../tutorials/create-custom-template.md)  
-[úložiště GitHub DotNet/ukázka Wiki](https://github.com/dotnet/templating/wiki)  
-[úložiště GitHub DotNet/dotnet šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)  
-[Jak vytvořit nové vlastní šablony pro dotnet.](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)  
-[*Template.JSON* schématu na úložiště schématu JSON](http://json.schemastore.org/template)  
+* [Vytvoření vlastní šablony pro dotnet new (kurz)](../tutorials/create-custom-template.md)  
+* [úložiště GitHub DotNet/šablonování Wiki](https://github.com/dotnet/templating/wiki)  
+* [úložiště GitHub DotNet/dotnet – šablony – ukázky](https://github.com/dotnet/dotnet-template-samples)  
+* [Jak vytvořit nové vlastní šablony pro dotnet](https://blogs.msdn.microsoft.com/dotnet/2017/04/02/how-to-create-your-own-templates-for-dotnet-new/)  
+* [*Template.JSON* schématu na Store schématu JSON](http://json.schemastore.org/template)  

@@ -5,29 +5,29 @@ helpviewer_keywords:
 - Web hosted service
 - IIS Hosting Using Inline Code Sample [Windows Communication Foundation]
 ms.assetid: 56fe3687-a34b-4661-8e30-b33770f413fa
-ms.openlocfilehash: 760607bc7ebf2662a7a3a93b2ebf76114580f42b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 30e50d39b0edb34bcda1bec6d1848a09eabd34fa
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33502387"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524934"
 ---
 # <a name="iis-hosting-using-inline-code"></a>Hostování IIS pomocí vloženého kódu
-Tento příklad ukazuje, jak implementovat službě hostované pomocí Internetové informační služby (IIS), kde je kód služby jsou obsaženy v řádku v souboru .svc a kompiluje na vyžádání. Kódu služby můžete implementovat také přímo v soubory zdrojového kódu umístěný v adresáři aplikace \App_Code nebo zkompilovat do sestavení nasazeno v \bin. Tato ukázka nepředvádí těchto postupů.  
+Tato ukázka předvádí, jak implementovat služba hostovaná podle Internetové informační služby (IIS), kde je kód služby jsou obsaženy v řádku v souboru .svc a je zkompilován na vyžádání. Kód služby je možné implementovat také přímo do souborů se zdrojovým kódem v adresáři \App_Code aplikace nebo zkompilovány do sestavení nasazeno v \bin. Tento příklad neukazuje těchto technik.  
   
 > [!NOTE]
->  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WebHost\InlineCode`  
   
- Ukázka ukazuje typické služba, která implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Služba je hostovaná ve službě IIS a kódu služby je zcela obsažen v souboru Service.svc. Služba aktivuje hostitele je a zkompilují na vyžádání první zprávou odeslanou ke službě. Neexistuje žádné předkompilaci potřeby. Implementuje služby `ICalculator` smlouvy definovaným v následujícím kódu:  
+ Vzorek ukazuje typické služba, která implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Služba je hostována ve službě IIS a kódu služby je zcela obsažený v souboru Service.svc. Služba aktivována hostitele je a kompilovaná první zpráva odeslaná do služby na vyžádání. Neexistuje žádné předkompilace nezbytné. Implementuje služby `ICalculator` smlouvy, jak je definováno v následujícím kódu:  
   
 ```  
 // Define a service contract.  
@@ -72,7 +72,7 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -83,15 +83,15 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Po vytvoření řešení, spusťte setup.bat nastavit aplikaci ServiceModelSamples v [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla zobrazit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
+3.  Po řešení je sestavený Build, spusťte setup.bat nastavit aplikaci ServiceModelSamples [!INCLUDE[iisver](../../../../includes/iisver-md.md)]. Adresář ServiceModelSamples by se měla objevit jako [!INCLUDE[iisver](../../../../includes/iisver-md.md)] aplikace.  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Příklad o tom, jak vytvořit klientskou aplikaci, které můžete volat tuto službu, naleznete v části [postupy: vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Příklad o tom, jak vytvořit klientskou aplikaci, která může volat tuto službu, naleznete v tématu [postupy: vytvoření klienta](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

@@ -18,11 +18,11 @@ helpviewer_keywords:
 - client application services, about client application services
 ms.assetid: 1487d8df-089e-4f21-abfb-a791a652b58e
 ms.openlocfilehash: d58510240593f73ff761aa669035f28598006c10
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43401580"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521997"
 ---
 # <a name="client-application-services"></a>Klientské aplikační služby
 Klientské aplikační služby umožňují snadno vytvářet aplikace pro systém Windows, které používají [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] přihlášení, role a služby profilu aplikace součástí rozšíření společnosti Microsoft 2.0 technologie ASP.NET AJAX. Tyto služby umožňují více webových a aplikace založené na Windows sdílet informace o uživateli a funkci Správa uživatelů z jednoho serveru. Tyto služby můžete například používat k provádění následujících úloh:  

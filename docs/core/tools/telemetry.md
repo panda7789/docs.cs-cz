@@ -5,11 +5,11 @@ author: richlander
 ms.author: mairaw
 ms.date: 06/20/2018
 ms.openlocfilehash: b60fc9d9d619334269343fd858a782cdfeb09ba4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408407"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513337"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
 

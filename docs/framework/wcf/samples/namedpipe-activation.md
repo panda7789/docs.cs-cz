@@ -2,32 +2,32 @@
 title: Aktivace pojmenovaného kanálu
 ms.date: 03/30/2017
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-ms.openlocfilehash: 46b59dab0f67c66ca364d9e880ef519386d0df94
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 97221bfd00fb6b50b63eab11ed82356b002a38de
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806380"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504269"
 ---
 # <a name="namedpipe-activation"></a>Aktivace pojmenovaného kanálu
-Tento příklad znázorňuje hostování služby, která využívá služba aktivace procesů systému Windows (WAS) k aktivaci služby, který komunikuje přes názvy kanály. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a vyžaduje [!INCLUDE[wv](../../../../includes/wv-md.md)] ke spuštění.  
+V této ukázce hostování služba, která se používá k aktivaci služby, která komunikuje přes názvy kanálů Windows Process Activation Service (WAS). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a vyžaduje [!INCLUDE[wv](../../../../includes/wv-md.md)] ke spuštění.  
   
 > [!NOTE]
->  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\NamedPipeActivation`  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- Ukázka se skládá z konzoly programu klienta (.exe) a služby knihovny (DLL) hostované v pracovním procesu aktivovat pomocí proces aktivace služby WAS (Windows). Činnost klienta je viditelný v okně konzoly.  
+ Ukázka se skládá z programu konzoly klienta (.exe) a služby knihovny (.dll) hostované v pracovním procesu aktivaci služby Aktivace procesu (WAS) Windows. Činnost klienta je vidět v okně konzoly.  
   
- Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ICalculator` rozhraní, která zpřístupňuje matematické operace (přidat, odečíst, násobení a dělení), jak je znázorněno v následujícím ukázkovém kódu.  
+ Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ICalculator` rozhraní, které zveřejňuje matematických operací (přidat, odečítání, násobení a rozdělit), jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -44,7 +44,7 @@ public interface ICalculator
 }  
 ```  
   
- Klient zadává synchronní požadavků pro danou matematické operace a implementaci služby vypočítá a vrátí odpovídající výsledek.  
+ Klient podá synchronní žádosti dané matematické operace a implementaci služby vypočítá a vrátí odpovídající výsledek.  
   
 ```  
 // Service class that implements the service contract.  
@@ -69,9 +69,9 @@ public class CalculatorService : ICalculator
 }  
 ```  
   
- Příklad používá upravené `netNamedPipeBinding` vazba se zabezpečení. Vazba je zadána v konfiguračních souborech pro klienta a služby. Typ vazby služby je zadaný v elementu koncový bod `binding` atributu, jak je znázorněno v následující ukázka konfigurace.  
+ Ukázka používá upravené `netNamedPipeBinding` vazby se zabezpečení. Vazba je zadán v konfiguračních souborech pro klienta a služby. Typ vazby služby je zadaný v elementu koncového bodu `binding` atributu, jak je znázorněno v následující ukázková konfigurace.  
   
- Pokud chcete použít vazbu zabezpečené pojmenovaný kanál, změňte režim zabezpečení serveru nastavení požadované zabezpečení a znovu spusťte svcutil.exe na klientovi se získat konfigurační soubor aktualizovaného klienta.  
+ Pokud chcete použít vazbu zabezpečené pojmenovaný kanál, změňte režim zabezpečení serveru na požadované nastavení a znovu spusťte svcutil.exe na straně klienta k získání konfiguračního souboru aktualizovaného klienta.  
   
 ```xml  
 <system.serviceModel>  
@@ -112,7 +112,7 @@ public class CalculatorService : ICalculator
   </system.serviceModel>  
 ```  
   
- Informace o koncovém klienta je nakonfigurován, jak je znázorněno v následujícím ukázkovém kódu.  
+ Informace o koncovém bodu klienta je nakonfigurován, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```xml  
 <system.serviceModel>  
@@ -144,7 +144,7 @@ public class CalculatorService : ICalculator
   </system.serviceModel>  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -155,27 +155,27 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalovaná. [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je vyžadována pro aktivace WAS.  
+1.  Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalována. [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je vyžadován pro aktivaci WAS.  
   
-2.  Ujistěte se, kterou jste udělali [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
+2.  Ujistěte se dá provést [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-     Kromě toho je třeba nainstalovat součásti Aktivace jiným protokolem než HTTP WCF:  
+     Kromě toho je třeba nainstalovat jiným protokolem než HTTP aktivačních komponent WCF:  
   
-    1.  Z **spustit** nabídce zvolte **ovládací panely**.  
+    1.  Z **Start** nabídce zvolte **ovládací panely**.  
   
     2.  Vyberte **programy a funkce**.  
   
-    3.  Klikněte na tlačítko **součásti systému Windows vypnutí a zapnutí**.  
+    3.  Klikněte na tlačítko **součásti Windows zapnout nebo vypnout**.  
   
-    4.  Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontroly **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.  
+    4.  Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontrolu **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.  
   
-3.  Konfigurace proces aktivace služby WAS (Windows) pro podporu aktivace pojmenovaného kanálu.  
+3.  Konfigurace Windows WAS Process Activation Service () pro podporu aktivace pojmenovaného kanálu.  
   
-     Pro potřeby následující dva kroky jsou implementované v dávkovém souboru názvem AddNetPipeSiteBinding.cmd umístěný v adresáři ukázka.  
+     V zájmu usnadnění práce následující dva kroky jsou implementovány v dávkovém souboru volá AddNetPipeSiteBinding.cmd nachází v adresáři ukázkové.  
   
-    1.  Kvůli podpoře aktivace net.pipe, musí být nejprve vázána výchozí web na protokol net.pipe. To lze provést pomocí appcmd.exe, která se instaluje s sady nástrojů pro správu služby IIS 7.0. Z příkazového řádku s oprávněními zvýšenými na úroveň (správce) spusťte následující příkaz.  
+    1.  Kvůli podpoře aktivace net.pipe, musíte ji nejdřív svázat výchozí webový server se protokol net.pipe. To lze provést pomocí appcmd.exe, která se instaluje s sada nástrojů pro správu služby IIS 7.0. Z příkazového řádku se zvýšenými oprávněními (správce) spusťte následující příkaz.  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
@@ -183,26 +183,26 @@ Press <ENTER> to terminate client.
         ```  
   
         > [!NOTE]
-        >  Tento příkaz je na jednom řádku textu.  
+        >  Tento příkaz je jeden řádek textu.  
   
-         Tento příkaz přidá net.pipe vazba webu default Web site.  
+         Tento příkaz přidá vazbu webu net.pipe výchozí webový server.  
   
-    2.  Přestože všechny aplikace v rámci lokality sdílejí společné net.pipe vazbu, každá aplikace můžete povolit podporu net.pipe jednotlivě. Pokud chcete povolit net.pipe /servicemodelsamples aplikace, spusťte následující příkaz z příkazového řádku se zvýšenými oprávněními.  
+    2.  Přestože všechny aplikace v rámci lokality sdílejí společné net.pipe vazby, každá aplikace můžete povolit podporu net.pipe jednotlivě. Pokud chcete povolit net.pipe /servicemodelsamples aplikace, spusťte následující příkaz z příkazového řádku se zvýšenými oprávněními.  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.pipe  
         ```  
   
         > [!NOTE]
-        >  Tento příkaz je na jednom řádku textu.  
+        >  Tento příkaz je jeden řádek textu.  
   
-         Tento příkaz povolí aplikaci /servicemodelsamples získat přístup pomocí obou http://localhost/servicemodelsamples a net.tcp://localhost/servicemodelsamples.  
+         Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí obou http://localhost/servicemodelsamples a net.tcp://localhost/servicemodelsamples.  
   
-4.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-5.  Odeberte net.pipe vazby webu, který jste přidali Tato ukázka.  
+5.  Odeberte net.pipe vazby webu, kterou jste přidali pro tuto ukázku.  
   
-     Pro potřeby následující dva kroky jsou implementované v dávkovém souboru názvem RemoveNetPipeSiteBinding.cmd umístěný v adresáři ukázka:  
+     V zájmu usnadnění práce následující dva kroky jsou implementovány v dávkovém souboru volá RemoveNetPipeSiteBinding.cmd nachází v adresáři ukázkové:  
   
     1.  Odeberte net.tcp ze seznamu povolených protokolů spuštěním následujícího příkazu z příkazového řádku se zvýšenými oprávněními.  
   
@@ -223,4 +223,4 @@ Press <ENTER> to terminate client.
         >  Tento příkaz musí být zadán v jako jeden řádek textu.  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

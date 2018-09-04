@@ -1,38 +1,38 @@
 ---
-title: Manipulace s daty v DataTable
+title: Manipulace s daty v datové tabulce
 ms.date: 03/30/2017
 ms.assetid: 5cb86d48-a987-4af4-80e0-8cc2c8373d62
-ms.openlocfilehash: f21ac216ed69db99001e324eb34cacf1254fcf6e
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: a09edc6ce3098ab135d8c27ba0f6ad56cceed159
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757639"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521305"
 ---
-# <a name="manipulating-data-in-a-datatable"></a>Manipulace s daty v DataTable
-Po vytvoření <xref:System.Data.DataTable> v <xref:System.Data.DataSet>, můžete provést stejný aktivity, které byste při používání tabulky v databázi. Můžete přidat, zobrazit, upravit a odstranit data v tabulce. můžete sledovat chyby a události; a můžete dát dotaz na data v tabulce. Při změně dat v **DataTable**, můžete také ověřit, zda se změny jsou správné a určení, zda prostřednictvím kódu programu přijmout nebo odmítnout změny.  
+# <a name="manipulating-data-in-a-datatable"></a>Manipulace s daty v datové tabulce
+Po vytvoření <xref:System.Data.DataTable> v <xref:System.Data.DataSet>, můžete provést stejný aktivity, které byste použili tabulky v databázi. Můžete přidat, zobrazit, upravit a odstranit data v tabulce. můžete sledovat chyby a události; a můžete zadat dotaz data v tabulce. Při změně dat v **DataTable**, můžete si taky ověřit, zda změny jsou správné a určete, zda prostřednictvím kódu programu přijmout nebo odmítnout změny.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přidání dat v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/adding-data-to-a-datatable.md)  
  Vysvětluje, jak vytvořit nové řádky a přidat je do tabulky.  
   
  [Zobrazení dat v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/viewing-data-in-a-datatable.md)  
- Popisuje způsob přístupu k datům v řádku, včetně aktuální a původní verze data.  
+ Popisuje, jak získat přístup k datům v řádku, včetně aktuální a původní verze data.  
   
  [Metoda Load](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/the-load-method.md)  
- Popisuje použití **zatížení** metoda k vyplnění **DataTable** s řádky.  
+ Popisuje použití **zatížení** metodu tak, aby vyplnil **DataTable** s řádky.  
   
  [Úpravy datových tabulek](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-edits.md)  
- Vysvětluje, jak upravovat data v řádku, včetně změny na řádek, pozastavení, dokud si navrhované změny jsou ověřit a přijmout.  
+ Vysvětluje, jak upravovat data v řádku, včetně pozastavení změny na řádek, dokud je ověřeno a přijato navrhovaných změn.  
   
  [Stavy řádků a verze řádků](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-states-and-row-versions.md)  
- Poskytuje informace o různých stavů řádku.  
+ Poskytuje informace o různých státech řádek.  
   
  [Odstranění datového řádku](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datarow-deletion.md)  
- Popisuje postup odstranění řádku tabulky.  
+ Popisuje, jak odebrat řádek z tabulky.  
   
  [Informace o chybě na řádku](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
- Vysvětluje, jak k vložení informací o chybách na řádek pro řešení problémů s daty v rámci aplikace.  
+ Vysvětluje, jak vložit informace o chybě na řádku, který vám pomůže vyřešit problémy s daty v rámci aplikace.  
   
  [Metody AcceptChanges a RejectChanges](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)  
  Vysvětluje, jak přijmout nebo odmítnout změny provedené na řádek.  
@@ -40,4 +40,4 @@ Po vytvoření <xref:System.Data.DataTable> v <xref:System.Data.DataSet>, může
 ## <a name="see-also"></a>Viz také  
  [Datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatables.md)  
  [Zpracování událostí datové tabulky](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/handling-datatable-events.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -3,11 +3,11 @@ title: A-E – příkazy (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: af97c2bf-dddb-48a8-8eb6-798cd219430b
 ms.openlocfilehash: 89e85198fb0a5b5739e1805eb00a1b76f1a27457
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43390623"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504164"
 ---
 # <a name="a-e-statements"></a>A-E – příkazy
 Následující tabulka obsahuje seznam příkazů jazyka Visual Basic.  

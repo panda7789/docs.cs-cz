@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e60f542f-6271-495b-a9e4-48553481c2a3
-ms.openlocfilehash: c1d8b9dd579cae7f4868058343c034caf17c5fff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7588b2b4592a5298a69eb4adfbc06edb6913ef76
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33362061"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519093"
 ---
 # <a name="performing-catalog-operations"></a>Provádění operací katalogu
-K provedení příkazu k úpravě databáze nebo katalogu, jako je například příkaz CREATE TABLE nebo CREATE PROCEDURE vytvořit **příkaz** pomocí příslušné příkazy SQL a **připojení** objektu. Spusťte příkaz se **ExecuteNonQuery** metodu **příkaz** objektu.  
+K provedení příkazu k úpravě databáze nebo katalog, jako například výkaz CREATE TABLE nebo CREATE PROCEDURE vytvořit **příkaz** pomocí odpovídající příkazy SQL a **připojení** objektu. Příkaz Spustit **metodu ExecuteNonQuery** metodu **příkaz** objektu.  
   
  Následující příklad kódu vytvoří uloženou proceduru v databázi Microsoft SQL Server.  
   
@@ -48,4 +48,4 @@ command.ExecuteNonQuery();
 ## <a name="see-also"></a>Viz také  
  [Použití příkazů pro změny dat](../../../../docs/framework/data/adonet/using-commands-to-modify-data.md)  
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

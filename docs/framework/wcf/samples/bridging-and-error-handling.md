@@ -3,11 +3,11 @@ title: Přemostění a zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: 4ae87d1a-b615-4014-a494-a53f63ff0137
 ms.openlocfilehash: 6afaddc75855b7e95ad708b2179cabb9aee35001
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43389065"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514539"
 ---
 # <a name="bridging-and-error-handling"></a>Přemostění a zpracování chyb
 Tato ukázka demonstruje použití směrovací službou Windows Communication Foundation (WCF) přemostění komunikace mezi klientem a službu, která pomocí různých vazby. Tento příklad také ukazuje, jak pomocí služby zálohování pro scénáře převzetí služeb při selhání. Směrovací služba je komponenta WCF, který umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí směrovací službou.  

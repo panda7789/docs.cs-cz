@@ -5,11 +5,11 @@ ms.assetid: c8a1547b-986b-45c1-b302-dea0cd4b516d
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 4cefdd7480c7d0e9475b1883e603d9db1f287d4a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386621"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43532327"
 ---
 # <a name="endpoint-security-calls-not-authorized-per-second"></a>Koncový bod: Počet neautorizovaných volání zabezpečení za sekundu
 Název čítače: Zabezpečení počet neautorizovaných volání za sekundu.  

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-ms.openlocfilehash: 60e4c6e98ca9e71d1a095a0c7ee1df6be6d13f4b
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 0e678f6577c07e4d56c485e0fd104397eddbd079
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934870"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517452"
 ---
 # <a name="namespaces-c-programming-guide"></a>Obory názvů (Průvodce programováním v C#)
 Obory názvů často slouží v jazyce C# programming dvěma způsoby. Nejprve rozhraní .NET Framework používá obory názvů pro uspořádání mnoho tříd, následujícím způsobem:  
@@ -52,9 +52,10 @@ Obory názvů často slouží v jazyce C# programming dvěma způsoby. Nejprve r
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)  
- [using – direktiva](../../../csharp/language-reference/keywords/using-directive.md)  
- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova oboru názvů](../../../csharp/language-reference/keywords/namespace-keywords.md)  
+- [using – direktiva](../../../csharp/language-reference/keywords/using-directive.md)  
+- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
+- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)

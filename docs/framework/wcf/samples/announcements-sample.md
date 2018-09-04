@@ -3,11 +3,11 @@ title: Ukázka oznámení
 ms.date: 03/30/2017
 ms.assetid: 954a75e4-9a97-41d6-94fc-43765d4205a9
 ms.openlocfilehash: a82056844c9ec8f77bce4b0adec481a025894d1f
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43425399"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534256"
 ---
 # <a name="announcements-sample"></a>Ukázka oznámení
 Tento příklad ukazuje, jak používat funkci oznámení funkci zjišťování. Oznámení povolte službám posílat zprávy oznámení, které obsahují metadata týkající se služby. Ve výchozím nastavení hello oznámení se odešle, když služba po spuštění a bye oznámení se odešle, když je služba ukončena. Tato oznámení mohou být vícesměrového vysílání nebo mohou být odesílány typu point-to-point. Tento příklad se skládá z klienta a služby dva projekty.  

@@ -1,25 +1,25 @@
 ---
-title: Rozsah výchozí obory názvů v jazyce C# 1
+title: Obor výchozích názvových prostorů v jazyce C# 1
 ms.date: 07/20/2015
 ms.assetid: fe826236-830f-457a-9027-7ad62c909fae
-ms.openlocfilehash: 37b10c43071d4f6a9fb2a25d68ab2c100c27dde9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb0e111bfded0769c498b116f828711003036e33
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33330093"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510436"
 ---
-# <a name="scope-of-default-namespaces-in-c"></a>Rozsah výchozí obory názvů v jazyce C#
-Výchozí obory názvů, jak je přestavováno ve stromové struktuře XML nejsou v oboru pro dotazy. Pokud máte XML, který je ve výchozí obor názvů, je stále potřeba deklarovat <xref:System.Xml.Linq.XNamespace> proměnnou a zkombinovat s místní název, aby kvalifikovaný název, který se má použít v dotazu.  
+# <a name="scope-of-default-namespaces-in-c"></a>Obor výchozích názvových prostorů v jazyce C#
+Výchozí obory názvů, jak je ve stromové struktuře XML nejsou v oboru pro dotazy. Pokud budete mít soubor XML, který je ve výchozím oboru názvů, je stále třeba deklarovat <xref:System.Xml.Linq.XNamespace> proměnnou a sloučit s místním názvem vytvořit kvalifikovaný název, který se má použít v dotazu.  
   
- Jeden z nejběžnějších problémů při dotazování stromy XML je, že pokud stromu XML má výchozí obor názvů, vývojář někdy zapíše dotazu, jako by soubor XML není v oboru názvů.  
+ Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud stromu XML má výchozí obor názvů, vývojář někdy zapíše dotaz jakoby nebyly v oboru názvů XML.  
   
- První sadu příklady v tomto tématu ukazuje obvyklý způsob, že je načteno kód XML v výchozí obor názvů, ale je dotazován nesprávně.  
+ První sada příklady v tomto tématu ukazuje obvyklým způsobem, že je načteno XML ve výchozím oboru názvů, ale je dotazován nesprávně.  
   
- Druhá sada příklady zobrazit potřebné opravy tak, aby v oboru názvů se můžete dotazovat XML.  
+ Druhá sada příklady ukazují potřebné opravy tak, aby můžete dát dotaz na XML v oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje vytvoření XML v oboru názvů a nastavte dotaz, který vrací prázdný výsledek.  
+ Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který vrací prázdný výsledek sadu.  
   
 ### <a name="code"></a>Kód  
   
@@ -53,7 +53,7 @@ End of result set
 ## <a name="example"></a>Příklad  
  Tento příklad ukazuje vytvoření XML v oboru názvů a dotaz, který je zakódovaný správně.  
   
- Na rozdíl od nesprávně programové výše uvedeném příkladu správný přístup při použití jazyka C# je deklarovat a inicializovat <xref:System.Xml.Linq.XNamespace> objekt a který můžete použít při zadávání <xref:System.Xml.Linq.XName> objekty. V tomto případě argument <xref:System.Xml.Linq.XElement.Elements%2A> je metoda <xref:System.Xml.Linq.XName> objektu.  
+ Na rozdíl od nesprávně programové výše uvedeném příkladu je správný přístup při použití jazyka C# k deklaraci a inicializaci <xref:System.Xml.Linq.XNamespace> objektu a použít je při zadávání <xref:System.Xml.Linq.XName> objekty. V tomto případě, že argument <xref:System.Xml.Linq.XElement.Elements%2A> metoda je <xref:System.Xml.Linq.XName> objektu.  
   
 ### <a name="code"></a>Kód  
   
@@ -88,5 +88,6 @@ Result set follows:
 End of result set  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Práce s obory názvů XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+## <a name="see-also"></a>Viz také
+
+- [Práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

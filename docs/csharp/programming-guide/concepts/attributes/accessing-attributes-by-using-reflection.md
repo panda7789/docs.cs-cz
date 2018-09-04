@@ -2,34 +2,34 @@
 title: Přístup k atributům pomocí reflexe (C#)
 ms.date: 07/20/2015
 ms.assetid: dce3a696-4ceb-489a-b5e4-322a83052f18
-ms.openlocfilehash: 05c051490dab5265309fd067dfb67f0ef7822541
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa8bf447fe0df81821a34b5a6d898980749921e1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33318487"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536439"
 ---
 # <a name="accessing-attributes-by-using-reflection-c"></a>Přístup k atributům pomocí reflexe (C#)
-Nízké hodnoty bez nějakým způsobem načtení těchto informací a funguje na něm může být skutečnost, že můžete definovat vlastní atributy a umístěte je do vašeho zdrojového kódu. Pomocí reflexe můžete načíst informace, které je definovaný s vlastní atributy. Metoda klíče je `GetCustomAttributes`, která vrací pole objektů, které jsou ekvivalenty běhu atributů zdrojového kódu. Tato metoda má několik přetížené verzí. Další informace naleznete v tématu <xref:System.Attribute>.  
+Fakt, že můžete definovat vlastní atributy a umístit je do zdrojového kódu by nízké hodnoty bez nějaký způsob načtení těchto informací a funguje na něj. Pomocí reflexe můžete načíst informace, které se definoval pomocí vlastních atributů. Metoda klíče `GetCustomAttributes`, která vrací pole objektů, které jsou za běhu ekvivalenty atributy zdrojového kódu. Tato metoda má několik přetížených verzí. Další informace naleznete v tématu <xref:System.Attribute>.  
   
- Specifikace atributu jako:  
+ Specifikace atribut jako:  
   
 ```csharp  
 [Author("P. Ackerman", version = 1.1)]  
 class SampleClass  
 ```  
   
- je ekvivalentní k tomuto:  
+ je koncepčním ekvivalentem tohoto:  
   
 ```csharp  
 Author anonymousAuthorObject = new Author("P. Ackerman");  
 anonymousAuthorObject.version = 1.1;  
 ```  
   
- Však není kód spustí, dokud `SampleClass` je dotazován na atributy. Volání metody `GetCustomAttributes` na `SampleClass` způsobí, že `Author` objekt, který má být vytvořená a inicializovat jako výše. Pokud třída má další atributy, se vytvářejí podobně jako jiné objekty atribut. `GetCustomAttributes` Vrátí `Author` objekt a všechny další objekty atribut v matici. Pak můžete Iterujte přes toto pole, určit atributy, které byly použity na základě typu jednotlivých prvků pole a extrahovat informace z atributů objektů.  
+ Však není spuštěn kód do `SampleClass` dotaz na atributy. Volání `GetCustomAttributes` na `SampleClass` způsobí, že `Author` objekt má být vytvořen a inicializován, jak je uvedeno výše. Pokud třída má další atributy, dalších atributů objektů jsou vytvořeny podobně. `GetCustomAttributes` Vrátí `Author` objektu a dalších atributů objektů v poli. Můžete iterovat přes toto pole určit atributy, které byly použity na základě typu každý prvek pole a extrahovat informace z atributů objektů.  
   
 ## <a name="example"></a>Příklad  
- Zde je kompletní příklad. Vlastní atribut je definován, použít pro několik entit a načteny prostřednictvím reflexe.  
+ Tady je úplný příklad. Vlastní atribut je definován, použít pro několik entit a načteny prostřednictvím reflexe.  
   
 ```csharp  
 // Multiuse attribute.  
@@ -113,11 +113,12 @@ class TestAuthorAttribute
 */  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Reflection>  
- <xref:System.Attribute>  
- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
- [Načítání informací uložených v atributech](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
- [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
- [Vytváření vlastních atributů (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Reflection>  
+- <xref:System.Attribute>  
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
+- [Načítání informací uložených v atributech](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)  
+- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
+- [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
+- [Vytváření vlastních atributů (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)

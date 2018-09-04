@@ -6,11 +6,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 619aa1f34b91c1a883f9c76351302880ff453c13
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43400165"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43501537"
 ---
 # <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>Změny v ověřování NTLM pro HttpWebRequest ve verzi 3.5 SP1
 Byly provedeny změny zabezpečení v rozhraní .NET Framework verze 3.5 SP1 a novější, které ovlivňují jak integrované ověřování zařizuje služba Windows <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Security.NegotiateStream>, a související třídy v oboru názvů System.Net. Tyto změny mohou ovlivnit aplikace, které používají tyto třídy pro vytvoření webových požadavků a přijímání odpovědí, kde se používá integrované ověřování Windows, které jsou založené na NTLM. Tato změna může ovlivnit, webové servery a klientské aplikace, které jsou nakonfigurovány pro použití integrovaného ověřování Windows.  

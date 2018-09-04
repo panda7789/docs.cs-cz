@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
 ms.openlocfilehash: c19169d61a96314e9fcfad94b013af18440e1ff5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43474087"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503611"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Základní koncepty služby Windows Communication Foundation
 Tento dokument obsahuje podrobný pohled na architekturu Windows Communication Foundation (WCF). Jeho účelem je vysvětlují klíčové koncepty a jak je umístit společně. Kurz týkající se vytváření nejjednodušší verzi klienta a služby WCF, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md). Další programování WCF najdete v tématu [základní programování WCF](../../../docs/framework/wcf/basic-wcf-programming.md).  

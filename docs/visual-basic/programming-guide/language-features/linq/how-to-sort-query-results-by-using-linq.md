@@ -12,11 +12,11 @@ helpviewer_keywords:
 - query samples [Visual Basic]
 ms.assetid: 07a4584d-9fd8-4a1d-b7d9-ccf2efa5c84e
 ms.openlocfilehash: 5104ef5714819bd69cfd5b6d754e81b97f235e31
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43472095"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43529218"
 ---
 # <a name="how-to-sort-query-results-by-using-linq-visual-basic"></a>Postupy: Řazení výsledků dotazu pomocí LINQ (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů.  

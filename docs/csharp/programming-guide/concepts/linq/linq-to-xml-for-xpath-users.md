@@ -2,12 +2,12 @@
 title: LINQ to XML pro uživatele jazyka XPath (C#)
 ms.date: 07/20/2015
 ms.assetid: 91774511-1dca-4f06-ac0b-913746f104fe
-ms.openlocfilehash: e55e763db2169b704b0b1fcc72e21d9e339b01f6
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: c5c3d94c218f712a127ad313d3b000174644f9dd
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199118"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516403"
 ---
 # <a name="linq-to-xml-for-xpath-users-c"></a>LINQ to XML pro uživatele jazyka XPath (C#)
 Tato sada témat zobrazit počet výrazů XPath a jejich [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] ekvivalenty.  
@@ -36,7 +36,8 @@ Tato sada témat zobrazit počet výrazů XPath a jejich [!INCLUDE[sqltecxlinq](
 |[Postupy: vyhledání podřízených elementů na základě pozice (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-child-elements-based-on-position-xpath-linq-to-xml.md)|Postup k zjištění prvek na základě jeho relativní pozice pomocí XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"Test[position() >= 2 and position() <= 4]"`|  
 |[Postupy: vyhledání okamžité předcházející na stejné úrovni (XPath – LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-find-the-immediate-preceding-sibling-xpath-linq-to-xml.md)|Jak najít okamžité předchozí úrovni uzlu pomocí XPath porovná a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].<br /><br /> Je přidružený výraz XPath:`"preceding-sibling::*[1]"`|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.XPath?displayProperty=nameWithType>  
- [Dotazování na stromy XML (C#)](../../../../csharp/programming-guide/concepts/linq/querying-xml-trees.md)  
- [Zpracování dat XML pomocí modelu dat XPath](../../../../standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Xml.XPath?displayProperty=nameWithType>  
+- [Dotazování na stromy XML (C#)](../../../../csharp/programming-guide/concepts/linq/querying-xml-trees.md)  
+- [Zpracování dat XML pomocí modelu dat XPath](../../../../standard/data/xml/process-xml-data-using-the-xpath-data-model.md)

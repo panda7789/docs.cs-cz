@@ -5,11 +5,11 @@ f1_keywords:
 - vbrTextFieldParser_MalFormedFixedWidthLine
 ms.assetid: 84e14245-dfdf-4b62-8b84-e83a31608899
 ms.openlocfilehash: 57390700ab0ef47cc7e6b5521a3691a8e5812a9e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43387408"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534200"
 ---
 # <a name="line-ltnumbergt-cannot-be-parsed-using-the-current-fieldwidths"></a>Řádek &lt;číslo&gt; nelze analyzovat pomocí aktuální hodnoty parametru FieldWidths.
 Zadaný řádek nelze analyzovat, protože jeho pole mají šířky, než je zadaný.  

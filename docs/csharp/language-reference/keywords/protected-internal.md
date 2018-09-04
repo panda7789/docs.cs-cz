@@ -3,11 +3,11 @@ title: chráněné vnitřní (C# Reference)
 ms.date: 11/15/2017
 author: sputier
 ms.openlocfilehash: 1a305cb84989f12350e2e7cc28dd18f9d0c7ae5e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43387558"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536408"
 ---
 # <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# Reference)
 

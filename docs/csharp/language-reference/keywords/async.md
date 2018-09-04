@@ -9,11 +9,11 @@ helpviewer_keywords:
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
 ms.openlocfilehash: 10f1d62c5aa29f2074106ab102775b9a0283d646
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43389543"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510959"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 Použití `async` modifikátor určit, že je metoda, [výraz lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), nebo [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) je asynchronní. Pokud použijete tento modifikátor na metodu nebo výraz, to se označuje jako *asynchronní metoda*. Následující příklad definuje asynchronní metodu s názvem `ExampleMethodAsync`: 

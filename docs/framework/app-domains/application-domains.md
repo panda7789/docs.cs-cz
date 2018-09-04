@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 811443dbd8e2483f7fc1b0f8c44afb4ebcd9efcf
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: ddf8f52ab98d0188235d8c9f97293adced4bfe90
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233948"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43553113"
 ---
 # <a name="application-domains"></a>Aplikační domény
-Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolování aplikací. Tato izolace je nutné zajistit, že kód spuštěný v jedné aplikaci nemůže mít nepříznivý vliv na jiné nesouvisející aplikace.  
+Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolaci aplikací. Tato izolace je nezbytná k zajištění, že kód spuštěný v jedné aplikaci nemohl nepříznivě ovlivnit jiné nesouvisející aplikace.  
   
- Aplikační domény zadejte hranici izolace, zabezpečení, spolehlivost a správa verzí a uvolnění sestavení. Aplikační domény jsou obvykle vytvoří pomocí modulu runtime hostitelů, které jsou zodpovědní za zavádění modul common language runtime před spuštěním aplikace.  
+ Aplikační domény poskytují izolační hranici pro zabezpečení, spolehlivosti a správy verzí a pro uvolňování sestavení. Aplikační domény jsou obvykle vytvářeny hostitelská prostředí modulu runtime, která jsou odpovědná za spuštění modul common language runtime, před spuštěním aplikace.  
   
- Témata v této části dokumentace popisují, jak používat k zajištění izolace mezi sestaveními domény aplikace.  
+ Témata v této části dokumentace vysvětlují, jak použit aplikační domény k poskytování izolace mezi sestaveními.  
   
  Tento přehled obsahuje následující části:  
   
@@ -36,98 +36,98 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
 <a name="benefits"></a>   
 ## <a name="the-benefits-of-isolating-applications"></a>Výhody izolace aplikací  
- Hranice procesu v minulosti, již byly použity k izolování aplikací, které běží na stejném počítači. Každá aplikace je načten do samostatný proces, který ji izoluje aplikace od dalších aplikací běžících na stejném počítači.  
+ V minulosti byly hranice procesů použity k izolaci aplikací spuštěných na stejném počítači. Každá aplikace je načtena jako samostatný proces, který ji izoluje od jiných aplikací spuštěných na stejném počítači.  
   
- Aplikace jsou izolovány. vzhledem k tomu, že jsou adresy paměti procesu relativní; ukazatel paměti předaný z jednoho procesu nelze použít v jakékoli smysluplný způsobem tento cílový proces. Kromě toho je možné volat přímo mezi dvěma procesy. Místo toho musíte použít proxy servery, které poskytují úroveň dereference.  
+ Aplikace jsou izolovány vzhledem k tomu, že adresy paměti jsou procesně relativní; ukazatel paměti předaný z jednoho procesu nelze žádným smysluplným způsobem v cílovém procesu. Kromě toho nemůžete provádět přímá volání mezi dvěma procesy. Místo toho musíte použít proxy servery, které zajišťují určitou úroveň dereference.  
   
- Spravovaný kód musí být předán procesem ověření před spuštěním (pokud správce má oprávnění k přeskočení ověření). Proces ověření určuje, jestli kód se můžete pokusit o přístup k paměti neplatné adresy nebo provádět jiné akce, který by mohl způsobit procesu, ve kterém je spuštěna nemůže pracovat správně. Kód, který projde testem ověření se říká, že bezpečnost typů. Schopnost ověřit kód jako bezpečnost typů umožňuje modul common language runtime poskytovat tak skvělou úroveň izolace jako hranice procesu a v mnohem nižší výkon.  
+ Spravovaný kód musí být předán skrz ověřovací proces před spuštěním (pokud správce udělil oprávnění k přeskočení ověření). Ověřovací proces určuje, zda kód může pokusit o přístup k neplatné adrese paměti nebo provede nějakou jinou akci, která by mohla způsobit procesu, ve kterém je spuštěna nesprávné fungování. Kód, který projde ověřovacím testem je označen jako typově bezpečný. Schopnost ověřit kód jako typově bezpečný umožňuje poskytovat tak skvělou úroveň izolace, jako je hranice procesu a za mnohem nižší výkon, modul common language runtime.  
   
- Aplikační domény zadejte maximalizace zabezpečení a všestranné jednotka zpracování, který modul common language runtime můžete použít k zajištění izolace mezi aplikacemi. Několik domén aplikace můžete spustit v jediném procesu se stejnou úrovní izolace, která by existovat v oddělených procesech, ale bez další režie volání mezi procesy nebo přepínání mezi procesy. Umožňuje spouštění více aplikací v rámci jednoho procesu výrazně zlepšuje škálovatelnost serveru.  
+ Aplikační domény poskytují bezpečnější a všestrannější jednotky zpracování, které modul common language runtime můžete použít k poskytnutí izolace mezi aplikacemi. Můžete spustit několik domén aplikace v jediném procesu se stejnou úrovní izolace, která by existovala v oddělených procesech, ale bez další režie mezi procesní volání nebo přepínání mezi procesy. Umožňuje spustit několik aplikací v rámci jediného procesu výrazně zvyšuje škálovatelnost serveru.  
   
- Izolace aplikací je také důležité pro zabezpečení aplikací. Ovládací prvky můžete například spustit z několika webových aplikací v jediném procesu prohlížeče tak, že ovládací prvky přístup k datům a prostředkům.  
+ Izolování aplikace je také důležité kvůli jejímu zabezpečení. Například můžete spustit ovládací prvky z několika webových aplikací v jediném procesu prohlížeče takovým způsobem, že ovládací prvky nelze přistupovat k datům a prostředkům.  
   
- Izolace poskytované aplikační domény má následující výhody:  
+ Izolace poskytovaná aplikačními doménami má následující výhody:  
   
--   Chyby v jedné aplikaci nemůže mít vliv na ostatní aplikace. Protože kód bezpečnost typů nemůže způsobit chyby paměti, používání domén aplikací zajišťuje, že kód spuštěný v jedné doméně nemůže mít vliv na jiné aplikace v procesu.  
+-   Chyby v jedné aplikaci nemůžou ovlivnit jiné aplikace. Vzhledem k tomu, že kód zajišťující bezpečnost typů nemůže způsobit chyby paměti, pomocí aplikačních domén zajišťuje, že kód spuštěný v jedné doméně nemohl ovlivnit jiné aplikace v procesu.  
   
--   Bez zastavení celý proces se dá zastavit jednotlivých aplikací. Používání domén aplikací umožňuje uvolnit kód spuštěný v jedné aplikaci.  
+-   Jednotlivé aplikace mohou být ukončeny bez ukončení celého procesu. Používání domén aplikací umožňuje uvolnit kód spuštěný v jedné aplikaci.  
   
     > [!NOTE]
-    >  Nelze uvolnit samostatná sestavení nebo typy. Pouze úplná doména může být odpojen.  
+    >  Není možné uvolnit samostatná sestavení nebo typy. Pouze úplná doména může být uvolněna.  
   
--   Kód spuštěný v jedné aplikaci nelze přímo přístupového kódu nebo prostředky z jiné aplikace. Modul common language runtime vynucuje tato izolace brání přímá volání mezi objekty v různých doménách aplikace. Objekty, které předávají mezi doménami jsou zkopírovány nebo zpřístupněny pomocí proxy serveru. Pokud je objekt zkopírován, je místní volání objektu. To znamená volající a odkazovaný objekt jsou ve stejné doméně aplikace. Pokud objekt přistupuje prostřednictvím proxy serveru, volání objektu je vzdálený. V takovém případě volající a odkazovaný objekt jsou v různých doménách aplikace. Volání mezi doménami používat stejnou infrastrukturu vzdálené volání jako volání mezi dvěma procesy nebo mezi dvěma počítači. Metadata pro objekt, který se na ně odkazovat jako takový musí být k dispozici pro obě domény aplikace umožňující volání metody, které chcete být kompilována správně. Pokud volání domény nemá přístup k metadatům pro volaný objekt, kompilace může selhat s výjimkou typu **System.IO.FileNotFound**. V tématu [vzdálených objektů](http://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58) další podrobnosti. Tento mechanismus pro určení, jak jsou objekty přístupná napříč doménami je určen podle objektu. Další informace naleznete v tématu <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
+-   Kód spuštěný v jedné aplikaci nemůže přímo přistupovat ke kódu nebo prostředkům jiné aplikace. Modul common language runtime vynucuje tuto izolaci, aby zabránil přímým voláním mezi objekty v různých aplikačních doménách. Objekty, které prochází mezi doménami jsou buď zkopírovány nebo zpřístupněny pomocí proxy serveru. Pokud je objekt zkopírován, volání objektu je lokální. To znamená volající a odkazovaný objekt jsou ve stejné doméně aplikace. Pokud je objekt zpřístupněný prostřednictvím proxy serveru, je volání objektu vzdálené. V takovém případě volající a odkazovaný objekt jsou v různých aplikačních doménách. Volání mezi doménami používat stejnou infrastrukturu vzdáleného volání jako volání mezi dvěma procesy nebo mezi dvěma počítači. Metadata pro objekt, který se odkazuje v důsledku toho musí být k dispozici pro obě domény aplikace. Chcete-li povolit volání metody, které chcete být JIT kompilován správně. Pokud volající doména nemá přístup k metadatům pro volaný objekt, kompilace může selhat s výjimkou typu **System.IO.FileNotFound**. Zobrazit [vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58) další podrobnosti. Mechanismus pro stanovení toho, jak mohou být objekty přístupné napříč doménami je určen objektem. Další informace naleznete v tématu <xref:System.MarshalByRefObject?displayProperty=nameWithType>.  
   
--   Chování kódu je určeno aplikací, ve které běží. Jinými slovy doménu aplikace obsahuje nastavení konfigurace, jako jsou například zásady verze aplikací, umístění žádné vzdálené sestavení, který přistupuje k a informace o tom, kde najít sestavení, která jsou načtena do domény.  
+-   Chování kódu je určeno aplikací, ve kterém běží. Jinými slovy aplikační doména poskytuje nastavení konfigurace, například zásady stanovování verzí aplikace, umístění jakýchkoliv vzdálených sestavení, k nimž přistupuje a informace o tom, kde nalézt sestavení, která jsou načtena do domény.  
   
--   Oprávnění udělená kódu se dá nastavit podle domény aplikace, ve kterém kód běží.  
+-   Oprávnění udělená kódu mohou být řízena domény aplikace, ve kterém kód běží.  
   
   
 ## <a name="application-domains-and-assemblies"></a>Domény a sestavení aplikací  
- Toto téma popisuje vztah mezi doménami aplikací a sestaveními. Předtím, než můžete spustit kód, který obsahuje, je nutné načíst sestavení do domény aplikace. Spuštění Typická aplikace způsobí, že několik sestavení, které mají být načtena do domény aplikace.  
+ Toto téma popisuje vztah mezi doménami aplikací a sestaveními. Předtím, než může spustit kód, který ho obsahuje, je nutné načíst sestavení do domény aplikace. Spuštění Typická aplikace způsobí, že několik sestavení mají být načtena do domény aplikace.  
   
- Způsob, jakým je načteno sestavení určuje, zda jeho v běhu (JIT) zkompilovaný kód může sdílet více domén aplikací v procesu, a zda může být uvolněna z procesu sestavení.  
+ Způsob, jakým je sestavení načteno Určuje, zda jeho just-in-time (JIT) kompilaci kódu může být sdílen více aplikačními doménami v procesu, a zda může být uvolněna z procesu sestavení.  
   
--   Pokud je sestavení načteno-neutrální, udělte všechny domény aplikace, které sdílejí stejné zabezpečení sady můžete sdílet stejný kód kompilována, což snižuje velikost paměti požadované aplikací. Však sestavení může nikdy být uvolněna z procesu.  
+-   Pokud je sestavení načteno jako doménově neutrální, všechny aplikační domény, které sdílejí stejné zabezpečení udělují sady můžete sdílet stejný kód zkompilovaný pomocí kompilátoru JIT, který je sníženo množství paměti požadované aplikací. Nicméně sestavení může nikdy být uvolněna z procesu.  
   
--   Pokud sestavení není načteno-neutrální, musí být kompilována v každé doméně aplikace, ve kterém je načtena. Sestavení však může být uvolněna z procesu podle uvolnění všechny aplikační domény, ve kterých je načtena.  
+-   Pokud sestavení není načteno jako doménově neutrální, musí být JIT kompilován v každé aplikační doméně, ve které je načten. Sestavení však může být uvolněna z procesu uvolnění všech aplikačních doménách, ve kterých je načíst.  
   
- Hostitel modulu runtime určuje, zda se načíst sestavení jako neutrální, jakmile se načte modul runtime do procesu. Pro spravované aplikace, použijte <xref:System.LoaderOptimizationAttribute> atribut metodu vstupní bod pro proces a zadejte hodnotu od přidruženého <xref:System.LoaderOptimization> výčtu. Pro nespravované aplikace, které jsou hostiteli modul common language runtime zadejte odpovídající příznak při volání [CorBindToRuntimeEx – funkce](../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) metoda.  
+ Hostitelský modul runtime určuje, jestli se má načíst sestavení jako doménově neutrální, když ho načítá modul runtime do procesu. Spravované aplikace, použijte <xref:System.LoaderOptimizationAttribute> atribut do metody vstupního bodu pro proces a zadejte hodnotu od přidruženého <xref:System.LoaderOptimization> výčtu. Nespravované aplikace, které jsou hostiteli společného jazykového modulu runtime, zadejte odpovídající příznak při volání [CorBindToRuntimeEx – funkce](../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md) metody.  
   
- Existují tři možnosti pro načtení domény jazykově neutrální sestavení:  
+ Existují tři možnosti načtení doménově neutrální sestavení:  
   
-- <xref:System.LoaderOptimization.SingleDomain?displayProperty=nameWithType> načte žádné sestavení jako jazykově neutrální, s výjimkou Mscorlib, které je vždy načteno domény jazykově neutrální. Toto nastavení se nazývá jednu doménu, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.
+- <xref:System.LoaderOptimization.SingleDomain?displayProperty=nameWithType> nenačítá žádné sestavení jako doménově neutrální, s výjimkou Mscorlib, které je vždy načteno jako doménově neutrální. Toto nastavení se nazývá jediná doména, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.
 
-- <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> načte všechna sestavení jako domény jazykově neutrální. Toto nastavení použijte, pokud je v procesu, všechny spouští stejný kód více domén aplikací.
+- <xref:System.LoaderOptimization.MultiDomain?displayProperty=nameWithType> načte všechna sestavení jako doménově neutrální. Toto nastavení použijte, pokud existuje více domén aplikace v procesu, z nichž všechny spustit stejný kód.
 
-- <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType> načte sestavení se silným názvem jako neutrální, pokud jejich a všechny jejich závislosti byly nainstalovány v globální mezipaměti sestavení. Další sestavení jsou načtena a kompilována samostatně pro každou doménu aplikace, ve kterém jsou načteny a proto mohou být uvolněna z procesu. Pomocí tohoto nastavení při spuštění více než jednu aplikaci ve stejném procesu, nebo pokud máte směs sestavení, které jsou sdíleny mnoho aplikační domény a sestavení, které musí být uvolněna z procesu.
+- <xref:System.LoaderOptimization.MultiDomainHost?displayProperty=nameWithType> načte sestavení se silným názvem jako doménově neutrální, pokud byly nainstalovány a jejich závislosti v globální mezipaměti sestavení. Jiná sestavení jsou načtena a JIT kompilován samostatně pro každou doménu aplikace, ve kterém jsou načteny a proto mohou být uvolněna z procesu. Pomocí tohoto nastavení při spuštění více než jednu aplikaci ve stejném procesu, nebo pokud máte různé sestavení, které sdílí mnoho aplikačních doménách a sestavení, které musí být uvolněna z procesu.
   
- Kompilována kód nemůže být sdílen sestavení kontextu, pomocí <xref:System.Reflection.Assembly.LoadFrom%2A> metodu <xref:System.Reflection.Assembly> třídy, nebo z obrazů pomocí přetížení <xref:System.Reflection.Assembly.Load%2A> metoda, která zadejte bajtová pole.  
+ Nelze sdílet kód zkompilovaný kompilátorem JIT pro sestavení, které načítají do kontextu načtení z pomocí <xref:System.Reflection.Assembly.LoadFrom%2A> metodu <xref:System.Reflection.Assembly> třídy nebo načíst z imagí pomocí přetížení <xref:System.Reflection.Assembly.Load%2A> metody, které specifikují pole bajtů.  
   
- Sestavení, které byly zkompilovány do nativního kódu pomocí [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) lze sdílet mezi doménami aplikací, v případě, že jsou načtená domény jazykově neutrální prvním načtení do procesu.  
+ Sestavení, která byla zkompilována do nativního kódu s použitím [Ngen.exe (Generátor nativních obrázků)](../../../docs/framework/tools/ngen-exe-native-image-generator.md) je možné sdílet mezi doménami aplikace, že jsou načtena jako doménově neutrální prvním načtením do procesu.  
   
- Kompilována kód pro sestavení, které obsahuje vstupní bod aplikace je sdílet pouze v případě, že je možné sdílet jeho závislé součásti.  
+ Kód zkompilovaný kompilátorem JIT pro sestavení, který obsahuje vstupní bod aplikace se sdílí jenom v případě, že je možné sdílet jeho závislosti.  
   
- Domény jazykově neutrální sestavení může být kompilována více než jednou. Například když zabezpečení udělit nastaví dvě aplikace domény se liší, se nemohou sdílet stejný kód kompilována. Každá kopie sestavení kompilována však lze sdílet s ostatními doménami aplikací, které mají udělenou stejnou sadu.  
+ Sestavení nezávislá na doméně může být JIT kompilován více než jednou. Například při zabezpečení udělit sady z obou aplikačních doménách se liší, nemůžou ale sdílet stejný kód zkompilovaný kompilátorem JIT. Každá kopie JIT kompilaci sestavení však, mohou být sdíleny s dalšími doménami aplikace, které mají stejná sada udělení oprávnění.  
   
- Pokud se rozhodnete, jestli se má načíst sestavení jako neutrální, je nutné provést kompromis mezi snižuje využití paměti a dalších faktorů výkonu.  
+ Při rozhodování, jestli se má načíst sestavení jako doménově neutrální, je třeba kompromis mezi snížení využití paměti a dalších faktorů výkonu.  
   
--   Přístup k datům statickou a metody je pomalejší pro domény jazykově neutrální sestavení z důvodu nutnosti izolovat sestavení. Každou doménu aplikace, který přistupuje k sestavení musí mít samostatnou kopii statických dat, aby se zabránilo odkazy na objekty v statických polí překračování hranic domén. V důsledku toho modul runtime obsahuje další logiku k nasměrování volajícího k příslušné kopii statických dat nebo metoda. Tato dodatečná logika zpomaluje volání.  
+-   Přístup ke statickým datům a metodám je kvůli potřebě izolovat sestavení pomalejší pro sestavení jako doménově neutrální. Každá doména aplikace, který přistupuje k sestavení musí mít samostatnou kopii statická data, aby se zabránilo odkazy na objekty v statická pole z přes hranice domén. V důsledku toho modul runtime obsahuje další logiku ke směrování volajícímu odpovídající kopii statická data nebo metody. Tuto logiku navíc může zpomalit volání.  
   
--   Všechny závislosti sestavení musí být umístěn a načtou při sestavení je načteno-neutrální, protože závislost, kterou nelze načíst domény jazykově neutrální brání sestavení načítá domény jazykově neutrální.  
+-   Všechny závislosti sestavení musí být umístěn a načíst, když je sestavení načteno jako doménově neutrální, protože závislost, která nemůže být načtena jako doménově neutrální, brání sestavení jsou načtena jako doménově neutrální.  
   
 ## <a name="application-domains-and-threads"></a>Domény aplikace a vlákna  
- Domény aplikace tvoří hranici izolace zabezpečení, správy verzí, spolehlivost a uvolnění spravovaného kódu. Vlákno je konstrukce operační systém používá modul common language runtime ke spouštění kódu. Všechny spravovaného kódu v době běhu je načteno do domény aplikace a spustí jeden nebo více spravovaných vláknech.  
+ Domény aplikace tvoří hranici izolace zabezpečení, správy verzí, spolehlivost a uvolňování spravovaného kódu. Vlákno je konstrukce operační systém používá modul common language runtime k provádění kódu. Veškerého spravovaného kódu v době běhu, je načteno do domény aplikace a běží na jeden nebo více spravovaných vláken.  
   
- Není k dispozici 1: 1 korelace mezi doménami aplikací a vláken. Několik vláken můžete spustit v jediné doméně aplikace v každém okamžiku a konkrétní vlákno není omezeno na jediné doméně aplikace. To znamená jsou volně hranicemi aplikační domény; vláken nové vlákno se nevytvoří pro každou doménu aplikace.  
+ Není k dispozici 1: 1 korelace mezi doménami aplikace a vlákna. V jediné doméně aplikace v daném okamžiku můžete spustit několik vláken a konkrétní vlákno nejsou omezené na jedné aplikace domény aplikace. To znamená, že jsou zdarma přes hranice aplikační domény; vláken nové vlákno není vytvořena pro každou doménu aplikace.  
   
- V každém okamžiku spustí každých vlákno domény aplikace. Nula, jednu nebo více vláken, může být spuštěno v libovolné doméně aplikace. Čas spuštění uchovává informace o v doménách, které aplikace běží. Můžete vyhledat domény, ve kterém je prováděna vlákno kdykoli voláním <xref:System.Threading.Thread.GetDomain%2A?displayProperty=nameWithType> metoda.  
+ V daném okamžiku každé vlákno spustí v doméně aplikace. Žádného, jednoho nebo více vláken může být spuštěno v libovolné doméně aplikace. Čas spuštění uchovává informace o která vlákna jsou spuštěny v které domény aplikace. Můžete najít doménu, ve kterém je vlákno provádění v každém okamžiku voláním <xref:System.Threading.Thread.GetDomain%2A?displayProperty=nameWithType> metody.  
   
-### <a name="application-domains-and-cultures"></a>Aplikační domény a kultury  
- Jazykové verze, která je reprezentována <xref:System.Globalization.CultureInfo> objektu, je přidružen vláken. Jazyková verze, která souvisí s aktuálně prováděné vlákno pomocí můžete získat <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnost a můžete získat nebo nastavit jazykovou verzi, která souvisí s aktuálně prováděné vlákno pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost. Pokud jazykovou verzi, která souvisí s vlákno je pomocí explicitně nastavená <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost, pokračuje má být přidružena k této přístup z více vláken, když vlákno překračuje hranice domény aplikace. Jinak hodnota jazykové verze, která souvisí s vlákno v každém okamžiku je dáno hodnotu <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> vlastnost v doméně aplikace, ve kterém je prováděna vlákno:  
+### <a name="application-domains-and-cultures"></a>Aplikační domény a jazykové verze  
+ Jazykové verze, která je reprezentována <xref:System.Globalization.CultureInfo> objektu, je spojen s vlákny. Můžete získat jazykovou verzi, která souvisí s aktuálně spuštěné vlákno s použitím <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti kde můžete získat nebo nastavit jazykovou verzi, která souvisí s aktuálně spuštěné vlákno s použitím <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost. Pokud jazykovou verzi, která souvisí s vláknem explicitně nastavené pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost, pokračuje souviset s tímto vláknem po vlákno překročí hranice domény aplikace. V opačném případě určení jazykové verze, která souvisí s vláknem v daném okamžiku hodnotou <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> vlastnost v aplikační doméně, ve kterém je spuštěn vlákna:  
   
--   Pokud je hodnota vlastnosti není `null`, jazykovou verzi, která je vrácena vlastností souvisí s vlákno (a proto vrácený <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti).  
+-   Pokud hodnota vlastnosti není `null`, jazykovou verzi, která je vrácena vlastností je přidružené vlákno (a tedy vrácené <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti).  
   
--   Pokud je hodnota vlastnosti `null`, je přidružen vlákno aktuální systémovou kulturu.  
+-   Pokud je hodnota vlastnosti `null`, je spojen s vláknem aktuální systémovou kulturu.  
   
 ## <a name="programming-with-application-domains"></a>Programování pomocí domén aplikace  
- Aplikační domény jsou obvykle vytvoří a manipulovat prostřednictvím kódu programu modulu runtime. Ale někdy aplikační program také chtít pracovat s aplikační domény. Programu aplikace může například načíst komponentu aplikace do domény, aby mohli mít za následek uvolnění domény (a součástí) bez nutnosti zastavení celou aplikaci.  
+ Aplikační domény jsou obvykle vytvořit a spravovat prostřednictvím kódu programu pomocí hostitelská prostředí modulu runtime. Ale někdy programu aplikace může být také vhodné pro práci s doménami aplikace. Programu aplikace může například načíst součásti do domény, aby bylo možné uvolnění domény aplikace (a komponenta) bez nutnosti zastavení celé aplikace.  
   
- <xref:System.AppDomain> Je programovací rozhraní pro aplikační domény. Tato třída obsahuje metody pro vytvoření a uvolnění domén, vytváření instancí typy v doménách a k registraci různých upozornění, jako je například uvolnění domény aplikace. Následující tabulka uvádí běžně používané <xref:System.AppDomain> metody.  
+ <xref:System.AppDomain> Je programové rozhraní do domény aplikace. Tato třída obsahuje metody pro vytvoření a uvolnění domény, chcete-li vytvořit instance typů v doménách a k registraci pro různá upozornění, jako je například uvolnění domény aplikace. Následující tabulce jsou uvedeny běžně používané <xref:System.AppDomain> metody.  
   
-|Doména AppDomain – metoda|Popis|  
+|Metoda třídy AppDomain|Popis|  
 |----------------------|-----------------|  
-|<xref:System.AppDomain.CreateDomain%2A>|Vytvoří novou doménu aplikace. Je doporučeno používat přetížení této metody, která určuje <xref:System.AppDomainSetup> objektu. Toto je upřednostňovaný způsob, jak nastavit vlastnosti novou doménu, jako je například základ cesty aplikace nebo kořenový adresář pro aplikaci. umístění konfiguračního souboru pro doménu; a cestu vyhledávání, která je modul common language runtime sloužící k načtení sestavení do domény.|  
-|<xref:System.AppDomain.ExecuteAssembly%2A> A <xref:System.AppDomain.ExecuteAssemblyByName%2A>|Spustí sestavení v doméně aplikace. Toto je metoda instance, takže ho můžete použít ke spuštění kódu v jiné doméně aplikace, ke které máte odkaz.|  
-|<xref:System.AppDomain.CreateInstanceAndUnwrap%2A>|Vytvoří instanci zadaného typu v doméně aplikace a vrátí proxy server. Tuto metodu použijte, chcete-li se vyhnout načtení sestavení obsahující vytvořený typ do volajícího sestavení.|  
-|<xref:System.AppDomain.Unload%2A>|Provede řádné vypnutí domény. Doména aplikace není odpojen, dokud všechny podprocesy spuštěné v doméně byla buď zastavena nebo již nejsou v doméně.|  
+|<xref:System.AppDomain.CreateDomain%2A>|Vytvoří novou doménu aplikace. Je doporučeno používat přetížení této metody, které určuje <xref:System.AppDomainSetup> objektu. Toto je upřednostňovaný způsob, jak nastavit vlastnosti nové domény, jako je například základ cesty aplikace nebo kořenového adresáře pro aplikaci. umístění konfiguračního souboru pro domény. a vyhledávací cestu, modul common language runtime, je použít k načtení sestavení do domény.|  
+|<xref:System.AppDomain.ExecuteAssembly%2A> a <xref:System.AppDomain.ExecuteAssemblyByName%2A>|Spustí sestavení v doméně aplikace. Toto je metoda instance, takže ho můžete použít ke spouštění kódu vytvořeného v jiné doméně aplikace, ke kterému budete mít odkaz na.|  
+|<xref:System.AppDomain.CreateInstanceAndUnwrap%2A>|Vytvoří instanci zadaného typu v aplikační doméně a vrátí proxy server. Pomocí této metody můžete předejít sestavení obsahující typ vytvořeného do volajícího sestavení.|  
+|<xref:System.AppDomain.Unload%2A>|Provádí řádné vypnutí domény. Doména aplikace není uvolněn, dokud všechna vlákna spuštěná v doméně, byla buď zastavena nebo už nejsou v doméně.|  
   
 > [!NOTE]
->  Modul common language runtime nepodporuje serializaci globálních metod, takže delegáti nelze použít k provádění globálních metod v jiných doménách aplikace.  
+>  Modul common language runtime nepodporuje serializace globálních metod, takže delegáty nelze použít k provedení globálních metod v jiných doménách aplikace.  
   
- Nespravovaná rozhraní popsané v modulu common language runtime hostování specifikace rozhraní také poskytnout přístup k aplikační domény. Modul runtime hostitelů můžete použít rozhraní z nespravovaného kódu k vytvoření a získání přístupu k doménám aplikace v rámci procesu.  
+ Nespravovaná rozhraní, je popsáno v modulu common language runtime hostování specifikace rozhraní také poskytnout přístup k aplikační domény. Hostitelská prostředí modulu runtime slouží k vytvoření a získat přístup do domény aplikace uvnitř procesu rozhraní z nespravovaného kódu.  
   
 ## <a name="complusloaderoptimization-environment-variable"></a>COMPLUS_LoaderOptimization – proměnná prostředí  
- Proměnná prostředí, která nastaví výchozí zásady optimalizace zavaděč spustitelný soubor aplikace.  
+ Proměnné prostředí, která nastaví výchozí zásady optimalizace zavaděče spustitelného souboru.  
   
 ### <a name="syntax"></a>Syntaxe  
   
@@ -136,21 +136,21 @@ COMPLUS_LoaderOptimization = 1
 ```  
   
 ### <a name="remarks"></a>Poznámky  
- Typická aplikace načte několik sestavení do domény aplikace, aby bylo možné spustit kód, který obsahují.  
+ Typická aplikace několik sestavení načte do domény aplikace předtím, než mohou být provedeny v kódu, které obsahují.  
   
- Způsob, jakým je načteno sestavení určuje, zda jeho v běhu (JIT) zkompilovaný kód může sdílet více domén aplikací v procesu.  
+ Způsob, jakým je načteno sestavení určuje, zda jeho just-in-time (JIT) kompilaci kódu může být sdílen více aplikačními doménami v procesu.  
   
--   Pokud je sestavení načteno-neutrální, všechny domény aplikace, které sdílejí stejnou sadu grant zabezpečení můžete sdílet stejný kód kompilována. Tím se snižuje velikost paměti požadované aplikací.  
+-   Pokud je sestavení načteno jako doménově neutrální, všechny aplikační domény, které sdílejí stejnou sadu zabezpečení můžete sdílet stejný kód zkompilovaný kompilátorem JIT. Tím je sníženo množství paměti požadované aplikací.  
   
--   Pokud sestavení není načteno-neutrální, musí být kompilována v každé doméně aplikace, ve kterém je načten a zavaděč nesmí sdílet interním prostředkům napříč doménami aplikací.  
+-   Pokud sestavení není načteno jako doménově neutrální, musí být JIT kompilován v každé aplikační doméně, ve které je načten a zavaděč nesmí sdílet interní prostředky mezi doménami aplikace.  
   
- Pokud nastavíte hodnotu 1, vynutí příznak COMPLUS_LoaderOptimization prostředí runtime hostitele k načtení všech sestavení způsobem domény neutrální známé jako SingleDomain. SingleDomain načte žádné sestavení jako jazykově neutrální, s výjimkou Mscorlib, které je vždy načteno domény jazykově neutrální. Toto nastavení se nazývá jednu doménu, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.  
+ Při natavení na 1 příznak prostředí COMPLUS_LoaderOptimization vynutí hostitelský modul runtime načtení všech sestavení způsobem domény neutrální označované jako SingleDomain. SingleDomain nenačítá žádné sestavení jako doménově neutrální, s výjimkou Mscorlib, které je vždy načteno jako doménově neutrální. Toto nastavení se nazývá jediná doména, protože se běžně používá, když na hostiteli běží pouze jednu aplikaci v procesu.  
   
 > [!CAUTION]
->  Příznak COMPLUS_LoaderOptimization prostředí je určen k použití v rámci diagnostiky a testovací scénáře. S příznak zapnutý, můžete způsobit vážné zpomalování a zvýšit využití paměti.  
+>  Příznak prostředí COMPLUS_LoaderOptimization byl navržen pro použití v rámci diagnostiky a testovací scénáře. S se zapnutým příznakem můžete způsobit vážné zpomalování a zvýšení využití paměti.  
   
 ### <a name="code-example"></a>Příklad kódu  
- Vynutit všechna sestavení není možné načíst jako domény jazykově neutrální spustit službu dosáhnout připojením `COMPLUS_LoaderOptimization=1` víceřetězcovou hodnotu v prostředí v klíči HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN.  
+ K vynucení všechna sestavení zavedeny jako doménově neutrální pro IISADMIN, připojte service můžete dosáhnout přidáním `COMPLUS_LoaderOptimization=1` víceřetězcovou hodnotu prostředí v klíči HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN.  
   
 ```  
 Key = HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN  
