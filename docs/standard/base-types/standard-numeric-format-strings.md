@@ -19,11 +19,11 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7f304adb567e3568fb4624b3c5e9ec4585009a05
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403186"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43565739"
 ---
 # <a name="standard-numeric-format-strings"></a>Standardní řetězce formátu čísla
 
