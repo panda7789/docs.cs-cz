@@ -16,19 +16,19 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: fe93b7ee28db8151345871b0dd716d41227ed565
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: 04df65a29584f7e2de44389d815b915a541e38f0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33462296"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43489796"
 ---
-# <a name="spawnderivedclass-function"></a><span data-ttu-id="22f32-103">SpawnDerivedClass – funkce</span><span class="sxs-lookup"><span data-stu-id="22f32-103">SpawnDerivedClass function</span></span>
-<span data-ttu-id="22f32-104">Vytvoří objekt nově odvozených tříd ze zadaného objektu.</span><span class="sxs-lookup"><span data-stu-id="22f32-104">Creates a newly derived class object from a specified object.</span></span>    
+# <a name="spawnderivedclass-function"></a><span data-ttu-id="73b29-103">SpawnDerivedClass – funkce</span><span class="sxs-lookup"><span data-stu-id="73b29-103">SpawnDerivedClass function</span></span>
+<span data-ttu-id="73b29-104">Vytvoří objekt nově odvozené třídy ze zadaného objektu.</span><span class="sxs-lookup"><span data-stu-id="73b29-104">Creates a newly derived class object from a specified object.</span></span>    
   
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
   
-## <a name="syntax"></a><span data-ttu-id="22f32-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="22f32-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="73b29-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="73b29-105">Syntax</span></span>  
   
 ```  
 HRESULT SpawnDerivedClass (
@@ -38,47 +38,47 @@ HRESULT SpawnDerivedClass (
    [out] IWbemClassObject**  ppNewClass); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="22f32-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="22f32-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="73b29-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="73b29-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="22f32-107">[v] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="22f32-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="73b29-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="73b29-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="22f32-108">[v] Ukazatel na [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.</span><span class="sxs-lookup"><span data-stu-id="22f32-108">[in] A pointer to an [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx) instance.</span></span>
+<span data-ttu-id="73b29-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="73b29-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `lFlags`  
-<span data-ttu-id="22f32-109">[v] Vyhrazena.</span><span class="sxs-lookup"><span data-stu-id="22f32-109">[in] Reserved.</span></span> <span data-ttu-id="22f32-110">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="22f32-110">This parameter must be 0.</span></span>
+<span data-ttu-id="73b29-109">[in] Vyhrazená.</span><span class="sxs-lookup"><span data-stu-id="73b29-109">[in] Reserved.</span></span> <span data-ttu-id="73b29-110">Tento parametr musí být 0.</span><span class="sxs-lookup"><span data-stu-id="73b29-110">This parameter must be 0.</span></span>
 
 `ppNewClass`  
-<span data-ttu-id="22f32-111">[out] Obdrží má ukazatel na nový objekt – třída definice.</span><span class="sxs-lookup"><span data-stu-id="22f32-111">[out] Receives the pointer to the new class definition object.</span></span> <span data-ttu-id="22f32-112">Pokud dojde k chybě, nový objekt, který se vrátí, a `ppNewClass` je ponechat beze změny doleva.</span><span class="sxs-lookup"><span data-stu-id="22f32-112">If an error occurs, a new object is not returned, and `ppNewClass` is left unmodified.</span></span> <span data-ttu-id="22f32-113">Jeho hodnota nemůže být `null`.</span><span class="sxs-lookup"><span data-stu-id="22f32-113">Its value cannot be `null`.</span></span>
+<span data-ttu-id="73b29-111">[out] Přijímá ukazatel na nový objekt definice třídy.</span><span class="sxs-lookup"><span data-stu-id="73b29-111">[out] Receives the pointer to the new class definition object.</span></span> <span data-ttu-id="73b29-112">Pokud dojde k chybě, není objekt vrácen, a `ppNewClass` je bez jakýchkoli úprav vlevo.</span><span class="sxs-lookup"><span data-stu-id="73b29-112">If an error occurs, a new object is not returned, and `ppNewClass` is left unmodified.</span></span> <span data-ttu-id="73b29-113">Jeho hodnota nemůže být `null`.</span><span class="sxs-lookup"><span data-stu-id="73b29-113">Its value cannot be `null`.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="22f32-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="22f32-114">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="73b29-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="73b29-114">Return value</span></span>
 
-<span data-ttu-id="22f32-115">Následující hodnoty, vrátí tato funkce jsou definovány v *WbemCli.h* soubor hlaviček, případně je možné definovat je jako konstanty ve vašem kódu:</span><span class="sxs-lookup"><span data-stu-id="22f32-115">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="73b29-115">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="73b29-115">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="22f32-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="22f32-116">Constant</span></span>  |<span data-ttu-id="22f32-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="22f32-117">Value</span></span>  |<span data-ttu-id="22f32-118">Popis</span><span class="sxs-lookup"><span data-stu-id="22f32-118">Description</span></span>  |
+|<span data-ttu-id="73b29-116">Konstanta</span><span class="sxs-lookup"><span data-stu-id="73b29-116">Constant</span></span>  |<span data-ttu-id="73b29-117">Hodnota</span><span class="sxs-lookup"><span data-stu-id="73b29-117">Value</span></span>  |<span data-ttu-id="73b29-118">Popis</span><span class="sxs-lookup"><span data-stu-id="73b29-118">Description</span></span>  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | <span data-ttu-id="22f32-119">0x80041001</span><span class="sxs-lookup"><span data-stu-id="22f32-119">0x80041001</span></span> | <span data-ttu-id="22f32-120">Došlo k obecné chybě.</span><span class="sxs-lookup"><span data-stu-id="22f32-120">There has been a general failure.</span></span> |
-| `WBEM_E_INVALID_OPERATION` | <span data-ttu-id="22f32-121">0x80041016</span><span class="sxs-lookup"><span data-stu-id="22f32-121">0x80041016</span></span> | <span data-ttu-id="22f32-122">Neplatná operace, jako například vytvoření třídy z instance, byl požadován.</span><span class="sxs-lookup"><span data-stu-id="22f32-122">An invalid operation, such as spawning a class from an instance, was requested.</span></span> |
-| `WBEM_E_INCOMPLETE_CLASS` | <span data-ttu-id="22f32-123">Třída zdroje byla plně definována nebo zaregistrována Správa systému Windows, tak nové odvozené třídy není povoleno.</span><span class="sxs-lookup"><span data-stu-id="22f32-123">The source class was not completely defined or registered with Windows Management, so a new derived class is not permitted.</span></span> |
-| `WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="22f32-124">0x80041006</span><span class="sxs-lookup"><span data-stu-id="22f32-124">0x80041006</span></span> | <span data-ttu-id="22f32-125">Je k dispozici k dokončení operace není dostatek paměti.</span><span class="sxs-lookup"><span data-stu-id="22f32-125">Not enough memory is available to complete the operation.</span></span> |
-| `WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="22f32-126">0x80041008</span><span class="sxs-lookup"><span data-stu-id="22f32-126">0x80041008</span></span> | <span data-ttu-id="22f32-127">`ppNewClass` je `null`.</span><span class="sxs-lookup"><span data-stu-id="22f32-127">`ppNewClass` is `null`.</span></span> |
-| `WBEM_S_NO_ERROR` | <span data-ttu-id="22f32-128">0</span><span class="sxs-lookup"><span data-stu-id="22f32-128">0</span></span> | <span data-ttu-id="22f32-129">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="22f32-129">The function call was successful.</span></span>  |
+| `WBEM_E_FAILED` | <span data-ttu-id="73b29-119">0x80041001</span><span class="sxs-lookup"><span data-stu-id="73b29-119">0x80041001</span></span> | <span data-ttu-id="73b29-120">Obecné selhání došlo.</span><span class="sxs-lookup"><span data-stu-id="73b29-120">There has been a general failure.</span></span> |
+| `WBEM_E_INVALID_OPERATION` | <span data-ttu-id="73b29-121">0x80041016</span><span class="sxs-lookup"><span data-stu-id="73b29-121">0x80041016</span></span> | <span data-ttu-id="73b29-122">Neplatná operace, jako je například vytvoření třídy z instance, byl požadován.</span><span class="sxs-lookup"><span data-stu-id="73b29-122">An invalid operation, such as spawning a class from an instance, was requested.</span></span> |
+| `WBEM_E_INCOMPLETE_CLASS` | <span data-ttu-id="73b29-123">Zdrojovou třídu se není úplně definované nebo zaregistrován prostřednictvím služby Windows Management, tak novou odvozenou třídu není povolený.</span><span class="sxs-lookup"><span data-stu-id="73b29-123">The source class was not completely defined or registered with Windows Management, so a new derived class is not permitted.</span></span> |
+| `WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="73b29-124">0x80041006</span><span class="sxs-lookup"><span data-stu-id="73b29-124">0x80041006</span></span> | <span data-ttu-id="73b29-125">Nedostatek paměti je k dispozici k dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="73b29-125">Not enough memory is available to complete the operation.</span></span> |
+| `WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="73b29-126">0x80041008</span><span class="sxs-lookup"><span data-stu-id="73b29-126">0x80041008</span></span> | <span data-ttu-id="73b29-127">`ppNewClass` je `null`.</span><span class="sxs-lookup"><span data-stu-id="73b29-127">`ppNewClass` is `null`.</span></span> |
+| `WBEM_S_NO_ERROR` | <span data-ttu-id="73b29-128">0</span><span class="sxs-lookup"><span data-stu-id="73b29-128">0</span></span> | <span data-ttu-id="73b29-129">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="73b29-129">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="22f32-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="22f32-130">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="73b29-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="73b29-130">Remarks</span></span>
 
-<span data-ttu-id="22f32-131">Tato funkce zabalí volání [IWbemClassObject::SpawnDerivedClass](https://msdn.microsoft.com/library/aa391436(v=vs.85).aspx) metoda.</span><span class="sxs-lookup"><span data-stu-id="22f32-131">This function wraps a call to the [IWbemClassObject::SpawnDerivedClass](https://msdn.microsoft.com/library/aa391436(v=vs.85).aspx) method.</span></span>
+<span data-ttu-id="73b29-131">Tato funkce zalamuje volání na [IWbemClassObject::SpawnDerivedClass](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone) metody.</span><span class="sxs-lookup"><span data-stu-id="73b29-131">This function wraps a call to the [IWbemClassObject::SpawnDerivedClass](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-clone) method.</span></span>
 
-<span data-ttu-id="22f32-132">`ptr` musí být definice třídy, který se stane nadřazené třídy objektu vytvořeny.</span><span class="sxs-lookup"><span data-stu-id="22f32-132">`ptr` must be a class definition that becomes the parent class of the spawned object.</span></span> <span data-ttu-id="22f32-133">Vráceného objektu se změní na podtřídy aktuálního objektu.</span><span class="sxs-lookup"><span data-stu-id="22f32-133">The returned object becomes a subclass of the current object.</span></span>
+<span data-ttu-id="73b29-132">`ptr` musí být definice třídy, která se stává nadřazené třídu vytvořenému objektu.</span><span class="sxs-lookup"><span data-stu-id="73b29-132">`ptr` must be a class definition that becomes the parent class of the spawned object.</span></span> <span data-ttu-id="73b29-133">Vrácený objekt se stane podtřídu aktuálního objektu.</span><span class="sxs-lookup"><span data-stu-id="73b29-133">The returned object becomes a subclass of the current object.</span></span>
 
-<span data-ttu-id="22f32-134">Nový objekt vrácený v `ppNewClass` automaticky stane podtřídy aktuálního objektu.</span><span class="sxs-lookup"><span data-stu-id="22f32-134">The new object returned in `ppNewClass` automatically becomes a subclass of the current object.</span></span> <span data-ttu-id="22f32-135">Toto chování nelze přepsat.</span><span class="sxs-lookup"><span data-stu-id="22f32-135">This behavior cannot be overridden.</span></span> <span data-ttu-id="22f32-136">Není k dispozici žádnou jinou metodu, pomocí kterého lze vytvořit podtřídy (odvozené třídy).</span><span class="sxs-lookup"><span data-stu-id="22f32-136">There is no other method by which subclasses (derived classes) can be created.</span></span>
+<span data-ttu-id="73b29-134">Nový objekt vrácený v `ppNewClass` automaticky stane podtřídu aktuálního objektu.</span><span class="sxs-lookup"><span data-stu-id="73b29-134">The new object returned in `ppNewClass` automatically becomes a subclass of the current object.</span></span> <span data-ttu-id="73b29-135">Toto chování nelze přepsat.</span><span class="sxs-lookup"><span data-stu-id="73b29-135">This behavior cannot be overridden.</span></span> <span data-ttu-id="73b29-136">Neexistuje žádná další metoda, podle kterého je možné vytvořit podtřídy (odvozené třídy).</span><span class="sxs-lookup"><span data-stu-id="73b29-136">There is no other method by which subclasses (derived classes) can be created.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="22f32-137">Požadavky</span><span class="sxs-lookup"><span data-stu-id="22f32-137">Requirements</span></span>  
- <span data-ttu-id="22f32-138">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="22f32-138">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="73b29-137">Požadavky</span><span class="sxs-lookup"><span data-stu-id="73b29-137">Requirements</span></span>  
+ <span data-ttu-id="73b29-138">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="73b29-138">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="22f32-139">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="22f32-139">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="73b29-139">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="73b29-139">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="22f32-140">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="22f32-140">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="73b29-140">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="73b29-140">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="22f32-141">Viz také</span><span class="sxs-lookup"><span data-stu-id="22f32-141">See also</span></span>  
-[<span data-ttu-id="22f32-142">Rozhraní WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="22f32-142">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="73b29-141">Viz také:</span><span class="sxs-lookup"><span data-stu-id="73b29-141">See also</span></span>  
+[<span data-ttu-id="73b29-142">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="73b29-142">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
