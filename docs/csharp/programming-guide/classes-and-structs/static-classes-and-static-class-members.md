@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: f3e64d975d2845d8317b37f43c3811af6be03b55
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 60a75946d30b1555aea01507d846e790dd00f767
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468694"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43541487"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 A [statické](../../../csharp/language-reference/keywords/static.md) třída je v podstatě stejný jako nestatické třídy, ale je jedním z rozdílů: Nelze vytvořit instanci statické třídy. Jinými slovy, nelze použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo vytvoření proměnné typu třídy. Protože neexistuje žádná instance proměnné, přístup jako objekty její členové statické třídy pomocí samotný název třídy. Například, pokud mají statickou třídu, která se jmenuje `UtilityClass` , který má veřejnou metodu s názvem `MethodA`, zavolejte metodu, jak je znázorněno v následujícím příkladu:  
@@ -86,10 +86,11 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [static](../../../csharp/language-reference/keywords/static.md)  
- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
- [class](../../../csharp/language-reference/keywords/class.md)  
- [Statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md)  
- [Konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [static](../../../csharp/language-reference/keywords/static.md)  
+- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+- [class](../../../csharp/language-reference/keywords/class.md)  
+- [Statické konstruktory](../../../csharp/programming-guide/classes-and-structs/static-constructors.md)  
+- [Konstruktory instancí](../../../csharp/programming-guide/classes-and-structs/instance-constructors.md)

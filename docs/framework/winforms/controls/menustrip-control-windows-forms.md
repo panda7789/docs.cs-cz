@@ -6,11 +6,11 @@ helpviewer_keywords:
 - menus
 ms.assetid: e361bf98-eed8-4ed3-9dfb-5a2e865e3ce6
 ms.openlocfilehash: 03328b324399c7500f2cf3a8b6ab12c843115e29
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43385117"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43539434"
 ---
 # <a name="menustrip-control-windows-forms"></a>MenuStrip – ovládací prvek (Windows Forms)
 Tato aplikace ovládacího prvku skupiny příkazů a jsou snadno přístupné.  

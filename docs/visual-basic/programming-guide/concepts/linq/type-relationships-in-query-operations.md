@@ -12,11 +12,11 @@ helpviewer_keywords:
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
 ms.openlocfilehash: f1084ffcf0b5330185a44eda8721ef2a03413602
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386561"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43541872"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Vztahy typů v operacích dotazu (Visual Basic)
 Proměnné použité v [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotazu operace jsou silného typu a musí být navzájem kompatibilní. Silné typování se používá ve zdroji dat, v samotném dotazu a ve spuštění dotazu. Následující obrázek označuje termíny používané k popisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu. Další informace o části dotazu, naleznete v tématu [základní operace dotazů (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).  

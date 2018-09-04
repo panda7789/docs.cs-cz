@@ -7,40 +7,42 @@ helpviewer_keywords:
 - variables [C#], pointers
 - pointers [C#], * operator
 ms.assetid: 460a813a-4995-44c1-9de2-213b91dc7668
-ms.openlocfilehash: c53026149837681235c6d1001707a25b9c8b40b2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 66f341e193a0f018adb76a40617f85266519e602
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33322949"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43541189"
 ---
 # <a name="how-to-obtain-the-value-of-a-pointer-variable-c-programming-guide"></a>Postupy: Získávání hodnoty proměnné ukazatele (Průvodce programováním v C#)
-Deferenční operátor ukazatel pomocí můžete získat proměnnou v umístění, na kterou ukazatel odkazuje. Výraz má následující podobu, kde `p` je ukazatel typu:  
+Použijte operátor dereference ukazatele k získání proměnnou na umístění, na které odkazuje ukazatel. Výraz používá následující formulář, kde `p` je typ ukazatele:  
   
 ```  
 *p;  
 ```  
   
- Deferenční operátor unární nelze použít na výrazy, které jiného typu než je ukazatel typu. Navíc nelze použít, aby [void](../../../csharp/language-reference/keywords/void.md) ukazatel.  
+ Unární operátor dereference nelze použít ve výrazu typu jiného než typu ukazatel. Navíc na nelze použít [void](../../../csharp/language-reference/keywords/void.md) ukazatele.  
   
- Když použijete deferenční operátor k [null](../../../csharp/language-reference/keywords/null.md) ukazatele, výsledek závisí na implementaci.  
+ Při použití operátoru dereference na [null](../../../csharp/language-reference/keywords/null.md) ukazatelem, výsledek závisí na implementaci.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu, proměnné typu `char` přistupuje pomocí ukazatele různých typů. Všimněte si, že adresa `theChar` se liší z spustit na spustit, protože fyzické adresy přidělené do proměnné, můžete změnit.  
+ V následujícím příkladu se proměnná typu `char` lze přistupovat pomocí ukazatele na různé typy. Všimněte si, že adresa `theChar` spuštění, se liší, protože fyzická adresa přidělené na proměnnou můžete změnit.  
   
  [!code-csharp[csProgGuidePointers#5](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-value-of-a-pointer-variable_1.cs)]  
   
  [!code-csharp[csProgGuidePointers#6](../../../csharp/programming-guide/unsafe-code-pointers/codesnippet/CSharp/how-to-obtain-the-value-of-a-pointer-variable_2.cs)]  
   
- **Hodnota theChar = Z**  
-**Adresa theChar = 12F718**  
-**Hodnota pChar = Z**   
-**Hodnota pinta = 90**    
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
- [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
- [Typy](../../../csharp/language-reference/keywords/types.md)  
- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
- [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)  
- [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)
+**Hodnota theChar = Z**
+**adresu theChar = 12F718**
+**hodnotu pChar = Z**
+**hodnotu pinta = 90**
+
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Výrazy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-expressions.md)  
+- [Typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md)  
+- [Typy](../../../csharp/language-reference/keywords/types.md)  
+- [unsafe](../../../csharp/language-reference/keywords/unsafe.md)  
+- [fixed – příkaz](../../../csharp/language-reference/keywords/fixed-statement.md)  
+- [stackalloc](../../../csharp/language-reference/keywords/stackalloc.md)

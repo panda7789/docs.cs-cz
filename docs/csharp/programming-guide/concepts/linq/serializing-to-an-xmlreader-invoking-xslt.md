@@ -2,12 +2,12 @@
 title: Serializace do třídy XmlReader (vyvolání XSLT) (C#)
 ms.date: 07/20/2015
 ms.assetid: 4cc3ee03-ef4c-429b-a408-fedd10b728cd
-ms.openlocfilehash: 0663bf2e2c83524e94c91f436ca0146f2dcd68ff
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: b1f5bc8bd71036636df9da152c4e364ea5ec6b6e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244020"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43541728"
 ---
 # <a name="serializing-to-an-xmlreader-invoking-xslt-c"></a>Serializace do třídy XmlReader (vyvolání XSLT) (C#)
 Při použití <xref:System.Xml?displayProperty=nameWithType> funkce interoperability [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], můžete použít <xref:System.Xml.Linq.XNode.CreateReader%2A> k vytvoření <xref:System.Xml.XmlReader>. Modul, který čte z tohoto <xref:System.Xml.XmlReader> přečte uzlů ze stromu XML a zpracovává je odpovídajícím způsobem.  
@@ -59,5 +59,6 @@ Console.WriteLine(newTree);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Serializace stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)
+## <a name="see-also"></a>Viz také
+
+- [Serializace stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)
