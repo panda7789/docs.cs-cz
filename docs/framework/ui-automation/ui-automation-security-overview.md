@@ -8,36 +8,36 @@ ms.assetid: 1d853695-973c-48ae-b382-4132ae702805
 author: Xansky
 ms.author: mhopkins
 manager: markl
-ms.openlocfilehash: 293cee72e80e88215fccb3902eb88963814cb2ce
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f55112c5eead082eae10aa50590b915f5049d5a6
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400195"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43565951"
 ---
 # <a name="ui-automation-security-overview"></a>Přehled zabezpečení automatizace uživatelského rozhraní
 > [!NOTE]
->  Tato dokumentace je určena pro rozhraní .NET Framework vývojáře, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] třídy definované v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], najdete v části [rozhraní API systému Windows automatizace: automatizace uživatelského rozhraní](http://go.microsoft.com/fwlink/?LinkID=156746).  
+>  Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  
   
  Tento přehled popisuje model zabezpečení pro [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] v [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)].  
   
 <a name="User_Account_Control"></a>   
 ## <a name="user-account-control"></a>řízení uživatelských účtů  
- Zabezpečení je hlavní fokus [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] a mezi inovace přístup je schopnost uživatelům spustit jako standardní uživatelé (bez oprávnění správce) bez nutně se blokovat spouštění aplikací a služeb, které vyžadují vyšší oprávnění.  
+ Zabezpečení je hlavní fokus [!INCLUDE[TLA#tla_winvista](../../../includes/tlasharptla-winvista-md.md)] a mezi inovace je možnost uživatelů ke spuštění jako standardní uživatelé (bez oprávnění správce) bez nutně se blokovat spouštění aplikací a služeb, které vyžadují vyšší oprávnění.  
   
- V [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)], většina aplikací se dodává s standard nebo token pro správu. Pokud aplikace nemůže být identifikován jako aplikace pro správu, se spustí jako u standardní aplikace ve výchozím nastavení. Předtím, než aplikace identifikovat jako správce může být spuštěn, [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] zobrazí výzvu k souhlasu, a spusťte aplikaci jako zvýšených oprávnění. Řádku souhlasu se zobrazí ve výchozím nastavení, i pokud je uživatel členem místní skupiny Administrators, protože správce spustit jako standardní uživatelé, dokud aplikace nebo součást systému, který vyžaduje pověření správce požádá o oprávnění ke spuštění.  
+ V [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)], většina aplikací jsou součástí standardní nebo token pro správu. Pokud aplikace nelze identifikovat jako aplikace pro správu, se spustí jako standardní aplikace ve výchozím nastavení. Mohou být spuštěny před aplikaci identifikovat jako správce, [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] zobrazí výzvu k souhlasu, spusťte aplikaci jako se zvýšenými oprávněními. Ve výchozím nastavení, se zobrazí výzva k povolení spuštění, i v případě, že uživatel je členem místní skupiny Administrators, protože správce spustit jako standardní uživatele, dokud aplikace nebo součást systému, který vyžaduje přihlašovací údaje pro správu vyžaduje oprávnění ke spuštění.  
   
 <a name="Tasks_Requiring_Higher_Privileges"></a>   
-## <a name="tasks-requiring-higher-privileges"></a>Úlohy, které vyžadují vyšší oprávnění  
- Když se uživatel pokusí provést úlohu, která vyžaduje oprávnění správce, [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] uvede dialogové okno s dotazem uživatele o souhlas s pokračovat. Toto dialogové okno je chráněný před komunikaci mezi procesy, tak, aby škodlivého softwaru nejde simulovat vstup uživatele. Podobně nelze na obrazovce přihlášení k ploše přistupovat normálně jinými procesy.  
+## <a name="tasks-requiring-higher-privileges"></a>Úloh vyžadujících vyšší úrovní oprávnění  
+ Když se uživatel pokusí provést úlohu, která vyžaduje oprávnění správce, [!INCLUDE[TLA2#tla_winvista](../../../includes/tla2sharptla-winvista-md.md)] zobrazí dialogové okno s dotazem uživatele o souhlas, abyste mohli pokračovat. Toto dialogové okno je chránit z komunikace mezi procesy tak, aby škodlivého softwaru nelze simulovat vstup uživatele. Obdobně obrazovky přihlášení k ploše obvykle přístupné s jinými procesy.  
   
- Klienti automatizace uživatelského rozhraní musí komunikovat s jinými procesy, některé z nich pravděpodobně spuštěná na vyšší úrovni oprávnění. Klienti také může potřebovat přístup k systému dialogových oken, které nejsou standardně viditelné pro jiné procesy. Proto [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klientů musí být důvěryhodný systému a musí být spuštěna s zvláštní oprávnění.  
+ Klienti automatizace uživatelského rozhraní, musí komunikovat s dalšími procesy, některé z nich možná běží na vyšší úrovni oprávnění. Klienti můžou potřebovat přístup k systému dialogových oknech, které nejsou obvykle viditelná pro jiné procesy. Proto [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] klientů musí být důvěryhodná systému a musí být spuštěna s zvláštní oprávnění.  
   
- Aby byl důvěryhodný ke komunikaci s aplikací, které běží na vyšší úrovni oprávnění, musí být podepsané aplikace.  
+ Aby byl důvěryhodný ke komunikaci s aplikací běžících na vyšší úrovni oprávnění, musí být podepsané aplikace.  
   
 <a name="Manifest_Files"></a>   
 ## <a name="manifest-files"></a>Soubory manifestu  
- K získání přístupu k systému chráněného [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], aplikace musí být vytvořené s nástroji soubor manifestu, který obsahuje speciální atribut v souboru manifestu. To `uiAccess` atribut je součástí `requestedExecutionLevel` značka, následujícím způsobem:  
+ K získání přístupu k systému chráněné [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)], aplikace musí být sestaveny jako se souborem manifestu, který obsahuje atribut speciální v souboru manifestu. To `uiAccess` atribut je součástí `requestedExecutionLevel` označte následujícím způsobem:  
   
  `<trustInfo xmlns="urn:0073chemas-microsoft-com:asm.v3">`  
   
@@ -57,8 +57,8 @@ ms.locfileid: "33400195"
   
  `</trustInfo>`  
   
- Hodnota `level` atribut v tento kód je pouze příklad.  
+ Hodnota `level` atribut v tomto kódu je pouze příklad.  
   
- `UIAccess` je "false" ve výchozím nastavení; To znamená, pokud je vynechán atribut, nebo pokud neexistuje žádný manifest pro sestavení, aplikace nebude schopen získat přístup k chráněné [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
+ `UIAccess` je ve výchozím nastavení; "false" To znamená, pokud atribut vynecháte nebo pokud neexistuje žádný manifest sestavení, aplikace nebude schopen získat přístup k chráněné [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)].  
   
- Další informace o [!INCLUDE[TLA#tla_longhorn2](../../../includes/tlasharptla-longhorn2-md.md)] zabezpečení, podepisování aplikací a na vytváření sestavení manifesty, najdete v části "Vývojáře osvědčené postupy a pokyny pro aplikace v prostředí nejnižšího" na [MSDN](http://msdn.microsoft.com/library/default.asp?url=/library/dnlong/html/AccProtVista.asp).
+ Další informace o [!INCLUDE[TLA#tla_longhorn2](../../../includes/tlasharptla-longhorn2-md.md)] zabezpečení, o podepisování aplikací a o vytváření manifest sestavení, naleznete v tématu "Pro vývojáře osvědčené postupy a pokyny pro aplikace v prostředí nejnižšího" na [MSDN](https://msdn.microsoft.com/library/default.asp?url=/library/dnlong/html/AccProtVista.asp).

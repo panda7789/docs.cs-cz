@@ -11,11 +11,11 @@ helpviewer_keywords:
 - data type conversion [Visual Basic]
 ms.assetid: 1cdacd21-ba31-4b62-b5be-395e41eeaa17
 ms.openlocfilehash: 026b2a250abfac0782feb0946bc50a94f504f7ed
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404054"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43565112"
 ---
 # <a name="type-conversions-in-visual-basic"></a>Převody typů v jazyce Visual Basic
 Proces změny hodnotu z jednoho datového typu na jiný typ se nazývá *převod*. Převody jsou buď *rozšiřující* nebo *zúžení*, v závislosti na datové kapacity zahrnuté typů. Jsou také *implicitní* nebo *explicitní*, v závislosti na syntaxi ve zdrojovém kódu.  

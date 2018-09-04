@@ -3,11 +3,11 @@ title: Více aktivních sad výsledků (MARS)
 ms.date: 03/30/2017
 ms.assetid: c90ef863-bac7-44cf-adc1-f05c36fcf57d
 ms.openlocfilehash: 67df210fa48c1b72323177b627b17e537f9fb180
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480750"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43564406"
 ---
 # <a name="multiple-active-result-sets-mars"></a>Více aktivních sad výsledků (MARS)
 Více sad aktivní výsledků (MARS) je funkce, která umožňuje spuštění několika dávek na jedno připojení. V předchozích verzích se může provést pouze jednu dávku současně pro jedno připojení. Spuštění několika dávek pomocí MARS neznamená souběžné provádění operací.  

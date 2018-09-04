@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 6432708d-5465-4bd9-bfc2-466742db99cb
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: e39d32a9cc689905bed42f56e4f998bbd8c6e038
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2adb5736cca59d42ab3c62d61513bbfd80a4be04
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33355025"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43565213"
 ---
 # <a name="ltsecuritygt-of-ltbasichttpbindinggt"></a>&lt;security&gt; – &lt;basicHttpBinding&gt;
 Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
@@ -17,7 +17,7 @@ Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/fra
  \<system.ServiceModel>  
 \<vazby >  
 \<basicHttpBinding >  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -35,7 +35,7 @@ Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/fra
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
@@ -47,11 +47,11 @@ Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/fra
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|-Zprávy není zabezpečená při přenosu.|  
-|Přenos|Zabezpečení je k dispozici použití přenosu HTTPS. Protokolu SOAP zprávy jsou zabezpečené pomocí protokolu HTTPS. Služba je ověřen u klienta pomocí certifikátu X.509 služby. Klient je ověřen pomocí ClientCredentialType zadaný. Najdete v článku [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-basichttpbinding.md).|  
-|Zpráva|Zabezpečení je k dispozici pomocí zabezpečení zpráv protokolu SOAP. Ve výchozím nastavení je text šifrovaný a podepsaný. Pro tuto vazbu systému vyžaduje, aby certifikát serveru poskytnuta klientovi vzdálené správy. Jediné platné `ClientCredentialType` pro tuto vazbu `Certificate`.|  
-|TransportWithMessageCredential|Ověření integrity a důvěrnosti serveru jsou poskytovány zabezpečení přenosu. Ověření klienta je k dispozici prostřednictvím zabezpečení zpráv protokolu SOAP. Tento režim je důležité, když se uživatel ověřuje pomocí uživatelského jména a hesla a je stávajícího nasazení HTTP pro přenos zpráv zabezpečení.|  
-|TransportCredentialOnly|Tento režim neposkytuje integrity a důvěrnosti zpráv. Poskytuje ověření klienta založené na protokolu http. Tento režim musí být použit s opatrní. By být používána v prostředích, kde se zajišťuje zabezpečení přenosu jiným způsobem (například IPSec) a infrastruktura WCF se poskytuje pouze ověření klienta.|  
+|Žádné|-Zprávy nejsou zabezpečená při přenosu.|  
+|Přenos|Zabezpečení je prováděno pomocí přenos protokolu HTTPS. Zprávy protokolu SOAP jsou zabezpečené pomocí protokolu HTTPS. Služba je ověřen u klienta pomocí certifikátu X.509 služby. Klient je ověřený pomocí nebyl typ ClientCredentialType zadán. Zobrazit [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-basichttpbinding.md).|  
+|Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení je tělo zašifrovaný a podepsaný. Pro tuto vazbu systému vyžaduje, aby certifikát serveru poskytnuta klientovi mimo pásmo. Jediné platné `ClientCredentialType` pro tuto vazbu `Certificate`.|  
+|TransportWithMessageCredential|Zabezpečení přenosu zajišťují integritu a důvěrnost serveru ověřování. Ověření klienta je k dispozici prostřednictvím zabezpečení zprávy protokolu SOAP. Tento režim je důležité, když se uživatel ověřuje pomocí uživatelského jména a hesla a nějaké existující nasazení HTTP pro přenos zpráv zabezpečení.|  
+|TransportCredentialOnly|Tento režim neposkytuje integrity a důvěrnosti zpráv. Poskytuje ověření klienta založené na protokolu http. Tento režim je třeba používat opatrně. Byste měli použít ve prostředích, kde zabezpečení přenosu se neposkytujeme jiným způsobem (jako je protokol IPSec) a infrastruktura WCF se poskytuje pouze ověření klienta.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -64,10 +64,10 @@ Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/fra
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|vazba|Element vazby [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).|  
+|vazba|Prvek vazby [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení není zabezpečené zprávu protokolu SOAP a klient není ověřen. Tento element umožňuje konfigurovat nastavení dalšího ověření zabezpečení pro `basicHttpBinding` elementu.  
+ Ve výchozím nastavení není zabezpečen zprávu protokolu SOAP a klient není ověřený. Tento prvek umožňuje konfigurovat nastavení dalšího ověření zabezpečení pro `basicHttpBinding` elementu.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.BasicHttpBinding.Security%2A>  
@@ -78,5 +78,5 @@ Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/fra
  [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

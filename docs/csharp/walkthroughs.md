@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: aaf57e666faf18010c7f267f96e6958c73e58bcf
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 4b5c246bee21697590130225679a250b43e86b8d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935135"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43564816"
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
@@ -69,6 +69,7 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  [Nasazení ukázky a návody](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
  Podrobné příklady běžných scénářích nasazení.  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../csharp/programming-guide/index.md)  
- [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-samples)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../csharp/programming-guide/index.md)  
+- [Ukázky sady Visual Studio](/visualstudio/ide/visual-studio-samples)
