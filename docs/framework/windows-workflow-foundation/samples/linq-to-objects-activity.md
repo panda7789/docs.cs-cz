@@ -1,30 +1,30 @@
 ---
-title: LINQ na objekty aktivity
+title: Aktivita LINQ to Objects
 ms.date: 03/30/2017
 ms.assetid: 403c82e8-7f2b-42f6-93cd-95c35bc76ead
-ms.openlocfilehash: e2c2be52a88d8f9a886f0e59c027e1d6c737497c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fca4a94a951c9713a61914de6ef33e0cbb74f75e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516666"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43552765"
 ---
-# <a name="linq-to-objects-activity"></a><span data-ttu-id="c534b-102">LINQ na objekty aktivity</span><span class="sxs-lookup"><span data-stu-id="c534b-102">LINQ to Objects Activity</span></span>
-<span data-ttu-id="c534b-103">Tento příklad znázorňuje postup vytvoření aktivitu pomocí LINQ na objekty dotazu elementů v kolekci.</span><span class="sxs-lookup"><span data-stu-id="c534b-103">This sample demonstrates how to create an activity to use LINQ to Objects to query elements in a collection.</span></span>  
+# <a name="linq-to-objects-activity"></a><span data-ttu-id="d184b-102">Aktivita LINQ to Objects</span><span class="sxs-lookup"><span data-stu-id="d184b-102">LINQ to Objects Activity</span></span>
+<span data-ttu-id="d184b-103">Tento příklad ukazuje, jak vytvořit aktivity pomocí LINQ to Objects elementy dotazu v kolekci.</span><span class="sxs-lookup"><span data-stu-id="d184b-103">This sample demonstrates how to create an activity to use LINQ to Objects to query elements in a collection.</span></span>  
   
-## <a name="activity-details-for-findincollection"></a><span data-ttu-id="c534b-104">Podrobnosti o aktivitě pro FindInCollection</span><span class="sxs-lookup"><span data-stu-id="c534b-104">Activity Details for FindInCollection</span></span>  
- <span data-ttu-id="c534b-105">Tato aktivita umožňuje uživatelům na dotaz elementy z kolekce v paměti pomocí LINQ na objekty.</span><span class="sxs-lookup"><span data-stu-id="c534b-105">This activity allows users to query elements from collections in memory using LINQ to Objects.</span></span> <span data-ttu-id="c534b-106">Je nutné zadat predikát LINQ ve formě výrazu lambda filtrování výsledků.</span><span class="sxs-lookup"><span data-stu-id="c534b-106">You must provide a LINQ predicate in the form of a lambda expression to filter the results.</span></span> <span data-ttu-id="c534b-107">Tato aktivita lze použít ve spojení s <xref:System.Activities.Statements.AddToCollection%601> aktivity.</span><span class="sxs-lookup"><span data-stu-id="c534b-107">This activity can be used in conjunction with <xref:System.Activities.Statements.AddToCollection%601> activities.</span></span>  
+## <a name="activity-details-for-findincollection"></a><span data-ttu-id="d184b-104">Podrobnosti o aktivitě pro FindInCollection</span><span class="sxs-lookup"><span data-stu-id="d184b-104">Activity Details for FindInCollection</span></span>  
+ <span data-ttu-id="d184b-105">Tato aktivita z kolekce v paměti pomocí LINQ to Objects umožňuje uživatelům na elementy dotazu.</span><span class="sxs-lookup"><span data-stu-id="d184b-105">This activity allows users to query elements from collections in memory using LINQ to Objects.</span></span> <span data-ttu-id="d184b-106">Je nutné zadat predikát LINQ ve formě lambda výraz k filtrování výsledků.</span><span class="sxs-lookup"><span data-stu-id="d184b-106">You must provide a LINQ predicate in the form of a lambda expression to filter the results.</span></span> <span data-ttu-id="d184b-107">Tato aktivita se dá použít ve spojení s <xref:System.Activities.Statements.AddToCollection%601> aktivity.</span><span class="sxs-lookup"><span data-stu-id="d184b-107">This activity can be used in conjunction with <xref:System.Activities.Statements.AddToCollection%601> activities.</span></span>  
   
- <span data-ttu-id="c534b-108">V následující tabulce jsou hodnoty vlastností a vraťte se pro aktivitu.</span><span class="sxs-lookup"><span data-stu-id="c534b-108">The following table details the property and return values for the activity.</span></span>  
+ <span data-ttu-id="d184b-108">Následující tabulka uvádí vlastnosti a návratové hodnoty pro aktivitu.</span><span class="sxs-lookup"><span data-stu-id="d184b-108">The following table details the property and return values for the activity.</span></span>  
   
-|<span data-ttu-id="c534b-109">Vlastnost nebo vrací hodnotu</span><span class="sxs-lookup"><span data-stu-id="c534b-109">Property or Return Value</span></span>|<span data-ttu-id="c534b-110">Popis</span><span class="sxs-lookup"><span data-stu-id="c534b-110">Description</span></span>|  
+|<span data-ttu-id="d184b-109">Vlastnost nebo návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d184b-109">Property or Return Value</span></span>|<span data-ttu-id="d184b-110">Popis</span><span class="sxs-lookup"><span data-stu-id="d184b-110">Description</span></span>|  
 |------------------------------|-----------------|  
-|<span data-ttu-id="c534b-111">`Collection` Vlastnost</span><span class="sxs-lookup"><span data-stu-id="c534b-111">`Collection` property</span></span>|<span data-ttu-id="c534b-112">Povinnou vlastnost, která určuje zdrojové kolekci.</span><span class="sxs-lookup"><span data-stu-id="c534b-112">A required property that specifies the source collection.</span></span>|  
-|<span data-ttu-id="c534b-113">`Predicate` Vlastnost</span><span class="sxs-lookup"><span data-stu-id="c534b-113">`Predicate` property</span></span>|<span data-ttu-id="c534b-114">Povinnou vlastnost, která určuje filtr pro kolekce v podobě výrazu lambda.</span><span class="sxs-lookup"><span data-stu-id="c534b-114">A required property that specifies the filter for the collection in the form of a lambda expression.</span></span>|  
-|<span data-ttu-id="c534b-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c534b-115">Return Value</span></span>|<span data-ttu-id="c534b-116">Filtrované kolekce.</span><span class="sxs-lookup"><span data-stu-id="c534b-116">The filtered collection.</span></span>|  
+|<span data-ttu-id="d184b-111">`Collection` Vlastnost</span><span class="sxs-lookup"><span data-stu-id="d184b-111">`Collection` property</span></span>|<span data-ttu-id="d184b-112">Požadovaná vlastnost, která určuje zdrojovou kolekci.</span><span class="sxs-lookup"><span data-stu-id="d184b-112">A required property that specifies the source collection.</span></span>|  
+|<span data-ttu-id="d184b-113">`Predicate` Vlastnost</span><span class="sxs-lookup"><span data-stu-id="d184b-113">`Predicate` property</span></span>|<span data-ttu-id="d184b-114">Požadovaná vlastnost, která určuje filtr pro kolekce v podobě výrazu lambda.</span><span class="sxs-lookup"><span data-stu-id="d184b-114">A required property that specifies the filter for the collection in the form of a lambda expression.</span></span>|  
+|<span data-ttu-id="d184b-115">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="d184b-115">Return Value</span></span>|<span data-ttu-id="d184b-116">Filtrované kolekce.</span><span class="sxs-lookup"><span data-stu-id="d184b-116">The filtered collection.</span></span>|  
   
-## <a name="code-sample-that-uses-the-custom-activity"></a><span data-ttu-id="c534b-117">Ukázka kódu, který používá vlastní aktivity</span><span class="sxs-lookup"><span data-stu-id="c534b-117">Code Sample that uses the Custom Activity</span></span>  
- <span data-ttu-id="c534b-118">Následující příklad kódu používá `FindInCollection` vlastní aktivity najít všechny řádky v kolekci zaměstnanců, kteří mají `Role` vlastnost nastavena na hodnotu `Manager` a `Location` vlastnost nastavena na hodnotu `Redmond`.</span><span class="sxs-lookup"><span data-stu-id="c534b-118">The following code example uses the `FindInCollection` custom activity to find all rows in a collection of employees that have a `Role` property set to `Manager` and the `Location` property set to `Redmond`.</span></span>  
+## <a name="code-sample-that-uses-the-custom-activity"></a><span data-ttu-id="d184b-117">Vzorový kód, který používá vlastní aktivity</span><span class="sxs-lookup"><span data-stu-id="d184b-117">Code Sample that uses the Custom Activity</span></span>  
+ <span data-ttu-id="d184b-118">Následující příklad kódu používá `FindInCollection` vlastní aktivita pro vyhledání všech řádků v kolekci zaměstnanců, kteří mají `Role` vlastnost nastavena na hodnotu `Manager` a `Location` nastavenou na `Redmond`.</span><span class="sxs-lookup"><span data-stu-id="d184b-118">The following code example uses the `FindInCollection` custom activity to find all rows in a collection of employees that have a `Role` property set to `Manager` and the `Location` property set to `Redmond`.</span></span>  
   
 ```csharp  
 // Find all program managers in Redmond in the employees collection.  
@@ -36,7 +36,7 @@ Activity wf = new FindInCollection<Employee>
 };  
 ```  
   
- <span data-ttu-id="c534b-119">Následující kód ukazuje, jak vytvořit program pracovního postupu, který používá vlastní aktivity FindInCollection <xref:System.Activities.Statements.AddToCollection%601>, a <xref:System.Activities.Statements.ForEach%601> aktivity k naplnění kolekce se zaměstnanci, najít všechny zaměstnance, kteří mají vývojáře role a jsou umístěny v Redmond a pak iterace v rozevíracím seznamu.</span><span class="sxs-lookup"><span data-stu-id="c534b-119">The following code shows how to create a workflow program that uses the custom FindInCollection activity, <xref:System.Activities.Statements.AddToCollection%601>, and <xref:System.Activities.Statements.ForEach%601> activities to populate a collection with employees, find all the employees that have developer roles and are located in Redmond, and then iterate through the resulting list.</span></span>  
+ <span data-ttu-id="d184b-119">Následující kód ukazuje, jak vytvořit pracovní postup program, který používá vlastní aktivity FindInCollection <xref:System.Activities.Statements.AddToCollection%601>, a <xref:System.Activities.Statements.ForEach%601> aktivity k naplnění kolekce se zaměstnanci pro oblast, najít všechny zaměstnance role pro vývojáře, jež jsou umístěny v Redmond a potom iterovat v rozevíracím seznamu.</span><span class="sxs-lookup"><span data-stu-id="d184b-119">The following code shows how to create a workflow program that uses the custom FindInCollection activity, <xref:System.Activities.Statements.AddToCollection%601>, and <xref:System.Activities.Statements.ForEach%601> activities to populate a collection with employees, find all the employees that have developer roles and are located in Redmond, and then iterate through the resulting list.</span></span>  
   
 ```csharp  
 // Create the Linq predicate for the find expression  
@@ -96,23 +96,23 @@ Activity sampleWorkflow = new Sequence
 };  
 ```  
   
-#### <a name="to-use-this-sample"></a><span data-ttu-id="c534b-120">Pro fungování této ukázky</span><span class="sxs-lookup"><span data-stu-id="c534b-120">To use this sample</span></span>  
+#### <a name="to-use-this-sample"></a><span data-ttu-id="d184b-120">Pro fungování této ukázky</span><span class="sxs-lookup"><span data-stu-id="d184b-120">To use this sample</span></span>  
   
-1.  <span data-ttu-id="c534b-121">Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení LinqToObjects.sln.</span><span class="sxs-lookup"><span data-stu-id="c534b-121">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the LinqToObjects.sln solution file.</span></span>  
+1.  <span data-ttu-id="d184b-121">Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení LinqToObjects.sln.</span><span class="sxs-lookup"><span data-stu-id="d184b-121">Using [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], open the LinqToObjects.sln solution file.</span></span>  
   
-2.  <span data-ttu-id="c534b-122">Sestavte řešení, stiskněte CTRL + SHIFT + B.</span><span class="sxs-lookup"><span data-stu-id="c534b-122">To build the solution, press CTRL+SHIFT+B.</span></span>  
+2.  <span data-ttu-id="d184b-122">Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.</span><span class="sxs-lookup"><span data-stu-id="d184b-122">To build the solution, press CTRL+SHIFT+B.</span></span>  
   
-3.  <span data-ttu-id="c534b-123">Pokud chcete spustit řešení, stisknutím klávesy F5.</span><span class="sxs-lookup"><span data-stu-id="c534b-123">To run the solution, press F5.</span></span>  
+3.  <span data-ttu-id="d184b-123">Abyste mohli spustit řešení, stiskněte klávesu F5.</span><span class="sxs-lookup"><span data-stu-id="d184b-123">To run the solution, press F5.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="c534b-124">Ukázky může být již nainstalována na váš počítač.</span><span class="sxs-lookup"><span data-stu-id="c534b-124">The samples may already be installed on your machine.</span></span> <span data-ttu-id="c534b-125">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="c534b-125">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="d184b-124">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="d184b-124">The samples may already be installed on your machine.</span></span> <span data-ttu-id="d184b-125">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="d184b-125">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="c534b-126">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="c534b-126">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="c534b-127">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="c534b-127">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="d184b-126">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="d184b-126">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="d184b-127">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="d184b-127">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Linq\LinqToObjects`  
   
-## <a name="see-also"></a><span data-ttu-id="c534b-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="c534b-128">See Also</span></span>  
- [<span data-ttu-id="c534b-129">Lambda – výrazy (C# Průvodce programováním)</span><span class="sxs-lookup"><span data-stu-id="c534b-129">Lambda Expressions (C# Programming Guide)</span></span>](http://go.microsoft.com/fwlink/?LinkId=150381)  
- [<span data-ttu-id="c534b-130">LINQ to Objects</span><span class="sxs-lookup"><span data-stu-id="c534b-130">LINQ to Objects</span></span>](http://go.microsoft.com/fwlink/?LinkID=150380)
+## <a name="see-also"></a><span data-ttu-id="d184b-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="d184b-128">See Also</span></span>  
+ [<span data-ttu-id="d184b-129">Výrazy lambda (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="d184b-129">Lambda Expressions (C# Programming Guide)</span></span>](https://go.microsoft.com/fwlink/?LinkId=150381)  
+ [<span data-ttu-id="d184b-130">LINQ to Objects</span><span class="sxs-lookup"><span data-stu-id="d184b-130">LINQ to Objects</span></span>](https://go.microsoft.com/fwlink/?LinkID=150380)

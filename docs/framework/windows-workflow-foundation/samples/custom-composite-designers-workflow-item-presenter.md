@@ -1,33 +1,33 @@
 ---
-title: Vlastní složený Designer - přednášejícího položky pracovního postupu
+title: Návrháři vlastního - skládání položky pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
-ms.openlocfilehash: 5bdc952bb4b920f0b5a7d272423ec2d922a94798
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7519ea560bab1e0c6651ad0b37c8477297b0d64d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517115"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526827"
 ---
-# <a name="custom-composite-designers---workflow-item-presenter"></a><span data-ttu-id="77e62-102">Vlastní složený Designer - přednášejícího položky pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="77e62-102">Custom Composite Designers - Workflow Item Presenter</span></span>
-<span data-ttu-id="77e62-103"><xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity.</span><span class="sxs-lookup"><span data-stu-id="77e62-103">The <xref:System.Activities.Presentation.WorkflowItemPresenter> is a key type in the WF designer programming model that allows for the creation of a "drop zone" where an arbitrary activity can be placed.</span></span> <span data-ttu-id="77e62-104">Tento příklad ukazuje, jak stavět Návrhář aktivity tohoto povrchy takovou "rozevírací zónu."</span><span class="sxs-lookup"><span data-stu-id="77e62-104">This sample shows how to build an activity designer that surfaces such a "drop zone."</span></span>  
+# <a name="custom-composite-designers---workflow-item-presenter"></a><span data-ttu-id="5e43c-102">Návrháři vlastního - skládání položky pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="5e43c-102">Custom Composite Designers - Workflow Item Presenter</span></span>
+<span data-ttu-id="5e43c-103"><xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity.</span><span class="sxs-lookup"><span data-stu-id="5e43c-103">The <xref:System.Activities.Presentation.WorkflowItemPresenter> is a key type in the WF designer programming model that allows for the creation of a "drop zone" where an arbitrary activity can be placed.</span></span> <span data-ttu-id="5e43c-104">Tento příklad ukazuje, jak vytvářet Návrhář aktivity tohoto zařízení Surface takovou "rozevírací zónu."</span><span class="sxs-lookup"><span data-stu-id="5e43c-104">This sample shows how to build an activity designer that surfaces such a "drop zone."</span></span>  
   
- <span data-ttu-id="77e62-105">Tento příklad znázorňuje:</span><span class="sxs-lookup"><span data-stu-id="77e62-105">This sample demonstrates:</span></span>  
+ <span data-ttu-id="5e43c-105">V této ukázce:</span><span class="sxs-lookup"><span data-stu-id="5e43c-105">This sample demonstrates:</span></span>  
   
-## <a name="demonstrates"></a><span data-ttu-id="77e62-106">Demonstruje</span><span class="sxs-lookup"><span data-stu-id="77e62-106">Demonstrates</span></span>  
+## <a name="demonstrates"></a><span data-ttu-id="5e43c-106">Demonstruje</span><span class="sxs-lookup"><span data-stu-id="5e43c-106">Demonstrates</span></span>  
   
--   <span data-ttu-id="77e62-107">Vytváření Návrháře vlastních aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span><span class="sxs-lookup"><span data-stu-id="77e62-107">Creating a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span></span>  
+-   <span data-ttu-id="5e43c-107">Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span><span class="sxs-lookup"><span data-stu-id="5e43c-107">Creating a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span></span>  
   
--   <span data-ttu-id="77e62-108">Probíhá registrace návrháře vlastní pomocí úložiště metadat.</span><span class="sxs-lookup"><span data-stu-id="77e62-108">Registering the custom designer using the metadata store.</span></span>  
+-   <span data-ttu-id="5e43c-108">Registrace vlastní úložiště metadat pomocí návrháře.</span><span class="sxs-lookup"><span data-stu-id="5e43c-108">Registering the custom designer using the metadata store.</span></span>  
   
--   <span data-ttu-id="77e62-109">Programování opětovné hostování nástroje sady nástrojů deklarativně a imperativní.</span><span class="sxs-lookup"><span data-stu-id="77e62-109">Programming the rehosted toolbox declaratively and imperatively.</span></span>  
+-   <span data-ttu-id="5e43c-109">Deklarativní a imperativně programování provádění se změněným hostováním sady nástrojů.</span><span class="sxs-lookup"><span data-stu-id="5e43c-109">Programming the rehosted toolbox declaratively and imperatively.</span></span>  
   
-## <a name="sample-details"></a><span data-ttu-id="77e62-110">Ukázka podrobnosti</span><span class="sxs-lookup"><span data-stu-id="77e62-110">Sample Details</span></span>  
- <span data-ttu-id="77e62-111">Kód pro tento příklad ukazuje:</span><span class="sxs-lookup"><span data-stu-id="77e62-111">The code for this sample shows:</span></span>  
+## <a name="sample-details"></a><span data-ttu-id="5e43c-110">Ukázka podrobnosti</span><span class="sxs-lookup"><span data-stu-id="5e43c-110">Sample Details</span></span>  
+ <span data-ttu-id="5e43c-111">Kód pro tento příklad ukazuje:</span><span class="sxs-lookup"><span data-stu-id="5e43c-111">The code for this sample shows:</span></span>  
   
--   <span data-ttu-id="77e62-112">Návrhář vlastní aktivity je vytvořené pro `SimpleNativeActivity` třídy.</span><span class="sxs-lookup"><span data-stu-id="77e62-112">The custom activity designer is built for the `SimpleNativeActivity` class.</span></span>  
+-   <span data-ttu-id="5e43c-112">Návrháři vlastních aktivit je sestaven pro `SimpleNativeActivity` třídy.</span><span class="sxs-lookup"><span data-stu-id="5e43c-112">The custom activity designer is built for the `SimpleNativeActivity` class.</span></span>  
   
--   <span data-ttu-id="77e62-113">Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span><span class="sxs-lookup"><span data-stu-id="77e62-113">The creation of a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span></span>  
+-   <span data-ttu-id="5e43c-113">Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span><span class="sxs-lookup"><span data-stu-id="5e43c-113">The creation of a custom activity designer with a <xref:System.Activities.Presentation.WorkflowItemPresenter>.</span></span>  
   
 ```xaml  
 <sap:ActivityDesigner x:Class="Microsoft.Samples.UsingWorkflowItemPresenter.SimpleNativeDesigner"  
@@ -63,23 +63,23 @@ ms.locfileid: "33517115"
 </sap:ActivityDesigner>  
 ```  
   
- <span data-ttu-id="77e62-114">Všimněte si použití datové vazby WPF k vytvoření vazby `ModelItem.Body`.</span><span class="sxs-lookup"><span data-stu-id="77e62-114">Note the use of WPF data binding to bind to `ModelItem.Body`.</span></span> <span data-ttu-id="77e62-115">`ModelItem` je vlastnost na <xref:System.Activities.Presentation.ActivityDesigner> který odkazuje na základní objekt návrháře se používá, v takovém případě **SimpleNativeActivity**.</span><span class="sxs-lookup"><span data-stu-id="77e62-115">`ModelItem` is the property on <xref:System.Activities.Presentation.ActivityDesigner> that refers to the underlying object the designer is being used for, in this case, **SimpleNativeActivity**.</span></span>  
+ <span data-ttu-id="5e43c-114">Všimněte si použití datové vazby WPF vytvořit vazbu na `ModelItem.Body`.</span><span class="sxs-lookup"><span data-stu-id="5e43c-114">Note the use of WPF data binding to bind to `ModelItem.Body`.</span></span> <span data-ttu-id="5e43c-115">`ModelItem` je vlastnost na <xref:System.Activities.Presentation.ActivityDesigner> , který odkazuje na základní objekt návrháře se používá, v tomto případě **SimpleNativeActivity**.</span><span class="sxs-lookup"><span data-stu-id="5e43c-115">`ModelItem` is the property on <xref:System.Activities.Presentation.ActivityDesigner> that refers to the underlying object the designer is being used for, in this case, **SimpleNativeActivity**.</span></span>  
   
-#### <a name="to-setup-build-and-run-the-sample"></a><span data-ttu-id="77e62-116">Instalační program, sestavení a spuštění vzorku</span><span class="sxs-lookup"><span data-stu-id="77e62-116">To setup, build, and run the sample</span></span>  
+#### <a name="to-setup-build-and-run-the-sample"></a><span data-ttu-id="5e43c-116">Nastavení, sestavení a spuštění ukázky</span><span class="sxs-lookup"><span data-stu-id="5e43c-116">To setup, build, and run the sample</span></span>  
   
-1.  <span data-ttu-id="77e62-117">Otevřete řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="77e62-117">Open the solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
+1.  <span data-ttu-id="5e43c-117">Otevřete řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span><span class="sxs-lookup"><span data-stu-id="5e43c-117">Open the solution in [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].</span></span>  
   
-2.  <span data-ttu-id="77e62-118">Stisknutím klávesy F5 zkompilování a spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="77e62-118">Press F5 to compile and run the application.</span></span>  
+2.  <span data-ttu-id="5e43c-118">Stiskněte klávesu F5 ke kompilaci a spuštění aplikace.</span><span class="sxs-lookup"><span data-stu-id="5e43c-118">Press F5 to compile and run the application.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="77e62-119">Ukázky může být již nainstalována na váš počítač.</span><span class="sxs-lookup"><span data-stu-id="77e62-119">The samples may already be installed on your machine.</span></span> <span data-ttu-id="77e62-120">Před pokračováním zkontrolovat na následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="77e62-120">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="5e43c-119">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="5e43c-119">The samples may already be installed on your machine.</span></span> <span data-ttu-id="5e43c-120">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="5e43c-120">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="77e62-121">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="77e62-121">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="77e62-122">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="77e62-122">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="5e43c-121">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="5e43c-121">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="5e43c-122">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="5e43c-122">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemPresenter`  
   
-## <a name="see-also"></a><span data-ttu-id="77e62-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="77e62-123">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="5e43c-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="5e43c-123">See Also</span></span>  
  <xref:System.Activities.Presentation.WorkflowItemPresenter>  
- [<span data-ttu-id="77e62-124">Vývoj aplikací pomocí návrháře postupu provádění</span><span class="sxs-lookup"><span data-stu-id="77e62-124">Developing Applications with the Workflow Designer</span></span>](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)
+ [<span data-ttu-id="5e43c-124">Vývoj aplikací pomocí návrháře postupu provádění</span><span class="sxs-lookup"><span data-stu-id="5e43c-124">Developing Applications with the Workflow Designer</span></span>](/visualstudio/workflow-designer/developing-applications-with-the-workflow-designer)

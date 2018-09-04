@@ -2,18 +2,18 @@
 title: 'Postupy: Analýza řetězců (C#)'
 ms.date: 07/20/2015
 ms.assetid: 81e5686c-9658-42d8-a7e3-b11be0a2c98b
-ms.openlocfilehash: fe1ef6d601b97252eb2d146f28003cad352b2d84
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b6b955d2cc9a3ea0c6e17e68639ad7fc677c3fc7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33320141"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43562282"
 ---
-# <a name="how-to-parse-a-string-c"></a><span data-ttu-id="f0279-102">Postupy: Analýza řetězců (C#)</span><span class="sxs-lookup"><span data-stu-id="f0279-102">How to: Parse a String (C#)</span></span>
-<span data-ttu-id="f0279-103">Toto téma ukazuje, jak analyzovat řetězec k vytvoření strom XML v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="f0279-103">This topic shows how to parse a string to create an XML tree in C#.</span></span>  
+# <a name="how-to-parse-a-string-c"></a><span data-ttu-id="78970-102">Postupy: Analýza řetězců (C#)</span><span class="sxs-lookup"><span data-stu-id="78970-102">How to: Parse a String (C#)</span></span>
+<span data-ttu-id="78970-103">Toto téma ukazuje, jak analyzovat řetězec k vytvoření stromu XML v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="78970-103">This topic shows how to parse a string to create an XML tree in C#.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f0279-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="f0279-104">Example</span></span>  
- <span data-ttu-id="f0279-105">Následující kód C# ukazuje, jak analyzovat řetězec.</span><span class="sxs-lookup"><span data-stu-id="f0279-105">The following C# code shows how to parse a string.</span></span>  
+## <a name="example"></a><span data-ttu-id="78970-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="78970-104">Example</span></span>  
+ <span data-ttu-id="78970-105">Následující kód jazyka C# ukazuje, jak k analýze řetězce.</span><span class="sxs-lookup"><span data-stu-id="78970-105">The following C# code shows how to parse a string.</span></span>  
   
 ```csharp  
 XElement contacts = XElement.Parse(  
@@ -45,5 +45,6 @@ XElement contacts = XElement.Parse(
 Console.WriteLine(contacts);  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f0279-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="f0279-106">See Also</span></span>  
- [<span data-ttu-id="f0279-107">Analýza kódu XML (C#)</span><span class="sxs-lookup"><span data-stu-id="f0279-107">Parsing XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)
+## <a name="see-also"></a><span data-ttu-id="78970-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="78970-106">See Also</span></span>
+
+- [<span data-ttu-id="78970-107">Analýza kódu XML (C#)</span><span class="sxs-lookup"><span data-stu-id="78970-107">Parsing XML (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/parsing-xml.md)

@@ -2,25 +2,25 @@
 title: Funkční konstrukce (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 57a82bcf-de03-4f1c-a0c8-9a76e989d542
-ms.openlocfilehash: c837660adf9c62c8f4304b92d37f732795c981c9
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
+ms.openlocfilehash: c2579da6e3cdfea6469742d29935b0137e320bbb
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43331808"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43552137"
 ---
-# <a name="functional-construction-linq-to-xml-c"></a><span data-ttu-id="29976-102">Funkční konstrukce (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="29976-102">Functional Construction (LINQ to XML) (C#)</span></span>
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="29976-103"> poskytuje efektivní způsob, jak vytvořit XML elementů s názvem *funkční konstrukce*.</span><span class="sxs-lookup"><span data-stu-id="29976-103"> provides a powerful way to create XML elements called *functional construction*.</span></span> <span data-ttu-id="29976-104">Funkční konstrukce je schopnost vytvářet stromu XML v jediném příkazu.</span><span class="sxs-lookup"><span data-stu-id="29976-104">Functional construction is the ability to create an XML tree in a single statement.</span></span>  
+# <a name="functional-construction-linq-to-xml-c"></a><span data-ttu-id="56c13-102">Funkční konstrukce (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="56c13-102">Functional Construction (LINQ to XML) (C#)</span></span>
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="56c13-103"> poskytuje efektivní způsob, jak vytvořit XML elementů s názvem *funkční konstrukce*.</span><span class="sxs-lookup"><span data-stu-id="56c13-103"> provides a powerful way to create XML elements called *functional construction*.</span></span> <span data-ttu-id="56c13-104">Funkční konstrukce je schopnost vytvářet stromu XML v jediném příkazu.</span><span class="sxs-lookup"><span data-stu-id="56c13-104">Functional construction is the ability to create an XML tree in a single statement.</span></span>  
   
- <span data-ttu-id="29976-105">Existuje několik klíčových funkcích služby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] programovací rozhraní, která umožňují funkční konstrukce:</span><span class="sxs-lookup"><span data-stu-id="29976-105">There are several key features of the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] programming interface that enable functional construction:</span></span>  
+ <span data-ttu-id="56c13-105">Existuje několik klíčových funkcích služby [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] programovací rozhraní, která umožňují funkční konstrukce:</span><span class="sxs-lookup"><span data-stu-id="56c13-105">There are several key features of the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] programming interface that enable functional construction:</span></span>  
   
--   <span data-ttu-id="29976-106"><xref:System.Xml.Linq.XElement> Konstruktoru přijímá různé typy argumentů pro obsah.</span><span class="sxs-lookup"><span data-stu-id="29976-106">The <xref:System.Xml.Linq.XElement> constructor takes various types of arguments for content.</span></span> <span data-ttu-id="29976-107">Například lze předat jiné <xref:System.Xml.Linq.XElement> objekt, který bude podřízený element.</span><span class="sxs-lookup"><span data-stu-id="29976-107">For example, you can pass another <xref:System.Xml.Linq.XElement> object, which becomes a child element.</span></span> <span data-ttu-id="29976-108">Můžete předat <xref:System.Xml.Linq.XAttribute> objekt, který bude atribut prvku.</span><span class="sxs-lookup"><span data-stu-id="29976-108">You can pass an <xref:System.Xml.Linq.XAttribute> object, which becomes an attribute of the element.</span></span> <span data-ttu-id="29976-109">Nebo můžete předat jakéhokoli jiného typu objektu, který je převeden na řetězec a stane se textového obsahu elementu.</span><span class="sxs-lookup"><span data-stu-id="29976-109">Or you can pass any other type of object, which is converted to a string and becomes the text content of the element.</span></span>  
+-   <span data-ttu-id="56c13-106"><xref:System.Xml.Linq.XElement> Konstruktoru přijímá různé typy argumentů pro obsah.</span><span class="sxs-lookup"><span data-stu-id="56c13-106">The <xref:System.Xml.Linq.XElement> constructor takes various types of arguments for content.</span></span> <span data-ttu-id="56c13-107">Například lze předat jiné <xref:System.Xml.Linq.XElement> objekt, který bude podřízený element.</span><span class="sxs-lookup"><span data-stu-id="56c13-107">For example, you can pass another <xref:System.Xml.Linq.XElement> object, which becomes a child element.</span></span> <span data-ttu-id="56c13-108">Můžete předat <xref:System.Xml.Linq.XAttribute> objekt, který bude atribut prvku.</span><span class="sxs-lookup"><span data-stu-id="56c13-108">You can pass an <xref:System.Xml.Linq.XAttribute> object, which becomes an attribute of the element.</span></span> <span data-ttu-id="56c13-109">Nebo můžete předat jakéhokoli jiného typu objektu, který je převeden na řetězec a stane se textového obsahu elementu.</span><span class="sxs-lookup"><span data-stu-id="56c13-109">Or you can pass any other type of object, which is converted to a string and becomes the text content of the element.</span></span>  
   
--   <span data-ttu-id="29976-110"><xref:System.Xml.Linq.XElement> Přebírá konstruktor `params` pole typu <xref:System.Object>tak, aby libovolný počet objektů, které můžete předat konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="29976-110">The <xref:System.Xml.Linq.XElement> constructor takes a `params` array of type <xref:System.Object>, so that you can pass any number of objects to the constructor.</span></span> <span data-ttu-id="29976-111">To umožňuje vytvořit element, který se složitým obsahem.</span><span class="sxs-lookup"><span data-stu-id="29976-111">This enables you to create an element that has complex content.</span></span>  
+-   <span data-ttu-id="56c13-110"><xref:System.Xml.Linq.XElement> Přebírá konstruktor `params` pole typu <xref:System.Object>tak, aby libovolný počet objektů, které můžete předat konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="56c13-110">The <xref:System.Xml.Linq.XElement> constructor takes a `params` array of type <xref:System.Object>, so that you can pass any number of objects to the constructor.</span></span> <span data-ttu-id="56c13-111">To umožňuje vytvořit element, který se složitým obsahem.</span><span class="sxs-lookup"><span data-stu-id="56c13-111">This enables you to create an element that has complex content.</span></span>  
   
--   <span data-ttu-id="29976-112">Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vytvořena kolekce v objektu a jsou přidány všechny položky v kolekci.</span><span class="sxs-lookup"><span data-stu-id="29976-112">If an object implements <xref:System.Collections.Generic.IEnumerable%601>, the collection in the object is enumerated, and all items in the collection are added.</span></span> <span data-ttu-id="29976-113">Pokud kolekce obsahuje <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> objekty, každá položka v kolekci se přidá samostatně.</span><span class="sxs-lookup"><span data-stu-id="29976-113">If the collection contains <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> objects, each item in the collection is added separately.</span></span> <span data-ttu-id="29976-114">To je důležité, protože to umožňuje předat výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu do konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="29976-114">This is important because it lets you pass the results of a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query to the constructor.</span></span>  
+-   <span data-ttu-id="56c13-112">Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vytvořena kolekce v objektu a jsou přidány všechny položky v kolekci.</span><span class="sxs-lookup"><span data-stu-id="56c13-112">If an object implements <xref:System.Collections.Generic.IEnumerable%601>, the collection in the object is enumerated, and all items in the collection are added.</span></span> <span data-ttu-id="56c13-113">Pokud kolekce obsahuje <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> objekty, každá položka v kolekci se přidá samostatně.</span><span class="sxs-lookup"><span data-stu-id="56c13-113">If the collection contains <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> objects, each item in the collection is added separately.</span></span> <span data-ttu-id="56c13-114">To je důležité, protože to umožňuje předat výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu do konstruktoru.</span><span class="sxs-lookup"><span data-stu-id="56c13-114">This is important because it lets you pass the results of a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query to the constructor.</span></span>  
   
- <span data-ttu-id="29976-115">Tyto funkce umožňují napsat kód k vytvoření stromu XML.</span><span class="sxs-lookup"><span data-stu-id="29976-115">These features enable you to write code to create an XML tree.</span></span> <span data-ttu-id="29976-116">Následuje příklad:</span><span class="sxs-lookup"><span data-stu-id="29976-116">The following is an example:</span></span>  
+ <span data-ttu-id="56c13-115">Tyto funkce umožňují napsat kód k vytvoření stromu XML.</span><span class="sxs-lookup"><span data-stu-id="56c13-115">These features enable you to write code to create an XML tree.</span></span> <span data-ttu-id="56c13-116">Následuje příklad:</span><span class="sxs-lookup"><span data-stu-id="56c13-116">The following is an example:</span></span>  
   
 ```csharp  
 XElement contacts =  
@@ -38,7 +38,7 @@ XElement contacts =
     );  
 ```  
   
- <span data-ttu-id="29976-117">Tyto funkce umožňují také napsat kód, který používá výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazuje při vytváření stromu XML, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="29976-117">These features also enable you to write code that uses the results of [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries when you create an XML tree, as follows:</span></span>  
+ <span data-ttu-id="56c13-117">Tyto funkce umožňují také napsat kód, který používá výsledky [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazuje při vytváření stromu XML, následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="56c13-117">These features also enable you to write code that uses the results of [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries when you create an XML tree, as follows:</span></span>  
   
 ```csharp  
 XElement srcTree = new XElement("Root",  
@@ -58,7 +58,7 @@ XElement xmlTree = new XElement("Root",
 Console.WriteLine(xmlTree);  
 ```  
   
- <span data-ttu-id="29976-118">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="29976-118">This example produces the following output:</span></span>  
+ <span data-ttu-id="56c13-118">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="56c13-118">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -70,5 +70,6 @@ Console.WriteLine(xmlTree);
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="29976-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="29976-119">See Also</span></span>  
- [<span data-ttu-id="29976-120">Vytváření stromů XML (C#)</span><span class="sxs-lookup"><span data-stu-id="29976-120">Creating XML Trees (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+## <a name="see-also"></a><span data-ttu-id="56c13-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="56c13-119">See Also</span></span>
+
+- [<span data-ttu-id="56c13-120">Vytváření stromů XML (C#)</span><span class="sxs-lookup"><span data-stu-id="56c13-120">Creating XML Trees (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)

@@ -4,34 +4,35 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - user-defined conversions [C#]
 ms.assetid: 97839aef-8fbc-40d5-9769-6b569bc2710b
-ms.openlocfilehash: 178d9e2f92c5c1989253a16d866052a1fc42c10e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cff85d60c1b59f4d1ca028f8fc02fee5728fa3d6
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33339927"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43535801"
 ---
-# <a name="how-to-implement-user-defined-conversions-between-structs-c-programming-guide"></a><span data-ttu-id="d045d-102">Postupy: Implementace uživatelem definovaných převodů mezi strukturami (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="d045d-102">How to: Implement User-Defined Conversions Between Structs (C# Programming Guide)</span></span>
-<span data-ttu-id="d045d-103">Tento příklad definuje dvě struktury `RomanNumeral` a `BinaryNumeral`a předvádí převody mezi nimi.</span><span class="sxs-lookup"><span data-stu-id="d045d-103">This example defines two structs, `RomanNumeral` and `BinaryNumeral`, and demonstrates conversions between them.</span></span>  
+# <a name="how-to-implement-user-defined-conversions-between-structs-c-programming-guide"></a><span data-ttu-id="b10c8-102">Postupy: Implementace uživatelem definovaných převodů mezi strukturami (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="b10c8-102">How to: Implement User-Defined Conversions Between Structs (C# Programming Guide)</span></span>
+<span data-ttu-id="b10c8-103">Tento příklad definuje dvě struktury `RomanNumeral` a `BinaryNumeral`a ukazuje převody mezi nimi.</span><span class="sxs-lookup"><span data-stu-id="b10c8-103">This example defines two structs, `RomanNumeral` and `BinaryNumeral`, and demonstrates conversions between them.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d045d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="d045d-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="b10c8-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="b10c8-104">Example</span></span>  
  [!code-csharp[csProgGuideStatements#13](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-implement-user-defined-conversions-between-structs_1.cs)]  
   
-## <a name="robust-programming"></a><span data-ttu-id="d045d-105">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="d045d-105">Robust Programming</span></span>  
+## <a name="robust-programming"></a><span data-ttu-id="b10c8-105">Robustní programování</span><span class="sxs-lookup"><span data-stu-id="b10c8-105">Robust Programming</span></span>  
   
--   <span data-ttu-id="d045d-106">V předchozím příkladu, příkaz:</span><span class="sxs-lookup"><span data-stu-id="d045d-106">In the previous example, the statement:</span></span>  
+-   <span data-ttu-id="b10c8-106">V předchozím příkladu, příkaz:</span><span class="sxs-lookup"><span data-stu-id="b10c8-106">In the previous example, the statement:</span></span>  
   
      [!code-csharp[csProgGuideStatements#14](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-implement-user-defined-conversions-between-structs_2.cs)]  
   
-     <span data-ttu-id="d045d-107">provede převod z `RomanNumeral` k `BinaryNumeral`.</span><span class="sxs-lookup"><span data-stu-id="d045d-107">performs a conversion from a `RomanNumeral` to a `BinaryNumeral`.</span></span> <span data-ttu-id="d045d-108">Protože není k dispozici žádný přímý převod z `RomanNumeral` k `BinaryNumeral`, přetypování slouží k převodu z `RomanNumeral` k `int`a jiné přetypování převést z `int` k `BinaryNumeral`.</span><span class="sxs-lookup"><span data-stu-id="d045d-108">Because there is no direct conversion from `RomanNumeral` to `BinaryNumeral`, a cast is used to convert from a `RomanNumeral` to an `int`, and another cast to convert from an `int` to a `BinaryNumeral`.</span></span>  
+     <span data-ttu-id="b10c8-107">provede konverzi `RomanNumeral` k `BinaryNumeral`.</span><span class="sxs-lookup"><span data-stu-id="b10c8-107">performs a conversion from a `RomanNumeral` to a `BinaryNumeral`.</span></span> <span data-ttu-id="b10c8-108">Protože neexistuje žádný přímý převod z `RomanNumeral` k `BinaryNumeral`, přetypování se používá k převodu z `RomanNumeral` do `int`a jiné přetypování pro převod z `int` k `BinaryNumeral`.</span><span class="sxs-lookup"><span data-stu-id="b10c8-108">Because there is no direct conversion from `RomanNumeral` to `BinaryNumeral`, a cast is used to convert from a `RomanNumeral` to an `int`, and another cast to convert from an `int` to a `BinaryNumeral`.</span></span>  
   
--   <span data-ttu-id="d045d-109">Také příkaz</span><span class="sxs-lookup"><span data-stu-id="d045d-109">Also the statement</span></span>  
+-   <span data-ttu-id="b10c8-109">Také – příkaz</span><span class="sxs-lookup"><span data-stu-id="b10c8-109">Also the statement</span></span>  
   
      [!code-csharp[csProgGuideStatements#15](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-implement-user-defined-conversions-between-structs_3.cs)]  
   
-     <span data-ttu-id="d045d-110">provede převod z `BinaryNumeral` k `RomanNumeral`.</span><span class="sxs-lookup"><span data-stu-id="d045d-110">performs a conversion from a `BinaryNumeral` to a `RomanNumeral`.</span></span> <span data-ttu-id="d045d-111">Protože `RomanNumeral` definuje implicitní převod z `BinaryNumeral`, není třeba žádné přetypování.</span><span class="sxs-lookup"><span data-stu-id="d045d-111">Because `RomanNumeral` defines an implicit conversion from `BinaryNumeral`, no cast is required.</span></span>  
+     <span data-ttu-id="b10c8-110">provede konverzi `BinaryNumeral` k `RomanNumeral`.</span><span class="sxs-lookup"><span data-stu-id="b10c8-110">performs a conversion from a `BinaryNumeral` to a `RomanNumeral`.</span></span> <span data-ttu-id="b10c8-111">Protože `RomanNumeral` definuje implicitní převod z `BinaryNumeral`, žádné přetypování je povinný.</span><span class="sxs-lookup"><span data-stu-id="b10c8-111">Because `RomanNumeral` defines an implicit conversion from `BinaryNumeral`, no cast is required.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d045d-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="d045d-112">See Also</span></span>  
- [<span data-ttu-id="d045d-113">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d045d-113">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
- [<span data-ttu-id="d045d-114">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="d045d-114">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
- [<span data-ttu-id="d045d-115">Operátory převodu</span><span class="sxs-lookup"><span data-stu-id="d045d-115">Conversion Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)
+## <a name="see-also"></a><span data-ttu-id="b10c8-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="b10c8-112">See Also</span></span>
+
+- [<span data-ttu-id="b10c8-113">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="b10c8-113">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="b10c8-114">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="b10c8-114">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="b10c8-115">Operátory převodu</span><span class="sxs-lookup"><span data-stu-id="b10c8-115">Conversion Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/conversion-operators.md)

@@ -9,23 +9,23 @@ helpviewer_keywords:
 - Viewbox control [WPF]
 - scaling elements [WPF], Viewbox control
 ms.assetid: 00fc0a16-1078-4d55-9849-ffaf7da96531
-ms.openlocfilehash: 28b92e903d954312374d8e4041c4fdeb9ed375d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fe7184df5d889a93f2274dfd20669701947f0965
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33554359"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43557847"
 ---
-# <a name="viewbox"></a><span data-ttu-id="e9d88-102">Viewbox</span><span class="sxs-lookup"><span data-stu-id="e9d88-102">Viewbox</span></span>
-<span data-ttu-id="e9d88-103"><xref:System.Windows.Controls.Viewbox> Řízení se používá k roztažení nebo škálování podřízený element.</span><span class="sxs-lookup"><span data-stu-id="e9d88-103">The <xref:System.Windows.Controls.Viewbox> control is used to stretch or scale a child element.</span></span>  
+# <a name="viewbox"></a><span data-ttu-id="debd2-102">Viewbox</span><span class="sxs-lookup"><span data-stu-id="debd2-102">Viewbox</span></span>
+<span data-ttu-id="debd2-103"><xref:System.Windows.Controls.Viewbox> Ovládacího prvku se používá k roztažení nebo škálovat podřízený element.</span><span class="sxs-lookup"><span data-stu-id="debd2-103">The <xref:System.Windows.Controls.Viewbox> control is used to stretch or scale a child element.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="e9d88-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e9d88-104">In This Section</span></span>  
- [<span data-ttu-id="e9d88-105">Použití vlastností roztažení na obsah Viewbox</span><span class="sxs-lookup"><span data-stu-id="e9d88-105">Apply Stretch Properties to the Contents of a Viewbox</span></span>](../../../../docs/framework/wpf/controls/how-to-apply-stretch-properties-to-the-contents-of-a-viewbox.md)  
+## <a name="in-this-section"></a><span data-ttu-id="debd2-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="debd2-104">In This Section</span></span>  
+ [<span data-ttu-id="debd2-105">Použití vlastností roztažení na obsah Viewbox</span><span class="sxs-lookup"><span data-stu-id="debd2-105">Apply Stretch Properties to the Contents of a Viewbox</span></span>](../../../../docs/framework/wpf/controls/how-to-apply-stretch-properties-to-the-contents-of-a-viewbox.md)  
   
-## <a name="reference"></a><span data-ttu-id="e9d88-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="e9d88-106">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="debd2-106">Odkaz</span><span class="sxs-lookup"><span data-stu-id="debd2-106">Reference</span></span>  
  <xref:System.Windows.Controls.Viewbox>  
   
  <xref:System.Windows.Controls.Image>  
   
-## <a name="see-also"></a><span data-ttu-id="e9d88-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="e9d88-107">See Also</span></span>  
- [<span data-ttu-id="e9d88-108">Ukázka galerie ovládacích prvků grafického subsystému WPF</span><span class="sxs-lookup"><span data-stu-id="e9d88-108">WPF Controls Gallery Sample</span></span>](http://go.microsoft.com/fwlink/?LinkID=160053)
+## <a name="see-also"></a><span data-ttu-id="debd2-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="debd2-107">See Also</span></span>  
+ [<span data-ttu-id="debd2-108">Ukázková galerie ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="debd2-108">WPF Controls Gallery Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160053)

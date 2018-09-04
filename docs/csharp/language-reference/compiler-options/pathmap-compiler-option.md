@@ -8,49 +8,49 @@ helpviewer_keywords:
 - pathmap compiler option [C#]
 - /pathmap compiler option [C#]
 ms.openlocfilehash: 277ab8e094f28fd5e3cbba4de12e742bb9614730
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43475917"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43559040"
 ---
-# <a name="-pathmap-c-compiler-options"></a><span data-ttu-id="1bfcf-102">-pathmap (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="1bfcf-102">-pathmap (C# Compiler Options)</span></span>
+# <a name="-pathmap-c-compiler-options"></a><span data-ttu-id="a2ab4-102">-pathmap (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="a2ab4-102">-pathmap (C# Compiler Options)</span></span>
 
-<span data-ttu-id="1bfcf-103">**- Pathmap** – možnost kompilátoru určuje způsob mapování fyzické cesty do zdrojové cesty názvy výstupu kompilátorem.</span><span class="sxs-lookup"><span data-stu-id="1bfcf-103">The **-pathmap** compiler option specifies how to map physical paths to source path names output by the compiler.</span></span>
+<span data-ttu-id="a2ab4-103">**- Pathmap** – možnost kompilátoru určuje způsob mapování fyzické cesty do zdrojové cesty názvy výstupu kompilátorem.</span><span class="sxs-lookup"><span data-stu-id="a2ab4-103">The **-pathmap** compiler option specifies how to map physical paths to source path names output by the compiler.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="1bfcf-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1bfcf-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="a2ab4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a2ab4-104">Syntax</span></span>
 
 ```console
 -pathmap:path1=sourcePath1,path2=sourcePath2
 ```
 
-## <a name="arguments"></a><span data-ttu-id="1bfcf-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="1bfcf-105">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="a2ab4-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="a2ab4-105">Arguments</span></span>
 
- <span data-ttu-id="1bfcf-106">`path1` Úplná cesta ke zdrojovým souborům v aktuálním prostředí</span><span class="sxs-lookup"><span data-stu-id="1bfcf-106">`path1` The full path to the source files in the current environment</span></span>
+ <span data-ttu-id="a2ab4-106">`path1` Úplná cesta ke zdrojovým souborům v aktuálním prostředí</span><span class="sxs-lookup"><span data-stu-id="a2ab4-106">`path1` The full path to the source files in the current environment</span></span>
 
- <span data-ttu-id="1bfcf-107">`sourcePath1` Zdrojová cesta nahrazené za `path1` v všechny výstupní soubory.</span><span class="sxs-lookup"><span data-stu-id="1bfcf-107">`sourcePath1` The source path substituted for `path1` in any output files.</span></span>
+ <span data-ttu-id="a2ab4-107">`sourcePath1` Zdrojová cesta nahrazené za `path1` v všechny výstupní soubory.</span><span class="sxs-lookup"><span data-stu-id="a2ab4-107">`sourcePath1` The source path substituted for `path1` in any output files.</span></span>
 
-<span data-ttu-id="1bfcf-108">Chcete-li určit víc cest připojené zdroje, oddělte každou čárkou.</span><span class="sxs-lookup"><span data-stu-id="1bfcf-108">To specify multiple mapped source paths, separate each with a comma.</span></span>
+<span data-ttu-id="a2ab4-108">Chcete-li určit víc cest připojené zdroje, oddělte každou čárkou.</span><span class="sxs-lookup"><span data-stu-id="a2ab4-108">To specify multiple mapped source paths, separate each with a comma.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="1bfcf-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1bfcf-109">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="a2ab4-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a2ab4-109">Remarks</span></span>
 
-<span data-ttu-id="1bfcf-110">Kompilátor zapíše zdrojová_cesta_operačního_systému cestu do jeho výstup z následujících důvodů:</span><span class="sxs-lookup"><span data-stu-id="1bfcf-110">The compiler writes the source path path into its output for the following reasons:</span></span>
+<span data-ttu-id="a2ab4-110">Kompilátor zapíše zdrojová_cesta_operačního_systému cestu do jeho výstup z následujících důvodů:</span><span class="sxs-lookup"><span data-stu-id="a2ab4-110">The compiler writes the source path path into its output for the following reasons:</span></span>
 
-1. <span data-ttu-id="1bfcf-111">Zdrojová cesta je nahrazen pro argument při <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> platí pro volitelný parametr.</span><span class="sxs-lookup"><span data-stu-id="1bfcf-111">The source path is substituted for an argument when the <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> is applied to an optional parameter.</span></span>
-1. <span data-ttu-id="1bfcf-112">Zdrojová cesta se vloží do souboru PDB.</span><span class="sxs-lookup"><span data-stu-id="1bfcf-112">The source path is embedded in a PDB file.</span></span>
-1. <span data-ttu-id="1bfcf-113">Cesta k souboru PDB se vloží do souboru PE (portable executable).</span><span class="sxs-lookup"><span data-stu-id="1bfcf-113">The path of the PDB file is embedded into a PE (portable executable) file.</span></span>
+1. <span data-ttu-id="a2ab4-111">Zdrojová cesta je nahrazen pro argument při <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> platí pro volitelný parametr.</span><span class="sxs-lookup"><span data-stu-id="a2ab4-111">The source path is substituted for an argument when the <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> is applied to an optional parameter.</span></span>
+1. <span data-ttu-id="a2ab4-112">Zdrojová cesta se vloží do souboru PDB.</span><span class="sxs-lookup"><span data-stu-id="a2ab4-112">The source path is embedded in a PDB file.</span></span>
+1. <span data-ttu-id="a2ab4-113">Cesta k souboru PDB se vloží do souboru PE (portable executable).</span><span class="sxs-lookup"><span data-stu-id="a2ab4-113">The path of the PDB file is embedded into a PE (portable executable) file.</span></span>
 
-<span data-ttu-id="1bfcf-114">Tato možnost mapuje každý fyzickou cestu na počítači, ve kterém kompilátor spuštěná na odpovídající cestu, která by měly být napsány v výstupní soubory.</span><span class="sxs-lookup"><span data-stu-id="1bfcf-114">This option maps each physical path on the machine where the compiler runs to a corresponding path that should be written in the output files.</span></span>
+<span data-ttu-id="a2ab4-114">Tato možnost mapuje každý fyzickou cestu na počítači, ve kterém kompilátor spuštěná na odpovídající cestu, která by měly být napsány v výstupní soubory.</span><span class="sxs-lookup"><span data-stu-id="a2ab4-114">This option maps each physical path on the machine where the compiler runs to a corresponding path that should be written in the output files.</span></span>
 
-## <a name="example"></a><span data-ttu-id="1bfcf-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="1bfcf-115">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a2ab4-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="a2ab4-115">Example</span></span>
 
-<span data-ttu-id="1bfcf-116">Kompilace `t.cs` v adresáři **C:\\fungovat\\testy** a mapování tomuto adresáři **\publish** ve výstupu:</span><span class="sxs-lookup"><span data-stu-id="1bfcf-116">Compile `t.cs` in the directory **C:\\work\\tests** and map that directory to **\publish** in the output:</span></span>
+<span data-ttu-id="a2ab4-116">Kompilace `t.cs` v adresáři **C:\\fungovat\\testy** a mapování tomuto adresáři **\publish** ve výstupu:</span><span class="sxs-lookup"><span data-stu-id="a2ab4-116">Compile `t.cs` in the directory **C:\\work\\tests** and map that directory to **\publish** in the output:</span></span>
 
 ```console
 csc -pathmap:C:\work\tests=\publish t.cs
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1bfcf-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1bfcf-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a2ab4-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a2ab4-117">See also</span></span>
 
-- [<span data-ttu-id="1bfcf-118">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="1bfcf-118">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
-- [<span data-ttu-id="1bfcf-119">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="1bfcf-119">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+- [<span data-ttu-id="a2ab4-118">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="a2ab4-118">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+- [<span data-ttu-id="a2ab4-119">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="a2ab4-119">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
