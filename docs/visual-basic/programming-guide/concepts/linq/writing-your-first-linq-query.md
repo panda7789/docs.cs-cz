@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ queries [Visual Basic]
 - LINQ [Visual Basic], writing queries
 ms.assetid: 4affb732-3e9b-4479-aa31-1f9bd8183cbe
-ms.openlocfilehash: 44fbf35ee4ab5a0c4763269808f0817a33d05b40
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 83a1b7629672c6a74fd29ce698a6b8e6e152b1da
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42998434"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387631"
 ---
 # <a name="writing-your-first-linq-query-visual-basic"></a>Napište svůj první dotaz LINQ (Visual Basic)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou vyjádřeny v vyhrazené dotazovací jazyk. V průběhu času různé jazyky byly vyvinuty pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Díky tomu je nezbytné pro vývojáře aplikací získat nový dotazovací jazyk pro každý typ zdroje dat nebo formát dat, která je podporována.  
@@ -57,7 +57,7 @@ Dim db As New DataContext("C:\Northwind\Northwnd.mdf")
 Dim customers As Table(Of Customer) = db.GetTable(Of Customer)  
 ```  
   
- Další informace o tom, jak vytváření určitých typů zdrojů dat, najdete v dokumentaci pro různé [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelů. (Seznam z těchto zprostředkovatelů najdete v tématu [LINQ (Language-Integrated Query)](http://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).) Základní pravidlo je jednoduchý: [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj dat je libovolný objekt, který podporuje Obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo rozhraní, které z něj dědí.  
+ Další informace o tom, jak vytváření určitých typů zdrojů dat, najdete v dokumentaci pro různé [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] poskytovatelů. (Seznam z těchto zprostředkovatelů najdete v tématu [LINQ (Language-Integrated Query)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d).) Základní pravidlo je jednoduchý: [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdroj dat je libovolný objekt, který podporuje Obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo rozhraní, které z něj dědí.  
   
 > [!NOTE]
 >  Typy, jako <xref:System.Collections.ArrayList> podporující neobecné <xref:System.Collections.IEnumerable> rozhraní může také sloužit jako [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zdrojů. Příklad, který se používá <xref:System.Collections.ArrayList>, naleznete v tématu [postupy: vytvoření dotazu na ArrayList pomocí LINQ (Visual Basic)](how-to-query-an-arraylist-with-linq.md).  

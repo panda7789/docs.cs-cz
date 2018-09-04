@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 051c2be00ca18799eeb2f5253a9b236bbcf82d21
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: cdc3e42adcb2c7eae52aab0b14d0f9c6a822eeea
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43256563"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43417709"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  
@@ -46,7 +46,7 @@ Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Win
   
 |Chcete-li|Další informace naleznete v tématu|  
 |--------|---------|  
-|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Návod: Vytvoření formuláře Windows jednoduché](http://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
+|Vytvoření nové aplikace Windows Forms pomocí sady Visual Studio|[Návod: Vytvoření formuláře Windows jednoduché](https://msdn.microsoft.com/library/2d9daec0-0543-41d0-acb1-964f685bddbb)|  
 |Použití ovládacích prvků ve formulářích|[Postupy: Přidávání ovládacích prvků do Windows Forms](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|   
 |Vytváření grafiky <xref:System.Drawing>|[Začínáme s programováním grafiky](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|  
 |Vytvořit vlastní ovládací prvky|[Postupy: Dědění ze třídy UserControl](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|  

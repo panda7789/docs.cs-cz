@@ -16,12 +16,12 @@ helpviewer_keywords:
 - interoperability, sharing components
 - shared components, using with assemblies
 ms.assetid: b324cc1e-b03c-4f39-aea6-6a6d5bfd0e37
-ms.openlocfilehash: 65005dbbe42f52b3159c8e595972dace3064f986
-ms.sourcegitcommit: 869b5832b667915ac4a5dd8c86b1109ed26b6c08
-ms.translationtype: MT
+ms.openlocfilehash: 5b92eaf56e337b8a8128bb3a0706ecdb76177c0e
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/28/2018
-ms.locfileid: "39332654"
+ms.lasthandoff: 09/02/2018
+ms.locfileid: "43472004"
 ---
 # <a name="troubleshooting-interoperability-visual-basic"></a>Řešení potíží s interoperabilitou (Visual Basic)
 Při spolupráci mezi modelem COM a spravovaný kód [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)], mohou nastat jeden nebo více z těchto běžných problémů.  
@@ -130,7 +130,7 @@ Set db = DBEngine.OpenDatabase("C:\nwind.mdb")
  <xref:System.Runtime.InteropServices.MarshalAsAttribute>  
  [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
  [Tlbimp.exe (importér knihovny typů)](../../../framework/tools/tlbimp-exe-type-library-importer.md)  
- [Tlbexp.exe (exportér knihovny typů)](http://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
+ [Tlbexp.exe (exportér knihovny typů)](https://msdn.microsoft.com/library/a487d61b-d166-467b-a7ca-d8b52fbff42d)  
  [Návod: Implementace dědičnosti pomocí objektů COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
  [Příkaz Inherits](../../../visual-basic/language-reference/statements/inherits-statement.md)  
  [Globální mezipaměť sestavení](../../../framework/app-domains/gac.md)

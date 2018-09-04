@@ -36,12 +36,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: a33e058b41629a2f01f2162dadd7a5f965a82548
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: c13bdc47568aa8bbd934bb2b86410e17bbc485dc
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925550"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43397361"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
@@ -158,4 +158,4 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
  [jako](../../../../visual-basic/language-reference/statements/as-clause.md)  
  [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
  [Kovariance a kontravariance](../../concepts/covariance-contravariance/index.md)  
- [Iterátory](http://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)
+ [Iterátory](https://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)

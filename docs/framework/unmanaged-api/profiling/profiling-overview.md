@@ -29,12 +29,12 @@ helpviewer_keywords:
 ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6d7b12004efce76f9ac591f18fd0f4e06fdd7fd0
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
-ms.translationtype: MT
+ms.openlocfilehash: dd0fef0e8a2c4b94cd5dd7beb140e669c52a07a8
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934948"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43416957"
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 <a name="top"></a> Profiler je nástroj, který sleduje spuštění jiné aplikace. Common language runtime (CLR) profiler je dynamická knihovna (DLL), který obsahuje funkce, které přijímají zprávy z a odesílání zpráv do CLR pomocí Profilování rozhraní API. Knihovna DLL profileru je načtena modulem CLR za běhu.  
@@ -209,7 +209,7 @@ Architektura profilování
 ### <a name="stack-snapshot"></a>Snímek zásobníku  
  Snímek zásobníku je trasování zásobníku vlákna v okamžiku v čase. Rozhraní API profilování podporuje trasování spravovaných funkcí v zásobníku, ale ponechává trasování nespravovaných funkcí na zásobníkem profileru vlastní.  
   
- Další informace o tom, jak programovat profiler, aby procházel spravované zásobníky, najdete v článku [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) metody v této sadě dokumentace a [Profiler procházení zásobníku v rozhraní .NET Framework 2.0: Základy i mimo ně](http://go.microsoft.com/fwlink/?LinkId=73638).
+ Další informace o tom, jak programovat profiler, aby procházel spravované zásobníky, najdete v článku [ICorProfilerInfo2::DoStackSnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) metody v této sadě dokumentace a [Profiler procházení zásobníku v rozhraní .NET Framework 2.0: Základy i mimo ně](https://go.microsoft.com/fwlink/?LinkId=73638).
   
 ### <a name="shadow-stack"></a>Stínový zásobník  
  Příliš časté používání metody snímku může rychle vytvořit potíže s výkonem. Pokud chcete často přebírat trasování zásobníku, váš profiler by měl místo toho vytvořit stín zásobníku pomocí [FunctionEnter2](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md), [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md), [functiontailcall2 –](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md), a [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) zpětných volání výjimky. Stínový zásobník je vždy aktuální a lze ho snadno zkopírovat do úložiště vždy, když je potřeba snímek zásobníku.  

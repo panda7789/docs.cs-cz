@@ -2,71 +2,71 @@
 title: Specifikace manifestu zprostředkovatele
 ms.date: 03/30/2017
 ms.assetid: bb450b47-8951-4f99-9350-26f05a4d4e46
-ms.openlocfilehash: 02faee9ad69bd75f4df608b9a4767560945c7bb3
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9875f0ce8d7b10532d7545c05d58ab43146120f0
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767138"
+ms.lasthandoff: 09/01/2018
+ms.locfileid: "43387299"
 ---
 # <a name="provider-manifest-specification"></a>Specifikace manifestu zprostředkovatele
 Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporují typy a funkce v úložišti.  
   
- Entity služby funguje nezávisle na konkrétní data zprostředkovatele úložiště ještě stále umožňuje zprostředkovatele dat explicitně definujte, jak komunikovat s základní úložiště dat. modely, mapování a dotazů. Bez úroveň abstrakce Entity služby může být cílena na konkrétní data store nebo zprostředkovatele dat.  
+ Entita služby funguje nezávisle na poskytovatele úložiště konkrétní data, ale stále umožňuje poskytovatel dat explicitně definovat dotazy, modely a mapování interakci s základnímu úložišti dat. Bez abstraktní vrstvu může entita služby pouze cílená na konkrétní datové úložiště nebo poskytovatele dat služeb.  
   
- Typy, které zprostředkovatel podporuje přímo nebo nepřímo podporuje základní databáze. Tyto typy, nemusí nutně být typy přesný úložiště, ale typy používá zprostředkovatel pro podporu [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Typy poskytovatele/úložiště jsou popsané v podmínkách Entity Data Model (EDM).  
+ Typy, které podporuje zprostředkovatel přímo nebo nepřímo podporuje podkladové databáze. Tyto typy nejsou nutně typy přesné úložiště, ale poskytovatel se použije pro podporu typů [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)]. Typy zprostředkovatele nebo úložiště jsou popsány v podmínkách Entity Data Model (EDM).  
   
- Parametr a návratové typy pro funkce nepodporuje úložiště dat jsou určené v podmínky EDM.  
+ Parametry a návratovým typem pro funkce podporované v úložišti dat jsou určené v EDM podmínky.  
   
 ## <a name="requirements"></a>Požadavky  
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a úložiště dat musejí mít k předávání dat a zpět v známé typy bez ztráty dat nebo zkrácení.  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a úložišti dat musí mít možnost předat data vpřed a zpět v známých typů bez ztráty dat nebo zkrácení.  
   
  Manifest zprostředkovatele musí být možné načíst pomocí nástrojů v době návrhu bez nutnosti otevřít připojení k úložišti.  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Je případ citlivé, ale nemusí být příslušné datové úložiště. Když artefakty EDM (identifikátory a názvy typů, např.) jsou definováni a použít v manifestu, musíte použít [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] písmen. Pokud datové úložiště prvky, které může být malá a velká písmena se zobrazí v manifestu zprostředkovatele, je třeba zachovat v manifestu zprostředkovatele, že velká a malá písmena.  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Je případ citlivé, ale nemusí být základnímu úložišti dat. Když artefakty EDM (názvy typu, například a identifikátory) jsou definovány a použít v manifestu, musíte použít [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] písmen. Pokud prvky úložiště dat, které mohou být velká a malá písmena v manifestu zprostředkovatele, musí být zachovány v manifestu zprostředkovatele, tento velká a malá písmena.  
   
- [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Vyžaduje manifest zprostředkovatele pro všechny poskytovatele data. Pokud se pokusíte použít poskytovatele, který nemá zprostředkovatele manifestu s [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], zobrazí se chyba.  
+ [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] Vyžaduje manifest zprostředkovatele pro všechna data zprostředkovatele. Pokud se pokusíte použít poskytovatele, který nemá zprostředkovatele manifestu se [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], obdržíte chybu.  
   
- Následující tabulka popisuje druhy výjimek [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] by výjimku při výjimky jsou vyvolány prostřednictvím interakci poskytovatele:  
+ Následující tabulka popisuje druhy výjimek [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] by výjimku při vzniknou výjimek prostřednictvím poskytovatele interakce:  
   
 |Problém|Výjimka|  
 |-----------|---------------|  
 |Zprostředkovatel nepodporuje GetProviderManifest v DbProviderServices.|ProviderIncompatibleException|  
-|Chybí manifest zprostředkovatele: Zprostředkovatel vrátí `null` při pokusu o načtení manifestu zprostředkovatele.|ProviderIncompatibleException|  
-|Manifest zprostředkovatele neplatný: Zprostředkovatel vrátí neplatný kód XML při pokusu o načtení manifestu zprostředkovatele.|ProviderIncompatibleException|  
+|Chybějící manifest zprostředkovatele: zprostředkovatele vrátí `null` při pokusu o načtení manifest zprostředkovatele.|ProviderIncompatibleException|  
+|Neplatný poskytovatel manifest: zprostředkovatel vrací neplatný kód XML při pokusu o načtení manifest zprostředkovatele.|ProviderIncompatibleException|  
   
 ## <a name="scenarios"></a>Scénáře  
- Zprostředkovatel musí podporují následující scénáře:  
+ Poskytovatel by měl podporují následující scénáře:  
   
 ### <a name="writing-a-provider-with-symmetric-type-mapping"></a>Zápis zprostředkovatele s mapováním symetrický typu  
- Můžete napsat poskytovatele pro [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] kde každý typ úložiště mapuje jeden typ EDM, bez ohledu na to, že mapování směr. Pro typ zprostředkovatele, který má velmi jednoduché mapování, která odpovídá typu EDM můžete použít symetrický řešení, protože je jednoduchý systém typů nebo odpovídá typů EDM.  
+ Můžete napsat zprostředkovatele [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] kde každý typ úložiště mapuje na jeden typ EDM, bez ohledu na směru mapování. Pro typ zprostředkovatele, který má velmi jednoduché mapování, která odpovídá typu EDM můžete použít symetrický řešení, protože systém typů je jednoduchá nebo odpovídá typů modelu EDM.  
   
- Můžete použít jednoduchost svoji doménu a vytvoření manifestu statické deklarativní zprostředkovatele.  
+ Můžete použít jednoduchost své domény a vytvoří manifest statické deklarativní poskytovatele.  
   
- Můžete zapsat soubor XML, který má dvě části:  
+ Můžete napsat soubor XML, který má dvě části:  
   
--   Seznam typů zprostředkovatele vyjádřené jako "protějšku EDM" typ úložiště nebo funkce. Typy úložiště mají protějšku typy EDM. Funkce úložiště mají odpovídající funkce EDM. Například varchar je typ systému SQL Server, ale odpovídající typ EDM je řetězec.  
+-   Seznam typů poskytovatelů vyjadřují "protějšek EDM" typ úložiště nebo funkce. Typy Store mají protějšek typů modelu EDM. Funkce Store mají odpovídající funkce EDM. Například varchar je typ serveru SQL Server, ale odpovídající typ EDM je řetězec.  
   
--   Seznam funkcí podporovaných poskytovatelem, kde parametr a návratové typy jsou uvedeny v podmínkách EDM.  
+-   Seznam funkcí podporovaných poskytovateli, ve kterém jsou parametry a návratovým typem vyjádřen v pojmech EDM.  
   
-### <a name="writing-a-provider-with-asymmetric-type-mapping"></a>Zápis zprostředkovatele s mapováním asymetrické typu  
- Při zápisu zprostředkovatele úložiště dat pro [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], typ EDM zprostředkovatele mapování pro některé typy se může lišit od mapování typu zprostředkovatele EDM. Například může bez vazby PrimitiveTypeKind.String EDM mapovat do nvarchar(4000) na zprostředkovateli při nvarchar(4000) mapuje EDM PrimitiveTypeKind.String(MaxLength=4000).  
+### <a name="writing-a-provider-with-asymmetric-type-mapping"></a>Zápis zprostředkovatele s mapováním asymetrického typu  
+ Při psaní pro zprostředkovatele úložiště dat [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], mapování pro některé typy mohou být odlišný od typu zprostředkovatele EDM mapování typů EDM zprostředkovatele. Například bez vazby modelu EDM PrimitiveTypeKind.String mohou být mapovány nvarchar(4000) na poskytovateli, zatímco nvarchar(4000) mapuje na EDM PrimitiveTypeKind.String(MaxLength=4000).  
   
- Můžete zapsat soubor XML, který má dvě části:  
+ Můžete napsat soubor XML, který má dvě části:  
   
--   Seznam typů zprostředkovatele vyjádřený v podmínkách EDM a definovat mapování pro obě směr: EDM zprostředkovatele a zprostředkovatele EDM.  
+-   Seznam typů poskytovatelů vyjádřen v pojmech EDM a definovat mapování pro oba směry: EDM poskytovatele a poskytovatele EDM.  
   
--   Seznam funkcí podporovaných poskytovatelem, kde parametr a návratové typy jsou uvedeny v podmínkách EDM.  
+-   Seznam funkcí podporovaných poskytovateli, ve kterém jsou parametry a návratovým typem vyjádřen v pojmech EDM.  
   
-## <a name="provider-manifest-discoverability"></a>Vyhledání manifestu zprostředkovatele  
- Manifest nepřímo používá několik typů součásti v Entity služby (například nástroje nebo dotazu), ale informace přímo využít metadat prostřednictvím data ukládat zavaděč metadat.  
+## <a name="provider-manifest-discoverability"></a>Zjistitelnost manifestu zprostředkovatele  
+ Manifest je nepřímo používá několik typů součástí služby Entity (například nástroje nebo dotaz), ale informace přímo využíváno metadat prostřednictvím data ukládat metadata zavaděče.  
   
  ![dfb3d02b&#45;7a8c&#45;4d51&#45;ac5a&#45;a73d8aa145e6](../../../../../docs/framework/data/adonet/ef/media/dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6.gif "dfb3d02b-7a8c-4d51-ac5a-a73d8aa145e6")  
   
- Různých obchodů nebo různé verze stejného úložiště může však podporovat daného zprostředkovatele. Proto musí zprostředkovatele nahlásit různých manifestu pro každé podporované datové úložiště.  
+ Daný poskytovatel může však podporovat různých obchodech nebo různými verzemi stejného úložiště. Proto zprostředkovatele se musí hlásit různé manifestu pro každé podporované datové úložiště.  
   
 ### <a name="provider-manifest-token"></a>Token manifestu zprostředkovatele  
- Po otevření připojení úložišti dat zprostředkovatele můžete dotazovat informace, které vrátí správné manifestu. Toto nemusí být možné v offline scénářích, kde informace o připojení není k dispozici nebo pokud není možné se připojit k úložišti. Identifikovat manifest pomocí `ProviderManifestToken` atribut `Schema` element v souboru ssdl. Požadovaný formát není pro tento atribut; Zprostředkovatel zvolí minimální informace potřebné k identifikaci manifestu bez otevření připojení k úložišti.  
+ Po otevření připojení úložiště dat zprostředkovatele můžete dotazovat na informace se vraťte správný manifest. To nemusí být možné v případě offline scénářů, kde není k dispozici informace o připojení nebo když není možné se připojit k úložišti. Identifikovat manifestu pomocí `ProviderManifestToken` atribut `Schema` element v souboru ssdl. Neexistuje žádné požadovaný formát pro tento atribut; Zprostředkovatel zvolí minimální informace potřebné k identifikaci manifest bez nutnosti otevřít připojení k úložišti.  
   
  Příklad:  
   
@@ -74,16 +74,16 @@ Tato část popisuje, jak můžete zprostředkovatele úložiště dat podporuj�
 <Schema Namespace="Northwind" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:edm="http://schemas.microsoft.com/ado/2006/04/edm/ssdl" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">  
 ```  
   
-## <a name="provider-manifest-programming-model"></a>Model programování manifestu zprostředkovatele  
- Poskytovatelé jsou odvozeny od <xref:System.Data.Common.DbXmlEnabledProviderManifest>, což umožňuje jejich zadejte jejich manifesty deklarativně. Následující obrázek znázorňuje hierarchie tříd zprostředkovatele:  
+## <a name="provider-manifest-programming-model"></a>Programovací Model manifestu zprostředkovatele  
+ Poskytovatelé jsou odvozeny z <xref:System.Data.Common.DbXmlEnabledProviderManifest>, který umožňuje zadat svých manifestech deklarativně. Následující obrázek znázorňuje hierarchii tříd zprostředkovatele:  
   
  ![None](../../../../../docs/framework/data/adonet/ef/media/d541eba3-2ee6-4cd1-88f5-89d0b2582a6c.gif "d541eba3-2ee6-4cd1-88f5-89d0b2582a6c")  
   
-### <a name="discoverability-api"></a>Možnosti rozpoznání rozhraní API  
- Manifest zprostředkovatele je načíst zavaděčem ukládání metadat (StoreItemCollection), buď pomocí dat uložení připojení nebo tokenu manifestu zprostředkovatele.  
+### <a name="discoverability-api"></a>Zjistitelnost rozhraní API  
+ Manifest zprostředkovatele je načten zavaděč Store Metadata (StoreItemCollection), s použitím dat uložit připojení nebo token manifestu zprostředkovatele.  
   
-#### <a name="using-a-data-store-connection"></a>Pomocí připojení k úložišti dat  
- Při ukládání dat není k dispozici připojení, volejte DbProvderServices.GetProviderManifestToken vrátit token, který je předaný metodě GetProviderManifest, která vrátí hodnotu třída DbProviderManifest. Tato metoda provede delegaci pro poskytovatele implementace GetDbProviderManifestToken.  
+#### <a name="using-a-data-store-connection"></a>Data Store připojení  
+ Při ukládání dat je k dispozici připojení, volejte DbProvderServices.GetProviderManifestToken vrátí token, který se předá metodě GetProviderManifest, které vrací DbProviderManifest. Tato metoda deleguje se do poskytovatele provádění GetDbProviderManifestToken.  
   
 ```  
 public string GetProviderManifestToken(DbConnection connection);  
@@ -91,14 +91,14 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 ```  
   
 #### <a name="using-a-provider-manifest-token"></a>Pomocí tokenu manifestu zprostředkovatele  
- Offline scénář token vydán z reprezentace SSDL. SSDL umožňuje určit ProviderManifestToken (najdete v části [Element schématu (SSDL)](http://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222) informace). Například pokud připojení nelze otevřít, SSDL má token manifestu zprostředkovatele, která určuje informace o manifest.  
+ Token scénáři offline, je odebrána ze souborů SSDL reprezentace. SSDL můžete zadat ProviderManifestToken (viz [Element schématu (SSDL)](https://msdn.microsoft.com/library/fec75ae4-7f16-4421-9265-9dac61509222) Další informace). Například pokud připojení nelze otevřít, SSDL má token manifestu zprostředkovatele, který určuje informace o manifestu.  
   
 ```  
 public DbProviderManifest GetProviderManifest(string manifestToken);  
 ```  
   
 ### <a name="provider-manifest-schema"></a>Schéma manifestu zprostředkovatele  
- Schéma definované pro každého zprostředkovatele informace obsahuje statický informace, které mají být využívány službou metadat:  
+ Schéma informace definované pro každý poskytovatel obsahuje statické informace, které mají být využívány službou metadat:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -240,44 +240,44 @@ public DbProviderManifest GetProviderManifest(string manifestToken);
 </xs:schema>  
 ```  
   
-#### <a name="types-node"></a>Uzel typy  
- Uzel typy v manifestu zprostředkovatele, obsahuje informace o typech, které jsou nativně podporovány úložiště dat nebo prostřednictvím poskytovatele.  
+#### <a name="types-node"></a>Typy uzlů  
+ Typy uzlů v manifestu zprostředkovatele, obsahuje informace o typech, které jsou nativně podporovány v úložišti dat nebo prostřednictvím poskytovatele.  
   
 ##### <a name="type-node"></a>Typ uzlu  
- Každý typ uzlu definuje typ zprostředkovatele z hlediska EDM. Typ uzlu popisuje název typu zprostředkovatele, a informace týkající se typ modelu, který se mapuje na a omezující vlastnosti popisují mapování tohoto typu.  
+ Každý typ uzlu definuje typ zprostředkovatele z hlediska modelu EDM. Uzel typu popisuje název poskytovatele typu a informace týkající se typ modelu, který je namapován na a omezující vlastnosti k popisu mapování typu.  
   
- Chcete-li express tento typ informací v manifestu zprostředkovatele, musí každá deklarace TypeInformation definovat několik popis omezující vlastnosti pro každý typ:  
+ Aby bylo možné tento typ informací v manifestu zprostředkovatele, express, každý TypeInformation prohlášení musí definovat několik popisů omezující vlastnost pro každý typ:  
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
-|Název|String|Ano|není k dispozici|Název typu specifický pro zprostředkovatele dat|  
+|Název|String|Ano|není k dispozici|Název typu specifickým pro zprostředkovatele dat|  
 |Hodnota typu PrimitiveTypeKind|Hodnota typu PrimitiveTypeKind|Ano|není k dispozici|Název typu EDM|  
   
 ###### <a name="function-node"></a>Uzel – funkce  
- Jednotlivé funkce definuje jedinou funkci k dispozici prostřednictvím poskytovatele.  
+ Každá funkce definuje jedinou funkci k dispozici prostřednictvím poskytovatele.  
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Název|String|Ano|není k dispozici|Identifikátor nebo název funkce|  
-|Vlastnost ReturnType|String|Ne|Void|Návratový typ EDM funkce|  
-|Aggregate|Boolean|Ne|False|Hodnota TRUE, pokud je funkce agregační funkce|  
-|Předdefinované|Boolean|Ne|Hodnota TRUE|Hodnota TRUE, pokud je funkce integrovaná v úložišti dat.|  
-|StoreFunctionName|String|Ne|\<Name >|Název funkce v úložišti dat.  Umožňuje pro úroveň přesměrování názvy funkcí.|  
-|NiladicFunction|Boolean|Ne|False|Hodnota TRUE, pokud funkce nevyžaduje, parametry a je volána bez parametrů|  
-|ParameterType<br /><br /> Sémantika|ParameterSemantics|Ne|AllowImplicit<br /><br /> Převod|Volba jak by se měl kanálu dotazu zabývat nahrazování parametru typu:<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
+|Vlastnost ReturnType|String|Ne|Typ void|Návratový typ funkce EDM|  
+|Aggregate|Boolean|Ne|False|Hodnota TRUE, pokud funkce je agregační funkce|  
+|Předdefinované|Boolean|Ne|Hodnota TRUE|Hodnota TRUE, pokud funkce je integrovaná do úložiště dat|  
+|StoreFunctionName|String|Ne|\<Název >|Název funkce v úložišti dat.  Umožňuje úroveň přesměrování názvy funkcí.|  
+|NiladicFunction|Boolean|Ne|False|Hodnota TRUE v případě, že funkce nevyžaduje parametrů a je volána bez parametrů|  
+|Zda položka ParameterType<br /><br /> Sémantika|ParameterSemantics|Ne|AllowImplicit<br /><br /> Převod|Výběr jak kanálu dotazu by měl řešit nahrazení typ parametru:<br /><br /> -ExactMatchOnly<br />-AllowImplicitPromotion<br />-AllowImplicitConversion|  
   
  **Parametry uzlu**  
   
- Jednotlivé funkce má kolekce jednoho či více uzlů parametr.  
+ Každá funkce má kolekce jednoho nebo více uzlů parametrů.  
   
 |Název atributu|Datový typ|Požadováno|Výchozí hodnota|Popis|  
 |--------------------|---------------|--------------|-------------------|-----------------|  
 |Název|String|Ano|není k dispozici|Identifikátor nebo název parametru.|  
 |Typ|String|Ano|není k dispozici|Typ EDM parametru.|  
-|Režim|Parametr<br /><br /> Směr|Ano|není k dispozici|Směr parametru:<br /><br /> -v<br />-out<br />-inout|  
+|Režim|Parametr<br /><br /> Směr|Ano|není k dispozici|Směr parametru:<br /><br /> -v<br />-out<br />– vstup|  
   
 ##### <a name="namespace-attribute"></a>Atribut Namespace  
- Každý poskytovatel úložiště dat musí definovat v oboru názvů nebo skupině obory názvů pro informace definované v manifestu. Tento obor názvů lze v dotazech Entity SQL přeložit názvy funkcí a typy. Například: SQL Server. Tento obor názvů musí být odlišný od kanonický oboru názvů, EDM, definované Entity služby pro standardní funkce podporovaná dotazy Entity SQL.  
+ Každý poskytovatel úložiště dat musí definovat obor názvů nebo skupiny oborů názvů informace definované v manifestu. Tento obor názvů lze použít v dotazech Entity SQL k překladu názvů funkcí a typů. Například: systému SQL Server. Tento obor názvů musí být odlišný od canonical obor názvů, EDM, určené služby Entity pro standardní funkce to, že dotazy Entity SQL.  
   
 ## <a name="see-also"></a>Viz také  
  [Zápis zprostředkovatele dat Entity Framework](../../../../../docs/framework/data/adonet/ef/writing-an-ef-data-provider.md)
