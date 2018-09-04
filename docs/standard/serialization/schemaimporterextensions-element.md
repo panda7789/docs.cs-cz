@@ -7,16 +7,16 @@ helpviewer_keywords:
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
 ms.openlocfilehash: 8bcd8abb138c645f61bf833b49cda2631d1778dd
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43478010"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43513110"
 ---
-# <a name="ltschemaimporterextensionsgt-element"></a><span data-ttu-id="c9b4e-102">&lt;schemaImporterExtensions&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="c9b4e-102">&lt;schemaImporterExtensions&gt; Element</span></span>
-<span data-ttu-id="c9b4e-103">Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="c9b4e-103">Contains types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping of XSD types to .NET Framework types.</span></span> <span data-ttu-id="c9b4e-104">Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="c9b4e-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
+# <a name="ltschemaimporterextensionsgt-element"></a><span data-ttu-id="9cd4c-102">&lt;schemaImporterExtensions&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="9cd4c-102">&lt;schemaImporterExtensions&gt; Element</span></span>
+<span data-ttu-id="9cd4c-103">Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="9cd4c-103">Contains types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> for mapping of XSD types to .NET Framework types.</span></span> <span data-ttu-id="9cd4c-104">Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).</span><span class="sxs-lookup"><span data-stu-id="9cd4c-104">For more information about configuration files, see [Configuration File Schema](../../../docs/framework/configure-apps/file-schema/index.md).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c9b4e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c9b4e-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9cd4c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9cd4c-105">Syntax</span></span>  
   
 ```xml  
 <schemaImporterExtensions>  
@@ -24,20 +24,20 @@ ms.locfileid: "43478010"
 </schemaImporterExtensions>  
 ```  
   
-## <a name="child-elements"></a><span data-ttu-id="c9b4e-106">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="c9b4e-106">Child Elements</span></span>  
+## <a name="child-elements"></a><span data-ttu-id="9cd4c-106">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="9cd4c-106">Child Elements</span></span>  
   
-|<span data-ttu-id="c9b4e-107">Prvek</span><span class="sxs-lookup"><span data-stu-id="c9b4e-107">Element</span></span>|<span data-ttu-id="c9b4e-108">Popis</span><span class="sxs-lookup"><span data-stu-id="c9b4e-108">Description</span></span>|  
+|<span data-ttu-id="9cd4c-107">Prvek</span><span class="sxs-lookup"><span data-stu-id="9cd4c-107">Element</span></span>|<span data-ttu-id="9cd4c-108">Popis</span><span class="sxs-lookup"><span data-stu-id="9cd4c-108">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="c9b4e-109">\<Přidat > – Element pro \<schemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="c9b4e-109">\<add> Element for \<schemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|<span data-ttu-id="c9b4e-110">Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> vytvoření mapování.</span><span class="sxs-lookup"><span data-stu-id="c9b4e-110">Adds types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> to create mappings.</span></span>|  
+|[<span data-ttu-id="9cd4c-109">\<Přidat > – Element pro \<schemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="9cd4c-109">\<add> Element for \<schemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|<span data-ttu-id="9cd4c-110">Přidá typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> vytvoření mapování.</span><span class="sxs-lookup"><span data-stu-id="9cd4c-110">Adds types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> to create mappings.</span></span>|  
   
-## <a name="parent-elements"></a><span data-ttu-id="c9b4e-111">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="c9b4e-111">Parent Elements</span></span>  
+## <a name="parent-elements"></a><span data-ttu-id="9cd4c-111">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="9cd4c-111">Parent Elements</span></span>  
   
-|<span data-ttu-id="c9b4e-112">Prvek</span><span class="sxs-lookup"><span data-stu-id="c9b4e-112">Element</span></span>|<span data-ttu-id="c9b4e-113">Popis</span><span class="sxs-lookup"><span data-stu-id="c9b4e-113">Description</span></span>|  
+|<span data-ttu-id="9cd4c-112">Prvek</span><span class="sxs-lookup"><span data-stu-id="9cd4c-112">Element</span></span>|<span data-ttu-id="9cd4c-113">Popis</span><span class="sxs-lookup"><span data-stu-id="9cd4c-113">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="c9b4e-114">\<system.xml.serialization> Element</span><span class="sxs-lookup"><span data-stu-id="c9b4e-114">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)|<span data-ttu-id="c9b4e-115">Element nejvyšší úrovně pro řízení serializace XML.</span><span class="sxs-lookup"><span data-stu-id="c9b4e-115">The top-level element for controlling XML serialization.</span></span>|  
+|[<span data-ttu-id="9cd4c-114">\<system.xml.serialization> Element</span><span class="sxs-lookup"><span data-stu-id="9cd4c-114">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)|<span data-ttu-id="9cd4c-115">Element nejvyšší úrovně pro řízení serializace XML.</span><span class="sxs-lookup"><span data-stu-id="9cd4c-115">The top-level element for controlling XML serialization.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="c9b4e-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="c9b4e-116">Example</span></span>  
- <span data-ttu-id="c9b4e-117">Následující příklad kódu ukazuje, jak přidat typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> při mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="c9b4e-117">The following code example illustrates how to add types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> when mapping XSD types to .NET Framework types.</span></span>  
+## <a name="example"></a><span data-ttu-id="9cd4c-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="9cd4c-116">Example</span></span>  
+ <span data-ttu-id="9cd4c-117">Následující příklad kódu ukazuje, jak přidat typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> při mapování typů XSD na typy rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="9cd4c-117">The following code example illustrates how to add types that are used by the <xref:System.Xml.Serialization.XmlSchemaImporter> when mapping XSD types to .NET Framework types.</span></span>  
   
 ```xml  
 <system.xml.serialization>  
@@ -50,10 +50,10 @@ ms.locfileid: "43478010"
 </system.xml.serialization>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="c9b4e-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="c9b4e-118">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="9cd4c-118">Viz také</span><span class="sxs-lookup"><span data-stu-id="9cd4c-118">See Also</span></span>  
  <xref:System.Xml.Serialization.XmlSchemaImporter>  
  <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
- [<span data-ttu-id="c9b4e-119">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="c9b4e-119">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
- [<span data-ttu-id="c9b4e-120">\<dateTimeSerialization > – Element</span><span class="sxs-lookup"><span data-stu-id="c9b4e-120">\<dateTimeSerialization> Element</span></span>](../../../docs/standard/serialization/datetimeserialization-element.md)  
- [<span data-ttu-id="c9b4e-121">\<Přidat > – Element pro \<schemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="c9b4e-121">\<add> Element for \<schemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
- [<span data-ttu-id="c9b4e-122">\<system.xml.serialization> Element</span><span class="sxs-lookup"><span data-stu-id="c9b4e-122">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)
+ [<span data-ttu-id="9cd4c-119">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="9cd4c-119">Configuration File Schema</span></span>](../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="9cd4c-120">\<dateTimeSerialization > – Element</span><span class="sxs-lookup"><span data-stu-id="9cd4c-120">\<dateTimeSerialization> Element</span></span>](../../../docs/standard/serialization/datetimeserialization-element.md)  
+ [<span data-ttu-id="9cd4c-121">\<Přidat > – Element pro \<schemaImporterExtensions ></span><span class="sxs-lookup"><span data-stu-id="9cd4c-121">\<add> Element for \<schemaImporterExtensions></span></span>](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
+ [<span data-ttu-id="9cd4c-122">\<system.xml.serialization> Element</span><span class="sxs-lookup"><span data-stu-id="9cd4c-122">\<system.xml.serialization> Element</span></span>](../../../docs/standard/serialization/system-xml-serialization-element.md)

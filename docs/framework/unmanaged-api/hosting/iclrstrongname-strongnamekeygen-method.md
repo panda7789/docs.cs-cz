@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 55b4fbb8785f788c9eb34f32b5078201f8253066
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d925e30786c742708f345fc23f14c79521cbc6f3
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433325"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519949"
 ---
-# <a name="iclrstrongnamestrongnamekeygen-method"></a><span data-ttu-id="cbcd9-102">ICLRStrongName::StrongNameKeyGen – metoda</span><span class="sxs-lookup"><span data-stu-id="cbcd9-102">ICLRStrongName::StrongNameKeyGen Method</span></span>
-<span data-ttu-id="cbcd9-103">Vytvoří nový pár veřejného a privátního klíče pro silné jméno použití.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-103">Creates a new public/private key pair for strong name use.</span></span>  
+# <a name="iclrstrongnamestrongnamekeygen-method"></a><span data-ttu-id="ee1ce-102">ICLRStrongName::StrongNameKeyGen – metoda</span><span class="sxs-lookup"><span data-stu-id="ee1ce-102">ICLRStrongName::StrongNameKeyGen Method</span></span>
+<span data-ttu-id="ee1ce-103">Vytvoří nový pár veřejného a privátního klíče pro použití silným názvem.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-103">Creates a new public/private key pair for strong name use.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cbcd9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cbcd9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ee1ce-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ee1ce-104">Syntax</span></span>  
   
 ```  
 HRESULT StrongNameKeyGen (  
@@ -38,38 +38,38 @@ HRESULT StrongNameKeyGen (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="cbcd9-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="cbcd9-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="ee1ce-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="ee1ce-105">Parameters</span></span>  
  `wszKeyContainer`  
- <span data-ttu-id="cbcd9-106">[v] Název požadovaný kontejner klíčů.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-106">[in] The requested key container name.</span></span> <span data-ttu-id="cbcd9-107">`wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-107">`wszKeyContainer` must either be a non-empty string or null to generate a temporary name.</span></span>  
+ <span data-ttu-id="ee1ce-106">[in] Název požadovaný kontejner klíče.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-106">[in] The requested key container name.</span></span> <span data-ttu-id="ee1ce-107">`wszKeyContainer` musí být neprázdný řetězec nebo hodnota null pro generování dočasný název.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-107">`wszKeyContainer` must either be a non-empty string or null to generate a temporary name.</span></span>  
   
  `dwFlags`  
- <span data-ttu-id="cbcd9-108">[v] Hodnota, která určuje, zda chcete ponechat klíč zaregistrován.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-108">[in] A value that specifies whether to leave the key registered.</span></span> <span data-ttu-id="cbcd9-109">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="cbcd9-109">The following values are supported:</span></span>  
+ <span data-ttu-id="ee1ce-108">[in] Hodnota, která určuje, zda má zůstat zkratku zaregistrovanou.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-108">[in] A value that specifies whether to leave the key registered.</span></span> <span data-ttu-id="ee1ce-109">Podporovány jsou následující hodnoty:</span><span class="sxs-lookup"><span data-stu-id="ee1ce-109">The following values are supported:</span></span>  
   
--   <span data-ttu-id="cbcd9-110">0x00000000 - použít, když `wszKeyContainer` má hodnotu null při generování názvu dočasné kontejneru klíčů.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-110">0x00000000 - Used when `wszKeyContainer` is null to generate a temporary key container name.</span></span>  
+-   <span data-ttu-id="ee1ce-110">0x00000000 - nepoužívá, pokud `wszKeyContainer` má hodnotu null. k vygenerování názvu dočasného kontejneru klíčů.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-110">0x00000000 - Used when `wszKeyContainer` is null to generate a temporary key container name.</span></span>  
   
--   <span data-ttu-id="cbcd9-111">0x00000001 (`SN_LEAVE_KEY`)-určuje, které by měl být klíč vlevo registrován.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-111">0x00000001 (`SN_LEAVE_KEY`) - Specifies that the key should be left registered.</span></span>  
+-   <span data-ttu-id="ee1ce-111">0x00000001 (`SN_LEAVE_KEY`)-určuje, že klíč by měl být vlevo zaregistrován.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-111">0x00000001 (`SN_LEAVE_KEY`) - Specifies that the key should be left registered.</span></span>  
   
  `ppbKeyBlob`  
- <span data-ttu-id="cbcd9-112">[out] Vrácený veřejného a privátního klíče RSA.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-112">[out] The returned public/private key pair.</span></span>  
+ <span data-ttu-id="ee1ce-112">[out] Vrácený pár veřejného a privátního klíče.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-112">[out] The returned public/private key pair.</span></span>  
   
  `pcbKeyBlob`  
- <span data-ttu-id="cbcd9-113">[out] Velikost v bajtech z `ppbKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-113">[out] The size, in bytes, of `ppbKeyBlob`.</span></span>  
+ <span data-ttu-id="ee1ce-113">[out] Velikost v bajtech, z `ppbKeyBlob`.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-113">[out] The size, in bytes, of `ppbKeyBlob`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="cbcd9-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="cbcd9-114">Return Value</span></span>  
- <span data-ttu-id="cbcd9-115">`S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="cbcd9-115">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](http://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ee1ce-114">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ee1ce-114">Return Value</span></span>  
+ <span data-ttu-id="ee1ce-115">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="ee1ce-115">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="cbcd9-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cbcd9-116">Remarks</span></span>  
- <span data-ttu-id="cbcd9-117">[Iclrstrongname::strongnamekeygen –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) metoda vytvoří klíč 1024 bitů.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-117">The [ICLRStrongName::StrongNameKeyGen](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) method creates a 1024-bit key.</span></span> <span data-ttu-id="cbcd9-118">Po načtení klíč by měly volat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělenou paměť.</span><span class="sxs-lookup"><span data-stu-id="cbcd9-118">After the key is retrieved, you should call the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method to release the allocated memory.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ee1ce-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ee1ce-116">Remarks</span></span>  
+ <span data-ttu-id="ee1ce-117">[Iclrstrongname::strongnamekeygen –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) metoda vytvoří klíče 1 024 bitů.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-117">The [ICLRStrongName::StrongNameKeyGen](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) method creates a 1024-bit key.</span></span> <span data-ttu-id="ee1ce-118">Po načtení klíče, měli byste zavolat [iclrstrongname::strongnamefreebuffer –](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) metodu pro uvolnění přidělené paměti.</span><span class="sxs-lookup"><span data-stu-id="ee1ce-118">After the key is retrieved, you should call the [ICLRStrongName::StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) method to release the allocated memory.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cbcd9-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cbcd9-119">Requirements</span></span>  
- <span data-ttu-id="cbcd9-120">**Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cbcd9-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ee1ce-119">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ee1ce-119">Requirements</span></span>  
+ <span data-ttu-id="ee1ce-120">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ee1ce-120">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="cbcd9-121">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="cbcd9-121">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="ee1ce-121">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="ee1ce-121">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="cbcd9-122">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="cbcd9-122">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="ee1ce-122">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ee1ce-122">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="cbcd9-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cbcd9-123">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="ee1ce-123">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ee1ce-123">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cbcd9-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="cbcd9-124">See Also</span></span>  
- [<span data-ttu-id="cbcd9-125">StrongNameKeyGenEx – metoda</span><span class="sxs-lookup"><span data-stu-id="cbcd9-125">StrongNameKeyGenEx Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)  
- [<span data-ttu-id="cbcd9-126">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cbcd9-126">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="ee1ce-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="ee1ce-124">See Also</span></span>  
+ [<span data-ttu-id="ee1ce-125">StrongNameKeyGenEx – metoda</span><span class="sxs-lookup"><span data-stu-id="ee1ce-125">StrongNameKeyGenEx Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygenex-method.md)  
+ [<span data-ttu-id="ee1ce-126">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ee1ce-126">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

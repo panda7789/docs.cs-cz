@@ -2,17 +2,17 @@
 title: Odchylky v delegátech (C#)
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 8b74c29d8d94a31d30408131009d92e2b2a4281c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3dabac4e532198871cf05d639aa692751ab17ae1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33326225"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534900"
 ---
-# <a name="variance-in-delegates-c"></a><span data-ttu-id="4d60e-102">Odchylky v delegátech (C#)</span><span class="sxs-lookup"><span data-stu-id="4d60e-102">Variance in Delegates (C#)</span></span>
-<span data-ttu-id="4d60e-103">Rozhraní .NET framework 3.5 byla zavedena podpora odchylku odpovídající metoda podpisy s typy delegáta v všechny Delegáti v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="4d60e-103">.NET Framework 3.5 introduced variance support for matching method signatures with delegate types in all delegates in C#.</span></span> <span data-ttu-id="4d60e-104">To znamená, že můžete přiřadit deleguje pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo pracujících s parametry, které mají méně odvozené typy (kontravariance) než je určeno typ delegáta .</span><span class="sxs-lookup"><span data-stu-id="4d60e-104">This means that you can assign to delegates not only methods that have matching signatures, but also methods that return more derived types (covariance) or that accept parameters that have less derived types (contravariance) than that specified by the delegate type.</span></span> <span data-ttu-id="4d60e-105">To zahrnuje obecné a neobecné delegáti.</span><span class="sxs-lookup"><span data-stu-id="4d60e-105">This includes both generic and non-generic delegates.</span></span>  
+# <a name="variance-in-delegates-c"></a><span data-ttu-id="0b110-102">Odchylky v delegátech (C#)</span><span class="sxs-lookup"><span data-stu-id="0b110-102">Variance in Delegates (C#)</span></span>
+<span data-ttu-id="0b110-103">Rozhraní .NET framework 3.5 představil podporu odchylku pro spárování metod podpisů s typy delegáta v Všichni delegáti v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="0b110-103">.NET Framework 3.5 introduced variance support for matching method signatures with delegate types in all delegates in C#.</span></span> <span data-ttu-id="0b110-104">To znamená, že můžete přiřadit delegáty pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo, která přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typ delegáta .</span><span class="sxs-lookup"><span data-stu-id="0b110-104">This means that you can assign to delegates not only methods that have matching signatures, but also methods that return more derived types (covariance) or that accept parameters that have less derived types (contravariance) than that specified by the delegate type.</span></span> <span data-ttu-id="0b110-105">To zahrnuje obecných a neobecných delegátů.</span><span class="sxs-lookup"><span data-stu-id="0b110-105">This includes both generic and non-generic delegates.</span></span>  
   
- <span data-ttu-id="4d60e-106">Zvažte například následující kód, který má dvě třídy a dvě delegáti: Obecné a neobecné.</span><span class="sxs-lookup"><span data-stu-id="4d60e-106">For example, consider the following code, which has two classes and two delegates: generic and non-generic.</span></span>  
+ <span data-ttu-id="0b110-106">Zvažte například následující kód, který má dvě třídy a dvou delegátů: obecných a neobecných.</span><span class="sxs-lookup"><span data-stu-id="0b110-106">For example, consider the following code, which has two classes and two delegates: generic and non-generic.</span></span>  
   
 ```csharp  
 public class First { }  
@@ -21,7 +21,7 @@ public delegate First SampleDelegate(Second a);
 public delegate R SampleGenericDelegate<A, R>(A a);  
 ```  
   
- <span data-ttu-id="4d60e-107">Při vytváření delegátů `SampleDelegate` nebo `SampleGenericDelegate<A, R>` typy, můžete přiřadit jednu z následujících metod těchto delegáti.</span><span class="sxs-lookup"><span data-stu-id="4d60e-107">When you create delegates of the `SampleDelegate` or `SampleGenericDelegate<A, R>` types, you can assign any one of the following methods to those delegates.</span></span>  
+ <span data-ttu-id="0b110-107">Při vytváření delegátů `SampleDelegate` nebo `SampleGenericDelegate<A, R>` typy, můžete přiřadit jednu z následujících metod na tyto delegáty.</span><span class="sxs-lookup"><span data-stu-id="0b110-107">When you create delegates of the `SampleDelegate` or `SampleGenericDelegate<A, R>` types, you can assign any one of the following methods to those delegates.</span></span>  
   
 ```csharp  
 // Matching signature.  
@@ -42,7 +42,7 @@ public static Second AFirstRSecond(First first)
 { return new Second(); }  
 ```  
   
- <span data-ttu-id="4d60e-108">Následující příklad kódu ukazuje implicitní převod mezi podpis metody a typu delegáta.</span><span class="sxs-lookup"><span data-stu-id="4d60e-108">The following code example illustrates the implicit conversion between the method signature and the delegate type.</span></span>  
+ <span data-ttu-id="0b110-108">Následující příklad kódu ukazuje implicitní převod mezi podpisu metody a typ delegáta.</span><span class="sxs-lookup"><span data-stu-id="0b110-108">The following code example illustrates the implicit conversion between the method signature and the delegate type.</span></span>  
   
 ```csharp  
 // Assigning a method with a matching signature   
@@ -62,14 +62,14 @@ SampleGenericDelegate<Second, First> dGeneric = ASecondRFirst;
 SampleGenericDelegate<Second, First> dGenericConversion = AFirstRSecond;  
 ```  
   
- <span data-ttu-id="4d60e-109">Další příklady najdete v tématu [použití odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md) a [pomocí odchylky pro Func a akce obecní delegáti (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span><span class="sxs-lookup"><span data-stu-id="4d60e-109">For more examples, see [Using Variance in Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span></span>  
+ <span data-ttu-id="0b110-109">Další příklady najdete v tématu [použití odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md) a [pomocí odchylku pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span><span class="sxs-lookup"><span data-stu-id="0b110-109">For more examples, see [Using Variance in Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md) and [Using Variance for Func and Action Generic Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span></span>  
   
-## <a name="variance-in-generic-type-parameters"></a><span data-ttu-id="4d60e-110">Odchylky v obecné parametry typu</span><span class="sxs-lookup"><span data-stu-id="4d60e-110">Variance in Generic Type Parameters</span></span>  
- <span data-ttu-id="4d60e-111">V rozhraní .NET Framework 4 nebo novější můžete povolit implicitní převod mezi delegáti, tak, aby obecní delegáti, které mají různé typy určeného parametry obecného typu lze přiřadit k sobě navzájem, pokud jsou typy zděděn od sebe navzájem podle požadavků odchylky.</span><span class="sxs-lookup"><span data-stu-id="4d60e-111">In .NET Framework 4 or later you can enable implicit conversion between delegates, so that generic delegates that have different types specified by generic type parameters can be assigned to each other, if the types are inherited from each other as required by variance.</span></span>  
+## <a name="variance-in-generic-type-parameters"></a><span data-ttu-id="0b110-110">Variance u parametrů obecného typu</span><span class="sxs-lookup"><span data-stu-id="0b110-110">Variance in Generic Type Parameters</span></span>  
+ <span data-ttu-id="0b110-111">V rozhraní .NET Framework 4 nebo novější můžete povolit implicitní převod mezi delegáty, tak, aby obecné delegáty, které mají různé typy určené parametry obecného typu lze přiřadit k sobě navzájem, pokud typ dědí od sebe navzájem podle požadavků Variance.</span><span class="sxs-lookup"><span data-stu-id="0b110-111">In .NET Framework 4 or later you can enable implicit conversion between delegates, so that generic delegates that have different types specified by generic type parameters can be assigned to each other, if the types are inherited from each other as required by variance.</span></span>  
   
- <span data-ttu-id="4d60e-112">Pokud chcete povolit implicitní převod, je potřeba explicitně deklarovat obecné parametry v delegáta jako kovariantní nebo kontravariant pomocí `in` nebo `out` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="4d60e-112">To enable implicit conversion, you must explicitly declare generic parameters in a delegate as covariant or contravariant by using the `in` or `out` keyword.</span></span>  
+ <span data-ttu-id="0b110-112">Pokud chcete povolit implicitní převod, musíte explicitně deklarovat obecných parametrů v delegátů jako kovariantní nebo kontravariantní pomocí `in` nebo `out` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="0b110-112">To enable implicit conversion, you must explicitly declare generic parameters in a delegate as covariant or contravariant by using the `in` or `out` keyword.</span></span>  
   
- <span data-ttu-id="4d60e-113">Následující příklad kódu ukazuje, jak můžete vytvořit delegáta, který má parametr kovariantní obecného typu.</span><span class="sxs-lookup"><span data-stu-id="4d60e-113">The following code example shows how you can create a delegate that has a covariant generic type parameter.</span></span>  
+ <span data-ttu-id="0b110-113">Následující příklad kódu ukazuje, jak můžete vytvořit delegáta, který má parametr kovariantního obecného typu.</span><span class="sxs-lookup"><span data-stu-id="0b110-113">The following code example shows how you can create a delegate that has a covariant generic type parameter.</span></span>  
   
 ```csharp  
 // Type T is declared covariant by using the out keyword.  
@@ -85,9 +85,9 @@ public static void Test()
 }  
 ```  
   
- <span data-ttu-id="4d60e-114">Pokud používáte pouze odchylky podporu tak, aby odpovídaly podpisy, metoda delegovat typy a nepoužívejte `in` a `out` klíčová slova, můžete zjistit, že v některých případech může vytvořit instanci delegáti s identické lambda – výrazy nebo metod, ale nemůžete Přiřaďte jednoho delegáta do jiného.</span><span class="sxs-lookup"><span data-stu-id="4d60e-114">If you use only variance support to match method signatures with delegate types and do not use the `in` and `out` keywords, you may find that sometimes you can instantiate delegates with identical lambda expressions or methods, but you cannot assign one delegate to another.</span></span>  
+ <span data-ttu-id="0b110-114">Pokud používáte podporují jenom variance tak, aby odpovídaly metod podpisů s typy delegátů a nepoužívají `in` a `out` klíčová slova, možná zjistíte, že v některých případech můžete vytvořit instanci delegáty s identické lambda výrazy nebo metody, ale nemůžete přiřaďte jeden delegáta do jiného.</span><span class="sxs-lookup"><span data-stu-id="0b110-114">If you use only variance support to match method signatures with delegate types and do not use the `in` and `out` keywords, you may find that sometimes you can instantiate delegates with identical lambda expressions or methods, but you cannot assign one delegate to another.</span></span>  
   
- <span data-ttu-id="4d60e-115">V následujícím příkladu kódu `SampleGenericDelegate<String>` nelze explicitně převést na `SampleGenericDelegate<Object>`, i když `String` dědí `Object`.</span><span class="sxs-lookup"><span data-stu-id="4d60e-115">In the following code example, `SampleGenericDelegate<String>` cannot be explicitly converted to `SampleGenericDelegate<Object>`, although `String` inherits `Object`.</span></span> <span data-ttu-id="4d60e-116">Tento problém lze vyřešit označení obecný parametr `T` s `out` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="4d60e-116">You can fix this problem by marking the generic parameter `T` with the `out` keyword.</span></span>  
+ <span data-ttu-id="0b110-115">V následujícím příkladu kódu `SampleGenericDelegate<String>` nelze explicitně převést na `SampleGenericDelegate<Object>`, i když `String` dědí `Object`.</span><span class="sxs-lookup"><span data-stu-id="0b110-115">In the following code example, `SampleGenericDelegate<String>` cannot be explicitly converted to `SampleGenericDelegate<Object>`, although `String` inherits `Object`.</span></span> <span data-ttu-id="0b110-116">Tento problém můžete vyřešit označením obecných parametrů `T` s `out` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="0b110-116">You can fix this problem by marking the generic parameter `T` with the `out` keyword.</span></span>  
   
 ```csharp  
 public delegate T SampleGenericDelegate<T>();  
@@ -109,55 +109,55 @@ public static void Test()
 }  
 ```  
   
-### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a><span data-ttu-id="4d60e-117">Obecní delegáti, které mají typ Variant parametry typu v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="4d60e-117">Generic Delegates That Have Variant Type Parameters in the .NET Framework</span></span>  
- <span data-ttu-id="4d60e-118">Rozhraní .NET framework 4 zavedl podporu odchylky pro parametry obecného typu v několika existující obecní delegáti:</span><span class="sxs-lookup"><span data-stu-id="4d60e-118">.NET Framework 4 introduced variance support for generic type parameters in several existing generic delegates:</span></span>  
+### <a name="generic-delegates-that-have-variant-type-parameters-in-the-net-framework"></a><span data-ttu-id="0b110-117">Parametry typu obecné delegáty, které mají typ Variant v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="0b110-117">Generic Delegates That Have Variant Type Parameters in the .NET Framework</span></span>  
+ <span data-ttu-id="0b110-118">Rozhraní .NET framework 4 zavedena podpora odchylku pro parametry obecného typu v několika existující obecné delegáty:</span><span class="sxs-lookup"><span data-stu-id="0b110-118">.NET Framework 4 introduced variance support for generic type parameters in several existing generic delegates:</span></span>  
   
--   <span data-ttu-id="4d60e-119">`Action` Deleguje z <xref:System> obor názvů, například <xref:System.Action%601> a <xref:System.Action%602></span><span class="sxs-lookup"><span data-stu-id="4d60e-119">`Action` delegates from the <xref:System> namespace, for example, <xref:System.Action%601> and <xref:System.Action%602></span></span>  
+-   <span data-ttu-id="0b110-119">`Action` Deleguje z <xref:System> obor názvů, třeba <xref:System.Action%601> a <xref:System.Action%602></span><span class="sxs-lookup"><span data-stu-id="0b110-119">`Action` delegates from the <xref:System> namespace, for example, <xref:System.Action%601> and <xref:System.Action%602></span></span>  
   
--   <span data-ttu-id="4d60e-120">`Func` Deleguje z <xref:System> obor názvů, například <xref:System.Func%601> a <xref:System.Func%602></span><span class="sxs-lookup"><span data-stu-id="4d60e-120">`Func` delegates from the <xref:System> namespace, for example, <xref:System.Func%601> and <xref:System.Func%602></span></span>  
+-   <span data-ttu-id="0b110-120">`Func` Deleguje z <xref:System> obor názvů, třeba <xref:System.Func%601> a <xref:System.Func%602></span><span class="sxs-lookup"><span data-stu-id="0b110-120">`Func` delegates from the <xref:System> namespace, for example, <xref:System.Func%601> and <xref:System.Func%602></span></span>  
   
--   <span data-ttu-id="4d60e-121"><xref:System.Predicate%601> Delegovat</span><span class="sxs-lookup"><span data-stu-id="4d60e-121">The <xref:System.Predicate%601> delegate</span></span>  
+-   <span data-ttu-id="0b110-121"><xref:System.Predicate%601> Delegovat</span><span class="sxs-lookup"><span data-stu-id="0b110-121">The <xref:System.Predicate%601> delegate</span></span>  
   
--   <span data-ttu-id="4d60e-122"><xref:System.Comparison%601> Delegovat</span><span class="sxs-lookup"><span data-stu-id="4d60e-122">The <xref:System.Comparison%601> delegate</span></span>  
+-   <span data-ttu-id="0b110-122"><xref:System.Comparison%601> Delegovat</span><span class="sxs-lookup"><span data-stu-id="0b110-122">The <xref:System.Comparison%601> delegate</span></span>  
   
--   <span data-ttu-id="4d60e-123"><xref:System.Converter%602> Delegovat</span><span class="sxs-lookup"><span data-stu-id="4d60e-123">The <xref:System.Converter%602> delegate</span></span>  
+-   <span data-ttu-id="0b110-123"><xref:System.Converter%602> Delegovat</span><span class="sxs-lookup"><span data-stu-id="0b110-123">The <xref:System.Converter%602> delegate</span></span>  
   
- <span data-ttu-id="4d60e-124">Další informace a příklady naleznete v tématu [pomocí odchylky pro Func a akce obecní delegáti (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span><span class="sxs-lookup"><span data-stu-id="4d60e-124">For more information and examples, see [Using Variance for Func and Action Generic Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span></span>  
+ <span data-ttu-id="0b110-124">Další informace a příklady najdete v tématu [pomocí odchylku pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span><span class="sxs-lookup"><span data-stu-id="0b110-124">For more information and examples, see [Using Variance for Func and Action Generic Delegates (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).</span></span>  
   
-### <a name="declaring-variant-type-parameters-in-generic-delegates"></a><span data-ttu-id="4d60e-125">Deklarující typ varianty parametry v obecní delegáti</span><span class="sxs-lookup"><span data-stu-id="4d60e-125">Declaring Variant Type Parameters in Generic Delegates</span></span>  
- <span data-ttu-id="4d60e-126">Pokud má obecný delegát kovariantní nebo kontravariant parametry obecného typu, ho lze odkazovat jako *variant obecný delegát*.</span><span class="sxs-lookup"><span data-stu-id="4d60e-126">If a generic delegate has covariant or contravariant generic type parameters, it can be referred to as a *variant generic delegate*.</span></span>  
+### <a name="declaring-variant-type-parameters-in-generic-delegates"></a><span data-ttu-id="0b110-125">Deklarování parametry variantního typu v obecné delegáty</span><span class="sxs-lookup"><span data-stu-id="0b110-125">Declaring Variant Type Parameters in Generic Delegates</span></span>  
+ <span data-ttu-id="0b110-126">Pokud obecného delegátu má kovariantní nebo kontravariantní parametry obecného typu, jej lze odkazovat jako *variant obecného delegátu*.</span><span class="sxs-lookup"><span data-stu-id="0b110-126">If a generic delegate has covariant or contravariant generic type parameters, it can be referred to as a *variant generic delegate*.</span></span>  
   
- <span data-ttu-id="4d60e-127">Je možné deklarovat parametr obecného typu kovariantní v obecný delegát pomocí `out` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="4d60e-127">You can declare a generic type parameter covariant in a generic delegate by using the `out` keyword.</span></span> <span data-ttu-id="4d60e-128">Typ kovariantní lze použít pouze jako návratový typ metody a ne jako typ metoda argumenty.</span><span class="sxs-lookup"><span data-stu-id="4d60e-128">The covariant type can be used only as a method return type and not as a type of method arguments.</span></span> <span data-ttu-id="4d60e-129">Následující příklad kódu ukazuje, jak deklarovat kovariantní obecný delegát.</span><span class="sxs-lookup"><span data-stu-id="4d60e-129">The following code example shows how to declare a covariant generic delegate.</span></span>  
+ <span data-ttu-id="0b110-127">Je možné deklarovat parametr obecného typu Kovariance v obecných delegátů pomocí `out` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="0b110-127">You can declare a generic type parameter covariant in a generic delegate by using the `out` keyword.</span></span> <span data-ttu-id="0b110-128">Kovariantního typu lze použít pouze jako návratový typ metody a ne jako typ argumentů metody.</span><span class="sxs-lookup"><span data-stu-id="0b110-128">The covariant type can be used only as a method return type and not as a type of method arguments.</span></span> <span data-ttu-id="0b110-129">Následující příklad kódu ukazuje, jak deklarovat kovariantního obecného delegáta.</span><span class="sxs-lookup"><span data-stu-id="0b110-129">The following code example shows how to declare a covariant generic delegate.</span></span>  
   
 ```csharp  
 public delegate R DCovariant<out R>();  
 ```  
   
- <span data-ttu-id="4d60e-130">Je možné deklarovat kontravariant parametr obecného typu v obecný delegát pomocí `in` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="4d60e-130">You can declare a generic type parameter contravariant in a generic delegate by using the `in` keyword.</span></span> <span data-ttu-id="4d60e-131">Typ kontravariant lze použít pouze jako typ argumenty metody a ne jako návratový typ. metoda.</span><span class="sxs-lookup"><span data-stu-id="4d60e-131">The contravariant type can be used only as a type of method arguments and not as a method return type.</span></span> <span data-ttu-id="4d60e-132">Následující příklad kódu ukazuje, jak deklarovat obecný delegát kontravariant.</span><span class="sxs-lookup"><span data-stu-id="4d60e-132">The following code example shows how to declare a contravariant generic delegate.</span></span>  
+ <span data-ttu-id="0b110-130">Kontravariantního parametru obecného typu v obecného delegátu lze deklarovat s použitím `in` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="0b110-130">You can declare a generic type parameter contravariant in a generic delegate by using the `in` keyword.</span></span> <span data-ttu-id="0b110-131">Kontravariantního typu lze použít pouze jako argumenty metody typu, nikoli jako návratový typ metody.</span><span class="sxs-lookup"><span data-stu-id="0b110-131">The contravariant type can be used only as a type of method arguments and not as a method return type.</span></span> <span data-ttu-id="0b110-132">Následující příklad kódu ukazuje, jak deklarovat delegáta obecného kontravariantního.</span><span class="sxs-lookup"><span data-stu-id="0b110-132">The following code example shows how to declare a contravariant generic delegate.</span></span>  
   
 ```csharp  
 public delegate void DContravariant<in A>(A a);  
 ```  
   
 > [!IMPORTANT]
->  <span data-ttu-id="4d60e-133">`ref`, `in`, a `out` parametry v jazyce C# nelze označit jako typ variant.</span><span class="sxs-lookup"><span data-stu-id="4d60e-133">`ref`, `in`, and `out` parameters in C# can't be marked as variant.</span></span>  
+>  <span data-ttu-id="0b110-133">`ref`, `in`, a `out` parametry v jazyce C# nelze označit jako typ variant.</span><span class="sxs-lookup"><span data-stu-id="0b110-133">`ref`, `in`, and `out` parameters in C# can't be marked as variant.</span></span>  
   
- <span data-ttu-id="4d60e-134">Je také možné podporovat odchylky a Kovariance v stejného delegáta, ale pro jiný typ parametry.</span><span class="sxs-lookup"><span data-stu-id="4d60e-134">It is also possible to support both variance and covariance in the same delegate, but for different type parameters.</span></span> <span data-ttu-id="4d60e-135">To je ukázáno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="4d60e-135">This is shown in the following example.</span></span>  
+ <span data-ttu-id="0b110-134">Je také možné podporovat odchylky a Kovariance v stejného delegáta, ale pro jiný typ parametrů.</span><span class="sxs-lookup"><span data-stu-id="0b110-134">It is also possible to support both variance and covariance in the same delegate, but for different type parameters.</span></span> <span data-ttu-id="0b110-135">To je ukázáno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="0b110-135">This is shown in the following example.</span></span>  
   
 ```csharp  
 public delegate R DVariant<in A, out R>(A a);  
 ```  
   
-### <a name="instantiating-and-invoking-variant-generic-delegates"></a><span data-ttu-id="4d60e-136">Vytváření instancí a vyvolání Variant obecní delegáti</span><span class="sxs-lookup"><span data-stu-id="4d60e-136">Instantiating and Invoking Variant Generic Delegates</span></span>  
- <span data-ttu-id="4d60e-137">Můžete vytvořit instanci a vyvolání variant delegáti stejně, jako je vytváření instancí a vyvolání invariantní delegáti.</span><span class="sxs-lookup"><span data-stu-id="4d60e-137">You can instantiate and invoke variant delegates just as you instantiate and invoke invariant delegates.</span></span> <span data-ttu-id="4d60e-138">V následujícím příkladu je vytvořena instance delegáta pomocí výrazu lambda.</span><span class="sxs-lookup"><span data-stu-id="4d60e-138">In the following example, the delegate is instantiated by a lambda expression.</span></span>  
+### <a name="instantiating-and-invoking-variant-generic-delegates"></a><span data-ttu-id="0b110-136">Vytváření instancí a volání Variant obecných delegátů</span><span class="sxs-lookup"><span data-stu-id="0b110-136">Instantiating and Invoking Variant Generic Delegates</span></span>  
+ <span data-ttu-id="0b110-137">Můžete konkretizovat a vyvoláte variant stejně jako můžete vytvořit instanci nebo vyvoláte invariantní.</span><span class="sxs-lookup"><span data-stu-id="0b110-137">You can instantiate and invoke variant delegates just as you instantiate and invoke invariant delegates.</span></span> <span data-ttu-id="0b110-138">V následujícím příkladu je vytvořena instance delegáta ve výrazu lambda.</span><span class="sxs-lookup"><span data-stu-id="0b110-138">In the following example, the delegate is instantiated by a lambda expression.</span></span>  
   
 ```csharp  
 DVariant<String, String> dvariant = (String str) => str + " ";  
 dvariant("test");  
 ```  
   
-### <a name="combining-variant-generic-delegates"></a><span data-ttu-id="4d60e-139">Kombinování Variant obecní delegáti</span><span class="sxs-lookup"><span data-stu-id="4d60e-139">Combining Variant Generic Delegates</span></span>  
- <span data-ttu-id="4d60e-140">Nesmí kombinovat variant delegáti.</span><span class="sxs-lookup"><span data-stu-id="4d60e-140">You should not combine variant delegates.</span></span> <span data-ttu-id="4d60e-141"><xref:System.Delegate.Combine%2A> Metoda nepodporuje převod variant delegáta a očekává delegáti být přesně stejného typu.</span><span class="sxs-lookup"><span data-stu-id="4d60e-141">The <xref:System.Delegate.Combine%2A> method does not support variant delegate conversion and expects delegates to be of exactly the same type.</span></span> <span data-ttu-id="4d60e-142">To může vést ke spuštění výjimka při kombinování delegátů buď pomocí <xref:System.Delegate.Combine%2A> metoda nebo pomocí `+` operátor, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="4d60e-142">This can lead to a run-time exception when you combine delegates either by using the <xref:System.Delegate.Combine%2A> method or by using the `+` operator, as shown in the following code example.</span></span>  
+### <a name="combining-variant-generic-delegates"></a><span data-ttu-id="0b110-139">Kombinování variantních obecných delegátů</span><span class="sxs-lookup"><span data-stu-id="0b110-139">Combining Variant Generic Delegates</span></span>  
+ <span data-ttu-id="0b110-140">Neměli kombinovat variant delegátů.</span><span class="sxs-lookup"><span data-stu-id="0b110-140">You should not combine variant delegates.</span></span> <span data-ttu-id="0b110-141"><xref:System.Delegate.Combine%2A> Metoda nepodporuje převod variant delegáta a očekává, že delegáty být stejného typu.</span><span class="sxs-lookup"><span data-stu-id="0b110-141">The <xref:System.Delegate.Combine%2A> method does not support variant delegate conversion and expects delegates to be of exactly the same type.</span></span> <span data-ttu-id="0b110-142">To může vést k výjimce za běhu při kombinování delegátů pomocí <xref:System.Delegate.Combine%2A> metody nebo pomocí `+` operátoru, jak je znázorněno v následujícím příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="0b110-142">This can lead to a run-time exception when you combine delegates either by using the <xref:System.Delegate.Combine%2A> method or by using the `+` operator, as shown in the following code example.</span></span>  
   
 ```csharp  
 Action<object> actObj = x => Console.WriteLine("object: {0}", x);  
@@ -168,10 +168,10 @@ Action<string> actStr = x => Console.WriteLine("string: {0}", x);
 // Delegate.Combine(actStr, actObj);  
 ```  
   
-## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a><span data-ttu-id="4d60e-143">Odchylky v parametry obecného typu pro hodnotových a odkazových typech</span><span class="sxs-lookup"><span data-stu-id="4d60e-143">Variance in Generic Type Parameters for Value and Reference Types</span></span>  
- <span data-ttu-id="4d60e-144">Odchylky pro parametry obecného typu je podporována pro odkazové typy pouze.</span><span class="sxs-lookup"><span data-stu-id="4d60e-144">Variance for generic type parameters is supported for reference types only.</span></span> <span data-ttu-id="4d60e-145">Například `DVariant<int>` nelze implicitně převést na `DVariant<Object>` nebo `DVariant<long>`, protože typ hodnoty je celé číslo.</span><span class="sxs-lookup"><span data-stu-id="4d60e-145">For example, `DVariant<int>` can't be implicitly converted to `DVariant<Object>` or `DVariant<long>`, because integer is a value type.</span></span>  
+## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a><span data-ttu-id="0b110-143">Variance u parametrů obecného typu pro hodnotových a odkazových typech</span><span class="sxs-lookup"><span data-stu-id="0b110-143">Variance in Generic Type Parameters for Value and Reference Types</span></span>  
+ <span data-ttu-id="0b110-144">Variance u parametrů obecného typu je podporována pouze pro typy odkazů.</span><span class="sxs-lookup"><span data-stu-id="0b110-144">Variance for generic type parameters is supported for reference types only.</span></span> <span data-ttu-id="0b110-145">Například `DVariant<int>` nejde implicitně převést na `DVariant<Object>` nebo `DVariant<long>`, protože se hodnota typu celé číslo.</span><span class="sxs-lookup"><span data-stu-id="0b110-145">For example, `DVariant<int>` can't be implicitly converted to `DVariant<Object>` or `DVariant<long>`, because integer is a value type.</span></span>  
   
- <span data-ttu-id="4d60e-146">Následující příklad ukazuje, že odchylky v obecného typu parametry není podporována u typů hodnot.</span><span class="sxs-lookup"><span data-stu-id="4d60e-146">The following example demonstrates that variance in generic type parameters is not supported for value types.</span></span>  
+ <span data-ttu-id="0b110-146">Následující příklad ukazuje, že variance v obecném typu se nepodporuje parametry pro typy hodnot.</span><span class="sxs-lookup"><span data-stu-id="0b110-146">The following example demonstrates that variance in generic type parameters is not supported for value types.</span></span>  
   
 ```csharp  
 // The type T is covariant.  
@@ -196,7 +196,8 @@ public static void Test()
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4d60e-147">Viz také</span><span class="sxs-lookup"><span data-stu-id="4d60e-147">See Also</span></span>  
- [<span data-ttu-id="4d60e-148">Obecné typy</span><span class="sxs-lookup"><span data-stu-id="4d60e-148">Generics</span></span>](~/docs/standard/generics/index.md)  
- [<span data-ttu-id="4d60e-149">Použití odchylek pro Func a akce obecní delegáti (C#)</span><span class="sxs-lookup"><span data-stu-id="4d60e-149">Using Variance for Func and Action Generic Delegates (C#)</span></span>](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)  
- [<span data-ttu-id="4d60e-150">Postupy: kombinování delegátů (vícesměroví delegáti)</span><span class="sxs-lookup"><span data-stu-id="4d60e-150">How to: Combine Delegates (Multicast Delegates)</span></span>](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
+## <a name="see-also"></a><span data-ttu-id="0b110-147">Viz také</span><span class="sxs-lookup"><span data-stu-id="0b110-147">See Also</span></span>
+
+- [<span data-ttu-id="0b110-148">Obecné typy</span><span class="sxs-lookup"><span data-stu-id="0b110-148">Generics</span></span>](~/docs/standard/generics/index.md)  
+- [<span data-ttu-id="0b110-149">Použití odchylek pro delegáty Func a Action obecný (C#)</span><span class="sxs-lookup"><span data-stu-id="0b110-149">Using Variance for Func and Action Generic Delegates (C#)</span></span>](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)  
+- [<span data-ttu-id="0b110-150">Postupy: kombinování delegátů (vícesměroví delegáti)</span><span class="sxs-lookup"><span data-stu-id="0b110-150">How to: Combine Delegates (Multicast Delegates)</span></span>](../../../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)
