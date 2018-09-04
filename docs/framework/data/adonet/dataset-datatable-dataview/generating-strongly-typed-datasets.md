@@ -1,21 +1,21 @@
 ---
-title: Generování silného typu datové sady
+title: Generování datových sad silného typu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 54333cbf-bb43-4314-a7d4-6dc1dd1c44b3
-ms.openlocfilehash: 95bb536416a043fc392d0c4e94378239ae3ee37f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9accfb68c57384e12a59bae40ebe30a2d3e22877
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758026"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43489718"
 ---
-# <a name="generating-strongly-typed-datasets"></a>Generování silného typu datové sady
-Zadané schéma XML, který odpovídá schématu XML definice jazyka (XSD) standard, můžete vygenerovat silného typu <xref:System.Data.DataSet> pomocí nástroje XSD.exe součástí [!INCLUDE[winsdklong](../../../../../includes/winsdklong-md.md)].  
+# <a name="generating-strongly-typed-datasets"></a>Generování datových sad silného typu
+Zadané schéma XML, který vyhovuje schématu XML definice jazyk (XSD) standard, můžete vygenerovat silného typu <xref:System.Data.DataSet> nástrojem XSD.exe, opatřeného [!INCLUDE[winsdklong](../../../../../includes/winsdklong-md.md)].  
   
- (Vytvoření xsd z tabulek databáze naleznete v tématu <xref:System.Data.DataSet.WriteXmlSchema%2A> nebo [práce s datovými sadami v sadě Visual Studio](http://msdn.microsoft.com/library/8bw9ksd6.aspx)).  
+ (Vytvoření xsd z tabulky databáze najdete v tématu <xref:System.Data.DataSet.WriteXmlSchema%2A> nebo [práce s datovými sadami v sadě Visual Studio](https://msdn.microsoft.com/library/8bw9ksd6.aspx)).  
   
  Následující kód ukazuje syntaxi pro generování **datovou sadu** pomocí tohoto nástroje.  
   
@@ -23,17 +23,17 @@ Zadané schéma XML, který odpovídá schématu XML definice jazyka (XSD) stand
 xsd.exe /d /l:CS XSDSchemaFileName.xsd /eld /n:XSDSchema.Namespace  
 ```  
   
- V této syntaxe `/d` – direktiva informuje nástroj pro generování **datovou sadu**a `/l:` informuje nástroj jaké jazyka (například C# nebo Visual Basic .NET). Volitelné `/eld` – direktiva Určuje, které můžete použít [!INCLUDE[linq_dataset](../../../../../includes/linq-dataset-md.md)] k dotazu vůči vygenerovaného **datovou sadu.** Tato možnost se používá při `/d` také parametr. Další informace najdete v tématu [dotazování typové datové sady](../../../../../docs/framework/data/adonet/querying-typed-datasets.md). Volitelné `/n:` – direktiva informuje nástroj, který taky obor názvů pro generování **datovou sadu** názvem **XSDSchema.Namespace**. Výstup příkazu je XSDSchemaFileName.cs, které můžete zkompilovat a použít v aplikaci ADO.NET. Generovaný kód mohou být zkompilovány jako modul nebo knihovny.  
+ V této syntaxe `/d` směrnice instruuje nástroj v režimu generování **datovou sadu**a `/l:` instruuje nástroj jaký jazyk se má použít (například C# nebo Visual Basic .NET). Volitelný `/eld` direktiva Určuje, které můžete použít [!INCLUDE[linq_dataset](../../../../../includes/linq-dataset-md.md)] k dotazu vůči generované **datové sady.** Tato možnost se používá při `/d` je také zadán. Další informace najdete v tématu [dotazování typované datové sady](../../../../../docs/framework/data/adonet/querying-typed-datasets.md). Volitelný `/n:` – direktiva Určuje nástroj, který také generovat obor názvů pro **datovou sadu** volá **XSDSchema.Namespace**. Výstup příkazu je XSDSchemaFileName.cs, které je možné zkompilovat a použít v aplikaci ADO.NET. Generovaný kód lze zkompilovat jako knihovny nebo modulu.  
   
- Následující kód ukazuje syntaxi pro kompilace generovaného kódu jako knihovny pomocí kompilátor jazyka C# (csc.exe).  
+ Následující kód ukazuje syntaxi pro kompilaci vygenerovaného kódu jako knihovny pomocí kompilátoru jazyka C# (csc.exe).  
   
 ```  
 csc.exe /t:library XSDSchemaFileName.cs /r:System.dll /r:System.Data.dll  
 ```  
   
- `/t:` – Direktiva informuje nástroj zkompilovat do knihovny a `/r:` direktivy zadejte závislé knihovny potřebné ke kompilaci. Výstup příkazu je XSDSchemaFileName.dll, který se dá předat do kompilátoru při kompilaci aplikace ADO.NET s `/r:` – direktiva.  
+ `/t:` Směrnice instruuje nástroj pro kompilaci do knihovny a `/r:` direktivy zadat závislé knihovny požadovaných pro kompilaci. Výstup příkazu je XSDSchemaFileName.dll, které mohou být předána do kompilátor při kompilaci aplikace pomocí technologie ADO.NET `/r:` směrnice.  
   
- Následující kód ukazuje syntaxi pro přístup k oboru názvů předaný XSD.exe v aplikaci ADO.NET.  
+ Následující kód ukazuje syntaxi pro přístup k oboru názvů předán XSD.exe v aplikaci ADO.NET.  
   
 ```vb  
 Imports XSDSchema.Namespace  
@@ -43,7 +43,7 @@ Imports XSDSchema.Namespace
 using XSDSchema.Namespace;  
 ```  
   
- Následující příklad kódu používá zadaný **datovou sadu** s názvem **CustomerDataSet** načíst seznam zákazníků z **Northwind** databáze. Po načtení dat pomocí **vyplnění** metody v příkladu prochází každého zákazníka a to v **zákazníci** tabulky pomocí zadaného objektu **CustomersRow** ( **DataRow**) objektu. To poskytuje přímý přístup k **CustomerID** sloupců, nikoli pomocí **DataColumnCollection**.  
+ Následující příklad kódu používá typovaného **datovou sadu** s názvem **CustomerDataSet** načíst seznam zákazníků **Northwind** databáze. Po načtení dat pomocí **vyplnit** metody v příkladu prochází každého zákazníka v **zákazníkům** tabulky pomocí zadaného **CustomersRow** ( **Objekt DataRow**) objektu. To poskytuje přímý přístup k **CustomerID** sloupců, nikoli až **DataColumnCollection**.  
   
 ```vb  
 Dim customers As CustomerDataSet= New CustomerDataSet()  
@@ -73,7 +73,7 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
   Console.WriteLine(customerRow.CustomerID);  
 ```  
   
- Následuje schématu XML pro tento příklad.  
+ Následuje schéma XML pro příklad.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -99,4 +99,4 @@ foreach(CustomerDataSet.CustomersRow customerRow in customers.Customers)
  <xref:System.Data.DataSet>  
  [Typové datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

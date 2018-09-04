@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 727cf3d2-6f56-48ad-a59f-ba423edb9c83
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 2df10c0a35a5547dc2f1dafc6a2b9c0f9bbdc0a3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 52146fa08ec63ef63fa996cdc09f9185b9f42e02
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33350449"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43489679"
 ---
 # <a name="ltsecuritygt-of-ltwebhttpbindinggt"></a>&lt;security&gt; – &lt;webHttpBinding&gt;
-Určuje koncovým bodem nakonfigurovaným s požadavky na zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
+Určuje koncový bod nakonfigurovaný s požadavky na zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  
   
  \<system.ServiceModel>  
 \<vazby >  
 \<webHttpBinding>  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -45,15 +45,15 @@ Určuje koncovým bodem nakonfigurovaným s požadavky na zabezpečení [ \<wsHt
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|Určuje, jestli je koncový bod používá zabezpečení na úrovni přenosu nebo žádné zabezpečení. Výchozí hodnota je `None`. Tento atribut je typu <xref:System.ServiceModel.WebHttpSecurityMode>.|  
+|režim|Určuje, zda zabezpečení transportní vrstvy nebo žádné zabezpečení používá koncový bod. Výchozí hodnota je `None`. Tento atribut je typu <xref:System.ServiceModel.WebHttpSecurityMode>.|  
   
 ## <a name="mode-attribute"></a>režim atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zabezpečení je vypnuté.|  
-|Přenos|Zabezpečení je k dispozici pomocí protokolu HTTPS. Službu je potřeba nakonfigurovat s certifikáty protokolu SSL. Zpráva zcela zabezpečené pomocí protokolu HTTPS a službu ověření klienta pomocí certifikátu SSL služby. Ověření klienta je řízen pomocí `ClientCredentialType` atribut [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md).|  
-|TransportCredentialOnly|Tento režim neposkytuje integrity a důvěrnosti zpráv. Poskytuje ověření klienta založené na protokolu HTTP. Tento režim musí být použit s opatrní. By být používána v prostředích, kde se zajišťuje zabezpečení přenosu jiným způsobem (například IPSec) a infrastruktura WCF se poskytuje pouze ověření klienta.|  
+|Žádné|Zabezpečení je zakázaná.|  
+|Přenos|Zabezpečení je k dispozici pomocí protokolu HTTPS. Služba je potřeba nakonfigurovat s využitím certifikátů SSL. Zprávu je zcela zabezpečené pomocí protokolu HTTPS a služba je ověřený pomocí klienta pomocí certifikátu SSL služby. Ověření klienta je řízen pomocí `ClientCredentialType` atribut [ \<přenosu >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-webhttpbinding.md).|  
+|TransportCredentialOnly|Tento režim neposkytuje integrity a důvěrnosti zpráv. Poskytuje ověření klienta založené na protokolu HTTP. Tento režim je třeba používat opatrně. Byste měli použít ve prostředích, kde zabezpečení přenosu se neposkytujeme jiným způsobem (jako je protokol IPSec) a infrastruktura WCF se poskytuje pouze ověření klienta.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -65,7 +65,7 @@ Určuje koncovým bodem nakonfigurovaným s požadavky na zabezpečení [ \<wsHt
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Element vazby, který slouží ke konfiguraci koncových bodů pro Windows Communication Foundation (WCF) webové služby tohoto reakce na požadavky HTTP místo protokolu SOAP zprávy.|  
+|[\<webHttpBinding>](../../../../../docs/framework/configure-apps/file-schema/wcf/webhttpbinding.md)|Prvek vazby, který se používá ke konfiguraci koncových bodů pro Windows Communication Foundation (WCF) Web services tuto odpověď na požadavky HTTP namísto zpráv SOAP.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.WebHttpBindingElement>  
@@ -77,6 +77,6 @@ Určuje koncovým bodem nakonfigurovaným s požadavky na zabezpečení [ \<wsHt
  [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)  
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)  
  [Programovací model webových služeb HTTP WCF](../../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)

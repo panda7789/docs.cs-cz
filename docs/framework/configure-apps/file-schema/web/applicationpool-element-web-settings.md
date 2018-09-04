@@ -1,5 +1,5 @@
 ---
-title: '&lt;applicationPool&gt; – Element (webové nastavení)'
+title: '&lt;applicationPool&gt; – Element (nastavení webu)'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - applicationPool element
@@ -8,22 +8,22 @@ ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: a2eafc6b5ad1446fd07518f877a8ec001ad8dbd6
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1a129abca5888120d03c42689ac825d768733a9d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757694"
+ms.lasthandoff: 09/03/2018
+ms.locfileid: "43489939"
 ---
-# <a name="ltapplicationpoolgt-element-web-settings"></a>&lt;applicationPool&gt; – Element (webové nastavení)
-Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě procesy chování, když aplikace ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
+# <a name="ltapplicationpoolgt-element-web-settings"></a>&lt;applicationPool&gt; – Element (nastavení webu)
+Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikaci ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  
   
 > [!IMPORTANT]
->  Tento prvek a funkci podporuje funguje jenom v případě, že je vaše aplikace ASP.NET hostované na [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze.  
+>  Tento element a funkci podporuje fungovat, pouze pokud je hostitelem aplikace technologie ASP.NET [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze.  
   
  \<Konfigurace >  
-\<System.Web > elementu (webové nastavení)  
-\<applicationPool > – Element (webové nastavení)  
+\<System.Web > – Element (nastavení webu)  
+\<applicationPool > – Element (nastavení webu)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,9 +41,9 @@ Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě pro
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`maxConcurrentRequestsPerCPU`|Určuje, kolik souběžných požadavků ASP.NET umožňuje za využití procesoru.|  
-|`maxConcurrentThreadsPerCPU`|Určuje, kolik souběžných vláken můžete používat pro fond aplikací pro každý procesor. To poskytuje alternativní způsob řízení souběžnosti ASP.NET, protože můžete omezit počet spravovaných vláken, které lze použít na procesoru k obsluze požadavků. Ve výchozím nastavení toto nastavení je 0, což znamená, že technologie ASP.NET neomezuje počet vláken, které lze vytvořit na procesor, i když fondu vláken CLR také omezuje počet vláken, které lze vytvořit.|  
-|`requestQueueLimit`|Určuje maximální počet požadavků, které lze zařadit do fronty pro technologii ASP.NET v jediném procesu. Pokud dva nebo více aplikací ASP.NET spustit v jeden fond aplikací, podléhá úhrnnou sadu oprav požadavkům na všechny aplikace ve fondu aplikací, toto nastavení.|  
+|`maxConcurrentRequestsPerCPU`|Určuje, kolik souběžných požadavků ASP.NET umožňuje jeden procesor.|  
+|`maxConcurrentThreadsPerCPU`|Určuje, kolik souběžných vláken může být spuštěn fond aplikací, pro každý procesor. To poskytuje alternativní způsob řízení souběžnosti ASP.NET, protože můžete omezit počet spravovaných vláken, které můžete použít jeden procesor a jsou k obsluze požadavků. Ve výchozím nastavení toto nastavení je 0, což znamená, že technologie ASP.NET neomezuje počet vláken, která je možné vytvořit jeden procesor, i když fondu vláken CLR také omezuje počet vláken, která je možné vytvořit.|  
+|`requestQueueLimit`|Určuje maximální počet požadavků, které lze zařadit do fronty pro technologii ASP.NET v jediném procesu. Když dva nebo více aplikací ASP.NET spustit v jediného fondu aplikací, můžou toto nastavení je kumulativní sadu požadavky na všechny aplikace ve fondu aplikací.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -52,30 +52,30 @@ Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě pro
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.web>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace o spolupráci ASP.NET s hostitelskou aplikaci.|  
+|[\<system.web>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace o způsobu interakce ASP.NET s hostitelskou aplikací.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace element vám umožní nakonfigurovat jak ASP.NET spravuje vláken a fronty požadavků, když je aplikace hostované ve fondu aplikací služby IIS. Je-li spustit služby IIS 6 nebo ji spustit [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] v klasickém režimu nebo v režimu ISAPI, tato nastavení ignorují.  
+ Při spuštění [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější verze v integrovaném režimu, tato kombinace elementu vám umožní nakonfigurovat jak ASP.NET spravuje vláken a fronty požadavků, když je aplikace hostovaná ve fondu aplikací služby IIS. Je-li spustit služby IIS 6 nebo spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] v klasickém režimu nebo v režimu ISAPI, tato nastavení jsou ignorovány.  
   
- `applicationPool` Nastavení se vztahují na všechny fondy aplikací, které běží na konkrétní verzi rozhraní .NET Framework. Nastavení jsou obsaženy v souboru Soubor aspnet.config. Je verze tohoto souboru pro verze 2.0 a rozhraní .NET Framework 4.0. (Verze 3.0 a rozhraní .NET Framework 3.5 sdílet s verze 2.0 Soubor aspnet.config.)  
+ `applicationPool` Nastavení platí pro všechny fondy aplikací, které běží na konkrétní verzi rozhraní .NET Framework. Nastavení jsou obsaženy v souboru aspnet.config. Existuje verze tohoto souboru pro verze 2.0, 4.0 rozhraní .NET Framework. (Verze 3.0 a 3.5 rozhraní .NET Framework sdílet s verzí 2.0 Soubor aspnet.config.)  
   
 > [!IMPORTANT]
->  Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] na [!INCLUDE[win7](../../../../../includes/win7-md.md)], můžete nakonfigurovat samostatný soubor aspnet.config soubor pro každý fond aplikací. Díky tomu můžete přizpůsobit výkon vláken pro každý fond aplikací.  
+>  Pokud spustíte [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] na [!INCLUDE[win7](../../../../../includes/win7-md.md)], můžete nakonfigurovat samostatný aspnet.config souboru pro každý fond aplikací. Díky tomu můžete přizpůsobit výkonu vláken pro každý fond aplikací.  
   
- Pro `maxConcurrentRequestsPerCPU` nastavení, výchozí nastavení "5 000" v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] omezení požadavků efektivně vypne řízené ASP.NET, pokud máte ve skutečnosti 5000 nebo další požadavky na procesor. Výchozí nastavení, místo toho závisí na CLR-fondu vláken automaticky spravovat souběžnosti za využití procesoru. Aplikace, které usnadňují rozsáhlé používání asynchronní zpracování požadavků nebo které mají mnoho požadavků dlouho běžící zablokovaných v síti vstupně-výstupních operací, bude využívat vyšší výchozí limit v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]. Nastavení `maxConcurrentRequestsPerCPU` na nulové vypne používání spravovaných vláken pro zpracování požadavků ASP.NET. Když aplikace běží v fond aplikací služby IIS, požadavky Zůstaňte na vlákno vstupně-výstupních operací služby IIS a proto je omezené souběžnosti vláken nastavení služby IIS.  
+ Pro `maxConcurrentRequestsPerCPU` nastavení, ve výchozím nastavení "5000" [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] efektivně vypne omezování žádostí, který je řízen technologie ASP.NET, pokud máte ve skutečnosti 5000 nebo více požadavků na CPU. Ve výchozím nastavení závisí na modulu CLR-fondu vláken k automatické správě souběžnosti jeden procesor a místo toho. Aplikace, které usnadňují používání příliš často používá asynchronní zpracování požadavků, nebo jež mají velký počet požadavků dlouhotrvající blokován v síti vstupně-výstupních operací, bude využívat zvýšení výchozí limit v [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)]. Nastavení `maxConcurrentRequestsPerCPU` na nulovou vypne použití spravovaných vláken pro zpracování požadavků ASP.NET. Pokud je aplikace spuštěna ve fondu aplikací služby IIS, požadavky zůstat ve vlákně vstupně-výstupních operací služby IIS a proto se omezuje souběžnosti vláken nastavením služby IIS.  
   
- `requestQueueLimit` Nastavení funguje stejným způsobem jako `requestQueueLimit` atribut [processModel](http://msdn.microsoft.com/library/4b8fe20e-74c8-4566-b72c-ce5f83c8e32d) element, který je nastaven v souborech Web.config pro aplikace ASP.NET. Ale `requestQueueLimit` přepíše nastavení v souboru aspnet.config `requestQueueLimit` nastavení v souboru Web.config. Jinými slovy Pokud jsou oba atributy (ve výchozím nastavení, to je true), `requestQueueLimit` přednost má nastavení v souboru Soubor aspnet.config.  
+ `requestQueueLimit` Nastavení funguje stejným způsobem jako `requestQueueLimit` atribut [processModel](https://msdn.microsoft.com/library/4b8fe20e-74c8-4566-b72c-ce5f83c8e32d) element, který je nastavení v souborech Web.config pro aplikace ASP.NET. Ale `requestQueueLimit` přepíše nastavení v souboru aspnet.config `requestQueueLimit` nastavení v souboru Web.config. Jinými slovy Pokud oba atributy jsou nastavené (ve výchozím nastavení, to je PRAVDA), `requestQueueLimit` přednost má nastavení v souboru aspnet.config.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak nakonfigurovat chování procesy ASP.NET v souboru aspnet.config v následujících případech:  
+ Následující příklad ukazuje, jak nakonfigurovat chování v celém procesu ASP.NET v souboru aspnet.config za následujících okolností:  
   
--   Aplikace je hostován v [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] fond aplikací.  
+-   Aplikace je hostována v [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] fondu aplikací.  
   
--   [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] je spuštěna v integrovaném režimu.  
+-   [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] běží v integrovaném režimu.  
   
 -   Aplikace používá [!INCLUDE[net_v35SP1_short](../../../../../includes/net-v35sp1-short-md.md)] nebo novější.  
   
- Hodnoty v příkladu jsou výchozí hodnoty.  
+ Hodnoty v tomto příkladu jsou výchozí hodnoty.  
   
 ```xml  
 <configuration>  
@@ -94,8 +94,8 @@ Určuje nastavení konfigurace, které jsou používány ASP.NET ke správě pro
 |-|-|  
 |Obor názvů||  
 |Název schématu||  
-|Ověření souboru||  
-|Může být prázdný||  
+|Soubor ověření||  
+|Může být prázdné.||  
   
 ## <a name="see-also"></a>Viz také  
- [\<System.Web > elementu (webové nastavení)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)
+ [\<System.Web > – Element (nastavení webu)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)
