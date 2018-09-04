@@ -8,24 +8,24 @@ helpviewer_keywords:
 - controls [WPF], ListBox
 ms.assetid: 15d58f1d-3db6-4cb5-88c7-8c45f19301e2
 ms.openlocfilehash: 2d7f37acb2c0e09a0a9104a0bb7bd90b2d324a4d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396168"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507947"
 ---
-# <a name="listbox-how-to-topics"></a><span data-ttu-id="606fd-102">ListBox – postupy</span><span class="sxs-lookup"><span data-stu-id="606fd-102">ListBox How-to Topics</span></span>
-<span data-ttu-id="606fd-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.ListBox> ovládací prvek pro zobrazení volitelný seznam položek.</span><span class="sxs-lookup"><span data-stu-id="606fd-103">The topics in this section describe how to use the <xref:System.Windows.Controls.ListBox> control to display selectable lists of items.</span></span>  
+# <a name="listbox-how-to-topics"></a><span data-ttu-id="347bb-102">ListBox – postupy</span><span class="sxs-lookup"><span data-stu-id="347bb-102">ListBox How-to Topics</span></span>
+<span data-ttu-id="347bb-103">Témata v této části popisují způsob použití <xref:System.Windows.Controls.ListBox> ovládací prvek pro zobrazení volitelný seznam položek.</span><span class="sxs-lookup"><span data-stu-id="347bb-103">The topics in this section describe how to use the <xref:System.Windows.Controls.ListBox> control to display selectable lists of items.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="606fd-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="606fd-104">In This Section</span></span>  
- [<span data-ttu-id="606fd-105">Svázání prvku ListBox s daty</span><span class="sxs-lookup"><span data-stu-id="606fd-105">Bind a ListBox to Data</span></span>](../../../../docs/framework/wpf/controls/how-to-bind-a-listbox-to-data.md)  
- [<span data-ttu-id="606fd-106">Načtení položky ListBoxItem</span><span class="sxs-lookup"><span data-stu-id="606fd-106">Get a ListBoxItem</span></span>](../../../../docs/framework/wpf/controls/how-to-get-a-listboxitem.md)  
- [<span data-ttu-id="606fd-107">Postupy: přidání dat do ItemsControl</span><span class="sxs-lookup"><span data-stu-id="606fd-107">How to: Add Data to an ItemsControl</span></span>](https://msdn.microsoft.com/library/271e52ce-0f44-4b1f-a7da-0bc72bd9ed65)  
- [<span data-ttu-id="606fd-108">Zvýšení výkonu posunování prvku ListBox</span><span class="sxs-lookup"><span data-stu-id="606fd-108">Improve the Scrolling Performance of a ListBox</span></span>](../../../../docs/framework/wpf/controls/how-to-improve-the-scrolling-performance-of-a-listbox.md)  
+## <a name="in-this-section"></a><span data-ttu-id="347bb-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="347bb-104">In This Section</span></span>  
+ [<span data-ttu-id="347bb-105">Svázání prvku ListBox s daty</span><span class="sxs-lookup"><span data-stu-id="347bb-105">Bind a ListBox to Data</span></span>](../../../../docs/framework/wpf/controls/how-to-bind-a-listbox-to-data.md)  
+ [<span data-ttu-id="347bb-106">Načtení položky ListBoxItem</span><span class="sxs-lookup"><span data-stu-id="347bb-106">Get a ListBoxItem</span></span>](../../../../docs/framework/wpf/controls/how-to-get-a-listboxitem.md)  
+ [<span data-ttu-id="347bb-107">Postupy: přidání dat do ItemsControl</span><span class="sxs-lookup"><span data-stu-id="347bb-107">How to: Add Data to an ItemsControl</span></span>](https://msdn.microsoft.com/library/271e52ce-0f44-4b1f-a7da-0bc72bd9ed65)  
+ [<span data-ttu-id="347bb-108">Zvýšení výkonu posunování prvku ListBox</span><span class="sxs-lookup"><span data-stu-id="347bb-108">Improve the Scrolling Performance of a ListBox</span></span>](../../../../docs/framework/wpf/controls/how-to-improve-the-scrolling-performance-of-a-listbox.md)  
   
-## <a name="reference"></a><span data-ttu-id="606fd-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="606fd-109">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="347bb-109">Odkaz</span><span class="sxs-lookup"><span data-stu-id="347bb-109">Reference</span></span>  
  <xref:System.Windows.Controls.ListBox>  
   
  <xref:System.Windows.Controls.ListBoxItem>  
   
-## <a name="related-sections"></a><span data-ttu-id="606fd-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="606fd-110">Related Sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="347bb-110">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="347bb-110">Related Sections</span></span>

@@ -1,19 +1,19 @@
 ---
-title: Sestavování dotazů SQL vnořené Entity
+title: Skládání dotazů vnořené Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
-ms.openlocfilehash: 92e3153350787ef75c48ee52f1b6c68e09e15b4b
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8a0efa672a57a9255af2d90af1725b34be75600e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32760853"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43528153"
 ---
-# <a name="composing-nested-entity-sql-queries"></a><span data-ttu-id="5417b-102">Sestavování dotazů SQL vnořené Entity</span><span class="sxs-lookup"><span data-stu-id="5417b-102">Composing Nested Entity SQL Queries</span></span>
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="5417b-103"> je bohaté funkční jazyk.</span><span class="sxs-lookup"><span data-stu-id="5417b-103"> is a rich functional language.</span></span> <span data-ttu-id="5417b-104">Stavební blok [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz.</span><span class="sxs-lookup"><span data-stu-id="5417b-104">The building block of [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is an expression.</span></span> <span data-ttu-id="5417b-105">Na rozdíl od konvenční SQL [!INCLUDE[esql](../../../../../../includes/esql-md.md)] není omezeno na tabulkovém výslednou sadu: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje skládání složité výrazy, které může mít literály, parametrů nebo vnořené výrazy.</span><span class="sxs-lookup"><span data-stu-id="5417b-105">Unlike conventional SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is not limited to a tabular result set: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] supports composing complex expressions that can have literals, parameters, or nested expressions.</span></span> <span data-ttu-id="5417b-106">Hodnotu ve výrazu můžete parametry nebo složené některé výrazu.</span><span class="sxs-lookup"><span data-stu-id="5417b-106">A value in the expression can be parameterized or composed of some other expression.</span></span>  
+# <a name="composing-nested-entity-sql-queries"></a><span data-ttu-id="90f2d-102">Skládání dotazů vnořené Entity SQL</span><span class="sxs-lookup"><span data-stu-id="90f2d-102">Composing Nested Entity SQL Queries</span></span>
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)]<span data-ttu-id="90f2d-103"> je bohatou jazykovou funkční.</span><span class="sxs-lookup"><span data-stu-id="90f2d-103"> is a rich functional language.</span></span> <span data-ttu-id="90f2d-104">Základním pilířem pracovního [!INCLUDE[esql](../../../../../../includes/esql-md.md)] je výraz.</span><span class="sxs-lookup"><span data-stu-id="90f2d-104">The building block of [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is an expression.</span></span> <span data-ttu-id="90f2d-105">Na rozdíl od běžných SQL [!INCLUDE[esql](../../../../../../includes/esql-md.md)] není omezena pouze na sadu tabulkovém výsledku: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] podporuje vytváření složitých výrazů, které můžou mít literály, parametry nebo vnořené výrazy.</span><span class="sxs-lookup"><span data-stu-id="90f2d-105">Unlike conventional SQL, [!INCLUDE[esql](../../../../../../includes/esql-md.md)] is not limited to a tabular result set: [!INCLUDE[esql](../../../../../../includes/esql-md.md)] supports composing complex expressions that can have literals, parameters, or nested expressions.</span></span> <span data-ttu-id="90f2d-106">Hodnotu ve výrazu můžete s parametry nebo vytvořit další výrazu.</span><span class="sxs-lookup"><span data-stu-id="90f2d-106">A value in the expression can be parameterized or composed of some other expression.</span></span>  
   
-## <a name="nested-expressions"></a><span data-ttu-id="5417b-107">Vnořené výrazy</span><span class="sxs-lookup"><span data-stu-id="5417b-107">Nested Expressions</span></span>  
- <span data-ttu-id="5417b-108">Výraz vnořené můžete umístit kamkoli hodnotu typu, který vrátí byla přijata.</span><span class="sxs-lookup"><span data-stu-id="5417b-108">A nested expression can be placed anywhere a value of the type it returns is accepted.</span></span> <span data-ttu-id="5417b-109">Příklad:</span><span class="sxs-lookup"><span data-stu-id="5417b-109">For example:</span></span>  
+## <a name="nested-expressions"></a><span data-ttu-id="90f2d-107">Vnořené výrazy</span><span class="sxs-lookup"><span data-stu-id="90f2d-107">Nested Expressions</span></span>  
+ <span data-ttu-id="90f2d-108">Vnořený výraz může být umístěna kdekoli hodnotu typu, který vrátí je přijat.</span><span class="sxs-lookup"><span data-stu-id="90f2d-108">A nested expression can be placed anywhere a value of the type it returns is accepted.</span></span> <span data-ttu-id="90f2d-109">Příklad:</span><span class="sxs-lookup"><span data-stu-id="90f2d-109">For example:</span></span>  
   
 ```  
 -- Returns a hierarchical collection of three elements at top-level.   
@@ -25,7 +25,7 @@ ROW(@x, {@x}, {@x, 4, 5}, {@x, 7, 8, 9})
 {{{@x}}};  
 ```  
   
- <span data-ttu-id="5417b-110">Vnořený dotaz se může v klauzuli projekce.</span><span class="sxs-lookup"><span data-stu-id="5417b-110">A nested query can be placed in a projection clause.</span></span> <span data-ttu-id="5417b-111">Příklad:</span><span class="sxs-lookup"><span data-stu-id="5417b-111">For example:</span></span>  
+ <span data-ttu-id="90f2d-110">Vnořený dotaz je možné použít v klauzuli projekce.</span><span class="sxs-lookup"><span data-stu-id="90f2d-110">A nested query can be placed in a projection clause.</span></span> <span data-ttu-id="90f2d-111">Příklad:</span><span class="sxs-lookup"><span data-stu-id="90f2d-111">For example:</span></span>  
   
 ```  
 -- Returns a collection of rows where each row contains an Address entity.  
@@ -35,7 +35,7 @@ SELECT address, (SELECT DEREF(soh)
                     AS salesOrderHeader FROM AdventureWorksEntities.Address AS address  
 ```  
   
- <span data-ttu-id="5417b-112">V [!INCLUDE[esql](../../../../../../includes/esql-md.md)], vnořené dotazy musí být uzavřena vždy v závorkách:</span><span class="sxs-lookup"><span data-stu-id="5417b-112">In [!INCLUDE[esql](../../../../../../includes/esql-md.md)], nested queries must always be enclosed in parentheses:</span></span>  
+ <span data-ttu-id="90f2d-112">V [!INCLUDE[esql](../../../../../../includes/esql-md.md)], vnořené dotazy musí být vždy uzavřen v závorkách:</span><span class="sxs-lookup"><span data-stu-id="90f2d-112">In [!INCLUDE[esql](../../../../../../includes/esql-md.md)], nested queries must always be enclosed in parentheses:</span></span>  
   
 ```  
 -- Pseudo-Entity SQL  
@@ -46,19 +46,19 @@ UNION ALL
 FROM … );  
 ```  
   
- <span data-ttu-id="5417b-113">Následující příklad ukazuje, jak lze vnořit správně výrazy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [postupy: řazení Union z dva dotazy](http://msdn.microsoft.com/library/853c583a-eaba-4400-830d-be974e735313).</span><span class="sxs-lookup"><span data-stu-id="5417b-113">The following example demonstrates how to properly nest expressions in [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [How to: Order the Union of Two Queries](http://msdn.microsoft.com/library/853c583a-eaba-4400-830d-be974e735313).</span></span>  
+ <span data-ttu-id="90f2d-113">Následující příklad ukazuje, jak správně vnořovat výrazy v [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [postupy: řazení sjednocení z obou dotazů](https://msdn.microsoft.com/library/853c583a-eaba-4400-830d-be974e735313).</span><span class="sxs-lookup"><span data-stu-id="90f2d-113">The following example demonstrates how to properly nest expressions in [!INCLUDE[esql](../../../../../../includes/esql-md.md)]: [How to: Order the Union of Two Queries](https://msdn.microsoft.com/library/853c583a-eaba-4400-830d-be974e735313).</span></span>  
   
-## <a name="nested-queries-in-projection"></a><span data-ttu-id="5417b-114">Vnořené dotazy v projekci</span><span class="sxs-lookup"><span data-stu-id="5417b-114">Nested Queries in Projection</span></span>  
- <span data-ttu-id="5417b-115">Vnořené dotazy v klauzuli projektu, může získat přeložit na kartézský součin dotazy na serveru.</span><span class="sxs-lookup"><span data-stu-id="5417b-115">Nested queries in the project clause might get translated into Cartesian product queries on the server.</span></span> <span data-ttu-id="5417b-116">V některých back-end serverů, včetně serveru SQL Server to může způsobit tabulky databáze TempDB získat velký, který může nepříznivě ovlivnit výkon serveru.</span><span class="sxs-lookup"><span data-stu-id="5417b-116">In some backend servers, including SLQ Server, this can cause the TempDB table to get very large, which can adversely affect server performance.</span></span>  
+## <a name="nested-queries-in-projection"></a><span data-ttu-id="90f2d-114">Vnořené dotazy v projekci</span><span class="sxs-lookup"><span data-stu-id="90f2d-114">Nested Queries in Projection</span></span>  
+ <span data-ttu-id="90f2d-115">Vnořené dotazy v klauzuli projektu může získat přeloženy do kartézský součin dotazy na serveru.</span><span class="sxs-lookup"><span data-stu-id="90f2d-115">Nested queries in the project clause might get translated into Cartesian product queries on the server.</span></span> <span data-ttu-id="90f2d-116">V některých back-end serverů, včetně serveru SQL Server to může způsobit TempDB tabulka, která má být velmi rozsáhlé, což nepříznivě ovlivnit výkon serveru.</span><span class="sxs-lookup"><span data-stu-id="90f2d-116">In some backend servers, including SLQ Server, this can cause the TempDB table to get very large, which can adversely affect server performance.</span></span>  
   
- <span data-ttu-id="5417b-117">Následuje příklad takového dotazu:</span><span class="sxs-lookup"><span data-stu-id="5417b-117">The following is an example of such a query:</span></span>  
+ <span data-ttu-id="90f2d-117">Následuje příklad tohoto dotazu:</span><span class="sxs-lookup"><span data-stu-id="90f2d-117">The following is an example of such a query:</span></span>  
   
 ```  
 SELECT c, (SELECT c, (SELECT c FROM AdventureWorksModel.Vendor AS c  ) As Inner2 FROM AdventureWorksModel.JobCandidate AS c  ) As Inner1 FROM AdventureWorksModel.EmployeeDepartmentHistory AS c  
 ```  
   
-## <a name="ordering-nested-queries"></a><span data-ttu-id="5417b-118">Řazení vnořené dotazy</span><span class="sxs-lookup"><span data-stu-id="5417b-118">Ordering Nested Queries</span></span>  
- <span data-ttu-id="5417b-119">V rozhraní Entity Framework mohou být výraz vnořené umístěny kdekoli v dotazu.</span><span class="sxs-lookup"><span data-stu-id="5417b-119">In the Entity Framework, a nested expression can be placed anywhere in the query.</span></span> <span data-ttu-id="5417b-120">Protože Entity SQL umožňuje flexibilitu v zápis dotazů, je možné vytvořit dotaz, který obsahuje řazení vnořené dotazy.</span><span class="sxs-lookup"><span data-stu-id="5417b-120">Because Entity SQL allows great flexibility in writing queries, it is possible to write a query that contains an ordering of nested queries.</span></span> <span data-ttu-id="5417b-121">Však není zachovávané pořadí vnořený dotaz.</span><span class="sxs-lookup"><span data-stu-id="5417b-121">However, the order of a nested query is not preserved.</span></span>  
+## <a name="ordering-nested-queries"></a><span data-ttu-id="90f2d-118">Řazení vnořené dotazy</span><span class="sxs-lookup"><span data-stu-id="90f2d-118">Ordering Nested Queries</span></span>  
+ <span data-ttu-id="90f2d-119">V rozhraní Entity Framework může být vnořený výraz umístěna kdekoli v dotazu.</span><span class="sxs-lookup"><span data-stu-id="90f2d-119">In the Entity Framework, a nested expression can be placed anywhere in the query.</span></span> <span data-ttu-id="90f2d-120">Protože Entity SQL umožňuje velkou flexibilitu při psaní dotazů, je možné napsat dotaz, který obsahuje má za výsledek řazení vnořené dotazů.</span><span class="sxs-lookup"><span data-stu-id="90f2d-120">Because Entity SQL allows great flexibility in writing queries, it is possible to write a query that contains an ordering of nested queries.</span></span> <span data-ttu-id="90f2d-121">Nezachová se však pořadí vnořeného dotazu.</span><span class="sxs-lookup"><span data-stu-id="90f2d-121">However, the order of a nested query is not preserved.</span></span>  
   
 ```  
 -- The following query will order the results by last name.  
@@ -75,5 +75,5 @@ SELECT C2.FirstName, C2.LastName
         ORDER BY C1.LastName) as C2  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="5417b-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="5417b-122">See Also</span></span>  
- [<span data-ttu-id="5417b-123">Přehled Entity SQL</span><span class="sxs-lookup"><span data-stu-id="5417b-123">Entity SQL Overview</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)
+## <a name="see-also"></a><span data-ttu-id="90f2d-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="90f2d-122">See Also</span></span>  
+ [<span data-ttu-id="90f2d-123">Přehled Entity SQL</span><span class="sxs-lookup"><span data-stu-id="90f2d-123">Entity SQL Overview</span></span>](../../../../../../docs/framework/data/adonet/ef/language-reference/entity-sql-overview.md)

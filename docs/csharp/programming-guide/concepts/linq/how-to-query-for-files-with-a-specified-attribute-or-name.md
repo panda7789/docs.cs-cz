@@ -1,18 +1,18 @@
 ---
-title: 'Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)'
+title: 'Postupy: dotaz na soubory s konkrétním atributem či názvem (C#)'
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: ee366f551eb73059196cb4dcd61c1ca42bf55fda
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b353ec17284235a97135003bc07f7224082cb4a
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33324353"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43500904"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a><span data-ttu-id="17c1b-102">Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)</span><span class="sxs-lookup"><span data-stu-id="17c1b-102">How to: Query for Files with a Specified Attribute or Name (C#)</span></span>
-<span data-ttu-id="17c1b-103">Tento příklad ukazuje, jak najít všechny soubory, které mají příponu názvu zadaný soubor (například ".txt") v zadané adresářovém stromu.</span><span class="sxs-lookup"><span data-stu-id="17c1b-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="17c1b-104">Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu podle času vytvoření.</span><span class="sxs-lookup"><span data-stu-id="17c1b-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a><span data-ttu-id="c074b-102">Postupy: dotaz na soubory s konkrétním atributem či názvem (C#)</span><span class="sxs-lookup"><span data-stu-id="c074b-102">How to: Query for Files with a Specified Attribute or Name (C#)</span></span>
+<span data-ttu-id="c074b-103">Tento příklad ukazuje, jak vyhledat všechny soubory, které mají příponu názvu souboru (například ".txt") v zadaném adresáři stromu.</span><span class="sxs-lookup"><span data-stu-id="c074b-103">This example shows how to find all files that have a specified file name extension (for example ".txt") in a specified directory tree.</span></span> <span data-ttu-id="c074b-104">Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.</span><span class="sxs-lookup"><span data-stu-id="c074b-104">It also shows how to return either the newest or oldest file in the tree based on the creation time.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="17c1b-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="17c1b-105">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="c074b-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="c074b-105">Example</span></span>  
   
 ```csharp  
 class FindFileByExtension  
@@ -63,9 +63,10 @@ class FindFileByExtension
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="17c1b-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="17c1b-106">Compiling the Code</span></span>  
- <span data-ttu-id="17c1b-107">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="17c1b-107">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to   System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="c074b-106">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="c074b-106">Compiling the Code</span></span>  
+ <span data-ttu-id="c074b-107">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="c074b-107">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to   System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="17c1b-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="17c1b-108">See Also</span></span>  
- [<span data-ttu-id="17c1b-109">LINQ na objekty (C#)</span><span class="sxs-lookup"><span data-stu-id="17c1b-109">LINQ to Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
- [<span data-ttu-id="17c1b-110">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="17c1b-110">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="c074b-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="c074b-108">See Also</span></span>
+
+- [<span data-ttu-id="c074b-109">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="c074b-109">LINQ to Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+- [<span data-ttu-id="c074b-110">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="c074b-110">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
