@@ -8,11 +8,11 @@ ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 215d23be53fad330b6ab056af83ad907f207259e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386542"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503969"
 ---
 # <a name="message-security-with-a-user-name-client"></a>Zabezpečení zpráv s klientem uživatelského jména
 Následující obrázek znázorňuje služby Windows Communication Foundation (WCF) a služby klientů, které jsou zabezpečené pomocí zabezpečení na úrovni zprávy. Služba se ověřuje pomocí certifikátu X.509. Klient se ověří pomocí uživatelského jména a hesla.  

@@ -3,11 +3,11 @@ title: Příklady dotazů založených na volání metody (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: d340775c-7f39-4087-a290-5cbec6cfa68e
 ms.openlocfilehash: 569292cc03f7cbcbaff2d8625849285ff6e2146e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43482532"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43500795"
 ---
 # <a name="method-based-query-examples-linq-to-dataset"></a>Příklady dotazů založených na volání metody (LINQ to DataSet)
 Tato část obsahuje [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] programování příklady syntaxe dotazů založených na volání metody, které používají operátory standardního dotazu. <xref:System.Data.DataSet> Používá v těchto příkladech je vyplněna pomocí `FillDataSet` metodu, která je zadána v [načítání dat do datová sada](../../../../docs/framework/data/adonet/loading-data-into-a-dataset.md). Další informace najdete v tématu [přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  

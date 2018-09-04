@@ -6,15 +6,15 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: f1e5efca7fb3088064b3f252675b8cae965717f0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b3eed35180b38236498f241fed59d71262946c37
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33336583"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509064"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>Postupy: Určení, zda řetězec reprezentuje číselnou hodnotu (Průvodce programováním v C#)
-K určení, zda řetězec je platný reprezentace zadané číselného typu, použijte statickou `TryParse` metodu, která je implementována všechny primitivní číselnými typy a také typy, jako <xref:System.DateTime> a <xref:System.Net.IPAddress>. Následující příklad ukazuje, jak určit, zda "108" je platná [int](../../../csharp/language-reference/keywords/int.md).  
+Chcete-li zjistit, zda je řetězec reprezentaci platná zadané číselného typu, použijte statické `TryParse` metodu, která je implementována všechny primitivní číselné typy a také typy, jako <xref:System.DateTime> a <xref:System.Net.IPAddress>. Následující příklad ukazuje, jak zjistit, jestli "108" je platný [int](../../../csharp/language-reference/keywords/int.md).  
   
 ```  
 int i = 0;   
@@ -22,25 +22,26 @@ string s = "108";
 bool result = int.TryParse(s, out i); //i now = 108  
 ```  
   
- Pokud řetězec obsahuje číselného typu znaky nebo číselná hodnota je příliš velký či příliš malý pro konkrétní typ, který jste zadali, `TryParse` vrací hodnotu false a nastaví výstupní parametr na hodnotu nula. Jinak vrátí hodnotu true a nastaví parametr mimo na číselnou hodnotu řetězce.  
+ Pokud řetězec obsahuje znaky číselného typu nebo číselná hodnota je příliš velký či příliš malý pro konkrétní typ, který jste zadali, `TryParse` vrátí hodnotu false a nastaví výstupní parametr na hodnotu nula. V opačném případě vrátí hodnotu true a nastaví výstupní parametr na číselnou hodnotu řetězce.  
   
 > [!NOTE]
->  Řetězec může obsahovat pouze znaky a stále není platné pro typ jehož `TryParse` metoda, která používáte. Například "256" není platná hodnota pro `byte` , ale je platná pro `int`. "98.6" není platná hodnota pro `int` , ale je platná `decimal`.  
+>  Řetězec může obsahovat pouze číselné znaky a stále není možné pro daný typ platná jehož `TryParse` metodu, která používáte. Například "256" není platná hodnota pro `byte` , ale je platný pro `int`. "98.6" není platná hodnota pro `int` je platný, ale `decimal`.  
   
 ## <a name="example"></a>Příklad  
- Následující příklady ukazují, jak používat `TryParse` s řetězcové vyjádření `long`, `byte`, a `decimal` hodnoty.  
+ Následující příklady ukazují, jak používat `TryParse` s řetězcové reprezentace `long`, `byte`, a `decimal` hodnoty.  
   
  [!code-csharp[csProgGuideStrings#14](../../../csharp/programming-guide/strings/codesnippet/CSharp/how-to-determine-whether-a-string-represents-a-numeric-value_1.cs)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Číselný primitivní typy také implementace `Parse` statickou metodu, která vyvolá výjimku, pokud řetězec není platné číslo. `TryParse` je obecně efektivnější, protože ji právě vrací hodnotu false, pokud číslo není platné.  
+ Primitivní číselné typy i implementace `Parse` statická metoda, která vyvolá výjimku, pokud řetězec není platné číslo. `TryParse` je obecně efektivnější, protože se právě vrací hodnotu false, pokud číslo není platné.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Vždy nutné použít `TryParse` nebo `Parse` metody k ověření uživatelského vstupu z ovládací prvky například textová pole a pole se seznamem.  
+ Vždy používat `TryParse` nebo `Parse` metody k ověření uživatelského vstupu z ovládacích prvků, jako je například textová pole a pole se seznamem.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: Převedení pole bajtů na typ int](../../../csharp/programming-guide/types/how-to-convert-a-byte-array-to-an-int.md)  
- [Postupy: Převedení řetězce na číslo](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)  
- [Postupy: Převod mezi hexadecimálními řetězci a číselnými typy](../../../csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md)  
- [Analýza číselných řetězců](../../../standard/base-types/parsing-numeric.md)  
- [Typy formátování](../../../standard/base-types/formatting-types.md)
+## <a name="see-also"></a>Viz také
+
+- [Postupy: Převedení pole bajtů na typ int](../../../csharp/programming-guide/types/how-to-convert-a-byte-array-to-an-int.md)  
+- [Postupy: Převedení řetězce na číslo](../../../csharp/programming-guide/types/how-to-convert-a-string-to-a-number.md)  
+- [Postupy: Převod mezi hexadecimálními řetězci a číselnými typy](../../../csharp/programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md)  
+- [Analýza číselných řetězců](../../../standard/base-types/parsing-numeric.md)  
+- [Typy formátování](../../../standard/base-types/formatting-types.md)

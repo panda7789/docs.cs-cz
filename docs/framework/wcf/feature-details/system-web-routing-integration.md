@@ -2,18 +2,18 @@
 title: System.Web.Routing Integration
 ms.date: 03/30/2017
 ms.assetid: 31fe2a4f-5c47-4e5d-8ee1-84c524609d41
-ms.openlocfilehash: 5bd405d66dcad597bbe6f452703d25372fdb7682
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 540795838109b99111279bc693a765f58a1ff18e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33498020"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504841"
 ---
 # <a name="systemwebrouting-integration"></a>System.Web.Routing Integration
-Při hostování služby Windows Communication Foundation (WCF) v Internetové informační služby (IIS) můžete umístit soubor .svc ve virtuálním adresáři. Tento soubor .svc určuje vytváření hostitele služby a také třídu, která implementuje službu používat. Při zasílání požadavků na službu zadáte soubor .svc v identifikátoru URI, například: http://contoso.com/EmployeeServce.svc. Tento typ identifikátoru URI pro programátory, kteří vytvářejí služby REST není optimální. Identifikátory URI pro služby REST zadejte konkrétní prostředek a obvykle nemají žádné rozšíření. <xref:System.Web.Routing> Funkce integrace umožňuje hostování služby WCF REST, která reaguje na identifikátory URI bez přípony. Další informace o směrování najdete [směrování ASP.NET](http://go.microsoft.com/fwlink/?LinkId=184660) a [AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md) ukázka.  
+Při hostování služby Windows Communication Foundation (WCF) v Internetové informační služby (IIS) umístíte souborů .svc ve virtuálním adresáři. Tento soubor SVC určuje vytváření hostitele služby používat stejně jako třídy, která implementuje služby. Při zasílání požadavků na službu zadáte souboru SVC v identifikátoru URI, například: http://contoso.com/EmployeeServce.svc. Tento typ identifikátoru URI pro programátory, kteří vytvářejí služby REST není ideální. Identifikátory URI pro služby REST zadejte konkrétní prostředek a obvykle nemají žádná rozšíření. <xref:System.Web.Routing> Funkci integrace umožňuje, můžete použít k hostování služby WCF REST, která bude reagovat na identifikátory URI bez přípony. Další informace o směrování najdete v tématu [směrování ASP.NET](https://go.microsoft.com/fwlink/?LinkId=184660) a [AspNetRouteIntegration](../../../../docs/framework/wcf/samples/aspnetrouteintegration.md) vzorku.  
   
 ## <a name="using-systemwebrouting-integration"></a>Pomocí integrace System.Web.Routing  
- Použít <xref:System.Web.Routing> funkce integrace použijete <xref:System.ServiceModel.Activation.ServiceRoute> třídy vytvořit jednu nebo víc tras a přidat je do <xref:System.Web.Routing.RouteTable> v souboru Global.asax. Tyto trasy zadejte relativní identifikátory URI, který služba reaguje na. Následující příklad ukazuje, jak to provést.  
+ Použít <xref:System.Web.Routing> funkci integrace, je použít <xref:System.ServiceModel.Activation.ServiceRoute> třídy k vytvoření jednoho nebo více tras a přidat je do <xref:System.Web.Routing.RouteTable> v souboru Global.asax. Tyto trasy zadejte relativní identifikátory URI, které služby jsou reaguje na. Následující příklad ukazuje, jak to provést.  
   
 ```  
 <%@ Application Language="C#" %>  
@@ -34,9 +34,9 @@ Při hostování služby Windows Communication Foundation (WCF) v Internetové i
 </script>  
 ```  
   
- To směrovat všechny požadavky s relativní identifikátor URI, který začíná s zákazníkům `Service` služby.  
+ Ten přesměruje všechny požadavky s relativní identifikátor URI, který začíná s zákazníkům `Service` služby.  
   
- V souboru Web.config je třeba přidat `System.Web.Routing.UrlRoutingModule` nastaven, `runAllManagedModulesForAllRequests` atribut `true`a přidejte `UrlRoutingHandler` obslužná rutina `<system.webServer>` element, jak je znázorněno v následujícím příkladu.  
+ V souboru Web.config musíte přidat `System.Web.Routing.UrlRoutingModule` modul, nastavte `runAllManagedModulesForAllRequests` atribut `true`a přidejte `UrlRoutingHandler` obslužná rutina `<system.webServer>` elementu, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <system.webServer>  
@@ -49,7 +49,7 @@ Při hostování služby Windows Communication Foundation (WCF) v Internetové i
     </system.webServer>  
 ```  
   
- Tento kód načte modul a obslužná rutina vyžaduje pro směrování. Další informace najdete v tématu [směrování](../../../../docs/framework/wcf/feature-details/routing.md). Je nutné také nastavit `aspNetCompatibilityEnabled` atribut `true` v `<serviceHostingEnvironment>` element, jak je znázorněno v následujícím příkladu.  
+ Tento kód načte modul a obslužná rutina vyžaduje pro směrování. Další informace najdete v tématu [směrování](../../../../docs/framework/wcf/feature-details/routing.md). Musíte taky nastavit `aspNetCompatibilityEnabled` atribut `true` v `<serviceHostingEnvironment>` elementu, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <system.serviceModel>  
@@ -58,7 +58,7 @@ Při hostování služby Windows Communication Foundation (WCF) v Internetové i
     </system.serviceModel>  
 ```  
   
- Třídu, která implementuje služby musíte povolit požadavky na kompatibilitu ASP.NET, jak je znázorněno v následujícím příkladu.  
+ Třídy, která implementuje službu musíte povolit požadavky kompatibility ASP.NET, jak je znázorněno v následujícím příkladu.  
   
 ```  
 [ServiceContract]  
@@ -71,4 +71,4 @@ Při hostování služby Windows Communication Foundation (WCF) v Internetové i
   
 ## <a name="see-also"></a>Viz také  
  [Programovací model webových služeb HTTP WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)  
- [Směrování ASP.NET](http://go.microsoft.com/fwlink/?LinkId=184660)
+ [Směrování ASP.NET](https://go.microsoft.com/fwlink/?LinkId=184660)

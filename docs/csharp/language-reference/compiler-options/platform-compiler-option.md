@@ -8,15 +8,15 @@ helpviewer_keywords:
 - -platform compiler option [C#]
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
-ms.openlocfilehash: d4cb4e219189deb6048692822c9245c5a03c5675
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f52192087eb7b73ee930eea073e0c5716ad8c636
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33216509"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507589"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform (možnosti kompilátoru C#)
-Určuje, jaká verze Common Language Runtime (CLR) můžete spustit sestavení.  
+Určuje, jaké verze Common Language Runtime (CLR) můžete spustit sestavení.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,51 +30,52 @@ Určuje, jaká verze Common Language Runtime (CLR) můžete spustit sestavení.
   
 ## <a name="remarks"></a>Poznámky  
   
--   **anycpu** (výchozí) zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží jako 64bitový proces kdykoli je to možné a spadne zpět na 32-bit v případě pouze tento režim je k dispozici.  
+-   **anycpu** (výchozí) kompiluje sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží jako 64bitový proces, kdykoli je to možné a spadne zpět na 32bitovém základě když pouze tento režim je k dispozici.  
   
--   **anycpu32bitpreferred** zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží v režimu 32-bit v systémech, které podporují 64bitové a 32bitové aplikace. Tato možnost jenom pro projekty můžete zadat cílených rozhraní .NET Framework 4.5.  
+-   **anycpu32bitpreferred** zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Vaše aplikace běží v režimu 32-bit na systémy, které podporují 64bitové a 32bitové aplikace. Můžete použít tuto možnost pouze pro projekty, které se zaměřují na rozhraní .NET Framework 4.5.  
   
--   **ARM** zkompiluje vaše sestavení pro spuštění v počítači, který má procesor Advanced RISC Machine (ARM).  
+-   **ARM** kompiluje sestavení ke spuštění v počítači, který má procesor Advanced RISC Machine (ARM).  
   
--   **x64** zkompiluje vaše sestavení pro 64bitové verze CLR spustit na počítači, který podporuje AMD64 nebo EM64T sada instrukcí.  
+-   **x64** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.  
   
--   **x86** zkompiluje vaše sestavení ke spuštění x86 kompatibilní, 32bitová verze modulu CLR.  
+-   **x86** kompiluje sestavení ke spuštění v 32 bitů, které je kompatibilní x86 CLR.  
   
--   **Itanium** zkompiluje vaše sestavení pro 64bitové verze CLR spustit na počítači s procesorem Itanium.  
+-   **Itanium** kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači s procesorem Itanium.  
   
- 64bitová verze operačního systému Windows:  
+ V operačním systému Windows 64-bit:  
   
--   Sestavení kompilovat s **-platformy: x 86** spustit na 32bitová verze modulu CLR spuštěna pod WOW64.  
+-   Sestavení zkompilovaná **-platform: x 86** spouštět na 32-bit CLR spuštěna v modulu WOW64.  
   
--   Knihovny DLL kompilovat s **-platform: anycpu** spouští ve stejném modulu CLR jako proces, do kterého je načten.  
+-   Knihovna DLL zkompilovaná **– platforma: anycpu** provede na stejném modulu CLR jako proces, do které je načten.  
   
--   Spustitelné soubory, které jsou kompilovat s **-platform: anycpu** spustit na 64-bit CLR.  
+-   Spustitelné soubory, které jsou kompilovány pomocí **-platform: anycpu** spuštění v 64bitovém modulu CLR.  
   
--   Spustitelné soubory kompilovat s **-platformy: anycpu32bitpreferred** spustit na 32bitová verze modulu CLR.  
+-   Spustitelné soubory zkompilovaná **-platform: anycpu32bitpreferred** spouštět na 32-bit modulu CLR.  
   
- **Anycpu32bitpreferred** nastavení je platná pouze pro spustitelný soubor (. Soubory EXE) ale vyžaduje rozhraní .NET Framework 4.5.  
+ **Anycpu32bitpreferred** nastavení platí jenom pro spustitelný soubor (. Soubory EXE) a vyžaduje rozhraní .NET Framework 4.5.  
   
- Další informace o vývoji aplikace ke spuštění v operačním systému Windows 64-bit najdete v tématu [64bitové aplikace](../../../framework/64-bit-apps.md).  
+ Další informace o vývoji aplikací pro spuštění v operačním systému Windows 64-bit, naleznete v tématu [64bitové aplikace](../../../framework/64-bit-apps.md).  
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio  
   
-1.  Otevřete **vlastnosti** stránky pro projekt.  
+1.  Otevřít **vlastnosti** stránky pro projekt.  
   
-2.  Klikněte **sestavení** stránku vlastností.  
+2.  Klikněte na tlačítko **sestavení** stránku vlastností.  
   
-3.  Změnit **Cílová platforma** vlastnost a pro projekty, které cílí na rozhraní .NET Framework 4.5, zaškrtněte nebo zrušte **raději 32bitové** zaškrtávací políčko.  
+3.  Upravit **Cílová platforma** vlastnost a pro projekty, které jsou cíleny na rozhraní .NET Framework 4.5, zaškrtněte nebo zrušte zaškrtnutí **preferovat 32bitovou verzi** zaškrtávací políčko.  
   
- **Poznámka: - platformy** není k dispozici ve vývojovém prostředí Visual C# Express.  
+ **Poznámka: - platform** není k dispozici ve vývojovém prostředí sady Visual C# Express.  
   
- Informace o tom, jak nastavení této možnosti kompilátoru programu najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>.  
+ Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat **-platformy** můžete určit, že aplikace měly být spuštěny pomocí modulu CLR 64bitová verze 64bitová verze operačního systému Windows.  
+ Následující příklad ukazuje způsob použití **-platform** možnost určit, že aplikace by měla spustit 64bitový modul CLR v operačním systému Windows 64-bit.  
   
 ```console  
 csc -platform:anycpu filename.cs  
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

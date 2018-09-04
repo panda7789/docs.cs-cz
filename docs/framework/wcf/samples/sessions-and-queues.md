@@ -3,11 +3,11 @@ title: Relace a fronty
 ms.date: 03/30/2017
 ms.assetid: 47d7c5c2-1e6f-4619-8003-a0ff67dcfbd6
 ms.openlocfilehash: 5e8cd975c27e5e7a833e53da7a03c06b10d14ca7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404490"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43501488"
 ---
 # <a name="sessions-and-queues"></a>Relace a fronty
 Tento příklad ukazuje, jak odesílat a přijímat sadu související zprávy ve frontě komunikace prostřednictvím přenosu služby Řízení front zpráv (MSMQ). Tento příklad používá `netMsmqBinding` vazby. Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.  

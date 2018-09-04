@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 4f5639bf-bb7f-4982-bb1d-c7caa4348888
 ms.openlocfilehash: 973a1f3980c979b201b083eed3eb20a64461a3cb
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43481544"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507410"
 ---
 # <a name="how-to-execute-a-parameterized-stored-procedure-using-entitycommand"></a>Postupy: spuštění parametrizované uložené procedury pomocí EntityCommand
 Toto téma ukazuje, jak spustit uloženou proceduru s parametry s využitím <xref:System.Data.EntityClient.EntityCommand> třídy.  

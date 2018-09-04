@@ -12,37 +12,37 @@ helpviewer_keywords:
 - Windows Forms controls, data binding
 - bound controls [Windows Forms]
 ms.assetid: 4e96e3d0-b1cc-4de1-8774-bc9970ec4554
-ms.openlocfilehash: 1be8a31957bc439c140c1b6c5fc24e3221860c80
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 409d94e46cae3e4daf7df930097f0a3d46360633
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529506"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43500583"
 ---
 # <a name="how-to-bind-the-windows-forms-datagrid-control-to-a-data-source-using-the-designer"></a>Postupy: Vytvoření vazby ovládacího prvku Windows Forms DataGrid ke zdroji dat pomocí Návrháře
 > [!NOTE]
->  <xref:System.Windows.Forms.DataGridView> Řízení nahrazuje a přidá funkce <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> řízení se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud si zvolíte. Další informace najdete v tématu [rozdíly mezi systému Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
+>  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
- Windows Forms <xref:System.Windows.Forms.DataGrid> ovládací prvek je určená speciálně pro zobrazení informací ze zdroje dat. Vytvoření vazby ovládacího prvku v době návrhu nastavením <xref:System.Windows.Forms.DataGrid.DataSource%2A> a <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnosti, nebo v době běhu voláním <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metoda. I když můžete zobrazit data z různých zdrojů dat, některé běžné zdroje jsou datové sady a data zobrazení.  
+ Windows Forms <xref:System.Windows.Forms.DataGrid> ovládací prvek je navržená speciálně pro zobrazení informací ze zdroje dat. Vazbu ovládacího prvku v době návrhu tak, že nastavíte <xref:System.Windows.Forms.DataGrid.DataSource%2A> a <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnosti, nebo za běhu pomocí volání <xref:System.Windows.Forms.DataGrid.SetDataBinding%2A> metoda. Přestože lze zobrazit data z různých zdrojů dat, obvykle zdroje jsou datové sady a data zobrazení.  
   
- Pokud je zdroj dat dostupný v době návrhu – například, pokud tento formulář obsahuje instanci datové sady nebo zobrazení dat – mřížky můžete vázat na zdroj dat v době návrhu. Potom můžete zobrazit náhled vzhled data v mřížce.  
+ Pokud zdroj dat je k dispozici v době návrhu – například, pokud formulář obsahuje instance datové sady nebo zobrazení dat – mřížky můžete vázat na zdroj dat v době návrhu. Pak můžete zobrazit náhled dat bude vypadat v mřížce.  
   
- Můžete také navázat mřížky prostřednictvím kódu programu, v době běhu. To je užitečné, pokud chcete nastavit zdroj dat na základě informací, které máte v době běhu. Aplikace může například umožní uživateli zadání názvu tabulky. Chcete-li zobrazit. Je také nutné v situacích, kde se zdroji dat neexistuje v době návrhu. To zahrnuje zdroje dat jako pole, kolekce, netypové datové sady a čtečky dat.  
+ Můžete také navázat mřížky prostřednictvím kódu programu, v době běhu. To je užitečné, když chcete nastavit zdroj dat na základě informací, které získáte v době běhu. Například aplikace může uživatelům povolit, zadejte název tabulky. Chcete-li zobrazit. Je také nutné v situacích, kde se zdroji dat neexistuje v době návrhu. To zahrnuje zdroje dat, jako je například pole, kolekcí, netypové datové sady a čtečky dat.  
   
- Následující postup vyžaduje **aplikace Windows** projekt pomocí formuláře obsahující <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o nastavení tohoto projektu najdete v tématu [postupy: vytvoření projektu aplikace Windows](http://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [postupy: Přidání ovládacích prvků do formulářů Windows](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], <xref:System.Windows.Forms.DataGrid> ovládací prvek není součástí **sada nástrojů** ve výchozím nastavení. Informace o přidání najdete v tématu [postupy: Přidání položky do sady nástrojů](http://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0). Kromě toho v [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], můžete použít **zdroje dat** okna pro vázání dat v době návrhu. Další informace najdete v části [vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [postupy: vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [postupy: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Informace o jeho přidání, naleznete v tématu [postupy: přidání položek panelu nástrojů](https://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0). Kromě toho v [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], můžete použít **zdroje dat** okno pro vytvoření vazby dat doby návrhu. Další informace najdete v části [vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
-### <a name="to-data-bind-the-datagrid-control-to-a-single-table-in-the-designer"></a>Pro data-bind DataGrid – ovládací prvek pro jednotlivé tabulky v Návrháři  
+### <a name="to-data-bind-the-datagrid-control-to-a-single-table-in-the-designer"></a>Chcete svázat data – ovládací prvek DataGrid jedné tabulky v Návrháři  
   
-1.  Nastavte ovládacího prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost, která má objekt obsahující data položky, které chcete vytvořit vazbu.  
+1.  Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
   
-2.  Pokud zdroj dat je datová sada, nastavte <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost na název tabulky pro vazbu.  
+2.  Pokud zdroj dat je datová sada, nastavte <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název tabulky k vytvoření vazby.  
   
-3.  Pokud je zdroj dat datové sady nebo zobrazení dat na základě datové sady tabulky, přidejte kód pro formulář k vyplnění datové sady.  
+3.  Pokud je zdroj dat datové sady nebo zobrazení dat na základě tabulky datovou sadu, přidejte kód pro formulář k vyplnění datové sady.  
   
-     Přesný kód, který používáte, závisí na kterém je datová sada získávání dat. Pokud se datová sada je právě nezadají přímo z databáze, obvykle volání `Fill` metoda adaptér pro data, jako v následujícím příkladu kódu, který naplní datovou sadu s názvem `DsCategories1`:  
+     Přesný kód, který používáte závisí na datové sady je kde získávají data. Pokud probíhá naplňování datové sady přímo z databáze, obvykle volat `Fill` metoda adaptéru dat, stejně jako v následujícím příkladu kódu, který naplňuje datovou sadu s názvem `DsCategories1`:  
   
     ```vb  
     sqlDataAdapter1.Fill(DsCategories1)  
@@ -56,17 +56,17 @@ ms.locfileid: "33529506"
     sqlDataAdapter1->Fill(dsCategories1);  
     ```  
   
-4.  (Volitelné) Přidejte příslušné tabulce styly a styly sloupců do mřížky.  
+4.  (Volitelné) Přidejte příslušné tabulky styly a styly sloupců do mřížky.  
   
-     Pokud neexistují žádné tabulky styly, zobrazí se v tabulce, ale s minimálním formátování a všechny sloupce, které jsou viditelné.  
+     Pokud neexistují žádné tabulky styly, zobrazí se v tabulce, ale s minimální formátování a všechny viditelné sloupce.  
   
-### <a name="to-data-bind-the-datagrid-control-to-multiple-tables-in-a-dataset-in-the-designer"></a>Pro data-bind ovládacího prvku DataGrid k několika tabulkám v datové sadě v Návrháři  
+### <a name="to-data-bind-the-datagrid-control-to-multiple-tables-in-a-dataset-in-the-designer"></a>Chcete svázat data – ovládací prvek DataGrid více tabulek v datové sadě v Návrháři  
   
-1.  Nastavte ovládacího prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost, která má objekt obsahující data položky, které chcete vytvořit vazbu.  
+1.  Nastavit u tohoto prvku <xref:System.Windows.Forms.DataGrid.DataSource%2A> vlastnost na objekt obsahující data položky, které chcete vytvořit vazbu.  
   
-2.  Pokud datová sada obsahuje související tabulky (to znamená, pokud obsahuje objekt relace), můžete nastavit <xref:System.Windows.Forms.DataGrid.DataMember%2A> vlastnost na název v nadřazené tabulce.  
+2.  Pokud datová sada obsahuje související tabulky (to znamená, pokud obsahuje objekt relace), můžete nastavit <xref:System.Windows.Forms.DataGrid.DataMember%2A> nastavte název nadřazené tabulky.  
   
-3.  Napište kód pro vyplnění datové sady.  
+3.  Napište kód pro naplnění dataset.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled ovládacího prvku DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-overview-windows-forms.md)  

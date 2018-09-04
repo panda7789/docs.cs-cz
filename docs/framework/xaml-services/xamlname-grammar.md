@@ -8,20 +8,20 @@ helpviewer_keywords:
 - names in XAML [XAML Services]
 - XamlName grammar [XAML Services]
 ms.assetid: 11e4cada-41d2-494d-9531-0d3df4dfcbe3
-ms.openlocfilehash: 32fd7b7b952ebbc853e41c0a8276d1ab487e619f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2a934316517047da6b6aec8e88026024b9a25f65
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33561888"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514798"
 ---
 # <a name="xamlname-grammar"></a>XamlName – gramatika
-XamlName – gramatika je konkrétní gramatika, která je definována v specifikace jazyka XAML [MS XAML], který je zde uveden ke zvýšení pohodlí.  
+Xamlname – gramatika je konkrétní gramatiky, který je definován ve specifikaci jazyka XAML [MS-XAML], což je reprodukován zde ke zvýšení pohodlí.  
   
-## <a name="from-the-xaml-specification"></a>Z specifikace jazyka XAML  
- Specifikace [MS-XAML] definuje gramatika XamlName k určení sady právní symbolický identifikátory používané pro různé typy a vlastnosti.  
+## <a name="from-the-xaml-specification"></a>Z specifikaci XAML  
+ Specifikace [MS-XAML] definuje gramatiky XamlName ke zjišťování sady právní symbolické identifikátory použitými pro typy a vlastnosti.  
   
- Řetězce hodnoty, které jsou typu, který XamlName musí odpovídat následující gramatikou:  
+ Hodnoty, které jsou typu, který musí odpovídat xamlname – gramatika následující řetězce:  
   
 ```  
 XamlName ::= NameStartChar ( NameChar )*   
@@ -32,7 +32,7 @@ DecimalDigit ::= UnicodeNd
 CombiningCharacter ::= UnicodeMn | UnicodeMc  
 ```  
   
- Kde se předpokládá následující obecné kategorie hodnoty definovaným v databázi znak Unicode  
+ Kde se předpokládá následující hodnoty obecné kategorie definované v databáze znaků Unicode  
   
 ```  
 Lu  
@@ -55,13 +55,13 @@ Nl
 Number, Letter  
 ```  
   
- XAML definuje druhý – gramatika dottedxamlname –, který se používá pro vlastnosti a události kvalifikovaný odkazy a také pro připojené členy. Další informace najdete v tématu <xref:System.Windows.DependencyProperty> a [přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
+ XAML definuje druhý gramatika dottedxamlname –, který se používá pro vlastnost a události kvalifikované odkazy a také pro připojené členy. Další informace najdete v tématu <xref:System.Windows.DependencyProperty> a [přehled XAML (WPF)](../../../docs/framework/wpf/advanced/xaml-overview-wpf.md).  
   
- Řetězce hodnoty, které jsou typu, který musí odpovídat dottedxamlname – gramatika následující:  
+ Hodnoty, které jsou typu, který musí odpovídat dottedxamlname – gramatika následující řetězce:  
   
 ```  
 DottedXamlName ::= XamlName '.' XamlName  
 ```  
   
 ## <a name="remarks"></a>Poznámky  
- Specifikace dokončení najdete v části [ \[MS-XAML\]](http://go.microsoft.com/fwlink/?LinkId=114525).
+ Kompletní specifikaci, naleznete v tématu [ \[MS-XAML\]](https://go.microsoft.com/fwlink/?LinkId=114525).

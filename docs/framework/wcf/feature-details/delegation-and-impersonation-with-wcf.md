@@ -9,11 +9,11 @@ helpviewer_keywords:
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
 ms.openlocfilehash: 08b78a2a6e7d27f28ddd5c9b771f690bc16b1717
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484584"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505414"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Delegace a zosobnění se službou WCF
 *Zosobnění* je běžná technika, služby slouží k omezení klientský přístup k prostředkům služby domény. Prostředky služby domény může být buď počítač prostředky, jako jsou místní soubory (zosobnění), nebo prostředek na jiném počítači, jako jsou sdílené složky (delegování). Ukázková aplikace, najdete v části [zosobnění klienta](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Příklad použití zosobnění, naleznete v tématu [postupy: zosobnění klienta ve službě](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  

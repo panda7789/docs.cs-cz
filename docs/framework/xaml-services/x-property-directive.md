@@ -3,11 +3,11 @@ title: x:Property – direktiva
 ms.date: 03/30/2017
 ms.assetid: 618555a8-c893-455c-810f-ac54cd24ef10
 ms.openlocfilehash: 34f982c30a345f95c7a1c7e70de8c5cc4de62cbb
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43419770"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43508183"
 ---
 # <a name="xproperty-directive"></a>x:Property – direktiva
 Deklaruje vlastnost XAML ve značkách.  

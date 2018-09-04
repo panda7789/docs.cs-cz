@@ -7,11 +7,11 @@ helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
 ms.openlocfilehash: 9cd1af400a9afdb7942a49dee7e7f7bb78387f2d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43477929"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507351"
 ---
 # <a name="-operator-c-reference"></a>= – operátor (Referenční dokumentace jazyka C#)
 Operátor přiřazení (`=`) ukládá hodnota jeho operandu pravé v umístění úložiště, vlastnost nebo indexer udávají jeho operand na levé straně a jako svůj výsledek vrátí hodnotu. Operandy musí být stejného typu (nebo zpracovával pravý operand musí být implicitně převoditelná na typ operandu vlevo).  

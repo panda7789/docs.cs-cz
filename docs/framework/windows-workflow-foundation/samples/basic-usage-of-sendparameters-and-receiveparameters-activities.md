@@ -3,11 +3,11 @@ title: Základní použití aktivit SendParameters a ReceiveParameters
 ms.date: 03/30/2017
 ms.assetid: 1b6b1681-3d41-403f-bfe2-3f600f24aa8c
 ms.openlocfilehash: c13999ad1571a6413e30e801b6c642000f8e4654
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467692"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504005"
 ---
 # <a name="basic-usage-of-sendparameters-and-receiveparameters-activities"></a>Základní použití aktivit SendParameters a ReceiveParameters
 Tento příklad ukazuje použití <xref:System.ServiceModel.Activities.SendParametersContent> a <xref:System.ServiceModel.Activities.ReceiveParametersContent> aktivity. Služba zpřístupňuje jedna operace, která přijímá řetězcový argument a vrátí vstupní zpět do klienta. Vzorek ukazuje, jak nastavit parametry pro tyto zasílání zpráv aktivity.  

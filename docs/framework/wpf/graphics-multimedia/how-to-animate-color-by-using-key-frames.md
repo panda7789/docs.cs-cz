@@ -10,11 +10,11 @@ helpviewer_keywords:
 - key frames [WPF], animating colors with
 ms.assetid: ab04ffa6-4de9-4d5b-a3b4-4e35d5b2ef35
 ms.openlocfilehash: cb09a54df3d99e05e89ec0f3d9f17b0e9fe78647
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43419074"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43501175"
 ---
 # <a name="how-to-animate-color-by-using-key-frames"></a>Postupy: Animace barev použitím klíčových snímků
 Tento příklad ukazuje, jak animovat <xref:System.Windows.Media.SolidColorBrush.Color%2A> z <xref:System.Windows.Media.SolidColorBrush> použitím klíčových snímků.  

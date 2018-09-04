@@ -1,29 +1,29 @@
 ---
-title: Mapa klíč omezení schématu XML (XSD) k omezení datové sady
+title: Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 22664196-f270-4ebc-a169-70e16a83dfa1
-ms.openlocfilehash: ad39fd75a3f8872ed2c24a65481209e3c772a638
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: fcc2799a929340f68d8a8740512ed061fd51090e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757863"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43501454"
 ---
-# <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapa klíč omezení schématu XML (XSD) k omezení datové sady
-Ve schématu, můžete určit klíče omezení na element nebo atribut, pomocí **klíč** elementu. Element nebo atribut, na kterém je zadán omezení klíče musí mít jedinečné hodnoty v žádné instanci schématu a nesmí obsahovat hodnoty null.  
+# <a name="map-key-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových omezení schématu XML (XSD) k omezením datové sady
+Ve schématu, můžete určit klíče omezení na element nebo atribut, pomocí **klíč** elementu. Element nebo atribut, na kterém je zadáno klíčové omezení musí mít jedinečné hodnoty v žádné instanci schéma a nemůže mít hodnotu null.  
   
- Omezení klíče je podobná jedinečné omezení, s tím rozdílem, že sloupec, na kterém je definovaný omezení klíče nesmí mít hodnotu null. hodnoty.  
+ Omezení klíče je podobná omezení unique, s tím rozdílem, že sloupec, na kterém je definována omezení klíče nesmí obsahovat hodnoty null.  
   
  V následující tabulce jsou podrobněji popsány dále **msdata** atributy, které můžete zadat v **klíč** elementu.  
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|**msdata:ConstraintName**|Pokud tento atribut je určen, jeho hodnota se používá jako název omezení. Jinak **název** atribut poskytuje hodnota název omezení.|  
-|**msdata:PrimaryKey**|Pokud `PrimaryKey="true"` je k dispozici, **IsPrimaryKey** omezení je nastavena na **true**, a tím primární klíč. **AllowDBNull** sloupce je nastavena na **false**, protože primární klíče nesmí mít hodnotu null. hodnoty.|  
+|**msdata:ConstraintName**|Pokud tento atribut není zadán, jeho hodnota se používá jako název omezení. V opačném případě **název** atributu obsahuje hodnotu název omezení.|  
+|**msdata:PrimaryKey**|Pokud `PrimaryKey="true"` je k dispozici, **isprimarykey hodnotu** omezení je nastavena na **true**, díky čemuž je primární klíč. **AllowDBNull** sloupce je nastavena na **false**, protože primární klíče nemůže mít hodnotu null.|  
   
- Převádění, ve kterém je omezení klíče zadané schéma, proces mapování vytvoří omezení unique u tabulky s **AllowDBNull** sloupce vlastnost nastavena na hodnotu **false** pro každý sloupec v omezení. **IsPrimaryKey** jedinečné omezení je také nastavena na **false** Pokud jste zadali `msdata:PrimaryKey="true"` na **klíč** elementu. Toto je stejný jako jedinečné omezení ve schématu, ve kterém `PrimaryKey="true"`.  
+ Při převodu schématu, ve které je zadáno klíčových omezení, proces mapování vytvoří omezení unique u tabulky se **AllowDBNull** sloupce nastavenou na **false** pro každý sloupec v omezení. **Isprimarykey hodnotu** jedinečné omezení je také nastavena na **false** mít uvedeno `msdata:PrimaryKey="true"` na **klíč** elementu. To je stejný jako jedinečné omezení ve schématu, ve kterém `PrimaryKey="true"`.  
   
- V následujícím příkladu schématu **klíč** element určuje klíče omezení na **CustomerID** elementu.  
+ V následujícím příkladu schématu **klíč** prvek určuje klíče omezení na **CustomerID** elementu.  
   
 ```xml  
 <xs:schema id="cod"  
@@ -54,13 +54,13 @@ Ve schématu, můžete určit klíče omezení na element nebo atribut, pomocí 
 </xs:schema>   
 ```  
   
- **Klíč** element určuje, že hodnoty **CustomerID** podřízený element **zákazníci** element musí mít jedinečné hodnoty a nesmí obsahovat hodnoty null. V překladu schéma schématu XML definition language (XSD), proces mapování vytvoří v následující tabulce:  
+ **Klíč** element určuje, že hodnoty **CustomerID** podřízený prvek **zákazníkům** element musí mít jedinečné hodnoty a nemůže mít hodnotu null. Při překladu jazyk (XSD) schématu definice schématu XML, proces mapování vytvoří v následující tabulce:  
   
 ```  
 Customers(CustomerID, CompanyName, Phone)  
 ```  
   
- Mapování schémat XML také vytvoří **UniqueConstraint** na **CustomerID** sloupce, jak je znázorněno v následující <xref:System.Data.DataSet>. (Pro jednoduchost, jsou pouze relevantní vlastnosti zobrazené.)  
+ Také vytvoří mapování schématu XML **UniqueConstraint** na **CustomerID** sloupce, jak je znázorněno v následujícím <xref:System.Data.DataSet>. (Pro jednoduchost, pouze relevantní jsou zobrazeny vlastnosti.)  
   
 ```  
       DataSetName: MyDataSet  
@@ -74,11 +74,11 @@ TableName: customers
       IsPrimaryKey: True  
 ```  
   
- V **datovou sadu** , která je vytvořena **IsPrimaryKey** vlastnost **UniqueConstraint** je nastaven na **true** protože schématu Určuje `msdata:PrimaryKey="true"` v **klíč** elementu.  
+ V **datovou sadu** , který je generován, **isprimarykey hodnotu** vlastnost **UniqueConstraint** je nastavena na **true** protože schématu Určuje `msdata:PrimaryKey="true"` v **klíč** elementu.  
   
- Hodnota **ConstraintName** vlastnost **UniqueConstraint** v **datovou sadu** je hodnota **msdata:ConstraintName** Zadaný atribut v **klíč** element ve schématu.  
+ Hodnota **ConstraintName** vlastnost **UniqueConstraint** v **datovou sadu** je hodnota **msdata:ConstraintName** zadaný v atributu **klíč** element ve schématu.  
   
 ## <a name="see-also"></a>Viz také  
  [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

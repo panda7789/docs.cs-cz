@@ -9,11 +9,11 @@ helpviewer_keywords:
 - AddHandler statement [Visual Basic]
 ms.assetid: cfe69799-2a0f-42c0-a99e-09fed954da01
 ms.openlocfilehash: f731ff150bd901e325726fca5aa682ff1770f979
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396484"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502947"
 ---
 # <a name="addhandler-statement"></a>AddHandler – příkaz
 Přidruží událost k obslužné rutiny události v době běhu.  

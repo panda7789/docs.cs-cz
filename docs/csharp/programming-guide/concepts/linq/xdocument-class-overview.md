@@ -2,12 +2,12 @@
 title: Přehled třídy XDocument (C#)
 ms.date: 07/20/2015
 ms.assetid: 63305603-ab54-49fc-84e4-f76eecc59549
-ms.openlocfilehash: 999d570725acbf328858b0ef6c69f709317f10fa
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 0d182593cfedd30042c4e3a5d776bb00ce267ff7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43003164"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504855"
 ---
 # <a name="xdocument-class-overview-c"></a>Přehled třídy XDocument (C#)
 Toto téma představuje <xref:System.Xml.Linq.XDocument> třídy.  
@@ -86,5 +86,6 @@ d.Save("test.xml");
 <!--This is another comment.-->  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Přehled LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+## <a name="see-also"></a>Viz také
+
+- [Přehled LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

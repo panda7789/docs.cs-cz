@@ -9,112 +9,112 @@ helpviewer_keywords:
 - WithEvents keyword [Visual Basic], walkthroughs
 - event handlers [Visual Basic], walkthroughs
 ms.assetid: f145b3fc-5ae0-4509-a2aa-1ff6934706bd
-ms.openlocfilehash: 0ac3514505ca42870d77317feec30a27e4384e6c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3ade8eae67d29e2f3cb42911e42ed8696623db62
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655111"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507895"
 ---
 # <a name="walkthrough-handling-events-visual-basic"></a>Návod: Zpracování událostí (Visual Basic)
-Toto je druhý dvě témata, která ukazují, jak pracovat s událostmi. První téma [návod: deklarující a aktivaci událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář a třídy z tohoto návodu jak ke zpracování událostí při jejich provádění.  
+Toto je druhá dvou tématech, které ukazují, jak pracovat s událostmi. První téma [názorný postup: deklarující a vyvolání události](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md), ukazuje, jak deklarace a vyvolávání událostí. Tato část používá formulář opravdu zavřít a třídy v tomto návodu k ukazují, jak zpracovávat události, když se provedou.  
   
- `Widget` Třída příklad používá tradiční příkazy zpracování událostí. Visual Basic poskytuje další metody pro práci s událostmi. Jako cvičení, můžete upravit tento příklad pro použití `AddHandler` a `Handles` příkazy.  
+ `Widget` Třídy příkladu tradiční příkazy pro zpracování událostí. Visual Basic obsahuje jiné techniky pro práci s událostmi. Jako cvičení, můžete upravit tento příkladu pro použití `AddHandler` a `Handles` příkazy.  
   
-### <a name="to-handle-the-percentdone-event-of-the-widget-class"></a>Zpracování události PercentDone třídy pomůcky  
+### <a name="to-handle-the-percentdone-event-of-the-widget-class"></a>Zpracování události PercentDone třídy widgetu  
   
-1.  Vložte následující kód v `Form1`:  
+1.  Umístěte následující kód v `Form1`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#4](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_1.vb)]  
   
-     `WithEvents` – Klíčové slovo určuje, že proměnná `mWidget` slouží ke zpracování události objektu. Určují druh objektu zadáním názvu třídy, ze kterého bude vytvořen objekt.  
+     `WithEvents` – Klíčové slovo určuje, že proměnné `mWidget` se používá ke zpracování událostí objektu. Zadejte typ objektu zadáním názvu třídy, ze kterého se vytvoří objekt.  
   
-     Proměnná `mWidget` deklarovaného v souboru `Form1` protože `WithEvents` proměnných musí být na úrovni třídy. To platí bez ohledu na typ třídy, které je v umístění.  
+     Proměnná `mWidget` je deklarován v `Form1` protože `WithEvents` proměnné musí být na úrovni třídy. To platí bez ohledu na typ třídy, které je v umístit.  
   
-     Proměnná `mblnCancel` je sloužící ke zrušení `LongTask` metoda.  
+     Proměnná `mblnCancel` se používá pro zrušení `LongTask` metody.  
   
 ## <a name="writing-code-to-handle-an-event"></a>Psaní kódu pro zpracování událostí  
- Jakmile deklarovat proměnnou pomocí `WithEvents`, název proměnné se zobrazí v levém rozevíracím seznamu třídy **Editor kódu**. Když vyberete `mWidget`, `Widget` třídy události se zobrazí v pravém rozevíracího seznamu. Výběr událost zobrazí odpovídající postup událostí s předponou `mWidget` a podtržítka. Všechny postupy události související s `WithEvents` proměnná zadána název proměnné jako předponu.  
+ Poté, co můžete deklarovat proměnné pomocí `WithEvents`, název proměnné se zobrazí v levém rozevírací seznam třídy **Editor kódu**. Když vyberete `mWidget`, `Widget` třídy události se zobrazí v pravém rozevíracího seznamu. Výběr události zobrazí odpovídající postup událostí s předponou `mWidget` a podtržítka. Všechny přidružené procedury `WithEvents` proměnné jsou předána název proměnné jako předponu.  
   
-#### <a name="to-handle-an-event"></a>Zpracovat události  
+#### <a name="to-handle-an-event"></a>Zpracování události  
   
-1.  Vyberte `mWidget` v levém rozevíracím seznamu v **Editor kódu**.  
+1.  Vyberte `mWidget` z levé rozevíracího seznamu v **Editor kódu**.  
   
-2.  Vyberte `PercentDone` událost z pravé rozevíracího seznamu. **Editor kódu** otevře `mWidget_PercentDone` procedury události.  
+2.  Vyberte `PercentDone` událost z přímo rozevíracího seznamu. **Editor kódu** otevře `mWidget_PercentDone` proceduru události.  
   
     > [!NOTE]
-    >  **Editor kódu** je užitečné, ale není požadováno pro vkládání nové obslužné rutiny událostí. V tomto návodu je více přímo do obslužné rutiny událostí jednoduše zkopírujete přímo do kódu.  
+    >  **Editor kódu** je užitečné, ale nejsou vyžadovány, pro vkládání nové obslužné rutiny událostí. V tomto návodu je přímější stačí jen zkopírovat přímo do kódu obslužné rutiny událostí.  
   
 3.  Přidejte následující kód, který `mWidget_PercentDone` obslužné rutiny události:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#5](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_2.vb)]  
   
-     Vždy, když `PercentDone` událost se vyvolá, postup událostí zobrazuje procento dokončení v `Label` ovládacího prvku. `DoEvents` Metoda umožňuje štítek, který chcete překreslit a klikněte na možnost také umožňuje uživateli **zrušit** tlačítko.  
+     Pokaždé, když `PercentDone` událost se vyvolá, zobrazí se postup události dokončení v procentech `Label` ovládacího prvku. `DoEvents` Metoda umožňuje tento popisek repaint a klikněte na možnost také umožňuje uživateli **zrušit** tlačítko.  
   
-4.  Přidejte následující kód pro `Button2_Click` obslužné rutiny události:  
+4.  Přidejte následující kód `Button2_Click` obslužné rutiny události:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#6](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_3.vb)]  
   
- Pokud uživatel klikne **zrušit** tlačítko při `LongTask` běží, `Button2_Click` událost se spustí co nejrychleji `DoEvents` příkaz umožňuje zpracování událostí proběhnout. Proměnná úrovni třídy `mblnCancel` je nastaven na `True`a `mWidget_PercentDone` událostí pak ho testuje a nastaví `ByRef Cancel` argument `True`.  
+ Pokud uživatel klikne **zrušit** tlačítka při `LongTask` běží, `Button2_Click` provedla událost poté, co `DoEvents` příkaz umožňuje zpracování událostí na výskyt. Proměnnou na úrovni `mblnCancel` je nastavena na `True`a `mWidget_PercentDone` události poté jej ověří a nastaví `ByRef Cancel` argument `True`.  
   
-## <a name="connecting-a-withevents-variable-to-an-object"></a>Připojení proměnnou WithEvents k objektu  
- `Form1` je teď nastavená pro zpracování `Widget` události objektu. Zbývá k vyhledání `Widget` místo.  
+## <a name="connecting-a-withevents-variable-to-an-object"></a>Připojování k objektu proměnnou WithEvents  
+ `Form1` je nyní nastaveno pro zpracování `Widget` objektu události. Už jen zbývá k vyhledání `Widget` jinde.  
   
- Když je deklarovat proměnnou `WithEvents` žádný objekt v době návrhu, je k ní přidružena. A `WithEvents` proměnná je stejně jako jakoukoli jinou proměnnou objektu. Máte-li vytvořit objekt a přiřadit odkaz na její `WithEvents` proměnné.  
+ Pokud deklarujete proměnnou `WithEvents` v době návrhu, je k ní přidružen žádný objekt. A `WithEvents` proměnnou je stejně jako jakoukoli jinou proměnnou objektu. Je nutné vytvořit objekt a přiřaďte přes odkaz `WithEvents` proměnné.  
   
-#### <a name="to-create-an-object-and-assign-a-reference-to-it"></a>K vytvoření objektu a odkaz na jeho přiřazení  
+#### <a name="to-create-an-object-and-assign-a-reference-to-it"></a>K vytvoření objektu a přiřazení na ni odkaz  
   
-1.  Vyberte **(Form1 událostí)** v levém rozevíracím seznamu v **Editor kódu**.  
+1.  Vyberte **(Form1 události)** z levé rozevíracího seznamu v **Editor kódu**.  
   
-2.  Vyberte `Load` událost z pravé rozevíracího seznamu. **Editor kódu** otevře `Form1_Load` procedury události.  
+2.  Vyberte `Load` událost z přímo rozevíracího seznamu. **Editor kódu** otevře `Form1_Load` proceduru události.  
   
-3.  Přidejte následující kód pro `Form1_Load` události postupu vytvořte `Widget`:  
+3.  Přidejte následující kód `Form1_Load` události postupu vytvořte `Widget`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#7](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_4.vb)]  
   
- Když tento kód provede, vytvoří jazyka Visual Basic `Widget` objektu a události se připojí k události postupy související s `mWidget`. Od této chvíle, vždy, když `Widget` vyvolá jeho `PercentDone` událostí, `mWidget_PercentDone` procedury událostí.  
+ Když tento kód spustí, Visual Basic vytvoří `Widget` objektu a jeho události se připojí k přidružené procedury `mWidget`. Od této chvíle, vždy, když `Widget` vyvolá jeho `PercentDone` událostí, `mWidget_PercentDone` procedury události.  
   
-#### <a name="to-call-the-longtask-method"></a>K volání metody LongTask  
+#### <a name="to-call-the-longtask-method"></a>Volání metody LongTask  
   
 -   Přidejte následující kód, který `Button1_Click` obslužné rutiny události:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#8](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_5.vb)]  
   
- Před `LongTask` metoda je volána, štítky, musí být inicializován zobrazí procento dokončení a úrovni třídy `Boolean` příznak pro zrušení metodu, musí být nastavené na `False`.  
+ Před `LongTask` metoda je volána, označení, že zobrazuje procento dokončení musí být inicializován a úrovni třídy `Boolean` příznak pro zrušení metoda musí být nastaveno na `False`.  
   
- `LongTask` je volána s určitou dobou trvání úloh 12.2 sekund. `PercentDone` Událost se vyvolá po každé třetinu sekundy. Pokaždé, když událost se vyvolá, `mWidget_PercentDone` procedury událostí.  
+ `LongTask` je volána s určitou dobou trvání úkolu 12.2 sekund. `PercentDone` Událost je aktivována jednou každých 1 / 3 sekundy. Pokaždé, když se vyvolá událost, `mWidget_PercentDone` procedury události.  
   
- Když `LongTask` probíhá, `mblnCancel` je testován pro případ, `LongTask` skončila normálně, nebo pokud je zastavena, protože `mblnCancel` byla nastavena na `True`. Procento dokončení je aktualizovat jenom v prvním případě.  
+ Když `LongTask` se provádí, `mblnCancel` je testován a zjistěte, jestli `LongTask` skončil normálně, nebo pokud je zastavena, protože `mblnCancel` byl nastaven na `True`. Procento dokončení se aktualizuje jenom v prvním případě.  
   
-#### <a name="to-run-the-program"></a>Ke spuštění programu  
+#### <a name="to-run-the-program"></a>Chcete-li spustit program  
   
-1.  Stisknutím klávesy F5 projekt uvést do režimu spuštění.  
+1.  Stisknutím klávesy F5 projekt uvést do režimu běhu.  
   
-2.  Klikněte **spustit úlohu** tlačítko. Pokaždé, když `PercentDone` událost se vyvolá, aktualizuje popisek s procento dokončení úkolu.  
+2.  Klikněte na tlačítko **spustit úlohu** tlačítko. Pokaždé, když `PercentDone` událost se vyvolá, popisek se aktualizuje s procento dokončení úkolu.  
   
-3.  Klikněte **zrušit** tlačítko Ukončit úlohu. Všimněte si, že vzhled **zrušit** tlačítko nezmění okamžitě po kliknutí. `Click` Událostí je skutečnost, dokud `My.Application.DoEvents` příkaz umožňuje zpracování událostí.  
+3.  Klikněte na tlačítko **zrušit** tlačítko Zastavit úlohy. Všimněte si, že vzhled **zrušit** ihned po kliknutí nezmění tlačítko. `Click` Událostí nemůže dojít až `My.Application.DoEvents` příkaz umožňuje zpracování událostí.  
   
     > [!NOTE]
-    >  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, jak to dělá formuláře. Například v tomto návodu, musíte kliknout na **zrušit** tlačítko dvakrát. Chcete-li povolit formuláře pro zpracování událostí přímo, můžete použít více vláken. Další informace najdete v tématu [zřetězení](http://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c).  
+    >  `My.Application.DoEvents` Metoda nezpracovává události stejným způsobem, stejně jako formulář. Například v tomto podrobném návodu, musíte kliknout na **zrušit** dvakrát na tlačítko. Povolit formulář pro zpracování událostí přímo, můžete použít multithreadingu. Další informace najdete v tématu [zřetězení](https://msdn.microsoft.com/library/552f6c68-dbdb-4327-ae36-32cf9063d88c).  
   
- Možná bude významné lze spustit program s F11 a procházet kód řádku najednou. Jasně uvidíte, jak provádění zadá `LongTask`a pak stručně znovu zadá `Form1` pokaždé, když `PercentDone` událost se vyvolá.  
+ Může být pro vás poučné spusťte program s F11 a krokovat kód řádku najednou. Jasně vidíte, jak provádění zadá `LongTask`a potom stručně znovu zadá `Form1` pokaždé, když `PercentDone` událost se vyvolá.  
   
- Co by mohlo dojít v případě, při spuštění zpět v kódu `Form1`, `LongTask` byla volána metoda znovu? V nejhorším případě může dojít k přetečení zásobníku, pokud `LongTask` měla volat pokaždé, když byla vyvolána událost.  
+ Co by se stalo if, při spuštění zpět do kódu `Form1`, `LongTask` byla znovu volána metoda? V nejhorším případě může dojít k přetečení zásobníku, pokud `LongTask` byly volány pokaždé, když byla vyvolána událost.  
   
- Proměnná může způsobit `mWidget` zpracovat události pro jiné `Widget` objekt přiřazením odkaz na nové `Widget` k `mWidget`. Ve skutečnosti můžete použít kód v `Button1_Click` tomu pokaždé, když kliknete na tlačítko.  
+ Proměnná může způsobit `mWidget` zpracování událostí pro jiný `Widget` objektu tak, že přiřadíte odkaz na nové `Widget` k `mWidget`. Ve skutečnosti můžete vytvořit kód v `Button1_Click` to pokaždé, když kliknete na tlačítko.  
   
 #### <a name="to-handle-events-for-a-different-widget"></a>Zpracování událostí pro různé pomůcky  
   
--   Přidejte následující řádek kódu `Button1_Click` postupu přímo předchází řádku, který čte `mWidget.LongTask(12.2, 0.33)`:  
+-   Přidejte následující řádek kódu, který `Button1_Click` postupu bezprostředně předchází řádku, který čte `mWidget.LongTask(12.2, 0.33)`:  
   
      [!code-vb[VbVbcnWalkthroughDeclaringAndRaisingEvents#9](../../../../visual-basic/programming-guide/language-features/events/codesnippet/VisualBasic/walkthrough-handling-events_6.vb)]  
   
- Výše uvedený kód vytvoří novou `Widget` pokaždé, když po kliknutí na tlačítko. Jakmile `LongTask` metoda dokončí, odkaz na `Widget` vydání a `Widget` zničena.  
+ Výše uvedený kód vytvoří novou `Widget` pokaždé, když dojde ke kliknutí na tlačítko. Poté, co `LongTask` metoda dokončí, odkaz na `Widget` vydání a `Widget` zničen.  
   
- A `WithEvents` proměnná může obsahovat pouze jeden objekt odkaz najednou, chcete-li přiřadit jinou `Widget` do objektu `mWidget`, předchozí `Widget` už zpracování události objektu. Pokud `mWidget` je proměnnou pouze objekt obsahující odkaz na starý `Widget`, objekt zničena. Pokud chcete zpracovat události z několika `Widget` objekty, používají `AddHandler` příkaz zpracovat události z každý objekt odděleně.  
+ A `WithEvents` proměnná může obsahovat pouze jeden objekt odkazu v době, takže pokud přiřaďte jiný `Widget` objektu `mWidget`, předchozí `Widget` události objektu už se zpracuje. Pokud `mWidget` je pouze objekt proměnnou obsahující odkaz na původní `Widget`, objekt je zničen. Pokud chcete zpracovávat události z několika `Widget` objekty, použijte `AddHandler` příkaz pro zpracování událostí z každý objekt odděleně.  
   
 > [!NOTE]
->  Je možné deklarovat tolik `WithEvents` proměnné jako budete potřebovat, ale pole `WithEvents` proměnné nejsou podporovány.  
+>  Lze deklarovat libovolný počet `WithEvents` proměnné, jako je třeba, ale pole `WithEvents` proměnné nejsou podporovány.  
   
 ## <a name="see-also"></a>Viz také  
  [Návod: Deklarace a vyvolávání událostí](../../../../visual-basic/programming-guide/language-features/events/walkthrough-declaring-and-raising-events.md)  

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-ms.openlocfilehash: f74b762532f0fb2795625185e59360cdfb76b124
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 80aafccab9b9183a1dc4dc25d531ebe65f6905b8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43474048"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505152"
 ---
 # <a name="introduction-to-linq-queries-c"></a>Úvod do dotazů LINQ (C#)
 A *dotazu* je výraz, který načte data z datového zdroje. Dotazy jsou obvykle vyjádřeny v specializovaném dotazovacím jazyce. Různé jazyky byly vyvinuty v průběhu času pro různé typy zdrojů dat, například SQL pro relační databáze a XQuery pro XML. Proto vývojáři měli získat nový dotazovací jazyk pro každý typ zdroje dat nebo formátu dat, který musí podporovat. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Tuto situaci zjednodušuje tím, že nabízí konzistentní model pro práci s daty napříč různými druhy datových zdrojů a formátů. V [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazu, které jsou vždy práce s objekty. Použijte stejné základní vzorce kódování pro dotazování a transformaci dat v dokumentech XML, databázích SQL [!INCLUDE[vstecado](~/includes/vstecado-md.md)] datové sady, kolekcích .NET a jakémkoli jiném formátu, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] zprostředkovatele je k dispozici.  
@@ -88,10 +88,11 @@ IQueryable<Customer> custQuery =
   
  Můžete také vynutit spuštění vložením `foreach` smyčky ihned za výraz dotazu. Však voláním `ToList` nebo `ToArray` také mezipaměti všech dat v jednoho objektu kolekce.  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [foreach, in](../../../../csharp/language-reference/keywords/foreach-in.md)  
- [Klíčová slova dotazu (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)
+## <a name="see-also"></a>Viz také
+
+- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
+- [foreach, in](../../../../csharp/language-reference/keywords/foreach-in.md)  
+- [Klíčová slova dotazu (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 286cd191-4fd5-4c4e-a223-9c71cf7fdead
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: f58dd0ee1b00785e82628e5442c736866ffe7db5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 13aeb3261fdb9689caa1dea1ec7382fdb9d9b1ce
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32751230"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516970"
 ---
 # <a name="ltsecuritygt-of-ltnettcpbindinggt"></a>&lt;security&gt; – &lt;netTcpBinding&gt;
 Definuje nastavení zabezpečení pro vazbu.  
@@ -17,7 +17,7 @@ Definuje nastavení zabezpečení pro vazbu.
  \<system.ServiceModel>  
 \<vazby >  
 \<netTcpBinding >  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -34,7 +34,7 @@ Definuje nastavení zabezpečení pro vazbu.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
@@ -46,30 +46,30 @@ Definuje nastavení zabezpečení pro vazbu.
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Žádné|Zabezpečení je vypnuté.|  
-|Přenos|Zabezpečení přenosu je k dispozici přes TCP nebo SPNego používá protokol TLS. Služba pravděpodobně nutné nakonfigurovat s certifikáty protokolu SSL. Je možné kontrolovat úroveň ochrany s Tento režim.|  
-|Zpráva|Zabezpečení je k dispozici pomocí zabezpečení zpráv protokolu SOAP. Ve výchozím nastavení je SOAP body šifrovaný a podepsaný. Tento režim nabízí celou řadu funkcí, např. zda jsou k dispozici na straně klienta vzdálené správy, sada algoritmů, které chcete použít, přihlašovací údaje služby a jakou úroveň ochrany, která platí pro tělo zprávy. Ověření klienta se provádí jednou za relace a výsledky ověřování jsou uloženy v mezipaměti po dobu trvání relace.|  
-|TransportWithMessageCredential|Zabezpečení přenosu je spolu s zabezpečení zpráv. Zabezpečení přenosu zajišťuje TLS přes TCP nebo SPNego a k zajištění integrity, šifrování a ověřování serveru. Zabezpečení zpráv protokolu SOAP poskytuje ověření klienta. Ve výchozím nastavení ověření klienta se provádí jednou za relace a výsledky ověřování jsou uloženy v mezipaměti po dobu trvání relace.|  
+|Žádné|Zabezpečení je zakázaná.|  
+|Přenos|Zabezpečení přenosu pomocí protokolu TLS přes protokol TCP nebo SPNego poskytuje. Služba možná potřeba nakonfigurovat s využitím certifikátů SSL. Je možné kontrolovat úroveň ochrany s tímto režimem.|  
+|Zpráva|Poskytuje zabezpečení pomocí zabezpečení zprávy protokolu SOAP. Ve výchozím nastavení je SOAP body šifrované a podepsaný. Tento režim nabízí širokou škálu funkcí, jako je například, jestli přihlašovací údaje služby najdete na adrese klienta vzdáleně, sada algoritmů, které chcete použít a jaké úroveň ochrany a platí pro tělo zprávy. Ověření klienta se provádí jednou na relaci a výsledky ověření jsou ukládány do mezipaměti po dobu trvání relace.|  
+|TransportWithMessageCredential|Zabezpečení přenosu je párována s zabezpečení zpráv. Zabezpečení přenosu pomocí protokolu TLS poskytuje přes protokol TCP nebo SPNego a zajistí integritu, šifrování a ověřování serveru. Zabezpečení zpráv SOAP poskytuje ověření klienta. Ve výchozím nastavení ověření klienta se provádí jednou na relaci a výsledky ověření jsou ukládány do mezipaměti po dobu trvání relace.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<přenos >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)|Definuje nastavení zabezpečení pro přenos. Tento element je typu <xref:System.ServiceModel.Configuration.TcpTransportSecurityElement>.|  
-|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento element je typu <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement>.|  
+|[\<přenos >](../../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)|Definuje nastavení zabezpečení pro přenos. Tento prvek je typu <xref:System.ServiceModel.Configuration.TcpTransportSecurityElement>.|  
+|[\<Zpráva >](../../../../../docs/framework/configure-apps/file-schema/wcf/message-element-of-nettcpbinding.md)|Definuje nastavení zabezpečení pro zprávu. Tento prvek je typu <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|vazba|Element vazby [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).|  
+|vazba|Prvek vazby [ \<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md).|  
   
 ## <a name="remarks"></a>Poznámky  
- Všechny standardní vazby poskytuje parametry pro řízení požadavky na zabezpečení přenosu. Tyto parametry obvykle zahrnují režim zabezpečení, který zadat, jestli se používá zabezpečení na úrovni zpráv nebo transportní vrstvy a výběr typu pověření klienta. Na základě volby možností tyto existuje, parametry zásobníku kanál je vytvořený pomocí příslušné zabezpečení.  
+ Všechny standardní vazby poskytuje parametry pro řízení požadavky na zabezpečení přenosu. Tyto parametry zahrnují obvykle režim zabezpečení, který určuje, zda se používá zabezpečení na úrovni zpráv nebo transportní vrstvy a výběr typu pověření klienta. Na základě volby možností tyto k dispozici, parametry zásobníku kanál je vytvořený pomocí příslušné zabezpečení.  
   
- Vazby poskytované systémem zadaný ve Windows Communication Foundation (WCF) jsou navržené tak, aby splňovaly některé z nejběžnějších požadavků scénáře sady. Každý z těchto vazeb umožňuje specifikaci požadavky na zabezpečení u některých konkrétních cílových scénářů.  
+ Vazby poskytované systémem zadaný ve Windows Communication Foundation (WCF) jsou sady jsou navržené pro některé z nejčastějších požadavků scénáře. Každá z těchto vazeb umožňuje volbu specifikace požadavky na zabezpečení pro některé konkrétní cílové scénáře.  
   
- Tento element konfigurace poskytuje zabezpečení specifikace pro `netTcpBinding`. Toto je bezpečné, spolehlivé a optimalizované vazbu vhodný pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje podpora protokolu TCP pro doručování zpráv a zabezpečení systému Windows pro zabezpečení zpráv a ověřování, WS-ReliableMessaging spolehlivost a zprávy v binární kódování runtime komunikačního balíku.  
+ Tento prvek konfigurace obsahuje specifikace zabezpečení pro `netTcpBinding`. Toto je zabezpečená, spolehlivá a optimalizovaná vazby vhodné pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje podpora TCP pro doručování zpráv a zabezpečení Windows pro ověřování, WS-ReliableMessaging spolehlivost a kódování binární zprávy a zabezpečení zpráv komunikace zásobník modulu runtime.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.NetTcpSecurity>  
@@ -79,5 +79,5 @@ Definuje nastavení zabezpečení pro vazbu.
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

@@ -11,33 +11,33 @@ helpviewer_keywords:
 - files [Windows Forms], saving
 - OpenFile method [Windows Forms], saving files with SaveFileDialog component
 ms.assetid: 02e8f409-b83f-4707-babb-e71f6b223d90
-ms.openlocfilehash: ca6ca5adbbe20a438ba936778ba71f1a163b40e5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4755d950da6726f007ae3333a558f3cafdcada9b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33540527"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43508157"
 ---
 # <a name="how-to-save-files-using-the-savefiledialog-component"></a>Postupy: Ukládání souborů pomocí součásti SaveFileDialog
-<xref:System.Windows.Forms.SaveFileDialog> Součást umožňuje uživatelům procházet systému souborů a vyberte soubory uložit. Dialogové okno vrátí cestu a název souboru, který uživatel vybral v dialogovém okně. Ale musíte napsat kód, který ve skutečnosti zapisovat soubory na disk.  
+<xref:System.Windows.Forms.SaveFileDialog> Komponenta umožňuje uživatelům procházet systému souborů a vyberte soubory, které se má uložit. Dialogové okno vrací cestu a název souboru, který uživatel vybral v dialogovém okně. Ale musíte napsat kód, který ve skutečnosti soubory zapisují na disk.  
   
-### <a name="to-save-a-file-using-the-savefiledialog-component"></a>Uložte soubor pomocí součásti SaveFileDialog  
+### <a name="to-save-a-file-using-the-savefiledialog-component"></a>Uložte soubor pomocí komponenty SaveFileDialog  
   
 -   Zobrazení **uložit soubor** dialogové okno a uložte soubor vybraný uživatelem volání metody.  
   
-     Použití <xref:System.Windows.Forms.SaveFileDialog> součásti <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> metoda k uložení souboru. Tato metoda vám <xref:System.IO.Stream> objekt můžete zapisovat.  
+     Použití <xref:System.Windows.Forms.SaveFileDialog> komponenty <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> metoda k uložení souboru. Tato metoda poskytuje <xref:System.IO.Stream> můžete zapisovat do objektu.  
   
-     V příkladu níže používá <xref:System.Windows.Forms.DialogResult> vlastnost k získání názvu souboru a <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda k uložení souboru. <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> Metoda vám dává datového proudu pro zápis souboru.  
+     V příkladu níže použití <xref:System.Windows.Forms.DialogResult> vlastnost a získat tak název souboru a <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> metoda k uložení souboru. <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> Metoda poskytuje datového proudu pro zápis souboru.  
   
-     V následujícím příkladu je <xref:System.Windows.Forms.Button> ovládacího prvku s bitovou kopií přiřazen. Po kliknutí na tlačítko <xref:System.Windows.Forms.SaveFileDialog> s filtrem, která umožňuje soubory .gif typu, .jpeg a .bmp je vytvořena instance komponenty. Pokud je vybrán soubor tohoto typu v dialogovém okně Uložit soubor, je obrázek na tlačítko Uložit.  
+     V následujícím příkladu je <xref:System.Windows.Forms.Button> ovládací prvek s přiřazenou image. Když kliknete na tlačítko <xref:System.Windows.Forms.SaveFileDialog> s filtrem, který umožňuje soubory typu .gif, .jpeg a .bmp je vytvořena instance komponenty. Pokud v dialogovém okně Uložit soubor byl vybrán soubor tohoto typu, je uložen obrázek na tlačítko.  
   
     > [!IMPORTANT]
-    >  Pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku z důvodu nedostatečných oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
+    >  Pro získání nebo nastavení <xref:System.Windows.Forms.FileDialog.FileName%2A> vlastnost, vaše sestavení vyžaduje úroveň oprávnění udělenou <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> třídy. Pokud používáte v kontextu částečným vztahem důvěryhodnosti, proces může vyvolat výjimku, protože nedostatečná oprávnění. Další informace najdete v tématu [Základy zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security-basics.md).  
   
-     Příklad předpokládá, že má formulář <xref:System.Windows.Forms.Button> řízení s jeho <xref:System.Windows.Forms.ButtonBase.Image%2A> vlastností nastavenou na soubor typu .gif, .jpeg nebo BMP.  
+     Příklad předpokládá, že váš formulář má <xref:System.Windows.Forms.Button> ovládacím prvkem jeho <xref:System.Windows.Forms.ButtonBase.Image%2A> nastavenou na soubor typu .gif, .jpeg nebo BMP.  
   
     > [!NOTE]
-    >  <xref:System.Windows.Forms.FileDialog> Třídy <xref:System.Windows.Forms.FileDialog.FilterIndex%2A> vlastnost (které, z důvodu dědičnosti, je součástí <xref:System.Windows.Forms.SaveFileDialog> třída) používá indexu se základem jedna. To je důležité, pokud vytváříte kód k uložení dat v konkrétním formátu (například ukládání soubor ve formátu prostého textu a binární formát). Tato vlastnost je umístěná v následujícím příkladu.  
+    >  <xref:System.Windows.Forms.FileDialog> Třídy <xref:System.Windows.Forms.FileDialog.FilterIndex%2A> vlastnosti (které, z důvodu dědičnosti, je součástí <xref:System.Windows.Forms.SaveFileDialog> třídy) používá indexu se základem 1. To je důležité, pokud píšete kód k uložení dat v určitém formátu (například ukládání souboru ve formátu prostého textu a binárních). Tato vlastnost je mezi vybranými položkami v následujícím příkladu.  
   
     ```vb  
     Private Sub Button2_Click(ByVal sender As System.Object, _  
@@ -172,10 +172,10 @@ ms.locfileid: "33540527"
        System::EventHandler(this, &Form1::button2_Click);  
     ```  
   
-     Další informace o vytváření souborů datových proudů najdete v tématu <xref:System.IO.FileStream.BeginWrite%2A> a <xref:System.IO.FileStream.Write%2A>.  
+     Další informace o vytváření datové proudy souborů najdete v tématu <xref:System.IO.FileStream.BeginWrite%2A> a <xref:System.IO.FileStream.Write%2A>.  
   
     > [!NOTE]
-    >  Některé ovládací prvky, jako například <xref:System.Windows.Forms.RichTextBox> řídit, máte možnost ukládat soubory. Další informace najdete v části "SaveFileDialog – komponenta" technického článku MSDN Online Library z [nezbytné kód pro Windows Forms – dialogová](http://go.microsoft.com/fwlink/?LinkID=102575).  
+    >  Některé ovládací prvky, jako například <xref:System.Windows.Forms.RichTextBox> řídit, se budou moct ukládat soubory. Další informace najdete v části "Komponenty SaveFileDialog" technického článku MSDN Online Library [základní kód pro Windows Forms dialogových oknech](https://go.microsoft.com/fwlink/?LinkID=102575).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.SaveFileDialog>  

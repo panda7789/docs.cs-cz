@@ -4,27 +4,27 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: e22e5812-89c6-41f0-9302-bb899a46dbff
-ms.openlocfilehash: 04defffc724875e691fd7b87331c28e6b6c0cd28
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 21868f808a6d39c935b612f745d720180df2dd73
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758305"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507259"
 ---
 # <a name="the-load-method"></a>Metoda Load
-Můžete použít <xref:System.Data.DataTable.Load%2A> metoda načíst <xref:System.Data.DataTable> s řádky ze zdroje dat. Toto je přetížené metody, které ve své nejjednodušší podobě přijímá jeden parametr, **DataReader –**. V tomto formuláři jednoduše načte **DataTable** s řádky. Volitelně můžete zadat **LoadOption** parametr řídit, jak přibývají data **DataTable**.  
+Můžete použít <xref:System.Data.DataTable.Load%2A> metodu pro načtení <xref:System.Data.DataTable> s řádky ze zdroje dat. Toto je přetěžované metody, které ve své nejjednodušší podobě přijímá jeden parametr, **DataReader**. V tomto formuláři jednoduše načte **DataTable** s řádky. Volitelně můžete zadat **LoadOption** parametr řídit, jak data je přidána do **DataTable**.  
   
- **LoadOption** parametr je zvlášť užitečné v případech, kde **DataTable** už obsahuje sloupce dat, protože popisuje, jak příchozí data ze zdroje dat bude sloučen s daty již v tabulce. Například **PreserveCurrentValues** (výchozí) určuje, že v případech, kde je označeno řádek **Added** v **DataTable**, **původní** hodnotu nebo každý sloupec je nastavit obsah odpovídající řádek z datového zdroje. **Aktuální** hodnotu zachovají hodnoty přiřazené při přidání řádku a **RowState** řádku, bude nastavena pro **změněno**.  
+ **LoadOption** parametr je zvlášť užitečné v případech, kde **DataTable** již obsahuje řádky dat, protože popisuje, jak příchozí data ze zdroje dat se zkombinuje s daty už v tabulce. Například **PreserveCurrentValues** (výchozí) určuje, že v případech, kde je řádek označený jako **přidané** v **DataTable**, **původní** hodnotu nebo jednotlivé sloupce je nastavena na odpovídající řádek obsah ze zdroje dat. **Aktuální** hodnotu zachová hodnoty přiřazené při přidání řádku a **RowState** řádku, který bude nastavena na **změněné**.  
   
  Následující tabulka obsahuje stručný popis <xref:System.Data.LoadOption> hodnot výčtu.  
   
 |Hodnota LoadOption|Popis|  
 |----------------------|-----------------|  
-|**OverwriteRow**|Pokud příchozí řádky mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **původní** a **aktuální** hodnoty jednotlivých sloupce se nahradí hodnoty v řádku příchozí a **RowState** je nastavena na **Unchanged**.<br /><br /> Řádky ze zdroje dat, který ještě neexistují v **DataTable** přidají se **RowState** hodnotu **Unchanged**.<br /><br /> Tato možnost platí aktualizuje obsah **DataTable** tak, aby odpovídala obsah datového zdroje.|  
-|**PreserveCurrentValues (výchozí)**|Pokud příchozí řádky mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **původní** hodnota nastavena na obsah příchozí řádek a **Aktuální** hodnota nemění.<br /><br /> Pokud **RowState** je **Added** nebo **změněné**, je nastaven na hodnotu **změněné**.<br /><br /> Pokud **RowState** byla **odstraněné**, zůstane **odstraněné**.<br /><br /> Řádky ze zdroje dat, který ještě neexistují v **DataTable** přidají a **RowState** je nastaven na **Unchanged**.|  
-|**UpdateCurrentValues**|Pokud příchozí řádky mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **aktuální** hodnota je zkopírován do **původní**hodnotu a **aktuální** pak nastavena na hodnotu obsah příchozí řádku.<br /><br /> Pokud **RowState** v **DataTable** byla **Added**, **RowState** zůstává **Added**. Pro řádky označena jako **změněné** nebo **odstraněné**, **RowState** je **změněné**.<br /><br /> Řádky ze zdroje dat, který ještě neexistují v **DataTable** přidají a **RowState** je nastaven na **Added**.|  
+|**OverwriteRow**|Pokud příchozí řádků mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **původní** a **aktuální** hodnoty sloupce se nahradí hodnotami v řádku příchozí a **RowState** je nastavena na **Unchanged**.<br /><br /> Řádků ze zdroje dat, které už neexistují v **DataTable** se přidají **RowState** hodnotu **Unchanged**.<br /><br /> Tato možnost platit aktualizuje obsah **DataTable** tak, aby odpovídalo obsah datového zdroje.|  
+|**PreserveCurrentValues (výchozí)**|Pokud příchozí řádků mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **původní** je hodnota nastavená na obsah z příchozího řádku a **Aktuální** hodnota se nezmění.<br /><br /> Pokud **RowState** je **přidané** nebo **změněné**, je nastaven na hodnotu **změněné**.<br /><br /> Pokud **RowState** byl **odstraněné**, zůstane **odstraněné**.<br /><br /> Řádků ze zdroje dat, které už neexistují v **DataTable** jsou přidány a **RowState** je nastavena na **Unchanged**.|  
+|**UpdateCurrentValues**|Pokud příchozí řádků mají stejné **PrimaryKey** hodnotu jako již v řádku **DataTable**, **aktuální** zkopírování hodnoty do **původní**hodnotu a **aktuální** hodnota je nastaven na obsah z příchozího řádku.<br /><br /> Pokud **RowState** v **DataTable** byl **přidané**, **RowState** zůstává **přidané**. Pro řádky jsou označeny jako **změněné** nebo **odstraněné**, **RowState** je **změněné**.<br /><br /> Řádků ze zdroje dat, které už neexistují v **DataTable** jsou přidány a **RowState** je nastavena na **přidané**.|  
   
- Následující ukázkové používá **zatížení** metodu pro zobrazení seznamu datum narození pro zaměstnance v **Northwind** databáze.  
+ Následující ukázkový používá **zatížení** metodu pro zobrazení seznamu datum narození pro zaměstnance v **Northwind** databáze.  
   
 ```vb  
 Private Sub LoadBirthdays(ByVal connectionString As String)  
@@ -70,4 +70,4 @@ End Sub
   
 ## <a name="see-also"></a>Viz také  
  [Manipulace s daty v datové tabulce](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/manipulating-data-in-a-datatable.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
 ms.openlocfilehash: 8607c79a8b1e9a9fd999e4f5b77ecfac786161b3
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "43003148"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43499858"
 ---
 # <a name="where-clause-c-reference"></a>where – klauzule (Referenční dokumentace jazyka C#)
 `where` Klauzule se používá ve výrazu dotazu k určení, které elementy ze zdroje dat se vrátí ve výrazu dotazu. Použije se logická podmínka (*predikátu*) pro každý prvek zdroje (odkazuje proměnnou rozsahu) a vrátí těch, u kterých je zadaná podmínka pravdivá. Výraz jeden dotaz může obsahovat více `where` klauzule a jedna klauzule může obsahovat několik dílčích výrazů predikátu.  

@@ -1,26 +1,26 @@
 ---
-title: PNRP při vývoji aplikací
+title: PNRP ve vývoji aplikací
 ms.date: 03/30/2017
 ms.assetid: 265615d6-4423-4b5d-8626-752e456f4f4e
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: b085604d7d20eb9222507b4820be219ffeae4726
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 55716e7baa382bffbb37dc9248ec1cbd15065ac1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395733"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504615"
 ---
-# <a name="pnrp-in-application-development"></a>PNRP při vývoji aplikací
-V systému Windows Vista, síťové aplikace mohou přistupovat k název publikace a funkce řešení prostřednictvím zjednodušené PNRP aplikačního programovacího rozhraní (API).  
+# <a name="pnrp-in-application-development"></a>PNRP ve vývoji aplikací
+Ve Windows Vista, síťové aplikace můžou k název publikace a funkce řešení prostřednictvím zjednodušené PNRP aplikačního programovacího rozhraní (API).  
   
 ## <a name="implementing-the-peer-name-resolution-protocol"></a>Implementace protokolu Peer Name Resolution Protocol  
- S zjednodušené rozhraní API PNRP nejsou explicitně zadané cloudy k registraci názvu a adresy; součást PNRP automaticky určuje příslušné cloud pro připojení a adresy publikovat v rámci cloudy.  
+ Zjednodušené rozhraní API PNRP nejsou explicitně zadané cloudy registrace názvu a adresy; komponenta PNRP automaticky určuje odpovídající cloudy spojení a adresy, které mají publikovat v rámci cloudy.  
   
- Pro vysoce zjednodušené PNRP překlad IP adres v systému Windows Vista jsou integrovány do getaddrinfo() funkce Windows Sockets teď PNRP názvy. Pokud chcete použít PNRP přeložit název na adresu IPv6, aplikace můžete použít funkci getaddrinfo() vyřešit name.prnp.net plně kvalifikovaný název domény (FQDN), který název je název partnerského zařízení přeloženy. Doména pnrp.net je vyhrazené domény v systému Windows Vista PNRP překladu IP adres.  
+ Pro velmi zjednodušené PNRP překlad ve Windows Vista PNRP názvy jsou teď integrovaná v getaddrinfo() – funkce rozhraní Windows Sockets. Pomocí protokolu PNRP přeložit název na adresu IPv6, aplikace můžou využít funkci getaddrinfo() vyřešit name.prnp.net plně kvalifikovaný název domény (FQDN), který název je název partnerského zařízení probíhá řešení. Doména pnrp.net je vyhrazené domény ve Windows Vista k rozlišení názvu PNRP.  
   
- Předávání mezi aplikacemi PeerToPeer zpráv se stále provádí základní architektury, jako je například PeerChannel a WCF [velkého množství dat a Streaming](http://go.microsoft.com/fwlink/?LinkID=179652).  
+ Předávání mezi aplikacemi PeerToPeer zpráv stále zpracovává základní architektury, jako je například kanál PeerChannel a WCF [velkých objemů dat a datových proudů](https://go.microsoft.com/fwlink/?LinkID=179652).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Net.PeerToPeer>

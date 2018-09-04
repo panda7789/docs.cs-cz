@@ -2,12 +2,12 @@
 title: Visual Studio IDE a nástrojů podpory pro funkci LINQ (C#)
 ms.date: 07/20/2015
 ms.assetid: c1f6cfdf-c96f-417f-acc8-4a049772ead3
-ms.openlocfilehash: 8b13db6eafdc4712f1dd614640d2035703cbdbb8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: fda73a8fce9dcba54e6b69bcae02f7bdb43dfd33
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396215"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502322"
 ---
 # <a name="visual-studio-ide-and-tools-support-for-linq-c"></a>Visual Studio IDE a nástrojů podpory pro funkci LINQ (C#)
 Integrovaného vývojového prostředí (IDE) sady Visual Studio poskytuje následující funkce, které podporují vývoj aplikací LINQ:  
@@ -24,5 +24,6 @@ Integrovaného vývojového prostředí (IDE) sady Visual Studio poskytuje násl
 ## <a name="visual-studio-debugger-support"></a>Podpora ladicího programu sady Visual Studio  
  Ladicí program sady Visual Studio podporuje ladění – výrazy dotazů. Další informace najdete v tématu [ladění LINQ](/visualstudio/debugger/debugging-linq).  
   
-## <a name="see-also"></a>Viz také  
- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)

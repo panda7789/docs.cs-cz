@@ -3,11 +3,11 @@ title: Trvalá prodleva
 ms.date: 03/30/2017
 ms.assetid: 220ec240-b958-430c-81ff-b734a6aa97ae
 ms.openlocfilehash: 2a7692e28d60232913ae5d11a90025e59664c0e5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43406573"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507630"
 ---
 # <a name="durable-delay"></a>Trvalá prodleva
 Tato ukázka demonstruje použití trvalá prodleva, což je zpoždění, které se přenese pracovního postupu odolné zařízení během zpoždění. Ukázkový pracovní postup obsahuje dvě zprávy do konzoly nástroje, které jsou odděleny ke zpoždění. Když se aktivuje zpoždění, pracovní postup bude uvolněna a čeká 5 sekund do úložiště instancí pracovních postupů, než se znovu načten v paměti.  

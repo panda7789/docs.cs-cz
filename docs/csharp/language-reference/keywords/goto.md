@@ -8,11 +8,11 @@ helpviewer_keywords:
 - goto keyword [C#]
 ms.assetid: 2c03c9c1-8119-44ef-b740-fb3d287a42fe
 ms.openlocfilehash: d4fd9f1f26b82b409d704c45e4bcf18cceef8282
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43405813"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507520"
 ---
 # <a name="goto-c-reference"></a>goto – příkaz (referenční dokumentace jazyka C#)
 

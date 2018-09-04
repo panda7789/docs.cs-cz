@@ -2,19 +2,19 @@
 title: 'Postupy: Vytvoření transakční služby'
 ms.date: 03/30/2017
 ms.assetid: 1bd2e4ed-a557-43f9-ba98-4c70cb75c154
-ms.openlocfilehash: d59c0b96b766f0692c7b84a02deed55e32dc655a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bba3a1f9c1d08e882cd5e4117c97f9f84d0c2be8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33494976"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509864"
 ---
 # <a name="how-to-create-a-transactional-service"></a>Postupy: Vytvoření transakční služby
-Tento příklad znázorňuje různé aspekty vytvoření transakční služby a použití transakci iniciované klientem ke koordinaci operací služby.  
+Tento příklad ukazuje různé aspekty vytvoření transakční služby a použití klientem iniciované transakci ke koordinaci operací služby.  
   
 ### <a name="creating-a-transactional-service"></a>Vytvoření transakční služby  
   
-1.  Vytvoření kontraktu služby a opatřit poznámkami operací s požadované nastavení z <xref:System.ServiceModel.TransactionFlowOption> výčtu k určení požadavků na příchozí transakce. Všimněte si, že můžete taky umístit <xref:System.ServiceModel.TransactionFlowAttribute> na třídě služby se implementuje. To umožňuje jediná implementace typu rozhraní pro použití těchto nastavení transakcí místo každých implementace.  
+1.  Vytvoření kontraktu service a opatřovat je poznámkami operací pomocí požadovaného nastavení z <xref:System.ServiceModel.TransactionFlowOption> výčet k určení požadavků na příchozí transakce. Všimněte si, že můžete také umístit <xref:System.ServiceModel.TransactionFlowAttribute> na třídu služby se implementuje. To umožňuje jedna implementace rozhraní nahrazujícím každou implementaci těchto nastavení transakcí.  
   
     ```  
     [ServiceContract]  
@@ -31,7 +31,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     }  
     ```  
   
-2.  Vytvoření třídy implementaci a použít <xref:System.ServiceModel.ServiceBehaviorAttribute> volitelně zadat <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A>. Upozorňujeme ale, který v mnoha případech výchozí <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> 60 sekund a výchozí <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> z `Unspecified` jsou vhodné. Pro každou operaci, můžete použít <xref:System.ServiceModel.OperationBehaviorAttribute> atribut k určení, zda pracovní provede v rámci metody provedeno v rámci oboru oboru transakce podle hodnoty <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> atribut. V takovém případě transakce používá pro `Add` metoda je stejný jako povinné příchozí transakce, která je plynoucích z klienta a transakce pro `Subtract` metoda je buď stejné, jako příchozí transakce když jeden byl plynoucích z klienta, nebo novou transakci implicitně a místně vytvořené.  
+2.  Vytvoření třídy implementaci a použití <xref:System.ServiceModel.ServiceBehaviorAttribute> volitelně zadat <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> a <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A>. Nezapomeňte přitom, která v mnoha případech se výchozí <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionTimeout%2A> 60 sekund a výchozí <xref:System.ServiceModel.ServiceBehaviorAttribute.TransactionIsolationLevel%2A> z `Unspecified` jsou vhodné. Pro každou operaci, můžete použít <xref:System.ServiceModel.OperationBehaviorAttribute> atribut udává, jestli pracovní provést v rámci metody se budou objevovat v rámci oboru transakce oboru podle hodnoty <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionScopeRequired%2A> atribut. V tomto případě používá transakce pro `Add` metodou je stejný jako povinné příchozí transakce, která je počet plynoucích z klienta a transakce pro `Subtract` metoda je buď stejná jako příchozí transakce, pokud jeden byla převedena z klienta, nebo implicitně a místně vytvořenou novou transakci.  
   
     ```  
     [ServiceBehavior(  
@@ -65,7 +65,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     }  
     ```  
   
-3.  V konfiguračním souboru, určující, zda by měl plynoucích kontext transakce a protokoly, který se má použít k tomu, nakonfigurujte vazby. Další informace najdete v tématu [konfigurace transakcí ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md). Konkrétně je typ vazby zadaný v elementu koncový bod `binding` atribut. [ \<Endpoint >](http://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) obsahuje element `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `transactionalOleTransactionsTcpBinding`, jak ukazuje následující ukázka konfigurace.  
+3.  Nakonfigurujte vazby v konfiguračním souboru, určení, že by měl být předávány kontext transakce a protokolů, který se má použít k tomu. Další informace najdete v tématu [konfigurace transakcí ServiceModel](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-configuration.md). Konkrétně je typ vazby zadaný v elementu koncového bodu `binding` atribut. [ \<Koncový bod >](https://msdn.microsoft.com/library/13aa23b7-2f08-4add-8dbf-a99f8127c017) obsahuje element `bindingConfiguration` atribut, který odkazuje na vazbu konfigurace s názvem `transactionalOleTransactionsTcpBinding`, jak je znázorněno v následující ukázkové konfiguraci.  
   
     ```xml  
     <service name="CalculatorService">  
@@ -77,7 +77,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     </service>  
     ```  
   
-     Tok transakcí je povolena na úrovni konfigurace pomocí `transactionFlow` atribut a protokol transakcí je zadán pomocí `transactionProtocol` atributu, jak je znázorněno v následující konfiguraci.  
+     Je povolen tok transakcí na úrovni konfigurace s použitím `transactionFlow` atribut a transakční protokol je specifikován pomocí `transactionProtocol` atributu, jak je znázorněno v následující konfiguraci.  
   
     ```xml  
     <bindings>  
@@ -89,9 +89,9 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     </bindings>  
     ```  
   
-### <a name="supporting-multiple-transaction-protocols"></a>Podpora více protokoly transakcí  
+### <a name="supporting-multiple-transaction-protocols"></a>Podpora více protokolů transakcí  
   
-1.  Pro optimální výkon měli byste použít protokol OleTransactions pro scénáře zahrnující klienta a služby, které jsou vytvořené pomocí služby Windows Communication Foundation (WCF). Protokol WS-AtomicTransaction (WS-AT) je však užitečné v případech, pokud je potřeba vzájemná funkční spolupráce s zásobníky protokol třetích stran. Můžete nakonfigurovat služby WCF tak, aby přijímal oba protokoly poskytováním více koncových bodů s příslušnou specifické pro protokol vazby, jak je znázorněno v následující ukázka konfigurace.  
+1.  Pro zajištění optimálního výkonu abyste používali protokolu OleTransactions pro scénáře zahrnující klienta a služby, které jsou napsané s využitím Windows Communication Foundation (WCF). Protokol WS-AtomicTransaction (WS-AT) je však užitečné pro scénáře při vzájemná funkční spolupráce s sad protokolů třetích stran je povinný. Můžete nakonfigurovat WCF services tak, aby přijímal oba protokoly tím, že poskytuje několik koncových bodů s odpovídající konkrétní vazby, jak je znázorněno v následující ukázková konfigurace.  
   
     ```xml  
     <service name="CalculatorService">  
@@ -108,7 +108,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     </service>  
     ```  
   
-     Protokol transakce je zadán pomocí `transactionProtocol` atribut. Tento atribut je však chybí z poskytované systémem `wsHttpBinding`, protože tuto vazbu lze použít pouze protokol WS-AT.  
+     Transakční protokol je specifikován pomocí `transactionProtocol` atribut. Nicméně, tento atribut chybí z poskytnuté systémem `wsHttpBinding`, protože tato vazba lze použít pouze WS-AT protokolu.  
   
     ```xml  
     <bindings>  
@@ -124,9 +124,9 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     </bindings>  
     ```  
   
-### <a name="controlling-the-completion-of-a-transaction"></a>Řízení dokončení transakce.  
+### <a name="controlling-the-completion-of-a-transaction"></a>Řízení dokončení transakce  
   
-1.  Ve výchozím nastavení WCF operations automaticky dokončení transakcí, pokud jsou vyvolány žádné neošetřené výjimky. Toto chování můžete upravit pomocí <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost a <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda. Když operace je potřeba v rámci stejné transakci jako jiná operace (například operace MD a Dal), můžete zakázat chování automatického dokončování nastavením <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` jak je znázorněno v následujícím `Debit` příklad operaci. Transakce `Debit` není používá operaci dokončit, dokud nebudou metodu s <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost nastavena na hodnotu `true` je volána, jak je znázorněno v operaci `Credit1`, nebo když <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda je volána explicitně označit transakce jako dokončené, jak je znázorněno v operaci `Credit2`. Upozorňujeme, že pro účely obrázku jsou zobrazeny dvě platební operace a že jeden úvěrového operace by typičtější.  
+1.  Ve výchozím nastavení WCF operace automatického dokončení transakce, pokud nejsou vyvolány žádné neošetřené výjimky. Toto chování lze upravit pomocí <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost a <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> metoda. Při operaci musí dojít v rámci stejné transakce jako jiná operace (například operace MD a Dal), můžete zakázat automatické dokončování chování tak, že nastavíte <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` jak je znázorněno v následujícím `Debit` příklad operace. Transakce `Debit` používá operace nedokončí až do metody s <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost nastavena na `true` je volána, jak je znázorněno v operaci `Credit1`, nebo když <xref:System.ServiceModel.OperationContext.SetTransactionComplete%2A> explicitně označit je volána metoda transakce jako dokončené, jak je znázorněno v operaci `Credit2`. Všimněte si, že dvě kredit operace jsou platné pro ilustraci a že jediného kredit ve výši operace by obvyklejší.  
   
     ```  
     [ServiceBehavior]  
@@ -162,7 +162,7 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     }  
     ```  
   
-2.  Pro účely korelace transakce, nastavení <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` vyžaduje použití relacemi vazby. Tento požadavek zadaný `SessionMode` vlastnost <xref:System.ServiceModel.ServiceContractAttribute>.  
+2.  Pro účely transakce korelace, nastavení <xref:System.ServiceModel.OperationBehaviorAttribute.TransactionAutoComplete%2A> vlastnost `false` vyžaduje použití vazby s relacemi. Tento požadavek není zadán s `SessionMode` vlastnost <xref:System.ServiceModel.ServiceContractAttribute>.  
   
     ```  
     [ServiceContract(SessionMode = SessionMode.Required)]  
@@ -180,9 +180,9 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     }  
     ```  
   
-### <a name="controlling-the-lifetime-of-a-transactional-service-instance"></a>Řízení životního cyklu instance služby zasílání transakčních  
+### <a name="controlling-the-lifetime-of-a-transactional-service-instance"></a>Řízení životního cyklu instance transakční služby  
   
-1.  Používá WCF <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnosti k určení, zda je základní instance služby vydané po dokončení transakce. Vzhledem k tomu, že se `true`, pokud není uvedeno jinak, WCF předměty efektivní a předvídatelné "v běhu" aktivace chování. Volání do služby na následné transakce jsou zajištěná nové instance služby se žádné zbytky stav předchozí transakce. Přestože se často užitečné, v některých případech může chcete zachovat stav v rámci instance služby nad rámec dokončení transakce. Příklady tohoto by po nákladné načíst nebo rekonstruovat požadované stavu nebo obslužných rutin k prostředkům. To provedete nastavením <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnost `false`. Toto nastavení, instanci a všechny přidružené stavu bude k dispozici pro následující volání. Při použití tohoto nástroje věnujte pozornost pozor, kdy a jak stavu a transakce budou vymazána a dokončit. Následující příklad ukazuje, jak to udělat Údržba instance s `runningTotal` proměnné.  
+1.  Používá WCF <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnosti a určit, jestli se po dokončení transakce uvolní podkladové instance služby. Protože je výchozí hodnota `true`, pokud se nenakonfiguruje, chování aktivace WCF dodatků efektivní a předvídatelné "just-in-time". Volání služby v následných transakcí je zajištěna nové instance služby s žádné zbývající součásti stav předchozí transakce. Když je často užitečné, někdy můžete udržovat stav v rámci instance služby nad rámec dokončení transakce. Příklady by po drahé načíst nebo znovuvytvoření požadovaného stavu nebo popisovače k prostředkům. Můžete to provést tak, že nastavíte <xref:System.ServiceModel.ServiceBehaviorAttribute.ReleaseServiceInstanceOnTransactionComplete%2A> vlastnost `false`. Při tomto nastavení instance a všechny přidružené stavu budou dostupné v následných voláních. Při použití této funkce, věnujte pozornost pozor, kdy a jak stavu a transakce budou vymazána a dokončit. Následující příklad ukazuje, jak to provést pomocí instance s `runningTotal` proměnné.  
   
     ```  
     [ServiceBehavior(TransactionIsolationLevel = [ServiceBehavior(  
@@ -217,4 +217,4 @@ Tento příklad znázorňuje různé aspekty vytvoření transakční služby a 
     ```  
   
     > [!NOTE]
-    >  Vzhledem k tomu, že instance životnost je chování, které je interní ke službě a řízené prostřednictvím <xref:System.ServiceModel.ServiceBehaviorAttribute> vlastnost žádné změny konfigurace služby ani kontrakt služby je potřeba nastavit chování instance. Kromě toho sítě bude obsahovat žádné reprezentace tohoto objektu.
+    >  Protože životnost instance je chování, které je interní ke službě a řízené prostřednictvím <xref:System.ServiceModel.ServiceBehaviorAttribute> vlastnost, je vyžadovat, abyste nastavili chování instance bez změny konfigurace služby nebo kontrakt služby. Kromě toho přenosu bude obsahovat žádné reprezentace.

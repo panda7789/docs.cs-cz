@@ -3,11 +3,11 @@ title: Datové vazby v klientovi Windows Presentation Foundation
 ms.date: 03/30/2017
 ms.assetid: bb8c8293-5973-4aef-9b07-afeff5d3293c
 ms.openlocfilehash: 69e61a52adc3d5058b9ccd65d2cde2ca7d74bbe6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43393858"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514312"
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Datové vazby v klientovi Windows Presentation Foundation
 Tento příklad ukazuje použití datové vazby v klientovi Windows Presentation Foundation (WPF). Ukázka používá služba Windows Communication Foundation (WCF), která náhodně generovat pole alb vrácena klientovi. Každé album má název, cenu a seznam alba stopy. Sleduje alba mají název a doba trvání. Informace, které je vrácena službou je automaticky vázán na uživatelské rozhraní (UI) poskytuje klientovi Windows Presentation Foundation (WPF).  

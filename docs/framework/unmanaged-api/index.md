@@ -9,60 +9,60 @@ helpviewer_keywords:
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d9a716244c779a25ad75c9db37aade0524e9e740
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 955efad34f816cd0445c4ebdf120d8b614f0d351
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33442914"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43508519"
 ---
 # <a name="unmanaged-api-reference"></a>Nespravované rozhraní API
-Tato část obsahuje informace o nespravovaného rozhraní API, které je možné spravovat-související s kódem aplikace, jako je modulu runtime, kompilátory, disassemblers, obfuscators, ladicí programy a profilery.  
+Tato část obsahuje informace o nespravované rozhraní API, která je možné spravovat souvisejícím s kódem aplikace, jako je například hostitelská prostředí modulu runtime, kompilátory, disassemblery, obfuscators, ladicí programy a profilery.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Běžné typy dat](../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)  
- Jsou uvedeny běžné typy dat, které se používají, zejména v nespravované profilování a ladění v rozhraní API.  
+ Uvádí běžné typy dat, které se používají, zejména v nespravované profilování a ladění v rozhraní API.  
   
  [ALink](../../../docs/framework/unmanaged-api/alink/index.md)  
- Popisuje rozhraní API ALink, které podporuje vytváření sestavení rozhraní .NET Framework a nevázaný moduly.  
+ Popisuje rozhraní API ALink, který podporuje vytvoření nevázaného modulů a sestavení rozhraní .NET Framework.  
   
  [Authenticode](../../../docs/framework/unmanaged-api/authenticode/index.md)  
- Podporuje modul vytvoření a ověření Authenticode XrML licence.  
+ Podporuje modul vytváření a ověřování Authenticode XrML licence.  
   
  [Konstanty](../../../docs/framework/unmanaged-api/constants-unmanaged-api-reference.md)  
- Popisuje konstanty, které jsou definovány v CorSym.idl.  
+ Popisuje, které jsou definovány v CorSym.idl konstanty.  
   
- [Vlastní rozhraní atributy](http://msdn.microsoft.com/library/940952f9-46ad-4a1a-920f-118dc0bdcd9f)  
- Popisuje component object model (COM) vlastní rozhraní atributy.  
+ [Vlastní atributy rozhraní](https://msdn.microsoft.com/library/940952f9-46ad-4a1a-920f-118dc0bdcd9f)  
+ Popisuje komponenty object model (COM) vlastní atributy rozhraní.  
   
  [Ladění](../../../docs/framework/unmanaged-api/debugging/index.md)  
- Popisuje ladění rozhraní API, které umožňuje ladicí program k ladění kódu, který běží v prostředí běžné language runtime (CLR).  
+ Popisuje rozhraní API pro ladění, která umožňuje ladicí program k ladění kódu spuštěného v prostředí common language runtime (CLR).  
   
  [Úložiště symbolů diagnostiky](../../../docs/framework/unmanaged-api/diagnostics/index.md)  
- Popisuje úložiště symbolů diagnostiky rozhraní API, která umožňuje kompilátoru ke generování informací o symbolu za účelem použití ladicí program.  
+ Popisuje úložiště symbolů diagnostiky rozhraní API, která umožňuje kompilátoru generovat informace o symbolech pro použití ladicím programem.  
   
  [Fúze](../../../docs/framework/unmanaged-api/fusion/index.md)  
- Popisuje rozhraní API fusion, která umožňuje hostitele modulu runtime pro přístup k vlastnostem prostředky aplikace, aby bylo možné najít správnou verzí tyto prostředky pro aplikaci.  
+ Popisuje rozhraní API fusion, které umožňuje hostitelský modul runtime pro přístup k vlastnosti prostředků aplikace Pokud chcete najít správné verze prvků tyto prostředky pro aplikaci.  
   
  [Hostování](../../../docs/framework/unmanaged-api/hosting/index.md)  
- Popisuje hostování rozhraní API, které umožňuje nespravované hostitelům integraci modulu CLR do svých aplikací.  
+ Popisuje hostujícího rozhraní API, která umožňuje nespravovaným hostitelům k integraci modulu CLR do svých aplikací.  
   
  [Metadata](../../../docs/framework/unmanaged-api/metadata/index.md)  
- Popisuje metadat rozhraní API, které umožňuje klientovi například kompilátor ke generování nebo získat přístup k metadatům komponenty bez typy načítá pomocí modulu CLR.  
+ Popisuje metadat rozhraní API, které umožňuje klientovi jako je například kompilátor generovat nebo získat přístup k metadatům komponenty bez typů načítání platformou CLR.  
   
  [Profilace](../../../docs/framework/unmanaged-api/profiling/index.md)  
- Popisuje profilování rozhraní API, které umožňuje profileru ke sledování provádění programu pomocí modulu CLR.  
+ Popisuje rozhraní profilování API umožňuje profileru sledujte provádění programu CLR.  
   
  [Vytváření silných názvů](../../../docs/framework/unmanaged-api/strong-naming/index.md)  
- Popisuje silné pojmenování API, která umožňuje klientovi ke správě podepsání sestavení silným názvem.  
+ Popisuje silné pojmenovávání API, které umožňuje klientovi spravovat podepisování sestavení silným názvem.  
 
  [WMI a čítače výkonu](wmi/index.md)  
- Popisuje rozhraní API, která zabalení volání knihovny Windows Management Instrumentation (WMI).
+ Popisuje rozhraní API, který obalují volání knihovny Windows Management Instrumentation (WMI).
   
  [Pomocné funkce Tlbexp](../../../docs/framework/unmanaged-api/tlbexp/index.md)  
- Popisuje dvou pomocných funkcí a rozhraní používá Exportér knihovny typů (Tlbexp.exe) během procesu převodu sestavení na typu knihovny.  
+ Popisuje dva pomocné funkce a rozhraní Exportér knihovny typů (Tlbexp.exe) během procesu převodu sestavení na typu knihovny.  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Průvodce vývojem](../../../docs/framework/development-guide.md)  
   
- [Pokročilé čtení pro rozhraní .NET Framework](http://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)
+ [Rozšířené čtení pro rozhraní .NET Framework](https://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)

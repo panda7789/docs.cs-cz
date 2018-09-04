@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e380edac-da67-4276-80a5-b64decae4947
-ms.openlocfilehash: 0b4cdfa7bab1f41f80926b20da3e63a72a2d165d
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 641a1cc0fd0ec53872ee3312e7da06923b82ddd7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42911997"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507602"
 ---
 # <a name="optimistic-concurrency"></a>Optimistická souběžnost
 V prostředí, existují dva modely pro aktualizaci dat v databázi: optimistického řízení souběžnosti a Pesimistická souběžnost. <xref:System.Data.DataSet> Objektu je účelem je podporovat používání optimistického řízení souběžnosti pro dlouho běžící aktivity, jako jsou data vzdálenou komunikaci a interakci s daty.  
@@ -211,4 +211,4 @@ protected static void OnRowUpdated(object sender, SqlRowUpdatedEventArgs args)
  [Aktualizace zdrojů dat pomocí adaptérů dat](../../../../docs/framework/data/adonet/updating-data-sources-with-dataadapters.md)  
  [Informace o chybě na řádku](../../../../docs/framework/data/adonet/dataset-datatable-dataview/row-error-information.md)  
  [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

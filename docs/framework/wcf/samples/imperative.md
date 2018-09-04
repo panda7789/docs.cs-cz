@@ -3,11 +3,11 @@ title: Imperative
 ms.date: 03/30/2017
 ms.assetid: 4f7ce807-c0e4-407a-92a6-22abafb40b51
 ms.openlocfilehash: 9039e2f0d13baefb8b0c2abcfb63dd11ce15ffd7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43406710"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510723"
 ---
 # <a name="imperative"></a>Imperative
 Tato ukázka předvádí, jak definovat <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`> služby promocí kódu, místo definování `wsHttpBinding` vazby v konfiguraci. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  

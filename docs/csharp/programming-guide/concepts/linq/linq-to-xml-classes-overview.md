@@ -2,12 +2,12 @@
 title: Přehled LINQ to XML třídy (C#)
 ms.date: 07/20/2015
 ms.assetid: bf666100-5392-4968-97f4-f6b9d3287d7b
-ms.openlocfilehash: 619bf59c2b10cbb699f8e5b177991da9a0a2b238
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.openlocfilehash: d1454909591ff060f9d2a1d2484302e7112be149
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42753917"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502388"
 ---
 # <a name="linq-to-xml-classes-overview-c"></a>Přehled LINQ to XML třídy (C#)
 Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] tříd v <xref:System.Xml.Linq> obor názvů a krátký popis každého.  
@@ -86,5 +86,6 @@ Toto téma obsahuje seznam [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]
 ### <a name="xtext-class"></a>Třída XText  
  <xref:System.Xml.Linq.XText> reprezentuje textový uzel. Ve většině případů není nutné použít tuto třídu. Tato třída se používá především pro smíšený obsah.  
   
-## <a name="see-also"></a>Viz také  
- [Přehled LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+## <a name="see-also"></a>Viz také
+
+- [Přehled LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

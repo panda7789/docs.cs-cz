@@ -8,33 +8,33 @@ helpviewer_keywords:
 - data binding [WPF], binding to XDocument
 - data binding [WPF], binding to XElement
 ms.assetid: 6a629a49-fe1c-465d-b76a-3dcbf4307b64
-ms.openlocfilehash: 7e4f9cc2f5e6815a35b4911f5b4a480161d66ef3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 83254bcb0b2aef53a53874a67e8ae169ad242d57
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556689"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43499936"
 ---
 # <a name="how-to-bind-to-xdocument-xelement-or-linq-for-xml-query-results"></a>Postupy: Připojení k XDocument, XElement nebo LINQ pro výsledky XML dotazu
 Tento příklad ukazuje, jak vytvořit vazbu dat XML do <xref:System.Windows.Controls.ItemsControl> pomocí <xref:System.Xml.Linq.XDocument>.  
   
 ## <a name="example"></a>Příklad  
- Následující kód XAML definuje <xref:System.Windows.Controls.ItemsControl> a obsahuje šablonu dat pro data typu `Planet` v `http://planetsNS` obor názvů XML. Datový typ XML, který bude zabírat oboru názvů musí zahrnovat oboru názvů do složených závorek a pokud se zobrazí, kde se může zobrazit rozšíření značek XAML, je třeba zadat jeden obor názvů s řídicí sekvence závorek. Tento kód se váže k dynamické vlastnosti, které odpovídají <xref:System.Xml.Linq.XContainer.Element%2A> a <xref:System.Xml.Linq.XElement.Attribute%2A> metody <xref:System.Xml.Linq.XElement> třídy. Dynamické vlastnosti povolit XAML pro vazbu k dynamické vlastnosti, které sdílejí názvy metod. Další informace najdete v tématu [technologie LINQ to XML dynamické vlastnosti](/visualstudio/designers/linq-to-xml-dynamic-properties). Všimněte si, jak výchozí deklaraci oboru názvů pro soubor XML nevztahuje na názvy atributů.  
+ Definuje následující kód XAML <xref:System.Windows.Controls.ItemsControl> a obsahuje šablonu dat pro datový typ `Planet` v `http://planetsNS` oboru názvů XML. Datový typ XML, který zabírá oboru názvů musí obsahovat obor názvů ve složených závorkách, a pokud se zobrazí, kde se může zobrazit rozšíření značek XAML, musí být obor názvů se řídicí sekvence složenou závorku. Tento kód váže k dynamické vlastnosti, které odpovídají <xref:System.Xml.Linq.XContainer.Element%2A> a <xref:System.Xml.Linq.XElement.Attribute%2A> metody <xref:System.Xml.Linq.XElement> třídy. Dynamické vlastnosti umožňují XAML vytvořit vazbu na dynamické vlastnosti, které sdílejí názvy metod. Další informace najdete v tématu [XML dynamické vlastnosti LINQ to](/visualstudio/designers/linq-to-xml-dynamic-properties). Všimněte si, jak výchozí deklaraci oboru názvů pro XML se nevztahují na názvy atributů.  
   
  [!code-xaml[XLinqExample#StackPanelResources](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml#stackpanelresources)]  
 [!code-xaml[XLinqExample#ItemsControl](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml#itemscontrol)]  
   
- Následující volání kódu jazyka C# <xref:System.Xml.Linq.XDocument.Load%2A> a nastaví kontext zásobníku panel data na všechny dílčí prvky elementu s názvem `SolarSystemPlanets` v `http://planetsNS` obor názvů XML.  
+ Následující volání kódu C# <xref:System.Xml.Linq.XDocument.Load%2A> a nastavuje kontext dat panelu zásobníku pro všechny dílčí prvky prvku s názvem `SolarSystemPlanets` v `http://planetsNS` oboru názvů XML.  
   
  [!code-csharp[XLinqExample#LoadDCFromFile](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml.cs#loaddcfromfile)]
  [!code-vb[XLinqExample#LoadDCFromFile](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/XLinqExample/visualbasic/window1.xaml.vb#loaddcfromfile)]  
   
- XML data mohou být uloženy ve formě XAML prostředků pomocí <xref:System.Windows.Data.ObjectDataProvider>. Úplný příklad najdete v tématu [L2DBForm.xaml zdrojový kód](http://msdn.microsoft.com/library/624e96d4-6d27-4195-8ac2-2f3835f6c57e). Následující příklad ukazuje, jak kód můžete nastavit kontext dat na prostředek objektu.  
+ XML data mohou být uložena jako prostředků XAML pomocí <xref:System.Windows.Data.ObjectDataProvider>. Kompletní příklad naleznete v tématu [zdrojový kód L2DBForm.xaml](https://msdn.microsoft.com/library/624e96d4-6d27-4195-8ac2-2f3835f6c57e). Následující příklad ukazuje, jak kód můžete nastavit kontext dat do objektu prostředku.  
   
  [!code-csharp[XLinqExample#LoadDCFromXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml.cs#loaddcfromxaml)]
  [!code-vb[XLinqExample#LoadDCFromXAML](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/XLinqExample/visualbasic/window1.xaml.vb#loaddcfromxaml)]  
   
- Dynamické vlastnosti, které jsou mapovány na <xref:System.Xml.Linq.XContainer.Element%2A> a <xref:System.Xml.Linq.XElement.Attribute%2A> poskytují flexibilitu v rámci XAML. Váš kód můžete také vytvořit vazbu k výsledky LINQ pro dotaz XML. Tento příklad vytvoří vazbu s výsledky dotazů, které jsou seřazené podle hodnotu elementu.  
+ Dynamické vlastnosti, které mapují na <xref:System.Xml.Linq.XContainer.Element%2A> a <xref:System.Xml.Linq.XElement.Attribute%2A> poskytují flexibilitu v rámci XAML. Kód můžete také navázat pro výsledky XML dotazu LINQ. Tento příklad vytvoří vazbu na výsledky dotazu seřazené podle hodnotu elementu.  
   
  [!code-csharp[XLinqExample#BindToResults](../../../../samples/snippets/csharp/VS_Snippets_Wpf/XLinqExample/CSharp/Window1.xaml.cs#bindtoresults)]
  [!code-vb[XLinqExample#BindToResults](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/XLinqExample/visualbasic/window1.xaml.vb#bindtoresults)]  

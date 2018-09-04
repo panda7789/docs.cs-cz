@@ -1,41 +1,41 @@
 ---
-title: 'Postupy: vytvoření přihlašovacích údajů podpora'
+title: 'Postupy: vytvoření podpůrných přihlašovacích údajů'
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: 6ec7412d1de2bca349c7cfbf4a37c98ca60cc78d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ef4d9a406e6fc929e4ad59911d587e462c9b2b65
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495883"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43499988"
 ---
-# <a name="how-to-create-a-supporting-credential"></a>Postupy: vytvoření přihlašovacích údajů podpora
-Je možné, že schéma vlastní zabezpečení, která vyžaduje více než jedno pověření. Například služby vyžádat z klienta nejen uživatelské jméno a heslo, ale také přihlašovacích údajů, který prokáže, klient je víc než 18. Druhý přihlašovací údaje *podpora přihlašovacích údajů*. Toto téma vysvětluje, jak implementovat tyto přihlašovací údaje v klientovi Windows Communication Foundation (WCF).  
+# <a name="how-to-create-a-supporting-credential"></a>Postupy: vytvoření podpůrných přihlašovacích údajů
+Je možné mít vlastní bezpečnostní schéma, které vyžaduje více přihlašovacích údajů. Například služba vyžádat od klienta nejen uživatelské jméno a heslo, ale také pověření, která prokáže vaše oprávnění klienta je víc než 18. Je druhý přihlašovacích údajů *podpora přihlašovacích údajů*. Toto téma vysvětluje, jak implementovat tyto přihlašovací údaje v klientovi Windows Communication Foundation (WCF).  
   
 > [!NOTE]
->  Specifikace pro podporu přihlašovací údaje je součástí specifikace WS-SecurityPolicy. Další informace najdete v tématu [specifikací zabezpečení webových služeb](http://go.microsoft.com/fwlink/?LinkId=88537).  
+>  Specifikace pro podporu přihlašovacích údajů je součástí specifikace WS-SecurityPolicy. Další informace najdete v tématu [specifikací webových služeb zabezpečení](https://go.microsoft.com/fwlink/?LinkId=88537).  
   
 ## <a name="supporting-tokens"></a>Podpora tokenů  
  Stručně řečeno, při použití zabezpečení zpráv *primární pověření* vždy slouží k zabezpečení zpráv (například certifikát X.509 nebo lístek protokolu Kerberos).  
   
- Podle definice specifikace, používá vazby zabezpečení *tokeny* zabezpečit zprávy exchange. A *tokenu* je reprezentace pověření zabezpečení.  
+ Jak je definováno ve specifikaci vazby zabezpečení používá *tokeny* k výměně zpráv zabezpečení. A *token* je reprezentace bezpečnostním pověřením.  
   
- Vazby zabezpečení používá primární token identifikovat v zásadách zabezpečení vazby k vytvoření podpisu. Tento podpis odkazuje jako *podpis zprávy*.  
+ Vazby zabezpečení používá k vytvoření podpisu primární token identifikované v zásadách zabezpečení vazby. Tento podpis se označuje jako *podpis zprávy*.  
   
- K posílení deklarace identity poskytované tokenu přidružený podpis zprávy lze zadat další tokeny.  
+ Další tokeny lze k posílení deklarací poskytovaných token spojený s podpis zprávy.  
   
-## <a name="endorsing-signing-and-encrypting"></a>Potvrzování, podepisování a šifrování  
- Výsledkem podpůrné přihlašovacích údajů *token podpory* přenášených v rámci zprávy. Specifikace WS-SecurityPolicy definuje čtyři způsoby, jak připojit token podpory na zprávu, jak je popsáno v následující tabulce.  
+## <a name="endorsing-signing-and-encrypting"></a>Potvrdit, podepisování a šifrování  
+ Výsledkem podpůrného pověření *podpůrný token* přenášených uvnitř zprávy. Specifikace WS-SecurityPolicy definuje čtyři způsoby, jak připojit podpůrný token na zprávu, jak je popsáno v následující tabulce.  
   
 |Účel|Popis|  
 |-------------|-----------------|  
-|Podepsané|Token podpory je zahrnutý v záhlaví zabezpečení a je podepsána podpis zprávy.|  
-|Potvrdit správnost|*Či identifikaci token* podepisuje podpis zprávy.|  
-|Podepsaná a či identifikaci|Podepsaná, potvrzování tokeny přihlašovací celý `ds:Signature` element vytvořeného z podpis zprávy a jsou sami podepsána tuto podpis zprávy; to znamená, oba tokeny (tokenu používaného k podpis zprávy a podepsaný token či identifikaci) přihlásit navzájem.|  
-|Podepsaná a šifrování|Podepsaný držitelem, šifrované podpůrné tokeny jsou podepsané podpora tokenů, které jsou také zašifrované, když se zobrazí v `wsse:SecurityHeader`.|  
+|podepsané|Token podpory je zahrnutá v záhlaví zabezpečení a je podepsán společností podpis zprávy.|  
+|Potvrdit|*Podporujícími token* podepíše podpis zprávy.|  
+|Podepsaný a podporujícími|Podepsaná, podporujících tokeny přihlášení celý `ds:Signature` element vytvořenými podpis zprávy a jsou samotné podepsány tento podpis zprávy; to znamená, že oba tokeny (tokenu používaného k podpis zprávy a podepsaný token potvrzující) podepsat mezi sebou.|  
+|Podepsaný a šifrování|Podepsaný a šifrované podpůrných tokenů jsou podepsané podpůrnými tokeny, které se také šifrují, pokud se objeví v `wsse:SecurityHeader`.|  
   
-## <a name="programming-supporting-credentials"></a>Programování podpora přihlašovací údaje  
- Chcete-li vytvořit službu, která používá podpůrné tokeny, musíte vytvořit [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md). (Další informace najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
+## <a name="programming-supporting-credentials"></a>Programování podporuje přihlašovací údaje  
+ Pokud chcete vytvořit službu, která používá podpůrných tokenů, musíte vytvořit [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md). (Další informace najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
   
  Prvním krokem při vytváření vlastní vazby je vytvořit element vazby zabezpečení, který může být jeden ze tří typů:  
   
@@ -58,24 +58,24 @@ Je možné, že schéma vlastní zabezpečení, která vyžaduje více než jedn
 #### <a name="scopes"></a>Obory  
  Existují dva obory pro podporu přihlašovací údaje:  
   
--   *Koncový bod podpora tokenů* podporují všechny operace koncový bod. To znamená pověření, které představuje token podpory lze vždy, když jsou vyvolány žádné operace koncového bodu.  
+-   *Koncový bod podporující tokeny* podporují všechny operace koncového bodu. To znamená přihlašovacích údajů, který představuje podpůrný token lze vždy, když jsou vyvolány žádné operace koncového bodu.  
   
--   *Operace podpora tokenů* podporují pouze o operaci konkrétní koncový bod.  
+-   *Podpora tokenů operace* podporují jenom operace určitého koncového bodu.  
   
- Jak názvy vlastností, podpora pověření může být požadované nebo volitelné. To znamená pokud podpůrné přihlašovacích údajů se používá, pokud je k dispozici, i když není nutné, ale nebudou ověřování, pokud není přítomen.  
+ Je určeno názvy vlastností, podpora přihlašovacích údajů může být povinné nebo volitelné. To znamená pokud podpůrného pověření se používá, pokud je k dispozici, i když není nutné, ale pokud není k dispozici k selhání ověřování.  
   
 ## <a name="procedures"></a>Procedury  
   
-#### <a name="to-create-a-custom-binding-that-includes-supporting-credentials"></a>Chcete-li vytvořit vlastní vazby, která zahrnuje podporu přihlašovací údaje  
+#### <a name="to-create-a-custom-binding-that-includes-supporting-credentials"></a>K vytvoření vlastní vazby, která zahrnuje podporu přihlašovacích údajů  
   
-1.  Vytvořte element vazby a zabezpečení. Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> s `UserNameForCertificate` režim ověřování. Použití <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> metoda.  
+1.  Vytvořte element vazby zabezpečení. Následující příklad vytvoří <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> s `UserNameForCertificate` režim ověřování. Použití <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateUserNameForCertificateBindingElement%2A> metody.  
   
-2.  Přidat parametr podpůrné ke kolekci typů vrácené odpovídající vlastnost (`Endorsing`, `Signed`, `SignedEncrypted`, nebo `SignedEndorsed`). Typy v <xref:System.ServiceModel.Security.Tokens> obor názvů zahrnují běžně používané typy, jako <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.  
+2.  Přidání podpory parametru do kolekci typů odpovídající vlastnost vrátí (`Endorsing`, `Signed`, `SignedEncrypted`, nebo `SignedEndorsed`). Typy v <xref:System.ServiceModel.Security.Tokens> obor názvů patří běžně používané typy, například <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad vytvoří instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a přidá instanci <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> třídy ke kolekci vlastnost Endorsing vrátila.  
+ Následující příklad vytvoří instance <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> a přidá instanci <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> třídy Endorsing vlastnosti vrácené do kolekce.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[c_SupportingCredential#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_supportingcredential/cs/source.cs#1)]  

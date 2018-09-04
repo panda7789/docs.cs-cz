@@ -6,11 +6,11 @@ helpviewer_keywords:
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
 ms.openlocfilehash: f20ffcf356aa0493b1e2356746d9ad7b27d9a1aa
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480510"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504559"
 ---
 # <a name="quickstart-wcf-data-services"></a>Rychlý start (WCF Data Services)
 

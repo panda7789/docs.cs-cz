@@ -1,18 +1,18 @@
 ---
 title: AttributeUsage (C#)
 ms.date: 04/25/2018
-ms.openlocfilehash: 869e6509e55268767915a783a8652f7f950d7137
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 37657a0611180d5b4c48b3e1778d33861afa5a74
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33955925"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43500569"
 ---
 # <a name="attributeusage-c"></a>AttributeUsage (C#)
 
-Určuje, jak lze použít třídu vlastního atributu. <xref:System.AttributeUsageAttribute> je atribut, který použijete pro definice vlastních atributů. `AttributeUsage` Atributů umožňují řídit:
+Určuje, jak je možné třídu vlastního atributu. <xref:System.AttributeUsageAttribute> představuje atribut, které použijete pro vlastní atribut definice. `AttributeUsage` Atribut umožňuje řídit:
 
-- Který atribut elementy program může použít. Pokud omezíte je využití atribut je možné používat k jakémukoli z těchto prvků program:
+- Které atribut prvky programu může použít pro. Pokud můžete omezit využití, je atribut může použije pro všechny z následujících prvků programu:
   - sestavení
   - module
   - pole
@@ -22,48 +22,48 @@ Určuje, jak lze použít třídu vlastního atributu. <xref:System.AttributeUsa
   - property
   - return
   - – typ
-- Více než jednou. jestli chcete v jednom elementu programu je použít atribut.
-- Zda jsou zdědí atributy odvozené třídy.
+- Určuje, zda atribut lze použít na jednom elementu programu několikrát.
+- Určuje, zda atributy jsou zděděny z odvozených tříd.
 
-Výchozí nastavení vypadat podobně jako v následujícím příkladu při použití explicitně:
+Výchozí nastavení vypadat jako v následujícím příkladu, při použití explicitně:
 
 [!code-csharp[Define a new attribute](../../../../../samples/snippets/csharp/attributes/NewAttribute.cs#1)]
 
-V tomto příkladu `NewAttribute` třídy lze použít na všech podporovaných program element. Ale dá se použít jenom jednou pro každé entity. Atribut zdědí odvozené třídy při použití základní třídy.
+V tomto příkladu `NewAttribute` třídy lze použít na libovolný prvek programu podporované. Ale lze jej použít pouze jednou pro každou entitu. Atribut je zděděn z odvozené třídy při použití na základní třídu.
 
-<xref:System.AttributeUsageAttribute.AllowMultiple> a <xref:System.AttributeUsageAttribute.Inherited> jsou argumenty nepovinné, takže stejného efektu má následující kód:
+<xref:System.AttributeUsageAttribute.AllowMultiple> a <xref:System.AttributeUsageAttribute.Inherited> jsou argumenty nepovinné, tak má stejný účinek následující kód:
 
 [!code-csharp[Omit optional attributes](../../../../../samples/snippets/csharp/attributes/NewAttribute.cs#2)]
 
-První <xref:System.AttributeUsageAttribute> argument musí být jeden či více elementů <xref:System.AttributeTargets> výčtu. Více typy cíle může být propojený společně s operátoru OR, jako ukazuje následující příklad:
+První <xref:System.AttributeUsageAttribute> argument musí být jeden nebo více prvků <xref:System.AttributeTargets> výčtu. Více typů cíl může být propojený spolu s operátorem OR, stejně jako v následujícím příkladu:
 
 [!code-csharp[Create an attribute for fields or properties](../../../../../samples/snippets/csharp/attributes/NewPropertyOrFieldAttribute.cs#1)]
 
-Počínaje 7.3 C#, můžete použít atributů vlastnost nebo pole Základní automaticky implementované vlastnosti. Atribut se vztahují na vlastnost, pokud nezadáte `field` specifikátor na atributu. Jak se zobrazuje v následujícím příkladu:
+Od C# 7.3, atributy lze použít u vlastnosti nebo pomocné pole automaticky implementované vlastnosti. Pokud nezadáte platí atribut pro vlastnost, `field` specifikátor atributu. Obě jsou uvedeny v následujícím příkladu:
 
 [!code-csharp[Create an attribute for fields or properties](../../../../../samples/snippets/csharp/attributes/NewPropertyOrFieldAttribute.cs#2)]
 
-Pokud <xref:System.AttributeUsageAttribute.AllowMultiple> argument je `true`, pak výsledné atribut můžete použít více než jednou pro jednu entitu, jak je znázorněno v následujícím příkladu:
+Pokud <xref:System.AttributeUsageAttribute.AllowMultiple> argument je `true`, pak výsledný atribut lze použít více než jednou na jednu entitu, jak je znázorněno v následujícím příkladu:
 
 [!code-csharp[Create and use an attribute that can be applied multiple times](../../../../../samples/snippets/csharp/attributes/MultiUseAttribute.cs#1)]
 
-V takovém případě `MultiUseAttribute` můžete použít opakovaně, protože `AllowMultiple` je nastaven na `true`. Platné jsou oba formáty pro použití více atributů.
+V takovém případě `MultiUseAttribute` můžete použít opakovaně, protože `AllowMultiple` je nastavena na `true`. Oba formáty pro použití více atributů jsou platné.
 
-Pokud <xref:System.AttributeUsageAttribute.Inherited> je `false`, pak atribut není zdědí třídy odvozené od s atributy třídy. Příklad:
+Pokud <xref:System.AttributeUsageAttribute.Inherited> je `false`, pak atribut není zděděn z třídy odvozené z třídy s atributy. Příklad:
 
 [!code-csharp[Create and use an attribute that can be applied multiple times](../../../../../samples/snippets/csharp/attributes/NonInheritedAttribute.cs#1)]
 
-V takovém případě `NonInheritedAttribute` neplatí pro `DClass` prostřednictvím dědičnosti.
+V tomto případě `NonInheritedAttribute` neplatí pro `DClass` prostřednictvím dědičnosti.
 
 ## <a name="remarks"></a>Poznámky
 
-`AttributeUsage` Se o jedno použití atribut – jej nelze použít více než jednou pro stejnou třídu. `AttributeUsage` je alias <xref:System.AttributeUsageAttribute>.
+`AttributeUsage` Atribut je jedno použití atributu – jej nelze použít více než jednou pro tutéž třídu. `AttributeUsage` je alias pro <xref:System.AttributeUsageAttribute>.
 
-Další informace najdete v tématu [přístup k atributy podle pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md).
+Další informace najdete v tématu [přístup k atributy podle použití reflexe (C#)](accessing-attributes-by-using-reflection.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje účinek <xref:System.AttributeUsageAttribute.Inherited> a <xref:System.AttributeUsageAttribute.AllowMultiple> argumenty, které mají <xref:System.AttributeUsageAttribute> atribut a jak mohou být uvedené vlastních atributů použitých na třídu.
+Následující příklad ukazuje účinek <xref:System.AttributeUsageAttribute.Inherited> a <xref:System.AttributeUsageAttribute.AllowMultiple> argumenty, které mají <xref:System.AttributeUsageAttribute> atribut a jak mohou být uvedené vlastní atributy použité na třídu.
 
 [!code-csharp[Applying and querying attributes](../../../../../samples/snippets/csharp/attributes/Program.cs#1)]
 
@@ -80,11 +80,12 @@ SecondAttribute
 ```
 
 ## <a name="see-also"></a>Viz také
- <xref:System.Attribute>  
- <xref:System.Reflection>  
- [Průvodce programováním v jazyce C#](../..//index.md)  
- [Atributy](../../../..//standard/attributes/index.md)  
- [Reflexe (C#)](../reflection.md)  
- [Atributy](index.md)  
- [Vytváření vlastních atributů (C#)](creating-custom-attributes.md)  
- [Přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md)
+
+- <xref:System.Attribute>  
+- <xref:System.Reflection>  
+- [Průvodce programováním v jazyce C#](../..//index.md)  
+- [Atributy](../../../..//standard/attributes/index.md)  
+- [Reflexe (C#)](../reflection.md)  
+- [Atributy](index.md)  
+- [Vytváření vlastních atributů (C#)](creating-custom-attributes.md)  
+- [Přístup k atributům pomocí reflexe (C#)](accessing-attributes-by-using-reflection.md)

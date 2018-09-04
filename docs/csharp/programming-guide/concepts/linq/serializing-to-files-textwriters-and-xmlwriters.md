@@ -1,34 +1,35 @@
 ---
-title: Serializace k souborům, TextWriters a XmlWriters1
+title: Serializace do souborů, tříd a XmlWriters1
 ms.date: 07/20/2015
 ms.assetid: bd3ea6f7-895b-4ff4-a625-fe2bb55b1886
-ms.openlocfilehash: 903e6f5b6a8cd88c140e6759136301a6305cee2d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 011e32054e39ee0f7f70baf9867f7cab6fe34540
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33330207"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507002"
 ---
-# <a name="serializing-to-files-textwriters-and-xmlwriters"></a>Serializace k souborům, TextWriters a XmlWriters
+# <a name="serializing-to-files-textwriters-and-xmlwriters"></a>Serializace do souborů, tříd a XmlWriter
 Může serializovat stromů XML <xref:System.IO.File>, <xref:System.IO.TextWriter>, nebo <xref:System.Xml.XmlWriter>.  
   
- Může serializovat libovolné součásti XML, včetně <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement>, na řetězec pomocí `ToString` metoda.  
+ Může serializovat libovolné součásti XML, včetně <xref:System.Xml.Linq.XDocument> a <xref:System.Xml.Linq.XElement>, na řetězec pomocí `ToString` metody.  
   
- Pokud chcete potlačit, formátování při serializaci do řetězce, můžete použít <xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType> metoda.  
+ Pokud chcete potlačit formátování při serializaci do řetězce, můžete použít <xref:System.Xml.Linq.XNode.ToString%2A?displayProperty=nameWithType> metody.  
   
- Thedefault chování při serializaci do souboru je formátovat dokument (odsazení) výsledný soubor XML. Při odsazení, není zachována zanedbatelný mezer ve stromové struktuře XML. K serializaci s formátování, použijte jednu z následujících metod, které nepřebírají přetížení <xref:System.Xml.Linq.SaveOptions> jako argument:  
-  
--   <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType>  
-  
--   <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType>  
-  
- Pokud chcete, aby možnost, není pro odsazení a zachovat zanedbatelný mezer ve stromové struktuře XML, použijte jednu z přetížení následující metody, která přebírá <xref:System.Xml.Linq.SaveOptions> jako argument:  
+ Thedefault chování při serializaci do souboru se má formátovat dokument (odsazení) výsledného kódu XML. Při odsazení, není zachována nevýznamné prázdné znaky ve stromové struktuře XML. K serializaci formátování, použijte jednu z přetížení z následujících metod, které nepřebírají <xref:System.Xml.Linq.SaveOptions> jako argument:  
   
 -   <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType>  
   
 -   <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType>  
   
- Příklady najdete v tématu odpovídající odkaz.  
+ Pokud chcete možnost odsazení a nevýznamné mezeru ve stromové struktuře XML, použijte jednu z přetížených z následujících metod, které provede <xref:System.Xml.Linq.SaveOptions> jako argument:  
   
-## <a name="see-also"></a>Viz také  
- [Serializace XML stromů (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)
+-   <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType>  
+  
+-   <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType>  
+  
+ Příklady naleznete v tématu příslušný odkaz.  
+  
+## <a name="see-also"></a>Viz také
+
+- [Serializace stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)

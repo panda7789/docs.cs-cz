@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 15f3a774255923aba83f15700540369040c02dcd
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: ba019d4104ec6669ef07b608f40fc1489c994cbf
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961531"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525485"
 ---
 # <a name="types-c-programming-guide"></a>Typy (Průvodce programováním v C#)
 ## <a name="types-variables-and-values"></a>Typy, proměnných a hodnot  
@@ -99,7 +99,7 @@ int i = 5;
 char c = 'Z';  
 ```  
   
- Typy hodnot jsou *zapečetěné*, což znamená, že, například, že nemůžete odvodit typ z <xref:System.Int32?displayProperty=nameWithType>, a nemůžete definovat strukturu pro dědění z jakéhokoli uživatelsky definované třídy nebo struktury, protože struktura může dědit jedině z <xref:System.ValueType?displayProperty=nameWithType> . Strukturu však můžete implementovat jednu nebo více rozhraní. Můžete přetypovat obsadit typ struktury pro typ rozhraní; To způsobí, že *zabalení* operace zalomí strukturu uvnitř odkazu typu objektu na spravované haldě. K operaci zabalení dochází při předání typu hodnoty metodě, která přijímá <xref:System.Object?displayProperty=nameWithType> jako vstupní parametr. Další informace najdete v tématu [zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
+ Typy hodnot jsou *zapečetěné*, což znamená, že, například, že nemůžete odvodit typ z <xref:System.Int32?displayProperty=nameWithType>, a nemůžete definovat strukturu pro dědění z jakéhokoli uživatelsky definované třídy nebo struktury, protože struktura může dědit jedině z <xref:System.ValueType?displayProperty=nameWithType> . Strukturu však můžete implementovat jednu nebo více rozhraní. Můžete obsadit typ struktury na libovolný typ rozhraní, který implementuje; To způsobí, že *zabalení* operace zalomí strukturu uvnitř odkazu typu objektu na spravované haldě. K operaci zabalení dochází při předání typu hodnoty metodě, která přijímá <xref:System.Object?displayProperty=nameWithType> nebo některý typ jako vstupní parametr rozhraní. Další informace najdete v tématu [zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md).  
   
  Můžete použít [struktura](../../../csharp/language-reference/keywords/struct.md) – klíčové slovo k tvorbě vlastních typů vlastní hodnotu. Obvykle struktura slouží jako kontejner pro malou skupinu příbuzných proměnných, jak je znázorněno v následujícím příkladu:  
   
@@ -183,8 +183,9 @@ stringList.Add(4);
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Převod datových typů XML](../../../standard/data/xml/conversion-of-xml-data-types.md)  
- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Převod datových typů XML](../../../standard/data/xml/conversion-of-xml-data-types.md)  
+- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)

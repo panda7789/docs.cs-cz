@@ -5,62 +5,62 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d613a22b-07d7-41a4-bada-1adc653b9b5d
-ms.openlocfilehash: 3df1f2490f8636d52ac75fad2469adadec2a57da
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: c6810009e4cda0b493a5f215d966cb37fc6fb090
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806939"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43511991"
 ---
 # <a name="overriding-the-identity-of-a-service-for-authentication"></a>Přepsání identity služby kvůli ověřování
-Obvykle nemáte nastavit identitu u služby, protože výběr typu pověření klienta Určuje typ identity vystavené v metadatech služby. Například následující kód konfigurace používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastaví `clientCredentialType` atribut systému Windows.  
+Standardně nastavit identitu ve službě, protože výběr typu pověření klienta Určuje typ identity v metadatech služby není nutné. Například následující kód konfigurace používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) elementu a nastaví `clientCredentialType` atribut pro Windows.  
   
   
   
- Následující fragment webové služby popis Language (WSDL) ukazuje identity pro koncový bod předtím definovaný. V tomto příkladu je služba spuštěna jako služba s vlastním hostováním v rámci určitého uživatelského účtu (username@contoso.com), a proto identity hlavní název (UPN) uživatele obsahuje název účtu. Hlavní název uživatele je také známé jako přihlašovací jméno uživatele v doméně systému Windows.  
+ Následující fragment webové služby WSDL (Description Language) ukazuje identitu pro koncový bod definovaný dříve. V tomto příkladu je služba spuštěna jako služba v místním prostředí v rámci určitého uživatelského účtu (username@contoso.com), a proto hlavní název (UPN) identity uživatele obsahuje název účtu. Hlavní název uživatele je také označovaný jako přihlašovací jméno uživatele v doméně Windows.  
   
   
   
- Ukázkovou aplikaci, která demonstruje nastavení identity, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o identitě služby najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
+ Ukázková aplikace, který ukazuje nastavení identity, najdete v části [ukázka Identity služby](../../../../docs/framework/wcf/samples/service-identity-sample.md). Další informace o identitě služby najdete v tématu [identita a ověřování služby](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).  
   
 ## <a name="kerberos-authentication-and-identity"></a>Ověřování protokolem Kerberos a Identity  
- Ve výchozím nastavení, pokud služba je nakonfigurovaný na použití pověření systému Windows [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) elementu, který obsahuje [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) nebo [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) element se generuje ve schématu WSDL. Pokud je služba spuštěna pod `LocalSystem`, `LocalService`, nebo `NetworkService` účtu, služby (SPN) pro hlavní název je generována ve výchozím nastavení ve formě `host/` \< *hostname*> protože Tyto účty s přístupem k datům SPN počítače. Pokud služba běží pod jiným účtem, Windows Communication Foundation (WCF) generuje UPN ve formě \< *uživatelské jméno*>@<*domainName* `>` . K tomu dochází, protože ověřování pomocí protokolu Kerberos vyžaduje, aby (UPN) nebo hlavní název služby je nutné zadat klienta k ověřování.  
+ Ve výchozím nastavení, když služba je nakonfigurován pro použití přihlašovací údaje Windows [ \<identity >](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md) element, který obsahuje [ \<userPrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/userprincipalname.md) nebo [ \<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md) vygenerován element ve schématu WSDL. Pokud služba běží `LocalSystem`, `LocalService`, nebo `NetworkService` účtu, služby (SPN) pro hlavní název je generován výchozí ve formě `host/` \< *název hostitele*> protože Tyto účty mají přístup k datům hlavního názvu služby počítači. Pokud služba běží pod jiným účtem, generuje Windows Communication Foundation (WCF) hlavní název uživatele v podobě \< *uživatelské jméno*>@<*domainName* `>` . K tomu dochází, protože vyžaduje ověřování protokolem Kerberos, že název SPN a UPN zadat do klienta k ověřování.  
   
- Můžete taky nástroje Setspn.exe zaregistrovat další SPN se účtu služby v doméně. Potom můžete vytvořit hlavní název služby jako identitu služby. Si můžete stáhnout nástroj [nástroj Windows 2000 Resource Kit: Setspn.exe](http://go.microsoft.com/fwlink/?LinkId=91752). Další informace o tomto nástroji naleznete v tématu [přehled nástroje Setspn](http://go.microsoft.com/fwlink/?LinkId=61374).  
+ Můžete také použít nástroje Setspn.exe Další SPN zaregistrovat u účtu služby v doméně. Hlavní název služby můžete pak použít jako identita služby. Stáhněte si nástroj, najdete v článku [Windows 2000 Resource Kit nástroj: Setspn.exe](https://go.microsoft.com/fwlink/?LinkId=91752). Další informace o tomto nástroji naleznete v tématu [přehled nástroje Setspn](https://go.microsoft.com/fwlink/?LinkId=61374).  
   
 > [!NOTE]
->  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, služby uživatelský účet musí mít přístup k hlavní název služby, která je zaregistrovaná u domény služby Active Directory. Můžete provést těmito způsoby:  
+>  Pokud chcete použít typ přihlašovacích údajů Windows bez vyjednávání, služby uživatelský účet musí mít přístup k hlavní název služby, které je zaregistrované v doméně služby Active Directory. Můžete to udělat následujícími způsoby:  
   
--   Použití účtu NetworkService nebo LocalSystem ke spouštění služby. Vzhledem k tomu, že tyto účty přístupu k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF automaticky generuje správné element SPN uvnitř koncový bod služby v metadatech služby (WSDL).  
+-   Použití účtu NetworkService nebo LocalSystem ke spouštění vaší služby. Vzhledem k tomu, že tyto účty mají přístup k počítači hlavní název služby, který je vytvořen, když je počítač připojen k doméně služby Active Directory, WCF automaticky generuje elementu řádné SPN uvnitř koncového bodu služby v služby metadat (WSDL).  
   
--   Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě vytvořte název SPN pro účet domény, což lze provést pomocí nástroje Setspn.exe nástroj. Jakmile vytvoříte název SPN pro účet služby, nakonfigurujte WCF publikovat tento hlavní název služby klientům služby prostřednictvím jeho metadata (WSDL). To se provádí nastavením identitu koncového bodu pro zveřejněné koncový bod, buď prostřednictvím konfiguračního souboru aplikace nebo kódu.  
+-   Použijte libovolný účet domény služby Active Directory ke spuštění služby. V takovém případě vytvořte název SPN pro účet domény, což lze provést pomocí nástroje Setspn.exe nástroj. Jakmile vytvoříte název SPN pro účet služby, nakonfigurujte WCF k publikování této hlavní název služby klientům služby prostřednictvím jeho metadat (WSDL). To se provádí nastavením identitě koncového bodu vystavené koncového bodu, buď prostřednictvím konfiguračního souboru aplikace nebo kódu.  
   
- Další informace o SPN, protokol Kerberos a služby Active Directory, naleznete v části [Kerberos technické Supplement pro Windows](http://go.microsoft.com/fwlink/?LinkId=88330).  
+ Další informace o SPN, protokol Kerberos a Active Directory, naleznete v tématu [Kerberos technické Supplement pro Windows](https://go.microsoft.com/fwlink/?LinkId=88330).  
   
-### <a name="when-spn-or-upn-equals-the-empty-string"></a>Pokud hlavní název služby nebo UPN rovná prázdný řetězec  
- Pokud nastavíte hlavní název služby nebo UPN rovna prázdný řetězec, situace, počet různých věcí v závislosti na úrovni a ověřování režim zabezpečení používá:  
+### <a name="when-spn-or-upn-equals-the-empty-string"></a>Pokud hlavní název služby nebo hlavní název uživatele se rovná prázdný řetězec  
+ Pokud nastavíte hlavní název služby nebo hlavní název uživatele rovna prázdný řetězec, stát, řada různých věcí v závislosti na úrovni a ověřování režimu, který používá:  
   
--   Pokud používáte zabezpečení na úrovni přenosu, je zvolen ověřování LanMan NT (NTLM).  
+-   Pokud používáte zabezpečení na úrovni přenosu, je vybrán LanMan NT (NTLM) authentication.  
   
--   Pokud používáte úroveň zabezpečení zpráv, může selhat ověřování, v závislosti na režim ověřování:  
+-   Pokud používáte zabezpečení na úrovni zpráv, ověřování se pravděpodobně nezdaří, v závislosti na režimu ověřování:  
   
--   Pokud používáte `spnego` režimu a `AllowNtlm` je atribut nastaven na `false`, ověřování selže.  
+-   Pokud používáte `spnego` režimu a `AllowNtlm` atribut je nastaven na `false`, selhání ověřování.  
   
--   Pokud používáte `spnego` režimu a `AllowNtlm` je atribut nastaven na `true`, ověření nezdaří, pokud hlavní název uživatele je prázdný, ale bude úspěšné, pokud hlavní název je prázdný.  
+-   Pokud používáte `spnego` režimu a `AllowNtlm` atribut je nastaven na `true`, ověření se nezdaří, pokud hlavní název uživatele je prázdná, ale bude úspěšné, pokud hlavní název služby je prázdný.  
   
--   Pokud používáte přímo pomocí protokolu Kerberos (také označované jako "jednorázové"), ověření se nezdaří.  
+-   Pokud používáte Kerberos přímé (označované také jako "jednorázové"), ověření se nezdaří.  
   
-### <a name="using-the-identity-element-in-configuration"></a>Pomocí \<identity > Element v konfiguraci  
- Pokud změníte typ pověření klienta vazba dříve zobrazí certifikát`,` pak generovaného WSDL obsahuje Base64 serializovat certifikátů X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí nastavení pro všechny typy pověření klienta než Windows.  
+### <a name="using-the-identity-element-in-configuration"></a>Použití \<identity > v elementu konfigurace  
+ Pokud změníte typ přihlašovacích údajů klienta ve vazbě bylo dříve uvedeno na certifikát`,` generovaného WSDL obsahuje Base64 serializovat certifikátů X.509 pro hodnotu identity, jak je znázorněno v následujícím kódu. Toto je výchozí pro všechny typy přihlašovacích údajů klienta jiné než Windows.  
   
   
   
- Můžete změnit hodnotu výchozí identitu služby nebo změňte typ identity pomocí <`identity`> element v konfiguraci nebo nastavení identity v kódu. Následující kód konfigurace nastaví identitu domain name system (DNS) s hodnotou `contoso.com`.  
+ Můžete změnit hodnotu výchozí identitu služby nebo změňte typ identity pomocí <`identity`> element v konfiguraci nebo nastavením identita v kódu. Následující kód konfigurace nastaví identitou system (DNS) název domény s hodnotou `contoso.com`.  
   
   
   
 ### <a name="setting-identity-programmatically"></a>Nastavení Identity prostřednictvím kódu programu  
- Služby není nutné explicitně zadat svou identitu, protože WCF automaticky určuje. Však WCF umožňuje zadat identity na koncový bod, pokud je to nutné. Následující kód přidá nový koncový bod služby s konkrétní identity DNS.  
+ Vaše služba není nutné explicitně určit identitu, protože WCF automaticky určuje. Ale WCF umožňuje určit identitu, která v koncovém bodě, podle potřeby. Následující kód přidá nový koncový bod služby s konkrétní identitu DNS.  
   
  [!code-csharp[C_Identity#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_identity/cs/source.cs#5)]
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  

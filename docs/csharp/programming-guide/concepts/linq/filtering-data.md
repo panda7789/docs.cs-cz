@@ -2,31 +2,31 @@
 title: Filtrování dat (C#)
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
-ms.openlocfilehash: ad8c167cf1b084c5e05bec84cd5c2f3f05716d03
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: df2f9f1bab7767365be65dbb60fb4af324ae3dab
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321490"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503294"
 ---
 # <a name="filtering-data-c"></a>Filtrování dat (C#)
-Filtrování odkazuje na operaci omezit tak, aby obsahovala pouze elementy, které splňují zadanou podmínku sadu výsledků dotazu. Je také označované jako výběr.  
+Filtrování odkazuje na operaci omezení sady výsledků do obsahovat pouze prvky, které splňují zadanou podmínku. Je také označován jako výběr.  
   
- Následující obrázek znázorňuje výsledky filtrování posloupnost znaků. Predikát pro filtrování operaci Určuje, že znak musí být "A".  
+ Následující obrázek ukazuje výsledky filtrování posloupnost znaků. Predikát pro filtrování operace určuje, že znak musí být "A".  
   
- ![LINQ filtrování operaci](../../../../csharp/programming-guide/concepts/linq/media/linq_filter.png "LINQ_Filter")  
+ ![Filtrování operace LINQ](../../../../csharp/programming-guide/concepts/linq/media/linq_filter.png "LINQ_Filter")  
   
- Operátor metody standardní dotazu, které provedení výběru jsou uvedeny v následující části.  
+ V následující části jsou uvedeny standardní metody operátoru dotazu, které provádějí výběru.  
   
 ## <a name="methods"></a>Metody  
   
 |Název metody|Popis|Syntaxe výrazu dotazu jazyka C#|Další informace|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|OfType|Vybere hodnoty, v závislosti na jejich schopnost převést na zadaný typ.|Nelze použít.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
+|OfType|Vybere hodnoty v závislosti na jejich schopnost převést na zadaný typ.|Nelze použít.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|  
 |Where|Vybere hodnoty, které jsou založeny na funkce predikátu.|`where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Příklad syntaxe výrazu dotazu  
- Následující příklad používá `where` klauzule vyfiltrujete z pole tyto řetězce, které mají určité délky.  
+ V následujícím příkladu `where` klauzule můžete filtrovat z pole těchto řetězců, které mají určité délky.  
   
 ```csharp  
 string[] words = { "the", "quick", "brown", "fox", "jumps" };  
@@ -45,11 +45,12 @@ foreach (string str in query)
 */  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Linq>  
- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- [where – klauzule](../../../../csharp/language-reference/keywords/where-clause.md)  
- [Postupy: dynamické určování filtrů predikátů při běhu](../../../../csharp/programming-guide/linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)  
- [Postupy: vytvoření dotazu na Metadata sestavení s reflexí (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)  
- [Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
- [Postupy: řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Linq>  
+- [Přehled standardních operátorů dotazu (C#)](../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
+- [where – klauzule](../../../../csharp/language-reference/keywords/where-clause.md)  
+- [Postupy: dynamické určování filtrů predikátů při běhu](../../../../csharp/programming-guide/linq-query-expressions/how-to-dynamically-specify-predicate-filters-at-runtime.md)  
+- [Postupy: dotazu na Metadata sestavení s reflexí (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)  
+- [Postupy: dotaz na soubory s konkrétním atributem či názvem (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)  
+- [Postupy: řazení nebo filtrování textových dat podle libovolného slova či pole (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

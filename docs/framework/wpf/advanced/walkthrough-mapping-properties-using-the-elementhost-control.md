@@ -9,11 +9,11 @@ helpviewer_keywords:
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
 ms.openlocfilehash: 34119d889c8d6600fdda12cac33192c32d8e0fa6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467121"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510008"
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Návod: Mapování vlastností použitím ovládacího prvku ElementHost
 

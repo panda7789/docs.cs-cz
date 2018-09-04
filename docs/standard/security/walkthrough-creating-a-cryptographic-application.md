@@ -13,11 +13,11 @@ ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a01da268a8347e93982604520f9dcb1d4e91327d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43389622"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43501612"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>Návod: Vytvoření šifrovací aplikace
 Tento návod ukazuje, jak šifrování a dešifrování obsahu. Příklady kódu jsou určeny pro aplikaci Windows Forms. Tato aplikace neukazuje reálných scénářů, jako je například používání čipových karet. Místo toho ukazuje základní informace o šifrování a dešifrování.  

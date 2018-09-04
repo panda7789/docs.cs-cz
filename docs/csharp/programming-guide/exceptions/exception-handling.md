@@ -5,12 +5,12 @@ helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: bbe9db48ab5cc1313c18fce66312f4334b40b9c5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: f6cc48843518a5d8791b6eda3e82a9f140039ceb
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43402792"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514039"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Zpracování výjimek (Průvodce programováním v C#)
 A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem programátory C# pro oddíl kódu, které by mohly mít dopad výjimky. Související [catch](../../../csharp/language-reference/keywords/try-catch.md) bloky se používají ke zpracování všech výsledný výjimek. A [nakonec](../../../csharp/language-reference/keywords/try-finally.md) obsahuje kód, který se spustí bez ohledu na to, zda je výjimka vyvolána bloku `try` bloku, jako je například uvolnění prostředků, které jsou přiděleny v `try` bloku. A `try` blok vyžaduje jeden nebo více přidružené `catch` bloky, nebo `finally` bloku nebo obojí.  
@@ -54,11 +54,12 @@ A [zkuste](../../../csharp/language-reference/keywords/try-catch.md) blokem prog
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)  
- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
- [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)  
- [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)
+## <a name="see-also"></a>Viz také
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Výjimky a jejich zpracování](../../../csharp/programming-guide/exceptions/index.md)  
+- [try-catch](../../../csharp/language-reference/keywords/try-catch.md)  
+- [try-finally](../../../csharp/language-reference/keywords/try-finally.md)  
+- [try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)  
+- [using – příkaz](../../../csharp/language-reference/keywords/using-statement.md)

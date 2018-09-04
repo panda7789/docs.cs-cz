@@ -13,11 +13,11 @@ ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 909b9369aba6b22899ae3fe7ac15eb470c5c2697
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43390754"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509175"
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 

@@ -4,12 +4,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: cbc75a2ec6fe826cb192b1e8bef61c7295f13916
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 2950d92f877a7e99734267a3071b2bcb25ce1023
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42924505"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509275"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Typy ukazatelů (Průvodce programováním v C#)
 
@@ -89,12 +89,13 @@ V následující tabulce je uveden seznam operátorů a příkazů, které moh
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
 ## <a name="see-also"></a>Viz také
- [Průvodce programováním v jazyce C#](../index.md)  
- [Nebezpečný kód a ukazatele](index.md)  
- [Převody ukazatele](pointer-conversions.md)  
- [Výrazy ukazatelů](pointer-expressions.md)  
- [Typy](../../language-reference/keywords/types.md)  
- [unsafe](../../language-reference/keywords/unsafe.md)  
- [fixed – příkaz](../../language-reference/keywords/fixed-statement.md)  
- [stackalloc](../../language-reference/keywords/stackalloc.md)  
- [Zabalení a rozbalení](../types/boxing-and-unboxing.md)
+
+- [Průvodce programováním v jazyce C#](../index.md)  
+- [Nebezpečný kód a ukazatele](index.md)  
+- [Převody ukazatele](pointer-conversions.md)  
+- [Výrazy ukazatelů](pointer-expressions.md)  
+- [Typy](../../language-reference/keywords/types.md)  
+- [unsafe](../../language-reference/keywords/unsafe.md)  
+- [fixed – příkaz](../../language-reference/keywords/fixed-statement.md)  
+- [stackalloc](../../language-reference/keywords/stackalloc.md)  
+- [Zabalení a rozbalení](../types/boxing-and-unboxing.md)

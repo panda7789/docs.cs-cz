@@ -1,16 +1,16 @@
 ---
-title: 'Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)'
+title: 'Postupy: dotaz na soubory s konkrétním atributem či názvem (C#)'
 ms.date: 07/20/2015
 ms.assetid: 560e3879-b0b3-4549-ad02-0a53aff2f83c
-ms.openlocfilehash: ee366f551eb73059196cb4dcd61c1ca42bf55fda
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b353ec17284235a97135003bc07f7224082cb4a
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33324353"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43500904"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Postupy: dotaz pro soubory s konkrétním atributem či názvem (C#)
-Tento příklad ukazuje, jak najít všechny soubory, které mají příponu názvu zadaný soubor (například ".txt") v zadané adresářovém stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu podle času vytvoření.  
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-c"></a>Postupy: dotaz na soubory s konkrétním atributem či názvem (C#)
+Tento příklad ukazuje, jak vyhledat všechny soubory, které mají příponu názvu souboru (například ".txt") v zadaném adresáři stromu. Také ukazuje, jak vrátit nejnovější nebo nejstarší soubor ve stromu na základě času vytvoření.  
   
 ## <a name="example"></a>Příklad  
   
@@ -64,8 +64,9 @@ class FindFileByExtension
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ na objekty (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

@@ -3,11 +3,11 @@ title: + (Zřetězení řetězců) (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 580130fa-6c7c-4f76-a47d-d22c27ccadf6
 ms.openlocfilehash: 8a1785d590c5f7fcc443856180d516bb40cfc28e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408471"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43500877"
 ---
 # <a name="-string-concatenation-entity-sql"></a>+ (Zřetězení řetězců) (Entity SQL)
 Spojuje dva řetězce.  

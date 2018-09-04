@@ -10,11 +10,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 4a83f1e67377a5ce699301770ff0369f8f760884
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43387325"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43508466"
 ---
 # <a name="specifying-an-assembly39s-location"></a>Určení sestavení&#39;s umístění
 Existují dva způsoby, jak zadat umístění sestavení:  

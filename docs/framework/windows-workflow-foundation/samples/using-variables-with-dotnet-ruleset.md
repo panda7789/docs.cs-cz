@@ -3,11 +3,11 @@ title: Použití proměnných se sadou pravidel rozhraní .NET Framework 3.5
 ms.date: 03/30/2017
 ms.assetid: 27b56249-22fe-4252-840f-74c0d6c7a6b3
 ms.openlocfilehash: 64d47564076e19e152e30b6ab0cb3900ce53cfa1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43395151"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43512851"
 ---
 # <a name="using-variables-with-a-net-framework-35-ruleset"></a>Použití proměnných se sadou pravidel rozhraní .NET Framework 3.5
 Tato ukázka předvádí, jak vytvořit pracovní postup, který se používá <xref:System.Activities.Statements.Interop> aktivity integrovat vlastní aktivity v [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] , která používá zásad a pravidel. Pracovní postup se předá data vlastní aktivity pomocí vazby proměnné na závislost vlastností vystavovaných třídami vlastní aktivity.  

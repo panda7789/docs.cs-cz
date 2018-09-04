@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: načtení hodnoty bez podstruktury elementu (C#)'
+title: 'Postupy: načtení mělké hodnoty elementu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
-ms.openlocfilehash: 47c7cdd118a14070ea3a005bda88b55cc7075185
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7e1a5b216a02ca72fa49785e50ed262a89abfcdf
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33325939"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505301"
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Postupy: načtení hodnoty bez podstruktury elementu (C#)
-Toto téma ukazuje, jak získat bez podstruktury hodnotu elementu. Bez podstruktury hodnota je hodnota pouze konkrétní elementu oproti hloubkové hodnotu, která obsahuje hodnoty všechny podřízené elementy zřetězen do jednoho řetězce.  
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Postupy: načtení mělké hodnoty elementu (C#)
+Toto téma ukazuje, jak získat mělké hodnoty elementu. Mělké hodnoty je hodnota konkrétní elementu, na rozdíl od hloubkové hodnotu, která obsahuje hodnoty všechny podřízené prvky, které jsou spojeny do jednoho řetězce.  
   
- Pokud načítáte hodnotu prvku s použitím buď přetypování nebo <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost načíst hloubkové hodnotu. Chcete-li načíst bez podstruktury hodnotu, můžete použít `ShallowValue` rozšíření metoda, jak je znázorněno v příkladu toto. Načítání bez podstruktury hodnota je užitečné, pokud chcete vybrat elementy na základě jejich obsahu.  
+ Při načítání hodnotu prvku pomocí obou přetypování nebo <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost, získáte podrobné hodnotu. K načtení mělké hodnoty, můžete použít `ShallowValue` rozšiřující metoda, jak je znázorněno v příkladu naleznete. Načtení mělké hodnoty je užitečné, pokud chcete vybrat elementy na základě jejich obsahu.  
   
- Následující příklad uvádí metody rozšíření, která načte bez podstruktury hodnotu elementu. Pak používá metoda rozšíření v dotazu seznam všechny elementy, které obsahují počítanou hodnotu.  
+ Následující příklad deklaruje metodu rozšíření, která načte mělké hodnoty elementu. Pak používá metody rozšíření v dotazu k výpisu všech prvků, které obsahují počítané hodnoty.  
   
 ## <a name="example"></a>Příklad  
- Následující textový soubor, Report.xml, je zdrojem v tomto příkladu.  
+ Následující textový soubor, Report.xml, je zdrojem pro účely tohoto příkladu.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -79,5 +79,6 @@ Column  Name="CustomerId"   =Customer.CustomerId
 Column  Name="Name"         =Customer.Name  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML osy (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+## <a name="see-also"></a>Viz také
+
+- [Osy LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

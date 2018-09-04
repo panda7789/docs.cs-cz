@@ -15,11 +15,11 @@ ms.assetid: 8dd45b02-7218-40f9-857d-40d7b98b850b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: eb2485f2ecf0426360dba80d443500a92b5a7af6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43482220"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43510051"
 ---
 # <a name="add-ins-and-extensibility"></a>Doplňky a rozšíření
 <a name="top"></a> Doplňky poskytují rozšířené funkce nebo služby pro hostitelskou aplikaci. [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Poskytuje programovací model, který mohou vývojáři k vývoji doplňky a aktivovat ve své hostitelské aplikaci. Model toho dosahuje tak, že vytváří komunikační kanál mezi hostitelem a doplňku. Model je implementovaný s využitím typy v <xref:System.AddIn>, <xref:System.AddIn.Hosting>, <xref:System.AddIn.Pipeline>, a <xref:System.AddIn.Contract> obory názvů.  

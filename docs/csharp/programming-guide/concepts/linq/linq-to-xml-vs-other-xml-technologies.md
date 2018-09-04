@@ -2,12 +2,12 @@
 title: LINQ to XML versus. Další Technologies3 XML
 ms.date: 07/20/2015
 ms.assetid: 01b8e746-12d3-471d-b811-7539e4547784
-ms.openlocfilehash: 5c8b043055660ad272e46e72c877729086689158
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 2b9ae3a71dab0e9d355cf2d86eebd2763885caaf
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199196"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43503167"
 ---
 # <a name="linq-to-xml-vs-other-xml-technologies"></a>LINQ to XML versus. Jiné technologie XML
 Toto téma srovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na následující technologie XML: <xref:System.Xml.XmlReader>, XSLT, MSXML a analyzátoru XmlLite. Tyto informace mohou pomoci při rozhodování, technologii, která má použít.  
@@ -52,5 +52,6 @@ Toto téma srovnává [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] na n
   
  Analyzátor XmlLite není integrován s [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Nevydává programátor vylepšení produktivity, které mají být motivačním nuceně za [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Začínáme (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/getting-started-linq-to-xml.md)

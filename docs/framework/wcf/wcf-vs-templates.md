@@ -3,11 +3,11 @@ title: Šablony Visual Studia pro WCF
 ms.date: 03/30/2017
 ms.assetid: 6a608575-3535-4190-89da-911e24c8374f
 ms.openlocfilehash: 73d2645977381602ef028d091675a22fb933d60b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43423028"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43512706"
 ---
 # <a name="wcf-visual-studio-templates"></a>Šablony Visual Studia pro WCF
 Šablony sady Visual Studio Windows Communication Foundation (WCF) jsou předdefinované šablony projektů a položek, které můžete použít k rychlému vytvoření služby WCF a okolního aplikace v sadě Visual Studio.  

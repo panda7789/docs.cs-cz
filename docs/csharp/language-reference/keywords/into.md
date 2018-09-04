@@ -8,11 +8,11 @@ helpviewer_keywords:
 - into keyword [C#]
 ms.assetid: 81ec62c1-f0b1-4755-8a31-959876e77f65
 ms.openlocfilehash: 6d46ae67dd84650172125c62ea70dc109671a89b
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934763"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507840"
 ---
 # <a name="into-c-reference"></a>into (Referenční dokumentace jazyka C#)
 

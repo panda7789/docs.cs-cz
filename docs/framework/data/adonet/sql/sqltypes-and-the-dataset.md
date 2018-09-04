@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 9172c20a-9876-4b3b-9c97-1963c02b1993
 ms.openlocfilehash: fe00e669449d40320a2038697976423db83ade5b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394204"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43511544"
 ---
 # <a name="sqltypes-and-the-dataset"></a>SqlTypes a datová sada
 ADO.NET 2.0 zavedené rozšířenou podporu typu `DataSet` prostřednictvím <xref:System.Data.SqlTypes> oboru názvů. Typy v <xref:System.Data.SqlTypes> poskytují datové typy jako typy dat v databázi serveru SQL Server pomocí stejné sémantiky a přesnosti. Každý datový typ ve <xref:System.Data.SqlTypes> má odpovídající datový typ v systému SQL Server se stejnou reprezentaci podkladová data.  

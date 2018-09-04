@@ -5,11 +5,11 @@ ms.assetid: 8c0d01d5-67e5-4522-9ccf-c8f3a78cb4fd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d3826bacb935652a282eac359170d9b93518e5cd
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931795"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509146"
 ---
 # <a name="icordebugmutabledatatargetsetthreadcontext-method"></a>ICorDebugMutableDataTarget::SetThreadContext – metoda
 Nastaví kontext (hodnot registru) pro vlákno.  

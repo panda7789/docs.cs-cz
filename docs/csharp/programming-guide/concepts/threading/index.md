@@ -3,11 +3,11 @@ title: Dělení na vlákna (C#)
 ms.date: 07/20/2015
 ms.assetid: 236d157d-37c0-4ee8-89fc-721e6c596325
 ms.openlocfilehash: ca5b2b2d38e72d3511a570c22a153e792a27a04a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43456912"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507786"
 ---
 # <a name="threading-c"></a>Dělení na vlákna (C#)
 Práce s vlákny umožňuje programu jazyka C# provádět souběžné zpracování tak, že máte více než jednu operaci najednou. Například můžete dělení na vlákna pro monitorování vstup od uživatele, provedení úlohy na pozadí a zpracování současných vstupů.  

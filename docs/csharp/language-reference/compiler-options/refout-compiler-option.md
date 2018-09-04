@@ -8,11 +8,11 @@ helpviewer_keywords:
 - /refout compiler option [C#]
 - -refout compiler option [C#]
 ms.openlocfilehash: e204a053f6f68a4b848d22c95c98f04edff58716
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43391431"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43506622"
 ---
 # <a name="-refout-c-compiler-options"></a>-refout (možnosti kompilátoru C#)
 

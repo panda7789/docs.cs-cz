@@ -3,11 +3,11 @@ title: '&lt;webSocketSettings&gt;'
 ms.date: 03/30/2017
 ms.assetid: bbf97e02-8dd1-4922-acac-3cd33397b249
 ms.openlocfilehash: e5f34dca83c8d3d08d27fb72bee5af2a89ac6b9f
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43416425"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43511911"
 ---
 # <a name="ltwebsocketsettingsgt"></a>&lt;webSocketSettings&gt;
 Prvek konfigurace určuje nastavení Websocket.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - rectangles [WPF], drawing
 ms.assetid: beeb57ef-fab5-4446-a38a-1588f97b4c2f
 ms.openlocfilehash: 5f65bd11976817fe3f4d3e5d016f820a249769c3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484763"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43506151"
 ---
 # <a name="how-to-draw-a-rectangle"></a>Postupy: Vykreslení obdélníku
 Tento příklad ukazuje, jak nakreslit obdélník s použitím <xref:System.Windows.Shapes.Rectangle> elementu.  

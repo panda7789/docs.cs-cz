@@ -11,11 +11,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 3fdc3786be3307e8c882a33b5139ee34344733b8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404407"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504815"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>Postupy: Vytváření zásad vydavatele
 Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější verze sestavení zahrnutím souboru zásad vydavatele s upgradovaný sestavení. Soubor zásad vydavatele, který určuje přesměrování sestavení a nastavení základní kód a používá stejný formát jako konfigurační soubor aplikace. Soubor zásad vydavatele, který je zkompilován sestavení a umístěn v globální mezipaměti sestavení.  
@@ -92,7 +92,7 @@ Dodavatelé sestavení mohou stavu, že aplikace by měly používat novější 
   
 1.  Na příkazovém řádku zadejte následující příkaz:  
   
-     **Gacutil /i***publisherPolicyAssemblyFile*   
+     **Gacutil /i***publisherPolicyAssemblyFile*  
   
      Následující příkaz přidá `policy.1.0.myAssembly.dll` do globální mezipaměti sestavení.  
   
