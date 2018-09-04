@@ -5,63 +5,63 @@ helpviewer_keywords:
 - WCF [WCF], troubleshooting
 - Windows Communication Foundation [WCF], troubleshooting
 ms.assetid: a9ea7a53-f31a-46eb-806e-898e465a4992
-ms.openlocfilehash: e752f6f4428d01474d643f1571935cb7d96d41ca
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 368faf0881c5c0073fe8367a051b6c6c802b9110
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808520"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536001"
 ---
 # <a name="wcf-troubleshooting-quickstart"></a>Řešení potíží s WCF – úvodní příručka
-Toto téma uvádí počet známé problémy, se kterými se zákazníci spustili do při vývoj klienti WCF a služeb. Pokud problém, který běží na není v tomto seznamu, doporučujeme že konfigurovat trasování pro služby. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče soubor trasování a získat podrobné informace o výjimkách, který může vyskytovat v rámci služby. Další informace o konfiguraci trasování najdete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o prohlížeči soubor trasování najdete v tématu: [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
+Toto téma uvádí počet známé problémy, které mají zákazníci spouštět do při vývoji klientů WCF a služeb. Pokud se problém, který běží na není v tomto seznamu, doporučujeme že nakonfigurovat trasování pro vaši službu. Tím se vygeneruje soubor trasování, můžete zobrazit pomocí prohlížeče trasování souboru a získat podrobné informace o výjimkách, které může docházet v rámci služby. Další informace o konfiguraci trasování, naleznete v tématu: [Konfigurace trasování](../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md). Další informace o souboru prohlížeče trasování, naleznete v tématu: [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
   
-1.  [Po instalaci systému Windows 7 a IIS, při pokusu o přejděte do služby WCF zobrazí následující chybová zpráva: HTTP Chyba 404.3 – nebyla nalezena](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
+1.  [Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazila tato chybová zpráva: Chyba 404.3 HTTP – nebyl nalezen](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#bkmk_0)  
   
-     Chyba protokolu HTTP 404.3 – není FoundThe stránku nelze zpracovat kvůli konfiguraci rozšíření. Pokud je stránce skript, přidejte obslužnou rutinu. Pokud by měl být soubor stažen, přidejte mapování dat MIME. Iisver InformationModule podrobné informace o chybě.  
+     Chyba protokolu HTTP 404.3 – Not FoundThe stránky, pro který žádáte nelze zpracovat z důvodu konfigurace rozšíření. Pokud na stránce je skript, přidejte obslužnou rutinu. Pokud mají být stažené souboru, přidejte mapování MIME. Iisver InformationModule podrobné informace o chybě.  
   
-2.  [Pokud klient nečinný nějakou dobu, po prvním požadavku se někdy zobrazí messagesecurityexception – na druhý žádosti. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q1)  
+2.  [Někdy zobrazila messagesecurityexception – na druhou žádost, pokud klient je nečinný po nějakou dobu od prvního požadavku. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q1)  
   
-3.  [Moje služba začne odmítnout nové klienty po asi 10 klienti komunikují s ním. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q2)  
+3.  [Služba začne odmítnout nové klienty po přibližně 10 klientů jsou interakci s ní. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q2)  
   
-4.  [Můžete načíst Moje konfigurace služby z jinde, než konfigurační soubor WCF aplikace?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q3)  
+4.  [Můžete načíst konfiguraci služby z jinde, než konfigurační soubor WCF aplikace?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q3)  
   
-5.  [Moje služba a klient pracovní velká, ale I nelze získat nich mohli pracovat, když se klient nachází v jiném počítači? Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q4)  
+5.  [Služba a skvěle fungují klienta, ale nemůžu nelze získat pracovat nacházející se v jiném počítači? Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q4)  
   
-6.  [I když throw FaultException\<výjimka > typ jsou výjimku, bylo vždycky přijímat obecného typu FaultException na straně klienta a není obecného typu. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q5)  
+6.  [Kdy můžu výjimku FaultException\<výjimky > tam, kde je typ výjimky, vždy zobrazila se obecným typem FaultException v klientském počítači a ne obecného typu. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q5)  
   
-7.  [Podle všeho jako jednosměrný a operace požadavek odpověď vracet přibližně stejnou rychlostí odpověď neobsahuje žádná data. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q6)  
+7.  [To vypadá jako jsou jednosměrná a operace požadavek odpověď vracet rychlostí přibližně stejnou odpověď neobsahuje žádná data. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q6)  
   
-8.  [Používám certifikát X.509 s mé služby a získat System.Security.Cryptography.CryptographicException. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q77)  
+8.  [Používám certifikát X.509 pomocí svojí služby a získat System.Security.Cryptography.CryptographicException. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q77)  
   
-9. [První parametr operace bylo změněno z velkých písmen na malá písmena; Teď Moje klienta vyvolá výjimku. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q88)  
+9. [Můžu změnit první parametr operace z velkých písmen na malá písmena; Klient teď dojde k výjimce. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q88)  
   
-10. [Používám jeden z mých trasování nástrojů a získat endpointnotfoundexception –. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q99)  
+10. [Používám jedním z nástrojů Moje trasování a získat endpointnotfoundexception –. Co se děje?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q99)  
   
-11. [Při volání z aplikace WCF SOAP služby WCF Web HTTP aplikace vrátí následující chybu: není povoleno 405 – Metoda](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BK_MK99)  
+11. [Při volání webových služeb HTTP WCF aplikace z aplikace WCF SOAP služby vrátí následující chybu: není povoleno 405 – Metoda](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BK_MK99)  
   
- [Co je základní adresa? Jak vztahují k adresu koncového bodu?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q10)  
+ [Co je základní adresa? Jak to souvisí adresy koncového bodu?](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md#BKMK_q10)  
   
 <a name="bkmk_0"></a>   
-## <a name="after-installing-windows-7-and-iis-when-i-attempt-to-browse-to-a-wcf-service-i-get-the-following-error-message-http-error-4043--not-found"></a>Po instalaci systému Windows 7 a IIS, při pokusu o přejděte do služby WCF zobrazí následující chybová zpráva: HTTP Chyba 404.3 – nebyla nalezena  
- Je celá chybová zpráva:  
+## <a name="after-installing-windows-7-and-iis-when-i-attempt-to-browse-to-a-wcf-service-i-get-the-following-error-message-http-error-4043--not-found"></a>Po instalaci Windows 7 a IIS se při pokusu přejděte na službu WCF zobrazila tato chybová zpráva: Chyba 404.3 HTTP – nebyl nalezen  
+ Je úplné chybová zpráva:  
   
- Chyba protokolu HTTP 404.3 – není FoundThe stránku nelze zpracovat kvůli konfiguraci rozšíření. Pokud je stránce skript, přidejte obslužnou rutinu. Pokud by měl být soubor stažen, přidejte mapování dat MIME. Iisver InformationModule podrobné informace o chybě.  
+ Chyba protokolu HTTP 404.3 – Not FoundThe stránky, pro který žádáte nelze zpracovat z důvodu konfigurace rozšíření. Pokud na stránce je skript, přidejte obslužnou rutinu. Pokud mají být stažené souboru, přidejte mapování MIME. Iisver InformationModule podrobné informace o chybě.  
   
- Tato chybová zpráva nastane, když "Windows Communication Foundation HTTP aktivace" není explicitně nastavena v Ovládacích panelech. Nastavit tento přejděte na ovládacích panelech, klikněte v levém dolním rohu okna programy. Zapnout nebo vypnout, klikněte na možnost zapnout funkce systému Windows. Rozhraní Microsoft .NET Framework 3.5.1 rozbalte a vyberte aktivace Windows Communication Foundation HTTP.  
+ Této chybě dochází, když "Windows Communication Foundation HTTP aktivace" není explicitně nastavena v Ovládacích panelech. Pokud chcete nastavit přejděte do ovládacích panelů, klikněte na programy v dolním levém dolním rohu okna. Zapnutí nebo vypnutí, klikněte na zapnout Windows funkce. Rozhraní Microsoft .NET Framework 3.5.1 rozbalte a vyberte aktivace protokolu HTTP Windows Communication Foundation.  
   
 <a name="BKMK_q1"></a>   
-## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a>Pokud klient nečinný nějakou dobu, po prvním požadavku se někdy zobrazí messagesecurityexception – na druhý žádosti. Co se děje?  
- Druhá žádost neúspěšně především dvou důvodů: Vypršel časový limit relace (1) nebo (2) je webový server, který je hostitelem služby je recykluje. V prvním případě relace je platný, dokud služba vyprší časový limit. Když službu neobdrží žádost od klienta v rámci doba zadaná v vazby služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončuje relaci zabezpečení. Výsledkem zprávy následné klienta <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit relaci zabezpečené službou odeslat další zprávy nebo použijte tokenu kontextu stavová zabezpečení. Tokeny kontextu zabezpečení stavová také povolit zabezpečené relace zůstanou zachovány i recyklovány webového serveru. Další informace o používání tokenů stavová kontextu zabezpečení v zabezpečené relaci najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Alternativně můžete zakázat zabezpečených relací. Při použití [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) vazby, můžete nastavit `establishSecurityContext` vlastnost `false` zakázání zabezpečených relací. Zakázání zabezpečených relací u dalších vazeb, musíte vytvořit vlastní vazby. Podrobnosti o vytváření vlastních vazeb najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některý z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
+## <a name="sometimes-i-receive-a-messagesecurityexception-on-the-second-request-if-my-client-is-idle-for-a-while-after-the-first-request-what-is-happening"></a>Někdy zobrazila messagesecurityexception – na druhou žádost, pokud klient je nečinný po nějakou dobu od prvního požadavku. Co se děje?  
+ Druhou žádost může selhat především pro dva důvody: Vypršel časový limit relace (1) nebo (2) na webový server, který je hostitelem služby recykluje. V prvním případě relace je platné, dokud služba vyprší časový limit. Když služba neobdrží žádost o z klienta v době, zadaná ve vazbě služby (<xref:System.ServiceModel.Channels.Binding.ReceiveTimeout%2A>), služba ukončuje relace zabezpečení. Výsledkem zpráv následné klienta <xref:System.ServiceModel.Security.MessageSecurityException>. Klient musí znovu vytvořit relaci zabezpečení ve službě odeslat další zprávy nebo použít token kontextu zabezpečení stavové. Tokeny kontextu zabezpečení stavové umožňují zabezpečenou relaci nezbytné k překonání neumožňovala recyklaci, webový server. Další informace o použití tokenů stavové zabezpečené kontextu v zabezpečené relaci v tématu [jak: vytvořit Token kontextu zabezpečení pro zabezpečenou relaci](../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md). Alternativně můžete zakázat zabezpečených relací. Při použití [ \<wsHttpBinding >](../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) vazby, můžete nastavit `establishSecurityContext` vlastnost `false` zakázání zabezpečených relací. Zakázání zabezpečených relací u jiných vazeb, musíte vytvořit vlastní vazby. Podrobnosti o vytvoření vlastní vazby najdete v tématu [postupy: vytvoření vlastní vazby pomocí elementu SecurityBindingElement](../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md). Než použijete některý z těchto možností, musíte pochopit požadavky na zabezpečení vaší aplikace.  
   
 <a name="BKMK_q2"></a>   
-## <a name="my-service-starts-to-reject-new-clients-after-about-10-clients-are-interacting-with-it-what-is-happening"></a>Moje služba začne odmítnout nové klienty po asi 10 klienti komunikují s ním. Co se děje?  
- Ve výchozím nastavení služby může mít jenom 10 souběžných relací. Proto pokud vazby služby použít relací, služba přijímá nová připojení klienta dokud nedosáhne počet, po jejímž uplynutí odmítne nová připojení klienta až jeden z konců aktuální relace. Může podporovat více klientů v několika způsoby. Pokud vaše služba nevyžaduje relací, nepoužívejte vazbu relacemi. (Další informace najdete v tématu [pomocí relace](../../../docs/framework/wcf/using-sessions.md).) Další možností je zvýšení limitu relace tak, že změníte hodnotu <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> vlastnost na číslo, které jsou vhodné pro vaše okolnosti.  
+## <a name="my-service-starts-to-reject-new-clients-after-about-10-clients-are-interacting-with-it-what-is-happening"></a>Služba začne odmítnout nové klienty po přibližně 10 klientů jsou interakci s ní. Co se děje?  
+ Ve výchozím nastavení služby může mít jenom 10 souběžných relací. Proto pokud vazby služby použít relace, služba přijímá nová připojení klientů. dokud nebude dosaženo toto číslo, po jejímž uplynutí odmítne nová připojení klientů. dokud jeden z konců aktuální relace. Může podporovat více klientů v několika způsoby. Pokud vaše služba nevyžaduje žádné relace, nepoužívejte vazby s relacemi. (Další informace najdete v tématu [s využitím relací](../../../docs/framework/wcf/using-sessions.md).) Další možností je, aby zvýšil limit relace tak, že změníte hodnotu <xref:System.ServiceModel.Description.ServiceThrottlingBehavior.MaxConcurrentSessions%2A> vlastnost na číslo, které jsou vhodné pro vaši situaci.  
   
 <a name="BKMK_q3"></a>   
-## <a name="can-i-load-my-service-configuration-from-somewhere-other-than-the-wcf-applications-configuration-file"></a>Můžete načíst Moje konfigurace služby z jinde, než konfigurační soubor WCF aplikace?  
- Ano, ale je nutné vytvořit vlastní <xref:System.ServiceModel.ServiceHost> třídu, která přepisuje <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> metoda. Uvnitř této metody můžete volat základní nejdřív načíst konfiguraci (Pokud chcete načíst informace o standardní konfiguraci i), ale můžete také úplně nahradit konfigurace načítání systému. Všimněte si, že pokud chcete načíst konfiguraci z konfiguračního souboru, který se liší od konfiguračního souboru aplikace, musíte analyzovat konfigurační soubor a načíst konfiguraci.  
+## <a name="can-i-load-my-service-configuration-from-somewhere-other-than-the-wcf-applications-configuration-file"></a>Můžete načíst konfiguraci služby z jinde, než konfigurační soubor WCF aplikace?  
+ Ano, ale je nutné vytvořit vlastní <xref:System.ServiceModel.ServiceHost> třídu, která přepíše <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> metody. Uvnitř této metody lze volat základní nejdřív načíst konfiguraci (Pokud chcete načíst informace o konfiguraci standardní i), ale můžete nahradit také zcela konfiguraci načítání systému. Všimněte si, že pokud chcete načíst konfiguraci z konfiguračního souboru, který se liší od konfiguračního souboru aplikace, musíte analyzovat konfigurační soubor a načíst konfiguraci.  
   
- Následující příklad kódu ukazuje, jak lze přepsat <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> metoda a přímo konfigurace koncového bodu.  
+ Následující příklad kódu ukazuje, jak přepsat <xref:System.ServiceModel.ServiceHostBase.ApplyConfiguration%2A> metoda a přímo konfigurace koncového bodu.  
   
 ```csharp
 public class MyServiceHost : ServiceHost  
@@ -95,18 +95,18 @@ public class MyServiceHost : ServiceHost
 ```  
   
 <a name="BKMK_q4"></a>   
-## <a name="my-service-and-client-work-great-but-i-cant-get-them-to-work-when-the-client-is-on-another-computer-whats-happening"></a>Moje služba a klient pracovní velká, ale I nelze získat nich mohli pracovat, když se klient nachází v jiném počítači? Co se děje?  
- V závislosti na výjimku, může existovat několik výhrad:  
+## <a name="my-service-and-client-work-great-but-i-cant-get-them-to-work-when-the-client-is-on-another-computer-whats-happening"></a>Služba a skvěle fungují klienta, ale nemůžu nelze získat pracovat nacházející se v jiném počítači? Co se děje?  
+ V závislosti na výjimku, může existovat několik problémů:  
   
--   Možná budete muset změňte adresy koncových bodů klienta na název hostitele a není "localhost".  
+-   Můžete potřebovat změnit adresy koncových bodů klienta na název hostitele a není "localhost".  
   
--   Možná budete muset otevřít port, který se aplikace. Podrobnosti najdete v tématu [pokyny k bráně Firewall](../../../docs/framework/wcf/samples/firewall-instructions.md) z ukázky SDK.  
+-   Můžete potřebovat pro otevření portu pro aplikaci. Podrobnosti najdete v tématu [pokyny k bráně Firewall](../../../docs/framework/wcf/samples/firewall-instructions.md) z ukázky SDK.  
   
--   Další možných problémů naleznete v tématu ukázky [spuštění ukázky v pracovní skupině a počítačů přes](http://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113).  
+-   Další možné problémy, naleznete v tématu ukázky [spouštění ukázek v určité pracovní skupině a počítačů přes](https://msdn.microsoft.com/library/a451a525-e7ce-452d-9da9-620221260113).  
   
--   Pokud je váš klient je pomocí pověření systému Windows a výjimky <xref:System.ServiceModel.Security.SecurityNegotiationException>, následujícím způsobem konfigurace protokolu Kerberos.  
+-   Pokud váš klient se pomocí přihlašovacích údajů Windows a je výjimka <xref:System.ServiceModel.Security.SecurityNegotiationException>, následujícím způsobem konfigurace protokolu Kerberos.  
   
-    1.  Přidejte tato pověření identity do koncového bodu element v souboru App.config klienta:  
+    1.  Přidáte přihlašovací údaje identity na element koncového bodu v souboru App.config pro klienta:  
   
         ```xml
         <endpoint   
@@ -122,55 +122,55 @@ public class MyServiceHost : ServiceHost
         </endpoint>  
         ```  
   
-    2.  Spusťte službu vlastním hostováním pod účtem systému nebo NetworkService. Můžete spustit tento příkaz k vytvoření příkazové okno pod účtem System:  
+    2.  Spusťte službu v místním prostředí pomocí účtu systému nebo NetworkService. Můžete spustit tento příkaz vytvoří příkazové okno pod účtem systému:  
   
         ```console
         at 12:36 /interactive "cmd.exe"  
         ```  
   
-    3.  Hostování v části Internetovou informační služby (IIS), což, standardně používá účet služby (SPN) pro hlavní název služby.  
+    3.  Hostování služby v rámci formátu RTF (Internetová informační služba), která standardně používá účet (SPN) pro hlavní název služby.  
   
-    4.  Zaregistrujte novou hlavního názvu služby k doméně pomocí nástroje SetSPN. Všimněte si, že musíte být správce domény, pokud to chcete provést.  
+    4.  Nový název SPN zaregistrujte domény pomocí nástroje SetSPN. Všimněte si, že musíte být správcem domény, pokud to chcete udělat.  
   
  Další informace o protokolu Kerberos najdete v tématu [zabezpečení koncepty používané ve službě WCF](../../../docs/framework/wcf/feature-details/security-concepts-used-in-wcf.md) a:  
   
 -   [Ladění chyb u ověřování Windows](../../../docs/framework/wcf/feature-details/debugging-windows-authentication-errors.md)  
   
--   [Registrace pomocí ovladače Http.sys hlavní názvy služby protokolu Kerberos](http://go.microsoft.com/fwlink/?LinkId=86943)  
+-   [Registrace pomocí Http.sys hlavní názvy služby protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=86943)  
   
--   [Vysvětlení protokolu Kerberos](http://go.microsoft.com/fwlink/?LinkId=86946)  
+-   [Vysvětlení protokolu Kerberos](https://go.microsoft.com/fwlink/?LinkId=86946)  
   
 <a name="BKMK_q5"></a>   
-## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a>I když throw FaultException\<výjimka > typ jsou výjimku, bylo vždycky přijímat obecného typu FaultException na straně klienta a není obecného typu. Co se děje?  
- Důrazně doporučujeme, abyste vytvořili vlastní vlastní chybové datový typ a prohlásí, že jako typ podrobností v vaše chyba – kontrakt. Důvodem je, že použití typů poskytované systémem výjimka:  
+## <a name="when-i-throw-a-faultexceptionexception-where-the-type-is-an-exception-i-always-receive-a-general-faultexception-type-on-the-client-and-not-the-generic-type-whats-happening"></a>Kdy můžu výjimku FaultException\<výjimky > tam, kde je typ výjimky, vždy zobrazila se obecným typem FaultException v klientském počítači a ne obecného typu. Co se děje?  
+ Důrazně doporučujeme vytvořit vlastní vlastní chybové datový typ a deklarovat, že jako typ podrobností ve vaší smlouvě selhání. Důvodem je, že pomocí typy poskytované systémem výjimek:  
   
--   Vytvoří závislost na typ, který odebere jeden z největších výhod aplikace orientované na služby.  
+-   Vytvoří závislost na typ, který odebere jeden z největších výhod aplikací orientovaných na služby.  
   
--   Nelze závisí na výjimky serializaci standardním způsobem. Některé – jako <xref:System.Security.SecurityException>– nemusí být serializovatelný vůbec.  
+-   Nemohou záviset na výjimky serializace standardním způsobem. Některé – například <xref:System.Security.SecurityException>– nemusí být vůbec serializovatelný.  
   
--   Zpřístupní podrobnosti interní implementace klientům. Další informace najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
+-   Poskytuje podrobnosti interní implementace klientům. Další informace najdete v tématu [zadání a zpracování chyb v kontraktech a službách](../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md).  
   
  Pokud ladíte aplikaci, ale může serializovat informace o výjimce a vrátí klientovi pomocí <xref:System.ServiceModel.Description.ServiceDebugBehavior> třídy.  
   
 <a name="BKMK_q6"></a>   
-## <a name="it-seems-like-one-way-and-request-reply-operations-return-at-roughly-the-same-speed-when-the-reply-contains-no-data-whats-happening"></a>Podle všeho jako jednosměrný a operace požadavek odpověď vracet přibližně stejnou rychlostí odpověď neobsahuje žádná data. Co se děje?  
- Určení, že operace je jedním ze způsobů pouze znamená, že operace kontrakt přijímá zprávy při zadávání a nevrací zprávu výstup. Ve službě WCF všechna volání vracet odchozí data byla zapsána na sítě, nebo je vyvolána výjimka. Jednosměrná operace fungují stejně a můžete vyvolají, pokud služba nemůže najít nebo blokovat, pokud služba není připraven na příjem dat ze sítě. Obvykle ve WCF, výsledkem je jednosměrný volání vrácením klientovi rychleji než požadavek odpověď; ale žádné podmínku, která zpomalí odesílání odchozí data v síti zpomalí Jednosměrná operace, jakož i operace požadavek odpověď. Další informace najdete v tématu [One-Way služby](../../../docs/framework/wcf/feature-details/one-way-services.md) a [přístup k službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
+## <a name="it-seems-like-one-way-and-request-reply-operations-return-at-roughly-the-same-speed-when-the-reply-contains-no-data-whats-happening"></a>To vypadá jako jsou jednosměrná a operace požadavek odpověď vracet rychlostí přibližně stejnou odpověď neobsahuje žádná data. Co se děje?  
+ Určení, že operace je jedním ze způsobů pouze znamená, že kontrakt přijímá vstupní zprávy a nevrací výstupní zprávu. Ve službě WCF všechna volání klienta vrátí, pokud byl zapsán do přenosu odchozích dat nebo dojde k výjimce. Jednosměrná operace pracovat stejným způsobem a generují výjimku-li služba nemůže najít nebo blokovat, pokud služba není připraven pro příjem dat ze sítě. Obvykle ve službě WCF, výsledkem je jednosměrná volání rychleji než požadavek odpověď, vrácením klientovi ale jakoukoli podmínku, která zpomaluje odesílání odchozích dat v síti, zpomalí jednocestné operace, jakož i operace požadavek odpověď. Další informace najdete v tématu [One-Way služby](../../../docs/framework/wcf/feature-details/one-way-services.md) a [přístup ke službám pomocí klienta WCF](../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md).  
   
 <a name="BKMK_q77"></a>   
-## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a>Používám certifikát X.509 s mé služby a získat System.Security.Cryptography.CryptographicException. Co se děje?  
- K tomu obvykle dochází po změně uživatelský účet, pod kterým služba IIS pracovní proces běží. Například v [!INCLUDE[wxp](../../../includes/wxp-md.md)], pokud změníte výchozí uživatelský účet, který Aspnet_wp.exe spouští pod z ASPNET na vlastní uživatelský účet, se zobrazí tato chyba. Pokud používáte privátní klíč, proces, který používá je potřeba mít oprávnění pro přístup k souboru ukládání klíči.  
+## <a name="im-using-an-x509-certificate-with-my-service-and-i-get-a-systemsecuritycryptographycryptographicexception-whats-happening"></a>Používám certifikát X.509 pomocí svojí služby a získat System.Security.Cryptography.CryptographicException. Co se děje?  
+ K tomu běžně dochází po změně uživatelský účet, pod kterým pracovní proces služby IIS běží. Například v [!INCLUDE[wxp](../../../includes/wxp-md.md)], pokud změníte výchozí uživatelský účet, který Aspnet_wp.exe běží pod z ASPNET vlastní uživatelský účet, může se zobrazit tato chyba. Pokud používáte privátní klíč, proces, který používá ho bude muset mít oprávnění pro přístup k souboru uložení tohoto klíče.  
   
- Pokud je to tento případ, musí udělit přístup pro čtení oprávnění k účtu procesu pro soubor obsahující privátní klíč. Například pokud pracovní proces služby IIS běží pod účtem Bob, pak musíte poskytnout přístup pro čtení Bob k souboru, který obsahuje soukromý klíč.  
+ Pokud je to tento případ, je potřeba předat čtení přístupová oprávnění procesu účtu pro soubor, který obsahuje privátní klíč. Například pokud pracovní proces služby IIS běží pod účtem Bob, pak je potřeba poskytnout oprávnění ke čtení Bob k souboru, který obsahuje privátní klíč.  
   
- Další informace o tom, jak poskytnout správné uživatelský účet přístup k souboru, který obsahuje soukromý klíč pro konkrétní certifikát X.509 najdete v tématu [postup: usnadnit X.509 certifikáty přístup do WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).  
+ Další informace o tom, jak poskytnout přístup k účtu uživatele správný soubor, který obsahuje privátní klíč pro konkrétní certifikát X.509, naleznete v tématu [postup: Ujistěte se, X.509 certifikáty přístupné pro WCF](../../../docs/framework/wcf/feature-details/how-to-make-x-509-certificates-accessible-to-wcf.md).  
   
 <a name="BKMK_q88"></a>   
-## <a name="i-changed-the-first-parameter-of-an-operation-from-uppercase-to-lowercase-now-my-client-throws-an-exception-whats-happening"></a>První parametr operace bylo změněno z velkých písmen na malá písmena; Teď Moje klienta vyvolá výjimku. Co se děje?  
- Hodnota názvy parametrů v podpis operace jsou součástí kontraktu a malých a velkých písmen. Použití <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> atribut až budete potřebovat k rozlišení názvu parametru místní a metadata, která popisuje operaci pro klientské aplikace.  
+## <a name="i-changed-the-first-parameter-of-an-operation-from-uppercase-to-lowercase-now-my-client-throws-an-exception-whats-happening"></a>Můžu změnit první parametr operace z velkých písmen na malá písmena; Klient teď dojde k výjimce. Co se děje?  
+ Hodnota názvy parametrů v signatuře operace jsou součástí kontraktu a jsou malá a velká písmena. Použití <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType> atribut, pokud je potřeba rozlišovat mezi místní parametr name a metadat, který popisuje operace, která pro klientské aplikace.  
   
 <a name="BKMK_q99"></a>   
-## <a name="im-using-one-of-my-tracing-tools-and-i-get-an-endpointnotfoundexception-whats-happening"></a>Používám jeden z mých trasování nástrojů a získat endpointnotfoundexception –. Co se děje?  
- Pokud používáte nástroj trasování, který není poskytované systémem mechanismus trasování WCF a zobrazí se <xref:System.ServiceModel.EndpointNotFoundException> určující, že došlo neshodě adres filtru, budete muset použít <xref:System.ServiceModel.Description.ClientViaBehavior> třída směrovat zprávy, které mají nástroj trasování a máte nástroj přesměruje tyto zprávy na adresu služby. <xref:System.ServiceModel.Description.ClientViaBehavior> Třída mění `Via` indikován adresování záhlaví zadat další síťová adresa odděleně od ultimate příjemce, `To` adresování záhlaví. Pokud v takovém případě však neměňte adresa koncového bodu, který se používá k navázání `To` hodnotu.  
+## <a name="im-using-one-of-my-tracing-tools-and-i-get-an-endpointnotfoundexception-whats-happening"></a>Používám jedním z nástrojů Moje trasování a získat endpointnotfoundexception –. Co se děje?  
+ Pokud používáte nástroj pro sledování, které nejsou poskytované systémem mechanismus trasování WCF a zobrazí se <xref:System.ServiceModel.EndpointNotFoundException> , která označuje, že došlo neshodě filtr adresy, budete muset použít <xref:System.ServiceModel.Description.ClientViaBehavior> třídy ke směrování zpráv do nástroj trasování a mají nástroje těchto zpráv přesměrování na adresu služby. <xref:System.ServiceModel.Description.ClientViaBehavior> Třídy mění `Via` indikován adresování záhlaví, chcete-li určit další síťová adresa odděleně od ultimate příjemce `To` adresování záhlaví. Při tomto postupu, ale neměňte adresu koncového bodu, který se používá k navázání `To` hodnotu.  
   
  Následující příklad kódu ukazuje klientem příklad konfiguračního souboru.  
   
@@ -193,11 +193,11 @@ public class MyServiceHost : ServiceHost
 ```  
   
 <a name="BKMK_q10"></a>   
-## <a name="what-is-the-base-address-how-does-it-relate-to-an-endpoint-address"></a>Co je základní adresa? Jak vztahují k adresu koncového bodu?  
- Základní adresa je adresa kořenové pro <xref:System.ServiceModel.ServiceHost> třídy. Ve výchozím nastavení, pokud přidáte <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy do konfigurace služby webové služby popis Language (WSDL) pro hostitele publikuje všechny koncové body jsou načteny z základní adresu HTTP plus všechny relativní adresa zadaná v chování metadat plus "? wsdl". Pokud jste se seznámili s [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] a služby IIS, základní adresa je ekvivalentní do virtuálního adresáře.  
+## <a name="what-is-the-base-address-how-does-it-relate-to-an-endpoint-address"></a>Co je základní adresa? Jak to souvisí adresy koncového bodu?  
+ Základní adresa je adresa kořenové <xref:System.ServiceModel.ServiceHost> třídy. Ve výchozím nastavení, pokud chcete přidat <xref:System.ServiceModel.Description.ServiceMetadataBehavior> třídy do konfigurace služby, webové služby WSDL (Description Language) pro hostitele publikuje všechny koncové body jsou načteny z základní adresu HTTP, a navíc všechny relativní adresa zadaná metadata chování plus "? wsdl". Pokud jste se seznámili s [!INCLUDE[vstecasp](../../../includes/vstecasp-md.md)] a služby IIS, základní adresa je ekvivalentní k virtuálnímu adresáři.  
   
-## <a name="sharing-a-port-between-a-service-endpoint-and-a-mex-endpoint-using-the-nettcpbinding"></a>Sdílení portů mezi koncového bodu služby a koncový bod mex pomocí NetTcpBinding  
- Pokud zadáte adresu základní pro služby jako net.tcp://MyServer: 8080/Moje_služba a přidejte následující koncové body:  
+## <a name="sharing-a-port-between-a-service-endpoint-and-a-mex-endpoint-using-the-nettcpbinding"></a>Sdílení portů mezi koncového bodu služby a koncového bodu mex pomocí NetTcpBinding  
+ Pokud zadáte základní adresu pro službu jako net.tcp://MyServer: 8080/Moje_služba a přidat následující koncové body:  
   
 ```xml  
 <services>  
@@ -208,7 +208,7 @@ public class MyServiceHost : ServiceHost
 </services>  
 ```  
   
- A pokud změníte jedno z nastavení NetTcpBinding jak je znázorněno v následujícím fragmentu kódu konfigurace:  
+ A pokud změníte některé z nastavení NetTcpBinding jak je znázorněno v následujícím fragmentu kódu konfigurace:  
   
 ```xml  
 <bindings>  
@@ -224,7 +224,7 @@ public class MyServiceHost : ServiceHost
 </bindings>  
 ```  
   
- Zobrazí se chyba takto: neošetřená výjimka: System.ServiceModel.AddressAlreadyInUseException: na 0.0.0.0:9000 koncový bod IP tuto chybu můžete vyřešit tak, že zadáte plně kvalifikovanou adresu URL s jiným portem pro je již naslouchací proces MEX endpoint, jak je znázorněno v následujícím fragmentu kódu konfigurace:  
+ Zobrazí se chyba podobný tomuto: neošetřená výjimka: System.ServiceModel.addressalreadyinuseexception –: na již běží naslouchací proces tuto chybu můžete vyřešit tak, že zadáte plně kvalifikovanou adresu URL s jiným portem pro 0.0.0.0:9000 koncový bod IP MEX endpoint, jak je znázorněno v následujícím fragmentu kódu konfigurace:  
   
 ```xml
 <services>  
@@ -236,8 +236,8 @@ public class MyServiceHost : ServiceHost
 ```  
   
 <a name="BK_MK99"></a>   
-## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>Při volání z aplikace WCF SOAP služby WCF Web HTTP aplikace vrátí následující chybu: není povoleno 405 – Metoda  
- Volání aplikace WCF Web HTTP (služba, která využívá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) z službou WCF služba může generovat následující výjimky: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: vzdálený server vrátil neočekávanou odpověď : (405) metoda není povoleno. ", protože WCF přepíše odchozích došlo k této výjimce <xref:System.ServiceModel.OperationContext> s příchozí <xref:System.ServiceModel.OperationContext>. Chcete-li vyřešit tento problém vytvořit <xref:System.ServiceModel.OperationContextScope> v rámci operace služby WCF Web HTTP. Příklad:  
+## <a name="when-calling-a-wcf-web-http-application-from-a-wcf-soap-application-the-service-returns-the-following-error-405-method-not-allowed"></a>Při volání webových služeb HTTP WCF aplikace z aplikace WCF SOAP služby vrátí následující chybu: není povoleno 405 – Metoda  
+ Volání aplikace webových služeb HTTP WCF (služba, která se používá <xref:System.ServiceModel.WebHttpBinding> a <xref:System.ServiceModel.Description.WebHttpBehavior>) z WCF service může generovat následující výjimku: `Unhandled Exception: System.ServiceModel.FaultException`1[System.ServiceModel.ExceptionDetail]: vzdálený server vrátil neočekávanou odpověď : (405) metoda není povoleno. "touto výjimkou způsobeno WCF přepíše odchozích dat <xref:System.ServiceModel.OperationContext> s příchozí <xref:System.ServiceModel.OperationContext>. Chcete-li vyřešit tento problém vytvořit <xref:System.ServiceModel.OperationContextScope> v rámci operace služby webových služeb HTTP WCF. Příklad:  
   
 ```csharp
 public string Echo(string input)  

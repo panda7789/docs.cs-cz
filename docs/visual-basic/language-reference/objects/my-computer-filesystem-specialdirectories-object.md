@@ -1,16 +1,16 @@
 ---
-title: My.Computer.FileSystem.SpecialDirectories – objekt
+title: My.Computer.FileSystem.SpecialDirectories – objekt (Visual Basic)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer.FileSystem.SpecialDirectories object
 - SpecialDirectories object
 ms.assetid: d5f375c3-094b-4011-8438-17a31bc6df2b
-ms.openlocfilehash: 9ceede5a717b26d349f9a306864f74ac0ec33691
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 5556a71fbe6f4ca90fb07966fb5fa0203eb8aaee
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37959507"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43554471"
 ---
 # <a name="mycomputerfilesystemspecialdirectories-object"></a>My.Computer.FileSystem.SpecialDirectories – objekt
 Poskytuje vlastnosti pro přístup k často odkazované adresáře.  

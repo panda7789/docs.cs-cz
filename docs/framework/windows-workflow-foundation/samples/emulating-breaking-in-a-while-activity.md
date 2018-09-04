@@ -1,26 +1,26 @@
 ---
-title: Emulace nejnovější ve chvíli aktivity
+title: Emulace zastavení v nějakou aktivitu
 ms.date: 03/30/2017
 ms.assetid: ddff715d-d623-4b54-b841-60bacbc3ca21
-ms.openlocfilehash: 37c64c2b8dc03d58f9c2802edef644fe4888e87d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4938e07364609520f6528688877bce112be26d3f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33514710"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560422"
 ---
-# <a name="emulating-breaking-in-a-while-activity"></a>Emulace nejnovější ve chvíli aktivity
-Tento příklad ukazuje, jak rozdělit opakování mechanismus z následujících aktivit: <xref:System.Activities.Statements.DoWhile>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.While>, a <xref:System.Activities.Statements.ParallelForEach%601>.  
+# <a name="emulating-breaking-in-a-while-activity"></a>Emulace zastavení v nějakou aktivitu
+Tato ukázka předvádí, jak přerušení mechanismu opakování z následujících aktivit: <xref:System.Activities.Statements.DoWhile>, <xref:System.Activities.Statements.ForEach%601>, <xref:System.Activities.Statements.While>, a <xref:System.Activities.Statements.ParallelForEach%601>.  
   
- To je užitečné, protože Windows Workflow Foundation (WF) neobsahuje žádnou aktivitu pro přerušení provádění těchto smyčky.  
+ To je užitečné, protože Windows Workflow Foundation (WF) neobsahuje žádnou aktivitu přerušení provádění těchto smyčky.  
   
 ## <a name="scenario"></a>Scénář  
- Ukázka vyhledá první spolehlivé dodavatele ze seznamu dodavatelů (instance `Vendor` třídy). Má jednotlivých dodavatelů `ID`, `Name` a spolehlivost číselnou hodnotu, která určuje, jak spolehlivé dodavatele. Ukázka vytvoří vlastní aktivity volá `FindReliableVendor` který přijímá dva vstupní parametry (seznam dodavateli a hodnotu minimální spolehlivost) a vrátí první dodavatele tohoto seznamu, který odpovídá zadaným kritériím.  
+ Vzorek najde první spolehlivé dodavatele ze seznamu dodavatelů (instance `Vendor` třídy). Jednotlivých dodavatelů má `ID`, `Name` a spolehlivost číselná hodnota, která určuje, jak spolehlivé dodavatel je. Ukázka vytvoří vlastní aktivity volá `FindReliableVendor` , který přijímá dva vstupní parametry (seznam dodavatelů a hodnotu minimální spolehlivost) a vrátí první dodavatele tohoto seznamu, který odpovídá zadaným kritériím.  
   
-## <a name="breaking-a-loop"></a>Pozastavení smyčku  
- Windows Workflow Foundation (WF) nezahrnuje aktivitu pro přerušení smyčku. Ukázka kódu provede nejnovější smyčku pomocí <xref:System.Activities.Statements.If> aktivity a několik proměnné. V ukázce <xref:System.Activities.Statements.While> aktivity je porušený jednou `reliableVendor` proměnné je jiné než přiřazenou hodnotu `null`.  
+## <a name="breaking-a-loop"></a>Přerušení smyčky  
+ Windows Workflow Foundation (WF) neobsahuje aktivitu pro přerušení smyčky. Vzorový kód provede přerušení smyčky s použitím <xref:System.Activities.Statements.If> aktivity a několik proměnných. V ukázce <xref:System.Activities.Statements.While> aktivit dojde k přerušení jednou `reliableVendor` proměnná má přiřazenou hodnotu jiné než `null`.  
   
- Následující příklad kódu ukazuje, jak ukázku dělí chvíli smyčky.  
+ Následující příklad kódu ukazuje, jak ukázku přeruší nějakou smyčky.  
   
 ```csharp  
 // Iterates while the "i" variable is lower than the size of the list   
@@ -68,15 +68,15 @@ new While(env => i.Get(env) < this.Vendors.Get(env).Count && reliableVendor.Get(
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení EmulatingBreakInWhile.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\EmulatingBreakInWhile`

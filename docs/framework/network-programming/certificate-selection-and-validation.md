@@ -5,12 +5,12 @@ ms.assetid: c933aca2-4cd0-4ff1-9df9-267143f25a6f
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: bdeb0e92dca723b64ee82b70f58fe910fd0c2edb
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: fe3b10e17c3cdf181f0b33b4305008655047fb0f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931047"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43557527"
 ---
 # <a name="certificate-selection-and-validation"></a>Výběr a ověření certifikátu
 <xref:System.Net> Třídy podporují několik způsobů, jak vybrat a ověřit <xref:System.Security.Cryptography.X509Certificates> pro připojení vrstvy SSL (Secure Socket). Klienta můžete vybrat jeden nebo více certifikátů ke svému ověření serveru. Server může vyžadovat, že klientský certifikát mají jeden nebo více konkrétních atributů pro ověřování.  
@@ -41,13 +41,13 @@ ms.locfileid: "42931047"
 ## <a name="tools-for-certificate-configuration"></a>Nástroje pro konfiguraci certifikátu  
  Různé nástroje jsou k dispozici pro konfiguraci certifikátu klienta a serveru.  
   
- *Winhttpcertcfg.exe* nástroj můžete použít ke konfiguraci klientských certifikátů. *Winhttpcertcfg.exe* nástroj je k dispozici jako jedna nástrojů se službou Windows Server 2003 Resource Kit. Tento nástroj je také k dispozici ke stažení jako součást Windows Server 2003 Resource Kit Tools na www.microsoft.com.  
+ *Winhttpcertcfg.exe* nástroj můžete použít ke konfiguraci klientských certifikátů. *Winhttpcertcfg.exe* nástroj je k dispozici jako jedna nástrojů se službou Windows Server 2003 Resource Kit. Tento nástroj je k dispozici ke stažení Windows Server 2003 Resource Kit Tools v rámci [www.microsoft.com](https://www.microsoft.com).  
   
 *HttpCfg.exe* nástroj je možné nakonfigurovat certifikáty serveru <xref:System.Net.HttpListener> třídy. *HttpCfg.exe* nástroj je poskytován jako jeden z nástrojů podpory pro Windows Server 2003 a Windows XP Service Pack 2. *HttpCfg.exe* a dalších nástrojů podpory nejsou nainstalované ve výchozím nastavení v systému Windows Server 2003 nebo Windows XP. V systému Windows Server 2003. Podpora nástroje se instalují samostatně z následující složky a souboru na disku CD-ROM systému Windows Server 2003:  
   
  \Support\Tools\Suptools.msi  
   
- Pro použití s Windows XP Service Pack 2 jsou k dispozici ke stažení z www.microsoft.com nástrojů podpory Windows XP.  
+ Pro použití s Windows XP Service Pack 2, jsou k dispozici ke stažení z nástrojů podpory Windows XP [www.microsoft.com](https://www.microsoft.com).  
   
  Zdrojový kód na verzi *HttpCfg.exe* nástroj je k dispozici jako ukázku Windows SDK serveru. Zdrojový kód *HttpCfg.exe* ukázka nainstalovaný ve výchozím nastavení s ukázkami sítě jako součást sady Windows SDK v následující složce:  
   

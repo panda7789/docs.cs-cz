@@ -3,11 +3,11 @@ title: SQL Server Compact a LINQ to SQL
 ms.date: 03/30/2017
 ms.assetid: 59022359-a5a2-4c42-9a6a-5c0259c3ad17
 ms.openlocfilehash: 1229fcb285038875950776a924870c9be6bef13b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43479874"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43529985"
 ---
 # <a name="sql-server-compact-and-linq-to-sql"></a>SQL Server Compact a LINQ to SQL
 SQL Server Compact je výchozí databáze nainstalován se sadou Visual Studio. Další informace najdete v tématu [PAVE přes pomocí SQL Server Compact (Visual Studio)](https://msdn.microsoft.com/library/13320dd1-94e5-4077-bf76-8df253695ccc).  

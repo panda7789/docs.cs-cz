@@ -37,271 +37,271 @@ helpviewer_keywords:
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 14402b56a765fc8fe57f40e9c5c44f500267e266
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 773c3ee1a82e8307d32750c7d055201c466707bc
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579857"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560994"
 ---
 # <a name="the-regular-expression-object-model"></a>Model objektu regulárního výrazu
-<a name="introduction"></a> Toto téma popisuje objektový model použít v práci s regulární výrazy rozhraní .NET. Obsahuje následující oddíly:  
+<a name="introduction"></a> Toto téma popisuje objektový model používaný při práci s regulárními výrazy v rozhraní .NET. Obsahuje následující oddíly:  
   
 -   [Modul regulárních výrazů](#Engine)  
   
--   [MatchCollection a shoda objekty](#Match_and_MCollection)  
+-   [MatchCollection a porovnat objekty](#Match_and_MCollection)  
   
 -   [Kolekce skupin](#GroupCollection)  
   
--   [Zaznamenané skupiny](#the_captured_group)  
+-   [Zachycené skupiny](#the_captured_group)  
   
--   [Kolekce zachycení](#CaptureCollection)  
+-   [Kolekce zachytávání](#CaptureCollection)  
   
 -   [Jednotlivé zachytávání](#the_individual_capture)  
   
 <a name="Engine"></a>   
 ## <a name="the-regular-expression-engine"></a>Modul regulárních výrazů  
- Modul regulárních výrazů v .NET je reprezentována <xref:System.Text.RegularExpressions.Regex> třídy. Modul regulární výraz je zodpovědný za analýzu a kompilaci regulární výraz a pro provádění akcí, které se shodují se vzorem regulárního výrazu se vstupním řetězcem. Modul je ústřední součást ve model objektu regulárního výrazu rozhraní .NET.  
+ Modul regulárních výrazů v .NET je reprezentována <xref:System.Text.RegularExpressions.Regex> třídy. Modul regulárních výrazů je odpovědný za analýzu a kompilaci regulárních výrazů a pro provádění operací, které odpovídají vzoru regulárního výrazu se vstupním řetězcem. Modul je ústřední součást v model objektu regulárního výrazu .NET.  
   
  Můžete použít modul regulárních výrazů v některém ze dvou způsobů:  
   
--   Při volání statických metod <xref:System.Text.RegularExpressions.Regex> třídy. Parametry metody zahrnují vstupní řetězec a regulární výraz. Modul regulárních výrazů ukládá do mezipaměti regulární výrazy, které se používají v statickou metodu volání, aby opakovaná volání metody statické regulárních výrazů, které používají stejný regulární výraz poskytují poměrně dobrý výkon.  
+-   Zavoláním statické metody <xref:System.Text.RegularExpressions.Regex> třídy. Parametry metody zahrnují vstupního řetězce a vzor regulárního výrazu. Modul regulárních výrazů regulární výrazy, které se používají ve volání statické metody, takže opakovaná volání statické metody regulárních výrazů, které používají stejný regulární výraz nabízí relativně dobrého výkonu ukládá do mezipaměti.  
   
--   Po vytvoření instance <xref:System.Text.RegularExpressions.Regex> objekt, a to pomocí předání regulární výraz konstruktoru třídy. V takovém případě <xref:System.Text.RegularExpressions.Regex> objekt se nedá změnit (jen pro čtení) a představuje modul regulární výraz, který je úzce spojeny s jediným regulárním výrazem. Protože regulární výrazy používá <xref:System.Text.RegularExpressions.Regex> instancí se neukládají do mezipaměti, nevytvoří instanci <xref:System.Text.RegularExpressions.Regex> objekt vícekrát s stejný regulární výraz.  
+-   Po vytvoření instance <xref:System.Text.RegularExpressions.Regex> objekt předáním regulárního výrazu do konstruktoru třídy. V takovém případě <xref:System.Text.RegularExpressions.Regex> objektu je neměnný (jen pro čtení) a představuje modul regulárních výrazů, který je pevně spárován s jediným regulárním výrazem. Protože regulární výrazy používána <xref:System.Text.RegularExpressions.Regex> instancí se neukládají do mezipaměti, by neměl vytvořit instanci <xref:System.Text.RegularExpressions.Regex> objekt víckrát se stejným regulárním výrazem.  
   
  Můžete volat metody <xref:System.Text.RegularExpressions.Regex> třídy provádět následující operace:  
   
--   Určí, zda řetězec odpovídá regulárnímu výrazu.  
+-   Určení, zda řetězec odpovídá vzoru regulárního výrazu.  
   
--   Extrahování jedné shody nebo na první shodu.  
+-   Extrahujte jediný výskyt shody nebo první shoda.  
   
 -   Extrahujte všechny shody.  
   
--   Nahraďte odpovídající dílčí řetězec.  
+-   Nahradí odpovídající podřetězec.  
   
--   Rozdělte jednoho řetězce na pole řetězců.  
+-   Rozdělte jeden řetězec do pole řetězců.  
   
- Tyto operace jsou popsané v následujících částech.  
+ Tyto operace jsou popsány v následujících částech.  
   
 ### <a name="matching-a-regular-expression-pattern"></a>Odpovídající vzor regulárního výrazu  
- <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> Metoda vrátí `true` Pokud řetězec odpovídá vzoru, nebo `false` Pokud neexistuje. <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> Metoda se často používá k ověření řetězce na vstupu. Následující kód například zaručí, že řetězec odpovídá platné číslo sociálního pojištění ve Spojených státech amerických.  
+ <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> Vrátí metoda `true` Pokud řetězec odpovídá vzoru, nebo `false` Pokud tomu tak není. <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> Metody se často používá k ověření řetězce na vstupu. Například následující kód zajistí, že řetězec odpovídá platné číslo sociálního pojištění v USA.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/validate1.cs#1)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/validate1.vb#1)]  
   
- Regulární výraz `^\d{3}-\d{2}-\d{4}$` interpretována, jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `^\d{3}-\d{2}-\d{4}$` interpretována, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`^`|Odpovídat na začátek vstupní řetězec.|  
+|`^`|Odpovídá začátku vstupního řetězce.|  
 |`\d{3}`|Porovná tři desítkové číslice.|  
-|`-`|Porovná pomlčku.|  
-|`\d{2}`|Porovná dvě desítková číslice.|  
-|`-`|Porovná pomlčku.|  
-|`\d{4}`|Porovná čtyři desítková číslice.|  
+|`-`|Porovnává spojovník.|  
+|`\d{2}`|Porovná dvě desetinné číslice.|  
+|`-`|Porovnává spojovník.|  
+|`\d{4}`|Porovná čtyři desítková čísla.|  
 |`$`|Porovná konec vstupního řetězce.|  
   
-### <a name="extracting-a-single-match-or-the-first-match"></a>Extrahování jedné shody nebo na první shodu  
- <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> Metoda vrátí <xref:System.Text.RegularExpressions.Match> objekt, který obsahuje informace o první dílčí řetězec, který odpovídá regulárnímu výrazu. Pokud `Match.Success` vlastnost vrátí `true`, která udává, že byla nalezena shoda, můžete načíst informace o dalších odpovídá voláním <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metoda. Tato metoda volání můžete pokračovat, dokud nebudou `Match.Success` vlastnost vrátí `false`. Například následující kód používá <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> metody k vyhledání prvního výskytu duplicitního slova v řetězci. Potom zavolá <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metody k vyhledání jakékoliv další události. V příkladu prověří `Match.Success` vlastnost po každém volání metody a určit, zda aktuální shoda byla úspěšná a zda volání <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metoda by měl následovat.  
+### <a name="extracting-a-single-match-or-the-first-match"></a>Extrahování jediný výskyt shody nebo první shoda  
+ <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> Metoda vrátí hodnotu <xref:System.Text.RegularExpressions.Match> objekt, který obsahuje informace o první dílčí řetězec, který odpovídá vzoru regulárního výrazu. Pokud `Match.Success` vrátí vlastnost `true`, označující, že se najde shoda, můžete načíst informace o následných shod voláním <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metoda. Tato volání metody může pokračovat, dokud nebudou `Match.Success` vrátí vlastnost `false`. Například následující kód používá <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> metody k vyhledání prvního výskytu duplicitní slova v řetězci. Poté zavolá <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metody k vyhledání žádné další výskyty. V příkladu prověří `Match.Success` vlastnost po každé volání metody k určení, zda aktuální shoda bylo úspěšné a zda volání <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metody by měly dodržovat.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/match1.cs#2)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/match1.vb#2)]  
   
- Regulární výraz `\b(\w+)\W+(\1)\b` interpretována, jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `\b(\w+)\W+(\1)\b` interpretována, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
-|`\b`|Začne porovnávání na hranici slova.|  
+|`\b`|Začne porovnání na hranici slova.|  
 |`(\w+)`|Porovná jeden nebo více znaků slova. Toto je první zachytávající skupina.|  
-|`\W+`|Odpovídat jeden nebo více znaků aplikace word.|  
-|`(\1)`|Porovná první zaznamenané řetězec. Toto je druhá zachytávající skupina.|  
+|`\W+`|Porovná jeden nebo více znaků slova.|  
+|`(\1)`|Porovná první zachycenou řetězec. Toto je druhá zachytávající skupina.|  
 |`\b`|Ukončí porovnání na hranici slova.|  
   
 ### <a name="extracting-all-matches"></a>Extrahování všechny shody  
- <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> Metoda vrátí <xref:System.Text.RegularExpressions.MatchCollection> objekt, který obsahuje informace o všechny shody, které modul regulárních výrazů nacházejí ve vstupním řetězci. Například může být přepsána předchozí příklad pro volání <xref:System.Text.RegularExpressions.Regex.Matches%2A> metoda místo <xref:System.Text.RegularExpressions.Regex.Match%2A> a <xref:System.Text.RegularExpressions.Match.NextMatch%2A> metody.  
+ <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> Metoda vrátí hodnotu <xref:System.Text.RegularExpressions.MatchCollection> objekt, který obsahuje informace o shodách nacházející se modul regulárních výrazů ve vstupním řetězci. Například v předchozím příkladu může být přepsána pro volání <xref:System.Text.RegularExpressions.Regex.Matches%2A> metoda místo <xref:System.Text.RegularExpressions.Regex.Match%2A> a <xref:System.Text.RegularExpressions.Match.NextMatch%2A> metody.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matches1.cs#3)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matches1.vb#3)]  
   
-### <a name="replacing-a-matched-substring"></a>Nahrazení odpovídajícího podřetězce  
- <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> Metoda nahrazuje každý dílčí řetězec, který odpovídá vzorku regulárního výrazu se zadaný řetězec nebo vzor regulárního výrazu a vrátí celý vstupní řetězec s nahrazení. Následující kód například přidá symbol USA měny před desítkové číslo v řetězci.  
+### <a name="replacing-a-matched-substring"></a>Nahrazení odpovídající podřetězec  
+ <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> Metoda nahrazuje každý dílčí řetězec, který odpovídá vzoru regulárního výrazu se zadaný řetězec nebo vzor regulárního výrazu a vrátí celý vstupní řetězec s nahrazení. Například následující kód přidá symbol měny USA před desetinné číslo v řetězci.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/replace1.cs#4)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/replace1.vb#4)]  
   
- Regulární výraz `\b\d+\.\d{2}\b` interpretována, jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `\b\d+\.\d{2}\b` interpretována, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne porovnání na hranici slova.|  
 |`\d+`|Porovná jednu nebo více desítkových číslic.|  
 |`\.`|Porovná tečku.|  
-|`\d{2}`|Porovná dvě desítková číslice.|  
+|`\d{2}`|Porovná dvě desetinné číslice.|  
 |`\b`|Ukončí porovnání na hranici slova.|  
   
- Vzor nahrazení `$$$&` interpretována, jak je znázorněno v následující tabulce.  
+ Vzor pro nahrazení `$$$&` interpretována, jak je znázorněno v následující tabulce.  
   
-|Vzor|Náhradní řetězec|  
+|Vzor|Řetězci pro nahrazení|  
 |-------------|------------------------|  
 |`$$`|Znak dolaru ($).|  
 |`$&`|Celý odpovídající podřetězec.|  
   
-### <a name="splitting-a-single-string-into-an-array-of-strings"></a>Rozdělení jediného řetězce na pole řetězců.  
- <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> Metoda rozdělí vstupní řetězec v místech definovaných odpovídají regulárnímu výrazu. Následující kód například umístí položky v číslovaný seznam do pole řetězců.  
+### <a name="splitting-a-single-string-into-an-array-of-strings"></a>Jeden řetězec do pole řetězců  
+ <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> Metoda rozdělí vstupní řetězec v místech určené shoda s regulárním výrazem. Například následující kód umístí položky číslovaný seznam do pole řetězců.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/split1.cs#5)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/split1.vb#5)]  
   
- Regulární výraz `\b\d{1,2}\.\s` interpretována, jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `\b\d{1,2}\.\s` interpretována, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne porovnání na hranici slova.|  
-|`\d{1,2}`|Odpovídat jedna nebo dvě desetinných míst.|  
+|`\d{1,2}`|Porovná jednu nebo dvě desetinné číslice.|  
 |`\.`|Porovná tečku.|  
 |`\s`|Porovná prázdný znak.|  
   
 <a name="Match_and_MCollection"></a>   
-## <a name="the-matchcollection-and-match-objects"></a>MatchCollection a shoda objekty  
- Metody Regex vrací dva objekty, které jsou součástí model objektu regulárního výrazu: <xref:System.Text.RegularExpressions.MatchCollection> objekt a <xref:System.Text.RegularExpressions.Match> objektu.  
+## <a name="the-matchcollection-and-match-objects"></a>MatchCollection a porovnat objekty  
+ Metody regulární výraz vrací dva objekty, které jsou součástí model objektu regulárního výrazu: <xref:System.Text.RegularExpressions.MatchCollection> objektu a <xref:System.Text.RegularExpressions.Match> objektu.  
   
 <a name="the_match_collection"></a>   
 ### <a name="the-match-collection"></a>Kolekce shod  
- <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> Metoda vrátí <xref:System.Text.RegularExpressions.MatchCollection> objekt, který obsahuje <xref:System.Text.RegularExpressions.Match> objekty, které představují všechny shody, které modul regulárních výrazů nacházejí v pořadí, ve kterém nastávají ve vstupním řetězci. Pokud nejsou nalezeny žádné shody, vrátí metoda <xref:System.Text.RegularExpressions.MatchCollection> objektu bez členů. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> Vlastnost umožňuje přístup jednotlivé členy kolekce pomocí indexu z nula na jednu menší než hodnota <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A> je kolekce indexer (v jazyku C#) a výchozí vlastnost (v jazyce Visual Basic).  
+ <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> Metoda vrátí hodnotu <xref:System.Text.RegularExpressions.MatchCollection> objekt, který obsahuje <xref:System.Text.RegularExpressions.Match> objekty, které představují všechny shody, které se modul regulárních výrazů nacházejí v pořadí, ve kterém se objevují ve vstupním řetězci. Pokud nejsou nalezeny žádné shody, vrátí metoda <xref:System.Text.RegularExpressions.MatchCollection> objektu bez členů. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> Vlastnost umožňuje vám přístup k jednotlivým členům kolekce pomocí indexu z nula, pokud chcete jeden menší než hodnota <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A> je kolekce indexer (v jazyce C#) a výchozí vlastnosti (v jazyce Visual Basic).  
   
- Ve výchozím nastavení, volání <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metoda používá k naplnění opožděné vyhodnocení <xref:System.Text.RegularExpressions.MatchCollection> objektu. Přístup k vlastnosti, které vyžadují plně naplněnou kolekci, například <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> , může mít snížení výkonu. V důsledku toho doporučujeme přistupovat ke kolekci pomocí <xref:System.Collections.IEnumerator> objekt, který je vrácený <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType> metoda. Jednotlivé jazyky poskytují konstrukce, jako například `For``Each` v jazyce Visual Basic a `foreach` v jazyce C#, která zabalení kolekce <xref:System.Collections.IEnumerator> rozhraní.  
+ Ve výchozím nastavení, volání <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metoda používá k naplnění opožděné vyhodnocení <xref:System.Text.RegularExpressions.MatchCollection> objektu. Přístup k vlastnostem, které vyžadují kolekci plně mají údaj vyplněný, jako <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> vlastnosti, může zahrnovat snížení výkonu. V důsledku toho doporučujeme pomocí přístup ke kolekci <xref:System.Collections.IEnumerator> objekt, který je vrácený <xref:System.Text.RegularExpressions.MatchCollection.GetEnumerator%2A?displayProperty=nameWithType> metody. Jednotlivé jazyky poskytují konstrukce, jako například `For Each` v jazyce Visual Basic a `foreach` v jazyce C#, které obalují kolekce <xref:System.Collections.IEnumerator> rozhraní.  
   
- Následující příklad používá <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%29?displayProperty=nameWithType> metoda k naplnění <xref:System.Text.RegularExpressions.MatchCollection> objekt s všech nalezených ve vstupním řetězci shod. V příkladu vytvoří výčet kolekce, shody jsou zkopírovány do pole řetězců a pozice znaků v matici celé číslo.  
+ V následujícím příkladu <xref:System.Text.RegularExpressions.Regex.Matches%28System.String%29?displayProperty=nameWithType> metoda k naplnění <xref:System.Text.RegularExpressions.MatchCollection> objekt s všechny shody nalezen ve vstupním řetězci. V příkladu vytvoří výčet kolekce, zkopíruje shody na pole řetězců a zaznamenává pozice znaku v celočíselné pole.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matchcollection1.cs#6)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matchcollection1.vb#6)]  
   
 <a name="the_match"></a>   
-### <a name="the-match"></a>Shody  
- <xref:System.Text.RegularExpressions.Match> Třída reprezentuje výsledek porovnání jeden regulární výraz. Dostanete <xref:System.Text.RegularExpressions.Match> objekty dvěma způsoby:  
+### <a name="the-match"></a>Ke shodě  
+ <xref:System.Text.RegularExpressions.Match> Třída reprezentuje výsledek porovnání jedné regulární výraz. Můžete přistupovat <xref:System.Text.RegularExpressions.Match> objekty dvěma způsoby:  
   
--   Ve načítat z <xref:System.Text.RegularExpressions.MatchCollection> objekt, který je vrácený <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metoda. Načtení jednotlivých <xref:System.Text.RegularExpressions.Match> objekty, kolekci iteraci pomocí `foreach` (v jazyku C#) nebo `For Each`... `Next` (v jazyce Visual Basic) nebo použijte <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> vlastnost načíst konkrétní <xref:System.Text.RegularExpressions.Match> objektu podle indexu nebo podle názvu. Můžete také načíst jednotlivé <xref:System.Text.RegularExpressions.Match> objekty z kolekce podle iterace kolekce pomocí indexu z nula na jednu menší než počet objektů v kolekci. Však tato metoda nevyužívá opožděné vyhodnocení, protože přistupuje k <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> vlastnost.  
+-   Načtením z <xref:System.Text.RegularExpressions.MatchCollection> objekt, který je vrácený <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> metody. Chcete-li získat jednotlivé <xref:System.Text.RegularExpressions.Match> objekty, iterujte pomocí kolekce `foreach` (v jazyce C#) nebo `For Each`... `Next` (v jazyce Visual Basic) nebo použijte <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> vlastnost pro načtení konkrétní <xref:System.Text.RegularExpressions.Match> objekt index nebo název. Můžete také načíst jednotlivé <xref:System.Text.RegularExpressions.Match> objekty z kolekce iterací kolekce pomocí indexu z nula, pokud chcete jeden menší než počet objektů v kolekci. Ale tato metoda nevyužívá opožděné vyhodnocení, protože přistupuje <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> vlastnost.  
   
-     Následující příklad načte jednotlivých <xref:System.Text.RegularExpressions.Match> objekty od <xref:System.Text.RegularExpressions.MatchCollection> objektu podle iterace v kolekci pomocí `foreach` nebo `For Each`... `Next` vytvořit. Regulární výraz jednoduše shoduje s řetězcem "abc" ve vstupním řetězci.  
+     Následující příklad načte jednotlivé <xref:System.Text.RegularExpressions.Match> objekty z <xref:System.Text.RegularExpressions.MatchCollection> objekt iterací pomocí kolekce `foreach` nebo `For Each`... `Next` vytvořit. Regulární výraz, odpovídá řetězci "abc" ve vstupním řetězci.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/match2.cs#7)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/match2.vb#7)]  
   
--   Při volání <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> metoda, která vrátí hodnotu <xref:System.Text.RegularExpressions.Match> objekt, který reprezentuje na první shodu v řetězci nebo část řetězce. Můžete určit, zda byla nalezena shoda načtením hodnotu `Match.Success` vlastnost. Načíst <xref:System.Text.RegularExpressions.Match> objekty, které představují následující shody, volání <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metoda opakovaně, dokud `Success` vlastnost vrácený <xref:System.Text.RegularExpressions.Match> objekt `false`.  
+-   Při volání <xref:System.Text.RegularExpressions.Regex.Match%2A?displayProperty=nameWithType> metoda, která vrátí <xref:System.Text.RegularExpressions.Match> objekt, který představuje první shodu v řetězci nebo část řetězce. Můžete určit, zda byla nalezena shoda načtením hodnoty `Match.Success` vlastnost. K načtení <xref:System.Text.RegularExpressions.Match> objekty, které představují následných shod, volání <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> – metoda opakovaně, dokud `Success` vlastnosti vráceného <xref:System.Text.RegularExpressions.Match> objekt je `false`.  
   
-     Následující příklad používá <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metody tak, aby odpovídaly řetězec "abc" ve vstupním řetězci.  
+     V následujícím příkladu <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%29?displayProperty=nameWithType> a <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> metody tak, aby odpovídaly řetězec "abc" ve vstupním řetězci.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/match3.cs#8)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/match3.vb#8)]  
   
  Dvě vlastnosti <xref:System.Text.RegularExpressions.Match> třídy vracejí objekty kolekce:  
   
--   <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> Vlastnost vrátí <xref:System.Text.RegularExpressions.GroupCollection> objekt, který obsahuje informace o dílčích řetězců, které odpovídají zaznamenávání skupiny ve regulární výraz.  
+-   <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Text.RegularExpressions.GroupCollection> skupiny, který obsahuje informace o dílčích řetězců, které odpovídají zachycení ve vzoru regulárního výrazu.  
   
--   `Match.Captures` Vlastnost vrátí <xref:System.Text.RegularExpressions.CaptureCollection> objekt, který je omezené použití. Kolekce není vyplněný pro <xref:System.Text.RegularExpressions.Match> objekt, jehož `Success` vlastnost je `false`. Jinak, obsahuje jeden <xref:System.Text.RegularExpressions.Capture> objekt, který má stejné informace, jako <xref:System.Text.RegularExpressions.Match> objektu.  
+-   `Match.Captures` Vrátí vlastnost <xref:System.Text.RegularExpressions.CaptureCollection> objekt, který má omezené používání. Kolekce není vyplněný pro <xref:System.Text.RegularExpressions.Match> jehož `Success` vlastnost `false`. V opačném případě obsahuje jediný <xref:System.Text.RegularExpressions.Capture> objekt, který má stejné informace jako <xref:System.Text.RegularExpressions.Match> objektu.  
   
- Další informace o těchto objektů najdete v tématu [kolekce skupin](#GroupCollection) a [Kolekce Capture](#CaptureCollection) části později v tomto tématu.  
+ Další informace o těchto objektů najdete v tématu [kolekce skupin](#GroupCollection) a [Kolekce Capture](#CaptureCollection) částech dále v tomto tématu.  
   
- Dva další vlastnosti <xref:System.Text.RegularExpressions.Match> třída poskytnout informace o shodě. `Match.Value` Vlastnost vrátí dílčí řetězec ve vstupním řetězci, který odpovídá regulární výraz. `Match.Index` Vlastnost vrací nule počáteční pozici odpovídající řetězec ve vstupním řetězci.  
+ Dvě další vlastnosti <xref:System.Text.RegularExpressions.Match> třídy poskytují informace o zjištěné shodě. `Match.Value` Vlastnost vrátí podřetězec ve vstupním řetězci, který odpovídá vzoru regulárního výrazu. `Match.Index` Vlastnost vrací založený na nule počáteční pozici odpovídající řetězec ve vstupním řetězci.  
   
- <xref:System.Text.RegularExpressions.Match> Třída také obsahuje dvě metody porovnávání:  
+ <xref:System.Text.RegularExpressions.Match> Třída také obsahuje dvě metody porovnávání vzorků:  
   
 -   <xref:System.Text.RegularExpressions.Match.NextMatch%2A?displayProperty=nameWithType> Metoda najde shodu po shodě reprezentované aktuální <xref:System.Text.RegularExpressions.Match> objekt a vrátí <xref:System.Text.RegularExpressions.Match> objekt, který reprezentuje, které odpovídají.  
   
--   <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> Metoda provede zadanou operaci nahrazení na odpovídajícím řetězci a vrátí výsledek.  
+-   <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> Metoda provede zadanou operaci nahrazení na odpovídající řetězec a vrátí výsledek.  
   
- Následující příklad používá <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metodu pro předřazení symbolu $ a mezery před každé číslo, které obsahuje dvě míst za desetinnou čárkou.  
+ V následujícím příkladu <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda předřaďte $ symbol a mezera před každé číslo, které zahrnuje dvě desetinné číslice.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/result1.cs#9)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/result1.vb#9)]  
   
- Regulární výraz `\b\d+(,\d{3})*\.\d{2}\b` je definovaný jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `\b\d+(,\d{3})*\.\d{2}\b` je definován, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne porovnání na hranici slova.|  
 |`\d+`|Porovná jednu nebo více desítkových číslic.|  
-|`(,\d{3})*`|Porovná nula nebo více výskytů středník a pomocí tří desetinných míst.|  
-|`\.`|Porovná znak desetinné čárky.|  
-|`\d{2}`|Porovná dvě desítková číslice.|  
+|`(,\d{3})*`|Porovná žádný nebo několik výskytů čárkou následovanou třemi desítkovými číslicemi.|  
+|`\.`|Odpovídá znaku desetinné čárky.|  
+|`\d{2}`|Porovná dvě desetinné číslice.|  
 |`\b`|Ukončí porovnání na hranici slova.|  
   
- Vzor nahrazení `$$ $&` označuje, že odpovídající podřetězec by měl být nahrazen symbol dolaru ($) ( `$$` vzor), mezeru a hodnotou shody ( `$&` vzor).  
+ Vzor pro nahrazení `$$ $&` vyjadřuje, že odpovídající podřetězec by měl být nahrazen symbol dolaru ($) ( `$$` vzor), mezeru a hodnotu shody ( `$&` vzor).  
   
  [Zpět na začátek](#introduction)  
   
 <a name="GroupCollection"></a>   
 ## <a name="the-group-collection"></a>Kolekce skupin  
- <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> Vlastnost vrátí <xref:System.Text.RegularExpressions.GroupCollection> objekt, který obsahuje <xref:System.Text.RegularExpressions.Group> objekty, které představují zachycené skupiny v jediné shodě. První <xref:System.Text.RegularExpressions.Group> objekt v kolekci (s indexem 0) představuje celou shodu. Každý objekt, který následuje představuje výsledky jediné zachytávající skupiny.  
+ <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Text.RegularExpressions.GroupCollection> objekt, který obsahuje <xref:System.Text.RegularExpressions.Group> objekty, které představují zachycené skupiny v jediný výskyt shody. První <xref:System.Text.RegularExpressions.Group> objektu v kolekci (na pozici 0) představuje celkovou shodu. Každý objekt, který následuje představuje výsledky jednoho zachytávající skupinu.  
   
- Je možné získat jednotlivé <xref:System.Text.RegularExpressions.Group> objektů v kolekcích s použitím <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> vlastnost. Můžete načíst nepojmenované skupiny pomocí jejich pořadového umístění v kolekci a podle názvu nebo podle pořadí načtení skupiny s názvem. Nepojmenované zachycení zobrazovat první v kolekci a jsou indexované zleva doprava v pořadí, ve kterém se zobrazují v regulární výraz. Pojmenovaná zachycení jsou indexována po nepojmenované zachycení zleva doprava v pořadí, ve kterém se zobrazují v regulární výraz. Pokud chcete zjistit, jaké číslem skupiny jsou k dispozici v kolekci pro konkrétní regulární výraz odpovídající metoda vrátí, můžete volat instance <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType> metoda. Chcete-li zjistit, jaké s názvem skupiny jsou k dispozici v kolekci, můžete zavolat instanci <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=nameWithType> metoda. Obě metody jsou užitečné zejména v pro obecné účely rutin, které analyzovat odpovídá nalezena jakýkoli regulární výraz.  
+ Je možné získat jednotlivé <xref:System.Text.RegularExpressions.Group> objekty v kolekci pomocí <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> vlastnost. Můžete načíst nepojmenované skupiny podle jejich pořadí v kolekci a načíst pojmenované skupiny podle názvu nebo podle pořadí. Nepojmenované zachycení se zobrazí první v kolekci a indexovaných zleva doprava v pořadí, v jakém jsou uvedeny ve vzoru regulárního výrazu. Pojmenované zachycení jsou indexována po nepojmenované zachycení, zleva doprava v pořadí, v jakém jsou uvedeny ve vzoru regulárního výrazu. Pokud chcete zjistit, jaké číslované skupiny jsou k dispozici v kolekci vrácené pro konkrétní metodu shody regulárních výrazů, můžete volat instanci <xref:System.Text.RegularExpressions.Regex.GetGroupNumbers%2A?displayProperty=nameWithType> metody. Pokud chcete zjistit, jaké pojmenované skupiny jsou k dispozici v kolekci, můžete volat instanci <xref:System.Text.RegularExpressions.Regex.GetGroupNames%2A?displayProperty=nameWithType> metody. Obě metody jsou zvláště užitečné při pro obecné účely rutiny, které analyzují nenašly žádné regulárními výrazy shody.  
   
- <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> Vlastnost je indexer kolekce v jazyce C# a objekt v kolekci výchozí vlastnost v jazyce Visual Basic. To znamená, že jednotlivé <xref:System.Text.RegularExpressions.Group> objektů můžete přistupovat pomocí indexu (nebo podle názvu, v případě pojmenovaných skupin) takto:  
+ <xref:System.Text.RegularExpressions.GroupCollection.Item%2A?displayProperty=nameWithType> Je vlastnost indexer kolekce v jazyce C# a výchozí vlastnosti objektu kolekce v jazyce Visual Basic. To znamená, že tato osoba <xref:System.Text.RegularExpressions.Group> objektům můžete přistupovat pomocí indexu (nebo podle názvu, v případě pojmenované skupiny) následujícím způsobem:  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/groupsyntax1.cs#13)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/groupsyntax1.vb#13)]  
   
- V následujícím příkladu definuje regulární výraz, který používá seskupovací konstrukce pro zachycení měsíc, den a rok data.  
+ Následující příklad definuje regulární výraz, který používá seskupovací konstrukce k zachycení odkazu měsíc, den a rok data.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/groupcollection1.cs#10)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/groupcollection1.vb#10)]  
   
- Regulární výraz `\b(\w+)\s(\d{1,2}),\s(\d{4})\b` je definovaný jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `\b(\w+)\s(\d{1,2}),\s(\d{4})\b` je definován, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\b`|Začne porovnání na hranici slova.|  
 |`(\w+)`|Porovná jeden nebo více znaků slova. Toto je první zachytávající skupina.|  
 |`\s`|Porovná prázdný znak.|  
-|`(\d{1,2})`|Odpovídat jedna nebo dvě desetinných míst. Toto je druhá zachytávající skupina.|  
+|`(\d{1,2})`|Porovná jednu nebo dvě desetinné číslice. Toto je druhá zachytávající skupina.|  
 |`,`|Porovná čárku.|  
 |`\s`|Porovná prázdný znak.|  
-|`(\d{4})`|Porovná čtyři desítková číslice. Toto je třetí zachytávající skupina.|  
+|`(\d{4})`|Porovná čtyři desítková čísla. Toto je třetí zachytávající skupina.|  
 |`\b`|Ukončí porovnání na hranici slova.|  
   
  [Zpět na začátek](#introduction)  
   
 <a name="the_captured_group"></a>   
-## <a name="the-captured-group"></a>Zaznamenané skupiny  
- <xref:System.Text.RegularExpressions.Group> Třída reprezentuje výsledek z jediné zachytávající skupiny. Skupinu objektů, které představuje zachytávající skupiny definované v regulárním výrazu se vrátí pomocí <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> vlastnost <xref:System.Text.RegularExpressions.GroupCollection> objekt vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> Je vlastnost indexeru (v jazyku C#) a výchozí vlastnost (v jazyce Visual Basic) <xref:System.Text.RegularExpressions.Group> třídy. Můžete také načíst jednotlivé členy iterací v kolekci pomocí `foreach` nebo `For``Each` vytvořit. Příklad najdete v předchozí části.  
+## <a name="the-captured-group"></a>Zachycené skupiny  
+ <xref:System.Text.RegularExpressions.Group> Třída reprezentuje výsledek z jednoho zachytávající skupinu. Skupiny objektů, které představuje zachytávající skupiny definované v regulárním výrazu jsou vráceny pomocí <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> vlastnost <xref:System.Text.RegularExpressions.GroupCollection> vrácený <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> vlastnost. <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> Je vlastnost indexeru (v jazyce C#) a výchozí vlastnost (v jazyce Visual Basic) <xref:System.Text.RegularExpressions.Group> třídy. Můžete také načíst jednotlivé členy podle iterace pomocí kolekce `foreach` nebo `For Each` vytvořit. Příklad najdete v předchozí části.  
   
- Následující příklad používá vnořené seskupovací konstrukce pro zachycení dílčích řetězců do skupin. Regulární výraz `(a(b))c` shoduje s řetězcem "abc". Přiřadí podřetězec "ab" první skupinu zaznamenávání a dílčí řetězec "b" druhý zachycující skupiny.  
+ Následující příklad používá vnořené seskupovací konstrukce k zachytávání podřetězců do skupin. Vzor regulárního výrazu `(a(b))c` shoduje s řetězcem "abc". Přiřadí podřetězec "ab" první zachytávající skupina a podřetězec "b" pro druhou zachytávající skupinu.  
   
  [!code-csharp[RegularExpressions.Classes#6](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Classes/cs/Example.cs#6)]
  [!code-vb[RegularExpressions.Classes#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Classes/vb/Example.vb#6)]  
   
- Následující příklad používá pojmenované seskupovací konstrukce k zachycení podřetězců z řetězec, který obsahuje data ve formátu "NAZEVDAT: hodnota", která rozdělí regulárnímu výrazu v dvojtečkou (:).  
+ Následující příklad používá pojmenovanou seskupovací konstrukce k zachytávání podřetězců z řetězce, který obsahuje data ve formátu "NAZEVDAT: hodnota", které rozdělí regulárních výrazů v dvojtečkou (:).  
   
  [!code-csharp[RegularExpressions.Classes#8](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Classes/cs/Example.cs#8)]
  [!code-vb[RegularExpressions.Classes#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Classes/vb/Example.vb#8)]  
   
- Regulární výraz `^(?<name>\w+):(?<value>\w+)` je definovaný jak je znázorněno v následující tabulce.  
+ Vzor regulárního výrazu `^(?<name>\w+):(?<value>\w+)` je definován, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`^`|Zahájí porovnávání na začátku vstupního řetězce.|  
-|`(?<name>\w+)`|Porovná jeden nebo více znaků slova. Je název této skupiny zaznamenávání `name`.|  
-|`:`|Porovná dvojtečkou.|  
-|`(?<value>\w+)`|Porovná jeden nebo více znaků slova. Je název této skupiny zaznamenávání `value`.|  
+|`(?<name>\w+)`|Porovná jeden nebo více znaků slova. Je název zachytávající skupiny `name`.|  
+|`:`|Porovná dvojtečka.|  
+|`(?<value>\w+)`|Porovná jeden nebo více znaků slova. Je název zachytávající skupiny `value`.|  
   
- Vlastnosti <xref:System.Text.RegularExpressions.Group> třída poskytnout informace o skupině zaznamenané: `Group.Value` vlastnost obsahuje zaznamenané dílčí řetězec, `Group.Index` vlastnost určuje počáteční pozici zachycené skupiny v vstupního textu `Group.Length` vlastnost obsahuje délka zachycený text a `Group.Success` vlastnost určuje, zda je dílčí řetězec odpovídá vzoru definována zachytávající skupině.  
+ Vlastnosti <xref:System.Text.RegularExpressions.Group> třídy poskytují informace o zachycenou skupinou: `Group.Value` vlastnost obsahuje zachycené podřetězce `Group.Index` vlastnost určuje počáteční pozici zachycené skupině ve vstupním textu `Group.Length` vlastnost obsahuje délka zachycený text a `Group.Success` vlastnost určuje, zda je dílčí řetězec shoduje se vzorem určené zachytávající skupina.  
   
- Použití kvantifikátory do skupiny (Další informace najdete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)) upravuje vztah jednoho zachycení na zachytávající skupinu dvěma způsoby:  
+ Použití kvantifikátory do skupiny (Další informace najdete v tématu [kvantifikátory](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)) upraví vztah jednoho zachycení za zachytávající skupinou dvěma způsoby:  
   
--   Pokud `*` nebo `*?` kvantifikátor (který určuje nula nebo více shod) se použijí pro skupinu, zaznamenávání skupina nemusí mít odpovídající ve vstupním řetězci. Pokud není žádný zachycený text, vlastnosti <xref:System.Text.RegularExpressions.Group> objekt jsou nastaveny, jak je znázorněno v následující tabulce.  
+-   Pokud `*` nebo `*?` kvantifikátor (který určuje žádnou nebo více shod) se použijí pro skupinu, skupinu zachycení nemusí mít shody ve vstupním řetězci. Pokud neexistuje žádný zachycený text vlastnosti <xref:System.Text.RegularExpressions.Group> objektu jsou nastaveny, jak je znázorněno v následující tabulce.  
   
-    |Skupina vlastností|Hodnota|  
+    |Vlastnosti skupiny|Hodnota|  
     |--------------------|-----------|  
     |`Success`|`false`|  
     |`Value`|<xref:System.String.Empty?displayProperty=nameWithType>|  
     |`Length`|0|  
   
-     V následujícím příkladu je uvedena ukázka. V regulární výraz `aaa(bbb)*ccc`, první skupinu zaznamenávání (podřetězec "bbb") je možné porovnávat nula či více krát. Protože vstupní řetězec "aaaccc" odpovídá vzoru, zaznamenávání skupina nemá shody.  
+     V následujícím příkladu je uvedena ukázka. Ve vzoru regulárního výrazu `aaa(bbb)*ccc`, první zachytávající skupina (podřetězec "bbb"), mohou odpovídat nulakrát nebo vícekrát. Vzhledem k tomu, že vstupní řetězec "aaaccc" odpovídá vzoru, zachytávající skupina nemá shoda.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/nocapture1.cs#11)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/nocapture1.vb#11)]  
   
--   Kvantifikátory může odpovídat více výskytů typů vzor, který je definován zachytávající skupinou. V takovém případě `Value` a `Length` vlastnosti <xref:System.Text.RegularExpressions.Group> objektu obsahují informace jenom o poslední zaznamenané dílčí řetězec. Například následující regulární výraz odpovídá jedné větě, která ukončen tečkou. Používá dvě seskupovací konstrukce: první zaznamená jednotlivých slov společně s prázdným znakem; druhý zaznamená jednotlivých slov. Jak ukazuje výstup z příkladu, i když regulární výraz uspěje v zachytávání celé věty, druhé zachytávající skupině zaznamená pouze poslední slovo.  
+-   Kvantifikátory může odpovídat více výskytů typů vzor, který je definován zachytávající skupina. V takovém případě `Value` a `Length` vlastnosti <xref:System.Text.RegularExpressions.Group> objekt obsahovat informace pouze o poslední zachycené podřetězce. Například následující regulární výraz odpovídá jedné věty, které končí tečkou. Používá dva seskupovací konstrukce: první zachycuje jednotlivá slova spolu s prázdný znak; Druhá zachytává jednotlivých slov. Jak výstup z příkladu ukazuje, i když proběhne úspěšně regulárních výrazů v zachytávání celé věty, druhá zachytávající skupina zaznamená pouze poslední slovo.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/lastcapture1.cs#12)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/lastcapture1.vb#12)]  
@@ -309,21 +309,21 @@ ms.locfileid: "33579857"
  [Zpět na začátek](#introduction)  
   
 <a name="CaptureCollection"></a>   
-## <a name="the-capture-collection"></a>Kolekce zachycení  
- <xref:System.Text.RegularExpressions.Group> Obsahuje informace jenom o posledním zachycení. Celá sada zachycení provedené zachytávající skupiny je však stále k dispozici z <xref:System.Text.RegularExpressions.CaptureCollection> objekt, který je vrácený <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastnost. Každý ze členů kolekce <xref:System.Text.RegularExpressions.Capture> objekt, který reprezentuje zachycení provedené zachytávající skupinou v pořadí, ve kterém byly zachyceny (a tedy v pořadí, ve kterém byly zachycené řetězce porovnány zleva doprava ve vstupním řetězci). Je možné získat jednotlivé <xref:System.Text.RegularExpressions.Capture> objekty z kolekce v některém ze dvou způsobů:  
+## <a name="the-capture-collection"></a>Kolekce zachytávání  
+ <xref:System.Text.RegularExpressions.Group> Objekt obsahuje informace pouze o poslední zachycení. Ale je stále k dispozici z celá sada provedené zachytávající skupinou zachycení <xref:System.Text.RegularExpressions.CaptureCollection> objekt, který je vrácený <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastnost. Každý člen kolekce <xref:System.Text.RegularExpressions.Capture> objekt, který reprezentuje zachycení provedené zachycující skupina, v pořadí, ve kterém byly zachyceny (a tedy v pořadí, ve kterém byly zachycené řetězce porovnány zleva doprava ve vstupním řetězci). Je možné získat jednotlivé <xref:System.Text.RegularExpressions.Capture> objekty z kolekce v některém ze dvou způsobů:  
   
--   Podle iterace v rámci kolekce pomocí konstrukce, jako `foreach` (v jazyku C#) nebo `For``Each` (v jazyce Visual Basic).  
+-   Iterací pomocí konstrukce jako například kolekci `foreach` (v jazyce C#) nebo `For Each` (v jazyce Visual Basic).  
   
--   Pomocí <xref:System.Text.RegularExpressions.CaptureCollection.Item%2A?displayProperty=nameWithType> vlastnost k získání určitého objektu podle indexu. <xref:System.Text.RegularExpressions.CaptureCollection.Item%2A> Vlastnost je <xref:System.Text.RegularExpressions.CaptureCollection> objektu výchozí vlastnost (v jazyce Visual Basic) nebo indexer (v jazyku C#).  
+-   S použitím <xref:System.Text.RegularExpressions.CaptureCollection.Item%2A?displayProperty=nameWithType> vlastnost pro načtení konkrétní objekt podle indexu. <xref:System.Text.RegularExpressions.CaptureCollection.Item%2A> Vlastnost <xref:System.Text.RegularExpressions.CaptureCollection> (v jazyce Visual Basic) výchozí vlastnost nebo indexer (v jazyce C#) objektu.  
   
- Pokud není pro skupinu zachycení kvantifikátor <xref:System.Text.RegularExpressions.CaptureCollection> objekt obsahuje jeden <xref:System.Text.RegularExpressions.Capture> objekt, který je málo zájmu, protože poskytuje informace o shodě stejné jako jeho <xref:System.Text.RegularExpressions.Group> objektu. Pokud kvantifikátoru ke skupině zaznamenávání <xref:System.Text.RegularExpressions.CaptureCollection> objekt obsahuje všechny zachycení provedené zachytávající skupině a posledním členem kolekce představuje stejné zachycení jako <xref:System.Text.RegularExpressions.Group> objektu.  
+ Pokud není použit kvantifikátor zachycující skupiny <xref:System.Text.RegularExpressions.CaptureCollection> objekt obsahuje jediný <xref:System.Text.RegularExpressions.Capture> objekt, který je malý relevantní, protože poskytuje informace o zjištěné shodě stejné jako jeho <xref:System.Text.RegularExpressions.Group> objektu. Pokud byl použit kvantifikátor zachycující skupiny <xref:System.Text.RegularExpressions.CaptureCollection> objekt obsahuje všechna zachycení provedené zachytávající skupinou a poslední člen kolekce představuje stejné zachycení jako <xref:System.Text.RegularExpressions.Group> objektu.  
   
- Například, pokud používáte regulární výraz `((a(b))c)+` (kde kvantifikátor + určuje jeden nebo více shod) k zachycení odpovídá řetězci "abcabcabc", <xref:System.Text.RegularExpressions.CaptureCollection> objekt pro každou <xref:System.Text.RegularExpressions.Group> objekt obsahuje tři členy.  
+ Například, pokud používáte vzor regulárního výrazu `((a(b))c)+` (kde + kvantifikátor určuje jednu nebo více shod) k zachycení odpovídá řetězci "abcabcabc", <xref:System.Text.RegularExpressions.CaptureCollection> objekt pro každou <xref:System.Text.RegularExpressions.Group> objekt obsahuje tři členy.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/capturecollection1.cs#14)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/capturecollection1.vb#14)]  
   
- Následující příklad používá regulární výraz `(Abc)+` najít jeden nebo více po sobě jdoucích výskytů řetězce "Abc" v řetězci "XYZAbcAbcAbcXYZAbcAb". Tento příklad ukazuje použití <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastnost vrátit několik skupin zachytit dílčích řetězců.  
+ Následující příklad používá regulární výraz `(Abc)+` najít jeden nebo více po sobě jdoucích spuštění řetězce "Abc" v řetězci "XYZAbcAbcAbcXYZAbcAb". Tento příklad ukazuje použití <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastnost vrátit více skupin zachycené podřetězce.  
   
  [!code-csharp[RegularExpressions.Classes#5](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Classes/cs/Example.cs#5)]
  [!code-vb[RegularExpressions.Classes#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Classes/vb/Example.vb#5)]  
@@ -332,26 +332,26 @@ ms.locfileid: "33579857"
   
 <a name="the_individual_capture"></a>   
 ## <a name="the-individual-capture"></a>Jednotlivé zachytávání  
- <xref:System.Text.RegularExpressions.Capture> Třída obsahuje výsledky z jediného zachycení podřetězce. <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType> Vlastnost obsahuje odpovídající text a <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> vlastnost udává pozice s nulovým základem ve vstupním řetězci, od kterého začíná odpovídající podřetězec.  
+ <xref:System.Text.RegularExpressions.Capture> Třída obsahuje výsledky z funkce capture jeden dílčí výraz. <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType> Vlastnost obsahuje odpovídající text a <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> vlastnost určuje, pozice s nulovým základem ve vstupním řetězci, od které odpovídající podřetězec začíná.  
   
- V následujícím příkladu analyzuje vstupní řetězec pro teplota vybrané měst. Čárkou (",") slouží k oddělení města a jeho teploty a středník (";") slouží k oddělení dat pro každé město. Celý vstupní řetězec představuje jednu shodu. V regulární výraz `((\w+(\s\w+)*),(\d+);)+`, který slouží k analýze řetězec, název města přiřazen ke skupině druhý zaznamenávání a teplota je přiřazena čtvrtý zachycující skupiny.  
+ Následující příklad analyzuje vstupní řetězec pro teplotu ve vybraných městech. Čárkou (",") se používá k oddělení Město a jeho teploty a středníkem (";") se používá k oddělení dat pro každé město. Celý vstupní řetězec představuje jediný výskyt shody. Ve vzoru regulárního výrazu `((\w+(\s\w+)*),(\d+);)+`, který se používá pro analýzu řetězce, druhá zachytávající skupina je přiřazen název města a teplota je přiřazena čtvrtý zachytávající skupina.  
   
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/capture1.cs#16)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/capture1.vb#16)]  
   
- Regulární výraz je definována, jak je znázorněno v následující tabulce.  
+ Regulární výraz je definován, jak je znázorněno v následující tabulce.  
   
 |Vzor|Popis|  
 |-------------|-----------------|  
 |`\w+`|Porovná jeden nebo více znaků slova.|  
-|`(\s\w+)*`|Porovná nula nebo více výskytů prázdný znak, za nímž následuje jeden nebo více znaků slova. Tento vzor odpovídá více word města názvy. Toto je třetí zachytávající skupina.|  
-|`(\w+(\s\w+)*)`|Porovná jeden nebo více znaků slova následovaný nula nebo více výskytů prázdný znak a jeden nebo více znaků slova. Toto je druhá zachytávající skupina.|  
+|`(\s\w+)*`|Porovná žádný nebo několik výskytů prázdným znakem, za nímž následuje jedna nebo více znaků slova. Tento vzor odpovídá více slov měst. Toto je třetí zachytávající skupina.|  
+|`(\w+(\s\w+)*)`|Porovná jeden nebo více znaků slova následovaných nula nebo více výskytů znaku prázdný znak a jednu nebo více znaků slova. Toto je druhá zachytávající skupina.|  
 |`,`|Porovná čárku.|  
-|`(\d+)`|Porovnává jeden nebo více číslic. Toto je čtvrtý zachycující skupina.|  
-|`;`|Porovná středník.|  
-|`((\w+(\s\w+)*),(\d+);)+`|Shodují se vzorem slovo, a všechny další slova následuje čárka, jednu nebo více číslic a středníkem, jeden či více krát. Toto je první zachytávající skupina.|  
+|`(\d+)`|Porovná jeden nebo více číslic. Toto je čtvrtý zachytávající skupina.|  
+|`;`|Shodovat středníku.|  
+|`((\w+(\s\w+)*),(\d+);)+`|Porovná vzor slovo následované žádná další slova, za nímž následuje čárka, jeden nebo více číslic a středník, jednou nebo vícekrát. Toto je první zachytávající skupina.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Text.RegularExpressions>  
- [Regulární výrazy rozhraní .NET](../../../docs/standard/base-types/regular-expressions.md)  
+ [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)  
  [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

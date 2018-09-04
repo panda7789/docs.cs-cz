@@ -2,28 +2,28 @@
 title: Vytváření variantních obecných rozhraní (C#)
 ms.date: 07/20/2015
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
-ms.openlocfilehash: 882bd0aa4497a99b2cf80e96f13f433ae74aad59
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d8e7e8a59aeff27531187e5171a76651440ffc4c
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33323736"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526904"
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>Vytváření variantních obecných rozhraní (C#)
-Parametry obecného typu rozhraní jako kovariantní můžou deklarovat nebo kontravariant. *Kovariance* umožňuje metody rozhraní do mají více odvozené návratové typy než definované parametry obecného typu. *Kontravariance* umožňuje metody rozhraní tak, aby měl typy argumentů, které jsou odvozené menší než je určeno obecné parametry. Obecná rozhraní, které má kovariantní nebo kontravariant se označuje jako parametry obecného typu *variant*.  
+Je možné deklarovat parametry obecného typu v rozhraní jako kovariantní nebo kontravariantní. *Kovariance* umožňuje mají více odvozené návratové typy než určené parametry obecného typu metody rozhraní. *Kontravariance* umožňuje mít typy argumentů, které jsou méně odvozený než je určeno obecné parametry metody rozhraní. Obecná rozhraní, který má kovariantní nebo kontravariantní parametry obecného typu se nazývá *variant*.  
   
 > [!NOTE]
->  Rozhraní .NET framework 4 zavedly odchylku podporu pro několik existujících obecných rozhraní. Seznam variantních rozhraní v rozhraní .NET Framework, naleznete v části [odchylky obecných rozhraní (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).  
+>  Rozhraní .NET framework 4 zavedena podpora odchylku pro existující několik obecných rozhraní. Seznam variantních rozhraní v rozhraní .NET Framework najdete v tématu [odchylky obecných rozhraní (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md).  
   
 ## <a name="declaring-variant-generic-interfaces"></a>Deklarující variantních obecných rozhraní  
- Je možné deklarovat variantních obecných rozhraní pomocí `in` a `out` klíčová slova pro parametry obecného typu.  
+ Je možné deklarovat s použitím variantních obecných rozhraní `in` a `out` klíčová slova pro parametry obecného typu.  
   
 > [!IMPORTANT]
->  `ref`, `in`, a `out` parametry v jazyce C# nemůže být typu variant. Typy hodnot také nepodporují odchylky.  
+>  `ref`, `in`, a `out` parametry v jazyce C# nemůže být typu variant. Typy hodnot také nepodporují variance.  
   
- Je možné deklarovat parametr obecného typu kovariantní pomocí `out` – klíčové slovo. Typ kovariantní musí splňovat následující podmínky:  
+ Je možné deklarovat parametr obecného typu kovariantní s použitím `out` – klíčové slovo. Typ kovariantního musí splňovat následující podmínky:  
   
--   Typ je použit pouze jako návratový typ metody rozhraní a nepoužívá jako typ metoda argumenty. To je znázorněno v následujícím příkladu, ve kterém typ `R` je deklarovaná kovariant.  
+-   Typ je použít jenom jako návratový typ metody rozhraní a nelze použít jako typ argumentů metody. To je znázorněno v následujícím příkladu, ve kterém typ `R` je deklarována jako kovariantní.  
   
     ```csharp  
     interface ICovariant<out R>  
@@ -35,7 +35,7 @@ Parametry obecného typu rozhraní jako kovariantní můžou deklarovat nebo kon
     }  
     ```  
   
-     Existuje jedna výjimka tohoto pravidla. Pokud máte obecný delegát kontravariant jako parametru metody, můžete jako parametr obecného typu typ pro delegáta. Tento koncept je znázorněn typ `R` v následujícím příkladu. Další informace najdete v tématu [odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [pomocí odchylky pro Func a akce obecní delegáti (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
+     Existuje jedna výjimka tohoto pravidla. Pokud máte kontravariantní obecného delegáta jako parametr metody, můžete použít typ jako parametr obecného typu pro delegáta. To je znázorněno typem `R` v následujícím příkladu. Další informace najdete v tématu [odchylky v delegátech (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md) a [pomocí odchylku pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md).  
   
     ```csharp  
     interface ICovariant<out R>  
@@ -44,7 +44,7 @@ Parametry obecného typu rozhraní jako kovariantní můžou deklarovat nebo kon
     }  
     ```  
   
--   Typ není používána jako obecná omezení pro metody rozhraní. To je znázorněno v následujícím kódu.  
+-   Typ se nepoužívá jako obecná omezení pro metody rozhraní. To je znázorněno v následujícím kódu.  
   
     ```csharp  
     interface ICovariant<out R>  
@@ -56,7 +56,7 @@ Parametry obecného typu rozhraní jako kovariantní můžou deklarovat nebo kon
     }  
     ```  
   
- Je možné deklarovat kontravariant parametr obecného typu pomocí `in` – klíčové slovo. Typ kontravariant lze použít pouze jako typ argumenty metody a ne jako návratový typ metody rozhraní. Typ kontravariant můžete použít také pro obecná omezení. Následující kód ukazuje, jak používat obecná omezení pro jednu z jeho metod a kontravariant rozhraní deklarovat.  
+ Můžete deklarovat kontravariantního parametru obecného typu pomocí `in` – klíčové slovo. Kontravariantního typu lze použít pouze jako argumenty metody typu, nikoli jako návratový typ metody rozhraní. Kontravariantního typu můžete použít také pro obecná omezení. Následující kód ukazuje, jak deklarovat kontravariantní rozhraní a používat obecná omezení pro jednu z jeho metod.  
   
 ```csharp  
 interface IContravariant<in A>  
@@ -68,7 +68,7 @@ interface IContravariant<in A>
 }  
 ```  
   
- Je také možné podporovat kovariance a kontravariance v stejné rozhraní, ale pro jiný typ parametry, jak je znázorněno v následujícím příkladu kódu.  
+ Je také možné podporují kovarianci a kontravarianci ve stejné rozhraní, ale pro jiný typ parametrů, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 interface IVariant<out R, in A>  
@@ -79,8 +79,8 @@ interface IVariant<out R, in A>
 }  
 ```  
   
-## <a name="implementing-variant-generic-interfaces"></a>Implementuje variantních obecných rozhraní  
- Variantní obecná rozhraní se implementovat v třídy pomocí stejné syntaxe, který se používá pro invariantní rozhraní. Následující příklad kódu ukazuje, jak implementovat kovariantní rozhraní v obecné třídy.  
+## <a name="implementing-variant-generic-interfaces"></a>Implementující variantních obecných rozhraní  
+ Implementujete variantních obecných rozhraní v třídy pomocí stejné syntaxe, který se používá pro invariantní rozhraní. Následující příklad kódu ukazuje, jak implementovat kovariantní rozhraní v obecné třídě.  
   
 ```csharp  
 interface ICovariant<out R>  
@@ -97,7 +97,7 @@ class SampleImplementation<R> : ICovariant<R>
 }  
 ```  
   
- Třídy, které implementují rozhraní variant jsou neutrální. Zvažte například následující kód.  
+ Třídy, které implementují rozhraní varianty se nebudou měnit. Zvažte například následující kód.  
   
 ```csharp  
 // The interface is covariant.  
@@ -111,8 +111,8 @@ SampleImplementation<Button> button = new SampleImplementation<Button>();
 // SampleImplementation<Object> obj = button;  
 ```  
   
-## <a name="extending-variant-generic-interfaces"></a>Rozšíření variantních obecných rozhraní  
- Když rozšíříte variantní obecná rozhraní, budete muset použít `in` a `out` klíčová slova, která explicitně zadáte, jestli podporuje rozhraní odvozené odchylky. Kompilátor nelze odvodit odchylku z rozhraní, které se rozšiřuje. Zvažte například následující rozhraní.  
+## <a name="extending-variant-generic-interfaces"></a>Rozšiřování variantních obecných rozhraní  
+ Když rozšíříte variantních obecných rozhraní, je nutné použít `in` a `out` klíčových slov pro explicitně určit, zda odvozená rozhraní podporuje variance. Kompilátor nelze odvodit odchýlení od rozhraní, které se rozšiřuje. Zvažte například následující rozhraní.  
   
 ```csharp  
 interface ICovariant<out T> { }  
@@ -120,9 +120,9 @@ interface IInvariant<T> : ICovariant<T> { }
 interface IExtCovariant<out T> : ICovariant<T> { }  
 ```  
   
- V `IInvariant<T>` rozhraní, parametr obecného typu `T` je invariantní, zatímco v `IExtCovariant<out T>` parametr typu je kovariant, i když obě rozhraní rozšíření stejné rozhraní. Stejné pravidlo se použije pro parametry obecného typu kontravariant.  
+ V `IInvariant<T>` rozhraní, parametr obecného typu `T` je neutrální, zatímco v `IExtCovariant<out T>` parametr typu je kovariant, i když obě rozhraní rozšíření stejné rozhraní. Stejné pravidlo platí pro parametry obecného typu kontravariantní.  
   
- Můžete vytvořit rozhraní, které rozšiřuje rozhraní kde parametr typu Obecné `T` je kovariant a rozhraní tam, kde je kontravariant Pokud v rozšíření rozhraní parametr obecného typu `T` je neutrální. To je znázorněno v následujícím příkladu kódu.  
+ Můžete vytvořit rozhraní, které rozšiřuje rozhraní kde obecný parametr typu `T` je kovariantní a rozhraní, kde jsou kontravariantní Pokud ve rozšíření rozhraní parametr obecného typu `T` je neutrální. To je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 interface ICovariant<out T> { }  
@@ -130,7 +130,7 @@ interface IContravariant<in T> { }
 interface IInvariant<T> : ICovariant<T>, IContravariant<T> { }  
 ```  
   
- Ale pokud parametr obecného typu `T` je deklarován kovariantní v jedno rozhraní, nelze deklarovat je kontravariant v rozšíření rozhraní a naopak. To je znázorněno v následujícím příkladu kódu.  
+ Ale pokud parametr obecného typu `T` je deklarován kovariantního v jednom rozhraní, nelze deklarovat je kontravariantní rozšíření rozhraní nebo naopak. To je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 interface ICovariant<out T> { }  
@@ -138,10 +138,10 @@ interface ICovariant<out T> { }
 // interface ICoContraVariant<in T> : ICovariant<T> { }  
 ```  
   
-### <a name="avoiding-ambiguity"></a>Zamezení nejednoznačnosti  
- Při implementaci variantních obecných rozhraní odchylku může někdy dojít k nejednoznačnosti. To je nutno.  
+### <a name="avoiding-ambiguity"></a>Jak se vyhnout nejednoznačnosti  
+ Při implementaci variantních obecných rozhraní variance může někdy vést k nejednoznačnosti. To by se jim vyhnout.  
   
- Například pokud explicitní implementace stejné variant obecná rozhraní s jinou obecné parametry typu do jedné třídy, můžete vytvořit nejednoznačnosti. Kompilátor nevytváří chybu v takovém případě ale není zadaný, které implementace rozhraní bude vybrána za běhu. To může vést k jemně chyby v kódu. Vezměte v úvahu následující příklad kódu.  
+ Například pokud se explicitně implementovat stejné variantních obecné rozhraní s parametry různých obecného typu v jedné třídy, můžete vytvořit nejednoznačnosti. Kompilátor nevytváří chybu v tomto případě ale není zadaný, která implementace rozhraní se zvolí za běhu. To může vést k drobným chybám v kódu. Zvažte následující příklad kódu.  
   
 ```csharp  
 // Simple class hierarchy.  
@@ -183,8 +183,9 @@ class Program
 }  
 ```  
   
- V tomto příkladu neurčené jak `pets.GetEnumerator` metoda zvolí mezi `Cat` a `Dog`. To může způsobit problémy ve vašem kódu.  
+ V tomto příkladu neurčená jak `pets.GetEnumerator` metoda zvolí mezi `Cat` a `Dog`. To může způsobit problémy v kódu.  
   
-## <a name="see-also"></a>Viz také  
- [Odchylky obecných rozhraní (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
- [Použití odchylek pro Func a akce obecní delegáti (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+## <a name="see-also"></a>Viz také
+
+- [Odchylky obecných rozhraní (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)  
+- [Použití odchylek pro delegáty Func a Action obecný (C#)](../../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)

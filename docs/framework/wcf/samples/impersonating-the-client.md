@@ -6,22 +6,22 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: 4c5d911bfbfcd33248e15b9fc822abdc9cf4046c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5a13ab73e48616b38e583b1c9948fc1bf5eb8a64
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33505007"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43522285"
 ---
 # <a name="impersonating-the-client"></a>Zosobnění klienta
-Ukázka zosobnění ukazuje, jak zosobnit volající aplikace ve službě, aby služba přístup jménem volající systémové prostředky.  
+Ukázka zosobnění ukazuje, jak zosobnit volající aplikace na službu tak, aby službě můžete získat přístup k systémovým prostředkům jménem volající.  
   
- Tato ukázka je založena na [hostování na vlastním](../../../../docs/framework/wcf/samples/self-host.md) ukázka. Konfigurační soubory klienta a služby jsou stejné jako [hostování na vlastním](../../../../docs/framework/wcf/samples/self-host.md) ukázka.  
+ Tato ukázka je založena na [hostování na vlastním serveru](../../../../docs/framework/wcf/samples/self-host.md) vzorku. Konfigurační soubory klienta a služby jsou stejné jako u [hostování na vlastním serveru](../../../../docs/framework/wcf/samples/self-host.md) vzorku.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Kódu služby se změnilo tak, aby `Add` metoda služby zosobňuje volající pomocí <xref:System.ServiceModel.OperationBehaviorAttribute> jak je znázorněno v následujícím ukázkovém kódu.  
+ Kód služby byla změněna tak, aby `Add` zosobňuje volající pomocí metody ve službě <xref:System.ServiceModel.OperationBehaviorAttribute> jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 [OperationBehavior(Impersonation = ImpersonationOption.Required)]  
@@ -35,9 +35,9 @@ public double Add(double n1, double n2)
 }  
 ```  
   
- V důsledku toho je přepnuta kontext zabezpečení provádění vlákna zosobnit volající před vstupem `Add` metoda a vrátili zpět na ukončení metodu.  
+ V důsledku toho přepnutí kontextu zabezpečení spuštěné vlákno na zosobňují volajícího před vstupem `Add` metoda a vrátit zpět k ukončení metodu.  
   
- `DisplayIdentityInformation` Metody uvedené v následující vzorový kód je nástroj funkce, která zobrazuje identitu volajícího.  
+ `DisplayIdentityInformation` Metoda je znázorněno v následujícím ukázkovém kódu je nástroj pro funkci, která zobrazuje identitu volajícího.  
   
 ```  
 static void DisplayIdentityInformation()  
@@ -52,7 +52,7 @@ static void DisplayIdentityInformation()
 }  
 ```  
   
- `Subtract` Metoda služby zosobňuje volající pomocí imperativní volání, jak je znázorněno v následujícím ukázkovém kódu.  
+ `Subtract` Metoda ve službě zosobňuje volající pomocí imperativního volání, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 public double Subtract(double n1, double n2)  
@@ -86,11 +86,11 @@ DisplayIdentityInformation();
 }  
 ```  
   
- Všimněte si, že v tomto případě volající není zosobnit celý volání, ale je pouze zosobnit část volání. Obecně platí zosobnění pro co nejmenší obor je vhodnější zosobnění pro celou operaci.  
+ Všimněte si, že v tomto případě volající není zosobnit celý volání, ale je jen zosobněné část volání. Zosobnění pro nejmenší obor je obecně vhodnější zosobnění pro celou operaci.  
   
- Jiné metody nezosobňovat volající.  
+ Jiné metody není zosobňují volajícího.  
   
- Kód klienta se změnila nastavení na úrovni zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>. Klient určuje úroveň zosobnění má být používána služby, pomocí <xref:System.Security.Principal.TokenImpersonationLevel> výčtu. Výčet podporuje následující hodnoty: <xref:System.Security.Principal.TokenImpersonationLevel.None>, <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, <xref:System.Security.Principal.TokenImpersonationLevel.Identification>, <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> a <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. Chcete-li provést kontrolu přístupu při přístupu k systémového prostředku v místním počítači, který je chráněný pomocí seznamů ACL systému Windows, musí být nastavena úroveň zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, jak je znázorněno v následujícím ukázkovém kódu.  
+ Klientský kód byl změněn na nastavení úrovně k zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>. Určuje úroveň zosobnění použije službu, pomocí klienta <xref:System.Security.Principal.TokenImpersonationLevel> výčtu. Výčet podporuje následující hodnoty: <xref:System.Security.Principal.TokenImpersonationLevel.None>, <xref:System.Security.Principal.TokenImpersonationLevel.Anonymous>, <xref:System.Security.Principal.TokenImpersonationLevel.Identification>, <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation> a <xref:System.Security.Principal.TokenImpersonationLevel.Delegation>. K provedení kontroly přístupu při přístupu k systémového prostředku v místním počítači, který je chráněn pomocí ACL Windows, musí být nastavena úroveň zosobnění <xref:System.Security.Principal.TokenImpersonationLevel.Impersonation>, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 // Create a client with given client endpoint configuration  
@@ -99,30 +99,30 @@ CalculatorClient client = new CalculatorClient();
 client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationLevel.Impersonation;  
 ```  
   
- Při spuštění vzorového operaci požadavky a odpovědi se zobrazují v oknech konzoly služby a klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazují v oknech konzoly služby a klienta. Stisknutím klávesy ENTER v každé okno konzoly pro vypnutí klienta a služby.  
   
 > [!NOTE]
->  Služba musí buď spustit pod účtem správce nebo účet jeho spuštění ve musí být udělena práva k registraci http://localhost:8000/ServiceModelSamples identifikátor URI s vrstvě protokolu HTTP. Tato oprávnění lze udělit nastavením [Namespace rezervace](http://go.microsoft.com/fwlink/?LinkId=95012) pomocí [Httpcfg.exe nástroj](http://go.microsoft.com/fwlink/?LinkId=95010).  
+>  Služba se musí buď spustit pod účtem správce nebo účet běží pod musí mít udělena oprávnění k registraci http://localhost:8000/ServiceModelSamples identifikátor URI s vrstvou HTTP. Tato oprávnění lze udělit nastavením [Namespace rezervace](https://go.microsoft.com/fwlink/?LinkId=95012) pomocí [Httpcfg.exe nástroj](https://go.microsoft.com/fwlink/?LinkId=95010).  
   
 > [!NOTE]
->  V počítačích se systémem [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], zosobnění je podporováno pouze v případě, že aplikace Host.exe má oprávnění k zosobnění. (Ve výchozím nastavení mají pouze správci toto oprávnění.) Chcete-li přidat toto oprávnění k účtu, jako je služba spuštěná, přejděte na **nástroje pro správu**, otevřete **místní zásady zabezpečení**, otevřete **místní zásady**, klikněte na tlačítko **Přiřazení uživatelských práv**a vyberte **zosobnit klienta po ověření** a dvakrát klikněte na **vlastnosti** přidat uživatele nebo skupinu.  
+>  V počítačích se systémem [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], zosobnění je podporována pouze v případě, že aplikace Host.exe má oprávnění k zosobnění. (Ve výchozím nastavení, pouze správci mají toto oprávnění.) Pokud chcete přidat toto oprávnění je služba spuštěna jako účet, přejděte na **nástroje pro správu**, otevřete **místní zásady zabezpečení**, otevřete **místní zásady**, klikněte na tlačítko **Přiřazení uživatelských práv**a vyberte **zosobnit klienta po ověření** a dvakrát klikněte na panel **vlastnosti** přidat uživatele nebo skupinu.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-4.  K prokázání, že služba zosobňuje volající, spusťte klienta pod jiným účtem než ten, který je služba spuštěná v části. Uděláte to tak, že na příkazovém řádku zadejte:  
+4.  Abychom si předvedli, že služba zosobňuje volajícího, spustíte klienta pod jiným účtem než ten, který je služba spuštěná pod. Provedete to tak, že na příkazovém řádku zadejte:  
   
     ```  
     runas /user:<machine-name>\<user-name> client.exe  
     ```  
   
-     Zobrazí se výzva k zadání hesla. Zadejte heslo pro účet, který jste zadali dřív.  
+     Zobrazí se výzva k zadání hesla. Zadejte heslo pro účet, který jste dříve zadali.  
   
-5.  Při spuštění klienta si povšimněte identity před a po spuštění s odlišnými pověřeními.  
+5.  Když spustíte klienta, si povšimněte identity před a po spuštění s jinými přihlašovacími údaji.  
   
 ## <a name="see-also"></a>Viz také

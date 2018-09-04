@@ -3,11 +3,11 @@ title: Korelace – přehled
 ms.date: 03/30/2017
 ms.assetid: edcc0315-5d26-44d6-a36d-ea554c418e9f
 ms.openlocfilehash: 8ac5d39866b23bc134f009fdb0df6ebf56c6d234
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386318"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43553458"
 ---
 # <a name="correlation-overview"></a>Korelace – přehled
 Korelace je mechanismus trvalého stavu pracovního postupu zpracování objednávky týkající se zpráv služby pracovního postupu k sobě navzájem, nebo až po stav instance aplikace, jako je například odpovědět na požadavek počáteční nebo ID konkrétní pořadí. Toto téma obsahuje přehled korelace. Další témata v této části poskytují další informace pro každý typ korelace.  

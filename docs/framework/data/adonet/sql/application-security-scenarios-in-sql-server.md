@@ -2,62 +2,62 @@
 title: Scénáře zabezpečení aplikací v systému SQL Server
 ms.date: 03/30/2017
 ms.assetid: 0164f3a4-406e-4693-bec3-03c8e18b46d7
-ms.openlocfilehash: 1239715678bda648bc962f9b23667b954b540e3f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bf4f4adfd5f49bd210026e40bd5fa4e67da10d75
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363322"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43535986"
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>Scénáře zabezpečení aplikací v systému SQL Server
-Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečený klientskou aplikaci SQL Server. Každá aplikace je jedinečné v jeho požadavky na prostředí pro nasazení a počet uživatelů. Aplikace, která je přiměřeně zabezpečen po počátečním nasazení se může stát méně zabezpečené v čase. Není možné předpovědět žádné přesnost co hrozeb můžou vznikat v budoucnu.  
+Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečené klientské aplikace SQL Server. Každá aplikace je jedinečný v jeho požadavky na nasazení prostředí a uživatelům. Aplikace, který je přiměřeně zabezpečené při prvotním nasazení může být méně zabezpečené v čase. Není možné předpovědět jakékoli přesnost co hrozeb mohou vzniknout v budoucnu.  
   
- SQL Server, jako produkt, má vyvinuly prostřednictvím mnoha verzí začlenit nejnovější funkce zabezpečení, které umožňují vývojářům vytvářet aplikace zabezpečené databáze. Ale nepřejde do stavu zabezpečení v poli; To vyžaduje potom monitorování a aktualizace.  
+ SQL Server, produkt, se průběžně vyvíjel mnoho verzí začlenit nejnovější funkce zabezpečení, které vývojářům umožňují vytvářet zabezpečené databázových aplikací. Ale zabezpečení nepřejde do pole. vyžaduje nepřetržité monitorování a aktualizace.  
   
-## <a name="common-threats"></a>Běžné hrozeb  
- Vývojáři musí porozumět bezpečnostní hrozby, nástrojů pro čítače a jak se vyhnout samo celistvosti. Zabezpečení můžete nejlépe představit jako řetězec, kde zalomení v jeden odkaz ohrožuje sílu celek. Následující seznam obsahuje některé běžné bezpečnostních hrozeb, které jsou popsány podrobněji v tématech v této části.  
+## <a name="common-threats"></a>Běžné hrozby  
+ Vývojáři potřebují k pochopení bezpečnostních hrozeb, nástroje poskytované čítači a jak se vyhnout poškozují bezpečnostní díry. Zabezpečení můžete nejlépe představit jako řetězce, kde odmlky v jakékoli jedno propojení ohrožuje sílu celku. Následující seznam obsahuje některé běžné hrozby zabezpečení, které jsou popsány podrobněji v tématech v této části.  
   
-### <a name="sql-injection"></a>Injektáž SQL  
- Injektáž SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazy jazyka Transact-SQL místo platný vstup. Pokud vstup je předán přímo k serveru bez ověřování a aplikace nechtěně spustí kód vložený, útoku se může dojít k poškození nebo zničení data. Můžete zabránit SQL Server vkládání útoky pomocí uložené procedury a příkazy s parametry, vyhnout dynamické SQL a omezení oprávnění pro všechny uživatele.  
+### <a name="sql-injection"></a>Útok prostřednictvím injektáže SQL  
+ Útok prostřednictvím injektáže SQL je proces, pomocí kterého uživatel se zlými úmysly zadá příkazů jazyka Transact-SQL místo platný vstup. Pokud vstup je předána přímo na server bez ověřování, a pokud aplikace provádí neúmyslně vloženého kódu, útoku hrozí riziko poškození nebo zničení data. Můžete zamezit SQL Server prostřednictvím injektáže útoky pomocí uložené procedury a příkazy s parametry, jak se vyhnout dynamické SQL a omezení oprávnění pro všechny uživatele.  
   
 ### <a name="elevation-of-privilege"></a>Zvýšení oprávnění  
- Zvýšení úrovně oprávnění útoky nastane, když má uživatel přístup předpokládat, že oprávnění důvěryhodného účtu, jako je například roli vlastníka nebo správce. Vždy spustit pod nejméně privilegovaným uživatelské účty a přiřaďte pouze potřebná oprávnění. Vyhněte se použití správce nebo vlastníka účty pro provádění kódu. Toto omezení velikosti škody, které může dojít, pokud se podaří útoku. Při provádění úlohy, které vyžadují další oprávnění, použijte postup podepisování nebo zosobnění pouze po dobu trvání úlohy. Můžete přihlásit uložené procedury s certifikáty nebo použít zosobnění dočasně přiřadit oprávnění.  
+ Zvýšení úrovně oprávnění pro útoky zajistěte dojít, když je uživatel měl předpokládat oprávnění důvěryhodný účet, jako je například roli vlastníka nebo správce. Vždy spustit pod nejnižší úrovní oprávnění uživatelské účty a přiřaďte pouze potřebná oprávnění. Vyhněte se použití správce nebo vlastníka pro účty pro spouštění kódu. To omezuje množství škody, které může dojít, pokud bude úspěšné útoku. Při provádění úlohy, které vyžadují další oprávnění, použijte proceduru podepisování nebo zosobnění pouze po dobu trvání úlohy. Můžete se přihlásit uložené procedury s certifikáty nebo použití zosobnění se dočasně přiřadit oprávnění.  
   
-### <a name="probing-and-intelligent-observation"></a>Testování a inteligentní pozorování  
- Útoku testování můžete chybové zprávy generované aplikací hledat pro chyby zabezpečení. Implementace zpracování chyb v všechny procedurální kód, aby se zabránilo informace o chybě systému SQL Server nebyl vrácen pro koncového uživatele.  
+### <a name="probing-and-intelligent-observation"></a>Zjišťování a inteligentního zjišťování  
+ Útok zjišťování můžete použít chybové zprávy generované aplikace pro hledání ohrožení zabezpečení. Implementace zpracování chyb v kódu všechny procedury zabránit informace o chybě systému SQL Server nebyl vrácen pro koncového uživatele.  
   
 ### <a name="authentication"></a>Ověřování  
- Útok prostřednictvím injektáže řetězec připojení může dojít, když pomocí přihlášení serveru SQL, pokud připojovací řetězec založený na vstup uživatele vytvořeným za běhu. Pokud připojovací řetězec není zaškrtnuté pro dvojice platný – klíčové slovo, útočník můžete vložit další znaky, potenciálně přístup k citlivým datům nebo jiným prostředkům na serveru. Pokud je to možné, použijte ověřování systému Windows. Pokud musíte použít přihlášení serveru SQL, použijte <xref:System.Data.SqlClient.SqlConnectionStringBuilder> k vytvoření a ověření připojovací řetězce v době běhu.  
+ Útok prostřednictvím injektáže řetězec připojení může dojít, když pomocí přihlášení serveru SQL Server, pokud připojovací řetězec založený na vstupu uživatele je vytvořen v době běhu. Pokud připojovací řetězec není možnost zaškrtnuta, pro páry platný – klíčové slovo, útočník může vložit nadbytečné znaky, potenciálně přístup k citlivým datům ani další prostředky na serveru. Kdykoli je to možné, použijte ověřování Windows. Pokud je nutné použít přihlašovací údaje SQL serveru, použijte <xref:System.Data.SqlClient.SqlConnectionStringBuilder> vytvářet a ověřovat připojovací řetězce v době běhu.  
   
 ### <a name="passwords"></a>Hesla  
- Řada útoků úspěšné, protože bylo možné získat nebo uhodnout heslo pro privilegovaných uživatelů útočníka. Hesla jsou vaše první linií obrany před neoprávněným uživatelům, takže nastavení spolehlivého hesla je důležité pro zabezpečení vašeho systému. Vytvořte a vynutit zásady hesel pro smíšený režim ověřování.  
+ Mnoho útoků úspěšná, protože neoprávněný bylo možné získat nebo uhodnout heslo pro privilegovaných uživatelů. Hesla jsou vaše první linie obrany proti případné útočníky, takže nastavení spolehlivého hesla je důležité pro zabezpečení vašeho systému. Vytvořit a vynucovat zásady pro hesla pro ověřování ve smíšeném režimu.  
   
- Vždy přiřazujte silné heslo, které `sa` účtu, i když se používá ověřování systému Windows.  
+ Vždy přiřaďte silné heslo, které `sa` účtu, i když se používá ověřování Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
- Popisuje, jak spravovat oprávnění a řídit přístup k datům pomocí uložených procedur. Použití uložených procedur je efektivní způsob, jak reagovat na mnoho bezpečnostní hrozby.  
+ Popisuje, jak spravovat oprávnění a řízení přístupu k datům pomocí uložených procedur. Použití uložených procedur je účinný způsob, jak reagovat na mnoho bezpečnostní hrozby.  
   
  [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
- Popisuje postupy pro psaní zabezpečené dynamické SQL pomocí uložené procedury.  
+ Popisuje postupy pro zápis zabezpečené dynamické SQL pomocí uložených procedur.  
   
  [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
- Popisuje, jak se přihlásit pomocí certifikátu umožňuje uživatelům pracovat s daty, které nemají přímý přístup k uložené procedury. To umožňuje uložené procedury k provádění operací, které volající nemá oprávnění k provedení přímo.  
+ Popisuje, jak podepsat pomocí certifikátu umožňující uživatelům pracovat s daty, která nemají přímý přístup k uložené procedury. To umožňuje uložené procedury k provedení operace, které volající nemá oprávnění provést přímo.  
   
  [Přizpůsobení oprávnění se zosobněním na SQL Serveru](../../../../../docs/framework/data/adonet/sql/customizing-permissions-with-impersonation-in-sql-server.md)  
- Popisuje způsob použití EXECUTE AS klauzule zosobňovat jiného uživatele. Zosobnění přepínačů kontext provádění volající, který má zadaný uživatel.  
+ Popisuje způsob použití EXECUTE AS klauzule zosobňovat jiného uživatele. Zosobnění se změní kontext provádění od volajícího pro určitého uživatele.  
   
  [Udělení oprávnění na úrovni řádků na SQL Serveru](../../../../../docs/framework/data/adonet/sql/granting-row-level-permissions-in-sql-server.md)  
- Popisuje, jak implementovat oprávnění na úrovni řádku omezit přístup k datům.  
+ Popisuje, jak implementovat oprávnění na úrovni řádků pro omezení přístupu k datům.  
   
  [Vytváření rolí aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/creating-application-roles-in-sql-server.md)  
- Popisuje funkce a funkce aplikační role.  
+ Popisuje funkce a funkce z aplikační role.  
   
  [Povolení přístupu mezi databázemi na SQL Serveru](../../../../../docs/framework/data/adonet/sql/enabling-cross-database-access-in-sql-server.md)  
- Popisuje, jak povolit přístup k databázi mezi bez ohrožující zabezpečení.  
+ Popisuje postup povolení přístupu mezi databázemi bez ohrožující zabezpečení.  
   
 ## <a name="see-also"></a>Viz také  
  [SQL Server – zabezpečení](../../../../../docs/framework/data/adonet/sql/sql-server-security.md)  
  [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

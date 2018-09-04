@@ -9,11 +9,11 @@ ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 72bb3c2badef5262907e2e4fa8b461b576e8867d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43476047"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523076"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Ověření XDR s třídou XmlSchemaCollection
 

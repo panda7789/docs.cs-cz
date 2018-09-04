@@ -1,18 +1,18 @@
 ---
-title: Generování SQL ve zprostředkovateli ukázka
+title: Generování SQL ve zprostředkovateli ukázek
 ms.date: 03/30/2017
 ms.assetid: e70f553d-4622-4627-928e-1aa2ee605d8e
-ms.openlocfilehash: 7275a67927d7692dc943e2555d65d1f7d6e4ba5a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: cba1cec6d7ef0fdf8d4d4cf6c8e44fb325cf6447
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32762150"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43556202"
 ---
-# <a name="sql-generation-in-the-sample-provider"></a>Generování SQL ve zprostředkovateli ukázka
-[Zprostředkovatele Entity Framework ukázka](http://go.microsoft.com/fwlink/?LinkId=180616) předvádí nové komponenty zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  To funguje s databází systému SQL Server 2005 a je implementovaný jako obálku pro zprostředkovatele dat ADO.NET 2.0 System.Data.SqlClient.  
+# <a name="sql-generation-in-the-sample-provider"></a>Generování SQL ve zprostředkovateli ukázek
+[Ukázka zprostředkovatele Entity Framework](https://go.microsoft.com/fwlink/?LinkId=180616) ukazuje nových komponent zprostředkovatele dat ADO.NET, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  Funguje s databází serveru SQL Server 2005 a je implementovaný jako obálka pro zprostředkovatele System.Data.SqlClient ADO.NET 2.0 Data.  
   
- Modul generování SQL ukázkového poskytovatele (umístěný ve složce generování SQL, s výjimkou souboru, DmlSqlGenerator.cs) trvá vstupní DbQueryCommandTree a vytvoří jeden příkazu SQL SELECT.  
+ Modul generování SQL zprostředkovateli ukázek (umístěný ve složce generování SQL, s výjimkou souboru DmlSqlGenerator.cs) přijímá vstupní DbQueryCommandTree a vytváří jeden příkaz SQL SELECT.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  Tento oddíl obsahuje následující témata:  

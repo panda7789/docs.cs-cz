@@ -2,35 +2,35 @@
 title: Rozšíření trasování
 ms.date: 03/30/2017
 ms.assetid: 2b971a99-16ec-4949-ad2e-b0c8731a873f
-ms.openlocfilehash: 59291b6a57ba602e5fea84dcd571a8d767b7cc04
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 02dfcc099883ed1d5e97b4f7b1a1f76d49b27a20
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806806"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43565142"
 ---
 # <a name="extending-tracing"></a>Rozšíření trasování
-Tento příklad ukazuje, jak rozšířit funkci trasování Windows Communication Foundation (WCF) zápis trasování uživatelské aktivity v kódu klienta a služby. To umožňuje uživateli vytvořit trasování aktivity a seskupovat trasování do logické jednotky práce. Je také možné vazbu mezi aktivitami prostřednictvím přenosu (v rámci stejné koncového bodu) a šíření (v koncových bodů). V této ukázce je povoleno trasování pro klienta a služby. Další informace o tom, jak povolit trasování v konfiguračních souborech klienta a služby najdete v tématu [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md).  
+Tato ukázka předvádí, jak rozšířit funkci trasování Windows Communication Foundation (WCF) zápisem aktivit uživatelem definované trasy v kódu klienta a služby. To umožňuje uživateli vytvořit trasování aktivity a seskupit trasování do logických jednotek práce. Také je možné korelovat aktivity prostřednictvím převody (v rámci stejný koncový bod) a šíření (napříč koncovými body). V této ukázce je povoleno trasování klienta a služby. Další informace o tom, jak povolit trasování v konfiguračních souborů klienta a služby, najdete v části [trasování a protokolování zpráv](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md).  
   
  Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
   
 > [!NOTE]
->  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ExtendingTracing`  
   
-## <a name="tracing-and-activity-propagation"></a>Trasování a rozšíření aktivity  
- Uživatelem definované aktivity trasování umožňuje uživateli vytvořit své vlastní aktivity trasování pro trasování skupiny do logické jednotky práce, korelovat aktivity prostřednictvím přenosů a šíření a snížit náklady na výkon trasování WCF (například místo na disku náklady souboru protokolu).  
+## <a name="tracing-and-activity-propagation"></a>Trasování a šíření aktivity  
+ Uživatelem definované aktivity trasování umožňuje uživateli vytvořit své vlastní aktivity trasování pro trasování skupiny do logických jednotek práce, korelovat aktivity prostřednictvím přenosů a šíření hodnoty a snížit náklady na trasování WCF (například místo na disku nákladů souboru protokolu).  
   
 ### <a name="adding-custom-sources"></a>Přidání vlastních zdrojů  
- Uživatelem definované trasování mohou být přidány do kódu klienta a služby. Přidání zdroje trasování konfiguračních souborů klienta služby Windows nebo povolit pro toto vlastní trasování zaznamenat a zobrazí v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Následující kód ukazuje, jak přidat vlastní trasování zdroj s názvem `ServerCalculatorTraceSource` do konfiguračního souboru.  
+ Uživatelem definované trasy je přidat do kódu klienta a služby. Přidání zdroje trasování konfiguračních souborů klienta nebo služby umožňují vlastní trasování mají být zaznamenány a zobrazí v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Následující kód ukazuje, jak přidat zdroj uživatelem definované trasování s názvem `ServerCalculatorTraceSource` do konfiguračního souboru.  
   
 ```xml  
 <system.diagnostics>  
@@ -68,10 +68,10 @@ Tento příklad ukazuje, jak rozšířit funkci trasování Windows Communicatio
 ```  
   
 ### <a name="correlating-activities"></a>Korelace aktivity  
- Pro vazbu mezi aktivitami přímo v koncových bodů, `propagateActivity` musí být nastaven `true` v `System.ServiceModel` zdroj trasování. Navíc k šíření trasování bez průchodu přes WCF aktivity, ServiceModel trasování aktivity musí být vypnutý. To můžete vidět v následujícím příkladu kódu.  
+ Ke korelaci aktivit přímo napříč koncovými body, `propagateActivity` atribut musí být nastaven na `true` v `System.ServiceModel` zdroje trasování. Navíc bez nutnosti kontaktovat WCF aktivity rozšíření trasování, ServiceModel trasování aktivity musí být vypnutý. To můžete vidět v následujícím příkladu kódu.  
   
 > [!NOTE]
->  Vypnutí trasování aktivity ServiceModel není stejně, jako když úroveň trasování odlišené `switchValue` , nastavena na vypnuto.  
+>  Vypnutí trasování aktivity ServiceModel není stejná jako úroveň trasování, udávají `switchValue` vlastnost, nastavena na hodnotu off.  
   
 ```xml  
 <system.diagnostics>  
@@ -85,16 +85,16 @@ Tento příklad ukazuje, jak rozšířit funkci trasování Windows Communicatio
 </system.diagnostics>  
 ```  
   
-### <a name="lessening-performance-cost"></a>Lessening snížený výkon  
- Nastavení `ActivityTracing` vypnuto v `System.ServiceModel` zdroj trasování, vygeneruje soubor trasování, který obsahuje pouze uživatelské aktivity trasování, bez trasování aktivity ServiceModel zahrnuty. Výsledkem je mnohem menší velikost souboru protokolu. Možnost ke korelaci WCF zpracování trasování je však ztraceny.  
+### <a name="lessening-performance-cost"></a>Lessening snížení výkonu  
+ Nastavení `ActivityTracing` vypnuté v `System.ServiceModel` zdroj trasování vygeneruje trasovací soubor, který obsahuje pouze uživatelské aktivity trasování, bez jakékoli ServiceModel trasování aktivity zahrnuta. Výsledkem je mnohem menší velikosti souboru protokolu. Však dojde ke ztrátě příležitosti ke korelaci zpracování trasování WCF.  
   
-##### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+##### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky monitorování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193959)
+ [Ukázky AppFabric monitorování](https://go.microsoft.com/fwlink/?LinkId=193959)

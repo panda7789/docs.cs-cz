@@ -1,22 +1,22 @@
 ---
-title: 'Postupy: Změna pořadí polí souboru s oddělovači (LINQ) (Visual Basic)'
+title: 'Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c451c7db-663b-4daf-b8ba-a2093095d672
-ms.openlocfilehash: 4bef55c35311672ab3f28c2ce04a64e1cd21c170
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7d385473c461540c81d35d42d664ef0a8b7c054b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33642028"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43527886"
 ---
-# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Postupy: Změna pořadí polí souboru s oddělovači (LINQ) (Visual Basic)
-Soubor s oddělovači (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiných tabulková data, která je reprezentována řádků a sloupců. Pomocí <xref:System.String.Split%2A> metoda k oddělení polí, je velmi snadné pro dotazování a pracovat se soubory CSV pomocí LINQ. Ve skutečnosti stejný postup lze použít ke změně pořadí části všech strukturovaných řádků textu; není omezeno na souborů CSV.  
+# <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-visual-basic"></a>Postupy: Změna pořadí polí v souboru s oddělovači (LINQ) (Visual Basic)
+Soubor hodnot oddělených čárkami (CSV) je textový soubor, který se často používá k ukládání dat tabulky nebo jiné tabulková data, která je reprezentována řádků a sloupců. S použitím <xref:System.String.Split%2A> metoda oddělují pole, je velmi snadné dotazování a zpracování souborů CSV pomocí jazyka LINQ. Ve skutečnosti stejným způsobem umožňuje změnit uspořádání částí jakéhokoli strukturovaných řádku textu. není omezený na souborů CSV.  
   
- V následujícím příkladu se předpokládá, že tři sloupce představují studenty. "příjmení," "jméno" a "ID". Pole jsou v abecedním pořadí podle na studentů příjmení. Dotaz vytvoří nové pořadí, ve kterém sloupec ID první se objeví, za nímž následuje druhý sloupec, který kombinuje Studentova křestní jméno a příjmení. Řádky přeuspořádají podle pole ID. Výsledky se uloží do nového souboru a původní data se nemění.  
+ V následujícím příkladu se předpokládá, že tři sloupce představují studentů "příjmení," "jméno" a "ID". Pole jsou v abecedním pořadí podle příjmení na studentů. Dotaz vyprodukuje nové pořadí, ve kterém sloupci ID se zobrazí první, za nímž následuje druhý sloupec, který kombinuje student získal křestní jméno a příjmení. Řádky přeuspořádají podle pole ID. Výsledky jsou uloženy do nového souboru a se nezmění původní data.  
   
-### <a name="to-create-the-data-file"></a>K vytvoření datového souboru  
+### <a name="to-create-the-data-file"></a>Vytvoření datového souboru  
   
-1.  Zkopírujte následující řádky do souboru prostý text, který je pojmenován spreadsheet1.csv. Uložte soubor ve složce projektu.  
+1.  Zkopírujte následující řádky do souboru ve formátu prostého textu, který je pojmenován spreadsheet1.csv. Uložte soubor do složky projektu.  
   
     ```  
     Adams,Terry,120  
@@ -79,4 +79,4 @@ End Class
 ## <a name="see-also"></a>Viz také  
  [LINQ a řetězce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)  
  [LINQ a souborové adresáře (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)  
- [Postupy: Generování XML ze souborů CSV](http://msdn.microsoft.com/library/dd7bab8c-96fa-4343-94d0-9739dd6a74fd)
+ [Postupy: Generování XML ze souborů CSV](https://msdn.microsoft.com/library/dd7bab8c-96fa-4343-94d0-9739dd6a74fd)

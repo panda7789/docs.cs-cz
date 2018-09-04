@@ -10,11 +10,11 @@ helpviewer_keywords:
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
 ms.openlocfilehash: 92b3444f81f00ee709c22836126073d342c6fa05
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394637"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526814"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Aspekty LINQ (WCF Data Services)
 Toto téma obsahuje informace o způsobu, jakým skládá a spustí se, když používáte dotazů LINQ, který [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] klienta a omezeními pomocí jazyka LINQ k datové služby, který implementuje dotazování [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Další informace o vytváření a spouštění dotazů vůči [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)]– na základě dat služby, najdete v článku [dotazování v datové službě](../../../../docs/framework/data/wcf/querying-the-data-service-wcf-data-services.md).  

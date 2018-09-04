@@ -16,12 +16,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aa9e7a4dacceb492dfe037b4b64f22f231323de5
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: c08b1f6be41de63886115e5aed6bcad901658bb5
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43258330"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509217"
 ---
 # <a name="coropenflags-enumeration"></a>CorOpenFlags – výčet
 Obsahuje příznak hodnoty, které řídí chování metadata po otevření souborů manifestu.  
@@ -61,7 +61,7 @@ typedef enum CorOpenFlags
 |`ofReadOnly`|Označuje, že soubor musí být otevřen pro čtení a že volání `QueryInterface` pro [imetadataemit –](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md) nelze provést.|  
 |`ofTakeOwnership`|Označuje, že byla přidělena paměť pomocí volání do [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) a bude uvolněna metadata.|  
 |`ofNoTypeLib`|Zastaralé. Tento příznak se ignoruje.|  
-|`ofNoTransform`|Označuje, že by mělo být zakázáno automatické transformace soubory .winmd. Jinými slovy by mělo být zakázáno projekce typu modulu Windows Runtime na typ rozhraní .NET Framework. Další informace najdete v tématu [pod pokličkou pomocí .NET a modulem Windows Runtime](http://msdn.microsoft.com/magazine/jj651569.aspx).|  
+|`ofNoTransform`|Označuje, že by mělo být zakázáno automatické transformace soubory .winmd. Jinými slovy by mělo být zakázáno projekce typu modulu Windows Runtime na typ rozhraní .NET Framework. Další informace najdete v tématu [pod pokličkou pomocí .NET a modulem Windows Runtime](https://msdn.microsoft.com/magazine/jj651569.aspx).|  
 |`ofReserved1`|Vyhrazeno pro interní použití.|  
 |`ofReserved2`|Vyhrazeno pro interní použití.|  
 |`ofReserved`|Vyhrazeno pro interní použití.|  

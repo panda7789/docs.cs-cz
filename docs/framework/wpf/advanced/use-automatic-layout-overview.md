@@ -5,75 +5,75 @@ helpviewer_keywords:
 - layout [WPF], automatic
 - automatic layout [WPF]
 ms.assetid: 6fed9264-18bb-4d05-8867-1fe356c6f687
-ms.openlocfilehash: 8693150099559ca09541eb790c134ca3d5277e78
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a43b3c0e008025171e3b1fdeba3bc514d01e28c8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33548312"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43542621"
 ---
 # <a name="use-automatic-layout-overview"></a>Přehled automatického rozložení
-Toto téma představuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace s lokalizovatelný [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. V minulosti, lokalizace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] byl časově náročný proces. Každý jazyk, který [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] byla přizpůsobena pro požadované úpravy po jednotlivých bodech. Dnes s správné návrhu a pravé kódování standardy, [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] konstruovat tak, aby překladatelům při lokalizaci menší změny velikosti a přemístění udělat. Přístup pro zápis aplikace, které může být snadněji změněnou a přemístěných se nazývá Automatické rozložení a dosáhnout pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] návrh aplikace.  
+Toto téma popisuje pokyny pro vývojáře na tom, jak psát [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací s lokalizovatelné [!INCLUDE[TLA#tla_ui#plural](../../../../includes/tlasharptla-uisharpplural-md.md)]. V minulosti, lokalizace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] bylo časově náročný proces. Každý jazyk, který [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] byl upraven pro požadované úpravy podle pixelů. Dnes s správný návrh a pravá standardy kódování, [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)] lze sestavit tak, aby Lokalizátoři menší změny velikosti a přemístění provést. Přístup k vytváření aplikací, které se dají snadno změněnou velikostí a přemístěných nazývá Automatické rozložení a lze dosáhnout pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] návrhu aplikace.  
   
 <a name="advantages_of_autolayout"></a>   
-## <a name="advantages-of-using-automatic-layout"></a>Výhody používání automatického rozložení  
- Protože [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentace systém je výkonný a flexibilní, poskytuje schopnost rozložení prvky v aplikaci, která lze upravit podle požadavků různých jazyků. V následujícím seznamu bodů některé z výhod automatického rozložení.  
+## <a name="advantages-of-using-automatic-layout"></a>Mezi výhody používání automatického rozložení  
+ Vzhledem k tomu, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prezentační systém je výkonná a flexibilní, poskytuje schopnost rozložení prvků v aplikaci, která je možné upravit podle požadavků různých jazycích. Následující seznam ukazuje některé z výhod automatické rozložení.  
   
--   [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] zobrazí správně v libovolném jazyce.  
+-   [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Zobrazí také v jakémkoli jazyce.  
   
--   Snižuje nutnost po převádějí text se znovu pozice a velikosti ovládacích prvků.  
+-   Snižuje nutnost znovu nastavte pozici a velikost ovládacích prvků po přeložený text.  
   
--   Snižuje nutnost znovu nastavte velikost okna.  
+-   Snižuje nutnost přizpůsobit velikosti okna.  
   
 -   [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] rozložení vykreslí správně v libovolném jazyce.  
   
--   Lokalizace může snížit do bodu, že se jedná o něco více než řetězec překlad.  
+-   Lokalizace lze snížit, že se jedná o něco více než řetězec překladu bodu.  
   
 <a name="autolayout_controls"></a>   
 ## <a name="automatic-layout-and-controls"></a>Automatické rozložení a ovládací prvky  
- Automatické rozložení povolí aplikaci automaticky upravit velikost ovládacího prvku. Například můžete změnit ovládacího prvku podle délky řetězce. Tato funkce umožňuje překladatelům při lokalizaci přeložit řetězec; už nemusí ke změně velikosti ovládacího prvku podle přeložený textu. Následující příklad vytvoří tlačítko s obsah v angličtině.  
+ Automatické rozložení umožňuje aplikaci automaticky upravte velikost ovládacího prvku. Například ovládací prvek můžete změnit tak, aby vyhovovaly délku řetězce. Tato možnost umožňuje Lokalizátoři převodu řetězec. už nepotřebujete pro změnu velikosti ovládacího prvku podle přeložený text. Následující příklad vytvoří tlačítko s anglickým obsahem.  
   
  [!code-xaml[LocalizationBtn_snip#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn_snip/CS/Pane1.xaml#1)]  
   
- V příkladu, které budete muset udělat, aby byly španělské tlačítko je změna textu. Například  
+ V příkladu jediné, co musíte udělat, aby Španělština tlačítko se změní celý text. Například  
   
  [!code-xaml[LocalizationBtn#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationBtn/CS/Pane1.xaml#1)]  
   
- Následující obrázek ukazuje výstup ukázky kódu.  
+ Následující obrázek ukazuje výstup z ukázek kódu.  
   
- ![Tlačítko stejné s textem v různých jazycích](../../../../docs/framework/wpf/advanced/media/globalizationbutton.png "GlobalizationButton")  
-Tlačítko automaticky s možností změny velikosti  
+ ![Stejné tlačítko s textem v různých jazycích](../../../../docs/framework/wpf/advanced/media/globalizationbutton.png "GlobalizationButton")  
+Tlačítko automaticky umožňující změnu velikosti  
   
 <a name="autolayout_coding"></a>   
-## <a name="automatic-layout-and-coding-standards"></a>Automatické rozložení a kódování standardy  
- Použití automatického rozložení přístup vyžaduje sadu standardy kódování a návrhu a pravidla k vytvoření plně lokalizovatelný [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Následující pokyny se podpoře kódování automatického rozložení.  
+## <a name="automatic-layout-and-coding-standards"></a>Automatické rozložení a standardy kódování  
+ Pomocí automatického rozložení přístup vyžaduje sadu standardy kódování a návrhu a pravidla, která vytvoří plně lokalizovatelné [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Následující pokyny vám pomůže automatické rozložení psaní kódu.  
   
-|Kódování standardy|Popis|  
-|----------------------|-----------------|  
-|Nepoužívejte absolutní umístění.|-Nepoužívejte <xref:System.Windows.Controls.Canvas> protože umisťuje elementy absolutně.<br />-Použít <xref:System.Windows.Controls.DockPanel>, <xref:System.Windows.Controls.StackPanel>, a <xref:System.Windows.Controls.Grid> na pozici ovládací prvky.<br />-Informace o různých typech panelů, naleznete v [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md).|  
-|Nenastavujte s pevnou velikostí pro okno.|-Použít <xref:System.Windows.Window.SizeToContent%2A>.<br />-Například:<br /><br /> [!code-xaml[LocalizationGrid#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationGrid/CS/Pane1.xaml#2)]|  
-|Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A>.|<ul><li>Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A> pro kořenový element vaší aplikace.</li><li>[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje pohodlný způsob pro podporu vodorovné, obousměrné a svislém rozložení. V presentation framework <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost lze použít k definování rozložení. Směr toku vzory jsou:<br /><br /> <ul><li><xref:System.Windows.FlowDirection.LeftToRight> (LrTb) – vodorovném rozložení pro Latin, východoasijské a tak dále.</li><li><xref:System.Windows.FlowDirection.RightToLeft> (RlTb) – obousměrné arabština, hebrejština a tak dále.</li></ul></li></ul>|  
-|Místo fyzické písem používejte složená písma.|<ul><li>Pomocí složeného písem <xref:System.Windows.Controls.Control.FontFamily%2A> vlastnost nemusí lokalizovat.</li><li>Vývojářům můžete použít jednu z následujících písem nebo vytvořit vlastní.<br /><br /> <ul><li>Globální uživatelské rozhraní</li><li>Serif globální sítě San</li><li>Globální Serif</li></ul></li></ul>|  
-|Přidejte XML: lang.|-Přidat `xml:lang` atribut v kořenovém elementu vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], například `xml:lang="en-US"` pro angličtinu aplikaci.<br />-Vzhledem k tomu použít složená písma `xml:lang` Pokud chcete zjistit, jaká písma používat, nastavte tuto vlastnost na podporu více jazyků scénářů.|  
+| Standardy kódování | Popis |
+| ---------------------- | ----------------- |
+| Nepoužívejte absolutní umístění. | <ul><li>Nepoužívejte <xref:System.Windows.Controls.Canvas> protože naprosto umístí prvky.</li><li>Použití <xref:System.Windows.Controls.DockPanel>, <xref:System.Windows.Controls.StackPanel>, a <xref:System.Windows.Controls.Grid> umístěte ovládací prvky.</li><li>Informace o různých typech panelů najdete v článku [přehled panelů](../../../../docs/framework/wpf/controls/panels-overview.md).</li></ul> |
+| Nenastavujte pevně danou velikost okna. | – Použijte <xref:System.Windows.Window.SizeToContent%2A>.<br />Příklad:<br /><br /> [!code-xaml[LocalizationGrid#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationGrid/CS/Pane1.xaml#2)] |
+| Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A>. | <ul><li>Přidat <xref:System.Windows.FrameworkElement.FlowDirection%2A> do kořenového elementu vaší aplikace.</li><li>WPF poskytuje pohodlný způsob, jak podporovat vodorovné, obousměrné a svislé rozložení. V rámci prezentace <xref:System.Windows.FrameworkElement.FlowDirection%2A> vlastnost lze použít k definování rozložení. Směr toku vzorky jsou:<br /><br /> <ul><li><xref:System.Windows.FlowDirection.LeftToRight> (LrTb) – vodorovné rozložení pro latinka, východní Asie a tak dále.</li><li><xref:System.Windows.FlowDirection.RightToLeft> (RlTb) – obousměrné pro arabština, hebrejština a tak dále.</li></ul></li></ul> |
+| Místo fyzických písma používejte složená písma. | <ul><li>S složená písma <xref:System.Windows.Controls.Control.FontFamily%2A> vlastnost nemusí být lokalizována.</li><li>Vývojáře můžou použít jednu z následujících písma nebo vytvořit svoje vlastní.<br /><br /> <ul><li>Globální uživatelské rozhraní</li><li>Serif globální sítě San</li><li>Globální Serif</li></ul></li></ul> |
+| Přidáte XML: lang. | <ul><li>Přidat `xml:lang` atribut do kořenového elementu vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], například `xml:lang="en-US"` anglické aplikace.</li><li>Vzhledem k tomu použít složená písma `xml:lang` Pokud chcete zjistit, jaká písma používat, nastavte tuto vlastnost na podporu více jazyků scénářů.</li></ul> |
   
 <a name="autolay_grids"></a>   
 ## <a name="automatic-layout-and-grids"></a>Automatické rozložení a mřížky  
- <xref:System.Windows.Controls.Grid> Elementu, je užitečné pro automatické rozložení, protože umožňuje vývojář na pozici elementy. A <xref:System.Windows.Controls.Grid> ovládací prvek je schopen distribuci dostupné místo mezi její podřízené elementy pomocí sloupců a řádků uspořádání. [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Elementy může mít rozsah více buněk a je možné, že mřížky v rámci mřížky. Mřížky jsou užitečné, protože ty umožňují vytvořit a umístit je komplexní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Následující příklad ukazuje použití tabulky na pozici některé tlačítka a text. Všimněte si, že výška a šířka buněk jsou nastaveny na <xref:System.Windows.GridUnitType.Auto>; proto buňku, která obsahuje tlačítko s bitovou kopií upraví podle bitovou kopii.  
+ <xref:System.Windows.Controls.Grid> Elementu, je užitečná pro automatické rozložení, protože umožňuje vývojářům umístění prvků. A <xref:System.Windows.Controls.Grid> ovládací prvek je schopen distribuci k dispozici prostor mezi jeho podřízené prvky použitím uspořádání sloupců a řádků. [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Prvků může zahrnovat více buněk, a je možné mít mřížky v rámci mřížky. Mřížky jsou užitečné, protože umožňují vytvářet a umístěte komplexní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Následující příklad ukazuje použití tabulky na pozici některá tlačítka a text. Všimněte si, že výšku a šířku buňky jsou nastaveny na <xref:System.Windows.GridUnitType.Auto>; proto se upraví na buňku, která obsahuje tlačítko s imagí podle obrázku.  
   
  [!code-xaml[LocalizationGrid#1](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationGrid/CS/Pane1.xaml#1)]  
   
- Následující obrázek znázorňuje mřížky vyprodukované předchozí kód.  
+ Následující obrázek znázorňuje mřížky vytvořený v předchozím kódu.  
   
- ![Příklad mřížky](../../../../docs/framework/wpf/advanced/media/glob-grid.png "glob_grid")  
+ ![Grid – příklad](../../../../docs/framework/wpf/advanced/media/glob-grid.png "glob_grid")  
 Mřížka  
   
 <a name="autolay_grids_issharedsizescope"></a>   
 ## <a name="automatic-layout-and-grids-using-the-issharedsizescope-property"></a>Automatické rozložení a pomocí vlastnosti IsSharedSizeScope mřížky  
- A <xref:System.Windows.Controls.Grid> element je užitečné v lokalizovatelný aplikacím vytvořit ovládací prvky, které velikost podle obsahu. V některých případech ale budete chtít ovládacích prvků k udržování určité velikosti bez ohledu na obsah. Například pokud máte "OK", tlačítko Storno"a"Vyhledat"pravděpodobně nechcete, aby tlačítka přizpůsobí obsahu tlačítka. V takovém případě <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A?displayProperty=nameWithType> přidružená vlastnost je užitečná sdílení stejné nastavení velikosti mezi více elementů mřížky. Následující příklad ukazuje, jak sdílet data mezi několika Změna velikosti řádků a sloupců <xref:System.Windows.Controls.Grid> elementy.  
+ A <xref:System.Windows.Controls.Grid> prvek je užitečný v lokalizovatelných aplikacích vytvořit ovládací prvky, které se přizpůsobí zobrazení celého obsahu. V některých případech ale budete chtít ovládacích prvků pro udržování určité velikosti, bez ohledu na obsah. Například pokud máte "OK", "Storno" a "Procházet" pravděpodobně nechcete, aby tlačítka velikosti podle obsahu tlačítka. V tomto případě <xref:System.Windows.Controls.Grid.IsSharedSizeScope%2A?displayProperty=nameWithType> připojená vlastnost je užitečná pro sdílení stejné velikosti mezi mnohonásobné elementy mřížky. Následující příklad ukazuje, jak sdílet data mezi více změny velikosti řádků a sloupců <xref:System.Windows.Controls.Grid> elementy.  
   
  [!code-xaml[gridIssharedsizescopeProp#2](../../../../samples/snippets/csharp/VS_Snippets_Wpf/gridIssharedsizescopeProp/CSharp/Window1.xaml#2)]  
   
- **Poznámka:** kompletní příklad naleznete v části [sdílené složky pro změnu velikosti vlastnosti mezi mřížky](../../../../docs/framework/wpf/controls/how-to-share-sizing-properties-between-grids.md)  
+ **Poznámka:** kompletní vzorek kódu, naleznete v tématu [sdílené složky velikosti vlastnosti mezi mřížkami](../../../../docs/framework/wpf/controls/how-to-share-sizing-properties-between-grids.md)  
   
 ## <a name="see-also"></a>Viz také  
  [Globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md)  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 307d2809-208b-4cf8-b6a9-5d16f15fc16c
 ms.openlocfilehash: 90aa1e5dceb3cac87d330837496b9dc467dc1876
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43489887"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43555469"
 ---
 # <a name="adding-existing-constraints-to-a-dataset"></a>Přidání existujících omezení do datové sady
 **Vyplnit** metodu **DataAdapter** vyplní <xref:System.Data.DataSet> jenom pomocí sloupce tabulky a řádky ze zdroje dat, i když omezení běžně nastavené ve zdroji dat **vyplnit** metoda nepřidá informace o tomto schématu **datovou sadu** ve výchozím nastavení. K naplnění **datovou sadu** s stávající informace o omezení primárního klíče ze zdroje dat, můžete buď zavolat **FillSchema** metodu **DataAdapter**, nebo nastavte **MissingSchemaAction** vlastnost **DataAdapter** k **AddWithKey** před voláním **vyplnit**. To zajistí, že primární klíče omezení **datovou sadu** odrážejí hodnoty ve zdroji dat. Informace o omezení pro cizí klíč nezahrnuje a musí být vytvořen explicitně, jak je znázorněno v [omezení datových tabulek](../../../../docs/framework/data/adonet/dataset-datatable-dataview/datatable-constraints.md).  

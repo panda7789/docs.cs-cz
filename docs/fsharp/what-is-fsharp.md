@@ -3,11 +3,11 @@ title: 'Co je F #'
 description: 'Další informace o jaké F # programovací jazyk je a co programování v jazyce F # je jako. Další informace o bohaté datové typy, funkce a jak jsou zapadají.'
 ms.date: 08/03/2018
 ms.openlocfilehash: 193747f380c61a387ed79ecca6abbcd90ee74376
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43256707"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43564561"
 ---
 # <a name="what-is-f"></a>Co je F # #
 

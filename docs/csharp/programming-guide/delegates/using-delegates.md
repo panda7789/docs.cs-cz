@@ -4,70 +4,71 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
-ms.openlocfilehash: b27c94570fdf76808e8a7df67b34466bde20de7f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5c6a18601916df6e2abf093e8d4b4d77e085bfb1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33337402"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43539665"
 ---
 # <a name="using-delegates-c-programming-guide"></a>Použití delegátů (Průvodce programováním v C#)
-A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typu, který zapouzdřuje bezpečně metodu, podobně jako ukazatel na funkci jazyka C a C++. Na rozdíl od ukazatelů na funkce C Delegáti jsou objektově orientované, zadejte bezpečné a zabezpečení. Název delegát je definován typ delegáta. Následující příklad deklaruje delegáta s názvem `Del` který může zapouzdřit metody, která přijímá [řetězec](../../../csharp/language-reference/keywords/string.md) jako argument a vrátí [void](../../../csharp/language-reference/keywords/void.md):  
+A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, který zapouzdřuje bezpečně metodu, podobně jako ukazatel na funkci v jazyce C a C++. Na rozdíl od ukazatelů na funkce jazyka C Delegáti jsou objektově orientované, zadejte bezpečným a zabezpečeným. Podle názvu delegáta je definován typ delegátu. Následující příklad deklaruje delegáta s názvem `Del` , který může zapouzdřit metodu, která přijímá [řetězec](../../../csharp/language-reference/keywords/string.md) jako argument a vrátí [void](../../../csharp/language-reference/keywords/void.md):  
   
  [!code-csharp[csProgGuideDelegates#21](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_1.cs)]  
   
- Objekt delegáta normálně vytvořená pomocí Pokud budou zahrnovat název metody delegáta, nebo se [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md). Po vytvoření instance delegáta volání metody delegáta provedené se předá delegátem dané metody. Parametry delegátovi předaná volající funkcí je předaný metodě a návratovou hodnotu, pokud existuje, metoda vrátí volajícímu delegáta. To se označuje jako vyvolání delegáta. Delegáta instancí mohou být vyvolány, jako by šlo zabalené metoda sama. Příklad:  
+ Objekt delegáta je obvykle vytvářený poskytující název metody delegáta pro obtékání, nebo se [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md). Jakmile je vytvořena instance delegáta, metoda volání delegáta se předá podle delegáta k této metodě. Parametry předané do delegáta volajícím jsou předány do metody a návratovou hodnotu, pokud existuje, metoda je vrátit zpět volajícímu delegátem. To se označuje jako vyvolání delegáta. Instance delegát lze vyvolat, jako by šlo zabalené metoda sama. Příklad:  
   
  [!code-csharp[csProgGuideDelegates#22](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_2.cs)]  
   
  [!code-csharp[csProgGuideDelegates#23](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_3.cs)]  
   
- Delegát typy jsou odvozeny od <xref:System.Delegate> – třída v rozhraní .NET Framework. Delegát typy jsou [zapečetěné](../../../csharp/language-reference/keywords/sealed.md)– nemůže být odvozen od – a není možné vlastní odvozovat z <xref:System.Delegate>. Protože instancí delegát je objekt, může být předána jako parametr, nebo přiřadit k vlastnosti. To umožňuje metoda přijmout delegáta jako parametr a volání delegáta později. To se označuje jako asynchronní zpětné volání a je běžnou metodu, jak po dokončení dlouho proces upozornění volající. Při použití delegáta tímto způsobem kódu pomocí delegát nemusí vůbec dozvěděl o provádění použité metody. Funkce je podobná zapouzdření, které poskytují rozhraní.  
+ Typy delegátů jsou odvozeny z <xref:System.Delegate> třídy v rozhraní .NET Framework. Typy delegátů jsou [zapečetěné](../../../csharp/language-reference/keywords/sealed.md)– nemůže být odvozen od – a není možné vlastní odvozovat z <xref:System.Delegate>. Protože instance delegáta je objekt, může být předán jako parametr, nebo přidruženo k vlastnosti. Díky tomu metoda přijmout delegáta jako parametr a volání delegáta později. To se označuje jako asynchronního zpětného volání a se o běžnou metodu oznámit volajícím po dokončení dlouho procesu. Při použití delegáta tímto způsobem kódu pomocí delegáta není nutné žádnou znalost implementace metody se používají. Funkce je podobný zapouzdření poskytované rozhraní.  
   
- Další běžné použití zpětná volání je definování vlastní porovnání metoda a předání přidělíte metoda řazení. To umožňuje volajícího kódu, který se stane součástí algoritmus řazení. Následující příklad metoda používá `Del` typ jako parametr:  
+ Dalším běžným způsobem použití zpětných volání je definování vlastní porovnávací metody a předáním delegátu metoda řazení. To umožňuje volajícího kódu se stanou součástí algoritmu řazení. Metoda následující příklad používá `Del` typ jako parametr:  
   
  [!code-csharp[csProgGuideDelegates#24](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_4.cs)]  
   
- Potom můžete předat delegáta vytvořili výše této metody:  
+ Můžete předat delegáta k této metodě vytvořili výše:  
   
  [!code-csharp[csProgGuideDelegates#25](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_5.cs)]  
   
- a zobrazit následující výstup do konzoly:  
+ a zobrazí následující výstup do konzoly:  
   
  `The number is: 3`  
   
- Použití delegáta jako abstrakci, `MethodWithCallback` není nutné volat přímo konzole – nemusí se měly navrhovat s konzolou v paměti. Co `MethodWithCallback` nemá je jednoduše Příprava řetězec a předejte řetězec na jinou metodu. To je zvláště efektivní, protože delegované metodu můžete použít libovolný počet parametrů.  
+ Pomocí delegáta jako o abstrakci `MethodWithCallback` není potřeba přímo volat konzole – není nutné navrhovat pomocí konzoly v úvahu. Co `MethodWithCallback` nemá je jednoduše Příprava řetězce a předat řetězec na jinou metodu. To je zvláště efektivní, protože delegované metodu můžete použít libovolný počet parametrů.  
   
- Když se delegáta zabalit metody instance, odkazuje na instanci a metodu delegáta. Delegát nemá žádné informace o instanci typu bez ohledu na metodu, kterou se zabalí, proto delegáta může být jakéhokoli typu objektu, dokud je metodu na tento objekt, který odpovídá delegáta. Když se k zabalení statickou metodu delegáta, pouze odkazuje na metodu. Vezměte v úvahu následující deklarace:  
+ Při delegáta je vytvořen při zabalení metodu instance, odkazuje na instanci a metody delegáta. Delegát nezná žádný typ instance kromě metody, který ho zalamoval, tak delegát mohou odkazovat na libovolný typ objektu, za předpokladu, metoda je k tomuto objektu, který odpovídá signatuře delegátu. Když se zabalit statické metody delegáta, pouze odkazuje na metodu. Vezměte v úvahu následující deklarace:  
   
  [!code-csharp[csProgGuideDelegates#26](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_6.cs)]  
   
- Společně s statických `DelegateMethod` uvedený výše, nyní je k dispozici tři metody, které může být zabalen `Del` instance.  
+ Spolu s statické `DelegateMethod` uvedenému výše, teď máme tři metody, které mohou být zabaleny třídou `Del` instance.  
   
- Delegát můžete volat více než jedna metoda po vyvolání. To se označuje jako vícesměrového vysílání. Můžete přidat další metodu do seznamu delegáta metod – seznamu vyvolání – jednoduše vyžaduje přidání dvě delegáti pomocí přidání nebo přidání operátory přiřazení ('+' nebo '+='). Příklad:  
+ Delegát může volat více než jednu metodu při vyvolání. To se označuje jako vícesměrové vysílání. Přidat další metodu do seznamu delegáta z metody – v seznamu vyvolání – jednoduše vyžaduje přidání dvou delegátů pomocí přidání ani operátory přiřazení sčítání ('+' nebo '+'). Příklad:  
   
  [!code-csharp[csProgGuideDelegates#27](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_7.cs)]  
   
- V tomto okamžiku `allMethodsDelegate` obsahuje tři metody, které ve svém seznamu volání –`Method1`, `Method2`, a `DelegateMethod`. Původní tři delegáty `d1`, `d2`, a `d3`, zůstanou beze změny. Když `allMethodsDelegate` je vyvolána, všechny tři metody se nazývají v pořadí. Pokud delegát používá parametry odkaz, odkaz je předán postupně všechny tři metody zase, a všechny změny pomocí jedné metody jsou viditelné pro další metodou. Pokud některou z metod vyvolá výjimku, která není zachycena v rámci metody, výjimka je předán volající delegát a žádná další metody v seznamu volání se nazývají. Pokud delegát má návratovou hodnotu a/nebo výstupní parametry, vrátí návratovou hodnotu a parametry poslední volaná metoda. Chcete-li odebrat ze seznamu volání metody, použijte snížení nebo snížení operátor přiřazení ('-' nebo ' '-=''). Příklad:  
+ V tomto okamžiku `allMethodsDelegate` obsahuje tři metody v jeho vyvolávacím seznamu –`Method1`, `Method2`, a `DelegateMethod`. Původní tři delegáty `d1`, `d2`, a `d3`, zůstanou beze změny. Když `allMethodsDelegate` je vyvolána, všechny tři metody jsou volány v pořadí. Pokud delegát používá parametry odkazů, odkaz je předán postupně pro každý ze tří metod zase a jsou viditelné pro další metoda změny pomocí metod. Pokud některou z metod vyvolá výjimku, která není zachycena v metodě, že výjimka je předán volajícímu metody delegáta a žádné další metody v seznamu vyvolání jsou volány. Pokud delegát má návratovou hodnotu a/nebo výstupní parametry, vrátí se návratová hodnota a parametry poslední metody, vyvolala. Pokud chcete odebrat ze seznamu vyvolání metody, použijte snížení nebo snížení operátor přiřazení ("-" nebo "-=.). Příklad:  
   
  [!code-csharp[csProgGuideDelegates#28](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_8.cs)]  
   
- Protože delegáta typy jsou odvozeny od `System.Delegate`, lze volat metody a vlastnosti definované třídy u delegát. Například počet metod najdete v seznamu vyvolání tohoto delegáta může napíšete:  
+ Protože typy delegátů jsou odvozeny z `System.Delegate`, metody a vlastnosti určené třídy lze volat delegátu. Například pokud chcete zjistit počet metod v seznamu vyvolání tohoto delegáta, můžete zadat:  
   
  [!code-csharp[csProgGuideDelegates#29](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_9.cs)]  
   
- Delegáti s více než jedna metoda v jejich seznamu volání odvozena od <xref:System.MulticastDelegate>, což je podtřídou třídy `System.Delegate`. Ve výše uvedeném kódu funguje v obou případech, protože obě třídy podporují `GetInvocationList`.  
+ Delegáti s více než jednu metodu do svého seznamu vyvolání odvozovat <xref:System.MulticastDelegate>, která je podtřídou třídy `System.Delegate`. Výše uvedený kód funguje v obou případech, protože obě třídy podporují `GetInvocationList`.  
   
- Vícesměroví Delegáti jsou používány při zpracování událostí. Objekty zdroje událostí odesílání oznámení o událostech příjemce objekty, které mají registrovaná pro příjem tuto událost. Registrace pro událost, příjemce vytvoří metodu navržený tak, aby zpracovat událost, pak vytvoří delegáta pro danou metodu a předá delegát zdroj události. Zdroj vyvolá delegáta, dojde k události. Delegát pak zavolá metodu na straně příjemce doručování data události zpracování událostí. Typ delegáta pro danou událost je definována podle zdroje události. Další informace najdete v tématu [události](../../../csharp/programming-guide/events/index.md).  
+ Delegáti jsou často používány při zpracování událostí. Objekty zdroje událostí odesílání oznámení o událostech příjemce objekty, které jste zaregistrováni k odběru příslušné události. K registraci na událost, příjemce vytvoří metodu určený ke zpracování událostí, pak vytvoří delegáta pro danou metodu a předává delegáta zdroji události. Zdroj volání delegáta při výskytu události. Delegát pak zavolá metodu na straně příjemce, poskytování dat událostí zpracování událostí. Typ delegáta pro danou událost je definován ve zdroji události. Další informace najdete v tématu [události](../../../csharp/programming-guide/events/index.md).  
   
- Porovnání delegáti dva různé typy přiřazen při kompilaci způsobí chybu kompilace. Pokud delegát instance jsou staticky typu `System.Delegate`, pak je povolené porovnání, spustí se však isfocusineditor hodnotu false na čas. Příklad:  
+ Porovnání delegáti dva různé typy, které jsou přiřazeny v době kompilace způsobí chybu kompilace. Pokud instance delegátů jsou staticky typu `System.Delegate`, pak je povolené porovnání, spustí se však návratovou hodnotu false v čase. Příklad:  
   
  [!code-csharp[csProgGuideDelegates#30](../../../csharp/programming-guide/delegates/codesnippet/CSharp/using-delegates_10.cs)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
- [Použití odchylek v delegátech](http://msdn.microsoft.com/library/e6acad03-93e0-4efb-a158-8696d5eb4ecf)  
- [Odchylky v delegátech](http://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)  
- [Použití odchylek pro obecné delegáty Func a Action](http://msdn.microsoft.com/library/e69c4f39-09aa-4c6d-a752-08cc767d8290)  
- [Události](../../../csharp/programming-guide/events/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+- [Použití odchylek v delegátech](https://msdn.microsoft.com/library/e6acad03-93e0-4efb-a158-8696d5eb4ecf)  
+- [Odchylky v delegátech](https://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)  
+- [Použití odchylek pro obecné delegáty Func a Action](https://msdn.microsoft.com/library/e69c4f39-09aa-4c6d-a752-08cc767d8290)  
+- [Události](../../../csharp/programming-guide/events/index.md)

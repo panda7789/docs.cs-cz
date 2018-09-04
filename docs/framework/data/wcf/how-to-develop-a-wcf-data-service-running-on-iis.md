@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vývoj WCF Data Service spuštěna ve službě IIS'
+title: 'Postupy: vývoj datové služby WCF ve službě IIS'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,155 +9,159 @@ helpviewer_keywords:
 - WCF Data Services, deploying
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
-ms.openlocfilehash: c9b0128de6459c65e42fc2935222aecc643ec1d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: af81e65dfd4661d62d7aa4a3e6075be312765cb7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33362511"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538212"
 ---
-# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: vývoj WCF Data Service spuštěna ve službě IIS
-Toto téma ukazuje, jak používat [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] k vytvoření služby data, která je založena na ukázková databáze Northwind, který je hostitelem aplikace technologie ASP.NET, která běží na Internetové informační služby (IIS). Příklad vytvoření stejnou službu data Northwind jako aplikace technologie ASP.NET, která běží na vývojový Server ASP.NET naleznete v části [rychlého startu služby WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).  
-  
+# <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: vývoj datové služby WCF ve službě IIS
+
+Toto téma ukazuje, jak pomocí služeb WCF Data Services k vytvoření datové služby, který je založen na ukázkové databáze Northwind, která je hostována ve webové aplikaci ASP.NET, na kterém běží v Internetové informační služby (IIS). Příklad toho, jak vytvořit stejný datová služba Northwind jako webovou aplikaci ASP.NET, která běží na serveru ASP.NET Development Server, najdete v článku [rychlý start služeb WCF Data Services](../../../../docs/framework/data/wcf/quickstart-wcf-data-services.md).
+
 > [!NOTE]
->  Pokud chcete vytvořit službu Northwind data, musíte instalaci ukázková databáze Northwind v místním počítači. Stažení této ukázkové databáze, najdete v článku stránce pro stažení [ukázkové databáze systému SQL Server](http://go.microsoft.com/fwlink/?linkid=24758).  
-  
- Toto téma ukazuje, jak vytvořit službu dat pomocí zprostředkovatele Entity Framework. Jiných poskytovatelů služeb dat jsou k dispozici. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  
-  
- Po vytvoření služby, je nutné explicitně zadat přístup k datovým prostředkům služby. Další informace najdete v tématu [postup: Povolit přístup ke službě Data](../../../../docs/framework/data/wcf/how-to-enable-access-to-the-data-service-wcf-data-services.md).  
-  
-### <a name="to-create-the-aspnet-web-application-that-runs-on-iis"></a>Chcete-li vytvořit aplikaci ASP.NET, který běží ve službě IIS  
-  
-1.  V sadě Visual Studio na **soubor** nabídce vyberte možnost **nový**a potom vyberte **projektu**.  
-  
-2.  V **nový projekt** dialogovém okně vyberte jako programovací jazyk Visual Basic a Visual C#.  
-  
-3.  V **šablony** podokně, vyberte **webové aplikace ASP.NET**. Poznámka: Pokud používáte Visual Studio Web Developer, musíte vytvořit nový web místo novou webovou aplikaci.  
-  
-4.  Typ `NorthwindService` jako název projektu.  
-  
-5.  Click **OK**.  
-  
-6.  Na **projektu** nabídce vyberte možnost **NorthwindService vlastnosti**.  
-  
-7.  Vyberte **webové** a pak vyberte **použití místního webového serveru IIS**.  
-  
-8.  Klikněte na tlačítko **vytvořit virtuální adresář** a pak klikněte na **OK**.  
-  
-9. Z příkazového řádku s oprávněními správce spusťte jeden z následujících příkazů (v závislosti na operační systém):  
-  
-    -   32bitové systémy:  
-  
+> Pokud chcete vytvořit datová služba Northwind, jste na místním počítači nainstalovali ukázkové databáze Northwind. Stáhněte si tuto ukázkovou databázi, naleznete na stránce stahování [ukázkové databáze systému SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).
+
+ Toto téma ukazuje, jak vytvořit datové služby pomocí zprostředkovatele Entity Framework. Ostatní zprostředkovatelé dat služby jsou k dispozici. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).
+
+ Po vytvoření služby, je nutné explicitně zadat přístup k prostředkům datové služby. Další informace najdete v tématu [postupy: povolení přístup k datové službě](../../../../docs/framework/data/wcf/how-to-enable-access-to-the-data-service-wcf-data-services.md).
+
+## <a name="create-the-aspnet-web-application-that-runs-on-iis"></a>Vytvoření webové aplikace ASP.NET, která běží ve službě IIS
+
+1. V sadě Visual Studio na **souboru** nabídce vyberte možnost **nový** > **projektu**.
+
+2. V **nový projekt** dialogové okno, vyberte **nainstalováno** > [**Visual C#** nebo **jazyka Visual Basic**] > **webové** kategorie.
+
+3. Vyberte **webová aplikace ASP.NET** šablony.
+
+1. Zadejte `NorthwindService` jako název projektu.
+
+5. Klikněte na tlačítko **OK**.
+
+6. Na **projektu** nabídce vyberte možnost **NorthwindService vlastnosti**.
+
+7. Vyberte **webové** kartu a potom vyberte **použití místní webový Server IIS**.
+
+8. Klikněte na tlačítko **vytvořit virtuální adresář** a potom klikněte na tlačítko **OK**.
+
+9. Z příkazového řádku s oprávněními správce proveďte jednu z následujících příkazů (v závislosti na operačním systému):
+
+    -   32bitové systémy:
+
         ```console
-        "%windir%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i  
-        ```  
-  
-    -   64bitové systémy:  
-  
+        "%windir%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
+        ```
+
+    -   64bitové systémy:
+
         ```console
-        "%windir%\Microsoft.NET\Framework64\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i  
-        ```  
-  
-     Tím je zajištěno, že Windows Communication Foundation (WCF) je zaregistrován v počítači.  
-  
-10. Z příkazového řádku s oprávněními správce spusťte jeden z následujících příkazů (v závislosti na operační systém):  
-  
-    -   32bitové systémy:  
-  
+        "%windir%\Microsoft.NET\Framework64\v3.0\Windows Communication Foundation\ServiceModelReg.exe" -i
+        ```
+
+     Tím zajistíte, že je v počítači registrována Windows Communication Foundation (WCF).
+
+10. Z příkazového řádku s oprávněními správce proveďte jednu z následujících příkazů (v závislosti na operačním systému):
+
+    -   32bitové systémy:
+
         ```console
-        "%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe" -i -enable  
-        ```  
-  
-    -   64bitové systémy:  
-  
+        "%windir%\Microsoft.NET\Framework\v4.0.30319\aspnet_regiis.exe" -i -enable
+        ```
+
+    -   64bitové systémy:
+
         ```console
-        "%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe" -i -enable  
-        ```  
-  
-     Tím je zajištěno, že služba IIS běží správně po instalaci WCF v počítači. Může mít také restartovat službu IIS.  
-  
-11. Když je spuštěná aplikace ASP.NET ve službě IIS7, je třeba provést následující kroky:  
-  
-    1.  Otevřete Správce služby IIS a přejděte do aplikace PhotoService pod **Default Web Site**.  
-  
-    2.  V **zobrazení funkcí**, dvakrát klikněte na **ověřování**.  
-  
-    3.  Na **ověřování** vyberte **anonymní ověřování**.  
-  
-    4.  V **akce** podokně klikněte na tlačítko **upravit** nastavení zabezpečení hlavní, pod které anonymní uživatelé se budou připojovat k webu.  
-  
-    5.  V **upravit pověření anonymního ověřování** dialogové okno, vyberte **identita fondu aplikací**.  
-  
+        "%windir%\Microsoft.NET\Framework64\v4.0.30319\aspnet_regiis.exe" -i -enable
+        ```
+
+     Tím je zajištěno, že služba IIS běží správně po instalaci WCF v počítači. Budete muset také restartovat službu IIS.
+
+11. Když je spuštěná aplikace ASP.NET ve službě IIS7, je třeba provést následující kroky:
+
+    1. Otevřete Správce služby IIS a přejděte do aplikace PhotoService v rámci **výchozí webový server**.
+
+    2. V **zobrazení funkcí**, dvakrát klikněte na panel **ověřování**.
+
+    3. Na **ověřování** stránce **anonymní ověřování**.
+
+    4. V **akce** podokně klikněte na tlačítko **upravit** nastavení zabezpečení objektu zabezpečení, pod které anonymní uživatele se připojí k lokalitě.
+
+    5. V **upravit pověření anonymního ověřování** dialogu **identita fondu aplikací**.
+
     > [!IMPORTANT]
-    >  Pokud používáte účet Network Service, udělíte anonymním uživatelům všechna přístupová práva interní síti přidružená tohoto účtu.  
-  
-12. Pomocí SQL Server Management Studio, pomocí nástroje sqlcmd.exe nebo editoru jazyka Transact-SQL v sadě Visual Studio, spusťte následující příkaz Transact-SQL pro instanci systému SQL Server, který má databáze Northwind připojené:  
-  
-    ```sql  
-    CREATE LOGIN [NT AUTHORITY\NETWORK SERVICE] FROM WINDOWS;  
-    GO   
-    ```  
-  
-     Tím se vytvoří přihlášení v instanci serveru SQL pro účet Windows použitý ke spuštění služby IIS. To umožňuje službě IIS pro připojení k instanci systému SQL Server.  
-  
-13. S připojit databázi Northwind spusťte následující příkazy jazyka Transact-SQL:  
-  
-    ```sql  
-    USE Northwind  
-    GO  
-    CREATE USER [NT AUTHORITY\NETWORK SERVICE]   
-    FOR LOGIN [NT AUTHORITY\NETWORK SERVICE] WITH DEFAULT_SCHEMA=[dbo];  
-    GO  
-    ALTER LOGIN [NT AUTHORITY\NETWORK SERVICE]   
-    WITH DEFAULT_DATABASE=[Northwind];   
-    GO  
-    EXEC sp_addrolemember 'db_datareader', 'NT AUTHORITY\NETWORK SERVICE'  
-    GO  
-    EXEC sp_addrolemember 'db_datawriter', 'NT AUTHORITY\NETWORK SERVICE'  
-    GO   
-    ```  
-  
-     Tím udělíte oprávnění k nové přihlašovací údaje, které umožňuje službě IIS ke čtení dat z a zapisovat data do databáze Northwind.  
-  
-### <a name="to-define-the-data-model"></a>Chcete-li definovat datový model  
-  
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu ASP.NET a pak klikněte na tlačítko **přidat novou položku.**  
-  
-2.  V **přidat novou položku** dialogové okno, vyberte **ADO.NET Entity Data Model**.  
-  
-3.  Zadejte název datového modelu, `Northwind.edmx`.  
-  
-4.  V průvodci Entity Data Model vyberte **generování z databáze**a potom klikněte na **Další**.  
-  
-5.  Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na **Další**:  
-  
-    -   Pokud jste připojení k databázi již nakonfigurována, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [postupy: vytvoření připojení databáze serveru SQL Server](http://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít ukázková databáze Northwind připojen.  
-  
-         \- nebo –  
-  
-    -   Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte ze seznamu připojení toto připojení.  
-  
-6.  Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políčka pro zobrazení a uložených procedur.  
-  
-7.  Klikněte na tlačítko **Dokončit** zavřete průvodce.  
-  
-    > [!NOTE]
-    >  Tento model generované datové zpřístupní vlastnosti cizího klíče v typech entit. Datové modely, které jsou vytvořené pomocí sady Visual Studio 2008 nezahrnují tyto vlastnosti cizího klíče. Z toho důvodu je třeba aktualizovat třídy klienta služby data všech klientských aplikací, které byly vytvořeny pro přístup ke službě Northwind data, která byla vytvořena pomocí sady Visual Studio 2008 před pokusem o přístup k této verzi datové služby Northwind.  
-  
-### <a name="to-create-the-data-service"></a>Vytvoření datové služby  
-  
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na název projektu ASP.NET a pak klikněte na tlačítko **přidat novou položku**.  
-  
-2.  V **přidat novou položku** dialogové okno, vyberte **služby ADO.NET Data**.  
-  
-3.  Název služby, zadejte `Northwind`.  
-  
-     Visual Studio vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu. V **Průzkumníku**, služba bude mít název, Northwind, s příponou. svc.cs nebo. svc.vb.  
-  
-4.  V kódu pro službu data, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje službu data s typem, který je kontejneru entit datového modelu, který v tomto případě je `NorthwindEntities`. Definice třídy by měl vypadat to následující:  
-  
+    > Pokud používáte účet Network Service, udělíte anonymním uživatelům všechna přístup k interní síti přidružené k tomuto účtu.
+
+12. Pomocí SQL Server Management Studio, nástroje sqlcmd.exe nebo editoru jazyka Transact-SQL v sadě Visual Studio, spusťte následující příkaz jazyka Transact-SQL pro instanci systému SQL Server, který má připojené databázi Northwind:
+
+    ```sql
+    CREATE LOGIN [NT AUTHORITY\NETWORK SERVICE] FROM WINDOWS;
+    GO
+    ```
+
+    Tím se vytvoří přihlášení v instanci systému SQL Server pro účet Windows použitý ke spuštění služby IIS. To umožňuje službě IIS pro připojení k instanci systému SQL Server.
+
+13. S databází Northwind, připojit spusťte následující příkazy jazyka Transact-SQL:
+
+    ```sql
+    USE Northwind
+    GO
+    CREATE USER [NT AUTHORITY\NETWORK SERVICE]
+    FOR LOGIN [NT AUTHORITY\NETWORK SERVICE] WITH DEFAULT_SCHEMA=[dbo];
+    GO
+    ALTER LOGIN [NT AUTHORITY\NETWORK SERVICE]
+    WITH DEFAULT_DATABASE=[Northwind];
+    GO
+    EXEC sp_addrolemember 'db_datareader', 'NT AUTHORITY\NETWORK SERVICE'
+    GO
+    EXEC sp_addrolemember 'db_datawriter', 'NT AUTHORITY\NETWORK SERVICE'
+    GO
+    ```
+
+    Tím udělíte práva k nové přihlašovací údaje, které umožňuje službě IIS čtení dat z a zapisovat data do databáze Northwind.
+
+## <a name="define-the-data-model"></a>Definování datového modelu
+
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu technologie ASP.NET a potom klikněte na tlačítko **přidat** > **nová položka**.
+
+2. V **přidat novou položku** dialogu **datový Model Entity ADO.NET**.
+
+3. Název datového modelu, zadejte `Northwind.edmx`.
+
+4. V Průvodci modelem Entity Data vyberte **Generovat z databáze**a potom klikněte na tlačítko **Další**.
+
+5. Datový model připojení k databázi pomocí jedné z následujících kroků a potom klikněte na tlačítko **Další**:
+
+    -   Pokud nemáte připojení k databázi, která jsou už nakonfigurovaná, klikněte na tlačítko **nové připojení** a vytvořit nové připojení. Další informace najdete v tématu [postupy: vytvoření připojení k databázím SQL Server](https://go.microsoft.com/fwlink/?LinkId=123631). Tato instance systému SQL Server musí mít připojené ukázkové databáze Northwind.
+
+         \- nebo –
+
+    -   Pokud máte připojení k databázi již byla konfigurována pro připojení k databázi Northwind, vyberte v seznamu připojení toto připojení.
+
+6. Na poslední stránce průvodce zaškrtněte políčka pro všechny tabulky v databázi a zrušte zaškrtnutí políček pro zobrazení a uložených procedur.
+
+7. Klikněte na tlačítko **Dokončit** zavřete průvodce.
+
+## <a name="create-the-data-service"></a>Vytvoření datové služby
+
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na název projektu ASP.NET a potom klikněte na **přidat** > **nová položka**.
+
+2. V **přidat novou položku** dialogu **službu WCF Data Service**.
+
+   ![Služby WCF Data Service šablony položky v sadě Visual Studio 2015](media/wcf-data-service-item-template.png)
+
+   > [!NOTE]
+   > **Službu WCF Data Service** šablona je k dispozici v sadě Visual Studio 2015, ale ne v sadě Visual Studio 2017.
+
+3. Název služby, zadejte `Northwind`.
+
+     Visual Studio vytvoří soubory značek a kódu XML pro novou službu. Ve výchozím nastavení otevře se okno editoru kódu. V **Průzkumníka řešení**, služba má název, Northwind a rozšíření. svc.cs nebo. svc.vb.
+
+4. V kódu pro datovou službu, nahraďte komentář `/* TODO: put your data source class name here */` v definici třídy, která definuje datové služby s typem, který je kontejner entit datového modelu, který v tomto případě je `NorthwindEntities`. Definice třídy by měl vypadat to následující:
+
      [!code-csharp[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria quickstart service/cs/northwind.svc.cs#servicedefinition)]
-     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]  
-  
-## <a name="see-also"></a>Viz také  
- [Vystavení dat jako služby](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)
+     [!code-vb[Astoria Quickstart Service#ServiceDefinition](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria quickstart service/vb/northwind.svc.vb#servicedefinition)]
+
+## <a name="see-also"></a>Viz také:
+
+- [Vystavení dat jako služby](../../../../docs/framework/data/wcf/exposing-your-data-as-a-service-wcf-data-services.md)

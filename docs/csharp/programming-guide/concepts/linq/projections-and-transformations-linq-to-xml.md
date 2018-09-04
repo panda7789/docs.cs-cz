@@ -2,12 +2,12 @@
 title: Projekce a transformace (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: bb0457ab-1823-47e6-9d2d-c93c958cc913
-ms.openlocfilehash: dfd10011646fb758215c8d472dacf7e16296493f
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 835383e472362d38ded3862042609eaaa508efbe
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42929792"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560093"
 ---
 # <a name="projections-and-transformations-linq-to-xml-c"></a>Projekce a transformace (LINQ to XML) (C#)
 Tato část obsahuje příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] projekce a transformace.  
@@ -25,5 +25,6 @@ Tato část obsahuje příklady [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md
 |[Postupy: generování textových souborů z XML (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-generate-text-files-from-xml.md)|Ukazuje, jak transformovat soubor XML do textového souboru bez XML.|  
 |[Postupy: Generování XML ze souborů CSV (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)|Ukazuje, jak používat [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] analyzovat soubor CSV a generování kódu XML z něj.|  
   
-## <a name="see-also"></a>Viz také  
- [Dotazování na stromy XML (C#)](../../../../csharp/programming-guide/concepts/linq/querying-xml-trees.md)
+## <a name="see-also"></a>Viz také
+
+- [Dotazování na stromy XML (C#)](../../../../csharp/programming-guide/concepts/linq/querying-xml-trees.md)

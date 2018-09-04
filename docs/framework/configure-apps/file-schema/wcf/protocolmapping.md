@@ -1,24 +1,26 @@
 ---
-title: '&lt;ProtocolMapping&gt;'
+title: '&lt;protocolMapping&gt;'
 ms.date: 03/30/2017
 ms.assetid: 5076644b-1f33-4f26-9488-87de9fcda04c
-ms.openlocfilehash: 4afdaaa62c1ac3241eb7382d0995bed51bde73e2
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
-ms.translationtype: HT
+ms.openlocfilehash: c50ca451052c9ad9d7ab6a0cb5387e644196191e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32748903"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525003"
 ---
-# <a name="ltprotocolmappinggt"></a>&lt;ProtocolMapping&gt;
-Představuje konfigurační oddíl pro definování sady výchozí protokol mapování mezi přenosu protokolu schémata (např. http, net.tcp, net.pipe atd.) a vazeb WCF. Při vytváření výchozí koncové body za běhu, Windows Communication Foundation (WCF) vyhledá nakonfigurované mapování a rozhodne, na které vazby pro konkrétní na základě adres.  
+# <a name="ltprotocolmappinggt"></a>&lt;protocolMapping&gt;
+Představuje konfigurační oddíl pro definování sady výchozích mapování protokolů mezi schématy přenosových protokolů (např. http, net.tcp, net.pipe atd.) a vazbami WCF. Při vytváření výchozí koncové body za běhu, Windows Communication Foundation (WCF) zabývá nakonfigurované mapování a určuje, na které vazby pro konkrétní základě adresu.  
   
- \<system.serviceModel>  
-\<protocolMapping >  
+[**\<system.serviceModel >**](system-servicemodel.md)  
+&nbsp;&nbsp;**\<protocolMapping >**  
   
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml
-   <protocolMapping>    <add binding="String"         bindingConfiguration="String"         scheme="http/net.msmq/net.pipe/net.tcp"/></protocolMapping>  
+<protocolMapping>
+   <add binding="String" bindingConfiguration="String" scheme="http/net.msmq/net.pipe/net.tcp"/>
+</protocolMapping>  
 ```
 
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
@@ -31,16 +33,16 @@ Představuje konfigurační oddíl pro definování sady výchozí protokol mapo
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtry>](../../../../../docs/framework/configure-apps/file-schema/wcf/filters-of-routing.md)|Obsahuje výchozí protokol mapování mezi přenosové schéma protokolu (např. http, net.tcp, net.pipe atd.) a vazbu WCF.|  
+|[\<Filtry>](filters-of-routing.md)|Obsahuje výchozí mapování protokolů mezi schématem přenosového protokolu (např. http, net.tcp, net.pipe atd.) a vazeb WCF.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|systém.ServiceModel|Kořenový element všechny konfigurační prvky WCF.|  
+|[\<system.serviceModel>](system-servicemodel.md)|Kořenový element všechny elementy konfigurace WCF.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konfigurace ukazuje výchozí mapování protokolu v souboru machine.config. Můžete přepsat toto výchozí mapování na úrovni počítače úpravou souboru machine.config. Nebo pokud chcete pouze přepsání v rámci oboru aplikace, můžete přepsat v této části v konfiguračním souboru aplikace a změnit mapování pro jednotlivé protokol schémat.  
+ Následující příklad konfigurace ukazuje výchozí mapování protokolů v souboru machine.config. Můžete přepsat toto výchozí mapování na úrovni počítače tak, že upravíte soubor machine.config. Nebo pokud chcete pouze přepsat v rámci oboru aplikace, můžete ignorovat tento oddíl v konfiguračním souboru aplikace a změnit mapování pro jednotlivé protokol schémata.  
   
 ```xml  
 <protocolMapping>  

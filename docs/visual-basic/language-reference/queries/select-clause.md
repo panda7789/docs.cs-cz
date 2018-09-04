@@ -9,11 +9,11 @@ helpviewer_keywords:
 - queries [Visual Basic], Select
 ms.assetid: 27a3f61c-5960-4692-9b91-4d0c4b6178fe
 ms.openlocfilehash: 7d959c0717a3ef44dfc23c90d99ec7b83421efaa
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935948"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43529798"
 ---
 # <a name="select-clause-visual-basic"></a>Select – klauzule (Visual Basic)
 Definuje výsledek dotazu.  

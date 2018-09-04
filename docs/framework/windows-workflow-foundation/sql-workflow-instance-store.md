@@ -1,24 +1,24 @@
 ---
-title: Ukládání Instance pracovního postupu SQL
+title: Store Instance pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 8cd2f8a5-4bf8-46ea-8909-c7fdb314fabc
-ms.openlocfilehash: 81f11b9f88fbe425a07e553e64a08761dca3a2b4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 680a233ca721cd8a0c620b797832419f460b13b6
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517316"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43552215"
 ---
-# <a name="sql-workflow-instance-store"></a>Ukládání Instance pracovního postupu SQL
-[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL úložiště Instance pracovního postupu, která umožňuje pracovní postupy pro zachování stavu informace o instancí pracovních postupů v databázi systému SQL Server 2005 nebo SQL Server 2008. Tato funkce je primárně implementována ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třídy, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídu rozhraní trvalost. Funkci SQL ukládání Instance pracovního postupu se považuje za trvalost zprostředkovatele SQL, který je konkrétní implementaci trvalost rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště.  
+# <a name="sql-workflow-instance-store"></a>Store Instance pracovních postupů SQL
+[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL Store Instance pracovního postupu, který umožňuje pracovní postupy pro zachování informací o stavu instance pracovního postupu v databázi serveru SQL Server 2005 nebo SQL Server 2008. Tato funkce jsou primárně implementované ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třída, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy rozhraní trvalosti. Funkce SQL Store Instance pracovního postupu se považuje za SQL poskytovatele trvalého chování, které je konkrétní implementace rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště trvalosti.  
   
- Ukládání Instance pracovního postupu SQL podporuje vlastním hostováním pracovních nebo služeb pracovních postupů, které používají <xref:System.Activities.WorkflowApplication> nebo <xref:System.ServiceModel.WorkflowServiceHost> a také služby hostované v používal <xref:System.ServiceModel.WorkflowServiceHost>. Funkci SQL ukládání Instance pracovního postupu pro samoobslužné hostované služby můžete nakonfigurovat programově pomocí objektového modelu, který je zveřejněný prostřednictvím funkce. Můžete nakonfigurovat tuto funkci pro služby hostované <xref:System.ServiceModel.WorkflowServiceHost> programově pomocí objektového modelu i taky pomocí konfiguračního souboru XML.  
+ Store Instance pracovního postupu SQL podporuje pracovních postupů v místním prostředí nebo služeb pracovních postupů, které používají <xref:System.Activities.WorkflowApplication> nebo <xref:System.ServiceModel.WorkflowServiceHost> a také služeb hostovaných v používal <xref:System.ServiceModel.WorkflowServiceHost>. Funkce SQL Store Instance pracovního postupu služby v místním prostředí můžete nakonfigurovat prostřednictvím kódu programu pomocí objektového modelu vystavené funkci. Můžete nakonfigurovat tuto funkci pro služby hostované <xref:System.ServiceModel.WorkflowServiceHost> jak prostřednictvím kódu programu pomocí objektového modelu a taky pomocí konfiguračního souboru XML.  
   
- Funkci SQL ukládání Instance pracovního postupu (**SqlWorkflowInstanceStore** třída) neimplementuje <xref:System.ServiceModel.Persistence.PersistenceProviderFactory> a proto nenabízí podporu trvalosti pro trvalé služby WCF mimo pracovní postup. Také neimplementuje <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> a proto nenabízí podporu trvalost 3.x pracovních postupů. Tato funkce podporuje pracovních trvalosti pro pouze WF 4.0 (a novější) a služby pracovních postupů. Tato funkce taky nepodporuje žádné databáze než SQL Server 2005 a SQL Server 2008.  
+ Funkce SQL pracovního postupu Instance Store (**SqlWorkflowInstanceStore** třídy) neimplementuje <xref:System.ServiceModel.Persistence.PersistenceProviderFactory> a proto se nebude poskytovat podpora trvalosti pro trvalé služby WCF – pracovní postup. Také neimplementuje <xref:System.Workflow.Runtime.Hosting.WorkflowPersistenceService> a proto se nebude poskytovat podpora trvalosti pro pracovní postupy 3.x. Tato funkce podporuje pracovní postupy trvalosti pro pouze WF 4.0 (a novější) a služby pracovních postupů. Tato funkce také nepodporuje všechny databáze než SQL Server 2005 a SQL Server 2008.  
   
- Témata v této části popisují vlastnosti a funkce ukládání Instance pracovního postupu SQL a poskytnout podrobné informace o konfiguraci úložiště.  
+ Témata v této části popisují vlastnosti a funkce Store Instance pracovního postupu SQL a poskytují podrobné informace o konfiguraci úložiště.  
   
- Windows Server App Fabric poskytuje svou vlastní instanci úložiště a nástrojů zjednodušit konfiguraci a použití instance úložiště. Další informace najdete v tématu najdete v části [Windows Server App Fabric Instance Store](http://go.microsoft.com/fwlink/?LinkId=201201). Další informace o najdete trvalost databáze systému SQL Server App Fabric [trvalost databáze systému SQL Server App Fabric](http://go.microsoft.com/fwlink/?LinkId=201202)  
+ Windows Server App Fabric poskytuje své vlastní úložiště instancí a nástrojů pro zjednodušení konfigurace a použití v úložišti instancí. Další informace najdete v tématu naleznete v tématu [systému Windows Server App Fabric Instance Store](https://go.microsoft.com/fwlink/?LinkId=201201). Další informace viz databáze trvalosti SQL serveru v aplikaci Fabric [databáze trvalosti SQL serveru v aplikaci Fabric](https://go.microsoft.com/fwlink/?LinkId=201202)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
@@ -37,4 +37,4 @@ ms.locfileid: "33517316"
 -   [Databáze trvalosti SQL Serveru](../../../docs/framework/windows-workflow-foundation/sql-server-persistence-database.md)  
   
 ## <a name="see-also"></a>Viz také  
- [Trvalost ukázky](http://go.microsoft.com/fwlink/?LinkID=177735)
+ [Ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkID=177735)

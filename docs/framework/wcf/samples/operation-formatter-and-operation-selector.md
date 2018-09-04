@@ -2,76 +2,76 @@
 title: Formátovací modul a selektor operace
 ms.date: 03/30/2017
 ms.assetid: 1c27e9fe-11f8-4377-8140-828207b98a0e
-ms.openlocfilehash: db548e99c99ba6f29cc1c6e998d0e7485cd41046
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: a814de7433f2d06491245dc1d6e6e637b514118a
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808657"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43542359"
 ---
 # <a name="operation-formatter-and-operation-selector"></a>Formátovací modul a selektor operace
-Tento příklad znázorňuje, jak body rozšiřitelnosti Windows Communication Foundation (WCF) umožňuje povolit data zpráv do jiného formátu z co WCF očekává. Ve výchozím nastavení, formátování WCF očekávat parametry metody, které mají být zahrnuty v části `soap:body` elementu. Ukázka ukazuje, jak implementovat vlastní operaci formátování, které analyzuje data parametr z řetězce dotazu HTTP GET místo a vyvolá metody pomocí tato data.  
+Tato ukázka předvádí, jak lze umožňující data zprávy v jiném formátu z co WCF očekává, že body rozšiřitelnosti Windows Communication Foundation (WCF). Ve výchozím nastavení, formátování WCF očekávat parametry metody mají být zahrnuty v části `soap:body` elementu. Vzorek ukazuje, jak implementovat vlastní operace formátování, které místo toho analyzuje data parametrů z řetězce dotazu HTTP GET a volá metody pomocí tato data.  
   
- Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje `ICalculator` kontrakt služby. Ho ukazuje, jak přidat, odečíst násobkem a dělení zprávy můžete změnit tak, aby požadavky klienta na server pomocí metody GET protokolu HTTP a HTTP POST s POX zprávy pro klienta a serveru odpovědi.  
+ Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. To ukazuje, jak přidat, odečte krát a dělení zprávy lze změnit na požadavky klienta na server pomocí HTTP GET a HTTP POST s POX zprávy pro server klient odpovědi.  
   
  Uděláte to tak, ukázka poskytuje následující:  
   
--   `QueryStringFormatter`, který implementuje <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> a <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> pro klienta a serveru, v uvedeném pořadí a zpracovává data v řetězci dotazu.  
+-   `QueryStringFormatter`, která implementuje <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> a <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> pro klienta a serveru, v uvedeném pořadí a zpracovává data v řetězci dotazu.  
   
--   `UriOperationSelector`, který implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> na serveru k provedení operace odesílání na základě názvu operace v požadavek GET.  
+-   `UriOperationSelector`, která implementuje <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> na serveru k provedení operace odeslání podle názvu operace v požadavek GET.  
   
--   `EnableHttpGetRequestsBehavior` koncový bod chování (a odpovídající konfigurace), k modulu runtime přidává selektor potřebné operace.  
+-   `EnableHttpGetRequestsBehavior` konfigurace koncového bodu chování (a odpovídající), který modulu runtime přidá selektor potřebné operace.  
   
--   Ukazuje, jak nové formátování operaci vložení do modulu runtime.  
+-   Ukazuje, jak vložit nový formátovací modul operace do modulu runtime.  
   
--   V této ukázce klienta a služby jsou konzolové aplikace (.exe).  
+-   V této ukázce jsou klient a služba konzolové aplikace (.exe).  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
 ## <a name="key-concepts"></a>Klíčové koncepty  
- `QueryStringFormatter` -Formátovací modul je součástí WCF, která je odpovědná za převodu zprávy na pole objektů parametr a pole objektů parametr do zprávy. To se provádí na straně klienta pomocí <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> rozhraní a na serveru s <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> rozhraní. Povolit uživatelům získat zprávy požadavku a odpovědi z těchto rozhraní `Serialize` a `Deserialize` metody.  
+ `QueryStringFormatter` -Operace formátování je součástí WCF, který je zodpovědný za převod zprávu do pole parametru objekty a pole objektů parametr do zprávy. To se provádí na straně klienta pomocí <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> rozhraní a na serveru se službou <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> rozhraní. Tato rozhraní umožňují uživatelům získat zprávy požadavků a odpovědí z `Serialize` a `Deserialize` metody.  
   
- V této ukázce `QueryStringFormatter` implementuje obě tato rozhraní a je implementována na klientovi a serveru.  
+ V této ukázce `QueryStringFormatter` implementuje oba z těchto rozhraní a je implementována v klientem a serverem.  
   
  Žádost:  
   
--   Ukázce se používá <xref:System.ComponentModel.TypeConverter> – třída parametru data ve zprávě požadavku převést do a z řetězce. Pokud <xref:System.ComponentModel.TypeConverter> není k dispozici pro konkrétní typ, vrátí formátování ukázka výjimku.  
+-   Ukázka používá <xref:System.ComponentModel.TypeConverter> třída převést parametr data ve zprávě požadavku do a z řetězce. Pokud <xref:System.ComponentModel.TypeConverter> není k dispozici pro konkrétní typ, vyvolá formátování ukázka výjimku.  
   
--   V `IClientMessageFormatter.SerializeRequest` metody na straně klienta, formátování vytvoří identifikátor URI s příslušnou adresu a připojí název operace jako příponu. Tento název se používá k odeslání do příslušné operaci na serveru. Potom provede pole objektů parametr a serializuje data parametru řetězce dotazu identifikátoru URI pomocí názvy parametrů a hodnot pomocí převedeny <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> a <xref:System.ServiceModel.Channels.MessageProperties.Via%2A> vlastností pak nastavení tento identifikátor URI. <xref:System.ServiceModel.Channels.MessageProperties> je přístupné přes <xref:System.ServiceModel.Channels.Message.Properties%2A> vlastnost.  
+-   V `IClientMessageFormatter.SerializeRequest` metody na straně klienta, formátovací modul vytváří identifikátor URI s příslušnou adresu a přidá název operace jako příponu. Tento název se používá k odeslání do příslušné operace na serveru. Potom přijímá pole objektů parametr a serializuje data parametru řetězce dotazu URI pomocí názvy parametrů a hodnot pomocí převedeny <xref:System.ComponentModel.TypeConverter> třídy. <xref:System.ServiceModel.Channels.MessageHeaders.To%2A> a <xref:System.ServiceModel.Channels.MessageProperties.Via%2A> vlastnosti jsou pak nastavte na tento identifikátor URI. <xref:System.ServiceModel.Channels.MessageProperties> je přístupný prostřednictvím <xref:System.ServiceModel.Channels.Message.Properties%2A> vlastnost.  
   
--   V `IDispatchMessageFormatter.DeserializeRequest` načte formátovací modul metoda na serveru, `Via` URI ve vlastnostech příchozí zpráva požadavku. Ho analyzuje dvojice název hodnota v řetězci dotazu identifikátoru URI do názvy parametrů a hodnoty a využije k vyplnění pole parametry předané do metodu názvy parametrů a hodnoty. Všimněte si, že operace odesílání již došlo, proto je přípona názvu operaci je ignorován v této metodě.  
+-   V `IDispatchMessageFormatter.DeserializeRequest` načte formátovací modul metoda na serveru, `Via` identifikátor URI ve vlastnostech příchozí zprávy požadavku. Analyzuje dvojice název hodnota v řetězci dotazu identifikátoru URI do názvy parametrů a hodnot a využije názvy parametrů a hodnoty k vyplnění pole parametry předané do metody. Všimněte si, že operace odeslání již došlo, tak v této metodě se ignoruje přípona názvu operace.  
   
  Odpověď:  
   
--   V této ukázce metody GET protokolu HTTP se používá pouze pro požadavek. Formátovací modul deleguje odesílání odpovědi na původní formátovací modul, který by byl použit ke generování zprávu XML. Jedním z cílů tohoto příkladu je zobrazit, jak se dají implementovat delegování formátování.  
+-   V této ukázce GET protokolu HTTP se používá pouze pro daný požadavek. Formátovací modul delegátů, odeslání odpovědi na původní formátovací modul, který by byl použit ke generování hlášení XML. Jedním z cílů tohoto příkladu je zobrazit, jak je možné implementovat Delegující formátování.  
   
-### <a name="uripathsuffixoperationselector-class"></a>UriPathSuffixOperationSelector – třída  
- <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> Rozhraní umožňuje uživatelům implementovat vlastní logiku, pro kterou operaci by měl určitou zprávu odeslat.  
+### <a name="uripathsuffixoperationselector-class"></a>Třída UriPathSuffixOperationSelector  
+ <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> Rozhraní umožňuje uživatelům implementovat své vlastní logiky, které operace by měla konkrétní zpráva odeslána.  
   
- V této ukázce `UriPathSuffixOperationSelector` na serveru a vyberte příslušnou operaci, protože název operace je obsažena v identifikátoru URI HTTP GET, nikoli hlavičku akce ve zprávě, musí být implementována. Ukázka je nastavit a Povolit jenom velká a malá písmena operaci názvy.  
+ V této ukázce `UriPathSuffixOperationSelector` musí implementovat na server vybrat příslušnou operaci, protože název operace je součástí identifikátoru URI HTTP GET, spíše než hlavičku akce ve zprávě. Ukázka je nastavit a povolit pouze malá a velká písmena operace názvy.  
   
- `SelectOperation` Metoda přijímá příchozí zprávy a vyhledá `Via` URI v vlastností. Extrahuje příponu názvu operace z identifikátoru URI, vyhledává interní tabulku se získat název operace, který by měl být odeslaných zprávu a vrátí název této operace.  
+ `SelectOperation` Metoda přijímá příchozí zprávy a vyhledá `Via` identifikátor URI ve vlastnostech zprávy. Extrahuje příponu názvu operace z identifikátoru URI, vyhledá a získat tak název operace, které zpráva by měla být odesláno do interní tabulku a vrátí název této operace.  
   
-### <a name="enablehttpgetrequestsbehavior-class"></a>EnableHttpGetRequestsBehavior – třída  
- `UriPathSuffixOperationSelector` Součást se dá nastavit prostřednictvím kódu programu, nebo prostřednictvím chování koncového bodu. Ukázka implementuje `EnableHttpGetRequestsBehavior` chování, který je uveden v konfiguračním souboru aplikace služby.  
+### <a name="enablehttpgetrequestsbehavior-class"></a>Třída EnableHttpGetRequestsBehavior  
+ `UriPathSuffixOperationSelector` Komponenty lze nastavit programově nebo prostřednictvím chování koncového bodu. Ukázka implementuje `EnableHttpGetRequestsBehavior` chování, které je určeno v konfiguračním souboru aplikace služby.  
   
  Na serveru:  
   
- <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A> Je nastaven na <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementace.  
+ <xref:System.ServiceModel.Dispatcher.DispatchRuntime.OperationSelector%2A> Nastavena <xref:System.ServiceModel.Dispatcher.IDispatchOperationSelector> implementace.  
   
- Ve výchozím nastavení používá WCF filtr adres přesnou shodu. Identifikátor URI na příchozí zpráva obsahuje příponu názvu operaci následuje řetězec dotazu, který obsahuje parametr data, takže chování koncového bodu také změní filtr adres jako předponu odpovídají filtru. Používá WCF<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> pro tento účel.  
+ Ve výchozím nastavení používá WCF filtr adresy přesnou shodu. Identifikátor URI v příchozí zprávě obsahuje příponou název operace, za nímž následuje řetězec dotazu, který obsahuje data parametrů, takže chování koncového bodu se také změní filtr adres bude předpony, které odpovídají filtru. Používá WCF<xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> pro tento účel.  
   
 ### <a name="installing-operation-formatters"></a>Instalace operace formátování  
- Operace chování, které určují formátovací moduly jsou jedinečné. Jeden takové chování je vždy implementováno ve výchozím nastavení pro každou operaci vytvoření formátování potřebné operace. Ale tyto chování vypadat podobně jako jakékoli jiné operace chování; nejsou osobní jiných atributem. K instalaci nahrazení chování, musí implementace vypadat pro konkrétní formátování chování, které jsou nainstalované ve WCF typ zavaděč ve výchozím nastavení a buď ho nahradit nebo přidejte kompatibilní chování má spustit po výchozí chování.  
+ Chování operace, které zadejte formátovací moduly jsou jedinečné. Jeden takový chování je vždy implementováno ve výchozím nastavení pro každou operaci vytvoření nezbytných formátovací modul. Ale těchto projevů vypadat podobně jako jakékoli jiné chování operace; nejsou poznáte ho podle jiného atributu. Náhradní chování instalace, implementace musí vyhledat konkrétní formátovací modul chování, které jsou nainstalované ve WCF typ zavaděč ve výchozím nastavení a buď ji nahradit nebo přidat kompatibilní chování následný výchozí chování.  
   
- Tyto operace formátování chování se dá nastavit prostřednictvím kódu programu před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> nebo zadáním operaci chování, které se spustí až po výchozí nastavení. Ale ji nelze snadno nastavit tak, že chování koncového bodu (a proto konfigurace) protože modelu chování neumožňuje chování k upravit popis stromové struktuře a nahradit jiného chování.  
+ Tyto operace formátování chování lze nastavit programově před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A?displayProperty=nameWithType> nebo zadáním na operaci chování, která se spustí po výchozí hodnotu. Však ho nelze snadno nastavit pomocí chování koncového bodu (a tedy konfigurace) protože model chování nepovoluje chování a nahraďte Další chování nebo jinak upravit stromu popis.  
   
  Na straně klienta:  
   
- <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> Implementace, musí být implementována, aby mohli převést požadavky na požadavky HTTP GET a delegovat na původní formátování odpovědi. To se provádí volání `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` metodu helper.  
+ <xref:System.ServiceModel.Dispatcher.IClientMessageFormatter> Implementace musí být implementované tak, aby ho převést požadavky na požadavky HTTP GET a delegovat na původní formátování odpovědi. To se provádí pomocí volání `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` Pomocná metoda.  
   
- To je třeba provést před voláním `CreateChannel`.  
+ To je nutné provést před voláním `CreateChannel`.  
   
 ```  
 void ReplaceFormatterBehavior(OperationDescription operationDescription, EndpointAddress address)  
@@ -94,16 +94,16 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
   
  Na serveru:  
   
--   <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> Rozhraní musí být implementována, aby mohli číst požadavky HTTP GET a delegovat na původní formátovací modul pro zápis odpovědi. To se provádí volání stejné `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` Pomocná metoda jako klient (viz předchozí ukázka kódu).  
+-   <xref:System.ServiceModel.Dispatcher.IDispatchMessageFormatter> Musí implementovat rozhraní, tak, aby může číst požadavky HTTP GET a delegovat na původní formátovací modul pro psaní odpovědi. To se provádí voláním stejné `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` pomocnou metodu jako klient (viz předchozí ukázka kódu).  
   
--   To je třeba provést před <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> je volána. V této ukázce ukážeme, jak je ručně změnit formátování před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Jiný způsob, jak dosáhnout samé je na odvození třídy z <xref:System.ServiceModel.ServiceHost> který zpřístupňuje volání `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` před otevřením (viz prosím hostování dokumentace a ukázky příklady).  
+-   To je nutné provést před <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> je volána. V tomto příkladu vám ukážeme, jak formátovací modul ručně změnit před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>. Jiný způsob, jak dosáhnout stejnou věc je na odvození třídy z <xref:System.ServiceModel.ServiceHost> , která provádí volání na `EnableHttpGetRequestsBehavior.ReplaceFormatterBehavior` před otevřením (podrobnosti najdete na hostování dokumentaci a ukázky pro příklady).  
   
 ### <a name="user-experience"></a>Činnost koncového uživatele  
  Na serveru:  
   
 -   Server `ICalculator` implementace není potřeba změnit.  
   
--   App.config služby musíte použít vlastní POX vazby, která nastavuje `messageVersion` atribut `textMessageEncoding` element `None`.  
+-   App.config pro službu, musíte použít vlastní POX vazby, který nastaví `messageVersion` atribut `textMessageEncoding` elementu `None`.  
   
     ```xml  
     <bindings>  
@@ -116,7 +116,7 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
     </bindings>  
     ```  
   
--   App.config pro službu musíte zadat také vlastní `EnableHttpGetRequestsBehavior` tak, že ho přidáte do části rozšíření chování a jeho použití.  
+-   Souboru App.config pro službu musíte zadat také vlastní `EnableHttpGetRequestsBehavior` přidáním do oddílu rozšíření chování a jeho použití.  
   
     ```xml  
     <behaviors>  
@@ -136,13 +136,13 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
     </extensions>  
     ```  
   
--   Přidání formátovacích modulů operaci před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>.  
+-   Přidání operace formátování před voláním <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>.  
   
  Na straně klienta:  
   
 -   Implementace klienta není potřeba změnit.  
   
--   App.config pro klienta, musíte použít vlastní POX vazby, která nastavuje `messageVersion` atribut `textMessageEncoding` element `None`. Jeden rozdíl ze služby je, že klient musí povolit ruční adresování tak, aby odchozí adresu můžete upravit.  
+-   App.config pro klienta, musíte použít vlastní POX vazby, který nastaví `messageVersion` atribut `textMessageEncoding` elementu `None`. Jedním z rozdílů ze služby je, že klient musí povolit ruční adresování tak, aby odesílaných na adresu je možné upravit.  
   
     ```xml  
     <bindings>  
@@ -155,27 +155,27 @@ void ReplaceFormatterBehavior(OperationDescription operationDescription, Endpoin
     </bindings>  
     ```  
   
--   App.config pro klienta, musíte zadat stejné vlastní `EnableHttpGetRequestsBehavior` jako server.  
+-   Souboru App.config pro klienta, musíte zadat stejné vlastní `EnableHttpGetRequestsBehavior` jako server.  
   
--   Přidání formátovacích modulů operaci před voláním <xref:System.ServiceModel.ChannelFactory%601.CreateChannel>.  
+-   Přidání operace formátování před voláním <xref:System.ServiceModel.ChannelFactory%601.CreateChannel>.  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Všechny čtyři operace (přidat, odečíst, násobení a dělení) musí být úspěšné.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Všechny čtyři operace (přidat, odečítání, násobení a rozdělit) musí být úspěšný.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Formatters\QuieryStringFormatter`  
   
-##### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+##### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také

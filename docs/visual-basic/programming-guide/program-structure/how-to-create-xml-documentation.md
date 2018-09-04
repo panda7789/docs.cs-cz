@@ -6,11 +6,11 @@ helpviewer_keywords:
 - XML documentation [Visual Basic], creating
 ms.assetid: 27b5b06c-09b9-496a-8245-f9542d846230
 ms.openlocfilehash: 3dfec94a3dd1b8da5d371529b91b47f018bb3843
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43422426"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43527593"
 ---
 # <a name="how-to-create-xml-documentation-in-visual-basic"></a>Postupy: Vytvoření dokumentace XML v jazyce Visual Basic
 Tento příklad ukazuje, jak přidat komentáře k dokumentaci XML do kódu.  

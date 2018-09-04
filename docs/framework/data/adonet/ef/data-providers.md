@@ -3,11 +3,11 @@ title: Zprostředkovatelé dat Entity Framework
 ms.date: 03/30/2017
 ms.assetid: 5252e639-ff11-4818-82e7-07221ed6ae23
 ms.openlocfilehash: cd18e8b971af9103fdaecaebfe6f0c8e0ae9a0d3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43470941"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43539947"
 ---
 # <a name="entity-framework-data-providers"></a>Zprostředkovatelé dat Entity Framework
 Tato část obsahuje informace o poskytovatelích dat, které podporují [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  

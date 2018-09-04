@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vytváření sjednocení C-C++ pomocí atributů (C#)'
+title: 'Postupy: vytváření sjednocení C / C++ pomocí atributů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
-ms.openlocfilehash: 30a8be9021495aa4cf61010508762999cdf91ff4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8b5a88656b1172407c3e5b9f5198d5acae7bf9e0
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33315838"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43558002"
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>Postupy: vytváření sjednocení C/C++ pomocí atributů (C#)
 Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v paměti. Například můžete vytvořit, která se označuje jako sjednocení v jazyce C/C++ pomocí `StructLayout(LayoutKind.Explicit)` a `FieldOffset` atributy.  
   
 ## <a name="example"></a>Příklad  
- V tomto segmentu kódu, všechna pole z `TestUnion` spustit ve stejném umístění v paměti.  
+ V tomto segmentu kódu, všechna pole z `TestUnion` začínají na stejné místo v paměti.  
   
 ```csharp  
 // Add a using directive for System.Runtime.InteropServices.  
@@ -36,7 +36,7 @@ Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v pamět
 ```  
   
 ## <a name="example"></a>Příklad  
- Zde je další příklad kde počáteční pole v různých explicitně nastavit umístění.  
+ Tady je další příklad – kde pole začínají na různých explicitně nastavit umístění.  
   
 ```csharp  
 // Add a using directive for System.Runtime.InteropServices.  
@@ -64,14 +64,15 @@ Pomocí atributů můžete přizpůsobit, jak jsou rozloženy struktury v pamět
        }  
 ```  
   
- Pole dva celé číslo `i1` a `i2`, sdílet stejné umístění paměti jako `lg`. Tento druh kontrolu nad struktura rozložení je užitečné při použití vyvolání platformy.  
+ Dvě celočíselné pole, `i1` a `i2`, sdílet stejné umístění paměti jako `lg`. Tento typ kontroly nad rozložení struktury je užitečné při použití vyvolání platformy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Reflection>  
- <xref:System.Attribute>  
- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
- [Atributy](../../../../../docs/standard/attributes/index.md)  
- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
- [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
- [Vytváření vlastních atributů (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  
- [Přístup k atributům pomocí reflexe (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Reflection>  
+- <xref:System.Attribute>  
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)  
+- [Atributy](../../../../../docs/standard/attributes/index.md)  
+- [Reflexe (C#)](../../../../csharp/programming-guide/concepts/reflection.md)  
+- [Atributy (C#)](../../../../csharp/programming-guide/concepts/attributes/index.md)  
+- [Vytváření vlastních atributů (C#)](../../../../csharp/programming-guide/concepts/attributes/creating-custom-attributes.md)  
+- [Přístup k atributům pomocí reflexe (C#)](../../../../csharp/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)

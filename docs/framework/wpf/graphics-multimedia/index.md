@@ -12,52 +12,52 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: 74375c468170d58cfa79031ab0030477c29bd445
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c7cae5be1d7e52186752d67354927084d118beb9
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566627"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43559008"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 <a name="introduction"></a>
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje podporu pro multimédia, vektorové grafiky, animace a obsahu složení, a usnadňuje vývojářům tvorbu zajímavé uživatelská rozhraní a obsahu. Pomocí [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], můžete vytvořit vektorová grafika nebo komplexní animace a integrovat média do svých aplikací.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje podporu pro multimédia, vektorovou grafiku, animace a obsahu složení, a usnadňuje vývojářům umožní tvořit zajímavou uživatelská rozhraní a obsah. Pomocí [!INCLUDE[TLA#tla_visualstu](../../../../includes/tlasharptla-visualstu-md.md)], můžete vytvořit vektorovou grafiku nebo komplexní animace a do svých aplikací integrovat média.  
   
- Toto téma představuje funkce grafiky, animace a média [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], která umožňují přidání grafiky, přechod důsledky, zvuk a video do vaší aplikace.  
+ Toto téma představuje funkce obrázky, animace a média [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], které umožňují přidat grafiky, efektu přechodu, zvuku a videa pro vaše aplikace.  
   
 > [!NOTE]
->  Použití typů WPF ve službě Windows není doporučeno. Pokud budete chtít používat typy WPF ve službě Windows, službu nemusí fungovat podle očekávání.   
+>  Použití typů WPF ve službě Windows se důrazně nedoporučuje. Pokud se pokusíte použít typy WPF ve službě Windows, služba nemusí fungovat podle očekávání.   
   
 <a name="whats_new_with_graphics_and_multimedia_in_wpf_4"></a>   
-## <a name="whats-new-with-graphics-and-multimedia-in-wpf-4"></a>Co je nového v grafiky a multimédia v grafickém subsystému WPF 4  
- Několik provedly změny týkající se grafiky a animace.  
+## <a name="whats-new-with-graphics-and-multimedia-in-wpf-4"></a>Co je nového v grafika a multimédia v subsystému WPF 4  
+ Několik se provedly změny související grafika a animace.  
   
 -   Zaokrouhlení rozložení  
   
-     Když okraje objektu klesne uprostřed pixelů zařízení, můžete vytvořit grafika systému DPI nezávislé vykreslování artefaktů, jako jsou rozmazaně nebo poloprůhledné hran. Předchozí verze WPF zahrnuty pixelů uchycení a pomáhaly zvládat tento případ. Silverlight 2 zavedl zaokrouhlení rozložení, který je jiný způsob, jak přesunout elementy tak, aby okraje spadají na hranicích celou pixelů. WPF teď podporuje rozložení zaokrouhlení s <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> přidružená vlastnost na <xref:System.Windows.FrameworkElement>.  
+     Při okraje objektu spadá uprostřed pixelů zařízení, můžete vytvořit systém grafiky DPI nezávislé vykreslování artefaktů, jako je například fuzzy nebo poloprůhledného hrany. Předchozí verze WPF zahrnuté přitahování a pomáhaly zvládat tento případ. Silverlight 2 zavedené zaokrouhlení rozložení, což je jiný způsob, jak se mají přesunout prvky tak, aby se okraje na hranicích celý pixelů. Nyní podporuje rozložení zaokrouhlení s WPF <xref:System.Windows.FrameworkElement.UseLayoutRounding%2A> přidružená vlastnost na <xref:System.Windows.FrameworkElement>.  
   
--   Složení v mezipaměti  
+-   Sestavení v mezipaměti  
   
-     Pomocí nové <xref:System.Windows.Media.BitmapCache> a <xref:System.Windows.Media.BitmapCacheBrush> třídy, může mezipaměti komplexní součástí vizuálním stromu jako rastrový obrázek a výrazně zlepšit čas vykreslování. Bitmapy stále poměrně rychle reaguje na vstup uživatele, jako je například kliknutí myší a malovat na další prvky stejně jako všechny štětce.  
+     Pomocí nového <xref:System.Windows.Media.BitmapCache> a <xref:System.Windows.Media.BitmapCacheBrush> třídy, můžete ukládat do mezipaměti komplexní součástí vizuálního stromu jako rastrový obrázek a výrazně zvýšit doba vykreslování. Rastrový obrázek stále poměrně rychle reaguje na vstup uživatele, jako je například kliknutí myší, a na další prvky, stejně jako všechny stopy malovat.  
   
--   Podpora shaderu 3 pixelů  
+-   Podpora funkce Pixel Shader 3  
   
-     WPF 4 staví na <xref:System.Windows.Media.Effects.ShaderEffect> podpory, které jsou dostupné ve verzi WPF 3.5 SP1 tím, že aplikace k zápisu důsledky pomocí shaderu Pixel (PS) verze 3.0. Model shaderu PS 3.0 je složitější než PS 2.0, která umožňuje ještě větší vliv na podporovaný hardware.  
+     WPF 4 sestavení nahoře <xref:System.Windows.Media.Effects.ShaderEffect> podpory dostupné ve WPF 3.5 SP1 tím, že aplikace pro zápis účinky pomocí Pixel Shader (PS) verze 3.0. Shader model PS 3.0 je složitější než PS 2.0, která umožňuje ještě větší vliv na podporovaný hardware.  
   
 -   Funkce usnadnění  
   
-     Můžete vylepšit animace pomocí funkce usnadnění, které umožňují další kontrolu nad chováním animace. Například můžete použít <xref:System.Windows.Media.Animation.ElasticEase> do animace umožnit animace pružné chování. Další informace najdete v tématu nejvýraznější typy v <xref:System.Windows.Media.Animation> oboru názvů.  
+     Můžete zvýšit animace s funkcí usnadnění, které poskytují větší kontrolu nad chováním animace. Například můžete použít <xref:System.Windows.Media.Animation.ElasticEase> do animace poskytnout pružné chování animace. Další informace najdete v tématu uvolnění typy v <xref:System.Windows.Media.Animation> oboru názvů.  
   
 <a name="graphics_and_rendering"></a>   
 ## <a name="graphics-and-rendering"></a>Grafika a vykreslování  
- WPF zahrnuje podporu pro 2D grafiky vysoké kvality. Funkce zahrnuje štětce, geometrie, obrázků, tvarů a transformace. Další informace najdete v tématu [grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics.md). Je na základě vykreslování grafické elementy <xref:System.Windows.Media.Visual> třídy. Struktura vizuální objekty na obrazovce je popsána ve vizuálním stromu. Další informace najdete v tématu [vykreslování přehled grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md).  
+ WPF obsahuje podporu pro vysoce kvalitní 2D grafika. Funkce zahrnuje štětce, geometrie, obrázků, tvarů a transformace. Další informace najdete v tématu [grafiky](../../../../docs/framework/wpf/graphics-multimedia/graphics.md). Podle vykreslení grafické prvky <xref:System.Windows.Media.Visual> třídy. Struktura vizuální objekty na obrazovce je popsán vizuálního stromu. Další informace najdete v tématu [přehled vykreslování grafiky WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-graphics-rendering-overview.md).  
   
 ### <a name="2-d-shapes"></a>2D obrazce  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu běžně používané, vector vykreslené [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] tvary, například obdélníků a tři tečky, které na následujícím obrázku.  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu běžně používané, vykreslované uživatelem vektoru [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] tvary, třeba obdélníky a symbol tří teček, které ukazuje následující obrázek.  
   
- ![Výpustky a obdélníky](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure4.PNG "WPFIntroFigure4")  
+ ![Symbol tří teček a obdélníky](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure4.PNG "WPFIntroFigure4")  
   
- Tyto vnitřní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tvarů nejsou jenom tvarů: jsou programovatelný prvků, které implementují řadu funkcí, které byste očekávali od většiny běžných ovládacích prvků, které zahrnují klávesnici a myš vstup. Následující příklad ukazuje, jak bude zpracováván <xref:System.Windows.UIElement.MouseUp> kliknutím vyvolaná událost <xref:System.Windows.Shapes.Ellipse> elementu.  
+ Tyto vnitřní [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tvary nejsou jenom tvarů: jsou programovatelný prvky, které implementují mnoho funkcí, které očekáváte od většiny běžných ovládacích prvků, které zahrnují klávesnice a myši. Následující příklad ukazuje, jak zpracovat <xref:System.Windows.UIElement.MouseUp> Událost aktivovaná po kliknutí <xref:System.Windows.Shapes.Ellipse> elementu.  
   
 ```xaml  
 <Window  
@@ -87,61 +87,61 @@ Partial Public Class Window1
 End Class  
 ```  
   
- Následující obrázek ukazuje výstup pro předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a kódu.  
+ Následující obrázek znázorňuje výstup pro předchozí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] značek a kódu.  
   
- ![Okno s textem "kliknuli jste na tlačítko se třemi tečkami&#33;"](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure12.png "WPFIntroFigure12")  
+ ![Okno s textem "kliknutí na tři tečky&#33;"](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure12.png "WPFIntroFigure12")  
   
- Další informace najdete v tématu [tvarů a základní kreslení v přehledu WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md). Úvodní ukázka, najdete v části [ukázka elementy tvaru](http://go.microsoft.com/fwlink/?LinkID=160037).  
+ Další informace najdete v tématu [tvary a základní kresby v přehledu WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md). Úvodní ukázku najdete v tématu [ukázka prvky tvar](https://go.microsoft.com/fwlink/?LinkID=160037).  
   
 ### <a name="2-d-geometries"></a>2D geometrie  
- Když [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] obrazce, který [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje nestačí, můžete použít [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podpora geometrie a cesty k vytvoření vlastní. Následující obrázek ukazuje, jak můžete pomocí geometrie vytvořit tvarů, jako kreslení štětce a dalších oříznutí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] elementy.  
+ Když [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] obrazce, která [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje nestačí, můžete použít [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] podpora geometrie a cesty k vytvoření vlastní. Následující obrázek ukazuje, jak můžete pomocí geometrie vytvoření tvarů, jako kreslicího štětce a další Galerie [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] elementy.  
   
- ![Různé použití cesty](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure5.PNG "WPFIntroFigure5")  
+ ![Různé možnosti použití cesty](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure5.PNG "WPFIntroFigure5")  
   
- Další informace najdete v tématu [geometrie přehled](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md). Úvodní ukázka, najdete v části [geometrie ukázka](http://go.microsoft.com/fwlink/?LinkID=159989).  
+ Další informace najdete v tématu [přehled geometrie](../../../../docs/framework/wpf/graphics-multimedia/geometry-overview.md). Úvodní ukázku najdete v tématu [geometrie ukázka](https://go.microsoft.com/fwlink/?LinkID=159989).  
   
 ### <a name="2-d-effects"></a>2D efekty  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] třídy, které můžete použít k vytvoření různé efekty. [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] Možnosti vykreslování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje schopnost malovat [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, rastrové obrázky, kresby a videa; a s nimi manipulovat s použitím otáčení škálování a zkosení. Následující obrázek poskytuje příklad mnoho důsledky můžete dosáhnout pomocí [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] štětce.  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje knihovnu [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] třídy, které vám umožní vytvořit různé účinky. [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] Možnosti vykreslování [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje vykreslení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které mají přechody, rastrových obrázků, kreseb a videa; a s nimi manipulovat s použitím otočení, škálování a zkosení. Následující obrázek poskytuje příklad mnoho efektů, můžete dosáhnout použitím [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] stopy.  
   
- ![Ilustrace různých štětců](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure6.PNG "WPFIntroFigure6")  
+ ![Znázornění různých štětců](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure6.PNG "WPFIntroFigure6")  
   
- Další informace najdete v tématu [WPF štětce přehled](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md). Úvodní ukázka, najdete v části [štětce ukázka](http://go.microsoft.com/fwlink/?LinkID=159973).  
+ Další informace najdete v tématu [přehled štětců WPF](../../../../docs/framework/wpf/graphics-multimedia/wpf-brushes-overview.md). Úvodní ukázku najdete v tématu [Ukázka štětců](https://go.microsoft.com/fwlink/?LinkID=159973).  
   
 <a name="rendering"></a>   
-## <a name="3-d-rendering"></a>3D vykreslení  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje sadu [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] možnosti vykreslování, které se integrují s [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] grafiky podporují v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] v pořadí pro vytvoření zajímavější rozložení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]a vizualizace dat sady. Na jednom konci spektra [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje vykreslení [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] bitové kopie na povrchy [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] tvary, které ukazuje následující obrázek.  
+## <a name="3-d-rendering"></a>3D vykreslování  
+ [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] poskytuje sadu [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] možnosti vykreslování, které se integrují s [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] grafické podpory v [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vytvářet zajímavější rozložení, aby [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], dat a jejich vizualizace. Na jednom konci spektra [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] Umožňuje vykreslit [!INCLUDE[TLA2#tla_2d](../../../../includes/tla2sharptla-2d-md.md)] bitové kopie na povrchy [!INCLUDE[TLA2#tla_3d](../../../../includes/tla2sharptla-3d-md.md)] tvary, které ukazuje následující obrázek.  
   
- ![Snímek obrazovky Visual3D –](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure13.png "WPFIntroFigure13")  
+ ![Snímek obrazovky ukázkové Visual3D](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure13.png "WPFIntroFigure13")  
   
- Další informace najdete v tématu [3D přehled grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md). Úvodní ukázka, najdete v části [3D ukázka pevné](http://go.microsoft.com/fwlink/?LinkID=159964).  
+ Další informace najdete v tématu [přehled 3D grafiky](../../../../docs/framework/wpf/graphics-multimedia/3-d-graphics-overview.md). Úvodní ukázku najdete v tématu [ukázka 3D pevné](https://go.microsoft.com/fwlink/?LinkID=159964).  
   
 <a name="animation"></a>   
 ## <a name="animation"></a>Animace  
- Používat animace k vytvoření a ovládacích prvků růst, zatřesením, číselníků a vykreslit; a vytvořit zajímavé přechody stránek a další. Protože [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] umožňuje pro animaci většinu vlastností, ne jenom můžete animace většinu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] objekty, můžete použít také [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro animaci vlastní objekty, které vytvoříte.  
+ Použijte animaci k vytvoření ovládacích prvků a elementů růst, zatřeste, zprovozněte a fade; a vytvářejte zajímavé přechody stránek a další. Protože [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] povoluje pro animaci většinu vlastností, ne jenom můžete animace většinu [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] objekty, můžete použít také [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pro animaci vlastní objekty, které vytvoříte.  
   
  ![Bitové kopie animovaný datové krychle](../../../../docs/framework/wpf/graphics-multimedia/media/wpfintrofigure7.png "WPFIntroFigure7")  
   
- Další informace najdete v tématu [animace přehled](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md). Úvodní ukázka, najdete v části [animace příklad Galerie](http://go.microsoft.com/fwlink/?LinkID=159969).  
+ Další informace najdete v tématu [přehled animace](../../../../docs/framework/wpf/graphics-multimedia/animation-overview.md). Úvodní ukázku najdete v tématu [animace příkladu Galerie](https://go.microsoft.com/fwlink/?LinkID=159969).  
   
 <a name="media"></a>   
 ## <a name="media"></a>Média  
- Obrázky, videa a zvuku způsoby média bohaté zdůraznění informace a uživatelské prostředí.  
+ Obrázky, videa a zvuku způsoby média bohaté takzvané informace a uživatelské prostředí.  
   
 ### <a name="images"></a>Obrázky  
- Bitové kopie, které obsahují ikony, pozadí a to i v části animací, jsou součástí základní většinu aplikací. Protože často budete muset použít Image, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zpřístupňuje schopnost pracovat s nimi mnoha různými způsoby. Následující obrázek znázorňuje právě jeden z těchto způsobů.  
+ Image, jako je například ikony, pozadí a dokonce i části animace, jsou základní součástí většinu aplikací. Protože často budete muset použít Image, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] zpřístupňuje schopnost pracovat s nimi v mnoha různými způsoby. Následující obrázek znázorňuje pouze jedna z těchto způsobů.  
   
- ![Snímek obrazovky stylů](../../../../docs/framework/wpf/controls/media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")  
+ ![Snímek obrazovky ukázkový používání stylů pro](../../../../docs/framework/wpf/controls/media/stylingintro-eventtriggers.png "StylingIntro_EventTriggers")  
   
  Další informace najdete v tématu [Imaging přehled](../../../../docs/framework/wpf/graphics-multimedia/imaging-overview.md).  
   
 ### <a name="video-and-audio"></a>Videa a zvuku  
- Základní funkce grafické možnosti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je poskytnout nativní podporu pro práci s multimédia, která zahrnuje videa a zvuku. Následující příklad ukazuje, jak přehrávač médií vložení do aplikace.  
+ Základní funkce grafické možnosti [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] je poskytuje nativní podporu pro práci s multimédii, která zahrnuje videa a zvuku. Následující příklad ukazuje, jak vložit multimediální přehrávač do aplikace.  
   
 ```xaml  
 <MediaElement Source="media\numbers.wmv" Width="450" Height="250" />  
 ```  
   
- <xref:System.Windows.Controls.MediaElement> může přehrávání videa a zvuku a je dostatečně extensible umožňující snadné vytváření vlastní [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)].  
+ <xref:System.Windows.Controls.MediaElement> dokáže přehrávání videa a zvuku a je možné rozšířit dostatečně umožňuje snadno vytvářet vlastní [!INCLUDE[TLA2#tla_ui#plural](../../../../includes/tla2sharptla-uisharpplural-md.md)].  
   
  Další informace najdete v tématu [multimédia přehled](../../../../docs/framework/wpf/graphics-multimedia/multimedia-overview.md).  
   
@@ -153,6 +153,6 @@ End Class
  [Přehled objektů Shape a základního kreslení ve WPF](../../../../docs/framework/wpf/graphics-multimedia/shapes-and-basic-drawing-in-wpf-overview.md)  
  [Přehled malování plnými barvami a přechody](../../../../docs/framework/wpf/graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md)  
  [Malování pomocí obrázků, kreseb a vizuálních objektů](../../../../docs/framework/wpf/graphics-multimedia/painting-with-images-drawings-and-visuals.md)  
- [Animace a časování](http://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)  
- [3D grafiky](http://msdn.microsoft.com/library/565c1f3c-235b-47de-b05b-3b53ed63f1b8)  
- [Multimédia](http://msdn.microsoft.com/library/44a8dcd0-80cb-4db0-a222-87cde68c2fac)
+ [Animace a časování](https://msdn.microsoft.com/library/7d83765b-d5ae-41b1-b423-80206e1124aa)  
+ [3D grafiky](https://msdn.microsoft.com/library/565c1f3c-235b-47de-b05b-3b53ed63f1b8)  
+ [Multimédia](https://msdn.microsoft.com/library/44a8dcd0-80cb-4db0-a222-87cde68c2fac)

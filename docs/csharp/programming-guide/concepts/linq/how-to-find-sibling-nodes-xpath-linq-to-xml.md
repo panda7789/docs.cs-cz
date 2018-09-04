@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: vyhledání uzly na stejné úrovni (XPath-technologie LINQ to XML) (C#)'
+title: 'Postupy: vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: a448be9d86f9f2e2f85d45f9bc1f019b3f72305c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e10b23c311e4e7debf228c01c898f3582e2ac8d4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33324158"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43557246"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Postupy: vyhledání uzly na stejné úrovni (XPath-technologie LINQ to XML) (C#)
-Můžete chtít najít všechny úroveň uzlu, které mají určitý název. Výsledné kolekce mohou zahrnovat uzlu kontextu, pokud kontext uzel má také určitý název.  
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Postupy: vyhledání uzlů na stejné úrovni (XPath – LINQ to XML) (C#)
+Můžete chtít najít všechny na stejné úrovni uzlu, které mají určitý název. Výsledný kolekce může zahrnovat kontextu uzlu, pokud kontextový uzel nemá taky určitý název.  
   
  Výraz XPath je:  
   
  `../Book`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve najde `Book` elementu a najde všechny elementy na stejné úrovni jako s názvem `Book`. Výsledný kolekce obsahuje uzel kontextu.  
+ V tomto příkladu nejdříve vyhledá `Book` elementu a najde všechny prvky na stejné úrovni s názvem `Book`. Výsledný kolekce obsahuje uzel kontextu.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: knihy (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -74,5 +74,6 @@ Results are identical
 </Book>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

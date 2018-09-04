@@ -11,11 +11,11 @@ ms.assetid: 00118de7-33c6-41c4-8e1f-5d5e35e0da83
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1c10d5f363d454a64f9052315514e896f90f7081
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386139"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43541117"
 ---
 # <a name="certverifyauthenticodelicense-function"></a>Funkce CertVerifyAuthenticodeLicense
 Ověří platnost licence k Authenticode XrML.  

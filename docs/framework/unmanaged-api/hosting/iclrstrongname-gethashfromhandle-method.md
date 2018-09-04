@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 97d4a6bfd7a8a7aa257ad2f52d005ccc5bcd6fb6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 20c5f6bbb58b85f42ec00e356eccc5fb41ce813c
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33432034"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560332"
 ---
 # <a name="iclrstrongnamegethashfromhandle-method"></a>ICLRStrongName::GetHashFromHandle – metoda
-Generuje součet hash přes obsah souboru, který má zadaný soubor popisovač, pomocí zadaný algoritmus hash.  
+Vygeneruje hodnotu hash přes obsah souboru, který má zadaný soubor popisovač, pomocí zadané hashovacího algoritmu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,25 +42,25 @@ HRESULT GetHashFromHandle (
   
 #### <a name="parameters"></a>Parametry  
  `hFile`  
- [v] Popisovač souboru, který se použít algoritmus hash.  
+ [in] Popisovač souboru, který má být mají hodnotu hash.  
   
  `piHashAlg`  
- [ve out] Konstanta, která určuje algoritmus hash. Používejte nula pro výchozí algoritmus.  
+ [out v] Konstanta, která určuje algoritmus hash. Použít nulu pro výchozí algoritmus.  
   
  `pbHash`  
  [out] Vrácená hodnota hash vyrovnávací paměti.  
   
  `cchHash`  
- [v] Požadovaný maximální velikost `pbHash`.  
+ [in] Požadovaná maximální velikost `pbHash`.  
   
  `pchHash`  
- [out] Velikost v bajtech vrácený `pbHash`.  
+ [out] Velikost v bajtech, vráceného `pbHash`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

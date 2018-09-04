@@ -21,11 +21,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9ad328d484ba01e22557d7d23d1cfa21813de9c8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43481966"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560585"
 ---
 # <a name="strongnameerrorinfo-function"></a>StrongNameErrorInfo – funkce
 Získá poslední kód chyby, která byla vygenerována pomocí jedné z funkcí silného názvu.  

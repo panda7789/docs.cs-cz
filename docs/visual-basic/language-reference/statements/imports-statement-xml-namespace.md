@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Imports statement [Visual Basic]
 - namespaces [Visual Basic], importing
 ms.assetid: 1f4d50a6-08c7-4c2e-8206-ccae35fcd1b4
-ms.openlocfilehash: 51b63a11fd2987d82f9a7599b39d15856a0abb1d
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 1100afd89b27e789c0db713291ed3656092fb0c7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39243825"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43533639"
 ---
 # <a name="imports-statement-xml-namespace"></a>Imports – Příkaz (obor názvů XML)
 Importuje předpon názvového prostoru XML pro použití v literály XML a vlastnosti OS XML.  
@@ -35,7 +35,7 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 ## <a name="remarks"></a>Poznámky  
  Můžete použít `Imports` příkaz k definování globálními názvovými prostory XML, který vám pomůže s literály XML a vlastnosti OS XML, nebo jako parametry předat `GetXmlNamespace` operátor. (Další informace o použití `Imports` smlouvu pro import alias, který je možné, kde se používají názvy typů ve vašem kódu, naleznete v tématu [příkaz Imports (Namespace .NET a typ)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).) Syntaxe pro deklarování obor názvů XML s použitím `Imports` příkaz je stejná jako syntaxe používané ve formátu XML. Proto, můžete zkopírovat deklarace oboru názvů ze souboru XML a použít ho `Imports` příkazu.  
   
- Předpony oboru názvů XML jsou užitečné, pokud chcete vytvořit opakovaně elementů XML, které pocházejí ze stejného oboru názvů. Předpona oboru názvů XML deklarována s `Imports` příkaz je globální v tom smyslu, že je k dispozici pro všechen kód v souboru. Můžete ho používat při vytváření elementu literály XML a při přístupu k vlastnosti osy XML. Další informace najdete v tématu [literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) a [vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md).  
+ Předpony oboru názvů XML jsou užitečné, pokud chcete vytvořit opakovaně elementů XML, které pocházejí ze stejného oboru názvů. Předpona oboru názvů XML deklarována s `Imports` příkaz je globální v tom smyslu, že je k dispozici pro všechen kód v souboru. Můžete ho používat při vytváření elementu literály XML a při přístupu k vlastnosti osy XML. Další informace najdete v tématu [literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) a [vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md).  
   
  Pokud můžete definovat globální obor názvů XML bez předpony oboru názvů (například `Imports <xmlns="http://SomeNameSpace>"`), tento obor názvů se považuje za výchozí obor názvů XML. Výchozí obor názvů XML se používá pro jakoukoli element literály XML a vlastnosti osy atributu XML, které není explicitně zadán obor názvů. Výchozí obor názvů se také používá, pokud zadaný obor názvů není prázdný obor názvů (to znamená `xmlns=""`). Výchozí obor názvů XML se nevztahuje k atributům XML v literálech XML a vlastnosti osy atributu XML, které nemají žádný obor názvů.  
   
@@ -90,6 +90,6 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
   
 ## <a name="see-also"></a>Viz také  
  [Literál XML elementu](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)  
- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
+ [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)  
  [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)  
  [Operátor GetXmlNamespace](../../../visual-basic/language-reference/operators/getxmlnamespace-operator.md)

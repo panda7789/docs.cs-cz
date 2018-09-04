@@ -4,12 +4,12 @@ description: Zjistěte, nasazení aplikace .NET Core pomocí nástrojů rozhran�
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
-ms.openlocfilehash: 7b009068422686442ebff83b9400c365f34a3154
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: dbef9d91aa4e7af8e6e0ed2d8f361238385d4976
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244748"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43559592"
 ---
 # <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
 
@@ -26,7 +26,7 @@ Při práci z příkazového řádku, můžete program editoru podle vašeho vý
 
 ## <a name="framework-dependent-deployment"></a>Nasazení závisí na architektuře
 
-Nasazení závisí na architektuře bez závislostí třetích stran zahrnuje vytváření, testování a publikování aplikace. Jednoduchý příklad napsané v jazyce C# znázorňuje proces. 
+Nasazení závisí na architektuře bez závislostí třetích stran zahrnuje vytváření, testování a publikování aplikace. Jednoduchý příklad napsané v jazyce C# znázorňuje proces.
 
 1. Vytvořte adresář projektu.
 
@@ -43,7 +43,7 @@ Nasazení závisí na architektuře bez závislostí třetích stran zahrnuje vy
    [!code-csharp[deployment#1](../../../samples/snippets/core/deploying/deployment-example.cs)]
 
 1. Aktualizujte závislosti projektu a nástroje.
- 
+
    Spustit [dotnet restore](../tools/dotnet-restore.md) ([viz Poznámka](#dotnet-restore-note)) příkaz pro obnovení závislosti zadaný ve vašem projektu.
 
 1. Vytvořte sestavení pro ladění vaší aplikace.
@@ -105,7 +105,7 @@ Samostatná nasazení bez závislostí třetích stran zahrnuje vytvoření proj
 
 1. Definování platformy, které se zaměří na vaši aplikaci.
 
-   Vytvoření `<RuntimeIdentifiers>` značku `<PropertyGroup>` část vaší *csproj* soubor, který definuje platformy, zaměřuje a zadejte identifikátor modulu runtime (RID) pro každou platformu, která je cílem vaší aplikace. Všimněte si, že budete také muset přidat středníkem k oddělení identifikátory RID. Zobrazit [katalog identifikátorů modulu Runtime](../rid-catalog.md) seznam identifikátorů modulů runtime. 
+   Vytvoření `<RuntimeIdentifiers>` značku `<PropertyGroup>` část vaší *csproj* soubor, který definuje platformy, zaměřuje a zadejte identifikátor modulu runtime (RID) pro každou platformu, která je cílem vaší aplikace. Všimněte si, že budete také muset přidat středníkem k oddělení identifikátory RID. Zobrazit [katalog identifikátorů modulu Runtime](../rid-catalog.md) seznam identifikátorů modulů runtime.
 
    Například následující `<PropertyGroup>` části označuje, že aplikace běží na 64bitová verze Windows 10 operačních systémů a operačním systému OS 10.11 verze X 64-bit.
 
@@ -188,8 +188,7 @@ Všimněte si, že lze nasadit pouze samostatná nasazení pomocí knihovny tře
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-# <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také:
 
-[Nasazení aplikace .NET core](index.md)   
-[.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)   
-
+* [Nasazení aplikace .NET core](index.md)
+* [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)

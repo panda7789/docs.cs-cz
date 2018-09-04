@@ -5,22 +5,23 @@ helpviewer_keywords:
 - delegates [C#], combining
 - multicast delegates [C#]
 ms.assetid: 4e689450-6d0c-46de-acfd-f961018ae5dd
-ms.openlocfilehash: e1214a4d281dbcb9d8186770b68510d3d9a4b15f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e3cc3f9082bd86004a7821b64c01253408c07641
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33327392"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43535737"
 ---
 # <a name="how-to-combine-delegates-multicast-delegatesc-programming-guide"></a>Postupy: Kombinování delegátů (vícesměroví delegáti) (Průvodce programováním v C#)
-Tento příklad ukazuje, jak vytvořit vícesměroví delegáti. Užitečné vlastnost [delegovat](../../../csharp/language-reference/keywords/delegate.md) objektů je, že může být přiřazen více objektů do instance jednoho delegáta pomocí `+` operátor. Delegát vícesměrového vysílání obsahuje seznam přiřazené delegáti. Když vícesměrového vysílání delegáta je zavolána, vyvolá delegáty v seznamu, v pořadí. Lze spojit pouze delegáti stejného typu.  
+Tento příklad ukazuje, jak vytvořit vícesměroví delegáti. Užitečné vlastnost [delegovat](../../../csharp/language-reference/keywords/delegate.md) objekty je, že více objektů lze přiřadit instanci jednoho delegáta pomocí `+` operátor. Vícesměrového vysílání delegát obsahuje seznam přiřazenou delegáti. Při volání vícesměrového vysílání delegáta vyvolá Delegáti v seznamu, v pořadí. Můžete kombinovat pouze delegáti stejného typu.  
   
  `-` Operátor slouží k odebrání delegáta součásti vícesměrového vysílání delegáta.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideDelegates#11](../../../csharp/programming-guide/delegates/codesnippet/CSharp/how-to-combine-delegates-multicast-delegates_1.cs)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.MulticastDelegate>  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Události](../../../csharp/programming-guide/events/index.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.MulticastDelegate>  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Události](../../../csharp/programming-guide/events/index.md)

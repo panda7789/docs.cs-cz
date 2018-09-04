@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: ad6442f6-1a9d-43b6-b733-04ac1b7f9b82
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d08cfbde82f74dcf88ddadd844854bdfeb403935
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 59e3f54f4d3ce0c191193ff63a3c2bce5b93a1bd
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754259"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538028"
 ---
 # <a name="ltqualifyassemblygt-element"></a>&lt;qualifyassembly –&gt; – Element
-Určuje úplný název sestavení, které by měl být dynamicky načíst, pokud je použít částečný název.  
+Určuje úplný název sestavení, které se mají dynamicky načíst při použití částečný název.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -41,8 +41,8 @@ Určuje úplný název sestavení, které by měl být dynamicky načíst, pokud
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`partialName`|Požadovaný atribut.<br /><br /> Určuje částečné název sestavení, jak se objevuje v kódu.|  
-|`fullName`|Požadovaný atribut.<br /><br /> Úplný název sestavení, určuje, jak se objevuje v globální mezipaměti sestavení.|  
+|`partialName`|Požadovaný atribut.<br /><br /> Částečný název sestavení, určuje, jak se zobrazí v kódu.|  
+|`fullName`|Požadovaný atribut.<br /><br /> Určuje úplný název sestavení, jak se zobrazí v globální mezipaměti sestavení.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -56,9 +56,9 @@ Určuje úplný název sestavení, které by měl být dynamicky načíst, pokud
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Volání <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda pomocí názvů částečného sestavení způsobí, že modul common language runtime a hledat sestavení pouze v adresáři základní aplikace. Použití  **\<qualifyassembly – >** element v konfiguračním souboru aplikace k poskytování informací o úplné sestavení (název, verzi, token veřejného klíče a jazykovou verzi) a způsobit, že modul common language runtime pro vyhledávání pro sestavení v globální mezipaměti sestavení.  
+ Volání <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda názvů částečného sestavení způsobí, že modul common language runtime vyhledat sestavení pouze v základní adresář aplikace. Použití  **\<qualifyassembly – >** prvku v konfiguračním souboru aplikace zadejte informace o úplné sestavení (název, verzi, token veřejného klíče a jazykovou verzi) a způsobit, že modul common language runtime pro hledání pro sestavení v globální mezipaměti sestavení.  
   
- **FullName** atributu musí obsahovat čtyři pole identity sestavení: název, verzi, token veřejného klíče a jazykovou verzi. **PartialName** atributu musí odkazovat částečně sestavení. Musíte zadat alespoň název sestavení text (v případě nejběžnějších)), ale může také obsahovat verzi, token veřejného klíče, nebo jazykovou verzi (nebo libovolnou kombinaci čtyři, ale ne všechny čtyři). **PartialName** musí odpovídat názvu zadaná v volání. Například nelze zadat `"math"` jako **partialName** atribut v konfiguračním souboru a volání `Assembly.Load("math, Version=3.3.3.3")` v kódu.  
+ **FullName** atribut musí obsahovat čtyři pole Identita sestavení: název, verzi, token veřejného klíče a jazykovou verzi. **PartialName** atribut částečně musí odkazovat na sestavení. Je potřeba určit nejmíň textový název sestavení (nejběžnější případy), ale může také obsahovat verzi, token veřejného klíče, nebo jazykové verze (nebo libovolnou kombinaci čtyři, ale ne všechny čtyři). **PartialName** musí odpovídat názvu zadané ve volání. Například nelze zadat `"math"` jako **partialName** atribut v konfiguračním souboru a volání `Assembly.Load("math, Version=3.3.3.3")` ve vašem kódu.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad změní logicky volání `Assembly.Load("math")` do `Assembly.Load("math,version=1.0.0.0,publicKeyToken=a1690a5ea44bab32,culture=neutral")`.  
@@ -78,4 +78,4 @@ Určuje úplný název sestavení, které by měl být dynamicky načíst, pokud
 ## <a name="see-also"></a>Viz také  
  [Schéma nastavení běhového prostředí](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
  [Jak běhové prostředí vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)  
- [NIB: Částečné odkazy na sestavení](http://msdn.microsoft.com/library/ec90f07a-398c-4306-9401-0fc5ff9cb59f)
+ [NIB: Částečné odkazy na sestavení](https://msdn.microsoft.com/library/ec90f07a-398c-4306-9401-0fc5ff9cb59f)

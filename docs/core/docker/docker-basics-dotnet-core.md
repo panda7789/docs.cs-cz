@@ -6,23 +6,23 @@ ms.author: johalex
 ms.date: 11/06/2017
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 02b6b3fc9e149f5d1d5d78e310c7df257be983c1
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 543b9454e826022a72752d9a24bc43b77d2501f5
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961544"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43558722"
 ---
 # <a name="learn-docker-basics-with-net-core"></a>Základy Dockeru s .NET Core
 
-V tomto kurzu se dozvíte, jaké Docker, kontejner sestavení a nasazení úlohy pro aplikace .NET Core. V průběhu tohoto kurzu se dozvíte:
+V tomto kurzu se dozvíte, jaké Docker, kontejner sestavení a nasazení úlohy pro aplikace .NET Core. [Platforma Docker](https://docs.docker.com/engine/docker-overview/#the-docker-platform) používá [modul Docker](https://docs.docker.com/engine/docker-overview/#docker-engine) k rychlému sestavování a balíčky aplikací jako [imagí Dockeru](https://docs.docker.com/glossary/?term=image). Tyto Image jsou napsané v [soubor Dockerfile](https://docs.docker.com/glossary/?term=Dockerfile) formátu k nasazení a spouštění [vrstvy kontejneru](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/#container-and-layers).
+
+V průběhu tohoto kurzu se dozvíte:
 
 > [!div class="checklist"]
 > * Vytvoření souboru Dockerfile
 > * Postup vytvoření aplikace .NET Core.
 > * Jak nasadit aplikace do kontejneru Dockeru.
-
-[Platforma Docker](https://docs.docker.com/engine/docker-overview/#the-docker-platform) používá [modul Docker](https://docs.docker.com/engine/docker-overview/#docker-engine) k rychlému sestavování a balíčky aplikací jako [imagí Dockeru](https://docs.docker.com/glossary/?term=image). Tyto Image jsou napsané v [soubor Dockerfile](https://docs.docker.com/glossary/?term=Dockerfile) formátu k nasazení a spouštění [vrstvy kontejneru](https://docs.docker.com/engine/userguide/storagedriver/imagesandcontainers/#container-and-layers).
 
 ## <a name="net-core-easiest-way-to-get-started"></a>.NET core: Nejjednodušší způsob, jak začít
 
@@ -283,7 +283,7 @@ V této ukázce se používají následující Image Dockeru
 
 ## <a name="related-resources"></a>Související prostředky
 
-* [Ukázky Dockeru .NET core](https://github.com/dotnet/dotnet-docker-samples/README.md)
+* [Ukázky Dockeru .NET core](https://github.com/dotnet/dotnet-docker/tree/master/samples)
 * [Soubor Docker na kontejnery Windows](https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile)
 * [Ukázky Dockeru rozhraní .NET framework](https://github.com/Microsoft/dotnet-framework-docker-samples)
 * [ASP.NET Core na Dockerhubu](https://hub.docker.com/r/microsoft/aspnetcore/)

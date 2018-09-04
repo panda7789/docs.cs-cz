@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: bb3cb022-637e-49fd-92e8-6766038affa7
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 74bf0d14b0acfd8a5382575d2ee1e51174b6b6b8
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 0e5a22d6e517bc7a05f74089b7c8ece8c8a4bd39
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752790"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43558669"
 ---
 # <a name="ltsecuritygt-of-ltnetnamedpipebindinggt"></a>&lt;security&gt; – &lt;netNamedPipeBinding&gt;
 Definuje nastavení zabezpečení pro vazbu.  
@@ -17,7 +17,7 @@ Definuje nastavení zabezpečení pro vazbu.
  \<system.ServiceModel>  
 \<vazby >  
 \<netNamedPipeBinding>  
-\<Vazba >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -39,19 +39,19 @@ Definuje nastavení zabezpečení pro vazbu.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|režim|Určuje typ zabezpečení, který se použije pro tuto vazbu. Platné hodnoty patří:<br /><br /> -None: To zakáže zabezpečení.<br />-Přenos: Zabezpečení je zajištěno pomocí základního zabezpečení přenosu na základě. Je možné kontrolovat úroveň ochrany s Tento režim.<br />-Výchozí hodnota je přenos. Tento atribut je typu <xref:System.ServiceModel.NetNamedPipeSecurityMode>.|  
+|režim|Určuje typ zabezpečení, který se použije pro tuto vazbu. Platné hodnoty patří:<br /><br /> -Žádný: Zakáže zabezpečení.<br />-Přenos: Zabezpečení je k dispozici pomocí základního zabezpečení přenosu na základě. Je možné kontrolovat úroveň ochrany s tímto režimem.<br />– Výchozí hodnota je přenos. Tento atribut je typu <xref:System.ServiceModel.NetNamedPipeSecurityMode>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|transport|Definuje nastavení zabezpečení pro přenos. Tento element je typu <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement>.|  
+|transport|Definuje nastavení zabezpečení pro přenos. Tento prvek je typu <xref:System.ServiceModel.Configuration.NamedPipeTransportSecurityElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|vazba|Element vazby [ \<– netNamedPipeBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).|  
+|vazba|Prvek vazby [ \<netNamedPipeBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/netnamedpipebinding.md).|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.NetNamedPipeSecurity>  
@@ -62,5 +62,5 @@ Definuje nastavení zabezpečení pro vazbu.
  [Výběr typu přihlašovacích údajů](../../../../../docs/framework/wcf/feature-details/selecting-a-credential-type.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klienty](http://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
- [\<Vazba >](../../../../../docs/framework/misc/binding.md)
+ [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

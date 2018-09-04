@@ -5,36 +5,36 @@ helpviewer_keywords:
 - Windows Communication Foundation, endpoints
 - Windows Communication Foundation, configuration
 ms.assetid: 58532b6d-4eea-4a4f-854f-a1c8c842564d
-ms.openlocfilehash: 6880b04a3f8a82c1e109c32674804c5241913a8a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 694b4faaafea62799a96aabe8f023a0d495f8d50
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487069"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43540202"
 ---
 # <a name="custom-bindings"></a>Vlastní vazby
-Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pokud jeden z vazby poskytované systémem nesplňuje požadavky na služby. Všechny vazby se vytvářejí na základě uspořádanou sadu elementů vazby. Vlastní vazby jde integrovat přímo ze sady elementů vazby poskytované systémem nebo může zahrnovat prvky uživatelem definované vlastní vazby. Vlastní vazby elementů, například můžete použít k povolení použití nové přenosy nebo kodéry na koncový bod služby. Pracovní příklady najdete v tématu [vazby ukázky vlastních](http://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08). Další informace najdete v tématu [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pokud jedna z vazeb poskytovaných systémem nesplňuje požadavky na vaši službu. Všechny vazby jsou konstruovány ze seřazené sady elementů vazby. Vlastní vazby se dají ze sady prvků vazeb poskytovaných systémem nebo může obsahovat elementy uživatelem definované vlastní vazby. Můžete použít vlastní vazby prvky, například umožní použít nové přenosy nebo kodérů na koncový bod služby. Příklady práce, naleznete v tématu [vlastní vazby ukázky](https://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08). Další informace najdete v tématu [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
-## <a name="construction-of-a-custom-binding"></a>Vytváření vlastních vazeb  
- Vlastní vazby je vytvořený pomocí <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> konstruktor z kolekce elementů, které jsou "skládaný" v určitém pořadí vazby:  
+## <a name="construction-of-a-custom-binding"></a>Vytvoření vlastní vazby  
+ Vlastní vazby je vytvořený <xref:System.ServiceModel.Channels.CustomBinding.%23ctor%2A> konstruktoru z kolekce vazby prvky, které jsou "skládaný" v určitém pořadí:  
   
--   V horní části je volitelný <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> třídu, která umožňuje toku transakcí.  
+-   V horní části je volitelný <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> třídu, která umožňuje toku transakce.  
   
--   Dále je volitelný <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> třídu, která poskytuje relaci a jak jsou definovány ve specifikaci WS-ReliableMessaging řazení mechanismy. Relaci můžete křížová zprostředkovatele protokolu SOAP a přenosu.  
+-   Dále je volitelný <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> třída, která poskytuje relaci a jak je definováno ve specifikaci WS-ReliableMessaging řazení mechanismy. Relaci můžete různé zprostředkovatele protokolu SOAP a přenosu.  
   
--   Dále je volitelný <xref:System.ServiceModel.Channels.SecurityBindingElement> třídu, která poskytuje funkce zabezpečení, jako je například autorizace, ověřování, ochrana a důvěrnost.  
+-   Dále je volitelný <xref:System.ServiceModel.Channels.SecurityBindingElement> třída, která poskytuje funkce zabezpečení, jako je například autorizace, ověřování, ochrany a zachováním důvěrnosti.  
   
--   Dále je volitelný <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> třídu, která umožňuje mít dva způsobem duplexní komunikace s transportní protokol, který nepodporuje duplexní komunikace nativně, jako je například HTTP.  
+-   Dále je volitelný <xref:System.ServiceModel.Channels.CompositeDuplexBindingElement> třídu, která umožňuje mít dva stejně, jako duplexní komunikaci s přenosový protokol, který nepodporuje duplexní komunikaci nativně, jako je například HTTP.  
   
--   Dále je volitelný <xref:System.ServiceModel.Channels.OneWayBindingElement>) třídu, která poskytuje jednosměrnou komunikaci.  
+-   Dále je volitelný <xref:System.ServiceModel.Channels.OneWayBindingElement>) třída, která poskytuje jednosměrnou komunikaci.  
   
--   Další je na prvek vazby zabezpečení volitelné datový proud, který může být jedna z následujících.  
+-   Dále je element vazby zabezpečení volitelné datového proudu, který může být jedna z následujících akcí.  
   
     -   <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement>  
   
     -   <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
   
--   Dále je požadované zpráva kódování prvku vazby. Můžete použít vlastní kodér zpráv nebo jeden z tři vazby kódování zprávy:  
+-   Dále je element vazby kódování zprávy vyžaduje. Můžete použít vlastní kodér zpráv nebo jeden ze tří vazby kódování zprávy:  
   
     -   <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>  
   
@@ -42,7 +42,7 @@ Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pok
   
     -   <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>  
   
- V dolní části je element požadované přenosu. Můžete použít vlastní přenos nebo jeden z následujících elementů přenosové vazby, kterou poskytuje Windows Communication Foundation (WCF):  
+ V dolní části je prvek vyžaduje přenos. Můžete použít vlastní přenos nebo jednu z následujících elementů přenosové vazby, kterou poskytuje Windows Communication Foundation (WCF):  
   
 -   <xref:System.ServiceModel.Channels.TcpTransportBindingElement>  
   
@@ -60,22 +60,22 @@ Můžete použít <xref:System.ServiceModel.Channels.CustomBinding> třídy, pok
   
 -   <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement>  
   
- Následující tabulka shrnuje možnosti pro jednotlivé úrovně.  
+ Následující tabulka shrnuje možnosti pro každou vrstvu.  
   
-|Vrstva|Možnosti|Požadováno|  
+|Vrstvy|Možnosti|Požadováno|  
 |-----------|-------------|--------------|  
 |Transakce|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|Ne|  
 |Spolehlivost|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|Ne|  
 |Zabezpečení|<xref:System.ServiceModel.Channels.SecurityBindingElement>|Ne|  
-|Kódování|Text, vlastní binární zpráva přenosu optimalizace mechanismus (MTOM),|Ano|  
-|Přenos|TCP, HTTP, HTTPS, pojmenované kanály (také označované jako IPC), Peer-to-Peer (P2P), služba Řízení front zpráv (MSMQ), vlastní|Ano|  
+|Kódování|Text, vlastní binární soubor, zpráv přenosu optimalizace mechanismus (MTOM),|Ano|  
+|Přenos|TCP, HTTP, HTTPS, pojmenované kanály (označované také jako IPC) Peer-to-Peer (P2P), služba Řízení front zpráv (MSMQ), vlastní|Ano|  
   
- Kromě toho můžete definovat vlastní prvky vazby a vložte je mezi některé z předchozích definované vrstvy.  
+ Kromě toho můžete definovat vlastní elementy vazby a vložit mezi všechny předchozí definované vrstvy.  
   
 ## <a name="see-also"></a>Viz také  
  [Přehled vytváření koncových bodů](../../../../docs/framework/wcf/endpoint-creation-overview.md)  
  [Používání vazeb ke konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [Vazby poskytované systémem](../../../../docs/framework/wcf/system-provided-bindings.md)  
  [Postupy: Přizpůsobení vazeb poskytovaných systémem](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md)  
- [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [\<třídě customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
  [Vlastní vazba](../../../../docs/framework/wcf/samples/custom-binding.md)

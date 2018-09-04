@@ -1,16 +1,16 @@
 ---
-title: Informace o souboru nemůže být dotazována otevřené pro zápis.
+title: Nelze se dotazovat informací o souboru na otevřené pro zápis.
 ms.date: 07/20/2015
 ms.assetid: 2198af10-f128-4b1d-baba-a251e1369146
-ms.openlocfilehash: 800df2caec6dbad62eb1029ccd793c00a1315a73
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1df1630eecc688dbe61400398838c7edaf75a7b2
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33636368"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538646"
 ---
-# <a name="file-information-cannot-be-queried-while-open-for-writing"></a>Informace o souboru nemůže být dotazována otevřené pro zápis.
-Došlo pokusu o získání informací o souboru, který je aktuálně otevřena pro zápis.  
+# <a name="file-information-cannot-be-queried-while-open-for-writing"></a>Nelze se dotazovat informací o souboru na otevřené pro zápis.
+Byl proveden pokus o získání informací o souboru, který je aktuálně otevřena pro zápis.  
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby  
   
@@ -19,4 +19,4 @@ Došlo pokusu o získání informací o souboru, který je aktuálně otevřena 
 ## <a name="see-also"></a>Viz také  
  <xref:System.IO.FileInfo>  
  <xref:System.Security.Permissions.FileIOPermission>  
- [Postupy: získání informací o souboru v jazyce Visual Basic](http://msdn.microsoft.com/library/ca0720ec-f40e-4c11-9748-0ce1685c78f0)
+ [Postupy: získání informací o souboru v jazyce Visual Basic](https://msdn.microsoft.com/library/ca0720ec-f40e-4c11-9748-0ce1685c78f0)

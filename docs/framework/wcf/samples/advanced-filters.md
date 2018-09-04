@@ -2,39 +2,39 @@
 title: Rozšířené filtry
 ms.date: 03/30/2017
 ms.assetid: 8d81590f-e036-4f96-824a-4a187f462764
-ms.openlocfilehash: de8577be2d56ec3c942fd8736e350234daf6a35a
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 7022384e8abe93f4276eec48785b3243ed926438
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33805613"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43564197"
 ---
 # <a name="advanced-filters"></a>Rozšířené filtry
-Tento příklad znázorňuje směrování služby Windows Communication Foundation (WCF). Služba Směrování je součást WCF, který usnadňuje do aplikace zahrnout směrovač podle obsahu. Tato ukázka přizpůsobuje standardní ukázka kalkulačku WCF komunikovat pomocí služby směrování. Tento příklad ukazuje, jak definovat na základě obsahu směrování logiku prostřednictvím filtry zpráv a zpráva filtru tabulky.  
+Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, který umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní vzorek Kalkulačka WCF na komunikaci pomocí směrovací službou. Tento příklad ukazuje, jak definovat směrování logiky založené na obsahu prostřednictvím filtry zpráv a tabulky filtru zpráv.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\AdvancedFilters`  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- V následující tabulce jsou filtry zpráv, které jsou přidány do tabulky filtru zpráv služby směrování.  
+ V následující tabulce jsou uvedeny filtry zpráv, které jsou přidány do tabulky filtru zpráva směrovací služby.  
   
 |Filtr|Pravidlo|Priorita|  
 |------------|----------|--------------|  
-|Pokud (mají záhlaví)|Zaokrouhlení|2|  
-|Pokud (vám ukázal, na Ep2)|Regulární|1|  
-|Pokud (vám ukázal, se Adresa2)|Zaokrouhlení|1|  
-|Pokud (RoundRobin1)|Regulární|0|  
+|Pokud (má hlavičky)|Zaokrouhlení|2|  
+|Pokud (se zobrazila na Ep2)|Pravidelné|1|  
+|Pokud (zobrazila s Adresa2)|Zaokrouhlení|1|  
+|Pokud (RoundRobin1)|Pravidelné|0|  
 |Pokud (RoundRobin2)|Zaokrouhlení|0|  
   
- Filtry zpráv a zpráva filtru tabulky lze vytvořit a konfigurovat pomocí kódu nebo v konfiguračním souboru aplikace. Tato ukázka můžete najít filtry zpráv a zpráva filtru tabulky definované prostřednictvím kódu v souboru RoutingService\routing.cs nebo definována v konfiguračním souboru aplikace v souboru RoutingService\App.config. Následující odstavce popisují, jak vytváří filtry zpráv a zpráva filtru tabulky pro tato ukázka prostřednictvím kódu.  
+ Filtry zpráv a zpráva filtru tabulky lze vytvořit a nakonfigurovat prostřednictvím kódu nebo konfiguračního souboru aplikace. Pro tuto ukázku můžete najít filtry zpráv a tabulky filtru zprávy prostřednictvím kódu v souboru RoutingService\routing.cs definované nebo definované v konfiguračním souboru aplikace v souboru RoutingService\App.config. Následující odstavce popisují způsob vytvoření filtry zpráv a zpráva filtr tabulky pro tuto ukázku prostřednictvím kódu.  
   
- První, <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> hledá vlastní hlavičky. Všimněte si, že <xref:System.ServiceModel.WSHttpBinding> výsledků ve verzi obálky pomocí protokolu SOAP 1.2, takže příkaz jazyka XPath je definována pro používání oboru názvů SOAP 1.2. Správce výchozí obor názvů pro <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>s již definuje předponu pro obor názvů SOAP 1.2, /s12, který může být použit. Výchozí obor názvů správce nemá vlastní obor názvů, který klient používá k definování skutečné hodnoty hlavičky, takže tuto předponu musí být definován. Všechny zprávy, které se zobrazí s touto hlavičkou odpovídat tomuto filtru.  
+ Nejprve je potřeba <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> hledá vlastní hlavičce. Všimněte si, že <xref:System.ServiceModel.WSHttpBinding> výsledků ve verzi obálky pomocí protokolu SOAP 1.2, takže příkaz jazyka XPath je definována používání oboru názvů SOAP 1.2. Výchozí obor názvů správce pro <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>s již definuje předponu pro obor názvů SOAP 1.2, /s12, který můžete použít. Výchozí obor názvů Správce však nemá vlastní obor názvů, který klient používá k definování skutečné hodnoty hlavičky, aby tuto předponu musí být definovaný. Všechny zprávy, které se zobrazí s touto hlavičkou odpovídat tomuto filtru.  
   
 ```  
 XPathMessageContext namespaceManager = new XPathMessageContext();  
@@ -43,19 +43,19 @@ namespaceManager.AddNamespace("custom", "http://my.custom.namespace/");
 XPathMessageFilter xpathFilter = new XPathMessageFilter("/s12:Envelope/s12:Header/custom:RoundingCalculator = 1", namespaceManager);  
 ```  
   
- Druhý filtr je <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter>, který odpovídá jakékoli zprávy, která byla obdržena ve `calculatorEndpoint`. Název koncového bodu je definován, když je vytvořen objekt koncový bod služby.  
+ Je druhý filtr <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter>, který odpovídá jakékoli zprávy, který uživateli přišel na `calculatorEndpoint`. Název koncového bodu je definován, když je vytvořen objekt koncový bod služby.  
   
 ```  
 EndpointNameMessageFilter endpointNameFilter = new EndpointNameMessageFilter("calculatorEndpoint");  
 ```  
   
- Je třetí filtr <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>. To odpovídá všechny zprávy, které vám ukázal, na koncový bod s adresou, která odpovídá předpona adresy (nebo části front) zadaný. V tomto příkladu je předpona adresy definovaný jako "http://localhost/routingservice/router/rounding/". To znamená, že všechny příchozí zprávy, které jsou určeny k "http://localhost/routingservice/router/rounding/*" se splní tímto filtrem. V takovém případě je zprávy, které se zobrazí na zaokrouhlení kalkulačky koncového bodu, který má na adresu "http://localhost/routingservice/router/rounding/calculator".  
+ Je třetí filtr <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter>. To odpovídá jakékoli zprávy, která se zobrazila v koncovém bodu s adresou, která odpovídá předponu adresy (nebo přední části), za předpokladu. V tomto příkladu je definována předpona adresy jako "http://localhost/routingservice/router/rounding/". To znamená, že příchozí zprávy, které jsou určeny k "http://localhost/routingservice/router/rounding/*" odpovídajících tomuto filtru. V takovém případě je zprávy, které se zobrazí v koncovém bodě zaokrouhlení kalkulačky, který má na adresu "http://localhost/routingservice/router/rounding/calculator".  
   
 ```  
 PrefixEndpointAddressMessageFilter prefixAddressFilter = new PrefixEndpointAddressMessageFilter(new EndpointAddress("http://localhost/routingservice/router/rounding/"));  
 ```  
   
- Poslední dva filtry zpráv jsou vlastní <xref:System.ServiceModel.Dispatcher.MessageFilter>s. V tomto příkladu se používá filtr zpráv "RoundRobin". Tento filtr zpráv se vytvoří v zadaný soubor RoutingService\RoundRobinMessageFilter.cs. Tyto filtry, pokud je nastavena na stejnou skupinu alternativní mezi sestav, aby odpovídaly zprávy a, že nechcete, tak, aby pouze jeden z nich odpovídá `true` najednou.  
+ Poslední dva filtry zpráv jsou vlastní <xref:System.ServiceModel.Dispatcher.MessageFilter>s. V tomto příkladu se používá filtr zpráv "RoundRobin". Tomuto filtru zprávy se vytvoří v zadané RoutingService\RoundRobinMessageFilter.cs souboru. Tyto filtry, pokud je nastavena na stejnou skupinu střídavě vytváření sestav, které musí odpovídat zprávy a že tomu tak není, tak, aby pouze jeden z nich odpovídá `true` najednou.  
   
 ```  
 RoundRobinMessageFilter roundRobinFilter1 = new RoundRobinMessageFilter("group1");  
@@ -63,55 +63,46 @@ RoundRobinMessageFilter roundRobinFilter1 = new RoundRobinMessageFilter("group1"
 RoundRobinMessageFilter roundRobinFilter2 = new RoundRobinMessageFilter("group1");  
 ```  
   
- Potom všechny tyto zprávy jsou přidány do <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601>. Při tom priority zadávají k ovlivnění pořadí, ve kterém tabulku filtru zpráv provede filtry. Tím vyšší je priorita, tím dříve filtr je provedeno; nižší prioritu, novější spouští filtr. Proto filtr důležitostí 2 spouští před filtrem v priority 1. Výchozí úroveň priority, pokud není zadaný žádný je 0. Tabulku filtru zpráv zpracuje všechny filtry na úrovni Zadaná priorita před přesunutím do další nejnižší úroveň priority. Pokud je nalezena shoda s konkrétní prioritou, pak tabulku filtru zpráv nebude dále pokusu o vyhledání shody další nižší prioritou.  
+ Potom všechny tyto zprávy jsou přidány do <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601>. Přitom priority jsou určeny k ovlivnění pořadí, ve kterém tabulky filtru zprávy spustí filtry. Vyšší je priorita, tím dříve filtru je spuštěn; Čím nižší prioritu, pozdější spuštění filtru. Proto filtr s prioritou 2 spouští před filtrem s prioritou 1. Výchozí úroveň priority, pokud není zadaný žádný je 0. Tabulka Filtr zpráv spustí všechny filtry na úrovni uvedenou prioritou daný před přechodem na další úroveň nejnižší prioritu. Pokud je nalezena shoda s konkrétní prioritou, pak tabulky filtru zprávy nepokračuje pokusu o nalezení shody další nižší prioritou.  
   
 > [!NOTE]
->  Když tento příklad ukazuje způsob použití priority filtru zpráv, obecně je další původce a lepší návrhu k návrhu a konfigurovat filtry tak, aby nevyžadují stanovení priorit, aby správně fungoval.  
+>  Přestože tento příklad ukazuje způsob použití priority filtru zpráv, obecně je výkonnější a lepší návrh na návrhu a konfigurace filtry tak, aby nevyžadují stanovení priority správně fungovat.  
   
- První filtr, který se má přidat je filtr XPath a jeho priorita je nastavena na hodnotu 2. Toto je první filtr zpráv, které provádí. Pokud najde vlastní hlavičky, bez ohledu na to, co by bylo výsledky ostatní filtry, zpráva se směruje na koncový bod zaokrouhlení kalkulačky.  
+ Filtr XPath je první filtr, aby se přidají a jeho priorita nastavena na 2. Toto je první filtr zpráv, který se spustí. Pokud najde vlastní hlavičky, bez ohledu na to, co by být výsledky další filtry, zpráva se směruje do koncového bodu zaokrouhlení kalkulačku.  
   
- Priorita 1 přidá dva filtry. Opakujte tyto spustí jenom v případě filtr XPath důležitostí 2 neodpovídá zprávy. Dva různé způsoby, jak určit, kdy byla zpráva řešit při jeho vám ukázal, se zobrazí tyto dva filtry. Vzhledem k tomu, že dva filtry efektivně zkontrolujte, zda zpráva dorazila po uplynutí v některém z dva koncové body, jejich spuštěním na stejné úrovni s prioritou protože udělají ne pomocí obou vrátit `true` ve stejnou dobu.  
+ S prioritou 1 jsou přidány dva filtry. Znovu tyto spustí jenom v případě filtr XPath s prioritou 2 neodpovídá zprávu. Zobrazit tyto dva filtry k určení, kde byl vyřešen zprávy, když jsme si ukázali, a dvěma různými způsoby. Protože dva filtry efektivně zkontrolujte, zda byla zpráva doručena dva koncové body, bylo možné spouštět na stejné úrovni priority protože ne obě možnosti současně vrátit `true` ve stejnou dobu.  
   
- Nakonec s prioritou 0 (nejnižší priorita) spustit RoundRobin zpráva filtry. Protože filtry jsou nakonfigurované se stejným názvem skupiny, pouze jedna z nich odpovídá najednou. Protože všechny zprávy s vlastní hlavička již byla směrován a všechny ty řešit konkrétní virtualizované koncových bodů, jsou zprávy zpracovávaných filtry zpráv RoundRobin jen zprávy, které byla provedena na výchozí koncový bod směrovač bez vlastní hlavička. Protože tyto zprávy přepínač na zprávu pro každé volání, polovinu operace přejděte ke koncovému bodu regulární kalkulačky a druhá polovina přejděte ke koncovému bodu zaokrouhlení kalkulačky.  
+ A konečně s prioritou 0 (nejnižší prioritu), spusťte RoundRobin zprávy filtry. Protože jsou nakonfigurované filtry se stejným názvem skupiny, pouze jeden z nich odpovídá najednou. Protože byl směrovány všechny zprávy s vlastní hlavičky, všechny ty řešit ke konkrétním koncovým bodům virtualizované, zprávy zpracovává filtry RoundRobin zpráv jsou jen zprávy, které byly určena výchozí koncový bod směrovače bez vlastní záhlaví. Protože tyto zprávy se přepnout na zprávu pro každé volání, polovinu operací přejděte ke koncovému bodu regulární kalkulačky a ta druhá půlka přejděte ke koncovému bodu zaokrouhlení kalkulačky.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete AdvancedFilters.sln.  
   
-2.  Chcete-li otevřít **Průzkumníku řešení**, vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
+2.  Chcete-li otevřít **Průzkumníku řešení**vyberte **Průzkumníku řešení** z **zobrazení** nabídky.  
   
-3.  Stisknutím klávesy F5 nebo CTRL + SHIFT + B v sadě Visual Studio.  
+3.  V sadě Visual Studio stiskněte klávesu F5 nebo CTRL + SHIFT + B.  
   
-    1.  Pokud chcete automaticky spouštěné projekty potřebné po stisknutí klávesy F5, klikněte pravým tlačítkem na řešení a vyberte **vlastnosti**. Vyberte **spouštěný projekt** pod uzlem **společných vlastností** v levém podokně. Vyberte **více projektů po spuštění** přepínač a nastavte všechny projekty, které chcete mít **spustit** akce.  
+    1.  Pokud chcete automaticky spouštět nezbytné projektů při stisknutí klávesy F5, klikněte pravým tlačítkem na řešení a vyberte **vlastnosti**. Vyberte **spouštěný projekt** pod uzlem **společné vlastnosti** v levém podokně. Vyberte **více projektů po spuštění** přepínač a nastavte všechny projekty, které mají mít **Start** akce.  
   
-    2.  Pokud vytvoříte projekt pomocí kombinace kláves CTRL + SHIFT + B, je nutné spustit následující aplikace:  
+    2.  Pokud při vytváření projektu pomocí kombinace kláves CTRL + SHIFT + B, je nutné spustit v následujících aplikacích:  
   
-        1.  Klient kalkulačky (. / CalculatorClient/bin/client.exe)  
+        1.  Kalkulačka klienta (. / CalculatorClient/bin/client.exe)  
   
-        2.  Službu kalkulačky (. / CalculatorService/bin/service.exe)  
+        2.  Kalkulačka služby (. / CalculatorService/bin/service.exe)  
   
-        3.  Směrovací služba provádí kalkulačky (. / RoundingCalcService/bin/service.exe)  
+        3.  Směrovací služba kalkulačky (. / RoundingCalcService/bin/service.exe)  
   
-        4.  RoutingService (. / RoutingService/bin/RoutingService.exe)  
+        4.  Službu RoutingService (. / RoutingService/bin/RoutingService.exe)  
   
-4.  V okně konzoly klienta kalkulačky stisknutím klávesy ENTER spusťte službu klienta. Klient vrátí seznam koncových bodů cílové lze vybírat.  
+4.  V okně konzoly klienta Kalkulačka stisknutím klávesy ENTER klienta. Klient vrátí seznam hodnot cílové koncové body lze vybírat.  
   
-5.  Zvolte cílový koncový bod zadáním jeho odpovídající písmeno a stiskněte klávesu ENTER.  
+5.  Zvolte cílový koncový bod tak, že zadáte jeho odpovídající písmeno a stiskněte klávesu ENTER.  
   
-6.  V dalším kroku klienta zeptá, pokud chcete přidat vlastní hlavičku. Stiskněte klávesu Y Ano nebo N pro žádný, stiskněte klávesu ENTER.  
+6.  V dalším kroku klienta vás zeptá, zda chcete přidat vlastní hlavičku. Stiskněte klávesu A Ano nebo Ne, N stiskněte klávesu ENTER.  
   
-7.  V závislosti na vybrané možnosti, které jste nastavili měli byste vidět jiné výstupy.  
+7.  V závislosti na výběrech, které jste provedli měli byste vidět jiné výstupy.  
   
-    1.  Toto je výstup vrácena, pokud jste přidali vlastní záhlaví zprávy.  
-  
-        ```Output  
-        Add(100,15.99) = 116  
-        Subtract(145,76.54) = 68.5  
-        Multiply(9,81.25) = 731.3  
-        Divide(22,7) = 3.1  
-        ```  
-  
-    2.  Toto je výstup vrácena, pokud jste si zvolili koncový bod zaokrouhlení kalkulačky bez vlastní hlavičky.  
+    1.  Zde je, že výstup vrátí, pokud jste přidali vlastní hlavičky zprávy.  
   
         ```Output  
         Add(100,15.99) = 116  
@@ -120,7 +111,16 @@ RoundRobinMessageFilter roundRobinFilter2 = new RoundRobinMessageFilter("group1"
         Divide(22,7) = 3.1  
         ```  
   
-    3.  Toto je výstup vrácena, pokud jste si zvolili koncový bod regulární kalkulačky bez vlastní hlavičky.  
+    2.  Zde je, že výstup vrátí, pokud jste zvolili koncový bod zaokrouhlení Kalkulačka bez vlastní hlavičku.  
+  
+        ```Output  
+        Add(100,15.99) = 116  
+        Subtract(145,76.54) = 68.5  
+        Multiply(9,81.25) = 731.3  
+        Divide(22,7) = 3.1  
+        ```  
+  
+    3.  Zde je, že výstup vrátí, pokud jste zvolili koncový bod regulární Kalkulačka bez vlastní hlavičku.  
   
         ```Output  
         Add(100,15.99) = 115.99  
@@ -129,7 +129,7 @@ RoundRobinMessageFilter roundRobinFilter2 = new RoundRobinMessageFilter("group1"
         Divide(22,7) = 3.14285714285714  
         ```  
   
-    4.  Toto je výstup vrácena, pokud jste si zvolili směrovače výchozí koncový bod bez vlastní hlavičky.  
+    4.  Zde je, že výstup vrátí, pokud jste zvolili směrovač výchozí koncový bod bez vlastní hlavičku.  
   
         ```Output  
         Add(100,15.99) = 116  
@@ -138,20 +138,20 @@ RoundRobinMessageFilter roundRobinFilter2 = new RoundRobinMessageFilter("group1"
         Divide(22,7) = 3.14285714285714  
         ```  
   
-8.  Službu kalkulačky a službu kalkulačky zaokrouhlení vytiskne také protokolu operací vyvolat do svých příslušných konzoly windows.  
+8.  Kalkulačka služba a služba zaokrouhlení Kalkulačka také vytiskne protokolu operací vyvolat a jejich odpovídajících konzoly windows.  
   
-9. V okně konzoly klienta zadejte `quit` a stiskněte klávesu ENTER ukončíte.  
+9. V okně konzoly klienta zadejte `quit` a stisknutím klávesy ENTER ukončete.  
   
-10. Stisknutím klávesy ENTER v oknech konzoly služby ukončení služby.  
+10. Stisknutím klávesy ENTER v oknech konzoly služby k ukončení služby.  
   
-## <a name="configurable-via-code-or-appconfig"></a>Konfigurovat pomocí kódu nebo App.config  
- Ukázka lodě, umožňují použít soubor App.config k definování chování směrovače. Můžete taky změnit název souboru RoutingService\App.config na jinou tak, aby nebyla rozpoznána a zrušte komentář u volání metody `ConfigureRouterViaCode()` v RoutingService\routing.cs. Buď metoda výsledkem stejné chování z směrovači.  
+## <a name="configurable-via-code-or-appconfig"></a>Konfigurovat pomocí kódu nebo souboru App.config  
+ Ukázka lodí umožňují definovat chování ve směrovači použít soubor App.config. Můžete také změnit název souboru RoutingService\App.config na jiný tak, aby nebyl rozpoznán a zrušte komentář u volání metod, které `ConfigureRouterViaCode()` v RoutingService\routing.cs. Některé z metod má za následek stejné chování směrovače.  
   
 ### <a name="scenario"></a>Scénář  
- Tento příklad znázorňuje směrovač, který funguje jako směrovač založená na obsahu umožňuje více typů nebo implementace služby mají být exponovány prostřednictvím jeden koncový bod.  
+ Tato ukázka předvádí, směrovač fungujícího jako směrovač založené na obsahu umožňuje více typů nebo implementaci služeb zpřístupní prostřednictvím jeden koncový bod.  
   
-### <a name="real-world-scenario"></a>Scénář skutečných  
- Contoso chce k virtualizaci všech svých služeb vystavit pouze jeden koncový bod veřejně přes která nabízejí přístup k několika různých typů služeb. V takovém případě využívají službu směrování na základě obsahu směrování možnosti k určení, kde by měly být odeslány příchozí požadavky.  
+### <a name="real-world-scenario"></a>Reálné scénáře  
+ Contoso chce, aby se k virtualizaci všech svých služeb vystavit pouze jeden koncový bod veřejně přes který nabízejí přístup k více různých typů služeb. V tomto případě využívat Služba směrování založené na obsahu směrování schopnosti určit, které by měla být odeslána příchozí požadavky.  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

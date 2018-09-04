@@ -3,12 +3,12 @@ title: Seskupení výsledků dotazu (LINQ v JAZYKU C#)
 description: Zjistěte, jak seskupit výsledky pomocí jazyka LINQ v jazyce C#.
 ms.date: 12/1/2016
 ms.assetid: 2e4ec27f-06fb-4de7-8973-0189906d4520
-ms.openlocfilehash: 4da0aac6b406f588ea4f241c72d5700e8a63838c
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: f768718cb1435efdc67791612776c9e9ce2b14b8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37403862"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43552319"
 ---
 # <a name="group-query-results"></a>Seskupení výsledků dotazu
 
@@ -76,11 +76,11 @@ Vložte následující metodu do `StudentClass` třídy. Změňte volání pří
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.Linq.Enumerable.GroupBy%2A>  
-<xref:System.Linq.IGrouping%602>  
-[LINQ (Language Integrated Query)](index.md)  
-[group – klauzule](../language-reference/keywords/group-clause.md)  
-[Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)  
-[Provádění poddotazů na operace seskupení](perform-a-subquery-on-a-grouping-operation.md)  
-[Vytvoření vnořené skupiny](create-a-nested-group.md)  
-[Seskupování dat](../programming-guide/concepts/linq/grouping-data.md)  
+- <xref:System.Linq.Enumerable.GroupBy%2A>  
+- <xref:System.Linq.IGrouping%602>  
+- [LINQ (Language Integrated Query)](index.md)  
+- [group – klauzule](../language-reference/keywords/group-clause.md)  
+- [Anonymní typy](../programming-guide/classes-and-structs/anonymous-types.md)  
+- [Provádění poddotazů na operace seskupení](perform-a-subquery-on-a-grouping-operation.md)  
+- [Vytvoření vnořené skupiny](create-a-nested-group.md)  
+- [Seskupování dat](../programming-guide/concepts/linq/grouping-data.md)  

@@ -2,18 +2,18 @@
 title: 'Postupy: dotazu na znaky v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: db535f55822fa40d8589ddf95f9f78adfa1b6f1e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c6e5fb14e0be277f53511aaddd362f2f203531e8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33323076"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43536072"
 ---
 # <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Postupy: dotazu na znaky v řetězci (LINQ) (C#)
-Protože <xref:System.String> třída implementuje obecná <xref:System.Collections.Generic.IEnumerable%601> rozhraní, může být dotazován libovolný řetězec jako posloupnosti znaků. Je to ale není běžně se používají LINQ. Pro komplexní vzor odpovídající operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
+Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků. Ale to není běžné použití odkazu LINQ. Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se dotazuje řetězec můžete určit počet číslic, které obsahuje. Všimněte si, že dotaz je "opakovaně" po provedení první. To je možné, protože samotný dotaz neukládá skutečné výsledky.  
+ V následujícím příkladu se dotazuje řetězec a chce určit počet číslic, které obsahuje. Všimněte si, že dotaz je "znovu" po provedení první. To je možné, protože samotný dotaz nejsou uložené žádné skutečné výsledky.  
   
 ```csharp  
 class QueryAString  
@@ -55,8 +55,9 @@ class QueryAString
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
- [Postupy: kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+- [Postupy: kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)

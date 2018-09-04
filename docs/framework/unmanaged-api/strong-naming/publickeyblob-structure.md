@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fd7a4b19613ea771a055af7dd91ec368859ee191
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43475969"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43529131"
 ---
 # <a name="publickeyblob-structure"></a>PublicKeyBlob – struktura
 Představuje veřejného klíče dvojice veřejného/soukromého klíče v binárním formátu.  

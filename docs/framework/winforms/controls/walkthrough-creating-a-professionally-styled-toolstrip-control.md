@@ -10,17 +10,17 @@ helpviewer_keywords:
 - toolbars [Windows Forms], walkthroughs
 - ToolStrip control [Windows Forms], creating professionally styled controls
 ms.assetid: b52339ae-f1d3-494e-996e-eb455614098a
-ms.openlocfilehash: 2d2443f1f7153ed35aecbbb9d69c9e1421269e24
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6435f33489be1355313e43a046b0e3169e1eaea3
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33541603"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538562"
 ---
 # <a name="walkthrough-creating-a-professionally-styled-toolstrip-control"></a>Návod: Vytvoření ovládacího prvku ToolStrip s profesionálním vzhledem
-Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled a chování vytvořením vlastní třídy odvozené od <xref:System.Windows.Forms.ToolStripProfessionalRenderer> typu.  
+Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesionální vzhled a chování napsáním vlastní třídy odvozené od <xref:System.Windows.Forms.ToolStripProfessionalRenderer> typu.  
   
- Tento návod ukazuje, jak používat <xref:System.Windows.Forms.ToolStrip> ovládací prvky pro vytvoření složeného ovládacího prvku, který vypadá takto: **navigačním podokně** poskytované Microsoft® Outlook®. Následující úlohy jsou popsané v tomto návodu:  
+ Tento návod ukazuje, jak používat <xref:System.Windows.Forms.ToolStrip> ovládací prvky pro vytvoření složeného ovládacího prvku, který se podobá **navigačním podokně** poskytované Microsoft Outlook®. Tyto úlohy jsou uvedené v tomto návodu:  
   
 -   Vytvoření projektu knihovny ovládacích prvků Windows.  
   
@@ -28,100 +28,100 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 -   Implementace vlastní zobrazovací jednotky.  
   
- Jakmile budete hotovi, budete mít opakovaně použitelné vlastní ovládací prvek s profesionální vzhled ovládacího prvku Microsoft Office® XP.  
+ Až budete hotovi, budete mít opakovaně použitelné vlastní ovládací prvek s profesionální vzhled aplikace Microsoft Office® XP ovládacího prvku.  
   
- Zkopírujte kód v tomto tématu v jednom seznamu, najdete v části [postupy: vytvoření profesionálním ve ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md).  
+ Pokud chcete zkopírovat kód v tomto tématu jako jeden seznam, naleznete v tématu [postupy: vytváření profesionálně ve stylu ovládacího prvku ToolStrip](../../../../docs/framework/winforms/controls/how-to-create-a-professionally-styled-toolstrip-control.md).  
   
 > [!NOTE]
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ## <a name="prerequisites"></a>Požadavky  
- K dokončení tohoto návodu, budete potřebovat:  
+ K dokončení tohoto návodu budete potřebovat:  
   
--   Dostatečná oprávnění, abyste mohli vytvořit a spustit projekty aplikací Windows Forms v počítači, kde je nainstalován Visual Studio.  
+-   Dostatečná oprávnění k vytvoření a spuštění projektů aplikace Windows Forms v počítači nainstalovanou aplikaci Visual Studio.  
   
-## <a name="creating-a-windows-control-library-project"></a>Vytvoření projektu knihovny ovládacího prvku systému Windows  
- Prvním krokem je vytvoření projektu knihovny ovládacího prvku.  
+## <a name="creating-a-windows-control-library-project"></a>Vytvoření projektu knihovny ovládacích prvků Windows  
+ Prvním krokem je vytvoření projektu knihovny ovládacích prvků.  
   
-#### <a name="to-create-the-control-library-project"></a>Vytvoření projektu knihovny ovládacího prvku  
+#### <a name="to-create-the-control-library-project"></a>Vytvoření projektu knihovny ovládacích prvků  
   
-1.  Vytvoření nového projektu knihovny ovládacích prvků Windows s názvem `StackViewLibrary`.  
+1.  Vytvořte nový projekt knihovny ovládacích prvků Windows s názvem `StackViewLibrary`.  
   
-2.  V **Průzkumníku**, odstraňte výchozí řízení projektu odstraněním zdrojového souboru s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk.  
+2.  V **Průzkumníka řešení**, odstraňte výchozí ovládací prvek projektu tak, že odstraníte zdrojový soubor s názvem "UserControl1.cs" nebo "UserControl1.vb", v závislosti na vámi zvolený jazyk.  
   
-     Další informace najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](http://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
+     Další informace najdete v tématu [NIB: postupy: odebrání, odstranění a vyloučit položky](https://msdn.microsoft.com/library/6dffdc86-29c8-4eff-bcd8-e3a0dd9e9a73).  
   
-3.  Přidejte nový <xref:System.Windows.Forms.UserControl> položkou **StackViewLibrary** projektu. Zadejte základní název nové zdrojový soubor `StackView`.  
+3.  Přidat nový <xref:System.Windows.Forms.UserControl> položkou **StackViewLibrary** projektu. Zadejte základní název nového zdrojového souboru `StackView`.  
   
-## <a name="designing-the-stackview-control"></a>Navrhování StackView ovládací prvek  
- `StackView` Ovládací prvek je složeného ovládacího prvku pomocí jednu podřízenou <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Další informace o složené ovládací prvky najdete v tématu [typy vlastní prvky](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md).  
+## <a name="designing-the-stackview-control"></a>Návrh StackView ovládacího prvku  
+ `StackView` Složeného ovládacího prvku s jeden podřízený prvek je ovládací prvek <xref:System.Windows.Forms.ToolStrip> ovládacího prvku. Další informace o složených ovládacích prvků naleznete v tématu [typy Custom Controls](../../../../docs/framework/winforms/controls/varieties-of-custom-controls.md).  
   
-#### <a name="to-design-the-stackview-control"></a>Při návrhu StackView ovládací prvek  
+#### <a name="to-design-the-stackview-control"></a>Chcete-li navrhnout StackView ovládacího prvku  
   
-1.  Z **sada nástrojů**, přetáhněte ji <xref:System.Windows.Forms.ToolStrip> ovládacího prvku na plochu návrháře.  
+1.  Z **nástrojů**, přetáhněte <xref:System.Windows.Forms.ToolStrip> ovládací prvek na návrhovou plochu.  
   
-2.  V **vlastnosti** nastavte <xref:System.Windows.Forms.ToolStrip> vlastností ovládacího prvku podle následující tabulky.  
+2.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStrip> ovládacího prvku vlastnosti podle následující tabulky.  
   
     |Vlastnost|Hodnota|  
     |--------------|-----------|  
     |Název|`stackStrip`|  
-    |CanOverflow –|`false`|  
+    |CanOverflow.|`false`|  
     |Ukotvení|<xref:System.Windows.Forms.DockStyle.Bottom>|  
     |Písma|`Tahoma, 10pt, style=Bold`|  
     |GripStyle.|<xref:System.Windows.Forms.ToolStripGripStyle.Hidden>|  
     |LayoutStyle|<xref:System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow>|  
     |Odsazení|`0, 7, 0, 0`|  
-    |RenderMode –|<xref:System.Windows.Forms.ToolStripRenderMode.Professional>|  
+    |RenderMode|<xref:System.Windows.Forms.ToolStripRenderMode.Professional>|  
   
-3.  V Návrháři formulářů Windows, klikněte na <xref:System.Windows.Forms.ToolStrip> ovládacího prvku **přidat** tlačítko a přidejte <xref:System.Windows.Forms.ToolStripButton> k `stackStrip` ovládacího prvku.  
+3.  V Návrháři formulářů Windows, klikněte na tlačítko <xref:System.Windows.Forms.ToolStrip> ovládacího prvku **přidat** tlačítko a přidat <xref:System.Windows.Forms.ToolStripButton> k `stackStrip` ovládacího prvku.  
   
-4.  V **vlastnosti** nastavte <xref:System.Windows.Forms.ToolStripButton> vlastností ovládacího prvku podle následující tabulky.  
+4.  V **vlastnosti** okno, nastaveno <xref:System.Windows.Forms.ToolStripButton> ovládacího prvku vlastnosti podle následující tabulky.  
   
     |Vlastnost|Hodnota|  
     |--------------|-----------|  
     |Název|`mailStackButton`|  
     |CheckOnClick|true|  
-    |CheckState|<xref:System.Windows.Forms.CheckState.Checked>|  
+    |– CheckState|<xref:System.Windows.Forms.CheckState.Checked>|  
     |DisplayStyle|<xref:System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText>|  
     |ImageAlign|<xref:System.Drawing.ContentAlignment.MiddleLeft>|  
     |ImageScaling|<xref:System.Windows.Forms.ToolStripItemImageScaling.None>|  
     |ImageTransparentColor|`238, 238, 238`|  
     |Okraj|`0, 0, 0, 0`|  
     |Odsazení|`3, 3, 3, 3`|  
-    |Text|**E-mailu**|  
+    |Text|**e-mailu**|  
     |Zarovnání textu|<xref:System.Drawing.ContentAlignment.MiddleLeft>|  
   
-5.  Opakujte krok 7 pro tři další <xref:System.Windows.Forms.ToolStripButton> ovládací prvky.  
+5.  Opakujte krok 7 pro tři další <xref:System.Windows.Forms.ToolStripButton> ovládacích prvků.  
   
-     Ovládací prvky pojmenovat `calendarStackButton`, `contactsStackButton`, a `tasksStackButton`. Nastavte hodnotu <xref:System.Windows.Forms.Control.Text%2A> vlastnost **kalendáře**, **kontakty**, a **úlohy**, v uvedeném pořadí.  
+     Ovládací prvky pojmenujte `calendarStackButton`, `contactsStackButton`, a `tasksStackButton`. Nastavte hodnotu <xref:System.Windows.Forms.Control.Text%2A> vlastnost **kalendáře**, **kontakty**, a **úlohy**v uvedeném pořadí.  
   
 ## <a name="handling-events"></a>Zpracování událostí  
- Dvě události jsou důležité, aby `StackView` řízení chovat správně. Zpracování <xref:System.Windows.Forms.UserControl.Load> událost, která má správně umístění ovládacího prvku. Zpracování <xref:System.Windows.Forms.ToolStripItem.Click> událost pro každou <xref:System.Windows.Forms.ToolStripButton> umožnit `StackView` řídit chování stavu podobně jako <xref:System.Windows.Forms.RadioButton> ovládacího prvku.  
+ Dvě události jsou důležité, aby `StackView` ovládací prvek se chovají správně. Zpracování <xref:System.Windows.Forms.UserControl.Load> událost pro umístění ovládacího prvku správně. Zpracování <xref:System.Windows.Forms.ToolStripItem.Click> událost pro každou <xref:System.Windows.Forms.ToolStripButton> poskytnout `StackView` řídit chování stavu podobně jako <xref:System.Windows.Forms.RadioButton> ovládacího prvku.  
   
 #### <a name="to-handle-events"></a>Zpracování událostí  
   
 1.  V Návrháři formulářů Windows, vyberte `StackView` ovládacího prvku.  
   
-2.  V **vlastnosti** okně klikněte na tlačítko **události**.  
+2.  V **vlastnosti** okna, klikněte na tlačítko **události**.  
   
-3.  Dvakrát klikněte na událost zatížení ke generování `StackView_Load` obslužné rutiny události.  
+3.  Poklikáním na událost zatížení ke generování `StackView_Load` obslužné rutiny události.  
   
-4.  V `StackView_Load` obslužné rutiny události, zkopírujte a vložte následující kód.  
+4.  V `StackView_Load` obslužná rutina události, zkopírujte a vložte následující kód.  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#3](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#3)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#3](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#3)]  
   
 5.  V Návrháři formulářů Windows, vyberte `mailStackButton` ovládacího prvku.  
   
-6.  V **vlastnosti** okně klikněte na tlačítko **události**.  
+6.  V **vlastnosti** okna, klikněte na tlačítko **události**.  
   
 7.  Dvakrát klikněte na událost Click.  
   
-     Návrhář formulářů Windows generuje `mailStackButton_Click` obslužné rutiny události.  
+     Generuje Návrhář formulářů Windows `mailStackButton_Click` obslužné rutiny události.  
   
-8.  Přejmenujte `mailStackButton_Click` obslužné rutiny události pro `stackButton_Click`.  
+8.  Přejmenovat `mailStackButton_Click` obslužnou rutinu události `stackButton_Click`.  
   
-     Další informace najdete v tématu [postupy: přejmenování identifikátor (Visual Basic)](http://msdn.microsoft.com/library/e5a5edf8-3dba-4119-81f4-fc2aba180e0c).  
+     Další informace najdete v tématu [postupy: přejmenování identifikátor (Visual Basic)](https://msdn.microsoft.com/library/e5a5edf8-3dba-4119-81f4-fc2aba180e0c).  
   
 9. Vložte následující kód do `stackButton_Click` obslužné rutiny události.  
   
@@ -130,33 +130,33 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
   
 10. V Návrháři formulářů Windows, vyberte `calendarStackButton` ovládacího prvku.  
   
-11. V **vlastnosti** okně nastavení klikněte na tlačítko událostí `stackButton_Click` obslužné rutiny události.  
+11. V **vlastnosti** okně, nastavte na hodnotu událost Click `stackButton_Click` obslužné rutiny události.  
   
 12. Opakujte kroky 10 a 11 pro `contactsStackButton` a `tasksStackButton` ovládací prvky.  
   
 ## <a name="defining-icons"></a>Definování ikony  
- Každý `StackView` tlačítko obsahuje přidružené ikonu. Pro usnadnění práce, každá ikona je reprezentována jako řetězec s kódováním base64, pomocí kterého se deserializovat před <xref:System.Drawing.Bitmap> se vytvoří z něj. V produkčním prostředí ukládat data bitmapy jako prostředek a ikon v Návrháři formulářů. Další informace najdete v tématu [postupy: Přidání obrázky na pozadí do Windows Forms](http://msdn.microsoft.com/library/7a509ba2-055c-4ae6-b88a-54625c6d9aff).  
+ Každý `StackView` má tlačítko přidružené ikonu. Pro usnadnění práce jednotlivé ikony je vyjádřena jako řetězec s kódováním Base64, který je deserializován před <xref:System.Drawing.Bitmap> se vytvoří z něj. V produkčním prostředí ukládat data rastrového obrázku jako prostředku a ikony se zobrazí v Návrháři formulářů Windows. Další informace najdete v tématu [postupy: přidání obrázků na pozadí do formulářů Windows](https://msdn.microsoft.com/library/7a509ba2-055c-4ae6-b88a-54625c6d9aff).  
   
-#### <a name="to-define-icons"></a>K definování ikony  
+#### <a name="to-define-icons"></a>Chcete-li definovat ikony  
   
-1.  V editoru kódu vložte následující kód do `StackView` definici třídy. Inicializuje bitmap pro tento kód <xref:System.Windows.Forms.ToolStripButton> ikony.  
+1.  V editoru kódu vložte následující kód do `StackView` definici třídy. Tento kód inicializuje rastrové obrázky pro <xref:System.Windows.Forms.ToolStripButton> ikony.  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#2](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#2)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#2](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#2)]  
   
-2.  Přidejte volání `InitializeImages` metoda v `StackView` konstruktoru třídy.  
+2.  Přidejte volání `InitializeImages` metoda ve `StackView` konstruktoru třídy.  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#5)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]  
   
-## <a name="implementing-a-custom-renderer"></a>Implementace vlastní zobrazovací jednotky  
- Můžete přizpůsobit většinu prvků `StackView` řízení Moje implementace třídu odvozenou z <xref:System.Windows.Forms.ToolStripRenderer> – třída. V tomto postupu budete implementovat <xref:System.Windows.Forms.ToolStripProfessionalRenderer> třídu, která se přizpůsobí úchytu a nevykresluje barevného přechodu pozadí pro <xref:System.Windows.Forms.ToolStripButton> ovládací prvky.  
+## <a name="implementing-a-custom-renderer"></a>Implementace vlastního Rendereru  
+ Můžete přizpůsobit většinu prvků `StackView` řídit Moje implementace, která je odvozena z třídy <xref:System.Windows.Forms.ToolStripRenderer> třídy. V tomto postupu budete implementovat <xref:System.Windows.Forms.ToolStripProfessionalRenderer> třídu, která přizpůsobí úchytu a vykreslí barevného přechodu pozadí <xref:System.Windows.Forms.ToolStripButton> ovládacích prvků.  
   
-#### <a name="to-implement-a-custom-renderer"></a>Chcete-li implementovat vlastní zobrazovací jednotky  
+#### <a name="to-implement-a-custom-renderer"></a>Implementace vlastního rendereru  
   
 1.  Vložte následující kód do `StackView` definici ovládacího prvku.  
   
-     Toto je definice `StackRenderer` třídy, která přepisuje <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>, <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>, a <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> metody pro vytvoření vlastní vzhled.  
+     Toto je definice `StackRenderer` třídy, která přepisuje <xref:System.Windows.Forms.ToolStripRenderer.RenderGrip>, <xref:System.Windows.Forms.ToolStripRenderer.RenderToolStripBorder>, a <xref:System.Windows.Forms.ToolStripRenderer.RenderButtonBackground> metody k vytvoření vlastní vzhled.  
   
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#10)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#10)]  
@@ -166,23 +166,23 @@ Aplikace můžete udělit <xref:System.Windows.Forms.ToolStrip> řídí profesio
      [!code-csharp[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/CS/StackView.cs#5)]
      [!code-vb[System.Windows.Forms.ToolStrip.StackView#5](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStrip.StackView/VB/StackView.vb#5)]  
   
-## <a name="testing-the-stackview-control"></a>Testování StackView ovládací prvek  
- `StackView` Ovládací prvek odvozen z <xref:System.Windows.Forms.UserControl> třídy. Proto můžete otestovat pomocí ovládacího prvku **UserControl Test kontejneru**. Další informace najdete v tématu [postupy: testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
+## <a name="testing-the-stackview-control"></a>Testování StackView ovládacího prvku  
+ `StackView` Ovládacího prvku je odvozena z <xref:System.Windows.Forms.UserControl> třídy. Proto můžete otestovat ovládací prvek s **kontejner testu UserControl**. Další informace najdete v tématu [postupy: testování běhového chování UserControl](../../../../docs/framework/winforms/controls/how-to-test-the-run-time-behavior-of-a-usercontrol.md).  
   
-#### <a name="to-test-the-stackview-control"></a>Testování StackView ovládacího prvku  
+#### <a name="to-test-the-stackview-control"></a>K otestování StackView ovládacího prvku  
   
-1.  Stiskněte klávesu F5, aby se projekt sestavil a spustit **UserControl – kontejner testů**.  
+1.  Stiskněte klávesu F5, aby projekt sestavil a spustila **UserControl – kontejner testů**.  
   
-2.  Přesuňte ukazatel myši tlačítek `StackView` řízení a potom klikněte na tlačítko zobrazit vzhled vybraném stavu.  
+2.  Přesuňte ukazatel nad tlačítek `StackView` ovládací prvek a potom klikněte na tlačítko zobrazit vzhled vybraný stav.  
   
 ## <a name="next-steps"></a>Další kroky  
- V tomto návodu jste vytvořili vlastní opakovaně použitelné ovládací prvek s profesionální vzhled ovládacího prvku Office XP. Můžete použít <xref:System.Windows.Forms.ToolStrip> rodiny ovládacích prvků pro mnoho jiné účely:  
+ V tomto návodu vytvoříte opakovaně použitelné vlastní ovládací prvek s profesionální vzhled ovládacího prvku Office XP. Můžete použít <xref:System.Windows.Forms.ToolStrip> řady ovládacích prvků pro mnoho dalších důvodů:  
   
--   Vytvořit místní nabídky pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>. Další informace najdete v tématu [ContextMenu – přehled komponenty](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md).  
+-   Vytváření místních nabídek pro vaše ovládací prvky s <xref:System.Windows.Forms.ContextMenuStrip>. Další informace najdete v tématu [ContextMenu – přehled komponenty](../../../../docs/framework/winforms/controls/contextmenu-component-overview-windows-forms.md).  
   
--   Vytvořte formulář s automaticky zadané standardní nabídku. Další informace najdete v tématu [návod: poskytnutí standardních položek nabídky do formuláře](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).  
+-   Vytvoření formuláře se automaticky vyplněná standardní nabídky. Další informace najdete v tématu [návod: poskytnutí standardních položek nabídky do formuláře](../../../../docs/framework/winforms/controls/walkthrough-providing-standard-menu-items-to-a-form.md).  
   
--   Vytvoření více formuláře rozhraní (MDI) dokumentu s ukotvení <xref:System.Windows.Forms.ToolStrip> ovládací prvky. Další informace najdete v tématu [postupy: vytvoření formuláře MDI s Menu Merging a ToolStrip – ovládací prvky](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).  
+-   Vytvoření více formuláře (MDI interface) dokumentu s ukotvení <xref:System.Windows.Forms.ToolStrip> ovládacích prvků. Další informace najdete v tématu [postupy: vytvoření formuláře MDI s ovládacími prvky ToolStrip a slučování nabídek](../../../../docs/framework/winforms/controls/how-to-create-an-mdi-form-with-menu-merging-and-toolstrip-controls.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.MenuStrip>  

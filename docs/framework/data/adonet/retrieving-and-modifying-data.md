@@ -1,66 +1,66 @@
 ---
-title: Načítání a upravovat Data v technologii ADO.NET
+title: Načítání a úpravy dat v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
-ms.openlocfilehash: 0c970c01352aecf6a25bac1b89b9f79c96f80d31
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5ef5191cf89f22fbaf0bb1bf4fbf47db1d4c06a1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33361540"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43562560"
 ---
-# <a name="retrieving-and-modifying-data-in-adonet"></a>Načítání a upravovat Data v technologii ADO.NET
-Primární funkce jakékoli aplikace, databáze je připojení ke zdroji dat a načítání dat, který ji obsahuje. Zprostředkovatele dat .NET Framework technologie ADO.NET sloužit jako most mezi aplikace a zdroj dat, což umožňuje provést příkazy také o načtení dat pomocí **DataReader –** nebo **DataAdapter** . Klíčové funkce jakékoli aplikace, databáze, je schopnost aktualizovat data, která je uložená v databázi. V technologii ADO.NET, aktualizace dat zahrnuje použití **DataAdapter** a <xref:System.Data.DataSet>, a **příkaz** objekty; a může zahrnovat také pomocí transakce.  
+# <a name="retrieving-and-modifying-data-in-adonet"></a>Načítání a úpravy dat v ADO.NET
+Primární funkce libovolné aplikace, databáze je připojení ke zdroji dat a načítání dat, který ji obsahuje. Zprostředkovatelé dat .NET Framework ADO.NET slouží jako most mezi aplikací a zdroji dat, umožňuje spouštět i příkazy jde o načtení dat pomocí **DataReader** nebo **DataAdapter** . Klíčové funkce libovolné aplikace, databáze je možnost aktualizovat data, která je uložena v databázi. V ADO.NET, aktualizace dat je použít **DataAdapter** a <xref:System.Data.DataSet>, a **příkaz** objekty; a to může zahrnovat také použití transakcí.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Připojení ke zdroji dat](../../../../docs/framework/data/adonet/connecting-to-a-data-source.md)  
  Popisuje, jak vytvořit připojení ke zdroji dat a jak pracovat s události připojení.  
   
  [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)  
- Obsahuje témata s popisem různé aspekty použití řetězců připojení, včetně klíčová slova řetězec připojení, bezpečnostní údaje a ukládání a načítání je.  
+ Obsahuje témata popisující různé aspekty pomocí připojovacích řetězců, včetně klíčových slov řetězec připojení, bezpečnostní údaje a ukládání a načítání je.  
   
  [Sdružování připojení](../../../../docs/framework/data/adonet/connection-pooling.md)  
- Popisuje sdružování připojení pro poskytovatele dat .NET Framework.  
+ Popisuje zprostředkovatele dat .NET Framework sdružování připojení.  
   
  [Příkazy a parametry](../../../../docs/framework/data/adonet/commands-and-parameters.md)  
- Obsahuje témata s popisem vytváření příkazů a příkaz počítačů, nakonfigurujte parametry a postup provedení příkazu k načtení a upravovat data.  
+ Obsahuje témata popisující, jak vytvořit příkazy a příkaz počítačů, nakonfigurujte parametry a tom, jak spustit příkazy, které načítají a upravují data.  
   
  [Adaptéry a čtečky dat](../../../../docs/framework/data/adonet/dataadapters-and-datareaders.md)  
- Obsahuje témata s popisem DataReaders, DataAdapters, parametry, zpracování událostí DataAdapter a provádění dávkových operací.  
+ Obsahuje témata popisující čtečky dat, parametry a adaptérů dat, zpracování událostí adaptéru dat a provádění dávkových operací.  
   
  [Transakce a souběžnost](../../../../docs/framework/data/adonet/transactions-and-concurrency.md)  
- Obsahuje témata popisující, jak provádět místní transakce, distribuovaných transakcí a pracovat s optimistickou metodu souběžného.  
+ Obsahuje témata popisující, jak provádět místní transakce, distribuované transakce a pracovat s optimistického řízení souběžnosti.  
   
  [Načítání hodnot identity nebo automatického číslování](../../../../docs/framework/data/adonet/retrieving-identity-or-autonumber-values.md)  
- Poskytuje příklad mapování hodnoty vygenerované **identity** sloupec v tabulce systému SQL Server nebo pro **automatické číslování** pole v tabulce Microsoft Access ke sloupci vloženého řádku v tabulce. Popisuje slučovat hodnoty identity v `DataTable`.  
+ Poskytuje příklad mapování hodnoty pro generované **identity** sloupec v tabulce SQL serveru nebo pro **automatické** pole aplikace Microsoft Access tabulky ke sloupci vloženého řádku v tabulce. Tento článek popisuje sloučení hodnoty identity v `DataTable`.  
   
  [Načítání binárních dat](../../../../docs/framework/data/adonet/retrieving-binary-data.md)  
- Popisuje, jak získat binární data nebo velkého množství dat struktur pomocí `CommandBehavior`.`SequentialAccess` Chcete-li změnit výchozí chování `DataReader`.  
+ Popisuje, jak načíst binární data nebo velkých datových struktur pomocí `CommandBehavior`.`SequentialAccess` Chcete-li změnit výchozí chování `DataReader`.  
   
  [Úpravy dat pomocí uložených procedur](../../../../docs/framework/data/adonet/modifying-data-with-stored-procedures.md)  
- Popisuje způsob používání vstupních parametrů uložené procedury a výstupní parametry vložit řádek v databázi, vrátí novou hodnotu identity.  
+ Popisuje způsob používání vstupních parametrů uložené procedury a výstupní parametry pro vložení řádku v databázi, vrací novou hodnotu identity.  
   
  [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- Popisuje, jak získat dostupné databáze nebo katalogů, tabulky a zobrazení v databázi, omezení, která platí pro tabulky a další informace o schématu ze zdroje dat.  
+ Popisuje, jak získat dostupné databáze nebo katalogů, tabulky a zobrazení v databázi, omezení, která pro tabulky a další informace o schématu ze zdroje dat existují.  
   
  [DbProviderFactories](../../../../docs/framework/data/adonet/dbproviderfactories.md)  
- Popisuje model objektu pro vytváření zprostředkovatele a ukazuje, jak používat základní třídy v `System.Data.Common` oboru názvů.  
+ Popisuje model objekt pro vytváření zprostředkovatele a ukazuje, jak použít základní třídy v `System.Data.Common` oboru názvů.  
   
  [Trasování data v ADO.NET](../../../../docs/framework/data/adonet/data-tracing.md)  
- Popisuje, jak technologie ADO.NET poskytuje funkce integrované data trasování.  
+ Popisuje, jak technologie ADO.NET poskytuje předdefinované datové funkce trasování.  
   
  [Čítače výkonu](../../../../docs/framework/data/adonet/performance-counters.md)  
- Popisuje čítače výkonu, které jsou k dispozici pro `SqlClient` a `OracleClient`.  
+ Popisuje čítačů výkonu k dispozici pro `SqlClient` a `OracleClient`.  
   
  [Asynchronní programování](../../../../docs/framework/data/adonet/asynchronous-programming.md)  
  Popisuje [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] podporu pro asynchronní programování.  
   
  [Podpora streamování SqlClient](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md)  
- Popisuje, jak psát aplikace datový proud dat z SQL serveru bez nutnosti jeho plně načten do paměti.  
+ Popisuje, jak psát aplikace datového proudu dat z SQL serveru bez nutnosti ho plně načten v paměti.  
   
 ## <a name="see-also"></a>Viz také  
  [Mapování datového typu v ADO.NET](../../../../docs/framework/data/adonet/data-type-mappings-in-ado-net.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [SQL Server a ADO.NET](../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

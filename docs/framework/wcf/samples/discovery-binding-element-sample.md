@@ -2,35 +2,35 @@
 title: Zjišťování – ukázka prvky vazby
 ms.date: 03/30/2017
 ms.assetid: af513015-85bf-417b-8729-1bdff77ff6d6
-ms.openlocfilehash: 853f5cebfd745b3413d605dcfbf0e395e103b4f1
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: d906d9a389c50095f2af5d52e3874c3e43199e68
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33805665"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43535774"
 ---
 # <a name="discovery-binding-element-sample"></a>Zjišťování – ukázka prvky vazby
-Tento příklad znázorňuje způsob použití prvku vazby klienta zjišťování pro zjišťování služby. Tato funkce umožňuje vývojářům přidat kanálem klienta zjišťování do své existující zásobníku kanálu klienta provedení programovací model velmi intuitivní. Po otevření přiřazený kanál adresu služby, se vyřeší, pomocí zjišťování. Tato ukázka se skládá z následujících projektech:  
+Tento příklad znázorňuje způsob použití elementu vazby zjišťování klienta ke zjišťování služby. Tato funkce umožňuje vývojářům přidat do své existující zásobníku kanálu klienta vytváření velmi výsledkem je intuitivní programovací model kanálem klienta zjišťování. Po otevření kanálu přidružené adresu služby je duplicita se vyřešila pomocí zjišťování. Tento příklad se skládá z následující projekty:  
   
--   **CalculatorService**: zjistitelný služby WCF.  
+-   **CalculatorService**: zjistitelné služby WCF.  
   
--   **CalculatorClient**: A WCF klientské aplikace, která používá k hledání a volání CalculatorService kanálem klienta zjišťování.  
+-   **CalculatorClient**: A WCF klientská aplikace používající kanálu klienta zjišťování k vyhledání a volat CalculatorService.  
   
--   **DynamicCalculatorClient**: A WCF klientské aplikace, která používá k hledání a volání CalculatorService dynamické koncový bod.  
+-   **DynamicCalculatorClient**: A WCF klientská aplikace, který používá k hledání a volat CalculatorService dynamické koncový bod.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryBindingElement`  
   
 ## <a name="calculatorservice"></a>CalculatorService  
- Tento projekt obsahuje jednoduché kalkulačky služba, která implementuje `ICalculatorService` kontrakt.  
+ Tento projekt obsahuje jednoduchou kalkulačku služba, která implementuje `ICalculatorService` kontraktu.  
   
- Následující soubor App.config se používá k přidání `<serviceDiscovery>` chování v chování služby a také koncový bod zjišťování.  
+ Následující soubor App.config se používá k přidání `<serviceDiscovery>` chování v chování služby, stejně jako koncový bod zjišťování.  
   
 ```xml  
 <system.serviceModel>  
@@ -51,7 +51,7 @@ Tento příklad znázorňuje způsob použití prvku vazby klienta zjišťován�
   </system.serviceModel>  
 ```  
   
- Díky tomu je služba a její koncové body zjistitelný. CalculatorService je služba s vlastním hostováním přidá jeden koncový bod pomocí NetTcpBinding vazby. Dojde také `EndpointDiscoveryBehavior` ke koncovému bodu a určuje obor, jak je znázorněno v následujícím kódu.  
+ Díky službě a její koncové body zjistitelné. CalculatorService je služba v místním prostředí, která přidá jeden koncový bod pomocí vazby NetTcpBinding. Také přidá `EndpointDiscoveryBehavior` ke koncovému bodu a určuje obor, jak je znázorněno v následujícím kódu.  
   
 ```  
 // Add a NET.TCP endpoint and add a scope to that endpoint.  
@@ -63,7 +63,7 @@ serviceHost.Open();
 ```  
   
 ## <a name="calculatorclient"></a>CalculatorClient  
- Tento projekt obsahuje implementace klienta, který odesílá zprávy CalculatorService. Tento program používá `CreateCustomBindingWithDiscoveryElement()` metodu pro vytvoření vlastní vazby, který používá kanálem klienta zjišťování.  
+ Tento projekt obsahuje implementace klienta, která odesílá zprávy CalculatorService. Používá tento program `CreateCustomBindingWithDiscoveryElement()` metodu pro vytvoření vlastní vazby, která používá kanálu klienta zjišťování.  
   
 ```  
 static CustomBinding CreateCustomBindingWithDiscoveryElement()  
@@ -82,7 +82,7 @@ static CustomBinding CreateCustomBindingWithDiscoveryElement()
             return customBinding; }  
 ```  
   
- Po <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> je vytvořena instance, vývojář určuje kritéria pro hledání pro službu. V takovém případě je kritérium hledání zjišťování `ICalculatorService` typu. Kromě toho určuje vývojář <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> která vrací <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> který určuje, kde má být vyhledán služeb. <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> Vrátí novou <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instance. Další informace najdete v tématu [použití vlastní vazby s kanálem klienta zjišťování](../../../../docs/framework/wcf/feature-details/using-a-custom-binding-with-the-discovery-client-channel.md).  
+ Po <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> je vytvořena instance, vývojář určuje kritéria pro vyhledávání pro službu. V takovém případě je kritérium hledání zjišťování `ICalculatorService` typu. Kromě toho určuje vývojář <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> který vrátí hodnotu <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> , která určuje, kde hledat pro služby. <xref:System.ServiceModel.Discovery.DiscoveryEndpointProvider> Vrátí nový <xref:System.ServiceModel.Discovery.DiscoveryEndpoint> instance. Další informace najdete v tématu [použití vlastní vazby s kanálem klienta zjišťování](../../../../docs/framework/wcf/feature-details/using-a-custom-binding-with-the-discovery-client-channel.md).  
   
 ```  
 // Extend DiscoveryEndpointProvider class to change the default DiscoveryEndpoint  
@@ -97,18 +97,18 @@ static CustomBinding CreateCustomBindingWithDiscoveryElement()
     }  
 ```  
   
- V tomto případě klient používá port UDP vícesměrového vysílání mechanismus definované protokol Discovery k vyhledání služeb v místní podsíti. Zbývající část metoda vytvoří vlastní vazby a vloží prvku vazby zjišťování v horní části zásobníku.  
+ V tomto případě klient používá port UDP vícesměrového vysílání mechanismus definované pomocí protokolu zjišťování k vyhledání služby v místní podsíti. Zbývající část metody vytvoří vlastní vazby a vloží elementu vazby zjišťování v horní části zásobníku.  
   
 > [!NOTE]
->  <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> Musí být umístěny v horní části zásobníku vazby. Všechny <xref:System.ServiceModel.Channels.BindingElement> na <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> musíte zajistit, aby že kanálu nebo kanálu vytvoří nepoužívá `EndpointAddress` nebo `Via` vlastnosti, protože skutečná adresa nachází pouze v kanálem klienta zjišťování.  
+>  <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> Musí být umístěn v horní části zásobníku vazby. Žádné <xref:System.ServiceModel.Channels.BindingElement> nad <xref:System.ServiceModel.Discovery.DiscoveryClientBindingElement> Ujistěte se, že objekt pro vytváření kanálů nebo kanál vytvoří nepoužívá `EndpointAddress` nebo `Via` vlastnosti, protože skutečná adresa se nachází pouze v kanálu klienta zjišťování.  
   
- Dále `CalculatorClient` může být vytvořena instance předáním ve tento vlastní vazby a také adresu koncového bodu.  
+ Dále `CalculatorClient` dá vytvořit instance předáním této vlastní vazby, jakož i adresu koncového bodu.  
   
 ```  
 CalculatorServiceClient client = new CalculatorServiceClient(CreateCustomBindingWithDiscoveryElement(), DiscoveryClientBindingElement.DiscoveryEndpointAddress);  
 ```  
   
- Při použití kanálem klienta zjišťování, zadaná adresa koncového bodu konstantní dříve je předána. V době běhu teď kanálem klienta zjišťování vyhledá službu určeného kritéria hledání a se k němu připojuje. Pro tuto službu a klienta, který má být navázáno připojení musí mít také stejnou základní vazby zásobníku.  
+ Při použití kanálu klienta zjišťování, zadaná adresa konstantní koncový bod dříve je předáno. Za běhu, nyní kanálu klienta zjišťování vyhledá službu zadané pomocí kritérií hledání a se k němu připojuje. Pro službu a klienta k navázání připojení musí mít také stejný základní zásobníku vazby.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
@@ -116,8 +116,8 @@ CalculatorServiceClient client = new CalculatorServiceClient(CreateCustomBinding
   
 2.  Sestavte řešení.  
   
-3.  Spusťte aplikaci služby a každý z klienta aplikace.  
+3.  Spouštějte aplikace služby a každá klient aplikace.  
   
-4.  Sledujte, aby bylo možné najít službu, aniž by věděly, jeho adresu klienta.  
+4.  Podívejte se, že byl klient nemůže najít službu bez znalosti jeho adresu.  
   
 ## <a name="see-also"></a>Viz také

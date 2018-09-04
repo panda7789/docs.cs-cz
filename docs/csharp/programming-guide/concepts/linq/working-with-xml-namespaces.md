@@ -2,12 +2,12 @@
 title: Práce s názvovými prostory XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 05cf4dc7-7b25-40f0-abc9-1bc35de4b48a
-ms.openlocfilehash: e00886281fbccd0e10706575483dd174d7d53052
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 4863794408adbfb8b51c4f125ee340eb718a5abe
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43416238"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43561951"
 ---
 # <a name="working-with-xml-namespaces-c"></a>Práce s názvovými prostory XML (C#)
 Témata v této části popisují, jak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podporuje obory názvů.  
@@ -22,5 +22,6 @@ Témata v této části popisují, jak [!INCLUDE[sqltecxlinq](~/includes/sqltecx
 |[Obor výchozích názvových prostorů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/scope-of-default-namespaces.md)|Ukazuje vhodný způsob psaní dotazů pro formát XML ve výchozím oboru názvů.|  
 |[Postupy: vytváření dotazů na XML v oborech názvů (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-write-queries-on-xml-in-namespaces.md)|Ukazuje, jak určit obory názvů XML v jazyce C# LINQ dotazy XML.|  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

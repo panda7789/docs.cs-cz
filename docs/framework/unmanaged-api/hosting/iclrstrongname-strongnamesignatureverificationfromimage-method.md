@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60dbb8d8461015c791a70d6c2617b1c81e5ba17f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fdbf2126d3da152ce68b6dbb47f5772e3b13d2c6
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33434265"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43660304"
 ---
 # <a name="iclrstrongnamestrongnamesignatureverificationfromimage-method"></a>ICLRStrongName::StrongNameSignatureVerificationFromImage – metoda
-Ověřuje, že je sestavení, které už je namapovaný na paměť pro přidružené veřejný klíč platný.  
+Ověřuje, že je platný pro přidružené veřejný klíč sestavení, které je již namapováno na paměť.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,36 +40,36 @@ HRESULT StrongNameSignatureVerificationFromImage (
   
 #### <a name="parameters"></a>Parametry  
  `pbBase`  
- [v] Relativní virtuální adresa manifest namapované sestavení.  
+ [in] Relativní virtuální adresu z namapované sestavení manifestu.  
   
  `dwLength`  
- [v] Velikost v bajtech, namapované bitové kopie.  
+ [in] Velikost v bajtech, z namapované bitové kopie.  
   
  `dwInFlags`  
- [v] Příznaky, které ovlivňují chování ověření. Podporovány jsou následující hodnoty:  
+ [in] Příznaky, které ovlivňují chování ověřování. Podporovány jsou následující hodnoty:  
   
--   `SN_INFLAG_FORCE_VER` (0x00000001) - vynutí ověření i v případě, že je nutné přepsat nastavení registru.  
+-   `SN_INFLAG_FORCE_VER` (0x00000001) – vynutí ověření i v případě, že je potřeba přepsat nastavení registru.  
   
--   `SN_INFLAG_INSTALL` (0x00000002) - určuje, že se jedná o první ověření provést na tuto bitovou kopii.  
+-   `SN_INFLAG_INSTALL` (0x00000002) - určuje, že se jedná o první ověřování prováděné na tomto obrázku.  
   
--   `SN_INFLAG_ADMIN_ACCESS` (0x00000004). - Určuje, že mezipaměť povolí přístup pouze uživatelům, kteří mají oprávnění správce.  
+-   `SN_INFLAG_ADMIN_ACCESS` (0x00000004) - určuje, že mezipaměť bude umožňovat přístup pouze uživatelům, kteří mají oprávnění správce.  
   
--   `SN_INFLAG_USER_ACCESS` (0x00000008) - určuje, že sestavení budou přístupné pouze pro aktuálního uživatele.  
+-   `SN_INFLAG_USER_ACCESS` (0x00000008) - určuje, zda sestavení přístupné pouze pro aktuálního uživatele.  
   
--   `SN_INFLAG_ALL_ACCESS` (0x00000010) - určuje, že mezipaměti bude poskytovat žádné záruky omezení přístupu.  
+-   `SN_INFLAG_ALL_ACCESS` (0x00000010) - určuje, že mezipaměť bude poskytovat žádné záruky omezení přístupu.  
   
--   `SN_INFLAG_RUNTIME` (0x80000000) - vyhrazená pro interní ladění.  
+-   `SN_INFLAG_RUNTIME` (0x80000000) – vyhrazené pro interní ladění.  
   
  `pdwOutFlags`  
  [out] Příznak pro další výstupní informace. Je podporován následující hodnotu:  
   
--   `SN_OUTFLAG_WAS_VERIFIED` (0x00000001) – Tato hodnota nastavena na `false` k určení, že ověření proběhlo úspěšně z důvodu nastavení registru.  
+-   `SN_OUTFLAG_WAS_VERIFIED` (0x00000001) – Tato hodnota nastavená na `false` k určení, že ověření proběhlo úspěšně z důvodu nastavení registru.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

@@ -1,58 +1,58 @@
 ---
-title: Síťové programování ukázky
+title: Ukázky programování sítě
 ms.date: 03/30/2017
 ms.assetid: 8efacc29-7367-47c2-8638-a4f66385ad91
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 85c190756821ee14fffad600ce7b44029c314ec1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a8230d382cfcf3709a2e4df42758470f3caea4e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397465"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43563895"
 ---
-# <a name="network-programming-samples"></a>Síťové programování ukázky
-Tato část obsahuje popisy a odkazy na stažení síť programování, ukázky, která používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets> a související obory názvů. 
+# <a name="network-programming-samples"></a>Ukázky programování sítě
+Tato část obsahuje popisy a odkazy na ke stažení síťové programování ukázky, které používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets> a souvisejících oborech názvů. 
   
 > [!NOTE]
-> Všechny ukázky jsou dostupné v [verze rozhraní .NET Framework SDK 2.0 ukázky Stáhnout](https://www.microsoft.com/en-us/download/confirmation.aspx?id=22181), který byl vydán pro rozhraní .NET Framework 2.0 a může být datem.
+> Všechny ukázky jsou k dispozici v [stáhnout sadu SDK rozhraní .NET Framework verze 2.0 ukázky](https://www.microsoft.com/en-us/download/confirmation.aspx?id=22181), který byl vydán pro rozhraní .NET Framework 2.0 a může být průkaz s datem.
 
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Stažení Ukázky technologie indikátor průběhu](https://msdn.microsoft.com/en-us/library/t8w6294a(v=vs.85).aspx)  
- Ukazuje, jak chcete-li zobrazit průběh stahování souborů.  
+ [Stáhněte si ukázky technologie indikátor průběhu](https://msdn.microsoft.com/en-us/library/t8w6294a(v=vs.85).aspx)  
+ Ukazuje, jak zobrazit průběh stahování souborů.  
   
- [Ukázka technologie FTP klienta.](https://msdn.microsoft.com/en-us/library/b7810t5c(v=vs.85).aspx)  
- Ukazuje, jak pro nahrávání a stahování souborů do a ze serveru FTP.  
+ [Ukázka technologie klienta FTP](https://msdn.microsoft.com/en-us/library/b7810t5c(v=vs.85).aspx)  
+ Ukazuje, jak nahrávat a stahovat soubory ze serveru FTP.  
   
- [Ukázka HttpListener technologie](https://msdn.microsoft.com/en-us/library/y7cbb2y2(v=vs.85).aspx)  
- Ukazuje, jak zpracovat požadavky HTTP z v rámci aplikace.  
+ [Ukázka technologie HttpListener](https://msdn.microsoft.com/en-us/library/y7cbb2y2(v=vs.85).aspx)  
+ Ukazuje, jak zpracovávat požadavky HTTP z v rámci aplikace.  
  
- [Ukázka HttpListener ASPX hostitele aplikace](https://docs.microsoft.com/en-us/previous-versions/visualstudio/visual-studio-2008/dd767375(v%3dvs.90))   
- Ukazuje, jak používat funkce <xref:System.Net.HttpListener?displayProperty=nameWithType> třídy za účelem vytvoření serveru HTTP, který směruje volání do hostované aplikace ASP.NET.
+ [Ukázkové aplikace hostitele HttpListener ASPX](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/dd767375(v%3dvs.90))   
+ Ukazuje, jak používat funkce <xref:System.Net.HttpListener?displayProperty=nameWithType> třídy za účelem vytvoření server HTTP, která směruje volání do hostované aplikace ASP.NET.
   
  [Ukázka technologie poštovní modul](https://msdn.microsoft.com/en-us/library/whw7xbk2(v=vs.85).aspx)  
- Ukazuje, jak k odesílání e-mailové zprávy z klientské aplikace.  
+ Ukazuje, jak odesílat zprávy e-mailu z klientské aplikace.  
   
- [Ukázkový nástroj NetStat technologie](https://msdn.microsoft.com/en-us/library/ks32hs88(v=vs.85).aspx)  
- Demonstruje nástroj NCLNetStat sítě informace.  
+ [Ukázka technologie NetStat nástroj](https://msdn.microsoft.com/en-us/library/ks32hs88(v=vs.85).aspx)  
+ Ukazuje nástroj NCLNetStat síťové informace.  
   
  [Ukázka technologie informace o síti](https://msdn.microsoft.com/en-us/library/2xatedhd(v=vs.85).aspx)  
- Ukazuje, jak sledovat a zobrazit informace o síti.  
+ Ukazuje, jak monitorovat a zobrazit informace o síti.  
   
  [Ukázka technologie ping klienta](https://msdn.microsoft.com/en-us/library/5253acs7(v=vs.85).aspx)  
- Demonstruje klientskou aplikaci, která může odeslat příkaz ping vzdáleného hostitele.  
+ Ukazuje klientské aplikace, které může příkaz ping na vzdáleného hostitele.  
   
- [Ukázka WebClient technologie](https://msdn.microsoft.com/en-us/library/fxk992zc(v=vs.85).aspx)  
- Ukazuje, jak provádět běžné operace, jako je například nahrávání nebo stahování souborů nebo data.  
+ [Ukázka technologie WebClient](https://msdn.microsoft.com/en-us/library/fxk992zc(v=vs.85).aspx)  
+ Ukazuje, jak k provádění běžných operací, jako je nahrávání a stahování souborů nebo data.  
   
- [Ukázka zabezpečení datové proudy](https://msdn.microsoft.com/en-us/library/ms180980(v=vs.85).aspx)  
- Ukazuje, jak používat pro komunikaci mezi klientem a serverem zabezpečené datového proudu.  
+ [Ukázka zabezpečení datových proudů](https://msdn.microsoft.com/en-us/library/ms180980(v=vs.85).aspx)  
+ Ukazuje, jak pomocí služby pro komunikaci mezi klientem a serverem zabezpečené stream.  
   
- [Ukázka Sockets IPv6](https://msdn.microsoft.com/en-us/library/ms180981(v=vs.85).aspx)  
- Demonstruje použití sockets, pokud je povolen protokol IPv6.  
+ [Ukázka sokety IPv6](https://msdn.microsoft.com/en-us/library/ms180981(v=vs.85).aspx)  
+ Ukazuje použití soketů, když je povolen protokol IPv6.  
   
- [Ukázka Průzkumníka FTP technologie](https://msdn.microsoft.com/en-us/library/ms233623(v=vs.85).aspx)  
+ [Ukázka technologie Průzkumníka serveru FTP](https://msdn.microsoft.com/en-us/library/ms233623(v=vs.85).aspx)  
  Ukazuje, jak zobrazit obsah serveru FTP.  
   
   

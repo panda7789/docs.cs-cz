@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Help [Windows Forms], displaying on Windows Forms
 - HelpProvider component [Windows Forms]
 ms.assetid: a09a6e0b-79d8-457f-bb36-86fad2beeada
-ms.openlocfilehash: 9a88e34de40d04b89b909afeb8a9b273078dd4c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63574e6a4f7a9c5a1c2bcb267c64baa5c5e392f3
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33524154"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43658948"
 ---
 # <a name="helpprovider-component-windows-forms"></a>HelpProvider – komponenta (Windows Forms)
-Windows Forms `HelpProvider` součást je použit k přidružení soubor nápovědy HTML – Nápověda 1.x (soubor CHM. vytvořeného s pracoviště Nápověda HTML nebo soubor HTM) s vaší aplikací systému Windows.  
+Windows Forms `HelpProvider` součást slouží k přidružení souboru nápovědy HTML Help 1.x (soubor CHM vytvořenými pomocí HTML Help Workshop, nebo soubor HTM) s vaší aplikací se systémem Windows.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled komponenty HelpProvider](../../../../docs/framework/winforms/controls/helpprovider-component-overview-windows-forms.md)  
- Představuje obecné koncepty `HelpProvider` komponenta, která umožňuje přidružit soubor nápovědy HTML s aplikací systému Windows.  
+ Představuje obecné koncepty `HelpProvider` komponenta, která umožňuje přidružit soubor HTML nápovědy aplikace založené na Windows.  
   
- V tématu [systémy nápovědy v aplikacích Windows Forms](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md).  
+ Zobrazit [systémy nápovědy ve formulářových aplikacích Windows](../../../../docs/framework/winforms/advanced/help-systems-in-windows-forms-applications.md).  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Windows.Forms.HelpProvider>  
@@ -31,6 +31,6 @@ Windows Forms `HelpProvider` součást je použit k přidružení soubor nápov�
   
 ## <a name="related-sections"></a>Související oddíly  
  [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
   
- Viz také [systémy nápovědy v aplikacích Windows Forms](http://msdn.microsoft.com/library/55dct0a1\(v=vs.110\)).
+ Viz také [systémy nápovědy ve formulářových aplikacích Windows](https://msdn.microsoft.com/library/55dct0a1\(v=vs.110\)).

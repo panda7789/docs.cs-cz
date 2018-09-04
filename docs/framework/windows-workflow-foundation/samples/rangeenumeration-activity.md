@@ -1,44 +1,44 @@
 ---
-title: RangeEnumeration aktivity
+title: Aktivita RangeEnumeration
 ms.date: 03/30/2017
 ms.assetid: ca5b78f4-94fa-4aa7-830d-26039ac422c8
-ms.openlocfilehash: 9aa04c80f20e2d410fb49e2d07d836c8c5ab1b4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c9cf522227620422b414adc26cbc0bf338bf57d4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516575"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43556289"
 ---
-# <a name="rangeenumeration-activity"></a>RangeEnumeration aktivity
-Tento příklad ukazuje, jak vytvořit vlastní aktivitu, který iteruje nad kolekcí čísel. V následující tabulce jsou hlavní soubory obsažené ve vzorku.  
+# <a name="rangeenumeration-activity"></a>Aktivita RangeEnumeration
+Tento příklad ukazuje, jak vytvořit vlastní aktivitu, která iteruje přes kolekci čísel. Následující tabulka obsahuje podrobnosti o hlavních soubory zahrnuté v ukázce.  
   
 |Název souboru|Popis|  
 |---------------|-----------------|  
-|RangeEnumeration.cs|Definuje vlastní aktivity s názvem `RangeEnumeration` , přepíše <xref:System.Activities.NativeActivity> třídy a smyčky prostřednictvím řady čísel.|  
-|RangeEnumerationSample.cs|Klientská aplikace, která používá `RangeEnumeration` aktivity Iterujte přes kolekci čísel.|  
+|RangeEnumeration.cs|Definuje vlastní aktivita s názvem `RangeEnumeration` , přepíše <xref:System.Activities.NativeActivity> třídy a smyčky prostřednictvím řady čísla.|  
+|RangeEnumerationSample.cs|Klientské aplikace používající `RangeEnumeration` aktivity k iteraci přes kolekci čísel.|  
   
- V následující tabulce jsou vlastnosti `RangeEnumeration` aktivity.  
+ Následující tabulka obsahuje podrobnosti o vlastnostech `RangeEnumeration` aktivity.  
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|Spustit|Spuštění smyčky z na celé číslo.|  
-|Zastavit|Zastavit smyčky v na celé číslo.|  
+|Spustit|Celé číslo spustit ze smyčky.|  
+|Zastavit|Celé číslo k ukončení smyčky v.|  
 |Krok|Určuje, kolik k iteraci v každém.|  
-|Text|Určuje kód provést při každé iteraci.|  
+|Text|Určuje kód pro spuštění při každé iteraci.|  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení RangeEnumeration.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\RangeEnumeration`

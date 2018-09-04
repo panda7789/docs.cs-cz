@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: ebbae336761c6fa7954862cd41052e8832bf8e77
-ms.sourcegitcommit: 875ecc3ab2437e299b1d50076bd9b878fa8c64de
+ms.openlocfilehash: bb5f0daf0bcf824d72bb104914de03532bd3f9f7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43238413"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43534791"
 ---
 # <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura versus fyzická architektura
 
@@ -17,7 +17,7 @@ To je užitečné v tuto chvíli zastavit a diskutovat o rozdíl mezi logickou a
 
 Pokud chcete začít, vytváření mikroslužeb nevyžaduje použití libovolné konkrétní technologie. Kontejnery Dockeru, nejsou povinné, chcete-li vytvořit architektury založené na mikroslužbách. Tyto mikroslužeb může také spustit jako obyčejný procesy. Mikroslužby jsou logickou architekturu.
 
-Kromě toho i v případě mikroslužba by mohl fyzicky implementované jako jedinou službou, procesu nebo kontejneru (pro saké na jednoduchost, který je přístup provedených v počáteční verzi [aplikaci eShopOnContainers](http://aka.ms/MicroservicesArchitecture)), tento rozdíly mezi obchodní mikroslužeb a fyzické služby nebo kontejner nemusí nutně ve všech případech při sestavování rozsáhlý a komplexní aplikace složené z mnoha desítky nebo stovky služeb.
+Kromě toho i v případě mikroslužba by mohl fyzicky implementované jako jedinou službou, procesu nebo kontejneru (pro saké na jednoduchost, který je přístup provedených v počáteční verzi [aplikaci eShopOnContainers](https://aka.ms/MicroservicesArchitecture)), tento rozdíly mezi obchodní mikroslužeb a fyzické služby nebo kontejner nemusí nutně ve všech případech při sestavování rozsáhlý a komplexní aplikace složené z mnoha desítky nebo stovky služeb.
 
 Tady je rozdíl mezi logickou architekturu a fyzická architektura aplikací. Logická architektura a logické hranice systému nemapovaly nutně architektury fyzických nebo nasazení 1: 1. K tomu může dojít, ale často neexistuje.
 

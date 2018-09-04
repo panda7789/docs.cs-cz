@@ -10,15 +10,15 @@ helpviewer_keywords:
 - XML axis [Visual Basic], attribute
 - XML [Visual Basic], accessing
 ms.assetid: 7a4777e1-0618-4de9-9510-fb9ace2bf4db
-ms.openlocfilehash: 3e02fd2ddc3928bdd2e9741737fc31fb2b16901c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9107b946394ab70980e4865364fc1ba9683e2025
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33604910"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43539960"
 ---
 # <a name="xml-attribute-axis-property-visual-basic"></a>Vlastnost osy atributu XML (Visual Basic)
-Poskytuje přístup k hodnotě atributu pro <xref:System.Xml.Linq.XElement> objektu nebo na prvním elementem v kolekci <xref:System.Xml.Linq.XElement> objekty.  
+Poskytuje přístup k hodnotě atributu pro <xref:System.Xml.Linq.XElement> objekt nebo na první prvek v kolekci <xref:System.Xml.Linq.XElement> objekty.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,34 +36,34 @@ object.@<attribute>
  Požadováno. Označuje začátek vlastnost osy atributu.  
   
  <  
- Volitelné. Označuje začátek název atributu, když `attribute` není platný identifikátor v jazyce Visual Basic.  
+ Volitelné. Označuje začátek název atributu při `attribute` není platný identifikátor v jazyce Visual Basic.  
   
  `attribute`  
- Požadováno. Název atributu pro přístup k ve formátu [`prefix`:]`name`.  
+ Požadováno. Název atributu pro přístup k ve tvaru [`prefix`:]`name`.  
   
 |Část|Popis|  
 |----------|-----------------|  
-|`prefix`|Volitelné. Předpona oboru názvů XML pro atribut. Musí být globální obor názvů XML definovány se `Imports` příkaz.|  
-|`name`|Požadováno. Local – atribut názvu. V tématu [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|`prefix`|Volitelné. Předpona oboru názvů XML pro atribut. Musí se definovat globální obor názvů XML `Imports` příkazu.|  
+|`name`|Požadováno. Local – atribut názvu. Zobrazit [názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
   
  \>  
- Volitelné. Označuje konec název atributu, když `attribute` není platný identifikátor v jazyce Visual Basic.  
+ Volitelné. Označuje konec názvu atributu při `attribute` není platný identifikátor v jazyce Visual Basic.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- Řetězec, který obsahuje hodnotu `attribute`. Pokud název neexistuje, `Nothing` je vrácen.  
+ Řetězec, který obsahuje hodnotu `attribute`. Pokud název neexistuje, `Nothing` je vrácena.  
   
 ## <a name="remarks"></a>Poznámky  
- Můžete použít vlastnost osy atributu XML pro přístup k hodnotě atributu podle názvu z <xref:System.Xml.Linq.XElement> objekt nebo z první prvek v kolekci <xref:System.Xml.Linq.XElement> objekty. Můžete načíst hodnotu atributu podle názvu nebo přidat nový atribut pro element tak, že zadáte nový název předchází @ identifikátor.  
+ Můžete použít vlastnost osy atributu XML pro přístup k hodnotě atributu prostřednictvím jeho názvu <xref:System.Xml.Linq.XElement> objektu nebo z první prvek v kolekci <xref:System.Xml.Linq.XElement> objekty. Hodnotu atributu načíst podle názvu nebo přidat nový atribut na prvek tak, že zadáte nový název, před kterými @ identifikátor.  
   
- Když odkazujete na atribut XML pomocí @ identifikátoru, je vrácena hodnota atributu jako řetězec a není nutné explicitně zadat <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost.  
+ Když budete odkazovat na atribut XML s použitím @ identifikátor, vrátí se hodnota atributu jako řetězec a není potřeba explicitně zadat <xref:System.Xml.Linq.XAttribute.Value%2A> vlastnost.  
   
- Pravidla pojmenování pro atributy XML se liší od pravidla pojmenování pro identifikátory jazyka Visual Basic. Pro přístup k atribut XML, který má název, který není platný identifikátor jazyka Visual Basic, uzavřete název v lomených závorkách (\< a >).  
+ Pravidla pojmenování atributů XML se liší od pravidla pojmenování identifikátorů jazyka Visual Basic. Pro přístup k atributu XML, který má název, který není platným identifikátorem jazyka Visual Basic, uzavřete název v ostrých závorek (\< a >).  
   
 ## <a name="xml-namespaces"></a>Obory názvů XML  
- Název v vlastnost osy atributu můžete použít pouze XML – předpony oboru názvů deklarovat globálně pomocí `Imports` příkaz. Nemůže používat lokálně deklarované v rámci elementu XML – literály XML – předpony oboru názvů. Další informace najdete v tématu [příkaz Imports (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
+ Název ve vlastnosti osy atribut lze použít pouze předpon oboru názvů XML globálně deklarovaná příkazem using `Imports` příkazu. Místně deklarované v rámci elementu literály XML předpon názvového prostoru XML nemůže používat. Další informace najdete v tématu [příkaz Imports (XML Namespace)](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak získat hodnoty atributů XML s názvem `type` z kolekce elementů XML, které jsou s názvem `phone`.  
+ Následující příklad ukazuje, jak získat hodnoty atributů XML s názvem `type` z kolekce elementů XML, které jsou pojmenovány `phone`.  
   
  [!code-vb[VbXMLSamples#12](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_1.vb)]  
   
@@ -78,7 +78,7 @@ object.@<attribute>
  `</phoneTypes>`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vytvořte atributy pro element XML i deklarativně, v rámci kódu XML a dynamicky přidáním atribut na instanci <xref:System.Xml.Linq.XElement> objektu. `type` Atribut je vytvořen deklarativně a `owner` atribut se vytváří dynamicky.  
+ Následující příklad ukazuje, jak vytvořit atributy pro element XML i deklarativně, jako součást XML a dynamicky tak, že přidáte atribut k instanci <xref:System.Xml.Linq.XElement> objektu. `type` Atributu je vytvořen pomocí deklarace a `owner` atribut se vytváří dynamicky.  
   
  [!code-vb[VbXMLSamples#44](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_2.vb)]  
   
@@ -89,7 +89,7 @@ object.@<attribute>
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá syntaxi lomená závorka k získání hodnoty atributu XML s názvem `number-type`, což není platný identifikátor v jazyce Visual Basic.  
+ Následující příklad používá syntaxi ostré závorky k získání hodnoty atributu XML s názvem `number-type`, což není platný identifikátor v jazyce Visual Basic.  
   
  [!code-vb[VbXMLSamples#13](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_3.vb)]  
   
@@ -98,7 +98,7 @@ object.@<attribute>
  `Phone type: work`  
   
 ## <a name="example"></a>Příklad  
- Následující příklad deklaruje `ns` jako předponu oboru názvů XML. Poté použije Předpona oboru názvů k vytvoření literál XML a přístup k první podřízený uzel s kvalifikovaný název "`ns:name`".  
+ Následující příklad deklaruje `ns` jako předponu oboru názvů XML. Poté použije předponu oboru názvů XML vytvoření literálu a přístup k první podřízený uzel s kvalifikovaným názvem "`ns:name`".  
   
  [!code-vb[VbXMLSamples#14](../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/xml-attribute-axis-property_4.vb)]  
   
@@ -108,7 +108,7 @@ object.@<attribute>
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Xml.Linq.XElement>  
- [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/xml-axis-properties.md)  
+ [Vlastnosti osy XML](../../../visual-basic/language-reference/xml-axis/index.md)  
  [Literály XML](../../../visual-basic/language-reference/xml-literals/index.md)  
  [Vytvoření XML v jazyce Visual Basic](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)  
  [Názvy deklarovaných XML elementů a atributů](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md)

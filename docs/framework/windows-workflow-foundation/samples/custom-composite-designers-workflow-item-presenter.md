@@ -1,31 +1,31 @@
 ---
-title: Vlastní složený Designer - přednášejícího položky pracovního postupu
+title: Návrháři vlastního - skládání položky pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
-ms.openlocfilehash: 5bdc952bb4b920f0b5a7d272423ec2d922a94798
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7519ea560bab1e0c6651ad0b37c8477297b0d64d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517115"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526827"
 ---
-# <a name="custom-composite-designers---workflow-item-presenter"></a>Vlastní složený Designer - přednášejícího položky pracovního postupu
-<xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity. Tento příklad ukazuje, jak stavět Návrhář aktivity tohoto povrchy takovou "rozevírací zónu."  
+# <a name="custom-composite-designers---workflow-item-presenter"></a>Návrháři vlastního - skládání položky pracovního postupu
+<xref:System.Activities.Presentation.WorkflowItemPresenter> Je typ klíče v WF návrháře programovací model, který umožňuje vytváření "rozevírací zónu" umístění libovolné aktivity. Tento příklad ukazuje, jak vytvářet Návrhář aktivity tohoto zařízení Surface takovou "rozevírací zónu."  
   
- Tento příklad znázorňuje:  
+ V této ukázce:  
   
 ## <a name="demonstrates"></a>Demonstruje  
   
--   Vytváření Návrháře vlastních aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.  
+-   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.  
   
--   Probíhá registrace návrháře vlastní pomocí úložiště metadat.  
+-   Registrace vlastní úložiště metadat pomocí návrháře.  
   
--   Programování opětovné hostování nástroje sady nástrojů deklarativně a imperativní.  
+-   Deklarativní a imperativně programování provádění se změněným hostováním sady nástrojů.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  Kód pro tento příklad ukazuje:  
   
--   Návrhář vlastní aktivity je vytvořené pro `SimpleNativeActivity` třídy.  
+-   Návrháři vlastních aktivit je sestaven pro `SimpleNativeActivity` třídy.  
   
 -   Vytvoření vlastního návrháře aktivit s <xref:System.Activities.Presentation.WorkflowItemPresenter>.  
   
@@ -63,20 +63,20 @@ ms.locfileid: "33517115"
 </sap:ActivityDesigner>  
 ```  
   
- Všimněte si použití datové vazby WPF k vytvoření vazby `ModelItem.Body`. `ModelItem` je vlastnost na <xref:System.Activities.Presentation.ActivityDesigner> který odkazuje na základní objekt návrháře se používá, v takovém případě **SimpleNativeActivity**.  
+ Všimněte si použití datové vazby WPF vytvořit vazbu na `ModelItem.Body`. `ModelItem` je vlastnost na <xref:System.Activities.Presentation.ActivityDesigner> , který odkazuje na základní objekt návrháře se používá, v tomto případě **SimpleNativeActivity**.  
   
-#### <a name="to-setup-build-and-run-the-sample"></a>Instalační program, sestavení a spuštění vzorku  
+#### <a name="to-setup-build-and-run-the-sample"></a>Nastavení, sestavení a spuštění ukázky  
   
 1.  Otevřete řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Stisknutím klávesy F5 zkompilování a spuštění aplikace.  
+2.  Stiskněte klávesu F5 ke kompilaci a spuštění aplikace.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemPresenter`  
   

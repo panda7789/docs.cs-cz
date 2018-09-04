@@ -5,11 +5,11 @@ ms.assetid: 4af18009-e778-490b-9ba6-e76485285830
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: fb0d4fdebf07dacfa7f33d8645332348270128e4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43422501"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43558044"
 ---
 # <a name="service-security-validation-and-authentication-failures-per-second"></a>Služba: Počet chyb ověřování zabezpečení za sekundu
 Název čítače: ověřování zabezpečení a ověřování chyb za sekundu.  

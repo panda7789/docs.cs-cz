@@ -1,29 +1,29 @@
 ---
-title: Objekty LOBs Oracle
+title: Soubory Oracle LOB
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: 04789b385d7a956b65b7cd99594fc92001183af3
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 39ff8f1c21fc1161f4f3726548713d384c7d7400
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758773"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560214"
 ---
-# <a name="oracle-lobs"></a>Objekty LOBs Oracle
-Zprostředkovatel dat .NET Framework pro Oracle zahrnuje <xref:System.Data.OracleClient.OracleLob> třídy, která se používá pro práci s Oracle **obchodní** datové typy.  
+# <a name="oracle-lobs"></a>Soubory Oracle LOB
+Zprostředkovatel dat .NET Framework pro Oracle se zahrnuje <xref:System.Data.OracleClient.OracleLob> třídu, která se používá pro práci se společností Oracle **LOB** datové typy.  
   
- **OracleLob** může mít jednu z těchto <xref:System.Data.OracleClient.OracleType> datové typy:  
+ **OracleLob** může být jedna z těchto <xref:System.Data.OracleClient.OracleType> datové typy:  
   
 |Datový typ|Popis|  
 |---------------|-----------------|  
-|**Objekt BLOB**|Oracle **BLOB** datový typ, který obsahuje binární data s maximální velikost 4 GB. To se mapuje **pole** typu **bajtů**.|  
-|**Datový typ CLOB**|Oracle **datový typ CLOB** datový typ, který obsahuje znak data, v závislosti na výchozí znakovou nastavit na serveru, a maximální velikost 4 GB. To se mapuje na **řetězec**.|  
-|**NClob**|Oracle **NCLOB** datový typ, který obsahuje znak data podle national znakovou sadu na serveru s maximální velikost 4 GB. To se mapuje na **řetězec**.|  
+|**Objekt BLOB**|Oracle **BLOB** datový typ, který obsahuje binární data a maximální velikost 4 GB. To se mapuje **pole** typu **bajtů**.|  
+|**Datový typ CLOB**|Oracle **datový typ CLOB** datový typ, který obsahuje znak dat v závislosti na znak výchozí nastavení na serveru, a maximální velikost 4 GB. To se mapuje na **řetězec**.|  
+|**NClob**|Oracle **NCLOB** datový typ, který obsahuje znak data podle národního znakovou sadu na serveru s maximální velikost 4 GB. To se mapuje na **řetězec**.|  
   
- **OracleLob** se liší od <xref:System.Data.OracleClient.OracleBFile> že data jsou uložena na serveru místo v fyzický soubor v operačním systému. Objekt pro čtení a zápis, může být také na rozdíl od **OracleBFile**, což je vždy jen pro čtení.  
+ **OracleLob** se liší od <xref:System.Data.OracleClient.OracleBFile> v tom, že jsou data uložená na serveru místo ve fyzických souborů v operačním systému. Na rozdíl od může být objekt pro čtení a zápis **OracleBFile**, což je vždy jen pro čtení.  
   
-## <a name="creating-retrieving-and-writing-to-a-lob"></a>Vytváření, načítání a zápisu do objektu LOB  
- Následující příklad jazyka C# ukazuje, jak můžete vytvořit objekty LOBs v tabulce Oracle a pak načtení a zápis do nich ve formě **OracleLob** objekty. Tento příklad ukazuje, jak pomocí <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleLob** **čtení** a **zápisu** metody. Tento příklad používá Oracle **BLOB**, **datový typ CLOB**, a **NCLOB** datové typy.  
+## <a name="creating-retrieving-and-writing-to-a-lob"></a>Vytvářet, načítat a zápis do objektu LOB  
+ Následující příklad jazyka C# ukazuje, jak můžete vytvořit objekty LOBs v tabulce Oracle a pak načíst a zápis do nich ve formě **OracleLob** objekty. Tento příklad ukazuje použití <xref:System.Data.OracleClient.OracleDataReader> objektu a **OracleLob** **čtení** a **zápisu** metody. V příkladu se používá Oracle **BLOB**, **datový typ CLOB**, a **NCLOB** datové typy.  
   
 ```csharp  
 using System;  
@@ -215,7 +215,7 @@ public class LobExample
 }  
 ```  
   
-## <a name="creating-a-temporary-lob"></a>Vytváření dočasných LOB  
+## <a name="creating-a-temporary-lob"></a>Vytváří se dočasný OBJEKT  
  Následující příklad jazyka C# ukazuje, jak vytvořit dočasný OBJEKT.  
   
 ```csharp  
@@ -249,4 +249,4 @@ tx.Commit();
   
 ## <a name="see-also"></a>Viz také  
  [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

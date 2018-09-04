@@ -4,11 +4,11 @@ description: Zjistěte, jak psát dotazy LINQ v jazyce C#.
 ms.date: 12/1/2016
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
 ms.openlocfilehash: 2ebba0d2d601932c976a88726fbe3ed37daffdcb
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43463101"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43559935"
 ---
 # <a name="write-linq-queries-in-c"></a>Zápis dotazů LINQ v jazyce C# #
 

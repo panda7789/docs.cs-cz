@@ -2,12 +2,12 @@
 title: Analýza kódu XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 7ea83f83-a779-423a-9875-4ea4e51f97fc
-ms.openlocfilehash: 876cfdf7bd5a82aba75d456d6d5cda57e080fdf0
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: a2dc3043c8cbf8138a164ab06d8394e4c859fa50
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933979"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523025"
 ---
 # <a name="parsing-xml-c"></a>Analýza kódu XML (C#)
 Témata v této části popisují, jak k analýze dokumentů XML.  
@@ -23,5 +23,6 @@ Témata v této části popisují, jak k analýze dokumentů XML.
 |[Postupy: vytvoření stromu ze třídy XmlReader (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-create-a-tree-from-an-xmlreader.md)|Ukazuje, jak vytvořit stromu XML přímo ze <xref:System.Xml.XmlReader>.|  
 |[Postupy: Stream fragmentů XML ze třídy XmlReader (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-stream-xml-fragments-from-an-xmlreader.md)|Ukazuje, jak pomocí streamování fragmentů XML <xref:System.Xml.XmlReader>.<br /><br /> Až budete mít ke zpracování libovolně velkých souborů XML, nemusí být možné načíst celý strom XML do paměti. Místo toho můžete streamování fragmentů XML.|  
   
-## <a name="see-also"></a>Viz také  
- [Vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+## <a name="see-also"></a>Viz také
+
+- [Vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)

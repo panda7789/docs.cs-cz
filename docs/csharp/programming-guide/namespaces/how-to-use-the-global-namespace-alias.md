@@ -6,15 +6,15 @@ helpviewer_keywords:
 - namespaces [C#], global namespace qualifier
 - global namespace [C#]
 ms.assetid: 98a1d89b-3c5a-44f7-8400-c4a3c0ec22a9
-ms.openlocfilehash: 74f51d18ddda1ae4706b78aaf713683d2e505d2e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c15271abb55cb29a200185e4b512a76a4913d848
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33327239"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43540299"
 ---
 # <a name="how-to-use-the-global-namespace-alias-c-programming-guide"></a>Postupy: Použití aliasu globálního oboru názvů (Průvodce programováním v C#)
-Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/language-reference/keywords/namespace.md) je užitečné, když se člen může být skrytý na základě jiné entity se stejným názvem.  
+Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/language-reference/keywords/namespace.md) je užitečné, když člen může být skryty pomocí jiné entity se stejným názvem.  
   
  Například v následujícím kódu `Console` přeloží na `TestApp.Console` místo na `Console` zadejte <xref:System> oboru názvů.  
   
@@ -22,31 +22,33 @@ Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/langu
   
  [!code-csharp[csProgGuideNamespaces#1](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-global-namespace-alias_2.cs)]  
   
- Pomocí `System.Console` stále dojde k chybě, protože `System` obor názvů je skrytý na základě třídy `TestApp.System`:  
+ Pomocí `System.Console` stále dojde k chybě, protože `System` obor názvů je skrytý třídou `TestApp.System`:  
   
  [!code-csharp[csProgGuideNamespaces#2](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-global-namespace-alias_3.cs)]  
   
- Nicméně, můžete tuto chybu vyřešit pomocí `global::System.Console`, podobné výjimky:  
+ Nicméně, můžete alternativně vyřešit tuto chybu pomocí `global::System.Console`, tímto způsobem:  
   
  [!code-csharp[csProgGuideNamespaces#3](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-global-namespace-alias_4.cs)]  
   
- Pokud je identifikátor levém `global`, spustí vyhledávání pro identifikátor vpravo v globálním oboru názvů. Například následující prohlášení odkazuje `TestApp` jako člen globálního místa.  
+ Pokud je identifikátor levé `global`, vyhledejte správný identifikátor začíná v globálním oboru názvů. Například následující deklaraci odkazuje `TestApp` jako člen globálním prostoru.  
   
  [!code-csharp[csProgGuideNamespaces#4](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-global-namespace-alias_5.cs)]  
   
- Vytvoření vlastní obory názvů samozřejmě nazývané `System` se nedoporučuje, a pravděpodobně narazíte na kód, ve kterém byla odepřena. V projektech větší, je však velmi reálná možnost, že duplikace oboru názvů, může dojít v jednoho formuláře nebo jiné. V těchto situacích kvalifikátor globálního oboru názvů je vaše záruku, že je možné zadat kořenového oboru názvů.  
+ Samozřejmě, vytvářet své vlastní obory názvů volá `System` se nedoporučuje, a nepravděpodobné, narazíte na jakýkoli kód, ve kterém se to stalo. U větších projektů, je však velmi skutečné možnost, duplikace oboru názvů může vyskytovat ve formuláři nebo jiném. Kvalifikátor globálního oboru názvů v těchto situacích je vaše záruku, že můžete určit kořenový obor názvů.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu, obor názvů `System` se používá k obsahují třídu `TestClass` proto `global::System.Console` se musí použít k odkazu `System.Console` třídy, která je skrytý na základě `System` oboru názvů. Navíc alias `colAlias` slouží k odkazování na obor názvů `System.Collections`; proto instanci <xref:System.Collections.Hashtable?displayProperty=nameWithType> byla vytvořena pomocí tento alias místo obor názvů.  
+ V tomto příkladu, obor názvů `System` je použít k zahrnutí třídy `TestClass` proto `global::System.Console` musí být použita na odkaz `System.Console` třídu, která je skrytý `System` oboru názvů. Také, že alias `colAlias` se používá k odkazování na obor názvů `System.Collections`; proto instanci <xref:System.Collections.Hashtable?displayProperty=nameWithType> byl vytvořen pomocí tento alias místo obor názvů.  
   
  [!code-csharp[csProgGuideNamespaces#5](../../../csharp/programming-guide/namespaces/codesnippet/CSharp/how-to-use-the-global-namespace-alias_6.cs)]  
   
- **1**  
-**B 2**  
-**C 3**   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)  
- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
- [extern](../../../csharp/language-reference/keywords/extern.md)
+**1**
+**B 2**
+**C 3**
+
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Obory názvů](../../../csharp/programming-guide/namespaces/index.md)  
+- [. – operátor](../../../csharp/language-reference/operators/member-access-operator.md)  
+- [:: – operátor](../../../csharp/language-reference/operators/namespace-alias-qualifer.md)  
+- [extern](../../../csharp/language-reference/keywords/extern.md)

@@ -1,21 +1,21 @@
 ---
-title: Synchronizace s XmlDataDocument datové sady
+title: Synchronizace datové sady s datovým dokumentem XML
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: fbc96fa9-b5d1-4f97-b099-c89b0e14ce2c
-ms.openlocfilehash: d026a425f7a38777fcb5bbb4b18816c39a99aa72
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5aeb5fc3ad1008871b6c54d6c096cb3a76c3416e
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32763264"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538464"
 ---
-# <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronizace s XmlDataDocument datové sady
-V této části ukážeme jedním krokem zpracování nákupní objednávka, použitím silného typu <xref:System.Data.DataSet> synchronizovat se službou <xref:System.Xml.XmlDataDocument>. Příklady, které následují vytvořit **datovou sadu** s minimalizovaném okně schéma, které odpovídá pouze část zdrojový dokument XML. Příklady používají **XmlDataDocument** zachovat přesnost zdrojový dokument XML, povolení **datovou sadu** který se má použít ke zveřejnění podmnožinu dokumentu XML.  
+# <a name="synchronizing-a-dataset-with-an-xmldatadocument"></a>Synchronizace datové sady s datovým dokumentem XML
+V této části ukazuje jeden krok zpracování nákupní objednávka, použitím silného typu <xref:System.Data.DataSet> synchronizovat se službou <xref:System.Xml.XmlDataDocument>. Následující příklady vytvoření **datovou sadu** minimalizované schématu, která odpovídá pouze část zdrojovém dokumentu XML. V příkladech se používá **objektu XmlDataDocument** zachovat věrnost zdrojovém dokumentu XML, povolíte **datovou sadu** se použije k vystavení podmnožinu dokumentů XML.  
   
- Následující dokument XML obsahuje všechny informace týkající se nákupní objednávka: informace o zákazníkovi, položky seřazené, informace přenosů a tak dále.  
+ Následující dokument XML obsahuje všechny informace týkající se nákupní objednávku: informace o zákaznících, položky seřazeny, dodací informace a tak dále.  
   
 ```xml  
 <?xml version="1.0" standalone="yes"?>  
@@ -109,9 +109,9 @@ V této části ukážeme jedním krokem zpracování nákupní objednávka, pou
 </PurchaseOrder>  
 ```  
   
- Jeden krok při zpracování nákupu pořadí informace obsažené v předchozím dokumentu XML je pro pořadí, aby byla vyplněna z aktuální inventáře společnosti. Zaměstnanec odpovědný za naplnění pořadí z skladu společnosti nemusí zobrazit celý obsah nákupní objednávka; potřebují pouze zobrazíte informace o produktu pro pořadí. Ke zveřejnění jenom informace o produktu z dokumentu XML, vytvořit silného typu **datovou sadu** se schématem, zapisují jako schématu XML definice jazyka (XSD) schématu, která mapuje produktů a množství řazení. Další informace o silného typu **datovou sadu** objekty, najdete v části [typové datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
+ Jeden krok zpracování nákupní objednávky informace obsažené v předchozí dokument XML je pro pořadí pro vyplnění z aktuální inventáře vaší společnosti. Zaměstnanec odpovědný za vyplnění pořadí z datového skladu společnosti nemusí zobrazit celý obsah nákupní objednávky. potřebují jenom zobrazit informace o produktu pro pořadí. Pokud chcete zpřístupnit jenom informace o produktu z dokumentu XML, vytvoření silného typu **datovou sadu** se schématem, zapsán jako jazyk (XSD) schématu definice schématu XML, který mapuje produktů a množství, řazení. Další informace o silně typované **datovou sadu** objekty, najdete [typované datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  
   
- Následující kód ukazuje schéma, ze kterého silného typu **datovou sadu** se generuje pro tato ukázka.  
+ Následující kód ukazuje schématu, ze kterého silného typu **datovou sadu** se vygeneruje pro tuto ukázku.  
   
 ```xml  
 <?xml version="1.0" standalone="yes"?>  
@@ -157,11 +157,11 @@ V této části ukážeme jedním krokem zpracování nákupní objednávka, pou
 </xs:schema>  
 ```  
   
- Všimněte si, že pouze informace z **Rozpis objednávek** a **produkty** elementy původního dokumentu XML jsou součástí schéma pro **datovou sadu**. Synchronizace **datovou sadu** s **XmlDataDocument** zajistí, že elementy nejsou součástí **datovou sadu** zachová se v dokumentu XML.  
+ Všimněte si, že pouze informace z **OrderDetails** a **produkty** prvků v původním dokumentu XML, které jsou zahrnuté ve schématu pro **datovou sadu**. Synchronizace **datovou sadu** s **objektu XmlDataDocument** zajišťuje, že prvků není součástí **datovou sadu** zachová s dokumentu XML.  
   
- S silného typu **datovou sadu** generované ze schématu XML (obor názvů z **Northwind.FillOrder**), část původního dokumentu XML mohou být zpřístupněny synchronizace  **Datová sada** s **XmlDataDocument** načtené ze zdrojového dokumentu XML. Všimněte si, že **datovou sadu** vygenerovat z schéma obsahuje strukturu, ale žádná data. Data se vyplní po načtení XML do **XmlDataDocument**. Pokud pokus o načtení **XmlDataDocument** , byl synchronizován s **datovou sadu** už obsahuje data, bude vyvolána výjimka.  
+ Se silnými typy **datovou sadu** generované ze schématu XML (s oborem názvů z **Northwind.FillOrder**), část původní dokument XML může být vystavena s synchronizace  **Datová sada** s **XmlDataDocument** načten ze zdrojového dokumentu XML. Všimněte si, že **datovou sadu** generované schéma obsahuje strukturu, ale žádná data. Data se vyplní při načtení do souboru XML **XmlDataDocument**. Při pokusu o načtení **XmlDataDocument** , která se synchronizovala s **datovou sadu** , který již obsahuje data, bude vyvolána výjimka.  
   
- Po **datovou sadu** (a **XmlDataDocument**) byl aktualizován, **XmlDataDocument** můžete pak zapsat změněný dokument XML s elementy ignorovat **Datovou sadu** zůstává beze změny, jak je uvedeno níže. Ve scénáři pořadí nákupu po vyplnili pořadí položek změněný dokument XML je pak možné předat další krok v pořadí procesu, například k oddělení přenosů společnosti.  
+ Po **datovou sadu** (a **XmlDataDocument**) byl aktualizován, **XmlDataDocument** se pak můžou zapisovat upravený dokument XML s prvky nastavení ignoruje, **Datovou sadu** zůstává beze změny, jak je znázorněno níže. Ve scénáři nákupní objednávky po vyplnili pořadí položek upravený dokument XML je pak možné předat další krok v procesu objednávání, třeba tak, aby přenosů oddělení vaší společnosti.  
   
 ```vb  
 Imports System  
@@ -233,4 +233,4 @@ public class Sample
   
 ## <a name="see-also"></a>Viz také  
  [Synchronizace datové sady a datového dokumentu XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

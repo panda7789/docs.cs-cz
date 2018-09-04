@@ -8,103 +8,104 @@ helpviewer_keywords:
 - application services host [client application services]
 - client application services, walkthroughs
 ms.assetid: bb7c8950-4517-4dae-b705-b74a14059b26
-ms.openlocfilehash: 9193dc56a0f92daf486d95666ba820cb09d588d0
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b800848fc3cefb1f82fb5822007bc670c1684363
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43539889"
 ---
 # <a name="walkthrough-using-client-application-services"></a>Návod: Použití klientských aplikačních služeb
-Toto téma popisuje postup vytvoření aplikace Windows, která používá klientské aplikační služby k ověřování uživatelů a načítání uživatelských rolí a nastavení.  
+Toto téma popisuje, jak vytvořit aplikaci Windows, která používá k ověřování uživatelů a získání role uživatele a nastavení klientských aplikačních služeb.  
   
- V tomto návodu můžete provádět následující úlohy:  
+ V tomto podrobném návodu můžete provádět následující úlohy:  
   
--   Vytvoření aplikace Windows Forms a použít v Návrháři projektu sady Visual Studio k povolení a konfigurace klientských aplikačních služeb.  
+-   Vytvoření aplikace modelu Windows Forms a použití Návrháře projektu sady Visual Studio k povolení a konfigurace klientských aplikačních služeb.  
   
--   Vytvořte jednoduchou aplikaci webové služby ASP.NET pro hostování aplikačních služeb a otestovat vaši konfiguraci klienta.  
+-   Vytvoření jednoduché aplikace webové služby ASP.NET pro hostování aplikačních služeb a testování konfigurace klienta.  
   
--   Přidáte ověřování pomocí formulářů do vaší aplikace. Začněte s použitím pevně uživatelské jméno a heslo k testování služby. Potom přidáte přihlašovací formulář zadáním jako poskytovatel pověření v konfiguraci vaší aplikace.  
+-   Přidání ověřování pomocí formulářů pro aplikaci. Začněte s použitím pevně zakódované uživatelské jméno a heslo k otestování služby. Potom přidáte přihlašovací formulář tak, že zadáte jako přihlašovací údaje poskytovatele v konfiguraci vaší aplikace.  
   
--   Přidáte funkce, které mezi sebou na základě rolí, povolení a zobrazení tlačítka pouze pro uživatele v roli "manager".  
+-   Doplňují na základě rolí, povolení a zobrazení tlačítka pouze pro uživatele v roli "správce".  
   
--   Nastavení webového přístupu. Spustí načtením webové nastavení pro uživatele ověřeného (testovací) na **nastavení** stránky v Návrháři projektu. Návrhář formulářů Windows pak bude používat pro vazbu v textovém poli na webové nastavení. Nakonec se uložit upravený hodnota zpět na server.  
+-   Nastavení webového přístupu. Začnete načtením nastavení webu pro uživatele ověřeného (testovací) na **nastavení** stránky Návrháře projektu. Návrhář formulářů Windows pak bude používat k vytvoření vazby textové pole webovém nastavení. Nakonec se uloží upravené hodnoty se serverem.  
   
--   Implementujte odhlášení. Možnost odhlášení přidáte do formuláře a volání metody odhlášení.  
+-   Implementace odhlašování. Možnost odhlásit přidáte do formuláře a volání metody pro odhlášení.  
   
--   Povolte režim offline. Zaškrtávací políčko bude poskytovat, takže uživatelé mohou určit jejich stav připojení. Tato hodnota je pak použije k určení, zda poskytovatelů služeb aplikací klienta bude používat data místně uložená v mezipaměti ne přístup své webové služby. Když se aplikace vrátí do režimu online nakonec budou ověřovat znovu aktuálního uživatele.  
+-   Povolte režim offline. Zaškrtávací políčko bude poskytovat tak, aby uživatelé můžou zadat jejich stav připojení. Pak použijete tuto hodnotu určující, zda poskytovatelů služeb aplikací klienta bude dat místně uložených v mezipaměti namísto přístup ke své webové služby. Když se aplikace vrátí do režimu online nakonec bude ověřovat znovu aktuálního uživatele.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Následující součást k dokončení tohoto názorného postupu potřebujete:  
+ Budete potřebovat následující komponenty k dokončení tohoto návodu:  
   
 -   [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)].  
   
 ## <a name="creating-the-client-application"></a>Vytvoření klientské aplikace  
- První věc, kterou provedete je vytvoření projektu modelu Windows Forms. Tento návod používá Windows Forms, protože se seznámíte s ji další osoby, ale proces je podobný pro projekty Windows Presentation Foundation (WPF).  
+ První věc, která bude provádět, je vytvoření projektu Windows Forms. Tento návod používá Windows Forms, protože se seznámíte s ním více lidí, ale proces se podobá pro projekty Windows Presentation Foundation (WPF).  
   
 #### <a name="to-create-a-client-application-and-enable-client-application-services"></a>Vytvořit klientskou aplikaci a povolit klientské aplikační služby  
   
-1.  V sadě Visual Studio, vyberte **soubor &#124; nový &#124; projektu** možnost nabídky.  
+1.  V sadě Visual Studio, vyberte **souboru &#124; nový &#124; projektu** nabídky.  
   
-2.  V **nový projekt** v dialogovém **typy projektů** podokně rozbalte **jazyka Visual Basic** nebo **Visual C#** uzel a vyberte možnost **Windows** typ projektu.  
+2.  V **nový projekt** v dialogu **typy projektů** podokně rozbalte **jazyka Visual Basic** nebo **Visual C#** uzel a vyberte **Windows** typ projektu.  
   
-3.  Ujistěte se, že **rozhraní .NET Framework 3.5** vybrané, a pak vyberte možnost **formulářové aplikace Windows** šablony.  
+3.  Ujistěte se, že **rozhraní .NET Framework 3.5** je vybrané a pak vyberte **formulářová aplikace Windows** šablony.  
   
-4.  Změnit projekt **název** k `ClientAppServicesDemo`a potom klikněte na **OK**.  
+4.  Změnit projekt **název** k `ClientAppServicesDemo`a potom klikněte na tlačítko **OK**.  
   
      Nový projekt Windows Forms je otevřen v sadě Visual Studio.  
   
 5.  Na **projektu** nabídce vyberte možnost **ClientAppServicesDemo vlastnosti**.  
   
-     Návrhář projektu se zobrazí.  
+     Zobrazí se Návrhář projektu.  
   
-6.  Na **služby** vyberte **povolit klientské aplikační služby**.  
+6.  Na **služby** kartu, vyberte možnost **povolit klientské aplikační služby**.  
   
-7.  Ujistěte se, že **ověřování pomocí formulářů** nebude vybrána a poté nastavte **umístění služby ověřování**, **role služby umístění**, a **nastavení webu umístění služby** k `http://localhost:55555/AppServices`.  
+7.  Ujistěte se, že **použít ověřování pomocí formulářů** nebude vybrána a potom nastavte **umístění služby ověřování**, **umístění služby role**, a **nastavení webu umístění služby** k `http://localhost:55555/AppServices`.  
   
-8.  V jazyce Visual Basic na **aplikace** nastavte **režim ověřování** k **definované aplikací**.  
+8.  V jazyce Visual Basic na **aplikace** kartu, nastavte **režim ověřování** k **definovaného aplikací**.  
   
- Návrháře ukládá nastavení zadané v souboru app.config aplikace.  
+ Návrhář ukládá zadané nastavení v souboru app.config aplikace.  
   
- V tomto okamžiku je aplikace nakonfigurovaná pro přístup k všechny tři služby ze stejného hostitele. V další části bude vytvořit hostitele jako jednoduchý aplikaci webové služby, umožňuje otestovat vaši konfiguraci klienta.  
+ V tomto okamžiku aplikace je nakonfigurovaná pro přístup k všechny tři služby od stejného hostitele. V další části bude vytvoření hostitele jako jednoduchou aplikaci webové služby, umožňuje testování konfigurace klienta.  
   
-## <a name="creating-the-application-services-host"></a>Vytváření hostitel aplikačních služeb  
- V této části vytvoříte jednoduchou aplikaci webové služby, která přistupuje k datům uživatele z místního souboru databáze systému SQL Server Compact. Potom bude naplnit databázi pomocí [nástroj Správa webu ASP.NET](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec). Tato jednoduchá konfigurace umožňuje rychle otestovat klientské aplikace. Jako alternativu, můžete nakonfigurovat hostitele webové služby pro přístup k datům uživatele z úplné databáze systému SQL Server nebo prostřednictvím vlastní <xref:System.Web.Security.MembershipProvider> a <xref:System.Web.Security.RoleProvider> třídy. Další informace najdete v tématu [vytváření a konfiguraci databázi aplikace služby systému SQL Server](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2).  
+## <a name="creating-the-application-services-host"></a>Vytváří se hostitel aplikačních služeb  
+ V této části vytvoříte jednoduchou webovou aplikaci služby, která přistupuje k datům uživatelů ze souboru místní databáze SQL Server Compact. Potom, naplníte databázi pomocí [nástroje pro správu webu technologie ASP.NET](https://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec). Tato jednoduchá konfigurace můžete rychle otestovat klientskou aplikaci. Jako alternativu můžete nakonfigurovat hostitele webové služby pro přístup k datům uživatelů z celé databáze SQL serveru nebo prostřednictvím vlastní <xref:System.Web.Security.MembershipProvider> a <xref:System.Web.Security.RoleProvider> třídy. Další informace najdete v tématu [vytváření a konfiguraci této databáze systému SQL Server](https://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2).  
   
- V následujícím postupu vytvoříte a konfigurace aplikační služby webové služby.  
+ V následujícím postupu vytvoříte a nakonfigurujete AppServices webové služby.  
   
-#### <a name="to-create-and-configure-the-application-services-host"></a>Vytvořit a nakonfigurovat hostitel aplikačních služeb  
+#### <a name="to-create-and-configure-the-application-services-host"></a>Vytvoření a konfigurace hostitele služby aplikace  
   
-1.  V **Průzkumníku řešení**, vyberte ClientAppServicesDemo řešení a pak na **soubor** nabídce vyberte možnost **přidat &#124; nový projekt**.  
+1.  V **Průzkumníka řešení**, vyberte ClientAppServicesDemo řešení a pak na **souboru** nabídce vyberte možnost **přidat &#124; nový projekt**.  
   
-2.  V **přidat nový projekt** dialogovém **typy projektů** podokně rozbalte položku **jazyka Visual Basic** nebo **Visual C#** uzel a vyberte možnost  **Webové** typ projektu.  
+2.  V **přidat nový projekt** v dialogu **typy projektů** podokně rozbalte **jazyka Visual Basic** nebo **Visual C#** uzel a vyberte  **Web** typ projektu.  
   
-3.  Ujistěte se, že **rozhraní .NET Framework 3.5** vybrané, a pak vyberte možnost **aplikaci webové služby ASP.NET** šablony.  
+3.  Ujistěte se, že **rozhraní .NET Framework 3.5** je vybrané a pak vyberte **aplikaci webové služby ASP.NET** šablony.  
   
-4.  Změnit projekt **název** k `AppServices` a pak klikněte na **OK**.  
+4.  Změnit projekt **název** k `AppServices` a potom klikněte na tlačítko **OK**.  
   
-     Nový projekt aplikace ASP.NET – webové služby je k řešení přidat, a soubor Service1.asmx.vb nebo Service1.asmx.cs se zobrazí v editoru.  
+     Přidání nového projektu ASP.NET webové aplikace služby k řešení a Service1.asmx.vb nebo Service1.asmx.cs souboru se zobrazí v editoru.  
   
     > [!NOTE]
-    >  V tomto příkladu se nepoužívá soubor Service1.asmx.vb nebo Service1.asmx.cs. Pokud chcete zachovat prostředí pracovní přeplněná, můžete ji uzavřít a odstranit ze **Průzkumníku řešení**.  
+    >  V tomto příkladu se nepoužívá soubor Service1.asmx.vb nebo Service1.asmx.cs. Pokud chcete zachovat nezahlcený pracovní prostředí, můžete jej zavřete a odstraňte ho z **Průzkumníka řešení**.  
   
-5.  V **Průzkumníku řešení**, vyberte projekt aplikační služby a pak na **projektu** nabídce vyberte možnost **aplikační služby vlastnosti**.  
+5.  V **Průzkumníka řešení**, vyberte projekt, aplikační služby a pak na **projektu** nabídce vyberte možnost **AppServices vlastnosti**.  
   
-     Návrhář projektu se zobrazí.  
+     Zobrazí se Návrhář projektu.  
   
-6.  Na **webové** kartě, ujistěte se, že **použít Vývojový Server sady Visual Studio** je vybrána.  
+6.  Na **webové** kartu, ujistěte se, že **použít Vývojový Server sady Visual Studio** zaškrtnuto.  
   
-7.  Vyberte **specifického portu**, zadejte hodnotu `55555`a poté nastavte **virtuální cesta** k `/AppServices`.  
+7.  Vyberte **specifického portu**, zadejte hodnotu `55555`a potom nastavte **virtuální cestu** k `/AppServices`.  
   
 8.  Uložte všechny soubory.  
   
-9. V **Průzkumníku řešení**, otevřete soubor Web.config a vyhledávat `<system.web>` počáteční značce.  
+9. V **Průzkumníka řešení**, otevřete soubor Web.config a najít `<system.web>` počáteční značku.  
   
-10. Přidejte následující značku před `<system.web>` značky.  
+10. Přidejte následující kód před `<system.web>` značky.  
   
-     `authenticationService`, `profileService`, A `roleService` elementů v této značek povolení a konfigurace aplikačních služeb. Při testování, `requireSSL` atribut `authenticationService` element je nastaven na hodnotu "false". `readAccessProperties` a `writeAccessProperties` atributy `profileService` element označuje, že `WebSettingsTestText` vlastnost je pro čtení a zápis.  
+     `authenticationService`, `profileService`, A `roleService` prvky v tomto kódu povolte a nakonfigurujte aplikační služby. Pro testovací účely, `requireSSL` atribut `authenticationService` prvek je nastaven na hodnotu "false". `readAccessProperties` a `writeAccessProperties` atributy `profileService` element označuje, že `WebSettingsTestText` vlastnost je pro čtení a zápisu.  
   
     > [!NOTE]
-    >  V produkčním kódu by měla vždycky přístup ke službě ověřování, přes secure sockets layer (SSL přes protokol HTTPS). Informace o tom, jak nastavení protokolu SSL najdete v tématu [konfigurace Secure Sockets Layer (provozní příručce služby IIS 6.0)](http://go.microsoft.com/fwlink/?LinkId=91844).  
+    >  V produkčním kódu by měla vždy přístup k ověřovací službě, přes secure sockets layer (SSL, pomocí protokolu HTTPS). Informace o tom, jak nastavení protokolu SSL najdete v tématu [konfigurace Secure Sockets Layer (provozní příručce služby IIS 6.0)](https://go.microsoft.com/fwlink/?LinkId=91844).  
   
     ```xml  
     <system.web.extensions>  
@@ -120,9 +121,9 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
     </system.web.extensions>  
     ```  
   
-11. Přidejte následující kód po `<system.web>` počáteční značce tak, aby se v rámci `<system.web>` elementu.  
+11. Přidejte následující kód za `<system.web>` tak, aby se v počáteční značce `<system.web>` elementu.  
   
-     `profile` Element nakonfiguruje jednom webovém nastavení s názvem `WebSettingsTestText`.  
+     `profile` Element konfiguruje jedné webové nastavení s názvem `WebSettingsTestText`.  
   
     ```xml  
     <profile enabled="true" >  
@@ -134,23 +135,23 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
     </profile>  
     ```  
   
- V následujícím postupu použijete nástroj Správa webu ASP.NET k dokončení konfigurace služby a naplnit místní databázový soubor. Přidá dva uživatele s názvem `employee` a `manager` patřící do dvou rolí se stejnými názvy. Uživatelská hesla jsou `employee!` a `manager!` v uvedeném pořadí.  
+ V následujícím postupu používají nástroje pro správu webu technologie ASP.NET k dokončení konfigurace služby a naplnit lokálního databázového souboru. Přidejte dva uživatele s názvem `employee` a `manager` patřící do dvě role se stejnými názvy. Hesla uživatelů se `employee!` a `manager!` v uvedeném pořadí.  
   
 #### <a name="to-configure-membership-and-roles"></a>Ke konfiguraci členství a rolí  
   
-1.  V **Průzkumníku řešení**, vyberte projekt aplikační služby a pak na **projektu** nabídce vyberte možnost **konfigurace ASP.NET**.  
+1.  V **Průzkumníka řešení**, vyberte projekt, aplikační služby a pak na **projektu** nabídce vyberte možnost **konfigurace ASP.NET**.  
   
-     **Nástroj Správa webu ASP.NET** se zobrazí.  
+     **Nástroje pro správu webu technologie ASP.NET** se zobrazí.  
   
-2.  Na **zabezpečení** , klikněte na **použít Průvodce nastavením zabezpečení ke konfiguraci zabezpečení krok za krokem**.  
+2.  Na **zabezpečení** klikněte na tlačítko **pomocí Průvodce nastavením zabezpečení můžete nakonfigurovat zabezpečení krok za krokem**.  
   
-     **Průvodce nastavením zabezpečení** zobrazí se **úvodní** krok.  
+     **Průvodce nastavením zabezpečení** se zobrazí **úvodní** kroku.  
   
 3.  Klikněte na tlačítko **Další**.  
   
      **Vyberte metodu přístupu** zobrazí krok.  
   
-4.  Vyberte **z Internetu**. Tím se nakonfiguruje službu pro použití ověřování pomocí formulářů místo ověřování systému Windows.  
+4.  Vyberte **z Internetu**. Tím se nakonfiguruje službu, aby používala ověřování pomocí formulářů místo ověřování Windows.  
   
 5.  Klikněte na tlačítko **Další** dvakrát.  
   
@@ -160,11 +161,11 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
 7.  Klikněte na tlačítko **Další**. **Vytvořit novou roli** se zobrazil formulář.  
   
-8.  V **nový název Role** textového pole, typ `manager` a pak klikněte na **přidat roli**.  
+8.  V **nový název Role** textového pole, typ `manager` a potom klikněte na tlačítko **přidat roli**.  
   
-     **Existující role** tabulky se zobrazí se zadanou hodnotou.  
+     **Existující role** se zobrazí tabulka se zadanou hodnotou.  
   
-9. V **nový název Role** textového pole, nahraďte `manager` s `employee` a pak klikněte na **přidat roli**.  
+9. V **nový název Role** textového pole nahraďte `manager` s `employee` a potom klikněte na tlačítko **přidat roli**.  
   
      Nová hodnota se zobrazí v **existující role** tabulky.  
   
@@ -172,152 +173,152 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
      **Přidat nové uživatele** zobrazí krok.  
   
-11. V **vytvořit uživatele** formuláři, zadejte následující hodnoty.  
+11. V **vytvořit uživatele** formulářů, zadejte následující hodnoty.  
   
   	|||  
   	|-|-|  
   	|**Uživatelské jméno**|`manager`|  
   	|**Heslo**|`manager!`|  
   	|**Potvrzení hesla**|`manager!`|  
-  	|**E-mailu**|`manager@contoso.com`|  
+  	|**E-mail**|`manager@contoso.com`|  
   	|**Bezpečnostní otázku**|`manager`|  
-  	|**Zabezpečení odpovědí**|`manager`|  
+  	|**Zabezpečovací odpověď**|`manager`|  
   
 12. Klikněte na tlačítko **vytvořit uživatele**.  
   
-     Zobrazí se zpráva o úspěšném provedení.  
+     Zobrazí se zpráva o úspěchu.  
   
     > [!NOTE]
-    >  **E-mailu**, **bezpečnostní otázku**, a **bezpečnostní otázce** hodnoty jsou vyžadované formuláře, ale není použit v tomto příkladu.  
+    >  **E-mailu**, **bezpečnostní otázku**, a **zabezpečovací odpověď** hodnoty jsou vyžadované formuláře, ale nepoužívají se v tomto příkladu.  
   
 13. Klikněte na tlačítko **pokračovat**.  
   
-     **Vytvořit uživatele** formuláři se bude zobrazovat.  
+     **Vytvořit uživatele** formuláře zobrazí znovu.  
   
-14. V **vytvořit uživatele** formuláři, zadejte následující hodnoty.  
+14. V **vytvořit uživatele** formulářů, zadejte následující hodnoty.  
   
   	|||  
   	|-|-|  
   	|**Uživatelské jméno**|`employee`|  
   	|**Heslo**|`employee!`|  
   	|**Potvrzení hesla**|`employee!`|  
-  	|**E-mailu**|`employee@contoso.com`|  
+  	|**E-mail**|`employee@contoso.com`|  
   	|**Bezpečnostní otázku**|`Employee`|  
-  	|**Zabezpečení odpovědí**|`employee`|  
+  	|**Zabezpečovací odpověď**|`employee`|  
   
 15. Klikněte na tlačítko **vytvořit uživatele**.  
   
-     Zobrazí se zpráva o úspěšném provedení.  
+     Zobrazí se zpráva o úspěchu.  
   
 16. Klikněte na tlačítko **Dokončit**.  
   
-     **Nástroj Správa webu** se znovu zobrazí.  
+     **Nástroje pro správu webu** se znovu zobrazí.  
   
-17. Klikněte na tlačítko **uživatele správce**.  
+17. Klikněte na tlačítko **uživatelé správce**.  
   
      Zobrazí se seznam uživatelů.  
   
-18. Klikněte na tlačítko **upravit role** pro **zaměstnanec** uživatele a potom vyberte **zaměstnanec** role.  
+18. Klikněte na tlačítko **upravit role** pro **zaměstnance** uživatele a pak vyberte **zaměstnance** role.  
   
-19. Klikněte na tlačítko **upravit role** pro **manager** uživatele a potom vyberte **manager** role.  
+19. Klikněte na tlačítko **upravit role** pro **správce** uživatele a pak vyberte **správce** role.  
   
-20. Zavřete okno prohlížeče, který je hostitelem **nástroj Správa webu**.  
+20. Zavřete okno prohlížeče, který je hostitelem **nástroje pro správu webu**.  
   
-21. Pokud se zobrazí okno s výzvou, pokud chcete znovu načíst změněný soubor Web.config, klikněte na **Ano**.  
+21. Pokud se zobrazí okno se zprávou, s výzvou, pokud chcete znovu načíst upravené souboru Web.config, klikněte na tlačítko **Ano**.  
   
- Tím se dokončí instalace webové služby. V tomto okamžiku můžete stisknutím klávesy F5 spusťte klientské aplikace a **vývojový Server ASP.NET** se automaticky spustí společně s klientskou aplikaci. Server bude nadále spouštět po ukončení aplikace, ale se restartuje po restartování aplikace. To umožňuje zjistit všechny změny, které jste provedli do souboru Web.config.  
+ Tím dokončíte nastavení webové služby. V tomto okamžiku můžete stisknutím klávesy F5 spusťte aplikaci klienta a **serveru ASP.NET Development Server** začne automaticky spolu s klientské aplikace. Server bude nadále spuštěna po ukončení aplikace, ale restartuje po restartování aplikace. Umožní vám to zjistit všechny změny provedené do souboru Web.config.  
   
- K zastavení serveru ručně, klikněte pravým tlačítkem na ikonu vývojový Server ASP.NET v oznamovací oblasti na hlavním panelu a pak klikněte na **Zastavit**. To je užitečné příležitostně, abyste měli jistotu, že dojde k vyčištění restartování.  
+ Pokud chcete zastavit server ručně, klikněte pravým tlačítkem na serveru ASP.NET Development Server ikonu v oznamovací oblasti na hlavním panelu a potom klikněte na **Zastavit**. To je užitečné a ujistěte se, že dojde k vyčištění restartování.  
   
 ## <a name="adding-forms-authentication"></a>Přidání ověřování pomocí formulářů  
- V následujícím postupu přidat kód pro hlavní formulář, který pokusí ověřit uživatele a odmítne přístup, když uživatel zadá neplatné přihlašovací údaje. Použijete pevně uživatelské jméno a heslo k testování služby.  
+ V následujícím postupu přidáte kód do hlavního formuláře, který se pokusí ověřit uživatele a odepře přístup, když uživatel zadá přihlašovací údaje neplatné. Použití pevně zakódované uživatelské jméno a heslo k otestování služby.  
   
 #### <a name="to-validate-the-user-in-your-application-code"></a>K ověření uživatele v kódu aplikace  
   
-1.  V **Průzkumníku**, v projektu ClientAppServicesDemo přidat odkaz na sestavení System.Web.  
+1.  V **Průzkumníka řešení**, ClientAppServicesDemo projektu přidejte odkaz na sestavení System.Web.  
   
-2.  Vyberte soubor Form1 a pak vyberte **zobrazení &#124; kód** z hlavní nabídky Visual Studio.  
+2.  Vyberte soubor Form1 a pak vyberte **zobrazení &#124; kód** z hlavní nabídky sady Visual Studio.  
   
-3.  V editoru kódu přidejte na začátek souboru Form1 následující příkazy.  
+3.  V editoru kódu přidejte následující příkazy do horní části souboru Form1.  
   
      [!code-csharp[ClientApplicationServices#001](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#001)]
      [!code-vb[ClientApplicationServices#001](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#001)]  
   
-4.  V **Průzkumníku**, dvakrát klikněte na Form1 zobrazíte návrháře.  
+4.  V **Průzkumníka řešení**, dvakrát klikněte na panel Form1 k zobrazení návrháře.  
   
-5.  V návrháři, klikněte dvakrát na formulář prostor pro generování <xref:System.Windows.Forms.Form.Load?displayProperty=nameWithType> obslužné rutiny události s názvem `Form1_Load`.  
+5.  V Návrháři dvakrát klikněte na plochu formuláře ke generování <xref:System.Windows.Forms.Form.Load?displayProperty=nameWithType> obslužné rutiny události s názvem `Form1_Load`.  
   
-     Editor kódu se zobrazí s kurzorem `Form1_Load` metoda.  
+     Zobrazí se editor kódu s kurzorem `Form1_Load` metody.  
   
-6.  Přidejte následující kód, který `Form1_Load` metoda.  
+6.  Přidejte následující kód, který `Form1_Load` metody.  
   
-     Tento kód odepře přístup k neověřeným uživatelům ukončením aplikace. Alternativně může povolit přístup k formuláři neověřené uživatele, ale odepřít přístup k určité funkce. Za normálních okolností vám není pevný kódu uživatelské jméno a heslo jako to, ale je užitečná pro účely testování. V další části bude tento kód nahraďte robustnější kód, který se zobrazí dialogové okno přihlášení a obsahuje zpracování výjimek.  
+     Tento kód odepře přístup pro neověřené uživatele ukončením aplikace. Alternativně může povolit neověřené uživatele přístup do formuláře, ale odepřít přístup k určité funkce. Za normálních okolností je není pevně zakódovat uživatelské jméno a heslo tímto způsobem, ale je vhodný pro účely testování. V další části bude tento kód nahraďte robustnější kód, který se zobrazí dialogové okno přihlášení a obsahuje zpracování výjimek.  
   
-     Všimněte si, že `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> metoda je [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)]. Tato metoda provede delegaci svou práci pro zprostředkovatele nakonfigurované ověřování a vrátí `true` Pokud je ověření úspěšné. Vaše aplikace nevyžaduje přímý odkaz na zprostředkovatele ověřování klienta.  
+     Všimněte si, že `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> metoda je [!INCLUDE[dnprdnext](../../../includes/dnprdnext-md.md)]. Tato metoda deleguje se do poskytovatele nakonfigurované ověřování svou práci a vrátí `true` Pokud je ověřování úspěšné. Vaše aplikace nevyžaduje, aby přímý odkaz na zprostředkovatele ověřování klienta.  
   
      [!code-csharp[ClientApplicationServices#300](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#300)]
      [!code-vb[ClientApplicationServices#300](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#300)]  
   
- Nyní stisknutím klávesy F5 spusťte aplikaci a vzhledem k tomu, že zadáte správné uživatelské jméno a heslo, uvidíte formulář.  
+ Nyní můžete stisknutím klávesy F5 spusťte aplikaci a protože je zadat správné uživatelské jméno a heslo, zobrazí se formulář.  
   
 > [!NOTE]
->  Pokud není možné aplikaci spustit, zkuste zastavení vývojový Server ASP.NET. Po restartování serveru, ověřte, že port je nastavena na 55555.  
+>  Pokud se nemůžete ke spuštění aplikace, zkuste zastavení serveru ASP.NET Development Server. Po restartování serveru, ověřte, zda je port nastaven na 55555.  
   
- Chcete-li místo toho zobrazí chybová zpráva, změňte <xref:System.Web.Security.Membership.ValidateUser%2A> parametry. Například nahradit druhý `"manager!"` jako parametr s nesprávné heslo `"MANAGER"`.  
+ Chcete-li místo toho zobrazí chybová zpráva, změňte <xref:System.Web.Security.Membership.ValidateUser%2A> parametry. Například nahradit druhý `"manager!"` parametr nesprávné heslo, jako jsou `"MANAGER"`.  
   
-## <a name="adding-a-login-form-as-a-credentials-provider"></a>Přidání přihlašovacího formuláře jako poskytovatel pověření  
- Můžete získat přihlašovací údaje uživatele v kódu aplikace a jejich předání <xref:System.Web.Security.Membership.ValidateUser%2A> metoda. Často je však vhodné ponechat kódu získávání přihlašovací údaje odděleně od kódu aplikace, v případě, že chcete později změnit.  
+## <a name="adding-a-login-form-as-a-credentials-provider"></a>Přidání přihlašovacího formuláře jako poskytovatele přihlašovacích údajů  
+ Můžete získat přihlašovací údaje uživatele v kódu aplikace a předat je do <xref:System.Web.Security.Membership.ValidateUser%2A> metody. Často je však vhodné ponechat kódu získávání přihlašovacích údajů v případě, že chcete změnit později odděleně od kódu aplikace.  
   
- V následujícím postupu nakonfigurujete aplikace použijte přihlašovací údaje poskytovatele a potom změňte vaše <xref:System.Web.Security.Membership.ValidateUser%2A> volání metody předat <xref:System.String.Empty> pro oba parametry. Signal – prázdné řetězce <xref:System.Web.Security.Membership.ValidateUser%2A> metoda k volání <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> metoda zprostředkovatele nakonfigurovali přihlašovací údaje.  
+ V následujícím postupu, je konfigurace aplikace pro používání poskytovatele přihlašovacích údajů a potom změňte vaše <xref:System.Web.Security.Membership.ValidateUser%2A> volání metody k předání <xref:System.String.Empty> pro oba parametry. Prázdné řetězce signalizuje, že <xref:System.Web.Security.Membership.ValidateUser%2A> metoda se má volat <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> metoda poskytovatele nakonfigurované přihlašovací údaje.  
   
-#### <a name="to-configure-your-application-to-use-a-credentials-provider"></a>Ke konfiguraci vaší aplikace pro použití poskytovatele přihlašovacích údajů  
+#### <a name="to-configure-your-application-to-use-a-credentials-provider"></a>Konfigurace aplikace pro používání poskytovatele přihlašovacích údajů  
   
-1.  V **Průzkumníku řešení**, vyberte ClientAppServicesDemo projekt a pak na **projektu** nabídce vyberte možnost **ClientAppServicesDemo vlastnosti**.  
+1.  V **Průzkumníka řešení**, vyberte projekt ClientAppServicesDemo a pak na **projektu** nabídce vyberte možnost **ClientAppServicesDemo vlastnosti**.  
   
-     Návrhář projektu se zobrazí.  
+     Zobrazí se Návrhář projektu.  
   
-2.  Na **služby** nastavte **volitelné: Poskytovatel pověření** následující hodnotu. Tato hodnota určuje název sestavení kvalifikovaný typu.  
+2.  Na **služby** kartu, nastavte **volitelné: poskytovatele přihlašovacích údajů** následující hodnotu. Tato hodnota určuje název typu kvalifikovaného pro sestavení.  
   
     ```  
     ClientAppServicesDemo.Login, ClientAppServicesDemo  
     ```  
   
-3.  V souboru Form1, nahraďte kód v `Form1_Load` metoda následujícím kódem.  
+3.  V souboru kódu Form1 nahraďte kód v `Form1_Load` metodu s následujícím kódem.  
   
-     Tento kód zobrazí uvítací zprávu a pak zavolá `ValidateUsingCredentialsProvider` metoda, která přidáte v dalším kroku. Pokud není uživatel ověřen, `ValidateUsingCredentialsProvider` metoda vrátí `false` a `Form1_Load` metoda vrátí. Žádný další kód zabrání spuštění před aplikací ukončí. Zobrazení uvítací zprávy je užitečné, aby bylo jasné, když se aplikace restartuje. Přidáte kód při implementaci odhlášení dále v tomto návodu aplikaci restartovat.  
+     Tento kód zobrazí uvítací zprávu a zavolá `ValidateUsingCredentialsProvider` metodu, která se v dalším kroku přidáte. Pokud uživatel není ověřen, `ValidateUsingCredentialsProvider` vrátí metoda `false` a `Form1_Load` metoda vrátí hodnotu. To žádný další kód zabraňuje spuštění před aplikací ukončí. Zobrazení uvítací zprávy je užitečné, aby bylo jasné, když se aplikace restartuje. Přidejte kód k restartování aplikace při implementaci odhlášení později v tomto názorném postupu.  
   
      [!code-csharp[ClientApplicationServices#011](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#011)]
      [!code-vb[ClientApplicationServices#011](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#011)]  
   
-4.  Přidejte následující metodu po `Form1_Load` metoda.  
+4.  Přidejte následující metodu po `Form1_Load` metody.  
   
-     Tato metoda předá prázdné řetězce `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> metoda, což způsobí, že se objeví dialogové okno přihlásit. Pokud není k dispozici, službu ověřování <xref:System.Web.Security.Membership.ValidateUser%2A> vyvolá metoda výjimku <xref:System.Net.WebException>. V takovém případě `ValidateUsingCredentialsProvider` metoda zobrazí zprávu upozornění a požádá, pokud uživatel chce a zkuste to znovu v režimu offline. Tato funkce vyžaduje **uložit hodnoty hash hesla místně pro povolení offline přihlášení** funkce popsané v [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md). Tato funkce je povolená ve výchozím nastavení pro nové projekty.  
+     Tato metoda předává na prázdné řetězce `static` <xref:System.Web.Security.Membership.ValidateUser%2A?displayProperty=nameWithType> metodu, která způsobí, že dialogové okno přihlášení se zobrazí. Pokud není k dispozici, službu ověřování <xref:System.Web.Security.Membership.ValidateUser%2A> vyvolá metoda výjimku <xref:System.Net.WebException>. V takovém případě `ValidateUsingCredentialsProvider` metoda zobrazí zprávu s upozorněním a požádá, pokud chce uživatel v režimu offline, zkuste to znovu. Tato funkce vyžaduje **uložit hodnoty hash hesla místně umožňující přihlášení offline** funkce popsané v [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md). Tato funkce je povolena ve výchozím nastavení pro nové projekty.  
   
-     Pokud uživatel není ověřen, `ValidateUsingCredentialsProvider` metoda zobrazí chybovou zprávu a ukončí aplikaci. Nakonec tato metoda vrací výsledek pokusu o ověření.  
+     Pokud uživatel není ověřen, `ValidateUsingCredentialsProvider` metoda zobrazí chybovou zprávu a ukončí aplikaci. A konečně tato metoda vrací výsledek pokusu o ověření.  
   
      [!code-csharp[ClientApplicationServices#020](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#020)]
      [!code-vb[ClientApplicationServices#020](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#020)]  
   
-### <a name="creating-a-login-form"></a>Vytváření přihlašovací formulář  
- Přihlašovací údaje poskytovatele je třída, která implementuje <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider> rozhraní. Toto rozhraní obsahuje jedinou metodu s názvem <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> , který vrací <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials> objektu. Následující postupy popisují, jak vytvořit dialogové okno přihlášení, který implementuje <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> zobrazení samotného a vrátíte se přihlašovací údaje zadané uživatelem.  
+### <a name="creating-a-login-form"></a>Vytváří se přihlašovací formulář  
+ Poskytovatel přihlašovacích údajů je třída, která implementuje <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider> rozhraní. Toto rozhraní obsahuje jedinou metodu s názvem <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> , která vrací <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationCredentials> objektu. Následující postupy popisují, jak vytvořit dialogové okno přihlášení, které implementuje <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> zobrazení samotného a vrátíte se přihlašovací údaje zadané uživatelem.  
   
- Jsou uvedené samostatné postupy pro Visual Basic a C#, protože poskytuje jazyka Visual Basic **přihlašovací formulář** šablony. To umožňuje ušetřit nějaký čas a úsilí kódování.  
+ Samostatné procedury jsou uvedeny pro Visual Basic a C#, protože poskytuje jazyka Visual Basic **přihlašovací formulář** šablony. Toto uloží nějaký čas a úsilí kódování.  
   
 ##### <a name="to-create-a-login-dialog-box-as-a-credentials-provider-in-visual-basic"></a>Chcete-li vytvořit dialogové okno přihlášení jako poskytovatel pověření v jazyce Visual Basic  
   
-1.  V **Průzkumníku řešení**, vyberte ClientAppServicesDemo projekt a pak na **projektu** nabídce vyberte možnost **přidat novou položku**.  
+1.  V **Průzkumníka řešení**, vyberte projekt ClientAppServicesDemo a pak na **projektu** nabídce vyberte možnost **přidat novou položku**.  
   
-2.  V **přidat novou položku** dialogové okno, vyberte **přihlašovací formulář** šablony, změňte položku **název** k `Login.vb`a potom klikněte na **přidat** .  
+2.  V **přidat novou položku** dialogové okno, vyberte **přihlašovací formulář** šablony, změně položky **název** k `Login.vb`a potom klikněte na tlačítko **přidat** .  
   
-     Dialogové okno přihlášení se zobrazí v Návrháři formulářů Windows.  
+     Zobrazí se dialogové okno přihlášení v Návrháři formulářů Windows.  
   
-3.  V návrháři, vyberte **OK** tlačítko a pak na **vlastnosti** nastavte `DialogResult` k `OK`.  
+3.  V návrháři, vyberte **OK** tlačítko a pak na **vlastnosti** okno, nastavte `DialogResult` k `OK`.  
   
-4.  V návrháři, přidejte `CheckBox` ovládacího prvku formuláře v části **heslo** textové pole.  
+4.  V návrháři, přidejte `CheckBox` ovládacího prvku na formulář v části **heslo** textového pole.  
   
 5.  V **vlastnosti** okno, zadejte **(název)** hodnotu `rememberMeCheckBox` a **Text** hodnotu `&Remember me`.  
   
-6.  Vyberte **zobrazení &#124; kód** z hlavní nabídky Visual Studio.  
+6.  Vyberte **zobrazení &#124; kód** z hlavní nabídky sady Visual Studio.  
   
 7.  V editoru kódu přidejte následující kód do horní části souboru.  
   
@@ -327,41 +328,41 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   
      [!code-vb[ClientApplicationServices#110](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#110)]  
   
-9. Ujistěte se, že kurzor je po `IClientformsAuthenticationCredentialsProvider`, a stiskněte klávesu ENTER pro generování `GetCredentials` metoda.  
+9. Ujistěte se, že je kurzor po `IClientformsAuthenticationCredentialsProvider`, a potom stiskněte klávesu ENTER k vygenerování `GetCredentials` metody.  
   
-10. Vyhledejte <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> implementace a nahraďte ji následujícím kódem.  
+10. Vyhledejte <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> implementace a nahraďte ho následujícím kódem.  
   
      [!code-vb[ClientApplicationServices#120](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Login.vb#120)]  
   
- Následující postup C# poskytuje celý kód výpis pro dialogové okno jednoduchého přihlášení. Rozložení pro tohoto dialogového okna je trochu hrubých, ale je důležitou součástí <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> implementace.  
+ Následující postup C# obsahuje celý kód pro dialogové okno jednoduchého přihlášení. Rozložení pro toto dialogové okno je trochu hrubý, ale je důležitou součástí <xref:System.Web.ClientServices.Providers.IClientFormsAuthenticationCredentialsProvider.GetCredentials%2A> implementace.  
   
 ##### <a name="to-create-a-login-dialog-box-as-a-credentials-provider-in-c"></a>Chcete-li vytvořit dialogové okno přihlášení jako poskytovatel pověření v jazyce C#  
   
-1.  V **Průzkumníku řešení**, vyberte ClientAppServicesDemo projekt a pak na **projektu** nabídce vyberte možnost **přidat třídu**.  
+1.  V **Průzkumníka řešení**, vyberte projekt ClientAppServicesDemo a pak na **projektu** nabídce vyberte možnost **přidat třídu**.  
   
-2.  V **přidat novou položku** dialogové okno, změny **název** k `Login.cs`a potom klikněte na **přidat**.  
+2.  V **přidat novou položku** dialogovém okně Změnit **název** k `Login.cs`a potom klikněte na tlačítko **přidat**.  
   
      Login.cs soubor se otevře v editoru kódu.  
   
-3.  Ve výchozím kódu nahraďte následujícím kódem.  
+3.  Nahraďte kód následujícím kódem.  
   
      [!code-csharp[ClientApplicationServices#200](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Login.cs#200)]  
   
- Teď můžete aplikaci spustit a zobrazit dialogové okno přihlášení zobrazí. Pokud chcete vyzkoušet tento kód, zkuste jiné přihlašovací údaje platné a neplatná a potvrďte, že máte přístup formulář pouze s platné přihlašovací údaje. Platná uživatelská jména jsou `employee` a `manager` s hesly `employee!` a `manager!` v uvedeném pořadí.  
+ Teď můžete aplikaci spustit a zobrazit dialogové okno přihlášení se zobrazí. K otestování tohoto kódu, zkuste jiné přihlašovací údaje platné a platný a potvrďte, že dostanete formuláři pouze pomocí platných přihlašovacích údajů. Jsou platná uživatelská jména `employee` a `manager` s hesly `employee!` a `manager!` v uvedeném pořadí.  
   
 > [!NOTE]
->  Nevybírejte **Zapamatovat uživatele** tohoto bodu nebo nebude možné se přihlásit jako jiný uživatel, dokud neimplementujete odhlášení dále v tomto návodu.  
+>  Nesmí být zvolen **zapamatovat** na tento bod nebo nebudou moct přihlásit jako jiný uživatel, dokud neimplementujete odhlášení později v tomto názorném postupu.  
   
 ## <a name="adding-role-based-functionality"></a>Přidání funkce na základě rolí  
- V následujícím postupu přidání tlačítka do formuláře a zobrazit ji pouze pro uživatele v roli správce.  
+ V následujícím postupu přidání tlačítka do formuláře a zobrazit pouze pro uživatele v roli správce.  
   
 #### <a name="to-change-the-user-interface-based-on-user-role"></a>Chcete-li změnit uživatelského rozhraní na základě role uživatele  
   
-1.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z hlavní nabídky Visual Studio.  
+1.  V **Průzkumníka řešení**, v projektu ClientAppServicesDemo výběr možnosti Form1 a pak vyberte **zobrazení &#124; návrháře** z hlavní nabídky sady Visual Studio.  
   
-2.  V návrháři, přidejte <xref:System.Windows.Forms.Button> ovládacího prvku formuláře z **sada nástrojů**.  
+2.  V návrháři, přidejte <xref:System.Windows.Forms.Button> ovládací prvek formuláře z **nástrojů**.  
   
-3.  V **vlastnosti** nastavte následující vlastnosti pro tlačítko.  
+3.  V **vlastnosti** okno, nastavte u tlačítka následující vlastnosti.  
   
   	|Vlastnost|Hodnota|  
   	|--------------|-----------|  
@@ -369,174 +370,174 @@ Toto téma popisuje postup vytvoření aplikace Windows, která používá klien
   	|**Text**|& úkol Správce úloh|  
   	|**Viditelné**|`False`|  
   
-4.  V editoru kódu pro Form1 přidejte následující kód do konce `Form1_Load` metoda.  
+4.  V editoru kódu pro Form1, přidejte následující kód do konce `Form1_Load` metody.  
   
-     Tento kód zavolá `DisplayButtonForManagerRole` metoda, která přidáte v dalším kroku.  
+     Tento kód volá `DisplayButtonForManagerRole` metodu, která se v dalším kroku přidáte.  
   
      [!code-csharp[ClientApplicationServices#012](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#012)]
      [!code-vb[ClientApplicationServices#012](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#012)]  
   
-5.  Přidejte následující metodu za účelem Form1 třídy.  
+5.  Přidejte následující metodu za účelem třídy Form1.  
   
-     Tato metoda volá <xref:System.Security.Principal.IPrincipal.IsInRole%2A> metodu <xref:System.Security.Principal.IPrincipal> vrácený `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> vlastnost. U aplikací nakonfigurovaný na použití klientských aplikačních služeb, vrátí tato vlastnost <xref:System.Web.ClientServices.ClientRolePrincipal>. Vzhledem k tomu, že tato třída implementuje <xref:System.Security.Principal.IPrincipal> rozhraní, není nutné explicitně na něj odkazovat.  
+     Tato metoda volá <xref:System.Security.Principal.IPrincipal.IsInRole%2A> metodu <xref:System.Security.Principal.IPrincipal> vrácených `static` <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> vlastnost. U aplikací nakonfigurován pro použití klientských aplikačních služeb, vrátí tato vlastnost <xref:System.Web.ClientServices.ClientRolePrincipal>. Protože tato třída implementuje <xref:System.Security.Principal.IPrincipal> rozhraní, není potřeba explicitně odkazovat.  
   
-     Pokud je uživatel v roli "manager" `DisplayButtonForManagerRole` metoda nastaví <xref:System.Windows.Forms.Control.Visible%2A> vlastnost `managerOnlyButton` k `true`. Tato metoda také zobrazí chybovou zprávu, pokud <xref:System.Net.WebException> je vyvolána, což naznačuje, zda je služba role není k dispozici.  
+     Pokud je uživatel v roli "správce" `DisplayButtonForManagerRole` metody nastaví <xref:System.Windows.Forms.Control.Visible%2A> vlastnost `managerOnlyButton` k `true`. Tato metoda také zobrazí chybovou zprávu, pokud <xref:System.Net.WebException> je vyvolána výjimka, což znamená, že služba role není k dispozici.  
   
     > [!NOTE]
-    >  <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A> Metoda vždy vrátí `false` Pokud vypršela platnost přihlášení uživatele. Tím nedojde, pokud aplikace zavolá <xref:System.Security.Principal.IPrincipal.IsInRole%2A> metoda jednou krátce po ověření, jak je znázorněno v příkladu kódu pro účely tohoto postupu. Pokud vaše aplikace musí získat role uživatele v jinou dobu, můžete chtít přidejte kód, který znovu ověřit uživatele, jehož přihlášení vypršela. Pokud všechny platné uživatele přiřazené k rolím, můžete určit, zda přihlášení vypršela platnost voláním <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A?displayProperty=nameWithType> metoda. Pokud jsou vráceny žádné role, přihlášení vypršela platnost. Příklad této funkce, najdete v článku <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> metoda. Tato funkce je nutné, pokud jste vybrali pouze **vyžadovat, aby se znovu přihlaste vždy, když vyprší platnost souboru cookie serveru uživatelé** v konfiguraci vaší aplikace. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
+    >  <xref:System.Web.ClientServices.ClientRolePrincipal.IsInRole%2A> Metoda vždy vrátí `false` Pokud vypršela platnost přihlášení uživatele. Tím nedojde, pokud vaše aplikace volá <xref:System.Security.Principal.IPrincipal.IsInRole%2A> metoda jednou krátce po ověření, jak je znázorněno v příkladu kódu v tomto návodu. Pokud vaše aplikace musí získat rolí uživatelů v jinou dobu, můžete přidat kód pro odhlášením uživatele, jehož přihlášení vypršela platnost. Pokud se všichni platní uživatelé jsou přiřazená rolím, můžete určit, jestli přihlášení vypršela platnost voláním <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A?displayProperty=nameWithType> metody. Pokud se nezobrazí žádné role, přihlášení vypršela platnost. Příklad této funkce najdete v článku <xref:System.Web.ClientServices.Providers.ClientRoleProvider.GetRolesForUser%2A> metody. Tato funkce je nezbytné, pokud jste vybrali **vyžadují, aby uživatelé přihlásit znovu pokaždé, když vyprší platnost souboru cookie server** v konfiguraci vaší aplikace. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
   
      [!code-csharp[ClientApplicationServices#030](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#030)]
      [!code-vb[ClientApplicationServices#030](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#030)]  
   
- Pokud je ověření úspěšné, nastaví zprostředkovatele ověřování klienta <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> vlastnost, která má instance <xref:System.Web.ClientServices.ClientRolePrincipal> třídy. Tato třída implementuje <xref:System.Security.Principal.IPrincipal.IsInRole%2A> metoda tak, aby práce se deleguje na poskytovateli nakonfigurované role. Jako dříve, kód aplikace nevyžaduje přímý odkaz na poskytovatele služeb.  
+ Pokud je ověření úspěšné, nastaví zprostředkovatele ověřování klienta <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> vlastnost instance <xref:System.Web.ClientServices.ClientRolePrincipal> třídy. Tato třída implementuje <xref:System.Security.Principal.IPrincipal.IsInRole%2A> metodu tak, aby práce se deleguje na nakonfigurované role zprostředkovatele. Jako dříve, kód vaší aplikace nevyžaduje, aby přímý odkaz na poskytovatele služeb.  
   
- Teď můžete aplikaci spustit a přihlaste se jako zaměstnanec zda tlačítko není objeví, a pak se přihlaste jako správce, aby tlačítko zobrazit.  
+ Teď můžete spustit aplikaci a přihlaste se jako zaměstnanec zobrazíte, že na tlačítko Ne zobrazovat a pak se přihlaste jako správce, aby se tlačítko zobrazilo.  
   
 ## <a name="accessing-web-settings"></a>Přístup k webové nastavení  
- V následujícím postupu přidat textové pole formuláře a navázat jej na webové nastavení. Jako předchozí kód, který používá ověřování a rolí nastavení kódu není přístup k poskytovateli nastavení přímo. Místo toho použije silného typu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) vygenerovat pro svůj projekt Visual Studio.  
+ V následujícím postupu přidání textového pole do formuláře a vázat na webovém nastavení. Jako předchozí kód, který používá ověřování a rolí nastavení kód nepřistupuje k poskytovateli nastavení přímo. Místo toho používá silných `Settings` třídy (přistupuje jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic) sady Visual Studio vygenerovaný pro váš projekt.  
   
-#### <a name="to-use-web-settings-in-your-user-interface"></a>Pokud chcete použít nastavení webové uživatelské rozhraní  
+#### <a name="to-use-web-settings-in-your-user-interface"></a>Použití nastavení webové uživatelské rozhraní  
   
-1.  Ujistěte se, že **vývojový Server ASP.NET Web** je stále spuštěná kontrolou oznamovací oblasti na hlavním panelu. Pokud server, je nutné zastavit, restartovat aplikaci (které se automaticky spustí server) potom zavřete dialogové okno přihlášení.  
+1.  Ujistěte se, že **vývojový Server ASP.NET Web** pořád běží tak, že zkontrolujete oznamovací oblasti na hlavním panelu. Zastavení serveru restartujte aplikace (které spustí automaticky server), pak zavřete dialogové okno přihlášení.  
   
-2.  V **Průzkumníku řešení**, vyberte ClientAppServicesDemo projekt a pak na **projektu** nabídce vyberte možnost **ClientAppServicesDemo vlastnosti**.  
+2.  V **Průzkumníka řešení**, vyberte projekt ClientAppServicesDemo a pak na **projektu** nabídce vyberte možnost **ClientAppServicesDemo vlastnosti**.  
   
-     Návrhář projektu se zobrazí.  
+     Zobrazí se Návrhář projektu.  
   
-3.  Na **nastavení** , klikněte na **nastavení webové zatížení**.  
+3.  Na **nastavení** klikněte na tlačítko **nastavení webu zatížení**.  
   
      A **přihlášení** zobrazí se dialogové okno.  
   
-4.  Zadejte přihlašovací údaje pro zaměstnance nebo správce a klikněte na tlačítko **protokolu v**. Webové nastavení použijete je nakonfigurovaný pro přístup podle pouze ověřené uživatele, kliknutím na **přihlášení přeskočit** nenačte všechna nastavení.  
+4.  Zadejte přihlašovací údaje pro zaměstnance nebo správce a klikněte na tlačítko **přihlásit**. Webové nastavení použijete je nakonfiguroval pro přístup ověřeným uživatelům, tedy kliknutím na **Přeskočit přihlášení** všechna nastavení se nenačte.  
   
-     `WebSettingsTestText` Nastavení se zobrazí v návrháři se výchozí hodnota `DefaultText`. Kromě toho `Settings` třídu, která obsahuje `WebSettingsTestText` vlastnost je generován pro projekt.  
+     `WebSettingsTestText` Nastavení se zobrazí v Návrháři s výchozí hodnotou `DefaultText`. Kromě toho `Settings` třídu, která obsahuje `WebSettingsTestText` vlastnosti je vygenerována pro váš projekt.  
   
-5.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z hlavní nabídky Visual Studio.  
+5.  V **Průzkumníka řešení**, v projektu ClientAppServicesDemo výběr možnosti Form1 a pak vyberte **zobrazení &#124; návrháře** z hlavní nabídky sady Visual Studio.  
   
-6.  V návrháři, přidejte <xref:System.Windows.Forms.TextBox> ovládacího prvku do formuláře.  
+6.  V návrháři, přidejte <xref:System.Windows.Forms.TextBox> ovládacího prvku na formuláři.  
   
 7.  V **vlastnosti** okno, zadejte **(název)** hodnotu `webSettingsTestTextBox`.  
   
-8.  V editoru kódu, přidejte následující kód do konce `Form1_Load` metoda.  
+8.  V editoru kódu přidejte následující kód do konce `Form1_Load` metody.  
   
-     Tento kód zavolá `BindWebSettingsTestTextBox` metoda, která přidáte v dalším kroku.  
+     Tento kód volá `BindWebSettingsTestTextBox` metodu, která se v dalším kroku přidáte.  
   
      [!code-csharp[ClientApplicationServices#013](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#013)]
      [!code-vb[ClientApplicationServices#013](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#013)]  
   
-9. Přidejte následující metodu za účelem Form1 třídy.  
+9. Přidejte následující metodu za účelem třídy Form1.  
   
-     Tato metoda vytvoří vazbu <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost `webSettingsTestTextBox` k `WebSettingsTestText` vlastnost `Settings` třídy vytvořené dříve v tomto postupu. Tato metoda také zobrazí chybovou zprávu, pokud <xref:System.Net.WebException> je vyvolána výjimka, která označuje, že je nastavení webové služby není k dispozici.  
+     Tato metoda vytvoří vazbu <xref:System.Windows.Forms.TextBox.Text%2A> vlastnost `webSettingsTestTextBox` k `WebSettingsTestText` vlastnost `Settings` třídy vygenerované v předchozím kroku tohoto postupu. Tato metoda také zobrazí chybovou zprávu, pokud <xref:System.Net.WebException> je vyvolána výjimka, což znamená, že webová služba nastavení není k dispozici.  
   
      [!code-csharp[ClientApplicationServices#040](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#040)]
      [!code-vb[ClientApplicationServices#040](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#040)]  
   
     > [!NOTE]
-    >  Datová vazba obvykle využije k povolení automatického obousměrnou komunikaci mezi ovládacího prvku a webové nastavení. Můžete však také přístup nastavení webové přímo jako uvedené v následujícím příkladu:  
+    >  Obvykle použijete datové vazby k povolení automatického obousměrnou komunikaci mezi ovládacím prvkem a webové nastavení. Můžete však také přístup nastavení webu přímo jak je znázorněno v následujícím příkladu:  
   
      [!code-csharp[ClientApplicationServices#322](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Class1.cs#322)]
      [!code-vb[ClientApplicationServices#322](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Class1.vb#322)]  
   
-10. V návrháři, vyberte formulář a pak na **vlastnosti** okně klikněte na tlačítko **události** tlačítko.  
+10. V Návrháři vyberte formulář a potom na **vlastnosti** okna, klikněte na tlačítko **události** tlačítko.  
   
-11. Vyberte <xref:System.Windows.Forms.Form.FormClosing> událost a potom stiskněte klávesu ENTER pro vygenerování obslužné rutiny.  
+11. Vyberte <xref:System.Windows.Forms.Form.FormClosing> události a poté stiskněte klávesu ENTER k vygenerování obslužné rutiny události.  
   
-12. Vygenerovaný metoda nahraďte následujícím kódem.  
+12. Vytvořena metoda nahraďte následujícím kódem.  
   
-     <xref:System.Windows.Forms.Form.FormClosing> Volání obslužné rutiny událostí `SaveSettings` metodu, která se používá také odhlášení funkce, které budete přidávat v další části. `SaveSettings` Metoda nejdřív potvrdí, že uživatel nezaznamenal. Dělá to kontrolou <xref:System.Security.Principal.IIdentity.AuthenticationType%2A> vlastnost <xref:System.Security.Principal.IIdentity> vrácený aktuální objekt zabezpečení. Aktuální objekt zabezpečení se načítají prostřednictvím `static` <xref:System.Threading.Thread.CurrentPrincipal%2A> vlastnost. Pokud uživatel byl ověřen pro klientské aplikační služby, typ ověřování, který bude "ClientForms". `SaveSettings` Metoda právě nelze zkontrolovat <xref:System.Security.Principal.IIdentity.IsAuthenticated%2A?displayProperty=nameWithType> vlastnost vzhledem k tomu, že uživatel může mít platnou identitu systému Windows po odhlášení.  
+     <xref:System.Windows.Forms.Form.FormClosing> Volání obsluhy události `SaveSettings` metodu, která se používá také podle funkce odhlášení, který bude v další části přidáte. `SaveSettings` Metoda nejdřív potvrdí, že uživatel není odhlášeni. Dělá to tak, že zkontrolujete <xref:System.Security.Principal.IIdentity.AuthenticationType%2A> vlastnost <xref:System.Security.Principal.IIdentity> vrátí aktuální objekt zabezpečení. Aktuální objekt zabezpečení je získat pomocí `static` <xref:System.Threading.Thread.CurrentPrincipal%2A> vlastnost. Pokud uživatel byl ověřen pro klientské aplikační služby, typ ověřování, který bude "ClientForms". `SaveSettings` Metody nelze jednoduše zaškrtněte <xref:System.Security.Principal.IIdentity.IsAuthenticated%2A?displayProperty=nameWithType> vlastnost vzhledem k tomu, že uživatel má po odhlášení platná identita Windows.  
   
-     Pokud uživatel nezaznamenal out `SaveSettings` volání metod <xref:System.Configuration.ApplicationSettingsBase.Save%2A> metodu `Settings` třídy vytvořené dříve v tomto postupu. Tuto metodu můžete vyvolat <xref:System.Net.WebException> Pokud vypršela platnost souboru cookie pro ověřování. K tomu dojde pouze v případě, že jste vybrali **vyžadovat, aby se znovu přihlaste vždy, když vyprší platnost souboru cookie serveru uživatelé** v konfiguraci vaší aplikace. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md). `SaveSettings` Metoda zpracovává vypršení platnosti souboru cookie voláním <xref:System.Web.Security.Membership.ValidateUser%2A> zobrazíte dialogové okno přihlášení. Pokud uživatel úspěšně přihlásí, `SaveSettings` metoda se pokusí znovu uložit nastavení voláním sebe sama.  
+     Pokud není uživatel přihlášen, `SaveSettings` volání metod <xref:System.Configuration.ApplicationSettingsBase.Save%2A> metodu `Settings` třídy vygenerované v předchozím kroku tohoto postupu. Tato metoda může vyvolat <xref:System.Net.WebException> Pokud vypršela platnost ověřovacího souboru cookie. K tomu dojde pouze v případě, že jste vybrali **vyžadují, aby uživatelé přihlásit znovu pokaždé, když vyprší platnost souboru cookie server** v konfiguraci vaší aplikace. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md). `SaveSettings` Obsluhovala platnost souborů cookie voláním <xref:System.Web.Security.Membership.ValidateUser%2A> zobrazíte dialogové okno přihlášení. Pokud uživatel úspěšně přihlásí, `SaveSettings` metoda se pokusí znovu uložit nastavení voláním sebe sama.  
   
-     Jako v předchozí kód `SaveSettings` metoda zobrazí chybovou zprávu, pokud Vzdálená služba není k dispozici. Pokud poskytovatel nastavení nemají přístup k vzdálené služby, jsou stále nastavení uložit do místní mezipaměti a znovu po restartování aplikace.  
+     Jako v předchozím kódu `SaveSettings` metoda zobrazí chybovou zprávu, pokud není k dispozici vzdálené služby. Nastavení zprostředkovatele nelze získat přístup k vzdálené služby, jsou stále nastavení uloží do místní mezipaměti a znovu načten, když se aplikace restartuje.  
   
      [!code-csharp[ClientApplicationServices#050](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#050)]
      [!code-vb[ClientApplicationServices#050](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#050)]  
   
-13. Přidejte následující metodu za účelem Form1 třídy.  
+13. Přidejte následující metodu za účelem třídy Form1.  
   
-     Tento kód zpracovává <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved?displayProperty=nameWithType> událostí a zobrazí upozornění, pokud některé z nastavení nelze uložit. <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> Události nedojde, pokud nastavení služby není k dispozici nebo pokud vypršela platnost souboru cookie pro ověřování. Jeden příklad, kdy <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> události dojde, je, pokud se uživatel přihlásí již. Můžete otestovat této obslužné rutiny události přidáním odhlášení kódu `SaveSettings` metody přímo před <xref:System.Configuration.ApplicationSettingsBase.Save%2A> volání metody. Odhlášení kód, který můžete použít, je popsaná v další části.  
+     Tento kód zpracovává <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved?displayProperty=nameWithType> událostí a zobrazí upozornění, pokud některé z nastavení se neuložila. <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> Události nedojde, pokud nastavení služby není k dispozici, nebo pokud vypršela platnost ověřovacího souboru cookie. Jedním z příkladů nad tím, kdy <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> dojde k události je, pokud má uživatel již odhlášeni. Otestováním této obslužné rutiny události přidáním kódu odhlášení `SaveSettings` metody přímo před <xref:System.Configuration.ApplicationSettingsBase.Save%2A> volání metody. Odhlášení kód, který vám pomůže je popsané v další části.  
   
      [!code-csharp[ClientApplicationServices#090](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#090)]
      [!code-vb[ClientApplicationServices#090](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#090)]  
   
-14. Pro jazyk C#, přidejte následující kód do konce `Form1_Load` metoda. Tento kód přidruží metoda, kterou jste přidali v posledním kroku s <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> událostí.  
+14. Pro jazyk C#, přidejte následující kód do konce `Form1_Load` metody. Tento kód přidruží metody, které jste přidali v posledním kroku s <xref:System.Web.ClientServices.Providers.ClientSettingsProvider.SettingsSaved> událostí.  
   
      [!code-csharp[ClientApplicationServices#015](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#015)]  
   
- K testování aplikace v tomto okamžiku spustit několikrát jako zaměstnanců a správce a zadejte jiné hodnoty do textového pole. Hodnoty se zachová napříč relacemi na jednotlivé uživatele.  
+ Testování aplikace v tomto okamžiku, spustit jej několikrát jako zaměstnance a správce a zadejte jiné hodnoty do textového pole. Hodnoty se zachová napříč relacemi v jednotlivých uživatelů.  
   
-## <a name="implementing-logout"></a>Implementace odhlášení  
- Když uživatel vybere **Zapamatovat uživatele** políčko při přihlášení, aplikace nebude automaticky ověření uživatele při dalším spuštění. Automatické ověření bude pokračovat, pak během aplikace je v režimu offline, nebo do vypršení platnosti souboru cookie pro ověřování. V některých případech ale více uživatelé budou potřebovat přístup k aplikaci nebo jednoho uživatele může občas přihlásit se přes různé přihlašovací údaje. Pokud chcete povolit tento scénář, musí implementovat funkce odhlášení, jak je popsáno v následujícím postupu.  
+## <a name="implementing-logout"></a>Implementace odhlašování  
+ Když uživatel vybere **zapamatovat** zaškrtávací políčko při přihlašování, tato aplikace se automaticky ověření uživatele při dalším spuštění. Automatické ověřování bude pokračovat, pak když je aplikace v režimu offline, nebo do vypršení platnosti souboru cookie pro ověřování. V některých případech však více uživatelé budou potřebovat přístup k aplikaci nebo jenom jednoho konkrétního uživatele může čas od času přihlášení pomocí různých přihlašovacích údajů. Pokud chcete povolit tento scénář, musí implementovat funkce odhlášení, jak je popsáno v následujícím postupu.  
   
-#### <a name="to-implement-logout-functionality"></a>K implementaci odhlášení funkcí  
+#### <a name="to-implement-logout-functionality"></a>K implementaci funkcionality odhlášení  
   
-1.  V Návrháři Form1 přidat <xref:System.Windows.Forms.Button> ovládacího prvku formuláře z **sada nástrojů**.  
+1.  V Návrháři Form1 přidat <xref:System.Windows.Forms.Button> ovládací prvek formuláře z **nástrojů**.  
   
 2.  V **vlastnosti** okno, zadejte **(název)** hodnotu `logoutButton` a **Text** hodnotu **& Odhlásit**.  
   
 3.  Dvakrát klikněte `logoutButton` ke generování <xref:System.Windows.Forms.Control.Click> obslužné rutiny události.  
   
-     Editor kódu se zobrazí s kurzorem `logoutButton_Click` metoda.  
+     Zobrazí se editor kódu s kurzorem `logoutButton_Click` metody.  
   
-4.  Nahraďte vygenerovaného `logoutButton_Click` metoda následujícím kódem.  
+4.  Nahraďte generované `logoutButton_Click` metodu s následujícím kódem.  
   
-     První volání této obslužné rutiny události `SaveSettings` metoda, kterou jste přidali v předchozí části. Potom volání obslužné rutiny události <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A?displayProperty=nameWithType> metoda. Pokud není k dispozici, službu ověřování <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A> vyvolá metoda výjimku <xref:System.Net.WebException>. V takovém případě `logoutButton_Click` metoda zobrazí zprávu upozornění a dočasně přepne do režimu offline na odhlášení uživatele. Offline režimu je popsaná v další části.  
+     Tato obslužná rutina události zavolá nejprve `SaveSettings` metodu, která jste přidali v předchozí části. Obslužná rutina události zavolá <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A?displayProperty=nameWithType> metody. Pokud není k dispozici, službu ověřování <xref:System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider.Logout%2A> vyvolá metoda výjimku <xref:System.Net.WebException>. V takovém případě `logoutButton_Click` metoda zobrazí zprávu upozornění a přepne dočasně do režimu offline na odhlášení uživatele. Offline režim je popsané v další části.  
   
-     Odhlášení odstraní místní ověřovacího souboru cookie, že přihlášení se bude vyžadovat, když se aplikace restartuje. Po odhlášení obslužné rutiny události restartování aplikace. Po restartování aplikace zobrazí zobrazení uvítací zprávy dialogové okno přihlášení. Zobrazení uvítací zprávy umožňuje vymazat, restartování aplikace. Tím zabráníte nejasnostem, pokud uživatel musí přihlásit se uložit nastavení a pak musí přihlásit znovu protože restartování aplikace.  
+     Odhlášení odstraní soubor cookie ověřování pomocí místních, tak, že se přihlášení se bude vyžadovat, když se aplikace restartuje. Obslužná rutina události po odhlašování, restartování aplikace. Když se aplikace restartuje, zobrazí zobrazení uvítací zprávy dialogové okno přihlášení. Zobrazení uvítací zprávy vyjasňuje, která se aplikace restartuje. To zabraňuje nejasnostem, pokud uživatel musí přihlásit k uložení nastavení a pak musíte se přihlásit znovu vzhledem k tomu, že se aplikace restartuje.  
   
      [!code-csharp[ClientApplicationServices#070](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#070)]
      [!code-vb[ClientApplicationServices#070](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#070)]  
   
- K testování funkčnosti odhlášení, spusťte aplikaci a vyberte **Zapamatovat uživatele** v dialogovém okně přihlášení. Potom zavřete a restartujte aplikaci potvrďte, že už máte k přihlášení. Nakonec znovu spusťte aplikaci kliknutím při odhlášení.  
+ K otestování funkce odhlášení, spusťte aplikaci a vyberte **zapamatovat** v dialogovém okně přihlášení. Potom zavřete a znovu spusťte aplikaci, aby potvrďte, že už máte k přihlášení. Nakonec restartování aplikace kliknutím při odhlášení.  
   
-## <a name="enabling-offline-mode"></a>Povolení režimu Offline  
- V následujícím postupu přidat zaškrtávací políčko pro formulář umožňující uživateli zadat offline režimu. Aplikace označuje offline režimu nastavením `static` <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A?displayProperty=nameWithType> vlastnost `true`. V režimu offline je uložený na místní pevný disk v umístění indikován <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> vlastnost. To znamená, že je v režimu offline uložený na jednotlivých uživatelů, každou aplikaci.  
+## <a name="enabling-offline-mode"></a>Povolení Offline režimu  
+ V následujícím postupu přidáte zaškrtávací políčko na formulář umožňuje uživateli zadat offline režimu. Vaše aplikace určuje offline režimu tak, že nastavíte `static` <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A?displayProperty=nameWithType> vlastnost `true`. Offline stav je uložený na místní pevný disk v umístění indikován <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> vlastnost. To znamená, že na jednotlivé uživatele, každou aplikaci je uložena v režimu offline.  
   
- V offline režimu všechny požadavky aplikace služby načtení dat z místní mezipaměti namísto pokusu o přístup ke službám. Ve výchozí konfiguraci místní data zahrnují šifrovaném formátu hesla uživatele. To umožňuje uživateli přihlásit se při aplikace je v offline režimu. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
+ Všechny klientské žádosti o aplikace služby v offline režimu, načtou data z místní mezipaměti namísto pokusu o přístup ke službám. Ve výchozí konfiguraci místní data zahrnují zašifrované heslo uživatele. To umožňuje uživateli přihlásit, když je aplikace v režimu offline. Další informace najdete v tématu [postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md).  
   
-#### <a name="to-enable-offline-mode-in-your-application"></a>Chcete-li povolit offline režimu v aplikaci  
+#### <a name="to-enable-offline-mode-in-your-application"></a>Pokud chcete povolit offline režim v aplikaci  
   
-1.  V **Průzkumníku řešení**v projektu ClientAppServicesDemo vyberte Form1 a pak vyberte **zobrazení &#124; Návrhář** z hlavní nabídky Visual Studio.  
+1.  V **Průzkumníka řešení**, v projektu ClientAppServicesDemo výběr možnosti Form1 a pak vyberte **zobrazení &#124; návrháře** z hlavní nabídky sady Visual Studio.  
   
-2.  V návrháři, přidejte <xref:System.Windows.Forms.CheckBox> ovládacího prvku do formuláře.  
+2.  V návrháři, přidejte <xref:System.Windows.Forms.CheckBox> ovládacího prvku na formuláři.  
   
 3.  V **vlastnosti** okno, zadejte **(název)** hodnotu `workOfflineCheckBox` a **Text** hodnotu **& pracovní offline**.  
   
-4.  V **vlastnosti** okně klikněte **události** tlačítko.  
+4.  V **vlastnosti** okna, klikněte na tlačítko **události** tlačítko.  
   
-5.  Vyberte <xref:System.Windows.Forms.CheckBox.CheckedChanged> událost a potom stiskněte klávesu ENTER pro vygenerování obslužné rutiny.  
+5.  Vyberte <xref:System.Windows.Forms.CheckBox.CheckedChanged> události a poté stiskněte klávesu ENTER k vygenerování obslužné rutiny události.  
   
-6.  Vygenerovaný metoda nahraďte následujícím kódem.  
+6.  Vytvořena metoda nahraďte následujícím kódem.  
   
-     Tento kód aktualizace <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> hodnotu a bezobslužně revalidates uživatele, když se vrátí do režimu online. <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A?displayProperty=nameWithType> Metoda použije pověření uložená v mezipaměti, takže není nutné explicitně přihlášení uživatele. Pokud ověřovací služby není k dispozici, zobrazí se zpráva upozornění a aplikace zůstává v režimu offline.  
+     Tento kód aktualizuje <xref:System.Web.ClientServices.ConnectivityStatus.IsOffline%2A> hodnotu a tiše revalidates uživatele, když se vrátí do režimu online. <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A?displayProperty=nameWithType> – Metoda používá přihlašovací údaje v mezipaměti, takže není nutné explicitně přihlášení uživatele. Pokud ověřovací služby není k dispozici, zobrazí se zpráva s upozorněním a aplikace zůstává v režimu offline.  
   
     > [!NOTE]
-    >  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> Metoda je pouze ke zvýšení pohodlí. Protože nemá návratovou hodnotu, nelze to označuje, zda opětovné ověření se nezdařilo. Opětovné ověření může selhat, například pokud přihlašovací údaje uživatele se změnila na serveru. V takovém případě můžete chtít obsahovat kód, který explicitně ověřuje uživatele po volání služby selže. Další informace najdete v části Nastavení webového přístupu k dříve v tomto návodu.  
+    >  <xref:System.Web.ClientServices.ClientFormsIdentity.RevalidateUser%2A> Metoda je pouze ke zvýšení pohodlí. Protože nemá žádné návratovou hodnotu, se nesmí uvádět, zda opětovné ověření se nezdařilo. Opětovné ověření může selhat, například pokud jste změnili přihlašovací údaje uživatele na serveru. V takovém případě můžete chtít zahrnout kód, který explicitně ověřuje uživatele, pokud selže volání služby. Další informace najdete v části Nastavení webového přístupu k dříve v tomto návodu.  
   
-     Po opětovné ověření, tento kód uloží změny do místní nastavení webové voláním `SaveSettings` metoda, kterou jste přidali dříve. Potom načte žádné nové hodnoty na serveru při volání <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> metoda projektu `Settings` – třída (přístup jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic).  
+     Po opětovné ověření, tento kód uloží změny do místní nastavení webu voláním `SaveSettings` metodu, která jste přidali dříve. Pak načte všechny nové hodnoty na serveru pomocí volání <xref:System.Configuration.ApplicationSettingsBase.Reload%2A> metoda projektu `Settings` třídy (přistupuje jako `Properties.Settings.Default` v jazyce C# a `My.Settings` v jazyce Visual Basic).  
   
      [!code-csharp[ClientApplicationServices#080](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#080)]
      [!code-vb[ClientApplicationServices#080](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#080)]  
   
-7.  Přidejte následující kód do konce `Form1_Load` metoda a ujistěte se, že políčko zobrazuje aktuální stav připojení.  
+7.  Přidejte následující kód do konce `Form1_Load` metoda Ujistěte se, že, zaškrtnutí políčka zobrazuje aktuální stav připojení.  
   
      [!code-csharp[ClientApplicationServices#014](../../../samples/snippets/csharp/VS_Snippets_Winforms/ClientApplicationServices/CS/Form1.cs#014)]
      [!code-vb[ClientApplicationServices#014](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/ClientApplicationServices/VB/Form1.vb#014)]  
   
- Tím dokončíte ukázková aplikace. Chcete-li otestovat v režimu offline, spusťte aplikaci, přihlaste se jako zaměstnanců nebo správce a pak vyberte **práce offline**. Změňte hodnotu v textovém poli a pak zavřete aplikaci. Restartování aplikace. Předtím, než se přihlásíte, klikněte pravým tlačítkem na ikonu vývojový Server ASP.NET v oznamovací oblasti na hlavním panelu a pak klikněte na **Zastavit**. Přihlaste se pak jako normální. I když server není spuštěn, můžete stále přihlásit. Upravte hodnotu textového pole, ukončení a restartování a zobrazit tak upravené hodnotu.  
+ Dokončení tohoto postupu ukázková aplikace. Testování offline funkcí, spusťte aplikaci, přihlaste se jako zaměstnanec nebo správce a vyberte **práce offline**. Změnit hodnotu v textovém poli a pak ukončete aplikaci. Restartování aplikace. Předtím, než se přihlásíte, klikněte pravým tlačítkem na serveru ASP.NET Development Server ikonu v oznamovací oblasti na hlavním panelu a potom klikněte na **Zastavit**. Pak se přihlásit jako normální. I v případě, že server není spuštěn, se můžete stále přihlásit. Upravte hodnotu textového pole, ukončení a restartování zobrazíte upravené hodnoty.  
   
 ## <a name="summary"></a>Souhrn  
- V tomto návodu jste zjistili, jak povolit a používat klientské aplikační služby v aplikaci Windows Forms. Po nastavení testovací server, přidat kód do aplikace k ověření uživatelů a rolí uživatele a nastavení aplikací ze serveru načíst. Také jste zjistili, jak povolit offline režimu, aby vaše aplikace používá místní data mezipaměti místo vzdálené služby, pokud připojení není k dispozici.  
+ V tomto návodu jste zjistili, jak povolit a použití klientských aplikačních služeb v aplikaci Windows Forms. Po nastavení testovací server, přidat kód do vaší aplikace k ověřování uživatelů a načíst role uživatele a nastavení aplikací ze serveru. Také jste zjistili, jak povolit offline režimu, aby vaše aplikace používá mezipaměť místních dat namísto vzdálené služby, pokud připojení není k dispozici.  
   
 ## <a name="next-steps"></a>Další kroky  
- V reálné aplikaci bude přístup k datům pro mnoho uživatelů ze vzdáleného serveru, který nemusí být vždy k dispozici, nebo může přejděte bez předchozího upozornění. Chcete-li aplikace robustní, musí použít odpovědět správně na situace, kdy služba není k dispozici. Tento názorný postup obsahuje bloků try/catch k zachycení <xref:System.Net.WebException> a zobrazí se chybová zpráva, pokud služba není k dispozici. V produkčním kódu můžete chtít zpracovávat tento případ přepnout do režimu offline, ukončení aplikace nebo odepření přístupu ke konkrétním funkcím.  
+ V reálné aplikaci bude přístup k datům pro mnoho uživatelů ze vzdáleného serveru, který nemusí být vždy k dispozici, nebo může ujmout bez předchozího upozornění. K zajištění robustní aplikace, které musí správně reagovat na situace, kdy služba není k dispozici. Tento názorný postup obsahuje bloky try/catch k zachycování <xref:System.Net.WebException> a zobrazí chybovou zprávu, pokud služba není k dispozici. V produkčním kódu můžete chtít zpracovávat tento případ přepnutí do offline režimu, ukončením aplikace nebo zamítáte přístup ke konkrétním funkcím.  
   
- Pokud chcete zvýšit zabezpečení aplikace, zajistěte, aby důkladně otestovat aplikace a server před nasazením.  
+ Pokud chcete zvýšit zabezpečení aplikace, ujistěte se, že vám pomůže s podrobným aplikace a serveru před nasazením.  
   
 ## <a name="see-also"></a>Viz také  
  [Klientské aplikační služby](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
  [Postupy: Konfigurace klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-configure-client-application-services.md)  
- [Nástroj Správa webu ASP.NET](http://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)  
- [Vytváření a konfiguraci databázi aplikace služby systému SQL Server](http://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)  
- [Návod: Použití aplikačními službami ASP.NET](http://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)
+ [Nástroje pro správu webu technologie ASP.NET](https://msdn.microsoft.com/library/100ddd8b-7d11-4df9-91ef-0bbbe92e5aec)  
+ [Vytváření a konfiguraci této databáze systému SQL Server](https://msdn.microsoft.com/library/ab894e83-7e2f-4af8-a116-b1bff8f815b2)  
+ [Návod: Použití aplikačními službami ASP.NET](https://msdn.microsoft.com/library/f3f394f0-20d6-4361-aa8f-4b21bf4933eb)

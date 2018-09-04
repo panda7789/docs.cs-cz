@@ -5,14 +5,14 @@ helpviewer_keywords:
 - feedback [WCF]
 - customer feedback [WCF]
 ms.assetid: ba0fd32b-cbcb-4f5b-b913-d98514ab5650
-ms.openlocfilehash: 0f21a4abc7134fbfd5369ae2b3f7f5cf56915c01
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 5067495aa24d5ae7e60633ed6a0ce5c0af081367
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33810158"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538620"
 ---
 # <a name="feedback-and-community"></a>Názory a komunita
-Děkujeme za vaše připomínky a obavy o Windows Communication Foundation (WCF) nebo [!INCLUDE[infocard](../../../includes/infocard-md.md)] dokumentaci. Na konec každé stránky v sadě SDK je větu "Odešlete komentáře k tomuto tématu společnosti Microsoft." Klikněte na odkaz "komentář" odesílat zobrazení nebo návrhy o určité téma.  
+Děkujeme za vaše připomínky a obavy o Windows Communication Foundation (WCF) nebo [!INCLUDE[infocard](../../../includes/infocard-md.md)] dokumentaci. V dolní části každé stránky v sadě SDK je větu "Odeslat komentáře v tomto tématu společnosti Microsoft." Klikněte na odkaz "komentář" k zobrazení nebo návrhy týkající se konkrétního tématu.  
   
- Pokud hledáte další informace, nebo chcete sdílet s ostatními uživateli, kteří mají zájem o WCF techniky, zkuste [fórum MSDN Windows Communication Foundation](http://go.microsoft.com/fwlink/?LinkId=186463).
+ Pokud hledáte další informace nebo chcete sdílet s jinými uživateli, kteří mají zájem o WCF techniky, zkuste [fórum MSDN Windows Communication Foundation](https://go.microsoft.com/fwlink/?LinkId=186463).

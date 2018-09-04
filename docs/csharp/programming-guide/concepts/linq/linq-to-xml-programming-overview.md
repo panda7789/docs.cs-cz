@@ -2,12 +2,12 @@
 title: Přehled LINQ to XML programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 2dfa9b6f-5890-461d-b81c-316853c7f320
-ms.openlocfilehash: c461d4b4082293d91d18538596cfa03d9445c224
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 9eb86e0c9c5dada36e09c78e7070d32afa9824c1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39198880"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43522709"
 ---
 # <a name="linq-to-xml-programming-overview-c"></a>Přehled LINQ to XML programování (C#)
 Tato témata poskytují informace o základní přehled o [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] třídy a také podrobné informace o tři z vašich nejdůležitějších třídy.  
@@ -23,5 +23,6 @@ Tato témata poskytují informace o základní přehled o [!INCLUDE[sqltecxlinq]
 |[Přehled třídy XDocument (C#)](../../../../csharp/programming-guide/concepts/linq/xdocument-class-overview.md)|Zavádí <xref:System.Xml.Linq.XDocument> třídu, která představuje dokumentů XML.|  
 |[Postupy: vytvoření LINQ to XML Příklady (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-build-linq-to-xml-examples.md)|Obsahuje `Using` direktivy, které jsou nutné k vytvoření LINQ to XML příklady.|  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

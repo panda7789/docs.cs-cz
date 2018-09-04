@@ -8,11 +8,11 @@ helpviewer_keywords:
 - private keyword [C#]
 ms.assetid: 654c0bb8-e6ac-4086-bf96-7474fa6aa1c8
 ms.openlocfilehash: 0c564f38940e993bdfb93af0ec995c684be0eeb7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43481513"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43537784"
 ---
 # <a name="private-c-reference"></a>private (Referenční dokumentace jazyka C#)
 

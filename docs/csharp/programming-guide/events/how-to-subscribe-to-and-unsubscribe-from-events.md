@@ -6,37 +6,37 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 51b611237422ef30730850369627467c152f7579
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e27473ca34f634f4a3125a2e87e6d0ef918a6f9d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33336200"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43558708"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Postupy: Přihlášení a odhlášení odběru událostí (Průvodce programováním v C#)
-Přihlášení k odběru na událost, která se publikuje jinou třídou, když chcete napsat vlastní kód, který je volána, když se vyvolá tuto událost. Například může přihlásíte k odběru na tlačítko `click` událostí, aby bylo možné aplikaci dělat něco užitečné, když uživatel klikne na tlačítko.  
+Se přihlásíte k odběru události, která se publikuje jinou třídou, když chcete napsat vlastní kód, který se volá, když se vyvolá tuto událost. Například může přihlásit tlačítko `click` událostí, aby vaše aplikace dělat něco užitečné, když uživatel klikne na tlačítko.  
   
-### <a name="to-subscribe-to-events-by-using-the-visual-studio-ide"></a>Přihlásit k odběru událostí pomocí prostředí Visual Studio IDE  
+### <a name="to-subscribe-to-events-by-using-the-visual-studio-ide"></a>Přihlásit k odběru události pomocí rozhraní IDE sady Visual Studio  
   
-1.  Pokud nevidíte **vlastnosti** okno v **návrhu** zobrazit, klikněte pravým tlačítkem na formulář nebo ovládací prvek, pro který chcete vytvořit obslužnou rutinu a vyberte **vlastnosti**.  
+1.  Pokud nevidíte **vlastnosti** okno v **návrhu** zobrazení, klikněte pravým tlačítkem na formulář nebo ovládací prvek, pro kterou chcete vytvořit obslužnou rutinu události a vyberte **vlastnosti**.  
   
-2.  Na **vlastnosti** okně klikněte na tlačítko **události** ikonu.  
+2.  Nahoře **vlastnosti** okna, klikněte na tlačítko **události** ikonu.  
   
-3.  Dvakrát klikněte na událost, kterou chcete vytvořit, například `Load` událostí.  
+3.  Poklikáním na událost, kterou chcete vytvořit, například `Load` událostí.  
   
-     Visual C# vytvoří metodu obslužné rutiny události prázdný a přidá ji do vašeho kódu. Případně můžete přidat kód ručně v **kód** zobrazení. Například následující řádky kódu deklarovat metodu obslužné rutiny události, který bude volán při `Form` třídy vyvolá `Load` událostí.  
+     Visual C# vytvoří metodu obslužné rutiny události prázdný a přidá ji do vašeho kódu. Případně můžete přidat ručně v kódu **kód** zobrazení. Například následující řádky kódu deklarovat metodu obslužné rutiny události, která bude volána při `Form` třídy vyvolá `Load` událostí.  
   
      [!code-csharp[csProgGuideEvents#11](../../../csharp/programming-guide/events/codesnippet/CSharp/how-to-subscribe-to-and-unsubscribe-from-events_1.cs)]  
   
-     Řádek kódu, který je požadován k odběru události je také automaticky generovány v `InitializeComponent` metoda v souboru Form1.Designer.cs ve vašem projektu. Vypadá takto:  
+     Řádek kódu, který je potřeba k události registrovat také automaticky generován `InitializeComponent` metody v souboru Form1.Designer.cs ve vašem projektu. Vypadal takto:  
   
     ```csharp
     this.Load += new System.EventHandler(this.Form1_Load);  
     ```  
   
-### <a name="to-subscribe-to-events-programmatically"></a>Přihlásit k odběru událostí prostřednictvím kódu programu  
+### <a name="to-subscribe-to-events-programmatically"></a>Přihlaste se k odběru událostí prostřednictvím kódu programu  
   
-1.  Definujte metodu obslužné rutiny události, jejichž podpis odpovídá delegáta pro událost. Například, pokud je na základě události <xref:System.EventHandler> se zakázaným inzerováním metoda představuje typ delegáta, následující kód:  
+1.  Definujte metodu obslužné rutiny události, jejíž podpis odpovídá delegáta pro událost. Například, pokud je na základě události <xref:System.EventHandler> typu delegátu, následující kód představuje pahýl metody:  
   
     ```csharp
     void HandleCustomEvent(object sender, CustomEventArgs a)  
@@ -45,19 +45,19 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
     }  
     ```  
   
-2.  Použít operátor přiřazení sčítání (`+=`) připojit vaší obslužné rutiny události pro událost. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent`. Všimněte si, že třídě odběratele potřebuje odkaz na třídě vydavatele Chcete-li se přihlásit k jeho události odběru.  
+2.  Operátor přiřazení sčítání (`+=`) připojit vaše obslužná rutina události pro událost. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent`. Všimněte si, že třída odběratele musí odkaz na třídu vydavatele k přihlášení k odběru jeho událostí.  
   
     ```csharp
     publisher.RaiseCustomEvent += HandleCustomEvent;  
     ```  
   
-     Všimněte si, že předchozí syntaxe jazyka C# 2.0 nové. Je přesně odpovídá syntaxe jazyka C# 1.0, ve kterém musí být explicitně vytvořen zapouzdřením delegát pomocí `new` – klíčové slovo:  
+     Všimněte si, že předchozí syntaxi je nového v jazyce C# 2.0. Je přesně odpovídá syntaxe jazyka C# 1.0 ve kterém musí být explicitně vytvořeny zapouzdřující delegáta s použitím `new` – klíčové slovo:  
   
     ```csharp
     publisher.RaiseCustomEvent += new CustomEventHandler(HandleCustomEvent);  
     ```  
   
-     Obslužné rutiny události lze také přidat pomocí výrazu lambda:  
+     Pomocí výrazu lambda lze také přidat obslužné rutiny události:  
   
     ```csharp
     public Form1()  
@@ -69,11 +69,11 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
     }  
     ```  
   
-     Další informace najdete v tématu [postupy: použití Lambda výrazy mimo LINQ](../../../csharp/programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-outside-linq.md).  
+     Další informace najdete v tématu [postupy: použití Lambda výrazů mimo LINQ](../../../csharp/programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-outside-linq.md).  
   
-### <a name="to-subscribe-to-events-by-using-an-anonymous-method"></a>Přihlásit k odběru událostí pomocí anonymní metody  
+### <a name="to-subscribe-to-events-by-using-an-anonymous-method"></a>Přihlásit k odběru událostí s využitím anonymní metoda  
   
--   Pokud nebudete mít k odhlášení odběru událostí později, můžete použít operátor přiřazení sčítání (`+=`) pro připojení anonymní metody k události. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent` a že `CustomEventArgs` třída definována také k provedení nějaký druh informací o specializované události. Všimněte si, že třída odběratele musí odkaz na `publisher` Chcete-li se přihlásit k jeho události odběru.  
+-   Pokud nebudete mít k odhlášení odběru události později, můžete použít operátor přiřazení sčítání (`+=`) na anonymní metodu připojte k této události. V následujícím příkladu se předpokládá, že objekt s názvem `publisher` má událost s názvem `RaiseCustomEvent` a že `CustomEventArgs` třída definována také provádět nějaký druh informací o specializované události. Všimněte si, že třída odběratele musí odkaz na `publisher` k přihlášení k odběru jeho událostí.  
   
     ```csharp
     publisher.RaiseCustomEvent += delegate(object o, CustomEventArgs e)  
@@ -83,24 +83,25 @@ Přihlášení k odběru na událost, která se publikuje jinou třídou, když 
     };  
     ```  
   
-     Je důležité si všimněte si, že nelze zrušíte snadno událost Pokud použijete anonymní funkce si ji předplatili. Chcete-li odhlásit v tomto scénáři, je potřeba přejděte zpět na kód, kde se přihlásíte k odběru události, uložit jako proměnnou delegáta anonymní metody a pak přidejte delegát pro událost. Obecně doporučujeme anonymní funkce nepoužívejte k odběru událostí, pokud bude mít k odhlášení odběru událostí novější někde v kódu. Další informace o anonymní funkce najdete v tématu [anonymní funkce](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md).  
+     Je důležité si všimněte, že je nelze zrušit snadno odběr události byste používali anonymní funkce pro si ji předplatit. Zrušení odběru v tomto scénáři, je nutné přejít zpět do kódu, kde se přihlásíte k odběru události, uložte anonymní metody delegáta proměnné a pak přidat delegáta pro událost. Obecně doporučujeme, abyste je velmi riskantní používat anonymní funkce přihlásit k odběru události v případě, že budete muset zrušit odběr události někdy později ve vašem kódu. Další informace o anonymní funkce, najdete v části [anonymní funkce](../../../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md).  
   
-## <a name="unsubscribing"></a>Odhlášení  
- Abyste zabránili vaší obslužné rutiny událostí je volána, když událost se vyvolá, odhlášení odběru událostí. Prevence úniků prostředků by měl odhlášení odběru událostí před vyřazení objekt odběratele. Dokud zrušíte událost, vícesměrového vysílání delegát podkladovou události v objektu, publikování obsahuje odkaz na delegáta, který zapouzdřuje obslužné rutiny události odběratele. Tak dlouho, dokud objekt publikování obsahuje tento odkaz, neodstraní uvolňování objektu odběratele.  
+## <a name="unsubscribing"></a>Ruší se předplatné  
+ Abyste zabránili vaše obslužná rutina události volaná při vyvolání události, zrušit odběr události. Pokud chcete zabránit nedostatku prostředků by měl zrušit odběr událostí před vyřazení objektu odběratele. Dokud odběr události vícesměrového vysílání delegáta, které je základem událost v objektu publikování obsahuje odkaz na delegáta, který zapouzdřuje obslužná rutina události odběratele. Tak dlouho, dokud publikování objekt obsahuje tento odkaz, nedojde k odstranění objektu odběratele uvolňování paměti.  
   
-#### <a name="to-unsubscribe-from-an-event"></a>Chcete-li odhlásit z události  
+#### <a name="to-unsubscribe-from-an-event"></a>Chcete-li zrušit odběr události  
   
--   Operátor přiřazení odčítání (`-=`) k odhlášení odběru událostí:  
+-   Operátor přiřazení odčítání (`-=`) Chcete-li zrušit odběr události:  
   
     ```csharp
     publisher.RaiseCustomEvent -= HandleCustomEvent;  
     ```  
   
-     Pokud všechny Odběratelé, kteří mají odhlásil z události, instanci události ve třídě vydavatele je nastavena na `null`.  
+     Když všichni předplatitelé odhlásili odběr události, instanci události ve třídě vydavatele se nastaví na `null`.  
   
-## <a name="see-also"></a>Viz také  
- [Události](../../../csharp/programming-guide/events/index.md)  
- [event](../../../csharp/language-reference/keywords/event.md)  
- [Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
- [-= – Operátor (referenční dokumentace jazyka C#)](../../language-reference/operators/subtraction-assignment-operator.md)  
- [+= – operátor](../../../csharp/language-reference/operators/addition-assignment-operator.md)
+## <a name="see-also"></a>Viz také
+
+- [Události](../../../csharp/programming-guide/events/index.md)  
+- [event](../../../csharp/language-reference/keywords/event.md)  
+- [Postupy: Publikování událostí odpovídajících směrnicím rozhraní .NET Framework](../../../csharp/programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
+- [-= – Operátor (referenční dokumentace jazyka C#)](../../language-reference/operators/subtraction-assignment-operator.md)  
+- [+= – operátor](../../../csharp/language-reference/operators/addition-assignment-operator.md)

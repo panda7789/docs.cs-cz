@@ -3,11 +3,11 @@ title: 'Služba: Počet nezdařených volání za sekundu'
 ms.date: 03/30/2017
 ms.assetid: 5a2c7939-107d-4f0c-b43c-e02e079e8a9d
 ms.openlocfilehash: 9cd649788e1304c68caa1bbf4b5fd27e6fc9d508
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396415"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43559061"
 ---
 # <a name="service-calls-failed-per-second"></a>Služba: Počet nezdařených volání za sekundu
 Název čítače: Počet nezdařených volání za sekundu.  

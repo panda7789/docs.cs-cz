@@ -2,35 +2,35 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 4dc8cc2a3c6d9178f6507c87ae512a8929bd1380
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: a03f5783e732c4a0f3f13cf6abd7ec4803c07c8f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808127"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43559579"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
-Tento příklad ukazuje, jak pro hostování aplikací v procesu aktivace služby WAS (Windows), které se načítají z fronty zpráv. Této ukázce se používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) ukázka. Služba je v tomto případě hostované webové aplikace a klient se hostuje sama a výstupy ke konzole sledovat stav nákupních objednávek odeslána.  
+Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation Service (), které se načítají z fronty zpráv. Tento příklad používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) vzorku. Služby v tomto případě je hostované webové aplikace a klient je v místním prostředí a vypíše do konzoly sledovat stav nákupní objednávky odeslané.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
 > [!NOTE]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  Pokud tento adresář neexistuje, přejděte do Windows Communication Foundation (WCF) HYPERLINK "http://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a ukázky Windows Workflow Foundation (WF) pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] ke stažení všechny WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na Windows Communication Foundation (WCF) hypertextový odkaz "https://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a ukázky Windows Workflow Foundation (WF) pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] stáhnout všechny WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
   
- Proces aktivace služby WAS (Windows), nový mechanismus aktivace procesů pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)], poskytuje službě IIS jako funkce, které byly dřív dostupné jenom pro aplikace založené na protokolu HTTP pro aplikace, které pomocí jiných protokolů než HTTP. Windows Communication Foundation (WCF) používá rozhraní adaptér naslouchání pro komunikaci žádosti o aktivaci, které jsou přijaty prostřednictvím protokolů než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a služby MSMQ. Funkce pro přijímání požadavků pomocí jiných protokolů než HTTP je hostován spravované služby systému Windows, které jsou spuštěny v SMSvcHost.exe.  
+ Windows WAS Process Activation Service (), nový mechanismus procesu aktivace pro [!INCLUDE[lserver](../../../../includes/lserver-md.md)], poskytuje služby IIS jako funkce, které byly dřív dostupné jenom pro aplikace založené na protokolu HTTP pro aplikace, které používají protokoly jiným protokolem než HTTP. Windows Communication Foundation (WCF) používá ke komunikaci žádosti o aktivaci, které jsou přijímány prostřednictvím protokolů jiným protokolem než HTTP nepodporuje WCF, jako je například TCP, pojmenované kanály a MSMQ rozhraní adaptér naslouchací proces. Funkce pro příjem požadavků prostřednictvím protokolů jiným protokolem než HTTP je hostitelem spravovaných služeb Windows používané SMSvcHost.exe.  
   
- Adaptér naslouchání Net.Msmq služby (NetMsmqActivator) aktivuje zařazených do fronty aplikací založených na zprávy ve frontě.  
+ Adaptér naslouchání Net.Msmq service (NetMsmqActivator) aktivuje ve frontě aplikací založených na zprávy ve frontě.  
   
- Klient odešle nákupních objednávek ke službě z v rámci oboru transakce. Služba přijímá objednávky v transakci a zpracovává je. Služba zpět pak zavolá klienta se stav pořadí. Pro usnadnění obousměrné komunikace klienta a služby používat fronty zařazování nákupních objednávek a stav pořadí.  
+ Klient odešle nákupních objednávek ke službě z v rámci oboru transakce. Služba přijímá objednávky v transakci a zpracovává je. Služba potom zavolá zpět klienta se stavem pořadí. Pro usnadnění obousměrná komunikace klienta a služby pomocí fronty zařadit nákupních objednávek a stav objednávky.  
   
- Kontrakt služby `IOrderProcessor` definuje operace jednosměrné služby, které pracují s služby Řízení front. Operace služby používá k odesílání pořadí stavy klientovi odpovědi koncového bodu. Adresa koncového bodu odpovědi je identifikátor URI fronty používají k odesílání pořadí stavu zpět do klienta. Pořadí zpracování aplikace implementuje tuto smlouvu.  
+ Kontrakt služby `IOrderProcessor` definuje operace jednosměrné služby, které využívají službu Řízení front. Operace služby používá koncový bod odpovědi k odesílání pořadí stavy do klienta. Adresa koncového bodu odpověď je identifikátor URI fronty používají k odesílání stav objednávky zpět do klienta. Pořadí zpracování aplikace implementuje tento kontrakt.  
   
 ```csharp  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -42,7 +42,7 @@ public interface IOrderProcessor
 }  
 ```  
   
- Kontrakt odpověď k odeslání pořadí stav je zadat klientem. Klient implementuje stav kontrakt pořadí. Služba používá k odeslání pořadí stavu zpět do klienta generovaného klienta této smlouvy.  
+ Kontrakt odpověď k odeslání stavu objednávky je určená klientem. Klient implementuje tento kontrakt stavu objednávky. Služba používá generovaného klienta této smlouvy k odeslání objednávky stavu zpět do klienta.  
   
 ```csharp  
 [ServiceContract]  
@@ -53,9 +53,9 @@ public interface IOrderStatus
 }  
 ```  
   
- Operace služby zpracovává odeslaná nákupní objednávka. <xref:System.ServiceModel.OperationBehaviorAttribute> Se použije pro operaci služby k určení automatických zařazení v transakci, která se používá k přijetí zprávy z fronty a automatického dokončování transakce na dokončení operace služby. `Orders` Třída zapouzdří funkce pořadí zpracování. V takovém případě přidá nákupní objednávka do slovníku. Je k dispozici pro operace v transakci, která v uvedené operaci služby `Orders` třídy.  
+ Operace služby odeslané nákupní objednávku zpracovává. <xref:System.ServiceModel.OperationBehaviorAttribute> Se použije pro operace služby k určení automatické zařazení v transakci, která se používá k přijetí zprávy z fronty a automatické dokončení transakce na dokončení operace služby. `Orders` Třídy zapouzdřuje funkce zpracování objednávky. V takovém případě nákupní objednávku přidá do slovníku. Operace služby uveden v transakci je k dispozici s operacemi `Orders` třídy.  
   
- Operace služby, kromě zpracování odeslaného nákupní objednávka, odpověď zpět do klienta o stavu pořadí.  
+ Operace služby, kromě odeslané nákupní objednávky, odešle odpověď zpět do klienta o stavu objednávky.  
   
 ```csharp  
 public class OrderProcessorService : IOrderProcessor  
@@ -79,12 +79,12 @@ public class OrderProcessorService : IOrderProcessor
     }  
 ```  
   
- Klient pro vytvoření vazby na použití je zadán pomocí konfiguračního souboru.  
+ Vytvoření vazby na použití klienta je zadán pomocí konfiguračního souboru.  
   
- Název fronty služby MSMQ je zadán v oddílu appSettings konfiguračního souboru. Koncový bod pro službu je definovaný v oddílu System.serviceModel konfiguračního souboru.  
+ Název fronty MSMQ je zadán v oddílu appSettings konfiguračním souboru. Koncový bod služby je definován v oddíle System.serviceModel konfiguračního souboru.  
   
 > [!NOTE]
->  Adresu název a koncový bod služby MSMQ fronty pomocí mírně odlišné adresování konvence. Název fronty služby MSMQ používá tečku (.) pro místní počítač a oddělovače zpětné lomítko, v jeho cesty. Adresa koncového bodu WCF určuje net.msmq: schéma, používá "localhost" pro místní počítač a v jeho cesty používá lomítka. Čtení z fronty, která je hostována na vzdáleném počítači, nahraďte "." a "localhost" pro název vzdáleného počítače.  
+>  Adresa název a koncový bod fronty MSMQ používají mírně odlišná adresování konvence. Název fronty MSMQ používá tečku (.) pro místní počítače a zpětné lomítko oddělovače v cestě. Určuje adresu koncového bodu WCF net.msmq: schéma, používá "localhost" pro místní počítač a v jeho cesty používá lomítka. Chcete-li načítají z fronty, která je hostována na vzdáleném počítači, nahraďte "." a "localhost" pro název vzdáleného počítače.  
   
  .Svc soubor s názvem třídy se používá k hostování kódu služby ve WAS.  
   
@@ -94,13 +94,13 @@ public class OrderProcessorService : IOrderProcessor
 <%@ServiceHost language="c#" Debug="true" Service="Microsoft.ServiceModel.Samples.OrderProcessorService"%>  
 ```  
   
- Soubor Service.svc také obsahuje direktivu sestavení zajistit, že je načteno System.Transactions.dll.  
+ Soubor Service.svc také obsahuje direktivu sestavení k zajištění, že je načten uživatelský System.Transactions.dll.  
   
 ```xml  
 <%@Assembly name="System.Transactions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"%>  
 ```  
   
- Klient vytvoří oboru transakce. Komunikace se službou probíhá v rámci oboru transakce, příčinou je považován za atomické jednotky, kde všechny zprávy úspěch nebo neúspěch. Transakce se potvrdí voláním `Complete` v oboru transakce.  
+ Klient vytvoří obor transakce. Komunikace se službou se provádí v rámci oboru transakcí, vyvolá zacházet jako atomickou jednotku, kde všechny zprávy úspěch nebo neúspěch. Transakce se potvrdí při volání `Complete` v oboru transakce.  
   
 ```csharp  
 using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))  
@@ -155,7 +155,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(OrderStatusService)))
     }  
 ```  
   
- Implementuje kód klienta `IOrderStatus` smlouvy přijímat pořadí stav ze služby. V takovém případě vytiskne na stav pořadí.  
+ Klientský kód implementuje `IOrderStatus` smlouvy získat ze služby stavu objednávky. V takovém případě se vytiskne stavu objednávky.  
   
 ```csharp  
 [ServiceBehavior]  
@@ -171,7 +171,7 @@ public class OrderStatusService : IOrderStatus
 }  
 ```  
   
- Je vytvářena fronta stavu pořadí v `Main` metoda. Konfigurace klienta zahrnuje konfiguraci služby stavu pořadí k hostování služby stavu pořadí, jak je znázorněno v následující ukázka konfigurace.  
+ Je vytvářena fronta stav objednávky v `Main` metody. Konfigurace klienta zahrnuje konfiguraci služby stavu objednávky pro hostování služby stavu objednávky, jak je znázorněno v následující ukázková konfigurace.  
   
 ```csharp  
 <appSettings>  
@@ -203,52 +203,52 @@ public class OrderStatusService : IOrderStatus
   </system.serviceModel>  
 ```  
   
- Při spuštění ukázky činnosti klienta a služby se zobrazí v oknech konzoly klienta i serveru. Můžete zobrazit server přijímat zprávy z klienta. Stisknutím klávesy ENTER v každé okno konzoly a ukončí se serverem a klientem.  
+ Při spuštění ukázky činnosti klienta a služby se zobrazují v oknech konzoly klienta i serveru. Můžete vidět server pro příjem zpráv z klienta. Stisknutím klávesy ENTER v okně konzoly se každý vypnout server i klient.  
   
- Klient se zobrazí informace o stavu pořadí odeslaných serverem:  
+ Klient se zobrazí informace o stavu objednávky odeslané serverem:  
   
 ```Output  
 Press <ENTER> to terminate client.  
 Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalovaná, jako je povinný aktivace WAS.  
+1.  Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalovaná, jak je vyžadováno pro aktivaci WAS.  
   
-2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je třeba nainstalovat součásti Aktivace jiným protokolem než HTTP WCF:  
+2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md). Kromě toho je třeba nainstalovat jiným protokolem než HTTP aktivačních komponent WCF:  
   
-    1.  Z **spustit** nabídce zvolte **ovládací panely**.  
+    1.  Z **Start** nabídce zvolte **ovládací panely**.  
   
     2.  Vyberte **programy a funkce**.  
   
-    3.  Klikněte na tlačítko **zapnout nebo vypnout funkce systému Windows**.  
+    3.  Klikněte na tlačítko **zapnout nebo vypnout funkce Windows**.  
   
     4.  V části **Souhrn funkcí**, klikněte na tlačítko **přidat funkce**.  
   
-    5.  Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontroly **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.  
+    5.  Rozbalte **rozhraní Microsoft .NET Framework 3.0** uzlu a kontrolu **Aktivace jiným protokolem než HTTP Windows Communication Foundation** funkce.  
   
-3.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spusťte klienta spuštěním client.exe z příkazového okna. Tím se vytvoří frontu a odešle zprávu do ní. Nechte klienty v provozu zobrazíte výsledek službu čtení zprávy  
+4.  Spustíte klienta spuštěním client.exe z příkazového okna. Tím se vytvoří frontu a odešle zprávu do něj. Nechte klienty k zobrazení výsledku čtení zprávy služby  
   
-5.  Aktivace služby MSMQ spouští jako síťová služba ve výchozím nastavení. Proto musí mít fronty, který se používá k aktivaci aplikace přijímat a prohlížet oprávnění pro síťovou službu. To lze přidat pomocí konzoly MMC služby Řízení front zpráv:  
+5.  Aktivační služba MSMQ je ve výchozím nastavení spouští jako síťová služba. Proto musí mít fronty, který se používá k aktivaci aplikace přijímat a náhled oprávnění pro síťovou službu. Jde přidat pomocí konzoly MMC služby Řízení front zpráv:  
   
-    1.  Z **spustit** nabídky, klikněte na tlačítko **spustit**, pak zadejte `Compmgmt.msc` a stiskněte klávesu ENTER.  
+    1.  Z **Start** nabídky, klikněte na tlačítko **spustit**, zadejte `Compmgmt.msc` a stiskněte klávesu ENTER.  
   
-    2.  V části **služeb a aplikací**, rozbalte položku **služby Řízení front zpráv**.  
+    2.  V části **služeb a aplikací**, rozbalte **služby Řízení front zpráv**.  
   
     3.  Klikněte na tlačítko **soukromé fronty**.  
   
     4.  Klikněte pravým tlačítkem na fronty (servicemodelsamples/Service.svc) a zvolte **vlastnosti**.  
   
-    5.  Na **zabezpečení** , klikněte na **přidat** a poskytují funkce Náhled a obdrží oprávnění k síťové službě.  
+    5.  Na **zabezpečení** klikněte na tlačítko **přidat** a poskytnout náhled a přijímat oprávnění pro síťovou službu.  
   
-6.  Konfigurace proces aktivace služby WAS (Windows) pro podporu aktivace MSMQ.  
+6.  Konfigurace Windows WAS Process Activation Service () pro podporu aktivace služby MSMQ.  
   
-     Pro potřeby následující kroky jsou implementované v dávkovém souboru názvem AddMsmqSiteBinding.cmd umístěný v adresáři ukázka.  
+     Pro zjednodušení následující kroky jsou implementovány v dávkovém souboru volá AddMsmqSiteBinding.cmd nachází v adresáři ukázkové.  
   
-    1.  Kvůli podpoře aktivace net.msmq, musí být nejprve vázána výchozí web na protokol net.msmq. To lze provést pomocí appcmd.exe, která se instaluje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] sada nástrojů pro správu. Z příkazového řádku s oprávněními zvýšenými na úroveň (správce) spusťte následující příkaz.  
+    1.  Kvůli podpoře aktivace net.msmq, musíte ji nejdřív svázat výchozí webový server net.msmq protokolu. To lze provést pomocí appcmd.exe, která se instaluje s [!INCLUDE[iisver](../../../../includes/iisver-md.md)] sada nástrojů pro správu. Z příkazového řádku se zvýšenými oprávněními (správce) spusťte následující příkaz.  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site"   
@@ -256,32 +256,32 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         ```  
   
         > [!NOTE]
-        >  Tento příkaz je na jednom řádku textu.  
+        >  Tento příkaz je jeden řádek textu.  
   
-         Tento příkaz přidá net.msmq vazba webu default Web site.  
+         Tento příkaz přidá vazbu webu net.msmq výchozí webový server.  
   
-    2.  Přestože všechny aplikace v rámci lokality sdílejí společné net.msmq vazbu, každá aplikace můžete povolit podporu net.msmq jednotlivě. Pokud chcete povolit net.msmq /servicemodelsamples aplikace, spusťte následující příkaz z příkazového řádku se zvýšenými oprávněními.  
+    2.  Přestože všechny aplikace v rámci lokality sdílejí společné net.msmq vazby, každá aplikace můžete povolit podporu net.msmq jednotlivě. Pokud chcete povolit net.msmq /servicemodelsamples aplikace, spusťte následující příkaz z příkazového řádku se zvýšenými oprávněními.  
   
         ```  
         %windir%\system32\inetsrv\appcmd.exe set app "Default Web Site/servicemodelsamples" /enabledProtocols:http,net.msmq  
         ```  
   
         > [!NOTE]
-        >  Tento příkaz je na jednom řádku textu.  
+        >  Tento příkaz je jeden řádek textu.  
   
-         Tento příkaz povolí aplikaci /servicemodelsamples získat přístup pomocí http://localhost/servicemodelsamples a net.msmq://localhost/servicemodelsamples.  
+         Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí http://localhost/servicemodelsamples a net.msmq://localhost/servicemodelsamples.  
   
-7.  Pokud jste tak dosud neučinili dříve, ujistěte se, že je povolena služba Aktivace služby MSMQ. Z **spustit** nabídky, klikněte na tlačítko **spustit**a typ `Services.msc`. V seznamu služeb pro Hledat **adaptér naslouchání Net.Msmq**. Klikněte pravým tlačítkem a vyberte **vlastnosti**. Nastavte **typ spuštění** k **automatické**, klikněte na tlačítko **použít** a klikněte na tlačítko **spustit** tlačítko. Tento krok je třeba provést pouze jednou před první využití služby Net.Msmq adaptér naslouchání.  
+7.  Pokud jste neudělali dříve, ujistěte se, že je povolená aktivace služby MSMQ. Z **Start** nabídky, klikněte na tlačítko **spustit**a typ `Services.msc`. V seznamu služeb pro vyhledejte **adaptér naslouchání Net.Msmq**. Klikněte pravým tlačítkem a vyberte **vlastnosti**. Nastavte **typ spouštění** k **automatické**, klikněte na tlačítko **použít** a klikněte na tlačítko **Start** tlačítko. Tento krok je třeba provést pouze jednou před první využití služby adaptér naslouchání Net.Msmq.  
   
-8.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Kromě toho změňte kód v klientovi, který odešle nákupní objednávka podle názvu počítače v identifikátoru URI fronty při odesílání nákupní objednávka. Použijte následující kód:  
+8.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). Kromě toho změňte kód na straně klienta, který odešle nákupní pořadí tak, aby odrážely název počítače v identifikátoru URI fronty, při odesílání nákupní objednávky. Pomocí následujícího kódu:  
   
     ```  
     client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");  
     ```  
   
-9. Odeberte net.msmq vazby webu, který jste přidali Tato ukázka.  
+9. Odeberte net.msmq vazby webu, kterou jste přidali pro tuto ukázku.  
   
-     Pro potřeby následující kroky jsou implementované v dávkovém souboru názvem RemoveMsmqSiteBinding.cmd umístěný v adresáři ukázka:  
+     Pro zjednodušení následující kroky jsou implementovány v dávkovém souboru volá RemoveMsmqSiteBinding.cmd nachází v adresáři ukázkové:  
   
     1.  Odeberte net.msmq ze seznamu povolených protokolů spuštěním následujícího příkazu z příkazového řádku se zvýšenými oprávněními.  
   
@@ -290,7 +290,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         ```  
   
         > [!NOTE]
-        >  Tento příkaz je na jednom řádku textu.  
+        >  Tento příkaz je jeden řádek textu.  
   
     2.  Odeberte vazbu webu net.msmq spuštěním následujícího příkazu z příkazového řádku se zvýšenými oprávněními.  
   
@@ -299,16 +299,16 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         ```  
   
         > [!NOTE]
-        >  Tento příkaz je na jednom řádku textu.  
+        >  Tento příkaz je jeden řádek textu.  
   
     > [!WARNING]
-    >  Spuštění dávkového souboru obnoví DefaultAppPool běžely pomocí rozhraní .NET Framework verze 2.0.  
+    >  Spuštění dávkový soubor se resetuje DefaultAppPool pro spuštění pomocí rozhraní .NET Framework verze 2.0.  
   
- Ve výchozím nastavení se `netMsmqBinding` vazby přenos, zabezpečení je povoleno. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení je režim ověřování nastaven na `Windows` a úroveň ochrany je nastavena na `Sign`. Pro MSMQ k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, je přijatých k následující chybě: "Uživatele interní zpráv služby Řízení front certifikát neexistuje".  
+ Ve výchozím nastavení se `netMsmqBinding` vazby přenosu, zabezpečení je povolená. Dvě vlastnosti `MsmqAuthenticationMode` a `MsmqProtectionLevel`, společně určují typ zabezpečení přenosu. Ve výchozím nastavení je režim ověřování nastaven na `Windows` a aby úroveň ochrany je nastavená na `Sign`. Pro službu MSMQ. k ověřování a podepisování funkce musí být součástí domény. Pokud tuto ukázku spustit na počítači, který není součástí domény, je přijata následující chyba: "Uživatele interní zprávy služby Řízení front certifikát neexistuje".  
   
-### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Ke spuštění ukázky na počítače připojeného k pracovní skupině  
+### <a name="to-run-the-sample-on-a-computer-joined-to-a-workgroup"></a>Ke spuštění ukázky na počítač připojen k pracovní skupině  
   
-1.  Pokud počítač není součástí domény, vypněte podle nastavení úrovně ověřování režimu a ochrany na hodnotu none, jak je znázorněno v následující ukázka konfigurace zabezpečení přenosu.  
+1.  Pokud počítač není součástí domény, vypněte tak, že nastavíte úroveň ověření režimu a ochrany na hodnotu none, jak je znázorněno v následující ukázkové konfiguraci zabezpečení přenosu.  
   
     ```xml  
     <bindings>  
@@ -320,34 +320,34 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
     </bindings>  
     ```  
   
-2.  Změňte konfiguraci na serveru a klienta, před spuštěním ukázky.  
+2.  Před spuštěním ukázky, změňte konfiguraci na serveru a klienta.  
   
     > [!NOTE]
     >  Nastavení `security mode` k `None` je ekvivalentní nastavení `MsmqAuthenticationMode`, `MsmqProtectionLevel` a `Message` zabezpečení `None`.  
   
-3.  Povolit aktivace v počítače připojeného k pracovní skupině, je potřeba spustit službu Aktivace a pracovní proces s konkrétní uživatelský účet (musí být stejné pro obě) a fronty musí mít seznamy řízení přístupu pro konkrétní uživatelský účet.  
+3.  Chcete-li aktivovat počítač připojen k pracovní skupině, musí být spuštěna aktivace služby a pracovní proces s konkrétního uživatelského účtu (musí být stejná pro obě) a fronty musí mít seznamy ACL pro konkrétní uživatelský účet.  
   
-     Změna identity kompatibilní se pracovní proces:  
+     Chcete-li změnit identitu, která poběží pracovní proces v části:  
   
     1.  Spusťte Inetmgr.exe.  
   
-    2.  V části **fondy aplikací**, klikněte pravým tlačítkem myši **AppPool** (obvykle **DefaultAppPool**) a zvolte **nastavit výchozí nastavení fondu aplikací...** .  
+    2.  V části **fondy aplikací**, klikněte pravým tlačítkem myši **fondu aplikací** (obvykle **DefaultAppPool**) a zvolte **nastavit výchozí nastavení fondu aplikací...** .  
   
-    3.  Změňte vlastnosti Identity pro použití účtu pro konkrétního uživatele.  
+    3.  Změňte vlastnosti Identity pro použití konkrétního uživatelského účtu.  
   
-     Změna identity kompatibilní se službu Aktivace:  
+     Chcete-li změnit identita, pod kterým běží služba Aktivace:  
   
     1.  Run Services.msc.  
   
     2.  Klikněte pravým tlačítkem myši **Net.MsmqListener adaptér**a zvolte **vlastnosti**.  
   
-4.  Změňte účet v **přihlášení** kartě.  
+4.  Změna účtu v **přihlášení** kartu.  
   
-5.  V pracovní skupině se musí taky spustit služba pomocí neomezený tokenu. K tomu, spusťte následující příkazy v příkazovém okně:  
+5.  V pracovní skupině se musí taky spustit služba používá token pro neomezený. Chcete-li to provést, spusťte následující v příkazovém okně:  
   
     ```  
     sc sidtype netmsmqactivator unrestricted  
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

@@ -8,11 +8,11 @@ ms.assetid: c1fc7d6c-7220-475c-a312-5b8b201f66e0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 21ab18cded2b9a16fe2520547287198d3cfe6b74
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43416771"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43529308"
 ---
 # <a name="ltgccpugroupgt-element"></a>&lt;Gccpugroup –&gt; – Element
 Určuje, zda uvolňování podporuje více skupin procesorů.  

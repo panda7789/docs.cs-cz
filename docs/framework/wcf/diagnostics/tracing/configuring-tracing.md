@@ -4,35 +4,35 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tracing [WCF]
 ms.assetid: 82922010-e8b3-40eb-98c4-10fc05c6d65d
-ms.openlocfilehash: f9603f79992c31ad1af3b6c672b448ab031ba78d
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: c5064d90c8601ee44be593446b0fd5ad483e57f2
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33807365"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43542294"
 ---
 # <a name="configuring-tracing"></a>Konfigurace trasování
-Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasování zdrojů pro vydávání trasování a nastavte úrovně trasování, trasování aktivit sady a šíření pro podporu trasování začátku do konce korelace a nastavte trasování – moduly naslouchání pro přístup k trasování.  
+Toto téma popisuje, jak můžete povolit trasování, konfigurovat zdroje trasování generoval trasování a úrovně trasování sady, trasování sady aktivit a šíření pro podporu korelace trasování začátku do konce a nastavit naslouchacích procesů trasování pro přístup k trasování.  
   
- Doporučení nastavení trasování v provozním prostředí nebo ladění prostředí, najdete v části [doporučená nastavení pro trasování a protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md).  
+ Doporučení pro nastavení trasování v produkčním prostředí nebo prostředí ladění, najdete v tématu [doporučené nastavení pro trasování a protokolování zpráv](../../../../../docs/framework/wcf/diagnostics/tracing/recommended-settings-for-tracing-and-message-logging.md).  
   
 > [!IMPORTANT]
->  V systému Windows 8 je nutné spustit vaší aplikace zvýšených oprávnění (Spustit jako správce), aby aplikace generují protokoly trasování.  
+>  V systému Windows 8 je nutné spustit vaše aplikace se zvýšenými oprávněními (Spustit jako správce) v pořadí pro vaši aplikaci k vygenerování protokoly trasování.  
   
 ## <a name="enabling-tracing"></a>Povolení trasování  
- Windows Communication Foundation (WCF) výstupy následující data pro diagnostické trasování:  
+ Windows Communication Foundation (WCF) následující výstupní data odesílá do pro diagnostické trasování:  
   
--   Trasování pro milníky procesu pro všechny součásti aplikací, jako je například volání operací kód výjimky, upozornění a další důležité zpracování událostí.  
+-   Trasování pro proces milníky pro všechny součásti aplikace, jako je volání operace kód výjimky, upozornění a dalších operací zpracování událostí.  
   
--   Události systému Windows chybu při trasování funkce nefunguje správně. V tématu [protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
+-   Události chyb Windows při trasování funkce nepracuje správně. Zobrazit [protokolování událostí](../../../../../docs/framework/wcf/diagnostics/event-logging/index.md).  
   
- Trasování WCF je postavený na <xref:System.Diagnostics>. Pokud chcete používat trasování, byste měli definovat trasování zdrojů v konfiguračním souboru nebo v kódu. WCF definuje zdroj trasování pro každé sestavení WCF. `System.ServiceModel` Zdroj trasování je nejobecnější zdroj trasování WCF a zaznamenává zpracování milníky napříč komunikačního balíku WCF z zadávání ponechat přenosu zadávání nebo nechat uživatelského kódu. `System.ServiceModel.MessageLogging` Zdroj trasování zaznamenává všechny zprávy, které toku prostřednictvím systému.  
+ Trasování WCF je postavený na <xref:System.Diagnostics>. Chcete-li použít trasování, byste měli definovat zdroje trasování v konfiguračním souboru nebo v kódu. Zdroj trasování WCF definuje pro každé sestavení WCF. `System.ServiceModel` Zdroj trasování je nejobecnější zdroj trasování WCF a zaznamenává milníky zpracování napříč celým zásobníkem komunikace WCF, z zadáním/opuštění přenosu k zadávání/opuštění uživatelského kódu. `System.ServiceModel.MessageLogging` Zdroj trasování zaznamenává všechny zprávy, které budou plout prostřednictvím systému.  
   
- Ve výchozím nastavení není povoleno trasování. Aktivujte trasování, musíte vytvořit naslouchací proces trasování a nastaví úroveň trasování než "Off" zdroje vybraného trasování v konfiguraci. WCF, jinak hodnota negeneruje žádné trasování. Pokud nezadáte naslouchací proces, trasování se automaticky zakáže. Pokud je definována naslouchací proces, ale není zadána žádná, úroveň je nastavena na "Off", ve výchozím nastavení, což znamená, že jsou vydávány žádné trasování.  
+ Ve výchozím nastavení není povoleno trasování. Aktivujte trasování, musíte vytvořit naslouchací proces trasování a nastaví úroveň trasování než "Off" pro zdroj trasování vybrané v konfiguraci. v opačném případě WCF negeneruje žádné trasování. Pokud nezadáte naslouchací proces, bude trasování automaticky zakázáno. Pokud je definován naslouchací proces, ale není zadána žádná úroveň, na úrovni nastavená na "Off" ve výchozím nastavení, což znamená, že je vygenerován bez trasování.  
   
- Pokud používáte body rozšiřitelnosti WCF například vlastní operaci invokers, by měl emitování vlastní trasování. Je to proto, že pokud budete implementovat bod rozšiřitelnosti, WCF můžete už negeneruje standardní trasování ve výchozí cestě. Pokud není implementujete ruční trasování podporu generování trasování, nemusíte vidět trasování, které očekáváte.  
+ Pokud používáte bodů rozšiřitelnosti WCF, jako je vlastní operace invokers, by měly vydávat vlastní trasy. Je to proto, že pokud se rozhodnete implementovat bod rozšiřitelnosti, WCF můžete už negeneruje standardní trasování ve výchozí cestě. Pokud není implementujete podporu ruční trasování generování trasování, nemusíte vidět trasování, které očekáváte.  
   
- Trasování lze nakonfigurovat úpravou konfiguračního souboru aplikace – buď soubor Web.config pro Web webové aplikace nebo Appname.exe.config vlastním hostováním aplikací. Následuje příklad takové úpravy. Další informace o těchto nastaveních najdete v části "Konfigurace trasování – moduly naslouchání na využívat trasování".  
+ Trasování můžete nakonfigurovat úpravou souboru konfigurace aplikace – buď soubor Web.config pro hostované webové aplikace nebo Appname.exe.config pro aplikace v místním prostředí. Následuje příklad takové úpravy. Další informace o těchto nastaveních naleznete v části "Konfigurace trasování naslouchacích procesů k využívání trasování".  
   
 ```xml  
 <configuration>  
@@ -53,26 +53,26 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
 ```  
   
 > [!NOTE]
->  Chcete-li upravit konfigurační soubor projektu služby WCF v sadě Visual Studio, klikněte pravým tlačítkem na soubor konfigurace aplikace – buď soubor Web.config pro Web webové aplikace nebo Appname.exe.config pro vlastním hostováním aplikaci v **Průzkumníku řešení** . Zvolte **upravit konfiguraci WCF** položky kontextové nabídky. Spustí se [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md), což umožňuje změnit nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní.  
+>  Chcete-li upravit konfigurační soubor projektu služby WCF v sadě Visual Studio, klikněte pravým tlačítkem na konfigurační soubor aplikace – buď soubor Web.config pro hostované webové aplikace nebo Appname.exe.config aplikace v místním prostředí v **Průzkumníka řešení** . Klikněte na tlačítko **upravit konfiguraci WCF** položka kontextové nabídky. Tím se spustí [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md), což vám umožní změnit nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní.  
   
-## <a name="configuring-trace-sources-to-emit-traces"></a>Konfigurace trasování zdroje pro vydávání trasování  
- WCF definuje zdroj trasování pro každé sestavení. Trasování generované v rámci sestavení jsou dostupné přes naslouchací procesy definované pro tento zdroj. Následující zdroje trasování jsou definovány:  
+## <a name="configuring-trace-sources-to-emit-traces"></a>Konfigurace zdrojů trasování generovat trasování  
+ Zdroj trasování WCF definuje pro každé sestavení. Trasování vygenerované v rámci sestavení přistupují naslouchacích procesů definované pro tento zdroj. Jsou definovány následující zdroje trasování:  
   
--   System.ServiceModel: Protokoly všech fázích WCF vždy, když zpracování konfigurace je pro čtení, zpráva se zpracuje v přenos, je zabezpečení zpracování zprávy odeslaných za uživatelského kódu a tak dále.  
+-   System.ServiceModel: Protokoly všech fázích zpracování WCF, vždy, když je konfigurace pro čtení, zpráva se zpracuje v přenosu, zpracování, bezpečnostní zprávy odesílá v uživatelském kódu a tak dále.  
   
--   Poslouchají: Zaznamená všechny zprávy, které toku prostřednictvím systému.  
+-   System.ServiceModel.MessageLogging: Protokoluje všechny zprávy, které budou plout prostřednictvím systému.  
   
 -   System.IdentityModel.  
   
 -   System.ServiceModel.Activation.  
   
--   System.IO.Log: Protokolování pro rozhraní .NET Framework na běžné Log File System (CLFS).  
+-   System.IO.Log: Protokolování pro rozhraní .NET Framework do Common Log File System (CLFS).  
   
--   System.Runtime.Serialization: Protokoly Pokud jsou objekty číst nebo zapisovat.  
+-   System.Runtime.Serialization: Pokud jsou objekty čteným nebo zapsaným protokoly.  
   
--   CardSpace.  
+-   Služba CardSpace.  
   
- Každý zdroj trasování používat stejné (sdílené) naslouchací proces, můžete nakonfigurovat, jak je uvedeno v následujícím příkladu konfigurace.  
+ Každý zdroj trasování používat stejné (sdílené) naslouchacího procesu, můžete nakonfigurovat, jak je uvedeno v následujícím příkladu konfigurace.  
   
 ```xml  
 <configuration>  
@@ -116,7 +116,7 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
 </configuration>  
 ```  
   
- Kromě toho můžete přidat vlastní trasování zdrojů, jak ukazuje následující příklad, pro vydávání trasování kódu uživatele.  
+ Kromě toho můžete přidat zdroje trasování definovaný uživatelem, jak je ukázáno v následujícím příkladu, pro generování trasování v kódu uživatele.  
   
 ```xml  
 <system.diagnostics>  
@@ -133,55 +133,55 @@ Toto téma popisuje, jak můžete povolit trasování, nakonfigurujte trasován�
 </system.diagnostics>  
 ```  
   
- Další informace o vytváření uživatelem definované trasování zdrojů najdete v tématu [rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md).  
+ Další informace o vytváření zdrojů trasování uživatelem definované, najdete v části [rozšíření trasování](../../../../../docs/framework/wcf/samples/extending-tracing.md).  
   
-## <a name="configuring-trace-listeners-to-consume-traces"></a>Konfigurace trasování – moduly naslouchání využívat trasování  
- Za běhu informační kanály WCF data trasování pro naslouchací procesy, které zpracovávají data. Služba WCF nabízí několik předdefinovaných naslouchací procesy pro <xref:System.Diagnostics>, který se liší ve formátu používají pro výstup. Můžete také přidat vlastní naslouchací proces typy.  
+## <a name="configuring-trace-listeners-to-consume-traces"></a>Chcete-li využívají trasování konfiguraci naslouchacích procesů trasování  
+ Za běhu informační kanály WCF data trasování naslouchacím procesům, které zpracovávají data. WCF obsahuje několik předdefinovaných naslouchacích procesů pro <xref:System.Diagnostics>, která se liší ve formátu používají pro výstup. Můžete také přidat vlastní naslouchací proces typy.  
   
- Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V našem příkladu konfigurace jsme pojmenovali naslouchací proces `traceListener` a přidat standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) jako typ, který chcete použít. Můžete přidat libovolný počet trasování – moduly naslouchání pro každý zdroj. Naslouchací proces trasování vysílá trasování do souboru, je nutné zadat výstupní soubor umístění a název v konfiguračním souboru. To se provádí nastavením `initializeData` k názvu souboru pro tento naslouchací proces. Pokud nezadáte název souboru, je generována náhodného názvu souboru na základě typu naslouchací proces používá. Pokud <xref:System.Diagnostics.XmlWriterTraceListener> se použije, generuje se název souboru bez přípony. Pokud budete implementovat vlastní naslouchací proces, můžete také použít tento atribut přijímat data inicializace než název souboru. Například můžete zadat identifikátor databáze pro tento atribut.  
+ Můžete použít `add` Chcete-li určit název a typ naslouchací proces trasování, kterou chcete použít. V konfiguraci našeho příkladu jsme pojmenovali naslouchací proces `traceListener` a přidat standardní naslouchací proces trasování rozhraní .NET Framework (`System.Diagnostics.XmlWriterTraceListener`) jako typ chceme použít. Můžete přidat libovolný počet naslouchacích procesů trasování pro každý zdroj. Pokud naslouchací služby stopy vysílá trasování do souboru, musíte zadat název a umístění souboru výstupu v konfiguračním souboru. To se provádí nastavením `initializeData` k názvu souboru pro tuto naslouchací proces. Pokud nezadáte název souboru, náhodného názvu souboru generován na základě typu naslouchací proces používá. Pokud <xref:System.Diagnostics.XmlWriterTraceListener> je použit, název souboru bez přípony generuje. Pokud se rozhodnete implementovat vlastní naslouchací proces, můžete také použít tento atribut pro příjem dat inicializace než název souboru. Můžete například zadat identifikátor databáze pro tento atribut.  
   
- Můžete nakonfigurovat vlastní naslouchací odeslat trasování v drátové síti, například ke vzdálené databázi. Jako modul pro nasazení aplikace by měl vynutit řízení správné přístupu na protokoly trasování ve vzdáleném počítači.  
+ Můžete nakonfigurovat vlastní naslouchací k odesílání trasování na lince, například ke vzdálené databázi. Jako občasným aplikace měla vynutit, vhodné řízení přístupu na protokoly trasování ve vzdáleném počítači.  
   
- Můžete také nakonfigurovat naslouchací prostřednictvím kódu programu. Další informace najdete v tématu [postupy: vytvoření a inicializace naslouchacích procesů trasování](http://go.microsoft.com/fwlink/?LinkId=94648) a [vytváření vlastní TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239).  
+ Můžete také nakonfigurovat naslouchací proces trasování prostřednictvím kódu programu. Další informace najdete v tématu [postupy: vytváření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648) a [vytvořením Custom TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239).  
   
 > [!CAUTION]
->  Protože `System.Diagnostics.XmlWriterTraceListener` nejsou bezpečné pro vlákna, zdroj trasování může zamknutí prostředků, výhradně, při výstupu trasování. Pokud mnoho vláken výstup trasování ke zdroji trasování, který je nakonfigurován pro použití této naslouchací proces, může dojít, sporu prostředků, výsledkem problém významně zvýšit výkon. Chcete-li vyřešit tento problém, měli byste implementovat vlastní naslouchací proces, který je bezpečný pro přístup z více vláken.  
+>  Protože `System.Diagnostics.XmlWriterTraceListener` není bezpečná pro vlákno, zdroj trasování může zamknutí prostředků, výhradně při výstupu trasování. Po několika vlákny výstup trasování do zdroje trasování konfigurován pro použití tímto naslouchacím procesem, může dojít k sporu prostředků, výsledkem problému s výkonem významné. Chcete-li vyřešit tento problém, měli byste implementovat vlastní naslouchací proces, který je bezpečná pro vlákno.  
   
 ## <a name="trace-level"></a>Úroveň trasování  
- Úroveň trasování řídí `switchValue` nastavení zdroje trasování. Úrovní trasování k dispozici jsou popsané v následující tabulce.  
+ Úroveň trasování řídí `switchValue` nastavení zdroje trasování. K dispozici trasování úrovně jsou popsány v následující tabulce.  
   
-|Úroveň trasování|Povaha sledovaného události|Obsah sledovaných událostí|Sledovaných událostí|Cílový uživatel|  
+|Úroveň trasování|Povaha sledovaných událostí|Obsah sledovaných událostí|Sledovaných událostí|Cílový uživatel|  
 |-----------------|----------------------------------|-----------------------------------|--------------------|-----------------|  
-|Off|Není k dispozici|Není k dispozici|Žádné trasování jsou vydávány.|Není k dispozici|  
-|Kritická|"Zápornou" události: události, které označují neočekávané zpracování nebo chybový stav.||Jsou zaznamenány neošetřených výjimek, včetně následujících:<br /><br /> – OutOfMemoryException<br />-Výjimka ThreadAbortException (všechny ThreadAbortExceptionHandler vyvolá modulu CLR)<br />-StackOverflowException (nemůže být zachycena)<br />-ConfigurationErrorsException –<br />-SEHException –<br />-Chyby spuštění aplikací<br />-Failfast události<br />-Systém přestane reagovat.<br />-Škodlivých zpráv: zpráva trasování, které způsobí selhání aplikace.|Správci<br /><br /> Vývojáři aplikací|  
-|Chyba|"Zápornou" události: události, které označují neočekávané zpracování nebo chybový stav.|Došlo k neočekávané zpracování. Aplikaci se nepodařilo provést úlohu podle očekávání. Aplikace je však stále spuštěný a funkční.|Všechny výjimky jsou protokolovány.|Správci<br /><br /> Vývojáři aplikací|  
-|Upozornění|"Zápornou" události: události, které označují neočekávané zpracování nebo chybový stav.|Možný problém došlo k chybě nebo může dojít, ale stále funkce aplikace správně. Však nemusí dál fungovat správně.|-Aplikace přijímá více požadavků než jeho nastavení omezení povolit.<br />-Přijímající fronta je téměř své maximální kapacity nakonfigurované.<br />-Byla překročena časový limit.<br />-Pověření jsou odmítnuta.|Správci<br /><br /> Vývojáři aplikací|  
-|Informace o|"Pozitivní" události: události, které označit úspěšné milníky|Důležité a úspěšné milníky provádění aplikací, bez ohledu na to, zda aplikace funguje správně, nebo ne.|Obecně platí jsou generovány, zprávy, které jsou užitečné pro monitorování a diagnostice stav systému, měření výkonu nebo profilace. Tyto informace můžete použít pro správu výkon a plánování kapacity:<br /><br /> -Kanály se vytvoří.<br />-Naslouchací procesy koncový bod se vytvoří.<br />-Zpráva zadá nebo nechá přenosu.<br />-Načte token zabezpečení.<br />– Nastavení konfigurace je pro čtení.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktu.|  
-|Verbose|"Pozitivní" události: události, které označit milníky úspěšné.|Jsou vydávány nízkou úroveň události pro uživatele kódu a údržby.|Obecně platí můžete tato úroveň optimalizace ladění nebo aplikace.<br /><br /> -Záhlaví srozumitelné zprávy.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktu.|  
-|ActivityTracing||Události toku mezi aktivitami zpracování a součásti.|Tato úroveň umožňuje správci a vývojáři ke korelaci aplikací ve stejné doméně aplikace:<br /><br /> -Trasování pro hranice aktivity, jako je například spuštění a zastavení.<br />-Trasování pro přenosy.|Všechny|  
-|Všechny||Aplikace může fungovat správně. Všechny události jsou vydávány.|Všechny předchozí události.|Všechny|  
+|Off|Není k dispozici|Není k dispozici|Žádné trasování jsou emitovány.|Není k dispozici|  
+|Kritická|"Záporné" události: událostí, které označují neočekávané zpracování nebo chybový stav.||Protokolují se neošetřené výjimky, včetně následujících:<br /><br /> – OutOfMemoryException<br />-Výjimka ThreadAbortException (CLR volá všechny ThreadAbortExceptionHandler)<br />-StackOverflowException –, (nemůže být zachycena)<br />– ConfigurationErrorsException –<br />– SEHException –<br />-Chyby spuštění aplikací<br />– Režim Failfast události<br />– System. program přestane reagovat<br />-Nezpracovatelné zprávy: zpráva trasování, které způsobí selhání aplikace.|Správci<br /><br /> Vývojáři aplikací|  
+|Chyba|"Záporné" události: událostí, které označují neočekávané zpracování nebo chybový stav.|Došlo k neočekávané zpracování. Aplikace nebyla schopna provést úlohu podle očekávání. Aplikace je však stále zprovozněný.|Všechny výjimky jsou protokolovány.|Správci<br /><br /> Vývojáři aplikací|  
+|Upozornění|"Záporné" události: událostí, které označují neočekávané zpracování nebo chybový stav.|Možný problém došlo k chybě nebo může dojít, ale stále funkce aplikace správně. Nemusí ale dál správně fungovat.|-Aplikace přijímá více požadavků než umožní její nastavení omezení šířky pásma.<br />-Přijímající fronty se blíží maximální kapacitě nakonfigurované.<br />– Byla překročena časový limit.<br />-Credentials odmítají.|Správci<br /><br /> Vývojáři aplikací|  
+|Informace o|"Pozitivní" události: událostí, které označují úspěšné milníky|Důležité a úspěšné milníky spuštění aplikace, bez ohledu na to, zda aplikace funguje správně.|Obecně platí zprávy, které jsou užitečné pro monitorování a diagnostiku stavu systému, měření výkonu nebo profilování jsou generovány. Tyto informace můžete použít pro správu výkon a plánování kapacity:<br /><br /> -Kanály jsou vytvořeny.<br />-Koncového bodu naslouchací procesy jsou vytvořeny.<br />-Zpráva zadá/ponechá přenosu.<br />-Načte token zabezpečení.<br />– Nastavení konfigurace je pro čtení.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktu.|  
+|verbose|"Pozitivní" události: událostí, které označují úspěšné milníky.|Jsou emitovány nízké událostí na úrovni pro uživatelský kód a údržbu.|Obecně platí můžete použít tuto úroveň optimalizace pro ladění nebo aplikace.<br /><br /> -Záhlaví zprávy bylo porozuměno.|Správci<br /><br /> Vývojáři aplikací<br /><br /> Vývojáři produktu.|  
+|ActivityTracing||Tok událostí mezi zpracování aktivit a komponent.|Tato úroveň umožňuje vývojářům a správcům ke korelaci aplikací ve stejné doméně aplikace:<br /><br /> -Trasování pro hranice aktivity, jako je například spuštění/zastavení.<br />-Trasování pro přenosy.|Všechny|  
+|Všechny||Aplikace může fungovat správně. Všechny události se vysílají.|Všechny předchozí události.|Všechny|  
   
- Úrovně z podrobné na kritický přibývají na sebe, který je každou úroveň trasování obsahuje všechny úrovně nad ním s výjimkou úroveň Off. Například naslouchací proces naslouchání na úrovni upozornění obdrží trasování kritické chyby a upozornění. Všechny úroveň zahrnuje události z podrobné na kritický a aktivity události trasování.  
+ Úrovně z Verbose na hodnotu kritický jsou sebe, to znamená, každou úroveň trasování zahrnuje všechny úrovně nad ním s výjimkou na úrovni Off. Například naslouchací proces naslouchá na úroveň pro upozornění obdrží trasování kritické chyby a upozornění. Všechny úrovně zahrnuje události z Verbose na kritický a aktivity události trasování.  
   
 > [!CAUTION]
->  Úrovně informace, podrobný nebo ActivityTracing vygeneroval velké množství trasování, které může mít negativní vliv propustnost zpráv, pokud jste použili až všechny dostupné prostředky na počítači.  
+>  Úrovně informace, podrobný nebo ActivityTracing generovat velké množství trasování, které mohou negativně ovlivnit propustnost zpráv, pokud jste využili všechny dostupné prostředky na počítači.  
   
-## <a name="configuring-activity-tracing-and-propagation-for-correlation"></a>Konfigurace trasování aktivit a šíření pro korelace  
- `activityTracing` Hodnota parametru `switchValue` atribut slouží k povolení trasování aktivity, který vysílá trasování pro aktivity hranice a přenosy v rámci koncové body.  
+## <a name="configuring-activity-tracing-and-propagation-for-correlation"></a>Konfigurace trasování činnosti a šíření pro korelaci  
+ `activityTracing` Hodnota zadaná pro omezení `switchValue` atribut se používá k povolení trasování činnosti, které vysílá trasování aktivity hranic a přenosy v rámci koncových bodů.  
   
 > [!NOTE]
->  Při použití některých funkcí rozšiřitelnosti ve WCF, se mohou objevit <xref:System.NullReferenceException> při zapnutém trasování aktivity. Chcete-li tento problém vyřešit, zkontrolujte konfigurační soubor vaší aplikace a ujistěte se, že `switchValue` atribut pro vaše zdroj trasování není nastavený na `activityTracing`.  
+>  Při použití určitých funkcí rozšíření ve službě WCF, může se zobrazit <xref:System.NullReferenceException> když je povoleno trasování činnosti. Chcete-li tento problém vyřešit, zkontrolujte konfigurační soubor vaší aplikace a ujistěte se, že `switchValue` atribut pro zdroj trasování není nastaven na hodnotu `activityTracing`.  
   
- `propagateActivity` Atribut uvádí, zda by mělo být předáno aktivity na ostatní koncové body, které jsou součástí výměny zpráv. Nastavením této hodnoty na `true`, můžete provést trasovací soubory generované žádné dva koncové body a sledovat, jak sadu trasování na jeden koncový bod předávány sadu trasování na jiný koncový bod.  
+ `propagateActivity` Atribut označuje, zda by mělo být předáno aktivity ostatní koncové body, které jsou součástí zprávy exchange. Nastavením této hodnoty na `true`, můžete provést trasování soubory generované záznamem pro jakékoli dva koncové body služby a sledovat, jak sadu stopy na jeden koncový bod byly převedeny do sady trasování na jiný koncový bod.  
   
- Další informace o trasování aktivity a šíření najdete v tématu [šíření](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md).  
+ Další informace o trasování činnosti a šíření najdete v tématu [šíření](../../../../../docs/framework/wcf/diagnostics/tracing/propagation.md).  
   
- Obě `propagateActivity` a `ActivityTracing` logické hodnoty, na které se týkají System.ServiceModel TraceSource. `ActivityTracing` Hodnota platí také pro jakýkoli zdroj trasování, včetně WCF nebo uživatelem definované snímků.  
+ Obě `propagateActivity` a `ActivityTracing` logické hodnoty použít na třídy System.ServiceModel TraceSource. `ActivityTracing` Hodnota platí také pro všechny zdroje trasování, včetně WCF nebo uživatelem definované balíčky.  
   
- Nelze použít `propagateActivity` atribut s uživatelem definované trasování zdrojů. Šíření ID aktivity uživatele kódu, je nutné nenastavíte ServiceModel `ActivityTracing`, zároveň ponechat ServiceModel `propagateActivity` atribut nastaven na `true`.  
+ Nelze použít `propagateActivity` atribut s uživatelem definované trasování zdrojů. Pro šíření ID aktivity uživatele kódu, ujistěte se, že nenastavíte ServiceModel `ActivityTracing`, přitom stále má ServiceModel `propagateActivity` atribut nastaven na `true`.  
   
 ## <a name="see-also"></a>Viz také  
  [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  
  [Správa a diagnostika](../../../../../docs/framework/wcf/diagnostics/index.md)  
- [Postupy: Vytváření a inicializace naslouchacích procesů trasování](http://go.microsoft.com/fwlink/?LinkId=94648)  
- [Vytváření vlastních TraceListener](http://go.microsoft.com/fwlink/?LinkId=96239)
+ [Postupy: Vytváření a inicializace naslouchacích procesů trasování](https://go.microsoft.com/fwlink/?LinkId=94648)  
+ [Vytváření vlastních TraceListener](https://go.microsoft.com/fwlink/?LinkId=96239)

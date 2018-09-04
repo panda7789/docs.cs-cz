@@ -1,38 +1,38 @@
 ---
-title: WIF a webové farmy
+title: Technologie WIF a webové farmy
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: ed6a7fbe550dad85cf505eaf20a446803b84c96f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 365416a82881c32b8fdcd3211aa42acb9f273483
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33410413"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502726"
 ---
-# <a name="wif-and-web-farms"></a>WIF a webové farmy
-Pokud používáte Windows Identity Foundation (WIF) k zabezpečení prostředků předávající stranu aplikace, který je nasazen ve webové farmě, je nutné provést určité kroky k zajištění, že WIF může zpracovat tokeny z instancí RP aplikace spuštěné v různých počítače ve farmě. Dané zpracování zahrnuje ověřování token podpisů relace, šifrování a dešifrování tokenů relace, ukládání do mezipaměti relace tokeny a zjišťování odesílal tokeny zabezpečení.  
+# <a name="wif-and-web-farms"></a>Technologie WIF a webové farmy
+Při použití technologie Windows Identity Foundation (WIF) k zabezpečení prostředků aplikace předávající stranu, která je nasazená ve webové farmě, musíte provést určité kroky k zajištění, že technologie WIF zpracovávat tokeny z instancí aplikace předávající strany, který běží na různých počítače ve farmě. Dané zpracování zahrnuje ověřování podpisů tokenu relace, šifrování a dešifrování tokenů relace, ukládání do mezipaměti relace tokeny a zjišťování, odesílal tokeny zabezpečení.  
   
- V případě typické při WIF slouží k zabezpečení prostředků aplikace RP – jestli RP běží v jednom počítači nebo ve webové farmě – relaci se naváže klienta na základě tokenu zabezpečení, který byl získán od služby tokenů zabezpečení (STS). Tím se vyhnete vynucení klienta tak, aby měl k ověření na službu tokenů zabezpečení pro každý zdroj aplikace, která je zabezpečená pomocí WIF. Další informace o zpracování WIF relací najdete v tématu [Správa relací WIF](../../../docs/framework/security/wif-session-management.md).  
+ V typické případy Pokud technologie WIF slouží k zabezpečení prostředků aplikace předávající strany – zda RP běží na jednom počítači nebo ve webové farmě--relaci pokládáme stav, pomocí klienta na základě tokenu zabezpečení, který byl získán od služby tokenů zabezpečení (STS). To je vyhnout se vynutí, aby měl k ověření na službu tokenů zabezpečení pro každý prostředek aplikace, která je zabezpečena pomocí technologie WIF klient. Další informace o zpracování relací WIF najdete v tématu [Správa relací WIF](../../../docs/framework/security/wif-session-management.md).  
   
- Když se použije výchozí nastavení, WIF provede následující akce:  
+ Pokud použijete výchozí nastavení technologie WIF provede následující akce:  
   
--   Používá instanci <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídy ke čtení a zápisu token relace (instance <xref:System.IdentityModel.Tokens.SessionSecurityToken> třída), představuje deklarace identity a další informace o tokenu zabezpečení, která byla použita pro ověřování a také informace o relaci sám sebe. Token relace se zabalí a uložené v souboru cookie relace. Ve výchozím nastavení <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> používá <xref:System.IdentityModel.ProtectedDataCookieTransform> třídy, která používá rozhraní Data Protection API (DPAPI), k ochraně token relace. Rozhraní DPAPI poskytuje ochranu pomocí přihlašovacích údajů uživatele nebo počítače a uloží klíčová data v profilu uživatele.  
+-   Používá instanci <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídy ke čtení a zápisu tokenu relace (instance <xref:System.IdentityModel.Tokens.SessionSecurityToken> třídy), který představuje deklarace identity a další informace o tokenu zabezpečení, která byla použita pro ověřování, a také informace o relaci samotný. Token relace je zabalená a uložená v souboru cookie relace. Ve výchozím nastavení <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> používá <xref:System.IdentityModel.ProtectedDataCookieTransform> třídu, která používá Data Protection API (DPAPI), k ochraně tokenu relace. Rozhraní DPAPI poskytuje ochranu s použitím přihlašovacích údajů uživatele nebo počítače a uloží klíčových dat v profilu uživatele.  
   
--   Používá výchozí, implementace v paměti <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídy k ukládání a zpracování token relace.  
+-   Použije výchozí, implementace v paměti <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídy k ukládání a zpracování tokenu relace.  
   
- Tato výchozí nastavení fungují v scénáře, ve kterých je RP aplikace nasazená v jednom počítači; ale při nasazení ve webové farmě, každý požadavek HTTP může být odeslán a zpracovává jiné instance systému RP aplikace běžící na jiném počítači. V tomto scénáři výchozí nastavení WIF popsané výše nebude fungovat, protože token ochranu i ukládání tokenu do mezipaměti jsou závislé na konkrétním počítači.  
+ Tato výchozí nastavení fungují v situacích, ve kterých je aplikace předávající strany nasazené na jednom počítači; ale při nasazení ve webové farmě, každý požadavek HTTP může být zaslána a zpracovává jinou instanci aplikace předávající strany, který běží na jiném počítači. V tomto scénáři nebude fungovat nastavení technologie WIF je popsáno výše, protože token ochranu a ukládání tokenu do mezipaměti jsou závislé na určitém počítači.  
   
- Pokud chcete nasadit aplikaci RP ve webové farmě, je nutné zajistit, že zpracování relace tokenů (a také přehraná tokenů) není závislá na aplikace běžící v určitém počítači. Jeden ze způsobů, jak se toto nastavení slouží k implementaci aplikace RP tak, aby používala funkce poskytované službou ASP.NET `<machineKey>` konfigurační prvek a poskytuje distribuované ukládání do mezipaměti pro zpracování relace tokeny a odesílal tokeny. `<machineKey>` Element umožňuje zadat klíče pro ověření, šifrování a dešifrování tokenů v konfiguračním souboru, který umožňuje určit stejné klíče na různých počítačích ve webové farmě. WIF poskytuje obslužnou rutinu tokenu specializované relace, <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>, který chrání tokeny pomocí klíče určené v `<machineKey>` elementu. Implementace této strategie, můžete pomocí následujících pokynů:  
+ Pokud chcete nasadit aplikaci předávající strany ve webové farmě, musíte zajistit, že zpracování relace tokenů (a také přehraná tokenů) není závislá na aplikaci spuštěné na určitém počítači. Můžete provést například jde implementovat vaše aplikace předávající strany, tak, aby používala funkce poskytované službou ASP.NET `<machineKey>` element konfigurace a nabízí distribuované ukládání do mezipaměti pro zpracování relace tokenů a znovu přehrát tokeny. `<machineKey>` Element slouží k určení klíče potřebné k ověření, šifrování a dešifrování tokenů v konfiguračním souboru, který umožňuje určit stejnými klíči na různých počítačích ve webové farmě. Technologie WIF umožňuje obslužnou rutinu tokenu relace specializované <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler>, tokeny, které chrání pomocí klíče specifikované v `<machineKey>` elementu. K implementaci této strategie, můžete postupujte podle těchto pokynů:  
   
--   Pomocí technologie ASP.NET `<machineKey>` element v konfiguraci k explicitnímu zadání podepisování a šifrování klíče, které lze použít na počítačích ve farmě. Následující kód XML ukazuje specifikaci `<machineKey>` prvek v rámci `<system.web>` element v konfiguračním souboru.  
+-   Použití technologie ASP.NET `<machineKey>` element v konfiguraci s ohledem na podepisování a šifrování klíče, které lze použít na počítačích ve farmě. Následující kód XML ukazuje specifikaci `<machineKey>` element v rámci `<system.web>` element v konfiguračním souboru.  
   
     ```xml  
     <machineKey compatibilityMode="Framework45" decryptionKey="CC510D … 8925E6" validationKey="BEAC8 … 6A4B1DE" />  
     ```  
   
--   Konfigurace aplikace pro použití <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> jej přidat do kolekce obslužná rutina tokenu. Je nutné nejprve odebrat <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> (nebo všechny obslužné rutiny odvozené od <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třída) z kolekce obslužná rutina tokenu, pokud se nachází obslužnou rutinu. <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> Používá <xref:System.IdentityModel.Services.MachineKeyTransform> třídy, která chrání data souboru cookie relace pomocí kryptografických materiál uvedený v `<machineKey>` elementu. Následující kód XML ukazuje, jak přidat <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> na kolekci obslužná rutina tokenu.  
+-   Konfigurace aplikace pro použití <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> přidáním do kolekce obslužné rutiny tokenů. Je nutno nejprve odstranit <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> (nebo libovolné obslužné rutiny odvozených z <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> třídy) z obslužné rutiny tokenů kolekce, pokud tato obslužná rutina je k dispozici. <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> Používá <xref:System.IdentityModel.Services.MachineKeyTransform> třídu, která chrání data souboru cookie relace pomocí kryptografický materiál podle `<machineKey>` elementu. Následující kód XML ukazuje, jak přidat <xref:System.IdentityModel.Services.Tokens.MachineKeySessionSecurityTokenHandler> ke kolekci obslužné rutiny tokenů.  
   
     ```xml  
     <securityTokenHandlers>  
@@ -41,7 +41,7 @@ Pokud používáte Windows Identity Foundation (WIF) k zabezpečení prostředk�
     </securityTokenHandlers>  
     ```  
   
--   Odvozena od <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> a implementace distribuované ukládání do mezipaměti, který je mezipaměti, která je přístupná ze všech počítačů ve farmě, na kterém může spustit RP. Konfigurace RP používat distribuované mezipaměti zadáním [ \<sessionSecurityTokenCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) element v konfiguračním souboru. Je možné přepsat <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=nameWithType> metoda v odvozené třídě implementovat podřízených elementů `<sessionSecurityTokenCache>` elementu, pokud jsou požadována.  
+-   Jsou odvozeny z <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> a implementujte distribuované ukládání do mezipaměti, to znamená, mezipaměť, která je přístupná ze všech počítačů ve farmě, na kterém můžou spouštět RP. Nakonfigurovat předávající strana často tak, že určíte pomocí distribuované mezipaměti [ \<sessionSecurityTokenCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) element v konfiguračním souboru. Můžete přepsat <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A?displayProperty=nameWithType> metoda v odvozené třídy k implementaci podřízených elementů `<sessionSecurityTokenCache>` elementu, jestliže jsou povinné.  
   
     ```xml  
     <caches>  
@@ -51,19 +51,19 @@ Pokud používáte Windows Identity Foundation (WIF) k zabezpečení prostředk�
     </caches>  
     ```  
   
-     Jeden způsob implementace distribuované ukládání do mezipaměti je poskytnout WCF front-end pro vaše vlastní mezipaměti. Další informace o implementaci ukládání do mezipaměti služby WCF najdete v tématu [služba WCF ukládání do mezipaměti Service](#BKMK_TheWCFCachingService). Další informace o implementaci klienta WCF, RP aplikace můžete použít k volání služby ukládání do mezipaměti najdete v tématu [klient ukládání do mezipaměti WCF](#BKMK_TheWCFClient).  
+     Jedním ze způsobů implementace distribuované ukládání do mezipaměti je poskytnout WCF front-endu pro vaše vlastní mezipaměti. Další informace o implementaci ukládání do mezipaměti služby WCF najdete v tématu [služba ukládání do mezipaměti WCF](#BKMK_TheWCFCachingService). Další informace o implementaci klienta WCF, která aplikace předávající strany můžete použít k volání službu ukládání do mezipaměti najdete v tématu [The WCF ukládání do mezipaměti klienta](#BKMK_TheWCFClient).  
   
--   Pokud vaše aplikace zjistí přehraná tokeny postupujte podle podobná distribuované ukládání do mezipaměti strategie pro mezipaměť opětovného přehrání tokenu odvozené z <xref:System.IdentityModel.Tokens.TokenReplayCache> a přejdete na vaše opětovného přehrání tokenu, ukládání do mezipaměti služby v rámci [ \< tokenReplayCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) konfigurační prvek.  
-  
-> [!IMPORTANT]
->  Všechny příklad XML a kódu v tomto tématu jsou převzaty z [ClaimsAwareWebFarm](http://go.microsoft.com/fwlink/?LinkID=248408) (http://go.microsoft.com/fwlink/?LinkID=248408) ukázka.  
+-   Pokud aplikace zjistí přehraná tokeny je třeba dodržet podobná distribuované ukládání do mezipaměti strategie pro ukládání do mezipaměti opětovného přehrání tokenu odvozením z <xref:System.IdentityModel.Tokens.TokenReplayCache> a odkazuje na vaše opětovného přehrání tokenu, ukládání do mezipaměti služby [ \< tokenReplayCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/tokenreplaycache.md) konfiguračního prvku.  
   
 > [!IMPORTANT]
->  V příkladech v tomto tématu jsou uvedeny jako-je a není určena pro použití v produkčním kódu bez úprav.  
+>  Všechny ukázkový soubor XML a kód v tomto tématu je převzata z [ClaimsAwareWebFarm](https://go.microsoft.com/fwlink/?LinkID=248408) vzorku.  
+  
+> [!IMPORTANT]
+>  Příklady v tomto tématu jsou k dispozici jako-je a není určena pro použití v produkčním kódu bez jakýchkoli úprav.  
   
 <a name="BKMK_TheWCFCachingService"></a>   
 ## <a name="the-wcf-caching-service"></a>Ukládání do mezipaměti služby WCF  
- Následující rozhraní definuje kontrakt mezi službou WCF ukládání do mezipaměti a klienta WCF používá aplikace předávající strany ke komunikaci s ním. V podstatě zpřístupňuje metody <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třída jako operací služby.  
+ Následující rozhraní definuje kontrakt mezi klienta WCF používá aplikaci předávající strany ke komunikaci s ním a ukládání do mezipaměti služby WCF. V podstatě zveřejňuje metody <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídu jako servisní operace.  
   
 ```  
 [ServiceContract()]  
@@ -89,7 +89,7 @@ public interface ISessionSecurityTokenCacheService
 }  
 ```  
   
- Následující kód ukazuje implementaci WCF služby ukládání do mezipaměti. V tomto příkladu výchozí, se používá implementované WIF tokenu mezipaměť v paměti relace. Alternativně může implementovat trvanlivý mezipaměti databázi. `ISessionSecurityTokenCacheService` definuje rozhraní uvedené výše. V tomto příkladu jsou jako stručný výtah zobrazeny všechny metody potřebnou k implementaci rozhraní.  
+ Následující kód ukazuje implementaci WCF služby ukládání do mezipaměti. V tomto příkladu, ve výchozím nastavení se používá mezipaměť tokenu relace v paměti pomocí technologie WIF implementovat. Alternativně je možné implementovat trvalý mezipaměti databázi. `ISessionSecurityTokenCacheService` definuje rozhraní uvedené výše. V tomto příkladu některé z metod požadovaných k implementaci rozhraní jsou zobrazeny pro zkrácení.  
   
 ```  
 using System;  
@@ -138,7 +138,7 @@ namespace WcfSessionSecurityTokenCacheService
   
 <a name="BKMK_TheWCFClient"></a>   
 ## <a name="the-wcf-caching-client"></a>Ukládání do mezipaměti klienta WCF  
- Tato část ukazuje implementaci třídy, která je odvozena z <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> a že delegáti volání ke službě ukládání do mezipaměti. Konfigurace aplikace RP k použití této třídy prostřednictvím [ \<sessionSecurityTokenCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) element jako následující kód XML  
+ Tato část ukazuje implementaci třídy, která je odvozena z <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> a že delegáti volání službu ukládání do mezipaměti. Konfigurace aplikace předávající strany k použití této třídy prostřednictvím [ \<sessionSecurityTokenCache >](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/sessionsecuritytokencache.md) element jako v následujícím souboru XML  
   
 ```xml  
 <caches>  
@@ -149,7 +149,7 @@ namespace WcfSessionSecurityTokenCacheService
 </caches>  
 ```  
   
- Třída přepsání <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A> metodu k získání koncový bod služby z vlastní `<cacheServiceAddress>` podřízený prvek `<sessionSecurityTokenCache>` element. Tento koncový bod se používá k inicializaci `ISessionSecurityTokenCacheService` kanál, přes který může komunikovat se službou.  V tomto příkladu všechny metody potřebnou k implementaci <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídy jsou uvedeny jako stručný výtah.  
+ Třída přepsání <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache.LoadCustomConfiguration%2A> metodu k získání koncového bodu služby z vlastního `<cacheServiceAddress>` podřízený prvek `<sessionSecurityTokenCache>` elementu. Tento koncový bod se používá k inicializaci `ISessionSecurityTokenCacheService` kanál, přes který může komunikovat se službou.  V tomto příkladu všechny metody potřebnou k implementaci <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> třídy jsou platné pro zkrácení.  
   
 ```  
 using System;  

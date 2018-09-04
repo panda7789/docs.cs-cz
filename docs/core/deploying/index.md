@@ -4,12 +4,12 @@ description: Nasazení aplikace .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/18/2017
-ms.openlocfilehash: 4a39efdd92cf9c3bb6aadf83949e02ce20960481
-ms.sourcegitcommit: 702d5ffc6e733b6c4ded85bf1c92e2293638ee9a
+ms.openlocfilehash: ab65beaa293f7543a8436f913a1e5bf89ca7281b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37792423"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43562003"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 
@@ -21,7 +21,7 @@ Můžete vytvořit dva typy nasazení pro aplikace .NET Core:
 
 ## <a name="framework-dependent-deployments-fdd"></a>Nasazení závisí na architektuře (chyba)
 
-Pro disketové jednotky nasadíte jenom vaše aplikace a případných závislostí třetích stran. Není nutné k nasazení rozhraní .NET Core, protože vaše aplikace bude používat verzi .NET Core, který je k dispozici v cílovém systému. Toto je výchozí model nasazení pro aplikace .NET Core.
+Pro disketové jednotky nasaďte jenom aplikace a závislostí třetích stran. Není nutné k nasazení rozhraní .NET Core, protože vaše aplikace bude používat verzi .NET Core, který je k dispozici v cílovém systému. Toto je výchozí model nasazení pro aplikace .NET Core a ASP.NET Core, které cílí na .NET Core.
 
 ### <a name="why-create-a-framework-dependent-deployment"></a>Proč vytvořit nasazení závisí na architektuře?
 
@@ -70,9 +70,9 @@ Podrobné příklady nasazení aplikace .NET Core pomocí nástrojů příkazov�
 - Samostatná nasazení
 - Samostatná nasazení s závislostí třetích stran
 
-# <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také:
 
-[Nasazení aplikací .NET Core pomocí nástrojů CLI](deploy-with-cli.md)   
-[Nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md)   
-[Balíčky, Metabalíčky a architektury](../packages.md)   
-[.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)
+* [Nasazení aplikací .NET Core pomocí nástrojů CLI](deploy-with-cli.md)
+* [Nasazení aplikací .NET Core pomocí sady Visual Studio](deploy-with-vs.md)
+* [Balíčky, metabalíčky a architektury](../packages.md)
+* [.NET core Runtime identifikátor (RID) katalogu](../rid-catalog.md)

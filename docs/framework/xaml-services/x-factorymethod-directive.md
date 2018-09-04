@@ -6,15 +6,15 @@ helpviewer_keywords:
 - FactoryMethod directive in XAML [XAML Services]
 - x:FactoryMethod directive [XAML Services]
 ms.assetid: 829bcbdf-5318-4afb-9a03-c310e0d2f23d
-ms.openlocfilehash: 75225e624abdd3dc0862a04fae409da48b3f0d1e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 436caa9b93467dcf2a0763bcc0962a2beb722315
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563412"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560192"
 ---
 # <a name="xfactorymethod-directive"></a>x:FactoryMethod – direktiva
-Určuje metodu než konstruktor, který se inicializovat objekt po vyřešení jeho základní typ měli použít procesor XAML.  
+Určuje jiné metody než konstruktor, který procesor XAML by měla použít pro inicializaci objektu po vyřešení jeho základní typ.  
   
 ## <a name="xaml-attribute-usage-no-xarguments"></a>Použití atributu XAML, x: Arguments  
   
@@ -24,7 +24,7 @@ Určuje metodu než konstruktor, který se inicializovat objekt po vyřešení j
 </object>  
 ```  
   
-## <a name="xaml-attribute-usage-xarguments-as-elements"></a>Použití atributu XAML, x: Arguments jako elementy  
+## <a name="xaml-attribute-usage-xarguments-as-elements"></a>Použití atributu XAML, x: Arguments jako jeden či více elementů  
   
 ```  
 <object x:FactoryMethod="methodname"...>  
@@ -38,23 +38,23 @@ Určuje metodu než konstruktor, který se inicializovat objekt po vyřešení j
   
 |||  
 |-|-|  
-|`methodname`|Název metody řetězec metody, která XAML procesory volání k inicializaci instance zadaný jako `object`. V části poznámky.|  
-|`oneOrMoreObjectElements`|Jeden či více elementů objektu pro objekty, které určují parametry metody objektu pro vytváření. Pořadí je důležité. Označuje, pořadí, ve kterém by měla být předána argumenty metoda objektu factory.|  
+|`methodname`|Název metody řetězec metody, která XAML procesory volání za účelem inicializace určenou jako instanci `object`. Viz poznámky.|  
+|`oneOrMoreObjectElements`|Jeden nebo více elementů objektu pro objekty, které určují parametry metody objekt pro vytváření. Pořadí je důležité. To znamená pořadí, ve kterém by měly být předány argumenty výrobní metoda.|  
   
 ## <a name="remarks"></a>Poznámky  
  Pokud `methodname` je metoda instance, nemůže být kvalifikovaný.  
   
- Statické metody jako objekt pro vytváření metody jsou podporovány. Pokud `methodname` je statickou metodu `methodname` je k dispozici jako *typeName*. *methodName* kombinací, kde *typeName* názvy třídy, která definuje metoda statické objektu factory. *typeName* může být předponou kvalifikovaný Pokud odkazující k typu v namapované xmlns. *typeName* může být jiného typu než `typeof(``object``)`.  
+ Statické metody jako metody pro vytváření objektů jsou podporovány. Pokud `methodname` je statická metoda `methodname` se poskytuje jako *typeName*. *methodName* kombinaci, kde *typeName* názvy třídy, která definuje statické výrobní metoda. *typeName* může být předponou kvalifikací odkazující k typu v mapovaných xmlns. *typeName* může být jiného typu než `typeof(object)`.  
   
- Metoda factory musí být deklarovaný veřejná metoda typu, který zálohuje relevantní objekt elementu.  
+ Metoda factory musí být deklarované veřejnou metodu typu, který zálohuje elementu příslušný objekt.  
   
- Metoda factory musí vrátit instanci, která je přiřadit k příslušný objekt. Metodami pro vytváření, nikdy by měl vrátit hodnotu null.  
+ Výrobní metoda musí vracet instanci, která je přiřadit k příslušný objekt. Metody pro vytváření objektů by nikdy vrátit hodnotu null.  
   
- `x:Arguments` funguje na princip nejlepší shodu pro podpis metody objektu pro vytváření. Odpovídající nejprve vyhodnotí počet parametrů. Pokud existuje více než jeden možný odpovídající počet parametrů, je typ parametru se určuje vyhodnotí a nejlepší shodu. Pokud je stále nejednoznačnosti po této fáze hodnocení, XAML procesoru chování není definován.  
+ `x:Arguments` funguje na principu nejlepší shodu pro podpis metody pro vytváření objektů. Odpovídající nejprve vyhodnotí počet parametrů. Pokud existuje více než jednu možnou shodu počet parametrů, je typ parametru je určena Vyhodnocená a nejlepší shoda. Pokud po této fáze hodnocení stále existuje nejednoznačnost, XAML procesoru chování není definováno.  
   
- `x:FactoryMethod` Použití elementu není použití elementu vlastnosti v typické smysl, protože kód direktivy neodkazuje typ obsahující objekt elementu. Očekává se použití tohoto elementu je méně častých než použití atributu. `x:Arguments` (použití atributu nebo elementu) můžete použít společně s `x:FactoryMethod` použití elementu, ale to není konkrétně uvedené v částech využití.  
+ `x:FactoryMethod` Použití elementu není použití elementu vlastnosti v typické smysl, protože direktiv značek neodkazuje na typ obsahující objekt elementu. Očekává se, že použití elementu je méně častý než použití atributu. `x:Arguments` (použití atributu nebo elementu) lze použít společně s `x:FactoryMethod` použití elementu, ale to není konkrétně zobrazený v částech využití.  
   
- `x:FactoryMethod` jako element musí předcházet další prvky vlastnost, musí předcházet žádné `x:Arguments` také k dispozici jako elementy a musí předcházet jakýkoli text obsahu nebo vnitřní text/inicializace.  
+ `x:FactoryMethod` jak elementu musí předcházet před jinými prvky, vlastnost, musí předcházet všechny `x:Arguments` také ve formě elementy a musí předcházet text obsahu/vnitřní text/inicializace.  
   
 ## <a name="see-also"></a>Viz také  
  [x:Arguments – direktiva](../../../docs/framework/xaml-services/x-arguments-directive.md)

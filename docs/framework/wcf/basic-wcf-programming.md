@@ -8,40 +8,40 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], basic programming
 - Windows Communication Foundation [WCF], programming
 ms.assetid: 3ae3d498-f43c-4ecc-8cc0-6cbe36b62593
-ms.openlocfilehash: cbdc693197344fe570c1462f6ca3115018eb69d6
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 7095784c2c9e2dc3c0ebafe84b89f9657321e1c5
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33803738"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43558888"
 ---
 # <a name="basic-wcf-programming"></a>Základní programování WCF
-Tato část představuje základy vytváření aplikací pro Windows Communication Foundation (WCF).  
+Tato část představuje základní informace pro vytváření aplikací pro Windows Communication Foundation (WCF).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Základní programovací životní cyklus](../../../docs/framework/wcf/basic-programming-lifecycle.md)  
- Popisuje životní cyklus návrhu, vytváření a nasazování aplikací klienta a služby WCF.  
+ Popisuje životní cyklus navrhování, sestavování a nasazování služeb a klientských aplikací WCF.  
   
  [Navrhování a implementace služeb](../../../docs/framework/wcf/designing-and-implementing-services.md)  
- Popisuje postup návrhu a implementace kontraktu služby, zvolte vzorce výměny zpráv, zadejte chyba – kontrakt a další základní aspekty služby.  
+ Popisuje postup návrhu a implementace kontraktu služby, zvolte vzoru výměny zpráv, určete kontrakt chyby a jiné základní aspekty služby.  
   
  [Konfigurace služeb](../../../docs/framework/wcf/configuring-services.md)  
- Popisuje postup konfigurace služby WCF na podporu požadavků kontrakt, přizpůsobení místní modul runtime chování a označuje adresu k publikování služby.  
+ Popisuje postup konfigurace služby WCF pro podporu požadavků smlouvy, přizpůsobit chování za běhu místní a označují adresu k publikování služby.  
   
  [Služby hostování](../../../docs/framework/wcf/hosting-services.md)  
  Popisuje základní informace o hostování služeb v aplikaci.  
   
  [Sestavování klientů](../../../docs/framework/wcf/building-clients.md)  
- Popisuje, jak získat metadata ze služeb, převést, kód klienta WCF, zpracovávají problémy se zabezpečením a sestavení, konfiguraci a hostitele klienta WCF.  
+ Popisuje, jak získat metadata ze služby, převést, který kód klienta WCF, problémy se zabezpečením, zpracování a vytváření, konfiguraci a hostování WCF klienta.  
   
  [Úvod do rozšířitelnosti](../../../docs/framework/wcf/introduction-to-extensibility.md)  
- Popisuje, jak rozšířit WCF při vytváření vlastních řešení.  
+ Popisuje, jak rozšířit WCF vytvářet vlastní řešení.  
   
  [Řešení problémů s WCF – úvodní příručka](../../../docs/framework/wcf/wcf-troubleshooting-quickstart.md)  
- Popisuje některé z nejběžnějších problémů, ke kterým došlo, co můžete dělat je můžete vyřešit a kde najít další informace o problému.  
+ Obsahuje také popis některých nejběžnějších problémů, ke kterým dochází, co můžete dělat k jejich řešení a kde najít další informace o problému.  
   
  [WCF a ASP.NET Web API](../../../docs/framework/wcf/wcf-and-aspnet-web-api.md)  
- Popisuje dvě technologie, jak se vztahují k vzájemně a jejich použití.  
+ Tento článek popisuje tyto technologie, jejich vzájemné vztahy vzájemně a jejich použití.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.ServiceModel>  
@@ -61,7 +61,7 @@ Tato část představuje základy vytváření aplikací pro Windows Communicati
   
  [Nástroje Windows Communication Foundation](../../../docs/framework/wcf/tools.md)  
   
- [Ukázky Windows Communication Foundation](http://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
+ [Ukázky Windows Communication Foundation](https://msdn.microsoft.com/library/8ec9d192-5d81-4f64-bfd3-90c5e5858c91)  
   
  [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md)  
   

@@ -9,14 +9,14 @@ ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ec3a7e01e62b60688080fee95cf70e0ed38917f2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33656175"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43552189"
 ---
 # <a name="-platform-visual-basic"></a>-platform (Visual Basic)
-Určuje, která verze modul common language runtime (CLR) platforma můžete spustit výstupní soubor.  
+Určuje, jaké verze platformy common language runtime (CLR) můžete spustit výstupního souboru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,56 +28,56 @@ Určuje, která verze modul common language runtime (CLR) platforma můžete spu
   
 |Termín|Definice|  
 |---|---|  
-|`x86`|Zkompiluje vaše sestavení ke spuštění x86 kompatibilní, 32bitová verze modulu CLR.|  
-|`x64`|Zkompiluje vaše sestavení pro 64bitové verze CLR spustit na počítači, který podporuje AMD64 nebo EM64T sada instrukcí.|  
-|`Itanium`|Zkompiluje vaše sestavení pro 64bitové verze CLR spustit na počítači s procesorem Itanium.|  
-|`arm`|Zkompiluje vaše sestavení pro spouštění na počítači s procesorem ARM (Advanced RISC Machine).|  
-|`anycpu`|Zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Aplikace se spustí jako 32bitová aplikace na 32bitové verze systému Windows a jako 64bitové aplikaci v 64bitových verzích systému Windows. Tento příznak je výchozí hodnota.|  
-|`anycpu32bitpreferred`|Zkompiluje vaše sestavení pro spouštěn na libovolné platformě. Aplikace se spustí jako 32bitová aplikace na 32bitové a 64bitové verze systému Windows. Tento příznak je platná pouze pro spustitelné soubory (. Soubor EXE) a vyžaduje [!INCLUDE[net_v45](~/includes/net-v45-md.md)].|  
+|`x86`|Kompiluje sestavení ke spuštění v 32 bitů, které je kompatibilní x86 CLR.|  
+|`x64`|Kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači, který podporuje AMD64 nebo EM64T instrukční sadu.|  
+|`Itanium`|Kompiluje sestavení ke spuštění v 64bitovém modulu CLR na počítači s procesorem Itanium.|  
+|`arm`|Kompiluje sestavení ke spuštění v počítači s procesorem ARM (Advanced RISC Machine).|  
+|`anycpu`|Kompiluje sestavení pro spouštěn na libovolné platformě. Aplikace se spustí jako 32bitová aplikace ve 32bitové verze Windows a jako na 64bitovými verzemi Windows 64-bit aplikace. Výchozí hodnota je tento příznak.|  
+|`anycpu32bitpreferred`|Kompiluje sestavení pro spouštěn na libovolné platformě. Aplikace poběží jako 32bitová aplikace ve 32bitové a 64bitové verze Windows. Tento příznak je platná pouze pro spustitelné soubory (. Soubor EXE) a vyžaduje [!INCLUDE[net_v45](~/includes/net-v45-md.md)].|  
   
 ## <a name="remarks"></a>Poznámky  
- Použití `-platform` můžete určit typ procesoru cílem výstupní soubor.  
+ Použití `-platform` možnost určit typ procesoru cílem výstupního souboru.  
   
- Obecně platí sestavení rozhraní .NET Framework, které jsou napsané v jazyce Visual Basic se spustí stejný bez ohledu na platformu. Existují však někdy s odlišným na různých platformách. Jsou tyto běžné případy:  
+ Sestavení rozhraní .NET Framework, které jsou napsané v jazyce Visual Basic, poběží stejný bez ohledu na platformu. Existují však případy, které se chovají jinak na různých platformách. Tyto běžné případy jsou:  
   
--   Struktury, které obsahují členy, kteří změnit velikost v závislosti na platformě, jako je například libovolného typu ukazatele.  
+-   Struktury, které obsahují členy, které se mění velikost v závislosti na platformě, jako je například libovolný typ ukazatele.  
   
--   Aritmetika ukazatele, který zahrnuje konstantní velikosti.  
+-   Aritmetika ukazatele, který obsahuje konstantní velikostí.  
   
--   Nesprávný platformy vyvolání nebo COM deklarace, které používají `Integer` pro obslužné rutiny místo <xref:System.IntPtr>.  
+-   Nesprávný platformu vyvolání nebo deklarace modelu COM, které používají `Integer` pro popisovače místo <xref:System.IntPtr>.  
   
 -   Přetypování <xref:System.IntPtr> k `Integer`.  
   
--   Pomocí platformy vyvolání nebo zprostředkovatel komunikace s objekty COM s součásti, které nejsou k dispozici na všech platformách.  
+-   Pomocí platformy vyvolat nebo komunikace s objekty COM s komponentami, které neexistují na všech platformách.  
   
- **-Platformy** možnost bude zmírnit některé problémy, pokud víte, že jste provedli předpoklady o architektuře kódu se spustí na. Konkrétně:  
+ **-Platform** možnost zmírnit některé problémy, pokud víte, že jste provedli předpoklady o architektuře váš kód poběží. Konkrétně:  
   
--   Pokud se rozhodnete platformu 64-bit a spuštění aplikace na počítač s 32bitovou, chybová zpráva obsahuje mnohem dříve a více cíleně problém než chybu, která nastane bez použití tohoto přepínače.  
+-   Pokud se rozhodnete cílit na 64bitové platformě a v 32bitovém počítači při spuštění aplikace, chybová zpráva obsahuje mnohem dříve a více zaměřuje se na problému než chybu, která probíhá, aniž by tento přepínač.  
   
--   Pokud nastavíte `x86` příznak na možnosti a následné spuštění aplikace na počítači 64-bit, bude aplikace spuštěna v subsystému WOW namísto spuštění nativně.  
+-   Pokud jste nastavili `x86` příznak na možnosti a následně při spuštění aplikace na 64bitovém počítači, bude aplikace spuštěna v subsystému WOW, místo spouštění nativně.  
   
- 64bitová verze operačního systému Windows:  
+ V operačním systému Windows 64-bit:  
   
--   Sestavení kompilovat s `-platform:x86` se spustí na 32bitová verze modulu CLR spuštěna pod WOW64.  
+-   Sestavení zkompilovaná `-platform:x86` se spustí na 32-bit CLR spuštěna v modulu WOW64.  
   
--   Spustitelné soubory kompilovat s `-platform:anycpu` se spustí na 64-bit CLR.  
+-   Spustitelné soubory zkompilovaná `-platform:anycpu` se spustí na 64bitový modul CLR.  
   
--   Knihovny DLL kompilovat s `-platform:anycpu` se spustí na stejném modulu CLR jako proces, do kterého jej načíst.  
+-   Knihovna DLL zkompilovaná `-platform:anycpu` se spustí na stejném modulu CLR jako proces, do kterého ji načíst.  
   
--   Spustitelné soubory, které jsou kompilovat s `-platform:anycpu32bitpreferred` se spustí na 32bitová verze modulu CLR.  
+-   Spustitelné soubory, které jsou kompilovány pomocí `-platform:anycpu32bitpreferred` se spustí na 32-bit CLR.  
   
- Další informace o tom, jak vyvíjet aplikaci spustit v 64bitové verzi systému Windows najdete v tématu [64bitové aplikace](../../../framework/64-bit-apps.md).  
+ Další informace o tom, jak vyvinout aplikaci v 64bitové verzi Windows, naleznete v tématu [64bitové aplikace](../../../framework/64-bit-apps.md).  
   
-### <a name="to-set--platform-in-the-visual-studio-ide"></a>Chcete-li nastavit - platformy v integrovaném vývojovém prostředí sady Visual Studio  
+### <a name="to-set--platform-in-the-visual-studio-ide"></a>Chcete-li nastavit - platform v integrovaném vývojovém prostředí sady Visual Studio  
   
-1.  V **Průzkumníku řešení**, zvolte projekt, otevřete **projektu** nabídce a pak klikněte na tlačítko **vlastnosti**.  
+1.  V **Průzkumníka řešení**, vyberte projekt, otevřete **projektu** nabídky a pak klikněte na tlačítko **vlastnosti**.  
   
-2.  Na **zkompilovat** kartě, zaškrtněte nebo zrušte **raději 32bitové** zaškrtávací políčko, nebo v **cílový procesor** seznamu, vyberte hodnotu.  
+2.  Na **kompilaci** kartu, zaškrtněte nebo zrušte zaškrtnutí **preferovat 32bitovou verzi** zaškrtávací políčko, nebo v **cílový procesor** , zvolte hodnotu.  
   
      Další informace najdete v tématu [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat `-platform` – možnost kompilátoru.  
+ Následující příklad ukazuje způsob použití `-platform` – možnost kompilátoru.  
   
 ```console
 vbc -platform:x86 myFile.vb  
@@ -85,5 +85,5 @@ vbc -platform:x86 myFile.vb
   
 ## <a name="see-also"></a>Viz také  
  [/ target (Visual Basic)](target.md)  
- [Visual Basic – kompilátor příkazového řádku](index.md)  
+ [Kompilátor příkazového řádku jazyka Visual Basic](index.md)  
  [Příkazové řádky ukázkové kompilace](sample-compilation-command-lines.md)

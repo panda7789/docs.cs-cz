@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
 ms.openlocfilehash: 790fe629ae709a9fcb57d5b551e9fa7aecfb04f5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43395562"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43540474"
 ---
 # <a name="wcf-data-services-resources"></a>Zdroje služeb WCF Data Services
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] úvodní témata najdete v následujících umístěních. Mnohé z těchto témat také obsahují odkazy na související témata, které obsahují podrobnější informace.  

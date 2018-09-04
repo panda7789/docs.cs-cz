@@ -5,11 +5,11 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 62c6f318-3ee1-433a-b7a3-efa234c3034c
 ms.openlocfilehash: fc1786e1c6102c702374989253cd3ce23e3f7b54
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404420"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43537939"
 ---
 # <a name="how-to-add-a-data-service-reference-wcf-data-services"></a>Postupy: Přidání odkazu na datovou službu (WCF Data Services)
 

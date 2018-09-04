@@ -2,12 +2,12 @@
 title: Synchronizace vláken (C#)
 ms.date: 07/20/2015
 ms.assetid: e42b1be6-c93c-479f-a148-be0759f1a4e1
-ms.openlocfilehash: 4ed6cad647c965882a63282ce32c998cec138eec
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 6f0fe42c06b27369612cf586c7a93ce098822162
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43463153"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509383"
 ---
 # <a name="thread-synchronization-c"></a>Synchronizace vláken (C#)
 Následující části popisují funkce a třídy, které slouží k synchronizaci přístupu k prostředkům ve vícevláknových aplikacích.  
@@ -142,26 +142,27 @@ class ThreadingExample
 ## <a name="deadlocks"></a>Zablokování  
  Synchronizace vláken je neocenitelný při řízení aplikací s více vlákny, ale je vždy nebezpečí vytvoření `deadlock`, kde více vláken čekají na sebe navzájem a aplikace jde o zastavení. Zablokování je podobná situace, ve kterém auta se zastaví na zarážku čtyř směrů a každý uživatel, který čeká na další přechod. Předcházení zablokování je důležité. klíč je pečlivé plánování. Často můžete předpovídat situace zablokování pomocí diagramů vícevláknové aplikace před spuštěním kódu.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.Thread>  
- <xref:System.Threading.WaitHandle.WaitOne%2A>  
- <xref:System.Threading.WaitHandle.WaitAny%2A>  
- <xref:System.Threading.WaitHandle.WaitAll%2A>  
- <xref:System.Threading.Thread.Join%2A>  
- <xref:System.Threading.Thread.Start%2A>  
- <xref:System.Threading.Thread.Sleep%2A>  
- <xref:System.Threading.Monitor>  
- <xref:System.Threading.Mutex>  
- <xref:System.Threading.AutoResetEvent>  
- <xref:System.Threading.ManualResetEvent>  
- <xref:System.Threading.Interlocked>  
- <xref:System.Threading.WaitHandle>  
- <xref:System.Threading.EventWaitHandle>  
- <xref:System.Threading>  
- <xref:System.Threading.EventWaitHandle.Set%2A>  
- <xref:System.Threading.Monitor>  
- [lock – příkaz](../../../../csharp/language-reference/keywords/lock-statement.md)  
- [Mutex – třídy](../../../../standard/threading/mutexes.md)  
- [Propojené operace](../../../../standard/threading/interlocked-operations.md)  
- [AutoResetEvent](../../../../standard/threading/autoresetevent.md)  
- [Synchronizace dat pro vícevláknové zpracování](../../../../standard/threading/synchronizing-data-for-multithreading.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Threading.Thread>  
+- <xref:System.Threading.WaitHandle.WaitOne%2A>  
+- <xref:System.Threading.WaitHandle.WaitAny%2A>  
+- <xref:System.Threading.WaitHandle.WaitAll%2A>  
+- <xref:System.Threading.Thread.Join%2A>  
+- <xref:System.Threading.Thread.Start%2A>  
+- <xref:System.Threading.Thread.Sleep%2A>  
+- <xref:System.Threading.Monitor>  
+- <xref:System.Threading.Mutex>  
+- <xref:System.Threading.AutoResetEvent>  
+- <xref:System.Threading.ManualResetEvent>  
+- <xref:System.Threading.Interlocked>  
+- <xref:System.Threading.WaitHandle>  
+- <xref:System.Threading.EventWaitHandle>  
+- <xref:System.Threading>  
+- <xref:System.Threading.EventWaitHandle.Set%2A>  
+- <xref:System.Threading.Monitor>  
+- [lock – příkaz](../../../../csharp/language-reference/keywords/lock-statement.md)  
+- [Mutex – třídy](../../../../standard/threading/mutexes.md)  
+- [Propojené operace](../../../../standard/threading/interlocked-operations.md)  
+- [AutoResetEvent](../../../../standard/threading/autoresetevent.md)  
+- [Synchronizace dat pro vícevláknové zpracování](../../../../standard/threading/synchronizing-data-for-multithreading.md)

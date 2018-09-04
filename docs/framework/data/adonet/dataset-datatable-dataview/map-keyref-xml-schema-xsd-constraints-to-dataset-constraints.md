@@ -1,30 +1,30 @@
 ---
-title: Mapa keyref omezení schématu XML (XSD) k omezení datové sady
+title: Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
 ms.date: 03/30/2017
 ms.assetid: 5b634fea-cc1e-4f6b-9454-10858105b1c8
-ms.openlocfilehash: a3a5033292db2b47e7a9811e36c0a4af016951fc
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 86bc1961fb23b0b2f98a2849eaabd4eecd65cd64
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758552"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43533054"
 ---
-# <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapa keyref omezení schématu XML (XSD) k omezení datové sady
-**Keyref** element umožňuje vytváření propojení mezi prvky dokumentu. Toto je podobná relace cizího klíče v relační databázi. Pokud schéma určuje **keyref** elementu, element je převést během procesu schéma mapování na odpovídající omezení cizího klíče u sloupců v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení **keyref** element také vytváří vztah, se **ParentTable**, **tabulka**, **ParentColumn**a  **ChildColumn** na vztah byly zadány vlastnosti.  
+# <a name="map-keyref-xml-schema-xsd-constraints-to-dataset-constraints"></a>Mapování klíčových referenčních omezení schématu XML (XSD) k omezením datové sady
+**Keyref** element slouží k vytvoření vazeb mezi prvky v rámci dokumentu. Toto je podobný vztahu cizího klíče v relační databázi. Pokud schéma určuje **keyref** elementu, element je převeden při rušení mapování schématu odpovídající omezení cizího klíče na sloupce v tabulkách <xref:System.Data.DataSet>. Ve výchozím nastavení **keyref** element zároveň vytvoří relaci, se **ParentTable**, **tabulka**, **ParentColumn**a  **ChildColumn** vlastnosti zadané na vztah.  
   
  V následující tabulce jsou podrobněji popsány dále **msdata** atributy můžete zadat v **keyref** elementu.  
   
 |Název atributu|Popis|  
 |--------------------|-----------------|  
-|**msdata:ConstraintOnly**|Pokud **ConstraintOnly = "true"** je zadaný na **keyref** element ve schématu omezení je vytvořen, ale je vytvořen žádný vztah. Pokud tento atribut nezadá (nebo je nastaven na **False**), omezení a vztah se vytvoří v **datovou sadu**.|  
-|**msdata:ConstraintName**|Pokud **ConstraintName** zadán atribut, jeho hodnota se používá jako název omezení. Jinak **název** atribut **keyref** element ve schématu poskytuje název omezení v **datovou sadu**.|  
-|**msdata:UpdateRule**|Pokud **UpdateRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **UpdateRule** vlastnost omezení  **Datová sada**. V opačném případě **UpdateRule** je nastavena na **Cascade**.|  
-|**msdata:DeleteRule**|Pokud **DeletRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **DeletRule** vlastnost omezení  **Datová sada**. V opačném případě **DeletRule** je nastavena na **Cascade**.|  
-|**msdata:AcceptRejectRule**|Pokud **AcceptRejectRule** atribut je uveden v **keyref** element ve schématu, jeho hodnota je přiřazen k **AcceptRejectRule** vlastnost omezení  **Datová sada**. V opačném případě **AcceptRejectRule** je nastavena na **žádné**.|  
+|**msdata:ConstraintOnly**|Pokud **ConstraintOnly = "true"** je zadaný na **keyref** element ve schématu, vytvoření omezení, ale žádný vztah se vytvoří. Pokud tento atribut není zadán (nebo je nastaven na **False**), omezení a vztahu se vytvoří v **datovou sadu**.|  
+|**msdata:ConstraintName**|Pokud **ConstraintName** je zadán atribut, jeho hodnota se používá jako název omezení. V opačném případě **název** atribut **keyref** element ve schématu, poskytuje název omezení v **datovou sadu**.|  
+|**msdata:UpdateRule**|Pokud **UpdateRule** je zadán atribut v **keyref** element ve schématu, její hodnota je přiřazená **UpdateRule** vlastnost omezení  **Datová sada**. V opačném případě **UpdateRule** je nastavena na **Cascade**.|  
+|**msdata:DeleteRule**|Pokud **DeletRule** je zadán atribut v **keyref** element ve schématu, její hodnota je přiřazená **DeletRule** vlastnost omezení  **Datová sada**. V opačném případě **DeletRule** je nastavena na **Cascade**.|  
+|**msdata:AcceptRejectRule**|Pokud **AcceptRejectRule** je zadán atribut v **keyref** element ve schématu, jeho hodnota přiřazena **AcceptRejectRule** vlastnost omezení  **Datová sada**. V opačném případě **AcceptRejectRule** je nastavena na **žádný**.|  
   
- Následující příklad obsahuje schéma, které určuje **klíč** a **keyref** vztahy mezi **OrderNumber** podřízený element **pořadí**  elementu a **OrderNo** podřízený element **OrderDetail** element.  
+ Následující příklad obsahuje schéma, které se určuje **klíč** a **keyref** vztahy mezi **OrderNumber** podřízený prvek **pořadí**  elementu a **OrderNo** podřízený prvek **OrderDetail** elementu.  
   
- V příkladu **OrderNumber** podřízený element **OrderDetail** element odkazuje **OrderNo** klíče podřízený element **pořadí**elementu.  
+ V tomto příkladu **OrderNumber** podřízený prvek **OrderDetail** element odkazuje na **OrderNo** klíče podřízený prvek **pořadí**elementu.  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -66,7 +66,7 @@ ms.locfileid: "32758552"
 </xs:schema>  
 ```  
   
- Proces mapování schématu XML definice jazyka (XSD) schématu vytváří následující **datovou sadu** s dvou tabulek:  
+ Proces mapování schématu XML definice jazyk (XSD) schématu vytvoří následující **datovou sadu** se dvěma tabulkami:  
   
 ```  
 OrderDetail(OrderNo, ItemNo) and  
@@ -75,7 +75,7 @@ Order(OrderNumber, EmpNumber)
   
  Kromě toho **datovou sadu** definuje následující omezení:  
   
--   Jedinečná omezení **pořadí** tabulky.  
+-   Omezení unique u **pořadí** tabulky.  
   
     ```  
               Table: Order  
@@ -85,7 +85,7 @@ Order(OrderNumber, EmpNumber)
     IsPrimaryKey: False  
     ```  
   
--   Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** je nastavena na **False** nejsou vnořené dva elementy ve schématu.  
+-   Vztah mezi **pořadí** a **OrderDetail** tabulky. **Vnořené** je nastavena na **False** dva prvky nejsou vnořené ve schématu.  
   
     ```  
               ParentTable: Order  
@@ -112,4 +112,4 @@ Order(OrderNumber, EmpNumber)
 ## <a name="see-also"></a>Viz také  
  [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
  [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

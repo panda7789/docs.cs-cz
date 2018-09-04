@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vyhledání následníky s konkrétní Element názvu (C#)'
+title: 'Postupy: vyhledání potomků s konkrétním názvem elementu (C#)'
 ms.date: 07/20/2015
 ms.assetid: f684da20-bee9-47f5-9607-7e3fd7e67470
-ms.openlocfilehash: f95551f0c1506a56474d497622b90090cc4c8865
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6c5e035b4ee0168a0c41a34754314e18d089b1ef
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33320229"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43556568"
 ---
-# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Postupy: vyhledání následníky s konkrétní Element názvu (C#)
-Někdy budete chtít vyhledání všech potomků s konkrétním názvem. Můžete napsat kód, k iteraci v rámci všech následníky, ale je jednodušší použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
+# <a name="how-to-find-descendants-with-a-specific-element-name-c"></a>Postupy: vyhledání potomků s konkrétním názvem elementu (C#)
+Někdy budete chtít vyhledání všech potomků s konkrétním názvem. Můžete napsat kód k iteraci v rámci všechny následníky, ale je jednodušší použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak najít následníků na základě názvu elementu.  
+ Následující příklad ukazuje, jak vyhledání potomků vycházet z názvu elementu.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<root>  
@@ -52,7 +52,7 @@ Some text that is broken up into multiple segments.
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro formát XML, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```csharp  
 XElement root = XElement.Parse(@"<root xmlns='http://www.adatum.com'>  
@@ -91,6 +91,7 @@ Console.WriteLine(str);
 Some text that is broken up into multiple segments.  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XContainer.Descendants%2A>  
- [Základní dotazy (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Xml.Linq.XContainer.Descendants%2A>  
+- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

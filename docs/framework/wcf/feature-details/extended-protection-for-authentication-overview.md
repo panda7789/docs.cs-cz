@@ -5,11 +5,11 @@ ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 5b4abd570f8bb40f2faa72f2debf2dee563d3a23
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394939"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526598"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Rozšířená ochrana pro ověřování – přehled
 Rozšířená ochrana ověřování pomáhá chránit před útoky (typu MITM) man-in-the-middle, při které útočník zachycuje přihlašovací údaje klienta a předává je na serveru.  

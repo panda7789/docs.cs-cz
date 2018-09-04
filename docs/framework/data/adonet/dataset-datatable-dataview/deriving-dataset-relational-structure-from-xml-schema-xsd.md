@@ -3,11 +3,11 @@ title: Odvozování relační struktury datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
 ms.openlocfilehash: fd5c41272d3b050427804f08f7387328012065f4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43417201"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504944"
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační struktury datové sady ze schématu XML (XSD)
 Tato část obsahuje přehled toho, jak relační schéma `DataSet` je sestaven z dokument schématu XML definice jazyk (XSD) schématu. Obecně platí, pro každou `complexType` podřízený prvek element schématu tabulky se vygeneruje v `DataSet`. Struktura tabulky se určuje podle definice komplexního typu. Tabulky vytvářejí `DataSet` pro nejvyšší úrovně elementy ve schématu. Ale tabulku je vytvořen pouze pro nejvyšší úroveň `complexType` element při `complexType` element je vnořit do jiného `complexType` element, ve kterém malá a velká ve vnořeném `complexType` element je namapována na `DataTable` v rámci `DataSet`.  

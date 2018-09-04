@@ -12,12 +12,12 @@ ms.author: ronpet
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: 8342f1389718eb41d1138e0bdd166530c1f2a10e
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 0efef54abd1da9631b5a560b49c6587d726e9193
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933602"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43535449"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Cesta formáty souborů v systémech Windows
 
@@ -117,7 +117,7 @@ Jsou normalizovány téměř všechny cesty předán rozhraní Windows API. Běh
 - Vyhodnotí jako relativní directory součásti (`.` pro aktuální adresář a `..` pro nadřazený adresář).
 - Ořízne určitých znaků.
 
-Implicitně se stane toto normalizace, ale můžete to provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metoda, která zabalí volání [GetFullPathName() funkce](https://msdn.microsoft.com/library/windows/desktop/aa364963(v=vs.85).aspx). Můžete také volat Windows [GetFullPathName() funkce](https://msdn.microsoft.com/library/windows/desktop/aa364963(v=vs.85).aspx) přímo pomocí deklarace P/Invoke. Můžete také volat 
+Implicitně se stane toto normalizace, ale můžete to provést explicitně voláním <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> metoda, která zabalí volání [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).aspx). Můžete také volat Windows [GetFullPathName() funkce](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).aspx) přímo pomocí deklarace P/Invoke. Můžete také volat 
 
 ### <a name="identifying-the-path"></a>Určení cesty
 

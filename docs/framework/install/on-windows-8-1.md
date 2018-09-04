@@ -6,11 +6,11 @@ author: rlander
 ms.author: mairaw
 ms.date: 10/22/2017
 ms.openlocfilehash: a44471e16729468983b76febea7704bf2a0518ff
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43488063"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43526979"
 ---
 # <a name="install-the-net-framework-on-windows-81-and-windows-server-2012-r2"></a>Instalace rozhraní .NET Framework na Windows 8.1 a Windows Server 2012 R2
 

@@ -2,20 +2,20 @@
 title: Známé typy
 ms.date: 03/30/2017
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
-ms.openlocfilehash: 003f2e39804bb393c9d8c54a6fc208fdd1b22e97
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ec1dfa426c19b5471acb1c359f5068854fa8aa71
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33503816"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43554947"
 ---
 # <a name="known-types"></a>Známé typy
-Tento příklad ukazuje, jak zadejte informace o odvozené typy v kontraktu dat. Kontrakty dat umožňují předat strukturovaných dat do a ze služby. V objektově orientované programování jde použít místo původní typ typ, který dědí z jiného typu. Při programování orientované na služby, se předávají schémata spíše než typy a proto není zachován vztah mezi typy. <xref:System.Runtime.Serialization.KnownTypeAttribute> Informace o odvozené typy, které mají být zahrnuty v kontraktu dat umožňuje atribut. Pokud se nepoužívá tento mechanismus, nelze odesílat nebo přijímat, kde je očekávána základní typ odvozený typ.  
+Tento příklad ukazuje, jak zadat informace o odvozených typů v kontraktu dat. Kontrakty dat umožňuje předání strukturovaná data do a ze služby. V objektově orientované programování, typ, který dědí z jiného typu lze namísto původní typu. V service objektově orientovaného programování, schémata spíše než typy se předávají a proto se nezachová se o vztah mezi typy. <xref:System.Runtime.Serialization.KnownTypeAttribute> Atribut umožňuje informace o odvozených typů mají být zahrnuty v kontraktu dat. Pokud není použit tento mechanismus, nelze odeslat ani přijmout, kde je očekávána základní typ odvozený typ.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Kontrakt služby pro službu využívá komplexní čísla, jak je znázorněno v následujícím ukázkovém kódu.  
+ Kontrakt služby pro službu používá komplexní čísla, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 // Define a service contract.  
@@ -33,7 +33,7 @@ public interface ICalculator
 }  
 ```  
   
- <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> se použije na `ComplexNumber` třída k označení, která pole třídy lze předat mezi klientem a služby. Odvozené `ComplexNumberWithMagnitude` třídy lze místě `ComplexNumber`. <xref:System.Runtime.Serialization.KnownTypeAttribute> Atributu u `ComplexNumber` typ označuje to.  
+ <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> platí pro `ComplexNumber` třídy k označení, která pole třídy mohou být předány mezi klientem a službou. Odvozená `ComplexNumberWithMagnitude` třídu lze použít místo `ComplexNumber`. <xref:System.Runtime.Serialization.KnownTypeAttribute> Atribut na `ComplexNumber` označuje to.  
   
 ```  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -53,7 +53,7 @@ public class ComplexNumber
 }  
 ```  
   
- `ComplexNumberWithMagnitude` Je odvozen od typu `ComplexNumber` přidá člena další data, ale `Magnitude`.  
+ `ComplexNumberWithMagnitude` Typ je odvozen od `ComplexNumber` , ale přidá další datový člen, `Magnitude`.  
   
 ```  
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -71,7 +71,7 @@ public class ComplexNumberWithMagnitude : ComplexNumber
 }  
 ```  
   
- K předvedení funkcí známé typy, služba se implementuje v například tak, že ji vrací `ComplexNumberWithMagnitude` pouze pro sčítání a odečítání. (I když kontrakt Určuje `ComplexNumber`, je to povoleno z důvodu `KnownTypeAttribute` atributu). Násobení a dělení stále vracet základní `ComplexNumber` typu.  
+ Abychom si předvedli tuto funkci známé typy, služba se implementuje takovým způsobem, který vrátí `ComplexNumberWithMagnitude` pouze pro sčítání a odčítání. (I v případě, že kontrakt Určuje `ComplexNumber`, je to povoleno z důvodu `KnownTypeAttribute` atributu). Úlohy násobení a dělení stále vracet základní `ComplexNumber` typu.  
   
 ```  
 public class DataContractCalculatorService : IDataContractCalculator  
@@ -114,7 +114,7 @@ public class DataContractCalculatorService : IDataContractCalculator
 }  
 ```  
   
- Na klientovi, kontrakt služby a kontrakt dat jsou definovány v souboru generatedClient.cs zdroj, který je generován [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z metadat služby. Protože <xref:System.Runtime.Serialization.KnownTypeAttribute> atribut je uveden v kontrakt dat služby, klient je schopný přijímat i `ComplexNumber` a `ComplexNumberWithMagnitude` třídy při používání služby. Klient zjistí, zda byly `ComplexNumberWithMagnitude` a generovat odpovídající výstup:  
+ Na straně klienta, kontrakt služby a kontrakt dat jsou definovány v generatedClient.cs zdrojového souboru, který je generován [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z metadat služby. Protože <xref:System.Runtime.Serialization.KnownTypeAttribute> je zadán atribut v kontraktu dat služby, je klient schopný přijímat i `ComplexNumber` a `ComplexNumberWithMagnitude` třídy při použití služby. Klient zjistí, jestli máte `ComplexNumberWithMagnitude` a generovat odpovídající výstup:  
   
 ```  
 // Create a client  
@@ -139,7 +139,7 @@ else
 }  
 ```  
   
- Když spustíte ukázku, požadavky a odpovědi operace se zobrazují v okně konzoly klienta. Poznámka: rozsahem vytištěné pro sčítání a odečítání však pro násobení a dělení kvůli způsobu, jakým služba nebyla implementována. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Když spustíte ukázku, požadavky a odpovědi z operace se zobrazují v okně konzoly klienta. Všimněte si, že velikost je vytištěna pro sčítání a odčítání, ale pro násobení a dělení vzhledem ke způsobu nebyl implementován. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Add(1 + 2i, 3 + 4i) = 4 + 6i  
@@ -154,20 +154,20 @@ No magnitude was sent from the service
     Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownTypes`  
   

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: 2825b79c9638fff050522da43184a8d95a3fe02f
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: 8b8237a09b36114f7100c90cee0bd753236789fd
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42753928"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43522617"
 ---
 # <a name="basic-linq-query-operations-c"></a>Základní operace dotazů LINQ (C#)
 Toto téma nabízí stručný úvod do [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazů výrazy a některé typické druhy operací, které provedete v dotazu. Podrobnější informace jsou v následujících tématech:  
@@ -99,9 +99,10 @@ from order in Customer.Orders...
 ## <a name="selecting-projections"></a>Výběr (projekce)  
  `select` Klauzule produkuje výsledky dotazu a určuje "tvar" nebo typ jednotlivých prvků vrácených. Například můžete určit, zda vaše výsledky se skládají z kompletní `Customer` objekty, jenom jeden člen, podmnožinu členů nebo typ úplně jiné výsledky na základě výpočtu nebo vytvoření nového objektu. Když `select` klauzule vytváří něco jiného než kopii zdrojového elementu, operace se nazývá *projekce*. Použití projekce k transformaci dat je vynikající funkcí služby [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů. Další informace najdete v tématu [transformace dat pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/data-transformations-with-linq.md) a [klauzule select](../../../../csharp/language-reference/keywords/select-clause.md).  
   
-## <a name="see-also"></a>Viz také  
- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- [Klíčová slova dotazu (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)  
- [Anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
+## <a name="see-also"></a>Viz také
+
+- [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)  
+- [LINQ – výrazy dotazů](../../../../csharp/programming-guide/linq-query-expressions/index.md)  
+- [Návod: Zápis dotazů v jazyce C#](../../../../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
+- [Klíčová slova dotazu (LINQ)](../../../../csharp/language-reference/keywords/query-keywords.md)  
+- [Anonymní typy](../../../../csharp/programming-guide/classes-and-structs/anonymous-types.md)

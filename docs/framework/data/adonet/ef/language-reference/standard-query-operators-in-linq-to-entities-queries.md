@@ -2,15 +2,15 @@
 title: Standardní operátory dotazu v dotazech LINQ to Entities
 ms.date: 08/21/2018
 ms.assetid: 7fa55a9b-6219-473d-b1e5-2884a32dcdff
-ms.openlocfilehash: 1085e43ef1db8eb0017f9ff87acba2da4be46377
-ms.sourcegitcommit: 875ecc3ab2437e299b1d50076bd9b878fa8c64de
+ms.openlocfilehash: 302fa281767fc95e9a9a2192382034b3a519cd92
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/29/2018
-ms.locfileid: "43238560"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43560485"
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Standardní operátory dotazu v dotazech LINQ to Entities
-V dotazu zadejte informace, které chcete načíst ze zdroje dat. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupeny a tvarovány dříve, než se vrátí. LINQ poskytuje sadu metod standardního dotazu, které můžete použít v dotazu. Většina z těchto metod pracovat v pořadí; v tomto kontextu, sekvence je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Funkce standardních dotazovacích operátorů dotazu obsahuje filtrování, projekce, agregace, řazení, seskupení, stránkování a další. Některé z více často používaných standardních dotazovacích operátorů mít vyhrazené klíčové slovo syntaxe tak, aby bylo možné volat pomocí syntaxe výrazu dotazu. Výraz dotazu je lépe čitelný, jiný způsob, jak vyjádřit dotaz než ekvivalentní založených na volání metody. Klauzule dotazového výrazu jsou přeloženy do volání metody dotazu v době kompilace. Seznam standardních operátorů dotazu, které mají klauzule výrazu dotazu ekvivalentní najdete v tématu [přehled standardních operátorů dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
+V dotazu zadejte informace, které chcete načíst ze zdroje dat. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupeny a tvarovány dříve, než se vrátí. LINQ poskytuje sadu metod standardního dotazu, které můžete použít v dotazu. Většina z těchto metod pracovat v pořadí; v tomto kontextu, sekvence je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Funkce standardních dotazovacích operátorů dotazu obsahuje filtrování, projekce, agregace, řazení, seskupení, stránkování a další. Některé z více často používaných standardních dotazovacích operátorů mít vyhrazené klíčové slovo syntaxe tak, aby bylo možné volat pomocí syntaxe výrazu dotazu. Výraz dotazu je lépe čitelný, jiný způsob, jak vyjádřit dotaz než ekvivalentní založených na volání metody. Klauzule dotazového výrazu jsou přeloženy do volání metody dotazu v době kompilace. Seznam standardních operátorů dotazu, které mají klauzule výrazu dotazu ekvivalentní najdete v tématu [přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  
   
  Operátory standardního dotazu nejsou podporovány v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy. Další informace najdete v tématu [podporované a nepodporované metody LINQ (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md). Toto téma obsahuje informace o standardních operátorů pro dotazování, které jsou specifické pro [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)]. Další informace o známých problémech v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy, naleznete v tématu [známé problémy a aspekty u LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/known-issues-and-considerations-in-linq-to-entities.md).  
   
@@ -67,7 +67,7 @@ V dotazu zadejte informace, které chcete načíst ze zdroje dat. Dotaz můžete
 |`Sum`|Vrátí hodnotu null.|Vrátí hodnotu null.|Vrátí součet nenulové hodnoty v pořadí.|Vypočítá součet prvků posloupnost číselné hodnoty.|  
   
 ## <a name="type-methods"></a>Typ metody  
- Dvě metody LINQ, které se zabývají převodu typu a testování jsou podporované v kontextu [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. To znamená, že jediné podporované typy jsou typy, které se mapují na odpovídající [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] typu. Seznam těchto typů najdete v tématu [koncepční Model typy (CSDL)](http://msdn.microsoft.com/library/987b995f-e429-4569-9559-b4146744def4). Typ metody jsou `Convert` a `OfType`.  
+ Dvě metody LINQ, které se zabývají převodu typu a testování jsou podporované v kontextu [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)]. To znamená, že jediné podporované typy jsou typy, které se mapují na odpovídající [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)] typu. Seznam těchto typů najdete v tématu [koncepční Model typy (CSDL)](https://msdn.microsoft.com/library/987b995f-e429-4569-9559-b4146744def4). Typ metody jsou `Convert` a `OfType`.  
   
  `OfType` platí pro typy entit. `Convert` platí pro primitivní typy konceptuálních modelů.  C# `is` a `as` metody jsou také podporovány.  
   
@@ -78,4 +78,4 @@ V dotazu zadejte informace, které chcete načíst ze zdroje dat. Dotaz můžete
   
 ## <a name="see-also"></a>Viz také  
  [Podporované a nepodporované metody LINQ (LINQ to Entities)](../../../../../../docs/framework/data/adonet/ef/language-reference/supported-and-unsupported-linq-methods-linq-to-entities.md)  
- [Přehled standardních operátorů dotazu](http://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)
+ [Přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)

@@ -5,27 +5,28 @@ helpviewer_keywords:
 - byte arrays [C#]
 - arrays [C#], byte
 - pointers [C#], to copy bytes
-ms.openlocfilehash: 800a600f0fa7ca52d0433c8d90039434bf6b7f19
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 061bbbc4557cb25d39edfb1f6235bb065a5de7bd
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33331198"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43541455"
 ---
 # <a name="how-to-use-pointers-to-copy-an-array-of-bytes--c-programming-guide"></a>Postupy: Použití ukazatelů ke kopírování pole bajtů (Průvodce programováním v C#)
 
-Následující příklad používá ukazatele kopírování bajtů z jednoho pole do jiné.
+Následující příklad používá ukazatelů ke kopírování bajtů z jednoho pole do jiného.
 
-Tento příklad používá [unsafe](../../language-reference/keywords/unsafe.md) – klíčové slovo, které vám umožní použít ukazatele v `Copy` metoda. [Pevné](../../language-reference/keywords/fixed-statement.md) příkaz se používá k deklaraci ukazatele na zdrojové a cílové pole. `fixed` Příkaz *PIN* umístění zdrojové a cílové maticových v paměti, aby nebude možné přesunout podle uvolňování paměti. Bloky paměti pro pole jsou Odepnout, kdy `fixed` blok dokončení. Protože `Copy` metoda v tomto příkladu používá `unsafe` – klíčové slovo, se musí být zkompilovány s [-unsafe](../../language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.
+Tento příklad používá [unsafe](../../language-reference/keywords/unsafe.md) – klíčové slovo, které vám umožní použít ukazatele ve `Copy` metody. [Oprava](../../language-reference/keywords/fixed-statement.md) prohlášení se používá k deklaraci ukazatele na zdrojové a cílové pole. `fixed` Příkaz *PIN kódy* indexy pole zdrojové a cílové umístění v paměti, aby nebude možné přesunout uvolňováním paměti. Bloky paměti pro pole nepřipnuté, pokud `fixed` bloku je dokončena. Protože `Copy` metoda v tomto příkladu používá `unsafe` – klíčové slovo, se musí být kompilována s [-unsafe](../../language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.
 
-Tento příklad používá elementy obou polí pomocí indexů spíše než druhý nespravovaný ukazatel. Prohlášení o `pSource` a `pTarget` ukazatele PIN kódy pole. Tato funkce je k dispozici počínaje 7.3 C#.
+V tomto příkladu přistupuje k prvky obou polí pomocí indexů spíše než druhý nespravovaného ukazatele. Deklarace `pSource` a `pTarget` připíná ukazatele pole. Tato funkce je dostupná, od C# 7.3.
 
 ## <a name="example"></a>Příklad
 
 [!code-csharp[Struct with embedded inline array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#8)]
 
 ## <a name="see-also"></a>Viz také
- [Průvodce programováním v jazyce C#](../index.md)  
- [Nebezpečný kód a ukazatele](index.md)  
- [-unsafe (možnosti kompilátoru C#)](../../language-reference/compiler-options/unsafe-compiler-option.md)  
- [Uvolňování paměti](../../../standard/garbage-collection/index.md)  
+
+- [Průvodce programováním v jazyce C#](../index.md)  
+- [Nebezpečný kód a ukazatele](index.md)  
+- [-unsafe (možnosti kompilátoru C#)](../../language-reference/compiler-options/unsafe-compiler-option.md)  
+- [Uvolňování paměti](../../../standard/garbage-collection/index.md)  

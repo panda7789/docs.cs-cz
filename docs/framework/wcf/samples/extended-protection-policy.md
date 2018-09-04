@@ -2,63 +2,63 @@
 title: Zásady rozšířené ochrany
 ms.date: 03/30/2017
 ms.assetid: e2616a10-317e-4c34-8023-0c015a80a82f
-ms.openlocfilehash: 00d1500b271625addde4499bc62b5ed4d689caf9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 59a377a94978741f3f116bab819dff77d8b0fee4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33504355"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43532342"
 ---
 # <a name="extended-protection-policy"></a>Zásady rozšířené ochrany
-Rozšířená ochrana je initiative zabezpečení pro ochranu proti útokům man-in-the-middle (typu MITM). Útoky typu MITM je ohrožení zabezpečení, ve kterém MITM přijímá pověření klienta a předává je na server.  
+Rozšířená ochrana je iniciativy zabezpečení pro ochranu před útoky man-in-the-middle (typu MITM). Útoky MITM je bezpečnostní hrozbu, ve kterém MITM přijímá pověření klienta a předá jej do serveru.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  Rozšířená ochrana  
   
-## <a name="discussion"></a>Diskusní  
- Pokud aplikace ověřit pomocí protokolu Kerberos, algoritmus Digest ani protokol NTLM pomocí protokolu HTTPS, je nejprve vytvořit kanál úroveň zabezpečení TLS (Transport) a pak ověřování probíhá pomocí zabezpečený kanál. Však neexistuje žádná vazba mezi klíč relace generované SSL a klíč relace vygenerovaných během ověřování. Všechny MITM můžete určit sám sebe mezi klientem a serverem a spustit předávání žádosti z klienta, i v případě, že kanál přenosu samotného je bezpečné, protože server nemá žádný způsob, jak zjistit, zda zabezpečený kanál je vytvořený z klienta nebo MITM. Řešení v tomto scénáři je vytvoření vazby s kanálem vnitřní ověřování vnější kanál TLS tak, že server může zjistit, jestli je MITM.  
+## <a name="discussion"></a>Diskuse  
+ Když aplikace ověřování pomocí protokolu Kerberos, hodnotou hash nebo NTLM pomocí protokolu HTTPS, prvním vytváření kanálu úroveň TLS (Transport Security) a pak ověřování probíhá pomocí zabezpečeného kanálu. Neexistuje ale žádná vazba mezi klíč relace generovaných SSL a klíče relace vygenerovaných během ověřování. Žádné MITM můžete určit sám mezi klientem a serverem a spusťte předávání žádosti z klienta, i když samotný kanál přenosu je zabezpečená, protože server nemá žádnou možnost zjistit, zda zabezpečený kanál byl vytvořen z klienta nebo MITM. Řešení v tomto scénáři se k vytvoření vazby vnější kanál TLS s kanálem vnitřní ověřování tak, aby server dokáže detekovat, pokud je MITM.  
   
 > [!NOTE]
->  Tato ukázka pouze funguje, když hostované ve službě IIS a nemůže pracovat na Cassini – vývojový Server sady Visual Studio, protože Cassini nepodporuje protokol HTTPS.  
+>  Tato ukázka pouze funguje, když jsou hostované ve službě IIS a nemůže fungovat pro Cassini – vývojový Server sady Visual Studio, protože Cassini nepodporuje protokol HTTPS.  
   
 > [!NOTE]
->  Tato funkce je aktuálně k dispozici pouze v systému Windows 7. Následující kroky jsou specifické pro systém Windows 7.  
+>  Tato funkce je aktuálně k dispozici pouze ve Windows 7. Následující kroky jsou specifická pro Windows 7.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
-1.  Nainstalujte Internetovou informační službu z **ovládací panely**, **přidat nebo odebrat programy**, **funkce systému Windows**.  
+1.  Nainstalujte Internetovou informační službu z **ovládací panely**, **přidat nebo odebrat programy**, **funkce Windows**.  
   
-2.  Nainstalujte **ověřování systému Windows** v **funkce systému Windows**, **Internetová informační služba**, **webové služby**,  **Zabezpečení**, a **ověřování systému Windows**.  
+2.  Nainstalujte **ověřování Windows** v **funkce Windows**, **Internetová informační služba**, **webové služby**,  **Zabezpečení**, a **ověřování Windows**.  
   
-3.  Nainstalujte **aktivace Windows Communication Foundation HTTP** v **funkce systému Windows**, **rozhraní Microsoft .NET Framework 3.5.1**, a **komunikaci Windows Aktivace Foundation HTTP**.  
+3.  Nainstalujte **aktivace Windows Communication Foundation HTTP** v **funkce Windows**, **rozhraní Microsoft .NET Framework 3.5.1**, a **komunikace Windows Aktivace protokolu HTTP Foundation**.  
   
-4.  Tato ukázka vyžaduje, aby klient k navázání zabezpečeného kanálu se serverem, takže vyžaduje přítomnost certifikát serveru, které můžete nainstalovat ze Správce Internetové informační služby (IIS).  
+4.  Tato ukázka vyžaduje klientům navázat zabezpečené připojení k serveru, takže vyžaduje přítomnost certifikát serveru, který si můžete nainstalovat pomocí Správce Internetové informační služby (IIS).  
   
-    1.  Otevřete Správce služby IIS. Otevřete **certifikáty serveru**, který se objevuje v **zobrazení funkce** kartě, pokud je vybrána kořenového uzlu (název počítače).  
+    1.  Otevřete Správce služby IIS. Otevřít **certifikáty serveru**, který se objevuje v **zobrazení funkce** kartu, pokud je vybrána kořenový uzel (název počítače).  
   
-    2.  Pro účely testování této ukázce, vytvořte certifikát podepsaný svým držitelem. Pokud nechcete, aby se vás zeptá, certifikát nebude zabezpečené v aplikaci Internet Explorer, nainstalujte certifikát do úložiště Důvěryhodné kořenové certifikační autority.  
+    2.  Pro účely testování této ukázce, vytvořte certifikát podepsaný svým držitelem. Pokud nechcete, aby se vás zeptá na certifikát, nebude zabezpečený v aplikaci Internet Explorer, nainstalujte certifikát do úložiště Důvěryhodné kořenové certifikační autority.  
   
-5.  Otevřete **akce** podokno pro výchozí web. Klikněte na tlačítko **web upravit**, **vazby**. Přidat HTTPS jako typ Pokud již nejsou přítomny, s číslem portu 443. Přiřadíte certifikát SSL vytvořili v předchozím kroku.  
+5.  Otevřít **akce** podokno pro výchozí web. Klikněte na tlačítko **upravit web**, **vazby**. Přidat jako typ protokolu HTTPS, pokud není již existuje s číslem portu 443. Přiřadíte certifikát SSL vytvořený v předchozím kroku.  
   
-6.  Vytvořte službu. To vytvoří virtuální adresář ve službě IIS a zkopíruje soubory .dll, .svc a .config podle potřeby má být hostovaná na webu pro službu.  
+6.  Vytvořte službu. Vytvoří virtuální adresář služby IIS a zkopíruje soubory .dll, .svc a .config podle potřeby pro službu bude hostovaná na webu.  
   
 7.  Otevřete Správce služby IIS. Klikněte pravým tlačítkem na virtuální adresář (**ExtendedProtection**), který byl vytvořen v předchozím kroku. Vyberte **převést na aplikaci**.  
   
-8.  Otevřete **ověřování** modulu ve Správci služby IIS pro tento virtuální adresář a povolit **ověřování systému Windows**.  
+8.  Otevřít **ověřování** modul ve Správci služby IIS pro tento virtuální adresář a povolit **ověřování Windows**.  
   
-9. Otevřete **Upřesnit nastavení** pod **ověřování systému Windows** pro tento virtuální adresář a nastavte ji na **požadované**.  
+9. Otevřít **Upřesnit nastavení** pod **ověřování Windows** pro tento virtuální adresář a nastavte ho na **vyžaduje**.  
   
-10. Službu můžete otestovat přístup k adresu URL HTTPS z okna prohlížeče (zadejte název a plně kvalifikované domény). Pokud chcete přístup k této adrese URL ze vzdáleného počítače, ujistěte se, že brána firewall, je otevřené pro všechna příchozí připojení HTTP a HTTPS.  
+10. Službu můžete otestovat přístup k adresu URL HTTPS z okna prohlížeče (zadejte plně kvalifikovaný název domény). Pokud chcete k této adrese URL přístup ze vzdáleného počítače, ujistěte se, že brána firewall otevřená pro všechna příchozí připojení HTTP a HTTPS.  
   
-11. Otevřete konfigurační soubor klienta a zadejte název plně kvalifikované domény pro atribut adresa klienta nebo koncový bod, který nahrazuje `<<full_machine_name>>`.  
+11. Otevřete soubor konfigurace klienta a zadejte název plně kvalifikované domény pro atribut adresa klienta nebo koncový bod, který nahrazuje `<<full_machine_name>>`.  
   
-12. Spuštění klienta. Klient komunikuje se službou, která vytváří zabezpečený kanál a používá rozšířené ochrany.  
+12. Spustíte klienta. Klient komunikuje se službou, která vytváří zabezpečený kanál a použije rozšířenou ochranu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Security\ExtendedProtection`

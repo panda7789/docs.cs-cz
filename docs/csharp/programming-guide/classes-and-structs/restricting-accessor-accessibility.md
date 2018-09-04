@@ -9,62 +9,63 @@ helpviewer_keywords:
 - asymmetric accessor accesibility [C#]
 - indexers [C#], read-only
 ms.assetid: 6e655798-e112-4301-a680-6310a6e012e1
-ms.openlocfilehash: bf9ead7934630d3974657107ca38e08bbd3bed85
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 66e6f0da417e62bb592fdd8654f85cdb80ccf9bc
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33322312"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43561966"
 ---
 # <a name="restricting-accessor-accessibility-c-programming-guide"></a>Omezení přístupnosti přístupového objektu (Průvodce programováním v C#)
-[Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnosti nebo indexeru se nazývají *přístupové objekty*. Ve výchozím nastavení mají stejné viditelnost těchto přístupových objektů, nebo úroveň přístupu: u vlastnosti nebo indexeru, do které patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však vhodné omezit přístup na jednu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnosti `set` přistupujícího objektu, při zachování `get` přistupujícího objektu veřejně přístupná. Příklad:  
+[Získat](../../../csharp/language-reference/keywords/get.md) a [nastavit](../../../csharp/language-reference/keywords/set.md) části vlastnost nebo indexer, se nazývají *přistupující objekty*. Ve výchozím nastavení mají stejnou viditelnost těchto přístupových objektů, nebo úroveň přístupu: u vlastnost nebo indexovací člen, ke kterému patří. Další informace najdete v tématu [úrovní přístupu](../../../csharp/language-reference/keywords/accessibility-levels.md). Někdy je však užitečný k omezení přístupu k jednomu z těchto přístupových objektů. Obvykle to zahrnuje omezení přístupnost `set` přístupového objektu při zachování `get` přistupující objekt veřejně přístupná. Příklad:  
   
  [!code-csharp[csProgGuideIndexers#6](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_1.cs)]  
   
- V tomto příkladu vlastnost s názvem `Name` definuje `get` a `set` přistupujícího objektu. `get` Přistupujícího objektu obdrží usnadnění úroveň samotné, vlastnosti `public` v takovém případě při `set` přistupujícího objektu je omezená explicitně použitím [chráněné](../../../csharp/language-reference/keywords/protected.md) – modifikátor přístupu k přistupující objekt sám sebe.  
+ V tomto příkladu vlastnost s názvem `Name` definuje `get` a `set` přistupujícího objektu. `get` Přistupující objekt obdrží úrovni přístupu, samotná hodnota vlastnosti `public` v tomto případě while `set` přístupový objekt je explicitně s omezením pomocí specifikátoru použitím [chráněné](../../../csharp/language-reference/keywords/protected.md) modifikátor přístupu k přístupový objekt samotný.  
   
-## <a name="restrictions-on-access-modifiers-on-accessors"></a>Omezení modifikátory přístupu na přístupové objekty  
- Pomocí modifikátory přistupujícího objektu vlastnosti nebo indexery je nutné splnit následující podmínky:  
+## <a name="restrictions-on-access-modifiers-on-accessors"></a>Omezení přístupu modifikátory přístupu na přístupových objektů  
+ Pomocí modifikátory přistupující objekt vlastnosti nebo indexery podléhá tyto podmínky:  
   
--   Modifikátory přistupujícího objektu nelze použít na rozhraní nebo pomocí explicitní [rozhraní](../../../csharp/language-reference/keywords/interface.md) implementaci prvku.  
+-   Přístupový objekt Modifikátory nelze použít na rozhraní nebo explicitní [rozhraní](../../../csharp/language-reference/keywords/interface.md) implementace členu.  
   
--   Modifikátory přistupující objekt můžete použít pouze v případě, že jsou vlastnost nebo indexer má oba `set` a `get` přistupující objekty. V takovém případě je modifikátor povolená na jedné ze dvou přístupových objektů.  
+-   Modifikátory přístupového objektu můžete použít pouze v případě, že vlastnost nebo indexovací člen jsou obě `set` a `get` přistupující objekty. V takovém případě modifikátor můžou běžet na jedné ze dvou přístupových objektů.  
   
--   Pokud má vlastnost nebo indexer [přepsat](../../../csharp/language-reference/keywords/override.md) modifikátor, modifikátor přistupujícího objektu se musí shodovat přistupujícího objektu přepsaného přistupujícího objektu, pokud existuje.  
+-   Pokud má vlastnost nebo indexer [přepsat](../../../csharp/language-reference/keywords/override.md) modifikátor, modifikátor přístupového objektu musí odpovídat přistupující objekt přepsané přístupového objektu, případné.  
   
--   Úroveň usnadnění na přistupujícím objektu musí být více omezující než úroveň usnadnění na vlastnost nebo indexer sám sebe.  
+-   Usnadnění úrovní na přistupujícím objektu musí být více omezující než úroveň přístupnost na vlastnost nebo indexovací člen, samotného.  
   
-## <a name="access-modifiers-on-overriding-accessors"></a>Modifikátory přístupu při přepsání přístupové objekty  
- Při přepsání vlastnosti nebo indexeru, musí být přístupný pro kód přepsání přepsaného přistupující objekty. Navíc úroveň usnadnění jak vlastnost/indexeru a že přístupové objekty musí odpovídat odpovídající přepsané vlastnosti nebo indexeru a přístupy. Příklad:  
+## <a name="access-modifiers-on-overriding-accessors"></a>Modifikátory přístupu pro přepsání přístupové objekty  
+ Při přepsání vlastnost nebo indexovací člen přepsané přistupující objekty musí být přístupná pro přepsání kódu. Také úroveň usnadnění jak vlastnost nebo indexer a že přístupové objekty musí odpovídat odpovídající přepsané vlastnosti nebo indexeru a přístupové objekty. Příklad:  
   
  [!code-csharp[csProgGuideIndexers#7](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_2.cs)]  
   
 ## <a name="implementing-interfaces"></a>Implementace rozhraní  
- Pokud používáte přistupující objekt k implementaci rozhraní, nemusí mít přistupující – modifikátor přístupu. Ale pokud budete implementovat rozhraní pomocí jednoho přístupového objektu, například `get`, jiné přistupující objekt může mít – modifikátor přístupu, jako v následujícím příkladu:  
+ Při použití přístupový objekt pro implementaci rozhraní přistupujícím objektu nemusí mít modifikátor přístupu. Nicméně Pokud implementujete rozhraní pomocí jeden přistupující objekt, jako například `get`, další přístupový objekt může mít modifikátor přístupu, jako v následujícím příkladu:  
   
  [!code-csharp[csProgGuideIndexers#8](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_3.cs)]  
   
 ## <a name="accessor-accessibility-domain"></a>Doména přístupnosti přístupového objektu  
- Používáte-li – modifikátor přístupu přistupujícího objektu, [doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md) přistupujícího objektu je dáno tento modifikátor.  
+ Pokud použijete modifikátor přístupu nastaven na přístupový objekt, [doména přístupnosti](../../../csharp/language-reference/keywords/accessibility-domain.md) přistupujícím objektu je určen tento modifikátor.  
   
- Pokud jste nepoužili – modifikátor přístupu na přistupujícím objektu, doména přístupnosti přistupujícího objektu je určen podle usnadnění úroveň vlastnost nebo indexer.  
+ Pokud jste nepoužili modifikátor přístupu nastaven na přistupujícím objektu, tak doména přístupnosti přístupového objektu se určuje podle úrovně přístupnosti vlastnost nebo indexer.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad obsahuje tři třídy `BaseClass`, `DerivedClass`, a `MainClass`. Existují dvě vlastnosti na `BaseClass`, `Name` a `Id` u obou tříd. Příklad ukazuje, jak vlastnost `Id` na `DerivedClass` může být skryté vlastností `Id` na `BaseClass` při použití – modifikátor omezující přístupu, jako [chráněné](../../../csharp/language-reference/keywords/protected.md) nebo [ privátní](../../../csharp/language-reference/keywords/private.md). Proto když přiřadit hodnoty této vlastnosti, vlastnost na `BaseClass` třídy se nazývá místo. Nahrazení – modifikátor přístupu podle [veřejné](../../../csharp/language-reference/keywords/public.md) bude zpřístupněte vlastnost.  
+ Následující příklad obsahuje tři třídy `BaseClass`, `DerivedClass`, a `MainClass`. Existují dvě vlastnosti na `BaseClass`, `Name` a `Id` v obou třídách. Tento příklad ukazuje, jak vlastnost `Id` na `DerivedClass` může být skryta vlastnost `Id` na `BaseClass` při použití modifikátor omezení přístupu, jako [chráněné](../../../csharp/language-reference/keywords/protected.md) nebo [ privátní](../../../csharp/language-reference/keywords/private.md). Proto když přiřadit hodnoty této vlastnosti, vlastnost na `BaseClass` třída se nazývá místo. Nahrazení modifikátor přístupu podle [veřejné](../../../csharp/language-reference/keywords/public.md) zpřístupní vlastnosti.  
   
- Příklad také ukazuje, který modifikátor omezující přístup, například `private` nebo `protected`na `set` přistupujícího `Name` vlastnost v `DerivedClass` brání přístupu na přistupující objekt a vygeneruje se chyba při přiřazení do ho.  
+ Tento příklad také ukazuje, že modifikátor omezení přístupu, jako `private` nebo `protected`na `set` přistupující objekt `Name` vlastnost v `DerivedClass` brání v přístupu k přistupujícím objektu a vygeneruje chybu, pokud přiřadíte ho.  
   
  [!code-csharp[csProgGuideIndexers#5](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/restricting-accessor-accessibility_4.cs)]  
   
 ## <a name="comments"></a>Komentáře  
- Všimněte si, že pokud nahradíte deklaraci `new private string Id` podle `new public string Id`, získat výstup:  
+ Všimněte si, že pokud nahradíte deklarace `new private string Id` podle `new public string Id`, získáte výstup:  
   
  `Name and ID in the base class: Name-BaseClass, ID-BaseClass`  
   
  `Name and ID in the derived class: John, John123`  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [Modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md)

@@ -13,11 +13,11 @@ ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4c95074190419dd3e984c7659ede917b83b97f08
-ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "42752326"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43524713"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Developer Command Prompt pro sadu Visual Studio
 

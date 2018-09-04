@@ -1,62 +1,72 @@
 ---
-title: Tabulka předdefinovaných typů (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+title: Tabulka předdefinovaných typů (referenční dokumentace jazyka C#)
+description: Klíčová slova pro předdefinované typy jazyka C#
+ms.date: 08/17/2018
 helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: 120347e5bff7f0d6c7120af0cb250936ca39ea16
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: fd9ba878d77bdb219542db55bb38023c60c7bec4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
-ms.locfileid: "34172263"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43507309"
 ---
-# <a name="built-in-types-table-c-reference"></a>Tabulka předdefinovaných typů (Referenční dokumentace jazyka C#)
+# <a name="built-in-types-table-c-reference"></a>Tabulka předdefinovaných typů (referenční dokumentace jazyka C#)
+
 V následující tabulce jsou uvedeny klíčová slova pro vestavěné C# typy, které jsou aliasy předdefinovaných typů v <xref:System> oboru názvů.  
   
-|Typ jazyka C#|Typ rozhraní .NET framework|  
+|Typ jazyka C#|Typ formátu .NET|  
 |--------------|-------------------------|  
-|[bool](../../../csharp/language-reference/keywords/bool.md)|`System.Boolean`|  
-|[byte](../../../csharp/language-reference/keywords/byte.md)|`System.Byte`|  
-|[sbyte](../../../csharp/language-reference/keywords/sbyte.md)|`System.SByte`|  
-|[char](../../../csharp/language-reference/keywords/char.md)|`System.Char`|  
-|[decimal](../../../csharp/language-reference/keywords/decimal.md)|`System.Decimal`|  
-|[double](../../../csharp/language-reference/keywords/double.md)|`System.Double`|  
-|[float](../../../csharp/language-reference/keywords/float.md)|`System.Single`|  
-|[int](../../../csharp/language-reference/keywords/int.md)|`System.Int32`|  
-|[uint](../../../csharp/language-reference/keywords/uint.md)|`System.UInt32`|  
-|[long](../../../csharp/language-reference/keywords/long.md)|`System.Int64`|  
-|[ulong](../../../csharp/language-reference/keywords/ulong.md)|`System.UInt64`|  
-|[object](../../../csharp/language-reference/keywords/object.md)|`System.Object`|  
-|[short](../../../csharp/language-reference/keywords/short.md)|`System.Int16`|  
-|[ushort](../../../csharp/language-reference/keywords/ushort.md)|`System.UInt16`|  
-|[string](../../../csharp/language-reference/keywords/string.md)|`System.String`|  
+|[bool](bool.md)|<xref:System.Boolean?displayProperty=nameWithType>|  
+|[byte](byte.md)|<xref:System.Byte?displayProperty=nameWithType>|  
+|[sbyte](sbyte.md)|<xref:System.SByte?displayProperty=nameWithType>|  
+|[char](char.md)|<xref:System.Char?displayProperty=nameWithType>|  
+|[decimal](decimal.md)|<xref:System.Decimal?displayProperty=nameWithType>|  
+|[double](double.md)|<xref:System.Double?displayProperty=nameWithType>|  
+|[float](float.md)|<xref:System.Single?displayProperty=nameWithType>|  
+|[int](int.md)|<xref:System.Int32?displayProperty=nameWithType>|  
+|[uint](uint.md)|<xref:System.UInt32?displayProperty=nameWithType>|  
+|[long](long.md)|<xref:System.Int64?displayProperty=nameWithType>|  
+|[ulong](ulong.md)|<xref:System.UInt64?displayProperty=nameWithType>|  
+|[object](object.md)|<xref:System.Object?displayProperty=nameWithType>|  
+|[short](short.md)|<xref:System.Int16?displayProperty=nameWithType>|  
+|[ushort](ushort.md)|<xref:System.UInt16?displayProperty=nameWithType>|  
+|[string](string.md)|<xref:System.String?displayProperty=nameWithType>|  
   
-## <a name="remarks"></a>Poznámky  
- Všechny typy v tabulce s výjimkou `object` a `string`, se označují jako jednoduché typy.  
+## <a name="remarks"></a>Poznámky
+
+Všechny typy v tabulce, s výjimkou `object` a `string`, jsou označovány jako jednoduché typy.  
   
- Jazyce C# typ klíčová slova a jejich aliasy jsou zaměnitelné. Můžou například deklarovat proměnná typu integer pomocí některé z následujících deklarace:  
-  
-```csharp  
-int x = 123;  
-System.Int32 x = 123;  
-```  
-  
- Pokud chcete zobrazit skutečný typ pro jakýkoli typ C#, použijte metodu systému `GetType()`. Například následující příkaz zobrazí alias systému, který představuje typ `myVariable`:  
-  
-```csharp  
-Console.WriteLine(myVariable.GetType());  
-```  
-  
- Můžete také [typeof](../../../csharp/language-reference/keywords/typeof.md) operátor.  
-  
-## <a name="see-also"></a>Viz také  
- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [Typy hodnot](../../../csharp/language-reference/keywords/value-types.md)  
- [Tabulka výchozích hodnot](../../../csharp/language-reference/keywords/default-values-table.md)  
- [Tabulka formátování číselných výsledků](../../../csharp/language-reference/keywords/formatting-numeric-results-table.md)  
- [dynamic](../../../csharp/language-reference/keywords/dynamic.md)  
- [Referenční tabulky pro typy](../../../csharp/language-reference/keywords/reference-tables-for-types.md)
+Jazyce C# zadejte klíčová slova a jejich aliasy jsou zaměnitelné. Například je možné deklarovat celočíselné proměnné pomocí některé z následující deklarace:  
+
+```csharp
+int x = 123;
+System.Int32 y = 123;
+```
+
+Použití [typeof](typeof.md) operátor zobrazíte <xref:System.Type?displayProperty=nameWithType> instanci, která představuje zadaný typ:
+
+```csharp
+Type stringType = typeof(string);
+Console.WriteLine(stringType.FullName);
+
+Type doubleType = typeof(System.Double);
+Console.WriteLine(doubleType.FullName);
+
+// Output:
+// System.String
+// System.Double
+```
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Referenční tabulky pro typy](reference-tables-for-types.md)
+- [Typy hodnot](value-types.md)
+- [Odkazové typy](reference-types.md)
+- [Tabulka výchozích hodnot](default-values-table.md)
+- [dynamic](dynamic.md)

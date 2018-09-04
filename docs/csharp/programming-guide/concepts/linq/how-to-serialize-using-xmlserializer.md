@@ -2,18 +2,18 @@
 title: 'Postupy: serializace pomocí třídy XmlSerializer (C#)'
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
-ms.openlocfilehash: 2f68253f2ce1efaaabb971350496898ab012706b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 32a23792947639c2c0eb1dc14b640c3786bdfd4c
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33319894"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43535760"
 ---
 # <a name="how-to-serialize-using-xmlserializer-c"></a>Postupy: serializace pomocí třídy XmlSerializer (C#)
 Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří mnoho objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Pak je serializuje na datový proud paměti a pak je deserializuje z datového proudu paměti.  
+ Následující příklad vytvoří několik objektů, které obsahují <xref:System.Xml.Linq.XElement> objekty. Serializuje je datový proud paměti a deserializuje je z datového proudu paměti.  
   
 ```csharp  
 using System;  
@@ -89,5 +89,6 @@ Testing for type: XElementContainer
   Deserialized type: XElementContainer  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Serializace grafů objektů, které obsahují XElement objekty (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)
+## <a name="see-also"></a>Viz také
+
+- [Serializace grafů objektů, které obsahují objekty XElement (C#)](../../../../csharp/programming-guide/concepts/linq/serializing-object-graphs-that-contain-xelement-objects.md)

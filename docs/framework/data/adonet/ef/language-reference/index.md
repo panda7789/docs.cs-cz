@@ -2,12 +2,12 @@
 title: Referenční dokumentace jazyka Entity SQL
 ms.date: 03/30/2017
 ms.assetid: bb07282c-161d-47e8-856d-b2374ba18181
-ms.openlocfilehash: 1759b8ef12e39df962bd3bea0073c378ca7d2819
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8ef0f7e00735292252cdabf2adb8b7638faa5d8f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761919"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43562971"
 ---
 # <a name="entity-sql-language-reference"></a>Referenční dokumentace jazyka Entity SQL
 Tato část obsahuje podrobnou dokumentaci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)], [!INCLUDE[esql](../../../../../../includes/esql-md.md)]a modelování a mapování jazyky používané [!INCLUDE[adonet_ef](../../../../../../includes/adonet-ef-md.md)].  
@@ -22,9 +22,9 @@ Tato část obsahuje podrobnou dokumentaci [!INCLUDE[linq_entities](../../../../
  [Kanonické funkce](../../../../../../docs/framework/data/adonet/ef/language-reference/index.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Nástroje modelu ADO.NET Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)  
+ [Datový Model Entity ADO.NET nástroje](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527)  
   
 ## <a name="see-also"></a>Viz také  
  [ADO.NET Entity Framework](../../../../../../docs/framework/data/adonet/ef/index.md)  
  [Začínáme](../../../../../../docs/framework/data/adonet/ef/getting-started.md)  
- [Ukázky](http://msdn.microsoft.com/library/77500b07-de49-4fb7-93ee-ce76f72d4646)
+ [Ukázky](https://msdn.microsoft.com/library/77500b07-de49-4fb7-93ee-ce76f72d4646)
