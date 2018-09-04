@@ -5,11 +5,11 @@ helpviewer_keywords:
 - contravariance, in keyword [C#]
 - in keyword [C#]
 ms.openlocfilehash: e515329c060bd9fc11e4415b8e77520cf68cad9a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468957"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523775"
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (generický modifikátor) (Referenční dokumentace jazyka C#)
 

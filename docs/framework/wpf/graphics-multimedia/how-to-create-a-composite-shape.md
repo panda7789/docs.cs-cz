@@ -10,11 +10,11 @@ helpviewer_keywords:
 - graphics [WPF], composite shapes
 ms.assetid: 8e5c7ef4-d7ed-4c43-afc9-ca01325c300b
 ms.openlocfilehash: 9892120d13a067586dbf6472a6873b6a52c2d8b4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43457080"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515161"
 ---
 # <a name="how-to-create-a-composite-shape"></a>Postupy: Vytvoření složeného tvaru
 Tento příklad ukazuje, jak vytvořit složené obrazce pomocí <xref:System.Windows.Media.Geometry> objektů a jejich zobrazení pomocí <xref:System.Windows.Shapes.Path> elementu. V následujícím příkladu <xref:System.Windows.Media.LineGeometry>, <xref:System.Windows.Media.EllipseGeometry>a <xref:System.Windows.Media.RectangleGeometry> produkty slouží spolu s <xref:System.Windows.Media.GeometryGroup> vytvoření složeného tvaru. Geometrie jsou pak vykreslen <xref:System.Windows.Shapes.Path> elementu.  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: f6f0cbc9-f7bf-4d6e-875f-ad1ba0b4aa62
 ms.openlocfilehash: 24657f541daf5bb098f8db3b59a3241ecf832d39
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43398862"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515076"
 ---
 # <a name="transaction-and-bulk-copy-operations"></a>Transakce a operace hromadného kopírování
 Operace hromadného kopírování lze provést jako izolované operace nebo jako součást více transakcí kroku. Tato druhou možnost umožňuje provádět více než jednu operaci hromadného kopírování v rámci jedné transakce a také provádění jiných operací databáze (například vložení, aktualizace a odstranění), ale stále mít možnost potvrzení nebo vrácení zpět celou transakci.  

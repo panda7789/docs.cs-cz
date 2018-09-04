@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: vyhledání následníků podřízený Element (XPath-technologie LINQ to XML) (C#)'
+title: 'Postupy: vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
-ms.openlocfilehash: 548ec3f76a17ef8575e7e5e90ef4cbf8d2666a64
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2fbb5111cdabac5ecbdc1db43e2ce2f41ebb7303
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33324990"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523201"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Postupy: vyhledání následníků podřízený Element (XPath-technologie LINQ to XML) (C#)
-Toto téma ukazuje, jak získat následnickým elementům podřízeného prvku s konkrétním názvem.  
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>Postupy: vyhledání potomků podřízeného elementu (XPath – LINQ to XML) (C#)
+Toto téma ukazuje, jak získat následnickým elementům podřízeného elementu s konkrétním názvem.  
   
  Výraz XPath je:  
   
  `./Paragraph//Text/text()`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad simuluje problémy extrahování text z reprezentaci XML zpracování textu dokumentu. První vybere všechny `Paragraph` prvky a poté vyberou se všechny `Text` následnickým elementům jednotlivých `Paragraph` elementu. Toto není vyberte následníka `Text` prvky `Comment` elementu.  
+ Tento příklad napodobuje problémy s extrahují text z reprezentace XML textovém dokumentu. První vybere všechny `Paragraph` elementy a pak ji vybere všechny `Text` následnickým elementům jednotlivých `Paragraph` elementu. To nevybere následníka `Text` prvky `Comment` elementu.  
   
 ```csharp  
 XElement root = XElement.Parse(  
@@ -75,5 +75,6 @@ Results are identical
 This is the start of a sentence.  This is a second sentence.  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

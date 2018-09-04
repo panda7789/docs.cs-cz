@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ca392dda-16e3-45c7-8d87-12d8d4ee0578
 ms.openlocfilehash: 62c2a1737c6c253effc496f2569c42812732946b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43392953"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514120"
 ---
 # <a name="query-expression-syntax-examples-element-operators-linq-to-dataset"></a>Příklady syntaxe výrazů dotazů: Operátory elementů (LINQ to DataSet)
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.First%2A> a <xref:System.Linq.Enumerable.ElementAt%2A> metody k získání <xref:System.Data.DataRow> elementy ze <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  

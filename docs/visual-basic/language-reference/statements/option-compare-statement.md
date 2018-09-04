@@ -19,11 +19,11 @@ helpviewer_keywords:
 - text [Visual Basic], comparing
 ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
 ms.openlocfilehash: 32664dc3be98a9d5a2e6a7d61790c18ae5d3795d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43385104"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519324"
 ---
 # <a name="option-compare-statement"></a>Option Compare – příkaz
 Deklaruje výchozí metodu porovnání pro použití při porovnávání dat řetězců.  

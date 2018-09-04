@@ -3,11 +3,11 @@ title: Historie verzí .NET core
 description: Zobrazit časovou osu pro verze modulu runtime .NET Core, .NET Core SDK, kompilátor jazyka C# a VB.NET kompilátoru.
 ms.date: 07/26/2018
 ms.openlocfilehash: 90fd4ba57620a3a005f2148c0335a76a6fa54a30
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42936647"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519062"
 ---
 # <a name="net-core-version-history"></a>Historie verzí .NET Core
 

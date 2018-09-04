@@ -10,11 +10,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: f9ff82987474e78e7d724c22cd32e5fa7518f0f3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43420596"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43519021"
 ---
 # <a name="ui-automation-support-for-the-header-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku záhlaví
 > [!NOTE]

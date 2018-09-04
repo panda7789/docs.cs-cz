@@ -8,11 +8,11 @@ helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
 ms.openlocfilehash: 718a0c086181546ba7b7fb3b31fce0732dd99382
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43401764"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517113"
 ---
 # <a name="specifying-an-endpoint-address"></a>Zadání adresy koncového bodu
 Veškerá komunikace se službou Windows Communication Foundation (WCF) nastane prostřednictvím jeho koncových bodů. Každý <xref:System.ServiceModel.Description.ServiceEndpoint> obsahuje <xref:System.ServiceModel.Description.ServiceEndpoint.Address%2A>, <xref:System.ServiceModel.Description.ServiceEndpoint.Binding%2A>a <xref:System.ServiceModel.Description.ServiceEndpoint.Contract%2A>. Kontrakt určuje operace, které jsou k dispozici. Určuje vazbu, jak komunikovat se službou a určuje adresu, kde najít službu. Každý koncový bod musí mít jedinečnou adresu. Adresa koncového bodu je reprezentována <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje identifikátor URI (Uniform Resource), který představuje adresu služby, <xref:System.ServiceModel.EndpointAddress.Identity%2A>, která představuje zabezpečení identity služby a kolekce volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A>. Volitelná záhlaví poskytují podrobnější informace o adresování k identifikaci a k interakci s koncovým bodem. Záhlaví může například signalizovat zpracování příchozí zprávy, kde koncový bod má odeslat zpráva s odpovědí nebo které instanci služby pro použití ke zpracování příchozí zprávy z konkrétního uživatele, když jsou k dispozici více instancí.  

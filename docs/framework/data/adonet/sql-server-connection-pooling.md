@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
 ms.openlocfilehash: f416ae8252d9991905da7eeaf4ce6398ff0e7461
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43406493"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514960"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>Připojení k SQL serveru sdružování (ADO.NET)
 Připojování k databázovému serveru, obvykle se skládá z několika kroků časově náročné. Fyzické kanál například soket nebo pojmenovaný kanál musí navázat, počáteční metody handshake se serverem se musí vyskytovat, informace o připojovacím řetězci musí být analyzován, server musí být ověřené připojení, kontroly musí být spuštěn pro zařazování aktuální transakce a tak dále.  

@@ -1,19 +1,19 @@
 ---
-title: Zprostředkující Materialization (C#)
+title: Přechodná Materializace (C#)
 ms.date: 07/20/2015
 ms.assetid: 7922d38f-5044-41cf-8e17-7173d6553a5e
-ms.openlocfilehash: b98f9765f5c54a49f26a9d1a3ac351f3eebcf9c2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 56c4bb57a931362b3e14f6a8da917ae6907565d6
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33320635"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516540"
 ---
-# <a name="intermediate-materialization-c"></a>Zprostředkující Materialization (C#)
-Pokud si nejste opatrní, v některých situacích můžete výrazně změnit profilem paměti a výkon vaší aplikace tak, že předčasné materialization kolekcí v dotazech. Některé standardní operátory dotazu způsobit materialization jejich zdrojové kolekci před je jediným elementem. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> nejprve iteruje jeho celý zdrojový kolekce, pak seřadí všechny položky a nakonec vypočítá první položka. To znamená, že je nákladné získat první položka uspořádanou kolekci; Každá položka po tomto datu není nákladné. To dává smysl: by bylo možné pro tento dotaz operátor neurčí jinak.  
+# <a name="intermediate-materialization-c"></a>Přechodná Materializace (C#)
+Pokud si nejste pozor, v některých situacích je možné výrazně změnit profil paměti a výkonu vaší aplikace tak, že předčasné materializace kolekce v dotazech. Některé operátory standardního dotazu způsobit materializace kolekce zdroje před získávání jeden element. Například <xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType> nejprve Iteruje přes kolekci jeho celý zdrojový pak seřadí všechny položky a nakonec vrací první položky. To znamená, že se jedná o nákladné získat první položku uspořádanou kolekci; Každá položka po tomto datu není nákladné. To dává smysl: by bylo možné pro daný operátor dotazu postupovat jinak.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad mění předchozí příklad. `AppendString` Volání metod <xref:System.Linq.Enumerable.ToList%2A> před iterace v rámci zdroji. To způsobí, že materialization.  
+ Tento příklad upravuje předchozí příklad. `AppendString` Volání metody <xref:System.Linq.Enumerable.ToList%2A> před provede iterace přes zdrojové. To způsobí, že materializace.  
   
 ```csharp  
 public static class LocalExtensions  
@@ -80,11 +80,12 @@ AppendString: source >GHI<
 Main: str >GHI!!!<  
 ```  
   
- V tomto příkladu můžete uvidíte, že volání <xref:System.Linq.Enumerable.ToList%2A> způsobí, že `AppendString` výčet jeho celý zdrojový před je první položka. Pokud zdroj byly velké pole, by to výrazně změnit paměti profil aplikace.  
+ V tomto příkladu vidíte, že volání <xref:System.Linq.Enumerable.ToList%2A> způsobí, že `AppendString` výčet jeho celý zdrojový před získávání první položky. Pokud zdroj velkého pole, by to výrazně změnit paměti profilu aplikace.  
   
- Standardní operátory dotazu lze také zřetězen dohromady. To ukazuje poslední téma v tomto kurzu.  
+ Také je možné zřetězit standardních operátorů pro dotazování. V posledním tématu v tomto kurzu ukazuje to.  
   
--   [Řetězení standardní operátory dotazu společně (C#)](../../../../csharp/programming-guide/concepts/linq/chaining-standard-query-operators-together.md)  
+-   [Zřetězení standardních dotazovacích operátorů pohromadě (C#)](../../../../csharp/programming-guide/concepts/linq/chaining-standard-query-operators-together.md)  
   
-## <a name="see-also"></a>Viz také  
- [Kurz: Řetězení dotazy společně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+## <a name="see-also"></a>Viz také
+
+- [Kurz: Zřetězení dotazů společně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)

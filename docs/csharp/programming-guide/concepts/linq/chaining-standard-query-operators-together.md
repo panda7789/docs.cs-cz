@@ -1,29 +1,29 @@
 ---
-title: Řetězení standardní operátory dotazu společně (C#)
+title: Zřetězení standardních dotazovacích operátorů pohromadě (C#)
 ms.date: 07/20/2015
 ms.assetid: 66f2b0a9-2c23-4735-988e-bbc9dfb55c7b
-ms.openlocfilehash: 9e59c12873b8e8afeaad43b8ffbe400b43b55747
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 07cc6769646f8f3f924b488e30ce2415c587ebe0
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33326147"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43520865"
 ---
-# <a name="chaining-standard-query-operators-together-c"></a>Řetězení standardní operátory dotazu společně (C#)
-Toto je poslední téma v [kurz: řetězení dotazy společně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md) kurzu.  
+# <a name="chaining-standard-query-operators-together-c"></a>Zřetězení standardních dotazovacích operátorů pohromadě (C#)
+Toto je poslední téma v [kurz: zřetězení dotazů současně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md) kurzu.  
   
- Také můžete se propojit standardní operátory dotazu. Například můžete interject <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operátor a také funguje opožděné způsobem. Tímto se materializovat žádné mezilehlých výsledků.  
+ Také je možné zřetězit standardních operátorů pro dotazování. Například můžete interject <xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType> operátor a také funguje opožděné způsobem. Žádné mezilehlých výsledků jsou materializovaného tímto plánem.  
   
 ## <a name="example"></a>Příklad  
- V tomto příkladu <xref:System.Linq.Enumerable.Where%2A> metoda je volána před provedením volání `ConvertCollectionToUpperCase`. <xref:System.Linq.Enumerable.Where%2A> Metoda funguje v téměř úplně stejně jako opožděné metody použité v předchozích příkladech v tomto kurzu `ConvertCollectionToUpperCase` a `AppendString`.  
+ V tomto příkladu <xref:System.Linq.Enumerable.Where%2A> metoda je volána před voláním `ConvertCollectionToUpperCase`. <xref:System.Linq.Enumerable.Where%2A> Metoda funguje v téměř stejným způsobem jako opožděné metod používaných v předchozích příkladech v tomto kurzu `ConvertCollectionToUpperCase` a `AppendString`.  
   
- Jedním rozdílem je, že v tomto případě <xref:System.Linq.Enumerable.Where%2A> metoda iteruje zdrojová kolekce, zjistí, že první položka nepředává predikátu a pak získá další položky, které předávají. Vypočítá pak druhou položku.  
+ Jedním rozdílem je, že v tomto případě <xref:System.Linq.Enumerable.Where%2A> metoda prochází dochází k rozdělení kolekce, zjistí, že první položka nepředává predikátu a potom získá další položky, které předávají. Pak bude vrácen druhé položky.  
   
- Však základní Rada je stejný: zprostředkující kolekce nejsou materializována, pokud mají být.  
+ Základní myšlenka ale stejné: zprostředkující kolekce nejsou vyhodnocena, pokud mají být.  
   
- Pokud se používají výrazy dotazů, se převedou na volání standardní operátory dotazu a stejné zásady platí.  
+ V případě – výrazy dotazů používají, jsou převedeny na volání do standardních operátorů pro dotazování a stejné zásady platí.  
   
- Všechny příklady v této části, které se dotazuje dokumenty používají stejné zásady. Odložené provedení a opožděné vyhodnocení jsou některé základní koncepty, musíte pochopit efektivně používat LINQ (a technologie LINQ to XML).  
+ Všechny příklady v této části, které jsou dotazování na dokumenty Office Open XML používat stejný princip. Odložené provedení a opožděné vyhodnocení jsou některé základní koncepty, musíte porozumět efektivně používat LINQ (a LINQ to XML).  
   
 ```csharp  
 public static class LocalExtensions  
@@ -86,5 +86,6 @@ AppendString: source >GHI<
 Main: str >GHI!!!<  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Kurz: Řetězení dotazy společně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)
+## <a name="see-also"></a>Viz také
+
+- [Kurz: Zřetězení dotazů společně (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-chaining-queries-together.md)

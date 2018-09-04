@@ -1,23 +1,23 @@
 ---
-title: 'Postupy: zápis dotazů na XML v oborech názvů (C#)'
+title: 'Postupy: vytváření dotazů na XML v oborech názvů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7c54df81-15e4-4091-8c81-a87637029130
-ms.openlocfilehash: a5de5ffdafc2dd191a35860150e48a86a3603f3c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 29c4b01bfce75ce71d5214fef0cc55cd82c4e776
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33320327"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525640"
 ---
-# <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Postupy: zápis dotazů na XML v oborech názvů (C#)
-Pokud chcete napsat dotaz na XML, který je v oboru názvů, je nutné použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  
+# <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>Postupy: vytváření dotazů na XML v oborech názvů (C#)
+Chcete-li napsat dotaz na XML, který je v oboru názvů, musíte použít <xref:System.Xml.Linq.XName> objekty, které mají správný obor názvů.  
   
- Pro jazyk C#, je nejběžnější přístup k chybě při inicializaci <xref:System.Xml.Linq.XNamespace> pomocí řetězec, který obsahuje identifikátor URI, potom použijte přetížení operátor přidání kombinovat s místní název oboru názvů.  
+ Pro jazyk C#, je nejběžnější přístup k inicializaci <xref:System.Xml.Linq.XNamespace> řetězec, který obsahuje identifikátor URI, pak pomocí přetížení operátoru sčítání zkombinovat s místním názvem oboru názvů.  
   
- První sadu příklady v tomto tématu ukazuje, jak vytvořit strom XML ve výchozí obor názvů. Druhá sada ukazuje, jak vytvořit strom XML v oboru názvů s předponou.  
+ První sada příklady v tomto tématu ukazuje, jak vytvořit stromu XML ve výchozím oboru názvů. Druhá sada ukazuje postup vytvoření stromu XML v oboru názvů s předponou.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří ve stromu XML, který je ve výchozí obor názvů. Potom načte kolekci elementů.  
+ Následující příklad vytvoří stromu XML, který je ve výchozím oboru názvů. Potom načte kolekci elementů.  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -46,9 +46,9 @@ foreach (XElement el in c1)
 ```  
   
 ## <a name="example"></a>Příklad  
- V jazyce C# můžete psát dotazy stejným způsobem, bez ohledu na to, jestli jsou zápis dotazů na XML stromové struktury, která používá obor názvů s předponou nebo na strom XML s výchozí obor názvů.  
+ V jazyce C# psát dotazy stejným způsobem bez ohledu na to, zda jsou psaní dotazů na stromu XML, který používá obor názvů s předponou nebo stromu XML pomocí výchozí obor názvů.  
   
- Následující příklad vytvoří strom XML, který je v oboru názvů s předponou. Potom načte kolekci elementů.  
+ Následující příklad vytvoří stromu XML, který je v oboru názvů s předponou. Potom načte kolekci elementů.  
   
 ```csharp  
 XNamespace aw = "http://www.adventure-works.com";  
@@ -76,5 +76,6 @@ foreach (XElement el in c1)
 3  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Práce s obory názvů XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+## <a name="see-also"></a>Viz také
+
+- [Práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

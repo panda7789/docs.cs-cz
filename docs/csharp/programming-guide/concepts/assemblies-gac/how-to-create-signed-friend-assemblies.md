@@ -2,37 +2,37 @@
 title: 'Postupy: vytváření podepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
-ms.openlocfilehash: 34243a65f57f41c358439baac82a1ce169233259
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63d4c5d8d71f401214389629ca7e586665c32c6b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33340655"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521474"
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>Postupy: vytváření podepsaných přátelských sestavení (C#)
-Tento příklad ukazuje způsob použití přátelských sestavení s sestavení, které mají silné názvy. Obě sestavení musí mít silné názvy. I když obě sestavení v tomto příkladu používat stejné klíče, můžete použít různé klíče pro dvě sestavení.  
+Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  
   
-### <a name="to-create-a-signed-assembly-and-a-friend-assembly"></a>Chcete-li vytvořit podepsané sestavení a přátelských sestavení  
+### <a name="to-create-a-signed-assembly-and-a-friend-assembly"></a>Chcete-li vytvořit podepsané sestavení a sestavení typu friend  
   
 1.  Otevřete příkazový řádek.  
   
-2.  Generování keyfile a zobrazit svůj veřejný klíč, použijte následující sekvence příkazů pomocí nástroje silného názvu. Další informace najdete v tématu [Sn.exe (nástroj silným názvem)](https://msdn.microsoft.com/library/k5b5tt23).  
+2.  Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](https://msdn.microsoft.com/library/k5b5tt23).  
   
-    1.  Vygenerovat klíč silné jméno – v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:  
+    1.  Vygenerování klíče se silným názvem v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:  
   
          `sn -k FriendAssemblies.snk`  
   
-    2.  Extrahování veřejný klíč z FriendAssemblies.snk a umístí jej do FriendAssemblies.publickey:  
+    2.  Extrahujte veřejný klíč z FriendAssemblies.snk a vložit ho do FriendAssemblies.publickey:  
   
          `sn -p FriendAssemblies.snk FriendAssemblies.publickey`  
   
-    3.  Zobrazí veřejný klíč uložený v souboru FriendAssemblies.publickey:  
+    3.  Zobrazení veřejného klíče uložené v souboru FriendAssemblies.publickey:  
   
          `sn -tp FriendAssemblies.publickey`  
   
-3.  Vytvoření souboru C# s názvem `friend_signed_A` obsahující následující kód. Kód používá <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut deklarovat friend_signed_B jako přátelského sestavení.  
+3.  Vytvořte soubor jazyka C# s názvem `friend_signed_A` , který obsahuje následující kód. Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.  
   
-     Nástroje pro silný název generuje nový veřejný klíč pokaždé, když ji spustí. Proto je potřeba nahradit veřejný klíč v následujícím kódu veřejný klíč, který jste právě vygenerovali, jak je znázorněno v následujícím příkladu.  
+     Nástroj Strong Name vygeneruje nový veřejný klíč pokaždé, když ji spustí. Proto je potřeba nahradit veřejný klíč v následujícím kódu veřejný klíč, který jste právě vygenerovali, jak je znázorněno v následujícím příkladu.  
   
     ```csharp  
     // friend_signed_A.cs  
@@ -51,13 +51,13 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
     }  
     ```  
   
-4.  Kompilace a friend_signed_A se přihlaste pomocí následujícího příkazu.  
+4.  Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.  
   
     ```csharp  
     csc /target:library /keyfile:FriendAssemblies.snk friend_signed_A.cs  
     ```  
   
-5.  Vytvoření souboru C#, který je pojmenován `friend_signed_B` a obsahuje následující kód. Protože friend_signed_A určuje friend_signed_B jako přátelského sestavení, můžete přístup k kód v friend_signed_B `internal` typy a členy z friend_signed_A. Soubor obsahuje následující kód.  
+5.  Vytvořte soubor jazyka C#, který je pojmenován `friend_signed_B` a obsahuje následující kód. Protože friend_signed_A určuje friend_signed_B jako sestavení typu friend, můžete přístup ke kódu v friend_signed_B `internal` typy a členy z friend_signed_A. Soubor obsahuje následující kód.  
   
     ```csharp  
     // friend_signed_B.cs  
@@ -73,27 +73,28 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
     }  
     ```  
   
-6.  Kompilace a friend_signed_B se přihlaste pomocí následujícího příkazu.  
+6.  Kompilace a podepsání friend_signed_B pomocí následujícího příkazu.  
   
     ```csharp  
     csc /keyfile:FriendAssemblies.snk /r:friend_signed_A.dll /out:friend_signed_B.exe friend_signed_B.cs  
     ```  
   
-     Název sestavení generované kompilátorem musí odpovídat názvu sestavení friend předaný <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut. Musíte explicitně zadat název výstupu sestavení (.exe nebo .dll) pomocí `/out` – možnost kompilátoru.  Další informace najdete v tématu [/out (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).  
+     Název sestavení generovaný kompilátorem musí odpovídat názvu sestavení typu friend předán <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut. Musíte explicitně zadat název výstupního sestavení (.exe nebo .dll) s použitím `/out` – možnost kompilátoru.  Další informace najdete v tématu [/out (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).  
   
 7.  Spusťte soubor friend_signed_B.exe.  
   
-     Program vytiskne řetězec "Class1.Test".  
+     Program zobrazí řetězec "Class1.Test".  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Existují podobnosti mezi <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> oprávnění zabezpečení ke spuštění konkrétní části kódu, můžete požadovat, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda se `internal` typy a členy.  
+ Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `internal` typy a členy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
- [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
- [Postupy: vytváření nepodepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
- [/keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)  
- [Sn.exe (nástroj pro silný název)](https://msdn.microsoft.com/library/k5b5tt23)  
- [Vytváření a používání sestavení se silným názvem](../../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+- [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+- [Postupy: vytváření nepodepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
+- [/keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)  
+- [Sn.exe (nástroj pro silný název)](https://msdn.microsoft.com/library/k5b5tt23)  
+- [Vytváření a používání sestavení se silným názvem](../../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

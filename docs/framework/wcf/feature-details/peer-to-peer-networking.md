@@ -3,11 +3,11 @@ title: Síť rovnocenných počítačů
 ms.date: 03/30/2017
 ms.assetid: ad6cb67b-fd1c-4ca1-a767-b410da2e16ca
 ms.openlocfilehash: 16416ec467caa10216930ae3c961869cbfcd59d8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43456982"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516329"
 ---
 # <a name="peer-to-peer-networking"></a>Síť rovnocenných počítačů
 Rovnocenný kanál je éře, peer-to-peer (P2P) komunikaci technologie Windows Communication Foundation (WCF). Poskytuje zabezpečené a škálovatelné založenou na zprávách P2P komunikační kanál pro vývojáře aplikací. Jedním z běžných příkladů éře aplikace, které mohou těžit z rovnocenného kanálu je spolupráci aplikací, jako je například konverzace, kde je skupina lidí konverzace mezi sebou způsobem peer-to-peer bez serverů. Rovnocenný kanál umožňuje spolupráci P2P, distribuci obsahu, Vyrovnávání zatížení a distribuované zpracování pro zákaznické a podnikové scénáře.  

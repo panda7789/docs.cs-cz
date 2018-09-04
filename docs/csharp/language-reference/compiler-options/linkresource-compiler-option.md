@@ -12,11 +12,11 @@ helpviewer_keywords:
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
 ms.openlocfilehash: feca4713fe0e704799e2abbae3818edd0f3a5c84
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43407734"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43523172"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (možnosti kompilátoru C#)
 Ve výstupním souboru vytvoří odkaz na prostředek rozhraní .NET Framework. Soubor prostředků se nepřidal do výstupního souboru. Tím se liší od [-prostředků](../../../csharp/language-reference/compiler-options/resource-compiler-option.md) možnost, která vložit soubor prostředků do výstupního souboru.  

@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 43dfb23b-5cef-46f2-8d87-78f0fba1eb8c
 ms.openlocfilehash: a076dcbbe79a7ec0dfbd727e0d0c752bd4675eef
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43398603"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515979"
 ---
 # <a name="loading-dataset-schema-information-from-xml"></a>Načítání informací o schématu datové sady z XML
 Schéma <xref:System.Data.DataSet> (jeho tabulky, sloupce, relace a omezení) lze definovat prostřednictvím kódu programu, vytvořené **vyplnit** nebo **FillSchema** metody <xref:System.Data.Common.DataAdapter>, nebo načtena z Dokument XML. Načíst **datovou sadu** informace o schématu z dokumentu XML, můžete použít buď **ReadXmlSchema** nebo **InferXmlSchema** metodu **datovésady**. **ReadXmlSchema** umožňuje načíst nebo odvodit **datovou sadu** informace o schématu z dokumentu obsahující jazyk (XSD) schématu definice schématu XML nebo dokument XML s vloženého schématu XML. **InferXmlSchema** umožňuje odvození schématu z dokumentu XML při ignoruje některé obory názvů XML, který zadáte.  

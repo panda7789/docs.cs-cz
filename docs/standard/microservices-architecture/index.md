@@ -1,153 +1,153 @@
 ---
-title: Rozhraní .NET Mikroslužeb. Architektura pro aplikace .NET Kontejnerizované
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Mikroslužeb jsou modulární a nezávisle nasadit služby. Kontejnery docker (pro systémy Linux a Windows) zjednodušit nasazení a testování sdružování služby a jeho závislosti do jedné jednotky, která je pak spusťte v izolovaném prostředí.
+title: Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Mikroslužby jsou modulární a umožňují nezávislé nasazení služby. Kontejnery dockeru (pro systémy Linux a Windows) zjednodušit nasazování a testování seskupí služby a jeho závislosti do jedné jednotky, které je potom spouštět v izolovaném prostředí.
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/06/2018
-ms.openlocfilehash: 154cb0eafb8f14d61191b7cad749cb93d269ff34
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 6b57f66068409ade24eecff636b9dd3f4084fd71
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105061"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516148"
 ---
 ![](./media/cover.png)
 
-# <a name="net-microservices-architecture-for-containerized-net-applications"></a>Rozhraní .NET Mikroslužeb. Architektura pro aplikace .NET Kontejnerizované
+# <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET
 
-Stáhněte si k dispozici na: <https://aka.ms/microservicesebook>
+Ke stažení je k dispozici na: <https://aka.ms/microservicesebook>
 
-PUBLIKOVÁNO
+PUBLIKOVAL(A)
 
-Týmy pro produkt Microsoft Developer dělení, rozhraní .NET a Visual Studio
+Microsoft Developer Division, .NET a Visual Studio produktových týmů
 
-Dělení společnosti Microsoft Corporation
+Divize Microsoft Corporation.
 
 One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © Microsoft Corporation 2018
+Copyright © 2018 Microsoft Corporation
 
-Všechna práva vyhrazena. Žádná z částí obsah této příručky je možné reprodukovat nebo přenést v žádný formulář nebo žádnými prostředky bez předchozího písemného souhlasu vydavatele.
+Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat nebo v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 
-Tato kniha je k dispozici "jako-je" a vyjadřoval zobrazení a názory vytvářením obsahu. Zobrazení, názory a informace v této příručce, včetně adres URL a dalších odkazů na internetové weby, mohou změnit bez předchozího upozornění.
+Tato kniha je k dispozici "jako-je" a vyjadřuje zobrazení autora a názory. Zobrazení, názory a informace v této knize, včetně adres URL a jiných odkazů na internetové weby, mohou změnit bez předchozího upozornění.
 
-Některé příklady použité v ukázkách jsou jenom ilustrativní a smyšlené. Žádný skutečný vztah nebo připojení je určený nebo událostmi.
+Některé zde uvedené příklady jsou k dispozici pouze pro ilustraci a jsou smyšlené. Žádný skutečný vztah nebo spojení ani je určena ji vyvozovat.
 
-Společnost Microsoft a ochranné známky uvedený na http://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft.
+Microsoft a ochranné známky uvedený na http://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft.
 
-Mac a systému macOS jsou ochranné známky společnosti Apple, Inc.
+Mac a macOS jsou ochranné známky společnosti Apple Inc.
 
-Logo velryba Docker je registrovaná ochranná známka společnosti Docker, Inc. Pomocí oprávnění.
+Velryba logo Dockeru je registrovaná ochranná známka společnosti Docker, Inc. Použít oprávnění.
 
-Všechny ostatní značky a loga jsou vlastnictvím příslušných vlastníků.
+Všechny ostatní značky a loga jsou majetkem příslušných vlastníků.
 
 Spoluautoři:
 
-> **Cesaru členka Torre**, Sr. PM, .NET produktový tým Microsoft Corp.
+> **De la Torre Cesarovi**, vyšší ODP., .NET produktový tým Microsoft Corp.
 >
-> **Faktury Wagnera**, Sr. Obsahu Developer, C + E, Microsoft Corp.
+> **Bill Wagnera**, vyšší Obsahu pro vývojáře v jazyce C + E, Microsoft Corp.
 >
-> **Jan Rousos**, hlavní softwaru pracovníka, týmu DevDiv CAT, Microsoft
+> **Mike Rousos**, hlavní softwarový inženýr, týmu DevDiv CAT, Microsoft
 
 Editory:
 
-> **Jan Pope**
+> **Mike Pope**
 >
 > **Steve Hoag**
 
 Účastníci a recenzenti:
 
-> **Jana Richter**, Eng softwaru partnera, tým Azure, Microsoft
+> **Jeffrey Richter**, Partner softwaru Eng týmu Azure, Microsoft
 >
-> **Jimmy Bogard**, hlavní architekt v Headspring
+> **Jimmy Bogard**, hlavní architekt na Headspring
 >
-> **UDI Dahan**, zakladatele & CEO, určitého softwaru
+> **UDI Dahan**, Zakladatel a generální ředitel, určitého softwaru
 >
-> **Jimmy Nilsson**, společné zakladatele a CEO Factor10
+> **Jimmy Nilsson**, Spoluzakladatel a generální Factor10
 >
-> **Glenn Condron**, Sr. Manažer programu ASP.NET team
+> **Glenn Condron**, vyšší Programový manažer týmu ASP.NET
 >
-> **Označit Fussell**, hlavní PM realizace, tým Azure Service Fabric, Microsoft
+> **Označit Fussell**, hlavní Projektový manažer zájemce, tým Azure Service Fabric, Microsoft
 >
-> **Diego Vega**, PM realizace, rozhraní Entity Framework tým Microsoft
+> **Diego Vega**, PM zájemce, Entity Framework týmu, Microsoft
 >
-> **Jiří Dorrans**, Sr. Program Správce zabezpečení
+> **Jiří Dorrans**, vyšší Zabezpečení programový manažer
 >
-> **Rowan Lukeš**, Sr. Manažer programu Microsoft
+> **Rowan Miller**, vyšší Programový manažer Microsoftu
 >
-> **Ankit Asthana**, hlavní manažer PM, .NET tým Microsoft
+> **Ankit Asthana**, hlavní manažer PM, týmu .NET, Microsoft
 >
-> **Scott Hunter**, ředitel partnera PM, .NET tým Microsoft
+> **Scott Hunter**, Partner Director oddělení PM, týmu .NET, Microsoft
 >
-> **Dylan Reisenberger**, architekty a vývojáře realizace v Polly
+> **Dylan Reisenberger**, architekt a vedoucí vývoje v Polly
 >
-> **Steve Smith**, Craftsman softwaru & Trainer ve ASPSmith Ltd.
+> **Steve Smith**, Tvůrce softwaru & Trainer na ASPSmith Ltd.
 >
-> **Ian Cooper**, kódování architektury v jasnější
+> **Ian Cooper**, kódování navrhovat jasnější na
 >
-> **Unai Zorrilla**, architekty a vývojáře realizace na prostý koncepty
+> **Unai Zorrilla**, architekt a vedoucí vývoje v Plain Concepts
 >
-> **Eduard Tomáši**, Dev realizace na prostý koncepty
+> **Eduard Tomáši**, vedoucí vývoje v Plain Concepts
 >
-> **Tomáši Ramon**, Developer na prostý koncepty
+> **Ramon Tomáši**, vývojář v Plain Concepts
 >
-> **David Sanz**, Developer na prostý koncepty
+> **David Sanz**, vývojář v Plain Concepts
 >
-> **Javier Valero**, ředitel operační vedoucím v Grupo řešení
+> **Javier Valero**, hlavní, provozní ředitel ve Grupo řešení
 >
-> **Proso Pierre**, Sr. Poradce, Microsoft
+> **Pierre proso**, vyšší Konzultant, Microsoft
 >
-> **Michael Friis**, správce produktu, Inc Docker
+> **Michael Friis**, správce produktu, Inc Dockeru
 >
-> **Charlese Lowell**, softwaru pracovníka, týmu VS CAT, Microsoft
+> **Charles Lowell**, softwarový inženýr, týmu VS CAT, Microsoft
 
 ## <a name="introduction"></a>Úvod
 
-Podniky jsou stále porozumění úsporu nákladů, řešení problémů s nasazením a zvýšení operace DevOps a produkční pomocí kontejnerů. Microsoft má byla vydává inovace kontejner pro systém Windows a Linux tak, že vytvoříte produkty, jako je Azure Container Service a Azure Service Fabric a prostřednictvím partnerských vedoucími jako Docker, Mesosphere a Kubernetes. Tyto produkty dodat kontejneru řešení, které pomáhají společnosti sestavení a nasazení aplikací v cloudu rychlost a škálování, ať si sami vyberou platformy nebo nástrojů.
+Podniky jsou stále porozumění úspory nákladů, řešení problémů s nasazením a zlepšení operace DevOps a produkčním prostředí pomocí kontejnerů. Microsoft má byla uvolnění inovace kontejner pro Windows a Linux tak, že vytvoříte produkty, jako je Azure Container Service a Azure Service Fabric a díky partnerství s vedoucím postavením, jako je Docker, Mesosphere a Kubernetes. Tyto produkty poskytovat kontejneru řešení, která pomáhají společnostem sestavovat a nasazovat aplikace v cloudu rychlost a škálování, kterou si sami vyberou platformy nebo nástroje.
 
-Docker se stává stále de facto standardem v kontejneru odvětví, jsou nejdůležitější dodavatelé v systému Windows a Linux ekosystémů nepodporuje. (Microsoft je jeden z dodavatelů hlavní cloudu podpora Docker.) V budoucnu Docker bude pravděpodobně všudypřítomný do všech datových center v cloudu nebo místně.
+Docker je stále de facto standardem v odvětví kontejneru, podporovány jsou nejdůležitější dodavatelé v ekosystémů Windows a Linux. (Microsoft je hlavní cloudových vendorů, podporu Dockeru.) V budoucích verzích Dockeru bude pravděpodobně všudypřítomná v libovolné datacentrum do cloudu nebo lokálně.
 
-Kromě toho [mikroslužeb](https://martinfowler.com/articles/microservices.html) architektura je rozvíjející jako důležité přístup pro distribuované kritických aplikací. V architektuře na základě mikroslužbu aplikace je založený na kolekce služeb, které mohou být vytvořeny, otestovat, nasazené a verzí nezávisle.
+Kromě toho [mikroslužeb](https://martinfowler.com/articles/microservices.html) architektura je nově vznikající jako důležité přístup pro distribuované klíčové aplikace. V architektuře s využitím mikroslužeb je aplikace sestavená u kolekce služeb, které mohou být vytvořeny, otestovat, nasazené a systémovou správou verzí nezávisle na sobě.
 
 ## <a name="about-this-guide"></a>Informace o této příručce
 
-Tato příručka je Úvod k vývoji aplikace založené na mikroslužeb a jejich správě použití kontejnerů. Popisuje architektury návrhu a implementace blíží použití .NET Core a Docker kontejnerů. Aby bylo snazší začít pracovat s kontejnery a mikroslužeb, se v Průvodci zaměřuje na odkaz kontejnerizované a na základě mikroslužbu aplikace, kterou můžete prozkoumat. Ukázkové aplikace je k dispozici na [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) úložiště GitHub.
+Tato příručka slouží jako úvod k vývoji aplikací založených na mikroslužbách a správu kontejnerů. Tento článek popisuje kontrol architektonického návrhu a implementace přístupy pomocí .NET Core a kontejnery Dockeru. Aby bylo snazší začít pracovat s kontejnery a mikroslužby, průvodce se zaměřuje na odkaz kontejnerizovaných a aplikací založených na mikroslužbách, kterou můžete prozkoumat. Ukázková aplikace je k dispozici na [aplikaci eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) úložiště GitHub.
 
-Tato příručka poskytuje základní vývoj a architektury pokyny především na úrovni vývoj prostředí se zaměřením na dvě technologie: Docker a .NET Core. Naším úmyslem je čtení této příručky, pokud přemýšlíte o návrhu aplikace bez zaměřené na infrastrukturu (cloudové nebo místní) vašeho produkčního prostředí. Bude rozhodnutí o infrastruktuře později, při vytváření aplikace produkční prostředí. Proto tato příručka je určená jako infrastruktury lhostejné a více vývoj prostředí-na střed.
+Tato příručka obsahuje základní vývoj a doprovodné materiály k architektuře primárně na úrovni prostředí vývoj se zaměřením na technologie: Docker a .NET Core. Naším úmyslem je, že si přečtete tuto příručku při posuzování návrhu aplikace, nemusíte se soustředit na infrastrukturu (v cloudu nebo místních) vašeho produkčního prostředí. Bude rozhodnutí o infrastruktuře později, při vytváření aplikace připravené pro produkční prostředí. Proto tato příručka je určena být nezávislá a více vývojové prostředí – zaměřené na infrastrukturu.
 
-Po zkoumali této příručce, dalším krokem bude další informace o mikroslužeb produkční prostředí v Microsoft Azure.
+Po zkoumali této příručce, bude dalším krokem je další informace o mikroslužbách připravené pro produkční prostředí v Microsoft Azure.
 
 ## <a name="what-this-guide-does-not-cover"></a>Co tato příručka nepopisuje
 
-Tato příručka není soustředit na životním cyklu aplikací DevOps, CI/CD kanály, nebo tým spolupracovat. Průvodci doplňkové [Kontejnerizované Docker cyklu aplikací s Microsoft platforma a nástroje](https://aka.ms/dockerlifecycleebook) se zaměřuje na tomto subjektu. Aktuální Průvodce také neposkytuje informace o implementaci na infrastrukturu Azure, jako je například informace o konkrétní orchestrators.
+Tato příručka se nezaměřuje na životního cyklu aplikací, vývoj a provoz kanálů CI/CD nebo tým pracovat. Doplňkové průvodce [Kontejnerizovaných životní cyklus aplikace Dockeru s platformou a nástroji Microsoft](https://aka.ms/dockerlifecycleebook) se zaměřuje na tohoto subjektu. Aktuální Průvodce také neposkytuje podrobné informace o implementaci na infrastrukturu Azure, jako je například informace o konkrétní orchestrátorů.
 
 ### <a name="additional-resources"></a>Další zdroje
 
--   **Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje** (ke stažení elektronická kniha) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
+-   **Životní cyklus aplikace Dockeru s platformou a nástroji Microsoft kontejnerizovaných** (ke stažení e kniha) [*https://aka.ms/dockerlifecycleebook*](https://aka.ms/dockerlifecycleebook)
 
-## <a name="who-should-use-this-guide"></a>Tato příručka, kdo by měl používat
+## <a name="who-should-use-this-guide"></a>Kdo by měl používat tohoto průvodce
 
-Napsali jsme Tato příručka pro vývojáře a řešení architektům, kteří jsou nové pro vývoj aplikací na základě Docker a architektura založená na mikroslužeb. Tato příručka je pro další informace o architektury, chcete-li navrhování a implementaci testování konceptu aplikací pomocí technologie Microsoft vývoje (s speciální aktivní .NET Core) a s Docker kontejnery.
+Jsme napsali Tato příručka pro vývojáře a architekty řešení, kteří jsou nové pro vývoj aplikací založených na Dockeru a architektura založená na mikroslužbách. Tento průvodce je pro, pokud chcete získat informace tom, jak navrhovat, navrhování a implementace aplikací testování konceptu s vývojovým technologiím Microsoftu (se zvláštním zaměřením na .NET Core) a s kontejnery Dockeru.
 
-Je také k dispozici tato příručka užitečné, pokud jsou technické rozhodovací pravomocí, jako je například architekti enterprise, kdo chce architekturu a Přehled technologie předtím, než se rozhodnete, na jaký způsob vyberte pro nový a moderní distribuované aplikace.
+Také zjistíte Tato příručka užitečné, pokud jste technický pracovník s rozhodovací pravomocí, jako je například podnikový architekt, kdo chce, aby se architektura a přehledu technologie před rozhodnout, na jaké přístup k výběru pro nové a moderní distribuované aplikace.
 
-### <a name="how-to-use-this-guide"></a>Jak používat tato příručka
+### <a name="how-to-use-this-guide"></a>Jak používat tohoto průvodce
 
-První část tohoto průvodce uvádí Docker kontejnery, popisuje, jak si vybrat mezi .NET Core a rozhraní .NET Framework jako rozhraní pro vývoj a poskytuje přehled mikroslužeb. Tento obsah je pro architekty a technické vedoucím pracovníkům, kteří chtějí přehled ale nemusíte zaměřit se na podrobnosti implementace kódu.
+První části této příručky zavádí kontejnery Dockeru, popisuje, jak si vybrat mezi .NET Core a .NET Framework jako rozhraní pro vývoj a najdete zde přehled mikroslužeb. Tento obsah je pro architekty a technické rozhodovací pravomocí, kteří chtějí přehled, ale nemusíte zaměřit se na podrobnosti implementace kódu.
 
-Druhá část průvodce začíná [procesu vývoje pro Docker aplikace založené na](#ch_dev_process_for_docker_based_apps) oddílu. Zaměřuje se na vývoj a mikroslužbu vzory pro implementaci aplikace s použitím .NET Core a Docker. Tato část bude většina zajímavé pro vývojáře a architektům, kteří chtějí zaměřit se na kód a na vzory a podrobnosti implementace.
+Začíná druhé části v průvodci [aplikací založených na proces vývoje pro Docker](#ch_dev_process_for_docker_based_apps) oddílu. Zaměřuje se na vývoj a mikroslužeb vzory pro provádění aplikací pomocí .NET Core a Docker. Tato část bude mít největší zájem vývojářům a architektům, kteří chtějí soustředit se na kód a vzorců a podrobnosti implementace.
 
-## <a name="related-microservice-and-container-based-reference-application-eshoponcontainers"></a>Související s mikroslužbu a aplikace na základě kontejneru odkaz: eShopOnContainers
+## <a name="related-microservice-and-container-based-reference-application-eshoponcontainers"></a>Související mikroslužby a aplikace založené na kontejnerech odkaz: aplikaci eShopOnContainers
 
-Aplikace eShopOnContainers je odkaz na aplikaci pro .NET Core a mikroslužeb, který slouží k nasazení pomocí Docker kontejnery. Aplikace se skládá z několika subsystémy, včetně několik e úložiště uživatelského rozhraní front-end (webové aplikace a nativní mobilní aplikace). Zahrnuje taky mikroslužeb back-end a kontejnery pro všechny požadované operace na straně serveru.
+Aplikaci eShopOnContainers aplikace je odkaz na aplikaci pro .NET Core a mikroslužeb, která slouží k nasazení kontejnerů Dockeru. Aplikace se skládá z více subsystémů, včetně několik e-store uživatelského rozhraní front-endů (Web app a nativní mobilní aplikace). Zahrnuje také back-end mikroslužeb a kontejnerů pro všechny požadované operace na straně serveru.
 
-Tento mikroslužbu a aplikace založené na kontejneru zdrojový kód je open source a je k dispozici [eShopOnContainers](http://aka.ms/MicroservicesArchitecture) úložiště GitHub.
+Tento mikroslužby a aplikace založené na kontejnerech zdrojový kód je open source a je k dispozici na [aplikaci eShopOnContainers](https://aka.ms/MicroservicesArchitecture) úložiště GitHub.
 
 ## <a name="send-us-your-feedback"></a>Pošlete nám svůj názor!
 
-Napsali jsme tento průvodce vám pomůže pochopit architektura kontejnerizované aplikací a mikroslužeb v rozhraní .NET. Průvodce a související referenční aplikace bude mít vyvíjejí, tak Uvítáme vaše názory! Pokud máte komentáře o tom, jak je možné zlepšit této příručce, pošlete prosím, aby:
+Jsme napsali této příručce, které vám pomůžou porozumět architektuře mikroslužeb v rozhraní .NET a kontejnerizovaných aplikací. Průvodce a související referenční aplikace bude se vyvíjí, takže vaše připomínky budou vítány! Pokud máte připomínky jak se tento průvodce může zlepšit, odešlete jim:
 
 [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
 

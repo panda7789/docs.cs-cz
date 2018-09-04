@@ -3,11 +3,11 @@ title: Mapování datového typu v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: d4afab94-ada6-4c77-a73c-41f17bae6b5a
 ms.openlocfilehash: aba1eb4fdaaf43d66337ca764fe01b7d3f4624bd
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43423660"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516924"
 ---
 # <a name="data-type-mappings-in-adonet"></a>Mapování datového typu v ADO.NET
 Rozhraní .NET Framework podle systému společných typů, která definuje, jak jsou typy deklarovány, použití a spravovány v modulu runtime. Skládá se z hodnotové typy a typy odkazů, které jsou odvozeny z <xref:System.Object> základní typ. Při práci se zdrojem dat, datový typ je odvozen od poskytovatele dat. Pokud nebyl explicitně zadán. Například <xref:System.Data.DataSet> je nezávislý na libovolný zdroj dat pro konkrétní objekt. Data v `DataSet` načíst ze zdroje dat, a změny jsou trvalé zpět do zdroje dat s využitím `DataAdapter`. To znamená, že `DataAdapter` vyplní <xref:System.Data.DataTable> v `DataSet` s hodnotami ze zdroje dat, výsledné datové typy sloupců v `DataTable` jsou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typů, aniž specifické pro typy [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dat Zprostředkovatel, který se používá k připojení ke zdroji dat.  

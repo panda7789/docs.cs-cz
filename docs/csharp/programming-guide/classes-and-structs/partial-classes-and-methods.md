@@ -6,12 +6,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: aa0baf50b9e4aabf0bb5dfa229ecd245db391a8b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 21350c28f5fcce812f47742bebe07f5bcdf842f1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484025"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521166"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Částečné třídy a metody (Průvodce programováním v C#)
 Je možné rozdělit definici [třídy](../../../csharp/language-reference/keywords/class.md), [struktura](../../../csharp/language-reference/keywords/struct.md), [rozhraní](../../../csharp/language-reference/keywords/interface.md) nebo metoda přes dvě nebo více zdrojových souborů. Každý zdrojový soubor obsahuje část definice typu nebo metodě a všechny části spolu při kompilaci aplikace.  
@@ -160,9 +160,10 @@ partial void onNameChanged()
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)  
- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)  
- [partial (typ)](../../../csharp/language-reference/keywords/partial-type.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Třídy](../../../csharp/programming-guide/classes-and-structs/classes.md)  
+- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)  
+- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)  
+- [partial (typ)](../../../csharp/language-reference/keywords/partial-type.md)
