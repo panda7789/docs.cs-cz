@@ -11,7 +11,7 @@
 | Windows Phone              | 8.1   | 8.1    | 8.1   |       |       |            |            |            |
 | Windows Phone Silverlight  | 8.0   |        |       |       |       |            |            |            |
 
-<sup>1 uvedené verze pro rozhraní .NET Framework se vztahují na .NET Core SDK 2.0 a novější verze nástrojů. Starší verze použít jiné mapování pro .NET Standard 1.5 nebo novější. </sup>
+<sup>1 uvedené verze pro rozhraní .NET Framework se vztahují na .NET Core SDK 2.0 a novější verze nástrojů. Starší verze použít jiné mapování pro .NET Standard 1.5 nebo novější. Je možné [stáhnout nástroje pro .NET Core tools for Visual Studio 2015](https://github.com/dotnet/core/blob/master/release-notes/download-archive.md) pokud nejde upgradovat na Visual Studio 2017.</sup>
 
 - Sloupce, které představují verze .NET Standard. Každá buňka záhlaví je odkaz na dokument, který ukazuje, které rozhraní API je teď přidáno ve verzi .NET Standard.
 - Řádky představují různé implementace .NET.
