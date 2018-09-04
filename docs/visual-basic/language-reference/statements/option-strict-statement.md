@@ -12,11 +12,11 @@ helpviewer_keywords:
 - implicit conversions [Visual Basic]
 ms.assetid: 5883e0c1-a920-4274-8e46-b0ff047eaee5
 ms.openlocfilehash: ac8f6fa2ebd2f8d846c3662184c83a83477e2311
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403786"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43659258"
 ---
 # <a name="option-strict-statement"></a>Option Strict – příkaz
 Omezí implicitní převody typů dat jenom na rozšiřující převody, nepovoluje pozdní vazby a zakazuje implicitního zápisu, která vede `Object` typu.  

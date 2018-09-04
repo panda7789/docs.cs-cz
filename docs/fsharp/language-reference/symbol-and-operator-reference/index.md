@@ -3,11 +3,11 @@ title: Referenční dokumentace symbolů a operátorů (F#)
 description: 'Další informace o symbolů a operátorů, které se používají v programovacím jazyce F #.'
 ms.date: 04/04/2018
 ms.openlocfilehash: a52fc7539027f0cf86a82223a5970d86d7ec60c5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43457197"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43660431"
 ---
 # <a name="symbol-and-operator-reference"></a>Referenční dokumentace symbolů a operátorů
 

@@ -5,20 +5,20 @@ helpviewer_keywords:
 - Self hosted service
 - Self Host Sample [Windows Communication Foundation]
 ms.assetid: 05e68661-1ddf-4abf-a899-9bb1b8272a5b
-ms.openlocfilehash: d4fc6c55f0eb528e6ae8d19d733c67d7f7ce135f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c413a26e8e7a0e76712eb98c5ad1bb822d75ae6f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33502673"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43659462"
 ---
 # <a name="self-host"></a>Vlastní hostování
-Tento příklad ukazuje, jak implementovat samoobslužné hostovanou službu v konzolové aplikaci. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Konfigurační soubor služby má byl přejmenován ze souboru Web.config na App.config a upravit tak, aby konfigurace základní adresu, která hostitel používá. Zdrojový kód služby se změnilo implementovat statického `Main` funkce, která vytvoří a otevře poskytující základní adresu nakonfigurované hostitele služby. Implementace služby se změnilo zapisovat výstup do konzoly pro každou operaci. Klient byl beze změny, s výjimkou konfigurace adresa správná koncového bodu služby.  
+Tento příklad ukazuje, jak implementovat v místním prostředí službu v konzolové aplikaci. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Konfigurační soubor služby byl přejmenován ze souboru Web.config na App.config a upravit tak, aby konfigurace základní adresu, která hostitel používá. Zdrojový kód služby byla změněna k implementaci statickou `Main` funkce, která vytvoří a otevře hostitele služby, který poskytuje základní adresu nakonfigurovanou. Implementace služby byl upraven tak zapisovat výstup do konzoly pro každou operaci. Klient byl bez úprav, s výjimkou konfigurace adresu správný koncový bod služby.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Ukázka implementuje statické hlavní funkce, která se vytvořit <xref:System.ServiceModel.ServiceHost> pro v dané `CalculatorService` zadejte, jak je znázorněno v následujícím ukázkovém kódu.  
+ Implementuje statické hlavní funkce k vytvoření vzorku <xref:System.ServiceModel.ServiceHost> pro daný `CalculatorService` zadejte, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 // Host the service within this EXE console application.  
@@ -41,7 +41,7 @@ public static void Main()
 }  
 ```  
   
- Pokud služba je hostovaná v Internetové informační služby (IIS) nebo služby Aktivace procesů systému Windows (WAS), je základní adresa služby poskytované hostitelské prostředí. V případě vlastním hostováním zadejte základní adresu sami. To se provádí pomocí `add` element, podřízená položka [ \<baseAddresses >](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md), podřízeným [ \<hostitele >](../../../../docs/framework/configure-apps/file-schema/wcf/host.md), podřízeným [ \<služby > ](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) jak je předvedeno v následující ukázka konfigurace.  
+ Pokud služba je hostovaná v Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS), je základní adresa služby poskytovaný hostitelského prostředí. V tomto případě v místním prostředí zadejte základní adresu sami. To se provádí pomocí `add` elementu, podřízený [ \<baseAddresses >](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md), podřízený [ \<hostitele >](../../../../docs/framework/configure-apps/file-schema/wcf/host.md), podřízený [ \<služby > ](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) jak je ukázáno v následující ukázková konfigurace.  
   
 ```xml  
 <service   
@@ -56,24 +56,24 @@ public static void Main()
 </service>  
 ```  
   
- Při spuštění vzorového operaci požadavky a odpovědi se zobrazují v oknech konzoly služby a klienta. Stisknutím klávesy ENTER v každé okna konzoly vypnout klienta a služby.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazují v oknech konzoly služby a klienta. Stisknutím klávesy ENTER v každé okno konzoly pro vypnutí klienta a služby.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\SelfHost`  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázky trvalosti a hostování AppFabric](http://go.microsoft.com/fwlink/?LinkId=193961)
+ [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)

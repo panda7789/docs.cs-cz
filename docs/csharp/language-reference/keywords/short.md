@@ -8,11 +8,11 @@ helpviewer_keywords:
 - short keyword [C#]
 ms.assetid: 04c10688-e51a-4a87-bfec-83f7fb42ff11
 ms.openlocfilehash: f402b9d2d62bcc3ba265755d59a657b88c197482
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468563"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43660040"
 ---
 # <a name="short-c-reference"></a>short (Referenční dokumentace jazyka C#)
 

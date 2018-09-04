@@ -3,11 +3,11 @@ title: Ukázky vytváření Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: 2899e7a5-9cb2-4e8d-b8d2-f31391549198
 ms.openlocfilehash: 46f4015c00916a5cab932e8fd2539c7c86588a30
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43462321"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43565783"
 ---
 # <a name="building-the-windows-communication-foundation-samples"></a>Ukázky vytváření Windows Communication Foundation
 

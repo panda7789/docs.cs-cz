@@ -14,19 +14,19 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], lookup tables
 - ListBox control [Windows Forms], creating lookup tables
 ms.assetid: 4ce35f12-1f4e-4317-92d1-af8686a8cfaa
-ms.openlocfilehash: 212cc229d8a496be11c84e30dbf3a0eedb952006
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b719f2112aac1292b668fe199d48de4b0b60ed21
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33529376"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43659135"
 ---
 # <a name="how-to-create-a-lookup-table-for-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Vytvoření vyhledávací tabulky pro ovládací prvek Windows Forms ComboBox, ListBox nebo CheckedListBox
-Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivý ve formuláři Windows, ale ukládání dat do formátu, který je smysluplnější do vaší aplikace. Například může zobrazit formulář objednávky pro jídlo položek nabídky v seznamu s názvem. Datová tabulka záznam pořadí by však obsahovat jedinečná čísla ID představující jídlo. Příklad toho, jak ukládat a zobrazit formulář objednávky data pro jídlo v následujících tabulkách.  
+Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivé ve formuláři Windows Forms, ale ukládat data ve formátu, který má více smysl pro váš program. Například může zobrazit formulář objednávky pro potravin položky nabídky podle názvu v seznamu. Tabulka dat záznam pořadí by ale obsahovat jedinečné identifikační čísla představující potravinovém. Příklad toho, jak ukládat a zobrazovat data formulář objednávky potravin naleznete v následujících tabulkách.  
   
 ### <a name="orderdetailstable"></a>OrderDetailsTable  
   
-|OrderID|ItemID|Množství|  
+|ID objednávky|ID položky|Množství|  
 |-------------|------------|--------------|  
 |4085|12|1|  
 |4086|13|3|  
@@ -35,32 +35,32 @@ Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivý ve fo
   
 |ID|Název|  
 |--------|----------|  
-|12|Určené|  
+|12|Brambory|  
 |13|Kuřecí|  
   
- V tomto scénáři, jedna tabulka, **OrderDetailsTable**, ukládá informace jste se zobrazení a ukládání. Ušetřit místo, se ale tak poměrně jako nesrozumitelné způsobem. V tabulce **ItemTable**, obsahuje pouze informace týkající se vzhled o které ID číslo je ekvivalentní, na které jídlo název a nic o skutečné jídlo objednávky.  
+ V tomto scénáři, jedné tabulky **OrderDetailsTable**, ukládá informace jste obeznámeni s zobrazení a uložení. Ale pro úsporu místa, dělá to docela nejasné způsobem. V další tabulce **ItemTable**, obsahuje pouze informace vzhled o které ID číslo je ekvivalentní, na které potravin název a nic o objednávkách skutečné potravin.  
   
- **ItemTable** je připojený k <xref:System.Windows.Forms.ComboBox>, <xref:System.Windows.Forms.ListBox>, nebo <xref:System.Windows.Forms.CheckedListBox> řízení prostřednictvím tři vlastnosti. `DataSource` Vlastnost obsahuje název této tabulky. `DisplayMember` Vlastnost obsahuje sloupce dat z této tabulky, které chcete zobrazit v ovládacím prvku (název jídlo). `ValueMember` Vlastnost obsahuje sloupce dat této tabulky s uložené informace (číslo ID).  
+ **ItemTable** je připojen k <xref:System.Windows.Forms.ComboBox>, <xref:System.Windows.Forms.ListBox>, nebo <xref:System.Windows.Forms.CheckedListBox> řízení prostřednictvím tři vlastnosti. `DataSource` Vlastnost obsahuje název této tabulky. `DisplayMember` Vlastnost obsahuje sloupce dat této tabulky, kterou chcete zobrazit v ovládacím prvku (food název). `ValueMember` Vlastnost obsahuje sloupce dat této tabulky s uložené informace (identifikační číslo).  
   
- **OrderDetailsTable** je připojen k ovládacímu prvku jeho vazby kolekce přistupovat prostřednictvím <xref:System.Windows.Forms.Control.DataBindings%2A> vlastnost. Když přidáte objekt vazby ke kolekci, připojíte vlastnost ovládacího prvku na konkrétní data člena (sloupec ID čísla) ve zdroji dat ( **OrderDetailsTable**). Při výběru v ovládacím prvku, je tato tabulka uložení vstup formuláře.  
+ **OrderDetailsTable** je připojen k ovládací prvek pomocí jeho vazby kolekce přistupovat prostřednictvím <xref:System.Windows.Forms.Control.DataBindings%2A> vlastnost. Při přidání objektu vazby ke kolekci připojíte vlastnosti ovládacího prvku do konkrétního datového člena (sloupec ID čísla) ve zdroji dat ( **OrderDetailsTable**). Při provedení výběru v ovládacím prvku Tato tabulka je, kde je uložen vstup formuláře.  
   
-### <a name="to-create-a-lookup-table"></a>K vytvoření vyhledávací tabulky  
+### <a name="to-create-a-lookup-table"></a>Vytvoření vyhledávací tabulky  
   
-1.  Přidat <xref:System.Windows.Forms.ComboBox>, <xref:System.Windows.Forms.ListBox>, nebo <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku do formuláře.  
+1.  Přidat <xref:System.Windows.Forms.ComboBox>, <xref:System.Windows.Forms.ListBox>, nebo <xref:System.Windows.Forms.CheckedListBox> ovládacího prvku na formuláři.  
   
 2.  Připojení ke zdroji dat.  
   
-3.  Vytvořte vztah data mezi dvěma tabulkami. V tématu [Úvod do objektů DataRelation](http://msdn.microsoft.com/library/89d8a881-8265-41f2-a88b-61311ab06192).  
+3.  Vytvořte datová relace mezi tabulkami. Zobrazit [Úvod do objektů DataRelation](https://msdn.microsoft.com/library/89d8a881-8265-41f2-a88b-61311ab06192).  
   
-4.  Nastavte následující vlastnosti. Lze nastavit v kódu nebo v návrháři.  
+4.  Nastavte následující vlastnosti. To můžete udělat v kódu nebo v návrháři.  
   
     |Vlastnost|Nastavení|  
     |--------------|-------------|  
-    |<xref:System.Windows.Forms.ListControl.DataSource%2A>|Tabulka, která obsahuje informace o ID, které se rovná která položka číslo. V předchozím scénáři je to `ItemTable`.|  
-    |<xref:System.Windows.Forms.ListControl.DisplayMember%2A>|Sloupec tabulky zdroje dat, která chcete zobrazit v ovládacím prvku. V předchozím scénáři je to `"Name"` (Pokud chcete nastavit v kódu, použijte uvozovky).|  
-    |<xref:System.Windows.Forms.ListControl.ValueMember%2A>|Sloupec tabulky zdroje dat, která obsahuje informace o uložené. V předchozím scénáři je to `"ID"` (Pokud chcete nastavit v kódu, použijte uvozovky).|  
+    |<xref:System.Windows.Forms.ListControl.DataSource%2A>|Tabulka, která obsahuje informace, o které ID číslo odpovídá které položce. V předchozím scénáři je to `ItemTable`.|  
+    |<xref:System.Windows.Forms.ListControl.DisplayMember%2A>|Sloupec tabulky zdroje dat, který chcete zobrazit v ovládacím prvku. V předchozím scénáři je to `"Name"` (Pokud chcete nastavit v kódu, použijte uvozovky).|  
+    |<xref:System.Windows.Forms.ListControl.ValueMember%2A>|Sloupec tabulky zdroje dat, obsahující uložené informace. V předchozím scénáři je to `"ID"` (Pokud chcete nastavit v kódu, použijte uvozovky).|  
   
-5.  V postupu, volání <xref:System.Windows.Forms.ControlBindingsCollection.Add%2A> metodu <xref:System.Windows.Forms.ControlBindingsCollection> třídy pro vazbu ovládacího prvku <xref:System.Windows.Forms.ListControl.SelectedValue%2A> vlastnost, která má v tabulce zaznamenávání vstup formuláře. Můžete také to provedete v Návrháři místo v kódu, přístup k ovládacího prvku <xref:System.Windows.Forms.Control.DataBindings%2A> vlastnost **vlastnosti** okno. V předchozím scénáři je to `OrderDetailsTable`, a sloupec je `"ItemID"`.  
+5.  V postupu, zavolejte <xref:System.Windows.Forms.ControlBindingsCollection.Add%2A> metodu <xref:System.Windows.Forms.ControlBindingsCollection> třída pro vytvoření vazby ovládacího prvku <xref:System.Windows.Forms.ListControl.SelectedValue%2A> vlastnost do tabulky záznam vstup formuláře. Můžete také uděláte v Návrháři místo v kódu, díky přístupu do ovládacího prvku <xref:System.Windows.Forms.Control.DataBindings%2A> vlastnost **vlastnosti** okna. V předchozím scénáři je to `OrderDetailsTable`, a sloupec je `"ItemID"`.  
   
     ```vb  
     ListBox1.DataBindings.Add("SelectedValue", OrderDetailsTable, "ItemID")  

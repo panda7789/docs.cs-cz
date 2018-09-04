@@ -14,15 +14,15 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-ms.openlocfilehash: 4486b5be42f4a356b2017fe8629bc96f6ad47eda
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fafc80cc4847e9ec05f19fc7f3d31d2d5b11197a
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33650966"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43661149"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentáře v kódu (Visual Basic)
-Při čtení ukázky kódu, často narazíte na symbol komentáře (`'`). Tento symbol informuje Visual Basic – kompilátor ignorovat, následující text nebo *komentář*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  
+Při prohlížení příklady kódu, můžete často narazit na symbol komentáře (`'`). Tento symbol instruuje kompilátor jazyka Visual Basic, aby ignoroval text ním následuje nebo *komentář*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  
   
  Při programování je dobrým zvykem začínat všechny procedury stručným komentářem, který popisuje funkční charakteristiky procedury (co dělá). Budete z toho mít prospěch jak vy, tak všichni ostatní, kteří tento kód prověřují. Podrobnosti implementace (jak to procedura dělá) byste měli oddělit od komentářů, které popisují funkční charakteristiky. Pokud do popisu zahrnete podrobnosti implementace, při úpravě funkce je nezapomeňte aktualizovat.  
   
@@ -35,7 +35,7 @@ Při čtení ukázky kódu, často narazíte na symbol komentáře (`'`). Tento 
  [!code-vb[VbVbcnConventions#17](../../../visual-basic/programming-guide/language-features/codesnippet/VisualBasic/comments-in-code_2.vb)]  
   
 ## <a name="commenting-guidelines"></a>Pokyny ke komentování  
- Následující tabulka obsahuje obecné pokyny k tomu, jaké typy komentářů mohou být před kódem. Jedná se o návrhy; Visual Basic nedokáže vynutit pravidla pro přidávání komentářů. Napište všechno, co má význam pro vás i pro kohokoli jiného, kdo si váš kód bude prohlížet.  
+ Následující tabulka obsahuje obecné pokyny k tomu, jaké typy komentářů mohou být před kódem. Jsou to pouze návrhy; Visual Basic nevynucuje pravidla pro přidávání komentářů. Napište všechno, co má význam pro vás i pro kohokoli jiného, kdo si váš kód bude prohlížet.  
   
 |||  
 |---|---|  
@@ -54,14 +54,14 @@ Při čtení ukázky kódu, často narazíte na symbol komentáře (`'`). Tento 
   
 -   Komentáře nemohou následovat za posloupností pokračování řádku na stejném řádku.  
   
- Můžete přidat nebo odebrat komentář symboly pro blok kódu výběrem jednoho nebo více řádků kódu a zvolením **komentář** (![VisualBasicWinAppCodeEditorCommentButton](../../../visual-basic/programming-guide/program-structure/media/vacommentbutton.gif "vaCommentButton ")) a **zrušte komentáře u** (![VisualStudioWinAppProjectUncommentButton](../../../visual-basic/programming-guide/program-structure/media/vauncommentbutton.gif "vaUncommentButton")) tlačítka na **upravit**  panelu nástrojů.  
+ Můžete přidat nebo odebrat symboly komentáře bloku kódu tak, že vyberete jeden nebo více řádků kódu a zvolíte **komentář** (![VisualBasicWinAppCodeEditorCommentButton](../../../visual-basic/programming-guide/program-structure/media/vacommentbutton.gif "vaCommentButton ")) a **zrušit komentář** (![VisualStudioWinAppProjectUncommentButton](../../../visual-basic/programming-guide/program-structure/media/vauncommentbutton.gif "vaUncommentButton")) tlačítka **upravit**  nástrojů.  
   
 > [!NOTE]
->  Komentáře můžete také přidat do kódu tak, že před textu pomocí `REM` – klíčové slovo. Ale `'` symbol a **komentář**/**zrušte komentáře u** tlačítka se snadněji používat a vyžadovat méně místa a paměti.  
+>  Můžete také přidat komentáře do kódu tak, že text uvodíte `REM` – klíčové slovo. Ale `'` symbolů a **komentář**/**zrušit komentář** tlačítka jsou snadněji používají a vyžadují méně místa a paměti.  
   
 ## <a name="see-also"></a>Viz také  
- [Dokumentace kódu s XML – komentáře](http://msdn.microsoft.com/magazine/dd722812.aspx)  
+ [Dokumentace kódu pomocí komentářů XML](https://msdn.microsoft.com/magazine/dd722812.aspx)  
  [Postupy: Vytvoření dokumentace XML](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)  
- [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/recommended-xml-tags-for-documentation-comments.md)  
+ [Značky pro komentáře XML](../../../visual-basic/language-reference/xmldoc/index.md)  
  [Struktura programu a zásady týkající se kódu](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  [Příkaz REM](../../../visual-basic/language-reference/statements/rem-statement.md)

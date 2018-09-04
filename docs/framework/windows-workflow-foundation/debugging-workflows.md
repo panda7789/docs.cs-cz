@@ -3,11 +3,11 @@ title: Ladění pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: b23b4814-ebb1-4c51-b7a9-469f4da7a96d
 ms.openlocfilehash: 17cee1f1b509e777edd3f08c55d473d768b19b55
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43463535"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43660006"
 ---
 # <a name="debugging-workflows"></a>Ladění pracovních postupů
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] nabízí několik možností pro ladění pracovních postupů běžících z vývojového prostředí. Pracovní postupy lze ladit, v návrháři, XAML a kódu.  
