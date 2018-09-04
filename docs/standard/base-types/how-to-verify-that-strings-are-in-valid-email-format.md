@@ -22,7 +22,7 @@ author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 18426e655f6702844daa822921888194ed7ecb64
 ms.sourcegitcommit: a1e35d4e94edab384a63406c0a5438306873031b
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 08/21/2018
 ms.locfileid: "42752146"
