@@ -3,11 +3,11 @@ title: Povoluje se zdrojem dat pro LINQ Querying1
 ms.date: 07/20/2015
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
 ms.openlocfilehash: 204d2d6104a065f1d1cf9e731dc01f400218f91b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541715"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748207"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>Povolení zdroje dat pro dotazy LINQ
 Existují různé způsoby, jak rozšířit [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pro libovolný zdroj dat, aby se dalo dotazovat v [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] vzor. Zdrojem dat může být kromě jiného například datová struktura, webová služba, systém souborů nebo databáze. [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] Vzor usnadňuje klientům dotazování na zdroj dat, pro kterou [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazování je povoleno, protože syntaxe a vzor dotazu se nezmění. Způsoby [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] je možné rozšířit na tyto data zdroje patří následující:  

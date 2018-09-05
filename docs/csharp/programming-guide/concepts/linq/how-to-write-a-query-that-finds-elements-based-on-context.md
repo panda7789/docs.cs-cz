@@ -2,20 +2,20 @@
 title: 'Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
-ms.openlocfilehash: 3b09be121c3e1da12614d1c09a806b09386732df
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c1c43bc47df1612be26c78351a9d30272a020160
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33322010"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43723659"
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (C#)
-V některých případech můžete chtít vytvořit dotaz, který vybere elementy na základě jejich kontextu. Můžete filtrovat na základě před nebo po prvků. Můžete filtrovat na základě podřízené domény nebo nadřazenými prvky.  
+V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu. Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni. Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.  
   
- To provedete zadáním dotazu a použitím výsledků dotazu v `where` klauzule. Pokud musíte nejprve porovnat s hodnotou null a otestujte hodnota, je pohodlnější udělat dotazu `let` klauzule a pak použijte výsledky v `where` klauzule.  
+ To lze provést zadáním dotazu a pomocí výsledků dotazu v `where` klauzuli. Pokud je nutné nejprve otestovat s hodnotou null a pak testování hodnot, je pohodlnější provést dotaz `let` klauzule a pak použít výsledky v `where` klauzuli.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vybere všechny `p` prvky, které jsou bezprostředně následované `ul` elementu.  
+ V následujícím příkladu vybere všechny `p` prvky, které jsou okamžitě následovat `ul` elementu.  
   
 ```csharp  
 XElement doc = XElement.Parse(@"<Root>  
@@ -56,7 +56,7 @@ id = 6
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro formát XML, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```csharp  
 XElement doc = XElement.Parse(@"<Root xmlns='http://www.adatum.com'>  
@@ -98,9 +98,10 @@ id = 3
 id = 6  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq.XElement.Parse%2A>  
- <xref:System.Xml.Linq.XContainer.Descendants%2A>  
- <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>  
- <xref:System.Linq.Enumerable.FirstOrDefault%2A>  
- [Základní dotazy (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Xml.Linq.XElement.Parse%2A>  
+- <xref:System.Xml.Linq.XContainer.Descendants%2A>  
+- <xref:System.Xml.Linq.XNode.ElementsAfterSelf%2A>  
+- <xref:System.Linq.Enumerable.FirstOrDefault%2A>  
+- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

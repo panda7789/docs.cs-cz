@@ -6,11 +6,11 @@ helpviewer_keywords:
 - SaveFileDialog component
 ms.assetid: 6f5d9321-37d7-4448-ac4c-a33c42b2a766
 ms.openlocfilehash: e402f9835f3ca03ac0632d7202000fa3208ed6e3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403510"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748044"
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.SaveFileDialog> komponenta je předem nakonfigurované dialogového okna. Je stejný jako standardní uložit soubor dialogové okno používá Windows. Dědí z <xref:System.Windows.Forms.CommonDialog> třídy.  

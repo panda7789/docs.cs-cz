@@ -2,12 +2,12 @@
 title: Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (C#)
 ms.date: 07/20/2015
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: d59b65e456c528c63c79c97f6c75c328066be631
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: a23bdedbd9786fb930f92f5aa4b1025b83a4bcbe
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43416395"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748161"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-c"></a>Zahájení více úloh s modifikátorem Async a jejich zpracování po dokončení (C#)
 S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>, můžete spustit více úkolů současně a zpracovat je postupně tak, jak jsou dokončeny namísto zpracování v pořadí, ve kterém se spouští.  
@@ -225,8 +225,9 @@ namespace ProcessTasksAsTheyFinish
 // Downloads complete.  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.Tasks.Task.WhenAny%2A>  
- [Doladění aplikace s modifikátorem Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
- [Asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Threading.Tasks.Task.WhenAny%2A>  
+- [Doladění aplikace s modifikátorem Async (C#)](../../../../csharp/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
+- [Asynchronní programování pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/index.md)  
+- [Asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

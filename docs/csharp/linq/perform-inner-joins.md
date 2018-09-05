@@ -4,11 +4,11 @@ description: Zjistěte, jak k provádění vnitřních spojení pomocí jazyka L
 ms.date: 12/1/2016
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
 ms.openlocfilehash: 2f6aad30dc8278ce1bb88bacc19b27deaa0288c7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43539514"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43746844"
 ---
 # <a name="perform-inner-joins"></a>Provádění vnitřních spojení
 

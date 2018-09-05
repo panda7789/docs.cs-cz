@@ -3,11 +3,11 @@ title: Ukázka zjišťování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 82cc43f1-3c8f-4771-ac19-a75ac936e2c3
 ms.openlocfilehash: 1076e7045ca546fed7e6902f69406bfc002c4c26
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43476008"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43724731"
 ---
 # <a name="workflow-discovery-sample"></a>Ukázka zjišťování pracovního postupu
 Tato ukázka předvádí, jak zjistitelnost služby pracovního postupu a jak si můžete vytvořit vlastní kód aktivitou, která hledá konkrétní službu.  

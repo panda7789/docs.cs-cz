@@ -3,11 +3,11 @@ title: Řešení potíží s aplikací pomocí sledování
 ms.date: 03/30/2017
 ms.assetid: 8851adde-c3c2-4391-9523-d8eb831490af
 ms.openlocfilehash: f991533b61705c8d0a1a8e71b632dd53f24dd979
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43401274"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43724906"
 ---
 # <a name="using-tracking-to-troubleshoot-applications"></a>Řešení potíží s aplikací pomocí sledování
 Windows Workflow Foundation (WF) umožňuje sledovat související pracovní postup informace, které poskytují podrobnosti do spuštění Windows Workflow Foundation aplikace nebo služby. Hostitele Windows Workflow Foundation je možné ji zachytit události pracovního postupu za běhu instance pracovního postupu. Pokud váš pracovní postup generuje chyby nebo výjimky, můžete použít sledování podrobnosti pro řešení potíží s jeho zpracování modelu Windows Workflow Foundation.  

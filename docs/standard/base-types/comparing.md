@@ -1,5 +1,5 @@
 ---
-title: Porovnávání řetězců v .NET
+title: Porovnání řetězců v .NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -20,136 +20,138 @@ helpviewer_keywords:
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c925b734c6d89bfa7240a7946c5bae4d8062a47a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 38d6e979cd00bd113339a69b3ea6646c98f379d6
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577814"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43735160"
 ---
-# <a name="comparing-strings-in-net"></a>Porovnávání řetězců v .NET
-Rozhraní .NET poskytuje několik metod pro porovnání hodnot řetězců. Následující tabulka uvádí a popisuje metody porovnání hodnoty.  
+# <a name="comparing-strings-in-net"></a>Porovnání řetězců v .NET
+.NET nabízí několik metod pro porovnání hodnot řetězců. Následující tabulka uvádí a popisuje metody porovnání hodnoty.  
   
 |Název metody|Použití|  
 |-----------------|---------|  
-|<xref:System.String.Compare%2A?displayProperty=nameWithType>|Porovnává dva řetězce hodnoty. Vrací celočíselnou hodnotu.|  
-|<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>|Porovnává dva řetězce bez ohledu na místní jazykovou verzi. Vrací celočíselnou hodnotu.|  
-|<xref:System.String.CompareTo%2A?displayProperty=nameWithType>|Porovná aktuální objekt řetězce k jiným řetězcem. Vrací celočíselnou hodnotu.|  
-|<xref:System.String.StartsWith%2A?displayProperty=nameWithType>|Určuje, zda řetězec začíná řetězcem předán. Vrátí logickou hodnotu.|  
-|<xref:System.String.EndsWith%2A?displayProperty=nameWithType>|Určuje, zda řetězec končí řetězcem předán. Vrátí logickou hodnotu.|  
-|<xref:System.String.Equals%2A?displayProperty=nameWithType>|Určuje, zda jsou dva řetězce stejné. Vrátí logickou hodnotu.|  
-|<xref:System.String.IndexOf%2A?displayProperty=nameWithType>|Vrátí index umístění znaku nebo řetězec, od začátku řetězce, který je zkoumán. Vrací celočíselnou hodnotu.|  
-|<xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>|Vrátí index umístění znaku nebo řetězec, od konce řetězce, který je zkoumán. Vrací celočíselnou hodnotu.|  
+|<xref:System.String.Compare%2A?displayProperty=nameWithType>|Porovná dva řetězce hodnoty. Vrací celočíselnou hodnotu.|  
+|<xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType>|Porovná dva řetězce bez ohledu na místní jazykové verze. Vrací celočíselnou hodnotu.|  
+|<xref:System.String.CompareTo%2A?displayProperty=nameWithType>|Porovná aktuální objekt řetězce do jiného řetězce. Vrací celočíselnou hodnotu.|  
+|<xref:System.String.StartsWith%2A?displayProperty=nameWithType>|Určuje, jestli řetězec začíná předal řetězec. Vrátí logickou hodnotu.|  
+|<xref:System.String.EndsWith%2A?displayProperty=nameWithType>|Určuje, jestli řetězec končí řetězcem, který je předán. Vrátí logickou hodnotu.|  
+|<xref:System.String.Equals%2A?displayProperty=nameWithType>|Určuje, zda jsou dva řetězce stejný. Vrátí logickou hodnotu.|  
+|<xref:System.String.IndexOf%2A?displayProperty=nameWithType>|Vrátí pozici indexu znak nebo řetězec, od začátku řetězce, které se, že zkoumáte. Vrací celočíselnou hodnotu.|  
+|<xref:System.String.LastIndexOf%2A?displayProperty=nameWithType>|Vrátí pozici indexu znaků nebo řetězce, počínaje od konce řetězce, které se, že zkoumáte. Vrací celočíselnou hodnotu.|  
   
 ## <a name="compare"></a>Porovnat  
- Statické <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda poskytuje důkladné porovnání dvou řetězců. Tato metoda je zohledňuje. Tato funkce slouží k porovnání dvou řetězců nebo dílčích řetězců dvou řetězců. Kromě toho přetížení jsou k dispozici tomto ohledu nebo ignorovat případ a kulturního odchylky. V následující tabulce jsou tři celočíselné hodnoty, tato metoda může vrátit.  
+ Statické <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda poskytuje důkladné porovnání dvou řetězců. Tato metoda je zohledňuje. Tato funkce slouží k porovnání dvou řetězců nebo dvou řetězců podřetězců. Kromě toho přetížení jsou k dispozici tomto ohledu nebo ignorovat případ a kulturní variance. V následující tabulce jsou uvedeny tři celočíselných hodnot, že tato metoda může vrátit.  
   
 |Návratová hodnota|Podmínka|  
 |------------------|---------------|  
-|Záporné celé číslo|První řetězec předchází druhý řetězec v pořadí řazení.<br /><br /> -nebo-<br /><br /> Je první řetězec `null`.|  
-|0|Řetězec, který první a druhý řetězec jsou stejné.<br /><br /> -nebo-<br /><br /> Oba řetězce jsou `null`.|  
-|Kladné celé číslo<br /><br /> -nebo-<br /><br /> 1|První řetězec odpovídá druhý řetězec v pořadí řazení.<br /><br /> -nebo-<br /><br /> Druhý řetězec je `null`.|  
+|Záporné celé číslo|První řetězec, který předchází druhý řetězec v pořadí řazení.<br /><br /> -nebo-<br /><br /> První řetězec, který je `null`.|  
+|0|První řetězec a druhý řetězec jsou si rovny.<br /><br /> -nebo-<br /><br /> Oba řetězce jsou `null`.|  
+|Kladné celé číslo<br /><br /> -nebo-<br /><br /> 1|První řetězec, který následuje druhý řetězec v pořadí řazení.<br /><br /> -nebo-<br /><br /> Druhý řetězec je `null`.|  
   
 > [!IMPORTANT]
->  <xref:System.String.Compare%2A?displayProperty=nameWithType> Metoda je primárně určený pro použití při řazení nebo řazení řetězců. Neměli byste používat <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu za účelem testování rovnosti (explicitně hledání vrácená hodnota 0, bez ohledu na jestli jednoho řetězce je menší než nebo je větší než druhá). Místo toho použijte k určení, zda jsou dva řetězce stejné, <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metoda.  
+>  <xref:System.String.Compare%2A?displayProperty=nameWithType> Metoda je primárně určena pro použití při řazení nebo řazení řetězců. Neměli byste používat <xref:System.String.Compare%2A?displayProperty=nameWithType> metody testování rovnosti (to znamená, výslovně vás pod rouškou návratovou hodnotu 0, bez ohledu na to, jestli se jeden řetězec je menší nebo větší než ten druhý). Místo toho použijte k určení, zda jsou dva řetězce stejné, <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metody.  
   
- Následující příklad používá <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda, jak určit relativní hodnoty dvou řetězců.  
+ V následujícím příkladu <xref:System.String.Compare%2A?displayProperty=nameWithType> metodou ke zjištění relativní hodnoty dvou řetězců.  
   
  [!code-cpp[Conceptual.String.BasicOps#6](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#6)]
  [!code-csharp[Conceptual.String.BasicOps#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#6)]
  [!code-vb[Conceptual.String.BasicOps#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#6)]  
   
- Tento příklad zobrazí `-1` ke konzole.  
+ Tento příklad zobrazuje `-1` do konzoly.  
   
- V předchozím příkladu je jazykovou ve výchozím nastavení. Chcete-li provést porovnání řetězců nezávislých na jazykové verzi, použijte přetížení <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda, která umožňuje zadat jazykovou verzi pro použití zadáním *jazykovou verzi* parametr. Pro příklad, který ukazuje, jak používat <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu za účelem nezávislé na jazykových porovnání najdete v tématu [provádění porovnávání řetězců nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ V předchozím příkladu je zohledňující jazykovou verzi ve výchozím nastavení. Porovnání řetězců nezávislých na jazykové verzi, použijte přetížení <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu, která vám umožní určit jazyková verze použitá zadáním *jazykovou verzi* parametr. Příklad, který ukazuje, jak používat <xref:System.String.Compare%2A?displayProperty=nameWithType> metodu za účelem porovnání nezávislá na jazykové verzi, najdete v článku [provádění porovnávání řetězců nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
 ## <a name="compareordinal"></a>CompareOrdinal –  
- <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> Metoda porovná dva objekty řetězce bez ohledu na místní jazykovou verzi. Návratové hodnoty této metody jsou identické s hodnotami vrácený **porovnat** metoda v předchozí tabulce.  
+ <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> Metoda porovná dva objekty řetězec bez zohlednění místní jazykové verze. Návratové hodnoty této metody jsou stejné jako hodnot vrácených **porovnání** metoda v předchozí tabulce.  
   
 > [!IMPORTANT]
->  <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> Metoda je primárně určený pro použití při řazení nebo řazení řetězců. Neměli byste používat <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> metodu za účelem testování rovnosti (explicitně hledání vrácená hodnota 0, bez ohledu na jestli jednoho řetězce je menší než nebo je větší než druhá). Místo toho použijte k určení, zda jsou dva řetězce stejné, <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metoda.  
+>  <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> Metoda je primárně určena pro použití při řazení nebo řazení řetězců. Neměli byste používat <xref:System.String.CompareOrdinal%2A?displayProperty=nameWithType> metody testování rovnosti (to znamená, výslovně vás pod rouškou návratovou hodnotu 0, bez ohledu na to, jestli se jeden řetězec je menší nebo větší než ten druhý). Místo toho použijte k určení, zda jsou dva řetězce stejné, <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metody.  
   
- Následující příklad používá **CompareOrdinal –** metoda pro porovnání hodnot dva řetězce.  
+ V následujícím příkladu **CompareOrdinal** metoda srovnává hodnoty dvou řetězců.  
   
  [!code-cpp[Conceptual.String.BasicOps#7](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#7)]
  [!code-csharp[Conceptual.String.BasicOps#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#7)]
  [!code-vb[Conceptual.String.BasicOps#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#7)]  
   
- Tento příklad zobrazí `-32` ke konzole.  
+ Tento příklad zobrazuje `-32` do konzoly.  
   
 ## <a name="compareto"></a>CompareTo  
- <xref:System.String.CompareTo%2A?displayProperty=nameWithType> Metoda srovnává řetězec, který zapouzdřuje aktuálního objektu řetězce na jiný řetězec nebo objekt. Návratové hodnoty této metody jsou identické s hodnotami vrácený <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda v předchozí tabulce.  
+ <xref:System.String.CompareTo%2A?displayProperty=nameWithType> Metoda porovnává řetězce, který zapouzdřuje na aktuální objekt řetězce do jiného řetězec nebo objekt. Návratové hodnoty této metody jsou stejné jako hodnot vrácených <xref:System.String.Compare%2A?displayProperty=nameWithType> metoda v předchozí tabulce.  
   
 > [!IMPORTANT]
->  <xref:System.String.CompareTo%2A?displayProperty=nameWithType> Metoda je primárně určený pro použití při řazení nebo řazení řetězců. Neměli byste používat <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metodu za účelem testování rovnosti (explicitně hledání vrácená hodnota 0, bez ohledu na jestli jednoho řetězce je menší než nebo je větší než druhá). Místo toho použijte k určení, zda jsou dva řetězce stejné, <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metoda.  
+>  <xref:System.String.CompareTo%2A?displayProperty=nameWithType> Metoda je primárně určena pro použití při řazení nebo řazení řetězců. Neměli byste používat <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metody testování rovnosti (to znamená, výslovně vás pod rouškou návratovou hodnotu 0, bez ohledu na to, jestli se jeden řetězec je menší nebo větší než ten druhý). Místo toho použijte k určení, zda jsou dva řetězce stejné, <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metody.  
   
- Následující příklad používá <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metoda k porovnání `string1` do objektu `string2` objektu.  
+ V následujícím příkladu <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metodu porovnání `string1` objektu `string2` objektu.  
   
  [!code-cpp[Conceptual.String.BasicOps#8](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#8)]
  [!code-csharp[Conceptual.String.BasicOps#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#8)]
  [!code-vb[Conceptual.String.BasicOps#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#8)]  
   
- Tento příklad zobrazí `-1` ke konzole.  
+ Tento příklad zobrazuje `-1` do konzoly.  
   
- Všechny přetížení <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metoda provést porovnání zohledňující jazykovou verzi a velká a malá písmena ve výchozím nastavení. Žádné přetížení této metody jsou k dispozici, které umožňují nezávislé na jazykových porovnání. Pro přehlednost kódu, doporučujeme použít **String.Compare** metoda místo toho zadat <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pro operace zohledňující jazykovou verzi nebo <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> pro nezávislé na jazykových operace. Příklady, které ukazují, jak používat **String.Compare** metodu za účelem porovnávání zohledňující jazykovou verzi a nezávislé na jazykových, najdete v části [provádění nezávislé na jazykových porovnání řetězců](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
+ Všechna přetížení <xref:System.String.CompareTo%2A?displayProperty=nameWithType> metoda provést porovnání citlivé na jazykovou verzi a malá a velká písmena ve výchozím nastavení. Žádné přetížení této metody jsou k dispozici, které umožňují provést porovnání nezávislá na jazykové verzi. Přehlednosti kódu doporučujeme použít **String.Compare** metoda místo toho zadáte <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> pro operace zohledňující jazykovou verzi nebo <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> operací nezávislých na jazykové verzi. Příklady, které ukazují, jak používat **String.Compare** metodu za účelem porovnání zohledňující jazykovou verzi a nezávislé na jazykové verzi, najdete v článku [provádění nezávislých na jazykové verzi porovnávání řetězců](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-comparisons.md).  
   
-## <a name="equals"></a>Rovná se  
- **String.Equals** metoda může snadno zjistit, zda jsou dva řetězce stejné. Vrátí tato metoda velká a malá písmena **true** nebo **false** logická hodnota. Dá se použít z existující třídy, jak je znázorněno v následujícím příkladu. Následující příklad používá **rovná** metoda k určení, zda objekt řetězec obsahuje frázi "Hello World".  
+## <a name="equals"></a>rovná se  
+ **String.Equals** metoda můžete snadno zjistit, zda jsou dva řetězce stejný. Vrátí tato metoda velká a malá písmena **true** nebo **false** logickou hodnotu. To je možné z existující třídy, jak je znázorněno v následujícím příkladu. V následujícím příkladu **rovná** metodou ke zjištění, zda objekt string obsahuje frázi "Hello World".  
   
  [!code-cpp[Conceptual.String.BasicOps#9](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#9)]
  [!code-csharp[Conceptual.String.BasicOps#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#9)]
  [!code-vb[Conceptual.String.BasicOps#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#9)]  
   
- Tento příklad zobrazí `True` ke konzole.  
+ Tento příklad zobrazuje `True` do konzoly.  
   
- Tato metoda slouží také jako statickou metodu. Následující příklad porovná dva objekty řetězce pomocí statické metody.  
+ Tato metoda slouží také jako statické metody. Následující příklad porovná dva objekty řetězce pomocí statické metody.  
   
  [!code-cpp[Conceptual.String.BasicOps#10](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#10)]
  [!code-csharp[Conceptual.String.BasicOps#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#10)]
  [!code-vb[Conceptual.String.BasicOps#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#10)]  
   
- Tento příklad zobrazí `True` ke konzole.  
+ Tento příklad zobrazuje `True` do konzoly.  
   
 ## <a name="startswith-and-endswith"></a>StartsWith a EndsWith  
- Můžete použít **String.StartsWith** metoda k určení, zda objekt string začíná stejné znaky, které zahrnuje další řetězec. Vrátí tato metoda malá a velká písmena **true** Pokud aktuální objekt řetězce začíná předaný řetězec a **false** Pokud neexistuje. Následující příklad používá tato metoda k určení, zda objekt string začíná text "Hello".  
+ Můžete použít **String.StartsWith** metodou ke zjištění, zda objekt string začíná stejné znaky, které zahrnuje jiného řetězce. Vrátí tato metoda malá a velká písmena **true** Pokud aktuální objekt řetězec začíná předaný řetězec a **false** Pokud tomu tak není. Následující příklad používá tuto metodu k určení, zda objekt string začíná "Hello".  
   
  [!code-cpp[Conceptual.String.BasicOps#11](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#11)]
  [!code-csharp[Conceptual.String.BasicOps#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#11)]
  [!code-vb[Conceptual.String.BasicOps#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#11)]  
   
- Tento příklad zobrazí `True` ke konzole.  
+ Tento příklad zobrazuje `True` do konzoly.  
   
- **String.EndsWith** metoda srovnává předaný řetězec znaků, které existují na konci aktuální objekt řetězce. Také vrací logickou hodnotu. Následující příklad zkontroluje konec řetězec pomocí **EndsWith** metoda.  
+ **String.EndsWith** metoda srovnává předaný řetězec znaků, které existují na konci aktuálního objektu string. Také vrátí hodnotu typu Boolean. Následující příklad ověří konec řetězce pomocí **EndsWith** metody.  
   
  [!code-cpp[Conceptual.String.BasicOps#12](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#12)]
  [!code-csharp[Conceptual.String.BasicOps#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#12)]
  [!code-vb[Conceptual.String.BasicOps#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#12)]  
   
- Tento příklad zobrazí `False` ke konzole.  
+ Tento příklad zobrazuje `False` do konzoly.  
   
 ## <a name="indexof-and-lastindexof"></a>IndexOf a LastIndexOf  
- Můžete použít **String.IndexOf** metoda k určení pozice první výskyt určitého znaku v řetězci. Tato metoda malá a velká písmena spustí, počítáno od začátku řetězce a vrátí pozici předaného znaku pomocí index počítaný od nuly. Pokud nebyl nalezen znak, bude vrácena hodnota -1.  
+ Můžete použít **String.IndexOf** metody lze určit pozici prvního výskytu určitý znak v řetězci. Tato malá a velká písmena metoda spustí, počítáno od začátku řetězce a vrátí pozici znaku předaných pomocí index založený na nule. Pokud nebyl nalezen znak, vrátí hodnotu – 1.  
   
- Následující příklad používá **IndexOf** metody na hledání pro první výskyt '`l`' znak v řetězci.  
+ V následujícím příkladu **IndexOf** metody na hledání pro první výskyt "`l`" znak v řetězci.  
   
  [!code-cpp[Conceptual.String.BasicOps#13](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#13)]
  [!code-csharp[Conceptual.String.BasicOps#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#13)]
  [!code-vb[Conceptual.String.BasicOps#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#13)]  
   
- Tento příklad zobrazí `2` ke konzole.  
+ Tento příklad zobrazuje `2` do konzoly.  
   
- **String.LastIndexOf** metoda je podobná **String.IndexOf** s výjimkou, že metoda vrátí pozici posledního výskytu určitého znaku v řetězci. Je malá a velká písmena a používá index počítaný od nuly.  
+ **String.LastIndexOf** metoda je podobná **String.IndexOf** metoda s výjimkou, že vrátí pozici posledního výskytu určitý znak v řetězci. Velká a malá písmena a používá index založený na nule.  
   
- Následující příklad používá **LastIndexOf** metody na hledání pro poslední výskyt '`l`' znak v řetězci.  
+ V následujícím příkladu **LastIndexOf** metody na hledání pro poslední výskyt "`l`" znak v řetězci.  
   
  [!code-cpp[Conceptual.String.BasicOps#14](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/compare.cpp#14)]
  [!code-csharp[Conceptual.String.BasicOps#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/compare.cs#14)]
  [!code-vb[Conceptual.String.BasicOps#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/compare.vb#14)]  
   
- Tento příklad zobrazí `9` ke konzole.  
+ Tento příklad zobrazuje `9` do konzoly.  
   
- Obě metody jsou užitečné při použití ve spojení s **String.Remove** metoda. Můžete použít buď **IndexOf** nebo **LastIndexOf** metody pro načtení umístění znaku a potom předat tuto pozici k **odebrat** za účelem odebrání znak nebo slovo, které začíná tento znak.  
+ Obě metody jsou užitečné při použití ve spojení s **String.Remove** metody. Můžete použít buď **IndexOf** nebo **LastIndexOf** metody načíst umístění znaku, a pak zadat na této pozici **odebrat** metodu, pokud chcete odebrat znaky nebo slovo, který začíná tento znak.  
   
-## <a name="see-also"></a>Viz také  
- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
- [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+## <a name="see-also"></a>Viz také:  
+
+- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
+- [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
+- [Řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921)

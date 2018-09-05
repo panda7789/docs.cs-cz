@@ -6,11 +6,11 @@ helpviewer_keywords:
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
 ms.openlocfilehash: fe1fbfbf76507f19905d1a9a3a836483a8dd3849
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541031"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748233"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>Syntaxe využívající dotazy a syntaxe využívající metody v jazyce LINQ (C#)
 Většina dotazů v úvodní Language Integrated Query ([!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]) dokumentace jsou zapsány pomocí syntaxe deklarativní dotazů LINQ. Syntaxe dotazu však musí být převedeny do volání metod pro .NET common language runtime (CLR) při kompilaci kódu. Tato metoda volání vyvolat operátory standardního dotazu, které mají názvy, jako `Where`, `Select`, `GroupBy`, `Join`, `Max`, a `Average`. Můžete je volat přímo pomocí syntaxe metody místo syntaxe dotazu.  

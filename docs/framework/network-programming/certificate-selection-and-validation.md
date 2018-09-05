@@ -6,11 +6,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: fe3b10e17c3cdf181f0b33b4305008655047fb0f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43557527"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43744774"
 ---
 # <a name="certificate-selection-and-validation"></a>Výběr a ověření certifikátu
 <xref:System.Net> Třídy podporují několik způsobů, jak vybrat a ověřit <xref:System.Security.Cryptography.X509Certificates> pro připojení vrstvy SSL (Secure Socket). Klienta můžete vybrat jeden nebo více certifikátů ke svému ověření serveru. Server může vyžadovat, že klientský certifikát mají jeden nebo více konkrétních atributů pro ověřování.  

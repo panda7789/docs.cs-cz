@@ -1,5 +1,5 @@
 ---
-title: -deterministickou (možnosti kompilátoru C#)
+title: -deterministické (možnosti kompilátoru C#)
 ms.date: 04/12/2018
 f1_keywords:
 - /deterministic
@@ -9,16 +9,16 @@ helpviewer_keywords:
 - /deterministic compiler option [C#]
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a2cb45ea6ed5c5795c910b2f6c3575b12f8189cf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9f9aca20a3ff65d061c04a21e31db3fb5eab62ba
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33213909"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732446"
 ---
-# <a name="-deterministic"></a>-deterministickou
+# <a name="-deterministic"></a>-deterministické
 
-Způsobí, že kompilátoru vytvoření sestavení jejichž bajtů pro bajtový výstup je stejný jako napříč kompilace pro identické vstupy. 
+Způsobí, že kompilátor vytvoří sestavení, jehož výstup bajt po bajtu je identické napříč kompilace identické vstupů. 
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,32 +28,33 @@ Způsobí, že kompilátoru vytvoření sestavení jejichž bajtů pro bajtový 
 
 ## <a name="remarks"></a>Poznámky
 
-Ve výchozím nastavení je výstup kompilátoru danou sadu vstupy jedinečné, vzhledem k tomu, že kompilátor přidá časovým razítkem a identifikátor GUID, který se generují z náhodných čísel. Použijete `-deterministic` možnost k vytvoření *deterministickou sestavení*, jeden jejichž binární obsah je stejný jako napříč kompilace vstup zůstává stejné.
+Ve výchozím nastavení je výstup kompilátoru z danou sadu vstupů jedinečná, vzhledem k tomu, že kompilátor přidává časové razítko a identifikátor GUID, který je generován z náhodných čísel. Můžete použít `-deterministic` možnost vytvářet *deterministické sestavení*, jehož binární obsah identické napříč kompilace jako vstup zůstává stejná.
 
-Kompilátor zvažuje následující vstupy pro účely determinism:
+Kompilátor bere v úvahu následující vstupy pro účely determinismus:
 
 - Pořadí parametrů příkazového řádku.
-- Obsah souboru kompilátoru .rsp odezvy.
+- Obsah souboru odezvy kompilátoru .rsp.
 - Přesné verze kompilátoru použít a jeho odkazované sestavení.
-- Cesty k aktuálnímu adresáři.
-- Binární obsah všech souborů explicitně předaný kompilátor přímo ani nepřímo, včetně:
+- Aktuální cesta k adresáři.
+- Binární obsah všech souborů explicitně předány kompilátoru přímo nebo nepřímo, včetně:
     - Zdrojové soubory
     - Odkazovaná sestavení
-    - Odkazovaná moduly
+    - Odkazované moduly
     - Prostředky
-    - Soubor klíče silným názvem
-    - @ soubory odezvy
+    - Soubor klíče se silným názvem
+    - @ soubory odpovědí
     - Analyzátory
     - Sady pravidel
-    - Další soubory, které může být používán analyzátory
-- Aktuální jazykové verze (pro jazyk, ve které diagnostiky a výjimky zprávy vytváří).
-- Výchozí kódování (nebo aktuální znakovou stránku) Pokud není zadán kódování.
-- Existence, neexistence a obsah souborů na cesty hledání kompilátoru (zadaný, například `/lib` nebo `/recurse`).
-- Platforma CLR, na kterém je spuštěna kompilátoru.
-- Hodnota `%LIBPATH%`, což může ovlivnit načítání závislostí analyzátor.
+    - Další soubory, které mohou být využívána analyzátory
+- Aktuální jazykové verze (pro jazyk, v které diagnostiky a výjimky se budou vytvářet zprávy).
+- Výchozí kódování (nebo aktuální znakové stránce) Pokud kódování není zadán.
+- Existence, neexistence a obsah souborů na vyhledávací cesty kompilátoru (například tím, že zadaný `/lib` nebo `/recurse`).
+- Platforma CLR, na kterém je spuštěna kompilátor.
+- Hodnota `%LIBPATH%`, což může ovlivnit načítání analyzátoru závislostí.
 
-Pokud jsou veřejně dostupné zdroje, deterministickou kompilace lze použít pro stanovení, zda se binární kompiluje z důvěryhodného zdroje. Také může být užitečné v systému průběžné sestavení pro určení, jestli není potřeba provést kroky sestavení, které jsou závislé na změny binární. 
+Když jsou veřejně dostupné zdroje, deterministickou kompilaci lze použít pro stanovení, zda je zkompilován do binárního souboru z důvěryhodného zdroje. Může být také užitečné v systému průběžného sestavení pro určení, jestli je potřeba spustit kroky sestavení, které jsou závislé na změny do binárního souboru. 
 
 ## <a name="see-also"></a>Viz také  
- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)
+
+- [Možnosti kompilátoru jazyka C#](../../../csharp/language-reference/compiler-options/index.md)  
+- [Správa vlastností projektů a řešení](/visualstudio/ide/managing-project-and-solution-properties)

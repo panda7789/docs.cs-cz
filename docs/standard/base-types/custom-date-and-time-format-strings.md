@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cf91aa52b03f5b843a11147d8f5c28ce6f7a2e83
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.openlocfilehash: ab14be82f3dedeab0a1e1e574ce5622d067f72ae
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43255581"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43724432"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 
@@ -47,7 +47,7 @@ ms.locfileid: "43255581"
  Následující tabulka popisuje specifikátory vlastního formátu data a času a zobrazuje výsledný řetězec, který je vytvořen jednotlivými specifikátory formátu. Ve výchozím nastavení odráží výsledný řetězec konvence formátování jazykové verze en-US. Pokud konkrétní specifikátor formátu vytváří lokalizovaný výsledný řetězec, je v příkladu rovněž uvedena jazyková verze, na kterou se výsledný řetězec vztahuje. Další informace o používání řetězců vlastního formátu data a času naleznete v oddílu Poznámky.
 
 | Specifikátor formátu | Popis | Příklady |
-|----------------------|-----------------|--------------|
+| ---------------------- | ----------------- | -------------- |
 |"d"|Den měsíce, od 1 do 31.<br /><br /> Další informace: [specifikátor vlastního formátu "d"](#dSpecifier).|2009-06-01T13:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 15|
 |"dd"|Den měsíce, od 01 do 31.<br /><br /> Další informace: [specifikátor vlastního formátu "dd"](#ddSpecifier).|2009-06-01T13:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 15|
 |"ddd"|Zkrácený název dne v týdnu.<br /><br /> Další informace: [specifikátor vlastního formátu "ddd"](#dddSpecifier).|2009-06-15T13:45:30 -> pondělí (en US)<br /><br /> 2009-06-15T13:45:30 -> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> logickou jednotku. (fr-FR)|
@@ -100,6 +100,7 @@ ms.locfileid: "43255581"
  Následující oddíly poskytují další informace o jednotlivých specifikátorech vlastního formátu data a času. Pokud není uvedeno jinak, každý specifikátor vytváří identickou řetězcovou reprezentaci bez ohledu na to, zda je použit s <xref:System.DateTime> hodnotu nebo <xref:System.DateTimeOffset> hodnotu.
 
 <a name="dSpecifier"></a> 
+
 ## <a name="the-d-custom-format-specifier"></a>Specifikátor vlastního formátu "d"
  Specifikátor vlastního formátu "d" představuje den v měsíci jako číslo od 1 do 31. Jednociferné číslo dne je formátováno bez počáteční nuly.
 
@@ -113,6 +114,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ddSpecifier"></a> 
+
 ## <a name="the-dd-custom-format-specifier"></a>Specifikátor vlastního formátu "dd"
  Řetězec vlastního formátu "dd" představuje den v měsíci jako číslo od 01 do 31. Jednociferné číslo dne je formátováno s počáteční nulou.
 
@@ -124,6 +126,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="dddSpecifier"></a> 
+
 ## <a name="the-ddd-custom-format-specifier"></a>Specifikátor vlastního formátu "ddd"
  Specifikátor vlastního formátu "ddd" představuje zkrácený název dne v týdnu. Lokalizovaný zkrácený název dne v týdnu je načten z <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze.
 
@@ -135,6 +138,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ddddSpecifier"></a> 
+
 ## <a name="the-dddd-custom-format-specifier"></a>Specifikátor vlastního formátu "dddd"
  Specifikátor vlastního formátu "dddd" (a libovolný počet dalších specifikátorů "d") představuje úplný název dne v týdnu. Lokalizovaný název dne v týdnu je načten z <xref:System.Globalization.DateTimeFormatInfo.DayNames%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze.
 
@@ -146,6 +150,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="fSpecifier"></a> 
+
 ## <a name="the-f-custom-format-specifier"></a>Specifikátor vlastního formátu "f"
  Specifikátor vlastního formátu "f" představuje nejvýznamnější číslici zlomku sekund. Představuje tedy desetiny sekundy v hodnotě data a času.
 
@@ -161,6 +166,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ffSpecifier"></a> 
+
 ## <a name="the-ff-custom-format-specifier"></a>Specifikátor vlastního formátu "ff"
  Specifikátor vlastního formátu "ff" představuje dvě nejvýznamnější číslice zlomku sekund. Představuje tedy setiny sekundy v hodnotě data a času.
 
@@ -172,6 +178,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="fffSpecifier"></a> 
+
 ## <a name="the-fff-custom-format-specifier"></a>Specifikátor vlastního formátu "fff"
  Specifikátor vlastního formátu "fff" představuje tři nejvýznamnější číslice zlomku sekund. Představuje tedy milisekundy v hodnotě data a času.
 
@@ -183,6 +190,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ffffSpecifier"></a> 
+
 ## <a name="the-ffff-custom-format-specifier"></a>Specifikátor vlastního formátu "ffff"
  Specifikátor vlastního formátu "ffff" představuje čtyři nejvýznamnější číslice zlomku sekund. Představuje tedy desetitisíciny sekundy v hodnotě data a času.
 
@@ -191,6 +199,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="fffffSpecifier"></a> 
+
 ## <a name="the-fffff-custom-format-specifier"></a>Specifikátor vlastního formátu "fffff"
  Specifikátor vlastního formátu "fffff" představuje pět nejvýznamnějších číslic zlomku sekund. Představuje tedy stotisíciny sekundy v hodnotě data a času.
 
@@ -199,6 +208,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ffffffSpecifier"></a> 
+
 ## <a name="the-ffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "ffffff"
  Specifikátor vlastního formátu "ffffff" představuje šest nejvýznamnějších číslic zlomku sekund. Představuje tedy miliontiny sekundy v hodnotě data a času.
 
@@ -207,6 +217,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="fffffffSpecifier"></a> 
+
 ## <a name="the-fffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "fffffff"
  Specifikátor vlastního formátu "fffffff" představuje sedm nejvýznamnějších číslic zlomku sekund. Představuje tedy desetimiliontiny sekundy v hodnotě data a času.
 
@@ -215,6 +226,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="F_Specifier"></a> 
+
 ## <a name="the-f-custom-format-specifier"></a>Specifikátor vlastního formátu "F"
  Specifikátor vlastního formátu "F" představuje nejvýznamnější číslici zlomku sekund. Představuje tedy desetiny sekundy v hodnotě data a času. Pokud je číslice nula, nezobrazí se žádná hodnota.
 
@@ -230,6 +242,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="FF_Specifier"></a> 
+
 ## <a name="the-ff-custom-format-specifier"></a>Specifikátor vlastního formátu "FF"
  Specifikátor vlastního formátu "FF" představuje dvě nejvýznamnější číslice zlomku sekund. Představuje tedy setiny sekundy v hodnotě data a času. Koncové nuly nebo čísla složená ze dvou nul však nejsou zobrazeny.
 
@@ -241,6 +254,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="FFF_Specifier"></a> 
+
 ## <a name="the-fff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFF"
  Specifikátor vlastního formátu "FFF" představuje tři nejvýznamnější číslice zlomku sekund. Představuje tedy milisekundy v hodnotě data a času. Koncové nuly nebo čísla složená ze tří nul však nejsou zobrazeny.
 
@@ -252,6 +266,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="FFFF_Specifier"></a> 
+
 ## <a name="the-ffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFF"
  Specifikátor vlastního formátu "FFFF" představuje čtyři nejvýznamnější číslice zlomku sekund. Představuje tedy desetitisíciny sekundy v hodnotě data a času. Koncové nuly nebo čísla složená ze čtyř nul však nejsou zobrazeny.
 
@@ -260,6 +275,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="FFFFF_Specifier"></a> 
+
 ## <a name="the-fffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFFF"
  Specifikátor vlastního formátu "FFFFF" představuje pět nejvýznamnějších číslic zlomku sekund. Představuje tedy stotisíciny sekundy v hodnotě data a času. Koncové nuly nebo čísla složená z pěti nul však nejsou zobrazeny.
 
@@ -268,6 +284,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="FFFFFF_Specifier"></a> 
+
 ## <a name="the-ffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFFFF"
  Specifikátor vlastního formátu "FFFFFF" představuje šest nejvýznamnějších číslic zlomku sekund. Představuje tedy miliontiny sekundy v hodnotě data a času. Koncové nuly nebo čísla složená ze šesti nul však nejsou zobrazeny.
 
@@ -276,6 +293,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="FFFFFFF_Specifier"></a> 
+
 ## <a name="the-fffffff-custom-format-specifier"></a>Specifikátor vlastního formátu "FFFFFFF"
  Specifikátor vlastního formátu "FFFFFFF" představuje sedm nejvýznamnějších číslic zlomku sekund. Představuje tedy desetimiliontiny sekundy v hodnotě data a času. Koncové nuly nebo čísla složená ze sedmi nul však nejsou zobrazeny.
 
@@ -284,6 +302,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="gSpecifier"></a> 
+
 ## <a name="the-g-or-gg-custom-format-specifier"></a>Specifikátor vlastního formátu "g" nebo "gg"
  Specifikátor vlastního formátu "g" nebo "gg" (plus libovolný počet dalších specifikátorů "g") představuje období nebo éru, jako je například n. l. Operace formátování tento specifikátor ignorují, pokud k datu, které má být formátováno, nebyl přidružen řetězec období nebo éry.
 
@@ -296,7 +315,8 @@ ms.locfileid: "43255581"
 
  [Zpět k tabulce](#table)
 
-<a name="hSpecifier"></a>
+<a name="hSpecifier"></a> 
+
 ## <a name="the-h-custom-format-specifier"></a>Specifikátor vlastního formátu "h"
  Specifikátor vlastního formátu "h" představuje hodiny jako číslo od 1 do 12. Hodiny jsou tedy reprezentovány ve 12hodinovém formátu, který počítá celé hodiny od půlnoci nebo od poledne. Konkrétní hodina po půlnoci je nerozeznatelná od stejné hodiny po poledni. Hodiny nejsou zaokrouhleny a jednociferné číslo hodiny je formátováno bez počáteční nuly. Například pro čas 5:43 dopoledne nebo odpoledne tento specifikátor vlastního formátu zobrazí hodnotu "5".
 
@@ -310,6 +330,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="hhSpecifier"></a> 
+
 ## <a name="the-hh-custom-format-specifier"></a>Specifikátor vlastního formátu "hh"
  Specifikátor vlastního formátu "hh" (plus libovolný počet dalších specifikátorů "h") představuje hodiny jako čísla od 01 do 12. Představuje tedy hodiny ve 12hodinovém formátu, který počítá celé hodiny od půlnoci nebo od poledne. Konkrétní hodina po půlnoci je nerozeznatelná od stejné hodiny po poledni. Hodiny nejsou zaokrouhleny a jednociferné číslo hodiny je formátováno s počáteční nulou. Například pro čas 5:43 dopoledne nebo odpoledne tento specifikátor formátu zobrazí hodnotu "05".
 
@@ -321,6 +342,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="H_Specifier"></a> 
+
 ## <a name="the-h-custom-format-specifier"></a>Specifikátor vlastního formátu "H"
  Specifikátor vlastního formátu "H" představuje hodiny jako číslo od 0 do 23. Představuje tedy hodiny ve 24hodinovém formátu počítaném od nuly, který počítá celé hodiny od půlnoci. Jednociferné číslo hodiny je formátováno bez počáteční nuly.
 
@@ -334,6 +356,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="HH_Specifier"></a> 
+
 ## <a name="the-hh-custom-format-specifier"></a>Specifikátor vlastního formátu "HH"
  Specifikátor vlastního formátu "HH" (plus libovolný počet dalších specifikátorů "H") představuje hodiny jako čísla od 00 do 23. Představuje tedy hodiny ve 24hodinovém formátu počítaném od nuly, který počítá celé hodiny od půlnoci. Jednociferné číslo hodiny je formátováno s počáteční nulou.
 
@@ -345,6 +368,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="KSpecifier"></a> 
+
 ## <a name="the-k-custom-format-specifier"></a>Specifikátor vlastního formátu "K"
  Specifikátor vlastního formátu "K" představuje informace o časovém pásmu hodnoty data a času. Při použití tohoto specifikátoru formátu s <xref:System.DateTime> hodnoty, výsledný řetězec určen hodnotou <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> vlastnost:
 
@@ -366,6 +390,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="mSpecifier"></a> 
+
 ## <a name="the-m-custom-format-specifier"></a>Specifikátor vlastního formátu "m"
  Specifikátor vlastního formátu "m" představuje minuty jako čísla od 0 do 59. Minuta představuje celé minuty, které uplynuly od poslední hodiny. Jednociferné číslo minuty je formátováno bez počáteční nuly.
 
@@ -379,6 +404,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="mmSpecifier"></a> 
+
 ## <a name="the-mm-custom-format-specifier"></a>Specifikátor "mm" vlastního formátu
  Specifikátor vlastního formátu "mm" (plus libovolný počet dalších specifikátorů "m") představuje minuty jako čísla od 00 do 59. Minuta představuje celé minuty, které uplynuly od poslední hodiny. Jednociferné číslo minut je formátováno s počáteční nulou.
 
@@ -390,6 +416,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="M_Specifier"></a> 
+
 ## <a name="the-m-custom-format-specifier"></a>Specifikátor vlastního formátu "M"
  Specifikátor vlastního formátu "M" představuje měsíc jako číslo od 1 do 12 (nebo od 1 do 13 pro kalendáře, které mají 13 měsíců). Jednociferné číslo měsíce je formátováno bez počáteční nuly.
 
@@ -403,6 +430,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="MM_Specifier"></a> 
+
 ## <a name="the-mm-custom-format-specifier"></a>Specifikátor vlastního formátu "MM"
  Specifikátor vlastního formátu "MM" představuje měsíc jako číslo od 01 do 12 (nebo od 1 do 13 pro kalendáře, které mají 13 měsíců). Jednociferné číslo měsíce je formátováno s počáteční nulou.
 
@@ -414,6 +442,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="MMM_Specifier"></a> 
+
 ## <a name="the-mmm-custom-format-specifier"></a>Specifikátor vlastního formátu "MMM"
  Specifikátor vlastního formátu "MMM" představuje zkrácený název měsíce. Lokalizovaný zkrácený název měsíce je načten z <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedMonthNames%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze.
 
@@ -425,6 +454,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="MMMM_Specifier"></a> 
+
 ## <a name="the-mmmm-custom-format-specifier"></a>Specifikátor vlastního formátu "MMMM"
  Specifikátor vlastního formátu "MMMM" představuje úplný název měsíce. Lokalizovaný název měsíce je načten z <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze.
 
@@ -436,6 +466,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="sSpecifier"></a> 
+
 ## <a name="the-s-custom-format-specifier"></a>Specifikátor vlastního formátu "s"
  Specifikátor vlastního formátu "s" představuje sekundy jako čísla od 0 do 59. Výsledek představuje celé sekundy, které uplynuly od poslední minuty. Jednociferné číslo sekundy je formátováno bez počáteční nuly.
 
@@ -449,6 +480,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ssSpecifier"></a> 
+
 ## <a name="the-ss-custom-format-specifier"></a>Specifikátor vlastního formátu "ss"
  Specifikátor vlastního formátu "ss" (plus libovolný počet dalších specifikátorů "s") představuje sekundy jako čísla od 00 do 59. Výsledek představuje celé sekundy, které uplynuly od poslední minuty. Jednociferné číslo sekundy je formátováno s počáteční nulou.
 
@@ -460,6 +492,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="tSpecifier"></a> 
+
 ## <a name="the-t-custom-format-specifier"></a>Specifikátor vlastního formátu "t"
  Specifikátor vlastního formátu "t" představuje první znak označení dopoledne/odpoledne. Odpovídající lokalizované označení je načteno z <xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A?displayProperty=nameWithType> nebo <xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze. Označení dopoledne (AM) se používá pro všechny hodnoty času od 0:00:00 (půlnoc) do 11:59:59.999. Označení odpoledne (PM) se používá pro všechny hodnoty času od 12:00:00 (poledne) do 23:59:59.999.
 
@@ -473,6 +506,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ttSpecifier"></a> 
+
 ## <a name="the-tt-custom-format-specifier"></a>Specifikátor vlastního formátu "tt"
  Specifikátor vlastního formátu "tt" (plus libovolný počet dalších specifikátorů "t") představuje celé označení dopoledne/odpoledne. Odpovídající lokalizované označení je načteno z <xref:System.Globalization.DateTimeFormatInfo.AMDesignator%2A?displayProperty=nameWithType> nebo <xref:System.Globalization.DateTimeFormatInfo.PMDesignator%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze. Označení dopoledne (AM) se používá pro všechny hodnoty času od 0:00:00 (půlnoc) do 11:59:59.999. Označení odpoledne (PM) se používá pro všechny hodnoty času od 12:00:00 (poledne) do 23:59:59.999.
 
@@ -486,6 +520,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="ySpecifier"></a> 
+
 ## <a name="the-y-custom-format-specifier"></a>Specifikátor vlastního formátu "y"
  Specifikátor vlastního formátu "y" představuje rok jako jednociferné nebo dvouciferné číslo. Pokud rok obsahuje více než dvě číslice, zobrazí se ve výsledku pouze dvě číslice nižšího řádu. Pokud první číslice dvoumístného čísla roku začíná nulou (například 2008), je číslo formátováno bez počáteční nuly.
 
@@ -499,6 +534,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="yySpecifier"></a> 
+
 ## <a name="the-yy-custom-format-specifier"></a>Specifikátor vlastního formátu "yy"
  Specifikátor vlastního formátu "yy" představuje rok jako dvouciferné číslo. Pokud rok obsahuje více než dvě číslice, zobrazí se ve výsledku pouze dvě číslice nižšího řádu. Pokud má dvoumístný rok méně než dvě platné číslice, je číslo doplněno počátečními nulami za účelem vytvoření dvouciferného čísla.
 
@@ -515,6 +551,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="yyySpecifier"></a> 
+
 ## <a name="the-yyy-custom-format-specifier"></a>Specifikátor vlastního formátu "yyy"
  Specifikátor vlastního formátu "yyy" představuje rok nejméně se třemi číslicemi. Pokud rok obsahuje více než tři platné číslice, budou obsaženy ve výsledném řetězci. Pokud má rok méně než tři číslice, je číslo doplněno počátečními nulami tak, aby bylo vytvořeno trojciferné číslo.
 
@@ -529,6 +566,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="yyyySpecifier"></a> 
+
 ## <a name="the-yyyy-custom-format-specifier"></a>Specifikátor vlastního formátu "yyyy"
  Specifikátor vlastního formátu "yyyy" představuje rok nejméně se čtyřmi číslicemi. Pokud rok obsahuje více než čtyři platné číslice, budou obsaženy ve výsledném řetězci. Pokud má rok méně než čtyři číslice, je číslo doplněno počátečními nulami tak, aby bylo vytvořeno čtyřciferné číslo.
 
@@ -543,6 +581,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="yyyyySpecifier"></a> 
+
 ## <a name="the-yyyyy-custom-format-specifier"></a>Specifikátor vlastního formátu "yyyyy"
  Specifikátor vlastního formátu "yyyyy" (plus libovolný počet dalších specifikátorů "y") představuje rok nejméně s pěti číslicemi. Pokud rok obsahuje více než pět platných číslic, budou obsaženy ve výsledném řetězci. Pokud má rok méně než pět číslic, je číslo doplněno počátečními nulami tak, aby bylo vytvořeno pěticiferné číslo.
 
@@ -556,6 +595,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="zSpecifier"></a> 
+
 ## <a name="the-z-custom-format-specifier"></a>Specifikátor vlastního formátu "z"
  S <xref:System.DateTime> hodnoty, specifikátor vlastního formátu "z" představuje posun časového pásma místního operačního systému od koordinovaného světového času (UTC), měřeno v hodinách. Nereflektuje hodnotu instanční <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> vlastnost. Z tohoto důvodu specifikátor formátu "z" nedoporučujeme používat s <xref:System.DateTime> hodnoty.
 
@@ -573,6 +613,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="zzSpecifier"></a> 
+
 ## <a name="the-zz-custom-format-specifier"></a>Specifikátor vlastního formátu "zz"
  S <xref:System.DateTime> hodnoty, specifikátor vlastního formátu "zz" představuje posun místního operačního systému časovém pásmu UTC, měřený v hodinách. Nereflektuje hodnotu instanční <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> vlastnost. Z tohoto důvodu specifikátor formátu "zz" není doporučeno používat s <xref:System.DateTime> hodnoty.
 
@@ -588,6 +629,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="zzzSpecifier"></a> 
+
 ## <a name="the-zzz-custom-format-specifier"></a>Specifikátor vlastního formátu "zzz"
  S <xref:System.DateTime> hodnoty, specifikátor vlastního formátu "zzz" představuje posun místního operačního systému časovém pásmu UTC, měřený v hodinách a minutách. Nereflektuje hodnotu instanční <xref:System.DateTime.Kind%2A?displayProperty=nameWithType> vlastnost. Z tohoto důvodu specifikátor formátu "zzz" není doporučeno používat s <xref:System.DateTime> hodnoty.
 
@@ -603,6 +645,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="timeSeparator"></a> 
+
 ## <a name="the--custom-format-specifier"></a>":" Vlastního formátu specifikátor
  Specifikátor vlastního formátu ":" představuje oddělovač času, který se používá k rozlišení hodin, minut a sekund. Odpovídající lokalizovaný oddělovač času je načten z <xref:System.Globalization.DateTimeFormatInfo.TimeSeparator%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze.
 
@@ -614,6 +657,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="dateSeparator"></a> 
+
 ## <a name="the--custom-format-specifier"></a>Specifikátor vlastního formátu "/"
  Specifikátor vlastního formátu "/" představuje oddělovač dat, který se používá k rozlišení roků, měsíců a dnů. Odpovídající lokalizovaný oddělovač data se načte z <xref:System.Globalization.DateTimeFormatInfo.DateSeparator%2A?displayProperty=nameWithType> vlastnost aktuální nebo zadané jazykové verze.
 
@@ -625,6 +669,7 @@ ms.locfileid: "43255581"
  [Zpět k tabulce](#table)
 
 <a name="Literals"></a> 
+
 ## <a name="character-literals"></a>Znakové literály
  Následující znaky v vlastní datum a čas formátovacím řetězci jsou vyhrazené a jsou vždy interpretováno jako formátovací znaky nebo v případě třídy ",", /, a \\, jako speciální znaky.
 
@@ -644,22 +689,24 @@ ms.locfileid: "43255581"
 
  Existují dva způsoby, jak určit, že znaky mají je interpretován jako literální znaky a ne jako vyhrazené znaky, tak, aby mohly být zahrnuty do výsledného řetězce a úspěšně parsováno ve vstupním řetězci:
 
--   Podle uvození jednotlivé vyhrazené znaky. Další informace najdete v tématu [používání řídicích znaků](#escape).
+- Podle uvození jednotlivé vyhrazené znaky. Další informace najdete v tématu [používání řídicích znaků](#escape).
+  
+  Následující příklad obsahuje literálními znaky "pst" (pro Tichomořský běžný čas) představující místního časového pásma ve formátovacím řetězci. Vzhledem k tomu, že jsou řetězce vlastního formátu "s" i "t", oba znaky musí být uvozen řídicími znaky, je interpretován jako literální znak.
+  
+  [!code-csharp-interactive[Formatting.DateAndTime.Custom#21](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx2.cs#21)]
+  [!code-vb[Formatting.DateAndTime.Custom#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx2.vb#21)]
 
-     Následující příklad obsahuje literálními znaky "pst" (pro Tichomořský běžný čas) představující místního časového pásma ve formátovacím řetězci. Vzhledem k tomu, že jsou řetězce vlastního formátu "s" i "t", oba znaky musí být uvozen řídicími znaky, je interpretován jako literální znak.
-
-     [!code-csharp-interactive[Formatting.DateAndTime.Custom#21](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx2.cs#21)]
-     [!code-vb[Formatting.DateAndTime.Custom#21](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx2.vb#21)]
-
--   Ve kterém je obsažená celý řetězec v uvozovkách nebo apostrofy. Následující příklad je podobný předchozímu, s tím rozdílem, že "pst" je uzavřena v uvozovkách k označení, že celý oddělený řetězec by měl být interpretován jako literální znak.
-
-     [!code-csharp-interactive[Formatting.DateAndTime.Custom#22](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
-     [!code-vb[Formatting.DateAndTime.Custom#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]
+- Ve kterém je obsažená celý řetězec v uvozovkách nebo apostrofy. Následující příklad je podobný předchozímu, s tím rozdílem, že "pst" je uzavřena v uvozovkách k označení, že celý oddělený řetězec by měl být interpretován jako literální znak.
+  
+  [!code-csharp-interactive[Formatting.DateAndTime.Custom#22](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
+  [!code-vb[Formatting.DateAndTime.Custom#22](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]
 
 <a name="Notes"></a> 
+
 ## <a name="notes"></a>Poznámky
 
 <a name="UsingSingleSpecifiers"></a> 
+
 ### <a name="using-single-custom-format-specifiers"></a>Pomocí jednoduchých specifikátorů vlastního formátu
  Řetězec vlastního formátu data a času se skládá ze dvou nebo několika znaků. Metody formátování data a času interpretují jakýkoli řetězec s jediným znakem jako řetězec standardního formátu data a času. Pokud nerozpoznají znak jako platný specifikátor formátu, vyvolají <xref:System.FormatException>. Například řetězec formátu, který se skládá pouze ze specifikátoru "h", je interpretován jako řetězec standardního formátu data a času. V tomto konkrétním případě je však výjimka vyvolána, protože neexistuje žádný "h" standardní specifikátor data a timeformat.
 
@@ -671,6 +718,7 @@ ms.locfileid: "43255581"
  [!code-vb[Formatting.DateAndTime.Custom#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/literal1.vb#16)]
 
 <a name="escape"></a> 
+
 ### <a name="using-the-escape-character"></a>Použití řídicích znaků
  Znaky "d", "f", "F", "g", "h", "H", "K", "m", "M", "s", "t", "y", "z", ":", nebo "/" v řetězci formátu jsou interpretovány jako specifikátory vlastního formátu, nikoli jako literální znaky. Chcete-li zamezit interpretaci jako specifikátor formátu znaku, lze před zpětným lomítkem (\\), což je řídicí znak. Řídicí znak označuje, že následující znak je literální znak, který by měl být zařazen do výsledného řetězce beze změny.
 

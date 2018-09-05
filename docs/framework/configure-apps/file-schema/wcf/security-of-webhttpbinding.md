@@ -5,11 +5,11 @@ ms.assetid: 727cf3d2-6f56-48ad-a59f-ba423edb9c83
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 52146fa08ec63ef63fa996cdc09f9185b9f42e02
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43560257"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43747181"
 ---
 # <a name="ltsecuritygt-of-ltwebhttpbindinggt"></a>&lt;security&gt; – &lt;webHttpBinding&gt;
 Určuje koncový bod nakonfigurovaný s požadavky na zabezpečení [ \<wsHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md).  

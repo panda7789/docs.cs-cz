@@ -1,17 +1,17 @@
 ---
 title: Abstraktní třídy (F#)
-description: 'Další informace o F # abstraktní třídy, které nechte některé nebo všechny členy Neimplementovaný a představují běžné funkce různého typu typy objektů.'
+description: 'Další informace o F # abstraktní třídy, které ponechte některé nebo všechny členy neimplementované a představují běžné funkce různé typy objektů.'
 ms.date: 05/16/2016
-ms.openlocfilehash: c472e9d164ae78bde716bb5102e54f4e698b61b8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7e1bb9daca7e8a3b442cd7fb02ef99bb6a2085cb
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562386"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745447"
 ---
 # <a name="abstract-classes"></a>Abstraktní třídy
 
-*Abstraktní třídy* jsou třídy, která opouští některé nebo všechny členy Neimplementovaný, tak, aby implementace lze zadat odvozené třídy.
+*Abstraktní třídy* jsou třídy, které ponechte některé nebo všechny členy neimplementované, takže může být poskytnuty implementace z odvozených tříd.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,21 +27,22 @@ abstract member member-name : type-signature
 ```
 
 ## <a name="remarks"></a>Poznámky
-V objektově orientované programování abstraktní třída se používá jako základní třída hierarchie a představuje běžné funkce různého typu typy objektů. Jako název "abstraktní" znamená, abstraktní třídy často neodpovídají přímo na konkrétní entity v doméně problému. Však představují co mnoho různých konkrétní entit mají společnou.
 
-Abstraktní třídy musí mít `AbstractClass` atribut. Může být implementováno a Neimplementovaný členy. Použití podmínek *abstraktní* při použití třídy je stejný jako jinými jazyky rozhraní .NET; však použití podmínek *abstraktní* při použití metody (a vlastnosti) je mírně liší v F # z jeho použijte v jinými jazyky rozhraní .NET. V F #, když je označené jako metodu `abstract` – klíčové slovo, to znamená, že člen má položku, označuje jako *virtuální odesílání slotu*, do interní tabulky pro tento typ virtuální funkce. Jinými slovy, že je metoda virtuální, i když `virtual` – klíčové slovo se nepoužívá v jazyce F #. Klíčové slovo `abstract` se používá pro virtuální metody bez ohledu na to, zda je metoda implementována. Prohlášení o slot virtuální odesílání je oddělené od definici metody pro tento slot odesílání. Proto ekvivalentní F # virtuální metoda deklarace a definice v jiném jazyce .NET je kombinací deklarace abstraktní metody i samostatné definice, pomocí `default` – klíčové slovo nebo `override` – klíčové slovo. Další informace a příklady naleznete v tématu [metody](members/methods.md).
+Objektově orientované programování v abstraktní třída se používá jako základní třída v hierarchii a představuje běžné funkce různé typy objektů. Jak již název "abstraktní" napovídá, abstraktní třídy často nemusí odpovídat přímo na konkrétní entity v doméně problému. Však představují co mnoho entit různých konkrétní mají společnou.
 
-Třída je považován za abstraktní pouze v případě, že existují abstraktní metody, které jsou deklarované, ale není definován. Proto tříd, které mají abstraktní metody nejsou nezbytně abstraktní třídy. Pokud třída má undefined abstraktní metody, nepoužívejte **abstractclass –** atribut.
+Abstraktní třídy musí mít `AbstractClass` atribut. Může být implementována a neimplementované členy. Používání pojmů *abstraktní* při použití u třídy je stejný jako v jiných jazycích .NET, ale používání pojmů *abstraktní* při použití metody (a vlastnosti) je trochu jiné v jazyce F # z jeho použijte v jiných jazycích rozhraní .NET. V jazyce F #, pokud metoda je označena `abstract` – klíčové slovo, to znamená, že člen má záznam, označované jako *virtuální odeslání slotu*, do interní tabulky virtuálních funkcí pro daný typ. Jinými slovy, metoda je virtuální, i když `virtual` – klíčové slovo v jazyce F # nepoužívá. Klíčové slovo `abstract` se používá pro virtuální metody bez ohledu na to, zda je metoda implementována. Deklarace slot virtuální odeslání nesouvisí s definicí metody pro tento slot odeslání. Proto ekvivalent F # virtuální metoda deklarace a definice v jiném jazyce .NET je kombinace deklarací abstraktní metody a samostatné definice, buď `default` – klíčové slovo nebo `override` – klíčové slovo. Další informace a příklady najdete v tématu [metody](members/methods.md).
 
-V předchozích syntaxi *modifikátor dostupnosti* může být `public`, `private` nebo `internal`. Další informace najdete v tématu [řízení přístupu](access-control.md).
+Třída je považován za abstraktní pouze v případě, že existují abstraktní metody, které jsou deklarovány, ale není definovaný. Třídy obsahující abstraktní metody proto nejsou nutně abstraktní třídy. Pokud třída má nedefinované abstraktní metody, nepoužívejte **AbstractClass** atribut.
 
-Jako u jiných typů, může mít abstraktní třídy základní třídy a jeden nebo více základní rozhraní. Každý základní třídy nebo rozhraní se zobrazí na samostatném řádku společně s `inherit` – klíčové slovo.
+V předchozí syntaxi *modifikátor dostupnosti* může být `public`, `private` nebo `internal`. Další informace najdete v tématu [řízení přístupu](access-control.md).
 
-Definici typu abstraktní třídy mohou obsahovat plně definované členy, ale může také obsahovat abstraktní členy. Syntaxe pro abstraktní členy se zobrazí samostatně v předchozí syntaxi. V této syntaxe *podpis typu* člena je seznam, který obsahuje parametr typy v pořadí a návratové typy oddělená `->` tokeny nebo `*` tokeny podle potřeby pro curryfikované a tupled Parametry. Syntaxe pro podpisy člen abstraktní typ je stejný jako použitého v podpisu souborů a zobrazená technologii IntelliSense v editoru kódu sady Visual Studio.
+Stejně jako u jiných typů abstraktní třídy může mít základní třídu a jeden nebo více základní rozhraní. Každá základní třídu nebo rozhraní se objeví na samostatném řádku spolu s `inherit` – klíčové slovo.
 
-Následující kód ukazuje abstraktní třídu tvar, který má jinou než abstraktní odvozené třídy hranaté a kruh. Příklad ukazuje postup používání abstraktních tříd, metod a vlastností. V příkladu představuje abstraktní třídu tvar běžných elementech kruh konkrétní entity a hranaté. Běžné funkce všech tvarů (v dvourozměrná souřadnicový systém) jsou abstrahované odhlašování do třídy tvaru: pozici na mřížky, úhel otočení a vlastnosti oblasti a hraniční. To může být přepsána, s výjimkou pozice, chování, které nelze změnit jednotlivých tvarů.
+Definice typu abstraktní třídy mohou obsahovat členy plně definovaná, ale může také obsahovat abstraktní členy. Syntaxe pro abstraktní členy se zobrazí samostatně v předchozí syntaxi. V této syntaxe *podpis typu* členu je seznam, který obsahuje parametr typů v pořadí a návratové typy oddělené `->` tokeny a/nebo `*` tokeny podle potřeby pro curryfikované a řazené kolekce členů Parametry. Syntaxe pro signatury typů abstraktní člen je stejná jako, který používá v podpisu souborů a, který se zobrazí v IntelliSense v editoru kódu sady Visual Studio.
 
-Jako kruh třída, která je otočení neutrální z důvodu jeho symetrie lze přepsat metodu otočení. Proto v třídě kruh metodu otočení nahrazuje metodu, která se nic nestane.
+Následující kód znázorňuje abstraktní třídu obrazec, který má dvě neabstraktní odvozené třídy, hranaté a kruh. Tento příklad ukazuje, jak použít abstraktní třídy, metody a vlastnosti. V tomto příkladu představuje abstraktní třídu tvar společné prvky konkrétní entity kruhu a hranaté. Společné funkce všech tvarů (v dvojrozměrné souřadnice systému) do třídy tvar abstrahují out: pozice v mřížce, úhel otáčení a obsah a obvod vlastnosti. Ty lze přepsat, s výjimkou pozici, chování, které nelze změnit jednotlivých tvarů.
+
+Stejně jako v kruhu třídy, která je neutrální otočení z důvodu jeho symetrie lze přepsat metodu otočení. Proto ve třídě kruh otočení metoda nahrazuje metodu, která nemá žádný účinek.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2901.fs)]
 
@@ -54,11 +55,9 @@ Area of Square: 100.000000
 Area of Circle: 78.539816
 ```
 
-## <a name="see-also"></a>Viz také
-[Třídy](classes.md)
+## <a name="see-also"></a>Viz také:
 
-[Členové](members/index.md)
-
-[Metody](members/methods.md)
-
-[Vlastnosti](members/Properties.md)
+- [Třídy](classes.md)
+- [Členové](members/index.md)
+- [Metody](members/methods.md)
+- [Vlastnosti](members/Properties.md)

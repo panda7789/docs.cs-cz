@@ -5,11 +5,11 @@ ms.assetid: ad4ba56d-3bcb-4c10-ba90-1cc66e2175a1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 47ed75d377814a740edece2b6a69e44acbd8ef0c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43424369"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43747616"
 ---
 # <a name="ltpropertygt-element-net-native"></a>Element &lt;Property&gt; (.NET Native)
 Vlastnost se týká zásady reflexe modulu runtime.  

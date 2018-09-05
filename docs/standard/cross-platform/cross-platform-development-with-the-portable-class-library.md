@@ -10,11 +10,11 @@ ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 628c571ce645710482a29c813adb4fe1a59fd349
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43554633"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745405"
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>Vývoj napříč platformami pomocí přenosné knihovny tříd
 Typ projektu knihovny přenosných tříd rozhraní .NET Framework v sadě Visual Studio pomáhá rychle a snadno vytvářet aplikace pro různé platformy a knihovny pro platformy Microsoft.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - detecting WPF presence [WPF]
 ms.assetid: 7f71d652-1749-4379-945a-aa2e3994cb43
 ms.openlocfilehash: 27f856b895f48dc2365a1721dbc90294269899c7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43562852"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43746377"
 ---
 # <a name="how-to-detect-whether-the-net-framework-30-is-installed"></a>Postupy: Zjištění, zda je instalována platforma .NET Framework 3.0
 Správci mohli nasadit aplikace rozhraní Microsoft .NET Framework v systému, se musí nejdřív ověřit, zda modul runtime rozhraní .NET Framework je k dispozici. Toto téma obsahuje skript napsané v HTML/JavaScript, mohou správci zjistit, jestli je rozhraní .NET Framework v systému k dispozici.  

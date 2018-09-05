@@ -7,11 +7,11 @@ helpviewer_keywords:
 - My namespace [Visual Basic], extending
 ms.assetid: fd89c54b-0290-4c50-95a3-ff17d4487a21
 ms.openlocfilehash: 4212f58c39f63be6ba20c3b79e5d9c98d0615c5e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43565239"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745370"
 ---
 # <a name="package-and-deploy-custom-my-extensions-visual-basic"></a>Zabalení a nasazení vlastních rozšíření oboru názvů My (Visual Basic)
 

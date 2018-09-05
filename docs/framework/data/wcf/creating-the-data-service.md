@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
 ms.openlocfilehash: d7ab227a19eeb9bf054700f8d932b75cf3c1ddc9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43417824"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43772738"
 ---
 # <a name="create-the-data-service"></a>Vytvoření datové služby
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: eea2bb524496a3db22146586df323437d9f84242
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 619b9167b9b96be2908d833403379e4c2fe78ba5
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396728"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43746915"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Vlastnosti rozhraní (Průvodce programováním v C#)
 Vlastnosti mohou být deklarovány na [rozhraní](../../../csharp/language-reference/keywords/interface.md). Následuje příklad přistupující objekt vlastnosti rozhraní:  
@@ -50,10 +50,11 @@ Vlastnosti mohou být deklarovány na [rozhraní](../../../csharp/language-refer
   
  `Employee name: Hazem Abolrous`  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
- [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+- [Porovnání mezi vlastnostmi a indexery](../../../csharp/programming-guide/indexers/comparison-between-properties-and-indexers.md)  
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [Rozhraní](../../../csharp/programming-guide/interfaces/index.md)

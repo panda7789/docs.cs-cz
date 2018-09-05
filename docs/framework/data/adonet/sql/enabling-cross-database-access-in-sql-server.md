@@ -2,12 +2,12 @@
 title: Povolení přístupu mezi databázemi na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 10663fb6-434c-4c81-8178-ec894b9cf895
-ms.openlocfilehash: 2e041a6c90940ad33e17d83e5f0400d05c645ada
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 7018a500f777935d35bac0010c07258a313b08fe
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934560"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43742108"
 ---
 # <a name="enabling-cross-database-access-in-sql-server"></a>Povolení přístupu mezi databázemi na SQL serveru
 Vlastnictví mezidatabázové řetězení nastane, pokud postup v jedné databázi závisí na objektech v jiné databázi. Řetěz vlastnictví mezi databázemi funguje stejným způsobem jako v rámci jedné databáze řetězení vlastnictví, s tím rozdílem, že řetěz nepřerušený vlastnictví vyžaduje, aby všichni vlastníci objektu jsou namapovány na stejný přihlašovací účet. Pokud zdrojový objekt v databázi zdrojové a cílové objektů v cílové databáze jsou vlastněny stejný přihlašovací účet, nekontroluje systém SQL Server oprávnění u cílové objektů.  
@@ -48,7 +48,7 @@ ALTER DATABASE Database2 SET DB_CHAINING ON;
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Rozšíření databáze zosobnění s použitím EXECUTE AS](http://msdn.microsoft.com/library/ms188304\(SQL.105\).aspx) a [různé možnost řetězení vlastnictví DB](/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option)Online knihy SQL Server.|Témata popisují postup konfigurace vlastnictví mezidatabázové řetězení pro instanci systému SQL Server.|  
+|[Rozšíření databáze zosobnění s použitím EXECUTE AS](https://msdn.microsoft.com/library/ms188304\(SQL.105\).aspx) a [různé možnost řetězení vlastnictví DB](/sql/database-engine/configure-windows/cross-db-ownership-chaining-server-configuration-option)Online knihy SQL Server.|Témata popisují postup konfigurace vlastnictví mezidatabázové řetězení pro instanci systému SQL Server.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
@@ -56,4 +56,4 @@ ALTER DATABASE Database2 SET DB_CHAINING ON;
  [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
  [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
  [Podepisování uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/signing-stored-procedures-in-sql-server.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

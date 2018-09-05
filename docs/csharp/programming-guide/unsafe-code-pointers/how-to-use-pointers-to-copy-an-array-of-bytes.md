@@ -6,11 +6,11 @@ helpviewer_keywords:
 - arrays [C#], byte
 - pointers [C#], to copy bytes
 ms.openlocfilehash: 061bbbc4557cb25d39edfb1f6235bb065a5de7bd
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541455"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748100"
 ---
 # <a name="how-to-use-pointers-to-copy-an-array-of-bytes--c-programming-guide"></a>Postupy: Použití ukazatelů ke kopírování pole bajtů (Průvodce programováním v C#)
 

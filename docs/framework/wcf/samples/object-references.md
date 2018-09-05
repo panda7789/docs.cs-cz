@@ -3,11 +3,11 @@ title: Odkazy na objekty
 ms.date: 03/30/2017
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
 ms.openlocfilehash: 1aa8b1c9d135186dba9e4da75f0c7cb9297d8e5c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43462282"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43724406"
 ---
 # <a name="object-references"></a>Odkazy na objekty
 Tento příklad ukazuje, jak předat objekty podle odkazů mezi serverem a klientem. Ukázka používá simulované *sociálních sítí*. Sociální síť se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých každý typu friend je instance `Person` třídy s vlastním seznamu přátel. Tím se vytvoří graf objektů. Služba zpřístupňuje operace v těchto sociálních sítích.  

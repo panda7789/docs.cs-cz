@@ -3,11 +3,11 @@ title: 'Postupy: Stream fragmentů XML pomocí přístup k informacím hlavičky
 ms.date: 07/20/2015
 ms.assetid: 7f242770-b0c7-418d-894b-643215e1f8aa
 ms.openlocfilehash: 9c141b21a009f836fbf385c1f4179e288ec6c3b5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43671170"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745866"
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Postupy: Stream fragmentů XML pomocí přístup k informacím hlavičky (C#)
 Někdy je nutné číst libovolně velké soubory XML a zapisovat vaše aplikace tak, aby nároky na paměť pro aplikace předvídatelné. Pokud se pokusíte k naplnění stromu XML pomocí velkého souboru XML, využití paměti bude přímo úměrná velikosti souboru – to znamená, nadměrné. Proto měli používat streamování technika místo.  

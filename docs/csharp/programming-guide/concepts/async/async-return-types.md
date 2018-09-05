@@ -2,12 +2,12 @@
 title: Asynchronní návratové typy (C#)
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: 9b0ee1c2e9925a1caffca6b7fb83eff34003246b
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 3d3c7d610dd1287d2c7284a5edd9c92810a74dba
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43387576"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745850"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typy (C#)
 Asynchronní metody může mít tyto návratové typy:
@@ -77,9 +77,10 @@ Poskytuje rozhraní .NET <xref:System.Threading.Tasks.ValueTask%601?displayPrope
   
 [!code-csharp[return-value](../../../../../samples/snippets/csharp/programming-guide/async/async-valuetask.cs)]
 
-## <a name="see-also"></a>Viz také:  
-<xref:System.Threading.Tasks.Task.FromResult%2A>   
-[Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
-[Tok řízení v asynchronních programech (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)   
-[asynchronní](../../../../csharp/language-reference/keywords/async.md)   
-[await](../../../../csharp/language-reference/keywords/await.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Threading.Tasks.Task.FromResult%2A>   
+- [Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)   
+- [Tok řízení v asynchronních programech (C#)](../../../../csharp/programming-guide/concepts/async/control-flow-in-async-programs.md)   
+- [async](../../../../csharp/language-reference/keywords/async.md)   
+- [await](../../../../csharp/language-reference/keywords/await.md)

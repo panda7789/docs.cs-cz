@@ -15,11 +15,11 @@ helpviewer_keywords:
 - ListBox control [Windows Forms], creating lookup tables
 ms.assetid: 4ce35f12-1f4e-4317-92d1-af8686a8cfaa
 ms.openlocfilehash: b719f2112aac1292b668fe199d48de4b0b60ed21
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43659135"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773086"
 ---
 # <a name="how-to-create-a-lookup-table-for-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Postupy: Vytvoření vyhledávací tabulky pro ovládací prvek Windows Forms ComboBox, ListBox nebo CheckedListBox
 Někdy je užitečné zobrazit data ve formátu uživatelsky přívětivé ve formuláři Windows Forms, ale ukládat data ve formátu, který má více smysl pro váš program. Například může zobrazit formulář objednávky pro potravin položky nabídky podle názvu v seznamu. Tabulka dat záznam pořadí by ale obsahovat jedinečné identifikační čísla představující potravinovém. Příklad toho, jak ukládat a zobrazovat data formulář objednávky potravin naleznete v následujících tabulkách.  

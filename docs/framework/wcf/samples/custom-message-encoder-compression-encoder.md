@@ -2,70 +2,70 @@
 title: 'Vlastní kodér zpráv: Kompresní kodér'
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 5dc665da3b28a98f1b3016d38ce706bf77dce06f
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: b70875e385fa32256476f6d1ae53e8cc1f5ff9de
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808738"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43735871"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>Vlastní kodér zpráv: Kompresní kodér
-Tento příklad ukazuje, jak implementovat vlastní kodér pomocí platformy Windows Communication Foundation (WCF).  
+Tento příklad ukazuje, jak implementovat vlastní kodér na platformě Windows Communication Foundation (WCF).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- Tato ukázka se skládá z konzoly programu klienta (.exe), služba s vlastním hostováním program konzoly (.exe) a knihovny kodér zpráv komprese (.dll). Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi. Kontrakt je definována `ISampleServer` rozhraní, které zpřístupňuje základní řetězec zobrazování operací (`Echo` a `BigEcho`). Klient zadává synchronní požadavků pro danou operaci a odpovědi služby opakováním zprávy zpět do klienta. Činnost klienta a služby je viditelná v konzole windows. Účelem této ukázce je ukazují, jak psát vlastní kodér a předvedení dopad komprese zprávy v drátové síti. Instrumentace můžete přidat do kompresní kodér zpráv vypočítat velikost zprávy, doba zpracování nebo obojí.  
+ Tento příklad se skládá z programu konzoly klienta (.exe), v místním prostředí služby konzolový program (.exe) a komprese zprávy kodér knihovny (.dll). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ISampleServer` rozhraní, které zpřístupňuje základní řetězec přečtou operací (`Echo` a `BigEcho`). Klient podá synchronní žádosti pro danou operaci a odpovědi služby opakováním zprávy zpět do klienta. Činnost klienta a služby je viditelný v oknech konzoly. Záměrem tohoto příkladu je ukazují, jak psát vlastní kodér a předvádět dopady kompresi zpráv na lince. Přidat instrumentaci na kompresní kodér zprávy k výpočtu velikosti zpráv a doba zpracování.  
   
 > [!NOTE]
->  V rozhraní .NET Framework 4 automatickou dekompresi byla zapnuta klienta WCF Pokud server, který odesílá odpověď komprimované (vytvořeny pomocí algoritmu, například GZip a Deflate). Pokud služba je Web hostovaný v Internet Information Server (IIS), může služba IIS konfigurována pro službu pro odeslání komprimované odpovědi. Tato ukázka lze použít, pokud je požadavkem udělat komprese a dekomprese na klienta a služby, nebo pokud služba se hostuje sama.  
+>  V rozhraní .NET Framework 4 Automatická dekomprese byla zapnuta klienta WCF na serveru je odesílání zkomprimovanou odpověď (vytvořenou pomocí algoritmu, jako je například GZip nebo Deflate). Pokud je služba Web hostovaný v Internet Information Server (IIS), může služba IIS konfigurována na odeslání komprimované odpovědi služby. Tato ukázka je možné, pokud je požadavkem pro kompresi a dekompresi na klienta a služby, nebo jestli je služba v místním prostředí.  
   
- Ukázka ukazuje, jak vytvářet a integrovat vlastní kodér zpráv do aplikace WCF. Knihovna GZipEncoder.dll je nasazeno pomocí klienta a služby. Tento příklad také znázorňuje dopad kompresi zprávy. Kód v GZipEncoder.dll ukazuje následující:  
+ Vzorek ukazuje, jak sestavit a integrovat vlastní kodér zpráv do aplikace WCF. Knihovna GZipEncoder.dll se nasazuje s klientem a službou. Tato ukázka předvádí, dopad komprese zprávy. Kód v GZipEncoder.dll ukazuje následující:  
   
--   Vytváření vlastní kodér a kodér objekt pro vytváření.  
+-   Vytváření vlastních encoder a kodér objekt pro vytváření.  
   
--   Vývoj pro vlastní kodér prvku vazby.  
+-   Vývoj element vazby pro vlastní kodér.  
   
--   Pomocí konfigurace vlastních vazeb pro integraci prvky vlastní vazby.  
+-   Pomocí konfigurace vlastních vazeb pro integraci elementů vlastní vazby.  
   
--   Vývoj vlastní konfigurace obslužná rutina umožní konfiguraci souboru elementu vlastní vazby.  
+-   Vývoj vlastní obslužnou rutinu umožní konfiguraci souboru vlastní prvek vazby.  
   
- Jak je uvedeno dříve, existuje několik vrstev, které jsou implementované v vlastní kodér. Abychom vám lépe předvedli vztah mezi každou z těchto úrovní, zjednodušené pořadí událostí, pro spuštění služby je v následujícím seznamu:  
+ Jak je uvedeno dříve, existuje několik vrstev, které jsou implementovány v vlastní kodér. Abychom vám lépe předvedli vztah mezi každou z těchto úrovní, zjednodušené pořadí událostí pro spuštění služby je v následujícím seznamu:  
   
-1.  Server se spustí.  
+1.  Spustí se server.  
   
 2.  Informace o konfiguraci je pro čtení.  
   
-    1.  Konfigurace služby zaregistruje obslužná rutina vlastní konfigurace.  
+    1.  Konfigurace služby registruje rutiny vlastní konfigurace.  
   
     2.  Hostitel služby je vytvořen a otevřít.  
   
-    3.  Vlastní konfigurace element vytvoří a vrátí prvek vlastní vazby.  
+    3.  Vlastní konfigurace pro element vytvoří a vrátí prvek vlastní vazby.  
   
-    4.  Vlastní vazby element vytvoří a vrátí objekt pro vytváření kodér zpráv.  
+    4.  Vlastní prvek vazby vytvoří a vrátí objekt pro vytváření kodéru zpráv.  
   
-3.  Je přijata zpráva.  
+3.  Příjmu zprávy.  
   
-4.  Objekt pro vytváření zpráv kodér vrátí kodéru zprávy pro čtení ve zprávě a zápis na odpověď.  
+4.  Objekt pro vytváření kodéru zpráv vrátí kodéru zprávy ve zprávě pro čtení a zápis odpovědi.  
   
-5.  Kodér vrstvy je implementovaný jako objekt pro vytváření tříd. Pouze factory kodér – třída musí být veřejně zpřístupněny pro vlastní kodér. Vrátí objekt factory prvku vazby při <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601> je vytvořen objekt. Zpráva kodéry můžou fungovat v režimu ve vyrovnávací paměti nebo streamování. Tento příklad znázorňuje režim s vyrovnávací pamětí a streamování režimu.  
+5.  Kodér vrstvy je implementovaný jako objekt pro vytváření tříd. Pouze kodéru pro vytváření tříd musí být veřejně vystavené pro vlastní kodér. Objekt factory, který je vrácený element vazby při <xref:System.ServiceModel.ServiceHost> nebo <xref:System.ServiceModel.ChannelFactory%601> je vytvořen objekt. Zpráva kodérů můžou fungovat v režimu ve vyrovnávací paměti nebo datových proudů. Tato ukázka předvádí, jak ve vyrovnávací paměti režim a režim tvorby datového proudu.  
   
- Pro každý režim je doplňujícími `ReadMessage` a `WriteMessage` metoda na abstraktní `MessageEncoder` třídy. Většina práce kódování probíhá v těchto metod. Ukázka zabalí existující text a zprávy v binární kodérů. To umožňuje vzorku, který se delegovat čtení a zápis síťové vyjádření zpráv vnitřní kodéru a umožňuje kompresní kodér komprimovat nebo dekomprimovat výsledky. Protože neexistuje žádný kanál pro kódování zprávy, jedná se o pouze model pro používání více kodéry ve WCF. Jakmile zpráva byla dekomprimovat, Výsledná zpráva je přidána na zásobník pro zásobník kanálu pro zpracování. Během komprese je výsledný komprimované zpráva zapsána přímo na zadaný datový proud.  
+ Pro oba režimy existuje je v doprovodné `ReadMessage` a `WriteMessage` metoda abstract `MessageEncoder` třídy. Většina kódování práce probíhá v těchto metod. Ukázka zabalí existující text a zprávy v binární kodérů. To umožňuje vzorku pro delegování čtení a zápis síťové vyjádření zpráv do vnitřní kodér a kompresní kodér ke kompresi a dekompresi výsledky. Protože neexistuje žádný kanál pro kódování zprávy, jde o jediný model pro použití více kodérů ve službě WCF. Jakmile byl dekomprimován zprávy, se předá výslednou zprávu zásobníku do zásobníku kanál pro zpracování. Během komprese je výsledný komprimované zprávy zapisují přímo do datového proudu k dispozici.  
   
- Tato ukázka používá pomocné metody (`CompressBuffer` a `DecompressBuffer`) provést převod z vyrovnávací paměti do datových proudů používat `GZipStream` třídy.  
+ Tato ukázka používá pomocné metody (`CompressBuffer` a `DecompressBuffer`) k provedení převodu z vyrovnávací paměti do datových proudů používat `GZipStream` třídy.  
   
- Ve vyrovnávací paměti `ReadMessage` a `WriteMessage` třídy Zkontrolujte použití `BufferManager` třídy. Kodér je dostupné pouze prostřednictvím objektu pro vytváření kodér. Abstraktní `MessageEncoderFactory` třída poskytuje vlastnost s názvem `Encoder` pro přístup k aktuální kodér a metodu s názvem `CreateSessionEncoder` pro vytvoření kodér, který podporuje relací. Takové kodér lze ve scénáři, kde kanál podporuje relací, se seřadí a je spolehlivé. Tento scénář umožňuje optimalizace v každé relaci data zapsaná do sítě. Pokud to není žádoucí, základní metody by neměla být přetížený. `Encoder` Vlastnost poskytuje mechanismus pro přístup k méně relace kodér a výchozí implementaci `CreateSessionEncoder` vrátí metoda hodnotu vlastnosti. Protože ukázku zabalí existující kodér zajistit kompresi, `MessageEncoderFactory` implementace přijme `MessageEncoderFactory` představující kodér vnitřní objekt pro vytváření.  
+ Ve vyrovnávací paměti `ReadMessage` a `WriteMessage` třídy Zkontrolujte použití `BufferManager` třídy. Kodér je přístupný pouze prostřednictvím kodér objekt pro vytváření. Abstraktní `MessageEncoderFactory` třída poskytuje vlastnost s názvem `Encoder` pro přístup k aktuální kodér a metodu s názvem `CreateSessionEncoder` pro vytvoření encoder, který podporuje relací. Takové kodéru lze použít ve scénáři, kde kanál podporuje relace, je seřazený a spolehlivosti. Tento scénář umožňuje optimalizace v obou relacích data zapsaná do přenosu. Pokud to není žádoucí, by neměl přetížit základní metodu. `Encoder` Vlastnost poskytuje mechanismus pro přístup k relaci bez kodér a výchozí implementaci `CreateSessionEncoder` vrátí metoda hodnotu vlastnosti. Protože vzorku zabalí existující encoder stanovit komprese, `MessageEncoderFactory` implementace přijímá `MessageEncoderFactory` , který představuje objekt factory vnitřní kodér.  
   
- Teď, když jsou definovány kodér a kodér factory, můžete použít s klienta WCF a služby. Tyto kodéry však musí být přidaný do zásobníku kanálu. Můžete odvození třídy z <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.ChannelFactory%601> třídy a přepsání `OnInitialize` metody pro tento objekt pro vytváření kodér přidat ručně. Můžete také vystavit objektu pro vytváření kodér prostřednictvím vlastní vazby elementu.  
+ Teď, když jsou definovány encoder a kodér objekt pro vytváření, můžete použít pomocí klienta WCF a služeb. Tyto kodéry však musíte přidat do zásobníku kanálu. Lze odvodit z třídy <xref:System.ServiceModel.ServiceHost> a <xref:System.ServiceModel.ChannelFactory%601> třídy a přepsat `OnInitialize` metody pro tento objekt pro vytváření kodér přidat ručně. Můžete také zveřejnit factory kodér prostřednictvím vlastní prvek vazby.  
   
- Pokud chcete vytvořit nové vlastní vazby element, odvození třídy z <xref:System.ServiceModel.Channels.BindingElement> třídy. Existuje však několik typů elementů vazby. Aby se zajistilo, že element vlastní vazby rozpoznán jako element vazby kódování zprávy, je také nutné implementovat <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> Zpřístupní metodu pro vytvoření nového vytváření kodér zpráv (`CreateMessageEncoderFactory`), které je implementováno vrátit instanci objektu pro vytváření odpovídající kodér zpráv. Kromě toho <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> má vlastnost označující adresování verze. Protože tato ukázka zabalí existující kodéry, Vzorová implementace také zabalí existující kodér elementů vazby a trvá vnitřní kodér vazby element jako parametr pro konstruktor a zpřístupňuje prostřednictvím vlastnosti. Následující vzorový kód ukazuje implementaci `GZipMessageEncodingBindingElement` třídy.  
+ Chcete-li vytvořit nové vlastní prvek vazby, odvoďte třídu z <xref:System.ServiceModel.Channels.BindingElement> třídy. Existuje však několik typů elementů vazby. Aby bylo zajištěno, že je vlastní prvek vazby rozpoznán jako element vazby kódování zprávy, je také nutné implementovat <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>. <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> Zpřístupní metodu pro vytvoření nového factory kodéru zpráv (`CreateMessageEncoderFactory`), které je implementováno s cílem vrátit instanci objektu pro vytváření odpovídající kodéru zpráv. Kromě toho <xref:System.ServiceModel.Channels.MessageEncodingBindingElement> má vlastnost, která má označení verze adresování. Protože tato ukázka zabalí existující kodérů, ukázková implementace také zabalí existující kodér elementů vazby a přebírá kodéru vnitřní element vazby jako parametr do konstruktoru a zpřístupní prostřednictvím vlastnosti. Následující ukázkový kód ukazuje implementaci `GZipMessageEncodingBindingElement` třídy.  
   
 ```  
 public sealed class GZipMessageEncodingBindingElement   
@@ -167,7 +167,7 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
 }  
 ```  
   
- Všimněte si, že `GZipMessageEncodingBindingElement` třída implementuje `IPolicyExportExtension` rozhraní, tak, aby tento element vazeb se dá vyexportovat jako zásada v metadatech, jak je znázorněno v následujícím příkladu.  
+ Všimněte si, že `GZipMessageEncodingBindingElement` implementuje třída `IPolicyExportExtension` rozhraní, takže tento element vazby se dá exportovat jako zásady v metadatech, jak je znázorněno v následujícím příkladu.  
   
 ```xml  
 <wsp:Policy wsu:Id="BufferedHttpSampleServer_ISampleServer_policy">  
@@ -181,7 +181,7 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
 </wsp:Policy>  
 ```  
   
- `GZipMessageEncodingBindingElementImporter` Třída implementuje `IPolicyImportExtension` rozhraní, tato třída Importuje zásady pro `GZipMessageEncodingBindingElement`. Nástroje svcutil.exe lze použít pro import zásady do konfiguračního souboru pro zpracování `GZipMessageEncodingBindingElement`, následující musí být přidaní do Svcutil.exe.config.  
+ `GZipMessageEncodingBindingElementImporter` Implementuje třída `IPolicyImportExtension` rozhraní, tato třída Importuje zásady pro `GZipMessageEncodingBindingElement`. Nástroje svcutil.exe lze použít pro import zásady do konfiguračního souboru, zpracování `GZipMessageEncodingBindingElement`, následující měla být přidána do Svcutil.exe.config.  
   
 ```xml  
 <configuration>  
@@ -207,7 +207,7 @@ GZipMessageEncoderFactory(innerBindingElement.CreateMessageEncoderFactory());
 </configuration>  
 ```  
   
- Teď, když je odpovídající element vazby pro kompresní kodér, ho můžete prostřednictvím kódu programu jazyka do provozu nebo klienta vytváření nový objekt, který vlastní vazby a přidáním prvku vlastní vazby, jak je znázorněno v následujícím ukázkovém kódu.  
+ Teď, když je odpovídající prvek vazby pro kompresní kodér, ho můžete programově využívat do služby ani klienta vytváření nového objektu vlastní vazby a přidat vlastní prvek vazby, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 ICollection<BindingElement> bindingElements = new List<BindingElement>();  
@@ -220,11 +220,11 @@ binding.Name = "SampleBinding";
 binding.Namespace = "http://tempuri.org/bindings";  
 ```  
   
- To může být dostatečné pro většinu scénářů uživatele, podpora souboru konfigurace je velmi důležité, pokud má být hostované webové služby. Podporuje scénář hostuje Web, je třeba vytvořit vlastní konfigurace obslužná rutina umožňuje konfigurovat vlastní vazby element v souboru.  
+ To může být dostatečné pro většinu scénářů uživatelů, podpora soubor konfigurace je velmi důležité, pokud má být hostované webové služby. Pro podporu scénáři hostování webových, je třeba vytvořit obslužnou rutinu vlastní konfigurace na Povolit vlastní prvek vazby na umožňovat konfiguraci do souboru.  
   
- Můžete vytvořit obslužnou rutinu konfigurace pro element vazby nad konfigurační systém poskytované [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Konfigurace obslužné rutiny pro element vazby musí být odvozeny od <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> třídy. `BindingElementType` Vlastnost se používá k informování konfigurační systém typu vazby elementu, který chcete vytvořit pro tento oddíl. Všechny aspekty `BindingElement` , může být sada by měly být vystaveny jako vlastnosti <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> odvozené třídy. <xref:System.Configuration.ConfigurationPropertyAttribute> Se používá pro mapování atributů elementu konfigurace pro vlastnosti a nastavení výchozí hodnoty, pokud chybí atributy. Po hodnoty z konfigurace načíst a použít na vlastnosti <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> metoda je volána, který převede vlastnosti na konkrétní instanci prvku vazby. <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> Metoda se používá pro převod vlastnosti na <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> odvozené třídy do hodnoty, které mají být nastavené u elementu newlycreated vazby.  
+ Můžete vytvářet obslužné rutiny konfiguračního pro element vazby na konfigurační systém poskytované [!INCLUDE[dnprdnlong](../../../../includes/dnprdnlong-md.md)]. Obslužné rutiny konfiguračního elementu vazby musí být odvozen od <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> třídy. `BindingElementType` Vlastnost se používá k informování konfigurační systém typ elementu vazby k vytvoření této části. Všechny aspekty `BindingElement` , může být sada by měly být vystaveny jako vlastnosti <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> odvozené třídy. <xref:System.Configuration.ConfigurationPropertyAttribute> Je použít jako pomůcku při mapování atributů elementu konfigurace vlastností a nastavení výchozí hodnoty, pokud jsou chybějící atributy. Po hodnoty z konfigurace jsou načítány a použity k vlastnostem, <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A> metoda je volána, který převede na konkrétní instance elementu vazby vlastnosti. <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A> Metoda se používá pro převod vlastnosti na <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> do hodnoty, které mají být nastaven pro element vazby newlycreated odvozené třídy.  
   
- Následující vzorový kód ukazuje implementaci `GZipMessageEncodingElement`.  
+ Následující ukázkový kód ukazuje implementaci `GZipMessageEncodingElement`.  
   
 ```  
 public class GZipMessageEncodingElement : BindingElementExtensionElement  
@@ -287,13 +287,13 @@ public class GZipMessageEncodingElement : BindingElementExtensionElement
 }   
 ```  
   
- Tato obslužná rutina konfigurace mapuje následující reprezentace v souboru App.config nebo Web.config pro službu nebo klienta.  
+ Tato obslužná rutina konfigurace mapuje následující reprezentaci v souboru App.config nebo Web.config pro službu nebo klienta.  
   
 ```xml  
 <gzipMessageEncoding innerMessageEncoding="textMessageEncoding" />  
 ```  
   
- Pokud chcete použít tuto konfiguraci obslužnou rutinu, musí být zaregistrován v rámci [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) elementu, jak je znázorněno v následující ukázka konfigurace.  
+ Pokud chcete použít tuto obslužnou rutinu konfigurace, je nutné jej zaregistrovat v rámci [ \<system.serviceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) elementu, jak je znázorněno v následující ukázková konfigurace.  
   
 ```xml  
 <extensions>  
@@ -308,7 +308,7 @@ public class GZipMessageEncodingElement : BindingElementExtensionElement
 </extensions>  
 ```  
   
- Při spuštění serveru operaci požadavky a odpovědi se zobrazí v okně konzoly. Stisknutím klávesy ENTER v okně vypnout server.  
+ Při spuštění serveru operace žádosti a odpovědi se zobrazí v okně konzoly. Stisknutím klávesy ENTER v okně pro vypnutí serveru.  
   
 ```  
 Press Enter key to Exit.  
@@ -320,7 +320,7 @@ Press Enter key to Exit.
         64 client messages  
 ```  
   
- Při spuštění klienta operaci požadavky a odpovědi se zobrazí v okně konzoly. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Když spustíte klienta, operace žádosti a odpovědi se zobrazí v okně konzoly. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
 ```  
 Calling Echo(string):  
@@ -332,7 +332,7 @@ Server responds: Hello 0
 Press <ENTER> to terminate client.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu:  
   
@@ -342,16 +342,16 @@ Press <ENTER> to terminate client.
   
 2.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-3.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\MessageEncoder\Compression`  
   

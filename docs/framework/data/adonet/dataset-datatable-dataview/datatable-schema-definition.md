@@ -3,11 +3,11 @@ title: Definice schématu datové tabulky
 ms.date: 03/30/2017
 ms.assetid: efbcdda4-f5a9-421d-8be2-4c194c74552f
 ms.openlocfilehash: 60e7f6a13bd7fd10398d300690bd73c3abc0d700
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43552150"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748856"
 ---
 # <a name="datatable-schema-definition"></a>Definice schématu datové tabulky
 Schéma a struktura tabulky je reprezentován sloupců a omezení. Definujete schéma <xref:System.Data.DataTable> pomocí <xref:System.Data.DataColumn> objekty stejně jako <xref:System.Data.ForeignKeyConstraint> a <xref:System.Data.UniqueConstraint> objekty. Sloupce v tabulce můžete mapovat na sloupce ve zdroji dat, obsahují vypočítané hodnoty z výrazů, automaticky zvýšit jejich hodnoty nebo obsahovat hodnoty primárního klíče.  

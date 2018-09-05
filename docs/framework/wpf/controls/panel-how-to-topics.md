@@ -7,18 +7,18 @@ helpviewer_keywords:
 - Panel control [WPF], how-to topics
 - controls [WPF], Panel
 ms.assetid: 28d8faf2-490c-4e17-a447-df25a66f6679
-ms.openlocfilehash: 5b0fbf50455545a12adbc03bf2cd05d52de69936
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d8ead1a799f1bd7524d171beb3e262baeb4b5fbe
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33553782"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43746243"
 ---
 # <a name="panel-how-to-topics"></a>Témata panelu postupů
-Témata v této části popisují, jak používat <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].  
+Témata v této části popisují způsob použití <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: použití LayoutTransform elementu](http://msdn.microsoft.com/library/8221db67-d99f-4783-b65e-a6c5a52c03ab)  
+ [Postupy: použití LayoutTransform – Element](https://msdn.microsoft.com/library/8221db67-d99f-4783-b65e-a6c5a52c03ab)  
  [Vytvoření vlastního elementu panelu](../../../../docs/framework/wpf/controls/how-to-create-a-custom-panel-element.md)  
  [Přepsání metody panelu OnRender](../../../../docs/framework/wpf/controls/how-to-override-the-panel-onrender-method.md)  
  [Nastavení vlastností výšky elementu](../../../../docs/framework/wpf/controls/how-to-set-the-height-properties-of-an-element.md)  

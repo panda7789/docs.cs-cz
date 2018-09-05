@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
 ms.openlocfilehash: dcbb9467da87a82147176bb0feb00383aff2c77f
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43420256"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43746143"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport (možnosti kompilátoru C#)
 Tato možnost poskytuje pohodlný způsob, jak nahlásit chybu kompilátoru jazyka C# společnosti Microsoft.  

@@ -8,11 +8,11 @@ ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 3acea654cc84ede4b264c2db3ae6e9d042f4f5cb
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43418380"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748009"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>Zabezpečení přenosu s anonymním klientem
 Tento scénář Windows Communication Foundation (WCF) používá k zajištění důvěrnost a integrita zabezpečení přenosu (HTTPS). Server musí být ověřené pomocí certifikátu vrstvy SSL (Secure Sockets) a klienti musí důvěřovat certifikátu serveru. Klient není ověřována každý použitý mechanizmus a je proto anonymní.  

@@ -5,11 +5,11 @@ dev_langs:
 - vb
 ms.assetid: 801dff0f-2508-45aa-9416-f45d6887740c
 ms.openlocfilehash: 3a2c8949537c749ba30b116a0dc8131336de6092
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43671579"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43742277"
 ---
 # <a name="ref-cursor-parameters-in-an-oracledatareader"></a>Parametry REF CURSOR v čtečce OracleDataReader
 Tento příklad Microsoft Visual Basicu provede PL/uložené procedury SQL, který vrací parametr REF CURSOR a přečte hodnotu jako <xref:System.Data.OracleClient.OracleDataReader>.  

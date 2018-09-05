@@ -3,11 +3,11 @@ title: Souhrn procesu odvození schématu datové sady
 ms.date: 03/30/2017
 ms.assetid: fd0891c8-d068-4e30-a76f-7c375f078bf7
 ms.openlocfilehash: 1583d5232a3dd483bbe2a6fa0b1bc8a3ae6a659f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43536593"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773364"
 ---
 # <a name="summary-of-the-dataset-schema-inference-process"></a>Souhrn procesu odvození schématu datové sady
 Procesu odvození nejdřív zjistí, z dokumentu XML, prvky, které se odvodit jako tabulka. Ze zbývajících XML určuje proces odvození sloupce pro tyto tabulky. Pro vnořené tabulky procesu odvození generuje vnořené <xref:System.Data.DataRelation> a <xref:System.Data.ForeignKeyConstraint> objekty.  

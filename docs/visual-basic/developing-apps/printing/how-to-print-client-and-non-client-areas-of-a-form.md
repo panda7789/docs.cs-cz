@@ -9,11 +9,11 @@ helpviewer_keywords:
 - non-client area [Visual Basic], printing
 ms.assetid: 856bb0e4-dbc3-47e2-81cd-4b376cf07757
 ms.openlocfilehash: 5109993146a8d53d5cbeebcc52c018a6f0f57ed5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408436"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43723261"
 ---
 # <a name="how-to-print-client-and-non-client-areas-of-a-form-visual-basic"></a>Postupy: Tisk klientských a neklientských oblastí formuláře (Visual Basic)
 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Komponenty umožňuje rychlý tisk obrázek formuláře přesně tak, jak se zobrazí na obrazovce bez použití <xref:System.Drawing.Printing.PrintDocument> komponenty. Následující postup ukazuje, jak tisk formuláře, včetně klientské oblasti a neklientská oblast. Neklientská oblast obsahuje záhlaví, ohraničení a posuňte pruhy.  

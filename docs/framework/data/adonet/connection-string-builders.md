@@ -1,33 +1,33 @@
 ---
-title: Tvůrci řetězců pro připojení
+title: Tvůrci připojovacích řetězců
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: 01bbf726ffa8d1c595b1ef53df420431bf28560f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1c65b0c2c9ae19aa008ecd8fb453d8e41b7c4167
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758474"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43737500"
 ---
-# <a name="connection-string-builders"></a>Tvůrci řetězců pro připojení
-V dřívějších verzích [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], kompilace kontrola připojovací řetězce s spojený řetězec hodnoty se neuskutečnilo, tak, aby v době běhu nesprávné – klíčové slovo generované <xref:System.ArgumentException>. Každý z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat podporována jinou syntaxi pro klíčová slova řetězec připojení, kterým vytváření obtížné platný připojovací řetězce, je-li provést ručně. Chcete-li vyřešit tento problém [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedl nový Tvůrci řetězců pro připojení pro každou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] dat zprostředkovatele. Každý poskytovatel dat zahrnuje třídy tvůrce řetězec silného typu připojení, která dědí z <xref:System.Data.Common.DbConnectionStringBuilder>. Následující tabulka uvádí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat a jejich přidružené připojení řetězec Tvůrce třídy.  
+# <a name="connection-string-builders"></a>Tvůrci připojovacích řetězců
+V dřívějších verzích [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)], kompilace kontrola připojovacích řetězců s spojený řetězec hodnoty nedošlo, tak, aby v době běhu, vygeneruje nesprávná klíčové slovo <xref:System.ArgumentException>. Každá z [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] zprostředkovatelé dat nepodporuje jinou syntaxi pro klíčová slova řetězec připojení, které vytváření obtížné platný připojovací řetězce, je-li provést ručně. Chcete-li vyřešit tento problém [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)] 2.0 zavedeny nové tvůrci připojovacích řetězců pro každou [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatele dat služeb. Každý poskytovatel dat zahrnuje třídu Tvůrce řetězec silného typu připojení, která dědí z <xref:System.Data.Common.DbConnectionStringBuilder>. Následující tabulce jsou uvedeny [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] poskytovatelé dat a jejich přidružený připojovací řetězec Tvůrce třídy.  
   
-|Zprostředkovatel|ConnectionStringBuilder – třída|  
+|Zprostředkovatel|Třída ConnectionStringBuilder|  
 |--------------|-----------------------------------|  
 |<xref:System.Data.SqlClient>|<xref:System.Data.SqlClient.SqlConnectionStringBuilder?displayProperty=nameWithType>|  
 |<xref:System.Data.OleDb>|<xref:System.Data.OleDb.OleDbConnectionStringBuilder?displayProperty=nameWithType>|  
 |<xref:System.Data.Odbc>|<xref:System.Data.Odbc.OdbcConnectionStringBuilder?displayProperty=nameWithType>|  
 |<xref:System.Data.OracleClient>|<xref:System.Data.OracleClient.OracleConnectionStringBuilder?displayProperty=nameWithType>|  
   
-## <a name="connection-string-injection-attacks"></a>Prostřednictvím injektáže řetězec připojení  
- Útok prostřednictvím injektáže řetězec připojení může dojít, když dynamické zřetězení slouží k vytvoření připojovací řetězce, které jsou založeny na vstup uživatele. Pokud řetězec není ověřená a škodlivý text nebo znaky není řídicí sekvencí, útočník mají přístup k citlivým datům nebo jiným prostředkům na serveru. Například útočník může připojit útoku zadávání středník a připojením algoritmu další hodnotu. Připojovací řetězec je analyzován pomocí algoritmu "poslední jeden wins" a je nahrazena nepřátelských vstup pro hodnotu legitimní.  
+## <a name="connection-string-injection-attacks"></a>Útoky prostřednictvím injektáže připojovací řetězec  
+ Útok prostřednictvím injektáže řetězec připojení může dojít, když dynamická zřetězení sloužící k vytvoření připojovací řetězce, které jsou založeny na vstup uživatele. Pokud řetězec není ověřená a škodlivý text nebo znaky nejsou uvozeny řídicími znaky, útočník můžou mít přístup k citlivým datům nebo další prostředky na serveru. Útočník může například připojte útoku zadáním středník a přidávání další hodnotu. Připojovací řetězec je analyzován pomocí algoritmu "posledním místě wins" a nebezpečný vstup je nahrazen legitimní hodnotu.  
   
- Připojovací řetězec Tvůrce třídy jsou navrženy pro vyloučení již nebudete muset odhadovat a chránit proti chyby syntaxe a ohrožení zabezpečení. Poskytuje metody a vlastnosti odpovídající páry známé klíč/hodnota, které jsou povolené každý poskytovatel dat. Každá třída udržuje pevné kolekci synonyma a může překládat z synonymum na odpovídající známý název klíče. Ověřování pro dvojice klíč/hodnota platná a vyvolá výjimku, dvojici neplatný. Kromě toho vloženého hodnoty jsou zpracovávány v nouzovém režimu.  
+ Třídy tvůrce řetězec připojení jsou navrženy tak, aby obsahoval jenom izolovat a chránit proti chyby syntaxe a ohrožení zabezpečení. Poskytuje metody a vlastnosti odpovídající dvojice klíč/hodnota známé od každého poskytovatele dat. Každá třída udržuje pevné kolekce synonym a může překládat z synonymum pro odpovídající dobře známý název klíče. Kontroly jsou prováděny pro páry klíč/hodnota platný a vyvolá výjimku, neplatný pár. Kromě toho jsou zpracovány vloženého hodnoty bezpečným způsobem.  
   
- Následující příklad ukazuje, jak <xref:System.Data.SqlClient.SqlConnectionStringBuilder> zpracovává vložené navíc hodnotu pro `Initial Catalog` nastavení.  
+ Následující příklad ukazuje, jak <xref:System.Data.SqlClient.SqlConnectionStringBuilder> zpracovává vložený hodnotu navíc pro `Initial Catalog` nastavení.  
   
 ```vb  
 Dim builder As New System.Data.SqlClient.SqlConnectionStringBuilder  
@@ -46,7 +46,7 @@ builder["Initial Catalog"] = "AdventureWorks;NewValue=Bad";
 Console.WriteLine(builder.ConnectionString);  
 ```  
   
- Výstup ukazuje, že <xref:System.Data.SqlClient.SqlConnectionStringBuilder> to správně zpracovat uvozovací znaky navíc hodnotu do dvojitých uvozovek místo přidávání připojovací řetězec jako nový pár klíč/hodnota.  
+ Výstup ukazuje, že <xref:System.Data.SqlClient.SqlConnectionStringBuilder> to správně zpracovat uvozovací znaky navíc hodnotu do dvojitých uvozovek místo připojování na připojovací řetězec jako nové dvojice klíč/hodnota.  
   
 ```  
 data source=(local);Integrated Security=True;  
@@ -54,15 +54,15 @@ initial catalog="AdventureWorks;NewValue=Bad"
 ```  
   
 ## <a name="building-connection-strings-from-configuration-files"></a>Vytváření připojovacích řetězců z konfiguračních souborů  
- Pokud některé prvky připojovacího řetězce jsou známé předem, může být uložené v konfiguračním souboru a načíst v době běhu vytvořit úplný připojovací řetězec. Název databáze může být například předem známé, ale není název serveru. Nebo můžete chtít uživatele k zadání jména a hesla v době běhu aniž by bylo možné vložit další hodnoty do připojovacího řetězce.  
+ Pokud některé prvky připojovacího řetězce je znám předem, můžou být uložené v konfiguračním souboru a načíst za běhu a sestavit úplný připojovací řetězec. Název databáze může být například předem známé, ale ne názvu serveru. Nebo může být vhodné uživatele k zadání jména a hesla v době běhu aniž by bylo možné vložit další hodnoty do připojovacího řetězce.  
   
- Jeden z přetížené konstruktory pro Tvůrce připojovacích řetězců trvá <xref:System.String> jako argument, který můžete zadat částečné připojovací řetězec, který je pak možné provést z vstup uživatele. Částečné připojovací řetězec lze uložené v konfiguračním souboru a načítat za běhu.  
+ Přijímá jednu z přetížených konstruktorů pro Tvůrce připojovacích řetězců <xref:System.String> jako argument, což vám umožní zadat částečné připojovací řetězec, který lze pak provést ze vstupu uživatele. Částečné připojovací řetězec můžete uložené v konfiguračním souboru a načíst za běhu.  
   
 > [!NOTE]
->  <xref:System.Configuration> Obor názvů umožňuje programový přístup ke konfiguračním souborům, které používají <xref:System.Web.Configuration.WebConfigurationManager> pro webové aplikace a <xref:System.Configuration.ConfigurationManager> pro aplikace pro Windows. Další informace o práci s připojovací řetězce a konfigurační soubory, najdete v části [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
+>  <xref:System.Configuration> Obor názvů umožňuje programový přístup ke konfiguračním souborům, které používají <xref:System.Web.Configuration.WebConfigurationManager> pro webové aplikace a <xref:System.Configuration.ConfigurationManager> pro aplikace Windows. Další informace o práci s připojovací řetězce a konfigurační soubory, naleznete v tématu [připojovací řetězce a konfigurační soubory](../../../../docs/framework/data/adonet/connection-strings-and-configuration-files.md).  
   
 ### <a name="example"></a>Příklad  
- Tento příklad ukazuje načítání částečné připojovacího řetězce z konfiguračního souboru a dokončení nastavením <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A>, <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserID%2A>, a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.Password%2A> vlastnosti <xref:System.Data.SqlClient.SqlConnectionStringBuilder>. Konfigurační soubor je definován následujícím způsobem.  
+ Tento příklad ukazuje načítání částečné připojovacího řetězce z konfiguračního souboru a jeho dokončení nastavením <xref:System.Data.SqlClient.SqlConnectionStringBuilder.DataSource%2A>, <xref:System.Data.SqlClient.SqlConnectionStringBuilder.UserID%2A>, a <xref:System.Data.SqlClient.SqlConnectionStringBuilder.Password%2A> vlastnosti <xref:System.Data.SqlClient.SqlConnectionStringBuilder>. Konfigurační soubor je definovaná následujícím způsobem.  
   
 ```xml  
 <connectionStrings>  
@@ -74,7 +74,7 @@ initial catalog="AdventureWorks;NewValue=Bad"
 ```  
   
 > [!NOTE]
->  Je nutné nastavit odkaz na `System.Configuration.dll` ve vašem projektu pro kód pro spuštění.  
+>  Je nutné nastavit odkaz na `System.Configuration.dll` ve vašem projektu pro spuštění kódu.  
   
  [!code-csharp[DataWorks SqlConnectionStringBuilder.UserNamePwd#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlConnectionStringBuilder.UserNamePwd/CS/source.cs#1)]
  [!code-vb[DataWorks SqlConnectionStringBuilder.UserNamePwd#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlConnectionStringBuilder.UserNamePwd/VB/source.vb#1)]  
@@ -82,4 +82,4 @@ initial catalog="AdventureWorks;NewValue=Bad"
 ## <a name="see-also"></a>Viz také  
  [Připojovací řetězce](../../../../docs/framework/data/adonet/connection-strings.md)  
  [Ochrana osobních údajů a zabezpečení dat](../../../../docs/framework/data/adonet/privacy-and-data-security.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -11,11 +11,11 @@ ms.assetid: c7a66677-cb59-4cbf-969a-d2e8fc61a6ce
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 184b8408de45d0011a662b91905dade4c8826ec0
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43400805"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43723646"
 ---
 # <a name="how-to-speed-up-small-loop-bodies"></a>Postupy: Zrychlení malých smyček
 Když <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> má malé tělo smyčky, jako například může pomaleji než ekvivalentní sekvenčních smyčkách, proveďte [pro](~/docs/csharp/language-reference/keywords/for.md) smyčky v C# a [pro](https://msdn.microsoft.com/library/c470a263-9b49-4308-8fd6-8592b84a7980) smyčky v jazyce Visual Basic. Snížení výkonu způsobuje režie spojená s dělení dat a náklady na volání delegáta při každé iteraci smyčky. K řešení scénářů, <xref:System.Collections.Concurrent.Partitioner> třída poskytuje <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType> metodu, která umožňuje poskytovat sekvenčních smyčkách pro tělo delegáta, tak, aby je delegát vyvolán jenom jednou na oddíl, ne jednou za iteraci. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).  

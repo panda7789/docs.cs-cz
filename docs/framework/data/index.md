@@ -6,38 +6,38 @@ helpviewer_keywords:
 - data access [.NET Framework], about .NET Framework data access
 - data [.NET Framework], accessing
 ms.assetid: 8c37635d-e2c1-4b64-a258-61d9e87405e6
-ms.openlocfilehash: 4ad0b287aa37104e01015ef0a44cf500bc885c29
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0db71fd7e48515ad6be3641786fc180f62aacf33
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33356756"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43724003"
 ---
 # <a name="data-and-modeling-in-the-net-framework"></a>Data a modelování v rozhraní .NET Framework
-Tato část obsahuje informace o tom, jak získat přístup k datům pomocí ADO.NET, jazyk integrovaného dotazu (LINQ), služby WCF Data Services a XML.  
+Tato část obsahuje informace o tom, jak získat přístup k datům pomocí technologie ADO.NET, Language Integrated Query (LINQ), služeb WCF Data Services a XML.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ADO.NET](../../../docs/framework/data/adonet/index.md)  
- Popisuje architekturu ADO.NET a jak pomocí třídy ADO.NET spravovat data aplikací a využívat zdroje dat, včetně Microsoft SQL Server, zdroje dat OLE DB a XML.  
+ Popisuje architekturu ADO.NET a tom, jak použít třídy rozhraní ADO.NET ke správě dat aplikací a interakci se zdroji dat, včetně Microsoft SQL Server, zdroje dat OLE DB a XML.  
   
- [Portál LINQ](http://msdn.microsoft.com/library/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
- Obsahuje odkazy na příslušné dokumentaci pro jazyk integrovaného dotazu (LINQ).  
+ [Portál LINQ](https://msdn.microsoft.com/library/6eb15c76-4ee6-4146-981e-b3429a945e6f)  
+ Obsahuje odkazy na relevantní dokumentaci pro Language Integrated Query (LINQ).  
   
  [Zpracování transakcí](../../../docs/framework/data/transactions/index.md)  
- Popisuje podporu rozhraní .NET Framework pro transakce.  
+ Tento článek popisuje podporu rozhraní .NET Framework pro transakce.  
   
  [WCF Data Services 4.5](../../../docs/framework/data/wcf/index.md)  
- Poskytuje informace o tom, jak používat služby WCF Data Services k nasazení služeb dat na webu nebo v intranetu.  
+ Poskytuje informace o tom, jak pomocí služeb WCF Data Services pro nasazení datových služeb na webu nebo intranetu.  
   
  [Dokumenty a data XML](../../../docs/standard/data/xml/index.md)  
- Poskytuje přehled globální a integrované sadu tříd, které pracují s dokumenty XML a data v rozhraní .NET Framework.  
+ Poskytuje přehled s komplexního a integrovaného sadu tříd, které pracují s dokumenty XML a data v rozhraní .NET Framework.  
   
- [Referenční dokumentace XML standardy](http://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
- Obsahuje referenční informace o XML standardů, které společnost Microsoft podporuje.  
+ [Reference na standardy XML](https://msdn.microsoft.com/library/79c78508-c9d0-423a-a00f-672e855de401)  
+ Obsahuje referenční informace o standardů XML, které podporuje Microsoft.  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Microsoft SQL Server modelování technologie](http://go.microsoft.com/fwlink/?LinkId=193039)  
- Popisuje sadu technologií, které umožňují rychlé a vlastní aplikace založené na datech návrh a vývoj.  
+ [Technologie Microsoft SQL Server modelování](https://go.microsoft.com/fwlink/?LinkId=193039)  
+ Popisuje sadu technologií, které umožňují rychlé a přizpůsobené aplikace založené na datech návrh a vývoj.  
   
  [Průvodce vývojem](../../../docs/framework/development-guide.md)  
  Poskytuje postupy pro všechny klíčové oblasti technologie a úkoly pro vývoj aplikací včetně vytváření, konfigurace, ladění, zabezpečení a nasazení aplikace a informací o dynamickém programování, interoperabilitě, rozšiřitelnosti, správě paměti a podprocesech.  

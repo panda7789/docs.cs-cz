@@ -4,12 +4,12 @@ description: Objevte, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 06/04/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 57ade448f5773bee3474cb46bec8ad33e3afbee3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: dec44bf114472e19fdac131e0af6c13854957fe3
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43533835"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745525"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -91,7 +91,7 @@ Klasifikace je úloha strojového učení, který používá data **určit** kat
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
-1. Otevřete Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V *nový projekt** dialogového okna, vyberte **Visual C#** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textového pole zadejte "SentimentAnalysis" a pak vyberte **OK** tlačítko.
+1. Otevřete Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V **nový projekt** dialogového okna, vyberte **Visual C#** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textového pole zadejte "SentimentAnalysis" a pak vyberte **OK** tlačítko.
 
 2. Vytvořte adresář *Data* ve vašem projektu a uložte soubory datové sady:
 

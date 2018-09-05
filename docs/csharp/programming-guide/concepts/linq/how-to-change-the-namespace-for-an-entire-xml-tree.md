@@ -3,11 +3,11 @@ title: 'Postupy: Změna Namespace pro celý strom XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1584ff3b-c77d-4241-ab62-80adfb7bfc1b
 ms.openlocfilehash: cbb7c3d332eea83d6df71812cc18633df6fbb6d0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43559527"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773586"
 ---
 # <a name="how-to-change-the-namespace-for-an-entire-xml-tree-c"></a>Postupy: Změna Namespace pro celý strom XML (C#)
 Někdy nutné programově změnit obor názvů pro element nebo atribut. Technologie LINQ to XML to výrazně usnadňuje. <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> Vlastnost lze nastavit. <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> Vlastnost nelze nastavit, ale můžete snadno zkopírovat do atributy <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, odeberte existující atributy a pak přidejte nové atributy, které jsou v novém požadovaného oboru názvů.  

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
 ms.openlocfilehash: 769a8a5b60c6b963619b79526a7d1ee59af3ba33
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43564246"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773969"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Postupy: Uspořádání ovládacích prvků na formuláři Windows s použitím ovládacího prvku TableLayoutPanel
 Některé aplikace vyžadují formulář pomocí rozložení, který uspořádá samotné správně při změně velikosti formuláře, nebo jako obsah změnit velikost. Pokud potřebujete dynamické rozložení a nechcete zpracovat <xref:System.Windows.Forms.Control.Layout> události explicitně v kódu, zvažte použití panelu rozložení.  

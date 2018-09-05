@@ -6,11 +6,11 @@ helpviewer_keywords:
 - ActiveX controls, adding to Toolbox
 ms.assetid: ec675027-866f-4c05-aaf2-92fca5200f9a
 ms.openlocfilehash: 740f2c899e7548829e4822bbfb56c7d61d64777a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43421812"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43772777"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>Postupy: Práce s ovládacími prvky ActiveX (Visual Basic)
 Ovládací prvky ActiveX jsou součástí modelu COM nebo objekty, které můžete vložit do webové stránky nebo jiné aplikace pro opětovné použití zabalené funkce, na které má naprogramovat někdo jiný. Ovládací prvky ActiveX s vyvinutý pro Visual Basic 6.0 a starší verze můžete použít k přidání funkcí do **nástrojů** sady Visual Studio.  

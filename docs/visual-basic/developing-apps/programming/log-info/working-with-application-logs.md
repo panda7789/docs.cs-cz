@@ -7,11 +7,11 @@ helpviewer_keywords:
 - application event logs
 ms.assetid: 2581afd1-5791-4bc4-86b2-46244e9fe468
 ms.openlocfilehash: c11e1f0c99b3189c7a353e6778c701667b0a1d12
-ms.sourcegitcommit: a368166a51e5204c0224fbf5e46476e3ed122817
-ms.translationtype: MT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43332530"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43725082"
 ---
 # <a name="working-with-application-logs-in-visual-basic"></a>Práce s protokoly aplikací v jazyce Visual Basic
 `My.Applicaton.Log` a `My.Log` objekty usnadňují zapsat informace trasování a protokolování do protokolů.  

@@ -1,86 +1,72 @@
 ---
-title: 'Soubory podpisu (F #)'
-description: 'Další informace o použití souborů signatur F # uchovávání informací o veřejné podpisy sadu elementů F # program, jako jsou moduly, typy a obory názvů.'
+title: 'Podpis souborů (F #)'
+description: 'Další informace o použití souborů signatur F # k ukládání informací o veřejných podpisů sadu F # prvky programu, jako jsou moduly, typy a obory názvů.'
 ms.date: 06/15/2018
-ms.openlocfilehash: 21e1b1d1cb67ea64206070a947d667fd52441dd8
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: f0836aa7f638dc9e2b066b0f46bbb6c086347615
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208491"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745967"
 ---
 # <a name="signatures"></a>Podpisy
 
-Soubor podpis obsahuje informace o veřejné podpisy sadu F # program prvky, jako jsou například moduly, obory názvů a typy. Slouží k určení usnadnění z těchto elementů programu.
-
+Soubor s podpisem obsahuje informace o veřejných podpisů sadu F # prvky programu, jako jsou moduly, typy a obory názvů. Slouží k určení usnadnění tyto prvky programu.
 
 ## <a name="remarks"></a>Poznámky
-Pro každý F # soubor kód, abyste měli *soubor podpisu*, což je soubor, který má stejný název jako soubor kódu, ale .fsi rozšíření místo .fs. Podpis souborů lze také přidat do příkazového řádku, pokud jsou přímo pomocí příkazového řádku kompilace. K rozlišení mezi soubory kódu a podpis soubory, soubory kódu se někdy označují jako *implementace soubory*. V projektu by měl předcházet soubor podpisu souboru přidružený kód.
 
-Soubor podpisu popisuje obory názvů, moduly, typy a členy v příslušném souboru implementace. Informace v souboru se používá k určení, jaké části kódu odpovídající implementace souboru je přístupná z kódu mimo soubor implementace a které části jsou interní soubor implementace. Obory názvů, moduly a typy, které jsou obsaženy v souboru podpis musí být podmnožinou obory názvů, moduly a typy, které jsou obsaženy v souboru implementace. Na několik výjimek uvedené dále v tomto tématu jsou považovány za soukromé k souboru implementace těchto prvků jazyka, které nejsou uvedené v souboru podpis. Pokud žádný soubor podpisu je najde v projektu nebo příkazového řádku, použije se výchozí usnadnění.
+Pro každý soubor F # kód, můžete mít *soubor s podpisem*, což je soubor, který má stejný název jako soubor s kódem, ale s příponou .fsi místo .fs. Podpis souborů můžete přidat i do příkazového řádku, pokud používáte příkazový řádek přímo kompilace. K rozlišení mezi soubory s kódem a podpis soubory, soubory kódu se někdy označují jako *implementační soubory*. V projektu by měl předcházet podpisový soubor přidružen soubor kódu.
 
-Další informace o usnadnění výchozí najdete v tématu [řízení přístupu](access-control.md).
+Soubor s podpisem popisuje obory názvů, moduly, typy a členy v odpovídající implementační soubor. Použijte informace v souboru signatury k určení, jaké části kódu v implementaci odpovídající soubor přístupné z kódu mimo implementační soubor a které části jsou interní v implementační soubor. Obory názvů, moduly a typy, které jsou zahrnuty v souboru signatury musí být podmnožinou obory názvů, moduly a typy, které jsou zahrnuty v souboru implementace. S několika výjimkami, které jste si poznamenali dále v tomto tématu jsou považovány za soukromé vzhledem k souboru implementace těchto prvků jazyka, které nejsou uvedené v souboru signatury. Pokud žádný podpisový soubor nenajde v projektu nebo v příkazovém řádku, použije se výchozí dostupnost.
 
-V souboru není opakujte implementace každé metody nebo funkce a definice typů. Místo toho použijte podpis pro každou metodu a funkce, která funguje jako specifikaci dokončení funkcí, které je implementované fragment modul, nebo obor názvů. Syntaxe pro typ podpisu je stejný jako příkaz, který se používá v deklaracích abstraktní metodu v abstraktní třídy a rozhraní a také zobrazen IntelliSense a fsi.exe překladač F # při zobrazení správně kompilované vstup.
+Další informace o usnadnění výchozí, naleznete v tématu [řízení přístupu](access-control.md).
 
-Pokud není k dispozici dostatek informací v podpis typu indikující, zda je zapečetěná a typ, nebo zda je typ rozhraní, musíte přidat atribut určující povaha typ kompilátoru. Atributy, které používáte pro tento účel jsou popsané v následující tabulce.
+V souboru signatury ne opakujte implementace každé metody nebo funkce a definice typů. Místo toho použijte podpis pro jednotlivé metody a funkce, který se chová jako úplný specifikace funkcí, které je implementované fragment modulu nebo oboru názvů. Syntaxe pro typ podpisu je stejná jako použitý v deklaracích abstraktní metoda v rozhraní a abstraktní třídy a se také zobrazí v IntelliSense a překladač fsi.exe F # poznat správně kompilované vstup.
 
-
+Pokud není k dispozici dostatek informací v signatuře typu označující, zda je zapečetěný typ, nebo zda je typ rozhraní, je nutné přidat atribut, který označuje povahu typu kompilátoru. Atributy, které používáte pro tento účel jsou popsány v následující tabulce.
 
 |Atribut|Popis|
 |---------|-----------|
-|`[<Sealed>]`|Pro typ, který nemá žádné členy abstraktní, nebo by neměla být rozšířena.|
+|`[<Sealed>]`|Pro typ, který nemá žádné abstraktní členy nebo by neměla být rozšířena.|
 |`[<Interface>]`|Pro typ, který je rozhraní.|
-Kompilátor vytváří chybu, pokud nejsou konzistentní mezi podpisu a deklarace v souboru implementace atributy.
+Kompilátor vytvoří chybu, pokud atributy nejsou konzistentní mezi podpis a deklarace v souboru implementace.
 
-Použití klíčového slova `val` k vytvoření podpisu pro hodnotu nebo hodnotu, funkce. Klíčové slovo `type` představuje typ podpisu.
+Pomocí klíčového slova `val` k vytvoření podpisu pro hodnotu nebo hodnotu funkce. Klíčové slovo `type` představuje typ podpisu.
 
-Soubor podpisu můžete vygenerovat pomocí `--sig` – možnost kompilátoru. Obecně platí můžete Nezapisovat .fsi soubory ručně. Místo toho generovat .fsi soubory pomocí kompilátor, přidejte do projektu, pokud máte jeden a upravit jejich odebráním metody a funkce, které nechcete, aby byl přístupný.
+Můžete generovat soubor podpisu pomocí `--sig` – možnost kompilátoru. Obecně platí nenapíšete .fsi soubory ručně. Místo toho pomocí kompilátoru generovat soubory .fsi, přidejte do projektu, pokud existuje a upravit tak, že odeberete metody a funkce, které nechcete, aby byl přístupný.
 
-Existuje několik pravidel pro podpisy typu:
+Existuje několik pravidel pro podpisy, typ:
 
+- Zkratky typů v souboru implementace nesmí odpovídat typu bez zkratku v souboru signatury.
 
-- Zkratky typů v souboru implementace nesmí odpovídat typu bez zkratkou v souboru.
+- Záznamy a rozlišovaná sjednocení musí vystavit všech nebo žádných z jejich polí a konstruktorů a pořadí v podpisu musí odpovídat pořadí v souboru implementace. Třídy lze odhalit, některé, všech nebo žádných z jejich polí a metod v podpisu.
 
+- Třídy a struktury, které mají konstruktory musí vystavit deklarace základní třídy ( `inherits` prohlášení). Také třídy a struktury, které mají konstruktory musí vystavit všechny abstraktní metody a interface deklarace.
 
-- Záznamy a rozlišovaná sjednocení musí vystavit všech nebo žádných z jejich pole a konstruktory a pořadí, v podpis musí odpovídat pořadí v souboru implementace. Třídy může odhalit některé, všech nebo žádných z jejich pole a metody v podpis.
+- Typy rozhraní musí odhalit, jejich metod a rozhraní.
 
+Pravidla pro hodnotu podpisy jsou následující:
 
-- Třídy a struktury, které mají konstruktory musí vystavit deklarace jejich základní třídy ( `inherits` deklarace). Navíc třídy a struktury, které mají konstruktory musí vystavit všechny jejich abstraktní metody a deklarace rozhraní.
+- Modifikátory přístupnosti (`public`, `internal`, a tak dále) a `inline` a `mutable` modifikátorů v podpisu musí odpovídat názvům v implementaci.
 
+- Musí odpovídat počtu parametrů obecného typu (buď odvozené implicitně nebo explicitně deklarované) a typy a omezení typu u parametrů obecného typu se musí shodovat.
 
-- Typy rozhraní musí odhalit jejich metody a rozhraní.
+- Pokud `Literal` atribut se používá, musí být uvedena v signatuře a implementaci a stejnou hodnotu literálu musí používat pro obě služby.
 
+- Vzor parametry (označované také jako *Arita*) podpisů a implementace musí být konzistentní vzhledem k aplikacím.
 
-Pravidla pro podpisy hodnoty jsou následující:
+- Pokud názvy parametrů v souboru signatury se liší od odpovídající implementační soubor, název v souboru signatury se použije místo toho, které můžou způsobovat problémy při ladění a profilování. Pokud budete chtít informováni o tyto problémy, povolení upozornění 3218 v souboru projektu nebo při vyvolání kompilátoru (viz `--warnon` pod [– možnosti kompilátoru](compiler-options.md)).
 
-
-- Modifikátory pro usnadnění (`public`, `internal`a tak dále) a `inline` a `mutable` modifikátory v podpisu musí odpovídat názvům implementace.
-
-
-- Počet parametrů obecného typu (buď implicitně odvodit nebo explicitně deklarovat) musí odpovídat, a typy a typ omezení parametry obecného typu se musí shodovat.
-
-
-- Pokud `Literal` atribut se používá, musí být uvedena v podpisu a implementaci a stejnou hodnotu literálu musí použít pro obě.
-
-
-- Vzor parametry (také označované jako *Arita*) podpisů a implementace musí být konzistentní.
-
-
-- Pokud názvy parametrů v souboru se liší od odpovídající soubor implementace, název v souboru podpis se použije místo toho, což může způsobit problémy při ladění nebo profilace. Pokud chcete být informováni o takové neshody povolit 3218 upozornění v souboru projektu nebo při vyvolání kompilátor (viz `--warnon` pod [– možnosti kompilátoru](compiler-options.md)).
-
-
-Následující příklad kódu ukazuje příklad podpis souboru, který má obor názvů, modulu, hodnota funkce a typ podpisy společně s příslušné atributy. Také ukazuje odpovídající soubor implementace.
+Následující příklad kódu ukazuje příklad souboru podpisu, který má obor názvů, modulu, typu podpisy spolu s příslušnými atributy a hodnoty funkce. Také ukazuje odpovídající implementační soubor.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssignatures/snippet9002.fs)]
 
-Následující kód ukazuje implementaci soubor.
+Následující kód ukazuje implementační soubor.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/fssignatures/snippet9001.fs)]
-    
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
 
-[Řízení přístupu](access-control.md)
+## <a name="see-also"></a>Viz také:
 
-[Možnosti kompilátoru](compiler-options.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Řízení přístupu](access-control.md)
+- [Možnosti kompilátoru](compiler-options.md)

@@ -3,11 +3,11 @@ title: Pomocí příkazů pro změny dat
 ms.date: 03/30/2017
 ms.assetid: f4160389-b9ff-4b74-b655-437c76dcd586
 ms.openlocfilehash: 6388eecb2e96970f47383b61985d672bd0419a1e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43395942"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773422"
 ---
 # <a name="using-commands-to-modify-data"></a>Pomocí příkazů pro změny dat
 Pomocí zprostředkovatele dat .NET Framework, může spustit uložené procedury nebo příkazy data definition language (například CREATE TABLE a ALTER COLUMN), provádět manipulace s schématu databáze nebo katalogu. Tyto příkazy nevracejí řádky jako dotaz, takže **příkaz** objekt, který poskytuje **metodu ExecuteNonQuery** pro jejich zpracování.  

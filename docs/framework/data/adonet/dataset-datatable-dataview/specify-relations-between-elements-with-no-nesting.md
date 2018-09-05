@@ -1,18 +1,18 @@
 ---
-title: Určit vztahy mezi elementy s bez vnoření
+title: Určení relací mezi elementy bez vnoření
 ms.date: 03/30/2017
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
-ms.openlocfilehash: 1d178287150dfca4c379cf6e934370434c3cfc98
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d04a3d946b87c7203497313c6e21a75ef69f50eb
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32760086"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43724305"
 ---
-# <a name="specify-relations-between-elements-with-no-nesting"></a>Určit vztahy mezi elementy s bez vnoření
-Když nejsou vnořené prvky, jsou vytvořeny žádné implicitní vztahy. Můžete však explicitně určit vztahy mezi elementy, které nejsou vnořené pomocí **msdata:Relationship** poznámky.  
+# <a name="specify-relations-between-elements-with-no-nesting"></a>Určení relací mezi elementy bez vnoření
+Pokud nejsou vnořené elementy, vytvoří se žádné implicitní vztahy. Můžete však explicitně zadat relací mezi elementy, které nejsou vnořené pomocí **msdata:Relationship** poznámky.  
   
- Následující příklad ukazuje schéma XML, ve kterém **msdata:Relationship** poznámky je zadaný v rozmezí **pořadí** a **OrderDetail** elementy, které nejsou vnořené. **Msdata:Relationship** poznámky je zadán jako podřízený element **schématu** elementu.  
+ Následující příklad ukazuje schématu XML, ve kterém **msdata:Relationship** je určena anotace mezi **pořadí** a **OrderDetail** prvky, které nejsou vnořené. **Msdata:Relationship** poznámka určena jako podřízený prvek **schématu** elementu.  
   
 ```xml  
 <xs:schema id="MyDataSet" xmlns=""   
@@ -53,7 +53,7 @@ Když nejsou vnořené prvky, jsou vytvořeny žádné implicitní vztahy. Můž
 </xs:schema>  
 ```  
   
- Vytvoří mapování proces schématu XML definition language (XSD) schématu <xref:System.Data.DataSet> s **pořadí** a **OrderDetail** tabulky a relace zadaný mezi těmito dvěma tabulkami, jako vidíte níže.  
+ Vytvoří proces mapování schématu XML definice jazyk (XSD) schématu <xref:System.Data.DataSet> s **pořadí** a **OrderDetail** tabulky a relace určena v rozsahu mezi těmito dvěma tabulkami, jak je znázorněno níže.  
   
 ```  
 RelationName: OrdOrderDetailRelation  
@@ -67,4 +67,4 @@ Nested: False
 ## <a name="see-also"></a>Viz také  
  [Generování relací datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/generating-dataset-relations-from-xml-schema-xsd.md)  
  [Mapování omezení schématu XML (XSD) k omezením datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/mapping-xml-schema-xsd-constraints-to-dataset-constraints.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

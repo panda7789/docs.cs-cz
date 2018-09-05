@@ -1,18 +1,17 @@
 ---
 title: Typ jednotky (F#)
-description: 'Zjistěte, jak je "jednotkou" typ F # často používané pro udržení na místě, kde hodnota je vyžadováno pomocí syntaxe jazyka žádná hodnota, je potřeba nebo požadovaných.'
+description: 'Zjistěte, jak "jednotka" typu jazyka F # se často používá k uložení na místě, kde hodnota vyžaduje syntaxi jazyka při je potřeba nebo požadovaných žádná hodnota.'
 ms.date: 05/16/2016
-ms.openlocfilehash: fdd6b62f9d5c6d73407d5326c7d1f66d55780682
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c3dfa5f63c25a1e8abc0f75b905c129b311479af
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564417"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773423"
 ---
 # <a name="unit-type"></a>Typ jednotky
 
-`unit` Typ je typ, který ukazuje na nepřítomnost konkrétní hodnotu `unit` typ má pouze jednu hodnotu, která funguje jako zástupný znak, pokud jiná hodnota existuje nebo je potřeba.
-
+`unit` Typ je typ, který ukazuje na nepřítomnost určitou hodnotu; `unit` typ má pouze jednu hodnotu, která funguje jako zástupný symbol, pokud neexistuje žádná hodnota nebo je potřeba.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,19 +21,20 @@ ms.locfileid: "33564417"
 ```
 
 ## <a name="remarks"></a>Poznámky
-Každý výraz F # musí vyhodnotit na hodnotu. Pro výrazy, které nevydávají hodnotu, která je v zájmu, hodnota typu `unit` se používá. `unit` Vypadá takto: typ `void` typu v jazyků, například c a C++.
 
-`unit` Typ má jednu hodnotu a tato hodnota je indikován token `()`.
+Každý výraz F # se musí vyhodnotit na hodnotu. Pro výrazy, které nejsou generovány hodnotu, která je zapotřebí, hodnota typu `unit` se používá. `unit` Vypadá podobně jako typ `void` typ v jazycích, jako je C# a C++.
 
-Hodnota `unit` typu se často používá v programování pro uložení na místě, kde hodnota vyžadují na syntaxi jazyka, ale v případě, že žádná hodnota, je potřeba nebo požadovaných F #. Příkladem může být návratová hodnota `printf` funkce. Protože důležité akce `printf` operace nastat ve funkci, funkce nemá vrátit skutečnou hodnotu. Proto se vrácená hodnota je typu `unit`.
+`unit` Typ má jednu hodnotu a tuto hodnotu je indikován token `()`.
 
-Některé konstrukce očekávat `unit` hodnotu. Například `do` je očekávána vazba nebo žádný kód na nejvyšší úrovni modulu k vyhodnocení `unit` hodnotu. Kompilátor sestavy upozornění při `do` vazba nebo kódu na nejvyšší úrovni modulu vytvoří výsledek jiné než `unit` hodnotu, která se nepoužívá, jak je znázorněno v následujícím příkladu.
+Hodnota `unit` typ se často používá v programování pro uložení místo syntaxe jazyka vyžaduje hodnotu, ale pokud žádná hodnota je potřeba nebo požadovaného F #. Příkladem mohou být návratovou hodnotu `printf` funkce. Protože důležité akce `printf` ve funkci, dojde k operaci, funkce nemusí vrátit skutečnou hodnotu. Proto, že návratová hodnota je typu `unit`.
+
+Očekávat některé konstrukce `unit` hodnotu. Například `do` vazby nebo jakéhokoli kódu na nejvyšší úrovni modulu se má vyhodnotit `unit` hodnotu. Kompilátor oznámí upozornění při `do` vazbami nebo kódem na nejvyšší úrovni modulu vytváří výsledek, než `unit` hodnotu, která se nepoužívá, jak je znázorněno v následujícím příkladu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet901.fs)]
 
-Toto upozornění je vlastnost funkční programování; nezobrazí se v jiných .NET programovacích jazyků. V čistě funkční programu, ve kterém funkce nemají žádné vedlejší účinky poslední vrácená hodnota je pouze výsledek volání funkce. Proto když výsledek je ignorován, je možné chybě programování. I když F # není plně funkční programovací jazyk, je vhodné postupovat podle funkční programovací styl, kdykoli je to možné.
+Toto upozornění je typické pro funkční programování. nezobrazí se v jiných .NET programovacích jazyků. Čistě funkční aplikaci, ve kterém funkce nemají žádné vedlejší účinky, poslední vrácená hodnota je jediným výsledkem volání funkce. Proto když výsledek je ignorován, je možné programovací chyba. I když F # není čistě funkcionálním programovacím jazyce, je vhodné provést funkční styl programování, kdykoli je to možné.
 
-## <a name="see-also"></a>Viz také
-[Primitivní](primitive-types.md)
+## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka F#](index.md)
+- [Primitivní](primitive-types.md)
+- [Referenční dokumentace jazyka F#](index.md)

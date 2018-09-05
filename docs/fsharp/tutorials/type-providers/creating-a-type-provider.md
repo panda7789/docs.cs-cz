@@ -2,12 +2,12 @@
 title: 'Kurz: Vytvoření zprostředkovatele typů (F #)'
 description: 'Zjistěte, jak vytvořit vlastní poskytovatelé typu jazyka F # v jazyce F # 3.0 prozkoumáním několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 25b11a0c6328fc74832e13b6380c983fb14a74a0
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 3c998377b2c3a408d536ef416f3799bf7f04b6bd
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43499325"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745723"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 
@@ -24,7 +24,6 @@ Ekosystém F # obsahuje celou řadu poskytovatelů typů pro běžně používan
 - [FSharp.Data.TypeProviders](https://fsprojects.github.io/FSharp.Data.TypeProviders/) je starší sadu poskytovatelů typů pro použití pouze s programování rozhraní .NET Framework pro přístup k datové služby typu SQL, Entity Framework, OData a WSDL.
 
 V případě potřeby můžete vytvořit vlastní poskytovatele typů nebo můžete odkazovat na zprostředkovateli typů, které jste vytvořili ostatní. Vaše organizace může mít například datové služby, které poskytuje jejichž počet pojmenovaných datových sad, každou s vlastní stabilní schéma dat. Můžete vytvořit poskytovatele typu, který schémata přečte a nabídne aktuální datové sady na programátorovi, tak silného typu.
-
 
 ## <a name="before-you-start"></a>Než začnete
 
@@ -51,7 +50,6 @@ Než začnete, může odpovědět na tyto otázky:
 - Se změní při provádění programu?
 
 Poskytovatelé typů jsou nejvhodnější pro situacích, kde je schéma stabilní za běhu a po celou dobu životnosti zkompilovaný kód.
-
 
 ## <a name="a-simple-type-provider"></a>Jednoduchý typ poskytovatele
 
@@ -93,8 +91,7 @@ type Type100 =
 
 Všimněte si, že se staticky označuje sadu typů a členů, které jsou k dispozici. V tomto příkladu není využít schopnost poskytovatele poskytují typy, které jsou závislé na schématu. Implementace zprostředkovatele typu je popsaný v následujícím kódu a podrobnosti jsou popsané v předchozích částech tohoto tématu.
 
-
->[!WARNING] 
+>[!WARNING]
 Mohou existovat rozdíly mezi tímto kódem a online ukázky.
 
 ```fsharp
@@ -168,7 +165,6 @@ devenv.exe /debugexe fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 Jako alternativu, otevřete sadu Visual Studio, otevřete nabídku ladění, zvolte `Debug/Attach to process…`a připojte k jiné `devenv` procesu, kde upravujete vašeho skriptu. Pomocí této metody můžete snadněji zaměřit konkrétní logický typ zprostředkovatele interaktivně zadáním výrazy do druhé instance (s plnou podporou technologie IntelliSense a dalších funkcí).
 
 Můžete zakázat pouze můj kód, ladění, abyste lépe identifikovat chyby v generovaném kódu. Informace o tom, jak povolit nebo zakázat tuto funkci najdete v tématu [procházení kódu s ladicím programem](/visualstudio/debugger/navigating-through-code-with-the-debugger). Navíc můžete také nastavit první odpovídající výjimce zachytávání tak, že otevřete `Debug` nabídky a následným výběrem možnosti `Exceptions` nebo zadáním pomocí kláves Ctrl + Alt + E otevřete `Exceptions` dialogové okno. V tomto dialogovém okně v části `Common Language Runtime Exceptions`, vyberte `Thrown` zaškrtávací políčko.
-
 
 ### <a name="implementation-of-the-type-provider"></a>Implementace zprostředkovatele typu
 
@@ -376,7 +372,6 @@ Příklad v této části uvádí pouze *vymaže poskytnutých typů*, které js
 
 V tomto příkladu každý zadaný typ se vymažou na typ `obj`, a zobrazí se všechna použití typu jako typ `obj` v zkompilovaný kód. Ve skutečnosti příslušné objekty v těchto příkladech jsou řetězce, ale zobrazí se jako typ `System.Object` v .NET zkompilovaný kód. I s všechna použití typ vymazání, můžete použít explicitní zabalení, rozbalení a přetypování na pokazit vymazány typy. V takovém případě může dojít k výjimce přetypování, který není platný při použití objektu. Zprostředkovatel modulu runtime můžete definovat vlastní privátní reprezentace typ a pomáhá chránit před false reprezentace. Nejde definovat vymazaného typy v jazyce F # samotný. Pouze poskytnutých typů mohou být vymazány. Je třeba porozumět následky, obě praktických a sémantické, buď pomocí vymaže vymazaného typy pro poskytovatele typu nebo zprostředkovatele, který obsahuje typy. Mazání typ nemá žádný skutečný typ .NET. Proto není přesný odraz přes typ a může pokazit vymazaného typy, pokud použijete přetypování modulu runtime a další techniky, které jsou závislé na přesné modulu runtime typu sémantiku. Subversion vymazaného typy často výsledkem přetypování typu výjimky za běhu.
 
-
 ### <a name="choosing-representations-for-erased-provided-types"></a>Výběr reprezentace pro vymazání poskytované typy
 
 Pro některá použití vymazaných poskytnutých typů žádné reprezentace je povinný. Například vymazaného zadaný typ může obsahovat pouze statické vlastnosti a členů a žádné konstruktory a žádné vlastnosti nebo metody vrátí instanci typu. Pokud instance vymazaného může dosáhnout zadaný typ, musíte zvážit následující otázky:
@@ -435,11 +430,9 @@ ProvidedConstructor(…, InvokeCode = (fun args -> <@@ new DataObject() @@>), �
 
 V předchozím oddílu bylo vysvětleno, jak vytvořit jednoduchý mazání typ zprostředkovatele, který poskytuje celou řadu typy, vlastnosti a metody. Tato část také vysvětlení konceptu mazání typu, včetně některých výhod a nevýhod poskytující vymazaného typy od zprostředkovatele typu a popsaných reprezentace vymazaného typy.
 
-
 ## <a name="a-type-provider-that-uses-static-parameters"></a>Typ zprostředkovatele, který používá statické parametry
 
 Schopnost parametrizovat poskytovatelů typů ve statických dat umožňuje řadu zajímavých scénářů, dokonce i v případech, kdy zprostředkovatel nepotřebuje přístup k žádným datům místního nebo vzdáleného. V této části se dozvíte některé základní postupy pro takový zprostředkovatel sestavení.
-
 
 ### <a name="type-checked-regex-provider"></a>Typ zaškrtnutí poskytovatele regulární výraz
 
@@ -737,16 +730,13 @@ do ()
 
 Tato část bylo vysvětleno, jak vytvořit typ zprostředkovatele, který funguje na jeho statické parametry. Zprostředkovatel ověří statický parametr a poskytuje operace na základě jeho hodnoty.
 
-
 ## <a name="a-type-provider-that-is-backed-by-local-data"></a>Typ zprostředkovatele, který se zálohuje pomocí místních dat
 
 Často můžete poskytovatelů typů zobrazíte rozhraní API založené na pouze statické parametry, ale také informace z místních nebo vzdálených systémů. Tato část popisuje poskytovatelů typů, které jsou založeny na místní data, jako jsou místní datové soubory.
 
-
 ### <a name="simple-csv-file-provider"></a>Zprostředkovatel souborů jednoduché sdíleného svazku clusteru
 
 Jako jednoduchý příklad zvažte poskytovatele typu pro přístup k vědeckých dat ve formátu hodnota oddělených čárkami (CSV). V této části se předpokládá, že soubory CSV obsahovat řádek záhlaví, za nímž následuje data s plovoucí desetinnou, jak ukazuje následující tabulka:
-
 
 |Distance (měření)|Čas (sekundy)|
 |----------------|-------------|
@@ -893,11 +883,9 @@ Mějte na paměti následující skutečnosti o implementaci:
 
 Tato část bylo vysvětleno, jak vytvořit poskytovatele typů pro místní zdroj dat s jednoduché schéma, které je obsažen ve zdroji dat, samotného.
 
-
 ## <a name="going-further"></a>Když budete pokračovat
 
 Následující části obsahují návrhy pro další studie.
-
 
 ### <a name="a-look-at-the-compiled-code-for-erased-types"></a>Podívejte se na zkompilovaný kód pro mazání typy
 
@@ -939,8 +927,8 @@ IL_0017:  ret
 
 Jak ukazuje příklad, všechny zmínky typu `Type1` a `InstanceProperty` vlastnost byly vymazány, byste museli opustit pouze operace u typů modulu runtime používané.
 
-
 ### <a name="design-and-naming-conventions-for-type-providers"></a>Návrh a vytváření názvů pro zprostředkovatele typů
+
 Prohlédněte si následující konvence při vytváření poskytovatelů typů.
 
 **Poskytovatelé připojení protokolů** obecně by měly končit názvy zprostředkovatelů většinu knihoven DLL pro data a služby připojení protokolů, jako je připojení OData nebo SQL `TypeProvider` nebo `TypeProviders`. Například použijte název knihovny DLL, která se podobá následující řetězec:
@@ -980,13 +968,12 @@ let data = Fabrikam.Data.Freebase.Astronomy.Asteroids
 
 Další informace najdete v tématu `GetConnection` návrh konvence, která je popsána dále v tomto tématu.
 
-
 ### <a name="design-patterns-for-type-providers"></a>Způsoby návrhu pro zprostředkovatelů typů
 
 Následující části popisují vzorů návrhu, které můžete použít při vytváření poskytovatelů typů.
 
-
 #### <a name="the-getconnection-design-pattern"></a>Vzor návrhu GetConnection
+
 Většina poskytovatelů typů by měly být napsány k použití `GetConnection` vzor, který používá typ zprostředkovatele v FSharp.Data.TypeProviders.dll, jak ukazuje následující příklad:
 
 ```fsharp
@@ -1147,10 +1134,7 @@ Zprostředkovatelé typů můžete ladit často nejsnadněji pomocí fsc.exe na 
 
   Můžete použít protokolování tiskových stdout.
 
+## <a name="see-also"></a>Viz také:
 
-## <a name="see-also"></a>Viz také
-
-* [Zprostředkovatelé typů](index.md)
-
-* [Typ poskytovatele sady SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK)
-
+- [Zprostředkovatelé typů](index.md)
+- [Typ poskytovatele sady SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK)

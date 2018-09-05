@@ -10,11 +10,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms]
 ms.assetid: e5a8e088-7ec8-4fd9-bcb3-9078fd134829
 ms.openlocfilehash: b58318a3e0e9881725d3c260251288c720fa4132
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43563519"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745108"
 ---
 # <a name="developing-windows-forms-controls-at-design-time"></a>Vývoj ovládacích prvků Windows Forms v době návrhu
 Pro autory ovládací prvek rozhraní .NET Framework poskytuje celou řadu technologií pro vytváření ovládacího prvku. Autoři už nejsou omezeny na vytváření složených ovládacích prvků, které slouží jako kolekce dříve existující ovládací prvky. Prostřednictvím dědičnosti můžete vytvořit vlastní ovládací prvky z předchozích složených ovládacích prvků nebo dříve existující ovládací prvky Windows Forms. Také si můžete navrhovat vlastní ovládací prvky, které implementují vlastní vykreslování. Tyto možnosti umožňují značnou flexibilitu při návrhu a funkci vizuální rozhraní. Abyste mohli využívat tyto funkce, měli seznámit s koncepty programování založené na objektu.  

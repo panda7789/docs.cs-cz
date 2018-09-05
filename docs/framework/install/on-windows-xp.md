@@ -6,11 +6,11 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ms.openlocfilehash: 6dafc118d9c5c68446a5c2ba4e14614396f301eb
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484990"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43744897"
 ---
 # <a name="install-the-net-framework-on-windows-xp-and-windows-server-2003"></a>Instalace rozhraní .NET Framework na Windows XP a Windows Server 2003
 

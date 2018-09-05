@@ -5,22 +5,22 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: 9612ec916481776691e85a84503ce5063c20b099
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fb5d11ed43246f2c4dd67ef35b71e899ab978fc4
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321519"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748599"
 ---
 # <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Postupy: Implementace lehké třídy s automaticky implementovanými vlastnostmi (Průvodce programováním v C#)
-Tento příklad ukazuje postup vytvoření neměnné lehké třídy, která slouží pouze k zapouzdření sadu automaticky implementované vlastnosti. Použijte tento druh konstrukce místo struktury, pokud je nutné použít Sémantika typu odkaz.  
+Tento příklad ukazuje, jak vytvořit neměnné lehké třídy, která slouží pouze k zapouzdření sadu automaticky implementované vlastnosti. Použijte tento druh konstrukce místo struktury, pokud musíte použít odkazové sémantiky typu.  
   
- Neměnné vlastnosti můžete provést dvěma způsoby.  Je možné deklarovat [nastavit](../../../csharp/language-reference/keywords/set.md) accessor.to být [privátní](../../../csharp/language-reference/keywords/private.md).  Vlastnost je nastavit v rámci typu, ale je neměnný k příjemce.  Můžete místo toho deklarovat jenom [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu, což může neměnné everywhere kromě v konstruktoru typu vlastnost.  
+ Neměnné vlastnosti můžete nastavit dvěma způsoby.  Lze deklarovat [nastavit](../../../csharp/language-reference/keywords/set.md) accessor.to být [privátní](../../../csharp/language-reference/keywords/private.md).  Vlastnost je pouze nastavitelné v rámci typu, ale je neměnný spotřebitelům.  Můžete místo toho deklarovat pouze [získat](../../../csharp/language-reference/keywords/get.md) přístupový objekt, takže je vlastnost neměnné všude s výjimkou v konstruktoru typu.  
   
- Když je deklarovat privátního `set` přistupujícího objektu, nemůžete použít inicializátoru objektu k inicializaci vlastnosti. Je třeba použít konstruktor nebo metoda factory.  
+ Pokud deklarujete privátní `set` přístupový objekt, nelze použít inicializátor objektu k inicializaci vlastnosti. Je nutné použít konstruktor nebo výrobní metoda.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje dva způsoby, jak implementovat třídu neměnné automaticky implementované vlastnosti. Každý způsob deklaruje jednu z vlastností s privátního `set` a jedna z vlastností s `get` pouze.  První třídy používá konstruktor jenom k inicializaci vlastností a druhé třídy používá statické tovární metody, která volá konstruktor.  
+ Následující příklad ukazuje dva způsoby, jak implementovat neměnné třídy, která má automaticky implementované vlastnosti. Jednotlivé možnosti přinesou deklaruje jednu z vlastností s privátní `set` a jedna z vlastností s `get` pouze.  První třídy používá konstruktor pouze k inicializaci vlastností a druhá třída používá statický objekt pro vytváření metodu, která volá konstruktor.  
   
 ```csharp  
 // This class is immutable. After an object is created,   
@@ -111,9 +111,10 @@ Tento příklad ukazuje postup vytvoření neměnné lehké třídy, která slou
 */  
 ```  
   
- Kompilátor vytvoří základní pole pro každý automaticky implementované vlastnosti. Pole nejsou dostupné přímo z zdrojového kódu.  
+ Kompilátor vytvoří pole zálohování pro jednotlivé automaticky implementované vlastnosti. Pole nejsou přístupné přímo ze zdrojového kódu.  
   
-## <a name="see-also"></a>Viz také  
- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
- [struct](../../../csharp/language-reference/keywords/struct.md)  
- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+## <a name="see-also"></a>Viz také
+
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [struct](../../../csharp/language-reference/keywords/struct.md)  
+- [Inicializátory objektu a kolekce](../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)

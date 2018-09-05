@@ -9,75 +9,75 @@ helpviewer_keywords:
 - Win32 code [WPF], visual objects in
 - hosting [WPF], visual objects in Win32 code
 ms.assetid: f0e1600c-3217-43d5-875d-1864fa7fe628
-ms.openlocfilehash: cc78dfd22b0ad2726ce8870a4e03f539ec691d85
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4db60418512080d6bf13ef00b1c6e7dce797a16b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565347"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43736069"
 ---
 # <a name="tutorial-hosting-visual-objects-in-a-win32-application"></a>Tutoriál: Hostování vizuální objektů v aplikaci Win32
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte významné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce do vaší aplikace místo přepisu kódu. Kvůli zajištění podpory pro [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] grafiky subsystémy používat současně v aplikaci, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje mechanismus pro hostování objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] kódu, může být mnohem efektivnější přidat [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] funkce, které vaše aplikace místo revize kódu. K zajištění podpory pro [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] subsystémy grafiky v aplikaci používat současně [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje mechanismus pro hostování objektů v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna.  
   
- Tento kurz popisuje, jak psát ukázkové aplikace, [stiskněte tlačítko Test s ukázkou vzájemná spolupráce Win32](http://go.microsoft.com/fwlink/?LinkID=159995), že hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] visual objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno.  
+ Tento kurz popisuje, jak psát ukázkovou aplikaci, [spuštění testu s ukázkou Win32 vzájemná spolupráce grafického subsystému](https://go.microsoft.com/fwlink/?LinkID=159995), že hostitelé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] visual objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno.  
   
 
   
 <a name="requirements"></a>   
 ## <a name="requirements"></a>Požadavky  
- Tento kurz předpokládá základní znalost obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování. Pro základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programování, najdete v části [návod: Můj první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md). Úvod do [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování, zobrazit žádné množství knih na subjektu, zejména *programování Windows* podle Charlese Petzold.  
+ V tomto kurzu se předpokládá základní znalost obou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování. Pro základní informace o [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] programování, naleznete v tématu [návod: Moje první desktopová aplikace WPF](../../../../docs/framework/wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md). Úvod do [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] programování, naleznete v některém z mnoha knihy k tomuto tématu, zejména *programování Windows* podle Charles Petzold.  
   
 > [!NOTE]
->  Tento kurz zahrnuje několik příklady kódu z přidružených ukázky. Ale čitelnější neobsahuje úplný ukázkový kód. Úplný ukázkový kód, najdete v části [stiskněte tlačítko Test s ukázkou vzájemná spolupráce Win32](http://go.microsoft.com/fwlink/?LinkID=159995).  
+>  Tento kurz obsahuje některé příklady kódů z přidružené ukázkové. Ale pro lepší čitelnost, neobsahuje úplnou ukázku kódu. Úplný ukázkový kód, naleznete v tématu [spuštění testu s ukázkou vzájemná spolupráce grafického subsystému Win32](https://go.microsoft.com/fwlink/?LinkID=159995).  
   
 <a name="creating_the_host_win32_window"></a>   
-## <a name="creating-the-host-win32-window"></a>Vytvoření okna Win32 hostitele  
- Klíč k hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] je okno <xref:System.Windows.Interop.HwndSource> třídy. Tato třída zabalí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna, což jim umožní začlenit do vaší [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] jako podřízeného okna.  
+## <a name="creating-the-host-win32-window"></a>Vytvoření okna hostitele Win32  
+ Klíčem k hostování [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] je okno <xref:System.Windows.Interop.HwndSource> třídy. Zabalí tuto třídu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] objekty v [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno, kterým má být zahrnut do vaší [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] jako podřízeného okna.  
   
- Následující příklad ukazuje kód pro vytvoření <xref:System.Windows.Interop.HwndSource> objekt jako [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna kontejner pro vizuální objekty. Nastavit okno styl, pozice a další parametry [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna, použijte <xref:System.Windows.Interop.HwndSourceParameters> objektu.  
+ Následující příklad ukazuje kód pro vytvoření <xref:System.Windows.Interop.HwndSource> objektu jako [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno kontejner pro vizuální objekty. Chcete-li nastavit styl okna, umístění a dalších parametrů pro [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno, použijte <xref:System.Windows.Interop.HwndSourceParameters> objektu.  
   
  [!code-csharp[VisualsHitTesting#101](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyWindow.cs#101)]
  [!code-vb[VisualsHitTesting#101](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyWindow.vb#101)]  
   
 > [!NOTE]
->  Hodnota <xref:System.Windows.Interop.HwndSourceParameters.ExtendedWindowStyle%2A> vlastnost nelze nastavit na ws_ex_transparent –. To znamená, že hostitel [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna nesmí být průhledná. Z tohoto důvodu barvu pozadí hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno bude nastaveno na barvu pozadí jako jeho nadřazeného okna.  
+>  Hodnota <xref:System.Windows.Interop.HwndSourceParameters.ExtendedWindowStyle%2A> WS_EX_TRANSPARENT nelze nastavit vlastnost. To znamená, že hostitel [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno nemůže být průhledná. Z tohoto důvodu barvu pozadí hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno bude nastaveno na stejnou barvu pozadí jako jeho nadřazenému oknu.  
   
 <a name="adding_visual_objects_to_the_host_win32_window"></a>   
 ## <a name="adding-visual-objects-to-the-host-win32-window"></a>Přidání vizuální objekty do okna hostitele Win32  
- Po vytvoření hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno kontejner pro vizuální objekty, můžete do něj může přidat vizuální objekty. Budete chtít zajistit všechny transformace vizuální objekty, jako je například animací, se netýkají za hranice hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno je ohraničujícího rámečku.  
+ Po vytvoření hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno kontejner pro vizuální objekty, budete do něj přidávat vizuální objekty. Budete chtít zajistit, že všechny transformace vizuální objekty, jako je například animace, ne přesáhne hranice hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno ohraničovacího rámečku.  
   
- Následující příklad ukazuje kód pro vytvoření <xref:System.Windows.Interop.HwndSource> objektu a přidání vizuální objekty na ni.  
+ Následující příklad ukazuje kód pro vytvoření <xref:System.Windows.Interop.HwndSource> objekt a přidání vizuálních objektů do něj.  
   
 > [!NOTE]
->  <xref:System.Windows.Interop.HwndSource.RootVisual%2A> Vlastnost <xref:System.Windows.Interop.HwndSource> objektu je nastavena na první visual objekt přidaný do hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno. Kořenový objekt visual definuje nejvyšší uzel stromu vizuální objekt. Všechny následné visual objektů přidaných do hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna jsou přidány jako podřízené objekty.  
+>  <xref:System.Windows.Interop.HwndSource.RootVisual%2A> Vlastnost <xref:System.Windows.Interop.HwndSource> je nastaven na první vizuální objekty přidány do hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Kořenový objekt visual definuje nejvyšší uzel stromu vizuální objekty. Všechny následné vizuální objekty přidané do hostitele [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna jsou přidány jako podřízené objekty.  
   
  [!code-csharp[VisualsHitTesting#100](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyWindow.cs#100)]
  [!code-vb[VisualsHitTesting#100](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyWindow.vb#100)]  
   
 <a name="implementing_the_win32_message_filter"></a>   
-## <a name="implementing-the-win32-message-filter"></a>Implementace filtr zpráv Win32  
- Hostitel [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna pro vizuální objekty vyžaduje procedury filtru zprávy okna pro zpracování zprávy, které se odesílají do okna z fronty aplikace. Postup okno přijímá zprávy z [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] systému. To může být vstupní zprávy nebo Správa oken zpráv. Volitelně můžete zpracovat zprávu v postupu vaší okno nebo předat systému pro výchozí zpracování zprávy.  
+## <a name="implementing-the-win32-message-filter"></a>Implementace filtru zpráv Win32  
+ Hostitel [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno pro vizuální objekty vyžaduje procedury filtru zprávy okna pro zpracování zprávy z fronty aplikace odeslané do okna. Proceduru okna přijímá zprávy z [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] systému. Může to být vstupní zprávy nebo zprávy okna správy. Volitelně můžete zpracovávat zprávy v okně procedury nebo předat zprávu systému pro výchozí zpracování.  
   
- <xref:System.Windows.Interop.HwndSource> Objekt, který je definován jako nadřazeného prvku pro vizuální objekty musí odkazovat procedury filtru zpráv okno zadáte. Při vytváření <xref:System.Windows.Interop.HwndSource> objektu, nastavte <xref:System.Windows.Interop.HwndSourceParameters.HwndSourceHook%2A> vlastnost tak, aby odkazovaly procedury okna.  
+ <xref:System.Windows.Interop.HwndSource> Objekt, který jste definovali jako nadřazený pro vizuální objekty musí odkazovat na procedury filtru zprávy okna je zadat. Při vytváření <xref:System.Windows.Interop.HwndSource> objektu, nastaven <xref:System.Windows.Interop.HwndSourceParameters.HwndSourceHook%2A> vlastnost tak, aby odkazovaly proceduru okna.  
   
  [!code-csharp[VisualsHitTesting#102](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyWindow.cs#102)]
  [!code-vb[VisualsHitTesting#102](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyWindow.vb#102)]  
   
- Následující příklad ukazuje kód pro ošetření tlačítka vlevo a vpravo myši nahoru zprávy. Souřadnice hodnotu myš, stiskněte tlačítko pozice se nachází v hodnotě `lParam` parametr.  
+ Následující příklad ukazuje kód pro ošetření tlačítka myši doleva a doprava nahoru zprávy. Hodnotu souřadnice myši přístupů pozice je obsažen v hodnotě `lParam` parametru.  
   
  [!code-csharp[VisualsHitTesting#103](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyWindow.cs#103)]
  [!code-vb[VisualsHitTesting#103](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyWindow.vb#103)]  
   
 <a name="processing_the_win32_messages"></a>   
-## <a name="processing-the-win32-messages"></a>Zpracování zpráv Win32  
- Kód v následujícím příkladu ukazuje, jak se provádí ověření pozice proti hierarchii visual objekty obsažené v hostiteli [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okno. Zjistíte, zda bod je v rámci geometrie vizuální objekt pomocí <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> metodu zadejte kořenový objekt visual a souřadnic hodnotu narazí testovací proti. V takovém případě je kořenový objekt visual hodnota <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnost <xref:System.Windows.Interop.HwndSource> objektu.  
+## <a name="processing-the-win32-messages"></a>Zpracování zpráv systému Win32  
+ Kód v následujícím příkladu ukazuje, jak se provádí ověření pozice na hierarchii vizuální objekty obsažené v hostiteli [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] okna. Můžete určit, jestli je bod v rámci geometrie vizuální objekty s použitím <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> metody k určení visual kořenový objekt a pro spuštění testu oproti souřadnic hodnotu. V tomto případě visual kořenový objekt je hodnota <xref:System.Windows.Interop.HwndSource.RootVisual%2A> vlastnost <xref:System.Windows.Interop.HwndSource> objektu.  
   
  [!code-csharp[VisualsHitTesting#104](../../../../samples/snippets/csharp/VS_Snippets_Wpf/VisualsHitTesting/CSharp/MyCircle.cs#104)]
  [!code-vb[VisualsHitTesting#104](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/VisualsHitTesting/VisualBasic/MyCircle.vb#104)]  
   
- Další informace o počtu testování proti vizuální objekty najdete v tématu [dosáhl testování ve vrstvě Visual](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md).  
+ Další informace o volání testování proti vizuálních objektů najdete v tématu [spuštění testování ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Interop.HwndSource>  
- [Stiskněte tlačítko Test s ukázkou součinnosti Win32](http://go.microsoft.com/fwlink/?LinkID=159995)  
+ [Spuštění testu s ukázkou Win32 vzájemné spolupráce](https://go.microsoft.com/fwlink/?LinkID=159995)  
  [Ověřování pozice ve vizuální vrstvě](../../../../docs/framework/wpf/graphics-multimedia/hit-testing-in-the-visual-layer.md)

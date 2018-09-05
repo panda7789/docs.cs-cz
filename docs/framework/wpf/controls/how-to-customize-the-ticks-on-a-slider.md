@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Slider control [WPF], creating with TickBar
 ms.assetid: 4fa694f2-a620-4b15-be78-5f4286f89361
 ms.openlocfilehash: 045a2f540a37cdea84d2bf2f3ed1e74e122bdbb5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43674429"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43746107"
 ---
 # <a name="how-to-customize-the-ticks-on-a-slider"></a>Postupy: Přizpůsobení dílků na posuvníku
 Tento příklad ukazuje, jak vytvořit <xref:System.Windows.Controls.Slider> ovládací prvek, který má osové značky.  

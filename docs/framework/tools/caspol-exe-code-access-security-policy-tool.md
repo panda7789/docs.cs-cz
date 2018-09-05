@@ -18,11 +18,11 @@ ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 67955e2b9d523cdee02f6de548720fdad261ab4d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43659639"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748424"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -53,7 +53,7 @@ caspol [options]
 |**-a**[**ll**]|Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady počítače, uživatele a podniku. **– Všechny** možnost vždy označuje zásadu aktuálně přihlášeného uživatele. Zobrazit **- customall** možnost pro uživatelskou zásadu jiného než aktuálního uživatele.|  
 |**-chggroup** {*popisek &#124;název*} {*mship* &#124; *pset_name*&#124;<br /><br /> *příznaky* `}`<br /><br /> or<br /><br /> **-cg** {*popisek &#124;název*} {*mship* &#124; *pset_name*&#124;<br /><br /> *příznaky* `}`|Změní podmínku členství skupiny kódu, sadu oprávnění nebo nastavení **exkluzivní**, **levelfinal**, **název**, nebo **popis**příznaky. Můžete zadat buď *popisek* nebo *název*. *Popisek* argument určuje popisek (jako je například 1. nebo 1.1.) skupiny kódu. *Název* argument určuje název skupiny kódu, chcete-li změnit. Protože *popisek* a *název* lze používat Zaměnitelně, Caspol.exe musí být schopen mezi nimi rozlišovat. Proto *název* nemůže začínat číslicí. Kromě toho *název* může obsahovat jenom A-Z, 0-9 a podtržítko.<br /><br /> *Pset_name* argument určuje název sady oprávnění pro přidružení k skupiny kódu. Zobrazit v tabulkách dále v této části pro informace na *mship* a *příznaky* argumenty.|  
 |**-chgpset***psfile pset_name* <br /><br /> or<br /><br /> **-prohlášení cp** *psfile pset_name*|Mění pojmenovanou sadu oprávnění. *Psfile* argument zadává novou definici sady oprávnění, je serializovaný soubor sady oprávnění ve formátu XML. *Pset_name* argument určuje název sady oprávnění chcete změnit.|  
-|**-customall***cesta* <br /><br /> or<br /><br /> **– ca***cesta* |Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady počítače, podniku a určeného vlastního uživatele. Je nutné zadat umístění souboru konfigurace zabezpečení vlastního uživatele s *cesta* argument.|  
+|**-customall***cesta*<br /><br /> or<br /><br /> **– ca***cesta*|Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady počítače, podniku a určeného vlastního uživatele. Je nutné zadat umístění souboru konfigurace zabezpečení vlastního uživatele s *cesta* argument.|  
 |**-cu**[**stomuser**] *path*|Umožňuje spravovat zásadu vlastního uživatele, která nepatří uživateli, jenž aktuálně spouští nástroj Caspol.exe. Je nutné zadat umístění souboru konfigurace zabezpečení vlastního uživatele s *cesta* argument.|  
 |**-enterprise**<br /><br /> or<br /><br /> **-en**|Značí, že jsou všechny možnosti následující za touto možností aplikovány na zásady na úrovni podniku. Uživatelé, kteří nejsou podnikovými administrátory, nemají dostatečná práva pro modifikaci podnikové zásady, přestože si ji mohou zobrazit. V nepodnikových scénářích nebude tato zásada ve výchozím nastavení ovlivňovat zásadu počítače ani uživatele.|  
 |**-e**[**zpracování**] {**na** &#124; **vypnout**}|Vypíná nebo zapíná mechanismus, jenž ověřuje, která oprávnění se mají před spuštěním kódu provést. **Poznámka:** tento přepínač byl ve [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a novějších verzích. Další informace najdete v tématu [změny zabezpečení](../../../docs/framework/security/security-changes.md).|  
@@ -85,7 +85,7 @@ caspol [options]
 |--------------|-----------------|  
 |**-allcode**|Specifikuje veškerý kód. Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.AllMembershipCondition?displayProperty=nameWithType>.|  
 |**-appdir**|Určuje adresář aplikace. Pokud zadáte **– appdir** jako podmínky členství, adresa URL evidence kódu porovnána s evidencí adresáře aplikace daného kódu. Pokud jsou obě hodnoty evidence stejné, byly podmínky členství splněny. Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.ApplicationDirectoryMembershipCondition?displayProperty=nameWithType>.|  
-|**– vlastní***soubor XML* |Přidá vlastní podmínku členství. Povinné *xmlfile* argument určuje soubor .xml obsahující XML serializaci vlastní podmínky členství.|  
+|**– vlastní***soubor XML*|Přidá vlastní podmínku členství. Povinné *xmlfile* argument určuje soubor .xml obsahující XML serializaci vlastní podmínky členství.|  
 |**-hash** *hashAlg* {**-hex** *Hodnota_hash* &#124; **– soubor** *assembly_file* }|Určuje kód, který obsahuje zadanou hodnotu hash sestavení. Pro použití hodnoty hash jako podmínky členství ve skupině kódu je nutné zadat hodnotu hash nebo soubor sestavení. Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.HashMembershipCondition?displayProperty=nameWithType>.|  
 |**-pub** { **-cert** *název_souboru_certifikátu*&#124;<br /><br /> **-soubor** *název_podepsaného_souboru* &#124; **-hex***šestnáctkový_řetězec* }  |Určuje kód, který obsahuje zadaného vydavatele softwaru, jak je označeno souborem certifikátu, podpisem na souboru nebo šestnáctkovou reprezentací certifikátu X509. Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.PublisherMembershipCondition?displayProperty=nameWithType>.|  
 |**– lokality** *webu*|Určuje kód, který obsahuje zadanou webovou stránku původu. Příklad:<br /><br /> `-site** www.proseware.com`<br /><br /> Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.SiteMembershipCondition?displayProperty=nameWithType>.|  

@@ -9,11 +9,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: 624ee2b8554c6d83d62db87ab3161421527829c4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484358"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773120"
 ---
 # <a name="ui-automation-control-patterns-for-clients"></a>Vzory ovládacích prvků automatizace uživatelského rozhraní pro klienty
 > [!NOTE]

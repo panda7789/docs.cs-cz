@@ -3,11 +3,11 @@ title: Protokoly zasílání zpráv
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
 ms.openlocfilehash: 3e56636e8364eec333f9585a0f62f6510561d1cc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43563275"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43747756"
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 Zásobník kanál Windows Communication Foundation (WCF) používá kódování a přenos kanály pro transformaci zprávě interní reprezentace do jeho přenosový formát a jejich odesílání pomocí konkrétní přenos. Je nejběžnější přenos používá pro interoperabilitu webových služeb HTTP a nejběžnější kódování používá webové služby jsou zpráv přenosu optimalizace mechanismus (MTOM), založený na formátu XML SOAP 1.1 a SOAP 1.2.  

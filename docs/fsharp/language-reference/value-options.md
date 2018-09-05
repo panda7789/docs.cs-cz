@@ -2,12 +2,12 @@
 title: 'Hodnota možnosti (F #)'
 description: 'Další informace o typu hodnota možnosti F #, což je struktura verze typu možnosti.'
 ms.date: 06/16/2018
-ms.openlocfilehash: 4c255cbbcfd9cb480230de09cd370a401c87343a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5647ef61725401b10a6045b14eef11f5b041e3e9
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43527580"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43747496"
 ---
 # <a name="value-options"></a>Hodnota možnosti
 
@@ -80,4 +80,4 @@ V tuto chvíli neexistují žádné další funkce vázané na modulu hodnotu mo
 
 ## <a name="see-also"></a>Viz také:
 
-[Možnosti](options.md)
+- [Možnosti](options.md)

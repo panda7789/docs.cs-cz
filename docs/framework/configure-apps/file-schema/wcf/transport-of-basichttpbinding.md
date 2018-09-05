@@ -3,11 +3,11 @@ title: '&lt;transport&gt; – &lt;basicHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4c5ba293-3d7e-47a6-b84e-e9022857b7e5
 ms.openlocfilehash: f3f9ad2c8b587a87abea7dc22abb98fdfb6ea77e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43415998"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43744761"
 ---
 # <a name="lttransportgt-of-ltbasichttpbindinggt"></a>&lt;transport&gt; – &lt;basicHttpBinding&gt;
 Definuje vlastnosti, které řídí parametry ověřování pro přenos pomocí protokolu HTTP.  

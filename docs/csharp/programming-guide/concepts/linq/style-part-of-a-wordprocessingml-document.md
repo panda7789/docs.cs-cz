@@ -1,29 +1,29 @@
 ---
-title: Styl součástí WordprocessingML Dokument1
+title: Část stylu Dokument1 WordprocessingML
 ms.date: 07/20/2015
 ms.assetid: 5458bccf-3898-4661-904b-7d280c9239a9
-ms.openlocfilehash: e55e9ea8a2e8e35c5de7ee7442d3e8eec261906b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 96ed7445379d9a8ca64250ef4d923786555a3882
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33334571"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43746807"
 ---
-# <a name="style-part-of-a-wordprocessingml-document"></a>Styl části WordprocessingML dokumentu
-Toto téma ukazuje příklad styl součástí dokumentu Office Open XML WordprocessingML.  
+# <a name="style-part-of-a-wordprocessingml-document"></a>Část stylu dokumentu WordprocessingML
+Toto téma ukazuje příklad část stylu dokumentu Office Open XML WordprocessingML.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu je XML, který tvoří součást styl dokument Office Open XML WordprocessingML.  
+ V následujícím příkladu je XML, které tvoří část stylu dokumentu Office Open XML WordprocessingML.  
   
- Výchozí styl odstavce má element s následující počáteční značku:  
+ Výchozí styl odstavce obsahuje element se následující úvodní značku:  
   
 ```  
 <w:style w:type="paragraph" w:default="1" w:styleId="Normal">  
 ```  
   
- Je třeba vědět tyto informace při psaní dotazu najít identifikátor výchozí styl tak, aby dotaz můžete identifikovat styl odstavců, které mají výchozí styl.  
+ Budete muset tyto informace znát při psaní dotazu se najít výchozí styl identifikátor, takže dotaz můžete identifikovat styl odstavce, které mají výchozí styl.  
   
- Všimněte si, že tyto dokumenty jsou velmi jednoduché ve srovnání s typické dokumenty, které generuje Microsoft Word. V mnoha případech aplikace Word uloží značnou část Další informace, další formátování a metadata. Kromě toho formátu aplikace Word není řádky, které se být snadno čitelné jako v následujícím příkladě; Místo toho je uložit soubor XML bez odsazení. Všechny dokumenty WordprocessingML však sdílet stejný základní tvar XML. Z toho důvodu dotazy uvedené v tomto kurzu pracovat s složitější dokumenty.  
+ Všimněte si, že tyto dokumenty jsou velmi jednoduché ve srovnání s běžných dokumentech, které generuje aplikaci Microsoft Word. V mnoha případech budou uloženy spoustu dalších informací, další formátování a metadata. Kromě toho aplikace Word neformátuje řádky bude snadno čitelný jako v následujícím příkladu; Místo toho je uložen soubor XML bez odsazení. Však všech dokumentů WordprocessingML sdílet stejnou základního tvaru XML. Z tohoto důvodu dotazy v tomto kurzu bude pracovat složitější dokumenty.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -140,5 +140,6 @@ Toto téma ukazuje příklad styl součástí dokumentu Office Open XML Wordproc
 </w:styles>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Podrobnosti o Office otevřít dokumenty WordprocessingML XML (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+## <a name="see-also"></a>Viz také
+
+- [Podrobnosti o systému Office otevřít dokumenty XML WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)

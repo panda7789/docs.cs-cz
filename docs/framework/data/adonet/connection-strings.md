@@ -3,11 +3,11 @@ title: Připojovací řetězce v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
 ms.openlocfilehash: b4e057cab4c562fc51893631c35d66409e1c3731
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43660398"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748538"
 ---
 # <a name="connection-strings-in-adonet"></a>Připojovací řetězce v ADO.NET
 Rozhraní .NET Framework 2.0 zavedeny nové funkce pro práci s řetězci připojení, včetně představení nových klíčových slov na tvůrce třídy řetězec připojení, které usnadňují vytváření platný připojovací řetězce v době běhu.  
