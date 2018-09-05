@@ -2,34 +2,34 @@
 title: Vytvoření třídy Game1
 ms.date: 03/30/2017
 ms.assetid: 47932ce3-2ba5-476f-a26b-3ddfd5226f27
-ms.openlocfilehash: 6a828dce2eed00c0a42e49d00358d836dc5ccde7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 368da9df4dffc7017abb02888bc2eb2641f04b8b
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743729"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43670543"
 ---
 # <a name="creating-the-game1-class"></a>Vytvoření třídy Game1
-Jak se všechny projekty Microsoft XNA Game1 třída odvozená z [Microsoft.Xna.Framework.Game](http://msdn.microsoft.com/library/microsoft.xna.framework.game.aspx) třídy, která poskytuje základní grafické zařízení inicializace, herní logiku a generování kódu pro XNA hry. Třídy Game1 je docela jednoduchá, protože většinu práce v GamePiece a GamePieceCollection třídy.  
+Jak se všechny projekty Microsoft XNA třídy Game1 je odvozena z [Microsoft.Xna.Framework.Game](https://msdn.microsoft.com/library/microsoft.xna.framework.game.aspx) třídu, která poskytuje základní grafické zařízení inicializace, logika hry a vykreslení kódu pro architekturu XNA hry. Třídy Game1 je poměrně jednoduchý, protože většina práce v GamePiece a GamePieceCollection třídy.  
   
 ## <a name="creating-the-code"></a>Vytváření kódu  
- Soukromé členy pro třídu obsahovat **GamePieceCollection** objekt pro uložení herní částí [GraphicsDeviceManager](http://msdn.microsoft.com/library/microsoft.xna.framework.graphicsdevicemanager.aspx) objekt a [SpriteBatch](http://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) objekt použitý k vykreslení herní částí.  
+ Soukromé členy třídy, které jsou tvořeny **GamePieceCollection** objekt pro uložení kameny, [GraphicsDeviceManager](https://msdn.microsoft.com/library/microsoft.xna.framework.graphicsdevicemanager.aspx) objektu a [SpriteBatch](https://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) objektu se používá vykreslit kameny.  
   
  [!code-csharp[ManipulationXNA#_Game1_PrivateMembers](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/game1.cs#_game1_privatemembers)]  
   
- Během inicializace herní instalace těchto objektů.  
+ Během inicializace her tyto objekty jsou vytvořena instance.  
   
  [!code-csharp[ManipulationXNA#_Game1_ConstructorInitialize](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/game1.cs#_game1_constructorinitialize)]  
   
- Když [LoadContent](http://msdn.microsoft.com/library/microsoft.xna.framework.game.loadcontent.aspx) metoda je volána, herní součásti jsou vytvořeny a přiřazeny **GamePieceCollection** objektu. Existují dva typy herní částí. Měřítko pro vytvořené se mírně změní, které existují některé menší a některé větší částí.  
+ Když [LoadContent](https://msdn.microsoft.com/library/microsoft.xna.framework.game.loadcontent.aspx) metoda je volána, herní kusů jsou vytvořeny a přiřazeny **GamePieceCollection** objektu. Existují dva druhy kameny. Měřítko pro kusy se mírně změní, takže existují některé větší a některé menší kousky.  
   
  [!code-csharp[ManipulationXNA#_Game1_LoadContent](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/game1.cs#_game1_loadcontent)]  
   
- [Aktualizace](http://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) metoda je volána opakovaně rozhraním XNA Framework spuštěného příslušnou hru. [Aktualizace](http://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) volání metod **ProcessInertia** a **UpdateFromMouse** metody na příslušnou hru část kolekce. Tyto metody jsou popsané v [vytvoření třídy Gamepiececollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md).  
+ [Aktualizace](https://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) metoda je volána opakovaně rozhraním XNA Framework během hry. [Aktualizace](https://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) volání metod **ProcessInertia** a **UpdateFromMouse** metody na hry část kolekce. Tyto metody jsou popsané v [vytvoření třídy GamePieceCollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md).  
   
  [!code-csharp[ManipulationXNA#_Game1_UpdateGame](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/game1.cs#_game1_updategame)]  
   
- [Kreslení](http://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) metoda zkratka opakovaně rozhraním XNA Framework spuštěného příslušnou hru. [Kreslení](http://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) metoda provádí vykreslování kameny voláním **kreslení** metodu **GamePieceCollection** objektu. Tato metoda je popsaná v[vytvoření třídy Gamepiececollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md).  
+ [Nakreslit](https://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) metoda zkratka opakovaně rozhraním XNA Framework během hry. [Nakreslit](https://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) metoda provádí vykreslování kameny voláním **nakreslit** metodu **GamePieceCollection** objektu. Tato metoda je popsaná v[vytvoření třídy GamePieceCollection](../../../docs/framework/common-client-technologies/creating-the-gamepiececollection-class.md).  
   
  [!code-csharp[ManipulationXNA#_Game1_DrawGame](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/game1.cs#_game1_drawgame)]  
   

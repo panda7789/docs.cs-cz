@@ -12,11 +12,11 @@ helpviewer_keywords:
 - inferred variable declaration
 ms.assetid: 4ad3e6e9-8f5b-4209-a248-de22ef6e4652
 ms.openlocfilehash: f5c824df43997282d50c9c2a458fb1d854cc160a
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245788"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672582"
 ---
 # <a name="option-infer-statement"></a>Option Infer – příkaz
 Umožňuje použití odvození místního typu v deklarujících proměnných.  
@@ -41,12 +41,12 @@ Option Infer { On | Off }
   
  Na následujícím obrázku `Option Infer` zapnutý. Proměnné v deklaraci `Dim someVar = 2` je deklarován jako celé číslo odvození typu proměnné.  
   
- ![Zobrazení technologie IntelliSense deklarace. ] (../../../visual-basic/language-reference/statements/media/optioninferasinteger.png "optionInferAsInteger")  
+ ![Zobrazení technologie IntelliSense deklarace. ](../../../visual-basic/language-reference/statements/media/optioninferasinteger.png "optionInferAsInteger")  
 Technologie IntelliSense při Option Infer zapnutý  
   
  Na následujícím obrázku `Option Infer` je vypnutý. Proměnné v deklaraci `Dim someVar = 2` je deklarován jako `Object` podle odvození typu proměnné. V tomto příkladu **Option Strict** nastavená na **vypnout** na [stránka kompilovat, Návrhář projektu (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).  
   
- ![Zobrazení technologie IntelliSense deklarace. ] (../../../visual-basic/language-reference/statements/media/optioninferasobject.png "optionInferAsObject")  
+ ![Zobrazení technologie IntelliSense deklarace. ](../../../visual-basic/language-reference/statements/media/optioninferasobject.png "optionInferAsObject")  
 Technologie IntelliSense při Option Infer je vypnuté  
   
 > [!NOTE]
@@ -99,6 +99,6 @@ Technologie IntelliSense při Option Infer je vypnuté
  [Příkaz Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
  [Příkaz Option Explicit](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
  [Příkaz Option Strict](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
- [Dialogové okno Možnosti výchozí hodnoty, projekty, Visual Basic](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)  
+ [Výchozí hodnoty pro Visual Basic, Projekty, dialogové okno Možnosti](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)  
  [/optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)  
  [Zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md)

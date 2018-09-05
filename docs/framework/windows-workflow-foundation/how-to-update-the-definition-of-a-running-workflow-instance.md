@@ -1,26 +1,26 @@
 ---
-title: 'Postupy: aktualizovat definici spuštěná instance pracovního postupu'
+title: 'Postupy: aktualizace definice běžící Instance pracovního postupu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 26dfac36-ae23-4909-9867-62495b55fb5e
-ms.openlocfilehash: 6492b08b45cf9e7767a14233c6aeb0dd648a3c82
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c3d870e9e5ad8129a5cf24c63c2a7884e91f9630
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33520299"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43498984"
 ---
-# <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a>Postupy: aktualizovat definici spuštěná instance pracovního postupu
-Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři aplikace k aktualizaci definice pracovního postupu instance trvalou pracovního postupu. Požadovaná změna může být implementace oprava chyb, nové požadavky, nebo aby bylo možné ošetřit neočekávané změny. Tento krok v tomto kurzu demonstruje použití dynamické aktualizace k úpravě trvalou instance `v1` číslo uhodnutí pracovního postupu tak, aby odpovídala nové funkce, zavedená v [postup: více verzí pracovní postup-souběžného hostitele ](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
+# <a name="how-to-update-the-definition-of-a-running-workflow-instance"></a>Postupy: aktualizace definice běžící Instance pracovního postupu
+Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům aplikací k aktualizaci pracovního postupu definici trvalé instance práce. Požadovaná změna lze provádět opravy chyb, nové požadavky, nebo tak, aby vyhovovaly neočekávaným změnám. Tento krok úvodního kurzu ukazuje, jak použít ke změně trvalého instance dynamické aktualizace `v1` číslo opakovaně uhodnout pracovního postupu tak, aby odpovídaly nových funkcích uvedených ve [jak: více verzí pracovní postup-souběžně hostitele ](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
   
 > [!NOTE]
->  Stažení dokončené verze nebo zobrazení na video s návodem kurzu, najdete v tématu [modelu Windows Workflow Foundation (WF45) - kurzu Začínáme](http://go.microsoft.com/fwlink/?LinkID=248976).  
+>  Pokud chcete stáhnout dokončený verzi nebo zobrazit na video s návodem tohoto kurzu, najdete v článku [Windows Workflow Foundation (WF45) – kurz Začínáme](https://go.microsoft.com/fwlink/?LinkID=248976).  
   
 ## <a name="in-this-topic"></a>V tomto tématu  
   
--   [Vytvoření projektu CreateUpdateMaps](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateProject)  
+-   [Chcete-li vytvořit projekt CreateUpdateMaps](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateProject)  
   
 -   [Chcete-li aktualizovat StateMachineNumberGuessWorkflow](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StateMachine)  
   
@@ -28,42 +28,42 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
   
 -   [Chcete-li aktualizovat SequentialNumberGuessWorkflow](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_Sequential)  
   
--   [Sestavení a spuštění aplikace CreateUpdateMaps](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateUpdateMaps)  
+-   [Sestavte a spusťte aplikaci CreateUpdateMaps](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_CreateUpdateMaps)  
   
--   [K vytvoření sestavení aktualizované pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAssembly)  
+-   [K vytvoření sestavení aktualizovaný pracovní postup](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAssembly)  
   
 -   [Chcete-li aktualizovat WorkflowVersionMap nové verze](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_UpdateWorkflowVersionMap)  
   
--   [Použití dynamické aktualizace](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_ApplyUpdate)  
+-   [Aby se dynamická aktualizace](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_ApplyUpdate)  
   
--   [Ke spuštění aplikace s aktualizované pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAndRun)  
+-   [Spusťte aplikaci pomocí aktualizovaných pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_BuildAndRun)  
   
--   [Chcete-li povolit od předchozích verzí pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StartPreviousVersions)  
+-   [Povolit od předchozích verzí pracovních postupů](../../../docs/framework/windows-workflow-foundation/how-to-update-the-definition-of-a-running-workflow-instance.md#BKMK_StartPreviousVersions)  
   
-###  <a name="BKMK_CreateProject"></a> Vytvoření projektu CreateUpdateMaps  
+###  <a name="BKMK_CreateProject"></a> Chcete-li vytvořit projekt CreateUpdateMaps  
   
-1.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníku řešení** a zvolte **přidat**, **nový projekt**.  
+1.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.  
   
-2.  V **nainstalovaná** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).  
+2.  V **nainstalováno** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).  
   
     > [!NOTE]
-    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalovaná** uzlu.  
+    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.  
   
-     Ujistěte se, že **rozhraní .NET Framework 4.5** je vybraný v rozevíracím seznamu verze rozhraní .NET Framework. Vyberte **konzolové aplikace** z **Windows** seznamu. Typ **CreateUpdateMaps** do **název** pole a klikněte na tlačítko **OK**.  
+     Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework. Vyberte **konzolovou aplikaci** z **Windows** seznamu. Typ **CreateUpdateMaps** do **název** pole a klikněte na tlačítko **OK**.  
   
-3.  Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníku řešení** a zvolte **přidat odkaz na**.  
+3.  Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníka řešení** a zvolte **přidat odkaz**.  
   
-4.  Vyberte **Framework** z **sestavení** uzlu **přidat odkaz na** seznamu. Typ **systém.** do **hledání sestavení** pole k filtrování sestavení a snadněji vyberte požadované odkazy.  
+4.  Vyberte **Framework** z **sestavení** uzlu **přidat odkaz** seznamu. Typ **System.Activities** do **hledání sestavení** pole k filtrování sestavení a usnadňují vyberte požadované odkazy.  
   
-5.  Zaškrtněte políčko vedle položky **systém.** z **výsledky hledání** seznamu.  
+5.  Zaškrtněte políčko vedle **System.Activities** z **výsledky hledání** seznamu.  
   
-6.  Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle položky **System.Runtime.Serialization** z **výsledky hledání**  seznamu.  
+6.  Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Runtime.Serialization** z **výsledky hledání**  seznamu.  
   
-7.  Typ **System.Xaml** do **hledání sestavení** pole a zaškrtněte políčko vedle položky **System.Xaml** z **výsledky hledání** seznamu.  
+7.  Typ **oboru názvů System.Xaml** do **hledání sestavení** pole a zaškrtněte políčko vedle **oboru názvů System.Xaml** z **výsledky hledání** seznamu.  
   
 8.  Klikněte na tlačítko **OK** zavřete **správce odkazů** a přidejte odkazy.  
   
-9. Přidejte následující `using` (nebo `Imports`) příkazy v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
+9. Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
   
     ```vb  
     Imports System.Activities  
@@ -89,7 +89,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     using Microsoft.CSharp.Activities;  
     ```  
   
-10. Přidejte následující členy dva řetězce `Program` – třída (nebo `Module1`).  
+10. Přidejte následující dva řetězce členy k `Program` třídy (nebo `Module1`).  
   
     ```vb  
     Const mapPath = "..\..\..\PreviousVersions"  
@@ -101,7 +101,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     const string definitionPath = @"..\..\..\NumberGuessWorkflowActivities_du";  
     ```  
   
-11. Přidejte následující `StartUpdate` metodu `Program` – třída (nebo `Module1`). Tato metoda načte až definice pracovního postupu zadané xaml do `ActivityBuilder`a potom zavolá `DynamicUpdate.PrepareForUpdate`. `PrepareForUpdate` Vytvoří kopii definice pracovního postupu uvnitř `ActivityBuilder`. Po úpravě definice pracovního postupu tato kopie se používá spolu s definice pracovního postupu změny k vytvoření mapy aktualizace.  
+11. Přidejte následující `StartUpdate` metodu `Program` třídy (nebo `Module1`). Tato metoda načte zadaný xaml definici pracovního postupu do `ActivityBuilder`a pak zavolá `DynamicUpdate.PrepareForUpdate`. `PrepareForUpdate` Vytvoří kopii definice pracovního postupu uvnitř `ActivityBuilder`. Po úpravě definice pracovního postupu tuto kopii použít spolu s definici upravenou pracovní postup k vytvoření mapy aktualizace.  
   
     ```vb  
     Private Function StartUpdate(name As String) As ActivityBuilder  
@@ -165,7 +165,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-12. V dalším kroku přidejte následující `CreateUpdateMethod` k `Program` – třída (nebo `Module1`). To vytvoří mapu dynamické aktualizace ve volání DynamicUpdateServices.CreateUpdateMap a pak uloží mapy aktualizace pomocí zadaného názvu. Tato aktualizace mapa obsahuje informace potřebné modulem runtime pracovního postupu aktualizace instanci trvalou pracovního postupu, který byl spuštěn s použitím původní definice pracovního postupu, které jsou součástí `ActivityBuilder` tak, aby dokončení pomocí definice aktualizované pracovního postupu.  
+12. V dalším kroku přidejte následující `CreateUpdateMethod` k `Program` třídy (nebo `Module1`). To vytvoří mapu dynamickou aktualizaci ve volání DynamicUpdateServices.CreateUpdateMap a potom uloží mapa aktualizace pomocí zadaného názvu. Toto mapování aktualizace obsahuje informace potřebné pro modul runtime pracovního postupu aktualizace trvalé instance práce, která byla spuštěna pomocí původní definici pracovního postupu, které jsou součástí `ActivityBuilder` tak, aby nedokončí pomocí definice aktualizovaný pracovní postup.  
   
     ```vb  
     Private Sub CreateUpdateMaps(wf As ActivityBuilder, name As String)  
@@ -199,7 +199,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-13. Přidejte následující `SaveUpdatedDefinition` metodu `Program` – třída (nebo `Module1`). Tato metoda šetří definice aktualizované pracovního postupu po vytvoření mapy aktualizace.  
+13. Přidejte následující `SaveUpdatedDefinition` metodu `Program` třídy (nebo `Module1`). Tato metoda šetří definici aktualizovaný pracovní postup po vytvoření mapa aktualizace.  
   
     ```vb  
     Private Sub SaveUpdatedDefinition(wf As ActivityBuilder, name As String)  
@@ -226,7 +226,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
   
 ###  <a name="BKMK_StateMachine"></a> Chcete-li aktualizovat StateMachineNumberGuessWorkflow  
   
-1.  Přidat `CreateStateMachineUpdateMap` k `Program` – třída (nebo `Module1`).  
+1.  Přidat `CreateStateMachineUpdateMap` k `Program` třídy (nebo `Module1`).  
   
     ```vb  
     Private Sub CreateStateMachineUpdateMap()  
@@ -240,7 +240,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-2.  Ujistěte se, volání `StartUpdate` a potom získat odkaz na kořenovém `StateMachine` aktivity pracovního postupu.  
+2.  Volání `StartUpdate` a pak získejte odkaz na kořenovém adresáři `StateMachine` aktivity pracovního postupu.  
   
     ```vb  
     Dim wf As ActivityBuilder = StartUpdate("StateMachineNumberGuessWorkflow.xaml")  
@@ -256,7 +256,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     StateMachine sm = wf.Implementation as StateMachine;  
     ```  
   
-3.  Potom aktualizujte výrazy dvou `WriteLine` aktivity, které se zobrazí, zda odhad uživatele je příliš vysoká. nebo je příliš málo tak, že budou odpovídat aktualizace provedené v [postup: hostitele více verzí pracovní postup-souběžného](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
+3.  Dále, aktualizujte výrazy dva `WriteLine` aktivity, které se zobrazí, zda je odhad uživatele moc vysoká, nebo příliš malá, aby odpovídaly aktualizace provedené v [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
   
     ```vb  
     'Update the Text of the two WriteLine activities that write the  
@@ -288,7 +288,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     tooHigh.Text = new CSharpValue<string>("Guess.ToString() + \" is too high.\"");  
     ```  
   
-4.  V dalším kroku přidejte nové `WriteLine` aktivity, která zobrazí zprávu uzavírací.  
+4.  V dalším kroku přidejte nové `WriteLine` aktivitu, která zobrazuje zprávu zavřít.  
   
     ```vb  
     'Create the new WriteLine that displays the closing message.  
@@ -317,7 +317,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     sm.States[1].Transitions[0].Action = wl;  
     ```  
   
-5.  Po aktualizaci pracovní postup volání `CreateUpdateMaps` a `SaveUpdatedDefinition`. `CreateUpdateMaps` vytvoří a uloží `DynamicUpdateMap`, a `SaveUpdatedDefinition` uloží pracovní postup aktualizované definice.  
+5.  Po aktualizaci pracovního postupu zavolejte `CreateUpdateMaps` a `SaveUpdatedDefinition`. `CreateUpdateMaps` vytvoří a uloží `DynamicUpdateMap`, a `SaveUpdatedDefinition` uloží definice aktualizovaný pracovní postup.  
   
     ```vb  
     'Create the update map.  
@@ -335,7 +335,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     SaveUpdatedDefinition(wf, "StateMachineNumberGuessWorkflow_du.xaml");  
     ```  
   
-     Následující příklad je dokončené `CreateStateMachineUpdateMap` metoda.  
+     V následujícím příkladu je dokončené `CreateStateMachineUpdateMap` metody.  
   
     ```vb  
     Private Sub CreateStateMachineUpdateMap()  
@@ -419,7 +419,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
   
 ###  <a name="BKMK_Flowchart"></a> Chcete-li aktualizovat FlowchartNumberGuessWorkflow  
   
-1.  Přidejte následující `CreateFlowchartUpdateMethod` k `Program` – třída (nebo `Module1`). Tato metoda je podobná `CreateStateMachineUpdateMap`. Začíná volání `StartUpdate`, aktualizuje definice vývojový diagram pracovního postupu a dokončení uložením aktualizace mapování a pracovní postup aktualizované definice.  
+1.  Přidejte následující `CreateFlowchartUpdateMethod` k `Program` třídy (nebo `Module1`). Tato metoda je podobný `CreateStateMachineUpdateMap`. Začíná volání `StartUpdate`, aktualizuje definice pracovního postupu vývojového diagramu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.  
   
     ```vb  
     Private Sub CreateFlowchartUpdateMap()  
@@ -533,7 +533,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
   
 ###  <a name="BKMK_Sequential"></a> Chcete-li aktualizovat SequentialNumberGuessWorkflow  
   
-1.  Přidejte následující `CreateSequentialUpdateMethod` k `Program` – třída (nebo `Module1`). Tato metoda je podobná tyto dvě metody. Začíná volání `StartUpdate`, aktualizuje definice sekvenčního pracovního postupu a dokončení uložením aktualizace mapování a pracovní postup aktualizované definice.  
+1.  Přidejte následující `CreateSequentialUpdateMethod` k `Program` třídy (nebo `Module1`). Tato metoda je podobný tyto dvě metody. Začíná volání `StartUpdate`, aktualizuje definice sekvenčního pracovního postupu a dokončení uložením mapa aktualizace a aktualizovaný pracovní postup definice.  
   
     ```vb  
     Private Sub CreateSequentialUpdateMap()  
@@ -611,9 +611,9 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-###  <a name="BKMK_CreateUpdateMaps"></a> Sestavení a spuštění aplikace CreateUpdateMaps  
+###  <a name="BKMK_CreateUpdateMaps"></a> Sestavte a spusťte aplikaci CreateUpdateMaps  
   
-1.  Aktualizace `Main` metoda a přidejte následující volání tří metod. Tyto metody jsou přidány v následujících částech. Každá metoda aktualizace odpovídající číslo odhad pracovního postupu a vytvoří `DynamicUpdateMap` aktualizace, který popisuje.  
+1.  Aktualizace `Main` metoda a přidejte následující tři metody volání. Tyto metody jsou přidány v následujících částech. Každá metoda aktualizuje odpovídající číslo odhad pracovní postup a vytvoří `DynamicUpdateMap` , který popisuje aktualizace.  
   
     ```vb  
     Sub Main()  
@@ -636,53 +636,53 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-2.  Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníku řešení** a zvolte **nastavit jako spouštěný projekt**.  
+2.  Klikněte pravým tlačítkem na **CreateUpdateMaps** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.  
   
-3.  Stiskněte klávesy CTRL + SHIFT + B řešení sestavíte a potom CTRL + F5 a spusťte `CreateUpdateMaps` aplikace.  
+3.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení a CTRL + F5 ke spuštění `CreateUpdateMaps` aplikace.  
   
     > [!NOTE]
-    >  `CreateUpdateMaps` Aplikace nejsou zobrazeny žádné informace o stavu během spuštění, ale pokud se podíváte **NumberGuessWorkflowActivities_du** složky a **PreviousVersions** složku, zobrazí se soubory definice aktualizované pracovního postupu a mapy aktualizace.  
+    >  `CreateUpdateMaps` Aplikace nejsou zobrazeny žádné informace o stavu během spuštění, ale pokud byste se podívat **NumberGuessWorkflowActivities_du** složky a **PreviousVersions** složky se zobrazí soubory definice aktualizovaný pracovní postup a mapy aktualizace.  
   
-     Po aktualizaci mapu lze vytvořit a aktualizovat definice pracovního postupu, dalším krokem je vytvoření aktualizované pracovního postupu sestavení obsahující aktualizované definice.  
+     Jakmile se vytvoří mapování aktualizace a aktualizovat definice pracovního postupu, dalším krokem je vytvoření sestavení aktualizovaný pracovní postup obsahující aktualizované definice.  
   
-###  <a name="BKMK_BuildAssembly"></a> K vytvoření sestavení aktualizované pracovního postupu  
+###  <a name="BKMK_BuildAssembly"></a> K vytvoření sestavení aktualizovaný pracovní postup  
   
-1.  Otevřít druhou instanci [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
+1.  Spusťte druhou instanci [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
   
-2.  Zvolte **otevřete**, **projekt nebo řešení** z **souboru** nabídky.  
+2.  Zvolte **otevřít**, **projekt či řešení** z **souboru** nabídky.  
   
-3.  Přejděte na **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [postup: hostitele více verzí pracovní postup-souběžného](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), vyberte **NumberGuessWorkflowActivities.csproj**  (nebo **vbproj**) a klikněte na tlačítko **otevřete**.  
+3.  Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: hostitele více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md), vyberte **NumberGuessWorkflowActivities.csproj**  (nebo **vbproj**) a klikněte na tlačítko **otevřít**.  
   
-4.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na **SequentialNumberGuessWorkflow.xaml** a zvolte **vyloučit z projektu**. Stejnou věc udělat **FlowchartNumberGuessWorkflow.xaml** a **StateMachineNumberGuessWorkflow.xaml**. Tento krok odebere předchozí verze definice pracovního postupu z projektu.  
+4.  V **Průzkumníka řešení**, klikněte pravým tlačítkem myši **SequentialNumberGuessWorkflow.xaml** a zvolte **vyjmout z projektu**. Stejnou věc udělat **FlowchartNumberGuessWorkflow.xaml** a **StateMachineNumberGuessWorkflow.xaml**. Tento krok se odebere předchozí verze definice pracovního postupu z projektu.  
   
 5.  Zvolte **přidat existující položku** z **projektu** nabídky.  
   
-6.  Přejděte na **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [postup: hostitele více verzí pracovní postup-souběžného](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
+6.  Přejděte **NumberGuessWorkflowActivities_du** složku, kterou jste vytvořili v [jak: hostitele více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
   
-7.  Zvolte **soubory XAML (\*XAML;\*. XOML)** z **soubory typu** rozevíracího seznamu.  
+7.  Zvolte **soubory XAML (\*.xaml;\*. XOML)** z **soubory typu** rozevíracího seznamu.  
   
 8.  Vyberte **SequentialNumberGuessWorkflow_du.xaml**, **FlowchartNumberGuessWorkflow_du.xaml**, a **StateMachineNumberGuessWorkflow_du.xaml** a klikněte na tlačítko  **Přidat**.  
   
     > [!NOTE]
-    >  CTRL + klikněte na tlačítko vybrat více položek najednou.  
+    >  CTRL + kliknutí vybrat více položek najednou.  
   
      Tento krok přidává aktualizované verze definice pracovního postupu do projektu.  
   
 9. Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.  
   
-10. Zvolte **zavřít řešení** z **souboru** nabídky. Soubor řešení pro projekt není vyžadována, proto klikněte na **ne** zavřete Visual Studio bez uložení soubor řešení. Zvolte **ukončení** z **souboru** nabídky zavřete Visual Studio.  
+10. Zvolte **zavřít řešení** z **souboru** nabídky. Soubor řešení pro projekt se nevyžaduje, takže klikněte na tlačítko **ne** ukončit sadu Visual Studio bez uložení souboru řešení. Zvolte **ukončovací** z **souboru** nabídku ukončit sadu Visual Studio.  
   
-11. Otevřete Průzkumníka Windows a přejděte do **NumberGuessWorkflowActivities_du\bin\Debug** složky (nebo **bin\Release** v závislosti na nastavení projektu).  
+11. Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowActivities_du\bin\Debug** složky (nebo **bin\Release** v závislosti na nastavení projektu).  
   
-12. Přejmenování **NumberGuessWorkflowActivities.dll** k **NumberGuessWorkflowActivities_v15.dll**a zkopírujte ho do **PreviousVersions** složku, kterou jste vytvořili v [Postupy: hostování více verzí pracovní postup-souběžného](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
+12. Přejmenovat **NumberGuessWorkflowActivities.dll** k **NumberGuessWorkflowActivities_v15.dll**a zkopírujte ho do **PreviousVersions** složku, kterou jste vytvořili v [Postupy: hostování několika verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md).  
   
 ###  <a name="BKMK_UpdateWorkflowVersionMap"></a> Chcete-li aktualizovat WorkflowVersionMap nové verze  
   
-1.  Přepněte zpět na původní instanci [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
+1.  Přepněte zpátky na původní instanci [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)].  
   
-2.  Klikněte dvakrát na **WorkflowVersionMap.cs** (nebo **WorkflowVersionMap.vb**) v části **NumberGuessWorkflowHost** projektu ho otevřete.  
+2.  Dvakrát klikněte na panel **WorkflowVersionMap.cs** (nebo **WorkflowVersionMap.vb**) v části **NumberGuessWorkflowHost** projekt tak, aby ho otevřete.  
   
-3.  Přidejte tři nové identity pracovního postupu pod šesti existující deklarace identity pracovního postupu. V tomto kurzu `1.5.0.0` slouží jako `WorkflowIdentity.Version` pro identity dynamické aktualizace. Tyto nové `v15` pracovního postupu se použije identity zadejte definice správné pracovního postupu pro instance dynamicky aktualizované trvalou pracovního postupu.  
+3.  Přidejte tři nové identity pracovního postupu pod šest existující deklarace identity pracovního postupu. V tomto kurzu `1.5.0.0` slouží jako `WorkflowIdentity.Version` identit dynamické aktualizace. Tyto nové `v15` pracovního postupu se použije identity poskytnout definici správné pracovního postupu pro dynamicky aktualizovaný pracovní postup trvalé instance.  
   
     ```vb  
     'Current version identities.  
@@ -718,7 +718,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     static public WorkflowIdentity SequentialNumberGuessIdentity_v15;  
     ```  
   
-4.  Přidejte následující kód na konci tohoto konstruktoru. Tento kód inicializuje identity dynamická aktualizace pracovního postupu, načte odpovídající definice pracovního postupu a přidá je do slovníku verze pracovního postupu.  
+4.  Přidejte následující kód na konci konstruktoru. Tento kód inicializuje identity pracovního postupu dynamické aktualizace, načte odpovídající definice pracovního postupu a přidá je do slovníku verze pracovního postupu.  
   
     ```vb  
     'Initialize the dynamic update workflow identities.  
@@ -796,7 +796,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
         v15Assembly.CreateInstance("NumberGuessWorkflowActivities.FlowchartNumberGuessWorkflow") as Activity);  
     ```  
   
-     Následující příklad je dokončené `WorkflowVersionMap` třídy.  
+     V následujícím příkladu je dokončené `WorkflowVersionMap` třídy.  
   
     ```vb  
     Public Module WorkflowVersionMap  
@@ -1063,34 +1063,34 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
   
 5.  Sestavte projekt stisknutím kombinace kláves CTRL+SHIFT+B.  
   
-###  <a name="BKMK_ApplyUpdate"></a> Použití dynamické aktualizace  
+###  <a name="BKMK_ApplyUpdate"></a> Aby se dynamická aktualizace  
   
-1.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníku řešení** a zvolte **přidat**, **nový projekt**.  
+1.  Klikněte pravým tlačítkem na **WF45GettingStartedTutorial** v **Průzkumníka řešení** a zvolte **přidat**, **nový projekt**.  
   
-2.  V **nainstalovaná** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).  
+2.  V **nainstalováno** uzlu, vyberte **Visual C#**, **Windows** (nebo **jazyka Visual Basic**, **Windows**).  
   
     > [!NOTE]
-    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalovaná** uzlu.  
+    >  V závislosti na programovací jazyk, který je nakonfigurovaný jako primární jazyk v sadě Visual Studio **Visual C#** nebo **jazyka Visual Basic** uzel může být v rámci **jiné jazyky** v uzlu **nainstalováno** uzlu.  
   
-     Ujistěte se, že **rozhraní .NET Framework 4.5** je vybraný v rozevíracím seznamu verze rozhraní .NET Framework. Vyberte **konzolové aplikace** z **Windows** seznamu. Typ **ApplyDynamicUpdate** do **název** pole a klikněte na tlačítko **OK**.  
+     Ujistěte se, že **rozhraní .NET Framework 4.5** je vybrali v rozevíracím seznamu verzi rozhraní .NET Framework. Vyberte **konzolovou aplikaci** z **Windows** seznamu. Typ **ApplyDynamicUpdate** do **název** pole a klikněte na tlačítko **OK**.  
   
-3.  Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníku řešení** a zvolte **přidat odkaz na**.  
+3.  Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníka řešení** a zvolte **přidat odkaz**.  
   
-4.  Klikněte na tlačítko **řešení** a zaškrtněte políčko vedle **NumberGuessWorkflowHost**. Tento odkaz je potřeba, aby `ApplyDynamicUpdate` můžete použít `NumberGuessWorkflowHost.WorkflowVersionMap` třídy.  
+4.  Klikněte na tlačítko **řešení** a zaškrtněte políčko vedle položky **NumberGuessWorkflowHost**. Je potřeba tento odkaz tak, aby `ApplyDynamicUpdate` můžete použít `NumberGuessWorkflowHost.WorkflowVersionMap` třídy.  
   
-5.  Vyberte **Framework** z **sestavení** uzlu **přidat odkaz na** seznamu. Typ **systém.** do **hledání sestavení** pole. Tato akce filtru sestavení a snadněji vyberte požadované odkazy.  
+5.  Vyberte **Framework** z **sestavení** uzlu **přidat odkaz** seznamu. Typ **System.Activities** do **hledání sestavení** pole. To bude filtrovat sestavení a usnadňují vyberte požadované odkazy.  
   
-6.  Zaškrtněte políčko vedle položky **systém.** z **výsledky hledání** seznamu.  
+6.  Zaškrtněte políčko vedle **System.Activities** z **výsledky hledání** seznamu.  
   
-7.  Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle položky **System.Runtime.Serialization** z **výsledky hledání**  seznamu.  
+7.  Typ **serializace** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Runtime.Serialization** z **výsledky hledání**  seznamu.  
   
-8.  Typ **DurableInstancing** do **hledání sestavení** pole a zaškrtněte políčko vedle položky **System.Activities.DurableInstancing** a  **System.Runtime.DurableInstancing** z **výsledky hledání** seznamu.  
+8.  Typ **DurableInstancing** do **hledání sestavení** pole a zaškrtněte políčko vedle **System.Activities.DurableInstancing** a  **System.Runtime.DurableInstancing** z **výsledky hledání** seznamu.  
   
 9. Klikněte na tlačítko **OK** zavřete **správce odkazů** a přidejte odkazy.  
   
-10. Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v Průzkumníku řešení a zvolte **přidat**, **třída**. Typ `DynamicUpdateInfo` do **název** pole a klikněte na tlačítko **přidat**.  
+10. Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v Průzkumníku řešení a zvolte **přidat**, **třídy**. Typ `DynamicUpdateInfo` do **název** pole a klikněte na tlačítko **přidat**.  
   
-11. Přidejte následující dva členy `DynamicUpdateInfo` třídy. Následující příklad je dokončené `DynamicUpdateInfo` třídy. Tato třída obsahuje informace o aktualizaci mapy a novou identitu pracovního postupu používá, když je aktualizována instance pracovního postupu.  
+11. Přidejte následující dva členy k `DynamicUpdateInfo` třídy. V následujícím příkladu je dokončené `DynamicUpdateInfo` třídy. Tato třída obsahuje informace o mapa aktualizace a nové identity pracovního postupu při instance pracovního postupu se aktualizuje.  
   
     ```vb  
     Public Class DynamicUpdateInfo  
@@ -1107,7 +1107,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-12. Přidejte následující `using` (nebo `Imports`) příkazy v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
+12. Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
   
     ```vb  
     Imports System.Activities  
@@ -1119,9 +1119,9 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     using System.Activities.DynamicUpdate;  
     ```  
   
-13. Klikněte dvakrát na **Program.cs** (nebo **Module1.vb**) v Průzkumníku řešení.  
+13. Dvakrát klikněte na panel **Program.cs** (nebo **Module1.vb**) v Průzkumníku řešení.  
   
-14. Přidejte následující `using` (nebo `Imports`) příkazy v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
+14. Přidejte následující `using` (nebo `Imports`) příkazů v horní části souboru k ostatním `using` (nebo `Imports`) příkazy.  
   
     ```vb  
     Imports NumberGuessWorkflowHost  
@@ -1144,7 +1144,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     using System.Activities.DurableInstancing;  
     ```  
   
-15. Následující připojovací řetězec členy přidat `Program` – třída (nebo `Module1`).  
+15. Přidejte následující připojovací řetězec člen, který chcete `Program` třídy (nebo `Module1`).  
   
     ```vb  
     Const connectionString = "Server=.\SQLEXPRESS;Initial Catalog=WF45GettingStartedTutorial;Integrated Security=SSPI"  
@@ -1155,9 +1155,9 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     ```  
   
     > [!NOTE]
-    >  V závislosti na vaší edicí systému SQL Server může být jiný název připojovacího řetězce serveru.  
+    >  V závislosti na vaší edici systému SQL Server může být jiný server název připojovacího řetězce.  
   
-16. Přidejte následující `GetIDs` metodu `Program` – třída (nebo `Module1`). Tato metoda vrátí seznam identifikátorů instance pracovního postupu trvalý.  
+16. Přidejte následující `GetIDs` metodu `Program` třídy (nebo `Module1`). Tato metoda vrátí seznam identifikátorů instance trvalá pracovního postupu.  
   
     ```vb  
     Function GetIds() As IList(Of Guid)  
@@ -1210,7 +1210,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-17. Přidejte následující `LoadMap` metodu `Program` – třída (nebo `Module1`). Tato metoda vytvoří slovník, který mapuje `v1` identity pracovního postupu aktualizace Maps a nových identit pracovní postup používá k aktualizaci odpovídající trvalé instancí pracovních postupů.  
+17. Přidejte následující `LoadMap` metodu `Program` třídy (nebo `Module1`). Tato metoda vytvoří slovník, který mapuje `v1` identity pracovního postupu do mapy aktualizace a nové identity pracovního postupu používá k aktualizaci odpovídající trvalé instance pracovního postupu.  
   
     ```vb  
     Function LoadMap(mapName As String) As DynamicUpdateMap  
@@ -1253,7 +1253,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-18. Přidejte následující `LoadMaps` metodu `Program` – třída (nebo `Module1`). Tato metoda načte tři mapy aktualizace a vytvoří slovník, který mapuje `v1` identity pracovního postupu aktualizace Maps.  
+18. Přidejte následující `LoadMaps` metodu `Program` třídy (nebo `Module1`). Tato metoda načte tři mapy aktualizace a vytvoří slovník, který mapuje `v1` identity pracovního postupu do mapy aktualizace.  
   
     ```vb  
     Function LoadMaps() As IDictionary(Of WorkflowIdentity, DynamicUpdateInfo)  
@@ -1325,7 +1325,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-19. Přidejte následující kód, který `Main`. Tento kód opakuje trvalou pracovní postup instancí a ověřuje jednotlivé `WorkflowIdentity`. Pokud `WorkflowIdentity` mapuje `v1` instance pracovního postupu `WorkflowApplication` je nastavena definice aktualizované pracovního postupu a identity aktualizované pracovního postupu. Dále `WorkflowApplication.Load` je volán s instance a mapy aktualizace, která se vztahuje mapy dynamické aktualizace. Po aktualizaci aktualizované instance je zachovat pomocí volání `Unload`.  
+19. Přidejte následující kód, který `Main`. Tento kód provede trvalá pracovního postupu instance a zkontroluje každý `WorkflowIdentity`. Pokud `WorkflowIdentity` mapuje na `v1` instance pracovního postupu `WorkflowApplication` je nakonfigurovaný s definicí aktualizovaný pracovní postup a identitu aktualizovaný pracovní postup. Dále `WorkflowApplication.Load` volána s instance a mapa aktualizace, která se vztahuje na mapě dynamické aktualizace. Jakmile tuto aktualizaci nenainstalujete, aktualizovanou instanci přetrvává volání `Unload`.  
   
     ```vb  
     Dim store = New SqlWorkflowInstanceStore(connectionString)  
@@ -1408,77 +1408,77 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     }  
     ```  
   
-20. Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníku řešení** a zvolte **nastavit jako spouštěný projekt**.  
+20. Klikněte pravým tlačítkem na **ApplyDynamicUpdate** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.  
   
-21. Stiskněte kombinaci kláves CTRL + SHIFT + B řešení sestavíte a stiskněte klávesu CTRL + F5 a spusťte `ApplyDynamicUpdate` aplikace a aktualizovat instance trvalou pracovního postupu. Měli byste vidět výstup podobný následujícímu. Verze 1.0.0.0 pracovní postupy jsou aktualizovány na verzi 1.5.0.0, při pracovních verzi 2.0.0.0 neaktualizují.  
+21. Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení a pak stiskněte CTRL + F5 ke spuštění `ApplyDynamicUpdate` aplikace a aktualizovat instance trvalá pracovního postupu. Byste měli vidět výstup podobný následujícímu. Pracovní postupy verze 1.0.0.0 jsou aktualizována na verzi 1.5.0.0, zatímco se neaktualizují verzi 2.0.0.0 pracovních postupů.  
   
- **Probíhá kontrola: StateMachineNumberGuessWorkflow; Verzi = 1.0.0.0**  
+ **Kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**  
 **Aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: StateMachineNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: FlowchartNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: FlowchartNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: SequentialNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: SequentialNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: SequentialNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: SequentialNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: SequentialNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: StateMachineNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: StateMachineNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: StateMachineNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: FlowchartNumberGuessWorkflow; Verzi = 1.0.0.0**   
+**Kontrola: FlowchartNumberGuessWorkflow; Verze = 1.0.0.0**   
 **Aktualizováno za účelem: FlowchartNumberGuessWorkflow; Verze = 1.5.0.0**   
-**Probíhá kontrola: StateMachineNumberGuessWorkflow; Verzi = 2.0.0.0**   
-**Probíhá kontrola: StateMachineNumberGuessWorkflow; Verzi = 2.0.0.0**   
-**Probíhá kontrola: FlowchartNumberGuessWorkflow; Verzi = 2.0.0.0**   
-**Probíhá kontrola: FlowchartNumberGuessWorkflow; Verzi = 2.0.0.0**   
-**Probíhá kontrola: SequentialNumberGuessWorkflow; Verzi = 2.0.0.0**   
-**Probíhá kontrola: SequentialNumberGuessWorkflow; Verzi = 2.0.0.0**   
-**Stisknutím libovolné klávesy pokračujte...**  
+**Kontrola: StateMachineNumberGuessWorkflow; Verze = 2.0.0.0**   
+**Kontrola: StateMachineNumberGuessWorkflow; Verze = 2.0.0.0**   
+**Kontrola: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**   
+**Kontrola: FlowchartNumberGuessWorkflow; Verze = 2.0.0.0**   
+**Kontrola: SequentialNumberGuessWorkflow; Verze = 2.0.0.0**   
+**Kontrola: SequentialNumberGuessWorkflow; Verze = 2.0.0.0**   
+**Stisknutím libovolné klávesy pokračovat...**  
   
-###  <a name="BKMK_BuildAndRun"></a> Ke spuštění aplikace s aktualizované pracovních postupů  
+###  <a name="BKMK_BuildAndRun"></a> Spusťte aplikaci pomocí aktualizovaných pracovních postupů  
   
-1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníku řešení** a zvolte **nastavit jako spouštěný projekt**.  
+1.  Klikněte pravým tlačítkem na **NumberGuessWorkflowHost** v **Průzkumníka řešení** a zvolte **nastavit jako spouštěný projekt**.  
   
-2.  Stisknutím kombinace kláves CTRL + F5 a spusťte aplikaci.  
+2.  Stisknutím kláves CTRL + F5 spusťte aplikaci.  
   
-3.  Klikněte na tlačítko **novou hru** spustit nový pracovní postup a Všimněte si níže uvedené informace verze se stavové okno, které označuje pracovního postupu `v2` pracovního postupu.  
+3.  Klikněte na tlačítko **novou hru** spuštění nového pracovního postupu a poznamenejte si informace o verzi níže se stavové okno, které označuje pracovního postupu `v2` pracovního postupu.  
   
-4.  Vyberte jednu z `v1` pracovní postupy, které jste spustili na začátku [postup: hostitele více verzí pracovní postup-souběžného](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) tématu. Všimněte si, že informace o verzi v okně stav označuje, že pracovní postup je verze **1.5.0.0** pracovního postupu. Všimněte si, že nejsou žádné informace uvedené o předchozí pokusů jiné než zda byly příliš vysoké nebo příliš nízká.  
+4.  Vyberte jednu z `v1` pracovních postupů, které jste spustili na začátku [jak: hostitel více verzí pracovní postup-souběžně](../../../docs/framework/windows-workflow-foundation/how-to-host-multiple-versions-of-a-workflow-side-by-side.md) tématu. Všimněte si, že informace o verzi v části stavové okno označuje, že pracovní postup je verze **1.5.0.0** pracovního postupu. Všimněte si, že nejsou k dispozici žádné informace uvedené informace o předchozích pokusů jiné než, zda byly moc vysoká, nebo příliš nízká.  
   
  **Zadejte prosím číslo mezi 1 a 10**  
-**Vaše odhad je příliš nízká.**  
+**Váš odhad je příliš nízká.**  
   
-5.  Poznamenejte si `InstanceId` a pak zadejte pokusů až po dokončení pracovního postupu. V okně Stav se zobrazí informace o obsahu, odhad, protože `WriteLine` aktivity aktualizoval dynamické aktualizace.  
+5.  Poznamenejte si, `InstanceId` a pak zadejte pokusů až do dokončení pracovního postupu. Stavové okno zobrazuje informace o obsahu odhad vzhledem k tomu, `WriteLine` činnosti byly aktualizovány pomocí dynamické aktualizace.  
   
  **Zadejte prosím číslo mezi 1 a 10**  
-**Vaše odhad je příliš nízká.**   
+**Váš odhad je příliš nízká.**   
 **Zadejte prosím číslo mezi 1 a 10**   
 **5 je příliš nízká.**   
 **Zadejte prosím číslo mezi 1 a 10**   
 **7 je příliš vysoká.**   
 **Zadejte prosím číslo mezi 1 a 10**   
-**Blahopřejeme, uhádnout číslo na oplátku 4.**  
+**Blahopřejeme, uhodnout číslo na oplátku 4.**  
   
-6.  Otevřete Průzkumníka Windows a přejděte do **NumberGuessWorkflowHost\bin\debug** složky (nebo **bin\release** v závislosti na nastavení projektu) a otevřete soubor sledování pomocí poznámkového bloku, která odpovídá dokončené pracovního postupu. Pokud jste neprovedli poznámku o `InstanceId` bude pravděpodobně možné identifikovat soubor správné sledování pomocí **datum změny** informace v Průzkumníku Windows. Poslední řádek informace o sledování obsahuje výstup nově přidaný `WriteLine` aktivity.  
+6.  Otevřete Průzkumníka Windows a přejděte **NumberGuessWorkflowHost\bin\debug** složky (nebo **bin\release** v závislosti na nastavení projektu) a otevřete soubor sledování pomocí poznámkového bloku, který odpovídá k dokončení pracovního postupu. Pokud jste neprovedli si `InstanceId` je možné identifikovat pomocí souboru správné sledování **datum změny** informace v Průzkumníku Windows. Poslední řádek informace o sledování obsahuje výstup nově přidaný `WriteLine` aktivity.  
   
  **Zadejte prosím číslo mezi 1 a 10**  
-**Vaše odhad je příliš nízká.**   
+**Váš odhad je příliš nízká.**   
 **Zadejte prosím číslo mezi 1 a 10**   
 **5 je příliš nízká.**   
 **Zadejte prosím číslo mezi 1 a 10**   
 **7 je příliš vysoká.**   
 **Zadejte prosím číslo mezi 1 a 10**   
-**6 je správná. Uhádnout na oplátku 4.**  
+**6 je správná. Odhadl na oplátku 4.**  
   
-###  <a name="BKMK_StartPreviousVersions"></a> Chcete-li povolit od předchozích verzí pracovních postupů  
- Pokud spustíte mimo pracovní postupy pro aktualizace, můžete upravit `NumberGuessWorkflowHost` aplikaci, která od předchozích verzí pracovních postupů.  
+###  <a name="BKMK_StartPreviousVersions"></a> Povolit od předchozích verzí pracovních postupů  
+ Pokud vyčerpáte pracovní postupy pro aktualizace, můžete upravit `NumberGuessWorkflowHost` aplikaci, která od předchozích verzí pracovních postupů.  
   
-1.  Klikněte dvakrát na **WorkflowHostForm** v **Průzkumníku řešení**a vyberte **WorkflowType** – pole se seznamem.  
+1.  Dvakrát klikněte na panel **WorkflowHostForm** v **Průzkumníka řešení**a vyberte **WorkflowType** – pole se seznamem.  
   
-2.  V **vlastnosti** vyberte **položky** vlastnost a klikněte na tlačítko se třemi tečkami upravit **položky** kolekce.  
+2.  V **vlastnosti** okna, vyberte **položky** vlastnosti a klikněte na tlačítko se třemi tečkami upravit **položky** kolekce.  
   
 3.  Přidejte následující tři položky do kolekce.  
   
@@ -1488,7 +1488,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     SequentialNumberGuessWorkflow v1  
     ```  
   
-     Dokončené `Items` kolekce bude mít šest položky.  
+     Dokončené `Items` kolekce bude obsahovat šest položek.  
   
     ```
     StateMachineNumberGuessWorkflow  
@@ -1499,9 +1499,9 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     SequentialNumberGuessWorkflow v1  
     ```  
   
-4.  Klikněte dvakrát na **WorkflowHostForm** v **Průzkumníku řešení**a vyberte **kód zobrazení**.  
+4.  Dvakrát klikněte na panel **WorkflowHostForm** v **Průzkumníka řešení**a vyberte **zobrazit kód**.  
   
-5.  Přidejte tři nové případech `switch` (nebo `Select Case`) příkaz v `NewGame_Click` obslužné rutiny pro mapování nové položky v **WorkflowType** – pole se seznamem na odpovídající identity pracovního postupu.  
+5.  Přidejte tři nové případy `switch` (nebo `Select Case`) příkaz v `NewGame_Click` obslužné rutiny pro nové položky v mapování **WorkflowType** – pole se seznamem pro odpovídající identity pracovního postupu.  
   
     ```vb  
     Case "SequentialNumberGuessWorkflow v1"  
@@ -1581,4 +1581,4 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojáři ap
     };  
     ```  
   
-6.  Stisknutím klávesy CTRL + F5 sestavení a spuštění aplikace. Nyní můžete spustit `v1` verze pracovního postupu, stejně jako aktuální verze. Chcete-li dynamicky aktualizovat tyto nové instance, spusťte **ApplyDynamicUpdate** aplikace.
+6.  Stisknutím kláves CTRL + F5 sestavte a spusťte aplikaci. Nyní můžete spustit `v1` verze pracovního postupu, stejně jako aktuální verze. Chcete-li dynamicky aktualizovat tyto nové instance, spusťte **ApplyDynamicUpdate** aplikace.

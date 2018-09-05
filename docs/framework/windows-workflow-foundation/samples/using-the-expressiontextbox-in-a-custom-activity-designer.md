@@ -1,48 +1,48 @@
 ---
-title: Pomocí ExpressionTextBox v Návrháři vlastní aktivity
+title: Použití ExpressionTextBox v Návrháři vlastní aktivity
 ms.date: 03/30/2017
 ms.assetid: f82e73e7-a256-4a4d-82b7-c0d62f4ab5e7
-ms.openlocfilehash: ad0c29e2661c82e663fd6b68fdcd74f542ef28b1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34a2d7b2217fb5ce072ad4bc243022ec27828af1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516783"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43670553"
 ---
-# <a name="using-the-expressiontextbox-in-a-custom-activity-designer"></a>Pomocí ExpressionTextBox v Návrháři vlastní aktivity
-Tento příklad ukazuje způsob použití <xref:System.Activities.Presentation.View.ExpressionTextBox> v Návrháři vlastní aktivity. Vlastní aktivity, `MultiAssign`, přiřadí dvou řetězcových hodnot dvě proměnné řetězce. Některé <xref:System.Activities.Presentation.View.ExpressionTextBox> k vytvoření vazby ovládacích prvků <xref:System.Activities.InArgument>s a některé vytvořit vazbu k <xref:System.Activities.OutArgument>s.  
+# <a name="using-the-expressiontextbox-in-a-custom-activity-designer"></a>Použití ExpressionTextBox v Návrháři vlastní aktivity
+Tento příklad ukazuje způsob použití <xref:System.Activities.Presentation.View.ExpressionTextBox> v Návrháři vlastní aktivity. Vlastní aktivita `MultiAssign`, přiřadí dva řetězcové hodnoty dvou proměnných řetězce. Některé <xref:System.Activities.Presentation.View.ExpressionTextBox> svázat ovládací prvky <xref:System.Activities.InArgument>svázat s a některé <xref:System.Activities.OutArgument>s.  
   
 ## <a name="sample-details"></a>Ukázka podrobnosti  
- `ArgumentToExpressionConverter` Je převaděč typů použít při vytváření vazby výrazů pro argumenty. `ConverterParameter` Musí být nastavena na `In` nebo `Out` podle potřeby. `InOut` není podporována.  
+ `ArgumentToExpressionConverter` Se používá při vytváření vazby výrazy na argumenty konvertor typu. `ConverterParameter` Musí být nastaveno na `In` nebo `Out` podle potřeby. `InOut` není podporováno.  
   
- `UseLocationExpression` Atribut se používá na `OutArgument`s k určení, zda výraz by měl být výraz L-value ("levém hodnota" nebo "umístění hodnota"). Ve většině případů je výraz L-value platný identifikátor jazyka Visual Basic slouží k určení, který `OutArgument` nevrátila je název proměnné nebo argumentu.  
+ `UseLocationExpression` Atribut se používá na `OutArgument`s určit, že výraz musí být výraz L-value ("vlevo hodnota" nebo "umístění value"). Ve většině případů výraz L-hodnota je platným identifikátorem jazyka Visual Basic používá k označení, že `OutArgument` vracených je název proměnné nebo argumentu.  
   
- `MaxLines` Je atribut nastaven na jednu v tomto příkladu a `MinLines` není nastaven. Znamená to, že <xref:System.Activities.Presentation.View.ExpressionTextBox> pevnou velikost jednoho řádku bez ohledu na množství text zadaný uživatelem. Chcete-li povolit <xref:System.Activities.Presentation.View.ExpressionTextBox> roste s tím, aby vyhovovaly uživatelský vstup, nastavte `MaxLines` větší než `MinLines`.  
+ `MaxLines` Atribut je nastaven na jednu v tomto příkladu a `MinLines` není nastaven. Znamená to, že <xref:System.Activities.Presentation.View.ExpressionTextBox> pevnou velikost jednoho řádku bez ohledu na to, jaká část textu zadaného uživatelem. Chcete-li povolit <xref:System.Activities.Presentation.View.ExpressionTextBox> růst podle uživatelského vstupu, nastavte `MaxLines` větší než `MinLines`.  
   
- ExpressionTextBox může být vázaný jenom na argumenty a nemůže být vázán k vlastnosti CLR.  
+ ExpressionTextBox může být vázaný jedině na argumenty a nemůže být vázaný na vlastnosti CLR.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor ExpressionTextBoxSample.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-#### <a name="to-run-this-sample"></a>Chcete tuto ukázku spustit  
+#### <a name="to-run-this-sample"></a>Tuto ukázku spustit  
   
-1.  Přidejte novou konzolovou aplikaci pracovní postup k řešení.  
+1.  Přidáte novou konzolovou aplikaci pracovního postupu do řešení.  
   
-2.  Přidat odkaz na **ExpressionTextBoxSample** projekt z nový projekt konzolové aplikace pracovního postupu.  
+2.  Přidejte odkaz na **ExpressionTextBoxSample** projekt z nový projekt konzolové aplikace pracovního postupu.  
   
 3.  Sestavte řešení.  
   
-4.  Přetáhněte **MultiAssign** aktivity z panelu nástrojů a umístěte jej do pracovního postupu.  
+4.  Přetáhněte **MultiAssign** aktivity ze sady nástrojů a umístěte ho do pracovního postupu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\ExpressionTextBox`  
   

@@ -2,31 +2,31 @@
 title: Vlastní token
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: c7219b94861cd23f27b331d1d3e5509654263430
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 03472f76310fa99568f13f0aa49d9e2a3453ac30
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33809846"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671096"
 ---
 # <a name="custom-token"></a>Vlastní token
-Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předávat informace o platebních kartách klienta ke službě. Token je předán v záhlaví zprávy WS-zabezpečení a je podepsat a zašifrovat, pomocí vazby symetrický zabezpečení element společně s tělo zprávy a jiné záhlaví zprávy. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tento příklad znázorňuje, jak poskytnout token zabezpečení vlastní službě místo pomocí jedné z předdefinovaných tokenů. Služba se implementuje kontrakt, který definuje komunikační vzor požadavku a odpovědi.  
+Tento příklad ukazuje, jak přidat vlastní implementaci token do aplikace Windows Communication Foundation (WCF). V příkladu se používá `CreditCardToken` bezpečně předat informace o kreditní karty klienta ke službě. Token je předán do záhlaví zprávy WS-Security je podepsaný a zašifrovaný pomocí elementu vazby zabezpečení symetrický spolu s textem zprávy a další záhlaví zpráv. To je užitečné v případech, kdy jsou předdefinované tokeny není dostatečná. Tato ukázka předvádí, jak poskytnout vlastní bezpečnostní token pro službu namísto pomocí jedné z předdefinovaných tokeny. Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Tento příklad znázorňuje to Shrneme, následující:  
+ Souhrnně řečeno, tento příklad znázorňuje následující:  
   
--   Jak klient předat token zabezpečení vlastní službu.  
+-   Jak klienta můžete předat vlastní bezpečnostní token do služby.  
   
--   Jak služba může přijmout a ověřit token vlastní zabezpečení.  
+-   Jak službu využívat a ověřit vlastní bezpečnostní token.  
   
--   Jak kódu služby WCF můžete získat informace o tokeny přijaté zabezpečení včetně token vlastní zabezpečení.  
+-   Jak kód služby WCF můžete získat informace o tokeny přijatý zabezpečení včetně vlastní bezpečnostní token.  
   
 -   Jak certifikát X.509 serveru slouží k ochraně symetrický klíč použitý k podpisu a šifrování zpráv.  
   
-## <a name="client-authentication-using-a-custom-security-token"></a>Ověření klienta pomocí tokenu vlastní zabezpečení  
- Službu zpřístupní jeden koncový bod, který je prostřednictvím kódu programu vytvořený pomocí `BindingHelper` a `EchoServiceHost` třídy. Koncový bod se skládá z adresy, vazby a kontraktu. Vazba je nakonfigurována pomocí vlastních vazeb `SymmetricSecurityBindingElement` a `HttpTransportBindingElement`. Nastaví Tato ukázka `SymmetricSecurityBindingElement` pro použití certifikátu X.509 služby chránit symetrický klíč během přenosu a předávat vlastní `CreditCardToken` v záhlaví zprávy WS-zabezpečení jako token zabezpečení podepsaná a šifrovaná. Určuje chování služby přihlašovací údaje, které mají být použita pro ověřování klientů a také informace o certifikátu X.509 služby.  
+## <a name="client-authentication-using-a-custom-security-token"></a>Pomocí tokenu zabezpečení vlastního ověření klienta  
+ Služba poskytuje jeden koncový bod, který je prostřednictvím kódu programu vytvořili pomocí `BindingHelper` a `EchoServiceHost` třídy. Koncový bod se skládá z adresy, vazby a kontrakt. Je vazba konfigurována s vlastními vazbami pomocí `SymmetricSecurityBindingElement` a `HttpTransportBindingElement`. Tato ukázka nastaví `SymmetricSecurityBindingElement` chránit symetrický klíč během přenosu a předat vlastní pomocí certifikátu X.509 služby `CreditCardToken` v záhlaví zprávy WS-Security jako token zabezpečení podepsaný a šifrovaná. Chování Určuje přihlašovací údaje služby, které se mají použít pro ověřování klientů a také informace o certifikát služby X.509.  
   
 ```  
 public static class BindingHelper  
@@ -47,7 +47,7 @@ public static class BindingHelper
 }  
 ```  
   
- Využívat platební karty tokenu ve zprávě, ukázka používá vlastní služba pověření ke tuto funkčnost zajistit. Třída přihlašovací údaje služby se nachází v `CreditCardServiceCredentials` třídy a přidají se do kolekce chování hostitele služby v `EchoServiceHost.InitializeRuntime` metoda.  
+ Používat platební kartu token ve zprávě, ukázka používá vlastní službu přihlašovací údaje k poskytují tuto funkci. Třída přihlašovací údaje služby se nachází v `CreditCardServiceCredentials` třídy a je přidán do kolekce chování hostitele služby v `EchoServiceHost.InitializeRuntime` metody.  
   
 ```  
 class EchoServiceHost : ServiceHost  
@@ -84,7 +84,7 @@ class EchoServiceHost : ServiceHost
 }  
 ```  
   
- Koncový bod klienta je nakonfigurovaná podobným způsobem jako koncový bod služby. Klient používá stejnou `BindingHelper` třída pro vytvoření vazby. Zbývající část nastavení se nachází v `Client` třídy. Klient také nastaví informace, které mají být obsažena v `CreditCardToken` a informace o certifikátu X.509 služby v instalační kód přidáním `CreditCardClientCredentials` instance s správná data do kolekce chování klienta koncový bod. Ukázka používá certifikát X.509 s názvem subjektu nastavit na `CN=localhost` jako certifikát služby.  
+ Koncový bod klienta je nakonfigurovaný podobným způsobem jako koncový bod služby. Klient používá stejný `BindingHelper` třídy za účelem vytvoření vazby. Zbývající část nastavení se nachází v `Client` třídy. Klient také nastaví informace, které mají být obsažena v `CreditCardToken` a informace o certifikát služby X.509 v instalační kód tak, že přidáte `CreditCardClientCredentials` instance s odpovídající data do kolekce chování koncového bodu klienta. Ukázka používá certifikát X.509 s názvem subjektu nastavit na `CN=localhost` jako certifikát služby.  
   
 ```  
 Binding creditCardBinding = BindingHelper.CreateCreditCardBinding();  
@@ -114,10 +114,10 @@ Console.WriteLine("Echo service returned: {0}", client.Echo());
 channelFactory.Close();  
 ```  
   
-## <a name="custom-security-token-implementation"></a>Token implementace vlastního zabezpečení  
- Pokud chcete povolit token vlastní zabezpečení ve WCF, vytvořte reprezentaci objektu tokenu vlastní zabezpečení. Ukázka má tento reprezentace v `CreditCardToken` třídy. Reprezentace objektu je zodpovědný za podržíte všechny relevantní informace o tokenu zabezpečení a které poskytují seznam klíčů zabezpečení obsažených v tokenu zabezpečení. V takovém případě platební karty token zabezpečení neobsahuje žádné klíč zabezpečení.  
+## <a name="custom-security-token-implementation"></a>Implementace vlastní bezpečnostní Token  
+ Povolit vlastní bezpečnostní token ve službě WCF, vytvořte reprezentaci objektu vlastní bezpečnostní token. Ukázka obsahuje tento zápis `CreditCardToken` třídy. Reprezentaci objektu zodpovídá, která uchovává všechny relevantní informace o tokenu zabezpečení a zadat seznam klíčů zabezpečení obsažených v tokenu zabezpečení. Token zabezpečení platební karty v tomto případě neobsahuje klíč zabezpečení.  
   
- Další část popisuje, co musíte udělat povolit vlastní token má být přenesen prostřednictvím sítě a spotřebovávají koncový bod WCF.  
+ Další část popisuje, co musí udělat, aby povolit vlastní token má být přenesen prostřednictvím sítě jako a spotřebovávány koncového bodu WCF.  
   
 ```  
 class CreditCardToken : SecurityToken  
@@ -155,11 +155,11 @@ class CreditCardToken : SecurityToken
 ```  
   
 ## <a name="getting-the-custom-credit-card-token-to-and-from-the-message"></a>Získání tokenu do a ze zprávy vlastní platební karty  
- Serializátorů tokenů zabezpečení ve WCF jsou zodpovědní za vytváření reprezentaci objektu tokenů zabezpečení z XML ve zprávě a vytvoření formuláře XML tokenů zabezpečení. Rovněž jsou zodpovědní za další funkce, jako je například čtení a zápis klíče identifikátory odkazující na tokeny zabezpečení, ale tento příklad používá jenom zabezpečení související s tokeny funkce. Chcete-li povolit vlastní tokenu je nutné implementovat vlastní serializátoru tokenů zabezpečení. V tomto příkladu `CreditCardSecurityTokenSerializer` třídu pro tento účel.  
+ Serializátory tokenů zabezpečení ve službě WCF zodpovídají za vytváření objektová reprezentace tokeny zabezpečení ze souboru XML ve zprávě a vytvoření XML formuláře tokenů zabezpečení. Zodpovídají také za další funkce, jako je čtení a zápis klíče identifikátory odkazující na tokeny zabezpečení, ale v tomto příkladu pouze související s tokeny funkci zabezpečení. Pokud chcete povolit vlastní token musíte implementovat vlastní serializátoru tokenů zabezpečení. Tento příklad používá `CreditCardSecurityTokenSerializer` třídu pro tento účel.  
   
- Ve službě vlastní serializátor přečte formulář XML vlastní tokenu a slouží k vyjádření objektu vlastní tokenu z něj.  
+ Ve službě uživatelský serializátor přečte formulář XML vlastní token a vytvoří reprezentaci objektu vlastní token z něj.  
   
- Na straně klienta `CreditCardSecurityTokenSerializer` třída zapíše informace obsažené v rámci reprezentace objektu tokenu zabezpečení do zapisovače XML.  
+ V klientském počítači `CreditCardSecurityTokenSerializer` třídy zapisuje informace obsažené v reprezentaci objektu tokenu zabezpečení do zapisovače XML.  
   
 ```  
 public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer  
@@ -242,20 +242,20 @@ public class CreditCardSecurityTokenSerializer : WSSecurityTokenSerializer
 }  
 ```  
   
-## <a name="how-token-provider-and-token-authenticator-classes-are-created"></a>Vytváření zprostředkovatele tokenu a Token ověřovací třídy  
- Přihlašovací údaje klient a služba je zodpovědná za poskytování instance Správce tokenu zabezpečení. Instance Správce tokenu zabezpečení se používá k získání poskytovatele tokenů, ověřovací data tokenu a serializátorů tokenu.  
+## <a name="how-token-provider-and-token-authenticator-classes-are-created"></a>Vytvoření zprostředkovatele tokenu a tokenu třídy Authenticator  
+ Přihlašovací údaje klient a služba je zodpovědná za poskytování instance Správce tokenů zabezpečení. Instance Správce tokenů zabezpečení slouží k získání poskytovatele tokenů, ověřovací data tokenu a tokenu serializátory.  
   
- Zprostředkovatel tokenu vytvoří reprezentaci objektu tokenu na základě informací obsažených v klienta služby Windows nebo pověření. Reprezentace objektu tokenu se pak zapíše zprávu pomocí serializátoru tokenů (popsané v předchozí části).  
+ Poskytovatel tokenu vytvoří reprezentaci objektu tokenu na základě informací obsažených v přihlašovacích údajů klienta nebo službě. Reprezentace objektu tokenu se poté zapíšou do zprávy pomocí serializátoru tokenů (viz popis v předchozí části).  
   
- Ověřovací data tokenu ověřuje tokeny, které přicházejí ve zprávě. Příchozí reprezentace objektu tokenu je vytvořený serializátoru tokenů. Tento objekt reprezentace se pak předá do ověřovacího modulu tokenu pro ověření. Po úspěšném ověření tokenu ověřovací data tokenu vrátí kolekci `IAuthorizationPolicy` objekty, které představují informací obsažených v tokenu. Tyto informace slouží později v průběhu zpracování zpráv k provedení rozhodnutí o autorizaci a poskytovat deklarace identity pro aplikaci. V tomto příkladu se používá ověřovací data tokenu platební karty `CreditCardTokenAuthorizationPolicy` pro tento účel.  
+ Ověřovací data tokenu ověří tokeny, které budou doručeny do zprávy. Příchozí token objektová reprezentace je vytvořen pomocí serializátoru tokenů. Tento zápis objekt je pak předán ověřovací data tokenu pro ověření. Po úspěšném ověření tokenu ověřovací data tokenu vrátí kolekci `IAuthorizationPolicy` objekty, které představují informací obsažených v tokenu. Tyto informace slouží později během zpracování zpráv a provádění rozhodování o autorizaci poskytovat deklarace identity pro aplikace. V tomto příkladu se používá ověřovací data tokenu platební karty `CreditCardTokenAuthorizationPolicy` pro tento účel.  
   
- Serializátoru tokenů zodpovídá za načítání reprezentace objektu tokenu do a ze sítě. Je to popsané v předchozí části.  
+ Token serializátor je zodpovědná za získání tokenu do a z přenosu reprezentaci objektu. Tento postup je popsán v předchozí části.  
   
- V této ukázce používáme zprostředkovatele tokenu jenom na klientovi a ověřovací data tokenu pouze na služby, protože chceme přenášet token platební karty pouze ve směru klient služba.  
+ V této ukázce používáme zprostředkovatele tokenu pouze na klienta a ověřovací data tokenu pouze na služby, protože chceme, aby přenášet platební karty token pouze ve směru klient služba.  
   
- Funkce na klientovi se nachází v `CreditCardClientCrendentials`, `CreditCardClientCredentialsSecurityTokenManager` a `CreditCardTokenProvider` třídy.  
+ Funkce na straně klienta se nachází v `CreditCardClientCrendentials`, `CreditCardClientCredentialsSecurityTokenManager` a `CreditCardTokenProvider` třídy.  
   
- Funkce na službu, který se nachází v `CreditCardServiceCredentials`, `CreditCardServiceCredentialsSecurityTokenManager`, `CreditCardTokenAuthenticator` a `CreditCardTokenAuthorizationPolicy` třídy.  
+ Ve službě, se funkce nachází v `CreditCardServiceCredentials`, `CreditCardServiceCredentialsSecurityTokenManager`, `CreditCardTokenAuthenticator` a `CreditCardTokenAuthorizationPolicy` třídy.  
   
 ```  
     public class CreditCardClientCredentials : ClientCredentials  
@@ -499,8 +499,8 @@ public class CreditCardServiceCredentialsSecurityTokenManager : ServiceCredentia
     }  
 ```  
   
-## <a name="displaying-the-callers-information"></a>Zobrazení informací o volající.  
- Chcete-li zobrazit informace volajícího, použijte `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` jak je znázorněno v následujícím ukázkovém kódu. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` Obsahuje spojené s volajícím aktuální deklarací autorizace. Deklarace identity, které jsou poskytovány společností `CreditCardToken` třídy v jeho `AuthorizationPolicies` kolekce.  
+## <a name="displaying-the-callers-information"></a>Zobrazení informací o volajícím.  
+ K zobrazení informací volajícího, použijte `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` jak je znázorněno v následujícím ukázkovém kódu. `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` Obsahuje autorizaci deklarací identity přidružené k aktuální volajícího. Deklarace identity jsou poskytována `CreditCardToken` třídy v jeho `AuthorizationPolicies` kolekce.  
   
 ```  
 bool TryGetStringClaimValue(ClaimSet claimSet, string claimType, out string claimValue)  
@@ -541,18 +541,18 @@ string GetCallerCreditCardNumber()
 }  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně klienta vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-## <a name="setup-batch-file"></a>Instalační program dávkového souboru  
- Dávkový soubor Setup.bat zahrnutá v této ukázce umožňuje nakonfigurovat server se příslušné certifikáty spuštění aplikace hostované službou IIS, která vyžaduje zabezpečení na základě certifikátu serveru. Tento dávkový soubor musí upravit, fungovat na všech počítačích, nebo pro práci v případě bez hostitele.  
+## <a name="setup-batch-file"></a>Instalační dávkový soubor  
+ Dávkový soubor Setup.bat zahrnuté v této ukázce můžete nakonfigurovat server se příslušné certifikáty ke spuštění aplikace hostované službou IIS, která vyžaduje zabezpečení na základě certifikátů serveru. Tento dávkový soubor musí být upravena fungovat na všech počítačích nebo pro práci v případě jiných hostované.  
   
- Následující poskytuje stručný přehled různých oddílů dávkové soubory, takže může být změněn na spouštění v příslušné konfiguraci.  
+ Následující body nabízí stručný přehled o různých částech dávkové soubory tak, aby se lze upravit a spustit v odpovídající konfiguraci.  
   
--   Vytvoření certifikátu serveru:  
+-   Vytváří se certifikát serveru:  
   
-     Následující řádků z `Setup.bat` dávkový soubor vytvořte certifikát serveru, který chcete použít. `%SERVER_NAME%` Proměnná Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. V tento dávkový soubor výchozí hodnota je localhost. Pokud změníte `%SERVER_NAME%` proměnné, musíte projít Client.cs a Service.cs soubory a název serveru, který používáte ve skriptu Setup.bat nahraďte všechny výskyty localhost.  
+     Následující řádky z `Setup.bat` dávkový soubor vytvořte certifikát serveru, který se má použít. `%SERVER_NAME%` Proměnné Určuje název serveru. Změňte tuto proměnnou k určení vlastního názvu serveru. V tomto souboru batch výchozí hodnota je localhost. Pokud změníte `%SERVER_NAME%` proměnné, musíte projít Client.cs a Service.cs soubory a nahraďte všechny výskyty místního hostitele s názvem serveru, který používáte v skript Setup.bat.  
   
-     Certifikát je uložen v tomto úložišti (osobních) v části `LocalMachine` umístění úložiště. Certifikát je uložen v úložišti LocalMachine pro služby hostované službou IIS. Pro samoobslužné hostované služby upravte dávkový soubor pro uložení certifikátu klienta v umístění úložiště CurrentUser nahrazením řetězec LocalMachine CurrentUser.  
+     Certifikát je uložen v úložišti (osobních) v části `LocalMachine` umístění úložiště. Certifikát je uložen v úložišti LocalMachine pro služby hostované v IIS. V místním prostředí služby upravte dávkový soubor pro uložení certifikátu klienta v umístění úložiště CurrentUser nahrazením řetězec LocalMachine CurrentUser.  
   
     ```  
     echo ************  
@@ -566,7 +566,7 @@ string GetCallerCreditCardNumber()
   
 -   Instalace certifikátu serveru do úložiště důvěryhodných certifikátů klienta:  
   
-     Následující řádky do Setup.bat batch soubor zkopírujte certifikát serveru do důvěryhodných osob klienta úložiště. Tento krok je povinný, protože certifikáty generované infrastrukturou Makecert.exe nejsou důvěryhodný implicitně systému klienta. Pokud již máte certifikát, který je integrován do důvěryhodného kořenového certifikátu klienta – například certifikát vydaný Microsoft – v tomto kroku naplnění úložišti certifikátů klienta s certifikátem serveru se nevyžaduje.  
+     Uložte následující řádky Setup.bat dávky kopírování souborů certifikát serveru do klienta důvěryhodných osob. Tento krok je nutný, protože certifikáty generované infrastrukturou Makecert.exe implicitně nedůvěřuje systému klienta. Pokud už máte certifikát, který je integrován důvěryhodného kořenového certifikátu klienta, například certifikátů vystavených Microsoftem – naplnění úložiště certifikátů klienta pomocí certifikátu serveru v tomto kroku se nevyžaduje.  
   
     ```  
     echo ************  
@@ -575,7 +575,7 @@ string GetCallerCreditCardNumber()
     certmgr.exe -add -r LocalMachine -s My -c -n %SERVER_NAME% -r CurrentUser -s TrustedPeople  
     ```  
   
--   Povolit přístup k privátnímu klíči certifikátu ze služby hostované službou IIS, musí mít uživatelský účet, pod kterým je spuštěn proces hostované službou IIS udělen příslušná oprávnění pro privátní klíč. To lze provést poslední kroky ve skriptu Setup.bat.  
+-   Povolit přístup k privátnímu klíči certifikátu ze služby hostované v IIS, musíte uživatelský účet, pod kterým je spuštěn proces hostované službou IIS udělena příslušná oprávnění pro privátní klíč. Toho lze dosáhnout poslední kroky v skript Setup.bat.  
   
     ```  
     echo ************  
@@ -589,49 +589,49 @@ string GetCallerCreditCardNumber()
     ```  
   
 > [!NOTE]
->  Dávkový soubor Setup.bat slouží ke spouštění z [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Nastavit proměnné prostředí PATH v rámci [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazový řádek odkazuje na adresář, který obsahuje požadované skriptem Setup.bat spustitelné soubory.  
+>  Dávkový soubor Setup.bat slouží ke spuštění z [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku. Nastavte proměnné prostředí PATH v rámci [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazový řádek odkazuje na adresář, který obsahuje požadované skript Setup.bat spustitelné soubory.  
   
-#### <a name="to-set-up-and-build-the-sample"></a>Jak nastavit a sestavit ukázku  
+#### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Otevřete [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] okno příkazového řádku s oprávněními správce a spusťte Setup.bat ve složce instalace ukázkové. Tím se nainstaluje všechny certifikáty, které jsou potřebné ke spuštění ukázky. Ujistěte se, že cesta obsahuje složku, kde je umístěna Makecert.exe.  
+1.  Otevřít [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] okno příkazového řádku s oprávněními správce a spusťte Setup.bat z instalační složky Ukázky. Tím se nainstaluje všechny certifikáty požadované ke spuštění ukázky. Ujistěte se, že cesta obsahuje složku, kde je umístěn Makecert.exe.  
   
 > [!NOTE]
->  Je nutné certifikáty odebrat spuštěním Cleanup.bat po dokončení se vzorkem. Další ukázky zabezpečení použijte stejné certifikáty.  
+>  Je potřeba certifikáty odebrat spuštěním Cleanup.bat po dokončení s ukázkou. Další ukázky zabezpečení použijte stejné certifikáty.  
   
-1.  Spusťte Client.exe z adresáře client\bin. Činnost klienta se zobrazí na klientskou aplikaci konzoly.  
+1.  Spusťte Client.exe z client\bin adresáře. Činnost klienta se zobrazí na klientské aplikace konzoly.  
   
-2.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+2.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-run-the-sample-across-computer"></a>Ke spuštění ukázky mezi počítači  
+#### <a name="to-run-the-sample-across-computer"></a>Ke spuštění ukázky napříč počítači  
   
-1.  Vytvořte adresář na počítači se službou pro binární soubory služby.  
+1.  Vytvoření adresáře na počítači se službou pro binární soubory služby.  
   
-2.  Zkopírujte soubory programu služby do adresáře služby na počítači se službou. Nezapomeňte zkopírovat CreditCardFile.txt; v opačném případě authenticator platební karty nelze ověřit informace o kreditní kartě odeslaných z klienta. Taky zkopírujte soubory Setup.bat a Cleanup.bat k počítači služby.  
+2.  Programové soubory nástroje služby zkopírujte do adresáře služby na počítači se službou. Nezapomeňte zkopírovat CreditCardFile.txt; v opačném případě authenticator platební karty nelze ověřit informace o platební kartě odeslaných z klienta. Také kopírovat soubory Setup.bat a Cleanup.bat k počítači služby.  
   
-3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Můžete vytvořit pomocí Setup.bat, pokud změníte `%SERVER_NAME%` proměnnou plně kvalifikovaný název počítače, který je hostitelem služby. Všimněte si, že soubor Setup.bat je nutné spustit z příkazového řádku Visual Studia otevřít s oprávněními správce.  
+3.  Musíte mít certifikát serveru s názvem subjektu, který obsahuje plně kvalifikovaný název domény počítače. Můžete si ho pomocí Setup.bat změníte-li vytvořit `%SERVER_NAME%` proměnné pro plně kvalifikovaný název počítače, který je hostitelem služby. Všimněte si, že se soubor Setup.bat musí být spuštěn v příkazovém řádku aplikace Visual Studio otevřeného s oprávněními správce.  
   
-4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople v klientovi. Musí provést pouze v případě, že certifikát serveru není vystavený důvěryhodných vystavitelů.  
+4.  Zkopírujte certifikát serveru do úložiště CurrentUser TrustedPeople na straně klienta. Musíte to provést jenom v případě, že certifikát serveru není vystavený důvěryhodného vystavitele.  
   
-5.  V souboru EchoServiceHost.cs změňte hodnotu názvu subjektu certifikátu k zadání názvu počítače plně kvalifikovaný místo localhost.  
+5.  V souboru EchoServiceHost.cs změňte hodnotu názvu subjektu certifikátu k zadání názvu počítače plně kvalifikovaný, místo localhost.  
   
-6.  Zkopírujte soubory programu klienta ve složce \client\bin\ ve složce jazyka na klientský počítač.  
+6.  Zkopírujte soubory programu klienta ze složky \client\bin\ v rámci složky specifické pro jazyk do klientského počítače.  
   
-7.  V souboru Client.cs změňte hodnotu adresa koncového bodu tak, aby odpovídala nové adresy vaší služby.  
+7.  V souboru Client.cs změňte hodnotu adresy koncového bodu tak, aby odpovídala nové adresu služby.  
   
-8.  V souboru Client.cs změňte název předmětu certifikátu X.509 služby tak, aby odpovídala plně kvalifikovaný název hostitele vzdálené místo localhost.  
+8.  V souboru Client.cs změňte název subjektu certifikátu X.509 služby tak, aby odpovídala plně kvalifikovaný název vzdáleného hostitele, místo localhost.  
   
 9. Na klientském počítači spusťte Client.exe z okna příkazového řádku.  
   
-10. Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+10. Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
+#### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
-1.  Po dokončení spuštění ukázky, spusťte Cleanup.bat ve složce Ukázky.  
+1.  Spusťte Cleanup.bat ve složce samples po dokončení spuštění ukázky.  
   
 ## <a name="see-also"></a>Viz také
