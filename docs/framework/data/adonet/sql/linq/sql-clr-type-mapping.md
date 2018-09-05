@@ -2,12 +2,12 @@
 title: Mapování typů SQL a CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: 5437529d9293951ad34abda435b538b4f404c600
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: ac00d78fff65f5d44a52f92509db3aa493952949
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "33365524"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43735433"
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typů SQL a CLR
 V technologii LINQ to SQL datový model relační databáze mapuje na objektový model vyjádřený v programovacím jazyce podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL integrovaný jazyk dotazů v objektovém modelu převádí na SQL a odesílá je do databáze pro spuštění. Když databázi vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, které můžete pracovat s vlastními programovací jazyk.  
@@ -60,7 +60,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
   
 -   Některé typy dat systému SQL Server odlišně od datového typu ekvivalentní objednávky v CLR. Například data systému SQL Server typu `UNIQUEIDENTIFIER` jinak než typ dat CLR je seřazen <xref:System.Guid?displayProperty=nameWithType>.  
   
--   SQL Server provede některé operace porovnání řetězců jinak než CLR. V systému SQL Server chování porovnání řetězců závisí na nastavení řazení na serveru. Další informace najdete v tématu [práce s kolací](http://go.microsoft.com/fwlink/?LinkId=115330) v Online knihách systému Microsoft SQL Server.  
+-   SQL Server provede některé operace porovnání řetězců jinak než CLR. V systému SQL Server chování porovnání řetězců závisí na nastavení řazení na serveru. Další informace najdete v tématu [práce s kolací](https://go.microsoft.com/fwlink/?LinkId=115330) v Online knihách systému Microsoft SQL Server.  
   
 -   SQL Server může vracet různé hodnoty pro některé z namapované funkce než CLR. Například se bude lišit rovnosti funkce, protože systém SQL Server považuje dva řetězce rovny, pokud se liší pouze v prázdný znak; bude Zatímco CLR je považuje za se nesmí rovnat.  
   
@@ -232,11 +232,11 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
 ### <a name="sql-server-filestream"></a>SQL Server FILESTREAM  
  `FILESTREAM` Atributu `VARBINARY(MAX)` sloupce je k dispozici od verze Microsoft SQL Server 2008, můžete namapovat ho pomocí LINQ to SQL, od verze rozhraní .NET Framework verze 3.5 SP1.  
   
- I když můžete namapovat `VARBINARY(MAX)` sloupce s `FILESTREAM` atribut <xref:System.Data.Linq.Binary> objekty, <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda nelze automaticky vytvořit sloupce s `FILESTREAM` atribut. Další informace o `FILESTREAM`, naleznete v tématu [FILESTREAM přehled](http://go.microsoft.com/fwlink/?LinkId=115291) na Microsoft SQL Server Books Online.  
+ I když můžete namapovat `VARBINARY(MAX)` sloupce s `FILESTREAM` atribut <xref:System.Data.Linq.Binary> objekty, <xref:System.Data.Linq.DataContext.CreateDatabase%2A?displayProperty=nameWithType> metoda nelze automaticky vytvořit sloupce s `FILESTREAM` atribut. Další informace o `FILESTREAM`, naleznete v tématu [FILESTREAM přehled](https://go.microsoft.com/fwlink/?LinkId=115291) na Microsoft SQL Server Books Online.  
   
 <a name="BinarySerialization"></a>   
 ### <a name="binary-serialization"></a>Binární serializace  
- Pokud třída implementuje <xref:System.Runtime.Serialization.ISerializable> rozhraní, může serializovat objekt některého z polí binární SQL (`BINARY`, `VARBINARY`, `IMAGE`). Objekt je serializaci a deserializaci podle jak <xref:System.Runtime.Serialization.ISerializable> rozhraní je implementováno. Další informace najdete v tématu [binární serializace](http://go.microsoft.com/fwlink/?LinkId=115581).  
+ Pokud třída implementuje <xref:System.Runtime.Serialization.ISerializable> rozhraní, může serializovat objekt některého z polí binární SQL (`BINARY`, `VARBINARY`, `IMAGE`). Objekt je serializaci a deserializaci podle jak <xref:System.Runtime.Serialization.ISerializable> rozhraní je implementováno. Další informace najdete v tématu [binární serializace](https://go.microsoft.com/fwlink/?LinkId=115581).  
   
 <a name="MiscMapping"></a>   
 ## <a name="miscellaneous-mapping"></a>Různé mapování  
