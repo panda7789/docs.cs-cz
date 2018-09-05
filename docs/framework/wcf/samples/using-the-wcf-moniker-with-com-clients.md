@@ -2,29 +2,29 @@
 title: Použití monikeru služby WCF u klientů modelu COM
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: 6d47b9c655db932bb9a4243533fbd01bcf25e0df
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: f052504648d381d6fb19fb6db0ebb1dd1086ed3c
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33808881"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43515716"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Použití monikeru služby WCF u klientů modelu COM
-Tento příklad znázorňuje způsob použití monikeru služby Windows Communication Foundation (WCF) při integraci webových služeb na základě COM vývojových prostředí, jako je například Microsoft Office Visual Basic pro aplikace (Office VBA) nebo Visual Basic 6.0. Tato ukázka se skládá z klienta Windows Script Host (.vbs), podporující klientské knihovny DLL (.dll) a služby knihovny (DLL) hostované Internetové informační služby (IIS). Služba je služba kalkulačky a klient COM volá matematické operace – přidat, odečíst, násobit a dělit – ve službě. Činnost klienta je viditelný v systému windows pole zpráva.  
+Tato ukázka demonstruje použití monikeru služby Windows Communication Foundation (WCF) k integraci webové služby do založené na modelu COM. vývojových prostředích, jako je například Microsoft Office Visual Basic for Applications (Office VBA) nebo Visual Basic 6.0. Tento příklad se skládá z klienta Windows Script Host (VBS), podpůrné klientské knihovny (DLL) a služby knihovny (.dll) hostované v Internetové informační služby (IIS). Služba je služba kalkulačky a klient modelu COM zavolá matematických operací – přidat, odečítání, násobení a rozdělit – ve službě. Činnost klienta je viditelný v ovládacím prvku windows pole zpráv.  
   
 > [!NOTE]
->  Nastavení postupu a sestavení pokyny k této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalován ve vašem počítači. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\COM`  
   
- Implementuje služby `ICalculator` kontrakt definovaný jak je znázorněno v následujícím příkladu kódu.  
+ Implementuje služby `ICalculator` kontrakt definovaný, jak je znázorněno v následujícím příkladu kódu.  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -41,43 +41,43 @@ public interface ICalculator
 }  
 ```  
   
- Ukázka ukazuje tři alternativní přístupy k použití Přezdívka:  
+ Vzorek ukazuje tři alternativní přístupy k použití monikeru:  
   
--   Typové kontrakt – kontrakt je registrován jako typ viditelné modelu COM v klientském počítači.  
+-   Typu kontraktu – smlouvy je registrován jako typ viditelné modelu COM v klientském počítači.  
   
--   Kontrakt WSDL – kontrakt poskytuje ve formě dokumentu WSDL.  
+-   Smlouva WSDL – smlouvy se dodává ve formě dokument WSDL.  
   
--   V době běhu z koncového bodu metadat Exchange (MEX) je načíst metadata Exchange kontrakt – kontrakt.  
+-   Kontraktů výměny metadat – smlouvy je načten v době běhu z koncového bodu metadat Exchange (MEX).  
   
-## <a name="typed-contract"></a>Typové kontraktu  
- Pokud chcete použít Přezdívka s použitím zadaných kontrakt, musí být správně s atributy typy pro kontrakt služby registrovaný pomocí modelu COM. Nejprve klienta musí být vytvořen pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Spusťte následující příkaz z příkazového řádku v adresáři klienta ke generování typem proxy.  
+## <a name="typed-contract"></a>Typu kontraktu  
+ Používat zástupný název typu kontraktu použití, musí být zaregistrovaný s odpovídajícím způsobem atributy typy pro kontrakt služby s modelu COM. Klient nejprve musí být generovány pomocí [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Spusťte následující příkaz z příkazového řádku v adresáři klienta ke generování typové proxy.  
   
 ```  
 svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost/servicemodelsamples/service.svc /out:generatedClient.cs  
 ```  
   
- Tato třída musí být součástí projekt a projekt by měl být nakonfigurovaný pro generování COM – viditelné, podepsané sestavení při kompilaci. Následující atribut by měl být součástí souboru AssemblyInfo.cs.  
+ Tato třída musí být součástí projektu a projekt by měl být nakonfigurovaný pro generování viditelný modulem COM, podepsané sestavení při kompilaci. Tento atribut by měl být zahrnuty v souboru AssemblyInfo.cs.  
   
 ```  
 [assembly: ComVisible(true)]  
 ```  
   
- Po vytvoření projektu, zaregistrujte COM – viditelné typy pomocí `regasm` jak je znázorněno v následujícím příkladu.  
+ Po vytvoření projektu, zaregistrujte typ viditelný modulem COM s použitím `regasm` jak je znázorněno v následujícím příkladu.  
   
 ```  
 regasm.exe /tlb:CalcProxy.tlb client.dll  
 ```  
   
- Sestavení, které se vytvoří musí být přidaní do globální mezipaměti sestavení. I když není nezbytně nutné, tato funkce zjednodušuje proces modulu runtime vyhledání sestavení. Následující příkaz přidá sestavení do globální mezipaměti sestavení.  
+ Sestavení, který je vytvořen, měli byste přidat do globální mezipaměti sestavení. I když není nezbytně nutné, tato funkce zjednodušuje proces hledání sestavení modulu runtime. Následující příkaz přidá sestavení do globální mezipaměti sestavení.  
   
 ```  
 gacutil.exe /i client.dll  
 ```  
   
 > [!NOTE]
->  Monikeru služby vyžaduje pouze registrace typu a nepoužívá ke komunikaci se službou proxy serveru.  
+>  Moniker služby vyžaduje pouze registrace typu a nepoužívá ke komunikaci se službou proxy serveru.  
   
- ComCalcClient.vbs klientská aplikace používá `GetObject` funkce sestavit proxy server pro službu pomocí syntaxe přezdívka služby zadáním adresy, vazby a smlouvy pro službu.  
+ ComCalcClient.vbs klientská aplikace používá `GetObject` funkce proxy serveru pro službu, pomocí syntaxe moniker služby zadáním adresy, vazby, sestavit a kontrakt služby.  
   
 ```  
 Set typedServiceMoniker = GetObject(  
@@ -85,27 +85,27 @@ Set typedServiceMoniker = GetObject(
 contractType={9213C6D2-5A6F-3D26-839B-3BA9B82228D3}")  
 ```  
   
- Zadejte parametry používané Přezdívka:  
+ Zadejte parametry používané zástupný název:  
   
 -   Adresa koncového bodu služby.  
   
--   Vazba, který klient musí použít pro připojení k tohoto koncového bodu. V takovém případě wsHttpBinding definované v systému se používá, když vlastní vazby lze definovat v konfiguračních souborech klienta. Pro použití se službou Windows Script Host vlastní vazby je definována v souboru Cscript.exe.config ve stejném adresáři jako Cscript.exe.  
+-   Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu. V takovém případě wsHttpBinding definované v systému se používá, i když je možné definovat vlastní vazby v konfiguračních souborů klienta. Pro použití s Windows Script Host je vlastní vazby definované v souboru Cscript.exe.config ve stejném adresáři jako Cscript.exe.  
   
--   Typ smlouvy, které je podporovaná v koncový bod. Jedná se o typ, která byla vygenerována a zaregistrován výše. Vzhledem k tomu, že skript jazyka Visual Basic neposkytuje prostředí silného typu modelu COM, musí být zadán identifikátor pro kontrakt. Tento identifikátor GUID je `interfaceID` z CalcProxy.tlb, které lze zobrazit pomocí nástrojů modelu COM, jako je například prohlížeč objektů OLE/COM (OleView.exe). Silně typované prostředích, jako je Office VBA nebo Visual Basic 6.0 přidávání explicitní odkaz na typ knihovny a potom deklarující typ objektu proxy použít místo parametr kontrakt. To také poskytuje podporu technologie IntelliSense během vývoje aplikace klienta.  
+-   Typ smlouvy, která je podporována v koncovém bodě. Jedná se o typ, který byl generován a zaregistrován výše. Vzhledem k tomu, že skript jazyka Visual Basic neposkytuje prostředí modelu COM silného typu, je třeba zadat identifikátor pro kontrakt. Tento identifikátor GUID je `interfaceID` z CalcProxy.tlb, které lze zobrazit pomocí nástroje modelu COM, jako je například prohlížeč objektů OLE/COM (OleView.exe). Silný prostředích, jako například Office VBA nebo Visual Basic 6.0 přidat explicitní odkaz na knihovnu typů a pak deklarační typ objektu proxy použít místo parametru kontraktu. To také poskytuje podporu technologie IntelliSense při vývoji klientských aplikací.  
   
- S vytvořená instance proxy s monikeru služby, klientská aplikace můžete volat metody pro proxy server, což vede k volání odpovídající operací služby infrastruktury přezdívka služby.  
+ Instance proxy s monikeru služby s vytvořen, klientská aplikace může volat metody na proxy serveru, což vede k infrastruktuře moniker služby volání odpovídající operace služby.  
   
 ```  
 ' Call the service operations using the moniker object  
 WScript.Echo "Typed service moniker: 100 + 15.99 = " & typedServiceMoniker.Add(100, 15.99)  
 ```  
   
- Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient COM volání modelu COM pomocí zadaných Přezdívka ke komunikaci se službou WCF. Bez ohledu na použití modelu COM v aplikaci klienta komunikace se službou se skládá jenom z volání webové služby.  
+ Při spuštění ukázky v reakci na operaci se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient modelu COM, volání modelu COM pomocí zadaný moniker komunikovat se službou WCF. Komunikace se službou se skládá pouze z volání webové služby bez ohledu na použití modelu COM v klientské aplikaci.  
   
 ## <a name="wsdl-contract"></a>Kontraktů WSDL  
- Používat Přezdívka kontraktu WSDL, není požadována žádná registrace knihovny klienta, ale WSDL kontrakt služby musí být načteny prostřednictvím mechanismus out-of-band například pomocí prohlížeče přístup WSDL koncový bod pro službu. Přezdívka můžete poté přistoupit v době provádění tohoto kontraktu.  
+ Používat zástupný název kontraktu WSDL, není požadována žádná registrace knihovny klienta ale WSDL kontrakt služby musí být načten mechanismem out-of-band jako je například přístup ke koncovému bodu WSDL pro službu pomocí prohlížeče. Zástupný název mohlo dostat přístup k této smlouvy v době spuštění.  
   
- Klientská aplikace ComCalcClient.vbs používá `FileSystemObject` pro přístup k souboru WSDL místně uložené a pak znovu použije `GetObject` funkce vytvořit proxy server pro službu.  
+ Klientská aplikace ComCalcClient.vbs používá `FileSystemObject` pro přístup k místně uloženého souboru WSDL a pak znovu použije `GetObject` funkce k vytvoření proxy serveru pro službu.  
   
 ```  
 ' Open the WSDL contract file and read it all into the wsdlContract string  
@@ -125,32 +125,32 @@ wsdlMonikerString = wsdlMonikerString + ", contract=ICalculator, contractNamespa
 Set wsdlServiceMoniker = GetObject(wsdlMonikerString)  
 ```  
   
- Zadejte parametry používané Přezdívka:  
+ Zadejte parametry používané zástupný název:  
   
 -   Adresa koncového bodu služby.  
   
--   Vazba, který klient musí použít pro připojení k tohoto koncového bodu a obor názvů, ve kterém je definovaný vazbou. V takovém případě `wsHttpBinding_ICalculator` se používá.  
+-   Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu a obor názvů, ve kterém je definován, že vazba. V takovém případě `wsHttpBinding_ICalculator` se používá.  
   
--   WSDL, který definuje kontrakt. V takovém případě je řetězec, který byl přečten ze souboru serviceWsdl.xml.  
+-   WSDL, který definuje kontrakt. V tomto případě je řetězec, který byl přečten ze souboru serviceWsdl.xml.  
   
--   Název a obor názvů kontraktu. Toto identifikační není nutná, protože schématu WSDL může obsahovat více než jeden kontrakt.  
+-   Název a obor názvů kontraktu. Tato identifikace totiž jazyka WSDL může obsahovat více než jeden kontrakt.  
   
     > [!NOTE]
-    >  Ve výchozím nastavení, služby WCF generovat samostatné soubory WSDL pro každý obor názvů, použití. Tyto jsou propojeny s použitím konstrukce import schématu WSDL. Protože moniker se očekává jenom jednu definici WSDL, službu buď musíte použít jeden obor názvů, jak je předvedeno v této ukázce nebo samostatné soubory je potřeba ručně sloučit.  
+    >  Ve výchozím nastavení, služby WCF generovat samostatné soubory WSDL pro každý obor názvů, který používá. Tyto jsou propojeny s použitím konstrukce importu WSDL. Protože je moniker očekává jenom jednu definici WSDL, službu buď musí používat jednoho oboru názvů, jak je ukázáno v tomto příkladu nebo samostatné soubory je potřeba sloučit ručně.  
   
- S vytvořená instance proxy s monikeru služby, klientská aplikace můžete volat metody pro proxy server, což vede k volání odpovídající operací služby infrastruktury přezdívka služby.  
+ Instance proxy s monikeru služby s vytvořen, klientská aplikace může volat metody na proxy serveru, což vede k infrastruktuře moniker služby volání odpovídající operace služby.  
   
 ```  
 ' Call the service operations using the moniker object  
 WScript.Echo "WSDL service moniker: 145 - 76.54 = " & wsdlServiceMoniker.Subtract(145, 76.54)  
 ```  
   
- Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient COM volání modelu COM pomocí Přezdívka kontraktu WSDL ke komunikaci se službou WCF.  
+ Při spuštění ukázky v reakci na operaci se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient modelu COM, volání COM použití monikeru u kontraktů WSDL komunikovat se službou WCF.  
   
-## <a name="metadata-exchange-contract"></a>Metadata Exchange kontraktu  
- Pokud chcete používat Přezdívka s MEX kontraktu, stejně jako u kontraktů WSDL, není požadována žádná registrace klienta. V době provedení prostřednictvím interní použití systému Metadata Exchange se načítají, kontrakt služby.  
+## <a name="metadata-exchange-contract"></a>Kontraktů Metadata Exchange  
+ Pokud chcete použít zástupný název s kontraktem MEX, stejně jako u kontraktů WSDL, není požadována žádná registrace klienta. Kontrakt služby je načten v době provádění prostřednictvím interní použití výměny metadat.  
   
- Klientská aplikace ComCalcClient.vbs znovu používá `GetObject` funkce vytvořit proxy server pro službu.  
+ Klientská aplikace ComCalcClient.vbs znovu používá `GetObject` funkce k vytvoření proxy serveru pro službu.  
   
 ```  
 ' Create a string for the service moniker specifying the address to retrieve the service metadata from  
@@ -163,78 +163,78 @@ mexMonikerString = mexMonikerString + ", contract=ICalculator, contractNamespace
 Set mexServiceMoniker = GetObject(mexMonikerString)  
 ```  
   
- Zadejte parametry používané Přezdívka:  
+ Zadejte parametry používané zástupný název:  
   
 -   Adresa koncového bodu služby metadata exchange.  
   
 -   Adresa koncového bodu služby.  
   
--   Vazba, který klient musí použít pro připojení k tohoto koncového bodu a obor názvů, ve kterém je definovaný vazbou. V takovém případě `wsHttpBinding_ICalculator` se používá.  
+-   Vazby, který klient musí použít pro připojení pomocí tohoto koncového bodu a obor názvů, ve kterém je definován, že vazba. V takovém případě `wsHttpBinding_ICalculator` se používá.  
   
--   Název a obor názvů kontraktu. Toto identifikační není nutná, protože schématu WSDL může obsahovat více než jeden kontrakt.  
+-   Název a obor názvů kontraktu. Tato identifikace totiž jazyka WSDL může obsahovat více než jeden kontrakt.  
   
- S vytvořená instance proxy s monikeru služby, klientská aplikace můžete volat metody pro proxy server, což vede k volání odpovídající operací služby infrastruktury přezdívka služby.  
+ Instance proxy s monikeru služby s vytvořen, klientská aplikace může volat metody na proxy serveru, což vede k infrastruktuře moniker služby volání odpovídající operace služby.  
   
 ```  
 ' Call the service operations using the moniker object  
 WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9, 81.25)  
 ```  
   
- Při spuštění vzorového odpověď operace se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient COM volání modelu COM pomocí Přezdívka kontraktu MEX ke komunikaci se službou WCF.  
+ Při spuštění ukázky v reakci na operaci se zobrazí v okně Windows Script Host zprávy. Tento příklad ukazuje klient modelu COM, volání COM použití monikeru s kontraktem MEX komunikovat se službou WCF.  
   
-#### <a name="to-set-up-and-build-the-sample"></a>Jak nastavit a sestavit ukázku  
+#### <a name="to-set-up-and-build-the-sample"></a>K nastavení a sestavit ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Z příkazového řádku Visual Studia otevřete složku \client\bin, ve složce konkrétní jazyk.  
+3.  Z příkazového řádku sady Visual Studio otevřete složku \client\bin, v rámci složky specifické pro jazyk.  
   
     > [!NOTE]
-    >  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, spuštění příkazového řádku s oprávněními správce.  
+    >  Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)], [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 nebo Windows Server 2008 R2, ujistěte se, že spustit příkazový řádek s oprávněními správce.  
   
-4.  Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll tlb souboru. "Typ upozornění – Exportér knihovny" je očekávána, ale není problém, protože obecného typu se nevyžaduje.  
+4.  Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll do souboru tlb. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
   
-5.  Zadejte `regasm.exe /tlb:CalcProxy.tlb client.dll` typy zaregistrovat u modelu COM. "Typ upozornění – Exportér knihovny" je očekávána, ale není problém, protože obecného typu se nevyžaduje.  
+5.  Zadejte `regasm.exe /tlb:CalcProxy.tlb client.dll` k registraci typů modelu COM. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
   
 6.  Zadejte `gacutil.exe /i client.dll` přidat sestavení do globální mezipaměti sestavení.  
   
 #### <a name="to-run-the-sample-on-the-same-computer"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Test, který jste mají přístup ke službě pomocí prohlížeče zadáním v následující adrese: `http://localhost/servicemodelsamples/service.svc`. Potvrzovací stránku má být zobrazena v odpovědi.  
+1.  Test, který můžete přístup ke službě pomocí prohlížeče tak, že zadáte tuto adresu: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi.  
   
-2.  Spusťte ComCalcClient.vbs z \client získáte složky pro konkrétní jazyk. Činnost klienta se zobrazí ve windows pole zpráva.  
+2.  Spusťte ComCalcClient.vbs z \client ze složky specifické pro jazyk. Činnost klienta se zobrazí v poli zpráv – windows.  
   
-3.  Pokud klient a služba není schopen komunikovat, najdete v části [tipy pro řešení potíží s](http://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
+3.  Pokud nejsou schopné komunikovat klienta a služby, přečtěte si téma [tipy k řešení potíží s](https://msdn.microsoft.com/library/8787c877-5e96-42da-8214-fa737a38f10b).  
   
-#### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky mezi počítači  
+#### <a name="to-run-the-sample-across-computers"></a>Ke spuštění ukázky v počítačích  
   
-1.  Na počítači se službou vytvořte virtuální adresář s názvem ServiceModelSamples. Skript Setupvroot.bat součástí vzorku lze použít k vytvoření adresáře disk a virtuální adresář.  
+1.  Na počítači se službou vytvořte virtuální adresář s názvem ServiceModelSamples. Setupvroot.bat skript dodaný s ukázkou je možné vytvořit na disku a virtuální adresář.  
   
 2.  Zkopírujte soubory programu služby z %SystemDrive%\Inetpub\wwwroot\servicemodelsamples do ServiceModelSamples virtuálního adresáře na počítači se službou. Nezapomeňte zahrnout soubory v adresáři \bin.  
   
-3.  Zkopírujte soubor skriptu klienta ve složce \client ve složce jazyka na klientský počítač.  
+3.  Zkopírujte instalační soubor klienta skriptu ze složky \client v rámci složky specifické pro jazyk do klientského počítače.  
   
-4.  V souboru skriptu změňte hodnotu adresu definice koncového bodu tak, aby odpovídala nové adresy vaší služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+4.  V souboru skriptu změňte hodnotu adresy definice koncového bodu tak, aby odpovídala nové adresu služby. Nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
   
-5.  Zkopírujte soubor WSDL do klientského počítače. V souboru WSDL serviceWsdl.xml, nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
+5.  Zkopírujte soubor WSDL na klientském počítači. V souboru WSDL serviceWsdl.xml, nahraďte všechny odkazy na "localhost" plně kvalifikovaný název domény v adrese.  
   
-6.  Kopírování knihovně Client.dll ve složce \client\bin ve složce pro specifický jazyk do jiného adresáře v klientském počítači.  
+6.  Zkopírujte Client.dll knihovny ze složky \client\bin v rámci složky specifické pro jazyk do adresáře na klientském počítači.  
   
-7.  Z příkazového řádku přejděte do adresáře cílové v klientském počítači. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)], nezapomeňte příkazový řádek spustit jako správce.  
+7.  Z příkazového řádku přejděte do této cílové složky v klientském počítači. Pokud používáte [!INCLUDE[wv](../../../../includes/wv-md.md)] nebo [!INCLUDE[lserver](../../../../includes/lserver-md.md)], ujistěte se, že příkazový řádek spustit jako správce.  
   
-8.  Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll tlb souboru. "Typ upozornění – Exportér knihovny" je očekávána, ale není problém, protože obecného typu se nevyžaduje.  
+8.  Zadejte `tlbexp.exe client.dll /out:CalcProxy.tlb` Export knihovny dll do souboru tlb. "Zadejte upozornění exportéru knihovny typů" očekává se, ale není problém, protože obecného typu se nevyžaduje.  
   
-9. Zadejte `regasm.exe /tlb:CalcProxy.tlb client.dll` typy zaregistrovat u modelu COM. Ujistěte se, zda cesta byla nastavena na složku, která obsahuje `regasm.exe` před spuštěním příkazu.  
+9. Zadejte `regasm.exe /tlb:CalcProxy.tlb client.dll` k registraci typů modelu COM. Zajištění byla nastavena tato cesta ke složce, která obsahuje `regasm.exe` před spuštěním příkazu.  
   
-10. Zadejte `gacutil.exe /i client.dll` přidat sestavení do globální mezipaměti sestavení. Ujistěte se, zda cesta byla nastavena na složku, která obsahuje `gacutil.exe` před spuštěním příkazu.  
+10. Zadejte `gacutil.exe /i client.dll` přidat sestavení do globální mezipaměti sestavení. Zajištění byla nastavena tato cesta ke složce, která obsahuje `gacutil.exe` před spuštěním příkazu.  
   
-11. Test službě můžete dostat z klientského počítače pomocí prohlížeče.  
+11. Testovací službě můžete dostat z klientského počítače pomocí prohlížeče.  
   
 12. Na klientském počítači spusťte ComCalcClient.vbs.  
   
-#### <a name="to-clean-up-after-the-sample"></a>Vyčistěte po vzorku  
+#### <a name="to-clean-up-after-the-sample"></a>K vyčištění po vzorku  
   
--   Z bezpečnostních důvodů odeberte definici virtuální adresář a oprávnění udělená v průběhu instalace, když skončíte s ukázky.  
+-   Z bezpečnostních důvodů odstranit definici virtuální adresář a oprávnění udělené v kroků instalace, až budete hotovi s ukázkami.  
   
 ## <a name="see-also"></a>Viz také

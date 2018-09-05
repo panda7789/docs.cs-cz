@@ -10,11 +10,11 @@ ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0a36e08c9b54dd6b47b11b36fd20993bff8c805e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386340"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43563628"
 ---
 # <a name="obsolete-members-in-the-net-framework"></a>Zastaralé členy v rozhraní .NET Framework
 Tabulky v tomto článku obsahují členy typu, které jsou zastaralé v rozhraní .NET Framework 4.5 a novějších verzích uspořádané podle sestavení. Pokud chcete zobrazit seznam zastaralé členy a doporučené alternativy v každé sestavení pomocí následujících odkazů. Toto téma neobsahuje členy zastaralých typů. Seznam zastaralých typů najdete v tématu [zastaralých typů](../../../docs/framework/whats-new/obsolete-types.md).  

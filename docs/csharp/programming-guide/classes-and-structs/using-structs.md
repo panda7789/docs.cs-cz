@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: 553a6d1d2e922d1683cb5dbe2fa0b525c9b1e37a
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: ed21bf44ebcc84a20bb228f9ba152e7348abc015
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925327"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43521434"
 ---
 # <a name="using-structs-c-programming-guide"></a>Použití struktur (Průvodce programováním v C#)
 `struct` Typ je vhodný pro zjednodušené objekty, jako představující `Point`, `Rectangle`, a `Color`. I když je každopádně pohodlné představuje bod jako [třídy](../../../csharp/language-reference/keywords/class.md) s [implemented Properties](../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md), [struktura](../../../csharp/language-reference/keywords/struct.md) může být efektivnější v některých scénářích. Například, pokud deklarujete pole 1000 `Point` objekty, přidělí paměť navíc pro odkazování na každý objekt; v takovém, struktura bude méně nákladné. Vzhledem k tomu, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] obsahuje objektu s názvem <xref:System.Drawing.Point>, struktura v tomto příkladu má název "CoOrds" místo.  
@@ -50,7 +50,8 @@ ms.locfileid: "42925327"
   
  [!code-csharp[csProgGuideObjects#3](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/using-structs_3.cs)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)  
+- [Struktury](../../../csharp/programming-guide/classes-and-structs/structs.md)

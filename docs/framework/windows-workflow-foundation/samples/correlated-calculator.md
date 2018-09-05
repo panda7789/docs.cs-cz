@@ -3,11 +3,11 @@ title: Korelovaná Kalkulačka
 ms.date: 03/30/2017
 ms.assetid: c365166e-6552-49a4-bf17-9f4e597d4d41
 ms.openlocfilehash: 71cfdd0906ef20ec36b76ef5e508a4551b9fe3fe
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384668"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43517310"
 ---
 # <a name="correlated-calculator"></a>Korelovaná Kalkulačka
 Tento příklad ukazuje, jak pomocí aktivit zasílání zpráv (<xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply>) v návrháři se korelace na základě obsahu na základě parametru ve zprávě. V tomto scénáři jsou operace kalkulačky v paralelní doprovodný. Instance a korelaci (na základě `CalculatorId`) se vytvoří, když je první zpráva odeslána do pracovního postupu a následné zprávy se stejnou `CalculatorId` se odesílají do této instance, dokud volat operaci resetování. Klient je implementovaný jako aplikaci WPF, která používá proxy server založený na kódu klienta ke komunikaci se službou.  
