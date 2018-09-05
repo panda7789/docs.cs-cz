@@ -1,27 +1,27 @@
 ---
-title: Refaktoring pomocí metody rozšíření (C#)
+title: Refaktoring pomocí rozšiřující metodu (C#)
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
-ms.openlocfilehash: f3a1d64aebc04d772209dbe867e6d729de087127
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 08c37923792e1ac6ee922bf052d39fb63b1685c7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33335481"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672245"
 ---
-# <a name="refactoring-using-an-extension-method-c"></a><span data-ttu-id="4d921-102">Refaktoring pomocí metody rozšíření (C#)</span><span class="sxs-lookup"><span data-stu-id="4d921-102">Refactoring Using an Extension Method (C#)</span></span>
-<span data-ttu-id="4d921-103">Tento příklad vychází na předchozí příklad, [načítání textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), podle refaktoring zřetězení řetězců pomocí čistý funkci, která je implementovaná jako metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="4d921-103">This example builds on the previous example, [Retrieving the Text of the Paragraphs (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), by refactoring the concatenation of strings using a pure function that is implemented as an extension method.</span></span>  
+# <a name="refactoring-using-an-extension-method-c"></a><span data-ttu-id="8bd98-102">Refaktoring pomocí rozšiřující metodu (C#)</span><span class="sxs-lookup"><span data-stu-id="8bd98-102">Refactoring Using an Extension Method (C#)</span></span>
+<span data-ttu-id="8bd98-103">Tento příklad je založen na předchozím příkladu [načtení textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), refaktoring zřetězení řetězců pomocí čisté funkce, která je implementována jako metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="8bd98-103">This example builds on the previous example, [Retrieving the Text of the Paragraphs (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), by refactoring the concatenation of strings using a pure function that is implemented as an extension method.</span></span>  
   
- <span data-ttu-id="4d921-104">Předchozí příklad používá <xref:System.Linq.Enumerable.Aggregate%2A> operátor standardní dotazu k řetězení více řetězců do jednoho řetězce.</span><span class="sxs-lookup"><span data-stu-id="4d921-104">The previous example used the <xref:System.Linq.Enumerable.Aggregate%2A> standard query operator to concatenate multiple strings into one string.</span></span> <span data-ttu-id="4d921-105">Je však pohodlnější zápis metody rozšíření Chcete-li to provést, protože výsledná menší a více jednoduchých dotazů.</span><span class="sxs-lookup"><span data-stu-id="4d921-105">However, it is more convenient to write an extension method to do this, because the resulting query smaller and more simple.</span></span>  
+ <span data-ttu-id="8bd98-104">Předchozí příklad použitý <xref:System.Linq.Enumerable.Aggregate%2A> operátor standardního dotazu pro řetězení více řetězců do jednoho řetězce.</span><span class="sxs-lookup"><span data-stu-id="8bd98-104">The previous example used the <xref:System.Linq.Enumerable.Aggregate%2A> standard query operator to concatenate multiple strings into one string.</span></span> <span data-ttu-id="8bd98-105">Je však pohodlnější zapisovat metodu rozšíření k tomu, protože výsledná menší a více jednoduchých dotazů.</span><span class="sxs-lookup"><span data-stu-id="8bd98-105">However, it is more convenient to write an extension method to do this, because the resulting query smaller and more simple.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4d921-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="4d921-106">Example</span></span>  
- <span data-ttu-id="4d921-107">Tento příklad zpracuje WordprocessingML dokumentu, načítání odstavců, styl jednotlivých odstavců a každý odstavec.</span><span class="sxs-lookup"><span data-stu-id="4d921-107">This example processes a WordprocessingML document, retrieving the paragraphs, the style of each paragraph, and the text of each paragraph.</span></span> <span data-ttu-id="4d921-108">Tento příklad vychází v předchozích příkladech v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="4d921-108">This example builds on the previous examples in this tutorial.</span></span>  
+## <a name="example"></a><span data-ttu-id="8bd98-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="8bd98-106">Example</span></span>  
+ <span data-ttu-id="8bd98-107">V tomto příkladu zpracovává dokumentu WordprocessingML načtení odstavců, styl k jednotlivým odstavcům a každý odstavec.</span><span class="sxs-lookup"><span data-stu-id="8bd98-107">This example processes a WordprocessingML document, retrieving the paragraphs, the style of each paragraph, and the text of each paragraph.</span></span> <span data-ttu-id="8bd98-108">Tento příklad je založen na předchozí příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="8bd98-108">This example builds on the previous examples in this tutorial.</span></span>  
   
- <span data-ttu-id="4d921-109">V příkladu obsahuje více přetížení `StringConcatenate` metoda.</span><span class="sxs-lookup"><span data-stu-id="4d921-109">The example contains multiple overloads of the `StringConcatenate` method.</span></span>  
+ <span data-ttu-id="8bd98-109">Tento příklad obsahuje více přetížení `StringConcatenate` metody.</span><span class="sxs-lookup"><span data-stu-id="8bd98-109">The example contains multiple overloads of the `StringConcatenate` method.</span></span>  
   
- <span data-ttu-id="4d921-110">Pokyny pro vytvoření zdrojový dokument v tomto příkladu můžete najít [vytváření zdroj Office otevřít dokument XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="4d921-110">You can find instructions for creating the source document for this example in [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="8bd98-110">Můžete najít pokyny pro vytvoření zdrojového dokumentu v tomto příkladu v [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="8bd98-110">You can find instructions for creating the source document for this example in [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="4d921-111">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="4d921-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="4d921-112">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="4d921-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="8bd98-111">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="8bd98-111">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="8bd98-112">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="8bd98-112">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -62,10 +62,10 @@ public static class LocalExtensions
 }  
 ```  
   
-## <a name="example"></a><span data-ttu-id="4d921-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="4d921-113">Example</span></span>  
- <span data-ttu-id="4d921-114">Existují čtyři přetížení `StringConcatenate` metoda.</span><span class="sxs-lookup"><span data-stu-id="4d921-114">There are four overloads of the `StringConcatenate` method.</span></span> <span data-ttu-id="4d921-115">Jedním přetížením jednoduše vezme kolekci řetězce a vrátí jeden řetězec.</span><span class="sxs-lookup"><span data-stu-id="4d921-115">One overload simply takes a collection of strings and returns a single string.</span></span> <span data-ttu-id="4d921-116">Další přetížení může trvat kolekce libovolného typu a delegáta této projekty z jednotlivý prvek kolekce na řetězec.</span><span class="sxs-lookup"><span data-stu-id="4d921-116">Another overload can take a collection of any type, and a delegate that projects from a singleton of the collection to a string.</span></span> <span data-ttu-id="4d921-117">Existují dva další přetížení, které umožňují určit řetězec oddělovače.</span><span class="sxs-lookup"><span data-stu-id="4d921-117">There are two more overloads that allow you to specify a separator string.</span></span>  
+## <a name="example"></a><span data-ttu-id="8bd98-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="8bd98-113">Example</span></span>  
+ <span data-ttu-id="8bd98-114">Existují čtyři přetížení `StringConcatenate` metody.</span><span class="sxs-lookup"><span data-stu-id="8bd98-114">There are four overloads of the `StringConcatenate` method.</span></span> <span data-ttu-id="8bd98-115">Jedním přetížením jednoduše vezme kolekci řetězců a vrátí jeden řetězec.</span><span class="sxs-lookup"><span data-stu-id="8bd98-115">One overload simply takes a collection of strings and returns a single string.</span></span> <span data-ttu-id="8bd98-116">Další přetížení může trvat kolekci libovolného typu a delegáta této projektů z jednotlivý prvek kolekce na řetězec.</span><span class="sxs-lookup"><span data-stu-id="8bd98-116">Another overload can take a collection of any type, and a delegate that projects from a singleton of the collection to a string.</span></span> <span data-ttu-id="8bd98-117">Existují dvě další přetížení, které vám umožňují určit oddělovacího řetězce.</span><span class="sxs-lookup"><span data-stu-id="8bd98-117">There are two more overloads that allow you to specify a separator string.</span></span>  
   
- <span data-ttu-id="4d921-118">Následující kód používá všechny čtyři přetížení.</span><span class="sxs-lookup"><span data-stu-id="4d921-118">The following code uses all four overloads.</span></span>  
+ <span data-ttu-id="8bd98-118">Následující kód používá všechna čtyři přetížení.</span><span class="sxs-lookup"><span data-stu-id="8bd98-118">The following code uses all four overloads.</span></span>  
   
 ```csharp  
 string[] numbers = { "one", "two", "three" };  
@@ -78,7 +78,7 @@ Console.WriteLine("{0}", intNumbers.StringConcatenate(i => i.ToString()));
 Console.WriteLine("{0}", intNumbers.StringConcatenate(i => i.ToString(), ":"));  
 ```  
   
- <span data-ttu-id="4d921-119">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="4d921-119">This example produces the following output:</span></span>  
+ <span data-ttu-id="8bd98-119">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8bd98-119">This example produces the following output:</span></span>  
   
 ```  
 onetwothree  
@@ -87,8 +87,8 @@ one:two:three:
 1:2:3:  
 ```  
   
-## <a name="example"></a><span data-ttu-id="4d921-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="4d921-120">Example</span></span>  
- <span data-ttu-id="4d921-121">V příkladu se teď dají změnit využívat nové metody rozšíření:</span><span class="sxs-lookup"><span data-stu-id="4d921-121">Now, the example can be modified to take advantage of the new extension method:</span></span>  
+## <a name="example"></a><span data-ttu-id="8bd98-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="8bd98-120">Example</span></span>  
+ <span data-ttu-id="8bd98-121">V příkladu teď můžete upravit tak, aby využít novou metodu rozšíření:</span><span class="sxs-lookup"><span data-stu-id="8bd98-121">Now, the example can be modified to take advantage of the new extension method:</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -219,7 +219,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="4d921-122">Tento příklad vytvoří následující výstup v případě použitého pro dokument popsané v [vytváření zdroj Office otevřít dokument XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="4d921-122">This example produces the following output when applied to the document described in [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="8bd98-122">Tento příklad vytvoří následující výstup při použití u dokumentu je popsáno v [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="8bd98-122">This example produces the following output when applied to the document described in [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -239,13 +239,14 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
- <span data-ttu-id="4d921-123">Všimněte si, že tento refaktoring jeho variantě refaktoring do čistého funkce.</span><span class="sxs-lookup"><span data-stu-id="4d921-123">Note that this refactoring is a variant of refactoring into a pure function.</span></span> <span data-ttu-id="4d921-124">Další téma vás seznámí myšlenku řešení do čistého funkce podrobněji.</span><span class="sxs-lookup"><span data-stu-id="4d921-124">The next topic will introduce the idea of factoring into pure functions in more detail.</span></span>  
+ <span data-ttu-id="8bd98-123">Všimněte si, že tento Refaktoring je varianta refaktoring do čistých funkcí.</span><span class="sxs-lookup"><span data-stu-id="8bd98-123">Note that this refactoring is a variant of refactoring into a pure function.</span></span> <span data-ttu-id="8bd98-124">Další téma vás seznámí představu o které budou zohledňovat do čistých funkcí podrobněji.</span><span class="sxs-lookup"><span data-stu-id="8bd98-124">The next topic will introduce the idea of factoring into pure functions in more detail.</span></span>  
   
-## <a name="next-steps"></a><span data-ttu-id="4d921-125">Další kroky</span><span class="sxs-lookup"><span data-stu-id="4d921-125">Next Steps</span></span>  
- <span data-ttu-id="4d921-126">Další příklad ukazuje, jak Refaktorovat tento kód jiným způsobem, pomocí čistý funkce:</span><span class="sxs-lookup"><span data-stu-id="4d921-126">The next example shows how to refactor this code in another way, by using pure functions:</span></span>  
+## <a name="next-steps"></a><span data-ttu-id="8bd98-125">Další kroky</span><span class="sxs-lookup"><span data-stu-id="8bd98-125">Next Steps</span></span>  
+ <span data-ttu-id="8bd98-126">Následující příklad ukazuje, jak Refaktorovat tento kód jiným způsobem pomocí čisté funkce:</span><span class="sxs-lookup"><span data-stu-id="8bd98-126">The next example shows how to refactor this code in another way, by using pure functions:</span></span>  
   
--   [<span data-ttu-id="4d921-127">Refaktoring pomocí čistý funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="4d921-127">Refactoring Using a Pure Function (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+-   [<span data-ttu-id="8bd98-127">Refaktoring pomocí čisté funkce (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="8bd98-127">Refactoring Using a Pure Function (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
   
-## <a name="see-also"></a><span data-ttu-id="4d921-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="4d921-128">See Also</span></span>  
- [<span data-ttu-id="4d921-129">Kurz: Manipulace se obsah v dokumentu WordprocessingML (C#)</span><span class="sxs-lookup"><span data-stu-id="4d921-129">Tutorial: Manipulating Content in a WordprocessingML Document (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
- [<span data-ttu-id="4d921-130">Refaktoring do čistého funkcí (C#)</span><span class="sxs-lookup"><span data-stu-id="4d921-130">Refactoring Into Pure Functions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+## <a name="see-also"></a><span data-ttu-id="8bd98-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="8bd98-128">See Also</span></span>
+
+- [<span data-ttu-id="8bd98-129">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)</span><span class="sxs-lookup"><span data-stu-id="8bd98-129">Tutorial: Manipulating Content in a WordprocessingML Document (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
+- [<span data-ttu-id="8bd98-130">Refaktoring do čistých funkcí (C#)</span><span class="sxs-lookup"><span data-stu-id="8bd98-130">Refactoring Into Pure Functions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
