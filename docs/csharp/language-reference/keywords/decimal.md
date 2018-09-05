@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - decimal keyword [C#]
 ms.assetid: b6522132-b5ee-4be3-ad13-3adfdb7de7a1
-ms.openlocfilehash: 18924abefb85012fc6c61073603c594de906b58d
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: c9d40238ca4c34238d5663185f93afbce73195cf
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961193"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43506516"
 ---
 # <a name="decimal-c-reference"></a>decimal (Referenční dokumentace jazyka C#)
 
@@ -20,7 +20,7 @@ ms.locfileid: "37961193"
 
 |Typ|Přibližný rozsah|Přesnost|Typ formátu .NET|
 |----------|-----------------------|---------------|-------------------------|
-|`decimal`|(-7.9 x 10<sup>28</sup> 7.9 x 10<sup>28</sup>) / (10<sup>0</sup> 10<sup>28</sup>)|28–29 významných číslic|<xref:System.Decimal?displayProperty=nameWithType>|
+|`decimal`|±1.0 x 10<sup>– 28</sup> k ±7.9228 x 10<sup>28</sup>|28–29 významných číslic|<xref:System.Decimal?displayProperty=nameWithType>|
 
 Výchozí hodnota `decimal` je 0 m.
 
@@ -96,12 +96,12 @@ V tomto příkladu je výstup naformátován pomocí řetězce formátu měny. 
 
 ## <a name="see-also"></a>Viz také:
 
-<xref:System.Decimal>  
-[Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-[Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-[Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-[Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
-[Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
-[Tabulka implicitních číselných převodů](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
-[Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
-[Standardní řetězce číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)
+- <xref:System.Decimal>  
+- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
+- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
+- [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
+- [Tabulka implicitních číselných převodů](../../../csharp/language-reference/keywords/implicit-numeric-conversions-table.md)  
+- [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
+- [Standardní řetězce číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md)

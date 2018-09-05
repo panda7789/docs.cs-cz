@@ -3,11 +3,11 @@ title: Terminologie Entity Framework
 ms.date: 03/30/2017
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
 ms.openlocfilehash: 4c0497f3c8069dc7d77bc742b1a7848716a5f4d2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: HT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43392050"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43538299"
 ---
 # <a name="entity-framework-terminology"></a>Terminologie Entity Framework
 Toto téma definuje podmínky, které jsou často odkazované v [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Jsou uvedeny odkazy na související témata, kde je k dispozici další informace.  

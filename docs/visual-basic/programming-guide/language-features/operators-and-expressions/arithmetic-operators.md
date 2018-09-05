@@ -14,85 +14,85 @@ helpviewer_keywords:
 - arithmetic operators [Visual Basic], about arithmetic operators
 ms.assetid: 325dac7a-ea4f-41d5-8b48-f6e904211569
 ms.openlocfilehash: cd66d08eba973a796472fcbd40a6a84edbbb62ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655581"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43499260"
 ---
 # <a name="arithmetic-operators-in-visual-basic"></a>Aritmetické operátory v jazyce Visual Basic
-Aritmetické operátory slouží k provádění mnoha známé aritmetické operace, které zahrnují výpočet numerických hodnot reprezentována literály, proměnné, ostatní výrazy, funkce a vlastnosti volání a konstanty. Bitové posunutí – operátory, které fungují na úrovni jednotlivých bity operandy a jejich vzory bitové posunutí doleva nebo doprava taky klasifikované s aritmetické operátory jsou.  
+Aritmetické operátory jsou používány k provádění řady známých aritmetické operace, které zahrnují výpočet číselné hodnoty literály, proměnné, ostatní výrazy, funkce a volání vlastností a konstanty. Také klasifikovat s aritmetické operátory jsou bitové posunutí – operátory, které bude fungovat na úrovni jednotlivých bitů operandy a posunout své vzorců bitů doleva nebo doprava.  
   
 ## <a name="arithmetic-operations"></a>Aritmetické operace  
- Můžete přidat dvě hodnoty ve výrazu společně s [+ – operátor](../../../../visual-basic/language-reference/operators/addition-operator.md), nebo odečtena z jednoho do jiného s [– operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), jak ukazuje následující příklad.  
+ Můžete přidat dvě hodnoty ve výrazu spolu s [+ – operátor](../../../../visual-basic/language-reference/operators/addition-operator.md), nebo odstraňte jednu z jiného pomocí [-– operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrOperators#57](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_1.vb)]  
   
- Negace používá také [– operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), ale pouze jediný operand jako následující příklad ukazuje.  
+ Negace také používá [-– operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/subtraction-operator.md), ale s pouze jeden operand, jako následující příklad ukazuje.  
   
  [!code-vb[VbVbalrOperators#58](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_2.vb)]  
   
- Použití násobení a dělení [* operátor](../../../../visual-basic/language-reference/operators/multiplication-operator.md) a [/ – operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md), respektive, jak ukazuje následující příklad.  
+ Použití úlohy násobení a dělení [* – operátor](../../../../visual-basic/language-reference/operators/multiplication-operator.md) a [/ – operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/floating-point-division-operator.md)v uvedeném pořadí, jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrOperators#59](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_3.vb)]  
   
- Exponenciální zápis používá [^ – operátor](../../../../visual-basic/language-reference/operators/exponentiation-operator.md), jak ukazuje následující příklad.  
+ Používá umocnění [^ – operátor](../../../../visual-basic/language-reference/operators/exponentiation-operator.md), jak ukazuje následující příklad.  
   
  [!code-vb[VbVbalrOperators#60](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_4.vb)]  
   
- Celočíselné dělení probíhá pomocí [\ – operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/integer-division-operator.md). Celočíselné dělení vrátí podílu, který je celé číslo představující počet, kolikrát dělitel lze rozdělit do dělenec bez ohledu na všechny zbývající. Celočíselné typy musí být dělitel i dělenec (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, a `ULong`) pro tento operátor. Všechny ostatní typy, musí být nejprve převést na typ integrální. Následující příklad ukazuje dělení celého čísla.  
+ Dělení celého čísla je prováděno [\ – operátor (Visual Basic)](../../../../visual-basic/language-reference/operators/integer-division-operator.md). Celočíselné dělení vrátí podíl, tedy na celé číslo představující počet, kolikrát dělitel lze rozdělit do bez ohledu na jakékoli zbývající podíl. Dělitel a podíl musí být integrální typy (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, a `ULong`) pro tento operátor. Všechny ostatní typy musí být převeden na celočíselný typ nejprve. Následující příklad ukazuje dělení celého čísla.  
   
  [!code-vb[VbVbalrOperators#61](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_5.vb)]  
   
- Aritmetické numerického zbytku se provádí pomocí [Mod operátor](../../../../visual-basic/language-reference/operators/mod-operator.md). Tento operátor Vrátí zbytek po dělení dělitel do dělenec integrální stanovený počet. Pokud dělitel i dělenec integrální typy, vrácená hodnota je nedílnou součástí. Pokud dělitel a dělenec jsou typy s plovoucí desetinnou čárkou, je také vrácené hodnoty s plovoucí desetinnou čárkou. Následující příklad ukazuje, toto chování.  
+ MODULUS aritmetické se provádí pomocí [Mod operátor](../../../../visual-basic/language-reference/operators/mod-operator.md). Tento operátor Vrátí zbytek po dělení dělitel do podíl celočíselný počet časy. Pokud dělitel a Delenec celočíselných typů, vrácená hodnota je integrální. Pokud jsou typy s plovoucí desetinnou čárkou dělení a Delenec, vrácená hodnota je také s plovoucí desetinnou čárkou. Následující příklad ukazuje toto chování.  
   
  [!code-vb[VbVbalrOperators#62](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_6.vb)]  
   
  [!code-vb[VbVbalrOperators#63](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_7.vb)]  
   
 ### <a name="attempted-division-by-zero"></a>Pokus o dělení nulou  
- Dělení nulou má odlišné výsledky v závislosti na zahrnutých datové typy. V integrální rozdělení (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`), [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyvolá <xref:System.DivideByZeroException> výjimka. V operacích dělení na `Decimal` nebo `Single` datového typu, [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] také vyvolá <xref:System.DivideByZeroException> výjimka.  
+ Dělení nulou má odlišné výsledky v závislosti na používané datové typy. V integrální divizemi (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, `ULong`), [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyvolá <xref:System.DivideByZeroException> výjimky. V operacích dělení na `Decimal` nebo `Single` datový typ [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] vyvolá také <xref:System.DivideByZeroException> výjimky.  
   
- V souvisejících s plovoucí desetinnou čárkou rozdělení `Double` datového typu, nedojde k výjimce a výsledkem je člen třídy představující <xref:System.Double.NaN>, <xref:System.Double.PositiveInfinity>, nebo <xref:System.Double.NegativeInfinity>, v závislosti na dělenec. Následující tabulka shrnuje různé výsledky pokusu o rozdělení `Double` hodnotu nulou.  
+ V plovoucí desetinné čárky divize zahrnující `Double` datový typ, není vyvolána žádná výjimka a výsledkem je člen třídy, představující <xref:System.Double.NaN>, <xref:System.Double.PositiveInfinity>, nebo <xref:System.Double.NegativeInfinity>, v závislosti na podíl. Následující tabulka shrnuje různé výsledky pokusu o dělení `Double` hodnotu nula.  
   
-|Dělenec datový typ|Dělitel datový typ|Hodnota dělenec|Výsledek|  
+|Delenec datový typ|Dělitel datový typ|Delenec hodnotu|Výsledek|  
 |---|---|---|---|  
-|`Double`|`Double`|0|<xref:System.Double.NaN> (není matematicky určené číslo)|  
+|`Double`|`Double`|0|<xref:System.Double.NaN> (není matematicky definované číslo)|  
 |`Double`|`Double`|> 0|<xref:System.Double.PositiveInfinity>|  
 |`Double`|`Double`|\< 0|<xref:System.Double.NegativeInfinity>|  
   
- Když catch <xref:System.DivideByZeroException> výjimky, můžete použít její členy můžete ji zpracovat. Například <xref:System.Exception.Message%2A> vlastnost obsahuje text zprávy pro výjimku. Další informace najdete v tématu [zkuste... Catch... Finally – příkaz](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Při zachycení <xref:System.DivideByZeroException> výjimky, můžete pomocí jeho členů můžete ji zpracovat. Například <xref:System.Exception.Message%2A> vlastnost obsahuje text zprávy o výjimce. Další informace najdete v tématu [zkuste... Catch... Příkaz finally](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
-## <a name="bit-shift-operations"></a>Bitové posunutí – operace  
- Bitové posunutí – operace provede aritmetický posun bitový. Vzor je součástí operand na levé straně, zatímco operand na pravé straně určuje počet pozic, který má posunutí vzoru. Vzor můžete posunutí doprava s [>> operátor](../../../../visual-basic/language-reference/operators/right-shift-operator.md) nebo vlevo s [<< operátor](../../../../visual-basic/language-reference/operators/left-shift-operator.md).  
+## <a name="bit-shift-operations"></a>Operace bitového posunutí  
+ Bitové posunutí – operace provede aritmetický posun bitový. Vzor je součástí operand na levé straně, zatímco operand na pravé straně určuje počet pozic, chcete-li posunout vzor. Vzor můžete posunout doprava s [>> operátor](../../../../visual-basic/language-reference/operators/right-shift-operator.md) nebo na levé straně s [<< operátor](../../../../visual-basic/language-reference/operators/left-shift-operator.md).  
   
- Datový typ operandu vzor musí být `SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, nebo `ULong`. Datový typ operandu shift velikost musí být `Integer` nebo musí rozšířit pro `Integer`.  
+ Datový typ operandu vzor musí být `SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, nebo `ULong`. Datový typ operandu částka shift musí být `Integer` nebo musí rozšířit na `Integer`.  
   
- Aritmetické posuny nejsou cyklické, což znamená, že služba bits přesunout mimo jeden element end výsledku nejsou znovu uvedeny na druhém konci. Pozice bit uprázdnili shift nastavené takto:  
+ Aritmetické staffhubu nejsou cyklické, což znamená, že nejsou na druhém konci znovuzavedeno bity posunuly jeden konec výsledek. Bitové pozice uvolněné pomocí přechodu nastavené takto:  
   
--   0 pro aritmetické posunutí doleva  
+-   0 pro aritmetický operátor posunu vlevo  
   
--   0 pro aritmetické posunutí doprava o kladné číslo.  
+-   0 pro aritmetické pravého posunutí kladného čísla  
   
--   0 pro aritmetické posunutí doprava bez znaménka datový typ. (`Byte`, `UShort`, `UInteger`, `ULong`)  
+-   0 pro aritmetické posunutí doprava bez znaménka datového typu (`Byte`, `UShort`, `UInteger`, `ULong`)  
   
--   1 pro aritmetické posunutí doprava záporná čísla (`SByte`, `Short`, `Integer`, nebo `Long`)  
+-   1 pro aritmetické pravého posunutí záporné číslo (`SByte`, `Short`, `Integer`, nebo `Long`)  
   
- Následující příklad posune `Integer` hodnotu doleva a doprava.  
+ V následujícím příkladu se posune `Integer` hodnota vlevo a vpravo.  
   
  [!code-vb[VbVbalrOperators#64](../../../../visual-basic/language-reference/operators/codesnippet/VisualBasic/arithmetic-operators_8.vb)]  
   
- Aritmetické posuny nikdy generování výjimek přetečení.  
+ Aritmetické staffhubu nikdy generovat výjimky přetečení.  
   
 ## <a name="bitwise-operations"></a>Bitové operace  
- Kromě toho logické operátory `Not`, `Or`, `And`, a `Xor` také provést bitové aritmetické při použití na číselné hodnoty. Další informace najdete v tématu "Bitový operací" v [logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md).  
+ Kromě toho, že logické operátory `Not`, `Or`, `And`, a `Xor` také provést aritmetický bitový při použití na číselné hodnoty. Další informace najdete v tématu "Bitové operace" v [logické a bitové operátory v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md).  
   
-## <a name="type-safety"></a>Zabezpečení typů  
- Operandy by měl obvykle být stejného typu. Například, pokud byste přidávání pomocí `Integer` proměnné, měli byste přidat ho do jiného `Integer` proměnnou a měli přiřadit výsledek proměnné typu `Integer` také.  
+## <a name="type-safety"></a>Bezpečnost typů  
+ Obvykle by měl být operandy stejného typu. Například, pokud provádíte přidávání pomocí `Integer` proměnných, měli byste přidat ho do jiného `Integer` proměnné kde by měl výsledek přiřaďte proměnné typu `Integer` také.  
   
- Jedním ze způsobů, aby funkční bezpečnost typů zvykem je použití [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md). Pokud nastavíte `Option Strict On`, Visual Basic automaticky provede *bezpečnost typů* převody. Například, pokud se pokusíte přidat `Integer` proměnnou `Double` proměnné a přiřazení hodnoty k `Double` proměnné, operace pokračuje normálně, protože `Integer` hodnotu lze převést na `Double` bez ztráty dat. Typ nezabezpečený převody na druhé straně způsobit chyby kompilátoru s `Option Strict On`. Například, pokud se pokusíte přidat `Integer` proměnnou `Double` proměnné a přiřaďte hodnota, která má `Integer` proměnné, Chyba kompilátoru výsledky, protože `Double` proměnnou nelze implicitně převést na typ `Integer`.  
+ Jeden ze způsobů, jak zajistit správné typově bezpečný postup kódování je použít [Option Strict – příkaz](../../../../visual-basic/language-reference/statements/option-strict-statement.md). Pokud nastavíte `Option Strict On`, Visual Basic automaticky provede *zajišťující bezpečnost typů* převody. Například, pokud se pokusíte přidat `Integer` proměnné `Double` proměnnou a přiřaďte hodnotu k `Double` proměnné, operace pokračuje obvykle, protože `Integer` hodnotu lze převést na `Double` bez ztráty dat. Typ nebezpečné převody, na druhé straně způsobí chybu kompilátoru s `Option Strict On`. Například, pokud se pokusíte přidat `Integer` proměnné `Double` proměnnou a přiřaďte hodnotu k `Integer` proměnné, k chybě kompilátoru dojde, protože `Double` proměnnou nelze implicitně převést na typ `Integer`.  
   
- Pokud nastavíte `Option Strict Off`, ale jazyka Visual Basic umožňuje implicitní zužující převody proběhla, i když může způsobit neočekávané dojít ke ztrátě dat nebo přesnosti. Z tohoto důvodu doporučujeme používat `Option Strict On` při zápisu produkčním kódu. Další informace najdete v tématu [Widening a zužující převody](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
+ Pokud nastavíte `Option Strict Off`, ale jazyka Visual Basic umožňuje implicitní zužující převody uskutečnit, i když může způsobit neočekávané ztráty dat nebo přesnosti. Z tohoto důvodu doporučujeme používat `Option Strict On` při psaní kódu produkčního prostředí. Další informace najdete v tématu [Widening a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Aritmetické operátory](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)  

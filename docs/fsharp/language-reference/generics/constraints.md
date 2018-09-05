@@ -2,12 +2,12 @@
 title: Omezení (F#)
 description: 'Další informace o F # omezení, které se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkce.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 7af064159d2722256f0db8286a99fc02435a99cd
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 0e79cf5b1a25ada49bf30416f85c1d59f8f2fd23
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936862"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43525602"
 ---
 # <a name="constraints"></a>Omezení
 
@@ -35,7 +35,7 @@ Existuje několik jiná omezení, které lze použít k omezení typů, které j
 |Omezení delegáta|: delegovat&lt;*typ řazené kolekce členů parametru*, *návratový typ*&gt;|Zadaný typ musí být typem delegáta, který má zadané argumenty a vrátí hodnotu; nejsou určené pro obecné použití.|
 |Porovnání omezení|: porovnání|Zadaný typ musí podporovat porovnání.|
 |Omezení rovnosti|: rovnosti|Zadaný typ musí podporovat rovnosti.|
-|Nespravované omezení|: nespravovaných|Zadaný typ musí být nespravovaným typem. Nespravované typy jsou určité primitivní typy (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint64`, nebo `decimal`), výčtové typy `nativeptr&lt;_&gt;`, nebo strukturu neobecnou jehož pole jsou všechny nespravovaných typů.|
+|Nespravované omezení|: nespravovaných|Zadaný typ musí být nespravovaným typem. Nespravované typy jsou určité primitivní typy (`sbyte`, `byte`, `char`, `nativeint`, `unativeint`, `float32`, `float`, `int16`, `uint16`, `int32`, `uint32`, `int64`, `uint64`, nebo `decimal`), výčtové typy `nativeptr<_>`, nebo strukturu neobecnou jehož pole jsou všechny nespravovaných typů.|
 Je nutné přidat omezení, pokud má váš kód používat funkce, která je obecně dostupná v omezení typu, ale ne v typy. Například pokud používáte omezení typu k určení typu třídy, můžete použít některou z metod této třídy v typu nebo obecné funkce.
 
 Určení omezení je to někdy nezbytné při zápisu parametry typu explicitně, protože bez omezení, kompilátor neobsahuje nijak ověřit, že bude k dispozici na libovolný typ, který může být zadán v době běhu pro typ funkce, které používáte parametr.

@@ -2,19 +2,19 @@
 title: Připojovací řetězce
 ms.date: 03/30/2017
 ms.assetid: 78d516bc-c99f-4865-8ff1-d856bc1a01c0
-ms.openlocfilehash: ac9c3b3b0fce4d6b7e0eb74e23c07c82faf9f722
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: 17d91c9b97e370afe3704d2a58f5228e3fec95f1
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42792416"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43552503"
 ---
 # <a name="connection-strings"></a>Připojovací řetězce
 Připojovací řetězec obsahuje informace o inicializaci, která je předána jako parametr od poskytovatele dat ke zdroji dat. Syntaxe závisí na poskytovateli dat a připojovací řetězec je analyzován při pokusu o otevření připojení. Připojovací řetězec používaný Entity Framework obsahují informace, které slouží pro připojení k podkladové zprostředkovatele dat ADO.NET, který podporuje rozhraní Entity Framework. Obsahují také informace o požadované modelu a souborů mapování.  
   
  Připojovací řetězec se používá zprostředkovatel EntityClient při přístupu k modelu a mapování metadata a připojování k objektu data source. Připojovací řetězec můžete přistupovat ani je nastavit prostřednictvím <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> vlastnost <xref:System.Data.EntityClient.EntityConnection>. <xref:System.Data.EntityClient.EntityConnectionStringBuilder> Třídy je možné programově vytvořit nebo získat přístup k parametrů v připojovacím řetězci. Další informace najdete v tématu [postupy: sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md).  
   
- [Nástroje modelu Entity Data Model](http://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527) generovat připojovací řetězec, který je uložený v konfiguračním souboru aplikace. <xref:System.Data.Objects.ObjectContext> načte informace o tomto připojení automaticky při vytváření objektu dotazy. <xref:System.Data.EntityClient.EntityConnection> Používané <xref:System.Data.Objects.ObjectContext> instance je přístupný z <xref:System.Data.Objects.ObjectContext.Connection%2A> vlastnost. Další informace najdete v tématu [Správa připojení a transakce](http://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
+ [Nástroje modelu Entity Data Model](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527) generovat připojovací řetězec, který je uložený v konfiguračním souboru aplikace. <xref:System.Data.Objects.ObjectContext> načte informace o tomto připojení automaticky při vytváření objektu dotazy. <xref:System.Data.EntityClient.EntityConnection> Používané <xref:System.Data.Objects.ObjectContext> instance je přístupný z <xref:System.Data.Objects.ObjectContext.Connection%2A> vlastnost. Další informace najdete v tématu [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
   
 ## <a name="connection-string-parameters"></a>Parametry připojovacího řetězce  
  Formát připojovacího řetězce je středníkem oddělený seznam dvojic klíč/hodnota parametru:  
@@ -30,7 +30,7 @@ Připojovací řetězec obsahuje informace o inicializaci, která je předána j
 |`Metadata`|Požadováno pokud `Name` – klíčové slovo není zadán. Kanál oddělený seznam adresářů, souborů a umístění prostředků, ve kterém se hledá informace mapování a metadat. Následuje příklad:<br /><br /> `Metadata=`<br /><br /> `c:\model &#124; c:\model\sql\mapping.msl;`<br /><br /> Mezer na každé straně kanálu oddělovače jsou ignorovány.<br /><br /> Toto klíčové slovo je vzájemně se vylučuje s `Name` – klíčové slovo.|  
 |`Name`|Aplikace můžete volitelně zadat název připojení v konfiguračním souboru aplikace, který obsahuje hodnoty požadované klíčové slovo/hodnotu připojovacího řetězce. V takovém případě je nelze zadat přímo v připojovacím řetězci. `Name` – Klíčové slovo není povolený v konfiguračním souboru.<br /><br /> Když `Name` – klíčové slovo není zahrnutý v připojovacím řetězci, neprázdný hodnoty pro zprostředkovatele – klíčové slovo je povinný.<br /><br /> Toto klíčové slovo je vzájemně se vylučuje s všechny další připojovací řetězec klíčová slova.|  
   
- Následující je příklad připojovacího řetězce pro [AdventureWorks Sales Model](http://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) uložené v konfiguračním souboru aplikace:  
+ Následující je příklad připojovacího řetězce pro [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) uložené v konfiguračním souboru aplikace:  
   
   
   
@@ -110,5 +110,5 @@ Metadata=.\
 ## <a name="see-also"></a>Viz také  
  [Práce se zprostředkovateli dat](../../../../../docs/framework/data/adonet/ef/working-with-data-providers.md)  
  [Důležité informace o nasazení](../../../../../docs/framework/data/adonet/ef/deployment-considerations.md)  
- [Správa připojení a transakce](http://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
+ [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99)  
  [Připojovací řetězce](../../../../../docs/framework/data/adonet/connection-strings.md)

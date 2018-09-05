@@ -3,11 +3,11 @@ title: Adaptéry a čtečky dat
 ms.date: 03/30/2017
 ms.assetid: cc952ca2-ec19-46ab-9189-15174b52cb74
 ms.openlocfilehash: 6e711b11ef9a3eca53806b825f1e721169ab662d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: HT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43476219"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43516774"
 ---
 # <a name="dataadapters-and-datareaders"></a>Adaptéry a čtečky dat
 Můžete použít ADO.NET **DataReader** načíst jen pro čtení, dopředné datový proud s daty z databáze. Výsledky se vrátí jako dotaz spustí a jsou uloženy v síti vyrovnávací paměti na straně klienta, dokud si je vyžádat použití **čtení** metodu **DataReader**. Použití **DataReader** může zvýšit výkon aplikace, tak načítání dat, jako je k dispozici i (ve výchozím nastavení) ukládání pouze jeden řádek v daný okamžik v paměti a snížení režie systému.  
