@@ -6,7 +6,7 @@ ms.author: wiwagn
 ms.date: 07/03/2018
 ms.openlocfilehash: dbb3fdb27175a86291d3a942ff168a5aae787c0c
 ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/01/2018
 ms.locfileid: "43453072"
@@ -580,4 +580,4 @@ Existují další důležité funkce pro výzkum a použít, při použití brá
 
 
 >[!div class="step-by-step"]
-[Předchozí] (na pozadí – úlohy s ihostedservice.md) [Další] (.. /microservice-ddd-cqrs-Patterns/index.MD)
+[Předchozí](background-tasks-with-ihostedservice.md) [Další](../microservice-ddd-cqrs-patterns/index.md)
