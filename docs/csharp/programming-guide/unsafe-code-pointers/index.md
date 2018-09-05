@@ -10,12 +10,12 @@ helpviewer_keywords:
 - C# language, pointers
 - pointers [C#], about pointers
 ms.assetid: b0fcca10-a92d-4f2a-835b-b0ccae6739ee
-ms.openlocfilehash: b57a6f607dbdbc84c60889a5ce2b1e3c33d7f435
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 054a2c6c80e00b8baa742d5fe0a7c111994bcce4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245169"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43509814"
 ---
 # <a name="unsafe-code-and-pointers-c-programming-guide"></a>Nezabezpečený kód a ukazatele (Průvodce programováním v C#)
 Pokud chcete zachovat bezpečnost typů a zabezpečení, C# nepodporuje aritmetiku ukazatele ve výchozím nastavení. Nicméně pomocí [nebezpečné](../../../csharp/language-reference/keywords/unsafe.md) – klíčové slovo, můžete definovat nezabezpečený kontext, ve které je možné ukazatele. Další informace o ukazatelích naleznete v tématu [typy ukazatelů](../../../csharp/programming-guide/unsafe-code-pointers/pointer-types.md).  
@@ -50,5 +50,6 @@ Pokud chcete zachovat bezpečnost typů a zabezpečení, C# nepodporuje aritmeti
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

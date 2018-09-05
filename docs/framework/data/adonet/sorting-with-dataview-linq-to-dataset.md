@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 885b3b7b-51c1-42b3-bb29-b925f4f69a6f
 ms.openlocfilehash: 9f69b64088093bbdd46239a26f16aeea50b6dee7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43465561"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671908"
 ---
 # <a name="sorting-with-dataview-linq-to-dataset"></a>Řazení se zobrazením dat (LINQ to DataSet)
 Možnost řadit data podle určitých kritérií a potom prezentovat data do klienta prostřednictvím ovládacího prvku uživatelského rozhraní je důležitou součástí datové vazby. <xref:System.Data.DataView> poskytuje několik způsobů, jak řadit data a vrátí řádky dat, které jsou seřazené podle konkrétní kritéria řazení. Kromě jeho založené na řetězci možnosti, řazení <xref:System.Data.DataView> také umožňuje používat [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] výrazy řazení kritérií. [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] výrazy umožňují mnohem komplexnější a výkonné operace řazení než založené na řetězci řazení. Toto téma popisuje oba přístupy k řazení pomocí <xref:System.Data.DataView>.  

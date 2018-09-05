@@ -2,18 +2,18 @@
 title: 'Postupy: vyhledání všech uzlů v Namespace (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
-ms.openlocfilehash: b22acdd7c2d64316e802c4dd01876a61141c8979
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0675795da7c190e6d105ac61027c28f161961099
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33317775"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671566"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Postupy: vyhledání všech uzlů v Namespace (C#)
-Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu najít všechny uzly v tomto konkrétním oboru názvů.  
+Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vytvoří strom XML s dva obory názvů. Potom iteruje v rámci stromu a vytiskne názvy všech elementů a atributů v jednom z těchto oborů názvů.  
+ Následující příklad vytvoří stromu XML pomocí dva obory názvů. Pak Iteruje přes stromu a Vypíše názvy všech elementů a atributů v jednom z těchto oborů názvů.  
   
 ```csharp  
 string markup = @"<aw:Root xmlns:aw='http://www.adventure-works.com' xmlns:fc='www.fourthcoffee.com'>  
@@ -44,9 +44,9 @@ Nodes in the http://www.adventure-works.com namespace
 ```  
   
 ## <a name="example"></a>Příklad  
- Soubor XML přístup následující dotaz obsahuje nákupních objednávek ve dvou různých oborech názvů. Dotaz vytvoří novou větev se jenom elementy v jednom z oborů názvů.  
+ Soubor XML přistupuje následující dotaz obsahuje nákupních objednávek ve dvou různých oborech názvů. Dotaz vytvoří nové větve s prvky v jednom z oborů názvů.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: konsolidovat nákupních objednávek](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  
@@ -95,5 +95,6 @@ Console.WriteLine(newTree);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Základní dotazy (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

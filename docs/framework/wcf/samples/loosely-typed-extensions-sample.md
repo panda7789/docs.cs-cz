@@ -3,11 +3,11 @@ title: Ukázka rozšíření volného typu
 ms.date: 03/30/2017
 ms.assetid: 56ce265b-8163-4b85-98e7-7692a12c4357
 ms.openlocfilehash: f46cf3dfcdb60669f0a02337b54de97d4af3efdc
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384706"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43674173"
 ---
 # <a name="loosely-typed-extensions-sample"></a>Ukázka rozšíření volného typu
 Poskytuje objektového modelu syndikace Rozsáhlá podpora pro práci s daty rozšíření – informace, které jsou k dispozici v informačního kanálu syndikace je reprezentovaný pomocí XML, ale vystavené třídy nejsou explicitně jako <xref:System.ServiceModel.Syndication.SyndicationFeed> a <xref:System.ServiceModel.Syndication.SyndicationItem>. Tento příklad ukazuje základní postupy pro práci s daty rozšíření.  

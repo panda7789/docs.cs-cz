@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 33bae8a8-4ed8-4a1f-85d1-c62ff288cc61
 ms.openlocfilehash: 290c2f58d0259d5a0df52711f63c48521891ae12
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43407524"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502078"
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>Postupy: volání modelově definovaných funkcí jako objektových metod
 Toto téma popisuje, jak volat funkci modelově definovaných jako metody na <xref:System.Data.Objects.ObjectContext> objektu nebo jako statickou metodu pro vlastní třídu. A *modelově definovaných funkcí* je funkce, která je definována v konceptuálním modelu. Postupy v tomto tématu popisují, jak volat tyto funkce přímo, bez volání je z LINQ na dotazy na entity. Informace o volání modelově definovaných funkcí v jazyce LINQ dotazy entit najdete v tématu [jak: Call Model-Defined funkcí v dotazech](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-in-queries.md).  

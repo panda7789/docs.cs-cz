@@ -10,11 +10,11 @@ helpviewer_keywords:
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
 ms.openlocfilehash: a8f4582e9c8d5a54d924ff5b456ef8ffd8cc56f3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480592"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43673446"
 ---
 # <a name="-nologo-c-compiler-options"></a>-nologo (možnosti kompilátoru C#)
 **- Nologo** možnost potlačí zobrazení nápisu přihlašování při spuštění kompilátoru a zobrazení informačních zpráv během kompilace.  

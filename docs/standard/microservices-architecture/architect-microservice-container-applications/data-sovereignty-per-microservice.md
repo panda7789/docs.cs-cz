@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
 ms.openlocfilehash: 6a3fc0e86de673fea5f8e81c14c6456a2256aaa6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408544"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502174"
 ---
 # <a name="data-sovereignty-per-microservice"></a>Svrchovanost dat v jednotlivých mikroslužbách
 

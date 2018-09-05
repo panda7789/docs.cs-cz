@@ -7,11 +7,11 @@ helpviewer_keywords:
 - size changes [WPF], animating with key frames
 ms.assetid: 86bd2950-d4c9-4ec4-aa8d-7dc3ccadded4
 ms.openlocfilehash: 69845d1d75f81042bbeb20ee6b1015f5c2f53b81
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43479929"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672555"
 ---
 # <a name="how-to-animate-size-changes-by-using-key-frames"></a>Postupy: Animace změn velikosti použitím klíčových snímků
 Tento příklad ukazuje, jak animace změn velikosti použitím klíčových snímků.  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - ScrollViewer control [WPF], about ScrollViewer control
 ms.assetid: 94a13b94-cfdf-4b12-a1aa-90cb50c6e9b9
 ms.openlocfilehash: 4c9a2e8cf64f18f3e8614912759a4a6eb01d4823
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43463127"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43673253"
 ---
 # <a name="scrollviewer-overview"></a>ScrollViewer – přehled
 Obsah v rámci uživatelského rozhraní je často větší než oblasti zobrazení obrazovce počítače. <xref:System.Windows.Controls.ScrollViewer> Řízení poskytuje pohodlný způsob, jak povolit posouvání obsahu v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikací. Toto téma představuje <xref:System.Windows.Controls.ScrollViewer> elementu a obsahuje několik příkladů použití.  

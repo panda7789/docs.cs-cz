@@ -2,12 +2,12 @@
 title: 'Ukázkový soubor XML: Numerická Data (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 365cae86-a166-46df-b56a-0209d9771c27
-ms.openlocfilehash: 6528175407c29a17667c33769643d15502e98f90
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: d0351ed8cf4960174fdc45db5d7a15a385c90a61
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43387312"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671461"
 ---
 # <a name="sample-xml-file-numerical-data-linq-to-xml"></a>Ukázkový soubor XML: Numerická Data (LINQ to XML)
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje číselná data pro sčítání, agregovat a seskupení.  
@@ -55,5 +55,6 @@ Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqlt
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Ukázkové dokumenty XML (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

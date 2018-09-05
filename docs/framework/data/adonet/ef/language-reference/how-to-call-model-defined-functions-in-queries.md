@@ -1,49 +1,49 @@
 ---
-title: 'Postupy: volání modelu definované funkce v dotazech.'
+title: 'Postupy: volání modelově definovaných funkcí v dotazech'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6c804e4d-f348-4afd-9f63-d3f0f24bc6a9
-ms.openlocfilehash: 575c7cff64608257646bde0ef08abe4c0096e477
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 2a20a2bb524c1ef9135b8b7187b2519088ddb762
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32761646"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43674134"
 ---
-# <a name="how-to-call-model-defined-functions-in-queries"></a>Postupy: volání modelu definované funkce v dotazech.
-Toto téma popisuje, jak volat funkce, které jsou definované v konceptuálním modelu uvnitř [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  
+# <a name="how-to-call-model-defined-functions-in-queries"></a>Postupy: volání modelově definovaných funkcí v dotazech
+Toto téma popisuje, jak volat funkce, které jsou definované v konceptuálním modelu v rámci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  
   
- Následující postup obsahovala hrubý nástin pro volání funkce modelu definované v nástroji [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu. Příklad, který následuje obsahuje více podrobností o kroků v postupu. Postupu se předpokládá, že jste definovali funkci v konceptuálním modelu. Další informace najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f).  
+ Následující postup obsahovala hrubý nástin pro volání funkce modelově definovaných v rámci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu. Následující příklad obsahuje více podrobností o kroků v postupu. V postupu se předpokládá, že jste definovali funkce v konceptuálním modelu. Další informace najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](https://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f).  
   
-### <a name="to-call-a-function-defined-in-the-conceptual-model"></a>Volat funkci definovanou v konceptuálním modelu  
+### <a name="to-call-a-function-defined-in-the-conceptual-model"></a>Pro volání funkce definované v konceptuálním modelu  
   
-1.  Přidejte běžnou metodu language runtime (CLR) do vaší aplikace, která se mapuje na funkci definovanou v konceptuálním modelu. Chcete-li mapovat metodu, je nutné použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metodě. Všimněte si, že <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parametry atributu jsou název oboru názvů konceptuálního modelu a název funkce v konceptuálním modelu v uvedeném pořadí. Funkce překladu názvů u LINQ je malá a velká písmena.  
+1.  Běžnou metodou language runtime (CLR) přidáte do vaší aplikace, který se mapuje na funkce definované v konceptuálním modelu. Pokud chcete namapovat metodu, musíte použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> metody. Všimněte si, <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.NamespaceName%2A> a <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute.FunctionName%2A> parametry atributu se názvu oboru názvů Koncepční model a název funkce v konceptuálním modelu v uvedeném pořadí. Funkce překlad názvů pro funkci LINQ je velká a malá písmena.  
   
 2.  Volání funkce v [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zavolat funkci, která je definována v konceptuálním modelu uvnitř [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu. V příkladu školní modelu. Informace o modelu školní najdete v tématu [vytváření ukázkovou databázi školy](http://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0) a [generování školní .edmx souboru](http://msdn.microsoft.com/library/c48b3907-a8be-4fe6-884c-e95af1852758).  
+ Následující příklad ukazuje, jak volat funkci, která je definována v konceptuálním modelu v rámci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu. V příkladu používá model školy. Informace o School modelu najdete v tématu [vytvoření ukázkové databáze školy](https://msdn.microsoft.com/library/c1bec483-a0ea-4660-aa0b-7b0a8b68fed0) a [generování školní edmx soubor](https://msdn.microsoft.com/library/c48b3907-a8be-4fe6-884c-e95af1852758).  
   
- Následující funkce konceptuálního modelu vrátí počet roků, vzhledem k tomu, že lektorem byl přijat. Informace o přidání funkce do konceptuálního modelu najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](http://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f).)  
+ Následující Koncepční model funkce vrátí počet roků, protože byl přijat instruktorem. Informace o přidání funkce do koncepčního modelu najdete v tématu [postupy: definování vlastní funkce v konceptuálním modelu](https://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f).)  
   
  [!code-xml[DP ConceptualModelFunctions#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp conceptualmodelfunctions/xml/school.edmx#1)]
   
 ## <a name="example"></a>Příklad  
- V dalším kroku přidejte následující metodu pro vaše aplikace a použít <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> k mapování na funkci konceptuálního modelu:  
+ V dalším kroku přidejte následující metodu do vaší aplikace a použití <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> mapovat funkci koncepčního modelu:  
   
  [!code-csharp[DP ConceptualModelFunctions#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp conceptualmodelfunctions/cs/program.cs#2)]
  [!code-vb[DP ConceptualModelFunctions#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp conceptualmodelfunctions/vb/module1.vb#2)]  
   
 ## <a name="example"></a>Příklad  
- Teď můžete volat funkci konceptuálního modelu z uvnitř [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu. Následující kód zavolá metodu pro zobrazení všech vyučující, které byly přijaty před více než deset let:  
+ Nyní můžete v rámci volat funkci Koncepční model [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazu. Následující kód volá metodu pro zobrazení všech školitelů, které byly přijaty před více než deset let:  
   
  [!code-csharp[DP ConceptualModelFunctions#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp conceptualmodelfunctions/cs/program.cs#3)]
  [!code-vb[DP ConceptualModelFunctions#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp conceptualmodelfunctions/vb/module1.vb#3)]  
   
 ## <a name="see-also"></a>Viz také  
- [Přehled souboru EDMX](http://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
+ [Přehled souboru EDMX](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4)  
  [Dotazy v technologii LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/queries-in-linq-to-entities.md)  
  [Volání funkcí v dotazech LINQ to Entities](../../../../../../docs/framework/data/adonet/ef/language-reference/calling-functions-in-linq-to-entities-queries.md)  
  [Postupy: Volání modelově definovaných funkcí jako objektových metod](../../../../../../docs/framework/data/adonet/ef/language-reference/how-to-call-model-defined-functions-as-object-methods.md)

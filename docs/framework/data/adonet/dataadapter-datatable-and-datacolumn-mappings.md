@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d023260a-a66a-4c39-b8f4-090cd130e730
 ms.openlocfilehash: 9f33ae085bef2b611d1ce95bed1b26f9101a10b9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43385223"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43505239"
 ---
 # <a name="dataadapter-datatable-and-datacolumn-mappings"></a>Vlastnost DataAdapter, datové tabulky a DataColumn mapování
 A **DataAdapter** obsahuje kolekci nula nebo více <xref:System.Data.Common.DataTableMapping> objekty v jeho **TableMappings** vlastnost. A **DataTableMapping** poskytuje hlavní mapování mezi data vrácená z dotazu na zdroji dat a <xref:System.Data.DataTable>. **DataTableMapping** název mohou být předány místo **DataTable** název k **vyplnit** metodu **DataAdapter**. Následující příklad vytvoří **DataTableMapping** s názvem **AuthorsMapping** pro **autoři** tabulky.  

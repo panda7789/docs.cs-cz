@@ -11,11 +11,11 @@ ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: edc34eaa7704d788ff4b63328a2b6c0622d17e13
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394952"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502919"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
 

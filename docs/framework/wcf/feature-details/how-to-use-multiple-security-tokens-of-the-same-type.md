@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: použití více tokeny zabezpečení stejného typu'
+title: 'Postupy: použití více tokenů zabezpečení stejného typu'
 ms.date: 03/30/2017
 ms.assetid: cf179f48-4ed4-4caa-86a5-ef8eecc231cd
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 67a9fd51377294ab6afb5a3d7deaec19fb134b21
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25afbb268a0ef7772585a0f3829b56f135758b61
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33490744"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672317"
 ---
-# <a name="how-to-use-multiple-security-tokens-of-the-same-type"></a>Postupy: použití více tokeny zabezpečení stejného typu
--   V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0, klienta zprávy pouze obsahují jeden token daného typu. Nyní zprávy klienta může obsahovat více tokeny typu. Toto téma ukazuje, jak chcete zahrnout do zpráv klienta více tokeny stejného typu.  
+# <a name="how-to-use-multiple-security-tokens-of-the-same-type"></a>Postupy: použití více tokenů zabezpečení stejného typu
+-   V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0, klienta zprávy pouze omezením jeden token daného typu. Zprávy klienta teď může obsahovat více tokenů typu. Toto téma ukazuje, jak zahrnout více tokenů stejného typu zprávy klienta.  
   
--   Všimněte si, že nemůžete nakonfigurovat službu tímto způsobem: služby může obsahovat jenom jeden token podpory.  
+-   Poznámka: službu nelze nakonfigurovat tímto způsobem: Služba může obsahovat pouze jeden podpůrný token.  
   
-### <a name="to-use-multiple-security-tokens-of-the-same-type"></a>Použití více tokeny zabezpečení stejného typu  
+### <a name="to-use-multiple-security-tokens-of-the-same-type"></a>Použití víc tokenů zabezpečení stejného typu  
   
-1.  Vytvořte kolekci elementů vazby prázdný vyplnit.  
+1.  Vytvořte kolekci elementů prázdný vazby který se má naplnit.  
   
      [!code-csharp[C_CustomBinding#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#9)]  
   
@@ -34,22 +34,22 @@ ms.locfileid: "33490744"
   
      [!code-csharp[C_CustomBinding#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#12)]  
   
-5.  Přidání do kolekce <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
+5.  Kolekce, kterou chcete přidat <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
      [!code-csharp[C_CustomBinding#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#13)]  
   
-6.  Prvky vazeb přidáte do kolekce elementů vazby.  
+6.  Přidání elementů vazby do kolekce elementů vazby.  
   
      [!code-csharp[C_CustomBinding#14](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#14)]  
   
-7.  Vrátí novou vlastní vazby vytvořené z kolekce elementů vazby.  
+7.  Vrátí novou vlastní vazbu vytvořené z kolekce elementů vazby.  
   
      [!code-csharp[C_CustomBinding#15](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#15)]  
   
 ## <a name="example"></a>Příklad  
- Níže je celý metody popsané předchozím postupu.  
+ Níže je celý metody popsané v předchozím postupu.  
   
  [!code-csharp[C_CustomBinding#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#7)]  
   
 ## <a name="see-also"></a>Viz také  
- [Architektura zabezpečení](http://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)
+ [Architektura zabezpečení](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)

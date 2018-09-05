@@ -5,11 +5,11 @@ helpviewer_keywords:
 - breaking changes [Visual Basic]
 ms.assetid: 708fb176-35eb-4cbc-a6e7-a04c6e3bdaff
 ms.openlocfilehash: 008b887e96f077e64b012d224c7c031a9b65027e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43396005"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671592"
 ---
 # <a name="visual-basic-breaking-changes-in-visual-studio"></a>Rozbíjející změny v sadě Visual Studio jazyka Visual Basic
 Nejnovější dokumentaci k sadě Visual Studio 2017 najdete [tady](https://docs.microsoft.com/visualstudio/).

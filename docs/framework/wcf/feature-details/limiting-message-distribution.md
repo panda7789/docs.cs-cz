@@ -3,11 +3,11 @@ title: Omezení distribuce zpráv
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
 ms.openlocfilehash: bec5a28abeff23929d2c0f1c363f4e08872a63fa
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43397924"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672568"
 ---
 # <a name="limiting-message-distribution"></a>Omezení distribuce zpráv
 Rovnocenný kanál chování je záměrné všesměrového vysílání sítě. Svůj základní flooding model zahrnuje distribuce odeslaná službou členem sítě u všech členů této sítě. To je ideální v situacích, kde každé zprávy vygenerované metodou člen je důležité a užitečné pro všechny ostatní členy (například chatovací místnosti). Mnoho aplikací však mít občasné potřebu omezení distribuce zpráv. Například pokud se nový člen připojí sítě a chce, aby se k načtení poslední zprávou odeslanou přes síť, tento požadavek nemusí být zahlcenou pro každého člena síť. Požadavek může být omezena na téměř okolí nebo můžete místně vygenerovanou zprávy odfiltrovány. Zprávy mohou rovněž odeslány do jednotlivých uzlů na síť. Toto téma popisuje použití počet směrování, filtr šíření zpráv, filtr místní nebo přímé připojení k řízení, jak se předávají zprávy v průběhu síť a obsahuje obecné pokyny pro výběr přístupu.  

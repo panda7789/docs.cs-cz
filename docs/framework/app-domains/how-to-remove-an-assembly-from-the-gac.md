@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: acdcc588-b458-436d-876c-726de68244c1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6c5f47f4c33f725377281146bef0a37dbd3f774c
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 6f3f5d6ae577195987dfcf2d8020e591217b480d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753726"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43502994"
 ---
 # <a name="how-to-remove-an-assembly-from-the-global-assembly-cache"></a>Postupy: Odebrání sestavení z globální mezipaměti sestavení
 Existují dva způsoby, jak odebrání sestavení z globální mezipaměti sestavení (GAC):  
   
--   Pomocí [nástroj globální mezipaměti sestavení (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md). Tato možnost slouží k odinstalaci sestavení, které jste umístili do mezipaměti GAC během vývoje a testování.  
+-   S použitím [nástroj Global Assembly Cache (Gacutil.exe)](../../../docs/framework/tools/gacutil-exe-gac-tool.md). Tuto možnost můžete použít k odinstalování sestavení, které jste umístili do mezipaměti GAC během vývoje a testování.  
   
--   Pomocí [Instalační služby systému Windows](http://msdn.microsoft.com/library/windows/desktop/cc185688.aspx). Tuto možnost používejte Odinstalace sestavení při testování instalační balíčky a pro produkční systémy.  
+-   S použitím [Instalační služby systému Windows](/windows/desktop/Msi/windows-installer-portal). Tuto možnost používejte k odinstalování sestavení při testování instalační balíčky a pro produkční systémy.  
   
 ### <a name="removing-an-assembly-with-gacutilexe"></a>Odebrání sestavení s Gacutil.exe  
   
@@ -33,10 +33,10 @@ Existují dva způsoby, jak odebrání sestavení z globální mezipaměti sesta
   
      **Gacutil – u** \< *název sestavení*>  
   
-     V tomto příkazu *název sestavení* je název sestavení pro odebrání z globální mezipaměti sestavení.  
+     V tomto příkazu *název sestavení* je název sestavení z globální mezipaměti sestavení odebrat.  
   
     > [!WARNING]
-    >  Neměli byste používat Gacutil.exe odebrat z důvodu možnost, že sestavení může stále nutné některé aplikace sestavení na produkční systémy. Místo toho používejte Instalační služby systému Windows, který udržuje počet odkazů pro každé sestavení, kdy se instaluje v mezipaměti GAC.  
+    >  Neměli byste používat Gacutil.exe odebrat sestavení na produkční systémy z důvodu možnost, že sestavení můžou stále vyžadovat některé aplikace. Místo toho by měl použít instalační program Windows, který udržuje počet odkazů pro každé sestavení, kdy se instaluje v mezipaměti GAC.  
   
  Následující příklad odebere sestavení s názvem `hello.dll` z globální mezipaměti sestavení.  
   
@@ -44,12 +44,12 @@ Existují dva způsoby, jak odebrání sestavení z globální mezipaměti sesta
 gacutil -u hello  
 ```  
   
-### <a name="removing-an-assembly-with-windows-installer"></a>Odebrání sestavení s Instalační služby systému Windows  
+### <a name="removing-an-assembly-with-windows-installer"></a>Odebrání sestavení pomocí Instalační služby systému Windows  
   
-1.  Z **programy a funkce** aplikace v **ovládací panely**, vyberte aplikaci, kterou chcete odinstalovat. Pokud se instalační balíček umístit sestavení v mezipaměti GAC, instalační služba systému Windows, budou odebrány Pokud nejsou použity v jiné aplikaci.  
+1.  Z **programy a funkce** aplikace v **ovládací panely**, vyberte aplikaci, kterou chcete odinstalovat. Pokud instalační balíček umístí sestavení v mezipaměti GAC, instalační služby systému Windows, budou odebrány Pokud nejsou použity v jiné aplikaci.  
   
     > [!NOTE]
-    >  Instalační služba systému Windows udržuje počet odkazů pro sestavení, které jsou nainstalované v mezipaměti GAC. Sestavení se odebere z mezipaměti GAC jenom v případě, že jeho počet odkazů hodnota nula, který označuje, že není používán žádnou aplikaci nainstalovat balíček Instalační služby systému Windows.  
+    >  Instalační program Windows udržuje počet odkazů pro sestavení nainstalovaná v GAC. Sestavení se odebere z mezipaměti GAC, pouze v případě, že jeho počet odkazů dosáhne nuly, což znamená, že není použit ve všech aplikacích nainstalovat balíček Instalační služby systému Windows.  
   
 ## <a name="see-also"></a>Viz také  
  [Práce se sestaveními a s globální pamětí sestavení](../../../docs/framework/app-domains/working-with-assemblies-and-the-gac.md)  

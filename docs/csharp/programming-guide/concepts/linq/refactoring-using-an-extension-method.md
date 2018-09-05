@@ -1,25 +1,25 @@
 ---
-title: Refaktoring pomocí metody rozšíření (C#)
+title: Refaktoring pomocí rozšiřující metodu (C#)
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
-ms.openlocfilehash: f3a1d64aebc04d772209dbe867e6d729de087127
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 08c37923792e1ac6ee922bf052d39fb63b1685c7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33335481"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672245"
 ---
-# <a name="refactoring-using-an-extension-method-c"></a>Refaktoring pomocí metody rozšíření (C#)
-Tento příklad vychází na předchozí příklad, [načítání textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), podle refaktoring zřetězení řetězců pomocí čistý funkci, která je implementovaná jako metody rozšíření.  
+# <a name="refactoring-using-an-extension-method-c"></a>Refaktoring pomocí rozšiřující metodu (C#)
+Tento příklad je založen na předchozím příkladu [načtení textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), refaktoring zřetězení řetězců pomocí čisté funkce, která je implementována jako metody rozšíření.  
   
- Předchozí příklad používá <xref:System.Linq.Enumerable.Aggregate%2A> operátor standardní dotazu k řetězení více řetězců do jednoho řetězce. Je však pohodlnější zápis metody rozšíření Chcete-li to provést, protože výsledná menší a více jednoduchých dotazů.  
+ Předchozí příklad použitý <xref:System.Linq.Enumerable.Aggregate%2A> operátor standardního dotazu pro řetězení více řetězců do jednoho řetězce. Je však pohodlnější zapisovat metodu rozšíření k tomu, protože výsledná menší a více jednoduchých dotazů.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad zpracuje WordprocessingML dokumentu, načítání odstavců, styl jednotlivých odstavců a každý odstavec. Tento příklad vychází v předchozích příkladech v tomto kurzu.  
+ V tomto příkladu zpracovává dokumentu WordprocessingML načtení odstavců, styl k jednotlivým odstavcům a každý odstavec. Tento příklad je založen na předchozí příklady v tomto kurzu.  
   
- V příkladu obsahuje více přetížení `StringConcatenate` metoda.  
+ Tento příklad obsahuje více přetížení `StringConcatenate` metody.  
   
- Pokyny pro vytvoření zdrojový dokument v tomto příkladu můžete najít [vytváření zdroj Office otevřít dokument XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Můžete najít pokyny pro vytvoření zdrojového dokumentu v tomto příkladu v [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
  Tento příklad používá třídy z WindowsBase sestavení. Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.  
   
@@ -63,9 +63,9 @@ public static class LocalExtensions
 ```  
   
 ## <a name="example"></a>Příklad  
- Existují čtyři přetížení `StringConcatenate` metoda. Jedním přetížením jednoduše vezme kolekci řetězce a vrátí jeden řetězec. Další přetížení může trvat kolekce libovolného typu a delegáta této projekty z jednotlivý prvek kolekce na řetězec. Existují dva další přetížení, které umožňují určit řetězec oddělovače.  
+ Existují čtyři přetížení `StringConcatenate` metody. Jedním přetížením jednoduše vezme kolekci řetězců a vrátí jeden řetězec. Další přetížení může trvat kolekci libovolného typu a delegáta této projektů z jednotlivý prvek kolekce na řetězec. Existují dvě další přetížení, které vám umožňují určit oddělovacího řetězce.  
   
- Následující kód používá všechny čtyři přetížení.  
+ Následující kód používá všechna čtyři přetížení.  
   
 ```csharp  
 string[] numbers = { "one", "two", "three" };  
@@ -88,7 +88,7 @@ one:two:three:
 ```  
   
 ## <a name="example"></a>Příklad  
- V příkladu se teď dají změnit využívat nové metody rozšíření:  
+ V příkladu teď můžete upravit tak, aby využít novou metodu rozšíření:  
   
 ```csharp  
 public static class LocalExtensions  
@@ -219,7 +219,7 @@ class Program
 }  
 ```  
   
- Tento příklad vytvoří následující výstup v případě použitého pro dokument popsané v [vytváření zdroj Office otevřít dokument XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
+ Tento příklad vytvoří následující výstup při použití u dokumentu je popsáno v [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -239,13 +239,14 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
- Všimněte si, že tento refaktoring jeho variantě refaktoring do čistého funkce. Další téma vás seznámí myšlenku řešení do čistého funkce podrobněji.  
+ Všimněte si, že tento Refaktoring je varianta refaktoring do čistých funkcí. Další téma vás seznámí představu o které budou zohledňovat do čistých funkcí podrobněji.  
   
 ## <a name="next-steps"></a>Další kroky  
- Další příklad ukazuje, jak Refaktorovat tento kód jiným způsobem, pomocí čistý funkce:  
+ Následující příklad ukazuje, jak Refaktorovat tento kód jiným způsobem pomocí čisté funkce:  
   
--   [Refaktoring pomocí čistý funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+-   [Refaktoring pomocí čisté funkce (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
   
-## <a name="see-also"></a>Viz také  
- [Kurz: Manipulace se obsah v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
- [Refaktoring do čistého funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+## <a name="see-also"></a>Viz také
+
+- [Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
+- [Refaktoring do čistých funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

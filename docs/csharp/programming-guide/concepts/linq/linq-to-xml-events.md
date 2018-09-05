@@ -2,12 +2,12 @@
 title: Události LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
-ms.openlocfilehash: 3dd4eaa0261ae7d878e188572d260b34b64fc031
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 6308d81eac830e11b6d58f8e460dfa377663cd21
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42999938"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43673860"
 ---
 # <a name="linq-to-xml-events-c"></a>Události LINQ to XML (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události umožňují upozorněni, když je změněna stromu XML.  
@@ -97,5 +97,6 @@ Total:308
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

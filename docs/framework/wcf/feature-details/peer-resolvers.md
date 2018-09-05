@@ -3,11 +3,11 @@ title: Překladače partnerských uzlů
 ms.date: 03/30/2017
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
 ms.openlocfilehash: 01320d98953c8fdc057aeec840ace4b818fcf115
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43385078"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43670594"
 ---
 # <a name="peer-resolvers"></a>Překladače partnerských uzlů
 Aby bylo možné připojit k sítě, vyžaduje partnerský uzel IP adresy z ostatních uzlů. Získávají se IP adresy kontaktováním překladač služby, která přijímá ID sítě a vrátí seznam hodnot adresy odpovídající uzly zaregistrovaný s ID tohoto konkrétního sítě. Překladač udržuje seznam registrovaných adresy, které se vytvoří tak, že každý uzel v mřížce zaregistrovat do služby.  

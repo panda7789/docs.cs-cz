@@ -8,11 +8,11 @@ helpviewer_keywords:
 - sealed keyword [C#]
 ms.assetid: 8e4ed5d3-10be-47db-9488-0da2008e6f3f
 ms.openlocfilehash: 674c7e1cd87b95318f739ab22876f4bfe5ae73d8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386637"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514026"
 ---
 # <a name="sealed-c-reference"></a>sealed (Referenční dokumentace jazyka C#)
 Při použití na třídu, `sealed` modifikátor zabrání ostatním třídám z něj dědí. V následujícím příkladu třída `B` dědí z třídy `A`, ale žádná třída může dědit z třídy `B`.  

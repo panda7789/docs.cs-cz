@@ -2,12 +2,12 @@
 title: 'Postupy: vytvoření dokumentu s obory názvů (C#) (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 37e63c57-f86d-47ac-88a7-2c2d107def30
-ms.openlocfilehash: 5937639fc48b82ee155450a3eaa1c7715ee3f9b9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 0fa19af47847b0d6b804528af3f766c9775e74f3
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43478023"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43673786"
 ---
 # <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>Postupy: vytvoření dokumentu s obory názvů (C#) (LINQ to XML)
 Toto téma ukazuje, jak vytvářet dokumenty s obory názvů.  
@@ -142,5 +142,6 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)
+## <a name="see-also"></a>Viz také
+
+- [Práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md)

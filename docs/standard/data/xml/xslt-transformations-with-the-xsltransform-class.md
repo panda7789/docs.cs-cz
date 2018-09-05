@@ -9,11 +9,11 @@ ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c871dabd9d027e5716c863985bed7ef3b955a358
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43482086"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672654"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformace XSLT s třídou XslTransform
 

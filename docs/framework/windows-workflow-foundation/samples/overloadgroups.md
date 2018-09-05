@@ -3,11 +3,11 @@ title: OverloadGroups
 ms.date: 03/30/2017
 ms.assetid: d1d547d2-f5fb-4de3-a959-ee6139a4f1ad
 ms.openlocfilehash: 0773e76d36b25ad5485cc8912c7012815412de9f
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43469866"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43514133"
 ---
 # <a name="overloadgroups"></a>OverloadGroups
 Tento příklad se skládá z aktivity (`CreateLocation`), která má dvě zajímavé vlastnosti:  

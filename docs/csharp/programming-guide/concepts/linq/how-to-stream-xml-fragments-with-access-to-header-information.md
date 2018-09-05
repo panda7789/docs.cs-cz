@@ -2,12 +2,12 @@
 title: 'Postupy: Stream fragmentů XML pomocí přístup k informacím hlavičky (C#)'
 ms.date: 07/20/2015
 ms.assetid: 7f242770-b0c7-418d-894b-643215e1f8aa
-ms.openlocfilehash: af8f83ba746292289bb97f591103cc91d6febbad
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 9c141b21a009f836fbf385c1f4179e288ec6c3b5
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199293"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671170"
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-c"></a>Postupy: Stream fragmentů XML pomocí přístup k informacím hlavičky (C#)
 Někdy je nutné číst libovolně velké soubory XML a zapisovat vaše aplikace tak, aby nároky na paměť pro aplikace předvídatelné. Pokud se pokusíte k naplnění stromu XML pomocí velkého souboru XML, využití paměti bude přímo úměrná velikosti souboru – to znamená, nadměrné. Proto měli používat streamování technika místo.  
@@ -166,5 +166,6 @@ static void Main(string[] args)
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé technologie LINQ to XML programování (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

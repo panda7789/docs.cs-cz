@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Windows Communication Foundation, Web service protocols
 ms.assetid: 1f7fc4ff-30fe-4e46-adda-91caad3b06c6
 ms.openlocfilehash: f4967a29b28f1862f5799f6935083ed12cb81ead
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43399047"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504335"
 ---
 # <a name="web-services-protocols-supported-by-system-provided-interoperability-bindings"></a>Protokoly webových služeb podporované vazbami vzájemné spolupráce poskytnutými systémem
 Windows Communication Foundation (WCF) je určený pro spolupráci s webovými službami, které podporují sadu specifikace říká specifikací webových služeb. Pokud chcete zjednodušit konfiguraci služby pro spolupráci osvědčené postupy, WCF zavádí tři interoperabilní vazby poskytované systémem: <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>, <xref:System.ServiceModel.WSHttpBinding?displayProperty=nameWithType>, a <xref:System.ServiceModel.WSDualHttpBinding?displayProperty=nameWithType>. WCF pro spolupráci s organizací standardů rozvoj z strukturovaných informace standardy OASIS (Organization) zahrnuje jeden interoperabilní vazeb poskytovaných systémem: <xref:System.ServiceModel.WS2007HttpBinding?displayProperty=nameWithType>. Metadata publikace WCF obsahuje dvě interoperabilní vazby poskytované systémem: [ \<mexHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpbinding.md) a [ \<mexHttpsBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/mexhttpsbinding.md). Toto téma obsahuje seznam specifikace, které podporují interoperabilní vazby poskytované systémem.  

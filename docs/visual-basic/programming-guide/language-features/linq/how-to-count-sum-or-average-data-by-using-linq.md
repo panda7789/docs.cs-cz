@@ -16,11 +16,11 @@ helpviewer_keywords:
 - count operator [LINQ in Visual Basic]
 ms.assetid: 51ca1f59-7770-4884-8b76-113002e54fc0
 ms.openlocfilehash: 942cb889c595f8caaf86dee1c025a935bd7db1b1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43474320"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671365"
 ---
 # <a name="how-to-count-sum-or-average-data-by-using-linq-visual-basic"></a>Postupy: Počet, suma nebo průměr dat pomocí LINQ (Visual Basic)
 Language Integrated Query (LINQ) usnadňuje přístup k informacím o databázi a spouštění dotazů.  

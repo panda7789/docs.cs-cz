@@ -10,30 +10,30 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], COM interop
 - Windows Forms, interop
 ms.assetid: a9e04765-d2de-4389-a494-a9a6d07aa6ee
-ms.openlocfilehash: c78bcc8d784fc481af2449f2d81cfde42891e7fe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d0d8dfd4a19b31be790d2643847396d136098278
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33522886"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43673532"
 ---
 # <a name="how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread"></a>Postupy: Podpora komunikace s objekty COM zobrazením jednotlivých formulářů Windows ve vlastním vlákně
-Můžete vyřešit problémy vzájemná funkční spolupráce COM zobrazení formuláře v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] ve smyčce zpráv, které můžete vytvořit pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metoda.  
+Vyřešíte problémy vzájemná funkční spolupráce modelu COM zobrazením formuláře ve [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] smyčky zpráv, které můžete vytvořit pomocí <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metody.  
   
- Chcete-li pracovní formuláře Windows správně z klientské aplikace modelu COM, musíte spustit formuláře ve smyčce zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
+ Chcete-li pracovní formulář Windows správně z klientské aplikace modelu COM, musíte spustit formuláře na smyčku zpráv Windows Forms. K tomuto účelu použijte jednu z následujících postupů:  
   
--   Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláře Windows. Další informace najdete v tématu [postupy: podpora spoluprací COM zobrazením Windows Form pomocí metody ShowDialog](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md).  
+-   Použití <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> metodu pro zobrazení formuláře Windows. Další informace najdete v tématu [postupy: podpora spolupráci s COM zobrazením formuláře Windows pomocí metody ShowDialog](../../../../docs/framework/winforms/advanced/com-interop-by-displaying-a-windows-form-shadow.md).  
   
--   Zobrazení jednotlivých formulářů Windows na samostatné vlákno.  
+-   Každý formulář Windows pro zobrazení na samostatném vlákně.  
   
- Rozsáhlá podpora pro tuto funkci v sadě Visual Studio není k dispozici.  
+ Není k dispozici rozsáhlou podporu pro tuto funkci v sadě Visual Studio.  
   
- Viz také [návod: podpora spoluprací COM zobrazení každý formuláři Windows v její vlastní vláken](http://msdn.microsoft.com/library/ms233639\(v=vs.110\)).  
+ Viz také [návod: podpora komunikace s objekty COM zobrazení každý formulář Windows na jeho vlastní vlákně](https://msdn.microsoft.com/library/ms233639\(v=vs.110\)).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu ukazuje, jak zobrazit formulář na samostatné vlákno a volání <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metoda zahájíte zprávy odeslané Windows Forms v daném vláknu. Chcete-li použít tuto metodu, musí zařazování žádné volání do formuláře z nespravované aplikace pomocí <xref:System.Windows.Forms.Control.Invoke%2A> metoda.  
+ Následující příklad kódu ukazuje, jak formulář pro zobrazení v samostatném vlákně a volání <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> metodu spustit pumpu zpráv Windows Forms v daném vláknu. Chcete-li tuto metodu použijte, musí zařaďte všechna volání do formuláře z nespravovaných aplikací s použitím <xref:System.Windows.Forms.Control.Invoke%2A> metody.  
   
- Tento postup vyžaduje, že každá instance ve tvaru, který spouští ve vlastním vlákně pomocí vlastní zpráva smyčky. Nemůže mít více než jeden smyčku zpráva spuštěna na vlákno. Proto nelze změnit smyčce zpráv klientské aplikace. Však můžete upravit [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] součásti spustit nové vlákno, která používá vlastní zpráva smyčky.  
+ Tento přístup vyžaduje, že každá instance formuláře je spuštěna ve vlastním vlákně s použitím vlastní smyčky zpráv. Nemůžete mít více než jeden smyčky zpráv spuštěná na vlákno. Proto nelze změnit smyčky zpráv klientská aplikace. Však můžete změnit [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] součásti spustit nové vlákno, která používá vlastní smyčku zpráv.  
   
  [!code-vb[System.Windows.Forms.ComInterop#1](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ComInterop/VB/COMForm.vb#1)]  
   
@@ -43,7 +43,7 @@ Můžete vyřešit problémy vzájemná funkční spolupráce COM zobrazení for
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Kompilace `COMForm`, `Form1`, a `FormManager` názvem typy v sestavení `COMWinform.dll`. Registrace sestavení pro zprostředkovatel komunikace s objekty modelu COM pomocí jedné z metod popsaných v [balení sestavení pro model COM](../../../../docs/framework/interop/packaging-an-assembly-for-com.md). Teď můžete použít sestavení a jeho odpovídající soubor typu knihovny (.tlb) v nespravovaných aplikacích. Například můžete použít knihovny typů jako odkaz v projektu jazyka Visual Basic 6.0 spustitelný soubor.  
+-   Kompilace `COMForm`, `Form1`, a `FormManager` typů do sestavení volá `COMWinform.dll`. Registrace sestavení zprostředkovatele komunikace s objekty modelu COM pomocí jedné z metod popsaných v [zabalení sestavení pro model COM](../../../../docs/framework/interop/packaging-an-assembly-for-com.md). Teď můžete použít sestavení a jeho odpovídající soubor knihovny (.tlb) typů v nespravované aplikace. Například můžete použít knihovnu typů jako odkaz v projektu jazyka Visual Basic 6.0 spustitelný soubor.  
   
 ## <a name="see-also"></a>Viz také  
  [Vystavení komponent architektury .NET Framework pro COM](../../../../docs/framework/interop/exposing-dotnet-components-to-com.md)  

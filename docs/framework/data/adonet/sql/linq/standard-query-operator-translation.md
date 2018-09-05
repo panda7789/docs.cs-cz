@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: a60c30fa-1e68-45fe-b984-f6abb9ede40e
 ms.openlocfilehash: fb4910e48af58463c5c851173f8e3caf4594cc3a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43424227"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672772"
 ---
 # <a name="standard-query-operator-translation"></a>Převod standardních operátorů dotazů
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] Standardní operátory dotazu se přeloží na příkazy jazyka SQL. Procesor dotazů databáze určuje sémantika provádění SQL překladu.  

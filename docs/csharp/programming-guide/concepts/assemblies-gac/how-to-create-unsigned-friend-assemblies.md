@@ -2,21 +2,21 @@
 title: 'Postupy: vytváření nepodepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
-ms.openlocfilehash: 676b9d3c641f45736af50bc2290426e261b591c4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7244f17c24a16569903783c730fc356b11e20aa8
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33340200"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671115"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies-c"></a>Postupy: vytváření nepodepsaných přátelských sestavení (C#)
-Tento příklad ukazuje způsob použití přátelských sestavení s sestavení, které jsou bez znaménka.  
+Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která jsou bez znaménka.  
   
-### <a name="to-create-an-assembly-and-a-friend-assembly"></a>Chcete-li vytvořit sestavení a přátelských sestavení  
+### <a name="to-create-an-assembly-and-a-friend-assembly"></a>Chcete-li vytvořit sestavení a sestavení typu friend  
   
 1.  Otevřete příkazový řádek.  
   
-2.  Vytvoření souboru C# s názvem `friend_signed_A.` obsahující následující kód. Kód používá <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut deklarovat friend_signed_B jako přátelského sestavení.  
+2.  Vytvořte soubor jazyka C# s názvem `friend_signed_A.` , který obsahuje následující kód. Tento kód použije <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut pro deklaraci friend_signed_B jako sestavení typu friend.  
   
     ```csharp  
     // friend_unsigned_A.cs  
@@ -46,13 +46,13 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
     }  
     ```  
   
-3.  Kompilace a friend_signed_A se přihlaste pomocí následujícího příkazu.  
+3.  Kompilace a podepsání friend_signed_A pomocí následujícího příkazu.  
   
     ```csharp  
     csc /target:library friend_unsigned_A.cs  
     ```  
   
-4.  Vytvoření souboru C# s názvem `friend_unsigned_B` obsahující následující kód. Protože friend_unsigned_A určuje friend_unsigned_B jako přátelského sestavení, můžete přístup k kód v friend_unsigned_B `internal` typy a členy z friend_unsigned_A.  
+4.  Vytvořte soubor jazyka C# s názvem `friend_unsigned_B` , který obsahuje následující kód. Protože friend_unsigned_A určuje friend_unsigned_B jako sestavení typu friend, můžete přístup ke kódu v friend_unsigned_B `internal` typy a členy z friend_unsigned_A.  
   
     ```csharp  
     // friend_unsigned_B.cs  
@@ -81,18 +81,19 @@ Tento příklad ukazuje způsob použití přátelských sestavení s sestavení
     csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs  
     ```  
   
-     Název sestavení, který je generovaný kompilátoru shodovat friend název sestavení, který je předán <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut. Musíte explicitně zadat název výstupu sestavení (.exe nebo .dll) pomocí `/out` – možnost kompilátoru. Další informace najdete v tématu [/out (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).  
+     Název sestavení, který je generován kompilátorem musí odpovídat názvu sestavení typu friend, která je předána <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut. Musíte explicitně zadat název výstupního sestavení (.exe nebo .dll) s použitím `/out` – možnost kompilátoru. Další informace najdete v tématu [/out (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/out-compiler-option.md).  
   
 6.  Spusťte soubor friend_signed_B.exe.  
   
      Program vytiskne dva řetězce: "Class1.Test" a "Class2.Test".  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Existují podobnosti mezi <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> oprávnění zabezpečení ke spuštění konkrétní části kódu, můžete požadovat, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda se `internal` typy a členy.  
+ Existují podobnost <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut a <xref:System.Security.Permissions.StrongNameIdentityPermission> třídy. Hlavní rozdíl je, že <xref:System.Security.Permissions.StrongNameIdentityPermission> může požadovat oprávnění zabezpečení ke spuštění konkrétní části kódu, zatímco <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> atribut určuje, zda `internal` typy a členy.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
- [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
- [Postupy: vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>  
+- [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
+- [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
+- [Postupy: vytváření podepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-signed-friend-assemblies.md)  
+- [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

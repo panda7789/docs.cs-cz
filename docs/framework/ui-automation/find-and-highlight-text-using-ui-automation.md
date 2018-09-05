@@ -16,11 +16,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: 7229c9468948061726e81e3c79d2ab56e7497fa4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408864"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672875"
 ---
 # <a name="find-and-highlight-text-using-ui-automation"></a>Hledání a zvýrazňování textu s použitím automatizace uživatelského rozhraní
 > [!NOTE]

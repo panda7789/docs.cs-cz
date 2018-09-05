@@ -2,12 +2,12 @@
 title: 'Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3320e866-01f1-4b7f-8932-049a7b2d2a9b
-ms.openlocfilehash: 8e7eb5c797ca87f87950d530112ec64f1327ae0c
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: e4958c56add4f6302af3c7766b90fa4dbd58ec86
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39198494"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671144"
 ---
 # <a name="walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-visual-studio-c"></a>Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)
 Je-li vložit informace o typu v aplikaci, která odkazuje na objekty modelu COM, můžete vyloučit potřebu primárního sestavení interop (PIA). Kromě toho informace o typu embedded vám umožní dosáhnout nezávislosti na verzi pro vaši aplikaci. To znamená váš program může zapisovat používat typy z více verzí knihovny COM bez nutnosti zvláštního PIA pro každou verzi. Toto je běžný scénář pro aplikace, které používají objekty z knihoven Microsoft Office. Vložení informací o typu umožňuje jednomu sestavení programu pracovat s různými verzemi sady Microsoft Office na různých počítačích bez nutnosti znovu nasazovat program nebo PIA pro každou verzi sady Microsoft Office.  
@@ -124,6 +124,7 @@ Je-li vložit informace o typu v aplikaci, která odkazuje na objekty modelu COM
   
 5.  Ověřte, zda byl vytvořen sešit aplikace Excel v umístění zadaném ve vzorovém kódu: C:\SampleFolder\SampleWorkbook.xls.  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
- [/ Link (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)
+## <a name="see-also"></a>Viz také
+
+- [Návod: Vložení typů ze spravovaných sestavení v sadě Visual Studio (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
+- [/ Link (možnosti kompilátoru C#)](../../../../csharp/language-reference/compiler-options/link-compiler-option.md)

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - XML namespaces, qualifying elements and names in
 ms.assetid: 44719f90-7e15-42e8-a9e2-282287e2b5bf
 ms.openlocfilehash: 6b4d58f6b5bf23cbce2ace8fb40730d7b73994de
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42930879"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43673419"
 ---
 # <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Postupy: zařazení – Element XML a názvy atributů XML
 

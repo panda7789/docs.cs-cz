@@ -8,11 +8,11 @@ helpviewer_keywords:
 - TreeView control [Windows Forms]
 ms.assetid: 879438b4-4eac-45c6-b345-0229c9b21ab0
 ms.openlocfilehash: 0b4db06eedc0ada7c34f3ba6f6c80b783866bed2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404154"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672075"
 ---
 # <a name="treeview-control-windows-forms"></a>TreeView – ovládací prvek (Windows Forms)
 Windows Forms `TreeView` ovládací prvek zobrazuje hierarchii uzlů, jako je způsob, jak soubory a složky se zobrazí v levém podokně funkci Windows Explorer v operačních systémech Windows.  

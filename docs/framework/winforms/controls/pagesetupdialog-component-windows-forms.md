@@ -20,11 +20,11 @@ helpviewer_keywords:
 - printing [Windows Forms], headers and footers
 ms.assetid: 1c7ccb02-ac62-4fc8-8e4f-c67b01a86802
 ms.openlocfilehash: 8caa984799d7f8f5a8f4b017e8c40eeb44d8b6c4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404780"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43670568"
 ---
 # <a name="pagesetupdialog-component-windows-forms"></a>PageSetupDialog – komponenta (Windows Forms)
 Windows Forms <xref:System.Windows.Forms.PageSetupDialog> komponenta je předem nakonfigurované dialogové okno používá k nastavení stránky podrobností pro tisk v aplikacích založených na Windows. Použití v rámci aplikace založené na Windows jako jednoduché řešení pro uživatele nastavit předvolby stránky namísto dialogové okno Vlastní konfigurace. Můžete povolit uživatelům nastavit okraj a okraj úpravy, záhlaví a zápatí a na výšku a šířku. Pomocí standardní dialogová okna Windows, můžete vytvořit aplikace, jejichž základní funkce je okamžitě uživatelé znají.  

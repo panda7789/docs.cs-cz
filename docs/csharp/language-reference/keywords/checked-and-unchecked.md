@@ -10,11 +10,11 @@ helpviewer_keywords:
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
 ms.openlocfilehash: 04f603905690497bcd4249f73c7296be2c269a60
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468808"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43671211"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Zaškrtnuto a nezaškrtnuto (Referenční dokumentace jazyka C#)
 Příkazy jazyka C# lze spustit v kontextu zaškrtnuté nebo nezaškrtnuté. Aritmetické přetečení ve zkontrolovaném kontextu, vyvolá výjimku. V nekontrolovaném kontextu je ignorován Přetečení aritmetické operace a výsledek je rozdělená do se zahodí všechny bity nejvyšším, které se nehodí do cílového typu.  

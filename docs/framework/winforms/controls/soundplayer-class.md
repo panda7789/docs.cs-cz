@@ -6,39 +6,39 @@ f1_keywords:
 helpviewer_keywords:
 - sounds [Windows Forms], playing
 ms.assetid: f3945af9-045c-4e2d-b251-377c37ca2d77
-ms.openlocfilehash: 39d3c9d54eb61c0220a13870d5bd2ff69f8dfc38
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 57d9affa76a5f24e8a3ab6b3d13516396a82eb92
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33538809"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43672888"
 ---
 # <a name="soundplayer-class"></a>SoundPlayer – třída
-`SoundPlayer` Vám umožňuje snadno zahrnout zvuky ve svých aplikacích.  
+`SoundPlayer` Třída umožňuje snadno zahrnout zvuky ve svých aplikacích.  
   
- Můžete také <xref:System.Media.SystemSounds> třída přehrávání běžné systémové zvuky, včetně zvukový signál.  
+ Můžete také použít <xref:System.Media.SystemSounds> třídy k přehrání běžné systémové zvuky, včetně zvukový signál.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přehled třídy SoundPlayer](../../../../docs/framework/winforms/controls/soundplayer-class-overview.md)  
- Představuje třídu a jeho běžně používané vlastnosti, metod a události.  
+ Představuje třídu a její běžně používané vlastnosti, metody a události.  
   
  [Postupy: Přehrávání zvuku z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-sound-from-a-windows-form.md)  
- Poskytuje kód přehrát zvuk zadaný prostřednictvím cesta k souboru, cesta UNC nebo cesta HTTP.  
+ Poskytuje kód pro přehrávání zvuku zadaná cesta k souboru, cesta UNC nebo cesta HTTP.  
   
  [Postupy: Přehrání zvukového signálu z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-beep-from-a-windows-form.md)  
- Poskytuje kód přehrát zvuk zvukový signál počítače.  
+ Poskytuje kód pro přehrávání zvuku zvukový signál počítače.  
   
  [Postupy: Přehrávání zvuku vestavěného v prostředku z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-sound-embedded-in-a-resource-from-a-windows-form.md)  
  Poskytuje kód pro přehrávání zvuku z prostředku.  
   
  [Postupy: Přehrávání systémového zvuku z formuláře Windows Forms](../../../../docs/framework/winforms/controls/how-to-play-a-system-sound-from-a-windows-form.md)  
- Poskytuje kód k přehrání jeden z systémové zvuky.  
+ Poskytuje kód pro přehrávání je zvuky systému.  
   
  [Postupy: Asynchronní načítání zvuku ve formuláři Windows Forms](../../../../docs/framework/winforms/controls/how-to-load-a-sound-asynchronously-within-a-windows-form.md)  
- Poskytuje kód asynchronní načítání zvuku z adresy URL a přehrát.  
+ Poskytuje kód pro asynchronní načítání zvuku z adresy URL a přehrát jej.  
   
  [Postupy: Opakované přehrávání zvuku ve formuláři Windows Forms](../../../../docs/framework/winforms/controls/how-to-loop-a-sound-playing-on-a-windows-form.md)  
- Poskytuje kód, který opakovaného přehrávání zvuku.  
+ Obsahuje kód, který přehraje zvuk opakovaně.  
   
 ## <a name="reference"></a>Odkaz  
  <xref:System.Media.SoundPlayer>  
@@ -46,9 +46,9 @@ ms.locfileid: "33538809"
   
 ## <a name="related-sections"></a>Související oddíly  
  [Windows Forms – ovládací prvky](../../../../docs/framework/winforms/controls/index.md)  
- Obsahuje odkazy na témata o ovládacích prvcích navrženy speciálně pro práci s Windows Forms.  
+ Obsahuje odkazy na témata o ovládacích prvcích určený konkrétně pro práci s formuláři Windows.  
   
  [Ovládací prvky používané ve Windows Forms](../../../../docs/framework/winforms/controls/controls-to-use-on-windows-forms.md)  
- Poskytuje úplný seznam Windows Forms – ovládací prvky, odkazy na informace o jejich používání.  
+ Obsahuje úplný seznam všech ovládacích prvcích Windows Forms, s odkazy na informace o jejich použití.  
   
- Viz také [HYPERLINK "http://msdn.microsoft.com/library/11bxex12(v=vs.110)" My.Computer – objekt](http://msdn.microsoft.com/library/11bxex12\(v=vs.110\)) nebo [My.Computer – objekt](http://msdn.microsoft.com/library/11bxex12\(v=vs.120\)).
+ Viz také [hypertextový odkaz "http://msdn.microsoft.com/library/11bxex12(v=vs.110)" My.Computer – objekt](https://msdn.microsoft.com/library/11bxex12\(v=vs.110\)) nebo [My.Computer – objekt](https://msdn.microsoft.com/library/11bxex12\(v=vs.120\)).

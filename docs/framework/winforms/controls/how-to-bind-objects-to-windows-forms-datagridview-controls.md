@@ -10,11 +10,11 @@ helpviewer_keywords:
 - object binding [Windows Forms], DataGridView control
 ms.assetid: cb8f29fa-577e-4e2b-883f-3a01c6189b9c
 ms.openlocfilehash: 142009bb2c845384c19e5999896afbfa2ebd0a3c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43397066"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43511773"
 ---
 # <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>Postupy: Připojení objektů k ovládacím prvkům Windows Forms DataGridView
 Následující příklad kódu ukazuje, jak vytvořit vazbu na kolekci objektů do <xref:System.Windows.Forms.DataGridView> tak, aby každý objekt zobrazí jako samostatný řádek. Tento příklad také znázorňuje způsob zobrazení vlastností s typem výčtu v <xref:System.Windows.Forms.DataGridViewComboBoxColumn> tak, aby rozevíracího seznamu pole se seznamem obsahuje hodnoty výčtu.  

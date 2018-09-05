@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
 ms.openlocfilehash: 073cd3a57f254f639fac44900ff6bf022e1fb165
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408396"
+ms.lasthandoff: 09/04/2018
+ms.locfileid: "43504303"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>Povolení více aktivních sad výsledků
 Více sad aktivní výsledků (MARS) je funkce, která funguje se serverem SQL Server, aby bylo možné spouštění více dávek na jedno připojení. Pokud MARS je povolené pro použití se serverem SQL Server, přidá každý objekt příkazu použít relaci připojení.  
