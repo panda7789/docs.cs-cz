@@ -17,18 +17,18 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e69625184aca7d1ebd4bb0b7dc7c4958596b906a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43536382"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773922"
 ---
-# <a name="beginenumeration-function"></a><span data-ttu-id="9c0db-103">Funkce BeginEnumeration</span><span class="sxs-lookup"><span data-stu-id="9c0db-103">BeginEnumeration function</span></span>
-<span data-ttu-id="9c0db-104">Začíná výčet dostupné metody pro objekt.</span><span class="sxs-lookup"><span data-stu-id="9c0db-104">Begins an enumeration of the methods available for the object.</span></span>  
+# <a name="beginenumeration-function"></a><span data-ttu-id="b0e4f-103">Funkce BeginEnumeration</span><span class="sxs-lookup"><span data-stu-id="b0e4f-103">BeginEnumeration function</span></span>
+<span data-ttu-id="b0e4f-104">Začíná výčet dostupné metody pro objekt.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-104">Begins an enumeration of the methods available for the object.</span></span>  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
-## <a name="syntax"></a><span data-ttu-id="9c0db-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9c0db-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b0e4f-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b0e4f-105">Syntax</span></span>  
   
 ``` 
 HRESULT BeginMethodEnumeration (
@@ -38,43 +38,43 @@ HRESULT BeginMethodEnumeration (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="9c0db-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="9c0db-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="b0e4f-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="b0e4f-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="9c0db-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="9c0db-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="b0e4f-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="9c0db-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="9c0db-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
+<span data-ttu-id="b0e4f-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `lEnumFlags`  
-<span data-ttu-id="9c0db-109">[in] Nula (0) pro všechny metody nebo příznak, který určuje rozsah výčtu.</span><span class="sxs-lookup"><span data-stu-id="9c0db-109">[in] Zero (0) for all methods, or a flag that specifies the scope of the enumeration.</span></span> <span data-ttu-id="9c0db-110">Následující příznaky jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="9c0db-110">The following flags are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="b0e4f-109">[in] Nula (0) pro všechny metody nebo příznak, který určuje rozsah výčtu.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-109">[in] Zero (0) for all methods, or a flag that specifies the scope of the enumeration.</span></span> <span data-ttu-id="b0e4f-110">Následující příznaky jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="b0e4f-110">The following flags are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-<span data-ttu-id="9c0db-111">Konstanta</span><span class="sxs-lookup"><span data-stu-id="9c0db-111">Constant</span></span>  |<span data-ttu-id="9c0db-112">Hodnota</span><span class="sxs-lookup"><span data-stu-id="9c0db-112">Value</span></span>  |<span data-ttu-id="9c0db-113">Popis</span><span class="sxs-lookup"><span data-stu-id="9c0db-113">Description</span></span>  |
+<span data-ttu-id="b0e4f-111">Konstanta</span><span class="sxs-lookup"><span data-stu-id="b0e4f-111">Constant</span></span>  |<span data-ttu-id="b0e4f-112">Hodnota</span><span class="sxs-lookup"><span data-stu-id="b0e4f-112">Value</span></span>  |<span data-ttu-id="b0e4f-113">Popis</span><span class="sxs-lookup"><span data-stu-id="b0e4f-113">Description</span></span>  |
 |---------|---------|---------|
-| `WBEM_FLAG_LOCAL_ONLY` | <span data-ttu-id="9c0db-114">0x10</span><span class="sxs-lookup"><span data-stu-id="9c0db-114">0x10</span></span> | <span data-ttu-id="9c0db-115">Omezte výčet metodám, které jsou definovány v samotné třídě.</span><span class="sxs-lookup"><span data-stu-id="9c0db-115">Limit the enumeration to methods that are defined in the class itself.</span></span> |
-| `WBEM_FLAG_PROPAGATED_ONLY` |  <span data-ttu-id="9c0db-116">0x20</span><span class="sxs-lookup"><span data-stu-id="9c0db-116">0x20</span></span> | <span data-ttu-id="9c0db-117">Omezte výčet vlastností, které se dědí ze základní třídy.</span><span class="sxs-lookup"><span data-stu-id="9c0db-117">Limit the enumeration to properties that are inherited from base classes.</span></span> |
+| `WBEM_FLAG_LOCAL_ONLY` | <span data-ttu-id="b0e4f-114">0x10</span><span class="sxs-lookup"><span data-stu-id="b0e4f-114">0x10</span></span> | <span data-ttu-id="b0e4f-115">Omezte výčet metodám, které jsou definovány v samotné třídě.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-115">Limit the enumeration to methods that are defined in the class itself.</span></span> |
+| `WBEM_FLAG_PROPAGATED_ONLY` |  <span data-ttu-id="b0e4f-116">0x20</span><span class="sxs-lookup"><span data-stu-id="b0e4f-116">0x20</span></span> | <span data-ttu-id="b0e4f-117">Omezte výčet vlastností, které se dědí ze základní třídy.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-117">Limit the enumeration to properties that are inherited from base classes.</span></span> |
 
-## <a name="return-value"></a><span data-ttu-id="9c0db-118">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="9c0db-118">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="b0e4f-118">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="b0e4f-118">Return value</span></span>
 
-<span data-ttu-id="9c0db-119">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="9c0db-119">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="b0e4f-119">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="b0e4f-119">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="9c0db-120">Konstanta</span><span class="sxs-lookup"><span data-stu-id="9c0db-120">Constant</span></span>  |<span data-ttu-id="9c0db-121">Hodnota</span><span class="sxs-lookup"><span data-stu-id="9c0db-121">Value</span></span>  |<span data-ttu-id="9c0db-122">Popis</span><span class="sxs-lookup"><span data-stu-id="9c0db-122">Description</span></span>  |
+|<span data-ttu-id="b0e4f-120">Konstanta</span><span class="sxs-lookup"><span data-stu-id="b0e4f-120">Constant</span></span>  |<span data-ttu-id="b0e4f-121">Hodnota</span><span class="sxs-lookup"><span data-stu-id="b0e4f-121">Value</span></span>  |<span data-ttu-id="b0e4f-122">Popis</span><span class="sxs-lookup"><span data-stu-id="b0e4f-122">Description</span></span>  |
 |---------|---------|---------|
-|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="9c0db-123">0x80041008</span><span class="sxs-lookup"><span data-stu-id="9c0db-123">0x80041008</span></span> | <span data-ttu-id="9c0db-124">`lEnnumFlags` je nenulová a není součástí zadané příznaky.</span><span class="sxs-lookup"><span data-stu-id="9c0db-124">`lEnnumFlags` is non-zero and is not one of the specified flags.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="9c0db-125">0</span><span class="sxs-lookup"><span data-stu-id="9c0db-125">0</span></span> | <span data-ttu-id="9c0db-126">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="9c0db-126">The function call was successful.</span></span>  |
+|`WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="b0e4f-123">0x80041008</span><span class="sxs-lookup"><span data-stu-id="b0e4f-123">0x80041008</span></span> | <span data-ttu-id="b0e4f-124">`lEnnumFlags` je nenulová a není součástí zadané příznaky.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-124">`lEnnumFlags` is non-zero and is not one of the specified flags.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="b0e4f-125">0</span><span class="sxs-lookup"><span data-stu-id="b0e4f-125">0</span></span> | <span data-ttu-id="b0e4f-126">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-126">The function call was successful.</span></span>  |
   
-## <a name="remarks"></a><span data-ttu-id="9c0db-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9c0db-127">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="b0e4f-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b0e4f-127">Remarks</span></span>
 
-<span data-ttu-id="9c0db-128">Tato funkce zalamuje volání na [IWbemClassObject::BeginMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-beginmethodenumeration) metody.</span><span class="sxs-lookup"><span data-stu-id="9c0db-128">This function wraps a call to the [IWbemClassObject::BeginMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-beginmethodenumeration) method.</span></span>
+<span data-ttu-id="b0e4f-128">Tato funkce zalamuje volání na [IWbemClassObject::BeginMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-beginmethodenumeration) metody.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-128">This function wraps a call to the [IWbemClassObject::BeginMethodEnumeration](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-beginmethodenumeration) method.</span></span>
 
-<span data-ttu-id="9c0db-129">Volání této metody je podporována pouze, pokud se aktuální objekt definice třídy.</span><span class="sxs-lookup"><span data-stu-id="9c0db-129">This method call is only supported if the current object is a class definition.</span></span> <span data-ttu-id="9c0db-130">Zpracování metody není k dispozici [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatele, které odkazují na instance.</span><span class="sxs-lookup"><span data-stu-id="9c0db-130">Method manipulation is not available from [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointers that point to instances.</span></span> <span data-ttu-id="9c0db-131">Pořadí, ve kterém jsou uvedené metody je zaručeno, že bude neutrální pro danou instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject).</span><span class="sxs-lookup"><span data-stu-id="9c0db-131">The order in which methods are enumerated is guaranteed to be invariant for a given instance of [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject).</span></span>
+<span data-ttu-id="b0e4f-129">Volání této metody je podporována pouze, pokud se aktuální objekt definice třídy.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-129">This method call is only supported if the current object is a class definition.</span></span> <span data-ttu-id="b0e4f-130">Zpracování metody není k dispozici [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatele, které odkazují na instance.</span><span class="sxs-lookup"><span data-stu-id="b0e4f-130">Method manipulation is not available from [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) pointers that point to instances.</span></span> <span data-ttu-id="b0e4f-131">Pořadí, ve kterém jsou uvedené metody je zaručeno, že bude neutrální pro danou instanci [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject).</span><span class="sxs-lookup"><span data-stu-id="b0e4f-131">The order in which methods are enumerated is guaranteed to be invariant for a given instance of [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="9c0db-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9c0db-132">Requirements</span></span>  
- <span data-ttu-id="9c0db-133">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9c0db-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b0e4f-132">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b0e4f-132">Requirements</span></span>  
+ <span data-ttu-id="b0e4f-133">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b0e4f-133">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9c0db-134">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="9c0db-134">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="b0e4f-134">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="b0e4f-134">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="9c0db-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="9c0db-135">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="b0e4f-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="b0e4f-135">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9c0db-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9c0db-136">See also</span></span>  
-[<span data-ttu-id="9c0db-137">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="9c0db-137">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="b0e4f-136">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b0e4f-136">See also</span></span>  
+[<span data-ttu-id="b0e4f-137">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="b0e4f-137">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

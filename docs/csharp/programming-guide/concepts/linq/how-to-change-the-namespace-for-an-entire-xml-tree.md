@@ -3,19 +3,19 @@ title: 'Postupy: Změna Namespace pro celý strom XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1584ff3b-c77d-4241-ab62-80adfb7bfc1b
 ms.openlocfilehash: cbb7c3d332eea83d6df71812cc18633df6fbb6d0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43559527"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773586"
 ---
-# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-c"></a><span data-ttu-id="7aaae-102">Postupy: Změna Namespace pro celý strom XML (C#)</span><span class="sxs-lookup"><span data-stu-id="7aaae-102">How to: Change the Namespace for an Entire XML Tree (C#)</span></span>
-<span data-ttu-id="7aaae-103">Někdy nutné programově změnit obor názvů pro element nebo atribut.</span><span class="sxs-lookup"><span data-stu-id="7aaae-103">You sometimes have to programmatically change the namespace for an element or an attribute.</span></span> <span data-ttu-id="7aaae-104">Technologie LINQ to XML to výrazně usnadňuje.</span><span class="sxs-lookup"><span data-stu-id="7aaae-104">LINQ to XML makes this easy.</span></span> <span data-ttu-id="7aaae-105"><xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> Vlastnost lze nastavit.</span><span class="sxs-lookup"><span data-stu-id="7aaae-105">The <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> property can be set.</span></span> <span data-ttu-id="7aaae-106"><xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> Vlastnost nelze nastavit, ale můžete snadno zkopírovat do atributy <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, odeberte existující atributy a pak přidejte nové atributy, které jsou v novém požadovaného oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="7aaae-106">The <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> property cannot be set, but you can easily copy the attributes into a <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, remove the existing attributes, and then add new attributes that are in the new desired namespace.</span></span>  
+# <a name="how-to-change-the-namespace-for-an-entire-xml-tree-c"></a><span data-ttu-id="26f11-102">Postupy: Změna Namespace pro celý strom XML (C#)</span><span class="sxs-lookup"><span data-stu-id="26f11-102">How to: Change the Namespace for an Entire XML Tree (C#)</span></span>
+<span data-ttu-id="26f11-103">Někdy nutné programově změnit obor názvů pro element nebo atribut.</span><span class="sxs-lookup"><span data-stu-id="26f11-103">You sometimes have to programmatically change the namespace for an element or an attribute.</span></span> <span data-ttu-id="26f11-104">Technologie LINQ to XML to výrazně usnadňuje.</span><span class="sxs-lookup"><span data-stu-id="26f11-104">LINQ to XML makes this easy.</span></span> <span data-ttu-id="26f11-105"><xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> Vlastnost lze nastavit.</span><span class="sxs-lookup"><span data-stu-id="26f11-105">The <xref:System.Xml.Linq.XElement.Name%2A?displayProperty=nameWithType> property can be set.</span></span> <span data-ttu-id="26f11-106"><xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> Vlastnost nelze nastavit, ale můžete snadno zkopírovat do atributy <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, odeberte existující atributy a pak přidejte nové atributy, které jsou v novém požadovaného oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="26f11-106">The <xref:System.Xml.Linq.XAttribute.Name%2A?displayProperty=nameWithType> property cannot be set, but you can easily copy the attributes into a <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>, remove the existing attributes, and then add new attributes that are in the new desired namespace.</span></span>  
   
- <span data-ttu-id="7aaae-107">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="7aaae-107">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
+ <span data-ttu-id="26f11-107">Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span><span class="sxs-lookup"><span data-stu-id="26f11-107">For more information, see [Working with XML Namespaces (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7aaae-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="7aaae-108">Example</span></span>  
- <span data-ttu-id="7aaae-109">Následující kód vytvoří dvě stromů XML v žádný obor názvů.</span><span class="sxs-lookup"><span data-stu-id="7aaae-109">The following code creates two XML trees in no namespace.</span></span> <span data-ttu-id="7aaae-110">Poté změní obor názvů všech stromů a kombinuje je do jediného stromu.</span><span class="sxs-lookup"><span data-stu-id="7aaae-110">It then changes the namespace of each of the trees, and combines them into a single tree.</span></span>  
+## <a name="example"></a><span data-ttu-id="26f11-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="26f11-108">Example</span></span>  
+ <span data-ttu-id="26f11-109">Následující kód vytvoří dvě stromů XML v žádný obor názvů.</span><span class="sxs-lookup"><span data-stu-id="26f11-109">The following code creates two XML trees in no namespace.</span></span> <span data-ttu-id="26f11-110">Poté změní obor názvů všech stromů a kombinuje je do jediného stromu.</span><span class="sxs-lookup"><span data-stu-id="26f11-110">It then changes the namespace of each of the trees, and combines them into a single tree.</span></span>  
   
 ```csharp  
 XElement tree1 = new XElement("Data",  
@@ -64,7 +64,7 @@ XElement root = new XElement("Root",
 Console.WriteLine(root);  
 ```  
   
- <span data-ttu-id="7aaae-111">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="7aaae-111">This example produces the following output:</span></span>  
+ <span data-ttu-id="26f11-111">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="26f11-111">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -77,6 +77,6 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7aaae-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="7aaae-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="26f11-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="26f11-112">See Also</span></span>
 
-- [<span data-ttu-id="7aaae-113">Změna stromů XML (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="7aaae-113">Modifying XML Trees (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [<span data-ttu-id="26f11-113">Změna stromů XML (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="26f11-113">Modifying XML Trees (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

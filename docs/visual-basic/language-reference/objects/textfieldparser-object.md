@@ -7,29 +7,29 @@ helpviewer_keywords:
 - TextFieldParser class
 ms.assetid: d44bd2b0-7dfc-410b-a48b-534c1e97460b
 ms.openlocfilehash: 15eb5a30cf73f118dd4ad3a8d2194c8190d9c706
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43391592"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43722902"
 ---
-# <a name="textfieldparser-object"></a><span data-ttu-id="0577e-102">TextFieldParser – objekt</span><span class="sxs-lookup"><span data-stu-id="0577e-102">TextFieldParser Object</span></span>
-<span data-ttu-id="0577e-103">Poskytuje metody a vlastnosti pro analýza strukturovaných textových souborů.</span><span class="sxs-lookup"><span data-stu-id="0577e-103">Provides methods and properties for parsing structured text files.</span></span>  
+# <a name="textfieldparser-object"></a><span data-ttu-id="b0c2e-102">TextFieldParser – objekt</span><span class="sxs-lookup"><span data-stu-id="b0c2e-102">TextFieldParser Object</span></span>
+<span data-ttu-id="b0c2e-103">Poskytuje metody a vlastnosti pro analýza strukturovaných textových souborů.</span><span class="sxs-lookup"><span data-stu-id="b0c2e-103">Provides methods and properties for parsing structured text files.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0577e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0577e-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b0c2e-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b0c2e-104">Syntax</span></span>  
   
 ```  
 Public Class TextFieldParser  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="0577e-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0577e-105">Remarks</span></span>  
- <span data-ttu-id="0577e-106">Informace o tom, metody a vlastnosti `TextFieldParser` objektu, najdete v článku <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.</span><span class="sxs-lookup"><span data-stu-id="0577e-106">For information about the methods and properties of the `TextFieldParser` object, see <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="b0c2e-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b0c2e-105">Remarks</span></span>  
+ <span data-ttu-id="b0c2e-106">Informace o tom, metody a vlastnosti `TextFieldParser` objektu, najdete v článku <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.</span><span class="sxs-lookup"><span data-stu-id="b0c2e-106">For information about the methods and properties of the `TextFieldParser` object, see <xref:Microsoft.VisualBasic.FileIO.TextFieldParser>.</span></span>  
   
- <span data-ttu-id="0577e-107">Další informace najdete v tématu [čtení ze souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md).</span><span class="sxs-lookup"><span data-stu-id="0577e-107">For more information, see [Reading from Files](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md).</span></span>  
+ <span data-ttu-id="b0c2e-107">Další informace najdete v tématu [čtení ze souborů](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md).</span><span class="sxs-lookup"><span data-stu-id="b0c2e-107">For more information, see [Reading from Files](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0577e-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0577e-108">Requirements</span></span>  
- <span data-ttu-id="0577e-109">**Namespace:** <xref:Microsoft.VisualBasic.FileIO></span><span class="sxs-lookup"><span data-stu-id="0577e-109">**Namespace:** <xref:Microsoft.VisualBasic.FileIO></span></span>  
+## <a name="requirements"></a><span data-ttu-id="b0c2e-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b0c2e-108">Requirements</span></span>  
+ <span data-ttu-id="b0c2e-109">**Namespace:** <xref:Microsoft.VisualBasic.FileIO></span><span class="sxs-lookup"><span data-stu-id="b0c2e-109">**Namespace:** <xref:Microsoft.VisualBasic.FileIO></span></span>  
   
- <span data-ttu-id="0577e-110">**Třída:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser></span><span class="sxs-lookup"><span data-stu-id="0577e-110">**Class:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser></span></span>  
+ <span data-ttu-id="b0c2e-110">**Třída:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser></span><span class="sxs-lookup"><span data-stu-id="b0c2e-110">**Class:** <xref:Microsoft.VisualBasic.FileIO.TextFieldParser></span></span>  
   
- <span data-ttu-id="0577e-111">**Sestavení:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0577e-111">**Assembly:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]</span></span>
+ <span data-ttu-id="b0c2e-111">**Sestavení:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b0c2e-111">**Assembly:** [!INCLUDE[vbprvbruntime](~/includes/vbprvbruntime-md.md)]</span></span>
