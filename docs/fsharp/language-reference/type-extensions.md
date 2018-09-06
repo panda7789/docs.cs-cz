@@ -3,11 +3,11 @@ title: Rozšíření typů (F#)
 description: 'Zjistěte, jak povolit rozšíření typů F #, že přidáte nové členy dříve definovaného typu objektu.'
 ms.date: 07/20/2018
 ms.openlocfilehash: 27238db1fd0803f62c32755fbc4ab7688f5c107e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855058"
+ms.locfileid: "43874976"
 ---
 # <a name="type-extensions"></a>Rozšíření typů
 
