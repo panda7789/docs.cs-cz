@@ -2,33 +2,33 @@
 title: WSStreamedHttpBinding
 ms.date: 03/30/2017
 ms.assetid: 97ce4d3d-ca6f-45fa-b33b-2429bb84e65b
-ms.openlocfilehash: b0a4c316957a002f7541d230f96299e3f43ef778
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: d2111639266612183630231dbd51be55ef9c1ee4
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33807173"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43779331"
 ---
 # <a name="wsstreamedhttpbinding"></a>WSStreamedHttpBinding
-Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamování scénářů, při použití přenosového protokolu HTTP.  
+Vzorek ukazuje, jak vytvořit vazbu, která je navržena pro podporu streamování scénáře, když se používá přenos pomocí protokolu HTTP.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Binding\WSStreamedHttpBinding`  
   
- Takto vypadají kroky k vytvoření a konfiguraci nové standardní vazby.  
+ Postup vytvoření a konfigurace nové standardní vazby jsou následující.  
   
-1.  Vytvořte novou vazbu standardní  
+1.  Vytvořte novou vazbu standard  
   
-     Standardní vazby ve Windows Communication Foundation (WCF), jako je například basicHttpBinding a netTcpBinding nakonfigurovat základní přenosy a zásobníku kanálu pro zvláštní požadavky. V této ukázce `WSStreamedHttpBinding` nakonfiguruje kanál zásobníku pro podporu streamování. Ve výchozím nastavení, WS-zabezpečení a spolehlivé zasílání zpráv nebyly přidány do zásobníku kanál vzhledem k tomu, jak funkce nepodporuje vysílání datového proudu. Novou vazbu je implementována ve třídě `WSStreamedHttpBinding` která je odvozena od <xref:System.ServiceModel.Channels.Binding>. `WSStreamedHttpBinding` Obsahuje následující prvky vazby: <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>, <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Poskytuje třídy `CreateBindingElements()` metoda konfigurace výsledný zásobník vazby, jak je znázorněno v následujícím ukázkovém kódu.  
+     Standardní vazby Windows Communication Foundation (WCF) například basicHttpBinding a netTcpBinding nakonfigurujte základní přenosy a zásobník kanálu pro zvláštní požadavky. V této ukázce `WSStreamedHttpBinding` nakonfiguruje kanál zásobníku podporovat datový proud. Ve výchozím nastavení WS-Security a spolehlivé zasílání zpráv nepřidají do zásobníku kanál vzhledem k tomu, že obě funkce nejsou podporovány streamování. Nová vazba je implementována ve třídě `WSStreamedHttpBinding` , která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `WSStreamedHttpBinding` Obsahuje následující elementy vazby: <xref:System.ServiceModel.Channels.HttpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>, <xref:System.ServiceModel.Channels.TransactionFlowBindingElement>, a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Poskytuje třídy `CreateBindingElements()` metoda konfigurace výsledný zásobník vazbu, jak je znázorněno v následujícím ukázkovém kódu.  
   
     ```  
     public override BindingElementCollection CreateBindingElements()  
@@ -50,11 +50,11 @@ Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamován
     }  
     ```  
   
-2.  Přidat podporu konfigurace  
+2.  Přidání podpory konfigurace  
   
-     Ke zveřejnění přenos prostřednictvím konfigurace ukázku implementuje dva další třídy –`WSStreamedHttpBindingConfigurationElement` a `WSStreamedHttpBindingSection`. Třída `WSStreamedHttpBindingSection` je <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> která zveřejňuje `WSStreamedHttpBinding` systému konfigurace WCF. Hromadné implementace je delegovaný jako `WSStreamedHttpBindingConfigurationElement`, která je odvozena z <xref:System.ServiceModel.Configuration.StandardBindingElement>. Třída `WSStreamedHttpBindingConfigurationElement` má vlastnosti, které odpovídají vlastnosti `WSStreamedHttpBinding`a funkce pro mapování každý prvek konfigurace pro vazbu.  
+     K vystavení přenosu prostřednictvím konfigurace implementuje vzorek dvě další třídy –`WSStreamedHttpBindingConfigurationElement` a `WSStreamedHttpBindingSection`. Třída `WSStreamedHttpBindingSection` je <xref:System.ServiceModel.Configuration.StandardBindingCollectionElement%602> , která zveřejní `WSStreamedHttpBinding` k systému konfigurace WCF. Hromadné implementace se deleguje na `WSStreamedHttpBindingConfigurationElement`, která je odvozena z <xref:System.ServiceModel.Configuration.StandardBindingElement>. Třída `WSStreamedHttpBindingConfigurationElement` má vlastnosti, které odpovídají vlastnosti `WSStreamedHttpBinding`a funkce pro každý prvek konfigurace mapování na vazbu.  
   
-     Obslužná rutina se konfigurační systém zaregistrujte přidáním následující části do konfiguračního souboru služby.  
+     Zaregistrujte obslužné rutiny systém konfigurace, přidáním následujícího oddílu do konfiguračního souboru služby.  
   
     ```xml  
     <configuration>  
@@ -68,7 +68,7 @@ Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamován
     </configuration>  
     ```  
   
-     Obslužná rutina může pak odkazovat z serviceModel konfigurační oddíl.  
+     Obslužná rutina může pak odkazovat z konfiguračního oddílu serviceModel.  
   
     ```xml  
     <configuration>  
@@ -84,7 +84,7 @@ Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamován
     </configuration>  
     ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Nainstalujte [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] 4.0 pomocí následujícího příkazu.  
   
@@ -96,14 +96,14 @@ Ukázka ukazuje, jak vytvořit vazbu, která je určená pro podporu streamován
   
 3.  Ujistěte se, že jste provedli [pokyny k instalaci certifikátu serveru Internetové informační služby (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).  
   
-4.  Sestavte řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+4.  Abyste mohli sestavit řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-5.  Spustit ukázku v konfiguraci s počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+5.  Spusťte ukázku v konfiguraci mezi počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-6.  Když v okně klienta se zobrazí, zadejte "Ukázka.txt". Ve vašem adresáři by měl zjistit "kopírování z ukázka.txt".  
+6.  Když v okně klienta se zobrazí, zadejte "Ukázka.txt". Měli byste najít "kopírování z ukázka.txt" ve vašem adresáři.  
   
 ## <a name="the-wsstreamedhttpbinding-sample-service"></a>Ukázka WSStreamedHttpBinding služby  
- Ukázka službu, která používá `WSStreamedHttpBinding` se nachází v podadresáři služby. Implementace `OperationContract` používá `MemoryStream` nejdřív načíst všechna data z příchozího datového proudu před vrácením `MemoryStream`. Ukázka služba hostována Internetové informační služby (IIS).  
+ Ukázka služby, který používá `WSStreamedHttpBinding` je umístěný v podadresáři služby. Provádění `OperationContract` používá `MemoryStream` nejdřív načíst všechna data z příchozího datového proudu před vrácením `MemoryStream`. Ukázková služba je hostována Internetové informační služby (IIS).  
   
 ```  
 [ServiceContract]  
@@ -134,7 +134,7 @@ public class StreamedEchoService : IStreamedEchoService
 ```  
   
 ## <a name="the-wsstreamedhttpbinding-sample-client"></a>Ukázka WSStreamedHttpBinding klienta  
- Pro klienta, který se používá k interakci s používáním služby `WSStreamedHttpBinding` se nachází v podadresáři klienta. Protože certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, zobrazí výstrahu zabezpečení při pokusu o přístupu adresou protokolu HTTPS v prohlížeči, jako například https://localhost/servicemodelsamples/service.svc. Povolit klienta WCF pro práci s testovací certifikát na místě, se přidal některé další kód klienta pro potlačení výstrahy zabezpečení. Kód a doprovodné třídy nejsou vyžadovány, při použití provozní certifikáty.  
+ Klient, který se používá k interakci s použitím služby `WSStreamedHttpBinding` je umístěný v podadresáři klienta. Vzhledem k tomu, že certifikát použitý v této ukázce je testovací certifikát vytvořen s Makecert.exe, výstrahu zabezpečení se zobrazí při pokusu o přístup k adresu HTTPS v prohlížeči, jako https://localhost/servicemodelsamples/service.svc. Povolit klienta WCF pro práci s testovací certifikát na místě, byla přidána další kód klienta pro potlačení výstrahy zabezpečení. Při použití certifikátů produkčního prostředí, kód a související třídy nejsou nutné.  
   
 ```  
 // WARNING: This code is only required for test certificates such as those created by makecert. It is   

@@ -2,19 +2,19 @@
 title: 'Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: c052302439407cecd7ce2924cc6cf5ffeefd1239
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 679dde2d2d1607c2703468f64903f3cd9e59bcb8
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33328010"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43749675"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Postupy: kombinace a porovnávání kolekcí řetězců (LINQ) (C#)
-Tento příklad ukazuje způsob sloučení souborů, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, spojení a průnik na dvě sady řádků textu.  
+Tento příklad ukazuje, jak sloučit soubory, které obsahují řádků textu a pak výsledky seřaďte. Konkrétně ukazuje, jak provádět jednoduché zřetězení, sjednocení a průnik dvou sad řádků textu.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Nastavení projektu a textové soubory  
   
-1.  Zkopírujte tyto názvy do textového souboru s názvem names1.txt a uložit do složky projektu:  
+1.  Zkopírujte do textového souboru s názvem names1.txt tyto názvy a uložte ho do složky projektu:  
   
     ```  
     Bankov, Peter  
@@ -29,7 +29,7 @@ Tento příklad ukazuje způsob sloučení souborů, které obsahují řádků t
     Garcia, Debra  
     ```  
   
-2.  Zkopírujte tyto názvy do textového souboru s názvem names2.txt a uložit ve složce projektu. Všimněte si, že dva soubory mají společné některé názvy.  
+2.  Zkopírujte do textového souboru s názvem names2.txt tyto názvy a uložte ho do složky projektu. Mějte na paměti, že dva soubory mají společnou některé názvy.  
   
     ```  
     Liu, Jinghao  
@@ -169,8 +169,9 @@ class MergeStrings
 ```  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
+ Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.  
   
-## <a name="see-also"></a>Viz také  
- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+- [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)

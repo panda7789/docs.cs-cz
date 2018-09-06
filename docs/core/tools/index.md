@@ -5,11 +5,11 @@ author: mairaw
 ms.author: mairaw
 ms.date: 08/14/2017
 ms.openlocfilehash: 0ef69f98171da98b50aae4cdd2f5f88f37ad0c63
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403403"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43778877"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Nástroje .NET core rozhraní příkazového řádku (CLI)
 

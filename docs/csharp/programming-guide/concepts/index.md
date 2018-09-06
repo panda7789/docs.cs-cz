@@ -2,12 +2,12 @@
 title: Koncepty programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
-ms.openlocfilehash: 965ce386bcf6ff8d11c9e20616c1ca44640ddaf2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f71e05e05e3d027b6190142e8062ea3caf95edb7
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511109"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43738368"
 ---
 # <a name="programming-concepts-c"></a>Koncepty programování (C#)
 Tato část popisuje koncepty programování v jazyce C#.  
@@ -27,7 +27,7 @@ Tato část popisuje koncepty programování v jazyce C#.
 |[Language-Integrated Query (LINQ) (C#)](../../../csharp/programming-guide/concepts/linq/index.md)|Tento článek popisuje výkonné funkce dotazů v syntaxi jazyka C# a model pro dotazování na relačních databází, dokumenty XML, datové sady a kolekce v paměti.|  
 |[Objektově orientované programování (C#)](../../../csharp/programming-guide/concepts/object-oriented-programming.md)|Popisuje běžné objektově orientovaný jazyk, včetně zapouzdření, dědičnosti a polymorfismu.|  
 |[Reflexe (C#)](../../../csharp/programming-guide/concepts/reflection.md)|Vysvětluje, jak pomocí odrazu dynamicky vytvořit instanci typu, navázat na existující objekt, nebo získat typ z existujícího objektu a volat jeho metody nebo přístup k vlastnostem a polím.|  
-|[Serializace (C# )](../../../csharp/programming-guide/concepts/serialization/index.md)|Popisuje klíčové pojmy v binárním formátu XML a serializaci SOAP.|  
+|[Serializace (C#)](../../../csharp/programming-guide/concepts/serialization/index.md)|Popisuje klíčové pojmy v binárním formátu XML a serializaci SOAP.|  
 |[Dělení na vlákna (C#)](../../../csharp/programming-guide/concepts/threading/index.md)|Obsahuje přehled modelu podprocesů .NET a ukazuje, jak napsat kód, který provádí více úloh současně pro zlepšení výkonu a odezvy aplikace.|  
   
 ## <a name="related-sections"></a>Související oddíly  

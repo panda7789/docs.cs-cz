@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Windows Forms Designer
 ms.assetid: 36967466-1dfd-4fae-a7f1-7bf2cbc94048
 ms.openlocfilehash: ef6dc80bc00e2582b514bff7fe3e9c5d6d5770e6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43420981"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43776671"
 ---
 # <a name="how-to-set-grid-options-for-all-windows-forms"></a>Postupy: Nastavení možností mřížky pro všechny formuláře Windows
 Se používá k práce ve vývojovém prostředí sady Visual Studio, můžete nastavit předvolby pro všechny formuláře a projekty, které můžete pracovat v Návrháři formulářů Windows.  

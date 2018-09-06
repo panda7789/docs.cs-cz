@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 6c804e4d-f348-4afd-9f63-d3f0f24bc6a9
 ms.openlocfilehash: 2a20a2bb524c1ef9135b8b7187b2519088ddb762
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43674134"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43778731"
 ---
 # <a name="how-to-call-model-defined-functions-in-queries"></a>Postupy: volání modelově definovaných funkcí v dotazech
 Toto téma popisuje, jak volat funkce, které jsou definované v konceptuálním modelu v rámci [!INCLUDE[linq_entities](../../../../../../includes/linq-entities-md.md)] dotazy.  

@@ -5,11 +5,11 @@ ms.assetid: 89a70b90-d7e4-4b03-9b84-4dc88ce3d605
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: b857a608c6b485c384956e55247b6e02c49a8564
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43465936"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43725108"
 ---
 # <a name="endpoint-security-validation-and-authentication-failures-per-second"></a>Koncový bod: Ověřování zabezpečení a počet selhání ověření za sekundu
 Název čítače: ověřování zabezpečení a ověřování chyb za sekundu  

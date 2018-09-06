@@ -25,11 +25,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: c7aebbfd0d25f6c5a9266857816a1723cb0c660e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43466581"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43731599"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma konfiguračního souboru pro rozhraní .NET Framework
 

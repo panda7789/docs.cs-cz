@@ -1,36 +1,36 @@
 ---
-title: Regulární výraz aktivity
+title: Aktivity s regulárními výrazy
 ms.date: 03/30/2017
 ms.assetid: b8f24694-49db-4339-92ec-014e3d4ae63b
-ms.openlocfilehash: 34b1f18f26f0b79c4b8711d65da5707a85cf3bf0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 50daa5b6d7baab37f372de4c30c2e0d12b4fa943
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33519831"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43743161"
 ---
-# <a name="regular-expression-activities"></a>Regulární výraz aktivity
-Tento příklad ukazuje, jak vytvořit sadu aktivit, které poskytují funkce regulární výraz <xref:System.Text.RegularExpressions> oboru názvů. Tyto vlastní aktivity lze použít v rámci aplikace pracovního postupu. Další informace o regulárních výrazech najdete v tématu [N:System.Text.RegularExpressions](http://go.microsoft.com/fwlink/?LinkId=150434) Namespace.  
+# <a name="regular-expression-activities"></a>Aktivity s regulárními výrazy
+Tato ukázka předvádí, jak vytvořit sadu aktivit, které poskytují funkce regulární výraz <xref:System.Text.RegularExpressions> oboru názvů. Tyto vlastní aktivity je možné v rámci aplikace pracovního postupu. Další informace o formátování regulárních výrazů, naleznete v tématu [N:System.Text.RegularExpressions](https://go.microsoft.com/fwlink/?LinkId=150434) Namespace.  
   
- V následující tabulce jsou vlastní aktivity v této ukázce.  
+ Následující tabulka obsahuje podrobnosti o vlastních aktivit v této ukázce.  
   
 |Aktivita|Popis|  
 |--------------|-----------------|  
-|IsMatch –|Určuje, zda regulární výraz nalezena shoda ve vstupním řetězci.|  
-|Shody|Prohledá vstupní řetězec pro všechny výskyty regulární výraz a vrátí všechny úspěšné shody.|  
-|Nahradit|V rámci vstupní řetězec nahradí řetězce, které odpovídají vzor regulárního výrazu s zadané náhradní řetězec.|  
+|IsMatch|Určuje, zda regulárního výrazu nalezena shoda ve vstupním řetězci.|  
+|Shody|Vyhledá vstupního řetězce pro všechny výskyty regulárního výrazu a vrátí všechny úspěšné shody.|  
+|nahradit|V rámci zadaného vstupního řetězce nahradí řetězce, které odpovídají vzoru regulárního výrazu s určeným náhradním.|  
   
-## <a name="ismatch"></a>IsMatch –  
- `IsMatch` Vlastní aktivita vrátí `true` Pokud `Input` vlastnost řetězec najde shoda v regulárním výrazem zadaným v `Pattern` vlastnost. Aktivita je odvozena z <xref:System.Activities.CodeActivity%601> a v <xref:System.Activities.CodeActivity%601.Execute%2A> volání metod <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metoda.  
+## <a name="ismatch"></a>IsMatch  
+ `IsMatch` Vlastní aktivita vrátí `true` Pokud `Input` vlastnost řetězec najde shodu v regulárním výrazem zadaným v `Pattern` vlastnost. Aktivita je odvozena z <xref:System.Activities.CodeActivity%601> a v rámci <xref:System.Activities.CodeActivity%601.Execute%2A> volání metod <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> metoda.  
   
- Následující tabulka popisuje hodnota vlastnosti a vraťte se `IsMatch` vlastní aktivity.  
+ Následující tabulka popisuje vlastnosti a návratová hodnota pro `IsMatch` vlastní aktivity.  
   
-|Vlastnost nebo vrací hodnotu|Popis|  
+|Vlastnost nebo návratová hodnota|Popis|  
 |------------------------------|-----------------|  
 |Vzor (povinné)|Regulární výraz k vyhledání s.|  
 |Vstup (povinné)|Vstupní řetězec pro vyhledávání.|  
-|RegexOptions|Bitová kombinace OR [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) hodnot výčtu.|  
-|Návratová hodnota|`true` Pokud vstupní najde shoda v zadaný vzor; v opačném případě `false`.|  
+|RegexOptions|Bitová kombinace OR [RegexOptions](https://go.microsoft.com/fwlink/?LinkId=150446) hodnot výčtu.|  
+|Návratová hodnota|`true` Pokud vstup najde shodu zadaného vzoru; v opačném případě `false`.|  
   
  Následující příklad kódu ukazuje, jak používat `IsMatch` vlastní aktivity.  
   
@@ -43,16 +43,16 @@ new IsMatch
 ```  
   
 ## <a name="matches"></a>Shody  
- `Matches` Vlastní aktivity prohledá vstupní řetězec pro všechny výskyty regulární výraz a vrátí všechny úspěšné shody. Aktivita je odvozena z <xref:System.Activities.CodeActivity%601> a v <xref:System.Activities.CodeActivity%601.Execute%2A> volání metod <xref:System.Text.RegularExpressions.Regex.Matches%2A> metoda.  
+ `Matches` Vlastní aktivity prohledá vstupní řetězec pro všechny výskyty regulárního výrazu a vrátí všechny úspěšné shody. Aktivita je odvozena z <xref:System.Activities.CodeActivity%601> a v rámci <xref:System.Activities.CodeActivity%601.Execute%2A> volání metod <xref:System.Text.RegularExpressions.Regex.Matches%2A> metoda.  
   
- Následující tabulka popisuje hodnota vlastnosti a vraťte se `IsMatch` vlastní aktivity.  
+ Následující tabulka popisuje vlastnosti a návratová hodnota pro `IsMatch` vlastní aktivity.  
   
-|Vlastnost nebo vrací hodnotu|Popis|  
+|Vlastnost nebo návratová hodnota|Popis|  
 |------------------------------|-----------------|  
 |Vzor (povinné)|Regulární výraz k vyhledání s.|  
 |Vstup (povinné)|Vstupní řetězec pro vyhledávání.|  
-|RegexOptions|Bitová kombinace OR [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) hodnot výčtu.|  
-|Návratová hodnota|A <xref:System.Text.RegularExpressions.MatchCollection> obsahující kolekce shod úspěšné.|  
+|RegexOptions|Bitová kombinace OR [RegexOptions](https://go.microsoft.com/fwlink/?LinkId=150446) hodnot výčtu.|  
+|Návratová hodnota|A <xref:System.Text.RegularExpressions.MatchCollection> , který obsahuje kolekci úspěšné shody.|  
   
  Následující příklad kódu ukazuje, jak používat `Matches` vlastní aktivity.  
   
@@ -64,19 +64,19 @@ new Matches
 };  
 ```  
   
-## <a name="replace"></a>Nahradit  
- `Replace` Vlastní aktivity prohledá vstupní řetězec a nahradí všechny řetězce, které odpovídají zadanému regulárnímu výrazu řetězcem. Aktivita je odvozena z <xref:System.Activities.CodeActivity%601> a v <xref:System.Activities.CodeActivity%601.Execute%2A> volání metod <xref:System.Text.RegularExpressions.Regex.Replace%2A> metoda.  
+## <a name="replace"></a>nahradit  
+ `Replace` Vlastní aktivity prohledá vstupní řetězec a nahradí všechny řetězce, které odpovídají zadanému regulárnímu výrazu s řetězcem. Aktivita je odvozena z <xref:System.Activities.CodeActivity%601> a v rámci <xref:System.Activities.CodeActivity%601.Execute%2A> volání metod <xref:System.Text.RegularExpressions.Regex.Replace%2A> metoda.  
   
- Následující tabulka popisuje hodnota vlastnosti a vraťte se `Replace` vlastní aktivity.  
+ Následující tabulka popisuje vlastnosti a návratová hodnota pro `Replace` vlastní aktivity.  
   
-|Vlastnost nebo vrací hodnotu|Popis|  
+|Vlastnost nebo návratová hodnota|Popis|  
 |------------------------------|-----------------|  
 |Vzor (povinné)|Regulární výraz k vyhledání s.|  
 |Vstup (povinné)|Vstupní řetězec pro vyhledávání.|  
-|Nahrazení|Náhradní řetězec<br /><br /> Pokud `Replacement` není zadaný, pak se `MatchEvaluator` vlastnost je ignorována. Buď `Replacement` nebo `MatchEvaluator` musí být nastavena vlastnost.|  
-|MatchEvaluator|Vlastní metodu, která hledá každé shody a vrátí původní odpovídající řetězec nebo řetězec nahrazení.<br /><br /> Pokud `Replacement` není zadaný, pak se `MatchEvaluator` vlastnost je ignorována. Buď `Replacement` nebo `MatchEvaluator` musí být nastavena vlastnost.|  
-|RegexOptions|Bitová kombinace OR [RegexOptions](http://go.microsoft.com/fwlink/?LinkId=150446) hodnot výčtu.|  
-|Návratová hodnota|A <xref:System.Text.RegularExpressions.MatchCollection> obsahující kolekce shod úspěšné.|  
+|Nahrazení|Náhradní řetězec<br /><br /> Pokud `Replacement` není zadán, pak bude `MatchEvaluator` vlastnost se ignoruje. Buď `Replacement` nebo `MatchEvaluator` musí být nastavena vlastnost.|  
+|MatchEvaluator|Vlastní metoda, která zkontroluje jednotlivých shod a vrátí původní odpovídající řetězec nebo řetězec nahrazení.<br /><br /> Pokud `Replacement` není zadán, pak bude `MatchEvaluator` vlastnost se ignoruje. Buď `Replacement` nebo `MatchEvaluator` musí být nastavena vlastnost.|  
+|RegexOptions|Bitová kombinace OR [RegexOptions](https://go.microsoft.com/fwlink/?LinkId=150446) hodnot výčtu.|  
+|Návratová hodnota|A <xref:System.Text.RegularExpressions.MatchCollection> , který obsahuje kolekci úspěšné shody.|  
   
  Následující příklad kódu ukazuje, jak používat `Replace` vlastní aktivity.  
   
@@ -102,15 +102,15 @@ new Replace
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení RegexActivities.sln.  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
-3.  Chcete-li spustit řešení, stiskněte CTRL + F5.  
+3.  Abyste mohli spustit řešení, stiskněte CTRL + F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\Regex`

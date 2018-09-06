@@ -8,11 +8,11 @@ helpviewer_keywords:
 - => operator [C#]
 - lambda expressions [C#], => operator
 ms.openlocfilehash: b9216cf61b6b9368112f769d952457df4aab4297
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43670766"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43778013"
 ---
 # <a name="gt-operator-c-reference"></a>=&gt; – Operátor (referenční dokumentace jazyka C#)
 

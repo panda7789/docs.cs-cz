@@ -2,12 +2,12 @@
 title: 'Postupy: projektování grafu objektu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-ms.openlocfilehash: 8a1eef77e1e4cb25ffed489c49311dd40f7c9b58
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: f8e15e80a6914a8dcb848d91a13958f7e4175342
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932989"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732102"
 ---
 # <a name="how-to-project-an-object-graph-c"></a>Postupy: projektování grafu objektu (C#)
 Toto téma ukazuje, jak do projektu, nebo vyplnit, grafu objektů ze souboru XML.  
@@ -256,7 +256,8 @@ USPrice: 39.98
 ShipDate: 5/21/1999  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Linq.Enumerable.Select%2A>  
- <xref:System.Linq.Enumerable.ToList%2A>  
- [Projekce a transformace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Linq.Enumerable.Select%2A>  
+- <xref:System.Linq.Enumerable.ToList%2A>  
+- [Projekce a transformace (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)

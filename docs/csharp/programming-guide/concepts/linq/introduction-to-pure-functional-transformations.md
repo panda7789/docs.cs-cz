@@ -1,26 +1,27 @@
 ---
-title: Úvod do čistého funkční transformace (C#)
+title: Úvod k čistě funkčním transformacím (C#)
 ms.date: 07/20/2015
 ms.assetid: 8495c9d9-2d02-4aa0-8a10-9e8794b985fe
-ms.openlocfilehash: 278b3afc66e4c4f222e27e648274cb8cea814d50
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f04189c5ae6fc8f6c827f983357ab0126b2c086d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33329098"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43724978"
 ---
-# <a name="introduction-to-pure-functional-transformations-c"></a>Úvod do čistého funkční transformace (C#)
-Tato část představuje funkční transformací, včetně základní koncepty a podpůrné jazyk vytvoří. Výrazně liší od objektově orientované a funkční transformace přístupy k programování, včetně pokynů pro přecházení ty druhé. Funkční transformace lze v mnoha scénáře programování, ale transformace XML slouží jako konkrétní příklad sem.  
+# <a name="introduction-to-pure-functional-transformations-c"></a>Úvod k čistě funkčním transformacím (C#)
+Tato část představuje funkčním transformacím, včetně základní koncepty a podpůrné jazykové konstrukce. To se liší od objektově orientované a funkční transformace přístupy k programování, včetně Rady o tom, jak přechod na ten. Přestože funkční transformace lze použít v mnoha programovacích scénářů, je použita transformace XML jako konkrétní příklad zde.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   
 |Téma|Popis|  
 |-----------|-----------------|  
-|[Principy a terminologií (funkční transformaci) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)|Představuje koncepty a přehled terminologie čistý funkční transformací.|  
-|[Funkční programování vs. Imperativní programování (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)|Porovná a výrazně liší od funkční programování do tradičnější imperativní programování (procedurální).|  
-|[Refaktoring do čistého funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)|Zavádí čistý funkce a jsou uvedeny příklady a čistý a znečištěná funkce.|  
-|[Použitelnost funkční transformaci (C#)](../../../../csharp/programming-guide/concepts/linq/applicability-of-functional-transformation.md)|Popisuje typické scénáře funkční transformace.|  
-|[Funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)|Popisuje funkční transformace v kontextu transformace stromy XML.|  
+|[Koncepty a terminologie (funkční transformace) (C#)](../../../../csharp/programming-guide/concepts/linq/concepts-and-terminology-functional-transformation.md)|Představuje koncepty a terminologie čistě funkční transformace.|  
+|[Funkční programování vs. Imperativní programování (C#)](../../../../csharp/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)|Porovná a výrazně liší od tradičnější imperativního (procesního) programování funkční programování.|  
+|[Refaktoring do čistých funkcí (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)|Představuje čistě funkce a jsou uvedeny příklady a čistě a znečištěná funkce.|  
+|[Použitelnost funkční transformace (C#)](../../../../csharp/programming-guide/concepts/linq/applicability-of-functional-transformation.md)|Popisuje některé typické scénáře pro funkční transformace.|  
+|[Funkční transformace XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)|Popisuje funkční transformace v rámci transformace stromů XML.|  
   
-## <a name="see-also"></a>Viz také  
- [Čistý funkční transformace XML (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Čistě funkční transformace XML (C#)](../../../../csharp/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)

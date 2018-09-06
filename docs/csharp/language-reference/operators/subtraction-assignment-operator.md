@@ -8,11 +8,11 @@ helpviewer_keywords:
 - -= operator (subtraction assignment ) [C#]
 ms.assetid: 05c7d68a-423f-4de8-891b-cf24e8fb6ed7
 ms.openlocfilehash: 7cade0811536d836480f80a56cf8c4d09e089a0b
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43254391"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43773983"
 ---
 # <a name="--operator-c-reference"></a>-= – operátor (Referenční dokumentace jazyka C#)
 Operátor přiřazení odčítání.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - interoperability [WPF]
 ms.assetid: a1f7a90c-0bbb-4781-8c3c-8cc8bef2488d
 ms.openlocfilehash: 15cab9266af5840aa4b37a62b71bd5010b7a859a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43535639"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43741017"
 ---
 # <a name="walkthrough-changing-properties-of-a-hosted-wpf-element-at-design-time"></a>Návod: Změna vlastností hostovaného prvku WPF během návrhu
 Tento návod ukazuje, jak změnit hodnoty vlastností ovládací prvek Windows Presentation Foundation (WPF), který je hostován ve formuláři Windows.  

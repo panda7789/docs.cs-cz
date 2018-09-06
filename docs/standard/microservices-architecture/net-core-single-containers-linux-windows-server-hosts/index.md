@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/27/2018
 ms.openlocfilehash: 45be99a86a52ed450b795ca5f91c01ab82c7da47
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43539696"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43778000"
 ---
 # <a name="deploying-single-container-based-net-core-web-applications-on-linux-or-windows-nano-server-hosts"></a>Nasazování webových aplikací na základě jednoho kontejneru .NET Core v Linuxu nebo Windows hostiteli s Nano serverem
 

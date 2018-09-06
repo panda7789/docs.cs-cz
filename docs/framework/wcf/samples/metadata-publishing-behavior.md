@@ -5,24 +5,25 @@ helpviewer_keywords:
 - service behaviors, metadata publishing sample
 - Metadata Publishing Behaviors Sample [Windows Communication Foundation]
 ms.assetid: 78c13633-d026-4814-910e-1c801cffdac7
-ms.openlocfilehash: 547ff9fcaca8b9af7a7559a11ef4c4a8b5996174
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: c3e26454cc9b29620d80a86df7d7aee131e18200
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43734116"
 ---
 # <a name="metadata-publishing-behavior"></a>Chování publikování metadat
-Ukázka chování publikování metadat ukazuje, jak k ovládání funkcí publikování metadat služby. Pokud chcete zabránit neúmyslnému zveřejnění metadata potenciálně citlivých služby, výchozí konfiguraci pro služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je ve výchozím nastavení zabezpečení, ale také znamená, že nelze použít metadata importovat nástroj (například Svcutil.exe) ke generování kódu klienta pro volání služby, pokud není výslovně povolena chování publikování metadat služby v konfiguraci požadován.  
+Ukázka chování publikování metadat ukazuje, jak řídit funkce publikování metadat služby. Pokud chcete zabránit neúmyslnému zveřejnění metadat služby potenciálně citlivých, výchozí konfigurace pro služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je ve výchozím nastavení zabezpečený, ale také znamená, že nemůžete použít metadat importovat nástroj (například Svcutil.exe) ke generování kódu klienta, který je potřeba volat službu, není-li v konfiguraci není explicitně povoleno chování publikování metadat služby.  
   
 > [!IMPORTANT]
->  Tato ukázka pro přehlednost, ukazuje, jak vytvořit koncový bod publikování zabezpečená metadat. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené spotřebitelů a musí dát pozor před nasazením těchto koncových bodů a zajistit tak veřejně předání metadata služby příslušné. Najdete v článku [koncový bod metadat zabezpečení vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) ukázku pro vzorku, který zabezpečuje koncový bod metadat.  
+>  Pro přehlednost Tato ukázka ukazuje, jak vytvořit koncový bod publikování metadat zabezpečená. Tyto koncové body jsou potenciálně dostupné pro anonymní neověřené uživatele a musí tak, aby byl veřejně pocházejí metadata služby odpovídající věnovat pozornost před nasazením tyto koncové body. Zobrazit [koncový bod metadat Zabezpečte vlastní](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) Vzorový příklad, který zajišťuje zabezpečení koncových bodů metadat.  
   
- Ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje `ICalculator` kontrakt služby. V této ukázce klienta je konzolová aplikace (.exe) a služba je hostovaná Internetové informační služby (IIS).  
+ Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Pro službu, která zveřejňuje metadata <xref:System.ServiceModel.Description.ServiceMetadataBehavior> musí být nastaveny na službu. Když toto chování je k dispozici, můžete publikovat metadata nakonfigurováním koncový bod ke zveřejnění <xref:System.ServiceModel.Description.IMetadataExchange> kontrakt jako implementaci protokolu WS-MetadataExchange (MEX). V zájmu usnadnění tento kontrakt nebyla zadána konfigurace zkrácený název "IMetadataExchange". Této ukázce se používá `mexHttpBinding`, což je pro vaše pohodlí standardní vazby, která je ekvivalentní `wsHttpBinding` s režim zabezpečení nastavený na `None`. Relativní adresu "mex" se používá v koncovém bodě, který v případě přeložit proti služby základní adresu výsledkem koncový bod adresy http://localhost/servicemodelsamples/service.svc/mex. Konfigurace chování obrázku:  
+ Pro službu, která zpřístupňují metadata a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> musí být nakonfigurovaná na službu. Když toto chování je k dispozici, můžete publikovat metadat nakonfigurováním zveřejnit koncový bod <xref:System.ServiceModel.Description.IMetadataExchange> kontrakt jako implementaci protokolu WS-MetadataExchange (MEX). Pro zjednodušení této smlouvy se předala zkrácený konfigurační název "IMetadataExchange". Této ukázce se používá `mexHttpBinding`, což je usnadnění standardní vazbu, která je ekvivalentní `wsHttpBinding` s režimem zabezpečení nastaveno `None`. Relativní adresa "mex" se používá koncový bod, který se při vyřešení proti základní služby adresu výsledkem adresy koncového bodu z http://localhost/servicemodelsamples/service.svc/mex. Následuje ukázka konfigurace chování:  
   
 ```xml  
 <behaviors>  
@@ -41,7 +42,7 @@ Ukázka chování publikování metadat ukazuje, jak k ovládání funkcí publi
 </behaviors>  
 ```  
   
- Následující obrázek znázorňuje MEX koncový bod.  
+ Následuje ukázka koncového bodu MEX.  
   
 ```xml  
 <!-- the MEX endpoint is exposed at   
@@ -54,34 +55,34 @@ Ukázka chování publikování metadat ukazuje, jak k ovládání funkcí publi
           contract="IMetadataExchange" />  
 ```  
   
- Nastaví Tato ukázka <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`, který taky zpřístupňuje metadata služby pomocí metody GET protokolu HTTP. Chcete-li povolit koncový bod metadat HTTP GET, musí mít službu základní adresu HTTP. Řetězec dotazu `?wsdl` se používá na základní adresa služby přístup k metadatům. Například by zobrazíte WSDL pro službu ve webovém prohlížeči použít adresu http://localhost/servicemodelsamples/service.svc?wsdl. Alternativně můžete toto chování vystavit metadat prostřednictvím protokolu HTTPS, nastavením <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> k `true`. To vyžaduje základní adresu HTTPS.  
+ Tato ukázka nastaví <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`, což také poskytuje metadata služby pomocí HTTP GET. Pokud chcete povolit koncový bod metadat HTTP GET, služba musí mít základní adresu HTTP. Řetězec dotazu `?wsdl` se používá na základní adresu služby pro přístup k metadatům. Například pokud chcete zobrazit WSDL pro služby ve webovém prohlížeči použijete adresu http://localhost/servicemodelsamples/service.svc?wsdl. Alternativně můžete použít toto chování ke zveřejnění metadat prostřednictvím protokolu HTTPS tak, že nastavíte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> k `true`. To vyžaduje základní adresu HTTPS.  
   
- Pro přístup k použití pro koncový bod služby MEX [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
+ Pro přístup k použití koncového bodu služby MEX [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
  `svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /out:generatedClient.cs`  
   
- Tím se vygeneruje na základě metadat služby klienta.  
+ Tím se vytvoří klienta na základě metadat služby.  
   
- Chcete-li získat přístup k metadatům pro službu pomocí metody GET protokolu HTTP, přejděte v prohlížeči na http://localhost/servicemodelsamples/service.svc?wsdl.  
+ Chcete-li získat přístup k metadatům služby pomocí HTTP GET, přejděte v prohlížeči na http://localhost/servicemodelsamples/service.svc?wsdl.  
   
- Pokud odeberete toto chování a pokuste se spustit službu, dojde k výjimce. K této chybě dojde, protože bez chování, koncový bod nakonfigurovaný s `IMetadataExchange` nemá žádnou implementaci kontraktu.  
+ Pokud odeberete toto chování a pokusu o otevření služby, obdržíte výjimku. K této chybě dochází, protože bez chování, koncový bod nakonfigurovaný s `IMetadataExchange` smlouvy nemá žádnou implementaci.  
   
- Pokud nastavíte `HttpGetEnabled` k `false`, uvidíte na stránce nápovědy CalculatorService místo zobrazuje metadata služby.  
+ Pokud nastavíte `HttpGetEnabled` k `false`, zobrazí se stránka nápovědy CalculatorService místo zobrazení metadat služby.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Metadata`  
   

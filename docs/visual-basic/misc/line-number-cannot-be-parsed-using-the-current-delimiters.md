@@ -5,11 +5,11 @@ f1_keywords:
 - vbrTextFieldParser_MalFormedDelimitedLine
 ms.assetid: 1f8d4c2d-0334-4da8-acff-5460159835b3
 ms.openlocfilehash: 123040e38cfc42d7a6b00e12dd2c2555b0b149d7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43398655"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43776772"
 ---
 # <a name="line-ltnumbergt-cannot-be-parsed-using-the-current-delimiters"></a>Řádek &lt;číslo&gt; nelze analyzovat pomocí aktuální hodnoty parametru Delimiters.
 Zadaný řádek nelze analyzovat, protože používá oddělovače, než je zadaný.  

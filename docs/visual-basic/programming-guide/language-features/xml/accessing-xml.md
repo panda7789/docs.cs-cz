@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XML [Visual Basic], accessing
 ms.assetid: c47f88b2-3cbc-4bb1-b4b9-be60f71ffc6a
 ms.openlocfilehash: 0540c52cf3e4cd7594f051c10832ea99cf58a34e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43386457"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43734379"
 ---
 # <a name="accessing-xml-in-visual-basic"></a>Přístup ke XML v jazyce Visual Basic
 Visual Basic poskytuje vlastnosti osy XML pro přístup k a navigace [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] struktury. Tyto vlastnosti pomocí speciální syntaxe umožňuje přístup k prvkům a atributům tak, že zadáte názvy XML.  

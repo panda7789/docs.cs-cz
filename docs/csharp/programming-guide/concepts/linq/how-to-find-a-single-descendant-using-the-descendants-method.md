@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: vyhledání jednoho následníka metodou následníky (C#)'
+title: 'Postupy: vyhledání jednoho potomka pomocí metody Descendants (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6f735be9-0293-4680-8007-ca9d96bfebed
-ms.openlocfilehash: e08e07e0d32146a14b90b9d6463e6e58a233a923
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: fafb7dc4e2e65c913de46b64028f7dcd69fdd2c3
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33316956"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43723685"
 ---
-# <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Postupy: vyhledání jednoho následníka metodou následníky (C#)
-Můžete použít <xref:System.Xml.Linq.XContainer.Descendants%2A> osy metoda rychle napsat kód najít jednoho jednoznačně s názvem elementu. Tento postup je zvlášť užitečné, když chcete najít konkrétní následníka s konkrétním názvem. Můžete napsat kód, přejděte na požadovaný element, ale je často rychlejší a snadnější k zápisu kódu pomocí <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
+# <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Postupy: vyhledání jednoho potomka pomocí metody Descendants (C#)
+Můžete použít <xref:System.Xml.Linq.XContainer.Descendants%2A> metody osy rychle psát kód jednoznačně najít jeden s názvem elementu. Tato technika je užitečná, pokud chcete najít konkrétní potomkem s konkrétním názvem. Můžete napsat kód pro navigaci na požadovaný element, ale je často rychlejší a snazší psát kód s využitím <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá <xref:System.Linq.Enumerable.First%2A> operátor standardní dotazu.  
+ V tomto příkladu <xref:System.Linq.Enumerable.First%2A> standardní operátor dotazu.  
   
 ```csharp  
 XElement root = XElement.Parse(@"<Root>  
@@ -43,7 +43,7 @@ GC3 Value
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje stejný dotaz pro formát XML, který je v oboru názvů. Další informace najdete v tématu [práci s obory názvů XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
+ Následující příklad ukazuje stejný dotaz pro soubor XML, který je v oboru názvů. Další informace najdete v tématu [práce s názvovými prostory XML (C#)](../../../../csharp/programming-guide/concepts/linq/working-with-xml-namespaces.md).  
   
 ```csharp  
 XElement root = XElement.Parse(@"<aw:Root xmlns:aw='http://www.adventure-works.com'>  
@@ -73,5 +73,6 @@ Console.WriteLine(grandChild3);
 GC3 Value  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Základní dotazy (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Základní dotazy (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

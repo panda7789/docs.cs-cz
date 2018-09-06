@@ -1,5 +1,5 @@
 ---
-title: '&lt;spuštění&gt; – Element'
+title: '&lt;Po spuštění&gt; – Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/startup
@@ -12,18 +12,18 @@ ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 60699f0335bb35589341558800cfd64503d0aa0a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4d39dc28082fbed932a60228ac216f2f700c2e9f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32748420"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43734704"
 ---
-# <a name="ltstartupgt-element"></a>&lt;spuštění&gt; – Element
-Určuje common language runtime spuštění informace.  
+# <a name="ltstartupgt-element"></a>&lt;Po spuštění&gt; – Element
+Určuje informace o spuštění modulu runtime jazyka common.  
   
  \<Konfigurace >  
-\<spuštění >  
+\<Po spuštění >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +39,20 @@ Určuje common language runtime spuštění informace.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`useLegacyV2RuntimeActivationPolicy`|Nepovinný atribut.<br /><br /> Určuje, jestli se má povolit [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] Zásady aktivace modulu runtime, nebo chcete použít [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] aktivace zásad.|  
+|`useLegacyV2RuntimeActivationPolicy`|Nepovinný atribut.<br /><br /> Určuje, jestli se má povolit [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] Zásady aktivace modulu runtime, nebo použít [!INCLUDE[net_v40_long](../../../../../includes/net-v40-long-md.md)] Zásady aktivace.|  
   
 ## <a name="uselegacyv2runtimeactivationpolicy-attribute"></a>Atribut useLegacyV2RuntimeActivationPolicy  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|`true`|Povolit [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] Zásady aktivace modulu runtime pro vybraný modul runtime, který je pro vazbu techniky aktivace starší verze runtime (například [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)) do výběru z konfiguračního souboru místo runtime omezení je na verze modulu CLR 2.0. Proto pokud CLR verze 4 nebo novější je zvoleno z konfiguračního souboru, ve smíšeném režimu sestavení vytvořených ve starších verzích rozhraní .NET Framework se načetly na zvolené verzi CLR. Nastavení této hodnoty zabraňuje CLR verze 1.1 nebo verze modulu CLR 2.0 načtení do stejně účinně zakázat funkci vedle sebe v procesu.|  
-|`false`|Použít výchozí zásady aktivace pro [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] a novější, který je umožnit starší verze modulu runtime aktivace techniky načíst CLR verze 1.1 nebo 2.0 do procesu. Nastavení této hodnoty brání ve smíšeném režimu sestavení z načítání do rozhraní .NET Framework 4 nebo novější, pokud jejich byly vytvořené pomocí rozhraní .NET Framework 4 nebo novější. Tato hodnota je výchozí.|  
+|`true`|Povolit [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] Zásady aktivace modulu runtime pro zvolený runtime, která je k vytvoření vazby techniky aktivace starší verzi modulu runtime (například [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)) do modulu runtime, zvolit z konfiguračního souboru místo omezení je v modulu CLR verze 2.0. Proto pokud je zvolená verze modulu CLR 4 nebo novější z konfiguračního souboru, sestavení ve smíšeném režimu vytvořených v dřívějších verzích rozhraní .NET Framework jsou načtené na zvolené verzi CLR. Pokud tuto hodnotu nastavíte brání CLR verze 1.1 nebo CLR verze 2.0 načtení do stejného procesu efektivně zákaz funkce vnitroprocesové vedle sebe.|  
+|`false`|Použít výchozí zásady aktivace pro [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] a později, což je povolit starší modul runtime techniky aktivace pro načtení modulu CLR verze 1.1 nebo 2.0 do procesu. Nastavení této hodnoty brání ve smíšeném režimu sestavení z načítání do rozhraní .NET Framework 4 nebo novější, není-li, kterými byly vytvořeny pomocí rozhraní .NET Framework 4 nebo novější. Tato hodnota je výchozí hodnota.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<requiredRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md)|Určuje, jestli aplikace podporuje pouze verzi 1.0 modul common language runtime. Aplikace vytvořené s nástroji runtime verze 1.1 nebo novější by měly používat  **\<supportedRuntime >** element.|  
+|[\<requiredRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/requiredruntime-element.md)|Určuje, že aplikace podporuje pouze verze 1.0 modulu common language runtime. Používejte aplikace sestavené s modulem runtime verze 1.1 nebo vyšší  **\<supportedRuntime >** elementu.|  
 |[\<supportedRuntime >](../../../../../docs/framework/configure-apps/file-schema/startup/supportedruntime-element.md)|Určuje, kterou verzi modulu Common Language Runtime (CLR) aplikace podporuje.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
@@ -62,15 +62,15 @@ Určuje common language runtime spuštění informace.
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
- **\<SupportedRuntime >** element má být používána všechny aplikace vytvořené pomocí verze 1.1 nebo novější modulu runtime. Musíte použít aplikace založené na podporu pouze verze 1.0 modulu runtime  **\<requiredRuntime >** element.  
+ **\<SupportedRuntime >** element by měl být použit všemi aplikacemi sestavenými pomocí verze 1.1 nebo novější modul runtime. Aplikace sestavené s podporou pouze verze 1.0 modulu runtime musí použít  **\<requiredRuntime >** elementu.  
   
- Kód spuštění aplikace hostované v aplikaci Internet Explorer ignoruje  **\<spuštění >** elementu a jeho podřízené elementy.  
+ Ignoruje při spuštění kódu pro aplikace hostované v aplikaci Internet Explorer  **\<spuštění >** elementu a jeho podřízené prvky.  
   
 ## <a name="the-uselegacyv2runtimeactivationpolicy-attribute"></a>Atribut useLegacyV2RuntimeActivationPolicy  
- Tento atribut je užitečné, pokud vaše aplikace používá starší verze aktivace cesty, jako [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete tyto cesty k aktivaci 4 verzi modulu CLR místo starší verze, nebo pokud je vaše aplikace vytvořené s nástroji [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] ale obsahuje závislost na ve smíšeném režimu sestavení vytvořené s dřívější verzi rozhraní .NET Framework. V těchto scénářích, nastavte atribut na `true`.  
+ Tento atribut je užitečné, pokud vaše aplikace používá starší verzi aktivační cesty, jako [CorBindToRuntimeEx – funkce](../../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md), a chcete, aby tyto cesty k aktivaci místo starší verzi modulu CLR verze 4 nebo pokud je vaše aplikace sestavován [!INCLUDE[net_v40_short](../../../../../includes/net-v40-short-md.md)] ale má závislost na sestavení ve smíšeném režimu, vytvořené ve starší verzi rozhraní .NET Framework. V těchto scénářích, nastavte atribut na `true`.  
   
 > [!NOTE]
->  Nastavení atributu na `true` CLR verze 1.1 nebo verze modulu CLR 2.0 brání načtení do stejně účinně zakázat funkci vedle sebe v procesu (najdete v části [spuštění vedle sebe zprostředkovatel komunikace s objekty COM](http://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)).  
+>  Nastavením atributu na `true` brání načtení do stejného procesu efektivně zákaz funkce vedle sebe v procesu CLR verze 1.1 nebo CLR verze 2.0 (viz [spuštění vedle sebe pro spolupráci s COM](https://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak určit verzi modulu runtime v konfiguračním souboru.  
@@ -94,6 +94,6 @@ Určuje common language runtime spuštění informace.
 ## <a name="see-also"></a>Viz také  
  [Schéma nastavení spouštění](../../../../../docs/framework/configure-apps/file-schema/startup/index.md)  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<PaveOver > Zadání kterou verzi modulu Runtime pro použití](http://msdn.microsoft.com/library/c376208d-980d-42b4-865b-fbe0d9cc97c2)  
- [Spuštění vedle sebe zprostředkovatel komunikace s objekty COM](http://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)  
+ [\<PaveOver > Určení verze modulu Runtime, která k použití](https://msdn.microsoft.com/library/c376208d-980d-42b4-865b-fbe0d9cc97c2)  
+ [Spuštění vedle sebe pro zprostředkovatele komunikace s objekty COM](https://msdn.microsoft.com/library/4302318c-3586-49bf-8620-b9a39cdf4a32)  
  [Vnitroprocesové souběžné provádění](../../../../../docs/framework/deployment/in-process-side-by-side-execution.md)

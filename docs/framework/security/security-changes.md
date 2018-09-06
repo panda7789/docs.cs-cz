@@ -11,14 +11,14 @@ helpviewer_keywords:
 ms.assetid: 5e87881c-9c13-4b52-8ad1-e34bb46e8aaa
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 84e80b99ee6d872714180e73354d20770c21e144
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c62a469b3e31283e5790c747092a8fe504ef8c2a
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400078"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43733336"
 ---
 # <a name="security-changes-in-the-net-framework"></a>Změny zabezpečení v rozhraní .NET Framework
-Nejdůležitější změny zabezpečení v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] v silné názvy. V tématu [rozšířené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md) popis tyto změny.  
+Nejdůležitější změny zabezpečení v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] v silné názvy. Zobrazit [vylepšené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md) popis těchto změn.  
   
- Rozhraní .NET Framework poskytuje model zabezpečení dvouvrstvá pro spravované aplikace. [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace běžet v kontejneru zabezpečení systému Windows, která omezuje přístup k prostředkům. V rámci kontejneru spusťte plně důvěryhodný pro spravované aplikace. Z hlediska zabezpečení (CA) kód přístup není nic, které vývojář může provádět o zvýšení oprávnění. Informace o oprávnění udělují Windows najdete v tématu [deklarace funkce aplikace (aplikace pro Windows Store)](http://go.microsoft.com/fwlink/?LinkId=230436) ve službě Windows Dev Center. Informace o vytváření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v části [vytvoření první aplikace Windows Store pomocí jazyka C# nebo Visual Basic](http://go.microsoft.com/fwlink/?LinkId=230461).
+ Rozhraní .NET Framework poskytuje model zabezpečení dvouvrstvé pro spravované aplikace. [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] spuštění aplikace v kontejneru Windows zabezpečení, která omezuje přístup k prostředkům. V rámci kontejneru spusťte spravované aplikace plně důvěryhodná. Z hlediska kódu access security (CAS) není nic, co Vývojář můžete udělat ke zvýšení oprávnění. Informace o oprávněních udělených systémem Windows, naleznete v tématu [deklarace funkcí aplikace (aplikace pro Windows Store)](https://go.microsoft.com/fwlink/?LinkId=230436) Windows Dev Center. Informace o vytváření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, najdete v článku [vytvoření první aplikace pro Windows Store pomocí jazyka C# nebo Visual Basic](https://go.microsoft.com/fwlink/?LinkId=230461).

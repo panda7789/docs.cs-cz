@@ -7,12 +7,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: 47f8e978d81b4aec94482f0a295691b830c3698c
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 74020696a9d2370de2976671a9f1ed944aba8fb9
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39199157"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43734965"
 ---
 # <a name="properties-c-programming-guide"></a>Vlastnosti (Průvodce programováním v C#)
 
@@ -72,9 +72,10 @@ Pokud je vlastnost i `get` a `set` přístupový objekt, musí být automaticky 
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>Viz také:
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
- [Get – klíčové slovo](../../../csharp/language-reference/keywords/get.md)    
- [klíčové slovo Set](../../../csharp/language-reference/keywords/set.md)    
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Použití vlastností](../../../csharp/programming-guide/classes-and-structs/using-properties.md)  
+- [Indexery](../../../csharp/programming-guide/indexers/index.md)  
+- [Get – klíčové slovo](../../../csharp/language-reference/keywords/get.md)    
+- [klíčové slovo Set](../../../csharp/language-reference/keywords/set.md)    

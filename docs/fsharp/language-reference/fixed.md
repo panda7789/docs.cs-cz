@@ -1,17 +1,17 @@
 ---
-title: 'Fixed – klíčové slovo (F #)'
+title: 'Klíčové slovo Fixed (F #)'
 description: "Zjistěte, jak vám může \"pin\" místní do zásobníku, aby se zabránilo kolekce s F # 'fixed' – klíčové slovo."
 ms.date: 04/24/2017
-ms.openlocfilehash: 913ee4d7b0f6b2437793d4788e53556d6be6c4db
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1bf1b2ad67d2dd7f854e569cfca7c06e8aec7f4c
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563873"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43779224"
 ---
-# <a name="the-fixed-keyword"></a>Fixed – klíčové slovo
+# <a name="the-fixed-keyword"></a>Klíčové slovo Fixed
 
-F # 4.1 zavádí `fixed` – klíčové slovo, které umožňuje "připnout" místní do zásobníku, aby se zabránilo jejímu shromážděných nebo přesunout během uvolňování paměti.  Používá se pro nízké úrovně scénáře programování.
+Zavádí F # 4.1 `fixed` – klíčové slovo, které umožňuje "připnout" místní do zásobníku, aby se zabránilo jejímu shromážděných nebo přesunuty během uvolňování.  Používá se pro programovacích scénářů pro nízké úrovně.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,13 +21,13 @@ use ptr = fixed expression
 
 ## <a name="remarks"></a>Poznámky
 
-Tato zásada rozšiřuje syntaxe výrazy umožňující extrahování ukazatel a vazbu na název, který je nemůže se shromažďují nebo přesunout během uvolňování paměti.  
+Tato zásada rozšiřuje syntaxe výrazy umožňují extrahování ukazatel a vytvoříte jejich vazbu na název, který je zabráněno shromážděných nebo přesunuty během uvolňování paměti.  
 
-Ukazatel z výrazu vyřešen prostřednictvím `fixed` – klíčové slovo je vázána na identifikátor prostřednictvím `use` – klíčové slovo.  Sémantika této je podobná Správa prostředků prostřednictvím `use` – klíčové slovo.  Ukazatele vyřešen, zatímco se nachází v oboru, a jakmile je mimo rozsah, je už pevná.  `fixed` nelze použít mimo kontext `use` vazby.  Je třeba svázat ukazatel myši na název s `use`.
+Ukazatel z výrazu je pevně prostřednictvím `fixed` – klíčové slovo je vázán na identifikátor rozhraní prostřednictvím `use` – klíčové slovo.  Sémantika této je podobný správu prostředků prostřednictvím `use` – klíčové slovo.  Ukazatel vyřešen, zatímco se nachází v oboru, a jakmile je mimo rozsah, už je pevná.  `fixed` nelze použít mimo kontext `use` vazby.  Je třeba svázat ukazatel myši na název s `use`.
 
-Použití `fixed` musí nastat do během výraz ve funkci nebo metodu.  Nelze zadat v úrovni skriptu nebo modul oboru.
+Použití `fixed` musí nastat do během výraz ve funkci nebo metodu.  Nelze ji použít v oboru skriptu úrovni nebo modulu.
 
-Jako všechny ukazatele kód to je nebezpečné funkce a bude posílat upozornění při použití.
+Stejně jako všechny ukazatele kód to je nebezpečné funkce a vygeneruje upozornění při použití.
 
 ## <a name="example"></a>Příklad
 
@@ -61,6 +61,6 @@ let doPointerWork() =
 doPointerWork()
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Nativeptr – modul](https://msdn.microsoft.com/visualfsharpdocs/conceptual/nativeinterop.nativeptr-module-%5Bfsharp%5D)
+- [Nativeptr – modul](https://msdn.microsoft.com/visualfsharpdocs/conceptual/nativeinterop.nativeptr-module-%5Bfsharp%5D)

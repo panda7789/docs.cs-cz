@@ -1,17 +1,17 @@
 ---
 title: let – vazby (F#)
-description: 'Naučte se používat F # umožní vazby, která přidruží identifikátor hodnota nebo funkce.'
+description: 'Další informace o použití jazyka F # nechat vazbu, která přidruží hodnotě nebo funkci identifikátor.'
 ms.date: 05/16/2016
-ms.openlocfilehash: bcdf01747c2a1d0ba9a894188dae1d42acdf9104
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1a35b5a39f2768a18665b5c7fe768af0e7714577
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566269"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43777467"
 ---
 # <a name="let-bindings"></a>let – vazby
 
-A *vazby* přidruží identifikátor hodnota nebo funkce. Můžete použít `let` – klíčové slovo vytvořit vazbu název hodnotu nebo funkce.
+A *vazby* identifikátor přidruží k hodnotě nebo funkci. Můžete použít `let` – klíčové slovo k vytvoření vazby názvu s hodnotě nebo funkci.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,77 +24,77 @@ let identifier parameter-list [: return-type ] =expressionbody-expression
 
 ## <a name="remarks"></a>Poznámky
 
-`let` – Klíčové slovo se používá v vazby výrazy a definovat hodnoty nebo funkce hodnoty pro jeden nebo více názvů. Nejjednodušší forma útoku `let` výraz váže název na hodnotu simple následujícím způsobem.
+`let` – Klíčové slovo se používá ve vazbě výrazy k definování hodnot nebo funkce jednoho nebo více názvů. Nejjednodušší forma `let` výraz vytvoří vazbu názvu jednoduchých hodnot, následujícím způsobem.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1101.fs)]
 
-Pokud oddělíte výraz z identifikátor pomocí nového řádku, musíte odsazovat každý řádek výrazu, jako v následujícím kódu.
+Pokud samostatné výrazu z identifikátoru s použitím nového řádku, musíte odsadit každý řádek výrazu, stejně jako v následujícím kódu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1102.fs)]
 
-Místo pouze název můžete zadat vzor, který obsahuje názvy, například řazené kolekce členů, jak je znázorněno v následujícím kódu.
+Namísto pouze název, můžete zadat vzor, který obsahuje názvy, například řazená kolekce členů, jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1103.fs)]
 
-*Textu výraz* je výraz, ve kterém se používají názvy. Výraz text se zobrazí na vlastním řádku odsazeny řádek až přesně s první znak argumentu `let` – klíčové slovo:
+*Výraz těla* je výraz, ve kterém se používají názvy. Výraz těla se objeví na samostatném řádku odsazen řádek nahoru přesně prvního znaku v `let` – klíčové slovo:
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1104.fs)]
 
-A `let` vazby můžete zobrazit na úrovni modulu, v definici typu třídy nebo v místní obory, například definici funkce. A `let` vazba na nejvyšší úrovni v modulu nebo typ třídy nemusí obsahovat výraz text, ale na jiných úrovních oboru, je vyžadován výraz textu. Vázané názvy jsou použitelné za bod definice, ale ne v libovolném bodě před `let` vazby zobrazí se, jak je znázorněno v následujícím kódu.
+A `let` vazby se může zobrazit na úrovni modulu v definici typu třídy nebo v místní obory, jako je definicí funkce. A `let` vazby na nejvyšší úrovni v modulu nebo typ třídy není nutné mít tělo výrazu, ale na jiných úrovních oboru, je nutné tělo výrazu. Vázané názvy jsou použitelné od chvíle, definice, ale ne v libovolném okamžiku před `let` vazby se zobrazí, jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1105.fs)]
-    
-## <a name="function-bindings"></a>Vazby funkce
 
-Vazby funkce v podle pravidla pro hodnotu vazby, s tím rozdílem, že funkce vazby obsahovat název funkce a parametry, jak je znázorněno v následujícím kódu.
+## <a name="function-bindings"></a>Vazby – funkce
+
+Vazby funkcí postupujte z pravidel pro vazby hodnoty, s tím rozdílem, že funkce zahrnují název funkce a parametry, jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1106.fs)]
 
-Parametry jsou obecně vzory, třeba vzor řazené kolekce členů:
+Obecně platí parametry jsou vzory, třeba vzor řazené kolekce členů:
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1107.fs)]
 
-A `let` vazby výraz vyhodnocen jako hodnota poslední výrazu. Proto v následujícím příkladu kódu, hodnota `result` se počítá z `100 * function3 (1, 2)`, který se vyhodnocuje `300`.
+A `let` vazby výraz vyhodnocen jako hodnota posledního výrazu. Proto v následujícím příkladu kódu, hodnota `result` je vypočítán z `100 * function3 (1, 2)`, který se hodnotí jako `300`.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1109.fs)]
 
 Další informace najdete v tématu [funkce](index.md).
 
-## <a name="type-annotations"></a>Typ poznámky
+## <a name="type-annotations"></a>Anotace typu
 
-Můžete určit typy parametrů zahrnutím dvojtečkou (:), za nímž následuje název typu, všechny uzavřený v závorkách. Můžete také určit typ vrácené hodnoty připojením dvojtečkou a typ po poslední parametr. Úplný typ poznámky pro `function1`, s celými čísly jako typy parametrů, vypadat takto.
+Je-li zadat typy jako parametry, včetně dvojtečky (:), za nímž následuje název typu, všechny uzavřené v závorkách. Můžete také určit typ vrácené hodnoty přidáním dvojtečkou a typem po posledním parametrem. Poznámky typu k `function1`, s celými čísly jako typy parametrů, by měl vypadat takto.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1108.fs)]
 
-Pokud neexistují žádné parametry explicitního typu, odvození typu slouží k určení typů parametrů funkce. To může zahrnovat automaticky generalizací typ parametru být obecný.
+Pokud neexistují žádné explicitní parametry typu, odvození typu proměnné se používá k určení typů parametrů funkcí. To může zahrnovat automaticky zobecňuje typ parametru je obecný.
 
 Další informace najdete v tématu [Automatická generalizace](../generics/automatic-generalization.md) a [odvození typu](../type-inference.md).
 
 ## <a name="let-bindings-in-classes"></a>Vazby let ve třídách
 
-A `let` vazba může vyskytovat typu třídy, ale není v struktura nebo typu záznamu. Pokud chcete používat umožňují vazby v typu třídy, třídu musí mít primární konstruktor. Konstruktor parametry musí být uvedena po název typu v definici třídy. A `let` vazby v typu třídy definuje privátní pole a členů pro tento typ třídy a, společně s `do` vazeb v typu, forms kód pro primární konstruktor pro typ. Následující příklady kódu ukazují třídu `MyClass` s privátním polím `field1` a `field2`.
+A `let` vazby se může objevit v typu třídy, ale ne v struktury nebo typu záznamu. Pokud chcete používat let vazby v typu třídy, musí mít třídu primární konstruktor. Parametry konstruktoru musí následovat za názvem typu v definici třídy. A `let` vazby v typu třídy definuje privátní pole a členy typu třídy a společně s `do` vazby typu formuláře kód k primárnímu konstruktoru pro typ. Následující příklady kódu ukazují třídu `MyClass` s privátní pole `field1` a `field2`.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1110.fs)]
 
-Obory z `field1` a `field2` jsou omezeny na typ, ve které jsou deklarované. Další informace najdete v tématu [ `let` vazby do ve třídách](../members/let-bindings-in-classes.md) a [třídy](../classes.md).
+Obory `field1` a `field2` jsou omezené na typ, ve kterém jsou deklarovány. Další informace najdete v tématu [ `let` vazby ve třídách](../members/let-bindings-in-classes.md) a [třídy](../classes.md).
 
-## <a name="type-parameters-in-let-bindings"></a>Parametry typu v let – vazby
+## <a name="type-parameters-in-let-bindings"></a>Let – vazby parametrů typu v
 
-A `let` vazby na úrovni modulu v typu, nebo výpočetní výraz může mít parametry explicitní typu. Umožňují vazby ve výrazu, například v definici funkce nemůže mít parametry typu. Další informace najdete v tématu [obecné typy](../generics/index.md).
+A `let` vazby na úrovni modulu, typu nebo ve výrazu výpočtu může mít explicitní parametry typu. Umožňují vazby ve výrazu, například uvnitř definice funkce nemůže mít parametry typu. Další informace najdete v tématu [obecných typů](../generics/index.md).
 
-## <a name="attributes-on-let-bindings"></a>Atributy na let – vazby
+## <a name="attributes-on-let-bindings"></a>Atributy u let – vazby
 
 Atributy lze použít na nejvyšší úrovni `let` vazby v modulu, jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1111.fs)]
-    
-## <a name="scope-and-accessibility-of-let-bindings"></a>Obor a usnadnění umožňují vazby
 
-Rozsah entity deklarovat s umožňují vazba je omezený na část obsahující oboru (například funkce, modul, soubor nebo třída), jakmile se objeví vazby. Proto lze říci, že umožňují vazbu představuje název do oboru. V modulu umožňují vázané hodnota nebo funkce je dostupné klientům modulu tak dlouho, dokud je přístupný, modul, protože umožňují vazby v modulu se zkompiluje do veřejných funkcí modulu. Umožňují vazby v třídě jsou naopak privátní k třídě.
+## <a name="scope-and-accessibility-of-let-bindings"></a>Rozsah a usnadnění přístupu vám umožňují vazeb
 
-Za normálních okolností funkce v modulech musí být kvalifikovaný název modulu při použití kódem na straně klienta. Například, pokud modul `Module1` má funkci `function1`, by uživatelé zadat `Module1.function1` odkazovat na funkce.
+Rozsah entity deklarované s vazbou let je omezen na část z nadřazeného oboru (například funkce, modulu, souboru nebo třídy), po zobrazení vazby. Proto lze říci, že umožňují vazby zavádí název do oboru. V modulu umožňují datově závislé hodnoty nebo funkce je přístupný pro klienty modulu jako modul je přístupný, protože umožňují vazby v modulu jsou kompilovány do veřejných funkcí modulu. Vazby let ve třídě jsou naopak privátní třídy.
 
-Uživatelé modulu mohou využít importu deklarace, aby se funkce v rámci tohoto modulu k dispozici pro použití jako kvalifikované název modulu. V příkladu právě uvedený, můžete otevřít uživatelé modulu v takovém případě modul pomocí otevřete deklarace importu `Module1` a následně odkazovat na `function1` přímo.
+Za normálních okolností funkce v modulech musí být kvalifikován názvem modulu při použití kódem na straně klienta. Například, pokud modul `Module1` má funkci `function1`, zadejte uživatele `Module1.function1` odkazovat na funkci.
+
+Uživatelé modulu může používat deklarace importu Chcete-li k dispozici pro použití funkcí v rámci tohoto modulu bez je kvalifikován názvem modulu. V příkladu výše zmíněné body, můžete otevřít uživatelé modulu v takovém případě modulu s využitím open deklarace importu `Module1` a po tomto datu si `function1` přímo.
 
 ```fsharp
 module Module1 =
@@ -110,12 +110,11 @@ let function3 x =
     function1 x
 ```
 
-Některé moduly mají atribut [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15), což znamená, že funkce, které se zveřejňují musí být kvalifikovaný pomocí názvu modulu. Například modul F # seznamu má tento atribut.
+Některé moduly mají atribut [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15), což znamená, že funkce, které vystavují musí být kvalifikován s názvem modulu. Tento atribut má například modulu F # seznam.
 
-Další informace o moduly a řízení přístupu najdete v tématu [moduly](../modules.md) a [řízení přístupu](../access-control.md).
+Další informace o modulů a řízení přístupu najdete v tématu [moduly](../modules.md) a [řízení přístupu](../access-control.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Funkce](index.md)
-
-[`let` Vazby do ve třídách](../members/let-bindings-in-classes.md)
+- [Funkce](index.md)
+- [`let` Vazby ve třídách](../members/let-bindings-in-classes.md)

@@ -7,26 +7,26 @@ helpviewer_keywords:
 - operators [C#], conversion
 - user-defined conversions [C#]
 ms.assetid: c5ad73a3-d57b-4d2b-b4c9-24e3c2856efc
-ms.openlocfilehash: 97e93230658b5d1da676b029169b63bc9006ddb1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: cbf6a83d43a1b3a69e82a35d5d0875f62422cd3f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33334711"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43734444"
 ---
 # <a name="conversion-operators-c-programming-guide"></a>Operátory převodu (Průvodce programováním v C#)
-C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak, aby třídy nebo struktury lze převést na nebo z jiných třídy nebo struktury nebo základní typy. Převody jsou definovány jako operátory a jsou název pro typ, do které převést. Obsahující typ musí být buď typ argumentu má být převeden, nebo typ výsledek převodu, ale ne obojí.  
+C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak, aby třídy nebo struktury lze převést na nebo z jiné třídy nebo struktury nebo základní typy. Převody jsou definovány jako operátory a jsou pojmenovány pro typ, ke kterému převodu. Typ argumentu, který má být převeden nebo typ výsledku převodu, ale ne obojí, musí být nadřazeného typu.  
   
  [!code-csharp[csProgGuideStatements#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/conversion-operators_1.cs)]  
   
 ## <a name="conversion-operators-overview"></a>Přehled operátorů převodů  
- Operátory převodu mít následující vlastnosti:  
+ Operátory převodu mají následující vlastnosti:  
   
--   Převody deklarován jako `implicit` automaticky provedou, když je požadováno.  
+-   Převody deklarovány jako `implicit` automaticky provedou, když je povinný.  
   
--   Převody deklarován jako `explicit` vyžadují přetypování, která se má volat.  
+-   Převody deklarovány jako `explicit` vyžaduje přetypování, která se má volat.  
   
--   Všechny převody musí být deklarována jako `static`.  
+-   Musí být všechny převody deklarovány jako `static`.  
   
 ## <a name="related-sections"></a>Související oddíly  
  Další informace:  
@@ -43,7 +43,8 @@ C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak,
   
 -   [static](../../../csharp/language-reference/keywords/static.md)  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Convert>  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Zřetězené uživatelem definované explicitní převody v jazyce C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Convert>  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Zřetězit uživatelem definované explicitní převody v jazyce C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)

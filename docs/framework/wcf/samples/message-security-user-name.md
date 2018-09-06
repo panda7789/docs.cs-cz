@@ -7,11 +7,11 @@ ms.assetid: c63cfc87-6b20-4949-93b3-bcd4b732b0a2
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 11cf225ca30117484cdc3bbcb6910e615e91f5ef
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43537052"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43777935"
 ---
 # <a name="message-security-user-name"></a>Zabezpečení zpráv s uživatelským jménem
 Tento příklad ukazuje, jak implementovat aplikaci, která používá WS-Security s ověřením uživatelské jméno pro klienta a vyžaduje server ověřování pomocí certifikátu x.509 v3 serveru. Všechny zprávy aplikace mezi klientem a serverem jsou podepsaný a zašifrovaný. Ve výchozím nastavení, uživatelské jméno a heslo, které poskytl klient, slouží k přihlášení k platný účet Windows. Tato ukázka je založena na [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md). Tento příklad se skládá z programu konzoly klienta (Client.exe) a knihovna služby (Service.dll) hostované v Internetové informační služby (IIS). Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď.  

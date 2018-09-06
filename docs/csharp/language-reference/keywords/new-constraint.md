@@ -5,11 +5,11 @@ helpviewer_keywords:
 - new constraint keyword [C#]
 ms.assetid: 58850b64-cb97-4136-be50-1f3bc7fc1da9
 ms.openlocfilehash: 9948fc65030a4636c5d23db4ef8c3a584018d2f5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43560111"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43738599"
 ---
 # <a name="new-constraint-c-reference"></a>New – omezení (referenční dokumentace jazyka C#)
 

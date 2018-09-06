@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: deklarování a použití vlastností čtení zápisu (C# Průvodce programováním)'
+title: 'Postupy: deklarování a použití vlastností čtení/zápisu (C# Programming Guide)'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - get accessor [C#], declaring properties
@@ -8,52 +8,54 @@ helpviewer_keywords:
 - read/write properties [C#]
 - accessors [C#], declaring properties with
 ms.assetid: a4962fef-af7e-4c4b-a929-4ae4d646ab8a
-ms.openlocfilehash: d6a7083e1c0cf0dc5c076a69dee15fc39e234d53
-ms.sourcegitcommit: 89c93d05c2281b4c834f48f6c8df1047e1410980
+ms.openlocfilehash: 77db2841d6ef9af21d38736f39e6041699ca13d5
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/15/2018
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43733986"
 ---
-# <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Postupy: deklarování a použití vlastností čtení zápisu (C# Průvodce programováním)
-Vlastnosti zajistí pohodlí veřejná data členů bez rizika, které jsou součástí nechráněné, neřízené a neověřených přístup k datům objektu. To se provádí prostřednictvím *přístupové objekty*: speciální metody, které přiřadit a načítání hodnot z základní datový člen. [Nastavit](../../../csharp/language-reference/keywords/set.md) přistupujícího objektu umožňuje členům data přiřazen a [získat](../../../csharp/language-reference/keywords/get.md) přistupujícího objektu načte data hodnoty členů.  
+# <a name="how-to-declare-and-use-read-write-properties-c-programming-guide"></a>Postupy: deklarování a použití vlastností čtení/zápisu (C# Programming Guide)
+Vlastnosti poskytují pohodlí veřejné datové členy bez rizika, které jsou součástí nechráněné, nekontrolovaného a neověřený přístup k datům objektu. To lze provést prostřednictvím *přistupující objekty*: speciální metody, které přiřadíte a načítat hodnoty ze základní datový člen. [Nastavit](../../../csharp/language-reference/keywords/set.md) přistupující objekt umožňuje datové členy mají být přiřazeny a [získat](../../../csharp/language-reference/keywords/get.md) přistupující objekt načte hodnoty datových členů.  
   
- Tento příklad ukazuje `Person` třídu, která má dvě vlastnosti: `Name` (string) a `Age` (int). Obě vlastnosti poskytují `get` a `set` přístupových objektů, takže je považována za čtení/zápisu vlastnosti.  
+ Tento příklad ukazuje `Person` třídu, která má dvě vlastnosti: `Name` (řetězec) a `Age` (int). Obě vlastnosti poskytují `get` a `set` přístupových objektů, takže jsou považovány za čtení a zápisu vlastnosti.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[csProgGuideObjects#33](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_1.cs)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- V předchozím příkladu `Name` a `Age` vlastnosti jsou [veřejné](../../../csharp/language-reference/keywords/public.md) a současně obsahovat `get` a `set` přistupujícího objektu. To umožňuje číst a zapisovat tyto vlastnosti libovolného objektu. Ale je někdy žádoucí, jeden přístupové objekty vyloučit. Vynechání `set` přistupujícího objektu, například umožňuje vlastnost jen pro čtení:  
+ V předchozím příkladu `Name` a `Age` vlastnosti jsou [veřejné](../../../csharp/language-reference/keywords/public.md) a oba `get` a `set` přistupujícího objektu. To umožňuje libovolný objekt pro čtení a zápis těchto vlastností. Ale je v některých případech žádoucí, vyloučit jeden přístupové objekty. Vynechání `set` přístupový objekt, například je vlastnost jen pro čtení:  
   
  [!code-csharp[csProgGuideObjects#87](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_2.cs)]  
   
- Alternativně můžete vystavit jednoho přístupového objektu veřejně, ale zkontrolujte další privátní nebo chráněný. Další informace najdete v tématu [asymetrické přístupnosti přistupujícího objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md).  
+ Alternativně můžete veřejně zpřístupnit jeden přistupující objekt, ale jiné soukromé nebo chráněné. Další informace najdete v tématu [asymetrického přístupnosti přístupového objektu](../../../csharp/programming-guide/classes-and-structs/restricting-accessor-accessibility.md).  
   
- Jakmile jsou deklarované vlastnosti, můžete jako kdyby byly pole třídy použít. To umožňuje velmi přirozené syntaxe při získání a nastavení hodnoty vlastnosti, jako v následující příkazy:  
+ Jakmile vlastnosti jsou deklarovány, můžete jako by byly pole třídy používá. To umožňuje velmi přirozené syntaxe při získávání i nastavování hodnoty vlastnosti, jako v následující příkazy:  
   
  [!code-csharp[csProgGuideObjects#35](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_3.cs)]  
   
- Všimněte si, že se ve vlastnosti `set` metoda a zvláštní `value` proměnná je k dispozici. Tato proměnná obsahuje hodnotu, která uživatel zadal, například:  
+ Všimněte si, že ve vlastnosti `set` metoda a speciální `value` proměnná je k dispozici. Tato proměnná obsahuje hodnotu, kterou uživatel specifikoval, například:  
   
  [!code-csharp[csProgGuideObjects#36](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_4.cs)]  
   
- Všimněte si čistou syntaxe zvyšování `Age` vlastnost `Person` objektu:  
+ Všimněte si, že čisté syntaxe se zvyšuje `Age` vlastnosti `Person` objektu:  
   
  [!code-csharp[csProgGuideObjects#37](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_5.cs)]  
   
- Pokud samostatné `set` a `get` metody použité k jejich vlastnosti modelu, kód ekvivalentní může vypadat například takto:  
+ Pokud samostatný `set` a `get` metodách, které byly použity k modelování vlastnosti, ekvivalentní kód může vypadat takto:  
   
 ```csharp  
 person.SetAge(person.GetAge() + 1);   
 ```  
   
- `ToString` Je metoda potlačena v tomto příkladu:  
+ `ToString` Je přepsána metoda v tomto příkladu:  
   
  [!code-csharp[csProgGuideObjects#38](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/how-to-declare-and-use-read-write-properties_6.cs)]  
   
- Všimněte si, že `ToString` nepoužívá explicitně v programu. Vyvolá se ve výchozím nastavení `WriteLine` volání.  
+ Všimněte si, že `ToString` není použito explicitně v programu. Vyvolá se ve výchozím nastavení `WriteLine` volání.  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Vlastnosti](../../../csharp/programming-guide/classes-and-structs/properties.md)  
+- [Třídy a struktury](../../../csharp/programming-guide/classes-and-structs/index.md)

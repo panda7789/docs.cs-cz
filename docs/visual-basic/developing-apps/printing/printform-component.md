@@ -5,11 +5,11 @@ helpviewer_keywords:
 - PrintForm component [Visual Basic]
 ms.assetid: 03de98b8-b54c-4764-91d7-83c64e974750
 ms.openlocfilehash: 879d31c5a572689d84af6b2e46f3d33e1a8841c8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43534242"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43777844"
 ---
 # <a name="printform-component-visual-basic"></a>PrintForm – součást (Visual Basic)
 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Komponenty v jazyce Visual Basic umožňuje tisk formuláře Windows obrázku za běhu. Své chování nahradí `PrintForm` metodu ve starších verzích jazyka Visual Basic.  

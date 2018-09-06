@@ -3,11 +3,11 @@ title: Průvodce interoperabilitou protokolů webových služeb
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
 ms.openlocfilehash: da5014292a8ebfcea48a7b6e1a0cdfd014b09961
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403641"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43739042"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
 Windows Communication Foundation (WCF) implementuje řadu protokoly webové služby. Mnohé z těchto protokolů zahrnout několik možností a bodů rozšiřitelnosti ponecháno na rozhodnutí implementátora. Toto téma obsahuje seznam protokoly webové služby, které implementuje WCF. Další témata v této části poskytují podrobné informace o implementaci pro každý protokol podporován.  

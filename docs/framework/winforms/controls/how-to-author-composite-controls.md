@@ -7,76 +7,76 @@ helpviewer_keywords:
 - user controls [Windows Forms], inheriting from
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-ms.openlocfilehash: d13b2a3a89a27c8494d3efa990a1368cec55a28c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: 2c7d2c94c376b671d6e9e4e4b71bc8a9b0fbc343
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33528980"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43731323"
 ---
 # <a name="how-to-author-composite-controls"></a>Postupy: Vytváření složených ovládacích prvků
-Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete je v rámci projektu aplikace pracovní plochy Windows vytvářet a používat pouze ve formulářích v projektu. Nebo můžete vytvořit je v projektu knihovny ovládacích prvků Windows, kompilace projektu do sestavení a pomocí ovládacích prvků v jiném projektu. Můžete dokonce dědit z nich a použít dědičnost vizuálních prvků se přizpůsobit rychle pro zvláštní účely.  
+Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete vytvářet je v rámci projektu aplikace klasické pracovní plochy Windows a používat pouze u formulářů v projektu. Nebo můžete vytvářet v projektu knihovny ovládací prvků Windows, zkompilujte projekt do sestavení a pomocí ovládacích prvků v jiných projektech. Dokonce je možné zdědit z nich a můžete si je přizpůsobit rychle pro zvláštní účely vizuální dědění.  
   
 > [!NOTE]
->  Pokud chcete vytvořit složeného ovládacího prvku na webové formuláře použít, najdete v článku [vývoj vlastních serverových ovládacích prvků ASP.NET](http://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef).  
+>  Pokud chcete vytvořit složeného ovládacího prvku k použití na webové formuláře, naleznete v tématu [vývoj vlastních serverových ovládacích prvků ASP.NET](https://msdn.microsoft.com/library/fbe26c16-cff4-4089-b3dd-877411f0c0ef).  
 >   
->  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení nastavení pro vývoj v sadě Visual Studio](http://msdn.microsoft.com/library/22c4debb-4e31-47a8-8f19-16f328d7dcd3).  
+>  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ### <a name="to-author-a-composite-control"></a>Pro vytvoření složeného ovládacího prvku  
   
-1.  Otevřete nový **aplikace Windows** projekt s názvem `DemoControlHost`.  
+1.  Otevřete novou **aplikace Windows** projekt s názvem `DemoControlHost`.  
   
 2.  Na **projektu**nabídky, klikněte na tlačítko **přidat uživatelský ovládací prvek**.  
   
-3.  V **přidat novou položku** dialogové okno, udělte třída název chcete složeného ovládacího prvku tak, aby měl souboru (vb nebo .cs soubor).  
+3.  V **přidat novou položku** dialogové okno, poskytují třídy soubor (.vb nebo .cs) název, který chcete mít složeného ovládacího prvku.  
   
-4.  Klikněte **přidat** tlačítko pro vytvoření souboru třídy složeného ovládacího prvku.  
+4.  Klikněte na tlačítko **přidat** tlačítko pro vytvoření souboru třídy složeného ovládacího prvku.  
   
-5.  Přidání ovládacích prvků z **sada nástrojů** na povrchu složeného ovládacího prvku.  
+5.  Přidání ovládacích prvků **nástrojů** na povrchu složeného ovládacího prvku.  
   
-6.  V postupech událostí ke zpracování událostí vyvolaných složeného ovládacího prvku, nebo jeho základní ovládací prvky umístěte kód.  
+6.  Umístěte kód procedury událostí ke zpracování událostí vyvolaných pomocí složeného ovládacího prvku nebo jeho základní ovládací prvky.  
   
-7.  Zavřít návrháře složeného ovládacího prvku a uložte soubor po zobrazení výzvy.  
+7.  Zavřít Návrhář složeného ovládacího prvku a uložte soubor po zobrazení výzvy.  
   
 8.  Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.  
   
-     Projekt musí být součástí pořadí u vlastních ovládacích prvků, než se objeví na **sada nástrojů**.  
+     Projekt musí být sestaveny v pořadí pro vlastní ovládací prvky se zobrazí v **nástrojů**.  
   
-9. Použití **DemoControlHost** kartě **sada nástrojů** přidání instancí ovládacího prvku na `Form1`.  
+9. Použití **DemoControlHost** karty **nástrojů** přidat instance ovládacího prvku na `Form1`.  
   
-### <a name="to-author-a-control-class-library"></a>Pro vytvoření knihovny tříd ovládacího prvku  
+### <a name="to-author-a-control-class-library"></a>Chcete-li vytvořit knihovnu tříd ovládacího prvku  
   
-1.  Otevřete nový **knihovny ovládacích prvků Windows** projektu.  
+1.  Otevřete novou **Knihovna ovládacích prvků Windows** projektu.  
   
-     Ve výchozím nastavení obsahuje projektu složeného ovládacího prvku.  
+     Ve výchozím nastavení projekt obsahuje složeného ovládacího prvku.  
   
-2.  Přidejte ovládacími prvky a kódem, jak je popsáno v předchozím postupu.  
+2.  Přidání ovládacích prvků a kód, jak je popsáno v předchozím postupu.  
   
-3.  Vyberte ovládací prvek nechcete dědění třídy změnit, a nastavte **modifikátory** vlastnosti tohoto ovládacího prvku na **privátní**.  
+3.  Zvolte ovládací prvek nechcete, aby dědění třídy změnit a nastavit **modifikátory** vlastnosti tohoto ovládacího prvku na **privátní**.  
   
-4.  Vytvořte knihovnu DLL.  
+4.  Sestavení knihovny DLL.  
   
-### <a name="to-inherit-from-a-composite-control-in-a-control-class-library"></a>Dědění z složeného ovládacího prvku v knihovnu tříd ovládacího prvku  
+### <a name="to-inherit-from-a-composite-control-in-a-control-class-library"></a>Chcete-li dědit ze složeného ovládacího prvku v knihovně tříd ovládacího prvku  
   
-1.  Na **souboru** nabídky, přejděte na příkaz **přidat** a vyberte **nový projekt** přidat nový **aplikace pro systém Windows** projektu k řešení.  
+1.  Na **souboru** nabídky, přejděte k **přidat** a vyberte **nový projekt** přidáte nový **aplikace Windows** projektu do řešení.  
   
-2.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **odkazy** složku pro nové projektu a zvolte **přidat odkaz na** otevřete **přidat odkaz na**dialogové okno.  
+2.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na **odkazy** složku pro nový projekt a zvolte **přidat odkaz** otevřít **přidat odkaz**dialogové okno.  
   
-3.  Vyberte **projekty** kartě a dvakrát klikněte na projekt knihovny ovládacího prvku.  
+3.  Vyberte **projekty** kartě a dvakrát klikněte na váš projekt knihovny ovládacích prvků.  
   
 4.  Na **sestavení** nabídky, klikněte na tlačítko **sestavit řešení**.  
   
-5.  V **Průzkumníku řešení**, klikněte pravým tlačítkem na projekt knihovny ovládací prvek a vyberte **přidat novou položku** z místní nabídky.  
+5.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na váš projekt knihovny ovládacích prvků a vyberte **přidat novou položku** z místní nabídky.  
   
-6.  Vyberte **zděděná uživatelský ovládací prvek** šablony z **přidat novou položku** dialogové okno.  
+6.  Vyberte **zděděné uživatelský ovládací prvek** šablonu z **přidat novou položku** dialogové okno.  
   
-7.  V **výběr dědičnosti** dialogové okno pole, dvakrát klikněte na chcete použít dědění z ovládacího prvku.  
+7.  V **výběr dědičnosti** dialogové okno pole, poklepejte na ovládací prvek se má Zdědit z.  
   
-     Nový ovládací prvek se přidá do projektu.  
+     Nový ovládací prvek se přidá do vašeho projektu.  
   
-8.  Otevřete vizuálního návrháře pro nový ovládací prvek a přidat další základních ovládacích prvků.  
+8.  Otevřete vizuálního návrháře pro nový ovládací prvek a přidat další základní ovládací prvky.  
   
-     Zobrazí se základní ovládací prvky, které byly zděděno z složeného ovládacího prvku v knihovně DLL a upravíte vlastnosti ovládacích prvků jejichž **modifikátory** vlastnost je **veřejné**. Nelze změnit vlastnosti ovládacího prvku jehož **modifikátory** vlastnost je **privátní**.  
+     Můžete zjistit základní ovládací prvky, které byly zděděny ze složeného ovládacího prvku v knihovně DLL, ale můžete změnit vlastnosti ovládacích prvků jehož **modifikátory** vlastnost **veřejné**. Nelze změnit vlastnosti ovládacího prvku jehož **modifikátory** vlastnost **privátní**.  
   
 ## <a name="see-also"></a>Viz také  
  [Návod: Vytvoření složeného ovládacího prvku pomocí Visual Basicu](../../../../docs/framework/winforms/controls/walkthrough-authoring-a-composite-control-with-visual-basic.md)  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - directories [Visual Studio], processing
 ms.assetid: f1db14c8-a4fd-4d0b-8323-c7cb29d688c2
 ms.openlocfilehash: 0c9c1c787138595f725316a580acda9c5d4d43a9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43662657"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43777561"
 ---
 # <a name="processing-drives-directories-and-files-visual-basic"></a>Zpracování jednotek, adresářů a souborů (Visual Basic)
 Visual Basic můžete použít ke zpracování jednotek, složek a souborů s `My.Computer.FileSystem` objektu, který poskytuje lepší výkon a je jednodušší než tradiční metody, jako `FileOpen` a `Write` funkcí (i když jsou stále k dispozici.) Následující části popisují tyto metody podrobně.  

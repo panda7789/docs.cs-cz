@@ -2,36 +2,37 @@
 title: Úvod do LINQ (C#)
 ms.date: 07/20/2015
 ms.assetid: 54874feb-55e5-4ca8-a9d6-1c1127fd7fb1
-ms.openlocfilehash: 3c32c20efec55568a668c5dba55baf8f3ebbee7a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 990a47d6ecfe38d9efa7d505eb3c23a28c05f58c
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33323313"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43740244"
 ---
 # <a name="introduction-to-linq-c"></a>Úvod do LINQ (C#)
-Language-Integrated Query (LINQ) je že novinka zavedená v rozhraní .NET Framework verze 3.5 obsahující mezery mezi world objektů a dat na světě.  
+Language Integrated Query (LINQ) je že novinka zavedena v rozhraní .NET Framework verze 3.5 této přemostění mezery mezi řadě objekty a světě orientovaném na data.  
   
- Dotazy na data jsou tradičně, vyjádřené jako jednoduchý řetězce bez kontrolu typu v kompilaci čas nebo podporu technologie IntelliSense. Kromě toho budete muset další různých dotazovací jazyk pro každý typ zdroje dat: SQL databáze, dokumentů XML, různé webové služby a tak dále. Díky LINQ *dotazu* prvotřídní jazyk konstrukce v jazyce C#. Můžete psát dotazy proti silného typu kolekce objektů pomocí známých operátory a klíčová slova jazyka.  
+ Tradičně dotazů na data jsou vyjádřené jako jednoduchý řetězce bez kontrolu typu v kompilaci čas nebo podporu technologie IntelliSense. Kromě toho budete muset učit jazyk dotazu pro každý typ zdroje dat: SQL databáze, dokumenty XML, různé webové služby a tak dále. Díky LINQ *dotazu* typů prvotřídní jazykové konstrukce v jazyce C#. Psát dotazy proti silně typované kolekce objektů s použitím známých operátory a klíčová slova jazyka.  
   
- Můžete zápis dotazů LINQ v C# pro databáze systému SQL Server, dokumentů XML, datové sady ADO.NET a kolekci objektů, který podporuje <xref:System.Collections.IEnumerable> nebo obecná <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Podpora LINQ jsou tu taky třetích stran pro mnoho webové služby a jiné implementace databáze.  
+ Můžete zápis dotazů LINQ v jazyce C# pro databáze serveru SQL Server, dokumenty XML, datovými sadami ADO.NET a kolekce objektů, který podporuje <xref:System.Collections.IEnumerable> nebo Obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní. Podpora LINQ se také poskytuje třetími stranami pro mnoho webových služeb a jiné implementace databáze.  
   
- Můžete dotazů LINQ v nové projekty nebo spolu s bez LINQ dotazů v existující projekty. Jediným požadavkem je, že projekt cílí na rozhraní .NET Framework 3.5 nebo novější.  
+ V nových projektech, nebo spolu s jiný než LINQ dotazy v existujících projektů můžete použít dotazy LINQ. Jediným požadavkem je, že projekt cílit na rozhraní .NET Framework 3.5 nebo novější.  
   
- Na následujícím obrázku ze sady Visual Studio ukazuje dotaz LINQ částečně dokončilo proti databázi systému SQL Server v jak C# a Visual Basic s Kontrola úplné typu a podporu technologie IntelliSense.  
+ Na následujícím obrázku ze sady Visual Studio zobrazuje částečně dokončeno LINQ dotaz na databázi systému SQL Server v jazyce C# a Visual Basic s úplným typem kontrolu a podporu technologie IntelliSense.  
   
- ![Dotaz LINQ pomocí Intellisense](../../../../csharp/programming-guide/concepts/linq/media/query_intell.png "Query_Intell")  
+ ![Dotaz LINQ s podporou technologie Intellisense](../../../../csharp/programming-guide/concepts/linq/media/query_intell.png "Query_Intell")  
   
 ## <a name="next-steps"></a>Další kroky  
- Další podrobnosti o LINQ, spusťte Seznamte se s některé základní pojmy v části Začínáme [Začínáme s dotazy LINQ v jazyku C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md), a přečtěte si dokumentaci pro LINQ technologii, která vás zajímá:  
+ Další informace o dotazech technologie LINQ, začněte tím, že se seznamovat s některé základní pojmy v části Začínáme [Začínáme s dotazy LINQ v jazyce C#](../../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md), a pak si můžete přečíst dokumentaci k technologie LINQ, který vás zajímá:  
   
 -   Databáze systému SQL Server: [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md)  
   
--   Dokumenty XML: [technologie LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
+-   Dokumenty XML: [LINQ to XML (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md)  
   
--   Datové sady ADO.NET: [LINQ na DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
+-   Datové sady ADO.NET: [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)  
   
--   Kolekcí .NET, soubory, a tak dále řetězce: [LINQ na objekty (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+-   Kolekce .NET, soubory, řetězce a tak dále: [LINQ to Objects (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
   
-## <a name="see-also"></a>Viz také  
- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)

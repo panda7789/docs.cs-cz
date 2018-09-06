@@ -1,40 +1,40 @@
 ---
-title: Načítání datové sady z XML
+title: Načtení datové sady z XML
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
-ms.openlocfilehash: 0b74480209c8d06f38ea39e7a89741fc5a89512b
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 3a781f17ac3cabebce17955b9a7e2edda4d4fd4b
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32759761"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43740413"
 ---
-# <a name="loading-a-dataset-from-xml"></a>Načítání datové sady z XML
-Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datového proudu XML nebo dokumentu. Kromě toho s rozhraním .NET Framework máte flexibilitu přes načtení informací ze souboru XML a jak schéma nebo relační struktura <xref:System.Data.DataSet> je vytvořena.  
+# <a name="loading-a-dataset-from-xml"></a>Načtení datové sady z XML
+Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datový proud XML nebo dokumentu. Kromě toho, s použitím rozhraní .NET Framework máte velkou flexibilitu nad načtení informací ze souboru XML a jak schématu nebo relační struktura <xref:System.Data.DataSet> se vytvoří.  
   
- K vyplnění <xref:System.Data.DataSet> s daty ze souboru XML, použijte **ReadXml** metodu <xref:System.Data.DataSet> objektu. **ReadXml** metoda čte z soubor datového proudu, nebo **XmlReader**a jako argumenty trvá zdroj XML plus volitelný **XmlReadMode** argument. (Další informace o **XmlReader**, najdete v části [NIB: čtení dat XML s XmlTextReader](http://msdn.microsoft.com/library/762c069b-b50c-41b8-936e-39eacfb0d540).) **ReadXml** metoda načte obsah datový proud XML nebo dokumentu a zatížení <xref:System.Data.DataSet> s daty. Vytvoří také relační schéma <xref:System.Data.DataSet> v závislosti na tom **XmlReadMode** zadaný a jestli relační schéma už existuje.  
+ K vyplnění <xref:System.Data.DataSet> s daty ze souboru XML, použijte **ReadXml** metodu <xref:System.Data.DataSet> objektu. **ReadXml** metoda načteme soubor datového proudu, nebo **XmlReader**a jako argumenty přijímá zdrojový soubor XML a volitelně **XmlReadMode** argument. (Další informace o **XmlReader**, naleznete v tématu [NIB: čtení dat XML pomocí XmlTextReader](https://msdn.microsoft.com/library/762c069b-b50c-41b8-936e-39eacfb0d540).) **ReadXml** metoda přečte obsah datový proud XML nebo dokumentu a zatížením <xref:System.Data.DataSet> s daty. Vytvoří také relační schéma <xref:System.Data.DataSet> v závislosti na tom **XmlReadMode** zadaný a jestli relační schéma už existuje.  
   
- Následující tabulka popisuje možnosti **XmlReadMode** argument.  
+ Následující tabulka popisuje možnosti pro **XmlReadMode** argument.  
   
 |Možnost|Popis|  
 |------------|-----------------|  
-|**Auto**|Toto nastavení je výchozí. Prozkoumá XML a vybere nejvíc příslušnou možnost v následujícím pořadí:<br /><br /> – Pokud XML je prvek formátu DiffGram **formát DiffGram** se používá.<br />-Pokud <xref:System.Data.DataSet> obsahuje schéma nebo XML obsahuje vložené schéma, **ReadSchema** se používá.<br />-Pokud <xref:System.Data.DataSet> neobsahuje schéma a soubor XML neobsahuje vložené schéma, **InferSchema** se používá.<br /><br /> Pokud znáte formát XML, který je čten, pro nejlepší výkon doporučujeme, abyste nastavili explicitního **XmlReadMode**, spíš než přijmout **automaticky** výchozí.|  
-|**ReadSchema**|Načte všechny vložené schéma a načte dat a schématu.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, přidat nové tabulky z vloženého schématu existující schéma v <xref:System.Data.DataSet>. Pokud žádné tabulky v vloženého schématu již existuje v <xref:System.Data.DataSet>, je vyvolána výjimka. Nebudete moct změnit schéma existující tabulky pomocí **XmlReadMode.ReadSchema**.<br /><br /> Pokud <xref:System.Data.DataSet> neobsahuje schématu a neexistuje žádný vložené schéma, nenačtou žádná data.<br /><br /> Vložené schéma lze definovat pomocí schématu XML definition language (XSD) schématu. Podrobnosti o zápis vloženého schématu jako schématu XML najdete v tématu [odvozování relační strukturu datové sady z schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).|  
-|**IgnoreSchema**|Ignoruje všechny vložené schéma a načte data do existující <xref:System.Data.DataSet> schématu. Všechna data, která neodpovídá existující schéma se zahodí. Pokud neexistuje žádné schéma v <xref:System.Data.DataSet>, je načtena žádná data.<br /><br /> Pokud jsou data formát DiffGram **IgnoreSchema** má stejné funkce jako **formát DiffGram** *.*|  
-|**InferSchema**|Ignoruje všechny vložené schéma a odvodí, že schéma za strukturu dat XML a pak načte data.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, je aktuální schéma rozšířeno přidáním sloupce do existující tabulky. Navíc tabulky se nepřidají, pokud nejsou existující tabulky. Pokud odvozené tabulky s jiný obor názvů již existuje, nebo pokud žádné odvozené sloupce v konfliktu s existující sloupce, je vyvolána výjimka.<br /><br /> Podrobnosti o **ReadXmlSchema** odvodí schématu z dokumentu XML, najdete na stránce [odvození datovou sadu relační struktura z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md).|  
-|**Formát DiffGram**|Načte prvek formátu DiffGram a přidá data na aktuální schéma. **Formát DiffGram** nové řádky s existující kde jedinečný identifikátor hodnoty shodují, řádky sloučí. Najdete v části "Slučování dat z XML" na konci tohoto tématu. Další informace o DiffGrams najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).|  
-|**Fragment**|Pokračuje, dokud nebude dosaženo konce datový proud čtení více fragmentů kódu XML. Fragmenty, které odpovídají <xref:System.Data.DataSet> schématu se připojí k příslušné tabulky. Fragmenty, které neodpovídají <xref:System.Data.DataSet> schématu se zahodí.|  
+|**Auto**|Toto nastavení je výchozí. Zkontroluje kód XML a zvolí nejvhodnější možnost v následujícím pořadí:<br /><br /> – Pokud kód XML má formát DiffGram, **formát DiffGram** se používá.<br />– Pokud <xref:System.Data.DataSet> obsahuje schéma nebo kód XML obsahuje vložené schéma, **ReadSchema** se používá.<br />– Pokud <xref:System.Data.DataSet> neobsahuje schéma a soubor XML neobsahuje vložené schéma, **InferSchema** se používá.<br /><br /> Pokud znáte formátu XML, který je čten, pro zajištění nejlepšího výkonu se doporučuje nastavit explicitní **XmlReadMode**, spíše než přijmout **automaticky** výchozí.|  
+|**ReadSchema**|Přečte všechny vložené schéma a načítá data a schéma.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, jsou přidány nové tabulky z vložené schéma stávající schéma v <xref:System.Data.DataSet>. Pokud žádné tabulky ve vložené schéma už ve <xref:System.Data.DataSet>, je vyvolána výjimka. Není možné upravit schéma z existující tabulky pomocí **XmlReadMode.ReadSchema**.<br /><br /> Pokud <xref:System.Data.DataSet> neobsahuje schématu a neexistuje žádné vložené schéma, nenačtou žádná data.<br /><br /> Vložené schéma lze definovat pomocí jazyk (XSD) schématu definice schématu XML. Podrobnosti o vytváření vložené schéma jako schématu XML, naleznete v tématu [odvozování relační struktury datové sady ze schématu XML (XSD)](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/deriving-dataset-relational-structure-from-xml-schema-xsd.md).|  
+|**IgnoreSchema**|Ignoruje všechny vložené schéma a načte data do existujících <xref:System.Data.DataSet> schématu. Všechna data, která se neshoduje s existujícím schématu se zahodí. Pokud neexistuje žádné schéma v <xref:System.Data.DataSet>, je načtena žádná data.<br /><br /> Pokud jsou data formát DiffGram **IgnoreSchema** má stejné funkce jako **formát DiffGram** *.*|  
+|**InferSchema**|Ignoruje všechny vložené schéma a odvodí z něj schéma na struktuře dat XML a pak načte data.<br /><br /> Pokud <xref:System.Data.DataSet> již obsahuje schéma, je aktuální schéma rozšířeno přidáním sloupce do existující tabulky. Pokud nejsou existující tabulky se nepřidá další tabulky. Pokud odvozené tabulky s jiný obor názvů již existuje, nebo pokud všechny odvozené sloupce v konfliktu s existující sloupce, je vyvolána výjimka.<br /><br /> Podrobné informace o tom **ReadXmlSchema** odvodí schéma z dokumentu XML, naleznete v tématu [odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md).|  
+|**Formát DiffGram**|Načte formát DiffGram a přidá data na aktuální schéma. **Formát DiffGram** sloučí s existující řádky kde jedinečný identifikátor hodnoty odpovídat nové řádky. Viz "Slučování dat z XML" na konci tohoto tématu. Další informace o DiffGrams najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).|  
+|**Fragment**|Pokračuje, dokud nebude dosaženo konce datového proudu pro čtení více fragmentů XML. Počet fragmentů, které odpovídají <xref:System.Data.DataSet> schématu jsou připojeny k příslušné tabulky. Fragmenty, které neodpovídají <xref:System.Data.DataSet> schématu se zahodí.|  
   
 > [!NOTE]
->  Pokud předáte **XmlReader** k **ReadXml** tedy umístěného součástí způsob dokument XML **ReadXml** na další uzel elementu, bude číst a který považovat kořenu Element čtení až do konce uzlu elementu. To neplatí zadáte-li **XmlReadMode.Fragment**.  
+>  Pokud předáte **XmlReader** k **ReadXml** , který je umístěný součástí tak, jak do dokumentu XML, **ReadXml** budou pro čtení k dalším uzlu elementu a bude zacházet s, která jako kořenový adresář element, až do konce uzlu elementu pouze pro čtení. Tato akce není požadována při zadání **XmlReadMode.Fragment**.  
   
-## <a name="dtd-entities"></a>DTD entity  
- Pokud soubor XML obsahuje entity definovaná ve schématu definice (DTD) typu dokumentu, bude vyvolána výjimka, pokud se pokus o načtení <xref:System.Data.DataSet> předáním soubor název, datový proud nebo bez ověřování **XmlReader** k  **ReadXml**. Místo toho je nutné vytvořit **třídy XmlValidatingReader**, s **EntityHandling příslušným** nastavena na **EntityHandling.ExpandEntities**a předejte vaší  **Třídy XmlValidatingReader** k **ReadXml**. **Třídy XmlValidatingReader** bude rozšiřovat entity před čtením <xref:System.Data.DataSet>.  
+## <a name="dtd-entities"></a>Entity DTD  
+ Pokud soubor XML obsahuje entity, které jsou definované ve schématu dokumentu typ definice (DTD), bude vyvolána výjimka, pokud se pokusíte načíst <xref:System.Data.DataSet> předáním souboru název, datový proud nebo bez ověřování **XmlReader** k  **ReadXml**. Místo toho je nutné vytvořit **objekt XmlValidatingReader**, s **EntityHandling příslušným** nastavena na **se element EntityHandling.ExpandEntities**a předat vaše  **Objekt XmlValidatingReader** k **ReadXml**. **Objekt XmlValidatingReader** se rozbalí entity před čtením <xref:System.Data.DataSet>.  
   
- Následující příklady kódu ukazují, jak načíst <xref:System.Data.DataSet> z datový proud XML. V prvním příkladu zobrazuje název souboru je předán **ReadXml** metoda. Druhý příklad ukazuje řetězec, který obsahuje XML vrácení načíst pomocí <xref:System.IO.StringReader>.  
+ Následující příklady kódu ukazují, jak načíst <xref:System.Data.DataSet> z datový proud XML. První příklad ukazuje, názvu souboru, který je předáván **ReadXml** metody. Druhý příklad ukazuje řetězec, který obsahuje XML je načíst s použitím <xref:System.IO.StringReader>.  
   
 ```vb  
 Dim dataSet As DataSet = New DataSet  
@@ -73,7 +73,7 @@ dataSet.ReadXml(xmlSR, XmlReadMode.IgnoreSchema);
 ```  
   
 > [!NOTE]
->  Když zavoláte **ReadXml** načíst velmi velký soubor, se můžete setkat nízký výkon. K zajištění nejlepšího výkonu pro **ReadXml**, na velký soubor, volání <xref:System.Data.DataTable.BeginLoadData%2A> metoda pro každou tabulku v <xref:System.Data.DataSet>a pak zavolají **ReadXml**. Nakonec volání <xref:System.Data.DataTable.EndLoadData%2A> pro každou tabulku v <xref:System.Data.DataSet>, jak je znázorněno v následujícím příkladu.  
+>  Při volání **ReadXml** načíst velmi velkých souborů, může dojít nízký výkon. K zajištění nejlepšího výkonu pro **ReadXml**, na velkých souborů, zavolejte <xref:System.Data.DataTable.BeginLoadData%2A> metoda pro každou tabulku v <xref:System.Data.DataSet>a pak vyvolejte **ReadXml**. Nakonec proveďte volání <xref:System.Data.DataTable.EndLoadData%2A> za každou tabulku <xref:System.Data.DataSet>, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Dim dataTable As DataTable  
@@ -100,7 +100,7 @@ foreach (DataTable dataTable in dataSet.Tables)
 ```  
   
 > [!NOTE]
->  Pokud schéma XSD pro vaše <xref:System.Data.DataSet> zahrnuje **cílový obor názvů**, nemusí být načtena data a výjimkami, může dojít, pokud volání **ReadXml** načíst <xref:System.Data.DataSet> se souborem XML, který obsahuje prvky s žádné opravňující oboru názvů. V takovém případě číst nekvalifikované prvky, nastavení **elementFormDefault** rovno "kvalifikovaný" v schéma XSD. Příklad:  
+>  Pokud schéma XSD pro vaše <xref:System.Data.DataSet> zahrnuje **oborem názvů targetNamespace**, nemusí být data načtena a mohou nastat výjimky, při volání metody **ReadXml** načíst <xref:System.Data.DataSet> s XML, který obsahuje elementy bez kvalifikovaného oboru názvů. Chcete-li načíst nekvalifikované elementy v tomto případě, nastavte **elementFormDefault** na hodnotu "qualified" ve schématu XSD. Příklad:  
   
 ```xml  
 <xsd:schema id="customDataSet"   
@@ -113,7 +113,7 @@ foreach (DataTable dataTable in dataSet.Tables)
 ```  
   
 ## <a name="merging-data-from-xml"></a>Slučování dat z XML  
- Pokud <xref:System.Data.DataSet> už obsahuje data, přidávání nových dat z XML s daty, která je již v <xref:System.Data.DataSet>. **ReadXml** nesloučí z XML do <xref:System.Data.DataSet> žádný řádek informace s odpovídajícími primárními klíči. Pokud chcete přepsat existující řádek informace se novými informacemi ze souboru XML, použijte **ReadXml** pro vytvoření nového <xref:System.Data.DataSet>a potom <xref:System.Data.DataSet.Merge%2A> nové <xref:System.Data.DataSet> do existujících <xref:System.Data.DataSet>. Všimněte si, že načtení formát DiffGram pomocí **ReadXML** s **XmlReadMode** z **formát DiffGram** bude Sloučit řádky, které mají stejný jedinečný identifikátor.  
+ Pokud <xref:System.Data.DataSet> již obsahuje data, budou přidána nová data z XML do datového již v <xref:System.Data.DataSet>. **ReadXml** nesloučí ze souboru XML do <xref:System.Data.DataSet> žádný řádek informace s odpovídajícími primárních klíčů. Chcete-li přepsat existující řádek informace novými informacemi ze souboru XML, použijte **ReadXml** k vytvoření nového <xref:System.Data.DataSet>a potom <xref:System.Data.DataSet.Merge%2A> nové <xref:System.Data.DataSet> do existujících <xref:System.Data.DataSet>. Všimněte si, že načtení formát DiffGram pomocí **ReadXML** s **XmlReadMode** z **formát DiffGram** sloučí řádky, které mají stejný jedinečný identifikátor.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Data.DataSet.Merge%2A?displayProperty=nameWithType>  
@@ -123,4 +123,4 @@ foreach (DataTable dataTable in dataSet.Tables)
  [Odvození relační struktury datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/inferring-dataset-relational-structure-from-xml.md)  
  [Načtení informací o schématu datové sady z XML](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-dataset-schema-information-from-xml.md)  
  [Datové sady, datové tabulky a datová zobrazení](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/index.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

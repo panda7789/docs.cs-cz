@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 899f2ca5ef1b987687f5c065ad3e1965e142d103
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43564750"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43743963"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge – metoda
 Přidá do seznamu oborů, která se má sloučit zadané importované oboru.  

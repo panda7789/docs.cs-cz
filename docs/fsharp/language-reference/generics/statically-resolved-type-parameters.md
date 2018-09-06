@@ -1,18 +1,17 @@
 ---
 title: Statisticky vyřešené parametry typu (F#)
-description: 'Naučte se používat F # typu určené statisticky parametr, který se nahradí skutečný typ v době kompilace místo v době běhu.'
+description: 'Další informace o použití jazyka F # parametr staticky řešeného typu, který je nahrazen skutečným typem v době kompilace místo v době běhu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 12c2af4d9df7ae1e5e77efc9413eb8777459a83c
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: 747917fef2746dcbf363ef4b717ace5e47229800
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34233779"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43777861"
 ---
 # <a name="statically-resolved-type-parameters"></a>Statisticky vyřešené parametry typu
 
-A *parametr typu určené statisticky* je parametr typu, který se nahradí skutečný typ v době kompilace místo v době běhu. Před symbol šipka nahoru (^).
-
+A *parametr staticky řešeného typu* je parametr typu, který je nahrazen skutečným typem v době kompilace místo v době běhu. Předchází jim symbol stříšky (^).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,28 +20,29 @@ A *parametr typu určené statisticky* je parametr typu, který se nahradí skut
 ```
 
 ## <a name="remarks"></a>Poznámky
-V jazyce F # existují dva odlišné typy parametrů typu. Prvním typem je parametr standardní obecného typu. Apostrof ('), bude označen jako v `'T` a `'U`. Jsou ekvivalentní parametry obecného typu v jiných jazycích rozhraní .NET Framework. Další typ je statisticky a je indikován symbol pomocí kurzoru, jako v `^T` a `^U`.
 
-Parametry typu určené statisticky jsou užitečné hlavně v kombinaci s omezeními člen, které jsou omezení, která umožňují určit, že argument typu musí mít konkrétní člena nebo členy aby bylo možné použít. Neexistuje žádný způsob, jak vytvořit tento druh omezení pomocí parametru regulární obecného typu.
+V jazyce F # existují dva odlišné typy parametrů typu. První druh je standardní obecný typ parametru. Ty jsou označeny apostrofem ('), stejně jako v `'T` a `'U`. Jsou ekvivalentní parametrům obecného typu v jiných jazycích rozhraní .NET Framework. Jiný typ je staticky řešen a je označen symbolem stříšky, stejně jako v `^T` a `^U`.
 
-Následující tabulka shrnuje podobnosti a rozdíly mezi dva typy parametrů typu.
+Staticky rozpoznávané parametry typu jsou především užitečné ve spojení s omezeními členů, což jsou omezení, které vám umožňují určit, že argument typu musí mít určitého člena nebo členy jinak se nedá použít. Neexistuje žádný způsob, jak vytvořit tento druh omezení pomocí parametru obecného typu.
+
+Následující tabulka shrnuje podobnosti a rozdíly mezi těmito dvěma typy parametrů typu.
 
 |Funkce|Obecné|Statisticky vyřešené|
 |-------|-------|-------------------|
 |Syntaxe|`'T`, `'U`|`^T`, `^U`|
 |Doba řešení|Čas spuštění|Doba kompilace|
-|Člen omezení|Nelze použít s omezeními člena.|Lze použít s omezeními člena.|
-|Generování kódu|Na typ (nebo metoda) s parametry obecného typu standardní výsledkem generování jeden obecný typ nebo metoda.|Více instancí možnosti typy a metody jsou generovány, jednu pro každý typ, který je potřeba.|
-|Použít s typy|Lze použít na typech.|Nelze použít na typech.|
-|Použití s vložené funkce|Ne. Vložená funkce nelze parametry s parametrem standardní obecného typu.|Ano. Parametry typu určené statisticky nelze použít na funkce nebo metody, které nejsou vnořené.|
+|Členská omezení|Nelze použít s omezeními člena.|Můžete použít s omezeními člena.|
+|Generování kódu|Typ (nebo metoda) se standardními parametry obecného typu způsobí generování jednoho obecného typu nebo metody.|Více instancí typů a metod jsou generovány, jeden pro každý typ, který je potřeba.|
+|Použít s typy|Můžete použít u typů.|Nelze použít u typů.|
+|Použít s vloženými funkcemi|Ne. Vložená funkce nemůže být parametrizována pomocí standardního obecného parametru typu.|Ano. Staticky rozpoznávané parametry typu nelze použít na funkce ani metody, které nejsou vložené.|
 
-Mnoho F # základní funkce knihovny, hlavně operátory, mají statisticky vyřešené parametry typu. Tyto funkce a operátory vložené a výsledkem generování efektivní kódu pro číselné výpočty.
+Řada F # základních knihovních funkcí, hlavně operátory, má staticky řešené parametry typu. Tyto funkce a operátory jsou vložené a výsledkem efektivní generování kódu pro numerické výpočty.
 
-Vložené metody a funkce, které použijte operátory, nebo použijte jiné funkce, které mají statisticky vyřešené parametry typu, můžete také parametry typu určené statisticky, sami. Odvození typu často odvodí takové funkce vložené do mají statisticky vyřešené parametry typu. Následující příklad ukazuje definici operátor odvozené tak, aby měl parametr typu určené statisticky.
+Vložené metody a funkce, které používají operátory nebo jiné funkce, které mají staticky řešené parametry typu, můžete také použít staticky rozpoznávané parametry typu sami. Často odvození typu odvodí tyto vložené funkce pro staticky řešené parametry typu. Následující příklad ukazuje definici operátoru, který je odvozen, aby měl parametr staticky řešeného typu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-3/snippet401.fs)]
 
-Přeložit typ `(+@)` je založen na používání obou `(+)` a `(*)`, z které způsobit odvození typu odvodit člen omezení pro parametry typu určené statisticky. Vyřešení typu, jak je znázorněno v překladač F # je následující.
+Rozpoznaný typ `(+@)` je založen na použití obou `(+)` a `(*)`, o což vedlo odvození typu odvozuje členská omezení na staticky rozpoznávaných typových parametrů. Rozpoznaný typ, jak je uvedeno v interpretátoru F # je následujícím způsobem.
 
 ```fsharp
 ^a -> ^c -> ^d
@@ -57,7 +57,7 @@ Výstup je následující.
 1.500000
 ```
 
-Od verze 4.1 F #, můžete také zadat konkrétní typ názvy v podpisy parametr typu určené statisticky.  V předchozích verzích jazyka název typu ve skutečnosti se nedá odvodit kompilátorem, ale nelze zadat ve skutečnosti v podpisu.  Od verze F # 4.1 můžete také určit konkrétní typ názvy v typu určené statisticky parametr podpisy. Tady je příklad:
+Od verze F # 4.1, můžete také zadat názvy konkrétních typů v signaturách parametr staticky řešeného typu.  V předchozích verzích jazyka název typu nebylo možné odvodit skutečně kompilátorem, ale nemůže ve skutečnosti zadaná v signatuře.  Od verze F # 4.1 můžete také zadat názvy konkrétních typů v signaturách parametr staticky řešeného typu. Tady je příklad:
 
 ```fsharp
 let inline konst x _ = x
@@ -85,13 +85,10 @@ let inline replace (a: ^a) (f: ^b): ^a0 when (CFunctor or  ^b): (static member r
     replace_instance<CFunctor, _, _, _> (a, f)
 ```
 
-## <a name="see-also"></a>Viz také
-[Obecné typy](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Odvození typu](../type-inference.md)
-
-[Automatická generalizace](automatic-generalization.md)
-
-[Omezení](constraints.md)
-
-[Vložené funkce](../functions/inline-functions.md)
+- [Obecné typy](index.md)
+- [Odvození typu](../type-inference.md)
+- [Automatická generalizace](automatic-generalization.md)
+- [Omezení](constraints.md)
+- [Vložené funkce](../functions/inline-functions.md)

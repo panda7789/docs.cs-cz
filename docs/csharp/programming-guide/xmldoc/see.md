@@ -1,5 +1,5 @@
 ---
-title: '&lt;v tématu&gt; (C# Průvodce programováním)'
+title: '&lt;Zobrazit&gt; (C# Programming Guide)'
 ms.date: 07/20/2015
 f1_keywords:
 - <see>
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - cross-references [C#]
 - see C# XML tag
 ms.assetid: 0200de01-7e2f-45c4-9094-829d61236383
-ms.openlocfilehash: 24fa317a0f89568d9aa1b53849e327ef7615cc7b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c37ad869b3eb904377cd4470a85cd557f6560290
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33348788"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43737782"
 ---
-# <a name="ltseegt-c-programming-guide"></a>&lt;v tématu&gt; (C# Průvodce programováním)
+# <a name="ltseegt-c-programming-guide"></a>&lt;Zobrazit&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -26,17 +26,18 @@ ms.locfileid: "33348788"
   
 #### <a name="parameters"></a>Parametry  
  cref = " `member`"  
- Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor ověří, že element daného kódu existuje a předá `member` k názvu elementu ve výstupu XML. Místní *člen* v rámci dvojitých uvozovek nahoře ("").  
+ Odkaz na člena nebo na pole, které lze volat z prostředí aktuální kompilace. Kompilátor kontroluje, zda daný prvek kódu existuje a předá `member` do názvu prvku ve výstupním souboru XML. Místo *člen* do dvojitých uvozovek ("").  
   
 ## <a name="remarks"></a>Poznámky  
- \<Najdete v části > značka umožňuje zadat odkaz z v textu. Použití [ \<seealso >](../../../csharp/programming-guide/xmldoc/seealso.md) indikující, že text mají být umístěny v části Viz také. Použití [cref – atribut](../../../csharp/programming-guide/xmldoc/cref-attribute.md) k vytvoření interní hypertextové odkazy na stránky dokumentace pro elementy kódu.  
+ \<Naleznete v tématu > značky umožňuje zadat odkaz v rámci textu. Použití [ \<seealso >](../../../csharp/programming-guide/xmldoc/seealso.md) označit, že text by měl být umístěno v části Viz také. Použití [cref – atribut](../../../csharp/programming-guide/xmldoc/cref-attribute.md) k vytvoření interních hypertextových odkazů na stránky dokumentace prvků kódu.  
   
  Kompilovat s [-doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.  
   
- Následující příklad ukazuje \<najdete v části > v části Souhrn značku.  
+ Následující příklad ukazuje \<naleznete v tématu > značky v souhrnné části.  
   
  [!code-csharp[csProgGuideDocComments#12](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/see_1.cs)]  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

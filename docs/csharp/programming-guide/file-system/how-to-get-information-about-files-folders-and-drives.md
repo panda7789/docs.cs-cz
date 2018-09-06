@@ -4,15 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
-ms.openlocfilehash: c4f29cd2ae65fb05a2636ae3674c7ffd1613b0f3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ebacff0f3a1704ec001e3570d0df136f54baf9d
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33338536"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43734103"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Postupy: Získávání informací o souborech, složkách a jednotkách (Průvodce programováním v C#)
-V rozhraní .NET Framework můžete přístup k informacím systému souboru pomocí následující třídy:  
+Informace o systému souborů v rozhraní .NET Framework, přístupné pomocí následující třídy:  
   
 -   <xref:System.IO.FileInfo?displayProperty=nameWithType>  
   
@@ -24,7 +24,7 @@ V rozhraní .NET Framework můžete přístup k informacím systému souboru pom
   
 -   <xref:System.IO.File?displayProperty=nameWithType>  
   
- <xref:System.IO.FileInfo> a <xref:System.IO.DirectoryInfo> třídy představují soubor nebo adresář a obsahovat vlastnosti, které zveřejňují mnoho atributů souborů, které jsou podporovány v systému souborů NTFS. Také obsahují metody pro otevření, zavření, přesun a odstraňování souborů a složek. Instance těchto tříd lze vytvořit pomocí předání řetězec, který představuje název souboru, složce nebo jednotce v konstruktoru:  
+ <xref:System.IO.FileInfo> a <xref:System.IO.DirectoryInfo> třídy představují soubor nebo adresář a obsahovat vlastnosti, které vystavit hodně atributů souborů, které jsou podporovány v systému souborů NTFS. Také obsahují metody pro otevření, zavření, přesunutí nebo odstranění souborů a složek. Instance těchto tříd můžete vytvořit tím, že předáte řetězec představující název souboru, složce nebo jednotce v konstruktoru:  
   
 ```csharp  
 System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");  
@@ -32,17 +32,17 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
   
  Názvy souborů, složek nebo jednotky můžete také získat pomocí volání <xref:System.IO.DirectoryInfo.GetDirectories%2A?displayProperty=nameWithType>, <xref:System.IO.DirectoryInfo.GetFiles%2A?displayProperty=nameWithType>, a <xref:System.IO.DriveInfo.RootDirectory%2A?displayProperty=nameWithType>.  
   
- <xref:System.IO.Directory?displayProperty=nameWithType> a <xref:System.IO.File?displayProperty=nameWithType> tříd poskytuje statické metody pro načtení informací o adresářů a souborů.  
+ <xref:System.IO.Directory?displayProperty=nameWithType> a <xref:System.IO.File?displayProperty=nameWithType> třídy poskytují statické metody pro načtení informací o adresářů a souborů.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje různé způsoby přístup k informacím o soubory a složky.  
+ Následující příklad ukazuje různé způsoby, jak získat přístup k informacím o souborech a složkách.  
   
  [!code-csharp[csFilesandFolders#6](../../../csharp/programming-guide/file-system/codesnippet/CSharp/how-to-get-information-about-files-folders-and-drives_1.cs)]  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Když při zpracování řetězce cesty zadané uživatelem, by také zpracování výjimky pro tyto podmínky:  
+ Při zpracování řetězce zadaného uživatelem cesty by měl také zpracování výjimek byly splněny následující podmínky:  
   
--   Název souboru je poškozený. Například obsahuje neplatné znaky nebo jenom prázdný znak.  
+-   Název souboru je poškozený. Například obsahuje neplatné znaky nebo pouze prázdné znaky.  
   
 -   Název souboru má hodnotu null.  
   
@@ -50,9 +50,10 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
   
 -   Název souboru obsahuje dvojtečku (:).  
   
- Pokud aplikace nemá dostatečná oprávnění ke čtení zadaného souboru, `Exists` metoda vrátí `false` bez ohledu na tom, zda cesta existuje; metoda nevyvolá výjimku.  
+ Pokud aplikace nemá dostatečná oprávnění ke čtení zadaného souboru `Exists` vrátí metoda `false` bez ohledu na to, zda cesta existuje, metoda nevyvolá výjimku.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IO?displayProperty=nameWithType>  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Systém souborů a registr (C# Průvodce programováním)](../../../csharp/programming-guide/file-system/index.md)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.IO?displayProperty=nameWithType>  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Systém souborů a registr (C# Programming Guide)](../../../csharp/programming-guide/file-system/index.md)

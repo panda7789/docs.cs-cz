@@ -10,11 +10,11 @@ helpviewer_keywords:
 - type conversion [C#], explicit numeric
 ms.assetid: f3bb9e76-6b92-4df7-bc36-f866c24e1dfd
 ms.openlocfilehash: 5ca052dea4ee4abc866d2b02055188b0707499d4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43475930"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43725069"
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>Tabulka explicitních číselných převodů (Referenční dokumentace jazyka C#)
 Explicitní číselný převod je použít pro převod libovolného číselného typu na jiný číselný typ, pro který neexistuje žádný implicitní převod, pomocí výrazu přetypování. V následující tabulce jsou uvedeny tyto převody.  

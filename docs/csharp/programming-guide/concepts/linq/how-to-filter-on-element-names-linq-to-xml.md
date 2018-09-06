@@ -3,11 +3,11 @@ title: 'Postupy: Filtrování názvů elementů (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1849fb03-f075-421f-863c-e8fb32773cdf
 ms.openlocfilehash: df3a2fb7de888dfc2bc93520c16a52b594047fb3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43563830"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43779783"
 ---
 # <a name="how-to-filter-on-element-names-linq-to-xml-c"></a>Postupy: Filtrování názvů elementů (LINQ to XML) (C#)
 Při volání jedné z metod, které vracejí <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement>, můžete filtrovat podle názvu elementu.  
