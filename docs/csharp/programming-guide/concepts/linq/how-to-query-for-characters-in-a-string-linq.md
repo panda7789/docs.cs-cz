@@ -3,17 +3,17 @@ title: 'Postupy: dotazu na znaky v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
 ms.openlocfilehash: c6e5fb14e0be277f53511aaddd362f2f203531e8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43536072"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43741182"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a><span data-ttu-id="91866-102">Postupy: dotazu na znaky v řetězci (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="91866-102">How to: Query for Characters in a String (LINQ) (C#)</span></span>
-<span data-ttu-id="91866-103">Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků.</span><span class="sxs-lookup"><span data-stu-id="91866-103">Because the <xref:System.String> class implements the generic <xref:System.Collections.Generic.IEnumerable%601> interface, any string can be queried as a sequence of characters.</span></span> <span data-ttu-id="91866-104">Ale to není běžné použití odkazu LINQ.</span><span class="sxs-lookup"><span data-stu-id="91866-104">However, this is not a common use of LINQ.</span></span> <span data-ttu-id="91866-105">Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.</span><span class="sxs-lookup"><span data-stu-id="91866-105">For complex pattern matching operations, use the <xref:System.Text.RegularExpressions.Regex> class.</span></span>  
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a><span data-ttu-id="4d9c9-102">Postupy: dotazu na znaky v řetězci (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="4d9c9-102">How to: Query for Characters in a String (LINQ) (C#)</span></span>
+<span data-ttu-id="4d9c9-103">Vzhledem k tomu, <xref:System.String> třída implementuje obecné <xref:System.Collections.Generic.IEnumerable%601> rozhraní, libovolný řetězec může být dotázán jako posloupnost znaků.</span><span class="sxs-lookup"><span data-stu-id="4d9c9-103">Because the <xref:System.String> class implements the generic <xref:System.Collections.Generic.IEnumerable%601> interface, any string can be queried as a sequence of characters.</span></span> <span data-ttu-id="4d9c9-104">Ale to není běžné použití odkazu LINQ.</span><span class="sxs-lookup"><span data-stu-id="4d9c9-104">However, this is not a common use of LINQ.</span></span> <span data-ttu-id="4d9c9-105">Pro komplexní porovnávání vzorů operace, použijte <xref:System.Text.RegularExpressions.Regex> třídy.</span><span class="sxs-lookup"><span data-stu-id="4d9c9-105">For complex pattern matching operations, use the <xref:System.Text.RegularExpressions.Regex> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="91866-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="91866-106">Example</span></span>  
- <span data-ttu-id="91866-107">V následujícím příkladu se dotazuje řetězec a chce určit počet číslic, které obsahuje.</span><span class="sxs-lookup"><span data-stu-id="91866-107">The following example queries a string to determine the number of numeric digits it contains.</span></span> <span data-ttu-id="91866-108">Všimněte si, že dotaz je "znovu" po provedení první.</span><span class="sxs-lookup"><span data-stu-id="91866-108">Note that the query is "reused" after it is executed the first time.</span></span> <span data-ttu-id="91866-109">To je možné, protože samotný dotaz nejsou uložené žádné skutečné výsledky.</span><span class="sxs-lookup"><span data-stu-id="91866-109">This is possible because the query itself does not store any actual results.</span></span>  
+## <a name="example"></a><span data-ttu-id="4d9c9-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="4d9c9-106">Example</span></span>  
+ <span data-ttu-id="4d9c9-107">V následujícím příkladu se dotazuje řetězec a chce určit počet číslic, které obsahuje.</span><span class="sxs-lookup"><span data-stu-id="4d9c9-107">The following example queries a string to determine the number of numeric digits it contains.</span></span> <span data-ttu-id="4d9c9-108">Všimněte si, že dotaz je "znovu" po provedení první.</span><span class="sxs-lookup"><span data-stu-id="4d9c9-108">Note that the query is "reused" after it is executed the first time.</span></span> <span data-ttu-id="4d9c9-109">To je možné, protože samotný dotaz nejsou uložené žádné skutečné výsledky.</span><span class="sxs-lookup"><span data-stu-id="4d9c9-109">This is possible because the query itself does not store any actual results.</span></span>  
   
 ```csharp  
 class QueryAString  
@@ -54,10 +54,10 @@ class QueryAString
 */  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="91866-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="91866-110">Compiling the Code</span></span>  
- <span data-ttu-id="91866-111">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="91866-111">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="4d9c9-110">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="4d9c9-110">Compiling the Code</span></span>  
+ <span data-ttu-id="4d9c9-111">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="4d9c9-111">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="91866-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="91866-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4d9c9-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="4d9c9-112">See Also</span></span>
 
-- [<span data-ttu-id="91866-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="91866-113">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
-- [<span data-ttu-id="91866-114">Postupy: kombinace dotazů LINQ s regulárními výrazy (C#)</span><span class="sxs-lookup"><span data-stu-id="91866-114">How to: Combine LINQ Queries with Regular Expressions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)
+- [<span data-ttu-id="4d9c9-113">LINQ a řetězce (C#)</span><span class="sxs-lookup"><span data-stu-id="4d9c9-113">LINQ and Strings (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
+- [<span data-ttu-id="4d9c9-114">Postupy: kombinace dotazů LINQ s regulárními výrazy (C#)</span><span class="sxs-lookup"><span data-stu-id="4d9c9-114">How to: Combine LINQ Queries with Regular Expressions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md)

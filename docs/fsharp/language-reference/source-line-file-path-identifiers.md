@@ -1,20 +1,19 @@
 ---
 title: Identifikátory zdrojového řádku, souboru a cesty (F#)
-description: 'Naučte se používat integrované F # hodnoty identifikátorů, které vám umožní přístup k číslo řádku zdroje, adresář a název souboru ve svém kódu.'
+description: 'Další informace o použití integrovaných F # hodnoty identifikátorů, které vám umožní přístup k číslo zdrojového řádku, adresář a název souboru ve vašem kódu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 76b705fec0d951b12655edbe69e7c9212f50779d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 14f710d1412c3420ec627dc30216ba2e89f16bcd
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565214"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43777426"
 ---
-# <a name="source-line-file-and-path-identifiers"></a><span data-ttu-id="6124d-103">Identifikátory zdrojového řádku, souboru a cesty</span><span class="sxs-lookup"><span data-stu-id="6124d-103">Source Line, File, and Path Identifiers</span></span>
+# <a name="source-line-file-and-path-identifiers"></a><span data-ttu-id="9b89e-103">Identifikátory zdrojového řádku, souboru a cesty</span><span class="sxs-lookup"><span data-stu-id="9b89e-103">Source Line, File, and Path Identifiers</span></span>
 
-<span data-ttu-id="6124d-104">Identifikátory `__LINE__`, `__SOURCE_DIRECTORY__` a `__SOURCE_FILE__` jsou předdefinované hodnoty, které vám umožní přístup k zdroj řádku číslo, adresář a název souboru ve svém kódu.</span><span class="sxs-lookup"><span data-stu-id="6124d-104">The identifiers `__LINE__`, `__SOURCE_DIRECTORY__` and `__SOURCE_FILE__` are built-in values that enable you to access the source line number, directory and file name in your code.</span></span>
+<span data-ttu-id="9b89e-104">Identifikátory `__LINE__`, `__SOURCE_DIRECTORY__` a `__SOURCE_FILE__` jsou předdefinované hodnoty, které vám umožní přístup ke zdrojové řádek číslo, adresář a název souboru ve vašem kódu.</span><span class="sxs-lookup"><span data-stu-id="9b89e-104">The identifiers `__LINE__`, `__SOURCE_DIRECTORY__` and `__SOURCE_FILE__` are built-in values that enable you to access the source line number, directory and file name in your code.</span></span>
 
-
-## <a name="syntax"></a><span data-ttu-id="6124d-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6124d-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="9b89e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9b89e-105">Syntax</span></span>
 
 ```fsharp
 __LINE__
@@ -22,25 +21,26 @@ __SOURCE_DIRECTORY__
 __SOURCE_FILE__
 ```
 
-## <a name="remarks"></a><span data-ttu-id="6124d-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6124d-106">Remarks</span></span>
-<span data-ttu-id="6124d-107">Všechny tyto hodnoty má typ `string`.</span><span class="sxs-lookup"><span data-stu-id="6124d-107">Each of these values has type `string`.</span></span>
+## <a name="remarks"></a><span data-ttu-id="9b89e-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9b89e-106">Remarks</span></span>
 
-<span data-ttu-id="6124d-108">Následující tabulka shrnuje zdrojového řádku, souboru a cesty identifikátorů, které jsou k dispozici v F #.</span><span class="sxs-lookup"><span data-stu-id="6124d-108">The following table summarizes the source line, file, and path identifiers that are available in F#.</span></span> <span data-ttu-id="6124d-109">Tyto identifikátory nejsou makra preprocesoru; jsou předdefinované hodnoty, které jsou rozpoznány kompilátorem.</span><span class="sxs-lookup"><span data-stu-id="6124d-109">These identifiers are not preprocessor macros; they are built-in values that are recognized by the compiler.</span></span>
+<span data-ttu-id="9b89e-107">Každá z těchto hodnot obsahuje typ `string`.</span><span class="sxs-lookup"><span data-stu-id="9b89e-107">Each of these values has type `string`.</span></span>
 
-|<span data-ttu-id="6124d-110">Předdefinované identifikátor</span><span class="sxs-lookup"><span data-stu-id="6124d-110">Predefined identifier</span></span>|<span data-ttu-id="6124d-111">Popis</span><span class="sxs-lookup"><span data-stu-id="6124d-111">Description</span></span>|
+<span data-ttu-id="9b89e-108">Následující tabulka shrnuje zdrojového řádku, souboru a cesty identifikátorů, které jsou k dispozici v jazyce F #.</span><span class="sxs-lookup"><span data-stu-id="9b89e-108">The following table summarizes the source line, file, and path identifiers that are available in F#.</span></span> <span data-ttu-id="9b89e-109">Tyto identifikátory nejsou makra preprocesoru; jsou předdefinované hodnoty, které jsou rozpoznávány kompilátorem.</span><span class="sxs-lookup"><span data-stu-id="9b89e-109">These identifiers are not preprocessor macros; they are built-in values that are recognized by the compiler.</span></span>
+
+|<span data-ttu-id="9b89e-110">Předdefinovaný identifikátor</span><span class="sxs-lookup"><span data-stu-id="9b89e-110">Predefined identifier</span></span>|<span data-ttu-id="9b89e-111">Popis</span><span class="sxs-lookup"><span data-stu-id="9b89e-111">Description</span></span>|
 |---------------------|-----------|
-|`__LINE__`|<span data-ttu-id="6124d-112">Výsledkem je aktuální číslo řádku, s `#line` direktivy.</span><span class="sxs-lookup"><span data-stu-id="6124d-112">Evaluates to the current line number, considering `#line` directives.</span></span>|
-|`__SOURCE_DIRECTORY__`|<span data-ttu-id="6124d-113">Vyhodnotí jako aktuální úplnou cestu zdrojového adresáře s `#line` direktivy.</span><span class="sxs-lookup"><span data-stu-id="6124d-113">Evaluates to the current full path of the source directory, considering `#line` directives.</span></span>|
-|`__SOURCE_FILE__`|<span data-ttu-id="6124d-114">Vyhodnotí aktuální název zdrojového souboru a jeho cesty s `#line` direktivy.</span><span class="sxs-lookup"><span data-stu-id="6124d-114">Evaluates to the current source file name and its path, considering `#line` directives.</span></span>|
-<span data-ttu-id="6124d-115">Další informace o `#line` direktivy, viz [direktivy kompilátoru](compiler-directives.md).</span><span class="sxs-lookup"><span data-stu-id="6124d-115">For more information about the `#line` directive, see [Compiler Directives](compiler-directives.md).</span></span>
+|`__LINE__`|<span data-ttu-id="9b89e-112">Aktuální číslo řádku, je vyhodnocen jako zvážení `#line` direktivy.</span><span class="sxs-lookup"><span data-stu-id="9b89e-112">Evaluates to the current line number, considering `#line` directives.</span></span>|
+|`__SOURCE_DIRECTORY__`|<span data-ttu-id="9b89e-113">Vyhodnotí jako aktuální úplná cesta zdrojového adresáře, vzhledem k tomu `#line` direktivy.</span><span class="sxs-lookup"><span data-stu-id="9b89e-113">Evaluates to the current full path of the source directory, considering `#line` directives.</span></span>|
+|`__SOURCE_FILE__`|<span data-ttu-id="9b89e-114">Vyhodnotí na aktuální název zdrojového souboru a jeho cestu vzhledem k tomu `#line` direktivy.</span><span class="sxs-lookup"><span data-stu-id="9b89e-114">Evaluates to the current source file name and its path, considering `#line` directives.</span></span>|
+<span data-ttu-id="9b89e-115">Další informace o `#line` direktiv, viz [direktivy kompilátoru](compiler-directives.md).</span><span class="sxs-lookup"><span data-stu-id="9b89e-115">For more information about the `#line` directive, see [Compiler Directives](compiler-directives.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="6124d-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="6124d-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="9b89e-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="9b89e-116">Example</span></span>
 
-<span data-ttu-id="6124d-117">Následující příklad kódu ukazuje použití těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="6124d-117">The following code example demonstrates the use of these values.</span></span>
+<span data-ttu-id="9b89e-117">Následující příklad kódu ukazuje použití těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="9b89e-117">The following code example demonstrates the use of these values.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet7401.fs)]
 
-<span data-ttu-id="6124d-118">Výstup:</span><span class="sxs-lookup"><span data-stu-id="6124d-118">Output:</span></span>
+<span data-ttu-id="9b89e-118">Výstup:</span><span class="sxs-lookup"><span data-stu-id="9b89e-118">Output:</span></span>
 
 ```
 Line: 4
@@ -48,7 +48,7 @@ Source Directory: C:\Users\username\Documents\Visual Studio 2017\Projects\Source
 Source File: C:\Users\username\Documents\Visual Studio 2017\Projects\SourceInfo\SourceInfo\Program.fs
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6124d-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="6124d-119">See Also</span></span>
-[<span data-ttu-id="6124d-120">Direktivy kompilátoru</span><span class="sxs-lookup"><span data-stu-id="6124d-120">Compiler Directives</span></span>](compiler-directives.md)
+## <a name="see-also"></a><span data-ttu-id="9b89e-119">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9b89e-119">See also</span></span>
 
-[<span data-ttu-id="6124d-121">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="6124d-121">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="9b89e-120">Direktivy kompilátoru</span><span class="sxs-lookup"><span data-stu-id="9b89e-120">Compiler Directives</span></span>](compiler-directives.md)
+- [<span data-ttu-id="9b89e-121">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="9b89e-121">F# Language Reference</span></span>](index.md)

@@ -1,44 +1,47 @@
 ---
 title: '%= – operátor (Referenční dokumentace jazyka C#)'
-ms.date: 04/04/2018
+ms.date: 09/04/2018
 f1_keywords:
 - '%=_CSharpKeyword'
 helpviewer_keywords:
 - remainder assignment operator (%=) [C#]
 - '%= assignment operator (remainder assignment) [C#]'
 ms.assetid: 47e5f068-1d97-4010-bd3b-e21b5d3a77f5
-ms.openlocfilehash: 009c162b13fab05ba349d0535fe8dfae206502f3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c475517666bdadaa457dbb4188808b3a96fcdf0e
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507934"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43738285"
 ---
-# <a name="-operator-c-reference"></a><span data-ttu-id="55428-102">%= – operátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="55428-102">%= Operator (C# Reference)</span></span>
-<span data-ttu-id="55428-103">Operátor přiřazení zbytku.</span><span class="sxs-lookup"><span data-stu-id="55428-103">The remainder assignment operator.</span></span>  
-  
-## <a name="remarks"></a><span data-ttu-id="55428-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="55428-104">Remarks</span></span>  
- <span data-ttu-id="55428-105">Pomocí výrazu `%=` operátor přiřazení, jako například</span><span class="sxs-lookup"><span data-stu-id="55428-105">An expression using the `%=` assignment operator, such as</span></span>  
-  
-```csharp  
-x %= y  
-```  
-  
- <span data-ttu-id="55428-106">je ekvivalentem</span><span class="sxs-lookup"><span data-stu-id="55428-106">is equivalent to</span></span>  
-  
-```csharp  
-x = x % y  
-```  
-  
- <span data-ttu-id="55428-107">s tím rozdílem, že `x` se jenom vyhodnotí jednou.</span><span class="sxs-lookup"><span data-stu-id="55428-107">except that `x` is only evaluated once.</span></span> <span data-ttu-id="55428-108">[% – Operátor](../../../csharp/language-reference/operators/remainder-operator.md) předdefinovaných číselných typů k výpočtu zbytek po dělení.</span><span class="sxs-lookup"><span data-stu-id="55428-108">The [% operator](../../../csharp/language-reference/operators/remainder-operator.md) is predefined for numeric types to compute the remainder after division.</span></span>  
-  
- <span data-ttu-id="55428-109">`%=` Operátor nelze přetížit přímo, ale lze přetěžovat uživatelsky definované typy [% – operátor](../../../csharp/language-reference/operators/remainder-operator.md) (viz [– operátor (referenční dokumentace jazyka C#)](../../../csharp/language-reference/keywords/operator.md)).</span><span class="sxs-lookup"><span data-stu-id="55428-109">The `%=` operator cannot be overloaded directly, but user-defined types can overload the [% operator](../../../csharp/language-reference/operators/remainder-operator.md) (see [operator (C# Reference)](../../../csharp/language-reference/keywords/operator.md)).</span></span>  
-  
-## <a name="example"></a><span data-ttu-id="55428-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="55428-110">Example</span></span>  
- [!code-csharp[csRefOperators#4](../../../csharp/language-reference/operators/codesnippet/CSharp/modulus-assignment-operator_1.cs)]  
-  
-## <a name="see-also"></a><span data-ttu-id="55428-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="55428-111">See Also</span></span>
+# <a name="-operator-c-reference"></a><span data-ttu-id="e43da-102">%= – operátor (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="e43da-102">%= Operator (C# Reference)</span></span>
 
-- [<span data-ttu-id="55428-112">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="55428-112">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="55428-113">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="55428-113">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="55428-114">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="55428-114">C# Operators</span></span>](../../../csharp/language-reference/operators/index.md)
+<span data-ttu-id="e43da-103">Operátor přiřazení zbytku.</span><span class="sxs-lookup"><span data-stu-id="e43da-103">The remainder assignment operator.</span></span>
+
+<span data-ttu-id="e43da-104">Pomocí výrazu `%=` operátorů, například</span><span class="sxs-lookup"><span data-stu-id="e43da-104">An expression using the `%=` operator, such as</span></span>  
+
+```csharp
+x %= y
+```  
+
+<span data-ttu-id="e43da-105">je ekvivalentem</span><span class="sxs-lookup"><span data-stu-id="e43da-105">is equivalent to</span></span>  
+
+```csharp
+x = x % y
+```  
+
+<span data-ttu-id="e43da-106">s tím rozdílem, že `x` se jenom vyhodnotí jednou.</span><span class="sxs-lookup"><span data-stu-id="e43da-106">except that `x` is only evaluated once.</span></span>
+  
+<span data-ttu-id="e43da-107">[Operátor zbytku](remainder-operator.md) `%` podporuje všechny číselné typy a vypočítá zbytek po dělení operandů.</span><span class="sxs-lookup"><span data-stu-id="e43da-107">The [remainder operator](remainder-operator.md) `%` is supported by all numeric types and computes the remainder after division of its operands.</span></span>
+
+<span data-ttu-id="e43da-108">Pokud uživatelský typ [přetížení](../keywords/operator.md) [operátor zbytku](remainder-operator.md) `%`, operátor přiřazení zbytku `%=` je implicitně přetížena.</span><span class="sxs-lookup"><span data-stu-id="e43da-108">If a user-defined type [overloads](../keywords/operator.md) the [remainder operator](remainder-operator.md) `%`, the remainder assignment operator `%=` is implicitly overloaded.</span></span>
+  
+<span data-ttu-id="e43da-109">Následující příklad ukazuje použití `%=` operátor:</span><span class="sxs-lookup"><span data-stu-id="e43da-109">The following example demonstrates the usage of the `%=` operator:</span></span>
+
+[!code-csharp-interactive[%= example](~/samples/snippets/csharp/language-reference/operators/RemainderExamples.cs#3)]
+
+## <a name="see-also"></a><span data-ttu-id="e43da-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e43da-110">See also</span></span>
+
+- [<span data-ttu-id="e43da-111">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e43da-111">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="e43da-112">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="e43da-112">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="e43da-113">Operátory jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e43da-113">C# Operators</span></span>](index.md)

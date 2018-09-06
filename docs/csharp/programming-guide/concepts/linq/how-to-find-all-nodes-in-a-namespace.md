@@ -3,17 +3,17 @@ title: 'Postupy: vyhledání všech uzlů v Namespace (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
 ms.openlocfilehash: 0675795da7c190e6d105ac61027c28f161961099
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43671566"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43779217"
 ---
-# <a name="how-to-find-all-nodes-in-a-namespace-c"></a><span data-ttu-id="77022-102">Postupy: vyhledání všech uzlů v Namespace (C#)</span><span class="sxs-lookup"><span data-stu-id="77022-102">How to: Find All Nodes in a Namespace (C#)</span></span>
-<span data-ttu-id="77022-103">Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="77022-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span></span>  
+# <a name="how-to-find-all-nodes-in-a-namespace-c"></a><span data-ttu-id="02fe2-102">Postupy: vyhledání všech uzlů v Namespace (C#)</span><span class="sxs-lookup"><span data-stu-id="02fe2-102">How to: Find All Nodes in a Namespace (C#)</span></span>
+<span data-ttu-id="02fe2-103">Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="02fe2-103">You can filter on the namespace of each element or attribute to find all nodes in that particular namespace.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="77022-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="77022-104">Example</span></span>  
- <span data-ttu-id="77022-105">Následující příklad vytvoří stromu XML pomocí dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="77022-105">The following example creates an XML tree with two namespaces.</span></span> <span data-ttu-id="77022-106">Pak Iteruje přes stromu a Vypíše názvy všech elementů a atributů v jednom z těchto oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="77022-106">It then iterates through the tree and prints the names of all the elements and attributes in one of those namespaces.</span></span>  
+## <a name="example"></a><span data-ttu-id="02fe2-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="02fe2-104">Example</span></span>  
+ <span data-ttu-id="02fe2-105">Následující příklad vytvoří stromu XML pomocí dva obory názvů.</span><span class="sxs-lookup"><span data-stu-id="02fe2-105">The following example creates an XML tree with two namespaces.</span></span> <span data-ttu-id="02fe2-106">Pak Iteruje přes stromu a Vypíše názvy všech elementů a atributů v jednom z těchto oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="02fe2-106">It then iterates through the tree and prints the names of all the elements and attributes in one of those namespaces.</span></span>  
   
 ```csharp  
 string markup = @"<aw:Root xmlns:aw='http://www.adventure-works.com' xmlns:fc='www.fourthcoffee.com'>  
@@ -35,7 +35,7 @@ foreach (XElement el in awElements)
     Console.WriteLine(el.Name.ToString());  
 ```  
   
- <span data-ttu-id="77022-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="77022-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="02fe2-107">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="02fe2-107">This code produces the following output:</span></span>  
   
 ```  
 Nodes in the http://www.adventure-works.com namespace  
@@ -43,10 +43,10 @@ Nodes in the http://www.adventure-works.com namespace
 {http://www.adventure-works.com}GrandChild2  
 ```  
   
-## <a name="example"></a><span data-ttu-id="77022-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="77022-108">Example</span></span>  
- <span data-ttu-id="77022-109">Soubor XML přistupuje následující dotaz obsahuje nákupních objednávek ve dvou různých oborech názvů.</span><span class="sxs-lookup"><span data-stu-id="77022-109">The XML file accessed by the following query contains purchase orders in two different namespaces.</span></span> <span data-ttu-id="77022-110">Dotaz vytvoří nové větve s prvky v jednom z oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="77022-110">The query creates a new tree with just the elements in one of the namespaces.</span></span>  
+## <a name="example"></a><span data-ttu-id="02fe2-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="02fe2-108">Example</span></span>  
+ <span data-ttu-id="02fe2-109">Soubor XML přistupuje následující dotaz obsahuje nákupních objednávek ve dvou různých oborech názvů.</span><span class="sxs-lookup"><span data-stu-id="02fe2-109">The XML file accessed by the following query contains purchase orders in two different namespaces.</span></span> <span data-ttu-id="02fe2-110">Dotaz vytvoří nové větve s prvky v jednom z oborů názvů.</span><span class="sxs-lookup"><span data-stu-id="02fe2-110">The query creates a new tree with just the elements in one of the namespaces.</span></span>  
   
- <span data-ttu-id="77022-111">Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="77022-111">This example uses the following XML document: [Sample XML File: Consolidated Purchase Orders](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span></span>  
+ <span data-ttu-id="02fe2-111">Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: konsolidované nákupní objednávky](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span><span class="sxs-lookup"><span data-stu-id="02fe2-111">This example uses the following XML document: [Sample XML File: Consolidated Purchase Orders](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-consolidated-purchase-orders.md).</span></span>  
   
 ```csharp  
 XDocument cpo = XDocument.Load("ConsolidatedPurchaseOrders.xml");  
@@ -59,7 +59,7 @@ XElement newTree = new XElement("Root",
 Console.WriteLine(newTree);  
 ```  
   
- <span data-ttu-id="77022-112">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="77022-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="02fe2-112">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="02fe2-112">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -95,6 +95,6 @@ Console.WriteLine(newTree);
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="77022-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="77022-113">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="02fe2-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="02fe2-113">See Also</span></span>
 
-- [<span data-ttu-id="77022-114">Základní dotazy (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="77022-114">Basic Queries (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [<span data-ttu-id="02fe2-114">Základní dotazy (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="02fe2-114">Basic Queries (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)

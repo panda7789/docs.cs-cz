@@ -2,17 +2,17 @@
 title: 'Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
-ms.openlocfilehash: 618f1942133401718dcc71d54476043d27e0c036
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 09ce574c68cbf11c0ee50df663692fd207038758
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33321298"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43734233"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a><span data-ttu-id="4c019-102">Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="4c019-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (C#)</span></span>
-<span data-ttu-id="4c019-103">Někdy může nacházet ve více než jednu složku soubory, které mají stejný název.</span><span class="sxs-lookup"><span data-stu-id="4c019-103">Sometimes files that have the same name may be located in more than one folder.</span></span> <span data-ttu-id="4c019-104">Například v sadě Visual Studio instalační složce mít několik složky souboru readme.htm.</span><span class="sxs-lookup"><span data-stu-id="4c019-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span></span> <span data-ttu-id="4c019-105">Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce.</span><span class="sxs-lookup"><span data-stu-id="4c019-105">This example shows how to query for such duplicate file names under a specified root folder.</span></span> <span data-ttu-id="4c019-106">Druhý příklad ukazuje, jak se dotázat na soubory, jejíž aktuální velikost a času vytvoření také shodovat.</span><span class="sxs-lookup"><span data-stu-id="4c019-106">The second example shows how to query for files whose size and creation times also match.</span></span>  
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a><span data-ttu-id="8b33e-102">Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="8b33e-102">How to: Query for Duplicate Files in a Directory Tree (LINQ) (C#)</span></span>
+<span data-ttu-id="8b33e-103">Někdy může nacházet v více složek soubory, které mají stejný název.</span><span class="sxs-lookup"><span data-stu-id="8b33e-103">Sometimes files that have the same name may be located in more than one folder.</span></span> <span data-ttu-id="8b33e-104">Například v instalační složce aplikace Visual Studio, mají několik složek souboru readme.htm.</span><span class="sxs-lookup"><span data-stu-id="8b33e-104">For example, under the Visual Studio installation folder, several folders have a readme.htm file.</span></span> <span data-ttu-id="8b33e-105">Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce.</span><span class="sxs-lookup"><span data-stu-id="8b33e-105">This example shows how to query for such duplicate file names under a specified root folder.</span></span> <span data-ttu-id="8b33e-106">Druhý příklad ukazuje, jak provádět dotazy pro soubory, jejichž velikost a také odpovídat času vytvoření.</span><span class="sxs-lookup"><span data-stu-id="8b33e-106">The second example shows how to query for files whose size and creation times also match.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4c019-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="4c019-107">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="8b33e-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="8b33e-107">Example</span></span>  
   
 ```csharp  
 class QueryDuplicateFileNames  
@@ -167,11 +167,12 @@ class QueryDuplicateFileNames
 }  
 ```  
   
- <span data-ttu-id="4c019-108">První dotaz používá jednoduchý klíč k určení shodu. to vyhledá soubory, které mají stejný název, ale jejichž obsah se mohou lišit.</span><span class="sxs-lookup"><span data-stu-id="4c019-108">The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different.</span></span> <span data-ttu-id="4c019-109">Druhý dotaz používá složené klíče tak, aby odpovídala tři vlastnosti <xref:System.IO.FileInfo> objektu.</span><span class="sxs-lookup"><span data-stu-id="4c019-109">The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object.</span></span> <span data-ttu-id="4c019-110">Tento dotaz je mnohem pravděpodobnější nalézt soubory, které mají stejný název a podobné nebo stejné jako obsah.</span><span class="sxs-lookup"><span data-stu-id="4c019-110">This query is much more likely to find files that have the same name and similar or identical content.</span></span>  
+ <span data-ttu-id="8b33e-108">První dotaz pomocí jednoduchého klíče k určení shody to vyhledá soubory, které mají stejný název, ale jehož obsah se může lišit.</span><span class="sxs-lookup"><span data-stu-id="8b33e-108">The first query uses a simple key to determine a match; this finds files that have the same name but whose contents might be different.</span></span> <span data-ttu-id="8b33e-109">Druhý dotaz používá složený klíč tak, aby odpovídala tři vlastnosti <xref:System.IO.FileInfo> objektu.</span><span class="sxs-lookup"><span data-stu-id="8b33e-109">The second query uses a compound key to match against three properties of the <xref:System.IO.FileInfo> object.</span></span> <span data-ttu-id="8b33e-110">Tento dotaz je mnohem pravděpodobnější k vyhledání souborů, které mají stejný název a obsah podobné nebo identické.</span><span class="sxs-lookup"><span data-stu-id="8b33e-110">This query is much more likely to find files that have the same name and similar or identical content.</span></span>  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="4c019-111">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="4c019-111">Compiling the Code</span></span>  
- <span data-ttu-id="4c019-112">Vytvoření projektu, jehož cílem rozhraní .NET Framework verze 3.5 nebo vyšší, s odkazem na System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="4c019-112">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="8b33e-111">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="8b33e-111">Compiling the Code</span></span>  
+ <span data-ttu-id="8b33e-112">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="8b33e-112">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4c019-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="4c019-113">See Also</span></span>  
- [<span data-ttu-id="4c019-114">LINQ na objekty (C#)</span><span class="sxs-lookup"><span data-stu-id="4c019-114">LINQ to Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
- [<span data-ttu-id="4c019-115">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="4c019-115">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
+## <a name="see-also"></a><span data-ttu-id="8b33e-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="8b33e-113">See Also</span></span>
+
+- [<span data-ttu-id="8b33e-114">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="8b33e-114">LINQ to Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)  
+- [<span data-ttu-id="8b33e-115">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="8b33e-115">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)
