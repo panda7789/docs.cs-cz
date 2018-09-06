@@ -1,27 +1,27 @@
 ---
-title: Udělení oprávnění na úrovni řádků v systému SQL Server
+title: Udělení oprávnění na úrovni řádků na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: a55aaa12-34ab-41cd-9dec-fd255b29258c
-ms.openlocfilehash: 5f777b47c9b2f92c40fec01b4ff0c35fc28dbd89
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4a4b45e13a16b357be28a1383648e98890567ea9
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33361303"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43749152"
 ---
-# <a name="granting-row-level-permissions-in-sql-server"></a>Udělení oprávnění na úrovni řádků v systému SQL Server
-V některých případech je potřeba řízení přístupu k datům na podrobnější úrovni, než jaké jednoduše udělení, odvolání nebo odepření oprávnění poskytuje. Databázové aplikace měla nemocnice například může vyžadovat jednotlivých lékařů být omezený přístup k informacím o související se pouze jejich pacientů. Podobné požadavky nejsou do mnoha prostředí, včetně finance, zákonem, vládních a vojenský aplikace. Aby vám budou snadněji řešit tyto scénáře, SQL Server 2016 poskytuje [zabezpečení na úrovni řádků](https://msdn.microsoft.com/library/dn765131.aspx) funkce, která zjednodušuje a centralizuje logiku přístup na úrovni řádku v zásadách zabezpečení. U starších verzí systému SQL Server můžete dosáhnout podobné funkce pomocí zobrazení na úrovni řádků filtrování uplatní.  
+# <a name="granting-row-level-permissions-in-sql-server"></a>Udělení oprávnění na úrovni řádků na SQL serveru
+V některých případech je potřeba řídit přístup k datům na podrobnější úrovni, než jaké jednoduše udělení, odvolání nebo odepření oprávnění poskytuje. Nemocnice databázové aplikace může například vyžadovat jednotlivé lékařů omezit přístup k informacím o související s pouze pacientů. Podobné požadavky nejsou v mnoha prostředích, včetně finance, zákonem, government a aplikacím armády. K řešení scénářů, SQL Server 2016 poskytuje [zabezpečení na úrovní řádků](https://msdn.microsoft.com/library/dn765131.aspx) funkce, která zjednodušuje a centralizuje logiky přístupu na úrovni řádku v zásadách zabezpečení. U starších verzí systému SQL Server můžete dosáhnout podobné funkce vydává filtrování na úrovni řádků pomocí zobrazení.  
   
 ## <a name="implementing-row-level-filtering"></a>Implementace filtrování na úrovni řádků  
- Filtrování na úrovni řádků se používá pro ukládání informací o do jedné tabulky jako v předchozím příkladu měla nemocnice aplikace. K implementaci nízkoúrovňové filtrování každý řádek má sloupec, který definuje rozdílné parametr, jako je například uživatelské jméno, popisek nebo jiné identifikátor. Můžete vytvořit zásady zabezpečení nebo zobrazení v tabulce, která filtruje řádky, na které má uživatel přístup. Pak vytvořte parametrizované uložené procedury, které řídit typy dotazů, které může spustit uživatel.  
+ Filtrování na úrovni řádků slouží k ukládání informací o do jedné tabulky jako v předchozím příkladu nemocnice aplikací. K implementaci na úrovni řádků filtrování každý řádek obsahuje sloupce, který definuje odlišující parametr, jako je například uživatelské jméno, popisek nebo jiný identifikátor. Vytvoření zásad zabezpečení nebo zobrazení v tabulce, který filtruje řádky, které má uživatel přístup. Pak vytvoříte parametrizované uložené procedury, které řídit typy dotazů, které uživatel může spustit.  
   
- Následující příklad popisuje, jak nakonfigurovat filtrování na základě názvu uživatele nebo přihlášení na úrovni řádků:  
+ Následující příklad popisuje, jak nakonfigurovat filtrování na úrovni řádků na základě názvu uživatele nebo přihlášení:  
   
--   Umožňuje vytvořte tabulku, přidání sloupce pro uložení název.  
+-   Vytvořte tabulku, přidání sloupce pro uložení názvu.  
   
 -   Povolte filtrování na úrovni řádků:  
   
-    -   Pokud používáte SQL Server 2016 nebo novější, nebo [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/), vytvořte zásadu zabezpečení, která přidá vrátil predikát pro tabulku omezení řádky na ty, které odpovídají buď aktuální databáze uživatel (pomocí CURRENT_USER() Integrovaná funkce) nebo aktuální přihlašovací jméno (s použitím předdefinované funkci SUSER_SNAME()):  
+    -   Pokud používáte SQL Server 2016 nebo novější, nebo [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/), vytvořte zásadu zabezpečení, která přidá predikát pro tabulku omezení řádků vrácena na ty, které odpovídají jednomu aktuálního uživatele databáze (pomocí CURRENT_USER() Integrovaná funkce) nebo aktuální přihlašovací jméno (pomocí předdefinované funkci SUSER_SNAME()):  
   
         ```tsql  
         CREATE SCHEMA Security  
@@ -41,7 +41,7 @@ V některých případech je potřeba řízení přístupu k datům na podrobně
         GO  
         ```  
   
-    -   Pokud používáte verzi systému SQL Server před 2016, můžete dosáhnout podobné funkce pomocí zobrazení:  
+    -   Pokud používáte verzi systému SQL Server 2016, můžete dosáhnout použitím zobrazení podobné funkce:  
   
         ```tsql  
         CREATE VIEW vw_MyTable  
@@ -51,26 +51,26 @@ V některých případech je potřeba řízení přístupu k datům na podrobně
         GO  
         ```  
   
--   Vytvořte uložené procedury vybrat, vložit, aktualizovat a odstranit data. Pokud filtrování budou přijaty pomocí zásad zabezpečení, uložené procedury měli provádět tyto operace u základní tabulky přímo. jinak Pokud filtrování budou přijaty zobrazení, uložené procedury místo pracovat na zobrazení. Zásady zabezpečení nebo zobrazení bude automaticky filtrovat řádků vrácena nebo upraveném uživatelských dotazů a uložené procedury budou poskytovat těžší hranice zabezpečení nebudou moct uživatelé s přístupem přímý dotaz úspěšně spouštět dotazy, které lze odvodit existence filtrovaných dat.  
+-   Vytvořte uložené procedury k výběru, vložit, aktualizovat a odstranit data. Pokud filtrování budou přijaty zásady zabezpečení, uložené procedury by měl provádět tyto operace v základní tabulce přímo. v opačném případě Pokud filtrování budou přijaty ve zobrazení, uložené procedury místo toho pracovat na zobrazení. Zásady zabezpečení nebo zobrazení bude automaticky filtrovat řádky instance vrátí, nebo upravit dotazy uživatelů a uložené procedury bude poskytovat obtížnější hranice zabezpečení úspěšně spuštění dotazů, které dokážou odvodit moct uživatelé s přístupem přímých dotazů existence filtrovaná data.  
   
--   Pro uložené procedury, které vkládání dat, zaznamenat uživatelské jméno pomocí stejné funkce určené zásady zabezpečení nebo zobrazení a vložte tuto hodnotu do sloupce uživatelské jméno.  
+-   Pro uložené procedury, které vkládají data zachytit pomocí stejné funkce určené v zásadách zabezpečení nebo uživatelské jméno a vložte tuto hodnotu do sloupce uživatelské jméno.  
   
--   Zakázat všechna oprávnění v tabulkách (a zobrazení, pokud je k dispozici) na `public` role. Uživatelé nebudou moci dědí oprávnění od jiných rolí databáze, protože predikát filtru je založena na uživatele nebo přihlašovací jména, nikoli na role.  
+-   Zakázat všechna oprávnění pro tabulky (a zobrazení, pokud je k dispozici) na `public` role. Uživatelé nebudou mít dědění oprávnění z jiné databázové role, protože predikát filtru je založena na uživatele nebo přihlašovací jména, ne na role.  
   
--   Udělení provést uložené procedury pro databázové role. Data mohou uživatelé přistupovat pouze prostřednictvím uložené postupy uvedené.  
+-   Udělení spustit na uložené procedury pro databázové role. Data mohou uživatelé přistupovat pouze prostřednictvím uložené procedury, které jsou k dispozici.  
   
 ## <a name="external-resources"></a>Externí zdroje  
- Další informace najdete v následujícím zdroji.  
+ Další informace najdete v následujících prostředků.  
   
 |||  
 |-|-|  
-|[Implementace zabezpečení na úrovni řádku a buňky v klasifikovaný databáze pomocí systému SQL Server 2005](http://go.microsoft.com/fwlink/?LinkId=98227) na webu TechCenter pro SQL Server lokality.|Popisuje, jak pomocí zabezpečení na úrovni řádku a buňky splňovat požadavky zabezpečení klasifikovaný databáze.|  
+|[Implementace zabezpečení na úrovní řádků a buňky v klasifikované databáze pomocí SQL Server 2005](https://go.microsoft.com/fwlink/?LinkId=98227) na webu TechCenter pro SQL Server lokality.|Popisuje způsob použití zabezpečení na úrovní řádků a buňky pro splnění požadavků zabezpečení klasifikované databáze.|  
   
 ## <a name="see-also"></a>Viz také  
- [Zabezpečení na úrovni řádků](https://msdn.microsoft.com/library/dn765131.aspx)  
+ [Zabezpečení na úrovní řádků](https://msdn.microsoft.com/library/dn765131.aspx)  
  [Zabezpečení aplikací ADO.NET](../../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  
  [Přehled zabezpečení SQL Serveru](../../../../../docs/framework/data/adonet/sql/overview-of-sql-server-security.md)  
  [Scénáře zabezpečení aplikací na SQL Serveru](../../../../../docs/framework/data/adonet/sql/application-security-scenarios-in-sql-server.md)  
  [Správa oprávnění pomocí uložených procedur na SQL Serveru](../../../../../docs/framework/data/adonet/sql/managing-permissions-with-stored-procedures-in-sql-server.md)  
  [Zápis zabezpečené dynamické SQL na SQL Serveru](../../../../../docs/framework/data/adonet/sql/writing-secure-dynamic-sql-in-sql-server.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

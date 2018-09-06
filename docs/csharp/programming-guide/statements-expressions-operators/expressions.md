@@ -5,12 +5,12 @@ helpviewer_keywords:
 - expressions [C#]
 - C# language, expressions
 ms.assetid: c7d8feb0-0e58-4f94-8bf6-4d070550a832
-ms.openlocfilehash: bb70a7e3dfd8b274987bf68568004d785afd0ee1
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 3cf084102186d9e13727c36ed14e2ea72ca324f9
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936945"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43739557"
 ---
 # <a name="expressions-c-programming-guide"></a>Výrazy (Průvodce programováním v C#)
 *Výraz* je posloupnost nula nebo více operátory, které lze vyhodnotit na jednu hodnotu, objekt, metodu nebo obor názvů a jednu nebo více operandů. Výrazy se může skládat z literálovou hodnotou, volání metody, operátor a jeho operandy nebo *jednoduchý název*. Název proměnné, člen typu, parametr metody, obor názvů nebo typ může být jednoduché názvy.  
@@ -72,10 +72,11 @@ C# podporuje *členové tvoření*, které umožňují zadat definici stručné 
 ## <a name="remarks"></a>Poznámky  
  Pokaždé, když se proměnná, vlastnost objektu nebo objekt přístup indexeru je identifikován z výrazu, hodnota této položky se používá jako hodnotu výrazu. Výraz může být umístěna kdekoli v jazyce C# ve kterém jsou vyžadována, hodnotu nebo objekt za předpokladu, takže v konečném důsledku je vyhodnocen požadovaného typu.  
 
-## <a name="see-also"></a>Viz také:  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
- [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
- [Typy](../../../csharp/programming-guide/types/index.md)  
- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Metody](../../../csharp/programming-guide/classes-and-structs/methods.md)  
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
+- [Operátory](../../../csharp/programming-guide/statements-expressions-operators/operators.md)  
+- [Typy](../../../csharp/programming-guide/types/index.md)  
+- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)

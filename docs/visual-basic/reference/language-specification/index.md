@@ -7,11 +7,11 @@ helpviewer_keywords:
 - specifications, Visual Basic
 ms.assetid: 42c30017-19d0-442e-87a2-850b66ddc3df
 ms.openlocfilehash: 6708ad107a2ee5b4ba2896d811c103ed49b476b8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403825"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43738856"
 ---
 # <a name="visual-basic-language-specification"></a>Specifikace jazyka Visual Basic
 Specifikace jazyka Visual Basic je autoritativní zdroj pro odpovědi na všechny dotazy o gramatice jazyka Visual Basic a syntaxi. Obsahuje podrobné informace o jazyce, včetně počtu bodů nejsou zahrnuta v referenční dokumentace jazyka Visual Basic.  

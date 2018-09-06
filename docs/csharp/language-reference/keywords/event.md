@@ -10,11 +10,11 @@ helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
 ms.openlocfilehash: 35a42692bc87da63c69d7ccbce1b49396a84f5a2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43562269"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43749285"
 ---
 # <a name="event-c-reference"></a>event (Referenční dokumentace jazyka C#)
 `event` – Klíčové slovo se používá pro deklaraci události ve třídě vydavatele.  

@@ -4,18 +4,18 @@ description: Další informace o jazyce C# úrovni jazyka asynchronní programov
 author: cartermp
 ms.date: 06/20/2016
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: ae1c9b1569b5fb6784f50ec9d78a44380242fcd8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 971295b85e5f2763eef87bfe9109524db2630120
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518245"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43741367"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
 Pokud máte jakékoli vstupně-výstupní požadavky (například požadavek na data ze sítě nebo přístup k databázi), budete chtít využívat asynchronní programování.  Můžete mít také vázané na procesor kódu, jako je například provádění nákladné výpočtu, která je také vhodné scénář pro psaní asynchronního kódu.
 
-C# má úroveň jazyka asynchronní programovací model, který umožňuje snadno psaní asynchronního kódu bez nutnosti přehlednější zpětná volání nebo do knihovny, která podporuje asynchronii v souladu. Vyplývá, která se označuje jako [úkolově orientovanou asynchronní vzor (TAP)](https://msdn.microsoft.com/library/hh873175.aspx).
+C# má úroveň jazyka asynchronní programovací model, který umožňuje snadno psaní asynchronního kódu bez nutnosti přehlednější zpětná volání nebo do knihovny, která podporuje asynchronii v souladu. Vyplývá, která se označuje jako [úkolově orientovanou asynchronní vzor (TAP)](../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).
 
 ## <a name="basic-overview-of-the-asynchronous-model"></a>Základní přehled asynchronní Model
 

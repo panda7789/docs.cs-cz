@@ -3,11 +3,11 @@ title: Vytvoření třídy GamePieceCollection
 ms.date: 03/30/2017
 ms.assetid: e4b037ee-1201-4a55-b198-0d6532ed6f35
 ms.openlocfilehash: 6323122735273f77bfe9d61bf2df84cabe3e5d6c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43532016"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43740059"
 ---
 # <a name="creating-the-gamepiececollection-class"></a>Vytvoření třídy GamePieceCollection
 **GamePieceCollection** třídy je odvozen z obecného seznamu třídy a zavádí metody snadněji spravovat více **GamePiece** objekty.  

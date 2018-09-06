@@ -2,18 +2,19 @@
 title: Bitové operátory (F#)
 description: 'Další informace o bitové operátory, které jsou k dispozici v programovacím jazyce F #.'
 ms.date: 07/20/2018
-ms.openlocfilehash: abd2778eba422b3ce2a3472efd458446854b3d2f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ed76fcf5f9c569a2f288cf260e99dc29fd65ef3b
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43559553"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43784365"
 ---
 # <a name="bitwise-operators"></a>Bitové operátory
 
 Toto téma popisuje bitové operátory, které jsou k dispozici v jazyce F #.
 
 ## <a name="summary-of-bitwise-operators"></a>Souhrnné informace o bitové operátory
+
 Následující tabulka popisuje bitové operátory, které jsou podporovány pro bez unboxingu integrální typy v jazyce F #.
 
 |Operátor|Poznámky|
@@ -27,10 +28,8 @@ Následující tabulka popisuje bitové operátory, které jsou podporovány pro
 
 Následující typy je možné s bitové operátory: `byte`, `sbyte`, `int16`, `uint16`, `int32 (int)`, `uint32`, `int64`, `uint64`, `nativeint`, a `unativeint`.
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace symbolů a operátorů](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Aritmetické operátory](arithmetic-operators.md)
-
-[Logické operátory](boolean-operators.md)
-
+- [Referenční dokumentace symbolů a operátorů](index.md)
+- [Aritmetické operátory](arithmetic-operators.md)
+- [Logické operátory](boolean-operators.md)

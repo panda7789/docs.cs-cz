@@ -1,46 +1,46 @@
 ---
-title: LINQ na objekty (C#)
+title: LINQ to Objects (C#)
 ms.date: 07/20/2015
 ms.assetid: c5c2c178-3529-4f6c-b3df-2d5267af7f22
-ms.openlocfilehash: dce90ce78668b3732db31dee6d0a233c4d39557f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 19dd15fdd7e818e0619647205f2369a55f3bc2b0
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33323495"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43741670"
 ---
-# <a name="linq-to-objects-c"></a>LINQ na objekty (C#)
-Termín "LINQ na objekty" odkazuje na použití LINQ dotazy s žádným <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> kolekce přímo, bez použití zprostředkující LINQ zprostředkovatele nebo rozhraní API jako třeba [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) nebo [technologie LINQ to XML](http://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13). LINQ můžete použít k dotazování všechny vyčíslitelná kolekce, jako <xref:System.Collections.Generic.List%601>, <xref:System.Array>, nebo <xref:System.Collections.Generic.Dictionary%602>. Kolekce může být definovaný uživatelem, nebo mohou být vráceny rozhraní API rozhraní .NET Framework.  
+# <a name="linq-to-objects-c"></a>LINQ to Objects (C#)
+Termín "LINQ na objekty" odkazuje na použití odkazu LINQ dotazy s žádným <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601> kolekce přímo, bez použití zprostředkující zprostředkovatele LINQ nebo rozhraní API, jako [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) nebo [LINQ to XML](../../../../csharp/programming-guide/concepts/linq/linq-to-xml.md). LINQ můžete použít k dotazování všechny vyčíslitelné kolekce, jako například <xref:System.Collections.Generic.List%601>, <xref:System.Array>, nebo <xref:System.Collections.Generic.Dictionary%602>. Kolekce může být uživatelem definované nebo mohou být vráceny rozhraní API .NET Framework.  
   
- LINQ na objekty v základní smysl, představuje nový přístup do kolekcí. Původní způsobem, jste museli zápisu komplexní `foreach` smyčky zadaných postup načtení dat z kolekce. V metodě LINQ zápisu deklarativní kód, který popisuje, co chcete načíst.  
+ V základní smysl představuje LINQ to Objects nový přístup ke kolekcím. Starý způsob jste museli psát složité `foreach` smyček, které zadaná jak načíst data z kolekce. U přístupu s LINQ napíšete deklarativního kódu, který popisuje, co chcete načíst.  
   
- Kromě toho dotazů LINQ nabízí tři hlavní výhody přes tradiční `foreach` smyčky:  
+ Kromě toho dotazů LINQ nabízejí tři hlavní výhody oproti tradičním `foreach` smyček:  
   
-1.  Jsou více stručná a čitelná, zejména v případě, že filtrování více podmínek.  
+1.  Jsou stručnějším a čitelnějším, zejména v případě, že filtrování více podmínek.  
   
-2.  Poskytují výkonný filtrování, řazení a seskupování možnosti s minimální kódu aplikace.  
+2.  Poskytují efektivní filtrování, řazení a seskupování schopností minimální kódu aplikace.  
   
-3.  Může být přesně do jiné zdroje dat se žádné nebo téměř žádné změny.  
+3.  Může být přenést k jiným zdrojům dat s téměř nebo vůbec žádné změny.  
   
- Obecně platí, tím složitější operace, kterou chcete provést na datech, další výhody zjistíte pomocí LINQ místo tradiční iterace techniky.  
+ Obecně platí, tím složitější operace, které chcete provést na datech, další výhody značným s využitím jazyka LINQ místo iterace tradiční techniky.  
   
- Účelem této části je za účelem ukázky LINQ přístup s příklady vyberte. Rozhraní není určeno jako vyčerpávající.  
+ Cílem této části je předvést přístup LINQ s příklady vyberte. Není určena být vyčerpávající.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [LINQ a řetězce (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-strings.md)  
- Vysvětluje, jak lze pro dotazování a Transformace řetězců a kolekcí řetězců LINQ. Taky obsahuje odkazy na témata, která ukazují tyto zásady.  
+ Tento článek vysvětluje použití LINQ na dotazování a transformaci řetězce a kolekce řetězců. Obsahuje také odkazy na témata, která ukazují tyto zásady.  
   
  [LINQ a reflexe (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-reflection.md)  
- Odkazy na vzorku, který ukazuje, jak LINQ používá reflexe.  
+ Obsahuje odkazy na ukázky, která ukazuje, jak LINQ používá reflexi.  
   
  [LINQ a souborové adresáře (C#)](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)  
- Vysvětluje, jak lze pomocí LINQ komunikovat se systémy souborů. Taky obsahuje odkazy na témata, která ukazují tyto koncepty.  
+ Vysvětluje, jak lze pomocí LINQ komunikovat se systémy souborů. Obsahuje také odkazy na témata, které předvádějí koncepce.  
   
- [Postupy: dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)  
- Ukazuje, jak dotazu na ArrayList v jazyce C#.  
+ [Postupy: vytvoření dotazu na ArrayList pomocí LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md)  
+ Demonstruje postup vytvoření dotazu na ArrayList v jazyce C#.  
   
- [Postupy: Přidání vlastních metod pro dotazů LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md)  
- Vysvětluje, jak rozšířit sadu metody, které můžete použít pro dotazy LINQ přidáním rozšiřující metody, které <xref:System.Collections.Generic.IEnumerable%601> rozhraní.  
+ [Postupy: přidávání vlastních metod do dotazů LINQ (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md)  
+ Vysvětluje, jak rozšířit sadu metod, které můžete použít pro LINQ dotazy přidáním rozšiřující metody, které <xref:System.Collections.Generic.IEnumerable%601> rozhraní.  
   
  [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)  
- Obsahuje odkazy na témata, která popisují LINQ a zadejte příklady kódu, které provádět dotazy.
+ Obsahuje odkazy na témata, která vysvětlují LINQ a příklady kódu, které provádějí dotazy.

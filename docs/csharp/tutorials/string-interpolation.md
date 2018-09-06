@@ -3,12 +3,12 @@ title: Interpolace řetězců v jazyce C#
 description: Zjistěte, jak mají být zahrnuty výsledky výrazu formátovaný výsledný řetězec v jazyce C# pomocí interpolace řetězců.
 author: pkulikov
 ms.date: 05/09/2018
-ms.openlocfilehash: 447e87cd4aae49896f0efbb8ece6097181079266
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: b28890034cc0ab73f96c825b5548223e1c5cd1f4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43419096"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732907"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězců v jazyce C# #
 
@@ -106,9 +106,9 @@ Spolu s <xref:System.FormattableString.ToString(System.IFormatProvider)?displayP
 
 Tento kurz popisuje běžné scénáře použití interpolace řetězců. Další informace o interpolace řetězců, najdete v článku [interpolace](../language-reference/tokens/interpolated.md) tématu. Další informace o formátování typy v rozhraní .NET najdete v tématu [formátovací typy v .NET](../../standard/base-types/formatting-types.md) a [složené formátování](../../standard/base-types/composite-formatting.md) témata.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
-<xref:System.String.Format%2A?displayProperty=nameWithType>  
-<xref:System.FormattableString?displayProperty=nameWithType>  
-<xref:System.IFormattable?displayProperty=nameWithType>  
-[Řetězce](../programming-guide/strings/index.md)  
+- <xref:System.String.Format%2A?displayProperty=nameWithType>  
+- <xref:System.FormattableString?displayProperty=nameWithType>  
+- <xref:System.IFormattable?displayProperty=nameWithType>  
+- [Řetězce](../programming-guide/strings/index.md)  

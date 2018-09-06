@@ -2,20 +2,20 @@
 title: Platný obsah XElement a XDocument Objects3
 ms.date: 07/20/2015
 ms.assetid: 0d253586-2b97-459f-b1a7-f30f38f3ed9f
-ms.openlocfilehash: 32521941bacdf8d689a81f6136d427307481ddc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: afaeed7ba49891380982ec9c3cade43574ab8c16
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33340317"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732284"
 ---
-# <a name="valid-content-of-xelement-and-xdocument-objects"></a>Platný obsah XElement a XDocument objektů
-Toto téma popisuje platné argumenty, které lze předat konstruktorů a metod, které můžete použít k přidání obsahu do elementů a dokumenty.  
+# <a name="valid-content-of-xelement-and-xdocument-objects"></a>Platný obsah objektů XElement a XDocument
+Toto téma popisuje platné argumenty, které mohou být předány konstruktorů a metod, které použijete k přidání obsahu do prvků a dokumenty.  
   
 ## <a name="valid-content"></a>Platný obsah  
- Dotazy často vyhodnocení <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> nebo <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XAttribute>. Můžete předat kolekce <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> objekty ke <xref:System.Xml.Linq.XElement> konstruktor. Proto je vhodné k předání výsledků dotazu jako obsah do metod a konstruktory, které můžete použít k naplnění stromy XML.  
+ Dotazy často vyhodnotit <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XElement> nebo <xref:System.Collections.Generic.IEnumerable%601> z <xref:System.Xml.Linq.XAttribute>. Můžete předat kolekce <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> objektů <xref:System.Xml.Linq.XElement> konstruktoru. Proto je vhodné pro předání výsledky dotazu jako obsah do metody a konstruktory, které můžete použít k naplnění stromů XML.  
   
- Při přidávání jednoduchým obsahem, může být různých typů předané této metodě. Platné typy jsou následující:  
+ Při přidání jednoduchého obsahu, může být předán různé typy v této metodě. Platné typy zahrnují následující:  
   
 -   <xref:System.String>  
   
@@ -33,11 +33,11 @@ Toto téma popisuje platné argumenty, které lze předat konstruktorů a metod,
   
 -   <xref:System.DateTimeOffset>  
   
--   Žádný typ, který implementuje `Object.ToString`.  
+-   Libovolný typ, který implementuje `Object.ToString`.  
   
--   Žádný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.  
+-   Libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>.  
   
- Při přidávání složitým obsahem, může být různých typů předaná této metodě:  
+ Při přidávání komplexní obsahu, různé typy lze předat tuto metodu:  
   
 -   <xref:System.Xml.Linq.XObject>  
   
@@ -45,48 +45,49 @@ Toto téma popisuje platné argumenty, které lze předat konstruktorů a metod,
   
 -   <xref:System.Xml.Linq.XAttribute>  
   
--   Žádný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>  
+-   Libovolný typ, který implementuje <xref:System.Collections.Generic.IEnumerable%601>  
   
- Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vytvořena kolekce v objektu, a jsou přidány všechny položky v kolekci. Pokud kolekce obsahuje <xref:System.Xml.Linq.XNode> nebo <xref:System.Xml.Linq.XAttribute> objekty, každá položka v kolekci se přidá samostatně. Pokud kolekce obsahuje text (nebo objekty, které jsou převedeny na text), je text v kolekci zřetězených a přidat jako uzel jednoho textu.  
+ Pokud objekt implementuje <xref:System.Collections.Generic.IEnumerable%601>, je vytvořena kolekce v objektu a jsou přidány všechny položky v kolekci. Pokud kolekce obsahuje <xref:System.Xml.Linq.XNode> nebo <xref:System.Xml.Linq.XAttribute> objekty, každá položka v kolekci se přidá samostatně. Pokud kolekce obsahuje text (nebo objekty, které jsou převedeny na text), je text v kolekci zřetězit a přidat jako jeden textový uzel.  
   
- Pokud je obsah `null`, není nic přidáno. Při předávání kolekce položek v kolekci může být `null`. A `null` položky v kolekci nemá žádný vliv na stromu.  
+ Pokud je obsah `null`, není nic přidáno. Při předání kolekce položek v kolekci může být `null`. A `null` položky v kolekci nemá žádný vliv na stromové struktuře.  
   
- Přidání atributu musí mít jedinečný název v rámci svého nadřazeného elementu.  
+ Přidání atributu musí mít jedinečný název v rámci svého nadřazeného prvku.  
   
- Při přidávání <xref:System.Xml.Linq.XNode> nebo <xref:System.Xml.Linq.XAttribute> objekty, pokud nemá žádný nadřazený uzel s nový obsah, pak objekty jednoduše přiřazeny ke stromu XML. Pokud nový obsah už je nadřazena a je součástí jiného stromu XML, pak je nový obsah klonovat a nově naklonovaný obsah je připojen k stromové struktuře XML.  
+ Při přidávání <xref:System.Xml.Linq.XNode> nebo <xref:System.Xml.Linq.XAttribute> objektů, pokud se nový obsah nemá žádný nadřazený objekt, pak objekty jednoduše připojeny ke stromu XML. Pokud nový obsah už je nadřazena a je součástí jiného stromu XML, poté klonovat nový obsah a nově naklonovaného obsahu je připojen ke stromu XML.  
   
 ## <a name="valid-content-for-documents"></a>Platný obsah pro dokumenty  
  Atributy a jednoduchý obsah nelze přidat do dokumentu.  
   
- Nejsou k dispozici mnoho scénářů, které vyžadují, abyste vytvořili <xref:System.Xml.Linq.XDocument>. Místo toho je možné vytvářet vaše stromy XML s <xref:System.Xml.Linq.XElement> kořenový uzel. Pokud máte specifické požadavky pro vytvoření dokumentu (například proto je nutné vytvořit pokyny pro zpracování a komentáře na nejvyšší úrovni, nebo nemáte k podpoře typů dokumentů), je často vhodnější použít <xref:System.Xml.Linq.XElement> jako kořenový uzel.  
+ Nejsou k dispozici mnoho scénářů, které vyžadují, abyste k vytvoření <xref:System.Xml.Linq.XDocument>. Místo toho je možné vytvářet vaše stromů XML s <xref:System.Xml.Linq.XElement> kořenový uzel. Pokud nemáte konkrétní požadavek na vytvoření dokumentu (například proto budete muset vytvořit pokyny pro zpracování a komentáře na nejvyšší úrovni, nebo máte pro podporu typů dokumentů), často je vhodné použít <xref:System.Xml.Linq.XElement> jako kořenový uzel.  
   
  Platný obsah pro dokument obsahuje následující:  
   
--   Nula nebo jedna <xref:System.Xml.Linq.XDocumentType> objekty. Element musí předcházet typů dokumentů.  
+-   Nula nebo jedna <xref:System.Xml.Linq.XDocumentType> objekty. Typy dokumentů musí předcházet elementu.  
   
--   Nula nebo jeden element.  
+-   Žádný nebo jeden element.  
   
--   Komentáře v počtu nula či více.  
+-   Nula nebo více komentářů.  
   
--   Pokyny pro zpracování nula nebo více.  
+-   Nula nebo více pokyny pro zpracování.  
   
--   Nula nebo více textové uzly, které obsahují jenom prázdné znaky.  
+-   Nula nebo více textové uzly obsahující jenom prázdné znaky.  
   
 ## <a name="constructors-and-functions-that-allow-adding-content"></a>Konstruktory a funkce, které umožňují přidávání obsahu  
- Následující metody umožňují přidat podřízené obsah tak, aby <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:  
+ Následující metody umožňují přidat podřízený obsah do <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>:  
   
 |Metoda|Popis|  
 |------------|-----------------|  
 |<xref:System.Xml.Linq.XElement.%23ctor%2A>|Vytvoří <xref:System.Xml.Linq.XElement>.|  
 |<xref:System.Xml.Linq.XDocument.%23ctor%2A>|Vytvoří <xref:System.Xml.Linq.XDocument>.|  
-|<xref:System.Xml.Linq.XContainer.Add%2A>|Přidá na konec obsahu z podřízené <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>.|  
+|<xref:System.Xml.Linq.XContainer.Add%2A>|Přidá na konec podřízený obsah <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XDocument>.|  
 |<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Přidá obsah po <xref:System.Xml.Linq.XNode>.|  
-|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Přidá obsahu před <xref:System.Xml.Linq.XNode>.|  
-|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Přidá obsah na začátku podřízené obsah <xref:System.Xml.Linq.XContainer>.|  
-|<xref:System.Xml.Linq.XElement.ReplaceAll%2A>|Nahradí všechny obsah (podřízené uzly a atributy) <xref:System.Xml.Linq.XElement>.|  
+|<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Přidá obsah před <xref:System.Xml.Linq.XNode>.|  
+|<xref:System.Xml.Linq.XContainer.AddFirst%2A>|Přidá obsah na začátku podřízený obsah <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XElement.ReplaceAll%2A>|Nahradí veškerý obsah (podřízených uzlů a atributy) ze <xref:System.Xml.Linq.XElement>.|  
 |<xref:System.Xml.Linq.XElement.ReplaceAttributes%2A>|Nahradí atributy <xref:System.Xml.Linq.XElement>.|  
-|<xref:System.Xml.Linq.XContainer.ReplaceNodes%2A>|Podřízené uzly nahradí nový obsah.|  
+|<xref:System.Xml.Linq.XContainer.ReplaceNodes%2A>|Nahradí nový obsah podřízených uzlů.|  
 |<xref:System.Xml.Linq.XNode.ReplaceWith%2A>|Nahradí uzlu nový obsah.|  
   
-## <a name="see-also"></a>Viz také  
- [Vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)
+## <a name="see-also"></a>Viz také
+
+- [Vytváření stromů XML (C#)](../../../../csharp/programming-guide/concepts/linq/creating-xml-trees.md)

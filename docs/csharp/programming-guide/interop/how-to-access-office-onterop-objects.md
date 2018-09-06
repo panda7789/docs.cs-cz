@@ -9,12 +9,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 22fe2930123c40bcb2815e38e7e7593ba66a506c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9d07f8e7b2f4c31af572829256065cf6aa3383bb
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522911"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43739526"
 ---
 # <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Postupy: přístup k objektům Interop sady Office pomocí funkcí Visual C# (C# Programming Guide)
 Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní API Office. Nové funkce patří pojmenované a nepovinné argumenty, nový typ s názvem `dynamic`a možnost předání argumentů do parametrů odkazu v metodách modelu COM, jako by byly parametry s hodnotou.  
@@ -27,7 +27,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-create-a-new-console-application"></a>Vytvořte novou konzolovou aplikaci  
+## <a name="to-create-a-new-console-application"></a>Vytvořte novou konzolovou aplikaci  
   
 1.  Spusťte sadu Visual Studio.  
   
@@ -45,7 +45,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      Nový projekt se zobrazí v **Průzkumníka řešení**.  
   
-### <a name="to-add-references"></a>Přidání odkazů  
+## <a name="to-add-references"></a>Přidání odkazů  
   
 1.  V **Průzkumníka řešení**, klikněte pravým tlačítkem na název vašeho projektu a pak klikněte na tlačítko **přidat odkaz**. **Přidat odkaz** zobrazí se dialogové okno.  
   
@@ -53,7 +53,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 3.  Klikněte na tlačítko **OK**.  
   
-### <a name="to-add-necessary-using-directives"></a>Chcete-li přidat nezbytné direktivy using  
+## <a name="to-add-necessary-using-directives"></a>Chcete-li přidat nezbytné direktivy using  
   
 1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **Program.cs** souboru a pak klikněte na tlačítko **zobrazit kód**.  
   
@@ -61,7 +61,7 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      [!code-csharp[csProgGuideOfficeHowTo#1](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_1.cs)]  
   
-### <a name="to-create-a-list-of-bank-accounts"></a>Chcete-li vytvořit seznam účtů bank  
+## <a name="to-create-a-list-of-bank-accounts"></a>Chcete-li vytvořit seznam účtů bank  
   
 1.  Vložte následující definice třídy do **Program.cs**v části `Program` třídy.  
   
@@ -71,11 +71,11 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      [!code-csharp[csProgGuideOfficeHowTo#3](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_3.cs)]  
   
-### <a name="to-declare-a-method-that-exports-account-information-to-excel"></a>Chcete-li deklarovat metodu, která se exportuje informace o účtu do Excelu  
+## <a name="to-declare-a-method-that-exports-account-information-to-excel"></a>Chcete-li deklarovat metodu, která se exportuje informace o účtu do Excelu  
   
 1.  Přidejte následující metodu do `Program` třídy nastavit Excelového listu.  
   
-     Metoda [přidat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.workbooks.add.aspx) je volitelný parametr určující konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Protože je v následujícím kódu žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `ExcelApp.Workbooks.Add(Type.Missing)`.  
+     Metoda <xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A> je volitelný parametr určující konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Protože je v následujícím kódu žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `ExcelApp.Workbooks.Add(Type.Missing)`.  
   
      [!code-csharp[csProgGuideOfficeHowTo#4](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_4.cs)]  
   
@@ -91,13 +91,13 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      [!code-csharp[csProgGuideOfficeHowTo#13](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_7.cs)]  
   
-     Starší verze jazyka C# vyžaduje explicitní přetypování pro tyto operace protože `ExcelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.aspx) metoda. Následující řádky zobrazují přetypování.  
+     Starší verze jazyka C# vyžaduje explicitní přetypování pro tyto operace protože `ExcelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel <xref:Microsoft.Office.Interop.Excel.Range> metody. Následující řádky zobrazují přetypování.  
   
      [!code-csharp[csProgGuideOfficeHowTo#14](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_8.cs)]  
   
      [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)]a novějších verzích, převede vrácený `Object` k `dynamic` automaticky, pokud je sestavení odkazuje [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) – možnost kompilátoru nebo ekvivalentně, pokud v aplikaci Excel **Embed Interop Types**je nastavena na hodnotu true. Hodnota TRUE je výchozí hodnota této vlastnosti.  
   
-### <a name="to-run-the-project"></a>Spustit projekt  
+## <a name="to-run-the-project"></a>Spustit projekt  
   
 1.  Přidejte následující řádek na konci `Main`.  
   
@@ -107,11 +107,11 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      Zobrazí se Excelového listu, který obsahuje data z obou účtů.  
   
-### <a name="to-add-a-word-document"></a>Chcete-li přidat dokument aplikace Word  
+## <a name="to-add-a-word-document"></a>Chcete-li přidat dokument aplikace Word  
   
 1.  Pro ilustraci další způsoby [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)]a novějších verzích vylepšuje Office programování, následující kód se otevře aplikace Word a vytvoří ikonu, která odkazuje na Excelový list.  
   
-     Vložit metodu `CreateIconInWordDoc`, k dispozici dále v tomto kroku do `Program` třídy. `CreateIconInWordDoc` pojmenované a nepovinné argumenty používá ke snížení složitosti volání metody [přidat](https://msdn.microsoft.com/library/microsoft.office.interop.word.documents.add.aspx) a [PasteSpecial](https://msdn.microsoft.com/library/microsoft.office.interop.word.selection.pastespecial.aspx). Tato volání začlenit dvě další nové vlastnosti představené v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] , která zjednodušují volání metody COM, které mají parametry odkazů. Nejprve můžete poslat argumenty parametrů odkazu jako by byly parametry s hodnotou. To znamená můžete odeslat hodnoty přímo, bez vytváření proměnných pro každý odkaz na parametr. Kompilátor generuje dočasné proměnné pro uložení hodnoty argumentů a zahodí proměnné při návratu z volání. Za druhé, můžete vynechat `ref` – klíčové slovo v seznamu argumentů.  
+     Vložit metodu `CreateIconInWordDoc`, k dispozici dále v tomto kroku do `Program` třídy. `CreateIconInWordDoc` pojmenované a nepovinné argumenty používá ke snížení složitosti volání metody <xref:Microsoft.Office.Interop.Word.Documents.Add%2A> a <xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>. Tato volání začlenit dvě další nové vlastnosti představené v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] , která zjednodušují volání metody COM, které mají parametry odkazů. Nejprve můžete poslat argumenty parametrů odkazu jako by byly parametry s hodnotou. To znamená můžete odeslat hodnoty přímo, bez vytváření proměnných pro každý odkaz na parametr. Kompilátor generuje dočasné proměnné pro uložení hodnoty argumentů a zahodí proměnné při návratu z volání. Za druhé, můžete vynechat `ref` – klíčové slovo v seznamu argumentů.  
   
      `Add` Metoda má čtyři parametry odkazu, z nichž všechny jsou volitelné. V [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], nebo novější verze, pokud chcete použít výchozí hodnoty, můžete vynechat argumenty pro některé nebo všechny parametry. V [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] a starší verze pro každý parametr je třeba zadat argument a argument musí být proměnná, protože parametry jsou parametry odkazů.  
   
@@ -135,9 +135,9 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
      Zobrazí se Wordový dokument, který obsahuje ikonu. Poklepejte na ikonu na listu přenést do popředí.  
   
-### <a name="to-set-the-embed-interop-types-property"></a>Nastavení vlastnosti vložit typy spolupráce  
+## <a name="to-set-the-embed-interop-types-property"></a>Nastavení vlastnosti vložit typy spolupráce  
   
-1.  Další vylepšení je možné při volání typu COM, který nevyžaduje, aby primární definiční sestavení (PIA) v době běhu. Odebráním závislosti na výsledky sestavení PIA v nezávislosti na verzi a nasazení. Další informace o výhodách programování bez PIA, naleznete v tématu [návod: vložení typů ze spravovaných sestavení](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21).  
+1.  Další vylepšení je možné při volání typu COM, který nevyžaduje, aby primární definiční sestavení (PIA) v době běhu. Odebráním závislosti na výsledky sestavení PIA v nezávislosti na verzi a nasazení. Další informace o výhodách programování bez PIA, naleznete v tématu [návod: vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
   
      Programování je navíc jednodušší, protože typy, které vyžadují a vrácené z metody modelu COM lze znázornit pomocí typu `dynamic` místo `Object`. Proměnné, které mají typ `dynamic` není u nich vyhodnoceno až do spuštění, která eliminuje potřebu explicitní přetypování. Další informace najdete v tématu [použití typu dynamic](../../../csharp/programming-guide/types/using-type-dynamic.md).  
   
@@ -151,17 +151,17 @@ Visual C# obsahuje funkce, které usnadňují přístup k objektům rozhraní AP
   
 4.  Najít **Embed Interop Types** v seznamu vlastností a změňte tuto hodnotu na **False**. Ekvivalentně, můžete zkompilovat pomocí [/reference](../../../csharp/language-reference/compiler-options/reference-compiler-option.md) – možnost kompilátoru místo [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) z příkazového řádku.  
   
-### <a name="to-add-additional-formatting-to-the-table"></a>Chcete-li přidat další formátování do tabulky  
+## <a name="to-add-additional-formatting-to-the-table"></a>Chcete-li přidat další formátování do tabulky  
   
 1.  Nahraďte dvě volání na `AutoFit` v `DisplayInExcel` pomocí následujícího příkazu.  
   
      [!code-csharp[csProgGuideOfficeHowTo#15](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_14.cs)]  
   
-     [Automatický formát](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.autoformat.aspx) metoda má sedm parametry s hodnotou, z nichž všechny jsou volitelné. Pojmenované a nepovinné argumenty umožňují zadat argumenty pro none, některé nebo všechny z nich. V předchozí prohlášení, je zadán argument pouze pro jeden z parametrů, `Format`. Protože `Format` je první parametr v seznamu parametrů, není nutné poskytnout název parametru. Příkaz může být však lze snáze pochopit, pokud název parametru je součástí, jak je znázorněno v následujícím kódu.  
+     <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> Metoda má sedm parametry s hodnotou, z nichž všechny jsou volitelné. Pojmenované a nepovinné argumenty umožňují zadat argumenty pro none, některé nebo všechny z nich. V předchozí prohlášení, je zadán argument pouze pro jeden z parametrů, `Format`. Protože `Format` je první parametr v seznamu parametrů, není nutné poskytnout název parametru. Příkaz může být však lze snáze pochopit, pokud název parametru je součástí, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[csProgGuideOfficeHowTo#16](../../../csharp/programming-guide/interop/codesnippet/CSharp/how-to-access-office-onterop-objects_15.cs)]  
   
-2.  Stisknutím kláves CTRL + F5 k zobrazení výsledku. Další formáty jsou uvedeny v [XlRangeAutoFormat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.xlrangeautoformat.aspx) výčtu.  
+2.  Stisknutím kláves CTRL + F5 k zobrazení výsledku. Další formáty jsou uvedeny v <xref:Microsoft.Office.Interop.Excel.XlRangeAutoFormat> výčtu.  
   
 3.  Porovnání příkazu v kroku 1 s následujícím kódem, který ukazuje argumenty, které jsou nezbytné [!INCLUDE[csharp_orcas_long](~/includes/csharp-orcas-long-md.md)] nebo starší verze.  
   

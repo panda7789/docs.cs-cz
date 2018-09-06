@@ -2,24 +2,24 @@
 title: 'Služba: Počet volání s chybou za sekundu'
 ms.date: 03/30/2017
 ms.assetid: 94247356-2b29-4b50-b639-91ca8c1cf3a9
-ms.openlocfilehash: 86eddc62fb9aec8eced49ae70865583f3a50eb85
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b4a8a1eeec13195e4f8fe088da14dff7c06ecdb3
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33474097"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43785112"
 ---
 # <a name="service-calls-faulted-per-second"></a>Služba: Počet volání s chybou za sekundu
 Název čítače: Počet volání s chybou za sekundu.  
   
 ## <a name="description"></a>Popis  
- Počet volání, které mají vrátila chyby k této službě za sekundu.  
+ Počet volání, které se mají vrátit chyby k této službě za sekundu.  
   
- Tento čítač je typu čítače výkonu [PERF_COUNTER_COUNTER](http://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí následujícího vzorce.  
+ Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), jehož hodnota je vypočítána pomocí tohoto vzorce.  
   
- (NE 1 - N 0) / ((D 1 - D 0) / F)  
+ (N 1 - N 0) / ((D 1 - D 0) / F)  
   
- V aplikacích Windows Communication Foundation (WCF) metody služeb komunikaci pomocí protokolu SOAP zprávy selhání informace o chybě zpracování. Chyb SOAP jsou typy zpráv, které jsou součástí metadat pro operace služby a proto vytvoření kontraktu selhání, který můžou klienti používat, aby jejich spuštění více robustní nebo interaktivní. Vzhledem k tomu, že chyb SOAP jsou vyjádřeny klientům ve formátu XML, jsou vysoce umožňuje vzájemnou spolupráci.  
+ V aplikacích Windows Communication Foundation (WCF) komunikují metod služby informace o chybě zpracování pomocí chybové zprávy protokolu SOAP. Typy zpráv, které jsou zahrnuty v metadatech pro operaci služby a proto vytvořit selhání kontrakt, který můžou klienti použít k jejich spuštění zkontrolujte robustní nebo interaktivní jsou chyby SOAP. Protože chyb SOAP jsou vyjádřeny klientům v podobě XML, jsou vysoce interoperabilní.  
   
 ## <a name="see-also"></a>Viz také  
  [Určování a zpracování chyb v kontraktech a službách](../../../../../docs/framework/wcf/specifying-and-handling-faults-in-contracts-and-services.md)

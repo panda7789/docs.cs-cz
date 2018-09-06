@@ -7,11 +7,11 @@ helpviewer_keywords:
 - shortcut menus
 ms.assetid: 76e070b2-65d7-457f-8300-d104e4e01e5e
 ms.openlocfilehash: c5f2246ef70ed627ecd311c1f3e5666afcd9b5ef
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43552176"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43748899"
 ---
 # <a name="contextmenustrip-control"></a>ContextMenuStrip – ovládací prvek
 <xref:System.Windows.Forms.ContextMenuStrip> Poskytuje ovládací prvek, který přidružíte k ovládací prvek místní nabídky.  

@@ -5,11 +5,11 @@ f1_keywords:
 - vbrProcessNotFound
 ms.assetid: d6095a7f-6168-4b00-8639-11fb64dd2ebe
 ms.openlocfilehash: cf88384fe24da714931935c313ae351cf92d0a79
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43393655"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732589"
 ---
 # <a name="process-39ltprocessnamegt39-was-not-found"></a>Proces &#39; &lt;processname&gt; &#39; nebyl nalezen
 Zadaný proces nebyl nalezen.  

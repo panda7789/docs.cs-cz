@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: vytvoření hierarchii pomocí seskupení (C#)'
+title: 'Postupy: vytvoření hierarchie pomocí seskupení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
-ms.openlocfilehash: 9ad9ea723a54b50c3d5b047408fce760a8f53273
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8fa384ced04a90002f8f721266f163c874d6e0ff
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33327509"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43741543"
 ---
-# <a name="how-to-create-hierarchy-using-grouping-c"></a>Postupy: vytvoření hierarchii pomocí seskupení (C#)
-Tento příklad ukazuje, jak k seskupení dat a pak generování XML podle seskupení.  
+# <a name="how-to-create-hierarchy-using-grouping-c"></a>Postupy: vytvoření hierarchie pomocí seskupení (C#)
+Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML podle seskupení.  
   
 ## <a name="example"></a>Příklad  
- Tato data příklad první skupin podle kategorií, pak generuje nový soubor XML, ve kterém hierarchii XML odráží seskupení.  
+ Tento příklad první seskupuje data podle kategorie, poté vygeneruje nový soubor XML, ve kterém odráží hierarchii XML seskupení.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: Číselná Data (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: numerická Data (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```csharp  
 XElement doc = XElement.Load("Data.xml");  
@@ -74,5 +74,6 @@ Console.WriteLine(newData);
 </Root>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

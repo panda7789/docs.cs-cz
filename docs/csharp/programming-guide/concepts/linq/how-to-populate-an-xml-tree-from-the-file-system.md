@@ -1,19 +1,19 @@
 ---
-title: 'Postupy: naplnění strom XML ze systému souborů (C#)'
+title: 'Postupy: naplnění stromu XML ze systému souborů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 2aa2ccac-4a22-47ae-9107-3bb8df232576
-ms.openlocfilehash: fdbab0fbda3bbfe3ab91e674bb66694f71121962
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7bddab1942c5a673969e271338f17705914f81a4
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33328172"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732641"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Postupy: naplnění strom XML ze systému souborů (C#)
-Běžné a užitečné aplikace stromů XML je jako úložiště dat hierarchické název/hodnota. Můžete naplnit strom XML hierarchické daty a pak dotaz ho, transformovat je a v případě potřeby serializovat. V tomto scénáři použití řadu konkrétní sémantiku XML, například obory názvů a chování mezer nejsou důležité. Místo toho používají stromu XML jako malá, v paměti, hierarchické databázi jednoho uživatele.  
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Postupy: naplnění stromu XML ze systému souborů (C#)
+Je běžné použití užitečné stromů XML jako úložiště dat hierarchické název/hodnota. Můžete naplnění stromu XML s hierarchickými daty a pak ji dotazovat, transformují je a v případě potřeby ho serializovat. V tomto scénáři použití mnoha specifické sémantiku XML, například obory názvů a chování mezer, nejsou důležité. Místo toho používají stromu XML jako malé, v paměti, hierarchické databázi jednoho uživatele.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad naplní strom XML z místního systému souborů pomocí rekurze. Následně se dotazuje stromu výpočet celkové velikosti všech souborů ve stromové struktuře.  
+ V následujícím příkladu se naplní stromu XML z místního systému souborů pomocí rekurze. Následně se dotazuje stromu výpočtu celkové velikosti všech souborů ve stromové struktuře.  
   
 ```csharp  
 class Program  
@@ -116,5 +116,6 @@ class Program
 Total File Size:59089  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Pokročilé techniky dotazu (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Pokročilé techniky dotazování (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

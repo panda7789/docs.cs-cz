@@ -7,12 +7,12 @@ helpviewer_keywords:
 - C# language, nullable types
 - types [C#], nullable
 ms.assetid: e473cb01-28ca-42be-9cea-f717055d72c6
-ms.openlocfilehash: 64b326b82cd022ed6590a232546690e2ec2a5c78
-ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
-ms.translationtype: MT
+ms.openlocfilehash: 2af0704abcad00c75a5d40bfe2d0523d07ee6a3f
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "39245584"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43736202"
 ---
 # <a name="nullable-types-c-programming-guide"></a>Typy s možnou hodnotou Null (C# Programming Guide)
 
@@ -38,7 +38,7 @@ Typy připouštějící hodnotu Null, mají následující vlastnosti:
   
 - Můžete také použít `==` a `!=` operátory s povolenou hodnotou Null typu, jak je znázorněno v následujícím příkladu: `if (x != null) y = x.Value;`. Pokud `a` a `b` mají obě hodnotu null, `a == b` vyhodnotí jako `true`.  
 
-- Od verze C# 7.0, můžete použít porovnávání vzorů jak prozkoumat a získat hodnotu typu s možnou hodnotou NULL: `if (x is int xValue) y = xValue;`.
+- Od verze C# 7.0, můžete použít [porovnávání vzorů](../../pattern-matching.md#the-is-type-pattern-expression) jak prozkoumat a získat hodnotu typu s možnou hodnotou NULL: `if (x is int valueOfX) y = valueOfX;`.
   
 - Výchozí hodnota `T?` je instance jehož <xref:System.Nullable%601.HasValue%2A> vrátí vlastnost `false`.  
 
@@ -54,12 +54,12 @@ Typy připouštějící hodnotu Null, mají následující vlastnosti:
 
 Další informace najdete v tématu [použití typů s povolenou hodnotou Null](using-nullable-types.md) a [postupy: identifikace typu s možnou hodnotou Null](how-to-identify-a-nullable-type.md) témata.
   
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
- <xref:System.Nullable%601?displayProperty=nameWithType>  
- <xref:System.Nullable?displayProperty=nameWithType>  
- [?? – operátor](../../language-reference/operators/null-coalescing-operator.md)  
- [Průvodce programováním v jazyce C#](../index.md)  
- [Průvodce jazykem C#](../../index.md)  
- [Referenční dokumentace jazyka C#](../../language-reference/index.md)  
- [Typy s možnou hodnotou Null (Visual Basic)](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)  
+- <xref:System.Nullable%601?displayProperty=nameWithType>  
+- <xref:System.Nullable?displayProperty=nameWithType>  
+- [?? – operátor](../../language-reference/operators/null-coalescing-operator.md)  
+- [Průvodce programováním v jazyce C#](../index.md)  
+- [Průvodce jazykem C#](../../index.md)  
+- [Referenční dokumentace jazyka C#](../../language-reference/index.md)  
+- [Typy s možnou hodnotou Null (Visual Basic)](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)  

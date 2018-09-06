@@ -1,17 +1,17 @@
 ---
 title: 'Výsledky (F #)'
-description: "Další informace o použití F #, způsobit' typ můžete napsat kód chyby proti chybám."
+description: 'Zjistěte, jak pomocí F # "Výsledek" typ můžete napsat kód chyby proti chybám.'
 ms.date: 04/24/2017
-ms.openlocfilehash: 432e420ba7c2005caa46250dde82c2c67c9d3ae3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a7ce2e1f6b8c6a32d99a2feaf9547c4b67b152b8
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563005"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43749246"
 ---
-# <a name="results"></a>Výsledky
+# <a name="results"></a>výsledky
 
-Od verze 4.1 F #, je `Result<'T,'TFailure>` typ, který můžete použít k zápisu-chybám kódu, který může být složené.
+Od verze F # 4.1, je `Result<'T,'TFailure>` typ, který můžete použít k zápisu chybové proti chybám kódu, který se může skládat.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -27,9 +27,9 @@ type Result<'T,'TError> =
 
 ## <a name="remarks"></a>Poznámky
 
-Všimněte si, že je typ výsledku [struktura rozlišované sjednocení](discriminated-unions.md#struct-discriminated-unions), což je jiné funkce, zavedená v F # 4.1.  Strukturální rovnosti sémantiku použita zde.
+Všimněte si, že je typ výsledku [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions), což je jiný, která byla zavedena v F # 4.1.  Strukturální rovnost sémantika tady.
 
-`Result` Typ se obvykle používá v monadic zpracování chyb, které se často označuje jako [železniční orientované programování](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci komunity F #.  Následující příklad trivial ukazuje tento přístup.
+`Result` Typ se obvykle používá v monadic zpracování chyb, které se často označuje jako [železniční objektově orientovaného programování](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html) v rámci komunity F #.  Následující příklad jednoduchého dotazu ukazuje tento přístup.
 
 ```fsharp
 // Define a simple type which has fields that can be validated
@@ -80,10 +80,9 @@ let test() =
 test()
 ```
 
-Jak můžete vidět, je poměrně snadné různé funkce ověřování řetězu společně, pokud mají všechny vrátit vynutíte `Result`.  Díky tomu se rozdělit funkcí jako je to na malé části, které jsou složení, je možné podle potřeby.  To má také přidané hodnoty *vynucování* použití [porovnávání vzorů](pattern-matching.md) na konci zaokrouhlit ověření, což na oplátku vynucuje vyšší stupeň správnost programu.
+Jak vidíte, je poměrně snadné pro zřetězení různé funkce ověřování, pokud vynutíte, aby všechna vrácení `Result`.  To vám umožňuje rozdělit funkce, jako jsou to na malé části, které jsou složení, podle potřeby je možné.  To má také přidanou hodnotou *vynucování* použití [porovnávání vzorů](pattern-matching.md) na konci kruhové ověřování, což na oplátku vynucuje vyšší stupeň správnosti programu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Rozlišovaná sjednocení](discriminated-unions.md)
-
-[Porovnávání vzorů](pattern-matching.md)
+- [Rozlišovaná sjednocení](discriminated-unions.md)
+- [Porovnávání vzorů](pattern-matching.md)

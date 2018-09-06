@@ -2,23 +2,22 @@
 title: Indexované vlastnosti (F#)
 description: 'Další informace o F # indexované vlastnosti, které jsou vlastnosti, které poskytují přístup jako pole k datům seřazené.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 503cef9693cfe5e13d4e2d19a721d65bff1ce749
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: e56e4e2ea3f35df4c8ec46012357242cb6ce69f3
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34235938"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43749590"
 ---
 # <a name="indexed-properties"></a>Indexované vlastnosti
 
-*Indexované vlastnosti* seřazeni vlastnosti, které poskytují přístup jako pole k data. Pocházejí ve třech formulářích:
+*Indexované vlastnosti* jsou uspořádány ve vlastnosti, které poskytují přístup jako pole na data. Přišli v tři formuláře:
 
 * `Item`
 * `Ordinal`
 * `Cardinal`
 
-F # člen musí mít název jeden z těchto tří názvů zajistit přístup jako pole. `IndexerName` se používá k reprezentování libovolné z následujících tří možností:
-
+Člen F # musí mít název jedné z těchto tří názvů a zajistit tak přístup jako pole. `IndexerName` se používá k reprezentování některý z následujících tří možností:
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -46,17 +45,18 @@ member self-identifier.IndexerName
 ```
 
 ## <a name="remarks"></a>Poznámky
-Formuláře předchozí syntaxe ukazují, jak definovat indexované vlastnosti, které mají obě `get` a `set` metoda, mají `get` metoda pouze nebo mít `set` pouze metoda. Můžete také kombinací obou syntaxi uvedenou jenom příkaz get a syntaxi pro sadu pouze a vytvořit vlastnost, která má get a set. Tento formulář pozdější umožňuje umístit get modifikátory různých dostupnosti a atributy a nastavit metody.
 
-Když *IndexerName* je `Item`, kompilátor zpracovává vlastnost jako vlastnost Výchozí indexovat. A *Výchozí indexované vlastnosti* je vlastnost, která můžete přistupovat pomocí syntaxe pro pole na instanci objektu. Například pokud `obj` je objekt typu, který definuje tato vlastnost syntaxe `obj.[index]` se používá pro přístup k vlastnosti.
+Formy syntaxe předchozí ukazují, jak definovat indexované vlastnosti, které mají obě `get` a `set` metodu, mají `get` metoda pouze, nebo mít `set` pouze metody. Můžete také zkombinovat obojí tomu syntaxe uvedená jenom příkaz get a syntaxi pro sadu pouze a vytvoří vlastnost, která má get a set. Tento druhý formulář umožňuje umístit různou přístupností. modifikátorů a vlastností atributy na get a set metod.
 
-Syntaxe pro přístup k vlastnosti nevýchozí indexované je poskytnout název vlastnosti a index v závorkách. Například, pokud je vlastnost `Ordinal`, můžete psát `obj.Ordinal(index)` k přístupu.
+Když *IndexerName* je `Item`, kompilátor zpracovává vlastnost jako výchozí indexovanou vlastnost. A *výchozí indexovanou vlastnost* vlastností, která může získat přístup pomocí syntaxe pro pole na instanci objektu. Například pokud `obj` je objekt typu, který definuje tato vlastnost syntaxe `obj.[index]` slouží k přístupu k vlastnosti.
 
-Bez ohledu na to, jaký typ použijete, byste měli vždycky používat curryfikované formuláře pro `set` metoda indexované vlastnosti. Informace o curryfikované funkce najdete v tématu [funkce](../functions/index.md).
+Syntaxe pro přístup k nevýchozí indexované vlastnosti je název vlastnosti a index v závorkách. Například, pokud je vlastnost `Ordinal`, psaní `obj.Ordinal(index)` k němu přistupovat.
+
+Bez ohledu na to, jaký tvar použijete, byste měli vždy používat curryfikované formulář pro `set` metoda indexované vlastnosti. Informace o curryfikované funkce najdete v tématu [funkce](../functions/index.md).
 
 ## <a name="example"></a>Příklad
 
-Následující příklad kódu ukazuje definice a použití výchozí a jiné než výchozí indexované vlastnosti, které mají get a nastavit metody.
+Následující příklad kódu ukazuje definice a používání výchozích a jiné než výchozí indexované vlastnosti, které mají get a set metod.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3301.fs)]
 
@@ -68,12 +68,14 @@ ONE first two second three third four fourth five fifth six 6th
 seven seventh eight eighth nine ninth ten tenth
 ```
 
-## <a name="indexed-properties-with-multiple-index-variables"></a>Indexované vlastnosti s více Index proměnné
-Indexované vlastnosti může mít více než jednu proměnnou index. V takovém případě proměnné jsou oddělené čárkami, pokud je vlastnost použita. Curryfikované dva argumenty, z nichž první řazené kolekce členů obsahující klíče a druhá které nastaví se hodnota musí mít metodu set v taková vlastnost.
+## <a name="indexed-properties-with-multiple-index-variables"></a>Indexované vlastnosti v případě více proměnných indexu
 
-Následující kód ukazuje použití indexované vlastnosti s více index proměnné.
+Indexované vlastnosti můžou mít více než jeden indexovaná proměnná. Proměnné v takovém případě jsou odděleny čárkami, pokud se vlastnost používá. Metoda set v těchto vlastností musí mít dva curryfikované argumenty, první z nich je řazená kolekce členů obsahující klíče a druhý z nich je hodnota nastavena.
+
+Následující kód ukazuje použití indexovaná vlastnost s několika proměnnými indexu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3302.fs)]
-    
-## <a name="see-also"></a>Viz také
-[Členové](index.md)
+
+## <a name="see-also"></a>Viz také:
+
+- [Členové](index.md)

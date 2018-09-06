@@ -5,69 +5,70 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 65c5f376bce44e6120c17638076d2edfc38c734e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2568600c130847b3317aeb399541c61a050901ce
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33338283"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43736163"
 ---
 # <a name="generic-classes-c-programming-guide"></a>Obecné třídy (Průvodce programováním v C#)
-Obecné třídy zapouzdřovat operace, které nejsou specifické pro určitý datový typ. Nejčastěji používá pro obecné třídy je ke kolekcím, jako jsou propojené seznamy, zatřiďovacích tabulkách, zásobníky, fronty, stromy a tak dále. Operace, jako je například přidávání a odebírání položek z kolekce se provádějí v bez ohledu na typ uložení dat v podstatě stejným způsobem.  
+Obecné třídy zapouzdření operace, které nejsou specifické pro konkrétní data typu. Nejběžnějším využitím obecných tříd je s kolekcí jako propojené seznamy zatřiďovacích tabulek, zásobníků, front, stromy a tak dále. Operace, jako jsou přidávání a odebírání položek z kolekce jsou prováděny v podstatě stejným způsobem bez ohledu na typ data ukládat.  
   
- Doporučený postup pro většinu scénářů, které vyžadují třídy kolekce, je použití těm, které jsou uvedené v knihovně tříd rozhraní .NET. Další informace o použití těchto tříd naleznete v tématu [obecné kolekce v rozhraní .NET](../../../standard/generics/collections.md).  
+ Doporučený postup pro většinu scénářů, které vyžadují třídy kolekcí, je použít dotazy k dispozici v knihovně tříd rozhraní .NET. Další informace o použití těchto tříd naleznete v tématu [obecné kolekce na platformě .NET](../../../standard/generics/collections.md).  
   
- Obecné třídy obvykle vytvoříte tak, že počínaje existující konkrétní třídy a změna typy parametrů typu jeden v době, dokud se nedostanete optimální rovnováha mezi počtem Generalizace a použitelnost. Při vytváření vlastní obecné třídy, je důležité zvážit zahrnují následující:  
+ Obvykle vytvoříte obecných tříd od existující konkrétní třídy a změnou typy do parametry typu jeden po druhém, dokud se nedostanete optimální rovnováhu mezi Generalizace a použitelnost. Při vytváření vlastní obecných tříd, důležité informace patří:  
   
 -   Jaké typy generalize do parametrů typu.  
   
-     Jako pravidlo, další typy, které můžete parametrizovat, více flexibilní a opakovaně použitelný kód změní. Příliš mnoho generalizace však můžete vytvořit kód, který je složité jiné vývojářům pro čtení nebo pochopit.  
+     Váš kód bude jako pravidlo, další typy, které můžete parametrizovat, více flexibilní a opakovaně použitelné. Příliš mnoho generalizace však můžete vytvořit kód, který je obtížné pro jiné vývojáře pro čtení nebo pochopit.  
   
--   Jaké omezení, pokud existuje, které chcete použít pro parametry typu (viz [omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)).  
+-   Jaká omezení, pokud chcete použít pro parametry typu (viz [omezení parametrů typů](../../../csharp/programming-guide/generics/constraints-on-type-parameters.md)).  
   
-     Doporučujeme použít maximální možné omezení, která bude stále umožňují zpracování typy, které je nutné zpracovat. Například pokud jste si jisti, že obecná třída je určena pro použití jenom s typy odkazů, platí omezení třídy. Který zabrání neúmyslnému použití třídě s typy hodnot a budete moci použít `as` operátor na `T`a zkontrolujte hodnoty null.  
+     Pravidlo vhodné je použít maximální možné omezení, která bude stále umožňují zpracovat typy, které je třeba ošetřit. Například pokud víte, že obecné třídy je určena pro použití pouze s typy odkazů, platí omezení třídy. Který bude zabránit neúmyslnému použití třídy s typy hodnot a vám umožní používat `as` operátoru u `T`a kontrola hodnot null.  
   
--   Určuje, zda zohlednit obecné chování do základní třídy a podtřídy.  
+-   Určuje, zda faktor obecné chování do základních tříd a podtříd.  
   
-     Protože obecné třídy může sloužit jako základní třídy, stejné aspekty návrhu zde platí stejně jako u neobecné třídy. Najdete v části pravidla o tom, která dědí z obecné základní třídy později v tomto tématu.  
+     Protože obecné třídy může sloužit jako základní třídy, platí zde stejné aspekty návrhu stejně jako u neobecných třídách. Zobrazit pravidla o dědění z obecné základní třídy dále v tomto tématu.  
   
--   Určuje, zda implementovat jednu nebo více obecná rozhraní.  
+-   Určuje, zda implementovat jednu nebo více obecných rozhraní.  
   
-     Například pokud navrhujete třídu, která se použije k vytvoření položek v kolekci na základě obecné typy, budete muset implementovat rozhraní, jako <xref:System.IComparable%601> kde `T` je typ třídě.  
+     Například pokud navrhujete třídu, která se použije k vytvoření položek v kolekci na základě obecných typů, budete muset implementovat rozhraní jako <xref:System.IComparable%601> kde `T` je typ třídy.  
   
- Příklad jednoduchého obecné třídy, naleznete v části [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md).  
+ Příklad jednoduchou obecnou třídu, naleznete v tématu [Úvod do obecných typů](../../../csharp/programming-guide/generics/introduction-to-generics.md).  
   
- Pravidla pro parametry typu a omezení mají několik vliv na chování obecná třída, zejména pokud jde o dědičnosti a člen usnadnění. Než budete pokračovat, měli byste pochopit některé podmínky. Pro obecné třídy `Node<T>,` kód klienta může odkazovat na třídu buď tak, že zadáte argument typu, k vytvoření typu uzavřené vytvořený (`Node<int>`). Případně ho můžete nechat parametr typu Tento parametr nezadáte, například když zadáte obecné základní třídy, k vytvoření otevřenou sestavený typu (`Node<T>`). Obecné třídy může dědit vlastnosti z konkrétní, uzavřené vytvořený nebo otevřené sestavené základní třídy:  
+ Pravidla pro parametry typu a omezení mají několik důsledky pro obecnou třídu chování, zejména pokud jde o dědičnosti a člen usnadnění. Než budete pokračovat, měli byste pochopit některé podmínky. Pro obecnou třídu `Node<T>,` klientský kód může odkazovat na třídu buď tak, že zadáte argument typu, chcete-li vytvořit uzavřený konstruovaný typ. (`Node<int>`). Případně ho můžete nechat parametr typu, který je tento parametr zadán, například když zadáte obecné základní třídy, chcete-li vytvořit otevřenou konstruovaný typ. (`Node<T>`). Obecné třídy můžete dědit z konkrétní, uzavřený konstruovaný nebo otevřít konstruované základní třídy:  
   
  [!code-csharp[csProgGuideGenerics#16](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_1.cs)]  
   
- Jinými slovy, konkrétní non Obecné, třídy můžete dědění z uzavřených vytvořený základní třídy, ale není z otevřené sestavené třídy nebo z parametrů typu, protože neexistuje žádný způsob v době běhu kódu klienta zadat argument typu potřebné k vytváření instancí Základní třída.  
+ Neobecné, jinými slovy, konkrétní, třídy mohou dědit z uzavřených konstruované základní třídy, ale není otevřené konstruovaný třídy nebo parametry typu, protože neexistuje žádný způsob v době běhu pro klientský kód zadáte argument typu vyžaduje vytvoření instance Základní třída.  
   
  [!code-csharp[csProgGuideGenerics#17](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_2.cs)]  
   
- Obecné třídy, které dědí od otevřené sestavené typy musíte zadat argumenty typu pro všechny parametry typu základní třídy, které nejsou sdíleny dědičných třídu, jak je ukázáno v následujícím kódu:  
+ Obecné třídy, které dědí z otevřené sestavené typy musíte zadat argumenty typu pro všechny parametry typu základní třídy, které nejsou sdíleny dědičné třídě, jak je ukázáno v následujícím kódu:  
   
  [!code-csharp[csProgGuideGenerics#18](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_3.cs)]  
   
- Obecné třídy, které dědí od otevřené sestavené typy musíte zadat omezení, která je nadmnožinou nebo implikují omezení u základního typu:  
+ Obecné třídy, které dědí z otevřené sestavené typy musíte zadat omezení, která je nadstavbou jazyka nebo implikovat, omezení u základního typu:  
   
  [!code-csharp[csProgGuideGenerics#19](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_4.cs)]  
   
- Obecné typy můžete použít několik parametrů typu a omezení, následujícím způsobem:  
+ Obecné typy můžete použít více parametry typu a omezení, následujícím způsobem:  
   
  [!code-csharp[csProgGuideGenerics#20](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_5.cs)]  
   
- Otevřené sestavené typy vytvořený a uzavřené lze použít jako parametry metody:  
+ Otevřené sestavené typy vytvořený a uzavřených může sloužit jako parametry metody:  
   
  [!code-csharp[csProgGuideGenerics#21](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-classes_6.cs)]  
   
- Pokud obecná třída implementuje rozhraní, všechny instance této třídy lze převést na tomto rozhraní.  
+ Pokud obecná třída implementuje rozhraní, všechny instance této třídy lze převést na rozhraní.  
   
- Obecné třídy jsou neutrální. Jinými slovy Pokud určuje vstupní parametr `List<BaseClass>`, kompilaci chyba se zobrazí, pokud se pokusíte poskytují `List<DerivedClass>`.  
+ Obecné třídy se nebudou měnit. Jinými slovy Pokud určuje vstupní parametr `List<BaseClass>`, Chyba kompilace se zobrazí, když se pokusíte k poskytování `List<DerivedClass>`.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Collections.Generic>  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Obecné typy](../../../csharp/programming-guide/generics/index.md)  
- [Uložení stavu výčty](https://blogs.msdn.microsoft.com/wesdyer/2006/01/13/saving-the-state-of-enumerators/)  
- [Stavebnice dědičnosti první část](https://blogs.msdn.microsoft.com/ericlippert/2007/07/27/an-inheritance-puzzle-part-one/)
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Collections.Generic>  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Obecné typy](../../../csharp/programming-guide/generics/index.md)  
+- [Ukládání stavu čítače](https://blogs.msdn.microsoft.com/wesdyer/2006/01/13/saving-the-state-of-enumerators/)  
+- [Díl stavebnice dědičnosti, část 1](https://blogs.msdn.microsoft.com/ericlippert/2007/07/27/an-inheritance-puzzle-part-one/)

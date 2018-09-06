@@ -2,12 +2,12 @@
 title: Visual Studio IDE a nástrojů podpory pro funkci LINQ (C#)
 ms.date: 07/20/2015
 ms.assetid: c1f6cfdf-c96f-417f-acc8-4a049772ead3
-ms.openlocfilehash: fda73a8fce9dcba54e6b69bcae02f7bdb43dfd33
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e7c5a1efb8ab6e9e9aab98a2dd07e9a85c5625b7
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502322"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43786586"
 ---
 # <a name="visual-studio-ide-and-tools-support-for-linq-c"></a>Visual Studio IDE a nástrojů podpory pro funkci LINQ (C#)
 Integrovaného vývojového prostředí (IDE) sady Visual Studio poskytuje následující funkce, které podporují vývoj aplikací LINQ:  
@@ -16,7 +16,7 @@ Integrovaného vývojového prostředí (IDE) sady Visual Studio poskytuje násl
  Návrhář relací objektů je vizuální návrh nástroj, který vám pomůže v [technologie LINQ to SQL](../../../../../docs/framework/data/adonet/sql/linq/index.md) aplikací ke generování třídy v jazyce C#, které představují relačními daty v podkladové databázi. Další informace najdete v tématu [LINQ to SQL nástroje v sadě Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="sqlmetal-command-line-tool"></a>Nástroj příkazového řádku SQLMetal  
- SQLMetal je nástroj příkazového řádku, který je možné do procesů sestavení ke generování třídy z existujících databází pro použití v technologii LINQ na SQL aplikace. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](https://msdn.microsoft.com/library/819e5a96-7646-4fdb-b14b-fe31221b0614).  
+ SQLMetal je nástroj příkazového řádku, který je možné do procesů sestavení ke generování třídy z existujících databází pro použití v technologii LINQ na SQL aplikace. Další informace najdete v tématu [SqlMetal.exe (nástroj pro generování kódu)](../../../../framework/tools/sqlmetal-exe-code-generation-tool.md).  
   
 ## <a name="linq-aware-code-editor"></a>S ohledem na LINQ editoru kódu  
  Editor kódu jazyka C# podporuje LINQ výrazně s možnostmi formátování a IntelliSense.  

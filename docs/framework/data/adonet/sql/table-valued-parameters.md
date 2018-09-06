@@ -1,64 +1,64 @@
 ---
-title: Parametry s hodnotou tabulky
+title: Parametry Table-Valued
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 2cf517e3bd10dbed51c8a98d150bafcb023e438b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 333154f26a575886f19a914ce2f91beebd6be49e
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33365940"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43742514"
 ---
-# <a name="table-valued-parameters"></a>Parametry s hodnotou tabulky
-Parametry s hodnotou tabulky představují snadný způsob, jak zařazování bez nutnosti více odezev nebo speciální logiku na straně serveru pro zpracování dat více řádků dat z klientské aplikace do systému SQL Server. Parametry s hodnotou tabulky můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Příchozí data řádky jsou uložené v proměnné tabulky, která lze poté ho zpracovat. pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
+# <a name="table-valued-parameters"></a>Parametry Table-Valued
+Parametry s hodnotou tabulky poskytují snadný způsob, jak zařadit více řádků dat z klientské aplikace k SQL serveru bez nutnosti více výměn nebo zvláštní logiku na straně serveru pro zpracování dat. Parametry table-valued můžete použít k zapouzdření řádky dat v aplikaci klienta a odesílání dat na server v jedné parametrizovaného příkazu. Řádky příchozích dat jsou uložené v proměnné tabulky, který může pak být provozována pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)].  
   
- Hodnoty ve sloupcích v parametry s hodnotou tabulky lze přistupovat pomocí standardní [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazů SELECT. Parametry s hodnotou tabulky jsou silného typu a jejich struktura je automaticky ověřit. Velikost parametry s hodnotou tabulky je omezena pouze paměti serveru.  
+ Hodnoty sloupců v parametrů table-valued lze přistupovat pomocí standardní [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazů SELECT. Parametry Table-valued jsou silného typu a jejich strukturu se automaticky ověří. Velikost parametrů table-valued je omezena pouze paměť serveru.  
   
 > [!NOTE]
->  Parametr s hodnotou tabulky nelze vrátit data. Parametry s hodnotou tabulky jsou jenom vstupní; klíčové slovo výstup není podporováno.  
+>  Nelze vrátit data v parametru s hodnotou tabulky. Parametry Table-valued jsou výhradně; VÝSTUP – klíčové slovo se nepodporuje.  
   
- Další informace o parametry s hodnotou tabulky najdete v následujících materiálech.  
+ Další informace o parametry table-valued najdete v následující prostředky.  
   
 |Prostředek|Popis|  
 |--------------|-----------------|  
-|[Parametry s hodnotou tabulky (databázový stroj)](http://go.microsoft.com/fwlink/?LinkId=98363) v Online knihách serveru SQL|Popisuje, jak vytvořit a používat parametry s hodnotou tabulky.|  
-|[Uživatelem definované typy tabulky](http://go.microsoft.com/fwlink/?LinkId=98364) v Online knihách serveru SQL|Popisuje typy uživatelem definovaná tabulka, které se používá k deklaraci parametry s hodnotou tabulky.|  
+|[Parametry Table-Valued (databázový stroj)](https://go.microsoft.com/fwlink/?LinkId=98363) v Online knihách serveru SQL|Popisuje, jak vytvořit a používat parametry s hodnotou tabulky.|  
+|[Uživatelem definované typy tabulek](https://go.microsoft.com/fwlink/?LinkId=98364) v Online knihách serveru SQL|Popisuje uživatele definovaných typů tabulek, které se používají k deklarování parametrů table-valued.|  
   
-## <a name="passing-multiple-rows-in-previous-versions-of-sql-server"></a>Předávání více řádků v předchozích verzích systému SQL Server  
- Před parametry s hodnotou tabulky byly zavedeny na SQL Server 2008, byly omezené možnosti pro předání více řádků dat do uložené procedury nebo parametrizované příkaz SQL. Vývojář může zvolit z následujících možností pro předávání více řádků k serveru:  
+## <a name="passing-multiple-rows-in-previous-versions-of-sql-server"></a>Předání více řádků v předchozích verzích systému SQL Server  
+ Předtím, než se seznámili s parametry table-valued systému SQL Server 2008, byly omezené možnosti pro předání více řádků dat uložené procedury nebo parametrizovaného příkazu SQL. Vývojář může zvolit jednu z následujících možností pro předání více řádků na server:  
   
--   K reprezentaci hodnoty ve více sloupců a řádků dat použijte řadu jednotlivé parametry. Množství dat, který může být předán pomocí této metody je omezen počet parametrů, které jsou povoleny. Postupy systému SQL Server může mít maximálně 2100 parametry. Je potřeba sestavte tyto jednotlivé hodnoty do proměnné tabulky nebo dočasné tabulky pro zpracování logiky na straně serveru.  
+-   K reprezentaci hodnoty do více sloupců a řádků dat použijte řadu jednotlivé parametry. Množství dat, které mohou být předány tímto způsobem je omezen počet povolených parametrů. Postupy pro SQL Server může mít maximálně 2100 parametry. Je potřeba sestavit tyto jednotlivé hodnoty do proměnné tabulky nebo dočasná tabulka pro zpracování logiky na straně serveru.  
   
--   Sady více hodnot dat do odděleného řetězce nebo dokumentů XML a pak předejte tyto hodnoty text do procedury nebo příkaz. To vyžaduje procedura nebo údajů přidat logiku, která je potřebná pro ověření datové struktury a zpřístupnění hodnoty.  
+-   Vytvoření balíčku více hodnot dat do řetězce s oddělovači nebo dokumentů XML a předat tyto hodnoty text do procedury nebo příkaz. To vyžaduje procedury nebo prohlášení přidat logiku potřebnou pro ověření datových struktur a zpřístupnění hodnoty.  
   
--   Vytvořit řadu jednotlivé příkazy SQL pro změny dat, které ovlivňují více řádků, jako jsou ty vytvořená voláním `Update` metodu <xref:System.Data.SqlClient.SqlDataAdapter>. Změny může být odeslána na server individuálně nebo v dávce do skupin. Ale i v případě, že odeslání v dávkách, které obsahují více příkazů, každý se spustit příkaz samostatně na serveru.  
+-   Vytvořte řadu jednotlivých příkazů SQL pro změny dat, které ovlivňují více řádků, jako jsou ty voláním `Update` metodu <xref:System.Data.SqlClient.SqlDataAdapter>. Změny můžete odeslat na server samostatně nebo v dávce do skupin. Ale i v případě, že odešle v dávkách, které obsahují více příkazů, každý příkaz je proveden odděleně na serveru.  
   
--   Použití `bcp` nástroj program nebo <xref:System.Data.SqlClient.SqlBulkCopy> objekt, který chcete načíst počet řádků dat do tabulky. I když tato technika je velmi efektivní, nejsou podporovány serverové zpracování, pokud je načíst data do dočasné tabulky nebo proměnná tabulky.  
+-   Použití `bcp` nástroj nebo <xref:System.Data.SqlClient.SqlBulkCopy> objektu, který chcete načíst počet řádků dat do tabulky. I když tato technika je velmi efektivní, nepodporuje zpracování na straně serveru, pokud načtení dat do dočasné tabulky nebo proměnné tabulky.  
   
-## <a name="creating-table-valued-parameter-types"></a>Vytváření parametr s hodnotou tabulky typů  
- Parametry s hodnotou tabulky jsou založené na struktury silného typu tabulky, které jsou definované za použití [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy CREATE TYPE. Budete muset vytvořit typ tabulky a definovat strukturu v systému SQL Server, abyste mohli používat parametry s hodnotou tabulky v klientských aplikacích. Další informace o vytváření typů tabulek najdete v tématu [uživatelem definovaných typů tabulek](http://go.microsoft.com/fwlink/?LinkID=98364) v SQL Server Books Online.  
+## <a name="creating-table-valued-parameter-types"></a>Vytváření typů Table-Valued Parameter  
+ Parametry Table-valued jsou založené na tabulce silného typu struktury, které jsou definovány pomocí [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazy CREATE TYPE. Budete muset vytvořit tabulku typu a definují strukturu v systému SQL Server, abyste mohli používat parametry table-valued v klientských aplikacích. Další informace o vytváření typů tabulek, naleznete v tématu [uživatelem definované typy tabulek](https://go.microsoft.com/fwlink/?LinkID=98364) v SQL Server Books Online.  
   
- Následující příkaz vytvoří typ tabulky s názvem CategoryTableType, která se skládá z CategoryID a CategoryName sloupce:  
+ Následující příkaz vytvoří typ tabulky s názvem CategoryTableType, který se skládá z ID kategorie a CategoryName sloupce:  
   
 ```  
 CREATE TYPE dbo.CategoryTableType AS TABLE  
     ( CategoryID int, CategoryName nvarchar(50) )  
 ```  
   
- Jakmile vytvoříte typ tabulky, je možné deklarovat parametry s hodnotou tabulky na základě tohoto typu. Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] fragment ukazuje, jak lze deklarovat parametr s hodnotou tabulky v definici uložené procedury. Všimněte si, že READONLY – klíčové slovo je vyžadována pro deklarování parametr s hodnotou tabulky.  
+ Jakmile vytvoříte typ tabulky, je možné deklarovat parametry s hodnotou tabulky na základě tohoto typu. Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] fragment ukazuje, jak deklarovat parametr s hodnotou tabulky v definici uloženou proceduru. Všimněte si, že READONLY – klíčové slovo je vyžadována pro deklarování parametr s hodnotou tabulky.  
   
 ```  
 CREATE PROCEDURE usp_UpdateCategories   
     (@tvpNewCategories dbo.CategoryTableType READONLY)  
 ```  
   
-## <a name="modifying-data-with-table-valued-parameters-transact-sql"></a>Úprava dat s parametry s hodnotou tabulky (Transact-SQL)  
- Parametry s hodnotou tabulky lze použít v změny na základě sady dat, které ovlivňují více řádků spuštěním jeden příkaz. Například můžete vybrat všechny řádky v parametru s hodnotou tabulky a vložte je do databázové tabulky, nebo můžete vytvořit příkazu update připojení parametr s hodnotou tabulky do tabulky, kterou chcete aktualizovat.  
+## <a name="modifying-data-with-table-valued-parameters-transact-sql"></a>Úpravy dat s parametry Table-Valued (Transact-SQL)  
+ Parametry s hodnotou tabulky je možné v změny založeným na set dat, které ovlivňují více řádků pomocí provádí jeden příkaz. Například můžete vybrat všechny řádky v parametru s hodnotou tabulky a vložení do tabulky databáze, nebo vytvoříte příkazu update spojením parametr s hodnotou tabulky do tabulky, kterou chcete aktualizovat.  
   
- Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazu UPDATE ukazuje, jak použít parametr s hodnotou tabulky s připojením k tabulce kategorie. Pokud použijete parametr s hodnotou tabulky s spojení v klauzuli FROM, musíte také alias, jak je vidět tady, kde parametr s hodnotou tabulky je alias jako "ES":  
+ Následující [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příkazu UPDATE ukazuje, jak se pomocí připojení k tabulce kategorie parametr s hodnotou tabulky. Pokud použijete parametr s hodnotou tabulky s spojení v klauzuli FROM, musíte mít také alias, jak je znázorněno zde, kde parametr s hodnotou tabulky je alias jako "ES":  
   
 ```  
 UPDATE dbo.Categories  
@@ -67,26 +67,26 @@ UPDATE dbo.Categories
     ON dbo.Categories.CategoryID = ec.CategoryID;  
 ```  
   
- To [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příklad ukazuje, jak vybírat parametr s hodnotou tabulky k provedení typu vložení v rámci jedné operace založené na sadě řádků.  
+ To [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] příklad ukazuje, jak pro výběr řádků z parametru s hodnotou tabulky provést vložení v rámci jedné operace založeným na set.  
   
 ```  
 INSERT INTO dbo.Categories (CategoryID, CategoryName)  
     SELECT nc.CategoryID, nc.CategoryName FROM @tvpNewCategories AS nc;  
 ```  
   
-## <a name="limitations-of-table-valued-parameters"></a>Omezení parametrů s hodnotou tabulky  
- Existuje několik omezení pro parametry s hodnotou tabulky:  
+## <a name="limitations-of-table-valued-parameters"></a>Omezení parametrů Table-Valued  
+ Existují některá omezení pro parametry s hodnotou tabulky:  
   
--   Nelze předat parametry s hodnotou tabulky [uživatelsky definované funkce CLR](http://msdn.microsoft.com/library/ms131077.aspx).  
+-   Nelze předat parametry s hodnotou tabulky [uživatelem definované funkce CLR](/sql/relational-databases/clr-integration-database-objects-user-defined-functions/clr-user-defined-functions).  
   
--   Parametry s hodnotou tabulky lze indexovat pouze pro podporu omezení JEDINEČNÝ nebo primární klíč. SQL Server neudržuje statistiky na parametry s hodnotou tabulky.  
+-   Parametry s hodnotou tabulky je možné indexovat pouze pro podporu omezení UNIQUE a PRIMARY KEY. SQL Server nespravuje statistiky pro parametry s hodnotou tabulky.  
   
--   Parametry s hodnotou tabulky jsou jen pro čtení v [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] kódu. Hodnoty ve sloupcích v řádcích parametr s hodnotou tabulky nelze aktualizovat, a nelze vložit nebo odstranit řádky. Chcete-li upravit data, která je předaný uložené proceduře nebo příkaz v parametru s hodnotou tabulky s parametry, je nutné vložit data do dočasné tabulky nebo do proměnné tabulky.  
+-   Parametry Table-valued jsou jen pro čtení v [!INCLUDE[tsql](../../../../../includes/tsql-md.md)] kódu. Hodnoty sloupce na řádky parametr s hodnotou tabulky nelze aktualizovat, a nelze vložit nebo odstranit řádky. Pokud chcete upravit data, která je předána uloženou proceduru nebo příkaz v parametr s hodnotou tabulky s parametry, je nutné vložit data do dočasné tabulky nebo do proměnné tabulky.  
   
--   Pomocí příkazů ALTER TABLE nelze použít k úpravě návrh parametry s hodnotou tabulky.  
+-   Pomocí příkazů ALTER TABLE nelze použít k úpravě návrhu parametrů table-valued.  
   
-## <a name="configuring-a-sqlparameter-example"></a>Konfigurace SqlParameter příklad  
- <xref:System.Data.SqlClient> podporuje naplnění parametry s hodnotou tabulky z <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> nebo <xref:System.Collections.Generic.IEnumerable%601>  \  <xref:Microsoft.SqlServer.Server.SqlDataRecord> objekty. Musíte zadat název typu pro parametr s hodnotou tabulky s použitím <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter>. `TypeName` Musí odpovídat názvu kompatibilní typ vytvořili na serveru. Následující fragment kódu ukazuje, jak nakonfigurovat <xref:System.Data.SqlClient.SqlParameter> vložit data.  
+## <a name="configuring-a-sqlparameter-example"></a>Konfigurace příklad SqlParameter  
+ <xref:System.Data.SqlClient> podporuje sestavování parametrů table-valued z <xref:System.Data.DataTable>, <xref:System.Data.Common.DbDataReader> nebo <xref:System.Collections.Generic.IEnumerable%601>  \  <xref:Microsoft.SqlServer.Server.SqlDataRecord> objekty. Musíte zadat název typu pro parametr s hodnotou tabulky s použitím <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter>. `TypeName` Musí odpovídat názvu kompatibilního typu dříve vytvořené na serveru. Následující fragment kódu ukazuje, jak nakonfigurovat <xref:System.Data.SqlClient.SqlParameter> vložit data.  
   
 ```csharp  
 // Configure the command and parameter.  
@@ -106,7 +106,7 @@ tvpParam.SqlDbType = SqlDbType.Structured
 tvpParam.TypeName = "dbo.CategoryTableType"  
 ```  
   
- Můžete také použít libovolného objektu odvozeného z <xref:System.Data.Common.DbDataReader> na datový proud řádky dat do parametr s hodnotou tabulky, jak je uvedené v tomto fragmentu:  
+ Můžete také použít jakéhokoli objektu odvozeného od <xref:System.Data.Common.DbDataReader> pro datový proud řádky dat na parametr s hodnotou tabulky, jak je znázorněno v tomto fragmentu:  
   
 ```csharp  
 // Configure the SqlCommand and table-valued parameter.  
@@ -127,7 +127,7 @@ tvpParam.SqlDbType = SqlDbType.Structured
 ```  
   
 ## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a>Předání parametru s hodnotou tabulky uložené procedury  
- Tento příklad ukazuje, jak k předávání dat parametr s hodnotou tabulky uložené procedury. Vyextrahuje přidání řádků do nového <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTable.GetChanges%2A> metoda. Kód pak definuje <xref:System.Data.SqlClient.SqlCommand>, nastavení <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> vlastnost <xref:System.Data.CommandType.StoredProcedure>. <xref:System.Data.SqlClient.SqlParameter> Je vyplněný pomocí <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> metoda a <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> je nastaven na `Structured`. <xref:System.Data.SqlClient.SqlCommand> Se pak spustí pomocí <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A> metoda.  
+ Tento příklad ukazuje, jak předat parametr s hodnotou tabulky data pro uloženou proceduru. Kód extrahuje přidání řádků do nového <xref:System.Data.DataTable> pomocí <xref:System.Data.DataTable.GetChanges%2A> metody. Kód poté definuje <xref:System.Data.SqlClient.SqlCommand>a nastavte <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> vlastnost <xref:System.Data.CommandType.StoredProcedure>. <xref:System.Data.SqlClient.SqlParameter> Naplněn pomocí <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> metoda a <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> je nastavena na `Structured`. <xref:System.Data.SqlClient.SqlCommand> Je pak provést pomocí <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A> metody.  
   
 ```csharp  
 // Assumes connection is an open SqlConnection object.  
@@ -168,11 +168,11 @@ Using connection
 End Using  
 ```  
   
-### <a name="passing-a-table-valued-parameter-to-a-parameterized-sql-statement"></a>Předání parametru s hodnotou tabulky příkazu parametrizované SQL  
- Následující příklad ukazuje, jak pro vložení dat do vlastníka. Kategorie tabulky pomocí příkazu INSERT vyberte poddotazu, která má jako zdroj dat pro parametr s hodnotou tabulky. Při předávání parametr s hodnotou tabulky parametrizované příkazu jazyka SQL, musíte zadat název typu pro parametr s hodnotou tabulky pomocí nové <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter>. To `TypeName` musí odpovídat názvu kompatibilní typ vytvořili na serveru. Kód v tomto příkladu používá `TypeName` vlastnost tak, aby odkazovaly strukturou typů, které jsou definované v dbo. CategoryTableType.  
+### <a name="passing-a-table-valued-parameter-to-a-parameterized-sql-statement"></a>Předávání Table-Valued Parameter parametrizovaného dotazu SQL příkaz  
+ Následující příklad ukazuje, jak vložit data do vlastníka. Tabulky kategorií pomocí příkazu INSERT SELECT poddotazu, která má parametr s hodnotou tabulky jako zdroje dat Při předávání parametru s hodnotou tabulky parametrizovaného příkazu SQL, musíte zadat název typu pro parametr s hodnotou tabulky s použitím nového <xref:System.Data.SqlClient.SqlParameter.TypeName%2A> vlastnost <xref:System.Data.SqlClient.SqlParameter>. To `TypeName` musí odpovídat názvu kompatibilního typu dříve vytvořené na serveru. Kód v tomto příkladu používá `TypeName` vlastnost odkazovat na typ struktury definované v dbo. CategoryTableType.  
   
 > [!NOTE]
->  Pokud zadáte hodnotu pro sloupec identity parametr s hodnotou tabulky, musíte vydat příkaz nastavit možnost identity_insert nastavena pro relaci.  
+>  Pokud zadáte hodnotu pro sloupec identity v parametru s hodnotou tabulky, musíte vydat příkaz IDENTITY_INSERT NASTAVENA pro relaci.  
   
 ```csharp  
 // Assumes connection is an open SqlConnection.  
@@ -224,8 +224,8 @@ Using connection
 End Using  
 ```  
   
-## <a name="streaming-rows-with-a-datareader"></a>Streamování řádky s DataReader –  
- Můžete také použít libovolného objektu odvozeného z <xref:System.Data.Common.DbDataReader> na datový proud řádky dat do parametr s hodnotou tabulky. Následující fragment kódu ukazuje načítání dat z databáze Oracle pomocí <xref:System.Data.OracleClient.OracleCommand> a <xref:System.Data.OracleClient.OracleDataReader>. Kód, nakonfiguruje <xref:System.Data.SqlClient.SqlCommand> k vyvolání uložená procedura s jeden vstupní parametr. <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> Vlastnost <xref:System.Data.SqlClient.SqlParameter> je nastaven na `Structured`. <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> Předá `OracleDataReader` sady výsledků uložené procedury jako parametr s hodnotou tabulky.  
+## <a name="streaming-rows-with-a-datareader"></a>Streamování řádků pomocí čtečky dat  
+ Můžete také použít jakéhokoli objektu odvozeného od <xref:System.Data.Common.DbDataReader> pro datový proud řádky dat na parametr s hodnotou tabulky. Následující fragment kódu ukazuje, načítání dat z databáze Oracle pomocí <xref:System.Data.OracleClient.OracleCommand> a <xref:System.Data.OracleClient.OracleDataReader>. Kód poté konfiguruje <xref:System.Data.SqlClient.SqlCommand> vyvolat uloženou proceduru s jeden vstupní parametr. <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> Vlastnost <xref:System.Data.SqlClient.SqlParameter> je nastavena na `Structured`. <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A> Předává `OracleDataReader` sadu výsledků pro uloženou proceduru jako parametr s hodnotou tabulky.  
   
 ```csharp  
 // Assumes connection is an open SqlConnection.  
@@ -275,4 +275,4 @@ insertCommand.ExecuteNonQuery()
  [Příkazy a parametry](../../../../../docs/framework/data/adonet/commands-and-parameters.md)  
  [Parametry adaptéru dat](../../../../../docs/framework/data/adonet/dataadapter-parameters.md)  
  [Operace dat na SQL Serveru v ADO.NET](../../../../../docs/framework/data/adonet/sql/sql-server-data-operations.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

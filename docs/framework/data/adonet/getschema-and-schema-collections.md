@@ -1,27 +1,27 @@
 ---
-title: GetSchema a kolekcemi schémat
+title: Příkaz GetSchema a kolekce schémat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7ab93b89-1221-427c-84ad-04803b3c64b4
-ms.openlocfilehash: 1694a6de515e5326264f345f50d0730fe2a62e4f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 6c6ea41b9da9c98f8c4ee45ca1e223a29712729a
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32763940"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43742491"
 ---
-# <a name="getschema-and-schema-collections"></a>GetSchema a kolekcemi schémat
-**Připojení** třídy v každé z implementace spravovaných zprostředkovatelé rozhraní .NET Framework **GetSchema** metodu, která se používá k načtení schématu informace o databázi, která je aktuálně připojen, a informace o schématu vrácená z **GetSchema** metoda obsahuje ve formě <xref:System.Data.DataTable>. **GetSchema** metoda je přetížené metody, která poskytuje volitelné parametry pro zadání kolekce schémat vrátit a omezení množství vrácených informací.  
+# <a name="getschema-and-schema-collections"></a>Příkaz GetSchema a kolekce schémat
+**Připojení** třídami implementace spravovaného zprostředkovatele .NET Framework **GetSchema** metodu, která se používá k načtení informací o schématu databáze, která je aktuálně připojena, a informace o schématu vrácených **GetSchema** metoda je k dispozici ve formě <xref:System.Data.DataTable>. **GetSchema** je metoda přetížená metoda, která poskytuje volitelných parametrů pro určení kolekce schématu pro vrácení a omezit množství vrácených informací.  
   
-## <a name="specifying-the-schema-collections"></a>Určení kolekcemi schémat  
- První volitelný parametr **GetSchema** metoda je název kolekce, který je zadán jako řetězec. Existují dva typy kolekcí schémat: běžné kolekcemi schémat, které jsou společné pro všechny poskytovatele a konkrétní schéma kolekce, které jsou specifické pro každého zprostředkovatele.  
+## <a name="specifying-the-schema-collections"></a>Určení kolekce schémat  
+ První nepovinný parametr **GetSchema** metody je název kolekce, který je zadán jako řetězec. Existují dva typy kolekce schémat: společné kolekce schémat, které jsou společné pro všechny poskytovatele a kolekce určité schéma, které jsou specifické pro každého zprostředkovatele.  
   
- Můžete zadat dotaz rozhraní .NET Framework spravovaného zprostředkovatele určit seznam podporovaných schématu kolekcí voláním **GetSchema** metoda bez argumentů nebo názvem schématu kolekce "MetaDataCollections". Tato možnost vrátí <xref:System.Data.DataTable> seznam podporovaných schéma kolekce, počet omezení, které každý podporují a počet identifikátor částí, které používají.  
+ Můžete dát dotaz na zprostředkovatele rozhraní .NET Framework spravované určit seznam kolekcí nepodporuje schéma voláním **GetSchema** metody bez argumentů nebo názvem kolekce schématu "MetaDataCollections". Vrátí <xref:System.Data.DataTable> seznam kolekcí nepodporuje schéma, počet omezení, které každá podporují a počet identifikátor částí, které používají.  
   
-### <a name="retrieving-schema-collections-example"></a>Načítání schématu kolekce příklad  
- Následující příklady ukazují, jak používat <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> metoda zprostředkovatele dat .NET Framework pro SQL Server <xref:System.Data.SqlClient.SqlConnection> třída načíst informace o schématu o všechny tabulky obsažené v **AdventureWorks**ukázkové databáze:  
+### <a name="retrieving-schema-collections-example"></a>Načítání kolekcí příkladu schématu  
+ Následující příklady ukazují, jak používat <xref:System.Data.SqlClient.SqlConnection.GetSchema%2A> metoda zprostředkovatele dat .NET Framework pro SQL Server <xref:System.Data.SqlClient.SqlConnection> třídy pro načtení schématu informace o všech tabulek, které jsou součástí **AdventureWorks**ukázkovou databázi:  
   
 ```vb  
 Imports System.Data.SqlClient  
@@ -106,4 +106,4 @@ class Program
   
 ## <a name="see-also"></a>Viz také  
  [Načítání informací o databázovém schématu](../../../../docs/framework/data/adonet/retrieving-database-schema-information.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

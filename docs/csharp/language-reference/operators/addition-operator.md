@@ -9,11 +9,11 @@ helpviewer_keywords:
 - addition operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
 ms.openlocfilehash: b49694bc8937c58bd295f0f8e57c378802d0dfb9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541801"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43741328"
 ---
 # <a name="-operator-c-reference"></a>+ – operátor (Referenční dokumentace jazyka C#)
 `+` Operátor může fungovat jako unární nebo binární operátor.  

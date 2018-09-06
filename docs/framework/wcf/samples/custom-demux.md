@@ -3,11 +3,11 @@ title: Vlastní demux
 ms.date: 03/30/2017
 ms.assetid: fc54065c-518e-4146-b24a-0fe00038bfa7
 ms.openlocfilehash: 1542743a6e1658bad162d7ee9ca73e6b9b0444e2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43395658"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732365"
 ---
 # <a name="custom-demux"></a>Vlastní demux
 Tato ukázka předvádí, jak záhlaví zpráv MSMQ lze mapovat na jinou službu operations tak, aby služba Windows Communication Foundation (WCF), které používají <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> nejsou možné použít jedna operace služby, jak je ukázáno v [ Zprávy služby Řízení front zpráv do služby Windows Communication Foundation](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md) a [Windows Communication Foundation do služby Řízení front zpráv](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md) ukázky.  

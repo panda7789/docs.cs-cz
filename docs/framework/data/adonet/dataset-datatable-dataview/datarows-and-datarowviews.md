@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 8f5eec26-b809-4aca-8778-7e202356d856
 ms.openlocfilehash: 5bd7ebefc03dbe6b44a199ba3123414e7b282c90
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43390034"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732394"
 ---
 # <a name="datarows-and-datarowviews"></a>DataRows a DataRowViews
 A <xref:System.Data.DataView> zpřístupňuje vyčíslitelné kolekce <xref:System.Data.DataRowView> objekty. **DataRowView** objekty zpřístupnění hodnot ve formě pole objektů, které jsou indexovány pomocí název nebo Řadový odkaz na sloupec v základní tabulce. Můžete přistupovat <xref:System.Data.DataRow> , který je zveřejněný prostřednictvím **DataRowView** pomocí <xref:System.Data.DataRowView.Row%2A> vlastnost **DataRowView**.  

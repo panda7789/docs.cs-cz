@@ -3,11 +3,11 @@ title: Ukázka zjišťování pomocí oborů
 ms.date: 03/30/2017
 ms.assetid: 6a37a754-6b8c-4ebe-bdf2-d4f0520271d5
 ms.openlocfilehash: d9adc33d73642a42a8ba948b3c5bf75bd4bc1f5c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43398132"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43733775"
 ---
 # <a name="discovery-with-scopes-sample"></a>Ukázka zjišťování pomocí oborů
 Tento příklad ukazuje, jak pomocí oborů zařadit zjistitelné koncových bodů i jak používat <xref:System.ServiceModel.Discovery.DiscoveryClient> provést asynchronní hledání pro koncové body. Ve službě Tato ukázka předvádí, jak přizpůsobit přidáním chování koncového bodu zjišťování a pomocí přidání oboru ke koncovému bodu, stejně jako řízení zjistitelnost koncového bodu zjišťování pro každý koncový bod. Na straně klienta překročí jak můžou klienti vytvořit ukázky <xref:System.ServiceModel.Discovery.DiscoveryClient> a doladit parametry patří oborů tak, že přidáte obory pro hledání <xref:System.ServiceModel.Discovery.FindCriteria>. Tento příklad také ukazuje, jak klienti odpovědi omezit tak, že přidáte ukončovacího kritéria.  

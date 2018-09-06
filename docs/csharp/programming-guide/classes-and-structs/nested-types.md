@@ -5,11 +5,11 @@ helpviewer_keywords:
 - nested types [C#]
 ms.assetid: f2e1b315-e3d1-48ce-977f-7bae0960ba99
 ms.openlocfilehash: f99b84d5b21261fa81c02d028d1f913be7290dbb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43564366"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43740163"
 ---
 # <a name="nested-types-c-programming-guide"></a>Vnořené typy (Průvodce programováním v C#)
 Typ definovaný v rámci [třídy](../../../csharp/language-reference/keywords/class.md) nebo [struktura](../../../csharp/language-reference/keywords/struct.md) se nazývá vnořený typ. Příklad:  

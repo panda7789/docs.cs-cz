@@ -18,11 +18,11 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d24dbcbdd8b0ed0736f7b59564cf72dffaa5a8f8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43463949"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43745954"
 ---
 # <a name="imetadatatablesgetrow-method"></a>IMetaDataTables::GetRow – metoda
 Získá řádek indexu zadaný řádek v tabulce indexu zadané tabulky.  

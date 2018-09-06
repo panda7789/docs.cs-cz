@@ -3,11 +3,11 @@ title: Odesílání a zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: 98e8e04d-2ac9-4a33-ae08-462f757a7a14
 ms.openlocfilehash: 896f209e7daeeab2bb33c1fde15298aae96c8776
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43406655"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43733362"
 ---
 # <a name="sending-and-handling-faults"></a>Odesílání a zpracování chyb
 Tato ukázka předvádí, jak používat <xref:System.ServiceModel.Activities.SendReply> a <xref:System.ServiceModel.Activities.ReceiveReply> zasílání zpráv aktivity pro odesílání a přijímání očekávaným způsobem a neočekávané chyby. V tomto scénáři první klient vyžádat výsledky v očekávané chybu, která obsahuje její <xref:System.ServiceModel.Activities.Send.KnownTypes%2A> kolekce. Další několik požadavků klientů za následek příjem neočekávané chyby, před posledním neproběhne.  

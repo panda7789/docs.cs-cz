@@ -5,26 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ff226ce3-f6b5-47a1-8d22-dc78b67e07f5
-ms.openlocfilehash: 51df8ad695b3e59b368499d35ac76cc7ac0cd6e1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: 5465238e4b9deaa13c76cb35122fcaded7acd7f7
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33363361"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43736656"
 ---
 # <a name="sqldependency-in-an-aspnet-application"></a>SqlDependency v aplikaci ASP.NET
-Příklad v této části ukazuje, jak používat <xref:System.Data.SqlClient.SqlDependency> nepřímo s využitím technologie ASP.NET <xref:System.Web.Caching.SqlCacheDependency> objektu. <xref:System.Web.Caching.SqlCacheDependency> Objektu používá <xref:System.Data.SqlClient.SqlDependency> čekat na oznámení a správně aktualizace mezipaměti.  
+Příklad v této části ukazuje, jak používat <xref:System.Data.SqlClient.SqlDependency> nepřímo s využitím technologie ASP.NET <xref:System.Web.Caching.SqlCacheDependency> objektu. <xref:System.Web.Caching.SqlCacheDependency> Objektu používá <xref:System.Data.SqlClient.SqlDependency> naslouchat oznámením a správně aktualizovat mezipaměť.  
   
 > [!NOTE]
->  Ukázkový kód předpokládá, že je povoleno oznámení dotazů spuštěním skriptů v [povolení oznámení dotazů](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md).  
+>  Vzorový kód předpokládá, že jste povolili oznámení dotazů spuštěním skriptů v [povolení oznámení dotazů](../../../../../docs/framework/data/adonet/sql/enabling-query-notifications.md).  
   
 ## <a name="about-the-sample-application"></a>O ukázkové aplikace  
- Ukázková aplikace používá k zobrazení informací o produktu z jediné stránce rozhraní ASP.NET Web **AdventureWorks** databáze systému SQL Server v <xref:System.Web.UI.WebControls.GridView> ovládacího prvku. Když se stránka načte, kód zapíše aktuální čas <xref:System.Web.UI.WebControls.Label> ovládacího prvku. Pak definuje <xref:System.Web.Caching.SqlCacheDependency> objektu a nastaví vlastnosti pro <xref:System.Web.Caching.Cache> objekt pro uložení dat mezipaměti pro až tři minuty. Kód pak připojí k databázi a načte data. Při načtení stránky a aplikace běží ASP.NET načte data z mezipaměti, který lze ověřit poznamenat, že čas na stránce nezmění. Pokud monitorovaných změny dat, technologie ASP.NET zruší platnost mezipaměti a znovu vytvořit `GridView` ovládacího prvku pomocí čerstvá data, času zobrazeného v aktualizaci `Label` ovládacího prvku.  
+ Ukázková aplikace používá k zobrazení informací o produktu z jediné stránce technologie ASP.NET **AdventureWorks** databázi SQL serveru <xref:System.Web.UI.WebControls.GridView> ovládacího prvku. Když se stránka načte, zapíše kód aktuální čas <xref:System.Web.UI.WebControls.Label> ovládacího prvku. Potom definuje <xref:System.Web.Caching.SqlCacheDependency> objekt a nastaví vlastnosti pro <xref:System.Web.Caching.Cache> objekt pro uložení data v mezipaměti pro až 3 minuty. Kód poté se připojí k databázi a načítá data. Při načtení stránky a je spuštěná aplikace ASP.NET se načtou data z mezipaměti, což můžete ověřit tak poznamenat, že čas na stránce nemění. Pokud data monitoruje změní, ASP.NET zruší platnost mezipaměti a znovu vytvořit `GridView` ovládací prvek s čerstvá data, času zobrazeného v aktualizaci `Label` ovládacího prvku.  
   
 ## <a name="creating-the-sample-application"></a>Vytvoření ukázkové aplikace  
- Postupujte podle těchto kroků vytvořte a spusťte ukázkovou aplikaci:  
+ Postupujte podle těchto kroků k vytvoření a spuštění ukázkové aplikace:  
   
-1.  Vytvoření nového webu ASP.NET.  
+1.  Vytvoření nového webu technologie ASP.NET.  
   
 2.  Přidat <xref:System.Web.UI.WebControls.Label> a <xref:System.Web.UI.WebControls.GridView> ovládacího prvku na stránku Default.aspx.  
   
@@ -42,21 +42,21 @@ Příklad v této části ukazuje, jak používat <xref:System.Data.SqlClient.Sq
     using System.Web.Caching;  
     ```  
   
-4.  Přidejte následující kód na stránce `Page_Load` událostí:  
+4.  Přidejte následující kód na stránce `Page_Load` události:  
   
      [!code-csharp[DataWorks SqlDependency.AspNet#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/CS/Default.aspx.cs#1)]
      [!code-vb[DataWorks SqlDependency.AspNet#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/VB/Default.aspx.vb#1)]  
   
-5.  Přidat dvě metody helper, `GetConnectionString` a `GetSQL`. Připojovací řetězec, který je definován používá integrované zabezpečení. Budete muset ověřte, že používáte účet má oprávnění potřebná databáze a že ukázkové databáze **AdventureWorks**, má oznámení povolena. Další informace najdete v tématu [zvláštní aspekty při používání oznámení dotazů](http://msdn.microsoft.com/library/a83c8dc8-4fb9-4ffd-a2a5-c07cf4a203c7).  
+5.  Přidat dvě metody helper `GetConnectionString` a `GetSQL`. Připojovací řetězec, který je definován používá integrované zabezpečení. Budete muset ověřit, že používáte účet nemá oprávnění potřebné databáze a že ukázkovou databázi **AdventureWorks**, je oznámení jsou povolená. Další informace najdete v tématu [zvláštní aspekty při používání oznámení dotazů](https://msdn.microsoft.com/library/a83c8dc8-4fb9-4ffd-a2a5-c07cf4a203c7).  
   
      [!code-csharp[DataWorks SqlDependency.AspNet#2](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/CS/Default.aspx.cs#2)]
      [!code-vb[DataWorks SqlDependency.AspNet#2](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlDependency.AspNet/VB/Default.aspx.vb#2)]  
   
 ### <a name="testing-the-application"></a>Testování aplikace  
- Aplikace ukládá data zobrazí ve webovém formuláři do mezipaměti a aktualizuje ji každé tři minuty, pokud nebude žádná aktivita. Pokud dojde ke změně do databáze, je mezipaměť aktualizovat okamžitě. Spusťte aplikaci v sadě Visual Studio, který načte stránku do prohlížeče. Doba aktualizace mezipaměti, který se zobrazí označuje při poslední aktualizaci mezipaměti. Počkejte tři minut a pak aktualizujte stránku, způsobuje na událost zpětného volání. Všimněte si, že došlo ke změně času zobrazený na stránce. Pokud obnovíte stránku za méně než tři minuty, zůstane stejný čas na stránku.  
+ Aplikace ukládá do mezipaměti, data zobrazená ve webovém formuláři a aktualizuje se každé 3 minuty, pokud neexistuje žádná aktivita. Pokud dojde ke změně k databázi, do mezipaměti se aktualizují okamžitě. Spuštění aplikace ze sady Visual Studio, který načte stránku do prohlížeče. Čas aktualizace mezipaměti zobrazí označuje při poslední aktualizaci do mezipaměti. Počkejte tři minuty a potom aktualizujte stránku, příčinou událost zpětného odeslání dojde k. Všimněte si, že došlo ke změně času zobrazeného na stránce. Pokud stránku aktualizujete za méně než tři minuty, času zobrazeného na stránce zůstanou stejné.  
   
- Teď umožňuje aktualizovat data v databázi, pomocí příkazu Transact-SQL, aktualizovat a aktualizujte stránku. Zobrazuje nyní označuje, že do mezipaměti byly aktualizovány s nová data z databáze. Všimněte si, že i když se aktualizuje mezipaměť, času zobrazený na stránce se nezmění, dokud nedojde k události postback.  
+ Nyní aktualizovat data v databázi, pomocí příkazu jazyka Transact-SQL, aktualizovat a aktualizujte stránku. Času zobrazeného teď označuje, že mezipaměť byl aktualizován novými daty z databáze. Všimněte si, že i když se aktualizuje mezipaměť, času zobrazeného na stránce se nezmění, dokud dojde k události postback.  
   
 ## <a name="see-also"></a>Viz také  
  [Oznámení pro dotazy na SQL Serveru](../../../../../docs/framework/data/adonet/sql/query-notifications-in-sql-server.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

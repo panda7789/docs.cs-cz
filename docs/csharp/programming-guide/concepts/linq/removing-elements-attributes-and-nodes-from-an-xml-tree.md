@@ -1,40 +1,40 @@
 ---
-title: Odebrání prvky, atributy a uzly ze stromu XML (C#)
+title: Odebrání elementů, atributů a uzlů ze stromu XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 07dd06d6-1117-4077-bf98-9120cf51176e
-ms.openlocfilehash: 85c1adc06321abf90fe478abf5375882069f11ec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ce63ce6a4ef75dedc788efca11e8dd2bdb471eb
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33339966"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43736361"
 ---
-# <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Odebrání prvky, atributy a uzly ze stromu XML (C#)
-Ve stromu XML, můžete upravit odebrání prvky, atributy a jiné typy uzlů.  
+# <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Odebrání elementů, atributů a uzlů ze stromu XML (C#)
+Můžete upravit stromu XML, odebrání elementů, atributů a dalších typů uzlů.  
   
- Odebrání jeden element nebo jeden atribut z dokumentu XML je jednoduchá. Ale při odebírání kolekce elementy nebo atributy, doporučujeme nejdřív vyhodnotit kolekce do seznamu a pak odstraňte elementy nebo atributy ze seznamu. Nejlepším postupem je použití <xref:System.Xml.Linq.Extensions.Remove%2A> metody rozšíření, která bude to dělají za vás.  
+ Odebrání jeden element nebo jeden atribut z dokumentu XML je jednoduché. Ale při odstraňování kolekce elementy nebo atributy, musí nejprve sloučit kolekci do seznamu a pak odstraníte elementy nebo atributy ze seznamu. Nejlepší možností je použít <xref:System.Xml.Linq.Extensions.Remove%2A> metodu rozšíření, která to udělal za vás.  
   
- Hlavním důvodem tohoto postupu je výsledkem většinu kolekce, které je načíst ze stromu XML jsou chybná pomocí odložené provedení. Pokud jste není nejdřív vyhodnotit je do seznamu, nebo pokud nepoužijete rozšiřující metody, je možné dojde k určité třídě chyby. Další informace najdete v tématu [smíšený deklarativní kód nebo imperativní kód chyby (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).  
+ Hlavním důvodem pro to je, že jsou výsledkem většinu kolekce, které se načítají ze stromu XML pomocí odloženého provedení. Pokud jste není nejprve materializovat je do seznamu, nebo pokud používáte metody rozšíření, je možné se setkat se třídy chyb. Další informace najdete v tématu [smíšené deklarativní kód/dnešní kód chyby (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md).  
   
- Následující metody odebrat uzly a atributy ze stromu XML.  
+ Následující metody odebrání uzlů a atributy ze stromu XML.  
   
 |Metoda|Popis|  
 |------------|-----------------|  
-|<xref:System.Xml.Linq.XAttribute.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XAttribute> z nadřazené.|  
-|<xref:System.Xml.Linq.XContainer.RemoveNodes%2A?displayProperty=nameWithType>|Odebere z podřízených uzlů <xref:System.Xml.Linq.XContainer>.|  
-|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=nameWithType>|Odstraní obsah a pro atributy z <xref:System.Xml.Linq.XElement>.|  
+|<xref:System.Xml.Linq.XAttribute.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XAttribute> od svého nadřazeného objektu.|  
+|<xref:System.Xml.Linq.XContainer.RemoveNodes%2A?displayProperty=nameWithType>|Odebere podřízené uzly ze <xref:System.Xml.Linq.XContainer>.|  
+|<xref:System.Xml.Linq.XElement.RemoveAll%2A?displayProperty=nameWithType>|Odstraní obsah a atributy ze <xref:System.Xml.Linq.XElement>.|  
 |<xref:System.Xml.Linq.XElement.RemoveAttributes%2A?displayProperty=nameWithType>|Odebere atributy <xref:System.Xml.Linq.XElement>.|  
-|<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=nameWithType>|Pokud předáte `null` pro hodnotu, pak odebere atribut.|  
-|<xref:System.Xml.Linq.XElement.SetElementValue%2A?displayProperty=nameWithType>|Pokud předáte `null` pro hodnotu, pak odebere podřízený element.|  
-|<xref:System.Xml.Linq.XNode.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XNode> z nadřazené.|  
+|<xref:System.Xml.Linq.XElement.SetAttributeValue%2A?displayProperty=nameWithType>|Pokud předáte `null` pro hodnotu, pak taky odebere atribut.|  
+|<xref:System.Xml.Linq.XElement.SetElementValue%2A?displayProperty=nameWithType>|Pokud předáte `null` pro hodnotu, pak taky odebere podřízený element.|  
+|<xref:System.Xml.Linq.XNode.Remove%2A?displayProperty=nameWithType>|Odebere <xref:System.Xml.Linq.XNode> od svého nadřazeného objektu.|  
 |<xref:System.Xml.Linq.Extensions.Remove%2A?displayProperty=nameWithType>|Odebere každý atribut nebo element ve zdrojové kolekci ze svého nadřízeného elementu.|  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Tento příklad ukazuje tři metody odebírání elementů. Nejprve odebere jeden element. Druhý, načte kolekci elementů, bude je realizována pomocí <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> operátor a také odebere kolekce. Nakonec načte kolekci elementů a odebere je pomocí <xref:System.Xml.Linq.Extensions.Remove%2A> metoda rozšíření.  
+ Tento příklad ukazuje tři přístupy k odebrání prvků. Nejprve se odebere jeden element. Za druhé, načte kolekci elementů, bude je realizována pomocí <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> operátorů a odebere kolekce. A konečně, načte kolekci elementů a odebere je pomocí <xref:System.Xml.Linq.Extensions.Remove%2A> – metoda rozšíření.  
   
- Další informace o <xref:System.Linq.Enumerable.ToList%2A> operátor, najdete v části [převádění datových typů (C#)](../../../../csharp/programming-guide/concepts/linq/converting-data-types.md).  
+ Další informace o <xref:System.Linq.Enumerable.ToList%2A> operátoru, naleznete v tématu [převádění datových typů (C#)](../../../../csharp/programming-guide/concepts/linq/converting-data-types.md).  
   
 ### <a name="code"></a>Kód  
   
@@ -76,7 +76,8 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
- Všimněte si, že první podřízený prvek byl odebrán z `Child1`. Všechny podřízené elementy byly odebrány z `Child2` a z `Child3`.  
+ Všimněte si, že první podřízený element byl odebrán z `Child1`. Všechny podřízené prvky byly odebrány z `Child2` a z `Child3`.  
   
-## <a name="see-also"></a>Viz také  
- [Úprava XML stromů (technologie LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+## <a name="see-also"></a>Viz také
+
+- [Změna stromů XML (LINQ to XML) (C#)](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
