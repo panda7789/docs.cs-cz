@@ -1,5 +1,5 @@
 ---
-title: Ověření schématu (XSD) XML s kolekci XmlSchemaCollection
+title: Ověření schématu XML (XSD) s třídou XmlSchemaCollection
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,20 +8,20 @@ dev_langs:
 ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6505229d96c6f27452776403a6e1f997dc5a8b10
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c570f812ec06c6ead0d12dc14c33fcdfd1f075c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572194"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871634"
 ---
-# <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a><span data-ttu-id="14fb1-102">Ověření schématu (XSD) XML s kolekci XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="14fb1-102">XML Schema (XSD) Validation with XmlSchemaCollection</span></span>
-<span data-ttu-id="14fb1-103">Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> ověřit dokument XML pomocí schématu XML definition language (XSD) schémat.</span><span class="sxs-lookup"><span data-stu-id="14fb1-103">You can use the <xref:System.Xml.Schema.XmlSchemaCollection> to validate an XML document against XML Schema definition language (XSD) schemas.</span></span> <span data-ttu-id="14fb1-104"><xref:System.Xml.Schema.XmlSchemaCollection> Díky ukládání schémata v kolekci, takže nejsou načtena do paměti dojde k ověření jednotlivých časové zvyšuje výkon.</span><span class="sxs-lookup"><span data-stu-id="14fb1-104">The <xref:System.Xml.Schema.XmlSchemaCollection> improves performance by storing schemas in the collection so they are not loaded into memory each time validation occurs.</span></span> <span data-ttu-id="14fb1-105">Pokud schéma existuje v kolekci schémat `schemaLocation` atribut slouží k vyhledání schématu v kolekci.</span><span class="sxs-lookup"><span data-stu-id="14fb1-105">If the schema exists in the schema collection, the `schemaLocation` attribute is used to look up the schema in the collection.</span></span>  
+# <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a><span data-ttu-id="75940-102">Ověření schématu XML (XSD) s třídou XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="75940-102">XML Schema (XSD) Validation with XmlSchemaCollection</span></span>
+<span data-ttu-id="75940-103">Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML pomocí schématu XML definice jazyk (XSD) schémat.</span><span class="sxs-lookup"><span data-stu-id="75940-103">You can use the <xref:System.Xml.Schema.XmlSchemaCollection> to validate an XML document against XML Schema definition language (XSD) schemas.</span></span> <span data-ttu-id="75940-104"><xref:System.Xml.Schema.XmlSchemaCollection> Ukládání schémata v kolekci, takže už nejsou načtena do paměti dojde k ověření při každé zvyšuje výkon.</span><span class="sxs-lookup"><span data-stu-id="75940-104">The <xref:System.Xml.Schema.XmlSchemaCollection> improves performance by storing schemas in the collection so they are not loaded into memory each time validation occurs.</span></span> <span data-ttu-id="75940-105">Pokud schéma existuje v kolekci schémat `schemaLocation` atribut se používá k vyhledání schématu v kolekci.</span><span class="sxs-lookup"><span data-stu-id="75940-105">If the schema exists in the schema collection, the `schemaLocation` attribute is used to look up the schema in the collection.</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="14fb1-106"><xref:System.Xml.Schema.XmlSchemaCollection> Třída je zastaralá a nahradila s <xref:System.Xml.Schema.XmlSchemaSet> třídy.</span><span class="sxs-lookup"><span data-stu-id="14fb1-106">The <xref:System.Xml.Schema.XmlSchemaCollection> class is now obsolete and has been replaced with the <xref:System.Xml.Schema.XmlSchemaSet> class.</span></span> <span data-ttu-id="14fb1-107">Další informace o <xref:System.Xml.Schema.XmlSchemaSet> najdete třída [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).</span><span class="sxs-lookup"><span data-stu-id="14fb1-107">For more information about the <xref:System.Xml.Schema.XmlSchemaSet> class see, [XmlSchemaSet for Schema Compilation](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).</span></span>  
+>  <span data-ttu-id="75940-106"><xref:System.Xml.Schema.XmlSchemaCollection> Třída je zastaralá a bylo nahrazeno tématem <xref:System.Xml.Schema.XmlSchemaSet> třídy.</span><span class="sxs-lookup"><span data-stu-id="75940-106">The <xref:System.Xml.Schema.XmlSchemaCollection> class is now obsolete and has been replaced with the <xref:System.Xml.Schema.XmlSchemaSet> class.</span></span> <span data-ttu-id="75940-107">Další informace o <xref:System.Xml.Schema.XmlSchemaSet> třídy viz [XmlSchemaSet pro kompilaci schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).</span><span class="sxs-lookup"><span data-stu-id="75940-107">For more information about the <xref:System.Xml.Schema.XmlSchemaSet> class see, [XmlSchemaSet for Schema Compilation](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md).</span></span>  
   
- <span data-ttu-id="14fb1-108">Následující příklad ukazuje kořenový element datového souboru.</span><span class="sxs-lookup"><span data-stu-id="14fb1-108">The following example shows the root element of a data file.</span></span>  
+ <span data-ttu-id="75940-108">Následující příklad ukazuje kořenový element datového souboru.</span><span class="sxs-lookup"><span data-stu-id="75940-108">The following example shows the root element of a data file.</span></span>  
   
 ```xml  
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  
@@ -30,9 +30,9 @@ ms.locfileid: "33572194"
     targetNamespace="urn:bookstore-schema">  
 ```  
   
- <span data-ttu-id="14fb1-109">V tomto příkladu hodnotu `targetNamespace` atribut je `urn:bookstore-schema`, což je stejný obor názvů, který se používá při přidávání schéma tak, aby <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="14fb1-109">For this example, the value of the `targetNamespace` attribute is `urn:bookstore-schema`, which is the same namespace that is used when adding the schema to the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span>  
+ <span data-ttu-id="75940-109">V tomto příkladu hodnoty `targetNamespace` atribut je `urn:bookstore-schema`, což je stejný obor názvů, který se používá při přidávání schématu <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="75940-109">For this example, the value of the `targetNamespace` attribute is `urn:bookstore-schema`, which is the same namespace that is used when adding the schema to the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span>  
   
- <span data-ttu-id="14fb1-110">Následující příklad kódu přidá schéma XML <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="14fb1-110">The following code example adds an XML Schema to the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span>  
+ <span data-ttu-id="75940-110">Následující příklad kódu přidá schéma XML <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="75940-110">The following code example adds an XML Schema to the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span>  
   
 ```vb  
 Dim xsc As New XmlSchemaCollection()  
@@ -52,9 +52,9 @@ vreader = new XmlValidatingReader (reader);
 vreader.Schemas.Add(xsc);  
 ```  
   
- <span data-ttu-id="14fb1-111">`targetNamespace` Atribut se zpravidla používá, když přidáte `namespaceURI` vlastnost v <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="14fb1-111">The `targetNamespace` attribute is generally used when you add the `namespaceURI` property in the <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> method for the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span> <span data-ttu-id="14fb1-112">Můžete zadat odkaz s hodnotou null před přidáním schéma tak, aby <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="14fb1-112">You can specify a null reference before adding the schema to the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span> <span data-ttu-id="14fb1-113">Prázdný řetězec ("") se má používat pro schémata bez oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="14fb1-113">An empty string ("") should be used for schemas without a namespace.</span></span> <span data-ttu-id="14fb1-114"><xref:System.Xml.Schema.XmlSchemaCollection> Může mít pouze jedno schéma bez oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="14fb1-114">The <xref:System.Xml.Schema.XmlSchemaCollection> can have only one schema without a namespace.</span></span>  
+ <span data-ttu-id="75940-111">`targetNamespace` Atribut se obvykle používá při přidání `namespaceURI` vlastnost <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="75940-111">The `targetNamespace` attribute is generally used when you add the `namespaceURI` property in the <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> method for the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span> <span data-ttu-id="75940-112">Před přidáním se schéma můžete zadat odkaz s hodnotou null <xref:System.Xml.Schema.XmlSchemaCollection>.</span><span class="sxs-lookup"><span data-stu-id="75940-112">You can specify a null reference before adding the schema to the <xref:System.Xml.Schema.XmlSchemaCollection>.</span></span> <span data-ttu-id="75940-113">Prázdný řetězec ("") byste měli použít pro schémata bez oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="75940-113">An empty string ("") should be used for schemas without a namespace.</span></span> <span data-ttu-id="75940-114"><xref:System.Xml.Schema.XmlSchemaCollection> Může mít jenom jedno schéma bez oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="75940-114">The <xref:System.Xml.Schema.XmlSchemaCollection> can have only one schema without a namespace.</span></span>  
   
- <span data-ttu-id="14fb1-115">Následující příklad kódu přidá schématu XML HeadCount.xsd, na <xref:System.Xml.Schema.XmlSchemaCollection> a ověří HeadCount.xml.</span><span class="sxs-lookup"><span data-stu-id="14fb1-115">The following code example adds an XML Schema, HeadCount.xsd, to the <xref:System.Xml.Schema.XmlSchemaCollection> and validates HeadCount.xml.</span></span>  
+ <span data-ttu-id="75940-115">Následující příklad kódu přidá do schématu XML, HeadCount.xsd, <xref:System.Xml.Schema.XmlSchemaCollection> a ověří HeadCount.xml.</span><span class="sxs-lookup"><span data-stu-id="75940-115">The following code example adds an XML Schema, HeadCount.xsd, to the <xref:System.Xml.Schema.XmlSchemaCollection> and validates HeadCount.xml.</span></span>  
   
 ```vb  
 Imports System  
@@ -125,7 +125,7 @@ namespace ValidationSample
 }  
 ```  
   
- <span data-ttu-id="14fb1-116">Následující část popisuje obsah souboru vstupního souboru, HeadCount.xml, který má být ověřen.</span><span class="sxs-lookup"><span data-stu-id="14fb1-116">The following outlines the contents of the input file, HeadCount.xml, to be validated.</span></span>  
+ <span data-ttu-id="75940-116">Následující části je popsán obsah vstupního souboru HeadCount.xml, který má být ověřen.</span><span class="sxs-lookup"><span data-stu-id="75940-116">The following outlines the contents of the input file, HeadCount.xml, to be validated.</span></span>  
   
 ```xml  
 <!--Load HeadCount.xsd in SchemaCollection for Validation-->  
@@ -135,7 +135,7 @@ namespace ValidationSample
 </hc:HeadCount>  
 ```  
   
- <span data-ttu-id="14fb1-117">Následující část popisuje obsah souboru schématu XML, HeadCount.xsd, chcete-li ověřit pomocí.</span><span class="sxs-lookup"><span data-stu-id="14fb1-117">The following outlines the contents of the XML Schema file, HeadCount.xsd, to be validated against.</span></span>  
+ <span data-ttu-id="75940-117">Následující části je popsán obsah souboru schématu XML, HeadCount.xsd, chcete-li být ověřena.</span><span class="sxs-lookup"><span data-stu-id="75940-117">The following outlines the contents of the XML Schema file, HeadCount.xsd, to be validated against.</span></span>  
   
 ```xml  
 <xs:schema xmlns="xsdHeadCount" targetNamespace="xsdHeadCount" xmlns:xs="http://www.w3.org/2001/XMLSchema">  
@@ -149,7 +149,7 @@ namespace ValidationSample
 </xs:schema>  
 ```  
   
- <span data-ttu-id="14fb1-118">Následující příklad kódu vytvoří <xref:System.Xml.XmlValidatingReader> , která má <xref:System.Xml.XmlTextReader>.</span><span class="sxs-lookup"><span data-stu-id="14fb1-118">The following code example creates an <xref:System.Xml.XmlValidatingReader> that takes an <xref:System.Xml.XmlTextReader>.</span></span> <span data-ttu-id="14fb1-119">Vstupní soubor, sample4.xml, bude ověřeno schématu XML sample4.xsd.</span><span class="sxs-lookup"><span data-stu-id="14fb1-119">The input file, sample4.xml, is validated against the XML Schema, sample4.xsd.</span></span>  
+ <span data-ttu-id="75940-118">Následující příklad kódu vytvoří <xref:System.Xml.XmlValidatingReader> , která má <xref:System.Xml.XmlTextReader>.</span><span class="sxs-lookup"><span data-stu-id="75940-118">The following code example creates an <xref:System.Xml.XmlValidatingReader> that takes an <xref:System.Xml.XmlTextReader>.</span></span> <span data-ttu-id="75940-119">Vstupní soubor, sample4.xml, ověřit proti schématu XML sample4.xsd.</span><span class="sxs-lookup"><span data-stu-id="75940-119">The input file, sample4.xml, is validated against the XML Schema, sample4.xsd.</span></span>  
   
 ```vb  
 Dim tr As New XmlTextReader("sample4.xml")  
@@ -173,7 +173,7 @@ while(vr.Read()) {
     }  
 ```  
   
- <span data-ttu-id="14fb1-120">Následující část popisuje obsah souboru vstupního souboru, sample4.xml, který má být ověřen.</span><span class="sxs-lookup"><span data-stu-id="14fb1-120">The following outlines the contents of the input file, sample4.xml, to be validated.</span></span>  
+ <span data-ttu-id="75940-120">Následující části je popsán obsah vstupního souboru sample4.xml, který má být ověřen.</span><span class="sxs-lookup"><span data-stu-id="75940-120">The following outlines the contents of the input file, sample4.xml, to be validated.</span></span>  
   
 ```xml  
 <datatypes xmlns="datatypesTest">  
@@ -183,7 +183,7 @@ while(vr.Read()) {
 </datatypes>  
 ```  
   
- <span data-ttu-id="14fb1-121">Následující část popisuje obsah souboru schématu XML, sample4.xsd, chcete-li ověřit pomocí.</span><span class="sxs-lookup"><span data-stu-id="14fb1-121">The following outlines the contents of the XML Schema file, sample4.xsd, to be validated against.</span></span>  
+ <span data-ttu-id="75940-121">Následující části je popsán obsah souboru schématu XML, sample4.xsd, chcete-li být ověřena.</span><span class="sxs-lookup"><span data-stu-id="75940-121">The following outlines the contents of the XML Schema file, sample4.xsd, to be validated against.</span></span>  
   
 ```xml  
 <xs:schema   
@@ -208,8 +208,9 @@ while(vr.Read()) {
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="14fb1-122">Viz také</span><span class="sxs-lookup"><span data-stu-id="14fb1-122">See Also</span></span>  
- <xref:System.Xml.XmlParserContext>  
- <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>  
- <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>  
- [<span data-ttu-id="14fb1-123">Kompilace schématu XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="14fb1-123">XmlSchemaCollection Schema Compilation</span></span>](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)
+## <a name="see-also"></a><span data-ttu-id="75940-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="75940-122">See also</span></span>
+
+- <xref:System.Xml.XmlParserContext>  
+- <xref:System.Xml.XmlValidatingReader.ValidationEventHandler?displayProperty=nameWithType>  
+- <xref:System.Xml.XmlValidatingReader.Schemas%2A?displayProperty=nameWithType>  
+- [<span data-ttu-id="75940-123">Kompilace schématu XmlSchemaCollection</span><span class="sxs-lookup"><span data-stu-id="75940-123">XmlSchemaCollection Schema Compilation</span></span>](../../../../docs/standard/data/xml/xmlschemacollection-schema-compilation.md)

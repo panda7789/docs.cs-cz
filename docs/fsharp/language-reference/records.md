@@ -1,19 +1,19 @@
 ---
 title: Záznamy (F#)
-description: 'Zjistěte, jak F # záznamy představují jednoduché agregace pojmenovaných hodnot, případně se členy.'
+description: 'Zjistěte, jak F # záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.'
 ms.date: 05/16/2016
-ms.openlocfilehash: ffb853ee11ff8cacb45dadf6ef14a4f29400aad4
-ms.sourcegitcommit: 54231aa56fca059e9297888a96fbca1d4cf3746c
+ms.openlocfilehash: 6103d96b6b80a9e2ed168755958dbe800f7fa862
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34549604"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43882360"
 ---
-# <a name="records"></a><span data-ttu-id="e467b-103">Záznamy</span><span class="sxs-lookup"><span data-stu-id="e467b-103">Records</span></span>
+# <a name="records"></a><span data-ttu-id="52023-103">Záznamy</span><span class="sxs-lookup"><span data-stu-id="52023-103">Records</span></span>
 
-<span data-ttu-id="e467b-104">Záznamy představují jednoduché agregace pojmenovaných hodnot, případně se členy.</span><span class="sxs-lookup"><span data-stu-id="e467b-104">Records represent simple aggregates of named values, optionally with members.</span></span>  <span data-ttu-id="e467b-105">Od verze 4.1 F #, můžete buď být typy struktur nebo odkaz.</span><span class="sxs-lookup"><span data-stu-id="e467b-105">Starting with F# 4.1, they can either be structs or reference types.</span></span>  <span data-ttu-id="e467b-106">Typy odkazů ve výchozím nastavení jsou.</span><span class="sxs-lookup"><span data-stu-id="e467b-106">They are reference types by default.</span></span>
+<span data-ttu-id="52023-104">Záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.</span><span class="sxs-lookup"><span data-stu-id="52023-104">Records represent simple aggregates of named values, optionally with members.</span></span>  <span data-ttu-id="52023-105">Od verze F # 4.1, můžete buď být typy struktur nebo odkaz.</span><span class="sxs-lookup"><span data-stu-id="52023-105">Starting with F# 4.1, they can either be structs or reference types.</span></span>  <span data-ttu-id="52023-106">Jsou odkazové typy ve výchozím nastavení.</span><span class="sxs-lookup"><span data-stu-id="52023-106">They are reference types by default.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="e467b-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e467b-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="52023-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="52023-107">Syntax</span></span>
 
 ```fsharp
 [ attributes ]
@@ -24,57 +24,57 @@ type [accessibility-modifier] typename =
     [ member-list ]
 ```
 
-## <a name="remarks"></a><span data-ttu-id="e467b-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e467b-108">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="52023-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="52023-108">Remarks</span></span>
 
-<span data-ttu-id="e467b-109">V předchozích syntaxi *typename* je název typu záznamu, *label1* a *label2* jsou názvy hodnot, označuje jako *popisky*, a *type1* a *type2* jsou typy tyto hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e467b-109">In the previous syntax, *typename* is the name of the record type, *label1* and *label2* are names of values, referred to as *labels*, and *type1* and *type2* are the types of these values.</span></span> <span data-ttu-id="e467b-110">*seznam členů* je volitelný seznam členů pro typ.</span><span class="sxs-lookup"><span data-stu-id="e467b-110">*member-list* is the optional list of members for the type.</span></span>  <span data-ttu-id="e467b-111">Můžete použít `[<Struct>]` atributů k vytvoření záznamu struktura místo záznam, který je typu odkazu.</span><span class="sxs-lookup"><span data-stu-id="e467b-111">You can use the `[<Struct>]` attribute to create a struct record rather than a record which is a reference type.</span></span>
+<span data-ttu-id="52023-109">V předchozí syntaxi *typename* je název typu záznamu *label1* a *label2* jsou názvy hodnot, označuje jako *popisky*, a *type1* a *type2* typy těchto hodnot.</span><span class="sxs-lookup"><span data-stu-id="52023-109">In the previous syntax, *typename* is the name of the record type, *label1* and *label2* are names of values, referred to as *labels*, and *type1* and *type2* are the types of these values.</span></span> <span data-ttu-id="52023-110">*seznam členů* je volitelný seznam členů typu.</span><span class="sxs-lookup"><span data-stu-id="52023-110">*member-list* is the optional list of members for the type.</span></span>  <span data-ttu-id="52023-111">Můžete použít `[<Struct>]` atributu k vytvoření záznamu – struktura, nikoli záznam, který je typem odkazu.</span><span class="sxs-lookup"><span data-stu-id="52023-111">You can use the `[<Struct>]` attribute to create a struct record rather than a record which is a reference type.</span></span>
 
-<span data-ttu-id="e467b-112">Tady jsou některé příklady.</span><span class="sxs-lookup"><span data-stu-id="e467b-112">Following are some examples.</span></span>
+<span data-ttu-id="52023-112">Toto jsou některé příklady.</span><span class="sxs-lookup"><span data-stu-id="52023-112">Following are some examples.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1901.fs)]
 
-<span data-ttu-id="e467b-113">Když každý popisek na samostatném řádku, je volitelný středník.</span><span class="sxs-lookup"><span data-stu-id="e467b-113">When each label is on a separate line, the semicolon is optional.</span></span>
+<span data-ttu-id="52023-113">Když každému popisku je na samostatném řádku, středník je volitelné.</span><span class="sxs-lookup"><span data-stu-id="52023-113">When each label is on a separate line, the semicolon is optional.</span></span>
 
-<span data-ttu-id="e467b-114">Můžete nastavit hodnoty ve výrazech známé jako *záznam výrazy*.</span><span class="sxs-lookup"><span data-stu-id="e467b-114">You can set values in expressions known as *record expressions*.</span></span> <span data-ttu-id="e467b-115">Kompilátor odvodí typ ze štítků používá (pokud jsou popisky dostatečně odlišné od jiných typů záznamů).</span><span class="sxs-lookup"><span data-stu-id="e467b-115">The compiler infers the type from the labels used (if the labels are sufficiently distinct from those of other record types).</span></span> <span data-ttu-id="e467b-116">Složené závorky ({}) vložte jej záznamu.</span><span class="sxs-lookup"><span data-stu-id="e467b-116">Braces ({ }) enclose the record expression.</span></span> <span data-ttu-id="e467b-117">Následující kód ukazuje výraz záznam, který inicializuje záznam se tři float prvky s popisky `x`, `y` a `z`.</span><span class="sxs-lookup"><span data-stu-id="e467b-117">The following code shows a record expression that initializes a record with three float elements with labels `x`, `y` and `z`.</span></span>
+<span data-ttu-id="52023-114">Můžete nastavit hodnoty ve výrazech říká *zaznamenat výrazy*.</span><span class="sxs-lookup"><span data-stu-id="52023-114">You can set values in expressions known as *record expressions*.</span></span> <span data-ttu-id="52023-115">Kompilátor odvodí typ z popisky použít (v případě, že popisky jsou dostatečně liší od těch, které další typy záznamů).</span><span class="sxs-lookup"><span data-stu-id="52023-115">The compiler infers the type from the labels used (if the labels are sufficiently distinct from those of other record types).</span></span> <span data-ttu-id="52023-116">Složené závorky ({}) uzavřete výrazu záznamu.</span><span class="sxs-lookup"><span data-stu-id="52023-116">Braces ({ }) enclose the record expression.</span></span> <span data-ttu-id="52023-117">Následující kód ukazuje výraz záznamu, která inicializuje záznam s tři prvky typu float s popisky `x`, `y` a `z`.</span><span class="sxs-lookup"><span data-stu-id="52023-117">The following code shows a record expression that initializes a record with three float elements with labels `x`, `y` and `z`.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
 
-<span data-ttu-id="e467b-118">Nepoužívejte zkráceném tvaru, pokud může být jiný typ, který má také stejné popisky.</span><span class="sxs-lookup"><span data-stu-id="e467b-118">Do not use the shortened form if there could be another type that also has the same labels.</span></span>
+<span data-ttu-id="52023-118">Zkrácený tvar nepoužívejte, pokud může být jiný typ, který má také stejné popisky.</span><span class="sxs-lookup"><span data-stu-id="52023-118">Do not use the shortened form if there could be another type that also has the same labels.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
 
-<span data-ttu-id="e467b-119">Popisky nedávno deklarovaný typ mají přednost před těch, které dříve deklarovaný typ, tak v předchozím příkladu `mypoint3D` je odvodit být `Point3D`.</span><span class="sxs-lookup"><span data-stu-id="e467b-119">The labels of the most recently declared type take precedence over those of the previously declared type, so in the preceding example, `mypoint3D` is inferred to be `Point3D`.</span></span> <span data-ttu-id="e467b-120">Explicitně zadaný typ záznamu, jako v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="e467b-120">You can explicitly specify the record type, as in the following code.</span></span>
+<span data-ttu-id="52023-119">Popisky nedávno deklarovaného typu přednost dříve deklarovaný typ, tak v předchozím příkladu `mypoint3D` odvozena jako `Point3D`.</span><span class="sxs-lookup"><span data-stu-id="52023-119">The labels of the most recently declared type take precedence over those of the previously declared type, so in the preceding example, `mypoint3D` is inferred to be `Point3D`.</span></span> <span data-ttu-id="52023-120">Můžete explicitně určit typ záznamu, stejně jako v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="52023-120">You can explicitly specify the record type, as in the following code.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
 
-<span data-ttu-id="e467b-121">Metody lze definovat pro typy záznamů stejně jako typy tříd.</span><span class="sxs-lookup"><span data-stu-id="e467b-121">Methods can be defined for record types just as for class types.</span></span>
+<span data-ttu-id="52023-121">Metody lze definovat pro typy záznamů pouze jako typy tříd.</span><span class="sxs-lookup"><span data-stu-id="52023-121">Methods can be defined for record types just as for class types.</span></span>
 
-## <a name="creating-records-by-using-record-expressions"></a><span data-ttu-id="e467b-122">Vytvoření záznamů pomocí záznamu výrazy</span><span class="sxs-lookup"><span data-stu-id="e467b-122">Creating Records by Using Record Expressions</span></span>
+## <a name="creating-records-by-using-record-expressions"></a><span data-ttu-id="52023-122">Vytváření záznamů pomocí výrazů záznamů</span><span class="sxs-lookup"><span data-stu-id="52023-122">Creating Records by Using Record Expressions</span></span>
 
-<span data-ttu-id="e467b-123">Záznamy lze inicializovat pomocí štítků, které jsou definovány v záznamu.</span><span class="sxs-lookup"><span data-stu-id="e467b-123">You can initialize records by using the labels that are defined in the record.</span></span> <span data-ttu-id="e467b-124">Výraz, který to se označuje jako *záznam výraz*.</span><span class="sxs-lookup"><span data-stu-id="e467b-124">An expression that does this is referred to as a *record expression*.</span></span> <span data-ttu-id="e467b-125">Použijte složené závorky a vložte jej záznam použít středník jako oddělovač.</span><span class="sxs-lookup"><span data-stu-id="e467b-125">Use braces to enclose the record expression and use the semicolon as a delimiter.</span></span>
+<span data-ttu-id="52023-123">Záznamy můžete inicializovat pomocí popisků, které jsou definovány v záznamu.</span><span class="sxs-lookup"><span data-stu-id="52023-123">You can initialize records by using the labels that are defined in the record.</span></span> <span data-ttu-id="52023-124">Výraz, který se k tomu se říká *zaznamenat výraz*.</span><span class="sxs-lookup"><span data-stu-id="52023-124">An expression that does this is referred to as a *record expression*.</span></span> <span data-ttu-id="52023-125">Použijte složené závorky a uzavřete výrazu záznamu použijte jako oddělovač středník.</span><span class="sxs-lookup"><span data-stu-id="52023-125">Use braces to enclose the record expression and use the semicolon as a delimiter.</span></span>
 
-<span data-ttu-id="e467b-126">Následující příklad ukazuje, jak vytvořit záznam.</span><span class="sxs-lookup"><span data-stu-id="e467b-126">The following example shows how to create a record.</span></span>
+<span data-ttu-id="52023-126">Následující příklad ukazuje, jak vytvořit záznam.</span><span class="sxs-lookup"><span data-stu-id="52023-126">The following example shows how to create a record.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1904.fs)]
 
-<span data-ttu-id="e467b-127">Středníky za poslední pole v záznamu výraz a v definici typu jsou volitelné, bez ohledu na to, zda jsou tato pole vše na jednom řádku.</span><span class="sxs-lookup"><span data-stu-id="e467b-127">The semicolons after the last field in the record expression and in the type definition are optional, regardless of whether the fields are all in one line.</span></span>
+<span data-ttu-id="52023-127">Středníky po poslední pole ve výrazu záznamu a v definici typu jsou volitelné, bez ohledu na to, jestli jsou tato pole vše na jednom řádku.</span><span class="sxs-lookup"><span data-stu-id="52023-127">The semicolons after the last field in the record expression and in the type definition are optional, regardless of whether the fields are all in one line.</span></span>
 
-<span data-ttu-id="e467b-128">Když vytvoříte záznam, je nutné zadat hodnoty pro každé pole.</span><span class="sxs-lookup"><span data-stu-id="e467b-128">When you create a record, you must supply values for each field.</span></span> <span data-ttu-id="e467b-129">Nemůže odkazovat na hodnoty dalších polí ve výrazu inicializace pro každé pole.</span><span class="sxs-lookup"><span data-stu-id="e467b-129">You cannot refer to the values of other fields in the initialization expression for any field.</span></span>
+<span data-ttu-id="52023-128">Při vytváření záznamu je třeba zadat hodnoty pro každé pole.</span><span class="sxs-lookup"><span data-stu-id="52023-128">When you create a record, you must supply values for each field.</span></span> <span data-ttu-id="52023-129">Nelze se odkazovat na hodnoty jiných polí ve výrazu inicializace pro všechna pole.</span><span class="sxs-lookup"><span data-stu-id="52023-129">You cannot refer to the values of other fields in the initialization expression for any field.</span></span>
 
-<span data-ttu-id="e467b-130">V následujícím kódu, typ `myRecord2` je odvozeno z názvy polí.</span><span class="sxs-lookup"><span data-stu-id="e467b-130">In the following code, the type of `myRecord2` is inferred from the names of the fields.</span></span> <span data-ttu-id="e467b-131">Volitelně můžete zadat název typu explicitně.</span><span class="sxs-lookup"><span data-stu-id="e467b-131">Optionally, you can specify the type name explicitly.</span></span>
+<span data-ttu-id="52023-130">V následujícím kódu, typ `myRecord2` je odvozen z názvy polí.</span><span class="sxs-lookup"><span data-stu-id="52023-130">In the following code, the type of `myRecord2` is inferred from the names of the fields.</span></span> <span data-ttu-id="52023-131">Volitelně můžete zadat název typu explicitně.</span><span class="sxs-lookup"><span data-stu-id="52023-131">Optionally, you can specify the type name explicitly.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
 
-<span data-ttu-id="e467b-132">Jinou formu konstrukce záznam může být užitečné, když máte zkopírováním existujícího záznamu, a případně změnit některé hodnoty polí.</span><span class="sxs-lookup"><span data-stu-id="e467b-132">Another form of record construction can be useful when you have to copy an existing record, and possibly change some of the field values.</span></span> <span data-ttu-id="e467b-133">To ukazuje následující řádek kódu.</span><span class="sxs-lookup"><span data-stu-id="e467b-133">The following line of code illustrates this.</span></span>
+<span data-ttu-id="52023-132">Jiná forma konstrukce záznamu může být užitečné, když je nutné zkopírovat existující záznam a případně změnit některé z hodnot pole.</span><span class="sxs-lookup"><span data-stu-id="52023-132">Another form of record construction can be useful when you have to copy an existing record, and possibly change some of the field values.</span></span> <span data-ttu-id="52023-133">To ukazuje následující řádek kódu.</span><span class="sxs-lookup"><span data-stu-id="52023-133">The following line of code illustrates this.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
 
-<span data-ttu-id="e467b-134">Tento formulář výrazu záznamu je volána *kopírování a aktualizace záznamů výraz*.</span><span class="sxs-lookup"><span data-stu-id="e467b-134">This form of the record expression is called the *copy and update record expression*.</span></span>
+<span data-ttu-id="52023-134">Tato forma výrazu záznamu je volána *kopírování a aktualizace výrazů záznamů*.</span><span class="sxs-lookup"><span data-stu-id="52023-134">This form of the record expression is called the *copy and update record expression*.</span></span>
 
-<span data-ttu-id="e467b-135">Záznamy jsou neměnné ve výchozím nastavení; změněné záznamy však můžete snadno vytvořit pomocí výrazu kopírování a aktualizace.</span><span class="sxs-lookup"><span data-stu-id="e467b-135">Records are immutable by default; however, you can easily create modified records by using a copy and update expression.</span></span> <span data-ttu-id="e467b-136">Můžete také explicitně zadat měnitelný pole.</span><span class="sxs-lookup"><span data-stu-id="e467b-136">You can also explicitly specify a mutable field.</span></span>
+<span data-ttu-id="52023-135">Záznamy jsou neměnné ve výchozím nastavení; změněné záznamy však můžete snadno vytvořit pomocí výrazu kopírování a aktualizace.</span><span class="sxs-lookup"><span data-stu-id="52023-135">Records are immutable by default; however, you can easily create modified records by using a copy and update expression.</span></span> <span data-ttu-id="52023-136">Můžete také explicitně určit proměnlivé pole.</span><span class="sxs-lookup"><span data-stu-id="52023-136">You can also explicitly specify a mutable field.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1909.fs)]
 
-<span data-ttu-id="e467b-137">Nepoužívejte atribut DefaultValue s polí záznamu.</span><span class="sxs-lookup"><span data-stu-id="e467b-137">Don't use the DefaultValue attribute with record fields.</span></span> <span data-ttu-id="e467b-138">Lepší přístup je definovat výchozí instance záznamů vložením polí, která jsou inicializovány výchozí hodnoty a pak použít kopii a aktualizovat záznam výraz nastavit všechna pole, které se liší od výchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="e467b-138">A better approach is to define default instances of records with fields that are initialized to default values and then use a copy and update record expression to set any fields that differ from the default values.</span></span>
+<span data-ttu-id="52023-137">Nepoužívejte atribut DefaultValue u polí záznamu.</span><span class="sxs-lookup"><span data-stu-id="52023-137">Don't use the DefaultValue attribute with record fields.</span></span> <span data-ttu-id="52023-138">Lepším řešením je definovat výchozí instance záznamy s poli, které jsou inicializovány na výchozí hodnoty a pak použijte kopii a aktualizovat výrazu záznamu pro nastavení všechna pole, která se liší od výchozí hodnoty.</span><span class="sxs-lookup"><span data-stu-id="52023-138">A better approach is to define default instances of records with fields that are initialized to default values and then use a copy and update record expression to set any fields that differ from the default values.</span></span>
 
 ```fsharp
 // Rather than use [<DefaultValue>], define a default record.
@@ -90,13 +90,13 @@ let defaultRecord2 = { Field1 = 1; Field2 = 25 }
 let rr3 = { defaultRecord1 with Field2 = 42 }
 ```
 
-## <a name="pattern-matching-with-records"></a><span data-ttu-id="e467b-139">Pro porovnávání se záznamy</span><span class="sxs-lookup"><span data-stu-id="e467b-139">Pattern Matching with Records</span></span>
+## <a name="pattern-matching-with-records"></a><span data-ttu-id="52023-139">Porovnávání vzorů s záznamů</span><span class="sxs-lookup"><span data-stu-id="52023-139">Pattern Matching with Records</span></span>
 
-<span data-ttu-id="e467b-140">Záznamy lze použít s porovnávání vzorů.</span><span class="sxs-lookup"><span data-stu-id="e467b-140">Records can be used with pattern matching.</span></span> <span data-ttu-id="e467b-141">Můžete explicitně zadat některá pole a zadejte proměnné pro další pole, které budou přiřazeny, pokud je nalezena shoda.</span><span class="sxs-lookup"><span data-stu-id="e467b-141">You can specify some fields explicitly and provide variables for other fields that will be assigned when a match occurs.</span></span> <span data-ttu-id="e467b-142">Následující příklad kódu to dokládá.</span><span class="sxs-lookup"><span data-stu-id="e467b-142">The following code example illustrates this.</span></span>
+<span data-ttu-id="52023-140">Záznamy můžete použití s porovnáváním vzorů.</span><span class="sxs-lookup"><span data-stu-id="52023-140">Records can be used with pattern matching.</span></span> <span data-ttu-id="52023-141">Můžete explicitně určit některá pole a zadejte proměnné pro další pole, která se přiřadí, když je nalezena shoda.</span><span class="sxs-lookup"><span data-stu-id="52023-141">You can specify some fields explicitly and provide variables for other fields that will be assigned when a match occurs.</span></span> <span data-ttu-id="52023-142">Následující příklad kódu to dokládá.</span><span class="sxs-lookup"><span data-stu-id="52023-142">The following code example illustrates this.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1910.fs)]
 
-<span data-ttu-id="e467b-143">Výstup tohoto kódu je následující.</span><span class="sxs-lookup"><span data-stu-id="e467b-143">The output of this code is as follows.</span></span>
+<span data-ttu-id="52023-143">Výstup tohoto kódu vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="52023-143">The output of this code is as follows.</span></span>
 
 ```
 Point is at the origin.
@@ -104,32 +104,28 @@ Point is on the x-axis. Value is 100.000000.
 Point is at (10.000000, 0.000000, -1.000000).
 ```
 
-## <a name="differences-between-records-and-classes"></a><span data-ttu-id="e467b-144">Rozdíly mezi záznamy a třídy</span><span class="sxs-lookup"><span data-stu-id="e467b-144">Differences Between Records and Classes</span></span>
+## <a name="differences-between-records-and-classes"></a><span data-ttu-id="52023-144">Rozdíly mezi třídami a záznamů</span><span class="sxs-lookup"><span data-stu-id="52023-144">Differences Between Records and Classes</span></span>
 
-<span data-ttu-id="e467b-145">Polí záznamů se liší od třídy, že jsou automaticky zveřejněné jako vlastnosti, které mají použít při vytváření nebo kopírování záznamů.</span><span class="sxs-lookup"><span data-stu-id="e467b-145">Record fields differ from classes in that they are automatically exposed as properties, and they are used in the creation and copying of records.</span></span> <span data-ttu-id="e467b-146">Vytváření záznamů se také liší od třídy konstrukce.</span><span class="sxs-lookup"><span data-stu-id="e467b-146">Record construction also differs from class construction.</span></span> <span data-ttu-id="e467b-147">V záznamu typu nelze definovat konstruktor.</span><span class="sxs-lookup"><span data-stu-id="e467b-147">In a record type, you cannot define a constructor.</span></span> <span data-ttu-id="e467b-148">Místo toho použije syntaxe vytváření popsaných v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="e467b-148">Instead, the construction syntax described in this topic applies.</span></span> <span data-ttu-id="e467b-149">Třídy mají žádné přímé vztah mezi konstruktor parametry, polí a vlastností.</span><span class="sxs-lookup"><span data-stu-id="e467b-149">Classes have no direct relationship between constructor parameters, fields, and properties.</span></span>
+<span data-ttu-id="52023-145">Pole záznamu se liší od tříd jsou automaticky vystaveny jako vlastnosti a jsou použité k vytvoření a zkopírování záznamů.</span><span class="sxs-lookup"><span data-stu-id="52023-145">Record fields differ from classes in that they are automatically exposed as properties, and they are used in the creation and copying of records.</span></span> <span data-ttu-id="52023-146">Konstrukce záznamu se také liší od konstrukci třídy.</span><span class="sxs-lookup"><span data-stu-id="52023-146">Record construction also differs from class construction.</span></span> <span data-ttu-id="52023-147">V typu záznamu nelze definovat konstruktor.</span><span class="sxs-lookup"><span data-stu-id="52023-147">In a record type, you cannot define a constructor.</span></span> <span data-ttu-id="52023-148">Místo toho použije konstrukce zapsána syntaxí popsanou v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="52023-148">Instead, the construction syntax described in this topic applies.</span></span> <span data-ttu-id="52023-149">Třídy nemají žádný přímý vztah mezi parametry konstruktoru, pole a vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="52023-149">Classes have no direct relationship between constructor parameters, fields, and properties.</span></span>
 
-<span data-ttu-id="e467b-150">Jako typy union a struktura mají záznamy sémantiku strukturální rovnosti.</span><span class="sxs-lookup"><span data-stu-id="e467b-150">Like union and structure types, records have structural equality semantics.</span></span> <span data-ttu-id="e467b-151">Třídy mají referenční rovnosti sémantiku.</span><span class="sxs-lookup"><span data-stu-id="e467b-151">Classes have reference equality semantics.</span></span> <span data-ttu-id="e467b-152">Následující příklad kódu ukazuje to.</span><span class="sxs-lookup"><span data-stu-id="e467b-152">The following code example demonstrates this.</span></span>
+<span data-ttu-id="52023-150">Podobně jako typy sjednocení a struktura záznamy mají sémantiku strukturální rovnost.</span><span class="sxs-lookup"><span data-stu-id="52023-150">Like union and structure types, records have structural equality semantics.</span></span> <span data-ttu-id="52023-151">Třídy mají referenční rovnost sémantiku.</span><span class="sxs-lookup"><span data-stu-id="52023-151">Classes have reference equality semantics.</span></span> <span data-ttu-id="52023-152">Následující příklad kódu ukazuje to.</span><span class="sxs-lookup"><span data-stu-id="52023-152">The following code example demonstrates this.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet1911.fs)]
 
-<span data-ttu-id="e467b-153">Výstup tohoto kódu je následující:</span><span class="sxs-lookup"><span data-stu-id="e467b-153">The output of this code is as follows:</span></span>
+<span data-ttu-id="52023-153">Výstup tohoto kódu vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="52023-153">The output of this code is as follows:</span></span>
 
 ```
 The records are equal.
 ```
 
-<span data-ttu-id="e467b-154">Pokud píšete stejný kód s třídami, objekty dvou tříd by nerovné, protože tyto dvě hodnoty by představují dva objekty v haldě a pouze adresy by být porovnána (Pokud přepíše typu třídy `System.Object.Equals` metoda).</span><span class="sxs-lookup"><span data-stu-id="e467b-154">If you write the same code with classes, the two class objects would be unequal because the two values would represent two objects on the heap and only the addresses would be compared (unless the class type overrides the `System.Object.Equals` method).</span></span>
+<span data-ttu-id="52023-154">Pokud píšete stejný kód s třídami, objekty dvou tříd by nerovnost, protože tyto dvě hodnoty by představují dva objekty v haldě a by jde porovnat jenom adresy (Pokud není typ třídy přepíše `System.Object.Equals` metoda).</span><span class="sxs-lookup"><span data-stu-id="52023-154">If you write the same code with classes, the two class objects would be unequal because the two values would represent two objects on the heap and only the addresses would be compared (unless the class type overrides the `System.Object.Equals` method).</span></span>
 
-<span data-ttu-id="e467b-155">Pokud třeba referenční rovnost pro záznamy, přidejte atribut `[<ReferenceEquality>]` výše záznamu.</span><span class="sxs-lookup"><span data-stu-id="e467b-155">If you need reference equality for records, add the attribute `[<ReferenceEquality>]` above the record.</span></span>
+<span data-ttu-id="52023-155">Pokud potřebujete referenční rovnost pro záznamy, přidejte atribut `[<ReferenceEquality>]` výše záznam.</span><span class="sxs-lookup"><span data-stu-id="52023-155">If you need reference equality for records, add the attribute `[<ReferenceEquality>]` above the record.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="e467b-156">Viz také</span><span class="sxs-lookup"><span data-stu-id="e467b-156">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="52023-156">Viz také:</span><span class="sxs-lookup"><span data-stu-id="52023-156">See also</span></span>
 
-[<span data-ttu-id="e467b-157">Typy F#</span><span class="sxs-lookup"><span data-stu-id="e467b-157">F# Types</span></span>](fsharp-types.md)
-
-[<span data-ttu-id="e467b-158">Třídy</span><span class="sxs-lookup"><span data-stu-id="e467b-158">Classes</span></span>](classes.md)
-
-[<span data-ttu-id="e467b-159">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="e467b-159">F# Language Reference</span></span>](index.md)
-
-[<span data-ttu-id="e467b-160">Referenční rovnost</span><span class="sxs-lookup"><span data-stu-id="e467b-160">Reference-Equality</span></span>](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
-
-[<span data-ttu-id="e467b-161">Porovnávání vzorů</span><span class="sxs-lookup"><span data-stu-id="e467b-161">Pattern Matching</span></span>](pattern-matching.md)
+- [<span data-ttu-id="52023-157">Typy F#</span><span class="sxs-lookup"><span data-stu-id="52023-157">F# Types</span></span>](fsharp-types.md)
+- [<span data-ttu-id="52023-158">Třídy</span><span class="sxs-lookup"><span data-stu-id="52023-158">Classes</span></span>](classes.md)
+- [<span data-ttu-id="52023-159">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="52023-159">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="52023-160">Referenční rovnost</span><span class="sxs-lookup"><span data-stu-id="52023-160">Reference-Equality</span></span>](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
+- [<span data-ttu-id="52023-161">Porovnávání vzorů</span><span class="sxs-lookup"><span data-stu-id="52023-161">Pattern Matching</span></span>](pattern-matching.md)

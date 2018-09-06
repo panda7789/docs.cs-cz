@@ -3,21 +3,21 @@ title: Refaktoring pomocí čisté funkce (C#)
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
 ms.openlocfilehash: 28f31b144cbdbd85febfc57acccb9bd7a158d702
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43555206"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43866485"
 ---
-# <a name="refactoring-using-a-pure-function-c"></a><span data-ttu-id="9d437-102">Refaktoring pomocí čisté funkce (C#)</span><span class="sxs-lookup"><span data-stu-id="9d437-102">Refactoring Using a Pure Function (C#)</span></span>
-<span data-ttu-id="9d437-103">Následující příklad refactors v předchozím příkladu [refaktoring pomocí rozšiřující metodu (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použijte pure funkce v tomto příkladu kód a nalezení textu odstavce se přesune do čistého statickou metodu `ParagraphText`.</span><span class="sxs-lookup"><span data-stu-id="9d437-103">The following example refactors the previous example, [Refactoring Using an Extension Method (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
+# <a name="refactoring-using-a-pure-function-c"></a><span data-ttu-id="9ac30-102">Refaktoring pomocí čisté funkce (C#)</span><span class="sxs-lookup"><span data-stu-id="9ac30-102">Refactoring Using a Pure Function (C#)</span></span>
+<span data-ttu-id="9ac30-103">Následující příklad refactors v předchozím příkladu [refaktoring pomocí rozšiřující metodu (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), použijte pure funkce v tomto příkladu kód a nalezení textu odstavce se přesune do čistého statickou metodu `ParagraphText`.</span><span class="sxs-lookup"><span data-stu-id="9ac30-103">The following example refactors the previous example, [Refactoring Using an Extension Method (C#)](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md), to use a pure function In this example, the code to find the text of a paragraph is moved to the pure static method `ParagraphText`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9d437-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="9d437-104">Example</span></span>  
- <span data-ttu-id="9d437-105">V tomto příkladu zpracovává dokumentu WordprocessingML načítání uzly odstavců z dokumentu WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="9d437-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="9d437-106">Styl k jednotlivým odstavcům také identifikuje.</span><span class="sxs-lookup"><span data-stu-id="9d437-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="9d437-107">Tento příklad je založen na předchozí příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="9d437-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="9d437-108">Refaktorovaný kódu je uvedeny v komentářích v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="9d437-108">The refactored code is called out in comments in the code below.</span></span>  
+## <a name="example"></a><span data-ttu-id="9ac30-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="9ac30-104">Example</span></span>  
+ <span data-ttu-id="9ac30-105">V tomto příkladu zpracovává dokumentu WordprocessingML načítání uzly odstavců z dokumentu WordprocessingML.</span><span class="sxs-lookup"><span data-stu-id="9ac30-105">This example processes a WordprocessingML document, retrieving the paragraph nodes from a WordprocessingML document.</span></span> <span data-ttu-id="9ac30-106">Styl k jednotlivým odstavcům také identifikuje.</span><span class="sxs-lookup"><span data-stu-id="9ac30-106">It also identifies the style of each paragraph.</span></span> <span data-ttu-id="9ac30-107">Tento příklad je založen na předchozí příklady v tomto kurzu.</span><span class="sxs-lookup"><span data-stu-id="9ac30-107">This example builds on the previous examples in this tutorial.</span></span> <span data-ttu-id="9ac30-108">Refaktorovaný kódu je uvedeny v komentářích v následujícím kódu.</span><span class="sxs-lookup"><span data-stu-id="9ac30-108">The refactored code is called out in comments in the code below.</span></span>  
   
- <span data-ttu-id="9d437-109">Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="9d437-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
+ <span data-ttu-id="9ac30-109">Pokyny pro vytvoření zdrojového dokumentu pro účely tohoto příkladu naleznete v tématu [vytváření zdroj Office Open XML dokumentu (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span><span class="sxs-lookup"><span data-stu-id="9ac30-109">For instructions for creating the source document for this example, see [Creating the Source Office Open XML Document (C#)](../../../../csharp/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md).</span></span>  
   
- <span data-ttu-id="9d437-110">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="9d437-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="9d437-111">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="9d437-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="9ac30-110">Tento příklad používá třídy z WindowsBase sestavení.</span><span class="sxs-lookup"><span data-stu-id="9ac30-110">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="9ac30-111">Používá typy v <xref:System.IO.Packaging?displayProperty=nameWithType> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="9ac30-111">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```csharp  
 public static class LocalExtensions  
@@ -154,7 +154,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="9d437-112">Tento příklad vytvoří stejný výstup jako před operací refaktoringu:</span><span class="sxs-lookup"><span data-stu-id="9d437-112">This example produces the same output as before the refactoring:</span></span>  
+ <span data-ttu-id="9ac30-112">Tento příklad vytvoří stejný výstup jako před operací refaktoringu:</span><span class="sxs-lookup"><span data-stu-id="9ac30-112">This example produces the same output as before the refactoring:</span></span>  
   
 ```  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -174,13 +174,13 @@ StyleName:Normal ><
 StyleName:Code >Hello World<  
 ```  
   
-### <a name="next-steps"></a><span data-ttu-id="9d437-113">Další kroky</span><span class="sxs-lookup"><span data-stu-id="9d437-113">Next Steps</span></span>  
- <span data-ttu-id="9d437-114">Následující příklad ukazuje, jak do projektu XML v odlišném tvaru:</span><span class="sxs-lookup"><span data-stu-id="9d437-114">The next example shows how to project XML into a different shape:</span></span>  
+### <a name="next-steps"></a><span data-ttu-id="9ac30-113">Další kroky</span><span class="sxs-lookup"><span data-stu-id="9ac30-113">Next Steps</span></span>  
+ <span data-ttu-id="9ac30-114">Následující příklad ukazuje, jak do projektu XML v odlišném tvaru:</span><span class="sxs-lookup"><span data-stu-id="9ac30-114">The next example shows how to project XML into a different shape:</span></span>  
   
--   [<span data-ttu-id="9d437-115">Projektování XML v odlišném tvaru (C#)</span><span class="sxs-lookup"><span data-stu-id="9d437-115">Projecting XML in a Different Shape (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
+-   [<span data-ttu-id="9ac30-115">Projektování XML v odlišném tvaru (C#)</span><span class="sxs-lookup"><span data-stu-id="9ac30-115">Projecting XML in a Different Shape (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/projecting-xml-in-a-different-shape.md)  
   
-## <a name="see-also"></a><span data-ttu-id="9d437-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="9d437-116">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9ac30-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="9ac30-116">See Also</span></span>
 
-- [<span data-ttu-id="9d437-117">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)</span><span class="sxs-lookup"><span data-stu-id="9d437-117">Tutorial: Manipulating Content in a WordprocessingML Document (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
-- [<span data-ttu-id="9d437-118">Refaktoring pomocí rozšiřující metodu (C#)</span><span class="sxs-lookup"><span data-stu-id="9d437-118">Refactoring Using an Extension Method (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
-- [<span data-ttu-id="9d437-119">Refaktoring do čistých funkcí (C#)</span><span class="sxs-lookup"><span data-stu-id="9d437-119">Refactoring Into Pure Functions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [<span data-ttu-id="9ac30-117">Kurz: Manipulace s obsahem v dokumentu WordprocessingML (C#)</span><span class="sxs-lookup"><span data-stu-id="9ac30-117">Tutorial: Manipulating Content in a WordprocessingML Document (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)  
+- [<span data-ttu-id="9ac30-118">Refaktoring pomocí rozšiřující metodu (C#)</span><span class="sxs-lookup"><span data-stu-id="9ac30-118">Refactoring Using an Extension Method (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-using-an-extension-method.md)  
+- [<span data-ttu-id="9ac30-119">Refaktoring do čistých funkcí (C#)</span><span class="sxs-lookup"><span data-stu-id="9ac30-119">Refactoring Into Pure Functions (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

@@ -8,22 +8,22 @@ helpviewer_keywords:
 - ComboBox control [WPF]
 ms.assetid: fe0c2f62-fec2-4c41-a37e-5773d284170c
 ms.openlocfilehash: 40dc767d830b3834eedf3581d544aa53d40fae50
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801408"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43863053"
 ---
-# <a name="combobox"></a><span data-ttu-id="d0d70-102">ComboBox</span><span class="sxs-lookup"><span data-stu-id="d0d70-102">ComboBox</span></span>
-<span data-ttu-id="d0d70-103"><xref:System.Windows.Controls.ComboBox> Ovládací prvek předkládá uživatelům seznam možností.</span><span class="sxs-lookup"><span data-stu-id="d0d70-103">The <xref:System.Windows.Controls.ComboBox> control presents users with a list of options.</span></span> <span data-ttu-id="d0d70-104">Seznam se zobrazí a skryté, jak ovládací prvek se rozbalí a sbalíte.</span><span class="sxs-lookup"><span data-stu-id="d0d70-104">The list is shown and hidden as the control expands and collapses.</span></span> <span data-ttu-id="d0d70-105">Ve výchozím stavu je sbalení seznamu zobrazení pouze jednu možnost.</span><span class="sxs-lookup"><span data-stu-id="d0d70-105">In its default state, the list is collapsed, displaying only one choice.</span></span> <span data-ttu-id="d0d70-106">Uživatel klikne na tlačítko, pokud chcete zobrazit úplný seznam možností.</span><span class="sxs-lookup"><span data-stu-id="d0d70-106">The user clicks a button to see the complete list of options.</span></span>  
+# <a name="combobox"></a><span data-ttu-id="be645-102">ComboBox</span><span class="sxs-lookup"><span data-stu-id="be645-102">ComboBox</span></span>
+<span data-ttu-id="be645-103"><xref:System.Windows.Controls.ComboBox> Ovládací prvek předkládá uživatelům seznam možností.</span><span class="sxs-lookup"><span data-stu-id="be645-103">The <xref:System.Windows.Controls.ComboBox> control presents users with a list of options.</span></span> <span data-ttu-id="be645-104">Seznam se zobrazí a skryté, jak ovládací prvek se rozbalí a sbalíte.</span><span class="sxs-lookup"><span data-stu-id="be645-104">The list is shown and hidden as the control expands and collapses.</span></span> <span data-ttu-id="be645-105">Ve výchozím stavu je sbalení seznamu zobrazení pouze jednu možnost.</span><span class="sxs-lookup"><span data-stu-id="be645-105">In its default state, the list is collapsed, displaying only one choice.</span></span> <span data-ttu-id="be645-106">Uživatel klikne na tlačítko, pokud chcete zobrazit úplný seznam možností.</span><span class="sxs-lookup"><span data-stu-id="be645-106">The user clicks a button to see the complete list of options.</span></span>  
   
- <span data-ttu-id="d0d70-107">Následující ilustrace ukazuje <xref:System.Windows.Controls.ComboBox> v různých stavech.</span><span class="sxs-lookup"><span data-stu-id="d0d70-107">The following illustration shows a <xref:System.Windows.Controls.ComboBox> in different states.</span></span>  
+ <span data-ttu-id="be645-107">Následující ilustrace ukazuje <xref:System.Windows.Controls.ComboBox> v různých stavech.</span><span class="sxs-lookup"><span data-stu-id="be645-107">The following illustration shows a <xref:System.Windows.Controls.ComboBox> in different states.</span></span>  
   
- <span data-ttu-id="d0d70-108">![Pole se seznamem ve výchozích polí a stisknutém](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span><span class="sxs-lookup"><span data-stu-id="d0d70-108">![Combo boxes in default and pressed states](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span></span>  
-<span data-ttu-id="d0d70-109">Sbalení a rozbalení</span><span class="sxs-lookup"><span data-stu-id="d0d70-109">Collapsed and expanded</span></span>  
+ <span data-ttu-id="be645-108">![Pole se seznamem ve výchozích polí a stisknutém](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span><span class="sxs-lookup"><span data-stu-id="be645-108">![Combo boxes in default and pressed states](../../../../docs/framework/wpf/controls/media/ss-ctl-combobox.gif "SS_CTL_combobox")</span></span>  
+<span data-ttu-id="be645-109">Sbalení a rozbalení</span><span class="sxs-lookup"><span data-stu-id="be645-109">Collapsed and expanded</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="d0d70-110">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d0d70-110">In This Section</span></span>  
- [<span data-ttu-id="d0d70-111">Postupy: získání ComboBoxItem</span><span class="sxs-lookup"><span data-stu-id="d0d70-111">How to: Get a ComboBoxItem</span></span>](https://msdn.microsoft.com/library/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
+## <a name="in-this-section"></a><span data-ttu-id="be645-110">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="be645-110">In This Section</span></span>  
+ [<span data-ttu-id="be645-111">Postupy: získání ComboBoxItem</span><span class="sxs-lookup"><span data-stu-id="be645-111">How to: Get a ComboBoxItem</span></span>](https://msdn.microsoft.com/library/8a0d2622-64b6-41fc-bf80-9669a1eacb53)  
   
-## <a name="reference"></a><span data-ttu-id="d0d70-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="d0d70-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="be645-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="be645-112">Reference</span></span>  
  <xref:System.Windows.Controls.ComboBox>

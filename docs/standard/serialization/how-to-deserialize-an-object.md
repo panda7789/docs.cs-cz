@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: deserializaci objektu'
+title: 'Postupy: deserializace objektu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,21 +8,21 @@ helpviewer_keywords:
 - deserializing objects
 - objects, deserializing steps
 ms.assetid: 287129c8-035a-4fea-b7b3-4790057ca076
-ms.openlocfilehash: 957c332b3456e2b27aca36ef2bcabbc36b4e94e5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6da8ec2b78066cd251e4ad492afd2d9d37f7b965
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581479"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43863236"
 ---
-# <a name="how-to-deserialize-an-object"></a><span data-ttu-id="fdb5e-102">Postupy: deserializaci objektu</span><span class="sxs-lookup"><span data-stu-id="fdb5e-102">How to: Deserialize an Object</span></span>
-<span data-ttu-id="fdb5e-103">Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt datového proudu nebo souboru.</span><span class="sxs-lookup"><span data-stu-id="fdb5e-103">When you deserialize an object, the transport format determines whether you will create a stream or file object.</span></span> <span data-ttu-id="fdb5e-104">Po formát přenosu je určen, můžete volat <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> nebo <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metod, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="fdb5e-104">After the transport format is determined, you can call the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> or <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> methods, as required.</span></span>  
+# <a name="how-to-deserialize-an-object"></a><span data-ttu-id="2e257-102">Postupy: deserializace objektu</span><span class="sxs-lookup"><span data-stu-id="2e257-102">How to: Deserialize an Object</span></span>
+<span data-ttu-id="2e257-103">Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt datového proudu nebo souboru.</span><span class="sxs-lookup"><span data-stu-id="2e257-103">When you deserialize an object, the transport format determines whether you will create a stream or file object.</span></span> <span data-ttu-id="2e257-104">Po formát přenosu je určen, můžete volat <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> nebo <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metod, podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="2e257-104">After the transport format is determined, you can call the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> or <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> methods, as required.</span></span>  
   
-### <a name="to-deserialize-an-object"></a><span data-ttu-id="fdb5e-105">K deserializaci objektu</span><span class="sxs-lookup"><span data-stu-id="fdb5e-105">To deserialize an object</span></span>  
+### <a name="to-deserialize-an-object"></a><span data-ttu-id="2e257-105">K deserializaci objektu</span><span class="sxs-lookup"><span data-stu-id="2e257-105">To deserialize an object</span></span>  
   
-1.  <span data-ttu-id="fdb5e-106">Vytvořit <xref:System.Xml.Serialization.XmlSerializer> pomocí typ objektu určeného k deserializaci.</span><span class="sxs-lookup"><span data-stu-id="fdb5e-106">Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object to deserialize.</span></span>  
+1.  <span data-ttu-id="2e257-106">Vytvořit <xref:System.Xml.Serialization.XmlSerializer> pomocí typ objektu určeného k deserializaci.</span><span class="sxs-lookup"><span data-stu-id="2e257-106">Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object to deserialize.</span></span>  
   
-2.  <span data-ttu-id="fdb5e-107">Volání <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu za účelem vytvoření repliky objektu.</span><span class="sxs-lookup"><span data-stu-id="fdb5e-107">Call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method to produce a replica of the object.</span></span> <span data-ttu-id="fdb5e-108">Při deserializaci, musíte přetypovat vráceného objektu na typ původní, jak je znázorněno v následujícím příkladu, který deserializuje objekt do souboru (Ačkoli může být také deserializovat do datového proudu).</span><span class="sxs-lookup"><span data-stu-id="fdb5e-108">When deserializing, you must cast the returned object to the type of the original, as shown in the following example, which deserializes the object into a file (although it could also be deserialized into a stream).</span></span>  
+2.  <span data-ttu-id="2e257-107">Volání <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metodu za účelem vytvoření repliky objektu.</span><span class="sxs-lookup"><span data-stu-id="2e257-107">Call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method to produce a replica of the object.</span></span> <span data-ttu-id="2e257-108">Při deserializaci, musíte přetypovat vráceného objektu na typ původní, jak je znázorněno v následujícím příkladu, který deserializuje objekt do souboru (Ačkoli může být také deserializovat do datového proudu).</span><span class="sxs-lookup"><span data-stu-id="2e257-108">When deserializing, you must cast the returned object to the type of the original, as shown in the following example, which deserializes the object into a file (although it could also be deserialized into a stream).</span></span>  
   
     ```vb  
     Dim myObject As MySerializableClass  
@@ -51,6 +51,7 @@ ms.locfileid: "33581479"
     mySerializer.Deserialize(myFileStream)  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="fdb5e-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="fdb5e-109">See Also</span></span>  
- [<span data-ttu-id="fdb5e-110">Představení serializace XML</span><span class="sxs-lookup"><span data-stu-id="fdb5e-110">Introducing XML Serialization</span></span>](../../../docs/standard/serialization/introducing-xml-serialization.md)  
- [<span data-ttu-id="fdb5e-111">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="fdb5e-111">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+## <a name="see-also"></a><span data-ttu-id="2e257-109">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2e257-109">See also</span></span>
+
+- [<span data-ttu-id="2e257-110">Představení serializace XML</span><span class="sxs-lookup"><span data-stu-id="2e257-110">Introducing XML Serialization</span></span>](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+- [<span data-ttu-id="2e257-111">Postupy: Serializace objektu</span><span class="sxs-lookup"><span data-stu-id="2e257-111">How to: Serialize an Object</span></span>](../../../docs/standard/serialization/how-to-serialize-an-object.md)

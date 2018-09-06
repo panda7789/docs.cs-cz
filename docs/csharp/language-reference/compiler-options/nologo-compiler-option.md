@@ -10,27 +10,27 @@ helpviewer_keywords:
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
 ms.openlocfilehash: a8f4582e9c8d5a54d924ff5b456ef8ffd8cc56f3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43673446"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872319"
 ---
-# <a name="-nologo-c-compiler-options"></a><span data-ttu-id="86d64-102">-nologo (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="86d64-102">-nologo (C# Compiler Options)</span></span>
-<span data-ttu-id="86d64-103">**- Nologo** možnost potlačí zobrazení nápisu přihlašování při spuštění kompilátoru a zobrazení informačních zpráv během kompilace.</span><span class="sxs-lookup"><span data-stu-id="86d64-103">The **-nologo** option suppresses display of the sign-on banner when the compiler starts up and display of informational messages during compiling.</span></span>  
+# <a name="-nologo-c-compiler-options"></a><span data-ttu-id="9d8c7-102">-nologo (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="9d8c7-102">-nologo (C# Compiler Options)</span></span>
+<span data-ttu-id="9d8c7-103">**- Nologo** možnost potlačí zobrazení nápisu přihlašování při spuštění kompilátoru a zobrazení informačních zpráv během kompilace.</span><span class="sxs-lookup"><span data-stu-id="9d8c7-103">The **-nologo** option suppresses display of the sign-on banner when the compiler starts up and display of informational messages during compiling.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="86d64-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="86d64-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9d8c7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9d8c7-104">Syntax</span></span>  
   
 ```console  
 -nologo  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="86d64-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="86d64-105">Remarks</span></span>  
- <span data-ttu-id="86d64-106">Tato možnost není k dispozici v rámci vývojového prostředí; je dostupná jenom při kompilaci z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="86d64-106">This option is not available from within the development environment; it is only available when compiling from the command line.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="9d8c7-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9d8c7-105">Remarks</span></span>  
+ <span data-ttu-id="9d8c7-106">Tato možnost není k dispozici v rámci vývojového prostředí; je dostupná jenom při kompilaci z příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="9d8c7-106">This option is not available from within the development environment; it is only available when compiling from the command line.</span></span>  
   
- <span data-ttu-id="86d64-107">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="86d64-107">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
+ <span data-ttu-id="9d8c7-107">Tato možnost kompilátoru není k dispozici v sadě Visual Studio a nemůže být změněna programově.</span><span class="sxs-lookup"><span data-stu-id="9d8c7-107">This compiler option is unavailable in Visual Studio and cannot be changed programmatically.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="86d64-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="86d64-108">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="9d8c7-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="9d8c7-108">See Also</span></span>  
 
-- [<span data-ttu-id="86d64-109">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="86d64-109">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
-- [<span data-ttu-id="86d64-110">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="86d64-110">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+- [<span data-ttu-id="9d8c7-109">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="9d8c7-109">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)  
+- [<span data-ttu-id="9d8c7-110">Správa vlastností projektů a řešení</span><span class="sxs-lookup"><span data-stu-id="9d8c7-110">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
