@@ -9,32 +9,32 @@ helpviewer_keywords:
 - Points [WPF], animating with key frames
 - animation [WPF], Points with key frames
 ms.assetid: d2e2ef10-0773-4133-856e-d41c09f60ded
-ms.openlocfilehash: a59ceb62d7feb33d2cc8a747a7bfb85e551d785c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c2fd8c6c6fd84bbfd6d56f573588d7204249f31d
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33557352"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43857398"
 ---
 # <a name="how-to-animate-a-point-by-using-key-frames"></a>Postupy: Animace bodu použitím klíčových snímků
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames> třídy animace <xref:System.Windows.Point>.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad přesune elipsy podél trojúhelníkovou cesty. V příkladu se používá <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames> třídy animace <xref:System.Windows.Media.EllipseGeometry.Center%2A> vlastnost <xref:System.Windows.Media.EllipseGeometry>. Tato animace používá tři klíčových snímků následujícím způsobem:  
+ V následujícím příkladu se přesune elipsa trojúhelníkové cestě. V příkladu se používá <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames> třídy pro animaci <xref:System.Windows.Media.EllipseGeometry.Center%2A> vlastnost <xref:System.Windows.Media.EllipseGeometry>. Tato animace používá tři klíčové snímky následujícím způsobem:  
   
-1.  Při první půl sekundy používá instanci <xref:System.Windows.Media.Animation.LinearPointKeyFrame> třídy pro přesun se třemi tečkami podél cesty konstantní rychlostí od počáteční pozice. Lineární klíčových snímků jako <xref:System.Windows.Media.Animation.LinearPointKeyFrame> vytvořit smooth lineární interpolace mezi hodnotami.  
+1.  Během prvního půl sekundy, používá instanci <xref:System.Windows.Media.Animation.LinearPointKeyFrame> třídy pro přesun na tři tečky podél cesty stabilní rychlostí z jeho výchozí pozice. Lineární klíčových snímků, jako jsou <xref:System.Windows.Media.Animation.LinearPointKeyFrame> Vytvoření hladkého lineární interpolaci mezi hodnotami.  
   
-2.  Během konec další půl sekundy používá instanci <xref:System.Windows.Media.Animation.DiscretePointKeyFrame> třídy najednou přesuňte se třemi tečkami v cestě pro další. Diskrétní klíčových snímků jako <xref:System.Windows.Media.Animation.DiscretePointKeyFrame> vytvoření nečekané přechodů mezi hodnotami.  
+2.  Při ukončení na další půl sekundy, používá instanci <xref:System.Windows.Media.Animation.DiscretePointKeyFrame> třídy náhle přesunout na tři tečky na cestě na další pozici. Diskrétní klíčových snímků, jako jsou <xref:System.Windows.Media.Animation.DiscretePointKeyFrame> vytvořit i s náhlými rozdíly mezi jednotlivými hodnotami.  
   
-3.  Během poslední dvou sekund, používá instanci <xref:System.Windows.Media.Animation.SplinePointKeyFrame> třída k přesunutí se třemi tečkami zpátky na jeho počáteční pozice. Křivkový klíčových snímků jako <xref:System.Windows.Media.Animation.SplinePointKeyFrame> vytvoření proměnné přechod mezi hodnotami podle hodnot <xref:System.Windows.Media.Animation.SplinePointKeyFrame.KeySpline%2A> vlastnost. V tomto příkladu animace začne pomalu a urychluje exponenciálnímu ke konci čas segmentu.  
+3.  Během poslední dvě sekundy, používá instanci <xref:System.Windows.Media.Animation.SplinePointKeyFrame> třídy pro přechod na tři tečky na počáteční pozici. Klíčové snímky SpLine, jako jsou <xref:System.Windows.Media.Animation.SplinePointKeyFrame> vytvoříte proměnné přechod mezi hodnotami podle hodnoty <xref:System.Windows.Media.Animation.SplinePointKeyFrame.KeySpline%2A> vlastnost. V tomto příkladu animace začne pomalu a zrychluje exponenciálně na konci časového úseku.  
   
  [!code-csharp[keyframes_snip#PointAnimationUsingKeyFramesWholePage](../../../../samples/snippets/csharp/VS_Snippets_Wpf/keyframes_snip/CSharp/PointAnimationUsingKeyFramesExample.cs#pointanimationusingkeyframeswholepage)]
  [!code-vb[keyframes_snip#PointAnimationUsingKeyFramesWholePage](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/keyframes_snip/visualbasic/pointanimationusingkeyframesexample.vb#pointanimationusingkeyframeswholepage)]
  [!code-xaml[keyframes_snip#PointAnimationUsingKeyFramesWholePage](../../../../samples/snippets/xaml/VS_Snippets_Wpf/keyframes_snip/XAML/PointAnimationUsingKeyFramesExample.xaml#pointanimationusingkeyframeswholepage)]  
   
- Kompletní příklad, najdete v části [@keyframe, které určuje animace ukázka](http://go.microsoft.com/fwlink/?LinkID=160012).  
+ Úplnou ukázku najdete v tématu [klíčový snímek animace ukázka](https://go.microsoft.com/fwlink/?LinkID=160012).  
   
- Z důvodu konzistence s další příklady animace verze kódu v tomto příkladu použijte <xref:System.Windows.Media.Animation.Storyboard> objekt, který chcete použít <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>. Při použití jedné animace v kódu, je však jednodušší použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda místo použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad, naleznete v části [animace vlastnosti bez použití scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md).  
+ Pro zajištění konzistence s další příklady animace, kód verze tohoto příkladu použijte <xref:System.Windows.Media.Animation.Storyboard> objektu, který chcete použít <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>. Při použití jedné animace v kódu, je ale jednodušší použít <xref:System.Windows.Media.Animation.Animatable.BeginAnimation%2A> metoda namísto použití <xref:System.Windows.Media.Animation.Storyboard>. Příklad najdete v tématu [animace vlastnosti bez pomoci scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-animate-a-property-without-using-a-storyboard.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Media.Animation.PointAnimationUsingKeyFrames>  

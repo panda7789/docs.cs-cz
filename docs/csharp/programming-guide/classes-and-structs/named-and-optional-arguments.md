@@ -13,12 +13,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: e369c0320ce1f918dba806e246cb4117e816116a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f536499e95611bad6ac1766e117d4a2f1463e53d
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43735277"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43857979"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Pojmenované a nepovinné argumenty (Průvodce programováním v C#)
 [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)] představuje pojmenované a nepovinné argumenty. *Pojmenované argumenty* vám umožní zadat argument pro parametr konkrétní tím, že přidružíte argument s názvem parametru místo parametru pozice v seznamu parametrů. *Volitelné argumenty* umožňují vynechejte argumenty pro některé parametry. Obě tyto metody lze pomocí metody, indexery, konstruktory a delegáti.  
@@ -101,7 +101,7 @@ Volitelné parametry v ExampleMethod
 ## <a name="com-interfaces"></a>Com – rozhraní  
  Pojmenované a nepovinné argumenty společně s podporou dynamických objektů a dalších vylepšení, výrazně zlepšit vzájemná funkční spolupráce s rozhraními API modelu COM, jako je například rozhraní API Office automatizace.  
   
- Například [AutoFormat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.autoformat(v=office.15).aspx) metodu v aplikaci Microsoft Office Excel [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range(v=office.15).aspx) rozhraní obsahuje sedm parametry, z nichž všechny jsou volitelné. Tyto parametry jsou uvedeny na následujícím obrázku.  
+ Například <xref:Microsoft.Office.Interop.Excel.Range.AutoFormat%2A> metodu v aplikaci Microsoft Office Excel <xref:Microsoft.Office.Interop.Excel.Range> rozhraní obsahuje sedm parametry, z nichž všechny jsou volitelné. Tyto parametry jsou uvedeny na následujícím obrázku.  
   
  ![Rychlé informace technologie IntelliSense pro metodu automatické formátování. ](../../../csharp/programming-guide/classes-and-structs/media/autoformat_parameters.png "AutoFormat_Parameters")  
 Automatický formát parametrů  

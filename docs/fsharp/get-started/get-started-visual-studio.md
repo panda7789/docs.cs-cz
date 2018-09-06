@@ -3,11 +3,11 @@ title: 'Začínáme s jazykem F # v sadě Visual Studio'
 description: 'Další informace o použití F # pomocí sady Visual Studio.'
 ms.date: 07/03/2018
 ms.openlocfilehash: 3dac8466501338873aeb308ceac9274a7934a8a9
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43799694"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872848"
 ---
 # <a name="get-started-with-f-in-visual-studio"></a>Začínáme s jazykem F # v sadě Visual Studio
 

@@ -1,73 +1,73 @@
 ---
-title: Mappings1 typ dat Oracle
+title: Oracle datového typu Mappings1
 ms.date: 03/30/2017
 ms.assetid: ec34ae21-bbbb-4adb-b672-83865e2a8451
-ms.openlocfilehash: 2b5a3a90c704dd6edf32e6fb77b551e6fc0f78ec
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9057a19abb1abc22924b5542f06e21a57a36ed94
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32759618"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856332"
 ---
-# <a name="oracle-data-type-mappings"></a>Mapování datového typu Oracle
-Následující tabulka uvádí typy dat Oracle a jejich mapování <xref:System.Data.OracleClient.OracleDataReader>.  
+# <a name="oracle-data-type-mappings"></a>Mapování datových typů Oracle
+V následující tabulce jsou uvedeny Oracle datových typů a jejich mapování na <xref:System.Data.OracleClient.OracleDataReader>.  
   
-|Oracle datový typ|Datový typ rozhraní .NET framework vrácený OracleDataReader.GetValue|OracleClient datový typ vrácený OracleDataReader.GetOracleValue|Poznámky|  
+|Oracle datového typu|Rozhraní .NET framework na datový typ vracený OracleDataReader.GetValue|OracleClient datový typ vracený OracleDataReader.GetOracleValue|Poznámky|  
 |----------------------|--------------------------------------------------------------------|------------------------------------------------------------------------|-------------|  
 |**BFILE**|**Byte]**|<xref:System.Data.OracleClient.OracleBFile>||  
 |**OBJEKT BLOB**|**Byte]**|<xref:System.Data.OracleClient.OracleLob>||  
-|**CHAR –**|**Řetězec**|<xref:System.Data.OracleClient.OracleString>||  
-|**DATOVÝ TYP CLOB**|**Řetězec**|<xref:System.Data.OracleClient.OracleLob>||  
-|**DATUM**|**Data a času**|<xref:System.Data.OracleClient.OracleDateTime>||  
-|**PLOVOUCÍ DESETINNÁ ČÁRKA**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|Tento datový typ je alias **číslo** datového typu a je navržený tak, tak, aby <xref:System.Data.OracleClient.OracleDataReader> vrátí **System.Decimal** nebo <xref:System.Data.OracleClient.OracleNumber> místo hodnotu s plovoucí desetinnou čárkou. Použití datový typ rozhraní .NET Framework může způsobit přetečení.|  
-|**CELÉ ČÍSLO**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|Tento datový typ je alias **NUMBER(38)** datového typu a je navržený tak, tak, aby <xref:System.Data.OracleClient.OracleDataReader> vrátí **System.Decimal** nebo <xref:System.Data.OracleClient.OracleNumber> místo celočíselnou hodnotu. Použití datový typ rozhraní .NET Framework může způsobit přetečení.|  
-|**INTERVAL ROK, MĚSÍC**|**Int32**|<xref:System.Data.OracleClient.OracleMonthSpan>||  
-|**DENNÍ INTERVAL SEKUNDY.**|**TimeSpan**|<xref:System.Data.OracleClient.OracleTimeSpan>||  
-|**DLOUHÁ**|**Řetězec**|<xref:System.Data.OracleClient.OracleString>||  
-|**DLOUHO NEZPRACOVANÁ**|**Byte]**|<xref:System.Data.OracleClient.OracleBinary>||  
-|**NCHAR**|**Řetězec**|<xref:System.Data.OracleClient.OracleString>||  
-|**NCLOB**|**Řetězec**|<xref:System.Data.OracleClient.OracleLob>||  
+|**CHAR**|**řetězec**|<xref:System.Data.OracleClient.OracleString>||  
+|**DATOVÝ TYP CLOB**|**řetězec**|<xref:System.Data.OracleClient.OracleLob>||  
+|**DATUM**|**Datum a čas**|<xref:System.Data.OracleClient.OracleDateTime>||  
+|**PLOVOUCÍ DESETINNOU ČÁRKOU**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|Tento typ dat je alias pro **číslo** datový typ a je navržený tak, aby <xref:System.Data.OracleClient.OracleDataReader> vrátí **System.Decimal** nebo <xref:System.Data.OracleClient.OracleNumber> místo hodnotu s plovoucí desetinnou čárkou. Použití datový typ rozhraní .NET Framework může způsobit přetečení.|  
+|**CELÉ ČÍSLO**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|Tento typ dat je alias pro **NUMBER(38)** datový typ a je navržený tak, aby <xref:System.Data.OracleClient.OracleDataReader> vrátí **System.Decimal** nebo <xref:System.Data.OracleClient.OracleNumber> místo celočíselnou hodnotu. Použití datový typ rozhraní .NET Framework může způsobit přetečení.|  
+|**INTERVAL ROK MĚSÍC**|**Datový typ Int32**|<xref:System.Data.OracleClient.OracleMonthSpan>||  
+|**DEN INTERVALU SEKUNDY.**|**TimeSpan**|<xref:System.Data.OracleClient.OracleTimeSpan>||  
+|**LONG**|**řetězec**|<xref:System.Data.OracleClient.OracleString>||  
+|**DLOUHO NEZPRACOVANÉ**|**Byte]**|<xref:System.Data.OracleClient.OracleBinary>||  
+|**NCHAR**|**řetězec**|<xref:System.Data.OracleClient.OracleString>||  
+|**NCLOB**|**řetězec**|<xref:System.Data.OracleClient.OracleLob>||  
 |**ČÍSLO**|**Decimal**|<xref:System.Data.OracleClient.OracleNumber>|Použití datový typ rozhraní .NET Framework může způsobit přetečení.|  
-|**NVARCHAR2**|**Řetězec**|<xref:System.Data.OracleClient.OracleString>||  
-|**NEZPRACOVANÁ**|**Byte]**|<xref:System.Data.OracleClient.OracleBinary>||  
-|**REF KURZORU**|||Oracle **REF kurzor** datový typ není podporován <xref:System.Data.OracleClient.OracleDataReader> objektu.|  
-|**ID ŘÁDKU**|**Řetězec**|<xref:System.Data.OracleClient.OracleString>||  
-|**ČASOVÉ RAZÍTKO**|**Data a času**|<xref:System.Data.OracleClient.OracleDateTime>||  
-|**ČASOVÉ RAZÍTKO S MÍSTNÍM ČASOVÉM PÁSMU**|**Data a času**|<xref:System.Data.OracleClient.OracleDateTime>||  
-|**ČASOVÉ RAZÍTKO S ČASOVÝM PÁSMEM**|**Data a času**|<xref:System.Data.OracleClient.OracleDateTime>||  
-|**CELÉ ČÍSLO BEZ ZNAMÉNKA**|**Číslo**|<xref:System.Data.OracleClient.OracleNumber>|Tento datový typ je alias **NUMBER(38)** datového typu a je navržený tak, tak, aby <xref:System.Data.OracleClient.OracleDataReader> vrátí **System.Decimal** nebo <xref:System.Data.OracleClient.OracleNumber> místo hodnoty celé číslo bez znaménka. Použití datový typ rozhraní .NET Framework může způsobit přetečení.|  
-|**VARCHAR2**|**Řetězec**|<xref:System.Data.OracleClient.OracleString>||  
+|**NVARCHAR2**|**řetězec**|<xref:System.Data.OracleClient.OracleString>||  
+|**NEZPRACOVANÉ**|**Byte]**|<xref:System.Data.OracleClient.OracleBinary>||  
+|**REF CURSOR**|||Oracle **REF CURSOR** nepodporuje datový typ <xref:System.Data.OracleClient.OracleDataReader> objektu.|  
+|**ID ŘÁDKU**|**řetězec**|<xref:System.Data.OracleClient.OracleString>||  
+|**ČASOVÉ RAZÍTKO**|**Datum a čas**|<xref:System.Data.OracleClient.OracleDateTime>||  
+|**ČASOVÉ RAZÍTKO S MÍSTNÍM ČASOVÉM PÁSMU**|**Datum a čas**|<xref:System.Data.OracleClient.OracleDateTime>||  
+|**ČASOVÉ RAZÍTKO S ČASOVÝM PÁSMEM**|**Datum a čas**|<xref:System.Data.OracleClient.OracleDateTime>||  
+|**CELÉ ČÍSLO BEZ ZNAMÉNKA**|**Číslo**|<xref:System.Data.OracleClient.OracleNumber>|Tento typ dat je alias pro **NUMBER(38)** datový typ a je navržený tak, aby <xref:System.Data.OracleClient.OracleDataReader> vrátí **System.Decimal** nebo <xref:System.Data.OracleClient.OracleNumber> místo hodnoty celé číslo bez znaménka. Použití datový typ rozhraní .NET Framework může způsobit přetečení.|  
+|**VARCHAR2**|**řetězec**|<xref:System.Data.OracleClient.OracleString>||  
   
- Následující tabulka uvádí typy dat Oracle a datové typy rozhraní .NET Framework (**System.Data.DbType** a <xref:System.Data.OracleClient.OracleType>) chcete použít při vazbě je jako parametry.  
+ Následující tabulka uvádí typy dat Oracle a datové typy rozhraní .NET Framework (**System.Data.DbType** a <xref:System.Data.OracleClient.OracleType>) Chcete-li použít při vytváření vazby je jako parametry.  
   
-|Oracle datový typ|Hodnota DbType výčtu pro vazbu jako parametr|Výčet OracleType pro vazbu jako parametr|Poznámky|  
+|Oracle datového typu|Výčtu DbType k vytvoření vazby jako parametr|Výčet OracleType k vytvoření vazby jako parametr|Poznámky|  
 |----------------------|-----------------------------------------------|---------------------------------------------------|-------------|  
-|**BFILE**||**BFile**|Oracle umožňuje pouze vazby **BFILE** jako **BFILE** parametr. Zprostředkovatel dat .NET pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**BFILE** hodnotu, jako například **byte []** nebo <xref:System.Data.OracleClient.OracleBinary>.|  
-|**OBJEKT BLOB**||**Objekt BLOB**|Oracle umožňuje pouze vazby **BLOB** jako **BLOB** parametr. Zprostředkovatel dat .NET pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**BLOB** hodnotu, jako například **byte []** nebo <xref:System.Data.OracleClient.OracleBinary>.|  
-|**CHAR –**|**AnsiStringFixedLength**|**Char**||  
-|**DATOVÝ TYP CLOB**||**Datový typ CLOB**|Oracle umožňuje pouze vazby **datový typ CLOB** jako **datový typ CLOB** parametr. Zprostředkovatel dat .NET pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**datový typ CLOB** hodnotu, jako například **System.String** nebo <xref:System.Data.OracleClient.OracleString>.|  
-|**DATUM**|**Data a času**|**Data a času**||  
-|**PLOVOUCÍ DESETINNÁ ČÁRKA**|**Jednoduché, Double, Decimal**|**Float, dvakrát, počet**|<xref:System.Data.OracleClient.OracleParameter.Size%2A> Určuje, **System.Data.DBType** a <xref:System.Data.OracleClient.OracleType>.|  
-|**CELÉ ČÍSLO**|**SByte –, Int16, Int32, Int64, Decimal**|**SByte –, Int16, Int32, počet**|<xref:System.Data.OracleClient.OracleParameter.Size%2A> Určuje, **System.Data.DBType** a <xref:System.Data.OracleClient.OracleType>.|  
-|**INTERVAL ROK, MĚSÍC**|**Int32**|**IntervalYearToMonth**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze v případě použití softwaru i Oracle 9i klienta a serveru.|  
-|**DENNÍ INTERVAL SEKUNDY.**|**Objekt**|**IntervalDayToSecond**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze v případě použití softwaru i Oracle 9i klienta a serveru.|  
-|**DLOUHÁ**|**AnsiString**|**LongVarChar**||  
-|**DLOUHO NEZPRACOVANÁ**|**Binární**|**LongRaw**||  
+|**BFILE**||**BFile**|Oracle umožňuje pouze vazby **BFILE** jako **BFILE** parametru. .NET Data Provider pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**BFILE** hodnoty, jako například **byte []** nebo <xref:System.Data.OracleClient.OracleBinary>.|  
+|**OBJEKT BLOB**||**Objekt BLOB**|Oracle umožňuje pouze vazby **BLOB** jako **objektů BLOB** parametr. .NET Data Provider pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**BLOB** hodnoty, jako například **byte []** nebo <xref:System.Data.OracleClient.OracleBinary>.|  
+|**CHAR**|**AnsiStringFixedLength**|**Char**||  
+|**DATOVÝ TYP CLOB**||**Datový typ CLOB**|Oracle umožňuje pouze vazby **datový typ CLOB** jako **datový typ CLOB** parametru. .NET Data Provider pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**datový typ CLOB** hodnoty, jako například **System.String** nebo <xref:System.Data.OracleClient.OracleString>.|  
+|**DATUM**|**Datum a čas**|**Datum a čas**||  
+|**PLOVOUCÍ DESETINNOU ČÁRKOU**|**Jednoduché, Double, Decimal**|**Float, dvakrát, číslo**|<xref:System.Data.OracleClient.OracleParameter.Size%2A> Určuje, **System.Data.DBType** a <xref:System.Data.OracleClient.OracleType>.|  
+|**CELÉ ČÍSLO**|**SByte, Int16, Int32, Int64, desetinné číslo**|**SByte, Int16, Int32, číslo**|<xref:System.Data.OracleClient.OracleParameter.Size%2A> Určuje, **System.Data.DBType** a <xref:System.Data.OracleClient.OracleType>.|  
+|**INTERVAL ROK MĚSÍC**|**Datový typ Int32**|**IntervalYearToMonth**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze při použití softwaru i Oracle 9i klientem a serverem.|  
+|**DEN INTERVALU SEKUNDY.**|**objekt**|**IntervalDayToSecond**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze při použití softwaru i Oracle 9i klientem a serverem.|  
+|**LONG**|**AnsiString**|**LongVarChar**||  
+|**DLOUHO NEZPRACOVANÉ**|**Binární**|**LongRaw**||  
 |**NCHAR**|**StringFixedLength**|**NChar**||  
-|**NCLOB**||**NClob**|Oracle umožňuje pouze vazby **NCLOB** jako **NCLOB** parametr. Zprostředkovatel dat .NET pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**NCLOB** hodnotu, jako například **System.String** nebo <xref:System.Data.OracleClient.OracleString>.|  
+|**NCLOB**||**NClob**|Oracle umožňuje pouze vazby **NCLOB** jako **NCLOB** parametru. .NET Data Provider pro Oracle není vytvořit automaticky za vás při pokusu vytvořit vazbu jinou hodnotu než**NCLOB** hodnoty, jako například **System.String** nebo <xref:System.Data.OracleClient.OracleString>.|  
 |**ČÍSLO**|**VarNumeric**|**Číslo**||  
-|**NVARCHAR2**|**Řetězec**|**NVarChar**||  
-|**NEZPRACOVANÁ**|**Binární**|**Nezpracovaná**||  
-|**REF KURZORU**||**Kurzor**|Další informace najdete v tématu [Oracle REF kurzory](../../../../docs/framework/data/adonet/oracle-ref-cursors.md).|  
+|**NVARCHAR2**|**řetězec**|**NVarChar**||  
+|**NEZPRACOVANÉ**|**Binární**|**nezpracované**||  
+|**REF CURSOR**||**Kurzor**|Další informace najdete v tématu [soubory Oracle REF CURSOR](../../../../docs/framework/data/adonet/oracle-ref-cursors.md).|  
 |**ID ŘÁDKU**|**AnsiString**|**ID řádku**||  
-|**ČASOVÉ RAZÍTKO**|**Data a času**|**časové razítko**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze v případě použití softwaru i Oracle 9i klienta a serveru.|  
-|**ČASOVÉ RAZÍTKO S MÍSTNÍM ČASOVÉM PÁSMU**|**Data a času**|**TimestampLocal**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze v případě použití softwaru i Oracle 9i klienta a serveru.|  
-|**ČASOVÉ RAZÍTKO S ČASOVÝM PÁSMEM**|**Data a času**|**TimestampWithTz**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze v případě použití softwaru i Oracle 9i klienta a serveru.|  
-|**CELÉ ČÍSLO BEZ ZNAMÉNKA**|**Byte, UInt16, UInt32, UInt64, Decimal**|**Uint32 bajtů, UInt16, počet**|<xref:System.Data.OracleClient.OracleParameter.Size%2A> Určuje, **System.Data.DBType** a <xref:System.Data.OracleClient.OracleType>.|  
+|**ČASOVÉ RAZÍTKO**|**Datum a čas**|**Časové razítko**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze při použití softwaru i Oracle 9i klientem a serverem.|  
+|**ČASOVÉ RAZÍTKO S MÍSTNÍM ČASOVÉM PÁSMU**|**Datum a čas**|**TimestampLocal**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze při použití softwaru i Oracle 9i klientem a serverem.|  
+|**ČASOVÉ RAZÍTKO S ČASOVÝM PÁSMEM**|**Datum a čas**|**TimestampWithTz**|<xref:System.Data.OracleClient.OracleType> je k dispozici pouze při použití softwaru i Oracle 9i klientem a serverem.|  
+|**CELÉ ČÍSLO BEZ ZNAMÉNKA**|**Byte, UInt16, UInt32, UInt64, desetinné číslo**|**Byte, UInt16, Uint32, číslo**|<xref:System.Data.OracleClient.OracleParameter.Size%2A> Určuje, **System.Data.DBType** a <xref:System.Data.OracleClient.OracleType>.|  
 |**VARCHAR2**|**AnsiString**|**VarChar**||  
   
- **Vstup/výstup**, **výstup**, a **ReturnValue** **ParameterDirection** hodnoty používané <xref:System.Data.OracleClient.OracleParameter.Value%2A> vlastnost <xref:System.Data.OracleClient.OracleParameter> objekt jsou datové typy rozhraní .NET Framework, pokud vstupní hodnota je datového typu Oracle (například <xref:System.Data.OracleClient.OracleNumber> nebo <xref:System.Data.OracleClient.OracleString>). To neplatí pro **REF kurzor**, **BFILE**, nebo **obchodní** datové typy.  
+ **Vstup/výstup**, **výstup**, a **ReturnValue** **ParameterDirection** hodnot použitých <xref:System.Data.OracleClient.OracleParameter.Value%2A> vlastnost <xref:System.Data.OracleClient.OracleParameter> objektu jsou datové typy rozhraní .NET Framework, pokud je vstupní hodnota je typu Oracle data (například <xref:System.Data.OracleClient.OracleNumber> nebo <xref:System.Data.OracleClient.OracleString>). Tato akce není požadována k **REF CURSOR**, **BFILE**, nebo **LOB** datové typy.  
   
 ## <a name="see-also"></a>Viz také  
  [Oracle a ADO.NET](../../../../docs/framework/data/adonet/oracle-and-adonet.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

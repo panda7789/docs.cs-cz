@@ -5,33 +5,33 @@ ms.technology: dotnet-standard
 ms.assetid: 5de945cb-88f4-49d7-b0e6-f098300cf357
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15d36cc2d3073c9f695de81407ecabcd5e3bba30
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6bfc2e6def94d0830df4a4cdf738cdeef106de9f
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33574514"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871209"
 ---
 # <a name="extension-methods"></a>Metody rozšíření
-Rozšiřující metody jsou jazyk funkce, která umožňuje statické metody, která se má volat pomocí volání syntaxi metody instance. Tyto metody vyžaduje minimálně jeden parametr, který představuje instanci, kterou je metoda má být použito.  
+Rozšiřující metody jsou jazyk funkce, která umožňuje statické metody, která se má volat pomocí syntaxe volání metody instance. Tyto metody musí přijmout nejmíň jeden parametr, který představuje instanci, kterou metoda se má operace provést.  
   
- Třídu, která definuje tyto rozšiřující metody se označuje jako "sponzor" třída a ho musí být deklarována jako statické. Použití metod rozšíření, jeden musíte importovat definice třídy sponzor obor názvů.  
+ Třídy, která definuje tyto rozšiřující metody jsou označovány jako "sponzor" třídy a musí být deklarován jako statické. Chcete-li použít rozšiřující metody, jeden musí importujte obor názvů definování třídy sponzor.  
   
  **X AVOID** frivolously definování rozšiřující metody, hlavně na typech nevlastníte.  
   
- Pokud jste vlastníkem zdrojového kódu typu, zvažte použití metody normální instanci. Pokud nevlastníte a které chcete přidat metodu, buďte velmi opatrní. Volná použití metody rozšíření má potenciál zbytečného rozhraní API typů, které nebyly navrženy tak, aby tyto metody.  
+ Pokud vlastníte zdrojový kód typu, zvažte použití metody normální instanci aplikace. Pokud nevlastníte, a je třeba přidat metodu, buďte velmi opatrní. Liberální použití metody rozšíření se dá potenciálně nebudou zbytečně zabírat rozhraní API typů, které nebyly navrženy tak, aby tyto metody.  
   
  **✓ CONSIDER** metodami rozšíření v některém z následujících scénářů:  
   
--   Zajistit pomocné funkce, které jsou relevantní pro každou implementaci rozhraní, pokud uvedená funkce může být napsán z hlediska základní rozhraní. Je to proto, že konkrétní implementace v opačném případě nemůže být přiřazen rozhraní. Například `LINQ to Objects` operátory jsou implementované jako rozšiřující metody pro všechny <xref:System.Collections.Generic.IEnumerable%601> typy. Proto všechny `IEnumerable<>` implementace je automaticky povolené LINQ.  
+-   K poskytují pomocná funkce, které jsou relevantní pro každou implementaci rozhraní, pokud se říká, že funkce může být napsán z hlediska základní rozhraní. Je to proto, že konkrétní implementace nelze přiřadit jinak rozhraní. Například `LINQ to Objects` operátory jsou implementovány jako rozšiřující metody pro všechny <xref:System.Collections.Generic.IEnumerable%601> typy. Díky tomu se některé `IEnumerable<>` implementace je automaticky povolen LINQ.  
   
--   Když metoda instance by vznikla závislost na nějaký typ, ale tato závislost by došlo k přerušení pravidla správy závislostí. Například závislost z <xref:System.String> k <xref:System.Uri?displayProperty=nameWithType> je pravděpodobně není žádoucí a tak `String.ToUri()` instance metoda vrací `System.Uri` by nesprávný návrhu z hlediska správy závislostí. Statické rozšíření metoda `Uri.ToUri(this string str)` vrácení `System.Uri` by mnohem lepší návrh.  
+-   Pokud by metodu instance zavést závislost na nějaký typ, ale tato závislost by narušil pravidla správy závislostí. Například závislost z <xref:System.String> k <xref:System.Uri?displayProperty=nameWithType> je pravděpodobně není žádoucí a proto `String.ToUri()` chybí metoda instance `System.Uri` by chybný návrhu z hlediska správy závislostí. Metoda statické rozšíření `Uri.ToUri(this string str)` vrácení `System.Uri` by mnohem lepší návrh.  
   
  **X AVOID** definování rozšiřující metody na <xref:System.Object?displayProperty=nameWithType>.  
   
- VB uživatelé nebudou moci volat tyto metody pro objekt odkazů pomocí syntaxe využívající metody rozšíření. Jazyk Visual Basic nepodporuje volání těchto metod, protože deklarace odkaz jako objekt vynutí všechna volání metod na něm být pozdní vázán v jazyce Visual Basic, (skutečného člena s názvem je určena za běhu), zatímco vazby na rozšiřující metody jsou určeny při kompilaci (časná vázaný).  
+ VB uživatelé nebudou moct volat tyto metody pro odkazy na objekty pomocí syntaxe metody rozšíření. VB nepodporuje volání těchto metod, protože deklarace odkazu jako objekt vynutí všechna volání metod na něm nestíháte vázán v jazyce Visual Basic, (skutečný člen s názvem je určeno za běhu), zatímco vazby na metody rozšíření jsou určeny při kompilaci (již v rané fázi ven).  
   
- Všimněte si, že obecných zásad platí pro další jazyky, kde je přítomen stejné chování vazby, nebo pokud rozšíření metody nejsou podporovány.  
+ Všimněte si, že pravidlo platí do jiných jazyků, kde je k dispozici stejné chování vazby nebo pokud rozšíření metody nejsou podporovány.  
   
  **X DO NOT** umístění rozšiřujících metod v jako typ rozšířené o stejný obor názvů, pokud je pro přidání metody do rozhraní nebo správě závislosti.  
   
@@ -39,14 +39,15 @@ Rozšiřující metody jsou jazyk funkce, která umožňuje statické metody, kt
   
  **✓ CONSIDER** definování rozšiřující metody v jako typ rozšířené o stejný obor názvů, pokud typ je rozhraní, a pokud rozšiřující metody jsou určené pro použití ve většině nebo všem případů.  
   
- **X DO NOT** definovat rozšiřující metody, které implementují funkce v obory názvů, které jsou obvykle spojené s jinými funkcemi. Místo toho je definujte v oboru názvů související s funkcí, ke které patří.  
+ **X DO NOT** definovat rozšiřující metody, které implementují funkce v obory názvů, které jsou obvykle spojené s jinými funkcemi. Místo toho je definujte v přidružené k této funkci, ke které patří do oboru názvů.  
   
- **X AVOID** obecné názvy oborů názvů vyhrazený pro metody rozšíření (například "rozšíření"). Použijte popisný název (například "směrování") místo.  
+ **X AVOID** obecné názvy oborů názvů vyhrazený pro metody rozšíření (například "rozšíření"). Použijte popisný název (například "směrování") místo toho.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 86c512f25c40f201d818b6789c6410bfb095b878
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749873"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865267"
 ---
 # <a name="getpropertyorigin-function"></a>Funkce GetPropertyOrigin
 Určuje třídy, ve kterém je deklarována vlastnost.

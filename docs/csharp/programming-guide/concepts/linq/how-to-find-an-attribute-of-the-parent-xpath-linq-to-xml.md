@@ -1,25 +1,25 @@
 ---
-title: 'Postupy: vyhledat atribut nadřazeného (XPath-technologie LINQ to XML) (C#)'
+title: 'Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-ms.openlocfilehash: 6f796bfb8f8b0051af4e31f6e82a503dbfbbc334
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a6a4724c7e22b15a247622c8afdd592ee4893ab
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33318796"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856410"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Postupy: vyhledat atribut nadřazeného (XPath-technologie LINQ to XML) (C#)
-Toto téma ukazuje, jak vyhledat atribut ho a přejděte do nadřazeného elementu.  
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>Postupy: Vyhledání atributu nadřazeného elementu (XPath – LINQ to XML) (C#)
+Toto téma ukazuje, jak přejít do nadřazeného elementu a vyhledání atributu ho.  
   
  Výraz XPath je:  
   
  `../@id`  
   
 ## <a name="example"></a>Příklad  
- Tento příklad nejprve najde `Author` elementu. Poté vyhledá `id` atribut nadřazeného elementu.  
+ V tomto příkladu nejprve vyhledá `Author` elementu. Následně vyhledá `id` atributu nadřazeného elementu.  
   
- Tento příklad používá následující dokumentu XML: [ukázkový soubor XML: knihy (technologie LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
+ Tento příklad používá následujícího dokumentu XML: [ukázkový soubor XML: knihy (LINQ to XML)](../../../../csharp/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md).  
   
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
@@ -53,5 +53,6 @@ Results are identical
 id="bk101"  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Technologie LINQ to XML pro uživatele XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+## <a name="see-also"></a>Viz také
+
+- [LINQ to XML pro uživatele jazyka XPath (C#)](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

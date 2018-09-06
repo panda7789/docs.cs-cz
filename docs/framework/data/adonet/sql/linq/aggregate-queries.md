@@ -3,11 +3,11 @@ title: Agregační dotazy
 ms.date: 03/30/2017
 ms.assetid: 13ec5580-05ce-4a1f-9d3d-8660be7891a2
 ms.openlocfilehash: 1c8f6191cfb832a71bd32c60db492eafb8ca22ca
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43464150"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43858689"
 ---
 # <a name="aggregate-queries"></a>Agregační dotazy
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] podporuje `Average`, `Count`, `Max`, `Min`, a `Sum` agregační operátory. Mějte na paměti následující vlastnosti agregační operátory v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]:  

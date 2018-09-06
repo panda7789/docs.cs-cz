@@ -1,77 +1,68 @@
 ---
 title: Lock – příkaz (referenční dokumentace jazyka C#)
-description: 'Lock – klíčové slovo se používá v dělení na vlákna '
-ms.date: 07/20/2015
+description: Použijte příkaz lock jazyka C# k synchronizaci přístupu vláken k sdíleného prostředku
+ms.date: 08/28/2018
 f1_keywords:
 - lock_CSharpKeyword
 - lock
 helpviewer_keywords:
 - lock keyword [C#]
 ms.assetid: 656da1a4-707e-4ef6-9c6e-6d13b646af42
-ms.openlocfilehash: 6ed46837482642dfd7e1a96cd120fc18023c5e9f
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 2b6fbfb2f81d7745c4effb9ea0087f34cc872a6c
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931190"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43858353"
 ---
 # <a name="lock-statement-c-reference"></a>Lock – příkaz (referenční dokumentace jazyka C#)
 
-`lock` – Klíčové slovo označí blok příkazu jako kritickou sekci tak, že získání zámku vzájemné vyloučení pro daný objekt, provede příkaz a pak uzamčení uvolní. Následující příklad obsahuje `lock` příkazu.
+`lock` Příkaz získá zámek pro vzájemné vyloučení pro daný objekt, provede blok příkazů a poté uvolní zámek. Dokud je držen zámek, vlákna, která je držitelem zámku znovu získat a uvolní zámek. Jiné vlákno se blokuje získání zámku a čeká na zámek je uvolněn.
+
+`lock` Příkaz má formát
 
 ```csharp
-class Account
+lock (x)
 {
-    decimal balance;
-    private Object thisLock = new Object();
-
-    public void Withdraw(decimal amount)
-    {
-        lock (thisLock)
-        {
-            if (amount > balance)
-            {
-                throw new Exception("Insufficient funds");
-            }
-            balance -= amount;
-        }
-    }
+    // Your code...
 }
 ```
 
-Další informace najdete v tématu [vlákna synchronizace](../../programming-guide/concepts/threading/thread-synchronization.md).
+kde `x` je výraz [odkazovat na typ](reference-types.md). To je přesně odpovídá
 
-## <a name="remarks"></a>Poznámky
+```csharp
+object __lockObj = x;
+bool __lockWasTaken = false;
+try
+{
+    System.Threading.Monitor.Enter(__lockObj, ref __lockWasTaken);
+    // Your code...
+}
+finally
+{
+    if (__lockWasTaken) System.Threading.Monitor.Exit(__lockObj);
+}
+```
 
-`lock` – Klíčové slovo se zajistí, že jedno vlákno nezadá důležité části kódu, zatímco jiné vlákno je v části důležité. Pokud jiné vlákno se pokusí zadejte uzamčené kódu, bude čekat, blokovat, dokud se neuvolní objektu.
-
-V části [zřetězení](../../programming-guide/concepts/threading/index.md) popisuje dělení na vlákna.
-
-`lock` – Klíčové slovo volání <xref:System.Threading.Monitor.Enter%2A> na začátku bloku a <xref:System.Threading.Monitor.Exit%2A> na konci bloku. A <xref:System.Threading.ThreadInterruptedException> je vyvolána, pokud <xref:System.Threading.Thread.Interrupt%2A> přeruší podproces, který čeká na zadání `lock` příkazu.
-
-Obecně se vyhýbejte zamykání `public` typu nebo instance mimo kontrolu kódu. Běžné konstrukce `lock (this)`, `lock (typeof (MyType))`, a `lock ("myLock")` porušují tyto obecné zásady:
-
-- `lock (this)` je nějaký problém, pokud instance je veřejně přístupný.
-
-- `lock (typeof (MyType))` je nějaký problém, pokud `MyType` je veřejně dostupná.
-
-- `lock("myLock")` je nějaký problém, protože jakýkoli jiný kód v procesu pomocí stejného řetězce, budou sdílet stejnou zámku.
-
-Osvědčeným postupem je definovat `private` objekt k uzamčení, nebo `private static` proměnné objektu k ochraně dat, které jsou společné pro všechny instance.
+Protože kód používá [try... finally](try-finally.md) bloku, zámek je všeobecně dostupné i v případě, že dojde k výjimce v těle `lock` příkaz.
 
 Nelze použít [await](await.md) – klíčové slovo v textu `lock` příkazu.
 
-## <a name="example---threads-without-locking"></a>Příklad – bez blokování vlákna
+## <a name="remarks"></a>Poznámky
 
-Následující příklad ukazuje, jednoduché použití vlákna bez nutnosti používat jenom v C#:
+Při synchronizaci přístupu vláken sdílený prostředek uzamčení na instanci vyhrazené objektu (například `private readonly object balanceLock = new object();`) nebo do jiné instance, která pravděpodobně nebude používat jako objekt zámek nesouvisejících částí kódu. Vyhněte se použití stejné instance objektu zámku pro různé sdílené prostředky, protože může dojít k zablokování nebo lock kolize. Konkrétně se vyhněte se použití
 
-[!code-csharp[csrefKeywordsFixedLock#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsFixedLock/CS/csrefKeywordsFixedLock.cs#5)]
+- `this` (by mohly používat volající jako uzamčení),
+- <xref:System.Type> instance (může být možné získat [typeof](typeof.md) operátor nebo reflexi),
+- řetězec instance, včetně řetězcové literály
 
-## <a name="example---threads-using-locking"></a>Příklad: vlákna používají zamykání
+jako objekty zámku.
 
-Následující příklad používá vlákna a `lock`. Za předpokladu, `lock` příkaz je k dispozici, je důležité části tohoto bloku příkazů a `balance` nikdy bude záporné číslo:
+## <a name="example"></a>Příklad
 
-[!code-csharp[csrefKeywordsFixedLock#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsFixedLock/CS/csrefKeywordsFixedLock.cs#6)]
+Následující příklad definuje `Account` třídu, která se synchronizuje přístup k jeho privátní `balance` pole, a to na vyhrazené zamykání `balanceLock` instance. Použití stejné instance pro uzamčení zajišťuje, že `balance` pole nejde aktualizovat současně dvěma vlákny pokusu o volání `Debit` nebo `Credit` metod současně.
+
+[!code-csharp[lock-statement-example](~/samples/snippets/csharp/keywords/LockStatementExample.cs)]
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
@@ -79,14 +70,11 @@ Následující příklad používá vlákna a `lock`. Za předpokladu, `lock` p�
 
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Reflection.MethodImplAttributes>
-- <xref:System.Threading.Mutex>
-- <xref:System.Threading.Monitor>
-- [Referenční dokumentace jazyka C#](../../language-reference/index.md)
-- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
-- [Dělení na vlákna](../../programming-guide/concepts/threading/index.md)
+- <xref:System.Threading.Monitor?displayProperty=nameWithType>
+- <xref:System.Threading.SpinLock?displayProperty=nameWithType>
+- <xref:System.Threading.Interlocked?displayProperty=nameWithType>
+- [Referenční dokumentace jazyka C#](../index.md)
 - [Klíčová slova jazyka C#](index.md)
 - [Klíčová slova příkazů](statement-keywords.md)
 - [Propojené operace](../../../standard/threading/interlocked-operations.md)
-- [AutoResetEvent](../../../standard/threading/autoresetevent.md)
-- [Synchronizace vláken](../../programming-guide/concepts/threading/thread-synchronization.md)
+- [Přehled primitiv synchronizace](../../../standard/threading/overview-of-synchronization-primitives.md)

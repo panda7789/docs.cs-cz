@@ -10,11 +10,11 @@ helpviewer_keywords:
 - -target compiler options [C#]
 ms.assetid: a18bbd8e-bbf7-49e7-992c-717d0eb1f76f
 ms.openlocfilehash: a337ecbc614ff40eda42fc5263dbb52aa92b905f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43659861"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43874124"
 ---
 # <a name="-target-c-compiler-options"></a>-target (možnosti kompilátoru C#)
 **-Target** – možnost kompilátoru je zadat v jednom ze čtyř formuláře:  

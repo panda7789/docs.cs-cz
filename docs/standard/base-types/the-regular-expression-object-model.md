@@ -37,12 +37,12 @@ helpviewer_keywords:
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 773c3ee1a82e8307d32750c7d055201c466707bc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 856b7c8a842b173fbf3e31323ce7224fc05a4f12
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43560994"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43868066"
 ---
 # <a name="the-regular-expression-object-model"></a>Model objektu regulárního výrazu
 <a name="introduction"></a> Toto téma popisuje objektový model používaný při práci s regulárními výrazy v rozhraní .NET. Obsahuje následující oddíly:  
@@ -351,7 +351,8 @@ ms.locfileid: "43560994"
 |`;`|Shodovat středníku.|  
 |`((\w+(\s\w+)*),(\d+);)+`|Porovná vzor slovo následované žádná další slova, za nímž následuje čárka, jeden nebo více číslic a středník, jednou nebo vícekrát. Toto je první zachytávající skupina.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Text.RegularExpressions>  
- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)  
- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Text.RegularExpressions>  
+- [Regulárních výrazů .NET](../../../docs/standard/base-types/regular-expressions.md)  
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

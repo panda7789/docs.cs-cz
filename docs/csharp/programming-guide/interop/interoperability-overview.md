@@ -8,12 +8,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: d14c196babb03b7f13dde6ab5b46508a30ba26d6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 0bd53d97cec4370adc78fc715b1cea5ee5a3fd6f
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43394527"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43860439"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  
@@ -57,10 +57,11 @@ Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravov
   
  Další informace najdete v tématu [vystavení komponent architektury .NET Framework pro COM](../../../../docs/framework/interop/exposing-dotnet-components-to-com.md) a [Ukázka třídy COM](../../../csharp/programming-guide/interop/example-com-class.md).  
   
-## <a name="see-also"></a>Viz také  
- [Zlepšení výkonu interoperability](https://msdn.microsoft.com/library/ms998551.aspx)  
- [Úvod do vzájemná funkční spolupráce mezi modelem COM a .NET](https://msdn.microsoft.com/library/office/bb610378.aspx)  
- [Představení zprostředkovatele komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
- [Zařazování mezi spravovaným a nespravovaným kódem](../../../../docs/framework/interop/interop-marshaling.md)  
- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+## <a name="see-also"></a>Viz také
+
+- [Zlepšení výkonu interoperability](https://msdn.microsoft.com/library/ms998551.aspx)  
+- [Úvod do vzájemná funkční spolupráce mezi modelem COM a .NET](https://msdn.microsoft.com/library/office/bb610378.aspx)  
+- [Představení zprostředkovatele komunikace s objekty COM v jazyce Visual Basic](../../../../docs/visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
+- [Zařazování mezi spravovaným a nespravovaným kódem](../../../../docs/framework/interop/interop-marshaling.md)  
+- [Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)

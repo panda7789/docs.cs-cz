@@ -6,11 +6,11 @@ helpviewer_keywords:
 - ToolStrip control [Windows Forms]
 ms.assetid: e5ef455a-e049-429c-8005-30c93132fb79
 ms.openlocfilehash: 72ce238fdcbdcb81fc710a21d1675de67f4adc15
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43393547"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872553"
 ---
 # <a name="toolstrip-control-windows-forms"></a>ToolStrip – ovládací prvek (Windows Forms)
 <xref:System.Windows.Forms.ToolStrip> ovládací prvky jsou panely nástrojů, které můžete hostovat nabídek, ovládacích prvků a uživatelských ovládacích prvků v aplikacích Windows Forms.  

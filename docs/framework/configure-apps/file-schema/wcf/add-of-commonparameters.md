@@ -3,11 +3,11 @@ title: '&lt;add&gt; – &lt;commonParameters&gt;'
 ms.date: 03/30/2017
 ms.assetid: 3713bf25-20c8-455f-bb85-de46b6487932
 ms.openlocfilehash: 93e82aa3bd44a747d1e85986c51c21522d709bd0
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43798619"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43868047"
 ---
 # <a name="ltaddgt-of-ltcommonparametersgt"></a>&lt;add&gt; – &lt;commonParameters&gt;
 Určuje dvojice název hodnota parametrů, které jsou používány globálně u více služeb. Obvykle tento parametr obsahuje připojovací řetězec databáze, kterou může sdílet trvalé služby.  

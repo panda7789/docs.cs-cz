@@ -10,73 +10,74 @@ helpviewer_keywords:
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99b3c36f040b506c23315d40d76642b09c0f362b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63931f4498f4c1f313e7980b91ef712d4a46a837
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591570"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865176"
 ---
 # <a name="exceptions-in-managed-threads"></a>Výjimky ve spravovaných vláknech
-Od verze rozhraní .NET Framework verze 2.0, modul common language runtime umožňuje nejvíce neošetřených výjimek v vláken přirozeně pokračovat. Ve většině případů to znamená, že neošetřené výjimce způsobí, že je aplikace ukončena.  
+Od verze rozhraní .NET Framework verze 2.0, modul common language runtime umožňuje nejvíce neošetřené výjimky ve vláknech přirozeně pokračovat. Ve většině případů to znamená, že neošetřené výjimky způsobí ukončení aplikace.  
   
 > [!NOTE]
->  Toto je významné změny z rozhraní .NET Framework verze 1.0 a 1.1, které přinášejí mnoho neošetřených výjimek backstop – například neošetřené výjimky v podprocesy z fondu podprocesů. V tématu [změnit z předchozích verzí](#ChangeFromPreviousVersions) dál v tomto tématu.  
+>  Jedná se o významnou změnu z rozhraní .NET Framework verze 1.0 a 1.1, které poskytují backstop pro velký počet neošetřených výjimek, například neošetřených výjimek ve vláknu fondu vláken. Zobrazit [změnit z předchozích verzí](#ChangeFromPreviousVersions) dále v tomto tématu.  
   
- Modul common language runtime poskytuje backstop určité neošetřené výjimky, které se používají pro řízení toku programu:  
+ Modul common language runtime poskytuje backstop pro určité neošetřené výjimky, které se používají pro řízení toku programu:  
   
--   A <xref:System.Threading.ThreadAbortException> je vyvolána v vlákno, protože <xref:System.Threading.Thread.Abort%2A> byla volána.  
+-   A <xref:System.Threading.ThreadAbortException> je vyvolána ve vlákně, protože <xref:System.Threading.Thread.Abort%2A> byla volána.  
   
--   <xref:System.AppDomainUnloadedException> Je vyvolána v vlákno, protože odpojení doménu aplikace, ve kterém je prováděna vlákno.  
+-   <xref:System.AppDomainUnloadedException> Je vyvolána ve vlákně, protože probíhá uvolnění domény aplikace 00Z vlákno provádění.  
   
--   Modul common language runtime nebo hostitelský proces se ukončuje vlákno podle došlo k vnitřní výjimce.  
+-   Modul common language runtime nebo hostitelský proces ukončí vláknu vyvoláním vnitřní výjimky.  
   
- Pokud jsou tyto výjimky neošetřené v vláken vytvořený modul common language runtime, výjimka ukončí vlákno, ale modul common language runtime neumožňuje výjimka, která má pokračovat.  
+ Pokud jsou některé z těchto výjimek není ošetřená v vlákna vytvořená modulem common language runtime, výjimka ukončí vlákno, ale modul common language runtime nepovoluje výjimky, abyste mohli pokračovat.  
   
- Pokud jsou tyto výjimky neošetřené do hlavního vlákna nebo vláken, které zadali modulu runtime z nespravovaného kódu, budou pokračovat vést k ukončení aplikace za normálních okolností.  
+ Je-li tyto výjimky nejsou zpracovány v hlavním vlákně, nebo vlákna, která zadaný modul runtime z nespravovaného kódu, odeslaných za normálních okolností výsledkem ukončení aplikace.  
   
 > [!NOTE]
->  Je možné pro modul runtime má být vyvolána k neošetřené výjimce před spravovaný kód dostal příležitost k instalaci obslužnou rutinu výjimky. I když spravovaného kódu dříve žádné šanci na zpracování takové výjimky, může pokračovat přirozeně výjimku.  
+>  Je možné pro modul runtime vyvolá neošetřenou výjimku před spravovaný kód dostala příležitost k instalaci obslužné rutiny výjimky. I když spravovaného kódu dříve žádné příležitost dobře se zpracovat výjimku, může pokračovat přirozeně výjimku.  
   
-## <a name="exposing-threading-problems-during-development"></a>Vystavení vlákna problémy během vývoje  
- Pokud vláken mají povoleno selhání tiše, bez ukončení aplikace, může pokračovat nezjištěné programovací vážným problémům. Toto je konkrétního problému služeb a dalších aplikací, které se spustit po delší dobu. Jako vláken nezdaří, je poškozena postupně stav programu. Může snížit výkon aplikace nebo aplikace může přestat reagovat.  
+## <a name="exposing-threading-problems-during-development"></a>Vystavení dělení na vlákna problémy při vývoji  
+ Pokud vlákna mají povoleno provést tiše, bez ukončení aplikace, může pokračovat nezjištěné po programovací vážným problémům. Toto je konkrétního problému pro služby a další aplikace, které běží po delší dobu. Jak vlákna selže, je poškozený postupně stav programu. Může se snížit výkon aplikace nebo může být zablokování aplikace.  
   
- Povolení neošetřených výjimek v vláken samozřejmě pokračovat, dokud operační systém ukončuje programu, zpřístupní takovým problémům během vývoje a testování. Zprávy o chybách na program ukončení podpory ladění.  
+ Povolení neošetřené výjimky v vlákna přirozeně, pokračovat až do doby ukončení programu, operační systém poskytuje tyto problémy během vývoje a testování. Zprávy o chybách program ukončení podpory ladění.  
   
 <a name="ChangeFromPreviousVersions"></a>   
-## <a name="change-from-previous-versions"></a>Změnit z předchozích verzí  
- Nejdůležitější změny se vztahují na spravovaná vlákna. V rozhraní .NET Framework verze 1.0 a 1.1 poskytuje modul common language runtime backstop neošetřené výjimky v následujících situacích:  
+## <a name="change-from-previous-versions"></a>Změnit z předchozí verze  
+ Nejvýznamnější změnou se vztahují na spravovaná vlákna. Modul common language runtime v rozhraní .NET Framework verze 1.0 a 1.1, poskytuje backstop neošetřené výjimky v následujících situacích:  
   
--   Neexistuje žádný takový akci jako k neošetřené výjimce v podprocesu fondu vláken. Pokud úloha vyvolá výjimku, který nezpracovává, modul runtime vytiskne trasování zásobníku výjimky ke konzole a vrátí do fondu vláken vlákno.  
+-   Není k dispozici i neošetřená výjimka ve vláknu fondu vláken. Pokud úloha vyvolá výjimku, která nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a potom vrátí vláknu fondu vláken.  
   
--   Neexistuje žádná taková věc k neošetřené výjimce v podprocesu vytvořeného s <xref:System.Threading.Thread.Start%2A> metodu <xref:System.Threading.Thread> třídy. Pokud kód spuštěný na takové vlákno vyvolá výjimku, který nezpracovává, modul runtime vytiskne trasování zásobníku výjimky ke konzole a řádně ukončí vlákno.  
+-   Neexistuje žádná taková věc jako neošetřené výjimce ve vlákně vytvořené pomocí <xref:System.Threading.Thread.Start%2A> metodu <xref:System.Threading.Thread> třídy. Pokud kód spuštěný na těchto vlákno vyvolá výjimku, která nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a řádně ukončí vlákno.  
   
--   Neexistuje žádná taková věc jako neošetřená výjimka ve vláknu finalizační metodu. Pokud finalizační metody vyvolá výjimku, který nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a pak umožňuje vlákno finalizační metodu obnovit systémem finalizační metody.  
+-   Není k dispozici i neošetřené výjimky na finalizační podproces. Pokud finalizační metoda vyvolá výjimku, která nezpracovává, modul runtime vytiskne trasování zásobníku výjimky do konzoly a pak umožní vlákna finalizační metody obnovte spuštěnou finalizační metody.  
   
- Stav popředí nebo pozadí spravované vlákno toto chování neovlivňuje.  
+ Popředí nebo pozadí stav spravovaného vlákna nemá vliv na toto chování.  
   
- Pro neošetřených výjimek na vláken z nespravovaného kódu je další menší rozdíl. JIT – připojené dialogu runtime brání dialogu operačního systému pro spravované výjimky nebo nativní výjimky na vláken, které uplynuly prostřednictvím nativního kódu. Proces se ukončuje ve všech případech.  
+ Pro neošetřené výjimky ve vláknech pocházející z nespravovaného kódu je složitější rozdíl. Dialogové okno Připojit JIT runtime brání dialogové okno operačního systému pro výjimky pro spravované nebo nativní na vláknech, které se mají předat prostřednictvím nativního kódu. Proces skončí ve všech případech.  
   
 ### <a name="migrating-code"></a>Migrace kódu  
- Obecně platí změna zveřejní dříve nerozpoznané programovací problémy tak, aby odstraněny. V některých případech ale programátory může využili backstop modulu runtime, např. Chcete-li ukončit vláken. V závislosti na situaci že měli zvážit jednu z následujících strategií migrace:  
+ Obecně platí tato změna bude vystavovat dříve nerozpoznaný programovací problémy tak, aby je. V některých případech však programátoři trvalo výhod backstop modulu runtime, například ukončení vlákna. V závislosti na situaci že zvažte jednu z následujících strategií migrace:  
   
--   Změnit strukturu kód, aby vlákno ukončí řádně, když je obdržena signál.  
+-   Změny struktury kód, aby vlákno ukončí bez výpadku po přijetí signálu.  
   
--   Použití <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metoda k přerušení vlákno.  
+-   Použití <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> metodu pro přerušení vlákna.  
   
--   Pokud vlákno musí být zastaven, ukončení procesu mohli pokračovat, ujistěte se, vlákno vlákna na pozadí tak, aby je automaticky ukončen na ukončení procesu.  
+-   Pokud vlákno musí být zastaven, ukončení procesu mohli pokračovat, ujistěte se, vlákna vlákna na pozadí tak, aby je automaticky ukončeno na ukončení procesu.  
   
- Ve všech případech strategie postupujte podle pokynů pro návrh pro výjimky. V tématu [návrh pokyny pro výjimky](../../../docs/standard/design-guidelines/exceptions.md).  
+ Ve všech případech postupujte podle strategie pokyny návrhu pro výjimky. Zobrazit [pokyny návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md).  
   
 ### <a name="application-compatibility-flag"></a>Příznak kompatibility aplikace  
- Z důvodu dočasného kompatibility správci můžete umístit příznak kompatibility ve `<runtime>` oddílu konfiguračního souboru aplikace. To způsobí, že modul common language runtime se vrátit k chování verze 1.0 a 1.1.  
+ Jako dočasné kompatibility opatření, můžete správci umístit příznak kompatibility v `<runtime>` oddílu konfiguračního souboru aplikace. To způsobí, že modul common language runtime se vrátit k chování verze 1.0 a 1.1.  
   
 ```xml  
 <legacyUnhandledExceptionPolicy enabled="1"/>  
 ```  
   
 ## <a name="host-override"></a>Přepsání hostitele  
- V rozhraní .NET Framework verze 2.0, můžete použít nespravované hostitele [ICLRPolicyManager](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) rozhraní v rozhraní API hostování přepsat výchozí nastavení neošetřená výjimka zásady modul common language runtime. [Iclrpolicymanager::setunhandledexceptionpolicy –](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) funkce slouží k nastavení zásad pro neošetřených výjimek.  
+ V rozhraní .NET Framework verze 2.0, můžete použít nespravovaný hostitel [iclrpolicymanager –](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) rozhraní v rozhraní API pro hostování výchozí hodnotu přepsat neošetřené výjimky zásad modul common language runtime. [Iclrpolicymanager::setunhandledexceptionpolicy –](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) funkce se používá k nastavení zásad pro neošetřené výjimky.  
   
-## <a name="see-also"></a>Viz také  
- [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)
+## <a name="see-also"></a>Viz také:
+
+- [Základy dělení na spravovaná vlákna](../../../docs/standard/threading/managed-threading-basics.md)

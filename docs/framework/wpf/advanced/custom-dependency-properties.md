@@ -15,11 +15,11 @@ helpviewer_keywords:
 - dependency properties [WPF], custom
 ms.assetid: e6bfcfac-b10d-4f58-9f77-a864c2a2938f
 ms.openlocfilehash: f15490417d54121c750e2ea918820c5cb717002e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468321"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43861513"
 ---
 # <a name="custom-dependency-properties"></a>Vlastní vlastnosti závislosti
 

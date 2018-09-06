@@ -1,18 +1,17 @@
 ---
 title: 'Explicitní pole: Klíčové slovo val (F#)'
-description: "Další informace o F # 'val' – klíčové slovo, které se používá k deklaraci umístění pro uložení hodnotu v typu třídu nebo strukturu nebyl zadán typ."
+description: 'Další informace o F # "val" klíčové slovo, které se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 2bd1aae24a5823ddcd6bb8f121d8110f4a211a6a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9cd06f7e90192be79490dd0ff67f118cce4339c3
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565818"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43876236"
 ---
 # <a name="explicit-fields-the-val-keyword"></a>Explicitní pole: Klíčové slovo val
 
-`val` – Klíčové slovo se používá k deklaraci umístění pro uložení hodnotu v typu třídy nebo struktura bez jeho inicializaci. Umístění úložiště deklarovaný tímto způsobem se nazývají *explicitní pole*. Další používání `val` – klíčové slovo je ve spojení s `member` – klíčové slovo deklarovat ve automaticky implementované vlastnosti. Další informace o automaticky implementované vlastnosti najdete v tématu [vlastnosti](properties.md).
-
+`val` – Klíčové slovo se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury, bez jeho inicializaci. Umístění úložiště, které jsou deklarovány tímto způsobem se nazývají *explicitní pole*. Další používání `val` – klíčové slovo se používá současně se `member` – klíčové slovo Chcete-li deklarovat automaticky implementované vlastnosti. Další informace o automaticky implementovaných vlastností najdete v tématu [vlastnosti](properties.md).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,31 +20,29 @@ val [ mutable ] [ access-modifier ] field-name : type-name
 ```
 
 ## <a name="remarks"></a>Poznámky
-Obvyklým definování polí v typu třídu nebo strukturu, je použít `let` vazby. Ale `let` vazby musí být inicializován jako součást konstruktoru třídy, která není vždy možná, potřebná nebo žádoucí. Můžete použít `val` – klíčové slovo chcete pole, které není inicializován.
 
-Explicitní pole můžou být statické nebo nestatické. *– Modifikátor přístupu* může být `public`, `private`, nebo `internal`. Ve výchozím nastavení jsou explicitní pole veřejné. Tím se liší od `let` vazby do ve třídách, které jsou vždy privátní.
+Obvyklým způsobem k definování polí v typu třídy nebo struktury je použít `let` vazby. Ale `let` vazby musí být inicializované jako součást konstruktoru třídy, která není vždy možné, potřebná nebo žádoucí. Můžete použít `val` – klíčové slovo má pole, které není inicializován.
 
-[DefaultValue](https://msdn.microsoft.com/library/a3a3307b-8c05-441e-b109-245511614d58) atribut je požadován u explicitní pole v typy tříd, které mají primární konstruktor. Tento atribut určuje, že pole je inicializováno na nulu. Typ pole musí podporovat inicializace nula. Typ podporuje inicializace nula. Pokud jde o jeden z následujících akcí:
+Explicitní pole může být statické nebo nestatické. *Modifikátor přístupu* může být `public`, `private`, nebo `internal`. Explicitní pole jsou ve výchozím nastavení veřejné. Tím se liší od `let` vazby ve třídách, které jsou vždycky privátní.
 
-- Primitivní typ, který má nulovou hodnotu.
+[DefaultValue](https://msdn.microsoft.com/library/a3a3307b-8c05-441e-b109-245511614d58) atribut je požadován na explicitní pole v typy tříd, které mají primární konstruktor. Tento atribut určuje, že pole je inicializována na nulovou hodnotu. Typ pole musí podporovat inicializace nula. Typ podporuje inicializace nula, pokud jde o jeden z následujících akcí:
 
-- Typ, který podporuje hodnotu null, buď jako hodnotu Normální, jako neobvyklé hodnoty nebo jako reprezentace hodnoty. To zahrnuje třídy, řazené kolekce členů, záznamy, funkce, rozhraní, referenční typy .NET, `unit` typ a rozlišovaná sjednocení typů.
+- Primitivní typ, který má hodnotu nula.
+
+- Typ, který podporuje hodnotu null jako hodnotu Normální, neobvyklé hodnoty nebo jako reprezentace hodnoty. To zahrnuje třídy, řazených kolekcí členů, záznamy, funkce, rozhraní a referenční typy .NET, `unit` typ a typy rozlišených sjednocení.
 
 - Typ hodnoty .NET.
 
-- Struktura, jejichž pole všechny podporují výchozí nulovou hodnotu.
+- Struktura, jejíž všechna pole podporují výchozí nulovou hodnotu.
 
+Například neměnné pole s názvem `someField` zkompiloval pomocným polem v rozhraní .NET reprezentaci s názvem `someField@`, a přístup k uložené hodnotě pomocí vlastnosti s názvem `someField`.
 
-Například neměnné pole s názvem `someField` má základní pole v .NET zkompilovat reprezentace s názvem `someField@`, a získat přístup k hodnotě uložené pomocí vlastnost s názvem `someField`.
+Proměnlivé pole je reprezentace .NET zkompilován pole .NET.
 
-Pro měnitelný pole je reprezentace .NET zkompilovat pole rozhraní .NET.
+>[!WARNING]
+`Note` Obor názvů rozhraní .NET Framework `System.ComponentModel` obsahuje atribut, který má stejný název. Informace o tomto atributu naleznete v tématu `System.ComponentModel.DefaultValueAttribute`.
 
-
->[!WARNING] 
-`Note` Obor názvů rozhraní .NET Framework `System.ComponentModel` obsahuje atribut, který má stejný název. Informace o tento atribut najdete v tématu `System.ComponentModel.DefaultValueAttribute`.
-
-
-Následující kód ukazuje použití explicitní pole a pro porovnání, `let` vazby ve třídy, která má primární konstruktor. Všimněte si, že `let`-vázané pole `myInt1` je soukromé. Když `let`-vázané pole `myInt1` se odkazuje z metody člen, vlastní identifikátor `this` se nevyžaduje. Když odkazujete explicitní pole, ale `myInt2` a `myString`, je vyžadován vlastní identifikátor.
+Následující kód ukazuje použití explicitní pole a pro porovnání, `let` vazby ve třídě, která má primární konstruktor. Všimněte si, že `let`-vázané pole `myInt1` je privátní. Když `let`-vázané pole `myInt1` se odkazuje z metody člen, identifikátoru samotného `this` se nevyžaduje. Když odkazujete na explicitní pole, ale `myInt2` a `myString`, identifikátoru samotného je povinný.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6701.fs)]
 
@@ -56,26 +53,24 @@ Výstup vypadá takto:
 30 def
 ```
 
-Následující kód ukazuje použití explicitní pole ve třídě, která neobsahuje primární konstruktor. V takovém případě `DefaultValue` atribut se nevyžaduje, ale v konstruktorech, které jsou definovány pro typ se musí inicializovat všechna pole.
+Následující kód ukazuje použití explicitní pole ve třídě, která nemá primární konstruktor. V takovém případě `DefaultValue` atribut není povinný, ale musí se inicializovat všechna pole v konstruktorech, které jsou definovány pro typ.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6702.fs)]
 
-Výstupem je `35 22`.
+Výstup je `35 22`.
 
-Následující kód ukazuje použití explicitní pole ve struktuře. Vzhledem k tomu, že typ hodnoty strukturu se má automaticky výchozí konstruktor, která nastavuje hodnoty jeho polí na nulu. Proto `DefaultValue` atribut se nevyžaduje.
+Následující kód ukazuje použití explicitní pole ve struktuře. Vzhledem k tomu, že struktura je hodnotový typ, má automaticky výchozí konstruktor, který nastaví hodnoty polí na nulu. Proto `DefaultValue` atribut se nevyžaduje.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6703.fs)]
 
-Výstupem je `11 xyz`.
+Výstup je `11 xyz`.
 
-Explicitní pole nejsou určeny k použití rutiny. Obecně platí, pokud je to možné byste měli používat `let` vazby v třídě místo explicitní pole. Explicitní pole jsou užitečné v některých scénářích vzájemná funkční spolupráce, například když je třeba definovat strukturu, která bude použita v platformu vyvolání volání do nativního rozhraní API, nebo ve scénářích zprostředkovatele komunikace s objekty COM. Další informace najdete v tématu [externí funkce](../functions/external-functions.md). Další situace, ve kterém může být nezbytné explicitní pole je při práci s F # generátor kódu, který vysílá tříd bez objektů primární konstruktor. Explicitní pole jsou také užitečná pro přístup z více vláken statické proměnné a podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
+Explicitní pole nejsou určené pro běžné použití. Obecně platí, pokud je to možné, abyste používali `let` vazby ve třídě místo explicitní pole. Explicitní pole jsou užitečné v některých případech interoperability, například když je třeba definovat strukturu, která se použije v vyvolání platformy volání nativního rozhraní API, nebo ve scénářích vzájemné spolupráce COM. Další informace najdete v tématu [externí funkce](../functions/external-functions.md). Další situace, ve kterém může být nutné explicitní pole je při práci F # generátoru kódu, který generuje třídy bez primárního konstruktoru. Explicitní pole jsou také užitečné pro proměnné statická na úrovni vlákna nebo podobné konstrukce. Další informace naleznete v tématu `System.ThreadStaticAttribute`.
 
-Když klíčová slova `member val` objeví spolu v definici typu je definice automaticky implementované vlastnosti. Další informace najdete v tématu [vlastnosti](properties.md).
+Když klíčová slova `member val` pohromadě v definici typu, je to definice automaticky implementované vlastnosti. Další informace najdete v tématu [vlastnosti](properties.md).
 
+## <a name="see-also"></a>Viz také:
 
-## <a name="see-also"></a>Viz také
-[Vlastnosti](properties.md)
-
-[Členové](index.md)
-
-[`let` Vazby do ve třídách](let-bindings-in-classes.md)
+- [Vlastnosti](properties.md)
+- [Členové](index.md)
+- [`let` Vazby ve třídách](let-bindings-in-classes.md)

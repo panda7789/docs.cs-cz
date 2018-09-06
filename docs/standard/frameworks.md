@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 05/31/2018
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 346eece8fdb391fd62b369db6ef65964fcd6e67a
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 76bf496e957022f4d97d3cf3f3975f334b1d5c45
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42934853"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43874850"
 ---
 # <a name="target-frameworks"></a>Cílové architektury
 
@@ -131,10 +131,10 @@ Následující cílové architektury jsou zastaralé. Balíčky, které cílí n
 
 ## <a name="see-also"></a>Viz také:
 
-[Balíčky, metabalíčky a architektury](../core/packages.md)  
-[Vývoj knihoven pomocí nástrojů pro různé platformy](../core/tutorials/libraries.md)  
-[.NET Standard](net-standard.md)  
-[Správa verzí rozhraní .NET core](../core/versions/index.md)  
-[úložiště GitHub DotNet/standard](https://github.com/dotnet/standard)  
-[Úložiště GitHub nástroje NuGet](https://github.com/joelverhagen/NuGetTools)  
-[Profily rozhraní v rozhraní .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)
+- [Balíčky, metabalíčky a architektury](../core/packages.md)  
+- [Vývoj knihoven pomocí nástrojů pro různé platformy](../core/tutorials/libraries.md)  
+- [.NET Standard](net-standard.md)  
+- [Správa verzí rozhraní .NET core](../core/versions/index.md)  
+- [úložiště GitHub DotNet/standard](https://github.com/dotnet/standard)  
+- [Úložiště GitHub nástroje NuGet](https://github.com/joelverhagen/NuGetTools)  
+- [Profily rozhraní v rozhraní .NET](https://blog.stephencleary.com/2012/05/framework-profiles-in-net.html)

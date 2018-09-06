@@ -6,11 +6,11 @@ helpviewer_keywords:
 - behaviors [WPF], timing
 ms.assetid: 5b714d46-bd46-48b8-b467-b4be89ba3091
 ms.openlocfilehash: b4b89047cb1b85c4386f1bd9d2a16a06ec112b73
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43533993"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43858135"
 ---
 # <a name="timing-behaviors-overview"></a>Přehled chování časování
 Toto téma popisuje chování časování animací a jiných <xref:System.Windows.Media.Animation.Timeline> objekty.  

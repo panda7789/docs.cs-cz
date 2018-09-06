@@ -3,11 +3,11 @@ title: Pokročilé techniky dotazování (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 028d978e-215b-4d50-ba70-adce0659386d
 ms.openlocfilehash: d33677be318275eb9c9cc427129caec6edddb2d9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43531761"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43859501"
 ---
 # <a name="advanced-query-techniques-linq-to-xml-c"></a>Pokročilé techniky dotazování (LINQ to XML) (C#)
 Tato část obsahuje příklady pokročilejší [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] techniky dotazování.  

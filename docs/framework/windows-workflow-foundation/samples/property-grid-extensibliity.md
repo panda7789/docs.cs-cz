@@ -3,11 +3,11 @@ title: Rozšiřitelnost mřížky vlastností
 ms.date: 03/30/2017
 ms.assetid: 3530c3a3-756d-4712-9f10-fb2897414d3a
 ms.openlocfilehash: b7c3e3dbc3ccd95fc12dffd40927b3e2bbbc8226
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779296"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865810"
 ---
 # <a name="property-grid-extensibliity"></a>Rozšiřitelnost mřížky vlastností
 Vývojář můžete přizpůsobit mřížkou, který se zobrazí při výběru v návrháři pro danou aktivitu. To můžete udělat vytvořit bohaté možnosti úprav. Tato ukázka předvádí, jak to lze provést.  

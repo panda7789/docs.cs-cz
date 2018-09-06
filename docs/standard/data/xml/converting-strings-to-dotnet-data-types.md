@@ -1,5 +1,5 @@
 ---
-title: Převádění řetězců na rozhraní .NET Framework datové typy
+title: Převádění řetězců na datové typy rozhraní .NET Framework
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,34 +8,34 @@ dev_langs:
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5954a580ca9b7f00f6339f70d0df9d20ba96715e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc07779f03784cd32524e1b1189faae343710a05
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576576"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865784"
 ---
-# <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na rozhraní .NET Framework datové typy
-Pokud chcete převést řetězec na datový typ rozhraní .NET Framework, použijte **XmlConvert** metoda, která vyhovuje potřebám aplikace. Seznam všech metod pro převod k dispozici v **XmlConvert** třídy najdete v tématu <xref:System.Xml.XmlConvert>.  
+# <a name="converting-strings-to-net-framework-data-types"></a>Převádění řetězců na datové typy rozhraní .NET Framework
+Pokud chcete pro převod řetězce na datový typ rozhraní .NET Framework, použijte **XmlConvert** metodu, která vyhovuje potřebám aplikace. Pro všechny metody převodu k dispozici v seznamu **XmlConvert** najdete v tématu <xref:System.Xml.XmlConvert>.  
   
- Řetězec vrácený z **ToString** metoda je řetězec verze dat, který se předává v. Kromě toho existuje několik typů rozhraní .NET Framework, které převést pomocí **XmlConvert** třídy ještě nepoužívají metody v **metodu System.Convert** třídy. **XmlConvert** třída postupuje podle specifikace typu dat schématu XML (XSD) a má datový typ, který **XmlConvert** můžete namapovat.  
+ Řetězec vrácený z **ToString** metody je řetězec verze dat, které je předáno. Kromě toho existuje několik typů rozhraní .NET Framework, které provádějí převod pomocí **XmlConvert** třídy, ale nepoužívají metody v **System.Convert** třídy. **XmlConvert** třídy následuje specifikace datového typu schématu XML (XSD) a má datový typ, který **XmlConvert** namapovat.  
   
- Následující tabulka uvádí typy dat rozhraní .NET Framework a na typ řetězce, které jsou vráceny pomocí mapování datového typu XML schématu (XSD). Tyto typy rozhraní .NET Framework nelze zpracovat pomocí **metodu System.Convert**.  
+ V následující tabulce jsou uvedeny datové typy rozhraní .NET Framework a typy řetězců, které jsou vráceny za použití mapování datového typu schématu XML (XSD). Tyto typy rozhraní .NET Framework nelze zpracovat pomocí **System.Convert**.  
   
-|Typ rozhraní .NET Framework|Byl vrácen řetězec s|  
+|Typ rozhraní .NET Framework|Řetězec vrácený|  
 |-------------------------|---------------------|  
 |Boolean|"PRAVDA", "Nepravda"|  
 |Single.PositiveInfinity|"INF"|  
 |Single.NegativeInfinity|"-INF"|  
 |Double.PositiveInfinity|"INF"|  
 |Double.NegativeInfinity|"-INF"|  
-|DateTime|Formát je "rrrr-MM-ddTHH:mm:sszzzzzz" a jeho podmnožin.|  
-|Časový interval|Formát je PnYnMnTnHnMnS tedy `P2Y10M15DT10H30M20S` je doba trvání 2 roky, 10 měsíců, 15 dnů, 10 hodin, 30 minut, a 20 sekund.|  
+|DateTime|Formát je "yyyy-MM-ddTHH:mm:sszzzzzz" a její podskupiny.|  
+|Časový interval|Formát je PnYnMnTnHnMnS tedy `P2Y10M15DT10H30M20S` je po dobu 2 let, 10 měsíců, 15 dnů, 10 hodin, 30 minut, a 20 sekund.|  
   
 > [!NOTE]
->  Pokud převod jakýkoli z typů rozhraní .NET Framework uvedené v tabulce na řetězec pomocí **ToString** metoda, vrácený řetězec není základní typ, ale na řetězcový typ. schématu XML (XSD).  
+>  Pokud převod typy rozhraní .NET Framework uvedená v tabulce na řetězec pomocí **ToString** metodu, vrácený řetězec není základní typ, ale typ řetězce schématu XML (XSD).  
   
- **Data a času** a **časový interval** typ hodnoty se liší v tom, že **data a času** představuje okamžik v čase, zatímco **časový interval** představuje časovém intervalu. **Data a času** a **časový interval** formáty jsou uvedeny ve specifikaci typy dat schématu XML (XSD). Příklad:  
+ **Data a času** a **časový interval** typ hodnoty se liší v, který **data a času** představuje okamžik v čase, zatímco **TimeSpan** představuje časový interval. **Data a času** a **Timespan** jsou formáty určené ve specifikaci schématu XML (XSD) datové typy. Příklad:  
   
 ```vb  
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
@@ -53,7 +53,7 @@ writer.WriteElementString("Date", XmlConvert.ToString(date));
   
  `<Date>2001-08-04T00:00:00</Date>`.  
   
- Následující kód převede na řetězec, celé číslo:  
+ Následující kód převede celé číslo na řetězec:  
   
 ```vb  
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
@@ -71,10 +71,10 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
  `<Number>200</Number>`  
   
- Však při převodu řetězce **Boolean**, **jeden**, nebo **dvojité**, typ rozhraní .NET Framework, která je vrácena není stejný jako typ vrácený při použití **Metodu System.Convert** třídy.  
+ Ale pokud převádíte řetězec na **logická**, **jeden**, nebo **Double**, typ rozhraní .NET Framework, která je vrácena není stejný jako typ vrácený při použití **System.Convert** třídy.  
   
 ## <a name="string-to-boolean"></a>Řetězec na logickou hodnotu  
- Následující tabulka ukazuje, jaký typ se generuje pro daný vstupní řetězce při převodu řetězce **Boolean** pomocí **ToBoolean** metoda.  
+ Následující tabulka ukazuje, jaký typ je generován pro daný vstupní řetězce při převodu řetězce do **logická** pomocí **ToBoolean** metody.  
   
 |Vstupní parametr platný řetězec|Výstupní typ rozhraní .NET framework|  
 |----------------------------------|--------------------------------|  
@@ -83,7 +83,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
 |"false"|Boolean.False|  
 |"0"|Boolean.False|  
   
- Například uděleno následující kód XML:  
+ Mějme například následující kód XML:  
   
  **Vstup**  
   
@@ -92,7 +92,7 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
 <Boolean>1</Boolean>   
 ```  
   
- Obě srozumitelné následující kód, a **bvalue** je **System.Boolean.True**:  
+ Obě byly srozumitelné pro následující kód a **bvalue** je **System.Boolean.True**:  
   
 ```vb  
 Dim bvalue As Boolean = _  
@@ -105,16 +105,16 @@ Boolean bvalue = XmlConvert.ToBoolean(reader.ReadElementString());
 Console.WriteLine(bvalue);  
 ```  
   
-## <a name="string-to-single"></a>Řetězec, který má jeden  
- Následující tabulka ukazuje, jaký typ se generuje pro daný vstupní řetězce při převodu řetězce **jeden** pomocí **ToSingle** metoda.  
+## <a name="string-to-single"></a>Řetězec na hodnotu Single  
+ Následující tabulka ukazuje, jaký typ je generován pro daný vstupní řetězce při převodu řetězce k **jeden** pomocí **tosingle –** metody.  
   
 |Vstupní parametr platný řetězec|Výstupní typ rozhraní .NET framework|  
 |----------------------------------|--------------------------------|  
 |"INF"|Single.PositiveInfinity|  
 |"-INF"|Single.NegativeInfinity|  
   
-## <a name="string-to-double"></a>Řetězec dvojitou  
- Následující tabulka ukazuje, jaký typ se generuje pro daný vstupní řetězce při převodu řetězce **jeden** pomocí **ToDouble** metoda.  
+## <a name="string-to-double"></a>Řetězec na Double  
+ Následující tabulka ukazuje, jaký typ je generován pro daný vstupní řetězce při převodu řetězce k **jeden** pomocí **todouble –** metody.  
   
 |Vstupní parametr platný řetězec|Výstupní typ rozhraní .NET framework|  
 |----------------------------------|--------------------------------|  
@@ -133,6 +133,7 @@ Double value = Double.PositiveInfinity;
 writer.WriteElementString("Infinity", XmlConvert.ToString(value));  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Převod datových typů XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
- [Převádění typů rozhraní .NET Framework na řetězce](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+## <a name="see-also"></a>Viz také:
+
+- [Převod datových typů XML](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
+- [Převádění typů rozhraní .NET Framework na řetězce](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)

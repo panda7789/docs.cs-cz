@@ -6,11 +6,11 @@ helpviewer_keywords:
 - ToolBar control [Windows Forms]
 ms.assetid: 6b40e9ce-6a7a-4784-bfc9-7f1d36b7462e
 ms.openlocfilehash: 8162dfc898f7965d65de918d2a5b1f7afbfdf9b2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43400846"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43863280"
 ---
 # <a name="toolbar-control-windows-forms"></a>ToolBar – ovládací prvek (Windows Forms)
 > [!NOTE]

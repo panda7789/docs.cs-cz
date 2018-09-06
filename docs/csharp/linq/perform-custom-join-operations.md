@@ -4,11 +4,11 @@ description: Zjistěte, jak k provádění vlastních operací spojování LINQ 
 ms.date: 12/1/2016
 ms.assetid: 56a2a4a5-7299-497d-b3c3-23c848678911
 ms.openlocfilehash: a0e08396c006f68949357c50a28b3b0982f0dd83
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468107"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43866673"
 ---
 # <a name="perform-custom-join-operations"></a>Provádění vlastních operací spojování
 

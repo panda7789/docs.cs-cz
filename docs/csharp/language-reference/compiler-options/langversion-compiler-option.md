@@ -9,11 +9,11 @@ helpviewer_keywords:
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
 ms.openlocfilehash: 9ebc90b3d4f610aec58f950f375d97fd2abf3617
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43724552"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43857268"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (možnosti kompilátoru C#)
 

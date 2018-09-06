@@ -1,19 +1,19 @@
 ---
-title: Vytvořit nové uzly v modelu DOM
+title: Vytvoření nových uzlů v modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 6c2b9789-b61a-49f9-b33f-db01a945edf2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bbc8d6c1055afc1a0799522f341551d04bab4ace
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 390ffa1dd9f2e76372b0e4fcbf2916918b64d748
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569301"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872709"
 ---
-# <a name="create-new-nodes-in-the-dom"></a>Vytvořit nové uzly v modelu DOM
-<xref:System.Xml.XmlDocument> Má metodu create pro všechny typy uzlů. Zadejte metodu s názvem vyžádání a obsah nebo jiné parametry pro uzly, u kterých se obsah (například textový uzel) a uzlu je vytvořena. Tyto metody jsou ty, které je třeba název a několik dalších parametrů, které jsou vyplněna můžete vytvořit příslušný uzel.  
+# <a name="create-new-nodes-in-the-dom"></a>Vytvoření nových uzlů v modelu DOM
+<xref:System.Xml.XmlDocument> Má vytvořit metodu pro všechny typy uzlů. Zadejte metodu s názvem v případě potřeby a obsah nebo jiné parametry pro ty uzly, které mají obsah (například textový uzel) a uzel se vytvoří. Jsou tyto metody těch, které je třeba název a několik dalších parametrů, které jsou vyplněny vytvořit příslušný uzel.  
   
 -   <xref:System.Xml.XmlDocument.CreateCDataSection%2A>  
   
@@ -37,19 +37,20 @@ ms.locfileid: "33569301"
   
 -   <xref:System.Xml.XmlDocument.CreateXmlDeclaration%2A>  
   
- Ostatní typy uzlů mají další požadavky než právě poskytuje data na parametry.  
+ Jiné typy uzlů mají další požadavky než jenom poskytuje data pro parametry.  
   
- Informace o atributech, najdete v části [vytváření nové atributy pro elementy v modelu DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md). Informace o ověření názvu elementu a atributu v tématu [– Element XML a ověření názvu atributu při vytváření nových uzlů](../../../../docs/standard/data/xml/xml-element-and-attribute-name-verification-when-creating-new-nodes.md). Vytváření odkazy na entity, najdete v části [vytváření nové odkazy na Entity](../../../../docs/standard/data/xml/creating-new-entity-references.md). Informace o vlivu rozšíření odkazy na entity obory názvů, v tématu [Namespace vlivu na Entity odkaz na rozšíření pro nové uzly obsahující elementy a atributy](../../../../docs/standard/data/xml/namespace-affect-on-entity-ref-expansion-for-new-nodes.md).  
+ Informace o atributech naleznete v tématu [vytváření nových atributů pro elementy v modelu DOM](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md). Informace o ověření názvu elementu a atribut, naleznete v tématu [– Element XML a ověření názvu atributu při vytváření nových uzlů](../../../../docs/standard/data/xml/xml-element-and-attribute-name-verification-when-creating-new-nodes.md). K vytváření odkazů na entity, naleznete v tématu [vytváření odkazů na nové Entity](../../../../docs/standard/data/xml/creating-new-entity-references.md). Informace o vliv rozšíření odkazy na entity v oborech názvů najdete v tématu [Namespace vliv na rozšíření odkazu Entity pro nové uzly obsahující prvky a atributy](../../../../docs/standard/data/xml/namespace-affect-on-entity-ref-expansion-for-new-nodes.md).  
   
- Po vytvoření nové uzly jsou existuje několik metod, které jsou k dispozici pro vložte je do stromu. Tabulka uvádí metody popisem toho, kde se nový uzel objeví v XML dokumentu objektu modelu (DOM).  
+ Po vytvoření nové uzly, existuje několik metod, které jsou k dispozici pro vložení do stromu. V tabulce jsou uvedeny metody s popisem toho, kde nového uzlu se zobrazuje v XML Document Object Model (DOM).  
   
-|Metoda|Umístění uzlu|  
+|Metoda|Umístění uzlů|  
 |------------|--------------------|  
-|<xref:System.Xml.XmlNode.InsertBefore%2A>|Vložit před uzlu odkazu. Chcete-li například vložit nový uzel v pozici 5:<br /><br /> `Dim refChild As XmlNode = node.ChildNodes(4) 'The reference is zero-based.node.InsertBefore(newChild, refChild);`<br /><br /> `XmlNode refChild = node.ChildNodes[4]; //The reference is zero-based. node.InsertBefore(newChild, refChild);`<br /><br /> Další informace najdete v tématu <xref:System.Xml.XmlNode.InsertBefore%2A> metoda.|  
-|<xref:System.Xml.XmlNode.InsertAfter%2A>|Vložit po uzlu odkazu. Příklad:<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Další informace najdete v tématu <xref:System.Xml.XmlNode.InsertAfter%2A> metoda.|  
-|<xref:System.Xml.XmlNode.AppendChild%2A>|Přidá na konec seznamu podřízené uzly pro daný uzel uzlu. Pokud uzel, který chcete přidat je <xref:System.Xml.XmlDocumentFragment>, celý obsah dokumentu fragment přesunou do seznamu podřízené tohoto uzlu. Další informace najdete v tématu <xref:System.Xml.XmlNode.AppendChild%2A> metoda.|  
-|<xref:System.Xml.XmlNode.PrependChild%2A>|Přidá na začátek seznamu podřízené uzly uzlu daného uzlu. Pokud uzel, který chcete přidat je <xref:System.Xml.XmlDocumentFragment>, celý obsah dokumentu fragment přesunou do seznamu podřízené tohoto uzlu. Další informace najdete v tématu <xref:System.Xml.XmlNode.PrependChild%2A> metoda.|  
-|<xref:System.Xml.XmlAttributeCollection.Append%2A>|Připojí <xref:System.Xml.XmlAttribute> uzlu na konec kolekce atributů, které jsou spojené s elementem. Další informace najdete v tématu <xref:System.Xml.XmlAttributeCollection.Append%2A> metoda.|  
+|<xref:System.Xml.XmlNode.InsertBefore%2A>|Vložit před uzlu odkazu. Chcete-li například vložit nový uzel na pozici 5:<br /><br /> `Dim refChild As XmlNode = node.ChildNodes(4) 'The reference is zero-based.node.InsertBefore(newChild, refChild);`<br /><br /> `XmlNode refChild = node.ChildNodes[4]; //The reference is zero-based. node.InsertBefore(newChild, refChild);`<br /><br /> Další informace najdete v tématu <xref:System.Xml.XmlNode.InsertBefore%2A> metody.|  
+|<xref:System.Xml.XmlNode.InsertAfter%2A>|Vkládá uzlu odkazu. Příklad:<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Další informace najdete v tématu <xref:System.Xml.XmlNode.InsertAfter%2A> metody.|  
+|<xref:System.Xml.XmlNode.AppendChild%2A>|Uzel se přidá na konec seznamu podřízených uzlů pro daný uzel. Pokud uzel přidáván, je <xref:System.Xml.XmlDocumentFragment>, celý obsah část dokumentu přesunou do seznamu podřízených tohoto uzlu. Další informace najdete v tématu <xref:System.Xml.XmlNode.AppendChild%2A> metody.|  
+|<xref:System.Xml.XmlNode.PrependChild%2A>|Uzel se přidá na začátek seznamu podřízených uzlů daný uzel. Pokud uzel přidáván, je <xref:System.Xml.XmlDocumentFragment>, celý obsah část dokumentu přesunou do seznamu podřízených tohoto uzlu. Další informace najdete v tématu <xref:System.Xml.XmlNode.PrependChild%2A> metody.|  
+|<xref:System.Xml.XmlAttributeCollection.Append%2A>|Připojí <xref:System.Xml.XmlAttribute> uzlu na konec kolekce atributů spojených s elementem. Další informace najdete v tématu <xref:System.Xml.XmlAttributeCollection.Append%2A> metody.|  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

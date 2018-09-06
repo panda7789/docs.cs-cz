@@ -13,11 +13,11 @@ ms.assetid: 40f0208d-4618-47f7-85cf-4913d07d2d7d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 65d42597c572a85a95f9e2b4407df42c6fb7bb3d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43674111"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856006"
 ---
 # <a name="how-to-unlink-dataflow-blocks"></a>Postupy: Zrušení propojení bloků toku dat
 Tento dokument popisuje, jak zrušit propojení cílový blok toku dat z jeho zdroje.

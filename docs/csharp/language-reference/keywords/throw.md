@@ -12,11 +12,11 @@ ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 831c4cce14e902697d84129e54cc54f07d26b9f3
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43802735"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865033"
 ---
 # <a name="throw-c-reference"></a>throw (Referenční dokumentace jazyka C#)
 Signály výskyt výjimku při provádění programu.  

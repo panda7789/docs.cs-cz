@@ -3,11 +3,11 @@ title: Korelace na základě obsahu
 ms.date: 03/30/2017
 ms.assetid: 8638b5d6-1d59-456d-8acd-179a5b39b260
 ms.openlocfilehash: c0367f480701468dcd5024ea3439bdcd38acc78f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43785814"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865768"
 ---
 # <a name="content-based-correlation"></a>Korelace na základě obsahu
 Tato ukázka předvádí, jak zasílání zpráv aktivity (<xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, a <xref:System.ServiceModel.Activities.ReceiveReply>) lze použít s více založené na obsahu correlations.and založené na obsahu korelace. V tomto scénáři korelaci první inicializaci podle ID nákupní objednávky a pak další korelace je vytvořen později podle ID zákazníka. To ukazuje, jak <xref:System.ServiceModel.Activities.Receive> aktivity můžete postupovat podle existujících korelace i inicializuje novou korelaci. na základě stejné příchozí zprávy.  

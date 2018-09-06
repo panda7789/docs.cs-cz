@@ -8,11 +8,11 @@ helpviewer_keywords:
 - walkthroughs [Visual Basic]
 ms.assetid: e4e1f849-e1ce-4cf7-8483-d9b4c4887a8e
 ms.openlocfilehash: 5211e1cc55c4af9735f59e4ddecc11acb24b8ea0
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43452791"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43861215"
 ---
 # <a name="visual-basic-language-walkthroughs"></a>Návody pro jazyk Visual Basic
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  

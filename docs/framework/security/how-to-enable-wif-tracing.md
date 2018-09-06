@@ -5,11 +5,11 @@ ms.assetid: 271b6889-3454-46ff-96ab-9feb15e742ee
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 17650e06cb505dd778a9c0980c2a32fda8099cb4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43661124"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856236"
 ---
 # <a name="how-to-enable-wif-tracing"></a>Postupy: Povolení trasování WIF
 ## <a name="applies-to"></a>Platí pro  

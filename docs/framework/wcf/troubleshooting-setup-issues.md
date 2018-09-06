@@ -3,11 +3,11 @@ title: Odstraňování potíží s instalací
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
 ms.openlocfilehash: 0270bd8c1006b39805e3486c4fef0cb379089ea8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43732868"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43805127"
 ---
 # <a name="troubleshooting-setup-issues"></a>Odstraňování potíží s instalací
 Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Foundation (WCF).  

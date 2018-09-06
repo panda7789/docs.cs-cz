@@ -13,11 +13,11 @@ ms.assetid: 90f308b9-82dc-414a-bce1-77e0155e56bd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 939630726f399184c264f73ee01270f50981e83a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43736150"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43860009"
 ---
 # <a name="registration-free-com-interop"></a>Zprostředkovatel komunikace s objekty COM bez registrace
 Spolupráci s COM bez registrace se aktivuje komponenty bez použití registru Windows k ukládání informací o sestavení. Místo registrace komponenty v počítači se během nasazení, vytvářet soubory manifestu Win32 – vizuální styl v době návrhu, které obsahují informace o aktivaci a vazby. Tyto soubory manifestu, spíše než klíče registru, směrovat aktivační objekt.  

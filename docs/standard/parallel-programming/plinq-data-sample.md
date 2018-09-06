@@ -10,30 +10,30 @@ helpviewer_keywords:
 ms.assetid: 4fccbb35-eaa5-44e9-a252-a5c3d4bc7604
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3dd16f46b7d7eb80021a67583f51feae182a2cc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0e7ef42bab2d7567741a433cbcacf10a5e689f6a
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590891"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43867930"
 ---
 # <a name="plinq-data-sample"></a>Ukázková data pro PLINQ
-Tato ukázka obsahuje příklad data ve formátu .csv, společně s metody, které transformují je na kolekce v paměti zákazníků, produktů, objednávky a podrobnosti o objednávce. Pro další pokusy s PLINQ můžete vložit příklady kódů z některých dalších tématech do kódu v tomto tématu a vyvolání z `Main` metoda. Tyto údaje můžete použít také s vlastními PLINQ dotazy.  
+Tato ukázka obsahuje ukázková data ve formátu .csv, společně s metodami, které transformují do kolekce v paměti zákazníky, produkty, objednávek a podrobnostmi o objednávce. Pro další pokusy pomocí jazyka PLINQ můžete vložit příklady kódů z některých dalších témat, která do kódu v tomto tématu a vyvolat z `Main` metody. Tato data můžete také použít s vlastními dotazy PLINQ.  
   
- Data představuje podmnožinu databázi Northwind. Záznamy o zákaznících padesát (50) jsou zahrnuty, ale ne všechna pole. Podmnožinu řádků z objednávek a odpovídající data z Order_Detail pro každý zákazníka je zahrnuta. Všechny produkty, které jsou zahrnuty.  
+ Data představují podmnožinu databázi Northwind. Záznamy o zákaznících padesát (50) jsou zahrnuty, ale ne všechna pole. Součástí je podmnožinou řádků z objednávky a odpovídající data z Order_Detail pro každý zákazník. Všechny produkty jsou zahrnuty.  
   
 > [!NOTE]
->  Datové sady není dostatečně velký pro ukazují, že PLINQ je rychlejší než LINQ na objekty pro dotazy, které obsahují pouze základní `where` a `select` klauzule. Abyste viděli, zvyšuje rychlost pro malé datové sady, jako je tato, pomocí dotazů, které obsahují výpočetně náročných operací na každý element v datové sadě.  
+>  Datové sady není dostatečně velký, aby prokázat, že PLINQ je rychlejší než LINQ to Objects dotazů, které obsahují pouze základní `where` a `select` klauzule. Sledovat, zvyšuje rychlost pro malé datové sady takovou situaci, pomocí dotazů, které obsahují výpočetně náročné operace na každý prvek v datové sadě.  
   
-### <a name="to-set-up-this-sample"></a>Nastavení této ukázky  
+### <a name="to-set-up-this-sample"></a>Nastavit tuto ukázku  
   
-1.  Vytvoření projektu konzolové aplikace jazyka Visual Basic a Visual C#.  
+1.  Vytvoření projektu konzolové aplikace jazyka Visual Basic nebo Visual C#.  
   
-2.  Nahraďte obsah Module1.vb nebo Program.cs pomocí kódu, který zahrnuje následující kroky.  
+2.  Nahraďte obsah Module1.vb nebo souboru Program.cs kódem, který zahrnuje následující kroky.  
   
-3.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **textový soubor** a pak klikněte na **OK**. Zkopírujte data v tomto tématu a pak ji vložit do nového textového souboru. Na **soubor** nabídky, klikněte na tlačítko **Uložit**, název souboru Plinqdata.csv a pak ho uložte ve složce, která obsahuje zdrojové soubory vašeho kódu.  
+3.  Na **projektu** nabídky, klikněte na tlačítko **přidat novou položku**. Vyberte **textový soubor** a potom klikněte na tlačítko **OK**. Zkopírujte data v tomto tématu a následně jej vložte do nového textového souboru. Na **souboru** nabídky, klikněte na tlačítko **Uložit**, pojmenujte soubor Plinqdata.csv a uložte ho do složky, která obsahuje soubory zdrojového kódu.  
   
-4.  Stisknutím klávesy F5 ověřte, zda projekt sestavení a běží správně. Tento výstup má být zobrazena v okně konzoly.  
+4.  Stiskněte klávesu F5, chcete-li ověřit, že projekt vytvoří a spustí správně. V okně konzoly byste zobrazí následující výstup.  
   
     ```  
     Customer count: 50  
@@ -862,5 +862,6 @@ PRODUCTS
 END PRODUCTS  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a>Viz také:
+
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

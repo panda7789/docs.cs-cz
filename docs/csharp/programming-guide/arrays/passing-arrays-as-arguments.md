@@ -5,11 +5,11 @@ helpviewer_keywords:
 - arrays [C#], passing as arguments
 ms.assetid: f3a0971e-c87c-4a1f-8262-bc0a3b712772
 ms.openlocfilehash: b2e6c0134af3b5814e9c9321e1486820311aa5c6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43556188"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855071"
 ---
 # <a name="passing-arrays-as-arguments-c-programming-guide"></a>Předávání polí jako argumentů (C# Programming Guide)
 

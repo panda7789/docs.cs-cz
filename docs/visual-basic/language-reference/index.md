@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Visual Basic, language reference
 ms.assetid: 5c6bd31a-9542-4f3e-bfd5-e951af58f0f2
 ms.openlocfilehash: 2c0372e0176ea54a975e787631ba2849f79e5493
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43736799"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43876619"
 ---
 # <a name="visual-basic-language-reference"></a>Referenční dokumentace jazyka Visual Basic
 Tato část obsahuje referenční informace pro různé aspekty jazyka Visual Basic.  

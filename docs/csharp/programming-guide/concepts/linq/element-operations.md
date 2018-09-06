@@ -2,14 +2,15 @@
 title: Operace s elementy (C#)
 ms.date: 07/20/2015
 ms.assetid: 283206c9-3246-4c48-b01a-d9de409a7231
-ms.openlocfilehash: e1f6854ea7b09989fe04cdd9ed0aad1b556caa71
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 14fdfbc38e1c25aa00056a42e116be98a489ce0f
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508765"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856887"
 ---
 # <a name="element-operations-c"></a>Operace s elementy (C#)
+
 Operace s elementy vrátí jeden, konkrétní element ze sekvence.  
   
  Standardní metody operátoru dotazu, které provádějí operace s elementy jsou uvedeny v následující části.  

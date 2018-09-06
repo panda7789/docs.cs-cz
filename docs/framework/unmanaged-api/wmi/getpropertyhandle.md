@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 94171b0708c97eb7510e916e451ed03645d706f3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43469879"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43877908"
 ---
 # <a name="getpropertyhandle-function"></a>Funkce GetPropertyHandle
 Vrátí jedinečný popisovač identifikující vlastnosti.

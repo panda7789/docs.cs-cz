@@ -3,11 +3,11 @@ title: OperationScope
 ms.date: 03/30/2017
 ms.assetid: 56206a21-1e63-422d-b92a-e5d8b713e707
 ms.openlocfilehash: 562fd9c8ff964cb997012d49600bce73d4441465
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43554066"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871134"
 ---
 # <a name="operationscope"></a>OperationScope
 Tato ukázka předvádí, jak zasílání zpráv aktivity, <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> slouží k vystavení existující vlastní aktivity jako operaci služby pracovního postupu. Tato ukázka obsahuje novou vlastní aktivitu, volá se, `OperationScope`. Je určené k usnadnění vývoje služby pracovního postupu tak, že uživatelé můžou vytvářet obsah svého provozu samostatně jako vlastní aktivity a potom je snadno vystavení jako pomocí operace služby `OperationScope` aktivity. Například vlastní `Add` aktivitu, která má dva `in` argumenty a vrací jednu `out` argument může být vystavena jako `Add` operace na službě pracovního postupu přetažením do `OperationScope`.  

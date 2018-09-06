@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 270ae5a8cfa7c69c7caa0896dfe23b84db48f659
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cf253ff4a25ba902c16c6d00a8be4bf291166774
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575515"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872962"
 ---
 # <a name="asynchronous-file-io"></a>Asynchronní I/O soubory
 Asynchronní operace umožňují provádět vstupně-výstupní operace náročné na prostředky bez blokování hlavního vlákna. Toto posouzení výkonu je důležité především v případě aplikací pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] nebo [!INCLUDE[desktop_appname](../../../includes/desktop-appname-md.md)], kde časově náročná operace může zablokovat vlákno uživatelského rozhraní a aplikace se pak jeví jako nefunkční.  
@@ -39,7 +39,7 @@ Asynchronní operace umožňují provádět vstupně-výstupní operace náročn
   
  Modifikátor `Await` (Visual Basic) nebo `await` (jazyk C#), který se používá pro výsledek asynchronní metody.  
   
- Pro implementaci asynchronních vstupně-výstupních operací je třeba použít klíčová slova spolu s asynchronními metodami, jak je znázorněno v následujících příkladech. Další informace najdete v tématu [asynchronní programování s Async a Await](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7).  
+ Pro implementaci asynchronních vstupně-výstupních operací je třeba použít klíčová slova spolu s asynchronními metodami, jak je znázorněno v následujících příkladech. Další informace najdete v tématu [Asynchronous Programming with Async and Await](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7).  
   
  Následující příklad znázorňuje, jakým způsobem lze objekty <xref:System.IO.FileStream> použít pro asynchronní kopírování souborů z jednoho adresáře do druhého. Je třeba poznamenat, že obslužná rutina <xref:System.Web.UI.WebControls.Button.Click> pro ovládací prvek <xref:System.Windows.Controls.Button> je označena modifikátorem `async`, jelikož volá asynchronní metodu.  
   
@@ -58,7 +58,8 @@ Asynchronní operace umožňují provádět vstupně-výstupní operace náročn
   
  [!code-xaml[System.IO.WindowsRuntimeStorageExtensions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestorageextensions/cs/blankpage.xaml#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IO.Stream>  
- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.IO.Stream>  
+- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](https://msdn.microsoft.com/library/db854f91-ccef-4035-ae4d-0911fde808c7)

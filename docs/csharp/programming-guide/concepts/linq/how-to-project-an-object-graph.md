@@ -3,11 +3,11 @@ title: 'Postupy: projektování grafu objektu (C#)'
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
 ms.openlocfilehash: f8e15e80a6914a8dcb848d91a13958f7e4175342
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43732102"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43859553"
 ---
 # <a name="how-to-project-an-object-graph-c"></a>Postupy: projektování grafu objektu (C#)
 Toto téma ukazuje, jak do projektu, nebo vyplnit, grafu objektů ze souboru XML.  

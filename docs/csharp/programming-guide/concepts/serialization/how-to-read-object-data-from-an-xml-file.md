@@ -2,12 +2,12 @@
 title: 'Postupy: čtení dat objektů ze souboru XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
-ms.openlocfilehash: be6e895d13bc5121f4818736079f6d77c046fd06
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7c3bad56c6a0bee51262586aea4ce97ff0491f24
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43535598"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872115"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-c"></a>Postupy: čtení dat objektů ze souboru XML (C#)
 V tomto příkladu čte data objektu, který se předtím zapsala do souboru XML pomocí <xref:System.Xml.Serialization.XmlSerializer> třídy.  
@@ -65,5 +65,5 @@ public void ReadXML()
 
 - <xref:System.IO.StreamWriter>  
 - [Postupy: zápis dat objektů do souboru XML (C#)](../../../../csharp/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)  
-- [Serializace (C# )](../../../../csharp/programming-guide/concepts/serialization/index.md)  
+- [Serializace (C#)](../../../../csharp/programming-guide/concepts/serialization/index.md)  
 - [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

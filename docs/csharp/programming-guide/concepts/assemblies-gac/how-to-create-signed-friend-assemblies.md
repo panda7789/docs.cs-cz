@@ -2,12 +2,12 @@
 title: 'Postupy: vytváření podepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
-ms.openlocfilehash: 63d4c5d8d71f401214389629ca7e586665c32c6b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8f310055db6899bf315310efc22b67bca2c4500f
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521474"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43874849"
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>Postupy: vytváření podepsaných přátelských sestavení (C#)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  
@@ -16,7 +16,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
   
 1.  Otevřete příkazový řádek.  
   
-2.  Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](https://msdn.microsoft.com/library/k5b5tt23).  
+2.  Použijte následující posloupnost příkazů s nástroj Strong Name keyfile generovat a zobrazit jeho veřejný klíč. Další informace najdete v tématu [Sn.exe (nástroj Strong Name)](../../../../framework/tools/sn-exe-strong-name-tool.md).  
   
     1.  Vygenerování klíče se silným názvem v tomto příkladu a uložit ho do souboru FriendAssemblies.snk:  
   
@@ -94,7 +94,7 @@ Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními
 - [Sestavení a globální mezipaměti sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/index.md)  
 - [Přátelská sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/friend-assemblies.md)  
 - [Postupy: vytváření nepodepsaných přátelských sestavení (C#)](../../../../csharp/programming-guide/concepts/assemblies-gac/how-to-create-unsigned-friend-assemblies.md)  
-- [/keyfile](../../../../visual-basic/reference/command-line-compiler/keyfile.md)  
-- [Sn.exe (nástroj pro silný název)](https://msdn.microsoft.com/library/k5b5tt23)  
+- [/keyfile](../../../../csharp/language-reference/compiler-options/keyfile-compiler-option.md)  
+- [Sn.exe (nástroj pro silný název)](../../../../framework/tools/sn-exe-strong-name-tool.md)  
 - [Vytváření a používání sestavení se silným názvem](../../../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
 - [Průvodce programováním v jazyce C#](../../../../csharp/programming-guide/index.md)

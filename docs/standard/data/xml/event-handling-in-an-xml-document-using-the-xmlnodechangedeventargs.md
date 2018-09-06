@@ -8,29 +8,29 @@ dev_langs:
 ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 00ed0437f51650cd335d528632f9f0cc14af6422
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c382b22825512000a906af8a865b6b7c5f4c73c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569730"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43868793"
 ---
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>Zpracování událostí v dokumentu XML pomocí XmlNodeChangedEventArgs
-**XmlNodeChangedEventArgs** zapouzdří argumenty předávané obslužné rutiny událostí zaregistrované na **třídou XMLDocument nastavenou na** objekt pro zpracování událostí. V následující tabulce je zadané události a popis při při vyvolání.  
+**XmlNodeChangedEventArgs** zapouzdřuje argumenty předávané obslužné rutiny událostí zaregistrované na **XmlDocument** objekt pro zpracování událostí. Události a popis, když jsou vyvolávány je uveden v následující tabulce.  
   
-|Událost|Aktivováno|  
+|Událost|Vyvolané|  
 |-----------|-----------|  
-|<xref:System.Xml.XmlDocument.NodeInserting>|Pokud uzel patřící do aktuální dokument je o má být vložen do jiného uzlu.|  
-|<xref:System.Xml.XmlDocument.NodeInserted>|Když uzel patřící do aktuální dokument byl vložen do jiného uzlu.|  
+|<xref:System.Xml.XmlDocument.NodeInserting>|Když uzel patří do aktuálního dokumentu je asi má být vložen do jiného uzlu.|  
+|<xref:System.Xml.XmlDocument.NodeInserted>|Pokud uzel patří do aktuálního dokumentu byla vložena do jiného uzlu.|  
 |<xref:System.Xml.XmlDocument.NodeRemoving>|Pokud uzel patřící do tohoto dokumentu je Chystáte se odebrat z dokumentu.|  
-|<xref:System.Xml.XmlDocument.NodeRemoved>|Pokud uzel, který patří k tomuto dokumentu byla odebrána z nadřazené.|  
-|<xref:System.Xml.XmlDocument.NodeChanging>|Pokud je hodnota uzlu Chystáte se změnit.|  
-|<xref:System.Xml.XmlDocument.NodeChanged>|Pokud byl změněn hodnotu uzlu.|  
+|<xref:System.Xml.XmlDocument.NodeRemoved>|Když uzel patří do tohoto dokumentu byla odebrána z nadřazené.|  
+|<xref:System.Xml.XmlDocument.NodeChanging>|Chystáte se změnit, pokud je hodnotou uzlu.|  
+|<xref:System.Xml.XmlDocument.NodeChanged>|Pokud hodnota uzlu se změnil.|  
   
 > [!NOTE]
->  Pokud **XmlDataDocument** využití paměti je plně optimalizovaná tak, aby použít **datovou sadu** úložiště, **XmlDataDocument** nemusí vyvolat událostech uvedených výše, pokud jsou změny provedené základní **datovou sadu**. Pokud budete potřebovat tyto události, musí procházet celek **třídou XMLDocument nastavenou na** jednou, aby využití paměti bez plně optimalizované.  
+>  Pokud **XmlDataDocument** využití paměti je plně optimalizována pro použití **datovou sadu** úložiště, **objektu XmlDataDocument** nemusí vyvolat některé z výše uvedených, když jsou změny událostí provedli základní **datovou sadu**. Pokud potřebujete tyto události, musí procházet celý **XmlDocument** jednou zkontrolujte využití paměti bez plně optimalizována.  
   
- Následující příklad kódu ukazuje, jak definovat obslužné rutiny události a postup přidání obslužné rutiny události pro událost.  
+ Následující příklad kódu ukazuje, jak definovat obslužné rutiny události a přidejme obslužnou rutinu události pro událost.  
   
 ```vb  
 ' Attach the event handler, NodeInsertedHandler, to the NodeInserted  
@@ -73,9 +73,9 @@ void NodeInsertedHandler(Object src, XmlNodeChangedEventArgs args)
 }  
 ```  
   
- Některé operace XML modelu DOM (Document Object) jsou složené operace, které může mít za následek více událostí, je aktivováno. Například **AppendChild** může být nutné odebrat uzel z nadřazené předchozí se připojí. V takovém případě se zobrazí **NodeRemoved** událostí aktivováno nejprve, za nímž následuje **NodeInserted** událostí. Operace, jako nastavení **InnerXml** může mít za následek více událostí.  
+ Některé operace XML Document Object Model (DOM) jsou složené operace, které může mít za následek více událostí se aktivoval. Například **AppendChild** možná budete muset odebrat uzel, že se připojí z nadřazeného předchozí. V takovém případě se zobrazí **NodeRemoved** událost aktivuje poprvé, za nímž následuje **NodeInserted** událostí. Operace, jako je nastavení **InnerXml** může mít za následek více událostí.  
   
- Následující příklad kódu ukazuje vytvoření obslužné rutiny události nebo zpracování **NodeInserted** událostí.  
+ Následující příklad kódu ukazuje vytvoření obslužné rutiny události a zpracování **NodeInserted** událostí.  
   
 ```vb  
 Imports System  
@@ -208,5 +208,6 @@ public class Sample
   
  Další informace naleznete v tématu <xref:System.Xml.XmlNodeChangedEventArgs> a <xref:System.Xml.XmlNodeChangedEventHandler>.  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -1,18 +1,17 @@
 ---
 title: Objektové výrazy (F#)
-description: 'Naučte se používat objektové výrazy F # Pokud chcete, aby se zabránilo další kód a režijní náklady na potřebné pro vytvoření nové, s názvem typu.'
+description: 'Další informace o použití objektu výrazy jazyka F #, pokud chcete se vyhnout zvláštní kód a režie potřebná k vytvoření nového, s názvem typu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: fed78e2be52838eedf55759b195696f1210a8a20
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1a971044d680d3bf5a6fff38affdaf001d5403b4
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564388"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865459"
 ---
 # <a name="object-expressions"></a>Objektové výrazy
 
-*Objektu výraz* je výraz, který vytvoří novou instanci typu dynamicky vytvořený, anonymní objekt, který je založen na existující základní typ, rozhraní nebo sadu rozhraní.
-
+*Objektu výraz* je výraz, který vytvoří novou instanci typu dynamicky generovaný anonymní objekt, který je založen na existující základní typ, rozhraní nebo sady rozhraní.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,15 +29,17 @@ ms.locfileid: "33564388"
 ```
 
 ## <a name="remarks"></a>Poznámky
-V předchozích syntaxi *typename* představuje existující typu třídy nebo rozhraní. *parametry typu* popisuje parametry volitelné obecného typu. *Argumenty* se používají pouze pro typy tříd, které vyžadují parametry konstruktor. *Člen definice* přepsání metody třídy base nebo implementace metod abstraktní základní třídu nebo rozhraní.
+
+V předchozí syntaxi *typename* představuje existující typu třídy nebo rozhraní. *parametry typu* obsahuje popis parametrů, volitelné obecného typu. *Argumenty* se používají pouze pro typy tříd, které vyžadují parametry konstruktoru. *Definice členů* přepsání metody základní třídy nebo implementace abstraktní metody ze základní třídy nebo rozhraní.
 
 Následující příklad ukazuje několik různých typů objektové výrazy.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4301.fs)]
 
 ## <a name="using-object-expressions"></a>Použitím objektových výrazů
-Objektové výrazy používají, když budete chtít vyhnout navíc kód a režijní náklady, který je potřeba vytvořit novou, s názvem typu. Pokud používáte objektové výrazy minimalizovat počet typy vytvořené v programu, můžete snížit počet řádků kódu a zabránit zbytečné rozšíření typy. Místo vytváření mnoho typů pouze pro zpracování konkrétních situacích, můžete použít objekt výraz, který upravuje existující typ nebo poskytuje odpovídající implementace rozhraní pro konkrétní případ po ruce.
 
+Objektové výrazy používají, když chcete se vyhnout zvláštní kód a režijní náklady, který je potřeba vytvořit nový s názvem typu. Používáte-li minimalizovat počet typů, které jsou vytvořené v programu objektové výrazy, můžete snížit počet řádků kódu a zabránit zbytečným růst počtu typů. Místo vytváření mnoho typů pouze pro zpracování konkrétních situacích, můžete použít objektový výraz, který přizpůsobí existujícího typu nebo poskytuje ve vhodné implementaci rozhraní pro tento konkrétní případ po ruce.
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka F#](index.md)

@@ -3,11 +3,11 @@ title: Kompatibilita funkcí s částečnou důvěryhodností
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
 ms.openlocfilehash: 97a51fe29677f46f9d3053250b65b3d818ca47dc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43745593"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43864521"
 ---
 # <a name="partial-trust-feature-compatibility"></a>Kompatibilita funkcí s částečnou důvěryhodností
 Windows Communication Foundation (WCF) podporuje omezenou podmnožinou funkce při spouštění v částečně důvěryhodném prostředí. Funkce podporované v částečném vztahu důvěryhodnosti jsou navržená kolem konkrétní škálu scénářů, jak je popsáno v [Podporované scénáře nasazení](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) tématu.  

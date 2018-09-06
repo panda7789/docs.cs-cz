@@ -3,11 +3,11 @@ title: Pokročilé technologie LINQ to XML programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 2e012d40-532b-49ea-b1fc-152e616bdfa3
 ms.openlocfilehash: 684c91724ad8f283dc47f38e31697884f4d216d2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43565005"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855813"
 ---
 # <a name="advanced-linq-to-xml-programming-c"></a>Pokročilé technologie LINQ to XML programování (C#)
 Tato část obsahuje informace, které budou pouze pro pokročilé vývojáře v určitých [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] scénáře.  

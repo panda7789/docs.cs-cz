@@ -1,5 +1,5 @@
 ---
-title: Rozhraní návrhu
+title: Návrh rozhraní
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,19 +9,19 @@ helpviewer_keywords:
 ms.assetid: a016bd18-6710-4358-9438-9f190a295392
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dea5877f952869d5c84d6019617fcdc52d8ee0a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c687d7622e82ee206b2201760818827398f8543b
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33573036"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43863719"
 ---
-# <a name="interface-design"></a>Rozhraní návrhu
-I když většina rozhraní API jsou nejlépe modelovány pomocí třídy a struktury, existují případy, ve kterých jsou vhodnější rozhraní, nebo je jedinou možností.  
+# <a name="interface-design"></a>Návrh rozhraní
+I když většina rozhraní API jsou nejlepším modelovány pomocí třídy a struktury, existují případy, ve kterých jsou vhodnější rozhraní, nebo je jedinou možností.  
   
- Modul CLR nepodporuje vícenásobná dědičnost (tj, tříd CLR nemůže Zdědit z více než jeden základní třídy), ale neumožňuje typy implementovat jednu nebo více rozhraní kromě dědění ze základní třídy. Rozhraní se proto často používají k dosažení účinku vícenásobná dědičnost. Například <xref:System.IDisposable> je rozhraní, které umožňuje typy pro podporu disposability nezávislé na dalších hierarchie dědičnosti, ve které se chcete zúčastnit.  
+ Modul CLR nepodporuje vícenásobnou dědičnost (například tříd CLR nemůže dědit z více než jedné základní třídy), ale umožní typy implementovat jedno nebo více rozhraní kromě dědí ze základní třídy. Rozhraní se proto často používají k dosažení efekt vícenásobná dědičnost. Například <xref:System.IDisposable> je rozhraní, která umožňuje typy pro podporu disposability nezávisle na jiných hierarchii dědičnosti, ve kterém se mají zapojit.  
   
- Další situace při definování, které je vhodné rozhraní je při vytváření jednotné rozhraní, které může podporovat několik typů, včetně některých typů hodnot. Typy hodnot nemůže Zdědit z typy jiné než <xref:System.ValueType>, ale implementovaly rozhraní, tak přes rozhraní je jedinou možností Chcete-li poskytovat běžné základního typu.  
+ Další situace, při definování, které je vhodné rozhraní je při vytváření jednotné rozhraní, které může podporovat několik typů, včetně některých typů hodnot. Typy hodnot nemůže dědit z typů jiných než <xref:System.ValueType>, ale mohou implementovat rozhraní, pomocí rozhraní je jedinou možností negace běžné základního typu.  
   
  **✓ DO** definovat rozhraní, pokud potřebujete některé společné rozhraní API jsou podporováni sada typy, které obsahuje typy hodnot.  
   
@@ -29,26 +29,27 @@ I když většina rozhraní API jsou nejlépe modelovány pomocí třídy a stru
   
  **X AVOID** pomocí rozhraní značky (rozhraní s žádní členové).  
   
- Pokud potřebujete označte třídu tak, že má zvláštní vlastností (značka), obecně platí, použijte vlastní atribut, nikoli rozhraní.  
+ Pokud budete muset označit třídu jako mají konkrétní charakteristiku (značky), obecně platí, použijte vlastní atribut, nikoli rozhraní.  
   
  **✓ DO** zadejte alespoň jeden typ, který je implementací rozhraní.  
   
- Díky této pomáhá ověření návrhu rozhraní. Například <xref:System.Collections.Generic.List%601> je implementací <xref:System.Collections.Generic.IList%601> rozhraní.  
+ Provádí se to pomáhá k ověření návrhu rozhraní. Například <xref:System.Collections.Generic.List%601> je implementace <xref:System.Collections.Generic.IList%601> rozhraní.  
   
  **✓ DO** zadejte alespoň jeden rozhraní API, které zabírá jednotlivá rozhraní definujete (metoda, která bere rozhraní jako parametr nebo vlastnost zadán jako rozhraní).  
   
- Díky této pomáhá ověření návrhu rozhraní. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> spotřebovává <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> rozhraní.  
+ Provádí se to pomáhá k ověření návrhu rozhraní. Například <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> využívá <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> rozhraní.  
   
  **X DO NOT** přidat členy do rozhraní, které se dříve dodaný.  
   
- Tím by došlo k přerušení implementace rozhraní. Aby se zabránilo problémům s verzemi, byste měli vytvořit nové rozhraní.  
+ Mohlo by narušil implementace rozhraní. Pokud se chcete vyhnout problémy se správou verzí byste měli vytvořit nové rozhraní.  
   
- S výjimkou případů popsaných v těchto pokynů měli byste, obecně vybrat třídy, nikoli rozhraní návrhu opakovaně použitelné knihovny spravovaného kódu.  
+ S výjimkou případů popsaných v těchto pokynů by měly obecně platí, zvolte třídy, nikoli rozhraní při navrhování opakovaně použitelné knihovny spravovaného kódu.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b3cfaf4cf22bba445d774c653ff7797d535bcde2
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 96067ab6c8e13417158e4ebf7fae0e08cb9fbea4
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43398962"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43867995"
 ---
 # <a name="how-to-convert-between-net-framework-streams-and-windows-runtime-streams"></a>Postupy: Převádění mezi datovými proudy rozhraní .NET Framework a datovými proudy prostředí Windows Runtime
 
@@ -77,8 +77,8 @@ Datové proudy .NET Framework nepodporují klonování, a to ani po dokončení
   [!code-csharp[System.IO.WindowsRuntimeStreamExtensionsEx#2](~/samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/cs/mainpage.xaml.cs#2)]
   [!code-vb[System.IO.WindowsRuntimeStreamExtensionsEx#2](~/samples/snippets/visualbasic/VS_Snippets_CLR_System/system.io.windowsruntimestreamextensionsex/vb/mainpage.xaml.vb#2)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Rychlý start: Čtení a zápis do souboru (Windows)](https://msdn.microsoft.com/library/windows/apps/hh464978.aspx)  
-[.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
-[Aplikace .NET pro Windows Store – podporována rozhraní API](https://msdn.microsoft.com/library/windows/apps/br230232.aspx)  
+- [Rychlý start: Čtení a zápis do souboru (Windows)](https://msdn.microsoft.com/library/windows/apps/hh464978.aspx)  
+- [.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302.aspx)  
+- [Aplikace .NET pro Windows Store – podporována rozhraní API](https://msdn.microsoft.com/library/windows/apps/br230232.aspx)  

@@ -1,48 +1,48 @@
 ---
-title: Snižuje závislosti balíčků s project.json
-description: Snížení závislosti balíčků, při vytváření obsahu na základě project.json knihovny.
+title: Omezení závislosti balíčku s project.json
+description: Omezte závislosti balíčků, při vytváření knihovny project.json založené.
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
 ms.openlocfilehash: ae314800f789cee363728def8347b5e6990acb0b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33211781"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43877554"
 ---
-# <a name="reducing-package-dependencies-with-projectjson"></a>Snižuje závislosti balíčků s project.json
+# <a name="reducing-package-dependencies-with-projectjson"></a>Omezení závislosti balíčku s project.json
 
-Tento článek popisuje, co potřebujete vědět o snižuje vaše závislosti balíčků, při vytváření `project.json` knihovny. Na konci tohoto článku se dozvíte, jak vytvořit knihovnu tak, že používá jenom závislosti, které potřebuje. 
+Tento článek popisuje, co potřebujete vědět o snižování závislosti balíčků při vytváření `project.json` knihovny. Na konci tohoto článku se dozvíte, jak sestavit knihovnu tak, aby používal jenom závislosti, které potřebuje. 
 
 ## <a name="why-its-important"></a>Proč je důležité
 
-.NET core je produkt skládá z balíčků NuGet.  Je nezbytné balíček [. NETStandard.Library metapackage](https://www.nuget.org/packages/NETStandard.Library), které se balíček NuGet skládá z dalších balíčků.  Poskytuje sadu balíčky, které zaručeně pracovat na více implementace rozhraní .NET, například rozhraní .NET Framework, .NET Core a Xamarin/Mono.
+.NET core je produkt tvořené balíčky NuGet.  Základní balíček je [. NETStandard.Library Microsoft.aspnetcore.all](https://www.nuget.org/packages/NETStandard.Library), který se balíček NuGet skládá z dalších balíčků.  To vám poskytuje sadu balíčků, které jsou zaručeny pracovat na více implementací rozhraní .NET, jako je například rozhraní .NET Framework, .NET Core a Xamarin/Mono.
 
-Je však dobré šance, že vaše knihovna nebude používat každý jeden balíček, které obsahuje.  Při vytváření knihovny a distribuci přes NuGet, je osvědčeným postupem "trim" závislostmi dolů jenom balíčky skutečně používáte.  Výsledkem je menší celkové nároky na balíčky NuGet.
+Je však vhodné šance, že vaše knihovna nebudeme používat každý jeden balíček, který obsahuje.  Při vytváření knihovny a jejich distribuci přes NuGet, je osvědčeným postupem "trim" závislostí dolů pouze balíčky skutečně využíváte.  Výsledkem je menší celkové nároky na místo pro balíčky NuGet.
 
-## <a name="how-to-do-it"></a>Jak to udělat
+## <a name="how-to-do-it"></a>Jak na to
 
-V současné době není žádná oficiální `dotnet` příkaz, který ořízne balíček odkazuje.  Místo toho budete muset provést ručně.  Obecný postup vypadá takto:
+V současné době neexistuje žádné oficiální `dotnet` příkazu, který ořízne odkazy na balíček.  Místo toho budete muset provést ručně.  Obecný postup vypadá takto:
 
 1. Referenční dokumentace `NETStandard.Library` verze `1.6.0` v `dependencies` část vaší `project.json`.
 2. Obnovení balíčků s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) z příkazového řádku.
-3. Zkontrolujte `project.lock.json` souboru a najděte `NETSTandard.Library` části.  Je na začátku souboru.
+3. Zkontrolujte `project.lock.json` souborů a vyhledejte `NETSTandard.Library` oddílu.  Je na začátku souboru.
 4. Zkopírujte všechny balíčky uvedené v části `dependencies`.
 5. Odeberte `.NETStandard.Library` odkazovat a nahraďte ji metodou zkopírovaný balíčky.
 6. Odeberte odkazy na balíčky, které nepotřebujete.
 
 
-Můžete zjistit balíčky, které nepotřebujete pomocí jedné z následujících způsobů:
+Můžete zjistit, které balíčky, není nutné pomocí jedné z následujících způsobů:
 
-1. Zkušební verze a došlo k chybě.  To zahrnuje odstranění balíčku, obnovení, zobrazuje, pokud vaše knihovna stále zkompiluje a opakováním tohoto procesu.
-2. Pomocí některého nástroje, jako třeba [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) k zobrazení náhledu odkazy na zjistit, co váš kód ve skutečnosti používá.  Potom můžete odebrat balíčky, které si odpovídají typy, které používáte.
+1. Došlo k chybě a zkušební verze.  To zahrnuje odebrání balíčku, obnovení, zobrazuje, pokud se stále zkompiluje knihovnu a opakováním tohoto procesu.
+2. Pomocí nástroje, jako například [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) a prohlédněte si odkazy, které chcete zjistit, co váš kód skutečně.  Následně můžete odebrat balíčky, které neodpovídají na typy, které používáte.
 
 ## <a name="example"></a>Příklad 
 
-Představte si, že jste napsali jste knihovnu, která poskytuje další funkce pro obecné typy kolekcí.  Tuto knihovnu by bylo potřeba závisí na balíčky, jako `System.Collections`, ale vůbec záviset na balíčky, jako `System.Net.Http`.  Jako takový bylo by dobré oříznout závislosti balíčků dolů co tato knihovna je požadován, pouze!
+Představte si, že jste napsali knihovnu, která poskytuje další funkce do obecných typů kolekce.  Tyto knihovny by bylo potřeba závisí na balíčky, jako `System.Collections`, ale vůbec záviset na balíčky, jako `System.Net.Http`.  V důsledku toho by bylo dobré mají být odebrány závislosti balíčků dolů pouze co tuto knihovnu požadovanou!
 
-Abyste mohli trim této knihovny, spusťte s `project.json` souboru a přidejte odkaz na `NETStandard.Library` verze `1.6.0`.
+Oříznout této knihovny, začínat `project.json` a přidejte odkaz na `NETStandard.Library` verze `1.6.0`.
 
 ```json
 {
@@ -56,9 +56,9 @@ Abyste mohli trim této knihovny, spusťte s `project.json` souboru a přidejte 
 }
 ```
 
-V dalším kroku obnovení balíčků s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)), zkontrolujte `project.lock.json` souboru a najít všechny balíčky obnovit pro `NETSTandard.Library`.
+V dalším kroku obnovit balíčky s `dotnet restore` ([viz Poznámka](#dotnet-restore-note)), zkontrolujte `project.lock.json` souboru a vyhledání všech balíčků byl obnoven pro `NETSTandard.Library`.
 
-Zde je v jaké v příslušné části `project.lock.json` soubor vypadá jako při cílení na `netstandard1.0`:
+Zde je co příslušné části v `project.lock.json` souboru vypadá podobně jako při cílení na `netstandard1.0`:
 
 ```json
 "NETStandard.Library/1.6.0":{
@@ -91,7 +91,7 @@ Zde je v jaké v příslušné části `project.lock.json` soubor vypadá jako p
 }
 ```
 
-Zkopírujte přes odkazy na balíček do `dependencies` části knihovně `project.json` souboru, nahraďte `NETStandard.Library` odkaz:
+V dalším kroku zkopírujte odkazy na balíčky do `dependencies` části knihovny `project.json` souboru, nahradí `NETStandard.Library` odkaz:
 
 ```json
 {
@@ -127,9 +127,9 @@ Zkopírujte přes odkazy na balíček do `dependencies` části knihovně `proje
 }
 ```
 
-To je velmi velký balíčky, řadu které který určitě nejsou potřebné pro rozšíření typy kolekcí.  Můžete odebrat balíčky ručně nebo pomocí nástroje, jako například [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) používá k identifikaci, který ve skutečnosti balíčků kódu.
+To je poměrně velké balíčky, mnoho kterému jistě nejsou potřebné pro rozšíření typy kolekcí.  Můžete odebrat balíčky, které ručně nebo pomocí nástroje, jako [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) používá k identifikaci, který ve skutečnosti balíčky kódu.
 
-Zde je, jak může vypadat oříznutý balíčku:
+Tady je oříznutý balíčku by mohla vypadat:
 
 ```json
 {
@@ -151,7 +151,7 @@ Zde je, jak může vypadat oříznutý balíčku:
 }
 ```
 
-Teď má menší nároky než pokud měl závisí na `NETStandard.Library` metapackage.
+Teď má menší nároky na místo než pokud měl závisí na `NETStandard.Library` Microsoft.aspnetcore.all.
 
 <a name="dotnet-restore-note"></a>
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]

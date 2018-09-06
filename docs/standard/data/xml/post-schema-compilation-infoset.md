@@ -1,5 +1,5 @@
 ---
-title: Informační sadu po schématu kompilace
+title: Informační sada po kompilaci schématu
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,19 +9,19 @@ dev_langs:
 ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: db1c952003e73beb756567be74ed4eb72612c989
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7e7892289248c9651b529bcc68d7228b8babb28a
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569626"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872241"
 ---
-# <a name="post-schema-compilation-infoset"></a>Informační sadu po schématu kompilace
-[Doporučení schématu XML World Wide Web Consortium (W3C)](https://www.w3.org/XML/Schema) popisuje sady informace (informační sadu), musí se zveřejnit pro ověření schématu před a po schématu kompilace. Model objektu schématu XML (SOM) zobrazení tato ohrožení před a po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána.  
+# <a name="post-schema-compilation-infoset"></a>Informační sada po kompilaci schématu
+[Doporučení schématu XML World Wide Web Consortium (W3C)](https://www.w3.org/XML/Schema) popisuje informace o sadě (informační sadu), který musí být vystavené pro ověřování schématu před a po kompilaci schématu. Model objektu schématu XML (SOM) zobrazení této vystavení před a po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána.  
   
- Informační sadu ověření před schématu je vytvořené během úprav schématu. Po vygenerování informační sadu kompilace po schématu <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána při kompilaci schématu a je k dispozici jako vlastnosti.  
+ Informační sada předběžné schéma ověření je vytvořený při úpravách schématu. Informační sada po kompilaci schématu je generován poté <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána v průběhu kompilace schématu a je přístupný jako vlastnosti.  
   
- SOM je model objektu, který představuje ověřování schématu před a po schématu kompilace infosets; skládá se ze třídy v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Všechny číst a Zapisovat vlastnosti třídy v <xref:System.Xml.Schema> obor názvů patří do informační ověření před schématu sadu při všechny jen pro čtení vlastnosti třídy v <xref:System.Xml.Schema> obor názvů patří do informační sadu kompilace po schématu. Výjimkou z tohoto pravidla jsou následující vlastnosti, které jsou informační sadu ověřování schématu před a po schématu kompilace informační sadu vlastností.  
+ Objektový model, který představuje ověřování schématu před a po kompilaci schématu infosets; je SOM skládá se ze tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> oboru názvů. Všechny číst a Zapisovat vlastnosti třídy v <xref:System.Xml.Schema> obor názvů patřit do informační předběžné schéma ověření sadu při všechny vlastnosti jen pro čtení třídy v <xref:System.Xml.Schema> obor názvů patřit do informační sada po kompilaci schématu. Výjimkou z tohoto pravidla jsou následující vlastnosti, které jsou informační sadu předběžné schéma ověření a vlastnosti informační sada po kompilaci schématu.  
   
 |Třída|Vlastnost|  
 |-----------|--------------|  
@@ -32,13 +32,14 @@ ms.locfileid: "33569626"
 |<xref:System.Xml.Schema.XmlSchemaParticle>|<xref:System.Xml.Schema.XmlSchemaParticle.MaxOccurs%2A>, <xref:System.Xml.Schema.XmlSchemaParticle.MinOccurs%2A>|  
 |<xref:System.Xml.Schema.XmlSchemaComplexType>|<xref:System.Xml.Schema.XmlSchemaComplexType.AnyAttribute%2A>|  
   
- Například <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaComplexType> třídy oba mají `BlockResolved` a `FinalResolved` vlastnosti. Tyto vlastnosti jsou používané pro udržení hodnoty `Block` a `Final` vlastnosti po schématu byl zkompilován a ověřit. `BlockResolved` a `FinalResolved` jsou jen pro čtení vlastnosti, které jsou součástí informační sadu kompilace po schématu.  
+ Například <xref:System.Xml.Schema.XmlSchemaElement> a <xref:System.Xml.Schema.XmlSchemaComplexType> obsahují `BlockResolved` a `FinalResolved` vlastnosti. Tyto vlastnosti se používají k uložení hodnoty `Block` a `Final` vlastnosti po schématu byl zkompilován a ověřit. `BlockResolved` a `FinalResolved` jsou vlastnosti jen pro čtení, které jsou součástí informační sada po kompilaci schématu.  
   
- Následující příklad ukazuje <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaElement> třídy sady po ověření schématu. Před ověřování, obsahuje vlastnost `null` odkaz a <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> je nastavena na název typu nejistá. Po ověření <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> je přeložit na platný typ, a objekt typu je k dispozici prostřednictvím <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> vlastnost.  
+ Následující příklad ukazuje <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaElement> třídy sady po ověření schématu. Před ověřování, obsahuje vlastnost `null` odkaz a <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> je nastavena na název typu nejistá. Po ověření <xref:System.Xml.Schema.XmlSchemaElement.SchemaTypeName%2A> je přeložit na platný typ, typ objektu je k dispozici <xref:System.Xml.Schema.XmlSchemaElement.ElementSchemaType%2A> vlastnost.  
   
  [!code-cpp[PsciSample#1](../../../../samples/snippets/cpp/VS_Snippets_Data/PsciSample/CPP/PsciSample.cpp#1)]
  [!code-csharp[PsciSample#1](../../../../samples/snippets/csharp/VS_Snippets_Data/PsciSample/CS/PsciSample.cs#1)]
  [!code-vb[PsciSample#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/PsciSample/VB/PsciSample.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model objektu schématu (SOM) XML](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)

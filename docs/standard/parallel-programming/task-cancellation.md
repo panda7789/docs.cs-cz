@@ -11,35 +11,36 @@ helpviewer_keywords:
 ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4b9a9331f62ba9655c20a2e27b3a94dac1903472
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 79350178300dde2896f6b22c68d6062bbb57f700
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582685"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865628"
 ---
 # <a name="task-cancellation"></a>Zrušení úlohy
-<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> třídy podporují zrušení prostřednictvím použití tokenů zrušení v rozhraní .NET Framework. Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md). Ve třídách úloh zahrnuje zrušení spolupráci mezi uživatelským delegátem, který představuje zrušitelnou operaci, a kódem, který požaduje zrušení.  Úspěšné zrušení zahrnuje vyžádání volání kódu <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda a uživatelského delegáta operaci včas. Operace může být ukončena pomocí jedné z těchto možností:  
+<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> třídy podporují zrušení prostřednictvím použití tokenů zrušení v rozhraní .NET Framework. Další informace najdete v tématu [zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md). Ve třídách úloh zahrnuje zrušení spolupráci mezi uživatelským delegátem, který představuje zrušitelnou operaci, a kódem, který požaduje zrušení.  Úspěšné zrušení zahrnuje, aby žádající kód volal <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> metoda a uživatelský delegát operaci včas. Operace může být ukončena pomocí jedné z těchto možností:  
   
--   Jednoduše vrácením z delegáta. V mnoha případech je toto dostatečné; ale instance úlohy, která je zrušena tímto způsobem přechází do <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> stavu, aby <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.  
+-   Jednoduše vrácením z delegáta. V mnoha scénářích je toto dostatečné; Nicméně instance úlohy, která je zrušena tímto způsobem, přechází do <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> , nikoli do stavu <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> stavu.  
   
--   Po vyvolání výjimky <xref:System.OperationCanceledException> a předání tokenu, na kterém bylo požadováno zrušení. Preferovaný způsob, jak to udělat, je použití <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metoda. Úloha, která je zrušena tímto způsobem, přechází do stavu Zrušeno, který může volající kód použít k ověření, zda úloha odpověděla na jeho žádost o zrušení.  
+-   Po vyvolání výjimky <xref:System.OperationCanceledException> a předáním tokenu, na který bylo zrušení požadováno. Preferovaný způsob, jak to provést, je použít <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> metody. Úloha, která je zrušena tímto způsobem, přechází do stavu Zrušeno, který může volající kód použít k ověření, zda úloha odpověděla na jeho žádost o zrušení.  
   
  Následující příklad zobrazuje základní vzor pro zrušení úlohy, který vyvolává výjimku. Token je předán uživatelskému delegátu a samotné instanci úlohy.  
   
  [!code-csharp[TPL_Cancellation#02](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_cancellation/cs/snippet02.cs#02)]
  [!code-vb[TPL_Cancellation#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_cancellation/vb/module1.vb#02)]  
   
- Více kompletní příklad najdete v tématu [postupy: zrušení úlohy a její podřízené položky](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
+ Podrobnější příklad naleznete v tématu [postupy: zrušení úlohy a její podřízené položky](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md).  
   
- Pokud instance úlohy dodržuje <xref:System.OperationCanceledException> vyvolané uživatelského kódu, porovná token této výjimky se jeho přidružené token (ten, který byl předán rozhraní API, vytvoření úlohy). Pokud jsou stejné a je token <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost vrací hodnotu true, úloha to interpretuje jako potvrzení zrušení a přejde do stavu zrušeno. Pokud nepoužijete <xref:System.Threading.Tasks.Task.Wait%2A> nebo <xref:System.Threading.Tasks.Task.WaitAll%2A> metodu pro čekání na úlohu, pak úlohu právě nastaví její stav na <xref:System.Threading.Tasks.TaskStatus.Canceled>.  
+ Když instance úlohy spatří <xref:System.OperationCanceledException> vyvolanou v uživatelském kódu, porovná token této výjimky se svým přiřazeným tokenem (ten, který byl předán rozhraní API, jež vytvořilo úlohu). Pokud se shodují a tokenu <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost vrátí hodnotu PRAVDA, úloha to interpretuje jako potvrzení zrušení a přejde do stavu zrušeno. Pokud použijete <xref:System.Threading.Tasks.Task.Wait%2A> nebo <xref:System.Threading.Tasks.Task.WaitAll%2A> metodu pro čekání na úlohu, potom úloha pouze nastaví svůj stav <xref:System.Threading.Tasks.TaskStatus.Canceled>.  
   
- Pokud čekáte na úlohu, která přechází do stavu zrušeno, <xref:System.Threading.Tasks.TaskCanceledException?displayProperty=nameWithType> výjimky (uzavřen do <xref:System.AggregateException> výjimka) je vyvolána výjimka. Všimněte si, že tato výjimka označuje úspěšné zrušení namísto poruchové situace. Proto úkolu <xref:System.Threading.Tasks.Task.Exception%2A> vlastnost vrátí `null`.  
+ Pokud čekáte na úlohu přecházející do stavu zrušeno <xref:System.Threading.Tasks.TaskCanceledException?displayProperty=nameWithType> výjimky (zabalené v <xref:System.AggregateException> výjimka) je vyvolána výjimka. Všimněte si, že tato výjimka označuje úspěšné zrušení namísto poruchové situace. Proto úkolu <xref:System.Threading.Tasks.Task.Exception%2A> vrátí vlastnost `null`.  
   
- Pokud je token <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost vrací hodnotu false nebo pokud token výjimky neodpovídá úlohy je token, <xref:System.OperationCanceledException> považuje jako normální výjimka, která způsobuje úlohy k přechodu do stavu chybný. Přítomnost dalších výjimek rovněž způsobí, že úloha přejde do stavu Chyba. Můžete získat stav dokončené úlohy <xref:System.Threading.Tasks.Task.Status%2A> vlastnost.  
+ Pokud token, který <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> vlastnost vrací hodnotu false nebo pokud token výjimky neodpovídá úkolu v tokenu, <xref:System.OperationCanceledException> zacházeno jako s normální výjimkou, způsobí, že úloha přejde do stavu chyba. Přítomnost dalších výjimek rovněž způsobí, že úloha přejde do stavu Chyba. Stav dokončené úlohy můžete získat <xref:System.Threading.Tasks.Task.Status%2A> vlastnost.  
   
  Je možné, že úloha bude pokračovat ve zpracování některých položek poté, co bylo požádáno o zrušení.  
   
-## <a name="see-also"></a>Viz také  
- [Zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md)  
- [Postupy: Zrušení úlohy a podřízených elementů](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)
+## <a name="see-also"></a>Viz také:
+
+- [Zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md)  
+- [Postupy: Zrušení úlohy a podřízených elementů](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)

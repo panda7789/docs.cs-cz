@@ -4,12 +4,12 @@ description: Průvodce, na kterou implementaci rozhraní .NET, měli byste zvá�
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: 541bcdf69d658fd37271169c028fb64611a35655
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: dbb5bd21d2fa43167a9624be2baec3f591d10920
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43552306"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43864959"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -103,8 +103,10 @@ Některé společnosti Microsoft nebo třetích stran platformy .NET Core nepodp
 
 ## <a name="see-also"></a>Viz také:
 
- [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework) [platforem](frameworks.md) [Průvodce platformou .NET Core](../core/index.md)  
- [Portování z rozhraní .NET Framework do .NET Core](../core/porting/index.md)  
- [Průvodce rozhraním .NET Framework v Dockeru](../framework/docker/index.md)  
- [.NET – přehled komponenty](components.md)  
- [Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET](microservices-architecture/index.md)
+* [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
+* [Cílové verze rozhraní .NET Framework](frameworks.md)
+* [Průvodce platformou .NET Core](../core/index.md)  
+* [Portování z rozhraní .NET Framework do .NET Core](../core/porting/index.md)  
+* [Průvodce rozhraním .NET Framework v Dockeru](../framework/docker/index.md)  
+* [.NET – přehled komponenty](components.md)  
+* [Mikroslužby .NET. Architektura pro Kontejnerizované aplikace .NET](microservices-architecture/index.md)

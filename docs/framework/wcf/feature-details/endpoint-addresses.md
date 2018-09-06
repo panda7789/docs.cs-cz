@@ -7,11 +7,11 @@ helpviewer_keywords:
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
 ms.openlocfilehash: cc81e7ad45c308f5ecf476641dfd65fe47b36098
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43404564"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855712"
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
 Každý koncový bod má adresu přidruženo, který se používá k vyhledání a identifikaci koncového bodu. Tato adresa sestává především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je vyjádřena v programovacím modelu pomocí rozhraní Windows Communication Foundation (WCF) <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiné koncové body, které vyměňovat zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují další hlavičky SOAP, vyžaduje ke zpřístupnění služby. Poskytují další volitelné záhlaví a podrobnější informace o adresách k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentována na lince jako referenci koncového bodu WS-Addressing (EPR).  

@@ -20,11 +20,11 @@ helpviewer_keywords:
 - Double data type
 ms.assetid: 0c5670f7-fcb1-453a-bef1-374730cd38fd
 ms.openlocfilehash: 5d2d84f298b9cf6138e84ef287f6ea9212da2960
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734809"
+ms.locfileid: "43806121"
 ---
 # <a name="double-data-type-visual-basic"></a>Double – datový typ (Visual Basic)
 Blokování podepsané IEEE – 64bitová (8 bajtů) dvojité přesnosti s plovoucí desetinnou čárkou čísla v rozsahu od - 1.79769313486231570E + 308 do - 4.94065645841246544E-324 pro záporné hodnoty a z 4.94065645841246544E-324 prostřednictvím 1.79769313486231570E + 308 pro kladné hodnoty. Dvojitá přesnost – čísla ukládání aproximaci reálné číslo.  

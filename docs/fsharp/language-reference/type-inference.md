@@ -1,63 +1,66 @@
 ---
 title: Odvození typu (F#)
-description: 'Zjistěte, jak kompilátor jazyka F # odvodí typy hodnot, proměnné, parametry a návratové hodnoty.'
+description: 'Zjistěte, jak kompilátor F # odvodí typy hodnot, proměnné, parametry a návratové hodnoty.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 93e1568ebe71436ad8f7119ac9d9628cdf58012a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fd826ac48fb9a70aa6f4ff746599c11b7e21a02e
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563696"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865693"
 ---
 # <a name="type-inference"></a>Odvození typu
 
-Toto téma popisuje, jak kompilátor jazyka F # odvodí typy hodnot, proměnné, parametry a návratové hodnoty.
+Toto téma popisuje, jak kompilátor F # odvodí typy hodnot, proměnné, parametry a návratové hodnoty.
 
-## <a name="type-inference-in-general"></a>Odvození typu Obecné
-Představu o odvození typu je, že nemusíte určit typy F # konstrukce kromě při kompilátor nelze odvodit jednoznačně typu. Vynechání explicitního typu informace neznamená, že F # je dynamicky zadávaných jazyk nebo jestli jsou hodnoty v jazyce F # slabě typované. F # je staticky typové jazyk, což znamená, že kompilátor deduces přesném typu pro každou konstrukci během kompilace. Pokud není k dispozici dostatek informací pro kompilátor odvodit typy každý konstrukce, musíte zadat informace o dalších typu, obvykle přidáním explicitního typu poznámky někde v kódu.
+## <a name="type-inference-in-general"></a>Odvození typu, obecné
 
+Představu o odvození typu je, že není nutné určit typy konstrukce F # s výjimkou případů, kdy kompilátor nemůže odvodit jednoznačně typ. Vynechání explicitního typu informace neznamená, že F # je jazyk dynamicky zadávaných nebo že jsou hodnoty v jazyce F # slabě typované. F # je staticky psaný jazyk, což znamená, že kompilátor odvodí přesný typ pro každou konstrukci během kompilace. Pokud není k dispozici dostatek informací pro kompilátor k odvození typů každý konstrukce, musíte zadat informace o dalších typu, obvykle tak, že přidáte anotace explicitního typu někde v kódu.
 
-## <a name="inference-of-parameter-and-return-types"></a>Odvození parametr a návratové typy
-V seznamu parametrů nemáte zadejte typ jednotlivé parametry. A ještě, F # je staticky typové jazyk a tedy každých hodnota a výraz typu určit přesně v době kompilace. Pro tyto typy, které explicitně nezadáte kompilátor odvodí typ na základě kontextu. Pokud typ není jinak zadán, je odvodit být obecný. Pokud kód používá hodnotu nekonzistentně, tak, že neexistuje žádná jednoho odvodit typ, který splňuje všechny používá hodnoty, že kompilátor ohlásí chybu.
+## <a name="inference-of-parameter-and-return-types"></a>Odvozování parametrů a návratové typy
 
-Návratový typ funkce je určen podle typu poslední výraz ve funkci.
+V seznamu parametrů není nutné zadat typ každého parametru. A ještě, F # je staticky psaný jazyk, a proto všechny hodnoty a výrazu má jednoznačného typu v době kompilace. Pro tyto typy, které explicitně nezadáte kompilátor odvodí typ na základě kontextu. Pokud typ není jinak zadán, je odvozen je obecný. Pokud tento kód použije hodnotu nekonzistentně, tak, že neexistuje žádné jeden odvodit typ, který splňuje všechna použití hodnoty, že kompilátor nahlásí chybu.
 
-Například v následujícím kódu, typy parametrů `a` a `b` a návratový typ se odvodit být `int` protože literálové `100` je typu `int`.
+Návratový typ funkce je určen podle typu posledního výrazu ve funkci.
+
+Například v následujícím kódu, typy parametrů `a` a `b` a návratový typ je odvozen bude `int` protože literál `100` je typu `int`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet301.fs)]
 
-Odvození typu můžete ovlivnit změnou literály. Provedete-li `100` `uint32` připojením přípona `u`, typy `a`, `b`, a jsou návratovou hodnotu odvodit být `uint32`.
+Odvození typu proměnné můžete ovlivnit tak, že změníte literály. Pokud provedete `100` `uint32` přidáním přípona `u`, typy `a`, `b`, a návratová hodnota jsou odvozena jako `uint32`.
 
-Také můžete ovlivnit odvození typu pomocí jiných objektů, které implikují typu, jako je například funkce a metody, které pracují se pouze konkrétní typ omezení.
+Můžete také ovlivnit odvození typu pomocí jiných objektů, které znamenají omezení typu, například funkcí a metod, které pracují s pouze určitého typu.
 
-Navíc můžete použít explicitní typ poznámky na funkci nebo metodu parametry a proměnné ve výrazech, jak je znázorněno v následujících příkladech. Pokud dochází ke konfliktům mezi různé omezení výsledkem chyby.
+Navíc můžete použít anotace explicitního typu funkce nebo metoda parametry a proměnné ve výrazech, jak je znázorněno v následujícím příkladu. Pokud dochází ke konfliktům mezi jiná omezení dojít k chybám.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet302.fs)]
 
-Můžete také explicitně návratovou hodnotu funkce tím, že poskytuje anotaci typu po všech parametrů.
+Můžete také explicitně určit návratové hodnoty funkce tím, že poskytuje anotaci typu všechny parametry.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet303.fs)]
 
-Častých případech, kde je užitečná, pokud parametr anotaci typu je, když tento parametr typu objektu a chcete použít členem.
+Běžný případ, kdy je užitečné u parametru anotaci typu je, když je parametr typu objektu a chcete, použijte člena.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet304.fs)]
-    
-## <a name="automatic-generalization"></a>Automatická generalizace
-Je-li kód funkce není závislá na typ parametru, kompilátor za parametr být obecný. To se označuje jako *Automatická generalizace*, a může být výkonné podpory k psaní kódu obecné bez zvyšuje složitost.
 
-Například následující funkce kombinuje dva parametry libovolného typu do řazené kolekce členů.
+## <a name="automatic-generalization"></a>Automatická generalizace
+
+Pokud kód této funkce není závislá na typ parametru, kompilátor považuje za parametr je obecný. Tento postup se nazývá *Automatická generalizace*, a může být výkonná Podpora zápisu obecný kód bez zvýšení složitosti.
+
+Například následující funkce kombinuje dva parametry typu do řazené kolekce členů.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-3/snippet305.fs)]
 
-Je potřeba odvodit typ
+Typ je odvozen bude
 
 ```fsharp
 'a -> 'b -> 'a * 'b
 ```
 
 ## <a name="additional-information"></a>Další informace
-Odvození typu je podrobně popsaná v další v specifikace jazyka F #.
 
+Odvození typu je podrobněji popsané v ve specifikaci jazyka F #.
 
-## <a name="see-also"></a>Viz také
-[Automatická generalizace](generics/automatic-generalization.md)
+## <a name="see-also"></a>Viz také:
+
+- [Automatická generalizace](generics/automatic-generalization.md)

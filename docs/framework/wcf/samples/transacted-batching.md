@@ -3,11 +3,11 @@ title: Transakční dávkování
 ms.date: 03/30/2017
 ms.assetid: ecd328ed-332e-479c-a894-489609bcddd2
 ms.openlocfilehash: abada9aaf5fac8f05599467f385e708e1898832f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43558505"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856060"
 ---
 # <a name="transacted-batching"></a>Transakční dávkování
 Tento příklad ukazuje, jak dávkové transakce čtení pomocí služby Řízení front zpráv (MSMQ). Transakční dávkování je funkce optimalizace výkonu pro transakční operace čtení v komunikaci ve frontě.  

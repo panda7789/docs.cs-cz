@@ -3,11 +3,11 @@ title: Kódování MTOM
 ms.date: 03/30/2017
 ms.assetid: 820e316f-4ee1-4eb5-ae38-b6a536e8a14f
 ms.openlocfilehash: f54a22b0004623c8aef8f2788ed7d59f7d777ce7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43400097"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43875551"
 ---
 # <a name="mtom-encoding"></a>Kódování MTOM
 Tento příklad ukazuje použití kódování s WSHttpBinding zprávy zpráv přenosu optimalizace mechanismus (MTOM). MTOM je mechanismus pro předávání velké binární jejich přílohy pomocí zprávy protokolu SOAP jako nezpracovaný bajtů, umožňuje menší zprávy.  

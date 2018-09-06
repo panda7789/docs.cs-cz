@@ -1,5 +1,5 @@
 ---
-title: Pořadí načítání uzlu podle indexu
+title: Načtení seřazených uzlů podle indexu
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +8,15 @@ dev_langs:
 ms.assetid: 5412c90f-2703-4aa8-a9c4-1b8a35183c37
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c3cfa371394e76aab832c3dd4b065eb811413322
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 515edf26df6190d2bf4906f3de2d019b1a4175fb
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871917"
 ---
-# <a name="ordered-node-retrieval-by-index"></a>Pořadí načítání uzlu podle indexu
-World Wide Web Consortium (W3C) XML modelu DOM (Document Object) také popisuje seznamu, který má schopnost zvládat seřazený seznam uzlů, oproti sadě neuspořádaný zpracovávaných **XmlNamedNodeMap**. Seznamu v rozhraní Microsoft .NET Framework se nazývá **XmlNodeList**. Metody a vlastnosti, které vracejí **XmlNodeList** jsou:  
+# <a name="ordered-node-retrieval-by-index"></a>Načtení seřazených uzlů podle indexu
+World Wide Web Consortium (W3C) XML Document Object Model (DOM) také popisuje seznamu, který má schopnost zpracovávat uspořádaný seznam uzlů, na rozdíl od neuspořádanou sadu zpracována **XmlNamedNodeMap**. Je volána seznamu v rozhraní Microsoft .NET Framework **XmlNodeList**. Metody a vlastnosti, které vracejí **XmlNodeList** jsou:  
   
 -   XmlNode.ChildNodes  
   
@@ -25,7 +26,7 @@ World Wide Web Consortium (W3C) XML modelu DOM (Document Object) také popisuje 
   
 -   XmlNode.SelectNodes  
   
- **XmlNodeList** má **počet** vlastnost, která slouží k zápisu smyčky Iterujte přes uzlů **XmlNodeList**, jak znázorňuje následující ukázka kódu:  
+ **XmlNodeList** má **počet** vlastnost, která umožňuje psát smyčky k iteraci přes uzly v **XmlNodeList**, jak je znázorněno v následujícím příkladu kódu:  
   
 ```vb  
 Dim doc as XmlDocument = new XmlDocument()  
@@ -54,7 +55,7 @@ for (int i=0; i < elemList.Count; i++)
 }   
 ```  
   
- Kromě **počet** vlastnost, je **GetEnumerator** metoda, která poskytuje a, `foreach` styl iteraci přes kolekci uzlů v **XmlNodeList**. Následující příklad kódu ukazuje použití `foreach` příkaz.  
+ Kromě **počet** vlastnost, je **GetEnumerator** metodu, která poskytuje, `foreach` stylu iterace přes kolekce uzlů v **XmlNodeList**. Následující příklad kódu ukazuje použití `foreach` příkazu.  
   
 ```vb  
 Dim doc As New XmlDocument()  
@@ -91,7 +92,8 @@ End While
   }  
 ```  
   
- Další informace o metody a vlastnosti, které jsou k dispozici na **XmlNodeList**, najdete v části <xref:System.Xml.XmlNodeList>.  
+ Další informace o metody a vlastnosti, které jsou k dispozici na **XmlNodeList**, naleznete v tématu <xref:System.Xml.XmlNodeList>.  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

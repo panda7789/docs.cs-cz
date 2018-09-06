@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, Windows Communication Foundation
 ms.assetid: b48f42ce-22ce-4f8d-8f0d-f7ddac9125ee
 ms.openlocfilehash: 89f9cc572a6613efba19a93c8d5e441c46a660ac
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43783895"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43864734"
 ---
 # <a name="hosting-the-data-service-wcf-data-services"></a>Hostování datové služby (WCF Data Services)
 Pomocí služeb WCF Data Services, můžete vytvořit službu, která zveřejňuje data jako [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informačního kanálu. Tato služba dat je definován jako třída, která dědí z <xref:System.Data.Services.DataService%601>. Tato třída poskytuje funkci požadovanou ke zpracování zpráv požadavků, provádění aktualizací na zdroji dat a vygenerování zprávy odpovědi, podle požadavků OData. Datové služby však nelze svázat a síťových soketů naslouchat příchozím požadavkům HTTP. Pro tato požadované funkce, která využívá datová služba hostitelská komponenta.

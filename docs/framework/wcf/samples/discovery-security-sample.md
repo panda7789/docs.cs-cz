@@ -5,11 +5,11 @@ ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 7a8dcd0a835bb669b669d5a510e01142c85ea07a
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43786541"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43867526"
 ---
 # <a name="discovery-security-sample"></a>Ukázka zabezpečení zjišťování
 Specifikace zjišťování nevyžaduje, zabezpečené koncové body, které jsou součástí procesu zjišťování. Rozšíření zjišťování zpráv pomocí zabezpečení zmírní různé typy útoků (zpráva změnou, útok DOS, znovu přehrát, falšování identity). Tato ukázka implementuje vlastní kanály, které compute a ověřování podpisů zprávu ve formátu compact podpis (popsaný v části 8.2 specifikace WS-Discovery). Ukázka podporuje i [2005 zjišťování specifikace](https://go.microsoft.com/fwlink/?LinkId=177912) a [verze 1.1](https://go.microsoft.com/fwlink/?LinkId=179677).  

@@ -3,11 +3,11 @@ title: Element &lt;message&gt; – &lt;wsFederationHttpBinding&gt;
 ms.date: 03/30/2017
 ms.assetid: 9d710389-d9d8-4454-9bf2-da4ccda31cec
 ms.openlocfilehash: 820ee7015a51ecc5510889516faef20292cfbc07
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43786131"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871261"
 ---
 # <a name="ltmessagegt-element-of-ltwsfederationhttpbindinggt"></a>Element &lt;message&gt; – &lt;wsFederationHttpBinding&gt;
 Definuje nastavení založená na úrovni zpráv zabezpečení pro [ \<wsFederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md).  

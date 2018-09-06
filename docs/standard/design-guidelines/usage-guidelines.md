@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7bd54a2325c9721ad17943ba663e7ec0c300632e
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 04e44a6b58fd334b6a23e113922b980f69de627b
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925073"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43869863"
 ---
 # <a name="usage-guidelines"></a>Pokyny k používání
 
@@ -38,4 +38,4 @@ Tato část obsahuje pokyny k používání běžných typů ve veřejně dostup
   
 ## <a name="see-also"></a>Viz také:
 
-[Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

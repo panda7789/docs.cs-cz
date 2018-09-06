@@ -3,11 +3,11 @@ title: Skupina podmíněných aktivit
 ms.date: 03/30/2017
 ms.assetid: f76ef924-34ce-48ae-8c8d-48faf9697754
 ms.openlocfilehash: 144a6c76ea6314c553e201fe4e2364890d869f34
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43418166"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43861202"
 ---
 # <a name="conditioned-activity-group"></a>Skupina podmíněných aktivit
 Ukázka demonstruje aplikaci rezervace cesty. <xref:System.Workflow.Activities.ConditionedActivityGroup> (CAG) má dvě aktivity kódu: aktivita Car a aktivita letecká společnost. V `SimpleCAGWorkflow` konstruktor objekt ArrayList "travelNeedType" se vyplní typy cestovní rezervací, které jsou požadovány. Tak jedno nebo obě `travelNeeds.Add` příkazy, odpovídajícím způsobem upravit chování CAG. Auto i letecká společnost aktivity mají jejich <xref:System.Workflow.Activities.ConditionedActivityGroup.WhenConditionProperty> vyplní podmínku <xref:System.Workflow.Activities.CodeCondition>. Car aktivita spustí jenom v případě, `travelNeeds` kolekce má `TravelNeeds.Car` položky a aktivity spustí jenom v případě letecká společnost `travelNeeds` kolekce má `TravelNeeds.Airline` položka.  

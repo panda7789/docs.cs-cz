@@ -8,22 +8,22 @@ dev_langs:
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6b295c94fda22d4a17fb485add13ec67f1e9ae8a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aeb0a8e80a023568f192e832b1e4a3244fc87455
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572018"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43870169"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Přístup k atributům v modelu DOM
-Atributy jsou vlastnosti elementu, ne podřízených objektů daného elementu. Tento rozdíl je důležitý kvůli metody použité k přejděte na stejné úrovni, nadřazené a podřízené uzly z XML modelu DOM (Document Object). Například **PreviousSibling** a **NextSibling** metody nepoužívají se k přejděte z prvku, atributu nebo mezi atributy. Místo toho atribut je vlastnost elementu a vlastní element, má **OwnerElement** vlastnost a ne **parentNode** vlastnost, a má odlišné metody navigace.  
+Atributy jsou vlastnosti elementu, není podřízených objektů daného elementu. Tento rozdíl je důležitý kvůli metody použité k navigaci na stejné úrovni, nadřazené a podřízené uzly z XML Document Object Model (DOM). Například **PreviousSibling** a **NextSibling** metody nepoužívají přejít z elementu, atributu nebo mezi atributy. Místo toho atribut je vlastnost elementu a prvek vlastní, má **OwnerElement** vlastnost a nikoli **parentNode** vlastnost, a má různé metody navigace.  
   
- Je-li aktuální uzel elementu, použijte **HasAttribute** metoda, pokud jsou k dispozici žádné atributy přidružené k tomuto prvku. Jakmile se ví, že element má atributy, existuje více metod pro přístup k atributům. Chcete-li získat jeden atribut z elementu, můžete použít **GetAttribute** a **GetAttributeNode** metody **XmlElement** nebo můžete získat všechny atributy do kolekce. Získání kolekce je užitečné, pokud potřebujete Iterujte přes kolekci. Pokud chcete, aby všechny atributy z elementu, použijte **atributy** vlastnost elementu pro načtení všech atributů do kolekce.  
+ Je-li aktuální uzel elementu, použijte **HasAttribute** metoda zjistíte, jestli jsou všechny atributy přidružené k elementu. Jakmile je známo, že element má atributy, existuje několik metod pro přístup k atributům. K načtení jednoho atributu z elementu, můžete použít **GetAttribute** a **GetAttributeNode** metody **XmlElement** nebo ji získáte všechny atributy do kolekce. Získání kolekce je užitečné, pokud budete potřebovat k iteraci přes kolekci. Pokud chcete všechny atributy z elementu, použijte **atributy** vlastnost elementu, který chcete načíst všechny atributy do kolekce.  
   
-## <a name="retrieving-all-attributes-into-a-collection"></a>Načítání všechny atributy do kolekce  
- Pokud chcete, všechny atributy uzlu elementu uvést do kolekce, zavolejte **XmlElement.Attributes** vlastnost. To získá **XmlAttributeCollection** obsahující všechny atributy elementu. **XmlAttributeCollection** třída dědí z **XmlNamedNode** mapy. Proto metody a vlastnosti, které jsou k dispozici v kolekci zahrnují ty, které jsou k dispozici na mapě pojmenované uzlu kromě metody a vlastnosti specifické pro **XmlAttributeCollection** třídy, jako **ItemOf**  vlastnost nebo **připojení** metoda. Představuje každou položku v kolekci atributů **XmlAttribute** uzlu. Počet atributů v elementu najdete získat **XmlAttributeCollection**a použít **počet** vlastnosti kolik **XmlAttribute** jsou uzly v kolekci.  
+## <a name="retrieving-all-attributes-into-a-collection"></a>Načtení všech atributů do kolekce  
+ Pokud chcete, všechny atributy uzlu elementu uvést do kolekce, zavolejte **XmlElement.Attributes** vlastnost. Načte **XmlAttributeCollection** , která obsahuje všechny atributy elementu. **XmlAttributeCollection** třída dědí z **XmlNamedNode** mapy. Proto, metody a vlastnosti, které jsou k dispozici na kolekci zahrnují dostupných na mapě pojmenovaný uzel navíc k metodám a vlastnostem, které jsou specifické pro **XmlAttributeCollection** třídy, jako **ItemOf**  vlastnost nebo **připojit** metody. Každá položka v kolekci atributu představuje **XmlAttribute** uzlu. Pokud chcete zjistit počet atributů na elementu, získat **XmlAttributeCollection**a použít **počet** ve vlastnosti kolik **XmlAttribute** uzly jsou v kolekci.  
   
- Následující příklad kódu ukazuje, jak načíst atribut kolekce a pomocí **počet** metoda pro opakování index iteraci nad ním. Kód pak ukazuje, jak načíst jeden atribut z kolekce a zobrazit jeho hodnotu.  
+ Následující příklad kódu ukazuje, jak načíst atribut shromažďování a použití **počet** metoda opakování indexu iterovat nad ním. Kód poté ukazuje, jak načíst jeden atribut z kolekce a zobrazit její hodnotu.  
   
 ```vb  
 Imports System  
@@ -114,7 +114,7 @@ public class Sample
 }  
 ```  
   
- Tento příklad zobrazí následující výstup:  
+ V tomto příkladu se zobrazí následující výstup:  
   
  **Output**  
   
@@ -128,9 +128,9 @@ Display the attribute information.
 sale item  
 ```  
   
- Informace v kolekci atributů může načíst název nebo číslo indexu. Výše uvedený příklad ukazuje, jak načíst data podle názvu. Další příklad ukazuje, jak načíst data tak, že číslo indexu.  
+ Informace v kolekci atributů lze načíst podle názvu nebo číslo indexu. Výše uvedený příklad ukazuje, jak načíst data podle názvu. Následující příklad ukazuje, jak načíst data, že číslo indexu.  
   
- Protože **XmlAttributeCollection** je kolekce a můžete vstupní nepřevezme index nebo název tento příklad ukazuje, výběrem první atribut z kolekce pomocí index počítaný od nuly nebo pomocí následující soubor, **baseuri.xml**, jako vstupní.  
+ Vzhledem k tomu, **XmlAttributeCollection** je kolekce a můžete provést iteraci nepřevezme index nebo název, tento příklad ukazuje, vyberete první atribut z kolekce pomocí index založený na nule a pomocí následující soubor **baseuri.xml**, jako vstupní.  
   
 ### <a name="input"></a>Vstup  
   
@@ -190,8 +190,8 @@ public class Sample
 }  
 ```  
   
-## <a name="retrieving-an-individual-attribute-node"></a>Načítání uzlu jednotlivých atributu.  
- Načíst uzlu jeden atribut z elementu, <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> metoda se používá. Vrátí objekt typu **XmlAttribute**. Až budete mít **XmlAttribute**, všechny metody a vlastnosti, které jsou k dispozici v <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> třídy jsou k dispozici na tento objekt, jako je hledání **OwnerElement**.  
+## <a name="retrieving-an-individual-attribute-node"></a>Načítání do jednotlivých atribut uzlu  
+ K načtení uzlu jeden atribut z elementu, <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> metoda se používá. Vrátí objekt typu **XmlAttribute**. Jakmile budete mít **XmlAttribute**, všechny metody a vlastnosti, které jsou k dispozici v <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> třídy jsou k dispozici k tomuto objektu, jako je například hledání **OwnerElement**.  
   
 ```vb  
 Imports System  
@@ -254,11 +254,12 @@ using System.Xml;
 }  
 ```  
   
- Můžete také provést jak je znázorněno v předchozím příkladu, kde jeden atribut uzlu se načítají z kolekce atributů. Následující příklad kódu ukazuje způsob, jakým jeden řádek kódu je možné zapsat do načíst jeden atribut číslem indexu z kořene dokumentu XML stromu, označované také jako **prvek DocumentElement** vlastnost.  
+ Taky vám pomůžou jak je znázorněno v předchozím příkladu, kde jeden atribut uzlu je načten z kolekce atributu. Následující příklad kódu ukazuje jak jeden řádek kódu je možné zapisovat na načtení jednoho atributu číslem indexu z kořene dokumentu XML stromu, označovaný také jako **prvek DocumentElement** vlastnost.  
   
 ```  
 XmlAttribute attr = doc.DocumentElement.Attributes[0];  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

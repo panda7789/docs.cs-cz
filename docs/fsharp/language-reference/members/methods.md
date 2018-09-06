@@ -1,18 +1,17 @@
 ---
 title: Metody (F#)
-description: 'Zjistěte, jak metodu F # je přidružený k typu, které se používají k vystavení a implementovat funkce a chování objekty a typy funkce.'
+description: 'Zjistěte, jak metoda F # je přidružený k typu, které se používají k vystavení a implementaci funkce a chování objektů a typy funkce.'
 ms.date: 05/16/2016
-ms.openlocfilehash: e30300b4dd6cc26712a5adbc8abf720f2c312a6f
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: 02d5a7d22d1ce79a06e15462637c373b33623f61
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34456637"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871235"
 ---
 # <a name="methods"></a>Metody
 
-A *metoda* je funkce, který je přidružený k typu. V objektově orientované programování metody se používají k vystavení a implementovat funkce a chování objekty a typy.
-
+A *metoda* je funkce, který je přidružený k typu. V objektově orientované programování metody se používají k vystavení a implementaci funkce a chování objektů a typy.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -49,57 +48,60 @@ override self-identifier.method-name parameter-list [ : return-type ] =
 ```
 
 ## <a name="remarks"></a>Poznámky
-V předchozích syntaxe se zobrazí různé formy metoda deklarace a definice. V delší metoda subjekty konec řádku následuje rovná se (=) a metoda celý text odsazeno.
 
-Atributy je použít pro všechny deklarace metody. Tyto předcházet syntaxe definici metody a obvykle jsou uvedeny na samostatném řádku. Další informace najdete v tématu [atributy](../attributes.md).
+V předchozí syntaxi zobrazí se různé formy metoda deklarace a definice. V delší těl metod zalomení řádku následuje rovnítko (=) a tělo metody celý odsazena.
 
-Může být označen metody `inline`. Informace o `inline`, najdete v části [vložené funkce](../functions/inline-functions.md).
+Atributy lze použít pro všechny deklarace metody. Tyto předcházet syntaxe pro definici metody a obvykle jsou uvedeny na samostatném řádku. Další informace najdete v tématu [atributy](../attributes.md).
 
-Metody bez vložené může být použité rekurzivně v rámci typu; není nutné explicitně povoleno používat `rec` – klíčové slovo.
+Metody mohou být označeny `inline`. Informace o `inline`, naleznete v tématu [vložené funkce](../functions/inline-functions.md).
 
+Non-inline metod může být použité rekurzivně v rámci typu; není nutné explicitně `rec` – klíčové slovo.
 
 ## <a name="instance-methods"></a>Instance metody
-Instance metody jsou deklarovány s `member` – klíčové slovo a *vlastní identifikátor*, za nímž následují tečkou (.) a název metody a parametry. Stejně jako v případě pro `let` vazeb *seznam parametrů* může být vzorek. Obvykle je uzavřít metoda objevit parametry v závorkách v podobě řazené kolekce členů, což je způsob, jak metody v jazyce F # při jejich vytváření v jiných jazycích rozhraní .NET Framework. Ale curryfikované formuláře (parametry, oddělené mezerami) je běžné, že a dalšími vzory jsou také podporovány.
 
-Následující příklad ilustruje definice a použití metody neabstraktní instance.
+Instance metody jsou deklarovány pomocí `member` – klíčové slovo a *vlastní identifikátor*, následované tečkou (.) a název metody a parametrů. Stejně jako v případě pro `let` vazeb *seznam parametrů* může být vzoru. Obvykle použijte metodu, kterou parametry v závorkách v podobě řazené kolekce členů, což je způsob, jak metody se zobrazí v jazyce F # při jejich vytváření v jiných jazycích rozhraní .NET Framework. Ale curryfikované formuláře (parametry oddělené mezerami) je také obvyklé a dalších vzorech jsou také podporovány.
+
+Následující příklad ukazuje definici a využívání instance neabstraktní metoda.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3401.fs)]
 
-V rámci metody instance nepoužívejte vlastní identifikátor přístup pole definované za použití umožňují vazby. Při přístupu k ostatním členům a vlastnosti, použijte vlastní identifikátor.
-
+V rámci metody instance nepoužívejte k přístupu pole definovaná pomocí vazby let identifikátoru samotného. Při přístupu k ostatním členům a vlastnosti, použijte vlastní identifikátor.
 
 ## <a name="static-methods"></a>Statické metody
-Klíčové slovo `static` slouží k určení, zda metoda může být volána bez instance a není přidružen k instanci objektu. Jinak jsou metody instance metody.
 
-Příklad v další části ukazuje pole deklarovat s `let` – klíčové slovo, vlastnost členy deklarovat s `member` – klíčové slovo a statickou metodu deklarovat s `static` – klíčové slovo.
+Klíčové slovo `static` slouží k určení, že metodu lze volat bez instance a není přidružen k instanci objektu. V opačném případě metody jsou metody instance.
 
-Následující příklad ilustruje definice a používání statických metod. Předpokládejme, že jsou tyto definice metoda v `SomeType` – třída v předchozí části.
+V příkladu v následující části zobrazuje pole deklarovaná s `let` – klíčové slovo, vlastnost členy deklarované s `member` – klíčové slovo a statické metody deklarované s `static` – klíčové slovo.
+
+Následující příklad ukazuje definici a použití statické metody. Předpokládejme, že jsou tyto definice metod v `SomeType` třídy v předchozí části.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3402.fs)]
 
 ## <a name="abstract-and-virtual-methods"></a>Abstraktní a virtuální metody
-Klíčové slovo `abstract` označuje, že metoda má slot virtuální odesílání a nemusí mít definici ve třídě. A *virtuální odesílání slotu* je záznam v tabulce interně zachována funkcí, která se používá v době běhu k vyhledání virtuální funkce volá typ objektově orientovaný. Tento mechanismus virtuální odesílání je mechanismus, který implementuje *polymorfismus*, důležitou součást objektově orientované programování. Je třída, která má alespoň jednu metodu abstraktní bez definice *abstraktní třída*, což znamená, že nelze vytvořit žádné instance této třídy. Další informace o abstraktní třídy najdete v tématu [abstraktní třídy](../abstract-classes.md).
 
-Deklarace abstraktní metodu nezahrnují těla metody. Název metody, je místo toho následovaný dvojtečkou (:) a typ podpis metody. Typ podpis metody je stejný jako zobrazená technologii IntelliSense, když krátce umístit ukazatel myši nad název metody v editoru Visual Studio Code, s výjimkou bez názvy parametrů. Typ podpisy zobrazena překladač fsi.exe, také, když pracujete interaktivně. Typ podpis metody je tvořen výpis se typy parametrů, za nímž následuje návratový typ se symboly odpovídající oddělovače. Curryfikované parametry jsou odděleny `->` a jsou odděleny řazené kolekce členů parametry `*`. Návratová hodnota je vždy oddělená od argumenty podle `->` symbol. Závorky lze použít k seskupení komplexní parametrů, třeba když typ funkce je parametr, a určit, kdy řazené kolekce členů je zpracováván jako jeden parametr a nikoli jako dva parametry.
+Klíčové slovo `abstract` označuje, že metoda má virtuální odeslání slot a nemusí obsahovat definici třídy. A *virtuální odeslání slotu* je záznam v tabulce vnitřně udržované funkcí, který se používá v době běhu k vyhledání virtuální funkce se volá v typu objektově orientovaný. Mechanismus virtuální odeslání je mechanismus, který implementuje *polymorfismus*, důležitou funkcí objektově orientované programování. Je třída, která má alespoň jeden abstraktní metody bez definice *abstraktní třída*, což znamená, že nemohou být vytvořeny žádné instance této třídy. Další informace o abstraktních tříd naleznete v tématu [abstraktní třídy](../abstract-classes.md).
 
-Můžete také udělit abstraktní metody výchozí definice přidáním definice pro třídu a pomocí `default` – klíčové slovo, jak je znázorněno v syntaxi bloku v tomto tématu. Abstraktní metodu, která má definice ve stejné třídě je ekvivalentní virtuální metodu v jiných jazycích rozhraní .NET Framework. Tom, jestli existuje definice, `abstract` – klíčové slovo vytvoří nový odesílání slot v tabulce virtuální funkce pro třídu.
+Deklarace abstraktní metody nezahrnují tělo metody. Název metody je místo, následovaný dvojtečkou (:) a podpis typu metody. Podpis typu metody je stejný jako uvedeny technologií IntelliSense při pozastavení ukazatele myši nad název metody v editoru Visual Studio Code, s výjimkou bez názvy parametrů. Typ signatury jsou také zobrazí interpret, fsi.exe, když interaktivně pracovat. Podpis typu metody je tvořen přidáním výpis na typy parametrů, za nímž následuje návratový typ se symboly příslušné oddělovače. Curryfikované parametrů je odděleno `->` a parametry řazené kolekce členů jsou odděleny `*`. Vrácená hodnota je vždy oddělená od argumenty podle `->` symbol. Závorky lze použít k seskupení složité parametry, například když typ funkce je parametr, nebo k označení, když řazené kolekce členů je zpracováván jako jediný parametr, nikoli jako dva parametry.
 
-Bez ohledu na to, jestli základní třída implementuje její abstraktní metody odvozené třídy můžete poskytovat implementace metod abstraktní. Chcete-li implementovat abstraktní metodu v odvozené třídě, definujte metodu, která má stejný název a podpis v odvozené třídě, s výjimkou použití `override` nebo `default` – klíčové slovo a zadejte text metoda. Klíčová slova `override` a `default` přesně mají stejný význam. Použít `override` Pokud nová metoda přepsání základní třída implementace; použijte `default` při vytváření implementaci ve třídě stejné jako původní abstraktní deklaraci. Nepoužívejte `abstract` – klíčové slovo na metodu, která implementuje metodu, která byla definována jako abstraktní základní třídy.
+Můžete také udělit abstraktní metody výchozí definice přidání definice třídy a použitím `default` – klíčové slovo, jak je znázorněno v syntaxi bloku v tomto tématu. Abstraktní metody, která má definici ve stejné třídě, je ekvivalentní virtuální metody v jiných jazycích rozhraní .NET Framework. Určuje, jestli existuje definice, `abstract` – klíčové slovo vytvoří nový slot odbavení v tabulce virtuální funkce třídy.
 
-Následující příklad ilustruje abstraktní metodu `Rotate` má výchozí implementace ekvivalentní virtuální metody rozhraní .NET Framework.
+Bez ohledu na to, zda základní třída implementuje abstraktní metody mohou odvozené třídy poskytují implementace abstraktní metody. Chcete-li implementovat abstraktní metoda v odvozené třídě, definujte metodu, která má stejný název a signaturu v odvozené třídě, s výjimkou použití `override` nebo `default` – klíčové slovo a poskytnout tělo metody. Klíčová slova `override` a `default` přesně stejný význam. Použít `override` Pokud přepisuje nová metoda implementaci základní třídy; použijte `default` při vytváření implementaci ve třídě stejný jako původní deklarace abstraktní. Nepoužívejte `abstract` – klíčové slovo v metodě, která implementuje metodu, která byla deklarovaná jako abstraktní základní třídy.
+
+Následující příklad ukazuje abstraktní metody `Rotate` , který má výchozí implementaci ekvivalent virtuální metody rozhraní .NET Framework.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3403.fs)]
 
-Následující příklad ilustruje odvozené třídy, který přepíše metodu základní třídy. V takovém případě přepsání změní chování tak, aby metoda neprovede žádnou akci.
+Následující příklad ukazuje odvozené třídy, která přepíše metodu základní třídy. V takovém případě přepsání mění chování tak, aby metoda nemá žádný účinek.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3404.fs)]
 
 ## <a name="overloaded-methods"></a>Přetížené metody
-Přetížené metody jsou metody, které mají stejné názvy v daného typu, ale které mají různé argumenty. V jazyce F # jsou volitelné argumenty obvykle používají místo přetížené metody. Přetížené metody však nejsou povolené v jazyce, za předpokladu, že argumenty, které jsou v podobě řazené kolekce členů, není curryfikované formuláře.
 
-## <a name="optional-arguments"></a>Nepovinné argumenty
+Přetížené metody jsou metody, které mají stejný název v daného typu, ale mají různé argumenty. V jazyce F # jsou volitelné argumenty obvykle používají místo přetížené metody. Ale přetížené metody jsou povoleny v jazyce, za předpokladu, že jsou argumenty v podobě řazené kolekce členů, není curryfikované formuláře.
 
-Od verze 4.1 F #, může také mít volitelné argumenty s výchozí hodnotou parametru v metodách.  Toto je proces zefektivnit vzájemná spolupráce pomocí kódu jazyka C#.  Následující příklad ukazuje syntaxi:
+## <a name="optional-arguments"></a>Nepovinné argumenty.
+
+Od verze F # 4.1, můžete mít také volitelné argumenty s výchozí hodnotou parametru do metody.  Toto je usnadňují spolupráci s kódem C#.  Následující příklad ukazuje syntaxi:
 
 ```fsharp
 // A class with a method M, which takes in an optional integer argument.
@@ -107,12 +109,14 @@ type C() =
     __.M([<Optional; DefaultParameterValue(12)>] i) = i + 1
 ```
 
-Všimněte si, že hodnota předaná pro `DefaultParameterValue` vstupní typ se musí shodovat.  V ukázce výše je `int`.  Probíhá pokus o předání-celé číslo hodnoty do `DefaultParameterValue` by způsobilo chyby kompilace.
+Všimněte si, že hodnota předaná pro `DefaultParameterValue` musí shodovat s typem vstupu.  V ukázce výše, je `int`.  Pokus o předání hodnot jiných než celých čísel do `DefaultParameterValue` způsobí chybu kompilace.
 
 ## <a name="example-properties-and-methods"></a>Příklad: Vlastnosti a metody
-Následující příklad obsahuje typ, který se příklady pole, privátní funkce, vlastnosti a statickou metodu.
+
+Následující příklad obsahuje typ, který obsahuje příklady polí, soukromé funkce, vlastnosti a statické metody.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3406.fs)]
 
-## <a name="see-also"></a>Viz také
-[Členové](index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Členové](index.md)

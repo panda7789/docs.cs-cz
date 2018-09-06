@@ -1,5 +1,5 @@
 ---
-title: Objekt porovnání pomocí XmlNameTable
+title: Porovnání objektů pomocí XmlNameTable
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,15 +8,15 @@ dev_langs:
 ms.assetid: 8d94e041-d340-4ddf-9a2c-d7319e3f4f86
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 09f717cb4c09c1e35b9472b7b549f1d3edf0dd15
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 814f5434dd0473b3b1dd613a2eba14a828c464d9
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569275"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43862777"
 ---
-# <a name="object-comparison-using-xmlnametable"></a>Objekt porovnání pomocí XmlNameTable
-**XmlDocuments**, při vytváření, máte název tabulky vytvořené speciálně pro tento dokument. Pokud načten do dokumentu nebo se vytvářejí nové elementy nebo atributy, názvy elementu a atributu jsou vloženy do **XmlNameTable**. Můžete taky vytvořit **třídou XMLDocument nastavenou na** použití stávající **tabulky názvů** z jiného dokumentu. Když **XmlDocuments** jsou vytvořeny pomocí konstruktor, který přebírá **XmlNameTable** parametr dokument má přístup k uzlu názvy, obory názvů a předpony, které jsou již uloženy v  **XmlNameTable**. Bez ohledu na to, jak načíst název tabulky s názvy, jakmile se názvy jsou uložené v tabulce, názvy lze porovnat rychle pomocí objektu porovnání místo porovnání řetězců. Řetězce lze také přidat název tabulky pomocí <xref:System.Xml.NameTable.Add%2A>. Následující příklad kódu ukazuje název tabulky vytváří a řetězec **MyString** přidávané do tabulky. Potom **třídou XMLDocument nastavenou na** je vytvořený pomocí této tabulky a názvy elementu a atributu v **Myfile.xml** jsou přidány do existující název tabulky.  
+# <a name="object-comparison-using-xmlnametable"></a>Porovnání objektů pomocí XmlNameTable
+**XmlDocuments**, při vytvoření, máte název tabulky vytvořené speciálně pro tento dokument. Při načtení do dokumentu XML nebo nové elementy nebo atributy vytvořené, názvy atributů a element jsou vloženy do **XmlNameTable**. Můžete taky vytvořit **XmlDocument** použití stávající **tabulky názvů** z jiného dokumentu. Při **XmlDocuments** jsou vytvořeny pomocí konstruktoru, který přebírá **XmlNameTable** parametr, dokument má přístup k uzlu názvy, obory názvů a předpony, které už jsou uložené ve  **XmlNameTable**. Bez ohledu na to, jak načíst název tabulky s názvy, jakmile se názvy jsou uložené v tabulce, názvy mohou být porovnány rychle pomocí objektu porovnání namísto porovnání řetězců. Řetězce můžete také přidat pomocí názvu tabulky <xref:System.Xml.NameTable.Add%2A>. Následující příklad kódu ukazuje řetězec a název tabulky vytváří **MyString** přidávají do tabulky. Potom **třídou XMLDocument nastavenou na** je vytvořený pomocí tabulky a názvy prvků a atributů v **Myfile.xml** jsou přidány do existující název tabulky.  
   
 ```vb  
 Dim nt As New NameTable()  
@@ -32,7 +32,7 @@ XmlDocument doc = new XmlDocument(nt);
 doc.Load("Myfile.xml");  
 ```  
   
- Následující příklad kódu ukazuje vytvoření dokumentu, dva nové prvky, který se přidává do dokumentu, který je také přidá do dokumentu název tabulky a porovnání objektu na názvy.  
+ Následující příklad kódu ukazuje vytvoření dokumentu, dvě nové prvky, které se přidávají do dokumentu také přidá název tabulky dokumentů a porovnání objektu na názvy.  
   
 ```vb  
 Dim doc1 As XmlDocument = imp.CreateDocument()  
@@ -51,7 +51,8 @@ if (((object)node1.Name) == ((object)node2.Name))
 { ...  
 ```  
   
- Výše uvedené scénáře předávají mezi dva dokumenty název tabulky je typické, když stejného typu dokumentu, jsou zpracovávány opakovaně, jako jsou dokumenty pořadí v lokalitě elektronické obchodování, která vyhovují schématu XML definition language (XSD) schéma nebo dokument typ definice (DTD) a stejné řetězce se opakují. Pomocí stejné název tabulky dává zlepšení výkonu, jako stejným názvem elementu dochází v více dokumentů.  
+ Název tabulky předané mezi dvěma dokumenty výše popsaném scénáři je obvyklá, když stejného typu dokumentu je zpracovávána opakovaně, jako je například pořadí dokumentů na webu elektronického obchodování, které odpovídají schématu XML definice jazyk (XSD) schématu nebo dokumentu typ definice (DTD) a stejné řetězce se opakují. Tabulka se stejným názvem pomocí poskytuje vylepšení výkonu, jako stejným názvem elementu dochází ve více dokumentů.  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

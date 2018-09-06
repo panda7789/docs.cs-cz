@@ -3,11 +3,11 @@ title: Kodér bajtového datového proudu
 ms.date: 03/30/2017
 ms.assetid: e674a8ab-f79a-4a93-b984-54b34392dafc
 ms.openlocfilehash: cbd4110ecc04923b79d6b910fcf7ab4ca2012680
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480689"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855449"
 ---
 # <a name="bytestream-encoder"></a>Kodér bajtového datového proudu
 Tato ukázka předvádí, jak vytvořit `ByteStreamHttpBinding`, <xref:System.ServiceModel.Channels.Binding> , která ukazuje funkce encoder datového proudu bajtů.  

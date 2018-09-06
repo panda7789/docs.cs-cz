@@ -10,17 +10,17 @@ helpviewer_keywords:
 ms.assetid: 37585bf2-4c27-4dee-849a-af70e3338cc1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 747fc21aceae60e362c72391ae265e45d6f8445f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ca42d25a5f3456c6a10eff76d7015656322abae
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579304"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43874053"
 ---
 # <a name="operator-overloads"></a>Přetížení operátoru
-Přetížení operátoru povolit framework typy zobrazí, jako by byly primitiv předdefinované jazyka.  
+Přetížení operátoru povolit rozhraní framework typy zobrazení, jako kdyby byly integrované primitivní.  
   
- I když je povolené a užitečné v některých situacích Ano, je třeba přetížení operátoru použít opatrně. Existují mnoho případy, ve které operátor přetížení má byla zneužít, například při spuštění framework návrhářů, chcete-li používat pro operace, které by měly být jednoduché metody. Následující pokyny by měly pomoci při rozhodování, kdy a jak použití přetížení operátoru.  
+ I když je povolený a v některých situacích užitečné, je třeba přetížení operátoru použít opatrně. Jsou většinou v operátoru přetížení má byla zneužít, jako je například při spuštění návrháře framework použití operátorů pro operace, které by měly být jednoduché metody. Následující pokyny vám by měly pomoci při rozhodování, kdy a jak použití přetížení operátoru.  
   
  **X AVOID** definování přetížení operátoru v typy, které by měl působí jako primitivní typy (Předdefinované).  
   
@@ -32,19 +32,19 @@ Přetížení operátoru povolit framework typy zobrazí, jako by byly primitiv 
   
  **X DO NOT** být cute při definování přetížení operátoru.  
   
- Přetížení operátoru je užitečné v případech, ve kterých je hned zjevné co bude výsledek operace. Například má smysl moct odečtena jeden <xref:System.DateTime> z jiné `DateTime` a získat <xref:System.TimeSpan>. Však není vhodné používat logický operátor union, union dotazy dvě databáze nebo použít operátor posunutí k zápisu do datového proudu.  
+ Přetížení operátoru je užitečné v případech, ve kterých je okamžitě zřejmý co se bude výsledek operace. Například smysl mít odečíst jeden <xref:System.DateTime> z jiného `DateTime` a získat <xref:System.TimeSpan>. Není však vhodné pomocí logického operátoru sjednocení pro sjednocení dvou databázové dotazy nebo operátor posunutí slouží k zápisu do datového proudu.  
   
  **X DO NOT** zadejte operátor přetížení pokud alespoň jeden z operandy typu definování přetížení.  
   
  **✓ DO** přetížení operátory symetrický způsobem.  
   
- Například, pokud jste přetížení `operator==`, by také přetížení `operator!=`. Podobně pokud jste přetížení `operator<`, by také přetížení `operator>`a tak dále.  
+ Například, pokud přetížíte `operator==`, byste měli také přetížit `operator!=`. Podobně pokud přetížíte `operator<`, byste měli také přetížit `operator>`, a tak dále.  
   
  **✓ CONSIDER** poskytování metody popisné názvy, které odpovídají každé přetížené operátor.  
   
- Mnoho jazyků nepodporují přetížení operátoru. Z tohoto důvodu se doporučuje, aby typy, které přetížení operátory o sekundární metodu s názvem příslušné specifické pro doménu, která poskytuje ekvivalentní funkci.  
+ Řadu jiných jazyků nepodporují přetížení operátoru. Z tohoto důvodu se doporučuje, typy, které přetěžují operátory zahrnují sekundární metodu s vhodný název specifického pro doménu, která obsahuje ekvivalentní funkce.  
   
- Následující tabulka obsahuje seznam operátory a odpovídající metoda popisné názvy.  
+ Následující tabulka obsahuje seznam operátorů a odpovídající názvy metod popisný.  
   
 |Symbol operátoru jazyka C#|Název metadat|Popisný název|  
 |-------------------------|-------------------|-------------------|  
@@ -88,31 +88,32 @@ Přetížení operátoru povolit framework typy zobrazí, jako by byly primitiv 
 |`~`|`op_OnesComplement`|`OnesComplement`|  
   
 ### <a name="overloading-operator-"></a>Přetížení operátoru ==  
- Přetížení `operator ==` je poměrně složitá. Sémantika operátor musí být kompatibilní s několika jinými členy, jako například <xref:System.Object.Equals%2A?displayProperty=nameWithType>.  
+ Přetížení `operator ==` je poměrně složitý. Sémantika operátoru musí být kompatibilní s několika jinými členy jako <xref:System.Object.Equals%2A?displayProperty=nameWithType>.  
   
 ### <a name="conversion-operators"></a>Operátory převodu  
- Operátory převodu jsou unární operátory, které umožňují převod z jednoho typu. Operátory musí být definován jako statické členy na operand nebo návratový typ. Existují dva typy operátory převodu: implicitní a explicitní.  
+ Operátory převodu jsou unární operátory, které umožňují převod jednoho typu na jiný. Operátory musí být definovány jako statické členy v operandu nebo návratového typu. Existují dva typy operátorů převodu: implicitní a explicitní.  
   
  **X DO NOT** operátora převodu může poskytovat, pokud takový převod neočekává jasně koncoví uživatelé.  
   
  **X DO NOT** definovat operátory převodu mimo typ domény.  
   
- Například <xref:System.Int32>, <xref:System.Double>, a <xref:System.Decimal> jsou všechny číselné typy, zatímco <xref:System.DateTime> není. Proto, měla by existovat žádné operátor převodu převést `Double(long)` k `DateTime`. V takovém případě je upřednostňovaný konstruktor.  
+ Například <xref:System.Int32>, <xref:System.Double>, a <xref:System.Decimal> jsou všechny číselné typy, zatímco <xref:System.DateTime> není. Proto by měl existovat žádný operátor převodu k převedení `Double(long)` k `DateTime`. V takovém případě se upřednostňuje konstruktor.  
   
  **X DO NOT** zadat operátor implicitní převod, pokud převod potenciálně míru ztrát.  
   
- Například by nemělo být ke implicitní převod z `Double` k `Int32` protože `Double` má více typů než `Int32`. Explicitní převod operátor lze zadat, i když je převod potenciálně míru ztrát.  
+ Například by neměla existovat implicitní převod z `Double` k `Int32` protože `Double` má širší rozsah než `Int32`. Explicitní operátor převodu lze zadat i v případě, že převod je potenciálně míru ztrát.  
   
  **X DO NOT** vyvolat výjimky z implicitní přetypování.  
   
- Je velmi obtížné koncovým uživatelům pochopit, co se děje, protože mohou být vědět, Probíhá převod.  
+ Je velmi obtížné pochopit, co se děje, protože jejich se nemusíte být vědomi, že převod probíhat koncovým uživatelům.  
   
  **✓ DO** throw <xref:System.InvalidCastException?displayProperty=nameWithType> Pokud volání operátor přetypování výsledkem míru ztrát převod a kontrakt operátoru neumožňuje míru ztrát převody.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

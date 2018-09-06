@@ -5,11 +5,11 @@ helpviewer_keywords:
 - generics [C#], about generics
 ms.assetid: a1ad761e-42f7-41dd-a62f-452a2de26b9d
 ms.openlocfilehash: 17f4c67792732be7a678ec858b6627fa712194c5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43671707"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43861284"
 ---
 # <a name="introduction-to-generics-c-programming-guide"></a>Úvod do obecných typů (Průvodce programováním v C#)
 Obecné třídy a metody opětovné použití, bezpečnost typů a efektivitu tak, aby jejich obecné protějšky nelze kombinovat. Obecné typy se nejčastěji používají s kolekcí a metody, které pracují s nimi. Knihovna tříd rozhraní .NET Framework verze 2.0 obsahuje nový obor názvů <xref:System.Collections.Generic>, která obsahuje několik nových obecné kolekce tříd. Doporučuje se, že všechny aplikace, jejichž cílem rozhraní .NET Framework 2.0 a pozdější použití nové obecné kolekce tříd, namísto starší jejich obecné protějšky například <xref:System.Collections.ArrayList>. Další informace najdete v tématu [obecné typy v .NET](../../../standard/generics/index.md).  

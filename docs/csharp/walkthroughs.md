@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: 4b5c246bee21697590130225679a250b43e86b8d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a2efaae7cd861842f92ba3cdedc5ae77beec9f6f
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43564816"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855035"
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
@@ -50,16 +50,16 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  [Zápis dotazů v jazyce C# (LINQ)](../csharp/programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
  Ukazuje funkce jazyka C#, které se používá k zápisu [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] výrazech dotazů.  
   
- [Manipulace s daty (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386927.aspx)  
+ [Manipulace s daty (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)  
  Popisuje [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] scénář pro přidání, úpravy a odstraňování dat v databázi.  
   
- [Jednoduchý objektový Model a dotaz (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386940.aspx)  
+ [Jednoduchý objektový Model a dotaz (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-simple-object-model-and-query-csharp.md)  
  Ukazuje, jak vytvořit třídu entity a jednoduchý dotaz pro filtrování třída entity.  
   
- [Použití jen uložených procedur (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb399407.aspx)  
+ [Použití jen uložených procedur (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-using-only-stored-procedures-csharp.md)  
  Popisuje způsob použití technologie LINQ to SQL pro přístup k datům pomocí provádí pouze uložené procedury.  
   
- [Dotazování napříč relacemi (C#) (LINQ to SQL)](https://msdn.microsoft.com/library/bb386951.aspx)  
+ [Dotazování napříč relacemi (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-querying-across-relationships-csharp.md)  
  Ukazuje použití [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] přidružení představují relace cizího klíče v databázi.  
 
  [Zápis Vizualizéru v jazyce C#](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  

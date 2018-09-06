@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
 ms.openlocfilehash: 8f4e60eef443f772de3574d988ce48470f8c2017
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43672757"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856176"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (generování manifestu a nástroj pro úpravy)
 

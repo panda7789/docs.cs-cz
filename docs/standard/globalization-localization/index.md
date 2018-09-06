@@ -14,11 +14,11 @@ ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 653a39d1e217d0478ff7c9b01c6ac146fe6b5fac
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43786437"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43873744"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>Globalizace a lokalizace aplikací .NET
 Vývoj [globalizované aplikace](https://msdn.microsoft.com/goglobal/bb978433.aspx), včetně aplikace, která může být lokalizována do jednoho nebo více jazyků, zahrnuje tři kroky: globalizaci, přezkoumání lokalizovatelnosti a lokalizaci.  

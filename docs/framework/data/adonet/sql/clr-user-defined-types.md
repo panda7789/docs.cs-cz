@@ -3,11 +3,11 @@ title: Uživatelem definované typy CLR
 ms.date: 03/30/2017
 ms.assetid: 9f70e0b0-3a0d-4eb1-b914-07a5d0c167c2
 ms.openlocfilehash: 4ea415a348375c52e42ddf26ea09a74e7de5e355
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43388720"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865891"
 ---
 # <a name="clr-user-defined-types"></a>Uživatelem definované typy CLR
 Microsoft SQL Server poskytuje podporu pro uživatelem definované typy (UDT) implementuje pomocí rozhraní Microsoft .NET Framework common language runtime (CLR). Modul CLR je integrován do systému SQL Server a tento mechanismus umožňuje rozšířit systém typů databáze. Uživatelsky definované typy zajistí možnosti rozšíření uživatele systém typů dat serveru SQL Server a také možnost definovat komplexní typy structured.  

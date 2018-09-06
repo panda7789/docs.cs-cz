@@ -2,19 +2,19 @@
 title: 'Postupy: určení, zda je soubor sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: ea5186bb-5bff-4dcb-bde9-d6ba4e2edd00
-ms.openlocfilehash: 51dbf2c0f37b767206d206cd86513d24c7f3c6c5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ee2313677fba21624ccdb44db779633f6c4503bf
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43538633"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43861007"
 ---
 # <a name="how-to-determine-if-a-file-is-an-assembly-c"></a>Postupy: určení, zda je soubor sestavení (C#)
 Pouze v případě ho spravuje a obsahuje neplatnou položku sestavení ve svých metadatech, je soubor sestavení. Další informace o sestavení a metadata, naleznete v tématu [Manifest sestavení](../../../../../docs/framework/app-domains/assembly-manifest.md).  
   
 ### <a name="how-to-manually-determine-if-a-file-is-an-assembly"></a>Jak ručně určit, zda je soubor sestavení  
   
-1.  Spustit [Ildasm.exe (IL Disassembler)](https://msdn.microsoft.com/library/f7dy01k1).  
+1.  Spustit [Ildasm.exe (IL Disassembler)](../../../../framework/tools/ildasm-exe-il-disassembler.md).  
   
 2.  Načtěte soubor, který chcete testovat.  
   

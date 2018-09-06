@@ -8,11 +8,11 @@ helpviewer_keywords:
 - data [Windows Forms], displaying
 ms.assetid: 7fe52a98-75d6-448c-97a5-65ca2c568c1a
 ms.openlocfilehash: 7ada2124c0cfb1a14d757963f186da90c553470e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384828"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855502"
 ---
 # <a name="how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control-using-the-designer"></a>Postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView pomocí Návrháře
 Po vytvoření vazby Windows Forms <xref:System.Windows.Forms.DataGridView> zdroji dat závisí ovládacího prvku na zdroj dat, pořadí zobrazení automaticky generovaného sloupců. Pokud je toto pořadí není dáváte přednost, můžete změnit pořadí sloupců pomocí návrháře. Můžete také přidat nevázaných sloupců do ovládacího prvku a změňte jejich pořadí zobrazení. Informace o tom, jak programově změnit pořadí sloupců, naleznete v tématu [postupy: Změna pořadí sloupců v ovládacím prvku Windows Forms DataGridView](../../../../docs/framework/winforms/controls/how-to-change-the-order-of-columns-in-the-windows-forms-datagridview-control.md).  

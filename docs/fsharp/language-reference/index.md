@@ -2,22 +2,20 @@
 title: Referenční dokumentace jazyka F#
 description: 'Najdete F # jazykové funkce informace z tohoto odkazu na jazyk tokeny, koncepty, typy, výrazy a témata konstrukce podporované kompilátorem.'
 ms.date: 05/16/2016
-ms.openlocfilehash: e0f0b54ab95e634538fc8511a18aac9d8ee00f26
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: adce37ee393673b7611ad24f385c8b8106f6ce86
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37937082"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43873247"
 ---
 # <a name="f-language-reference"></a>Referenční dokumentace jazyka F#
 
 Tato část se odkaz na jazyk F #, programovací jazyk více paradigmaty cílit na rozhraní .NET. Jazyk F # podporuje funkční, objektově orientované a imperativní programovací modely.
 
-
 ## <a name="f-tokens"></a>Tokeny F #
+
 V následující tabulce jsou uvedeny odkazy na témata, které poskytují klíčová slova, symboly a literály použít jako tokeny v jazyce F #.
-
-
 
 |Název|Popis|
 |-----|-----------|
@@ -26,9 +24,8 @@ V následující tabulce jsou uvedeny odkazy na témata, které poskytují klí�
 |[Literály](literals.md)|Popisuje syntaxi pro hodnoty literálu v F # a jak určit informace o typu pro F # literály.|
 
 ## <a name="f-language-concepts"></a>Koncepty jazyka F #
+
 V následující tabulce jsou uvedeny referenční témata, které jsou k dispozici, které popisují – jazykové koncepce.
-
-
 
 |Název|Popis|
 |-----|-----------|
@@ -38,7 +35,7 @@ V následující tabulce jsou uvedeny referenční témata, které jsou k dispoz
 |[Automatická generalizace](generics/automatic-generalization.md)|Popisuje obecné konstrukce v jazyce F #.|
 |[Dědičnost](inheritance.md)|Popisuje dědičnosti, který slouží k modelování vztah "je a", nebo vytvoření podtypů v objektově orientované programování.|
 |[Členové](members/index.md)|Popisuje členy objektu typů F #.|
-|[Parametry a argumenty ](Parameters-and-Arguments.md)|Popisuje podporu jazyka pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti. Obsahuje informace o tom, jak předávání odkazem.|
+|[Parametry a argumenty](Parameters-and-Arguments.md)|Popisuje podporu jazyka pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti. Obsahuje informace o tom, jak předávání odkazem.|
 |[Přetížení operátoru](operator-overloading.md)|Popisuje, jak přetěžovat aritmetické operátory ve třídě nebo typ záznamu a na globální úrovni.|
 |[Přetypování a převody](casting-and-conversions.md)|Popisuje podporu pro převody typů v jazyce F #.|
 |[Řízení přístupu](access-control.md)|Popisuje řízení přístupu v jazyce F #. Řízení přístupu znamená, že deklarace klientů, kteří budou moct použít některé prvky programu, jako jsou typy, metody, funkce a tak dále.|
@@ -56,9 +53,8 @@ V následující tabulce jsou uvedeny referenční témata, které jsou k dispoz
 |[Podrobná syntaxe](verbose-syntax.md)|Popisuje syntaxi pro konstrukce jazyka F #, není-li povoleno nenáročném syntaxi. Podrobná syntaxe je indikován `#light "off"` direktiv v horní části souboru kódu.|
 
 ## <a name="f-types"></a>Typy F#
+
 V následující tabulce jsou uvedeny dostupné referenční témata, které popisují typy podporované v jazyce F #.
-
-
 
 |Název|Popis|
 |-----|-----------|
@@ -88,6 +84,7 @@ V následující tabulce jsou uvedeny dostupné referenční témata, které pop
 |[Zprostředkovatelé typů](../tutorials/type-providers/index.md)|Popisuje typ poskytuje a obsahuje odkazy na návody týkající se použití předdefinovaných poskytovatelů typů pro databáze aplikace access a webové služby.|
 
 ## <a name="f-expressions"></a>Výrazy jazyka F #
+
 V následující tabulce jsou uvedeny témata, která popisují výrazy jazyka F #.
 
 |Název|Popis|
@@ -105,6 +102,7 @@ V následující tabulce jsou uvedeny témata, která popisují výrazy jazyka F
 |[Výrazy dotazu](query-expressions.md)|Popisuje výrazy dotazu jazyka funkce, která implementuje LINQ jazyka F # a umožní vám psát dotazy proti zdroji dat nebo vyčíslitelné kolekce.|
 
 ## <a name="compiler-supported-constructs"></a>Konstrukce podporované kompilátorem
+
 V následující tabulce jsou uvedeny témata, která popisují speciální konstrukce podporované kompilátorem.
 
 |Téma|Popis|
@@ -113,5 +111,6 @@ V následující tabulce jsou uvedeny témata, která popisují speciální kons
 |[Direktivy kompilátoru](compiler-directives.md)|Popisuje směrnice procesoru a direktivy kompilátoru.|
 |[Identifikátory zdrojového řádku, souboru a cesty](source-line-file-path-identifiers.md)|Popisuje identifikátory `__LINE__`, `__SOURCE_DIRECTORY__` a `__SOURCE_FILE__`, které jsou předdefinované hodnoty, které vám umožní přístup ke zdrojové řádek číslo, adresář a název souboru ve vašem kódu.|
 
-## <a name="see-also"></a>Viz také
-[Visual F#](../index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Visual F#](../index.md)

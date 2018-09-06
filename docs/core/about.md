@@ -4,12 +4,12 @@ description: Další informace o .NET Core.
 author: richlander
 ms.author: mairaw
 ms.date: 08/01/2018
-ms.openlocfilehash: 7b37e5ebb53302a4f477717cf49b277bab89f187
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 5a8d0a45e0113afd1dbb5f243f3ed45f4bfc0760
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42912123"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43868585"
 ---
 # <a name="about-net-core"></a>Informace o .NET Core
 
@@ -31,7 +31,7 @@ Jazyky C#, Visual Basic a F # umožňuje psát aplikace a knihovny pro .NET Core
 
 .NET core zveřejňuje rozhraní API pro většinu scénářů, postupujte podle několik z nich:
 
-- Primitivní typy, jako například [řetězec] [ string] a [int][int].
+- Primitivní typy, jako například [bool] [ bool] a [int][int].
 - Kolekce, jako například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
 - Nástroj pro typy, jako například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>, a <xref:System.IO.FileStream?displayProperty=nameWithType>.
 - Datové typy, jako například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [DbSet][dbset].
@@ -39,7 +39,7 @@ Jazyky C#, Visual Basic a F # umožňuje psát aplikace a knihovny pro .NET Core
 
 .NET core zajišťuje kompatibilitu se rozhraní .NET Framework a rozhraní API Mono implementací [.NET Standard](../standard/net-standard.md) specifikace.
 
-[string]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/string
+[bool]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/bool
 [int]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int
 [pipelines]: https://blogs.msdn.microsoft.com/dotnet/2018/07/09/system-io-pipelines-high-performance-io-in-net/
 [dbset]: https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/

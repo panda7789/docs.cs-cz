@@ -8,11 +8,11 @@ helpviewer_keywords:
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
 ms.openlocfilehash: 2f641d04b53d2e80985defcd6bd9a4882004fd97
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43739630"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43868008"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Návod: Zápis dotazů ve Visual Basic
 Tento návod ukazuje, jak můžete funkce jazyka Visual Basic pro zápis [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] výrazech dotazů. Návod ukazuje, jak vytvořit dotazy v seznamu objektů Student, jak spouštět dotazy a způsobech jejich změny. Dotazy obsahovat několik funkcí, včetně anonymních typů, inicializátory objektů a odvození místního typu.  

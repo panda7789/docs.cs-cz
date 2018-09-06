@@ -18,15 +18,15 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 81e2c59a538bd436606c226855c002cecd501e33
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f4621a7d143d401d4cb620ac17c31e4ee5f13837
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33433663"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43870299"
 ---
 # <a name="iclrstrongnamestrongnamegetblob-method"></a>ICLRStrongName::StrongNameGetBlob – metoda
-Vyplní zadanou vyrovnávací paměť binární reprezentace spustitelný soubor na zadané adrese.  
+Vyplní zadané vyrovnávací paměti binární reprezentace spustitelný soubor na zadané adrese.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,19 +40,19 @@ HRESULT StrongNameGetBlob (
   
 #### <a name="parameters"></a>Parametry  
  `wszFilePath`  
- [v] Platná cesta ke spustitelnému souboru, který má být načten.  
+ [in] Platnou cestu ke spustitelnému souboru, který se má načíst.  
   
  `pbBlob`  
- [v] Vyrovnávací paměť, do kterého se načíst spustitelný soubor.  
+ [in] Vyrovnávací paměť, do kterého chcete načíst spustitelný soubor.  
   
  `pcbBlob`  
- [ve out] Požadovanou maximální velikost v bajtech `pbBlob`. Po návratu, skutečná velikost v bajtech z `pbBlob`.  
+ [out v] Požadovanou maximální velikost v bajtech, `pbBlob`. Po návratu, skutečná velikost v bajtech, z `pbBlob`.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- `S_OK` Pokud metoda dokončena úspěšně; jinak hodnota hodnotou HRESULT označující selhání (viz [běžné hodnoty HRESULT](http://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
+ `S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** MetaHost.h  
   

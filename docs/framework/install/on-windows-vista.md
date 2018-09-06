@@ -6,11 +6,11 @@ author: rlander
 ms.author: mairaw
 ms.date: 08/03/2017
 ms.openlocfilehash: c54679292fb8bce16ec572e5a2fee12c1b47292a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43673192"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43805491"
 ---
 # <a name="install-the-net-framework-on-windows-vista-and-windows-server-2008"></a>Instalace rozhraní .NET Framework ve Windows Vista a Windows Server 2008
 

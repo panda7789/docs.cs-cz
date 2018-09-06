@@ -8,23 +8,23 @@ helpviewer_keywords:
 ms.assetid: ee0038ef-b247-4747-a650-3c5c5cd58d8b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 493ac709123c67311ba570894fb324ae7148bfae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 51aa91b1acbae9f1a15ac12441090dd4c1c2dcb1
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33574631"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43869140"
 ---
 # <a name="attributes"></a>Atributy
-<xref:System.Attribute?displayProperty=nameWithType> je základní třídu používá k definování vlastní atributy.  
+<xref:System.Attribute?displayProperty=nameWithType> slouží k definování uživatelských atributů, které základní třídy.  
   
- Poznámky přidané k elementům programování například sestavení, typy, členů a parametry jsou atributy. Tyto jsou uložené v metadatech sestavení a je přístupný v době běhu pomocí rozhraní API reflexe. Například rozhraní definuje <xref:System.ObsoleteAttribute>, který je možné použít pro určitý typ nebo člen k označení, že typ nebo člen je zastaralá.  
+ Atributy jsou poznámky, které mohou být přidány pro programovací prvky, jako je například sestavení, typy, členy a parametry. Tyto jsou uložené v metadatech sestavení a je přístupný za běhu pomocí reflexe rozhraní API. Například rozhraní definuje <xref:System.ObsoleteAttribute>, který je možné použít u typu nebo člena k označení, že tento typ nebo člen je zastaralý.  
   
- Atributy mohou mít jednu nebo více vlastností, které zajišťují další data související s atribut. Například `ObsoleteAttribute` může nést další informace o verzi v která získali nepoužívá typ nebo člen a popis nové rozhraní API nahrazení zastaralá rozhraní API.  
+ Atributy mohou mít jednu nebo více vlastností, které přenášejí další data související s atributem. Například `ObsoleteAttribute` by mohl provést další informace o verzi v které typ nebo člen je teď zastaralé a popis nové rozhraní API nahrazení zastaralé rozhraní API.  
   
- Některé vlastnosti atributu je třeba zadat při použití atributu. Tyto jsou označovány jako požadované vlastnosti nebo povinnými argumenty, protože jsou reprezentovány jako konstruktor poziční parametry. Například <xref:System.Diagnostics.ConditionalAttribute.ConditionString%2A> vlastnost <xref:System.Diagnostics.ConditionalAttribute> je požadovaná vlastnost.  
+ Některé vlastnosti atributu je třeba zadat při použití atributu. Tyto jsou označovány jako požadované vlastnosti nebo povinné argumenty, protože jsou reprezentovány jako konstruktor poziční parametry. Například <xref:System.Diagnostics.ConditionalAttribute.ConditionString%2A> vlastnost <xref:System.Diagnostics.ConditionalAttribute> je povinná.  
   
- Vlastnosti, které není potřeba zadat, kdy je použit atribut se nazývají volitelných vlastností (nebo volitelné argumenty). Jsou zobrazeny v nastavit vlastnosti. Kompilátory poskytují speciální syntaxe a nastavte tyto vlastnosti, když se použije atribut. Například <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType> vlastnost představuje za volitelným argumentem.  
+ Vlastnosti, které není potřeba zadat, když se atribut používá, se nazývají volitelné vlastnosti (nebo nepovinné argumenty). Jsou zobrazeny v nastavitelné vlastnosti. Kompilátory poskytují speciální syntax k nastavení těchto vlastností, při použití atributu. Například <xref:System.AttributeUsageAttribute.Inherited%2A?displayProperty=nameWithType> představuje vlastnost nepovinný argument.  
   
  **✓ DO** název třídy vlastních atributů s příponou "Atribut."  
   
@@ -34,22 +34,23 @@ ms.locfileid: "33574631"
   
  **✓ DO** zadejte vlastnosti jen get pro povinnými argumenty.  
   
- **✓ DO** zadat parametry konstruktor k chybě při inicializaci vlastnosti odpovídající povinnými argumenty. Každý parametr by měl mít stejný název (i když se jiný velká a malá písmena) jako odpovídající vlastnost.  
+ **✓ DO** zadat parametry konstruktor k chybě při inicializaci vlastnosti odpovídající povinnými argumenty. Každý parametr by měl mít stejný název (i když s jinou velikostí písmen) jako odpovídající vlastnost.  
   
  **X AVOID** poskytuje konstruktor parametry k chybě při inicializaci vlastnosti odpovídající volitelné argumenty.  
   
- Jinými slovy nemají vlastnosti, které lze nastavit pomocí konstruktoru a setter. Toto platí umožňuje velmi explicitní argumenty, které jsou volitelné a které jsou požadovány a tomu není nutné dva způsoby, jak to samé.  
+ Jinými slovy nemají vlastnosti, které lze nastavit pomocí konstruktoru a setter. Toto pravidlo umožňuje velmi explicitní argumenty, které jsou volitelné a které jsou požadovány a díky tomu není nutné dva způsoby provedení stejného kroku.  
   
  **X AVOID** přetížení konstruktory vlastních atributů.  
   
- Má jenom jeden konstruktor jasně komunikuje uživateli, které argumenty jsou povinné a jsou volitelné.  
+ Máte jenom jeden konstruktor jasně komunikuje uživateli argumenty, které se vyžadují a které jsou volitelné.  
   
- **✓ DO** zapečetit vlastní atribut třídy, pokud je to možné. Díky tomu rychlejší hledání pro atribut.  
+ **✓ DO** zapečetit vlastní atribut třídy, pokud je to možné. Díky tomu vyhledávání pro atribut rychleji.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)

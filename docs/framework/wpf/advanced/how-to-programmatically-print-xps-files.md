@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XPS files [WPF], printing programmatically
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
 ms.openlocfilehash: 25c0b34bd33bee626df14c8dbedce0b82e895b58
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43532813"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43857336"
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS z programu
 Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A> metoda tisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory bez zahájení <xref:System.Windows.Controls.PrintDialog> nebo v zásadě, všechny [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vůbec.  

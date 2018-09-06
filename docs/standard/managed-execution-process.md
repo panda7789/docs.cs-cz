@@ -12,29 +12,29 @@ helpviewer_keywords:
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4901a81e318efe8371dc72cd9c1d511d55b0c65b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 33c498e8379d68287bfe4a2e781d6797fd6b4c10
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578973"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43870989"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
-<a name="introduction"></a> Proces spravovaného spouštění zahrnuje následující kroky, které jsou podrobněji vrátíme dál v tomto tématu:  
+<a name="introduction"></a> Proces spravovaného spuštění zahrnuje následující kroky, které jsou detailně popsány dále v tomto tématu:  
   
 1.  [Volba kompilátoru](#choosing_a_compiler).  
   
      Chcete-li získat výhody poskytované modulem CLR (Common Language Runtime), je nutné použít jeden nebo více kompilátorů jazyka, které se zaměřují na modul runtime.  
   
-2.  [Kompilace kódu do MSIL](#compiling_to_msil).  
+2.  [Kompilace kódu do jazyka MSIL](#compiling_to_msil).  
   
      Kompilace převádí zdrojový kód do jazyka MSIL (Microsoft Intermediate Language) a generuje požadovaná metadata.  
   
-3.  [Kompilování MSIL do nativního kódu](#compiling_msil_to_native_code).  
+3.  [Kompilace jazyka MSIL do nativního kódu](#compiling_msil_to_native_code).  
   
      V době spuštění přeloží kompilátor JIT (Just-In-Time) jazyk MSIL do nativního kódu. Během této kompilace je nutné, aby kód prošel procesem ověření, který prověří jazyk MSIL a metadata a zjistí, zda kód může být určen jako typově bezpečný.  
   
-4.  [Spuštění kódu](#running_code).  
+4.  [Spouštění kódu](#running_code).  
   
      Modul CLR (Common Language Runtime) poskytuje infrastrukturu, která umožňuje uskutečnit spuštění a provést služby, které lze použít během spuštění.  
   
@@ -42,13 +42,13 @@ ms.locfileid: "33578973"
 ## <a name="choosing-a-compiler"></a>Volba kompilátoru  
  Chcete-li využívat výhod poskytovaných modulem CLR (Common Language Runtime), je nutné použít jeden nebo více kompilátorů jazyka, které se zaměřují na modul runtime, například Visual Basic, C#, Visual C++, F# nebo jeden z mnoha kompilátorů třetích stran, například kompilátor Eiffel, Perl nebo COBOL.  
   
- Vzhledem k tomu, že se jedná o vícejazyčné prostředí pro spouštění, podporuje modul runtime širokou škálu datových typů a vlastností jazyka. Použitý kompilátor jazyka určuje, které vlastnosti modulu runtime jsou k dispozici. Pomocí těchto vlastností pak můžete navrhovat vlastní kód. Váš kompilátor, nikoliv modul runtime, stanovuje syntaxi kódu, kterou musí váš kód používat. Pokud příslušné součásti musí být zcela použitelné součásti, které jsou napsané v jiných jazycích, příslušné součásti exportované typy musí vystavit pouze jazykové funkce, které jsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md) (CLS). Můžete použít atribut <xref:System.CLSCompliantAttribute>, chcete-li zajistit, aby kód odpovídal specifikaci CLS. Další informace najdete v tématu [jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md).  
+ Vzhledem k tomu, že se jedná o vícejazyčné prostředí pro spouštění, podporuje modul runtime širokou škálu datových typů a vlastností jazyka. Použitý kompilátor jazyka určuje, které vlastnosti modulu runtime jsou k dispozici. Pomocí těchto vlastností pak můžete navrhovat vlastní kód. Váš kompilátor, nikoliv modul runtime, stanovuje syntaxi kódu, kterou musí váš kód používat. Pokud vaše komponenta musí být zcela použitelná komponentami napsanými v jiných jazycích, exportované typy komponenty musí vystavit pouze ty vlastnosti jazyka, které jsou součástí [jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md) (CLS). Můžete použít atribut <xref:System.CLSCompliantAttribute>, chcete-li zajistit, aby kód odpovídal specifikaci CLS. Další informace najdete v tématu [jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md).  
   
  [Zpět na začátek](#introduction)  
   
 <a name="compiling_to_msil"></a>   
 ## <a name="compiling-to-msil"></a>Kompilace do jazyka MSIL  
- Při kompilaci spravovaného kódu převádí kompilátor zdrojový kód do jazyka MSIL (Microsoft Intermediate Language), což je sada instrukcí nezávislá na procesoru, které mohou být efektivně převedeny do nativního kódu. Jazyk MSIL obsahuje pokyny pro načítání, ukládání, inicializaci a volání metod na objekty, stejně jako pokyny pro aritmetické a logické operace, tok řízení, přímý přístup do paměti (DMA), zpracování výjimek a jiné operace. Před spuštěním kódu MSIL musí být převedena na kód specifické pro procesor, obvykle pomocí [kompilátoru v běhu (JIT)](#compiling_msil_to_native_code). Vzhledem k tomu, že modul CLR (Common Language Runtime) poskytuje pro každou podporovanou počítačovou architekturu jeden nebo více kompilátorů JIT, může být stejná sada MSIL zkompilována pomocí kompilátoru JIT a běžet na jakékoliv podporované architektuře.  
+ Při kompilaci spravovaného kódu převádí kompilátor zdrojový kód do jazyka MSIL (Microsoft Intermediate Language), což je sada instrukcí nezávislá na procesoru, které mohou být efektivně převedeny do nativního kódu. Jazyk MSIL obsahuje pokyny pro načítání, ukládání, inicializaci a volání metod na objekty, stejně jako pokyny pro aritmetické a logické operace, tok řízení, přímý přístup do paměti (DMA), zpracování výjimek a jiné operace. Před spuštěním kódu MSIL musejí být převedeny do kódu specifického pro procesor, obvykle pomocí [kompilátor just-in-time (JIT)](#compiling_msil_to_native_code). Vzhledem k tomu, že modul CLR (Common Language Runtime) poskytuje pro každou podporovanou počítačovou architekturu jeden nebo více kompilátorů JIT, může být stejná sada MSIL zkompilována pomocí kompilátoru JIT a běžet na jakékoliv podporované architektuře.  
   
  Při vytváření jazyka MSIL vytváří kompilátor také metadata. Metadata popisují typy ve vašem kódu, včetně definice každého typu, podpisů členů každého typu, členů, na které odkazuje kód, a dalších dat, která modul runtime používá v době provádění. Jazyk MSIL a metadata jsou obsaženy v přenosném spustitelném souboru (PE), který je založen na publikovaných formátech Microsoft PE a COFF (Common Object File Format) a tyto formáty, jež se v minulosti používaly pro spustitelný obsah, rozšiřuje. Tento formát souboru, který přizpůsobuje jazyk MSIL nebo nativní kód a případně i metadata, umožňuje operačnímu systému rozpoznat bitové kopie modulu CLR (Common Language Runtime). Přítomnost metadat v souboru spolu s jazykem MSIL umožňuje kódu popsat sám sebe, což znamená, že nejsou vyžadovány knihovny typů nebo jazyk IDL (Interface Definition Language). Modul runtime vyhledává a extrahuje metadata ze souboru podle potřeby v průběhu provádění.  
   
@@ -68,7 +68,7 @@ ms.locfileid: "33578973"
  Kompilace JIT bere v úvahu možnost, že některý z kódů nemusí být během provádění nikdy volán. Namísto používání času a paměti k převedení všech instrukcí jazyka MSIL v přenosném spustitelném souboru do nativního kódu je během provádění převeden jazyk MSIL podle potřeby a výsledný nativní kód uložen v paměti tak, aby byl přístupný pro pozdější volání v rámci tohoto procesu. Zavaděč vytvoří a připojí zástupnou proceduru ke každé metodě v typu, pokud je typ načten a inicializován. Pokud je metoda volána poprvé, zástupná procedura předá řízení kompilátoru JIT, který převede jazyk MSIL pro danou metodu do nativního kódu a upraví zástupnou proceduru tak, aby odkazovala přímo na generovaný nativní kód. Proto následné volání metody zkompilované JIT přechází přímo na nativní kód.  
   
 ### <a name="install-time-code-generation-using-ngenexe"></a>Generování kódu pomocí nástroje NGen.exe v době instalace  
- Vzhledem k tomu, že kompilátor JIT převede instrukce jazyka MSIL sestavení do nativního kódu ve chvíli, kdy jsou jednotlivé metody definované v sestavení volány, má tato skutečnost nepříznivý vliv na výkon v době spuštění. Ve většině případů je snížení výkonu přijatelné. Důležitější je, že kód generovaný kompilátorem JIT je vázán na proces, který kompilaci spustil. Nemůže být sdílen napříč více procesy. Aby bylo možné sdílet generovaný kód mezi několika vyvoláními aplikace nebo mezi několika procesy, které sdílejí stejnou množinu sestavení, podporuje modul CLR (Common Language Runtime) režim předčasné kompilace. Používá tento režim kompilace napřed z času [Ngen.exe (Generátor nativních obrázků)](../../docs/framework/tools/ngen-exe-native-image-generator.md) převést MSIL sestavení do nativního kódu podobně jako JIT kompilátor. Činnost nástroje Ngen.exe se však od kompilátoru JIT liší třemi způsoby:  
+ Vzhledem k tomu, že kompilátor JIT převede instrukce jazyka MSIL sestavení do nativního kódu ve chvíli, kdy jsou jednotlivé metody definované v sestavení volány, má tato skutečnost nepříznivý vliv na výkon v době spuštění. Ve většině případů je snížení výkonu přijatelné. Důležitější je, že kód generovaný kompilátorem JIT je vázán na proces, který kompilaci spustil. Nemůže být sdílen napříč více procesy. Aby bylo možné sdílet generovaný kód mezi několika vyvoláními aplikace nebo mezi několika procesy, které sdílejí stejnou množinu sestavení, podporuje modul CLR (Common Language Runtime) režim předčasné kompilace. Tento režim kompilace ahead of time používá [Ngen.exe (Generátor nativních obrázků)](../../docs/framework/tools/ngen-exe-native-image-generator.md) pro převod jazyka MSIL sestavení do nativního kódu podobně jako kompilátor JIT. Činnost nástroje Ngen.exe se však od kompilátoru JIT liší třemi způsoby:  
   
 -   Provádí převod z jazyka MSIL do nativního kódu před spuštěním aplikace namísto toho, aby převod uskutečnil, pokud je aplikace spuštěná.  
   
@@ -107,13 +107,14 @@ ms.locfileid: "33578973"
   
  [Zpět na začátek](#introduction)  
   
-## <a name="see-also"></a>Viz také  
- [Přehled](../../docs/framework/get-started/overview.md)  
- [Jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md)  
- [Metadata a komponenty popisující samy sebe](../../docs/standard/metadata-and-self-describing-components.md)  
- [Ilasm.exe (IL Assembler)](../../docs/framework/tools/ilasm-exe-il-assembler.md)  
- [Zabezpečení](../../docs/standard/security/index.md)  
- [Spolupráce s nespravovaným kódem](../../docs/framework/interop/index.md)  
- [Nasazení](../../docs/framework/deployment/net-framework-applications.md)  
- [Sestavení v modulu CLR (Common Language Runtime)](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- [Aplikační domény](../../docs/framework/app-domains/application-domains.md)
+## <a name="see-also"></a>Viz také:
+
+- [Přehled](../../docs/framework/get-started/overview.md)  
+- [Jazyková nezávislost a jazykově nezávislé komponenty](../../docs/standard/language-independence-and-language-independent-components.md)  
+- [Metadata a komponenty popisující samy sebe](../../docs/standard/metadata-and-self-describing-components.md)  
+- [Ilasm.exe (IL Assembler)](../../docs/framework/tools/ilasm-exe-il-assembler.md)  
+- [Zabezpečení](../../docs/standard/security/index.md)  
+- [Spolupráce s nespravovaným kódem](../../docs/framework/interop/index.md)  
+- [Nasazení](../../docs/framework/deployment/net-framework-applications.md)  
+- [Sestavení v modulu CLR (Common Language Runtime)](../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+- [Aplikační domény](../../docs/framework/app-domains/application-domains.md)

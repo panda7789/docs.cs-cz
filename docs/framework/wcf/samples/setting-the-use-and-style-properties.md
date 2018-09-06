@@ -3,11 +3,11 @@ title: Nastavení vlastností Use a Style
 ms.date: 03/30/2017
 ms.assetid: c09a0600-116f-41cf-900a-1b7e4ea4e300
 ms.openlocfilehash: d5e6409e3921d40b14b940786f6344aea657b84b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734691"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865537"
 ---
 # <a name="setting-the-use-and-style-properties"></a>Nastavení vlastností Use a Style
 Tento příklad znázorňuje způsob použití vlastností použití a stylu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> a <xref:System.ServiceModel.DataContractFormatAttribute>. Tyto vlastnosti vliv na způsob formátování zprávy. Ve výchozím nastavení, text zprávy je formátováno s stylu nastavena na <xref:System.ServiceModel.OperationFormatStyle.Document>. Tato nastavení se dá nastavit na úrovni kontraktu služby nebo úroveň operace kontraktu.  

@@ -6,11 +6,11 @@ ms.assetid: fea695be-617c-4977-9567-140e820436fc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e369f570adf51355d02c73bde5d4b1a462e59870
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43422790"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43804895"
 ---
 # <a name="xslt-security-considerations"></a>Aspekty zabezpečení XSLT
 Jazyka XSLT obsahuje bohatou sadu funkcí, které vám poskytnou spoustu výkon a flexibilitu. Obsahuje řadu funkcí, které sice užitečná, může také zneužít vnějšího zdroje. Pokud chcete bezpečně používat XSLT, musí porozumět typům problémy se zabezpečením, které vznikají při použití XSLT a základní strategie, které můžete použít pokud chcete toto riziko omezit.  

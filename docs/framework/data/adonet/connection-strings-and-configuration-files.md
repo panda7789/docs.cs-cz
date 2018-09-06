@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
 ms.openlocfilehash: 8030c0323a2f742de19a4761e24c66294c6dd5d4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43800927"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865823"
 ---
 # <a name="connection-strings-and-configuration-files"></a>Připojovací řetězce a konfigurační soubory
 Vkládání připojovacích řetězců v kódu vaší aplikace může vést k ohrožení zabezpečení a problémy s údržbou. Nešifrované připojovací řetězce, které jsou kompilovány do zdrojového kódu aplikace lze zobrazit pomocí [Ildasm.exe (IL Disassembler)](../../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nástroj. Kromě toho pokud připojovací řetězec neustále mění, musí aplikace zopakovat. Z těchto důvodů doporučujeme ukládání připojovacích řetězců do konfiguračního souboru aplikace.  

@@ -3,11 +3,11 @@ title: Použití XML v datové sadě
 ms.date: 03/30/2017
 ms.assetid: 35138159-e199-49ec-baf7-1ec6777e171e
 ms.openlocfilehash: cbdc6135a819e2141426f432d163cd49a7b78ac4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43489874"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856436"
 ---
 # <a name="using-xml-in-a-dataset"></a>Použití XML v datové sadě
 Pomocí ADO.NET můžete přejít k vyplnění <xref:System.Data.DataSet> z datový proud XML nebo dokumentu. Můžete použít na datový proud XML nebo dokument, předejte <xref:System.Data.DataSet> data, informace o schématu nebo obojí. Dodané z datový proud XML nebo dokumentu je možné kombinovat s existující data nebo informace o schématu již v <xref:System.Data.DataSet>.  

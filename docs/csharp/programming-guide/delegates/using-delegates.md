@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], how to use
 ms.assetid: 99a2fc27-a32e-4a34-921c-e65497520eec
-ms.openlocfilehash: 5c6a18601916df6e2abf093e8d4b4d77e085bfb1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.openlocfilehash: 07bc0e38455335e068719137c349daf65f8fab6b
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43539665"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43860282"
 ---
 # <a name="using-delegates-c-programming-guide"></a>Použití delegátů (Průvodce programováním v C#)
 A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, který zapouzdřuje bezpečně metodu, podobně jako ukazatel na funkci v jazyce C a C++. Na rozdíl od ukazatelů na funkce jazyka C Delegáti jsou objektově orientované, zadejte bezpečným a zabezpečeným. Podle názvu delegáta je definován typ delegátu. Následující příklad deklaruje delegáta s názvem `Del` , který může zapouzdřit metodu, která přijímá [řetězec](../../../csharp/language-reference/keywords/string.md) jako argument a vrátí [void](../../../csharp/language-reference/keywords/void.md):  
@@ -66,9 +66,9 @@ A [delegovat](../../../csharp/language-reference/keywords/delegate.md) je typ, k
   
 ## <a name="see-also"></a>Viz také
 
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Delegáti](../../../csharp/programming-guide/delegates/index.md)  
-- [Použití odchylek v delegátech](https://msdn.microsoft.com/library/e6acad03-93e0-4efb-a158-8696d5eb4ecf)  
-- [Odchylky v delegátech](https://msdn.microsoft.com/library/e3b98197-6c5b-4e55-9c6e-9739b60645ca)  
-- [Použití odchylek pro obecné delegáty Func a Action](https://msdn.microsoft.com/library/e69c4f39-09aa-4c6d-a752-08cc767d8290)  
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)
+- [Delegáti](../../../csharp/programming-guide/delegates/index.md)
+- [Použití odchylek v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md)
+- [Odchylky v delegátech](../../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
+- [Použití odchylek pro obecné delegáty Func a Action](../../../csharp/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
 - [Události](../../../csharp/programming-guide/events/index.md)

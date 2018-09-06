@@ -3,11 +3,11 @@ title: Použití manipulace a nečinnosti v aplikaci XNA
 ms.date: 03/30/2017
 ms.assetid: b7c18905-850c-4da4-8977-a074406a4263
 ms.openlocfilehash: 70b8d0c5c098089b6f16ef817ff86698f68cf7c3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734600"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871041"
 ---
 # <a name="using-manipulations-and-inertia-in-an-xna-application"></a>Použití manipulace a nečinnosti v aplikaci XNA
 Tento článek popisuje, jak řídit přesun kameny můžete manipulace a nečinnosti v aplikaci Microsoft XNA zpracování. Předtím, než se pustíte do čtení tohoto článku, měli byste se seznámit s [přehled manipulace a nečinnosti](../../../docs/framework/common-client-technologies/manipulations-and-inertia-overview.md) tématu a znáte základní koncepty programování XNA.  

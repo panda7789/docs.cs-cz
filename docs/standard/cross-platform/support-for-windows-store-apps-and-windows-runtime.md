@@ -12,11 +12,11 @@ ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 5f587d45f046a3f7b8556052df63220f9f1cac42
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43672718"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856215"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Podporuje různé scénáře vývoje softwaru pomocí [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Tyto scénáře spadají do tří kategorií:  

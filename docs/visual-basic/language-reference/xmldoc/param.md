@@ -6,11 +6,11 @@ helpviewer_keywords:
 - <param> XML tag
 ms.assetid: 4e32e86f-f6f3-4301-b7fc-2f321fb54368
 ms.openlocfilehash: 4cb3de06d574f8b9abb3e3e11641a6ada750b56a
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42935755"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856488"
 ---
 # <a name="ltparamgt-visual-basic"></a>&lt;Param&gt; (Visual Basic)
 Definuje parametr název a popis.  

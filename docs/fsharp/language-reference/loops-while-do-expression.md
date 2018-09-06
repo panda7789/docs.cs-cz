@@ -1,18 +1,17 @@
 ---
 title: 'Smyčky: Výraz while...do (F#)'
-description: V tématu jak při... provést výraz se používá k provádění iterativní provádění (opakování ve smyčce) zadaný testovací podmínku hodnotu true.
+description: Naleznete v tématu jak při... proveďte použit výraz provádět iterativní spuštění (opakování), zatímco je zadaný testovací podmínka pravdivá.
 ms.date: 05/16/2016
-ms.openlocfilehash: e3198246e44bbb11b226f04da6795f3da22626e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5cf4461669221f91cb50e238c25494f03a10bbc2
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33562229"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43868591"
 ---
 # <a name="loops-whiledo-expression"></a>Smyčky: Výraz while...do
 
-`while...do` Výraz se používá k provádění iterativní provádění (opakování ve smyčce) zadaný testovací podmínku hodnotu true.
-
+`while...do` Použit výraz provádět iterativní spuštění (opakování), zatímco je zadaný testovací podmínka pravdivá.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,26 +21,25 @@ while test-expression do
 ```
 
 ## <a name="remarks"></a>Poznámky
-*Testovací výraz* vyhodnotí; Pokud je `true`, *textu výraz* se spustí a testovací výraz vyhodnocen znovu. *Textu výraz* musí mít typ `unit`. Pokud je test výraz `false`, skončení iterací.
 
-Následující příklad ukazuje použití `while...do` výraz.
+*Výrazu testu* je vyhodnocen; Pokud je `true`, *výraz těla* provádí a testovací výraz je vyhodnocen znovu. *Výraz těla* musí mít typ `unit`. Pokud je test výraz `false`, konce iterace.
+
+Následující příklad ukazuje použití `while...do` výrazu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5301.fs)]
 
-Výstup jako předchozí kód je proud náhodná čísla 1 až 20, poslední z nich je 10.
+Výstup předchozího kódu je datový proud náhodných čísel od 1 do 20, poslední z nich je 10.
 
 ```
 13 19 8 18 16 2 10
 Found a 10!
 ```
 
->[!NOTE] 
-Můžete použít `while...do` v pořadí výrazy a další výpočetní výrazy v takovém případě přizpůsobená verze `while...do` použit výraz. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výpočetní výrazy](computation-expressions.md).
+>[!NOTE]
+Můžete použít `while...do` ve výrazech pořadí a jiných výrazech výpočtu se v takovém případě přizpůsobenou verzi `while...do` výraz je použit. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazech výpočtu](computation-expressions.md).
 
+## <a name="see-also"></a>Viz také:
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
-
-[Smyčky: `for...in` výraz](loops-for-in-expression.md)
-
-[Smyčky: `for...to` výraz](loops-for-to-expression.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Smyčky: `for...in` výraz](loops-for-in-expression.md)
+- [Smyčky: `for...to` výraz](loops-for-to-expression.md)

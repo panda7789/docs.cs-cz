@@ -13,11 +13,11 @@ helpviewer_keywords:
 - warn compiler option [C#]
 ms.assetid: 5f80ff59-4991-4382-9f9a-77da18446e71
 ms.openlocfilehash: 14656fa25ea1d01339bd63efb999e938e1243db8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43746412"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865605"
 ---
 # <a name="-warn-c-compiler-options"></a>-warn (možnosti kompilátoru C#)
 **-Warn** určuje úroveň upozornění kompilátoru k zobrazení.  

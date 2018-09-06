@@ -8,11 +8,11 @@ helpviewer_keywords:
 - addition assignment operator (+=) [C#]
 ms.assetid: 9cdf97e6-331d-492b-85e1-3ec3171484e9
 ms.openlocfilehash: bd0997ec5b7d79a41e01f9c2b17533293e412c1e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43538920"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43857504"
 ---
 # <a name="-operator-c-reference"></a>+= – operátor (Referenční dokumentace jazyka C#)
 Operátor přiřazení sčítání.  

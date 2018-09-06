@@ -2,12 +2,12 @@
 title: 'Kód F # pokyny k formátování'
 description: 'Přečtěte si pokyny pro formátování kódu jazyka F #.'
 ms.date: 05/14/2018
-ms.openlocfilehash: 9c6e80509e9a5654e6514674d38c02e2a6b44e37
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: HT
+ms.openlocfilehash: 0d7d2d1771710db55bf990f3a06079b2aec48fd7
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734639"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43858002"
 ---
 # <a name="f-code-formatting-guidelines"></a>Kód F # pokyny k formátování
 
@@ -265,24 +265,24 @@ Odsadit `{` v typu definice 4 mezery a spustit v seznamu polí na stejný řáde
 ```fsharp
 // OK
 type PostalAddress =
-    { Address : string
-      City : string
-      Zip : string }
+    { Address: string
+      City: string
+      Zip: string }
     member x.ZipAndCity = sprintf "%s %s" x.Zip x.City
 
 // Not OK
 type PostalAddress =
-  { Address : string
-    City : string
-    Zip : string }
+  { Address: string
+    City: string
+    Zip: string }
     member x.ZipAndCity = sprintf "%s %s" x.Zip x.City
     
 // Unusual in F#
 type PostalAddress =
     { 
-        Address : string
-        City : string
-        Zip : string
+        Address: string
+        City: string
+        Zip: string
     }
 ```
 
@@ -291,9 +291,9 @@ Uvedení na stejném řádku a pravou token na nový řádek levou token je tak�
 ```fsharp
 //  OK, but verbose syntax required
 type PostalAddress = { 
-    Address : string
-    City : string
-    Zip : string
+    Address: string
+    City: string
+    Zip: string
 } with
     member x.ZipAndCity = sprintf "%s %s" x.Zip x.City
 ```

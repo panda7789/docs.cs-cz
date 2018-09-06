@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 77dcdc95e0ca9d570c896fb036e0577f0475e164
-ms.sourcegitcommit: c66ba2df2d2ecfb214f85ee0687d298e4941c1a8
+ms.openlocfilehash: b66881a8a42c0c34b5c2119f7404fe7787c8f3f2
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42752145"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43875765"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Pozastavení a přerušení vlákna
 
@@ -49,10 +49,11 @@ Nejběžnější způsoby pro synchronizaci činností vlákna jsou bloku a verz
   
 -   <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> vlákna mimo všechny čekání, je možné a způsobí, že se probudí <xref:System.Threading.ThreadAbortException> vyvolání ve vlákně. Podrobnosti najdete v tématu [ničení vlákna](../../../docs/standard/threading/destroying-threads.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.Thread>  
- <xref:System.Threading.ThreadInterruptedException>  
- <xref:System.Threading.ThreadAbortException>  
- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
- [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)  
- [Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Threading.Thread>  
+- <xref:System.Threading.ThreadInterruptedException>  
+- <xref:System.Threading.ThreadAbortException>  
+- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
+- [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)  
+- [Přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md)

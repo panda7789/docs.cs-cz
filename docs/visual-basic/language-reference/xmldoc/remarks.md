@@ -6,11 +6,11 @@ helpviewer_keywords:
 - remarks XML tag
 ms.assetid: c6241773-a7ed-41c9-9a8b-9722a0c606a9
 ms.openlocfilehash: 97fca8758d9c21ac0b8f15bf9d5831750fbabe77
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43746964"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43863030"
 ---
 # <a name="ltremarksgt-visual-basic"></a>&lt;Poznámky&gt; (Visual Basic)
 Určuje části poznámky pro tohoto člena.  

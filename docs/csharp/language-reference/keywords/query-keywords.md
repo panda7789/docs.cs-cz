@@ -1,41 +1,43 @@
 ---
-title: Klíčová slova dotazu (Referenční dokumentace jazyka C#)
+title: Klíčová slova dotazu (referenční dokumentace jazyka C#)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - query keywords [C#]
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
-ms.openlocfilehash: 3889e07813c5626372f27bdc33e37d803684b441
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9ec163e1de018bd87348a5b39a1f34654d7d6d84
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33275698"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43859065"
 ---
-# <a name="query-keywords-c-reference"></a>Klíčová slova dotazu (Referenční dokumentace jazyka C#)
-Tato část obsahuje kontextová klíčová slova použít ve výrazech dotazů.  
-  
-## <a name="in-this-section"></a>V tomto oddílu  
-  
-|Klauzule|Popis|  
-|------------|-----------------|  
-|[Z](../../../csharp/language-reference/keywords/from-clause.md)|Určuje zdroj dat a proměnnou rozsahu (podobně jako na proměnnou iterace).|  
-|[kde](../../../csharp/language-reference/keywords/where-clause.md)|Filtry zdroje prvky založené na jeden nebo více logických výrazů, které jsou odděleny logické a a nebo operátory ( `&&` nebo <code>&#124;&#124;</code> ).|  
-|[Vyberte](../../../csharp/language-reference/keywords/select-clause.md)|Určuje typ a tvar, který elementů v pořadí vrácených bude mít při spuštění dotazu.|  
-|[Skupiny](../../../csharp/language-reference/keywords/group-clause.md)|Výsledky dotazu skupin podle zadanou hodnotou klíče.|  
-|[into](../../../csharp/language-reference/keywords/into.md)|Poskytuje identifikátor, který může sloužit jako odkaz na výsledky spojení, skupiny nebo klauzuli select.|  
-|[Řadit podle](../../../csharp/language-reference/keywords/orderby-clause.md)|Výsledky dotazu řazení ve vzestupném nebo sestupném pořadí podle výchozí porovnávače pro typ elementu.|  
-|[Připojení k](../../../csharp/language-reference/keywords/join-clause.md)|Spojí dva zdroje dat podle porovnání rovnosti mezi dvěma zadaným odpovídající kritériím.|  
-|[umožňují](../../../csharp/language-reference/keywords/let-clause.md)|Představuje proměnnou rozsahu pro uložení výsledků dílčích výrazů ve výrazu dotazu.|  
-|[in](../../../csharp/language-reference/keywords/in.md)|Kontextové klíčové slovo v [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzule.|  
-|[on](../../../csharp/language-reference/keywords/on.md)|Kontextové klíčové slovo v [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzule.|  
-|[equals](../../../csharp/language-reference/keywords/equals.md)|Kontextové klíčové slovo v [spojení](../../../csharp/language-reference/keywords/join-clause.md) klauzule.|  
-|[by](../../../csharp/language-reference/keywords/by.md)|Kontextové klíčové slovo v [skupiny](../../../csharp/language-reference/keywords/group-clause.md) klauzule.|  
-|[ascending](../../../csharp/language-reference/keywords/ascending.md)|Kontextové klíčové slovo v [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) klauzule.|  
-|[descending](../../../csharp/language-reference/keywords/descending.md)|Kontextové klíčové slovo v [orderby](../../../csharp/language-reference/keywords/orderby-clause.md) klauzule.|  
-  
-## <a name="see-also"></a>Viz také  
- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
- [LINQ (Language-Integrated Query)](../../programming-guide/concepts/linq/index.md)  
- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)  
- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)
+# <a name="query-keywords-c-reference"></a>Klíčová slova dotazu (referenční dokumentace jazyka C#)
+
+Tato část obsahuje kontextová klíčová slova používat ve výrazech dotazů.
+
+## <a name="in-this-section"></a>V tomto oddílu
+
+|Klauzule|Popis|
+|------------|-----------------|
+|[z](from-clause.md)|Určuje zdroj dat a proměnnou rozsahu (podobně jako na proměnnou iterace).|
+|[kde](where-clause.md)|Filtry zdrojové prvky založené na jeden nebo více logických výrazů, které jsou odděleny a logický operátor AND nebo operátorů ( `&&` nebo <code>&#124;&#124;</code> ).|
+|[Vyberte](select-clause.md)|Určuje typ a tvar, který prvky ve vrácené posloupnosti budou mít při spuštění dotazu.|
+|[Skupiny](group-clause.md)|Výsledky dotazu skupin podle zadanou hodnotou klíče.|
+|[into](into.md)|Poskytuje identifikátor, který může sloužit jako odkaz na výsledky spojení, skupiny nebo klauzule select.|
+|[Řadit podle](orderby-clause.md)|Výsledky dotazu řazení ve vzestupném nebo sestupném pořadí podle výchozí porovnávací metody pro typ elementu.|
+|[Připojte se k](join-clause.md)|Spojí dva zdroje dat založené na porovnání rovnosti mezi dvěma zadaným odpovídající kritériím.|
+|[let](let-clause.md)|Představuje proměnnou rozsahu pro ukládání výsledků dílčí výraz ve výrazu dotazu.|
+|[in](in.md)|Kontextové klíčové slovo v [spojení](join-clause.md) klauzuli.|
+|[on](on.md)|Kontextové klíčové slovo v [spojení](join-clause.md) klauzuli.|
+|[equals](equals.md)|Kontextové klíčové slovo v [spojení](join-clause.md) klauzuli.|
+|[by](by.md)|Kontextové klíčové slovo v [skupiny](group-clause.md) klauzuli.|
+|[ascending](ascending.md)|Kontextové klíčové slovo v [orderby](orderby-clause.md) klauzuli.|
+|[descending](descending.md)|Kontextové klíčové slovo v [orderby](orderby-clause.md) klauzuli.|
+
+## <a name="see-also"></a>Viz také:
+
+- [Klíčová slova jazyka C#](index.md)
+- [LINQ (Language-Integrated Query)](../../programming-guide/concepts/linq/index.md)
+- [LINQ – výrazy dotazů](../../../csharp/programming-guide/linq-query-expressions/index.md)
+- [Začínáme s dotazy LINQ v jazyce C#](../../../csharp/programming-guide/concepts/linq/getting-started-with-linq.md)

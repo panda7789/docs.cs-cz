@@ -1,5 +1,5 @@
 ---
-title: Pokyny pro návrh pro výjimky
+title: Pokyny k návrhu pro výjimky
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: bc177b2f-7528-4ae4-83db-aacfb04b86d0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99b27615ef16aa69e18d82cb97f4751dc92d2ec4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 51cc5296a7b3f6d75b5e56d6bbc74330fa147848
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570589"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43876632"
 ---
-# <a name="design-guidelines-for-exceptions"></a>Pokyny pro návrh pro výjimky
-Zpracovávání výjimek v jazyce má mnoho výhod oproti zasílání zpráv o chybách na základě vrátit hodnotu. Dobrý framework návrhu pomáhá výhody výjimek vývojáře aplikace. Tato část popisuje výhody výjimky a uvede pokyny pro efektivním použitím.  
+# <a name="design-guidelines-for-exceptions"></a>Pokyny k návrhu pro výjimky
+Zpracování výjimek má mnoho výhod oproti hlášení chyb na základě vrátit hodnotu. Návrh dobrý framework pomáhá vývojář aplikace začít využívat výhod výjimky. Tato část vás seznámí s výhodami výjimky a zobrazí pokyny pro jejich efektivní využití.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vyvolání výjimek](../../../docs/standard/design-guidelines/exception-throwing.md)  
@@ -26,7 +26,8 @@ Zpracovávání výjimek v jazyce má mnoho výhod oproti zasílání zpráv o c
  [Výjimky a výkon](../../../docs/standard/design-guidelines/exceptions-and-performance.md)  
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

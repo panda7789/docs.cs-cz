@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: bloku dat serializovaných datech.'
+title: 'Postupy: bloku dat serializovaná data'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,14 +13,14 @@ helpviewer_keywords:
 - serialization, examples
 - binary serialization, examples
 ms.assetid: 22f1b818-7e0d-428a-8680-f17d6ebdd185
-ms.openlocfilehash: ce3d60e6d74594f93be44ae46d36b8ea2212d4bf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4b83e841db1afc898c5c3c99ed4186fd264ed2ef
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582698"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43866498"
 ---
-# <a name="how-to-chunk-serialized-data"></a>Postupy: bloku dat serializovaných datech.
+# <a name="how-to-chunk-serialized-data"></a>Postupy: bloku dat serializovaná data
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
@@ -40,7 +40,7 @@ Jsou dva problémy, k nimž došlo při odesílání velkých sad dat do webové
   
 ### <a name="to-implement-client-side-processing"></a>K implementaci zpracování na straně klienta  
   
-1.  Změnit metodu webové na proxy serveru klienta má být vrácen typ, který implementuje <xref:System.Xml.Serialization.IXmlSerializable>. Můžete použít <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> k tomu automaticky, ale to není zobrazeny zde.  
+1.  Změnit metodu webové na proxy serveru klienta má být vrácen typ, který implementuje <xref:System.Xml.Serialization.IXmlSerializable>. Můžete použít <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension> k provést automaticky, ale není to zde uvedeny.  
   
 2.  Implementace <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> metodu za účelem čtení blokového data datového proudu a zápis na disk bajtů. Tato implementace také vyvolává průběh události, které mohou být využívána grafického ovládacího prvku, jako je například indikátor průběhu.  
   
@@ -54,9 +54,10 @@ Následující příklad kódu ukazuje metodu webové na straně klienta, který
 [!code-csharp[HowToChunkSerializedData#3](../../../samples/snippets/csharp/VS_Snippets_Remoting/HowToChunkSerializedData/CS/SerializationChunk.cs#3)]
 [!code-vb[HowToChunkSerializedData#3](../../../samples/snippets/visualbasic/VS_Snippets_Remoting/HowToChunkSerializedData/VB/SerializationChunk.vb#3)]  
   
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
+## <a name="compiling-the-code"></a>Kompilování kódu  
   
 -   Kód používá následující obory názvů: <xref:System>, <xref:System.Runtime.Serialization>, <xref:System.Web.Services>, <xref:System.Web.Services.Protocols>, <xref:System.Xml>, <xref:System.Xml.Serialization>, a <xref:System.Xml.Schema>.  
   
-## <a name="see-also"></a>Viz také  
- [Vlastní serializace](custom-serialization.md)
+## <a name="see-also"></a>Viz také:
+
+- [Vlastní serializace](custom-serialization.md)

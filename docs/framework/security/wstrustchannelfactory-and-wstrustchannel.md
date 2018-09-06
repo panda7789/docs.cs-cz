@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 96cec467-e963-4132-b18b-7d0b3a2e979f
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 78bf58b6d1b9059d2513b9f81eb382487bb4004b
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 7dfe18a55d8c7f56db1906cb2aa982ab043841c7
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/27/2018
-ms.locfileid: "42998463"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43875584"
 ---
 # <a name="wstrustchannelfactory-and-wstrustchannel"></a>WSTrustChannelFactory a WSTrustChannel
 Pokud jste už obeznámení s Windows Communication Foundation (WCF), víte, že klient WCF je již federace vědět. Pomocí konfigurace klienta WCF s <xref:System.ServiceModel.WSFederationHttpBinding> nebo podobné vlastní vazby, můžete povolit federované ověřování do služby.  
@@ -24,7 +24,7 @@ Pokud jste už obeznámení s Windows Communication Foundation (WCF), víte, že
   
 -   Povolení technologie WIF na klienta WCF na vkládání elementů ActAs nebo OnBehalfOf do RVNÍ na službu STS  
   
--   Pomocí technologie WIF samostatně, aby získat token od služby STS a pak povolte klienta WCF na ověření pomocí tohoto tokenu. Další informace najdete v tématu [ClaimsAwareWebService](http://go.microsoft.com/fwlink/?LinkID=248406) vzorku.  
+-   Pomocí technologie WIF samostatně, aby získat token od služby STS a pak povolte klienta WCF na ověření pomocí tohoto tokenu. Další informace najdete v tématu [ClaimsAwareWebService](https://go.microsoft.com/fwlink/?LinkID=248406) vzorku.  
   
  První scénář je zřejmých: WCF existující klienti budou dál fungovat s přijímajících stran, které technologie WIF a služby tokenů zabezpečení. Toto téma popisuje zbývající dva scénáře.  
   

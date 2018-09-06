@@ -5,24 +5,25 @@ ms.technology: dotnet-standard
 ms.assetid: 059d6b9d-63f7-4011-9ba8-8406f0bbae7d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3eeae02fc2e7795a3438d537dcc6521fb2779b91
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8d24f379bcfdb494369b84173cad4daa800fb7a9
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568742"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43862673"
 ---
 # <a name="process-xml-data-using-linq-to-xml"></a>Zpracování dat XML pomocí LINQ to XML
-Technologie LINQ to XML je nový model v rozhraní .NET Framework verze 3.5 pro zpracování dat XML. Technologie LINQ to XML umožňuje vývojářům provádět všechno, co byste očekávali s daty XML: dotazování, úprava, vytváření, ukládání a serializaci dokumentů XML. Skutečné výhody ležet v možnosti dotazu a vytvoření.  
+Technologie LINQ to XML je nový model v rozhraní .NET Framework verze 3.5 pro zpracování dat XML. Technologie LINQ to XML umožňuje vývojářům provádění všeho byste očekávali s daty XML: dotazování, úpravy, vytváření, ukládání a serializace XML dokumentů. Skutečné výhody spadat do dotazu a vytvoření možnosti.  
   
- Dotazy v technologii LINQ to XML nejsou stručného a výrazové, pomocí syntaxe podobné SQL než XPath nebo XQuery. Protože výsledky dotazu může být vrácen jako elementy nebo atributy kolekce a můžete použít jako parametry pro objekty XElement, stromy XML lze snadno transformovat z jednoho obrazce do jiného.  
+ Dotazy v technologii LINQ to XML jsou stručné a expresivní pomocí syntaxe podobné SQL než XPath nebo výraz XQuery. Vzhledem k tomu, že výsledky dotazu může být vrácen jako kolekce elementů nebo atributů a může sloužit jako parametry pro objekty XElement, stromů XML je možné snadno transformovat z jednoho obrazce na jiný.  
   
- Technologie LINQ to XML využívá technologie (LINQ) language-integrated query v rozhraní .NET Framework verze 3.5. LINQ rozšiřuje na syntaxi jazyka C# a Visual Basic zajistit účinný dotazovací funkce, které lze rozšířit o potenciálně jakékoli datového úložiště.  
+ Technologie LINQ to XML využívá technologii (LINQ) language-integrated query v rozhraní .NET Framework verze 3.5. LINQ rozšiřuje syntaxi jazyka C# a Visual Basic a poskytuje výkonné funkce dotazů, které je možné rozšířit na potenciálně jakéhokoli datového úložiště.  
   
- V tématu [technologie LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) pro podrobnou diskuzi o jeho použití a zjistit, [LINQ (Language-Integrated Query)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) přehled rozhraní LINQ.  
+ Zobrazit [LINQ to XML](https://msdn.microsoft.com/library/f0fe21e9-ee43-4a55-b91a-0800e5782c13) podrobnou diskuzi o používání a najdete v tématu [LINQ (Language-Integrated Query)](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) přehledné informace o rozhraní LINQ.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Linq>  
- <xref:System.Linq>  
- [Technologie LINQ to XML versus model DOM](https://msdn.microsoft.com/library/19b5ed02-feb2-455a-8897-f7f0fd76aca3)  
- [Technologie LINQ to XML versus jiné technologie XML](https://msdn.microsoft.com/library/7ba1eecf-f09a-42de-bc80-22ca5b2e42d3)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.Linq>  
+- <xref:System.Linq>  
+- [Technologie LINQ to XML versus model DOM](https://msdn.microsoft.com/library/19b5ed02-feb2-455a-8897-f7f0fd76aca3)  
+- [Technologie LINQ to XML versus jiné technologie XML](https://msdn.microsoft.com/library/7ba1eecf-f09a-42de-bc80-22ca5b2e42d3)

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Multiple EndPoints
 ms.assetid: 8f0c2e1f-9aee-41c2-8301-c72b7f664412
 ms.openlocfilehash: a9c395ffe4f715b6d6ea034c848cbb277d60d560
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43553639"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855904"
 ---
 # <a name="multiple-endpoints"></a>Víc koncových bodů
 Více koncových bodů Ukázka předvádí, jak konfigurovat několik koncových bodů ve službě a komunikovat s každého koncového bodu z klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Chcete-li definovat dva koncové body, které podporují byla změněna konfigurace služby `ICalculator` smlouvy, ale každý na jinou adresu pomocí jinou vazbou. Konfigurace klienta a kód se upravila tak komunikovat s oběma koncových bodů služby.  

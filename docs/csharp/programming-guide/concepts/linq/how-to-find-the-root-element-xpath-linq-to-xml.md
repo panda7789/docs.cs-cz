@@ -3,11 +3,11 @@ title: 'Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4fd824e0-4d39-429b-b092-f6a5c046ee6c
 ms.openlocfilehash: a0197a34f2e9d1b42a71d3c8cb1a4281ba495c4f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43560603"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43873007"
 ---
 # <a name="how-to-find-the-root-element-xpath-linq-to-xml-c"></a>Postupy: Vyhledání kořenového elementu (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak získat kořenový element, jejichž výraz XPath a [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  

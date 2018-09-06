@@ -3,11 +3,11 @@ title: Vzor automatického potvrzení
 ms.date: 03/30/2017
 ms.assetid: 668aec65-78d3-4636-9c7b-deed643a18f9
 ms.openlocfilehash: a032c05743b64fe58b0b187328b5216080ba6e19
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43552267"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43864052"
 ---
 # <a name="auto-confirm-pattern"></a>Vzor automatického potvrzení
 Tato ukázka se skládá ze tří scénářů, na kterých běží ilustrující vlastní `AutoConfirmScope` aktivity. První příklad ukazuje úspěšné provedení posloupnost čtyři kompenzovatelné aktivity, kde druhého a třetího jsou vnořené v `AutoConfirmScope`. Druhý příklad ukazuje stejnou sekvenci, s výjimkou po zpracování čtvrtým <xref:System.Activities.Statements.CompensableActivity>. Třetí scénář popisuje stejnou sekvenci, s výjimkou ke kterým dochází v `AutoConfirmScope` po druhé <xref:System.Activities.Statements.CompensableActivity> dokončí.  

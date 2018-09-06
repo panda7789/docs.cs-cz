@@ -9,11 +9,11 @@ helpviewer_keywords:
 - visual layer [WPF], hit testing functionality
 ms.assetid: b1a64b61-14be-4d75-b89a-5c67bebb2c7b
 ms.openlocfilehash: fe54578407e881ec7d6782ec21100b29eded07a3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43403172"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43875002"
 ---
 # <a name="hit-testing-in-the-visual-layer"></a>Spuštění testování ve vizuální vrstvě
 Toto téma obsahuje základní informace o volání funkce testování k dispozici ve vizuální vrstvě. Volání podpory testování umožňuje určit, zda hodnota geometrie nebo bodu spadá do vykreslený obsah <xref:System.Windows.Media.Visual>, abyste mohli implementovat rozhraní chování uživatelů, jako je například obdélníku výběru vybrat více objektů.  

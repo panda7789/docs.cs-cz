@@ -4,11 +4,11 @@ description: Zjistěte, jak mají být zahrnuty výsledky výrazu formátovaný 
 author: pkulikov
 ms.date: 05/09/2018
 ms.openlocfilehash: b28890034cc0ab73f96c825b5548223e1c5cd1f4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43732907"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43859737"
 ---
 # <a name="string-interpolation-in-c"></a>Interpolace řetězců v jazyce C# #
 

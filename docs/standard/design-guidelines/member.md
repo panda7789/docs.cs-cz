@@ -1,5 +1,5 @@
 ---
-title: Člen pokynů pro návrh
+title: Pokyny k návrhu člena
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,19 +10,19 @@ helpviewer_keywords:
 ms.assetid: 0ce93180-1d7b-4f8c-9306-f828b2d66b8f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c04b431224a1d4f03e85397b854a52856e114e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d1598ac63af38f1ca3e11104bc8e1cd6323d35ed
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571394"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871015"
 ---
-# <a name="member-design-guidelines"></a>Člen pokynů pro návrh
-Metody, vlastnosti, události, konstruktory a pole se souhrnně označují jako členy. Členy jsou nakonec prostředky, se kterým je funkce framework zpřístupněny koncovým uživatelům prostředí.  
+# <a name="member-design-guidelines"></a>Pokyny k návrhu člena
+Metody, vlastnosti, události, konstruktory a pole se souhrnně označují jako členy. Členové jsou takže v konečném důsledku znamená, podle kterého je funkce rozhraní zpřístupněny koncovým uživatelům o architektuře.  
   
- Členové můžou být statické virtuální nebo nevirtuální, konkrétní nebo abstraktní, nebo instance a může mít několik různými obory usnadnění. Všechna tato různých poskytuje neuvěřitelné expressiveness, ale současně vyžaduje pozornost ze strany návrháře framework.  
+ Členové může být statická virtuální a nevirtuální, konkrétní nebo abstraktní, nebo instance a může mít několik různých oborech přístupnosti. Tento různých poskytuje neuvěřitelné expresivity, ale ve stejnou dobu vyžaduje péči ze strany framework designer.  
   
- Tato kapitola nabízí základní pokyny, které by se měly dodržovat při navrhování členy libovolného typu.  
+ Tato kapitola nabízí základní pokyny, které byste měli dodržet, při navrhování členy libovolného typu.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Přetížení člena](../../../docs/standard/design-guidelines/member-overloading.md)  
@@ -35,7 +35,8 @@ Metody, vlastnosti, události, konstruktory a pole se souhrnně označují jako 
  [Návrh parametru](../../../docs/standard/design-guidelines/parameter-design.md)  
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

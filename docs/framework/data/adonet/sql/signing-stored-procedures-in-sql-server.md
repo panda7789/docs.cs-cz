@@ -3,11 +3,11 @@ title: Podepisování uložených procedur na SQL serveru
 ms.date: 01/05/2018
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
 ms.openlocfilehash: c24edd59992c246c33944e6693ff5ac69311886a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43555161"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865680"
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>Podepisování uložených procedur na SQL serveru
  Digitální podpis je algoritmu digest data zašifrovaná pomocí soukromého klíče podpisu. Privátní klíč zajistí, že digitální podpis je jedinečné pro jeho nosiče nebo vlastníka. Uložené procedury, funkce (s výjimkou vložené funkce vracející tabulku), aktivační události a sestavení se můžete přihlásit.  

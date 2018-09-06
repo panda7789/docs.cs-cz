@@ -8,11 +8,11 @@ helpviewer_keywords:
 - ComboBox control [WPF]
 ms.assetid: fe0c2f62-fec2-4c41-a37e-5773d284170c
 ms.openlocfilehash: 40dc767d830b3834eedf3581d544aa53d40fae50
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801408"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43863053"
 ---
 # <a name="combobox"></a>ComboBox
 <xref:System.Windows.Controls.ComboBox> Ovládací prvek předkládá uživatelům seznam možností. Seznam se zobrazí a skryté, jak ovládací prvek se rozbalí a sbalíte. Ve výchozím stavu je sbalení seznamu zobrazení pouze jednu možnost. Uživatel klikne na tlačítko, pokud chcete zobrazit úplný seznam možností.  

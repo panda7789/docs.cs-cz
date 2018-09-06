@@ -15,203 +15,203 @@ helpviewer_keywords:
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9eb57aa0d6645958691c0003b07db6e8bb844fc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5b59e0bda45b0b45b49c22d49ec2556fbcfef75d
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579571"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43871881"
 ---
 # <a name="globalization"></a>Globalizace
-Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje lokalizované rozhraní a místní data pro uživatele ve více jazykových verzí. Před zahájením fáze návrhu, měli byste určit jazykové verze, které bude podporovat aplikace. I když aplikace cílí na jednu kulturu nebo oblasti jako jeho výchozí, můžete navrhnout a zapisuje tak, aby ho lze snadno rozšířit na uživatele ve dalších jazykové verze.  
+Globalizace zahrnuje návrh a vývoj globalizovaných aplikace, která podporuje lokalizovaná uživatelská rozhraní a regionální data pro uživatele ve více jazykových verzích. Před zahájením fáze návrhu, byste měli určit jazykové verze, které bude aplikace podporovat. Přestože aplikace cílí na jednu kulturu nebo oblast jako výchozí, můžete navrhnout a napsat ji tak, aby ho snadno rozšířitelná na uživatele v jiné jazykové verze nebo regiony.  
   
- Jako vývojáři všechny máme předpoklady o uživatelská rozhraní a data, která jsou tvořeny naše jazykové verze. Například pro vývojář hovořícího anglicky ve Spojených státech amerických serializaci jako řetězec ve formátu data a času `MM/dd/yyyy hh:mm:ss` zdá se, že perfektně přiměřené. Při deserializaci tento řetězec na systém v jinou jazykovou verzi je však pravděpodobně throw <xref:System.FormatException> nepřesných dat. výjimky nebo produktu. Globalizace umožňuje nám určit tyto předpoklady specifické pro jazykovou verzi a ujistěte se, že neovlivňují návrhu vaší aplikace nebo kódu.  
+ Jako vývojáři máme všichni nějaké předpoklady o uživatelských rozhraních a datech, která jsou vytvářena našimi jazykovými verzemi. Například pro anglicky mluvící vývojáře ve Spojených státech amerických, serializaci jako řetězec ve formátu data a času `MM/dd/yyyy hh:mm:ss` zcela přiměřená. Deserializace tohoto řetězce v systému s jinou jazykovou verzí je však pravděpodobně vyvolá výjimku <xref:System.FormatException> výjimky nebo vygeneruje nesprávná data. Globalizace umožňuje identifikovat tyto jazykové předpoklady a ujistěte se, že nemají vliv na návrh nebo kód našich aplikací.  
   
- Následující části popisují některé významných problémech, které byste měli zvážit a osvědčené postupy, které vám pomůžou při zpracování řetězců, datum a čas hodnoty a číselné hodnoty v globalizovaná aplikace.  
+ Následující části popisují některé hlavní problémy, které byste měli zvážit a doporučené postupy, které můžete použít při zpracování řetězců, datum a časové hodnoty a číselných hodnot v globalizovaných aplikacích.  
   
--   [Zpracování řetězce](../../../docs/standard/globalization-localization/globalization.md#HandlingStrings)  
+-   [Zpracování řetězců](../../../docs/standard/globalization-localization/globalization.md#HandlingStrings)  
   
-    -   [Interně pomocí kódování Unicode](../../../docs/standard/globalization-localization/globalization.md#Strings_Unicode)  
+    -   [Interní používání standardu Unicode](../../../docs/standard/globalization-localization/globalization.md#Strings_Unicode)  
   
-    -   [Použít soubory prostředků](../../../docs/standard/globalization-localization/globalization.md#Strings_Resources)  
+    -   [Používání souborů prostředků](../../../docs/standard/globalization-localization/globalization.md#Strings_Resources)  
   
     -   [Vyhledávání a porovnávání řetězců ](../../../docs/standard/globalization-localization/globalization.md#Strings_Searching)  
   
-    -   [Testování rovnosti řetězce](../../../docs/standard/globalization-localization/globalization.md#Strings_Equality)  
+    -   [Testování rovnosti řetězců](../../../docs/standard/globalization-localization/globalization.md#Strings_Equality)  
   
-    -   [Uspořádání a řazení řetězců ](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
+    -   [Řazení řetězců ](../../../docs/standard/globalization-localization/globalization.md#Strings_Ordering)  
   
-    -   [Vyhněte se zřetězení řetězců](../../../docs/standard/globalization-localization/globalization.md#Strings_Concat)  
+    -   [Vyhněte se řetězení řetězců](../../../docs/standard/globalization-localization/globalization.md#Strings_Concat)  
   
 -   [Zpracování dat a časů](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes)  
   
-    -   [Zachování dat a časů](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Persist)  
+    -   [Trvalé uchovávání hodnot data a časy](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Persist)  
   
     -   [Zobrazení dat a časů](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Display)  
   
-    -   [Serializace a časové pásmo](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_TimeZones)  
+    -   [Serializace a zohlednění časového pásma](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_TimeZones)  
   
-    -   [Datum a čas aritmetické operace](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Arithmetic)  
+    -   [Data a času aritmetické operace](../../../docs/standard/globalization-localization/globalization.md#DatesAndTimes_Arithmetic)  
   
--   [Zpracování číselné hodnoty.](../../../docs/standard/globalization-localization/globalization.md#Numbers)  
+-   [Zpracování číselných hodnot](../../../docs/standard/globalization-localization/globalization.md#Numbers)  
   
     -   [Zobrazení číselných hodnot](../../../docs/standard/globalization-localization/globalization.md#Numbers_Display)  
   
-    -   [Uložením číselné hodnoty.](../../../docs/standard/globalization-localization/globalization.md#Numbers_Persist)  
+    -   [Trvalé uchovávání číselných hodnot](../../../docs/standard/globalization-localization/globalization.md#Numbers_Persist)  
   
 -   [Práce s nastavením specifické pro jazykovou verzi](../../../docs/standard/globalization-localization/globalization.md#Cultures)  
   
 <a name="HandlingStrings"></a>   
 ## <a name="handling-strings"></a>Zpracování řetězců  
- Zpracování znaky a řetězce je hlavní cíl globalizace, protože může pomocí různých znaků a znakových sad a seřadit je jinak každou jazykovou verzi nebo oblasti. Tato část obsahuje doporučení pro používání řetězců v globalizovaná aplikace.  
+ Zpracování znaků a řetězce je centrálním středem pozornosti globalizace, protože každá jazyková verze nebo region může použít různé znaky a znakové sady a seřadit je jinak. Tato část obsahuje doporučení pro používání řetězců v globalizovaných aplikacích.  
   
 <a name="Strings_Unicode"></a>   
 ### <a name="use-unicode-internally"></a>Interní používání standardu Unicode  
- Ve výchozím nastavení používá rozhraní .NET Framework řetězců v kódu Unicode. Řetězec znaků Unicode se skládá z nuly, jednu nebo více <xref:System.Char> objektů, z nichž každý představuje jednotku kódu UTF-16. Není Unicode znázornění pro každý znak v každé znakovou sadu používá po celém světě.  
+ Ve výchozím nastavení používá rozhraní .NET Framework řetězce Unicode. Řetězec s kódováním Unicode se skládá z nula, jeden nebo více <xref:System.Char> objektů, z nichž každý představuje jednotku kódu UTF-16. Existuje reprezentace Unicode pro téměř všechny znaky v každé znakové sady používané po celém světě.  
   
- Mnoho aplikací a operačních systémů, včetně operačního systému Windows, můžete použít také pomocí znakové stránky představují znakových sad. Znakové stránky obvykle obsahují standardní hodnoty ASCII 0x00 prostřednictvím 0x7F a namapujte dalšími znaky na zbývající hodnoty 0x80 prostřednictvím 0xFF. Výklad hodnoty z 0x80 prostřednictvím 0xFF závisí na konkrétní znaková stránka. Z tohoto důvodu byste neměli používat znakové stránky v aplikaci globalizovaná Pokud je to možné.  
+ Mnoho aplikací a operačních systémů, včetně operačního systému Windows, můžete použít také používat znakové stránky představující znakové sady. Znakové stránky obvykle obsahují standardní hodnoty ASCII od 0x00 do 0x7F a mapují další znaky ve zbývajících hodnotách od 0x80 do 0xFF. Výklad hodnot od 0x80 po 0xFF závisí na specifické znakové stránce. Z tohoto důvodu měli vyhnout použití znakových stránek v globalizované aplikaci, pokud je to možné.  
   
- Následující příklad ilustruje nebezpečích interpretace data znakové stránky, pokud se liší od znakové stránky, na kterém byla uložena data výchozí znakovou stránku v systému. (K simulaci tento scénář, příklad explicitně určuje jiné znakové stránky.) Nejprve v příkladu definuje pole, které se skládá z velkých písmen řecké abecedy. Ho kóduje je do bajtového pole pomocí kódu stránky 737 (také označované jako řečtina MS-DOS) a uloží do souboru bajtové pole. Pokud se načítají souboru a jeho bajtové pole je dekódovat pomocí kódu stránky 737, se obnoví původní znaky. Ale pokud jsou načtena souboru a jeho bajtové pole je dekódovat pomocí znaková stránka 1252 (nebo Windows-1252, která představuje znaků latinku), původní znaky budou ztraceny.  
+ Následující příklad ukazuje nebezpečí interpretace kódové stránky když výchozí kódová stránka v systému se liší od kódové stránky, na kterém byla uložena data. (Chcete-li simulovat tento scénář, příklad explicitně určuje různé znakové stránky.) Nejprve příklad definuje pole, které obsahuje velká písmena řecké abecedy. Zakóduje je do bajtového pole pomocí kódu stránky 737 (označované také jako řečtina zástupného kódu MS-DOS) a uloží do souboru bajtového pole. Pokud je soubor načten a jeho bajtové pole je dekódováno pomocí kódu stránky 737, budou obnoveny původní znaky. Nicméně pokud je soubor načten a jeho bajtové pole je dekódováno pomocí znaková stránka 1252 (nebo Windows-1252 představující znaky latinské abecedy), původní znaky budou ztraceny.  
   
  [!code-csharp[Conceptual.Globalization#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/codepages1.cs#1)]
  [!code-vb[Conceptual.Globalization#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/codepages1.vb#1)]  
   
- Použití Unicode zajišťuje, že stejný kód jednotky vždy mapování na stejné znaky a že stejné znaky vždy mapování na stejné pole bajtů.  
+ Použití kódování Unicode zajišťuje, že stejné jednotky kódu se vždy mapují na stejné znaky a že stejné znaky se vždy mapují na stejná pole bajtů.  
   
 <a name="Strings_Resources"></a>   
 ### <a name="use-resource-files"></a>Používání souborů prostředků  
- I když vyvíjíte aplikaci, která cílí na jednu kulturu nebo oblast, používejte soubory prostředků pro uložení řetězce a další prostředky, které se zobrazují v uživatelském rozhraní. Měli byste nikdy přidat je přímo do vašeho kódu. Pomocí souborů prostředků má několik výhod:  
+ I když vyvíjíte aplikaci, která se zaměřuje na jednu kulturu nebo oblast, používejte soubory prostředků pro uložení řetězců a dalších prostředků, které jsou zobrazeny v uživatelském rozhraní. Měli byste nikdy přidat je přímo do vašeho kódu. Použití souborů prostředků má několik výhod:  
   
--   Všechny řetězce jsou na jednom místě. Nemáte pro vyhledávání v rámci vašeho zdrojového kódu k identifikaci řetězce upravit pro konkrétní jazyk nebo jazykovou verzi.  
+-   Všechny řetězce jsou na jednom místě. Nemusíte hledat v celém zdrojovém kódu k identifikaci řetězců pro úpravu pro konkrétní jazyk nebo jazykovou verzi.  
   
--   Není nutné duplicitní řetězce. Vývojáři, kteří nepoužívají soubory prostředků často definujte do jednoho řetězce v několika soubory zdrojového kódu. Tato duplikace zvyšuje pravděpodobnost, že jeden nebo více instancí bude přehlížen, když dojde k úpravě řetězec.  
+-   Není nutné duplikovat řetězce. Vývojáři, kteří nepoužívají soubory prostředků často definují stejný řetězec ve více souborů zdrojového kódu. Tato duplikace zvyšuje pravděpodobnost, že jedna nebo více instancí bude přehlédnuta při úpravě řetězce.  
   
--   Jiné než řetězec prostředky, například obrázky nebo binárních dat, můžete zahrnout do souboru prostředků místo ukládání v samostatné samostatný soubor, takže se dá snadno načíst.  
+-   Neřetězcové prostředky, jako jsou obrázky nebo binární data, můžete zahrnout do souboru prostředků místo uložení do samostatného souboru, takže je možné snadno načíst.  
   
- Pomocí souborů prostředků má konkrétní výhod, pokud vytváříte lokalizované aplikace. Když nasadíte prostředky v satelitní sestavení, modul common language runtime automaticky vybere příslušnou jazykovou verzi prostředku podle uživatele aktuální jazykové verze uživatelského rozhraní podle definice <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost. Zadejte odpovídající prostředek specifické pro jazykovou verzi a správně vytváření instancí <xref:System.Resources.ResourceManager> objektu nebo použití třídy prostředků se silnými typy, modul runtime zpracovává podrobnosti o načítání s příslušnými prostředky.  
+ Použití souborů prostředků má určité výhody, chcete-li vytvořit lokalizovanou aplikaci. Při nasazování prostředků v satelitních sestaveních, modul common language runtime automaticky vybere odpovídající jazykovou verzi prostředku podle uživatele aktuální jazykové verze uživatelského rozhraní definované <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> vlastnost. Za předpokladu, zadejte odpovídající prostředek specifický pro jazykovou verzi a správně vytváříte instance <xref:System.Resources.ResourceManager> objektu nebo použití třídy prostředků se silnými typy, modul runtime zpracovává detaily o načtení příslušných prostředků.  
   
- Další informace o vytváření soubory prostředků najdete v tématu [vytváření souborů prostředků](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md). Informace o vytváření a nasazování satelitní sestavení najdete v tématu [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md) a [balení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).  
+ Další informace o vytváření souborů prostředků naleznete v tématu [Creating Resource Files](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md). Informace o vytváření a nasazení satelitního sestavení naleznete v tématu [Vytváření satelitních sestavení](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md) a [Packaging and Deploying Resources](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md).  
   
 <a name="Strings_Searching"></a>   
 ### <a name="searching-and-comparing-strings"></a>Vyhledávání a porovnávání řetězců  
- Pokud je to možné, by měla řídit řetězce jako celé řetězce místo jejich zpracování jako řadu jednotlivých znaků. To je obzvláště důležité, pokud řazení nebo vyhledejte dílčích řetězců, aby se zabránilo problémy související s analýzou kombinovaných znaků.  
+ Kdykoli je to možné, zpracovávejte řetězce jako celé řetězce namísto jednotlivých znaků. To je zvlášť důležité při řazení nebo vyhledávání podřetězců, aby se zabránilo problémům spojeným s analýzou kombinovaných znaků.  
   
 > [!TIP]
->  Můžete použít <xref:System.Globalization.StringInfo> třídy pro práci s elementy textu, nikoli jednotlivých znaků v řetězci.  
+>  Můžete použít <xref:System.Globalization.StringInfo> tříd pro práci s elementy textu místo jednotlivých znaků v řetězci.  
   
- Řetězec hledání a porovnání Obvyklou chybou je považovat za kolekce znaků, z nichž každý představuje řetězec <xref:System.Char> objektu. Ve skutečnosti může být vytvořen jeden znak. jednu, dvě nebo více <xref:System.Char> objekty. Tyto znaky se nejčastěji nacházejí v řetězci jazykové verze, jejíž abeced skládat z znaků mimo Unicode základní Latinské rozsah znaků (U + 0021 až U + 007E). V následujícím příkladu se pokusí vyhledat index znaku LATIN velké písmeno A s čárkou nad vlevo (U + 00C 0) v řetězci. Však tento znak může být reprezentován dvěma různými způsoby: jako jednotka jeden kódu (U + 00C 0) nebo jako složený znak (dvě jednotky code: U + 0021 a U + 007E). V takovém případě znak je reprezentována v instanci řetězec dva <xref:System.Char> objektů, U + 0021 a U + 007E. Příklad volání kódu <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> a <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> přetížení najít pozici tento znak v instanci řetězec, ale tyto vrátí odlišné výsledky. První volání metody, které má <xref:System.Char> argument; se provádí ordinální porovnávání a proto nemůže najít odpovídající. Má druhé volání <xref:System.String> argument; ji provede porovnání zohledňující jazykovou verzi a proto najde shoda.  
+ V řetězec hledání a porovnávání řetězců je obvyklou chybou považovat řetězec za kolekci znaků, z nichž každý je reprezentován <xref:System.Char> objektu. Ve skutečnosti může jeden znak tvořen jeden, dva nebo více <xref:System.Char> objekty. Tyto znaky jsou nejčastěji součástí řetězce z kultur, jejichž písmena abecedy jsou tvořena znaky mimo rozsah znaků základní latinky Unicode (U + 0021 až U + 007E). Následující příklad se pokusí vyhledat index znaku velké znak LATIN velké písmeno A s čárkou nad vlevo (U + 00C 0) v řetězci. Nicméně, tento znak může být reprezentován dvěma různými způsoby: jako jedna znaková jednotka (U + 00C 0) nebo jako složený znak (dvě znakové jednotky: U + 0021 a U + 007E). V takovém případě je znak reprezentován v instanci řetězce dvěma <xref:System.Char> objektů, U + 0021 a U + 007E. Příklad kódu volá <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> a <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> přetížení pro hledání pozice tohoto znaku v instanci řetězce, ale tyto vrací odlišné výsledky. První metoda volání má <xref:System.Char> argument; provádí řadové porovnání a proto nemůže nalézt shodu. Druhé volání má <xref:System.String> argument; provádí porovnání citlivé na jazykovou verzi a proto najde shodu.  
   
  [!code-csharp[Conceptual.Globalization#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/search1.cs#18)]
  [!code-vb[Conceptual.Globalization#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/search1.vb#18)]  
   
- Některé z důvodu nejasností ohledně tohoto příkladu (volání dvě podobné přetížení metody vrátí odlišné výsledky) se můžete vyhnout voláním přetížení, které zahrnuje <xref:System.StringComparison> parametr, jako <xref:System.String.IndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> nebo <xref:System.String.LastIndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metoda.  
+ Nejednoznačnosti tohoto příkladu (volání dvou samostatných přetížení metody vracející různé výsledky) můžete zabránit voláním přetížení, která zahrnuje <xref:System.StringComparison> parametr, například <xref:System.String.IndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> nebo <xref:System.String.LastIndexOf%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metoda.  
   
- Hledání jsou však není vždy zohledňující jazykovou verzi. Pokud účel hledání k rozhodnutí, zabezpečení nebo uživatelům povolit nebo zakázat přístup k některé prostředku, musí být porovnání pořadí, jak je popsáno v následující části.  
+ Ale hledání nejsou vždy zohledňující jazykovou verzi. Pokud je účelem vyhledávání k rozhodování zabezpečení nebo k povolení nebo zakázání přístupu k některým zdrojům, srovnání by mělo být řádové, jak je popsáno v další části.  
   
 <a name="Strings_Equality"></a>   
 ### <a name="testing-strings-for-equality"></a>Testování rovnosti řetězců  
- Pokud chcete testovat dva řetězce rovnosti místo určování jejich porovnání v pořadí řazení, použijte <xref:System.String.Equals%2A?displayProperty=nameWithType> metody místo metodu porovnání řetězců, jako <xref:System.String.Compare%2A?displayProperty=nameWithType> nebo <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>.  
+ Pokud chcete otestovat dva řetězce pro rovnosti místo určení, jak je jejich srovnání v pořadí řazení, použijte <xref:System.String.Equals%2A?displayProperty=nameWithType> metoda namísto metody porovnání řetězců, jako <xref:System.String.Compare%2A?displayProperty=nameWithType> nebo <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType>.  
   
- Porovnání rovnosti se obvykle provádí některé prostředků podmíněně přístup. Můžete například provést porovnání rovnosti Chcete-li ověřit heslo nebo potvrďte, zda soubor existuje. Takové-lingvistické porovnání by měla být vždy v pořadí, nikoli zohledňující jazykovou verzi. Obecně platí, by měly volat instance <xref:System.String.Equals%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metoda nebo statické <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metoda s hodnotou <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> pro řetězce, jako jsou hesla a hodnota <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pro řetězce, jako jsou názvy souborů nebo identifikátory URI.  
+ Porovnání rovnosti se obvykle provádí pro přístup některých prostředků podmíněně. Můžete například provádět porovnání rovnosti a ověřit tak heslo nebo potvrďte, že soubor existuje. Tato nelingvistická porovnání by měl být vždy řadová, nikoli zohledňující jazykovou verzi. Obecně byste měli volat instanci <xref:System.String.Equals%28System.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metody nebo statická <xref:System.String.Equals%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> metody s hodnotou <xref:System.StringComparison.Ordinal?displayProperty=nameWithType> pro řetězce, jako jsou hesla a hodnota <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pro řetězce, jako jsou názvy souborů nebo identifikátory URI.  
   
- Porovnání rovnosti někdy zahrnují hledání nebo substring porovnání namísto volání <xref:System.String.Equals%2A?displayProperty=nameWithType> metoda. V některých případech může vyhledání substring použít k určení, zda tento dílčí řetězec rovná jiným řetězcem. Toto porovnání se používá jiný lingvistické, hledání měla by být pořadí, nikoli zohledňující jazykovou verzi.  
+ Porovnání rovnosti někdy zahrnují vyhledávání nebo porovnání podřetězců, namísto volání <xref:System.String.Equals%2A?displayProperty=nameWithType> metody. V některých případech můžete použít hledání dílčího řetězce k určení, zda tento dílčí řetězec rovná jinému řetězci. Pokud účel nejazykové, vyhledávání by měla být řádové, nikoli zohledňující jazykovou verzi.  
   
- Následující příklad ilustruje nebezpečí vyhledávání zohledňující jazykovou verzi na údaje o-jazyku. `AccessesFileSystem` Metoda je určena k zákazu přístupu k systému souborů pro identifikátory URI, které začínají dílčí řetězec "Soubor". K tomuto účelu provede porovnání zohledňující jazykovou verzi, bez rozlišování velikosti písmen na začátek identifikátor URI s řetězcem "Soubor". Protože identifikátor URI, který přistupuje k systému souborů může začínat buď "souboru:" nebo "souboru:", implicitní předpokladem je, že "i" (U + 0069) je vždy malá ekvivalentem "I" (U + 0049). Ale v turečtina a Ázerbájdžánština velká verzi "i" je "İ" (U + 0130). Z důvodu této nesrovnalosti Porovnání zohledňující jazykovou verzi umožňuje přístupu k systému souborů, když by mělo být zakázáno.  
+ Následující příklad ukazuje nebezpečí při nelingvistických dat vyhledávání zohledňující jazykovou verzi. `AccessesFileSystem` Metody slouží k zákazu přístupu k systému souborů pro identifikátory URI, který začíná pod řetězcem "FILE". Chcete-li to provést, provede porovnání zohledňující jazykovou verzi, velká a malá písmena začátku identifikátoru URI s řetězcem "FILE". Protože identifikátor URI, který má přístup k systému souborů může začínat znakem "souboru:" nebo "souboru:", je implicitní předpoklad, že "i" (U + 0069) je vždy malým ekvivalentem znaku "I" (U + 0049). Ale v turečtině a Ázerbájdžánština, velká písmena verzi "İ" je "i" (U + 0130). Kvůli této nesrovnalosti srovnání citlivé na jazykovou verzi umožňuje přístupu k systému souborů, když by mělo být zakázané.  
   
  [!code-csharp[Conceptual.Globalization#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/equals1.cs#12)]
  [!code-vb[Conceptual.Globalization#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/equals1.vb#12)]  
   
- Je-li předejít tomuto problému, provádění porovnávání podle pořadového čísla, které ignoruje velikost písmen, jak ukazuje následující příklad.  
+ Je-li předejít tomuto problému, provádí řadové porovnání, které ignoruje velikost písmen, jak ukazuje následující příklad.  
   
  [!code-csharp[Conceptual.Globalization#13](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/equals2.cs#13)]
  [!code-vb[Conceptual.Globalization#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/equals2.vb#13)]  
   
 <a name="Strings_Ordering"></a>   
 ### <a name="ordering-and-sorting-strings"></a>Řazení řetězců  
- Obvykle seřazené řetězce, které se mají zobrazovat v uživatelském rozhraní by měly seřadit podle jazykové verze. Ve většině případů takové porovnání řetězců jsou zpracovávány implicitně rozhraní .NET Framework při volání metody, která seřadí řetězců, jako například <xref:System.Array.Sort%2A?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType>. Ve výchozím nastavení jsou seřazeny řetězců pomocí konvence řazení aktuální jazykové verze. Následující příklad znázorňuje rozdíl, pokud pole řetězců je seřazen podle pomocí konvencí jazykové verze Angličtina (Spojené státy) a jazykovou verzi Švédština (Švédsko).  
+ Obvykle řazené řetězce, které se mají zobrazit v uživatelském rozhraní mají být řazeny podle jazykové verze. Ve většině případů porovnávání těchto řetězců zpracováváno implicitně pomocí rozhraní .NET Framework při volání metody, která řadí řetězce, jako například <xref:System.Array.Sort%2A?displayProperty=nameWithType> nebo <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType>. Ve výchozím nastavení jsou řetězce seřazeny pomocí konvence řazení pro aktuální jazykovou verzi. Následující příklad ukazuje rozdíl, když je pole řetězců seřazeno pomocí úmluv jazykové verze Angličtina (Spojené státy) a švédština (Švédsko) jazykovou verzi.  
   
  [!code-csharp[Conceptual.Globalization#14](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/sort1.cs#14)]
  [!code-vb[Conceptual.Globalization#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/sort1.vb#14)]  
   
- Porovnání řetězců je definována <xref:System.Globalization.CompareInfo> objekt, který je vrácen rutinou každou jazykovou verzi <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> vlastnost. Porovnání řetězců, které používají <xref:System.String.Compare%2A?displayProperty=nameWithType> přetížení metody také použít <xref:System.Globalization.CompareInfo> objektu.  
+ Porovnání řetězců zohledňující jazykovou verzi je definován <xref:System.Globalization.CompareInfo> objektu, který je vrácený každou jazykovou verzi <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> vlastnost. Porovnání řetězců zohledňující jazykovou verzi, které používají <xref:System.String.Compare%2A?displayProperty=nameWithType> přetížení metody také použití <xref:System.Globalization.CompareInfo> objektu.  
   
- Rozhraní .NET Framework používá k provedení zohledňující jazykovou verzi na řetězec dat tabulky. Obsah těchto tabulek, které obsahují údaje o váhy řazení a řetězec normalizace, je určen podle verze standardu Unicode implementované konkrétní verzi rozhraní .NET Framework. Následující tabulka uvádí verze Unicode implementované zadaná verze rozhraní .NET Framework. Všimněte si, že tento seznam podporovaných verzí Unicode se vztahují na znak porovnání a řazení pouze; nevztahuje se na klasifikaci znaky Unicode podle kategorie. Další informace najdete v části "Řetězce a ve standardu Unicode" v <xref:System.String> článku.  
+ Rozhraní .NET Framework používá k provedení řazení zohledňující jazykovou verzi na řetězec data tabulky. Obsah těchto tabulek, které obsahují údaje o řazení váhy a řetězci normalizace, závisí na verzi standard Unicode implementované konkrétní verzi rozhraní .NET Framework. V následující tabulce jsou uvedeny verze Unicode implementované zadanou verzí rozhraní .NET Framework. Všimněte si, že tento seznam podporovaných verzí sady Unicode se vztahuje na znak porovnání a řazení. To se nevztahují na klasifikaci znaků Unicode podle kategorie. Další informace najdete v tématu v části "Řetězců a ve standardu Unicode" <xref:System.String> článku.  
   
-|Verze rozhraní .NET Framework|Operační systém|Unicode verze|  
+|Verze rozhraní .NET Framework|Operační systém|Verze Unicode|  
 |----------------------------|----------------------|---------------------|  
-|.NET Framework 2.0|Všechny operační systémy|Unicode 4.1|  
-|.NET Framework 3.0|Všechny operační systémy|Unicode 4.1|  
-|.NET Framework 3.5|Všechny operační systémy|Unicode 4.1|  
-|.NET Framework 4|Všechny operační systémy|Unicode 5.0|  
-|.NET Framework 4.5|[!INCLUDE[win7](../../../includes/win7-md.md)]|Unicode 5.0|  
-|.NET Framework 4.5|[!INCLUDE[win8](../../../includes/win8-md.md)]|Unicode 6.0|  
+|.NET Framework 2.0|Všechny operační systémy|4.1 kódování Unicode|  
+|.NET Framework 3.0|Všechny operační systémy|4.1 kódování Unicode|  
+|.NET Framework 3.5|Všechny operační systémy|4.1 kódování Unicode|  
+|.NET Framework 4|Všechny operační systémy|Standard Unicode 5.0|  
+|.NET Framework 4.5|[!INCLUDE[win7](../../../includes/win7-md.md)]|Standard Unicode 5.0|  
+|.NET Framework 4.5|[!INCLUDE[win8](../../../includes/win8-md.md)]|Standard Unicode 6.0|  
   
- V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], porovnání a řazení řetězců závisí na operačním systému. [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Systémem [!INCLUDE[win7](../../../includes/win7-md.md)] načte data ze svých tabulek, které implementují 5.0 kódování Unicode. [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Systémem [!INCLUDE[win8](../../../includes/win8-md.md)] načítá data z tabulek operačního systému, které implementují 6.0 kódování Unicode. Pokud jste serializovat jazykovou seřazená data, můžete použít <xref:System.Globalization.SortVersion> třídu k určení, když serializovaná data potřebuje, který se má seřadit, aby byl konzistentní s rozhraní .NET Framework a operačního systému pořadí řazení. Příklad, naleznete v části <xref:System.Globalization.SortVersion> třída tématu.  
+ V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], porovnání a řazení řetězců závisí na operačním systému. [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Systémem [!INCLUDE[win7](../../../includes/win7-md.md)] načte data ze svých tabulek, které implementují Standard Unicode 5.0. [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Systémem [!INCLUDE[win8](../../../includes/win8-md.md)] načítá data z tabulek operačního systému, které implementují Standard Unicode 6.0. Pokud serializujete seřazená data zohledňující jazykovou verzi, můžete použít <xref:System.Globalization.SortVersion> třídu k určení, kdy je potřeba serializovaná data seřadit tak, aby byla konzistentní s rozhraní .NET Framework a pořadí řazení operačního systému. Příklad najdete v tématu <xref:System.Globalization.SortVersion> třídě.  
   
- Pokud vaše aplikace provádí rozsáhlé řazení specifické pro jazykovou verzi řetězec dat, můžete pracovat <xref:System.Globalization.SortKey> třídy pro porovnání řetězců. Klíč řazení odráží váhy řazení specifické pro jazykovou verzi, včetně abecedním, případ a diakritiky váhu konkrétní řetězec. Vzhledem k porovnání pomocí klíčů řazení jsou binární, jsou rychlejší než porovnání, které používají <xref:System.Globalization.CompareInfo> objektu implicitně nebo explicitně. Vytvořte klíč řazení specifické pro jazykovou verzi pro určitý řetězec předáním řetězec, který má <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType> metoda.  
+ Pokud vaše aplikace provádí rozsáhlé řazení dat řetězců specifické pro jazykovou verzi, můžete pracovat <xref:System.Globalization.SortKey> třídy pro porovnání řetězců. Klíč řazení odráží váhu řazení specifický pro jazykovou verzi, včetně abecedy, případu a diakritických znamének určitého řetězce. Protože porovnání pomocí klíčů řazení jsou binární, jsou rychlejší než porovnání, která používají <xref:System.Globalization.CompareInfo> objektu implicitně nebo explicitně. Vytvořte klíč řazení specifický pro jazykovou verzi pro určitý řetězec předáním řetězce do <xref:System.Globalization.CompareInfo.GetSortKey%2A?displayProperty=nameWithType> metody.  
   
- V následujícím příkladu je podobně jako v předchozím příkladu. Ale namísto volání <xref:System.Array.Sort%28System.Array%29?displayProperty=nameWithType> metodu, která volá implicitně <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType> metoda, definuje <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementace, který porovnává řazení klíčů, které se vytvoří a předá <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Collections.Generic.IComparer%7B%60%600%7D%29?displayProperty=nameWithType> metoda.  
+ Následující příklad je podobné jako v předchozím příkladu. Ale namísto volání metody <xref:System.Array.Sort%28System.Array%29?displayProperty=nameWithType> metoda, která volá implicitně <xref:System.Globalization.CompareInfo.Compare%2A?displayProperty=nameWithType> definuje metodu, <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> implementace, která porovnává klíče řazení, které vytvoří instanci a předá <xref:System.Array.Sort%60%601%28%60%600%5B%5D%2CSystem.Collections.Generic.IComparer%7B%60%600%7D%29?displayProperty=nameWithType> – metoda.  
   
  [!code-csharp[Conceptual.Globalization#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/sortkey1.cs#15)]
  [!code-vb[Conceptual.Globalization#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/sortkey1.vb#15)]  
   
 <a name="Strings_Concat"></a>   
 ### <a name="avoid-string-concatenation"></a>Vyhněte se řetězení řetězců  
- Pokud je to možné Vyhněte se použití složené řetězců, které jsou vytvořené v době běhu ze spojených frází. Složené řetězce obtížně lokalizaci, protože často předpokládají gramaticky pořadí v jazyce původní aplikace, který nelze použít na jiných lokalizovaných jazycích.  
+ Pokud je to možné nepoužívejte složené řetězce, které jsou vytvořeny v době běhu ze spojených frází. Složené řetězce se obtížně lokalizují, protože často předpokládají gramatický sled v původním jazyce aplikace, který se nedá použít u jiných lokalizovaných jazyků.  
   
 <a name="DatesAndTimes"></a>   
 ## <a name="handling-dates-and-times"></a>Zpracování hodnot data a času  
- Jak zpracovat datum a čas hodnoty závisí na tom, zda se zobrazí v uživatelském rozhraní nebo trvalé. Tento oddíl se zabývá obě použití. Také popisuje, jak může zpracovat aritmetické operace a časové pásmo rozdíly při práci s daty a časy.  
+ Jak zpracovat data a času hodnoty závisí na tom, zda jsou zobrazeny v uživatelském rozhraní nebo trvalé. Tato část se zabývá obojím použitím. Také popisuje, jak můžete zpracovávat rozdíly v časových pásmech a aritmetické operace při práci s daty a časy.  
   
 <a name="DatesAndTimes_Display"></a>   
 ### <a name="displaying-dates-and-times"></a>Zobrazení hodnot data a času  
- Obvykle, když data a časy jsou zobrazeny v uživatelském rozhraní, měli byste použít konvencí formátování jazykové verze uživatele, který je definovaný <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti a <xref:System.Globalization.DateTimeFormatInfo> objekt vrácený `CultureInfo.CurrentCulture.DateTimeFormat` vlastnost. Formátování konvence aktuální jazykové verze automaticky se použijí při formátování data pomocí některé z těchto metod:  
+ Obvykle, když data a časy jsou zobrazeny v uživatelském rozhraní, byste měli použít formátovacích úmluv jazykové verze uživatele, který je definovaný <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti a <xref:System.Globalization.DateTimeFormatInfo> vrácený `CultureInfo.CurrentCulture.DateTimeFormat` vlastnost. Formátovacích úmluv aktuální jazykové verze automaticky používá, když formátujete datum pomocí některé z těchto metod:  
   
--   Bezparametrový <xref:System.DateTime.ToString?displayProperty=nameWithType> – metoda  
+-   Bezparametrová <xref:System.DateTime.ToString?displayProperty=nameWithType> – metoda  
   
--   <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> Metodu, která obsahuje řetězec formátu  
+-   <xref:System.DateTime.ToString%28System.String%29?displayProperty=nameWithType> Metodu, která obsahuje formátovací řetězec  
   
--   Bezparametrový <xref:System.DateTimeOffset.ToString?displayProperty=nameWithType> – metoda  
+-   Bezparametrová <xref:System.DateTimeOffset.ToString?displayProperty=nameWithType> – metoda  
   
--   <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>, Což zahrnuje řetězec formátu  
+-   <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>, Která obsahuje formátovací řetězec  
   
--   [Složené formátování](../../../docs/standard/base-types/composite-formatting.md) funkce, pokud se používá s daty  
+-   [Složené formátování](../../../docs/standard/base-types/composite-formatting.md) funkce, když se používá s daty  
   
- Následující příklad zobrazí sunrise a Jahoda data dvakrát pro 11 říjen 2012. Nejprve nastaví aktuální jazykovou verzi na Chorvatština (Chorvatsko) a pak na angličtinu (Velká Británie). V každém případě data a časy jsou zobrazeny ve formátu, který je vhodný pro danou jazykovou verzi.  
+ Následující příklad zobrazí data o východu a západu slunce dvakrát pro 11. října 2012. Nejprve nastaví aktuální jazykovou verzi na možnost Chorvatština (Chorvatsko) a angličtina (Velká Británie). V každém případě jsou data a časy jsou zobrazeny ve formátu, který je vhodný pro danou jazykovou verzi.  
   
  [!code-csharp[Conceptual.Globalization#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates1.cs#2)]
  [!code-vb[Conceptual.Globalization#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates1.vb#2)]  
   
 <a name="DatesAndTimes_Persist"></a>   
 ### <a name="persisting-dates-and-times"></a>Trvalé uchovávání hodnot data a času  
- Nikdy musí zachovat data datum a čas ve formátu, který se může lišit podle jazykové verze. Toto je běžné chybě programování, jejímž výsledkem poškozená data nebo spuštění výjimka. V následujícím příkladu jsou dva kalendářní data, 9 leden 2013 a 18 srpen 2013 jako řetězce pomocí konvencí formátování jazykové verze Angličtina (Spojené státy). Když jsou data načíst a analyzovat pomocí konvencí jazykové verze Angličtina (Spojené státy), je úspěšně obnoven. Ale když je načíst a analyzovat pomocí konvencí jazykové verze Angličtina (Velká Británie), první datum je nesprávně interpretován jako září 1 a druhý se nepodařilo analyzovat, protože gregoriánský kalendář nemá měsícem.  
+ Nikdy byste neměli zachovat data datum a čas ve formátu, který se může lišit podle jazykové verze. Toto je běžná programovací chyba, jejímž výsledkem poškození dat nebo výjimce za běhu. Následující příklad serializuje dvě data, 9. lednu 2013 a 18. srpna 2013 jako řetězce pomocí formátovacích úmluv jazykové verze Angličtina (Spojené státy). Když data načtena a analyzována pomocí úmluv jazykové verze Angličtina (Spojené státy), se úspěšně obnovila. Ale když ho načtena a analyzována pomocí úmluv jazykové verze Angličtina (Spojené království), první datum je nesprávně interpretováno jako 1. září a druhé se nepodaří analyzovat, protože gregoriánský kalendář nemá osmnáct měsíců.  
   
  [!code-csharp[Conceptual.Globalization#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates2.cs#3)]
  [!code-vb[Conceptual.Globalization#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates2.vb#3)]  
   
- Tento problém tři způsoby se můžete vyhnout:  
+ Možné předejít tomuto problému v libovolné ze tří způsobů:  
   
--   Serializuje data a času v binárním formátu a nikoli jako řetězec.  
+-   Serializujte datum a čas v binárním formátu, nikoli jako řetězec.  
   
--   Uložte a analyzovat řetězcovou reprezentaci datum a čas pomocí řetězec vlastní formát, který je stejný bez ohledu na jazykové verzi daného uživatele.  
+-   Uložit a analyzovat řetězcové vyjádření data a času s použitím vlastní formátovací řetězec, který je stejný bez ohledu na jazykovou verzi uživatele.  
   
--   Řetězec uložte pomocí konvencí formátování neutrální jazykovou verzi.  
+-   Uložte řetězec pomocí formátovacích úmluv invariantní jazykové verze.  
   
- Následující příklad ilustruje poslední přístup. Použije formátování pravidla neutrální jazykovou verzi, vrácený statických <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
+ Následující příklad ukazuje poslední přístup. Používá konvence formátování invariantní jazykové verze vrácené statickou <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
   
  [!code-csharp[Conceptual.Globalization#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates3.cs#4)]
  [!code-vb[Conceptual.Globalization#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates3.vb#4)]  
   
 <a name="DatesAndTimes_TimeZones"></a>   
 ### <a name="serialization-and-time-zone-awareness"></a>Serializace a zohlednění časového pásma  
- Hodnota data a času může mít několik interpretace, od obecné času ("úložiště otevřít na 2 leden 2013 v 9:00") na konkrétní chvíli v čase ("datum narození: 2 leden 2013 6:32:00 ráno"). Když hodnotu času představuje konkrétní chvíli v čase a obnovte ji ze serializovaná hodnota, měli byste zajistit reprezentuje stejný okamžik v čase bez ohledu na zeměpisném umístění a časovém pásmu uživatele.  
+ Hodnoty data a času může mít více interpretací, od obecného časového ("obchody otevřít 2. ledna 2013 v 9:00") pro určitý okamžik v čase ("datum narození: 2. ledna 2013 6:32:00 dop."). Když časová hodnota představuje určitý okamžik v čase a obnovíte ji ze serializované hodnoty, měli byste zajistit, že představuje stejný okamžik v čase bez ohledu na zeměpisnou polohu nebo časové pásmo uživatele.  
   
- Následující příklad ilustruje tento problém. Uloží jeden místní datum a čas hodnota jako řetězec v tři [standardní formáty](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) ("G" pro obecné datum dlouho čas, "s" pro řazení datum a čas a "o" pro operace round-trip pro datum a čas) i jako v binárním formátu.  
+ Následující příklad ukazuje tento problém. Uloží jedné místní hodnotu data a času jako řetězec ve třech [standardní formáty](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) ("G" pro obecné datum a dlouhý čas, "s" pro seřaditelné datum a čas a "o" pro operace round-trip pro datum/čas) i v binárním formátu.  
   
  [!code-csharp[Conceptual.Globalization#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates4.cs#10)]
  [!code-vb[Conceptual.Globalization#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates4.vb#10)]  
   
- Při obnovení dat systému ve stejném časovém pásmu jako systém, na kterém byl serializován deserializovat datum a čas hodnoty přesně odrážel původní hodnota, jak ukazuje výstup:  
+ Při obnovení dat v systému ve stejném časovém pásmu jako systém, na kterém byla serializována deserializované hodnoty data a času přesně odrážejí původní hodnotu, jak ukazuje výstup:  
   
 ```  
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified  
@@ -221,7 +221,7 @@ Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje l
 3/30/2013 6:00:00 PM Local  
 ```  
   
- Ale pokud obnovujete data na systém v jiném časovém pásmu, uchovává informace o časovém pásmu pouze datum a čas hodnotu, který je naformátovaný pomocí standardní formátovací řetězec "o" (round-trip) a proto představuje stejné rychlých v čase. Toto je výstup, když se obnoví data datum a čas v systému v láska standardního časového pásma:  
+ Pokud ale můžete obnovit data v rámci systému v jiném časovém pásmu, pouze hodnoty data a času, který se naformátoval pomocí standardního formátovacího řetězce "o" (round-trip) uchovává informace o časovém pásmu a proto představuje stejný instantní v čase. Při obnovení dat data a času v systému ve Středoevropském časovém pásmu, zde je výstup:  
   
 ```  
 '3/30/2013 6:00:00 PM' --> 3/30/2013 6:00:00 PM Unspecified  
@@ -231,22 +231,22 @@ Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje l
 3/30/2013 6:00:00 PM Local  
 ```  
   
- Aby přesně odpovídaly datum a čas hodnotu, která představuje jednu chvíli času bez ohledu na časové pásmo systému, na kterém je deserializovat data, můžete provést některé z následujících:  
+ K přesnému vyjádření hodnoty data a času, který představuje jeden okamžiku v čase bez ohledu na časové pásmo systému, na kterém jsou data deserializována, proveďte některý z následujících akcí:  
   
--   Uložte hodnota jako řetězec s použitím (odezvy) standardní formátovací řetězec "o". Následné deserializaci v cílovém systému.  
+-   Uložte hodnotu jako řetězec pomocí řetězce "o" (round-trip) standardního formátu. Pak ho Deserializujte v cílovém systému.  
   
--   Převést na čas UTC a uložte ho jako řetězec pomocí standardní formátovací řetězec "r" (RFC1123). Potom deserializovat v cílovém systému a převeďte ho na místní čas.  
+-   Převeďte jej na UTC a uložte ho jako řetězec pomocí standardního formátovacího řetězce "r" (RFC1123). Pak ho Deserializujte v cílovém systému a převeďte ji na místní čas.  
   
--   Převést na čas UTC a uložte ho jako řetězec pomocí standardní formátovací řetězec "u" (universal řazení). Potom deserializovat v cílovém systému a převeďte ho na místní čas.  
+-   Převeďte jej na UTC a uložte ho jako řetězec pomocí standardního formátovacího řetězce "u" (Univerzální seřaditelný). Pak ho Deserializujte v cílovém systému a převeďte ji na místní čas.  
   
--   Převést na čas UTC a uložte jej v binárním formátu. Potom deserializovat v cílovém systému a převeďte ho na místní čas.  
+-   Převeďte jej na UTC a uložte v binárním formátu. Pak ho Deserializujte v cílovém systému a převeďte ji na místní čas.  
   
- Následující příklad ilustruje postupy.  
+ Následující příklad každou techniku ukazuje.  
   
  [!code-csharp[Conceptual.Globalization#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates8.cs#11)]
  [!code-vb[Conceptual.Globalization#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates8.vb#11)]  
   
- Pokud se data serializovat v systému v časovém pásmu Tichomoří standardní a deserializovat na systém v láska standardního časového pásma, příklad zobrazí následující výstup:  
+ Když se data serializována v systému ve standardním tichomořském časovém pásmu a deserializována v systému ve Středoevropském časovém pásmu, v příkladu se zobrazí následující výstup:  
   
 ```  
 '2013-03-30T18:00:00.0000000-07:00' --> 3/31/2013 3:00:00 AM Local  
@@ -256,119 +256,120 @@ Globalizace zahrnuje návrh a vývoj připravených aplikaci, která podporuje l
 3/31/2013 3:00:00 AM Local  
 ```  
   
- Další informace najdete v tématu [převádění časy mezi časovými pásmy](../../../docs/standard/datetime/converting-between-time-zones.md).  
+ Další informace najdete v tématu [převod časy mezi časovými pásmy](../../../docs/standard/datetime/converting-between-time-zones.md).  
   
 <a name="DatesAndTimes_Arithmetic"></a>   
 ### <a name="performing-date-and-time-arithmetic"></a>Aritmetické operace s hodnotami data a času  
- Jak <xref:System.DateTime> a <xref:System.DateTimeOffset> typy podporují aritmetické operace. Můžete vypočítat rozdíl mezi dvěma hodnotami data, nebo můžete přidat nebo odečíst konkrétní časové intervaly do nebo z hodnotu data. Ale aritmetické operace na hodnoty data a času nepřebírají časových pásem a pravidla úprav časové pásmo v úvahu. Z toho důvodu může vrátit data a času aritmetické na hodnotách, které představují situacích v čase nepřesné výsledky.  
+ Jak <xref:System.DateTime> a <xref:System.DateTimeOffset> typů podporuje aritmetické operace. Můžete vypočítat rozdíl mezi dvěma hodnotami data nebo můžete přičíst nebo odečíst konkrétní časové intervaly k nebo od hodnoty data. Ale aritmetické operace na hodnoty data a času nepřebírají časových pásmech a pravidla úpravy časového pásma v úvahu. Z tohoto důvodu aritmetika na hodnotách, které představují momenty v čase data a času může vracet nepřesné výsledky.  
   
- Například k přechodu z Tichomoří (běžný čas) na tichomořského letního času na druhou neděli března, což je 10. března roku 2013. Jako následující příklad ukazuje, je-li vypočítat datum a čas, který je 48 hodin po 9 březnem 2013 v 10:30 hodin v systému v Tichomoří standardní časové pásmo výsledek 11 březnem 2013 v 10:30 hodin, nevyžaduje použité nastavení času v úvahu.  
+ Například přechodu ze standardního tichomořského času na pacifický letní čas proběhne druhou neděli v březnu, což je 10 dne v roce 2013. Jako následující příklad ukazuje, je-li vypočítat datum a čas, který je 48 hodin od 9. března 2013 v 10:30 hod v systému ve standardním tichomořském časovém pásmu výsledek, 11. března 2013 v 10:30 hod, nepřijímá potaz úpravu zasahující čas.  
   
  [!code-csharp[Conceptual.Globalization#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates5.cs#8)]
  [!code-vb[Conceptual.Globalization#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates5.vb#8)]  
   
- A zajistit tak aritmetické operace na hodnoty data a času přesné výsledky, postupujte takto:  
+ Aby bylo zajištěno, že aritmetické operace na hodnoty data a času vytváří přesné výsledky, postupujte podle těchto kroků:  
   
-1.  Převeďte čas v časovém pásmu zdroje na UTC.  
+1.  Převeďte na čas UTC čas v časovém pásmu zdroje.  
   
-2.  Provádění aritmetických operací.  
+2.  Proveďte aritmetickou operaci.  
   
-3.  Pokud je výsledek hodnota data a času, ji převeďte od času UTC čas v časovém pásmu zdroje.  
+3.  Pokud je výsledkem hodnota data a času, převeďte ji z času UTC na čas v časovém pásmu zdroje.  
   
- Následující příklad je podobně jako v předchozím příkladu s tím rozdílem, že ho zahrnuje následující tři kroky správně v 10:30 hodin přidat do 9 březnem 2013 48 hodin  
+ Následující příklad je podobné jako v předchozím příkladu, s tím rozdílem, že následuje tyto tři kroky pro správné přidání 48 hodin k 9 březnu 2013 v 10:30 hod  
   
  [!code-csharp[Conceptual.Globalization#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates6.cs#9)]
  [!code-vb[Conceptual.Globalization#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates6.vb#9)]  
   
- Další informace najdete v tématu [provádění aritmetických operací s daty a časy](../../../docs/standard/datetime/performing-arithmetic-operations.md).  
+ Další informace najdete v tématu [provádí aritmetické operace s daty a časy](../../../docs/standard/datetime/performing-arithmetic-operations.md).  
   
 ### <a name="using-culture-sensitive-names-for-date-elements"></a>Používání názvů zohledňujících jazykovou verzi pro elementy kalendářního data  
- Aplikace může třeba zobrazit název v měsíci nebo den v týdnu. K tomu je běžné, například následující kód.  
+ Vaše aplikace může potřebovat zobrazit název měsíce nebo den v týdnu. K tomu dochází například následující kód.  
   
  [!code-csharp[Conceptual.Globalization#19](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/monthname1.cs#19)]
  [!code-vb[Conceptual.Globalization#19](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/monthname1.vb#19)]  
   
- Tento kód však vždy vrátí názvy dnů v týdnu v angličtině. Kód, který extrahuje název měsíce je často i více pevná. Často předpokládá kalendář dvanácti měsíců s názvy měsíců v určitém jazyce.  
+ Tento kód však vždy vrací názvy dnů v týdnu v angličtině. Kód, který získává název měsíce je často mnohem více neflexibilní. Často se předpokládá dvanáctiměsíční kalendář s názvy měsíců v určitém jazyce.  
   
- Pomocí [vlastní datum a čas řetězce formátu](../../../docs/standard/base-types/custom-date-and-time-format-strings.md) nebo vlastnosti <xref:System.Globalization.DateTimeFormatInfo> objekt, je snadné k extrakci řetězce, které odráží názvy dnů v týdnu nebo měsíců ve jazykovou verzi uživatele, jak ukazuje následující příklad. Se změní aktuální jazykovou verzi na Francouzština (Francie) a zobrazí název den v týdnu a název v měsíci pro 1 července 2013.  
+ S použitím [řetězce formátu vlastní data a času](../../../docs/standard/base-types/custom-date-and-time-format-strings.md) nebo vlastnosti <xref:System.Globalization.DateTimeFormatInfo> objekt, je lze snadno extrahovat řetězce, které obsahují názvy dnů v týdnu nebo měsíců v jazykové verzi uživatele, jak ukazuje následující příklad. Změní aktuální jazykovou verzi na Francouzština (Francie) a zobrazí název dne v týdnu a názvu měsíce pro 1. července 2013.  
   
  [!code-csharp[Conceptual.Globalization#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/monthname2.cs#20)]
  [!code-vb[Conceptual.Globalization#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/monthname2.vb#20)]  
   
 <a name="Numbers"></a>   
 ## <a name="handling-numeric-values"></a>Zpracování číselných hodnot  
- Zpracování čísel závisí na tom, zda se zobrazí v uživatelském rozhraní nebo trvalé. Tento oddíl se zabývá obě použití.  
+ Zpracování čísel závisí na tom, zda jsou zobrazeny v uživatelském rozhraní nebo trvalé. Tato část se zabývá obojím použitím.  
   
 > [!NOTE]
->  Analýza a formátování operace, rozhraní .NET Framework rozpoznává jenom základní Latinské znaky 0 až 9 (U + 0030 až U + 0039) jako číslice.  
+>  V operacích analýzy a formátování, rozpozná rozhraní .NET Framework pouze základní znaky latinky 0 až 9 (U + 0030 až U + 0039) jako číselné znaky.  
   
 <a name="Numbers_Display"></a>   
 ### <a name="displaying-numeric-values"></a>Zobrazení číselných hodnot  
- Obvykle, když čísla se zobrazí v uživatelském rozhraní, měli byste použít konvencí formátování jazykové verze uživatele, který je definovaný <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti a <xref:System.Globalization.NumberFormatInfo> objekt vrácený `CultureInfo.CurrentCulture.NumberFormat` vlastnost. Formátování konvence aktuální jazykové verze automaticky se použijí při formátování data pomocí některé z následujících metod:  
+ Obvykle, když jsou čísla zobrazena v uživatelském rozhraní, byste měli použít formátovacích úmluv jazykové verze uživatele, který je definovaný <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti a <xref:System.Globalization.NumberFormatInfo> vrácený `CultureInfo.CurrentCulture.NumberFormat` vlastnost. Formátovacích úmluv aktuální jazykové verze automaticky používá, když formátujete datum pomocí některé z následujících metod:  
   
--   Bezparametrový `ToString` žádné číselného typu – metoda  
+-   Bezparametrová `ToString` metoda libovolného číselného typu  
   
--   `ToString(String)` Číselného typu, který obsahuje řetězec formátu jako argument – metoda  
+-   `ToString(String)` Metoda libovolného číselného typu, která obsahuje formátovací řetězec jako argument  
   
--   [Složené formátování](../../../docs/standard/base-types/composite-formatting.md) funkce, pokud se používá s číselné hodnoty.  
+-   [Složené formátování](../../../docs/standard/base-types/composite-formatting.md) funkce, když se používá s číselnými hodnotami  
   
- Následující příklad zobrazí průměrnou teplotu měsíčně v Paříž, Francie. Nejprve nastaví aktuální jazykovou verzi, francouzština (Francie) před zobrazením dat a pak ji nastaví na angličtinu (Spojené státy). V každém případě se zobrazí názvy měsíců a teploty ve formátu, který je vhodný pro danou jazykovou verzi. Upozorňujeme, že dvě jazykové verze použít jiné oddělovače desetinných míst v hodnotě teploty. Všimněte si, že příklad používá "MMMM" vlastní datum a čas řetězec formátu zobrazení jména úplný měsíc a jeho přiděluje odpovídající velikost místa pro názvy měsíců ve výsledném řetězci tak, že určíte délka názvu měsíc nejdelší <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType></C0>pole.  
+ Následující příklad zobrazuje průměrnou teplota za měsíc v Paříž, Francie. Nejprve nastaví aktuální jazykovou verzi na Francouzština (Francie) před zobrazením dat a nastaví ji na angličtinu (Spojené státy). V každém případě jsou názvy měsíců a teploty zobrazeny ve formátu, který je vhodný pro danou jazykovou verzi. Všimněte si, že tyto dvě jazykové verze používají různé oddělovače desetinných míst v hodnotě teploty. Všimněte si také, že v příkladu používá "MMMM" vlastní datum a čas řetězec formátu k zobrazení celého názvu měsíce a že přidělí odpovídající množství místa pro název měsíce ve výsledném řetězci určením délky nejdelší názvu měsíce v <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType></C0>pole.  
   
  [!code-csharp[Conceptual.Globalization#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/numbers1.cs#5)]
  [!code-vb[Conceptual.Globalization#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/numbers1.vb#5)]  
   
 <a name="Numbers_Persist"></a>   
 ### <a name="persisting-numeric-values"></a>Trvalé uchovávání číselných hodnot  
- Nikdy musí zachovat číselná data ve formátu specifické pro jazykovou verzi. Toto je běžné chybě programování, jejímž výsledkem poškozená data nebo spuštění výjimka. Následující příklad generuje deset náhodná čísla s plovoucí desetinnou čárkou a pak je serializuje jako řetězce pomocí konvencí formátování jazykové verze Angličtina (Spojené státy). Když jsou data načíst a analyzovat pomocí konvencí jazykové verze Angličtina (Spojené státy), je úspěšně obnoven. Ale když je načíst a analyzovat pomocí konvencí jazykové verze francouzština (Francie), žádný z čísla lze analyzovat protože jazykových verzí používají jiné oddělovače desetinných míst.  
+ Nikdy byste neměli zachovat číselná data ve formátu specifické pro jazykovou verzi. Toto je běžná programovací chyba, jejímž výsledkem poškození dat nebo výjimce za běhu. Následující příklad generuje deset náhodných čísel s plovoucí desetinnou čárkou a serializuje je jako řetězce pomocí formátovacích úmluv jazykové verze Angličtina (Spojené státy). Když data načtena a analyzována pomocí úmluv jazykové verze Angličtina (Spojené státy), se úspěšně obnovila. Ale když je načten a analyzován pomocí konvencí jazykovou verzi francouzština (Francie), žádná čísla můžete analyzovat, protože kultury používají jiné oddělovače desetinných míst.  
   
  [!code-csharp[Conceptual.Globalization#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/numbers2.cs#6)]
  [!code-vb[Conceptual.Globalization#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/numbers2.vb#6)]  
   
- K tomuto problému nedošlo, můžete použít některý z následujících postupů:  
+ K tomuto problému vyhnout, můžete použít některý z následujících postupů:  
   
--   Uložte a analyzovat řetězcovou reprezentaci číslo pomocí řetězec vlastní formát, který je stejný bez ohledu na jazykové verzi daného uživatele.  
+-   Uložit a analyzovat řetězcové vyjádření čísla pomocí řetězce vlastního formátu, který je stejný bez ohledu na jazykovou verzi uživatele.  
   
--   Uložit číslo jako řetězec pomocí konvencí formátování neutrální jazykovou verzi, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
+-   Uložit číslo jako řetězec pomocí formátovacích úmluv invariantní jazykové verze, která je vrácena <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> vlastnost.  
   
--   Serializuje číslo v binárním místo formát řetězce.  
+-   Serializujte číslo do binárního formátu místo formátu řetězce.  
   
- Následující příklad ilustruje poslední přístup. Ho serializuje pole <xref:System.Double> hodnoty a pak deserializuje a zobrazí je pomocí konvencí formátování Czech (Czech Republic) a kultur francouzština (Francie).  
+ Následující příklad ukazuje poslední přístup. Dojde k serializaci pole <xref:System.Double> hodnoty a deserializuje zobrazí pomocí konvencí formátování jazykové verze francouzština (Francie) a angličtina (Spojené státy).  
   
  [!code-csharp[Conceptual.Globalization#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/numbers3.cs#7)]
  [!code-vb[Conceptual.Globalization#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/numbers3.vb#7)]  
   
- Serializaci hodnoty měny je zvláštní případ. Protože hodnotu měny závisí na jednotku měny, ve které je vyjádřena; má smysl málo považovat za nezávislé číselná hodnota. Ale pokud uložíte hodnotu měny jako formátovaný řetězec, který zahrnuje symbolu měny, ho nelze deserializovat systému, jejíž výchozí jazykovou verzi používá jiný symbol měny, jak ukazuje následující příklad.  
+ Serializace hodnot měny je zvláštní případ. Protože hodnota měny závisí na jednotce měny, ve kterém je vyjádřena; nemá příliš smysl s ní zacházet jako s nezávislou číselnou hodnotou. Nicméně pokud uložíte hodnotu měny jako formátovaný řetězec, který obsahuje symbol měny, ho nejde deserializovat v systému, jehož výchozí jazyková verze používá odlišný symbol měny, jak ukazuje následující příklad.  
   
  [!code-csharp[Conceptual.Globalization#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/currency1.cs#16)]
  [!code-vb[Conceptual.Globalization#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/currency1.vb#16)]  
   
- Místo toho můžete serializovat číselnou hodnotu některé kulturního informace, jako je například název jazykové verze, tak, aby hodnota a její symbolu měny lze deserializovat nezávisle na aktuální jazykové verze. Následující příklad nemá, tak, že definujete `CurrencyValue` struktura s dva členy: <xref:System.Decimal> hodnota a název jazykové verze, do které patří hodnota.  
+ Místo toho byste měli serializovat číselnou hodnotu spolu s některými informacemi o, jako je například název jazykové verze, tak, aby hodnotu a její symbol měny bylo možné deserializovat nezávisle aktuální jazykové verze. Následující příklad, který nemá definováním `CurrencyValue` struktura se dvěma členy: <xref:System.Decimal> hodnota a název jazykové verze, do které patří hodnota.  
   
  [!code-csharp[Conceptual.Globalization#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/currency2.cs#17)]
  [!code-vb[Conceptual.Globalization#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/currency2.vb#17)]  
   
 <a name="Cultures"></a>   
 ## <a name="working-with-culture-specific-settings"></a>Práce s nastaveními specifickými pro jazykovou verzi  
- V rozhraní .NET Framework <xref:System.Globalization.CultureInfo> třída reprezentuje konkrétní jazykové verze nebo oblast. Některé jeho vlastnosti vrátit objekty, které obsahují konkrétní informace o určitý aspekt jazykové verze:  
+ V rozhraní .NET Framework <xref:System.Globalization.CultureInfo> třída představuje konkrétní jazykovou verzi nebo oblast. Některé vlastnosti vrátí objekty, které obsahují podrobné informace o určitém aspektu kultury:  
   
--   <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> Vlastnost vrátí <xref:System.Globalization.CompareInfo> objekt, který obsahuje informace o tom, jak jazyková verze, porovná a řadí řetězce.  
+-   <xref:System.Globalization.CultureInfo.CompareInfo%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Globalization.CompareInfo> objekt, který obsahuje informace o tom, jak kultura porovnává a objednává řetězce.  
   
--   <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> Vlastnost vrátí <xref:System.Globalization.DateTimeFormatInfo> objekt, který obsahuje informace specifické pro jazykovou verzi použité při formátování data a času.  
+-   <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Globalization.DateTimeFormatInfo> , který poskytuje informace specifické pro jazykovou verzi použitou při formátování data a času.  
   
--   <xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType> Vlastnost vrátí <xref:System.Globalization.NumberFormatInfo> objekt, který obsahuje informace specifické pro jazykovou verzi použité při formátování číselná data.  
+-   <xref:System.Globalization.CultureInfo.NumberFormat%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Globalization.NumberFormatInfo> , který poskytuje informace specifické pro jazykovou verzi použitou při formátování číselná data.  
   
--   <xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType> Vlastnost vrátí <xref:System.Globalization.TextInfo> objekt, který obsahuje informace o jazykové verzi je zápis systému.  
+-   <xref:System.Globalization.CultureInfo.TextInfo%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Globalization.TextInfo> systému zápisu, který poskytuje informace o jazykové verzi.  
   
- Obecně platí, neprovádějte žádné předpoklady o hodnotách konkrétní <xref:System.Globalization.CultureInfo> vlastnosti a jejich související objekty. Místo toho by měla zobrazit specifické pro jazykovou verzi dat jako mohou podléhat změnám, z těchto důvodů:  
+ Obecně není vhodné dělat závěry ohledně hodnot konkrétních <xref:System.Globalization.CultureInfo> vlastností a jejich souvisejících objektů. Místo toho by měl zobrazit data specifická pro jazykovou verzi jako proměnlivá z těchto důvodů:  
   
--   Jednotlivé hodnoty vlastností se vztahují změn a revize časem, jako data po opravě, bude k dispozici lepší dat nebo změnit konvence specifické pro jazykovou verzi.  
+-   Hodnoty jednotlivých vlastností se mohou měnit s postupem času, jak opravit data, dat nebo změnami konvencí specifických pro jazykovou verzi.  
   
--   Jednotlivé hodnoty vlastností se může lišit mezi verzemi verze rozhraní .NET Framework nebo operačního systému.  
+-   Hodnoty jednotlivých vlastností se mohou lišit mezi verzemi verze rozhraní .NET Framework nebo operačního systému.  
   
--   Rozhraní .NET Framework podporuje náhradní jazykové verze. Díky tomu je možné definovat nové vlastní jazykové verze, který nahrazuje stávající standardní jazykové verze nebo zcela nahradí existující standardní jazykovou verzi.  
+-   Rozhraní .NET Framework podporuje náhradní jazykové verze. Díky tomu je možné definovat nové vlastní jazykové verze, které doplňují stávající standardní jazykové verze nebo zcela nahrazují stávající standardní jazykovou verzi.  
   
--   Uživatele můžete upravit nastavení specifické pro jazykovou verzi pomocí **oblast a jazyk** aplikace v Ovládacích panelech. Při vytváření instancí <xref:System.Globalization.CultureInfo> objekt, můžete určit, zda odráží toto vlastní nastavení uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktor. Obvykle pro koncového uživatele aplikace by měly dodržovat uživatelských předvoleb tak, aby se uživateli s daty ve formátu, který potvrdí očekává.  
+-   Uživatel může upravit nastavení specifické pro jazykovou verzi pomocí **oblast a jazyk** aplikace v Ovládacích panelech. Při vytváření instance <xref:System.Globalization.CultureInfo> objektu, můžete určit, zda odráží tyto úpravy uživatele voláním <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> konstruktoru. Obvykle pro aplikace koncových uživatelů měli respektovat uživatelské předvolby tak, aby uživatel dostal data ve formátu, který očekává.  
   
-## <a name="see-also"></a>Viz také  
- [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
- [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)
+## <a name="see-also"></a>Viz také:
+
+- [Globalizace a lokalizace](../../../docs/standard/globalization-localization/index.md)  
+- [Doporučené postupy pro používání řetězců](../../../docs/standard/base-types/best-practices-strings.md)

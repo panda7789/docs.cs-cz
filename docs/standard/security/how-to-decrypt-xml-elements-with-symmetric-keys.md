@@ -15,27 +15,27 @@ helpviewer_keywords:
 ms.assetid: 6038aff0-f92c-4e29-a618-d793410410d8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: da4f65d1510f22e05cef4295a342163bba2d1958
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 38bb22de14ecef618d45f54cced32af57542d3df
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33583377"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43866842"
 ---
 # <a name="how-to-decrypt-xml-elements-with-symmetric-keys"></a>Postupy: Dešifrování elementů XML pomocí symetrických klíčů
-Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů pro zašifrování element dokumentu XML.  XML – šifrování umožňuje uložit nebo přenosu citlivých XML bez obav data snadno čitelná.  Tento příklad kódu dešifruje element XML pomocí algoritmus Advanced Encryption (Standard AES), také označován jako Rijndael.  
+Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování element v dokumentu XML.  Šifrování XML můžete uložit nebo přenosu citlivých XML, nemusíme mít starosti se snadno číst data.  Tento příklad kódu dešifruje elementu XML použitím algoritmus Advanced Encryption (Standard AES), také označován jako Rijndael.  
   
- Informace o tom, jak šifrování elementu XML s použitím tohoto postupu najdete v tématu [postupy: šifrování elementů XML pomocí symetrických klíčů](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md).  
+ Informace o tom, jak šifrování XML elementu s použitím tohoto postupu najdete v tématu [postupy: šifrování elementů XML pomocí symetrických klíčů](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md).  
   
- Použijete-li k šifrování dat XML symetrický algoritmus jako je AES, musíte použít stejný klíč k šifrování a dešifrování dat XML.  Příklad v tomto postupu předpokládá, že šifrované XML byla zašifrována pomocí stejného klíče, a šifrování a dešifrování strany ke shodě o algoritmus a klíč k použití.  V tomto příkladu se neukládají ani šifrování AES klíč v šifrované kódu XML.  
+ Při použití symetrický algoritmus, jako je AES pro šifrování dat XML, musí používat stejný klíč k šifrování a dešifrování dat XML.  V příkladu v tomto postupu se předpokládá, že šifrované XML byla zašifrována pomocí stejného klíče, a šifrování a dešifrování strany shodnout na algoritmus a klíč.  V tomto příkladu se neukládají ani šifrování AES klíč v souboru XML zašifrované.  
   
- Tento příklad je vhodný pro situace, kdy jediná aplikace potřebuje k šifrování dat na základě relace klíče uložené v paměti, nebo podle kryptograficky silnou klíče odvozeného z hesla.  V situacích, kdy je potřeba sdílet šifrovaná data XML dvě nebo více aplikací zvažte použití schématu šifrování na základě asymetrického algoritmu nebo certifikát X.509.  
+ Tento příklad je vhodný pro situace, kdy jedné aplikace potřebuje k šifrování dat na základě relace klíče uložené v paměti, nebo podle přidělení kryptograficky silného klíče odvozeného z hesla.  V situacích, kdy je potřeba sdílet šifrovaná data XML dva nebo více aplikací zvažte použití schématu šifrování na základě asymetrického algoritmu nebo certifikát X.509.  
   
 ### <a name="to-decrypt-an-xml-element-with-a-symmetric-key"></a>K dešifrování symetrického klíče elementu XML  
   
-1.  Zašifrování elementu XML vytvořených předtím klíčem pomocí technik popsaných v [postupy: šifrování elementů XML pomocí symetrických klíčů](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md).  
+1.  Šifrování XML element s dříve vytvořenou klíče pomocí technik popsaných v [postupy: šifrování elementů XML pomocí symetrických klíčů](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md).  
   
-2.  Najít <`EncryptedData`> elementu (definované XML Encryption standard) v <xref:System.Xml.XmlDocument> objektu, který obsahuje XML zašifrované a vytvořte novou <xref:System.Xml.XmlElement> objekt představující tento element.  
+2.  Najít <`EncryptedData`> – element (definované XML Encryption standard) v <xref:System.Xml.XmlDocument> objekt, který obsahuje zašifrované XML a vytvořte nový <xref:System.Xml.XmlElement> objekt představující tento prvek.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#10)]
      [!code-vb[HowToEncryptXMLElementSymmetric#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#10)]  
@@ -45,18 +45,18 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
      [!code-csharp[HowToEncryptXMLElementSymmetric#11](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#11)]
      [!code-vb[HowToEncryptXMLElementSymmetric#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#11)]  
   
-4.  Vytvořte novou <xref:System.Security.Cryptography.Xml.EncryptedXml> objektu a použít ho k dešifrování dat XML pomocí stejného klíče, která byla použita pro šifrování.  
+4.  Vytvořte nový <xref:System.Security.Cryptography.Xml.EncryptedXml> objektu a použít ho k dešifrování dat XML pomocí stejného klíče, který se používá pro šifrování.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#12)]
      [!code-vb[HowToEncryptXMLElementSymmetric#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#12)]  
   
-5.  Nahraďte element šifrované element nově dešifrovaným ve formátu prostého textu v dokumentu XML.  
+5.  Šifrovaný element nahraďte element nově dešifrovaný ve formátu prostého textu v dokumentu XML.  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#13](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#13)]
      [!code-vb[HowToEncryptXMLElementSymmetric#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#13)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad předpokládá, že soubor s názvem `"test.xml"` existuje ve stejném adresáři jako zkompilovaný program.  Dále předpokládá, že `"test.xml"` obsahuje `"creditcard"` elementu.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít jej v tomto příkladu.  
+ Tento příklad předpokládá, že soubor s názvem `"test.xml"` existuje ve stejném adresáři jako zkompilovaný program.  Dále předpokládá, že `"test.xml"` obsahuje `"creditcard"` elementu.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít ho v tomto příkladu.  
   
 ```xml  
 <root>  
@@ -72,15 +72,16 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Pro zkompilování tohoto příkladu, budete muset obsahovat odkaz na `System.Security.dll`.  
+-   Chcete-li kompilaci tohoto příkladu, je potřeba zahrnout odkaz na `System.Security.dll`.  
   
--   Zahrnout následujících oborů názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>, a <xref:System.Security.Cryptography.Xml>.  
+-   Následující obory názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>, a <xref:System.Security.Cryptography.Xml>.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Nikdy uložení kryptografického klíče v podobě prostého textu nebo přenos klíče mezi počítači v podobě prostého textu.  
+ Nikdy uložení kryptografického klíče ve formátu prostého textu nebo přenosu klíče mezi počítači ve formátu prostého textu.  
   
- Po dokončení pomocí symetrický šifrovací klíč, zrušte ji z paměti nastavením všech bajtů na nulu nebo voláním <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> metoda spravované kryptografické třídy.  
+ Po dokončení pomocí symetrické kryptografické klíče, vymažte ho z paměti nastavením všech bajtů na hodnotu nula nebo voláním <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> metoda třídy spravované kryptografie.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Security.Cryptography.Xml>  
- [Postupy: Šifrování elementů XML pomocí symetrických klíčů](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Security.Cryptography.Xml>  
+- [Postupy: Šifrování elementů XML pomocí symetrických klíčů](../../../docs/standard/security/how-to-encrypt-xml-elements-with-symmetric-keys.md)

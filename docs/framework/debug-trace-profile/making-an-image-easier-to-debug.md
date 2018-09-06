@@ -10,11 +10,11 @@ ms.assetid: 7d90ea7a-150f-4f97-98a7-f9c26541b9a3
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7f25eaaa17d4c4bd2e9522591bb0fd66445cdb6f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43742745"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872517"
 ---
 # <a name="making-an-image-easier-to-debug-in-net"></a>Usnadnění ladění v rozhraní .NET bitovou kopii
 

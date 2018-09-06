@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e8c10a680f1caffd583097b16c046729fe10b140
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43415391"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43804237"
 ---
 # <a name="qualifiersetget-function"></a>QualifierSet_Get – funkce
 Získá zadaný s názvem kvalifikátoru.  

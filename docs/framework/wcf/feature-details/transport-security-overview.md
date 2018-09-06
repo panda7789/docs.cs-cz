@@ -8,11 +8,11 @@ ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 9a04b8aaf9c6263a8935099963aaa1dc8d9100fd
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43418802"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43870598"
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
 Přenos mechanismy zabezpečení ve Windows Communication Foundation (WCF) závisí na vazby a přenosu používána. Například při použití <xref:System.ServiceModel.WSHttpBinding> třídy, je přenos protokolu HTTP a hlavní mechanismus pro zabezpečení přenosu je vrstva SSL (Secure Sockets) přes protokol HTTP, říká protokolu HTTPS. Toto téma popisuje mechanismy zabezpečení hlavní přenosu používána vazeb poskytovaných systémem WCF.  

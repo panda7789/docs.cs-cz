@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 5926da78a470911af3d8b068107f637406cb0eb9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 4e4cc7b3a0249836e6c0960208c0158962088c11
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43391149"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43861930"
 ---
 # <a name="c-keywords"></a>Klíčová slova jazyka C#
 Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají speciální význam pro kompilátor. Nelze je použít jako identifikátory v programu Pokud ovšem neobsahují `@` jako předponu. Například `@if` je platný identifikátor, ale `if` není, protože `if` je klíčové slovo.  
@@ -49,15 +49,16 @@ Klíčová slova jsou předdefinované, vyhrazené identifikátory, které mají
   
 ||||  
 |---|---|---|  
-|[add](../../../csharp/language-reference/keywords/add.md)|[Alias](../../../csharp/language-reference/keywords/extern-alias.md)|[ascending](../../../csharp/language-reference/keywords/ascending.md)|  
-|[async](../../../csharp/language-reference/keywords/async.md)|[await](../../../csharp/language-reference/keywords/await.md)|[descending](../../../csharp/language-reference/keywords/descending.md)|  
-|[dynamic](../../../csharp/language-reference/keywords/dynamic.md)|[z](../../../csharp/language-reference/keywords/from-clause.md)|[get](../../../csharp/language-reference/keywords/get.md)|  
-|[global](../../../csharp/language-reference/keywords/global.md)|[Skupiny](../../../csharp/language-reference/keywords/group-clause.md)|[into](../../../csharp/language-reference/keywords/into.md)|  
-|[Připojte se k](../../../csharp/language-reference/keywords/join-clause.md)|[let](../../../csharp/language-reference/keywords/let-clause.md)|[nameof](nameof.md)|   
-|[Řadit podle](../../../csharp/language-reference/keywords/orderby-clause.md)|[partial (typ)](../../../csharp/language-reference/keywords/partial-type.md)|[partial (metoda)](../../../csharp/language-reference/keywords/partial-method.md)|   
-|[remove](../../../csharp/language-reference/keywords/remove.md)|[Vyberte](../../../csharp/language-reference/keywords/select-clause.md)|[set](../../../csharp/language-reference/keywords/set.md)|   
-|[value](../../../csharp/language-reference/keywords/value.md)|[var](../../../csharp/language-reference/keywords/var.md)|[when (podmínka filtru)](when.md)|   
-|[where (omezení obecného typu)](../../../csharp/language-reference/keywords/where-generic-type-constraint.md)|[kde (klauzule dotazu)](../../../csharp/language-reference/keywords/where-clause.md)|[yield](../../../csharp/language-reference/keywords/yield.md)|  
+|[add](add.md)|[Alias](extern-alias.md)|[ascending](ascending.md)|
+|[async](async.md)|[await](await.md)|[by](by.md)|
+|[descending](descending.md)|[dynamic](dynamic.md)|[equals](equals.md)|
+|[z](from-clause.md)|[get](get.md)|[global](global.md)|
+|[Skupiny](group-clause.md)|[into](into.md)|[Připojte se k](join-clause.md)|
+|[let](let-clause.md)|[nameof](nameof.md)|[on](on.md)|
+|[Řadit podle](orderby-clause.md)|[partial (typ)](partial-type.md)|[partial (metoda)](partial-method.md)|
+|[remove](remove.md)|[Vyberte](select-clause.md)|[set](set.md)|
+|[value](value.md)|[var](var.md)|[when (podmínka filtru)](when.md)|
+|[where (omezení obecného typu)](where-generic-type-constraint.md)|[kde (klauzule dotazu)](where-clause.md)|[yield](yield.md)|
   
 ## <a name="see-also"></a>Viz také
 

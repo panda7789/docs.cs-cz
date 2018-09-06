@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: deserializaci objektu'
+title: 'Postupy: deserializace objektu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - deserializing objects
 - objects, deserializing steps
 ms.assetid: 287129c8-035a-4fea-b7b3-4790057ca076
-ms.openlocfilehash: 957c332b3456e2b27aca36ef2bcabbc36b4e94e5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6da8ec2b78066cd251e4ad492afd2d9d37f7b965
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581479"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43863236"
 ---
-# <a name="how-to-deserialize-an-object"></a>Postupy: deserializaci objektu
+# <a name="how-to-deserialize-an-object"></a>Postupy: deserializace objektu
 Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt datového proudu nebo souboru. Po formát přenosu je určen, můžete volat <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> nebo <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> metod, podle potřeby.  
   
 ### <a name="to-deserialize-an-object"></a>K deserializaci objektu  
@@ -51,6 +51,7 @@ Při deserializaci objektu, formát přenosu Určuje, zda vytváříte objekt da
     mySerializer.Deserialize(myFileStream)  
     ```  
   
-## <a name="see-also"></a>Viz také  
- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)
+## <a name="see-also"></a>Viz také:
+
+- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)

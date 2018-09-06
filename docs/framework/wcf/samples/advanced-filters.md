@@ -3,11 +3,11 @@ title: Rozšířené filtry
 ms.date: 03/30/2017
 ms.assetid: 8d81590f-e036-4f96-824a-4a187f462764
 ms.openlocfilehash: 7022384e8abe93f4276eec48785b3243ed926438
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43564197"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43805439"
 ---
 # <a name="advanced-filters"></a>Rozšířené filtry
 Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, který umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní vzorek Kalkulačka WCF na komunikaci pomocí směrovací službou. Tento příklad ukazuje, jak definovat směrování logiky založené na obsahu prostřednictvím filtry zpráv a tabulky filtru zpráv.  

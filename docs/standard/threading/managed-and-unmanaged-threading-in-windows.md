@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1be82fd9f26e382f20913551f67e8303cf20e03b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7834df6c987e94e59357c7c60db2627d107bffc3
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43731703"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43864547"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Spravovaná a nespravovaná vlákna ve Windows
 Správa všech vláken se provádí prostřednictvím <xref:System.Threading.Thread> třídy, včetně vlákna vytvořená modulem common language runtime a ty mimo modul runtime, které zadat spravované prostředí ke spuštění kódu. Modul runtime monitoruje všechna vlákna v procesu, které jste dříve spustili kódu ve spravovaném spouštěcím prostředí. Sledovat ostatní vlákna. Vlákna můžete zadat spravovaném spouštěcím prostředí pomocí zprostředkovatele komunikace s objekty COM (protože modul runtime poskytuje spravované objekty jako objekty modelu COM pro nespravované celý svět), COM [DllGetClassObject](/windows/desktop/api/combaseapi/nf-combaseapi-dllgetclassobject) funkce a vyvolání platformy.  
@@ -63,9 +63,10 @@ Správa všech vláken se provádí prostřednictvím <xref:System.Threading.Thr
 ## <a name="blocking-issues"></a>Problémy s blokováním  
  Pokud vlákno provede nespravovaného volání do operačního systému, který se zablokoval vlákna v nespravovaném kódu, modulu runtime nebude převzít kontrolu nad pro <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> nebo <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. V případě třídy <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>, modul runtime označí vlákno pro **přerušit** a provede kontrolu, když ho znovu přejde do spravovaného kódu. Je vhodné k použití spravované blokování namísto nespravovaného blokování. <xref:System.Threading.WaitHandle.WaitOne%2A?displayProperty=nameWithType>,<xref:System.Threading.WaitHandle.WaitAny%2A?displayProperty=nameWithType>, <xref:System.Threading.WaitHandle.WaitAll%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType>, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType>, <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType>, <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType>, a tak dále všechny interaktivní <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Navíc pokud vaše vlákno je v jednovláknovém objektu apartment, všechny tyto spravované blokující operace bude správně pump zprávy v vašeho objektu apartment zatímco vaše vlákno blokované.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>  
- <xref:System.Threading.ThreadState>  
- <xref:System.EnterpriseServices.ServicedComponent>  
- <xref:System.Threading.Thread>  
- <xref:System.Threading.Monitor>
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>  
+- <xref:System.Threading.ThreadState>  
+- <xref:System.EnterpriseServices.ServicedComponent>  
+- <xref:System.Threading.Thread>  
+- <xref:System.Threading.Monitor>

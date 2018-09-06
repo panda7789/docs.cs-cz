@@ -3,11 +3,11 @@ title: Určení relací mezi elementy bez vnoření
 ms.date: 03/30/2017
 ms.assetid: e31325da-7691-4d33-acf4-99fccca67006
 ms.openlocfilehash: d04a3d946b87c7203497313c6e21a75ef69f50eb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43724305"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865930"
 ---
 # <a name="specify-relations-between-elements-with-no-nesting"></a>Určení relací mezi elementy bez vnoření
 Pokud nejsou vnořené elementy, vytvoří se žádné implicitní vztahy. Můžete však explicitně zadat relací mezi elementy, které nejsou vnořené pomocí **msdata:Relationship** poznámky.  

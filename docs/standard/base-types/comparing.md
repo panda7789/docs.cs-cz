@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 38d6e979cd00bd113339a69b3ea6646c98f379d6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b1fa907be4571e0a5f95ab798210bedb154e9170
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43735160"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43872833"
 ---
 # <a name="comparing-strings-in-net"></a>Porovnání řetězců v .NET
 .NET nabízí několik metod pro porovnání hodnot řetězců. Následující tabulka uvádí a popisuje metody porovnání hodnoty.  
@@ -150,7 +150,7 @@ ms.locfileid: "43735160"
   
  Obě metody jsou užitečné při použití ve spojení s **String.Remove** metody. Můžete použít buď **IndexOf** nebo **LastIndexOf** metody načíst umístění znaku, a pak zadat na této pozici **odebrat** metodu, pokud chcete odebrat znaky nebo slovo, který začíná tento znak.  
   
-## <a name="see-also"></a>Viz také:  
+## <a name="see-also"></a>Viz také:
 
 - [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
 - [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)

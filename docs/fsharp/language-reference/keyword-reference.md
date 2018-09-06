@@ -2,12 +2,12 @@
 title: Referenční dokumentace klíčových slov (F#)
 description: 'Odkazy na informace o všech klíčových slov jazyka F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 18bf5f00cdd5250c0fbd503d096e5415a8b9feea
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0016f68b2872183a2b4dd865ce229b6a76250b78
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526186"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43856021"
 ---
 # <a name="keyword-reference"></a>Referenční dokumentace klíčových slov
 
@@ -131,9 +131,8 @@ Následující klíčová slova jsou vyhrazená jako klíčová slova pro budouc
 * `virtual`
 * `volatile`
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)
-
-[Možnosti kompilátoru](compiler-options.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace symbolů a operátorů](symbol-and-operator-reference/index.md)
+- [Možnosti kompilátoru](compiler-options.md)

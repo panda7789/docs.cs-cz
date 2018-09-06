@@ -13,20 +13,20 @@ helpviewer_keywords:
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d0aefcc61a9ce283f1230cd44ffae549725bb15f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b3e48d5a088fc6cff3dbdaaa77e6fa561c33f400
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589094"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43865518"
 ---
 # <a name="decrypting-data"></a>Dešifrování dat
-Dešifrování je reverzní operace šifrování. K šifrování tajného klíče musíte znát IV, které jste použili k šifrování dat i klíč. K šifrování veřejného klíče musíte znát veřejný klíč (Pokud byla data zašifrována pomocí soukromého klíče) nebo privátní klíč (Pokud byla data zašifrována pomocí veřejného klíče).  
+Dešifrování se zpětná operace šifrování. K šifrování tajného klíče musíte znát klíč a vektor IV použitý k šifrování dat. Pro šifrování s veřejným klíčem je třeba znát veřejného klíče (Pokud byla data zašifrována pomocí soukromého klíče) nebo privátní klíč (Pokud byla data zašifrována pomocí veřejného klíče).  
   
 ## <a name="symmetric-decryption"></a>Symetrické dešifrování  
- Dešifrování dat šifrován symetrické algoritmy je podobný proces používaný k šifrování dat symetrickými algoritmy. <xref:System.Security.Cryptography.CryptoStream> Třída se používá se symetrické šifrování třídy poskytované rozhraní .NET Framework dešifrovat data načíst z libovolného objektu spravovaného streamu.  
+ Dešifrování data zašifrovaná pomocí symetrických algoritmů je podobný procesu použité k šifrování dat pomocí symetrických algoritmů. <xref:System.Security.Cryptography.CryptoStream> Třída se používá s třídami symetrické šifrování poskytované rozhraní .NET Framework se dešifrovat data načtená z libovolného objektu spravovaný datový proud.  
   
- Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged> třídy a použít ho k dešifrování na <xref:System.Security.Cryptography.CryptoStream> objektu. Tento příklad nejprve vytvoří novou instanci třídy **RijndaelManaged** třídy. Potom vytvoří **CryptoStream** objekt a inicializuje ji na hodnotu spravovaného streamu volat `MyStream`. Dále **CreateDecryptor** metoda z **RijndaelManaged** třída je předán stejný klíč a IV, který byl použit pro šifrování a pak je předána **CryptoStream** konstruktor. Nakonec **CryptoStream** výčtu je předán **CryptoStream** konstruktor k zadání přístupu pro čtení do datového proudu.  
+ Následující příklad ukazuje, jak vytvořit novou instanci třídy <xref:System.Security.Cryptography.RijndaelManaged> třídy a použít ho k dešifrování na <xref:System.Security.Cryptography.CryptoStream> objektu. Tento příklad nejprve vytvoří novou instanci třídy **RijndaelManaged** třídy. Vedle vytváření **CryptoStream** objektu a inicializuje ji na hodnotu spravovaný datový proud volá `MyStream`. Dále **CreateDecryptor** metodu z **RijndaelManaged** třídy je předán stejný klíč a vektor IV, který se použil pro šifrování a je pak předán **CryptoStream** konstruktor. Nakonec **CryptoStream** výčtu je předán **CryptoStream** konstruktor k zadání oprávnění ke čtení pro datový proud.  
   
 ```vb  
 Dim RMCrypto As New RijndaelManaged()  
@@ -38,7 +38,7 @@ RijndaelManaged RMCrypto = new RijndaelManaged();
 CryptoStream CryptStream = new CryptoStream(MyStream, RMCrypto.CreateDecryptor(Key, IV), CryptoStreamMode.Read);  
 ```  
   
- Následující příklad ukazuje celý proces vytváření datového proudu, dešifrování datového proudu, čtení z datového proudu a zavření datových proudů. A <xref:System.Net.Sockets.TcpListener> je vytvořen objekt, který inicializuje datový proud sítě při připojení k objektu naslouchání. Datový proud sítě je pak dešifrovat pomocí **CryptoStream** – třída a **RijndaelManaged** třídy. Tento příklad předpokládá, že klíče a hodnoty IV byly buď úspěšně přenesla nebo dříve schválené. Kód potřebný k šifrování a přenos tyto hodnoty nejsou zobrazeny.  
+ Následující příklad ukazuje celý proces vytváření datového proudu, dešifrování datového proudu, čtení z datového proudu a zavření datových proudů. A <xref:System.Net.Sockets.TcpListener> je vytvořen objekt, který inicializuje sítě datového proudu při připojení k naslouchání objektu. Datový proud sítě je pak dešifrovat pomocí **CryptoStream** třídy a **RijndaelManaged** třídy. Tento příklad předpokládá, že klíč a vektor IV hodnoty byly buď úspěšně převeden nebo dříve dohodnutých. Nezobrazuje se kód potřebný k šifrování a přenést tyto hodnoty.  
   
 ```vb  
 Imports System  
@@ -169,14 +169,14 @@ class Class1
 }  
 ```  
   
- Předchozí příklad, fungovat šifrované připojení musí být provedeny pro naslouchací proces. Připojení k musí používat stejný klíč, IV a algoritmus používaný v naslouchací proces. Pokud se toto připojení, je zpráva dešifrovat a zobrazení v konzole.  
+ Předchozí ukázka fungovala musí provést šifrované připojení k naslouchacímu procesu. Připojení musí používat stejný klíč, IV a algoritmus používaný v naslouchací proces. Pokud je toto připojení, zpráva se dešifrují a zobrazí v konzole.  
   
 ## <a name="asymmetric-decryption"></a>Asymetrické dešifrování  
- Obvykle strany (strany A) generuje jak veřejný a privátní klíč a ukládá klíče v paměti nebo v kontejneru kryptografických klíčů.  Strany, A poté odešle veřejný klíč na druhé straně (straně B).  Pomocí veřejného klíče, strany B šifruje data a odešle data straně a.  Po přijetí dat, strany A dešifruje ji pomocí privátního klíče, který odpovídá.  Dešifrování bude úspěšné pouze v případě, že používá privátního klíče, který odpovídá veřejnému klíči strany B používá k šifrování dat A strany.  
+ Strana (stran A) obvykle generuje i veřejného a privátního klíče a uloží klíč v paměti nebo v kontejneru kryptografických klíčů.  Party, A poté odešle veřejný klíč do jiného (strana B).  Pomocí veřejného klíče, strana B šifruje data a odešle data zpět do strany A.  Po přijetí dat, strana A dešifruje ji pomocí soukromého klíče, který odpovídá.  Dešifrování bude úspěšné pouze v případě, že strana A privátní klíč, který odpovídá veřejnému klíči stran B používá k šifrování dat používá.  
   
- Informace o tom, jak ukládat asymetrického klíče v zabezpečeném kontejneru kryptografických klíčů a jak později načíst asymetrický klíč, najdete v části [postupy: ukládání asymetrických klíčů v kontejneru klíčů](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).  
+ Informace o způsobu uložení asymetrického klíče v kontejneru zabezpečené kryptografické klíče a jak později načíst asymetrického klíče, naleznete v tématu [jak: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).  
   
- Následující příklad ilustruje dešifrování dvě pole bajtů, které představují symetrický klíč a IV.  Informace o tom, jak extrahovat asymetrické veřejného klíče z <xref:System.Security.Cryptography.RSACryptoServiceProvider> objekt ve formátu, který lze snadno odeslat třetích stran, najdete v článku [šifrování dat](../../../docs/standard/security/encrypting-data.md).  
+ Následující příklad ukazuje dešifrování dvě pole bajtů, která představuje symetrický klíč a vektor IV.  Informace o tom, jak extrahovat asymetrického veřejný klíč z <xref:System.Security.Cryptography.RSACryptoServiceProvider> objektu ve formátu, který můžete snadno odesílat žádné třetí straně, přečtěte si téma [šifrování dat](../../../docs/standard/security/encrypting-data.md).  
   
 ```vb  
 'Create a new instance of the RSACryptoServiceProvider class.  
@@ -202,7 +202,8 @@ SymmetricKey = RSA.Decrypt( EncryptedSymmetricKey, false);
 SymmetricIV = RSA.Decrypt( EncryptedSymmetricIV , false);  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)  
- [Šifrování dat](../../../docs/standard/security/encrypting-data.md)  
- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)
+## <a name="see-also"></a>Viz také:
+
+- [Generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)  
+- [Šifrování dat](../../../docs/standard/security/encrypting-data.md)  
+- [Kryptografické služby](../../../docs/standard/security/cryptographic-services.md)

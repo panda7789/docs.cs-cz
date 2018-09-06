@@ -9,17 +9,17 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: c9b2620ab72648ba57fe9d0eceece07ebcd17280
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 718be7e201788906fa0fad829922eb5b77b48aed
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43538955"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43857307"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
 
-Oba jazyky umožňují vkládání informací o typu, který umožňuje nasazení sestavení, které komunikují s komponentami modelu COM bez nasazení primárních sestavení vzájemné spolupráce (PIA) na počítači uživatele. Další informace najdete v tématu [návod: vložení typů ze spravovaných sestavení](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21).  
+Oba jazyky umožňují vkládání informací o typu, který umožňuje nasazení sestavení, které komunikují s komponentami modelu COM bez nasazení primárních sestavení vzájemné spolupráce (PIA) na počítači uživatele. Další informace najdete v tématu [návod: vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md).  
   
 Tento názorný postup ukazuje tyto funkce v rámci programování pro Office, ale mnohé z těchto funkcí jsou také užitečné, obecně programování. V tomto návodu použijete k vytvoření Excelového sešitu aplikace Excel Add-in. V dalším kroku vytvořte Wordový dokument, který obsahuje odkaz na sešit. A konečně naleznete v tématu Jak povolit a zakázat závislost PIA.  
   
@@ -93,11 +93,11 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
      V této metodě se používají dvě nové funkce C#. Obě tyto funkce již existují v jazyce Visual Basic.  
   
-    -   Metoda [přidat](https://msdn.microsoft.com/library/microsoft.office.interop.excel.workbooks.add.aspx) má *volitelný parametr* pro určení konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že v předchozím příkladu je odeslán žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
+    -   Metoda [přidat](<xref:Microsoft.Office.Interop.Excel.Workbooks.Add%2A>) má *volitelný parametr* pro určení konkrétní šablonu. Volitelné parametry, které jsou nové v [!INCLUDE[csharp_dev10_long](~/includes/csharp-dev10-long-md.md)], vám umožní argument pro tento parametr vynechat, pokud chcete použít výchozí hodnotu parametru. Vzhledem k tomu, že v předchozím příkladu je odeslán žádný argument `Add` používá výchozí šablonu a vytvoří nový sešit. Ekvivalentní příkaz ve starších verzích jazyka C# vyžaduje argument zástupný symbol: `excelApp.Workbooks.Add(Type.Missing)`.  
   
          Další informace najdete v tématu [pojmenované a nepovinné argumenty](../../../csharp/programming-guide/classes-and-structs/named-and-optional-arguments.md).  
   
-    -   `Range` a `Offset` vlastnosti [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.aspx) používají *indexovaných vlastností* funkce. Tato funkce umožňuje, abyste mohli využívat tyto vlastnosti z typů modelu COM s použitím typické C# syntaxi. Indexované vlastnosti také umožňují používat `Value` vlastnost `Range` objektu, takže odpadá nutnost používat `Value2` vlastnost. `Value` Indexované vlastnosti, ale index je volitelné. Volitelné argumenty a indexované vlastnosti společně v následujícím příkladu.  
+    -   `Range` a `Offset` vlastnosti [rozsah](<xref:Microsoft.Office.Interop.Excel.Range>) používají *indexovaných vlastností* funkce. Tato funkce umožňuje, abyste mohli využívat tyto vlastnosti z typů modelu COM s použitím typické C# syntaxi. Indexované vlastnosti také umožňují používat `Value` vlastnost `Range` objektu, takže odpadá nutnost používat `Value2` vlastnost. `Value` Indexované vlastnosti, ale index je volitelné. Volitelné argumenty a indexované vlastnosti společně v následujícím příkladu.  
   
          [!code-csharp[csOfficeWalkthrough#5](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_5.cs)]  
   
@@ -117,7 +117,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
      Tyto doplňky ukazují další funkce v jazyce C#: považuje `Object` jako v případě, že mají typ vrácené hodnoty z hostitelů modelu COM, jako je například Office [dynamické](../../../csharp/language-reference/keywords/dynamic.md). K tomu dojde automaticky při **Embed Interop Types** je nastavena na výchozí hodnotu, `True`, nebo ekvivalentně, když sestavení odkazuje [/link](../../../csharp/language-reference/compiler-options/link-compiler-option.md) – možnost kompilátoru. Typ `dynamic` umožňuje pozdní vazby již k dispozici v jazyce Visual Basic a zabraňuje explicitní přetypování nutné Visual C# 2008 a starší verze jazyka.  
   
-     Například `excelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel [rozsah](https://msdn.microsoft.com/library/microsoft.office.interop.excel.range.aspx) metody. Bez `dynamic`, musíte přetypovat vrácený objekt `excelApp.Columns[1]` jako instance `Range` před voláním metody `AutoFit`.  
+     Například `excelApp.Columns[1]` vrátí `Object`, a `AutoFit` je aplikace Excel [rozsah](<xref:Microsoft.Office.Interop.Excel.Range>) metody. Bez `dynamic`, musíte přetypovat vrácený objekt `excelApp.Columns[1]` jako instance `Range` před voláním metody `AutoFit`.  
   
      [!code-csharp[csOfficeWalkthrough#8](../../../csharp/programming-guide/interop/codesnippet/CSharp/walkthrough-office-programming_8.cs)]  
   
@@ -141,7 +141,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
 
      [!code-vb[csOfficeWalkthrough#10](../../../csharp/programming-guide/interop/codesnippet/VisualBasic/walkthrough-office-programming_10.vb)]  
   
-     Tento kód ukazuje několik nových funkcí v jazyce C#: možnost chcete vynechat, nechte `ref` – klíčové slovo v programování v modelu COM, pojmenované argumenty a nepovinné argumenty. Tyto funkce se již existují v jazyce Visual Basic. [PasteSpecial](https://msdn.microsoft.com/library/microsoft.office.interop.word.selection.pastespecial.aspx) metoda má sedm parametry, které jsou definovány jako s volitelnými parametry. Pojmenované a nepovinné argumenty umožňují označit parametry, které chcete získat přístup podle názvu a argumenty odesílat jenom tyto parametry. V tomto příkladu jsou argumenty odesílat udávající, že by měl být vytvářeny odkaz k sešitu do schránky (parametr `Link`) a že je odkaz zobrazený v dokumentu jako ikona (parametr `DisplayAsIcon`). Visual C# také umožňuje vynechat, nechte `ref` – klíčové slovo pro tyto argumenty.
+     Tento kód ukazuje několik nových funkcí v jazyce C#: možnost chcete vynechat, nechte `ref` – klíčové slovo v programování v modelu COM, pojmenované argumenty a nepovinné argumenty. Tyto funkce se již existují v jazyce Visual Basic. [PasteSpecial](<xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>) metoda má sedm parametry, které jsou definovány jako s volitelnými parametry. Pojmenované a nepovinné argumenty umožňují označit parametry, které chcete získat přístup podle názvu a argumenty odesílat jenom tyto parametry. V tomto příkladu jsou argumenty odesílat udávající, že by měl být vytvářeny odkaz k sešitu do schránky (parametr `Link`) a že je odkaz zobrazený v dokumentu jako ikona (parametr `DisplayAsIcon`). Visual C# také umožňuje vynechat, nechte `ref` – klíčové slovo pro tyto argumenty.
   
 ### <a name="to-run-the-application"></a>Ke spuštění aplikace  
   
@@ -205,8 +205,8 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
 - [Výrazy lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)  
 - [Výrazy lambda (C#)](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
 - [Postupy: Použití indexovaných vlastností při programování zprostředkovatele komunikace s objekty COM](../../../csharp/programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md)  
-- [Návod: Vložení informací o typu ze sestavení Microsoft Office](https://msdn.microsoft.com/library/85b55e05-bc5e-4665-b6ae-e1ada9299fd3(v=vs.100))  
-- [Návod: Vložení typů ze spravovaných sestavení](https://msdn.microsoft.com/library/b28ec92c-1867-4847-95c0-61adfe095e21)  
-- [Návod: Vytvoření prvního doplňku VSTO pro Excel](https://msdn.microsoft.com/library/a855e2be-3ecf-4112-a7f5-ec0f7fad3b5f)  
+- [Návod: Vložení informací o typu ze sestavení Microsoft Office](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-type-information-from-microsoft-office-assemblies.md)  
+- [Návod: Vložení typů ze spravovaných sestavení](../../../csharp/programming-guide/concepts/assemblies-gac/walkthrough-embedding-types-from-managed-assemblies-in-visual-studio.md)  
+- [Návod: Vytvoření prvního doplňku VSTO pro Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)  
 - [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)  
 - [Interoperabilita](../../../csharp/programming-guide/interop/index.md)

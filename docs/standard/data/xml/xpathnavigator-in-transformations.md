@@ -1,5 +1,5 @@
 ---
-title: Objektem XPathNavigator nastaveným v transformace
+title: XPathNavigator v transformacích
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,21 +8,21 @@ dev_langs:
 ms.assetid: 118f97d1-7110-4d1b-b0bd-4143252c0bb0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 76cfa51c7d434a6dfdcdc1e6852779decaa601e4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 57290af1df8d370c928a97aba1622e41a6a33589
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570454"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43866637"
 ---
-# <a name="xpathnavigator-in-transformations"></a>Objektem XPathNavigator nastaveným v transformace
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje náhodný přístup jen pro čtení k datům a je určená pro použití jako vstup pro jazyk XSL pro transformace XSLT (). Se implementuje na <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>, a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> Je založena na datový Model World Wide Web Consortium (W3C), jak je popsáno v části 5 doporučení XML Path Language (XPath).  
+# <a name="xpathnavigator-in-transformations"></a>XPathNavigator v transformacích
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje náhodný přístup jen pro čtení k datům a je určený pro použití jako vstup do šablony stylů jazyk pro transformace XSLT (). Je implementován v <xref:System.Xml.XPath.XPathDocument>, <xref:System.Xml.XmlDataDocument>, a <xref:System.Xml.XmlDocument>. <xref:System.Xml.XPath.XPathNavigator> Je založena na datovém modelu World Wide Web Consortium (W3C), jak je popsáno v části 5 doporučení jazyk XML Path (XPath).  
   
- <xref:System.Xml.XPath.XPathNavigator> Definuje model kurzoru přes jakékoli úložiště a nabízí v porovnání s jakékoli úložiště dat rychlé, jen pro čtení dotazů XPath. <xref:System.Xml.XPath.XPathNavigator> Je také třída pro iterování přes fragmenty stromu výsledek.  
+ <xref:System.Xml.XPath.XPathNavigator> Definuje model kurzoru nad jakékoli úložiště a poskytuje rychlý a jen pro čtení dotazy XPath přes jakékoli úložiště dat. <xref:System.Xml.XPath.XPathNavigator> Je také třída pro iterace přes fragmenty stromu výsledek.  
   
- Rozhraní API umožňuje získat informace z aktuálního uzlu v úložišti a přesunout do připojených uzlů. <xref:System.Xml.XPath.XPathNavigator> Je model styl kurzor, který provádí traversal přes do úložiště pomocí sadu **přesunout** metody. <xref:System.Xml.XPath.XPathNavigator> Je vždycky nastavený na uzlu. Všechny **přesunout** metoda, který selže nechá <xref:System.Xml.XPath.XPathNavigator> beze změny.  
+ Rozhraní API umožňuje získat informace z aktuálního uzlu v úložišti a přesunout do propojených uzlů. <xref:System.Xml.XPath.XPathNavigator> Je model styl kurzor, který provádí přechod zálohovaných store pomocí sady **přesunout** metody. <xref:System.Xml.XPath.XPathNavigator> Vždy je umístěn na uzlu. Žádné **přesunout** metody, které se nedaří listy <xref:System.Xml.XPath.XPathNavigator> beze změny.  
   
- <xref:System.Xml.XPath.XPathNavigator> Je třída, která chcete použít pro iterování přes fragmenty stromu výsledek. Následující příklad kódu vytvoří fragment výsledek stromové struktury v rámci šablony stylů voláním funkce s parametrem `fragment`, který obsahuje XML.  
+ <xref:System.Xml.XPath.XPathNavigator> Je třída pro iterace přes fragmenty stromu výsledek. Následující vzorový kód vytvoří fragment stromu výsledek předloze se styly voláním funkce s parametrem `fragment`, který obsahuje XML.  
   
 ## <a name="testxsl"></a>test.xsl  
   
@@ -110,11 +110,12 @@ public class sample
 ```  
   
 ## <a name="output"></a>Výstup  
- Výsledek transformace se nacházejí v souboru **out.xml**:  
+ Výsledek transformace se nachází v souboru **out.xml**:  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>Joe  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+## <a name="see-also"></a>Viz také:
+
+- [Třída XslTransform implementuje procesor XSLT](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)

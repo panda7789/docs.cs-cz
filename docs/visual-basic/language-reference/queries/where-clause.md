@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Where clause [Visual Basic]
 ms.assetid: 48b5c2c5-3181-429c-8545-894296798c89
 ms.openlocfilehash: de7b4bf3e7dc1145b7e95197c7bd05c66acdabd6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43674476"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43859433"
 ---
 # <a name="where-clause-visual-basic"></a>Where – klauzule (Visual Basic)
 Určuje podmínku filtrování dotazu.  
