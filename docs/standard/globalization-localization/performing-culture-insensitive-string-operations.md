@@ -14,11 +14,11 @@ ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 748b4170e9e4c0df048c542d06bcb64a56ccf677
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541589"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43785866"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Provádění řetězcových operací nezávislých na jazykové verzi
 Většina metod rozhraní .NET Framework, které provádějí operace s řetězci zohledňující jazykovou verzi ve výchozím nastavení poskytovat přetížení metod, které umožňuje explicitně určit jazyková verze použitá předáním <xref:System.Globalization.CultureInfo> parametru. Tato přetížení umožňují odstranění v případě mapování a řazení pravidel a zaručit výsledků nezávislých na jazykové verzi.  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - XML Formatter
 ms.assetid: e0a2fe89-3534-48c8-aa3c-819862224571
 ms.openlocfilehash: ef1b01ff59fc32546dca8ed9c95f3a981ed408e3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43553978"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787954"
 ---
 # <a name="datacontractserializer-sample"></a>Ukázka třídy DataContractSerializer
 Ukázka třídy DataContractSerializer ukazuje <xref:System.Runtime.Serialization.DataContractSerializer>, které provádí obecné serializace a deserializace služeb pro data třídy kontraktu. Ukázka vytvoří `Record` objektu, serializuje do datového proudu paměti a deserializuje zpět do jiného datového proudu paměti `Record` objekt pro demonstraci použití <xref:System.Runtime.Serialization.DataContractSerializer>. Ukázka pak serializuje `Record` pomocí binární zapisovače k předvedení jak zapisovač, který ovlivňuje serializace.  

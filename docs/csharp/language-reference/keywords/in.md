@@ -6,12 +6,12 @@ f1_keywords:
 - in_CSharpKeyword
 helpviewer_keywords:
 - in keyword [C#]
-ms.openlocfilehash: b9abedb72e04cb36273b48bb609fe8e410872f8b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: HT
+ms.openlocfilehash: 04449d99fd3e1b573333bc11a9766e9809b44785
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43731816"
+ms.locfileid: "43788594"
 ---
 # <a name="in-c-reference"></a>Kontextové klíčové slovo in (Referenční dokumentace jazyka C#)
 
@@ -20,6 +20,7 @@ ms.locfileid: "43731816"
 - [Parametry obecného typu](in-generic-modifier.md) v obecných rozhraních a delegátech.
 - Jako [modifikátor parametru](in-parameter-modifier.md), který umožní můžete předat argument k metodě podle odkazu, nikoli podle hodnoty.
 - [foreach](foreach-in.md) příkazy.
+- [z klauzule](from-clause.md) výrazech dotazů v LINQ.
 - [Připojte se k klauzule](join-clause.md) výrazech dotazů v LINQ.
   
 ## <a name="see-also"></a>Viz také

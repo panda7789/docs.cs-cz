@@ -1,43 +1,43 @@
 ---
 title: Hodnoty Null (F#)
-description: 'Zjistěte, jak se používá hodnota null v programovací jazyk F #.'
+description: 'Zjistěte, jak se v programovacím jazyce F # používá hodnotu null.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 7367b35cb6e910f926179e52992d5533e5cdda0e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8751ac402c43ddb07fb62e08b6c6d5403cbe9acc
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563906"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787894"
 ---
 # <a name="null-values"></a>Hodnoty Null
 
-Toto téma popisuje, jak se používá hodnota null v jazyce F #.
+Toto téma popisuje, jak se používá hodnotu null v jazyce F #.
 
+## <a name="null-value"></a>Hodnota Null
 
-## <a name="null-value"></a>Hodnoty Null
-Hodnota null není obvykle používá v F # pro hodnoty nebo proměnné. Hodnota null se však zobrazí jako neobvyklé hodnota v určitých situacích. Pokud typ je definovaná v F #, null není povolená jako regulární hodnotu, pokud [allownullliteral –](https://msdn.microsoft.com/library/4f315196-f444-4cca-ba07-1176ff71eb0f) atribut se používá k typu. Pokud typ je definovaná v jiném jazyce rozhraní .NET, null je možná hodnota a když jsou spolupracuje s takového typu, F # kódu setkat hodnoty null.
+Hodnotu null se obvykle nepoužívá v jazyce F # pro hodnoty nebo proměnné. Hodnota null se však zobrazí neobvyklé hodnoty v určitých situacích. Pokud je typ definován v jazyce F #, null není povolena jako hodnotu regulární, není-li [AllowNullLiteral](https://msdn.microsoft.com/library/4f315196-f444-4cca-ba07-1176ff71eb0f) atributu se použije k typu. Pokud je typ definován v nějakém jiném jazyce .NET, null je možná hodnota a při interoperabilitě se se službou těchto typů, kódu F # zaznamenat hodnoty null.
 
-Pro typ definovaný v jazyce F # a používají výhradně z F #, je jediným způsobem, jak vytvořit hodnotu null, přímo pomocí knihovny F # použití [unchecked.defaultof –](https://msdn.microsoft.com/library/9ff97f2a-1bd4-4f4c-afbe-5886a74ab977) nebo [Array.zeroCreate](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2). Ale pro typ F #, který se používá z jinými jazyky rozhraní .NET, nebo pokud používáte tento typ pomocí rozhraní API, které není napsané v jazyce F #, jako je rozhraní .NET Framework, může dojít, hodnoty null.
+Pro typ definovaný v jazyce F # a používají výhradně z jazyka F #, je jediný způsob, jak vytvořit hodnotu null, přímo pomocí knihovny F # použití [Unchecked.defaultof](https://msdn.microsoft.com/library/9ff97f2a-1bd4-4f4c-afbe-5886a74ab977) nebo [Array.zeroCreate](https://msdn.microsoft.com/library/fa5b8e7a-1b5b-411c-8622-b58d7a14d3b2). Však pro typ jazyka F #, který se používá z jiných jazyků .NET, nebo pokud při použití tohoto typu se rozhraní API, které nejsou napsané v jazyce F #, jako je například rozhraní .NET Framework, může dojít, hodnoty null.
 
-Můžete použít `option` typu v F # kdy můžete použít odkaz na proměnnou s hodnotou null možné v jiném jazyce .NET. Místo null, se F # `option` typu, použijte možnost hodnotu `None` Pokud neexistuje žádný objekt. Použijte možnost hodnotu `Some(obj)` s objektem `obj` po objekt. Další informace najdete v tématu [možnosti](../options.md).
+Můžete použít `option` typu v jazyce F # kdy můžete použít odkaz na proměnnou s možná hodnota null v jiném jazyce .NET. Místo null pomocí jazyka F # `option` typ, použijte možnost hodnotu `None` Pokud neexistuje žádný objekt. Použijte hodnotu možnosti `Some(obj)` s objektem `obj` po objektu. Další informace najdete v tématu [možnosti](../options.md).
 
-`null` – Klíčové slovo je platný – klíčové slovo v jazyce F # a budete muset používat v případě, že pracujete s rozhraní API technologie .NET Framework nebo jiná rozhraní API, které jsou napsané v jiném jazyce .NET. Dvě situace, ve kterých může být nutné hodnotu null jsou při volání rozhraní API .NET a předejte hodnotu null jako argument, a při interpretovat návratovou hodnotu nebo výstupní parametr z volání metody rozhraní .NET.
+`null` – Klíčové slovo je platný – klíčové slovo v jazyce F # a je nutné ho používat při práci se rozhraní API .NET Framework nebo jiná rozhraní API, které jsou napsané v jiném jazyce .NET. Dvě situace, ve kterých je třeba hodnotu null jsou při volání rozhraní API .NET a předat hodnotu null jako argument a při interpretaci návratová hodnota nebo výstupní parametr z volání metody rozhraní .NET.
 
-Chcete metoda .NET předat hodnotu null, použijte `null` – klíčové slovo v kódu volání. Následující příklad kódu to dokládá.
+Chcete metodu .NET předat hodnotu null, použijte `null` – klíčové slovo ve volajícím kódu. Následující příklad kódu to dokládá.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet701.fs)]
 
-Interpretace hodnotu null, který byl získán z metody rozhraní .NET, použijte porovnávání vzorů, pokud je to možné. Následující příklad kódu ukazuje, jak použít porovnávání vzorů interpretovat hodnotu null, která je vrácena z `ReadLine` při pokusu o čtení za koncem vstupního datového proudu.
+Interpretace hodnotu null, která se získá z metody rozhraní .NET, použijte porovnávání vzorů, pokud je to možné. Následující příklad kódu ukazuje, jak použít porovnávání vzorů pro interpretaci hodnotu null, která je vrácena z `ReadLine` při pokusu o čtení za koncem vstupního datového proudu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet702.fs)]
 
-Hodnoty Null pro typy F # lze generovat také jinými způsoby, například při použití `Array.zeroCreate`, který volá `Unchecked.defaultof`. Musíte být opatrní s takový kód, aby zapouzdřené hodnotami null. V knihovně určena pouze pro F # nemáte zkontrolujte hodnoty null v každé funkci. Pokud píšete knihovna pro spolupráci s jinými jazyky rozhraní .NET, možná budete muset přidat kontroluje null vstupní parametry a výjimku `ArgumentNullException`, stejně jako v kódu jazyka C# nebo Visual Basic.
+Hodnoty Null u typů F # může být také generovány jinými způsoby, například při použití `Array.zeroCreate`, který volá `Unchecked.defaultof`. Musíte být opatrní při takový kód, aby se hodnoty null, zapouzdřené používání. V knihovně je určena pouze pro F # není nutné pro kontrolu hodnot null v každé funkci. Pokud vytváříte knihovnu pro spolupráci s jinými jazyky .NET, bude pravděpodobně nutné přidat kontroly hodnoty null vstupní parametry a vyvolávají `ArgumentNullException`, stejně jako v kódu C# nebo Visual Basic.
 
-Následující kód slouží ke kontrole, pokud je libovolná hodnota je null.
+Následující kód můžete použít ke kontrole, pokud je libovolná hodnota je null.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet703.fs)]
 
-## <a name="see-also"></a>Viz také
-[Hodnoty](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Výrazy shody](../match-expressions.md)
+- [Hodnoty](index.md)
+- [Výrazy shody](../match-expressions.md)

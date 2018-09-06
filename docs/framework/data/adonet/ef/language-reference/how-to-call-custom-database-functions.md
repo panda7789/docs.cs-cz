@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 4354e5eb-dd45-469d-97fb-1c495705ee59
 ms.openlocfilehash: 4e7c94dce5b50fe93f00aaaa72206be3394faf62
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43542203"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43788659"
 ---
 # <a name="how-to-call-custom-database-functions"></a>Postupy: volání vlastních databázových funkcí
 Toto téma popisuje, jak zavolat vlastní funkce, které jsou definovány v databázi z v rámci LINQ dotazy na entity.  

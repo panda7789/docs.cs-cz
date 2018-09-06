@@ -1,40 +1,40 @@
 ---
 title: Dědičnost (F#)
-description: "Zjistěte, jak určit vztahy F # dědičnosti pomocí klíčového slova 'inherit'."
+description: "Zjistěte, jak určit dědičnosti relací F # pomocí klíčového slova 'inherit'."
 ms.date: 05/16/2016
-ms.openlocfilehash: 3d0c0785fc595315a8283979b99d0ec4fc5cbc0d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e4d79244fb9bada5db0c5c4c7179d4bfe6e21f3d
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564762"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787568"
 ---
 # <a name="inheritance"></a>Dědičnost
 
-Dědičnost je použita k modelování relace "je a", nebo vytvoření podtypů v objektově orientované programování.
+Dědičnost se používají k modelování vztah "je a", nebo vytvoření podtypů v objektově orientované programování.
 
+## <a name="specifying-inheritance-relationships"></a>Určení vztahy dědičnosti
 
-## <a name="specifying-inheritance-relationships"></a>Určení relace dědičnosti
-Zadejte vztahy dědičnosti pomocí `inherit` – klíčové slovo v deklaraci třídy. Základní syntaktické formuláře je vidět v následujícím příkladu.
+Zadejte vztahy dědičnosti pomocí `inherit` – klíčové slovo v deklaraci třídy. Základní formulář syntaktické je znázorněno v následujícím příkladu.
 
 ```fsharp
 type MyDerived(...) =
     inherit MyBase(...)
 ```
 
-Třída může mít maximálně jeden přímé základní třídy. Pokud nezadáte základní třídu pomocí `inherit` – klíčové slovo, třída implicitně dědí z `System.Object`.
-
+Třída může mít maximálně jednu přímou základní třídu. Pokud nezadáte základní třídy pomocí `inherit` – klíčové slovo, třídy implicitně dědí z `System.Object`.
 
 ## <a name="inherited-members"></a>Zděděné členy
-Pokud třídy dědí z jiné třídy, jsou k dispozici uživatelům odvozené třídy, jako kdyby byly přímé členy odvozené třídy metody a členy základní třídy.
 
-Žádné let – vazby a konstruktor parametry jsou soukromá na třídu a proto nelze získat přístup z odvozené třídy.
+Pokud třída dědí z jiné třídy, metody a členy základní třídy jsou dostupné uživatelům odvozené třídy, jako by byly přímé členy odvozené třídy.
 
-Klíčové slovo `base` je k dispozici v odvozených třídách a odkazuje na instance základní třídy. Používá se jako vlastní identifikátor.
+Některé vazby let a parametry konstruktoru jsou privátní pro třídu a proto ji nejde přistupovat z odvozených tříd.
 
+Klíčové slovo `base` je k dispozici v odvozených třídách a odkazuje na základní třídu instance. Používá se jako vlastní identifikátor.
 
 ## <a name="virtual-methods-and-overrides"></a>Virtuální metody a přepsání
-Virtuální metody (a vlastnosti) fungují trochu jinak F # porovnání s jinými jazyky rozhraní .NET. Pokud chcete deklarovat nového člena virtuální, použijte `abstract` – klíčové slovo. Můžete to udělat bez ohledu na to, jestli je zadat výchozí implementace této metody. Dokončení definice virtuální metodu v základní třídě tedy dodržuje tento vzor:
+
+Virtuální metody (a vlastnosti) fungují odlišně v jazyce F # porovnání s jinými jazyky rozhraní .NET. Chcete-li deklarovat nový virtuální člen, můžete použít `abstract` – klíčové slovo. Můžete to provést bez ohledu na to, zda poskytuje výchozí implementaci pro danou metodu. Kompletní definici virtuální metodu v základní třídě proto používá tento vzor:
 
 ```fsharp
 abstract member [method-name] : [type]
@@ -42,26 +42,27 @@ abstract member [method-name] : [type]
 default [self-identifier].[method-name] [argument-list] = [method-body]
 ```
 
-A v odvozené třídě, přepsání této virtuální metody, následuje tento vzor:
+A přepsání této virtuální metody v odvozené třídě, následuje tento model:
 
 ```fsharp
 override [self-identifier].[method-name] [argument-list] = [method-body]
 ```
 
-Pokud vynecháte výchozí implementace v základní třídě, základní třídy se změní na abstraktní třídu.
+Vynecháte-li výchozí implementace v základní třídě, stane základní třídy abstraktní třídy.
 
-Následující příklad kódu ukazuje deklaraci nové virtuální metody `function1` ve základní třídu, jak k přepsání v odvozené třídě.
+Následující příklad kódu znázorňuje deklaraci novou virtuální metodu `function1` v základní třídě a jak přepsat v odvozené třídě.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2601.fs)]
-    
-## <a name="constructors-and-inheritance"></a>Konstruktory a dědičnost
-V konstruktoru pro základní třídy musí být voláno v odvozené třídě. Argumenty pro konstruktor základní třídy se zobrazí v seznamu argument `inherit` klauzule. Zadané argumenty konstruktoru odvozené třídy musí určit hodnoty, které se používají.
 
-Následující kód ukazuje základní a odvozené třídy, kde odvozené třídě volá konstruktor základní třídy v klauzuli inherit:
+## <a name="constructors-and-inheritance"></a>Konstruktory a dědičnost
+
+Musí být volána konstruktor základní třídy v odvozené třídě. Argumenty pro konstruktor základní třídy se zobrazí v seznamu argumentů v `inherit` klauzuli. Argumenty předány konstruktoru odvozené třídy musí určit hodnoty, které se používají.
+
+Následující kód ukazuje základní třídu a odvozené třídy, kde odvozená třída volá konstruktor základní třídy v klauzuli dědičnosti:
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2602.fs)]
 
-V případě více konstruktory můžete použít následující kód. První řádek z konstruktorů odvozené třídě je `inherit` klauzule a pole se zobrazí jako explicitní pole, které jsou deklarovány s `val` – klíčové slovo. Další informace najdete v tématu [explicitní pole: `val` – klíčové slovo](members/explicit-fields-the-val-keyword.md).
+V případě více konstruktorů můžete použít následující kód. První řádek konstruktory odvozené třídy je `inherit` klauzule a pole se zobrazí jako explicitní pole, které jsou deklarovány pomocí `val` – klíčové slovo. Další informace najdete v tématu [explicitní pole: `val` – klíčové slovo](members/explicit-fields-the-val-keyword.md).
 
 ```fsharp
 type BaseClass =
@@ -81,16 +82,16 @@ let obj2 = DerivedClass("A")
 ```
 
 ## <a name="alternatives-to-inheritance"></a>Alternativy k dědičnosti
-V případech, kdy je potřeba méně závažné změny typu zvažte použití výraz objektu jako alternativu k dědičnosti. Následující příklad ukazuje použití výraz objektu jako alternativu k vytvoření nového typu odvozené:
+
+V případech, kdy se vyžaduje méně závažnou změnu typu zvažte použití výrazu objektu jako alternativu k dědičnosti. Následující příklad ukazuje použití výrazu objektu jako alternativu k vytváření nového odvozeného typu:
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2603.fs)]
 
-Další informace o objektové výrazy najdete v tématu [objektové výrazy](object-expressions.md).
+Další informace o objektových výrazů naleznete v tématu [objektové výrazy](object-expressions.md).
 
-Při vytváření objektu hierarchií, zvažte použití rozlišovaná sjednocení místo dědičnosti. Rozlišovaná sjednocení může taky modelu nejrůznější chování různých objektů, které sdílejí společný typ celkové. Jeden rozlišovaná sjednocení často eliminovat potřebu počet odvozené třídy, které jsou malým změnám. Informace o rozlišovaná sjednocení najdete v tématu [Rozlišované sjednocení](discriminated-unions.md).
+Při vytváření hierarchie objektů, zvažte použití diskriminované sjednocení namísto dědičnosti. Rozlišovaná sjednocení můžou také modelu měnit chování různých objektů, které sdílejí společný typ celkové. Jeden diskriminované sjednocení může často eliminovat potřebu počet odvozených tříd, které jsou menší variant. Informace o rozlišovaná sjednocení, naleznete v tématu [Rozlišované sjednocení](discriminated-unions.md).
 
+## <a name="see-also"></a>Viz také:
 
-## <a name="see-also"></a>Viz také
-[Objektové výrazy](object-expressions.md)
-
-[Referenční dokumentace jazyka F#](index.md)
+- [Objektové výrazy](object-expressions.md)
+- [Referenční dokumentace jazyka F#](index.md)

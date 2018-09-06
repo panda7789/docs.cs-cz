@@ -5,11 +5,11 @@ ms.date: 07/28/2018
 author: billwagner
 ms.author: wiwagn
 ms.openlocfilehash: 1806d1af3b10e44ccc2eff788d8958ca976fe85b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43557193"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787178"
 ---
 # <a name="how-to-remove-the-net-core-runtime-and-sdk"></a>Odebrání modulu Runtime .NET Core a sady SDK
 

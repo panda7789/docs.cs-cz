@@ -15,11 +15,11 @@ ms.assetid: 87a4b0da-ed64-43b1-ac43-968576c444ce
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f60a2283c01d0dc2665dafaa99ea52000aa3bc47
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43552280"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43784686"
 ---
 # <a name="names-of-classes-structs-and-interfaces"></a>Názvy tříd, struktur a rozhraní
 Pokyny pro pojmenování, které následují platí pro pojmenování obecného typu.  

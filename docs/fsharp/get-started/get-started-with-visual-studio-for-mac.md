@@ -2,12 +2,12 @@
 title: 'Začínáme s jazykem F # v sadě Visual Studio pro Mac'
 description: 'Další informace o použití F # pomocí sady Visual Studio pro Mac.'
 ms.date: 07/03/2018
-ms.openlocfilehash: 200c3a8fee072797a54d15d8989937f4cadb33e2
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 6aceec299c29e04aecd7999cd1dda6a56dd2779a
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874650"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43785528"
 ---
 # <a name="get-started-with-f-in-visual-studio-for-mac"></a>Začínáme s jazykem F # v sadě Visual Studio pro Mac
 
@@ -114,8 +114,9 @@ Toto je pouze se stručně zmíníme co můžete dělat s F # Interactive.  Dal�
 Pokud jste to ještě neudělali, podívejte se [Tour F #](../tour.md), která uvádí i některé základní funkce jazyka F #.  Bude vám poskytnou přehled o některé funkce jazyka F # a poskytovat ukázky ukázku kódu, které můžete zkopírovat do sady Visual Studio pro Mac a spustit.  Existují také některé skvělé externí prostředky můžete použít, zobrazují v [Průvodce jazykem F #](../index.md).
 
 ## <a name="see-also"></a>Viz také:
- [Visual F#](../index.md)  
- [Prohlídka jazyka F#](../tour.md)  
- [Referenční dokumentace jazyka F #](../language-reference/index.md)  
- [Odvození typu](../language-reference/type-inference.md)  
- [Referenční dokumentace symbolů a – operátor](../language-reference/symbol-and-operator-reference/index.md)  
+
+- [Visual F#](../index.md)  
+- [Prohlídka jazyka F#](../tour.md)  
+- [Referenční dokumentace jazyka F #](../language-reference/index.md)  
+- [Odvození typu](../language-reference/type-inference.md)  
+- [Referenční dokumentace symbolů a – operátor](../language-reference/symbol-and-operator-reference/index.md)  

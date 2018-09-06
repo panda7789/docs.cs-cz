@@ -1,60 +1,63 @@
 ---
 title: 'Správa prostředků: Klíčové slovo use (F#)'
-description: "Další informace o F # – klíčové slovo 'použití' a 'pomocí, funkce, která můžete ovládat inicializace a verzi zdroje."
+description: 'Další informace o F # – klíčové slovo "použití" a "pomocí" funkce, která můžete řídit, inicializace a uvolnění prostředků.'
 ms.date: 05/16/2016
-ms.openlocfilehash: c75783080d1d87c6ee75aede500d3d0b3fdf8355
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ffa1cb515139a3705920d9d9f79be1a69602f7d8
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564895"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43784699"
 ---
 # <a name="resource-management-the-use-keyword"></a>Správa prostředků: Klíčové slovo use
 
-Toto téma popisuje klíčové slovo `use` a `using` funkce, které můžete ovládat inicializace a verzi zdroje.
+Toto téma popisuje klíčové slovo `use` a `using` funkce, která můžete řídit, inicializace a uvolnění prostředků.
 
 ## <a name="resources"></a>Prostředky
-Termín *prostředků* se používá více než jedním způsobem. Ano, prostředky mohou být data, která používá aplikace, jako je například řetězce, grafiky a podobně, ale v tomto kontextu *prostředky* odkazuje na prostředky softwaru nebo operačního systému, například kontexty zařízení grafiky, obslužných rutin souborů síť a databáze připojení, objekty souběžnosti jako obslužné rutiny čekání atd. Použití těchto prostředků ve aplikace zahrnuje získání prostředků z operačního systému nebo jiných prostředků poskytovatele, následuje v novějších verzích prostředku do fondu, aby ho lze zadat do jiné aplikace. Pokud aplikace není uvolnění prostředků zpět do fondu běžné dojde k problémům.
+
+Termín *prostředků* se používá více než jedním způsobem. Ano, prostředky můžou být data, která aplikace používá, jako jsou řetězce, grafiku a podobně, ale v tomto kontextu *prostředky* odkazuje na software nebo operační systém prostředky, jako je například kontexty zařízení grafiky, popisovače souborů, sítě a databáze připojení, objekty souběžnosti, jako je například obslužné rutiny čekání a tak dále. Využívání těchto prostředků v aplikacích zahrnuje získání prostředku z operačního systému nebo jiné poskytovatele prostředků, za nímž následuje v novějších verzích prostředku do fondu tak, aby je poskytnout jiná aplikace. Když aplikace není uvolnit prostředky zpět do společného fondu dojít k problémům.
 
 ## <a name="managing-resources"></a>Správa prostředků
-Efektivní a jeho zodpovědné spravovat prostředky v aplikaci, je nutné uvolnit prostředky okamžitě a předvídatelný způsobem. Rozhraní .NET Framework, pomůže vám to tím, že poskytuje `System.IDisposable` rozhraní. Typ, který implementuje `System.IDisposable` má `System.IDisposable.Dispose` metodu, která správně uvolní prostředky. Správně vytvořené aplikace zaručit, že `System.IDisposable.Dispose` je volána okamžitě, když libovolný objekt, který obsahuje omezené prostředek již není potřeba. Naštěstí většině jazyků .NET poskytuje podporu pro zjednodušení a F # není žádná výjimka. Existují dva užitečné jazykové konstrukty, které podporují vzor uvolnění: `use` vazby a `using` funkce.
 
-## <a name="use-binding"></a>Vazbu používají
-`use` – Klíčové slovo má formulář, který se podobá se `let` vazby:
+Pokud chcete efektivně a zodpovědně spravovat prostředky v aplikaci, musí uvolnit prostředky o tom bezodkladně informuje a předvídatelným způsobem. Můžete to provést tím, že poskytuje rozhraní .NET Framework pomáhá `System.IDisposable` rozhraní. Typ, který implementuje `System.IDisposable` má `System.IDisposable.Dispose` metodu, která správně uvolní prostředky. Kvalitně napsané aplikace zaručit, že `System.IDisposable.Dispose` se okamžitě volá, když už nepotřebujete libovolný objekt, který obsahuje prostředek omezený. Naštěstí Většina jazyků .NET poskytují podporu pro lepší pochopení a F # není žádná výjimka. Existují dvě užitečné jazykovým konstrukcím, které podporují vzor dispose: `use` vazby a `using` funkce.
+
+## <a name="use-binding"></a>Použít vazbu
+
+`use` – Klíčové slovo má formulář, který vypadá podobně jako u `let` vazby:
 
 použít *hodnotu* = *výraz*
 
-Poskytuje stejné funkce jako `let` vazby, ale přidá volání `Dispose` na hodnotu, pokud hodnota mimo rozsah. Všimněte si, že kompilátor vloží kontrolu hodnotu null na základě hodnoty, že pokud je hodnota `null`, volání `Dispose` není pokus.
+Funguje stejně jako `let` vazby, ale přidá volání `Dispose` na hodnotu, pokud hodnota dostane mimo rozsah. Všimněte si, že kompilátor vloží kontrolu hodnot null na základě hodnoty tak, že pokud je hodnota `null`, volání `Dispose` nebyl prováděn.
 
-Následující příklad ukazuje, jak zavřít soubor automaticky pomocí `use` – klíčové slovo.
+Následující příklad ukazuje, jak automaticky zavřete soubor stisknutím kombinace kláves `use` – klíčové slovo.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6301.fs)]
 
 >[!NOTE]
-Můžete použít `use` v výpočetní výrazy, v takovém případě přizpůsobená verze `use` použit výraz. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výpočetní výrazy](computation-expressions.md).
-
+Můžete použít `use` ve výrazech výpočtu. v takovém případě přizpůsobenou verzi `use` výraz je použit. Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazech výpočtu](computation-expressions.md).
 
 ## <a name="using-function"></a>pomocí funkce
+
 `using` Funkce má následující formát:
 
-`using` (*expression1*) *funkce nebo lambda*
+`using` (*expression1*) *lambda nebo funkce*
 
-V `using` výrazu *expression1* vytvoří objekt, který je nutné odstranit. Výsledek *expression1* (objekt, který je nutné odstranit) se změní na argument, *hodnotu*do *funkce nebo lambda*, který je buď funkci, která očekává jedné argument typu, který odpovídá hodnotě zbývající vyprodukované *expression1*, nebo výrazu lambda, která očekává argument daného typu. Na konci provádění funkce volá modul runtime `Dispose` a uvolní prostředky (Pokud není hodnota `null`, v takovém případě není pokus o volání metody Dispose).
+V `using` výrazu, *expression1* vytvoří objekt, který musí být odstraněn. Výsledek *expression1* (objekt, který musí být uvolněn) stane argument, *hodnotu*do *funkce nebo lambda*, což je buď funkci, která očekává, že jeden Zbývající argument typu, který se shoduje s hodnotou vytvářených *expression1*, nebo výraz lambda, který očekává argument daného typu. Na konci spuštění funkce, modul runtime volá `Dispose` a uvolní prostředky (Pokud není hodnota `null`, v takovém případě se pokus o volání metody Dispose).
 
-Následující příklad ukazuje `using` výraz s výrazem lambda.
+Následující příklad ukazuje, `using` výrazem lambda výraz.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6302.fs)]
 
-Další příklad ukazuje `using` výraz obsahující funkci.
+Další příklad ukazuje `using` výraz s funkcí.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6303.fs)]
 
-Upozorňujeme, že funkce může být funkci, která má některé argumenty již použita. Následující příklad kódu ukazuje to. Vytvoří soubor, který obsahuje řetězec `XYZ`.
+Všimněte si, že funkce může být funkce, která obsahuje některé argumenty již použity. Následující příklad kódu ukazuje to. Vytvoří soubor, který obsahuje řetězec `XYZ`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6304.fs)]
 
-`using` Funkce a `use` vazby způsoby téměř ekvivalentní totéž provést. `using` – Klíčové slovo poskytuje větší kontrolu nad tím, kdy `Dispose` je volána. Při použití `using`, `Dispose` nazývá na konci výrazu funkce nebo lambda; při použití `use` – klíčové slovo, `Dispose` nazývá na konci jsou obsaženy v bloku kódu. Obecně platí, měli byste radši chtěli použít `use` místo `using` funkce.
+`using` Funkce a `use` vazby jsou téměř ekvivalentní způsoby, jak provést totéž. `using` – Klíčové slovo poskytuje větší kontrolu nad tím, kdy `Dispose` je volána. Při použití `using`, `Dispose` je volána na konci funkce nebo lambda výraz; při použití `use` – klíčové slovo, `Dispose` je volána na konci bloku kódu. Obecně platí, měli byste radši chtěli použít `use` místo `using` funkce.
 
+## <a name="see-also"></a>Viz také:
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F#](index.md)

@@ -3,11 +3,11 @@ title: 'Postupy: vyhledání jednoho potomka pomocí metody Descendants (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6f735be9-0293-4680-8007-ca9d96bfebed
 ms.openlocfilehash: fafb7dc4e2e65c913de46b64028f7dcd69fdd2c3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43723685"
+ms.locfileid: "43784657"
 ---
 # <a name="how-to-find-a-single-descendant-using-the-descendants-method-c"></a>Postupy: vyhledání jednoho potomka pomocí metody Descendants (C#)
 Můžete použít <xref:System.Xml.Linq.XContainer.Descendants%2A> metody osy rychle psát kód jednoznačně najít jeden s názvem elementu. Tato technika je užitečná, pokud chcete najít konkrétní potomkem s konkrétním názvem. Můžete napsat kód pro navigaci na požadovaný element, ale je často rychlejší a snazší psát kód s využitím <xref:System.Xml.Linq.XContainer.Descendants%2A> osy.  

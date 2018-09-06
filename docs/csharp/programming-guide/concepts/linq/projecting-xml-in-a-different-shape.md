@@ -3,11 +3,11 @@ title: Projektování XML v odlišném tvaru (C#)
 ms.date: 07/20/2015
 ms.assetid: 4cb6b14a-32dc-4a2a-813e-bf9368fa8d86
 ms.openlocfilehash: fe6166a333988d4b0a4550900a9307f1c4951aec
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43722876"
+ms.locfileid: "43786984"
 ---
 # <a name="projecting-xml-in-a-different-shape-c"></a>Projektování XML v odlišném tvaru (C#)
 Toto téma ukazuje příklad projekci XML, který je v odlišném tvaru než zdrojového kódu XML.  

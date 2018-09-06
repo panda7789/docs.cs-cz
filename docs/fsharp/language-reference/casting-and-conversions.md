@@ -2,57 +2,59 @@
 title: Přetypování a převody (F#)
 description: 'Zjistěte, jak programovací jazyk F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy.'
 ms.date: 05/16/2016
-ms.openlocfilehash: ba3cbed91bf6510a34bcb7ba89d34b0ea6b82711
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aca1a2523130ee485a7e7c9a6a45a410904cb246
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564492"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43784540"
 ---
 # <a name="casting-and-conversions-f"></a>Přetypování a převody (F#)
 
 Toto téma popisuje podporu pro převody typů v jazyce F #.
 
 ## <a name="arithmetic-types"></a>Aritmetické typy
-F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy, jako třeba mezi celé číslo a plovoucí typy bodů. Operátory převodu integrální a char mají zaškrtnuto a nezaškrtnuto forms; procedura bodu operátory a `enum` operátor převodu nepodporují. Nezaškrtnuté formuláře jsou definovány v `Microsoft.FSharp.Core.Operators` a zaškrtnuté formuláře jsou definovány v `Microsoft.FSharp.Core.Operators.Checked`. Checked formuláře zkontrolujte přetečení a generovat výjimku modulu runtime, pokud výsledná hodnota překročí omezení na typ cíle.
 
-Každý z těchto operátorů má stejný název jako název cílového typu. Například v následujícím kódu, ve kterém jsou typy explicitně poznámky, `byte` se zobrazí se dva různé významy. První výskyt je typ a druhý je operátor převodu.
+Jazyk F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy, jako například mezi celými čísly a typy plovoucího bodu. Operátory převodu celé číslo a char kontrole a zaškrtnuté políčko formuláře; operátory s plovoucí desetinnou čárkou a `enum` operátor převodu tomu tak není. Unchecked formuláře jsou definovány v `Microsoft.FSharp.Core.Operators` a kontrolovaný formuláře jsou definovány v `Microsoft.FSharp.Core.Operators.Checked`. Checked formuláře kontrola přetečení a generovat výjimku při běhu, pokud výsledná hodnota překračuje omezení cílového typu.
+
+Každý z těchto operátorů má stejný název jako název cílového typu. Například v následujícím kódu, ve kterém jsou typy explicitně označena, `byte` zobrazí se dvě různé významy. První výskyt je pro typ a druhý je operátor převodu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4401.fs)]
 
-V následující tabulce jsou definované v F # operátory převodu.
+V následující tabulce jsou uvedeny operátory převodu, které jsou definovány v jazyce F #.
 
 |Operátor|Popis|
 |--------|-----------|
-|`byte`|Převeďte na bajtů, 8bitové typu bez znaménka.|
-|`sbyte`|Převeďte na podepsané bajtů.|
-|`int16`|Převeďte na 16bitové celé číslo se znaménkem.|
+|`byte`|Převeďte na byte, typ bez znaménka 8 bitů.|
+|`sbyte`|Převod na bajty se znaménkem.|
+|`int16`|Převeďte na celé číslo se znaménkem 16 bitů.|
 |`uint16`|Převeďte na celé číslo bez znaménka 16 bitů.|
 |`int32, int`|Převeďte na 32bitové celé číslo se znaménkem.|
-|`uint32`|Převeďte na celé číslo bez znaménka 32-bit.|
+|`uint32`|Převeďte na 32-bit znaménka.|
 |`int64`|Převeďte na 64bitové celé číslo se znaménkem.|
-|`uint64`|Převeďte na celé číslo bez znaménka 64-bit.|
+|`uint64`|Převeďte na 64-bit znaménka.|
 |`nativeint`|Převeďte na nativní celé číslo.|
 |`unativeint`|Převeďte na celé číslo bez znaménka nativní.|
-|`float, double`|Převeďte 64-bit Dvojitá přesnost IEEE bodu číslo s plovoucí čárkou.|
-|`float32, single`|Převeďte 32-bit jednoduchou přesností IEEE bodu číslo s plovoucí čárkou.|
+|`float, double`|Převeďte na IEEE dvojité přesnosti 64bitovým kompilátorem plovoucí desetinné číslo s desetinnou čárkou.|
+|`float32, single`|Převeďte IEEE jednoduchou přesností 32-bit plovoucí desetinné číslo s desetinnou čárkou.|
 |`decimal`|Převést na `System.Decimal`.|
-|`char`|Převést na `System.Char`, znak Unicode.|
-|`enum`|Převeďte na výčtového typu.|
-Kromě předdefinovaných primitivní typy, můžete použít tyto operátory s typy, které implementují `op_Explicit` nebo `op_Implicit` metody s odpovídajícími podpisy. Například `int` operátor převodu pracuje s žádný typ, který poskytuje statickou metodu `op_Explicit` který přebere typ jako parametr a vrátí `int`. Speciální výjimkou obecně platí, že metody nemohou být přetíženy o návratový typ, můžete k tomu `op_Explicit` a `op_Implicit`.
+|`char`|Převést na `System.Char`, znaku Unicode.|
+|`enum`|Převeďte na typ výčtu.|
+Kromě předdefinované primitivní typy, můžete použít tyto operátory s typy, které implementují `op_Explicit` nebo `op_Implicit` metody s odpovídajícími podpisy. Například `int` operátor převodu funguje s jakýmkoli typem, který poskytuje statické metody `op_Explicit` , která přebírá typ jako parametr a vrací `int`. Jako speciální výjimky k obecným pravidlem, že metody nemohou být přetíženy návratovým typem, můžete udělat `op_Explicit` a `op_Implicit`.
 
 ## <a name="enumerated-types"></a>Výčtové typy
-`enum` Operátor je obecný operátor, který přijímá jeden parametr typu, který představuje typ `enum` převést. Když se převede na Výčtový typ, zadejte odvození pokusí zjistit typ `enum` , kterou chcete převést. V následujícím příkladu, proměnná `col1` není explicitně označena, ale jeho typ je odvozen z novější test rovnosti. Proto můžete kompilátor odvodit převádíte na `Color` výčtu. Alternativně můžete poskytnout anotaci typu stejně jako u `col2` v následujícím příkladu.
+
+`enum` Operátor je obecný operátor, který přijímá jeden parametr typu, který představuje typ `enum` k převodu. Když ji převede na Výčtový typ, typ odvození se pokusí určit typ `enum` , který chcete převést. V následujícím příkladu je proměnná `col1` není explicitně označena, ale jeho typ je odvozen z novější test rovnosti. Kompilátor může odvodit proto, že převádíte na `Color` výčtu. Alternativně můžete zadat poznámku typu, stejně jako u `col2` v následujícím příkladu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4402.fs)]
-    
-Můžete také určit typ výčtu cíl explicitně jako parametr typu, jako v následujícím kódu:
+
+Cílový typ výčtu můžete také explicitně zadat jako parametr typu, stejně jako v následujícím kódu:
 
 ```fsharp
 let col3 = enum<Color> 3
 ```
 
-Všimněte si, že výčtu vrhá pracovní pouze v případě, že je kompatibilní s typem převáděné s podkladovým typem výčtu. V následujícím kódu, převod se nepovede zkompilovat z důvodu neshody mezi `int32` a `uint32`.
+Všimněte si, že výčet přetypování pracovní pouze v případě, že základní typ výčtu je kompatibilní s typem převodu. V následujícím kódu, že je převod neúspěšný kompilace z důvodu neshody mezi `int32` a `uint32`.
 
 ```fsharp
 // Error: types are incompatible
@@ -62,39 +64,42 @@ let col4 : Color = enum 2u
 Další informace najdete v tématu [výčty](enumerations.md).
 
 ## <a name="casting-object-types"></a>Přetypování typy objektů
-Převod mezi typy v hierarchii objektu je nezbytné, aby objektově orientované programování. Existují dva základní typy převody: přetypování nahoru (přetypování nahoru) a přetypování dolů (přetypování dolů). Přetypování nahoru hierarchie znamená přetypování z odvozené objekt odkazů na základní objekt odkaz. Takové přetypování záruku, že fungovat, dokud základní třída je v hierarchii dědičnosti odvozené třídy. Přetypování dolů hierarchii, postupně od základní objekt odkaz na objekt odvozené odkaz, bude úspěšné pouze v případě, že objekt je ve skutečnosti instance typu správnou cílovou (Odvozený) nebo typu odvozeného od cílového typu.
 
-F # poskytuje operátory pro tyto typy převody. `:>` Operátor vrhá nahoru v hierarchii a `:?>` operátor vrhá hierarchií směrem dolů.
+Převod mezi typy v hierarchii objektů je zásadní pro objektově orientované programování. Existují dva základní typy převodů: přetypování nahoru (upcasting) a přetypování dolů (přetypování na nižší). Přetypování hierarchii znamená, že přetypování z odvozeného objektu odkaz na odkaz na základní objekt. Takový výraz přetypování zaručeně funguje jako základní třída je v hierarchii dědičnosti odvozené třídy. Přetypování dolů hierarchii z základní objekt odkazu na odkaz na objekt odvozené, bude úspěšné pouze v případě, že objekt je ve skutečnosti instance správné cíl (Odvozený) typ nebo typ odvozený z cílového typu.
 
-### <a name="upcasting"></a>Přetypování nahoru
-V mnoha jazycích objektově orientované je implicitní; přetypování nahoru v F # pravidla se mírně liší. Předání argumentů metody na typ objektu, který je automaticky použito přetypování nahoru. Ale pro umožňují vazby funkce v modulu, přetypování nahoru není automatické, pokud typ parametru je deklarován jako typ flexibilní. Další informace najdete v tématu [flexibilní typy](flexible-Types.md).
+Jazyk F # poskytuje operátory pro tyto typy převodů. `:>` Operátor přetypování nahoru hierarchii a `:?>` operátor přetypování dolů v hierarchii.
 
-`:>` Operátor provádí statického přetypování, což znamená, že v době kompilace je určen úspěch přetypování. Pokud přetypování, který používá `:>` zkompiluje úspěšně, je platný přetypování a nemá žádné riziko selhání za běhu.
+### <a name="upcasting"></a>Upcasting
 
-Můžete také `upcast` operátor proveďte takový převod. Následující výraz určuje převod nahoru v hierarchii:
+V řadě jazyků orientovaných upcasting je implicitní; v jazyce F # pravidla se mírně liší. Upcasting se automaticky použije při předání argumentů metody na typu objektu. Však pro funkce vazbou let v modulu upcasting není automaticky, pokud typ parametru není deklarována jako typ flexibilní. Další informace najdete v tématu [flexibilní typy](flexible-Types.md).
+
+`:>` Operátor provádí statickou přetypování, což znamená, že úspěch přetypování je určen v době kompilace. Pokud přetypování, která používá `:>` se zkompiluje úspěšně, je platný přetypování a nemá žádné riziko selhání za běhu.
+
+Můžete také použít `upcast` operátor k provádění těchto převodů. Následující výraz určuje převod hierarchie:
 
 ```fsharp
 upcast expression
 ```
 
-Pokud použijete operátor přetypování nahoru, pokusí se kompilátor odvození typu, který převádíte na z kontextu. Pokud kompilátor se nepodařilo určit typ cíle, kompilátor ohlásí chybu.
+Pokud použijete operátor přetypování nahoru, kompilátor se pokusí odvodit typ, který převádíte z kontextu. Pokud kompilátor nemůže určit cílový typ, kompilátor nahlásí chybu.
 
-### <a name="downcasting"></a>Přetypování dolů
-`:?>` Operátor provádí dynamický přetypování, což znamená, že v době běhu je určen úspěch přetypování. Přetypování, který používá `:?>` operátor kontrolována v době kompilace; ale v době běhu je proveden pokus o převést na zadaný typ. Pokud je objekt kompatibilní s typem cíl, bude úspěšná přetypování. Pokud objekt není kompatibilní s typem cíl, modul runtime vyvolává `InvalidCastException`.
+### <a name="downcasting"></a>Přetypování na nižší
 
-Můžete také `downcast` operátor provést převod dynamického typu. Následující výraz určuje převod hierarchií směrem dolů na typ, který je odvozeno z kontextu program:
+`:?>` Operátor provádí dynamické přetypování, což znamená, že úspěch přetypování je stanovena v době běhu. Přetypování, která používá `:?>` operátor není zaregistrované v době kompilace, ale za běhu, je proveden pokus o přetypování na zadaný typ. Pokud je objekt kompatibilní s cílovým typem, proběhne úspěšně přetypování. Pokud objekt není kompatibilní s cílovým typem, modul runtime vyvolává `InvalidCastException`.
+
+Můžete také použít `downcast` operátor pro převod dynamického typu. Následující výraz určuje převod hierarchií směrem dolů na typ, který je odvozen z kontextu programu:
 
 ```fsharp
 downcast expression
 ```
 
-Jako u `upcast` operátor, pokud kompilátor nelze odvodit typ specifické cíle z kontextu, ohlásí chybu.
+Jako u `upcast` operátora, pokud kompilátor nemůže odvodit typ konkrétní cíl z kontextu, oznámí chybu.
 
-Následující kód ukazuje použití `:>` a `:?>` operátory. Kód ukazuje, že `:?>` operátor je nejvhodnější při vědět, převod bude úspěšné, protože je vyvolává `InvalidCastException` Pokud převod selže. Pokud si nejste jisti, že bude převodu z úspěšné, typ testu, který používá `match` výrazu je lepší, protože při ní nedochází režii generování výjimku.
+Následující kód ukazuje použití `:>` a `:?>` operátory. Kód ukazuje, že `:?>` operátor je nejlepší použít při vědět, že převod bude úspěšné, protože ji vyvolá `InvalidCastException` Pokud převod selže. Pokud si nejste jisti, že se převod úspěšný, typ testu, který používá `match` výrazu je lepší, protože se eliminuje režijní náklady na generování výjimku.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4403.fs)]
 
-Protože obecné operátory `downcast` a `upcast` spoléhají na odvození typu určit typ argumentu a vraťte se ve výše uvedeném kódu, můžete nahradit
+Protože obecný operátory `downcast` a `upcast` využívají odvození typu k určení typu argument a vrácená ve výše uvedeném kódu, můžete nahradit
 
 ```fsharp
 let base1 = d1 :> Base1
@@ -106,9 +111,10 @@ with
 let base1 = upcast d1
 ```
 
-V předchozí kód typ argumentu a návratové typy jsou `Derived1` a `Base1`, v uvedeném pořadí.
+V předchozím kódu, typ argumentu a návratové typy jsou `Derived1` a `Base1`v uvedeném pořadí.
 
-Další informace o testech typu najdete v tématu [výrazy shody](match-Expressions.md).
+Další informace o typu testů, naleznete v tématu [odpovídající výrazy](match-Expressions.md).
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka F#](index.md)

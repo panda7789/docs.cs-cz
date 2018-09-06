@@ -17,11 +17,11 @@ ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ab14be82f3dedeab0a1e1e574ce5622d067f72ae
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43724432"
+ms.locfileid: "43789014"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 

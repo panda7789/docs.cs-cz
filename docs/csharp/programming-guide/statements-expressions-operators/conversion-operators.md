@@ -8,11 +8,11 @@ helpviewer_keywords:
 - user-defined conversions [C#]
 ms.assetid: c5ad73a3-d57b-4d2b-b4c9-24e3c2856efc
 ms.openlocfilehash: cbf6a83d43a1b3a69e82a35d5d0875f62422cd3f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734444"
+ms.locfileid: "43787820"
 ---
 # <a name="conversion-operators-c-programming-guide"></a>Operátory převodu (Průvodce programováním v C#)
 C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak, aby třídy nebo struktury lze převést na nebo z jiné třídy nebo struktury nebo základní typy. Převody jsou definovány jako operátory a jsou pojmenovány pro typ, ke kterému převodu. Typ argumentu, který má být převeden nebo typ výsledku převodu, ale ne obojí, musí být nadřazeného typu.  

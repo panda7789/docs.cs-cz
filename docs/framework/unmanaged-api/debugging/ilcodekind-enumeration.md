@@ -15,11 +15,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a02c26b72fc7039a5050ee369043f081c32cd7ec
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408365"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43786015"
 ---
 # <a name="ilcodekind-enumeration"></a>Výčet ILCodeKind
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  

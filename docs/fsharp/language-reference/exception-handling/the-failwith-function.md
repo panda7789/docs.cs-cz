@@ -1,18 +1,17 @@
 ---
 title: 'Výjimky: Funkce failwith (F#)'
-description: "Zjistěte, jak funkce 'failwith' vygeneruje výjimku F #."
+description: 'Zjistěte, jak "failwith" funkce generuje výjimku F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 59f7129faf38668dd7390790e22d25f37c129750
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 69a2eb69e0157d3bde8cb8884cb0ae960634dddc
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563325"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43784410"
 ---
 # <a name="exceptions-the-failwith-function"></a>Výjimky: Funkce failwith
 
-`failwith` Funkce vyvolá výjimku F #.
-
+`failwith` Funkce generuje výjimku F #.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,19 +20,17 @@ failwith error-message-string
 ```
 
 ## <a name="remarks"></a>Poznámky
-*Řetězec chybové zprávy* v předchozí syntaxe je řetězcový literál nebo se hodnota typu `string`. Bude `Message` vlastnosti výjimky.
 
-Výjimka, která je generován `failwith` je `System.Exception` výjimky, která je odkaz, který má název `Failure` v F # – kód. Následující kód ukazuje použití `failwith` vyvolá výjimku.
+*Řetězec chybové zprávy* v předchozí syntaxi je řetězcový literál nebo hodnota typu `string`. Stane `Message` vlastnosti výjimky.
+
+Výjimka, která je generován `failwith` je `System.Exception` výjimku, která je odkaz, který má název `Failure` v kódu F #. Následující kód ukazuje použití `failwith` vyvolají výjimku.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet6001.fs)]
-    
-## <a name="see-also"></a>Viz také
-[Zpracování výjimek](index.md)
 
-[Typy výjimek](exception-types.md)
+## <a name="see-also"></a>Viz také:
 
-[Výjimky: `try...with` výraz](the-try-with-expression.md)
-
-[Výjimky: `try...finally` výraz](the-try-finally-expression.md)
-
-[Výjimky: `raise` – funkce](the-raise-function.md)
+- [Zpracování výjimek](index.md)
+- [Typy výjimek](exception-types.md)
+- [Výjimky: `try...with` výraz](the-try-with-expression.md)
+- [Výjimky: `try...finally` výraz](the-try-finally-expression.md)
+- [Výjimky: `raise` – funkce](the-raise-function.md)

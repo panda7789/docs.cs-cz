@@ -10,11 +10,11 @@ helpviewer_keywords:
 - print queues [WPF], enumerating subset of
 ms.assetid: cc4a1b5b-d46f-4c5e-bc26-22c226e4bee0
 ms.openlocfilehash: bf45d6fb3fb161ca5171e94b9ab7af1e0e6f0c3d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43562066"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43786935"
 ---
 # <a name="how-to-enumerate-a-subset-of-print-queues"></a>Postupy: Vyčíslení dílčí sady tiskové fronty
 Je běžné situace spojenou s rozšiřováním Odborníci v oblasti technologií (IT) informace o správě pořádaného microsoftem sadu tiskárny pro vygenerování seznamu tiskáren, které mají určité charakteristické vlastnosti. Tato funkce je poskytována <xref:System.Printing.PrintServer.GetPrintQueues%2A> metodu <xref:System.Printing.PrintServer> objektu a <xref:System.Printing.EnumeratedPrintQueueTypes> výčtu.  

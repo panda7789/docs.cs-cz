@@ -3,11 +3,11 @@ title: Ukázka identity služby
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
 ms.openlocfilehash: 8cd6688802628a484cc9fe1fc1dffa82ddecd12a
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43466646"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43784865"
 ---
 # <a name="service-identity-sample"></a>Ukázka identity služby
 Tato ukázka identity služby ukazuje, jak nastavit identitu služby. V době návrhu klient může načíst identitu pomocí metadat služby a za běhu pak se klient může ověřit identitu služby. Koncept identitu služby je umožnit klient k ověření služby před voláním některé z jeho operace, a tím chrání před neověřená volání klienta. Na zabezpečeném připojení služby také ověří přihlašovací údaje klienta před povolením přístupu, ale nejedná se o fokus této ukázky. Zobrazit ukázky [klienta](../../../../docs/framework/wcf/samples/client.md) , které zobrazí ověřování serveru.  

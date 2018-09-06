@@ -1,18 +1,17 @@
 ---
 title: Aktivní vzorky (F#)
-description: 'Další informace o použití aktivní vzorky k definování pojmenované oddíly, které rozdělit vstupní data v programovací jazyk F #.'
+description: 'Další informace o použití aktivní vzory definovat pojmenované oddíly, které rozdělit vstupní data v programovacím jazyce F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: b8c3270b1efbeb3495ac69bf1217fddf8a5a73e0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 964ae8eb6db0191fab1e5a816e29bd0819605f2c
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564443"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43786484"
 ---
 # <a name="active-patterns"></a>Aktivní vzorky
 
-*Aktivní vzorky* umožňují definovat pojmenované oddíly, které rozdělit vstupních dat, takže můžete použít tyto názvy v vzor odpovídající výrazu stejným způsobem jako pro rozlišovaná sjednocení. Aktivní vzorky můžete rozložit data způsobem přizpůsobené pro každý oddíl.
-
+*Aktivní vzory* vám umožňují definovat pojmenované oddíly, které rozdělit vstupní data tak, aby tyto názvy můžete používat ve vzorku s odpovídajícím výrazem, stejně jako byste to udělali pro diskriminované sjednocení. Aktivní vzory můžete použít k rozložení dat v podobě přizpůsobené pro každý oddíl.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,13 +23,14 @@ let (|identifier|_|) [ arguments ] = expression
 ```
 
 ## <a name="remarks"></a>Poznámky
-V předchozích syntaxi identifikátory jsou názvy pro oddíly vstupních dat, která je reprezentována *argumenty*, nebo jinými slovy, názvy pro podmnožiny sadu všechny hodnoty argumentů. V definici – aktivní vzor může být až sedm oddíly. *Výraz* popisuje, do kterého chcete rozložit data formuláře. Definici – aktivní vzor můžete definovat pravidla pro zjišťování, který pojmenovaný oddíl hodnoty zadané jako argumenty patří. (| A |) symboly jsou označovány jako *banánů klipů* a je volána funkce vytvořené tento typ umožňují vazby *active pro rozpoznávání*.
 
-Jako příklad zvažte následující aktivní vzor s parametrem.
+V předchozí syntaxi identifikátory jsou názvy pro oddíly vstupních dat, která je reprezentována *argumenty*, nebo jinými slovy, názvy pro dílčí sadu všechny hodnoty argumentů. V definici – aktivní vzor může být až sedm oddíly. *Výraz* popisuje formulář, do kterého chcete rozložit data. Můžete definovat pravidla pro zjišťování, který pojmenovaných oddílů hodnot uvedených jako argumenty patří do definici – aktivní vzor. (| A |) symboly jsou označovány jako *banánů klipy* a je volána funkce vytvořené pomocí tohoto typu umožňují vazby *aktivní rozlišovač*.
+
+Jako příklad zvažte následující active vzor s argumentem.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5001.fs)]
 
-Aktivní vzor můžete použít ve tvaru odpovídající výrazu, jako v následujícím příkladu.
+Aktivní vzor můžete použít ve vzoru porovnávání výrazů jako v následujícím příkladu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5002.fs)]
 
@@ -42,11 +42,11 @@ Výstup tohoto programu je následující:
 32 is even
 ```
 
-Jiný aktivní vzorky slouží k rozložit datových typů v několika způsoby, například když stejné základní data mají různé možné reprezentace. Například `Color` objekt může rozložit na reprezentaci RGB nebo reprezentaci HSB.
+Jiné aktivní vzory používá k rozložení datových typů v několika způsoby, například pokud má stejná podkladová data různé možné reprezentace. Například `Color` objekt může lze rozložit na reprezentaci RGB nebo reprezentaci HSB.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5003.fs)]
 
-Výstup programu výše je následující:
+Výstup programu výše je následujícím způsobem:
 
 ```
 Red
@@ -66,17 +66,17 @@ BlanchedAlmond
  Hue: 36.000000 Saturation: 1.000000 Brightness: 0.901961
 ```
 
-V kombinaci tyto dva způsoby použití aktivní vzorky umožňují oddílu a rozložit data na příslušný formulář a proveďte příslušné výpočtů na příslušná data ve formuláři nejvhodnější pro výpočet.
+V kombinaci tyto dva způsoby použití aktivní vzorky umožňují oddílu a jak rozložit data na příslušný formulář a provádí výpočty odpovídající příslušná data ve formuláři pro výpočet nejvíce usnadnil.
 
-Výsledné výrazy odpovídající vzor povolit zápis v pohodlný způsob, který je velmi čitelný, výrazně zjednodušení potenciálně složité větvení a kód analýzy dat dat.
+Výsledné výrazy odpovídající vzor povolit data mají být zapsána do pohodlný způsob, který je velmi čitelný, jehož cílem je výrazně zjednodušit potenciálně velmi složitý větvení a datové analýzy kódu.
 
+## <a name="partial-active-patterns"></a>Částečné aktivní vzory
 
-## <a name="partial-active-patterns"></a>Částečné aktivní vzorky
-V některých případech budete muset oddílu jenom část vstupní místa. V takovém případě napíšete sady částečné vzorů, které odpovídat některých vstupních hodnot, ale nezdaří tak, aby odpovídaly ostatní vstupy. Aktivní vzorky, které vždy nevytváří hodnotu, se nazývají *částečné aktivní vzorky*; mají návratovou hodnotu, která je typu možnost. K definování částečné – aktivní vzor, se na konci seznam vzorů uvnitř klipů banánů použít zástupný znak (_). Následující kód ukazuje použití částečné aktivní vzor.
+V některých případech je potřeba rozdělit pouze část prostoru vstupní. V takovém případě můžete zapsat sadu částečné vzorů z nich odpovídá některými vstupy ale selhání tak, aby odpovídaly ostatní vstupy. Aktivní vzory, které nevytváří vždy hodnotu, se nazývají *částečné aktivní vzory*; má návratovou hodnotu, je typ možnosti. K definování částečné active vzor použijte zástupný znak (_) na konci seznamu vzorků uvnitř banánů klipy. Následující kód ukazuje použití částečné aktivní vzor.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5004.fs)]
 
-Výstup v předchozím příkladu vypadá takto:
+Výstup z předchozího příkladu vypadá takto:
 
 ```
 1.100000 : Floating point
@@ -86,7 +86,7 @@ Výstup v předchozím příkladu vypadá takto:
 Something else : Not matched.
 ```
 
-Při použití částečné aktivní vzorky, někdy jednotlivé možnosti může být nesouvislé, nebo vzájemně vylučují, ale jejich nemusí být. V následujícím příkladu hranaté vzor a vzor datové krychle nejsou nesouvislý, protože jsou některé čísla čtverce a datové krychle, jako je například 64. Následující program vytiskne všechny celá čísla až 1000000, které jsou čtverce a datové krychle.
+Při použití částečné aktivní vzory, někdy jednotlivé volby lze nesouvislé, nebo vylučují, ale nemusí být. V následujícím příkladu model datové krychle a druhou mocninu vzoru nejsou nesouvislý, protože některá čísla jsou pole a datové krychle, jako je například 64. Následující program vytiskne všechny celých čísel až 1000000, které jsou pole a datové krychle.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5005.fs)]
 
@@ -105,30 +105,30 @@ Výstup vypadá takto:
 1000000
 ```
 
-## <a name="parameterized-active-patterns"></a>Parametrizované aktivní vzorky
-Aktivní vzorky vždy provést alespoň jeden argument pro položku se shodoval, ale v takovém případě název se může trvat i, další argumenty *parametrizované – aktivní vzor* platí. Další argumenty povolit obecné vzor nutné zadat. Aktivní vzorky, které často Analýza řetězců pomocí regulárních výrazů příklady regulární výraz jako další parametr jako v následujícím kódu, který také používá částečné aktivní vzor `Integer` definované v předchozím příkladu kódu. V tomto příkladu jsou uvedeny přizpůsobení obecné ParseRegex aktivní vzor řetězce, které použití regulárních výrazů pro různých formátů data. Aktivní vzor celé číslo se používá k převod odpovídající řetězců na celá čísla, které lze předat do konstruktoru data a času.
+## <a name="parameterized-active-patterns"></a>Parametrizované aktivní vzory
+
+Aktivní vzory vždy provést aspoň jeden argument pro položku je nalezena shoda, může ale trvat další argumenty, v takovém případě název *parametrizované – aktivní vzor* platí. Další argumenty povolit obecný vzor specificky určené. Například obsahovat aktivní vzory, které často Analýza řetězců pomocí regulárních výrazů regulární výraz jako další parametr, stejně jako v následujícím kódem, který také používá částečné active vzor `Integer` definované v předcházejícím příkladu. V tomto příkladu jsou uvedeny řetězce, které používá regulární výrazy pro různé formáty kalendářního data k přizpůsobení obecné ParseRegex active vzor. Aktivní vzor celé číslo se používá k převod odpovídající řetězců na celá čísla, která může být předán konstruktoru data a času.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5006.fs)]
 
-Výstup předchozí kód je následující:
+Výstup předchozího kódu vypadá takto:
 
 ```
 12/22/2008 12:00:00 AM 1/1/2009 12:00:00 AM 1/15/2008 12:00:00 AM 12/28/1995 12:00:00 AM
 ```
 
-Aktivní vzorky nejsou omezeny pouze na vzor odpovídající výrazy, můžete také použít na umožňují vazby.
+Aktivní vzory nejsou omezeny pouze na vzor odpovídající výrazy, můžete také použít na vazby let.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5007.fs)]
 
-Výstup předchozí kód je následující:
+Výstup předchozího kódu vypadá takto:
 
 ```
 Hello, random citizen!
 Hello, George!
 ```
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Výrazy shody](match-expressions.md)
-
+- [Referenční dokumentace jazyka F#](index.md)
+- [Výrazy shody](match-expressions.md)

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - global namespace [C#]
 ms.assetid: 98a1d89b-3c5a-44f7-8400-c4a3c0ec22a9
 ms.openlocfilehash: c15271abb55cb29a200185e4b512a76a4913d848
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43540299"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787792"
 ---
 # <a name="how-to-use-the-global-namespace-alias-c-programming-guide"></a>Postupy: Použití aliasu globálního oboru názvů (Průvodce programováním v C#)
 Umožňuje přístup ke členu v globální [obor názvů](../../../csharp/language-reference/keywords/namespace.md) je užitečné, když člen může být skryty pomocí jiné entity se stejným názvem.  

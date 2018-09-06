@@ -6,11 +6,11 @@ helpviewer_keywords:
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
 ms.openlocfilehash: e5e537d239bd69cb7a95ae82edbdb82144c700a1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43554145"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43788730"
 ---
 # <a name="objects-c-programming-guide"></a>Objekty (Průvodce programováním v C#)
 Definice třídy nebo struktury je jako matrice, který určuje, co můžete dělat typu. Objekt je v podstatě blok paměti, která byla přidělena a nakonfigurovány podle podrobný plán. Program může vytvořit mnoho objektů stejné třídy. Objekty se také označují jako instance a mohou být uloženy v pojmenované proměnné nebo v poli nebo kolekci. Klientský kód je kód, který používá tyto proměnné pro volání metody a přístup k veřejné vlastnosti objektu. V jazyce objektově orientované jako je C# typický program se skládá z více objektů dynamicky interakci.  

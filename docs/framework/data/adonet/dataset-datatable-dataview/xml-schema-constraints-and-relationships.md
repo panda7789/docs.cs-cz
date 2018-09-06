@@ -3,11 +3,11 @@ title: Omezení schématu XML a relací
 ms.date: 03/30/2017
 ms.assetid: 165bc2bc-60a1-40e0-9b89-7c68ef979079
 ms.openlocfilehash: bcb6e257a40040701612b73768a98e056bccd6c5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43673749"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43785609"
 ---
 # <a name="xml-schema-constraints-and-relationships"></a>Omezení schématu XML a relací
 Ve schématu XML definice jazyk (XSD) schématu, můžete zadat omezení (jedinečný, klíče a omezení keyref) a vztahů (pomocí **msdata:Relationship** poznámky). Toto téma vysvětluje, jak se interpretují omezení a vztahů zadané ve schématu XML ke generování <xref:System.Data.DataSet>.  

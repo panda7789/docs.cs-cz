@@ -3,11 +3,11 @@ title: Začínáme (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: 97522119-f6a3-434c-a1ec-17396b74a556
 ms.openlocfilehash: 8a9c49edfcc43b1862745240ca4e4607bbe27f21
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43560373"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787087"
 ---
 # <a name="getting-started-linq-to-dataset"></a>Začínáme (LINQ to DataSet)
 Tato část obsahuje úvodní informace o programování v jazyce [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)].  

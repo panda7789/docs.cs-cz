@@ -4,11 +4,11 @@ description: Další informace o rozhraní framework typy podporující stromy v
 ms.date: 06/20/2016
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
 ms.openlocfilehash: 687b521c52c1ca380a12e18469b5f66000049d3c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43735329"
+ms.locfileid: "43788890"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>Typy architektur podporující stromy výrazů
 

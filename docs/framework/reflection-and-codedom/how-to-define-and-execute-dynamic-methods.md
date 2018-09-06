@@ -12,11 +12,11 @@ ms.assetid: 07d08a99-62c5-4254-bce2-2a75e55a18ab
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 865d9aa6806e00bb9cf7b3991b4f323d361cbb63
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43723487"
+ms.locfileid: "43785297"
 ---
 # <a name="how-to-define-and-execute-dynamic-methods"></a>Postupy: Definování a provádění dynamických metod
 Následující postupy ukazují, jak definovat a spustí jednoduchou dynamickou metodu a dynamická metoda svázána s instancí třídy. Další informace o dynamické metody, naleznete v tématu <xref:System.Reflection.Emit.DynamicMethod> třídy a [emitování dynamické metody scénáře reflexe](https://msdn.microsoft.com/library/7c27ea3d-0f24-4bf3-8ceb-f49d33faca5e).  

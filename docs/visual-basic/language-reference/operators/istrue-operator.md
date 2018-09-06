@@ -8,11 +8,11 @@ helpviewer_keywords:
 - OrElse operator [Visual Basic]
 ms.assetid: b6cec0f2-61b1-4331-a7f0-4d07ee3179d6
 ms.openlocfilehash: bf81384b0cecfd1ee3d438e4463949381279a181
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43724276"
+ms.locfileid: "43785189"
 ---
 # <a name="istrue-operator-visual-basic"></a>IsTrue – operátor (Visual Basic)
 Určuje, zda je výraz `True`.  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - client application services, walkthroughs
 ms.assetid: bb7c8950-4517-4dae-b705-b74a14059b26
 ms.openlocfilehash: b800848fc3cefb1f82fb5822007bc670c1684363
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43539889"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43788925"
 ---
 # <a name="walkthrough-using-client-application-services"></a>Návod: Použití klientských aplikačních služeb
 Toto téma popisuje, jak vytvořit aplikaci Windows, která používá k ověřování uživatelů a získání role uživatele a nastavení klientských aplikačních služeb.  

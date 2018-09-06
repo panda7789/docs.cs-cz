@@ -1,12 +1,12 @@
 ---
 title: 'Návod: Uchování objektu pomocí jazyka C#'
 ms.date: 04/26/2018
-ms.openlocfilehash: 7e9134d53d9bee8bf5ec52085bf7bdff7f09e7ad
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c3cff57f008eb524c2d2bec406431e4c41dca617
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503665"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43784972"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Návod: uchování objektu pomocí jazyka C# #
 
@@ -99,5 +99,5 @@ V tomto okamžiku můžete znovu sestavte a spusťte aplikaci. Při prvním spu�
 
 ## <a name="see-also"></a>Viz také
 
-- [Serializace (C# )](index.md)  
+- [Serializace (C#)](index.md)  
 - [Průvodce programováním v jazyce C#](../..//index.md)  

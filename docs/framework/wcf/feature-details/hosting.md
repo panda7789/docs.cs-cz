@@ -3,11 +3,11 @@ title: Hosting2
 ms.date: 03/30/2017
 ms.assetid: 0820c7e5-0b50-4cde-80e7-74e346513002
 ms.openlocfilehash: 9237518f5bfa48401e60e47ccc40e4ee303dec35
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43557059"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43788865"
 ---
 # <a name="hosting"></a>Hostování
 Témata v této sekci popisují hostování služeb. Službě mohou být hostovány Internetové informační služby (IIS), Windows Process Activation Service (WAS), Windows Server AppFabric, služba Windows, nebo spravovaných aplikací – tato možnost se často označuje jako *samoobslužné hostování*.  

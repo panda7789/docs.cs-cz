@@ -1,17 +1,17 @@
 ---
 title: Atributy (F#)
-description: 'Zjistěte, jak povolit F # atributy metadata, která má být použita pro programovací konstrukce.'
+description: 'Zjistěte, jak povolit metadata použije programovací konstrukce F # atributy.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 107f5d9cbcce28c97fc5b738759ef27649fc45a4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e7f1d0ff383e1070b3db72e633f80ea37150548
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565422"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787191"
 ---
 # <a name="attributes"></a>Atributy
 
-Atributy povolit metadata, která má být použita pro programovací konstrukce.
+Atributy umožňují metadata použije programovací konstrukce.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,51 +21,51 @@ Atributy povolit metadata, která má být použita pro programovací konstrukce
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozích syntaxe *cíl* je volitelný a pokud je k dispozici, určuje druh program entita, která se vztahuje na atribut. Platné hodnoty pro *cíl* jsou uvedené v tabulce, která se zobrazí později v tomto dokumentu.
+V předchozí syntaxi *cílové* je nepovinný a pokud jsou k dispozici, určuje typ entity program, který platí atribut pro. Platné hodnoty pro *cílové* jsou uvedené v tabulce, která se zobrazí později v tomto dokumentu.
 
-*Název atributu* odkazuje na název (může být kvalifikovaný pomocí oborů názvů) typu atributu platný, s nebo bez přípona `Attribute` , obvykle se používá v názvech typ atributu. Například typ `ObsoleteAttribute` lze zkrátit těsně `Obsolete` v tomto kontextu.
+*Název atributu* odkazuje na název (může být kvalifikován s obory názvů) platný atribut typu, s nebo bez přípony `Attribute` , která se obvykle používá v názvech typ atributu. Například typ `ObsoleteAttribute` lze zkrátit jenom `Obsolete` v tomto kontextu.
 
-*Argumenty* jsou argumenty pro konstruktor pro typ atributu. Pokud atribut má výchozí konstruktor, můžete vynechat seznam argumentů a závorek. Atributy podporovat poziční argumenty a pojmenované argumenty. *Poziční argumenty* argumenty, které se používají v pořadí, ve kterém jsou zobrazeny. Pojmenované argumenty lze použít, pokud má atribut veřejné vlastnosti. Můžete nastavit tak, že pomocí následující syntaxe v seznamu argumentů.
+*Argumenty* argumenty konstruktoru pro typ atributu. Pokud atribut nemá výchozí konstruktor, lze vynechat seznam argumentů a závorky. Atributy podpory poziční argumenty a pojmenované argumenty. *Poziční argumenty* jsou argumenty, které se používají v pořadí, v jakém jsou uvedeny. Pojmenované argumenty je možné, pokud má atribut veřejné vlastnosti. Můžete nastavit tyto pomocí následující syntaxe v seznamu argumentů.
 
 ```
 *property-name* = *property-value*
 ```
 
-Taková vlastnost inicializacích může být v libovolném pořadí, ale se musí řídit všechny poziční argumenty. Následuje příklad atribut, který používá poziční argumentů a inicializacích vlastnost.
+Inicializace taková vlastnost může být v libovolném pořadí, ale musí postupovat žádné poziční argumenty. Tady je příklad, který používá poziční argumenty a inicializací vlastností atributu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6202.fs)]
 
-V tomto příkladu je atribut `DllImportAttribute`, zde použít ve zkráceném tvaru. První argument je parametr poziční a druhý je vlastnost.
+V tomto příkladu je atribut `DllImportAttribute`, zde používá ve zkráceném tvaru. První argument je poziční parametr a druhý je vlastnost.
 
-Atributy jsou .NET programovací konstrukce, která umožňuje objekt známé jako *atribut* přidruženou typu nebo jiného programu elementu. Element program, do které se použije atribut se označuje jako *atribut target*. Atribut obvykle obsahuje metadata o cíli. V tomto kontextu může být metadata žádná data o typu než jeho polí a členy.
+Atributy jsou .NET programovací konstrukce, která umožňuje označované jako objekt *atribut* má být přidružena k typu nebo jiný prvek programu. Ovládací prvek programu ke které se použije atribut se označuje jako *cíl atributu*. Atribut obvykle obsahuje metadata o cíli. V tomto kontextu může být metadata žádná data o typ jiný než jeho polí a členy.
 
-Atributy v jazyce F # lze použít pro následující programovací konstrukce: funkce, metody, sestavení, moduly, typy (třídy, záznamy, struktury, rozhraní, delegáti, výčty, sjednocení a tak dále), konstruktory, vlastnosti, pole, parametry, Zadejte parametry a návratové hodnoty. Atributy nejsou povoleny na `let` vazby uvnitř tříd, výrazy a výrazy pracovního postupu.
+Atributy v jazyce F # můžete použít pro následující programovací konstrukce: funkce, metody, sestavení, modulů, typů (tříd, záznamy, struktury, rozhraní, delegátů, výčty, sjednocení a tak dále), konstruktory, vlastnosti, pole, parametry, Zadejte parametry a návratové hodnoty. Atributy nejsou povolené v `let` vazby uvnitř třídy, výrazy nebo výrazy pracovního postupu.
 
-Deklaraci atributu se obvykle zobrazuje přímo před deklaraci atribut target. Více deklarací atribut je možné společně, a to takto.
+Obvykle deklarace atributu se zobrazí přímo před deklarací cíl atributu. Více atribut deklarace je možné společně, následujícím způsobem.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6603.fs)]
 
-V době běhu pomocí reflexe .NET můžete dotazovat atributy.
+Atributy můžete dotazovat v době běhu pomocí reflexe .NET.
 
-Je možné deklarovat několik atributů jednotlivě, jako v předchozím příkladu kódu, nebo je možné deklarovat v jedné sadě závorky a pokud používáte středníkem oddělte jednotlivé atributy a konstruktory, jak je vidět tady.
+Je možné deklarovat několik atributů jednotlivě, stejně jako v předcházejícím příkladu, nebo je lze deklarovat v jednu sadu závorek je-li použít středník oddělit jednotlivé atributy a konstruktory, jak je znázorněno zde.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6604.fs)]
 
-Obvykle došlo k atributy patří `Obsolete` atribut atributy pro aspekty zabezpečení, atributy pro podporu modelu COM, atributy, které se týkají vlastnictví kódu a atributy, která určuje, zda lze serializovat typu. Následující příklad ukazuje použití `Obsolete` atribut.
+Zahrnout obvyklých atributy `Obsolete` atribut atributy pro požadavky na zabezpečení atributů pro podporu modelu COM, atributy, které se týkají vlastnictví kódu a atributy určující, zda typ lze serializovat. Následující příklad ukazuje použití `Obsolete` atribut.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6605.fs)]
 
-Pro atribut cíle `assembly` a `module`, použijete atributy nejvyšší úrovně `do` vazby ve vašem sestavení. Můžete použít slovo `assembly` nebo `module` v deklaraci atributu, následujícím způsobem.
+Pro atribut cíle `assembly` a `module`, použít atributy k nejvyšší úrovni `do` vazby v sestavení. Může obsahovat slovo `assembly` nebo `module` v deklaraci atributu následujícím způsobem.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6606.fs)]
 
-Pokud je cílem atributu pro atribut u vynechat `do` vazby, kompilátor jazyka F # se pokusí určit atribut target, která je vhodná pro tento atribut. Mnoho atribut třídy mají atribut typu `System.AttributeUsageAttribute` , který obsahuje informace o možných cíle pro tento atribut podporována. Pokud `System.AttributeUsageAttribute` označuje, že atribut podporuje funkce jako cíle atribut se provede chcete použít pro hlavní vstupní bod programu. Pokud `System.AttributeUsageAttribute` označuje, že atribut podporuje sestavení jako cíle kompilátor trvá atribut, který chcete použít pro sestavení. Většina atributy se nevztahují na funkce a sestavení, ale v případech, kde udělají, je atribut prováděné chcete použít pro hlavní funkce programu. Pokud cílový atribut je explicitně zadána, atribut se používá k zadané cílové.
+Pokud vynecháte cíl atributu pro atribut použitý k `do` vazby, kompilátor jazyka F # se pokusí určit atribut target, to dává smysl pro tento atribut. Mnoho atribut třídy mají atribut typu `System.AttributeUsageAttribute` , který obsahuje informace o možných cíle pro tento atribut nepodporuje. Pokud `System.AttributeUsageAttribute` naznačuje, že atribut podporuje funkce jako cíle, chcete-li použít hlavní vstupní bod programu se používá atribut. Pokud `System.AttributeUsageAttribute` naznačuje, že atribut podporuje sestavení jako cíle, kompilátor přijímá atribut, který chcete použít k sestavení. Většina atributy se nevztahují na funkce a sestavení, ale v případech, ve kterém se dělají, atribut věnovat platí pro hlavní funkce programu. Pokud cílový atribut je explicitně zadán, je atribut použit na zadané cílové.
 
-I když není nutné obvykle zadat atribut cíle explicitně, platné hodnoty pro *cíl* v atributu, které jsou uvedeny v následující tabulce, společně s příklady využití.
+I když obvykle nepotřebujete zadat atribut cílit explicitně, platné hodnoty pro *cílové* v atributu jsou uvedeny v následující tabulce, spolu s příkladem použití.
 
 <table>
   <tr>
-    <th>Atribut target</td>
+    <th>Cíl atributu</td>
     <th>Příklad</td> 
   </tr>
   <tr>
@@ -74,11 +74,11 @@ I když není nutné obvykle zadat atribut cíle explicitně, platné hodnoty pr
   </tr>
   <tr>
     <td>return</td>
-    <td>' umožní function1 x: [<return: Obsolete>] int = x + 1</td> 
+    <td>"umožnit function1 x: [<return: Obsolete>] int = x + 1</td> 
   </tr>
   <tr>
     <td>pole</td>
-    <td>"[<field: DefaultValue>] val měnitelný x: int.</td> 
+    <td>"[<field: DefaultValue>] val mutable x: int.</td> 
   </tr>
   <tr>
     <td>property</td>
@@ -86,17 +86,17 @@ I když není nutné obvykle zadat atribut cíle explicitně, platné hodnoty pr
   </tr>
   <tr>
     <td>Param</td>
-    <td>člen to. MyMethod ([<param: Out>] x: ref<int>) = x: = 10</td> 
+    <td>"člen to. MyMethod ([<param: Out>] x: ref<int>) = x: = 10</td> 
   </tr>
   <tr>
     <td>– typ</td>
     <td>
         ```
-        [<type: StructLayout(Sequential)>] zadejte MyStruct = struktura x: y bajtů: int end ```
+        [<type: StructLayout(Sequential)>] zadejte MyStruct = struktury x: y bajtů: int end ```
     </td> 
   </tr>
 </table>
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F#](index.md)

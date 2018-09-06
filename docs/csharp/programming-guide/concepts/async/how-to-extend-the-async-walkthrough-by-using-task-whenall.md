@@ -2,12 +2,12 @@
 title: 'Postupy: rozšíření návodu úloh pomocí metody Task.whenall (C#) asynchronních'
 ms.date: 07/20/2015
 ms.assetid: f6927ef2-dc6c-43f8-bc82-bbeac42de423
-ms.openlocfilehash: ed83241b31e6e8187d26b8d071f924278f6715e5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 241bd6baf0c1133ba7603da433a7cdf8d36748c0
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505815"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787555"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Postupy: rozšíření návodu úloh pomocí metody Task.whenall (C#) asynchronních
 Můžete zvýšit výkon asynchronního řešení v [návod: přístup k webu pomocí modifikátoru async a operátoru await (C#)](../../../../csharp/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) pomocí <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> metody. Tato metoda asynchronně čeká na více asynchronních operací, které jsou reprezentovány ve formě kolekci úkolů.  
@@ -61,7 +61,7 @@ Můžete zvýšit výkon asynchronního řešení v [návod: přístup k webu po
     //}  
     ```  
   
-3.  Vytvořte kolekci úkolů. Následující kód definuje [dotazu](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
+3.  Vytvořte kolekci úkolů. Následující kód definuje [dotazu](../../../../csharp/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
   
      Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `urlList`.  
   
@@ -136,7 +136,7 @@ Můžete zvýšit výkon asynchronního řešení v [návod: přístup k webu po
     //}  
     ```  
   
-3.  Definování [dotazu](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
+3.  Definování [dotazu](../../../../csharp/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
   
      Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `client` a `urlList`.  
   
