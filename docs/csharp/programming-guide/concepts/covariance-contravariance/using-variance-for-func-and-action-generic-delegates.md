@@ -3,11 +3,11 @@ title: Použití odchylek pro delegáty Func a Action obecný (C#)
 ms.date: 07/20/2015
 ms.assetid: 1826774f-2b7a-470f-b110-17cfdd6abdae
 ms.openlocfilehash: 903926bc86b1b96cea25b91314e35ed4771bbcb9
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43797631"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43880429"
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-c"></a>Použití odchylek pro delegáty Func a Action obecný (C#)
 Tyto příklady ukazují, jak používat kovariance a kontravariance v `Func` a `Action` obecné delegáty umožňují opakované použití metod a poskytují větší flexibilitu v kódu.  

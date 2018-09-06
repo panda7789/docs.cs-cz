@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0fc18634-f590-4062-8d5c-f0b71abe405b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95244e2f07a78113d1164e8f6fe4534f95cb4f88
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4e6a0b0a6fbad1c01ed26b5090cd18dcce3be057
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43559605"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44041597"
 ---
 # <a name="grouping-constructs-in-regular-expressions"></a>Seskupovací konstrukce v regulárních výrazech
 Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zachytávají podřetězce vstupního řetězce. Seskupovací konstrukce můžete provádět následující akce:  
@@ -470,6 +470,7 @@ Seskupovací konstrukce vymezují dílčí výrazy regulárních výrazů a zach
   
  První zachytávající skupina odpovídá každého slova na konec věty. Druhá zachytávající skupina odpovídá každého slova spolu s interpunkce a prázdných znaků, které následují slovo. <xref:System.Text.RegularExpressions.Group> Objekt, jehož index je 2 poskytuje informace o textu odpovídající druhou zachytávající skupinu. Kompletní sadu slov zachycených zachytávající skupinou jsou k dispozici <xref:System.Text.RegularExpressions.CaptureCollection> vrácený <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType> vlastnost.  
   
-## <a name="see-also"></a>Viz také  
- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
- [Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)
+## <a name="see-also"></a>Viz také:
+
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
+- [Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)

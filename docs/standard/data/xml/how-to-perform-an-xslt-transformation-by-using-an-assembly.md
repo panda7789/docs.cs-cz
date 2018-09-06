@@ -1,5 +1,5 @@
 ---
-title: 'Postup: provedení transformace XSLT pomocí sestavení'
+title: 'Postupy: provedení transformace XSLT pomocí sestavení'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,19 +8,19 @@ dev_langs:
 ms.assetid: 76ee440b-d134-4f8f-8262-b917ad6dcbf6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d8f29b1274e6e8436aed0dfb698ede4864a15417
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ef0d47ae18b8bdd3f1d49a20937b65e9872ab551
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569500"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43892344"
 ---
-# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postup: provedení transformace XSLT pomocí sestavení
-Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metoda.  
+# <a name="how-to-perform-an-xslt-transformation-by-using-an-assembly"></a>Postupy: provedení transformace XSLT pomocí sestavení
+Kompilátor XSLT (xsltc.exe) zkompiluje šablon stylů XSLT a generuje sestavení. Sestavení mohou být předány přímo do <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType> metody.  
   
 ### <a name="to-copy-the-xml-and-xslt-files-to-your-local-computer"></a>Kopírování souborů XML a XSLT do místního počítače  
   
--   Zkopírujte soubor XSLT do místního počítače a pojmenujte ji Transform.xsl.  
+-   Zkopírujte soubor XSLT do místního počítače a pojmenujte ho Transform.xsl.  
   
     ```xml  
     <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -87,7 +87,7 @@ Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestaven�
     </xsl:stylesheet>  
     ```  
   
--   Zkopírování souboru XML do místního počítače a pojmenujte ji `books.xml`.  
+-   Zkopírujte soubor XML do místního počítače a pojmenujte ho `books.xml`.  
   
     ```xml  
     <?xml version="1.0"?>  
@@ -130,9 +130,9 @@ Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestaven�
     </catalog>  
     ```  
   
-### <a name="to-compile-the-style-sheet-with-the-script-enabled"></a>Šablony stylů zkompilovat pomocí skriptu povoleno.  
+### <a name="to-compile-the-style-sheet-with-the-script-enabled"></a>Pro kompilaci šablony stylů se skriptem povolena.  
   
-1.  Spuštěním následujícího příkazu z příkazového řádku vytvoří dvě sestavení s názvem `Transform.dll` a `Transform_Script1.dll` (Toto je výchozí chování. Pokud není uvedeno jinak, název třídy a sestavení výchozí název hlavní šablony stylů):  
+1.  Spuštěním následujícího příkazu z příkazového řádku vytvoří dvě sestavení s názvem `Transform.dll` a `Transform_Script1.dll` (Toto je výchozí chování. Pokud není uvedeno jinak, název třídy a sestavení výchozím názvem hlavní šablony stylů):  
   
     ```  
     xsltc /settings:script+ Transform.xsl  
@@ -144,11 +144,11 @@ Kompilátor XSLT (xsltc.exe) kompiluje XSLT šablony stylů a generuje sestaven�
 xsltc /settings:script+ /class:Transform Transform.xsl  
 ```  
   
-### <a name="to-include-the-compiled-assembly-as-a-reference-when-you-compile-your-code"></a>Zahrnout kompilované sestavení jako referenci při kompilaci kódu.  
+### <a name="to-include-the-compiled-assembly-as-a-reference-when-you-compile-your-code"></a>Chcete-li zahrnout zkompilovaného sestavení jako odkaz při kompilaci kódu.  
   
-1.  Sestavení v sadě Visual Studio můžete zahrnout přidáním odkazu v Průzkumníku řešení, nebo z příkazového řádku.  
+1.  Můžete zahrnout sestavení v sadě Visual Studio tak, že přidáte odkaz v Průzkumníku řešení nebo z příkazového řádku.  
   
-2.  Pro příkazový řádek pomocí C# použijte tento příkaz:  
+2.  Pro příkazový řádek s jazykem C# použijte následující:  
   
     ```  
     csc myCode.cs /r:system.dll;system.xml.dll;Transform.dll  
@@ -160,14 +160,14 @@ xsltc /settings:script+ /class:Transform Transform.xsl
     vbc myCode.vb /r:system.dll;system.xml.dll;Transform.dll  
     ```  
   
-### <a name="to-use-the-compiled-assembly-in-your-code"></a>K použití kompilované sestavení v kódu.  
+### <a name="to-use-the-compiled-assembly-in-your-code"></a>Pro použití ve vašem kódu zkompilovaného sestavení.  
   
-1.  Následující příklad ukazuje, jak provést transformace XSLT pomocí kompilované šablony stylů.  
+1.  Následující příklad ukazuje, jak provedení transformace XSLT pomocí zkompilované šablony stylů.  
   
  [!code-csharp[XslTransform_XSLTC#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XslTransform_XSLTC/CS/XslTransform_XSLTC.cs#1)]
  [!code-vb[XslTransform_XSLTC#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslTransform_XSLTC/VB/XslTransform_XSLTC.vb#1)]  
   
- Chcete-li dynamicky odkaz na zkompilované sestavení, nahraďte  
+ Chcete-li propojit dynamicky kompilovaných sestavení, nahraďte  
   
 ```  
 xslt.Load(typeof(Transform))  
@@ -179,10 +179,11 @@ xslt.Load(typeof(Transform))
 xslt.Load(System.Reflection.Assembly.Load("Transform").GetType("Transform"))  
 ```  
   
- v příkladu nahoře. Další informace o metodě Assembly.Load najdete v tématu <xref:System.Reflection.Assembly.Load%2A>  
+ v předchozím příkladu. Další informace o metodě Assembly.Load naleznete v tématu <xref:System.Reflection.Assembly.Load%2A>  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Xsl.XslCompiledTransform>  
- [Kompilátor XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
- [Sestavování pomocí programu csc.exe v příkazovém řádku](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.Xsl.XslCompiledTransform>  
+- [Kompilátor XSLT (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
+- [Sestavování pomocí programu csc.exe v příkazovém řádku](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md)

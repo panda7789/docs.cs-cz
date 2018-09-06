@@ -3,11 +3,11 @@ title: 'Služba: Naslouchací objekty kanálů a kanály'
 ms.date: 03/30/2017
 ms.assetid: 8ccbe0e8-7e55-441d-80de-5765f67542fa
 ms.openlocfilehash: 88bfdc879e4f3c7df6b2c4035c7ed7fdc2b4c41d
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43788785"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44035135"
 ---
 # <a name="service-channel-listeners-and-channels"></a>Služba: Naslouchací objekty kanálů a kanály
 

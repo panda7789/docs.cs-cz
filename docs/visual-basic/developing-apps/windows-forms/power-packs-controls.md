@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Power Packs
 ms.assetid: 5e53a2d2-f200-4357-8b20-430f8f4860a4
 ms.openlocfilehash: 71b02233f842ef3fd01f030fe7df7bda97eacc78
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43778065"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44042241"
 ---
 # <a name="visual-basic-power-packs-controls"></a>Ovládací prvky jazyka Visual Basic Power Pack
 

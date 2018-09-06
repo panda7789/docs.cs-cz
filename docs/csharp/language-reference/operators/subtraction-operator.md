@@ -8,11 +8,11 @@ helpviewer_keywords:
 - subtraction operator (-) [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
 ms.openlocfilehash: bd852f96ece9c8d5d5e2ec42e802596e795ce04a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43534806"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43877737"
 ---
 # <a name="--operator-c-reference"></a>- – operátor (Referenční dokumentace jazyka C#)
 `-` Operátor může fungovat jako unární nebo binární operátor.  

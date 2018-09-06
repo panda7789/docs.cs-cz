@@ -10,45 +10,46 @@ helpviewer_keywords:
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3f7202e10e41b9f114f42a4502ee2e6694bf3821
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6d8c445de44a69f6c0cb1eaefa0e59d682288318
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33573734"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43885532"
 ---
 # <a name="sealing"></a>Zapečetění
-Jedna z funkcí objektově orientované rozhraní se vývojáři můžou rozšířit a přizpůsobit způsoby neočekávané návrháři framework. Toto je napájení i nebezpečí extensible návrhu. Při návrhu vaší framework je, proto velmi důležité pečlivě návrh pro rozšíření, pokud se požaduje a omezit rozšiřitelnosti, když je nebezpečné.  
+Jednou z funkcí objektově orientované rozhraní je, že vývojáři můžete rozšířit a přizpůsobit způsoby neočekávané návrháři rozhraní framework. Toto je výkon a nebezpečí extensible návrhu. Při navrhování rozhraní framework je, proto velmi důležité, pečlivě navrhování pro rozšiřitelnost ho potřebujete a omezit rozšiřitelnosti, když je nebezpečné.  
   
- Zapečetění je výkonný mechanismus, který brání rozšíření. Můžete ji třídu nebo jednotlivé členy. Zapečetění třídu zabraňuje uživatelům v dědění ze třídy. Zapečetění členem zabraňuje uživatelům v přepsání konkrétní člena.  
+ Zapečetění je výkonný mechanismus, který brání rozšiřitelnosti. Můžete zapečeťte třídu nebo jednotlivé členy. Zapečetění třídu zabraňuje uživatelům dědění ze třídy. Zapečetění člen zabraňuje uživatelům v přepsání určitého člena.  
   
  **X DO NOT** zapečetit třídy bez nutnosti důvodem k tomu.  
   
- Zapečetění třídu, protože nelze úvahách o scénářem rozšíření není dobrý důvod. Uživatelé Framework jako dědění ze třídy z různých důvodů nonobvious, například přidávání členů pohodlí. V tématu [Nezapečetěné třídy](../../../docs/standard/design-guidelines/unsealed-classes.md) příklady nonobvious důvodů uživatelé chtějí dědit z typu.  
+ Zapečetění třídu, protože nelze myslíte, že rozšíření scénáře není dobrý důvod. Dědit ze tříd z různých důvodů nonobvious, jako je přidání členů pohodlí, jako jsou uživatelé rozhraní Framework. Zobrazit [Nezapečetěné třídy](../../../docs/standard/design-guidelines/unsealed-classes.md) příklady nonobvious důvodů uživatelé chtějí dědit z typu.  
   
- Dobré důvody pro zapouzdření třídy zahrnují následující:  
+ Oprávněné důvody pro zapečetění třídy zahrnují následující:  
   
--   Třída je statická třída. V tématu [statická třída návrhu](../../../docs/standard/design-guidelines/static-class.md).  
+-   Třída je statická třída. Zobrazit [návrh statické třídy](../../../docs/standard/design-guidelines/static-class.md).  
   
--   Třída ukládá tajné klíče citlivé na zabezpečení v zděděné chráněné členy.  
+-   Třídy ukládá citlivé na zabezpečení tajné kódy ve zděděných chráněných členů.  
   
--   Třídy dědí mnoho členů virtuální a náklady na jejich jednotlivě zapečetění by převažují nad přínosy ponechání třídy nezapečetěné.  
+-   Třída dědí mnoho virtuální členy a náklady na jejich jednotlivě zapečetění by převážit nad výhodami opuštění nezapečetěné třídy.  
   
--   Třída je atribut, který vyžaduje modul runtime velmi rychlé hledání. Zapečetěné atributů mají mírně vyšší úrovně výkonu než ty, které jsou nezapečetěné. v tématu [atributy](../../../docs/standard/design-guidelines/attributes.md).  
+-   Třída je atribut, který vyžaduje velmi rychlé zpracování runtime vyhledat. Zapečetěné atributy mají mírně vyšší úrovně výkonu než nezapečetěné. Zobrazit [atributy](../../../docs/standard/design-guidelines/attributes.md).  
   
  **X DO NOT** deklarovat chráněný nebo virtuální členy v zapečetěných typech.  
   
- Podle definice nemůžou být zděděny zapečetěných typech. To znamená, že chráněné členy v zapečetěných typech nelze volat v zapečetěných typech virtuální metody nelze přepsat.  
+ Dle definice nelze dědit zapečetěné typy z. To znamená, že nelze volat chráněné členy v zapečetěných typech a nedají se přepsat virtuální metody zapečetěných typů.  
   
  **✓ CONSIDER** zapečetění členů, které můžete přepsat.  
   
- Problémy, které může být důsledkem představení virtuální členové (popsané v [virtuální členové](../../../docs/standard/design-guidelines/virtual-members.md)) použít k přepsání i, i když mírně menší míře. Zapečetění přepsání chrání před tyto problémy od tohoto bodu v hierarchii dědičnosti.  
+ Problémy, které můžou být výsledkem Představujeme virtuální členy (popsáno v [virtuální členy](../../../docs/standard/design-guidelines/virtual-members.md)) použít k přepsání, i když se do menší míry. Zapečetění přepsání chrání před tyto problémy od tohoto bodu v hierarchii dědičnosti.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
- [Nezapečetěné třídy](../../../docs/standard/design-guidelines/unsealed-classes.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
+- [Nezapečetěné třídy](../../../docs/standard/design-guidelines/unsealed-classes.md)

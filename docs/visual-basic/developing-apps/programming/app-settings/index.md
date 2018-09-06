@@ -6,11 +6,11 @@ helpviewer_keywords:
 - examples [Visual Basic], application settings
 ms.assetid: e38d0cc7-247a-46ca-ba04-f2913f0adb2e
 ms.openlocfilehash: 3b933287d18a2519969852117fc6f847e9ead461
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43788513"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43890918"
 ---
 # <a name="accessing-application-settings-visual-basic"></a>Přístup k nastavení aplikace (Visual Basic)
 Tento oddíl obsahuje témata popisující `My.Settings` objektu a úlohy umožňují provádět.  

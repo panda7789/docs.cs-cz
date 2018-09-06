@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: a4ebdbad-087c-4cfe-acc0-17c48142f81a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6f958af5859804cdeb382adab2f3772c42ac5b16
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 40a530190ee4b19d72399ab877cf26bad1090b9f
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43724367"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44037945"
 ---
 # <a name="xslt-extension-objects"></a>Objekty rozšíření XSLT
 Rozšíření objektů se používají k rozšíření funkcí šablon stylů. Rozšíření objektů jsou udržovány <xref:System.Xml.Xsl.XsltArgumentList> třídy.  
@@ -38,6 +38,7 @@ Rozšíření objektů se používají k rozšíření funkcí šablon stylů. R
   
 3.  Předání <xref:System.Xml.Xsl.XsltArgumentList> objektu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
-## <a name="see-also"></a>Viz také  
- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
- [Aspekty zabezpečení XSLT](../../../../docs/standard/data/xml/xslt-security-considerations.md)
+## <a name="see-also"></a>Viz také:
+
+- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)  
+- [Aspekty zabezpečení XSLT](../../../../docs/standard/data/xml/xslt-security-considerations.md)

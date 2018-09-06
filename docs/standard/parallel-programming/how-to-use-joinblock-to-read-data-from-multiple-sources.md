@@ -12,28 +12,28 @@ helpviewer_keywords:
 ms.assetid: e9c1ada4-ac57-4704-87cb-2f5117f8151d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: bd00c91daf2811ecba01b77d51a74740027ced5e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c49f7ad5162c9e2759ec8afed217451b4bcf04ff
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581583"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43892649"
 ---
 # <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock
-Tento dokument vysvětluje, jak používat <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třída k provedení určité operace, pokud jsou k dispozici data z více zdrojů. Také ukazuje, jak povolit více připojení k bloků efektivněji sdílet zdroje dat pomocí typu non-greedy režimu.
+Tento dokument popisuje, jak používat <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třídy provádět operace, když jsou k dispozici data z různých zdrojů. Také ukazuje, jak použít bez metody greedy režim povolit více bloků spojení sdílet zdroje dat efektivněji.
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
 ## <a name="example"></a>Příklad  
- V následujícím příkladu definuje tři typy prostředků, `NetworkResource`, `FileResource`, a `MemoryResource`a provádí operace, kdy prostředky k dispozici. Tento příklad vyžaduje, `NetworkResource` a `MemoryResource` pár, aby bylo možné provést operaci první a `FileResource` a `MemoryResource` pár, aby bylo možné provést operaci druhý. Pokud chcete povolit tyto operace nastat, když všechny požadované prostředky jsou k dispozici, v tomto příkladu <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třídy. Když <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekt přijímá data ze všech zdrojů, se rozšíří dat k cíli, která v tomto příkladu je <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objektu. Obě <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objektů číst z sdílenému fondu `MemoryResource` objekty.  
+ Následující příklad definuje tři typy prostředků, `NetworkResource`, `FileResource`, a `MemoryResource`a provádí operace, až budou dostupné prostředky. Tento příklad vyžaduje `NetworkResource` a `MemoryResource` pár, aby bylo možné provést první operaci a `FileResource` a `MemoryResource` pár, aby bylo možné provést druhou operaci. Pokud chcete povolit tyto operace nastat, když jsou k dispozici všechny požadované prostředky, v tomto příkladu <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třídy. Když <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objektu přijímá data ze všech zdrojů, rozšíří tato data k cíli, který v tomto příkladu je <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> objektu. Obě <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> přečíst objekty z sdílený fond `MemoryResource` objekty.  
   
  [!code-csharp[TPLDataflow_NonGreedyJoin#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_nongreedyjoin/cs/nongreedyjoin.cs#1)]
  [!code-vb[TPLDataflow_NonGreedyJoin#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_nongreedyjoin/vb/nongreedyjoin.vb#1)]  
   
- Povolit efektivní využití sdílený fond `MemoryResource` objekty, tento příklad určuje <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions> objekt, který má <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> vlastnost nastavena na hodnotu `False` k vytvoření <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekty, které fungují v režimu typu non-greedy. Spojení typu non-greedy blok odloží všechny příchozí zprávy, dokud je dostupný z každého zdroje. Pokud některý z odložených zpráv byly přijaty jiného bloku, blok spojení restartuje proces. Typu non-greedy režim umožňuje připojení k bloky, které sdílejí jeden či více bloků zdroj chcete provést postup směrem vpřed, jako ostatní bloky počkejte dat. V tomto příkladu Pokud `MemoryResource` objekt přidá do `memoryResources` fond, toto spojení provádět bloku přijímat zdrojem dat pro druhý postup směrem vpřed. Pokud v tomto příkladu byly použití typu greedy režimu, který je výchozí, jeden blok připojení může trvat `MemoryResource` objektu a počkat na druhý prostředek k dispozici. Ale pokud k připojení k bloku má svůj druhý zdroj dat dostupný, nemůže vytvořit postup směrem vpřed protože `MemoryResource` objekt které byly použity k připojení k bloku.  
+ Umožňuje efektivní využití sdílený fond `MemoryResource` objekty, tento příklad určuje <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions> objekt, který má <xref:System.Threading.Tasks.Dataflow.GroupingDataflowBlockOptions.Greedy%2A> vlastnost nastavena na hodnotu `False` vytvořit <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekty, které fungují v režimu bez metody greedy. Spojení typu non-greedy blok odloží všechny příchozí zprávy, dokud je k dispozici z každého zdroje. Pokud některý z odložených zprávy byly přijaty jiným blokem, restartuje blokovat připojení k procesu. Bez metody greedy režim umožňuje spojení bloky, které sdílejí jeden nebo více zdrojových bloků tak postup směrem vpřed, jak se bloky čekat na data. V tomto příkladu Pokud `MemoryResource` objekt přidán do `memoryResources` fondu, spojení první blok obdržet svůj druhý zdroj dat můžete provést postup směrem vpřed. Pokud v tomto příkladu byly pro použití režimu greedy, což je výchozí hodnota, jeden blok připojení může trvat, než `MemoryResource` objektu a počkejte, druhý prostředků k dispozici. Nicméně, pokud jiné spojení blok má svůj druhý zdroj dat k dispozici, nemůže vytvořit postup směrem vpřed protože `MemoryResource` objektu je už zabraný jiných spojení blokem.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Příklad kódu zkopírujte a vložte ji do projektu sady Visual Studio nebo ho vložte v souboru, který je pojmenován `DataflowNonGreedyJoin.cs` (`DataflowNonGreedyJoin.vb` jazyka Visual Basic), a poté spusťte následující příkaz v okně příkazového řádku Visual Studia.  
+ Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `DataflowNonGreedyJoin.cs` (`DataflowNonGreedyJoin.vb` v jazyce Visual Basic), a pak spusťte následující příkaz v okně Příkazový řádek sady Visual Studio.  
   
  Visual C#  
   
@@ -44,7 +44,8 @@ Tento dokument vysvětluje, jak používat <xref:System.Threading.Tasks.Dataflow
  **Vbc.exe /r:System.Threading.Tasks.Dataflow.dll DataflowNonGreedyJoin.vb**  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Použití spojení typu non-greedy také vám pomůže předejít zablokování v aplikaci. V aplikaci softwaru *zablokování* nastane, když minimálně dva procesy každý uložení prostředku a vzájemně čekat na jiný proces k uvolnění jiný prostředek. Zvažte aplikaci, která definuje dvě <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekty. Oba objekty každý přečíst data z dva bloky sdílené zdroje. V typu greedy režimu Pokud jeden spojení blok čte z zdroji první a druhý bloku spojení načítá druhý zdroje, aplikace může zablokování, protože obě připojení bloky vzájemně Čekejte na další vydat jeho prostředků. V typu non-greedy režimu každého bloku spojení čtení z její zdroje jenom v případě, že je k dispozici všechna data a proto riziko vzájemného zablokování je eliminovat.  
+ Použití spojení typu non-greedy také vám může pomoct zabránit zablokování ve vaší aplikaci. V případě aplikace softwaru *zablokování* nastane, pokud dva nebo více procesů jednotlivých uložení prostředku a vzájemně počkat na jiný proces uvolnit jiný prostředek. Vezměte v úvahu aplikace, která definuje dva <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> objekty. Oba objekty každý číst data ze dvou bloků sdílené zdroje. V režimu greedy Pokud jeden spojení blok čte z prvního zdroje a druhý spojení blok čte z druhého zdroje, aplikace může způsobila zablokování, protože obě spojení bloky vzájemně počkejte dalších vydat jeho prostředků. V režimu bez metody greedy každý blok spojení čtení záznamů z jeho zdroje pouze v případě, že všechna data jsou k dispozici a proto riziku zablokování je Odstraněná.  
   
-## <a name="see-also"></a>Viz také  
- [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+## <a name="see-also"></a>Viz také:
+
+- [Tok dat](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)

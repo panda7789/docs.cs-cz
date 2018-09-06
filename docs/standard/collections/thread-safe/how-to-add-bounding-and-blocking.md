@@ -7,26 +7,27 @@ helpviewer_keywords:
 ms.assetid: 4c2492de-3876-4873-b5a1-000bb404d770
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6262822e0916e142c7c543d2e2546c8540cb73a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f52d1067a8aa907c8f1cf8b550eec82d1133b3f
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568573"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43881168"
 ---
 # <a name="how-to-add-bounding-and-blocking-functionality-to-a-collection"></a>Postupy: Přidání funkcí ohraničování a blokování do kolekce
-Tento příklad ukazuje postup přidání funkcí ohraničování a blokování do vlastní kolekce třídy implementací <xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType> rozhraní ve třídě a pak pomocí instance třídy jako mechanismus pro interní úložiště <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>. Další informace o funkcí ohraničování a blokování najdete v tématu [BlockingCollection – přehled](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md).  
+Tento příklad ukazuje, jak k přidání funkcí ohraničování a blokování do vlastní třídu kolekce implementací <xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType> rozhraní ve třídě a pak pomocí instance třídy jako mechanismus pro interní úložiště <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>. Další informace o funkcí ohraničování a blokování najdete v tématu [BlockingCollection – přehled](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md).  
   
 ## <a name="example"></a>Příklad  
- Třída vlastní kolekce je základní prioritou fronty, ve kterém jsou úroveň priority vyjádřené pole <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> objekty. Žádné další řazení se provádí v rámci každé fronty.  
+ Vlastní kolekce třída je základní prioritní fronty, do které úrovně priority jsou reprezentovány ve formě pole <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType> objekty. Žádné další řazení se provádí v rámci jednotlivých front.  
   
- V kódu klienta tři úlohy spustí. První úlohou právě zjišťuje klávesnice tahy povolit zrušení kdykoli během provádění. V druhé úloze je proto, že vlákno; Přidá nové položky blokující kolekce a poskytuje každou položku prioritu podle náhodná hodnota. Třetí úloh odebere položky z kolekce, jakmile budou k dispozici.  
+ Tři úkoly jsou spuštěny v kódu klienta. První úkol právě dotazuje tahy klávesnice k povolení zrušení kdykoli během provádění. Druhá úloha je výrobce podprocesu. Přidá nové položky do blokující kolekce a poskytuje prioritu na základě náhodné hodnoty každé položky. Třetí úloha odebere položky z kolekce, jakmile budou k dispozici.  
   
- Chování aplikace můžete upravit tak, že některé z vláken rychleji probíhají rychleji než ostatní. Pokud autor rychleji spustí, si všimnete funkci ohraničující blokující kolekce brání položky přidání Pokud již obsahuje počet položek, který je uveden v konstruktoru. Pokud se příjemce rychleji spustí, si všimnete blokování funkce jako příjemce čeká na novou položku Přidat.  
+ Chování aplikace můžete upravit tak, že jedno z vláken rychleji než ten druhý. Pokud výrobce běží rychleji, si všimnete ohraničující funkce blokující kolekce zabraňuje přidávání Pokud již obsahuje počet položek, která je určená v konstruktoru položky. Pokud takový příjemce běží rychleji, můžete si všimnout, blokování funkce jako příjemce čeká na nové položky, který chcete přidat.  
   
  [!code-csharp[CDS_BlockingCollection#06](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/prodcon.cs#06)]  
   
  Ve výchozím nastavení úložiště pro <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> je <xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType>.  
   
-## <a name="see-also"></a>Viz také  
- [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)

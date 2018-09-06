@@ -12,40 +12,41 @@ helpviewer_keywords:
 ms.assetid: 12feb7f0-b793-4d96-b090-42d6473bab8c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6c0eca851746899654636d36dce679acffc07ef0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2593b85dd4747a3fbe365994c3e5d9beae3e3406
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33573656"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891536"
 ---
 # <a name="nested-types"></a>Vnořené typy
-Vnořené typy je typem definovaným v rámci oboru jiného typu, který se nazývá nadřazených typů. Vnořené typy má přístup do všech členů jeho nadřazených typů. Například má přístup k privátním pole definovaná v nadřazených typů a chráněné polí definovaných ve všech nadřazených členů nadřazených typů.  
+Vnořený typ je typ definovaný v rámci jiného typu, která se nazývá nadřazeného typu. Vnořený typ má přístup na všechny členy jeho nadřazeného typu. Například má přístup k privátním položkám definované nadřazeného typu a chráněné pole definovaná ve všech nadřazených členů nadřazeného typu.  
   
- Obecně platí vnořené typy měli šetřit. Tady je několik důvodů pro tento. Někteří vývojáři se plně s koncept. Tyto vývojáři může například máte problémy s syntaxe deklarace proměnné vnořené typy. Vnořené typy jsou také velmi úzce spojeny s jejich nadřazených typů a jako takový nejsou vhodné jako typy pro obecné účely.  
+ Obecně platí vnořené typy by měly používat střídmě. Existuje několik důvodů. Někteří vývojáři nejsou plně seznámení s konceptem. Tyto vývojáře, například mít problémy se syntaxí File://Server.Fabrikam.com/SD deklarování proměnných vnořené typy. Vnořené typy jsou také velmi úzce svázány s jejich nadřazené typy a jako taková nejsou vhodné být obecné typy.  
   
- Vnořené typy jsou nejvhodnější pro modelování podrobnosti implementace jejich nadřazených typů. Koncový uživatel by měl obvykle nemusí deklarujte proměnné vnořené typy a téměř žádné musí mít explicitně instance vnořené typy. Enumerátor kolekce může být například vnořené typ této kolekce. Výčty jsou obvykle mohl vytvořit jeho instanci názvy jejich nadřazených typů a mnoha jazycích nepodporují příkazu foreach, enumerátor proměnné zřídka mají deklarovat koncovým uživatelem.  
+ Vnořené typy jsou nejvhodnější pro modelování podrobnosti implementace jejich nadřazené typy. Koncový uživatel by měl mít jen zřídka pro deklarování proměnných vnořeného typu a téměř nikdy by měl mít explicitně vytvořit instanci vnořené typy. Například čítače výčtu kolekce může být vnořený typ této kolekce. Instance čítače se obvykle vytvářejí pomocí jejich nadřazených typů a protože mnoho jazyky podporují příkaz foreach, enumerátor proměnné zřídka musí deklarovat koncovým uživatelem.  
   
  **✓ DO** použití vnořené typy vztah mezi vnořené typy a jeho vnější typ tak, aby člen usnadnění sémantika je žádoucí.  
   
  **X DO NOT** použití veřejného vnořené typy jako logické seskupení vytvořit; pomocí oborů názvů pro tuto.  
   
- **X AVOID** veřejně vystaven vnořené typy. Jedinou výjimkou je, pokud proměnné vnořené typy potřeba deklarovat pouze ve výjimečných případech, například vytvoření podtřídy či jiné scénáře vlastní nastavení.  
+ **X AVOID** veřejně vystaven vnořené typy. Jedinou výjimkou je, pokud proměnné vnořeného typu potřeba deklarovat pouze ve výjimečných případech, jako je například vytvoření podtřídy nebo jiné scénáře rozšířená přizpůsobení.  
   
  **X DO NOT** použijte vnořené typy, pokud typ je pravděpodobně bude odkazovat mimo nadřazeného typu.  
   
- Například výčet předaný metodě definovaný pro třídu nesmí být definována jako typ vnořené v třídě.  
+ Například výčet předaný metodě definované třídy nesmí být definována jako vnořený typ ve třídě.  
   
- **X DO NOT** použít vnořené typy, pokud je nutné vytvořit instanci kódem na straně klienta.  Pokud typ má konstruktor public, ho měli pravděpodobně není nelze vnořit.  
+ **X DO NOT** použít vnořené typy, pokud je nutné vytvořit instanci kódem na straně klienta.  Pokud typ nemá veřejný konstruktor, ji by měl pravděpodobně není vnořit.  
   
- Pokud typ se dá vytvořit instance, která zdá se, že k označení, typ je na místě v rozhraní framework svoje vlastní (můžete ji vytvořit, s ním pracovat a zrušení bez někdy pomocí vnější typu) a proto by neměl být vnořený. Vnitřní typy by neměly znovu široce mimo vnější typu bez žádný vztah jakékoli vnější typu.  
+ Pokud můžete vytvořit instanci typu, který zdá se, že označuje typ má místo v rámci sama o sobě (můžete ji vytvořit, pracujete s ním a zničit bez někdy použití vnějšího typu) a proto by neměl být vnořený. Vnitřní typy by neměly znovu použít široce mimo vnější typ bez jakékoli relace jednání do vnějšího typu.  
   
- **X DO NOT** definovat vnořené typy jako člen rozhraní. Mnoho jazyků nepodporují takové konstrukce.  
+ **X DO NOT** definovat vnořené typy jako člen rozhraní. Řadu jiných jazyků nepodporují tato konstrukce.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

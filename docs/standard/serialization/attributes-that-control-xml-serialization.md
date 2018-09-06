@@ -1,5 +1,5 @@
 ---
-title: Atributy, které řídí serializace XML
+title: Seznam atributů řídících serializaci XML
 ms.date: 03/30/2017
 helpviewer_keywords:
 - classes, serializing
@@ -9,17 +9,17 @@ helpviewer_keywords:
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: 3c6e46c97a943f1c77ffd12dd2b3bc85a64b3c11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4acc17db83817d5aa78c9a91bfdac4e775de3743
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33585036"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44038147"
 ---
-# <a name="attributes-that-control-xml-serialization"></a>Atributy, které řídí serializace XML
-Můžete použít atributy v následující tabulce do třídy a třídy členy lze řídit způsob, ve kterém <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy. Abyste pochopili, jak řídit tyto atributy serializace XML, najdete v části [řízení atributy pomocí serializace XML](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md).  
+# <a name="attributes-that-control-xml-serialization"></a>Seznam atributů řídících serializaci XML
+Můžete použít atributy v následující tabulce do třídy a třídy členy lze řídit způsob, ve kterém <xref:System.Xml.Serialization.XmlSerializer> serializuje a deserializuje instance třídy. Abyste pochopili, jak tyto atributy řídí serializace XML, naleznete v tématu [řízení XML serializace pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md).  
   
- Tyto atributy lze také použít k řízení zprávy protokolu SOAP literálu styl generovaných webové služby XML. Další informace o použití těchto atributů pro metodu XML webové služby najdete v tématu [serializace XML pomocí webové služby XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md).  
+ Tyto atributy lze také použít k řízení zprávy protokolu SOAP literálu styl generovaných webové služby XML. Další informace o použití těchto atributů pro metodu XML webových služeb najdete v tématu [serializace XML pomocí webových služeb XML](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md).  
   
  Další informace o atributech najdete v tématu [atributy](../../../docs/standard/attributes/index.md).  
   
@@ -39,14 +39,15 @@ Můžete použít atributy v následující tabulce do třídy a třídy členy 
 |<xref:System.Xml.Serialization.XmlTextAttribute>|Veřejné vlastnosti a pole.|Vlastnost nebo pole by měl být serializován jako XML text.|  
 |<xref:System.Xml.Serialization.XmlTypeAttribute>|Deklarace veřejných tříd.|Zadejte název a obor názvů XML.|  
   
- Kromě těchto atributů, které jsou všechny nalezené v <xref:System.Xml.Serialization> obor názvů, můžete také použít <xref:System.ComponentModel.DefaultValueAttribute> atributu na pole. **DefaultValueAttribute –** nastaví hodnotu, která se automaticky přiřadí člen Pokud není zadaná žádná hodnota.  
+ Kromě těchto atributů, které jsou všechny nalezené v <xref:System.Xml.Serialization> obor názvů, můžete také použít <xref:System.ComponentModel.DefaultValueAttribute> atributu na pole. **DefaultValueAttribute –** nastaví hodnotu, která bude automaticky přiřazen k členovi Pokud není zadána žádná hodnota.  
   
- K řízení kódovaného serializace SOAP XML, najdete v části [atributy, řízení kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
+ K řízení kódovaného serializace SOAP XML, naleznete v tématu [atributy, aby ovládací prvek kódovaný SOAP serializace](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md).  
   
-## <a name="see-also"></a>Viz také  
- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
- <xref:System.Xml.Serialization.XmlSerializer>  
- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
- [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+## <a name="see-also"></a>Viz také:
+
+- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+- <xref:System.Xml.Serialization.XmlSerializer>  
+- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
+- [Postupy: Zadání alternativního názvu elementu pro XML stream](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

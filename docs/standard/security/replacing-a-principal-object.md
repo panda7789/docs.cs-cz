@@ -12,28 +12,29 @@ helpviewer_keywords:
 ms.assetid: c323687e-b196-487b-beba-f38f9b3f961b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 94391471fecd92aeadec4da39cdd5b6f80bb6949
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bfcd912fc16aa8d4b89a4f455d65b0294593cead
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581161"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43886523"
 ---
 # <a name="replacing-a-principal-object"></a>Nahrazení objektu zabezpečení
-Aplikace, které poskytují služby ověřování musí být schopen nahradit **hlavní** objektu (<xref:System.Security.Principal.IPrincipal>) pro dané vlákno. Kromě toho musí systém zabezpečení pomáhat chránit schopnost nahradit **hlavní** objekty, protože speciálně připojený, nesprávný **hlavní** ohrožuje zabezpečení vaší aplikace nárokování role nebo PRAVDA identity. Proto aplikace, vyžadovat schopnost nahradit **hlavní** objekty musí mít udělen <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> objektu pro kontrolu zabezpečení. (Všimněte si, že toto oprávnění není požadováno k provádění kontrol na základě rolí zabezpečení nebo vytváření **hlavní** objekty.)  
+Aplikace, které poskytují služby ověřování musí být schopen nahradit **hlavní** objektu (<xref:System.Security.Principal.IPrincipal>) pro dané vlákno. Kromě toho musí systém zabezpečení pomáhají chránit možnost nahradit **instančního objektu** objekty, protože speciálně připojený, nesprávné **instančního objektu** ohrožuje zabezpečení vaší aplikace pomocí nárokování role nebo naléhavém identity. Proto se aplikace, které vyžadují možnost nahradit **hlavní** objekty musí mít udělena <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> objektu pro kontrolu zabezpečení. (Všimněte si, že toto oprávnění se nevyžaduje k provádění kontrol zabezpečení na základě rolí nebo vytváření **hlavní** objekty.)  
   
- Aktuální **hlavní** objekt lze nahradit provedením následujících úloh:  
+ Aktuální **hlavní** objektu lze nahradit pomocí provádí následující úlohy:  
   
-1.  Vytvoření nahrazení **hlavní** objektu a související **Identity** objektu.  
+1.  Vytvořit náhradu **hlavní** objektů a související **Identity** objektu.  
   
-2.  Připojit nové **hlavní** objekt, který má v kontextu.  
+2.  Připojit nový **hlavní** objekt kontextu volání.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak vytvořit obecný objekt zabezpečení a použít ho nastavit objekt zabezpečení vlákna.  
+ Následující příklad ukazuje, jak vytvořit objekt obecný instančního objektu a nastavte hlavní vlákno.  
   
  [!code-csharp[SetCurrentPrincipal#1](../../../samples/snippets/csharp/VS_Snippets_CLR/SetCurrentPrincipal/CS/program.cs#1)]
  [!code-vb[SetCurrentPrincipal#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/SetCurrentPrincipal/VB/program.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType>  
- [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType>  
+- [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)

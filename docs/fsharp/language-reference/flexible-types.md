@@ -2,16 +2,16 @@
 title: Flexibilní typy (F#)
 description: 'Další informace o použití F # anotaci typu flexibilní, což znamená, že parametr, proměnné nebo hodnota má typ, který je kompatibilní s zadaného typu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: a54d462d04e4e65680a4612f58da72173f04d1f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b6c97c3cc19f15b2c8db74b2c55660a16b2858f7
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563347"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43886367"
 ---
 # <a name="flexible-types"></a>Flexibilní typy
 
-A *anotaci typu flexibilní* znamená, že parametr, proměnné nebo hodnota má typ, který je kompatibilní s zadaného typu, kde je určen kompatibility pozici v hierarchii objektově orientované třídy nebo rozhraní. Flexibilní typy jsou užitečné, konkrétně v případě, že automatický převod na typy v hierarchii typu nedojde ale přesto chcete povolit vaší funkce pro práci s libovolného typu v hierarchii nebo žádný typ, který implementuje rozhraní.
+A *anotace typu flexibilní* znamená, že parametr, proměnné nebo hodnota má typ, který je kompatibilní s zadaného typu, kde kompatibility se určuje podle umístění v hierarchii objektově orientované třídy nebo rozhraní. Flexibilní typy jsou užitečné zejména pokud nedojde k automatické převod na typy výše v hierarchii typu, ale přesto chtějí povolit vaší funkce pro práci s jakýkoli typ v hierarchii nebo libovolný typ, který implementuje rozhraní.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,9 +21,9 @@ A *anotaci typu flexibilní* znamená, že parametr, proměnné nebo hodnota má
 
 ## <a name="remarks"></a>Poznámky
 
-V předchozích syntaxi *typ* představuje základní třídu nebo rozhraní.
+V předchozí syntaxi *typ* představuje základní typ nebo rozhraní.
 
-Flexibilní typ je stejná jako obecný typ, který obsahuje omezení, která omezuje povolené typy pro typy, které jsou kompatibilní s typem základní nebo rozhraní. To znamená že následující dva řádky kódu jsou ekvivalentní.
+Flexibilní typ je ekvivalentní pro obecný typ, který má omezení, která omezuje povolených typů na typy, které jsou kompatibilní s typem základní typ nebo rozhraní. To znamená jsou následující dva řádky kódu ekvivalentní.
 
 ```fsharp
 #SomeType
@@ -31,25 +31,25 @@ Flexibilní typ je stejná jako obecný typ, který obsahuje omezení, která om
 'T when 'T :> SomeType
 ```
 
-Flexibilní typy jsou užitečné v situacích několik typů. Například pokud máte vyšší funkci order (funkce, která přebírá funkce jako argument), je často užitečné používat funkce vrátí flexibilní typu. V následujícím příkladu, použití flexibilní typu s argumentem pořadí v `iterate2` umožňuje vyšší pořadí funkce pro práci s funkcí, které generují pořadí, pole, seznamy a další vyčíslitelná typu.
+Flexibilní typy jsou užitečné v několika typy situací označuje termín. Například pokud máte vyšší pořadí funkci (funkce, která přebírá jako argument funkce), často je užitečné mít návratový typ flexibilní funkce. V následujícím příkladu, použití flexibilní typu s argumentem pořadí v `iterate2` umožňuje vyšší pořadí funkce pro práci s funkcí, které generují pořadí, pole, seznamy a jakýkoli jiný typ výčtu.
 
-Vezměte v úvahu následující dvě funkce, jeden z které vrátí pořadí, druhé straně, který vrátí typ, flexibilní.
+Vezměte v úvahu následující dvě funkce, jednu, která vrátí sekvenci Druhý operand, který vrátí typ flexibilní.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4101.fs)]
 
-Další příklad, zvažte [Seq.concat](https://msdn.microsoft.com/library/2eeb69a9-fc2f-4b7d-8dee-101fa2b00712) funkce knihovny:
+Další příklad, vezměte v úvahu [Seq.concat](https://msdn.microsoft.com/library/2eeb69a9-fc2f-4b7d-8dee-101fa2b00712) funkce knihovny:
 
 ```fsharp
 val concat: sequences:seq<#seq<'T>> -> seq<'T>
 ```
 
-Této funkci můžete projít žádnou z následujících vyčíslitelná pořadí:
+Pro tuto funkci můžete projít žádnou z následující vyčíslitelné pořadí:
 
 - Seznam seznamů
 - Seznam polí
-- Pole seznamy
+- Pole seznamů
 - Pole sekvence
-- Jiné kombinace vyčíslitelná pořadí
+- Libovolnou kombinaci vyčíslitelné pořadí
 
 Následující kód používá `Seq.concat` k předvedení scénáře, které můžete podporovat pomocí flexibilní typy.
 
@@ -65,10 +65,9 @@ seq [1; 2; 3; 4; ...]
 seq [1; 2; 3; 4; ...]
 ```
 
-V F # jako v dalších jazycích objektově orientované jsou kontexty, ve kterých odvozené typy nebo typy, které implementují rozhraní jsou automaticky převedeny na základní typ nebo typ rozhraní. Tyto automatické převody dojít přímé argumenty, ale ne v případě, že typ je v podřízené pozice, v rámci více komplexního typu, jako je například návratovým typem funkce typ, nebo jako argument typu. Flexibilní typu notation tedy užitečné hlavně pokud je součást složitější typu typ, které jsou jeho použití.
+V jazyce F # stejně jako v jiných jazycích objektově orientované existují kontextech, ve kterých odvozené typy nebo typy, které implementují rozhraní se automaticky převedou na základní typ nebo typ rozhraní. Tyto automatické převody nastanou argumenty s přímým přístupem, ale ne v případě, že typ je v podřízené pozice, jako součást více komplexní typ, jako je například návratovým typem funkce typ, nebo jako argument typu. Proto flexibilní typu notation je to užitečné hlavně Pokud aplikujete na požadovaný typ je součástí více komplexního typu.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka F#](index.md)
-
-[Obecné typy](generics/index.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Obecné typy](generics/index.md)

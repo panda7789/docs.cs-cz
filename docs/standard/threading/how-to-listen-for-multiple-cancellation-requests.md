@@ -11,28 +11,29 @@ helpviewer_keywords:
 ms.assetid: 6f4f3804-2ed7-41b4-a97a-6e32b93f6e05
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: afa22ed1fe1986712493c2aaa844d7f2c6ffd5bc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 16ba8000544d0b7d35a818d41a75f38e6fd0293d
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33583127"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44036178"
 ---
 # <a name="how-to-listen-for-multiple-cancellation-requests"></a>Postupy: Naslouchání více požadavkům zrušení
-Tento příklad ukazuje, jak pro naslouchání na dva zrušení tokenů současně tak, aby operace můžete zrušit, pokud se požaduje buď token.  
+Tento příklad ukazuje, jak tak, aby naslouchala na dvou tokeny zrušení současně tak, aby operace můžete zrušit, pokud buď token požadavku.  
   
 > [!NOTE]
->  Pokud je povolena vlastnost „Pouze vlastní kód“, zastaví se sada Visual Studio v některých případech na řádce, která výjimku vyvolá, a zobrazí chybovou zprávu s upozorněním, že „výjimka není zpracována uživatelským kódem“. Tato chyba je neškodná. Můžete stisknutím klávesy F5 lze pokračovat a jejich chování zpracování výjimek, která je znázorněna v následujících příkladech. Abyste zabránili zastavení při první chybě Visual Studio, stačí zrušit zaškrtnutí políčka "Pouze můj kód" v části **nástroje, možnosti, ladění, Obecné**.  
+>  Pokud je povolena vlastnost „Pouze vlastní kód“, zastaví se sada Visual Studio v některých případech na řádce, která výjimku vyvolá, a zobrazí chybovou zprávu s upozorněním, že „výjimka není zpracována uživatelským kódem“. Tato chyba je neškodná. Můžete stisknutím klávesy F5 pokračovat z něj a najdete v chování zpracování výjimek, což je znázorněno v následujících příkladech. Pokud chcete zabránit přerušení nebo první chybě sady Visual Studio, zrušte zaškrtnutí políčka "Jen můj kód" v části **nástroje, možnosti, ladění, Obecné**.  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu <xref:System.Threading.CancellationTokenSource.CreateLinkedTokenSource%2A> metoda se používá pro připojení dvě tokeny do jednoho tokenu. To umožňuje token, který má být předán metod, které přijímají pouze jeden zrušení tokenu jako argument. Příklad ukazuje, běžný scénář, ve kterém musí odpovídat metodu obou token předané z mimo třídu a token vygenerovaný v třídě.  
+ V následujícím příkladu <xref:System.Threading.CancellationTokenSource.CreateLinkedTokenSource%2A> metoda se používá pro připojení dvou tokeny do jednoho tokenu. To umožňuje token, který má předané do metod, které přijímají token jako argument pouze jeden zrušení. Tento příklad ukazuje běžný scénář, ve kterém metoda zachovávají i token předat z mimo třídu a token generuje uvnitř třídy.  
   
  [!code-csharp[Cancellation#13](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex13.cs#13)]
  [!code-vb[Cancellation#13](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cancellation/vb/cancellationex13.vb#13)]  
   
- Když vyvolá propojené token <xref:System.OperationCanceledException>, token, který je předán výjimka je propojené token, není buď předchůdce tokenů. Pokud chcete zjistit, které tokenů byla zrušena, zkontrolujte stav tokenů předchůdce přímo.  
+ Pokud vyvolá propojené token <xref:System.OperationCanceledException>, token, který je předán výjimka je propojené token, není buď tokenů předchůdce. Pokud chcete zjistit, které tokenů byla zrušena, zkontrolujte stav předchůdce tokenů přímo.  
   
- V tomto příkladu <xref:System.AggregateException> by měl být nikdy vyvolána, ale je zachycena jako zde protože ve scénářích reálného světa jakékoli výjimky kromě <xref:System.OperationCanceledException> , jsou vyvolány z delegáta úlohy jsou uzavřen do <xref:System.OperationCanceledException>.  
+ V tomto příkladu <xref:System.AggregateException> by nikdy být vyvolána, ale to je zachycena zde protože ve skutečných scénářích všechny výjimky kromě <xref:System.OperationCanceledException> , které jsou vyvolány z delegátu úlohy jsou zabaleny v <xref:System.OperationCanceledException>.  
   
-## <a name="see-also"></a>Viz také  
- [Zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md)
+## <a name="see-also"></a>Viz také:
+
+- [Zrušení ve spravovaných vláknech](../../../docs/standard/threading/cancellation-in-managed-threads.md)

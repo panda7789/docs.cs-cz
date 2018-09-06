@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 38f6e16616ad931641539d3ae164381ddd9ad941
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: a8f806a1f1f7840f21e82d77d1b639b9318259e7
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931722"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43885178"
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Moje první desktopová aplikace WPF
 
@@ -38,7 +38,7 @@ Tento návod zahrnuje následující kroky:
 Na konci návodu budete sestavíte samostatnou aplikaci Windows, která umožňuje uživatelům zobrazit vyúčtování pro vybraného uživatele. Aplikace se skládá z několika stránek WPF, které jsou hostované v okně prohlížeče – vizuální styl.
 
 > [!TIP]
-> Ukázkový kód, který se používá k vytvoření tohoto návodu je k dispozici pro Visual Basic a C# na [Úvod do vytváření aplikací WPF](http://go.microsoft.com/fwlink/?LinkID=160008).
+> Ukázkový kód, který se používá k vytvoření tohoto návodu je k dispozici pro Visual Basic a C# na [Úvod do vytváření aplikací WPF](https://go.microsoft.com/fwlink/?LinkID=160008).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -326,7 +326,7 @@ Následující obrázek ukazuje výsledky co jste právě přidali:
 
 1. Otevřít *`ExpenseItHome.xaml`*.
 
-2. Přidat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužnou rutinu události <xref:System.Windows.Controls.Button> elementu. Další informace najdete v tématu [postupy: vytvoření jednoduché obslužnou](http://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480).
+2. Přidat <xref:System.Windows.Controls.Primitives.ButtonBase.Click> obslužnou rutinu události <xref:System.Windows.Controls.Button> elementu. Další informace najdete v tématu [postupy: vytvoření jednoduché obslužnou](https://msdn.microsoft.com/library/b1456e07-9dec-4354-99cf-18666b64f480).
 
     [!code-xaml[ExpenseIt#15](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt6/ExpenseItHome.xaml#15)]
 
@@ -464,7 +464,7 @@ V této části budete aktualizovat uživatelské rozhraní pro každou položku
 
     [!code-xaml[ExpenseIt#30](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#30)]
 
-4. Použití šablon na <xref:System.Windows.Controls.DataGrid> sloupce, které zobrazují výdaje dat sestavy.
+4. Nahraďte <xref:System.Windows.Controls.DataGridTextColumn> prvky s <xref:System.Windows.Controls.DataGridTemplateColumn> pod <xref:System.Windows.Controls.DataGrid> elementu a použijte šablony k nim.
 
     [!code-xaml[ExpenseIt#32](../../../../samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt9/ExpenseReportPage.xaml#32)]
 

@@ -1,44 +1,44 @@
 ---
-title: NoPersistScope aktivity
+title: Aktivita NoPersistScope
 ms.date: 03/30/2017
 ms.assetid: 9a0baeb7-a05c-4fac-b905-252758cb71bb
-ms.openlocfilehash: e4779bf28fc2fc1341cce5134a872b108278611c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6543756594b6734aec39bf22c5ab6215605341b1
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516436"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44038780"
 ---
-# <a name="nopersistscope-activity"></a>NoPersistScope aktivity
-Tento příklad ukazuje, jak k manipulaci s neserializovatelných a na jedno použití stavu v pracovním postupu. Je důležité, aby pracovní postupy Nepokoušejte se zachovat neserializovatelných stavu a je také důležité pro uvolnitelné objekty, které chcete vymazat, jakmile se používají v pracovním postupu.  
+# <a name="nopersistscope-activity"></a>Aktivita NoPersistScope
+Tento příklad ukazuje, jak pracovat s neserializovatelná a uvolnitelné stav v rámci pracovního postupu. Je důležité, že pracovní postupy se nepokoušejte se zachovat neserializovatelná stavu a je také důležité kvůli uvolnitelné objekty na vyčištění po se používají v pracovním postupu.  
   
 ## <a name="demonstrates"></a>Demonstruje  
- `NoPersistScope` vlastní aktivity a návrháři.  
+ `NoPersistScope` vlastní aktivity a návrháře.  
   
-## <a name="using-the-nopersistzone-activity"></a>Pomocí aktivity NoPersistZone  
- Pokud ukázkový pracovní postup běží, vlastní aktivity volat `CreateTextWriter` vytvoří objekt typu <xref:System.IO.TextWriter> a ukládá je do proměnné pracovního postupu. <xref:System.IO.TextWriter> je <xref:System.IDisposable> objektu. To <xref:System.IO.TextWriter>, je používána k zápisu do souboru s názvem 'out.txt' v adresáři, ve kterém běží ukázku, která je nakonfigurována <xref:System.Activities.Statements.WriteLine> aktivitu jako ho vrátí jakýkoli text, kterou zadáte v konzole.  
+## <a name="using-the-nopersistzone-activity"></a>Použití aktivity NoPersistZone  
+ Po spuštění ukázkového pracovního postupu, volá se, vlastní aktivita `CreateTextWriter` vytvoří objekt typu <xref:System.IO.TextWriter> a uloží jej do proměnné pracovního postupu. <xref:System.IO.TextWriter> je <xref:System.IDisposable> objektu. To <xref:System.IO.TextWriter>, používá k zápisu do souboru s názvem "out.txt' v adresáři, ve kterém běží vzorku, který je nakonfigurován <xref:System.Activities.Statements.WriteLine> aktivitu jako jeho vypisuje jakýkoli text, který zadáte v konzole.  
   
- Echo logiku běží v rámci `NoPersistScope` aktivity (kód, pro který je také součástí této ukázce), což zabraňuje pracovního postupu byly trvalé. Pokud zadáte v `unload` v konzole, hostitel pokusí uložit instanci pracovního postupu, ale vyprší tuto operaci, protože pracovní postup pořád v rámci `NoPersistScope`. Pracovní postup také využívá vlastní aktivity volá `Dispose` k uvolnění <xref:System.IO.TextWriter> objektu až po dokončení pracovního postupu pomocí ho. `Dispose` Aktivity je umístěn v rámci <xref:System.Activities.Statements.TryCatch.Finally%2A> blokovat z <xref:System.Activities.Statements.TryCatch> činnosti, ve kterých <xref:System.IO.TextWriter> proměnné je deklarovaná zajistit, aby byl spouštěn i v případě, že k během provádění bloku Try by mělo dojít k výjimce.  
+ Echo logiky běží v rámci `NoPersistScope` aktivity (kód, pro který je také součástí této ukázce), které brání je trvalá pracovního postupu. Pokud zadáte `unload` konzole, pokusí zachovat instance pracovního postupu hostitele ale tato operace vyprší časový limit, protože pracovní postup pořád v rámci `NoPersistScope`. Pracovní postup také využívá vlastní aktivity volá `Dispose` k uvolnění <xref:System.IO.TextWriter> objekt po dokončení pracovního postupu se jeho použití. `Dispose` Aktivity je umístěn v rámci <xref:System.Activities.Statements.TryCatch.Finally%2A> bloku <xref:System.Activities.Statements.TryCatch> aktivity, ve kterém <xref:System.IO.TextWriter> proměnná je deklarovaná k zajištění, že poběží i v případě, že výjimky se budou objevovat během provádění bloku Try.  
   
- Můžete zadat v `exit` dokončit k instanci pracovního postupu a ukončení programu.  
+ Můžete zadat `exit` k dokončení instance pracovního postupu a ukončit program.  
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   
 1.  Otevřete řešení NoPersistZone.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   
-2.  Sestavte řešení, stiskněte CTRL + SHIFT + B nebo vyberte **sestavit řešení** z **sestavení** nabídky.  
+2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B nebo vyberte **sestavit řešení** z **sestavení** nabídky.  
   
-3.  Po sestavení proběhla úspěšně, stiskněte klávesu F5, nebo vyberte **spustit ladění** z **ladění** nabídky můžete alternativně stiskněte klávesy CTRL + F5 nebo vybrat **spustit bez ladění** z **Ladění** nabídku spustit bez ladění.  
+3.  Po sestavení byla úspěšná, stiskněte klávesu F5 nebo vyberte **spustit ladění** z **ladění** nabídky také můžete stisknutím kláves CTRL + F5 nebo vyberte **spustit bez ladění** z **Ladění** nabídky spustit bez ladění.  
   
-#### <a name="to-cleanup-optional"></a>Pro čištění (volitelné)  
+#### <a name="to-cleanup-optional"></a>Vyčistit (volitelné)  
   
-1.  Chcete-li odebrat úložiště Instance SQL, spusťte Cleanup.cmd.  
+1.  Pokud chcete odebrat Store instanci SQL, spusťte Cleanup.cmd.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NoPersistScope`

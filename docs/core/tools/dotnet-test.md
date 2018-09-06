@@ -4,12 +4,12 @@ description: Příkaz dotnet test slouží ke spuštění testů jednotek v dan�
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 2bee78ca44026f28c51fac3bcf87d976b53e48a7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7946196b27489870da1c16b15cbf5f078ae89c61
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529716"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44038160"
 ---
 # <a name="dotnet-test"></a>DotNet test
 
@@ -251,6 +251,10 @@ Spusťte testy v projektu v aktuálním adresáři:
 Spustit testy v `test1` projektu:
 
 `dotnet test ~/projects/test1/test1.csproj`
+
+Spuštění testů v projektu v aktuálním adresáři a vygenerovat soubor s výsledky testu ve formátu trx:
+
+`dotnet test --logger:trx`
 
 ## <a name="filter-option-details"></a>Možnost podrobnosti filtru
 

@@ -9,11 +9,11 @@ ms.assetid: 239b2e8d-581b-4ca3-992b-0e8525b9321c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2d56d962279120a03a6e4b89154ac1429ea5479e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43800431"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44039326"
 ---
 # <a name="threading-objects-and-features"></a>Práce s vlákny funkce a objekty
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dbea588604ebd5ad39e134a4ecfe771c89fb1121
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 8956726915ebe1c0b1c7654e62e2e28620274b4a
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43798850"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43878759"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Různé konstrukce v regulárních výrazech
 Regulární výrazy v rozhraní .NET obsahovat tři různé jazykové konstrukce. Jeden vám umožňuje povolit nebo zakázat určité možnosti porovnávání vzoru regulárního výrazu. Zbývající dvě umožní zahrnutí komentářů v regulárním výrazu.  
@@ -101,5 +101,6 @@ Regulární výrazy v rozhraní .NET obsahovat tři různé jazykové konstrukce
   
  Všimněte si, že namísto zadávání `(?x)` vytvořit v regulárním výrazu komentář může také obsahovat uznávaná voláním <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metoda a předají se jí <xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace?displayProperty=nameWithType> hodnota výčtu.  
   
-## <a name="see-also"></a>Viz také  
- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+## <a name="see-also"></a>Viz také:
+
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

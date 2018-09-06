@@ -1,21 +1,20 @@
 ---
 title: 'Deklarace importu: Klíčové slovo open (F#)'
-description: 'Další informace o deklarace importu F # a jak určit modul nebo obor názvů jehož elementy bez použití plně kvalifikovaný název, můžete odkazovat.'
+description: 'Další informace o deklarace importu F # a jak určit modulu nebo oboru názvů jejíž prvky, můžete využít bez použití plně kvalifikovaného názvu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 29f09297993b347464f1572ac9ca24902c786f4d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8cae4b4f5418689bfb0933b7db4ec23a313d5ed8
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563529"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43883149"
 ---
 # <a name="import-declarations-the-open-keyword"></a>Deklarace importu: `open` – klíčové slovo
 
 > [!NOTE]
-Referenční dokumentace rozhraní API odkazů v tomto článku se dostanete na webu MSDN.  Referenční dokumentace rozhraní API docs.microsoft.com není dokončena.
+Rozhraní API referenčních odkazů v tomto článku se dostanete na webu MSDN.  Reference k rozhraní API webu docs.microsoft.com není dokončena.
 
-*Importovat deklarace* určuje modulu nebo obor názvů, jehož elementy bez použití plně kvalifikovaný název, můžete odkazovat.
-
+*Deklarace importu* Určuje modul nebo obor názvů, jehož prvky, můžete využít bez použití plně kvalifikovaného názvu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,19 +23,20 @@ open module-or-namespace-name
 ```
 
 ## <a name="remarks"></a>Poznámky
-Odkazování na kód pomocí plně kvalifikovaná cesta oboru názvů nebo modul pokaždé, když můžete vytvořit kód, který je pevný ke čtení, zápisu a údržbu. Místo toho můžete použít `open` – klíčové slovo pro často používané moduly a obory názvů, takže když odkazujete členem tohoto modulu nebo obor názvů, můžete použít zkratka pro název místo plně kvalifikovaný název. This – klíčové slovo je podobná `using` – klíčové slovo v jazyce C#, `using namespace` v jazyce Visual C++, a `Imports` v jazyce Visual Basic.
 
-Modul, nebo zadat obor názvů musí být ve stejném projektu nebo v odkazované projektu nebo sestavení. Pokud není, můžete přidat odkaz na projekt, nebo použít `-reference` příkaz`-`možnost řádek (nebo jeho zkratkou `-r`). Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).
+Odkazování na kódu s použitím plně kvalifikovanou cestu k oboru názvů nebo modulu pokaždé, když můžete vytvořit kód, který je těžké ke čtení, zápisu a udržovat. Místo toho můžete použít `open` – klíčové slovo pro často používané modulů a oborů názvů tak, aby při odkazování na člena z tohoto modulu nebo oboru názvů, krátkou formu názvu můžete používat místo plně kvalifikovaný název. Toto klíčové slovo je podobný `using` – klíčové slovo v jazyce C#, `using namespace` v jazyce Visual C++ a `Imports` v jazyce Visual Basic.
 
-Deklarace importu zpřístupňuje názvy v kódu, který následuje deklaraci do konce nadřazených obor názvů, modulu nebo souboru.
+Modul nebo obor názvů k dispozici musí být ve stejném projektu nebo v odkazovaném projektu nebo sestavení. Pokud není, můžete přidat odkaz na projekt, nebo použít `-reference` příkaz`-`možnost příkazového řádku (nebo jeho zkratku `-r`). Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).
 
-Pokud používáte více deklarace importu, by se zobrazit na samostatné řádky.
+Deklarace importu zpřístupňuje názvy v kódu, který následuje deklaraci, až do ukončení nadřazeného oboru názvů, modul nebo souboru.
 
-Následující kód ukazuje použití `open` – klíčové slovo zjednodušit kód.
+Pokud používáte více deklarace importu, by se zobrazit na samostatných řádcích.
+
+Následující kód ukazuje použití `open` – klíčové slovo pro zjednodušení kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet6801.fs)]
 
-Kompilátor jazyka F # není emitování chybě nebo upozornění při nejednoznačnosti dojít, když se stejným názvem v více než jeden otevřete modul nebo oboru názvů dojde. Pokud dojde k nejednoznačnosti, F # dává přednost posledních otevřených modul, nebo obor názvů. Například v následujícím kódu `empty` znamená `Seq.empty`, i když `empty` se nachází v obou `List` a `Seq` moduly.
+Kompilátor F # negeneruje chybu nebo upozornění, když dojde k nejasnostem, dojde ve více než jeden otevřít modul nebo obor názvů se stejným názvem. Pokud dojde k nejasnostem, F # dává přednost naposledy otevřeným modulu nebo oboru názvů. Například v následujícím kódu `empty` znamená, že `Seq.empty`, i když `empty` se nachází v obou `List` a `Seq` moduly.
 
 ```fsharp
 open List
@@ -44,32 +44,30 @@ open Seq
 printfn "%A" empty
 ```
 
-Proto buďte opatrní při otevření moduly nebo obory názvů, jako `List` nebo `Seq` obsahující členy, kteří mají stejné názvy; místo toho zvažte použití kvalifikované názvy. Neměli byste každé situaci, ve kterém je závislý na pořadí deklarace importu kód.
+Proto buďte opatrní při otevření modulů nebo oborů názvů, jako `List` nebo `Seq` , které obsahují členy, které mají stejné názvy; místo toho zvažte použití kvalifikované názvy. Neměli byste každé situaci, ve kterém je kód závisí na pořadí deklarace importu.
 
+## <a name="namespaces-that-are-open-by-default"></a>Obory názvů, které jsou spuštěné ve výchozím nastavení
 
-## <a name="namespaces-that-are-open-by-default"></a>Obory názvů, které jsou otevřené ve výchozím nastavení
-Některé obory názvů, často se používá v F # – kód, aby se implicitně otevřena bez nutnosti deklarace explicitní import. V následující tabulce jsou obory názvů, které jsou otevřené ve výchozím nastavení.
+Některé obory názvů často slouží v kódu F #, implicitně jsou otevřené bez nutnosti deklarace explicitní importu. V následující tabulce jsou uvedeny obory názvů, které jsou spuštěné ve výchozím nastavení.
 
 |Obor názvů|Popis|
 |---------|-----------|
-|`Microsoft.FSharp.Core`|Obsahuje základní definice typů F # pro vestavěné typy, jako `int` a `float`.|
-|`Microsoft.FSharp.Core.Operators`|Obsahuje základní aritmetické operace, jako `+` a `*`.|
-|`Microsoft.FSharp.Collections`|Obsahuje třídy neměnné kolekce, jako `List` a `Array`.|
+|`Microsoft.FSharp.Core`|Obsahuje základní definice typů F # pro předdefinované typy jako `int` a `float`.|
+|`Microsoft.FSharp.Core.Operators`|Obsahuje základní aritmetické operace, například `+` a `*`.|
+|`Microsoft.FSharp.Collections`|Neměnné kolekce tříd obsahuje například `List` a `Array`.|
 |`Microsoft.FSharp.Control`|Obsahuje typy pro ovládací prvek konstrukce, jako je například opožděné vyhodnocení a asynchronní pracovní postupy.|
-|`Microsoft.FSharp.Text`|Obsahuje funkce pro formátovaný vstupně-výstupní operace, jako jsou například `printf` funkce.|
+|`Microsoft.FSharp.Text`|Obsahuje funkce pro formátovaný vstupně-výstupních operací, jako `printf` funkce.|
 
 ## <a name="autoopen-attribute"></a>AutoOpen – atribut
-Můžete použít `AutoOpen` atribut k sestavení, pokud chcete automaticky otevřít obor názvů nebo modul při odkazování na sestavení. Můžete taky použít `AutoOpen` atribut modul Tenhle modul otvírat automaticky při otevření nadřazeného modulu nebo obor názvů. Další informace najdete v tématu [Core.autoopenattribute – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.autoopenattribute-class-%5bfsharp%5d).
 
+Můžete použít `AutoOpen` atributu k sestavení, pokud chcete automaticky otevře oboru názvů nebo modulu při odkazování sestavení. Můžete také použít `AutoOpen` atribut modulu, který automaticky otevře že modulu při otevření nadřazené modulu nebo oboru názvů. Další informace najdete v tématu [Core.autoopenattribute – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.autoopenattribute-class-%5bfsharp%5d).
 
 ## <a name="requirequalifiedaccess-attribute"></a>RequireQualifiedAccess – atribut
-Některé moduly, záznamy nebo typy union může určovat `RequireQualifiedAccess` atribut. Když odkazujete elementy těchto modulů, záznamy nebo sjednocení, musíte použít kvalifikovaný název bez ohledu na to, zda obsahují deklarace importu. Pokud používáte tento atribut strategicky na typy, které definují běžně používat názvy, pomoci vyhnout kolize názvů a tím provést kód pružnější změny v knihovnách. Další informace najdete v tématu [Core.requirequalifiedaccessattribute – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-%5Bfsharp%5D).
 
+Některé moduly, záznamy nebo typy sjednocení může zadat `RequireQualifiedAccess` atribut. Při odkazování na prvky tyto moduly, záznamy nebo sjednocení, musíte použít kvalifikovaného názvu bez ohledu na to, jestli zahrnují deklarace importu. Pokud použijete tento atribut strategicky na typy, které definují běžně používají názvy, pomáhají vyhnete kolize názvů a tím kód odolnější vůči změnám v knihovnách. Další informace najdete v tématu [Core.requirequalifiedaccessattribute – třída](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-%5Bfsharp%5D).
 
-## <a name="see-also"></a>Viz také
-[# Referenční dokumentace jazyka](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Obory názvů](namespaces.md)
-
-[Moduly](modules.md)
-
+- [# Referenční dokumentace jazyka](index.md)
+- [Obory názvů](namespaces.md)
+- [Moduly](modules.md)

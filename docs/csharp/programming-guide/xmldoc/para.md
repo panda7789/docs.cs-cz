@@ -1,5 +1,5 @@
 ---
-title: '&lt;para&gt; (C# Průvodce programováním)'
+title: '&lt;para&gt; (C# Programming Guide)'
 ms.date: 07/20/2015
 f1_keywords:
 - <para>
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - <para> C# XML tag
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
-ms.openlocfilehash: 6b38a5c1321db8eae8eee1b8b167090dad50ebab
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e51df23db97aadddbc4c4e8c3cb38bda7ff7e3a4
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33337259"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44035151"
 ---
-# <a name="ltparagt-c-programming-guide"></a>&lt;para&gt; (C# Průvodce programováním)
+# <a name="ltparagt-c-programming-guide"></a>&lt;para&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml  
@@ -27,13 +27,14 @@ ms.locfileid: "33337259"
  Text odstavce.  
   
 ## <a name="remarks"></a>Poznámky  
- \<Para > Značka je pro použití uvnitř značky, jako například [ \<souhrnné >](../../../csharp/programming-guide/xmldoc/summary.md), [ \<Poznámky >](../../../csharp/programming-guide/xmldoc/remarks.md), nebo [ \<vrátí >](../../../csharp/programming-guide/xmldoc/returns.md)a umožňuje přidat struktura na text.  
+ \<Para > Značka je určen pro použití uvnitř značky, například [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md), [ \<remarks >](../../../csharp/programming-guide/xmldoc/remarks.md), nebo [ \<vrátí >](../../../csharp/programming-guide/xmldoc/returns.md)a umožňuje přidání struktury textu.  
   
  Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.  
   
 ## <a name="example"></a>Příklad  
- V tématu [ \<souhrnné >](../../../csharp/programming-guide/xmldoc/summary.md) příklad použití \<para >.  
+ Zobrazit [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md) pro příklad použití \<para >.  
   
-## <a name="see-also"></a>Viz také  
- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+## <a name="see-also"></a>Viz také
+
+- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
+- [Doporučené značky pro komentáře dokumentace](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - UI Automation [WPF], using with custom controls
 ms.assetid: 47b310fc-fbd5-4ce2-a606-22d04c6d4911
 ms.openlocfilehash: 0e77b26bdc7eaa038c69a6fb706ee066aa223a2e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43552345"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891493"
 ---
 # <a name="ui-automation-of-a-wpf-custom-control"></a>Automatizace uživatelského rozhraní vlastního ovládacího prvku WPF
 [!INCLUDE[TLA#tla_uiautomation](../../../../includes/tlasharptla-uiautomation-md.md)] poskytuje jednotné rozhraní zobecněný této služby automation, který můžou klienti použít k prozkoumání a fungovat uživatelských rozhraní z různých platforem a rozhraní. [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] Umožňuje (testovací) kontroly kvality kódu a dostupnost aplikace, jako je čtení obrazovky použít k prozkoumání prvky uživatelského rozhraní a simulaci interakce uživatele s nimi z jiného kódu. Informace o [!INCLUDE[TLA2#tla_uiautomation](../../../../includes/tla2sharptla-uiautomation-md.md)] na všech platformách, najdete v článku usnadnění přístupu.  

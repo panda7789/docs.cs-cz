@@ -3,11 +3,11 @@ title: Element &lt;messageSenderAuthentication&gt;
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
 ms.openlocfilehash: cb727df7b8d7605cbe984a8f6737c89bf1bfb2be
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43788961"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891622"
 ---
 # <a name="ltmessagesenderauthenticationgt-element"></a>Element &lt;messageSenderAuthentication&gt;
 Určuje možnosti ověřování pro odesílatele zpráv peer-to-peer.  

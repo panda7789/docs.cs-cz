@@ -3,11 +3,11 @@ title: Ladění dotazech LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
 ms.openlocfilehash: fd10e6c715529ba937ba09732a254d311158b0f1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43481048"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43892662"
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>Ladění dotazech LINQ to DataSet
 [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] podporuje ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu. Existují však určité rozdíly mezi ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a jiné-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu. Většina funkcí ladění pracuje s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkazy, včetně posílení, nastavení zarážek a zobrazení výsledků, které jsou zobrazeny v oknech ladicího programu. Však odložené dotazu provádění ve službě má některé vedlejší účinky, které byste měli zvážit během ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a narazíte na určitá omezení pomocí funkce upravit a pokračovat. Toto téma popisuje aspekty ladění, které jsou jedinečné pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] ve srovnání s jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu.  

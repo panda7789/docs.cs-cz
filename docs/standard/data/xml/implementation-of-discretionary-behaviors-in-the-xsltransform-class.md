@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: d2758ea1-03f6-47bd-88d2-0fb7ccdb2fab
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: dd84702ea761f58fca88a8a72f6706f6cd439b7b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1e8bd2eaa977c9e3546758e9fd0e9fa3b4527634
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541236"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44039832"
 ---
 # <a name="implementation-of-discretionary-behaviors-in-the-xsltransform-class"></a>Implementace volitelného chování ve třídě XslTransform
 
@@ -79,13 +79,13 @@ V následující tabulce jsou uvedeny funkce, které jsou volitelné pro proceso
 |-------------|------------------------|-----------|
 |`disable-output-escaping` atribut na `<xsl:text...>` a `<xsl:value-of...>` značky.|W3C XSLT 1.0 doporučení,<br /><br /> Část 16.4|`disable-output-escaping` Atribut se ignoruje při `xsl:text` nebo `xsl:value-of` elementy se používají v `xsl:comment`, `xsl:processing-instruction`, nebo `xsl:attribute` elementu.<br /><br /> Výsledků fragmenty, které obsahují text a textový výstup, který byl uvozeny řídicími znaky se nepodporují.<br /><br /> Atribut uvozovací znaky zakázat výstup se ignoruje při transformování do <xref:System.Xml.XmlReader> nebo <xref:System.Xml.XmlWriter> objektu.|
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-<xref:System.Xml.Xsl.XslTransform>
-[Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)  
-[Transformace XSLT s třídou XslTransform](xslt-transformations-with-the-xsltransform-class.md)  
-[XPathNavigator v transformacích](xpathnavigator-in-transformations.md)  
-[XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)  
-[Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)  
-[Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)  
-[Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)  
+- <xref:System.Xml.Xsl.XslTransform>
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)  
+- [Transformace XSLT s třídou XslTransform](xslt-transformations-with-the-xsltransform-class.md)  
+- [XPathNavigator v transformacích](xpathnavigator-in-transformations.md)  
+- [XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)  
+- [Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)  
+- [Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)  
+- [Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)  

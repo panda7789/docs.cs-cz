@@ -1,5 +1,5 @@
 ---
-title: Řešení externím prostředkům během zpracování XSLT
+title: Překlad externích prostředků během zpracování XSLT
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,43 +8,44 @@ dev_langs:
 ms.assetid: 3a59d31c-0ec5-4de6-a2a9-558531c8116e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 955b42a4bb9955a401265cf9537418bbfe8dd7c2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 958699b8e3a00cfe3f8fd8ac4bb96914dcd0598c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33569756"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891321"
 ---
-# <a name="resolving-external-resources-during-xslt-processing"></a>Řešení externím prostředkům během zpracování XSLT
+# <a name="resolving-external-resources-during-xslt-processing"></a>Překlad externích prostředků během zpracování XSLT
 Existují několikrát během transformace XSLT, kdy budete muset vyřešit externím prostředkům.  
   
-## <a name="using-the-xmlresolver-class"></a>Používání třídy objekt XmlResolver  
- <xref:System.Xml.XmlResolver> Třída se používá k překladu externím prostředkům. Následující tabulka popisuje, kdy <xref:System.Xml.XmlResolver> spojené se stane při zpracování XSLT.  
+## <a name="using-the-xmlresolver-class"></a>Pomocí třídy objekt XmlResolver  
+ <xref:System.Xml.XmlResolver> Třída se používá k překladu externích prostředků. Následující tabulka popisuje, kdy <xref:System.Xml.XmlResolver> stane používané během zpracování XSLT.  
   
-|Úloha XSLT|Co objekt XmlResolver se používá pro|  
+|Úloha XSLT|Co objekt XmlResolver slouží|  
 |---------------|--------------------------------------|  
-|Zkompilujte šablony stylů.|Vyřešte identifikátor URI šablony stylů.<br /><br /> - a -<br /><br /> Vyřešit odkazy na URI v žádném `xsl:import` nebo `xsl:include` elementy.|  
-|Spusťte šablony stylů.|Identifikátor URI dokumentu kontextu přeložit.<br /><br /> - a -<br /><br /> Vyřešit odkazy na URI ve všech XSLT `document()` funkce.|  
+|Zkompilujte šablony stylů.|Rozpoznat identifikátor URI šablony stylů.<br /><br /> - a -<br /><br /> Identifikátor URI odkazy v libovolném `xsl:import` nebo `xsl:include` elementy.|  
+|Spuštění šablony stylů.|Identifikátor URI dokumentu kontextu přeložit.<br /><br /> - a -<br /><br /> Identifikátor URI odkazy v jakékoli XSLT `document()` funkce.|  
   
- <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> a <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody patří přetížení, které provést <xref:System.Xml.XmlResolver> objektu jako jeden z jeho argumenty. Pokud <xref:System.Xml.XmlResolver> není určena, výchozí <xref:System.Xml.XmlUrlResolver> bez pověření se používá.  
+ <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> a <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody přetížení, která přijímají patří <xref:System.Xml.XmlResolver> objektu jako jeden z jejích argumentů. Pokud <xref:System.Xml.XmlResolver> nezadá, výchozí <xref:System.Xml.XmlUrlResolver> se používá bez pověření.  
   
- Následující seznam popisuje, pokud chcete zadat <xref:System.Xml.XmlResolver> objektu:  
+ Následující seznam popisuje, kdy je vhodné zadat <xref:System.Xml.XmlResolver> objektu:  
   
--   Pokud proces XSLT potřebuje pro přístup k prostředkům sítě, který vyžaduje ověření, můžete použít <xref:System.Xml.XmlResolver> s potřebná pověření.  
+-   Pokud XSLT procesu potřebuje přístup k síťovému prostředku, který vyžaduje ověření, můžete použít <xref:System.Xml.XmlResolver> s potřebné přihlašovací údaje.  
   
--   Pokud chcete omezit prostředky, ke kterým mají přístup proces XSLT, můžete použít <xref:System.Xml.XmlSecureResolver> s oprávněním správné nastavení. Použití <xref:System.Xml.XmlSecureResolver> třídy, pokud je třeba otevřít prostředek není řídíte, nebo které není důvěryhodný.  
+-   Pokud chcete omezit prostředky, které můžete přistupovat k procesu XSLT, můžete použít <xref:System.Xml.XmlSecureResolver> nastavte správné oprávnění. Použití <xref:System.Xml.XmlSecureResolver> třídy, pokud je potřeba otevřít prostředek, který není pod kontrolou, nebo, který není důvěryhodný.  
   
--   Pokud chcete přizpůsobit chování, můžete implementovat vlastní <xref:System.Xml.XmlResolver> třídy a použít ho k vyřešení prostředky.  
+-   Pokud chcete přizpůsobit chování, můžete implementovat vlastní <xref:System.Xml.XmlResolver> třídy a použít ho k vyřešení zdroje.  
   
--   Pokud chcete zajistit, že žádné externí prostředky ke kterým se přistupuje, můžete zadat `null` pro <xref:System.Xml.XmlResolver> argument.  
+-   Pokud chcete zajistit, že jsou přístupné žádné externí prostředky, můžete zadat `null` pro <xref:System.Xml.XmlResolver> argument.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad zkompiluje stylů, která je uložena na síťovém prostředku. <xref:System.Xml.XmlUrlResolver> Objektu určuje přihlašovací údaje potřebné pro přístup k šabloně stylů.  
+ Následující příklad se zkompiluje šablony stylů, která je uložená na síťovém prostředku. <xref:System.Xml.XmlUrlResolver> Objekt Určuje přihlašovací údaje potřebné pro přístup k šabloně stylů.  
   
  [!code-csharp[XslCompiledTransform.Load#11](../../../../samples/snippets/csharp/VS_Snippets_Data/XslCompiledTransform.Load/CS/Xslt_Load_v2.cs#11)]
  [!code-vb[XslCompiledTransform.Load#11](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XslCompiledTransform.Load/VB/Xslt_Load_v2.vb#11)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Xsl.XslCompiledTransform>  
- <xref:System.Xml.Xsl.XsltSettings>  
- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.Xsl.XslCompiledTransform>  
+- <xref:System.Xml.Xsl.XsltSettings>  
+- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)

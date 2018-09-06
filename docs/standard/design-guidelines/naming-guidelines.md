@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 53ffb641d3e507a937c304725b3c8590d046338e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 70888e068782add5ebe5ae1c7da3bdee842faea8
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572967"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44031832"
 ---
 # <a name="naming-guidelines"></a>Pokyny pro pojmenování
-Následující sadu konzistentní zásady vytváření názvů pro vývoj prostředí může být hlavní příspěvkem k rozhraní framework použitelnost. To umožňuje framework má být používána celá řada vývojářů na široce oddělených projekty. Nad rámec konzistence formuláře názvy elementů framework musí snadno pochopit a musí obsahovat funkci jednotlivých prvků.  
+Následující konzistentní sadu konvence pojmenování ve vývoji rozhraní může být hlavní příspěvek do rozhraní framework použitelnost. To umožňuje rozhraní pro mnoho vývojářů na široce oddělených projektech. Nad rámec konzistence formuláře názvy prvků framework snadno pochopitelný a musí obsahovat funkci jednotlivých prvků.  
   
- Cílem této kapitoly je zajistit konzistentní sadu zásady vytváření názvů, jejímž výsledkem názvy, které okamžitou smysl pro vývojáře.  
+ Cílem této kapitole je sada konzistentní zásady vytváření názvů, jehož výsledkem názvy, které dávají smysl okamžité pro vývojáře.  
   
- I když tyto zásady vytváření názvů přijetí jako pokyny pro vývoj obecné kódu by mělo za následek více konzistentní názvy v rámci vašeho kódu, je nutné pouze aplikovat na rozhraní API, které jsou viditelné veřejně (veřejné nebo chráněných typů a členů, a explicitně implementované rozhraní).  
+ I když tyto zásady vytváření názvů přijetí, jak kód obecné pokyny k vývoji by mělo za následek více konzistentní pojmenování v rámci kódu, je nutné pouze aplikovat na rozhraní API, která jsou veřejně přístupné (veřejné nebo chráněné typy a členy, a – explicitně implementovaná rozhraní).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Konvence pro malá a velká písmena](../../../docs/standard/design-guidelines/capitalization-conventions.md)  
@@ -38,7 +38,8 @@ Následující sadu konzistentní zásady vytváření názvů pro vývoj prost�
  [Prostředky pojmenování](../../../docs/standard/design-guidelines/naming-resources.md)  
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

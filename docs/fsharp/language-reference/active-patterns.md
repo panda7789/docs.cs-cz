@@ -2,12 +2,12 @@
 title: Aktivní vzorky (F#)
 description: 'Další informace o použití aktivní vzory definovat pojmenované oddíly, které rozdělit vstupní data v programovacím jazyce F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 964ae8eb6db0191fab1e5a816e29bd0819605f2c
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 4fb7d3e2b9c7e6f1c1ed9d64a47728c7f40017c8
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43786484"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43881873"
 ---
 # <a name="active-patterns"></a>Aktivní vzorky
 
@@ -44,7 +44,7 @@ Výstup tohoto programu je následující:
 
 Jiné aktivní vzory používá k rozložení datových typů v několika způsoby, například pokud má stejná podkladová data různé možné reprezentace. Například `Color` objekt může lze rozložit na reprezentaci RGB nebo reprezentaci HSB.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5003.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5003.fs)]
 
 Výstup programu výše je následujícím způsobem:
 
@@ -72,9 +72,9 @@ Výsledné výrazy odpovídající vzor povolit data mají být zapsána do poho
 
 ## <a name="partial-active-patterns"></a>Částečné aktivní vzory
 
-V některých případech je potřeba rozdělit pouze část prostoru vstupní. V takovém případě můžete zapsat sadu částečné vzorů z nich odpovídá některými vstupy ale selhání tak, aby odpovídaly ostatní vstupy. Aktivní vzory, které nevytváří vždy hodnotu, se nazývají *částečné aktivní vzory*; má návratovou hodnotu, je typ možnosti. K definování částečné active vzor použijte zástupný znak (_) na konci seznamu vzorků uvnitř banánů klipy. Následující kód ukazuje použití částečné aktivní vzor.
+V některých případech je potřeba rozdělit pouze část prostoru vstupní. V takovém případě můžete zapsat sadu částečné vzorů z nich odpovídá některými vstupy ale selhání tak, aby odpovídaly ostatní vstupy. Aktivní vzory, které nevytváří vždy hodnotu, se nazývají *částečné aktivní vzory*; má návratovou hodnotu, je typ možnosti. K definování částečné active vzor, můžete použít zástupný znak (\_) na konci seznamu vzorků uvnitř banánů klipy. Následující kód ukazuje použití částečné aktivní vzor.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5004.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5004.fs)]
 
 Výstup z předchozího příkladu vypadá takto:
 
@@ -88,7 +88,7 @@ Something else : Not matched.
 
 Při použití částečné aktivní vzory, někdy jednotlivé volby lze nesouvislé, nebo vylučují, ale nemusí být. V následujícím příkladu model datové krychle a druhou mocninu vzoru nejsou nesouvislý, protože některá čísla jsou pole a datové krychle, jako je například 64. Následující program vytiskne všechny celých čísel až 1000000, které jsou pole a datové krychle.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5005.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5005.fs)]
 
 Výstup vypadá takto:
 
@@ -109,7 +109,7 @@ Výstup vypadá takto:
 
 Aktivní vzory vždy provést aspoň jeden argument pro položku je nalezena shoda, může ale trvat další argumenty, v takovém případě název *parametrizované – aktivní vzor* platí. Další argumenty povolit obecný vzor specificky určené. Například obsahovat aktivní vzory, které často Analýza řetězců pomocí regulárních výrazů regulární výraz jako další parametr, stejně jako v následujícím kódem, který také používá částečné active vzor `Integer` definované v předcházejícím příkladu. V tomto příkladu jsou uvedeny řetězce, které používá regulární výrazy pro různé formáty kalendářního data k přizpůsobení obecné ParseRegex active vzor. Aktivní vzor celé číslo se používá k převod odpovídající řetězců na celá čísla, která může být předán konstruktoru data a času.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5006.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5006.fs)]
 
 Výstup předchozího kódu vypadá takto:
 
@@ -119,7 +119,7 @@ Výstup předchozího kódu vypadá takto:
 
 Aktivní vzory nejsou omezeny pouze na vzor odpovídající výrazy, můžete také použít na vazby let.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5007.fs)]
+[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet5007.fs)]
 
 Výstup předchozího kódu vypadá takto:
 

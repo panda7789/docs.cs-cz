@@ -5,11 +5,11 @@ f1_keywords:
 - vbrMaxErrNumber
 ms.assetid: c5cb5753-516e-4568-9d63-0e9a2a4c5812
 ms.openlocfilehash: c4d6d57684f1a77404df9a50e2adaa2e1a81fbe8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749207"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44032420"
 ---
 # <a name="error-number-must-be-within-the-range-0-and-65535"></a>Číslo chyby musí spadat do rozsahu 0 až 65535
 Číslo chyby spadá mimo povolený z rozsahu 0 až 65535.  

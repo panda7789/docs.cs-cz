@@ -6,11 +6,11 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic]
 ms.assetid: 954b6e40-1246-4185-a018-4061724fcae9
 ms.openlocfilehash: 402d80184f569f041692d139209a8916bd87c49b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
-ms.translationtype: HT
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43805750"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44042559"
 ---
 # <a name="xml-in-visual-basic"></a>XML v jazyce Visual Basic
 

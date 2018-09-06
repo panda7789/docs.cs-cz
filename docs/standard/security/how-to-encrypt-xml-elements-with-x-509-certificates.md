@@ -16,38 +16,38 @@ helpviewer_keywords:
 ms.assetid: 761f1c66-631c-47af-aa86-ad9c50cfa453
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fcb2d344e1baae259cebbf8426bfd10de19bf925
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 674a4c917df20f58a509e92465e756c4615118ca
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591470"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43878934"
 ---
 # <a name="how-to-encrypt-xml-elements-with-x509-certificates"></a>Postupy: Šifrování XML elementů pomocí certifikátů X.509
-Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů pro zašifrování element dokumentu XML.  XML – šifrování je standardní způsob, jak exchange nebo uložit šifrovaná data XML, bez starostí o data snadno čitelná.  Další informace o standardu šifrování XML, najdete v World Wide Web Consortium (W3C) specifikaci XML – šifrování v umístění http://www.w3.org/TR/xmldsig-core/.  
+Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování element v dokumentu XML.  Šifrování XML je standardní způsob pro výměnu nebo ukládání zašifrovaných dat XML, nemusíme mít starosti se snadno číst data.  Další informace o standardních šifrování XML, naleznete v tématu Specifikace World Wide Web Consortium (W3C) pro šifrování XML se nachází v http://www.w3.org/TR/xmldsig-core/.  
   
- XML – šifrování vám pomůže nahradit libovolný element, XML nebo dokument <`EncryptedData`> elementu, který obsahuje šifrovaná data XML. <`EncryptedData`> Element může obsahovat dílčí elementy, které obsahují informace o klíčích a postupech použitých při šifrování.  XML – šifrování umožňuje dokument obsahoval více šifrovaných elementů a umožňuje element k zašifrování vícekrát.  Příklad kódu v tomto postupu se dozvíte, jak vytvořit <`EncryptedData`> element společně s několika další dílčí prvky, které můžete použít později během dešifrování.  
+ Vám pomůže šifrování XML nahradit všechny – element XML nebo dokument <`EncryptedData`> element, který obsahuje šifrovaná data XML. <`EncryptedData`> Element může obsahovat dílčí prvky, které obsahují informace o klíčích a procesy používané při šifrování.  Šifrování XML umožňuje dokument obsahovat několik elementů šifrované a umožňuje element, který má být zašifrovaný více než jednou.  Příklad kódu v tomto postupu se dozvíte, jak vytvořit <`EncryptedData`> element společně s několika dalšími dílčími elementy, které použijete později při dešifrování.  
   
- Tento příklad šifruje elementu XML s použitím dva klíče.  Vygeneruje testovací certifikát X.509 pomocí [nástroje vytvoření certifikátu (Makecert.exe)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx) a ukládá certifikát do úložiště certifikátů.  V příkladu pak prostřednictvím kódu programu načte příslušný certifikát a použije ho k zašifrování elementu XML pomocí <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metoda.  Interně <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metoda vytvoří oddělený klíč relace a použije ho k zašifrování dokumentu XML. Tato metoda zašifruje klíč relace a uloží spolu s šifrované XML v rámci nového <`EncryptedData`> elementu.  
+ V tomto příkladu šifruje elementu XML s použitím dva klíče.  Vygeneruje certifikát X.509 test pomocí [Certificate Creation Tool (Makecert.exe)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx) a uloží certifikát do úložiště certifikátů.  V příkladu potom programově načte příslušný certifikát a použije k zašifrování – element XML pomocí <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metody.  Interně <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> metoda vytvoří oddělený klíč relace a použije k zašifrování dokumentu XML. Tato metoda zašifruje klíč relace a uloží ho spolu s šifrované XML v rámci nového <`EncryptedData`> element.  
   
- K dešifrování elementu XML, stačí zavolat <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metoda, která automaticky načte certifikát X.509 z úložiště a provede nezbytné dešifrování.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [postupy: dešifrování XML elementů pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md).  
+ Chcete-li dešifrovat elementu XML, jednoduše zavolejte <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> metodu, která automaticky načte příslušný certifikát X.509 z úložiště a provede nezbytné dešifrování.  Další informace o tom, jak dešifrování elementu XML, který byl zašifrován pomocí tohoto postupu najdete v tématu [postupy: dešifrování elementů XML pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md).  
   
- Tento příklad je vhodný pro situace, kdy je potřeba sdílet šifrovaná data více aplikací nebo pokud aplikace potřebuje k uložení šifrovaných dat v době mezi spuštěné.  
+ Tento příklad je vhodný pro situace, kdy je potřeba šifrovaná data sdílet více aplikací nebo pokud aplikace potřebuje k uložení šifrovaná data mezi časem, které běží.  
   
-### <a name="to-encrypt-an-xml-element-with-an-x509-certificate"></a>K šifrování XML element společně s certifikátem X.509  
+### <a name="to-encrypt-an-xml-element-with-an-x509-certificate"></a>K šifrování elementu XML pomocí certifikátu X.509  
   
-1.  Použití [nástroje vytvoření certifikátu (Makecert.exe)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx) generovat testovacího certifikátu X.509 a umístěte jej do úložiště místního uživatele.  Musíte vygenerovat klíč pro výměnu a je nutné provést klíč jako exportovatelný. Spusťte následující příkaz:  
+1.  Použití [Certificate Creation Tool (Makecert.exe)](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx) generovat testovacího certifikátu X.509 a umístěte ho do místního úložiště.  Budete muset vygenerovat klíč pro výměnu a je nutné provést klíč exportovatelné. Spusťte následující příkaz:  
   
     ```  
     makecert -r -pe -n "CN=XML_ENC_TEST_CERT" -b 01/01/2005 -e 01/01/2010 -sky exchange -ss my  
     ```  
   
-2.  Vytvoření <xref:System.Security.Cryptography.X509Certificates.X509Store> objektu a inicializace otevřete úložiště aktuálního uživatele.  
+2.  Vytvoření <xref:System.Security.Cryptography.X509Certificates.X509Store> objektu a inicializovat ji a otevřete úložiště pro aktuálního uživatele.  
   
      [!code-csharp[HowToEncryptXMLElementX509#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#2)]
      [!code-vb[HowToEncryptXMLElementX509#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#2)]  
   
-3.  Otevřete úložiště v režimu jen pro čtení.  
+3.  Otevřete obchod v režimu jen pro čtení.  
   
      [!code-csharp[HowToEncryptXMLElementX509#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#3)]
      [!code-vb[HowToEncryptXMLElementX509#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#3)]  
@@ -57,12 +57,12 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
      [!code-csharp[HowToEncryptXMLElementX509#4](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#4)]
      [!code-vb[HowToEncryptXMLElementX509#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#4)]  
   
-5.  Projděte certifikáty v úložišti a najít certifikát s odpovídající název.  V tomto příkladu je certifikát s názvem `"CN=XML_ENC_TEST_CERT"`.  
+5.  Zobrazit výčet prostřednictvím certifikáty v úložišti a najít certifikát s odpovídajícím názvem.  V tomto příkladu je název certifikátu `"CN=XML_ENC_TEST_CERT"`.  
   
      [!code-csharp[HowToEncryptXMLElementX509#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#5)]
      [!code-vb[HowToEncryptXMLElementX509#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#5)]  
   
-6.  Zavřete se nachází úložiště po certifikát.  
+6.  Zavřete ve storu, nebude tento certifikát je umístěn.  
   
      [!code-csharp[HowToEncryptXMLElementX509#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#6)]
      [!code-vb[HowToEncryptXMLElementX509#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#6)]  
@@ -72,17 +72,17 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
      [!code-csharp[HowToEncryptXMLElementX509#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#7)]
      [!code-vb[HowToEncryptXMLElementX509#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#7)]  
   
-8.  Najít zadaný element v <xref:System.Xml.XmlDocument> objektu a vytvořte novou <xref:System.Xml.XmlElement> objekt představující element, který chcete zašifrovat.  V tomto příkladu `"creditcard"` je zašifrován element.  
+8.  Najít zadaný element v <xref:System.Xml.XmlDocument> objektu a vytvořte nový <xref:System.Xml.XmlElement> objekt reprezentující element, který chcete zašifrovat.  V tomto příkladu `"creditcard"` šifrovaná prvku.  
   
      [!code-csharp[HowToEncryptXMLElementX509#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#8)]
      [!code-vb[HowToEncryptXMLElementX509#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#8)]  
   
-9. Vytvořit novou instanci třídy <xref:System.Security.Cryptography.Xml.EncryptedXml> třídy a použít ho k zašifrování zadaného elementu pomocí certifikátu X.509.  <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> Metoda vrátí šifrované prvek jako <xref:System.Security.Cryptography.Xml.EncryptedData> objektu.  
+9. Vytvořit novou instanci třídy <xref:System.Security.Cryptography.Xml.EncryptedXml> třídy a použít ho k zašifrování zadaného elementu pomocí certifikátu X.509.  <xref:System.Security.Cryptography.Xml.EncryptedXml.Encrypt%2A> Metoda vrátí šifrovaný element jako <xref:System.Security.Cryptography.Xml.EncryptedData> objektu.  
   
      [!code-csharp[HowToEncryptXMLElementX509#9](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#9)]
      [!code-vb[HowToEncryptXMLElementX509#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#9)]  
   
-10. Nahraďte element z původní <xref:System.Xml.XmlDocument> objektu s <xref:System.Security.Cryptography.Xml.EncryptedData> elementu.  
+10. Nahraďte element z původní <xref:System.Xml.XmlDocument> objektu <xref:System.Security.Cryptography.Xml.EncryptedData> elementu.  
   
      [!code-csharp[HowToEncryptXMLElementX509#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementX509/cs/sample.cs#10)]
      [!code-vb[HowToEncryptXMLElementX509#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#10)]  
@@ -93,7 +93,7 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
      [!code-vb[HowToEncryptXMLElementX509#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementX509/vb/sample.vb#11)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad předpokládá, že soubor s názvem `"test.xml"` existuje ve stejném adresáři jako zkompilovaný program.  Dále předpokládá, že `"test.xml"` obsahuje `"creditcard"` elementu.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít jej v tomto příkladu.  
+ Tento příklad předpokládá, že soubor s názvem `"test.xml"` existuje ve stejném adresáři jako zkompilovaný program.  Dále předpokládá, že `"test.xml"` obsahuje `"creditcard"` elementu.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít ho v tomto příkladu.  
   
 ```xml  
 <root>  
@@ -109,13 +109,14 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Pro zkompilování tohoto příkladu, budete muset obsahovat odkaz na `System.Security.dll`.  
+-   Chcete-li kompilaci tohoto příkladu, je potřeba zahrnout odkaz na `System.Security.dll`.  
   
--   Zahrnout následujících oborů názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>, a <xref:System.Security.Cryptography.Xml>.  
+-   Následující obory názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>, a <xref:System.Security.Cryptography.Xml>.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Certifikát X.509 použité v tomto příkladu je pouze pro účely testování.  Aplikace by měl použít certifikát X.509 generované důvěryhodné certifikační autority nebo certifikát vytvořený certifikační Server Microsoft Windows.  
+ Certifikát X.509 použitý v tomto příkladu je pouze pro účely testování.  Aplikace by měla použít certifikát X.509, který vygeneroval důvěryhodné certifikační autority nebo certifikát vytvořený certifikát serverem Microsoft Windows.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Security.Cryptography.Xml>  
- [Postupy: Dešifrování elementů XML pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Security.Cryptography.Xml>  
+- [Postupy: Dešifrování elementů XML pomocí certifikátů X.509](../../../docs/standard/security/how-to-decrypt-xml-elements-with-x-509-certificates.md)

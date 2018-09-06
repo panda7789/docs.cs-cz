@@ -14,34 +14,34 @@ helpviewer_keywords:
 ms.assetid: 30047cba-e2fd-41c6-b9ca-2ad7a49003db
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5a2dbde5df0f475b0bd7da4b022f11b82b257f40
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e16270fd900c1c786cfd74f484455481d91e5b52
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572863"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44039209"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>Postupy: Zpracování více událostí pomocí vlastností událostí
-Chcete-li použít vlastnosti událostí, je třeba definovat vlastnosti událostí ve třídě, která události vyvolá, a poté nastavit delegáty pro tyto vlastnosti událostí ve třídách, které události zpracovávají. Pokud chcete implementovat několik vlastností události ve třídě, musí třída interně ukládat a udržovat delegáta definovaného pro každou jednotlivou událost. Typickým přístupem je implementace delegáta kolekce, která je indexovat pomocí klíče události.  
+Chcete-li použít vlastnosti událostí, je třeba definovat vlastnosti událostí ve třídě, která události vyvolá, a poté nastavit delegáty pro tyto vlastnosti událostí ve třídách, které události zpracovávají. Implementovat více vlastnosti událostí ve třídě, musí třída interně ukládání a udržovat delegáta definované pro každou jednotlivou událost. Typický přístup je pro implementaci delegátů kolekce, která je indexované podle klíče události.  
   
- Chcete-li uložit delegáty pro každou jednotlivou událost, můžete použít <xref:System.ComponentModel.EventHandlerList> třídy, nebo jsou implementovány vlastní kolekce. Třída kolekce musí poskytovat metody pro nastavení, přístup a načítání delegát obslužná rutina události na základě klíče události. Například můžete použít <xref:System.Collections.Hashtable> třídy nebo odvodit vlastní třídu z <xref:System.Collections.DictionaryBase> třídy. Podrobnosti implementace kolekce delegáta nemusíte být nezveřejní třídě.  
+ K ukládání delegátů pro každou událost, můžete použít <xref:System.ComponentModel.EventHandlerList> třídy nebo implementovat vlastní kolekce. Třída kolekce musí poskytovat metody pro nastavení, přístupu a načítání delegát obslužné rutiny události na základě klíče události. Například můžete použít <xref:System.Collections.Hashtable> třídy nebo odvodit vlastní třídu z <xref:System.Collections.DictionaryBase> třídy. Podrobnosti implementace delegáta kolekce nemusíte být vystavený mimo vaši třídu.  
   
- Každá vlastnost události v rámci třídy definuje přístupovou metodu přidat a odebrat metodu přistupujícího objektu. Přidat přistupující objekt vlastnosti události přidá do kolekce delegáta instanci vstupního delegáta. Odebrat přistupující objekt vlastnosti události odebere instanci vstupního delegáta z kolekce delegáta. Přístupové objekty událostí vlastnosti pomocí předdefinované klíče vlastnosti události k přidání a odebrání instance z kolekce delegáta.  
+ Každá vlastnost událostí v rámci třídy definuje přístupové metody přidat a odebrat přístupové metody. Přidat přístupový objekt pro vlastnost události přidá do kolekce delegáta instance vstupu delegáta. Odebrat přístupový objekt vlastnosti události dojde k odebrání instance vstupního delegáta z kolekce delegátů. Přistupující objekty vlastnosti události používá předdefinované vlastnosti události k přidání a odebrání instance z kolekce delegátů.  
   
 ### <a name="to-handle-multiple-events-using-event-properties"></a>Pro zpracování více událostí pomocí vlastností událostí  
   
-1.  Definujte kolekci delegátů v rámci třídy, která vyvolává události.  
+1.  Definování kolekce delegátů v rámci třídy, která vyvolává události.  
   
 2.  Definujte klíč pro každou jednotlivou událost.  
   
-3.  Definujte vlastnosti události ve třídě, která vyvolává události.  
+3.  Definujte vlastnosti událostí ve třídě, která vyvolává události.  
   
-4.  Použití delegáta kolekce k implementaci přidat a odebrat přístupových metod vlastností události.  
+4.  Kolekce delegátů použijte k implementaci přidat a odebrat přístupové metody pro tyto vlastnosti událostí.  
   
-5.  Veřejné vlastnosti události použijte k přidání a odebrání delegátů obslužných rutin událostí v třídách, které zpracovávají události.  
+5.  Veřejné vlastnosti události použijte k přidání a odebrání delegátů obslužných rutin událostí ve třídách, které události zpracovávají.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad jazyka C# implementuje vlastnosti události `MouseDown` a `MouseUp`, použije <xref:System.ComponentModel.EventHandlerList> k uložení delegáta každé události. Klíčová slova konstrukce vlastnosti události jsou tučně.  
+ Následující příklad jazyka C# implementuje vlastnosti události `MouseDown` a `MouseUp`s použitím <xref:System.ComponentModel.EventHandlerList> ukládat každé události delegáta. Klíčová slova konstruktorů vlastnosti událostí jsou tučně.  
   
 > [!NOTE]
 >  Vlastnosti události nejsou podporovány v [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)].  
@@ -50,8 +50,9 @@ Chcete-li použít vlastnosti událostí, je třeba definovat vlastnosti událos
  [!code-csharp[Conceptual.Events.Other#31](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.events.other/cs/example3.cs#31)]
  [!code-vb[Conceptual.Events.Other#31](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.events.other/vb/example3.vb#31)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ComponentModel.EventHandlerList?displayProperty=nameWithType>  
- [Události](../../../docs/standard/events/index.md)  
- <xref:System.Web.UI.Control.Events%2A>  
- [Postupy: Deklarování vlastních událostí pro konzervaci paměti](~/docs/visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.ComponentModel.EventHandlerList?displayProperty=nameWithType>  
+- [Události](../../../docs/standard/events/index.md)  
+- <xref:System.Web.UI.Control.Events%2A>  
+- [Postupy: Deklarování vlastních událostí pro konzervaci paměti](~/docs/visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)

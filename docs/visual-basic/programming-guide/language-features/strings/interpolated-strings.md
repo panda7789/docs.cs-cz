@@ -4,11 +4,11 @@ ms.date: 10/31/2017
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 313e74d5ce252884f1df2479ef1db8b4b24b5cce
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43799262"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44040928"
 ---
 # <a name="interpolated-strings-visual-basic-reference"></a>Interpolované řetězce (referenční dokumentace jazyka Visual Basic)
 

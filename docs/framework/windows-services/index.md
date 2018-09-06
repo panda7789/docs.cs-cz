@@ -13,11 +13,11 @@ ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
 author: ghogen
 manager: douge
 ms.openlocfilehash: 2c7fb148b96d5ff9804bcb0bb7c842c475c0f117
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43740827"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43886406"
 ---
 # <a name="developing-windows-service-applications"></a>Vývoj aplikací spouštěných jako služby systému Windows
 Pomocí sady Microsoft Visual Studio nebo službou Microsoft [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] SDK, můžete snadno vytvářet služby tak, že vytvoříte aplikaci, která je nainstalována jako služba. Tento typ aplikace se nazývá služby Windows. S funkcemi rozhraní framework můžete vytvářet služby, je, nainstalovat a spuštění, zastavení a jinak řídit jejich chování.  

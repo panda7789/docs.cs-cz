@@ -5,11 +5,11 @@ author: bleroy
 ms.author: mairaw
 ms.date: 05/29/2018
 ms.openlocfilehash: a12738d0cc8edcbb65d5b6fab6e7c8b209b0f4b5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43535973"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44032355"
 ---
 # <a name="dotnet-store"></a>DotNet Restore
 

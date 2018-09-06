@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: d2d6d5fd-e263-4fa0-847b-2fc3e0d82337
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 24cacf0323c96f6959442dea94b0540633661bce
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: bd32deb9c8719a12b76aaea8ec91a17471cf18f9
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485596"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43885860"
 ---
 # <a name="canceling-threads-cooperatively"></a>Spolupráce při rušení vláken
 
@@ -26,4 +26,4 @@ Rozhraní .NET Framework před rozhraní .NET Framework 4, k dispozici žádné 
   
 ## <a name="see-also"></a>Viz také:
 
- [Použití vláken a dělení na vlákna](using-threads-and-threading.md)  
+- [Použití vláken a dělení na vlákna](using-threads-and-threading.md)

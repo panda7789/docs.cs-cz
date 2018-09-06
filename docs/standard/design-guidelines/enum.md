@@ -11,19 +11,19 @@ helpviewer_keywords:
 ms.assetid: dd53c952-9d9a-4736-86ff-9540e815d545
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 544f617ca3a352814504125d7a61d70db5a81566
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9dea187b5f3911114e551d640e0bb0aa6fac1143
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579246"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891230"
 ---
 # <a name="enum-design"></a>Návrh výčtu
-Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduchý výčty a příznak výčty.  
+Výčty jsou zvláštní druh typu hodnoty. Existují dva typy výčtů: jednoduchý, výčty a příznak výčty.  
   
- Jednoduché výčty představují malé uzavřené sady možností. Běžným příkladem je jednoduchý výčet je sada barev.  
+ Jednoduché výčty představují malé uzavřených sad možností. Běžným příkladem jednoduché výčtu je sada barev.  
   
- Příznak výčty jsou navrženy pro podporu bitové operace na hodnoty výčtu. Běžným příkladem je výčet příznaků je seznam možností.  
+ Příznak výčty jsou navrženy pro podporu bitové operace s hodnotami výčtu. Běžným příkladem výčet příznaků je seznam možností.  
   
  **✓ DO** pomocí výčet parametry, vlastnosti, silného typu a návratové hodnoty, které představují sadu hodnot.  
   
@@ -33,70 +33,71 @@ Výčty jsou zvláštní druh typ hodnoty. Existují dva druhy výčty: jednoduc
   
  **X DO NOT** poskytují vyhrazené výčet hodnot, které jsou určené pro budoucí použití.  
   
- Vždy jednoduše přidáním hodnoty do existující výčtu v pozdější fázi. V tématu [přidání hodnoty výčty](#add_value) Další informace o přidání hodnot do výčty. Vyhrazené hodnoty právě znečištění směrovány správu sadu skutečné hodnoty a vede k chyby uživatele.  
+ V pozdější fázi můžete vždy jednoduše přidejte hodnoty pro existující výčet. Zobrazit [přidání hodnoty výčty](#add_value) podrobné informace o přidání hodnot do výčty. Vyhrazené hodnoty stačí znečištění směrovány správu sadu skutečných hodnot a vede k chybám uživatelů.  
   
  **X AVOID** veřejně vystavení výčty pomocí pouze jednu hodnotu.  
   
- Běžnou praxí pro zajištění budoucí rozšíření rozhraní API jazyka C je přidání vyhrazené parametrů do metoda signatur. Takové vyhrazené parametry může být vyjádřený jako výčty pomocí jednoho výchozí hodnotu. To by neměl spravované rozhraní API. Přetěžování metody umožňuje přidání parametrů v budoucích vezích se.  
+ Běžnou praxí pro zajištění budoucí rozšíření rozhraní API jazyka C je přidání vyhrazené parametry podpisy metod. Tyto parametry vyhrazené může být vyjádřený jako výčty pomocí jedno výchozí hodnotu. To by neměl být spravovaných rozhraní API. Metoda přetížení umožňuje přidávání parametrů v budoucích vezích se.  
   
  **X DO NOT** zahrnout sentinel hodnoty výčty.  
   
- I když jsou někdy jsou užitečné pro vývojáře framework, sentinel hodnoty jsou pro uživatele Framework matoucí. Používají se ke sledování stavu vrácení, jedna z hodnot výčtu spíše než ze sady reprezentována výčtového typu.  
+ I když jsou někdy užitečné pro vývojáře rozhraní framework, sentinel hodnoty jsou matoucí pro uživatele tohoto rozhraní. Používají se ke sledování stavu je jedna z hodnot výčtu spíše než ze sady reprezentována výčtového typu.  
   
  **✓ DO** zadejte hodnotu nula na jednoduchý výčty.  
   
- Zvažte možnost volání hodnota něco podobného jako "None." Pokud tuto hodnotu není vhodná pro tento konkrétní výčet, je vhodné nejběžnější výchozí hodnota pro výčet přiřadit základní hodnota nula.  
+ Zvažte možnost volání hodnotu něco jako "None". Pokud taková hodnota není vhodná pro tento konkrétní výčet, měla být přiřazena základní hodnotou nula nejběžnější výchozí hodnota pro výčet.  
   
  **✓ CONSIDER** pomocí <xref:System.Int32> (výchozí ve většině programovacích jazycích) jako nadřazený typ enum Pokud žádné z následujících:  
   
--   Je výčet je výčet příznaků a máte víc než 32 příznaky, nebo se očekávají, že mají více v budoucnu.  
+-   Výčet je výčet příznaků a máte více než 32 příznaky, nebo chcete mít více v budoucnu.  
   
--   Základní typ musí být jiný než <xref:System.Int32> jednodušší funkční spolupráce s nespravovaným kódem očekává jinou velikost výčty.  
+-   Základní typ musí být jiná než <xref:System.Int32> jednodušší spolupráce s nespravovaným kódem očekává jinou velikost výčty.  
   
--   Menší podkladovým typem by způsobilo významné úspory v prostoru. Pokud očekáváte výčtu, která má být použit především jako argument pro tok řízení, velikost způsobuje malé rozdíly. Úspora velikosti může být důležité pokud:  
+-   Výsledkem by bylo menší základní typ značné úspory v prostoru. Pokud očekáváte, že výčtu použije hlavně jako argument pro tok řízení, velikost provede malý rozdíl. Úspora velikosti může být významné pokud:  
   
-    -   Očekáváte výčtu, která má být použit jako pole v velmi často instancí struktura nebo třída.  
+    -   Očekáváte, že se použije jako pole instance velmi často struktury nebo třídy výčtu.  
   
-    -   Očekáváte uživatelům vytvářet velké pole nebo kolekce výčet instancí.  
+    -   Očekáváte, že uživatelům vytvořit velké pole nebo kolekce výčet instancí.  
   
-    -   Očekáváte velký počet instancí výčtu k serializaci.  
+    -   Očekáváte velký počet instancí výčtového typu se musí serializovat.  
   
- Pro použití v paměti, uvědomte si, že spravované objekty jsou vždy `DWORD`-zarovnán, proto musíte efektivně více výčty nebo jiné malé struktury v instanci do pack menší výčtu s aby rozdíl, protože velikost celkový instance je vždy má být zaokrouhlené nahoru `DWORD`.  
+ Pro použití v paměti, mějte na paměti, že spravované objekty budou vždy `DWORD`-zarovnané, tak efektivně potřebujete více výčty nebo jiných malých struktury v instanci se zabalit menší výčet s aby rozdíl, protože velikost celkový počet instancí je vždy má zaokrouhlí `DWORD`.  
   
  **✓ DO** název příznak výčty pomocí množném čísle podstatná jména či fráze podstatné jméno a jednoduchý výčty pomocí singulární podstatná jména či fráze podstatné jméno.  
   
  **X DO NOT** rozšířit <xref:System.Enum?displayProperty=nameWithType> přímo.  
   
- <xref:System.Enum?displayProperty=nameWithType> je speciální typ používaný službou modulu CLR vytvořit uživateli definované výčty. Většina programovacích jazyků zadejte programovací element, který umožňuje přístup k této funkce. Například v jazyce C# `enum` – klíčové slovo se používá k definování výčet.  
+ <xref:System.Enum?displayProperty=nameWithType> je speciální typ používá modul CLR k vytvoření uživatelem definované výčty. Většina programovacích jazyků poskytují programový element, který poskytuje přístup k této funkci. Například v jazyce C# `enum` – klíčové slovo se používá k definování výčtu.  
   
 <a name="design"></a>   
-### <a name="designing-flag-enums"></a>Návrh příznak výčty  
- **✓ DO** použít <xref:System.FlagsAttribute?displayProperty=nameWithType> na příznak výčty. Tento atribut nevztahují na jednoduchý výčty.  
+### <a name="designing-flag-enums"></a>Navrhování příznak výčty  
+ **✓ DO** použít <xref:System.FlagsAttribute?displayProperty=nameWithType> na příznak výčty. Tento atribut nevztahují na jednoduché výčty.  
   
  **✓ DO** použít zajišťuje dva pro hodnoty výčtu příznak, mohou být volně kombinovány pomocí bitové operace OR.  
   
  **✓ CONSIDER** poskytování hodnot speciální výčtu pro běžně používá kombinace příznaků.  
   
- Bitové operace jsou rozšířené koncept a nesmí být požadovány pro jednoduché úlohy. <xref:System.IO.FileAccess.ReadWrite> je příklad speciální hodnoty.  
+ Bitové operace jsou rozšířené koncept a by neměla být zapotřebí pro jednoduché úlohy. <xref:System.IO.FileAccess.ReadWrite> je příkladem zvláštní hodnota.  
   
  **X AVOID** vytváření výčtů příznak, kde jsou neplatné určité kombinace hodnot.  
   
  **X AVOID** pomocí příznak hodnoty výčtu nula, pokud hodnota představuje "všechny příznaky jsou vymazány" a je správně podle další obecné zásady s názvem.  
   
- **✓ DO** název nulové hodnoty příznak výčtů `None`. Pro příkaz enum příznak musí hodnota vždy význam "všechny příznaky jsou vymazány."  
+ **✓ DO** název nulové hodnoty příznak výčtů `None`. Příznak výčtu musí hodnota vždy znamená "všechny příznaky jsou vymazány."  
   
 <a name="add_value"></a>   
-### <a name="adding-value-to-enums"></a>Přidáním hodnoty pro výčty  
- Je velmi běžné ke zjištění, budete muset po jste již odeslali ho přidat hodnoty výčtu. Potenciální problémy s kompatibilitou aplikací Pokud nastane je vrácena hodnota nově přidané z existujícího rozhraní API, protože chybně napsané aplikace nemusí správně zpracovat novou hodnotu.  
+### <a name="adding-value-to-enums"></a>Přínos pro výčty  
+ Je velmi běžné ke zjištění, že budete muset přidat hodnoty výčtu, poté, co jste už už vydali. Je potenciální problémy s kompatibilitou aplikací po je nově přidaná hodnota vrácená z existujícího rozhraní API, protože špatně vytvořené aplikace nemusí správně zpracovávat nové hodnoty.  
   
  **✓ CONSIDER** přidání hodnot do výčty navzdory riziko malé kompatibility.  
   
- Pokud máte reálná data o aplikace nekompatibility způsobené doplňky výčet, zvažte přidání nového rozhraní API, který vrací hodnoty novém i starém a přestat používat staré rozhraní API, které by měly pokračovat ve vrací pouze původní hodnoty. Tím bude zajištěno, že zůstanou existující aplikace kompatibilní.  
+ Pokud máte reálná data o nekompatibility aplikací způsobené dodatky na výčet, zvažte přidání nového rozhraní API, který vrací hodnoty novém i starém a vyřazení staré rozhraní API, které by měly pokračovat ve vrací pouze původní hodnoty. Tím se zajistí, že zůstane svoje stávající aplikace kompatibilní.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

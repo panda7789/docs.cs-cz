@@ -12,11 +12,11 @@ helpviewer_keywords:
 - controls [Windows Forms], composite
 ms.assetid: 3cea09e5-4344-4ccb-9858-b66ccac210ff
 ms.openlocfilehash: 9883f9166007405c3f47a9a1d66a3f4c546197d0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43536359"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43884559"
 ---
 # <a name="varieties-of-custom-controls"></a>Typy vlastních ovládacích prvků
 Pomocí rozhraní .NET Framework můžete vyvíjet a implementovat nové ovládací prvky. Funkce ovládacího prvku známé uživatelské můžete rozšířit také existující ovládací prvky prostřednictvím dědičnosti. Můžete taky psát vlastní ovládací prvky, které vlastní vykreslení.  

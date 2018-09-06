@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: ea3edb80-b2e8-4e85-bfed-311b20cb59b6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fdfc4d9e9ba3653bd1a762767e3c39a4f62e587a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e613ad4823254a6bed43cb95294e6b8d3674b6d
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33582132"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43881746"
 ---
 # <a name="security-and-race-conditions"></a>Zabezpečení a konflikty časování
-Další oblastí zájmu je potenciální bezpečnostní rizika zneužité časování. Existuje několik způsobů, ve kterých k tomu může dojít. Související témata, které následují popisují některé z hlavních problémů, kterým musí vývojář vyhnout.  
+Další oblastí zájmu je potenciální bezpečnostní rizika zneužité časování. Existuje několik způsobů, ve kterých k tomu může dojít. Související témata, které následují popisují některé z hlavních problémů, které musí vývojáři vyhnout.  
   
-## <a name="race-conditions-in-the-dispose-method"></a>Konflikty časování v metodu Dispose  
- Pokud na třídu **Dispose** – metoda (Další informace najdete v tématu [uvolňování paměti](../../../docs/standard/garbage-collection/index.md)) není synchronizována, je možné tento kód čištění uvnitř **Dispose** lze spustit více než jednou, jak je znázorněno v následujícím příkladu.  
+## <a name="race-conditions-in-the-dispose-method"></a>Časování v metody Dispose  
+ Případě, že třída **Dispose** – metoda (Další informace najdete v tématu [uvolňování](../../../docs/standard/garbage-collection/index.md)) není synchronizována, je možné tento kód pro vyčištění uvnitř **Dispose** můžete spustit více než jednou, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Sub Dispose()  
@@ -46,13 +46,13 @@ void Dispose()
 }  
 ```  
   
- Protože to **Dispose** implementace není synchronizována, je možné pro `Cleanup` má být volána nejprve jedno vlákno a pak druhý vlákno před `_myObj` je nastaven na **null**. Jestli se jedná o problém zabezpečení závisí na co se stane, když `Cleanup` kód běží. Hlavní problém s nesynchronizovaných **Dispose** implementací zahrnuje použití popisovače prostředku, jako jsou například soubory. Nesprávné odstranění může způsobit nesprávnou popisovač použije, což často vede k ohrožení zabezpečení.  
+ Protože toto **Dispose** implementace není synchronizovaný, je možné, `Cleanup` má být volána nejprve jedno vlákno a pak druhého podprocesu před `_myObj` je nastavena na **null**. Zda se jedná o problém zabezpečení závisí na co se stane, když `Cleanup` spuštěn kód. Hlavní problém s nesynchronizované **Dispose** implementací zahrnuje použití popisovače prostředku, jako jsou například soubory. Nesprávné odstranění může způsobit nesprávné popisovač, kterou chcete použít, což často vede k ohrožení zabezpečení.  
   
-## <a name="race-conditions-in-constructors"></a>Konflikty časování v konstruktorech  
- V některých aplikacích může být jiná vlákna přístup ke členům třídy před jejich konstruktory třídy zcela spustí. Měli byste zkontrolovat všechny třídy konstruktory a ujistěte se, že pokud tomu má dojít, nebo synchronizovat vláken v případě potřeby neexistují žádné problémy se zabezpečením.  
+## <a name="race-conditions-in-constructors"></a>Časování v konstruktorech  
+ V některých aplikacích je možné pro ostatní vlákna pro přístup ke členům třídy před jejich konstruktor třídy zcela spustili. Měli byste zkontrolovat všechny třídy konstruktory, abyste měli jistotu, že pokud k tomu musí dojít, nebo synchronizaci vláken, v případě potřeby neexistují žádné problémy se zabezpečením.  
   
-## <a name="race-conditions-with-cached-objects"></a>Konflikty časování s objekty v mezipaměti  
- Kód, který ukládá do mezipaměti informace o zabezpečení nebo používá zabezpečení přístupu kódu [Assert](../../../docs/framework/misc/using-the-assert-method.md) operace může být ohrožen časování Pokud dalších částí třídy nejsou správně synchronizovány, jak je znázorněno v následujícím příkladu.  
+## <a name="race-conditions-with-cached-objects"></a>Ke konfliktům časování s objekty uložené v mezipaměti  
+ Kód, který ukládá informace o zabezpečení nebo který používá zabezpečení přístupu kódu [Assert](../../../docs/framework/misc/using-the-assert-method.md) operace může být také snadno napadnutelný časování Pokud jiné části třídy nejsou synchronizované odpovídajícím způsobem, jak je znázorněno v následujícím příkladu.  
   
 ```vb  
 Sub SomeSecureFunction()  
@@ -97,12 +97,13 @@ void DoOtherWork()
 }  
 ```  
   
- Pokud jsou jiné cesty k `DoOtherWork` , lze volat z jiného vlákna se stejný objekt, nedůvěryhodný volající může proklouznout požadavku.  
+ Pokud existují další cesty k `DoOtherWork` , který lze volat z jiného vlákna se stejným objektem, nedůvěryhodné volající může zpozdit poslední požadavek.  
   
- Pokud váš kód ukládá do mezipaměti informace o zabezpečení, ujistěte se, zkontrolujte pro toto ohrožení zabezpečení.  
+ Pokud váš kód mezipaměti informace o zabezpečení, ujistěte se, abyste si pro toto ohrožení zabezpečení.  
   
-## <a name="race-conditions-in-finalizers"></a>Konflikty časování v finalizační metody  
- Konflikty časování může dojít také v objektu, který odkazuje na statickou nebo nespravovaný prostředek, který poté uvolní v jeho finalizační metodu. Pokud více objektů sdílet na prostředek, který je v finalizační metodu třídy a s nimi manipulovat, musí synchronizovat objekty veškerý přístup k prostředku.  
+## <a name="race-conditions-in-finalizers"></a>Časování v finalizační metody  
+ V objektu, který odkazuje na statickou nebo nespravovaný prostředek, který poté uvolní v jeho finalizační metoda může také dojít ke konfliktům časování. Pokud více objektů sdílí prostředek, který je zpracováván v finalizační metodu třídy, musíte synchronizovat objekty veškerý přístup k prostředku.  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

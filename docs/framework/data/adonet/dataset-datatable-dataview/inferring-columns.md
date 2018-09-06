@@ -3,11 +3,11 @@ title: Odvozování sloupců
 ms.date: 03/30/2017
 ms.assetid: 0e022699-c922-454c-93e2-957dd7e7247a
 ms.openlocfilehash: 56de4b4d6cf704473ec46957625ad1c376f595c2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43671407"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891350"
 ---
 # <a name="inferring-columns"></a>Odvozování sloupců
 Po ADO.NET bylo zjištěno z dokumentu XML, které prvky k odvození jako tabulka pro <xref:System.Data.DataSet>, pak odvodí sloupce pro tyto tabulky. ADO.NET 2.0 zavedl nový modul odvození schématu, která odvodí typ dat silného typu pro každou **simpleType** elementu. V předchozích verzích, datový typ vyvozeným **simpleType** element se vždy **XSD: String**.  

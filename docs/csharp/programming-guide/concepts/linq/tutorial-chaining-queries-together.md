@@ -3,11 +3,11 @@ title: 'Kurz: Zřetězení dotazů společně (C#)'
 ms.date: 07/20/2015
 ms.assetid: 44f54444-c4c5-4c23-9d19-986b957b8eda
 ms.openlocfilehash: cab012a6ae618bd731c26bc1a002c144b84d2169
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801022"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43881973"
 ---
 # <a name="tutorial-chaining-queries-together-c"></a>Kurz: Zřetězení dotazů společně (C#)
 Tento kurz ukazuje zpracování modelu při řetězení dotazů společně. Zřetězení dotazů je klíčovou součástí vytváření funkční transformace. Je důležité pochopit, přesně jak zřetězených dotazů práce.  

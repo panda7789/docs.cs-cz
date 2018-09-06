@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5098eea86ee910baad57115419e147df02e41ed9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 37abcb6b3a8fdf4ef91d5e946a97db7ca1428ce8
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485531"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43884338"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Přehled primitiv synchronizace
 <a name="top"></a> Rozhraní .NET Framework poskytuje celou řadu primitiv synchronizace pro řízení interakce vláken a jak se vyhnout konfliktům časování. Ty je možné zhruba rozdělit do tří kategorií: zamykání, signalizační a propojené operace.  
@@ -165,15 +165,16 @@ ms.locfileid: "43485531"
   
  Koncepční přehled najdete v tématu [propojené operace](../../../docs/standard/threading/interlocked-operations.md).  
   
-## <a name="see-also"></a>Viz také  
- [Synchronizace dat pro vícevláknové zpracování](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)  
- [Monitorování](https://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)  
- [Mutex – třídy](../../../docs/standard/threading/mutexes.md)  
- [Semaphore a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)  
- [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)  
- [Obslužné rutiny čekání](https://msdn.microsoft.com/library/48d10b6f-5fd7-407c-86ab-0179aef72489)  
- [Propojené operace](../../../docs/standard/threading/interlocked-operations.md)  
- [Zámky modulů pro čtení a zápis](../../../docs/standard/threading/reader-writer-locks.md)  
- [Barrier](../../../docs/standard/threading/barrier.md)  
- [SpinWait](../../../docs/standard/threading/spinwait.md)  
- [SpinLock](../../../docs/standard/threading/spinlock.md)
+## <a name="see-also"></a>Viz také:
+
+- [Synchronizace dat pro vícevláknové zpracování](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)  
+- [Monitorování](https://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)  
+- [Mutex – třídy](../../../docs/standard/threading/mutexes.md)  
+- [Semaphore a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)  
+- [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](../../../docs/standard/threading/eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)  
+- [Obslužné rutiny čekání](https://msdn.microsoft.com/library/48d10b6f-5fd7-407c-86ab-0179aef72489)  
+- [Propojené operace](../../../docs/standard/threading/interlocked-operations.md)  
+- [Zámky modulů pro čtení a zápis](../../../docs/standard/threading/reader-writer-locks.md)  
+- [Barrier](../../../docs/standard/threading/barrier.md)  
+- [SpinWait](../../../docs/standard/threading/spinwait.md)  
+- [SpinLock](../../../docs/standard/threading/spinlock.md)

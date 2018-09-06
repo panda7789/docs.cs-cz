@@ -8,11 +8,11 @@ helpviewer_keywords:
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
 ms.openlocfilehash: 34919efe32730fe0db11cb881b8e07629a3094fd
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43776321"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43884799"
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Postupy: Vytváření souborů nebo složek (Průvodce programováním v C#)
 Můžete prostřednictvím kódu programu vytvořte složku v počítači, vytvořte podsložku, vytvořit soubor v podsložce a zapisovat data do souboru.  

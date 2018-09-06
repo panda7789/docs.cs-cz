@@ -1,5 +1,5 @@
 ---
-title: Verze serializace
+title: Serializace tolerantní vůči verzím verze
 ms.date: 08/08/2017
 dev_langs:
 - csharp
@@ -13,23 +13,23 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-ms.openlocfilehash: 3be5c08ae2bffcf548fe1d635dd96ba29dcadca9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f26de2dbf8ec200a4b53195ae97bbb174e815166
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592337"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44042644"
 ---
-# <a name="version-tolerant-serialization"></a>Verze serializace
+# <a name="version-tolerant-serialization"></a>Serializace tolerantní vůči verzím verze
 Ve verzi 1.0 a 1.1 rozhraní .NET Framework byla problematický vytváření Serializovatelné typy, které by se znovu použít z jedné verze aplikace na další. V případě typu byl změněn přidáním pole navíc, by se objeví následující problémy:  
   
 -   Starší verze aplikace by vyvolat výjimky dotaz k deserializaci nové verze původní typu.  
   
 -   Novější verze aplikace by výjimku výjimky, při deserializaci starší verze typu s chybějící data.  
   
- Verze chybám serializace (VTS) je sada funkcí zavedena v rozhraní .NET Framework 2.0, který umožňuje snadněji v čase, chcete-li upravit Serializovatelné typy. Konkrétně jsou povoleny funkce VTS pro třídy, do kterého <xref:System.SerializableAttribute> byl použit atribut, včetně obecných typů. VTS umožňuje přidat nové pole do těchto tříd bez porušení kompatibilitu s jinými verzemi typu. Ukázkovou aplikaci, práce, najdete v části [verze odolný vůči chybám serializace technologie ukázka](../../../docs/standard/serialization/version-tolerant-serialization-technology-sample.md).  
+ Verze chybám serializace (VTS) je sada funkcí zavedena v rozhraní .NET Framework 2.0, který umožňuje snadněji v čase, chcete-li upravit Serializovatelné typy. Konkrétně jsou povoleny funkce VTS pro třídy, do kterého <xref:System.SerializableAttribute> byl použit atribut, včetně obecných typů. VTS umožňuje přidat nové pole do těchto tříd bez porušení kompatibilitu s jinými verzemi typu. Ukázkové aplikace práci, naleznete v tématu [ukázka technologie serializace odolný vůči chybám verze](../../../docs/standard/serialization/version-tolerant-serialization-technology-sample.md).  
   
- Jsou povoleny funkce VTS, používáte-li <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Navíc povoleny všechny funkce s výjimkou tolerance nadbytečná data také při použití <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Další informace o použití těchto tříd pro serializaci najdete v tématu [binární serializace](binary-serialization.md).  
+ Jsou povoleny funkce VTS, používáte-li <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>. Navíc povoleny všechny funkce s výjimkou tolerance nadbytečná data také při použití <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>. Další informace o použití těchto tříd pro serializaci naleznete v tématu [binární serializace](binary-serialization.md).  
   
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
@@ -46,7 +46,7 @@ Ve verzi 1.0 a 1.1 rozhraní .NET Framework byla problematický vytváření Ser
   
  Tyto funkce jsou popsány podrobněji níže.  
   
-## <a name="tolerance-of-extraneous-or-unexpected-data"></a>Tolerance nadbytečné nebo neočekávané dat.  
+## <a name="tolerance-of-extraneous-or-unexpected-data"></a>Tolerance nadbytečná nebo neočekávaná data  
  Všechna nadbytečná nebo neočekávaná data v minulosti během deserializace způsobeno výjimky, která je vyvolána. S VTS ve stejné situaci, všechna nadbytečná nebo neočekávaná data, je ignorován namísto způsobující výjimky, která je vyvolána. To umožňuje aplikacím, které používají novější verze tohoto typu (to znamená, že verzi, která obsahuje více polí) k odeslání informací do aplikace, které očekávají starších verzích stejného typu.  
   
  V následujícím příkladu doplňující data obsažená v `CountryField` verze 2.0 `Address` třída je ignorována, pokud starší aplikace deserializuje novější verzi.  
@@ -88,7 +88,7 @@ Public Class Address
 End Class  
 ```  
   
-## <a name="tolerance-of-missing-data"></a>Tolerance chybějící data  
+## <a name="tolerance-of-missing-data"></a>Tolerance chybějících dat  
  Pole může být označen jako volitelné použitím <xref:System.Runtime.Serialization.OptionalFieldAttribute> atributu na ně. Během deserializace nepovinné údaje chybí, je-li pro Serializační stroj ignoruje absenci a nevyvolá výjimku. Aplikace, které očekávají starší verze typu tedy můžete odeslat data aplikací, které očekáváte novější verze stejného typu.  
   
  Následující příklad ukazuje, verze 2.0 `Address` třídy s `CountryField` pole označeno jako volitelné. Je-li starší aplikace odešle verze 1 a novější aplikace, která očekává verze 2.0, je ignorován neexistují data.  
@@ -126,7 +126,7 @@ End Class
 |<xref:System.Runtime.Serialization.OnSerializingAttribute>|Před serializací.|Připravte pro serializaci. Můžete například vytvořte struktury volitelnými daty.|  
 |<xref:System.Runtime.Serialization.OnSerializedAttribute>|Po serializace.|Protokolovat události serializace.|  
   
- \* Tato zpětné volání je volána před konstruktor deserializace, pokud je k dispozici.  
+ \* Toto zpětné volání je volána před konstruktor deserializace, pokud je k dispozici.  
   
 ### <a name="using-callbacks"></a>Pomocí zpětných volání  
  Chcete-li použít zpětná volání, vztahují na metodu, která přijme příslušný atribut <xref:System.Runtime.Serialization.StreamingContext> parametru. Pouze jednu metodu na třídu může být označena každý z těchto atributů. Příklad:  
@@ -146,7 +146,7 @@ Private Sub SetCountryRegionDefault(StreamingContext sc)
 End Sub  
 ```  
   
- Tyto metody slouží pro správu verzí. Během deserializace volitelné pole nemusí být správně inicializován Pokud chybí data pro pole. Tento problém lze vyřešit tak, že vytvoření metody, která přiřadí správnou hodnotu, pak použití buď **OnDeserializingAttribute** nebo **OnDeserializedAttribute** atribut do metody.  
+ Tyto metody slouží pro správu verzí. Během deserializace volitelné pole nemusí být správně inicializován Pokud chybí data pro pole. Tento problém lze vyřešit tak, že vytvoření metody, která přiřadí správnou hodnotu, pak buď použití **OnDeserializingAttribute** nebo **OnDeserializedAttribute** atribut do metody.  
   
  Následující příklad ukazuje metodu v souvislosti s typem. Je-li starší verzi aplikace odešle instanci `Address` třídy na novější verzi aplikace, `CountryField` pole data budou chybějící. Ale po deserializace, bude pole nastavena na výchozí hodnotu "Japonsko."  
   
@@ -183,7 +183,7 @@ End Class
 ```  
   
 ## <a name="the-versionadded-property"></a>Vlastnost VersionAdded  
- **OptionalFieldAttribute** má **VersionAdded** vlastnost. V rozhraní .NET Framework verze 2.0 nepoužívá se. Je však potřeba zajistit, že typ bude kompatibilní s moduly budoucí serializace tuto vlastnost nastavit správně.  
+ **OptionalFieldAttribute** má **VersionAdded** vlastnost. Ve verzi 2.0 rozhraní .NET Framework nepoužívá se. Je však důležité pro nastavení této vlastnosti správně zajistit, že typ bude kompatibilní s moduly budoucí serializace.  
   
  Vlastnost určuje, kterou verzi typu bylo přidáno daného pole. By měla být zvýšena podle právě jeden (počínaje 2) pokaždé, když je změněn na typ, jak je znázorněno v následujícím příkladu:  
   
@@ -257,9 +257,9 @@ End Class
 ```  
   
 ## <a name="serializationbinder"></a>SerializationBinder  
- Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder>je abstraktní třídu použít k řízení skutečné typy používané během serializace a deserializace.  Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Další informace najdete v tématu [řízení serializace a deserializace pomocí třídy SerializationBinder](../../../docs/framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).  
+ Někteří uživatelé muset které třídu k serializaci a deserializaci vzhledem k tomu, že u serverových a klientských je nutné zadat jinou verzi třídy ovládacího prvku. <xref:System.Runtime.Serialization.SerializationBinder>je abstraktní třídu použít k řízení skutečné typy používané během serializace a deserializace.  Chcete-li použít tuto třídu, dosáhnout odvozením třídy od <xref:System.Runtime.Serialization.SerializationBinder> a přepište <xref:System.Runtime.Serialization.SerializationBinder.BindToName%2A> a <xref:System.Runtime.Serialization.SerializationBinder.BindToType%2A> metody. Další informace najdete v tématu [řízení serializace a deserializace pomocí SerializationBinder](../../../docs/framework/wcf/feature-details/controlling-serialization-and-deserialization-with-serializationbinder.md).  
   
-## <a name="best-practices"></a>Doporučené postupy  
+## <a name="best-practices"></a>Osvědčené postupy  
  Chcete-li zajistit správnou verzí chování, postupujte podle těchto pravidel ke změně typu na verzi:  
   
 -   Serializovaná pole nikdy odebrat.  
@@ -268,28 +268,29 @@ End Class
   
 -   Nikdy změnit název nebo typ serializovaného pole.  
   
--   Při přidávání nové serializovaných pole, použít **OptionalFieldAttribute** atribut.  
+-   Při přidávání nového serializovaná pole, použije **OptionalFieldAttribute** atribut.  
   
--   Při odebírání **NonSerializedAttribute** atribut z pole (který nebyl serializovatelný v předchozí verze), použijí **OptionalFieldAttribute** atribut.  
+-   Při odebírání **NonSerializedAttribute** atribut z pole (tj. nebyla serializovatelný v předchozí verzi), použije **OptionalFieldAttribute** atribut.  
   
--   Pro všechny volitelná pole, nastavit smysluplný výchozí hodnoty použití zpětná volání serializace tolerantní 0 nebo **null** jako výchozí hodnoty jsou přijatelné.  
+-   U všech polí volitelné, nastavte smysluplné výchozí pomocí zpětných volání serializace, není-li 0 nebo **null** jako výchozí hodnoty jsou přijatelné.  
   
  Chcete-li zajistit, že budou kompatibilní s budoucí serializace moduly typu, postupujte podle následujících pokynů:  
   
--   Vždy nastaven **VersionAdded** vlastnost **OptionalFieldAttribute** atribut správně.  
+-   Vždycky nastavený **VersionAdded** vlastnost **OptionalFieldAttribute** atribut správně.  
   
 -   Vyhněte se větvenou správy verzí.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.SerializableAttribute>  
- <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
- <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>  
- <xref:System.Runtime.Serialization.OptionalFieldAttribute.VersionAdded%2A>  
- <xref:System.Runtime.Serialization.OptionalFieldAttribute>  
- <xref:System.Runtime.Serialization.OnDeserializingAttribute>  
- <xref:System.Runtime.Serialization.OnDeserializedAttribute>  
- <xref:System.Runtime.Serialization.OnDeserializingAttribute>  
- <xref:System.Runtime.Serialization.OnSerializedAttribute>  
- <xref:System.Runtime.Serialization.StreamingContext>  
- <xref:System.NonSerializedAttribute>  
- [Binární serializace](binary-serialization.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.SerializableAttribute>  
+- <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter>  
+- <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>  
+- <xref:System.Runtime.Serialization.OptionalFieldAttribute.VersionAdded%2A>  
+- <xref:System.Runtime.Serialization.OptionalFieldAttribute>  
+- <xref:System.Runtime.Serialization.OnDeserializingAttribute>  
+- <xref:System.Runtime.Serialization.OnDeserializedAttribute>  
+- <xref:System.Runtime.Serialization.OnDeserializingAttribute>  
+- <xref:System.Runtime.Serialization.OnSerializedAttribute>  
+- <xref:System.Runtime.Serialization.StreamingContext>  
+- <xref:System.NonSerializedAttribute>  
+- [Binární serializace](binary-serialization.md)

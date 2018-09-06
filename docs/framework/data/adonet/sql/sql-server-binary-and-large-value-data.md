@@ -3,11 +3,11 @@ title: Binární a vysoké hodnoty dat serveru SQL Server
 ms.date: 03/30/2017
 ms.assetid: e00827b3-7511-4b2d-91d7-851ca86cc6b5
 ms.openlocfilehash: 9ebbe23dfbcac7825ce449dd40f62b921d13ab4a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43564880"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43879100"
 ---
 # <a name="sql-server-binary-and-large-value-data"></a>Binární a vysoké hodnoty dat serveru SQL Server
 SQL Server poskytuje `max` specifikátor, který rozbalí úložnou kapacitu `varchar`, `nvarchar`, a `varbinary` datové typy. `varchar(max)`, `nvarchar(max)`, a `varbinary(max)` se společně nazývají *velké hodnoty datových typů*. Velké hodnoty datové typy, které můžete použít k uložení až 2 ^ 31-1 bajtů.  

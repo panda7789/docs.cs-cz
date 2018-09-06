@@ -2,17 +2,16 @@
 title: Výčty (F#)
 description: 'Další informace o použití výčty F # místo literály, aby byl kód čitelnější a udržovatelný.'
 ms.date: 05/16/2016
-ms.openlocfilehash: b51df53caf2e193496cb3694c913cbae08f7eaf5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 47fb353c2698f8b1474834ebbd1b0eff2c7f76e7
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518834"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891639"
 ---
 # <a name="enumerations"></a>Výčty
 
 *Výčty*, označované také jako *výčty*,, jsou celočíselných typů, kde popisky jsou přiřazeny k podmnožině hodnoty. Můžete je použít místo literály aby byl kód čitelnější a udržovatelný.
-
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -24,6 +23,7 @@ type enum-name =
 ```
 
 ## <a name="remarks"></a>Poznámky
+
 Výčet vypadá podobně jako diskriminované sjednocení, který má jednoduché hodnoty, s tím rozdílem, že můžete zadat hodnoty. Hodnoty jsou obvykle celých čísel, které začínají 0 nebo 1 nebo celých čísel představujících bitové pozice. Pokud výčet slouží k reprezentaci bitové pozice, měli byste také použít [příznaky](xref:System.FlagsAttribute) atribut.
 
 Základní typ výčtu je určen z literál, který se používá, takže například můžete použít literály s příponou, jako například `1u`, `2u`, a tak dále pro celé číslo bez znaménka (`uint32`) typu.
@@ -49,8 +49,8 @@ Výchozí hodnota `enum` funkce pracuje s typem `int32`. Proto jej nelze použí
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2104.fs)]
 
 Kromě toho případech pro výčty jsou vždy generované jako `public`. Je to tak, aby jejich zarovnání bylo pomocí C# a zbytek na platformě .NET.
-    
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
 
-[Přetypování a převody](casting-and-conversions.md)
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka F#](index.md)
+- [Přetypování a převody](casting-and-conversions.md)

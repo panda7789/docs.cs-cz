@@ -2,12 +2,12 @@
 title: LINQ a řetězce (C#)
 ms.date: 07/20/2015
 ms.assetid: dbe2d657-b3f3-487e-b645-21fb2d71cd7b
-ms.openlocfilehash: c7a1b86cc611d5f38ceab814b4594f5ad953fbc4
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: da7a35f0fd66d1f7b8a72550c175b5428242fbc1
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480636"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43886497"
 ---
 # <a name="linq-and-strings-c"></a>LINQ a řetězce (C#)
 
@@ -72,7 +72,7 @@ Mnoho různých typů textové soubory se skládají z řady čar často a obsah
   
   Ukazuje, jak k provádění matematických výpočtů na datech textu do souborů CSV.
 
-## <a name="see-also"></a>Viz také:
+## <a name="see-also"></a>Viz také
 
 - [Language-Integrated Query (LINQ) (C#)](index.md)
 - [Postupy: Generování XML ze souborů CSV](how-to-generate-xml-from-csv-files.md)

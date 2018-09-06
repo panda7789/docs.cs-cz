@@ -13,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-ms.openlocfilehash: bd79008275f3c0176d8ffea9e5de3b53eae3ad2b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 7d5ffc0b19e53cdc35f2d2e2cd224f692a0a80ed
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777948"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43882805"
 ---
 # <a name="examples-of-xml-serialization"></a>Příklady serializace XML
 Serializace XML může trvat více než jeden formulář z snadno komplexní. Například může serializovat třídu, která jednoduše se skládá z veřejných polí a vlastností, jak je znázorněno v [představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md). Následující příklady kódu adresa různých pokročilé scénáře, včetně použití serializace XML ke generování datový proud XML, který odpovídá určitého dokumentu schématu XML (XSD).  
@@ -762,10 +762,11 @@ public class Test
 </PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
- [Seznam atributů řídících serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
- [Třídy XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)  
- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+## <a name="see-also"></a>Viz také:
+
+- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
+- [Seznam atributů řídících serializaci XML](../../../docs/standard/serialization/attributes-that-control-xml-serialization.md)  
+- [Třídy XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)  
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

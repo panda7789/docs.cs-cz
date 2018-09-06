@@ -3,11 +3,11 @@ title: 'Postupy: Výměna zpráv ve spolehlivých relacích'
 ms.date: 03/30/2017
 ms.assetid: 87cd0e75-dd2c-44c1-8da0-7b494bbdeaea
 ms.openlocfilehash: 6b204749ce86b79bf46b2d5c96be1b00dca9500d
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43419467"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44037373"
 ---
 # <a name="how-to-exchange-messages-within-a-reliable-session"></a>Postupy: Výměna zpráv ve spolehlivých relacích
 

@@ -5,11 +5,11 @@ ms.assetid: 81c0f8b4-ce35-4716-8651-b642d40648a2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4b9f54c7c57d122ac1214b9f31cc4e1d1cddd71c
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43773322"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44039183"
 ---
 # <a name="axlauthenticodesignerinfo-structure"></a>Struktura AXL_AUTHENTICODE_SIGNER_INFO
 Definuje informace o podpisu Authenticode.  

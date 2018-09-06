@@ -8,27 +8,28 @@ dev_langs:
 ms.assetid: fe60aaa0-ae43-4b1c-9be1-426af66ba757
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ef57d16c52100398919563205a97205be3c5dd7c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63a394bd30b3586f084dc1a2320fa9133da19b64
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44037104"
 ---
 # <a name="xslt-parameters"></a>Parametry XSLT
-Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metoda. Kvalifikovaný název a identifikátor URI oboru názvů jsou přidruženy k objektu parametru v daném čase.  
+Parametry XSLT se přidají do <xref:System.Xml.Xsl.XsltArgumentList> pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metody. Úplný název a identifikátor URI oboru názvů jsou spojeny s parametrem objektu v daném čase.  
   
-### <a name="to-use-an-xslt-parameter"></a>Použití parametru XSLT  
+### <a name="to-use-an-xslt-parameter"></a>Chcete-li použít parametr XSLT  
   
 1.  Vytvoření <xref:System.Xml.Xsl.XsltArgumentList> objektu a přidejte parametr pomocí <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metoda.  
   
-2.  Parametr volejte z této šablony.  
+2.  Volání parametru z šablony stylů.  
   
-3.  Předat <xref:System.Xml.Xsl.XsltArgumentList> do objektu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda.  
+3.  Předání <xref:System.Xml.Xsl.XsltArgumentList> objektu <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
 ## <a name="parameter-types"></a>Typy parametrů  
- Objekt parametr by měl odpovídat typu W3C. Následující tabulka uvádí odpovídající typy W3C ekvivalentní třídy rozhraní Microsoft .NET (typ), a zda je typ W3C XPath typ nebo typ XSLT.  
+ Parametr objektu by měl odpovídat typu W3C. Následující tabulka uvádí odpovídající typy W3C odpovídající třídy rozhraní Microsoft .NET (typ), a určuje, zda je typ W3C XPath typ nebo typ XSLT.  
   
-|Typ W3C|Ekvivalentní třída .NET (typ)|Typ XPath nebo XSLT|  
+|Typ W3C|Ekvivalentní třída rozhraní .NET (typ)|Typ XPath nebo XSLT|  
 |--------------|------------------------------------|------------------------|  
 |`String`|<xref:System.String?displayProperty=nameWithType>|XPath|  
 |`Boolean`|<xref:System.Boolean?displayProperty=nameWithType>|XPath|  
@@ -37,14 +38,14 @@ Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> pomocí 
 |`Node*`|<xref:System.Xml.XPath.XPathNavigator?displayProperty=nameWithType>|XPath|  
 |`Node Set`|<xref:System.Xml.XPath.XPathNodeIterator><br /><br /> **[] Objektem XPathNavigator nastaveným na**|XPath|  
   
- * Jde o ekvivalent sada uzlů, který obsahuje jeden uzel.  
+ * Toto je shodné s sadu uzlu, která obsahuje jeden uzel.  
   
- Pokud objekt parametr není jedním z výše uvedených tříd, převede se podle následujících pravidel. Common language runtime (CLR) číselnými typy jsou převedeny na <xref:System.Double>. <xref:System.DateTime> Typ je převeden na <xref:System.String>. <xref:System.Xml.XPath.IXPathNavigable> typy budou převedené na <xref:System.Xml.XPath.XPathNavigator>. **[] Objektem XPathNavigator nastaveným na** jsou převedeny na <xref:System.Xml.XPath.XPathNodeIterator>.  
+ Pokud parametr objektu není jeden z výše uvedených tříd, je převeden podle následujících pravidel. Common language runtime (CLR) číselné typy jsou převedeny na <xref:System.Double>. <xref:System.DateTime> Typ je převeden na <xref:System.String>. <xref:System.Xml.XPath.IXPathNavigable> typy budou převedené na <xref:System.Xml.XPath.XPathNavigator>. **[] Objektem XPathNavigator nastaveným na** je převedena na <xref:System.Xml.XPath.XPathNodeIterator>.  
   
- Všechny ostatní typy vyvolána chyba.  
+ Všechny ostatní typy vyvolat chybu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu pro vytvoření parametr pro uložení počítané datum slevy. Datum slevy je vypočítána na 20 dní od data pořadí.  
+ V následujícím příkladu <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> metodu pro vytvoření parametr pro uložení vypočítané datum slevy. Slevy se počítá na 20 dní od data objednávky.  
   
  [!code-csharp[XSLT_Param#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Param/CS/xsltparam.cs#1)]
  [!code-vb[XSLT_Param#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_Param/VB/xsltparam.vb#1)]  
@@ -67,5 +68,6 @@ Parametry XSLT jsou přidány do <xref:System.Xml.Xsl.XsltArgumentList> pomocí 
 </order>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
+## <a name="see-also"></a>Viz také:
+
+- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)

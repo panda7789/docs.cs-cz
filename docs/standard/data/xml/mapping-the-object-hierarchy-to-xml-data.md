@@ -8,17 +8,17 @@ dev_langs:
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 45f39701d409ba76e3c3f428f484b6fd5e538fbe
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b1808121049c6344b72b1c9d99e19c46422dfa0c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577199"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44042555"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mapování hierarchie objektů na XML Data
-Když je dokument XML v paměti, je koncepční reprezentace stromu. Pro programování, nebudete mít hierarchii k objektu pro přístup k uzlu stromu. Následující příklad ukazuje, jak se změní obsah XML na uzly.  
+Když je dokument XML v paměti, koncepční reprezentace je strom. Pro programování, můžete mít hierarchii objektů pro přístup k uzly stromu. Následující příklad ukazuje, jak obsah XML stane uzly.  
   
- Soubor XML je pro čtení do XML modelu DOM (Document Object), jsou převedeny na požadované do uzlů a tyto uzly ukládat další metadata o sami, například jejich typ uzlu a hodnoty. Typ uzlu je jeho objekt a je co určuje, jaké akce lze provést a co vlastnosti nelze nastavit ani načíst.  
+ XML je pro čtení do XML Document Object Model (DOM), kusy jsou přeloženy do uzlů a další metadata o samotné, jako je například jejich typ uzlu a hodnoty uchovávat tyto uzly. Typ uzlu je její objekt a co určuje, jaké akce lze provádět a které vlastnosti můžete nastavit nebo načíst.  
   
  Pokud máte následující jednoduchý kód XML:  
   
@@ -30,14 +30,14 @@ Když je dokument XML v paměti, je koncepční reprezentace stromu. Pro program
 </book>  
 ```  
   
- Vstup je v paměti vyjádřené následující uzel stromu s vlastností typu přiřazené uzlu:  
+ Vstup je vyjádřena v paměti jako následující uzel stromu s vlastností typu přiřazeném uzlu:  
   
  ![Příklad uzlu stromu](../../../../docs/standard/data/xml/media/simple-xml.gif "Simple_XML")  
-Knihy a název uzlu stromu reprezentace  
+Knihy a název reprezentace uzlu stromu  
   
- `book` Element stane **XmlElement** objektu, na další prvek `title`, se stane **XmlElement**, když se stane obsahu elementu **XmlText** objektu. V prohlížení **XmlElement** metody a vlastnosti, metody a vlastnosti, které se liší od metody a vlastnosti, které jsou k dispozici na **XmlText** objektu. Znalost tak, jaký typ uzlu se změní na kód XML je důležité, protože jeho typ uzlu určuje akce, které lze provést.  
+ `book` Prvek stane **XmlElement** objektu, další prvek `title`, stane **XmlElement**, přestože obsah elementu se stane **XmlText** objektu. V podíváme **XmlElement** metody a vlastnosti, metody a vlastnosti, které se liší od metody a vlastnosti, které jsou k dispozici na **XmlText** objektu. Takže vědět, jaký typ uzlu, bude kód XML je důležité, protože jeho typ uzlu určuje akce, které lze provést.  
   
- Následující příklad načte v datech XML a zapíše se jiný text, v závislosti na typu uzlu. Pomocí následujících datového souboru XML jako vstup, **items.xml**:  
+ Následující příklad načte v datech XML a zapíše jiný text, v závislosti na typu uzlu. Pomocí následujících datového souboru XML jako vstup, **items.xml**:  
   
  **Vstup**  
   
@@ -55,7 +55,7 @@ Knihy a název uzlu stromu reprezentace
 </Items>  
 ```  
   
- Následující kód například čtení **items.xml** souboru a zobrazí se informace pro každý typ uzlu.  
+ Následující příklad čte kód **items.xml** soubor a zobrazí informace pro každý typ uzlu.  
   
 ```vb  
 Imports System  
@@ -176,7 +176,7 @@ public class Sample
 } // End class  
 ```  
   
- Výstup z příkladu odhalí mapování dat na typy uzlů.  
+ Výstup z příkladu zobrazí mapování dat na typy uzlů.  
   
  **Output**  
   
@@ -184,41 +184,42 @@ public class Sample
 <?xml version='1.0'?><!--This is a sample XML document --><!DOCTYPE Items [<!ENTITY number "123">]<Items><Item>Test with an entity: 123</Item><Item>test with a child element <more> stuff</Item><Item>test with a CDATA section <![CDATA[<456>]]> def</Item><Item>Test with a char entity: A</Item><--Fourteen chars in this element.--><Item>1234567890ABCD</Item></Items>  
 ```  
   
- Pořízení vstupní jeden řádek v čase a pomocí výstup generovaný z kódu, můžete k analýze co uzel testovací generované řádky, které výstup, a tím pochopení, jaká data XML se aktivovala jaký druh typu uzlu v následující tabulce.  
+ Trvá jeden vstup najednou a používání výstup generovaný z kódu, můžete analyzovat, jaké test uzlu vygeneruje výstup, které řádky a vysvětlení, jaká data XML začal být jaký druh typu uzlu v následující tabulce.  
   
-|Vstup|Výstup|Test typu uzlu|  
+|Vstup|Výstup|Test typ uzlu|  
 |-----------|------------|--------------------|  
 |\<? xml verze = "1.0"? >|\<? xml verze = "1.0'? >|XmlNodeType.XmlDeclaration|  
-|\<! – Toto je ukázkový dokumentu XML-->|\<! – Toto je ukázkový dokumentu XML-->|XmlNodeType.Comment|  
-|\<! Položky DOCTYPE [\<! Počet ENTIT "123" >] >|\<! Položky DOCTYPE [\<! Počet ENTIT "123" >]|XmlNodeType.DocumentType|  
+|\<! – Toto je ukázkový dokument XML-->|\<! – Toto je ukázkový dokument XML-->|XmlNodeType.Comment|  
+|\<! Typ dokumentu položky [\<! Počet ENTIT "123" >] >|\<! Typ dokumentu položky [\<! Počet ENTIT "123" >]|XmlNodeType.DocumentType|  
 |\<Položky >|\<Položky >|Očekáván element XmlNodeType.Element|  
 |\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
-|Testování s převodem entity: &number;|Test s entitou: 123|XmlNodeType.Text|  
-|\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
+|Testování s převodem entity: &number;|Test s převodem entity: 123|XmlNodeType.Text|  
+|\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
 |\<Položka >|\<Položka >|XmNodeType.Element|  
-|testování s podřízený element|testování s podřízený element|XmlNodeType.Text|  
+|testování s podřízeným elementem|testování s podřízeným elementem|XmlNodeType.Text|  
 |\<Další >|\<Další >|Očekáván element XmlNodeType.Element|  
-|vlastní položky|vlastní položky|XmlNodeType.Text|  
-|\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
+|věci|věci|XmlNodeType.Text|  
+|\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
 |\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
-|testování s oddílu CDATA|testování s oddílu CDATA|XmlTest.Text|  
+|testování pomocí sekce CDATA|testování pomocí sekce CDATA|XmlTest.Text|  
 |&LT;! [CDATA [\<456 &GT;]]\>|&LT;! [CDATA [\<456 &GT;]]\>|XmlTest.CDATA|  
 |DEF|DEF|XmlNodeType.Text|  
-|\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
+|\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
 |\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
-|Test se entitou char: &\#65;|Test se entitou char: A|XmlNodeType.Text|  
-|\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
-|\<!----> Čtrnáct znaků v tomto elementu.|\<----> Čtrnáct znaků v tomto elementu.|XmlNodeType.Comment|  
+|Test s entitou char: &\#65;|Test s entitou char: A|XmlNodeType.Text|  
+|\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
+|\<! –--> Čtrnáct znaky v tomto elementu.|\<----> Čtrnáct znaky v tomto elementu.|XmlNodeType.Comment|  
 |\<Položka >|\<Položka >|Očekáván element XmlNodeType.Element|  
 |1234567890ABCD|1234567890ABCD|XmlNodeType.Text|  
+|\</ Položka >|\</ Položka >|XmlNodeType.EndElement|  
 |\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
-|\</ Položky >|\</ Položky >|XmlNodeType.EndElement|  
   
- Musíte vědět, jaký typ uzlu je přiřazený, jako uzel typ řídí, jaké druhy akce jsou platné a jaký druh vlastnosti můžete nastavit a načíst.  
+ Musíte vědět, jaký typ uzlu je přiřazen, jako uzel typ řídí, jaké druhy akce jsou platná a jaký druh vlastnosti můžete nastavit a načíst.  
   
- Vytvoření uzlu pro mezer je řízena, když je načíst data do modelu DOM pomocí **PreserveWhitespace** příznak. Další informace najdete v tématu [mezer a významné zpracování mezer při načítání modelu DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).  
+ Vytvoření uzlu pro prázdné místo je řízena, když data se načtou do modelu DOM pomocí **PreserveWhitespace** příznak. Další informace najdete v tématu [mezer a významných mezer zpracování při načítání modelu DOM](../../../../docs/standard/data/xml/white-space-and-significant-white-space-handling-when-loading-the-dom.md).  
   
- Přidání nových uzlů k modelu DOM naleznete v tématu [vkládání uzly do dokumentu XML](../../../../docs/standard/data/xml/inserting-nodes-into-an-xml-document.md). Odebrat uzly z modelu DOM, najdete v části [odebrání uzlů, obsah a hodnoty z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md). Chcete-li upravit obsah uzly v modelu DOM, přečtěte si téma [úprava uzlů, obsah a hodnoty v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
+ Přidání nových uzlů v modelu DOM naleznete v tématu [vkládání uzlů do dokumentu XML](../../../../docs/standard/data/xml/inserting-nodes-into-an-xml-document.md). Na odebrání uzlů z modelu DOM, naleznete v tématu [odebrání uzlů, obsahu a hodnot z dokumentu XML](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md). Pokud chcete upravit obsah uzlů v modelu DOM, naleznete v tématu [úprava uzlů, obsahu a hodnot v dokumentu XML](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md).  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

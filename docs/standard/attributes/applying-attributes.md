@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a3a0151f6cc3ce25ca0c52a25be328ece8cb4434
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d28da0c788d40222ccd689807d6e51f66b4ce78
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567364"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43880468"
 ---
 # <a name="applying-attributes"></a>Použití atributů
 Na základě následujícího postupu použijte atribut na prvek kódu.  
@@ -34,10 +34,10 @@ Na základě následujícího postupu použijte atribut na prvek kódu.
   
  Atribut je při kompilaci kódu vložen do metadat a je k dispozici pro modul CLR (Common Language Runtime) a vlastní nástroje nebo aplikace prostřednictvím služeb reflexe runtime.  
   
- Na základě pravidel zadávání názvů končí všechny názvy atributů slovem Attribute. Avšak několik jazyků, které používají modul runtime, jako jsou například Visual Basic a C#, nevyžadují zadávání úplného názvu atributu. Například, pokud chcete inicializovat <xref:System.ObsoleteAttribute?displayProperty=nameWithType>, stačí ho jako referenční **zastaralé**.  
+ Na základě pravidel zadávání názvů končí všechny názvy atributů slovem Attribute. Avšak několik jazyků, které používají modul runtime, jako jsou například Visual Basic a C#, nevyžadují zadávání úplného názvu atributu. Například, pokud chcete inicializovat <xref:System.ObsoleteAttribute?displayProperty=nameWithType>, potřebujete odkaz ve formě **zastaralé**.  
   
 ## <a name="applying-an-attribute-to-a-method"></a>Použití atributu na metodu  
- Následující příklad kódu ukazuje, jak deklarovat **System.ObsoleteAttribute**, které značky kódu jako zastaralé. Řetězec `"Will be removed in next version"` je předán atributu. Tento atribut vygeneruje upozornění kompilátoru, které zobrazí předaný řetězec, pokud je volán kód popisovaný atributem.  
+ Následující příklad kódu ukazuje, jak deklarovat **System.ObsoleteAttribute**, který označuje kód jako zastaralý. Řetězec `"Will be removed in next version"` je předán atributu. Tento atribut vygeneruje upozornění kompilátoru, které zobrazí předaný řetězec, pokud je volán kód popisovaný atributem.  
   
  [!code-cpp[Conceptual.Attributes.Usage#3](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source1.cpp#3)]
  [!code-csharp[Conceptual.Attributes.Usage#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#3)]
@@ -50,10 +50,11 @@ Na základě následujícího postupu použijte atribut na prvek kódu.
  [!code-csharp[Conceptual.Attributes.Usage#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#2)]
  [!code-vb[Conceptual.Attributes.Usage#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source1.vb#2)]  
   
- Pokud použijete tento atribut, bude řetězec `"My Assembly"` umístěn v manifestu sestavení v části souboru s metadaty. Můžete zobrazit atribut buď pomocí [MSIL Disassembler (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nebo tak, že vytvoříte vlastní program načíst atribut.  
+ Pokud použijete tento atribut, bude řetězec `"My Assembly"` umístěn v manifestu sestavení v části souboru s metadaty. Můžete zobrazit atribut s použitím [MSIL Disassembler (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nebo vytvořením vlastního programu pro načtení atributu.  
   
-## <a name="see-also"></a>Viz také  
- [Atributy](../../../docs/standard/attributes/index.md)  
- [Načítání informací uložených v atributech](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)  
- [Koncepty](/cpp/windows/attributed-programming-concepts)  
- [Atributy](https://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205)
+## <a name="see-also"></a>Viz také:
+
+- [Atributy](../../../docs/standard/attributes/index.md)  
+- [Načítání informací uložených v atributech](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)  
+- [Koncepty](/cpp/windows/attributed-programming-concepts)  
+- [Atributy](https://msdn.microsoft.com/library/ae334cee-d96c-4243-a5e3-06dd7fcaf205)

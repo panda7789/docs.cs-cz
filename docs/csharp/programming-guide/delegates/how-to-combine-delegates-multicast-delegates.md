@@ -6,11 +6,11 @@ helpviewer_keywords:
 - multicast delegates [C#]
 ms.assetid: 4e689450-6d0c-46de-acfd-f961018ae5dd
 ms.openlocfilehash: e3cc3f9082bd86004a7821b64c01253408c07641
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43742134"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43883175"
 ---
 # <a name="how-to-combine-delegates-multicast-delegatesc-programming-guide"></a>Postupy: Kombinování delegátů (vícesměroví delegáti) (Průvodce programováním v C#)
 Tento příklad ukazuje, jak vytvořit vícesměroví delegáti. Užitečné vlastnost [delegovat](../../../csharp/language-reference/keywords/delegate.md) objekty je, že více objektů lze přiřadit instanci jednoho delegáta pomocí `+` operátor. Vícesměrového vysílání delegát obsahuje seznam přiřazenou delegáti. Při volání vícesměrového vysílání delegáta vyvolá Delegáti v seznamu, v pořadí. Můžete kombinovat pouze delegáti stejného typu.  

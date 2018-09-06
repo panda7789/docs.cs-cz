@@ -6,12 +6,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 60ca94cee557bcbb1ad5339ecb3e742bb5f45d9c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 80ecca30b534591ffb2633ade961425f694403f7
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43558477"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43885571"
 ---
 # <a name="extension-methods-c-programming-guide"></a>Metody rozšíření (Průvodce programováním v C#)
 Metody rozšíření umožňují „přidávat“ metody ke stávajícím typům bez vytváření nového odvozeného typu, rekompilace nebo jiné změny původního typu. Metody rozšíření jsou zvláštním druhem statické metody, jsou však volány tak, jako kdyby byly metodami instance rozšířeného typu. Klientský kód napsaný v jazyce C#, F # a Visual Basic neexistuje žádný zjevný rozdíl mezi voláním metody rozšíření a metody, které jsou ve skutečnosti definovány v rámci typu.  
@@ -86,7 +86,7 @@ using System.Linq;
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
 - [Ukázky paralelního programování (včetně mnoha příkladů metod rozšíření)](https://code.msdn.microsoft.com/Samples-for-Parallel-b4b76364)  
 - [Výrazy lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
-- [Přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2)  
+- [Přehled standardních operátorů dotazu](../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Pravidla převodu pro instanci parametrů a jejich dopad](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/conversion-rules-for-instance-parameters-and-their-impact)  
 - [Interoperabilita metod rozšíření mezi jazyky](https://blogs.msdn.microsoft.com/sreekarc/2007/10/11/extension-methods-interoperability-between-languages)  
 - [Metody rozšíření a Curryfikované delegáty](https://blogs.msdn.microsoft.com/sreekarc/2007/05/01/extension-methods-and-curried-delegates)  

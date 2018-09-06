@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 3f05f33f-f1da-4b16-81c2-9ceff1bef449
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f414e5b0463e28427c8c60e2f8b8774ad6973da2
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 2933d574b387ec0f444883bbafb41f602bc5dcc0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43773667"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44036298"
 ---
 # <a name="data-parallelism-task-parallel-library"></a>Datový paralelismus (Task Parallel Library)
 *Datový paralelismus* odkazuje na scénáře, ve kterých se současně provádí stejnou operaci (paralelně) na prvky ve zdrojové kolekci nebo pole. V paralelní operace s daty zdrojové kolekce rozdělena tak, aby více vláken může souběžně pracovat na různých segmentů.  
@@ -53,5 +53,6 @@ ms.locfileid: "43773667"
 |[Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)|Poskytuje přehled o Task Parallel Library.|  
 |[Paralelní programování](../../../docs/standard/parallel-programming/index.md)|Zavádí paralelní programování v rozhraní .NET Framework.|  
   
-## <a name="see-also"></a>Viz také  
- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)

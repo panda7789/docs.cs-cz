@@ -2,12 +2,12 @@
 title: 'Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3320e866-01f1-4b7f-8932-049a7b2d2a9b
-ms.openlocfilehash: e4958c56add4f6302af3c7766b90fa4dbd58ec86
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 381173eedc209930e011dfa7f1711167f16d5ef6
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43671144"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43890711"
 ---
 # <a name="walkthrough-embedding-type-information-from-microsoft-office-assemblies-in-visual-studio-c"></a>Návod: Vložení informací o typu ze sestavení sady Microsoft Office v sadě Visual Studio (C#)
 Je-li vložit informace o typu v aplikaci, která odkazuje na objekty modelu COM, můžete vyloučit potřebu primárního sestavení interop (PIA). Kromě toho informace o typu embedded vám umožní dosáhnout nezávislosti na verzi pro vaši aplikaci. To znamená váš program může zapisovat používat typy z více verzí knihovny COM bez nutnosti zvláštního PIA pro každou verzi. Toto je běžný scénář pro aplikace, které používají objekty z knihoven Microsoft Office. Vložení informací o typu umožňuje jednomu sestavení programu pracovat s různými verzemi sady Microsoft Office na různých počítačích bez nutnosti znovu nasazovat program nebo PIA pro každou verzi sady Microsoft Office.  
@@ -116,7 +116,7 @@ Je-li vložit informace o typu v aplikaci, která odkazuje na objekty modelu COM
   
 1.  Otevřete projekt vytvořený v rámci tohoto návodu v sadě Visual Studio.  
   
-2.  Na **sestavení** nabídce zvolte **publikovat CreateExcelWorkbook**. Postupujte podle kroků v Průvodci publikováním vytvoření instalovatelnou verzi aplikace. Další informace najdete v tématu [Průvodce publikováním (vývoj pro Office v sadě Visual Studio)](https://msdn.microsoft.com/library/bb625071).  
+2.  Na **sestavení** nabídce zvolte **publikovat CreateExcelWorkbook**. Postupujte podle kroků v Průvodci publikováním vytvoření instalovatelnou verzi aplikace. Další informace najdete v tématu [Průvodce publikováním (vývoj pro Office v sadě Visual Studio)](/visualstudio/vsto/publish-wizard-office-development-in-visual-studio).  
   
 3.  Nainstalujte aplikace na počítači, na kterém je nainstalováno rozhraní .NET Framework 4 nebo vyšší a jinou verzi aplikace Excel.  
   

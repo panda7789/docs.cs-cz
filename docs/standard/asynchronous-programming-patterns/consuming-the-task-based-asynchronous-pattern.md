@@ -11,29 +11,29 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f7fd03a43d8722e32f64dd9cbe2936301d6bd2f4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5b538cb53e1cbc1fdbd8e34506710a1967e50f9d
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579493"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43877346"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
-Použijete-li pracovat s asynchronních operací založený na úlohách asynchronní vzor (TAP), můžete dosáhnout čekání bez blokování zpětných volání.  Pro úlohy, můžete toho dosáhnout pomocí metody, jako <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Na základě jazyka asynchronní podpora skryje tím, že asynchronních operací, která se v rámci normálního toku řízení očekávaná zpětná volání a generované kompilátorem kódu poskytuje tato podpora stejnou úroveň rozhraní API.  
+Použijete-li založený na úlohách asynchronního vzoru (TAP) pro práci s asynchronní operace, můžete použít zpětná volání k dosažení čekání bez blokování.  Pro úlohy, toho je dosaženo pomocí metod, jako <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Založený na jazyce asynchronní podporu skryje zpětná volání tím, že asynchronní operace do ní použít operátor await v rámci normálního toku řízení a kód generovaný kompilátorem podporuje tento stejnou úroveň rozhraní API.  
   
 ## <a name="suspending-execution-with-await"></a>Pozastavení provádění s Await  
- Od verze [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], můžete použít [await](~/docs/csharp/language-reference/keywords/await.md) – klíčové slovo v jazyce C# a [Await – operátor](~/docs/visual-basic/language-reference/operators/await-operator.md) v jazyce Visual Basic pro asynchronně await <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty. Když se čeká na <xref:System.Threading.Tasks.Task>, `await` výraz je typu `void`. Když se čeká na <xref:System.Threading.Tasks.Task%601>, `await` výraz je typu `TResult`. `await` Výraz musí dojít k uvnitř těla asynchronní metody. Další informace o jazyka C# a Visual Basic podporují v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], najdete v části specifikace jazyka C# a Visual Basic.  
+ Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], můžete použít [await](~/docs/csharp/language-reference/keywords/await.md) – klíčové slovo v jazyce C# a [operátor Await](~/docs/visual-basic/language-reference/operators/await-operator.md) v jazyce Visual Basic asynchronně await pro čekání <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> objekty. Když se čeká na <xref:System.Threading.Tasks.Task>, `await` výraz je typu `void`. Když se čeká na <xref:System.Threading.Tasks.Task%601>, `await` výraz je typu `TResult`. `await` Výraz se musí vyskytovat uvnitř těla asynchronní metodu. Další informace o jazyce C# a Visual Basic podporují v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu Specifikace jazyka C# a Visual Basic.  
   
- V pozadí nainstaluje funkci await pomocí pokračování v úloze zpětné volání.  Tato zpětného volání obnoví asynchronní metody v místě pozastavení. Když je obnoveno asynchronní metody, pokud awaited operace byla úspěšně dokončena a byla <xref:System.Threading.Tasks.Task%601>, jeho `TResult` je vrácen.  Pokud <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , očekávaná skončila v <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu, <xref:System.OperationCanceledException> je vyvolána výjimka.  Pokud <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , očekávaná skončila v <xref:System.Threading.Tasks.TaskStatus.Faulted> stavu, je vyvolána výjimka, který způsobuje její poruch. A `Task` můžete selhání v důsledku několik výjimek, ale pouze jeden z těchto výjimek rozšířena. Ale <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> vlastnost vrátí <xref:System.AggregateException> výjimka, která obsahuje všechny chyby.  
+ Pod pokličkou nainstaluje funkci await pomocí pokračování na úkolu zpětné volání.  Toto zpětné volání pokračuje v okamžiku pozastavení asynchronní metody. Když se obnoví asynchronní metody, pokud očekávané operace byla úspěšně dokončena a byla <xref:System.Threading.Tasks.Task%601>, jeho `TResult` je vrácena.  Pokud <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , která byla očekávána skončila v <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu, <xref:System.OperationCanceledException> je vyvolána výjimka.  Pokud <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> , která byla očekávána skončila v <xref:System.Threading.Tasks.TaskStatus.Faulted> stavu, je vyvolána výjimka, která způsobila selhání. A `Task` můžete selhání v důsledku více výjimek, ale pouze jeden z těchto výjimek je rozšířena. Ale <xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> vrátí vlastnost <xref:System.AggregateException> výjimku, která obsahuje všechny chyby.  
   
- Pokud kontext synchronizace (<xref:System.Threading.SynchronizationContext> objektu) souvisí s podproces, který byl v době pozastavení provádění asynchronní metody (například pokud <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> vlastnost není `null`), asynchronní metoda obnoví na který stejný kontext synchronizace pomocí podle kontextu <xref:System.Threading.SynchronizationContext.Post%2A> metoda. Jinak je závislé na plánovače úloh (<xref:System.Threading.Tasks.TaskScheduler> objektu), který byl aktuální v době pozastavení. Obvykle je to výchozí plánovače úloh (<xref:System.Threading.Tasks.TaskScheduler.Default%2A?displayProperty=nameWithType>), které cílí fondu vláken. Tato služba Plánovač úloh Určuje, zda by měl awaited asynchronní operace pokračovat, kde byla dokončena nebo jestli má být naplánováno obnovení. Scheduler výchozí obvykle umožní pokračování ke spuštění na vlákno, které awaited operaci dokončit.  
+ Pokud kontext synchronizace (<xref:System.Threading.SynchronizationContext> objektu) souvisí s vláknem, které v okamžiku pozastavení provádění asynchronní metody (např. Pokud <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> jedná o vlastnost neumožňující `null`), asynchronní metody pokračuje na, který stejný kontext synchronizace s využitím daného kontextu <xref:System.Threading.SynchronizationContext.Post%2A> metody. V opačném případě spoléhá na Plánovač úloh (<xref:System.Threading.Tasks.TaskScheduler> objektu), který byl aktuální v okamžiku pozastavení. Obvykle je to výchozí Plánovač úloh (<xref:System.Threading.Tasks.TaskScheduler.Default%2A?displayProperty=nameWithType>), který se zaměřuje na fond vláken. Tento Plánovač úloh Určuje, zda očekávaná asynchronní operace měla pokračovat, kde dokončena nebo zda má být naplánováno opětovné. Výchozí plánovač obvykle umožňuje pokračování spuštěno ve vlákně, očekávané operace dokončena.  
   
- Při volání asynchronní metody, se tělo funkce synchronně provede, dokud první await výrazu v případě může používat await instance, který ještě nebyl dokončen, v tomto okamžiku se volání vrátí volajícímu. Pokud lze asynchronní metodu nevrátí `void`, <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> se vrátí objekt představující probíhající výpočet. V jiných void asynchronní metody, pokud je příkaz return zaznamenána nebo je dosaženo konce metoda textu, dokončení úlohy v <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> konečného stavu. Pokud k neošetřené výjimce způsobí, že ovládací prvek chcete nechat těla asynchronní metody, úloha končí v <xref:System.Threading.Tasks.TaskStatus.Faulted> stavu. Pokud je této výjimky <xref:System.OperationCanceledException>, úloha místo končí v <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu. Tímto způsobem výsledek nebo výjimky se nakonec publikuje.  
+ Při volání asynchronní metody, je tělo funkce synchronně spustí, až do první await výraz v očekávatelný instanci, která zatím není dokončený, v tomto okamžiku volání vrátí řízení volajícímu. Pokud asynchronní metoda nevrací `void`, <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> je vrácen objekt představující probíhající výpočtu. V asynchronní metodě není void, pokud se zjistila návratový příkaz nebo je dosaženo konce tělo metody, dokončení úlohy v <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> koncový stav. Pokud k neošetřené výjimce způsobí, že ovládací prvek opustit tělo asynchronní metody, skončí tento úkol ve <xref:System.Threading.Tasks.TaskStatus.Faulted> stavu. Pokud tuto výjimku <xref:System.OperationCanceledException>, místo toho skončí tento úkol ve <xref:System.Threading.Tasks.TaskStatus.Canceled> stavu. Tímto způsobem výsledek nebo výjimku nakonec publikování.  
   
- Existuje několik důležitých variant toto chování.  Z důvodů výkonu Pokud úloha již byla dokončena v čase je očekáváno úlohu, není poskytuje ovládací prvek a funkce bude pokračovat v provádění.  Kromě toho vrácením původní kontextu není vždy požadované chování a může být změněn; To je podrobně popsaná v další v další části.  
+ Existuje několik důležitých variant tohoto chování.  Z důvodů výkonu Pokud úloha již byla dokončena v čase je na úkol čekáno není poskytuje ovládací prvek a pokračuje v provádění funkce.  Kromě toho vrátí do původního kontextu není vždy požadované chování a je možné změnit; To je popsáno v následující části podrobněji.  
   
-### <a name="configuring-suspension-and-resumption-with-yield-and-configureawait"></a>Pozastavení a obnovení nakonfigurování Yield a ConfigureAwait  
- Existuje několik metod poskytuje větší kontrolu nad spuštění asynchronní metody. Například můžete použít <xref:System.Threading.Tasks.Task.Yield%2A?displayProperty=nameWithType> metoda zavést bod yield do asynchronní metody:  
+### <a name="configuring-suspension-and-resumption-with-yield-and-configureawait"></a>Konfigurace pozastavení a obnovení pomocí Yield a ConfigureAwait  
+ Několik metody poskytují větší kontrolu nad spouštěním asynchronní metody. Například můžete použít <xref:System.Threading.Tasks.Task.Yield%2A?displayProperty=nameWithType> metoda zavést bod yield do asynchronní metody:  
   
 ```csharp  
 public class Task : …  
@@ -43,7 +43,7 @@ public class Task : …
 }  
 ```  
   
- Jde o ekvivalent asynchronně publikování nebo plánování zpět do aktuálního kontextu.  
+ Jde o ekvivalent asynchronně účtování nebo plánování zpět do aktuálního kontextu.  
   
 ```csharp  
 Task.Run(async delegate  
@@ -56,16 +56,16 @@ Task.Run(async delegate
 });  
 ```  
   
- Můžete také <xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType> metodu pro lepší kontrolu nad pozastavení a obnovení v asynchronní metodu.  Jak je uvedeno nahoře, ve výchozím nastavení, je aktuální kontext zachycen v době, kdy je pozastaveno asynchronní metodu a že zaznamenané kontextu je použito k volání asynchronní metody pokračování po obnovení.  V mnoha případech je to přesné chování, které chcete.  V ostatních případech nemusí se zajímáte o pokračování kontextu a lepšího výkonu můžete dosáhnout vyhnout těchto příspěvcích zpět do původní kontextu.  Chcete-li povolit, použijte <xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType> metoda informovat await operaci není k zaznamenání a obnovení v kontextu, ale pro pokračování v provádění bez ohledu na dokončení asynchronní operaci, která se očekávaná:  
+ Můžete také použít <xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType> metodu pro lepší kontrolu nad pozastavení a pokračování v asynchronní metodě.  Jak už bylo zmíněno dříve, ve výchozím nastavení, je aktuální kontext zaznamenané v době, kterou metodu je pozastavený, a že zachyceném kontextu se používá k volání asynchronní metody pokračování po obnovení.  V mnoha případech jde přesnou chování, které chcete.  V jiných případech nemusí starat o kontext pokračování a můžou dosahovat lepšího výkonu zabráněním takových příspěvků zpět do původního kontextu.  Chcete-li povolit, použijte <xref:System.Threading.Tasks.Task.ConfigureAwait%2A?displayProperty=nameWithType> metoda informovat operace await zaznamenat a obnovit v kontextu, ale chcete-li pokračovat v provádění bez ohledu na to, který se očekávaná asynchronní operace dokončena:  
   
 ```csharp  
 await someTask.ConfigureAwait(continueOnCapturedContext:false);  
 ```  
   
 ## <a name="canceling-an-asynchronous-operation"></a>Zrušení asynchronní operace  
- Od verze [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], klepněte na metody, které podporují zrušení zadejte alespoň jeden přetížení, která přijímá token zrušení (<xref:System.Threading.CancellationToken> objekt).  
+ Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], metod TAP, které podporují zrušení poskytnout alespoň jedním přetížením, která přijímá token zrušení (<xref:System.Threading.CancellationToken> objekt).  
   
- Token zrušení je vytvořena prostřednictvím zdroj tokenu zrušení (<xref:System.Threading.CancellationTokenSource> objekt).  Zdrojovém <xref:System.Threading.CancellationTokenSource.Token%2A> vlastnost vrací token zrušení, který bude signál při zdroj <xref:System.Threading.CancellationTokenSource.Cancel%2A> metoda je volána.  Například pokud chcete stáhnout jedné webové stránky a chcete být schopni zrušte operaci, vytvoříte <xref:System.Threading.CancellationTokenSource> objektu, předat klepněte na metoda jeho token a pak zavolají zdroj <xref:System.Threading.CancellationTokenSource.Cancel%2A> metoda až budete připraveni na tlačítko Storno:  
+ Token zrušení je vytvořená prostřednictvím zdroj token zrušení (<xref:System.Threading.CancellationTokenSource> objekt).  Zdroje na <xref:System.Threading.CancellationTokenSource.Token%2A> vlastnost vrátí token zrušení, který bude signál při zdroje <xref:System.Threading.CancellationTokenSource.Cancel%2A> metoda je volána.  Pokud chcete stáhnout jediné webové stránky a chcete být schopni zrušit operaci, můžete vytvořit <xref:System.Threading.CancellationTokenSource> objektu, předejte svůj token metody TAP a následně zavolat zdroj <xref:System.Threading.CancellationTokenSource.Cancel%2A> metoda až budete připraveni na zrušení operace:  
   
 ```csharp  
 var cts = new CancellationTokenSource();  
@@ -74,7 +74,7 @@ string result = await DownloadStringAsync(url, cts.Token);
 cts.Cancel();  
 ```  
   
- Pokud chcete zrušit více asynchronní volání, můžete předat stejný token do všech volání:  
+ Pokud chcete zrušit více asynchronní vyvolání, můžete předat stejný token všechna volání:  
   
 ```csharp  
 var cts = new CancellationTokenSource();  
@@ -84,7 +84,7 @@ var cts = new CancellationTokenSource();
     cts.Cancel();  
 ```  
   
- Nebo můžete předat stejný token do podmnožinu selektivní operací:  
+ Nebo můžete předat stejný token selektivní podmnožinu operace:  
   
 ```csharp  
 var cts = new CancellationTokenSource();  
@@ -94,22 +94,22 @@ var cts = new CancellationTokenSource();
     cts.Cancel();  
 ```  
   
- Zrušení žádosti může být zahájen z libovolného vlákna.  
+ Žádosti o zrušení, může být vyvoláno z libovolného vlákna.  
   
- Můžete předat <xref:System.Threading.CancellationToken.None%2A?displayProperty=nameWithType> hodnotu libovolné metody, která přijímá token zrušení pro znamenat, že bude nikdy vyžádána zrušení.  To způsobí, že <xref:System.Threading.CancellationToken.CanBeCanceled%2A?displayProperty=nameWithType> vlastnost vrátit `false`, a zavolat metodu můžete optimalizovat odpovídajícím způsobem.  Pro účely testování můžete předat také v předem zrušené zrušení token, který je vytvořena instance pomocí konstruktor, který přijímá logickou hodnotu označující, zda je token by se měl spustit ve stavu již zrušena nebo možné zrušit není.  
+ Můžete předat <xref:System.Threading.CancellationToken.None%2A?displayProperty=nameWithType> hodnotu na jakoukoli metodu, která přijímá token zrušení pro označení, že se nikdy být požadováno zrušení.  To způsobí, že <xref:System.Threading.CancellationToken.CanBeCanceled%2A?displayProperty=nameWithType> vlastnost vrátit `false`, a volané metody můžete optimalizovat odpovídajícím způsobem.  Pro účely testování můžete také předat token zrušení předem zrušené, jehož instance je vytvořena pomocí konstruktoru, který přijímá hodnotu typu Boolean označující, zda token, který by měl spustit ve stavu už zrušená nebo není zrušitelný.  
   
  Tento přístup k zrušení má několik výhod:  
   
--   Stejný token zrušení můžete předat libovolný počet synchronní a asynchronní operace.  
+-   Můžete předat stejný token zrušení do libovolného počtu synchronní a asynchronní operace.  
   
--   Stejné žádost o zrušení může být proliferated na libovolný počet naslouchací procesy.  
+-   Stejný požadavek na zrušení může proliferated do libovolného počtu naslouchacích procesů.  
   
--   Vývojář asynchronní rozhraní API je v úplnou kontrolu, zda mohou být vyžádány zrušení a kdy může trvat vliv.  
+-   Vývojář asynchronní rozhraní API je plně pod kontrolou, jestli může být požadováno zrušení a kdy ji může platit.  
   
--   Kód, který využívá rozhraní API může určit selektivně asynchronní volání, které požadavky zrušení se rozšíří do.  
+-   Kód, který využívá rozhraní API může určit selektivně asynchronní vyvolání, které požadavky zrušení se rozšíří do.  
   
 ## <a name="monitoring-progress"></a>Sledování průběhu  
- Některé asynchronní metody vystavit probíhá přes rozhraní průběh předané do asynchronní metody.  Zvažte například, že funkci, která asynchronně stáhne řetězec textu a cestou se vyvolá průběh aktualizace, které zahrnují procento ke stažení, které doposud dokončeno.  Tato metoda by mohly spotřebovat v aplikaci Windows Presentation Foundation (WPF) následujícím způsobem:  
+ Některé asynchronní metody vystavit průběh prostřednictvím rozhraní postupu předané do asynchronní metody.  Představte si třeba, že funkce, která asynchronně stáhne řetězec textu a na cestě vyvolává průběh aktualizace, které zahrnují procentuální stažení, které doposud dokončeno.  Tato metoda může spotřebovat v aplikaci Windows Presentation Foundation (WPF) následujícím způsobem:  
   
 ```csharp  
 private async void btnDownload_Click(object sender, RoutedEventArgs e)    
@@ -125,11 +125,11 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
 ```  
   
 <a name="combinators"></a>   
-## <a name="using-the-built-in-task-based-combinators"></a>Pomocí předdefinovaných Combinators založený na úlohách  
- <xref:System.Threading.Tasks> Obor názvů obsahuje několik metod pro vytváření a práci s úlohami.  
+## <a name="using-the-built-in-task-based-combinators"></a>Pomocí předdefinovaných Combinators založené na úlohách  
+ <xref:System.Threading.Tasks> Obor názvů obsahuje několik metod pro vytváření a práci s úkoly.  
   
 ### <a name="taskrun"></a>Task.Run  
- <xref:System.Threading.Tasks.Task> Třída obsahuje několik <xref:System.Threading.Tasks.Task.Run%2A> metody, které vám umožní snadno snižování zátěže work jako <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> fond vláken, např.:  
+ <xref:System.Threading.Tasks.Task> Třída obsahuje několik <xref:System.Threading.Tasks.Task.Run%2A> metody, které vám umožní snadno snižování zátěže fungovat stejně jako <xref:System.Threading.Tasks.Task> nebo <xref:System.Threading.Tasks.Task%601> s fondem vláken, například:  
   
 ```csharp  
 public async void button1_Click(object sender, EventArgs e)  
@@ -142,7 +142,7 @@ public async void button1_Click(object sender, EventArgs e)
 }  
 ```  
   
- Některé z těchto <xref:System.Threading.Tasks.Task.Run%2A> metody, jako <xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> přetížení, existovat jako sdružená vlastnost <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metoda.  Jiné přetížení, jako například <xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType>, povolit použití await v rámci sníženou zátěží práce, například:  
+ Některé z těchto <xref:System.Threading.Tasks.Task.Run%2A> metody, například <xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> přetížení, existují jako zkratka pro <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metoda.  Druhé přetížení, jako například <xref:System.Threading.Tasks.Task.Run%28System.Func%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType>, povolit použití operátoru await sníženou zátěží díla, například:  
   
 ```csharp  
 public async void button1_Click(object sender, EventArgs e)  
@@ -156,10 +156,10 @@ public async void button1_Click(object sender, EventArgs e)
 }  
 ```  
   
- Takové přetížení jsou logicky ekvivalentní použití <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metoda ve spojení s <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> metoda rozšíření v knihovně Task Parallel Library.  
+ Takovými přetíženími jsou logicky ekvivalentní k použití <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metoda ve spojení s <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> rozšiřující metoda v knihovně Task Parallel Library.  
   
 ### <a name="taskfromresult"></a>Task.FromResult  
- Použití <xref:System.Threading.Tasks.Task.FromResult%2A> musí být vrácená metodou vracející úloh zrušeno do metoda ve scénářích, kde data mohou již být k dispozici, jenom <xref:System.Threading.Tasks.Task%601>:  
+ Použití <xref:System.Threading.Tasks.Task.FromResult%2A> metoda ve scénářích, kde data může už být k dispozici a jenom je potřeba vrátil z metody vracející úlohy do zrušeno <xref:System.Threading.Tasks.Task%601>:  
   
 ```csharp  
 public Task<int> GetValueAsync(string key)  
@@ -177,16 +177,16 @@ private async Task<int> GetValueAsyncInternal(string key)
 ```  
   
 ### <a name="taskwhenall"></a>Task.WhenAll  
- Použití <xref:System.Threading.Tasks.Task.WhenAll%2A> metoda asynchronně čekání na více asynchronních operací, které jsou reprezentovány jako úlohy.  Metoda má několik přetížení, která podporují sadu neobecnou úloh nebo neuniformní sadu obecné úlohy (například asynchronně čekání pro více operací void vrácení, nebo asynchronně čekání na více metod vrací hodnotu kde Každá hodnota může mít jiný typ) a k podpoře uniform sadu obecné úloh (například asynchronně čekání na více `TResult`-vrácení metody).  
+ Použití <xref:System.Threading.Tasks.Task.WhenAll%2A> metody asynchronně čekat na více asynchronních operací, které jsou reprezentovány ve formě úlohy.  Tato metoda má několik přetížení, které podporují sadu neobecnou úloh nebo nerovnoměrné sady úloh obecný (například asynchronně čeká na více operací vracející hodnotu void, nebo asynchronně čeká na několik metod vrací hodnotu kde Každá hodnota může mít jiný typ) a podporovat jednotné sadu obecných úloh (jako je například asynchronně čeká na více `TResult`-metody vracející).  
   
- Řekněme, že chcete poslat e-mailové zprávy několik zákazníků. Můžete se překrývají, odesílání zpráv, takže nejsou čeká jednu zprávu dokončit před odesláním Další. Můžete taky zjistit když byly dokončeny operace odesílání a jestli nedošlo k chybám:  
+ Řekněme, že chcete odeslat e-mailové zprávy pro několik zákazníků. Můžete se může překrývat odesílání zprávy, proto nejsou čekání dokončit před odesláním dalších zpráv. Můžete také získat informace při dokončení operace odesílání a určuje, zda nedošlo k chybám:  
   
 ```csharp  
 IEnumerable<Task> asyncOps = from addr in addrs select SendMailAsync(addr);  
 await Task.WhenAll(asyncOps);  
 ```  
   
- Tento kód není explicitně zpracování výjimek, které může dojít, ale umožní šířit z výjimky `await` na výsledný úlohy ze <xref:System.Threading.Tasks.Task.WhenAll%2A>.  Pro zpracování výjimky, můžete použít například následující kód:  
+ Tento kód nezpracuje explicitně výjimky, které může dojít, ale umožní výjimky nešířily z celkového počtu `await` na výsledný úkol z <xref:System.Threading.Tasks.Task.WhenAll%2A>.  Zpracování výjimek, můžete použít například následující kód:  
   
 ```csharp  
 IEnumerable<Task> asyncOps = from addr in addrs select SendMailAsync(addr);  
@@ -200,7 +200,7 @@ catch(Exception exc)
 }  
 ```  
   
- V takovém případě pokud všechny asynchronní operace selže, všechny výjimky se mají konsolidovat v <xref:System.AggregateException> výjimka, která je uložena v <xref:System.Threading.Tasks.Task> , je vrácena z <xref:System.Threading.Tasks.Task.WhenAll%2A> metoda.  Ale pouze jeden z těchto výjimek rozšířit pomocí `await` – klíčové slovo.  Pokud chcete prozkoumejte všechny výjimky, je možné přepsat předchozí kód následujícím způsobem:  
+ V takovém případě pokud libovolné asynchronní operace selže, všechny výjimky začlení do <xref:System.AggregateException> výjimku, která je uložena v <xref:System.Threading.Tasks.Task> , který je vrácen z <xref:System.Threading.Tasks.Task.WhenAll%2A> – metoda.  Ale pouze jeden z těchto výjimek distribuovány `await` – klíčové slovo.  Pokud chcete prozkoumat všechny výjimky, můžete předchozí kód přepsat následujícím způsobem:  
   
 ```csharp  
 Task [] asyncOps = (from addr in addrs select SendMailAsync(addr)).ToArray();  
@@ -217,14 +217,14 @@ catch(Exception exc)
 }  
 ```  
   
- Zvažte příklad asynchronně stahování více souborů z webu.  V takovém případě všechny asynchronní operace mají typy homogenní výsledků a je snadno dostupné výsledky:  
+ Zvažte následující příklad asynchronní stahování více souborů z webu.  V tomto případě mají typy homogenní výsledků asynchronních operací a snadno přistupovat k výsledkům:  
   
 ```csharp  
 string [] pages = await Task.WhenAll(  
     from url in urls select DownloadStringAsync(url));  
 ```  
   
- Můžete použít stejné techniky zpracování výjimek, kterou jsme probírali v předchozím scénáři vrácení void:  
+ Můžete použít stejné techniky zpracování výjimek, které jsme probrali v předchozím scénáři vracející typ void:  
   
 ```csharp  
 Task [] asyncOps =   
@@ -244,18 +244,18 @@ catch(Exception exc)
 ```  
   
 ### <a name="taskwhenany"></a>Task.WhenAny  
- Můžete použít <xref:System.Threading.Tasks.Task.WhenAny%2A> metoda asynchronně čekání pouze jedním z několika asynchronních operací vyjádřené úlohy k dokončení.  Tato metoda slouží čtyři primární použití případech:  
+ Můžete použít <xref:System.Threading.Tasks.Task.WhenAny%2A> metody asynchronně čekat pouze jedna z více asynchronních operací reprezentovaná jako úkoly k dokončení.  Tato metoda má čtyři hlavní případy použití:  
   
--   Redundance: Provádění operace několikrát a vyberte ten, který dokončí první (například kontaktování více akcií webové služby, které vytvoří jeden výsledek a vyberte ten, který dokončí nejrychlejší).  
+-   Redundance: Provádění operace více než jednou a vyberte ten, který dokončí první (například kontaktování více akcií webové služby, které vytvoří jeden výsledek a vybere, která se dokončí nejrychlejší z nich).  
   
--   Prokládání: Spouštění více operací čekajících na jejich dokončení, ale jejich zpracování po dokončení.  
+-   Prokládání: Spuštění více operací a čeká na všechny z nich k dokončení, ale jejich zpracování po dokončení.  
   
 -   Omezení šířky pásma: Povolení zahájíte ostatní dokončení dalších operací.  Toto je rozšíření interleaving scénáře.  
   
--   Časná bailout: například operace reprezentována t1 úloh mohou být seskupeny do <xref:System.Threading.Tasks.Task.WhenAny%2A> úlohy s jinou t2 úloh a může čekat <xref:System.Threading.Tasks.Task.WhenAny%2A> úloh. Úloha t2 by mohl představovat vypršení časového limitu nebo zrušení nebo jiných signál, který způsobuje, že <xref:System.Threading.Tasks.Task.WhenAny%2A> na dokončení před dokončením t1 úlohy.  
+-   Časná bailout: například operace reprezentována t1 úlohy mohou být seskupeny do <xref:System.Threading.Tasks.Task.WhenAny%2A> úloha s jinou t2 úloh a může čekat <xref:System.Threading.Tasks.Task.WhenAny%2A> úloh. Úloha t2 by mohly představovat vypršení časového limitu nebo zrušení nebo některé jiné signál, který způsobí, že <xref:System.Threading.Tasks.Task.WhenAny%2A> úlohy dokončení před dokončením t1.  
   
 #### <a name="redundancy"></a>Redundance  
- Představte si případ, kam chcete učinit rozhodnutí o tom, jestli koupit populace.  Existuje několik webových služeb uložených doporučení, kterým důvěřujete, avšak v závislosti na denní zatížení, můžou skončit se pomalé v různou dobu jednotlivých služeb.  Můžete použít <xref:System.Threading.Tasks.Task.WhenAny%2A> metoda pro příjem oznámení po dokončení všechny operace:  
+ Představte si případ, ve které chcete rozhodnutí o tom, jestli si chcete koupit stejných akcií.  Existuje několik doporučení základní webové služby, kterým důvěřujete, ale v závislosti na denní zatížení, každá služba skončit se pomalé v různých časech.  Můžete použít <xref:System.Threading.Tasks.Task.WhenAny%2A> metodu pro příjem oznámení po dokončení všechny operace:  
   
 ```csharp  
 var recommendations = new List<Task<bool>>()   
@@ -268,9 +268,9 @@ Task<bool> recommendation = await Task.WhenAny(recommendations);
 if (await recommendation) BuyStock(symbol);  
 ```  
   
- Na rozdíl od <xref:System.Threading.Tasks.Task.WhenAll%2A>, která vrací všechny úkoly, které úspěšně dokončit, rozbalenou výsledky <xref:System.Threading.Tasks.Task.WhenAny%2A> vrátí úlohu, která byla dokončena. Pokud se úloha nezdaří, je důležité vědět, že se nezdařilo, a pokud úloha úspěšná, je důležité vědět, jaké úlohu vrácená hodnota je přidružen.  Proto musíte získat přístup výsledek vrácený úlohy, nebo další await, jak ukazuje tento příklad.  
+ Na rozdíl od <xref:System.Threading.Tasks.Task.WhenAll%2A>, která vrací rozbalení výsledcích všechny úlohy, které se nedokončil úspěšně, <xref:System.Threading.Tasks.Task.WhenAny%2A> vrátí úkol, který byl dokončen. Pokud se úkol nezdaří, je důležité vědět, že se nepovedlo, a pokud úkol proběhne úspěšně, je důležité vědět, který úkol vrácená hodnota je přidružena.  Proto potřebujete přístup k výsledku vrácené úlohy nebo další await, jak ukazuje tento příklad.  
   
- Stejně jako u <xref:System.Threading.Tasks.Task.WhenAll%2A>, budete muset být schopni nastavit výjimky.  Vzhledem k tomu, že se zobrazí zpět dokončené úlohy, můžete await vrácený úlohy chyby rozšíří, a `try/catch` je správně; například:  
+ Stejně jako u <xref:System.Threading.Tasks.Task.WhenAll%2A>, budete muset být schopni nastavit výjimky.  Vzhledem k tomu, že se zobrazí dokončené úlohy, můžete očekávat Vrácená úloha šíří, chyby se a `try/catch` je odpovídajícím způsobem; například:  
   
 ```csharp  
 Task<bool> [] recommendations = …;  
@@ -289,7 +289,7 @@ while(recommendations.Count > 0)
 }  
 ```  
   
- Kromě toho i v případě, že první úloha skončí úspěšně, může selhat úlohy.  V tuto chvíli máte několik možností pro práci s výjimkami: můžete počkat, dokud všechny spuštěného úkoly dokončí, v takovém případě můžete použít <xref:System.Threading.Tasks.Task.WhenAll%2A> metoda, nebo můžete rozhodnout, že všechny výjimky jsou důležité a musí být zaprotokolovány.  V takovém případě můžete použít pokračování pro příjem oznámení po dokončení úlohy asynchronně:  
+ Kromě toho i v případě, že první úloha úspěšně dokončí, následné úlohy může selhat.  V tomto okamžiku máte několik možností pro nakládání s výjimkami: můžete počkat, dokud nebyly dokončeny všechny spuštěné úlohy, v takovém případě můžete použít <xref:System.Threading.Tasks.Task.WhenAll%2A> metodu, nebo můžete rozhodnout, že všechny výjimky jsou důležité a musíte být přihlášeni.  V takovém případě můžete použít pokračování pro příjem oznámení po dokončení asynchronní úlohy:  
   
 ```csharp  
 foreach(Task recommendation in recommendations)  
@@ -324,7 +324,7 @@ private static async void LogCompletionIfFailed(IEnumerable<Task> tasks)
 LogCompletionIfFailed(recommendations);  
 ```  
   
- Nakonec můžete zrušit všechny zbývající operace:  
+ Nakonec můžete chtít zrušení zbývajících operací:  
   
 ```csharp  
 var cts = new CancellationTokenSource();  
@@ -341,7 +341,7 @@ if (await recommendation) BuyStock(symbol);
 ```  
   
 #### <a name="interleaving"></a>Prokládání  
- Představte si případ, kdy jste z webu stažení bitové kopie a zpracování každé bitové kopie (například přidání bitovou kopii do ovládacího prvku uživatelského rozhraní).  Je nutné provést zpracování postupně ve vlákně UI, ale chcete stáhnout bitové kopie jako současně. Navíc nechcete pojmout až Přidání bitové kopie do uživatelského rozhraní, dokud se všechny stáhnou – chcete přidat, je po dokončení:  
+ Představte si případ, ve kterém jste stahování imagí z webu a zpracování každé bitové kopie (například přidání image do ovládacího prvku uživatelského rozhraní).  Je nutné provést zpracování postupně ve vlákně uživatelského rozhraní, ale chcete stáhnout Image jako současně. Navíc není nutné zdržet přidávání obrázků na uživatelské rozhraní, dokud se všechny stáhnou, které chcete přidat, je po dokončení:  
   
 ```csharp  
 List<Task<Bitmap>> imageTasks =   
@@ -360,7 +360,7 @@ while(imageTasks.Count > 0)
 }  
 ```  
   
- Můžete taky použít prokládání pro scénář, který zahrnuje výpočetně intenzivní zpracování na <xref:System.Threading.ThreadPool> stažené bitových kopií; například:  
+ Můžete také použít prokládání scénář, který zahrnuje výpočetně náročné na zpracování na <xref:System.Threading.ThreadPool> stažený imagí, třeba:  
   
 ```csharp  
 List<Task<Bitmap>> imageTasks =   
@@ -381,7 +381,7 @@ while(imageTasks.Count > 0)
 ```  
   
 #### <a name="throttling"></a>Omezování  
- Podívejte se na příklad interleaving, s tím rozdílem, že uživatel stahuje mnoho bitové kopie, stahování jsou potřeba k omezeny; například, že chcete pouze konkrétní počet souborů ke stažení provést současně. Jak toho docílit, můžete začít podmnožinu asynchronní operace.  Dokončení operace, můžete spustit další operace jejich proběhla:  
+ Podívejte se na příklad interleaving s tím rozdílem, že uživatel stahuje tolik obrázky, soubory ke stažení jsou potřeba k omezení; například chcete jenom určitý počet stažení probíhají souběžně. Za tím účelem můžete spustit podmnožinu asynchronních operací.  Dokončení operace, můžete spustit další operace k provedení jejich:  
   
 ```csharp  
 const int CONCURRENCY_LEVEL = 15;  
@@ -415,7 +415,7 @@ while(imageTasks.Count > 0)
 ```  
   
 #### <a name="early-bailout"></a>Časná Bailout  
- Zvažte, že čekáte asynchronně na dokončení při současně reakci na žádost uživatele zrušení operace (například uživatel kliknutí na tlačítko Storno). Následující kód ukazuje tento scénář:  
+ Vezměte v úvahu, že čekáte asynchronní operaci dokončit během současně reakce na žádosti o zrušení uživatele (například uživatel klikl na tlačítko Storno). Následující kód ukazuje tento scénář:  
   
 ```csharp  
 private CancellationTokenSource m_cts;   
@@ -453,7 +453,7 @@ private static async Task UntilCompletionOrCancellation(
 }  
 ```  
   
- Tato implementace znovu povolí uživatelské rozhraní, při nichž rozhodnete, ale není zrušte základní asynchronní operace.  Další alternativou by zrušit čekající operace, pokud se rozhodnete nichž, ale není znovu vytvořit uživatelské rozhraní až ve skutečnosti dokončení potenciálně kvůli ukončuje již v rané fázi kvůli žádost o zrušení operace:  
+ Tato implementace znovu povolí uživatelského rozhraní, co nejdříve, rozhodněte, do nichž navýšení kapacity, ale nezruší základní asynchronních operací.  Jinou alternativou by také bylo zrušení čekající operace při rozhodování, na nichž navýšení kapacity, ale ne znovu vytvořit uživatelské rozhraní až dokončíte, potenciálně z důvodu ukončení již v rané fázi kvůli žádost o zrušení operace:  
   
 ```csharp  
 private CancellationTokenSource m_cts;  
@@ -475,14 +475,14 @@ public async void btnRun_Click(object sender, EventArgs e)
 }  
 ```  
   
- Další příklad časná bailout zahrnuje použití <xref:System.Threading.Tasks.Task.WhenAny%2A> metoda ve spojení s <xref:System.Threading.Tasks.Task.Delay%2A> metoda, jak je popsáno v následující části.  
+ Další příklad předčasné bailout zahrnuje použití <xref:System.Threading.Tasks.Task.WhenAny%2A> metoda ve spojení s <xref:System.Threading.Tasks.Task.Delay%2A> způsob, jak je popsáno v další části.  
   
 ### <a name="taskdelay"></a>Task.Delay  
- Můžete použít <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> metoda zavádět pozastaví do asynchronní metody spouštění.  To je užitečné pro různé druhy funkce, včetně vytváření dotazování smyčky a zpozdit zpracování vstupu uživatele předem určenou dobu.  <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> Metoda také může být užitečná v kombinaci s <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> pro implementace vypršení časových limitů na čeká.  
+ Můžete použít <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> metoda zavést pozastaví do spuštění asynchronní metody.  To je užitečné pro různé druhy funkce, včetně vytváření smyčky cyklického dotazování a zpracování vstupu uživatele na předem určenou dobu zpoždění.  <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> Metoda může být také užitečné v kombinaci s <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> pro implementace vypršení časových limitů pro čeká.  
   
- Pokud úloha, která je součástí větší asynchronní operace (například webové služby ASP.NET) trvá příliš dlouho dokončení, může celkové operace sníží, obzvláště pokud se nepodaří někdy dokončit.  Z tohoto důvodu je důležité, abyste mohli vypršení časového limitu při čekání na asynchronní operace.  Synchronní <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.Task.WaitAny%2A?displayProperty=nameWithType> metody přijímají hodnoty časového limitu, ale odpovídající <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> a výše uvedených <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>metody nepodporují.  Místo toho můžete použít <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> v kombinaci implementovat vypršení časového limitu.  
+ Pokud úloha, která je součástí větší asynchronní operace (například webovou službu ASP.NET) trvá moc dlouho, může celkovou operaci dochází, zejména v případě, že ji nebude možné nikdy dokončení.  Z tohoto důvodu je důležité mít možnost vypršení časového limitu při čekání na asynchronní operaci.  Synchronní <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Task.WaitAll%2A?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.Task.WaitAny%2A?displayProperty=nameWithType> metody přijímají hodnot časového limitu, ale odpovídající <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> a výše uvedených <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> / <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>metody tomu tak není.  Místo toho můžete použít <xref:System.Threading.Tasks.Task.Delay%2A?displayProperty=nameWithType> a <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> společně k implementaci vypršení časového limitu.  
   
- Například v aplikaci uživatelského rozhraní Řekněme, že chcete stáhnout bitovou kopii a zakázat uživatelské rozhraní během stahuje bitovou kopii. Ale pokud stahování trvá příliš dlouho, chcete znovu zapnout uživatelského rozhraní a zrušení stahování:  
+ Například v uživatelském rozhraní aplikace, Řekněme, že chcete stáhnout bitovou kopii a zakázat uživatelské rozhraní během stahování image. Nicméně pokud stahování trvá příliš dlouho, chcete znovu povolit uživatelské rozhraní a zrušit stahování:  
   
 ```csharp  
 public async void btnDownload_Click(object sender, EventArgs e)  
@@ -534,11 +534,11 @@ public async void btnDownload_Click(object sender, RoutedEventArgs e)
 }  
 ```  
   
-## <a name="building-task-based-combinators"></a>Vytváření Combinators založený na úlohách  
- Protože úloha je schopen úplně představují asynchronní operaci a zadejte možnosti synchronní a asynchronní pro připojení v operaci, načítání jeho výsledky a tak dále, můžete vytvořit užitečné knihovny combinators, které tvoří úloh sestavení větší vzory.  Jak je popsáno v předchozí části, rozhraní .NET Framework zahrnuje několik předdefinovaných combinators, ale můžete také vytvořit vlastní. Následující části obsahují několik příkladů, potenciální kombinátorem metody a typy.  
+## <a name="building-task-based-combinators"></a>Vytváření Combinators založené na úlohách  
+ Protože úloha je zcela představuje asynchronní operaci a zadejte synchronní a asynchronní funkce pro propojení s operací, načítání jeho výsledky a tak dále, můžete vytvářet užitečné knihovny combinators, které tvoří úkoly Vytvářejte větší vzory.  Jak je popsáno v předchozí části, rozhraní .NET Framework obsahuje několik předdefinovaných combinators, ale můžete také vytvořit vlastní. Následující části obsahují několik příkladů potenciální Startup v rámci combinatoru metody a typy.  
   
 ### <a name="retryonfault"></a>RetryOnFault  
- V mnoha situacích můžete opakovat operace, pokud se předchozí pokus selže.  Pro synchronní kód, může sestavování Pomocná metoda, jako `RetryOnFault` v následujícím příkladu se:  
+ V mnoha případech můžete chtít opakovat operace, pokud se předchozí pokus nezdaří.  Pro synchronní kód může vytvářet Pomocná metoda, jako `RetryOnFault` v následujícím příkladu, jak toho dosáhnout:  
   
 ```csharp  
 public static T RetryOnFault<T>(  
@@ -553,7 +553,7 @@ public static T RetryOnFault<T>(
 }  
 ```  
   
- Můžete vytvořit téměř identický pomocnou metodu pro asynchronní operace, které jsou implementovány pomocí klepněte na a proto vrátí úlohy:  
+ Můžete vytvořit metodu téměř identické pomocné rutiny pro asynchronní operace, které jsou implementovány klepnutím a proto vrací úlohy:  
   
 ```csharp  
 public static async Task<T> RetryOnFault<T>(  
@@ -568,7 +568,7 @@ public static async Task<T> RetryOnFault<T>(
 }  
 ```  
   
- Pak můžete toto kombinátorem ke kódování opakování do aplikace logiky; například:  
+ Potom můžete tento Startup v rámci combinatoru má kódovat do vaší aplikace logiky; opakovaných pokusů Příklad:  
   
 ```csharp  
 // Download the URL, trying up to three times in case of failure  
@@ -576,7 +576,7 @@ string pageContents = await RetryOnFault(
     () => DownloadStringAsync(url), 3);  
 ```  
   
- Můžete rozšířit `RetryOnFault` další funkce. Například funkce může přijímat jiné `Func<Task>` , který bude vyvolán mezi opakovanými pokusy k určení, kdy k akci znovu; například:  
+ Můžete rozšířit `RetryOnFault` dále fungovat. Například funkce by mohl přijmout jiný `Func<Task>` , který bude vyvolán mezi opakovanými pokusy o určení toho, kdy to zkuste znovu; například:  
   
 ```csharp  
 public static async Task<T> RetryOnFault<T>(  
@@ -592,7 +592,7 @@ public static async Task<T> RetryOnFault<T>(
 }  
 ```  
   
- Můžete potom použít funkci takto čekat před opakováním operace druhý:  
+ Můžete pak použít funkci následujícím způsobem čekat před opakováním operace sekundy:  
   
 ```csharp  
 // Download the URL, trying up to three times in case of failure,  
@@ -602,7 +602,7 @@ string pageContents = await RetryOnFault(
 ```  
   
 ### <a name="needonlyone"></a>NeedOnlyOne  
- V některých případech můžete využít výhod redundance, aby zlepšit latenci a pravděpodobnost úspěchu operaci.  Vezměte v úvahu více webových služeb, které poskytují akcií, ale v různých časech dne, může každá služba poskytovat různé úrovně kvality a časy odezvy.  K řešení těchto kolísání, můžete vydat požadavky pro všechny webové služby a také získat odpověď z některého, zrušit zbývající žádosti.  Můžete implementovat pomocné funkce, aby bylo snazší implementovat tento běžný vzor spouštění více operací, čekání na všechny a pak zrušení zbytek. `NeedOnlyOne` Tento scénář ukazuje funkce v následujícím příkladu:  
+ V některých případech můžete využít redundance zvýšit pravděpodobnost úspěchu a latence operace.  Vezměte v úvahu několik webových služeb, které poskytují akcií, ale v různých časech dne, každá služba může poskytovat různé úrovně kvality a doby odezvy.  Výkyvy řešit, můžete vydávání požadavků na webové služby a co nejdříve získat odpověď z jednoho, zrušení zbývajících požadavků.  Pomocná funkce, aby bylo snazší implementace tohoto společného modelu spuštění více operací, čeká na všechny a pak zrušení zbývajících můžete implementovat. `NeedOnlyOne` Tento scénář znázorňuje funkce v následujícím příkladu:  
   
 ```csharp  
 public static async Task<T> NeedOnlyOne(  
@@ -631,8 +631,8 @@ double currentPrice = await NeedOnlyOne(
     ct => GetCurrentPriceFromServer3Async("msft", ct));  
 ```  
   
-### <a name="interleaved-operations"></a>Prokládaná operace  
- Došlo k potížím potenciální výkon pomocí <xref:System.Threading.Tasks.Task.WhenAny%2A> metoda pro podporu interleaving scénář, když pracujete s velmi velkých sad úloh.  Každé volání <xref:System.Threading.Tasks.Task.WhenAny%2A> výsledkem pokračování registrované s každý úkol. Pro N počet úloh výsledkem O(N2) pokračování vytvořit během životního cyklu interleaving operace.  Pokud pracujete s velké sadu úloh, můžete použít kombinátorem (`Interleaved` v následujícím příkladu) Chcete-li vyřešit problémy s výkonem:  
+### <a name="interleaved-operations"></a>Prokládané operace  
+ Není možný problém s výkonem s použitím <xref:System.Threading.Tasks.Task.WhenAny%2A> metody pro podporu interleaving scénáře, když pracujete s velmi velké sady úloh.  Všechna volání <xref:System.Threading.Tasks.Task.WhenAny%2A> výsledkem byla registrovaná u každého úkolu pokračování. N počet úloh v důsledku O(N2) pokračování vytvořené během životního cyklu interleaving operace.  Pokud pracujete s rozsáhlou sadou úkolů, můžete použít kombinátorem (`Interleaved` v následujícím příkladu) Chcete-li vyřešit tyto problémy s výkonem:  
   
 ```csharp  
 static IEnumerable<Task<T>> Interleaved<T>(IEnumerable<Task<T>> tasks)  
@@ -661,7 +661,7 @@ static IEnumerable<Task<T>> Interleaved<T>(IEnumerable<Task<T>> tasks)
 }  
 ```  
   
- Potom můžete kombinátorem zpracování výsledků úloh po dokončení; například:  
+ Startup v rámci combinatoru pak můžete použít ke zpracování výsledků úloh po dokončení; Příklad:  
   
 ```csharp  
 IEnumerable<Task<int>> tasks = ...;  
@@ -673,7 +673,7 @@ foreach(var task in Interleaved(tasks))
 ```  
   
 ### <a name="whenallorfirstexception"></a>WhenAllOrFirstException  
- V některých scénářích bodového nebo shromáždění můžete počkat, všechny úlohy v sadě, pokud jeden z nich chyb, v takovém případě chcete zastavit, čekání, jakmile dojde k výjimka.  Můžete provést, pomocí metody kombinátorem například `WhenAllOrFirstException` v následujícím příkladu:  
+ V některých scénářích bodový/shromažďování může být vhodné čekat pro všechny úkoly v sadě, pokud jeden z těchto chyb, v takovém případě chcete ukončit čekání, jakmile dojde k výjimce.  Můžete provést, která pomocí metody Startup v rámci combinatoru například `WhenAllOrFirstException` v následujícím příkladu:  
   
 ```csharp  
 public static Task<T[]> WhenAllOrFirstException<T>(IEnumerable<Task<T>> tasks)  
@@ -695,11 +695,11 @@ public static Task<T[]> WhenAllOrFirstException<T>(IEnumerable<Task<T>> tasks)
 }  
 ```  
   
-## <a name="building-task-based-data-structures"></a>Vytváření založený na úlohách datové struktury  
- Kromě možnost vytváření vlastních combinators založený na úlohách, že datová struktura v <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> výsledky asynchronní operace, která představuje a potřeby synchronizace k připojení k němu umožňuje velmi efektivní Zadejte, na které se mají vytvářet vlastní datové struktury pro použití v asynchronní scénáře.  
+## <a name="building-task-based-data-structures"></a>Vytváření založené na úlohách datové struktury  
+ Kromě možnosti vytvářet combinators vlastních založené na úlohách, že máte datové struktury v <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> , která představuje výsledky asynchronní operace a nezbytné synchronizace k připojení s ním umožňuje velmi efektivní Zadejte, na kterém můžete vytvořit vlastní datové struktury pro použití v asynchronní scénáře.  
   
 ### <a name="asynccache"></a>AsyncCache  
- Jednou z důležitým aspektem úlohy je, že ho může možné předat službě více příjemcům, které může await ho zaregistrovat pokračování s ním, získat jeho výsledek nebo výjimky (u <xref:System.Threading.Tasks.Task%601>), a tak dále.  Díky tomu <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> perfektně vhodná pro použití v infrastruktuře asynchronní ukládání do mezipaměti.  Tady je příklad malá, ale výkonné asynchronní mezipaměť postavený na <xref:System.Threading.Tasks.Task%601>:  
+ Jeden důležitý aspekt jazyka úkolu je, že může být předat pro několik příjemců, které může await jeho pokračování registr s ním, získat její výsledek nebo výjimky (v případě třídy <xref:System.Threading.Tasks.Task%601>), a tak dále.  Díky tomu <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> dokonale hodí pro použití v asynchronním infrastrukturu ukládání do mezipaměti.  Tady je příklad malé, ale výkonné asynchronní mezipaměť postavený na <xref:System.Threading.Tasks.Task%601>:  
   
 ```csharp  
 public class AsyncCache<TKey, TValue>  
@@ -726,7 +726,7 @@ public class AsyncCache<TKey, TValue>
 }  
 ```  
   
- [AsyncCache\<TKey, TValue >](https://blogs.msdn.microsoft.com/pfxteam/2010/04/23/parallelextensionsextras-tour-12-asynccache/) třída přijímá jako delegáta jeho konstruktoru funkce, která přebírá `TKey` a vrátí <xref:System.Threading.Tasks.Task%601>.  Veškeré dříve používaná hodnoty z mezipaměti jsou uloženy ve slovníku interní a `AsyncCache` zajistí, aby pouze jeden úkol se vygeneruje pro klíč, i v případě, že mezipaměť přistupuje souběžně.  
+ [AsyncCache\<TKey, TValue >](https://blogs.msdn.microsoft.com/pfxteam/2010/04/23/parallelextensionsextras-tour-12-asynccache/) třídy přijímá jako konstruktoru delegáta funkce, která přijímá `TKey` a vrátí <xref:System.Threading.Tasks.Task%601>.  Všechny dříve využívaných hodnoty z mezipaměti jsou uloženy v interní slovník a `AsyncCache` zajišťuje, aby pouze jeden úkol, je vygenerována pro klíč, i v případě, že mezipaměť je k ní přistupovat zároveň.  
   
  Můžete například vytvořit mezipaměť pro stažené webové stránky:  
   
@@ -735,7 +735,7 @@ private AsyncCache<string,string> m_webPages =
     new AsyncCache<string,string>(DownloadStringAsync);  
 ```  
   
- Potom můžete tuto mezipaměť v asynchronních metod kdykoli budete potřebovat obsah na webové stránce. `AsyncCache` Třída zajistí, že při stahování co nejméně stránky jako možné a mezipaměti výsledky.  
+ Potom můžete tuto mezipaměť v asynchronních metodách pokaždé, když je třeba obsah na webové stránce. `AsyncCache` Třídy zajistí, že při stahování co nejméně stránky jako možné a mezipamětí výsledky.  
   
 ```csharp  
 private async void btnDownload_Click(object sender, RoutedEventArgs e)   
@@ -750,9 +750,9 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
 ```  
   
 ### <a name="asyncproducerconsumercollection"></a>AsyncProducerConsumerCollection  
- Úlohy můžete použít také k vytvoření datové struktury pro spolupráci asynchronní aktivity.  Jedním ze vzorů classic paralelní návrhu zvažte: producent nebo příjemce.  V tomto vzoru producenti generování dat, která se využívá spotřebiteli a producenti a spotřebitelé může běží paralelně. Například příjemce zpracovává položky 1, který byl dříve vygenerovat podle výrobce, který je nyní generovala položku 2.  Pro vzoru producent nebo příjemce je vždy nutné některé datovou strukturu pro ukládání pracovních vytvořené producenti tak, aby uživatelé být upozorněni na nová data a najít, když je k dispozici.  
+ Úlohy můžete použít také k vytváření datových struktur pro koordinaci asynchronních aktivitách.  Vezměte v úvahu jednomu ze vzorů návrhu classic paralelní: producenta/konzumenta.  V tomto vzoru výrobci generují data, která je využívána spotřebitelů a producenti a spotřebitelé můžou běžet paralelně. Například příjemce zpracovává položka 1, který byl dříve vytvořen výrobce, který je teď vytváření položka 2.  Pro producenta/konzumenta najdete vzorek musíte vždy některé struktura dat pro uložení práce vytvořené výrobců tak, aby spotřebitelé být upozorněni na nová data a najít, když je k dispozici.  
   
- Zde je jednoduchá datová struktura postavená na úlohy, která umožňuje asynchronní metody, které má být použit jako producenti a spotřebitelé:  
+ Tady je jednoduchý datová struktura postavené na úlohy, která umožňuje asynchronní metody, které se použijí jako producenti a spotřebitelé:  
   
 ```csharp  
 public class AsyncProducerConsumerCollection<T>  
@@ -811,7 +811,7 @@ private static void Produce(int data)
 }  
 ```  
   
- <xref:System.Threading.Tasks.Dataflow> Obor názvů zahrnuje <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> typu, který můžete použít podobným způsobem, ale bez nutnosti vytvořit vlastní kolekce typ:  
+ <xref:System.Threading.Tasks.Dataflow> Obor názvů obsahuje <xref:System.Threading.Tasks.Dataflow.BufferBlock%601> typ, který můžete použít podobným způsobem, aniž by bylo potřeba vytvářet vlastní typ kolekce:  
   
 ```csharp  
 private static BufferBlock<int> m_data = …;  
@@ -832,9 +832,10 @@ private static void Produce(int data)
 ```  
   
 > [!NOTE]
->  <xref:System.Threading.Tasks.Dataflow> Je k dispozici v oboru názvů [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prostřednictvím **NuGet**. Instalace sestavení, který obsahuje <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projektu a vyhledejte online balíček Microsoft.Tpl.Dataflow.  
+>  <xref:System.Threading.Tasks.Dataflow> Je k dispozici v oboru názvů [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] prostřednictvím **NuGet**. Chcete-li nainstalovat sestavení, které obsahuje <xref:System.Threading.Tasks.Dataflow> obor názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z nabídky projekt a vyhledejte online balíček Microsoft.Tpl.Dataflow.  
   
-## <a name="see-also"></a>Viz také  
- [Asynchronní vzor založený na úlohách (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)  
- [Implementace asynchronního vzoru založeného na úlohách](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)  
- [Interoperabilita s jinými asynchronními vzory a typy](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)
+## <a name="see-also"></a>Viz také:
+
+- [Asynchronní vzor založený na úlohách (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)  
+- [Implementace asynchronního vzoru založeného na úlohách](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)  
+- [Interoperabilita s jinými asynchronními vzory a typy](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)

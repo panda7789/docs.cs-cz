@@ -5,11 +5,11 @@ ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 87f8f3cf296aeb30cd19c7579887ef94e0992ba7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541687"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44032143"
 ---
 # <a name="ltsecuritygt-element-of-ltws2007federationhttpbindinggt"></a>Element &lt;security&gt; – &lt;ws2007FederationHttpBinding&gt;
 Definuje nastavení zabezpečení [ \<ws2007FederationHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/ws2007federationhttpbinding.md) elementu.  

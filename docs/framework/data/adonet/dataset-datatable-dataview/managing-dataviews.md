@@ -1,23 +1,23 @@
 ---
-title: Správa DataView
+title: Správa zobrazení dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0b67fab5-1722-4d2b-bfc1-247a75f0f1ee
-ms.openlocfilehash: c292c9f7827e86d48f2006c05f6012ad95da1485
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 76cf9eb70094dfe8bb760490c42503e08f4b1649
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32757902"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43885091"
 ---
-# <a name="managing-dataviews"></a>Správa DataView
-Můžete použít <xref:System.Data.DataViewManager> ke správě nastavení zobrazení pro všechny tabulky v <xref:System.Data.DataView>. Pokud máte ovládací prvek, který chcete vytvořit vazbu k několika tabulkám, jako je například mřížka který naviguje relace, **DataViewManager** je ideální.  
+# <a name="managing-dataviews"></a>Správa zobrazení dat
+Můžete použít <xref:System.Data.DataViewManager> ke správě nastavení zobrazení pro všechny tabulky v <xref:System.Data.DataView>. Pokud máte ovládací prvek, který chcete vytvořit vazbu k několika tabulkám, jako je například mřížka, který naviguje relací, **objekt DataViewManager** je ideální.  
   
- **DataViewManager** obsahuje kolekci <xref:System.Data.DataViewSetting> objekty, které slouží k nastavení zobrazení tabulek v <xref:System.Data.DataSet>. <xref:System.Data.DataViewSettingCollection> Obsahuje jeden <xref:System.Data.DataViewSetting> objekt pro každou tabulku v **datovou sadu**. Můžete nastavit výchozí **ApplyDefaultSort**, **řazení**, **RowFilter**, a **Vlastnost RowStateFilter** vlastnosti odkazované tabulce podle pomocí jeho **DataViewSetting**. Můžete odkazovat **DataViewSetting** pro konkrétní tabulku podle názvu nebo odkaz na pořadovém místě nebo předáním odkaz na tento objekt určité tabulky. Dostanete kolekce **DataViewSetting** objekty v **DataViewManager** pomocí **DataViewSettings** vlastnost.  
+ **Objekt DataViewManager** obsahuje kolekci <xref:System.Data.DataViewSetting> objekty, které se používají k nastavení zobrazení tabulek v <xref:System.Data.DataSet>. <xref:System.Data.DataViewSettingCollection> Obsahuje jeden <xref:System.Data.DataViewSetting> objekt pro každou tabulku **datovou sadu**. Můžete nastavit jako výchozí **ApplyDefaultSort**, **řazení**, **RowFilter**, a **Vlastnost RowStateFilter** odkazované tabulky pomocí vlastnosti pomocí jeho **DataViewSetting**. Můžete odkazovat **DataViewSetting** pro konkrétní tabulku podle názvu nebo odkaz na pořadovém místě nebo předáním odkazu na tento objekt určité tabulky. Můžete přístup ke kolekci **DataViewSetting** objekty v **objekt DataViewManager** pomocí **DataViewSettings** vlastnost.  
   
- Následující kód například výplněmi **datovou sadu** s SQL serverem **Northwind** databázových tabulek **zákazníci**, **objednávky**a  **Podrobnosti objednávky**, vytvoří relace mezi tabulkami, používá **DataViewManager** nastavit výchozí **DataView** nastavení a vazby **DataGrid**  k **DataViewManager**. V příkladu nastaví výchozí **DataView** nastavení pro všechny tabulky v **datovou sadu** seřadit podle primární klíč tabulky (**ApplyDefaultSort**  =  **true**) a pak upravením pořadí řazení **zákazníci** tabulky seřadit podle **#companyname**.  
+ Následující příklad výplně kódu **datovou sadu** s SQL serverem **Northwind** databázových tabulek **zákazníkům**, **objednávky**a  **Podrobnosti objednávky**, vytváření relací mezi tabulkami, používá **objekt DataViewManager** nastavit výchozí **DataView** nastavení a vytvoří vazbu **ovládacího prvku DataGrid**  k **objekt DataViewManager**. Příklad nastaví výchozí **DataView** nastavení pro všechny tabulky v **datovou sadu** seřadit podle primárního klíče tabulky (**ApplyDefaultSort**  =  **true**) a pak změní pořadí řazení **zákazníkům** tabulku seřaďte **CompanyName**.  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection to Northwind.  
@@ -125,4 +125,4 @@ grid.SetDataBinding(viewManager, "Customers");
  <xref:System.Data.DataViewSetting>  
  <xref:System.Data.DataViewSettingCollection>  
  [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

@@ -11,68 +11,68 @@ helpviewer_keywords:
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dfdc3993f6658ce5dc50050ed062c2de9d4cec29
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1c012b10f43a45699605e2d87a5b4a814c7dae28
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579428"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43884754"
 ---
 # <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Postupy: vytvoření výčtu časových pásem přítomných na počítači
 
-Úspěšně spolupracuje s určeným časovým pásmem vyžaduje, aby informace o tomto časové pásmo k dispozici v systému. Operační systémy Windows XP a Windows Vista uložit tyto informace v registru. Ale sice velká celkový počet časových pásem, které existují v celém světě, registr obsahuje informace o pouze podmnožinu z nich. Kromě toho je registr je dynamické struktura, jejichž obsah se mohou změnit záměrné i náhodných. V důsledku toho aplikace nelze vždy předpokládat, že konkrétní časové pásmo je definovaný a k dispozici v systému. Prvním krokem pro mnoho aplikací, které používají aplikace informace o časovém pásmu je určit, zda jsou k dispozici v místním systému požadované časová pásma nebo uživateli přidělit seznam časových pásem ze které chcete vybrat. To vyžaduje, aby aplikace výčet časových pásem definovaných v lokálním systému.
+Úspěšně spolupracuje s určeným časovým pásmem vyžaduje systém k dispozici informace o tomto časovém pásmu. Operační systémy Windows XP a Windows Vista ukládání příslušných informací v registru. Však sice velký počet časových pásem, které existují po celém světě, registr obsahuje informace o jenom část z nich. Kromě toho samotného registru je dynamické strukturu, jejíž obsah se můžou rozhodnout vědomě a záměrně, náhodné změnit. V důsledku toho aplikace nemůže vždy předpokládat, že konkrétní časové pásmo je definované a dostupné v systému. Prvním krokem pro mnoho aplikací, které používají aplikace informace o časovém pásmu je určit, zda jsou k dispozici v místním systému vyžaduje časových pásem nebo poskytnout seznam časových pásem, ze kterého chcete vybrat uživatele. To vyžaduje, aby aplikace vytvoření výčtu časových pásem definovaných v lokálním systému.
 
 > [!NOTE]
-> Pokud aplikace spoléhá na přítomnost konkrétní časové pásmo, které nemusí být definován v lokálním systému, aplikace můžete zajistit jeho přítomnosti serializaci a deserializaci informace o časovém pásmu. Časové pásmo poté lze přidat do ovládacího prvku seznam tak, aby uživatel aplikace můžete ji vybrat. Podrobnosti najdete v tématu [postupy: ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [postupy: obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).
+> Pokud aplikace závisí na přítomnosti určitého časového pásma, které nemusí být definováno v lokálním systému, můžete aplikaci zajistit jeho přítomnost serializaci a deserializaci informace o časovém pásmu. Časové pásmo je potom možné přidat do ovládacího prvku seznam, tak, aby uživatel aplikace můžete vybrat. Podrobnosti najdete v tématu [postupy: ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [postupy: obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).
 
-### <a name="to-enumerate-the-time-zones-present-on-the-local-system"></a>Výčet časových pásem přítomných v lokálním systému
+### <a name="to-enumerate-the-time-zones-present-on-the-local-system"></a>K vytvoření výčtu časových pásem přítomných v místním systému
 
-1. Volání <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> metoda. Metoda vrátí obecnou <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> kolekce <xref:System.TimeZoneInfo> objekty. Položky v kolekci jsou seřazeny podle jejich <xref:System.TimeZoneInfo.DisplayName%2A> vlastnost. Příklad:
+1. Volání <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> metody. Metoda vrátí obecnou <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> kolekce <xref:System.TimeZoneInfo> objekty. Položky v kolekci jsou seřazeny podle jejich <xref:System.TimeZoneInfo.DisplayName%2A> vlastnost. Příklad:
 
    [!code-csharp[System.TimeZone2.Concepts#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#1)]
    [!code-vb[System.TimeZone2.Concepts#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#1)]
 
-2. Zobrazení výčtu jednotlivých <xref:System.TimeZoneInfo> objektů v kolekcích pomocí `foreach` smyčky (v jazyku C#) nebo `For Each`...`Next` smyčky (v jazyce Visual Basic) a proveďte všechny nezbytné zpracování pro každý objekt. Například následující kód vytvoří výčet <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> kolekce <xref:System.TimeZoneInfo> objektů vrácených v kroku 1 a vypíše zobrazovaný název každého časového pásma v konzole.
+2. Zobrazení výčtu jednotlivých <xref:System.TimeZoneInfo> objekty v kolekci pomocí `foreach` smyčky (v jazyce C#) nebo `For Each`...`Next` smyčky (v jazyce Visual Basic) a proveďte všechny nezbytné zpracování pro každý objekt. Například následující kód vytvoří výčet <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> kolekce <xref:System.TimeZoneInfo> objektů vrácených v kroku 1 a obsahuje zobrazovaný název jednotlivých časových pásmech na konzole.
 
    [!code-csharp[System.TimeZone2.Concepts#12](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#12)]
    [!code-vb[System.TimeZone2.Concepts#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#12)]
 
-### <a name="to-present-the-user-with-a-list-of-time-zones-present-on-the-local-system"></a>Možnost prezentovat seznam časových pásem v místním systému
+### <a name="to-present-the-user-with-a-list-of-time-zones-present-on-the-local-system"></a>Chcete-li uživateli zprostředkovali seznam časových pásem přítomných v místním systému
 
-1. Volání <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> metoda. Metoda vrátí obecnou <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> kolekce <xref:System.TimeZoneInfo> objekty.
+1. Volání <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> metody. Metoda vrátí obecnou <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> kolekce <xref:System.TimeZoneInfo> objekty.
 
-2. Přiřadit kolekci vrácenou v kroku 1 `DataSource` vlastností ovládacího prvku Windows forms nebo v technologii ASP.NET ovládací prvek seznamu.
+2. Přiřadit kolekci vrácené v kroku 1, a `DataSource` vlastnost systému Windows forms nebo technologii ASP.NET ovládací prvek seznamu.
 
-3. Načtení <xref:System.TimeZoneInfo> objekt, který uživatel vybral.
+3. Načíst <xref:System.TimeZoneInfo> objekt, který uživatel vybral.
 
-Příklad uvádí ukázku pro aplikaci systému Windows.
+V příkladu je uvedena ukázka pro aplikace Windows.
 
 ## <a name="example"></a>Příklad
 
-V příkladu se spustí aplikace systému Windows, která zobrazuje časových pásem definovaných v systému v seznamu. V příkladu se pak zobrazí dialogové okno, které obsahuje hodnotu <xref:System.TimeZoneInfo.DisplayName%2A> vlastnost objektu časové pásmo vybraný uživatelem.
+V příkladu spustí aplikaci Windows, která zobrazuje časových pásem definovaných v rámci systému v seznamu. Následně příklad zobrazí dialogové okno, které obsahuje hodnotu <xref:System.TimeZoneInfo.DisplayName%2A> vlastnost v objektu časové pásmo vybraný uživatelem.
 
 [!code-csharp[System.TimeZone2.Concepts#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#2)]
 [!code-vb[System.TimeZone2.Concepts#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#2)]
 
-Nejvíce seznamu ovládacích prvků (, jako <xref:System.Windows.Forms.ListBox?displayProperty=nameWithType> nebo <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType> ovládací prvek) umožňují přiřadit kolekci objektové proměnné, jejich `DataSource` vlastnost, pokud implementuje tuto kolekci <xref:System.Collections.IEnumerable> rozhraní. (Obecná <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> třída tomu.) K zobrazení jednotlivých objektů v kolekci, ovládací prvek volá tento objekt `ToString` metoda extrahování řetězec, který se používá k reprezentaci objektu. U <xref:System.TimeZoneInfo> objekty, `ToString` metoda vrátí <xref:System.TimeZoneInfo> zobrazovaný název objektu (hodnota jeho <xref:System.TimeZoneInfo.DisplayName%2A> vlastnost).
+Nejvíce seznamu ovládacích prvků (například <xref:System.Windows.Forms.ListBox?displayProperty=nameWithType> nebo <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType> ovládací prvek) umožňují přiřadit kolekci objektových proměnných na jejich `DataSource` , dokud tuto kolekci implementuje vlastnost <xref:System.Collections.IEnumerable> rozhraní. (Obecné <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> třída.) Ovládací prvek pro zobrazení jednotlivých objektů v kolekci, volá tento objekt `ToString` metoda extrahování řetězec, který se používá k reprezentaci objektu. V případě třídy <xref:System.TimeZoneInfo> objekty, `ToString` vrátí metoda <xref:System.TimeZoneInfo> zobrazovaný název objektu (hodnota jeho <xref:System.TimeZoneInfo.DisplayName%2A> vlastnost).
 
 > [!NOTE]
-> Protože ovládací prvky seznamu volání objektu `ToString` metodu, můžete přiřadit kolekci <xref:System.TimeZoneInfo> objekty do ovládacího prvku, mají ovládacího prvku zobrazení nějaký výstižný název pro každý objekt a načíst <xref:System.TimeZoneInfo> objekt, který uživatel vybral. Tím se eliminuje potřeba extrahovat řetězec pro každý objekt v kolekci, přiřadit řetězec do kolekce, která je pak přiřazen k ovládacímu prvku `DataSource` vlastnost načíst řetězec uživatel vybral a pak použijte tento řetězec k extrakci objektu Popisuje, že IT oddělení. 
+> Protože ovládacích prvcích seznam volání objektu `ToString` metodu, můžete přiřadit kolekci <xref:System.TimeZoneInfo> objekty do ovládacího prvku, mají ovládací prvek zobrazení smysluplný název pro každý objekt a načíst <xref:System.TimeZoneInfo> objekt, který uživatel vybral. Tím se eliminuje potřeba extrahovat řetězce pro každý objekt v kolekci, řetězec přiřadit kolekci, která je následně přiřazeno ovládacího prvku `DataSource` vlastnost načíst řetězec, který uživatel vybral a pak použít tento řetězec k extrakci objektu Popisuje ji. 
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compiling-the-code"></a>Kompilování kódu
 
 Tento příklad vyžaduje:
 
-* Aby byl přidán odkaz na System.Core.dll do projektu.
+* Aby byl odkaz na System.Core.dll přidán do projektu.
 
-* Aby byly importované následujících oborů názvů:
+* Aby byly importované následující obory názvů:
 
   <xref:System> (v kódu jazyka C#)
 
   <xref:System.Collections.ObjectModel>
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-[postupy: ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)
-[postupy: obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)
+* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+* [Postupy: Ukládání časových pásem do integrovaného prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md)
+* [Postupy: Obnovení časových pásem z integrovaného prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md)

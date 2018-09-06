@@ -3,11 +3,11 @@ title: Příklady dotazů
 ms.date: 03/30/2017
 ms.assetid: 137f8677-494c-4d49-95ce-c17742f2d01f
 ms.openlocfilehash: 38454890e05b00cd92bca909ce0c7975f5ef1f6e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43464351"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43882045"
 ---
 # <a name="query-examples"></a>Příklady dotazů
 Tato část obsahuje příklady jazyka Visual Basic a C# z typických [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dotazy. Vývojářům používajícím Visual Studio můžete najít mnoho dalších příkladů v ukázkovém řešení, která je k dispozici v části Ukázky. Další informace najdete v tématu [ukázky](../../../../../../docs/framework/data/adonet/sql/linq/samples.md).  

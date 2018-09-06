@@ -8,19 +8,19 @@ helpviewer_keywords:
 ms.assetid: aa80d155-060d-41b4-a636-1ceb424afee8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e72f87bd4a33491df46576629971c60af4630ce3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d1e771a95542153dfad0981d3198e6b4c31cdeb9
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571888"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43890649"
 ---
 # <a name="using-user-filtered-exception-handlers"></a>Používání obslužných rutin uživatelsky filtrovaných výjimek
-Visual Basic v současné době podporuje uživatelem filtrované výjimky. Obslužných rutin uživatelsky filtrovaných výjimek catch a zpracování výjimek na základě požadavků, které definujete pro výjimku. Použijte tyto obslužné rutiny **Catch** příkaz s **při** – klíčové slovo.  
+Visual Basic v současné době podporuje uživatelsky filtrovaných výjimek. Obslužných rutin uživatelsky filtrovaných výjimek zachytit a zpracovat výjimky založené na požadavcích, které definujete pro výjimku. Použijte tyto obslužné rutiny **Catch** příkaz **při** – klíčové slovo.  
   
- Tato metoda je užitečná, když určitý objekt výjimky odpovídá více chybám. V takovém případě objekt obvykle má vlastnost, která obsahuje kód chyby související s chybou. Můžete vlastnost kódu chyby ve výrazu a vyberte pouze konkrétní chyby chcete zpracovávat v tom, že **Catch** klauzule.  
+ Tato technika je užitečná, když určitý objekt výjimky odpovídá více chyb. V takovém případě objekt obvykle má vlastnost, která obsahuje chybový kód, který je přidružený k chybě. Chcete-li vybrat pouze konkrétní chyba zpracování v, který můžete použít vlastnost chybového kódu ve výrazu **Catch** klauzuli.  
   
- Ukazuje následující příklad jazyka Visual Basic **Catch/When** příkaz.  
+ Ukazuje následující příklad jazyka Visual Basic **Catch/když** příkazu.  
   
 ```  
 Try  
@@ -30,12 +30,12 @@ Try
 End Try  
 ```  
   
- Výraz klauzule uživatelem filtrované není omezena žádným způsobem. Pokud dojde k výjimce během zpracování výrazu uživatelem filtrované, je tato výjimka zahozena a výraz filtru je považován za vyhodnocení na hodnotu false. V tomto případě common language runtime pokračuje v hledání pro obslužnou rutinu pro aktuální výjimku.  
+ Výraz v klauzuli filtrované uživatele není omezeno žádným způsobem. Pokud dojde k výjimce během zpracování výrazu uživatelsky filtrovaných, tato výjimka se zahodí a považován za výraz filtru má být vyhodnocen na hodnotu false. V tomto případě common language runtime pokračuje v hledání pro obslužnou rutinu pro aktuální výjimku.  
   
-## <a name="combining-the-specific-exception-and-the-user-filtered-clauses"></a>Kombinování specifických výjimek a klauzulích uživatelem filtrované  
- Příkaz catch může obsahovat specifických výjimek a uživatelem filtrované klauzule. Modul runtime nejprve testuje specifickou výjimku. Pokud je specifická výjimka úspěšná, modul runtime provede filtru uživatelů. Obecný filtr může obsahovat odkaz na proměnnou uvedenou ve filtru třídy. Všimněte si, že pořadí dvou klauzulí filtru nelze vrátit zpět.  
+## <a name="combining-the-specific-exception-and-the-user-filtered-clauses"></a>Kombinování specifické výjimky a uživatelsky filtrovaných klauzule  
+ Příkaz catch může obsahovat určité výjimky a uživatelsky filtrovaných klauzule. Modul runtime nejprve ověřuje určité výjimky. Pokud bude úspěšné konkrétní výjimky, modul runtime spustí filtr uživatelů. Obecný filtr může obsahovat odkaz na proměnné deklarované ve třídě filtru. Všimněte si, že pořadí dvou klauzulí filtru je nevratná.  
   
- Následující příklad jazyka Visual Basic ukazuje specifickou výjimku `ClassLoadException` v **Catch** prohlášení, jakož i pomocí klauzule uživatelem filtrované **při** – klíčové slovo.  
+ Ukazuje následující příklad jazyka Visual Basic specifickou výjimku `ClassLoadException` v **Catch** příkaz jako použití klauzule filtrované uživatelem **při** – klíčové slovo.  
   
 ```  
 Try  
@@ -45,5 +45,6 @@ Try
 End Try  
 ```  
 
-## <a name="see-also"></a>Viz také
-[Výjimky](index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Výjimky](index.md)

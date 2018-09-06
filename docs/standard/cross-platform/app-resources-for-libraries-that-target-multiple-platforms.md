@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 11b9bde41e2209a88a042eb6c61de37def9da787
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: a6c589a393ccfb5610a19776af6e33e4046bf5d3
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245491"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43879829"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Prostředky aplikací pro knihovny cílené na více platforem
 Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) projektu typu zajistit, že prostředky v knihovnách tříd můžete přistupovat z více platforem. Tento typ projektu je k dispozici v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)] a cílí na přenosné podmnožiny knihovny tříd rozhraní .NET Framework. Použití [!INCLUDE[net_portable](../../../includes/net-portable-md.md)] zajistí, že vaše knihovna přístupná z aplikací klasické pracovní plochy, aplikace Silverlight, Windows Phone apps, a [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
@@ -104,7 +104,8 @@ Můžete použít rozhraní .NET Framework [přenosné knihovny tříd](../../..
  [!code-csharp[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.portablemetroloc/cs/blankpage.xaml.cs#1)]
  [!code-vb[Conceptual.Resources.PortableMetroLoc#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.portablemetroloc/vb/blankpage.xaml.vb#1)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Resources.ResourceManager>  
- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Resources.ResourceManager>  
+- [Prostředky v desktopových aplikacích](../../../docs/framework/resources/index.md)  
+- [Zabalení a nasazení prostředků](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)

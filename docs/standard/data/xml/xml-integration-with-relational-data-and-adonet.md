@@ -1,51 +1,52 @@
 ---
-title: XML integrace s relačních dat a ADO.NET
+title: Integrace XML s relačními daty a ADO.NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e9bdb9b88d51e5435609bbab8bbe21a985505a0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d86c590f2d5fe6bc970c2f8ac6de43d3e8485650
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575698"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43877541"
 ---
-# <a name="xml-integration-with-relational-data-and-adonet"></a>XML integrace s relačních dat a ADO.NET
-**XmlDataDocument** třída je třídu odvozenou z **třídou XMLDocument nastavenou na**a obsahuje XML data. Výhodou **XmlDataDocument** je, že zajišťuje most mezi hierarchické a relační data. Je **třídou XMLDocument nastavenou na** mohou být vázány na **datovou sadu** a obě třídy můžete synchronizovat změny provedené data obsažená ve dvou tříd. **Třídou XMLDocument nastavenou na** která je vázaná **datovou sadu** umožňuje XML tak, aby integrovat relačních dat, a není nutné mít data reprezentována jako buď XML nebo v relačním formátu. Můžete provést i a nesmí být omezené na jednom znázornění dat.  
+# <a name="xml-integration-with-relational-data-and-adonet"></a>Integrace XML s relačními daty a ADO.NET
+**XmlDataDocument** třída je odvozená třída **XmlDocument**a obsahuje XML data. Výhodou **XmlDataDocument** je, že umožňuje most mezi relačních a hierarchických dat. Je **XmlDocument** , který může být vázaný na **datovou sadu** a obě třídy se mohou synchronizovat změny pro data obsažená ve dvou tříd. **XmlDocument** , který je vázán na **datovou sadu** umožňuje XML k integraci s relačními daty a není nutné mít data reprezentována jako buď XML nebo v relačním formátu. Můžete mít obojí a nesmí být omezeny na jednoho znázornění dat.  
   
  Výhod, které nejsou k dispozici ve dvou zobrazení data jsou:  
   
--   Strukturované část dokumentu XML lze mapovat na datovou sadu a efektivně ukládat, indexované a vyhledávat.  
+-   Strukturované část dokumentu XML lze mapovat na datovou sadu a efektivně uloženy, indexovat a prohledávat.  
   
--   Transformace, ověřování a navigační lze provést efektivně prostřednictvím modelu kurzoru přes data XML, která je uložená relationally. V některých případech je možné ji provést efektivněji proti relační struktury než pokud XML je uložen v **třídou XMLDocument nastavenou na** modelu.  
+-   Transformace, ověření a navigaci lze provést efektivně prostřednictvím modelu kurzoru nad daty XML, který je uložený relationally. V některých případech je možné ji provést efektivněji proti relační struktury než pokud je soubor XML uložené v **XmlDocument** modelu.  
   
--   **Datovou sadu** můžete uložit část XML. To znamená, že můžete použít **XPath** nebo **XslTransform** k uložení do **datovou sadu** pouze elementy a atributy, které vás zajímají. Odtud můžete provedeny změny menší, která jsou filtrovaná podmnožinu dat, se změnami šíření větší data ve **XmlDataDocument**.  
+-   **Datovou sadu** můžete uložit část souboru XML. To znamená, slouží **XPath** nebo **XslTransform** chcete **datovou sadu** pouze elementy a atributy, které vás zajímají. Odtud můžete změnit na menší, která jsou filtrovaná podmnožinu dat, se změnami šíření větší množství dat v **XmlDataDocument**.  
   
- Můžete taky spustit transformace přes data, která byla načtena do **datovou sadu** ze serveru SQL Server. Další možností je vytvořit vazbu WinForm spravované styl třídy rozhraní .NET Framework a pro ovládací prvky webových formulářů **datovou sadu** , se naplní ze vstupní datový proud XML.  
+ Můžete také spouštět transformace dat, která byla načtena do **datovou sadu** z SQL serveru. Další možností je vytvořit vazbu formuláře Windows spravovaných styl třídy rozhraní .NET Framework a ovládacích prvků webového formuláře **datovou sadu** , který se naplní ze vstupního datového proudu XML.  
   
- Vedle podpory **XslTransform**, **XmlDataDocument** zpřístupní relační data **XPath** dotazy a ověření.  V podstatě všechny XML služby jsou dostupné přes relačních dat a relační zařízení, jako je vazba ovládacího prvku, codegen atd., jsou k dispozici prostřednictvím strukturovaných projekce XML bez kompromisů věrnosti XML.  
+ Kromě podpory **XslTransform**, **XmlDataDocument** poskytuje relační data **XPath** dotazy a ověřování.  V podstatě všechny služby XML jsou k dispozici napříč relačními daty a relační zařízení, jako je například ovládací prvek vazby, codegen atd., jsou k dispozici přes strukturovaných projekce XML bez negativního vlivu věrnost XML.  
   
- Protože **XmlDataDocument** je zděděn z **třídou XMLDocument nastavenou na**, poskytuje implementaci W3C modelu DOM. Fakt, **XmlDataDocument** je přidružen k nim a ukládá podmnožinu jeho data v rámci, **datovou sadu** neomezuje nebo změnit jeho použití jako **třídou XMLDocument nastavenou na** žádným způsobem. Kód zapisovaný využívat **třídou XMLDocument nastavenou na** funguje v nezměněném stavu proti **XmlDataDocument**. **Datovou sadu** poskytuje relační zobrazení dat tak, že definujete tabulek, sloupců, vztahy a omezení a je úložiště dat, které uživatel samostatnou, v paměti.  
+ Protože **XmlDataDocument** je zděděno od **třídou XMLDocument nastavenou na**, poskytuje implementaci W3C modelu DOM. Fakt, který **XmlDataDocument** je přidružený a ukládá část svých dat v rámci, **datovou sadu** omezit nebo změnit jeho použití jako **třídou XMLDocument nastavenou na** žádným způsobem. Kód napsaný využívat **třídou XMLDocument nastavenou na** funguje v nezměněném stavu proti **XmlDataDocument**. **Datovou sadu** definováním tabulky, sloupce, relace a omezení poskytuje relační zobrazení stejná data, a je úložiště dat v paměti, samostatného uživatele.  
   
- Následující obrázek znázorňuje jiné přidružení, že má XML data s **datovou sadu** a **XmlDataDocument**.  
+ Následující obrázek znázorňuje různé přidružení, že XML data mají s **datovou sadu** a **XmlDataDocument**.  
   
  ![Datová sada XML](../../../../docs/standard/data/xml/media/xmlintegrationwithrelationaldataandadodotnet.gif "xmlIntegrationWithRelationalDataAndADOdotNet")  
   
- Na obrázku vidíte, že je možné načíst XML data přímo do **datovou sadu**, což umožňuje přímé manipulaci se souborem XML relační způsobem. Nebo, XML, je možné načíst do odvozené třídy modelu DOM, který je **XmlDataDocument**a následně načíst a synchronizována s **datovou sadu**. Protože **datovou sadu** a **XmlDataDocument** jsou synchronizovány v rámci jedné sady dat, se projeví změny provedené v datech v jedno úložiště v jiného úložiště.  
+ Na obrázku vidíte, že je možné načíst XML data přímo do **datovou sadu**, který umožňuje přímé manipulace s XML v relační způsobem. Nebo je možné načíst kód XML do odvozené třídy modelu DOM, který je **XmlDataDocument**a následně načtena a synchronizovat se službou **datovou sadu**. Protože **datovou sadu** a **XmlDataDocument** jsou synchronizována v rámci jedné sady dat, změny provedené v datech do jednoho úložiště se projeví v jiném úložišti.  
   
- **XmlDataDocument** dědí všechny úpravy a navigační funkce z **třídou XMLDocument nastavenou na**. V určitých časech při použití **XmlDataDocument** a jeho zděděné funkce synchronizovat se službou **datovou sadu**, je vhodnější možnost než načtení XML přímo do **datovou sadu**. V následující tabulce jsou uvedeny položky, které mají být považovány za při výběru, kterou metodu použít k načtení **datovou sadu**.  
+ **XmlDataDocument** dědí všechny editačních a navigačních funkce z **XmlDocument**. Existují situace, při použití **XmlDataDocument** a jeho zděděné funkcí synchronizovat se službou **datovou sadu**, je vhodnější volbou než načítání dat XML přímo do **datovésady**. V následující tabulce jsou uvedeny položky, které chcete považovat za Pokud zvolíte, jakou metodu použít k načtení **datovou sadu**.  
   
-|Pokud k načtení XML přímo do datové sady|Při synchronizaci XmlDataDocument s datové sady|  
+|Kdy se má načíst XML přímo do datové sady|Kdy se mají synchronizovat s datovou sadou datovým dokumentem XML|  
 |----------------------------------------------|-----------------------------------------------------------|  
-|Dotazy dat v **datovou sadu** se snadněji pomocí SQL než XPath.|Dotazy XPath jsou potřeba nad daty v **datovou sadu**.|  
-|Zachování elementu řazení ve zdroji XML není důležité.|Zachování elementu řazení ve zdroji XML je velmi důležité.|  
-|Mezer mezi elementy a formátování nemusí být zachována ve zdroji XML.|Prázdné znaky a formátování zachovávání ve zdroji XML je velmi důležité.|  
+|Dotazy na data v **datovou sadu** jsou jednodušší díky SQL než XPath.|Dotazy XPath jsou potřeba nad daty v **datovou sadu**.|  
+|Zachování řazení do zdrojového kódu XML element není důležité.|Zachování řazení do zdrojového kódu XML elementu je velmi důležité.|  
+|Prázdné znaky mezi elementy a formátování nemusí být zachována v zdrojového kódu XML.|Prázdné znaky a formátování a zachovávání s rozlišením ve zdroji XML je velmi důležité.|  
   
- Pokud načtení a zápis XML přímo do a z **datovou sadu** adresy vašim potřebám, najdete v části [načítání datové sady z XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápis datovou sadu jako XML Data](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
+ Pokud načtení a zápis XML přímo do a z celkového počtu **datovou sadu** řeší všechny vaše požadavky, naleznete v tématu [načtení datové sady z XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) a [zápisu datové sady jako dat XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md).  
   
- Pokud načítání **datovou sadu** z **XmlDataDocument** adresy vašim potřebám, najdete v části [synchronizace Datasetwith dokument XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
+ Pokud načítání **datovou sadu** ze **XmlDataDocument** řeší všechny vaše požadavky, naleznete v tématu [synchronizace Datasetwith dokumentu XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md).  
   
-## <a name="see-also"></a>Viz také  
- [Použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
+## <a name="see-also"></a>Viz také:
+
+- [Použití XML v datové sadě](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)

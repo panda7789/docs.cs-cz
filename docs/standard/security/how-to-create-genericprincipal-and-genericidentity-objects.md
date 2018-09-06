@@ -13,19 +13,19 @@ helpviewer_keywords:
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 65fd078b6be9dbcdfc03e34285d70a6bfe42d87b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 79b5e05fe9133eb2282eedefa001e64ece5e0f57
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581775"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44035584"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Postupy: Vytváření objektů GenericPrincipal a GenericIdentity
-Můžete použít <xref:System.Security.Principal.GenericIdentity> třídy ve spojení s <xref:System.Security.Principal.GenericPrincipal> třídy za účelem vytvoření schématu autorizace, které existuje nezávislé domény systému Windows.  
+Můžete použít <xref:System.Security.Principal.GenericIdentity> třídy ve spojení s <xref:System.Security.Principal.GenericPrincipal> třídy za účelem vytvoření schématu autorizace, které existuje nezávisle na doméně Windows.  
   
 ### <a name="to-create-a-genericprincipal-object"></a>K vytvoření objektů GenericPrincipal  
   
-1.  Vytvořit novou instanci třídy identity a provést jeho inicializaci s názvem, který chcete, aby udržení. Následující kód vytvoří novou **GenericIdentity** objektu a inicializuje s názvem `MyUser`.  
+1.  Vytvořit novou instanci třídy identity a inicializujte ji s názvem, který chcete, aby uchování. Následující kód vytvoří novou **GenericIdentity** objektu a inicializuje ji s názvem `MyUser`.  
   
     ```vb  
     Dim MyIdentity As New GenericIdentity("MyUser")  
@@ -35,7 +35,7 @@ Můžete použít <xref:System.Security.Principal.GenericIdentity> třídy ve sp
     GenericIdentity MyIdentity = new GenericIdentity("MyUser");  
     ```  
   
-2.  Vytvořit novou instanci třídy **GenericPrincipal** třídy a provést jeho inicializaci s dříve vytvořenou **GenericIdentity** objekt a pole řetězců, které představují role, které chcete přidružené Tento objekt zabezpečení. Následující příklad kódu určuje pole řetězců, které představují role správce a roli uživatele. **GenericPrincipal** je potom inicializován předchozí **GenericIdentity** a v poli řetězců.  
+2.  Vytvořit novou instanci třídy **GenericPrincipal** třídy a inicializovat pomocí dříve vytvořeného **GenericIdentity** objektu a pole řetězců, které představují role, které mají přiřazené k Tento objekt zabezpečení. Následující příklad kódu určuje pole řetězců, které představují role správce a role uživatele. **GenericPrincipal** je potom inicializován s předchozím **GenericIdentity** a pole řetězců.  
   
     ```vb  
     Dim MyStringArray As String() = {"Manager", "Teller"}  
@@ -47,7 +47,7 @@ Můžete použít <xref:System.Security.Principal.GenericIdentity> třídy ve sp
     GenericPrincipal MyPrincipal = new GenericPrincipal(MyIdentity, MyStringArray);  
     ```  
   
-3.  Použijte následující kód k připojení k objektu zabezpečení pro aktuální vlákno. To je důležité v situacích, kde objekt zabezpečení musí být ověřen několikrát, musí být ověřen jiný kód spuštěný ve vaší aplikaci nebo musí být ověřené pomocí <xref:System.Security.Permissions.PrincipalPermission> objektu. Stále je možné provést ověřování na základě rolí na objekt zabezpečení bez připojení k vlákno. Další informace najdete v tématu [nahrazení objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md).  
+3.  Použijte následující kód k připojení objektu zabezpečení pro aktuální vlákno. To je užitečné v situacích, kde objekt zabezpečení musí být ověřené několikrát, musí být ověřené jiných kódem spuštěným v aplikaci nebo musí být ověřené pomocí <xref:System.Security.Permissions.PrincipalPermission> objektu. Ověřování na základě role můžete stále provádět na objekt zabezpečení bez připojení k vláknu. Další informace najdete v tématu [nahrazení objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md).  
   
     ```vb  
     Thread.CurrentPrincipal = MyPrincipal  
@@ -140,9 +140,10 @@ The IsAuthenticated is: True
 Is this a Manager? True  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Security.Principal.GenericIdentity>  
- <xref:System.Security.Principal.GenericPrincipal>  
- <xref:System.Security.Permissions.PrincipalPermission>  
- [Nahrazení objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md)  
- [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Security.Principal.GenericIdentity>  
+- <xref:System.Security.Principal.GenericPrincipal>  
+- <xref:System.Security.Permissions.PrincipalPermission>  
+- [Nahrazení objektu zabezpečení](../../../docs/standard/security/replacing-a-principal-object.md)  
+- [Objekty zabezpečení a identity](../../../docs/standard/security/principal-and-identity-objects.md)

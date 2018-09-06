@@ -3,13 +3,13 @@ title: Nasazení aplikace .NET core
 description: Nasazení aplikace .NET Core.
 author: rpetrusha
 ms.author: ronpet
-ms.date: 04/18/2017
-ms.openlocfilehash: ab65beaa293f7543a8436f913a1e5bf89ca7281b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.date: 09/03/2018
+ms.openlocfilehash: 2ef63ebd737739b2c8e671d982c3844135689ab4
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43562003"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891308"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 
@@ -41,7 +41,9 @@ Existuje také několik nevýhody:
 
 ## <a name="self-contained-deployments-scd"></a>Samostatná nasazení (SCD)
 
-Pro samostatné nasazení nasadíte aplikaci a všechny požadované závislosti spolu s verzi .NET Core, který jste použili k vytvoření aplikace třetích stran. Vytvoření SCD neobsahuje [nativní závislosti .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) na různých platformách, takže tyto musí být k dispozici před spuštěním aplikace. Další informace o verzi vazbu za běhu, najdete v článku na [vázání verze v .NET Core](../versions/selection.md)
+Pro samostatné nasazení nasadíte aplikaci a všechny požadované závislosti spolu s verzi .NET Core, který jste použili k vytvoření aplikace třetích stran. Vytvoření SCD neobsahuje [nativní závislosti .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) na různých platformách, takže tyto musí být k dispozici před spuštěním aplikace. Další informace o verzi vazbu za běhu, najdete v článku na [vázání verze v .NET Core](../versions/selection.md).
+
+Počínaje NET Core 2.1 SDK (verze 2.1.300), .NET Core podporuje *opravy verze dopředné posunutí*. Při vytváření samostatná nasazení nástroje pro .NET Core automaticky zahrnují obsluhované runtime verze .NET Core, která vaše aplikace cílí. (Nejnovější obsluhované runtime obsahuje opravy zabezpečení a ostatní opravy chyb). Obsluhované runtime nemusí být k dispozici ve vašem systému sestavení; stáhnout je automaticky z NuGet.org. Další informace, včetně informací o tom, jak vyjádřit výslovný nesouhlas opravy verze Posunutí vpřed, naleznete v tématu [samostatná nasazení modulu runtime dopředné posunutí](runtime-patch-selection.md).
 
 Disketové jednotky a SCD nasazení používat spustitelné soubory samostatného hostitele, tak pro SCD můžou zaregistrovat hostitele spustitelný soubor s podpisem vydavatele.
 
@@ -58,6 +60,8 @@ Obsahuje také některé nevýhody:
 - Protože .NET Core je zahrnutý v balíčku pro nasazení, je nutné vybrat cílové platformy, pro které je předem vytvářet balíčky pro nasazení.
 
 - Velikost nasazovaného balíčku je relativně velké, protože je nutné zahrnout .NET Core i vaše aplikace a jeho závislostí třetích stran.
+
+  Od verze rozhraní .NET Core 2.0, můžete snížit velikost vašeho nasazení v systémech Linux přibližně 28 MB pomocí .NET Core [ *invariantní režimu globalizace*](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Obvykle, .NET Core v Linuxu se může spolehnout [ICU knihovny](https://github.com/dotnet/docs/issues/http%22//icu-project.org) globalizace podporu. Ve výchozím režimu, nejsou součástí vašeho nasazení knihoven a všechny jazykové verze se chovat jako [jazykovou verzi invariannt](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
 - Nasazení do systému mnoho samostatné aplikace .NET Core může spotřebovat významné množství místa na disku, od každé aplikace duplicitní soubory .NET Core.
 

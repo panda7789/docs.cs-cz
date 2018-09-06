@@ -8,40 +8,40 @@ dev_langs:
 ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 91835006925f9768c25ad1a984a3b189e3e4c58c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c24fe637514ba773cecc7824de276b1707a4e90c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579077"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43880099"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>XmlSchemaSet pro kompilaci schématu
-Popisuje <xref:System.Xml.Schema.XmlSchemaSet>, mezipaměti, kde můžete ukládat a ověření schématu XML definition language (XSD) schémata.  
+Popisuje <xref:System.Xml.Schema.XmlSchemaSet>, mezipaměti, kde můžete ukládat a ověření schématu XML definice jazyk (XSD) schémata.  
   
-## <a name="the-xmlschemaset-class"></a>XmlSchemaSet – třída  
- <xref:System.Xml.Schema.XmlSchemaSet> Je mezipaměti, kde můžete ukládat a ověření schématu XML definition language (XSD) schémata.  
+## <a name="the-xmlschemaset-class"></a>Třída XmlSchemaSet  
+ <xref:System.Xml.Schema.XmlSchemaSet> Je do mezipaměti, kde můžete ukládat a ověření schématu XML definice jazyk (XSD) schémata.  
   
- V <xref:System.Xml?displayProperty=nameWithType> verze 1.0, schémat XML byly načteny do <xref:System.Xml.Schema.XmlSchemaCollection> třída jako Knihovna schémat. V <xref:System.Xml?displayProperty=nameWithType> verze 2.0, <xref:System.Xml.XmlValidatingReader> a <xref:System.Xml.Schema.XmlSchemaCollection> třídy jsou zastaralé a byly nahrazeny <xref:System.Xml.XmlReader.Create%2A> metody a <xref:System.Xml.Schema.XmlSchemaSet> třídy v uvedeném pořadí.  
+ V <xref:System.Xml?displayProperty=nameWithType> verze 1.0, schémat XML byly načteny do <xref:System.Xml.Schema.XmlSchemaCollection> třídu jako knihovny schémat. V <xref:System.Xml?displayProperty=nameWithType> verze 2.0, <xref:System.Xml.XmlValidatingReader> a <xref:System.Xml.Schema.XmlSchemaCollection> třídy jsou zastaralé a byly nahrazeny <xref:System.Xml.XmlReader.Create%2A> metody a <xref:System.Xml.Schema.XmlSchemaSet> třídy v uvedeném pořadí.  
   
- <xref:System.Xml.Schema.XmlSchemaSet> Je zavedený vyřešit řadu problémů, včetně kompatibility standardů, výkonu a zastaralé schéma formátu Microsoft XML-Data Reduced (XDR).  
+ <xref:System.Xml.Schema.XmlSchemaSet> Zavedl vyřešit řadu problémů, včetně kompatibility standardy, výkonu a zastaralý formát schématu Microsoft XML-Data Reduced (XDR).  
   
- Následuje porovnání mezi <xref:System.Xml.Schema.XmlSchemaCollection> třídy a <xref:System.Xml.Schema.XmlSchemaSet> třídy.  
+ Tady je porovnání mezi službou <xref:System.Xml.Schema.XmlSchemaCollection> třídy a <xref:System.Xml.Schema.XmlSchemaSet> třídy.  
   
-|Kolekci XmlSchemaCollection|XmlSchemaSet|  
+|Třídou XmlSchemaCollection|Třída XmlSchemaSet|  
 |-------------------------|------------------|  
-|Podporuje Microsoft XDR a W3C schémat XML.|Podporuje jenom schémata W3C XML.|  
-|Kompilované schémata při <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metoda je volána.|Schémata nejsou kompilovat, kdy <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda je volána. To poskytuje zlepšení výkonu během vytváření knihovny schématu.|  
-|Každý schématu generuje jednotlivých kompilované verze, která může mít za následek "schématu ostrovy." V důsledku toho všechny zahrnuje a importy jsou vymezeny pouze v rámci tohoto schématu.|Kompilované schémata generovat jediné logické schéma, "set" schémat. Importovaná schémata v rámci schématu, které jsou přidány do sady jsou přímo přidat do sady sami. To znamená, že všechny typy jsou k dispozici pro všechny schémat.|  
-|V kolekci může existovat pouze jedno schéma pro konkrétní cílový obor názvů.|Více schématy pro stejný cílový obor názvů lze přidat, dokud nejsou konflikty typu.|  
+|Podporuje schémata Microsoft XDR a W3C XML.|Podporuje se jenom schémata W3C XML.|  
+|Schémata jsou zkompilovány při <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metoda je volána.|Schémata nejsou při kompilaci <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda je volána. To poskytuje vylepšení výkonu při vytváření knihovny schémat.|  
+|Každý schématu generuje jednotlivých Kompilovaná verze, který může mít za následek "schéma ostrovy." V důsledku toho zahrnuje všechny a pouze v rámci tohoto schématu jsou omezená importy.|Zkompilovaných schémat generování jednoho logického schématu, "set" schémat. Žádné importované schémata v rámci schématu, které jsou přidány do sady jsou přímo přidat do sady samotné. To znamená, že všechny typy jsou k dispozici ke všem schématům.|  
+|V kolekci může existovat pouze jedno schéma pro konkrétní cílový obor názvů.|Více schémat pro stejný cílový obor názvů je možné přidat, dokud nebyly zjištěny žádné konflikty typu.|  
   
 ## <a name="migrating-to-the-xmlschemaset"></a>Migrace na sadě XmlSchemaSet  
- Následující příklad kódu poskytuje návod k migraci na nové <xref:System.Xml.Schema.XmlSchemaSet> třídy z zastaralé <xref:System.Xml.Schema.XmlSchemaCollection> třídy. Příklad kódu ukazuje následující hlavní rozdíly mezi dvěma třídami.  
+ Následující příklad kódu poskytuje návod pro migraci do nového <xref:System.Xml.Schema.XmlSchemaSet> třídy z zastaralý <xref:System.Xml.Schema.XmlSchemaCollection> třídy. Příklad kódu znázorňuje následující hlavní rozdíly mezi dvěma třídami.  
   
--   Na rozdíl od <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaCollection> třída, schémata nejsou kompilovány při volání metody <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> Metodu <xref:System.Xml.Schema.XmlSchemaSet> je explicitně volána v ukázkovém kódu.  
+-   Na rozdíl od <xref:System.Xml.Schema.XmlSchemaCollection.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaCollection> třídy, schémata nejsou zkompilovány při volání <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> Metodu <xref:System.Xml.Schema.XmlSchemaSet> je explicitně volána v příkladu kódu.  
   
--   Iterace nad <xref:System.Xml.Schema.XmlSchemaSet>, je nutné použít <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet>.  
+-   K iteraci přes <xref:System.Xml.Schema.XmlSchemaSet>, je nutné použít <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet>.  
   
- Toto je zastaralé <xref:System.Xml.Schema.XmlSchemaCollection> příklad kódu.  
+ Tady je zastaralý <xref:System.Xml.Schema.XmlSchemaCollection> příklad kódu.  
   
 ```vb  
 Dim schemaCollection As XmlSchemaCollection = New XmlSchemaCollection()  
@@ -68,7 +68,7 @@ foreach(XmlSchema schema in schemaCollection)
 }  
 ```  
   
- Toto je ekvivalentem <xref:System.Xml.Schema.XmlSchemaSet> příklad kódu.  
+ Tady je ekvivalentem <xref:System.Xml.Schema.XmlSchemaSet> příklad kódu.  
   
 ```vb  
 Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
@@ -97,12 +97,12 @@ foreach(XmlSchema schema in schemaSet.Schemas())
 }  
 ```  
   
-## <a name="adding-and-retrieving-schemas"></a>Přidávání a načítání schémat.  
- Schémata jsou přidány do <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>. Po přidání schématu do <xref:System.Xml.Schema.XmlSchemaSet>, je přidružen cílový obor názvů identifikátor URI. Identifikátor URI, můžete buď zadat jako parametr pro cílový obor názvů <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda nebo pokud není zadán žádný cílový obor názvů, <xref:System.Xml.Schema.XmlSchemaSet> používá cílový obor názvů definováno ve schématu.  
+## <a name="adding-and-retrieving-schemas"></a>Přidávání a načítání schémat  
+ Schémata jsou přidány do <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>. Při přidání schéma <xref:System.Xml.Schema.XmlSchemaSet>, je přidružen k cílový obor názvů identifikátoru URI. Cílový obor názvů identifikátoru URI může být buď určena jako parametr <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metody nebo pokud není zadán žádný cílový obor názvů, <xref:System.Xml.Schema.XmlSchemaSet> používá cílový obor názvů definovaný ve schématu.  
   
- Schémata jsou načteny z <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> Vlastnost <xref:System.Xml.Schema.XmlSchemaSet> umožňuje iterace <xref:System.Xml.Schema.XmlSchema> objekty obsažené v <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> Vlastnost vrací buď všechny <xref:System.Xml.Schema.XmlSchema> objekty obsažené v <xref:System.Xml.Schema.XmlSchemaSet>, nebo zadaný cílový obor názvů parametrů, vrátí všechny <xref:System.Xml.Schema.XmlSchema> objekty, které patří do cílový obor názvů. Pokud `null` je zadána jako parametr cílový obor názvů <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost vrací všechny schémata bez oboru názvů.  
+ Schémata jsou načteny z <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> Vlastnost <xref:System.Xml.Schema.XmlSchemaSet> umožňuje iterovat <xref:System.Xml.Schema.XmlSchema> objekty obsažené v <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> Vlastnost vrací buď všechny <xref:System.Xml.Schema.XmlSchema> objekty obsažené v <xref:System.Xml.Schema.XmlSchemaSet>, nebo zadaný cílový obor názvů parametrů, vrátí všechny <xref:System.Xml.Schema.XmlSchema> objektů, které patří cílový obor názvů. Pokud `null` je zadána jako parametr cílový obor názvů <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost vrací všechna schémata bez oboru názvů.  
   
- Následující příklad přidá `books.xsd` schéma v `http://www.contoso.com/books` názvů <xref:System.Xml.Schema.XmlSchemaSet>, načte všechny schémat, které patří do `http://www.contoso.com/books` oboru názvů z <xref:System.Xml.Schema.XmlSchemaSet>a pak zapíše těchto schémat na <xref:System.Console>.  
+ Následující příklad přidá `books.xsd` schéma v `http://www.contoso.com/books` obor názvů, abyste <xref:System.Xml.Schema.XmlSchemaSet>, načte všechna schémata, které patří do `http://www.contoso.com/books` obor názvů z <xref:System.Xml.Schema.XmlSchemaSet>a pak zapíše tato schémata <xref:System.Console>.  
   
 ```vb  
 Dim schemaSet As XmlSchemaSet = New XmlSchemaSet  
@@ -127,20 +127,20 @@ foreach (XmlSchema schema in schemaSet.Schemas("http://www.contoso.com/books"))
 }  
 ```  
   
- Další informace o přidávání a načítání schémat ze <xref:System.Xml.Schema.XmlSchemaSet> objektu, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda a <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost referenční dokumentaci k nástroji.  
+ Další informace o přidávání a načítání schémat ze <xref:System.Xml.Schema.XmlSchemaSet> objektu, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda a <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> vlastnost referenční dokumentaci.  
   
-## <a name="compiling-schemas"></a>Kompilování schémat.  
- Schémata v <xref:System.Xml.Schema.XmlSchemaSet> kompilovány do jednoho logického schématu pomocí <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>.  
-  
-> [!NOTE]
->  Na rozdíl od zastaralé <xref:System.Xml.Schema.XmlSchemaCollection> třídy, schémata nejsou kompilovat, kdy <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda je volána.  
-  
- Pokud <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metoda provede úspěšně, <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet> je nastaven na `true`.  
+## <a name="compiling-schemas"></a>Kompilování schémat  
+ Schémata v <xref:System.Xml.Schema.XmlSchemaSet> jsou kompilovány do jedné logické schématu <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet>.  
   
 > [!NOTE]
->  <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> Vlastnost nemá vliv, pokud jsou upravit schémata během činnosti v <xref:System.Xml.Schema.XmlSchemaSet>. Aktualizace v jednotlivých schémat <xref:System.Xml.Schema.XmlSchemaSet> nejsou sledovat. V důsledku toho <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> lze vlastnost `true` to i v případě, že jeden z schémat obsažené v <xref:System.Xml.Schema.XmlSchemaSet> byla změněna, tak dlouho, dokud se žádná schémata přidat nebo odebrat z <xref:System.Xml.Schema.XmlSchemaSet>.  
+>  Na rozdíl od zastaralý <xref:System.Xml.Schema.XmlSchemaCollection> třídy, schémata nejsou při kompilaci <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda je volána.  
   
- Následující příklad přidá `books.xsd` do souboru <xref:System.Xml.Schema.XmlSchemaSet> a potom zavolá <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metoda.  
+ Pokud <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metoda provedena úspěšně, <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet> je nastavena na `true`.  
+  
+> [!NOTE]
+>  <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> Vlastnost nemá vliv, pokud jsou upravovat schémata během činnosti v <xref:System.Xml.Schema.XmlSchemaSet>. Aktualizace v jednotlivých schémat <xref:System.Xml.Schema.XmlSchemaSet> nebudou pro účely. V důsledku toho <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> vlastnost může být `true` i v případě, že jeden schémat součástí <xref:System.Xml.Schema.XmlSchemaSet> byla změněna, tak dlouho, dokud se přidaly nebo odebraly z žádná schémata <xref:System.Xml.Schema.XmlSchemaSet>.  
+  
+ Následující příklad přidá `books.xsd` do souboru <xref:System.Xml.Schema.XmlSchemaSet> a pak zavolá <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metody.  
   
 ```vb  
 Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
@@ -154,14 +154,14 @@ schemaSet.Add("http://www.contoso.com/books", "books.xsd");
 schemaSet.Compile();  
 ```  
   
- Další informace o kompilování schémat v <xref:System.Xml.Schema.XmlSchemaSet>, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metoda referenční dokumentaci k nástroji.  
+ Další informace o kompilaci schémata v <xref:System.Xml.Schema.XmlSchemaSet>, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metoda referenční dokumentaci.  
   
-## <a name="reprocessing-schemas"></a>Opětovné zpracování schémat.  
- Opětovné zpracování schéma v <xref:System.Xml.Schema.XmlSchemaSet> provede všechny předběžného zpracování kroků prováděných na schématu při <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána. Pokud volání <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metoda proběhne úspěšně, <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet> je nastaven na `false`.  
+## <a name="reprocessing-schemas"></a>Schémata se znovu zpracovávají  
+ Přepracování schéma v <xref:System.Xml.Schema.XmlSchemaSet> provede všechny kroky předběžného zpracování provést ve schématu při <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána. Pokud volání <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metoda je úspěšná, <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> vlastnost <xref:System.Xml.Schema.XmlSchemaSet> je nastavena na `false`.  
   
- <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> Metoda by měl být použit při schéma v <xref:System.Xml.Schema.XmlSchemaSet> bylo změněno po <xref:System.Xml.Schema.XmlSchemaSet> byla provedena kompilace.  
+ <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> Metoda má být použit při schéma v <xref:System.Xml.Schema.XmlSchemaSet> byl změněn po <xref:System.Xml.Schema.XmlSchemaSet> provedl kompilace.  
   
- Následující příklad ilustruje, opětovné zpracování schéma přidán do <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metoda. Po <xref:System.Xml.Schema.XmlSchemaSet> kompiluje pomocí <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metoda a schéma přidán do <xref:System.Xml.Schema.XmlSchemaSet> je změněn, <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> je nastavena na `true` to i v případě schéma v <xref:System.Xml.Schema.XmlSchemaSet> byla změněna. Volání <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metoda provádí všechny předběžném zpracování provádí <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda a nastaví <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> vlastnost `false`.  
+ Následující příklad ukazuje přepracování schématu přidat do <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metody. Po <xref:System.Xml.Schema.XmlSchemaSet> je zkompilován pomocí <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metoda a přidá do schématu <xref:System.Xml.Schema.XmlSchemaSet> se změní, <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> je nastavena na `true` i když schéma v <xref:System.Xml.Schema.XmlSchemaSet> byla změněna. Volání <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metoda provádí všechny předzpracování prováděné <xref:System.Xml.Schema.XmlSchemaSet.Add%2A> metoda a nastaví <xref:System.Xml.Schema.XmlSchemaSet.IsCompiled%2A> vlastnost `false`.  
   
 ```vb  
 Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
@@ -189,17 +189,17 @@ element.SchemaTypeName = new XmlQualifiedName("string", "http://www.w3.org/2001/
 schemaSet.Reprocess(schema);  
 ```  
   
- Další informace o opětovné zpracování schéma v <xref:System.Xml.Schema.XmlSchemaSet>, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metoda referenční dokumentaci k nástroji.  
+ Další informace o opětovném zpracování schéma v <xref:System.Xml.Schema.XmlSchemaSet>, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A> metoda referenční dokumentaci.  
   
-## <a name="checking-for-a-schema"></a>Kontrola schéma.  
- Můžete použít <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> ke kontrole, pokud je schéma obsažené v <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> Metoda přebírá buď cílový obor názvů nebo <xref:System.Xml.Schema.XmlSchema> objekt, který chcete vyhledávat. V obou případech <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> metoda vrátí `true` Pokud schéma je obsažena v <xref:System.Xml.Schema.XmlSchemaSet>, jinak vrátí `false`.  
+## <a name="checking-for-a-schema"></a>Kontrolují se schéma  
+ Můžete použít <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> ke kontrole, pokud je součástí schématu <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> Metoda přebírá buď cílový obor názvů nebo <xref:System.Xml.Schema.XmlSchema> objektu, který chcete vyhledat. V obou případech <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> vrátí metoda `true` Pokud schéma je obsažena v <xref:System.Xml.Schema.XmlSchemaSet>; v opačném případě vrátí `false`.  
   
- Další informace o kontrole pro schéma, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> metoda referenční dokumentaci k nástroji.  
+ Další informace o kontrole pro schéma, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A> metoda referenční dokumentaci.  
   
-## <a name="removing-schemas"></a>Odebrání schémat.  
- Schémata jsou odebrány z <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A> a <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metody <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A> Metoda odebere zadaný schématu z <xref:System.Xml.Schema.XmlSchemaSet>, při <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metoda odebere určené schéma a všechny schémata ho importovat z <xref:System.Xml.Schema.XmlSchemaSet>.  
+## <a name="removing-schemas"></a>Odebrání schémata  
+ Schémata jsou odebrány z <xref:System.Xml.Schema.XmlSchemaSet> pomocí <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A> a <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metody <xref:System.Xml.Schema.XmlSchemaSet>. <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A> Metoda odstraní zadané schéma z <xref:System.Xml.Schema.XmlSchemaSet>, zatímco <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metoda odstraní zadané schéma a všechna schémata importy z <xref:System.Xml.Schema.XmlSchemaSet>.  
   
- Následující příklad ilustruje, přidání více schématy k <xref:System.Xml.Schema.XmlSchemaSet>, pak pomocí <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metoda odebrat jedno z schémat a všechny schémat se importuje.  
+ Následující příklad ukazuje přidání více schémat, chcete-li <xref:System.Xml.Schema.XmlSchemaSet>, pak pomocí <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metoda odebrání jednoho ze schémat a všechna schémata importuje.  
   
 ```vb  
 Dim schemaSet As XmlSchemaSet = New XmlSchemaSet()  
@@ -233,31 +233,32 @@ foreach (XmlSchema schema in schemaSet.Schemas())
 }  
 ```  
   
- Další informace o odebrání schémat ze <xref:System.Xml.Schema.XmlSchemaSet>, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A> a <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metody referenční dokumentace.  
+ Další informace o odebrání schémata z <xref:System.Xml.Schema.XmlSchemaSet>, najdete v článku <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A> a <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A> metody referenční dokumentaci.  
   
-## <a name="schema-resolution-and-xsimport"></a>Schéma řešení a xs:import  
- Následující příklady popisují <xref:System.Xml.Schema.XmlSchemaSet> chování pro import schémat, pokud existují více schématy pro daný obor názvů v <xref:System.Xml.Schema.XmlSchemaSet>.  
+## <a name="schema-resolution-and-xsimport"></a>Schéma překlad IP adres a xs:import  
+ Následující příklady popisují <xref:System.Xml.Schema.XmlSchemaSet> chování pro import schémat, pokud existuje více schémat pro daný obor názvů v <xref:System.Xml.Schema.XmlSchemaSet>.  
   
- Představte si třeba <xref:System.Xml.Schema.XmlSchemaSet> obsahující více schématy pro `http://www.contoso.com` oboru názvů. Schéma s následující `xs:import` – direktiva je přidán do <xref:System.Xml.Schema.XmlSchemaSet>.  
+ Představte si třeba <xref:System.Xml.Schema.XmlSchemaSet> , který obsahuje více schémat pro `http://www.contoso.com` oboru názvů. Schéma s následující `xs:import` – direktiva se přidá do <xref:System.Xml.Schema.XmlSchemaSet>.  
   
 ```xml  
 <xs:import namespace="http://www.contoso.com" schemaLocation="http://www.contoso.com/schema.xsd" />  
 ```  
   
- <xref:System.Xml.Schema.XmlSchemaSet> Pokusu o import schématu pro `http://www.contoso.com` obor názvů načtením z `http://www.contoso.com/schema.xsd` adresy URL. Schématu deklarace a typy, které jsou deklarované v dokument schématu jsou k dispozici v import schématu, i když se jiné schéma dokumenty pro pouze `http://www.contoso.com` oboru názvů v <xref:System.Xml.Schema.XmlSchemaSet>. Pokud `schema.xsd` soubor nemůže být v umístění `http://www.contoso.com/schema.xsd` adresu URL, žádné schéma pro `http://www.contoso.com` obor názvů je importovat do import schématu.  
+ <xref:System.Xml.Schema.XmlSchemaSet> Pokusu o import schématu pro `http://www.contoso.com` oboru názvů z načtením `http://www.contoso.com/schema.xsd` adresy URL. Pouze schéma deklarace a typy deklarované v dokumentu schématu jsou k dispozici v importu schématu, i když existují jiných schématu dokumentů pro `http://www.contoso.com` obor názvů v <xref:System.Xml.Schema.XmlSchemaSet>. Pokud `schema.xsd` soubor nemůže být umístěn v `http://www.contoso.com/schema.xsd` žádné schéma pro adresu URL `http://www.contoso.com` obor názvů se importuje do import schématu.  
   
-## <a name="validating-xml-documents"></a>Ověření XML – dokumenty  
- Dokumenty XML může být ověřen pomocí schémat v <xref:System.Xml.Schema.XmlSchemaSet>. Ověřit dokument XML přidáním schéma, aby <xref:System.Xml.Schema.XmlSchemaSet> <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost <xref:System.Xml.XmlReaderSettings> objektu, nebo pomocí přidání <xref:System.Xml.Schema.XmlSchemaSet> k <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost <xref:System.Xml.XmlReaderSettings> objektu. <xref:System.Xml.XmlReaderSettings> Objektu je následně používán <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídy za účelem vytvoření <xref:System.Xml.XmlReader> objektu a ověření v dokumentu XML.  
+## <a name="validating-xml-documents"></a>Ověření XML dokumenty  
+ XML dokumenty můžou ověřovat na schémata v <xref:System.Xml.Schema.XmlSchemaSet>. Ověření dokumentu XML tak, že přidáte schématu a <xref:System.Xml.Schema.XmlSchemaSet> <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost <xref:System.Xml.XmlReaderSettings> objektu nebo přidáním <xref:System.Xml.Schema.XmlSchemaSet> k <xref:System.Xml.XmlReaderSettings.Schemas%2A> vlastnost <xref:System.Xml.XmlReaderSettings> objektu. <xref:System.Xml.XmlReaderSettings> Objektu se potom využijí <xref:System.Xml.XmlReader.Create%2A> metodu <xref:System.Xml.XmlReader> třídy za účelem vytvoření <xref:System.Xml.XmlReader> objektu a ověření dokumentu XML.  
   
- Další informace o ověření XML dokumenty pomocí <xref:System.Xml.Schema.XmlSchemaSet>, najdete v části [ověřování schématu XML (XSD) pomocí XmlSchemaSet](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md).  
+ Další informace o ověření XML dokumenty pomocí <xref:System.Xml.Schema.XmlSchemaSet>, naleznete v tématu [ověření schématu XML (XSD) s třídou XmlSchemaSet](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Schema.XmlSchemaSet.Add%2A>  
- <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>  
- <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A>  
- <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A>  
- <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>  
- <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>  
- <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>  
- [XmlSchemaSet jako mezipaměti schématu](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
- [Ověření schématu XML (XSD) s třídou XmlSchemaSet](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.Schema.XmlSchemaSet.Add%2A>  
+- <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A>  
+- <xref:System.Xml.Schema.XmlSchemaSet.Contains%2A>  
+- <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A>  
+- <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>  
+- <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>  
+- <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>  
+- [Třída XmlSchemaSet jako mezipaměť schémat](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)  
+- [Ověření schématu XML (XSD) s třídou XmlSchemaSet](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)

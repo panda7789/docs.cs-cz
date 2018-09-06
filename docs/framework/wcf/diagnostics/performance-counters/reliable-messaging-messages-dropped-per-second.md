@@ -3,11 +3,11 @@ title: Počet ztracených zpráv spolehlivého zasílání zpráv za sekundu
 ms.date: 03/30/2017
 ms.assetid: a11b0b80-b242-48e1-b0bb-7f756db5486b
 ms.openlocfilehash: 7722b32f99b302c5c272e095033879c9e04c7ee1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43542838"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43877791"
 ---
 # <a name="reliable-messaging-messages-dropped-per-second"></a>Počet ztracených zpráv spolehlivého zasílání zpráv za sekundu
 Název čítače: Relací spolehlivého zasílání zpráv za sekundu.  

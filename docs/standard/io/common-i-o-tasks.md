@@ -7,15 +7,15 @@ helpviewer_keywords:
 ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bf0caa0513881d5a1096478d8b29fc708ac3d3ce
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f205040e0f044ab04112683c7bdb8edccdfb9f71
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577652"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43879393"
 ---
 # <a name="common-io-tasks"></a>Obecné vstupně-výstupní úlohy
-<xref:System.IO> Obor názvů poskytuje několik tříd, které poskytují různé akce, jako je například čtení a zápisu, které budou provedeny u souborů, adresářů a datové proudy. Další informace najdete v tématu [souborové služby a vstupně-výstupní datový proud](../../../docs/standard/io/index.md).  
+<xref:System.IO> Obor názvů poskytuje několik tříd, které umožňují nejrůznější akce, jako je čtení a zápis, pro soubory, adresáře a datové proudy. Další informace najdete v tématu [Souborová služba a vstupně-výstupní operace Stream](../../../docs/standard/io/index.md).  
   
 ## <a name="common-file-tasks"></a>Běžné úlohy se soubory  
   
@@ -50,10 +50,11 @@ ms.locfileid: "33577652"
 |Kopírování adresáře|[Postupy: Kopírování adresářů](../../../docs/standard/io/how-to-copy-directories.md)|  
 |Odstranění adresáře|<xref:System.IO.Directory.Delete%2A?displayProperty=nameWithType> – Metoda<br /><br /> <xref:System.IO.DirectoryInfo.Delete%2A?displayProperty=nameWithType> – Metoda|  
 |Zobrazení souborů a podadresářů v adresáři|[Postupy: Vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)|  
-|Vyhledání velikosti adresáře|<xref:System.IO.Directory?displayProperty=nameWithType> – Třída|  
+|Vyhledání velikosti adresáře|<xref:System.IO.Directory?displayProperty=nameWithType> Třída|  
 |Zjištění existence adresáře|<xref:System.IO.Directory.Exists%2A?displayProperty=nameWithType> – Metoda|  
   
-## <a name="see-also"></a>Viz také  
- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
- [Skládání streamů](../../../docs/standard/io/composing-streams.md)  
- [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)
+## <a name="see-also"></a>Viz také:
+
+- [Vstup/výstup souborů a streamů](../../../docs/standard/io/index.md)  
+- [Skládání streamů](../../../docs/standard/io/composing-streams.md)  
+- [Asynchronní vstupně-výstupní operace se soubory](../../../docs/standard/io/asynchronous-file-i-o.md)

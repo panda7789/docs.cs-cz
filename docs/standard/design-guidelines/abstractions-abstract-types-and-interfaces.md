@@ -10,34 +10,35 @@ helpviewer_keywords:
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f5863b4ae9cad940e4dd47ef93e07763916427f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0ad8b2dd3dbf2a7a75c98a3115d4351dfea4e1a0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33573023"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891295"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstrakce (abstraktní typy a rozhraní)
-Abstrakci je typ, který popisuje kontraktu, ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a začne s dobře definované sadě referenční dokumentaci k nástroji popisující požadované sémantika typy implementace kontraktu. Mezi nejdůležitější abstrakce v rozhraní .NET Framework patří <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>, a <xref:System.Object>.  
+Abstrakce je typ, který popisuje kontrakt ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a začne s kvalitně definované sady referenční dokumentaci popisující požadovaný sémantiku typy implementace kontraktu. Některé z vašich nejdůležitějších abstrakce v rozhraní .NET Framework zahrnují <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>, a <xref:System.Object>.  
   
- Rozhraní můžete rozšířit pomocí implementace konkrétní typ, který podporuje kontrakt abstrakci a pomocí tohoto konkrétního typu framework rozhraní API náročné (pracující na) odběru.  
+ Architektury můžete rozšířit pomocí implementace konkrétního typu implementujícího typ podporuje smlouvy abstrakci a pomocí rozhraní API náročné (nasazeny na) tento konkrétní typ odběru.  
   
- Smysluplný a užitečné abstrakce, který se bude moct odolat test čas je velmi obtížné návrhu. Potíže hlavní dochází správnou sadu žádné další a ne méně členů. Pokud abstrakci má příliš mnoho členů, bude obtížné nebo dokonce možné implementovat. Pokud má příliš málo členy pro funkci přislíbeném, stane nemá zajímavými způsoby.  
+ Smysl a užitečné abstrakce, která dokáže odolat zkušební doba je velmi obtížné navrhnout. Hlavní problémy s dokončením je stále správnou sadu členů, častěji a ne méně. Pokud abstrakci má příliš mnoho členů, bude obtížné či nemožné i k implementaci. Pokud má moc malý počet členů pro funkci přislíbeném, bude v mnoha scénářích zajímavých zbytečná.  
   
- Příliš mnoho abstrakce v rozhraní také negativně ovlivnit použitelnost rozhraní. Často je velmi obtížné porozumět abstrakci bez pochopení, jak zapadá do větší přehled o konkrétní implementace a rozhraní API pracující na odběru. Názvy abstrakce a jejich členové jsou také nutně abstraktní, často vede jako nesrozumitelné a unapproachable první neměňte širší kontextu jejich využití.  
+ Příliš mnoho odběrů v rámci také negativně ovlivnit využitelnost rozhraní framework. Často je poměrně obtížné porozumět abstrakci bez nutnosti porozumět, jak zapadá do větší přehled o konkrétní implementace a rozhraní API fungujícími v odběru. Názvy abstrakce a jejich členy jsou také nutně abstract, které často jsou nejasné a unapproachable bez první Principy širšího kontextu jejich použití.  
   
- Abstrakce však poskytují velmi výkonné rozšíření, což často nemůže shodovat na rozšiřitelnost mechanismy. Jsou jádrem mnoho architektury vzory, třeba moduly plug-in inverzi řízení (IoC), kanálů a tak dále. Jsou také velmi důležité pro testovatelnosti architektury. Dobrý abstrakce umožňují se zakázaným inzerováním out velkou závislosti pro účely testování jednotek. V souhrnu jsou zodpovědní za sought-after bohatost moderní architektury objektově orientované abstrakce.  
+ Abstrakce však poskytují velmi výkonné rozšíření, což často nesmí shodovat s další mechanismy rozšiřitelnosti. Jsou základem mnoho vzorech architektury, jako jsou moduly plug-in IOC (Inversion) ovládacího prvku, kanály a tak dále. Jsou také velmi důležité pro testovatelnost architektur. Dobré abstrakce umožňují zástupných procedur si náročné závislosti za účelem testování částí. Stručně řečeno abstrakce zodpovídají za sought-after bohatost moderních architektur objektově orientovaný.  
   
  **X DO NOT** zadejte abstrakce, pokud jsou neotestovali ve vývoji několik rozhraní API využívání abstrakce a konkrétní implementace.  
   
  **✓ DO** zvolit pečlivě abstraktní třídy a rozhraní při navrhování abstrakci.  
   
- **✓ CONSIDER** poskytuje odkaz testy pro konkrétní implementace abstrakce. Tyto testy by měl povolit uživatelům otestovat, zda jejich implementace správně implementaci kontraktu.  
+ **✓ CONSIDER** poskytuje odkaz testy pro konkrétní implementace abstrakce. Tyto testy by měly umožnit uživatelům k ověření, zda jejich implementace správnou implementaci kontraktu.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)

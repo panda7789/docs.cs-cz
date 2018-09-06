@@ -5,11 +5,11 @@ f1_keywords:
 - vbrInteraction_ResKeyNotCreated1
 ms.assetid: 465ccd53-dfdc-47ec-8b3f-9a65ba739314
 ms.openlocfilehash: 691257f76e18fc1fe24584d589e71f99db8d7463
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777165"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43891442"
 ---
 # <a name="registry-key-39ltkeynamegt39-could-not-be-created"></a>Klíč registru &#39; &lt;keyname&gt; &#39; nebylo možné vytvořit
 Zadaný klíč registru se nezdařilo, pravděpodobně z důvodu nedostatečná oprávnění zabezpečení.  

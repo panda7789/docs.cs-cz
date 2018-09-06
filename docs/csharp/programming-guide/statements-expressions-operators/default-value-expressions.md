@@ -1,69 +1,69 @@
 ---
-title: Výchozí hodnota výrazy (C# programování průvodce)
-description: Výchozí hodnota výrazy vytvořit výchozí hodnota pro všechny odkaz na typ nebo typ hodnoty
+title: Výrazy s výchozími hodnotami (C# Programming Guide)
+description: Výrazy s výchozími hodnotami vytvořit výchozí hodnotu pro libovolný typ odkazu nebo typ hodnoty
 ms.date: 04/25/2018
 helpviewer_keywords:
 - generics [C#], default keyword
 - default keyword [C#], generic programming
-ms.openlocfilehash: be51ad253a2939f538144caf4500f39e144c1664
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 94866f22fb3ad921a834cffb16fe17e44cef5965
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33336798"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44032316"
 ---
-# <a name="default-value-expressions-c-programming-guide"></a>Výchozí hodnota výrazy (C# programovací průvodce)
+# <a name="default-value-expressions-c-programming-guide"></a>výrazy s výchozími hodnotami (C# programovací příručka)
 
-Výraz výchozí hodnoty `default(T)` vytvoří výchozí hodnota typu `T`. V následující tabulce jsou uvedeny hodnoty, které vytváří pro různé typy:
+Výraz výchozí hodnoty `default(T)` vytvoří výchozí hodnota typu `T`. V následující tabulce jsou uvedeny hodnoty, které jsou vytvořeny pro různé typy:
 
 |Typ|Výchozí hodnota|
 |---------|---------|
-|žádný odkaz na typ|`null`|
-|Typ číselné hodnoty|Nula|
+|jakéhokoliv odkazového typu|`null`|
+|Zadejte číselnou hodnotu|Nula|
 |[bool](../../language-reference/keywords/bool.md)|`false`|
 |[char](../../language-reference/keywords/char.md)|`'\0'`|
-|[enum](../../language-reference/keywords/enum.md)|Hodnota vyprodukované výraz `(E)0`, kde `E` je identifikátor výčtu.|
-|[struct](../../language-reference/keywords/struct.md)|Hodnota vyprodukované nastavení všechny hodnoty typu pole na jejich výchozí hodnoty a všechny odkazovat typ pole k `null`.|
-|Typ s možnou hodnotou Null|Instance pro kterou <xref:System.Nullable%601.HasValue%2A> vlastnost je `false` a <xref:System.Nullable%601.Value%2A> vlastnosti není definován.|
+|[enum](../../language-reference/keywords/enum.md)|Hodnota vytvořený podle výrazu `(E)0`, kde `E` je identifikátor výčtu.|
+|[struct](../../language-reference/keywords/struct.md)|Hodnotu vytvořenou testovaným nastavení všechny hodnoty pole na výchozí hodnoty a všechny odkazují na typ pole na `null`.|
+|Typ s možnou hodnotou Null|Instance, pro kterou <xref:System.Nullable%601.HasValue%2A> vlastnost `false` a <xref:System.Nullable%601.Value%2A> vlastnost není definována.|
 
-Výchozí hodnota výrazy jsou užitečné zejména v obecné třídy a metody. Tom, jak přiřadit výchozí hodnotu parametrizované typu je jedním z problémů často vyvstává použití obecných typů `T` Pokud nevíte, následující předem:
+Výrazy s výchozími hodnotami jsou zvláště užitečné při obecné třídy a metody. Jedním problémem, který nastane použití obecných typů je výchozí hodnota parametry typu přiřazení `T` Pokud neznáte následující předem:
 
-- Jestli `T` odkazového typu nebo typ hodnoty.
-- Pokud `T` je typ hodnoty, zda je číselná hodnota nebo struktury.
+- Zda `T` je typem odkazu nebo hodnotového typu.
+- Pokud `T` je typ hodnoty, ať už se jedná o číselnou hodnotu nebo strukturu.
 
- Zadané proměnné `t` parametrizované typu `T`, příkaz `t = null` je platná pouze v případě `T` typem je odkaz. Přiřazení `t = 0` funguje pouze pro typy číselnou hodnotu, ale ne pro struktury. K řešení, které, použijte výraz výchozí hodnoty:
+ Zadané proměnné `t` parametry typu `T`, příkaz `t = null` je platná pouze pokud `T` je typem odkazu. Přiřazení `t = 0` funguje jenom u typů číselnou hodnotu, ale nikoli pro struktury. Chcete-li to vyřešit, použijte výraz výchozí hodnoty:
 
 ```csharp
 T t = default(T);
 ```
 
-`default(T)` Výraz není omezen na obecné třídy a metody. Výchozí hodnota výrazy lze použít všechny spravovaného typu. Platné jsou některé z těchto výrazů:
+`default(T)` Výraz není omezena pouze na obecné třídy a metody. Výrazy s výchozími hodnotami lze použít s žádným typem spravované. Platné jsou některé z těchto výrazů:
 
  [!code-csharp[csProgGuideGenerics#1](../../../../samples/snippets/csharp/programming-guide/statements-expressions-operators/default-value-expressions.cs)]
 
- Následující příklad z `GenericList<T>` třída ukazuje způsob použití `default(T)` operátor v obecné třídy. Další informace najdete v tématu [Úvod do obecných typů](../generics/introduction-to-generics.md).
+ Následující příklad z `GenericList<T>` třídy ukazuje způsob použití `default(T)` operátor v obecné třídě. Další informace najdete v tématu [Úvod do obecných typů](../generics/introduction-to-generics.md).
 
  [!code-csharp[csProgGuideGenerics#2](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#Snippet41)]
 
-## <a name="default-literal-and-type-inference"></a>Výchozí literálu a odvození typu
+## <a name="default-literal-and-type-inference"></a>Výchozí literál a odvození typu
 
-Od verze jazyka C# 7.1, `default` literál lze použít pro výchozí hodnotu výrazy při kompilátor lze odvodit typ výrazu. `default` Literál vytváří stejnou hodnotu jako ekvivalentní `default(T)` kde `T` je odvozeném typu. To můžete provést kód přesnější snížením redundance deklarování typu více než jednou. `default` Literál lze použít v některém z následujících umístění:
+Od verze C# 7.1, `default` literal lze použít pro výrazy s výchozími hodnotami, pokud kompilátor může odvodit typ výrazu. `default` Literál vytvoří stejnou hodnotu jako odpovídající `default(T)` kde `T` je odvozený typ. To lze díky kód stručnější snižují redundanci deklarování typu více než jednou. `default` Literál je možné v některém z následujících umístění:
 
-- Inicializátor proměnné
+- Inicializátor proměnné.
 - přiřazení proměnné
-- Výchozí hodnota pro volitelný parametr deklarace
-- poskytnutí hodnota pro argument volání – metoda
-- vrátí příkaz (nebo výraz v vozidlo člen výrazu)
+- deklarování výchozí hodnota volitelného parametru
+- poskytuje hodnoty pro argument volání metody
+- návratový příkaz (nebo výrazu v vozidlo člen typu výrazu)
 
-Následující příklad ukazuje použití mnoha `default` literálu ve výrazu výchozí hodnota:
+Následující příklad ukazuje mnoho použití `default` literál ve výrazu výchozí hodnoty:
 
 [!code-csharp[csProgGuideGenerics#3](../../../../samples/snippets/csharp/programming-guide/statements-expressions-operators/default-literal.cs)]
 
 ## <a name="see-also"></a>Viz také
 
- <xref:System.Collections.Generic>  
- [Průvodce programováním v jazyce C#](../index.md)  
- [Obecné typy (C# Průvodce programováním)](../generics/index.md)  
- [Obecné metody](../generics/generic-methods.md)  
- [Obecné typy v rozhraní .NET](~/docs/standard/generics/index.md)  
- [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md)
+- <xref:System.Collections.Generic>  
+- [Průvodce programováním v jazyce C#](../index.md)  
+- [Obecné typy (C# Programming Guide)](../generics/index.md)  
+- [Obecné metody](../generics/generic-methods.md)  
+- [Obecné typy v .NET](~/docs/standard/generics/index.md)  
+- [Tabulka výchozích hodnot](../../language-reference/keywords/default-values-table.md)

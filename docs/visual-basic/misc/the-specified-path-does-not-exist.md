@@ -3,11 +3,11 @@ title: Zadaná cesta neexistuje.
 ms.date: 07/20/2015
 ms.assetid: b0855f92-03c2-446b-94c1-856c87359c54
 ms.openlocfilehash: 0166ced8b64c5e0366b90fa649a4a4f7222a5744
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43747561"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44037695"
 ---
 # <a name="the-specified-path-does-not-exist"></a>Zadaná cesta neexistuje.
 Zadaná cesta neexistuje, pravděpodobně z důvodu chyby kombinovaných řetězců.  

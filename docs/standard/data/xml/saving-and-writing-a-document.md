@@ -8,36 +8,36 @@ dev_langs:
 ms.assetid: 097b0cb1-5743-4c3a-86ef-caf5cbe6750d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 389ae0d95f3d612ca9c81ce69b74f8b58534d679
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 83aad5d45dda1784069839662486f7dbcc307542
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33573591"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43879513"
 ---
 # <a name="saving-and-writing-a-document"></a>Ukládání a zápis dokumentu
-Při spouštění a uložit <xref:System.Xml.XmlDocument>, uložený dokument se můžou lišit od původního následujícími způsoby:  
+Při načtení a uložení <xref:System.Xml.XmlDocument>, uložený dokument může lišit od původních následujícími způsoby:  
   
--   Pokud <xref:System.Xml.XmlDocument.PreserveWhitespace%2A> je nastavena na `true` před <xref:System.Xml.XmlDocument.Save%2A> metoda je volána, prázdné místo v dokumentu je zachována ve výstupu; pokud je tato vlastnost `false`, <xref:System.Xml.XmlDocument> automaticky odsazení výstup.  
+-   Pokud <xref:System.Xml.XmlDocument.PreserveWhitespace%2A> je nastavena na `true` před <xref:System.Xml.XmlDocument.Save%2A> metoda je volána, prázdné znaky v dokumentu je zachována ve výstupu; pokud je tato vlastnost `false`, <xref:System.Xml.XmlDocument> Automatické odsazení výstupu.  
   
--   Všechny mezer mezi atributy sníží jeden mezerou.  
+-   Všechny prázdné znaky mezi atributy se zkrátilo na jediné místo znak.  
   
--   Mezer mezi elementy se změní. Uchování významné prázdné znaky a není zanedbatelný prázdné znaky. Při ukládání dokumentu se bude používat, ale <xref:System.Xml.XmlTextWriter> **Indenting** režimu ve výchozím nastavení přehledně vytisknout výstup, aby byl čitelnější.  
+-   Prázdné znaky mezi elementy se změní. Zachování významných mezer a nevýznamné prázdný znak není. Ale když je dokument uložen, použije <xref:System.Xml.XmlTextWriter> **Indenting** režimu ve výchozím nastavení elegantně vytisknout výstup, aby byl lépe čitelný.  
   
--   Uvozovky používá kolem hodnoty atributu se změní na dvojitých uvozovek ve výchozím nastavení. Můžete použít <xref:System.Xml.XmlTextReader.QuoteChar%2A> vlastnost <xref:System.Xml.XmlTextWriter> nastavit uvozovky dvojité uvozovky nebo jednoduchých uvozovkách.  
+-   Uvozovky kolem hodnot atributů použít se změní na dvojitými uvozovkami. ve výchozím nastavení. Můžete použít <xref:System.Xml.XmlTextReader.QuoteChar%2A> vlastnost <xref:System.Xml.XmlTextWriter> nastavit znak pro uvození dvojité uvozovky nebo jednoduchá uvozovka.  
   
--   Ve výchozím nastavení, jako například entity číselné znaků `{` rozbaleny.  
+-   Ve výchozím nastavení, jako je číselný znak entity `{` rozbaleny.  
   
--   Značky pořadí bajtů nalezen v dokumentu vstupní není zachován. UCS-2 je uložena jako UTF-8, pokud explicitně vytvořit deklaraci XML, který určuje jinou kódování.  
+-   Nezachová se značkou pořadí bajtů nalezen ve vstupním dokumentu. UCS-2 je uložen jako UTF-8, dokud explicitně nevytvoříte deklarace XML, který určuje jiné kódování.  
   
--   Pokud chcete zapsat <xref:System.Xml.XmlDocument> do souboru nebo datový proud, zapsána výstup je stejný jako obsah dokumentu. To znamená <xref:System.Xml.XmlDeclaration> je napsána pouze pokud je obsažena v dokumentu a kódování použité při zápisu se dokumentu je stejný kódování uveden v uzlu deklarace.  
+-   Pokud chcete vypsat <xref:System.Xml.XmlDocument> do souboru nebo datového proudu zapsat výstup je stejný jako obsah dokumentu. To znamená <xref:System.Xml.XmlDeclaration> je zapsán pouze pokud je obsažena v dokumentu a kódování použité při zápisu dokument je stejný kódování podle uzlu deklarací.  
   
 ## <a name="writing-an-xmldeclaration"></a>Zápis XmlDeclaration  
  <xref:System.Xml.XmlDocument> a <xref:System.Xml.XmlDeclaration> členy <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlNode.InnerXml%2A>, a <xref:System.Xml.XmlNode.WriteTo%2A>, kromě <xref:System.Xml.XmlDocument> metody <xref:System.Xml.XmlDocument.Save%2A> a <xref:System.Xml.XmlDocument.WriteContentTo%2A>, vytvořit deklaraci XML.  
   
- Pro <xref:System.Xml.XmlDocument> vlastnosti <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDocument.InnerXml%2A>a <xref:System.Xml.XmlDocument.Save%2A>, <xref:System.Xml.XmlDocument.WriteTo%2A>, a <xref:System.Xml.XmlDocument.WriteContentTo%2A> metody, kódování napsána v deklaraci XML je převzat ze <xref:System.Xml.XmlDeclaration> uzlu. Pokud neexistuje žádné <xref:System.Xml.XmlDeclaration> uzlu <xref:System.Xml.XmlDeclaration> není zapsaná. Pokud je v bez kódování <xref:System.Xml.XmlDeclaration> uzlu kódování není napsána v deklaraci XML.  
+ Pro <xref:System.Xml.XmlDocument> vlastnosti <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDocument.InnerXml%2A>a <xref:System.Xml.XmlDocument.Save%2A>, <xref:System.Xml.XmlDocument.WriteTo%2A>, a <xref:System.Xml.XmlDocument.WriteContentTo%2A> metody, kódování, které je zapsané v deklaraci XML je převzata z <xref:System.Xml.XmlDeclaration> uzlu. Pokud není žádný <xref:System.Xml.XmlDeclaration> uzlu <xref:System.Xml.XmlDeclaration> není zapsán. Pokud není v žádné kódování <xref:System.Xml.XmlDeclaration> uzlu kódování není zapsán v deklaraci XML.  
   
- <xref:System.Xml.XmlDocument.Save%2A?displayProperty=nameWithType> a <xref:System.Xml.XmlDocument.Save%2A?displayProperty=nameWithType> metody vždycky zapsat <xref:System.Xml.XmlDeclaration>. Tyto metody přijímají kódování z zapisovač, který zapisuje do. To znamená, kódování hodnota zapisovače přepsání kódování na dokument a na <xref:System.Xml.XmlDeclaration>. Například následující kód nelze zapsat kódování v deklaraci XML nalezen ve výstupním souboru `out.xml`.  
+ <xref:System.Xml.XmlDocument.Save%2A?displayProperty=nameWithType> a <xref:System.Xml.XmlDocument.Save%2A?displayProperty=nameWithType> metody vždy vypsat <xref:System.Xml.XmlDeclaration>. Tyto metody přijímají kódování z zapisovače, který zapisuje do. To znamená, přepíše hodnotu kódování zapisovače kódování v dokumentu a v <xref:System.Xml.XmlDeclaration>. Například následující kód nezapisuje kódování v deklaraci XML nalezen ve výstupním souboru `out.xml`.  
   
 ```vb  
 Dim doc As New XmlDocument()  
@@ -53,14 +53,14 @@ doc.Load("text.xml");
 doc.Save(tw);  
 ```  
   
- Pro <xref:System.Xml.XmlDocument.Save%2A> metody deklarace XML je zapsána pomocí <xref:System.Xml.XmlWriter.WriteStartDocument%2A> metoda v <xref:System.Xml.XmlWriter> – třída. Proto přepsal <xref:System.Xml.XmlWriter.WriteStartDocument%2A> metoda mění, jak je zapsán začátek dokumentu.  
+ Pro <xref:System.Xml.XmlDocument.Save%2A> metody deklarace XML je zapsán pomocí <xref:System.Xml.XmlWriter.WriteStartDocument%2A> metodu <xref:System.Xml.XmlWriter> třídy. Přepsání proto, <xref:System.Xml.XmlWriter.WriteStartDocument%2A> metoda mění, jak se zapíše začátek dokumentu.  
   
- Pro <xref:System.Xml.XmlDeclaration> členy <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDeclaration.WriteTo%2A>, a <xref:System.Xml.XmlNode.InnerXml%2A>, pokud <xref:System.Xml.XmlDeclaration.Encoding%2A> není nastavena vlastnost, bez kódování se zapíše. Jinak, kódování napsána v deklaraci XML je stejný jako kódování v nalezen <xref:System.Xml.XmlDeclaration.Encoding%2A> vlastnost.  
+ Pro <xref:System.Xml.XmlDeclaration> členy <xref:System.Xml.XmlNode.OuterXml%2A>, <xref:System.Xml.XmlDeclaration.WriteTo%2A>, a <xref:System.Xml.XmlNode.InnerXml%2A>, pokud <xref:System.Xml.XmlDeclaration.Encoding%2A> vlastnost není nastavená, bez kódování je zapsán. V opačném případě kódování napsaných v deklaraci XML je stejný jako kódování najdete v <xref:System.Xml.XmlDeclaration.Encoding%2A> vlastnost.  
   
-## <a name="writing-document-content-using-the-outerxml-property"></a>Obsah dokumentu zápis pomocí vlastnosti OuterXml  
- <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost je rozšíření Microsoft standardům World Wide Web Consortium (W3C) XML modelu DOM (Document Object). <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost se používá k získání kódu celý dokument XML nebo kód jeden uzel a jeho podřízené uzly. <xref:System.Xml.XmlNode.OuterXml%2A> vrátí kód, který představuje daný uzel a všechny jeho podřízené uzly.  
+## <a name="writing-document-content-using-the-outerxml-property"></a>Vytváření obsahu dokumentu pomocí vlastnosti OuterXml  
+ <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost je rozšířením společnosti Microsoft pro World Wide Web Consortium (W3C) XML Document Object Model (DOM) normami. <xref:System.Xml.XmlNode.OuterXml%2A> Vlastnost se používá k získání značek celý dokument XML, nebo pouze značky, jeden uzel a jeho podřízené uzly. <xref:System.Xml.XmlNode.OuterXml%2A> vrátí kód představující daný uzel a všechny jeho podřízené uzly.  
   
- Následující příklad kódu ukazuje, jak k uložení dokumentu v celé jeho šíři jako řetězec.  
+ Následující příklad kódu ukazuje, jak uložit dokument v celém rozsahu jako řetězec.  
   
 ```vb  
 Dim mydoc As New XmlDocument()  
@@ -76,7 +76,7 @@ XmlDocument mydoc = new XmlDocument();
 string xml = mydoc.OuterXml;  
 ```  
   
- Následující příklad kódu ukazuje, jak uložit jenom element dokumentu.  
+ Následující příklad kódu ukazuje, jak uložit pouze element dokumentu.  
   
 ```vb  
 ' For the content of the Document Element only.  
@@ -88,7 +88,8 @@ Dim xml As String = mydoc.DocumentElement.OuterXml
 string xml = mydoc.DocumentElement.OuterXml;  
 ```  
   
- Naproti tomu můžete použít <xref:System.Xml.XmlNode.InnerText%2A> vlastnost, pokud chcete, aby obsah podřízené uzly.  
+ Naproti tomu můžete použít <xref:System.Xml.XmlNode.InnerText%2A> vlastnosti, pokud chcete obsah z podřízených uzlů.  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

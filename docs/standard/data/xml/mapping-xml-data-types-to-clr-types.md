@@ -1,24 +1,24 @@
 ---
-title: Mapování datové typy XML pro typy CLR
+title: Mapování datových typů XML na typy CLR
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: cabdfcad-f359-479b-b71c-8b2fad42ca49
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d06876b91c72b939768d480e40631a8e85170bc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9cff30147da82896fb3a757ba2fed16d794ec3c9
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568537"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44037919"
 ---
-# <a name="mapping-xml-data-types-to-clr-types"></a>Mapování datové typy XML pro typy CLR
-Následující tabulka popisuje výchozí mapování mezi datové typy XML a běžné typy language runtime (CLR).  
+# <a name="mapping-xml-data-types-to-clr-types"></a>Mapování datových typů XML na typy CLR
+Následující tabulka popisuje výchozí mapování mezi datovými typy XML a běžné typy language runtime (CLR).  
   
 ## <a name="the-following-table-describes-the-default-mappings-of-an-xml-data-type-to-a-clr-type"></a>Následující tabulka popisuje výchozí mapování datového typu XML na typ CLR.  
   
 > [!NOTE]
->  `xs` a `xdt` předpony jsou namapované na http://www.w3.org/2001/XMLSchema a http://www.w3.org/2003/05/xpath-datatypes identifikátorů URI oboru názvů v uvedeném pořadí.  
+>  `xs` a `xdt` předpony jsou mapovány na http://www.w3.org/2001/XMLSchema a http://www.w3.org/2003/05/xpath-datatypes identifikátorů URI oboru názvů v uvedeném pořadí.  
   
 |Typ XML|Typ CLR|  
 |--------------|--------------|  
@@ -72,12 +72,13 @@ Následující tabulka popisuje výchozí mapování mezi datové typy XML a bě
 |`xdt:anyAtomicType`|<xref:System.Object>|  
 |`xs:anySimpleType`|<xref:System.String>|  
 |Uzel dokumentu|<xref:System.Xml.XPath.XPathNavigator>|  
-|Element uzlu|<xref:System.Xml.XPath.XPathNavigator>|  
-|Uzlu atributu.|<xref:System.Xml.XPath.XPathNavigator>|  
-|Namespace uzlu|<xref:System.Xml.XPath.XPathNavigator>|  
+|Uzlu elementu|<xref:System.Xml.XPath.XPathNavigator>|  
+|Uzel atributu|<xref:System.Xml.XPath.XPathNavigator>|  
+|Uzel Namespace|<xref:System.Xml.XPath.XPathNavigator>|  
 |Textový uzel|<xref:System.Xml.XPath.XPathNavigator>|  
 |Uzel komentáře|<xref:System.Xml.XPath.XPathNavigator>|  
-|Zpracování instrukcí uzlu|<xref:System.Xml.XPath.XPathNavigator>|  
+|Uzel zpracování instrukcí|<xref:System.Xml.XPath.XPathNavigator>|  
   
-## <a name="see-also"></a>Viz také  
- [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)
+## <a name="see-also"></a>Viz také:
+
+- [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)

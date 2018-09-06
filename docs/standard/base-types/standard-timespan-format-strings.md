@@ -19,57 +19,57 @@ helpviewer_keywords:
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 82774ffaf03b7eaad6240a0361bede076053de0c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 52da538ba9cf348062905b66a87d13db82a214a0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578304"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43886094"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
-<a name="Top"></a> Standardní <xref:System.TimeSpan> řetězec formátu používá jeden specifikátor formátu pro definování textovou reprezentaci hodnoty <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Formátovací řetězec, který obsahuje více než jeden znak, včetně mezer, interpretována jako vlastní <xref:System.TimeSpan> řetězec formátu. Další informace najdete v tématu [vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
+<a name="Top"></a> Standardní <xref:System.TimeSpan> formátovací řetězec se používá jeden specifikátor formátu definovat textové vyjádření <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Formátovací řetězec, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako vlastní <xref:System.TimeSpan> řetězec formátu. Další informace najdete v tématu [Custom TimeSpan Format Strings](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
   
- Řetězcové vyjádření <xref:System.TimeSpan> hodnoty jsou vytvářeny voláním přetížení <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType> metoda, stejně jako metodami, které podporují složené formátování, jako například <xref:System.String.Format%2A?displayProperty=nameWithType>. Další informace najdete v tématu [typy formátování](../../../docs/standard/base-types/formatting-types.md) a [složené formátování](../../../docs/standard/base-types/composite-formatting.md). Následující příklad ukazuje použití standardní řetězce formátu v operacích formátování.  
+ Řetězcové vyjádření <xref:System.TimeSpan> hodnoty jsou vytvářeny voláním přetížení <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType> metody, stejně jako metody, které podporují také složené formátování, jako například <xref:System.String.Format%2A?displayProperty=nameWithType>. Další informace najdete v tématu [Formatting Types](../../../docs/standard/base-types/formatting-types.md) a [složené formátování](../../../docs/standard/base-types/composite-formatting.md). Následující příklad ukazuje použití standardního formátovacího řetězce v operacích formátování.  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/formatexample1.cs#2)]
  [!code-vb[Conceptual.TimeSpan.Standard#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/formatexample1.vb#2)]  
   
- Standardní <xref:System.TimeSpan> řetězce formátu jsou také používány <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> a <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody k definování požadovaný formát vstupu řetězců pro operace analýzy. (Analýza převede řetězcovou reprezentaci hodnoty na tuto hodnotu.) Následující příklad ukazuje použití standardní řetězce formátu v operacích analýzy.  
+ Standardní <xref:System.TimeSpan> formátovací řetězce jsou také používány <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> a <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType> metody, které definují požadovaný formát ze vstupních řetězců pro operace analýzy. (Analýza kódu převede řetězcové vyjádření hodnoty této hodnotě.) Následující příklad ukazuje použití standardního formátovacího řetězce v operacích analýzy.  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/parseexample1.cs#3)]
  [!code-vb[Conceptual.TimeSpan.Standard#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/parseexample1.vb#3)]  
   
-<a name="top"></a> Následující tabulka uvádí specifikátory formátu intervalu (běžný čas).  
+<a name="top"></a> Následující tabulka uvádí specifikátory formátu interval (běžný čas).  
   
 |Specifikátor formátu|Název|Popis|Příklady|  
 |----------------------|----------|-----------------|--------------|  
-|"c"|Konstantní (neutrální) formátu|Tento specifikátor není zohledňující jazykovou verzi. Používá formát `[-][d’.’]hh’:’mm’:’ss[‘.’fffffff]`.<br /><br /> ("T" a "T" řetězce formátu poskytovat stejné výsledky.)<br /><br /> Další informace: [The konstantní ("c") specifikátor formátu](#Constant).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
-|"g"|Obecné krátké formátu|Tento specifikátor výstupy pouze to, co je potřeba. Je zohledňující jazykovou verzi a má podobu `[-][d’:’]h’:’mm’:’ss[.FFFFFFF]`.<br /><br /> Další informace: [obecné krátké ("g") specifikátor formátu](#GeneralShort).|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50, 5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50 599 (fr-FR)|  
-|"G"|Obecný dlouhý formát|Tento specifikátor vždy výstupy dny a sedm míst za desetinnou čárkou. Je zohledňující jazykovou verzi a má podobu `[-]d’:’hh’:’mm’:’ss.fffffff`.<br /><br /> Další informace: [obecné dlouho ("G") specifikátor formátu](#GeneralLong).|`New TimeSpan(18, 30, 0)` -> 0:18:30:00.0000000 (en US)<br /><br /> `New TimeSpan(18, 30, 0)` -> 0:18:30:00 0000000 (fr-FR)|  
+|"c"|Konstantní (neutrální) formát|Tento specifikátor není zohledňující jazykovou verzi. Má podobu `[-][d’.’]hh’:’mm’:’ss[‘.’fffffff]`.<br /><br /> (Řetězce formátu "T" a "t" vytvářejí stejné výsledky.)<br /><br /> Další informace: [The konstantní ("c") specifikátor formátu](#Constant).|`TimeSpan.Zero` -> 00:00:00<br /><br /> `New TimeSpan(0, 0, 30, 0)` -> 00:30:00<br /><br /> `New TimeSpan(3, 17, 25, 30, 500)` -> 3.17:25:30.5000000|  
+|"g"|Obecném krátkém formátu|Tento specifikátor výstupem jenom to, co je potřeba. Jazykové a má podobu `[-][d’:’]h’:’mm’:’ss[.FFFFFFF]`.<br /><br /> Další informace: [The obecné krátký ("g") specifikátor formátu](#GeneralShort).|`New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50.5 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 500)` -> 1:3:16:50, 5 (fr-FR)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50.599 (en US)<br /><br /> `New TimeSpan(1, 3, 16, 50, 599)` -> 1:3:16:50 599 (fr-FR)|  
+|"G"|Obecném dlouhém formátu|Tento specifikátor vždy vypíše dnů a sedm zlomkové číslice. Jazykové a má podobu `[-]d’:’hh’:’mm’:’ss.fffffff`.<br /><br /> Další informace: [The obecné dlouhý ("G") specifikátor formátu](#GeneralLong).|`New TimeSpan(18, 30, 0)` -> 0:18:30:00.0000000 (en US)<br /><br /> `New TimeSpan(18, 30, 0)` -> 0:18:30:00 0000000 (fr-FR)|  
   
 <a name="Constant"></a>   
-## <a name="the-constant-c-format-specifier"></a>Specifikátor formátu konstantní ("c")  
- Vrátí řetězcovou reprezentaci specifikátor "c" formátu <xref:System.TimeSpan> hodnotu v následující podobě:  
+## <a name="the-constant-c-format-specifier"></a>Specifikátor konstanty formátu ("c")  
+ Vrátí řetězcovou reprezentaci specifikátor formátu "c" <xref:System.TimeSpan> hodnotu v následujícím tvaru:  
   
  [-] [*d*.] *hh*:*mm*:*ss*[. *fffffff*]  
   
- Prvky v hranatých závorek ([a]) jsou volitelné. Tečka (.) a dvojtečka (:) jsou symboly literálu. Následující tabulka popisuje zbývající prvky.  
+ Prvky v hranatých závorkách ([a]) jsou volitelné. Tečka (.) a dvojtečka (:) jsou symboly literálu. Následující tabulka popisuje zbývající prvky.  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|*-*|Volitelné záporné znaménko, který označuje záporné časovém intervalu.|  
+|*-*|Volitelným záporným znaménkem, který označuje záporný časový interval.|  
 |*d*|Volitelné počet dní, bez počátečních nul.|  
-|*hh*|Počet hodin, který se pohybuje od "00" do "23".|  
+|*hh*|Počet hodin, které od "00" do "23".|  
 |*mm*|Počet minut, který se pohybuje od "00" do "59".|  
 |*ss*|Počet sekund, který se pohybuje od "0" do "59".|  
-|*fffffff*|Volitelné část sekundy.  Jeho hodnota může být v rozsahu od "0000001" (jedna značka nebo jeden millionth deset sekund) do "9999999 tak" (9 999 999 Desetimiliontiny sekundy, nebo druhý menší jeden značek).|  
+|*fffffff*|Volitelné necelá část hodnoty sekundy.  Jeho hodnota může být v rozsahu od "0000001" (jedna značka nebo jedné sekundy millionth deset) do "9999999" (9 999 999 Desetimiliontiny sekundy nebo druhý menší jedna značka).|  
   
- Na rozdíl od specifikátorů formátu "G" a "g" specifikátor "c" Formát není zohledňující jazykovou verzi. Vyvolá řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu výchozí a která je společná pro všechny předchozí verze rozhraní .NET Framework, než [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Výchozí hodnota je "c" <xref:System.TimeSpan> řetězec formátu; <xref:System.TimeSpan.ToString?displayProperty=nameWithType> metoda formátuje hodnotu časového intervalu pomocí řetězce "c" formátu.  
+ Na rozdíl od specifikátory formátu "G" a "g" specifikátor formátu "c" není zohledňující jazykovou verzi. Vytváří řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu, která je neutrální a která je společná pro všechny předchozí verze rozhraní .NET Framework před [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)]. Výchozí hodnota je "c" <xref:System.TimeSpan> formátovací řetězec; <xref:System.TimeSpan.ToString?displayProperty=nameWithType> metoda formátuje hodnotu časového intervalu pomocí formátovacího řetězce "c".  
   
 > [!NOTE]
->  <xref:System.TimeSpan> také podporuje "t" a "T" standardní řetězce formátu, které jsou stejné chování jako standardní formátovací řetězec "c".  
+>  <xref:System.TimeSpan> podporuje také "t" a "T" standardní formátovací řetězce, které jsou stejné chování jako řetězec standardního formátu "c".  
   
- Následující příklad vytvoří dvě instance <xref:System.TimeSpan> objekty, je používá k provádění aritmetických operací a zobrazuje výsledek. V každém případě používá složené formátování pro zobrazení <xref:System.TimeSpan> hodnotu na základě specifikace formátu "c".  
+ Následující příklad vytvoří dvě <xref:System.TimeSpan> objekty, používá k provedení aritmetické operace a zobrazí výsledek. V obou případech používá složeného formátování pro zobrazení <xref:System.TimeSpan> hodnotu ho jde pomocí specifikátoru formátu "c".  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/standardc1.cs#1)]
  [!code-vb[Conceptual.TimeSpan.Standard#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/standardc1.vb#1)]  
@@ -77,26 +77,26 @@ ms.locfileid: "33578304"
  [Zpět k tabulce](#Top)  
   
 <a name="GeneralShort"></a>   
-## <a name="the-general-short-g-format-specifier"></a>Specifikátor formátu krátkého obecné ("g")  
- "g" <xref:System.TimeSpan> specifikátor formátu vrátí řetězcovou reprezentaci <xref:System.TimeSpan> hodnoty ve formuláři compact zahrnutím jenom prvky, které jsou nezbytné. Má následující tvar:  
+## <a name="the-general-short-g-format-specifier"></a>Specifikátor formátu Obecný krátký ("g")  
+ "g" <xref:System.TimeSpan> specifikátor formátu vrátí řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu v kompaktním formátu zahrnutím pouze prvky, které jsou nezbytné. Má následující tvar:  
   
  [-] [*d*:]*h*:*mm*:*ss*[. *FFFFFFF*]  
   
- Prvky v hranatých závorek ([a]) jsou volitelné. Dvojtečkou (:) je literál symbol. Následující tabulka popisuje zbývající prvky.  
+ Prvky v hranatých závorkách ([a]) jsou volitelné. Dvojtečka (:) je literál symbol. Následující tabulka popisuje zbývající prvky.  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|*-*|Volitelné záporné znaménko, který označuje záporné časovém intervalu.|  
+|*-*|Volitelným záporným znaménkem, který označuje záporný časový interval.|  
 |*d*|Volitelné počet dní, bez počátečních nul.|  
-|*h*|Počet hodin, který se pohybuje od "0" a "23", bez počátečních nul.|  
+|*h*|Počet hodin, který se pohybuje od "0" až "23", bez počátečních nul.|  
 |*mm*|Počet minut, který se pohybuje od "00" do "59"...|  
 |*ss*|Počet sekund, který se pohybuje od "00" do "59"...|  
-|*.*|Oddělovač zlomků sekund. Ta je ekvivalentní zadanou jazykovou verzi <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastnost bez uživatele potlačuje.|  
-|*FFFFFFF*|Zlomky sekund. Počet číslic, co se zobrazí.|  
+|*.*|Oddělovač zlomků sekund. Je ekvivalentní se zadanou jazykovou verzi <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> přepíše vlastnost bez uživatele.|  
+|*FFFFFFF*|Zlomků sekund. Počet číslic nejdříve jsou zobrazeny.|  
   
- Jako "" specifikátor formátu je lokalizované specifikátor formátu "g". Jeho oddělovač zlomků sekund je založena na aktuální jazykové verze nebo zadaná jazyková verze <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastnost.  
+ Například specifikátor formátu "G" je specifikátor formátu "g" lokalizována. Jeho desetinné části sekund oddělovač je založen na aktuální jazykovou verzi nebo zadané jazykové verze <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastnost.  
   
- Následující příklad vytvoří dvě instance <xref:System.TimeSpan> objekty, je používá k provádění aritmetických operací a zobrazuje výsledek. V každém případě používá složené formátování pro zobrazení <xref:System.TimeSpan> hodnotu na základě specifikace formátu "g". Kromě toho formáty <xref:System.TimeSpan> hodnotu na základě konvencí formátování aktuální systémovou kulturu (která je v tomto případě Czech - Czech Republic nebo en US) a francouzštinu - Francie (fr-FR) jazykovou verzi.  
+ Následující příklad vytvoří dvě <xref:System.TimeSpan> objekty, používá k provedení aritmetické operace a zobrazí výsledek. V obou případech používá složeného formátování pro zobrazení <xref:System.TimeSpan> hodnotu ho jde pomocí specifikátoru formátu "g". Kromě toho formáty <xref:System.TimeSpan> hodnotu pomocí formátovacích úmluv aktuální systémovou kulturu (která je v tomto případě Angličtina - Spojené státy nebo en US) a Francouzština – Francie (fr-FR) jazykovou verzi.  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/standardshort1.cs#4)]
  [!code-vb[Conceptual.TimeSpan.Standard#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/standardshort1.vb#4)]  
@@ -104,33 +104,34 @@ ms.locfileid: "33578304"
  [Zpět k tabulce](#Top)  
   
 <a name="GeneralLong"></a>   
-## <a name="the-general-long-g-format-specifier"></a>Specifikátor formátu obecného dlouhého ("G")  
- "G" <xref:System.TimeSpan> specifikátor formátu vrátí řetězcovou reprezentaci <xref:System.TimeSpan> hodnota v dlouhém formátu, který vždy obsahuje dnů a zlomků sekund. Řetězec, který je výsledkem specifikátor standardní formát "G" má následující formát:  
+## <a name="the-general-long-g-format-specifier"></a>Specifikátor formátu Obecný dlouhý ("G")  
+ "G" <xref:System.TimeSpan> specifikátor formátu vrátí řetězcovou reprezentaci <xref:System.TimeSpan> hodnotu v dlouhém formátu, který obsahuje vždy dnů a zlomků sekund. Řetězec, který je výsledkem specifikátor standardního formátu "G" má následující formát:  
   
  [-] *d*:*hh*:*mm*:*ss*. *fffffff*  
   
- Prvky v hranatých závorek ([a]) jsou volitelné. Dvojtečkou (:) je literál symbol. Následující tabulka popisuje zbývající prvky.  
+ Prvky v hranatých závorkách ([a]) jsou volitelné. Dvojtečka (:) je literál symbol. Následující tabulka popisuje zbývající prvky.  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|*-*|Volitelné záporné znaménko, který označuje záporné časovém intervalu.|  
-|*d*|Počet dnů bez počátečních nul.|  
-|*hh*|Počet hodin, který se pohybuje od "00" do "23".|  
+|*-*|Volitelným záporným znaménkem, který označuje záporný časový interval.|  
+|*d*|Počet dní, bez počátečních nul.|  
+|*hh*|Počet hodin, které od "00" do "23".|  
 |*mm*|Počet minut, který se pohybuje od "00" do "59".|  
 |*ss*|Počet sekund, který se pohybuje od "00" do "59".|  
-|*.*|Oddělovač zlomků sekund. Ta je ekvivalentní zadanou jazykovou verzi <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastnost bez uživatele potlačuje.|  
-|*fffffff*|Zlomky sekund.|  
+|*.*|Oddělovač zlomků sekund. Je ekvivalentní se zadanou jazykovou verzi <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> přepíše vlastnost bez uživatele.|  
+|*fffffff*|Zlomků sekund.|  
   
- Jako "" specifikátor formátu je lokalizované specifikátor formátu "g". Jeho oddělovač zlomků sekund je založena na aktuální jazykové verze nebo zadaná jazyková verze <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastnost.  
+ Například specifikátor formátu "G" je specifikátor formátu "g" lokalizována. Jeho desetinné části sekund oddělovač je založen na aktuální jazykovou verzi nebo zadané jazykové verze <xref:System.Globalization.NumberFormatInfo.NumberDecimalSeparator%2A> vlastnost.  
   
- Následující příklad vytvoří dvě instance <xref:System.TimeSpan> objekty, je používá k provádění aritmetických operací a zobrazuje výsledek. V každém případě používá složené formátování pro zobrazení <xref:System.TimeSpan> hodnotu na základě specifikace formátu "G". Kromě toho formáty <xref:System.TimeSpan> hodnotu na základě konvencí formátování aktuální systémovou kulturu (která je v tomto případě Czech - Czech Republic nebo en US) a francouzštinu - Francie (fr-FR) jazykovou verzi.  
+ Následující příklad vytvoří dvě <xref:System.TimeSpan> objekty, používá k provedení aritmetické operace a zobrazí výsledek. V obou případech používá složeného formátování pro zobrazení <xref:System.TimeSpan> hodnotu ho jde pomocí specifikátoru formátu "G". Kromě toho formáty <xref:System.TimeSpan> hodnotu pomocí formátovacích úmluv aktuální systémovou kulturu (která je v tomto případě Angličtina - Spojené státy nebo en US) a Francouzština – Francie (fr-FR) jazykovou verzi.  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/standardlong1.cs#5)]
  [!code-vb[Conceptual.TimeSpan.Standard#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/standardlong1.vb#5)]  
   
  [Zpět k tabulce](#Top)  
   
-## <a name="see-also"></a>Viz také  
- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
- [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)  
- [Analýza řetězců](../../../docs/standard/base-types/parsing-strings.md)
+## <a name="see-also"></a>Viz také:
+
+- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)  
+- [Vlastní řetězce formátu TimeSpan](../../../docs/standard/base-types/custom-timespan-format-strings.md)  
+- [Analýza řetězců](../../../docs/standard/base-types/parsing-strings.md)

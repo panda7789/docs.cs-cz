@@ -3,11 +3,11 @@ title: SQLStoreExtensibility
 ms.date: 03/30/2017
 ms.assetid: 5da1b5a3-f144-41ba-b9c4-02818b28b15d
 ms.openlocfilehash: f49d05244cf9f65a8e06f39c7e40391aaebd9f77
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408762"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44032806"
 ---
 # <a name="sqlstoreextensibility"></a>SQLStoreExtensibility
 Tato ukázka demonstruje používání a konfiguraci propagované vlastnosti úložiště instancí pracovních postupů SQL. Úložiště instancí pracovních postupů SQL je založený na SQL implementace úložiště instancí. To umožňuje instance pro uložení stavu a načtení stavu do a z databáze systému SQL Server nebo SQL Server Express. Funkce rozšiřitelnost úložiště umožňuje uživateli definovat vlastnosti, které jsou uloženy v úložišti instancí. Tyto vlastnosti jsou zobrazeny v zobrazení propagované vlastnosti, které mu umožní dotazu pro ně.  

@@ -1,33 +1,33 @@
 ---
-title: příkaz pack DotNet - .NET Core rozhraní příkazového řádku
-description: Příkaz pack dotnet vytvoří balíčky NuGet pro projekt .NET Core.
+title: příkaz DotNet pack – rozhraní příkazového řádku .NET Core
+description: Příkaz dotnet pack vytvoří balíčky NuGet pro projekt .NET Core.
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
 ms.openlocfilehash: 8c2569ec7598b21fe9b673176143d0e54b9eb065
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696816"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43877817"
 ---
-# <a name="dotnet-pack"></a>pack DotNet.
+# <a name="dotnet-pack"></a>balíčku DotNet
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet pack` -Pack kód do balíčku NuGet.
+`dotnet pack` -Sbalit kód do balíčku NuGet.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--no-build] [--no-dependencies]
     [--no-restore] [-o|--output] [--runtime] [-s|--serviceable] [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 ```
 dotnet pack [<PROJECT>] [-c|--configuration] [--include-source] [--include-symbols] [--no-build] [-o|--output]
     [-s|--serviceable] [-v|--verbosity] [--version-suffix]
@@ -37,13 +37,13 @@ dotnet pack [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet pack` Příkaz vytvoří projekt a vytvořit balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet. Pokud `--include-symbols` možnost nachází, je vytvořen jiný balíček obsahující symboly ladění.
+`dotnet pack` Příkaz sestaví projekt a vytváří balíčky NuGet. Výsledek tohoto příkazu je balíček NuGet. Pokud `--include-symbols` možnost je k dispozici, je vytvořen jiný balíček, který obsahuje symboly ladění.
 
-Závislosti NuGet sbalené projektu se přidají do *příponou .nuspec* souboru tak, aby správně přeložit, když je balíček nainstalován. Odkazy na projekt na projekt nejsou zabalené do projektu. V současné době musí mít balíček podle projektů, pokud máte závislosti projektu k projektu.
+Závislostí NuGet komprimovat komprimovaný objekt projektu jsou přidány do *souboru .nuspec* souboru, aby byly správně přeložit, při instalaci balíčku. Odkazy typu projekt projekt nejsou zabaleny v projektu. V současné době musí mít balíček na projekt, pokud máte závislosti projektu k projektu.
 
-Ve výchozím nastavení `dotnet pack` nejprve sestavení projektu. Pokud chcete-li se tomu vyhnout, předat `--no-build` možnost. Tato možnost je často užitečný ve scénářích sestavení nepřetržité integrace (CI), které víte, že kód byl dříve vytvořený.
+Ve výchozím nastavení `dotnet pack` nejprve sestaví projekt. Pokud chcete-li toto chování vyhnout, předejte `--no-build` možnost. Tato možnost je často užitečné pro scénáře sestavení kontinuální integrace (CI), kdy víte, že kód byl vytvořen dříve.
 
-Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkazu pro proces okolních. Další informace najdete v tématu [NuGet metadata vlastnosti](csproj.md#nuget-metadata-properties) a [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) část ukazuje způsob použití nástroje MSBuild přepínače pro několik různých scénářů.
+Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces balení. Další informace najdete v tématu [vlastnosti metadat NuGet](csproj.md#nuget-metadata-properties) a [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) části ukazuje, jak pomocí přepínače /p MSBuild pro několik různých scénářů.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
@@ -51,11 +51,11 @@ Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkazu pro proces
 
 `PROJECT`
 
-Projekt pack. Je buď cestu k [csproj souboru](csproj.md) nebo do adresáře. Pokud není zadáno, výchozí hodnoty k aktuálnímu adresáři.
+Projekt se zabalit. Je buď cestu k [souboru csproj](csproj.md) nebo do adresáře. Pokud není zadán, použije se výchozí do aktuálního adresáře.
 
 ## <a name="options"></a>Možnosti
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET pro základní 2.x](#tab/netcore2x)
+# <a name="net-core-2xtabnetcore2x"></a>[.NET core 2.x](#tab/netcore2x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -63,11 +63,11 @@ Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
 
 `--force`
 
-Vynutí všechny závislosti pro přeloženy i v případě, že poslední obnovení bylo úspěšné. Zadáním tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
+Způsobí, že všechny závislosti vyřešit i v případě, že poslední obnovení bylo úspěšné. Zadání tohoto příznaku je stejný jako odstranění *project.assets.json* souboru.
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `--include-source`
 
@@ -75,41 +75,41 @@ Obsahuje zdrojové soubory v balíčku NuGet. Zdrojové soubory jsou součástí
 
 `--include-symbols`
 
-Generuje symboly `nupkg`.
+Vygeneruje symboly `nupkg`.
 
 `--no-build`
 
-Není sestavení projektu před okolních. Také implicitní nastaví `--no-restore` příznak.
+Nelze sestavit projekt před balení. Také implicitní nastaví `--no-restore` příznak.
 
 `--no-dependencies`
 
-Ignoruje odkazy na projekt na projekt a obnoví pouze kořenové projektu.
+Ignoruje odkazy typu projekt projekt a obnoví pouze zadané kořenového projektu.
 
 `--no-restore`
 
-Implicitní obnovení není spustit, když spustíte příkaz.
+Při spuštění příkazu se nebude spouštět implicitní obnovení.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Zadaný adresář umístí připravené balíčky.
+Umístí sestavené balíčky v adresáři uvedeném.
 
 `--runtime <RUNTIME_IDENTIFIER>`
 
-Určuje cílový modul runtime pro obnovení balíčků pro. Seznam Runtime identifikátorů (RID), najdete v článku [identifikátorů RID katalogu](../rid-catalog.md).
+Určuje cílový modul runtime pro obnovování balíčků pro. Seznam identifikátorů modulů Runtime (RID), najdete v článku [katalog identifikátorů RID](../rid-catalog.md).
 
 `-s|--serviceable`
 
-Nastaví příznak obsluhovatelná v balíčku. Další informace najdete v tématu [blogu .NET: technologie .NET 4.5.1 podporuje Microsoft Security aktualizací pro knihovny .NET NuGet](https://aka.ms/nupkgservicing).
+Nastaví příznak nacházet v balíčku. Další informace najdete v tématu [Blog k .NET: .NET 4.5.1 aktualizace zabezpečení Microsoftu podporuje pro NuGet knihovny .NET](https://aka.ms/nupkgservicing).
 
 `--version-suffix <VERSION_SUFFIX>`
 
-Definuje hodnotu pro `$(VersionSuffix)` vlastnosti MSBuild v projektu.
+Definuje hodnotu pro `$(VersionSuffix)` vlastnost MSBuild v projektu.
 
 `-v|--verbosity <LEVEL>`
 
 Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -117,7 +117,7 @@ Definuje konfiguraci sestavení. Výchozí hodnota je `Debug`.
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `--include-source`
 
@@ -125,23 +125,23 @@ Obsahuje zdrojové soubory v balíčku NuGet. Zdrojové soubory jsou součástí
 
 `--include-symbols`
 
-Generuje symboly `nupkg`.
+Vygeneruje symboly `nupkg`.
 
 `--no-build`
 
-Není sestavení projektu před okolních.
+Nelze sestavit projekt před balení.
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-Zadaný adresář umístí připravené balíčky.
+Umístí sestavené balíčky v adresáři uvedeném.
 
 `-s|--serviceable`
 
-Nastaví příznak obsluhovatelná v balíčku. Další informace najdete v tématu [blogu .NET: technologie .NET 4.5.1 podporuje Microsoft Security aktualizací pro knihovny .NET NuGet](https://aka.ms/nupkgservicing).
+Nastaví příznak nacházet v balíčku. Další informace najdete v tématu [Blog k .NET: .NET 4.5.1 aktualizace zabezpečení Microsoftu podporuje pro NuGet knihovny .NET](https://aka.ms/nupkgservicing).
 
 `--version-suffix <VERSION_SUFFIX>`
 
-Definuje hodnotu pro `$(VersionSuffix)` vlastnosti MSBuild v projektu.
+Definuje hodnotu pro `$(VersionSuffix)` vlastnost MSBuild v projektu.
 
 `-v|--verbosity <LEVEL>`
 
@@ -151,34 +151,34 @@ Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[i
 
 ## <a name="examples"></a>Příklady
 
-Sada pro projekt v aktuálním adresáři:
+Sada projekt v aktuálním adresáři:
 
 `dotnet pack`
 
-Sada `app1` projektu:
+Balíček `app1` projektu:
 
 `dotnet pack ~/projects/app1/project.csproj`
 
-Pack projekt v aktuálním adresáři a umístí do výsledného balíčky `nupkgs` složky:
+Zabalit projekt v aktuálním adresáři a umístí výsledný balíčky do `nupkgs` složky:
 
 `dotnet pack --output nupkgs`
 
-Pack projekt v aktuálním adresáři do `nupkgs` složku a přeskočit krok sestavení:
+Sbalení projekt v aktuálním adresáři, do `nupkgs` složky a přeskočit krok sestavení:
 
 `dotnet pack --no-build --output nupkgs`
 
-V projektu je verze přípona nakonfigurovat jako `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` v *.csproj* souboru, pack aktuální projekt a aktualizaci výsledné verzi balíčku s příponou dané:
+S projektem verze příponu nakonfigurovaná jako `<VersionSuffix>$(VersionSuffix)</VersionSuffix>` v *.csproj* souborů, aktuální projekt pack a aktualizovaných výsledný verze balíčku s danou příponou:
 
 `dotnet pack --version-suffix "ci-1234"`
 
-Nastavte verzi balíčku `2.1.0` s `PackageVersion` vlastnosti MSBuild:
+Nastavte verzi balíčku `2.1.0` s `PackageVersion` vlastnost MSBuild:
 
 `dotnet pack /p:PackageVersion=2.1.0`
 
-Pack projekt pro konkrétní [cílové rozhraní](../../standard/frameworks.md):
+Projekt pro konkrétní Pack [Cílová architektura](../../standard/frameworks.md):
 
 `dotnet pack /p:TargetFrameworks=net45`
 
-Pack projektu a pro operaci obnovení (.NET Core SDK 2.0 a novějších verzí) pomocí konkrétní runtime (Windows 10):
+Zabalte projektu a použití konkrétního modulu runtime (Windows 10) pro operaci obnovení (.NET Core SDK 2.0 a novější):
 
 `dotnet pack --runtime win10-x64`
