@@ -2,12 +2,12 @@
 title: Výpočetní výrazy (F#)
 description: 'Zjistěte, jak vytvořit pohodlné syntaxe zápisu výpočtů v jazyce F #, která může být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby.'
 ms.date: 07/27/2018
-ms.openlocfilehash: 4995efc757d99a575ee9fad3abf0465a32398c44
-ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
+ms.openlocfilehash: ce81af7966a436b3973de277fb2a78ec06f4c471
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "36207430"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43800907"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -229,8 +229,6 @@ builder.Run(builder.Delay(fun () -> {| cexpr |}))
 
 Ve výše uvedeném kódu volání `Run` a `Delay` jsou vynechány, pokud nejsou definovány ve třídě Tvůrce výrazu výpočtu. Hlavní část výrazu výpočtu, zde označený jako `{| cexpr |}`, je přeložen do volání metody třídy tvůrce zahrnující podle překlady jsou popsané v následující tabulce. Výrazu výpočtu `{| cexpr |}` je definované rekurzivně podle tyto překlady kde `expr` je výraz F # a `cexpr` je výrazu výpočtu.
 
-
-
 |Výraz|Překlad|
 |----------|-----------|
 |<code>{&#124; let binding in cexpr &#124;}</code>|<code>let binding in {&#124; cexpr &#124;}</code>|
@@ -361,7 +359,7 @@ let comp = eventually {
         printfn " x = %d" x
     return 3 + 4 }
 
-// Try the remaining lines in F# interactive to see how this 
+// Try the remaining lines in F# interactive to see how this
 // computation expression works in practice.
 let step x = Eventually.step x
 
@@ -386,9 +384,11 @@ comp |> step |> step |> step |> step |> step |> step |> step |> step
 Výrazu výpočtu má základní typ, který vrací výraz. Nadřazený typ může představovat vypočítaný výsledek nebo opožděné výpočty, které lze provést nebo může poskytnout způsob, jak k iteraci v rámci nějaký typ kolekce. V předchozím příkladu byl nadřazený typ **nakonec**. Pro výraz pořadí základní typ je <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>. Pro výraz dotazu, je základní typ <xref:System.Linq.IQueryable?displayProperty=nameWithType>. Pro asynchronní pracovní postup, je základní typ [ `Async` ](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7). `Async` Objekt představuje práce, která musí provést k výpočtu výsledku. Například volání [ `Async.RunSynchronously` ](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) k provedení výpočtu a vrátí výsledek.
 
 ## <a name="custom-operations"></a>Vlastní operace
+
 Můžete definovat vlastní operace na výrazu výpočtu a použít vlastní operace jako operátor ve výrazu výpočtu. Můžete například zahrnout – operátor dotazu ve výrazu dotazu. Když definujete vlastní operace, je nutné definovat výnos a pro metody ve výrazu výpočtu. K definování vlastní operace put ve třídě Tvůrce výrazu výpočtu a pak použít [ `CustomOperationAttribute` ](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19). Tento atribut přijímá řetězec jako argument, což je název, který se má použít v rámci vlastní operace. Tento název vstupu do oboru na začátku otevírající složenou závorku výrazu výpočtu. Proto byste neměli používat identifikátory, které mají stejný název jako vlastní operace v tomto bloku. Například vyhnout použití identifikátorů, jako `all` nebo `last` ve výrazech dotazů.
 
 ### <a name="extending-existing-builders-with-new-custom-operations"></a>Rozšíření stávajících počítačů s nové vlastní operace
+
 Pokud už máte třídu tvůrce, je možné rozšířit své vlastní operace z mimo tuto třídu Tvůrce. Rozšíření musí deklarovat v modulech. Obory názvů nemůžou obsahovat členy rozšíření s výjimkou ve stejném souboru a do stejné skupiny deklarace oboru názvů, kde je definován typ.
 
 Následující příklad ukazuje rozšíření existující `Microsoft.FSharp.Linq.QueryBuilder` třídy.
@@ -401,11 +401,9 @@ type Microsoft.FSharp.Linq.QueryBuilder with
         Enumerable.Any (source.Source, Func<_,_>(predicate)) |> not
 ```
 
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Asynchronní pracovní postupy](asynchronous-workflows.md)
-
-[Sekvence](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
-
-[Výrazy dotazu](query-expressions.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Asynchronní pracovní postupy](asynchronous-workflows.md)
+- [Sekvence](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
+- [Výrazy dotazu](query-expressions.md)

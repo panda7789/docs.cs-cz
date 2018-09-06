@@ -1,25 +1,25 @@
 ---
-title: Aktivity
+title: Pro aktivitu
 ms.date: 03/30/2017
 ms.assetid: 2ea751b4-36f0-48aa-a115-70a2ab89f6d8
-ms.openlocfilehash: c79f295e7880f845c606a55f9c56ad65350f9c52
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a7023abb9057ab4b25552fbf9a81cd2ae2b4e88
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33515442"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43801843"
 ---
-# <a name="for-activity"></a>Aktivity
-Ukázka For ukazuje, jak vytvářet vlastní aktivity, která dědí z <xref:System.Activities.NativeActivity>a použít ho v pracovní postup provést v reálném světě příkladu. Vlastní aktivity obsažené v této ukázkové funkce jako jazyka C# `for` příkaz. T  
+# <a name="for-activity"></a>Pro aktivitu
+Ukázka pro předvádí, jak vytvořit vlastní aktivitu, která dědí z <xref:System.Activities.NativeActivity>a použít ho v pracovním postupu spustit příklad reálného světa. Vlastní aktivity, které jsou zahrnuté v této ukázkové funkce, jako je C# `for` příkazu. T  
   
- `For` Vlastní aktivita má vlastností s názvem `InitAction`, `IterationAction`, `Condition`, a `Body` , odpovídají inicializace příkaz, příkaz iterativní, pokračování podmínku a textu v uvedeném pořadí – příkaz najít v standardní jazyka C# `For` příkaz.  
+ `For` Vlastní aktivita má vlastnosti s názvem `InitAction`, `IterationAction`, `Condition`, a `Body` , které odpovídají příkaz inicializace, iterativního příkazu, pokračování podmínku a těla příkazu v uvedeném pořadí součástí standard jazyka C# `For` příkazu.  
   
  Následující tabulka popisuje soubory klíčů ve vzorku.  
   
 |Soubor|Popis|  
 |----------|-----------------|  
-|For.cs|Definice pro třídy `For` vlastní aktivitu, která rozšiřuje <xref:System.Activities.NativeActivity> třída poskytuje funkce jazyka C# `For` příkaz.|  
-|Program.cs|Klientská aplikace, která provádí základní iterativní práci na kolekci pomocí vlastní `For` aktivity.|  
+|For.cs|Třídy definice `For` vlastní aktivitu, která rozšiřuje <xref:System.Activities.NativeActivity> třídy pro zajištění funkcí jazyka C# `For` příkazu.|  
+|Program.cs|Klientská aplikace, který provádí základní iterativní práci na kolekci pomocí vlastní `For` aktivity.|  
   
 > [!NOTE]
 >  Při použití `For` vlastní aktivitu, ujistěte se, že `Condition` je nastavena; jinak může dojít k nekonečné smyčce.  
@@ -27,22 +27,22 @@ Ukázka For ukazuje, jak vytvářet vlastní aktivity, která dědí z <xref:Sys
 ## <a name="demonstrates"></a>Demonstruje  
  Vytvořit vlastní aktivitu, která dědí z <xref:System.Activities.NativeActivity>.  
   
-## <a name="discussion"></a>Diskusní  
- Následující tabulka popisuje vlastnosti aktivity obsažené v této ukázce.  
+## <a name="discussion"></a>Diskuse  
+ Následující tabulka popisuje vlastnosti aktivity zahrnuté v této ukázce.  
   
  InitAction  
  Inicializace – příkaz  
   
  IterationAction  
- Iterační – příkaz  
+ Iterativní – příkaz  
   
  Podmínka  
- Pokračování – příkaz  
+ Příkaz pokračování  
   
  Text  
- Text – příkaz  
+ Text příkazu  
   
- Aktivity dědí z <xref:System.Activities.NativeActivity> k získání přístupu k funkcím runtime například plánování další aktivity byste měli spustit, pomocí jedné z `ScheduleActivity` metody <xref:System.Activities.NativeActivityContext>.  
+ Aktivita dědí z <xref:System.Activities.NativeActivity> k získání přístupu k vlastnosti modulu runtime, jako je plánování další aktivity byste měli spustit, použijte některý `ScheduleActivity` metody <xref:System.Activities.NativeActivityContext>.  
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
@@ -50,13 +50,13 @@ Ukázka For ukazuje, jak vytvářet vlastní aktivity, která dědí z <xref:Sys
   
 2.  Sestavte řešení, stisknutím kombinace kláves CTRL + SHIFT + B.  
   
-3.  Stisknutím klávesy F5 spusťte tohoto řešení.  
+3.  Spuštění řešení, stisknutím klávesy F5.  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\For`

@@ -1,28 +1,29 @@
 ---
-title: Úprava DataView
+title: Úpravy zobrazení dat
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 697a3991-b660-4a5a-8a54-1a2304ff158e
-ms.openlocfilehash: 3663b0317176495b13b1092652bd8bf4c79f30d2
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 3b1e0cbfc6118ad9ca670f5d91183b78b2c99d89
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43802233"
 ---
-# <a name="modifying-dataviews"></a>Úprava DataView
-Můžete použít <xref:System.Data.DataView> Pokud chcete přidat, odstranit ani změnit řádky dat v podkladové tabulce. Možnost používat **DataView** změnit data v základní tabulce je řízeno nastavení jedné z vlastností tři logické **DataView**. Tyto vlastnosti jsou <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A>, a <xref:System.Data.DataView.AllowDelete%2A>. Jsou nastaveny na **true** ve výchozím nastavení.  
+# <a name="modifying-dataviews"></a>Úpravy zobrazení dat
+Můžete použít <xref:System.Data.DataView> Pokud chcete přidat, odstranit nebo upravit řádky dat v podkladové tabulce. Umožňuje používat **DataView** upravovat data v podkladové tabulce je řízen pomocí nastavení jedné z vlastností tři logické **DataView**. Tyto vlastnosti jsou <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A>, a <xref:System.Data.DataView.AllowDelete%2A>. Jsou nastaveny na **true** ve výchozím nastavení.  
   
- Pokud **AllowNew** je **true**, můžete použít <xref:System.Data.DataView.AddNew%2A> metodu **DataView** pro vytvoření nového <xref:System.Data.DataRowView>. Všimněte si, že nový řádek není ve skutečnosti přidán do základní <xref:System.Data.DataTable> dokud <xref:System.Data.DataRowView.EndEdit%2A> metodu **DataRowView** je volána. Pokud <xref:System.Data.DataRowView.CancelEdit%2A> metodu **DataRowView** je volána, budou zahozeny nový řádek. Všimněte si také, že můžete upravit pouze jeden **DataRowView** najednou. Při volání **AddNew** nebo **BeginEdit** metodu **DataRowView** čekající řádek existuje, **EndEdit –** se implicitně volá na čeká na řádek. Při **EndEdit –** je volána, změny se použijí na odpovídající **DataTable** a může být později potvrzené nebo odmítnuté, pomocí **metoda AcceptChanges** nebo  **RejectChanges** metody **DataTable**, **datovou sadu**, nebo **DataRow** objektu. Pokud **AllowNew** je **false**, je vyvolána výjimka při volání **AddNew** metodu **DataRowView**.  
+ Pokud **vlastnost AllowNew** je **true**, můžete použít <xref:System.Data.DataView.AddNew%2A> metodu **DataView** k vytvoření nového <xref:System.Data.DataRowView>. Všimněte si, že nový řádek není ve skutečnosti přidán do základní <xref:System.Data.DataTable> až <xref:System.Data.DataRowView.EndEdit%2A> metodu **DataRowView** je volána. Pokud <xref:System.Data.DataRowView.CancelEdit%2A> metodu **DataRowView** je volána, nový řádek se zahodí. Upozorňujeme také, že můžete upravit pouze jeden **DataRowView** najednou. Při volání **AddNew** nebo **funkce BeginEdit** metodu **DataRowView** čeká na řádek existuje, **EndEdit –** je implicitně volán na čeká na řádek. Když **EndEdit –** je volána, změny se použijí k podkladovým **DataTable** a může být později potvrzeno nebo zamítnuto pomocí **metoda AcceptChanges** nebo  **RejectChanges** metody **DataTable**, **datovou sadu**, nebo **DataRow** objektu. Pokud **vlastnost AllowNew** je **false**, dojde k výjimce při volání **AddNew** metodu **DataRowView**.  
   
- Pokud **AllowEdit** je **true**, můžete upravit obsah **DataRow** prostřednictvím **DataRowView**. Můžete potvrdit změny základní řádek pomocí **DataRowView.EndEdit** nebo odmítnout změny pomocí **DataRowView.CancelEdit**. Všimněte si, že pouze jeden řádek se dá upravit v čase. Když zavoláte **AddNew** nebo **BeginEdit** metody **DataRowView** čekající řádek existuje, **EndEdit –** se implicitně volá na čeká na řádek. Když **EndEdit –** je volána, navrhované změny, které jsou umístěny v **aktuální** verze řádku základní **DataRow** a může být později potvrzené nebo odmítnuté, pomocí  **Metoda AcceptChanges** nebo **RejectChanges** metody **DataTable**, **datovou sadu**, nebo **DataRow** objekt. Pokud **AllowEdit** je **false**, je vyvolána výjimka, pokud se pokusíte změnit hodnotu v **DataView**.  
+ Pokud **AllowEdit** je **true**, můžete upravit obsah **DataRow** prostřednictvím **DataRowView**. Můžete potvrdit změny podkladových řádků pomocí **DataRowView.EndEdit** nebo odmítnout změny pomocí **DataRowView.CancelEdit**. Mějte na paměti, že současně můžete upravit tento pouze jeden řádek. Při volání **AddNew** nebo **funkce BeginEdit** metody **DataRowView** čeká na řádek existuje, **EndEdit –** je implicitně volán na čeká na řádek. Když **EndEdit –** je volána, navrhované změny, které jsou umístěny v **aktuální** verze řádku základní **DataRow** a může být později potvrzené nebo odmítnuty pomocí **Metoda AcceptChanges** nebo **RejectChanges** metody **DataTable**, **datovou sadu**, nebo **DataRow** objekt. Pokud **AllowEdit** je **false**, je vyvolána výjimka, pokud se pokusíte změnit hodnotu **DataView**.  
   
- Pokud stávající **DataRowView** upravována, události základní **DataTable** bude stále vyvolána s navrhované změny. Všimněte si, že při volání **EndEdit –** nebo **CancelEdit** na základní **DataRow**, čekající změny budou použity nebo došlo ke zrušení bez ohledu na to, jestli se  **EndEdit –** nebo **CancelEdit** se volá na **DataRowView**.  
+ Pokud stávající **DataRowView** se právě upravuje, události základního **DataTable** stále, je vydána s navrhovaných změn. Všimněte si, že pokud zavoláte **EndEdit –** nebo **metodu CancelEdit** na základní **DataRow**, čekající změny budou použity nebo bez ohledu na to, zda bylo zrušeno  **EndEdit –** nebo **metodu CancelEdit** je volán na **DataRowView**.  
   
- Pokud **vlastnost AllowDelete** je **true**, můžete odstranit řádky z **DataView** pomocí **odstranit** metodu **zobrazení dat**  nebo **DataRowView** objekt a řádky budou odstraněny ze základní **DataTable**. Později můžete potvrdit nebo odmítnout odstranění pomocí **metoda AcceptChanges** nebo **RejectChanges** v uvedeném pořadí. Pokud **vlastnost AllowDelete** je **false**, je vyvolána výjimka při volání **odstranit** metodu **DataView** nebo  **DataRowView**.  
+ Pokud **vlastnost AllowDelete** je **true**, můžete odstranit řádky z **DataView** pomocí **odstranit** metodu **DataView**  nebo **DataRowView** objektu a řádky budou odstraněny ze základního **DataTable**. Později můžete potvrdit nebo odmítnout odstraní pomocí **metoda AcceptChanges** nebo **RejectChanges** v uvedeném pořadí. Pokud **vlastnost AllowDelete** je **false**, dojde k výjimce při volání **odstranit** metodu **DataView** nebo  **DataRowView**.  
   
- Následující příklad kódu zakáže použití **DataView** k odstranění řádků a přidá nový řádek na základní tabulku pomocí **DataView**.  
+ Následující příklad kódu zakáže použití **DataView** k odstranění řádků a přidá nový řádek do podkladové tabulky pomocí **DataView**.  
   
 ```vb  
 Dim custTable As DataTable = custDS.Tables("Customers")  
@@ -55,4 +56,4 @@ newDRV.EndEdit();
  <xref:System.Data.DataView>  
  <xref:System.Data.DataRowView>  
  [Zobrazení dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataviews.md)  
- [ADO.NET spravované zprostředkovatelé a středisku pro vývojáře datové sady](http://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)

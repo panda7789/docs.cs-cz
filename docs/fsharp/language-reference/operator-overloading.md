@@ -1,18 +1,17 @@
 ---
 title: Přetížení operátoru (F#)
-description: 'Naučte se přetížení aritmetické operátory ve třídě nebo typ záznamu a na globální úrovni v jazyce F #.'
+description: 'Zjistěte, jak přetěžovat aritmetické operátory ve třídě nebo typ záznamu a na globální úrovni v jazyce F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: fc9b7311aa746fd758930365972a187ffdfff0d5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6232ebf215289e6a22b9d77fbd5fa67b82460486
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33564362"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43798736"
 ---
 # <a name="operator-overloading"></a>Přetížení operátoru
 
 Toto téma popisuje, jak přetěžovat aritmetické operátory ve třídě nebo v typu záznamu a na globální úrovni.
-
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -25,9 +24,10 @@ let [inline] (operator-symbols) parameter-list = function-body
 ```
 
 ## <a name="remarks"></a>Poznámky
-V předchozích syntaxi *symbol operátoru* je jedním z `+`, `-`, `*`, `/`, `=`a tak dále. *Seznam parametrů* určuje operandy v pořadí, jsou zobrazeny v obvyklé syntaxi pro tento operátor. *Metoda textu* vytvoří výslednou hodnotu.
 
-Přetížení operátoru musí být statické. Operátor přetížení unárních operátorů, například `+` a `-`, musíte použít tildou (`~`) v *symbol operátoru* k označení, že je operátor unární operátor a binární operátor, jak je znázorněno Následující prohlášení.
+V předchozí syntaxi *symbol operátoru* je jedním z `+`, `-`, `*`, `/`, `=`, a tak dále. *Seznam parametrů* určuje operandy v pořadí, jsou uvedeny v běžné syntaxi pro daný operátor. *Tělo metody* vytvoří výslednou hodnotu.
+
+Přetížení operátoru musí být statické. Přetížení operátoru unárních operátorů, například `+` a `-`, musí pomocí tildy (`~`) v *symbol operátoru* označuje, že operátor unární operátor a binárních operátorů, jak je znázorněno následující deklarace.
 
 ```fsharp
 static member (~-) (v : Vector)
@@ -38,7 +38,8 @@ Následující kód ukazuje třídu Vector, která má pouze dva operátory, jed
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4001.fs)]
 
 ## <a name="creating-new-operators"></a>Vytvoření nových operátorů
-Přetížit lze všechny standardní operátory, avšak můžete také vytvořit nové operátory mimo sekvence určitých znaků. Operátor znaky jsou povoleny `!`, `%`, `&`, `*`, `+`, `-`, `.`, `/`, `<`, `=`, `>`, `?`, `@`, `^`, `|`, a `~`. Znak `~` má zvláštní význam, který vytváří z operátoru unární operátor a není součástí sekvence znaků operátoru. Ne všechny operátory můžete provedeny unární.
+
+Přetížit lze všechny standardní operátory, avšak můžete také vytvořit nové operátory mimo sekvence určitých znaků. Povolené znaky operátoru jsou `!`, `%`, `&`, `*`, `+`, `-`, `.`, `/`, `<`, `=`, `>`, `?`, `@`, `^`, `|`, a `~`. Znak `~` má zvláštní význam, který vytváří z operátoru unární operátor a není součástí sekvence znaků operátoru. Ne všechny operátory mohou být unární.
 
 V závislosti na přesné posloupnosti znaků bude mít operátor určitou přednost a asociativitu. Asociativita může být buď zleva doprava, nebo zprava doleva a používá se při zobrazení sekvence operátorů stejné úrovně priority bez použití závorek.
 
@@ -46,15 +47,13 @@ Znak operátoru `.` neovlivňuje prioritu, takže pokud je například třeba de
 
 Pouze operátory `?` a `?<-` může začínat `?`.
 
-Tabulka zobrazující prioritu všechny operátory v jazyce F # lze nalézt v [operátor referenční dokumentace symbolů a](symbol-and-operator-reference/index.md).
-
+Tabulku, která ukazuje priority všech operátorů v jazyce F # lze nalézt v [operátor referenční dokumentace symbolů a](symbol-and-operator-reference/index.md).
 
 ## <a name="overloaded-operator-names"></a>Názvy přetíženého operátoru
+
 Když kompilátor jazyka F# kompiluje výraz operátoru, generuje metodu, která má pro tento operátor název vygenerovaný kompilátorem. Jde o název, který se pro metodu zobrazuje v jazyce MSIL (Microsoft Intermediate Language) a také v reflexi a v technologii IntelliSense. V kódu jazyka F# obvykle není nutné tyto názvy používat.
 
 Následující tabulka uvádí standardní operátory a jejich odpovídající vygenerované názvy.
-
-
 
 |Operátor|Vygenerovaný název|
 |--------|--------------|
@@ -95,9 +94,8 @@ Následující tabulka uvádí standardní operátory a jejich odpovídající v
 |`/=`|`op_DivisionAssignment`|
 |`..`|`op_Range`|
 |`.. ..`|`op_RangeStep`|
-Další kombinace znaků operátoru, které zde nejsou uvedeny, lze použít jako operátory a mohou mít názvy, jež jsou vytvořeny zřetězením názvů jednotlivých znaků z následující tabulky. Například +! stane `op_PlusBang`.
 
-
+Další kombinace znaků operátoru, které zde nejsou uvedeny, lze použít jako operátory a mohou mít názvy, jež jsou vytvořeny zřetězením názvů jednotlivých znaků z následující tabulky. Například +! změní `op_PlusBang`.
 
 |Znak operátoru|Název|
 |------------------|----|
@@ -124,7 +122,8 @@ Další kombinace znaků operátoru, které zde nejsou uvedeny, lze použít jak
 |`]`|`RBrack`|
 
 ## <a name="prefix-and-infix-operators"></a>Operátory Prefix a Infix
-*Předpony* operátory jsou očekávané před operand nebo operandy, podobně jako funkce. *Infix* operátory jsou očekávané mezi dva operandy.
+
+*Předpona* se očekává, že operátory budou umístěny před operand nebo operandy podobně jako funkce. *Infix* se očekává, že operátory budou umístěny mezi dva operandy.
 
 Pouze některé operátory lze používat jako operátory Prefix. Některé operátory jsou vždy operátory Prefix, ostatní mohou být Prefix nebo Infix a zbývající jsou vždy operátory Infix. Operátory, které začínají znakem `!`, s výjimkou `!=` a operátoru `~` nebo opakované sekvence`~`, jsou vždy operátory Prefix. Operátory `+`, `-`, `+.`, `-.`, `&`, `&&`, `%` a `%%` mohou být operátory Prefix nebo Infix. Rozlišovat mezi Prefix a Infix verzí operátoru lze přidáním znaku `~` na začátek operátoru Prefix, a to při jeho definici. Znak `~` se nebude používat při použití operátoru, ale pouze při jeho definici.
 
@@ -145,6 +144,7 @@ Následující kód ukazuje použití přetěžování pro implementaci typu zlo
 ```
 
 ## <a name="operators-at-the-global-level"></a>Operátory na globální úrovni
+
 Je také možné definovat operátory na globální úrovni. Následující kód definuje operátor `+?`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4003.fs)]
@@ -153,7 +153,8 @@ Výstupem kódu uvedeného výše je `12`.
 
 Vzhledem k tomu, že pravidla oboru jazyka F# nařizují, že nově definované operátory mají přednost před vestavěnými operátory, je možné tímto způsobem předefinovat běžné aritmetické operátory.
 
-U globálních operátorů, které mnohdy představují malé funkce, jež jsou nejlépe začlenitelné do volaného kódu, se často používá klíčové slovo `inline`. Vložení funkcí operátoru umožňuje operátorům pracovat se staticky řešenými typy parametrů za účelem vytvoření staticky řešeného generického kódu. Další informace najdete v tématu [vložené funkce](functions/inline-functions.md) a [statisticky vyřešené parametry typu](generics/statically-resolved-type-parameters.md).
+U globálních operátorů, které mnohdy představují malé funkce, jež jsou nejlépe začlenitelné do volaného kódu, se často používá klíčové slovo `inline`. Vložení funkcí operátoru umožňuje operátorům pracovat se staticky řešenými typy parametrů za účelem vytvoření staticky řešeného generického kódu. Další informace najdete v tématu [vložené funkce](functions/inline-functions.md) a [statisticky vyřešených parametrů typu](generics/statically-resolved-type-parameters.md).
 
-## <a name="see-also"></a>Viz také
-[Členové](members/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Členové](members/index.md)

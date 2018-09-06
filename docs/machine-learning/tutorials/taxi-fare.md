@@ -3,20 +3,20 @@ title: ML.NET používají k vytváření prognóz tarify taxislužby města New
 description: Další informace o použití ML.NET ve scénáři regrese.
 author: aditidugar
 ms.author: johalex
-ms.date: 06/18/2018
+ms.date: 07/02/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e3ff2124a43cf42ce26cf94cfd5384387eef0ed9
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: 133b7ad17a98e4eea510f1704555b690b98e9091
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37937069"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43801057"
 ---
 # <a name="tutorial-use-mlnet-to-predict-new-york-taxi-fares-regression"></a>Kurz: Použití ML.NET předpovědět tarify taxislužby města New York (regrese)
 
 > [!NOTE]
-> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v článku [Úvod ML.NET](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
+> Toto téma odkazuje na ML.NET, která je aktuálně ve verzi Preview, a materiálu se můžou stát terčem změnit. Další informace najdete v tématu [ML.NET ÚVOD](https://www.microsoft.com/net/learn/apps/machine-learning-and-ai/ml-dotnet).
 
 Tento kurz ukazuje, jak použít ML.NET k sestavení [regresní model](../resources/glossary.md#regression) pro predikci tarify taxislužby města New York City.
 
@@ -38,21 +38,21 @@ V tomto kurzu se naučíte:
 
 ## <a name="understand-the-problem"></a>Pochopení problému
 
-Tento problém je zaměřená na **předpověď tarif taxislužby dojít v New Yorku**. Na první pohled to nemusí závisí jednoduše na vzdálenost přesunul. Ale taxislužby dodavatelů v New Yorku poplatky různá množství dalších faktorů, jako je například další cestujících nebo placení pomocí platební karty místo platební.
+Tento problém je o predikci tarif cesty taxíkem v New Yorku. Na první pohled to nemusí závisí jednoduše na vzdálenost přesunul. Ale taxislužby dodavatelů v New Yorku poplatky různá množství dalších faktorů, jako je například další cestujících nebo placení pomocí platební karty místo platební.
 
 ## <a name="select-the-appropriate-machine-learning-task"></a>Vyberte úlohu odpovídající machine learning
 
-Pro předpověď tarif taxi, nejprve vyberte úlohu učení příslušný počítač. Pokud chcete předpovědět, skutečné hodnoty (double, který představuje cenu) na základě dalších faktorů v datové sadě. Můžete vybrat [ **regrese** ](../resources/glossary.md#regression) úloh.
+Chcete předpovídat cenu hodnotu, která je skutečná hodnota, na základě dalších faktorů v datové sadě. Udělat, abyste zvolili [regrese](../resources/glossary.md#regression) machine learning úloh.
 
 ## <a name="create-a-console-application"></a>Vytvoření konzolové aplikace
 
 1. Otevřete Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V **nový projekt** dialogového okna, vyberte **Visual C#** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textového pole zadejte "TaxiFarePrediction" a pak vyberte **OK** tlačítko.
 
-2. Vytvořte adresář *Data* ve vašem projektu a uložit datovou sadu souborů:
+1. Vytvořte adresář *Data* ve vašem projektu a uložit datovou sadu a soubory modelu:
 
     V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **přidat** > **novou složku**. Zadejte "Data" a stiskněte Enter.
 
-3. Nainstalujte **balíček NuGet Microsoft.ML**:
+1. Nainstalujte **Microsoft.ML** balíček NuGet:
 
     V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a vyberte **spravovat balíčky NuGet**. Zvolte možnost "nuget.org" jako zdroj balíčku, vyberte **Procházet** kartu, vyhledejte **Microsoft.ML**, vyberte tento balíček v seznamu a vyberte **nainstalovat** tlačítko. Vyberte **OK** tlačítko **náhled změn** dialogového okna a pak vyberte **souhlasím** tlačítko **přijetí licence** dialogové okno Pokud jste Souhlasím s licenčními podmínkami pro balíčky uvedené.
 
@@ -60,9 +60,9 @@ Pro předpověď tarif taxi, nejprve vyberte úlohu učení příslušný počí
 
 1. Stáhněte si [taxislužby. tarif train.csv](https://github.com/dotnet/machinelearning/blob/master/test/data/taxi-fare-train.csv) a [taxislužby. tarif test.csv](https://github.com/dotnet/machinelearning/blob/master/test/data/taxi-fare-test.csv) dat nastaví a uloží je do *Data* složky, které jste vytvořili v předchozím kroku. Používáme tyto datové sady pro trénování modelu strojového učení a pak vyhodnotit, jak přesný je model. Tyto datové sady jsou původně z [sady dat o jízdách taxislužby TLC NYC](http://www.nyc.gov/html/tlc/html/about/trip_record_data.shtml).
 
-2. V **Průzkumníka řešení**, klikněte pravým tlačítkem na jednotlivé \*soubory CSV a vyberte **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **vždy**.
+1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na jednotlivé \*soubory CSV a vyberte **vlastnosti**. V části **Upřesnit**, změňte hodnotu vlastnosti **kopírovat do výstupního adresáře** k **kopírovat, pokud je novější**.
 
-3. Otevřít **taxislužby. tarif train.csv** nastavení data a podívejte se na záhlaví sloupců v prvním řádku. Podívejte se na všech sloupcích. Vysvětlení dat a rozhodnout, které sloupce budou **funkce** a který je **popisek**.
+1. Otevřít **taxislužby. tarif train.csv** nastavení data a podívejte se na záhlaví sloupců v prvním řádku. Podívejte se na všech sloupcích. Vysvětlení dat a rozhodnout, které sloupce budou **funkce** a který je **popisek**.
 
 **Popisek** je identifikátor sloupce, který chcete předpovědět. Identifikovanou **funkce** se používají k předpovědi popisek.
 
@@ -92,7 +92,10 @@ Odeberte stávající definice třídy a přidejte následující kód, který m
 
 `TaxiTrip` je třída vstupní data a obsahuje definice pro všechny sloupce datové sady. Použití [sloupec](xref:Microsoft.ML.Runtime.Api.ColumnAttribute) atributy indexů zdrojových sloupců v datové sadě.
 
-`TaxiTripFarePrediction` Třída se používá k reprezentování předpokládané výsledky. Má jednou čárkou (`FareAmount`) pole `Score` [Názevsloupce](xref:Microsoft.ML.Runtime.Api.ColumnNameAttribute) atribut. **Skóre** sloupec je speciální sloupce v ML.NET. Model výstupy předpovězeným hodnotám. do tohoto sloupce.
+`TaxiTripFarePrediction` Třída reprezentuje předpokládané výsledky. Obsahuje pole jednou čárkou `FareAmount`, s `Score` [Názevsloupce](xref:Microsoft.ML.Runtime.Api.ColumnNameAttribute) atribut. V případě úloh regrese **skóre** sloupec obsahuje hodnoty předpovězené popisků.
+
+> [!NOTE]
+> Použití `float` typ pro reprezentaci hodnoty s plovoucí desetinnou čárkou v datových tříd vstupu a předpovědí.
 
 ## <a name="define-data-and-model-paths"></a>Definovat cesty k datům a model
 
@@ -116,7 +119,7 @@ Přidejte následující další `using` direktivy k hornímu okraji *Program.cs
 
 [!code-csharp[AddUsings](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#1 "Add necessary usings")]
 
-V `Main`, nahraďte `Console.WriteLine("Hello World!")` následujícím kódem:
+V `Main` metoda, nahraďte `Console.WriteLine("Hello World!")` následujícím kódem:
 
 ```csharp
 PredictionModel<TaxiTrip, TaxiTripFarePrediction> model = Train();
@@ -139,7 +142,7 @@ var pipeline = new LearningPipeline();
 
 ## <a name="load-and-transform-data"></a>Načítání a transformace dat.
 
-Prvním krokem prováděnou kanálem learning načítá data z trénovací datové sady. V našem případě trénovací datové sady se ukládají v textovém souboru s cestu definovanou `_datapath` pole. Proto první řádek by měl být ignorovány při načítání dat, jestli tento soubor obsahuje záhlaví s názvy sloupců. Sloupce v souboru jsou oddělené čárkou (","). Přidejte následující kód do `Train` metody:
+Prvním krokem k provedení je k načtení dat z trénovací datové sady. V našem případě trénovací datové sady se ukládají v textovém souboru s cestu definovanou `_datapath` pole. Tento soubor má záhlaví s názvy sloupců, takže první řádek by měl ignorovat při načítání dat. Sloupce v souboru jsou oddělené čárkou (","). Přidejte následující kód do `Train` metody:
 
 ```csharp
 pipeline.Add(new TextLoader(_datapath).CreateFrom<TaxiTrip>(useHeader: true, separator: ','));
@@ -147,7 +150,7 @@ pipeline.Add(new TextLoader(_datapath).CreateFrom<TaxiTrip>(useHeader: true, sep
 
 V dalších krocích budeme odkazovat na sloupce pomocí názvy definované v `TaxiTrip` třídy.
 
-Když je model trénují a vyhodnocují, hodnoty **popisek** sloupce se považují za správné hodnoty pro předpovídat. Protože chceme předpovědět tarif cesty taxíkem, zkopírujte `FareAmount` sloupec **popisek** sloupec. K tomuto účelu použijte <xref:Microsoft.ML.Transforms.ColumnCopier> a přidejte následující kód:
+Když je model trénují a vyhodnocují, ve výchozím nastavení, hodnoty **popisek** sloupce se považují za správné hodnoty pro předpovídat. Protože chceme předpovědět tarif cesty taxíkem, zkopírujte `FareAmount` sloupec **popisek** sloupec. K tomuto účelu použijte <xref:Microsoft.ML.Transforms.ColumnCopier> a přidejte následující kód:
 
 ```csharp
 pipeline.Add(new ColumnCopier(("FareAmount", "Label")));
@@ -161,7 +164,7 @@ pipeline.Add(new CategoricalOneHotVectorizer("VendorId",
                                              "PaymentType"));
 ```
 
-Posledním krokem přípravy dat je kombinací všech sloupců funkce do **funkce** pomocí sloupce <xref:Microsoft.ML.Transforms.ColumnConcatenator> třídy transformace. Tento krok je nutné, protože learner zpracovává pouze funkce z **funkce** sloupce. Přidejte následující kód:
+Posledním krokem přípravy dat je kombinací všech sloupců funkce do **funkce** pomocí sloupce <xref:Microsoft.ML.Transforms.ColumnConcatenator> třídy transformace. Ve výchozím nastavení, algoritmu učení zpracovává pouze funkce **funkce** sloupce. Přidejte následující kód:
 
 ```csharp
 pipeline.Add(new ColumnConcatenator("Features",
@@ -179,7 +182,7 @@ Všimněte si, že `TripTime` sloupec, který odpovídá `trip_time_in_secs` slo
 
 ## <a name="choose-a-learning-algorithm"></a>Vyberte algoritmus učení
 
-Po přidání dat do kanálu a jejich transformace na správný formát vstupu, vyberte algoritmus učení (**learner**). Learner trénovat modelu. Jste si zvolili **regrese úloh** pro tento problém, proto přidat <xref:Microsoft.ML.Trainers.FastTreeRegressor> learner, což je jedna studentů regrese poskytované ML.NET.
+Po přidání dat do kanálu a jejich transformace na správný formát vstupu, vyberte algoritmus učení (**learner**). Learner trénovat modelu. Jste si zvolili **regrese** úkol pro tento problém, proto použijete <xref:Microsoft.ML.Trainers.FastTreeRegressor> learner, což je jedna studentů regrese poskytované ML.NET.
 
 <xref:Microsoft.ML.Trainers.FastTreeRegressor> learner využívá přechodu zvýšení skóre. Přechodu zvýšení skóre je strojové učení techniku pro regresní problémy. Sestaví každém stromu regrese způsobem podle jednotlivých kroků. Předdefinované ztráta funkce používá k měření chyb v každém kroku a opravit ho v dalším. Výsledkem je, který je ve skutečnosti kompletu sady slabší prediktivní modely prediktivní model. Další informace o přechodu zvýšení skóre, naleznete v tématu [Boosted regrese rozhodovacího stromu](/azure/machine-learning/studio-module-reference/boosted-decision-tree-regression).
 
@@ -203,7 +206,7 @@ A to je všechno! Úspěšně jste trénuje model, který může předpovídat t
 
 ### <a name="save-the-model"></a>Uložit model
 
-Před přechodem na další krok, uložit model do souboru ZIP a přidejte následující kód na konci `Train` metody:
+V tomto okamžiku máte model, který je možné integrovat do všech existujících nebo nových aplikací .NET. Chcete-li uložit model do souboru .zip, přidejte následující kód na konci `Train` metody:
 
 [!code-csharp[SaveModel](../../../samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#5 "Save the model asynchronously and return the model")]
 
@@ -227,7 +230,7 @@ Vzhledem k tomu, `async Main` metoda je funkce přidané v jazyce C# 7.1 a vých
 
 ## <a name="evaluate-the-model"></a>Vyhodnocení modelu
 
-Hodnocení je proces kontroly, jak dobře model předpovídá hodnoty popisků. Je důležité, že model vytváří dobré předpovědi na data, která nebyla použita pro trénování modelu. Jedním ze způsobů k tomu je rozdělení dat na trénování a testování datových sad, jak je tomu v tomto kurzu. Teď, když jsme natrénovali model trénovat na základě modelu dat, zobrazí se, jak dobře funguje na testovací data.
+Hodnocení je proces kontroly, jak dobře model předpovídá hodnoty popisků. Je důležité, že model vytváří dobré předpovědi na data, která nebyla použita pro trénování modelu. Jedním ze způsobů k tomu je rozdělení dat na trénovací a testovací datové sady, jak je tomu v tomto kurzu. Teď, když jsme natrénovali model na trénovací data, zobrazí se, jak dobře funguje na testovací data.
 
 Přejděte zpět `Main` metoda a přidejte následující kód pod volání `Train`– metoda:
 
@@ -260,7 +263,7 @@ Přidejte následující kód k vyhodnocení modelu a vytvoření metriky vyhodn
 
 ## <a name="use-the-model-for-predictions"></a>Použít model pro předpovědi
 
-Dále vytvořte třídu pro uložení testovacích scénářů, které vám pomůže se ujistěte se, že model funguje správně:
+Vytvoření třídy, která porušuje testovací data instancí:
 
 1. V **Průzkumníka řešení**, klikněte pravým tlačítkem na projekt a pak vyberte **přidat** > **nová položka**.
 1. V **přidat novou položku** dialogu **třídy** a změnit **název** pole *TestTrips.cs*. Vyberte **přidat** tlačítko.
@@ -280,7 +283,7 @@ Pokud chcete předpovědět tarif zadané cesty, přejděte zpět na *Program.cs
 
 Spusťte program, abyste viděli tarif předpokládané taxislužby pro testovací případ.
 
-Blahopřejeme! Právě jste úspěšně sestaven modelu strojového učení pro predikci tarify cesty taxíkem, vyhodnotit jeho přesnost a použít ho k následné predikci. Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TaxiFarePrediction) úložiště.
+Blahopřejeme! Právě jste úspěšně sestaven modelu strojového učení pro predikci tarify cesty taxíkem, vyhodnotit jeho přesnost a použít ho k následné predikci. Zdrojový kód najdete v tomto kurzu [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TaxiFarePrediction) úložiště GitHub.
 
 ## <a name="next-steps"></a>Další kroky
 
@@ -298,4 +301,4 @@ V tomto kurzu jste zjistili, jak:
 
 Přejděte k dalšímu kurzu, kde Další informace.
 > [!div class="nextstepaction"]
-> [Clustering Iris](iris-clustering.md)
+> [Iris clustering](iris-clustering.md)

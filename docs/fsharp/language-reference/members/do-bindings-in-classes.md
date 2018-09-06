@@ -1,18 +1,17 @@
 ---
 title: Vazby do ve třídách (F#)
-description: 'Naučte se používat F # "do" vazby v definici třídy, který provádí akce, když je objekt vytvořený, nebo při prvním použití typu.'
+description: 'Další informace o použití jazyka F # udělat vazby v definici třídy, které provádí akce, když je objekt vytvořen nebo při prvním použití typu.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 779b33c44b1518135f4c7f270173ec8124fec101
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e54a5bde52bf6973cc338c929ba99e6fd5b53127
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565188"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43801521"
 ---
 # <a name="do-bindings-in-classes"></a>Vazby do ve třídách
 
-A `do` vazby v definici třídy provede akce, když je objekt vytvořený nebo pro statického `do` vazby, pokud typ prvním použití.
-
+A `do` vazby v definici třídy provede akce při vytvoření objektu nebo pro statickou `do` vazby, když typ je nejprve použít.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,19 +20,20 @@ A `do` vazby v definici třídy provede akce, když je objekt vytvořený nebo p
 ```
 
 ## <a name="remarks"></a>Poznámky
-A `do` vazba se zobrazí, společně s nebo po `let` vazby, ale před definice člen v definici třídy. I když `do` – klíčové slovo je pro volitelné `do` vazby na úrovni modulu, není pro volitelné `do` vazby v definici třídy.
 
-Pro tvorbu každý objekt libovolného daného typu, nestatické `do` vazby a nestatické `let` vazby jsou spouštěny v pořadí, ve kterém se zobrazí v definici třídy. Více `do` vazby se může objevit v jednoho typu. Nestatické `let` vazby a nestatické `do` vazby stane textem primární konstruktoru. Kód v nestatickou `do` vazby části odkazovat primární konstruktor parametry a všechny hodnoty nebo funkce, které jsou definovány v `let` části vazby.
+A `do` vazby se zobrazí spolu s nebo po `let` vazby, ale před definice členů v definici třídy. I když `do` – klíčové slovo je nepovinné pro `do` vazby na úrovni modulu není pro volitelné `do` vazby v definici třídy.
 
-Nestatické `do` vazby můžete přístup ke členům třídy tak dlouho, dokud třída má vlastní identifikátor, který je definován `as` – klíčové slovo v třídě nadpis a pokud jsou všechny používá tyto členů kvalifikovaný pomocí vlastní identifikátor pro třídu.
+Pro tvorbu žádné každý objekt daného typu, nestatické `do` vazby a informace o nestatická `let` vazby jsou provedeny v pořadí, v jakém jsou uvedeny v definici třídy. Více `do` vazby může dojít v jednom typu. Nestatické `let` vazby a nestatické `do` vazby stát tělo primárnímu konstruktoru. Kód v nestatické `do` část vazby můžete odkazovat na primární konstruktor parametry a hodnoty nebo funkce, které jsou definovány v `let` část vazby.
 
-Protože `let` vazby inicializovat soukromá pole třídy, který je často nutné zajistit, že členové chovat podle očekávání, `do` vazby jsou obvykle ukládat po `let` vazby, že kód `do` může vazby spustit s objektem plně inicializovaném. Pokud váš kód se pokusí použít člen před dokončením inicializace, je vyvolána výjimkou InvalidOperationException.
+Nestatických `do` vazby můžete přistupovat k členům třídy, pokud třída má vlastní identifikátor, který je definován `as` – klíčové slovo ve třídě nadpis a dokud všechna použití těchto členů jsou kvalifikované identifikátoru samotného pro třídu.
 
-Statické `do` vazby mohou odkazovat statické členy nebo pole uzavření do třídy, ale není instance členů nebo pole. Statické `do` vazby stane součástí statické inicializátoru pro třídu, která záruku, že se provést před prvním použití třídy.
+Protože `let` vazby inicializovat privátní pole třídy, která je často nutné zajistit, že členové chovat dle očekávání, `do` vazby jsou obvykle umístěny po `let` vazby tak, že kód `do` může vazby Spusťte s plně inicializaci objektu. Pokud se váš kód se pokusí před dokončením inicializace, použijte člena, je vyvolána InvalidOperationException.
 
-Atributy jsou ignorovány pro `do` vazeb v typy. Pokud atribut je požadován pro kód, který spustí `do` vazba, je nutné použít na primární konstruktoru.
+Statické `do` vazby můžete odkazovat na statické členy nebo pole nadřazené třídy, ale není instancí členů nebo pole. Statické `do` vazby se stanou součástí statický inicializátor pro třídu, která je zaručeno, že ke spuštění než třída při prvním použití.
 
-V následujícím kódu, třída má statického `do` vazby a nestatickou `do` vazby. Objekt nemá konstruktor, který má dva parametry `a` a `b`, a dva privátní pole jsou definovány v `let` vazby pro třídu. Dvě vlastnosti je definována. Všechny jsou v oboru v nestatickou `do` vazby části, jak je znázorněno použitím řádek, který vypíše všechny tyto hodnoty.
+Atributy se ignorují. pro `do` vazby v typech. Pokud je požadované pro kód, který se spustí v atributu `do` vazby, musí být použita k primárnímu konstruktoru.
+
+V následujícím kódu, že třída používá statickou `do` vazby a nestatická `do` vazby. Objekt nemá konstruktor, který má dva parametry `a` a `b`, a dvě soukromé pole jsou definována v `let` vazby pro třídu. Dvě vlastnosti jsou také definovány. Všechny z nich jsou v oboru v nestatické `do` část vazby, které jsou popsány v řádku, který vypíše všechny tyto hodnoty.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3101.fs)]
 
@@ -44,13 +44,10 @@ Initializing MyType.
 Initializing object 1 2 2 4 8 16
 ```
 
-## <a name="see-also"></a>Viz také
-[Členové](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Třídy](../classes.md)
-
-[Konstruktory](constructors.md)
-
-[`let` Vazby do ve třídách](let-bindings-in-classes.md)
-
-[`do` Vazby](../functions/do-Bindings.md)
+- [Členové](index.md)
+- [Třídy](../classes.md)
+- [Konstruktory](constructors.md)
+- [`let` Vazby ve třídách](let-bindings-in-classes.md)
+- [`do` Vazby](../functions/do-Bindings.md)

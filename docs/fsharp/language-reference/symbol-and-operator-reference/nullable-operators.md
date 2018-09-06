@@ -1,23 +1,23 @@
 ---
 title: Operátory s povolenou hodnotou Null (F#)
-description: 'Seznamte se s možnou hodnotou Null operátory, které jsou k dispozici v programovací jazyk F #.'
+description: 'Další informace o operátorech s možnou hodnotou Null, které jsou k dispozici v programovacím jazyce F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 63ad7da2d584b96eee8765b57fc671befbcbd38b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 42df74a56831fb0a5d6df34db4321f5b228993c2
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566347"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43801187"
 ---
 # <a name="nullable-operators"></a>Operátory s povolenou hodnotou Null
 
-Operátory s povolenou hodnotou Null jsou binární operátory aritmetické nebo porovnání, které pracují s typy s možnou hodnotou Null aritmetické na jednoho nebo obou stranách. Typy s možnou hodnotou Null jsou vyvolány často, při práci s daty ze zdrojů, jako jsou třeba databáze, které umožňují hodnoty Null místo skutečných hodnot. Operátory s povolenou hodnotou Null se často používají ve výrazech dotazů. Kromě s možnou hodnotou Null operátory pro porovnání a aritmetické operátory převodu slouží pro převod mezi typy s možnou hodnotou Null. Existují také s možnou hodnotou Null verzích určité operátory dotazu.
-
+Operátory s povolenou hodnotou Null jsou binární operátory aritmetický nebo jejich porovnávání, které využívají službu na jednu nebo obě strany aritmetické typy připouštějící hodnotu Null. Typy s možnou hodnotou Null jsou vyvolány často při práci s daty ze zdrojů, jako jsou databáze, které povolit hodnoty Null místo skutečných hodnot. Operátory s povolenou hodnotou Null jsou často použít ve výrazech dotazů. Kromě s možnou hodnotou Null operátory pro aritmetické operace a porovnání operátory převodu lze pro převod mezi typy připouštějící hodnotu Null. Existují také s možnou hodnotou Null verze některých operátorů pro dotazování.
 
 ## <a name="table-of-nullable-operators"></a>Tabulka operátory s povolenou hodnotou Null
-Následující tabulka uvádí s možnou hodnotou Null operátory podporované v jazyce F #.
 
-|Na levé straně s možnou hodnotou Null|S možnou hodnotou Null vpravo|Na obou stranách s možnou hodnotou Null|
+V následující tabulce jsou uvedeny podporovány v jazyce F # operátory s povolenou hodnotou Null.
+
+|Na levé straně s možnou hodnotou Null|S povolenou hodnotou Null vpravo|Obě strany s možnou hodnotou Null|
 |---|---|---|
 |[?>=](https://msdn.microsoft.com/library/94d29e32-a204-4f60-a527-6b0af86268f3)|[>=?](https://msdn.microsoft.com/library/0a255d8e-8cae-4160-ae61-243a5d96583f)|[?>=?](https://msdn.microsoft.com/library/3051a50f-d276-4c84-9d73-bf2efeddef94)|
 |[?>](https://msdn.microsoft.com/library/62dc0021-1312-4ac3-be87-798b60b81bb6)|[>?](https://msdn.microsoft.com/library/0ad1284b-de48-4a04-83d8-b6f13c9c8936)|[?>?](https://msdn.microsoft.com/library/dc18b6fa-30c4-47b0-9057-794439378a05)|
@@ -32,11 +32,12 @@ Následující tabulka uvádí s možnou hodnotou Null operátory podporované v
 |[?%](https://msdn.microsoft.com/library/44297bba-1bd9-4ed2-a848-f1e1e598db87)|[%?](https://msdn.microsoft.com/library/a4c178e5-eec4-42e8-847f-90b24fc609fe)|[?%?](https://msdn.microsoft.com/library/dd555f20-1be3-4b8d-81f1-bf1921e62fda)|
 
 ## <a name="remarks"></a>Poznámky
+
 Operátory s povolenou hodnotou Null jsou součástí [NullableOperators](https://msdn.microsoft.com/library/2c3633c5-3f31-4d62-a9f8-272ad6b19007) modulu v oboru názvů [Microsoft.fsharp.Linq –](https://msdn.microsoft.com/library/4765b4e8-4006-4d8c-a405-39c218b3c82d). Typ s možnou hodnotou NULL dat je `System.Nullable<'T>`.
 
-Typy s možnou hodnotou Null ve výrazech dotazů nastat při výběru dat ze zdroje dat, která umožňuje hodnoty Null místo hodnoty. Každý datový sloupec v tabulce v databázi systému SQL Server má atribut, který označuje, zda jsou hodnoty Null povoleny. Pokud jsou hodnoty Null povoleny, s daty vrácenými z databáze může obsahovat hodnoty Null, která nemůže být reprezentovaná primitivní datový typ jako `int`, `float`a tak dále. Proto, že data jsou vrácena jako `System.Nullable<int>` místo `int`, a `System.Nullable<float>` místo `float`. Skutečné hodnoty lze získat z `System.Nullable<'T>` objekt pomocí `Value` vlastnost a můžete zjistit, zda `System.Nullable<'T>` objekt má hodnotu voláním `HasValue` metoda. Další užitečné metodou je `System.Nullable<'T>.GetValueOrDefault` metodu, která umožňuje získat hodnotu nebo výchozí hodnotu příslušného typu. Výchozí hodnota je určitou formu "nula" hodnotu, třeba 0, 0,0, nebo `false`.
+Typy připouštějící hodnotu Null ve výrazech dotazů nastat při výběru dat ze zdroje dat, která umožňuje místo hodnoty Null. Každý datový sloupec v tabulce v databázi serveru SQL Server má atribut, který určuje, zda jsou povoleny hodnoty Null. Pokud jsou hodnoty Null povoleny, data vrácená z databáze může obsahovat hodnoty Null, které nemůže být reprezentována primitivní datový typ jako `int`, `float`, a tak dále. Proto, data jsou vrácena jako `System.Nullable<int>` místo `int`, a `System.Nullable<float>` místo `float`. Skutečnou hodnotu lze získat z `System.Nullable<'T>` s použitím `Value` vlastnosti kde můžete zjistit, zda `System.Nullable<'T>` objekt má hodnotu voláním `HasValue` metoda. Další užitečné metodou je `System.Nullable<'T>.GetValueOrDefault` metodu, která vám umožní získat hodnotu nebo výchozí hodnotu příslušného typu. Výchozí hodnota je nějakou formu "žádný" hodnotu, například 0, 0.0, nebo `false`.
 
-Typy s možnou hodnotou Null může převést na hodnotu Null primitivní typy, jako použití operátorů obvyklé převodu `int` nebo `float`. Je také možné převést jeden typ s možnou hodnotou Null na jiný typ s možnou hodnotou Null pomocí operátory převodu pro typy s možnou hodnotou Null. Operátory převodu odpovídající mají stejný název jako standardní, ale jsou v samostatný modul, [Nullable](https://msdn.microsoft.com/library/e7a4ea13-28cc-462e-bc3a-33131ace976e) modulu v [Microsoft.fsharp.Linq –](https://msdn.microsoft.com/library/4765b4e8-4006-4d8c-a405-39c218b3c82d) oboru názvů. Při práci s výrazy dotazů se obvykle, otevřete tento obor názvů. V takovém případě můžete použít operátory s povolenou hodnotou Null převodu přidáním předpony `Nullable.` operátor odpovídající převodu, jak je znázorněno v následujícím kódu.
+Typy s možnou hodnotou Null se může převést na primitivní typy neumožňující pomocí operátorů převodu obvyklé například `int` nebo `float`. Je také možné převést z jednoho typu s možnou hodnotou Null na jiný typ připouštějící hodnotu Null pomocí operátorů převodu pro typy připouštějící hodnotu Null. Operátory převodu vhodné mít stejný název jako standardní, ale jsou v samostatný modul [Nullable](https://msdn.microsoft.com/library/e7a4ea13-28cc-462e-bc3a-33131ace976e) v modulu [Microsoft.fsharp.Linq –](https://msdn.microsoft.com/library/4765b4e8-4006-4d8c-a405-39c218b3c82d) oboru názvů. Obvykle je tento obor názvů otevřít při práci s výrazy dotazu. V takovém případě můžete použít operátory převodu s možnou hodnotou Null přidáním předpony `Nullable.` operátoru odpovídající převodu, jak je znázorněno v následujícím kódu.
 
 ```fsharp
 open Microsoft.FSharp.Linq
@@ -50,11 +51,11 @@ let nullableFloat = Nullable.float nullableInt
 printfn "%f" (float nullableFloat)
 ```
 
-Výstupem je `10.000000`.
+Výstup je `10.000000`.
 
-Dotaz na hodnotu Null datová pole, operátory, jako `sumByNullable`, existují také pro použití ve výrazech dotazů. Operátory dotazu pro použití hodnot Null typy nejsou typu kompatibilní s typy s možnou hodnotou Null, je nutné použít s možnou hodnotou Null verzi operátor odpovídající dotazu při práci s hodnotami dat s možnou hodnotou Null. Další informace najdete v tématu [výrazy dotazů](../query-expressions.md).
+Dotazování na s možnou hodnotou Null datová pole, operátory, jako `sumByNullable`, existují také pro použití ve výrazech dotazů. Operátory dotazu pro typy neumožňující nejsou kompatibilního s typy s možnou hodnotou Null, proto při práci s hodnotami dat s možnou hodnotou null je nutné použít s možnou hodnotou Null verzi operátoru odpovídající dotaz. Další informace najdete v tématu [– výrazy dotazů](../query-expressions.md).
 
-Následující příklad ukazuje použití operátory s povolenou hodnotou Null ve výrazu dotazu F #. První dotaz ukazuje, jak by napsat dotaz bez s možnou hodnotou Null operátor; druhý dotaz zobrazí ekvivalentní dotaz, který používá operátor s možnou hodnotou Null. Kontext úplné, včetně toho, jak nastavit databázi použít tento ukázkový kód, najdete v části [návod: přístup k databázi SQL pomocí zprostředkovatelé typu](../../tutorials/type-providers/accessing-a-sql-database.md).
+Následující příklad ukazuje použití operátory s povolenou hodnotou Null ve výrazu dotazu F #. První dotaz zobrazí, jak byste napsat dotaz bez operátor s možnou hodnotou Null; druhý dotaz zobrazí ekvivalentní dotaz, který používá operátor s možnou hodnotou Null. Úplný kontext, včetně postupu nastavení databáze při použití tohoto ukázkového kódu, naleznete v tématu [návod: přístup k SQL Database s použitím zprostředkovatelů typů](../../tutorials/type-providers/accessing-a-sql-database.md).
 
 ```fsharp
 open System
@@ -82,8 +83,7 @@ query {
 } |> Seq.iter (fun row -> printfn "%d %s" (row.TestData1.GetValueOrDefault()) row.Name)
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Zprostředkovatelé typů](../../tutorials/type-providers/index.md)
-
-[Výrazy dotazu](../query-expressions.md)
+- [Zprostředkovatelé typů](../../tutorials/type-providers/index.md)
+- [Výrazy dotazu](../query-expressions.md)

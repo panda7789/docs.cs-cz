@@ -1,17 +1,17 @@
 ---
 title: Rozhraní (F#)
-description: 'Zjistěte, jak zadat F # rozhraní sady souvisejících členů, které implementují jiné třídy.'
+description: 'Zjistěte, jak určit sadu souvisejících členů, které implementují jiné třídy rozhraní F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 54ae8a2840ce26814be25f08c3ed02e12df6b7c0
-ms.sourcegitcommit: ff1d40507b3eb6e2185478e37c66c66be6de46f1
+ms.openlocfilehash: 6d7f8ee9ea17d2294933f88577c30a96975ae5d4
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/11/2018
-ms.locfileid: "34058894"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43802817"
 ---
 # <a name="interfaces"></a>Rozhraní
 
-*Rozhraní* zadejte sady souvisejících členů, které implementují jiné třídy.
+*Rozhraní* zadat sady souvisejících členů, které implementují jiné třídy.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -42,55 +42,57 @@ let class-name (argument-list) =
 ```
 
 ## <a name="remarks"></a>Poznámky
-Deklarace rozhraní vypadat podobně jako deklarace tříd s tím rozdílem, že jsou implementované žádní členové. Místo toho jsou všechny členy abstraktní, jak je uvedeno klíčovým slovem `abstract`. Pro abstraktní metody nezadáte těla metody. Výchozí implementace však můžete zadat také zahrnutím samostatné definice člena jako metodu společně s `default` – klíčové slovo. Díky tomu je ekvivalentní k vytvoření virtuální metodu v základní třídě v jinými jazyky rozhraní .NET. Virtuální metoda může být přepsána nastaveními v třídy, které implementují rozhraní.
 
-Je výchozí usnadnění pro rozhraní `public`.
+Deklarace rozhraní vypadat podobně jako deklarace tříd s tím rozdílem, že jsou implementovány žádní členové. Místo toho jsou všechny členy abstract, jak je uvedeno klíčové slovo `abstract`. Tělo metody se neposkytují pro abstraktní metody. Ale může poskytovat výchozí implementace také zahrnutím samostatné definice člena jako metoda spolu s `default` – klíčové slovo. To je ekvivalentní k vytváření virtuální metodu v základní třídě v jiných jazycích rozhraní .NET. Virtuální metoda může přepsat ve třídách, které implementují rozhraní.
 
-Můžete volitelně zadejte každý parametr metody název pomocí normální F # – syntaxe:
+Výchozí dostupnost pro rozhraní je `public`.
+
+Můžete volitelně zadejte každý parametr metody název pomocí syntaxe normální F #:
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet24032.fs)]
 
-Ve výše `ISprintable` například `Print` metoda má jeden parametr typu `string` s názvem `format`.
+V uvedeném `ISprintable` například `Print` metoda má jeden parametr typu `string` s názvem `format`.
 
-Existují dva způsoby, jak implementovat rozhraní: pomocí objektové výrazy a pomocí typy tříd. V obou případech výraz typu nebo objektu třídy poskytuje těla metodu pro abstraktní metody rozhraní. Implementace jsou specifické pro každý typ, který implementuje rozhraní. Proto může být metody rozhraní na různé typy liší od sebe navzájem.
+Existují dva způsoby, jak implementovat rozhraní: použitím objektových výrazů a použitím typů tříd. V obou případech se výraz typu nebo objekt třídy poskytuje těla metod pro abstraktní metody rozhraní. Implementace jsou specifické pro každý typ, který implementuje rozhraní. Proto může být metody rozhraní s různými typy liší od sebe navzájem.
 
-Klíčová slova `interface` a `end`, který označit počáteční a koncová definice, jsou volitelné, pokud použijete prostá syntaxe. Pokud nepoužijete tato klíčová slova, pokusí se kompilátor odvození, zda je typ třídy nebo rozhraní analýzou konstrukce, které používáte. Pokud definovat člena nebo použijte jiné třídy syntaxi, typ interpretována jako třída.
+Klíčová slova `interface` a `end`, které označení začátku a konce definice, jsou při použití nenáročném syntaxi volitelné. Pokud použijete tato klíčová slova, kompilátor se pokusí odvodit, zda je typ třídy nebo rozhraní díky analýze konstrukce, které používáte. Pokud definujete člena nebo použijte jiné syntaxe třídy, typ je interpretován jako třídu.
 
-Kódování styl .NET je začít všech rozhraní s velkým `I`.
+Styl kódování .NET, je začít všechna rozhraní s velkým `I`.
 
+## <a name="implementing-interfaces-by-using-class-types"></a>Implementace rozhraní pomocí třídy typů
 
-## <a name="implementing-interfaces-by-using-class-types"></a>Implementace rozhraní pomocí typy tříd
-V typu třídy můžete implementovat jednu nebo více rozhraní pomocí `interface` – klíčové slovo, název rozhraní a `with` – klíčové slovo, za nímž následuje člen definice rozhraní, jak je znázorněno v následujícím kódu.
+Můžete implementovat jednu nebo více rozhraní v typu třídy pomocí `interface` – klíčové slovo, název rozhraní a `with` – klíčové slovo, za nímž následuje definice členů rozhraní, jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2801.fs)]
 
-Implementace rozhraní jsou zděděné, takže není nutné je přeimplementovat všechny odvozené třídy.
-
+Implementace rozhraní se dědí, takže není potřeba znovu implementovat je všechny odvozené třídy.
 
 ## <a name="calling-interface-methods"></a>Volání metody rozhraní
-Metody rozhraní lze volat pouze přes rozhraní, nikoli pomocí libovolného objektu typu, který implementuje rozhraní. Proto může být nutné přetypování nahoru na typ rozhraní pomocí `:>` operátor nebo `upcast` operátor k volání těchto metod.
 
-K volání metody rozhraní, když máte objekt typu `SomeClass`, musíte přetypování nahoru objekt, který má typ rozhraní, jak je znázorněno v následujícím kódu.
+Metody rozhraní lze volat pouze prostřednictvím rozhraní, ne prostřednictvím libovolného objektu typu, který implementuje rozhraní. Proto může být nutné přetypování nahoru na typ rozhraní pomocí `:>` operátor nebo `upcast` operátor pro volání těchto metod.
+
+Volání metody rozhraní, až budete mít objekt typu `SomeClass`, je nutné přetypování nahoru objektu na typ rozhraní, jak je znázorněno v následujícím kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2802.fs)]
 
-Alternativou je deklarujte metodu pro objekt, že upcasts a volá metodu rozhraní, jako v následujícím příkladu.
+Alternativou je deklarovat metodu na objekt této upcasts a volá metodu rozhraní, jako v následujícím příkladu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2803.fs)]
-    
-## <a name="implementing-interfaces-by-using-object-expressions"></a>Implementace rozhraní pomocí objektové výrazy
-Objektové výrazy zadejte krátký způsob, jak implementovat rozhraní. Jsou užitečné v případě, že nemáte k vytvoření pojmenovaného typu, a chcete objekt, který podporuje metody rozhraní, bez jakékoli další metody. Výraz objektu je znázorněno v následujícím kódu.
+
+## <a name="implementing-interfaces-by-using-object-expressions"></a>Implementace rozhraní s použitím objektových výrazů
+
+Objektové výrazy poskytují krátký způsob, jak implementovat rozhraní. Jsou užitečné v případě nemusíte vytvářet pojmenované typy a chcete jenom objekt, který podporuje metody rozhraní, bez jakékoli další metody. V následujícím kódu je znázorněn objektový výraz.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2804.fs)]
-    
-## <a name="interface-inheritance"></a>Rozhraní dědičnosti
-Rozhraní může dědit vlastnosti z jednoho nebo více základní rozhraní.
+
+## <a name="interface-inheritance"></a>Dědičnost rozhraní
+
+Rozhraní může dědit z jednoho nebo více základních rozhraní.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2805.fs)]
-    
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
 
-[Objektové výrazy](object-expressions.md)
+## <a name="see-also"></a>Viz také:
 
-[Třídy](classes.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Objektové výrazy](object-expressions.md)
+- [Třídy](classes.md)

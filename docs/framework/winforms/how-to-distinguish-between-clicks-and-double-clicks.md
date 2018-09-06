@@ -11,11 +11,11 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], single versus double
 ms.assetid: d836ac8c-85bc-4f3a-a761-8aee03dc682c
 ms.openlocfilehash: 84d085700091c4e7b8658e8eac4cf86fbd7730d5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43555440"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43802483"
 ---
 # <a name="how-to-distinguish-between-clicks-and-double-clicks"></a>Postupy: Rozlišení mezi kliknutím a poklikáním
 Obvykle jediného *klikněte na tlačítko* spustí uživatelské rozhraní (UI) akce a *dvakrát klikněte na panel* rozšiřuje akci. Například obvykle vybere položku jedním kliknutím a poklepání upraví vybranou položku. Windows Forms události kliknutí operaci snadno scénář, kde kliknutím a poklepání činnostem nekompatibilní, protože akce spojený s <xref:System.Windows.Forms.Control.Click> nebo <xref:System.Windows.Forms.Control.MouseClick> událostí je provedena akce spojený s <xref:System.Windows.Forms.Control.DoubleClick>nebo <xref:System.Windows.Forms.Control.MouseDoubleClick> událostí. Toto téma ukazuje dvě řešení tohoto problému. Jedním z řešení je zpracování události dvojitým kliknutím a vrátit zpět akce při zpracování událost click. Ve výjimečných případech budete muset simulovat kliknutím a dvakrát klikněte na chování pomocí manipulace <xref:System.Windows.Forms.Control.MouseDown> událostí a s využitím <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> a <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A> vlastnosti <xref:System.Windows.Forms.SystemInformation> třídy. Měří čas mezi klepnutími a pokud druhé kliknutí předchází hodnotu <xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A> dosažení a kliknutím na se v obdélníku definovaném <xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>, dvakrát klikněte na akci provést; v opačném případě klikněte na akci provést.  

@@ -5,55 +5,55 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: afc19ccf476317e8c30a1cc6964c64f1a59a0ff8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25bdfaef300b001d1c052aeea4e1ad3547a6d3d7
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33655468"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43803806"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>Používání regulárních výrazů s ovládacím prvkem MaskedTextBox v jazyce Visual Basic
 Tento příklad ukazuje, jak převést jednoduché regulárních výrazů pro práci s <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku.  
   
 ## <a name="description-of-the-masking-language"></a>Popis jazyka maskování  
- Standardní <xref:System.Windows.Forms.MaskedTextBox> maskování jazyk podle používají `Masked Edit` řízení v jazyce Visual Basic 6.0 a měli seznámit uživatelům při migraci z této platformy.  
+ Standardní <xref:System.Windows.Forms.MaskedTextBox> maskování jazyka podle používají `Masked Edit` řízení v jazyce Visual Basic 6.0 a měla by být migraci z této platformy uživatelé znají.  
   
- <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> Vlastnost <xref:System.Windows.Forms.MaskedTextBox> řízení Určuje, jaké vstupní maska používat. Maska musí být řetězec tvořený jeden nebo více elementů maskování v následující tabulce.  
+ <xref:System.Windows.Forms.MaskedTextBox.Mask%2A> Vlastnost <xref:System.Windows.Forms.MaskedTextBox> ovládacího prvku určuje, jaké vstupní maska používat. Maska musí být řetězec skládá z jedné nebo více prvků maskování z následující tabulky.  
   
-|Element maskování|Popis|Element regulární výraz|  
+|Element maskování|Popis|Regulární výraz element|  
 |---------------------|-----------------|--------------------------------|  
-|0|Jediná číslice mezi 0 a 9. Položka je povinná.|\d|  
+|0|Libovolná číslice od 0 do 9. Je nutné provést zadání.|\d|  
 |9|Číslice nebo mezera. Položka je nepovinná.|[\d]?|  
-|#|Číslice nebo mezera. Položka je nepovinná. Pokud toto umístění je prázdné v masce, bude vykresleno jako prostor. Plus (+) a minus (-) jsou povoleny znaky.|[\d+-]?|  
-|L|Písmeno ASCII. Položka je povinná.|[a-zA-Z]|  
+|#|Číslice nebo mezera. Položka je nepovinná. Pokud toto umístění je prázdné v masce, zobrazí se jako mezera. Plus (+) a minus (-) jsou povolené znaky.|[\d+-]?|  
+|L|Písmeno ASCII. Je nutné provést zadání.|[a-zA-Z]|  
 |?|Písmeno ASCII. Položka je nepovinná.|[a-zA-Z]?|  
-|&|Znak. Položka je povinná.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
-|C|Znak. Položka je nepovinná.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]?|  
+|&|znak. Je nutné provést zadání.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
+|C|znak. Položka je nepovinná.|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]?|  
 |OBJEKT|Alfanumerické znaky. Položka je nepovinná.|\W|  
-|.|Decimal zástupný příslušnou jazykovou verzi.|Není k dispozici.|  
-|,|Zástupný symbol tisíc příslušnou jazykovou verzi.|Není k dispozici.|  
-|:|Oddělovač času příslušnou jazykovou verzi.|Není k dispozici.|  
-|/|Oddělovač data příslušnou jazykovou verzi.|Není k dispozici.|  
-|$|Symbolu měny příslušnou jazykovou verzi.|Není k dispozici.|  
+|.|Odpovídající jazykovou verzi zástupný znak desetinné čárky.|Není k dispozici.|  
+|,|Zástupný symbol tisíců odpovídající jazykovou verzi.|Není k dispozici.|  
+|:|Oddělovač času odpovídající jazykovou verzi.|Není k dispozici.|  
+|/|Oddělovač data odpovídající jazykovou verzi.|Není k dispozici.|  
+|$|Symbol měny odpovídající jazykovou verzi.|Není k dispozici.|  
 |\<|Převede všechny znaky, které následují na malá písmena.|Není k dispozici.|  
 |>|Převede všechny znaky, které následují na velká písmena.|Není k dispozici.|  
-|&#124;|Vrátí zpět předchozí posunutí nahoru nebo posunutí.|Není k dispozici.|  
-|\|Řídicí sekvence maska znak, zakažte ho do literál. "\\\\" je řídicí sekvence pro zpětné lomítko.|\|  
-|Všechny ostatní znaky.|Literály. Všechny elementy bez maska se zobrazí jako sami v rámci <xref:System.Windows.Forms.MaskedTextBox>.|Všechny ostatní znaky.|  
+|&#124;|Vrátí zpět předchozí posunutí nahoru a přesunout.|Není k dispozici.|  
+|&#92;|Řídicí sekvence znaku masky zapnutí na literál. "\\\\" je řídicí sekvenci zpětného lomítka.|&#92;|  
+|Všechny ostatní znaky.|Literály. Všechny elementy bez masky se zobrazí jako sami v rámci <xref:System.Windows.Forms.MaskedTextBox>.|Všechny ostatní znaky.|  
   
- Decimal (.), tisícin (,), čas (:), datum (/) a výchozí symboly měny ($) k zobrazení těchto symbolů podle definice jazykovou verzi aplikace. Můžete vynutit, aby zobrazení symbolů pro jinou jazykovou verzi pomocí <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> vlastnost.  
+ Desetinné číslo (.), tisícin (,), čas (:), datum (/) a výchozí symboly měny ($) k zobrazení těchto symbolů podle jazykové verze vaší aplikace. Můžete vynutit, je pro zobrazení symbolů pro jinou jazykovou verzi pomocí <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> vlastnost.  
   
 ## <a name="regular-expressions-and-masks"></a>Regulární výrazy a masek  
- Přestože regulární výrazy a masek je možné použít k ověření vstupu uživatele, nejsou úplně ekvivalentní. Regulární výrazy můžete express vzory složitější než masek, ale masek můžete express stejné informace, více stručně a ve formátu jazykově relevantní.  
+ I když regulárních výrazů a masek slouží k ověření vstupu uživatele, nejsou zcela ekvivalentní. Regulární výrazy můžete vyjádřit složitější vzorce než masky, ale masky můžete vyjádřit stejné informace, informace ve zhuštěné a jazykově odpovídající formát.  
   
- Následující tabulka porovnává čtyři regulární výrazy a ekvivalentní maska pro každou.  
+ Následující tabulka porovnává pro všechny čtyři regulárních výrazů a odpovídající masku.  
   
 |Regulární výraz|Maska|Poznámky|  
 |------------------------|----------|-----------|  
-|`\d{2}/\d{2}/\d{4}`|`00/00/0000`|`/` Znak v maska je oddělovač logické data a uživateli se objeví jako oddělovač data, která je vhodné pro aktuální jazykovou verzi aplikace.|  
-|`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|Datum (den, zkratka měsíc a rok) ve Spojených státech amerických formát, ve kterém se zobrazí zkratka měsíc tří písmen s počáteční velké písmeno, za nímž následuje dvě malá písmena.|  
-|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|Telefonní číslo pro USA, směrové číslo oblasti volitelné. Pokud uživatel nechce zadejte volitelné znaků, se můžete zadat mezery nebo umístěte ukazatel myši přímo na pozici v masce reprezentována první 0.|  
-|`$\d{6}.00`|`$999,999.00`|Hodnotu měny v rozsahu od 0 do 999999. Měna, / 1 000 a decimal znaky se nahradí za běhu jejich ekvivalenty specifické pro jazykovou verzi.|  
+|`\d{2}/\d{2}/\d{4}`|`00/00/0000`|`/` Znak v maska je logický oddělovač, se zobrazí uživateli jako oddělovač data pro aktuální jazykovou verzi aplikace.|  
+|`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|Datum (den, zkratku měsíce a roku) ve Spojených státech amerických formát, ve kterém se zobrazí zkratku měsíce tří písmen s počáteční velkým písmenem, za nímž následuje dvě písmena malá.|  
+|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|Spojené státy telefonní číslo, předčíslí volitelné. Pokud uživatel nechce zadejte volitelné znaky, které můžete zadat mezery nebo umístěte ukazatel myši přímo na pozici v masce reprezentována první 0.|  
+|`$\d{6}.00`|`$999,999.00`|Hodnota měny v rozsahu 0-999999. Měna, / 1 000 a decimální znaky se nahradí za běhu ekvivalenty specifické pro jazykovou verzi.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>  

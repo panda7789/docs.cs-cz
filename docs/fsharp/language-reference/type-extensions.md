@@ -2,12 +2,12 @@
 title: Rozšíření typů (F#)
 description: 'Zjistěte, jak povolit rozšíření typů F #, že přidáte nové členy dříve definovaného typu objektu.'
 ms.date: 07/20/2018
-ms.openlocfilehash: 2181745ea75894fbfe35d5522c130baaf1876455
-ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
+ms.openlocfilehash: 27238db1fd0803f62c32755fbc4ab7688f5c107e
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "33566883"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43855058"
 ---
 # <a name="type-extensions"></a>Rozšíření typů
 
@@ -169,6 +169,5 @@ Nakonec pokud existuje více rozšíření vnitřního typu pro jeden typ, všec
 
 ## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka F#](index.md)
-
-[Členové](members/index.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Členové](members/index.md)

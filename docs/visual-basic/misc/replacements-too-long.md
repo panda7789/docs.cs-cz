@@ -5,11 +5,11 @@ f1_keywords:
 - vbrID746
 ms.assetid: 398ff5eb-b580-456f-8f24-b7a8318e1193
 ms.openlocfilehash: 3216ce866cae9a7f59ecfca23d92d82fdb8bc117
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43561577"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43803792"
 ---
 # <a name="replacements-too-long"></a>Příliš dlouhá nahrazení
 Zadali jste můžou nahradit aktuální soubor, který přesahuje povolenou délku.  

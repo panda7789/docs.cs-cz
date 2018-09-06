@@ -4,11 +4,11 @@ description: Zjistěte, jak zpracování hodnot null ve výrazech dotazů LINQ v
 ms.date: 12/1/2016
 ms.assetid: ac63ae8b-724d-4251-9334-528f4e884ae7
 ms.openlocfilehash: 2c477ef371dbb424c72fb9d34948760b7e3f5609
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43561376"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43797754"
 ---
 # <a name="handle-null-values-in-query-expressions"></a>Zpracování hodnot null ve výrazech dotazů
 

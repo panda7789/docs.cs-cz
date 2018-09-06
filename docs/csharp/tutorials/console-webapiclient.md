@@ -3,12 +3,12 @@ title: Vytvoření klienta REST s využitím .NET Core
 description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: bc3c23b277b233efba9f32cc49b29ac905f3abc8
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 13466b717d0676c2db5edf4c98a4ead3e673b96c
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480153"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43801021"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -37,7 +37,7 @@ Než začnete, úpravy, Podívejme se kroky ke spuštění jednoduché aplikace 
 Po obnovení balíčků, spustíte `dotnet build`. To spustí modul sestavení a vytvoří vaší aplikace. Nakonec spuštěním `dotnet run` ke spuštění aplikace.
 
 ## <a name="adding-new-dependencies"></a>Přidání nové závislosti
-Jedním z hlavních cílů aplikace .NET Core je minimální velikost instalace rozhraní .NET framework. Aplikace .NET Core framework obsahuje jenom nejběžnější prvky úplné rozhraní .NET framework. Pokud aplikace potřebuje další knihovny pro některé z jejích funkcí, přidejte tyto závislosti do projektu C# (\*.csproj) souboru. V našem příkladu bude potřeba přidat `System.Runtime.Serialization.Json` balíček, vaše aplikace dokáže zpracovat odpověďmi ve formátu JSON.
+Jedním z hlavních cílů pro .NET Core je minimální velikost instalace rozhraní .NET. Pokud aplikace potřebuje další knihovny pro některé z jejích funkcí, přidejte tyto závislosti do projektu C# (\*.csproj) souboru. V našem příkladu bude potřeba přidat `System.Runtime.Serialization.Json` balíček, vaše aplikace dokáže zpracovat odpověďmi ve formátu JSON.
 
 Otevřete váš `csproj` souboru projektu. První řádek souboru by měl vypadat jako:
 

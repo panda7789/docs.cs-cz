@@ -1,18 +1,17 @@
 ---
 title: Vstupní bod (F#)
-description: 'Zjistěte, jak nastavit vstupní bod programu F #, který se zkompiluje jako spustitelného souboru, kde oficiálně spustí provádění.'
+description: 'Zjistěte, jak nastavit vstupní bod do programu F #, zkompilovaný jako spustitelný soubor, ve kterém formálně spuštění.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 3d6cab755dd89f2d3d669a8763aa08660432a0ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 298500931d49c891a7a243295333df3a9f5d413e
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563617"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43798710"
 ---
 # <a name="entry-point"></a>Vstupní bod
 
-Toto téma popisuje metodu, můžete použít k nastavení vstupní bod programu F #.
-
+Toto téma popisuje metody, která se používá k nastavení vstupní bod do programu F #.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -22,11 +21,12 @@ let-function-binding
 ```
 
 ## <a name="remarks"></a>Poznámky
-V předchozích syntaxi *vazba funkce umožňují* je definice funkce v `let` vazby.
 
-Vstupní bod k programu, který se zkompiluje jako spustitelný soubor je, kde oficiálně spustí provádění. Zadejte vstupní bod aplikace F # s použitím `EntryPoint` atribut program `main` funkce. Tato funkce (vytvořili pomocí `let` vazba) musí být poslední funkce v poslední zkompilovaný soubor. Poslední zkompilovaný soubor je posledního souboru v projektu nebo posledního souboru, který je předán do příkazového řádku.
+V předchozí syntaxi *vazba funkce umožňují* je definice funkce v `let` vazby.
 
-Funkce vstupního bodu má typ `string array -> int`. Argumenty zadat na příkazovém řádku `main` funkce v poli řetězců. První prvek pole je první argument; název spustitelného souboru není součástí pole, protože je v některých dalších jazycích. Návratová hodnota slouží jako kód ukončení procesu. Nula obvykle označuje úspěch; nenulové hodnoty udávající chybu. Neexistuje žádné názvů pro zvláštní význam nenulové hodnoty návratových kódů; významy návratových kódů jsou specifické pro aplikaci.
+Vstupní bod programu, který je zkompilován je spustitelný soubor, ve kterém formálně spuštění. Zadejte vstupní bod do aplikace F # s použitím `EntryPoint` atribut programu `main` funkce. Tato funkce (vytvořené využitím `let` vazby) musí být poslední funkci v poslední zkompilovaný soubor. Poslední zkompilovaný soubor je poslední soubor v projektu nebo poslední soubor, který je předán do příkazového řádku.
+
+Funkci vstupního bodu má typ `string array -> int`. Argumenty příkazového řádku k dispozici jsou předány `main` funkce v poli řetězců. Prvním prvkem pole je první argument; název spustitelného souboru, který není zahrnutý v poli, je to v některých jiných jazycích. Návratová hodnota se používá jako ukončovací kód procesu. Nula obvykle znamená úspěšné nenulové hodnoty udávající chybu. Neexistuje žádné vytváření názvů pro zvláštní význam nenulové návratové kódy; význam návratové kódy jsou specifické pro aplikaci.
 
 Následující příklad ukazuje jednoduchý `main` funkce.
 
@@ -38,11 +38,11 @@ Při spuštění tohoto kódu s příkazovým řádkem `EntryPoint.exe 1 2 3`, v
 Arguments passed to function : [|"1"; "2"; "3"|]
 ```
 
-## <a name="implicit-entry-point"></a>Implicitní vstupního bodu
-Když program neobsahuje žádné **EntryPoint** atribut, který explicitně určuje vstupní bod, vazby nejvyšší úrovně v posledního souboru mají být zkompilovány, do se používají jako vstupní bod.
+## <a name="implicit-entry-point"></a>Implicitní vstupní bod
 
+Pokud program nemá žádné **EntryPoint** atribut, který explicitně určuje vstupní bod vazeb nejvyšší úrovně v posledním souboru ke kompilaci se používají jako vstupní bod.
 
-## <a name="see-also"></a>Viz také
-[Funkce](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Vazby let](let-bindings.md)
+- [Funkce](index.md)
+- [Vazby let](let-bindings.md)

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - literal keywords [C#]
 ms.assetid: 95b3f075-47d7-4990-8ea8-9e637678bf3c
 ms.openlocfilehash: e031e55642e31ca450517dd03d10e33a2e6e8455
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43389865"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43800104"
 ---
 # <a name="literal-keywords-c-reference"></a>Literálová klíčová slova (Referenční dokumentace jazyka C#)
 C# má následující Literálová klíčová slova:  

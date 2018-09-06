@@ -2,15 +2,15 @@
 title: Nerozbalené zprávy
 ms.date: 03/30/2017
 ms.assetid: 019657bd-1f9b-4315-ad74-eaa4e7551ff6
-ms.openlocfilehash: 163dc1a6d15ac5ec4c70a096f44a9bed9a2bc70f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2c818cc6c37a59f75599afb3eab3290d8525e4bc
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33504965"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43797586"
 ---
 # <a name="unwrapped-messages"></a>Nerozbalené zprávy
-Tento příklad znázorňuje nerozbalené zprávy. Ve výchozím nastavení tělo zprávy je naformátován tak, že jsou zabalené parametry, které chcete operaci služby. Následující ukázkové ukazuje `Add` zpráva požadavku k `ICalculator` služby v zabalené režimu.  
+V této ukázce nerozbalené zprávy. Ve výchozím nastavení text zprávy je formátováno tak, že jsou zabaleny parametry pro operaci služby. Následující ukázka znázorňuje `Add` zprávy s požadavkem na `ICalculator` služby v režimu zabalené.  
   
 ```xml  
 <s:Envelope   
@@ -28,7 +28,7 @@ Tento příklad znázorňuje nerozbalené zprávy. Ve výchozím nastavení těl
 </s:Envelope>  
 ```  
   
- `<Add>` Zabalí element v textu zprávy `n1` a `n2` parametry. Naopak v následujícím příkladu vidíte ekvivalentní zpráva v rozbalenou režimu.  
+ `<Add>` Zabalí element v textu zprávy `n1` a `n2` parametry. Naproti tomu následující příklad ukazuje rovnocenné zprávy v nezabalené režimu.  
   
 ```xml  
 <s:Envelope   
@@ -45,12 +45,12 @@ Tento příklad znázorňuje nerozbalené zprávy. Ve výchozím nastavení těl
 </MessageLogTraceRecord>  
 ```  
   
- Rozbalená zpráva není zalomen `n1` a `n2` parametry v elementu s obsahem, jsou přímo podřízené elementu těla protokolu soap.  
+ Nerozbalené zprávy není zalomen `n1` a `n2` parametry v obsahující element jsou přímé podřízené objekty daného elementu těla protokolu soap.  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- V této ukázce, vytvoří se rozbalenou zpráva s použitím <xref:System.ServiceModel.MessageContractAttribute> typ parametru operace služby a typ návratové hodnoty, jak je znázorněno v následujícím ukázkovém kódu.  
+ V této ukázce se vytvoří nerozbalené zprávy použitím <xref:System.ServiceModel.MessageContractAttribute> typ parametru operace služby a typ návratové hodnoty, jak je znázorněno v následujícím ukázkovém kódu.  
   
 ```  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
@@ -89,26 +89,26 @@ public class ResponseMessage
 }  
 ```  
   
- Abyste mohli zobrazit zprávy se odesílají a přijímají, používá tato ukázka trasování. Kromě toho <xref:System.ServiceModel.WSHttpBinding> nakonfigurovaný bez zabezpečení, a snížit počet zpráv protokoluje.  
+ Aby bylo možné zobrazit zprávy se odeslané a přijaté, tato ukázka používá trasování. Kromě toho <xref:System.ServiceModel.WSHttpBinding> není nakonfigurovaná bez zabezpečení k omezení počtu zpráv protokoluje.  
   
- Výsledný protokolu trasování (c:\logs\Message.log) lze zobrazit pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Chcete-li zobrazit obsah zprávy, vyberte **zprávy** v vlevo a vpravo podokna nástroje prohlížeče trasování služeb. Má být vygenerován do složky, C:\LOGS jsou nakonfigurované protokoly trasování v této ukázce. Vytvořte tuto složku před spuštěním ukázky a přidělit uživateli oprávnění pro tento adresář pro zápis síťové služby.  
+ Výsledný protokol trasování (c:\logs\Message.log) lze zobrazit pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Chcete-li zobrazit obsah zprávy, vyberte **zprávy** vlevo a vpravo podokna nástroje prohlížeče trasování služeb. Vygenerování do složky C:\LOGS jsou nakonfigurované protokoly trasování v této ukázce. Vytvořte tuto složku před spuštěním ukázky a přidělit uživateli oprávnění pro tento adresář k zápisu síťové služby.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Vytvořte C:\LOGS adresář pro protokolování zpráv. Síťová služba zápisu oprávnění pro tento adresář uživateli přidělte.  
+2.  Vytvoření C:\LOGS adresáře pro protokolování zpráv. Dejte uživateli oprávnění pro tento adresář k zápisu síťové služby.  
   
-3.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+3.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-4.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+4.  Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 > [!IMPORTANT]
->  Ukázky může být již nainstalována na váš počítač. Před pokračováním zkontrolovat na následující adresář (výchozí).  
+>  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](http://go.microsoft.com/fwlink/?LinkId=150780) ke stažení všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Unwrapped`  
   
