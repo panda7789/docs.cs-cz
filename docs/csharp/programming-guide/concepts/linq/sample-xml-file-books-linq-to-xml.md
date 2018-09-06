@@ -3,16 +3,16 @@ title: 'Ukázkový soubor XML: Knihy (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: b75ab1a2-fb76-4df9-bd01-c45ec22a29ef
 ms.openlocfilehash: 8eeff6fad78fe45ca38a3d3fa07f745b80590e28
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43671723"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43741809"
 ---
-# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="bb98e-102">Ukázkový soubor XML: Knihy (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="bb98e-102">Sample XML File: Books (LINQ to XML)</span></span>
-<span data-ttu-id="bb98e-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="bb98e-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="bb98e-104">Soubor obsahuje informace o knihách.</span><span class="sxs-lookup"><span data-stu-id="bb98e-104">The file contains information about books.</span></span>  
+# <a name="sample-xml-file-books-linq-to-xml"></a><span data-ttu-id="6d8f0-102">Ukázkový soubor XML: Knihy (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="6d8f0-102">Sample XML File: Books (LINQ to XML)</span></span>
+<span data-ttu-id="6d8f0-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="6d8f0-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="6d8f0-104">Soubor obsahuje informace o knihách.</span><span class="sxs-lookup"><span data-stu-id="6d8f0-104">The file contains information about books.</span></span>  
   
-## <a name="booksxml"></a><span data-ttu-id="bb98e-105">Books.XML</span><span class="sxs-lookup"><span data-stu-id="bb98e-105">books.xml</span></span>  
+## <a name="booksxml"></a><span data-ttu-id="6d8f0-105">Books.XML</span><span class="sxs-lookup"><span data-stu-id="6d8f0-105">books.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -39,6 +39,6 @@ ms.locfileid: "43671723"
 </Catalog>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="bb98e-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="bb98e-106">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6d8f0-106">Viz také</span><span class="sxs-lookup"><span data-stu-id="6d8f0-106">See Also</span></span>
 
-- [<span data-ttu-id="bb98e-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="bb98e-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [<span data-ttu-id="6d8f0-107">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="6d8f0-107">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

@@ -2,25 +2,24 @@
 title: Indexované vlastnosti (F#)
 description: 'Další informace o F # indexované vlastnosti, které jsou vlastnosti, které poskytují přístup jako pole k datům seřazené.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 503cef9693cfe5e13d4e2d19a721d65bff1ce749
-ms.sourcegitcommit: 22c3c8f74eaa138dbbbb02eb7d720fce87fc30a9
+ms.openlocfilehash: e56e4e2ea3f35df4c8ec46012357242cb6ce69f3
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34235938"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43749590"
 ---
-# <a name="indexed-properties"></a><span data-ttu-id="0fe40-103">Indexované vlastnosti</span><span class="sxs-lookup"><span data-stu-id="0fe40-103">Indexed Properties</span></span>
+# <a name="indexed-properties"></a><span data-ttu-id="f352f-103">Indexované vlastnosti</span><span class="sxs-lookup"><span data-stu-id="f352f-103">Indexed Properties</span></span>
 
-<span data-ttu-id="0fe40-104">*Indexované vlastnosti* seřazeni vlastnosti, které poskytují přístup jako pole k data.</span><span class="sxs-lookup"><span data-stu-id="0fe40-104">*Indexed properties* are properties that provide array-like access to ordered data.</span></span> <span data-ttu-id="0fe40-105">Pocházejí ve třech formulářích:</span><span class="sxs-lookup"><span data-stu-id="0fe40-105">They come in three forms:</span></span>
+<span data-ttu-id="f352f-104">*Indexované vlastnosti* jsou uspořádány ve vlastnosti, které poskytují přístup jako pole na data.</span><span class="sxs-lookup"><span data-stu-id="f352f-104">*Indexed properties* are properties that provide array-like access to ordered data.</span></span> <span data-ttu-id="f352f-105">Přišli v tři formuláře:</span><span class="sxs-lookup"><span data-stu-id="f352f-105">They come in three forms:</span></span>
 
 * `Item`
 * `Ordinal`
 * `Cardinal`
 
-<span data-ttu-id="0fe40-106">F # člen musí mít název jeden z těchto tří názvů zajistit přístup jako pole.</span><span class="sxs-lookup"><span data-stu-id="0fe40-106">An F# member must be named one of these three names to provide array-like access.</span></span> <span data-ttu-id="0fe40-107">`IndexerName` se používá k reprezentování libovolné z následujících tří možností:</span><span class="sxs-lookup"><span data-stu-id="0fe40-107">`IndexerName` is used to represent any of the three options below:</span></span>
+<span data-ttu-id="f352f-106">Člen F # musí mít název jedné z těchto tří názvů a zajistit tak přístup jako pole.</span><span class="sxs-lookup"><span data-stu-id="f352f-106">An F# member must be named one of these three names to provide array-like access.</span></span> <span data-ttu-id="f352f-107">`IndexerName` se používá k reprezentování některý z následujících tří možností:</span><span class="sxs-lookup"><span data-stu-id="f352f-107">`IndexerName` is used to represent any of the three options below:</span></span>
 
-
-## <a name="syntax"></a><span data-ttu-id="0fe40-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0fe40-108">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="f352f-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f352f-108">Syntax</span></span>
 
 ```fsharp
 // Indexed property that has both get and set defined.
@@ -45,22 +44,23 @@ member self-identifier.IndexerName
         set-function-body
 ```
 
-## <a name="remarks"></a><span data-ttu-id="0fe40-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0fe40-109">Remarks</span></span>
-<span data-ttu-id="0fe40-110">Formuláře předchozí syntaxe ukazují, jak definovat indexované vlastnosti, které mají obě `get` a `set` metoda, mají `get` metoda pouze nebo mít `set` pouze metoda.</span><span class="sxs-lookup"><span data-stu-id="0fe40-110">The forms of the previous syntax show how to define indexed properties that have both a `get` and a `set` method, have a `get` method only, or have a `set` method only.</span></span> <span data-ttu-id="0fe40-111">Můžete také kombinací obou syntaxi uvedenou jenom příkaz get a syntaxi pro sadu pouze a vytvořit vlastnost, která má get a set.</span><span class="sxs-lookup"><span data-stu-id="0fe40-111">You can also combine both the syntax shown for get only and the syntax shown for set only, and produce a property that has both get and set.</span></span> <span data-ttu-id="0fe40-112">Tento formulář pozdější umožňuje umístit get modifikátory různých dostupnosti a atributy a nastavit metody.</span><span class="sxs-lookup"><span data-stu-id="0fe40-112">This latter form allows you to put different accessibility modifiers and attributes on the get and set methods.</span></span>
+## <a name="remarks"></a><span data-ttu-id="f352f-109">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f352f-109">Remarks</span></span>
 
-<span data-ttu-id="0fe40-113">Když *IndexerName* je `Item`, kompilátor zpracovává vlastnost jako vlastnost Výchozí indexovat.</span><span class="sxs-lookup"><span data-stu-id="0fe40-113">When the *IndexerName* is `Item`, the compiler treats the property as a default indexed property.</span></span> <span data-ttu-id="0fe40-114">A *Výchozí indexované vlastnosti* je vlastnost, která můžete přistupovat pomocí syntaxe pro pole na instanci objektu.</span><span class="sxs-lookup"><span data-stu-id="0fe40-114">A *default indexed property* is a property that you can access by using array-like syntax on the object instance.</span></span> <span data-ttu-id="0fe40-115">Například pokud `obj` je objekt typu, který definuje tato vlastnost syntaxe `obj.[index]` se používá pro přístup k vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="0fe40-115">For example, if `obj` is an object of the type that defines this property, the syntax `obj.[index]` is used to access the property.</span></span>
+<span data-ttu-id="f352f-110">Formy syntaxe předchozí ukazují, jak definovat indexované vlastnosti, které mají obě `get` a `set` metodu, mají `get` metoda pouze, nebo mít `set` pouze metody.</span><span class="sxs-lookup"><span data-stu-id="f352f-110">The forms of the previous syntax show how to define indexed properties that have both a `get` and a `set` method, have a `get` method only, or have a `set` method only.</span></span> <span data-ttu-id="f352f-111">Můžete také zkombinovat obojí tomu syntaxe uvedená jenom příkaz get a syntaxi pro sadu pouze a vytvoří vlastnost, která má get a set.</span><span class="sxs-lookup"><span data-stu-id="f352f-111">You can also combine both the syntax shown for get only and the syntax shown for set only, and produce a property that has both get and set.</span></span> <span data-ttu-id="f352f-112">Tento druhý formulář umožňuje umístit různou přístupností. modifikátorů a vlastností atributy na get a set metod.</span><span class="sxs-lookup"><span data-stu-id="f352f-112">This latter form allows you to put different accessibility modifiers and attributes on the get and set methods.</span></span>
 
-<span data-ttu-id="0fe40-116">Syntaxe pro přístup k vlastnosti nevýchozí indexované je poskytnout název vlastnosti a index v závorkách.</span><span class="sxs-lookup"><span data-stu-id="0fe40-116">The syntax for accessing a nondefault indexed property is to provide the name of the property and the index in parentheses.</span></span> <span data-ttu-id="0fe40-117">Například, pokud je vlastnost `Ordinal`, můžete psát `obj.Ordinal(index)` k přístupu.</span><span class="sxs-lookup"><span data-stu-id="0fe40-117">For example, if the property is `Ordinal`, you write `obj.Ordinal(index)` to access it.</span></span>
+<span data-ttu-id="f352f-113">Když *IndexerName* je `Item`, kompilátor zpracovává vlastnost jako výchozí indexovanou vlastnost.</span><span class="sxs-lookup"><span data-stu-id="f352f-113">When the *IndexerName* is `Item`, the compiler treats the property as a default indexed property.</span></span> <span data-ttu-id="f352f-114">A *výchozí indexovanou vlastnost* vlastností, která může získat přístup pomocí syntaxe pro pole na instanci objektu.</span><span class="sxs-lookup"><span data-stu-id="f352f-114">A *default indexed property* is a property that you can access by using array-like syntax on the object instance.</span></span> <span data-ttu-id="f352f-115">Například pokud `obj` je objekt typu, který definuje tato vlastnost syntaxe `obj.[index]` slouží k přístupu k vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="f352f-115">For example, if `obj` is an object of the type that defines this property, the syntax `obj.[index]` is used to access the property.</span></span>
 
-<span data-ttu-id="0fe40-118">Bez ohledu na to, jaký typ použijete, byste měli vždycky používat curryfikované formuláře pro `set` metoda indexované vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="0fe40-118">Regardless of which form you use, you should always use the curried form for the `set` method on an indexed property.</span></span> <span data-ttu-id="0fe40-119">Informace o curryfikované funkce najdete v tématu [funkce](../functions/index.md).</span><span class="sxs-lookup"><span data-stu-id="0fe40-119">For information about curried functions, see [Functions](../functions/index.md).</span></span>
+<span data-ttu-id="f352f-116">Syntaxe pro přístup k nevýchozí indexované vlastnosti je název vlastnosti a index v závorkách.</span><span class="sxs-lookup"><span data-stu-id="f352f-116">The syntax for accessing a nondefault indexed property is to provide the name of the property and the index in parentheses.</span></span> <span data-ttu-id="f352f-117">Například, pokud je vlastnost `Ordinal`, psaní `obj.Ordinal(index)` k němu přistupovat.</span><span class="sxs-lookup"><span data-stu-id="f352f-117">For example, if the property is `Ordinal`, you write `obj.Ordinal(index)` to access it.</span></span>
 
-## <a name="example"></a><span data-ttu-id="0fe40-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="0fe40-120">Example</span></span>
+<span data-ttu-id="f352f-118">Bez ohledu na to, jaký tvar použijete, byste měli vždy používat curryfikované formulář pro `set` metoda indexované vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="f352f-118">Regardless of which form you use, you should always use the curried form for the `set` method on an indexed property.</span></span> <span data-ttu-id="f352f-119">Informace o curryfikované funkce najdete v tématu [funkce](../functions/index.md).</span><span class="sxs-lookup"><span data-stu-id="f352f-119">For information about curried functions, see [Functions](../functions/index.md).</span></span>
 
-<span data-ttu-id="0fe40-121">Následující příklad kódu ukazuje definice a použití výchozí a jiné než výchozí indexované vlastnosti, které mají get a nastavit metody.</span><span class="sxs-lookup"><span data-stu-id="0fe40-121">The following code example illustrates the definition and use of default and non-default indexed properties that have get and set methods.</span></span>
+## <a name="example"></a><span data-ttu-id="f352f-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="f352f-120">Example</span></span>
+
+<span data-ttu-id="f352f-121">Následující příklad kódu ukazuje definice a používání výchozích a jiné než výchozí indexované vlastnosti, které mají get a set metod.</span><span class="sxs-lookup"><span data-stu-id="f352f-121">The following code example illustrates the definition and use of default and non-default indexed properties that have get and set methods.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3301.fs)]
 
-## <a name="output"></a><span data-ttu-id="0fe40-122">Výstup</span><span class="sxs-lookup"><span data-stu-id="0fe40-122">Output</span></span>
+## <a name="output"></a><span data-ttu-id="f352f-122">Výstup</span><span class="sxs-lookup"><span data-stu-id="f352f-122">Output</span></span>
 
 ```
 ONE two three four five six seven eight nine ten
@@ -68,12 +68,14 @@ ONE first two second three third four fourth five fifth six 6th
 seven seventh eight eighth nine ninth ten tenth
 ```
 
-## <a name="indexed-properties-with-multiple-index-variables"></a><span data-ttu-id="0fe40-123">Indexované vlastnosti s více Index proměnné</span><span class="sxs-lookup"><span data-stu-id="0fe40-123">Indexed Properties with Multiple Index Variables</span></span>
-<span data-ttu-id="0fe40-124">Indexované vlastnosti může mít více než jednu proměnnou index.</span><span class="sxs-lookup"><span data-stu-id="0fe40-124">Indexed properties can have more than one index variable.</span></span> <span data-ttu-id="0fe40-125">V takovém případě proměnné jsou oddělené čárkami, pokud je vlastnost použita.</span><span class="sxs-lookup"><span data-stu-id="0fe40-125">In that case, the variables are separated by commas when the property is used.</span></span> <span data-ttu-id="0fe40-126">Curryfikované dva argumenty, z nichž první řazené kolekce členů obsahující klíče a druhá které nastaví se hodnota musí mít metodu set v taková vlastnost.</span><span class="sxs-lookup"><span data-stu-id="0fe40-126">The set method in such a property must have two curried arguments, the first of which is a tuple containing the keys, and the second of which is the value being set.</span></span>
+## <a name="indexed-properties-with-multiple-index-variables"></a><span data-ttu-id="f352f-123">Indexované vlastnosti v případě více proměnných indexu</span><span class="sxs-lookup"><span data-stu-id="f352f-123">Indexed Properties with Multiple Index Variables</span></span>
 
-<span data-ttu-id="0fe40-127">Následující kód ukazuje použití indexované vlastnosti s více index proměnné.</span><span class="sxs-lookup"><span data-stu-id="0fe40-127">The following code demonstrates the use of an indexed property with multiple index variables.</span></span>
+<span data-ttu-id="f352f-124">Indexované vlastnosti můžou mít více než jeden indexovaná proměnná.</span><span class="sxs-lookup"><span data-stu-id="f352f-124">Indexed properties can have more than one index variable.</span></span> <span data-ttu-id="f352f-125">Proměnné v takovém případě jsou odděleny čárkami, pokud se vlastnost používá.</span><span class="sxs-lookup"><span data-stu-id="f352f-125">In that case, the variables are separated by commas when the property is used.</span></span> <span data-ttu-id="f352f-126">Metoda set v těchto vlastností musí mít dva curryfikované argumenty, první z nich je řazená kolekce členů obsahující klíče a druhý z nich je hodnota nastavena.</span><span class="sxs-lookup"><span data-stu-id="f352f-126">The set method in such a property must have two curried arguments, the first of which is a tuple containing the keys, and the second of which is the value being set.</span></span>
+
+<span data-ttu-id="f352f-127">Následující kód ukazuje použití indexovaná vlastnost s několika proměnnými indexu.</span><span class="sxs-lookup"><span data-stu-id="f352f-127">The following code demonstrates the use of an indexed property with multiple index variables.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet3302.fs)]
-    
-## <a name="see-also"></a><span data-ttu-id="0fe40-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="0fe40-128">See Also</span></span>
-[<span data-ttu-id="0fe40-129">Členové</span><span class="sxs-lookup"><span data-stu-id="0fe40-129">Members</span></span>](index.md)
+
+## <a name="see-also"></a><span data-ttu-id="f352f-128">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f352f-128">See also</span></span>
+
+- [<span data-ttu-id="f352f-129">Členové</span><span class="sxs-lookup"><span data-stu-id="f352f-129">Members</span></span>](index.md)

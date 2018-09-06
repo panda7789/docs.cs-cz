@@ -4,40 +4,40 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 51a7d821b5705c0ddda96a34663ba0288e0f1da9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8ac0d70458d7c3762ae9dc5fc90058f0caafc4ab
+ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33339953"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43732576"
 ---
-# <a name="main-return-values-c-programming-guide"></a><span data-ttu-id="a7a7f-102">Návratové hodnoty Main() (C# Průvodce programováním)</span><span class="sxs-lookup"><span data-stu-id="a7a7f-102">Main() return values (C# Programming Guide)</span></span>
+# <a name="main-return-values-c-programming-guide"></a><span data-ttu-id="5bbad-102">Návratové hodnoty Main() (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="5bbad-102">Main() return values (C# Programming Guide)</span></span>
 
-<span data-ttu-id="a7a7f-103">`Main` Metoda může vrátit `void`:</span><span class="sxs-lookup"><span data-stu-id="a7a7f-103">The `Main` method can return `void`:</span></span>
+<span data-ttu-id="5bbad-103">`Main` Metoda může vrátit `void`:</span><span class="sxs-lookup"><span data-stu-id="5bbad-103">The `Main` method can return `void`:</span></span>
 
 [!code-csharp[csProgGuideMain#12](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_1.cs)]
 
-<span data-ttu-id="a7a7f-104">Také můžete vrátit `int`:</span><span class="sxs-lookup"><span data-stu-id="a7a7f-104">It can also return an `int`:</span></span>
+<span data-ttu-id="5bbad-104">Můžete také vrátit `int`:</span><span class="sxs-lookup"><span data-stu-id="5bbad-104">It can also return an `int`:</span></span>
 
 [!code-csharp[csProgGuideMain#13](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_2.cs)]
 
-<span data-ttu-id="a7a7f-105">Pokud z hodnoty návratový `Main` se nepoužívá, vrácení `void` umožňuje mírně jednodušší kódu.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-105">If the return value from `Main` is not used, returning `void` allows for slightly simpler code.</span></span> <span data-ttu-id="a7a7f-106">Vrací celé číslo, ale umožňuje programu předávat informace o stavu do jiných programů nebo skriptů, které vyvolají spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-106">However, returning an integer enables the program to communicate status information to other programs or scripts that invoke the executable file.</span></span> <span data-ttu-id="a7a7f-107">Vrácená hodnota z `Main` je považován za kód ukončení procesu.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-107">The return value from `Main` is treated as the exit code for the process.</span></span> <span data-ttu-id="a7a7f-108">Následující příklad ukazuje, jak z hodnoty návratový `Main` je přístupná.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-108">The following example shows how the return value from `Main` can be accessed.</span></span>
+<span data-ttu-id="5bbad-105">Pokud se návratová hodnota z `Main` nepoužívá vrácení `void` umožňuje kód o něco jednodušší.</span><span class="sxs-lookup"><span data-stu-id="5bbad-105">If the return value from `Main` is not used, returning `void` allows for slightly simpler code.</span></span> <span data-ttu-id="5bbad-106">Vrací celé číslo, ale umožňuje programu předávat informace o stavu do jiných programů nebo skriptů, které vyvolají spustitelný soubor.</span><span class="sxs-lookup"><span data-stu-id="5bbad-106">However, returning an integer enables the program to communicate status information to other programs or scripts that invoke the executable file.</span></span> <span data-ttu-id="5bbad-107">Hodnota vrácená z `Main` je považován za ukončovací kód procesu.</span><span class="sxs-lookup"><span data-stu-id="5bbad-107">The return value from `Main` is treated as the exit code for the process.</span></span> <span data-ttu-id="5bbad-108">Následující příklad ukazuje, jak se návratová hodnota z `Main` je přístupný.</span><span class="sxs-lookup"><span data-stu-id="5bbad-108">The following example shows how the return value from `Main` can be accessed.</span></span>
 
-## <a name="example"></a><span data-ttu-id="a7a7f-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="a7a7f-109">Example</span></span>
+## <a name="example"></a><span data-ttu-id="5bbad-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="5bbad-109">Example</span></span>
 
-<span data-ttu-id="a7a7f-110">Tento příklad používá [.NET Core](../../../core/index.md) nástroje příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-110">This example uses [.NET Core](../../../core/index.md) command line tools.</span></span> <span data-ttu-id="a7a7f-111">Pokud jste unfamilar pomocí nástroje příkazového řádku .NET Core, informace o najdete je v tomto [Get Začínáme tématu](../../../core/tutorials/using-with-xplat-cli.md).</span><span class="sxs-lookup"><span data-stu-id="a7a7f-111">If you are unfamilar with .NET Core command line tools, you can learn about them in this [Get started topic](../../../core/tutorials/using-with-xplat-cli.md).</span></span>
+<span data-ttu-id="5bbad-110">Tento příklad používá [.NET Core](../../../core/index.md) nástroje příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="5bbad-110">This example uses [.NET Core](../../../core/index.md) command line tools.</span></span> <span data-ttu-id="5bbad-111">Pokud unfamilar pomocí nástrojů příkazového řádku .NET Core, můžete o nich informace v tomto [tématu Začínáme Get](../../../core/tutorials/using-with-xplat-cli.md).</span><span class="sxs-lookup"><span data-stu-id="5bbad-111">If you are unfamilar with .NET Core command line tools, you can learn about them in this [Get started topic](../../../core/tutorials/using-with-xplat-cli.md).</span></span>
 
-<span data-ttu-id="a7a7f-112">Změnit `Main` metoda v *program.cs* následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="a7a7f-112">Modify the `Main` method in *program.cs* as follows:</span></span>
+<span data-ttu-id="5bbad-112">Upravit `Main` metoda *program.cs* následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="5bbad-112">Modify the `Main` method in *program.cs* as follows:</span></span>
 
 [!code-csharp[csProgGuideMain#14](../../../csharp/programming-guide/inside-a-program/codesnippet/CSharp/main-return-values_3.cs)]
 
-<span data-ttu-id="a7a7f-113">Když program se spustí v systému Windows, libovolná hodnota vrácená z `Main` funkce je uložené v proměnné prostředí.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-113">When a program is executed in Windows, any value returned from the `Main` function is stored in an environment variable.</span></span> <span data-ttu-id="a7a7f-114">Tato proměnná prostředí se dá načíst pomocí `ERRORLEVEL` z dávkového souboru nebo `$LastExitCode` z prostředí powershell.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-114">This environment variable can be retrieved using `ERRORLEVEL` from a batch file, or `$LastExitCode` from powershell.</span></span>
+<span data-ttu-id="5bbad-113">Pokud program je spuštěn ve Windows, libovolná hodnota vrácená z `Main` funkce je uložen v proměnné prostředí.</span><span class="sxs-lookup"><span data-stu-id="5bbad-113">When a program is executed in Windows, any value returned from the `Main` function is stored in an environment variable.</span></span> <span data-ttu-id="5bbad-114">Tato proměnná prostředí se dá načíst pomocí `ERRORLEVEL` z dávkového souboru, nebo `$LastExitCode` z powershellu.</span><span class="sxs-lookup"><span data-stu-id="5bbad-114">This environment variable can be retrieved using `ERRORLEVEL` from a batch file, or `$LastExitCode` from powershell.</span></span>
 
-<span data-ttu-id="a7a7f-115">Můžete vytvořit aplikace pomocí [dotnet rozhraní příkazového řádku](../../../core/tools/dotnet.md) `dotnet build` příkaz.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-115">You can build the application using the [dotnet CLI](../../../core/tools/dotnet.md) `dotnet build` command.</span></span>
+<span data-ttu-id="5bbad-115">Můžete vytvářet aplikace pomocí [rozhraní příkazového řádku dotnet](../../../core/tools/dotnet.md) `dotnet build` příkazu.</span><span class="sxs-lookup"><span data-stu-id="5bbad-115">You can build the application using the [dotnet CLI](../../../core/tools/dotnet.md) `dotnet build` command.</span></span>
 
-<span data-ttu-id="a7a7f-116">Dále vytvořte skript prostředí Powershell a spusťte aplikaci zobrazit výsledek.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-116">Next, create a Powershell script to run the application and display the result.</span></span> <span data-ttu-id="a7a7f-117">Vložte následující kód do textového souboru a uložte ho jako `test.ps1` ve složce, která obsahuje projektu.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-117">Paste the following code into a text file and save it as `test.ps1` in the folder that contains the project.</span></span> <span data-ttu-id="a7a7f-118">Spustit skript prostředí powershell zadáním `test.ps1` v příkazovém řádku prostředí powershell.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-118">Run the powershell script by typing `test.ps1` at the powershell prompt.</span></span>
+<span data-ttu-id="5bbad-116">Dále vytvořte skript Powershellu pro spuštění aplikace a zobrazí výsledek.</span><span class="sxs-lookup"><span data-stu-id="5bbad-116">Next, create a Powershell script to run the application and display the result.</span></span> <span data-ttu-id="5bbad-117">Vložte následující kód do textového souboru a uložte ho jako `test.ps1` ve složce, která obsahuje projekt.</span><span class="sxs-lookup"><span data-stu-id="5bbad-117">Paste the following code into a text file and save it as `test.ps1` in the folder that contains the project.</span></span> <span data-ttu-id="5bbad-118">Spusťte skript prostředí powershell zadáním `test.ps1` řádku powershellu.</span><span class="sxs-lookup"><span data-stu-id="5bbad-118">Run the powershell script by typing `test.ps1` at the powershell prompt.</span></span>
 
-<span data-ttu-id="a7a7f-119">Protože kód vrátí hodnotu 0, dávkového souboru oznámí úspěšné.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-119">Because the code returns zero, the batch file will report success.</span></span> <span data-ttu-id="a7a7f-120">Pokud změníte MainReturnValTest.cs vrátí nenulovou hodnotu a pak znovu kompilace programu, však následné provádění skriptu prostředí powershell oznámí selhání.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-120">However, if you change MainReturnValTest.cs to return a non-zero value and then re-compile the program, subsequent execution of the powershell script will report failure.</span></span>
+<span data-ttu-id="5bbad-119">Protože kód vrátí hodnotu 0, dávkový soubor se hlásí úspěch.</span><span class="sxs-lookup"><span data-stu-id="5bbad-119">Because the code returns zero, the batch file will report success.</span></span> <span data-ttu-id="5bbad-120">Pokud změníte MainReturnValTest.cs vrátí nenulovou hodnotu a potom znovu zkompilujete program, ale následné spuštění powershellového skriptu oznámí selhání.</span><span class="sxs-lookup"><span data-stu-id="5bbad-120">However, if you change MainReturnValTest.cs to return a non-zero value and then re-compile the program, subsequent execution of the powershell script will report failure.</span></span>
 
 ```powershell
 dotnet run
@@ -50,16 +50,16 @@ if ($LastExitCode -eq 0) {
 Write-Host "Return value = " $LastExitCode
 ```
 
-## <a name="sample-output"></a><span data-ttu-id="a7a7f-121">Ukázkový výstup</span><span class="sxs-lookup"><span data-stu-id="a7a7f-121">Sample output</span></span>
+## <a name="sample-output"></a><span data-ttu-id="5bbad-121">Ukázkový výstup</span><span class="sxs-lookup"><span data-stu-id="5bbad-121">Sample output</span></span>
 
 ```txt
 Execution succeeded
 Return value = 0
 ```
 
-## <a name="async-main-return-values"></a><span data-ttu-id="a7a7f-122">Hlavní asynchronní návratové hodnoty</span><span class="sxs-lookup"><span data-stu-id="a7a7f-122">Async Main return values</span></span>
+## <a name="async-main-return-values"></a><span data-ttu-id="5bbad-122">Hlavní asynchronní návratové hodnoty</span><span class="sxs-lookup"><span data-stu-id="5bbad-122">Async Main return values</span></span>
 
-<span data-ttu-id="a7a7f-123">Asynchronní hlavní vrátit hodnoty přesunout často používaný kód, který je nezbytný pro volání asynchronních metod v `Main` generované kompilátorem kódu.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-123">Async Main return values move the boilerplate code necessary for calling asynchronous methods in `Main` to code generated by the compiler.</span></span> <span data-ttu-id="a7a7f-124">Dříve museli byste tento konstrukce volání asynchronní kódu a ujistěte se, že vaše aplikace spuštěna až do dokončení asynchronní operaci zápisu:</span><span class="sxs-lookup"><span data-stu-id="a7a7f-124">Previously, you would need to write this construct to call asynchronous code and ensure your program ran until the asynchronous operation completed:</span></span>
+<span data-ttu-id="5bbad-123">Asynchronní hlavní vrátit hodnoty přesunout často používaný kód pro volání asynchronních metod `Main` kód generovaný kompilátorem.</span><span class="sxs-lookup"><span data-stu-id="5bbad-123">Async Main return values move the boilerplate code necessary for calling asynchronous methods in `Main` to code generated by the compiler.</span></span> <span data-ttu-id="5bbad-124">Dříve byste museli napsat tento konstruktor pro volání asynchronní kód a ujistěte se, že váš program byl dokončen asynchronní operace:</span><span class="sxs-lookup"><span data-stu-id="5bbad-124">Previously, you would need to write this construct to call asynchronous code and ensure your program ran until the asynchronous operation completed:</span></span>
 
 ```csharp
 public static void Main()
@@ -74,31 +74,27 @@ private static async Task<int> AsyncConsoleWork()
 }
 ```
 
-<span data-ttu-id="a7a7f-125">Teď to může být nahrazen:</span><span class="sxs-lookup"><span data-stu-id="a7a7f-125">Now, this can be replaced by:</span></span>
+<span data-ttu-id="5bbad-125">Teď to lze nahradit:</span><span class="sxs-lookup"><span data-stu-id="5bbad-125">Now, this can be replaced by:</span></span>
 
 [!code-csharp[AsyncMain](../../../../samples/snippets/csharp/main-arguments/program.cs#AsyncMain)]
 
-<span data-ttu-id="a7a7f-126">Výhodou nové syntaxe je, že kompilátor vždy generuje správný kód.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-126">The advantage of the new syntax is that the compiler always generates the correct code.</span></span>
+<span data-ttu-id="5bbad-126">Výhodou novou syntaxi je, že kompilátor vždy generovat správný kód.</span><span class="sxs-lookup"><span data-stu-id="5bbad-126">The advantage of the new syntax is that the compiler always generates the correct code.</span></span>
 
-## <a name="compiler-generated-code"></a><span data-ttu-id="a7a7f-127">Kompilátor vygeneruje kód</span><span class="sxs-lookup"><span data-stu-id="a7a7f-127">Compiler generated code</span></span>
+## <a name="compiler-generated-code"></a><span data-ttu-id="5bbad-127">Kód generovaný kompilátorem</span><span class="sxs-lookup"><span data-stu-id="5bbad-127">Compiler generated code</span></span>
 
-<span data-ttu-id="a7a7f-128">Když se vrátí vstupní bod aplikace `Task` nebo `Task<int>`, kompilátor vygeneruje nový vstupní bod, který volá metoda deklarované v kódu aplikace.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-128">When the application entry point returns a `Task` or `Task<int>`, the compiler generates a new entry point that calls the entry point method declared in the application code.</span></span> <span data-ttu-id="a7a7f-129">Za předpokladu, že tento vstupní bod se nazývá `$GeneratedMain`, kompilátor generuje následující kód pro tyto vstupní body:</span><span class="sxs-lookup"><span data-stu-id="a7a7f-129">Assuming that this entry point is called `$GeneratedMain`, the compiler generates the following code for these entry points:</span></span>
+<span data-ttu-id="5bbad-128">Pokud vstupní bod aplikace vrátí `Task` nebo `Task<int>`, kompilátor vygeneruje nový vstupní bod, který volá metodu vstupního bodu, která je deklarována v kódu aplikace.</span><span class="sxs-lookup"><span data-stu-id="5bbad-128">When the application entry point returns a `Task` or `Task<int>`, the compiler generates a new entry point that calls the entry point method declared in the application code.</span></span> <span data-ttu-id="5bbad-129">Za předpokladu, že tento vstupní bod se nazývá `$GeneratedMain`, kompilátor generuje následující kód pro tyto vstupní body:</span><span class="sxs-lookup"><span data-stu-id="5bbad-129">Assuming that this entry point is called `$GeneratedMain`, the compiler generates the following code for these entry points:</span></span>
 
-- <span data-ttu-id="a7a7f-130">`static Task Main()` výsledky v kompilátoru emitování ekvivalent `private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="a7a7f-130">`static Task Main()` results in the compiler emitting the equivalent of `private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`</span></span>
-- <span data-ttu-id="a7a7f-131">`static Task Main(string[])` výsledky v kompilátoru emitování ekvivalent `private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="a7a7f-131">`static Task Main(string[])` results in the compiler emitting the equivalent of `private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span></span>
-- <span data-ttu-id="a7a7f-132">`static Task<int> Main()` výsledky v kompilátoru emitování ekvivalent `private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="a7a7f-132">`static Task<int> Main()` results in the compiler emitting the equivalent of `private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`</span></span>
-- <span data-ttu-id="a7a7f-133">`static Task<int> Main(string[])` výsledky v kompilátoru emitování ekvivalent `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="a7a7f-133">`static Task<int> Main(string[])` results in the compiler emitting the equivalent of `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span></span>
+- <span data-ttu-id="5bbad-130">`static Task Main()` výsledky v kompilátoru generování ekvivalent `private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="5bbad-130">`static Task Main()` results in the compiler emitting the equivalent of `private static void $GeneratedMain() => Main().GetAwaiter().GetResult();`</span></span>
+- <span data-ttu-id="5bbad-131">`static Task Main(string[])` výsledky v kompilátoru generování ekvivalent `private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="5bbad-131">`static Task Main(string[])` results in the compiler emitting the equivalent of `private static void $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span></span>
+- <span data-ttu-id="5bbad-132">`static Task<int> Main()` výsledky v kompilátoru generování ekvivalent `private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="5bbad-132">`static Task<int> Main()` results in the compiler emitting the equivalent of `private static int $GeneratedMain() => Main().GetAwaiter().GetResult();`</span></span>
+- <span data-ttu-id="5bbad-133">`static Task<int> Main(string[])` výsledky v kompilátoru generování ekvivalent `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span><span class="sxs-lookup"><span data-stu-id="5bbad-133">`static Task<int> Main(string[])` results in the compiler emitting the equivalent of `private static int $GeneratedMain(string[] args) => Main(args).GetAwaiter().GetResult();`</span></span>
 
 > [!NOTE]
-><span data-ttu-id="a7a7f-134">Pokud se používá v příkladech `async` modifikátor na `Main` metoda, kompilátor by generovat stejný kód.</span><span class="sxs-lookup"><span data-stu-id="a7a7f-134">If the examples used `async` modifier on the `Main` method, the compiler would generate the same code.</span></span>
+><span data-ttu-id="5bbad-134">Pokud se používá v příkladech `async` modifikátor `Main` metoda, kompilátor vygeneruje stejný kód.</span><span class="sxs-lookup"><span data-stu-id="5bbad-134">If the examples used `async` modifier on the `Main` method, the compiler would generate the same code.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a7a7f-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="a7a7f-135">See also</span></span>
-<span data-ttu-id="a7a7f-136">[Průvodce programováním v C#](../../programming-guide/index.md)
-[referenční dokumentace jazyka C#](../index.md)
-[Main() a příkazového řádku argumenty](index.md)
-[postupy: zobrazení příkazového řádku Argumenty](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-[postupy: přístup příkazového řádku argumenty pomocí příkazu foreach](../../programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)</span><span class="sxs-lookup"><span data-stu-id="a7a7f-136">[C# Programming Guide](../../programming-guide/index.md)
-[C# Reference](../index.md)
-[Main() and Command-Line Arguments](index.md)
-[How to: Display Command Line Arguments](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
-[How to: Access Command-Line Arguments Using foreach](../../programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)</span></span>
+## <a name="see-also"></a><span data-ttu-id="5bbad-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="5bbad-135">See Also</span></span>
+- [<span data-ttu-id="5bbad-136">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="5bbad-136">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="5bbad-137">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="5bbad-137">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="5bbad-138">Argumenty Main() a příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="5bbad-138">Main() and Command-Line Arguments</span></span>](index.md)
+- [<span data-ttu-id="5bbad-139">Postupy: Zobrazení argumentů příkazového řádku</span><span class="sxs-lookup"><span data-stu-id="5bbad-139">How to: Display Command Line Arguments</span></span>](../../programming-guide/main-and-command-args/how-to-display-command-line-arguments.md)
+- [<span data-ttu-id="5bbad-140">Postupy: Přístup k argumentům příkazového řádku pomocí příkazu foreach</span><span class="sxs-lookup"><span data-stu-id="5bbad-140">How to: Access Command-Line Arguments Using foreach</span></span>](../../programming-guide/main-and-command-args/how-to-access-command-line-arguments-using-foreach.md)
