@@ -3,28 +3,28 @@ title: Externí funkce (F#)
 description: 'Další informace o podpoře jazyka F # pro volání funkcí v nativním kódu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: db0d3362d867b07b333951f3380c6735ff471d5e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43747379"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44037224"
 ---
-# <a name="external-functions"></a><span data-ttu-id="9732e-103">Externí funkce</span><span class="sxs-lookup"><span data-stu-id="9732e-103">External Functions</span></span>
+# <a name="external-functions"></a><span data-ttu-id="778f9-103">Externí funkce</span><span class="sxs-lookup"><span data-stu-id="778f9-103">External Functions</span></span>
 
-<span data-ttu-id="9732e-104">Toto téma popisuje podpora jazyka F # pro volání funkcí v nativním kódu.</span><span class="sxs-lookup"><span data-stu-id="9732e-104">This topic describes F# language support for calling functions in native code.</span></span>
+<span data-ttu-id="778f9-104">Toto téma popisuje podpora jazyka F # pro volání funkcí v nativním kódu.</span><span class="sxs-lookup"><span data-stu-id="778f9-104">This topic describes F# language support for calling functions in native code.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="9732e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9732e-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="778f9-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="778f9-105">Syntax</span></span>
 
 ```fsharp
 [<DllImport( arguments )>]
 extern declaration
 ```
 
-## <a name="remarks"></a><span data-ttu-id="9732e-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="9732e-106">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="778f9-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="778f9-106">Remarks</span></span>
 
-<span data-ttu-id="9732e-107">V předchozí syntaxi *argumenty* představuje argumenty, které jsou předány `System.Runtime.InteropServices.DllImportAttribute` atribut.</span><span class="sxs-lookup"><span data-stu-id="9732e-107">In the previous syntax, *arguments* represents arguments that are supplied to the `System.Runtime.InteropServices.DllImportAttribute` attribute.</span></span> <span data-ttu-id="9732e-108">První argument je řetězec, který představuje název knihovny DLL, která obsahuje tato funkce bez přípony DLL.</span><span class="sxs-lookup"><span data-stu-id="9732e-108">The first argument is a string that represents the name of the DLL that contains this function, without the .dll extension.</span></span> <span data-ttu-id="9732e-109">Lze je zadat další argumenty pro všechny veřejné vlastnosti `System.Runtime.InteropServices.DllImportAttribute` třídy, jako je konvence volání.</span><span class="sxs-lookup"><span data-stu-id="9732e-109">Additional arguments can be supplied for any of the public properties of the `System.Runtime.InteropServices.DllImportAttribute` class, such as the calling convention.</span></span>
+<span data-ttu-id="778f9-107">V předchozí syntaxi *argumenty* představuje argumenty, které jsou předány `System.Runtime.InteropServices.DllImportAttribute` atribut.</span><span class="sxs-lookup"><span data-stu-id="778f9-107">In the previous syntax, *arguments* represents arguments that are supplied to the `System.Runtime.InteropServices.DllImportAttribute` attribute.</span></span> <span data-ttu-id="778f9-108">První argument je řetězec, který představuje název knihovny DLL, která obsahuje tato funkce bez přípony DLL.</span><span class="sxs-lookup"><span data-stu-id="778f9-108">The first argument is a string that represents the name of the DLL that contains this function, without the .dll extension.</span></span> <span data-ttu-id="778f9-109">Lze je zadat další argumenty pro všechny veřejné vlastnosti `System.Runtime.InteropServices.DllImportAttribute` třídy, jako je konvence volání.</span><span class="sxs-lookup"><span data-stu-id="778f9-109">Additional arguments can be supplied for any of the public properties of the `System.Runtime.InteropServices.DllImportAttribute` class, such as the calling convention.</span></span>
 
-<span data-ttu-id="9732e-110">Předpokládejme, že máte nativní knihovny DLL jazyka C++, který obsahuje následující exportované funkce.</span><span class="sxs-lookup"><span data-stu-id="9732e-110">Assume you have a native C++ DLL that contains the following exported function.</span></span>
+<span data-ttu-id="778f9-110">Předpokládejme, že máte nativní knihovny DLL jazyka C++, který obsahuje následující exportované funkce.</span><span class="sxs-lookup"><span data-stu-id="778f9-110">Assume you have a native C++ DLL that contains the following exported function.</span></span>
 
 ```cpp
 #include <stdio.h>
@@ -34,7 +34,7 @@ extern "C" void __declspec(dllexport) HelloWorld()
 }
 ```
 
-<span data-ttu-id="9732e-111">Pomocí následujícího kódu můžete volat tuto funkci z jazyka F #.</span><span class="sxs-lookup"><span data-stu-id="9732e-111">You can call this function from F# by using the following code.</span></span>
+<span data-ttu-id="778f9-111">Pomocí následujícího kódu můžete volat tuto funkci z jazyka F #.</span><span class="sxs-lookup"><span data-stu-id="778f9-111">You can call this function from F# by using the following code.</span></span>
 
 ```fsharp
 open System.Runtime.InteropServices
@@ -46,8 +46,8 @@ module InteropWithNative =
 InteropWithNative.HelloWorld()
 ```
 
-<span data-ttu-id="9732e-112">Vzájemná funkční spolupráce s nativním kódem se označuje jako *vyvolání platformy* a je funkce modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="9732e-112">Interoperability with native code is referred to as *platform invoke* and is a feature of the CLR.</span></span> <span data-ttu-id="9732e-113">Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md).</span><span class="sxs-lookup"><span data-stu-id="9732e-113">For more information, see [Interoperating with Unmanaged Code](../../../../docs/framework/interop/index.md).</span></span> <span data-ttu-id="9732e-114">Informace v této části platí pro F #.</span><span class="sxs-lookup"><span data-stu-id="9732e-114">The information in that section is applicable to F#.</span></span>
+<span data-ttu-id="778f9-112">Vzájemná funkční spolupráce s nativním kódem se označuje jako *vyvolání platformy* a je funkce modulu CLR.</span><span class="sxs-lookup"><span data-stu-id="778f9-112">Interoperability with native code is referred to as *platform invoke* and is a feature of the CLR.</span></span> <span data-ttu-id="778f9-113">Další informace najdete v tématu [spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md).</span><span class="sxs-lookup"><span data-stu-id="778f9-113">For more information, see [Interoperating with Unmanaged Code](../../../../docs/framework/interop/index.md).</span></span> <span data-ttu-id="778f9-114">Informace v této části platí pro F #.</span><span class="sxs-lookup"><span data-stu-id="778f9-114">The information in that section is applicable to F#.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="9732e-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="9732e-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="778f9-115">Viz také:</span><span class="sxs-lookup"><span data-stu-id="778f9-115">See also</span></span>
 
-- [<span data-ttu-id="9732e-116">Funkce</span><span class="sxs-lookup"><span data-stu-id="9732e-116">Functions</span></span>](index.md)
+- [<span data-ttu-id="778f9-116">Funkce</span><span class="sxs-lookup"><span data-stu-id="778f9-116">Functions</span></span>](index.md)

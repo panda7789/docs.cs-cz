@@ -7,27 +7,28 @@ helpviewer_keywords:
 ms.assetid: 38f7302a-ddf6-4179-ba19-f49e00395b9f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 016229ea1b80c82ed9174e19bb08adfa67f016fc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4649f33fe07e7780630fbd11170bb54046617c14
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580520"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43880062"
 ---
-# <a name="parallel-diagnostic-tools"></a><span data-ttu-id="7382b-102">Paralelní diagnostické nástroje</span><span class="sxs-lookup"><span data-stu-id="7382b-102">Parallel Diagnostic Tools</span></span>
-<span data-ttu-id="7382b-103">Visual Studio poskytuje rozsáhlou podporu pro ladění a profilování vícevláknových aplikací.</span><span class="sxs-lookup"><span data-stu-id="7382b-103">Visual Studio provides extensive support for debugging and profiling multi-threaded applications.</span></span>  
+# <a name="parallel-diagnostic-tools"></a><span data-ttu-id="2aeea-102">Paralelní diagnostické nástroje</span><span class="sxs-lookup"><span data-stu-id="2aeea-102">Parallel Diagnostic Tools</span></span>
+<span data-ttu-id="2aeea-103">Visual Studio poskytuje rozsáhlou podporu pro ladění a profilování vícevláknových aplikacích.</span><span class="sxs-lookup"><span data-stu-id="2aeea-103">Visual Studio provides extensive support for debugging and profiling multi-threaded applications.</span></span>  
   
-## <a name="debugging"></a><span data-ttu-id="7382b-104">Ladění</span><span class="sxs-lookup"><span data-stu-id="7382b-104">Debugging</span></span>  
- <span data-ttu-id="7382b-105">Ladicí program Visual Studio přidá nové windows pro ladění paralelní aplikace.</span><span class="sxs-lookup"><span data-stu-id="7382b-105">The Visual Studio debugger adds new windows for debugging parallel applications.</span></span> <span data-ttu-id="7382b-106">Další informace naleznete v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="7382b-106">For more information, see the following topics:</span></span>  
+## <a name="debugging"></a><span data-ttu-id="2aeea-104">Ladění</span><span class="sxs-lookup"><span data-stu-id="2aeea-104">Debugging</span></span>  
+ <span data-ttu-id="2aeea-105">Ladicí program sady Visual Studio přidá nový systém windows pro ladění paralelních aplikací.</span><span class="sxs-lookup"><span data-stu-id="2aeea-105">The Visual Studio debugger adds new windows for debugging parallel applications.</span></span> <span data-ttu-id="2aeea-106">Další informace naleznete v následujících tématech:</span><span class="sxs-lookup"><span data-stu-id="2aeea-106">For more information, see the following topics:</span></span>  
   
--   [<span data-ttu-id="7382b-107">Použití okna paralelní zásobníky</span><span class="sxs-lookup"><span data-stu-id="7382b-107">Using the Parallel Stacks Window</span></span>](/visualstudio/debugger/using-the-parallel-stacks-window)  
+-   [<span data-ttu-id="2aeea-107">Použití okna Paralelní zásobníky</span><span class="sxs-lookup"><span data-stu-id="2aeea-107">Using the Parallel Stacks Window</span></span>](/visualstudio/debugger/using-the-parallel-stacks-window)  
   
--   [<span data-ttu-id="7382b-108">Používání okna úloh</span><span class="sxs-lookup"><span data-stu-id="7382b-108">Using the Tasks Window</span></span>](/visualstudio/debugger/using-the-tasks-window)  
+-   [<span data-ttu-id="2aeea-108">Použití okna úloh</span><span class="sxs-lookup"><span data-stu-id="2aeea-108">Using the Tasks Window</span></span>](/visualstudio/debugger/using-the-tasks-window)  
   
--   <span data-ttu-id="7382b-109">[Návod: Ladění paralelní aplikace](/visualstudio/debugger/walkthrough-debugging-a-parallel-application).</span><span class="sxs-lookup"><span data-stu-id="7382b-109">[Walkthrough: Debugging a Parallel Application](/visualstudio/debugger/walkthrough-debugging-a-parallel-application).</span></span>  
+-   <span data-ttu-id="2aeea-109">[Návod: Ladění paralelní aplikace](/visualstudio/debugger/walkthrough-debugging-a-parallel-application).</span><span class="sxs-lookup"><span data-stu-id="2aeea-109">[Walkthrough: Debugging a Parallel Application](/visualstudio/debugger/walkthrough-debugging-a-parallel-application).</span></span>  
   
-## <a name="profiling"></a><span data-ttu-id="7382b-110">Profilace</span><span class="sxs-lookup"><span data-stu-id="7382b-110">Profiling</span></span>  
- <span data-ttu-id="7382b-111">Zobrazení sestav Concurrency Visualizer umožňují vizualizovat interakci vláken v paralelním programu mezi sebou a s vlákny z jiné procesy v systému.</span><span class="sxs-lookup"><span data-stu-id="7382b-111">The Concurrency Visualizer report views enable you to visualize how the threads in a parallel program interact with each other and with threads from other processes on the system.</span></span> <span data-ttu-id="7382b-112">Další informace najdete v tématu [vizualizér souběžnosti](/visualstudio/profiling/concurrency-visualizer).</span><span class="sxs-lookup"><span data-stu-id="7382b-112">For more information, see [Concurrency Visualizer](/visualstudio/profiling/concurrency-visualizer).</span></span>  
+## <a name="profiling"></a><span data-ttu-id="2aeea-110">Profilace</span><span class="sxs-lookup"><span data-stu-id="2aeea-110">Profiling</span></span>  
+ <span data-ttu-id="2aeea-111">Vizualizátor souběžnosti zobrazení sestav umožní vizualizovat způsob, jakým vláken v rámci paralelní programu komunikovat mezi sebou a s vlákny z jiných procesů v systému.</span><span class="sxs-lookup"><span data-stu-id="2aeea-111">The Concurrency Visualizer report views enable you to visualize how the threads in a parallel program interact with each other and with threads from other processes on the system.</span></span> <span data-ttu-id="2aeea-112">Další informace najdete v tématu [Vizualizátor souběžnosti](/visualstudio/profiling/concurrency-visualizer).</span><span class="sxs-lookup"><span data-stu-id="2aeea-112">For more information, see [Concurrency Visualizer](/visualstudio/profiling/concurrency-visualizer).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7382b-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="7382b-113">See Also</span></span>  
- [<span data-ttu-id="7382b-114">Paralelní programování</span><span class="sxs-lookup"><span data-stu-id="7382b-114">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)
+## <a name="see-also"></a><span data-ttu-id="2aeea-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2aeea-113">See also</span></span>
+
+- [<span data-ttu-id="2aeea-114">Paralelní programování</span><span class="sxs-lookup"><span data-stu-id="2aeea-114">Parallel Programming</span></span>](../../../docs/standard/parallel-programming/index.md)
