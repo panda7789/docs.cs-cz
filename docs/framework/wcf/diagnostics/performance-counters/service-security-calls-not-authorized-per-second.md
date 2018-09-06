@@ -5,20 +5,20 @@ ms.assetid: 1eeade5a-ea62-4757-b1f9-1b1b1746abd1
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: f2c921991f059d7dfe5661dfe688ec9675d0d5fe
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43536923"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43801739"
 ---
-# <a name="service-security-calls-not-authorized-per-second"></a><span data-ttu-id="a4c6c-102">Služba: Počet neautorizovaných volání zabezpečení za sekundu</span><span class="sxs-lookup"><span data-stu-id="a4c6c-102">Service: Security Calls Not Authorized Per Second</span></span>
-<span data-ttu-id="a4c6c-103">Název čítače: zabezpečení volání není autorizovaný za sekundu</span><span class="sxs-lookup"><span data-stu-id="a4c6c-103">Counter name: Security Calls Not Authorized Per Second</span></span>  
+# <a name="service-security-calls-not-authorized-per-second"></a><span data-ttu-id="0269b-102">Služba: Počet neautorizovaných volání zabezpečení za sekundu</span><span class="sxs-lookup"><span data-stu-id="0269b-102">Service: Security Calls Not Authorized Per Second</span></span>
+<span data-ttu-id="0269b-103">Název čítače: zabezpečení volání není autorizovaný za sekundu</span><span class="sxs-lookup"><span data-stu-id="0269b-103">Counter name: Security Calls Not Authorized Per Second</span></span>  
   
-## <a name="description"></a><span data-ttu-id="a4c6c-104">Popis</span><span class="sxs-lookup"><span data-stu-id="a4c6c-104">Description</span></span>  
- <span data-ttu-id="a4c6c-105">Počet příchozích zpráv v jedné sekundy, které jsou z platného uživatele a správně chráněný, ale uživatel nemá oprávnění k provádění konkrétních úkolů.</span><span class="sxs-lookup"><span data-stu-id="a4c6c-105">Number of incoming messages in one second, which are from a valid user and protected properly, but the user is not authorized to do specific tasks.</span></span>  
+## <a name="description"></a><span data-ttu-id="0269b-104">Popis</span><span class="sxs-lookup"><span data-stu-id="0269b-104">Description</span></span>  
+ <span data-ttu-id="0269b-105">Počet příchozích zpráv v jedné sekundy, které jsou z platného uživatele a správně chráněný, ale uživatel nemá oprávnění k provádění konkrétních úkolů.</span><span class="sxs-lookup"><span data-stu-id="0269b-105">Number of incoming messages in one second, which are from a valid user and protected properly, but the user is not authorized to do specific tasks.</span></span>  
   
- <span data-ttu-id="a4c6c-106">Tento čítač se zvyšuje při <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> vrátí metoda `false`.</span><span class="sxs-lookup"><span data-stu-id="a4c6c-106">This counter is incremented when the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method returns `false`.</span></span>  
+ <span data-ttu-id="0269b-106">Tento čítač se zvyšuje při <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> vrátí metoda `false`.</span><span class="sxs-lookup"><span data-stu-id="0269b-106">This counter is incremented when the <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccess%2A> method returns `false`.</span></span>  
   
- <span data-ttu-id="a4c6c-107">Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkId=94649), jehož hodnota je vypočítána pomocí tohoto vzorce.</span><span class="sxs-lookup"><span data-stu-id="a4c6c-107">This counter is of performance counter type [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkId=94649), whose value is calculated using the following formula.</span></span>  
+ <span data-ttu-id="0269b-107">Tento čítač je typ čítače výkonu [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkId=94649), jehož hodnota je vypočítána pomocí tohoto vzorce.</span><span class="sxs-lookup"><span data-stu-id="0269b-107">This counter is of performance counter type [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkId=94649), whose value is calculated using the following formula.</span></span>  
   
- <span data-ttu-id="a4c6c-108">(N 1 - N 0) / ((D 1 - D 0) / F)</span><span class="sxs-lookup"><span data-stu-id="a4c6c-108">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span></span>
+ <span data-ttu-id="0269b-108">(N 1 - N 0) / ((D 1 - D 0) / F)</span><span class="sxs-lookup"><span data-stu-id="0269b-108">(N 1 - N 0 ) / ( (D 1 -D 0 ) / F)</span></span>
