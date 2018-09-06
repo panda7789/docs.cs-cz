@@ -5,11 +5,11 @@ helpviewer_keywords:
 - object equality [C#]
 ms.assetid: 10b865ea-4e7b-4127-9242-c9b8f57d9f04
 ms.openlocfilehash: 07607f96acb2ca44142bd6a8b4fdd84ea0d1b532
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43735147"
+ms.locfileid: "43788633"
 ---
 # <a name="equality-comparisons-c-programming-guide"></a>Porovnání rovnosti (Průvodce programováním v C#)
 Někdy je nutné srovnat dvě hodnoty na rovnost. V některých případech testujete *hodnota rovnosti*, označované také jako *ekvivalence*, což znamená, že hodnoty, které jsou obsaženy ve dvou proměnných jsou stejné. V ostatních případech je nutné určit, zda hodnoty dvou proměnných odkazují na stejný základní objekt v paměti. Tento typ rovnosti se nazývá *referenční rovnost*, nebo *identity*. Toto téma popisuje tyto dva druhy rovnosti a obsahuje odkazy na další témata pro další informace.  

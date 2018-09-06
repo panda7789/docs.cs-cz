@@ -2,12 +2,12 @@
 title: Rozlišovaná sjednocení (F#)
 description: 'Další informace o použití F # rozlišovaná sjednocení.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 3340933ac8e2b6fe0215c684691d216a28b64787
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 06d6c154790f659c0c7ff73290357ab50a134362
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43537594"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43788120"
 ---
 # <a name="discriminated-unions"></a>Rozlišovaná sjednocení
 
@@ -165,6 +165,6 @@ Následující atributy se běžně zobrazují v rozlišovaných sjednoceních:
 * `[NoComparison]`
 * `[Struct]`
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka F#](index.md)
+- [Referenční dokumentace jazyka F#](index.md)

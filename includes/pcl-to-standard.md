@@ -1,0 +1,2 @@
+> [!IMPORTANT]
+> Protože projekty přenosných knihoven tříd cílí jenom velmi určitou podmnožinu implementace .NET, jsme důrazně Zabraňte jejich používání při vývoji nových aplikací. Doporučená nahrazení je knihovny .NET Standard, která se týká všech implementace .NET, které podporují konkrétní verzi .NET Standard. Další informace najdete v tématu [.NET Standard](~/docs/standard/net-standard.md).

@@ -1,18 +1,17 @@
 ---
 title: Obecné typy (F#)
-description: 'Další informace o použití F # obecné funkce a typy, které vám umožní napsat kód, který funguje s různými typy bez opakování kódu.'
+description: 'Další informace o použití F # obecné funkce a typy, které umožňují také napsat kód, který funguje s různými typy bez opakující se kód.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 332e42dd53689440757da04727b69eb3d85ca0fa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fc061f19c6c7fa737f7ca05aae83fd42c0010b37
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33565497"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43749233"
 ---
 # <a name="generics"></a>Obecné typy
 
-Funkce F # hodnoty, metody, vlastnosti a typy agregace, jako jsou třídy, zaznamenává a může být rozlišovaná sjednocení *Obecné*. Obecné konstrukce obsahovat alespoň jeden parametr typu, který je obvykle zadaný uživatelem obecné konstrukce. Obecné funkce a typy umožňují napsat kód, který funguje s různými typy bez opakování kód pro každý typ. Vytváření kódu Obecné může být jednoduchý v F #, protože často kódu je implicitně odvodit jako obecný odvození typu kompilátoru a Automatická generalizace mechanismy.
-
+Funkce jazyka F # hodnoty metody, vlastnosti a agregované typy, jako jsou třídy, záznamů a rozlišovaná sjednocení mohou být *obecný*. Obecné konstrukce obsahují alespoň jeden parametr typu, který je obvykle zadaný uživatelem obecného konstruktoru. Obecné funkce a typy umožňují napsat kód, který funguje s různými typy bez nutnosti opakovat pro každý typ kódu. Provádění kódu obecný může být jednoduché v jazyce F #, protože často kódu je implicitně odvozena jako obecný kompilátoru odvození typu a Automatická generalizace mechanismy.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -31,72 +30,73 @@ type type-name<type-parameters> type-definition
 ```
 
 ## <a name="remarks"></a>Poznámky
-Prohlášení explicitně obecné funkce nebo typu mnohem je třeba u funkce neobecnou nebo typu, s výjimkou specifikace (a použití) parametry typu, v lomených závorkách po název funkce nebo typu.
 
-Deklarace jsou často implicitně Obecné. Pokud nezadáte plně typ každý parametr, který se používá k vytvoření funkce nebo typu, pokusí se kompilátor odvození typu každý parametr, hodnoty a proměnné z kódu, kterou píšete. Další informace najdete v tématu [odvození typu](../type-inference.md). Pokud kód pro typ nebo funkci jinak neuvádělo typy parametrů, je implicitně obecné funkce nebo typu. Tento proces se nazývá *Automatická generalizace*. Existují některá omezení na automatická generalizace. Například pokud kompilátor jazyka F # se nepodařilo odvodit typy pro obecné konstrukce, kompilátor ohlásí chybu, která odkazuje na omezení volat *hodnoty omezení*. V takovém případě budete muset přidat některé typu poznámky. Další informace o Automatická Generalizace a omezení hodnoty a jak změnit svůj kód potíže vyřešit, najdete v části [Automatická generalizace](automatic-generalization.md).
+Deklarace explicitně obecná funkce nebo typu je mnohem, neobecné funkce nebo typ, s výjimkou specifikace (a použití) parametry typu, v lomených závorkách za názvem funkce nebo typy.
 
-V předchozích syntaxi *parametry typu* je textový soubor s oddělovači seznam parametrů, které představují neznámé typy, z nichž každá začíná jednoduché uvozovky, volitelně s klauzulí omezení, která další omezuje, co může typy použít pro tento parametr typu. Syntaxe pro omezení klauzulích různé typy a další informace o omezení, najdete v části [omezení](constraints.md).
+Deklarace jsou často implicitně Obecné. Pokud nezadáte plně zadejte každý parametr, který se používá k vytvoření funkce nebo typ, kompilátor se pokusí odvodit typ každého parametru, hodnoty a proměnné z kódu, který napíšete. Další informace najdete v tématu [odvození typu](../type-inference.md). Pokud kód pro typ nebo funkce, v opačném případě neomezuje typy parametrů, je implicitně obecná funkce nebo typy. Tento proces se nazývá *Automatická generalizace*. Automatická generalizace existují některá omezení. Například pokud kompilátor F # nemůže odvodit typy parametrů obecného konstruktoru, kompilátor zobrazí chybová zpráva, která odkazuje na omezení, volá se, *hodnota omezení*. V takovém případě budete muset přidat některé poznámky typu. Další informace o Automatická Generalizace a omezení hodnoty a jak změnit váš kód k vyřešení problému najdete v tématu [Automatická generalizace](automatic-generalization.md).
 
-*Definice typu* v syntaxi je stejná jako definice typu pro neobecný typ. Obsahuje parametry konstruktor pro typ třídy, volitelný `as` klauzule, rovnou symbol, pole záznamu `inherit` klauzule, volby rozlišovaná sjednocení `let` a `do` vazby, definice člena a jakékoli jiné definice typu neobecnou povoleny.
+V předchozí syntaxi *parametry typu* je čárkou oddělený seznam parametrů, které představují neznámé typy, z nichž každý začíná jednoduchou uvozovku, volitelně s klauzulí omezení, která dále omezuje, co může typy použít pro parametr typu. Syntaxe klauzule omezení různé typy a další informace o omezení, najdete v části [omezení](constraints.md).
 
-Další prvky syntaxe jsou stejné jako u neobecnou funkcí a typů. Například *identifikátor objektu* je identifikátor, který představuje obsahující odkaz sám na sebe.
+*Definice typu* syntaxe je stejná jako definice typu jiného než obecného typu. Obsahuje parametry konstruktoru pro typ třídy, volitelně `as` klauzule, symbol rovná, pole záznamu `inherit` klauzule, možnosti pro diskriminované sjednocení, `let` a `do` vazby, definice členů a vše ostatní povoleny v definici typu Obecné.
 
-Konstruktory, vlastnosti a pole nemůže být více obecné než nadřazených typů. Hodnoty v modulu také nemohou být obecný.
+Ostatní prvky syntaxe jsou stejné jako u neobecných funkcí a typů. Například *identifikátor objektu* je identifikátor, který představuje obsahující samotného objektu.
 
+Vlastnosti, polí a konstruktorů nemůžou být obecnější než nadřazený typ. Navíc hodnoty v modulu nemohou být obecné.
 
 ## <a name="implicitly-generic-constructs"></a>Implicitně obecné konstrukce
-Když kompilátor jazyka F # odvodí, že typy v kódu, automaticky zpracovává všechny funkce, která může být obecný jako obecný. Pokud zadáte typu explicitně, jako je například typ parametru, abyste zabránili Automatická generalizace.
 
-V následujícím příkladu kódu `makeList` je obecný, i když ho ani jeho parametry jsou deklarovány explicitně jako obecný.
+Když kompilátor jazyka F # odvodí typy ve vašem kódu, automaticky zpracovává všechny funkce, které může být obecný jako obecný. Pokud zadáte typ explicitně, jako je například typ parametru, abyste zabránili Automatická generalizace.
+
+V následujícím příkladu kódu `makeList` je obecný, i když ho ani její parametry jsou explicitně deklarována jako obecný.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1700.fs)]
 
-Podpis funkce je odvodit být `'a -> 'a -> 'a list`. Všimněte si, že `a` a `b` v tomto příkladu jsou odvodit tak, aby měl stejného typu. Je to proto, že jsou zahrnuty do seznamu společně a všechny elementy v seznamu musí být stejného typu.
+Signatura funkce odvozena jako `'a -> 'a -> 'a list`. Všimněte si, že `a` a `b` v tomto příkladu jsou odvozen, aby měl stejného typu. Je to proto, že v seznamu jsou zahrnuty společně a všechny prvky seznamu musí být stejného typu.
 
-Můžete provést také funkci obecné pomocí syntaxe jednoduché uvozovky v anotaci typu k označení, že je typ parametru parametr obecného typu. V následujícím kódu `function1` je obecný, protože jeho parametry jsou deklarovány tímto způsobem, jako parametrů typů.
+Můžete provést také funkce obecného pomocí jednoduché uvozovky syntaxe v anotaci typu k označení, že typ parametru je parametr obecného typu. V následujícím kódu `function1` je obecný, protože jeho parametry jsou deklarovány v tímto způsobem, jako parametry typu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1701.fs)]
-    
+
 ## <a name="explicitly-generic-constructs"></a>Explicitně obecné konstrukce
-Můžete provést také funkci obecné explicitně deklarováním jeho parametry typu v lomených závorkách (`<type-parameter>`). Následující kód to znázorňuje.
+
+Můžete provést také funkce obecného pomocí explicitní deklarace jeho parametrů typu v lomených závorkách (`<type-parameter>`). Následující kód to znázorňuje.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1703.fs)]
-    
-## <a name="using-generic-constructs"></a>Pomocí obecné konstrukce
-Při použití obecné funkce nebo metod, nemusí mít k určení argumenty typu. Kompilátor používá odvození typu k odvození argumenty příslušného typu. Pokud je stále to nejednoznačnost, můžete zadat argumenty typu v lomených závorkách více argumentů typu oddělíte čárkami.
 
-Následující kód ukazuje použití funkce, které jsou definované v předchozích částech.
+## <a name="using-generic-constructs"></a>Použití obecné konstrukce
+
+Při použití obecné funkce nebo metody nemusí mít k určení argumentů typu. Odvození typu používá kompilátor k odvození příslušnými argumenty typu. Pokud stále existuje nejednoznačnost, můžete zadat argumenty typu v lomených závorkách, více argumentů typu oddělíte čárkami.
+
+Následující kód ukazuje použití těchto funkcí, které jsou definovány v předchozích částech.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1702.fs)]
-    
->[!NOTE]
-Existují dva způsoby, který bude odkazovat na obecného typu podle názvu. Například `list<int>` a `int list` jsou dva způsoby, jak odkazovat na obecného typu `list` s argumentem jednoho typu `int`. Druhé formuláře se obvykle používá jenom s předdefinovaných typů F #, jako `list` a `option`. Pokud existují více argumentů typu, je obvykle použít syntaxi `Dictionary<int, string>` ale můžete také použít syntaxi `(int, string) Dictionary`.
 
-## <a name="wildcards-as-type-arguments"></a>Zástupné znaky jako argumenty typů
-Chcete-li určit, že argument typu událostmi kompilátorem, můžete použít podtržítko nebo zástupný znak (`_`), místo argument pojmenovaného typu. To je znázorněno v následujícím kódu.
+>[!NOTE]
+Existují dva způsoby, jak odkazovat na obecný typ podle názvu. Například `list<int>` a `int list` jsou dva způsoby, jak odkazovat na obecný typ `list` , který má jako argument jeden typ `int`. Druhý formulář se obvykle používá jenom s předdefinovaných typů F #, jako `list` a `option`. Pokud existuje více argumentů typu, je obvykle použít syntaxi `Dictionary<int, string>` ale můžete také použít syntaxi `(int, string) Dictionary`.
+
+## <a name="wildcards-as-type-arguments"></a>Zástupné znaky jako argumenty typu
+
+Chcete-li určit, že by měl kompilátor odvodit argument typu, můžete použít znak podtržení nebo zástupný symbol (`_`), namísto argument s názvem typu. To je ukázáno v následujícím kódu.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1704.fs)]
-    
-## <a name="constraints-in-generic-types-and-functions"></a>Omezení v obecné typy a funkce
-V obecného typu nebo definice funkce můžete použít pouze konstrukce, která jsou známá, mají být k dispozici na parametr obecného typu. To je potřeba povolit ověření volání funkce a metoda v době kompilace. Pokud je výslovně deklarovat parametry typu, můžete použít explicitní omezení pro parametr obecného typu oznámit kompilátor některé metody a funkce jsou k dispozici. Ale pokud povolíte kompilátoru F # odvodit vaší obecný parametr typy, zjišťuje odpovídající omezení pro vás. Další informace najdete v tématu [omezení](constraints.md).
 
+## <a name="constraints-in-generic-types-and-functions"></a>Omezení v obecné typy a funkce
+
+V obecném typu nebo definici funkce můžete použít pouze konstrukce, které jsou známé jako k dispozici na parametr obecného typu. To se vyžaduje pro povolení ověření volání funkce a metody v době kompilace. Pokud explicitně deklarujete parametry typu, můžete provést explicitní omezení u obecného parametru typu upozornění kompilátoru, že některé metody a funkce jsou k dispozici. Ale pokud je povoleno kompilátor jazyka F # k odvození typů obecný parametr, určuje odpovídající omezení za vás. Další informace najdete v tématu [omezení](constraints.md).
 
 ## <a name="statically-resolved-type-parameters"></a>Statisticky vyřešené parametry typu
-Existují dva typy parametrů typu, které mohou být používány programů F #. První jsou parametry obecného typu druhu popsané v předchozích částech. Tento první druh parametr typu je stejná jako parametry obecného typu, které se používají v jazycích, jako je například Visual Basic a C#. Jiný druh parametr typu je specifický pro F # a odkazuje jako *parametr typu určené statisticky*. Informace o těchto konstrukce najdete v tématu [statisticky vyřešené parametry typu](statically-resolved-type-parameters.md).
 
+Existují dva typy parametrů typu, které lze použít v aplikacích F #. První jsou parametry obecného typu, typu je popsáno v předchozích částech. Tento typ prvního parametru typu je ekvivalentní parametrům obecného typu, které se používají v jazycích, jako je například Visual Basic a C#. Jiný typ parametru typu je specifická pro F # a se označuje jako *parametr staticky řešeného typu*. Informace o těchto konstruktorů najdete v tématu [statisticky vyřešených parametrů typu](statically-resolved-type-parameters.md).
 
 ## <a name="examples"></a>Příklady
+
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet1705.fs)]
-    
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka](../index.md)
 
-[Typy](../fsharp-types.md)
+## <a name="see-also"></a>Viz také:
 
-[Statisticky vyřešené parametry typu](statically-resolved-type-parameters.md)
-
-[Obecné typy v rozhraní .NET Framework](~/docs/standard/generics/index.md)
-
-[Automatická generalizace](automatic-generalization.md)
-
-[Omezení](constraints.md)
+- [Referenční dokumentace jazyka](../index.md)
+- [Typy](../fsharp-types.md)
+- [Statisticky vyřešené parametry typu](statically-resolved-type-parameters.md)
+- [Obecné typy v rozhraní .NET Framework](~/docs/standard/generics/index.md)
+- [Automatická generalizace](automatic-generalization.md)
+- [Omezení](constraints.md)
