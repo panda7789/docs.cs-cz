@@ -11,30 +11,30 @@ helpviewer_keywords:
 - data grids [Windows Forms], manipulating columns
 ms.assetid: d8cfe6b3-bbab-4182-bec2-0517d9f1eaf6
 ms.openlocfilehash: a9632a9c339fabd5d17898ca0ab4d3eb3bbb96f4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43659223"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43787009"
 ---
-# <a name="how-to-manipulate-columns-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="54eb7-102">Postupy: Manipulace se sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="54eb7-102">How to: Manipulate Columns in the Windows Forms DataGridView Control</span></span>
-<span data-ttu-id="54eb7-103">Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:System.Windows.Forms.DataGridView> sloupců pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewColumn> třídy.</span><span class="sxs-lookup"><span data-stu-id="54eb7-103">The following code example shows the various ways to manipulate <xref:System.Windows.Forms.DataGridView> columns using properties of the <xref:System.Windows.Forms.DataGridViewColumn> class.</span></span>  
+# <a name="how-to-manipulate-columns-in-the-windows-forms-datagridview-control"></a><span data-ttu-id="c45a1-102">Postupy: Manipulace se sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="c45a1-102">How to: Manipulate Columns in the Windows Forms DataGridView Control</span></span>
+<span data-ttu-id="c45a1-103">Následující příklad kódu ukazuje různé možnosti pro manipulaci s <xref:System.Windows.Forms.DataGridView> sloupců pomocí vlastnosti <xref:System.Windows.Forms.DataGridViewColumn> třídy.</span><span class="sxs-lookup"><span data-stu-id="c45a1-103">The following code example shows the various ways to manipulate <xref:System.Windows.Forms.DataGridView> columns using properties of the <xref:System.Windows.Forms.DataGridViewColumn> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="54eb7-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="54eb7-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="c45a1-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="c45a1-104">Example</span></span>  
  [!code-cpp[System.Windows.Forms.DataGridView.ButtonDemos#100](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CPP/DataGridViewColumnDemo.cpp#100)]
  [!code-csharp[System.Windows.Forms.DataGridView.ButtonDemos#100](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/CS/DataGridViewColumnDemo.cs#100)]
  [!code-vb[System.Windows.Forms.DataGridView.ButtonDemos#100](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ButtonDemos/VB/datagridviewcolumndemo.vb#100)]  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="54eb7-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="54eb7-105">Compiling the Code</span></span>  
- <span data-ttu-id="54eb7-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="54eb7-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="c45a1-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="c45a1-105">Compiling the Code</span></span>  
+ <span data-ttu-id="c45a1-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="c45a1-106">This example requires:</span></span>  
   
--   <span data-ttu-id="54eb7-107">Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.</span><span class="sxs-lookup"><span data-stu-id="54eb7-107">References to the System, System.Drawing, and System.Windows.Forms assemblies.</span></span>  
+-   <span data-ttu-id="c45a1-107">Odkazy na sestavení systému, System.Drawing a System.Windows.Forms.</span><span class="sxs-lookup"><span data-stu-id="c45a1-107">References to the System, System.Drawing, and System.Windows.Forms assemblies.</span></span>  
   
- <span data-ttu-id="54eb7-108">Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="54eb7-108">For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="54eb7-109">Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.</span><span class="sxs-lookup"><span data-stu-id="54eb7-109">You can also build this example in Visual Studio by pasting the code into a new project.</span></span>  <span data-ttu-id="54eb7-110">Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="54eb7-110">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
+ <span data-ttu-id="c45a1-108">Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span><span class="sxs-lookup"><span data-stu-id="c45a1-108">For information about building this example from the command line for Visual Basic or Visual C#, see [Building from the Command Line](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) or [Command-line Building With csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md).</span></span> <span data-ttu-id="c45a1-109">Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.</span><span class="sxs-lookup"><span data-stu-id="c45a1-109">You can also build this example in Visual Studio by pasting the code into a new project.</span></span>  <span data-ttu-id="c45a1-110">Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span><span class="sxs-lookup"><span data-stu-id="c45a1-110">Also see [How to: Compile and Run a Complete Windows Forms Code Example Using Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="54eb7-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="54eb7-111">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="c45a1-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="c45a1-111">See Also</span></span>  
  <xref:System.Windows.Forms.DataGridView>  
  <xref:System.Windows.Forms.DataGridViewBand>  
  <xref:System.Windows.Forms.DataGridViewRow>  
  <xref:System.Windows.Forms.DataGridViewColumn>  
- [<span data-ttu-id="54eb7-112">Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="54eb7-112">Programming with Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/programming-with-cells-rows-and-columns-in-the-datagrid.md)
+ [<span data-ttu-id="c45a1-112">Programování s buňkami, řádky a sloupci v ovládacím prvku Windows Forms DataGridView</span><span class="sxs-lookup"><span data-stu-id="c45a1-112">Programming with Cells, Rows, and Columns in the Windows Forms DataGridView Control</span></span>](../../../../docs/framework/winforms/controls/programming-with-cells-rows-and-columns-in-the-datagrid.md)

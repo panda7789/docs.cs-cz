@@ -8,43 +8,43 @@ helpviewer_keywords:
 - user-defined conversions [C#]
 ms.assetid: c5ad73a3-d57b-4d2b-b4c9-24e3c2856efc
 ms.openlocfilehash: cbf6a83d43a1b3a69e82a35d5d0875f62422cd3f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: HT
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734444"
+ms.locfileid: "43787820"
 ---
-# <a name="conversion-operators-c-programming-guide"></a><span data-ttu-id="1e905-102">Operátory převodu (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="1e905-102">Conversion Operators (C# Programming Guide)</span></span>
-<span data-ttu-id="1e905-103">C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak, aby třídy nebo struktury lze převést na nebo z jiné třídy nebo struktury nebo základní typy.</span><span class="sxs-lookup"><span data-stu-id="1e905-103">C# enables programmers to declare conversions on classes or structs so that classes or structs can be converted to and/or from other classes or structs, or basic types.</span></span> <span data-ttu-id="1e905-104">Převody jsou definovány jako operátory a jsou pojmenovány pro typ, ke kterému převodu.</span><span class="sxs-lookup"><span data-stu-id="1e905-104">Conversions are defined like operators and are named for the type to which they convert.</span></span> <span data-ttu-id="1e905-105">Typ argumentu, který má být převeden nebo typ výsledku převodu, ale ne obojí, musí být nadřazeného typu.</span><span class="sxs-lookup"><span data-stu-id="1e905-105">Either the type of the argument to be converted, or the type of the result of the conversion, but not both, must be the containing type.</span></span>  
+# <a name="conversion-operators-c-programming-guide"></a><span data-ttu-id="b9d74-102">Operátory převodu (Průvodce programováním v C#)</span><span class="sxs-lookup"><span data-stu-id="b9d74-102">Conversion Operators (C# Programming Guide)</span></span>
+<span data-ttu-id="b9d74-103">C# umožňuje programátorům deklarovat převody na třídy nebo struktury tak, aby třídy nebo struktury lze převést na nebo z jiné třídy nebo struktury nebo základní typy.</span><span class="sxs-lookup"><span data-stu-id="b9d74-103">C# enables programmers to declare conversions on classes or structs so that classes or structs can be converted to and/or from other classes or structs, or basic types.</span></span> <span data-ttu-id="b9d74-104">Převody jsou definovány jako operátory a jsou pojmenovány pro typ, ke kterému převodu.</span><span class="sxs-lookup"><span data-stu-id="b9d74-104">Conversions are defined like operators and are named for the type to which they convert.</span></span> <span data-ttu-id="b9d74-105">Typ argumentu, který má být převeden nebo typ výsledku převodu, ale ne obojí, musí být nadřazeného typu.</span><span class="sxs-lookup"><span data-stu-id="b9d74-105">Either the type of the argument to be converted, or the type of the result of the conversion, but not both, must be the containing type.</span></span>  
   
  [!code-csharp[csProgGuideStatements#10](../../../csharp/programming-guide/classes-and-structs/codesnippet/CSharp/conversion-operators_1.cs)]  
   
-## <a name="conversion-operators-overview"></a><span data-ttu-id="1e905-106">Přehled operátorů převodů</span><span class="sxs-lookup"><span data-stu-id="1e905-106">Conversion Operators Overview</span></span>  
- <span data-ttu-id="1e905-107">Operátory převodu mají následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="1e905-107">Conversion operators have the following properties:</span></span>  
+## <a name="conversion-operators-overview"></a><span data-ttu-id="b9d74-106">Přehled operátorů převodů</span><span class="sxs-lookup"><span data-stu-id="b9d74-106">Conversion Operators Overview</span></span>  
+ <span data-ttu-id="b9d74-107">Operátory převodu mají následující vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="b9d74-107">Conversion operators have the following properties:</span></span>  
   
--   <span data-ttu-id="1e905-108">Převody deklarovány jako `implicit` automaticky provedou, když je povinný.</span><span class="sxs-lookup"><span data-stu-id="1e905-108">Conversions declared as `implicit` occur automatically when it is required.</span></span>  
+-   <span data-ttu-id="b9d74-108">Převody deklarovány jako `implicit` automaticky provedou, když je povinný.</span><span class="sxs-lookup"><span data-stu-id="b9d74-108">Conversions declared as `implicit` occur automatically when it is required.</span></span>  
   
--   <span data-ttu-id="1e905-109">Převody deklarovány jako `explicit` vyžaduje přetypování, která se má volat.</span><span class="sxs-lookup"><span data-stu-id="1e905-109">Conversions declared as `explicit` require a cast to be called.</span></span>  
+-   <span data-ttu-id="b9d74-109">Převody deklarovány jako `explicit` vyžaduje přetypování, která se má volat.</span><span class="sxs-lookup"><span data-stu-id="b9d74-109">Conversions declared as `explicit` require a cast to be called.</span></span>  
   
--   <span data-ttu-id="1e905-110">Musí být všechny převody deklarovány jako `static`.</span><span class="sxs-lookup"><span data-stu-id="1e905-110">All conversions must be declared as `static`.</span></span>  
+-   <span data-ttu-id="b9d74-110">Musí být všechny převody deklarovány jako `static`.</span><span class="sxs-lookup"><span data-stu-id="b9d74-110">All conversions must be declared as `static`.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="1e905-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1e905-111">Related Sections</span></span>  
- <span data-ttu-id="1e905-112">Další informace:</span><span class="sxs-lookup"><span data-stu-id="1e905-112">For more information:</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="b9d74-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="b9d74-111">Related Sections</span></span>  
+ <span data-ttu-id="b9d74-112">Další informace:</span><span class="sxs-lookup"><span data-stu-id="b9d74-112">For more information:</span></span>  
   
--   [<span data-ttu-id="1e905-113">Použití operátorů převodu</span><span class="sxs-lookup"><span data-stu-id="1e905-113">Using Conversion Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md)  
+-   [<span data-ttu-id="b9d74-113">Použití operátorů převodu</span><span class="sxs-lookup"><span data-stu-id="b9d74-113">Using Conversion Operators</span></span>](../../../csharp/programming-guide/statements-expressions-operators/using-conversion-operators.md)  
   
--   [<span data-ttu-id="1e905-114">Přetypování a převody typů</span><span class="sxs-lookup"><span data-stu-id="1e905-114">Casting and Type Conversions</span></span>](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  
+-   [<span data-ttu-id="b9d74-114">Přetypování a převody typů</span><span class="sxs-lookup"><span data-stu-id="b9d74-114">Casting and Type Conversions</span></span>](../../../csharp/programming-guide/types/casting-and-type-conversions.md)  
   
--   [<span data-ttu-id="1e905-115">Postupy: Implementace uživatelem definovaných převodů mezi strukturami</span><span class="sxs-lookup"><span data-stu-id="1e905-115">How to: Implement User-Defined Conversions Between Structs</span></span>](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)  
+-   [<span data-ttu-id="b9d74-115">Postupy: Implementace uživatelem definovaných převodů mezi strukturami</span><span class="sxs-lookup"><span data-stu-id="b9d74-115">How to: Implement User-Defined Conversions Between Structs</span></span>](../../../csharp/programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)  
   
--   [<span data-ttu-id="1e905-116">explicit</span><span class="sxs-lookup"><span data-stu-id="1e905-116">explicit</span></span>](../../../csharp/language-reference/keywords/explicit.md)  
+-   [<span data-ttu-id="b9d74-116">explicit</span><span class="sxs-lookup"><span data-stu-id="b9d74-116">explicit</span></span>](../../../csharp/language-reference/keywords/explicit.md)  
   
--   [<span data-ttu-id="1e905-117">implicit</span><span class="sxs-lookup"><span data-stu-id="1e905-117">implicit</span></span>](../../../csharp/language-reference/keywords/implicit.md)  
+-   [<span data-ttu-id="b9d74-117">implicit</span><span class="sxs-lookup"><span data-stu-id="b9d74-117">implicit</span></span>](../../../csharp/language-reference/keywords/implicit.md)  
   
--   [<span data-ttu-id="1e905-118">static</span><span class="sxs-lookup"><span data-stu-id="1e905-118">static</span></span>](../../../csharp/language-reference/keywords/static.md)  
+-   [<span data-ttu-id="b9d74-118">static</span><span class="sxs-lookup"><span data-stu-id="b9d74-118">static</span></span>](../../../csharp/language-reference/keywords/static.md)  
   
-## <a name="see-also"></a><span data-ttu-id="1e905-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="1e905-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b9d74-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="b9d74-119">See Also</span></span>
 
 - <xref:System.Convert>  
-- [<span data-ttu-id="1e905-120">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="1e905-120">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="1e905-121">Zřetězit uživatelem definované explicitní převody v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="1e905-121">Chained user-defined explicit conversions in C#</span></span>](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)
+- [<span data-ttu-id="b9d74-120">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="b9d74-120">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="b9d74-121">Zřetězit uživatelem definované explicitní převody v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="b9d74-121">Chained user-defined explicit conversions in C#</span></span>](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)
