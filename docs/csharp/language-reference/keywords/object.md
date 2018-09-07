@@ -8,30 +8,30 @@ helpviewer_keywords:
 - object keyword [C#]
 ms.assetid: 93f60c0b-e17a-40a9-9362-cca5fb77b0e7
 ms.openlocfilehash: b36703828e6027a89297ac88edaf2b55ec18f42e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43482519"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44060025"
 ---
-# <a name="object-c-reference"></a><span data-ttu-id="378f9-102">object (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="378f9-102">object (C# Reference)</span></span>
+# <a name="object-c-reference"></a><span data-ttu-id="2d8d8-102">object (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="2d8d8-102">object (C# Reference)</span></span>
 
-<span data-ttu-id="378f9-103">`object` Typ je alias pro <xref:System.Object> v rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="378f9-103">The `object` type is an alias for <xref:System.Object> in .NET.</span></span> <span data-ttu-id="378f9-104">V systému unified typů jazyka C#, všechny typy, typy odkazů předdefinovaných a definovaný uživatelem, a typů hodnot, dědí přímo nebo nepřímo <xref:System.Object>.</span><span class="sxs-lookup"><span data-stu-id="378f9-104">In the unified type system of C#, all types, predefined and user-defined, reference types and value types, inherit directly or indirectly from <xref:System.Object>.</span></span> <span data-ttu-id="378f9-105">Můžete přiřadit proměnné typu hodnoty libovolného typu `object`.</span><span class="sxs-lookup"><span data-stu-id="378f9-105">You can assign values of any type to variables of type `object`.</span></span> <span data-ttu-id="378f9-106">Když je proměnné typu hodnoty převeden na objekt, je označen jako *boxed*.</span><span class="sxs-lookup"><span data-stu-id="378f9-106">When a variable of a value type is converted to object, it is said to be *boxed*.</span></span> <span data-ttu-id="378f9-107">Pokud proměnnou typu objektu je převeden na typ hodnoty, je označen jako *nezabalené*.</span><span class="sxs-lookup"><span data-stu-id="378f9-107">When a variable of type object is converted to a value type, it is said to be *unboxed*.</span></span> <span data-ttu-id="378f9-108">Další informace najdete v tématu [zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md).</span><span class="sxs-lookup"><span data-stu-id="378f9-108">For more information, see [Boxing and Unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md).</span></span>
+<span data-ttu-id="2d8d8-103">`object` Typ je alias pro <xref:System.Object> v rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="2d8d8-103">The `object` type is an alias for <xref:System.Object> in .NET.</span></span> <span data-ttu-id="2d8d8-104">V systému unified typů jazyka C#, všechny typy, typy odkazů předdefinovaných a definovaný uživatelem, a typů hodnot, dědí přímo nebo nepřímo <xref:System.Object>.</span><span class="sxs-lookup"><span data-stu-id="2d8d8-104">In the unified type system of C#, all types, predefined and user-defined, reference types and value types, inherit directly or indirectly from <xref:System.Object>.</span></span> <span data-ttu-id="2d8d8-105">Můžete přiřadit proměnné typu hodnoty libovolného typu `object`.</span><span class="sxs-lookup"><span data-stu-id="2d8d8-105">You can assign values of any type to variables of type `object`.</span></span> <span data-ttu-id="2d8d8-106">Když je proměnné typu hodnoty převeden na objekt, je označen jako *boxed*.</span><span class="sxs-lookup"><span data-stu-id="2d8d8-106">When a variable of a value type is converted to object, it is said to be *boxed*.</span></span> <span data-ttu-id="2d8d8-107">Pokud proměnnou typu objektu je převeden na typ hodnoty, je označen jako *nezabalené*.</span><span class="sxs-lookup"><span data-stu-id="2d8d8-107">When a variable of type object is converted to a value type, it is said to be *unboxed*.</span></span> <span data-ttu-id="2d8d8-108">Další informace najdete v tématu [zabalení a rozbalení](../../../csharp/programming-guide/types/boxing-and-unboxing.md).</span><span class="sxs-lookup"><span data-stu-id="2d8d8-108">For more information, see [Boxing and Unboxing](../../../csharp/programming-guide/types/boxing-and-unboxing.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="378f9-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="378f9-109">Example</span></span>
+## <a name="example"></a><span data-ttu-id="2d8d8-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="2d8d8-109">Example</span></span>
 
-<span data-ttu-id="378f9-110">Následující ukázkový ukazuje, jak proměnné typu `object` může přijmout hodnoty libovolného typu dat a jak proměnné typu `object` můžete použít metody na <xref:System.Object> z rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="378f9-110">The following sample shows how variables of type `object` can accept values of any data type and how variables of type `object` can use methods on <xref:System.Object> from the .NET Framework.</span></span>
+<span data-ttu-id="2d8d8-110">Následující ukázkový ukazuje, jak proměnné typu `object` může přijmout hodnoty libovolného typu dat a jak proměnné typu `object` můžete použít metody na <xref:System.Object> z rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="2d8d8-110">The following sample shows how variables of type `object` can accept values of any data type and how variables of type `object` can use methods on <xref:System.Object> from the .NET Framework.</span></span>
 
 [!code-csharp[csrefKeywordsTypes#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#16)]
 
-## <a name="c-language-specification"></a><span data-ttu-id="378f9-111">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="378f9-111">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="2d8d8-111">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2d8d8-111">C# language specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="378f9-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="378f9-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2d8d8-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2d8d8-112">See also</span></span>
 
-- [<span data-ttu-id="378f9-113">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="378f9-113">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="378f9-114">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="378f9-114">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="378f9-115">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="378f9-115">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="378f9-116">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="378f9-116">Reference Types</span></span>](reference-types.md)
-- [<span data-ttu-id="378f9-117">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="378f9-117">Value Types</span></span>](value-types.md)
+- [<span data-ttu-id="2d8d8-113">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2d8d8-113">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="2d8d8-114">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="2d8d8-114">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="2d8d8-115">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2d8d8-115">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="2d8d8-116">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="2d8d8-116">Reference Types</span></span>](reference-types.md)
+- [<span data-ttu-id="2d8d8-117">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="2d8d8-117">Value Types</span></span>](value-types.md)
