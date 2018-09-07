@@ -8,19 +8,19 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: 51d561009a2f497cf4cf720abd5a414cbbbb2e64
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b47be45f00ee03d400383dd45dc6776cff3f816d
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592090"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44060330"
 ---
 # <a name="serialization-guidelines"></a>Pokyny pro serializaci
 Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování rozhraní API.  
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
   
- Rozhraní .NET nabízí tři hlavní serializace technologie, které jsou optimalizovány pro různé scénáře serializace. Následující tabulka uvádí tyto technologie a hlavní související s těmito technologiemi typy .NET.  
+ .NET nabízí tři hlavní serializace technologií, které jsou optimalizovány pro různé scénáře serializace. V následující tabulce jsou uvedeny tyto technologie a hlavní typy .NET související s tyto technologie.  
   
 |Technologie|Příslušných tříd|Poznámky|  
 |----------------|----------------------|-----------|  
@@ -36,21 +36,21 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
      Serializace je k posouzení důležité návrh pro každý typ, protože programů může být nutné zachovat nebo přenést instance daného typu.  
   
-### <a name="choosing-the-right-serialization-technology-to-support"></a>Výběr správné serializace technologie pro podporu  
+### <a name="choosing-the-right-serialization-technology-to-support"></a>Výběr technologii vpravo serializace pro podporu  
  Daného typu může podporovat none, jeden nebo více technologií serializace.  
   
--   Podpora ZVAŽTE *kontraktů dat serializace* Pokud instance vašeho typu může být nutné jako trvalý, nebo použít ve webové služby.  
+-   Podpora ZVAŽTE *data smlouvy serializace* -li být zachována nebo používat ve webové služby může být nutné instance stejného typu.  
   
--   Podpora ZVAŽTE *serializace XML* místo nebo kromě serializace kontraktu dat, pokud potřebujete větší kontrolu nad formátu XML, která je vytvořena, když je typ serializován.  
+-   Podpora ZVAŽTE *serializace XML* místo nebo kromě serializaci dat smlouvy, pokud potřebujete větší kontrolu nad ve formátu XML, který je vytvořen, pokud je typ serializován.  
   
      Toto může být nutné v některých případech interoperability, kde je třeba použít XML konstrukci, která není podporována serializaci dat smlouvy, například k vytvoření atributy ve formátu XML.  
   
--   Podpora ZVAŽTE *runtime serializace* Pokud musí projít napříč hranicemi .NET Remoting instance stejného typu.  
+-   Podpora ZVAŽTE *modulu runtime serializace* Pokud instance stejného typu musí projít přes hranice vzdálené komunikace .NET.  
   
 -   Vyhněte se podpora modulu runtime serializace nebo serializace XML pouze z důvodů obecné stálost. Místo toho raději smlouvy serializaci dat  
   
-#### <a name="supporting-data-contract-serialization"></a>Podpůrné serializace kontraktu dat  
- Typy může podporovat serializace kontraktu dat s použitím <xref:System.Runtime.Serialization.DataContractAttribute> typu a <xref:System.Runtime.Serialization.DataMemberAttribute> typu u členů (pole a vlastnosti).  
+#### <a name="supporting-data-contract-serialization"></a>Podpůrné smlouvy serializaci dat  
+ Typy podporuje serializaci smlouvy dat použitím <xref:System.Runtime.Serialization.DataContractAttribute> na typ a <xref:System.Runtime.Serialization.DataMemberAttribute> do členů (polí a vlastností) typu.  
   
  [!code-csharp[SerializationGuidelines#1](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#1)]
  [!code-vb[SerializationGuidelines#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#1)]  
@@ -64,22 +64,22 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
 3.  ZVAŽTE použití zpětných volání serializace pro inicializaci deserializovat instancí.  
   
-     Konstruktory nejsou volána, když jsou objekty deserializovat. Proto všechny logiky, která provede během normálního vytváření musí implementovat jako jeden z *zpětná volání serializace tolerantní*.  
+     Konstruktory nejsou volána, když jsou objekty deserializovat. Proto jakékoli logiky, která provede během vytváření normální potřebuje k implementaci jako jeden z *zpětná volání serializace*.  
   
      [!code-csharp[SerializationGuidelines#3](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#3)]
      [!code-vb[SerializationGuidelines#3](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#3)]  
   
-     <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Ostatní atributy řady jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>,    
+     <xref:System.Runtime.Serialization.OnDeserializedAttribute> Se atribut nejčastěji používané zpětného volání. Další atributy řady jsou <xref:System.Runtime.Serialization.OnDeserializingAttribute>,    
     <xref:System.Runtime.Serialization.OnSerializingAttribute>, a <xref:System.Runtime.Serialization.OnSerializedAttribute>. Jejich lze použít k označení zpětná volání, které získat spuštěny před deserializace před serializací a nakonec po serializaci, v uvedeném pořadí.  
   
 4.  ZVAŽTE použití <xref:System.Runtime.Serialization.KnownTypeAttribute> označuje konkrétní typy, které se mají používat při deserializaci komplexní objekt grafu.  
   
-     Například pokud typ člena deserializovat dat představuje abstraktní třídu, serializátoru, který bude nutné *známý typ* informace se rozhodnout, jaký konkrétní typ k vytváření instancí a přiřazení člena. Pokud známý typ není zadán pomocí atributu, bude nutné mají být předány serializátor explicitně (můžete to provést předáním známé typy konstruktoru serializátor) nebo bude je nutné zadat v konfiguračním souboru.  
+     Například pokud typ deserializovat datový člen je reprezentována abstraktní třídu, serializátor, bude nutné *známý typ* informace se rozhodnout, jaký typ konkrétní instanci a přiřadit člena. Pokud známý typ není zadán pomocí atributu, bude nutné mají být předány serializátor explicitně (můžete to provést předáním známé typy konstruktoru serializátor) nebo bude je nutné zadat v konfiguračním souboru.  
   
      [!code-csharp[SerializationGuidelines#4](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#4)]
      [!code-vb[SerializationGuidelines#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#4)]  
   
-     V případech, kde seznam známé typy nezná staticky (Pokud **osoba** kompiluje – třída), **KnownTypeAttribute** může taky ukazovat na metodu, která vrátí seznam hodnot známé typy za běhu.  
+     V případech, kdy seznam známých typů není znám staticky (Pokud **osoba** třída je kompilována), **KnownTypeAttribute** může poukazovat na metodu, která vrátí seznam známých typů za běhu.  
   
 5.  Zvažte dopředné a zpětné kompatibility při vytváření nebo změně Serializovatelné typy.  
   
@@ -87,36 +87,36 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
   
 6.  ZVAŽTE implementaci <xref:System.Runtime.Serialization.IExtensibleDataObject> rozhraní, které chcete, aby verzemi mezi různými verzemi typu.  
   
-     Rozhraní umožňuje serializátor zajistit, aby žádná data nejsou ztracena během verzemi. <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> Vlastnost uloží všechna data z budoucí verze typu, který neznámý pro aktuální verzi. Při aktuální verze je následně serializaci a deserializaci v budoucí verzi, další data budou k dispozici v serializovaném datovém proudu prostřednictvím **ExtensionData –** hodnotu vlastnosti.  
+     Rozhraní umožňuje serializátor zajistit, aby žádná data nejsou ztracena během verzemi. <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> Vlastnost uloží všechna data z budoucí verze typu, který neznámý pro aktuální verzi. Aktuální verze je následně serializaci a deserializaci v budoucích verzích, doplňující data nebudou mít k dispozici v serializovaném proudu prostřednictvím **ExtensionData** hodnotu vlastnosti.  
   
      [!code-csharp[SerializationGuidelines#5](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#5)]
      [!code-vb[SerializationGuidelines#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#5)]  
   
-     Další informace najdete v tématu [kontrakty dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
+     Další informace najdete v tématu [kontraktů dat dopřednou](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md).  
   
 #### <a name="supporting-xml-serialization"></a>Podpora serializace XML  
- Data smlouvy serializace je hlavním (výchozí) serializace technologie v rozhraní .NET Framework, ale existují serializace scénáře, že data smlouvy serializace není podporováno. Můžete například ji vám neuděluje plnou kontrolu nad tvar XML vytvořeného nebo používané serializátor. Pokud je potřeba, takové jemné řízení *serializace XML* musí být použit, a je třeba navrhnout vaše typy pro podporu této technologie serializace.  
+ Data smlouvy serializace je hlavním (výchozí) serializace technologie v rozhraní .NET Framework, ale existují serializace scénáře, že data smlouvy serializace není podporováno. Můžete například ji vám neuděluje plnou kontrolu nad tvar XML vytvořeného nebo používané serializátor. Pokud je takové přesného vyžadováno, *serializace XML* musí být použit, a je potřeba navrhnout vaše typy pro podporu této technologie serializace.  
   
 1.  BRÁNÍ návrh vašich typů speciálně pro serializaci XML, pokud nemáte autoři kladou důvod k nastavení tvaru XML vytvořen. Tato technologie serializace bylo nahrazeno serializaci smlouvy dat, který je popsána v předchozím oddílu.  
   
-     Jinými slovy, se nevztahují atributů z <xref:System.Runtime.Serialization> obor názvů pro nové typy, pokud si nejste jisti, že typ bude použita k serializaci kódu XML. Následující příklad ukazuje způsob **System.Xml.Serialization** můžete použít k řízení obrazec XML-vytvořil.  
+     Jinými slovy, se nevztahují atributů z <xref:System.Runtime.Serialization> obor názvů pro nové typy, pokud si nejste jisti, že typ bude použita k serializaci kódu XML. Následující příklad ukazuje jak **System.Xml.Serialization** slouží k nastavení tvaru XML-vytvořen.  
   
      [!code-csharp[SerializationGuidelines#6](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#6)]
      [!code-vb[SerializationGuidelines#6](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#6)]  
   
-2.  ZVAŽTE implementaci <xref:System.Xml.Serialization.IXmlSerializable> rozhraní, pokud chcete, aby ještě větší kontrolu nad tvar serializovaná XML než nabízejí použitím atributy serializace XML. Dvě metody rozhraní, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> a <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>, vám umožní plně řídit serializovaný datový proud XML. Můžete také určit schématu XML, který získá vygenerována pro typ použitím <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atributu.  
+2.  ZVAŽTE implementaci <xref:System.Xml.Serialization.IXmlSerializable> rozhraní, pokud chcete, aby ještě větší kontrolu nad tvar serializovaná XML než nabízejí použitím atributy serializace XML. Dvě metody rozhraní, <xref:System.Xml.Serialization.IXmlSerializable.ReadXml%2A> a <xref:System.Xml.Serialization.IXmlSerializable.WriteXml%2A>, umožňují plně řídit serializovaná datový proud XML. Můžete také určit schématu XML, který získá vygenerována pro typ použitím <xref:System.Xml.Serialization.XmlSchemaProviderAttribute> atributu.  
   
 #### <a name="supporting-runtime-serialization"></a>Podpora modulu runtime serializace  
- *Modul runtime serializace* je technologie, pomocí .NET Remoting. Pokud se domníváte, že vaše typy bude přenosu pomocí vzdálené komunikace pomocí rozhraní .NET, je třeba Ujistěte se, že podporují runtime serializace.  
+ *Modul runtime serializace* je technologie, pomocí vzdálené komunikace .NET. Pokud se domníváte, že vaše typy bude přenosu pomocí vzdálené komunikace pomocí rozhraní .NET, je třeba Ujistěte se, že podporují runtime serializace.  
   
- Základní podpora pro *runtime serializace* lze zadat použitím <xref:System.SerializableAttribute> atribut a pokročilejší scénáře zahrnují implementace jednoduchou *serializovatelný vzor runtime* ( implementace -<xref:System.Runtime.Serialization.ISerializable> a zadejte konstruktor serializace).  
+ Základní podpora pro *modulu runtime serializace* můžete zadat použitím <xref:System.SerializableAttribute> atribut a pokročilejší scénáře zahrnovat implementing jednoduchý *za běhu serializovatelný vzor* () implementace -<xref:System.Runtime.Serialization.ISerializable> a Poskytněte konstruktor serializace).  
   
-1.  ZVAŽTE podporuje runtime serializace v případě, že vaše typy budou použity u vzdálené komunikace rozhraní .NET. Například <xref:System.AddIn> používá obor názvů .NET Remoting, a proto všechny typy vyměňují mezi **obory** doplňky potřebujete pro podporu serializace modulu runtime.  
+1.  ZVAŽTE podporuje runtime serializace v případě, že vaše typy budou použity u vzdálené komunikace rozhraní .NET. Například <xref:System.AddIn> obor názvů používá vzdálené komunikace .NET, a proto všechny typy výměna mezi **System.AddIn** doplňků musí podporovat serializace za běhu.  
   
      [!code-csharp[SerializationGuidelines#7](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#7)]
      [!code-vb[SerializationGuidelines#7](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#7)]  
   
-2.  ZVAŽTE implementaci *serializovatelný vzor runtime* Pokud chcete plnou kontrolu nad tímto procesem serializace. Například pokud chcete transformovat data jako jeho získá serializován nebo deserializován.  
+2.  ZVAŽTE implementaci *za běhu serializovatelný vzor* Pokud chcete úplnou kontrolu nad procesu serializace. Například pokud chcete transformovat data jako jeho získá serializován nebo deserializován.  
   
      Vzor je velmi snadné. Vše je třeba provést je implementovat <xref:System.Runtime.Serialization.ISerializable> rozhraní a zadat speciální konstruktor, který se používá, pokud je objekt deserializován.  
   
@@ -133,16 +133,17 @@ Tento dokument obsahuje seznam pokyny k serializaci zvážit při navrhování r
      [!code-csharp[SerializationGuidelines#10](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#10)]
      [!code-vb[SerializationGuidelines#10](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#10)]  
   
-5.  Použít požadavek propojení na **ISerializable.GetObjectData** implementace. To zajistí, že pouze plně důvěryhodné, jádro a serializátor runtime máte přístup ke členu.  
+5.  Použijte odkaz požadavek na **ISerializable.GetObjectData** implementace. To zajistí, že pouze plně důvěryhodné, jádro a serializátor runtime máte přístup ke členu.  
   
      [!code-csharp[SerializationGuidelines#11](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#11)]
      [!code-vb[SerializationGuidelines#11](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#11)]  
   
-## <a name="see-also"></a>Viz také  
- [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
- [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)  
- [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
- [Binární serializace](binary-serialization.md)  
- [Vzdálených objektů](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)  
- [Serializace XML a SOAP](xml-and-soap-serialization.md)  
- [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)
+## <a name="see-also"></a>Viz také:
+
+- [Použití kontraktů dat](../../../docs/framework/wcf/feature-details/using-data-contracts.md)  
+- [Serializátor kontraktu dat](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)  
+- [Typy podporované serializátorem kontraktu dat](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)  
+- [Binární serializace](binary-serialization.md)  
+- [Vzdálené objekty](https://msdn.microsoft.com/library/515686e6-0a8d-42f7-8188-73abede57c58)  
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)  
+- [Zabezpečení a serializace](../../../docs/framework/misc/security-and-serialization.md)

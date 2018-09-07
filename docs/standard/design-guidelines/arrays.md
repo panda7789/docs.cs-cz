@@ -9,27 +9,28 @@ helpviewer_keywords:
 ms.assetid: 66a1b3d8-6f3f-4715-b235-e1ff95e32d8e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2945ead7c22b759ce88f6585e2254e9bc540a7ef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ac7e28c3172f2ed68d402e1d04a1664644c7f25
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570392"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44047815"
 ---
 # <a name="arrays"></a>Pole
-**✓ DO** raději pomocí kolekcí přes pole v veřejná rozhraní API. [Kolekce](../../../docs/standard/design-guidelines/guidelines-for-collections.md) oddíl obsahuje podrobné informace o tom, jak si vybrat mezi kolekcí a pole.  
+**✓ DO** raději pomocí kolekcí přes pole v veřejná rozhraní API. [Kolekce](../../../docs/standard/design-guidelines/guidelines-for-collections.md) čísti najdete podrobnosti o tom, jak si vybrat mezi kolekcí a polí.  
   
- **X DO NOT** použít pole pouze pro čtení. Vlastní pole je jen pro čtení a nelze změnit, ale lze změnit prvků v poli.  
+ **X DO NOT** použít pole pouze pro čtení. Vlastní pole je jen pro čtení a nedá se změnit, ale prvky pole mohou být změněny.  
   
  **✓ CONSIDER** pomocí Vícenásobná pole místo vícerozměrná pole.  
   
- Vícenásobná pole je pole s prvky, které jsou také pole. Pole, které tvoří elementy lze různých velikostí, což méně nevyužité místo pro některé sady dat (např. zhuštěný matice) ve srovnání s vícerozměrná pole. Navíc modulu CLR optimalizuje operace indexu na Vícenásobná pole, takže se mohou vykazovat lepší běhový výkon v některých scénářích.  
+ Vícenásobné pole je pole s prvky, které jsou také pole. Pole tvořící prvky mohou být různě velká, což vede k menšímu nevyužitému místu u některých sad dat (např. zhuštěný matice) ve srovnání s multidimenzionálními poli. Navíc CLR optimalizuje operace indexu pro vícenásobné pole, proto se může vykazovat lepší běhový výkon v některých scénářích.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Array>  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Array>  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)

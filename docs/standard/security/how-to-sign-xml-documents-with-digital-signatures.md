@@ -16,19 +16,19 @@ helpviewer_keywords:
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 829be8663068d4eb492631ccc4194b4e4c3000aa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 361dfd8cc9264f86bfc94a150635d9891274c9ac
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33590296"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44061673"
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>Postupy: Podepisování dokumentů XML digitálními podpisy
-Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů XML dokumentu nebo jeho část dokumentu XML s digitální podpis.  XML – digitální podpisy (XMLDSIG) umožňují ověřte, že data nebyla změněna po podepsání.  Další informace o standardu XMLDSIG najdete v tématu doporučení World Wide Web Consortium (W3C) [syntaxe podpis XML a zpracování](https://www.w3.org/TR/xmldsig-core/).  
+Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů dokumentu XML nebo jeho část dokumentu XML s digitálním podpisem.  XML – digitální podpisy (XMLDSIG) umožňují ověřit, že data nebyla změněna po byla podepsána.  Další informace o standardních XMLDSIG, naleznete v tématu World Wide Web Consortium (W3C) doporučení [podpis syntaxe jazyka XML a zpracování](https://www.w3.org/TR/xmldsig-core/).  
   
- Příklad kódu v tomto postupu ukazuje, jak k digitálnímu podepisování celý dokument XML a připojit k dokumentu v podpis <`Signature`> elementu.  Tento příklad vytvoří podpisový klíč RSA, přidá klíč do zabezpečeného kontejneru klíčů a pak používá klíč k digitálnímu podepisování dokument XML.  Klíč lze načíst ověřit digitální podpis XML nebo lze použít k podepsání jiného dokumentu XML.  
+ Příklad kódu v tomto postupu ukazuje, jak digitálně podepsat celý dokument XML a připojit k dokumentu v podpis <`Signature`> element.  V příkladu vytvoří podpisový klíč RSA, přidá klíč do zabezpečeného kontejneru klíčů a potom pomocí klíče k digitálnímu podepisování dokumentu XML.  Klíč je pak načíst do ověření digitálního podpisu XML nebo můžete použít k podepsání jiného dokumentu XML.  
   
- Informace o tom, jak ověřit digitální podpis XML, který byl vytvořen pomocí tohoto postupu najdete v tématu [postupy: ověření digitálních podpisů XML dokumentů](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md).  
+ Informace o tom, jak ověřit digitální podpis XML, který byl vytvořen pomocí tohoto postupu najdete v tématu [postupy: ověření digitálních podpisů XML dokumenty](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md).  
   
 ### <a name="to-digitally-sign-an-xml-document"></a>K digitálnímu podepisování dokumentu XML  
   
@@ -37,7 +37,7 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
      [!code-csharp[HowToSignXMLDocumentRSA#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#2)]
      [!code-vb[HowToSignXMLDocumentRSA#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#2)]  
   
-2.  Generovat k asymetrického klíče pomocí <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy.  Klíč je automaticky uloží do kontejneru klíčů při předání <xref:System.Security.Cryptography.CspParameters> objektu do konstruktoru objektu <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy.  Tento klíč se používá k podepisování dokumentů XML.  
+2.  Generovat objekt asymetrického klíče pomocí <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy.  Klíč se automaticky uloží do kontejneru klíčů při předání <xref:System.Security.Cryptography.CspParameters> objekt konstruktoru <xref:System.Security.Cryptography.RSACryptoServiceProvider> třídy.  Tento klíč se používá k podepisování dokumentů XML.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#3](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#3)]
      [!code-vb[HowToSignXMLDocumentRSA#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#3)]  
@@ -47,42 +47,42 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
      [!code-csharp[HowToSignXMLDocumentRSA#4](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#4)]
      [!code-vb[HowToSignXMLDocumentRSA#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#4)]  
   
-4.  Vytvořte novou <xref:System.Security.Cryptography.Xml.SignedXml> objektu a předat <xref:System.Xml.XmlDocument> objektu k němu.  
+4.  Vytvořte nový <xref:System.Security.Cryptography.Xml.SignedXml> objektu a předejte <xref:System.Xml.XmlDocument> objektu.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#5)]
      [!code-vb[HowToSignXMLDocumentRSA#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#5)]  
   
-5.  Přidat podpisový klíč RSA do <xref:System.Security.Cryptography.Xml.SignedXml> objektu.  
+5.  Přidat podpisový klíč RSA k <xref:System.Security.Cryptography.Xml.SignedXml> objektu.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#6)]
      [!code-vb[HowToSignXMLDocumentRSA#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#6)]  
   
-6.  Vytvoření <xref:System.Security.Cryptography.Xml.Reference> objekt, který popisuje, co se přihlásit.  Podepsat celý dokument, nastavit <xref:System.Security.Cryptography.Xml.Reference.Uri%2A> vlastnost `""`.  
+6.  Vytvoření <xref:System.Security.Cryptography.Xml.Reference> objekt, který popisuje, co k podepsání.  Pro přihlášení v celém dokumentu, nastavte <xref:System.Security.Cryptography.Xml.Reference.Uri%2A> vlastnost `""`.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#7)]
      [!code-vb[HowToSignXMLDocumentRSA#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#7)]  
   
-7.  Přidat <xref:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform> do objektu <xref:System.Security.Cryptography.Xml.Reference> objektu.  Transformace umožňuje ověřovatele identické způsobem, který používá podepisující představují XML data.  XML data může být reprezentován různými způsoby, tento krok je důležitá kvůli ověření.  
+7.  Přidat <xref:System.Security.Cryptography.Xml.XmlDsigEnvelopedSignatureTransform> objektu <xref:System.Security.Cryptography.Xml.Reference> objektu.  Transformace umožňuje verifier ke znázornění dat XML identické způsobem, který používá podpisu.  XML data lze reprezentovat různými způsoby, abyste tento krok je důležité k ověření.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#8)]
      [!code-vb[HowToSignXMLDocumentRSA#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#8)]  
   
-8.  Přidat <xref:System.Security.Cryptography.Xml.Reference> do objektu <xref:System.Security.Cryptography.Xml.SignedXml> objektu.  
+8.  Přidat <xref:System.Security.Cryptography.Xml.Reference> objektu <xref:System.Security.Cryptography.Xml.SignedXml> objektu.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#9](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#9)]
      [!code-vb[HowToSignXMLDocumentRSA#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#9)]  
   
-9. Výpočetní podpis voláním <xref:System.Security.Cryptography.Xml.SignedXml.ComputeSignature%2A> metoda.  
+9. Vypočítat podpis voláním <xref:System.Security.Cryptography.Xml.SignedXml.ComputeSignature%2A> metody.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#10)]
      [!code-vb[HowToSignXMLDocumentRSA#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#10)]  
   
-10. Načtení reprezentaci XML podpis (<`Signature`> element) a uložte ho do nového <xref:System.Xml.XmlElement> objektu.  
+10. Načíst reprezentaci XML pro podpis (<`Signature`> element) a uložte ho do nového <xref:System.Xml.XmlElement> objektu.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#11](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#11)]
      [!code-vb[HowToSignXMLDocumentRSA#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#11)]  
   
-11. Připojit elementu, který chcete <xref:System.Xml.XmlDocument> objektu.  
+11. Přidat element do <xref:System.Xml.XmlDocument> objektu.  
   
      [!code-csharp[HowToSignXMLDocumentRSA#12](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#12)]
      [!code-vb[HowToSignXMLDocumentRSA#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#12)]  
@@ -93,7 +93,7 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
      [!code-vb[HowToSignXMLDocumentRSA#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#13)]  
   
 ## <a name="example"></a>Příklad  
- Tento příklad předpokládá, že soubor s názvem `test.xml` existuje ve stejném adresáři jako zkompilovaný program.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít jej v tomto příkladu.  
+ Tento příklad předpokládá, že soubor s názvem `test.xml` existuje ve stejném adresáři jako zkompilovaný program.  Následující kód XML můžete umístit do souboru s názvem `test.xml` a použít ho v tomto příkladu.  
   
 ```xml  
 <root>  
@@ -109,15 +109,16 @@ Můžete použít třídy v <xref:System.Security.Cryptography.Xml> obor názvů
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Pro zkompilování tohoto příkladu, budete muset obsahovat odkaz na `System.Security.dll`.  
+-   Chcete-li kompilaci tohoto příkladu, je potřeba zahrnout odkaz na `System.Security.dll`.  
   
--   Zahrnout následujících oborů názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>, a <xref:System.Security.Cryptography.Xml>.  
+-   Následující obory názvů: <xref:System.Xml>, <xref:System.Security.Cryptography>, a <xref:System.Security.Cryptography.Xml>.  
   
 ## <a name="net-framework-security"></a>Zabezpečení rozhraní .NET Framework  
- Nikdy uložení nebo přeneste privátní klíč pár asymetrických klíčů ve formátu prostého textu.  Další informace o symetrické a asymetrické kryptografické klíče najdete v tématu [generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md).  
+ Nikdy ukládat nebo přenášet privátní klíč pro pár asymetrických klíčů ve formátu prostého textu.  Další informace o symetrický a asymetrické kryptografické klíče najdete v tématu [generování klíčů pro šifrování a dešifrování](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md).  
   
- Nikdy vložení privátního klíče přímo do vašeho zdrojového kódu.  Vložené klíče lze snadno přečíst ze sestavení pomocí [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nebo otevřením sestavení v textovém editoru, například Poznámkový blok.  
+ Nikdy vložení privátního klíče přímo do zdrojového kódu.  Vložené klíče ze sestavení pomocí snadno přečíst [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) nebo otevřením sestavení v textovém editoru, jako je například Poznámkový blok.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Security.Cryptography.Xml>  
- [Postupy: Ověření digitálních podpisů dokumentů XML](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Security.Cryptography.Xml>  
+- [Postupy: Ověření digitálních podpisů dokumentů XML](../../../docs/standard/security/how-to-verify-the-digital-signatures-of-xml-documents.md)

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - binary operator (|) [C#]
 ms.assetid: 82d6bb78-54c8-40bf-b679-531180ddaf70
 ms.openlocfilehash: d95fe29aa7ffab9938e8edc57999445268fe41a8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44035174"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085702"
 ---
 # <a name="-operator-c-reference"></a>| – operátor (Referenční dokumentace jazyka C#)
 Binární `|` pro integrální typy jsou předdefinované operátory a `bool`. Pro integrální typy `|` vypočítá bitový OR jeho operandu. Pro `bool` operandy, `|` vypočítá logický operátor OR operandů; to znamená, výsledek je `false` pouze v případě jsou oba operandy jeho `false`.  

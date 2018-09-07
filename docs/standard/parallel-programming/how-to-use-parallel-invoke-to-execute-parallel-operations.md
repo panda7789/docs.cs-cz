@@ -11,32 +11,33 @@ helpviewer_keywords:
 ms.assetid: 6b3ecd79-dec9-4ce1-abf4-62e5392a59c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4ad4b5e005ddd7bbd598a9da3032574eb2ba7dd1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1d0870d23c5606fbdd8b4a2f78c4d8b9f4ddc93e
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580881"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44064092"
 ---
 # <a name="how-to-use-parallelinvoke-to-execute-parallel-operations"></a>Postupy: Použití Parallel.Invoke k vykonávání paralelních operací
-Tento příklad ukazuje, jak operace paralelními pomocí <xref:System.Threading.Tasks.Parallel.Invoke%2A> v knihovně Task Parallel Library. Na sdílený zdroj dat je třeba udělat tři operace. Protože žádná operace, které upraví zdroj, se mohou být provedeny souběžně přehledné způsobem.  
+Tento příklad ukazuje, jak pomocí paralelní zpracování operace <xref:System.Threading.Tasks.Parallel.Invoke%2A> v knihovně Task Parallel Library. Na sdílený zdroj dat provádějí tři operace. Protože žádná z operací upraví zdroj, mohou být provedeny souběžně v přímočarým způsobem.  
   
 > [!NOTE]
->  Tato dokumentace používá k definování delegátů v TPL lambda výrazy. Pokud nejste obeznámeni s výrazy lambda v jazyce C# nebo Visual Basic, přečtěte si téma [výrazy Lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).  
+>  Tato dokumentace používá k definování delegátů v TPL lambda výrazy. Pokud nejste obeznámeni s lambda výrazy v jazyce C# nebo Visual Basic, přečtěte si téma [výrazy Lambda v PLINQ a TPL](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md).  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[TPL_Parallel#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallelinvoke.cs#06)]
  [!code-vb[TPL_Parallel#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/parallelinvoke.vb#06)]  
   
- Všimněte si, že s <xref:System.Threading.Tasks.Parallel.Invoke%2A>, jednoduše express které akce, kterou chcete spustit souběžně a modul runtime zpracovává všechny podrobnosti, včetně změny automaticky počet jader na hostitelském počítači plánování vláken.  
+ Všimněte si, že se <xref:System.Threading.Tasks.Parallel.Invoke%2A>, jednoduše express akce, které chcete spouštět souběžně a modul runtime zpracovává všechny podrobnosti, včetně automatické škálování počtu jader v hostitelském počítači plánování vláken.  
   
- Tento příklad parallelizes operace, ne data. Alternativní způsob můžete paralelními dotazů LINQ pomocí PLINQ a spouštět dotazy postupně. Alternativně můžete může paralelními data pomocí PLINQ. Další možností je učinit paralelní dotazy a úlohy. I když výsledná režie může snížit výkon na hostitelských počítačích s relativně malý počet procesorů, by měl být nárůst mnohem lepší na počítačích s více procesory.  
+ V tomto příkladu parallelizes operace, ne data. Jako alternativní přístup můžete pomocí PLINQ paralelizovat dotazů LINQ a dotazy spouští sekvenčně. Alternativně může paralelizovat data s využitím PLINQ. Další možností je paralelní dotazy a úlohy. Ačkoli výsledný režii může snížit výkon na hostitelském počítači s relativně malý počet procesorů, ho případném vertikálním mnohem lepší na počítačích s více procesory.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Zkopírujte a vložte celý příklad do projektu Microsoft Visual Studio 2010 a stisknutím klávesy F5.  
+-   Zkopírujte a vložte do projektu sadu Microsoft Visual Studio 2010 celý příklad a stiskněte klávesu F5.  
   
-## <a name="see-also"></a>Viz také  
- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
- [Postupy: Zrušení úlohy a podřízených elementů](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)  
- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a>Viz také:
+
+- [Paralelní programování](../../../docs/standard/parallel-programming/index.md)  
+- [Postupy: Zrušení úlohy a podřízených elementů](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)  
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

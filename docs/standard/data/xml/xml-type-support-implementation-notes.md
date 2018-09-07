@@ -1,51 +1,52 @@
 ---
-title: Poznámky k implementaci XML typu podpory
+title: Poznámky k implementaci podpory typů XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4d2d6f2932e1afeb7369c32a43ca48f55fade2e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 51066ab6fb0fa4749befdd0f94790fa45a7ab5cf
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571407"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44047021"
 ---
-# <a name="xml-type-support-implementation-notes"></a>Poznámky k implementaci XML typu podpory
+# <a name="xml-type-support-implementation-notes"></a>Poznámky k implementaci podpory typů XML
 Toto téma popisuje některé podrobnosti implementace, které chcete mít na paměti.  
   
 ## <a name="list-mappings"></a>Seznam mapování  
- <xref:System.Collections.IList>, <xref:System.Collections.ICollection>, <xref:System.Collections.IEnumerable>, **Zadejte []**, a <xref:System.String> typy se používají k vyjádření schématu XML definition language (XSD) seznamu typů.  
+ <xref:System.Collections.IList>, <xref:System.Collections.ICollection>, <xref:System.Collections.IEnumerable>, **Type []**, a <xref:System.String> typy se používají k vyjádření schématu XML definice jazyk (XSD) seznam typů.  
   
-## <a name="union-mappings"></a>Union mapování  
- Union typy jsou reprezentované pomocí <xref:System.Xml.Schema.XmlAtomicValue> nebo <xref:System.String> typu. Typ zdroje nebo typ cílového proto musí být vždy buď <xref:System.String> nebo <xref:System.Xml.Schema.XmlAtomicValue>.  
+## <a name="union-mappings"></a>Mapování typu UNION  
+ Typy sjednocení jsou reprezentovány pomocí <xref:System.Xml.Schema.XmlAtomicValue> nebo <xref:System.String> typu. Zdrojový typ nebo typ cíle musí proto vždy být buď <xref:System.String> nebo <xref:System.Xml.Schema.XmlAtomicValue>.  
   
- Pokud <xref:System.Xml.Schema.XmlSchemaDatatype> objekt představuje typ seznamu převede objekt vstupní řetězec hodnotu na seznam jeden nebo více objektů. Pokud <xref:System.Xml.Schema.XmlSchemaDatatype> představuje typu union, pak je proveden pokus o vstupní hodnotu analyzovat jako typ člena unie. Pokud se nezdaří pokus o analýzy pak převod je k pokusu o dalšího člena sjednocení a tak dále dokud převod je úspěšné, nebo nejsou žádné jiné typy člena a zkuste to, v takovém případě je vyvolána výjimka.  
+ Pokud <xref:System.Xml.Schema.XmlSchemaDatatype> objekt představuje typ seznamu objektu převede vstupní řetězec hodnotu na seznam jednoho nebo více objektů. Pokud <xref:System.Xml.Schema.XmlSchemaDatatype> představuje typ sjednocení, pak pokusu parsovat vstupní hodnotu jako typ člena sjednocení. Pokud se nezdaří pokus o parsování pak převodu dojde k pokusu o s dalšího člena sjednocení a tak dále až převod je úspěšný, nebo nejsou žádné další členské typy chcete vyzkoušet, v takovém případě je vyvolána výjimka.  
   
-## <a name="differences-between-clr-and-xml-data-types"></a>Rozdíly mezi datové typy XML a CLR  
- Následující část popisuje některé problémy, o kterých může proběhnout mezi typy CLR a datové typy XML a jak jsou zpracovávány.  
+## <a name="differences-between-clr-and-xml-data-types"></a>Rozdíly mezi typy dat XML a CLR  
+ Následující část popisuje určité problémy, které se mohou vyskytnout mezi typy CLR a typy dat XML a jak se zpracovává.  
   
 > [!NOTE]
 >  `xs` Předpona je namapována na http://www.w3.org/2001/XMLSchema a identifikátor URI oboru názvů.  
   
-### <a name="systemtimespan-and-xsduration"></a>System.TimeSpan a xs  
- `xs:duration` Typ je částečně pořadí, v tom, že existují ale ekvivalentní určité hodnoty doby trvání, které se liší. To znamená, že pro `xs:duration` hodnota typu, například 1 měsíc (P1M) je menší než 32 dní (P32D) větší než 27 dní (P27D), odpovídající 28, 29 nebo 30 dnů.  
+### <a name="systemtimespan-and-xsduration"></a>Hodnota System.TimeSpan a značku xs: Duration  
+ `xs:duration` Typ je částečně seřazených v, které existují ale ekvivalentní určité hodnoty typu duration, které se liší. To znamená, že pro `xs:duration` hodnota typu, jako je například 1 měsíc (P1M) je menší než 32 dní (P32D) větší než 27 dnů (P27D) a je ekvivalentní se 28, 29 nebo 30 dní.  
   
- <xref:System.TimeSpan> Třída nepodporuje toto částečné řazení. Místo toho se vybere určitý počet dní pro 1 rok a 1 měsíce; 365 dnů a 30 dní v uvedeném pořadí.  
+ <xref:System.TimeSpan> Třída nepodporuje částečné řazení. Místo toho použije určitý počet dní pro 1 rok a 1 měsíc; 365 dnů a 30 dnů v uvedeném pořadí.  
   
- Další informace o `xs:duration` zadejte najdete v tématu W3C XML schéma část 2: datové typy doporučení v http://www.w3.org/TR/xmlschema-2/.  
+ Další informace o `xs:duration` zadejte naleznete v části 2 W3C XML schématu: datové typy doporučení na http://www.w3.org/TR/xmlschema-2/.  
   
-### <a name="xstime-gregorian-date-types-and-systemdatetime"></a>: Time, typy Datum gregoriánského a System.DateTime  
- Při `xs:time` hodnota je namapována na <xref:System.DateTime> objekt, <xref:System.DateTime.MinValue> pole slouží k inicializaci vlastnosti kalendářních dat u <xref:System.DateTime> objektu (například <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>) na nejmenší možné <xref:System.DateTime> hodnotu.  
+### <a name="xstime-gregorian-date-types-and-systemdatetime"></a>: Time gregoriánské datum typy a System.DateTime  
+ Při `xs:time` hodnota je namapována na <xref:System.DateTime> objektu, <xref:System.DateTime.MinValue> pole slouží k inicializaci vlastnosti datum <xref:System.DateTime> objektu (, jako <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>) na nejmenší <xref:System.DateTime> hodnotu.  
   
- Podobně instancí `xs:gMonth`, `xs:gDay`, `xs:gYear`, `xs:gYearMonth` a `xs:gMonthDay` taky namapovaný na <xref:System.DateTime> objektu. Nepoužívané vlastnosti <xref:System.DateTime> objekt jsou inicializovány na ty z <xref:System.DateTime.MinValue>.  
+ Obdobně instance `xs:gMonth`, `xs:gDay`, `xs:gYear`, `xs:gYearMonth` a `xs:gMonthDay` mapovaly na <xref:System.DateTime> objektu. Nepoužívané vlastnosti na <xref:System.DateTime> objektu jsou inicializovány na ty z <xref:System.DateTime.MinValue>.  
   
 > [!NOTE]
 >  Nelze spoléhat na <xref:System.DateTime.Year%2A?displayProperty=nameWithType> hodnotu, pokud je obsah typu `xs:gMonthDay`. <xref:System.DateTime.Year%2A?displayProperty=nameWithType> Hodnota je vždycky nastavený na 1904 v tomto případě.  
   
 ### <a name="xsanyuri-and-systemuri"></a>xs:anyURI a System.Uri  
- Pokud instance `xs:anyURI` představuje relativní identifikátor URI je namapována na <xref:System.Uri>, <xref:System.Uri> objekt nemá základní identifikátor URI.  
+ Pokud instance `xs:anyURI` představuje relativní identifikátor URI je namapována na <xref:System.Uri>, <xref:System.Uri> objekt nemá žádné základní identifikátor URI.  
   
-## <a name="see-also"></a>Viz také  
- [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)
+## <a name="see-also"></a>Viz také:
+
+- [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)

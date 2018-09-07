@@ -3,11 +3,11 @@ title: Nelze se dotazovat informací o souboru, pokud soubor neexistuje.
 ms.date: 07/20/2015
 ms.assetid: 2bf50d79-2a74-403f-833c-6cabd2c213ce
 ms.openlocfilehash: 698d5ee08d470d846e2d13b3793be62a3699f807
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43561731"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44083398"
 ---
 # <a name="file-information-cannot-be-queried-if-the-file-does-not-exist"></a>Nelze se dotazovat informací o souboru, pokud soubor neexistuje.
 Byl proveden pokus o dotazování <xref:System.IO.FileInfo> objekt informace o souboru, který neexistuje. Obvykle je to z důvodu chyby při zadávání názvu souboru.  

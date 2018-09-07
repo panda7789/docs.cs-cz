@@ -10,21 +10,22 @@ helpviewer_keywords:
 ms.assetid: 6d221724-bb21-4d76-90c3-0ee2a2e69be2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2cfc93e1c8d3d9e878d96de164b0d646e62c0998
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ffb1081c80c31353ad38080ae16ef9f8a74b5481
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33583965"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44046772"
 ---
 # <a name="security-and-on-the-fly-code-generation"></a>Zabezpečení a průběžné vytváření kódu
-Některé knihovny fungují pomocí generování kódu a spustit a provést nějaké operace pro volajícího. Základní problém generování kódu jménem kódu nižší úrovně důvěryhodnosti a spuštěná na vyšší vztah důvěryhodnosti. Problém se zhoršuje, když volající může ovlivnit generování kódu, proto musíte zajistit, že je vygenerováno, pouze kód, které považujete za bezpečná.  
+Některé knihovny fungují tak, že generování kódu a spouštěním provádět některé operace pro volajícího. Základní problém je generování kódu jménem nižší úrovně důvěryhodnosti kódu a běží na vyšší vztah důvěryhodnosti. Problém se zhoršuje, když volající může ovlivnit generování kódu, proto musíte zajistit, že je vygenerována pouze kód, které považujete za bezpečný.  
   
- Je třeba vědět, přesně jaký kód generují za všech okolností. To znamená, že je nutné mít přísné ovládacích prvků na všechny hodnoty, které jste získali od uživatele, mohou to být řetězce uzavřené v uvozovkách, (které by měly být ukončeny, takže nemůžou zahrnovat neočekávané prvky kódu), identifikátory (které by měly být zkontrolovány ověřte, zda jsou platná identifikátorů), nebo cokoliv jiného. Identifikátory může být nebezpečné, protože kompilované sestavení můžete upravit tak, aby jeho identifikátory obsahovat neobvyklé znaky, které bude pravděpodobně ho rozdělit (i když je zřídka chybu zabezpečení).  
+ Je potřeba vědět, přesně jaký kód generují po celou dobu. To znamená, že musí mít přísné ovládacích prvků na všechny hodnoty, které jste získali od uživatele, mohou to být uzavřené v uvozovkách řetězce, (které by měl být uvozen řídicími znaky, takže nemůžou obsahovat prvky neočekávaný kód), identifikátory (které by měly být porovnány k ověření, že jsou platné identifikátory), nebo cokoli jiného. Identifikátory mohou být nebezpečné, protože zkompilovaného sestavení lze upravit tak, aby jeho identifikátory obsahují zvláštní znaky, které budou pravděpodobně ho rozdělit (i když je zřídka ohrožení zabezpečení).  
   
- Doporučujeme, abyste generovali kód pomocí reflexe emitování, což často umožňuje vyhnout se mnoho z těchto problémů.  
+ Doporučuje se, že generování kódu pomocí reflexe generování, které často umožňuje vyhnout se mnohé z těchto problémů.  
   
- Při kompilaci kódu zvažte, zda je nějakým způsobem škodlivý program se může změnit. Je k dispozici krátké době, během které škodlivý kód změnit zdrojový kód na disku, než ho kompilátor přečte nebo před kódu souboru .dll? Pokud ano, je nutné chránit adresář obsahující tyto soubory použít seznam řízení přístupu v systému souborů, podle potřeby.  
+ Při kompilaci kódu, zvažte, zda je nějakým způsobem ho změnit škodlivý program. Existuje krátké období, během které škodlivý kód může změnit zdrojový kód na disku před kompilátor přečte nebo před kódu načte soubor .dll? Pokud ano, je nutné chránit adresáře, který obsahuje tyto soubory použít seznam řízení přístupu v systému souborů, podle potřeby.  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

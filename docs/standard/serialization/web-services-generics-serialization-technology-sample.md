@@ -2,12 +2,12 @@
 title: Ukázka technologie serializace obecných typů služby webového
 ms.date: 03/30/2017
 ms.assetid: cdc15ea4-f678-4729-8ebe-188ae720bef7
-ms.openlocfilehash: 799206b1bd86e98c87441771174441d07074a325
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: b233ed4374231c7e7ff2b6617a63c4e4c94612c2
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37936773"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44060382"
 ---
 # <a name="web-services-generics-serialization-technology-sample"></a>Ukázka technologie serializace obecných typů služby webového
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/GenericsSerialization.zip.exe)  
@@ -63,9 +63,10 @@ ms.locfileid: "37936773"
 ## <a name="remarks"></a>Poznámky  
  Ukázka zobrazí výchozí stránka technologie ASP.NET, která obsahuje odkazy na definice webové služby. Můžete přizpůsobit zobrazení kromě Změna zdrojového kódu webové služby. Další informace najdete v tématu [klienty vytváření XML webové služby](https://msdn.microsoft.com/library/c606f3cb-4111-45b4-ae42-9300420fa16c).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Collections.Generic>  
- <xref:System.Web.Services>  
- <xref:System.Xml.Serialization>  
- [Serializace](../../../docs/standard/serialization/index.md)  
- [Webové služby XML vytvořené pomocí ASP.NET a klienty webové služby XML](https://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Collections.Generic>  
+- <xref:System.Web.Services>  
+- <xref:System.Xml.Serialization>  
+- [Serializace](../../../docs/standard/serialization/index.md)  
+- [Webové služby XML vytvořené pomocí ASP.NET a klienty webové služby XML](https://msdn.microsoft.com/library/1e64af78-d705-4384-b08d-591a45f4379c)

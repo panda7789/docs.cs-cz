@@ -11,11 +11,11 @@ helpviewer_keywords:
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
 ms.openlocfilehash: 543d095c88670024a53fad7c865883ecaab1c6e0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43662025"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44046837"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Zprostředkovatel streamování (WCF Data Services)
 Datové služby může vystavit data binárního rozsáhlého objektu. Tento binární data mohou představovat video a audiostreamů, obrázky, soubory dokumentů nebo jiných typů médií binární. Pokud entita v datovém modelu obsahuje jeden nebo více binárních vlastností, datové služby vrátí tato binární data kódováním base-64 uvnitř položky v odpovědi informačního kanálu. Protože načítání a serializaci velkému objemu binárních dat tímto způsobem může ovlivnit výkon, [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] definuje mechanismus pro načítání binárních dat, které jsou nezávislé na entitu, do které patří. Toho dosahuje oddělením binární data z entity do jednoho nebo více datových proudů.  

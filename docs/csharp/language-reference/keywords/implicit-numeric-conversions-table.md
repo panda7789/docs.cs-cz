@@ -8,11 +8,11 @@ helpviewer_keywords:
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
 ms.openlocfilehash: 4bbc6086dc5fd3838ef9361762c3068ca44efd0e
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43417593"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44047978"
 ---
 # <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)
 V následující tabulce jsou uvedeny předdefinované implicitních číselných převodů. Implicitní převod může dojít v mnoha situacích, včetně příkazů metody vyvolání a přiřazení.  

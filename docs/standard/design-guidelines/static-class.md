@@ -1,5 +1,5 @@
 ---
-title: Statická třída návrhu
+title: Návrh statické třídy
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,21 +12,21 @@ helpviewer_keywords:
 ms.assetid: d67c14d8-c4dd-443f-affb-4ccae677c9b6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 92152600d317c04e3fef26400b11e94a549fde4c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c3a0a51fc6055190f9a0189de2e17d98f88036ea
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571056"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44046980"
 ---
-# <a name="static-class-design"></a>Statická třída návrhu
-Statická třída je definovaný jako třída, která obsahuje jenom statické členy (samozřejmě kromě členů instance zděděno z <xref:System.Object?displayProperty=nameWithType> a které by mohly mít soukromý konstruktor). Některé jazyky poskytují integrovanou podporu pro statické třídy. V C# 2.0 nebo novější Pokud třída je deklarován jako statický, zapečetěné, je abstraktní a žádní členové instance můžete přepsat nebo deklarován.  
+# <a name="static-class-design"></a>Návrh statické třídy
+Statická třída je definována jako třída, která obsahuje pouze statické členy (samozřejmě kromě instance členy zděděné z <xref:System.Object?displayProperty=nameWithType> a pravděpodobně soukromého konstruktoru). Některé jazyky poskytují integrovanou podporu pro statické třídy. V jazyce C# 2.0 nebo novější Pokud třída je deklarován jako statický, je zapečetěná, abstraktní a žádné členy instance můžete přepisu nebo deklarován.  
   
- Statické třídy jsou kompromis mezi čistý objektově orientované návrhu a jednoduchost. Běžně se používají k poskytování zástupce dalších operací (například <xref:System.IO.File?displayProperty=nameWithType>), držitele rozšiřující metody nebo funkce, pro které je úplné objektově orientované obálku bude vyplacena neoprávněně (například <xref:System.Environment?displayProperty=nameWithType>).  
+ Statické třídy jsou kompromis mezi čistě objektově orientovaný návrh a jednoduchost. Se běžně používají k zajištění klávesové zkratky pro jiné operace (například <xref:System.IO.File?displayProperty=nameWithType>), držitele rozšiřující metody nebo funkce, pro kterou negarantované celý objekt objektově orientovanou obálku (například <xref:System.Environment?displayProperty=nameWithType>).  
   
  **✓ DO** statické třídy používejte opatrně.  
   
- Statické třídy má být použit pouze jako podpora třídy pro základní objektově orientované rozhraní Framework.  
+ Statické třídy by měl používat pouze jako pomocných tříd pro objektově orientované core Framework.  
   
  **X DO NOT** statické třídy považovat za různé sady.  
   
@@ -36,8 +36,9 @@ Statická třída je definovaný jako třída, která obsahuje jenom statické �
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

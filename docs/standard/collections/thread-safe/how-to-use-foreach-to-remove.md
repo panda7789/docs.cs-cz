@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: 2096103c-22f7-420d-b631-f102bc33a6dd
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3337b3e6b181fd39e305e45f96b792d8051a81a2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 44b71ed726af585259b015c608e49d8c81e4e22a
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568921"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44097019"
 ---
 # <a name="how-to-use-foreach-to-remove-items-in-a-blockingcollection"></a>Postupy: Použití příkazu ForEach k odebrání položek v kolekci BlockingCollection
-Kromě přijímání položek z <xref:System.Collections.Concurrent.BlockingCollection%601> pomocí <xref:System.Collections.Concurrent.BlockingCollection%601.Take%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> metodu, můžete také použít [foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) ([pro každou](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) v jazyce Visual Basic) odebrat položky, dokud nebude přidání byla dokončena a kolekce je prázdná. Tento postup se nazývá *mutace – výčet* nebo *využívání – výčet* proto, že na rozdíl od typické `foreach` (`For Each`) ve smyčce, výčet upraví zdrojové kolekci odebráním položky.  
+Kromě odebírání položek z <xref:System.Collections.Concurrent.BlockingCollection%601> pomocí <xref:System.Collections.Concurrent.BlockingCollection%601.Take%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> metodu, můžete použít také [foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) ([pro každou](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) v jazyce Visual Basic) k odebrání položek, dokud se přidání je dokončení a kolekce je prázdná. Tento postup se nazývá *mutace výčet* nebo *využívání výčet* proto, že na rozdíl od typické `foreach` (`For Each`) smyčky, výčet upraví tak, že odeberete zdrojové kolekce položky.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak odebrat všechny položky v <xref:System.Collections.Concurrent.BlockingCollection%601> pomocí `foreach` (`For Each`) smyčky.  
@@ -26,12 +26,13 @@ Kromě přijímání položek z <xref:System.Collections.Concurrent.BlockingColl
  [!code-csharp[CDS_BlockingCollection#03](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/example03.cs#03)]
  [!code-vb[CDS_BlockingCollection#03](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/enumeratebc.vb#03)]  
   
- Tento příklad používá `foreach` cykly s <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A?displayProperty=nameWithType> metoda ve vláknu, což způsobí, že každá položka má být odebrán z kolekce, jak je uvedené. <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> omezuje maximální počet položek, které jsou v kolekci kdykoli. Procházení kolekce tímto způsobem blokuje vlákno příjemce, pokud žádné položky jsou k dispozici nebo pokud je kolekce prázdná. V tomto příkladu blokování není důležité, protože vlákno výrobce přidává položky rychleji, než mohou být využívány.  
+ Tento příklad používá `foreach` smyčky s <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A?displayProperty=nameWithType> metoda v konzumním vlákně, což způsobí, že jednotlivé položky na odebrat z kolekce, protože je uveden. <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> Omezí maximální počet položek, které jsou v kolekci v každém okamžiku. Vytváření výčtu kolekce tímto způsobem blokuje vlákno příjemce, pokud žádné položky jsou k dispozici nebo pokud kolekce je prázdná. V tomto příkladu blokuje není důležité, protože vlákno výrobce přidá položky rychleji, než mohou být využívány.  
   
- Není zaručeno, že položky jsou uvedené ve stejném pořadí, ve kterém budou přidány vlákny výrobce.  
+ Není zaručeno, že položky jsou uvedené ve stejném pořadí, ve které se přidají vlákny výrobce.  
   
- Výčet kolekce beze změny ji, použijte `foreach` (`For Each`) bez <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> metoda. Je ale důležité si uvědomit, že tento druh výčtu představuje snímek kolekce na přesné bodu v čase. Pokud jiná vlákna se přidávání nebo odebírání položek současně, zatímco jsou prováděny smyčky, nemusí smyčky reprezentovat skutečný stav kolekce.  
+ K vytvoření výčtu kolekce bez její změny, stačí použít `foreach` (`For Each`) bez <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> metody. Je důležité pochopit, že tento druh výčtu představuje snímek kolekce na konkrétním místě v čase. Pokud jiná vlákna jsou přidávání a odebírání položek současně, zatímco spouštíte smyčky, nemusí představovat smyčky skutečný stav kolekce.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
- [Paralelní programování](../../../../docs/standard/parallel-programming/index.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
+- [Paralelní programování](../../../../docs/standard/parallel-programming/index.md)

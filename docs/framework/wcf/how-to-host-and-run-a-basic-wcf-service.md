@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
 ms.openlocfilehash: e2bf16bd07c7ac9d918a4ae95d7f4aa185d436ec
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43741156"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44065377"
 ---
 # <a name="how-to-host-and-run-a-basic-windows-communication-foundation-service"></a>Postupy: Hostování a spuštění základní služby Windows Communication Foundation Service
 Toto je třetí webinář z šesti úkolů potřebný k vytvoření aplikace Windows Communication Foundation (WCF). Přehled všech šesti úkoly, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  

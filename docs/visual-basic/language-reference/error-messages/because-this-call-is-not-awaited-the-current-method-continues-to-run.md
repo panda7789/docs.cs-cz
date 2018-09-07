@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
-ms.openlocfilehash: a07955363ea5ca1ca8785c241b0de58149f329ba
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: fe820b9d2157c09428903a36427d3ff5e4c0045b
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43745577"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44069612"
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání.
 Protože toto volání neočekává, vykonávání aktuální metody pokračuje před dokončením volání. Jestli nebude lepší uplatňovat operátor 'Await' na výsledek volání.  
@@ -117,7 +117,7 @@ Protože toto volání neočekává, vykonávání aktuální metody pokračuje 
   
      Jednoduché okno obsahující tlačítko a textové pole se zobrazí v **návrhu** zobrazení souboru MainWindow.xaml.  
   
-     Další informace o návrháři XAML, naleznete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio). Informace o tom, jak vytvořit jednoduché uživatelské rozhraní, najdete v článku "postup vytvoření aplikace WPF" a "pro návrh jednoduchého hlavního okna MainWindow WPF" části [návod: přístup k webu pomocí Async a Await](https://msdn.microsoft.com/library/25879a6d-fdee-4a38-bc98-bb8c24d16042).  
+     Další informace o návrháři XAML, naleznete v tématu [vytvoření uživatelského rozhraní pomocí návrháře XAML](/visualstudio/designers/creating-a-ui-by-using-xaml-designer-in-visual-studio). Informace o tom, jak vytvořit jednoduché uživatelské rozhraní, najdete v článku "postup vytvoření aplikace WPF" a "pro návrh jednoduchého hlavního okna MainWindow WPF" části [návod: přístup k webu pomocí Async a Await](../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
 4.  Nahraďte kód v souboru MainWindow.xaml.vb následujícím kódem.  
   
@@ -203,6 +203,7 @@ Protože toto volání neočekává, vykonávání aktuální metody pokračuje 
   
      Kódu na konci se zobrazuje očekávaný výstup.  
   
-## <a name="see-also"></a>Viz také  
- [Operátor Await](../../../visual-basic/language-reference/operators/await-operator.md)  
- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Operátor Await](../../../visual-basic/language-reference/operators/await-operator.md)  
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await](../../../visual-basic/programming-guide/concepts/async/index.md)

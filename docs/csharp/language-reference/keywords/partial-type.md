@@ -8,11 +8,11 @@ helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
 ms.openlocfilehash: 365d00d2c53d3efe1cd4330bdd3ec48740a49c53
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43674028"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44096825"
 ---
 # <a name="partial-type-c-reference"></a>částečný typ (referenční dokumentace jazyka C#)
 

@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Zadejte název alternativní elementu pro datový proud XML'
+title: 'Postupy: určení alternativního názvu elementu pro Stream XML'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,17 +12,17 @@ helpviewer_keywords:
 - classes, overriding
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
-ms.openlocfilehash: d0e48c9c28c8d9447b22fa5ea7a8024442e09295
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8cb6a66f9fc7a67ae99574e783fd889537b9b11a
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33587707"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44067653"
 ---
-# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Postupy: Zadejte název alternativní elementu pro datový proud XML
+# <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Postupy: určení alternativního názvu elementu pro Stream XML
 [Příklad kódu](#cpconoverridingserializationofclasseswithxmlattributeoverridesclassanchor1)  
   
- Pomocí [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx), můžete vygenerovat více než jeden datový proud XML s stejnou sadu tříd. Můžete to provést, protože dvě různé webové služby XML vyžadují stejné základní informace s pouze mírné rozdíly. Představte si například dvě XML webové služby, které zpracovávají objednávky pro knihy a obě vyžadují tedy čísla ISBN. Jedna služba používá značky \<ISBN > při druhá používá značky \<BookID >. Máte třídu s názvem `Book` obsahující pole s názvem `ISBN`. Pokud instance `Book` serializován třídy, standardně použije název člena (ISBN) jako název elementu značky. U první webové služby XML je podle očekávání. Pokud chcete odeslat datový proud XML druhý webové služby XML, je nutné přepsat serializace tak, aby byl název elementu na značku, ale `BookID`.  
+ Použití [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx), můžete vygenerovat více než jeden datový proud XML se stejnou sadou tříd. Můžete to provést, protože dvě různé webové služby XML vyžadují stejné základní informace s pouze mírné rozdíly. Představte si například dvě XML webové služby, které zpracovávají objednávky pro knihy a obě vyžadují tedy čísla ISBN. Jedna služba používá značky \<ISBN > zatímco druhý používá značky \<BookID >. Máte třídu s názvem `Book` obsahující pole s názvem `ISBN`. Pokud instance `Book` serializován třídy, standardně použije název člena (ISBN) jako název elementu značky. U první webové služby XML je podle očekávání. Pokud chcete odeslat datový proud XML druhý webové služby XML, je nutné přepsat serializace tak, aby byl název elementu na značku, ale `BookID`.  
   
 ### <a name="to-create-an-xml-stream-with-an-alternate-element-name"></a>Chcete-li vytvořit datový proud XML s názvem alternativní elementu  
   
@@ -92,12 +92,13 @@ public class SerializeOverride()
 </Book>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Serialization.XmlElementAttribute>  
- <xref:System.Xml.Serialization.XmlAttributes>  
- <xref:System.Xml.Serialization.XmlAttributeOverrides>  
- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
- [Třídy XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)  
- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.Serialization.XmlElementAttribute>  
+- <xref:System.Xml.Serialization.XmlAttributes>  
+- <xref:System.Xml.Serialization.XmlAttributeOverrides>  
+- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)  
+- [XmlSerializer](https://msdn.microsoft.com/library/system.xml.serialization.xmlserializer.aspx)  
+- [Postupy: Serializace objektu](../../../docs/standard/serialization/how-to-serialize-an-object.md)  
+- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)  
+- [Postupy: Deserializace objektu](../../../docs/standard/serialization/how-to-deserialize-an-object.md)

@@ -3,11 +3,11 @@ title: Popis služby
 ms.date: 03/30/2017
 ms.assetid: 7034b5d6-d608-45f3-b57d-ec135f83ff24
 ms.openlocfilehash: 1acd82fddd378a379023c7aa46ead2ce36c5b243
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734327"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44048042"
 ---
 # <a name="service-description"></a>Popis služby
 Popis služby ukázka demonstruje, jak může služba načíst jeho informace popisu služby za běhu. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), se vrací popisné informace o službě operace další služby. Vrácené informace uvádí základní adresy a koncové body pro službu. Tato služba poskytuje informace pomocí <xref:System.ServiceModel.OperationContext>, <xref:System.ServiceModel.ServiceHost>, a <xref:System.ServiceModel.Description.ServiceDescription> třídy.  

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 58f32dcb76246bed1030f3d0a45db2541f381877
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 70e13893cf350a193411f1833e2e3b21c9b64182
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43556497"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44061062"
 ---
 # <a name="extending-the-dom"></a>Rozšíření modelu DOM
 
@@ -253,6 +253,6 @@ Další informace o zpracování událostí uzlu, naleznete v tématu [události
 
 Pokud vám přepsání <xref:System.Xml.XmlDocument.CreateElement%2A> metoda v odvozené třídě, výchozí atributy nejsou přidány při vytváření nové prvky při úpravě dokumentu. Toto je problém, pouze při úpravách. Protože <xref:System.Xml.XmlDocument.CreateElement%2A> metoda je zodpovědný za přidání výchozích atributů, které mají <xref:System.Xml.XmlDocument>, musí kód této funkce v <xref:System.Xml.XmlDocument.CreateElement%2A> metoda. Pokud načítáte <xref:System.Xml.XmlDocument> , který obsahuje výchozí atributy, se budou zpracovávat správně. Další informace o výchozí atributy, naleznete v tématu [vytváření nových atributů pro elementy v modelu DOM](creating-new-attributes-for-elements-in-the-dom.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)  
+- [Model DOM (Document Object Model) dokumentu XML](xml-document-object-model-dom.md)  

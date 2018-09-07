@@ -1,5 +1,5 @@
 ---
-title: Výjimky a výkonu
+title: Výjimky a výkon
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,29 +11,29 @@ helpviewer_keywords:
 ms.assetid: 3ad6aad9-08e6-4232-b336-0e301f2493e6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dfffc2a1c0f607541194a7f51717d5bf8a8537f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d664b7b61394bd9bfe6d0abd7130f9f0191e7a03
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575333"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44083543"
 ---
-# <a name="exceptions-and-performance"></a>Výjimky a výkonu
-Jeden běžný problém související s výjimkami je, že pokud se výjimky použijí pro kód, který pravidelně selže, výkon implementace nepřijatelné. Jde o platný problém. Pokud člen, vyvolá výjimku, může být jeho výkon pořadí podle velikosti pomalejší. Je však možné, abyste dosáhli dobrého výkonu při zachování výhradně výjimka pokyny, které zakáže použití kódy chyb. Dva vzory popsaných v této části zjistíte, jak to udělat.  
+# <a name="exceptions-and-performance"></a>Výjimky a výkon
+Jeden společný problém související s výjimkami je, že pokud se výjimky použijí pro kód, který pravidelně selže, výkon implementace nepřijatelná. Toto je platný žádný problém. Pokud člen vyvolá výjimku, jeho výkon a může být řádů pomalejší. Je však možné dosáhnout dobrý výkon při výhradně týkajícími se výjimka pokyny, které zakáže použití se kódy chyb. Dva způsoby, které jsou popsané v této části navrhujeme způsoby, jak to provést.  
   
  **X DO NOT** z důvodu obavy, že výjimky může ovlivnit výkon negativně používat kódy chyb.  
   
- Pokud chcete zvýšit výkon, je možné použít vzor Tester Doer nebo vzoru zkuste analýzy popsané v následujících dvou částech.  
+ Ke zlepšení výkonu, je možné použít vzor Tester Doer nebo zkuste analýzy vzor, je popsáno v následujících dvou částech.  
   
 ## <a name="tester-doer-pattern"></a>Vzor Tester Doer  
- V některých případech je možné zlepšit výkon člena vyvolávání výjimek porušením člena do dvou. Podívejme se na <xref:System.Collections.Generic.ICollection%601.Add%2A> metodu <xref:System.Collections.Generic.ICollection%601> rozhraní.  
+ Výkon člena vyvolání výjimek v některých případech lze zvýšit tím, že rozkládají člena na dva. Podívejme se <xref:System.Collections.Generic.ICollection%601.Add%2A> metodu <xref:System.Collections.Generic.ICollection%601> rozhraní.  
   
 ```  
 ICollection<int> numbers = ...   
 numbers.Add(1);  
 ```  
   
- Metoda `Add` způsobí výjimku, pokud kolekce je jen pro čtení. Může se jednat o problém s výkonem ve scénářích, kde je očekávána volání metody, které k selhání často. Jedním ze způsobů zmírnit problém je k ověření, zda kolekce lze zapisovat, než se pokusíte přidat hodnotu.  
+ Metoda `Add` vyvolá výjimku, pokud je kolekce určena jen pro čtení. To může být problém s výkonem ve scénářích, kde je očekávána volání metody, které k selhání často. Jedním ze způsobů pro zmírnění těchto potíží je k ověření, zda kolekce je zapisovatelný, než se pokusíte přidat hodnotu.  
   
 ```  
 ICollection<int> numbers = ...   
@@ -43,12 +43,12 @@ if(!numbers.IsReadOnly){
 }  
 ```  
   
- Člen používá k testování podmínku, která v našem příkladu je vlastnost `IsReadOnly`, se označuje jako zkušební zařízení. Člen používá k provádění potenciálně aktivační operace, `Add` metoda v našem příkladu se označuje jako doer.  
+ Člen použily k testování podmínku, která je v našem příkladu vlastnost `IsReadOnly`, se označuje jako tester. Člen použil k potenciálně aktivační operaci `Add` metoda v našem příkladu se označuje jako doer.  
   
  **✓ CONSIDER** Tester Doer vzor pro členy, které může vyvolat výjimky společné scénáře, aby se zabránilo problémům s výkonem souvisejících s výjimkami.  
   
-## <a name="try-parse-pattern"></a>Try analýzy vzor  
- Pro rozhraní API velmi náročné na výkon je třeba použít vzor ještě rychlejší než vzoru Tester Doer popsané v předchozí části. Vzor volání pro přizpůsobení název člena, aby dobře definované testovací případ součástí sémantiku člen. Například <xref:System.DateTime> definuje <xref:System.DateTime.Parse%2A> metoda, která vyvolá výjimku, pokud analýza řetězce nezdaří. Také definuje odpovídající <xref:System.DateTime.TryParse%2A> metoda, která se pokusí analyzovat, ale vrací hodnotu false Pokud analýza neúspěšná a vrátí výsledek úspěšné analýzy pomocí `out` parametr.  
+## <a name="try-parse-pattern"></a>Try-Parse vzor  
+ Pro velmi citlivé na výkon rozhraní API je třeba použít ještě rychlejší vzor než Tester Doer vzor je popsáno v předchozí části. Vzor se volá pro úpravu názvu členu a proveďte jasně definované testovací malá a velká část sémantiku člena. Například <xref:System.DateTime> definuje <xref:System.DateTime.Parse%2A> metodu, která vyvolá výjimku, pokud analýza řetězce selže. Definuje také odpovídající <xref:System.DateTime.TryParse%2A> metodu, která se pokusí analyzovat, ale vrátí false, pokud analýza neúspěšná a vrátí výsledek úspěšné analýzy pomocí `out` parametru.  
   
 ```  
 public struct DateTime {  
@@ -61,7 +61,7 @@ public struct DateTime {
 }  
 ```  
   
- Pokud používáte tento vzor, je důležité určit, zkuste funkce v striktní podmínky. Pokud z nějakého důvodu než dobře definovaný zkuste selže člen, musí člen stále odpovídající výjimku vyvolat.  
+ Při použití tohoto modelu, je potřeba definovat funkci zkuste v striktní podmínky. Pokud člen selže z nějakého důvodu než je dobře definovaný try, musí člen stále vyvolat odpovídající výjimky.  
   
  **✓ CONSIDER** zkuste analýzy vzor pro členy, které může vyvolat výjimky společné scénáře, aby se zabránilo problémům s výkonem souvisejících s výjimkami.  
   
@@ -71,8 +71,9 @@ public struct DateTime {
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)

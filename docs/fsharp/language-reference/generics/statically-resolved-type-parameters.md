@@ -3,11 +3,11 @@ title: Statisticky vyřešené parametry typu (F#)
 description: 'Další informace o použití jazyka F # parametr staticky řešeného typu, který je nahrazen skutečným typem v době kompilace místo v době běhu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 747917fef2746dcbf363ef4b717ace5e47229800
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777861"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44080238"
 ---
 # <a name="statically-resolved-type-parameters"></a>Statisticky vyřešené parametry typu
 

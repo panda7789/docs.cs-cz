@@ -9,11 +9,11 @@ ms.assetid: e2e1f8c4-e7b4-467d-9a66-13c90861221d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 283b3b1aa0d56b50b6f9e67b66de3e0b68ae2331
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44036343"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44075517"
 ---
 # <a name="exception-class-and-properties"></a>Třída a vlastnosti výjimky
 

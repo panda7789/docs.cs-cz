@@ -160,11 +160,11 @@ ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f051af9284ddbf583e5454f7bdc106a061489d3c
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43776207"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44075451"
 ---
 # <a name="winmdexpexe-error-messages"></a>Chybové zprávy nástroje Winmdexp.exe
 Volání procesu sestavení [Winmdexp.exe (Windows Runtime Metadata Export Tool)](../../../docs/framework/tools/winmdexp-exe-windows-runtime-metadata-export-tool.md) při použití  **[!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty** šablony v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], takže Winmdexp.exe chybové zprávy se zobrazují v **Seznam chyb**. Winmdexp.exe pracuje na modul, který je kompilován `/target:winmdobj` možnost. Protože vyžaduje modul zkompilovaný jako vstup, jeho chybové zprávy nezobrazují, pokud kompilace proběhne úspěšně.  

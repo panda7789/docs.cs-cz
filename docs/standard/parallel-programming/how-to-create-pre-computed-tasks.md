@@ -10,26 +10,26 @@ helpviewer_keywords:
 ms.assetid: a73eafa2-1f49-4106-a19e-997186029b58
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d5d688041c6a8947b4a30f067d969cb6cb3bbf0d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 47e4c5d721b37388a4008d100f5212057477c638
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33583900"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44047919"
 ---
 # <a name="how-to-create-pre-computed-tasks"></a>Postupy: Vytváření předvypočítaných úloh
-Tento dokument popisuje postup použití <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metoda načíst výsledky stahování asynchronní operace, které jsou uložené v mezipaměti. <xref:System.Threading.Tasks.Task.FromResult%2A> Metoda vrátí dokončení <xref:System.Threading.Tasks.Task%601> objekt, který obsahuje zadaná hodnota jako jeho <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost. Tato metoda je užitečná při provádění asynchronní operace, která vrátí <xref:System.Threading.Tasks.Task%601> objektu a výsledek této <xref:System.Threading.Tasks.Task%601> objektu již je počítaný.  
+Tento dokument popisuje způsob použití <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> metody k načtení výsledků asynchronní operací stažení, které jsou uloženy v mezipaměti. <xref:System.Threading.Tasks.Task.FromResult%2A> Metoda vrátí dokončení <xref:System.Threading.Tasks.Task%601> objekt, který obsahuje zadaná hodnota jako jeho <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost. Tato metoda je užitečná při provádění asynchronní operace, která vrátí <xref:System.Threading.Tasks.Task%601> objektu a výsledek tohoto objektu <xref:System.Threading.Tasks.Task%601> již je vypočítán.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad stáhne řetězce z webu. Definuje, `DownloadStringAsync` metoda. Tato metoda asynchronně stáhne řetězce z webu. Tento příklad také používá <xref:System.Collections.Concurrent.ConcurrentDictionary%602> objekt pro ukládání do mezipaměti výsledky předchozí operace. Pokud je v této mezipaměti adresu vstupní `DownloadStringAsync` používá <xref:System.Threading.Tasks.Task.FromResult%2A> metoda k vytvoření <xref:System.Threading.Tasks.Task%601> objekt, který obsahuje obsah na této adrese. V opačném `DownloadStringAsync` stáhne soubor z webu a přidává výsledek do mezipaměti.  
+ Následující příklad stáhne řetězce z webu. Definuje `DownloadStringAsync` metody. Tato metoda asynchronně stáhne řetězce z webu. Tento příklad také používá <xref:System.Collections.Concurrent.ConcurrentDictionary%602> objektu pro ukládání do mezipaměti výsledky předchozí operace. Pokud je vstupní adresu je uložena v mezipaměti, `DownloadStringAsync` používá <xref:System.Threading.Tasks.Task.FromResult%2A> metodu za účelem vytvoření <xref:System.Threading.Tasks.Task%601> objekt, který obsahuje obsah na této adrese. V opačném případě `DownloadStringAsync` stáhne soubor z webu a přidává výsledek do mezipaměti.  
   
  [!code-csharp[TPL_CachedDownloads#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_cacheddownloads/cs/cacheddownloads.cs#1)]
  [!code-vb[TPL_CachedDownloads#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_cacheddownloads/vb/cacheddownloads.vb#1)]  
   
- Tento příklad vypočítá čas, které je nutné stáhnout vícenásobných řetězců dvakrát. Druhá sada stažení operace by měla trvat kratší dobu, než první sady, protože výsledky jsou uložené v mezipaměti. <xref:System.Threading.Tasks.Task.FromResult%2A> Metoda umožňuje `DownloadStringAsync` metodu pro vytvoření <xref:System.Threading.Tasks.Task%601> objekty, které mají tyto předvypočítaných výsledky.  
+ Tento příklad zjistí čas, který je potřeba ke stahování vícenásobných řetězců dvakrát. Druhou sadu operací stažení by měla trvat kratší dobu než první sady, protože výsledky jsou uloženy v mezipaměti. <xref:System.Threading.Tasks.Task.FromResult%2A> Metoda umožňuje `DownloadStringAsync` metodu pro vytvoření <xref:System.Threading.Tasks.Task%601> objekty, které obsahují tyto předem vypočítané výsledky.  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Příklad kódu zkopírujte a vložte ji do projektu sady Visual Studio nebo ho vložte v souboru, který je pojmenován `CachedDownloads.cs` (`CachedDownloads.vb` jazyka Visual Basic), a poté spusťte následující příkaz v okně příkazového řádku Visual Studia.  
+ Zkopírujte ukázkový kód a vložte ho do projektu sady Visual Studio nebo vložit do souboru s názvem `CachedDownloads.cs` (`CachedDownloads.vb` v jazyce Visual Basic), a pak spusťte následující příkaz v okně Příkazový řádek sady Visual Studio.  
   
  Visual C#  
   
@@ -41,5 +41,6 @@ Tento dokument popisuje postup použití <xref:System.Threading.Tasks.Task.FromR
   
 ## <a name="robust-programming"></a>Robustní programování  
   
-## <a name="see-also"></a>Viz také  
- [Asynchronní programování založené na úlohách](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)
+## <a name="see-also"></a>Viz také:
+
+- [Asynchronní programování založené na úlohách](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)
