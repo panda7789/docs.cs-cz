@@ -10,25 +10,26 @@ helpviewer_keywords:
 ms.assetid: 36012f42-34e5-4f86-adf4-973f433ed6c6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e5bb6262b32201207853ef702ae38002c2ded252
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1ff8b5b75d1d69d3d8c88810de1311540a239c52
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33585408"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44070573"
 ---
 # <a name="spinwait"></a>SpinWait
-<xref:System.Threading.SpinWait?displayProperty=nameWithType> je typ zjednodušené synchronizace, můžete použít ve scénářích nízké úrovně, aby se zabránilo nákladné kontextu přepínače a přechody jádra, které jsou požadovány pro události kernel. Na počítačích vícejádrovými když prostředek neočekává se, že uchovávat po delší dobu, může být efektivnější pro čekání na vlákno číselníku v uživatelském režimu pro několik set desítek nebo několik cyklů a poté opakujte získat prostředek. Pokud daný prostředek k dispozici po roztočený, byla uložena několik cyklů tisíců. Pokud prostředek je stále není k dispozici, pak jste utratili jenom několik cyklů a stále zadat čekání základě jádra. Tato kombinace roztočený. potom čekání se někdy označuje jako *dvoufázové operace čekání*.  
+<xref:System.Threading.SpinWait?displayProperty=nameWithType> je zjednodušené synchronizace typ, který můžete použít ve scénářích nízké úrovně, aby nákladné kontextu a přechody jádra, které jsou požadovány pro události jádra. Na vícejádrových počítačích když prostředek neočekává se bude vysílat pro dlouhou dobu, může být efektivnější pro čekání vlákno aktivovat v uživatelském režimu pro několik desítek nebo několik stovek cykly a pak zkuste získat prostředek. Pokud prostředek je k dispozici po pokryjte, jste uložili několik tisíc cyklů. Pokud je zdroj stále nejsou k dispozici, pak strávila pouze několik cyklů a můžete také zadat čekání na základě jádra. Tato kombinace pokryjte. potom čekání se někdy označuje jako *dvoufázové operace čekání*.  
   
- <xref:System.Threading.SpinWait> je určen k použití ve spojení s typy rozhraní .NET Framework, které balí události kernel například <xref:System.Threading.ManualResetEvent>. <xref:System.Threading.SpinWait> lze také samostatně pro základní roztočený funkce pouze jedné aplikace.  
+ <xref:System.Threading.SpinWait> je určen pro použití ve spojení s typy rozhraní .NET Framework, které balí události jádra například <xref:System.Threading.ManualResetEvent>. <xref:System.Threading.SpinWait> lze také samostatně pro základní pokryjte funkce v jediné aplikaci.  
   
- <xref:System.Threading.SpinWait> je více než jen smyčky prázdný. Je pečlivě implementovaný zajistit správné roztočený chování pro případ, obecné a sám zahájí kontext přepínače pokud ho otáčí dostatečně dlouho (přibližně délka čas potřebný pro přechod jádra). Například v počítačích jedním jádrem <xref:System.Threading.SpinWait> vypočítá časového intervalu vlákna okamžitě, protože roztočený bloky předávat průběh na všechna vlákna. <xref:System.Threading.SpinWait> také poskytuje i na počítače s více jádry zabránit blokování vláken s vyšší prioritou nebo má systém uvolňování čekání na vlákno. Proto pokud používáte <xref:System.Threading.SpinWait> v dvoufázové operace čekání, doporučujeme vyvolání jádra čekání před <xref:System.Threading.SpinWait> samotné zahájí kontext přepínače. <xref:System.Threading.SpinWait> poskytuje <xref:System.Threading.SpinWait.NextSpinWillYield%2A> vlastnosti, která můžete zkontrolovat před každé volání <xref:System.Threading.SpinWait.SpinOnce%2A>. Pokud vlastnost vrací `true`, inicializace vlastní operace čekání. Příklad, naleznete v části [postupy: použití objektu SpinWait implementovat operaci čekat na dvoufázový](../../../docs/standard/threading/how-to-use-spinwait-to-implement-a-two-phase-wait-operation.md).  
+ <xref:System.Threading.SpinWait> je víc než jenom do prázdné smyčky. Pečlivě implementaci poskytnout správné pokryjte chování pro případ, obecné a samotné zahájí přepnutí kontextu pokud ho přede dostatečně dlouho (přibližně délka čas potřebný pro přechod jádra). Třeba na počítačích jedním jádrem <xref:System.Threading.SpinWait> vrací časovém intervalu vlákna okamžitě, protože pokryjte bloky dál probíhá na všech vláknech. <xref:System.Threading.SpinWait> také poskytuje i na vícejádrových počítačích zabránit vlákno čekání blokování vlákna s vyšší prioritou nebo systému uvolňování paměti. Proto pokud používáte <xref:System.Threading.SpinWait> v dvoufázové operace čekání, doporučujeme vyvolání jádra čekání před <xref:System.Threading.SpinWait> samotný zahájí přepnutí kontextu. <xref:System.Threading.SpinWait> poskytuje <xref:System.Threading.SpinWait.NextSpinWillYield%2A> vlastnost, která můžete zkontrolovat, že před všechna volání <xref:System.Threading.SpinWait.SpinOnce%2A>. Když vlastnost vrací `true`, zahájit operaci čekání. Příklad najdete v tématu [postupy: použití objektu SpinWait pro implementaci operace čekání dvoufázový](../../../docs/standard/threading/how-to-use-spinwait-to-implement-a-two-phase-wait-operation.md).  
   
- Pokud nejsou provádění dvoufázové operace čekání, ale jsou právě otáčet, dokud nebude nějaká podmínka true, můžete povolit <xref:System.Threading.SpinWait> provést jeho kontextu přepne tak, aby se dobrý občanem v prostředí operačního systému Windows. Následující základní příklad ukazuje <xref:System.Threading.SpinWait> v zásobníku se uvolnění zámku. Pokud budete potřebovat zásobníku vysoce výkonné, bezpečné pro přístup z více vláken, zvažte použití <xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType>.  
+ Pokud nejsou provádění dvoufázové operace čekání, ale jsou právě zprovozňování, dokud je splněna některá podmínka, můžete povolit <xref:System.Threading.SpinWait> provádět jeho kontextu přepnout, kde je dobré občanem v prostředí operačního systému Windows. Následující základní příklad ukazuje <xref:System.Threading.SpinWait> v zásobníku bez zámku. Pokud budete potřebovat zásobníku vysoce výkonné, bezpečná pro vlákno, zvažte použití <xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType>.  
   
  [!code-csharp[CDS_SpinWait#05](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_spinwait/cs/spinwait.cs#05)]
  [!code-vb[CDS_SpinWait#05](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_spinwait/vb/cds_spinwait1.vb#05)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.Thread.SpinWait%2A>  
- [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Threading.Thread.SpinWait%2A>  
+- [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

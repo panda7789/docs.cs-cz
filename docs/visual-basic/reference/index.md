@@ -5,12 +5,12 @@ helpviewer_keywords:
 - language reference
 - Visual Basic code, language reference
 ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
-ms.openlocfilehash: 773aca8cbbd78f5480e254ff559192955beb18d9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 615421afe522770bfcff38ffdb23917d7925150d
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43532471"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44083905"
 ---
 # <a name="reference-visual-basic"></a>Odkaz (Visual Basic)
 Tato část obsahuje odkazy na referenční informace o různých aspektech programování v jazyce Visual Basic.  
@@ -42,5 +42,5 @@ Tato část obsahuje odkazy na referenční informace o různých aspektech prog
  [Nástroje XML v sadě Visual Studio](/visualstudio/xml-tools/xml-tools-in-visual-studio)  
  Obsahuje odkazy na témata o různých nástrojů XML k dispozici v sadě Visual Studio.  
   
- [Automatizace a referenční informace k rozšiřitelnosti](https://msdn.microsoft.com/library/93112562-db21-4188-9383-ed19ad79bddf)  
+ [Automatizace a referenční informace k rozšiřitelnosti](/visualstudio/extensibility/extensibility-in-visual-studio)  
  Obsahuje odkazy na témata týkající se automatizace a rozšiřitelnosti v sadě Visual Studio pro sdílené součásti i specifické pro jazyk součásti.

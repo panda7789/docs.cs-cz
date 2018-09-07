@@ -1,5 +1,5 @@
 ---
-title: Struktura návrhu
+title: Návrh struktury
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -13,41 +13,42 @@ helpviewer_keywords:
 ms.assetid: 1f48b2d8-608c-4be6-9ba4-d8f203ed9f9f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2621aa96cf89b453d5faec3357d0890ca36251d4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3879dc3f0270a56132b44882a74c50d05914ff89
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572733"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44067448"
 ---
-# <a name="struct-design"></a>Struktura návrhu
-Typ hodnoty pro obecné účely se nejčastěji označuje jako struktury, jeho C# – klíčové slovo. Tato část obsahuje pokyny pro návrh obecná struktura.  
+# <a name="struct-design"></a>Návrh struktury
+Typ hodnoty pro obecné účely se nejčastěji označuje jako struktury, jeho klíčové slovo C#. Tato část obsahuje pokyny pro návrh obecné struktury.  
   
  **X DO NOT** zadejte výchozí konstruktor pro struktury.  
   
- Následující obecné této zásady umožňuje pole struktur, který se má vytvořit bez nutnosti spuštění konstruktoru na každou položku pole. Všimněte si, že C# neumožňuje struktury tak, aby měl výchozí konstruktory.  
+ Za toto pravidlo umožňuje pole struktur, který se má vytvořit bez nutnosti spuštění konstruktoru pro každou položku pole. Všimněte si, že C# nepovoluje struktury mají výchozí konstruktory.  
   
  **X DO NOT** definování typů měnitelný hodnotu.  
   
- Typy hodnot měnitelný mít několik problémů. Například v případě, že metoda getter vlastnosti vrátí typ hodnoty, volající obdrží kopii. Protože kopie je vytvořena implicitně, nemusíte být vědomi, mutace kopií a není původní hodnota vývojáři. Některé jazyky (dynamické jazyky konkrétně) také mít problémy pomocí typy měnitelný hodnot, protože dokonce i místní proměnné, když vyhodnoceny odkazy, způsobit kopie má být provedeno.  
+ Proměnlivé hodnoty typy mají několik problémů. Například typ hodnoty návratu metoda getter vlastnosti volající obdrží kopii. Vzhledem k tomu, že kopie je vytvořena implicitně, vývojáři se nemusíte být vědomi, mutace kopii a na původní hodnotu. Některé jazyky (dynamické jazyky, zejména) také mít problémy pomocí proměnlivé hodnoty typů, protože i lokální proměnné, při dereferenci, způsobit, že kopie má být provedeno.  
   
  **✓ DO** jistotu, že stav, kde všechny instance dat je nastavený na nulu, false, nebo hodnotu null (podle potřeby) je platný.  
   
- Při vytváření pole struktury zabrání náhodnému vytváření instancí neplatný.  
+ To zabraňuje nechtěnému vytváření instancí neplatný při vytváření pole struktury.  
   
  **✓ DO** implementovat <xref:System.IEquatable%601> u typů hodnot.  
   
- <xref:System.Object.Equals%2A?displayProperty=nameWithType> Metoda u typů hodnot způsobí, že zabalení a jeho výchozí implementace není velmi efektivní, protože používá reflexe. <xref:System.IEquatable%601.Equals%2A> může mít mnohem lepší výkon a může být implementováno tak, aby nezpůsobí zabalení.  
+ <xref:System.Object.Equals%2A?displayProperty=nameWithType> Metoda u typů hodnot způsobí, že zabalení a jeho výchozí implementace není velmi efektivní, protože používá reflexi. <xref:System.IEquatable%601.Equals%2A> může mít mnohem lepší výkon a může být implementováno tak, aby nezpůsobí zabalení.  
   
- **X DO NOT** explicitně rozšířit <xref:System.ValueType>. Většina jazyků zabránit ve skutečnosti to.  
+ **X DO NOT** explicitně rozšířit <xref:System.ValueType>. Ve skutečnosti většina jazyků to neumožňuje.  
   
- Obecně platí struktury může být velmi užitečná, ale musí být použit pouze pro malé, jeden, neměnné hodnoty, které nebudou často do pole.  
+ Obecně platí struktury může být velmi užitečné, ale by měla sloužit pouze pro malé, jednu, neměnné hodnoty, které se nesmí použít boxing. často.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Volba mezi třídou a strukturou](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Volba mezi třídou a strukturou](../../../docs/standard/design-guidelines/choosing-between-class-and-struct.md)

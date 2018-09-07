@@ -5,12 +5,12 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <add> element for <schemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
-ms.openlocfilehash: 3d3c72fd64042032d44c49ebde867d111ce03b94
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 48deb8684e53f583e3ff4a5407fadd112d45f749
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43806183"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44082223"
 ---
 # <a name="ltaddgt-element-for-ltschemaimporterextensionsgt"></a>&lt;Přidat&gt; – Element pro &lt;schemaImporterExtensions&gt;
 Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
@@ -60,7 +60,8 @@ Přidá typy používané <xref:System.Xml.Serialization.XmlSchemaImporter> pro 
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Serialization.XmlSchemaImporter>  
- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)  
- [\<schemaImporterExtensions > – Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.Serialization.XmlSchemaImporter>  
+- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)  
+- [\<schemaImporterExtensions > – Element](../../../docs/standard/serialization/schemaimporterextensions-element.md)

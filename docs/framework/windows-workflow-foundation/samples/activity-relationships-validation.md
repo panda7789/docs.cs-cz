@@ -3,11 +3,11 @@ title: Ověřování relací mezi aktivitami
 ms.date: 03/30/2017
 ms.assetid: 6f11a34e-ed67-4bce-88ce-7e96bbb4d052
 ms.openlocfilehash: 50f08118fb5ad4d9b8fe809e7ab3cc5d57f28149
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43784809"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098933"
 ---
 # <a name="activity-relationships-validation"></a>Ověřování relací mezi aktivitami
 Tento příklad se skládá ze tří činností `CreateCity`, `CreateState`, a `CreateCountry`. `CreateCity` musí být uvnitř `CreateState` aktivitu, a `CreateState` musí být uvnitř `CreateCountry` aktivity. Pro účely této ukázce logiku ověřování je v kódu `CreateState` aktivitu a v XAML pro `CreateCity` aktivity. Obě omezení mají stejné chování.  

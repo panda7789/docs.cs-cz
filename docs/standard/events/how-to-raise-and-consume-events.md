@@ -13,36 +13,37 @@ helpviewer_keywords:
 ms.assetid: 42afade7-3a02-4f2e-868b-95845f302f8f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: efeed61c5748a0a6ac731cdcfce1a110982b2941
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aa933e0fc589d0dbfec741e9db7fb11222cfdf38
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572720"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44064995"
 ---
 # <a name="how-to-raise-and-consume-events"></a>Postupy: Vyvolávání a zpracovávání událostí
-V příkladech v tomto tématu ukazují, jak pracovat s událostmi. Patří mezi ně příklady <xref:System.EventHandler> delegovat, <xref:System.EventHandler%601> delegáta a vlastní delegáta, ke znázornění událostí s i bez data.  
+Příklady v tomto tématu ukazují, jak pracovat s událostmi. Obsahují příklady <xref:System.EventHandler> delegovat, <xref:System.EventHandler%601> delegáta a vlastního delegáta pro ilustraci událostí, s daty a bez nich.  
   
- Příklady použití konceptů popsaných v [události](../../../docs/standard/events/index.md) článku.  
+ Příklady používají pojmy, které jsou popsané v [události](../../../docs/standard/events/index.md) článku.  
   
 ## <a name="example"></a>Příklad  
- V prvním příkladu ukazuje, jak vyvolávání a zpracovávání událost, která nemá data. Obsahuje třídy s názvem `Counter` s událost s názvem `ThresholdReached`. Tato událost se vyvolá, když hodnota čítače se rovná nebo překračuje prahovou hodnotu. <xref:System.EventHandler> Delegát je přidruženo k události, protože je k dispozici žádná data.  
+ První příklad ukazuje, jak vyvolat a zpracovat událost, která neobsahuje data. Obsahuje třídu s názvem `Counter` , která má událost s názvem `ThresholdReached`. Tato událost je aktivována, když hodnota čítače rovná nebo překračuje prahovou hodnotu. <xref:System.EventHandler> Delegát je přidruženo k události, protože nejsou k dispozici žádná data události.  
   
  [!code-csharp[EventsOverview#5](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programnodata.cs#5)]
  [!code-vb[EventsOverview#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1nodata.vb#5)]  
   
 ## <a name="example"></a>Příklad  
- Další příklad ukazuje, jak vyvolávání a zpracovávání událost, který poskytuje data. <xref:System.EventHandler%601> Delegát je přidruženo k události, a je k dispozici instance objektu dat vlastní události.  
+ Následující příklad ukazuje, jak vyvolat a zpracovat událost, která poskytuje data. <xref:System.EventHandler%601> Delegát je přidruženo k události, a je k dispozici instance datového objektu vlastní události.  
   
  [!code-cpp[EventsOverview#6](../../../samples/snippets/cpp/VS_Snippets_CLR/eventsoverview/cpp/programwithdata.cpp#6)]
  [!code-csharp[EventsOverview#6](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programwithdata.cs#6)]
  [!code-vb[EventsOverview#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1withdata.vb#6)]  
   
 ## <a name="example"></a>Příklad  
- Další příklad ukazuje, jak delegáta pro událost deklarovat. Delegát jmenuje `ThresholdReachedEventHandler`. Toto je právě obrázek. Obvykle není nutné deklarovat delegát pro událost, protože můžete použít buď <xref:System.EventHandler> nebo <xref:System.EventHandler%601> delegovat. Delegát pouze ve výjimečných případech, například zpřístupnění třídě starší verze kódu, které nemůže používat obecné typy by měly deklarovat.  
+ Následující příklad ukazuje, jak deklarovat delegáta pro událost. Delegát se nazývá `ThresholdReachedEventHandler`. Jde jen o ukázku. Obvykle není nutné deklarovat delegáta pro událost, protože můžete použít buď <xref:System.EventHandler> nebo <xref:System.EventHandler%601> delegovat. By měla deklarovat delegáta pouze ve výjimečných případech, jako je například zpřístupnění vaší třídy staršímu kódu, který nemůže používat obecné typy.  
   
  [!code-csharp[EventsOverview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programwithdelegate.cs#7)]
  [!code-vb[EventsOverview#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1withdelegate.vb#7)]  
   
-## <a name="see-also"></a>Viz také  
- [Události](../../../docs/standard/events/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Události](../../../docs/standard/events/index.md)

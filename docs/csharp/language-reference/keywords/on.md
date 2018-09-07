@@ -8,11 +8,11 @@ helpviewer_keywords:
 - on keyword [C#]
 ms.assetid: 06abc536-e07c-4e34-88c1-425208bdcb21
 ms.openlocfilehash: 3d1f09bffa197090df7dfce09ab40b164fceb774
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43555721"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44070300"
 ---
 # <a name="on-c-reference"></a>on (Referenční dokumentace jazyka C#)
 

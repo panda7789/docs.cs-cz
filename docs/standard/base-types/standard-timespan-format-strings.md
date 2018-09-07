@@ -20,11 +20,11 @@ ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 52da538ba9cf348062905b66a87d13db82a214a0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43886094"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085261"
 ---
 # <a name="standard-timespan-format-strings"></a>Standardní řetězce formátu TimeSpan
 <a name="Top"></a> Standardní <xref:System.TimeSpan> formátovací řetězec se používá jeden specifikátor formátu definovat textové vyjádření <xref:System.TimeSpan> hodnotu, která je výsledkem operace formátování. Formátovací řetězec, který obsahuje více než jeden znak, včetně prázdných znaků, je interpretován jako vlastní <xref:System.TimeSpan> řetězec formátu. Další informace najdete v tématu [Custom TimeSpan Format Strings](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  

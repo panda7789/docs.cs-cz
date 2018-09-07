@@ -3,11 +3,11 @@ title: Autorizace a oprávnění na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
 ms.openlocfilehash: bdf5112e3f0e2cada4885b0b66adf248f0ffe808
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44037773"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098560"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>Autorizace a oprávnění na SQL serveru
 Při vytváření databázových objektů, je nutné explicitně udělit oprávnění, aby byly přístupné uživatelům. Všechny zabezpečitelné objekty má oprávnění, která lze udělit pomocí příkazů oprávnění objektu zabezpečení.  

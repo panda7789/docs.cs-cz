@@ -14,11 +14,11 @@ ms.assetid: ed324eff-4aff-4a76-b6c0-04e6c0d8f5a9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 63af71f92af9c2f3a5986dcb73f44d0e53c00f58
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43871904"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44079458"
 ---
 # <a name="how-to-display-dates-in-non-gregorian-calendars"></a>Postupy: Zobrazování dat v jiném než gregoriánském kalendáři
 <xref:System.DateTime> a <xref:System.DateTimeOffset> typy používají jako výchozí kalendář gregoriánský kalendář. To znamená, že volání hodnoty data a času `ToString` metoda zobrazí řetězcové vyjádření data a času v gregoriánském kalendáři, a to i v případě, že datum a čas byl vytvořen pomocí jiného kalendáře. To je znázorněno v následujícím příkladu, který používá dva různé způsoby vytváření hodnoty data a času s perský kalendář, ale stále zobrazuje tyto hodnoty data a času v gregoriánském kalendáři, při volání <xref:System.DateTime.ToString%2A> metody. Tento příklad zobrazuje dvě techniky běžně používaný, ale nesprávné pro zobrazení data v konkrétním kalendáři.  

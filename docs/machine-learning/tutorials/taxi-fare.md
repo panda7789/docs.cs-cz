@@ -7,11 +7,11 @@ ms.date: 07/02/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: 133b7ad17a98e4eea510f1704555b690b98e9091
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801057"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44079799"
 ---
 # <a name="tutorial-use-mlnet-to-predict-new-york-taxi-fares-regression"></a>Kurz: Použití ML.NET předpovědět tarify taxislužby města New York (regrese)
 

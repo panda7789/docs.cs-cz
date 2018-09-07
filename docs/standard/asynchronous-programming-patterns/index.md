@@ -8,26 +8,26 @@ helpviewer_keywords:
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 809385bda48c6fb8dae125fe348228aaee375a6c
-ms.sourcegitcommit: 9e18e4a18284ae9e54c515e30d019c0bbff9cd37
+ms.openlocfilehash: e399a512d2bee636aec35e008c0632ce9c5fa781
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/28/2018
-ms.locfileid: "37071302"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44068401"
 ---
 # <a name="asynchronous-programming-patterns"></a>Vzory asynchronního programování
 
-Rozhraní .NET Framework poskytuje tři vzory pro provádění asynchronní operace:  
+Rozhraní .NET Framework poskytuje tři vzory pro provádění asynchronních operací:  
   
-- **Asynchronní programování modelu (APM)** vzoru (také nazývané <xref:System.IAsyncResult> vzor), které vyžadují asynchronních operací `Begin` a `End` metody (například `BeginWrite` a `EndWrite` pro asynchronní operace zápisu). Tento vzor již není doporučeno pro nový vývoj. Další informace najdete v tématu [asynchronní programování modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md).  
+- **Asynchronní Programovací Model (APM)** vzor (také nazývané <xref:System.IAsyncResult> vzor), kde asynchronní operace vyžadují `Begin` a `End` metody (například `BeginWrite` a `EndWrite` pro asynchronní operace zápisu). Tento model už se nedoporučuje pro vývoj nových projektů. Další informace najdete v tématu [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md).  
   
-- **Na základě událostí asynchronní vzor (EAP)**, což vyžaduje, aby metoda, která má `Async` přípona a také vyžaduje jeden nebo více událostí, typy delegáta obslužných rutin událostí, a `EventArg`-odvozených typů. EAP byla zavedena v rozhraní .NET Framework 2.0. Doporučuje se už pro nový vývoj. Další informace najdete v tématu [na základě událostí asynchronní vzor (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  
+- **Událost asynchronní vzor založený (EAP)**, což vyžaduje metodu, která má `Async` příponu a také vyžaduje jeden nebo více událostí, typy delegátu obslužné rutiny událostí, a `EventArg`-odvozené typy. EAP byla zavedena v rozhraní .NET Framework 2.0. Doporučuje se už pro vývoj nových projektů. Další informace najdete v tématu [události asynchronní vzor založený (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  
   
-- **Založený na úlohách asynchronní vzor (TAP)**, který používá jedné metody představují zahájení a ukončení asynchronní operace. Klepněte na byla zavedena v rozhraní .NET Framework 4 a je doporučeným přístupem k asynchronní programování v rozhraní .NET Framework. [Asynchronní](~/docs/csharp/language-reference/keywords/async.md) a [await](~/docs/csharp/language-reference/keywords/await.md) klíčová slova v jazyce C# a [asynchronní](~/docs/visual-basic/language-reference/modifiers/async.md) a [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) jazyková podpora pro klepněte na přidat operátory v jazyce Visual Basic. Další informace najdete v tématu [založený na úlohách asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).  
+- **Založený na úlohách asynchronního vzoru (TAP)**, který používá jedinou metodu k reprezentaci zahájení a dokončení asynchronní operace. Klepněte na byla zavedena v rozhraní .NET Framework 4 a je doporučený postup pro asynchronní programování v rozhraní .NET Framework. [Asynchronní](~/docs/csharp/language-reference/keywords/async.md) a [await](~/docs/csharp/language-reference/keywords/await.md) klíčová slova v jazyce C# a [asynchronní](~/docs/visual-basic/language-reference/modifiers/async.md) a [Await](~/docs/visual-basic/language-reference/operators/await-operator.md) operátory v jazyce Visual Basic přidejte jazyková podpora v nástroji TAP. Další informace najdete v tématu [úkolově orientovanou asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md).  
   
 ## <a name="comparing-patterns"></a>Porovnávání vzorů  
 
-Rychlé porovnání jak jsou tři vzory modelu asynchronních operací, vezměte v úvahu `Read` metoda, která načte zadaného množství dat do zadané začínající na zadaný posun vyrovnávací paměti:  
+Rychlé porovnání jak tři vzory modelu asynchronních operací, vezměte v úvahu `Read` metodu, která načte zadaného množství dat do zadané vyrovnávací paměti, počínaje od určeného posunutí:  
   
 ```csharp  
 public class MyClass  
@@ -36,7 +36,7 @@ public class MyClass
 }  
 ```  
   
-APM protějšku této metody by vystavit `BeginRead` a `EndRead` metody:  
+APM protějšek této metody by vystavit `BeginRead` a `EndRead` metody:  
   
 ```csharp  
 public class MyClass  
@@ -48,7 +48,7 @@ public class MyClass
 }  
 ```  
   
-EAP protějšku by vystavit následující sadu typy a členy:  
+Následující sada typů a členů by vystavit protějšek protokolu EAP:  
   
 ```csharp  
 public class MyClass  
@@ -58,7 +58,7 @@ public class MyClass
 }  
 ```  
   
-Klepněte na protějšku by vystavit následující jedním `ReadAsync` metoda:  
+Protějšek TAP by vystavovat následující jedním `ReadAsync` metody:  
   
 ```csharp  
 public class MyClass  
@@ -67,18 +67,18 @@ public class MyClass
 }  
 ```  
   
-Komplexní diskuzi o klepněte na APM a EAP najdete v části odkazů uvedených v následující části.  
+Komplexní informace o protokolu EAP, klepněte na a APM najdete v článku odkazů uvedených v následující části.  
   
 ## <a name="related-topics"></a>Související témata
 
 | Název | Popis |
 | ----- | ----------- |
-| [Model asynchronního programování (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) | Popisuje starší model, který používá <xref:System.IAsyncResult> rozhraní zajistit asynchronní chování. Tento model již není doporučeno pro nový vývoj. |
-| [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) | Popisuje starší verze modelu pro zajištění asynchronní chování na základě událostí. Tento model již není doporučeno pro nový vývoj. |
-| [Asynchronní vzor založený na úlohách (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) | Popisuje nové asynchronní vzor na základě <xref:System.Threading.Tasks> oboru názvů. Tento model je doporučeným přístupem k asynchronní programování v rozhraní .NET Framework 4 a novější verze. |
+| [Model asynchronního programování (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) | Popisuje starší verzi modelu, který používá <xref:System.IAsyncResult> rozhraní k poskytování asynchronní chování. Tento model už se nedoporučuje pro vývoj nových projektů. |
+| [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md) | Popisuje starší model pro poskytování asynchronní chování založený na událostech. Tento model už se nedoporučuje pro vývoj nových projektů. |
+| [Asynchronní vzor založený na úlohách (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) | Popisuje nový asynchronní vzor založený na <xref:System.Threading.Tasks> oboru názvů. Tento model je doporučený postup pro asynchronní programování v rozhraní .NET Framework 4 a novější verze. |
 
 ## <a name="see-also"></a>Viz také:
 
-[Asynchronní programování v jazyce C#](~/docs/csharp/async.md)   
-[Asynchronní programování v F #](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)   
-[Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)
+- [Asynchronní programování v jazyce C#](~/docs/csharp/async.md)   
+- [Asynchronní programování v jazyce F #](~/docs/fsharp/tutorials/asynchronous-and-concurrent-programming/async.md)   
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](~/docs/visual-basic/programming-guide/concepts/async/index.md)

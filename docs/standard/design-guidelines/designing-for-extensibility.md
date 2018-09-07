@@ -10,17 +10,17 @@ helpviewer_keywords:
 ms.assetid: 1cdb8740-871a-456c-9bd9-db96ca8d79b3
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 68419fe293dd25936aa3c1e3def10bbe8852e175
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9c1690d0cdf1f57eaf0a794d6e71babfa4fa6425
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571381"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44080979"
 ---
 # <a name="designing-for-extensibility"></a>Navrhování pro rozšiřitelnost
-Jeden důležitým aspektem navrhování rozhraní je Ujistěte se, že pečlivě zvážit rozšiřitelnost rozhraní Framework. To vyžaduje, abyste rozuměli tomu náklady a výhod spojených s různé mechanismy pro rozšíření. Tato kapitola vám pomůže zjistit, které mechanismů rozšíření – vytváření podtříd, události, virtuální členové, zpětná volání a tak dále – nejlépe splňují požadavky vašeho prostředí.  
+Jeden důležitý aspekt návrhu rozhraní, je zajistit, že pečlivě zvážit rozšíření rozhraní framework. Tento postup vyžaduje, že rozumíte nákladů a přínosů přidružené různé mechanismy rozšiřitelnosti. Tato kapitola vám pomůže rozhodnout, které mechanismus rozšíření – vytváření podtříd, události, virtuální členy, zpětná volání a tak dále – můžete nejlíp vyhovovat požadavkům vaší architektury.  
   
- Existuje mnoho způsobů tak, aby měl rozšiřitelnost rozhraní. Budou v rozsahu od méně efektivní, ale levněji k velmi výkonné, ale nákladná. Každý požadavek dané rozšíření měli byste vybrat alespoň nákladná mechanismus rozšiřitelnosti, který splňuje požadavky. Uvědomte si, že je obvykle možné později přidat další rozšíření, ale nikdy vám ji rychle bez zavedení nejnovější změny.  
+ Existuje mnoho způsobů, jak povolit rozšíření v rozhraní. Jsou v rozsahu od méně efektivní, ale levnějších do velmi výkonné, ale drahé. Pro všechny požadavky dané rozšíření měli byste vybrat minimální nákladnou mechanismus rozšiřitelnosti, který splňuje požadavky. Mějte na paměti, že je obvykle možné případná další rozšíření později, ale nikdy udělat to okamžitě bez vnášení nejnovější změny.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Nezapečetěné třídy](../../../docs/standard/design-guidelines/unsealed-classes.md)  
@@ -32,7 +32,8 @@ Jeden důležitým aspektem navrhování rozhraní je Ujistěte se, že pečliv�
  [Zapečetění](../../../docs/standard/design-guidelines/sealing.md)  
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

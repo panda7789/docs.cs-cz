@@ -8,27 +8,28 @@ helpviewer_keywords:
 ms.assetid: 8c71acf2-2c18-4f4d-8cdb-0728639265fd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6f829fc0b399f5cfd10d98f6b7439de757674f11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8be9b4eef30333fbbdc26915635d17157176d6fc
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33586370"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44079185"
 ---
 # <a name="reader-writer-locks"></a>Zámky modulů pro čtení a zápis
-<xref:System.Threading.ReaderWriterLockSlim> Třída umožňuje více vláken současně číst prostředek, ale vyžaduje vlákna počkat, aby bylo možné zapsat do prostředku výhradní zámek.  
+<xref:System.Threading.ReaderWriterLockSlim> Třída umožňuje více vláken souběžně číst prostředek, ale vyžaduje vlákno čekat výhradní zámek, chcete-li k prostředku.  
   
- Můžete použít <xref:System.Threading.ReaderWriterLockSlim> ve vaší aplikaci zajistit spolupráci synchronizace mezi vláken, která přístup ke sdíleným prostředkům. Zámky jsou přesměrováni <xref:System.Threading.ReaderWriterLockSlim> sám sebe.  
+ Můžete použít <xref:System.Threading.ReaderWriterLockSlim> ve vaší aplikaci zajistit kooperativní synchronizace mezi vlákny, které přistupují k sdíleného prostředku. Uzamčení se přesunete <xref:System.Threading.ReaderWriterLockSlim> samotný.  
   
- Jako s mechanismus synchronizace přístup z více vláken, je nutné zajistit, že nejsou žádná vlákna nepoužívat zamykání, které poskytuje <xref:System.Threading.ReaderWriterLockSlim>. Jeden způsob, jak zajistit toto je návrh třídy, který zapouzdřuje sdílený prostředek. Tato třída by poskytují členy, přístup k privátním sdílený prostředek a které používají soukromé <xref:System.Threading.ReaderWriterLockSlim> pro synchronizaci. Příklad, podívejte se na příklad kódu pro <xref:System.Threading.ReaderWriterLockSlim> třídy. <xref:System.Threading.ReaderWriterLockSlim> je dostatečně efektivní, který se má použít k synchronizaci jednotlivých objektů.  
+ Jak se každý použitý mechanizmus synchronizace vlákna, musíte zajistit, že žádná vlákna obejít blokování, která je poskytována <xref:System.Threading.ReaderWriterLockSlim>. Jeden způsob, jak to zajistit je návrh třídu, která zapouzdřuje sdíleného prostředku. Tato třída by poskytovaly členy, které využívají privátní sdíleného prostředku a používají privátní <xref:System.Threading.ReaderWriterLockSlim> pro synchronizaci. Příklad, podívejte se na příklad kódu pro <xref:System.Threading.ReaderWriterLockSlim> třídy. <xref:System.Threading.ReaderWriterLockSlim> je dostatečně účinný, který se má použít k synchronizaci jednotlivých objektů.  
   
- Struktury aplikace minimalizovat dobu trvání pro čtení a zápisu operace. Operace zápisu dlouho ovlivnit propustnost přímo, protože je určena výhradně uzamčení pro zápis. Dlouho čtení operations bloku čekání zapisovače a pokud alespoň jedno vlákno čeká přístup pro zápis, vláken, které požadují přístup pro čtení se zablokuje také.  
+ Struktury vaší aplikaci minimalizovat dobu trvání pro čtení a operace zápisu. Operace zápisu dlouhé ovlivnit propustnost přímo, protože je výhradní zámek pro zápis. Dlouho přečíst operace blokovat čekání zapisovače a pokud alespoň jedno vlákno čeká přístup pro zápis, vlákna, které vyžadují přístup pro čtení se zablokuje, stejně.  
   
 > [!NOTE]
->  [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Má dva zámků čtení a zápis, <xref:System.Threading.ReaderWriterLockSlim> a <xref:System.Threading.ReaderWriterLock>. <xref:System.Threading.ReaderWriterLockSlim> doporučuje se pro všechny nové vývoj. <xref:System.Threading.ReaderWriterLockSlim> je podobná <xref:System.Threading.ReaderWriterLock>, ale zjednodušila pravidla pro rekurze a pro upgrade a přechod na starší verzi Stav zámku. <xref:System.Threading.ReaderWriterLockSlim> zabraňuje mnoha případech potenciální zablokování. Kromě toho výkon <xref:System.Threading.ReaderWriterLockSlim> je výrazně lepší, než <xref:System.Threading.ReaderWriterLock>.  
+>  [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] Má dvě zámky pro čtení a zápis, <xref:System.Threading.ReaderWriterLockSlim> a <xref:System.Threading.ReaderWriterLock>. <xref:System.Threading.ReaderWriterLockSlim> doporučuje se pro všechny vývoj nových projektů. <xref:System.Threading.ReaderWriterLockSlim> je podobný <xref:System.Threading.ReaderWriterLock>, ale zjednodušila pravidla pro rekurzi a pro upgrade a Downgrade Stav zámku. <xref:System.Threading.ReaderWriterLockSlim> předchází mnoha případech potenciální zablokování. Kromě toho výkon <xref:System.Threading.ReaderWriterLockSlim> je výrazně lepší než <xref:System.Threading.ReaderWriterLock>.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.ReaderWriterLockSlim>  
- <xref:System.Threading.ReaderWriterLock>  
- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
- [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Threading.ReaderWriterLockSlim>  
+- <xref:System.Threading.ReaderWriterLock>  
+- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
+- [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 623700161ae4587daeb2c7348055d413512f7c87
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f5d106dd3b7b9a7a0aeedca86e63a6fccbb1cc27
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43805634"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44070535"
 ---
 # <a name="handling-and-raising-events"></a>Zpracování a generování událostí
 Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model delegáta následuje návrhový vzor pozorovatele, který umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele. Odesílatel události posune oznámení, že k události došlo, a příjemce události obdrží toto oznámení a definuje odpověď na ně. Tento článek popisuje hlavní součásti modelu delegáta, zacházení s událostmi v aplikacích a implementaci událostí ve vašem kódu.  
@@ -87,11 +87,12 @@ Události v rozhraní .NET Framework jsou založené na modelu delegáta. Model 
 |[Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)|Popisuje vzor návrhu, který umožňuje předplatiteli zaregistrovat se a dostávat upozornění od poskytovatele.|  
 |[Postupy: Zpracování událostí v aplikaci Web Forms](../../../docs/standard/events/how-to-consume-events-in-a-web-forms-application.md)|Ukazuje, jak zpracovat událost vyvolanou ovládacím prvkem webových formulářů.|  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.EventHandler>  
- <xref:System.EventHandler%601>  
- <xref:System.EventArgs>  
- <xref:System.Delegate>  
- [Přehled směrovaných událostí (aplikace pro UPW) a události](/windows/uwp/xaml-platform/events-and-routed-events-overview)  
- [Události (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
- [Události (C# Programming Guide)](../../csharp/programming-guide/events/index.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.EventHandler>  
+- <xref:System.EventHandler%601>  
+- <xref:System.EventArgs>  
+- <xref:System.Delegate>  
+- [Přehled směrovaných událostí (aplikace pro UPW) a události](/windows/uwp/xaml-platform/events-and-routed-events-overview)  
+- [Události (Visual Basic)](../../visual-basic/programming-guide/language-features/events/index.md)  
+- [Události (C# Programming Guide)](../../csharp/programming-guide/events/index.md)

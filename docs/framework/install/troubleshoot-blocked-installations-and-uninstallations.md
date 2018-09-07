@@ -9,11 +9,11 @@ ms.assetid: c3fdfbc1-ed99-4202-a2b0-8c4f1646385d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8cb33ffbbd735a015b58fe4fd6b9f7f70282cba1
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43742699"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098365"
 ---
 # <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>Řešení potíží s blokované rozhraní .NET Framework instalacemi a odinstalacemi
 

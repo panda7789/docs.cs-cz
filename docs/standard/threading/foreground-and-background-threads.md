@@ -11,11 +11,11 @@ ms.assetid: cfe0d632-dd35-47e0-91ad-f742a444005e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fcedd478ee1eb89c11dc9535b1d2ffe843d0f658
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43868534"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44081326"
 ---
 # <a name="foreground-and-background-threads"></a>Vlákna v popředí a v pozadí
 Spravované vlákno je vlákno na pozadí nebo vlákno na popředí. Vlákna na pozadí jsou shodné s vlákna na popředí s jednou výjimkou: vlákno na pozadí neudržuje spravovaném spouštěcím prostředí spuštění. Po ukončení všech vláken v popředí v spravovaného procesu (kde soubor .exe je spravovaná sestavení) systému všechna vlákna na pozadí se zastaví a ukončí.  

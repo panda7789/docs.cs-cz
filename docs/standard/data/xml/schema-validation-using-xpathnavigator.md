@@ -9,11 +9,11 @@ ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d2b04006c46edb29fd4fe05e63224220ed1876af
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43874920"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085273"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>Ověření schématu pomocí XPathNavigator
 Pomocí <xref:System.Xml.XmlDocument> třídy, můžete ověřit obsah XML, který je součástí <xref:System.Xml.XmlDocument> objektu dvěma způsoby. První způsob je na ověřování obsahu XML pomocí ověřování <xref:System.Xml.XmlReader> objekt a druhý způsob je použít <xref:System.Xml.XmlDocument.Validate%2A> metodu <xref:System.Xml.XmlDocument> třídy. Můžete také provést jen pro čtení ověření obsahu pomocí XML <xref:System.Xml.XPath.XPathDocument> třídy.  

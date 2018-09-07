@@ -15,12 +15,12 @@ helpviewer_keywords:
 - serialization, examples
 - serialization, attributes
 ms.assetid: 47d4c39d-30e1-4c7b-8a2e-301325390647
-ms.openlocfilehash: d97798dd44e9661e82a303023e041f5af2f43711
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 28c7ebe1de3adb92e531597027e4b8bb7a63294c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43501775"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44048335"
 ---
 # <a name="controlling-xml-serialization-using-attributes"></a>Řízení serializace XML pomocí atributů
 
@@ -315,12 +315,12 @@ Naopak, pokud byly k serializaci instancí třídy pouze `NewGroupName` bude nal
 
 Mohou nastat situace, když veřejné vlastnosti nebo pole nemusí být serializován. Můžete například pole nebo vlastnost může obsahovat metadat. V takových případech, použije <xref:System.Xml.Serialization.XmlIgnoreAttribute> na pole nebo vlastnost a <xref:System.Xml.Serialization.XmlSerializer> vynechá nad ním.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)  
-[Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)  
-[Představení serializace XML](introducing-xml-serialization.md)  
-[Příklady serializace XML](examples-of-xml-serialization.md)  
-[Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
-[Postupy: Serializace objektu](how-to-serialize-an-object.md)  
-[Postupy: Deserializace objektu](how-to-deserialize-an-object.md)  
+- [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)  
+- [Seznam atributů řídících serializaci zakódovanou v protokolu SOAP](attributes-that-control-encoded-soap-serialization.md)  
+- [Představení serializace XML](introducing-xml-serialization.md)  
+- [Příklady serializace XML](examples-of-xml-serialization.md)  
+- [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)  
+- [Postupy: Serializace objektu](how-to-serialize-an-object.md)  
+- [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)  

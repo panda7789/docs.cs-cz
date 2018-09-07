@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ab14be82f3dedeab0a1e1e574ce5622d067f72ae
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 730c6abfe9d49c319d1438a0821ad47e19fc0638
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43789014"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098937"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Vlastní řetězce formátu data a času
 
@@ -742,6 +742,10 @@ ms.locfileid: "43789014"
 
  Výsledný řetězec vytvořený mnoha specifikátory formátu času vlastní data a také závisí na vlastnostech aktuálního <xref:System.Globalization.DateTimeFormatInfo> objektu. Aplikace může změnit výsledek vytvořený některými specifikátory formátu času a vlastní datum změnou odpovídající <xref:System.Globalization.DateTimeFormatInfo> vlastnost. Například specifikátor formátu "ddd" Přidá název zkrácený den v týdnu nalezený v <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A> pole řetězců do výsledného řetězce. Podobně specifikátor formátu "MMMM" přidá úplný název měsíce součástí <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A> pole řetězců do výsledného řetězce.
 
-## <a name="see-also"></a>Viz také
- <xref:System.DateTime?displayProperty=nameWithType><xref:System.IFormatProvider?displayProperty=nameWithType>
- [Typy formátování](../../../docs/standard/base-types/formatting-types.md) [řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md) [ukázka: formátovací nástroj pro rozhraní .NET Framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.DateTime?displayProperty=nameWithType>
+- <xref:System.IFormatProvider?displayProperty=nameWithType>
+- [Typy formátování](../../../docs/standard/base-types/formatting-types.md)
+- [Standardní řetězce formátu data a času](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Ukázka: Formátovací nástroj rozhraní .NET Framework 4](https://code.msdn.microsoft.com/NET-Framework-4-Formatting-9c4dae8d)

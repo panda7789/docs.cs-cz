@@ -7,18 +7,18 @@ helpviewer_keywords:
 - multimedia [WPF]
 - media [WPF]
 ms.assetid: f7d96707-ffb5-486c-9e85-db6f0d5ac547
-ms.openlocfilehash: 446a7993f2c2849c8bdd67683c04c429ce9bc0c1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d7c3a6b01591dd1c7fc7554a6e660f1ca7b12de1
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33556013"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44075407"
 ---
 # <a name="audio-and-video-how-to-topics"></a>Postupy: Témata audia a videa
-Následující témata ukazují, jak používat <xref:System.Windows.Controls.MediaElement> integrovat audio a video obsahu ve svých aplikacích.  
+Následující témata ukazují, jak používat <xref:System.Windows.Controls.MediaElement> integrovat audio a video obsahu ve vašich aplikacích.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Postupy: dynamicky přidat Element](http://msdn.microsoft.com/library/d00f258a-7973-4de7-bc54-a3fc1f638419)  
+ [Postupy: dynamické přidávání elementu](https://msdn.microsoft.com/library/d00f258a-7973-4de7-bc54-a3fc1f638419)  
  [Řízení elementu MediaElement (Přehrát, Pozastavit, Zastavit, Hlasitost a Rychlost)](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
  [Řízení elementu MediaElement pomocí scénáře](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md)  
  [Spuštění přehrání média pomocí události uživatele](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-media-playback-with-a-user-event.md)  

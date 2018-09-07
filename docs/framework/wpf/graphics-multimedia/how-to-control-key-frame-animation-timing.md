@@ -9,11 +9,11 @@ helpviewer_keywords:
 - timing key-fram animation
 ms.assetid: b059216f-7d4b-4ca8-a019-bc287ee7bf16
 ms.openlocfilehash: d65bf6f7643adf1d98d468853ae8017a4a6554ac
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43892675"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44086190"
 ---
 # <a name="how-to-control-key-frame-animation-timing"></a>Postupy: Řízení časování pro animace klíčových snímků
 Tento příklad ukazuje, jak řídit načasování v rámci klíčových snímků animace klíčových snímků. Stejně jako jiné animace klíčových snímků animace mít <xref:System.Windows.Media.Animation.Timeline.Duration%2A> vlastnost. Kromě určení doby trvání animace, budete muset určit, jaká část tento čas je vymezena pro každý z jeho použitím klíčových snímků. Chcete-li přidělit čas, zadejte <xref:System.Windows.Media.Animation.KeyTime> pro každý klíčový snímek animace.  

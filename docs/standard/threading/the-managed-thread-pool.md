@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 2be05b06-a42e-4c9d-a739-96c21d673927
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3894229ff5561e50d42a36f576a89ee7bf01c067
-ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
+ms.openlocfilehash: f7721ffaebfefadee332c923d867e68204b5205f
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
-ms.locfileid: "33592415"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44076440"
 ---
 # <a name="the-managed-thread-pool"></a>Spravovaný fond vláken
 
@@ -87,12 +87,12 @@ Existuje několik scénářů, ve kterých je vhodná k vytváření a správě 
   
 ## <a name="see-also"></a>Viz také:
 
- <xref:System.Threading.ThreadPool?displayProperty=nameWithType>  
- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>  
- <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>  
- [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md)  
- [Postupy: Vrácení hodnoty z úlohy](../parallel-programming/how-to-return-a-value-from-a-task.md)  
- [Funkce a objekty dělení na vlákna](threading-objects-and-features.md)  
- [Vlákna a dělení na vlákna](threads-and-threading.md)  
- [Asynchronní vstupně-výstupní operace se soubory](../io/asynchronous-file-i-o.md)  
- [Časovače](timers.md)  
+- <xref:System.Threading.ThreadPool?displayProperty=nameWithType>  
+- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>  
+- <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>  
+- [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md)  
+- [Postupy: Vrácení hodnoty z úlohy](../parallel-programming/how-to-return-a-value-from-a-task.md)  
+- [Funkce a objekty dělení na vlákna](threading-objects-and-features.md)  
+- [Vlákna a dělení na vlákna](threads-and-threading.md)  
+- [Asynchronní vstupně-výstupní operace se soubory](../io/asynchronous-file-i-o.md)  
+- [Časovače](timers.md)  

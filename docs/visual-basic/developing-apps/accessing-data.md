@@ -5,12 +5,12 @@ helpviewer_keywords:
 - data [Visual Basic]
 - Visual Basic, data access
 ms.assetid: 3086ab38-3be5-4b22-9385-7d0e16b04f6a
-ms.openlocfilehash: 2e6cfc3d6d8752b12fa20a357dedfeb1b3346dce
-ms.sourcegitcommit: 2d8b7488d94101b534ca3e9780b1c1e840233405
+ms.openlocfilehash: 220d662576a5f23194dee7e23317bdbb0027546d
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39198837"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098534"
 ---
 # <a name="accessing-data-in-visual-basic-applications"></a>Přístup k datům v aplikacích jazyka Visual Basic
 Visual Basic zahrnuje několik nových funkcí, které pomáhají při vývoji aplikací přistupujících k datům. Formuláře vázané na data pro aplikace Windows jsou vytvářeny přetažením položek z [okna zdroje dat](/visualstudio/data-tools/add-new-data-sources) do formuláře. Svázat ovládací prvky na data přetažením položek z **okna zdroje dat** do existujícího ovládacího prvku.  
@@ -34,7 +34,7 @@ Visual Basic zahrnuje několik nových funkcí, které pomáhají při vývoji a
  [Práce s datovými sadami ve vícevrstvých aplikacích](/visualstudio/data-tools/work-with-datasets-in-n-tier-applications)  
  Obsahuje odkazy na témata o vytváření datových aplikací s více vrstvami.  
      
- [Přidat nové připojení](/visualstudio/data-tools/add-new-connections)  
+ [Přidání nových připojení](/visualstudio/data-tools/add-new-connections)  
  Obsahuje odkazy na stránky o připojení aplikace k datům pomocí návrhových nástrojů a objektů připojení rozhraní ADO.NET pomocí sady Visual Studio.  
 
  [Nástroje datové sady v sadě Visual Studio](/visualstudio/data-tools/dataset-tools-in-visual-studio)  
@@ -55,5 +55,4 @@ Visual Basic zahrnuje několik nových funkcí, které pomáhají při vývoji a
  [ADO.NET](../../framework/data/adonet/index.md)  
  Popisuje třídy rozhraní ADO.NET, které zpřístupňují služby pro přístup k datům programátorovi rozhraní .NET Framework.
 
- [Data v řešeních pro systém Office](https://msdn.microsoft.com/library/xx069ybh)  
- Obsahuje odkazy na stránky, které vysvětlují, jak fungují data v řešeních sady Office, včetně informací o programování zaměřeném na schéma, ukládání dat do mezipaměti a přístupu k datům na straně serveru.
+ [Data v řešeních pro systém Office](/visualstudio/vsto/data-in-office-solutions) obsahuje odkazy na stránky, které vysvětlují, jak fungují data v řešeních pro systém Office, včetně informací o programování orientovaném na schéma, ukládání dat a přístup k datům na straně serveru.

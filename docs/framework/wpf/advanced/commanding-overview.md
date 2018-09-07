@@ -14,11 +14,11 @@ helpviewer_keywords:
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
 ms.openlocfilehash: d41613ce2488fa572fa11def06350ab1e564df6c
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749068"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44086216"
 ---
 # <a name="commanding-overview"></a>Přehled příkazů
 <a name="introduction"></a> Příkazů je mechanismus vstupní v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytující vstupní zpracování více sémantických úrovni, než vstupní zařízení. Příklady příkazů **kopírování**, **Vyjmout**, a **vložit** nalézt operace v mnoha aplikacích.  

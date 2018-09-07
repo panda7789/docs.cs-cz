@@ -3,11 +3,11 @@ title: Element &lt;peerAuthentication&gt;
 ms.date: 03/30/2017
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
 ms.openlocfilehash: 4fb8cc4989313afa3ef16c90b54e0feae1ccb71d
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43859013"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44076485"
 ---
 # <a name="ltpeerauthenticationgt-element"></a>Element &lt;peerAuthentication&gt;
 Určuje možnosti ověřování klientů peer-to-peer.  

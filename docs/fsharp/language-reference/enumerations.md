@@ -3,11 +3,11 @@ title: Výčty (F#)
 description: 'Další informace o použití výčty F # místo literály, aby byl kód čitelnější a udržovatelný.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 47fb353c2698f8b1474834ebbd1b0eff2c7f76e7
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891639"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44097084"
 ---
 # <a name="enumerations"></a>Výčty
 

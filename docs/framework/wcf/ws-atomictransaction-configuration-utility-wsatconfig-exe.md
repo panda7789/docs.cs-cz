@@ -3,11 +3,11 @@ title: Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 ms.date: 03/30/2017
 ms.assetid: 1c56cf98-3963-46d5-a4e1-482deae58c58
 ms.openlocfilehash: 31b2b3cf16857bf08a4f8d09f47f80d9b34a53b8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43871988"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085882"
 ---
 # <a name="ws-atomictransaction-configuration-utility-wsatconfigexe"></a>Nástroj WS-AtomicTransaction Configuration Utility (wsatConfig.exe)
 Nástroj pro konfiguraci WS-AtomicTransaction slouží ke konfiguraci základní nastavení WS-AtomicTransaction podpory.  

@@ -11,11 +11,11 @@ ms.assetid: 983b4213-bddd-4a44-9262-cbe59186df4c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 544ea0f89dfa518c2ef18bffe2609d72e6fdee70
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891217"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085037"
 ---
 # <a name="how-to-create-and-execute-a-simple-plinq-query"></a>Postupy: Vytvoření a provedení jednoduchého dotazu PLINQ
 Následující příklad ukazuje, jak vytvořit jednoduchý dotaz paralelní LINQ pomocí <xref:System.Linq.ParallelEnumerable.AsParallel%2A> rozšiřující metody na zdrojové sekvence a pomocí provádí dotaz <xref:System.Linq.ParallelEnumerable.ForAll%2A> metoda.  

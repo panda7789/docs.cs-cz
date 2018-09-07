@@ -10,81 +10,82 @@ helpviewer_keywords:
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 45b0f8293b41d42114b189c3ebe917a4f64c4f27
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 50d601d711579bce2e2651a1efc65d824a50d47a
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578327"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44082095"
 ---
 # <a name="application-domain-resource-monitoring"></a>Sledování prostředků domény aplikace
-(ARM) sledování prostředků domény aplikace umožňuje hostitelům sledování využití procesoru a paměti aplikační doménou. To je užitečné pro hostitele například ASP.NET využívající mnoho aplikační domény v dlouho běžící proces. Hostitel může uvolnění domény aplikace aplikace, která nepříznivě ovlivňuje výkon celý proces, ale pouze pokud se ale může pomoci identifikovat problematické aplikace. ARM poskytuje informace, které je možné, které vám pomohou v rozhodování.  
+(ARM) sledování prostředků domény aplikace umožňuje hostitelům k monitorování využití procesoru a paměti doménou aplikace. To je užitečné pro hostitele jako je ASP.NET, které používají mnoha aplikačními doménami v dlouho běžící proces. Hostitel může uvolnění domény aplikace aplikace, které nepříznivě ovlivňuje výkon celého procesu, ale pouze pokud může zjistit problematické aplikace. ARM poskytuje informace, které můžete použít pro pomoc při rozhodování.  
   
- Hostitelská služba například může mít mnoho aplikací spuštěných na serveru technologie ASP.NET. Pokud jednu aplikaci v procesu začne spotřeba paměti převýší nebo příliš mnoho času procesoru, hostitelské služby slouží k identifikaci doméně aplikace, která je příčinou problému ARM.  
+ Hostitelská služba například může mít mnoho aplikací spuštěných na serveru ASP.NET. Pokud jedna aplikace v procesu začne přijímat příliš mnoho paměti nebo příliš mnoho času procesoru, hostitelské služby slouží k identifikaci domény aplikace, která je příčinou problému ARM.  
   
- ARM je dostatečně lightweight používat v aplikacích za provozu. Informace můžete přistupovat pomocí trasování událostí pro Windows (ETW) nebo přímo přes spravovaným nebo nativním rozhraní API.  
+ ARM je dostatečně jednoduché pro použití v živé aplikace. Přístup k informacím pomocí trasování událostí pro Windows (ETW) nebo přímo prostřednictvím rozhraní API pro spravované nebo nativní.  
   
 ## <a name="enabling-resource-monitoring"></a>Povolení sledování prostředků  
- ARM se dá nastavit čtyři způsoby: zadáním konfiguračního souboru, když se spustí modul CLR (CLR), pomocí nespravované hostující rozhraní API, pomocí spravovaného kódu, nebo naslouchání události ARM ETW.  
+ ARM je možné povolit čtyři způsoby: zadáním konfiguračního souboru při spuštění common language runtime (CLR), s použitím nespravované hostování rozhraní API, pomocí spravovaného kódu nebo prostřednictvím naslouchání události trasování událostí pro Windows ARM.  
   
- Jakmile je povoleno ARM, začne shromažďování dat na všechny domény aplikace v procesu. Pokud domény aplikace byla vytvořena než ARM je povoleno, kumulativní data spustí, když je povoleno ARM, ne v případě, že byla vytvořena domény aplikace. Jakmile je povoleno, nelze zakázat ARM.  
+ Jakmile ARM je povoleno, začne shromažďování dat ve všech doménách aplikace v procesu. Pokud domény aplikace byl vytvořen před povolením ARM, souhrnná data začne, když je povoleno ARM, není při vytváření domény aplikace. Jakmile je povoleno, ARM nejde zakázat.  
   
--   Můžete povolit ARM při spuštění CLR přidáním [ \<appdomainresourcemonitoring – >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) element konfiguračního souboru a nastavení `enabled` atribut `true`. Hodnota `false` (výchozí) pouze znamená, že ARM není povolena při spuštění; ji můžete aktivovat později pomocí jednoho z jiných mechanismů aktivace.  
+-   ARM můžete povolit při spuštění modulu CLR tak, že přidáte [ \<appdomainresourcemonitoring – >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) prvku do konfiguračního souboru a nastavení `enabled` atribut `true`. Hodnota `false` (výchozí) znamená, že pouze, ARM není povoleno při spuštění, můžete si ji můžou aktivovat později pomocí jednoho z jiných mechanismů aktivace.  
   
--   Hostitele můžete povolit ARM tím, že požádá [iclrappdomainresourcemonitor –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) hostování rozhraní. Jakmile se toto rozhraní je byly úspěšně načteny, je povoleno ARM.  
+-   Hostitele můžete povolit ARM, můžete si vyžádat [iclrappdomainresourcemonitor –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) hostování rozhraní. Jakmile se toto rozhraní je byly úspěšně načteny, ARM je povolená.  
   
--   Spravovaný kód můžete povolit tak statických ARM (`Shared` v jazyce Visual Basic) <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> vlastnost `true`. Jakmile je vlastnost nastavena, je povoleno ARM.  
+-   Spravovaný kód můžete povolit ARM nastavením statické (`Shared` v jazyce Visual Basic) <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> vlastnost `true`. Jakmile je vlastnost nastavena, je povoleno ARM.  
   
--   Po spuštění můžete povolit ARM naslouchání události trasování událostí. ARM je povolená a začne vyvolávání událostí pro všechny domény aplikace, když povolíte veřejného poskytovatele `Microsoft-Windows-DotNETRuntime` pomocí `AppDomainResourceManagementKeyword` – klíčové slovo. K chybě korelace dat. s doménami aplikací a vláken, musíte zároveň povolit `Microsoft-Windows-DotNETRuntimeRundown` zprostředkovatele s `ThreadingKeyword` – klíčové slovo.  
+-   Po spuštění můžete povolit ARM prostřednictvím naslouchání události trasování událostí pro Windows. ARM je povolená a začne vyvolávání událostí pro všechny domény aplikace, když povolíte veřejného poskytovatele `Microsoft-Windows-DotNETRuntime` pomocí `AppDomainResourceManagementKeyword` – klíčové slovo. K chybě korelace dat. s doménami aplikací a vláken, musíte také povolit `Microsoft-Windows-DotNETRuntimeRundown` zprostředkovatele s `ThreadingKeyword` – klíčové slovo.  
   
-## <a name="using-arm"></a>Pomocí modelu ARM  
- ARM poskytuje celkový procesorového času, který je používán domény aplikace a tři druhy informace o využití paměti.  
+## <a name="using-arm"></a>Použití ARM  
+ ARM poskytuje celkový procesorový čas, který používá aplikační doméně a tři druhy informací o využití paměti.  
   
--   **Celkový čas procesoru pro doménu aplikace v sekundách**: Tato hodnota je vypočtena sčítat vlákno časy uvedeny v operačním systému pro všechna vlákna, které spotřebovávají doba provádění v doméně aplikace během celé jeho životnosti. Blokované nebo spící vláken nepoužívejte času procesoru. Když vlákno volání do nativního kódu, je doba, kterou vlákno stráví v nativním kódu zahrnutí do počtu pro doménu aplikace, kde byla provedena volání.  
+-   **Celkový čas procesoru pro doménu aplikace v řádu sekund**: Tento výpočet součtem doby vlákna operačního systému pro všechna vlákna, které spotřebovávají doba provádění v doméně aplikace v průběhu svého životního cyklu. Zablokuje nebo spící vláken nepoužívejte času procesoru. Když vlákno volá do nativního kódu, čas, který stráví vlákna v nativním kódu je součástí počet aplikační domény, ve kterém bylo provedeno volání.  
   
-    -   Spravovaná rozhraní API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> vlastnost.  
+    -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentcputime –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) metoda.  
+    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentcputime –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) metody.  
   
-    -   Události trasování událostí pro Windows: `ThreadCreated`, `ThreadAppDomainEnter`, a `ThreadTerminated` události. Informace o klíčových slov a poskytovatelů najdete v tématu "AppDomain prostředků monitorování událostí" v [události ETW CLR](../../../docs/framework/performance/clr-etw-events.md).  
+    -   Události trasování událostí pro Windows: `ThreadCreated`, `ThreadAppDomainEnter`, a `ThreadTerminated` události. Informace o poskytovatelích a klíčová slova, naleznete v tématu "AppDomain zdroje událostí pro sledování" v [CLR ETW Events](../../../docs/framework/performance/clr-etw-events.md).  
   
--   **Celkový počet spravovaných přidělení provedené domény aplikace během celé jeho životnosti v bajtech**: Celkový počet přidělených vždy nezahrnují využití paměti aplikační doménou, protože přidělené objekty může mít krátkodobé trvání. Ale pokud aplikace přiděluje a uvolní velký počet objektů, náklady na přidělení může být důležité.  
+-   **Celkový počet spravovaných přidělení provedených doménou aplikace během celé jeho životnosti, v bajtech**: Celkový počet přidělení nemusí pokaždé odpovídat využití paměti doménou aplikace, protože přidělené objekty může mít krátkodobé a jednorázové. Ale pokud aplikace přiděluje a uvolňuje velký počet objektů, náklady na přidělení může být významné.  
   
-    -   Spravovaná rozhraní API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> vlastnost.  
+    -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentallocated –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) metoda.  
+    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentallocated –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) metody.  
   
-    -   Události trasování událostí pro Windows: `AppDomainMemAllocated` událostí, `Allocated` pole.  
+    -   Události trasování událostí pro Windows: `AppDomainMemAllocated` události, `Allocated` pole.  
   
--   **Spravované paměti v bajtech, který je odkazován objektem domény aplikace a který přežil nejnovější plná blokování kolekce**: Tento počet je přesný až po úplné, blokování kolekce. (Je na rozdíl od souběžných kolekce, které probíhat na pozadí a neblokují aplikace.) Například <xref:System.GC.Collect?displayProperty=nameWithType> přetížení metody způsobí, že plná blokování kolekce.  
+-   **Spravované paměti v bajtech, na který odkazuje domény aplikace a který zůstat naživu při poslední úplné blokující kolekce**: Toto číslo je přesné až po plně, blokující kolekce. (Jde na rozdíl od souběžných kolekcí, které probíhá na pozadí a neblokují aplikace.) Například <xref:System.GC.Collect?displayProperty=nameWithType> přetížení metody způsobí, že úplné blokující kolekce.  
   
-    -   Spravovaná rozhraní API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnost.  
+    -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentsurvived –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) metody `pAppDomainBytesSurvived` parametr.  
+    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentsurvived –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) metody `pAppDomainBytesSurvived` parametru.  
   
-    -   Události trasování událostí pro Windows: `AppDomainMemSurvived` událostí, `Survived` pole.  
+    -   Události trasování událostí pro Windows: `AppDomainMemSurvived` události, `Survived` pole.  
   
--   **Celkový počet spravované paměti v bajtech, který je odkazován objektem proces a který přežil nejnovější plná blokování kolekce**: survived paměti pro jednotlivé aplikace domény je možné porovnávat s tímto číslem.  
+-   **Celkový počet spravované paměti v bajtech, na který odkazuje procesu a který zůstat naživu při poslední úplné blokující kolekce**: zachované paměť pro jednotlivé aplikační domény je možné porovnat s tímto číslem.  
   
-    -   Spravovaná rozhraní API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType> vlastnost.  
+    -   Spravované rozhraní API: <xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType> vlastnost.  
   
-    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentsurvived –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) metody `pTotalBytesSurvived` parametr.  
+    -   Hostování rozhraní API: [iclrappdomainresourcemonitor::getcurrentsurvived –](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) metody `pTotalBytesSurvived` parametru.  
   
-    -   Události trasování událostí pro Windows: `AppDomainMemSurvived` událostí, `ProcessSurvived` pole.  
+    -   Události trasování událostí pro Windows: `AppDomainMemSurvived` události, `ProcessSurvived` pole.  
   
-### <a name="determining-when-a-full-blocking-collection-occurs"></a>Blokování kolekce dojde k určení, kdy úplné,  
- Pokud chcete zjistit, když se o přesném zadání počty zůstal naživu paměti, potřebujete vědět, když kolekci úplné a blokování právě došlo. Metoda pro to závisí na rozhraní API používáte k prozkoumání statistiky ARM.  
+### <a name="determining-when-a-full-blocking-collection-occurs"></a>Blokující kolekce dojde k určení, kdy plně,  
+ K určení, kdy jsou přesné počty zachované paměti, je potřeba vědět, kdy má právě došlo k úplné, blokující kolekce. Metoda to závisí na rozhraní API, použijte ke kontrole statistik ARM.  
   
-#### <a name="managed-api"></a>Spravovaná rozhraní API  
- Pokud používáte vlastnosti <xref:System.AppDomain> třídu, můžete použít <xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=nameWithType> metoda registrace pro oznámení o úplné kolekce. Prahová hodnota, které můžete použít není důležité, protože se čeká na dokončení kolekci spíše než přístup kolekce. Potom můžete zavolat <xref:System.GC.WaitForFullGCComplete%2A?displayProperty=nameWithType> metoda, která blokuje až po dokončení úplné kolekce. Můžete vytvořit vlákno, která volá metodu ve smyčce a nemá žádné potřeby analýzy vždy, když metoda vrátí.  
+#### <a name="managed-api"></a>Spravované rozhraní API  
+ Pokud používáte vlastnosti <xref:System.AppDomain> třídy, můžete použít <xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=nameWithType> metoda registrace pro oznámení o celé kolekce. Prahová hodnota, které používáte není důležitá, protože se během čekání na dokončení kolekce spíše než přístup kolekce. Potom můžete zavolat <xref:System.GC.WaitForFullGCComplete%2A?displayProperty=nameWithType> metodu, která blokuje, dokud se nedokončí celé kolekce. Můžete vytvořit vlákno, které volá metodu ve smyčce a provede všechny potřeby analýzy pokaždé, když se metoda vrátí.  
   
- Alternativně můžete volat <xref:System.GC.CollectionCount%2A?displayProperty=nameWithType> metoda pravidelně chcete zobrazit, pokud má vyšší počet kolekcí 2. generace. V závislosti na frekvence cyklického dotazování nemusí tato technika zadejte jako přesné uvedením výskytu úplné kolekce.  
+ Alternativně můžete volat <xref:System.GC.CollectionCount%2A?displayProperty=nameWithType> metoda pravidelně, chcete-li zobrazit, pokud se zvýšil počet kolekce generace 2. V závislosti na frekvenci dotazování tuto techniku pravděpodobně naznačují, jako přesné výskytu celé kolekce.  
   
 #### <a name="hosting-api"></a>Hostování rozhraní API  
- Pokud používáte nespravovaného rozhraní API hostování, váš hostitel musí projít modulu CLR implementace [ihostgcmanager –](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md) rozhraní. Volání CLR [ihostgcmanager::suspensionending –](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) metoda při obnoví spuštění vláken, které byly pozastaveny během kolekce. Modul CLR předá generování dokončené kolekce jako parametr metody, tak hostitele můžete určit, zda byla kolekce celé nebo jeho část. Vaši implementaci [ihostgcmanager::suspensionending –](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) metoda mohou odesílat dotazy na zůstal naživu paměť k zajištění, že jsou počty načíst také nejsou aktualizovány.  
+ Pokud používáte nespravované hostujícího rozhraní API, váš hostitel musí projít CLR implementace [ihostgcmanager –](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md) rozhraní. Volání CLR [ihostgcmanager::suspensionending –](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) metody pokračuje v provádění vlákna, která byla pozastavena, když dojde k kolekce. CLR generování dokončené kolekce předá jako parametr metody, tak hostitele můžete určit, zda byla kolekce celé nebo jeho část. Implementace [ihostgcmanager::suspensionending –](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) metoda vyhledávat zachované paměti, chcete-li zajistit, aby počty jsou načteny, jako jsou aktualizovány.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
- [ICLRAppDomainResourceMonitor – rozhraní](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
- [\<appdomainresourcemonitoring – >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)  
- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>  
+- [ICLRAppDomainResourceMonitor – rozhraní](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  
+- [\<appdomainresourcemonitoring – >](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)  
+- [Události Trasování událostí pro Windows v CLR](../../../docs/framework/performance/clr-etw-events.md)

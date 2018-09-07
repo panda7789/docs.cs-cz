@@ -1,5 +1,5 @@
 ---
-title: Vytvoření nové atributy pro elementy v modelu DOM
+title: Vytvoření nových atributů pro elementy v modelu DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,21 +8,21 @@ dev_langs:
 ms.assetid: dd6dc920-b011-418a-b3db-f1580a7d9251
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: fb1a337c2795627b82125c8c29335c52b5fb332c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 870e800220031338557792fa612d4a3101e79f90
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570377"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44071429"
 ---
-# <a name="creating-new-attributes-for-elements-in-the-dom"></a>Vytvoření nové atributy pro elementy v modelu DOM
-Vytvoření nového atributu se liší od vytvoření jiných typů uzlů, protože atributy nejsou uzly, ale jsou vlastnosti uzlu elementu a jsou součástí **XmlAttributeCollection** přidružené k elementu. Vytvořte atribut a jeho připojení pro element několika způsoby:  
+# <a name="creating-new-attributes-for-elements-in-the-dom"></a>Vytvoření nových atributů pro elementy v modelu DOM
+Vytvoření nového atributu se liší od vytvoření jiných typů uzlu, protože atributy nejsou uzly, ale jsou vlastnosti uzlu elementu jsou součástí **XmlAttributeCollection** spojené s tímto prvkem. Existuje několik způsobů, jak vytvořit atribut a připojit ho k elementu:  
   
--   Získat uzlu elementu a použít **SetAttribute** přidání atributu do atribut kolekce daný element.  
+-   Získejte uzlu elementu a použijte **SetAttribute** přidání atributu do kolekce atributů daného prvku.  
   
--   Vytvoření **XmlAttribute** uzlu pomocí **CreateAttribute** metoda, získat uzel elementu, potom použijte **SetAttributeNode** přidání uzlu do atribut kolekce, element.  
+-   Vytvoření **XmlAttribute** pomocí uzlu **CreateAttribute** metody get uzlu elementu, a pak pomocí **SetAttributeNode** k přidání uzlu do kolekce atributů, které element.  
   
- Následující příklad ukazuje, jak přidat atribut k elementu pomocí **SetAttribute** metoda.  
+ Následující příklad ukazuje, jak přidat atribut do elementu pomocí **SetAttribute** metody.  
   
 ```vb  
 Imports System  
@@ -72,9 +72,9 @@ public class Sample
   }  
 ```  
   
- Následující příklad ukazuje nový atribut vytváří pomocí **CreateAttribute** metoda. Se potom zobrazí atribut přidán do atribut kolekce **kniha** element pomocí **SetAttributeNode** metoda.  
+ Následující příklad ukazuje nový atribut vytváří pomocí **CreateAttribute** metody. Pak znázorňuje atribut přidána do kolekce atributů **knihy** prvku pomocí **SetAttributeNode** metoda.  
   
- Zadané následující kód XML:  
+ Daný následující kód XML:  
   
 ```xml  
 <book genre='novel' ISBN='1-861001-57-5'>  
@@ -82,7 +82,7 @@ public class Sample
 </book>  
 ```  
   
- Vytvořte nový atribut a přiřaďte mu hodnotu:  
+ Vytvořte nový atribut a přiřaďte jí hodnotu:  
   
 ```vb  
 Dim attr As XmlAttribute = doc.CreateAttribute("publisher")  
@@ -94,7 +94,7 @@ XmlAttribute attr = doc.CreateAttribute("publisher");
 attr.Value = "WorldWide Publishing";  
 ```  
   
- a připojte ji k prvku:  
+ a připojit ho k elementu:  
   
 ```vb  
 doc.DocumentElement.SetAttributeNode(attr)  
@@ -112,17 +112,18 @@ doc.DocumentElement.SetAttributeNode(attr);
 </book>  
 ```  
   
- Úplný příklad najdete na <xref:System.Xml.XmlDocument.CreateAttribute%2A>.  
+ Úplný příklad najdete tady <xref:System.Xml.XmlDocument.CreateAttribute%2A>.  
   
- Můžete taky vytvořit **XmlAttribute** uzel a použití **InsertBefore** nebo **InsertAfter** metody pro jeho umístění v příslušné pozici v kolekci. Pokud atribut se stejným názvem již existuje v kolekci atributů existující **XmlAttribute** uzel je odebrán z kolekce a nové **XmlAttribute** je vložen uzlu. Provede stejným způsobem jako **SetAttribute** metoda. Tyto metody přijímají jako parametr, stávající uzel jako referenční bod uděláte **InsertBefore** a **InsertAfter**. Pokud nezadáte uzlu odkazu, která určuje, kam chcete vložit nový uzel, je výchozí hodnotou **InsertAfter** metodou, je na začátek kolekce vložte nový uzel. Výchozí umístění **InsertBefore**, pokud je k dispozici žádný uzel odkazu, je na konec kolekce.  
+ Můžete taky vytvořit **XmlAttribute** uzlu a použití **InsertBefore** nebo **InsertAfter** metody umístit na odpovídající pozici v kolekci. Pokud atribut se stejným názvem už existuje v kolekci atributů existující **XmlAttribute** uzel je odebrán z kolekce a nové **XmlAttribute** uzlu je vložen. To se provádí stejným způsobem jako **SetAttribute** metody. Tyto metody přijímají jako parametr, existující uzel jako referenční bod provedete **InsertBefore** a **InsertAfter**. Pokud nezadáte uzel odkazu určující, kam chcete vložit nový uzel, na výchozí hodnoty pro **InsertAfter** se vložit nový uzel na začátku kolekce. Výchozí umístění **InsertBefore**, pokud je k dispozici žádný uzel odkazu, je na konec kolekce.  
   
- Pokud jste vytvořili **XmlNamedNodeMap** atributů, můžete přidat atribut pomocí názvu <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A>. Další informace najdete v tématu [uzlu kolekce v NamedNodeMaps a NodeLists](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md).  
+ Pokud jste vytvořili **XmlNamedNodeMap** atributů, můžete přidat atribut s použitím názvu <xref:System.Xml.XmlNamedNodeMap.SetNamedItem%2A>. Další informace najdete v tématu [kolekce uzlů v NamedNodeMaps a NodeLists](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md).  
   
 ## <a name="default-attributes"></a>Výchozí atributy  
- Pokud vytvoříte element, který je deklarován tak, aby měl výchozí atribut, nový výchozí atribut s jeho výchozí hodnota je vytvořen pomocí XML modelu DOM (Document Object) a připojen k elementu. V tuto chvíli se také vytvořit podřízené uzly výchozí atribut.  
+ Pokud vytvoříte element, který je deklarován mít atribut výchozí, nový výchozí atribut s jeho výchozí hodnota je vytvořené pomocí XML Document Object Model (DOM) a připojen k elementu. V tuto chvíli jsou také vytvořit podřízené uzly výchozího atributu.  
   
 ## <a name="attribute-child-nodes"></a>Atribut podřízené uzly  
- Hodnota uzlu atributu se změní jeho podřízené uzly. Existují jenom dva typy platný podřízené uzly: **XmlText** uzly, a **XmlEntityReference** uzlů. Tyto jsou podřízené uzly v tom smyslu, že tyto metody, jako **hodnotu FirstChild** a **LastChild** zpracovat jako podřízené uzly. Tento rozdíl atributu s podřízenými uzly je důležité při pokusu o odebrání atributů nebo atribut podřízené uzly. Další informace najdete v tématu [odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md).  
+ Hodnota uzlu atributu se změní jeho podřízených uzlů. Existují jenom dva typy platný podřízené uzly: **XmlText** uzly, a **XmlEntityReference** uzly. Tyto jsou podřízené uzly v tom smyslu, že tyto metody, jako **FirstChild** a **LastChild** zpracovat jako podřízené uzly. Toto rozlišení atribut s podřízenými uzly je důležité při pokusu o odebrání atributů nebo atribut podřízené uzly. Další informace najdete v tématu [odebrání atributů z uzlu elementu v modelu DOM](../../../../docs/standard/data/xml/removing-attributes-from-an-element-node-in-the-dom.md).  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

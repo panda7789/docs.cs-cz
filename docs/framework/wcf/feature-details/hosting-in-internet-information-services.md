@@ -5,11 +5,11 @@ helpviewer_keywords:
 - hosting services [WCF], IIS
 ms.assetid: ddae14e8-143c-442d-b660-2046809b2d43
 ms.openlocfilehash: e9d0e5a165eb2eabae95da9fd1e744a9bd1c201b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43786972"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085105"
 ---
 # <a name="hosting-in-internet-information-services"></a>Hostování v Internetové informační službě
 Jednou z možností pro hostování služby Windows Communication Foundation (WCF) je v rámci Internetové informační služby (IIS) aplikace. Tento model hostingu je podobný model používaný [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] a webových služeb ASP.NET Web Services (ASMX).  

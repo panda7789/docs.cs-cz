@@ -3,11 +3,11 @@ title: 'Postupy: sdílení sestavení s jinými aplikacemi (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5388aedc-cb42-4622-8b70-8e701eee057a
 ms.openlocfilehash: a7f6b49e8389108528c44d7464a2e68149dfa940
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43738217"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44062894"
 ---
 # <a name="how-to-share-an-assembly-with-other-applications-visual-basic"></a>Postupy: sdílení sestavení s jinými aplikacemi (Visual Basic)
 Sestavení mohou být privátní nebo sdílené: ve výchozím nastavení, většina jednoduché programy obsahovat soukromé sestavení vzhledem k tomu, že nejsou určena pro použití jiné aplikace.  

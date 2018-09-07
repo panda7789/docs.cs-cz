@@ -9,29 +9,29 @@ helpviewer_keywords:
 ms.assetid: be98c0ab-7ef8-409f-8a0d-cb6e5b75ff20
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c3c979477f0928c9c3d2a393042867c84df33ecf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7831e383a3048523909b79ac5a4706f3c1c48371
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571966"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44066695"
 ---
 # <a name="optimization-for-shared-web-hosting"></a>Optimalizace pro sdílené hostování webů
-Pokud jste správce pro server, který je sdílen hostování několik malých webových serverů, můžete optimalizovat výkon a zvýšit kapacitu lokality přidáním následující `gcTrimCommitOnLowMemory` nastavení na `runtime` uzlu v souboru Aspnet.config v rozhraní .NET adresář:  
+Pokud jste správce pro server, které jsou sdíleny několika malými weby hostování, můžete optimalizovat výkon a zvýšit kapacitu webu přidáním následujícího kódu `gcTrimCommitOnLowMemory` nastavení `runtime` uzlu v souboru Aspnet.config v rozhraní .NET adresář:  
   
  `<gcTrimCommitOnLowMemory enabled="true|false"/>`  
   
 > [!NOTE]
->  Toto nastavení se doporučuje jenom pro sdílené webové hostování scénáře.  
+>  Toto nastavení se doporučuje jenom pro sdílený Web scénářích hostování.  
   
- Vzhledem k tomu, že zachová má systém uvolňování paměti pro budoucí přidělení, lze jeho potvrdit místo více než je nezbytně nutné. Tento prostor, aby pojmulo doby můžete snížit při velkém zatížení na systémové paměti. Zmenšení potvrdit vylepšuje výkon a rozbalí kapacitu pro hostování více webů.  
+ Vzhledem k tomu, že systému uvolňování paměti zachová pro budoucí přidělení paměti, lze jeho potvrzeného místa více než je nezbytně nutné. Můžete snížit toto místo tak, aby vyhovovaly dobu při velkém zatížení na systémové paměti. Zmenšení potvrzené zlepšuje výkon a rozbalí kapacitu pro hostování více webů.  
   
- Když `gcTrimCommitOnLowMemory` je povolené nastavení, vyhodnotí zatížení paměti systému uvolňování paměti a vstupuje do režimu oříznutí, pokud zatížení dosáhne 90 %. Dokud zatížení klesne pod položkou 85 % udržuje režimu oříznutí.  
+ Když `gcTrimCommitOnLowMemory` nastavení povolené, vyhodnotí zatížení paměti systému uvolňování paměti a přejde do režimu ořezávání, když zatížení dosáhne 90 %. Udržuje oříznutí režimu, dokud se zatížení sníží pod 85 %.  
   
- Když podmínky povolit, bude systém uvolňování můžete rozhodnout, že `gcTrimCommitOnLowMemory` nastavení nebude pomůže aktuální aplikace a ho ignorovat.  
+ Při povolení podmínky systému uvolňování paměti může rozhodnout, že `gcTrimCommitOnLowMemory` nastavení nebude nápověda aktuální aplikace a ho ignorovat.  
   
 ## <a name="example"></a>Příklad  
- Následující fragment kódu XML ukazuje, jak povolit `gcTrimCommitOnLowMemory` nastavení. Tři tečky znamenat další nastavení, které by se v `runtime` uzlu.  
+ Následující fragment XML ukazuje, jak povolit `gcTrimCommitOnLowMemory` nastavení. Symbol tří teček označuje další nastavení, která by byla `runtime` uzlu.  
   
 ```xml  
 <?xml version="1.0" encoding="UTF-8"?>  
@@ -44,5 +44,6 @@ Pokud jste správce pro server, který je sdílen hostování několik malých w
 </configuration>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)

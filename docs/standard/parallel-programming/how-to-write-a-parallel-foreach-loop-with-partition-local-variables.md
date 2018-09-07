@@ -11,11 +11,11 @@ ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 357cc488705ec3dab66543fa4814dbe3e6a22777
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43867013"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098586"
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>Postupy: zápis smyčky Parallel.ForEach pomocí proměnných v místním oddílu
 Následující příklad ukazuje, jak psát <xref:System.Threading.Tasks.Parallel.ForEach%2A> metodu, která používá oddíl místní proměnné. Při provedení smyčky <xref:System.Threading.Tasks.Parallel.ForEach%2A> dochází k rozdělení kolekce prostředků na několik oddílů. Každý oddíl má svou vlastní kopii oddílu místní proměnné. Oddíl místní proměnné je podobný [místní proměnné vlákna](xref:System.Threading.ThreadLocal%601), s tím rozdílem, že několik oddílů můžete spustit v jednom vlákně.

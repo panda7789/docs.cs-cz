@@ -1,17 +1,17 @@
 ---
 title: Moduly (F#)
-description: 'Zjistěte, jak modul F # je seskupení F # kódu, například hodnoty, typy a hodnoty funkce v programu F #.'
+description: 'Zjistěte, jak modulu F # je seskupení kódu jazyka F #, jako jsou hodnoty, typy a hodnoty funkcí v programu F #.'
 ms.date: 04/24/2017
-ms.openlocfilehash: 9a1416321e392f7a06551b4a7e3429e3a2d023bd
-ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
+ms.openlocfilehash: fb0aa1d508d1141933b4fbdf10633f67ed078dc7
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34483515"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44048306"
 ---
 # <a name="modules"></a>Moduly
 
-V kontextu jazyk F # *modulu* je seskupení F # kódu, například hodnoty, typy a hodnoty funkce v programu F #. Kód v modulech seskupení vám pomůže uchovávat související kód společně a pomáhá zabránit název je v konfliktu v programu.
+V rámci jazyka F # *modulu* je seskupení kódu jazyka F #, jako jsou hodnoty, typy a hodnoty funkcí v programu F #. Kód v modulech seskupení udržet související kód společně a pomáhá zamezilo se konfliktům názvů ve svém programu.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -25,68 +25,70 @@ module [accessibility-modifier] module-name =
 ```
 
 ## <a name="remarks"></a>Poznámky
-Modul F # je seskupení F # kód konstruktory, jako jsou typy, hodnoty, funkce hodnoty a kódu v `do` vazby. Rozhraní je implementováno jako běžné třídy language runtime (CLR), která má jenom statické členy. Existují dva typy deklarací modulu, v závislosti na tom, jestli je celý soubor součástí modulu: nejvyšší úrovně modul deklarace a deklaraci místního modulu. Deklaraci nejvyšší úrovně modulu zahrnuje celý soubor v modulu. Deklaraci nejvyšší úrovně modul může se objevit pouze jako první deklaraci do souboru.
 
-V syntaxi pro deklaraci nejvyšší úrovně modulu nepovinný *kvalifikovaný obor názvů* sekvence názvy vnořené oborů názvů, který obsahuje modul. Kvalifikovaný obor názvů nemusí být předtím nebyl deklarovaný.
+Modulu F # je seskupení kód konstrukce F # jako je například typy, hodnoty, funkce hodnot a kódu v `do` vazby. Je implementován jako common language runtime (CLR) třídu, která obsahuje pouze statické členy. Existují dva typy deklarací modulu, v závislosti na tom, jestli je celý soubor součástí modulu: nejvyšší úrovně modulu prohlášení a prohlášení místní modul. Deklarace nejvyšší úrovně modulu zahrnuje celý soubor v modulu. Deklarace nejvyšší úrovně modulu se může objevit pouze jako první deklarací v souboru.
 
-Nemáte odsazovat deklarace v modulu nejvyšší úrovně. Budete muset odsazovat všechny deklarace v lokální moduly. V deklaraci místního modulu jenom deklarace, které odsazeny pod tento modul deklarace jsou součástí daného modulu.
+V syntaxi pro deklaraci nejvyšší úrovně modulu, volitelný *kvalifikovaný obor názvů* je posloupnost názvy vnořené obory názvů, který obsahuje modul. Kvalifikovaný obor názvů nemusí být deklarována.
 
-Pokud soubor kód nezačíná nejvyšší úrovně modulu deklaraci nebo deklarace oboru názvů, celý obsah souboru, včetně všech modulů místní stane součástí modul implicitně vytvořených nejvyšší úrovně, který má stejný název jako soubor bez přípony, první písmeno převeden na velká písmena. Zvažte například následující soubor.
+Není potřeba odsazení deklarace v nejvyšší úrovni modulu. Budete muset odsazení všechny deklarace v lokální moduly. V deklaraci místní modul jenom deklarace, které jsou odsazené pod tento modul deklarace jsou součástí daného modulu.
+
+Pokud soubor kódu nemá na začátku deklarace nejvyšší úrovně modulu nebo deklarace oboru názvů, celý obsah souboru, včetně všech místních modulů se stane součástí implicitně vytvořené nejvyšší úrovně modulu, který má stejný název jako soubor bez přípon kde je převeden na velká písmena první písmeno. Zvažte například následující soubor.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6601.fs)]
 
-Tento soubor by být zkompilovány, jako kdyby byly napsány tímto způsobem:
+Tento soubor by zkompilován, jako kdyby byly napsány tímto způsobem:
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6602.fs)]
 
-Pokud máte více modulů v souboru, musíte použít deklaraci místního modulu pro každý modul. Pokud je deklarovaná nadřazených obor názvů, tyto moduly jsou součástí nadřazených oboru názvů. Pokud není deklarovaný nadřazených obor názvů, moduly se stanou součástí modul implicitně vytvořených nejvyšší úrovně. Následující příklad kódu ukazuje soubor kód, který obsahuje více modulů. Kompilátor implicitně vytvoří nejvyšší úrovně modul s názvem `Multiplemodules`, a `MyModule1` a `MyModule2` jsou vnořené v tomto modulu nejvyšší úrovně.
+Pokud máte více modulů v souboru, musíte použít místní modul deklarace pro každý modul. Pokud je deklarovaná nadřazeného oboru názvů, tyto moduly jsou součástí nadřazeného oboru názvů. Pokud není deklarován nadřazeného oboru názvů, moduly se stanou součástí modulu implicitně vytvořené nejvyšší úrovně. Následující příklad kódu ukazuje soubor kódu, který obsahuje více modulů. Kompilátor implicitně vytvoří modul nejvyšší úrovně s názvem `Multiplemodules`, a `MyModule1` a `MyModule2` jsou vnořené v nejvyšší úrovni modulu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6603.fs)]
 
-Pokud máte více souborů v projektu nebo v jedné kompilaci nebo pokud vytváříte knihovny, je nutné zahrnout deklaraci oboru názvů nebo modul deklarace v horní části souboru. Kompilátor jazyka F # pouze implicitně Určuje název modulu v případě, že existuje pouze jeden soubor na příkazovém řádku projektu nebo kompilace a vytvoříte aplikaci.
+Pokud máte více souborů v projektu nebo v jedné kompilaci nebo pokud vytváříte knihovnu, musí obsahovat deklarace oboru názvů nebo modulu deklarace v horní části souboru. Kompilátor F # pouze implicitně Určuje název modulu, pokud existuje pouze jeden soubor v příkazovém řádku projekt nebo kompilaci a vytváření aplikace.
 
-*Modifikátor dostupnosti* může být jedna z následujících: `public`, `private`, `internal`. Další informace najdete v tématu [řízení přístupu](access-control.md). Výchozí hodnota je veřejná.
-
+*Modifikátor dostupnosti* může být jedna z následujících akcí: `public`, `private`, `internal`. Další informace najdete v tématu [řízení přístupu](access-control.md). Výchozí hodnota je veřejná.
 
 ## <a name="referencing-code-in-modules"></a>Odkazování na kód v modulech
-Když odkazujete funkcí, typy a hodnoty z jiný modul, musíte použít kvalifikovaný název nebo otevřete modul. Pokud používáte úplný název, je nutné zadat obory názvů, modulu a identifikátor elementu program, který má být. Oddělíte jednotlivých součástí kvalifikovanou cestu s tečkou (.), následujícím způsobem.
+
+Když odkazujete z jiného modulu funkce, typy a hodnoty, musíte použít úplný název nebo otevřete modul. Pokud používáte úplný název, musíte zadat obory názvů, modulu a identifikátor pro ovládací prvek programu, který chcete. Oddělíte jednotlivých součástí kvalifikovanou cestu s tečkou (.), následujícím způsobem.
 
 `Namespace1.Namespace2.ModuleName.Identifier`
 
-Můžete otevřít modul nebo jeden nebo více oborů názvů, můžete zjednodušit kód. Další informace o otevírání obory názvů a moduly, naleznete v části [deklarace importu: `open` – klíčové slovo](import-declarations-the-open-keyword.md).
+Můžete otevřít modul nebo jeden nebo více oborů názvů pro zjednodušení kódu. Další informace o oborech názvů otevírání a moduly, naleznete v tématu [deklarace importu: `open` – klíčové slovo](import-declarations-the-open-keyword.md).
 
-Následující příklad kódu ukazuje nejvyšší úrovně modul, který obsahuje všechny kód do konce souboru.
+Následující příklad kódu ukazuje nejvyšší úrovně modulu, který obsahuje všechny kódu až po konec souboru.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6604.fs)]
 
-Pokud chcete použít tento kód z jiného souboru ve stejném projektu, můžete buď použít kvalifikované názvy nebo otevřete modul před použitím funkcí, jak je znázorněno v následujících příkladech.
+Chcete-li použít tento kód z jiného souboru ve stejném projektu, buď použijte kvalifikované názvy nebo otevření modulu před použitím funkce, jak je znázorněno v následujícím příkladu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6605.fs)]
 
 ## <a name="nested-modules"></a>Vnořené moduly
-Moduly mohou být použity. Vnitřní moduly musí být odsazeny Pokud je to vnější modul deklarace k označení, že se jedná o vnitřní moduly, není nové moduly. Například porovnejte následující dva příklady. Modul `Z` je modul vnitřní v následujícím kódu.
+
+Moduly mohou být vnořené. Vnitřní moduly musí být odsazen až na hodnotu deklarace vnější modulů k označení, že jsou vnitřní moduly, nikoli nové moduly. Například porovnejte následující dva příklady. Modul `Z` je vnitřní modul v následujícím kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6607.fs)]
 
-Ale modul `Z` na stejné úrovni modulu `Y` v následujícím kódu.
+Ale modulu `Z` na stejné úrovni modulu `Y` v následujícím kódu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6608.fs)]
-Modul `Z` je také modul na stejné úrovni jako v následujícím kódu, protože není s odsazením, pokud je to jiné deklarace v modulu `Y`.
+Modul `Z` je také modul na stejné úrovni v následujícím kódu, protože nebude odsazena až na hodnotu dalšími deklaracemi v modulu `Y`.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6609.fs)]
-Navíc pokud vnější modul nemá žádné deklarace a okamžitě následuje se jiný modul deklarace, novou deklaraci modulu předpokládá se, že modul vnitřní, ale kompilátor upozornění, pokud není dále než odsazeny definici druhý modulu první.
+Nakonec pokud vnější modul nemá žádná prohlášení a je okamžitě následován jiné deklarace modulu, nové deklarace modulu je považován za vnitřního modulu, ale kompilátor upozorní, pokud není druhá definice modulu odsazen dále než první.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6610.fs)]
-Pokud chcete odstranit toto upozornění, odsazovat vnitřní modulu.
+Chcete-li upozornění odstranit, odsazení vnitřního modulu.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6611.fs)]
-Pokud chcete, aby všechny kód v souboru ve vnější jeden modul a chcete vnitřní moduly, modul vnější nevyžaduje znaménkem rovnosti a deklarace, včetně všech vnitřní modul deklarace, které přejde v modulu vnější nemají odsazení. Deklarace uvnitř deklarace vnitřní modulu by měly být zobrazují odsazené. Následující kód ukazuje tento případ.
+Pokud chcete, aby veškerý kód v souboru v modulu single vnější a vnitřní moduly, modul vnější nevyžaduje znaménko rovná se a deklarace, včetně jakékoli vnitřní modul deklarace, které půjdou ve vnější modulu nemají odsazeny. Deklarace uvnitř deklarací vnitřní modul musí být odsazeny. Následující kód ukazuje tento případ.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/modules/snippet6612.fs)]
 
 ## <a name="recursive-modules"></a>Rekurzivní moduly
 
-F # 4.1 zavádí představu o moduly, které umožňují všechny obsažené kódu být vzájemně rekurzivní.  To se provádí prostřednictvím `module rec`.  Použití `module rec` můžete zmírnit některé důsledně v nebude moci napsat vzájemně referenční kód mezi typy a modulů.  Následuje příklad tohoto:
+F # 4.1 zavádí pojem moduly, které umožňují použití všechny obsažené kód je vzájemně rekurzivní.  To se provádí prostřednictvím `module rec`.  Použití `module rec` může vyřešit některé důsledně v nebude moci napsat kód vzájemně referenční typy a moduly.  Následuje příklad:
 
 ```fsharp
 module rec RecursiveModule =
@@ -126,12 +128,12 @@ module rec RecursiveModule =
             | Down -> b |> peelSides
 ```
 
-Všimněte si, že výjimka `DontSqueezeTheBananaException` a třídu `Banana` odkazují na sebe navzájem.  Kromě toho modul `BananaHelpers` a třídu `Banana` se také podívat na sebe navzájem.  To nebude možné v jazyce F # express, pokud jste odebrali `rec` – klíčové slovo z `RecursiveModule` modulu.
+Všimněte si, že výjimka `DontSqueezeTheBananaException` a třída `Banana` odkazují na sebe navzájem.  Kromě toho modul `BananaHelpers` a třída `Banana` také odkazovat na sebe navzájem.  To by nebylo možné vyjádřit v jazyce F #, pokud jste odebrali `rec` – klíčové slovo z `RecursiveModule` modulu.
 
-Tato funkce je také možné v [obory názvů](namespaces.md) s F # 4.1.
+Tato možnost je také možné u [obory názvů](namespaces.md) s F # 4.1.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Referenční dokumentace jazyka F#](index.md)  
-[Obory názvů](namespaces.md)  
-[1009-F # RFC FS - povolit vzájemně referenční typy a moduly přes větší oborů v rámci soubory](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)  
+- [Referenční dokumentace jazyka F#](index.md)  
+- [Obory názvů](namespaces.md)  
+- [1009-F # RFC FS - povolit vzájemně referenční typy a moduly přes větší oborů v rámci souborů](https://github.com/fsharp/fslang-design/blob/master/FSharp-4.1/FS-1009-mutually-referential-types-and-modules-single-scope.md)  

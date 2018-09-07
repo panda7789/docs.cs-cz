@@ -3,11 +3,11 @@ title: Operátory s povolenou hodnotou Null (F#)
 description: 'Další informace o operátorech s možnou hodnotou Null, které jsou k dispozici v programovacím jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 42df74a56831fb0a5d6df34db4321f5b228993c2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44036776"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44086280"
 ---
 # <a name="nullable-operators"></a>Operátory s povolenou hodnotou Null
 

@@ -1,5 +1,5 @@
 ---
-title: Vyberte uzel pomocí jazyka XPath navigace
+title: Výběr uzlů pomocí navigace XPath
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,20 +8,20 @@ dev_langs:
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8c5a7b9113dd5a4de929f5b88569be89bc1f2c89
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9e02dd304893e4d9354144c5b412dfd145161c6e
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572707"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44075368"
 ---
-# <a name="select-nodes-using-xpath-navigation"></a>Vyberte uzel pomocí jazyka XPath navigace
-XML modelu DOM (Document Object) obsahuje metody, které vám umožní používat navigační XML Path Language (XPath) dotazů na informace v modelu DOM. Pomocí jazyka XPath se najít uzel jeden, konkrétní nebo k vyhledání všech uzlech, jež některé kritériím.  
+# <a name="select-nodes-using-xpath-navigation"></a>Výběr uzlů pomocí navigace XPath
+XML Document Object Model (DOM) obsahuje metody, které vám umožní použít navigační jazyk XML Path (XPath) dotaz na informace v modelu DOM. Výraz XPath můžete použít k vyhledání jednoho, konkrétní uzel nebo najít všechny uzly, které odpovídají kritérií.  
   
-## <a name="xpath-select-methods"></a>Vyberte XPath metody  
- Třídy DOM nabízí dvě metody pro výběr XPath: <xref:System.Xml.XmlNode.SelectSingleNode%2A> metoda a <xref:System.Xml.XmlNode.SelectNodes%2A> metoda. <xref:System.Xml.XmlNode.SelectSingleNode%2A> Metoda vrátí první uzlu, který odpovídá kritériím výběru. <xref:System.Xml.XmlNode.SelectNodes%2A> Metoda vrátí <xref:System.Xml.XmlNodeList> obsahující odpovídající uzly.  
+## <a name="xpath-select-methods"></a>Výběr XPath metody  
+ Třídy modelu DOM poskytují dvě metody pro výběr XPath: <xref:System.Xml.XmlNode.SelectSingleNode%2A> metoda a <xref:System.Xml.XmlNode.SelectNodes%2A> metoda. <xref:System.Xml.XmlNode.SelectSingleNode%2A> Metoda vrátí první uzel, který by odpovídal kritériím výběru. <xref:System.Xml.XmlNode.SelectNodes%2A> Vrátí metoda <xref:System.Xml.XmlNodeList> , která obsahuje odpovídající uzly.  
   
- Následující příklad používá <xref:System.Xml.XmlNode.SelectSingleNode%2A> metoda vyberte první `book` uzlu, ve kterém jméno autora poslední splňují zadaná kritéria. Soubor bookstore.xml (které je zadáno na konci tohoto tématu) se používá jako vstupní soubor.  
+ V následujícím příkladu <xref:System.Xml.XmlNode.SelectSingleNode%2A> metoda vyberte první `book` uzel, ve kterém autora příjmení splňují zadaná kritéria. Soubor bookstore.xml (který je k dispozici na konci tohoto tématu) se používá jako vstupní soubor.  
   
 ```vb  
 Dim doc As New XmlDocument()  
@@ -56,7 +56,7 @@ XmlNode node = root.SelectSingleNode(
 Console.WriteLine(node.InnerXml);  
 ```  
   
- Další příklad používá <xref:System.Xml.XmlNode.SelectNodes%2A> metoda vyberte všechny uzly adresáře, ve kterých je větší než po zadanou dobu cenu. Ceny pro každou knihu v seznamu vybraný je pak prostřednictvím kódu programu snížit deset procent. Nakonec je aktualizovaný soubor zapsána do konzoly. Soubor bookstore.xml (které je zadáno na konci tohoto tématu) se používá jako vstupní soubor.  
+ Následující příklad používá <xref:System.Xml.XmlNode.SelectNodes%2A> metoda vybere všechny uzly adresáře, ve kterých je větší než zadaná velikost cena. Cena za jednotlivé knihy ve vybraném seznamu je potom programově snižuje deset procent. Nakonec je aktualizovaný soubor zapsán do konzoly. Soubor bookstore.xml (který je k dispozici na konci tohoto tématu) se používá jako vstupní soubor.  
   
 ```vb  
 ' Load the document and set the root element.  
@@ -108,7 +108,7 @@ foreach (XmlNode book in nodeList)
 doc.Save(Console.Out);  
 ```  
   
- Výše uvedených příkladech spustí dotaz XPath na element dokumentu. Nastavení výchozí bod pro cestu XPath dotazu nastaví kontext uzlu, který je výchozím bodem pro dotaz XPath. Pokud nechcete, aby pro spuštění na element dokumentu, ale chcete začít od prvního podřízeného prvku dokumentu, můžete příkaz select kódu následujícím způsobem:  
+ Výše uvedených příkladech spustit dotaz XPath na element dokumentu. Nastavení výchozí bod pro cestu XPath dotaz nastaví kontextu uzlu, který je výchozím bodem pro dotaz XPath. Pokud nechcete, aby začínal element dokumentu, ale chcete začít od první podřízený element dokumentu, vám umožní kódování příkaz select následujícím způsobem:  
   
 ```vb  
 doc.DocumentElement.FirstChild.SelectNodes(. . . )  
@@ -118,19 +118,19 @@ doc.DocumentElement.FirstChild.SelectNodes(. . . )
 this doc.DocumentElement.FirstChild.SelectNodes(. . .);  
 ```  
   
- Všechny <xref:System.Xml.XmlNodeList> objekty jsou synchronizovány s zdrojový dokument. Proto pokud iteraci v rámci seznamu uzlu a změňte hodnotu uzlu, tento uzel je aktualizované taky v dokumentu, ze které pochází. Všimněte si v předchozím příkladu, změny uzlu ve vybraných <xref:System.Xml.XmlNodeList> také změněna zdrojový dokument.  
+ Všechny <xref:System.Xml.XmlNodeList> objekty jsou synchronizovány s zdrojový dokument. Proto pokud iteraci v rámci seznamu uzlů a změňte hodnotu uzlu, uzlu jsou aktualizované taky v dokumentu, ze které pochází. Všimněte si, že v předchozím příkladu, která při změně uzlu ve vybraném období <xref:System.Xml.XmlNodeList> etag zdrojový dokument.  
   
 > [!NOTE]
->  Pokud zdrojový dokument je změněn, se doporučuje znovu select. Pokud je uzel upravit jeden, který by mohl způsobit uzlu, který má být přidán do seznamu uzlu, pokud nebyla dříve, nebo její odebrání ze seznamu uzlu teď způsobit, není zaručeno, seznam uzlů je nyní přesná.  
+>  Při změně podkladového dokumentu, je vhodné spustit znovu vybrat. Je-li upravit uzlu je ten, který může způsobit, že uzel, který má přidat do seznamu uzlu, pokud nebyla dříve, nebo ho odebrat ze seznamu uzlů nyní způsobí, není zaručeno, že seznam uzlů je nyní přesné.  
   
 ## <a name="namespaces-in-xpath-expressions"></a>Obory názvů ve výrazech XPath  
- Výrazech XPath může zahrnovat obory názvů. Namespace řešení je podporována při použití <xref:System.Xml.XmlNamespaceManager>. Obsahuje-li výraz XPath předpony, identifikátor URI pár předpony a oboru názvů musí být přidaný do <xref:System.Xml.XmlNamespaceManager>a <xref:System.Xml.XmlNamespaceManager> je předán <xref:System.Xml.XmlNode.SelectNodes%28System.String%2CSystem.Xml.XmlNamespaceManager%29> nebo <xref:System.Xml.XmlNode.SelectSingleNode%28System.String%2CSystem.Xml.XmlNamespaceManager%29> metoda. Všimněte si, že pomocí výše uvedené příklady kódu <xref:System.Xml.XmlNamespaceManager> vyřešit obor názvů bookstore.xml dokumentu.  
+ Výrazy XPath může zahrnovat obory názvů. Namespace rozlišení není podporováno použití <xref:System.Xml.XmlNamespaceManager>. Pokud výraz XPath obsahuje předponu, identifikátor URI dvojice předpony a oboru názvů musí být přidané do <xref:System.Xml.XmlNamespaceManager>a <xref:System.Xml.XmlNamespaceManager> je předán <xref:System.Xml.XmlNode.SelectNodes%28System.String%2CSystem.Xml.XmlNamespaceManager%29> nebo <xref:System.Xml.XmlNode.SelectSingleNode%28System.String%2CSystem.Xml.XmlNamespaceManager%29> metoda. Všimněte si, že pomocí výše uvedených příkladech kódu <xref:System.Xml.XmlNamespaceManager> určit obor názvů bookstore.xml dokumentu.  
   
 > [!NOTE]
->  Pokud výraz XPath neobsahuje předpony, předpokládá se, že je obor názvů identifikátor URI (Uniform Resource) prázdného oboru názvů. Pokud soubor XML obsahuje výchozí obor názvů, musí stále přidejte identifikátor URI oboru názvů a předpony k <xref:System.Xml.XmlNamespaceManager>, jinak budou vybrány žádné uzly.  
+>  Pokud výraz XPath neobsahuje předponu, předpokládá se, že je obor názvů identifikátoru URI (Uniform Resource) prázdný obor názvů. Pokud soubor XML obsahuje výchozí obor názvů, přesto musí přidat předpony a oboru názvů identifikátoru URI k <xref:System.Xml.XmlNamespaceManager>; v opačném případě bude vybráno žádné uzly.  
   
 #### <a name="input-file"></a>Vstupní soubor  
- Toto je soubor bookstore.xml, který se používá jako vstupní soubor v příkladech v tomto tématu:  
+ Toto je bookstore.xml soubor, který slouží jako vstupní soubor v příkladech v tomto tématu:  
   
 ```xml  
 <?xml version='1.0'?>  
@@ -162,5 +162,6 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
 </bookstore>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

@@ -10,24 +10,24 @@ helpviewer_keywords:
 ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2c2e7d5ce170feecaf69aa5dd9785346de0375d2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bc36c926ba81de8a59ff3af69719bec6b7370efc
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33591502"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44071489"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Porozumění zrychlení v PLINQ
-Primárním účelem PLINQ je pro urychlení provádění LINQ na objekty dotazy spuštěním dotazu delegáty paralelně na počítačích s více jádry. Při zpracování jednotlivých prvků ve zdrojové kolekci je nezávislé, bez sdíleného stavu související se situací mezi jednotlivé delegáty se nejlépe provádí PLINQ. Tyto operace jsou obvyklé v technologii LINQ to objekty a PLINQ a se často nazývají "*delightfully paralelní*" vzhledem k tomu, že je to možné snadno plánování na více vláken. Nicméně ne všechny dotazy skládat delightfully paralelních operací; ve většině případů dotazu zahrnuje některé operátory buď nesmí být paralelizovaná málo, nebo které zpomalit paralelní provádění. A dokonce i s dotazy, které jsou zcela delightfully paralelní, musí PLINQ stále oddílu zdroj dat a plánování práce na vláken a obvykle sloučení výsledků po dokončení dotazu. Všechny tyto operace přidání do výpočetní náklady paralelizace; Tyto náklady přidávání paralelizace se nazývají *režijní náklady na*. Cílem je dosáhnout optimálního výkonu v PLINQ dotazu, maximalizovat částí, které jsou delightfully paralelní a minimalizovat částí, které vyžadují režijní náklady. Tento článek obsahuje informace, které vám pomohou psát dotazy PLINQ, které jsou co nejúčinnější při stále vracet správné výsledky.  
+Pro urychlení spuštění LINQ to Objects dotazů spuštěním dotazu delegáty paralelně na vícejádrových počítačích je primárním účelem PLINQ. PLINQ poskytuje nejlepší výkon při zpracování jednotlivých prvků ve zdrojové kolekci je nezávislé, bez sdíleného stavu zahrnutých mezi jednotlivé delegátů. Tyto operace jsou běžné v technologii LINQ to Objects a PLINQ a jsou často nazývány "*delightfully paralelní*" vzhledem k tomu, že je to možné snadno plánování z více vláken. Ale ne všechny dotazy sestávat jen z delightfully paralelních operací; ve většině případů se dotaz týká některé operátory, které buď nemůže být paralelizována nebo, který zpomalit paralelního provádění. A i s dotazy, které jsou zcela delightfully paralelní, musí i nadále oddílů zdroj dat a plánování práce na vlákna a obvykle sloučit výsledky po dokončení dotazu PLINQ. Všechny tyto operace přidání do výpočetní náklady paralelizace; Tyto náklady přidávání paralelizace se nazývají *režii*. Cílem je dosáhnout optimálního výkonu v dotazu PLINQ maximalizovat části, které jsou delightfully paralelní a části, které vyžadují režii minimalizovat. Tento článek obsahuje informace, které vám pomůže psát dotazy PLINQ, které jsou co nejúčinnější při pořád vracet správné výsledky.  
   
-## <a name="factors-that-impact-plinq-query-performance"></a>Faktory, které mají vliv na výkon dotazu PLINQ  
- V následujících částech jsou uvedeny některé nejdůležitější faktorů, že dopad výkon paralelního dotazu. Jedná se o Obecné příkazy, které samy o sobě nejsou dostatečná k předvídání výkon dotazů ve všech případech. Jako vždy je důležité k měření skutečným výkonem konkrétní dotazů na počítačích s rozsahem reprezentativní konfigurace a zatížení.  
+## <a name="factors-that-impact-plinq-query-performance"></a>Faktory, které ovlivňují výkonu dotazu PLINQ  
+ V následujících částech jsou uvedeny některé z vašich nejdůležitějších faktorů této ovlivnit výkon paralelního dotazu. Toto jsou Obecné příkazy, které samy o sobě nejsou dostatečná pro předpověď výkonu dotazů ve všech případech. Jako vždy je důležité k měření skutečný výkon konkrétní dotazů na počítačích s celou řadou reprezentativní konfigurace a zatížením.  
   
-1.  Výpočetní náklady na celkový práce.  
+1.  Výpočetní náklady na celkovou práci.  
   
-     K dosažení zrychlení, musí mít dotazu PLINQ dostatek delightfully paralelní práce k posunutí režijní náklady. Práce může být vyjádřený jako výpočetní náklady na každý delegáta násobí hodnotou počet elementů ve zdrojové kolekci. Za předpokladu, že operace může být paralelizovaná málo, čím výpočetně nákladné je, tím větší možnost pro zrychlení. Například pokud funkci přijímá jeden milisekund k provedení, může trvat sekvenční dotazu více než 1000 elementy bude trvat jednu sekundu k provedení této operace, zatímco paralelní dotaz na počítači s čtyři jader pouze 250 milisekund. Dostaneme zrychlení 750 milisekund. V případě potřeby sekundu provést pro každý prvek funkce by být zrychlení 750 sekund. Pokud delegát je velmi náročná, může PLINQ nabízí významné zrychlení s pouze několik položek ve zdrojové kolekci. Naopak malé zdroj kolekce s trivial delegáti nejsou obvykle vhodnými kandidáty pro PLINQ.  
+     K dosažení zrychlení, PLINQ dotaz musí mít dostatek delightfully paralelně prováděných úloh k vyrovnání zatížení. Práce může být vyjádřený jako výpočetní náklady na každý delegát počtem prvků zdrojové kolekce. Za předpokladu, že operace může být paralelizována, tím víc výpočetně náročné je, větší příležitosti pro zrychlení. Například pokud funkce přijímá jeden milisekund ke spuštění, sekvenční dotazu víc než 1000 prvky bude trvat jedné sekundy k provedení této operace, zatímco paralelní dotazy na počítači s čtyři jádra může trvat pouze 250 milisekund. Jde dosáhnout zrychlení 750 milisekund. V případě potřeby jedné sekundy provést pro každý prvek funkci zrychlení by 750 sekund. Pokud delegát je velmi náročná, PLINQ může nabízet výrazné zrychlení s pouze několika položkami ve zdrojové kolekci. Naopak malé zdrojové kolekce s triviální delegáty nejsou obecně vhodnými kandidáty pro PLINQ.  
   
-     V následujícím příkladu je queryA pravděpodobně vhodným kandidátem pro PLINQ, za předpokladu, že jeho vyberte funkce zahrnuje značné úsilí. queryB je pravděpodobně není vhodným kandidátem, protože není k dispozici dostatek pracovních v příkazu Select a režii paralelizace bude posunut většinu nebo všechny zrychlení.  
+     V následujícím příkladu je queryA pravděpodobně vhodným kandidátem pro PLINQ, za předpokladu, Select funkce zahrnuje spoustu práce. queryB není zřejmě vhodným kandidátem protože není k dispozici dostatek práce v příkazu Select a režie paralelního zpracování bude posun většinu nebo všechny zrychlení.  
   
     ```vb  
     Dim queryA = From num In numberList.AsParallel()  
@@ -47,42 +47,43 @@ Primárním účelem PLINQ je pro urychlení provádění LINQ na objekty dotazy
                  select num; //not as good for PLINQ  
     ```  
   
-2.  Počet logických jádra systému (stupně paralelního zpracování).  
+2.  Počet logických jader v systému (stupeň paralelismu).  
   
-     Tento bod je zřejmé důsledkem v předchozí části, dotazy, které jsou delightfully paralelní rychleji, na počítače s více jader protože práce je možné rozdělit mezi více souběžných vláken. Celkové množství zrychlení závisí na to, jaké procento celkové práce dotazu je může běžet paralelně. Ale Nepředpokládejte, že všechny dotazy se spustí dvakrát jako rychlé v počítači osm jader jako čtyři základní počítač. Při ladění dotazy pro optimální výkon, je důležité k měření skutečné výsledky na počítačích s různým počtem jader. Tento bod má vztah k bodu #1: větších datových sad jsou nutné k využít větší výpočetní prostředky.  
+     Tento bod je zřejmé důsledkem v předchozí části, dotazy, které jsou delightfully paralelní rychleji na počítačích s více jádry vzhledem k tomu je možné rozdělit práci mezi více souběžných vláken. Celkové množství zrychlení závisí na to, jaké je procento celkové pracovní dotazu je paralelizovat. Ale Nepředpokládejte, že všechny dotazy se spustí dvakrát jako rychle v počítači osm jader jako počítače čtyři jádra. Při ladění dotazů pro zajištění optimálního výkonu, je důležité k měření skutečné výsledky na počítačích s různým počtem jader. Tento bod má vztah k bodu #1: větších datových sad je potřeba využívat větší výpočetní prostředky.  
   
-3.  Počet a typ operací.  
+3.  Počet a druh operace.  
   
-     PLINQ poskytuje AsOrdered operátor pro situace, ve kterých je potřeba udržovat pořadí elementů ve zdrojové sekvence. Náklady spojené s řazení, ale je obvykle mírné tyto poplatky. Operace GroupBy a připojení k podobně zpoplatněná režijní náklady. PLINQ poskytuje nejlepší výkon, pokud je povoleno pro zpracování elementů ve zdrojové kolekci v libovolném pořadí a předat další operátor, jakmile jsou připravené. Další informace najdete v tématu [zachování pořadí v PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md).  
+     PLINQ poskytuje metodu AsOrdered operátor pro situace, ve kterých je nezbytné zachovat pořadí prvků ve zdrojové sekvenci. Náklady spojené s řazení, ale tyto náklady jsou obvykle středně velká. Funkce GroupBy a připojení k operations, stejně tak vznikne režijní náklady. PLINQ poskytuje nejlepší výkon, pokud je povoleno zpracování prvků ve zdrojové kolekci v libovolném pořadí a předat je další operátoru, jakmile jsou připravené. Další informace najdete v tématu [zachování pořadí v PLINQ](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md).  
   
-4.  Formulář spuštění dotazu.  
+4.  Formulář provádění dotazu.  
   
-     Pokud ukládáte voláním ToArray nebo ToList výsledků dotazu, musí být výsledky ze všech paralelních vláken sloučeny do jednoho datového struktury. To zahrnuje výpočetní nákladů na nevyhnutelné použít. Podobně pokud jste výsledky iteraci pomocí příkazu foreach (pro každou v jazyce Visual Basic) smyčky, výsledků pracovních vláken muset serializovat do vlákno enumerátor. Ale pokud chcete provést některé akce na základě výsledku z každé vlákno, můžete použít metodu ForAll pro práci na více vláken.  
+     Pokud ukládáte výsledků dotazu pomocí volání ToArray nebo ToList, výsledky ze všech paralelních vláken musí být sloučeny do jednoho datového struktury. To zahrnuje nevyhnutelné výpočetní náklady. Podobně pokud iterovat výsledky pomocí smyčku foreach (pro každý v jazyce Visual Basic), výsledky z pracovních vláken muset být serializován do vlákna enumerátor. Ale pokud chcete provést některé akce na základě výsledku z každé vlákno, můžete použít metodu ForAll provést tuto práci z více vláken.  
   
-5.  Typ možností sloučení.  
+5.  Typ možnosti sloučení.  
   
-     PLINQ lze nakonfigurovat buď jeho výstupní vyrovnávací paměť a ho vytvořit bloky dat nebo všechny najednou, po celou sadu výsledků vytváří, nebo jednotlivé výsledky datového proudu jako se vytváří. Bývalé výsledkem je ke snížení celkové čas spuštění a druhá možnost vede ke snížení latence mezi poskytuje elementy.  Při možností sloučení nemají vždy významný vliv na celkový výkon dotazů, můžou ovlivnit dosahovaný výkon protože budou řídit, jak dlouho uživatel musí počkat a zobrazte výsledky. Další informace najdete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
+     PLINQ můžete nakonfigurovat buď uložit svůj výstup do vyrovnávací paměti a vytvořený na základě jeho v blocích nebo celou najednou celou sadu výsledků je vytvořen, nebo do datového proudu jednotlivé výsledky protože se vytvářejí. Předchozí výsledek je snížit celkový čas spuštění a druhé výsledky v nižší latence mezi elementy poskytuje.  Zatímco možnosti sloučení nemají vždy významný vliv na celkový výkon dotazů, můžou mít vliv na dosahovaný výkon protože řídí dobu uživatele musíte počkat, chcete-li zobrazit výsledky. Další informace najdete v tématu [možnosti sloučení v PLINQ](../../../docs/standard/parallel-programming/merge-options-in-plinq.md).  
   
-6.  Druh rozdělení do oddílů.  
+6.  Druh dělení.  
   
-     V některých případech může způsobit dotazu PLINQ přes kolekci indexovanou zdroje nevyváženou pracovní zatížení. V takovém případě je možné zvýšit výkon dotazů tak, že vytvoříte vlastní dělicí metody. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).  
+     V některých případech může způsobit PLINQ dotaz nad indexovanou zdrojové kolekce nevyváženou pracovní zátěže. V takovém případě je možné ke zvýšení výkonu dotazů tím, že vytvoříte vlastní dělicí metody. Další informace najdete v tématu [vlastní dělicí metody pro PLINQ a TPL](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md).  
   
-## <a name="when-plinq-chooses-sequential-mode"></a>Když PLINQ zvolí sekvenční režimu  
- PLINQ se vždy pokusí o spuštění dotazu alespoň tak rychlý jako dotaz se spouští sekvenčně. I když PLINQ zdá o tom, jak u nákladné delegáty uživatele, nebo jak velkou vstupního zdroje, vyhledejte určité dotazu "tvarů." Konkrétně vypadá pro operátory dotazu nebo kombinace operátory, které obvykle způsobí dotazu na provedení pomaleji v paralelním režimu. Pokud najde takové tvarů, PLINQ ve výchozím nastavení přejde zpět do sekvenční režimu.  
+## <a name="when-plinq-chooses-sequential-mode"></a>Když vybere PLINQ sekvenčního režimu  
+ PLINQ se vždy pokusí o provedení dotazu alespoň tak rychle, jak dotaz by spouští sekvenčně. I když PLINQ není podívejte se na tom výpočetně náročná uživatele Delegáti jsou, nebo jak velké je vstupní zdroj, vyhledejte určité dotazu "obrazce." Konkrétně hledá operátorů dotazu nebo kombinace operátorů, které obvykle způsobí dotaz, který pomaleji provést v paralelní režimu. Pokud se najde tyto tvary, PLINQ ve výchozím nastavení přejde zpět do sekvenčního režimu.  
   
- Ale po měření výkonu konkrétní dotaz, může určit, že ve skutečnosti běží rychleji v paralelním režimu. V takových případech můžete použít <xref:System.Linq.ParallelExecutionMode.ForceParallelism?displayProperty=nameWithType> příznak prostřednictvím <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metoda k vynucení PLINQ paralelní dotaz. Další informace najdete v tématu [postupy: určení režimu spouštění v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md).  
+ Ale po měření výkonu konkrétní dotaz, může určit, že ve skutečnosti běží rychleji v paralelní režimu. V takových případech můžete použít <xref:System.Linq.ParallelExecutionMode.ForceParallelism?displayProperty=nameWithType> příznak prostřednictvím <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> metoda k vynucení PLINQ paralelizovat dotaz. Další informace najdete v tématu [postupy: určení režimu spouštění v PLINQ](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md).  
   
- Následující seznam popisuje tvary dotazu, které PLINQ ve výchozím nastavení bude vykonán v sekvenčním režimu:  
+ Následující seznam popisuje tvary dotazu PLINQ ve výchozím nastavení bude vykonán v sekvenčním režim:  
   
--   Dotazy, které obsahují s výběrem indexované kde indexované označit více, nebo klauzuli ElementAt po řazení nebo filtrování operátor, který se má odebrat nebo změně uspořádání původní indexy.  
+-   Dotazy, které obsahují s výběrem indexovat, kde indexované operátor SelectMany nebo klauzuli ElementAt po řazení nebo filtrování operátor, který se má odebrat nebo změnit jejich uspořádání původní indexy.  
   
--   Dotazy obsahující proveďte TakeWhile, přeskočit, SkipWhile – operátor a kde indexy ve zdrojové sekvence nejsou ve stejném pořadí.  
+-   Dotazy, které obsahují Take, TakeWhile –, přeskočit, SkipWhile – operátor a kde indexů ve zdrojové sekvence nejsou ve stejném pořadí.  
   
--   Dotazy, které obsahují Zip nebo SequenceEquals, pokud se některý ze zdrojů dat má indexu původně seřazené a jiný zdroj dat je indexovanou (tj. pole nebo IList(T)).  
+-   Dotazy, které obsahují Zip nebo SequenceEquals, pokud jeden ze zdrojů dat má původně seřazený index a jiný zdroj dat je indexované (například pole nebo IList(T)).  
   
--   Dotazy, které obsahují Concat, pokud je tato indexovanou datové zdroje.  
+-   Dotazy, které obsahují Concat, pokud se použije ke zdrojům dat indexovatelné.  
   
--   Dotazy, které obsahují vrátit, pokud se použije ke zdroji dat indexovanou.  
+-   Dotazy, které obsahují obrátit, pokud není použita ke zdroji dat indexovatelné.  
   
-## <a name="see-also"></a>Viz také  
- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)
+## <a name="see-also"></a>Viz také:
+
+- [Paralelní LINQ (PLINQ)](../../../docs/standard/parallel-programming/parallel-linq-plinq.md)

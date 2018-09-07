@@ -9,47 +9,48 @@ helpviewer_keywords:
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2674acf14aae5e892dfb9707a19cca12b4797c90
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: df2ccf3d778e26e16937554304ae847f624cfec0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572980"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085633"
 ---
 # <a name="framework-design-guidelines"></a>Pokyny k návrhu architektury
-Tato část obsahuje pokyny pro návrh knihovny, které rozšiřují a interakci s rozhraním .NET Framework. Cílem je pomoct knihovny Designer zajistit konzistentnost rozhraní API a snadné použití tím, že poskytuje jednotný programovací model, která je nezávislá programovací jazyk používaný pro vývoj. Doporučujeme vám, postupujte podle těchto pokynů pro návrh, při vývoji třídy a součásti, které rozšiřují rozhraní .NET Framework. Návrh nekonzistentní knihovny nepříznivě ovlivní produktivita vývojářů a nedoporučuje přijetí.  
+Tato část obsahuje pokyny pro návrh knihoven, které rozšiřují a pracovat s rozhraním .NET Framework. Cílem je pomoct knihovny návrhářů tím, že poskytuje jednotný programovací model, který je nezávislý na programovací jazyk se používá pro vývoj pro zajištění konzistence rozhraní API a snadné použití. Doporučujeme postupovat podle následujících pokynů návrhu, při vytváření tříd a komponent, které rozšiřují rozhraní .NET Framework. Návrh nekonzistentní knihovny nepříznivě má vliv na produktivitu vývojářů a odrazuje od přijetí.  
   
- Pokyny jsou uspořádána jako jednoduchý doporučení předponu s podmínkami `Do`, `Consider`, `Avoid`, a `Do not`. Tyto pokyny jsou určeny k pomoci třídy knihovny Designer pochopit kompromis mezi různá řešení. Můžou nastat situace, kdy dobrý knihovny návrhu vyžaduje způsobila porušení těchto pokynů pro návrh. Takových případech by měl být výjimečná a je důležité, abyste měli vymazat a poutavých důvod pro vaše rozhodnutí.  
+ Pokyny jsou uspořádané jako jednoduchý doporučení předponu podmínky `Do`, `Consider`, `Avoid`, a `Do not`. Tyto pokyny jsou určeny k pomohou návrhářům tříd knihovny pochopit kompromisy mezi různými řešeními. Můžou nastat situace, kdy návrh dobrý knihovna vyžaduje, aby že porušují tyto pokyny k návrhu. Takové případy by měl být vzácné a je důležité, abyste měli vymazat a poutavé důvod svého rozhodnutí.  
   
- Tyto pokyny jsou převzaty z knihy webových stránek *pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání*, Krzysztof Cwalina a Abrams Brada.  
+ Tyto pokyny jsou výňatkem z knihy *pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition*, Krzysztof Cwalina a Brad Abrams.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)  
- Obsahuje pokyny pro pojmenování sestavení, obory názvů, typy a členy v knihovny tříd.  
+ Obsahuje pokyny pro pojmenování sestavení, oborů názvů, typy a členy v knihovnách tříd.  
   
  [Pokyny k návrhu typu](../../../docs/standard/design-guidelines/type.md)  
- Poskytuje pokyny pro používání statických a abstraktní třídy, rozhraní, výčty, struktur a dalších typů.  
+ Poskytuje pokyny pro používání statických a abstraktní třídy, rozhraní, výčty, struktury a ostatní typy.  
   
  [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
- Obsahuje pokyny pro návrh a pomocí vlastnosti, metody, konstruktory, pole, operátory, události a parametry.  
+ Obsahuje pokyny pro návrh a pomocí vlastnosti, metody, konstruktory, pole, události, operátory a parametry.  
   
  [Navrhování pro rozšiřitelnost](../../../docs/standard/design-guidelines/designing-for-extensibility.md)  
- Popisuje rozšiřitelnost mechanismy, jako je vytváření podtříd, pomocí události, virtuální členové a zpětná volání a vysvětluje, jak zvolit mechanismy, které nejlépe splňují požadavky vašeho framework.  
+ Popisuje rozšíření mechanismy, jako je vytváření podtříd, události, virtuální členy a zpětná volání a vysvětluje, jak zvolit mechanismy, které nejlépe splňovat požadavky na vaše architektura.  
   
  [Pokyny k návrhu pro výjimky](../../../docs/standard/design-guidelines/exceptions.md)  
- Popisuje pokyny pro návrh pro navrhování, vyvolání a zachycení výjimky.  
+ Popisuje pokyny k návrhu pro navrhování, vyvolání a zachycení výjimky.  
   
  [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)  
- Popisuje pokyny pro použití běžné typy, jako je například pole, atributy a kolekce, podporu serializace a přetížení operátory rovnosti.  
+ Popisuje pokyny pro běžné typy, jako je například pole, atributy a kolekce pomocí, podpora serializace a operátory rovnosti přetížení.  
   
  [Obecné vzory návrhu](../../../docs/standard/design-guidelines/common-design-patterns.md)  
- Obsahuje pokyny pro výběr a implementace vlastností závislostí a vzoru uvolnění.  
+ Obsahuje pokyny pro výběr a implementace vlastnosti závislosti a vzor dispose.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Přehled](../../../docs/framework/get-started/overview.md)  
- [Plán pro rozhraní .NET Framework](https://msdn.microsoft.com/library/0b46b7c6-9163-4f99-8e58-0d1ee7da8c67)  
- [Průvodce vývojem](../../../docs/framework/development-guide.md)
+## <a name="see-also"></a>Viz také:
+
+- [Přehled](../../../docs/framework/get-started/overview.md)  
+- [Plán pro rozhraní .NET Framework](https://msdn.microsoft.com/library/0b46b7c6-9163-4f99-8e58-0d1ee7da8c67)  
+- [Průvodce vývojem](../../../docs/framework/development-guide.md)

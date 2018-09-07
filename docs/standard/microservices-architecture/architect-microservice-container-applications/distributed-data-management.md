@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 7e539067b20f0e018496b0076582619cb88072e1
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.openlocfilehash: 4c514f3a7dc1fb01b2f1ed2dddc9d938c1101809
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480662"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44067169"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Výzvy a řešení správy distribuovaných dat
 
@@ -79,7 +79,7 @@ Ve skutečnosti pokud interní mikroslužby jsou komunikaci tak, že vytvoříte
 
 Pokud chcete vynutit autonomie mikroslužeb a mít lepší odolnost proti chybám, proto byste minimalizovat použití řetězy komunikace požadavku nebo odpovědi napříč mikroslužeb. Doporučuje se použít pouze asynchronní interakce pro komunikaci mezi virtuálními sítěmi mikroslužeb pomocí asynchronních zpráv a události – komunikace na základě nebo pomocí cyklického dotazování HTTP bez ohledu na jejich původní cyklu požadavků/odpovědí HTTP.
 
-Použití asynchronní komunikace je vysvětlen později v tomto průvodci v části Další podrobnosti o [integrace asynchronní mikroslužeb vynucuje pro mikroslužby autonomie](#asynchronous-microservice-integration-enforce-microservices-autonomy) a [asynchronní komunikace založená na zprávách](#asynchronous-message-based-communication).
+Použití asynchronní komunikace je vysvětlen později v tomto průvodci v části Další podrobnosti o [integrace asynchronní mikroslužeb vynucuje pro mikroslužby autonomie](communication-in-microservice-architecture.md#asynchronous-microservice-integration-enforces-microservices-autonomy) a [asynchronní komunikace založená na zprávách](asynchronous-message-based-communication.md).
 
 ## <a name="additional-resources"></a>Další zdroje
 

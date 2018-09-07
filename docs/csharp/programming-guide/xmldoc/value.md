@@ -8,11 +8,11 @@ helpviewer_keywords:
 - value C# XML tag
 ms.assetid: 08dbadaf-9ab6-43d9-9493-98e43bed199a
 ms.openlocfilehash: 24ef4aba13668cd04e20f17ebffac9eb68e796ca
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779283"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44081853"
 ---
 # <a name="ltvaluegt-c-programming-guide"></a>&lt;Hodnota&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

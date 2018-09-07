@@ -12,56 +12,57 @@ helpviewer_keywords:
 ms.assetid: 790b5d8b-d546-40a6-beeb-151b574e5ee5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e702233c90155957d1de1a5a306d44d8faa41929
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34ad5b9cc0014db05bc6e7483e389488e145beb3
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576344"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44087323"
 ---
 # <a name="how-to-implement-a-provider"></a>Postupy: Implementace poskytovatele
-Návrhový vzor pozorovatel vyžaduje rozdělení zprostředkovatele, který monitoruje data a odešle oznámení, a jeden nebo více pozorovatelů, které dostávat oznámení (zpětná volání) od zprostředkovatele. Toto téma popisuje postup vytvoření poskytovatele. Související téma, [postupy: implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md), popisuje, jak vytvořit pozorovatele.  
+Návrhový vzor pozorovatel vyžaduje rozdělení poskytovatele, který monitoruje dat a odešle oznámení, a jeden nebo více pozorovatelé, které obdrží oznámení (zpětná volání) od poskytovatele. Toto téma popisuje, jak vytvořit poskytovatele. Související téma [postupy: implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md), popisuje, jak vytvořit pozorovatele.  
   
 ### <a name="to-create-a-provider"></a>Chcete-li vytvořit poskytovatele  
   
-1.  Zadejte data, která je odpovědná za zasílání pozorovatelů zprostředkovatele. I když mezi poskytovatelem a data, která odešle pozorovatelů může být jeden typ, jsou obecně reprezentované pomocí různých typů. Například v teplotě monitorování aplikace `Temperature` struktura definují data, která zprostředkovatele (která je reprezentována `TemperatureMonitor` třídy definované v dalším kroku) monitoruje a do které pozorovatelů přihlášení k odběru.  
+1.  Definování dat, která je odpovědná za zasílání pozorovatelů zprostředkovatele. I když se jeden typ může být zprostředkovatel a data, která se odešle do pozorovatelé, jsou obecně reprezentované pomocí různých typů. Například v teploty monitorování aplikace `Temperature` struktury definuje data, která zprostředkovatele (která je reprezentována `TemperatureMonitor` třídy definované v dalším kroku) monitoruje a do které pozorovatelů přihlášení k odběru.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/data.cs#1)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/data.vb#1)]  
   
-2.  Zadejte poskytovatele dat, který je typ, který implementuje <xref:System.IObservable%601?displayProperty=nameWithType> rozhraní. Argument obecného typu poskytovatele je typ, který odešle zprostředkovatel pozorovatelů. V následujícím příkladu definuje `TemperatureMonitor` třída, která je vytvořený <xref:System.IObservable%601?displayProperty=nameWithType> implementace s argumentem obecného typu ve `Temperature`.  
+2.  Definování poskytovatele dat, což je typ, který implementuje <xref:System.IObservable%601?displayProperty=nameWithType> rozhraní. Argument obecného typu zprostředkovatele je typ, který odešle zprostředkovatel pozorovatelů. Následující příklad definuje `TemperatureMonitor` třídy, která je konstruovaný <xref:System.IObservable%601?displayProperty=nameWithType> implementace s argumentem obecného typu z `Temperature`.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#2)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#2)]  
   
-3.  Zjistěte, jak se zprostředkovatel uloží odkazy na pozorovatelů tak, aby každý pozorovatel může být upozorněni, když je to vhodné. Nejčastěji objekt kolekce například obecný <xref:System.Collections.Generic.List%601> objekt se používá pro tento účel. V následujícím příkladu definuje privátního <xref:System.Collections.Generic.List%601> objekt, který je v instanci `TemperatureMonitor` konstruktoru třídy.  
+3.  Zjistěte, jak se zprostředkovatel ukládají odkazy na pozorovatelů tak, aby každý pozorovatel můžete být upozorněni v případě potřeby. Nejčastěji objekt kolekce například obecný <xref:System.Collections.Generic.List%601> objekt se používá pro tento účel. Následující příklad definuje privátní <xref:System.Collections.Generic.List%601> objekt, který je vytvořena instance v `TemperatureMonitor` konstruktoru třídy.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#3)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#3)]  
   
-4.  Definování <xref:System.IDisposable> implementace, která může poskytovatel tak, aby se může zastavit příjem oznámení kdykoli vrátit odběratelům. V následujícím příkladu definuje vnořený `Unsubscriber` třídu, která byla předána odkaz na kolekci odběratele a k odběrateli, při vytváření instance třídy. Tento kód umožňuje odběratele pro volání objektu <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace do kolekce odběratele.  
+4.  Definování <xref:System.IDisposable> implementace, která vrací zprostředkovatele pro předplatitele tak, aby se můžete zastavit příjem oznámení v každém okamžiku. Následující příklad definuje vnořený `Unsubscriber` třídy, který je předán odkaz na kolekci odběratele a odběrateli, když je vytvořena instance třídy. Tento kód povoluje odběratele pro volání objektu <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace kolekce předplatitele.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#4)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#4)]  
   
-5.  Implementace <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> metoda. Metodě se předává odkaz na <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní a by měly být uložené v objektu určený pro tento účel v kroku 3. Metoda by měla pak se vraťte <xref:System.IDisposable> implementace vyvinuté v kroku 4. Následující příklad ukazuje implementaci <xref:System.IObservable%601.Subscribe%2A> metoda v `TemperatureMonitor` třídy.  
+5.  Implementace <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> metody. Metodě je předána odkazem na <xref:System.IObserver%601?displayProperty=nameWithType> rozhraní a by měla být uložena v objektu pro tento účel v kroku 3. Metoda by měla pak se vraťte <xref:System.IDisposable> implementace vyvinuté v kroku 4. Následující příklad ukazuje implementaci <xref:System.IObservable%601.Subscribe%2A> metodu `TemperatureMonitor` třídy.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#5)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#5)]  
   
-6.  Oznámit pozorovatelů podle potřeby voláním jejich <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, a <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implementace. V některých případech nemusí volání zprostředkovatele <xref:System.IObserver%601.OnError%2A> metoda, když dojde k chybě. Například následující `GetTemperature` metoda simuluje monitorování, který čte data teploty každých pět sekund a pozorovatelů upozorní, pokud teplota došlo ke změně v alespoň.1 úhlu od předchozí čtení. Pokud zařízení nevytváří sestavu teplotě (to znamená, pokud je jeho hodnota null), zprostředkovatele oznámí pozorovatelů, přenos je dokončena. Všimněte si, že, kromě volání každý pozorovatel <xref:System.IObserver%601.OnCompleted%2A> metody `GetTemperature` metoda vymaže <xref:System.Collections.Generic.List%601> kolekce. V takovém případě zprostředkovatele provádí žádné volání na <xref:System.IObserver%601.OnError%2A> metoda jeho pozorovatelů.  
+6.  Oznámení pozorovatele podle potřeby voláním jejich <xref:System.IObserver%601.OnNext%2A?displayProperty=nameWithType>, <xref:System.IObserver%601.OnError%2A?displayProperty=nameWithType>, a <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> implementace. V některých případech se nemusí volat zprostředkovatele <xref:System.IObserver%601.OnError%2A> metodu, když dojde k chybě. Například následující `GetTemperature` metoda simuluje monitorování, která čte data o teplotě každých pět sekund a pozorovatelů upozorní, když teplota od předchozí čtení změněno v alespoň.1 úhlu. Pokud zařízení nehlásí teplota (to znamená, pokud její hodnota je null), zprostředkovatele oznámí pozorovatelé, přenos je dokončena. Všimněte si, že kromě volání každý pozorovatel <xref:System.IObserver%601.OnCompleted%2A> metody, `GetTemperature` metoda vymaže <xref:System.Collections.Generic.List%601> kolekce. V takovém případě poskytovateli díky žádná volání <xref:System.IObserver%601.OnError%2A> metoda jeho pozorovatelů.  
   
      [!code-csharp[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#6)]
      [!code-vb[Conceptual.ObserverDesign.HowTo#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#6)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad obsahuje kompletní zdrojový kód pro definování <xref:System.IObservable%601> implementace teplotě monitorování aplikace. Obsahuje `Temperature` struktura, což je dat odesílaných pozorovatelů, a `TemperatureMonitor` třída, která je <xref:System.IObservable%601> implementace.  
+ Následující příklad obsahuje kompletní zdrojový kód pro definování <xref:System.IObservable%601> implementace teploty monitorování aplikace. Zahrnuje `Temperature` strukturu, která se data odeslaná do pozorovatelé, a `TemperatureMonitor` třídy, která je <xref:System.IObservable%601> implementace.  
   
  [!code-csharp[Conceptual.ObserverDesign.HowTo#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.observerdesign.howto/cs/provider.cs#7)]
  [!code-vb[Conceptual.ObserverDesign.HowTo#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.observerdesign.howto/vb/provider.vb#7)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IObservable%601>  
- [Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)  
- [Postupy: Implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)  
- [Doporučené postupy pro návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern-best-practices.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.IObservable%601>  
+- [Návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern.md)  
+- [Postupy: Implementace pozorovatele](../../../docs/standard/events/how-to-implement-an-observer.md)  
+- [Doporučené postupy pro návrhový vzor Pozorovatel](../../../docs/standard/events/observer-design-pattern-best-practices.md)

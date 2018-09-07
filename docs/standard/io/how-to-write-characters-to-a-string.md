@@ -14,11 +14,11 @@ ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: bea51eaf11bd9d73d5a68eb09795bd9f9f143f95
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43883452"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44079549"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>Postupy: Zápis znaků do řetězce
 Následující příklady kódu zápis znaků synchronního a asynchronního z pole znaků do řetězce.  

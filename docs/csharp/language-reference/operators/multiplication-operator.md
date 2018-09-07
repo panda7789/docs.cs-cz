@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '* operator [C#]'
 ms.assetid: abd9a5f0-9b24-431e-971a-09ee1c45c50e
 ms.openlocfilehash: 873cc1dc0d81425117f1784353acf08b35158133
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734366"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44062745"
 ---
 # <a name="-operator-c-reference"></a>* – operátor (Referenční dokumentace jazyka C#)
 Operátor násobení (`*`) vypočítá součin z operandů. Všechny číselné typy obsahuje předdefinované operátory násobení.  

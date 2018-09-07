@@ -10,43 +10,43 @@ helpviewer_keywords:
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 858ee30479c959f30673725b4ba8088fcc2d8f3b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: MT
+ms.openlocfilehash: 27818d5e1779cd6e10e11830f91a20a3e638639a
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581752"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44066513"
 ---
 # <a name="security-and-user-input"></a>Zabezpečení a uživatelský vstup
-Uživatelská data, která je jakýkoli druh vstupních (datových z webové žádosti nebo adresa URL, zadejte do ovládacích prvků formulářové aplikace Windows, a tak dále), může nepříznivě ovlivnit kód, protože často se budou používat přímo jako parametry pro volání jiného kódu. Tato situace je obdobou škodlivý kód volání kódu s neobvyklé parametry a stejná opatření by měla být provedena. Uživatelský vstup je ve skutečnosti těžší zabezpečit, protože neexistuje žádný rámec zásobníku pro sledování přítomnost potenciálně nedůvěryhodné data.  
+Uživatelská data, která je jakýkoli druh vstupních (datových z webového požadavku nebo adresu URL, vstupní ovládací prvky aplikace Microsoft Windows Forms a tak dále), může nepříznivě ovlivnit kód, protože často tato data se používají přímo jako parametry pro volání jiného kódu. Tato situace je obdobou škodlivý kód volá váš kód s neznámé parametry a stejná opatření by měl být přijata. Uživatelský vstup je ve skutečnosti obtížnější zabezpečit, protože neexistuje žádný rámce zásobníku trasování na přítomnost potenciálně nedůvěryhodná data.  
   
- Toto jsou mezi chyby zabezpečení nejdelikátnější a nejtěžší najít, protože mohou existovat v kódu, který je zdánlivě nesouvisí se zabezpečením, jsou bránu chybná data prostřednictvím předat jiný kód. Chcete-li vyhledat tyto chyby, postupujte podle jakýkoli druh vstupních dat, představte si, co rozsahu možných hodnot může být a zvažte, zda kód zobrazuje tato data můžete zpracovat všechny tyto případy. Můžete je vyřešit tyto chyby prostřednictvím rozsah kontroly a odmítat všechny vstupní kód nelze zpracovat.  
+ Toto jsou mezi zabezpečení nejdelikátnější a těch nejtěžších chyb najít, protože mohou existovat v kódu, který je zdánlivě nesouvisí se zabezpečením, jsou brána chybná data prostřednictvím předat jiným kódem. K vyhledání těchto chyb, postupujte podle všech typů vstupních dat, představte si, co rozsah možných hodnot může být a zvažte, zda kód zobrazení těchto dat může zpracovávat všechny tyto případy. Můžete vyřešit tyto chyby prostřednictvím rozsah kontroly odhalovat a odmítat jakéhokoliv vstupu, který nemůže zpracovat kód.  
   
- Některé důležité aspekty zahrnující uživatelská data zahrnují následující:  
+ Některé důležité informace týkající se uživatelská data zahrnují následující:  
   
--   Žádná data uživatelů v odpovědi serveru běží v kontextu serveru lokality na straně klienta. Pokud váš webový server zpracovává uživatelská data a vloží ho do vrácené webové stránky, může například obsahovat  **\<skriptu >** značky a spustit jako, pokud ze serveru.  
+-   Žádná data uživatelů v odpovědi na serveru běží v kontextu na server lokality na straně klienta. Pokud váš webový server přijímá data uživatele a vloží jej do vrácené webové stránce, může například obsahovat  **\<skript >** označit a spustit jako by ze serveru.  
   
--   Mějte na paměti, že klient může vyžadovat libovolná adresa URL.  
+-   Mějte na paměti, že klient může požádat o libovolnou adresu URL.  
   
--   Vezměte v úvahu podvodné nebo neplatné cesty:  
+-   Vezměte v úvahu cesty záludné nebo je neplatný:  
   
-    -   .. \, extrémně dlouhé cesty.  
+    -   .. \, velmi dlouhé cesty.  
   
     -   Použití zástupných znaků (*).  
   
-    -   Rozšíření tokenu (% token %).  
+    -   Rozšíření token (token %).  
   
     -   Neobvyklé formy cesty se zvláštní význam.  
   
-    -   Alternativní názvy datového proudu systému souborů, jako například `filename::$DATA`.  
+    -   Alternativní názvy stream systému souborů, jako například `filename::$DATA`.  
   
-    -   Krátké verze názvů souborů, například `longfi~1` pro `longfilename`.  
+    -   Krátká verze názvů souborů, jako `longfi~1` pro `longfilename`.  
   
--   Mějte na paměti, že Eval(userdata) může udělat nic.  
+-   Mějte na paměti, že Eval(userdata) může dělat něco.  
   
--   Buďte opatrní, dynamické vazby název, který obsahuje některá uživatelská data.  
+-   Dávejte pozor na název, který obsahuje některá uživatelská data z pozdní vazby.  
   
--   Pokud chcete pracovat s daty Web, zvažte různé formy řídicí sekvence, které jsou přípustné, včetně:  
+-   Pokud pracujete s daty Web, zvažte možnost různé formy řídící znaky, které jsou přípustné, včetně:  
   
     -   Šestnáctková řídicí sekvence (% nn).  
   
@@ -54,9 +54,10 @@ Uživatelská data, která je jakýkoli druh vstupních (datových z webové ž�
   
     -   Příliš dlouhého UTF-8 řídicí sekvence (% nn % nn).  
   
-    -   Dvojité řídicí sekvence (% nn stane mmnn %, kde % mm je řídicí pro '%').  
+    -   Dvojité řídicí sekvence (% nn stane mmnn %, kde je % mm řídicí pro '%').  
   
--   Věnujte pozornost uživatelská jména, která může mít více než jeden kanonický formát. Například můžete často použít buď MOJEDOMÉNA\\*uživatelské jméno* formuláře nebo *uživatelské jméno* @mydomain.example.com formuláře.  
+-   Dávejte pozor na uživatelská jména, která může mít více než jeden kanonický formát. Například můžete často použít buď MOJEDOMÉNA\\*uživatelské jméno* formuláře nebo *uživatelské jméno* @mydomain.example.com formuláře.  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny pro zabezpečené kódování](../../../docs/standard/security/secure-coding-guidelines.md)

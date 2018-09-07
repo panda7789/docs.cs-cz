@@ -5,11 +5,11 @@ helpviewer_keywords:
 - My.Application object
 ms.assetid: a0ecfccf-acf7-49ec-a08b-72e6458c5c8d
 ms.openlocfilehash: 6eaf0c580c86b60db76cc6630f210b7c1474c681
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43556958"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44084240"
 ---
 # <a name="myapplication-object"></a>My.Application – objekt
 Poskytuje vlastnosti, metody a události související s aktuální aplikace.  

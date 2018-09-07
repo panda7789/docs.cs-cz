@@ -10,11 +10,11 @@ ms.assetid: 7f1bc7f4-401b-459f-9078-f099cc711fde
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7e7892289248c9651b529bcc68d7228b8babb28a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43872241"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44083816"
 ---
 # <a name="post-schema-compilation-infoset"></a>Informační sada po kompilaci schématu
 [Doporučení schématu XML World Wide Web Consortium (W3C)](https://www.w3.org/XML/Schema) popisuje informace o sadě (informační sadu), který musí být vystavené pro ověřování schématu před a po kompilaci schématu. Model objektu schématu XML (SOM) zobrazení této vystavení před a po <xref:System.Xml.Schema.XmlSchemaSet.Compile%2A> metodu <xref:System.Xml.Schema.XmlSchemaSet> je volána.  

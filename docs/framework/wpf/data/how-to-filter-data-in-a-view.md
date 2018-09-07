@@ -10,11 +10,11 @@ helpviewer_keywords:
 - data binding [WPF], filtering data in views
 ms.assetid: c76e8606-4cc4-45a8-9110-e2ec66dc6afd
 ms.openlocfilehash: b972da093fc50563c5db93e61aeb8421f9bf20b2
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43785853"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44087638"
 ---
 # <a name="how-to-filter-data-in-a-view"></a>Postupy: Filtrování dat v zobrazení
 Tento příklad ukazuje, jak filtrovat data v zobrazení.  

@@ -1,19 +1,20 @@
 ---
-title: XML Element a ověření názvu atributu při vytváření nových uzlů
+title: Ověření názvu atributu při vytváření nových uzlů a – XML Element
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: b489f647-a175-4659-ada4-170058bb41d0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: de11c190310dec90bd23d044f77d0c38e3a34fcf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 008cf14e63b8458feebf26eaf27be516bb79f933
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568846"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44070316"
 ---
-# <a name="xml-element-and-attribute-name-verification-when-creating-new-nodes"></a>XML Element a ověření názvu atributu při vytváření nových uzlů
-XML modelu DOM (Document Object) zkontroluje platnost názvů při vytváření nových uzlů element nebo atribut uzlů. Pokud se názvy obsahují neplatné znaky, je vyvolána výjimka. Chcete, aby názvy jsou platné a kódovaného správně, budete muset použít **XmlConvert** třídy název kódování a dekódování ji zpět na úrovni aplikace. **XmlWriter** obsahuje metody, které další práci, aby se generuje ve správném formátu XML.  
+# <a name="xml-element-and-attribute-name-verification-when-creating-new-nodes"></a>Ověření názvu atributu při vytváření nových uzlů a – XML Element
+XML Document Object Model (DOM) zkontroluje platnost názvů při vytváření nového elementu nebo atributu uzlů. Pokud název obsahuje neplatné znaky, je vyvolána výjimka. Chcete-li zajistit, aby názvy jsou platná a kódovaného správně, budete muset použít **XmlConvert** třídy název kódování a dekódování zpět na úrovni aplikace. **XmlWriter** má metod, které provádí další prací zajistíte, že se vygeneruje ve správném formátu XML.  
   
-## <a name="see-also"></a>Viz také  
- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+## <a name="see-also"></a>Viz také:
+
+- [Model DOM (Document Object Model) dokumentu XML](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)

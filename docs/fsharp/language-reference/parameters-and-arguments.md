@@ -2,25 +2,25 @@
 title: Parametry a argumenty (F#)
 description: 'Další informace o podpora jazyka F # pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 9744339110314e4e6b3c3cf8d49b1c988bc25e3c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.openlocfilehash: a3418ec814e0419d08758cf035ecc0f402b5db1a
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43471978"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44062634"
 ---
 # <a name="parameters-and-arguments"></a>Parametry a argumenty
 
 Toto téma popisuje podporu jazyka pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti. Obsahuje informace o předávání pomocí odkazu a k definování a použití metod, které mohou provádět proměnný počet argumentů.
 
-
 ## <a name="parameters-and-arguments"></a>Parametry a argumenty
+
 Termín *parametr* se používá k popisu názvy pro hodnoty, které se očekává, že @username. Termín *argument* se používá pro hodnoty poskytnuté pro každý parametr.
 
 Parametry můžete zadat v n-tici nebo curryfikované formuláře, nebo určitou kombinaci obou. Pomocí názvu explicitní parametr můžete předat argumenty. Parametry metod můžete zadaný jako volitelný a zadaný výchozí hodnotu.
 
-
 ## <a name="parameter-patterns"></a>Vzory parametrů
+
 Parametry zadané funkce a metody jsou obecně vzory oddělené mezerami. To znamená, že v zásadě, všechny tyto vzory se dají podle [odpovídající výrazy](match-expressions.md) lze použít v seznamu parametrů funkce nebo člen.
 
 Metody obvykle používají formě řazené kolekce členů předávání argumentů. Toto dosahuje jasnější výsledek z hlediska jinými jazyky rozhraní .NET, protože odpovídá formě řazené kolekce členů způsob, jakým jsou argumenty předávány v metod rozhraní .NET.
@@ -90,6 +90,7 @@ V některých případech způsoby, které se týkají neúplné shody jsou uži
 Použití vzorů, které obsahuje neúplné odpovídající se nejlépe hodí pro rychlé vytváření prototypů a jiné dočasné účely. Kompilátor vygeneruje upozornění pro takového kódu. Tyto vzory pokrýt obecné velikost všech vstupů je to možné a proto nejsou vhodné pro komponentu rozhraní API.
 
 ## <a name="named-arguments"></a>Pojmenované argumenty
+
 Argumenty pro metody je možné zadat tak pozice v seznamu oddělovači argumentů nebo je můžete předat metodě explicitně zadáním názvu, za nímž následuje rovnítko a hodnota, která má být předán v. -Li zadán zadáním názvu, můžete zobrazit v jiném pořadí z použitého v deklaraci.
 
 Pojmenované argumenty můžete provést kód lépe čitelný a další přizpůsobitelné určité typy změn v rozhraní API, jako je například změna pořadí parametrů metody.
@@ -107,6 +108,7 @@ Ve volání konstruktoru třídy můžete nastavit hodnoty vlastností třídy p
 Další informace najdete v tématu [konstruktory (F #)](https://msdn.microsoft.com/library/2cd0ed07-d214-4125-8317-4f288af99f05).
 
 ## <a name="optional-parameters"></a>Volitelné parametry
+
 Můžete zadat volitelný parametr pro metodu s použitím otazník před název parametru. Volitelné parametry jsou interpretovány jako typ možnost jazyka F #, proto dotazování těchto běžným způsobem, že typy možností jsou dotazovat, pomocí `match` výraz s `Some` a `None`. Volitelné parametry jsou povolené jenom na členy, nikoli na funkce, které jsou vytvářeny instalační sadou `let` vazby.
 
 Můžete použít také funkci `defaultArg`, která nastaví výchozí hodnota je nepovinný argument. `defaultArg` Funkce přebírá volitelný parametr jako první argument a výchozí hodnotu jako druhý.
@@ -124,6 +126,7 @@ Baud Rate: 300 Duplex: Half Parity: true
 ```
 
 ## <a name="passing-by-reference"></a>Předávání odkazem.
+
 Předávání odkazem na hodnotu F # zahrnuje `byref` – klíčové slovo, které určuje, že ve skutečnosti ukazatel na hodnotu předávaný odkazem parametr. Libovolná hodnota předaná do metody s `byref` jako argument musí být `mutable`.
 
 Protože parametru je ukazatel a hodnota je proměnlivá, všechny změny hodnoty se uchovávají po spuštění funkce.
@@ -139,6 +142,7 @@ Následující příklady ilustrují použití `byref` – klíčové slovo. Vš
 [!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3810.fs)]
 
 ## <a name="parameter-arrays"></a>Pole parametrů
+
 Někdy je potřeba definovat funkci, která přijímá libovolný počet parametrů typu heterogenní. Nemusí být praktické k vytvoření všech možných přetížených metod pro všechny typy, které by bylo možné použít. Implementace .NET poskytují podporu pro tyto metody prostřednictvím pole funkce parametr. Metodu, která přebírá parametr pole v jeho podpisu může zobrazovat libovolný počet parametrů. Parametry jsou vloženy do pole. Typ prvků pole určuje typy parametrů, které může být předán funkci. Při definování pole parametrů s `System.Object` jako typ elementu, pak klient může kód předat hodnoty libovolného typu.
 
 V jazyce F # je pole parametrů definovat pouze v metodách. Nelze je použít v samostatné funkce nebo funkce, které jsou definovány v modulech.
@@ -161,5 +165,6 @@ a 1 10 Hello world 1 True
 true
 ```
 
-## <a name="see-also"></a>Viz také
-[Členové](members/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Členové](members/index.md)

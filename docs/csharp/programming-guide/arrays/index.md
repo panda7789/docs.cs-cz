@@ -5,12 +5,12 @@ helpviewer_keywords:
 - arrays [C#]
 - C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
-ms.openlocfilehash: 1469336bf034fd22c9d7355b2f8dd8be32721fdf
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.openlocfilehash: a34d13c0d5d0939bbb024ae958568e80dd74b26f
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510635"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44070703"
 ---
 # <a name="arrays-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 
@@ -57,5 +57,5 @@ Ve struktuře dat pole lze uložit více proměnných stejného typu. Deklarujet
 ## <a name="see-also"></a>Viz také
 
 - [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Kolekce](https://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
+- [Kolekce](../../../csharp/programming-guide/concepts/collections.md)  
 - [Array – typ kolekce](https://msdn.microsoft.com/library/8a9964de-8941-47b1-a3cf-a01bc88db9e8)

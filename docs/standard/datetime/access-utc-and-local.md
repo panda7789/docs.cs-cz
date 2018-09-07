@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: přístup k místním ČASEM a předdefinované objekty zóny'
+title: 'Postupy: přístup k předdefinované objekty UTC a lokálního časového pásma'
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,48 +15,48 @@ helpviewer_keywords:
 ms.assetid: 961fb70b-83f0-4dab-a042-cb5fcd817cf5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b7ddf7ba69d8bed84f62d329fd26794e2641d954
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f074e6f6d9b11cc7d7405adced3a4523a31676fa
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571144"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44086910"
 ---
-# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: přístup k místním ČASEM a předdefinované objekty zóny
+# <a name="how-to-access-the-predefined-utc-and-local-time-zone-objects"></a>Postupy: přístup k předdefinované objekty UTC a lokálního časového pásma
 
-<xref:System.TimeZoneInfo> Třída poskytuje dvě vlastnosti <xref:System.TimeZoneInfo.Utc%2A> a <xref:System.TimeZoneInfo.Local%2A>, který kód přístup k předdefinovaným objektům časových pásem. Toto téma popisuje, jak získat přístup <xref:System.TimeZoneInfo> objektů vrácený tyto vlastnosti.
+<xref:System.TimeZoneInfo> Třída poskytuje dvě vlastnosti <xref:System.TimeZoneInfo.Utc%2A> a <xref:System.TimeZoneInfo.Local%2A>, který kód přístup k předdefinované objekty časového pásma. Toto téma popisuje, jak získat přístup k <xref:System.TimeZoneInfo> objektů vrácených podle vlastností.
 
-### <a name="to-access-the-coordinated-universal-time-utc-timezoneinfo-object"></a>Pro přístup k objektu TimeZoneInfo koordinovaného světového času (UTC)
+### <a name="to-access-the-coordinated-universal-time-utc-timezoneinfo-object"></a>Pro přístup k objektu TimeZoneInfo koordinovaný univerzální čas (UTC)
 
-1. Použití `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> vlastnost, která koordinovaného světového času.
+1. Použití `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> vlastnosti pro přístup k koordinovaný světový čas.
 
-2. Místo přiřazení <xref:System.TimeZoneInfo> objekt byl vrácen vlastností proměnné objektu, i nadále přistupovat k času UTC prostřednictvím <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> vlastnost.
+2. Místo toho <xref:System.TimeZoneInfo> objekt vráceného vlastností do proměnné objektu, dál přístup k koordinovaný světový čas prostřednictvím <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> vlastnost.
 
 ### <a name="to-access-the-local-time-zone"></a>Pro přístup k místním časovém pásmu
 
-1. Použití `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnost, která má přístup k časovému pásmu místního systému.
+1. Použití `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnosti přístupu k časovému pásmu místního systému.
 
-2. Místo přiřazení <xref:System.TimeZoneInfo> objekt byl vrácen vlastností proměnné objektu, i nadále přistupovat k místnímu časovému pásmu prostřednictvím <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnost.
+2. Místo toho <xref:System.TimeZoneInfo> objekt vráceného vlastností do proměnné objektu, dál přístup k místnímu časovému pásmu prostřednictvím <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnost.
 
 ## <a name="example"></a>Příklad
 
-Následující kód používá <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> a <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> vlastnosti pro převod času z USA a Kanadští východní standardní časové pásmo, jakož i zobrazovaný název časového pásma ke konzole.
+Následující kód používá <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> a <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> vlastnosti pro převod z USA a Kanadské standardní východní časové pásmo času, jakož i zobrazovaný název časového pásma do konzoly.
 
 [!code-csharp[System.TimeZone2.Concepts#13](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#13)]
 [!code-vb[System.TimeZone2.Concepts#13](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#13)]
 
-By měla vždycky přístup k místnímu časovému pásmu prostřednictvím <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnost spíše než přiřazením místního časového pásma na <xref:System.TimeZoneInfo> proměnné objektu. Podobně, byste měli vždy přistupovat koordinovaný světový čas prostřednictvím <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> spíše než přiřazením UTC zóny na <xref:System.TimeZoneInfo> proměnné objektu. Zabrání se tak <xref:System.TimeZoneInfo> objektová proměnná před zrušením platnosti voláním <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> metoda.
+By měla vždycky přístup k místnímu časovému pásmu prostřednictvím <xref:System.TimeZoneInfo.Local%2A?displayProperty=nameWithType> vlastnost spíše než přiřazením místního časového pásma na <xref:System.TimeZoneInfo> proměnné objektu. Podobně by měla vždycky přístup koordinovaný světový čas prostřednictvím <xref:System.TimeZoneInfo.Utc%2A?displayProperty=nameWithType> spíše než přiřazením čas UTC pásma <xref:System.TimeZoneInfo> proměnné objektu. Díky tomu <xref:System.TimeZoneInfo> proměnné objektu před zrušením platnosti voláním <xref:System.TimeZoneInfo.ClearCachedData%2A?displayProperty=nameWithType> metoda.
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compiling-the-code"></a>Kompilování kódu
 
 Tento příklad vyžaduje:
 
-* Aby byl přidán odkaz na System.Core.dll do projektu.
+* Aby byl odkaz na System.Core.dll přidán do projektu.
 
-* Zda <xref:System> importovat obor názvů s `using` (povinné v kódu jazyka C#).
+* Že <xref:System> obor názvů je importovat s `using` – příkaz (vyžadováno za kód jazyka C#).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-[hledání časových pásem definovaných v lokálním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
-[postupy: vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)
+* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+* [Hledání časových pásem definovaných v lokálním systému](../../../docs/standard/datetime/finding-the-time-zones-on-local-system.md)
+* [Postupy: Vytvoření instance objektu TimeZoneInfo](../../../docs/standard/datetime/instantiate-time-zone-info.md)

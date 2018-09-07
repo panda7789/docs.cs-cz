@@ -1,122 +1,122 @@
 ---
 title: .NET – Glosář
-description: Zjistěte význam vybrané termínů používaných v dokumentaci k rozhraní .NET.
+description: Přečtěte si významu vybraných termínů používaných v dokumentaci k rozhraní .NET.
 author: tdykstra
 ms.author: tdykstra
 ms.date: 07/08/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 195fbb799432b9d01a5faf301c9f8f2d1edfa1ff
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 11fad691021ec897348177c67134750e72b4ff7c
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33579402"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44062959"
 ---
 # <a name="net-glossary"></a>.NET – Glosář
 
-Hlavním cílem, který tento glosář je objasnit významy vybrané podmínky a zkratky, které se zobrazují často v dokumentaci k rozhraní .NET bez definic.
+Hlavním cílem tento glosář je objasnit význam vybrané podmínky a zkratky, které se často zobrazují v dokumentaci k .NET bez definic.
 
 ## <a name="aot"></a>AOT
 
-Napřed předčasné kompilátoru.
+Kompilátor ahead of time.
 
-Podobně jako [JIT](#jit), tento kompilátoru také překládá [IL](#il) kódu počítače. Na rozdíl od JIT – kompilace probíhá kompilace AOT předtím, než se spustí aplikace a obvykle provádí na jiný počítač. Protože nástroj řetězy AOT nemáte kompilace za běhu, nemají minimalizovat čas strávený kompilace. To znamená, že se můžete tráví další optimalizace času. Vzhledem k tomu, že kontextu AOT bude celá aplikace se provádí kompilátoru AOT taky propojení mezi modulu a analýzy celého programu, což znamená, že všechny odkazy dodržíte a vytváří jeden spustitelný soubor.
+Podobně jako [JIT](#jit), tento kompilátor se také přeloží [IL](#il) do strojového kódu. Na rozdíl od kompilace JIT kompilace AOT se stane, než aplikace spouští a se obvykle provádí v jiném počítači. Protože řetězce nástrojů AOT není kompilaci za běhu, nemají minimalizovat čas strávený kompilaci. To znamená, že může věnovat víc času optimalizace. Protože kontextu AOT celé aplikace, provádí kompilátor AOT také propojení mezi moduly a analýzu celého programu, což znamená, že jsou všechny odkazy a a je vytvořen jeden spustitelný soubor.
 
 ## <a name="aspnet"></a>ASP.NET 
 
-Původní implementace technologie ASP.NET, který se dodává s rozhraním .NET Framework.
+Původní implementace technologie ASP.NET, která se dodává s rozhraním .NET Framework.
 
-Někdy ASP.NET je také souhrnný název, který odkazuje na obou implementace technologie ASP.NET, včetně ASP.NET Core. Což znamená, že termín představuje v jakékoli dané instanci je určen podle kontextu. Odkazovat na technologii ASP.NET 4.x, pokud chcete, aby bylo jasné, které nepoužívají ASP.NET rozumí obou implementace. 
+Někdy je technologie ASP.NET se o zastřešující pojem, který odkazuje na obou implementacích technologie ASP.NET, včetně ASP.NET Core. Význam, který představuje výraz v jakékoli dané instance se určuje podle kontextu. Odkazovat na technologii ASP.NET 4.x, pokud chcete, aby bylo jasné, které nejsou pomocí technologie ASP.NET k označení obou implementacích. 
 
-V tématu [dokumentace k technologii ASP.NET](/aspnet/#pivot=aspnet).
+Zobrazit [dokumentace k ASP.NET](/aspnet/#pivot=aspnet).
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
-Platformě, vysoce výkonné open source implementace technologie ASP.NET založený na .NET Core.
+Platformově univerzální, vysoce výkonná open source implementace technologie ASP.NET založená na rozhraní .NET Core.
 
-V tématu [ASP.NET Core dokumentaci](/aspnet/#pivot=core).
+Zobrazit [dokumentace k ASP.NET Core](/aspnet/#pivot=core).
 
 ## <a name="assembly"></a>sestavení
 
-A *.dll*/*.exe* soubor, který obsahuje kolekci rozhraní API, kterou lze volat aplikace nebo jiné sestavení.
+A *.dll*/*.exe* soubor, který může obsahovat sadu rozhraní API, která je možné vyvolat v aplikacích nebo jiná sestavení.
 
-Sestavení může obsahovat typy jako je rozhraní, třídy, struktury, výčty a delegáti. Sestavení v projektu *bin* složky se někdy označují jako *binární soubory*. Viz také [knihovny](#library).
+Sestavení může obsahovat typy, jako jsou rozhraní, třídy, struktury, výčty a delegáti. Sestavení v projektu *bin* složky jsou někdy označovány jako *binární soubory*. Viz také [knihovny](#library).
 
 ## <a name="clr"></a>CLR
 
 Modul Common Language Runtime.
 
-Přesný význam závisí na kontext, ale to obvykle odkazuje na modul runtime rozhraní .NET Framework. Modul CLR zpracovává přidělování paměti a správu. Modul CLR je také virtuální počítač, který nejen spustí aplikace, ale také generuje a kompilovaný kód na průběžně pomocí JIT kompilátoru. Aktuální implementace Microsoft CLR je pouze v systému Windows.
+Přesné význam závisí na kontextu, ale to se obvykle odkazuje na modul runtime rozhraní .NET Framework. Modul CLR zpracovává přidělení paměti a správu. Modul CLR je také virtuální počítač, který nejen spustí aplikace, ale také vygeneruje a zkompiluje kód v běhu pomocí kompilátoru JIT. Aktuální implementace Microsoft CLR je jenom pro Windows.
 
 ## <a name="coreclr"></a>CoreCLR
 
-.NET core modul Common Language Runtime.
+.NET core CLR.
 
-Tato CLR je sestaven z stejný kód základní jako modulu CLR. Původně CoreCLR byl běhové prostředí Silverlight a byl navržen ke spuštění na více platforem, konkrétně Windows a OS X. CoreCLR je teď součástí .NET Core a představuje zjednodušenou verzi modulu CLR. Stále je nyní včetně podpory pro velkém množství distribucí Linux modulu runtime křížové platformy. Virtuální počítač s možností provádění JIT a kód je také CoreCLR.
+Tato CLR je sestaven z základní jako CLR stejný kód. Původně CoreCLR byl modul runtime technologie Silverlight a byl navržen pro spouštění na více platforem, konkrétně Windows a OS X. CoreCLR je teď součástí sady .NET Core a představuje zjednodušenou verzi modulu CLR. Je stále modulu runtime napříč platformami, nyní včetně podpory pro řadu distribucí systému Linux. CoreCLR je také virtuální počítač s možností spouštění JIT a kód.
 
 ## <a name="corefx"></a>CoreFX
 
-Knihovny .NET core základní třídu (BCL)
+Knihovna základních tříd .NET core (BCL)
 
-Obory názvů sadu knihoven, které tvoří System.* (a v omezené míře Microsoft.*). BCL je obecné účely, nižší úrovně rozhraní, které vychází z vyšší úrovně rozhraní aplikace, jako je ASP.NET Core. Zdrojový kód BCL základní .NET je součástí [CoreFX úložiště](https://github.com/dotnet/corefx). Však většiny rozhraní API .NET Core jsou také k dispozici v rozhraní .NET Framework, proto si můžete představit CoreFX jako pokračovatelem BCL rozhraní .NET Framework.
+Oborech názvů sadu knihoven, které tvoří System.* (a do jisté míry oborů Microsoft.*). Obecné rozhraní framework nižší úrovně, která vycházejí vyšší úrovně aplikačních architektur, jako je ASP.NET Core, je BCL. Zdrojový kód .NET Core BCL je součástí [CoreFX úložiště](https://github.com/dotnet/corefx). Většina rozhraní API .NET Core jsou však také k dispozici v rozhraní .NET Framework, tak CoreFX si můžete představit jako fork BCL rozhraní .NET Framework.
 
 ## <a name="corert"></a>CoreRT
 
-.NET core runtime.
+Modul runtime .NET core.
 
-Na rozdíl od CLR nebo CoreCLR, CoreRT není virtuální počítač, což znamená, neobsahuje zařízení pro generování a spuštění kódu na průběžně, protože neobsahuje [JIT](#jit). , Ale zahrnout [GC](#gc) a možnost identifikace typu modulu runtime (RTTI) a reflexe. Jeho systém typ je však navržené tak, aby metadata pro reflexi není povinné. Díky tomu, že [AOT](#aot) nástroj řetězec, který můžete propojit tokeny nadbytečné metadata a identifikovat (důležitější) kód, který nepoužívá aplikaci. CoreRT je ve vývoji.
+Na rozdíl od CLR/CoreCLR, CoreRT není virtuální počítač, což znamená, že neobsahuje funkce pro generování a spuštění kódu v běhu, protože neobsahuje [JIT](#jit). , Ale patří [GC](#gc) a možnost identifikace typu modulu runtime (RTTI) a reflexe. Ale jeho typ systému je navržený tak, aby metadata pro účely reflexe není povinné. Díky tomu máte [AOT](#aot) nástroj řetězec, který můžete propojit tokeny nadbytečný metadat a (důležitější) identifikovat kód, který se aplikace nepoužívá. CoreRT je ve vývoji.
 
-V tématu [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
+Zobrazit [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
 
-## <a name="ecosystem"></a>ekosystém
+## <a name="ecosystem"></a>Ekosystém
 
-Všechny runtime softwaru, nástroje pro vývoj a komunitní zdroje, které se používají k vytvoření a spuštění aplikace pro daný technologii.
+Všechny softwarové modulu runtime, vývojové nástroje a komunitní zdroje, které se používají k vytváření a spouštění aplikací pro dané technologii.
 
-Termín ".NET ekosystém" se liší od podobné podmínky, jako je například ".NET zásobníku" v jeho zahrnutí aplikacím třetích stran a knihovny. Tady je příklad ve větě:
+Termín "Ekosystému .NET" se liší od podobných podmínek, jako je například "Zásobník .NET" v jeho zařazení aplikace třetích stran a knihoven. Tady je příklad ve větě:
 
-- "Motivace za [.NET Standard](#net-standard) navázat větší jednotnost v ekosystému .NET." 
+- "Motivace za [.NET Standard](#net-standard) navázat větší sjednocení v ekosystému .NET." 
 
 ## <a name="framework"></a>rozhraní
 
-Obecně platí komplexní kolekci rozhraní API, která usnadňuje vývoj a nasazení aplikací, které jsou založeny na konkrétní technologie. V této obecné smysl jsou příklady aplikační architektury ASP.NET Core a systém Windows Forms. Viz také [knihovny](#library).
+Obecně platí komplexní kolekce rozhraní API, který usnadňuje vývoj a nasazování aplikací, které jsou založeny na konkrétní technologii. V tomto obecném smyslu tento pojem ASP.NET Core a Windows Forms jsou příkladem aplikačních architektur. Viz také [knihovny](#library).
 
-Slovo "framework" má více zvláštní význam technické v následující podmínky:
+Slovo "rozhraní" má konkrétnější technické význam v následující podmínky:
 * [.NET Framework](#net-framework)
 * [Cílová architektura](#target-framework)
-* [TFM (Přezdívka cílový framework)](#tfm)
+* [TFM (moniker cílového rozhraní framework)](#tfm)
 
-Ve stávající dokumentaci "framework" někdy odkazuje [implementace rozhraní .NET](#implementation-of-net). Článek například může volat .NET Core rozhraní. Plánujeme toto matoucí použití v dokumentaci k odstranění.
+Ve stávající dokumentaci "rozhraní" někdy odkazuje [implementace .NET](#implementation-of-net). Článek například může volat .NET Core rozhraní. Plánujeme, chcete-li odstranit tento matoucí využití v dokumentaci ke službě.
 
 ## <a name="gc"></a>Uvolňování paměti
 
 Systém uvolňování paměti.
 
-Uvolňování paměti je implementací Automatická správa paměti.  Globální Katalog uvolní paměť obsazená objekty, které jsou již používán. 
+Uvolňování paměti je implementace Automatická správa paměti.  Uvolňování paměti uvolní paměť obsazena objekty, které jsou už používá. 
 
-V tématu [uvolňování paměti](garbage-collection/index.md).
+Zobrazit [uvolňování](garbage-collection/index.md).
 
 ## <a name="il"></a>IL
 
 Převodní jazyk.
 
-Vyšší úrovně jazyky rozhraní .NET, jako je C#, zkompilovat dolů sadu instrukcí bez ohledu na hardware, což se označuje jako zprostředkující jazyk (IL). IL se někdy označuje jako MSIL (Microsoft IL) nebo soubor CIL (běžné IL).
+Vyšší úrovně jazyků .NET, jako je C#, kompilovat dolů sada instrukcí nezávislá na hardwaru, která se nazývá Intermediate Language (IL). IL se někdy označuje jako jazyk MSIL (Microsoft IL) nebo soubor CIL (Common IL).
 
 ## <a name="jit"></a>JIT
 
-Kompilátor za běhu.
+Kompilátor Just-in-time.
 
-Podobně jako [AOT](#aot), tento kompilátoru překládá [IL](#il) kódu počítače, která funguje s technologií procesoru. Na rozdíl od AOT JIT – kompilace probíhá na vyžádání a provádí na stejný počítač, který je potřeba spustit kód. Vzhledem k tomu, že JIT – kompilace dojde při spuštění aplikace, době potřebné ke kompilaci je součástí čas spuštění. Kompilátory JIT tedy mít vyvážit čas strávený optimalizace kódu proti úspory, který může vytvářet výsledný kód. Ale JIT zná skutečné hardwarové a můžete uvolnit vývojáři nemusíte se dodávají spolu různé implementace.
+Podobně jako [AOT](#aot), tento kompilátor překládá [IL](#il) do strojového kódu, která analyzuje procesoru. Na rozdíl od kompilaci AOT kompilace JIT se stane, na vyžádání a provádí ve stejném počítači, který je potřeba spouštět kód. Vzhledem k tomu, že během provádění dojde k JIT kompilaci, kompilace je součástí čas spuštění. Kompilátory JIT tedy mít vyvážit dobu strávenou optimalizace kódu proti úspory, které mohou způsobit výsledný kód. Ale zná skutečné hardwarové JIT a můžete uvolnit vývojáře od přitom nutné dodávat jedná o rozdílné implementace.
 
 ## <a name="implementation-of-net"></a>implementace rozhraní .NET
 
-Implementace rozhraní .NET zahrnuje následující položky:
+Implementace .NET zahrnuje následující položky:
 
-- Jeden nebo více moduly runtime. Příklady: CLR, CoreCLR, CoreRT.
-- Knihovna tříd, který implementuje verzi .NET Standard a může zahrnovat další rozhraní API. Příklady: Knihovna rozhraní .NET Framework základní třídy, knihovny .NET Core základní třídy.
-- Volitelně můžete jeden nebo více aplikací rozhraní. Příklady: ASP.NET, Windows Forms a WPF jsou zahrnuty v rozhraní .NET Framework.
-- Volitelně můžete nástroje pro vývoj. Některé nástroje pro vývoj jsou sdílena mezi několika implementace.
+- Jeden nebo více modulů runtime. Příklady: CoreRT CLR, CoreCLR.
+- Knihovna tříd, který implementuje na verzi .NET Standard a může taky obsahovat další rozhraní API. Příklady: Základní knihovny tříd .NET Framework, knihovně základních tříd .NET Core.
+- Volitelně můžete jeden nebo více aplikačních architektur. Příklady: ASP.NET, Windows Forms a WPF jsou zahrnuty v rozhraní .NET Framework.
+- Volitelně můžete nástroje pro vývoj. Některé vývojové nástroje jsou sdíleny více implementací.
 
-Příklady implementace rozhraní .NET:
+Příklady implementace .NET:
 
 - [.NET Framework](#net-framework)
 - [.NET Core](#net-core)
@@ -124,153 +124,152 @@ Příklady implementace rozhraní .NET:
 
 ## <a name="library"></a>knihovna
 
-Sada rozhraní API, kterou lze volat aplikace nebo jiné knihovny. Knihovny .NET, se skládá z jednoho nebo více [sestavení](#assembly).
+Kolekce rozhraní API, která mohou být volány aplikací nebo jiné knihovny. Knihovna .NET se skládá z jedné nebo více [sestavení](#assembly).
 
 Knihovna slova a [framework](#framework) se často používají jako synonyma.
 
-## <a name="metapackage"></a>metapackage
+## <a name="metapackage"></a>Microsoft.aspnetcore.all
 
-Balíček NuGet, který nemá žádné knihovny samostatně, ale je pouze seznam závislosti. Zahrnuté balíčky můžete volitelně vytvořit rozhraní API pro cílové rozhraní.
+Balíček NuGet, který nemá žádná knihovna samostatně, ale je pouze seznam závislostí. Na zahrnuté balíčky můžete volitelně vytvořit rozhraní API pro cílovou architekturu.
 
-V tématu [balíčků, Metapackages a architektury](../core/packages.md)
+Zobrazit [balíčky, Metabalíčky a architektury](../core/packages.md)
 
 ## <a name="mono"></a>Mono
 
-Mono je implementace rozhraní .NET, která se používá hlavně, když se vyžaduje malé runtime. Je modul runtime, která pohání aplikace Xamarin pro Android, Mac, iOS, tvOS a watchOS a se zaměřuje především na aplikace, které vyžadují malé nároky.
+Mono je implementace .NET, který se používá hlavně při malý modul runtime je povinný. Je modul runtime, který zajišťuje provoz aplikací v Xamarinu na Android, Mac, iOS, tvOS a watchOS a se zaměřuje především na aplikace, které vyžadují malé náklady.
 
-Podporuje všechny aktuálně publikovaná verze .NET Standard.
+Podporuje všechny aktuálně publikované verze .NET Standard.
 
-V minulosti Mono implementována větší rozhraní API rozhraní .NET Framework a emulovaných některé z nejčastěji používané funkcí v systému Unix. Někdy se používá ke spouštění aplikací .NET, které jsou závislé na tyto funkce v systému Unix.
+V minulosti Mono implementovaná větší API rozhraní .NET Framework a emulované některé z nejoblíbenějších funkcí v systému Unix. Někdy se používá ke spouštění aplikací .NET, které využívají tyto funkce v systému Unix.
 
-Mono se obvykle používá s kompilátorem za běhu, ale nabízí i úplné statické kompilátoru (napřed předčasné kompilace), který se používá na platformách, jako je iOS.
+Mono se obvykle používá s kompilátorem za běhu, ale obsahuje taky celý statický kompilátor (ahead of time kompilace), který se používá na platformách, jako je iOS.
 
-Další informace o Mono, najdete v článku [Mono dokumentaci](https://www.mono-project.com/docs/).
+Další informace o Mono, najdete v článku [dokumentace Mono](https://www.mono-project.com/docs/).
 
 ## <a name="net"></a>.NET
 
-Termín zastřešující [.NET Standard](#net-standard) a všechny [implementace rozhraní .NET](#implementation-of-net) a úlohy. Vždy velkými písmeny, nikdy ".Net".
+Zastřešující pojem pro [.NET Standard](#net-standard) a všechny [implementace .NET](#implementation-of-net) a úlohy. Vždy velkými písmeny, nikdy ".Net".
 
-Najdete v článku [.NET Průvodce](index.md)
+Zobrazit [Průvodce technologií .NET](index.md)
 
 ## <a name="net-core"></a>.NET Core 
 
-Implementace rozhraní .NET a platformy, vysoce výkonné open source. Obsahuje základní Common Language Runtime (CoreCLR), AOT Core Runtime (vývojem CoreRT), základní základní knihovny tříd a Core SDK.
+Napříč platformami, vysoce výkonná open source implementace .NET. Zahrnuje základní Common Language Runtime (CoreCLR), Core Runtime AOT (ve vývoji CoreRT), základní knihovny tříd Base a Core SDK.
 
-V tématu [.NET Core](../core/index.md).
+Zobrazit [.NET Core](../core/index.md).
 
-## <a name="net-core-cli"></a>.NET core rozhraní příkazového řádku
+## <a name="net-core-cli"></a>.NET core CLI
 
-Napříč platformami nástrojů pro vývoj aplikací .NET Core.
+Multiplatformní sadu nástrojů pro vývoj aplikací .NET Core.
 
-V tématu [nástrojů rozhraní příkazového řádku (CLI) .NET Core](../core/tools/index.md).
+Zobrazit [nástroje rozhraní příkazového řádku (CLI) pro .NET Core](../core/tools/index.md).
 
 ## <a name="net-core-sdk"></a>.NET core SDK
 
-Sada knihovny a nástroje, které umožňují vývojářům vytvářet aplikace .NET Core a knihovny. Zahrnuje [.NET Core rozhraní příkazového řádku](#net-core-cli) pro vytváření aplikací, knihovny .NET Core a modulu runtime pro vytváření a spouštění aplikací a dotnet spustitelný soubor (*dotnet.exe*), spouští příkazy rozhraní příkazového řádku a spuštění aplikace.
+Sada knihovny a nástroje, které umožňují vývojářům vytvářet aplikace .NET Core a knihovny. Zahrnuje [rozhraní příkazového řádku .NET Core](#net-core-cli) pro vývoj aplikací, knihoven .NET Core a modul runtime pro sestavování a spouštění aplikací a dotnet spustitelný soubor (*dotnet.exe*), který spouští příkazy rozhraní příkazového řádku a spuštění aplikace.
 
-V tématu [.NET Core SDK přehled](../core/sdk.md).
+Zobrazit [Přehled sady SDK .NET Core](../core/sdk.md).
 
 ## <a name="net-framework"></a>.NET Framework
 
-Implementace rozhraní .NET, který spouští pouze v systému Windows. Zahrnuje Common Language Runtime (CLR), základní knihovny tříd a knihovny framework aplikace například ASP.NET, Windows Forms a WPF.
+Implementace rozhraní .NET, na kterém běží pouze na Windows. Zahrnuje Common Language Runtime (CLR), základní knihovny tříd a rozhraní framework knihovny aplikací, jako je ASP.NET, Windows Forms a WPF.
 
-V tématu [rozhraní .NET Framework – průvodce](../framework/index.md).
+Zobrazit [rozhraní .NET Framework – průvodce](../framework/index.md).
 
 ## <a name="net-native"></a>.NET Native
 
-Nástroj řetěz kompilátoru, která vytváří nativního kódu napřed předčasné (AOT), a v běhu (JIT).
+Řetěz kompilátoru nástroj, který vytváří nativní kód ahead-of-time (AOT), na rozdíl od just-in-time (JIT).
 
-Probíhá kompilace na počítači vývojáře, podobně jako C++ kompilátoru a linkeru funguje. Odebere nepoužívané kódu a stráví déle optimalizace ho. Extrahuje kód z knihovny a sloučí je do spustitelného souboru. Výsledkem je jeden modul, který představuje celou aplikaci.
+Probíhá kompilace na počítači pro vývojáře podobným způsobem, jakým C++ kompilátor a propojovací program funguje. Odebere nevyužité kódu a tráví víc času na jeho optimalizace. Extrahuje z knihovny kódu a sloučí je do spustitelného souboru. Výsledkem je jeden modul, který představuje celé aplikace.
 
-UWP byla první rozhraní nepodporuje nativní rozhraní .NET. Teď podporujeme vytvářet nativní konzole aplikace pro Windows, systému macOS a Linux.
+UPW se první aplikační platformu .NET Native nepodporují. Nyní podporujeme sestavování nativních konzolové aplikace pro Windows, macOS a Linux.
 
-V tématu [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
+Zobrazit [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
 
-## <a name="net-standard"></a>Standardní rozhraní .NET
+## <a name="net-standard"></a>.NET standard
 
-Formální specifikaci rozhraní API .NET, které jsou dostupné v každé implementace rozhraní .NET.
+Formální specifikaci rozhraní API pro .NET, které jsou dostupné v jednotlivých implementace .NET.
 
-Specifikace .NET Standard, se někdy nazývá knihovnu v dokumentaci. Knihovnu zahrnuje implementace rozhraní API, ne jenom specifikace (rozhraní), a proto je zavádějící volat .NET Standard "knihovna". Plánujeme eliminovat toto využití z dokumentace, s výjimkou v souvislosti s aplikací název .NET Standard metapackage (`NETStandard.Library`).
+Specifikaci .NET Standard se někdy označuje jako knihovna v dokumentaci. Protože knihovny zahrnuje implementace rozhraní API, nejen specifikace (rozhraní), je zavádějící pro volání .NET Standard "library". Chcete-li odstranit tohle využívání v dokumentaci ke službě, s výjimkou v souvislosti s aplikací název .NET Standard Microsoft.aspnetcore.all plánujeme (`NETStandard.Library`).
 
-V tématu [.NET Standard](net-standard.md).
+Zobrazit [.NET Standard](net-standard.md).
 
 ## <a name="ngen"></a>NGEN
 
-Generování nativních (obrázek).
+Generování nativního (obrázek).
 
-Tato technologie si lze představit jako trvalé kompilátoru za běhu. Zkompiluje obvykle kódu na počítači, kde se spustí kód, ale kompilace obvykle dochází v době instalace.
+Tuto technologii si lze představit jako trvalé kompilátor JIT. Obvykle zkompiluje kód na počítači, kde je kód spuštěn, ale kompilace obvykle dochází v době instalace.
 
 ## <a name="package"></a>Balíček
 
-Balíček NuGet &mdash; nebo právě balíčku &mdash; je *.zip* soubor s jedno nebo více sestavení se stejným názvem spolu s další metadata, jako je například jméno autora.
+Balíček NuGet &mdash; nebo právě balíčku &mdash; je *ZIP* soubor s minimálně jedno sestavení se stejným názvem, společně s další metadata, jako je například jméno autora.
 
-*.Zip* soubor má *.nupkg* rozšíření a může obsahovat prostředky, jako například *.dll* soubory a *.xml* souborů pro použití s několika cílů rozhraní a verze. Při instalaci v aplikaci nebo knihovny, jsou vybrány příslušné prostředky založené na rozhraní target framework určeného aplikace nebo knihovny. Prostředky, které definují rozhraní jsou v *ref* složky a prostředky, které definují implementace *lib* složky.
+*ZIP* soubor má *.nupkg* rozšíření a může obsahovat prostředky, jako například *.dll* soubory a *.xml* souborů pro použití s několika cílů architektury a verze. Při instalaci v aplikaci nebo knihovny, jsou vybrány příslušné prostředky založené na cílové rozhraní určené aplikace nebo knihovna. Prostředky, které definují rozhraní se nacházejí v *ref* složky a prostředky, které definují implementace *lib* složky.
 
 ## <a name="platform"></a>platforma
 
-Operační systém a hardwaru, který běží na, například Windows, systému macOS, Linux, iOS a Android.
+Operační systém a hardware, který běží na serveru, jako je například Windows, macOS, Linux, iOS a Android.
 
-Zde jsou příklady využití v věty:
+Tady jsou příklady použití v věty:
 
-- ".NET core je implementace a platformy .NET." 
-- "PCL profily představují platformy Microsoft, zatímco .NET Standard nerozlišuje platformy."
+- ".NET core je na více platforem implementace rozhraní .NET." 
+- "PCL profily představují platformy Microsoft, zatímco .NET Standard je nezávislé na platformě."
 
-V rozhraní .NET dokumentaci často používá "Platformě .NET" rozumí buď implementace rozhraní .NET nebo zásobníku v rozhraní .NET, včetně všech implementace. Obě tyto použití často zmatení s primární význam (operačního systému nebo hardware), takže plánujeme tyto použití v dokumentaci k odstranění.
+Dokumentace k .NET často používá "Platformu .NET" rozumí buď implementace .NET nebo zásobník .NET, včetně všech implementace. Obě tyto použití často zmatení s primární význam (operační systém a hardware), takže máme v plánu odstranění těchto použití v dokumentaci ke službě.
 
 ## <a name="runtime"></a>modul runtime
 
-Spuštění prostředí spravované programu.
+Prostředí pro spuštění spravované aplikace.
 
-Je součástí běhové prostředí operačního systému, ale není součástí modulu runtime rozhraní .NET. Tady jsou některé příklady moduly runtime rozhraní .NET:
+Operační systém je součástí prostředí modulu runtime, ale není součástí modulu runtime .NET. Tady je několik příkladů moduly runtime .NET:
 
 - Common Language Runtime (CLR)
 - Základní Common Language Runtime (CoreCLR)
 - .NET native (pro UPW)
-- Monofonní runtime
+- Modul mono runtime
 
-V dokumentaci k rozhraní .NET, někdy používá "runtime" znamená úplně implementace rozhraní .NET. Například v následujícím věty "runtime" měl by být nahrazen "implementace":
+V dokumentaci k rozhraní .NET, někdy používá "runtime" jejich implementace .NET. Například v následujícím věty "runtime" by měla být nahrazena "implementace":
 
-- "Různé moduly runtime .NET implementovat určité verze .NET Standard."
-- "Toto rozhraní by měl knihovny, které jsou určeny ke spuštění na víc runtimes cíle." (odkazující na .NET Standard)
-- "Různé moduly runtime .NET implementovat určité verze .NET Standard. … Každou verzi modulu runtime .NET inzeruje nejvyšší .NET Standard verze, kterou podporuje..."
+- "Různými moduly runtime .NET implementovat určité verze .NET Standard."
+- "Knihovny, které jsou určeny ke spuštění ve více modulů – runtime by měl cíl tohoto rozhraní." (odkazující na .NET Standard)
+- "Různými moduly runtime .NET implementovat určité verze .NET Standard. … Každá verze modulu runtime .NET inzeruje nejvyšší verze .NET Standard, kterou podporuje..."
 
-Plánujeme eliminovat toto nekonzistentní použití. 
+Plánujeme, chcete-li odstranit tento nekonzistentní využití. 
 
 ## <a name="stack"></a>stack
 
-Sada programování technologie, které se společně používají k sestavení a spuštění aplikace.
+Sada programování technologie, které se používají společně k vytváření a spouštění aplikací.
 
-"Zásobníku .NET" odkazuje na všechny implementace rozhraní .NET a .NET Standard. Frázi ".NET zásobníku" mohou odkazovat na jednu implementaci rozhraní .NET. 
+"Zásobník .NET" odkazuje na všechny implementace .NET a .NET Standard. Fráze "zásobník .NET" mohou odkazovat na jednu implementaci rozhraní .NET. 
 
 ## <a name="target-framework"></a>Cílová architektura
 
-Kolekce rozhraní API, která využívá aplikace .NET nebo knihovny.
+Kolekce rozhraní API, která aplikace .NET nebo knihovny se může spolehnout.
 
-Aplikace nebo knihovny, můžete vybrat verzi Standard .NET (například .NET standardní 2.0), což je specifikace pro standardizované sadu rozhraní API přes všechny implementace rozhraní .NET. Aplikace nebo knihovna můžete také cílení na verzi konkrétní implementace rozhraní .NET, ve které případ se získá přístup k rozhraní API pro konkrétní implementaci. Například aplikace, která je cílena Xamarin.iOS získá přístup k rozhraní API pro zadaný Xamarin iOS obálky.
+Aplikace nebo knihovny můžete cílení na verzi .NET Standard (například .NET Standard 2.0), což je specifikace pro standardizované sadu rozhraní API přes všechny implementace .NET. Aplikace nebo knihovna můžete také cílení na verzi konkrétní implementace rozhraní .NET, ve které malá a velká písmena získá přístup k rozhraním API specifický pro implementaci. Například aplikace, která se zaměřuje Xamarin.iOS získá přístup k rozhraní API pro zadaný Xamarin iOS obálky.
 
-Pro některé cílové rozhraní (například rozhraní .NET Framework) k dispozici rozhraní API jsou definovány sestavení, která nainstaluje rozhraní .NET implementace v systému, což může zahrnovat aplikační rozhraní API (například ASP.NET, WinForms). Rozhraní API pro balíček na základě cílové rozhraní (například .NET Standard a .NET Core), jsou definované balíčky nainstalované v aplikaci nebo knihovny. V takovém případě cílovém Frameworku, který určuje implicitně metapackage, který odkazuje na všechny balíčky, které společně tvoří rozhraní.
+Pro některé cílové architektury (například rozhraní .NET Framework) k dispozici rozhraní API, které jsou definovány pomocí sestavení, která nainstaluje implementace .NET v systému, které mohou být aplikační rozhraní API (například ASP.NET, WinForms). Na základě balíčku cílových rozhraní (například .NET Standard a .NET Core) jsou rozhraní API určené balíčky, které jsou nainstalovány v aplikaci nebo knihovny. V takovém případě Cílová architektura, která určuje implicitně Microsoft.aspnetcore.all, který odkazuje na všechny balíčky, které společně tvoří rozhraní.
 
-V tématu [cílové rozhraní](frameworks.md).
+Zobrazit [platforem](frameworks.md).
 
 ## <a name="tfm"></a>TFM
 
-Cílový framework přezdívka.
+Moniker cílového rozhraní framework.
 
-Standardizovaná tokenu formát pro zadání cílové rozhraní aplikace .NET nebo knihovny. Cílové rozhraní jsou obvykle odkazuje krátký název, například `net462`. Dlouhá TFMs (například. NETFramework, verze = 4.6.2) existují, ale nejsou obecně používány k určení cílové rozhraní.
+Token standardizovaný formát pro zadání cílové rozhraní framework aplikace .NET nebo knihovny. Cílové architektury se obvykle odkazuje krátký název, jako například `net462`. Dlouhá Tfm (například. NETFramework, verze = 4.6.2) existuje, ale nejsou obecně používá k určení rozhraní .NET framework.
 
-V tématu [cílové rozhraní](frameworks.md).
+Zobrazit [platforem](frameworks.md).
 
 ## <a name="uwp"></a>UWP
 
-Univerzální platformy Windows.
+Universal Windows Platform.
 
-Implementace rozhraní .NET, který se používá pro vytváření moderní, dotykovým ovládáním aplikace systému Windows a software pro Internet věcí (IoT). Je určený ke sjednocení různé typy zařízení, které chcete zacílit, včetně počítače, tablety, phablets, telefony a i Xbox. UWP poskytuje mnoho služeb, jako je například centralizované app storu, prostředí provádění (AppContainer) a sadu rozhraní API systému Windows tak, aby používal místo Win32 (WinRT). Aplikace může být napsané v jazyce C++, C#, VB.NET a JavaScript. Při použití jazyka C# a VB.NET, rozhraní API .NET jsou poskytovány .NET Core.
+Implementace .NET, která je určená k vytváření moderních, dotykově ovládaný Windows aplikací a softwaru pro Internet věcí (IoT). Je určený ke sjednocení různé typy zařízení, které můžete chtít zaměřit, včetně počítače, tablety, phablets, telefony a dokonce i Xbox. UPW poskytuje mnoho služeb, jako jsou centralizované app storu, spouštěcí prostředí (AppContainer) a sada rozhraní API Windows nahrazujícím Win32 (WinRT). Aplikace může být napsané v jazyce C++, C#, VB.NET a JavaScript. Při použití jazyka C# a VB.NET, jsou k dispozici rozhraní API .NET pomocí .NET Core.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Průvodce technologií .NET](index.md)  
-[Průvodce rozhraním .NET Framework](../framework/index.md)  
-[.NET Core](../core/index.md)  
-[Přehled technologie ASP.NET](/aspnet/index#pivot=aspnet)  
-[Přehled ASP.NET Core](/aspnet/index#pivot=core)  
-
+- [Průvodce technologií .NET](index.md)  
+- [Průvodce rozhraním .NET Framework](../framework/index.md)  
+- [.NET Core](../core/index.md)  
+- [ASP.NET: Přehled](/aspnet/index#pivot=aspnet)  
+- [Přehled ASP.NET Core](/aspnet/index#pivot=core)  

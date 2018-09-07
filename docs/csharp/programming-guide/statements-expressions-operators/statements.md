@@ -5,12 +5,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: 826fea55d1e85e2ec44ec1e752f809ec3cc08433
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 515ae6bb6030e80c80289ff888f07ade2f341792
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43660197"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44080082"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarování proměnných, přiřazování hodnot, volání metod ve smyčce přes kolekce a vytváření větví do jednoho nebo jiného bloku kódu, v závislosti na danou podmínku. Pořadí, ve kterém jsou spouštěny příkazy v programu v jazyce se nazývá tok řízení toku provádění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak program reaguje na vstup, že bude dostávat v době běhu.  
@@ -32,7 +32,7 @@ Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce z
 |[Příkazy zpracování výjimek](../../../csharp/language-reference/keywords/exception-handling-statements.md)|Příkazy zpracování výjimek umožňují elegantně zotavit z výjimečných podmínek, ke kterým dochází za běhu. Další informace naleznete v následujících tématech:<br /><br /> [vyvolat](../../../csharp/language-reference/keywords/throw.md), [bloku try-catch](../../../csharp/language-reference/keywords/try-catch.md), [try-finally](../../../csharp/language-reference/keywords/try-finally.md), [konstrukce try-catch-finally](../../../csharp/language-reference/keywords/try-catch-finally.md)|  
 |[Zaškrtnuto a nezaškrtnuto](../../../csharp/language-reference/keywords/checked-and-unchecked.md)|Zaškrtnuto a nezaškrtnuto příkazy umožňují určete, jestli jsou číselné operace může způsobit přetečení, pokud výsledek je uložen v proměnné, která je příliš nízká k uložení výslednou hodnotu. Další informace najdete v tématu [zaškrtnutí](../../../csharp/language-reference/keywords/checked.md) a [Nekontrolovaná](../../../csharp/language-reference/keywords/unchecked.md).|  
 |`await` – Příkaz|Pokud určíte metodu s [asynchronní](../../../csharp/language-reference/keywords/async.md) modifikátor, můžete použít [await](../../../csharp/language-reference/keywords/await.md) operátor v metodě. Když ovládací prvek dosáhne `await` výrazu v asynchronní metodě, ovládací prvek vrátí volajícímu a průběh v metodě je pozastavený, až do dokončení očekávané úlohy. Po dokončení úlohy se provádění může pokračovat v metodě.<br /><br /> Jednoduchý příklad, najdete v části "Asynchronní metody" [metody](../../../csharp/programming-guide/classes-and-structs/methods.md). Další informace najdete v tématu [asynchronní programování pomocí modifikátoru async a operátoru await](../../../csharp/programming-guide/concepts/async/index.md).|  
-|`yield return` – Příkaz|Iterátor provádí vlastní iterace nad kolekcí, jako je například seznam nebo pole. Iterátor používá [yield return](../../../csharp/language-reference/keywords/yield.md) příkaz vrátit vždy jeden prvek v čase. Když `yield return` je dosažen příkaz, se uloží aktuální umístění v kódu. Provádění je restartováno z tohoto umístění, při příštím volání iterátoru.<br /><br /> Další informace najdete v tématu [iterátory](https://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7).|  
+|`yield return` – Příkaz|Iterátor provádí vlastní iterace nad kolekcí, jako je například seznam nebo pole. Iterátor používá [yield return](../../../csharp/language-reference/keywords/yield.md) příkaz vrátit vždy jeden prvek v čase. Když `yield return` je dosažen příkaz, se uloží aktuální umístění v kódu. Provádění je restartováno z tohoto umístění, při příštím volání iterátoru.<br /><br /> Další informace najdete v tématu [iterátory](../../../csharp/programming-guide/concepts/iterators.md).|  
 |`fixed` – Příkaz|Fixed – příkaz zabraňuje přemístění proměnné přesouvatelný systému uvolňování paměti. Další informace najdete v tématu [oprava](../../../csharp/language-reference/keywords/fixed-statement.md).|  
 |`lock` – Příkaz|Příkaz lock umožňuje omezit přístup k bloky kódu, který pouze jedno vlákno v čase. Další informace najdete v tématu [Zámek](../../../csharp/language-reference/keywords/lock-statement.md).|  
 |Příkaz s popiskem|Můžete poskytnout příkaz popisek a potom použít [goto](../../../csharp/language-reference/keywords/goto.md) – klíčové slovo pro přechod na příkaz s popiskem. (Viz příklad na následujícím řádku.)|  

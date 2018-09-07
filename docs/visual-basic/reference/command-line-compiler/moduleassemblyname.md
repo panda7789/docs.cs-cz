@@ -9,11 +9,11 @@ ms.assetid: 013a57b6-f425-4dd3-b333-512d72c42f55
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 479f9f639548eb81351d1df3f8f08b29b393cba1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43890880"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085024"
 ---
 # <a name="-moduleassemblyname"></a>-moduleassemblyname
 Určuje název sestavení, které bude tento modul součástí.  

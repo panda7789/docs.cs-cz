@@ -5,11 +5,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 08/13/2017
 ms.openlocfilehash: 02aac2dab2b892927c0c98fae30bb287a6e24ad6
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
-ms.translationtype: MT
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43748632"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44062598"
 ---
 # <a name="whats-new-in-net-core-20"></a>Co je nového v .NET Core 2.0
 

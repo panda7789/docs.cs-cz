@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
 ms.openlocfilehash: db4a1d1e515dee5b107b2c2067d8b0fe58ccf836
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43537771"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44085988"
 ---
 # <a name="what39s-new-in-windows-communication-foundation-45"></a>Co&#39;nového ve Windows Communication Foundation 4.5
 Toto téma popisuje funkce nového na Windows Communication Foundation (WCF).  

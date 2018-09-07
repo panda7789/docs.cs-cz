@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 537d8a2c-d40b-4000-83eb-bc1fcc93f707
 ms.openlocfilehash: 7bb68a7d08d983e93119804db6c1f5a01cd047c9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43659386"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44081272"
 ---
 # <a name="configuring-parameters-and-parameter-data-types"></a>Konfigurace parametrů a datové typy parametrů
 Objekty příkazů použít parametry k předání hodnoty příkazy SQL nebo úložné procedury, kontrolu typu a ověření. Na rozdíl od text příkazu vstupní parametr je považován za hodnotu literálu, nikoli jako spustitelný kód. To pomáhá chránit před útoky "Útok prostřednictvím injektáže SQL", ve kterých útočník vloží příkaz tohoto ohrožení zabezpečení na serveru do příkazu SQL.  

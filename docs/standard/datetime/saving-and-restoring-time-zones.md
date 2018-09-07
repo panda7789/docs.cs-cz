@@ -19,61 +19,61 @@ helpviewer_keywords:
 ms.assetid: 4028b310-e7ce-49d4-a646-1e83bfaf6f9d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b7c9aefa08d837ce93e718ff32a463d95dabcdc3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1dc983f1f0b2405f207d69c62b800ee854fcd409
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576253"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44081765"
 ---
 # <a name="saving-and-restoring-time-zones"></a>Ukládání a obnova časových pásem
 
-<xref:System.TimeZoneInfo> Třída vychází z registru pro načtení dat předdefinovaného časového pásma. Dynamická struktura je však registru. Kromě toho informace o časovém pásmu, který obsahuje registru se používá v operačním systému především pro zpracování úpravy času a převody pro aktuálního roku. To má dva hlavní důsledky pro aplikace, které jsou závislé na přesné časové pásmo dat:
+<xref:System.TimeZoneInfo> Třídy spoléhá na registr a načíst data předdefinované časové pásmo. Registr je však dynamické struktury. Kromě toho informace o časovém pásmu, který obsahuje registru se používá v operačním systému především pro zpracování úpravy času a převody pro aktuálního roku. To má dvě hlavní důsledky pro aplikace, které jsou závislé na datech přesné časové pásmo:
 
-* Časové pásmo, které je vyžadována danou aplikací nemusí být definován v registru, nebo bylo přejmenováno nebo odebrat z registru.
+* Časové pásmo, který vyžaduje aplikace nemusí být definováno v registru, nebo byly přejmenovány nebo odebrány z registru.
 
-* Časové pásmo, která je definována v registru mohou chybět informace o pravidlech konkrétní úprav, které jsou nezbytné pro převody historických časové pásmo.
+* Časové pásmo, který je definován v registru mohou chybět informace o pravidlech určité úpravy, které jsou nezbytné pro historické převody.
 
-<xref:System.TimeZoneInfo> Třída řeší tato omezení prostřednictvím své podpory serializace (ukládání) a rekonstrukce (obnovení) dat časového pásma.
+<xref:System.TimeZoneInfo> Třída adresy prostřednictvím své podpory (uložení) serializace a deserializace (obnovení) časové pásmo dat tato omezení.
 
 ## <a name="time-zone-serialization-and-deserialization"></a>Časové pásmo serializace a deserializace
 
-Ukládání a obnovení časového pásma pomocí serializace a deserializace dat časového pásma zahrnuje pouze dvě volání metod:
+Ukládání a obnova časových pásem serializaci a deserializaci časové pásmo dat zahrnuje dvě volání metody:
 
-* Může serializovat <xref:System.TimeZoneInfo> objekt voláním tento objekt <xref:System.TimeZoneInfo.ToSerializedString%2A> metoda. Metoda nepřijímá žádné parametry a vrátí řetězec, který obsahuje informace o časovém pásmu.
+* Může serializovat <xref:System.TimeZoneInfo> objekt tohoto objektu voláním <xref:System.TimeZoneInfo.ToSerializedString%2A> metody. Metoda nepřijímá žádné parametry a vrátí řetězec, který obsahuje informace o časovém pásmu.
 
-* Může deserializovat <xref:System.TimeZoneInfo> z serializovaného řetězce předáním tohoto řetězce pro objekt `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.FromSerializedString%2A?displayProperty=nameWithType> metoda.
+* Může deserializovat <xref:System.TimeZoneInfo> objekt serializovaný řetězec předáním tohoto řetězce `static` (`Shared` v jazyce Visual Basic) <xref:System.TimeZoneInfo.FromSerializedString%2A?displayProperty=nameWithType> metody.
 
 ## <a name="serialization-and-deserialization-scenarios"></a>Serializace a deserializace scénáře
 
-Možnost uložení (nebo serializovat) <xref:System.TimeZoneInfo> objekt na řetězec a k obnovení (nebo deserializaci) je pro pozdější použití zvyšuje nástroj a flexibilitu <xref:System.TimeZoneInfo> třídy. Tento oddíl se zabývá některé situace, ve kterých jsou velmi užitečné serializace a deserializace.
+Možnost Uložit (nebo serializovat) <xref:System.TimeZoneInfo> zvyšuje objekt na řetězec a k obnovení (nebo deserializaci) ho pro pozdější použití nástroje a flexibilitu <xref:System.TimeZoneInfo> třídy. Tento oddíl se zabývá některé situace, ve kterých jsou nejužitečnější serializace a deserializace.
 
 ### <a name="serializing-and-deserializing-time-zone-data-in-an-application"></a>Serializace a deserializace dat časového pásma v aplikaci
 
-Serializované časové pásmo lze obnovit z řetězce, když je to potřeba. Aplikace to třeba udělat, pokud nelze správně převést datum a čas v konkrétní datum rozsahu časovém pásmu z registru načíst. Například data časové pásmo v registru systému Windows XP podporuje jediné pravidlo úprav, zatímco časových pásem definovaných v registru systému Windows Vista obvykle poskytují informace o dvou pravidlech úprav. To znamená, že historické čas převody mohou být nepřesné. Serializace a deserializace dat časového pásma může zpracovávat toto omezení.
+Serializovaná časové pásmo je možné obnovit z řetězce, když ho nepotřebují. Aplikace může provést, pokud nelze správně převést datum a čas v rámci určitého období časového pásma z registru načíst. Například časové pásmo data v registru Windows XP podporuje jediné pravidlo úprav, zatímco časových pásem definovaných v registru Windows Vista, obvykle poskytují informace o dvou pravidel úpravy. To znamená, že historické čas převody jsou pravděpodobně nesprávné. Serializace a deserializace dat časového pásma může zpracovávat toto omezení.
 
-V následujícím příkladu, vlastní <xref:System.TimeZoneInfo> třídu, která nemá žádná pravidla úprav není definován pro představují USA Východní standardního časového pásma z 1883 k 1917 před zavedením letního času ve Spojených státech amerických. Vlastní časové pásmo je serializováno v proměnné, která má globální obor. Metodě převodu časového pásma `ConvertUtcTime`, předaný převést časy koordinovaný univerzální čas (UTC). Pokud datum a čas, dojde k 1917 nebo dřívější, vlastní standardní východní časové pásmo je obnoven ze serializovaného řetězce a nahradí časovém pásmu z registru načíst.
+V následujícím příkladu, vlastní <xref:System.TimeZoneInfo> představující USA je definována třída, která nemá žádná pravidla úprav Východní oblast (běžný čas) zóny z 1883 k 1917 před zavedením letního času ve Spojených státech. Vlastní časové pásmo je serializován v proměnné, která má globální obor. Metoda převodu časového pásma, `ConvertUtcTime`, je předán převést časy koordinovaný univerzální čas (UTC). Pokud datum a čas, dojde k 1917 nebo starší, vlastní standardní východní časové pásmo je obnoven ze serializovaných řetězec a nahradí časového pásma z registru načíst.
 
 [!code-csharp[System.TimeZone2.Serialization.1#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Serialization.1/cs/Serialization.cs#1)]
 [!code-vb[System.TimeZone2.Serialization.1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Serialization.1/vb/Serialization.vb#1)]
 
 ### <a name="handling-time-zone-exceptions"></a>Zpracování výjimek časového pásma
 
-Protože registru je dynamická struktura, její obsah se vztahují nechtěným nebo záměrným změnám. To znamená, že časové pásmo, který by měl být definován v registru a, který je vyžadován ke spuštění aplikace nemusí být k dispozici. Bez podpory pro časové pásmo serializace a deserializace, budete mít velmi málo možností ale zpracování výsledné <xref:System.TimeZoneNotFoundException> ukončením aplikace. Však pomocí časové pásmo serializace a deserializace lze zpracovat neočekávanou <xref:System.TimeZoneNotFoundException> obnovením požadováno časového pásma z serializovaného řetězce a aplikace bude dále běžet.
+Protože registru je struktura, dynamická, jeho obsah se vztahují náhodného nebo záměrného úpravy. To znamená, že časové pásmo, které musí být definován v registru a, která je vyžadována pro spuštění aplikace nemusí být k dispozici. Bez podpory pro časové pásmo serializace a deserializace, máte malý výběr ale zpracování výsledné <xref:System.TimeZoneNotFoundException> ukončením aplikace. Nicméně pomocí časové pásmo serializace a deserializace můžete zpracovat neočekávanou <xref:System.TimeZoneNotFoundException> obnovením požadované časové pásmo z serializovaný řetězec a aplikace bude pokračovat.
 
-Následující příklad vytvoří a serializuje vlastní centrální standardní časové pásmo. Potom se pokusí načíst centrální standardního časového pásma z registru. Pokud operace načítání vyvolá <xref:System.TimeZoneNotFoundException> nebo <xref:System.InvalidTimeZoneException>, obslužná rutina výjimky deserializuje časové pásmo.
+Následující příklad vytvoří a serializuje centrální standardní vlastní časové pásmo. Potom se pokusí načíst centrální standardního časového pásma z registru. Pokud operace načítání vyvolá <xref:System.TimeZoneNotFoundException> nebo <xref:System.InvalidTimeZoneException>, obslužná rutina výjimky deserializuje časové pásmo.
 
 [!code-csharp[System.TimeZone2.Serialization.2#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Serialization.2/cs/Serialization2.cs#1)]
 [!code-vb[System.TimeZone2.Serialization.2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Serialization.2/vb/Serialization2.vb#1)]
 
-### <a name="storing-a-serialized-string-and-restoring-it-when-needed"></a>Ukládání serializovaného řetězce a obnovení dat v případě potřeby
+### <a name="storing-a-serialized-string-and-restoring-it-when-needed"></a>Serializovaný řetězec ukládání a obnovení dat v případě potřeby
 
-V předchozích příkladech mít uložené informace o časovém pásmu na proměnnou string a obnovit jej v případě potřeby. Řetězec, který obsahuje serializovaných čas, informace o zóně může sám sebe být uložený v některém paměťovém médiu, jako je například externí soubor, soubor prostředků však vložený registru nebo aplikace. (Všimněte si, že by měly být uložené informace o vlastních časových pásmech kromě systému časové pásmo klíče v registru.)
+V předchozích příkladech máte uložené informace o časovém pásmu k proměnné řetězce a obnovili ji v případě potřeby. Řetězec, který obsahuje serializovaná okamžiku zóny může sám být uložena v některých paměťové médium, například externí soubor soubor prostředků však vloží do registru nebo aplikace. (Všimněte si, že informace o vlastních časová pásma by měla být uložena kromě klíče časové pásmo systému, a v registru.)
 
-Ukládání řetězce serializované časové pásmo tímto způsobem také odděluje rutinu vytváření časového pásma od vlastní aplikace. Například rutina vytvoření časového pásma můžete spustit a vytvořit datový soubor, který obsahuje informace o historických časovém pásmu, který můžete použít aplikaci. Datový soubor může být následně instalován s aplikací a můžete ho otevřít a jeden nebo více jeho časových pásem lze deserializovat, když je aplikace vyžaduje.
+Tímto způsobem ukládání řetězec serializované časové pásmo také odděluje rutině vytváření časového pásma od samotná aplikace. Rutině vytváření časového pásma může například provést a vytvoření datového souboru, který obsahuje historická časové pásmo informace, které může aplikace použít. Datový soubor může být potom nainstalovat aplikaci a můžete ho otevřít a nejméně jeden z jeho časových pásem lze deserializovat, když aplikace vyžaduje.
 
-Příklad, který používá vložený prostředek k uložení serializovaných dat časového pásma, naleznete v části [postupy: ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [postupy: obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).
+Příklad použití vloženého prostředku k ukládání dat serializovaná časové pásmo, naleznete v tématu [postupy: ukládání časových pásem do vloženého prostředku](../../../docs/standard/datetime/save-time-zones-to-an-embedded-resource.md) a [postupy: obnovení časových pásem ze vloženého prostředku](../../../docs/standard/datetime/restore-time-zones-from-an-embedded-resource.md).
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)

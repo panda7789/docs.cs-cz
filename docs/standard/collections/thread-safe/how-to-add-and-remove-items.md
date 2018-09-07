@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a8bb84f2e26471e004678afde99a1dd725db6832
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: 98d30cd89114aa4aa3d4f7f71f5174c54d3fcecb
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42755103"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44075758"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
 Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebírat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato kolekce třída je implementace bezpečné pro vlákna. Doporučujeme vám použít ho pokaždé, když se více vláken může být pokus o přístup k prvkům.  
@@ -48,6 +48,7 @@ Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebírat položk
   
  Proto není zaručeno, že data, která je vrácena <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> je stejná data, která byla vytvořena metoda valueFactory vlákna. Podobně jako posloupnost událostí může dojít, když <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> je volána.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
- [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Collections.Concurrent?displayProperty=nameWithType>  
+- [Kolekce se zabezpečenými vlákny](../../../../docs/standard/collections/thread-safe/index.md)

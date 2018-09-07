@@ -3,11 +3,11 @@ title: '&lt;certificate&gt; – &lt;peer&gt;'
 ms.date: 03/30/2017
 ms.assetid: 48b69142-c957-4305-a042-c9d0c9a55c0e
 ms.openlocfilehash: 59aaee5549aae5df173174651ee3a520a0ac10fb
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43883932"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44084011"
 ---
 # <a name="ltcertificategt-of-ltpeergt"></a>&lt;certificate&gt; – &lt;peer&gt;
 Určuje certifikát používaný druhou stranou.  

@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 72bb3c2badef5262907e2e4fa8b461b576e8867d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ca806f0f9c7e1ad859affe05d5db8ec0d3b36b03
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523076"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44078872"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Ověření XDR s třídou XmlSchemaCollection
 
@@ -158,7 +158,7 @@ Obsah souboru schématu XDR, popisuje následující *HeadCount.xdr*, k ověřen
 </Schema>
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-<xref:System.Xml.XmlValidatingReader.ValidationType%2A>  
-[Kompilace schématu XmlSchemaCollection](xmlschemacollection-schema-compilation.md)  
+- <xref:System.Xml.XmlValidatingReader.ValidationType%2A>
+- [Kompilace schématu XmlSchemaCollection](xmlschemacollection-schema-compilation.md)

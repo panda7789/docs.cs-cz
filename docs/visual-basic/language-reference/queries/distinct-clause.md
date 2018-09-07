@@ -9,11 +9,11 @@ helpviewer_keywords:
 - queries [Visual Basic], Distinct
 ms.assetid: 86f42614-0d8f-4ffc-b888-ce8a37a8d36a
 ms.openlocfilehash: 18d09d8018303aab6a69801c84c7ec9c6ea19ca9
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43788620"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44083829"
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct – klauzule (Visual Basic)
 Omezí hodnoty aktuální proměnnou rozsahu eliminovaly duplicitní hodnoty v klauzulích následné dotazování.  

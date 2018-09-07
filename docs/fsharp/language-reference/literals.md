@@ -3,11 +3,11 @@ title: Literály (F#)
 description: 'Další informace o typy literálu v programovacím jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: e6d34acd928edce8447c793105b08085ab0757b9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44035775"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44087622"
 ---
 # <a name="literals"></a>Literály
 

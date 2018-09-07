@@ -3,11 +3,11 @@ title: Typ jednotky (F#)
 description: 'Zjistěte, jak "jednotka" typu jazyka F # se často používá k uložení na místě, kde hodnota vyžaduje syntaxi jazyka při je potřeba nebo požadovaných žádná hodnota.'
 ms.date: 05/16/2016
 ms.openlocfilehash: c3dfa5f63c25a1e8abc0f75b905c129b311479af
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43773423"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44097149"
 ---
 # <a name="unit-type"></a>Typ jednotky
 

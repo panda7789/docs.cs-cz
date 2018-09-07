@@ -3,11 +3,11 @@ title: 'Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
 ms.openlocfilehash: b53596d7ac4e7e7c3748f6a98130492a96c0b48c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43533232"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44059479"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Postupy: Nahrazení rezervace adresy URL služby WCF omezenou rezervací
 Rezervace adresy URL můžete tak omezit, kdo přijímá zprávy z adresy URL nebo sadu adresy URL. Rezervace se skládá z adresy URL šablony, seznam řízení přístupu (ACL) a sada příznaků. Adresa URL Šablona definuje adresy URL, které má vliv na rezervaci. Další informace o způsobu zpracování adresy URL šablony najdete v tématu [směrování příchozích požadavků](https://go.microsoft.com/fwlink/?LinkId=136764). Seznam ACL ovládací prvky, které uživatel nebo skupina uživatelů je povolené pro příjem zpráv ze zadané adresy URL. Příznaky označí, zda je rezervace poskytnout oprávnění uživatele nebo skupinu tak, aby naslouchala na adresu URL přímo, nebo chcete delegovat oprávnění tak, aby naslouchala na nějaký jiný proces.  

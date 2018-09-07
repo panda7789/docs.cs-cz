@@ -4,11 +4,11 @@ description: Zjistěte, jak spojení pomocí složených klíčů v technologii 
 ms.date: 12/1/2016
 ms.assetid: da70b54d-3213-45eb-8437-fbe75cbcf935
 ms.openlocfilehash: ae37d03f996f0b0cc184a86663f16d62e6c29c69
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877203"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44081557"
 ---
 # <a name="join-by-using-composite-keys"></a>Spojení pomocí složených klíčů
 

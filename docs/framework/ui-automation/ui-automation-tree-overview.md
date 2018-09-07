@@ -9,11 +9,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: 042f3f82a88e987131145f38c1d8f5ecfa8dc487
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43661349"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44067484"
 ---
 # <a name="ui-automation-tree-overview"></a>Přehled stromu automatizace uživatelského rozhraní
 > [!NOTE]

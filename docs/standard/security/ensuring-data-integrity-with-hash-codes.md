@@ -17,11 +17,11 @@ ms.assetid: 33660f33-b70f-4dca-8c87-ab35cfc2961a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 16770ea938973372d1d94c628c42d5d5bf10c695
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43874989"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44075582"
 ---
 # <a name="ensuring-data-integrity-with-hash-codes"></a>Zajištění integrity dat pomocí hodnot hash
 Hodnota hash je číselná hodnota pevnou délku, která jednoznačně identifikuje data. Hodnoty hash znázornění velkých objemů dat jako mnohem menší číselných hodnot, tak se používají v digitální podpisy. Hodnota hash se můžete přihlásit efektivnější než podepisování větší hodnotu. Hodnoty hash jsou také užitečná pro ověření integrity dat posílaných prostřednictvím nezabezpečených kanálů. Hodnota hash přijatá data je možné porovnat s hodnoty hash dat, protože byla odeslána k určení, zda byla data změněna.  

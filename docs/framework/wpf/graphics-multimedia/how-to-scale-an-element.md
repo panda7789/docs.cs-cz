@@ -6,11 +6,11 @@ helpviewer_keywords:
 - graphics [WPF], scaling elements
 ms.assetid: 18158d94-bbe7-4f6a-814e-84d27fa748bf
 ms.openlocfilehash: 44c638b58d828e5beb0b9de5c7bb0b67c8e82d87
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43884944"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44097431"
 ---
 # <a name="how-to-scale-an-element"></a>Postupy: Změna velikosti elementu
 Tento příklad ukazuje způsob použití <xref:System.Windows.Media.ScaleTransform> škálování elementu.  

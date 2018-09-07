@@ -3,11 +3,11 @@ title: Vlastní aktivita pro přepnutí u rozsahu hodnot
 ms.date: 03/30/2017
 ms.assetid: 441e0a17-421f-430c-ba97-59e4cc6c88e3
 ms.openlocfilehash: cfaf4318b1557a9fc217de8254e164243ea54569
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43563397"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44066997"
 ---
 # <a name="custom-activity-to-switch-on-a-range-of-values"></a>Vlastní aktivita pro přepnutí u rozsahu hodnot
 Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která rozšiřuje použití <xref:System.Activities.Statements.Switch%601>. Konvenční <xref:System.Activities.Statements.Switch%601> příkaz umožňuje přechod na základě jedné hodnoty. Existují ale obchodní scénáře, kde musíte přepnout aktivity na základě rozsahu hodnot. Aktivita může například spustit jednu akci, pokud je hodnota přepnut na 1 až 5, další akci, pokud je hodnota délku 6 až 10 a výchozí akce pro všechny ostatní hodnoty. Tato vlastní aktivita umožňuje přesně tento scénář.  

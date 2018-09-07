@@ -16,24 +16,24 @@ helpviewer_keywords:
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 207227b3e5c52b7c6e0f704543379874f3708c03
-ms.sourcegitcommit: ceca5a1c027627abcca2767567703c3879f33325
+ms.openlocfilehash: cd3defd969b5f26fb95e7feca9c3d533e67272b1
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/23/2018
-ms.locfileid: "36338101"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44071093"
 ---
 # <a name="general-naming-conventions"></a>Obecné zásady vytváření názvů
-Tato část popisuje obecné zásady vytváření názvů vztahující se k výběru word pokyny k používání zkratky a zkratky a doporučení na tom, jak zamezit pomocí názvů konkrétní jazyk.  
+Tato část popisuje obecné zásady vytváření názvů, které se týkají podle vlastní volby slov, pokyny na pomocí zkratky a zkratky a doporučení o tom, abyste se vyhnuli použití názvů specifických pro jazyk.  
   
-## <a name="word-choice"></a>Výběr aplikace Word  
+## <a name="word-choice"></a>Volba aplikace Word  
  **✓ DO** zvolte snadno čitelné identifikátor názvy.  
   
- Například vlastnost s názvem `HorizontalAlignment` je angličtina srozumitelnější než `AlignmentHorizontal`.  
+ Například vlastnost s názvem `HorizontalAlignment` je angličtina čitelnější než `AlignmentHorizontal`.  
   
  **✓ DO** upřednostnit čitelnost přes jako stručný výtah.  
   
- Název vlastnosti `CanScrollHorizontally` je lepší, než `ScrollableX` (skrytého odkaz na ose x).  
+ Název vlastnosti `CanScrollHorizontally` je obecně lepší než `ScrollableX` (skrytého odkaz na ose x).  
   
  **X DO NOT** použít podtržítka, pomlčky nebo jiné nealfanumerické znaky.  
   
@@ -41,39 +41,39 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
   
  **X AVOID** pomocí identifikátorů, které je v konfliktu s slov široce používá programovací jazyky.  
   
- Podle pravidla 4 z specifikace CLS (Common Language) musíte zadat všechny jazyky kompatibilní mechanismus, který umožňuje přístup k pojmenované položky, které používají klíčové slovo daného jazyka jako identifikátor. C#, například používá znak jako mechanismus řídicí v tomto případě @. Je však stále vhodné se vyhnout běžné klíčová slova, protože je mnohem obtížnější pro použití metody s řídicí sekvence než jeden bez ní.  
+ Podle pravidla 4 z specifikace CLS (Common Language) musí všechny kompatibilní s jazyky poskytují mechanismus, který umožňuje přístup k pojmenované položky, které používají – klíčové slovo volbou jazyka jako identifikátor. Jazyk C#, například používá jako mechanismus v tomto případě řídicí znak @. Je však stále vhodné vyhnout běžných klíčových slov, protože je mnohem obtížnější použít metodu s řídicí sekvence než jedna bez ní.  
   
-## <a name="using-abbreviations-and-acronyms"></a>Pomocí zkratky a zkratky  
+## <a name="using-abbreviations-and-acronyms"></a>Použití zkratky a zkratky  
  **X DO NOT** použít zkratky nebo staženiny jako součást identifikátoru názvy.  
   
- Například použít `GetWindow` místo `GetWin`.  
+ Například použít `GetWindow` spíše než `GetWin`.  
   
  **X DO NOT** žádné režim, které nejsou široce používaný a to i v případě, že jsou pouze v případě, že je nutné použít.  
   
-## <a name="avoiding-language-specific-names"></a>Zamezení názvy konkrétní jazyk  
+## <a name="avoiding-language-specific-names"></a>Jak se vyhnout názvů specifických pro jazyk  
  **✓ DO** používá sémanticky zajímavé názvy namísto klíčová slova specifická pro jazyk pro názvy typů.  
   
- Například `GetLength` je lepší název než `GetInt`.  
+ Například `GetLength` je název lepší než `GetInt`.  
   
  **✓ DO** použít obecný název typu CLR, nikoli název konkrétní jazyk, ve výjimečných případech, pokud identifikátor nemá význam sémantického nad rámec jeho typu.  
   
- Například metoda převodu na <xref:System.Int64> by měl být pojmenován `ToInt64`, nikoli `ToLong` (protože <xref:System.Int64> je název CLR jazyka C# – konkrétní alias `long`). Následující tabulka představuje několik základních datových typů pomocí názvy typů CLR (stejně jako odpovídající názvy typů pro C#, Visual Basic a C++).  
+ Například metoda převodu na <xref:System.Int64> by měly být pojmenovány `ToInt64`, nikoli `ToLong` (protože <xref:System.Int64> je název CLR pro jazyk C#-konkrétní alias `long`). Následující tabulka představuje několik základních datových typů pomocí názvy typů modulu CLR (stejně jako odpovídající názvy typů pro C#, Visual Basic a C++).  
   
 |C#|Visual Basic|C++|CLR|  
 |---------|------------------|-----------|---------|  
 |**sbyte**|**SByte –**|**char**|**SByte –**|  
 |**byte**|**Bajtů**|**unsigned char**|**Bajtů**|  
-|**short**|**krátký**|**short**|**Int16**|  
+|**short**|**krátké**|**short**|**Int16**|  
 |**ushort**|**UInt16**|**short bez znaménka**|**UInt16**|  
-|**int**|**celé číslo**|**int**|**Int32**|  
-|**uint**|**UInt32**|**int bez znaménka**|**UInt32**|  
-|**long**|**dlouhá**|**__int64**|**Int64**|  
-|**ulong**|**UInt64**|**__int64 bez znaménka**|**UInt64**|  
+|**int**|**celé číslo**|**int**|**Datový typ Int32**|  
+|**uint**|**UInt32**|**unsigned int**|**UInt32**|  
+|**long**|**Long**|**__int64**|**Int64**|  
+|**ulong**|**UInt64**|**unsigned __int64**|**UInt64**|  
 |**float**|**Jeden**|**float**|**Jeden**|  
 |**double**|**Double**|**double**|**Double**|  
-|**bool**|**Logická hodnota**|**bool**|**Logická hodnota**|  
+|**bool**|**Datový typ Boolean**|**bool**|**Datový typ Boolean**|  
 |**char**|**Char**|**wchar_t**|**Char**|  
-|**string**|**Řetězec**|**Řetězec**|**Řetězec**|  
+|**string**|**řetězec**|**řetězec**|**řetězec**|  
 |**object**|**objekt**|**objekt**|**objekt**|  
   
  **✓ DO** použít běžný název, například `value` nebo `item`, místo opakování název typu ve výjimečných případech, pokud identifikátor nemá žádný význam sémantického a typ parametru není důležité.  
@@ -81,11 +81,11 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
 ## <a name="naming-new-versions-of-existing-apis"></a>Pojmenování nové verze stávajících rozhraní API  
  **✓ DO** použijte název podobná staré rozhraní API, při vytváření nové verze existujícího rozhraní API.  
   
- To pomůže zvýrazněte vztah mezi rozhraní API.  
+ To pomáhá zvýraznit vztahy mezi rozhraním API.  
   
  **✓ DO** přednost přidání příponu místo předpony označující novou verzi existujícího rozhraní API.  
   
- To vám pomůže zjišťování při procházení dokumentace, nebo pomocí IntelliSense. Stará verze rozhraní API se uspořádají blízko nových rozhraní API, protože většina prohlížečů a IntelliSense zobrazí identifikátory v abecedním pořadí.  
+ To vám pomůže zjišťování při procházení dokumentaci, nebo pomocí technologie IntelliSense. Stará verze rozhraní API uspořádání blízko nová rozhraní API, protože většina prohlížečů a technologie IntelliSense zobrazí identifikátory v abecedním pořadí.  
   
  **✓ CONSIDER** pomocí identifikátor úplně nový, ale smysluplný místo přidávání příponu nebo předponu.  
   
@@ -93,12 +93,13 @@ Tato část popisuje obecné zásady vytváření názvů vztahující se k výb
   
  **X DO NOT** "Ex" (nebo podobná) používat příponu pro identifikátor ho odlišuje od dřívější verzi rozhraní API stejné.  
   
- **✓ DO** používají "64" příponu zaváděné verze rozhraní API, která pracovat 64bitové celé číslo (dlouhých celých čísel) namísto 32bitové celé číslo. Potřebujete použít tuto metodu, pokud existuje existujícího rozhraní API 32-bit; nedělají nic pro nové rozhraní API s 64bitovou verzi.  
+ **✓ DO** používají "64" příponu zaváděné verze rozhraní API, která pracovat 64bitové celé číslo (dlouhých celých čísel) namísto 32bitové celé číslo. Budete muset provést tento postup, pokud existuje stávající rozhraní API 32-bit; Neprovádějte to pro úplně nová rozhraní API s 64bitovou verzi.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

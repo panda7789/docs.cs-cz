@@ -24,28 +24,29 @@ helpviewer_keywords:
 ms.assetid: e35d4535-3732-421e-b1a3-37412e036145
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 9b99803970b205e3dbbb1d78c9bdaf0fefa73a04
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 16b12a1ab274a63b8d190278d6312d36a61efe16
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575577"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098378"
 ---
 # <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>Postupy: Příprava na vyčerpání volného prostoru pomocí izolovaného úložiště
-Kód, který používá izolované úložiště je omezen [kvóty](../../../docs/standard/io/isolated-storage.md#quotas) , určuje maximální velikost datového oddílu, ve kterém izolované úložiště souborů a adresářů neexistuje. Kvóta je definován pomocí zásad zabezpečení a konfigurovat správci. Pokud maximální povolená velikost je překročena při pokusu o zápis dat, <xref:System.IO.IsolatedStorage.IsolatedStorageException> je vyvolána výjimka, a operace se nezdaří. To pomáhá zabránit nebezpečné útoky odmítnutí služby, které by mohly způsobit aplikace odmítala požadavků z důvodu zaplnění datového úložiště.  
+Kód, který používá izolované úložiště je omezen [kvóty](../../../docs/standard/io/isolated-storage.md#quotas) , která určuje maximální velikost pro datové přihrádky, ve kterém izolované úložiště souborů a adresářů existovat. Kvóta je definována v zásadách zabezpečení a je možné konfigurovat správci. Pokud je maximální povolená velikost je překročena, při pokusu o zápis dat, <xref:System.IO.IsolatedStorage.IsolatedStorageException> je vyvolána výjimka a operace se nezdaří. To pomáhá zabránit nebezpečné útoky s cílem odepření služeb, které by mohly způsobit, že aplikace odmítnout požadavky, protože úložný prostor zaplněný.  
   
- Můžete určit, zda je pokus o zápis, pravděpodobně selžou z tohoto důvodu <xref:System.IO.IsolatedStorage.IsolatedStorage> třída poskytuje tři vlastnosti jen pro čtení: <xref:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorage.UsedSize%2A>, a <xref:System.IO.IsolatedStorage.IsolatedStorage.Quota%2A>. Tyto vlastnosti můžete použít k určení, zda zápis do úložiště způsobí, že maximální povolená velikost úložiště bude překročena. Mějte na paměti, která izolované úložiště je přístupná souběžně; Proto když můžete vypočítat množství paměti zbývající úložiště, v prostoru úložiště by mohly spotřebovat čas pokusu o zápis do úložiště. Můžete ale maximální velikost úložiště sloužící k určení, zda horní limit na úložiště k dispozici je chystáte dostupný.  
+ Při určování, zda je pravděpodobné, že z tohoto důvodu nezdaří pokus o zápis <xref:System.IO.IsolatedStorage.IsolatedStorage> třída poskytuje tři vlastnosti jen pro čtení: <xref:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorage.UsedSize%2A>, a <xref:System.IO.IsolatedStorage.IsolatedStorage.Quota%2A>. Tyto vlastnosti můžete použít k určení, zda zápis do úložiště způsobí, že maximální povolenou velikost úložiště bude překročena. Uvědomte si, že izolované úložiště může přistupovat souběžně; Proto když můžete vypočítat množství zbývající úložiště, v prostoru úložiště by mohly spotřebovat čas, kdy se pokusíte o zápis do úložiště. Můžete však použít maximální velikost úložiště sloužící k určení, zda horního limitu úložiště k dispozici je asi tím dosáhnout.  
   
- <xref:System.IO.IsolatedStorage.IsolatedStorage.Quota%2A> Vlastnost závisí na důkazy od sestavení správně fungovat. Z tohoto důvodu by tato vlastnost načíst pouze na <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objekty, které byly vytvořeny pomocí <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>, nebo <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metoda. <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objekty, které byly vytvořeny jiným způsobem (například objekty, které byly vráceny z <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> metoda), nevrátí přesné maximální velikost.  
+ <xref:System.IO.IsolatedStorage.IsolatedStorage.Quota%2A> Vlastnost závisí na důkazy od sestavení fungovalo správně. Z tohoto důvodu byste tuto vlastnost načíst pouze na <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objekty, které byly vytvořeny pomocí <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForAssembly%2A>, <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetUserStoreForDomain%2A>, nebo <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetStore%2A> metody. <xref:System.IO.IsolatedStorage.IsolatedStorageFile> objekty, které byly vytvořeny žádným jiným způsobem (například objekty, které byly vráceny z <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> metoda), nevrátí přesné maximální velikost.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu získá izolované úložiště, vytvoří několik souborů a načte <xref:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace%2A> vlastnost. Zbývající místo je uveden v bajtech.  
+ Následující příklad kódu získá izolované úložiště, vytvoří několik souborů a načte <xref:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace%2A> vlastnost. Zbývající velikost je uveden v bajtech.  
   
  [!code-cpp[Conceptual.IsolatedStorage#8](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.isolatedstorage/cpp/source7.cpp#8)]
  [!code-csharp[Conceptual.IsolatedStorage#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source7.cs#8)]
  [!code-vb[Conceptual.IsolatedStorage#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source7.vb#8)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
- [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)  
- [Postupy: Získávání úložišť pro izolované úložiště](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.IO.IsolatedStorage.IsolatedStorageFile>  
+- [Izolované úložiště](../../../docs/standard/io/isolated-storage.md)  
+- [Postupy: Získávání úložišť pro izolované úložiště](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)

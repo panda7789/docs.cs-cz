@@ -3,11 +3,11 @@ title: Tisk a vytváření sestav (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 92997b65-0279-4889-8db7-32cb6708be9c
 ms.openlocfilehash: 926526a64cd0b70db4864329454fbc42f3e34b1e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44032066"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44076898"
 ---
 # <a name="printing-and-reporting-visual-basic"></a>Tisk a vytváření sestav (Visual Basic)
 Visual Basic nabízí několik možností pro tisk a vytváření sestav. Následující témata poskytují přehledy a odkazy na relevantní dokumentaci týkající se tisk a vytváření sestav.  

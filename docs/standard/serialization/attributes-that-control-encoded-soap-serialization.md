@@ -8,12 +8,12 @@ helpviewer_keywords:
 - attributes [.NET Framework], XML serialization
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
-ms.openlocfilehash: 07c4c1e9b9a9da2e9a585efdcac644c616012078
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
-ms.translationtype: MT
+ms.openlocfilehash: 7b5a48003ff9bfb398c05c8d70a9076d49ad83d6
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43778562"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44065651"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>Seznam atributů řídících serializaci kódovaný protokol SOAP
 
@@ -32,12 +32,12 @@ Další informace o atributech najdete v tématu [atributy](../../../docs/standa
 |<xref:System.Xml.Serialization.SoapIncludeAttribute>|Veřejná odvozené třídy prohlášení a veřejné metody pro dokumenty služby popis jazyka WSDL (Web).|Typ by měly být zahrnuty při generování schémat (Chcete-li rozpoznán po serializován).|
 |<xref:System.Xml.Serialization.SoapTypeAttribute>|Deklarace veřejných tříd.|Třída by měla být serializován jako typ objektu XML.|
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Serializace XML a SOAP](xml-and-soap-serialization.md)  
-[Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
-[Postupy: Přepsání serializace XML zakódované v protokolu SOAP](how-to-override-encoded-soap-xml-serialization.md)  
-[Atributy](../../../docs/standard/attributes/index.md)  
-<xref:System.Xml.Serialization.XmlSerializer>  
-[Postupy: Serializace objektu](how-to-serialize-an-object.md)  
-[Postupy: Deserializace objektu](how-to-deserialize-an-object.md)
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)  
+- [Postupy: Serializace objektu jako XML streamu zakódovaného v protokolu SOAP](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)  
+- [Postupy: Přepsání serializace XML zakódované v protokolu SOAP](how-to-override-encoded-soap-xml-serialization.md)  
+- [Atributy](../../../docs/standard/attributes/index.md)  
+- <xref:System.Xml.Serialization.XmlSerializer>  
+- [Postupy: Serializace objektu](how-to-serialize-an-object.md)  
+- [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

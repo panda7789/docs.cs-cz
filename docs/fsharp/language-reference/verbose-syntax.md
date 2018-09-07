@@ -1,27 +1,25 @@
 ---
 title: Podrobná syntaxe (F#)
-description: 'Informace o rozdílu mezi podrobné a jednoduchý syntaxe v programovací jazyk F #.'
+description: 'Informace o rozdílu mezi syntaxi podrobné a jednoduchý programovací jazyk F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: b0bed66b4a76c5ab11e6c9e7aaf695f864e74ca0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b4f2354738da4692cb444e5e7dd9531d80d26664
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563781"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44063115"
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe
 
-Nejsou k dispozici pro mnoho konstrukce v jazyce F # dvě formy syntaxe: *podrobná syntaxe* a *prostá syntaxe*. Podrobná syntaxe není jako běžně používá, ale nabízí výhodu v podobě méně citlivé na odsazení. Prostá syntaxe je kratší a používá odsazení signál začátek a konec konstrukce, nikoli jako další klíčová slova `begin`, `end`, `in`a tak dále. Výchozí syntaxe je prostá syntaxe. Toto téma popisuje syntaxe konstrukce jazyka F #, není-li povoleno prostá syntaxe. Podrobná syntaxe je vždy povolena, tak i v případě, že povolíte prostá syntaxe, když můžete nadále používat podrobná syntaxe pro některé konstruktory. Prostá syntaxe můžete zakázat pomocí `#light "off"` – direktiva.
-
+Pro mnoho konstrukcí v jazyce F # existují dvě formy syntaxe: *podrobná syntaxe* a *nenáročném syntaxi*. Podrobná syntaxe nepoužívá tak často, ale nabízí výhodu v podobě jsou méně citlivé na odsazení. Prostá syntaxe je kratší a používá odsazení který signalizuje, že začátku a konce konstrukce, spíše než další klíčová slova, jako jsou `begin`, `end`, `in`, a tak dále. Výchozí syntaxe je nenáročném syntaxi. Toto téma popisuje syntaxe konstrukce jazyka F #, pokud není povolené nenáročném syntaxi. Podrobná syntaxe je vždy povolena, tak i v případě, že povolíte nenáročném syntaxi, můžete stále použít podrobné syntaxi pro některé konstruktory. Prostá syntaxe můžete zakázat s použitím `#light "off"` směrnice.
 
 ## <a name="table-of-constructs"></a>Tabulka konstrukce
-Následující tabulka ukazuje jednoduchý a podrobné syntaxi pro konstruktory jazyka F # v kontextech tam, kde je rozdíl mezi dvěma formuláři. V této tabulce, úhel závorky (&lt;&gt;) uzavřete prvky uživatelem zadané syntaxe. Naleznete v dokumentaci pro každý jazyk konstrukce pro podrobnější informace o syntaxi používaných v rámci těchto konstrukce.
 
-
+Následující tabulka ukazuje jednoduchý a podrobné syntaxe konstrukce jazyka F # v kontextech tam, kde existuje rozdíl mezi dvě různými formami. V této tabulce úhel hranaté závorky (&lt;&gt;) uzavřete syntaxe uživatelem zadané elementy. Naleznete v dokumentaci pro každý konstrukce jazyka podrobnější informace o syntaxi použít v rámci těchto konstruktorů.
 
 <table>
 <tr>
-<th>Jazyk – konstrukce</th>
+<th>Konstrukce jazyka</th>
 <th>Prostá syntaxe</th>
 <th>Podrobná syntaxe</th>
 </tr>
@@ -164,7 +162,7 @@ in
 
 </td>
 </tr>
-<tr><td>záznam
+<tr><td>Záznam
 </td><td>
 
 ```
@@ -262,7 +260,7 @@ type <interface-name> =
 
 </td>
 </tr>
-<tr><td>objekt výraz</td><td>
+<tr><td>výraz objektu</td><td>
 
 ```
 { new <type-name>
@@ -343,11 +341,8 @@ module <module-name> =
 </tr>
 </table>
 
+## <a name="see-also"></a>Viz také:
 
-
-## <a name="see-also"></a>Viz také
-[Referenční dokumentace jazyka F#](index.md)
-
-[Direktivy kompilátoru](compiler-directives.md)
-
-[Pravidla formátování kódu](code-formatting-guidelines.md)
+- [Referenční dokumentace jazyka F#](index.md)
+- [Direktivy kompilátoru](compiler-directives.md)
+- [Pravidla formátování kódu](code-formatting-guidelines.md)

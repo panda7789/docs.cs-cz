@@ -8,17 +8,17 @@ dev_langs:
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2fcfe8b0fbbc829c1bee08b761271f4d12b6ae05
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 71e5ae19b1e0123dc28713befef070a9cc23bdc5
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570991"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44048581"
 ---
 # <a name="how-to-migrate-your-xsltransform-code"></a>Postupy: migrace kódu XslTransform
-Nové třídy XSLT byly navrženy pro velmi podobný existujících tříd. <xref:System.Xml.Xsl.XslCompiledTransform> Třídy nahradí <xref:System.Xml.Xsl.XslTransform> třídy. Šablony stylů kompilované pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metoda. Transformace jsou spouštěny pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda. Následující postupy ukazují běžné úlohy XSLT a porovnání kódu pomocí <xref:System.Xml.Xsl.XslTransform> třídy <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
+Byly navrženy nové třídy XSLT se velmi podobá existující třídy. <xref:System.Xml.Xsl.XslCompiledTransform> Třídy nahradí <xref:System.Xml.Xsl.XslTransform> třídy. Šablony stylů jsou kompilovány pomocí <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> metody. Transformace jsou spouštěny <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody. Následující postupy ukazují běžné úkoly XSLT a porovnejte kód s využitím <xref:System.Xml.Xsl.XslTransform> třídy a <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
   
-### <a name="to-transform-a-file-and-output-to-a-uri"></a>K transformaci souboru a výstup k identifikátoru URI  
+### <a name="to-transform-a-file-and-output-to-a-uri"></a>Transformace souboru a výstup do identifikátoru URI  
   
 -   Programování s využitím <xref:System.Xml.Xsl.XslTransform> třídy.  
   
@@ -30,7 +30,7 @@ Nové třídy XSLT byly navrženy pro velmi podobný existujících tříd. <xre
      [!code-csharp[XML_Migration#10](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#10)]
      [!code-vb[XML_Migration#10](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#10)]  
   
-### <a name="to-compile-a-style-sheet-and-use-a-resolver-with-default-credentials"></a>Pro kompilaci šablony stylů a překladač pomocí výchozích pověření  
+### <a name="to-compile-a-style-sheet-and-use-a-resolver-with-default-credentials"></a>Ke kompilaci šablony stylů a překladač pomocí výchozích přihlašovacích údajů  
   
 -   Programování s využitím <xref:System.Xml.Xsl.XslTransform> třídy.  
   
@@ -42,7 +42,7 @@ Nové třídy XSLT byly navrženy pro velmi podobný existujících tříd. <xre
      [!code-csharp[XML_Migration#12](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#12)]
      [!code-vb[XML_Migration#12](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#12)]  
   
-### <a name="to-use-an-xslt-parameter"></a>Použití parametru XSLT  
+### <a name="to-use-an-xslt-parameter"></a>Chcete-li použít parametr XSLT  
   
 -   Programování s využitím <xref:System.Xml.Xsl.XslTransform> třídy.  
   
@@ -54,7 +54,7 @@ Nové třídy XSLT byly navrženy pro velmi podobný existujících tříd. <xre
      [!code-csharp[XML_Migration#14](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#14)]
      [!code-vb[XML_Migration#14](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#14)]  
   
-### <a name="to-enable-xslt-scripting"></a>Chcete-li povolit skriptování XSLT  
+### <a name="to-enable-xslt-scripting"></a>Povolit skriptování XSLT  
   
 -   Programování s využitím <xref:System.Xml.Xsl.XslTransform> třídy.  
   
@@ -76,12 +76,12 @@ Nové třídy XSLT byly navrženy pro velmi podobný existujících tříd. <xre
 -   Programování s využitím <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  
   
     > [!NOTE]
-    >  <xref:System.Xml.Xsl.XslCompiledTransform> Třída nemá metodu, která vrátí výsledky transformace XSLT jako <xref:System.Xml.XmlReader> objektu. Však můžete výstup do souboru XML a načíst soubor XML do jiného objektu.  
+    >  <xref:System.Xml.Xsl.XslCompiledTransform> Třída nemá metodu, která vrátí výsledky transformace XSLT jako <xref:System.Xml.XmlReader> objektu. Můžete však výstup do souboru XML a načíst soubor XML do jiného objektu.  
   
      [!code-csharp[XML_Migration#20](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#20)]
      [!code-vb[XML_Migration#20](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#20)]  
   
-### <a name="to-stream-the-results-into-another-data-store"></a>K vysílání datového proudu výsledky do jiného úložiště dat  
+### <a name="to-stream-the-results-into-another-data-store"></a>Abyste mohli Streamovat výsledky do jiného úložiště dat  
   
 -   Programování s využitím <xref:System.Xml.Xsl.XslTransform> třídy.  
   
@@ -93,6 +93,7 @@ Nové třídy XSLT byly navrženy pro velmi podobný existujících tříd. <xre
      [!code-csharp[XML_Migration#18](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#18)]
      [!code-vb[XML_Migration#18](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#18)]  
   
-## <a name="see-also"></a>Viz také  
- [Migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
- [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+## <a name="see-also"></a>Viz také:
+
+- [Migrace z třídy XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
+- [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)

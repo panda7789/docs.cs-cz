@@ -3,11 +3,11 @@ title: Integrovaná konfigurace
 ms.date: 03/30/2017
 ms.assetid: 34e85c9b-088d-4347-816c-0f77cb73ef2f
 ms.openlocfilehash: e76c019d9fc1b416e6fa8175a70b5fd01d9ff53e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43867839"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44084790"
 ---
 # <a name="built-in-configuration"></a>Integrovaná konfigurace
 Tato ukázka demonstruje používání a konfiguraci úložiště instancí pracovních postupů SQL. Úložiště instancí pracovních postupů SQL je založený na SQL implementace úložiště instancí. To umožňuje instance pro uložení a načtení stavu do a z databáze systému SQL Server nebo SQL Server Express.  

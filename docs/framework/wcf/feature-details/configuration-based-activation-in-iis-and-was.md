@@ -3,11 +3,11 @@ title: Aktivace založená na konfiguraci v IIS a WAS
 ms.date: 03/30/2017
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
 ms.openlocfilehash: d15202a7d34f3246cd7679687b6a510252fe3541
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43541341"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44081588"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Aktivace založená na konfiguraci v IIS a WAS
 Obvykle při hostování služby Windows Communication Foundation (WCF) v rámci Internetové informační služby (IIS) nebo Windows Process Activation Service (WAS), je nutné zadat soubor SVC. Souboru SVC obsahuje název služby a objektu pro vytváření hostitele volitelné vlastní služby. Tento přidaný soubor přidává režijní náklady na správu. Funkce aktivace podle konfigurace eliminuje nutnost mít souboru .svc a proto přidružené režie.  

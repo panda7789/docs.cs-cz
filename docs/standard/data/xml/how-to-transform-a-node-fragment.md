@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: transformace Fragment uzlu'
+title: 'Postupy: transformace fragmentu uzlu'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,30 +8,30 @@ dev_langs:
 ms.assetid: 73a6c582-b9d7-4fa7-9a05-6d931e1f3de8
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4cd35e469a16dc2fdb3a7f4afd89d04f67185cd5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: eb258b61664e1fdbf6604afdf69074c48cf5bda4
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33568560"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44061348"
 ---
-# <a name="how-to-transform-a-node-fragment"></a>Postupy: transformace Fragment uzlu
-Při transformaci data obsažená v <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> objektu transformace XSLT vztahují k dokumentu jako celku. Jinými slovy Pokud předáte v uzlu než kořenový uzel dokumentu, toto nezabrání proces transformace přístup na všechny uzly v načíst dokumentu. K transformaci fragment uzlu, musíte vytvořit samostatný objekt obsahující pouze fragment uzlu a předat tento objekt, který chcete <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda.  
+# <a name="how-to-transform-a-node-fragment"></a>Postupy: transformace fragmentu uzlu
+Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> objektu transformace XSLT se vztahují k dokumentu jako celek. Jinými slovy Pokud předáte v uzlu, než je kořenový uzel dokumentu, toto nezabraňuje proces transformace přístup na všechny uzly v načtený dokument. Transformace fragmentu uzlu, musíte vytvořit samostatný objekt obsahující pouze fragmentu uzlu a předejte tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
 ## <a name="procedures"></a>Procedury  
   
-#### <a name="to-transform-a-node-fragment"></a>K transformaci fragment uzlu  
+#### <a name="to-transform-a-node-fragment"></a>Transformace fragmentu uzlu  
   
 1.  Vytvořte objekt, který obsahuje zdrojový dokument.  
   
-2.  Vyhledejte fragment uzlu, který si přejete transformace.  
+2.  Vyhledání fragmentu uzlu, který chcete transformovat.  
   
-3.  Vytvořte samostatný objekt s právě fragment uzlu.  
+3.  Vytvořte samostatný objekt s právě fragmentu uzlu.  
   
-4.  Předat uzlu fragment k <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda.  
+4.  Předejte fragmentu uzlu na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad transformuje fragment uzlu a výsledky do konzoly.  
+ V následujícím příkladu transformace fragmentu uzlu a vypíše výsledky do konzoly.  
   
  [!code-csharp[XSLT_NodeFrag#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_NodeFrag/CS/xslt_frag.cs#1)]
  [!code-vb[XSLT_NodeFrag#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_NodeFrag/VB/xslt_frag.vb#1)]  
@@ -45,7 +45,8 @@ Při transformaci data obsažená v <xref:System.Xml.XmlDocument> nebo <xref:Sys
  [!code-xml[XSLT_NodeFrag#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_NodeFrag/XML/single.xsl#2)]  
   
 ### <a name="output"></a>Výstup  
- Název adresáře je Man spolehlivosti  
+ Název knihy se požadavek spolehlivosti  
   
-## <a name="see-also"></a>Viz také  
- [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+## <a name="see-also"></a>Viz také:
+
+- [Používání třídy XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)

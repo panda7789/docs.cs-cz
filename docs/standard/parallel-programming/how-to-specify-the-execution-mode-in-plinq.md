@@ -11,11 +11,11 @@ ms.assetid: e52ff26c-c5d3-4fab-9fec-c937fb387963
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c85731b991399e92297d6109a3000c1e345e02f6
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43885915"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44087204"
 ---
 # <a name="how-to-specify-the-execution-mode-in-plinq"></a>Postupy: Určení režimu spouštění v PLINQ
 Tento příklad ukazuje, jak k vynucení PLINQ paralelizovat dotaz bez ohledu na to, na tvar dotazu a obejít své výchozí heuristické metody.  

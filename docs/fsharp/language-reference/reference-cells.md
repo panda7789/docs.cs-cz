@@ -2,12 +2,12 @@
 title: Referenční buňky (F#)
 description: 'Zjistěte, jak F # odkazové buňky jsou úložná místa, které umožňují vytvořit proměnlivé hodnoty pomocí odkazové sémantiky.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 133aec6b162a13306a05c9afa172f859890565eb
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: e2e1a91c62fd76e4992bc5ae11bb672766850718
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43892415"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44079293"
 ---
 # <a name="reference-cells"></a>Referenční buňky
 
@@ -74,62 +74,9 @@ Výstup je následující.
 
 Pole `contents` zajišťuje kompatibilitu s jinými verzemi ML a během kompilace zobrazí upozornění. Chcete-li toto upozornění zakážete, použijte `--mlcompatibility` – možnost kompilátoru. Další informace najdete v tématu [– možnosti kompilátoru](compiler-options.md).
 
-Následující kód znázorňuje použití odkazových buněk při předávání parametrů. Typ Incrementor má metodu přírůstek, který přijímá parametr, který obsahuje v parametru typu byref. Byref v typu parametru označuje, že volající musejí předat odkazovou buňku nebo adresu typické proměnné zadaného typu, v tomto případu int. Zbývající kód znázorňuje, jak volat přírůstek s oběma těmito typy argumentů a ukazuje použití operátoru ref u proměnné vytvořit odkazovou buňku (ref myDelta1). Pak znázorňuje použití operátoru address-of (&amp;) ke generování příslušného argumentu. Nakonec metoda Increment volána znovu pomocí odkazové buňky, která je deklarována pomocí vazby let. Poslední řádek kódu ukazuje použití! operátor zrušení odkazu odkazové buňky pro tisk.
+Programátoři v C# měli vědět, že `ref` v jazyce C# není totéž jako `ref` v jazyce F #. Ekvivalentní konstrukce v jazyce F # jsou [ByRef](byrefs.md), které jsou různé koncept z odkazové buňky.
 
-[!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2204.fs)]
-
-Další informace o předávání pomocí odkazu naleznete v tématu [parametry a argumenty](parameters-and-arguments.md).
-
->[!NOTE]
-Programátoři v C# měli vědět, že tento odkaz funguje jinak než v jazyce F # než v jazyce C#. Například použití ref při předávání argumentu nemá stejný účinek v jazyce F # stejně jako v jazyce C#.
-
->[!NOTE]
-`mutable` proměnné mohou být automaticky povýšen na `'a ref` nezachytává uzavření; naleznete v tématu [hodnoty](values/index.md).
-
-## <a name="consuming-c-ref-returns"></a>Přijímání C# `ref` vrátí
-
-Od verze F # 4.1, můžete využívat `ref` vrátí vygenerované v jazyce C#.  Výsledek volání `byref<_>` ukazatele.
-
-C# metodu:
-
-```csharp
-namespace RefReturns
-{
-    public static class RefClass
-    {
-        public static ref int Find(int val, int[] vals)
-        {
-            for (int i = 0; i < vals.Length; i++)
-            {
-                if (vals[i] == val)
-                {
-                    return ref numbers[i]; // Returns the location, not the value
-                }
-            }
-
-            throw new IndexOutOfRangeException($"{nameof(number)} not found");
-        }
-    }
-}
-```
-
-Je možné transparentně vyvolat v F # se žádná speciální syntax:
-
-```fsharp
-open RefReturns
-
-let consumeRefReturn() =
-    let result = RefClass.Find(3, [| 1; 2; 3; 4; 5 |]) // 'result' is of type 'byref<int>'.
-    ()
-```
-
-Můžete také deklarovat funkce, což může trvat `ref` vrátit jako vstup, například:
-
-```fsharp
-let f (x: byref<int>) = &x
-```
-
-Aktuálně neexistuje žádný způsob, jak vygenerovat `ref` vrácené v jazyce F #, která by mohla využívat v jazyce C#.
+Hodnoty označeny jako `mutable`může automaticky povýšen na `'a ref` nezachytává uzavření; naleznete v tématu [hodnoty](values/index.md).
 
 ## <a name="see-also"></a>Viz také:
 

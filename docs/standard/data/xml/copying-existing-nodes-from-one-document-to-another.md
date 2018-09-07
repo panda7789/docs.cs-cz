@@ -6,11 +6,11 @@ ms.assetid: 3caa78c1-3448-4b7b-b83c-228ee857635e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 744c97e8728d0a65bff8e7bb7a7dbb298afe1800
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44036366"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44088086"
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>Kopírování existujících uzlů z jednoho dokumentu
 **ImportNode** metoda je mechanismus, podle kterého je zkopírován uzlu nebo celého uzlu podstrom z jednoho **XmlDocument** do jiného. Uzel vrácená z volání je kopie uzlu z zdrojový dokument, včetně hodnoty atributů, název uzlu, typ uzlu a všechny atributy oboru názvů souvisejících například předponu, místní název a obor názvů identifikátoru URI (Uniform Resource). Zdrojový dokument se nezmění. Po importu uzlu máte stále ho přidat do stromu pomocí jedné z metod používaných k vložení uzlů.  

@@ -1,16 +1,16 @@
 ---
-title: Vlastní serializace pořadí pomocí třídy XmlSerializer
+title: Vlastní pořadí serializace pomocí třídy XmlSerializer
 ms.date: 03/30/2017
 ms.assetid: 975abd20-2a1d-42db-aed3-e898025ccce7
-ms.openlocfilehash: 8480644aacf128b430da9881560595bb4b0d3ad5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1dc9a73b45d8e62902ec8c6b7d810154a8a92566
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33580962"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44071944"
 ---
-# <a name="custom-serialization-order-with-xmlserializer"></a>Vlastní serializace pořadí pomocí třídy XmlSerializer
-[Stažení ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/CustomOrder.zip.exe)  
+# <a name="custom-serialization-order-with-xmlserializer"></a>Vlastní pořadí serializace pomocí třídy XmlSerializer
+[Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/CustomOrder.zip.exe)  
   
  Tento příklad ukazuje, jak lze řídit pořadí elementů serializované a deserializovat pro serializaci kódu XML.  
   
@@ -32,10 +32,11 @@ ms.locfileid: "33580962"
   
 4.  Vzorová aplikace je sestavena v podadresáři \bin nebo \bin\Debug výchozí.  
   
-## <a name="see-also"></a>Viz také  
- [Základní serializace](../../../docs/standard/serialization/basic-serialization.md)  
- [Binární serializace](../../../docs/standard/serialization/binary-serialization.md)  
- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
- [Serializace](../../../docs/standard/serialization/index.md)  
- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+## <a name="see-also"></a>Viz také:
+
+- [Základní serializace](../../../docs/standard/serialization/basic-serialization.md)  
+- [Binární serializace](../../../docs/standard/serialization/binary-serialization.md)  
+- [Řízení serializace XML pomocí atributů](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)  
+- [Představení serializace XML](../../../docs/standard/serialization/introducing-xml-serialization.md)  
+- [Serializace](../../../docs/standard/serialization/index.md)  
+- [Serializace XML a SOAP](../../../docs/standard/serialization/xml-and-soap-serialization.md)

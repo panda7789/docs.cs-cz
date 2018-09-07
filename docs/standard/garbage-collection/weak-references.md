@@ -10,47 +10,48 @@ helpviewer_keywords:
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 03da36090c255f635036a9bd518bdacd99404ed4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 65492beb888da1986f456d3fd000fc02f340f3c4
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575652"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44075641"
 ---
 # <a name="weak-references"></a>Slabé odkazy
-Uvolňování paměti nelze shromažďovat objekt používá jiná aplikace při kódu aplikace dosáhnout tento objekt. Aplikace se říká obsahují silné odkaz na objekt.  
+Systému uvolňování paměti nelze shromáždit objektu používá aplikace, zatímco kód aplikace může dosáhnout tohoto objektu. Aplikace se říká, že mají silného odkazu na objekt.  
   
- Slabé odkazy umožňuje uvolňování ke shromažďování objekt zároveň umožňuje aplikaci získat přístup k objektu. Slabé odkazy je platný pouze během neurčitém množství času, dokud nebude objekt shromažďuje, když neexistuje žádné silné odkazy. Pokud použijete slabé odkaz, aplikace můžete získat stále silné odkaz na objekt, který zabraňuje v jeho nejsou shromažďována. Však není vždy riziko, že uvolňování paměti získá k objektu nejprve předtím, než se obnovila silné odkaz.  
+ Slabý odkaz umožňuje uvolňování paměti shromažďovat objekt zároveň umožní aplikaci přístup k objektu. Slabý odkaz je platný pouze během neurčitý množství času, dokud nebude objekt shromažďuje, když neexistují žádné odkazy na silné. Při použití nestálý odkaz, aplikace může stále získat silného odkazu na objekt, který zabrání shromažďování. Existuje ale vždy riziko, že systému uvolňování paměti získá objektu nejprve předtím, než se obnoví silného odkazu.  
   
- Slabé odkazy jsou užitečné pro objekty, které používají velké množství paměti, ale můžete je znovu vytvořit snadno Pokud jsou převzaty systémem uvolňování paměti.  
+ Slabé odkazy jsou užitečné pro objekty, které použít velké množství paměti, ale můžete vytvořit snadno, pokud jsou převzaty systémem uvolňování paměti.  
   
- Předpokládejme, že je stromové zobrazení v aplikaci Windows Forms zobrazí komplexní hierarchické výběr možností pro uživatele. Základní dat je velká, udržování stromu v paměti je v případě, když uživatel se zabývá něco jiného v aplikaci.  
+ Předpokládejme, že stromové zobrazení v aplikaci Windows Forms zobrazí komplexní hierarchické poskytoval možnosti pro uživatele. Podkladová data moc velká, uchovávání stromu v paměti je v případě, když je uživatel péči o něco jiného v aplikaci.  
   
- Když uživatel přepíná rychle do jiné části aplikace, můžete použít <xref:System.WeakReference> třída vytvořit slabé odkaz na stromu a zrušení silné všechny odkazy. Když uživatel přejde zpět do stromu, aplikace se pokusí získat silné odkaz na stromu a v případě úspěšného zabraňuje rekonstrukce stromu.  
+ Když uživatel přejde do jiné části aplikace okamžitě, můžete použít <xref:System.WeakReference> třídy k vytvoření nestálý odkaz do stromové struktury a odstranit všechny odkazy silného. Když uživatel přejde zpět do stromu, aplikace se pokusí získat silného odkazu na stromové struktuře a, v případě úspěchu se vyhnete rekonstrukce stromu.  
   
- Když Pokud chcete stanovit slabé odkaz s objektem, vytvoříte <xref:System.WeakReference> pomocí instance objektu sledovat. Pak můžete nastavit <xref:System.WeakReference.Target%2A> vlastnost, která má tento objekt a sadu původní odkaz na objekt, který má `null`. Příklad kódu, najdete v článku <xref:System.WeakReference> v knihovně tříd.  
+ Chcete-li vytvořit nestálý odkaz s objektem, vytvoříte <xref:System.WeakReference> ke sledování pomocí instance objektu. Pak můžete nastavit <xref:System.WeakReference.Target%2A> nastavte na tento objekt a nastavte původní odkaz na objekt, který má `null`. Příklad kódu naleznete v tématu <xref:System.WeakReference> v knihovně tříd.  
   
 ## <a name="short-and-long-weak-references"></a>Krátký a dlouhý slabé odkazy  
- Můžete vytvořit odkaz na krátké slabé nebo dlouho slabé odkazy:  
+ Můžete vytvořit krátké nestálý odkaz nebo long nestálý odkaz:  
   
--   krátký  
+-   krátké  
   
-     Cíl krátký slabé odkaz se změní na `null` když je objekt uvolněn systémem uvolňování paměti. Odkaz na slabé je sám spravovaného objektu a mohou podléhat uvolňování paměti stejně jako ostatní spravovaného objektu.  Odkaz na krátké slabé je pro výchozí konstruktor <xref:System.WeakReference>.  
+     Cíl krátké nestálý odkaz stane `null` při objektu je uvolněn systémem uvolňování paměti. Slabý odkaz je samotný objekt spravovaný a je časovač uvolněn z paměti stejně jako jakýkoli jiný spravovaný objekt.  Krátký nestálý odkaz je výchozí konstruktor pro <xref:System.WeakReference>.  
   
--   dlouhá  
+-   Long  
   
-     Dlouho slabé odkaz se uchovávají objektu <xref:System.Object.Finalize%2A> byla volána metoda. To umožňuje objekt, který má být znovu vytvořen, ale pořád nepředvídatelným stav objektu. Chcete-li použít dlouho odkaz, zadejte `true` v <xref:System.WeakReference> konstruktor.  
+     Dlouho nestálý odkaz se uchovávají po objektu <xref:System.Object.Finalize%2A> byla volána metoda. To umožňuje objekt, který chcete znovu vytvořit, ale zůstane stav objektu nepředvídatelné. Použít odkaz na dlouhé, zadejte `true` v <xref:System.WeakReference> konstruktoru.  
   
-     Pokud nemá typ objektu <xref:System.Object.Finalize%2A> používá funkci krátké Slabý odkaz metoda, a je slabé odkaz platný pouze dokud cíle jsou shromažďovány, kterému může dojít, kdykoli později finalizační metodu je spustit.  
+     Pokud nemá typ objektu <xref:System.Object.Finalize%2A> použije metoda, krátký nestálý odkaz funkce a nestálý odkaz je platný pouze dokud cíle jsou shromažďovány, kterému může dojít kdykoliv po finalizační metodu je spustit.  
   
- Vytvořit odkaz na silné a znovu použít objekt přetypovat <xref:System.WeakReference.Target%2A> vlastnost <xref:System.WeakReference> na typ objektu. Pokud <xref:System.WeakReference.Target%2A> vlastnost vrátí `null`objektu byla shromážděných jinak, můžete nadále používat objekt, protože aplikace je znovu získali silné odkaz na jeho.  
+ Vytvořit silného odkazu a znovu použít objekt přetypujte <xref:System.WeakReference.Target%2A> vlastnost <xref:System.WeakReference> typu objektu. Pokud <xref:System.WeakReference.Target%2A> vrátí vlastnost `null`, byl tento objekt shromážděných; jinak vrátí hodnotu, můžete pokračovat pomocí objektu, protože aplikace má znovu získali silného odkazu na ni.  
   
 ## <a name="guidelines-for-using-weak-references"></a>Pokyny k používání slabé odkazy  
- Použijte dlouho slabé odkazy pouze v případě potřeby, protože stav objektu nepředvídatelným po dokončení.  
+ Použijte dlouho slabé odkazy pouze v případě, že je nutné, protože stav objektu se po dokončení nepředvídatelné.  
   
- Nepoužívejte slabé odkazy na objekty malé, protože ukazatel samotné může být jako velké nebo větší.  
+ Nepoužívejte slabé odkazy na malé objekty, protože ukazatel sám může být tak velká, nebo větší.  
   
- Nepoužívejte slabé odkazy jako automatické řešení problémů správu paměti. Místo toho vytvořte efektivní zásady ukládání do mezipaměti pro zpracování objektů vaší aplikace.  
+ Nepoužívejte slabé odkazy jako automatické řešení pro správu problémů s pamětí. Místo toho vyvíjejte platné zásady ukládání do mezipaměti pro zpracování objektů vaší aplikace.  
   
-## <a name="see-also"></a>Viz také  
- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Uvolňování paměti](../../../docs/standard/garbage-collection/index.md)

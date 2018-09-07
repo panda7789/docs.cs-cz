@@ -9,11 +9,11 @@ helpviewer_keywords:
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
 ms.openlocfilehash: fc3254062e4412c2a0640e27ce4d188b83507eea
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43742121"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44070508"
 ---
 # <a name="ltreturnsgt-c-programming-guide"></a>&lt;Vrátí&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  
