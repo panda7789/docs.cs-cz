@@ -17,16 +17,16 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 158a68d97a52bb5a72985d260a3dd5c6bfd0bd41
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43743122"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44084608"
 ---
-# <a name="using-application-protocols"></a><span data-ttu-id="00675-102">Použití aplikačních protokolů</span><span class="sxs-lookup"><span data-stu-id="00675-102">Using Application Protocols</span></span>
-<span data-ttu-id="00675-103">Rozhraní .NET Framework podporuje běžně používané Internetové protokoly aplikace.</span><span class="sxs-lookup"><span data-stu-id="00675-103">The .NET Framework supports commonly used Internet application protocols.</span></span> <span data-ttu-id="00675-104">Tato část obsahuje informace o použití [HTTP](../../../docs/framework/network-programming/http.md), "TCP" a "UDP" protokoly, a také informace o použití [rozhraní Windows Sockets](../../../docs/framework/network-programming/sockets.md) rozhraní za účelem implementace vlastní protokoly.</span><span class="sxs-lookup"><span data-stu-id="00675-104">This section includes information on using the [HTTP](../../../docs/framework/network-programming/http.md), "TCP", and "UDP" protocols, as well as information on using the [Windows Sockets](../../../docs/framework/network-programming/sockets.md) interface to implement custom protocols.</span></span>  
+# <a name="using-application-protocols"></a><span data-ttu-id="eebe8-102">Použití aplikačních protokolů</span><span class="sxs-lookup"><span data-stu-id="eebe8-102">Using Application Protocols</span></span>
+<span data-ttu-id="eebe8-103">Rozhraní .NET Framework podporuje běžně používané Internetové protokoly aplikace.</span><span class="sxs-lookup"><span data-stu-id="eebe8-103">The .NET Framework supports commonly used Internet application protocols.</span></span> <span data-ttu-id="eebe8-104">Tato část obsahuje informace o použití [HTTP](../../../docs/framework/network-programming/http.md), "TCP" a "UDP" protokoly, a také informace o použití [rozhraní Windows Sockets](../../../docs/framework/network-programming/sockets.md) rozhraní za účelem implementace vlastní protokoly.</span><span class="sxs-lookup"><span data-stu-id="eebe8-104">This section includes information on using the [HTTP](../../../docs/framework/network-programming/http.md), "TCP", and "UDP" protocols, as well as information on using the [Windows Sockets](../../../docs/framework/network-programming/sockets.md) interface to implement custom protocols.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="00675-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="00675-105">See Also</span></span>  
- [<span data-ttu-id="00675-106">Síťové programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="00675-106">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)  
- [<span data-ttu-id="00675-107">Ukázky programování sítě</span><span class="sxs-lookup"><span data-stu-id="00675-107">Network Programming Samples</span></span>](../../../docs/framework/network-programming/network-programming-samples.md)  
- [<span data-ttu-id="00675-108">Ukázky práce se sítí pro .NET v Galerie kódu na webu MSDN</span><span class="sxs-lookup"><span data-stu-id="00675-108">Networking Samples for .NET on MSDN Code Gallery</span></span>](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)
+## <a name="see-also"></a><span data-ttu-id="eebe8-105">Viz také</span><span class="sxs-lookup"><span data-stu-id="eebe8-105">See Also</span></span>  
+ [<span data-ttu-id="eebe8-106">Síťové programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="eebe8-106">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)  
+ [<span data-ttu-id="eebe8-107">Ukázky programování sítě</span><span class="sxs-lookup"><span data-stu-id="eebe8-107">Network Programming Samples</span></span>](../../../docs/framework/network-programming/network-programming-samples.md)  
+ [<span data-ttu-id="eebe8-108">Ukázky práce se sítí pro .NET v Galerie kódu na webu MSDN</span><span class="sxs-lookup"><span data-stu-id="eebe8-108">Networking Samples for .NET on MSDN Code Gallery</span></span>](https://code.msdn.microsoft.com/Wiki/View.aspx?ProjectName=nclsamples)

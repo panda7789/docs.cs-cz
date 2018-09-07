@@ -3,16 +3,16 @@ title: 'Ukázkový soubor XML: Zákazníci a objednávky v Namespace2'
 ms.date: 07/20/2015
 ms.assetid: 2da1c474-f658-4dca-a457-c35ef5ba4aff
 ms.openlocfilehash: 1af227118f5c3c03d1559797d5977f5c71469678
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43657958"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44076947"
 ---
-# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="3421b-102">Ukázkový soubor XML: Zákazníci a objednávky v Namespace</span><span class="sxs-lookup"><span data-stu-id="3421b-102">Sample XML File: Customers and Orders in a Namespace</span></span>
-<span data-ttu-id="3421b-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="3421b-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="3421b-104">Tento soubor obsahuje zákazníci a objednávky.</span><span class="sxs-lookup"><span data-stu-id="3421b-104">This file contains customers and orders.</span></span> <span data-ttu-id="3421b-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="3421b-105">The XML is in a namespace.</span></span>  
+# <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a><span data-ttu-id="022ad-102">Ukázkový soubor XML: Zákazníci a objednávky v Namespace</span><span class="sxs-lookup"><span data-stu-id="022ad-102">Sample XML File: Customers and Orders in a Namespace</span></span>
+<span data-ttu-id="022ad-103">Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="022ad-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="022ad-104">Tento soubor obsahuje zákazníci a objednávky.</span><span class="sxs-lookup"><span data-stu-id="022ad-104">This file contains customers and orders.</span></span> <span data-ttu-id="022ad-105">XML je v oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="022ad-105">The XML is in a namespace.</span></span>  
   
-## <a name="customersordersinnamespacexml"></a><span data-ttu-id="3421b-106">CustomersOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="3421b-106">CustomersOrdersInNamespace.xml</span></span>  
+## <a name="customersordersinnamespacexml"></a><span data-ttu-id="022ad-106">CustomersOrdersInNamespace.xml</span><span class="sxs-lookup"><span data-stu-id="022ad-106">CustomersOrdersInNamespace.xml</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -430,6 +430,6 @@ ms.locfileid: "43657958"
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3421b-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="3421b-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="022ad-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="022ad-107">See Also</span></span>
 
-- [<span data-ttu-id="3421b-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="3421b-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [<span data-ttu-id="022ad-108">Ukázkové dokumenty XML (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="022ad-108">Sample XML Documents (LINQ to XML)</span></span>](../../../../csharp/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)

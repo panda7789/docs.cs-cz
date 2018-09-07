@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f589225dde1ba2aabc4ca32542339a771c3287d4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43859514"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44081440"
 ---
-# <a name="imetadatatablesgetguid-method"></a><span data-ttu-id="7c46f-102">IMetaDataTables::GetGuid – metoda</span><span class="sxs-lookup"><span data-stu-id="7c46f-102">IMetaDataTables::GetGuid Method</span></span>
-<span data-ttu-id="7c46f-103">Získá identifikátor GUID z řádku v zadaném indexu.</span><span class="sxs-lookup"><span data-stu-id="7c46f-103">Gets a GUID from the row at the specified index.</span></span>  
+# <a name="imetadatatablesgetguid-method"></a><span data-ttu-id="a5050-102">IMetaDataTables::GetGuid – metoda</span><span class="sxs-lookup"><span data-stu-id="a5050-102">IMetaDataTables::GetGuid Method</span></span>
+<span data-ttu-id="a5050-103">Získá identifikátor GUID z řádku v zadaném indexu.</span><span class="sxs-lookup"><span data-stu-id="a5050-103">Gets a GUID from the row at the specified index.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7c46f-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7c46f-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a5050-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a5050-104">Syntax</span></span>  
   
 ```  
 HRESULT GetGuid (   
@@ -36,25 +36,25 @@ HRESULT GetGuid (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="7c46f-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="7c46f-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="a5050-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="a5050-105">Parameters</span></span>  
  `ixGuid`  
- <span data-ttu-id="7c46f-106">[in] Index řádku, od kterého se má získat identifikátor GUID.</span><span class="sxs-lookup"><span data-stu-id="7c46f-106">[in] The index of the row from which to get the GUID.</span></span>  
+ <span data-ttu-id="a5050-106">[in] Index řádku, od kterého se má získat identifikátor GUID.</span><span class="sxs-lookup"><span data-stu-id="a5050-106">[in] The index of the row from which to get the GUID.</span></span>  
   
  `ppGuid`  
- <span data-ttu-id="7c46f-107">[out] Ukazatel na ukazatel na identifikátor GUID.</span><span class="sxs-lookup"><span data-stu-id="7c46f-107">[out] A pointer to a pointer to the GUID.</span></span>  
+ <span data-ttu-id="a5050-107">[out] Ukazatel na ukazatel na identifikátor GUID.</span><span class="sxs-lookup"><span data-stu-id="a5050-107">[out] A pointer to a pointer to the GUID.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="7c46f-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7c46f-108">Remarks</span></span>  
- <span data-ttu-id="7c46f-109">Nedoporučujeme použití této metody, protože nevrací konzistentní výsledky.</span><span class="sxs-lookup"><span data-stu-id="7c46f-109">We do not recommend the use of this method, because it does not return consistent results.</span></span> <span data-ttu-id="7c46f-110">Informace o tabulce GUID najdete v dokumentaci společné jazykové infrastruktury (CLI), zejména "oddíl II: Metadata definice a sémantika".</span><span class="sxs-lookup"><span data-stu-id="7c46f-110">For information about the GUID table, see the Common Language Infrastructure (CLI) documentation, especially "Partition II: Metadata Definition and Semantics".</span></span> <span data-ttu-id="7c46f-111">Dokumentace je k dispozici online; Zobrazit [ECMA C# a společné normy jazykové infrastruktury](https://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a [Standard ECMA-335 – společné jazykové infrastruktury (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) na webu Ecma International.</span><span class="sxs-lookup"><span data-stu-id="7c46f-111">The documentation is available online; see [ECMA C# and Common Language Infrastructure Standards](https://go.microsoft.com/fwlink/?LinkID=99212) on MSDN and [Standard ECMA-335 - Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) on the Ecma International Web site.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="a5050-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a5050-108">Remarks</span></span>  
+ <span data-ttu-id="a5050-109">Nedoporučujeme použití této metody, protože nevrací konzistentní výsledky.</span><span class="sxs-lookup"><span data-stu-id="a5050-109">We do not recommend the use of this method, because it does not return consistent results.</span></span> <span data-ttu-id="a5050-110">Informace o tabulce GUID najdete v dokumentaci společné jazykové infrastruktury (CLI), zejména "oddíl II: Metadata definice a sémantika".</span><span class="sxs-lookup"><span data-stu-id="a5050-110">For information about the GUID table, see the Common Language Infrastructure (CLI) documentation, especially "Partition II: Metadata Definition and Semantics".</span></span> <span data-ttu-id="a5050-111">Dokumentace je k dispozici online; Zobrazit [ECMA C# a společné normy jazykové infrastruktury](https://go.microsoft.com/fwlink/?LinkID=99212) na webu MSDN a [Standard ECMA-335 – společné jazykové infrastruktury (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) na webu Ecma International.</span><span class="sxs-lookup"><span data-stu-id="a5050-111">The documentation is available online; see [ECMA C# and Common Language Infrastructure Standards](https://go.microsoft.com/fwlink/?LinkID=99212) on MSDN and [Standard ECMA-335 - Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=65552) on the Ecma International Web site.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7c46f-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="7c46f-112">Requirements</span></span>  
- <span data-ttu-id="7c46f-113">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7c46f-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="a5050-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="a5050-112">Requirements</span></span>  
+ <span data-ttu-id="a5050-113">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a5050-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7c46f-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="7c46f-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="a5050-114">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="a5050-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="7c46f-115">**Knihovna:** použit jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="7c46f-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="a5050-115">**Knihovna:** použit jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="a5050-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="7c46f-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7c46f-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="a5050-116">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a5050-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7c46f-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="7c46f-117">See Also</span></span>  
- [<span data-ttu-id="7c46f-118">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c46f-118">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
- [<span data-ttu-id="7c46f-119">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="7c46f-119">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="a5050-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="a5050-117">See Also</span></span>  
+ [<span data-ttu-id="a5050-118">IMetaDataTables – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a5050-118">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)  
+ [<span data-ttu-id="a5050-119">IMetaDataTables2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="a5050-119">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)

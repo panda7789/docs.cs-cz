@@ -9,68 +9,68 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
 ms.openlocfilehash: 98f89ba3d79f7679b69ce10fd875b3caf69c5257
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43873208"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44098939"
 ---
-# <a name="float-c-reference"></a><span data-ttu-id="8c469-102">float (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="8c469-102">float (C# Reference)</span></span>
+# <a name="float-c-reference"></a><span data-ttu-id="212e9-102">float (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="212e9-102">float (C# Reference)</span></span>
 
-<span data-ttu-id="8c469-103">`float` – Klíčové slovo znamená jednoduchý typ, který ukládá 32bitové hodnoty s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="8c469-103">The `float` keyword signifies a simple type that stores 32-bit floating-point values.</span></span> <span data-ttu-id="8c469-104">V následující tabulce jsou uvedeny přesnosti a rozsahu pro `float` typu.</span><span class="sxs-lookup"><span data-stu-id="8c469-104">The following table shows the precision and approximate range for the `float` type.</span></span>
+<span data-ttu-id="212e9-103">`float` – Klíčové slovo znamená jednoduchý typ, který ukládá 32bitové hodnoty s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="212e9-103">The `float` keyword signifies a simple type that stores 32-bit floating-point values.</span></span> <span data-ttu-id="212e9-104">V následující tabulce jsou uvedeny přesnosti a rozsahu pro `float` typu.</span><span class="sxs-lookup"><span data-stu-id="212e9-104">The following table shows the precision and approximate range for the `float` type.</span></span>
 
-|<span data-ttu-id="8c469-105">Typ</span><span class="sxs-lookup"><span data-stu-id="8c469-105">Type</span></span>|<span data-ttu-id="8c469-106">Přibližný rozsah</span><span class="sxs-lookup"><span data-stu-id="8c469-106">Approximate range</span></span>|<span data-ttu-id="8c469-107">Přesnost</span><span class="sxs-lookup"><span data-stu-id="8c469-107">Precision</span></span>|<span data-ttu-id="8c469-108">Typ formátu .NET</span><span class="sxs-lookup"><span data-stu-id="8c469-108">.NET type</span></span>|  
+|<span data-ttu-id="212e9-105">Typ</span><span class="sxs-lookup"><span data-stu-id="212e9-105">Type</span></span>|<span data-ttu-id="212e9-106">Přibližný rozsah</span><span class="sxs-lookup"><span data-stu-id="212e9-106">Approximate range</span></span>|<span data-ttu-id="212e9-107">Přesnost</span><span class="sxs-lookup"><span data-stu-id="212e9-107">Precision</span></span>|<span data-ttu-id="212e9-108">Typ formátu .NET</span><span class="sxs-lookup"><span data-stu-id="212e9-108">.NET type</span></span>|  
 |----------|-----------------------|---------------|-------------------------|  
-|`float`|<span data-ttu-id="8c469-109">±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup></span><span class="sxs-lookup"><span data-stu-id="8c469-109">±1.5 x 10<sup>−45</sup> to ±3.4 x 10<sup>38</sup></span></span>|<span data-ttu-id="8c469-110">7 číslic</span><span class="sxs-lookup"><span data-stu-id="8c469-110">7 digits</span></span>|<xref:System.Single?displayProperty=nameWithType>|  
+|`float`|<span data-ttu-id="212e9-109">±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup></span><span class="sxs-lookup"><span data-stu-id="212e9-109">±1.5 x 10<sup>−45</sup> to ±3.4 x 10<sup>38</sup></span></span>|<span data-ttu-id="212e9-110">7 číslic</span><span class="sxs-lookup"><span data-stu-id="212e9-110">7 digits</span></span>|<xref:System.Single?displayProperty=nameWithType>|  
 
-## <a name="literals"></a><span data-ttu-id="8c469-111">Literály</span><span class="sxs-lookup"><span data-stu-id="8c469-111">Literals</span></span>
+## <a name="literals"></a><span data-ttu-id="212e9-111">Literály</span><span class="sxs-lookup"><span data-stu-id="212e9-111">Literals</span></span>
 
-<span data-ttu-id="8c469-112">Ve výchozím nastavení, skutečné číselný literál na pravé straně operátoru přiřazení je považován za [double](double.md).</span><span class="sxs-lookup"><span data-stu-id="8c469-112">By default, a real numeric literal on the right side of the assignment operator is treated as [double](double.md).</span></span> <span data-ttu-id="8c469-113">Proto se inicializovat proměnnou s plovoucí desetinnou čárkou, použijte příponu `f` nebo `F`, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="8c469-113">Therefore, to initialize a float variable, use the suffix `f` or `F`, as in the following example:</span></span>
+<span data-ttu-id="212e9-112">Ve výchozím nastavení, skutečné číselný literál na pravé straně operátoru přiřazení je považován za [double](double.md).</span><span class="sxs-lookup"><span data-stu-id="212e9-112">By default, a real numeric literal on the right side of the assignment operator is treated as [double](double.md).</span></span> <span data-ttu-id="212e9-113">Proto se inicializovat proměnnou s plovoucí desetinnou čárkou, použijte příponu `f` nebo `F`, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="212e9-113">Therefore, to initialize a float variable, use the suffix `f` or `F`, as in the following example:</span></span>
 
 ```csharp
 float x = 3.5F;
 ```
 
-<span data-ttu-id="8c469-114">Pokud je předchozí deklarace nepoužívají příponu, obdržíte chybu kompilace, protože se pokoušíte ukládat [double](double.md) hodnoty do `float` proměnné.</span><span class="sxs-lookup"><span data-stu-id="8c469-114">If you do not use the suffix in the previous declaration, you will get a compilation error because you are trying to store a [double](double.md) value into a `float` variable.</span></span>
+<span data-ttu-id="212e9-114">Pokud je předchozí deklarace nepoužívají příponu, obdržíte chybu kompilace, protože se pokoušíte ukládat [double](double.md) hodnoty do `float` proměnné.</span><span class="sxs-lookup"><span data-stu-id="212e9-114">If you do not use the suffix in the previous declaration, you will get a compilation error because you are trying to store a [double](double.md) value into a `float` variable.</span></span>
 
-## <a name="conversions"></a><span data-ttu-id="8c469-115">Převody</span><span class="sxs-lookup"><span data-stu-id="8c469-115">Conversions</span></span>
+## <a name="conversions"></a><span data-ttu-id="212e9-115">Převody</span><span class="sxs-lookup"><span data-stu-id="212e9-115">Conversions</span></span>
 
-<span data-ttu-id="8c469-116">Integrální číselné typy a typy s plovoucí desetinnou čárkou ve výrazu můžete kombinovat.</span><span class="sxs-lookup"><span data-stu-id="8c469-116">You can mix numeric integral types and floating-point types in an expression.</span></span> <span data-ttu-id="8c469-117">V takovém případě integrální typy jsou převedeny na typy s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="8c469-117">In this case, the integral types are converted to floating-point types.</span></span> <span data-ttu-id="8c469-118">Vyhodnocení výrazu se provádí dle následujících pravidel:</span><span class="sxs-lookup"><span data-stu-id="8c469-118">The evaluation of the expression is performed according to the following rules:</span></span>
+<span data-ttu-id="212e9-116">Integrální číselné typy a typy s plovoucí desetinnou čárkou ve výrazu můžete kombinovat.</span><span class="sxs-lookup"><span data-stu-id="212e9-116">You can mix numeric integral types and floating-point types in an expression.</span></span> <span data-ttu-id="212e9-117">V takovém případě integrální typy jsou převedeny na typy s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="212e9-117">In this case, the integral types are converted to floating-point types.</span></span> <span data-ttu-id="212e9-118">Vyhodnocení výrazu se provádí dle následujících pravidel:</span><span class="sxs-lookup"><span data-stu-id="212e9-118">The evaluation of the expression is performed according to the following rules:</span></span>
 
-- <span data-ttu-id="8c469-119">Pokud jeden z typů s plovoucí desetinnou čárkou je [double](double.md), je výraz vyhodnocen [double](double.md), nebo [bool](bool.md) v relační porovnání nebo porovnání rovnosti.</span><span class="sxs-lookup"><span data-stu-id="8c469-119">If one of the floating-point types is [double](double.md), the expression evaluates to [double](double.md), or to [bool](bool.md) in relational comparisons or comparisons for equality.</span></span>
+- <span data-ttu-id="212e9-119">Pokud jeden z typů s plovoucí desetinnou čárkou je [double](double.md), je výraz vyhodnocen [double](double.md), nebo [bool](bool.md) v relační porovnání nebo porovnání rovnosti.</span><span class="sxs-lookup"><span data-stu-id="212e9-119">If one of the floating-point types is [double](double.md), the expression evaluates to [double](double.md), or to [bool](bool.md) in relational comparisons or comparisons for equality.</span></span>
 
-- <span data-ttu-id="8c469-120">Pokud neexistuje žádné [double](double.md) zadejte výraz, výraz je vyhodnocen jako `float`, nebo [bool](bool.md) v relační porovnání nebo porovnání rovnosti.</span><span class="sxs-lookup"><span data-stu-id="8c469-120">If there is no [double](double.md) type in the expression, the expression evaluates to `float`, or to [bool](bool.md) in relational comparisons or comparisons for equality.</span></span>
+- <span data-ttu-id="212e9-120">Pokud neexistuje žádné [double](double.md) zadejte výraz, výraz je vyhodnocen jako `float`, nebo [bool](bool.md) v relační porovnání nebo porovnání rovnosti.</span><span class="sxs-lookup"><span data-stu-id="212e9-120">If there is no [double](double.md) type in the expression, the expression evaluates to `float`, or to [bool](bool.md) in relational comparisons or comparisons for equality.</span></span>
 
-<span data-ttu-id="8c469-121">Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodnot:</span><span class="sxs-lookup"><span data-stu-id="8c469-121">A floating-point expression can contain the following sets of values:</span></span>
+<span data-ttu-id="212e9-121">Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodnot:</span><span class="sxs-lookup"><span data-stu-id="212e9-121">A floating-point expression can contain the following sets of values:</span></span>
 
-- <span data-ttu-id="8c469-122">Kladnou a zápornou nulou</span><span class="sxs-lookup"><span data-stu-id="8c469-122">Positive and negative zero</span></span>
+- <span data-ttu-id="212e9-122">Kladnou a zápornou nulou</span><span class="sxs-lookup"><span data-stu-id="212e9-122">Positive and negative zero</span></span>
 
-- <span data-ttu-id="8c469-123">Kladné a záporné nekonečno.</span><span class="sxs-lookup"><span data-stu-id="8c469-123">Positive and negative infinity</span></span>
+- <span data-ttu-id="212e9-123">Kladné a záporné nekonečno.</span><span class="sxs-lookup"><span data-stu-id="212e9-123">Positive and negative infinity</span></span>
 
-- <span data-ttu-id="8c469-124">Hodnota not-a-Number (NaN)</span><span class="sxs-lookup"><span data-stu-id="8c469-124">Not-a-Number value (NaN)</span></span>
+- <span data-ttu-id="212e9-124">Hodnota not-a-Number (NaN)</span><span class="sxs-lookup"><span data-stu-id="212e9-124">Not-a-Number value (NaN)</span></span>
 
-- <span data-ttu-id="8c469-125">Konečná sada nenulové hodnoty</span><span class="sxs-lookup"><span data-stu-id="8c469-125">The finite set of nonzero values</span></span>
+- <span data-ttu-id="212e9-125">Konečná sada nenulové hodnoty</span><span class="sxs-lookup"><span data-stu-id="212e9-125">The finite set of nonzero values</span></span>
 
-<span data-ttu-id="8c469-126">Další informace o těchto hodnotách naleznete v části Standard IEEE pro binární aritmetiku, k dispozici na [IEEE](http://www.ieee.org) webu.</span><span class="sxs-lookup"><span data-stu-id="8c469-126">For more information about these values, see IEEE Standard for Binary Floating-Point Arithmetic, available on the [IEEE](http://www.ieee.org) website.</span></span>
+<span data-ttu-id="212e9-126">Další informace o těchto hodnotách naleznete v části Standard IEEE pro binární aritmetiku, k dispozici na [IEEE](http://www.ieee.org) webu.</span><span class="sxs-lookup"><span data-stu-id="212e9-126">For more information about these values, see IEEE Standard for Binary Floating-Point Arithmetic, available on the [IEEE](http://www.ieee.org) website.</span></span>
 
-## <a name="example"></a><span data-ttu-id="8c469-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="8c469-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="212e9-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="212e9-127">Example</span></span>
 
-<span data-ttu-id="8c469-128">V následujícím příkladu [int](int.md), [krátký](short.md)a `float` jsou zahrnuty v matematickém výrazu dává `float` výsledek.</span><span class="sxs-lookup"><span data-stu-id="8c469-128">In the following example, an [int](int.md), a [short](short.md), and a `float` are included in a mathematical expression giving a `float` result.</span></span> <span data-ttu-id="8c469-129">(Nezapomeňte, že `float` je alias pro <xref:System.Single?displayProperty=nameWithType> typu.) Všimněte si, že neexistuje žádná [double](double.md) ve výrazu.</span><span class="sxs-lookup"><span data-stu-id="8c469-129">(Remember that `float` is an alias for the <xref:System.Single?displayProperty=nameWithType> type.) Notice that there is no [double](double.md) in the expression.</span></span>
+<span data-ttu-id="212e9-128">V následujícím příkladu [int](int.md), [krátký](short.md)a `float` jsou zahrnuty v matematickém výrazu dává `float` výsledek.</span><span class="sxs-lookup"><span data-stu-id="212e9-128">In the following example, an [int](int.md), a [short](short.md), and a `float` are included in a mathematical expression giving a `float` result.</span></span> <span data-ttu-id="212e9-129">(Nezapomeňte, že `float` je alias pro <xref:System.Single?displayProperty=nameWithType> typu.) Všimněte si, že neexistuje žádná [double](double.md) ve výrazu.</span><span class="sxs-lookup"><span data-stu-id="212e9-129">(Remember that `float` is an alias for the <xref:System.Single?displayProperty=nameWithType> type.) Notice that there is no [double](double.md) in the expression.</span></span>
 
 [!code-csharp[csrefKeywordsTypes#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#13)]
 
-## <a name="c-language-specification"></a><span data-ttu-id="8c469-130">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8c469-130">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="212e9-130">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="212e9-130">C# language specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="8c469-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8c469-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="212e9-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="212e9-131">See also</span></span>
 
 - <xref:System.Single>  
-- [<span data-ttu-id="8c469-132">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8c469-132">C# Reference</span></span>](../index.md)  
-- [<span data-ttu-id="8c469-133">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="8c469-133">C# Programming Guide</span></span>](../../programming-guide/index.md)  
-- [<span data-ttu-id="8c469-134">Přetypování a převody typů</span><span class="sxs-lookup"><span data-stu-id="8c469-134">Casting and Type Conversions</span></span>](../../programming-guide/types/casting-and-type-conversions.md)  
-- [<span data-ttu-id="8c469-135">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8c469-135">C# Keywords</span></span>](index.md)  
-- [<span data-ttu-id="8c469-136">Tabulka celočíselných typů</span><span class="sxs-lookup"><span data-stu-id="8c469-136">Integral Types Table</span></span>](integral-types-table.md)  
-- [<span data-ttu-id="8c469-137">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="8c469-137">Built-In Types Table</span></span>](built-in-types-table.md)  
-- [<span data-ttu-id="8c469-138">Tabulka implicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="8c469-138">Implicit Numeric Conversions Table</span></span>](implicit-numeric-conversions-table.md)  
-- [<span data-ttu-id="8c469-139">Tabulka explicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="8c469-139">Explicit Numeric Conversions Table</span></span>](explicit-numeric-conversions-table.md)  
+- [<span data-ttu-id="212e9-132">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="212e9-132">C# Reference</span></span>](../index.md)  
+- [<span data-ttu-id="212e9-133">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="212e9-133">C# Programming Guide</span></span>](../../programming-guide/index.md)  
+- [<span data-ttu-id="212e9-134">Přetypování a převody typů</span><span class="sxs-lookup"><span data-stu-id="212e9-134">Casting and Type Conversions</span></span>](../../programming-guide/types/casting-and-type-conversions.md)  
+- [<span data-ttu-id="212e9-135">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="212e9-135">C# Keywords</span></span>](index.md)  
+- [<span data-ttu-id="212e9-136">Tabulka celočíselných typů</span><span class="sxs-lookup"><span data-stu-id="212e9-136">Integral Types Table</span></span>](integral-types-table.md)  
+- [<span data-ttu-id="212e9-137">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="212e9-137">Built-In Types Table</span></span>](built-in-types-table.md)  
+- [<span data-ttu-id="212e9-138">Tabulka implicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="212e9-138">Implicit Numeric Conversions Table</span></span>](implicit-numeric-conversions-table.md)  
+- [<span data-ttu-id="212e9-139">Tabulka explicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="212e9-139">Explicit Numeric Conversions Table</span></span>](explicit-numeric-conversions-table.md)  

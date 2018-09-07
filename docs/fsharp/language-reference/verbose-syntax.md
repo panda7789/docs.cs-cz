@@ -1,33 +1,31 @@
 ---
 title: Podrobná syntaxe (F#)
-description: 'Informace o rozdílu mezi podrobné a jednoduchý syntaxe v programovací jazyk F #.'
+description: 'Informace o rozdílu mezi syntaxi podrobné a jednoduchý programovací jazyk F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: b0bed66b4a76c5ab11e6c9e7aaf695f864e74ca0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b4f2354738da4692cb444e5e7dd9531d80d26664
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33563781"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44063115"
 ---
-# <a name="verbose-syntax"></a><span data-ttu-id="8a88e-103">Podrobná syntaxe</span><span class="sxs-lookup"><span data-stu-id="8a88e-103">Verbose Syntax</span></span>
+# <a name="verbose-syntax"></a><span data-ttu-id="0bd95-103">Podrobná syntaxe</span><span class="sxs-lookup"><span data-stu-id="0bd95-103">Verbose Syntax</span></span>
 
-<span data-ttu-id="8a88e-104">Nejsou k dispozici pro mnoho konstrukce v jazyce F # dvě formy syntaxe: *podrobná syntaxe* a *prostá syntaxe*.</span><span class="sxs-lookup"><span data-stu-id="8a88e-104">There are two forms of syntax available for many constructs in the F# language: *verbose syntax* and *lightweight syntax*.</span></span> <span data-ttu-id="8a88e-105">Podrobná syntaxe není jako běžně používá, ale nabízí výhodu v podobě méně citlivé na odsazení.</span><span class="sxs-lookup"><span data-stu-id="8a88e-105">The verbose syntax is not as commonly used, but has the advantage of being less sensitive to indentation.</span></span> <span data-ttu-id="8a88e-106">Prostá syntaxe je kratší a používá odsazení signál začátek a konec konstrukce, nikoli jako další klíčová slova `begin`, `end`, `in`a tak dále.</span><span class="sxs-lookup"><span data-stu-id="8a88e-106">The lightweight syntax is shorter and uses indentation to signal the beginning and end of constructs, rather than additional keywords like `begin`, `end`, `in`, and so on.</span></span> <span data-ttu-id="8a88e-107">Výchozí syntaxe je prostá syntaxe.</span><span class="sxs-lookup"><span data-stu-id="8a88e-107">The default syntax is the lightweight syntax.</span></span> <span data-ttu-id="8a88e-108">Toto téma popisuje syntaxe konstrukce jazyka F #, není-li povoleno prostá syntaxe.</span><span class="sxs-lookup"><span data-stu-id="8a88e-108">This topic describes the syntax for F# constructs when lightweight syntax is not enabled.</span></span> <span data-ttu-id="8a88e-109">Podrobná syntaxe je vždy povolena, tak i v případě, že povolíte prostá syntaxe, když můžete nadále používat podrobná syntaxe pro některé konstruktory.</span><span class="sxs-lookup"><span data-stu-id="8a88e-109">Verbose syntax is always enabled, so even if you enable lightweight syntax, you can still use verbose syntax for some constructs.</span></span> <span data-ttu-id="8a88e-110">Prostá syntaxe můžete zakázat pomocí `#light "off"` – direktiva.</span><span class="sxs-lookup"><span data-stu-id="8a88e-110">You can disable lightweight syntax by using the `#light "off"` directive.</span></span>
+<span data-ttu-id="0bd95-104">Pro mnoho konstrukcí v jazyce F # existují dvě formy syntaxe: *podrobná syntaxe* a *nenáročném syntaxi*.</span><span class="sxs-lookup"><span data-stu-id="0bd95-104">There are two forms of syntax available for many constructs in the F# language: *verbose syntax* and *lightweight syntax*.</span></span> <span data-ttu-id="0bd95-105">Podrobná syntaxe nepoužívá tak často, ale nabízí výhodu v podobě jsou méně citlivé na odsazení.</span><span class="sxs-lookup"><span data-stu-id="0bd95-105">The verbose syntax is not as commonly used, but has the advantage of being less sensitive to indentation.</span></span> <span data-ttu-id="0bd95-106">Prostá syntaxe je kratší a používá odsazení který signalizuje, že začátku a konce konstrukce, spíše než další klíčová slova, jako jsou `begin`, `end`, `in`, a tak dále.</span><span class="sxs-lookup"><span data-stu-id="0bd95-106">The lightweight syntax is shorter and uses indentation to signal the beginning and end of constructs, rather than additional keywords like `begin`, `end`, `in`, and so on.</span></span> <span data-ttu-id="0bd95-107">Výchozí syntaxe je nenáročném syntaxi.</span><span class="sxs-lookup"><span data-stu-id="0bd95-107">The default syntax is the lightweight syntax.</span></span> <span data-ttu-id="0bd95-108">Toto téma popisuje syntaxe konstrukce jazyka F #, pokud není povolené nenáročném syntaxi.</span><span class="sxs-lookup"><span data-stu-id="0bd95-108">This topic describes the syntax for F# constructs when lightweight syntax is not enabled.</span></span> <span data-ttu-id="0bd95-109">Podrobná syntaxe je vždy povolena, tak i v případě, že povolíte nenáročném syntaxi, můžete stále použít podrobné syntaxi pro některé konstruktory.</span><span class="sxs-lookup"><span data-stu-id="0bd95-109">Verbose syntax is always enabled, so even if you enable lightweight syntax, you can still use verbose syntax for some constructs.</span></span> <span data-ttu-id="0bd95-110">Prostá syntaxe můžete zakázat s použitím `#light "off"` směrnice.</span><span class="sxs-lookup"><span data-stu-id="0bd95-110">You can disable lightweight syntax by using the `#light "off"` directive.</span></span>
 
+## <a name="table-of-constructs"></a><span data-ttu-id="0bd95-111">Tabulka konstrukce</span><span class="sxs-lookup"><span data-stu-id="0bd95-111">Table of Constructs</span></span>
 
-## <a name="table-of-constructs"></a><span data-ttu-id="8a88e-111">Tabulka konstrukce</span><span class="sxs-lookup"><span data-stu-id="8a88e-111">Table of Constructs</span></span>
-<span data-ttu-id="8a88e-112">Následující tabulka ukazuje jednoduchý a podrobné syntaxi pro konstruktory jazyka F # v kontextech tam, kde je rozdíl mezi dvěma formuláři.</span><span class="sxs-lookup"><span data-stu-id="8a88e-112">The following table shows the lightweight and verbose syntax for F# language constructs in contexts where there is a difference between the two forms.</span></span> <span data-ttu-id="8a88e-113">V této tabulce, úhel závorky (&lt;&gt;) uzavřete prvky uživatelem zadané syntaxe.</span><span class="sxs-lookup"><span data-stu-id="8a88e-113">In this table, angle brackets (&lt;&gt;) enclose user-supplied syntax elements.</span></span> <span data-ttu-id="8a88e-114">Naleznete v dokumentaci pro každý jazyk konstrukce pro podrobnější informace o syntaxi používaných v rámci těchto konstrukce.</span><span class="sxs-lookup"><span data-stu-id="8a88e-114">Refer to the documentation for each language construct for more detailed information about the syntax used within these constructs.</span></span>
-
-
+<span data-ttu-id="0bd95-112">Následující tabulka ukazuje jednoduchý a podrobné syntaxe konstrukce jazyka F # v kontextech tam, kde existuje rozdíl mezi dvě různými formami.</span><span class="sxs-lookup"><span data-stu-id="0bd95-112">The following table shows the lightweight and verbose syntax for F# language constructs in contexts where there is a difference between the two forms.</span></span> <span data-ttu-id="0bd95-113">V této tabulce úhel hranaté závorky (&lt;&gt;) uzavřete syntaxe uživatelem zadané elementy.</span><span class="sxs-lookup"><span data-stu-id="0bd95-113">In this table, angle brackets (&lt;&gt;) enclose user-supplied syntax elements.</span></span> <span data-ttu-id="0bd95-114">Naleznete v dokumentaci pro každý konstrukce jazyka podrobnější informace o syntaxi použít v rámci těchto konstruktorů.</span><span class="sxs-lookup"><span data-stu-id="0bd95-114">Refer to the documentation for each language construct for more detailed information about the syntax used within these constructs.</span></span>
 
 <table>
 <tr>
-<th><span data-ttu-id="8a88e-115">Jazyk – konstrukce</span><span class="sxs-lookup"><span data-stu-id="8a88e-115">Language construct</span></span></th>
-<th><span data-ttu-id="8a88e-116">Prostá syntaxe</span><span class="sxs-lookup"><span data-stu-id="8a88e-116">Lightweight syntax</span></span></th>
-<th><span data-ttu-id="8a88e-117">Podrobná syntaxe</span><span class="sxs-lookup"><span data-stu-id="8a88e-117">Verbose syntax</span></span></th>
+<th><span data-ttu-id="0bd95-115">Konstrukce jazyka</span><span class="sxs-lookup"><span data-stu-id="0bd95-115">Language construct</span></span></th>
+<th><span data-ttu-id="0bd95-116">Prostá syntaxe</span><span class="sxs-lookup"><span data-stu-id="0bd95-116">Lightweight syntax</span></span></th>
+<th><span data-ttu-id="0bd95-117">Podrobná syntaxe</span><span class="sxs-lookup"><span data-stu-id="0bd95-117">Verbose syntax</span></span></th>
 </tr>
 <tr>
 <td>
-<span data-ttu-id="8a88e-118">složené výrazy</span><span class="sxs-lookup"><span data-stu-id="8a88e-118">compound expressions</span></span>
+<span data-ttu-id="0bd95-118">složené výrazy</span><span class="sxs-lookup"><span data-stu-id="0bd95-118">compound expressions</span></span>
 </td>
 <td>
 
@@ -46,7 +44,7 @@ ms.locfileid: "33563781"
 <tr><td>
 
 
-<span data-ttu-id="8a88e-119">vnořené `let` vazby</span><span class="sxs-lookup"><span data-stu-id="8a88e-119">nested `let` bindings</span></span>
+<span data-ttu-id="0bd95-119">vnořené `let` vazby</span><span class="sxs-lookup"><span data-stu-id="0bd95-119">nested `let` bindings</span></span>
 
 </td><td>
 ```
@@ -68,7 +66,7 @@ let f x =
 </td>
 </tr>
 <tr><td>
-<span data-ttu-id="8a88e-120">blok kódu</span><span class="sxs-lookup"><span data-stu-id="8a88e-120">code block</span></span>
+<span data-ttu-id="0bd95-120">blok kódu</span><span class="sxs-lookup"><span data-stu-id="0bd95-120">code block</span></span>
 </td><td>
 
 ```
@@ -164,7 +162,7 @@ in
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-121">záznam</span><span class="sxs-lookup"><span data-stu-id="8a88e-121">record</span></span>
+<tr><td><span data-ttu-id="0bd95-121">Záznam</span><span class="sxs-lookup"><span data-stu-id="0bd95-121">record</span></span>
 </td><td>
 
 ```
@@ -189,12 +187,12 @@ type <record-name> =
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-122">třída</span><span class="sxs-lookup"><span data-stu-id="8a88e-122">class</span></span>
-</td><td><span data-ttu-id="8a88e-123">
+<tr><td><span data-ttu-id="0bd95-122">třída</span><span class="sxs-lookup"><span data-stu-id="0bd95-122">class</span></span>
+</td><td><span data-ttu-id="0bd95-123">
 ```
 type <class-name>(<params>) = ... ```
 
-</span><span class="sxs-lookup"><span data-stu-id="8a88e-123">
+</span><span class="sxs-lookup"><span data-stu-id="0bd95-123">
 ```
 type <class-name>(<params>) = ... ```
 
@@ -208,7 +206,7 @@ type <class-name>(<params>) =
 ```
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-124">– struktura</span><span class="sxs-lookup"><span data-stu-id="8a88e-124">structure</span></span></td><td>
+<tr><td><span data-ttu-id="0bd95-124">– struktura</span><span class="sxs-lookup"><span data-stu-id="0bd95-124">structure</span></span></td><td>
 
 ```
 [<StructAttribute>]
@@ -226,7 +224,7 @@ type <structure-name> =
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-125">rozlišovaná sjednocení</span><span class="sxs-lookup"><span data-stu-id="8a88e-125">discriminated union</span></span></td><td>
+<tr><td><span data-ttu-id="0bd95-125">rozlišovaná sjednocení</span><span class="sxs-lookup"><span data-stu-id="0bd95-125">discriminated union</span></span></td><td>
 
 ```
 type <union-name> =
@@ -249,7 +247,7 @@ type <union-name> =
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-126">rozhraní</span><span class="sxs-lookup"><span data-stu-id="8a88e-126">interface</span></span></td><td>
+<tr><td><span data-ttu-id="0bd95-126">rozhraní</span><span class="sxs-lookup"><span data-stu-id="0bd95-126">interface</span></span></td><td>
 
 ```
 type <interface-name> =
@@ -266,7 +264,7 @@ type <interface-name> =
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-127">objekt výraz</span><span class="sxs-lookup"><span data-stu-id="8a88e-127">object expression</span></span></td><td>
+<tr><td><span data-ttu-id="0bd95-127">výraz objektu</span><span class="sxs-lookup"><span data-stu-id="0bd95-127">object expression</span></span></td><td>
 
 ```
 { new <type-name>
@@ -289,7 +287,7 @@ type <interface-name> =
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-128">implementace rozhraní</span><span class="sxs-lookup"><span data-stu-id="8a88e-128">interface implementation</span></span></td><td>
+<tr><td><span data-ttu-id="0bd95-128">implementace rozhraní</span><span class="sxs-lookup"><span data-stu-id="0bd95-128">interface implementation</span></span></td><td>
 
 ```
 interface <interface-name>
@@ -308,7 +306,7 @@ interface <interface-name>
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-129">Type – rozšíření</span><span class="sxs-lookup"><span data-stu-id="8a88e-129">type extension</span></span></td><td>
+<tr><td><span data-ttu-id="0bd95-129">Type – rozšíření</span><span class="sxs-lookup"><span data-stu-id="0bd95-129">type extension</span></span></td><td>
 
 ```
 type <type-name>
@@ -327,7 +325,7 @@ type <type-name>
 
 </td>
 </tr>
-<tr><td><span data-ttu-id="8a88e-130">module</span><span class="sxs-lookup"><span data-stu-id="8a88e-130">module</span></span></td><td>
+<tr><td><span data-ttu-id="0bd95-130">module</span><span class="sxs-lookup"><span data-stu-id="0bd95-130">module</span></span></td><td>
 
 ```
 module <module-name> =
@@ -347,11 +345,8 @@ module <module-name> =
 </tr>
 </table>
 
+## <a name="see-also"></a><span data-ttu-id="0bd95-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="0bd95-131">See also</span></span>
 
-
-## <a name="see-also"></a><span data-ttu-id="8a88e-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="8a88e-131">See Also</span></span>
-[<span data-ttu-id="8a88e-132">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="8a88e-132">F# Language Reference</span></span>](index.md)
-
-[<span data-ttu-id="8a88e-133">Direktivy kompilátoru</span><span class="sxs-lookup"><span data-stu-id="8a88e-133">Compiler Directives</span></span>](compiler-directives.md)
-
-[<span data-ttu-id="8a88e-134">Pravidla formátování kódu</span><span class="sxs-lookup"><span data-stu-id="8a88e-134">Code Formatting Guidelines</span></span>](code-formatting-guidelines.md)
+- [<span data-ttu-id="0bd95-132">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="0bd95-132">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="0bd95-133">Direktivy kompilátoru</span><span class="sxs-lookup"><span data-stu-id="0bd95-133">Compiler Directives</span></span>](compiler-directives.md)
+- [<span data-ttu-id="0bd95-134">Pravidla formátování kódu</span><span class="sxs-lookup"><span data-stu-id="0bd95-134">Code Formatting Guidelines</span></span>](code-formatting-guidelines.md)
