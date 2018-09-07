@@ -2,17 +2,16 @@
 title: Omezení (F#)
 description: 'Další informace o F # omezení, které se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkce.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 0e79cf5b1a25ada49bf30416f85c1d59f8f2fd23
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.openlocfilehash: 9534db4ffd195022366af8c993658bd94f375f53
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525602"
+ms.lasthandoff: 09/05/2018
+ms.locfileid: "43798209"
 ---
 # <a name="constraints"></a>Omezení
 
 Toto téma popisuje omezení, která můžete použít pro obecný typ parametry k určení požadavků pro argument typu v obecném typu nebo funkce.
-
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -21,13 +20,14 @@ type-parameter-list when constraint1 [ and constraint2]
 ```
 
 ## <a name="remarks"></a>Poznámky
+
 Existuje několik jiná omezení, které lze použít k omezení typů, které je možné v obecném typu. Následující tabulka uvádí a popisuje těchto omezení.
 
 |Omezení|Syntaxe|Popis|
 |----------|------|-----------|
 |Omezení typu|*parametr typu* :&gt; *typu*|Zadaný typ musí být větší nebo odvozené od typu určeného nebo, pokud je typ rozhraní, zadaný typ musí implementovat rozhraní.|
 |Omezení s hodnotou Null|*parametr typu* : null|Zadaný typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů .NET, ale není F # seznamu, řazené kolekce členů, funkce, třídy, záznamu nebo typy sjednocení.|
-|Omezení explicitního člena|[()]*parametr typu* [nebo... nebo *parametr typu*)]: (*signatura člena*)|Nejméně jeden z argumentů typu, který je k dispozici musí mít člena, který má zadaný podpis; nejsou určené pro obecné použití. Členy musí být buď explicitně definované u typu nebo součást rozšíření implicitních typů, bude platné cíle pro explicitní člen omezení.|
+|Omezení explicitního člena|[(]*parametr typu* [nebo... nebo *parametr typu*)]: (*signatura člena*)|Nejméně jeden z argumentů typu, který je k dispozici musí mít člena, který má zadaný podpis; nejsou určené pro obecné použití. Členy musí být buď explicitně definované u typu nebo součást rozšíření implicitních typů, bude platné cíle pro explicitní člen omezení.|
 |Omezení konstruktoru|*parametr typu* : (nové: jednotka –&gt; :)|Zadaný typ musí mít výchozí konstruktor.|
 |Omezení typu hodnoty|: – struktura|Zadaný typ musí být typem hodnoty .NET.|
 |Omezení typu odkazu|: není – struktura|Zadaný typ musí být odkazový typ .NET.|
@@ -114,7 +114,7 @@ type Class14<'T,'U when 'T : equality and 'U : equality> =
 class end
 ```
 
-## <a name="see-also"></a>Viz také
-[Obecné typy](index.md)
+## <a name="see-also"></a>Viz také:
 
-[Omezení](constraints.md)
+- [Obecné typy](index.md)
+- [Omezení](constraints.md)

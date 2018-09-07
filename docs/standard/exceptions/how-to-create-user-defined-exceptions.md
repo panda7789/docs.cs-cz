@@ -13,25 +13,26 @@ helpviewer_keywords:
 ms.assetid: 25819a5a-f915-4fc8-b924-a76915674e04
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 90bf9d6dbfebf8f7c1aa22e5844cf4e30b89b8d6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: dca313fad896ac1c8eac37c853657bea44a8b777
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572798"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43869171"
 ---
-# <a name="how-to-create-user-defined-exceptions"></a>Jak vytvořit uživatelem definované výjimky
+# <a name="how-to-create-user-defined-exceptions"></a>Jak vytvořit uživatelsky definovaných výjimek
 
-Rozhraní .NET poskytuje hierarchii tříd výjimek nakonec odvozených od základní třídy <xref:System.Exception>. Ale pokud žádná z předdefinované výjimky vyhovuje vašim potřebám, můžete vytvořit vlastní třídy výjimek odvozené z <xref:System.Exception> třídy.
+.NET poskytuje hierarchii tříd výjimek, takže v konečném důsledku odvozené ze základní třídy <xref:System.Exception>. Ale pokud žádná z předdefinovaných výjimek nevyhovuje vašim potřebám, můžete vytvořit vlastní výjimky třídy odvozené z <xref:System.Exception> třídy.
 
-Při vytváření vlastní výjimky, ukončení název třídy uživatelem definované výjimky slovem "Výjimky" a implementovat tři běžné konstruktory, jak je znázorněno v následujícím příkladu. V příkladu definuje novou třídu výjimky s názvem `EmployeeListNotFoundException`. Odvození třídy z <xref:System.Exception> a zahrnuje tři konstruktory.
+Při vytváření vlastních výjimek, ukončit uživatelem definované výjimky se slovem "Výjimka" název třídy a implementovat tři běžné konstruktory, jak je znázorněno v následujícím příkladu. Příklad definuje novou třídu výjimek s názvem `EmployeeListNotFoundException`. Třída je odvozena z <xref:System.Exception> a zahrnuje tři konstruktory.
 
 [!code-cpp[dg_exceptionDesign#14](../../../samples/snippets/cpp/VS_Snippets_CLR/dg_exceptionDesign/cpp/example2.cpp#14)]
 [!code-csharp[dg_exceptionDesign#14](../../../samples/snippets/csharp/VS_Snippets_CLR/dg_exceptionDesign/cs/example2.cs#14)]
 [!code-vb[dg_exceptionDesign#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/dg_exceptionDesign/vb/example2.vb#14)]  
 
 > [!NOTE]
-> V situacích, kdy používáte vzdálenou komunikaci Ujistěte se, že metadata pro uživatelem definované výjimky je k dispozici na serveru (volaný) a klienta (proxy – objekt nebo volající). Další informace najdete v tématu [osvědčené postupy pro výjimky](best-practices-for-exceptions.md).
+> V situacích, kdy používáte vzdálenou komunikaci Ujistěte se, že metadata pro všechny uživatelsky definovaných výjimek je k dispozici na serveru (volaný) a klient (objektu proxy nebo volající). Další informace najdete v tématu [osvědčené postupy pro výjimky](best-practices-for-exceptions.md).
 
-## <a name="see-also"></a>Viz také  
-[Výjimky](index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Výjimky](index.md)

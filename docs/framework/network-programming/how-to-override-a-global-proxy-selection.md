@@ -9,11 +9,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 244315b5df4200524685bc5b9fb75a0d7fd9b39e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43800781"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43869101"
 ---
 # <a name="how-to-override-a-global-proxy-selection"></a>Postupy: přepsání globálního výběru proxy serveru
 Tento příklad odešle **WebRequest** k `www.contoso.com` globálního výběru proxy serveru, který přepíše s proxy serverem s názvem `alternateproxy` na portu 80.  
