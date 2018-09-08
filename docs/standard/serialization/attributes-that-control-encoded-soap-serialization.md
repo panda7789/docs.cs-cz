@@ -9,11 +9,11 @@ helpviewer_keywords:
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
 ms.openlocfilehash: 7b5a48003ff9bfb398c05c8d70a9076d49ad83d6
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44065651"
+ms.locfileid: "44127768"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>Seznam atributů řídících serializaci kódovaný protokol SOAP
 

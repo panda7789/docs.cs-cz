@@ -3,19 +3,19 @@ title: Speciální znaky (referenční dokumentace jazyka Visual Basic)
 ms.date: 10/31/2017
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 04cc2ca4efe91ecfefce69583e0102823d11a5a0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9bbe3213030f8b8964de0e415cba5eaff61ba028
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33596665"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44137275"
 ---
 # <a name="special-characters-visual-basic-reference"></a>Speciální znaky (referenční dokumentace jazyka Visual Basic)
 
-Speciální znaky jsou předdefinované, kontextové znaky, které upraví elementu programu, ke kterému se se přidá jako předpona. Visual Basic podporuje následující zvláštní znak: 
+Speciální znaky jsou předdefinované, kontextové znaky, které upraví ke kterému jsou před ovládací prvek programu. Visual Basic podporuje následující zvláštní znak: 
 
-- [$](interpolated.md), interpolované řetězce znaků.
+- [$](interpolated.md), interpolovaný řetězec znaků.
 
-## <a name="see-also"></a>Viz také  
-[Referenční dokumentace jazyka Visual Basic](../../../csharp/language-reference/index.md)   
- 
+## <a name="see-also"></a>Viz také:  
+
+- [Referenční dokumentace jazyka Visual Basic](../../../visual-basic/language-reference/index.md)

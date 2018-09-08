@@ -7,11 +7,11 @@ helpviewer_keywords:
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
 ms.openlocfilehash: 7fd111f5e885de3389b8f93002db22b48c4edd45
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43805426"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130916"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Zacházení s XML v jazyce Visual Basic
 Můžete použít *literály XML* načtení z externího zdroje, například řetězce, soubor nebo datový proud XML. Pak můžete použít [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] manipulaci s XML a použití [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dotaz XML.  

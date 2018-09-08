@@ -1,5 +1,5 @@
 ---
-title: Konvence malá a velká písmena
+title: Konvence pro malá a velká písmena
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,33 +11,33 @@ helpviewer_keywords:
 ms.assetid: 4c4ea526-9203-486f-b72d-29d61c5b3c6d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7ef7913a2601c3a791cb028b4074ce37b9e9421b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 070fc69728c2cb38e465dab9f6f591a77a857531
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575281"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131932"
 ---
-# <a name="capitalization-conventions"></a>Konvence malá a velká písmena
-Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy použít konzistentně, zkontrolujte identifikátory pro typy, členů a parametry snadno čitelný.  
+# <a name="capitalization-conventions"></a>Konvence pro malá a velká písmena
+Pokyny v této kapitole rozložení si jednoduchý způsob pro použití malá a velká, že při použití konzistentně, zkontrolujte identifikátory pro typy, členy a parametry snadno čitelný.  
   
-## <a name="capitalization-rules-for-identifiers"></a>Pravidla převodu pro identifikátory  
- K odlišení slova v identifikátoru v, počáteční písmeno každého slova v identifikátoru. Nepoužívejte podtržítka k odlišení slova, nebo k tomuto účelu, kdekoli v identifikátory. Existují dva způsoby odpovídající identifikátory, v závislosti na použití identifikátoru převedení na velká písmena:  
+## <a name="capitalization-rules-for-identifiers"></a>Malá a velká písmena pravidel pro identifikátory  
+ K rozlišení slova v identifikátoru, velké první písmeno první písmeno každého slova v identifikátoru. Nepoužívejte podtržítka k rozlišení slova, nebo pro tento účel, kdekoli v identifikátory. Existují dva způsoby vhodné pro velké první písmeno identifikátory, v závislosti na použití identifikátoru:  
   
 -   PascalCasing  
   
 -   camelCasing  
   
- Konvence PascalCasing, použít pro všechny identifikátory kromě názvy parametrů, změní na velké první znak každého slova (včetně režim přes dvě písmena délku), jak je znázorněno v následujících příkladech:  
+ Konvence PascalCasing používá pro všechny identifikátory s výjimkou názvů parametrů velká první znak každého slova (včetně přes dvě písmena délku zkratky), jak je znázorněno v následujícím příkladu:  
   
  `PropertyDescriptor`  
  `HtmlTag`  
   
- Zvláštním případem je vytvořené pro dvoupísmenným režim, ve kterých jsou aktivované i písmena, jak je znázorněno v následující identifikátor:  
+ Zvláštní případ se provádí dvoupísmenné zkratky, ve kterých jsou velké obě písmena, jak je znázorněno v následující identifikátor:  
   
  `IOStream`  
   
- CamelCasing konvencí se používá pouze pro názvy parametrů, změní na velké první znak každého slova s výjimkou prvního slova, jak je znázorněno v následujících příkladech. Tento příklad také ukazuje, jsou dvoupísmenným režim, které začínají identifikátorem ve formátu camelCase i malá písmena.  
+ Konvence camelCasing používá pouze pro názvy parametrů velká první znak každého slova s výjimkou první slovo, jak je znázorněno v následujícím příkladu. Příklad také ukazuje, dvoupísmenné zkratky, které začínají identifikátorem ve formátu camelCase jsou malá písmena.  
   
  `propertyDescriptor`  
  `ioStream`  
@@ -47,9 +47,9 @@ Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy 
   
  **✓ DO** použít camelCasing pro názvy parametrů.  
   
- Následující tabulka popisuje pravidla použití velkých písmen pro různé typy identifikátorů.  
+ Následující tabulka popisuje malá a velká písmena pravidla pro různé typy identifikátorů.  
   
-|Identifikátor|Velikost písmen|Příklad|  
+|identifikátor|Velikost písmen|Příklad|  
 |----------------|------------|-------------|  
 |Obor názvů|Pascal|`namespace System.Security { ... }`|  
 |Typ|Pascal|`public class StreamReader { ... }`|  
@@ -59,16 +59,16 @@ Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy 
 |Událost|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|  
 |Pole|Pascal|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|  
 |Hodnota výčtu|Pascal|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|  
-|Parametr|Formátu camelCase|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
+|Parametr|Camel|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|  
   
-## <a name="capitalizing-compound-words-and-common-terms"></a>Na velká písmena složených slov a běžné podmínky  
+## <a name="capitalizing-compound-words-and-common-terms"></a>Velká písmena složených slov a běžných termínů  
  Většina složené podmínky jsou považovány za jednoho slova pro účely malá a velká písmena.  
   
  **X DO NOT** převedení na velká písmena jednotlivých slov ve složených slov takzvané uzavřený formuláře.  
   
- Toto jsou složených slov zapisují jako jednoho slova, jako je například koncový bod. Pro účely pokyny velká a malá písmena považovat za složené slovo uzavřený formuláře jednoho slova. Slovník aktuální použijte k určení, pokud složené slovo je napsána v uzavřené formuláře.  
+ Toto jsou složené slova napsaná jako jediné slovo, jako je například koncový bod. Pro účely pokyny pro velká a malá písmena považovat za složené slovo Uzavřeno formuláře jednoho slova. Chcete-li zjistit, pokud je složené slovo napsané v uzavřená forma použití aktuální slovníku.  
   
-|Pascal|Formátu camelCase|není|  
+|Pascal|Camel|Not|  
 |------------|-----------|---------|  
 |`BitFlag`|`bitFlag`|`Bitflag`|  
 |`Callback`|`callback`|`CallBack`|  
@@ -96,15 +96,16 @@ Podle pokynů v této kapitoly rozložení se jednoduše pomocí případu, kdy 
 |`WhiteSpace`|`whiteSpace`|`Whitespace`|  
 |`Writable`|`writable`|`Writeable`|  
   
-## <a name="case-sensitivity"></a>Rozlišování velkých a malých písmen  
- Jazyky, které můžou běžet na modulu CLR nejsou povinné pro podporu rozlišování, i když některé provést. I v případě, že váš jazyk podporuje, další jazyky, které může získat přístup k vaší framework nepodporují. Všechny rozhraní API, které jsou dostupné externě, nelze proto spoléhají na případ samostatně k rozlišení mezi dva názvy v rámci stejné.  
+## <a name="case-sensitivity"></a>Rozlišování velikosti písmen  
+ Jazyky, které můžou běžet na modulu CLR není požadována podpora rozlišování, i když některé provést. I v případě, že jazyk podporuje, jiné jazyky, které můžou přistupovat k rozhraní framework nepodporují. Libovolné rozhraní API, které jsou zvenku přístupný, proto nelze spoléhat na případ samostatně k rozlišení mezi dvěma názvy ve stejném kontextu.  
   
- **X DO NOT** předpokládají, že jsou všechny programovací jazyky velká a malá písmena. Nejsou. Názvy nemůže lišit o případ samostatně.  
+ **X DO NOT** předpokládají, že jsou všechny programovací jazyky velká a malá písmena. Nejsou. Názvy nesmí liší případ samotný.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny pro pojmenování](../../../docs/standard/design-guidelines/naming-guidelines.md)

@@ -10,11 +10,11 @@ ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b92b648e7886fb0214238e32eacae2870b470340
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43892795"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44138289"
 ---
 # <a name="virtual-members"></a>Virtuální členové
 Virtuální členové lze přepsat, čímž se změní chování podtřídy. Jsou na zpětná volání z hlediska rozšiřitelnosti, které poskytují velmi podobné, ale jsou lepší z hlediska provádění výkonu a využití paměti. Navíc můžete virtuální členy přirozenější ve scénářích, které vyžadují vytvoření zvláštní druh existujícího typu (specializace).  

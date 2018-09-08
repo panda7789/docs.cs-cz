@@ -18,11 +18,11 @@ helpviewer_keywords:
 - OnSerializingAttribute class, custom serialization
 ms.assetid: 12ed422d-5280-49b8-9b71-a2ed129c0384
 ms.openlocfilehash: 6151bf670a455d4c9862e80fd06314e4e1621080
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43881912"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130351"
 ---
 # <a name="custom-serialization"></a>Vlastní serializace
 Vlastní serializace je proces řízení serializace a deserializace typu. Řízením serializace, je možné k zajištění kompatibility serializace, což je možnost k serializaci a deserializaci mezi verzemi typu bez narušení funkčnosti základního typu. Například v první verzi typu, může existovat pouze dvě pole. V příští verzi typu jsou přidány několik více polí. Ještě druhý verze aplikace, musí mít k serializaci a deserializaci oba typy. Níže uvedené části popisují, jak řídit serializace.

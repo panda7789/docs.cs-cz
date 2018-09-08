@@ -13,11 +13,11 @@ ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 33c498e8379d68287bfe4a2e781d6797fd6b4c10
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43870989"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44140681"
 ---
 # <a name="managed-execution-process"></a>Proces spravovaného spouštění
 <a name="introduction"></a> Proces spravovaného spuštění zahrnuje následující kroky, které jsou detailně popsány dále v tomto tématu:  

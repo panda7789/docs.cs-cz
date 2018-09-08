@@ -7,11 +7,11 @@ helpviewer_keywords:
 - xmlSerializer element
 ms.assetid: d129d10c-3eb7-45d9-8098-5fa853825e47
 ms.openlocfilehash: 2770b82f71f3c4b43df4c44f75248e5392c528c2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44031511"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44132143"
 ---
 # <a name="ltxmlserializergt-element"></a>&lt;xmlSerializer&gt; – Element
 Určuje, zda dodatečnou kontrolu průběh <xref:System.Xml.Serialization.XmlSerializer> je Hotovo.  

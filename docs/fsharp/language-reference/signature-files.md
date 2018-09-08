@@ -3,11 +3,11 @@ title: 'Podpis souborů (F #)'
 description: 'Další informace o použití souborů signatur F # k ukládání informací o veřejných podpisů sadu F # prvky programu, jako jsou moduly, typy a obory názvů.'
 ms.date: 06/15/2018
 ms.openlocfilehash: f0836aa7f638dc9e2b066b0f46bbb6c086347615
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44036480"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44127836"
 ---
 # <a name="signatures"></a>Podpisy
 

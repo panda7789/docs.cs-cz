@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WPF application [WPF], deploying
 ms.assetid: 88952ad2-5b74-48ca-a4c5-3f4fbb53ce12
 ms.openlocfilehash: bed7484f7ff487d1ff34ef1ff1e86bc8689a2cfc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777413"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44132458"
 ---
 # <a name="build-and-deploy-how-to-topics"></a>Postupy: Témata sestavení a nasazení
 Následující témata ukazují, jak vytvořit soubory projektu pro různé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy aplikací.  

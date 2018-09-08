@@ -3,11 +3,11 @@ title: 'Smyčky: Výraz while...do (F#)'
 description: Naleznete v tématu jak při... proveďte použit výraz provádět iterativní spuštění (opakování), zatímco je zadaný testovací podmínka pravdivá.
 ms.date: 05/16/2016
 ms.openlocfilehash: 5cf4461669221f91cb50e238c25494f03a10bbc2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43868591"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130221"
 ---
 # <a name="loops-whiledo-expression"></a>Smyčky: Výraz while...do
 

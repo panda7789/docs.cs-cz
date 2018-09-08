@@ -5,11 +5,11 @@ ms.assetid: 444846f3-48d5-4341-a43e-69f7221389eb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8921d2841f9a7b4228ae3b8735d7047453f71bcb
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43800190"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130208"
 ---
 # <a name="ltdirectivesgt-element-net-native"></a>Element &lt;Directives&gt; (.NET Native)
 Kořenový element v každém souboru direktiv modulu runtime pro .NET Native.  

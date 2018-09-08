@@ -9,12 +9,12 @@ helpviewer_keywords:
 - qualifying XML elements
 - XML namespaces, qualifying elements and names in
 ms.assetid: 44719f90-7e15-42e8-a9e2-282287e2b5bf
-ms.openlocfilehash: 6b4d58f6b5bf23cbce2ace8fb40730d7b73994de
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 3c477923387e5a28dcc14b44b0f77bb6acb686e5
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43785489"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133279"
 ---
 # <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Postupy: zařazení – Element XML a názvy atributů XML
 
@@ -169,13 +169,13 @@ public class Book
 }
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-<xref:System.Xml.Serialization.XmlSerializer>
-[Nástroj pro definici schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md)
-[představení serializace XML](introducing-xml-serialization.md)
-[třídy XmlSerializer](xref:System.Xml.Serialization.XmlSerializer) 
- [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
-[postupy: určení alternativního názvu elementu pro XML Stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-[postupy: serializace objektu](how-to-serialize-an-object.md) 
- [Postupy: deserializace objektu](how-to-deserialize-an-object.md)
+- <xref:System.Xml.Serialization.XmlSerializer>
+- [Nástroj pro definici schématu XML a serializace XML](the-xml-schema-definition-tool-and-xml-serialization.md)
+- [Představení serializace XML](introducing-xml-serialization.md)
+- [Třídy XmlSerializer](xref:System.Xml.Serialization.XmlSerializer)
+- [Seznam atributů řídících serializaci XML](attributes-that-control-xml-serialization.md)
+- [Postupy: Zadání alternativního názvu elementu pro XML stream](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [Postupy: Serializace objektu](how-to-serialize-an-object.md)
+- [Postupy: Deserializace objektu](how-to-deserialize-an-object.md)

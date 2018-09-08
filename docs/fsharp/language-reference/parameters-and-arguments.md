@@ -2,12 +2,12 @@
 title: Parametry a argumenty (F#)
 description: 'Další informace o podpora jazyka F # pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti.'
 ms.date: 05/16/2016
-ms.openlocfilehash: a3418ec814e0419d08758cf035ecc0f402b5db1a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.openlocfilehash: a1e2a70ca560bbb09d2cd10f47485cbe5c5e029d
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44062634"
+ms.locfileid: "44131973"
 ---
 # <a name="parameters-and-arguments"></a>Parametry a argumenty
 
@@ -127,15 +127,32 @@ Baud Rate: 300 Duplex: Half Parity: true
 
 ## <a name="passing-by-reference"></a>Předávání odkazem.
 
-Předávání odkazem na hodnotu F # zahrnuje `byref` – klíčové slovo, které určuje, že ve skutečnosti ukazatel na hodnotu předávaný odkazem parametr. Libovolná hodnota předaná do metody s `byref` jako argument musí být `mutable`.
+Předávání odkazem na hodnotu F # zahrnuje [ByRef](byrefs.md), které jsou typy spravovaného ukazatele. Pokyny, který typ použít vypadá takto:
+
+* Použití `inref<'T>` potřebujete pouze ke čtení ukazatel.
+* Použití `outref<'T>` Pokud potřebujete napsat k ukazateli.
+* Použití `byref<'T>` Pokud budete potřebovat číst z a zapisovat do ukazatele.
+
+```fsharp
+let example1 (x: inref<int>) = printfn "It's %d" x
+
+let example2 (x: outref<int>) = x <- x + 1
+
+let example3 (x: byref<int>) =
+    printfn "It'd %d" x
+    x <- x + 1
+
+// No need to make it mutable, since it's read-only
+let x = 1
+example1 &x
+
+// Needs to be mutable, since we write to it
+let mutable y = 2
+example2 &y
+example3 &y // Now 'y' is 3
+```
 
 Protože parametru je ukazatel a hodnota je proměnlivá, všechny změny hodnoty se uchovávají po spuštění funkce.
-
-Můžete provést totéž s [odkazové buňky](reference-cells.md), ale je důležité si uvědomit, že **odkazové buňky a `byref`s nejsou totéž**. Odkazové buňky je kontejner pro hodnotu, která můžete zkontrolovat a změnit obsah, ale tato hodnota se nachází v haldě a je ekvivalentní s tím, že záznam s proměnlivou hodnotu jsou v něm obsaženy. A `byref` skutečný ukazatel, je tak, aby byl odlišnou sémantiku základní a použití pravidel (může být poměrně omezující).
-
-Následující příklady ilustrují použití `byref` – klíčové slovo. Všimněte si, že při použití odkazovou buňku jako parametr, musíte vytvořit odkazovou buňku jako hodnotu s názvem a použít jako parametr, ne jenom přidat `ref` operátor, jak je znázorněno v prvním volání `Increment` v následujícím kódu. Protože vytvoření odkazové buňky se vytvoří kopie zdrojové hodnoty, první volání pouze zvýší dočasná hodnota.
-
-[!code-fsharp[Main](../../../samples/snippets/fsharp/parameters-and-arguments-1/snippet3809.fs)]
 
 Řazené kolekce členů jako návratovou hodnotu můžete použít k ukládání žádné `out` parametrů metod knihovny .NET. Alternativně lze považovat `out` parametrem jako `byref` parametru. Následující příklad kódu znázorňuje oba způsoby.
 
@@ -155,7 +172,7 @@ Následující kód ukazuje obě volání metody rozhraní .NET, která přijím
 
 Při spuštění v projektu, výstup předchozího kódu vypadá takto:
 
-```
+```console
 a 1 10 Hello world 1 True
 "a"
 1

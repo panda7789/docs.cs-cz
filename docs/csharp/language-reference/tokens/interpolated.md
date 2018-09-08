@@ -13,11 +13,11 @@ helpviewer_keywords:
 author: pkulikov
 ms.author: ronpet
 ms.openlocfilehash: 2009b3620bc4874520221a4ea847222feafca01b
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44065406"
+ms.locfileid: "44135949"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ – interpolace řetězců (referenční dokumentace jazyka C#)
 

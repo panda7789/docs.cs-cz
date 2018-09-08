@@ -5,11 +5,11 @@ ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2a2a27f788fa84c41ccb818266fffc816237bb48
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43554961"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44139277"
 ---
 # <a name="net-native-reflection-api-reference"></a>Informace o rozhraní API reflexe .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] zahrnuje tři nové typy výjimek: [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), a [ System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). Mějte na paměti následující skutečnosti související všechny výjimky tři typy:  

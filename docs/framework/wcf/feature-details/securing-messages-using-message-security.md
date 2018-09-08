@@ -5,11 +5,11 @@ ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: d895524d36895ad087f7394fcc3380573355eaad
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44035941"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128141"
 ---
 # <a name="securing-messages-using-message-security"></a>Zabezpečení zpráv
 Tato část popisuje zabezpečení zpráv WCF při použití <xref:System.ServiceModel.NetMsmqBinding>.  

@@ -13,11 +13,11 @@ ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cac7e0fca4a009b7f5b6f677abed70cf2519052d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891899"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44138471"
 ---
 # <a name="character-encoding-in-net"></a>Kódování znaků v rozhraní .NET
 Znaky jsou abstraktní entity, které může být reprezentována mnoha různými způsoby. Kódování znaků je systém, který páry každý znak v podporované znakové sady s některá z hodnot, který představuje daný znak. Například morseovkou je znak kódování této páry každý znak v latinku pomocí vzoru tečky a spojovníky, které jsou vhodné pro přenos přes telegrafní řádky. Znak kódování dvojice počítačů pro každý znak v podporované znakové sady s číselnou hodnotu, která představuje tento znak. Kódování znaků má dvě různé součásti:  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - animation [WPF]
 ms.assetid: 587e36f6-1957-424e-9d89-c43724f26d84
 ms.openlocfilehash: 7c61e1bbd3b9c93785393c729f2af27f29d1dc40
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44038111"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44138978"
 ---
 # <a name="animation-and-timing-how-to-topics"></a>Postupy: Témata animace a časování
 Následující témata ukazují, jak používat [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] animace a časování systému ve svých aplikacích.  

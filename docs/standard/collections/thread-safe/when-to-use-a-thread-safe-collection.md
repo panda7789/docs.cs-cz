@@ -8,11 +8,11 @@ ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: eefa1b52907525059b3403e7eb20542d3b5a5c73
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44066738"
+ms.locfileid: "44131695"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>Kdy použít kolekci s bezpečnými vlákny
 [!INCLUDE[net_v40_long](../../../../includes/net-v40-long-md.md)] Představuje pět nových typů, které jsou navrženy speciálně pro podporu vícevláknové přidávat a odebírat operace. Tyto nové typy zajistit zabezpečení vlákna používají různé druhy efektivní zamykání a mechanismy bez zámku synchronizace. Synchronizace přidá nároky na operaci. Množství práce, kterou závisí na typu synchronizace, který se používá, druh operace, které jsou prováděny a dalších faktorů, třeba počet vláken, které se pokoušíte získat přístup ke kolekci současně.  

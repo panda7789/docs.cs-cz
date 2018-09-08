@@ -12,11 +12,11 @@ ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5b538cb53e1cbc1fdbd8e34506710a1967e50f9d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877346"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44139524"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 Použijete-li založený na úlohách asynchronního vzoru (TAP) pro práci s asynchronní operace, můžete použít zpětná volání k dosažení čekání bez blokování.  Pro úlohy, toho je dosaženo pomocí metod, jako <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType>. Založený na jazyce asynchronní podporu skryje zpětná volání tím, že asynchronní operace do ní použít operátor await v rámci normálního toku řízení a kód generovaný kompilátorem podporuje tento stejnou úroveň rozhraní API.  

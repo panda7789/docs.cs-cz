@@ -12,11 +12,11 @@ helpviewer_keywords:
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
 ms.openlocfilehash: 00cfda489feb468c7e3c140ab63369b408b09152
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44046314"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131549"
 ---
 # <a name="-link-c-compiler-options"></a>-link (možnosti kompilátoru C#)
 Způsobí, že kompilátor pro zpřístupnění informací o typu modelu COM v zadaném sestavení pro projekt, který je aktuálně kompilován.  

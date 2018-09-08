@@ -2,12 +2,12 @@
 title: 'Postupy: rozšíření návodu asynchronních úloh pomocí metody Task.WhenAll (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: c06d386d-e996-4da9-bf3d-05a3b6c0a258
-ms.openlocfilehash: 650b96926cf66810a93b003b1ebc09ca16212b00
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.openlocfilehash: 09496f7044a0be86a3fdb37085b09069086750ce
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44064930"
+ms.locfileid: "44129070"
 ---
 # <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-visual-basic"></a>Postupy: rozšíření návodu asynchronních úloh pomocí metody Task.WhenAll (Visual Basic)
 Můžete zvýšit výkon asynchronního řešení v [návod: přístup k webu pomocí Async a Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md) pomocí <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> metody. Tato metoda asynchronně čeká na více asynchronních operací, které jsou reprezentovány ve formě kolekci úkolů.  
@@ -62,7 +62,7 @@ Můžete zvýšit výkon asynchronního řešení v [návod: přístup k webu po
     'Next  
     ```  
   
-3.  Vytvořte kolekci úkolů. Následující kód definuje [dotazu](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
+3.  Vytvořte kolekci úkolů. Následující kód definuje [dotazu](../../../../visual-basic/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
   
      Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `urlList`.  
   
@@ -135,7 +135,7 @@ Můžete zvýšit výkon asynchronního řešení v [návod: přístup k webu po
     'Next  
     ```  
   
-3.  Definování [dotazu](https://msdn.microsoft.com/library/a73c4aec-5d15-4e98-b962-1274021ea93d) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
+3.  Definování [dotazu](../../../../visual-basic/programming-guide/concepts/linq/index.md) , při spuštění metodou <xref:System.Linq.Enumerable.ToArray%2A> vytvoří kolekci úkolů, které stáhnou obsah každého webu. Úkoly jsou spuštěny, když je vyhodnocen dotaz.  
   
      Přidejte následující kód do metody `SumPageSizesAsync` po deklaraci `client` a `urlList`.  
   
@@ -419,6 +419,7 @@ Class MainWindow
 End Class  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>  
- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>  
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)

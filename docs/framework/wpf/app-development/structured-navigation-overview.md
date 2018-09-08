@@ -8,11 +8,11 @@ helpviewer_keywords:
 - structured navigation [WPF]
 ms.assetid: 025d30ef-fec5-436d-ad7a-5d5483331c26
 ms.openlocfilehash: 2264686f34123e74bf7d24ce80877742d952f35d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43869636"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133672"
 ---
 # <a name="structured-navigation-overview"></a>Přehled strukturované navigace
 Obsah, který může být hostován [!INCLUDE[TLA#tla_xbap](../../../../includes/tlasharptla-xbap-md.md)], <xref:System.Windows.Controls.Frame>, nebo <xref:System.Windows.Navigation.NavigationWindow> se skládá z stránky, které lze identifikovat podle pack [!INCLUDE[TLA#tla_uri#plural](../../../../includes/tlasharptla-urisharpplural-md.md)] a kterou se odkazuje hypertextové odkazy. Struktura stránek a způsoby, ve kterém se dá Navigovat, tak jak je definoval hypertextové odkazy, se označuje jako topologie navigace. Tato topologie vyhovuje širokou škálu typů aplikací, zejména těch, které procházejí dokumenty. Pro takové aplikace uživatele můžete přejít z jedné stránky na jinou stránku bez buď stránky museli cokoliv vědět o nich.  

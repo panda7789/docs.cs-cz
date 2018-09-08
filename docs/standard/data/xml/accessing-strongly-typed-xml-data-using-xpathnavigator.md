@@ -1,5 +1,5 @@
 ---
-title: Přístup k důrazně zadali pomocí objektem XPathNavigator nastaveným na Data XML
+title: Přístup k silně typované dat XML pomocí XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,57 +8,57 @@ dev_langs:
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 040a137f9b7c26c4484a69313e1f405699a19b64
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c283d3c87effcf9e898bb769cc8991da6cea453
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33578114"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129463"
 ---
-# <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Přístup k důrazně zadali pomocí objektem XPathNavigator nastaveným na Data XML
-Jako instance datového modelu XPath 2.0 <xref:System.Xml.XPath.XPathNavigator> třídy může obsahovat data silného typu, který se mapuje na běžné typy language runtime (CLR). Podle modelu dat XPath 2.0 může obsahovat pouze elementy a atributy data silného typu. <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje mechanismus pro přístup k datům v rámci <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> jako silného typu dat, jakož i mechanismy pro převod z jednoho datového typu na jiný objekt.  
+# <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Přístup k silně typované dat XML pomocí XPathNavigator
+Jako instanci datového modelu, XPath 2.0 <xref:System.Xml.XPath.XPathNavigator> třídy mohou obsahovat silného typu dat, která se mapuje na common language runtime (CLR) typy. Podle modelu dat XPath 2.0 může obsahovat pouze prvky a atributy dat silného typu. <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje mechanismus pro přístup k datům v rámci <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> jako silného typu dat, stejně jako mechanismus pro převod z jednoho datového typu na jiný objekt.  
   
 ## <a name="type-information-exposed-by-xpathnavigator"></a>Informace o typu vystavené objektem XPathNavigator nastaveným na  
- Data XML 1.0 je technicky bez typu, pokud zpracování s DTD, XML schéma definition language (XSD) schématu nebo jinému kontrolnímu mechanismu. Existuje několik kategorií informace o typu, který může být přidružen elementu XML nebo atributu.  
+ Data XML 1.0 je technicky bez typu, pokud zpracovává se DTD, XML definice jazyk (XSD) schématu nebo jinému kontrolnímu mechanismu. Existuje mnoho kategorií informací o typu, který může být přidružen k elementu XML nebo atributu.  
   
--   Jednoduché typy CLR: Žádný z jazyků schématu XML nepodporuje typy Common Language Runtime (CLR) přímo. Protože je užitečné, abyste mohli zobrazit jednoduché elementu a atributu obsah jako nejvhodnější typ CLR, všechny jednoduchým obsahem lze zadat jako <xref:System.String> chybí informace o schématu s žádným přidat informace o schématu potenciálně upřesnění tomuto obsahu uživateli více příslušného typu. Můžete najít nejlépe odpovídající typ CLR jednoduchým obsahem elementu a atributu pomocí <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> vlastnost. Další informace o mapování z předdefinovaných typů schématu pro typy CLR najdete v tématu [podpora typu ve třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
+-   Jednoduché typy CLR: Žádný z těchto jazyků schématu XML nepodporuje typy Common Language Runtime (CLR) přímo. Protože je výhodné mít možnost zobrazit jednoduchý prvek a obsah atributů jako nejvhodnější typ CLR, všechny jednoduchý obsah lze zadat jako <xref:System.String> chybí informace o schématu s žádným přidány informace o schématu potenciálně upřesnění tento obsah více příslušného typu. Můžete najít nejvhodnější typ CLR jednoduchý obsah elementu a atribut s použitím <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> vlastnost. Další informace o mapování z předdefinovaných typů schématu pro typy CLR naleznete v tématu [podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
   
--   Seznam typů jednoduché (CLR): elementu nebo atributu s jednoduchým obsahem může obsahovat seznam hodnot oddělených mezer. Hodnoty jsou určené schéma XML jako "typ seznamu". Chybí schématu XML by takové jednoduchým obsahem považovány za jeden textový uzel. Pokud schéma XML je k dispozici, mohou být zpřístupněny tento jednoduchý obsah jako řadu atomic hodnoty, každý s jednoduchý typ, který se mapuje na kolekce objektů CLR. Další informace o mapování z předdefinovaných typů schématu pro typy CLR najdete v tématu [podpora typu ve třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
+-   Seznam typů jednoduchých (CLR): elementu nebo atributu s jednoduchým obsahem může obsahovat seznam hodnoty oddělené symbolem mezery. Hodnoty jsou určena pomocí schématu XML jako "typ seznamu". Chybí schématu XML budou považované za jeden textový uzel takové jednoduchý obsah. Pokud schéma XML je k dispozici, může být tento jednoduchý obsah vystavena jako hodnoty řadu atomických, každý s jednoduchý typ, který se mapuje na kolekci objektů CLR. Další informace o mapování z předdefinovaných typů schématu pro typy CLR naleznete v tématu [podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
   
--   Zadaná hodnota: Ověřit schéma atribut nebo element s jednoduchého typu obsahuje hodnotu typu. Tato hodnota je primitivní typ, například číselný, řetězce nebo typ datum. Všechny předdefinované jednoduché typy v XSD lze mapovat na typy CLR, které poskytují přístup k hodnotě uzlu jako typ vhodnější místo stejně jako <xref:System.String>. Element s atributy nebo podřízené položky elementu se považuje za komplexního typu. Typové hodnotu pro komplexní typ s jednoduchým obsahem (pouze textové uzly jako podřízené objekty) je stejný jako u jednoduchý typ část jeho obsahu. Hodnota typu komplexního typu se složitým obsahem (jeden nebo více podřízených prvků) je s řetězcovou hodnotou obsahující zřetězení všechny jeho podřízené textové uzly vrátí jako <xref:System.String>. Další informace o mapování z předdefinovaných typů schématu pro typy CLR najdete v tématu [podpora typu ve třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
+-   Zadaná hodnota: Ověření schématu atribut nebo element s jednoduchý typ má zadanou hodnotou. Tato hodnota je primitivní typ, jako je například číselná, řetězec nebo typ date. Všechny integrované jednoduché typy v XSD je možné mapovat na typy CLR, které poskytují přístup k hodnotě uzel jako vhodnější typ namísto pouze jako <xref:System.String>. Element s atributy nebo podřízené položky elementu se považuje za komplexní. Zadaná hodnota komplexní typ s jednoduchým obsahem (pouze textové uzly jako podřízené objekty) je stejné jako u jednoduchého typu jeho obsahu. Zadaná hodnota komplexní typ se složitým obsahem (jeden nebo více podřízených prvků) je zřetězení všechny jeho podřízené uzly text vrácena jako hodnotu řetězce <xref:System.String>. Další informace o mapování z předdefinovaných typů schématu pro typy CLR naleznete v tématu [podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
   
--   Schématu jazyk konkrétní název typu: Ve většině případů typů CLR, které jsou nastavené jako vedlejší účinek použití externí schéma, slouží k poskytování přístupu k hodnotě uzlu. Mohou však nastat situace, místo zkontrolujte typ spojený s konkrétní schématu použitého pro dokument XML. Například můžete chtít hledání v dokumentu XML extrahování všechny elementy, které jsou určeny tak, aby měl obsah typu "PurchaseOrder" podle připojeného schématu. Tyto informace o typu lze nastavit pouze v důsledku ověřování schématu a tyto informace je přístupné přes <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> a <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnosti <xref:System.Xml.XPath.XPathNavigator> třídy. Další informace najdete v části informační Post schématu ověření sadu (PSVI) níže.  
+-   Jazyk schématu konkrétní název typu: Ve většině případů typů CLR, které jsou nastavené jako vedlejší efekt použití externí schéma, slouží k poskytnutí přístupu k hodnotě uzlu. Mohou však nastat situace, kde můžete prozkoumat typ přidružený k konkrétní schématu použitého pro dokument XML. Například můžete chtít Hledat v dokumentu XML, extrahování všechny elementy, které jsou určeny s obsahem typu "PurchaseOrder" podle připojených schématu. Tyto informace o typu lze nastavit pouze v důsledku ověřování schématu a tyto informace se přistupuje přes <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> a <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnosti <xref:System.Xml.XPath.XPathNavigator> třídy. Další informace naleznete v části příspěvku schématu ověření informační sada (PSVI) níže.  
   
--   Reflexe konkrétní jazyk schématu: V ostatních případech můžete chtít získat další podrobnosti o konkrétní schématu typu u dokumentu XML. Například při čtení souboru XML, můžete k extrakci `maxOccurs` atribut pro každý uzel platný v dokumentu XML tak, aby bylo možné provést některé vlastní výpočet. Protože tyto informace je nastavena pouze prostřednictvím ověřování schématu, je přístupné přes <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy. Další informace najdete v části informační Post schématu ověření sadu (PSVI) níže.  
+-   Reflexe konkrétní jazyk schématu: V jiných případech můžete chtít získat další podrobnosti o konkrétní schématu typu použitý pro dokument XML. Například při čtení souboru XML, můžete k extrakci `maxOccurs` atribut pro každý platný uzel v dokumentu XML, aby bylo možné provést některé vlastní výpočet. Protože tyto informace je nastavena pouze pomocí ověření schématu, je přístupný prostřednictvím <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy. Další informace naleznete v části příspěvku schématu ověření informační sada (PSVI) níže.  
   
-## <a name="xpathnavigator-typed-accessors"></a>Objektem XPathNavigator nastaveným na silné přístupové objekty  
- Následující tabulka uvádí různé vlastnosti a metody <xref:System.Xml.XPath.XPathNavigator> třídu, která lze použít pro přístup k informacím typ o uzlu.  
+## <a name="xpathnavigator-typed-accessors"></a>XPathNavigator zadali přístupové objekty  
+ V následující tabulce jsou uvedeny různé vlastnosti a metody <xref:System.Xml.XPath.XPathNavigator> třídu, která umožňuje přístup k informacím o typu o uzlu.  
   
 |Vlastnost|Popis|  
 |--------------|-----------------|  
-|<xref:System.Xml.XPath.XPathNavigator.XmlType%2A>|Pokud je platná tato položka obsahuje informace o uzlu typ schématu XML.|  
-|<xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A>|Tato položka obsahuje informační Post schématu ověření sadu uzlu, který bude přidán za ověření. To zahrnuje informace o typu schématu XML a také informace platnosti.|  
-|<xref:System.Xml.XPath.XPathNavigator.ValueType%2A>|Typ CLR typové hodnotu uzlu.|  
-|<xref:System.Xml.XPath.XPathNavigator.TypedValue%2A>|Obsah uzlu CLR jeden nebo více hodnot s typem je nejvíce odpovídá typ schématu XML uzlu.|  
-|<xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean%2A>|<xref:System.String> Hodnotu aktuální uzel přetypovat <xref:System.Boolean> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:boolean`.|  
-|<xref:System.Xml.XPath.XPathNavigator.ValueAsDateTime%2A>|<xref:System.String> Hodnotu aktuální uzel přetypovat <xref:System.DateTime> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:datetime`.|  
-|<xref:System.Xml.XPath.XPathNavigator.ValueAsDouble%2A>|<xref:System.String> Hodnotu aktuální uzel přetypovat <xref:System.Double> hodnoty, podle pravidla přetypování XPath 2.0 pro `xsd:double`.|  
-|<xref:System.Xml.XPath.XPathNavigator.ValueAsInt%2A>|<xref:System.String> Hodnotu aktuální uzel přetypovat <xref:System.Int32> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:integer`.|  
-|<xref:System.Xml.XPath.XPathNavigator.ValueAsLong%2A>|<xref:System.String> Hodnotu aktuální uzel přetypovat <xref:System.Int64> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:integer`.|  
+|<xref:System.Xml.XPath.XPathNavigator.XmlType%2A>|Pokud je platný obsahuje informace o typu schématu XML pro uzel.|  
+|<xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A>|Tato položka obsahuje schéma po ověření informační sadu uzlu, které se přidají po ověření. To zahrnuje informace o typu schématu XML, jakož i informace platnosti.|  
+|<xref:System.Xml.XPath.XPathNavigator.ValueType%2A>|Typ CLR hodnotu typu uzlu.|  
+|<xref:System.Xml.XPath.XPathNavigator.TypedValue%2A>|Obsah uzlu CLR jeden nebo více hodnot, jehož typ je nejvíce odpovídá schématu XML typu uzlu.|  
+|<xref:System.Xml.XPath.XPathNavigator.ValueAsBoolean%2A>|<xref:System.String> Hodnota pro aktuální uzel přetypována na <xref:System.Boolean> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:boolean`.|  
+|<xref:System.Xml.XPath.XPathNavigator.ValueAsDateTime%2A>|<xref:System.String> Hodnota pro aktuální uzel přetypována na <xref:System.DateTime> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:datetime`.|  
+|<xref:System.Xml.XPath.XPathNavigator.ValueAsDouble%2A>|<xref:System.String> Hodnota pro aktuální uzel přetypována na <xref:System.Double> hodnoty, podle pravidla přetypování XPath 2.0 pro `xsd:double`.|  
+|<xref:System.Xml.XPath.XPathNavigator.ValueAsInt%2A>|<xref:System.String> Hodnota pro aktuální uzel přetypována na <xref:System.Int32> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:integer`.|  
+|<xref:System.Xml.XPath.XPathNavigator.ValueAsLong%2A>|<xref:System.String> Hodnota pro aktuální uzel přetypována na <xref:System.Int64> hodnoty, podle pravidla přetypování XPath 2.0 pro `xs:integer`.|  
 |<xref:System.Xml.XPath.XPathNavigator.ValueAs%2A>|Obsah uzlu přetypovat na typ cíle podle pravidel přetypování XPath 2.0.|  
   
- Další informace o mapování z předdefinovaných typů schématu pro typy CLR najdete v tématu [podpora typu ve třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
+ Další informace o mapování z předdefinovaných typů schématu pro typy CLR naleznete v tématu [podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
   
-## <a name="the-post-schema-validation-infoset-psvi"></a>Informační Post schématu ověření sadu (PSVI)  
- Procesor schématu XML přijímá informační sadu XML jako vstup a převede jej do schématu ověření informační sadu (PSVI Post). PSVI je původní vstupní XML informační sadu s přidat nové informace položky a nové vlastnosti, které jsou přidány do existujících položek informace. Existují tři obecné třídy informací zapisovaných do informační sadu XML v PSVI, které jsou vystavené <xref:System.Xml.XPath.XPathNavigator>.  
+## <a name="the-post-schema-validation-infoset-psvi"></a>Příspěvek schéma ověřování v informační sadu (PSVI)  
+ Procesor schématu XML přijímá informační sadu XML jako vstup a převede jej do schéma ověření informační sada (PSVI Post). PSVI je původní vstupní XML informační sadu se nové informace položky přidané a přidání existující položky informace nových vlastností. Existují tři různé třídy informací pro informační sadu XML v PSVI, které jsou vystavené <xref:System.Xml.XPath.XPathNavigator>.  
   
-1.  Ověření výstupy: Informace o tom, jestli elementu nebo atributu byl úspěšně ověřen nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
+1.  Výsledky ověření: Informace o tom, zda elementu nebo atributu byl úspěšně ověřen nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
-2.  Informace o výchozí: Označení, zda hodnota elementu nebo atributu byl získán prostřednictvím výchozí hodnoty zadané ve schématu, nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.IsDefault%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
+2.  Výchozí informace: Označení, zda hodnota elementu nebo atributu byl získán prostřednictvím výchozí hodnoty zadané ve schématu, nebo ne. To je zveřejněný prostřednictvím <xref:System.Xml.Schema.IXmlSchemaInfo.IsDefault%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
-3.  Typ poznámky: Odkazy na komponenty schématu, které mohou být definic typů nebo elementu a atributu deklarace. <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> Vlastnost <xref:System.Xml.XPath.XPathNavigator> obsahuje informace o konkrétní typ uzlu, pokud je platná. Pokud platnost uzel neznámý, například když se ověřila pak následně upravit. pak se <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> je nastavena na `null` , ale stále k dispozici v různé vlastnosti informací o typu <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
+3.  Poznámky: Odkazy na schéma komponenty, které mohou být typ definice nebo deklarace prvků a atributů. <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> Vlastnost <xref:System.Xml.XPath.XPathNavigator> obsahuje informace o konkrétním typu uzlu, pokud je platný. Pokud platnost uzel neznámý, například když se ověřila pak následně upravit. pak bude <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> je nastavena na `null` je stále k dispozici různé vlastnosti informací o typu, ale <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
- Následující příklad ilustruje, pomocí informací v vystavené informační Post schématu ověření sadu <xref:System.Xml.XPath.XPathNavigator>.  
+ Následující příklad ukazuje, použijte informace v vystavené informační po Schema ověření sadu <xref:System.Xml.XPath.XPathNavigator>.  
   
 ```vb  
 Dim settings As XmlReaderSettings = New XmlReaderSettings()  
@@ -98,7 +98,7 @@ Console.WriteLine(navigator.SchemaInfo.Validity);
 Console.WriteLine(navigator.SchemaInfo.SchemaElement.MinOccurs);  
 ```  
   
- V příkladu trvá `books.xml` souboru jako vstup.  
+ V příkladu přebírá `books.xml` souboru jako vstup.  
   
 ```xml  
 <books xmlns="http://www.contoso.com/books">  
@@ -110,7 +110,7 @@ Console.WriteLine(navigator.SchemaInfo.SchemaElement.MinOccurs);
 </books>  
 ```  
   
- Tento příklad také trvá `books.xsd` schématu jako vstup.  
+ Tento příklad využívá taky `books.xsd` schématu jako vstup.  
   
 ```xml  
 <xs:schema xmlns="http://www.contoso.com/books"   
@@ -139,8 +139,8 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema">
 </xs:schema>  
 ```  
   
-## <a name="obtain-typed-values-using-valueas-properties"></a>Získat zadávaných hodnot pomocí vlastnosti ValueAs  
- Hodnota typu uzlu může načíst přístup k <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator>. V některých případech můžete chtít převést hodnotu typu uzlu na jiný typ. Běžným příkladem jsou k získání číselné hodnoty z uzlu XML. Zvažte například následující neověřený a bez typu dokumentu XML.  
+## <a name="obtain-typed-values-using-valueas-properties"></a>Získání zadaných hodnot pomocí vlastností ValueAs  
+ Zadaná hodnota uzlu je možné načíst podle přístupu <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> vlastnost <xref:System.Xml.XPath.XPathNavigator>. V některých případech můžete převést hodnotu typu uzlu do jiného typu. Běžným příkladem je k získání číselné hodnoty z uzlu XML. Představte si třeba neověřený a netypové následujícího dokumentu XML.  
   
 ```xml  
 <books>  
@@ -152,9 +152,9 @@ xmlns:xs="http://www.w3.org/2001/XMLSchema">
 </books>  
 ```  
   
- Pokud <xref:System.Xml.XPath.XPathNavigator> je umístěn na `price` element <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> by vlastnost `null`, <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> by vlastnost <xref:System.String>a <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> vlastnost bude řetězec `10.00`.  
+ Pokud <xref:System.Xml.XPath.XPathNavigator> je umístěn na `price` element <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> by být vlastnost `null`, <xref:System.Xml.XPath.XPathNavigator.ValueType%2A> by být vlastnost <xref:System.String>a <xref:System.Xml.XPath.XPathNavigator.TypedValue%2A> vlastnost bude řetězec `10.00`.  
   
- Je však stále možné rozbalte hodnotu jako číselná hodnota pomocí <xref:System.Xml.XPath.XPathItem.ValueAs%2A>, <xref:System.Xml.XPath.XPathNavigator.ValueAsDouble%2A>, <xref:System.Xml.XPath.XPathNavigator.ValueAsInt%2A>, nebo <xref:System.Xml.XPath.XPathNavigator.ValueAsLong%2A> metody a vlastnosti. Následující příklad ilustruje, provádění takových přetypování pomocí <xref:System.Xml.XPath.XPathItem.ValueAs%2A> metoda.  
+ Je však stále možné extrahovat hodnotu jako číselnou hodnotu použití <xref:System.Xml.XPath.XPathItem.ValueAs%2A>, <xref:System.Xml.XPath.XPathNavigator.ValueAsDouble%2A>, <xref:System.Xml.XPath.XPathNavigator.ValueAsInt%2A>, nebo <xref:System.Xml.XPath.XPathNavigator.ValueAsLong%2A> metody a vlastnosti. Následující příklad ukazuje takový typu přetypování pomocí provádí <xref:System.Xml.XPath.XPathItem.ValueAs%2A> metody.  
   
 ```vb  
 Dim document As New XmlDocument()  
@@ -183,14 +183,15 @@ Decimal price = (decimal)navigator.ValueAs(typeof(decimal));
 Console.WriteLine("The price of the book has been dropped 20% from {0:C} to {1:C}", navigator.Value, (price - price * (decimal)0.20));  
 ```  
   
- Další informace o mapování z předdefinovaných typů schématu pro typy CLR najdete v tématu [podpora typu ve třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
+ Další informace o mapování z předdefinovaných typů schématu pro typy CLR naleznete v tématu [podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.XmlDocument>  
- <xref:System.Xml.XPath.XPathDocument>  
- <xref:System.Xml.XPath.XPathNavigator>  
- [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)  
- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [Navigace v sadě uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
- [Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)  
- [Extrahování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.XmlDocument>  
+- <xref:System.Xml.XPath.XPathDocument>  
+- <xref:System.Xml.XPath.XPathNavigator>  
+- [Podpora typu v třídách System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)  
+- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+- [Navigace v sadě uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
+- [Navigace v uzlu oborů názvů a atributů pomocí XPathNavigator](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)  
+- [Extrahování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)

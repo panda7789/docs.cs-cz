@@ -3,11 +3,11 @@ title: Použití modifikátoru Async pro přístup k souborům (C#)
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
 ms.openlocfilehash: bbaeb14d5c17665308932c26a0630f1e9e5dabdf
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43746458"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44132542"
 ---
 # <a name="using-async-for-file-access-c"></a>Použití modifikátoru Async pro přístup k souborům (C#)
 Můžete použít funkci async pro přístup k souborům. Pomocí asynchronní funkce může volat do asynchronní metody bez pomocí zpětných volání a rozdělení kódu mezi více metodách a výrazech lambda. Aby synchronního kódu asynchronní, stačí volání asynchronní metody namísto synchronní metody a do kódu přidat několik klíčových slov.  

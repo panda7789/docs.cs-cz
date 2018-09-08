@@ -13,11 +13,11 @@ helpviewer_keywords:
 - z-order
 ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
 ms.openlocfilehash: d67d9b204c316dce5f3818496d791ed4c1b352f2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43875967"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133214"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>Postupy: Vrstvení objektů ve formulářích Windows
 Při vytváření složitých uživatelského rozhraní nebo pracovat s více formulář dokumentu (MDI interface), budete často vrstvy ovládací prvky a podřízené formuláře, chcete-li vytvořit složitější uživatelská rozhraní (UI). Přesunout a mějte přehled o ovládací prvky a windows v rámci skupiny, manipulaci s jejich pořadí vykreslování. *Pořadí vykreslování* je vizuální rozvržení ovládací prvky ve formuláři podél osy z formuláře (hloubku). V horní části pořadí vykreslování okna se překrývá všech ostatních oken. Všechny ostatní okna překrývat okno v dolní části pořadí vykreslování.  

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-ms.openlocfilehash: 519c22e3c2647e2ae3423688b468e133a3e5eb84
-ms.sourcegitcommit: 7d13f17bf901751d0169f921a02a6b34541a9eca
+ms.openlocfilehash: e50f455ab83b0b057f8ce3c32f874e6856632d70
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/16/2018
-ms.locfileid: "37937111"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133620"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
 Asynchronní vzor založený na událostech poskytuje účinný způsob, jak vystavit asynchronní chování v třídy pomocí známých události a delegovat sémantiku. K implementaci asynchronního vzoru založeného na událostech, budete muset postupovat podle některých zvláštní chování požadavky. Následující části popisují požadavky a pokyny, které byste měli zvážit při implementaci třídy, která používá asynchronní vzor založený na událostech.  
@@ -143,15 +143,16 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 -   Pokud používáte multithreading jakéhokoli druhu, potenciálně zpřístupníte sami velmi závažných a složitých chyb. Před implementací jakéhokoli řešení, které používá multithreadingu naleznete v tématu [spravovaných vláken osvědčené postupy](../../../docs/standard/threading/managed-threading-best-practices.md).  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ComponentModel.AsyncOperation>  
- <xref:System.ComponentModel.AsyncOperationManager>  
- <xref:System.ComponentModel.AsyncCompletedEventArgs>  
- <xref:System.ComponentModel.ProgressChangedEventArgs>  
- <xref:System.ComponentModel.BackgroundWorker>  
- [Implementace asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)  
- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  
- [Rozhodování, kdy implementovat asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)  
- [Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)  
- [Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
- [Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.ComponentModel.AsyncOperation>  
+- <xref:System.ComponentModel.AsyncOperationManager>  
+- <xref:System.ComponentModel.AsyncCompletedEventArgs>  
+- <xref:System.ComponentModel.ProgressChangedEventArgs>  
+- <xref:System.ComponentModel.BackgroundWorker>  
+- [Implementace asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)  
+- [Asynchronní vzor založený na událostech (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)  
+- [Rozhodování, kdy implementovat asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)  
+- [Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)  
+- [Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)  
+- [Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)

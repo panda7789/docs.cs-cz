@@ -3,11 +3,11 @@ title: Čistě funkční transformace XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 97e8e582-eb3d-4756-bbfb-0899eb688ae4
 ms.openlocfilehash: e05c6167973b2342aafd51aad7d9102db9e94ae0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44071983"
+ms.locfileid: "44138770"
 ---
 # <a name="pure-functional-transformations-of-xml-c"></a>Čistě funkční transformace XML (C#)
 Tato část obsahuje kurz funkční transformace XML. Jedná se o vysvětlení hlavní koncepty a jazykové konstrukty, musíte porozumět používání funkčním transformacím a příklady použití funkční transformace pro manipulaci s dokumentu XML. I když tento kurz obsahuje LINQ na příklady kódu XML, všechny základní koncepty platí také pro jiné technologie LINQ.  

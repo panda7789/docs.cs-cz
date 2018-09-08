@@ -2,12 +2,12 @@
 title: Funkce (F#)
 description: 'Informace o funkcích v F # a jak F # podporuje běžné konstrukce funkčního programování.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 7a5b54b7bcfdeee7018dba38016db6182ef95ff0
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 717eba7e69398048d229173e07ccc376797171bb
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43803909"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44140915"
 ---
 # <a name="functions"></a>Funkce
 
@@ -112,7 +112,7 @@ Další argument by pak poskytnete podle potřeby pro různé délky kanálu pro
 
 ## <a name="recursive-functions"></a>Rekurzivní funkce
 
-*Rekurzivní funkce* jsou funkce, které volání sebe sama. Vyžadují, abyste určili **rec** následující klíčové slovo **nechat** – klíčové slovo. Volání rekurzivní funkce v rámci těla funkce stejně, jako by volání jakékoli volání funkce. Následující rekurzivní funkce vypočítá *n*th Fibonacciho číslo. Pořadí Fibonacciho číslo bylo zjištěno od antiquity a je pořadí, ve kterém je každý po sobě jdoucí čísla součtu předchozích dvou čísel v sekvenci.
+*Rekurzivní funkce* jsou funkce, které volání sebe sama. Vyžadují, abyste určili **rec** následující klíčové slovo **nechat** – klíčové slovo. Volání rekurzivní funkce v rámci těla funkce stejně, jako by volání jakékoli volání funkce. Následující rekurzivní funkce vypočítá *n*<sup>th</sup> Fibonacciho číslo. Pořadí Fibonacciho číslo bylo zjištěno od antiquity a je pořadí, ve kterém je každý po sobě jdoucí čísla součtu předchozích dvou čísel v sekvenci.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 

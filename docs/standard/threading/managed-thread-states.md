@@ -8,11 +8,11 @@ ms.assetid: 63890d5e-6025-4a7c-aaf0-d8bfd54b455f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a55409cd2c3bed2bc09db10622de1cceab934112
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43875691"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44135351"
 ---
 # <a name="managed-thread-states"></a>Stavy spravovaných vláken
 Vlastnost <xref:System.Threading.Thread.ThreadState%2A?displayProperty=nameWithType> poskytuje bitová maska, která označuje aktuální stav vlákna. Vlákno je vždy alespoň jedním z možných stavů v <xref:System.Threading.ThreadState> výčtu a může být ve více státech ve stejnou dobu.  

@@ -3,11 +3,11 @@ title: '&lt;workflowInstanceQueries&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: b0852f77-16e4-4d55-8eb7-a19feb0e8fc4
 ms.openlocfilehash: dfa75a7e4729244ba5887e6666c0fdfe840e9faf
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891243"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44140850"
 ---
 # <a name="ltworkflowinstancequeriesgt-of-wcf"></a>&lt;workflowInstanceQueries&gt; služby WCF
 Představuje kolekci elementů konfigurace, které sledovat změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.  

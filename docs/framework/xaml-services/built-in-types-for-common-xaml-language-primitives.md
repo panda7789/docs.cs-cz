@@ -16,11 +16,11 @@ helpviewer_keywords:
 - x:Int32 [XAML Services]
 ms.assetid: 11de2f08-5b95-4989-b5ec-5178eb968184
 ms.openlocfilehash: f6225dfcc02b90da58ccafd5c70726b6f80f29d4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43868138"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129467"
 ---
 # <a name="built-in-types-for-common-xaml-language-primitives"></a>Předdefinované typy obecných primitiv jazyka XAML
 XAML 2009 zavádí podporu na úrovni jazyka XAML pro několik typů dat, které jsou často používají primitivy v modulu common language runtime (CLR) a v jiných programovacích jazycích. XAML 2009 dodává podporu těchto primitivních hodnot: `x:Object`, `x:Boolean`, `x:Char`, `x:String`, `x:Decimal`, `x:Single`, `x:Double`, `x:Int16`, `x:Int32`, `x:Int64`, `x:TimeSpan`, `x:Uri`, `x:Byte`, a `x:Array`  

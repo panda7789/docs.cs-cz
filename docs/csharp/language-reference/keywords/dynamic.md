@@ -7,12 +7,12 @@ helpviewer_keywords:
 - dynamic [C#]
 - dynamic keyword [C#]
 ms.assetid: 9e797102-cc83-4964-bf58-afe4f54d16bc
-ms.openlocfilehash: bddcb8890ef7312047d05794ccef0b638de4ed78
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 840ecd6ab929b00e1be96c23eb06ccf362380f8e
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43858288"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44140356"
 ---
 # <a name="dynamic-c-reference"></a>dynamic (Referenční dokumentace jazyka C#)
 
@@ -72,5 +72,5 @@ Další informace a příklady najdete v tématu [použití typu dynamic](../../
 - [is](../../../csharp/language-reference/keywords/is.md)  
 - [as](../../../csharp/language-reference/keywords/as.md)  
 - [typeof](../../../csharp/language-reference/keywords/typeof.md)  
-- [Postupy: Bezpečné přetypování pomocí operátorů as a is](../../../csharp/programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md)  
+- [Postupy: bezpečné přetypování pomocí porovnávání vzorů, jako například operátorů a is](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)  
 - [Návod: Vytváření a používání dynamických objektů](../../../csharp/programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)

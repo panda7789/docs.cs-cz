@@ -12,11 +12,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: 31dacad6b2b7c891ff8c32151f9bf02e8639375f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44071436"
+ms.locfileid: "44133581"
 ---
 # <a name="ui-automation-text-pattern"></a>Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní
 > [!NOTE]

@@ -15,11 +15,11 @@ ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ddf8f52ab98d0188235d8c9f97293adced4bfe90
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44067961"
+ms.locfileid: "44135546"
 ---
 # <a name="application-domains"></a>Aplikační domény
 Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolaci aplikací. Tato izolace je nezbytná k zajištění, že kód spuštěný v jedné aplikaci nemohl nepříznivě ovlivnit jiné nesouvisející aplikace.  

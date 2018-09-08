@@ -8,11 +8,11 @@ ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 7f46ea28fe0827e7919b62550492d66a51a125fc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43670688"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131114"
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>Zabezpečení zpráv u klienta Windows bez vyjednávání pověření
 Následující scénář ukazuje klienta Windows Communication Foundation (WCF) a služby zabezpečené pomocí protokolu Kerberos.  

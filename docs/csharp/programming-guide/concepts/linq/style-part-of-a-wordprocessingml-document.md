@@ -3,11 +3,11 @@ title: Část stylu Dokument1 WordprocessingML
 ms.date: 07/20/2015
 ms.assetid: 5458bccf-3898-4661-904b-7d280c9239a9
 ms.openlocfilehash: 96ed7445379d9a8ca64250ef4d923786555a3882
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43866582"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44135637"
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a>Část stylu dokumentu WordprocessingML
 Toto téma ukazuje příklad část stylu dokumentu Office Open XML WordprocessingML.  

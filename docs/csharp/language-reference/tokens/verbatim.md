@@ -11,11 +11,11 @@ ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7dbab5a743b4f9fed759210e8410cd6e3459efac
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43750019"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44135936"
 ---
 # <a name="-c-reference"></a>@ (Referenční dokumentace jazyka C#)
 

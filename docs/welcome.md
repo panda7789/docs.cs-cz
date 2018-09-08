@@ -1,47 +1,50 @@
 ---
-title: Vítejte v rozhraní .NET
+title: Vítejte v .NET
 description: Začínáme s .NET řadu technologií.
 author: mairaw
 ms.author: mairaw
-ms.date: 04/30/2018
+ms.date: 09/07/2018
 ms.topic: article
 ms.prod: dotnet
 ms.devlang: dotnet
 ms.custom: updateeachrelease
-ms.openlocfilehash: ab6dcb8ccc52211d88e570b1b6f135e43ab9d5fc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 117b3cb4fc780da3c7624c78c5c242fa6ed9126f
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33656079"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128070"
 ---
-# <a name="welcome-to-net"></a>Vítejte v rozhraní .NET
+# <a name="welcome-to-net"></a>Vítejte v .NET
 
-V tématu [Začínáme s .NET Core](core/get-started.md) se dozvíte, jak vytvářet aplikace pro .NET Core.
+Zobrazit [Začínáme s .NET Core](core/get-started.md) se naučíte, jak vytvářet aplikace s .NET Core.
 
-Vytvořte mnoho typů aplikací pomocí rozhraní .NET, jako je například cloud, IoT a hry pomocí bezplatných nástrojů napříč platformami. Aplikace můžete spustit na Android, iOS, Linux, systému macOS a Windows. Nasazení aplikací na servery nebo klienty a publikování na obchody s aplikacemi pro nasazení na mobilních zařízeních. Rozhraní .NET je přístupný pro studenty a hobbyists a všechny jsou Vítá vás účastnit komunity živá mezinárodní vývojářů a přímé příspěvky k mnoha technologie .NET.
+Vytvoření mnoha typech aplikací pomocí .NET, jako je cloud, IoT a hry pomocí bezplatných nástrojů pro různé platformy. Vaše aplikace můžou běžet na Android, iOS, Linux, macOS a Windows. Nasazení aplikací na serverech nebo stolních počítačů a publikování do obchodu s aplikacemi pro nasazení na mobilních zařízeních. .NET je přístupná pro studenty a nadšence a všechny jsou Vítá vás účast v komunitě živá mezinárodní pro vývojáře a přispívání s přímým přístupem do mnohé z technologií .NET.
 
 ## <a name="news"></a>Novinky
 
-- [2018 Microsoft sestavení](https://channel9.msdn.com/Events/Build/2018)
-- [Uvedení 4.7.2 rozhraní .NET Framework](https://blogs.msdn.microsoft.com/dotnet/2018/04/30/announcing-the-net-framework-4-7-2/)
-- [Uvedení .NET Core 2.1 Preview 2](https://blogs.msdn.microsoft.com/dotnet/2018/04/11/announcing-net-core-2-1-preview-2/)
-- [ASP.NET Core 2.1.0-preview2 nyní k dispozici](https://blogs.msdn.microsoft.com/webdev/2018/04/12/asp-net-core-2-1-0-preview2-now-available/)
-- [Uvedení Entity Framework Core 2.1 Preview 2](https://blogs.msdn.microsoft.com/dotnet/2018/04/11/announcing-entity-framework-core-2-1-preview-2/)
-- [Visual Studio 2017 verze 15,6 operací, Visual Studio pro Mac verze 7.4 vydání](https://blogs.msdn.microsoft.com/visualstudio/2018/03/06/visual-studio-2017-version-15-6-visual-studio-for-mac-version-7-4-released/)
-- [Vítá vás C# 7.2 a rozpětí](https://blogs.msdn.microsoft.com/dotnet/2017/11/15/welcome-to-c-7-2-and-span/)
-- [.NET core 2.0 vydané!](https://channel9.msdn.com/Blogs/dotnet/NET-Core-20-Released)
-- [Uvedení .NET standardní 2.0](https://blogs.msdn.microsoft.com/dotnet/2017/08/14/announcing-net-standard-2-0/)
-- [Nové jazyka Visual Basic: .NET standardní knihovny tříd a dotnet rozhraní příkazového řádku!](https://blogs.msdn.microsoft.com/vbteam/2017/08/14/new-for-visual-basic-net-standard-class-libraries-and-the-dotnet-cli/)
-- [Představení Standard rozhraní .NET](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/)
-- [Visual Studio pro Mac: obecně nyní k dispozici](https://blogs.msdn.microsoft.com/visualstudio/2017/05/10/visual-studio-for-mac-now-generally-available/)
-- [Uvedení Visual Studio 2017 obecné dostupnosti](https://blogs.msdn.microsoft.com/visualstudio/2017/03/07/announcing-visual-studio-2017-general-availability-and-more/)
-- [Co je nového pro .NET Core a Visual Studio 2017 (video)](https://channel9.msdn.com/events/Visual-Studio/Visual-Studio-2017-Launch/T108)
-- [Uvedení F # 4.1 a nástroje Visual F # pro Visual Studio 2017](https://blogs.msdn.microsoft.com/dotnet/2017/03/07/announcing-f-4-1-and-the-visual-f-tools-for-visual-studio-2017-2/)
+Novinky o .NET najdete v těchto blozích:
+
+- [Blog k .NET](https://blogs.msdn.microsoft.com/dotnet/)
+- [Blog technologie ASP.NET](https://blogs.msdn.microsoft.com/webdev/)
+- [Blog Visual Studio](https://blogs.msdn.microsoft.com/visualstudio/)
+- [Tým jazyka Visual Basic](https://blogs.msdn.microsoft.com/vbteam/)
+
+Postupujte také nejnovější události .NET:
+
+- [Microsoft Build 2018](https://channel9.msdn.com/Events/Build/2018)
+- [.NET Conf](https://www.dotnetconf.net/)
+
+Informace o nejnovějších funkcích přidány do implementace .NET a podporované jazyky, naleznete v následujících článcích:
+
+- [Co je nového v .NET Core](core/whats-new/index.md)
+- [Co je nového v rozhraní .NET Framework](framework/whats-new/index.md)
+- [Co je nového v jazyce C#](csharp/whats-new/index.md)
+- [Co je nového v jazyce Visual Basic](visual-basic/getting-started/whats-new.md)
 
 ## <a name="documentation"></a>Dokumentace
 
-Tato dokumentace popisuje spektra .NET napříč platformy a jazyky.  Můžete začít s .NET a její jazyků v některém z následujících částí:
+Tato dokumentace popisuje škálu .NET napříč platformami a jazyky.  Můžete začít s využitím .NET a jeho jazyků v některém z následujících částí:
 
 - [Průvodce technologií .NET](standard/index.md)
 - [Průvodce platformou .NET Core](core/index.md)
@@ -50,16 +53,16 @@ Tato dokumentace popisuje spektra .NET napříč platformy a jazyky.  Můžete z
 - [Průvodce jazykem F#](fsharp/index.md)
 - [Průvodce jazykem Visual Basic](visual-basic/index.md)
 
-Kromě toho můžete procházet [referenční dokumentace rozhraní API .NET](/dotnet/api).
+Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).
 
 ## <a name="open-source"></a>Open source
 
-Tato dokumentace je zcela [s otevřeným zdrojem](https://github.com/dotnet/docs). Můžete přispívat žádným způsobem, který chcete ve vytváření problémy se píšou dokumentaci.  Kromě toho hodně .NET samotné je také otevřít zdroj:
+Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs). Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci.  Velká část .NET samotného je navíc také otevřít zdroj:
 
-- [.NET core Domovská](https://github.com/dotnet/core)
-- [Knihovny .NET](https://github.com/dotnet/corefx)
+- [Domovská stránka .NET core](https://github.com/dotnet/core)
+- [Knihovny pro .NET](https://github.com/dotnet/corefx)
 - [.NET core Runtime](https://github.com/dotnet/coreclr)
-- [Platforma kompilátoru Roslyn (C# a Visual Basic) a nástroje IDE](https://github.com/dotnet/roslyn)
-- [Kompilátor jazyka F # a nástroje IDE](https://github.com/microsoft/visualfsharp)
+- [Platforma kompilátoru Roslyn (C# a Visual Basic) a prostředí IDE nástroje](https://github.com/dotnet/roslyn)
+- [Kompilátor F # a nástroje pro prostředí IDE](https://github.com/microsoft/visualfsharp)
 
-Toho se můžete zapojit jiní lidé, kteří jsou již v aktivní [.NET komunity](https://www.microsoft.com/net/community) zjistit, co je nového nebo požádejte o pomoc.
+Ostatní uživatele, kteří jsou již v aktivní se můžete zapojit [.NET komunity](https://www.microsoft.com/net/community) zjistit, co je nového, nebo požádat o pomoc.

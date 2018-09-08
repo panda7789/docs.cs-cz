@@ -15,12 +15,12 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 4691b796-9200-471a-89c3-ba4c7cc78c03
-ms.openlocfilehash: 435bc1c04bfd2f9b8a94ff8151369b5ef2fae6f8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 81c7f21e7e331b60d41330c8239893332dbea5a1
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777987"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44135884"
 ---
 # <a name="walkthrough-implementing-a-form-that-uses-a-background-operation"></a>Návod: Implementace formuláře, který používá operaci na pozadí
 Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete uživatelského rozhraní (UI) přestane reagovat nebo "zablokování", můžete použít <xref:System.ComponentModel.BackgroundWorker> třídy k provedení operace v jiném vlákně.  
@@ -163,11 +163,12 @@ Pokud máte operace, která bude trvat dlouhou dobu pro dokončení, a nechcete 
     > [!CAUTION]
     >  Pokud používáte multithreading jakéhokoli druhu, potenciálně zpřístupníte sami velmi závažných a složitých chyb. Poraďte [spravovaných vláken osvědčené postupy](../../../../docs/standard/threading/managed-threading-best-practices.md) před implementací jakéhokoli řešení, které používá multithreading.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ComponentModel.BackgroundWorker>  
- [Doporučené postupy dělení na spravovaná vlákna](../../../../docs/standard/threading/managed-threading-best-practices.md)  
- [Multithreading u komponent](https://msdn.microsoft.com/library/2fc31e68-fb71-4544-b654-0ce720478779)  
- [NENÍ v sestavení: Multithreading v jazyce Visual Basic](https://msdn.microsoft.com/library/c731a50c-09c1-4468-9646-54c86b75d269)  
- [Postupy: Implementace formuláře, který používá operaci na pozadí](../../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)  
- [Návod: Spuštění operace na pozadí](../../../../docs/framework/winforms/controls/walkthrough-running-an-operation-in-the-background.md)  
- [Komponenta BackgroundWorker](../../../../docs/framework/winforms/controls/backgroundworker-component.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.ComponentModel.BackgroundWorker?displayProperty=nameWithType>
+- [Dělení na spravovaná vlákna](../../../../docs/standard/threading/index.md)
+- [Doporučené postupy dělení na spravovaná vlákna](../../../../docs/standard/threading/managed-threading-best-practices.md)
+- [Přehled asynchronních vzorů založených na událostech](../../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [Postupy: Implementace formuláře, který používá operaci na pozadí](how-to-implement-a-form-that-uses-a-background-operation.md)  
+- [Návod: Spuštění operace na pozadí](walkthrough-running-an-operation-in-the-background.md)
+- [Komponenta BackgroundWorker](backgroundworker-component.md)

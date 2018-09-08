@@ -11,11 +11,11 @@ ms.assetid: 1167cfe6-c8aa-4096-94ba-c66c3a4edf4c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9fd67d5f0cb5af33dc2b79f86148557a0dca6ec4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44036317"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44140473"
 ---
 # <a name="how-to-combine-parallel-and-sequential-linq-queries"></a>Postupy: Kombinování paralelních a sekvenčních LINQ dotazů
 Tento příklad ukazuje způsob použití <xref:System.Linq.ParallelEnumerable.AsSequential%2A> metoda k vynucení PLINQ postupně zpracovat všechny následující operátory v dotazu. I když je většinou horší než paralelní zpracování sekvenčních, někdy je potřeba správné výsledky.  

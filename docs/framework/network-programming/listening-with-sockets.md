@@ -19,11 +19,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 640caf57638acae9bbe39d3f1039bc08c036785f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879087"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44139056"
 ---
 # <a name="listening-with-sockets"></a>Naslouchání pomocí soketů
 Naslouchací proces nebo server sockets otevření portu v síti a potom počkejte klienta pro připojení k tomuto portu. I když existují jiné rodiny adres sítě a protokoly, tento příklad ukazuje, jak vytvořit vzdálené služby pro sítě TCP/IP.  

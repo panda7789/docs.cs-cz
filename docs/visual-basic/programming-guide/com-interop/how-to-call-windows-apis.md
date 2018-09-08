@@ -7,12 +7,12 @@ helpviewer_keywords:
 - API calls [Visual Basic], platform invoke
 - calls [Visual Basic], stored procedures
 ms.assetid: 27d75f0a-54ab-4ee1-b91d-43513a19b12d
-ms.openlocfilehash: 739516e86917ac24a81cd6387af5576c512ecbc2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 081f4242ef5883a8b25b8819ba3aff835b1e6ac7
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515914"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129692"
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>Postupy: Volání rozhraní API systému Windows (Visual Basic)
 Tento příklad definuje a volá `MessageBox` funkce v user32.dll a poté předá řetězec k němu.  
@@ -34,10 +34,11 @@ Tento příklad definuje a volá `MessageBox` funkce v user32.dll a poté před�
   
 -   Nadřazený typ byl dříve vytvořen pomocí `CreateType`. (<xref:System.InvalidOperationException>)  
   
-## <a name="see-also"></a>Viz také  
- [Bližší pohled na vyvolání platformy](https://msdn.microsoft.com/library/ba9dd55b-2eaa-45cd-8afd-75cb8d64d243)  
- [Příklady vyvolání platformy](../../../framework/interop/platform-invoke-examples.md)  
- [Používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md)  
- [Definování metody pomocí reflexe generování](https://msdn.microsoft.com/library/84fd3bf6-628f-41aa-83d9-b990cf926e81)  
- [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Bližší pohled na vyvolání platformy](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)  
+- [Příklady vyvolání platformy](../../../framework/interop/platform-invoke-examples.md)  
+- [Používání nespravovaných funkcí DLL](../../../framework/interop/consuming-unmanaged-dll-functions.md)  
+- [Definování metody pomocí reflexe generování](https://msdn.microsoft.com/library/84fd3bf6-628f-41aa-83d9-b990cf926e81)  
+- [Návod: Volání rozhraní API systému Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
+- [Zprostředkovatel komunikace s objekty COM](../../../visual-basic/programming-guide/com-interop/index.md)

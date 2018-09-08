@@ -19,11 +19,11 @@ ms.assetid: 606698b0-cb1a-42ca-beeb-0bea34205d20
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b043c5a2173cff9eb82497f6d4ee8b7c0aa3f14c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44061023"
+ms.locfileid: "44140336"
 ---
 # <a name="how-to-use-data-protection"></a>Postupy: Použití ochrany dat
 Rozhraní .NET Framework poskytuje přístup k data protection API (DPAPI), který umožňuje šifrování dat s využitím informací z aktuálního uživatelského účtu nebo počítači.  Pokud použijete rozhraní DPAPI, zmírnění náročný problém explicitně vygenerováním a uložením kryptografický klíč.  

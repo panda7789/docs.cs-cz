@@ -5,11 +5,11 @@ ms.assetid: 001d11a9-7439-498c-b09d-fca20eaf8cd3
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: c525344b18322cef05f64e46c75cdab7b271561a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43884741"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128008"
 ---
 # <a name="ltsecuritygt-of-ltnetmsmqbindinggt"></a>&lt;security&gt; – &lt;netMsmqBinding&gt;
 Definuje nastavení zabezpečení pro vazby služby MSMQ. Určuje, zda je povolen přenos nebo SOAP zabezpečení, a pokud ano, jaké úrovně režimu a ochranu ověřování se používají.  

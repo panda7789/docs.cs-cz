@@ -5,11 +5,11 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
 ms.openlocfilehash: e2bea974207d3098ed67b69ed16a72a03c44cd8b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801346"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44139810"
 ---
 # <a name="dotnet-tool-list"></a>seznam nástrojů DotNet
 

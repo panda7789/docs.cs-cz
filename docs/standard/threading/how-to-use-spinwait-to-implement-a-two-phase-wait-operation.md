@@ -11,11 +11,11 @@ ms.assetid: b2ac4e4a-051a-4f65-b4b9-f8e103aff195
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dcb2fbf5e0a310156fdc6fac5fe736692e8ec133
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44067510"
+ms.locfileid: "44135338"
 ---
 # <a name="how-to-use-spinwait-to-implement-a-two-phase-wait-operation"></a>Postupy: Použití objektu SpinWait pro implementaci dvoufázové operace čekání
 Následující příklad ukazuje způsob použití <xref:System.Threading.SpinWait?displayProperty=nameWithType> objektu pro implementaci dvoufázové operace čekání. V první fázi synchronizační objekt `Latch`, otáčí pro několik cyklů při kontrole, jestli má zámek k dispozici. Ve druhé fázi, pokud zámek přestane být k dispozici pak bude `Wait` metoda vrátí bez použití <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> provádět jeho čekání; v opačném případě `Wait` provádí čekání.  

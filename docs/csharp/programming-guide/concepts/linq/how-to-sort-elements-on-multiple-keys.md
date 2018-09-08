@@ -3,11 +3,11 @@ title: 'Postupy: řazení elementů u více klíčů (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
 ms.openlocfilehash: 0e57a423e473eb6c023d49ac2b52b577c1a30e21
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43742095"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128894"
 ---
 # <a name="how-to-sort-elements-on-multiple-keys-c"></a>Postupy: řazení elementů u více klíčů (C#)
 Toto téma ukazuje, jak se budou řadit několik klíčů.  

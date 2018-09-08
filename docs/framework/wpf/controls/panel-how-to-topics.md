@@ -8,11 +8,11 @@ helpviewer_keywords:
 - controls [WPF], Panel
 ms.assetid: 28d8faf2-490c-4e17-a447-df25a66f6679
 ms.openlocfilehash: d8ead1a799f1bd7524d171beb3e262baeb4b5fbe
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44039540"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44134776"
 ---
 # <a name="panel-how-to-topics"></a>Témata panelu postupů
 Témata v této části popisují způsob použití <xref:System.Windows.Controls.Panel> elementu a související [!INCLUDE[TLA#tla_api#plural](../../../../includes/tlasharptla-apisharpplural-md.md)].  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
 ms.openlocfilehash: 549867cac99784ce885b8fce8a1638c40ad88cec
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877502"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130835"
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>Postupy: Definování abstraktních vlastností (Průvodce programováním v C#)
 Následující příklad ukazuje, jak definovat [abstraktní](../../../csharp/language-reference/keywords/abstract.md) vlastnosti. Deklarace abstraktní vlastnost neposkytuje implementaci pro přistupující objekty vlastnosti – deklaruje, že podporuje vlastnosti třídy, ale ponechá implementace přistupujícího objektu odvozené třídy. Následující příklad ukazuje, jak implementovat abstraktní vlastnosti zděděné ze základní třídy.  

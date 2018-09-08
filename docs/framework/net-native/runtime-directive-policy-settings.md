@@ -5,11 +5,11 @@ ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ac5d80664bbca8cf950eb2e6f37badc485c398d2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44046889"
+ms.locfileid: "44140564"
 ---
 # <a name="runtime-directive-policy-settings"></a>Nastavení zásad direktivy modulu runtime
 > [!NOTE]

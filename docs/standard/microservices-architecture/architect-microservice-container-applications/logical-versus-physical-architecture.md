@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
 ms.openlocfilehash: bb5f0daf0bcf824d72bb104914de03532bd3f9f7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43859459"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44136380"
 ---
 # <a name="logical-architecture-versus-physical-architecture"></a>Logická architektura versus fyzická architektura
 

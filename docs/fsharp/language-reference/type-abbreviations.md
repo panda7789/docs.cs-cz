@@ -3,11 +3,11 @@ title: Zkratky typů (F#)
 description: 'Další informace o F # zkratky typů poskytnout smysluplnějšího názvu typu Pokud chcete, aby byl kód lépe čitelný.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 259cd6c84e22fc7c98e08255d3e0ded5b87af352
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44065432"
+ms.locfileid: "44132893"
 ---
 # <a name="type-abbreviations"></a>Zkratky typů
 

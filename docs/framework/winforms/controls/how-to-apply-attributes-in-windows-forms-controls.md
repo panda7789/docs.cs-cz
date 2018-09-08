@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Windows Forms controls, applying attributes
 ms.assetid: af0a3f7f-155b-4ba1-83c4-9cf721331a06
 ms.openlocfilehash: 1ab54b0c6828a0648fecfc293b6a7143b012ad6a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43869789"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44138562"
 ---
 # <a name="how-to-apply-attributes-in-windows-forms-controls"></a>Postupy: Použití atributů v ovládacích prvcích Windows Forms
 K vývoji komponent a ovládacích prvků, které správně komunikují s prostředím návrhu a za běhu se správně spustit, musíte správně používat atributy třídy a členy.  

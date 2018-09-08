@@ -5,11 +5,11 @@ author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
 ms.openlocfilehash: efeb12eb43539b0a85168b1162e0f8b94ad67e90
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43257419"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44140785"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# s MSTest a .NET Core
 

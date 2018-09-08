@@ -3,11 +3,11 @@ title: Odebrání elementů, atributů a uzlů ze stromu XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 07dd06d6-1117-4077-bf98-9120cf51176e
 ms.openlocfilehash: 9ce63ce6a4ef75dedc788efca11e8dd2bdb471eb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43736361"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44132493"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-c"></a>Odebrání elementů, atributů a uzlů ze stromu XML (C#)
 Můžete upravit stromu XML, odebrání elementů, atributů a dalších typů uzlů.  

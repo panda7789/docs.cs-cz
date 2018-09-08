@@ -3,11 +3,11 @@ title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
 ms.openlocfilehash: e4cd5dfd6f03370a408dc6f8fb39c983db3d43df
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44061155"
+ms.locfileid: "44128664"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi. Tato ukázka používá vazbu msmqIntegrationBinding. Služba není v tomto případě v místním prostředí konzolovou aplikaci, aby bylo možné sledovat, že služba, která bude přijímat zprávy zařazené do fronty. TIS.  

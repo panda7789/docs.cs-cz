@@ -14,11 +14,11 @@ ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 016f19c7141ebaf9b5c1f03adc263b689489119b
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43874206"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128219"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Postupy: Vytvoření objektu WindowsPrincipal
 Existují dva způsoby, jak vytvořit <xref:System.Security.Principal.WindowsPrincipal> objekt, v závislosti na tom, zda kód nutné opakovaně provádět ověřování na základě rolí nebo musí provést pouze jednou.  

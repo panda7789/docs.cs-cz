@@ -11,11 +11,11 @@ ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0ad8b2dd3dbf2a7a75c98a3115d4351dfea4e1a0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891295"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44135065"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstrakce (abstraktní typy a rozhraní)
 Abstrakce je typ, který popisuje kontrakt ale neposkytuje úplnou implementaci kontraktu. Abstrakce jsou obvykle implementovány jako abstraktní třídy nebo rozhraní a začne s kvalitně definované sady referenční dokumentaci popisující požadovaný sémantiku typy implementace kontraktu. Některé z vašich nejdůležitějších abstrakce v rozhraní .NET Framework zahrnují <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>, a <xref:System.Object>.  

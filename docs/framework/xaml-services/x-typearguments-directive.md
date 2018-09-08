@@ -11,11 +11,11 @@ helpviewer_keywords:
 - XAML [XAML Services], x:TypeArguments attribute
 ms.assetid: 86561058-d393-4a44-b5c3-993a4513ea74
 ms.openlocfilehash: 28eda94914125f2c5849a471671c8e283475c82c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44066737"
+ms.locfileid: "44129417"
 ---
 # <a name="xtypearguments-directive"></a>x:TypeArguments – direktiva
 Předá omezení argumentů obecného konstruktoru obecného typu.  

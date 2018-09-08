@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID746
 ms.assetid: 398ff5eb-b580-456f-8f24-b7a8318e1193
-ms.openlocfilehash: 3216ce866cae9a7f59ecfca23d92d82fdb8bc117
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 08152ce5cd8c6960f7d91b46b2fb9f6ef9475f7c
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43803792"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129375"
 ---
 # <a name="replacements-too-long"></a>Příliš dlouhá nahrazení
 Zadali jste můžou nahradit aktuální soubor, který přesahuje povolenou délku.  
@@ -18,5 +18,6 @@ Zadali jste můžou nahradit aktuální soubor, který přesahuje povolenou dél
   
 1.  V součásti dokumentaci pro omezení délky.  
   
-## <a name="see-also"></a>Viz také  
- [Postupy: interaktivní hledání](https://msdn.microsoft.com/library/e9fdbfab-bd59-401a-92d3-7ce1652b243c)
+## <a name="see-also"></a>Viz také:
+
+- [Vyhledání a nahrazení textu](/visualstudio/ide/finding-and-replacing-text)

@@ -2,29 +2,29 @@
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: b633e3cf9a499cd5f364692cd0461aed640fe54d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: fa1bfcc5cfaf4a3ba1f5116be7b3f1851ce293af
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43868099"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129718"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 Pokud zahrnete asynchronní kód ve vaší aplikaci, by měl zvážit a případně zabránit vícenásobnému přístupu, který se vztahuje k nutnosti opětovného zadávání asynchronní operace ještě před dokončením. Pokud neidentifikujete a nemanipulujete vícenásobnému přístupu, může to způsobit neočekávané výsledky.  
   
  **V tomto tématu**  
   
--   [Rozpoznávání vícenásobného přístupu](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Rozpoznávání vícenásobného přístupu](#BKMK_RecognizingReentrancy)  
   
--   [Podpora vícenásobného přístupu](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Podpora vícenásobného přístupu](#BKMK_HandlingReentrancy)  
   
-    -   [Zakázání tlačítka Start](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+    -   [Zakázání tlačítka Start](#BKMK_DisableTheStartButton)  
   
-    -   [Nerušte a nerestartujte operace](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+    -   [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)  
   
-    -   [Spustit více operací a zařazení výstupu do fronty](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+    -   [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
   
--   [Prostudování a spuštění ukázkové aplikace](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample)  
   
 > [!NOTE]
 >  Chcete-li spustit příklad, musíte mít Visual Studio 2012 nebo novější a rozhraní .NET Framework 4.5 nebo novější nainstalován v počítači.  
@@ -84,20 +84,20 @@ TOTAL bytes returned:  890591
 TOTAL bytes returned:  890591  
 ```  
   
- Můžete zkontrolovat kód, který vytváří tento výstup, přechodem na konci tohoto tématu. Můžete experimentovat s kódem stažením řešení do místního počítače a následným spuštěním projektu WebsiteDownload nebo pomocí kódu na konci tohoto tématu k vytvoření vlastního projektu pro další informace a pokyny naleznete v tématu [ Prostudování a spuštění ukázkové aplikace](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645).  
+ Můžete zkontrolovat kód, který vytváří tento výstup, přechodem na konci tohoto tématu. Můžete experimentovat s kódem stažením řešení do místního počítače a následným spuštěním projektu WebsiteDownload nebo pomocí kódu na konci tohoto tématu k vytvoření vlastního projektu pro další informace a pokyny naleznete v tématu [ Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample).  
   
 ##  <a name="BKMK_HandlingReentrancy"></a> Podpora vícenásobného přístupu  
  Můžete zpracovat vícenásobnost různými způsoby v závislosti na tom, co chcete, aby vaše aplikace provést. Toto téma představuje následující příklady:  
   
--   [Zakázání tlačítka Start](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Zakázání tlačítka Start](#BKMK_DisableTheStartButton)  
   
      Zakažte **Start** tlačítko během operace tak, aby uživatel nemohl přerušit ho.  
   
--   [Nerušte a nerestartujte operace](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Nerušte a nerestartujte operace](#BKMK_CancelAndRestart)  
   
      Zrušit jakoukoli operaci, která je stále spuštěna, když uživatel klikne **Start** tlačítko znovu, a potom pokračujte umožňují nedávno požadované operace.  
   
--   [Spustit více operací a zařazení výstupu do fronty](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645)  
+-   [Spustit více operací a zařazení výstupu do fronty](#BKMK_RunMultipleOperations)  
   
      Povolit, že všechny požadované operace běžely asynchronně, ale koordinovat zobrazení výstupu tak, aby se výsledky z každé operace zobrazovaly společně a v pořadí.  
   
@@ -134,7 +134,7 @@ End Sub
   
  Další informace o zrušení naleznete v tématu [asynchronní aplikace Fine-Tuning (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).  
   
- Nastavit tento scénář, proveďte následující změny základního kódu, která je součástí [Prostudování a spuštění ukázkové aplikace](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645). Také můžete stáhnout hotovou aplikaci z [asynchronní vzorky: Vícenásobnost v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název tohoto projektu je CancelAndRestart.  
+ Nastavit tento scénář, proveďte následující změny základního kódu, která je součástí [Prostudování a spuštění ukázkové aplikace](#BKMD_SettingUpTheExample). Také můžete stáhnout hotovou aplikaci z [asynchronní vzorky: Vícenásobnost v desktopových aplikacích .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Název tohoto projektu je CancelAndRestart.  
   
 1.  Deklarace <xref:System.Threading.CancellationTokenSource> proměnnou, `cts`, která je v oboru pro všechny metody.  
   
@@ -285,11 +285,11 @@ TOTAL bytes returned:  890591
  Chcete-li odstranit dílčí seznamy, zrušte komentář u prvního řádku kódu v `StartButton_Click` vymazání textového pole pokaždé, když uživatel znovu spustí operaci.  
   
 ###  <a name="BKMK_RunMultipleOperations"></a> Spustit více operací a zařazení výstupu do fronty  
- Tento třetí příklad je v nejkomplikovanější v tom, že aplikace spustí jinou asynchronní operaci pokaždé, když uživatel klikne **Start** tlačítko a všechny operace běží až do dokončení. Všechny požadované operace stahují webové stránky ze seznamu asynchronně, ale výstup z operací je uveden postupně. To znamená, že skutečná aktivita stahování je prokládána, jak poukazuje výstup v [rozpoznávání vícenásobného přístupu](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) zobrazí, ale seznam výsledků pro každou skupinu je předkládán samostatně.  
+ Tento třetí příklad je v nejkomplikovanější v tom, že aplikace spustí jinou asynchronní operaci pokaždé, když uživatel klikne **Start** tlačítko a všechny operace běží až do dokončení. Všechny požadované operace stahují webové stránky ze seznamu asynchronně, ale výstup z operací je uveden postupně. To znamená, že skutečná aktivita stahování je prokládána, jak poukazuje výstup v [rozpoznávání vícenásobného přístupu](#BKMK_RecognizingReentrancy) zobrazí, ale seznam výsledků pro každou skupinu je předkládán samostatně.  
   
  Operace sdílí globální <xref:System.Threading.Tasks.Task>, `pendingWork`, který slouží jako správce pro zpracování zobrazení.  
   
- Tento příklad lze spustit zadáním nebo vložením změn do kódu v [aplikaci](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), nebo můžete postupovat podle pokynů v [si stáhnou aplikaci](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) ke stažení vzorku a spuštění projektu QueueResults.  
+ Tento příklad lze spustit zadáním nebo vložením změn do kódu v [aplikaci](#BKMK_BuildingTheApp), nebo můžete postupovat podle pokynů v [si stáhnou aplikaci](#BKMK_DownloadingTheApp) ke stažení vzorku a spuštění projektu QueueResults.  
   
  Následující výstup zobrazuje výsledek, když uživatel klikne **Start** tlačítko pouze jednou. Označení písmenem A označuje, že výsledek pochází z prvního **Start** kliknutí na tlačítko. Čísla popisují pořadí adres URL v seznamu cílů ke stažení.  
   
@@ -473,7 +473,7 @@ Private Async Function FinishOneGroupAsync(urls As List(Of String), contentTasks
 End Function  
 ```  
   
- Tento příklad lze spustit zadáním nebo vložením změn do kódu v [aplikaci](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), nebo můžete postupovat podle pokynů v [si stáhnou aplikaci](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) ke stažení vzorku a spuštění projektu QueueResults.  
+ Tento příklad lze spustit zadáním nebo vložením změn do kódu v [aplikaci](#BKMK_BuildingTheApp), nebo můžete postupovat podle pokynů v [si stáhnou aplikaci](#BKMK_DownloadingTheApp) ke stažení vzorku a spuštění projektu QueueResults.  
   
 #### <a name="points-of-interest"></a>Body zájmu  
  Informační řádky, které začínají znakem křížku (#) ve výstupu vysvětlení, jak tento příklad funguje.  
@@ -674,8 +674,9 @@ End Function
   
 11. Stiskněte klávesy CTRL + F5 ke spuštění programu a klikněte na tlačítko **Start** tlačítko několikrát.  
   
-12. Proveďte požadované změny z [zakázat tlačítko Start](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), [nerušte a nerestartujte operaci](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645), nebo [spustit více operací a fronty výstupu](https://msdn.microsoft.com/library/5b54de66-6be3-459e-b869-65070b020645) pro zpracování vícenásobného přístupu.  
+12. Proveďte požadované změny z [zakázat tlačítko Start](#BKMK_DisableTheStartButton), [nerušte a nerestartujte operaci](#BKMK_CancelAndRestart), nebo [spustit více operací a fronty výstupu](#BKMK_RunMultipleOperations) pro zpracování vícenásobného přístupu.  
   
-## <a name="see-also"></a>Viz také  
- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Návod: Přístup k webu pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)

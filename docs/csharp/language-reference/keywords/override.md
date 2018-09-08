@@ -8,11 +8,11 @@ helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
 ms.openlocfilehash: cbd5e21e7ca71a4986099a0386c684a6db37c3e8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43886289"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131361"
 ---
 # <a name="override-c-reference"></a>override (Referenční dokumentace jazyka C#)
 

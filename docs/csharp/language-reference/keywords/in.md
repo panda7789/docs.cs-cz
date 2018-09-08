@@ -7,11 +7,11 @@ f1_keywords:
 helpviewer_keywords:
 - in keyword [C#]
 ms.openlocfilehash: 04449d99fd3e1b573333bc11a9766e9809b44785
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44063638"
+ms.locfileid: "44139878"
 ---
 # <a name="in-c-reference"></a>Kontextové klíčové slovo in (Referenční dokumentace jazyka C#)
 

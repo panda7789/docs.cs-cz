@@ -10,11 +10,11 @@ ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 241ff40448c3dca2846f9e420dc7df41427dc79d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44062219"
+ms.locfileid: "44133776"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Čtení a zápis schémat XML
 Schéma objektu modelu (SOM) rozhraní API lze použít ke čtení a zápis schémata jazyk (XSD) definice schématu XML ze souborů nebo jiných zdrojů a sestavení XML schémata v paměti pomocí tříd v <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů, které mapují na struktury definované v celém světě Wide Web Consortium (W3C) doporučení schématu XML.  

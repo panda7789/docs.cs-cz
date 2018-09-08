@@ -3,11 +3,11 @@ title: Cyklické sledování
 ms.date: 03/30/2017
 ms.assetid: 5ff139f9-8806-47bc-8f33-47fe6c436b92
 ms.openlocfilehash: 1f6c5287e6a53ed26ee5c9ed477e08dafc512e3f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43868284"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131708"
 ---
 # <a name="circular-tracing"></a>Cyklické sledování
 Tento příklad ukazuje implementaci naslouchací proces trasování cyklické vyrovnávací paměti. Běžný scénář pro produkční služby je potřeba mít služby, které jsou k dispozici pro dlouhou dobu a povoleno na nízké úrovni protokolování trasování. Tyto služby využívat velké množství místa na disku. Při odstraňování služby, nejnovější data v protokolech trasování je relevantní pro řešení problémů. Tento příklad ukazuje implementaci pro posluchače trasování cyklické vyrovnávací paměti, ve kterém jsou pouze nejnovější trasování uchovávat na disku, až po konfigurovatelnou data. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a obsahuje naslouchací proces trasování vlastní.  

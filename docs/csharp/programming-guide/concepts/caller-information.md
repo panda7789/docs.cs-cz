@@ -3,11 +3,11 @@ title: Informace o volajícím (C#)
 ms.date: 07/20/2015
 ms.assetid: ffad3d24-2fb7-4641-9124-53b5bc91d339
 ms.openlocfilehash: 048e91ad337f74ef04a2a03412a44a0be0ef9506
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44047893"
+ms.locfileid: "44131322"
 ---
 # <a name="caller-information-c"></a>Informace o volajícím (C#)
 Pomocí atributů Informace o volajícím můžete získat informace o volajícím metody. Můžete získat cestu k souboru zdrojového kódu, číslo řádku ve zdrojovém kódu a název členu volajícího. Tyto informace jsou užitečné pro trasování, ladění a vytváření diagnostických nástrojů.  

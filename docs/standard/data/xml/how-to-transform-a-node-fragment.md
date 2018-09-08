@@ -9,11 +9,11 @@ ms.assetid: 73a6c582-b9d7-4fa7-9a05-6d931e1f3de8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: eb258b61664e1fdbf6604afdf69074c48cf5bda4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44061348"
+ms.locfileid: "44134997"
 ---
 # <a name="how-to-transform-a-node-fragment"></a>Postupy: transformace fragmentu uzlu
 Při transformaci dat obsažených v <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> objektu transformace XSLT se vztahují k dokumentu jako celek. Jinými slovy Pokud předáte v uzlu, než je kořenový uzel dokumentu, toto nezabraňuje proces transformace přístup na všechny uzly v načtený dokument. Transformace fragmentu uzlu, musíte vytvořit samostatný objekt obsahující pouze fragmentu uzlu a předejte tento objekt <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  

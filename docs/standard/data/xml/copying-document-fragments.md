@@ -6,11 +6,11 @@ ms.assetid: cf424bbe-81b7-40d2-9978-9b727da94d80
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a5dae283234819bc23c34e0bbe960967dff612d0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44037123"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131854"
 ---
 # <a name="copying-document-fragments"></a>Kopírování fragmentů dokumentu
 Můžete vytvořit **XmlDocumentFragment** uzel a poté přidejte uzly pod sebou. Při **XmlDocumentFragment** vložena s **InsertNode** metody **XmlDocumentFragment** uzel nezkopíruje, ale jeho podřízené uzly jsou vloženy do souboru XML Modelu Document Object Model (DOM).  

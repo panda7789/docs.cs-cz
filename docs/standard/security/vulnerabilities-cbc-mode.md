@@ -5,11 +5,11 @@ ms.date: 06/12/2018
 author: blowdart
 ms.author: mairaw
 ms.openlocfilehash: 6d16b6849bfd4744f1828cda38a537f842243c1d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43881366"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131231"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>Časování chybami zabezpečení pomocí režimu CBC Symetrické dešifrování pomocí odsazení
 

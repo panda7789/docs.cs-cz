@@ -22,11 +22,11 @@ helpviewer_keywords:
 - rotating images [WPF]
 ms.assetid: 72aad87a-e6f3-4937-94cd-a18b7766e990
 ms.openlocfilehash: 10cdf5b8cf475c95e086b447b36a569da2173fa9
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43802633"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44141032"
 ---
 # <a name="imaging-overview"></a>Přehled obrázků
 Toto téma obsahuje úvod do [!INCLUDE[TLA#tla_wic](../../../../includes/tlasharptla-wic-md.md)]. [!INCLUDE[TLA2#tla_wic](../../../../includes/tla2sharptla-wic-md.md)] umožňuje vývojářům zobrazit, transformaci a formátu Image.  

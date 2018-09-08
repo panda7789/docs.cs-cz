@@ -16,11 +16,11 @@ ms.assetid: bd015722-d88d-408d-8ca8-e4e475c441ed
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 25a2fb441269508402263e103a6c6e1be2635406
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43869521"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44140733"
 ---
 # <a name="how-to-decrypt-xml-elements-with-x509-certificates"></a>Postupy: Dešifrování XML elementů pomocí certifikátů X.509
 Můžete použít třídy v <xref:System.Security.Cryptography.Xml> oboru názvů k šifrování a dešifrování element v dokumentu XML.  Šifrování XML je standardní způsob pro výměnu nebo ukládání zašifrovaných dat XML, nemusíme mít starosti se snadno číst data.  Další informace o standardních šifrování XML, naleznete v tématu Specifikace World Wide Web Consortium (W3C) pro šifrování XML se nachází v http://www.w3.org/TR/xmldsig-core/.  

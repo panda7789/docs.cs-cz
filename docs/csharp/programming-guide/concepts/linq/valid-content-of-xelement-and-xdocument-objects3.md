@@ -3,11 +3,11 @@ title: Platný obsah XElement a XDocument Objects3
 ms.date: 07/20/2015
 ms.assetid: 0d253586-2b97-459f-b1a7-f30f38f3ed9f
 ms.openlocfilehash: afaeed7ba49891380982ec9c3cade43574ab8c16
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43732284"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133646"
 ---
 # <a name="valid-content-of-xelement-and-xdocument-objects"></a>Platný obsah objektů XElement a XDocument
 Toto téma popisuje platné argumenty, které mohou být předány konstruktorů a metod, které použijete k přidání obsahu do prvků a dokumenty.  

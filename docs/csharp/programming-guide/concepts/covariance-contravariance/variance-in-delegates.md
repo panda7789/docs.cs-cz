@@ -3,11 +3,11 @@ title: Odchylky v delegátech (C#)
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
 ms.openlocfilehash: 3dabac4e532198871cf05d639aa692751ab17ae1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43884426"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128469"
 ---
 # <a name="variance-in-delegates-c"></a>Odchylky v delegátech (C#)
 Rozhraní .NET framework 3.5 představil podporu odchylku pro spárování metod podpisů s typy delegáta v Všichni delegáti v jazyce C#. To znamená, že můžete přiřadit delegáty pouze metody, které mají odpovídající podpisy, ale také metody, které vracejí informace odvozené typy (kovariance) nebo, která přijímají parametry, které mají méně odvozené typy (kontravariance), než je určeno typ delegáta . To zahrnuje obecných a neobecných delegátů.  

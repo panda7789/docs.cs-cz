@@ -9,11 +9,11 @@ helpviewer_keywords:
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
 ms.openlocfilehash: c865fe97db16c95396e03747958d3590e80de614
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43881181"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129349"
 ---
 # <a name="ltexceptiongt-c-programming-guide"></a>&lt;výjimka&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

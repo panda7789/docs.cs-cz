@@ -11,11 +11,11 @@ ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 27818d5e1779cd6e10e11830f91a20a3e638639a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44066513"
+ms.locfileid: "44127742"
 ---
 # <a name="security-and-user-input"></a>Zabezpečení a uživatelský vstup
 Uživatelská data, která je jakýkoli druh vstupních (datových z webového požadavku nebo adresu URL, vstupní ovládací prvky aplikace Microsoft Windows Forms a tak dále), může nepříznivě ovlivnit kód, protože často tato data se používají přímo jako parametry pro volání jiného kódu. Tato situace je obdobou škodlivý kód volá váš kód s neznámé parametry a stejná opatření by měl být přijata. Uživatelský vstup je ve skutečnosti obtížnější zabezpečit, protože neexistuje žádný rámce zásobníku trasování na přítomnost potenciálně nedůvěryhodná data.  

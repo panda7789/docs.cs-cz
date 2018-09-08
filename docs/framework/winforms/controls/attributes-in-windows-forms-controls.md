@@ -8,11 +8,11 @@ helpviewer_keywords:
 - attributes [Windows Forms], classes
 ms.assetid: 2c5640e9-6c6c-49d7-a5e4-a768f6be7853
 ms.openlocfilehash: 5bb7a28e314d6c0b007c1579f371a26d0a714fce
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43868381"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130929"
 ---
 # <a name="attributes-in-windows-forms-controls"></a>Atributy v ovládacích prvcích Windows Forms
 Rozhraní .NET Framework poskytuje širokou škálu atributy, které můžete provést u členů vlastní ovládací prvky a součásti. Některé z těchto atributů ovlivňují chování za běhu třídy a jiné ovlivňují chování během návrhu.  

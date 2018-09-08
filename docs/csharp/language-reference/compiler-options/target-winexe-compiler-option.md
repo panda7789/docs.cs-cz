@@ -9,11 +9,11 @@ helpviewer_keywords:
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
 ms.openlocfilehash: f77137e3cc2f734435d3b1d391a303fcd3e16332
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44059593"
+ms.locfileid: "44133188"
 ---
 # <a name="-targetwinexe-c-compiler-options"></a>-target: winexe (možnosti kompilátoru C#)
 **-Target: winexe** možnost způsobí, že kompilátor vytvoří spustitelný soubor (EXE), Windows program.  

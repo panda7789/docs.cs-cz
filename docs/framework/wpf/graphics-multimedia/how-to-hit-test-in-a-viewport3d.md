@@ -10,11 +10,11 @@ helpviewer_keywords:
 - Viewport3D [WPF]
 ms.assetid: 42bfbd99-c7c6-43f1-940b-90448faa412e
 ms.openlocfilehash: 297fe17b8844f7542255afcfe442fbf9b7a0d59d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44047155"
+ms.locfileid: "44140655"
 ---
 # <a name="how-to-hit-test-in-a-viewport3d"></a>Postupy: Spuštění testu v objektu Viewport3D
 Tento příklad ukazuje, jak spuštění testu pro 3D vizuální prvky v <xref:System.Windows.Controls.Viewport3D>.  

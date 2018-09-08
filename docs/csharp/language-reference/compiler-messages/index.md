@@ -7,11 +7,11 @@ helpviewer_keywords:
 - errors [C#]
 ms.assetid: 57262ab1-6c50-4f9c-81ad-9fba48477416
 ms.openlocfilehash: 2edd47682223dd94fc8dd7448465613236e67e27
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44063521"
+ms.locfileid: "44134724"
 ---
 # <a name="c-compiler-errors"></a>Chyby kompilátoru jazyka C#
 

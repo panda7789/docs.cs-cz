@@ -8,11 +8,11 @@ helpviewer_keywords:
 - <= operator [C#]
 ms.assetid: bb0caec9-d253-4105-b8bc-5252233251e4
 ms.openlocfilehash: afbb932c1be010790236bec73a36acf0f01b97f4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43805023"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133633"
 ---
 # <a name="lt-operator-c-reference"></a>&lt;= – Operátor (referenční dokumentace jazyka C#)
 Všechny číselné a výčet typů definovat "menší než nebo rovno" relační operátor (`<=`), která vrací `true` Pokud je první operand je menší než druhý `false` jinak.  

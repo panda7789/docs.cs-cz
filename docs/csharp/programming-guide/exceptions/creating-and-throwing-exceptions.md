@@ -8,11 +8,11 @@ helpviewer_keywords:
 - exceptions [C#], throwing
 ms.assetid: 6bbba495-a115-4c6d-90cc-1f4d7b5f39e2
 ms.openlocfilehash: 2e792a230ccead5d9a73f9b78a83d57738c31085
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44071515"
+ms.locfileid: "44135897"
 ---
 # <a name="creating-and-throwing-exceptions-c-programming-guide"></a>Vytváření a vyvolávání výjimek (Průvodce programováním v C#)
 Výjimky jsou slouží k označení, že došlo k chybě při spuštění programu. Jsou vytvořeny objektech výjimek, které popisují chybu a pak *vyvolána* s [throw](../../../csharp/language-reference/keywords/throw.md) – klíčové slovo. Modul runtime hledá pak nejkompatibilnější obslužná rutina výjimky.  

@@ -13,11 +13,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: cb239adc6dfb11c83fb983a41ea40ad8bf714038
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44039566"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133925"
 ---
 # <a name="move-a-ui-automation-element"></a>Přesunutí elementu automatizace uživatelského rozhraní
 > [!NOTE]

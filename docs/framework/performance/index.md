@@ -8,11 +8,11 @@ ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 59f8ceaf7981aebf3ae64e10d253004780f47e50
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44062998"
+ms.locfileid: "44133844"
 ---
 # <a name="net-framework-performance"></a>.NET Framework – výkon
 Pokud chcete vytvářet aplikace s vynikajícím výkonem, měli byste navrhnout a naplánovat výkon stejně jako byste navrhovali libovolnou jinou funkci aplikace. Můžete použít nástroje poskytované společností Microsoft k měření výkonu vaší aplikace a, v případě potřeby zdokonalení využití paměti, propustnosti kódování a rychlost odezvy. Toto téma uvádí analytické nástroje výkonu, poskytuje Microsoft a obsahuje odkazy na další témata, která pokrývají výkon pro konkrétní oblasti vývoje aplikací.  

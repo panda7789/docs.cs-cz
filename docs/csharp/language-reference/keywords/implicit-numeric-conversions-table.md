@@ -1,53 +1,61 @@
 ---
-title: Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+title: Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
+ms.date: 09/05/2018
 helpviewer_keywords:
 - conversions [C#], implicit numeric
 - implicit numeric conversions [C#]
 - numeric conversions [C#], implicit
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
-ms.openlocfilehash: 4bbc6086dc5fd3838ef9361762c3068ca44efd0e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: e46816fc8f3a6ff71dcba3561098d3cfce1e1054
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44047978"
+ms.locfileid: "44137119"
 ---
-# <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)
-V následující tabulce jsou uvedeny předdefinované implicitních číselných převodů. Implicitní převod může dojít v mnoha situacích, včetně příkazů metody vyvolání a přiřazení.  
+# <a name="implicit-numeric-conversions-table-c-reference"></a>Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
+
+V následující tabulce jsou uvedeny předdefinované implicitní převody mezi číselnými typy .NET.
   
 |From|Chcete-li|  
 |----------|--------|  
-|[sbyte](../../../csharp/language-reference/keywords/sbyte.md)|`short`, `int`, `long`, `float`, `double`, nebo `decimal`|  
-|[byte](../../../csharp/language-reference/keywords/byte.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
-|[short](../../../csharp/language-reference/keywords/short.md)|`int`, `long`, `float`, `double`, nebo `decimal`|  
-|[ushort](../../../csharp/language-reference/keywords/ushort.md)|`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
-|[int](../../../csharp/language-reference/keywords/int.md)|`long`, `float`, `double`, nebo `decimal`|  
-|[uint](../../../csharp/language-reference/keywords/uint.md)|`long`, `ulong`, `float`, `double`, nebo `decimal`|  
-|[long](../../../csharp/language-reference/keywords/long.md)|`float`, `double`, nebo `decimal`|  
-|[char](../../../csharp/language-reference/keywords/char.md)|`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
-|[float](../../../csharp/language-reference/keywords/float.md)|`double`|  
-|[ulong](../../../csharp/language-reference/keywords/ulong.md)|`float`, `double`, nebo `decimal`|  
+|[sbyte](sbyte.md)|`short`, `int`, `long`, `float`, `double`, nebo `decimal`|  
+|[byte](byte.md)|`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[short](short.md)|`int`, `long`, `float`, `double`, nebo `decimal`|  
+|[ushort](ushort.md)|`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[int](int.md)|`long`, `float`, `double`, nebo `decimal`|  
+|[uint](uint.md)|`long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[long](long.md)|`float`, `double`, nebo `decimal`|  
+|[char](char.md)|`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`|  
+|[float](float.md)|`double`|  
+|[ulong](ulong.md)|`float`, `double`, nebo `decimal`|  
   
 ## <a name="remarks"></a>Poznámky  
-  
--   Přesnost, ale nikoli velikost může být ztraceno v převody z `int`, `uint`, `long`, nebo `ulong` k `float` a z `long` nebo `ulong` k `double`.  
-  
--   Neexistují žádné implicitní převody na `char` typu.  
-  
--   Neexistují žádné implicitní převody mezi typy s plovoucí desetinnou čárkou a `decimal` typu.  
-  
--   Konstantní výraz typu `int` lze převést na `sbyte`, `byte`, `short`, `ushort`, `uint`, nebo `ulong`, pokud má konstantní výraz hodnotu v rozsahu cílového umístění Zadejte.  
-  
-## <a name="c-language-specification"></a>Specifikace jazyka C#  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a>Viz také  
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Tabulka celočíselných typů](../../../csharp/language-reference/keywords/integral-types-table.md)  
-- [Tabulka předdefinovaných typů](../../../csharp/language-reference/keywords/built-in-types-table.md)  
-- [Tabulka explicitních číselných převodů](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
-- [Přetypování a převody typů](../../../csharp/programming-guide/types/casting-and-type-conversions.md)
+- Žádné [celočíselného typu](integral-types-table.md) implicitně převést na libovolný [s plovoucí desetinnou čárkou typu](floating-point-types-table.md).
+
+- Přesnost, ale nikoli velikost může být ztraceno v převody z `int`, `uint`, `long`, nebo `ulong` k `float` a z `long` nebo `ulong` k `double`.  
+  
+- Neexistují žádné implicitní převody na `char` typu.  
+  
+- Neexistují žádné implicitní převody mezi `float` a `double` typy a `decimal` typu.  
+  
+- Hodnota konstantní výraz typu `int` (například, Hodnota reprezentovaná celočíselný literál) lze převést na `sbyte`, `byte`, `short`, `ushort`, `uint`, nebo `ulong`, pokud má v rozsahu cílového typu:
+
+  ```csharp
+  byte a = 13;    // Compiles
+  byte b = 300;   // CS0031: Constant value '300' cannot be converted to a 'byte'
+  ```
+
+Další informace o implicitních převodů, najdete v článku [implicitních převodů](/dotnet/csharp/language-reference/language-specification/conversions#implicit-conversions) část [specifikace jazyka C#](../language-specification/index.md).
+  
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Tabulka celočíselných typů](integral-types-table.md)
+- [Tabulka typů s plovoucí desetinnou čárkou](floating-point-types-table.md)
+- [Tabulka předdefinovaných typů](built-in-types-table.md)
+- [Tabulka explicitních číselných převodů](explicit-numeric-conversions-table.md)
+- [Přetypování a převody typu](../../programming-guide/types/casting-and-type-conversions.md)

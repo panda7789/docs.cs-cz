@@ -8,11 +8,11 @@ helpviewer_keywords:
 - << operator [C#]
 ms.assetid: a654eb56-1ff7-4bf3-9064-b631be0cdccc
 ms.openlocfilehash: 036acd6159bcf5ca1677ee6383c9db357625cd67
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44047302"
+ms.locfileid: "44127755"
 ---
 # <a name="ltlt-operator-c-reference"></a>&lt;&lt; – Operátor (referenční dokumentace jazyka C#)
 Operátor posunutí doleva (`<<`) staffhubu jeho prvního operandu vlevo o počet bitů určený svým druhým operandem. Musí být typu druhého operandu [int](../../../csharp/language-reference/keywords/int.md) nebo typ, který má předdefinované implicitní převod čísla na `int`.  

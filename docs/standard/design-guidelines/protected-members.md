@@ -13,11 +13,11 @@ ms.assetid: aa0b58ee-3956-494d-ab48-471ae5db8740
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4574dffc3f9dd1b60d655bfde33a4ddc1a81d350
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44068973"
+ms.locfileid: "44140941"
 ---
 # <a name="protected-members"></a>Chráněné členy
 Chráněné členy samy o sobě neposkytuje žádné rozšíření, ale budou mít rozšiřitelnost prostřednictvím vytváření podtříd výkonnější. Umožňuje vystavit rozšířené možnosti vlastního nastavení bez zbytečně komplikují hlavní veřejného rozhraní.  

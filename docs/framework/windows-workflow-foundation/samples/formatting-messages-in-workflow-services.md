@@ -3,11 +3,11 @@ title: Formátování zpráv ve službách pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 6d15d44b-20f8-4cb7-bd4f-598c32781ebc
 ms.openlocfilehash: eb9a6b3a83a28154dc968bd4c1c41d34028bdd41
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43562914"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44134789"
 ---
 # <a name="formatting-messages-in-workflow-services"></a>Formátování zpráv ve službách pracovních postupů
 Tento příklad ukazuje, jak různé uživatelské typy mohou být použity v zasílání zpráv aktivity (WF služby). Ukázka service je služba schválení jednoduché výdajů a zpřístupňuje tří operací. `ApproveExpense` přijímá typ kontraktu dat a ukazuje způsob použití známých typů. Operace vrátí `true` nebo `false` na základě doby, výdajů. `ApprovePO` Typ XmlSerializer, který přijímá a vrací `true` nebo `false` na základě doby, výdajů.`ApprovedVendor` Typ kontraktu zprávy přijímá a vrací `true` nebo `false` Pokud dodavatel je v seznamu schválených dodavatelů nebo pokud žádost pochází z finančního oddělení (finančního oddělení můžete použít libovolného dodavatele).  

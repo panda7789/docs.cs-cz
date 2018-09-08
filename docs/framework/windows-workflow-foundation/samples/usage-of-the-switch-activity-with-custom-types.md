@@ -3,11 +3,11 @@ title: Použití aktivity Switch s vlastními typy
 ms.date: 03/30/2017
 ms.assetid: 482a48c4-eb83-40c3-a4e2-2f9a8af88b75
 ms.openlocfilehash: b24a03573b31f3fb1c34d4aa6e03bc11f5b25455
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44038871"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133909"
 ---
 # <a name="usage-of-the-switch-activity-with-custom-types"></a>Použití aktivity Switch s vlastními typy
 Tento příklad popisuje, jak povolit <xref:System.Activities.Statements.Switch%601> aktivity k vyhodnocení, uživatelem definované komplexní typ v době běhu. V postupu Většina tradičních programovacích jazycích [přepnout](https://go.microsoft.com/fwlink/?LinkId=180521) příkaz vybere logikou provádění na základě podmíněného vyhodnocení proměnné. Tradičně `switch` příkaz funguje na výraz, který může být staticky vyhodnocen. Například v jazyce C# to znamená, že pouze primitivní typy, jako například <xref:System.Boolean>, <xref:System.Int32>, <xref:System.String>, a jsou podporovány typy výčtu.  

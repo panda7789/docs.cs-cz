@@ -14,11 +14,11 @@ ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7953e34f76e23e3f9f4913726adc4b2176b172c9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43884299"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128616"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Konstrukce zpětných odkazů v regulárních výrazech
 Zpětné odkazy poskytují pohodlný způsob, jak identifikovat opakovaných nebo podřetězec v rámci řetězce. Například pokud vstupní řetězec obsahuje více výskytů libovolného dílčí řetězec, můžete porovnat první výskyt zachytávající skupinou a pak použijte zpětný odkaz tak, aby odpovídaly další výskyty tohoto dílčí řetězec.  

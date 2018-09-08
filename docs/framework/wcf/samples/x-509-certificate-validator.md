@@ -3,11 +3,11 @@ title: Validátor certifikátu X.509
 ms.date: 03/30/2017
 ms.assetid: 3b042379-02c4-4395-b927-e57c842fd3e0
 ms.openlocfilehash: e54f79046113e5f1a1a1cc065606fd5b706b49ac
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43885977"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131127"
 ---
 # <a name="x509-certificate-validator"></a>Validátor certifikátu X.509
 Tento příklad ukazuje, jak implementovat vlastní validátor certifikátu X.509. To je užitečné v případech, kdy je vhodné pro požadavky na aplikace žádná z předdefinovaných režimy ověřování certifikátu X.509. Tento příklad ukazuje služba, která má vlastní validátor, který přijímá samostatně vydané certifikáty. Klient používá tento certifikát k ověření ve službě.  

@@ -12,18 +12,18 @@ helpviewer_keywords:
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 15261291f40b6a41e0d6033fb92e1b23b4042019
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f95fb3ccab7362021a7a195ea199a1370e003dd2
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33592467"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44135572"
 ---
 # <a name="managed-threading-best-practices"></a>Doporučené postupy spravovaného dělení na vlákna
 Multithreading vyžaduje pečlivé programování. V případě většiny úkolů lze omezit složitost umístěním požadavků do fronty pro spuštění pomocí vláken fondu vláken. Toto téma řeší obtížnější situace, například koordinaci práce více vláken nebo zpracování vláken, která se blokují.  
   
 > [!NOTE]
-> Od verze rozhraní .NET Framework 4, Task Parallel Library a PLINQ poskytují rozhraní API, která snižuje některé složitost a rizika vícevláknové programování. Další informace najdete v tématu [paralelní programování v rozhraní .NET](../../../docs/standard/parallel-programming/index.md).  
+> Od verze rozhraní .NET Framework 4, Task Parallel Library a PLINQ poskytuje rozhraní API, která snižuje do hry složitost a rizika vícevláknového programování. Další informace najdete v tématu [paralelní programování v .NET](../../../docs/standard/parallel-programming/index.md).  
   
 ## <a name="deadlocks-and-race-conditions"></a>Zablokování a konflikty časování  
  Multithreading řeší problémy s propustností a rychlostí odezvy, ale zároveň přináší nové problémy: zablokování a konflikty časování.  
@@ -31,7 +31,7 @@ Multithreading vyžaduje pečlivé programování. V případě většiny úkol
 ### <a name="deadlocks"></a>Zablokování  
  K zablokování dochází tehdy, pokud se každé ze dvou vláken pokusí uzamknout prostředek, který je již zamčený. Ani jedno vlákno nemůže provádět žádný další krok.  
   
- Mnoho metod tříd modelu spravovaných vláken poskytuje časové limity, které usnadňují zjišťování případů zablokování. Například následující kód, pokusí se získat zámek na objekt s názvem `lockObject`. Pokud není v milisekundách 300, získat zámek <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> vrátí `false`.  
+ Mnoho metod tříd modelu spravovaných vláken poskytuje časové limity, které usnadňují zjišťování případů zablokování. Například následující kód pokouší získat zámek na objekt s názvem `lockObject`. Pokud nezíská zámek do 300 milisekund, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> vrátí `false`.  
   
 ```vb  
 If Monitor.TryEnter(lockObject, 300) Then  
@@ -62,11 +62,11 @@ else {
 ### <a name="race-conditions"></a>Konflikty časování  
  Konflikt časování je chyba, ke které dojde, pokud výstup programu závisí na tom, které ze dvou nebo více vláken dříve dosáhne určitého bloku kódu. Opakované spuštění programu vrací různé výsledky a nelze předpovědět výsledek jakéhokoli daného běhu.  
   
- Jednoduchým příkladem konfliktu časování je zvyšování pole. Předpokládejme, že třída obsahuje soukromé **statické** pole (**sdílené** v jazyce Visual Basic), se zvýší pokaždé, když je vytvořena instance třídy, například pomocí kódu `objCt++;` (C#) nebo `objCt += 1` () Visual Basic). Tato operace vyžaduje načtení hodnoty z kódu `objCt` do registru, navýšení hodnoty a její uložení v kódu `objCt`.  
+ Jednoduchým příkladem konfliktu časování je zvyšování pole. Předpokládejme, že třída má privátní **statické** pole (**Shared** v jazyce Visual Basic), které se navyšuje pokaždé, když je vytvořena instance třídy pomocí kódu, jako `objCt++;` (C#) nebo `objCt += 1` () Visual Basic). Tato operace vyžaduje načtení hodnoty z kódu `objCt` do registru, navýšení hodnoty a její uložení v kódu `objCt`.  
   
  Ve vícevláknových aplikacích platí, že vlákno, které načetlo a zvýšilo hodnotu, může být přerušeno jiným vláknem, jež provede všechny tři kroky. Pokud první vlákno pokračuje v provádění a uloží svou hodnotu, přepíše kód `objCt`, aniž by zohlednilo, že hodnota se mezitím změnila.  
   
- Těmto konkrétním konfliktům časování se dá snadno vyhnout použitím metod třídy <xref:System.Threading.Interlocked>, jako například <xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType>. Další metody pro synchronizaci dat mezi více vláken, najdete informace o [synchronizaci dat pro Multithreading](../../../docs/standard/threading/synchronizing-data-for-multithreading.md).  
+ Těmto konkrétním konfliktům časování se dá snadno vyhnout použitím metod třídy <xref:System.Threading.Interlocked>, jako například <xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType>. Další informace o jiných technikách pro synchronizaci dat mezi více vláken, naleznete v tématu [synchronizace dat pro Multithreading](../../../docs/standard/threading/synchronizing-data-for-multithreading.md).  
   
  Ke konfliktům časování může docházet také tehdy, pokud synchronizujete aktivity více vláken. Při každém zápisu řádku kódu je nutné zvážit, co může nastat, pokud by vlákno bylo před provedením daného řádku (nebo před provedením jakéhokoliv jednotlivého pokynu počítače, který řádek tvoří) přerušeno a jiné vlákno by jej nahradilo.  
   
@@ -105,17 +105,17 @@ else {
 ## <a name="general-recommendations"></a>Obecná doporučení  
  Při používání více vláken zvažte následující pokyny:  
   
--   Pro ukončení ostatních vláken nepoužívejte vlákno <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Volání metody **Abort** na jiné vlákno se podobají došlo k výjimce, že vlákno, aniž by věděly, co bod daném vláknu dosáhl v jeho zpracování.  
+-   Pro ukončení ostatních vláken nepoužívejte vlákno <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Volání **přerušit** na jiné vlákno se podobá vyvolání výjimky na, že vlákno, bez znalosti, jakého bodu vlákno bylo dosaženo zpracovávání dosáhlo.  
   
 -   Pro synchronizaci činností více vláken nepoužívejte vlákna <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> a <xref:System.Threading.Thread.Resume%2A?displayProperty=nameWithType>. Použijte vlákna <xref:System.Threading.Mutex>, <xref:System.Threading.ManualResetEvent>, <xref:System.Threading.AutoResetEvent> a <xref:System.Threading.Monitor>.  
   
 -   Řízení zpracovávání pracovních vláken neprovádějte z hlavního programu (například pomocí událostí). Namísto toho je vhodné navrhnout program tak, aby pracovní vlákna byla zodpovědná za čekání, dokud není k dispozici činnost, kterou pak vykonají a oznámí ostatním částem programu, že byla dokončena. Pokud nejsou pracovní vlákna blokovací, zvažte používání vláken fondu vláken. Volání metody <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> je užitečné v situacích, kdy pracovní vlákna provádí blokování.  
   
--   Nepoužívejte typy jako objekty zámku. To znamená, že byste neměli používat kódy, jako je `lock(typeof(X))` v jazyce C# nebo `SyncLock(GetType(X))` v jazyce Visual Basic, nebo používat kód <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> s objekty <xref:System.Type>. Pro daný typ existuje pouze jedna instance <xref:System.Type?displayProperty=nameWithType> v doméně aplikace. V případě, že typ, pro který použijete zámek, je veřejný, může jej jiný kód uzamknout, což povede k zablokování. Další problémy najdete v tématu [spolehlivost – doporučené postupy](../../../docs/framework/performance/reliability-best-practices.md).  
+-   Nepoužívejte typy jako objekty zámku. To znamená, že byste neměli používat kódy, jako je `lock(typeof(X))` v jazyce C# nebo `SyncLock(GetType(X))` v jazyce Visual Basic, nebo používat kód <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> s objekty <xref:System.Type>. Pro daný typ existuje pouze jedna instance <xref:System.Type?displayProperty=nameWithType> v doméně aplikace. V případě, že typ, pro který použijete zámek, je veřejný, může jej jiný kód uzamknout, což povede k zablokování. Další informace najdete v části [spolehlivost – doporučené postupy](../../../docs/framework/performance/reliability-best-practices.md).  
   
 -   Při zamykání instancí, například `lock(this)` v jazyce C# nebo `SyncLock(Me)` v jazyce Visual Basic, buďte obezřetní. Pokud jiný kód v aplikaci, který je vůči typu externí, převezme zámek objektu, může dojít k zablokování.  
   
--   Zajistěte, aby vlákno, které se zobrazilo v monitorovacím nástroji, jej opustilo vždy, i pokud dojde k výjimce během zobrazení vlákna v monitorovacím nástroji. Jazyka C# [zámku](~/docs/csharp/language-reference/keywords/lock-statement.md) příkaz a Visual Basic [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) příkaz zadejte toto chování automaticky, nasazení **nakonec** bloku zajistit, aby <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> je volá se. Pokud nelze zajistěte, aby **ukončení** bude volán, zvažte změnu návrhu používat **Mutex**. Objekt mutex je automaticky uvolněn, pokud se ukončí vlákno, které jej vlastní.  
+-   Zajistěte, aby vlákno, které se zobrazilo v monitorovacím nástroji, jej opustilo vždy, i pokud dojde k výjimce během zobrazení vlákna v monitorovacím nástroji. C# [Zámek](~/docs/csharp/language-reference/keywords/lock-statement.md) příkazu a Visual Basic [SyncLock](~/docs/visual-basic/language-reference/statements/synclock-statement.md) příkaz zajišťují toto chování automaticky, když **nakonec** blok k Ujistěte se, že <xref:System.Threading.Monitor.Exit%2A?displayProperty=nameWithType> je volá se. Pokud nelze zajistit, aby **ukončovací** bude volána, zvažte změnu návrhu a použít **Mutex**. Objekt mutex je automaticky uvolněn, pokud se ukončí vlákno, které jej vlastní.  
   
 -   Pro úkoly, jež vyžadují různé prostředky, používejte více vláken a zamezte přiřazení většího počtu vláken jedinému prostředku. Například všechny úkoly zahrnující vstup-výstup těží z toho, že mají vlastní vlákno, protože dané vlákno bude přerušováno během vstupně-výstupních operací, a tím umožní provedení jiných vláken. Uživatelský vstup je dalším prostředkem, který těží z vyhrazeného vlákna. Úkol, který vyžaduje intenzivní výpočty, existuje na počítači s jedním procesorem spolu s uživatelským vstupem a s úkoly, jež se týkají vstupu-výstupu, ale úkoly s vícenásobnými intenzivními výpočty si vzájemně konkurují.  
   
@@ -196,6 +196,7 @@ else {
   
 -   Nepoužívejte poskytování statických metod, které mění stav. V případě běžných použití serverů je statický stav sdílen napříč požadavky, což znamená, že více vláken může současně spustit tento kód. Tato skutečnost otevírá možnosti pro chyby spojené s používáním více vláken. Zvažte používání návrhového vzoru, který zapouzdřuje data do instancí, jež nejsou sdíleny napříč požadavky. Dále platí, že pokud jsou synchronizována statická data, volání mezi statickými metodami, které mění stav, může způsobit zablokování nebo redundantní synchronizaci, což nepříznivě ovlivňuje výkon.  
   
-## <a name="see-also"></a>Viz také  
- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
- [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)
+## <a name="see-also"></a>Viz také:
+
+- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
+- [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)

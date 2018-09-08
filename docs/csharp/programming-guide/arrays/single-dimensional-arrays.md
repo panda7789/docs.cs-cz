@@ -6,11 +6,11 @@ helpviewer_keywords:
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
 ms.openlocfilehash: c2f26fd74a596ada21eef578e58c9cd8e0305d6c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891860"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44128547"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Jednorozměrná pole (Průvodce programováním v C#)
 

@@ -3,11 +3,11 @@ title: Zprostředkovatelé typů
 description: 'Zjistěte, jak poskytovatel typů jazyka F # je komponenta, která poskytuje typy, vlastnosti a metody pro použití ve svých programech.'
 ms.date: 04/02/2018
 ms.openlocfilehash: 5fa9de229caa2ec3ba4a248ca5cd1c8aa5adb230
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891665"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44134719"
 ---
 # <a name="type-providers"></a>Zprostředkovatelé typů
 

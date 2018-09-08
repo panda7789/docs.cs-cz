@@ -1,5 +1,5 @@
 ---
-title: Člen přetížení
+title: Přetížení člena
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: 964ba19e-8b94-4b5b-b1e3-5a0b531a0bb1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2c77f08cd573dc40083718b783ae01233ca00766
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2127497d294cbfd4e1bb24d033f432378627ff13
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33573552"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129799"
 ---
-# <a name="member-overloading"></a>Člen přetížení
-Člen přetížení znamená vytvoření dvou nebo více členů na stejný typ, který se liší pouze v číslo nebo typ parametry, ale mají stejný název. Například v následujícím příkladu `WriteLine` je přetížena metoda:  
+# <a name="member-overloading"></a>Přetížení člena
+Přetížení člena znamená, že vytvoření dvou nebo více členů na stejný typ, který se liší pouze velikostí číslo nebo typ parametrů, ale mají stejný název. Například v následujícím příkladu `WriteLine` přetížené metody:  
   
 ```  
 public static class Console {  
@@ -30,21 +30,21 @@ public static class Console {
 }  
 ```  
   
- Protože parametry mohou obsahovat pouze metody, konstruktory a indexované vlastnosti, mohou být přetíženy pouze ty členy.  
+ Protože pouze metody, konstruktory a indexované vlastnosti mohou mít parametry, mohou být přetíženy pouze ty členy.  
   
- Přetížení je jedním z nejdůležitějších techniky pro zlepšení použitelnost, produktivity a čitelnost opakovaně použitelné knihovny. Přetížení pro počet parametrů je možné poskytnout jednodušší verze konstruktorů a metod. Přetížení na typ parametru umožňuje použít stejný název člena pro členy provádí na vybranou sadu různé typy stejné operace.  
+ Přetěžování je jedním z nejdůležitějších technik pro vylepšení použitelnosti, produktivitu a čitelnost opakovaně použitelné knihovny. Přetížení pro počet parametrů umožňuje poskytují jednodušší verze konstruktorů a metod. Přetížení u parametru typu umožňuje použití stejného názvu členu pro provádění operací identické na vybrané sadě různé typy členů.  
   
  **✓ DO** zkuste použít parametr popisné názvy označíte, výchozí hodnotu použitou kratší přetíženími.  
   
- **X AVOID** nahodile různými názvy parametrů v přetížení. Pokud parametr v jedním přetížením představuje stejné vstupu jako parametr v jiné přetížení, parametry musí mít stejný název.  
+ **X AVOID** nahodile různými názvy parametrů v přetížení. Pokud parametr v jedním přetížením představuje stejný vstup jako parametr v jiné přetížení, parametry, by měly být stejné.  
   
- **X AVOID** nekonzistentní v pořadí parametrů v přetížen členy. Parametry se stejným názvem by se zobrazit ve stejné pozici v všechny přetížení.  
+ **X AVOID** nekonzistentní v pořadí parametrů v přetížen členy. Parametry se stejným názvem, by se zobrazit na stejné pozici v všechna přetížení.  
   
- **✓ DO** zkontrolujte virtuální pouze nejdelší přetížení (Pokud je vyžadována rozšíření). Kratší přetížení by měly volat jednoduše prostřednictvím delší přetížení.  
+ **✓ DO** zkontrolujte virtuální pouze nejdelší přetížení (Pokud je vyžadována rozšíření). Kratší přetížení by měly volat pouze prostřednictvím delší přetížení.  
   
  **X DO NOT** použít `ref` nebo `out` modifikátory k přetížení členy.  
   
- Některé jazyky nelze vyřešit volání přetížení takto. Kromě toho tyto přetížení obvykle mají úplně jiné sémantiku a pravděpodobně by neměla být přetížení ale dvě samostatné metody místo.  
+ Některé jazyky nejde vyřešit volání přetížení následujícím způsobem. Kromě toho takovými přetíženími obvykle mít úplně odlišnou sémantiku a pravděpodobně by neměl být přetížení, ale dvě samostatné metody místo.  
   
  **X DO NOT** , mají přetížení s parametry na stejné pozici a podobné typy, ale s jinou sémantiku.  
   
@@ -52,12 +52,13 @@ public static class Console {
   
  **✓ DO** použít člen přetížení než definování členy s výchozí argumenty.  
   
- Výchozí argumenty nejsou kompatibilní se specifikací CLS.  
+ Výchozí argumenty nejsou kompatibilní se Specifikací CLS.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu člena](../../../docs/standard/design-guidelines/member.md)  
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

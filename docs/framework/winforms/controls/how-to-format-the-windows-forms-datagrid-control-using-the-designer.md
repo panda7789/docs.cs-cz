@@ -10,11 +10,11 @@ helpviewer_keywords:
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
 ms.openlocfilehash: e0d703e16ab89243c7f7cf57dc858a0a3889a590
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43876658"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130026"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Formátování ovládacího prvku Windows Forms DataGrid pomocí Návrháře
 > [!NOTE]

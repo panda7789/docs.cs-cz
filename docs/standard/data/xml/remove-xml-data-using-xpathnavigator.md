@@ -9,11 +9,11 @@ ms.assetid: 9f436bca-1b96-494b-a6d2-e102c7551752
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1827e40256bc4307006ce081cbb6cbc44a89a0bc
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43871082"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44137639"
 ---
 # <a name="remove-xml-data-using-xpathnavigator"></a>Odebrání dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které slouží k odebrání uzlů a hodnot z dokumentu XML. Chcete-li používat tyto metody <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, to znamená, jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> musí být vlastnost `true`.  

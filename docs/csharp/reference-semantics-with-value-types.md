@@ -4,11 +4,11 @@ description: Funkce jazyka, které minimalizují kopírování struktury bezpeč
 ms.date: 11/10/2017
 ms.custom: mvc
 ms.openlocfilehash: f241219994d7a03192a4aea69b912bf1ac5ed29c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44036454"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44133737"
 ---
 # <a name="reference-semantics-with-value-types"></a>Referenční sémantika s typy hodnot
 

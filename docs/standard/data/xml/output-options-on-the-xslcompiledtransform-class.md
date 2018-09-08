@@ -1,61 +1,62 @@
 ---
-title: Možnosti výstupu na XslCompiledTransform – třída
+title: Možnosti výstupu na třídě XslCompiledTransform
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 91ce8cba-386c-411e-bb38-0891a0393c0a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aa1049528458d558409ac1ace215c7d5b10f520e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 694d2be51d025ab054caf19e4aa2900216ad5b2e
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33572093"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44135364"
 ---
-# <a name="output-options-on-the-xslcompiledtransform-class"></a>Možnosti výstupu na XslCompiledTransform – třída
-Toto téma popisuje dostupné možnosti výstupu XSLT. Možnosti výstupu můžete určit v šabloně stylů nebo na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda.  
+# <a name="output-options-on-the-xslcompiledtransform-class"></a>Možnosti výstupu na třídě XslCompiledTransform
+Toto téma popisuje dostupné možnosti výstup XSLT. Možnosti výstupu můžete zadat v šabloně stylů nebo na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  
   
 ## <a name="xsloutput-element"></a>elementu xsl: Output – Element  
- `xsl:output` Element určuje možnosti pro výstup. Výstupní typ určeného <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metoda určuje chování `xsl:output` možnosti.  
+ `xsl:output` Prvek určuje možnosti pro výstup. Výstupní typ určený <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody určuje chování `xsl:output` možnosti.  
   
- Následující tabulka popisuje chování pro jednotlivé atributy, které jsou k dispozici na `xsl:output` elementu, pokud je typ výstupního datového proudu nebo <xref:System.IO.TextWriter>.  
+ Následující tabulka popisuje chování pro každého z atributů, které jsou k dispozici na `xsl:output` prvku, když je typ výstupního datového proudu nebo <xref:System.IO.TextWriter>.  
   
 |Název atributu|Chování|  
 |--------------------|--------------|  
-|– metoda|Podporováno.|  
-|verze|Ignorovat. Verze, je vždy 1.0 pro formát XML a 4.0 pro kód HTML.|  
-|encoding|Ignorovat výstupního <xref:System.IO.TextWriter>. <xref:System.IO.TextWriter.Encoding%2A?displayProperty=nameWithType> Vlastnost se používá místo.|  
-|vynechat Deklarace xml|Podporováno.|  
-|samostatný|Podporováno.|  
-|veřejná DOCTYPE|Podporováno.|  
-|DOCTYPE systému|Podporováno.|  
-|prvky CDATA oddílu|Podporováno.|  
-|odsazení|Podporováno.|  
-|typ média|Podporováno.|  
+|– metoda|Podporované.|  
+|verze|Ignorovat. Verze je vždy 1.0 pro XML a 4.0 pro kód HTML.|  
+|encoding|Při výstupu na ignorováno <xref:System.IO.TextWriter>. <xref:System.IO.TextWriter.Encoding%2A?displayProperty=nameWithType> Vlastnost se používá místo toho.|  
+|vynechat Deklarace xml|Podporované.|  
+|samostatný|Podporované.|  
+|veřejná DOCTYPE|Podporované.|  
+|DOCTYPE systému|Podporované.|  
+|prvky CDATA oddílu|Podporované.|  
+|odsazení|Podporované.|  
+|typ média|Podporované.|  
   
-#### <a name="sending-output-to-an-xmlwriter"></a>Odeslání výstupu do XmlWriter  
- Pokud vaše šablony stylů používá `xsl:output` elementu a výstupní typ je <xref:System.Xml.XmlWriter> objektu, měli byste použít <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A?displayProperty=nameWithType> vlastnost při vytváření <xref:System.Xml.XmlWriter> objektu. <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A?displayProperty=nameWithType> Vlastnost vrátí <xref:System.Xml.XmlWriterSettings> objekt, který obsahuje informace o odvozen od `xsl:output` element kompilované šablony stylů. To <xref:System.Xml.XmlWriterSettings> objekt se dá předat do <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> metodu pro vytvoření <xref:System.Xml.XmlWriter> objektu se správnými nastaveními.  
+#### <a name="sending-output-to-an-xmlwriter"></a>Odesílající výstup do třídy XmlWriter  
+ Pokud vaše šablony stylů využívá `xsl:output` elementu a výstupní typ je <xref:System.Xml.XmlWriter> objekt, měli byste použít <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A?displayProperty=nameWithType> vlastnost při vytváření <xref:System.Xml.XmlWriter> objektu. <xref:System.Xml.Xsl.XslCompiledTransform.OutputSettings%2A?displayProperty=nameWithType> Vrátí vlastnost <xref:System.Xml.XmlWriterSettings> objekt, který obsahuje informace odvozené z `xsl:output` element zkompilované šablony stylů. To <xref:System.Xml.XmlWriterSettings> objekt může být předán <xref:System.Xml.XmlWriter.Create%2A?displayProperty=nameWithType> metodu pro vytvoření <xref:System.Xml.XmlWriter> objekt se správným nastavením.  
   
-## <a name="output-types"></a>Výstup typy  
- Následující seznam popisuje výstup typy, které jsou dostupné na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> příkaz.  
+## <a name="output-types"></a>Výstupní typy  
+ Následující seznam popisuje výstupní typy, které jsou k dispozici na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> příkazu.  
   
 #### <a name="xmlwriter"></a>Objekt XmlWriter  
- <xref:System.Xml.XmlWriter> Třída vypisuje datové proudy XML nebo soubory. Můžete zadat funkce, které chcete podporovat na <xref:System.Xml.XmlWriter> objektu, včetně možnosti výstupu pomocí <xref:System.Xml.XmlWriterSettings> třídy. <xref:System.Xml.XmlWriter> Třída je nedílnou součástí <xref:System.Xml> framework. Pomocí tohoto typu výstupu můžete kanálu výstup výsledků do jiného procesu XML.  
+ <xref:System.Xml.XmlWriter> Třídy zapíše datové proudy XML nebo souborů. Můžete určit funkce, které se podporují <xref:System.Xml.XmlWriter> objektu, včetně možnosti výstupu pomocí <xref:System.Xml.XmlWriterSettings> třídy. <xref:System.Xml.XmlWriter> Třída je nedílnou součástí toho, <xref:System.Xml> framework. Pomocí tohoto typu výstupu do kanálu výstup do jiného procesu XML.  
   
 #### <a name="string"></a>String  
- Tento typ výstupu použijte k určení identifikátor URI výstupního souboru.  
+ Pomocí tohoto typu výstupu můžete určit identifikátor URI výstupního souboru.  
   
 #### <a name="stream"></a>Stream  
- Datový proud je abstrakcí pořadí bajtů, například soubor, zařízení se systémem vstupu a výstupu, kanálu komunikaci mezi procesy nebo soketů protokolu TCP/IP. <xref:System.IO.Stream> Třídy a jejich odvozené třídy poskytují obecné zobrazení tyto různé typy vstup a výstup, izolace programátorů z konkrétní podrobnosti operačního systému a základní zařízení.  
+ Datový proud je abstrakcí posloupnost bajtů, jako je například soubor, vstupně výstupní zařízení, kanálu komunikace mezi procesy nebo soket TCP/IP. <xref:System.IO.Stream> Třída a odvozené třídy poskytují obecné zobrazení těchto různých typů vstupu a výstupu, izolování programátora od konkrétních podrobností operačního systému a použitých zařízení.  
   
- Pomocí tohoto typu výstupu můžete odesílat data <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>, nebo výstupního datového proudu (`Response.OutputStream`).  
+ Pomocí tohoto typu výstupu můžete odesílat data <xref:System.IO.FileStream>, <xref:System.IO.MemoryStream>, nebo výstupní datový proud (`Response.OutputStream`).  
   
 #### <a name="textwriter"></a>TextWriter  
- <xref:System.IO.TextWriter> Zapisovat sekvenční znaky. Je implementována ve <xref:System.IO.StringWriter> a <xref:System.IO.StreamWriter> třídy, které zápis znaků do řetězců nebo datové proudy, v uvedeném pořadí. Tento typ výstupu použijte, pokud chcete výstup na řetězec.  
+ <xref:System.IO.TextWriter> Zapisuje po sobě jdoucích znaků. Je implementován v <xref:System.IO.StringWriter> a <xref:System.IO.StreamWriter> třídy, které zápis znaků do řetězce nebo datových proudů, v uvedeném pořadí. Pokud chcete výstup do řetězce, pomocí tohoto typu výstupu.  
   
 ## <a name="notes"></a>Poznámky  
   
--   Při zápisu se prázdné značky, je zapsán mezeru mezi poslední znak názvu elementu a zpětné lomítko, `<myElement />` třeba. To umožňuje zobrazit generované stránky HTML správně starší prohlížeče.  
+-   Při výpisu prázdné značky, je zapsán mezeru mezi poslední znak názvu elementu a zpětné lomítko, `<myElement />` třeba. To umožňuje starší prohlížeče správně zobrazit vygenerované stránky HTML.  
   
-## <a name="see-also"></a>Viz také  
- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)
+## <a name="see-also"></a>Viz také:
+
+- [Transformace XSLT](../../../../docs/standard/data/xml/xslt-transformations.md)

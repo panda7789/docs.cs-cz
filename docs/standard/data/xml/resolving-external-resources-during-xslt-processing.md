@@ -9,11 +9,11 @@ ms.assetid: 3a59d31c-0ec5-4de6-a2a9-558531c8116e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 958699b8e3a00cfe3f8fd8ac4bb96914dcd0598c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43891321"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44137587"
 ---
 # <a name="resolving-external-resources-during-xslt-processing"></a>Překlad externích prostředků během zpracování XSLT
 Existují několikrát během transformace XSLT, kdy budete muset vyřešit externím prostředkům.  

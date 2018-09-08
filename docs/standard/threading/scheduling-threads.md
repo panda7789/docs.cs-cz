@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 67e4a0eb-3095-4ea7-b20f-908faa476277
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a382dbea239b66e60d666a0e2e7add01d6d7bd54
-ms.sourcegitcommit: c66ba2df2d2ecfb214f85ee0687d298e4941c1a8
+ms.openlocfilehash: 811a75c9f0350eefc98c32181e859b7583ff74ef
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42752142"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44129679"
 ---
 # <a name="scheduling-threads"></a>Plánování vláken
 
@@ -21,6 +21,7 @@ Každé vlákno má priorita vlákna přiřazené. Vlákna vytvořená v rámci 
   
  Vlákna jsou naplánovány k provedení na základě jejich priority. I když jsou vlákna provádění v modulu runtime, všechna vlákna jsou přiřazeny procesoru časových řezů v operačním systému. Podrobnosti o plánování algoritmus používaný k určení pořadí, ve kterém jsou spouštěny vlákna se liší podle každý operační systém. V některých operačních systémů vlákno s nejvyšší prioritou (tato vlákna, které mohou být provedeny) vždy je naplánováno spuštění první. Pokud více vláken se stejnou prioritou jsou k dispozici, Plánovač procházení vlákna důležitostí, poskytuje každé vlákno pevném časovém řezu v, který se má spustit. Za předpokladu, vlákno s vyšší prioritou je k dispozici ke spuštění, nižší priorita vlákna nelze získat ke spuštění. Pokud neexistují žádné další spustitelné vlákna daného důležitostí, Plánovač přesune na další nižší prioritu a naplánuje vláken v této prioritu pro spouštění. Pokud spustitelný přestane být vyšší priorita vlákna, dojde ke zrušení nižší priorita vlákna a vyšší priorita vlákna je povoleno spustit znovu. Nad všechny možnosti, které operačního systému můžete také nastavit priority vlákna dynamicky podle uživatelského rozhraní aplikace se přesune mezi popředí a pozadí. Použít jiný algoritmus plánování zvolit jiné operační systémy.  
   
-## <a name="see-also"></a>Viz také  
- [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)  
- [Dělení na spravovaná a nespravovaná vlákna ve Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)
+## <a name="see-also"></a>Viz také:
+
+- [Použití vláken a dělení na vlákna](../../../docs/standard/threading/using-threads-and-threading.md)  
+- [Dělení na spravovaná a nespravovaná vlákna ve Windows](../../../docs/standard/threading/managed-and-unmanaged-threading-in-windows.md)

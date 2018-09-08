@@ -8,11 +8,11 @@ helpviewer_keywords:
 - get keyword [C#]
 ms.assetid: a52de048-fbe0-41b0-82ec-8e4ac04d3a71
 ms.openlocfilehash: 182f7164ad929232c185903a3dbf024a2e5d22a7
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43885464"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44131309"
 ---
 # <a name="get-c-reference"></a>get (Referenční dokumentace jazyka C#)
 
