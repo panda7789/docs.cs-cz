@@ -15,11 +15,11 @@ ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: dbc5909a3d4ea1ba2747fcc694bf1f34e20e7d2b
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44080878"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44179357"
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
 <a name="Top"></a> Ve výchozím nastavení porovnání vstupního řetězce s jakýmikoli literálními znaky ve vzorku regulárního výrazu je velká a malá písmena, prázdný znak ve vzorku regulárního výrazu je interpretován jako literální prázdné znaky a zachytávajících skupinách v regulárním výrazu jsou pojmenovány implicitně a také explicitně. Můžete změnit tyto a několik jiných aspektů výchozího chování regulárních výrazů zadáním možností regulárních výrazů. Tyto možnosti, které jsou uvedeny v následující tabulce, mohou být zahrnuty vložené jako součást vzorku regulárního výrazu nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické metodě porovnávání vzorků jako <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
