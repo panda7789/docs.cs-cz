@@ -3,17 +3,17 @@ title: 'Výrazy shody (F #)'
 description: 'Zjistěte, jak výrazu porovnání F # poskytuje větvení ovládací prvek, který je založena na porovnávání výrazů sadu vzorů.'
 ms.date: 04/19/2018
 ms.openlocfilehash: e4cb82f20fe82bff562736557c2346562c557f59
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44132036"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44221841"
 ---
-# <a name="match-expressions"></a><span data-ttu-id="f98d8-103">Výrazy shody</span><span class="sxs-lookup"><span data-stu-id="f98d8-103">Match expressions</span></span>
+# <a name="match-expressions"></a><span data-ttu-id="1577b-103">Výrazy shody</span><span class="sxs-lookup"><span data-stu-id="1577b-103">Match expressions</span></span>
 
-<span data-ttu-id="f98d8-104">`match` Výraz poskytuje větvení ovládací prvek, který je založena na porovnávání výrazů sadu vzorů.</span><span class="sxs-lookup"><span data-stu-id="f98d8-104">The `match` expression provides branching control that is based on the comparison of an expression with a set of patterns.</span></span>
+<span data-ttu-id="1577b-104">`match` Výraz poskytuje větvení ovládací prvek, který je založena na porovnávání výrazů sadu vzorů.</span><span class="sxs-lookup"><span data-stu-id="1577b-104">The `match` expression provides branching control that is based on the comparison of an expression with a set of patterns.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="f98d8-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f98d8-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="1577b-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1577b-105">Syntax</span></span>
 
 ```fsharp
 // Match expression.
@@ -29,11 +29,11 @@ function
 | ...
 ```
 
-## <a name="remarks"></a><span data-ttu-id="f98d8-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f98d8-106">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="1577b-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="1577b-106">Remarks</span></span>
 
-<span data-ttu-id="f98d8-107">Vzor odpovídající výrazy umožňují na základě porovnání výrazu testovací sadu vzorů komplexní větvení.</span><span class="sxs-lookup"><span data-stu-id="f98d8-107">The pattern matching expressions allow for complex branching based on the comparison of a test expression with a set of patterns.</span></span> <span data-ttu-id="f98d8-108">V `match` výrazu, *výrazu testu* se porovná se každý vzorek, v důsledku, a když je nalezena shoda, odpovídající *výsledek výrazu* je vyhodnocen a je výsledná hodnota Vrátí jako hodnota výrazu match.</span><span class="sxs-lookup"><span data-stu-id="f98d8-108">In the `match` expression, the *test-expression* is compared with each pattern in turn, and when a match is found, the corresponding *result-expression* is evaluated and the resulting value is returned as the value of the match expression.</span></span>
+<span data-ttu-id="1577b-107">Vzor odpovídající výrazy umožňují na základě porovnání výrazu testovací sadu vzorů komplexní větvení.</span><span class="sxs-lookup"><span data-stu-id="1577b-107">The pattern matching expressions allow for complex branching based on the comparison of a test expression with a set of patterns.</span></span> <span data-ttu-id="1577b-108">V `match` výrazu, *výrazu testu* se porovná se každý vzorek, v důsledku, a když je nalezena shoda, odpovídající *výsledek výrazu* je vyhodnocen a je výsledná hodnota Vrátí jako hodnota výrazu match.</span><span class="sxs-lookup"><span data-stu-id="1577b-108">In the `match` expression, the *test-expression* is compared with each pattern in turn, and when a match is found, the corresponding *result-expression* is evaluated and the resulting value is returned as the value of the match expression.</span></span>
 
-<span data-ttu-id="f98d8-109">Porovnávání vzorů funkce je znázorněno v předchozí syntaxi je výraz lambda, který vzoru porovnávání je okamžitě na argumentu provedeno.</span><span class="sxs-lookup"><span data-stu-id="f98d8-109">The pattern matching function shown in the previous syntax is a lambda expression in which pattern matching is performed immediately on the argument.</span></span> <span data-ttu-id="f98d8-110">Porovnávání vzorů funkce je znázorněno v předchozí syntaxi je ekvivalentní následujícímu zápisu.</span><span class="sxs-lookup"><span data-stu-id="f98d8-110">The pattern matching function shown in the previous syntax is equivalent to the following.</span></span>
+<span data-ttu-id="1577b-109">Porovnávání vzorů funkce je znázorněno v předchozí syntaxi je výraz lambda, který vzoru porovnávání je okamžitě na argumentu provedeno.</span><span class="sxs-lookup"><span data-stu-id="1577b-109">The pattern matching function shown in the previous syntax is a lambda expression in which pattern matching is performed immediately on the argument.</span></span> <span data-ttu-id="1577b-110">Porovnávání vzorů funkce je znázorněno v předchozí syntaxi je ekvivalentní následujícímu zápisu.</span><span class="sxs-lookup"><span data-stu-id="1577b-110">The pattern matching function shown in the previous syntax is equivalent to the following.</span></span>
 
 ```fsharp
 fun arg ->
@@ -43,27 +43,27 @@ fun arg ->
     | ...
 ```
 
-<span data-ttu-id="f98d8-111">Další informace o výrazech lambda naleznete v tématu [výrazy Lambda: `fun` – klíčové slovo](functions/lambda-expressions-the-fun-keyword.md).</span><span class="sxs-lookup"><span data-stu-id="f98d8-111">For more information about lambda expressions, see [Lambda Expressions: The `fun` Keyword](functions/lambda-expressions-the-fun-keyword.md).</span></span>
+<span data-ttu-id="1577b-111">Další informace o výrazech lambda naleznete v tématu [výrazy Lambda: `fun` – klíčové slovo](functions/lambda-expressions-the-fun-keyword.md).</span><span class="sxs-lookup"><span data-stu-id="1577b-111">For more information about lambda expressions, see [Lambda Expressions: The `fun` Keyword](functions/lambda-expressions-the-fun-keyword.md).</span></span>
 
-<span data-ttu-id="f98d8-112">Možných shod je vstupní proměnná by měla zahrnovat celou sadu vzorů.</span><span class="sxs-lookup"><span data-stu-id="f98d8-112">The whole set of patterns should cover all the possible matches of the input variable.</span></span> <span data-ttu-id="f98d8-113">Často, použijte vzor zástupných znaků (`_`) jako poslední vzorek tak, aby odpovídaly všechny dříve bezkonkurenční vstupní hodnoty.</span><span class="sxs-lookup"><span data-stu-id="f98d8-113">Frequently, you use the wildcard pattern (`_`) as the last pattern to match any previously unmatched input values.</span></span>
+<span data-ttu-id="1577b-112">Možných shod je vstupní proměnná by měla zahrnovat celou sadu vzorů.</span><span class="sxs-lookup"><span data-stu-id="1577b-112">The whole set of patterns should cover all the possible matches of the input variable.</span></span> <span data-ttu-id="1577b-113">Často, použijte vzor zástupných znaků (`_`) jako poslední vzorek tak, aby odpovídaly všechny dříve bezkonkurenční vstupní hodnoty.</span><span class="sxs-lookup"><span data-stu-id="1577b-113">Frequently, you use the wildcard pattern (`_`) as the last pattern to match any previously unmatched input values.</span></span>
 
-<span data-ttu-id="f98d8-114">Následující kód ukazuje několik způsobů jak, ve kterém `match` výraz je použit.</span><span class="sxs-lookup"><span data-stu-id="f98d8-114">The following code illustrates some of the ways in which the `match` expression is used.</span></span> <span data-ttu-id="f98d8-115">Odkaz a příklady možných vzory, které lze použít, naleznete v tématu [porovnávání vzorů](pattern-matching.md).</span><span class="sxs-lookup"><span data-stu-id="f98d8-115">For a reference and examples of all the possible patterns that can be used, see [Pattern Matching](pattern-matching.md).</span></span>
+<span data-ttu-id="1577b-114">Následující kód ukazuje několik způsobů jak, ve kterém `match` výraz je použit.</span><span class="sxs-lookup"><span data-stu-id="1577b-114">The following code illustrates some of the ways in which the `match` expression is used.</span></span> <span data-ttu-id="1577b-115">Odkaz a příklady možných vzory, které lze použít, naleznete v tématu [porovnávání vzorů](pattern-matching.md).</span><span class="sxs-lookup"><span data-stu-id="1577b-115">For a reference and examples of all the possible patterns that can be used, see [Pattern Matching](pattern-matching.md).</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4601.fs)]
 
-## <a name="guards-on-patterns"></a><span data-ttu-id="f98d8-116">Výrazy guard na vzory</span><span class="sxs-lookup"><span data-stu-id="f98d8-116">Guards on patterns</span></span>
+## <a name="guards-on-patterns"></a><span data-ttu-id="1577b-116">Výrazy guard na vzory</span><span class="sxs-lookup"><span data-stu-id="1577b-116">Guards on patterns</span></span>
 
-<span data-ttu-id="f98d8-117">Můžete použít `when` klauzule zadat další podmínku, která proměnná musí splňovat odpovídající vzorku.</span><span class="sxs-lookup"><span data-stu-id="f98d8-117">You can use a `when` clause to specify an additional condition that the variable must satisfy to match a pattern.</span></span> <span data-ttu-id="f98d8-118">Tato klauzule se označuje jako *guard*.</span><span class="sxs-lookup"><span data-stu-id="f98d8-118">Such a clause is referred to as a *guard*.</span></span> <span data-ttu-id="f98d8-119">Následující výraz `when` – klíčové slovo není vyhodnocen, pokud není shoda vzoru přidružené k této guard.</span><span class="sxs-lookup"><span data-stu-id="f98d8-119">The expression following the `when` keyword is not evaluated unless a match is made to the pattern associated with that guard.</span></span>
+<span data-ttu-id="1577b-117">Můžete použít `when` klauzule zadat další podmínku, která proměnná musí splňovat odpovídající vzorku.</span><span class="sxs-lookup"><span data-stu-id="1577b-117">You can use a `when` clause to specify an additional condition that the variable must satisfy to match a pattern.</span></span> <span data-ttu-id="1577b-118">Tato klauzule se označuje jako *guard*.</span><span class="sxs-lookup"><span data-stu-id="1577b-118">Such a clause is referred to as a *guard*.</span></span> <span data-ttu-id="1577b-119">Následující výraz `when` – klíčové slovo není vyhodnocen, pokud není shoda vzoru přidružené k této guard.</span><span class="sxs-lookup"><span data-stu-id="1577b-119">The expression following the `when` keyword is not evaluated unless a match is made to the pattern associated with that guard.</span></span>
 
-<span data-ttu-id="f98d8-120">Následující příklad ukazuje použití ochranného zařízení můžete určit číselný rozsah pro vzor proměnné.</span><span class="sxs-lookup"><span data-stu-id="f98d8-120">The following example illustrates the use of a guard to specify a numeric range for a variable pattern.</span></span> <span data-ttu-id="f98d8-121">Všimněte si, že jsou více podmínek kombinovat pomocí logické operátory.</span><span class="sxs-lookup"><span data-stu-id="f98d8-121">Note that multiple conditions are combined by using Boolean operators.</span></span>
+<span data-ttu-id="1577b-120">Následující příklad ukazuje použití ochranného zařízení můžete určit číselný rozsah pro vzor proměnné.</span><span class="sxs-lookup"><span data-stu-id="1577b-120">The following example illustrates the use of a guard to specify a numeric range for a variable pattern.</span></span> <span data-ttu-id="1577b-121">Všimněte si, že jsou více podmínek kombinovat pomocí logické operátory.</span><span class="sxs-lookup"><span data-stu-id="1577b-121">Note that multiple conditions are combined by using Boolean operators.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4602.fs)]
 
-<span data-ttu-id="f98d8-122">Mějte na paměti, protože hodnoty jiné než literály nelze použít ve vzoru, je nutné použít `when` klauzule, pokud máte k porovnání některá část vstup podle dokumentu hodnotu.</span><span class="sxs-lookup"><span data-stu-id="f98d8-122">Note that because values other than literals cannot be used in the pattern, you must use a `when` clause if you have to compare some part of the input against a value.</span></span> <span data-ttu-id="f98d8-123">To je ukázáno v následujícím kódu:</span><span class="sxs-lookup"><span data-stu-id="f98d8-123">This is shown in the following code:</span></span>
+<span data-ttu-id="1577b-122">Mějte na paměti, protože hodnoty jiné než literály nelze použít ve vzoru, je nutné použít `when` klauzule, pokud máte k porovnání některá část vstup podle dokumentu hodnotu.</span><span class="sxs-lookup"><span data-stu-id="1577b-122">Note that because values other than literals cannot be used in the pattern, you must use a `when` clause if you have to compare some part of the input against a value.</span></span> <span data-ttu-id="1577b-123">To je ukázáno v následujícím kódu:</span><span class="sxs-lookup"><span data-stu-id="1577b-123">This is shown in the following code:</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet4603.fs)]
 
-<span data-ttu-id="f98d8-124">Všimněte si, že pokud vzor sjednocení se bude vztahovat ochranu, ochranného zařízení platí pro **všechny** vzorů, ne jenom poslední z nich.</span><span class="sxs-lookup"><span data-stu-id="f98d8-124">Note that when a union pattern is covered by a guard, the guard applies to **all** of the patterns, not just the last one.</span></span> <span data-ttu-id="f98d8-125">Mějme například následující kód, ochranného zařízení `when a > 12` platí jak `A a` a `B a`:</span><span class="sxs-lookup"><span data-stu-id="f98d8-125">For example, given the following code, the guard `when a > 12` applies to both `A a` and `B a`:</span></span>
+<span data-ttu-id="1577b-124">Všimněte si, že pokud vzor sjednocení se bude vztahovat ochranu, ochranného zařízení platí pro **všechny** vzorů, ne jenom poslední z nich.</span><span class="sxs-lookup"><span data-stu-id="1577b-124">Note that when a union pattern is covered by a guard, the guard applies to **all** of the patterns, not just the last one.</span></span> <span data-ttu-id="1577b-125">Mějme například následující kód, ochranného zařízení `when a > 12` platí jak `A a` a `B a`:</span><span class="sxs-lookup"><span data-stu-id="1577b-125">For example, given the following code, the guard `when a > 12` applies to both `A a` and `B a`:</span></span>
 
 ```fsharp
 type Union =
@@ -80,8 +80,8 @@ let foo() =
 foo() // returns 42
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f98d8-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="f98d8-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1577b-126">Viz také:</span><span class="sxs-lookup"><span data-stu-id="1577b-126">See also</span></span>
 
-- [<span data-ttu-id="f98d8-127">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="f98d8-127">F# Language Reference</span></span>](index.md)  
-- [<span data-ttu-id="f98d8-128">Aktivní vzory</span><span class="sxs-lookup"><span data-stu-id="f98d8-128">Active Patterns</span></span>](active-patterns.md)  
-- [<span data-ttu-id="f98d8-129">Porovnávání vzorů</span><span class="sxs-lookup"><span data-stu-id="f98d8-129">Pattern Matching</span></span>](pattern-matching.md)  
+- [<span data-ttu-id="1577b-127">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="1577b-127">F# Language Reference</span></span>](index.md)  
+- [<span data-ttu-id="1577b-128">Aktivní vzory</span><span class="sxs-lookup"><span data-stu-id="1577b-128">Active Patterns</span></span>](active-patterns.md)  
+- [<span data-ttu-id="1577b-129">Porovnávání vzorů</span><span class="sxs-lookup"><span data-stu-id="1577b-129">Pattern Matching</span></span>](pattern-matching.md)  
