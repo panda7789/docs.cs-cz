@@ -3,19 +3,19 @@ title: Imperativní vlastní vazby
 ms.date: 03/30/2017
 ms.assetid: 6e13bf96-5de0-4476-b646-5f150774418d
 ms.openlocfilehash: dac98d2c08a207019b9ec5b18340afc02e62f836
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44129705"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44196462"
 ---
-# <a name="custom-binding-imperative"></a><span data-ttu-id="c94dd-102">Imperativní vlastní vazby</span><span class="sxs-lookup"><span data-stu-id="c94dd-102">Custom Binding Imperative</span></span>
-<span data-ttu-id="c94dd-103">Vzorek ukazuje, jak napsat imperativního kódu k definování a použití vlastní vazby bez použití konfiguračního souboru nebo klienta Windows Communication Foundation (WCF) vygenerovat.</span><span class="sxs-lookup"><span data-stu-id="c94dd-103">The sample demonstrates how to write imperative code to define and use custom bindings without using a configuration file or a Windows Communication Foundation (WCF) generated client.</span></span> <span data-ttu-id="c94dd-104">Tato ukázka kombinuje funkcí poskytovaných službou přenos pomocí protokolu HTTP a kanál stabilní relace pro vytvoření spolehlivé připojení založené na protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="c94dd-104">This sample combines the features provided by the HTTP transport and the reliable session channel to create a reliable HTTP-based binding.</span></span> <span data-ttu-id="c94dd-105">Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.</span><span class="sxs-lookup"><span data-stu-id="c94dd-105">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span>  
+# <a name="custom-binding-imperative"></a><span data-ttu-id="61986-102">Imperativní vlastní vazby</span><span class="sxs-lookup"><span data-stu-id="61986-102">Custom Binding Imperative</span></span>
+<span data-ttu-id="61986-103">Vzorek ukazuje, jak napsat imperativního kódu k definování a použití vlastní vazby bez použití konfiguračního souboru nebo klienta Windows Communication Foundation (WCF) vygenerovat.</span><span class="sxs-lookup"><span data-stu-id="61986-103">The sample demonstrates how to write imperative code to define and use custom bindings without using a configuration file or a Windows Communication Foundation (WCF) generated client.</span></span> <span data-ttu-id="61986-104">Tato ukázka kombinuje funkcí poskytovaných službou přenos pomocí protokolu HTTP a kanál stabilní relace pro vytvoření spolehlivé připojení založené na protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="61986-104">This sample combines the features provided by the HTTP transport and the reliable session channel to create a reliable HTTP-based binding.</span></span> <span data-ttu-id="61986-105">Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.</span><span class="sxs-lookup"><span data-stu-id="61986-105">This sample is based on the [Getting Started](../../../../docs/framework/wcf/samples/getting-started-sample.md) that implements a calculator service.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="c94dd-106">Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="c94dd-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
+>  <span data-ttu-id="61986-106">Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.</span><span class="sxs-lookup"><span data-stu-id="61986-106">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>  
   
- <span data-ttu-id="c94dd-107">Na klienta a služby se vytvoří vlastní vazby, který obsahuje dva elementy vazby (stabilní relace a HTTP):</span><span class="sxs-lookup"><span data-stu-id="c94dd-107">On both the client and the service, a custom binding is created that contains two binding elements (Reliable Session and HTTP):</span></span>  
+ <span data-ttu-id="61986-107">Na klienta a služby se vytvoří vlastní vazby, který obsahuje dva elementy vazby (stabilní relace a HTTP):</span><span class="sxs-lookup"><span data-stu-id="61986-107">On both the client and the service, a custom binding is created that contains two binding elements (Reliable Session and HTTP):</span></span>  
 
 ```csharp
 ReliableSessionBindingElement reliableSession = new ReliableSessionBindingElement();  
@@ -28,13 +28,13 @@ httpTransport.HostNameComparisonMode = HostNameComparisonMode.StrongWildcard;
 CustomBinding binding = new CustomBinding(reliableSession, httpTransport);  
 ```
   
- <span data-ttu-id="c94dd-108">Ve službě se používá vazbu tak, že přidáte hostitele ServiceHost koncový bod:</span><span class="sxs-lookup"><span data-stu-id="c94dd-108">On the service, the binding is used by adding an endpoint to the ServiceHost:</span></span>  
+ <span data-ttu-id="61986-108">Ve službě se používá vazbu tak, že přidáte hostitele ServiceHost koncový bod:</span><span class="sxs-lookup"><span data-stu-id="61986-108">On the service, the binding is used by adding an endpoint to the ServiceHost:</span></span>  
 
 ```csharp
 serviceHost.AddServiceEndpoint(typeof(ICalculator), binding, "");  
 ```
 
- <span data-ttu-id="c94dd-109">Na straně klienta používá vazbu <xref:System.ServiceModel.ChannelFactory> vytvořit kanál ke službě:</span><span class="sxs-lookup"><span data-stu-id="c94dd-109">On the client, the binding is used by a <xref:System.ServiceModel.ChannelFactory> to create a channel to the service:</span></span>  
+ <span data-ttu-id="61986-109">Na straně klienta používá vazbu <xref:System.ServiceModel.ChannelFactory> vytvořit kanál ke službě:</span><span class="sxs-lookup"><span data-stu-id="61986-109">On the client, the binding is used by a <xref:System.ServiceModel.ChannelFactory> to create a channel to the service:</span></span>  
 
 ```csharp
 EndpointAddress address = new EndpointAddress("http://localhost:8000/servicemodelsamples/service");  
@@ -42,7 +42,7 @@ ChannelFactory<ICalculator> channelFactory = new ChannelFactory<ICalculator>(bin
 ICalculator channel = channelFactory.CreateChannel();  
 ```
 
- <span data-ttu-id="c94dd-110">Tento kanál se pak použije k interakci se službou:</span><span class="sxs-lookup"><span data-stu-id="c94dd-110">This channel is then used to interact with the service:</span></span>  
+ <span data-ttu-id="61986-110">Tento kanál se pak použije k interakci se službou:</span><span class="sxs-lookup"><span data-stu-id="61986-110">This channel is then used to interact with the service:</span></span>  
 
 ```csharp
 // Call the Add service operation.  
@@ -52,7 +52,7 @@ double result = channel.Add(value1, value2);
 Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result);  
 ```
 
- <span data-ttu-id="c94dd-111">Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta.</span><span class="sxs-lookup"><span data-stu-id="c94dd-111">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="c94dd-112">Stisknutím klávesy ENTER v okně Klient vypnutí klient.</span><span class="sxs-lookup"><span data-stu-id="c94dd-112">Press ENTER in the client window to shut down the client.</span></span>  
+ <span data-ttu-id="61986-111">Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta.</span><span class="sxs-lookup"><span data-stu-id="61986-111">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="61986-112">Stisknutím klávesy ENTER v okně Klient vypnutí klient.</span><span class="sxs-lookup"><span data-stu-id="61986-112">Press ENTER in the client window to shut down the client.</span></span>  
   
 ```  
 Add(100,15.99) = 115.99  
@@ -63,22 +63,22 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="c94dd-113">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="c94dd-113">To set up, build, and run the sample</span></span>  
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="61986-113">Chcete-li nastavit, sestavte a spusťte ukázku</span><span class="sxs-lookup"><span data-stu-id="61986-113">To set up, build, and run the sample</span></span>  
   
-1.  <span data-ttu-id="c94dd-114">Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="c94dd-114">Be sure you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
+1.  <span data-ttu-id="61986-114">Ujistěte se, jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span><span class="sxs-lookup"><span data-stu-id="61986-114">Be sure you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>  
   
-2.  <span data-ttu-id="c94dd-115">K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="c94dd-115">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
+2.  <span data-ttu-id="61986-115">K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="61986-115">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>  
   
-3.  <span data-ttu-id="c94dd-116">Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="c94dd-116">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
+3.  <span data-ttu-id="61986-116">Spusťte ukázku v konfiguraci s jedním nebo více počítačů, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).</span><span class="sxs-lookup"><span data-stu-id="61986-116">To run the sample in a single- or cross-machine configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>  
   
 > [!IMPORTANT]
->  <span data-ttu-id="c94dd-117">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="c94dd-117">The samples may already be installed on your machine.</span></span> <span data-ttu-id="c94dd-118">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="c94dd-118">Check for the following (default) directory before continuing.</span></span>  
+>  <span data-ttu-id="61986-117">Vzorky mohou již být nainstalováno na svém počítači.</span><span class="sxs-lookup"><span data-stu-id="61986-117">The samples may already be installed on your machine.</span></span> <span data-ttu-id="61986-118">Před pokračováním zkontrolujte následující adresář (výchozí).</span><span class="sxs-lookup"><span data-stu-id="61986-118">Check for the following (default) directory before continuing.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples`  
 >   
->  <span data-ttu-id="c94dd-119">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="c94dd-119">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="c94dd-120">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="c94dd-120">This sample is located in the following directory.</span></span>  
+>  <span data-ttu-id="61986-119">Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky.</span><span class="sxs-lookup"><span data-stu-id="61986-119">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="61986-120">Tato ukázka se nachází v následujícím adresáři.</span><span class="sxs-lookup"><span data-stu-id="61986-120">This sample is located in the following directory.</span></span>  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Custom\Imperative`  
   
-## <a name="see-also"></a><span data-ttu-id="c94dd-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="c94dd-121">See Also</span></span>  
- [<span data-ttu-id="c94dd-122">Vlastní vazba</span><span class="sxs-lookup"><span data-stu-id="c94dd-122">Custom Binding</span></span>](https://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08)
+## <a name="see-also"></a><span data-ttu-id="61986-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="61986-121">See Also</span></span>  
+ [<span data-ttu-id="61986-122">Vlastní vazba</span><span class="sxs-lookup"><span data-stu-id="61986-122">Custom Binding</span></span>](https://msdn.microsoft.com/library/657e8143-beb0-472d-9cfe-ed1a19c2ab08)

@@ -3,16 +3,16 @@ title: 'Postupy: dotazování obsah textových souborů ve složce (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
 ms.openlocfilehash: dedb3b742805daa23151c61e89dd0835f730dd9c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44065599"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44204536"
 ---
-# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a><span data-ttu-id="b47f4-102">Postupy: dotazování obsah textových souborů ve složce (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="b47f4-102">How to: Query the Contents of Text Files in a Folder (LINQ) (C#)</span></span>
-<span data-ttu-id="b47f4-103">Tento příklad ukazuje, jak dotaz nad všechny soubory ve stromové struktuře zadaný adresář, otevřete každý soubor a zkontrolujte jeho obsah.</span><span class="sxs-lookup"><span data-stu-id="b47f4-103">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="b47f4-104">Tento typ technika může použít k vytváření indexů nebo obrácení pořadí indexů obsah adresářovém stromu.</span><span class="sxs-lookup"><span data-stu-id="b47f4-104">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="b47f4-105">Hledání jednoduchého řetězce se provádí v tomto příkladu.</span><span class="sxs-lookup"><span data-stu-id="b47f4-105">A simple string search is performed in this example.</span></span> <span data-ttu-id="b47f4-106">Porovnávání vzorů složitější typy však lze provést s regulárním výrazem.</span><span class="sxs-lookup"><span data-stu-id="b47f4-106">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="b47f4-107">Další informace najdete v tématu [postupy: kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="b47f4-107">For more information, see [How to: Combine LINQ Queries with Regular Expressions (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
+# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a><span data-ttu-id="5aa3f-102">Postupy: dotazování obsah textových souborů ve složce (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="5aa3f-102">How to: Query the Contents of Text Files in a Folder (LINQ) (C#)</span></span>
+<span data-ttu-id="5aa3f-103">Tento příklad ukazuje, jak dotaz nad všechny soubory ve stromové struktuře zadaný adresář, otevřete každý soubor a zkontrolujte jeho obsah.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-103">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="5aa3f-104">Tento typ technika může použít k vytváření indexů nebo obrácení pořadí indexů obsah adresářovém stromu.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-104">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="5aa3f-105">Hledání jednoduchého řetězce se provádí v tomto příkladu.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-105">A simple string search is performed in this example.</span></span> <span data-ttu-id="5aa3f-106">Porovnávání vzorů složitější typy však lze provést s regulárním výrazem.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-106">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="5aa3f-107">Další informace najdete v tématu [postupy: kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="5aa3f-107">For more information, see [How to: Combine LINQ Queries with Regular Expressions (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="b47f4-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="b47f4-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="5aa3f-108">Příklad</span><span class="sxs-lookup"><span data-stu-id="5aa3f-108">Example</span></span>  
   
 ```csharp  
 class QueryContents  
@@ -70,10 +70,10 @@ class QueryContents
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="b47f4-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="b47f4-109">Compiling the Code</span></span>  
- <span data-ttu-id="b47f4-110">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="b47f4-110">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="5aa3f-109">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="5aa3f-109">Compiling the Code</span></span>  
+ <span data-ttu-id="5aa3f-110">Vytvořit projekt, který cílí na rozhraní .NET Framework verze 3.5 nebo vyšší s odkazem na knihovnu System.Core.dll a `using` direktivy pro obory názvů System.Linq a System.IO.</span><span class="sxs-lookup"><span data-stu-id="5aa3f-110">Create a project that targets the .NET Framework  version 3.5 or higher, with a reference to System.Core.dll and `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b47f4-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="b47f4-111">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5aa3f-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="5aa3f-111">See Also</span></span>
 
-- [<span data-ttu-id="b47f4-112">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="b47f4-112">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)  
-- [<span data-ttu-id="b47f4-113">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="b47f4-113">LINQ to Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)
+- [<span data-ttu-id="5aa3f-112">LINQ a souborové adresáře (C#)</span><span class="sxs-lookup"><span data-stu-id="5aa3f-112">LINQ and File Directories (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-and-file-directories.md)  
+- [<span data-ttu-id="5aa3f-113">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="5aa3f-113">LINQ to Objects (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-objects.md)

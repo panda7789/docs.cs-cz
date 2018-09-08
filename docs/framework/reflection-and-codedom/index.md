@@ -8,29 +8,29 @@ ms.assetid: f78ec137-df0e-48c9-a7a0-5f6a1055f011
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e90857fcf02dbd0dd888b0658f3ab626bc5b11bd
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44064761"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44202411"
 ---
-# <a name="dynamic-programming-in-the-net-framework"></a><span data-ttu-id="24c2f-102">Dynamické programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="24c2f-102">Dynamic Programming in the .NET Framework</span></span>
-<span data-ttu-id="24c2f-103">Tato část dokumentace obsahuje informace o dynamické programování v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="24c2f-103">This section of the documentation provides information about dynamic programming in the .NET Framework.</span></span>  
+# <a name="dynamic-programming-in-the-net-framework"></a><span data-ttu-id="cc8e6-102">Dynamické programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="cc8e6-102">Dynamic Programming in the .NET Framework</span></span>
+<span data-ttu-id="cc8e6-103">Tato část dokumentace obsahuje informace o dynamické programování v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="cc8e6-103">This section of the documentation provides information about dynamic programming in the .NET Framework.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="24c2f-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="24c2f-104">In This Section</span></span>  
- [<span data-ttu-id="24c2f-105">Reflexe</span><span class="sxs-lookup"><span data-stu-id="24c2f-105">Reflection</span></span>](../../../docs/framework/reflection-and-codedom/reflection.md)  
- <span data-ttu-id="24c2f-106">Popisuje způsob použití reflexe pro práci s objekty v době běhu.</span><span class="sxs-lookup"><span data-stu-id="24c2f-106">Describes how to use reflection to work with objects at run time.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="cc8e6-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="cc8e6-104">In This Section</span></span>  
+ [<span data-ttu-id="cc8e6-105">Reflexe</span><span class="sxs-lookup"><span data-stu-id="cc8e6-105">Reflection</span></span>](../../../docs/framework/reflection-and-codedom/reflection.md)  
+ <span data-ttu-id="cc8e6-106">Popisuje způsob použití reflexe pro práci s objekty v době běhu.</span><span class="sxs-lookup"><span data-stu-id="cc8e6-106">Describes how to use reflection to work with objects at run time.</span></span>  
   
- [<span data-ttu-id="24c2f-107">Generování dynamických metod a sestavení</span><span class="sxs-lookup"><span data-stu-id="24c2f-107">Emitting Dynamic Methods and Assemblies</span></span>](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
- <span data-ttu-id="24c2f-108">Popisuje, jak vytvořit metod a sestavení v době běhu pomocí třídy Reflection.Emit.</span><span class="sxs-lookup"><span data-stu-id="24c2f-108">Describes how to create methods and assemblies at run time by using Reflection.Emit.</span></span>  
+ [<span data-ttu-id="cc8e6-107">Generování dynamických metod a sestavení</span><span class="sxs-lookup"><span data-stu-id="cc8e6-107">Emitting Dynamic Methods and Assemblies</span></span>](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)  
+ <span data-ttu-id="cc8e6-108">Popisuje, jak vytvořit metod a sestavení v době běhu pomocí třídy Reflection.Emit.</span><span class="sxs-lookup"><span data-stu-id="cc8e6-108">Describes how to create methods and assemblies at run time by using Reflection.Emit.</span></span>  
   
- [<span data-ttu-id="24c2f-109">Přehled DLR (Dynamic Language Runtime)</span><span class="sxs-lookup"><span data-stu-id="24c2f-109">Dynamic Language Runtime Overview</span></span>](../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
- <span data-ttu-id="24c2f-110">Popisuje funkce dynamickým jazykovým modulem runtime.</span><span class="sxs-lookup"><span data-stu-id="24c2f-110">Describes the features of the dynamic language runtime.</span></span>  
+ [<span data-ttu-id="cc8e6-109">Přehled DLR (Dynamic Language Runtime)</span><span class="sxs-lookup"><span data-stu-id="cc8e6-109">Dynamic Language Runtime Overview</span></span>](../../../docs/framework/reflection-and-codedom/dynamic-language-runtime-overview.md)  
+ <span data-ttu-id="cc8e6-110">Popisuje funkce dynamickým jazykovým modulem runtime.</span><span class="sxs-lookup"><span data-stu-id="cc8e6-110">Describes the features of the dynamic language runtime.</span></span>  
   
- [<span data-ttu-id="24c2f-111">Dynamické vytváření a kompilování zdrojového kódu</span><span class="sxs-lookup"><span data-stu-id="24c2f-111">Dynamic Source Code Generation and Compilation</span></span>](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)  
- <span data-ttu-id="24c2f-112">Popisuje postup generování a kompilaci dynamického zdrojového kódu.</span><span class="sxs-lookup"><span data-stu-id="24c2f-112">Describes how to generate and compile dynamic source code.</span></span>  
+ [<span data-ttu-id="cc8e6-111">Dynamické vytváření a kompilování zdrojového kódu</span><span class="sxs-lookup"><span data-stu-id="cc8e6-111">Dynamic Source Code Generation and Compilation</span></span>](../../../docs/framework/reflection-and-codedom/dynamic-source-code-generation-and-compilation.md)  
+ <span data-ttu-id="cc8e6-112">Popisuje postup generování a kompilaci dynamického zdrojového kódu.</span><span class="sxs-lookup"><span data-stu-id="cc8e6-112">Describes how to generate and compile dynamic source code.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="24c2f-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="24c2f-113">Related Sections</span></span>  
- [<span data-ttu-id="24c2f-114">Průvodce vývojem</span><span class="sxs-lookup"><span data-stu-id="24c2f-114">Development Guide</span></span>](../../../docs/framework/development-guide.md)  
+## <a name="related-sections"></a><span data-ttu-id="cc8e6-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="cc8e6-113">Related Sections</span></span>  
+ [<span data-ttu-id="cc8e6-114">Průvodce vývojem</span><span class="sxs-lookup"><span data-stu-id="cc8e6-114">Development Guide</span></span>](../../../docs/framework/development-guide.md)  
   
- [<span data-ttu-id="24c2f-115">Rozšířené čtení pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="24c2f-115">Advanced Reading for the .NET Framework</span></span>](https://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)
+ [<span data-ttu-id="cc8e6-115">Rozšířené čtení pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="cc8e6-115">Advanced Reading for the .NET Framework</span></span>](https://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)
