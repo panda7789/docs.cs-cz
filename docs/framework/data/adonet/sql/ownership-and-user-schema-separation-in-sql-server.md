@@ -3,11 +3,11 @@ title: Vlastnictví a oddělení uživatelských schémat na SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 242830c1-31b5-4427-828c-cc22ff339f30
 ms.openlocfilehash: 7b1cda211fdc89732afa8eed1eaaf2c98309a969
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44097679"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44222315"
 ---
 # <a name="ownership-and-user-schema-separation-in-sql-server"></a>Vlastnictví a oddělení uživatelských schémat na SQL serveru
 Základním konceptem zabezpečení SQL serveru je, že vlastníci objekty mají neodvolatelnou oprávnění ke správě je. Nelze odebrat oprávnění z objektu vlastníka a z databáze nelze vyřadit uživatele, pokud vlastní objekty v ní.  

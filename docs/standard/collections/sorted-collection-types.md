@@ -12,11 +12,11 @@ ms.assetid: 3db965b2-36a6-4b12-b76e-7f074ff7275a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 83efda175b7e5cef8c7042682827d2fe0562c207
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44138965"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44211889"
 ---
 # <a name="sorted-collection-types"></a>Typy řazených kolekcí
 <xref:System.Collections.SortedList?displayProperty=nameWithType> Třídy, <xref:System.Collections.Generic.SortedList%602?displayProperty=nameWithType> obecné třídy a <xref:System.Collections.Generic.SortedDictionary%602?displayProperty=nameWithType> obecné třídy jsou podobné <xref:System.Collections.Hashtable> třídy a <xref:System.Collections.Generic.Dictionary%602> obecná třída v tom, že je implementovat <xref:System.Collections.IDictionary> rozhraní, ale zachovat jejich pořadí prvků v řazení podle klíče a nemají O(1) vkládání a načítání charakteristické zatřiďovacích tabulek. Tři třídy mají společnou několik funkcí:  

@@ -5,11 +5,11 @@ f1_keywords:
 - vbrNetwork_UploadAddressNeedsFilename
 ms.assetid: 0ee11749-0432-4ccb-8c08-1663a4a55ad0
 ms.openlocfilehash: a3f0b02246264cb50c6f719294cb990221702ea2
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44130783"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44212266"
 ---
 # <a name="the-address-for-uploadfile-needs-to-include-a-filename"></a>Adresa pro UploadFile musí zahrnovat název souboru
 Při nahrávání souborů se `UploadFile` metoda, je nutné zadat název souboru v cílové cestě.  

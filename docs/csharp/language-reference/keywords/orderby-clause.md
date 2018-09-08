@@ -9,11 +9,11 @@ helpviewer_keywords:
 - orderby keyword [C#]
 ms.assetid: 21f87f48-d69d-4e95-9a52-6fec47b37e1f
 ms.openlocfilehash: de649a7e1608e6a653f3280bfd5c4e52a3b661be
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44078246"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44217435"
 ---
 # <a name="orderby-clause-c-reference"></a>orderby – klauzule (Referenční dokumentace jazyka C#)
 

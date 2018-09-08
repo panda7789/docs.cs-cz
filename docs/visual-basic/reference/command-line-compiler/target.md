@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 17528bb9faf137029b35e4a9f28bab7a28ae25db
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5e3f691da48db863edd20bc6881785940a5451ef
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864612"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44209378"
 ---
 # <a name="-target-visual-basic"></a>-target (Visual Basic)
 Určuje formát výstupu kompilátoru.  
@@ -38,7 +38,7 @@ Určuje formát výstupu kompilátoru.
   
  Pokud nezadáte `-target:module`, `-target` způsobí, že [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] manifest sestavení přidán do výstupního souboru.  
   
- Vytváří každou instanci Vbc.exe, maximálně jednu výstupní soubor. Pokud například zadáte možnost kompilátoru `-out` nebo `-target` více než jednou, posledním blokem procesy, které kompilátor je začíná platit. Informace o všech souborech v kompilaci se přidají do manifestu. Všechny výstupní soubory s výjimkou těch, vytvořené pomocí `-target:module` obsahovat metadata sestavení v manifestu. Použití [Ildasm.exe (IL Disassembler)](https://msdn.microsoft.com/library/f7dy01k1) zobrazit metadata do výstupního souboru.  
+ Vytváří každou instanci Vbc.exe, maximálně jednu výstupní soubor. Pokud například zadáte možnost kompilátoru `-out` nebo `-target` více než jednou, posledním blokem procesy, které kompilátor je začíná platit. Informace o všech souborech v kompilaci se přidají do manifestu. Všechny výstupní soubory s výjimkou těch, vytvořené pomocí `-target:module` obsahovat metadata sestavení v manifestu. Použití [Ildasm.exe (IL Disassembler)](../../../framework/tools/ildasm-exe-il-disassembler.md) zobrazit metadata do výstupního souboru.  
   
  Krátký tvar `-target` je `-t`.  
   
@@ -57,12 +57,13 @@ Určuje formát výstupu kompilátoru.
 vbc -target:library in.vb  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
- [-main](../../../visual-basic/reference/command-line-compiler/main.md)  
- [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)  
- [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)  
- [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)  
- [-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)  
- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
+- [-main](../../../visual-basic/reference/command-line-compiler/main.md)  
+- [-out (Visual Basic)](../../../visual-basic/reference/command-line-compiler/out.md)  
+- [– referenční dokumentace (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)  
+- [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md)  
+- [-moduleassemblyname](../../../visual-basic/reference/command-line-compiler/moduleassemblyname.md)  
+- [Sestavení a globální mezipaměť sestavení (GAC)](../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

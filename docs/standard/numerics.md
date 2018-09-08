@@ -14,11 +14,11 @@ ms.assetid: dfebc18e-acde-4510-9fa7-9a0f4aa3bd11
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1d253e7a32d5f302b095a86ddb5c296d5fa8fa11
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44037078"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44209481"
 ---
 # <a name="numerics-in-the-net-framework"></a>Číslovky v architektuře .NET Framework
 Rozhraní .NET Framework podporuje standardní číselný s plovoucí desetinnou čárkou a integrální primitiv, stejně jako <xref:System.Numerics.BigInteger>, celočíselný typ bez teoretické horní nebo dolní mez <xref:System.Numerics.Complex>, typ, který představuje komplexní čísla a s podporou SIMD sady vektorové typy v <xref:System.Numerics> oboru názvů.  

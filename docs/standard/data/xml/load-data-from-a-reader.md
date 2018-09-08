@@ -6,11 +6,11 @@ ms.assetid: 7e74918c-bc72-4977-a49b-e1520a6d8f60
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 55756092f086de47c4b2acb8f147ca3ab231abe1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44068921"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44207223"
 ---
 # <a name="load-data-from-a-reader"></a>Načtení dat z čtečky
 Pokud dokument XML je načtené pomocí možnosti <xref:System.Xml.XmlDocument.Load%2A> metoda a parametr <xref:System.Xml.XmlReader>, existují rozdíly v chování, která nastane v porovnání s chování načítání dat z jiných formátů. Pokud čtečka nachází ve stavu počáteční <xref:System.Xml.XmlDocument.Load%2A> využívá celý obsah ze čtečky a sestavení XML Document Object Model (DOM) z všechna data ve čtečce.  

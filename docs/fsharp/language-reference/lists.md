@@ -3,11 +3,11 @@ title: Seznamy (F#)
 description: 'Další informace o seznamech F #, seřazený, neměnné řadu prvků stejného typu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 60e7edb56bdf498e3ba51aff028d8564eb68d0f1
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44139576"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44207489"
 ---
 # <a name="lists"></a>Seznamy
 

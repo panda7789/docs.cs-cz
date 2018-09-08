@@ -3,11 +3,11 @@ title: 'Postupy: Definování připojovacího řetězce'
 ms.date: 03/30/2017
 ms.assetid: 6027335d-4e26-420d-9151-6523289b1989
 ms.openlocfilehash: f40b8bc68eda1cb4b64b34d12b2922da69929203
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43802158"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44210159"
 ---
 # <a name="how-to-define-the-connection-string"></a>Postupy: Definování připojovacího řetězce
 Toto téma ukazuje, jak definovat připojovací řetězec, který je použit při připojování ke konceptuálního modelu. Toto téma vychází [AdventureWorks prodeje](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) koncepčního modelu. AdventureWorks Sales Model se používá v tématech souvisejících s úlohami v rámci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] dokumentaci. Toto téma předpokládá, že jste již nakonfigurovali [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] a definovaný Model prodeje AdventureWorks. Další informace najdete v tématu [postupy: ruční definování modelu a souborů mapování](https://msdn.microsoft.com/library/d4fd6864-f2a1-48f0-aa32-1e318775a99a). Postupy v tomto tématu jsou taky součástí [postupy: ruční konfigurace projektu v Entity Framework](https://msdn.microsoft.com/library/73f6ae1d-b3b2-4577-aebd-ad5a75954e9e).  

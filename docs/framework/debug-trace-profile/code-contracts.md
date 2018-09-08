@@ -1,6 +1,6 @@
 ---
 title: Kontrakty kódu
-ms.date: 03/30/2017
+ms.date: 09/05/2018
 dev_langs:
 - csharp
 - vb
@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a444b7eace18fa579324f540e8cf7537c420a6a8
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: f7f7a779cc10b32d66a184107359b502cf094979
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44080605"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44222120"
 ---
 # <a name="code-contracts"></a>Kontrakty kódu
 Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstupních objekt podmínek ve vašem kódu. Předběžné podmínky jsou požadavky, které musí být splněny, při zadávání metody nebo vlastnosti. Vstupních popisují očekávání v době, kdy kód metody nebo vlastnosti se ukončí. Objekt výstupních podmínek popisují očekávaný stav pro třídu, která je v dobrém stavu.  
@@ -148,7 +148,7 @@ Contract.Invariant(this.x > this.y);
 }  
 ```  
   
- Výstupních podmínek jsou definovány podmíněně preprocesoru symbol CONTRACTS_FULL. Během kontroly za běhu, jsou kontrolovány výstupních podmínek na konci každé veřejné metody. Pokud invariantní uvádí veřejnou metodu ve stejné třídě, je zakázané invariantní zkontrolujte, jestli by normálně mohlo dojít na konci této veřejné metody. Místo toho kontrola probíhá pouze na konci volání vnější metody dané třídy. Také se to stane, když je třída opětovný vstup z důvodu volání metody na jinou třídu. Výstupních podmínek nejsou zaregistrované u finalizační metody objektu nebo pro všechny metody, které implementují <xref:System.IDisposable.Dispose%2A> metody.  
+ Výstupních podmínek jsou definovány podmíněně preprocesoru symbol CONTRACTS_FULL. Během kontroly za běhu, jsou kontrolovány výstupních podmínek na konci každé veřejné metody. Pokud invariantní uvádí veřejnou metodu ve stejné třídě, je zakázané invariantní zkontrolujte, jestli by normálně mohlo dojít na konci této veřejné metody. Místo toho kontrola probíhá pouze na konci volání vnější metody dané třídy. Také se to stane, když je třída opětovný vstup z důvodu volání metody na jinou třídu. Výstupních podmínek se kontroluje finalizační metodu objektu a <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> implementace.  
   
 <a name="usage_guidelines"></a>   
 ## <a name="usage-guidelines"></a>Pokyny k používání  

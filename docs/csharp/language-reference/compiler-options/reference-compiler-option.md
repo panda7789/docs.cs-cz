@@ -13,12 +13,12 @@ helpviewer_keywords:
 - public type information [C#]
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
-ms.openlocfilehash: 76a53d6adcf4c55faa57c25f851e46dd4c2c6c22
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 131cdf62917ab2fc8d564b85c30d13c8971e5809
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865482"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44213712"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference (možnosti kompilátoru C#)
 **– Referenční dokumentace** možnost způsobí, že kompilátor importovat [veřejné](../../../csharp/language-reference/keywords/public.md) zadávat informace do zadaného souboru do aktuálního projektu, což umožní k odkazování na metadata ze zadaných souborů sestavení.  
@@ -67,10 +67,12 @@ ms.locfileid: "43865482"
  Tento příklad ukazuje způsob použití [externí alias](../../../csharp/language-reference/keywords/extern-alias.md) funkce.  
   
  Kompilaci zdrojového souboru a import metadat od `grid.dll` a `grid20.dll`, které již byly zkompilovány dříve. Dvě knihovny DLL obsahovat samostatné verze stejné součásti a použijete dvě **– referenční dokumentace** s možnostmi alias pro kompilaci zdrojového souboru. Možnosti vypadat nějak takto:  
+
+```console
+-reference:GridV1=grid.dll -reference:GridV2=grid20.dll  
+```
   
- -reference:GridV1=grid.dll a - reference:GridV2=grid20.dll  
-  
- Tím se nastaví externích aliasů "GridV1 před" a "GridV2", který používáte ve svém programu prostřednictvím externího příkazu:  
+ Tím se nastaví externích aliasů `GridV1` a `GridV2`, který používáte ve svém programu prostřednictvím `extern` – příkaz:  
   
 ```csharp  
 extern alias GridV1;  
@@ -78,13 +80,13 @@ extern alias GridV2;
 // Using statements go here.  
 ```  
   
- Až to uděláte, můžete můžete odkazovat na ovládací prvek mřížky z grid.dll vložením prefixu název ovládacího prvku s GridV1, následujícím způsobem:  
+ Až to uděláte, můžete odkazovat na ovládací prvek mřížky z `grid.dll` vložením prefixu název ovládacího prvku s `GridV1`, tímto způsobem:  
   
 ```csharp  
 GridV1::Grid  
 ```  
   
- Kromě toho najdete ovládací prvek mřížky z grid20.dll vložením prefixu název ovládacího prvku s GridV2 takto:  
+ Kromě toho můžete odkazovat na ovládací prvek mřížky z `grid20.dll` vložením prefixu název ovládacího prvku s `GridV2` tímto způsobem:  
   
 ```csharp  
 GridV2::Grid   

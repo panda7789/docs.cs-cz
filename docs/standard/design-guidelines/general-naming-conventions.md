@@ -17,11 +17,11 @@ ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cd3defd969b5f26fb95e7feca9c3d533e67272b1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44071093"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44209496"
 ---
 # <a name="general-naming-conventions"></a>Obecné zásady vytváření názvů
 Tato část popisuje obecné zásady vytváření názvů, které se týkají podle vlastní volby slov, pokyny na pomocí zkratky a zkratky a doporučení o tom, abyste se vyhnuli použití názvů specifických pro jazyk.  

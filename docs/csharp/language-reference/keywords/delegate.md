@@ -10,11 +10,11 @@ helpviewer_keywords:
 - function pointers [C#]
 ms.assetid: 0bb8cb6d-2f87-47c7-9d1f-d65c1cd01e9f
 ms.openlocfilehash: 7a5f46d137e22da01b2ab6cd3eee57d66c411e8f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44031385"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44211538"
 ---
 # <a name="delegate-c-reference"></a>delegate (Referenční dokumentace jazyka C#)
 

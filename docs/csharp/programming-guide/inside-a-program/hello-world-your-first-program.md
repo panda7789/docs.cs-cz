@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
 ms.openlocfilehash: 90f0ec6b88a2822cb3429948681c76c70f3d3f18
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44065716"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44213842"
 ---
 # <a name="hello-world----your-first-program-c-programming-guide"></a>Hello World! -- váš první program (Průvodce programováním v C#)
 Následující postup vytvoří verzi C# tradiční "Hello World!" program. Program zobrazí řetězec `Hello World!`  

@@ -6,11 +6,11 @@ ms.assetid: b18e7ffd-3c04-482d-9934-ba2f6a59b2c9
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0ed8614e1af3a52b9519c82a4b5c169c2fa3188f
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44133750"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44221633"
 ---
 # <a name="inferring-an-xml-schema"></a>Odvození schématu XML
 Popisuje, jak použít Model objektu schématu (SOM) <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodit jazyk (XSD) schématu definice schématu XML ze struktury dokumentu XML.  

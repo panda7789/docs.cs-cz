@@ -1,5 +1,5 @@
 ---
-title: Přehled knihovny tříd rozhraní .NET
+title: Přehled knihovny tříd .NET
 ms.date: 02/08/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -39,78 +39,79 @@ helpviewer_keywords:
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7b6730e621a85dc8e656723647f949449241c407
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: acc51287a8c670da63d0ec421aa232864ea91c2b
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36207453"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44216617"
 ---
-# <a name="net-class-library-overview"></a>Přehled knihovny tříd rozhraní .NET
+# <a name="net-class-library-overview"></a>Přehled knihovny tříd .NET
 
-Implementace rozhraní .NET zahrnují třídy, rozhraní, delegáti a typy hodnot, které urychlit a optimalizovat proces vývoje a poskytují přístup k funkci systému. Usnadňuje vzájemná funkční spolupráce mezi jazyky většinu typů .NET jsou kompatibilní se specifikací CLS a dá se použít proto z žádný programovací jazyk, jehož kompilátoru vyhovuje specifikace (CLS).  
+Implementace .NET zahrnují třídy, rozhraní, delegáty a typy hodnot, které urychlují a optimalizovat proces vývoje a poskytují přístup k funkčnosti systému. Většinu typů .NET pro usnadnění vzájemná funkční spolupráce mezi jazyky, jsou kompatibilní se Specifikací CLS a je proto možné z libovolného programovacího jazyka, jejichž kompilátor odpovídá common language specification (CLS).  
   
- Typy .NET jsou foundation, na které .NET jsou vytvořeny aplikací, komponent a ovládací prvky. Implementace rozhraní .NET zahrnout typy, které provádějí následující funkce:  
+ Typy .NET jsou základem, na které .NET jsou postaveny aplikace, komponenty a ovládací prvky. Implementace .NET patří typy, které provádějí následující funkce:  
   
 -   Představují základní datové typy a výjimky.  
   
 -   Zapouzdření datové struktury.  
   
--   Proveďte vstupně-výstupní operace.  
+-   Provádění vstupně-výstupních operací.  
   
 -   Přístup k informacím o načtené typy.  
   
--   Vyvolání rozhraní .NET Framework kontrol zabezpečení.  
+-   Vyvolání kontroly zabezpečení rozhraní .NET Framework.  
   
--   Poskytnout přístup k datům, bohaté grafické uživatelské rozhraní klienta a řídí serveru, klienta grafickým uživatelským rozhraním.  
+-   Poskytuje přístup k datům, bohaté grafické uživatelské rozhraní na straně klienta a grafické uživatelské rozhraní se správou serveru, na straně klienta.  
   
- Rozhraní .NET poskytuje bohatou sadu rozhraní, stejně jako abstraktní a konkrétní třídy (jinou než abstraktní). Můžete použít konkrétní třídy, jako je nebo v mnoha případech, vlastní odvozovat z nich. Pokud chcete používat funkci rozhraní, můžete vytvořit třídu, která implementuje rozhraní nebo odvození třídy z jednoho z třídy rozhraní .NET, které implementuje rozhraní.  
+ .NET nabízí bohatou sadu rozhraní, stejně jako abstraktní a konkrétní (neabstraktní) třídy. Můžete použít konkrétní třídy jako nebo v mnoha případech, vlastní odvozovat z nich. Pokud chcete používat funkce rozhraní, můžete vytvořit třídu, která implementuje rozhraní nebo odvodit třídu z jedné ze tříd .NET, která implementuje rozhraní.  
   
 ## <a name="naming-conventions"></a>Zásady vytváření názvů
 
- Typy .NET použijte tečku syntaxe schéma pojmenování connotes hierarchie. Tato technika skupin souvisejících typů do oborů názvů, aby mohl být vyhledávat a snadněji odkazovat. První část úplný název – až úplně vpravo tečky – je název oboru názvů. Poslední část názvu je název typu. Například `System.Collections.Generic.List<T>` představuje `List<T>` typ, který patří do `System.Collections.Generic` oboru názvů. Typy v <xref:System.Collections.Generic> lze použít pro práci s obecné kolekce.  
+ Typy .NET použijte tečku syntaxe schéma pojmenování s connotes hierarchii. Tato technika skupiny souvisejících typů do oborů názvů, je možné prohledávat a snadněji odkazovat. První část úplný název – až úplně vpravo tečka – je název oboru názvů. Poslední část název je název typu. Například `System.Collections.Generic.List<T>` představuje `List<T>` typ, který patří do `System.Collections.Generic` oboru názvů. Typy v <xref:System.Collections.Generic> lze použít pro práci s obecné kolekce.  
   
- Toto schéma pojmenování usnadňuje vývojářům knihovny rozšíření [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] vytvářet hierarchické skupiny typů a název je konzistentní, informativní způsobem. Umožňuje také typy musí jednoznačně identifikovat podle názvu jejich úplná (to znamená, podle názvu jejich obor názvů a typ), která brání kolize názvů typu. Knihovna vývojáři očekává se, že při vytváření názvů pro jejich obory názvů použít následující konvence:  
+ Toto schéma pojmenování usnadňuje vývojářům knihovna rozšíření [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] vytvářet hierarchické skupiny typů a pojmenujte je konzistentní a informativní způsobem. Umožňuje také typy musí jednoznačně identifikovat podle jejich úplného názvu (to znamená podle názvu oboru názvů a typ), což zabraňuje kolize názvů typu. Se očekává, že vývojáři knihovny použijte následující konvence při vytváření názvů pro své obory názvů:  
   
- *NázevSpolečnosti*. *TechnologyName*  
+ *CompanyName*. *TechnologyName*  
   
  Například obor názvů `Microsoft.Word` odpovídá tomuto.  
   
- Použití vzory pojmenování do skupiny související typy do oborů názvů je velmi užitečný způsob vytváření a dokumentování knihovny tříd. Toto schéma pojmenování však nemá žádný vliv na viditelnost, přístup ke členu, dědičnosti, zabezpečení nebo vazby. Obor názvů, může být rozdělený napříč více sestavení a jednoho sestavení může obsahovat typy z více obory názvů. Sestavení poskytuje formální struktura pro správu verzí, nasazení, zabezpečení, načítání a viditelnost v modulu CLR.  
+ Použití vzorů pojmenování pro skupiny související typy do oborů názvů je velmi užitečný způsob, jak vytvářet a třída knihovny dokumentů. Toto schéma pojmenování, ale nemá žádný vliv na viditelnost, přístup ke členu, dědičnost, zabezpečení nebo vazby. Obor názvů lze rozdělit mezi několik sestavení a jediné sestavení může obsahovat typy z více oborů názvů. Sestavení poskytuje formální strukturu pro správu verzí, nasazení, zabezpečení, načítání a viditelnost v modulu common language runtime.  
   
- Další informace o názvech obory názvů a typ najdete v tématu [obecný systém typů](../../docs/standard/base-types/common-type-system.md).  
+ Další informace o názvech typů a oborů názvů, naleznete v tématu [obecný systém typů](../../docs/standard/base-types/common-type-system.md).  
   
 ## <a name="system-namespace"></a>System – obor názvů
 
- <xref:System> Obor názvů je kořenový obor názvů pro základní typy v rozhraní .NET. Tento obor názvů obsahuje třídy, které představují základní datové typy používané všemi aplikacemi: <xref:System.Object> (kořen hierarchie dědičnosti), <xref:System.Byte>, <xref:System.Char>, <xref:System.Array>, <xref:System.Int32>, <xref:System.String>a tak dále. Mnoho z těchto typů odpovídají primitivní datové typy, které používá programovací jazyk. Při psaní kódu pomocí typy rozhraní .NET Framework, můžete použít svůj jazyk odpovídající – klíčové slovo při je očekávána základní datový typ rozhraní .NET Framework.  
+ <xref:System> Obor názvů je kořenový obor názvů pro základní typy v rozhraní .NET. Tento obor názvů obsahuje třídy, které představují základní datové typy použit všemi aplikacemi: <xref:System.Object> (kořen hierarchie dědičnosti) <xref:System.Byte>, <xref:System.Char>, <xref:System.Array>, <xref:System.Int32>, <xref:System.String>, a tak dále. Mnohé z těchto typů odpovídají primitivní datové typy, které používá svůj oblíbený programovací jazyk. Při psaní kódu s využitím typy rozhraní .NET Framework, můžete použít váš jazyk odpovídající klíčové slovo při očekávání základní datový typ rozhraní .NET Framework.  
   
- Následující tabulka uvádí základní typy, .NET poskytuje, stručně popisuje každý typ a označuje odpovídající typ v jazyce Visual Basic, C#, C++ a F #.  
+ V následující tabulce jsou uvedeny základní typy, .NET poskytuje stručně popisuje všechny typy a označuje odpovídající typ v jazyce Visual Basic, C#, C++ a F #.  
   
-|Kategorie|Název třídy|Popis|Datový typ jazyka Visual Basic|Datový typ C#|C + +/ CLI datový typ|Datový typ F #|  
+|Kategorie|Název třídy|Popis|Datový typ jazyka Visual Basic|Datový typ jazyka C#|C + +/ CLI datový typ|Datový typ F #|  
 |--------------|----------------|-----------------|----------------------------|-------------------|---------------------|-----------------------|  
-|Integer|<xref:System.Byte>|8bitové celé číslo bez znaménka.|**Bajtů**|**byte**|**unsigned char**|**byte**|  
-||<xref:System.SByte>|Celé číslo podepsaný 8 bitů.<br /><br /> Není kompatibilní se specifikací CLS.|**SByte –**|**sbyte**|**char**<br /> -nebo-<br /> **podepsané** **char**|**sbyte**|  
-||<xref:System.Int16>|16bitové znaménkem.|**krátký**|**short**|**short**|**Int16**|  
-||<xref:System.Int32>|32-bit znaménkem.|**celé číslo**|**int**|**int**<br /><br /> -nebo-<br /><br /> **long**|**int**|  
-||<xref:System.Int64>|64bitová verze znaménkem.|**dlouhá**|**long**|**__int64**|**Int64**|  
-||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Ushort –**|**ushort**|**short bez znaménka**|**UInt16**|  
-||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Uinteger –**|**uint**|**int bez znaménka**<br /> -nebo-<br /> **dlouho bez znaménka**|**UInt32**|  
-||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se specifikací CLS.|**Ulong –**|**ulong**|**__int64 bez znaménka**|**UInt64**|  
-|Plovoucí desetinné čárky|<xref:System.Single>|(32 bitů) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**Float32**</br> or</br>**single**|  
-||<xref:System.Double>|(64 bitů) číslo s dvojitou přesností s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**float**</br> or </br> **double**|  
-|Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Logická hodnota**|**bool**|**bool**|**bool**|  
+|Integer|<xref:System.Byte>|Celé číslo bez znaménka 8 bitů.|**Bajtů**|**byte**|**unsigned char**|**byte**|  
+||<xref:System.SByte>|8bitové celé číslo se znaménkem.<br /><br /> Není kompatibilní se Specifikací CLS.|**SByte –**|**sbyte**|**char**<br /> -nebo-<br /> **podepsané** **char**|**sbyte**|  
+||<xref:System.Int16>|16bitové celé číslo se znaménkem.|**krátké**|**short**|**short**|**Int16**|  
+||<xref:System.Int32>|32bitové celé číslo se znaménkem.|**celé číslo**|**int**|**int**<br /><br /> -nebo-<br /><br /> **long**|**int**|  
+||<xref:System.Int64>|64bitové celé číslo se znaménkem.|**Long**|**long**|**__int64**|**Int64**|  
+||<xref:System.UInt16>|16bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**UShort**|**ushort**|**short bez znaménka**|**UInt16**|  
+||<xref:System.UInt32>|32bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**Uinteger –**|**uint**|**unsigned int**<br /> -nebo-<br /> **unsigned long**|**UInt32**|  
+||<xref:System.UInt64>|64bitové celé číslo bez znaménka.<br /><br /> Není kompatibilní se Specifikací CLS.|**ULong**|**ulong**|**unsigned __int64**|**UInt64**|  
+|Plovoucí desetinná čárka|<xref:System.Single>|(32bitová verze) číslo s jednoduchou přesností s plovoucí desetinnou čárkou|**Jeden**|**float**|**float**|**float32**</br> or</br>**single**|  
+||<xref:System.Double>|(64-bit) číslo s dvojitou přesnost s plovoucí desetinnou čárkou|**Double**|**double**|**double**|**float**</br> or </br> **double**|  
+|Logické|<xref:System.Boolean>|Logická hodnota (true nebo false).|**Datový typ Boolean**|**bool**|**bool**|**bool**|  
 |Ostatní|<xref:System.Char>|Znak Unicode (16 bitů).|**Char**|**char**|**wchar_t**|**char**|  
-||<xref:System.Decimal>|Desetinnou hodnotu (128-bit).|**Decimal**|**decimal**|**Decimal**|**decimal**|  
-||<xref:System.IntPtr>|Znaménkem jejíž aktuální velikost závisí na základní platformě (32bitová verze hodnota na 32bitové platformě) a hodnota 64bitová verze na 64bitovou platformu.|**IntPtr**<br /><br /> Žádné předdefinované typu.|**IntPtr**<br /><br /> Žádné předdefinované typu.|**IntPtr**<br /><br /> Žádné předdefinované typu.|**unativeint –**|  
-||<xref:System.UIntPtr>|Celé číslo bez znaménka jejíž aktuální velikost závisí na základní platformě (32bitová verze hodnota na 32bitové platformě) a hodnota 64bitová verze na 64bitovou platformu.<br /><br /> Není kompatibilní se specifikací CLS.|**UIntPtr**<br /><br /> Žádné předdefinované typu.|**UIntPtr**<br /><br /> Žádné předdefinované typu.|**UIntPtr**<br /><br /> Žádné předdefinované typu.|**unativeint –**|  
-||<xref:System.Object>|Kořen hierarchie objektů.|**Objekt**|**object**|**Object^**|**obj**|  
-||<xref:System.String>|Neměnné, pevnou délkou řetězec znaků Unicode.|**Řetězec**|**string**|**Řetězec ^**|**string**|  
+||<xref:System.Decimal>|Desetinná hodnota (128-bit).|**Decimal**|**decimal**|**Decimal**|**decimal**|  
+||<xref:System.IntPtr>|Celé číslo se znaménkem, závisí na základní platformě (32 bitů hodnotu na 32bitové platformě) a hodnotu 64-bit na 64bitové platformě.|**IntPtr**<br /><br /> Žádný předdefinovaný typ.|**IntPtr**<br /><br /> Žádný předdefinovaný typ.|**IntPtr**<br /><br /> Žádný předdefinovaný typ.|**unativeint –**|  
+||<xref:System.UIntPtr>|Celé číslo bez znaménka, závisí na základní platformě (32 bitů hodnotu na 32bitové platformě) a hodnotu 64-bit na 64bitové platformě.<br /><br /> Není kompatibilní se Specifikací CLS.|**UIntPtr**<br /><br /> Žádný předdefinovaný typ.|**UIntPtr**<br /><br /> Žádný předdefinovaný typ.|**UIntPtr**<br /><br /> Žádný předdefinovaný typ.|**unativeint –**|  
+||<xref:System.Object>|Kořenový objekt hierarchie.|**objekt**|**object**|**Object^**|**obj**|  
+||<xref:System.String>|Neměnné a pevnou délkou řetězec znaků Unicode.|**řetězec**|**string**|**Řetězec ^**|**string**|  
   
- Kromě základních datových typů <xref:System> obor názvů obsahuje více než 100 tříd ze třídy, které zpracování výjimek na třídy, které pracují s základní koncepty runtime, například aplikační domény a uvolňování paměti. <xref:System> Názvů také obsahuje mnoho oborů názvů druhé úrovně.  
+ Kromě základních datových typů <xref:System> obor názvů obsahuje více než 100 třídy od třídy, které zpracovávají výjimky z třídy, které se zabývají základní koncepty runtime, jako je například domény aplikace a systému uvolňování paměti. <xref:System> Obor názvů také obsahuje mnoho oborů názvů druhé úrovně.  
   
- Další informace o oborech názvů, použijte [prohlížeče rozhraní API .NET](https://docs.microsoft.com/dotnet/api) procházet knihovně tříd rozhraní .NET. Referenční dokumentace rozhraní API poskytuje dokumentaci pro každý obor názvů, jeho typy a všechny jejich členové.  
+ Další informace o oborech názvů, použijte [.NET API Browseru](https://docs.microsoft.com/dotnet/api) procházet knihovny tříd rozhraní .NET. Referenční dokumentace rozhraní API poskytuje dokumentaci pro každý obor názvů, jeho typy a všech jejich členy.  
   
-## <a name="see-also"></a>Viz také  
- [Obecný systém typů](../../docs/standard/base-types/common-type-system.md)  
- [Prohlížeč rozhraní API .NET](https://docs.microsoft.com/dotnet/api)  
- [Přehled](../../docs/framework/get-started/overview.md)
+## <a name="see-also"></a>Viz také:
+
+- [Obecný systém typů](../../docs/standard/base-types/common-type-system.md)  
+- [Prohlížeč rozhraní API .NET](https://docs.microsoft.com/dotnet/api)  
+- [Přehled](../../docs/framework/get-started/overview.md)
