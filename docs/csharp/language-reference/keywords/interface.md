@@ -7,59 +7,59 @@ helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
 ms.openlocfilehash: 4adc7ba106e0044ba6aff94ea3180d9c8e3ded7b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43535056"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44136742"
 ---
-# <a name="interface-c-reference"></a><span data-ttu-id="c01b3-102">interface (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="c01b3-102">interface (C# Reference)</span></span>
+# <a name="interface-c-reference"></a><span data-ttu-id="dd9f3-102">interface (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="dd9f3-102">interface (C# Reference)</span></span>
 
-<span data-ttu-id="c01b3-103">Rozhraní obsahuje pouze podpisy [metody](../../programming-guide/classes-and-structs/methods.md), [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [události](../../programming-guide/events/index.md) nebo [indexery](../../programming-guide/indexers/index.md).</span><span class="sxs-lookup"><span data-stu-id="c01b3-103">An interface contains only the signatures of [methods](../../programming-guide/classes-and-structs/methods.md), [properties](../../programming-guide/classes-and-structs/properties.md), [events](../../programming-guide/events/index.md) or [indexers](../../programming-guide/indexers/index.md).</span></span> <span data-ttu-id="c01b3-104">Třída nebo struktura, která implementuje rozhraní, musí implementovat členy rozhraní zadané v definici rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c01b3-104">A class or struct that implements the interface must implement the members of the interface that are specified in the interface definition.</span></span> <span data-ttu-id="c01b3-105">V následujícím příkladu musí třída `ImplementationClass` implementovat metodu s názvem `SampleMethod`, která nemá žádné parametry a vrací `void`.</span><span class="sxs-lookup"><span data-stu-id="c01b3-105">In the following example, class `ImplementationClass` must implement a method named `SampleMethod` that has no parameters and returns `void`.</span></span>
+<span data-ttu-id="dd9f3-103">Rozhraní obsahuje pouze podpisy [metody](../../programming-guide/classes-and-structs/methods.md), [vlastnosti](../../programming-guide/classes-and-structs/properties.md), [události](../../programming-guide/events/index.md) nebo [indexery](../../programming-guide/indexers/index.md).</span><span class="sxs-lookup"><span data-stu-id="dd9f3-103">An interface contains only the signatures of [methods](../../programming-guide/classes-and-structs/methods.md), [properties](../../programming-guide/classes-and-structs/properties.md), [events](../../programming-guide/events/index.md) or [indexers](../../programming-guide/indexers/index.md).</span></span> <span data-ttu-id="dd9f3-104">Třída nebo struktura, která implementuje rozhraní, musí implementovat členy rozhraní zadané v definici rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-104">A class or struct that implements the interface must implement the members of the interface that are specified in the interface definition.</span></span> <span data-ttu-id="dd9f3-105">V následujícím příkladu musí třída `ImplementationClass` implementovat metodu s názvem `SampleMethod`, která nemá žádné parametry a vrací `void`.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-105">In the following example, class `ImplementationClass` must implement a method named `SampleMethod` that has no parameters and returns `void`.</span></span>
 
-<span data-ttu-id="c01b3-106">Další informace a příklady najdete v tématu [rozhraní](../../programming-guide/interfaces/index.md).</span><span class="sxs-lookup"><span data-stu-id="c01b3-106">For more information and examples, see [Interfaces](../../programming-guide/interfaces/index.md).</span></span>
+<span data-ttu-id="dd9f3-106">Další informace a příklady najdete v tématu [rozhraní](../../programming-guide/interfaces/index.md).</span><span class="sxs-lookup"><span data-stu-id="dd9f3-106">For more information and examples, see [Interfaces](../../programming-guide/interfaces/index.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="c01b3-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="c01b3-107">Example</span></span>
+## <a name="example"></a><span data-ttu-id="dd9f3-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="dd9f3-107">Example</span></span>
 
 [!code-csharp[csrefKeywordsTypes#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#14)]
 
-<span data-ttu-id="c01b3-108">Rozhraní může být členem oboru názvů nebo třídy a může obsahovat podpisy následujících členů:</span><span class="sxs-lookup"><span data-stu-id="c01b3-108">An interface can be a member of a namespace or a class and can contain signatures of the following members:</span></span>
+<span data-ttu-id="dd9f3-108">Rozhraní může být členem oboru názvů nebo třídy a může obsahovat podpisy následujících členů:</span><span class="sxs-lookup"><span data-stu-id="dd9f3-108">An interface can be a member of a namespace or a class and can contain signatures of the following members:</span></span>
 
-- [<span data-ttu-id="c01b3-109">Metody</span><span class="sxs-lookup"><span data-stu-id="c01b3-109">Methods</span></span>](../../programming-guide/classes-and-structs/methods.md)
+- [<span data-ttu-id="dd9f3-109">Metody</span><span class="sxs-lookup"><span data-stu-id="dd9f3-109">Methods</span></span>](../../programming-guide/classes-and-structs/methods.md)
 
-- [<span data-ttu-id="c01b3-110">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="c01b3-110">Properties</span></span>](../../programming-guide/classes-and-structs/using-properties.md)
+- [<span data-ttu-id="dd9f3-110">Vlastnosti</span><span class="sxs-lookup"><span data-stu-id="dd9f3-110">Properties</span></span>](../../programming-guide/classes-and-structs/using-properties.md)
 
-- [<span data-ttu-id="c01b3-111">Indexery</span><span class="sxs-lookup"><span data-stu-id="c01b3-111">Indexers</span></span>](../../programming-guide/indexers/using-indexers.md)
+- [<span data-ttu-id="dd9f3-111">Indexery</span><span class="sxs-lookup"><span data-stu-id="dd9f3-111">Indexers</span></span>](../../programming-guide/indexers/using-indexers.md)
 
-- [<span data-ttu-id="c01b3-112">Události</span><span class="sxs-lookup"><span data-stu-id="c01b3-112">Events</span></span>](event.md)
+- [<span data-ttu-id="dd9f3-112">Události</span><span class="sxs-lookup"><span data-stu-id="dd9f3-112">Events</span></span>](event.md)
 
-<span data-ttu-id="c01b3-113">Rozhraní může dědit z jednoho nebo více základních rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c01b3-113">An interface can inherit from one or more base interfaces.</span></span>
+<span data-ttu-id="dd9f3-113">Rozhraní může dědit z jednoho nebo více základních rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-113">An interface can inherit from one or more base interfaces.</span></span>
 
-<span data-ttu-id="c01b3-114">Jestliže seznam základních typů obsahuje základní třídu a rozhraní, musí se základní třída nacházet v seznamu jako první.</span><span class="sxs-lookup"><span data-stu-id="c01b3-114">When a base type list contains a base class and interfaces, the base class must come first in the list.</span></span>
+<span data-ttu-id="dd9f3-114">Jestliže seznam základních typů obsahuje základní třídu a rozhraní, musí se základní třída nacházet v seznamu jako první.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-114">When a base type list contains a base class and interfaces, the base class must come first in the list.</span></span>
 
-<span data-ttu-id="c01b3-115">Třída, která implementuje rozhraní, může explicitně implementovat členy rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c01b3-115">A class that implements an interface can explicitly implement members of that interface.</span></span> <span data-ttu-id="c01b3-116">Explicitně implementovaný člen není přístupný prostřednictvím instance třídy, ale pouze prostřednictvím instance rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c01b3-116">An explicitly implemented member cannot be accessed through a class instance, but only through an instance of the interface.</span></span>
+<span data-ttu-id="dd9f3-115">Třída, která implementuje rozhraní, může explicitně implementovat členy rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-115">A class that implements an interface can explicitly implement members of that interface.</span></span> <span data-ttu-id="dd9f3-116">Explicitně implementovaný člen není přístupný prostřednictvím instance třídy, ale pouze prostřednictvím instance rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-116">An explicitly implemented member cannot be accessed through a class instance, but only through an instance of the interface.</span></span>
 
-<span data-ttu-id="c01b3-117">Další podrobnosti a příklady kódu implementace explicitního rozhraní naleznete v tématu [explicitní implementaci rozhraní](../../programming-guide/interfaces/explicit-interface-implementation.md).</span><span class="sxs-lookup"><span data-stu-id="c01b3-117">For more details and code examples on explicit interface implementation, see [Explicit Interface Implementation](../../programming-guide/interfaces/explicit-interface-implementation.md).</span></span>
+<span data-ttu-id="dd9f3-117">Další podrobnosti a příklady kódu implementace explicitního rozhraní naleznete v tématu [explicitní implementaci rozhraní](../../programming-guide/interfaces/explicit-interface-implementation.md).</span><span class="sxs-lookup"><span data-stu-id="dd9f3-117">For more details and code examples on explicit interface implementation, see [Explicit Interface Implementation](../../programming-guide/interfaces/explicit-interface-implementation.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="c01b3-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="c01b3-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="dd9f3-118">Příklad</span><span class="sxs-lookup"><span data-stu-id="dd9f3-118">Example</span></span>
 
-<span data-ttu-id="c01b3-119">Následující příklad ukazuje implementaci rozhraní.</span><span class="sxs-lookup"><span data-stu-id="c01b3-119">The following example demonstrates interface implementation.</span></span> <span data-ttu-id="c01b3-120">V tomto příkladu obsahuje rozhraní deklaraci vlastnosti a třída obsahuje implementaci.</span><span class="sxs-lookup"><span data-stu-id="c01b3-120">In this example, the interface contains the property declaration and the class contains the implementation.</span></span> <span data-ttu-id="c01b3-121">Jakákoli instance třídy, která implementuje rozhraní `IPoint`, má celočíselné vlastnosti `x` a `y`.</span><span class="sxs-lookup"><span data-stu-id="c01b3-121">Any instance of a class that implements `IPoint` has integer properties `x` and `y`.</span></span>
+<span data-ttu-id="dd9f3-119">Následující příklad ukazuje implementaci rozhraní.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-119">The following example demonstrates interface implementation.</span></span> <span data-ttu-id="dd9f3-120">V tomto příkladu obsahuje rozhraní deklaraci vlastnosti a třída obsahuje implementaci.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-120">In this example, the interface contains the property declaration and the class contains the implementation.</span></span> <span data-ttu-id="dd9f3-121">Jakákoli instance třídy, která implementuje rozhraní `IPoint`, má celočíselné vlastnosti `x` a `y`.</span><span class="sxs-lookup"><span data-stu-id="dd9f3-121">Any instance of a class that implements `IPoint` has integer properties `x` and `y`.</span></span>
 
 [!code-csharp[csrefKeywordsTypes#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#15)]
 
-## <a name="c-language-specification"></a><span data-ttu-id="c01b3-122">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c01b3-122">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="dd9f3-122">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="dd9f3-122">C# language specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="c01b3-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c01b3-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dd9f3-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dd9f3-123">See also</span></span>
 
-- [<span data-ttu-id="c01b3-124">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c01b3-124">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="c01b3-125">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="c01b3-125">C# Programming Guide</span></span>](../../programming-guide/index.md)  
-- [<span data-ttu-id="c01b3-126">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="c01b3-126">C# Keywords</span></span>](index.md)  
-- [<span data-ttu-id="c01b3-127">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="c01b3-127">Reference Types</span></span>](reference-types.md)  
-- [<span data-ttu-id="c01b3-128">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="c01b3-128">Interfaces</span></span>](../../programming-guide/interfaces/index.md)  
-- [<span data-ttu-id="c01b3-129">Použití vlastností</span><span class="sxs-lookup"><span data-stu-id="c01b3-129">Using Properties</span></span>](../../programming-guide/classes-and-structs/using-properties.md)  
-- [<span data-ttu-id="c01b3-130">Použití indexerů</span><span class="sxs-lookup"><span data-stu-id="c01b3-130">Using Indexers</span></span>](../../programming-guide/indexers/using-indexers.md)  
-- [<span data-ttu-id="c01b3-131">class</span><span class="sxs-lookup"><span data-stu-id="c01b3-131">class</span></span>](class.md)  
-- [<span data-ttu-id="c01b3-132">struct</span><span class="sxs-lookup"><span data-stu-id="c01b3-132">struct</span></span>](struct.md)  
-- [<span data-ttu-id="c01b3-133">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="c01b3-133">Interfaces</span></span>](../../programming-guide/interfaces/index.md)
+- [<span data-ttu-id="dd9f3-124">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="dd9f3-124">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="dd9f3-125">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="dd9f3-125">C# Programming Guide</span></span>](../../programming-guide/index.md)  
+- [<span data-ttu-id="dd9f3-126">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="dd9f3-126">C# Keywords</span></span>](index.md)  
+- [<span data-ttu-id="dd9f3-127">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="dd9f3-127">Reference Types</span></span>](reference-types.md)  
+- [<span data-ttu-id="dd9f3-128">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="dd9f3-128">Interfaces</span></span>](../../programming-guide/interfaces/index.md)  
+- [<span data-ttu-id="dd9f3-129">Použití vlastností</span><span class="sxs-lookup"><span data-stu-id="dd9f3-129">Using Properties</span></span>](../../programming-guide/classes-and-structs/using-properties.md)  
+- [<span data-ttu-id="dd9f3-130">Použití indexerů</span><span class="sxs-lookup"><span data-stu-id="dd9f3-130">Using Indexers</span></span>](../../programming-guide/indexers/using-indexers.md)  
+- [<span data-ttu-id="dd9f3-131">class</span><span class="sxs-lookup"><span data-stu-id="dd9f3-131">class</span></span>](class.md)  
+- [<span data-ttu-id="dd9f3-132">struct</span><span class="sxs-lookup"><span data-stu-id="dd9f3-132">struct</span></span>](struct.md)  
+- [<span data-ttu-id="dd9f3-133">Rozhraní</span><span class="sxs-lookup"><span data-stu-id="dd9f3-133">Interfaces</span></span>](../../programming-guide/interfaces/index.md)

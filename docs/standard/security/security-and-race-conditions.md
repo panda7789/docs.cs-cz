@@ -13,18 +13,18 @@ helpviewer_keywords:
 ms.assetid: ea3edb80-b2e8-4e85-bfed-311b20cb59b6
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3e613ad4823254a6bed43cb95294e6b8d3674b6d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 57ceaedc7c38ae70a0db5a7fd584a765a7474aff
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43881746"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44138939"
 ---
-# <a name="security-and-race-conditions"></a><span data-ttu-id="6bf8f-102">Zabezpečení a konflikty časování</span><span class="sxs-lookup"><span data-stu-id="6bf8f-102">Security and Race Conditions</span></span>
-<span data-ttu-id="6bf8f-103">Další oblastí zájmu je potenciální bezpečnostní rizika zneužité časování.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-103">Another area of concern is the potential for security holes exploited by race conditions.</span></span> <span data-ttu-id="6bf8f-104">Existuje několik způsobů, ve kterých k tomu může dojít.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-104">There are several ways in which this might happen.</span></span> <span data-ttu-id="6bf8f-105">Související témata, které následují popisují některé z hlavních problémů, které musí vývojáři vyhnout.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-105">The subtopics that follow outline some of the major pitfalls that the developer must avoid.</span></span>  
+# <a name="security-and-race-conditions"></a><span data-ttu-id="a04ee-102">Zabezpečení a konflikty časování</span><span class="sxs-lookup"><span data-stu-id="a04ee-102">Security and Race Conditions</span></span>
+<span data-ttu-id="a04ee-103">Další oblastí zájmu je potenciální bezpečnostní rizika zneužité časování.</span><span class="sxs-lookup"><span data-stu-id="a04ee-103">Another area of concern is the potential for security holes exploited by race conditions.</span></span> <span data-ttu-id="a04ee-104">Existuje několik způsobů, ve kterých k tomu může dojít.</span><span class="sxs-lookup"><span data-stu-id="a04ee-104">There are several ways in which this might happen.</span></span> <span data-ttu-id="a04ee-105">Související témata, které následují popisují některé z hlavních problémů, které musí vývojáři vyhnout.</span><span class="sxs-lookup"><span data-stu-id="a04ee-105">The subtopics that follow outline some of the major pitfalls that the developer must avoid.</span></span>  
   
-## <a name="race-conditions-in-the-dispose-method"></a><span data-ttu-id="6bf8f-106">Časování v metody Dispose</span><span class="sxs-lookup"><span data-stu-id="6bf8f-106">Race Conditions in the Dispose Method</span></span>  
- <span data-ttu-id="6bf8f-107">Případě, že třída **Dispose** – metoda (Další informace najdete v tématu [uvolňování](../../../docs/standard/garbage-collection/index.md)) není synchronizována, je možné tento kód pro vyčištění uvnitř **Dispose** můžete spustit více než jednou, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-107">If a class's **Dispose** method (for more information, see [Garbage Collection](../../../docs/standard/garbage-collection/index.md)) is not synchronized, it is possible that cleanup code inside **Dispose** can be run more than once, as shown in the following example.</span></span>  
+## <a name="race-conditions-in-the-dispose-method"></a><span data-ttu-id="a04ee-106">Časování v metody Dispose</span><span class="sxs-lookup"><span data-stu-id="a04ee-106">Race Conditions in the Dispose Method</span></span>  
+ <span data-ttu-id="a04ee-107">Případě, že třída **Dispose** – metoda (Další informace najdete v tématu [uvolňování](../../../docs/standard/garbage-collection/index.md)) není synchronizována, je možné tento kód pro vyčištění uvnitř **Dispose** můžete spustit více než jednou, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a04ee-107">If a class's **Dispose** method (for more information, see [Garbage Collection](../../../docs/standard/garbage-collection/index.md)) is not synchronized, it is possible that cleanup code inside **Dispose** can be run more than once, as shown in the following example.</span></span>  
   
 ```vb  
 Sub Dispose()  
@@ -38,7 +38,7 @@ End Sub
 ```csharp  
 void Dispose()   
 {  
-    if( myObj != null )   
+    if (myObj != null)   
     {  
         Cleanup(myObj);  
         myObj = null;  
@@ -46,20 +46,20 @@ void Dispose()
 }  
 ```  
   
- <span data-ttu-id="6bf8f-108">Protože toto **Dispose** implementace není synchronizovaný, je možné, `Cleanup` má být volána nejprve jedno vlákno a pak druhého podprocesu před `_myObj` je nastavena na **null**.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-108">Because this **Dispose** implementation is not synchronized, it is possible for `Cleanup` to be called by first one thread and then a second thread before `_myObj` is set to **null**.</span></span> <span data-ttu-id="6bf8f-109">Zda se jedná o problém zabezpečení závisí na co se stane, když `Cleanup` spuštěn kód.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-109">Whether this is a security concern depends on what happens when the `Cleanup` code runs.</span></span> <span data-ttu-id="6bf8f-110">Hlavní problém s nesynchronizované **Dispose** implementací zahrnuje použití popisovače prostředku, jako jsou například soubory.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-110">A major issue with unsynchronized **Dispose** implementations involves the use of resource handles such as files.</span></span> <span data-ttu-id="6bf8f-111">Nesprávné odstranění může způsobit nesprávné popisovač, kterou chcete použít, což často vede k ohrožení zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-111">Improper disposal can cause the wrong handle to be used, which often leads to security vulnerabilities.</span></span>  
+ <span data-ttu-id="a04ee-108">Protože toto **Dispose** implementace není synchronizovaný, je možné, `Cleanup` má být volána nejprve jedno vlákno a pak druhého podprocesu před `_myObj` je nastavena na **null**.</span><span class="sxs-lookup"><span data-stu-id="a04ee-108">Because this **Dispose** implementation is not synchronized, it is possible for `Cleanup` to be called by first one thread and then a second thread before `_myObj` is set to **null**.</span></span> <span data-ttu-id="a04ee-109">Zda se jedná o problém zabezpečení závisí na co se stane, když `Cleanup` spuštěn kód.</span><span class="sxs-lookup"><span data-stu-id="a04ee-109">Whether this is a security concern depends on what happens when the `Cleanup` code runs.</span></span> <span data-ttu-id="a04ee-110">Hlavní problém s nesynchronizované **Dispose** implementací zahrnuje použití popisovače prostředku, jako jsou například soubory.</span><span class="sxs-lookup"><span data-stu-id="a04ee-110">A major issue with unsynchronized **Dispose** implementations involves the use of resource handles such as files.</span></span> <span data-ttu-id="a04ee-111">Nesprávné odstranění může způsobit nesprávné popisovač, kterou chcete použít, což často vede k ohrožení zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="a04ee-111">Improper disposal can cause the wrong handle to be used, which often leads to security vulnerabilities.</span></span>  
   
-## <a name="race-conditions-in-constructors"></a><span data-ttu-id="6bf8f-112">Časování v konstruktorech</span><span class="sxs-lookup"><span data-stu-id="6bf8f-112">Race Conditions in Constructors</span></span>  
- <span data-ttu-id="6bf8f-113">V některých aplikacích je možné pro ostatní vlákna pro přístup ke členům třídy před jejich konstruktor třídy zcela spustili.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-113">In some applications, it might be possible for other threads to access class members before their class constructors have completely run.</span></span> <span data-ttu-id="6bf8f-114">Měli byste zkontrolovat všechny třídy konstruktory, abyste měli jistotu, že pokud k tomu musí dojít, nebo synchronizaci vláken, v případě potřeby neexistují žádné problémy se zabezpečením.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-114">You should review all class constructors to make sure that there are no security issues if this should happen, or synchronize threads if necessary.</span></span>  
+## <a name="race-conditions-in-constructors"></a><span data-ttu-id="a04ee-112">Časování v konstruktorech</span><span class="sxs-lookup"><span data-stu-id="a04ee-112">Race Conditions in Constructors</span></span>  
+ <span data-ttu-id="a04ee-113">V některých aplikacích je možné pro ostatní vlákna pro přístup ke členům třídy před jejich konstruktor třídy zcela spustili.</span><span class="sxs-lookup"><span data-stu-id="a04ee-113">In some applications, it might be possible for other threads to access class members before their class constructors have completely run.</span></span> <span data-ttu-id="a04ee-114">Měli byste zkontrolovat všechny třídy konstruktory, abyste měli jistotu, že pokud k tomu musí dojít, nebo synchronizaci vláken, v případě potřeby neexistují žádné problémy se zabezpečením.</span><span class="sxs-lookup"><span data-stu-id="a04ee-114">You should review all class constructors to make sure that there are no security issues if this should happen, or synchronize threads if necessary.</span></span>  
   
-## <a name="race-conditions-with-cached-objects"></a><span data-ttu-id="6bf8f-115">Ke konfliktům časování s objekty uložené v mezipaměti</span><span class="sxs-lookup"><span data-stu-id="6bf8f-115">Race Conditions with Cached Objects</span></span>  
- <span data-ttu-id="6bf8f-116">Kód, který ukládá informace o zabezpečení nebo který používá zabezpečení přístupu kódu [Assert](../../../docs/framework/misc/using-the-assert-method.md) operace může být také snadno napadnutelný časování Pokud jiné části třídy nejsou synchronizované odpovídajícím způsobem, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-116">Code that caches security information or uses the code access security [Assert](../../../docs/framework/misc/using-the-assert-method.md) operation might also be vulnerable to race conditions if other parts of the class are not appropriately synchronized, as shown in the following example.</span></span>  
+## <a name="race-conditions-with-cached-objects"></a><span data-ttu-id="a04ee-115">Ke konfliktům časování s objekty uložené v mezipaměti</span><span class="sxs-lookup"><span data-stu-id="a04ee-115">Race Conditions with Cached Objects</span></span>  
+ <span data-ttu-id="a04ee-116">Kód, který ukládá informace o zabezpečení nebo který používá zabezpečení přístupu kódu [Assert](../../../docs/framework/misc/using-the-assert-method.md) operace může být také snadno napadnutelný časování Pokud jiné části třídy nejsou synchronizované odpovídajícím způsobem, jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="a04ee-116">Code that caches security information or uses the code access security [Assert](../../../docs/framework/misc/using-the-assert-method.md) operation might also be vulnerable to race conditions if other parts of the class are not appropriately synchronized, as shown in the following example.</span></span>  
   
 ```vb  
 Sub SomeSecureFunction()  
     If SomeDemandPasses() Then  
         fCallersOk = True  
         DoOtherWork()  
-        fCallersOk = False()  
+        fCallersOk = False  
     End If  
 End Sub  
   
@@ -76,16 +76,16 @@ End Sub
 ```csharp  
 void SomeSecureFunction()   
 {  
-    if(SomeDemandPasses())   
+    if (SomeDemandPasses())   
     {  
         fCallersOk = true;  
         DoOtherWork();  
-        fCallersOk = false();  
+        fCallersOk = false;  
     }  
 }  
 void DoOtherWork()   
 {  
-    if( fCallersOK )   
+    if (fCallersOK)   
     {  
         DoSomethingTrusted();  
     }  
@@ -97,13 +97,13 @@ void DoOtherWork()
 }  
 ```  
   
- <span data-ttu-id="6bf8f-117">Pokud existují další cesty k `DoOtherWork` , který lze volat z jiného vlákna se stejným objektem, nedůvěryhodné volající může zpozdit poslední požadavek.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-117">If there are other paths to `DoOtherWork` that can be called from another thread with the same object, an untrusted caller can slip past a demand.</span></span>  
+ <span data-ttu-id="a04ee-117">Pokud existují další cesty k `DoOtherWork` , který lze volat z jiného vlákna se stejným objektem, nedůvěryhodné volající může zpozdit poslední požadavek.</span><span class="sxs-lookup"><span data-stu-id="a04ee-117">If there are other paths to `DoOtherWork` that can be called from another thread with the same object, an untrusted caller can slip past a demand.</span></span>  
   
- <span data-ttu-id="6bf8f-118">Pokud váš kód mezipaměti informace o zabezpečení, ujistěte se, abyste si pro toto ohrožení zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-118">If your code caches security information, make sure that you review it for this vulnerability.</span></span>  
+ <span data-ttu-id="a04ee-118">Pokud váš kód mezipaměti informace o zabezpečení, ujistěte se, abyste si pro toto ohrožení zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="a04ee-118">If your code caches security information, make sure that you review it for this vulnerability.</span></span>  
   
-## <a name="race-conditions-in-finalizers"></a><span data-ttu-id="6bf8f-119">Časování v finalizační metody</span><span class="sxs-lookup"><span data-stu-id="6bf8f-119">Race Conditions in Finalizers</span></span>  
- <span data-ttu-id="6bf8f-120">V objektu, který odkazuje na statickou nebo nespravovaný prostředek, který poté uvolní v jeho finalizační metoda může také dojít ke konfliktům časování.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-120">Race conditions can also occur in an object that references a static or unmanaged resource that it then frees in its finalizer.</span></span> <span data-ttu-id="6bf8f-121">Pokud více objektů sdílí prostředek, který je zpracováván v finalizační metodu třídy, musíte synchronizovat objekty veškerý přístup k prostředku.</span><span class="sxs-lookup"><span data-stu-id="6bf8f-121">If multiple objects share a resource that is manipulated in a class's finalizer, the objects must synchronize all access to that resource.</span></span>  
+## <a name="race-conditions-in-finalizers"></a><span data-ttu-id="a04ee-119">Časování v finalizační metody</span><span class="sxs-lookup"><span data-stu-id="a04ee-119">Race Conditions in Finalizers</span></span>  
+ <span data-ttu-id="a04ee-120">V objektu, který odkazuje na statickou nebo nespravovaný prostředek, který poté uvolní v jeho finalizační metoda může také dojít ke konfliktům časování.</span><span class="sxs-lookup"><span data-stu-id="a04ee-120">Race conditions can also occur in an object that references a static or unmanaged resource that it then frees in its finalizer.</span></span> <span data-ttu-id="a04ee-121">Pokud více objektů sdílí prostředek, který je zpracováván v finalizační metodu třídy, musíte synchronizovat objekty veškerý přístup k prostředku.</span><span class="sxs-lookup"><span data-stu-id="a04ee-121">If multiple objects share a resource that is manipulated in a class's finalizer, the objects must synchronize all access to that resource.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6bf8f-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6bf8f-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a04ee-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a04ee-122">See also</span></span>
 
-- [<span data-ttu-id="6bf8f-123">Pokyny pro zabezpečené kódování</span><span class="sxs-lookup"><span data-stu-id="6bf8f-123">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)
+- [<span data-ttu-id="a04ee-123">Pokyny pro zabezpečené kódování</span><span class="sxs-lookup"><span data-stu-id="a04ee-123">Secure Coding Guidelines</span></span>](../../../docs/standard/security/secure-coding-guidelines.md)

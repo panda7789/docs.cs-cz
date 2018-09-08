@@ -9,48 +9,48 @@ helpviewer_keywords:
 - /target compiler options [C#], /target:library
 ms.assetid: c5670e88-2126-47c1-8d1c-217923837d17
 ms.openlocfilehash: e15210d189c4a553da72b418f583e44666bac2fc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43537458"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44130955"
 ---
-# <a name="-targetlibrary-c-compiler-options"></a><span data-ttu-id="0a6c2-102">-target: library (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="0a6c2-102">-target:library (C# Compiler Options)</span></span>
-<span data-ttu-id="0a6c2-103">**-Target: library** možnost způsobí, že kompilátor vytvoří dynamickou knihovnu (DLL) místo spustitelný soubor (EXE).</span><span class="sxs-lookup"><span data-stu-id="0a6c2-103">The **-target:library** option causes the compiler to create a dynamic-link library (DLL) rather than an executable file (EXE).</span></span>  
+# <a name="-targetlibrary-c-compiler-options"></a><span data-ttu-id="650bd-102">-target: library (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="650bd-102">-target:library (C# Compiler Options)</span></span>
+<span data-ttu-id="650bd-103">**-Target: library** možnost způsobí, že kompilátor vytvoří dynamickou knihovnu (DLL) místo spustitelný soubor (EXE).</span><span class="sxs-lookup"><span data-stu-id="650bd-103">The **-target:library** option causes the compiler to create a dynamic-link library (DLL) rather than an executable file (EXE).</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0a6c2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0a6c2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="650bd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="650bd-104">Syntax</span></span>  
   
 ```console  
 -target:library  
 ```  
   
-## <a name="remarks"></a><span data-ttu-id="0a6c2-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="0a6c2-105">Remarks</span></span>  
- <span data-ttu-id="0a6c2-106">Vytvoří se knihovna DLL s příponou .dll.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-106">The DLL will be created with the .dll extension.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="650bd-105">Poznámky</span><span class="sxs-lookup"><span data-stu-id="650bd-105">Remarks</span></span>  
+ <span data-ttu-id="650bd-106">Vytvoří se knihovna DLL s příponou .dll.</span><span class="sxs-lookup"><span data-stu-id="650bd-106">The DLL will be created with the .dll extension.</span></span>  
   
- <span data-ttu-id="0a6c2-107">Pokud není stanoveno jinak pomocí [-out](../../../csharp/language-reference/compiler-options/out-compiler-option.md) možnost, název výstupního souboru využívá názvu prvního vstupního souboru.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-107">Unless otherwise specified with the [-out](../../../csharp/language-reference/compiler-options/out-compiler-option.md) option, the output file name takes the name of the first input file.</span></span>  
+ <span data-ttu-id="650bd-107">Pokud není stanoveno jinak pomocí [-out](../../../csharp/language-reference/compiler-options/out-compiler-option.md) možnost, název výstupního souboru využívá názvu prvního vstupního souboru.</span><span class="sxs-lookup"><span data-stu-id="650bd-107">Unless otherwise specified with the [-out](../../../csharp/language-reference/compiler-options/out-compiler-option.md) option, the output file name takes the name of the first input file.</span></span>  
   
- <span data-ttu-id="0a6c2-108">Pokud je zadán v příkazovém řádku, všechny soubory až do dalšího **-out** nebo **-target: module** slouží k vytvoření souboru .dll.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-108">When specified at the command line, all files up to the next **-out** or **-target:module** option are used to create the .dll file.</span></span>  
+ <span data-ttu-id="650bd-108">Pokud je zadán v příkazovém řádku, všechny soubory až do dalšího **-out** nebo **-target: module** slouží k vytvoření souboru .dll.</span><span class="sxs-lookup"><span data-stu-id="650bd-108">When specified at the command line, all files up to the next **-out** or **-target:module** option are used to create the .dll file.</span></span>  
   
- <span data-ttu-id="0a6c2-109">Při vytváření souboru .dll [hlavní](../../../csharp/programming-guide/main-and-command-args/index.md) metoda se nevyžaduje.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-109">When building a .dll file, a [Main](../../../csharp/programming-guide/main-and-command-args/index.md) method is not required.</span></span>  
+ <span data-ttu-id="650bd-109">Při vytváření souboru .dll [hlavní](../../../csharp/programming-guide/main-and-command-args/index.md) metoda se nevyžaduje.</span><span class="sxs-lookup"><span data-stu-id="650bd-109">When building a .dll file, a [Main](../../../csharp/programming-guide/main-and-command-args/index.md) method is not required.</span></span>  
   
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="0a6c2-110">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="0a6c2-110">To set this compiler option in the Visual Studio development environment</span></span>  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a><span data-ttu-id="650bd-110">Nastavení tohoto parametru kompilátoru ve vývojovém prostředí Visual Studio</span><span class="sxs-lookup"><span data-stu-id="650bd-110">To set this compiler option in the Visual Studio development environment</span></span>  
   
-1.  <span data-ttu-id="0a6c2-111">Otevřete v projektu **vlastnosti** stránky.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-111">Open the project's **Properties** page.</span></span>  
+1.  <span data-ttu-id="650bd-111">Otevřete v projektu **vlastnosti** stránky.</span><span class="sxs-lookup"><span data-stu-id="650bd-111">Open the project's **Properties** page.</span></span>  
   
-2.  <span data-ttu-id="0a6c2-112">Klikněte na tlačítko **aplikace** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-112">Click the **Application** property page.</span></span>  
+2.  <span data-ttu-id="650bd-112">Klikněte na tlačítko **aplikace** stránku vlastností.</span><span class="sxs-lookup"><span data-stu-id="650bd-112">Click the **Application** property page.</span></span>  
   
-3.  <span data-ttu-id="0a6c2-113">Upravit **typ výstupu** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-113">Modify the **Output type** property.</span></span>  
+3.  <span data-ttu-id="650bd-113">Upravit **typ výstupu** vlastnost.</span><span class="sxs-lookup"><span data-stu-id="650bd-113">Modify the **Output type** property.</span></span>  
   
- <span data-ttu-id="0a6c2-114">Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span><span class="sxs-lookup"><span data-stu-id="0a6c2-114">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span></span>  
+ <span data-ttu-id="650bd-114">Informace o tom, jak prostřednictvím kódu programu nastavení tohoto parametru kompilátoru najdete v tématu <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span><span class="sxs-lookup"><span data-stu-id="650bd-114">For information on how to set this compiler option programmatically, see <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="0a6c2-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="0a6c2-115">Example</span></span>  
- <span data-ttu-id="0a6c2-116">Kompilace `in.cs`, vytváření `in.dll`:</span><span class="sxs-lookup"><span data-stu-id="0a6c2-116">Compile `in.cs`, creating `in.dll`:</span></span>  
+## <a name="example"></a><span data-ttu-id="650bd-115">Příklad</span><span class="sxs-lookup"><span data-stu-id="650bd-115">Example</span></span>  
+ <span data-ttu-id="650bd-116">Kompilace `in.cs`, vytváření `in.dll`:</span><span class="sxs-lookup"><span data-stu-id="650bd-116">Compile `in.cs`, creating `in.dll`:</span></span>  
   
 ```console  
 csc -target:library in.cs  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="0a6c2-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="0a6c2-117">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="650bd-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="650bd-117">See Also</span></span>  
 
-- [<span data-ttu-id="0a6c2-118">-target (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="0a6c2-118">-target (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/target-compiler-option.md)  
-- [<span data-ttu-id="0a6c2-119">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="0a6c2-119">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)
+- [<span data-ttu-id="650bd-118">-target (možnosti kompilátoru C#)</span><span class="sxs-lookup"><span data-stu-id="650bd-118">-target (C# Compiler Options)</span></span>](../../../csharp/language-reference/compiler-options/target-compiler-option.md)  
+- [<span data-ttu-id="650bd-119">Možnosti kompilátoru jazyka C#</span><span class="sxs-lookup"><span data-stu-id="650bd-119">C# Compiler Options</span></span>](../../../csharp/language-reference/compiler-options/index.md)

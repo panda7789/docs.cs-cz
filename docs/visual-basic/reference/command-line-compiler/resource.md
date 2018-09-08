@@ -11,17 +11,17 @@ helpviewer_keywords:
 ms.assetid: eee2f227-91f2-4f2b-a9d6-1c51c5320858
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 77c80332e663596244b35fe002218e7bcbaeb46a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2a69d0e15f9094860c4c66f3fe0a195a0a609db9
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523321"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44127099"
 ---
-# <a name="-resource-visual-basic"></a><span data-ttu-id="96cef-102">-prostředku (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="96cef-102">-resource (Visual Basic)</span></span>
-<span data-ttu-id="96cef-103">Vloží spravovaný prostředek sestavení.</span><span class="sxs-lookup"><span data-stu-id="96cef-103">Embeds a managed resource in an assembly.</span></span>  
+# <a name="-resource-visual-basic"></a><span data-ttu-id="7ea36-102">-prostředku (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7ea36-102">-resource (Visual Basic)</span></span>
+<span data-ttu-id="7ea36-103">Vloží spravovaný prostředek sestavení.</span><span class="sxs-lookup"><span data-stu-id="7ea36-103">Embeds a managed resource in an assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="96cef-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="96cef-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7ea36-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7ea36-104">Syntax</span></span>  
   
 ```  
 -resource:filename[,identifier[,public|private]]  
@@ -29,32 +29,33 @@ ms.locfileid: "43523321"
 -res:filename[,identifier[,public|private]]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="96cef-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="96cef-105">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="7ea36-105">Arguments</span><span class="sxs-lookup"><span data-stu-id="7ea36-105">Arguments</span></span>  
   
-|<span data-ttu-id="96cef-106">Termín</span><span class="sxs-lookup"><span data-stu-id="96cef-106">Term</span></span>|<span data-ttu-id="96cef-107">Definice</span><span class="sxs-lookup"><span data-stu-id="96cef-107">Definition</span></span>|  
+|<span data-ttu-id="7ea36-106">Termín</span><span class="sxs-lookup"><span data-stu-id="7ea36-106">Term</span></span>|<span data-ttu-id="7ea36-107">Definice</span><span class="sxs-lookup"><span data-stu-id="7ea36-107">Definition</span></span>|  
 |---|---|  
-|`filename`|<span data-ttu-id="96cef-108">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="96cef-108">Required.</span></span> <span data-ttu-id="96cef-109">Název souboru prostředků pro vložení do výstupního souboru.</span><span class="sxs-lookup"><span data-stu-id="96cef-109">The name of the resource file to embed in the output file.</span></span> <span data-ttu-id="96cef-110">Ve výchozím nastavení `filename` veřejnou v sestavení.</span><span class="sxs-lookup"><span data-stu-id="96cef-110">By default, `filename` is public in the assembly.</span></span> <span data-ttu-id="96cef-111">Název souboru uzavřete do uvozovek ("") Pokud obsahuje mezery.</span><span class="sxs-lookup"><span data-stu-id="96cef-111">Enclose the file name in quotation marks (" ") if it contains a space.</span></span>|  
-|`identifier`|<span data-ttu-id="96cef-112">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="96cef-112">Optional.</span></span> <span data-ttu-id="96cef-113">Logický název prostředku. Název používaný k načtení.</span><span class="sxs-lookup"><span data-stu-id="96cef-113">The logical name for the resource; the name used to load it.</span></span> <span data-ttu-id="96cef-114">Výchozí hodnota je název souboru.</span><span class="sxs-lookup"><span data-stu-id="96cef-114">The default is the name of the file.</span></span> <span data-ttu-id="96cef-115">Volitelně můžete určit, zda je prostředek veřejné nebo soukromé v manifestu sestavení, stejně jako u následující: `-res:filename.res, myname.res, public`</span><span class="sxs-lookup"><span data-stu-id="96cef-115">Optionally, you can specify whether the resource is public or private in the assembly manifest, as with the following: `-res:filename.res, myname.res, public`</span></span>|  
+|`filename`|<span data-ttu-id="7ea36-108">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="7ea36-108">Required.</span></span> <span data-ttu-id="7ea36-109">Název souboru prostředků pro vložení do výstupního souboru.</span><span class="sxs-lookup"><span data-stu-id="7ea36-109">The name of the resource file to embed in the output file.</span></span> <span data-ttu-id="7ea36-110">Ve výchozím nastavení `filename` veřejnou v sestavení.</span><span class="sxs-lookup"><span data-stu-id="7ea36-110">By default, `filename` is public in the assembly.</span></span> <span data-ttu-id="7ea36-111">Název souboru uzavřete do uvozovek ("") Pokud obsahuje mezery.</span><span class="sxs-lookup"><span data-stu-id="7ea36-111">Enclose the file name in quotation marks (" ") if it contains a space.</span></span>|  
+|`identifier`|<span data-ttu-id="7ea36-112">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="7ea36-112">Optional.</span></span> <span data-ttu-id="7ea36-113">Logický název prostředku. Název používaný k načtení.</span><span class="sxs-lookup"><span data-stu-id="7ea36-113">The logical name for the resource; the name used to load it.</span></span> <span data-ttu-id="7ea36-114">Výchozí hodnota je název souboru.</span><span class="sxs-lookup"><span data-stu-id="7ea36-114">The default is the name of the file.</span></span> <span data-ttu-id="7ea36-115">Volitelně můžete určit, zda je prostředek veřejné nebo soukromé v manifestu sestavení, stejně jako u následující: `-res:filename.res, myname.res, public`</span><span class="sxs-lookup"><span data-stu-id="7ea36-115">Optionally, you can specify whether the resource is public or private in the assembly manifest, as with the following: `-res:filename.res, myname.res, public`</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="96cef-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="96cef-116">Remarks</span></span>  
- <span data-ttu-id="96cef-117">Použití `-linkresource` pro propojení prostředku do sestavení bez umístění souboru prostředků do výstupního souboru.</span><span class="sxs-lookup"><span data-stu-id="96cef-117">Use `-linkresource` to link a resource to an assembly without placing the resource file in the output file.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="7ea36-116">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7ea36-116">Remarks</span></span>  
+ <span data-ttu-id="7ea36-117">Použití `-linkresource` pro propojení prostředku do sestavení bez umístění souboru prostředků do výstupního souboru.</span><span class="sxs-lookup"><span data-stu-id="7ea36-117">Use `-linkresource` to link a resource to an assembly without placing the resource file in the output file.</span></span>  
   
- <span data-ttu-id="96cef-118">Pokud `filename` je [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] soubor prostředků vytvořený, například podle [Resgen.exe (Generátor zdrojových souborů)](https://msdn.microsoft.com/library/8ef159de-b660-4bec-9213-c3fbc4d1c6f4) nebo ve vývojovém prostředí, můžete přistupovat pomocí členů z <xref:System.Resources> obor názvů (viz <xref:System.Resources.ResourceManager> Další informace).</span><span class="sxs-lookup"><span data-stu-id="96cef-118">If `filename` is a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] resource file created, for example, by the [Resgen.exe (Resource File Generator)](https://msdn.microsoft.com/library/8ef159de-b660-4bec-9213-c3fbc4d1c6f4) or in the development environment, it can be accessed with members in the <xref:System.Resources> namespace (see <xref:System.Resources.ResourceManager> for more information).</span></span> <span data-ttu-id="96cef-119">Pro přístup k dalším prostředkům v době běhu, použijte jednu z následujících metod: <xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>, <xref:System.Reflection.Assembly.GetManifestResourceNames%2A>, nebo <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>.</span><span class="sxs-lookup"><span data-stu-id="96cef-119">To access all other resources at run time, use one of the following methods: <xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>, <xref:System.Reflection.Assembly.GetManifestResourceNames%2A>, or <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>.</span></span>  
+ <span data-ttu-id="7ea36-118">Pokud `filename` je [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] soubor prostředků vytvořený, například podle [Resgen.exe (Generátor zdrojových souborů)](../../../framework/tools/resgen-exe-resource-file-generator.md) nebo ve vývojovém prostředí, můžete přistupovat pomocí členů z <xref:System.Resources> obor názvů (viz <xref:System.Resources.ResourceManager> Další informace).</span><span class="sxs-lookup"><span data-stu-id="7ea36-118">If `filename` is a [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)] resource file created, for example, by the [Resgen.exe (Resource File Generator)](../../../framework/tools/resgen-exe-resource-file-generator.md) or in the development environment, it can be accessed with members in the <xref:System.Resources> namespace (see <xref:System.Resources.ResourceManager> for more information).</span></span> <span data-ttu-id="7ea36-119">Pro přístup k dalším prostředkům v době běhu, použijte jednu z následujících metod: <xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>, <xref:System.Reflection.Assembly.GetManifestResourceNames%2A>, nebo <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>.</span><span class="sxs-lookup"><span data-stu-id="7ea36-119">To access all other resources at run time, use one of the following methods: <xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>, <xref:System.Reflection.Assembly.GetManifestResourceNames%2A>, or <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>.</span></span>  
   
- <span data-ttu-id="96cef-120">Krátký tvar `-resource` je `-res`.</span><span class="sxs-lookup"><span data-stu-id="96cef-120">The short form of `-resource` is `-res`.</span></span>  
+ <span data-ttu-id="7ea36-120">Krátký tvar `-resource` je `-res`.</span><span class="sxs-lookup"><span data-stu-id="7ea36-120">The short form of `-resource` is `-res`.</span></span>  
   
- <span data-ttu-id="96cef-121">Informace o tom, jak nastavit `-resource` v sadě Visual Studio IDE, naleznete v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).</span><span class="sxs-lookup"><span data-stu-id="96cef-121">For information about how to set `-resource` in the Visual Studio IDE, see [Managing Application Resources (.NET)](/visualstudio/ide/managing-application-resources-dotnet).</span></span>  
+ <span data-ttu-id="7ea36-121">Informace o tom, jak nastavit `-resource` v sadě Visual Studio IDE, naleznete v tématu [Správa prostředků aplikace (.NET)](/visualstudio/ide/managing-application-resources-dotnet).</span><span class="sxs-lookup"><span data-stu-id="7ea36-121">For information about how to set `-resource` in the Visual Studio IDE, see [Managing Application Resources (.NET)](/visualstudio/ide/managing-application-resources-dotnet).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="96cef-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="96cef-122">Example</span></span>  
- <span data-ttu-id="96cef-123">Následující kód zkompiluje `In.vb` a soubor prostředků bude k obrazci `Rf.resource`.</span><span class="sxs-lookup"><span data-stu-id="96cef-123">The following code compiles `In.vb` and attaches resource file `Rf.resource`.</span></span>  
+## <a name="example"></a><span data-ttu-id="7ea36-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="7ea36-122">Example</span></span>  
+ <span data-ttu-id="7ea36-123">Následující kód zkompiluje `In.vb` a soubor prostředků bude k obrazci `Rf.resource`.</span><span class="sxs-lookup"><span data-stu-id="7ea36-123">The following code compiles `In.vb` and attaches resource file `Rf.resource`.</span></span>  
   
 ```console
 vbc -res:rf.resource in.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="96cef-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="96cef-124">See Also</span></span>  
- [<span data-ttu-id="96cef-125">Kompilátor příkazového řádku jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="96cef-125">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)  
- [<span data-ttu-id="96cef-126">-win32resource</span><span class="sxs-lookup"><span data-stu-id="96cef-126">-win32resource</span></span>](../../../visual-basic/reference/command-line-compiler/win32resource.md)  
- [<span data-ttu-id="96cef-127">-linkresource (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="96cef-127">-linkresource (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/linkresource.md)  
- [<span data-ttu-id="96cef-128">-target (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="96cef-128">-target (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)  
- [<span data-ttu-id="96cef-129">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="96cef-129">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a><span data-ttu-id="7ea36-124">Viz také:</span><span class="sxs-lookup"><span data-stu-id="7ea36-124">See also</span></span>
+
+- [<span data-ttu-id="7ea36-125">Kompilátor příkazového řádku jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="7ea36-125">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)  
+- [<span data-ttu-id="7ea36-126">-win32resource</span><span class="sxs-lookup"><span data-stu-id="7ea36-126">-win32resource</span></span>](../../../visual-basic/reference/command-line-compiler/win32resource.md)  
+- [<span data-ttu-id="7ea36-127">-linkresource (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7ea36-127">-linkresource (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/linkresource.md)  
+- [<span data-ttu-id="7ea36-128">-target (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7ea36-128">-target (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)  
+- [<span data-ttu-id="7ea36-129">Příkazové řádky ukázkové kompilace</span><span class="sxs-lookup"><span data-stu-id="7ea36-129">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

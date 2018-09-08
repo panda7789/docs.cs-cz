@@ -1,53 +1,61 @@
 ---
-title: Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+title: Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)
+ms.date: 09/05/2018
 helpviewer_keywords:
 - conversions [C#], implicit numeric
 - implicit numeric conversions [C#]
 - numeric conversions [C#], implicit
 - types [C#], implicit numeric conversions
 ms.assetid: 72eb5a94-0491-48bf-8032-d7ebfdfeb8d8
-ms.openlocfilehash: 4bbc6086dc5fd3838ef9361762c3068ca44efd0e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: e46816fc8f3a6ff71dcba3561098d3cfce1e1054
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/07/2018
-ms.locfileid: "44047978"
+ms.locfileid: "44137119"
 ---
-# <a name="implicit-numeric-conversions-table-c-reference"></a><span data-ttu-id="e722a-102">Tabulka implicitních číselných převodů (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="e722a-102">Implicit Numeric Conversions Table (C# Reference)</span></span>
-<span data-ttu-id="e722a-103">V následující tabulce jsou uvedeny předdefinované implicitních číselných převodů.</span><span class="sxs-lookup"><span data-stu-id="e722a-103">The following table shows the predefined implicit numeric conversions.</span></span> <span data-ttu-id="e722a-104">Implicitní převod může dojít v mnoha situacích, včetně příkazů metody vyvolání a přiřazení.</span><span class="sxs-lookup"><span data-stu-id="e722a-104">Implicit conversions might occur in many situations, including method invoking and assignment statements.</span></span>  
-  
-|<span data-ttu-id="e722a-105">From</span><span class="sxs-lookup"><span data-stu-id="e722a-105">From</span></span>|<span data-ttu-id="e722a-106">Chcete-li</span><span class="sxs-lookup"><span data-stu-id="e722a-106">To</span></span>|  
-|----------|--------|  
-|[<span data-ttu-id="e722a-107">sbyte</span><span class="sxs-lookup"><span data-stu-id="e722a-107">sbyte</span></span>](../../../csharp/language-reference/keywords/sbyte.md)|<span data-ttu-id="e722a-108">`short`, `int`, `long`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-108">`short`, `int`, `long`, `float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-109">byte</span><span class="sxs-lookup"><span data-stu-id="e722a-109">byte</span></span>](../../../csharp/language-reference/keywords/byte.md)|<span data-ttu-id="e722a-110">`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-110">`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-111">short</span><span class="sxs-lookup"><span data-stu-id="e722a-111">short</span></span>](../../../csharp/language-reference/keywords/short.md)|<span data-ttu-id="e722a-112">`int`, `long`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-112">`int`, `long`, `float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-113">ushort</span><span class="sxs-lookup"><span data-stu-id="e722a-113">ushort</span></span>](../../../csharp/language-reference/keywords/ushort.md)|<span data-ttu-id="e722a-114">`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-114">`int`, `uint`, `long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-115">int</span><span class="sxs-lookup"><span data-stu-id="e722a-115">int</span></span>](../../../csharp/language-reference/keywords/int.md)|<span data-ttu-id="e722a-116">`long`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-116">`long`, `float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-117">uint</span><span class="sxs-lookup"><span data-stu-id="e722a-117">uint</span></span>](../../../csharp/language-reference/keywords/uint.md)|<span data-ttu-id="e722a-118">`long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-118">`long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-119">long</span><span class="sxs-lookup"><span data-stu-id="e722a-119">long</span></span>](../../../csharp/language-reference/keywords/long.md)|<span data-ttu-id="e722a-120">`float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-120">`float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-121">char</span><span class="sxs-lookup"><span data-stu-id="e722a-121">char</span></span>](../../../csharp/language-reference/keywords/char.md)|<span data-ttu-id="e722a-122">`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-122">`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
-|[<span data-ttu-id="e722a-123">float</span><span class="sxs-lookup"><span data-stu-id="e722a-123">float</span></span>](../../../csharp/language-reference/keywords/float.md)|`double`|  
-|[<span data-ttu-id="e722a-124">ulong</span><span class="sxs-lookup"><span data-stu-id="e722a-124">ulong</span></span>](../../../csharp/language-reference/keywords/ulong.md)|<span data-ttu-id="e722a-125">`float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="e722a-125">`float`, `double`, or `decimal`</span></span>|  
-  
-## <a name="remarks"></a><span data-ttu-id="e722a-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e722a-126">Remarks</span></span>  
-  
--   <span data-ttu-id="e722a-127">Přesnost, ale nikoli velikost může být ztraceno v převody z `int`, `uint`, `long`, nebo `ulong` k `float` a z `long` nebo `ulong` k `double`.</span><span class="sxs-lookup"><span data-stu-id="e722a-127">Precision but not magnitude might be lost in the conversions from `int`, `uint`,  `long`, or `ulong` to `float` and from `long` or `ulong` to `double`.</span></span>  
-  
--   <span data-ttu-id="e722a-128">Neexistují žádné implicitní převody na `char` typu.</span><span class="sxs-lookup"><span data-stu-id="e722a-128">There are no implicit conversions to the `char` type.</span></span>  
-  
--   <span data-ttu-id="e722a-129">Neexistují žádné implicitní převody mezi typy s plovoucí desetinnou čárkou a `decimal` typu.</span><span class="sxs-lookup"><span data-stu-id="e722a-129">There are no implicit conversions between floating-point types and the `decimal` type.</span></span>  
-  
--   <span data-ttu-id="e722a-130">Konstantní výraz typu `int` lze převést na `sbyte`, `byte`, `short`, `ushort`, `uint`, nebo `ulong`, pokud má konstantní výraz hodnotu v rozsahu cílového umístění Zadejte.</span><span class="sxs-lookup"><span data-stu-id="e722a-130">A constant expression of type `int` can be converted to `sbyte`, `byte`, `short`, `ushort`, `uint`, or `ulong`, provided the value of the constant expression is within the range of the destination type.</span></span>  
-  
-## <a name="c-language-specification"></a><span data-ttu-id="e722a-131">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e722a-131">C# Language Specification</span></span>  
- [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
-  
-## <a name="see-also"></a><span data-ttu-id="e722a-132">Viz také</span><span class="sxs-lookup"><span data-stu-id="e722a-132">See Also</span></span>  
+# <a name="implicit-numeric-conversions-table-c-reference"></a><span data-ttu-id="52d01-102">Tabulka implicitních číselných převodů (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="52d01-102">Implicit numeric conversions table (C# Reference)</span></span>
 
-- [<span data-ttu-id="e722a-133">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e722a-133">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="e722a-134">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="e722a-134">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="e722a-135">Tabulka celočíselných typů</span><span class="sxs-lookup"><span data-stu-id="e722a-135">Integral Types Table</span></span>](../../../csharp/language-reference/keywords/integral-types-table.md)  
-- [<span data-ttu-id="e722a-136">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="e722a-136">Built-In Types Table</span></span>](../../../csharp/language-reference/keywords/built-in-types-table.md)  
-- [<span data-ttu-id="e722a-137">Tabulka explicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="e722a-137">Explicit Numeric Conversions Table</span></span>](../../../csharp/language-reference/keywords/explicit-numeric-conversions-table.md)  
-- [<span data-ttu-id="e722a-138">Přetypování a převody typů</span><span class="sxs-lookup"><span data-stu-id="e722a-138">Casting and Type Conversions</span></span>](../../../csharp/programming-guide/types/casting-and-type-conversions.md)
+<span data-ttu-id="52d01-103">V následující tabulce jsou uvedeny předdefinované implicitní převody mezi číselnými typy .NET.</span><span class="sxs-lookup"><span data-stu-id="52d01-103">The following table shows the predefined implicit conversions between .NET numeric types.</span></span>
+  
+|<span data-ttu-id="52d01-104">From</span><span class="sxs-lookup"><span data-stu-id="52d01-104">From</span></span>|<span data-ttu-id="52d01-105">Chcete-li</span><span class="sxs-lookup"><span data-stu-id="52d01-105">To</span></span>|  
+|----------|--------|  
+|[<span data-ttu-id="52d01-106">sbyte</span><span class="sxs-lookup"><span data-stu-id="52d01-106">sbyte</span></span>](sbyte.md)|<span data-ttu-id="52d01-107">`short`, `int`, `long`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-107">`short`, `int`, `long`, `float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-108">byte</span><span class="sxs-lookup"><span data-stu-id="52d01-108">byte</span></span>](byte.md)|<span data-ttu-id="52d01-109">`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-109">`short`, `ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-110">short</span><span class="sxs-lookup"><span data-stu-id="52d01-110">short</span></span>](short.md)|<span data-ttu-id="52d01-111">`int`, `long`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-111">`int`, `long`, `float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-112">ushort</span><span class="sxs-lookup"><span data-stu-id="52d01-112">ushort</span></span>](ushort.md)|<span data-ttu-id="52d01-113">`int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-113">`int`, `uint`, `long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-114">int</span><span class="sxs-lookup"><span data-stu-id="52d01-114">int</span></span>](int.md)|<span data-ttu-id="52d01-115">`long`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-115">`long`, `float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-116">uint</span><span class="sxs-lookup"><span data-stu-id="52d01-116">uint</span></span>](uint.md)|<span data-ttu-id="52d01-117">`long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-117">`long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-118">long</span><span class="sxs-lookup"><span data-stu-id="52d01-118">long</span></span>](long.md)|<span data-ttu-id="52d01-119">`float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-119">`float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-120">char</span><span class="sxs-lookup"><span data-stu-id="52d01-120">char</span></span>](char.md)|<span data-ttu-id="52d01-121">`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-121">`ushort`, `int`, `uint`, `long`, `ulong`, `float`, `double`, or `decimal`</span></span>|  
+|[<span data-ttu-id="52d01-122">float</span><span class="sxs-lookup"><span data-stu-id="52d01-122">float</span></span>](float.md)|`double`|  
+|[<span data-ttu-id="52d01-123">ulong</span><span class="sxs-lookup"><span data-stu-id="52d01-123">ulong</span></span>](ulong.md)|<span data-ttu-id="52d01-124">`float`, `double`, nebo `decimal`</span><span class="sxs-lookup"><span data-stu-id="52d01-124">`float`, `double`, or `decimal`</span></span>|  
+  
+## <a name="remarks"></a><span data-ttu-id="52d01-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="52d01-125">Remarks</span></span>  
+
+- <span data-ttu-id="52d01-126">Žádné [celočíselného typu](integral-types-table.md) implicitně převést na libovolný [s plovoucí desetinnou čárkou typu](floating-point-types-table.md).</span><span class="sxs-lookup"><span data-stu-id="52d01-126">Any [integral type](integral-types-table.md) is implicitly convertible to any [floating-point type](floating-point-types-table.md).</span></span>
+
+- <span data-ttu-id="52d01-127">Přesnost, ale nikoli velikost může být ztraceno v převody z `int`, `uint`, `long`, nebo `ulong` k `float` a z `long` nebo `ulong` k `double`.</span><span class="sxs-lookup"><span data-stu-id="52d01-127">Precision but not magnitude might be lost in the conversions from `int`, `uint`, `long`, or `ulong` to `float` and from `long` or `ulong` to `double`.</span></span>  
+  
+- <span data-ttu-id="52d01-128">Neexistují žádné implicitní převody na `char` typu.</span><span class="sxs-lookup"><span data-stu-id="52d01-128">There are no implicit conversions to the `char` type.</span></span>  
+  
+- <span data-ttu-id="52d01-129">Neexistují žádné implicitní převody mezi `float` a `double` typy a `decimal` typu.</span><span class="sxs-lookup"><span data-stu-id="52d01-129">There are no implicit conversions between the `float` and `double` types and the `decimal` type.</span></span>  
+  
+- <span data-ttu-id="52d01-130">Hodnota konstantní výraz typu `int` (například, Hodnota reprezentovaná celočíselný literál) lze převést na `sbyte`, `byte`, `short`, `ushort`, `uint`, nebo `ulong`, pokud má v rozsahu cílového typu:</span><span class="sxs-lookup"><span data-stu-id="52d01-130">A value of a constant expression of type `int` (for example, a value represented by an integral literal) can be converted to `sbyte`, `byte`, `short`, `ushort`, `uint`, or `ulong`, provided it's within the range of the destination type:</span></span>
+
+  ```csharp
+  byte a = 13;    // Compiles
+  byte b = 300;   // CS0031: Constant value '300' cannot be converted to a 'byte'
+  ```
+
+<span data-ttu-id="52d01-131">Další informace o implicitních převodů, najdete v článku [implicitních převodů](/dotnet/csharp/language-reference/language-specification/conversions#implicit-conversions) část [specifikace jazyka C#](../language-specification/index.md).</span><span class="sxs-lookup"><span data-stu-id="52d01-131">For more information about implicit conversions, see the [Implicit conversions](/dotnet/csharp/language-reference/language-specification/conversions#implicit-conversions) section of the [C# language specification](../language-specification/index.md).</span></span>
+  
+## <a name="see-also"></a><span data-ttu-id="52d01-132">Viz také:</span><span class="sxs-lookup"><span data-stu-id="52d01-132">See also</span></span>
+
+- [<span data-ttu-id="52d01-133">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="52d01-133">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="52d01-134">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="52d01-134">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="52d01-135">Tabulka celočíselných typů</span><span class="sxs-lookup"><span data-stu-id="52d01-135">Integral types table</span></span>](integral-types-table.md)
+- [<span data-ttu-id="52d01-136">Tabulka typů s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="52d01-136">Floating-point types table</span></span>](floating-point-types-table.md)
+- [<span data-ttu-id="52d01-137">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="52d01-137">Built-in types table</span></span>](built-in-types-table.md)
+- [<span data-ttu-id="52d01-138">Tabulka explicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="52d01-138">Explicit numeric conversions table</span></span>](explicit-numeric-conversions-table.md)
+- [<span data-ttu-id="52d01-139">Přetypování a převody typu</span><span class="sxs-lookup"><span data-stu-id="52d01-139">Casting and type conversions</span></span>](../../programming-guide/types/casting-and-type-conversions.md)
