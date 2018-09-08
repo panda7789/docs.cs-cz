@@ -9,11 +9,11 @@ ms.assetid: 37a2d9a4-9721-482a-a40f-eee2c1d97875
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9f326ee895251678c7a23ea84a11e83951edf2cc
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44078636"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44194874"
 ---
 # <a name="base-classes-for-implementing-abstractions"></a>Základní třídy pro implementaci abstrakcí
 Přesněji řečeno třída změní základní třídy, pokud jiné třídy je odvozen z něj. Pro účely této části ale základní třídy je třída navržená především pro poskytování běžné abstrakce nebo pro jiné třídy opakovaně používat některé výchozí implementace ale dědičnosti. Základní třídy se obvykle nacházejí uprostřed hierarchie dědičnosti mezi několika vlastní implementace v dolní části a abstrakce na nejnižší úrovni hierarchie.  

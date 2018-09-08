@@ -1,25 +1,25 @@
 ---
-title: příkaz nabízené DotNet nuget - .NET Core rozhraní příkazového řádku
-description: Příkaz dotnet nuget nabízené nabízených oznámení balíček na server a vydává je.
+title: příkaz push DotNet nuget – rozhraní příkazového řádku .NET Core
+description: Příkaz dotnet nuget nabízených odešle balíček na server a publikuje ji.
 author: karann-msft
 ms.author: mairaw
-ms.date: 06/01/2018
-ms.openlocfilehash: 8a64f9cdc11d03bed82a132265c3b4e1de290807
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 09/04/2018
+ms.openlocfilehash: 23d27cef29008955850f9ed9f4a8baed9e7ad982
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728573"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44186458"
 ---
-# <a name="dotnet-nuget-push"></a>nabízená nuget DotNet.
+# <a name="dotnet-nuget-push"></a>DotNet nuget push
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet nuget push` -Sami balíček na server a vydává je.
+`dotnet nuget push` -Odešle balíček na server a publikuje ji.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 # <a name="net-core-21tabnetcore21"></a>[.NET core 2.1](#tab/netcore21)
 ```
@@ -33,7 +33,7 @@ dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k
     [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 ```
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [-k|--api-key] [-n|--no-symbols]
     [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
@@ -43,13 +43,13 @@ dotnet nuget push [-h|--help]
 
 ## <a name="description"></a>Popis
 
-`dotnet nuget push` Příkaz nabízených oznámení balíček na server a vydává je. Příkaz nabízené používá server a podrobnosti o přihlašovacích údajích, které najde v konfiguračním souboru systému NuGet nebo řetězu konfigurační soubory. Další informace o konfigurační soubory, najdete v části [konfigurace chování NuGet](/nuget/consume-packages/configuring-nuget-behavior). NuGet výchozí konfiguraci se získávají načtením *%AppData%\NuGet\NuGet.config* (Windows) nebo *$HOME/.local/share* (Linux/systému macOS), pak všechny načítání *nuget.config*nebo *.nuget\nuget.config* z kořene jednotky počáteční a koncovou v aktuálním adresáři.
+`dotnet nuget push` Příkaz odešle balíček na server a publikuje ji. Příkaz nabízených oznámení pomocí serveru a přihlašovací údaje podrobnosti nacházející se v konfiguračním souboru systému NuGet nebo řetězec konfigurační soubory. Další informace o konfiguračních souborů naleznete v tématu [konfigurace chování Nugetu](/nuget/consume-packages/configuring-nuget-behavior). Výchozí konfigurace NuGet se získá načítání *%AppData%\NuGet\NuGet.config* (Windows) nebo *$HOME/.local/share* (Linux/macOS), pak všechny načítání *nuget.config*nebo *.nuget\nuget.config* od kořenové jednotky a končí v aktuálním adresáři.
 
 ## <a name="arguments"></a>Arguments
 
 `ROOT`
 
-Určuje cestu k souboru na balíček, který chcete poslat.
+Určuje cestu souboru pro balíček, který má být vložena.
 
 ## <a name="options"></a>Možnosti
 
@@ -57,15 +57,15 @@ Určuje cestu k souboru na balíček, který chcete poslat.
 
 `-d|--disable-buffering`
 
-Zakáže ukládání do vyrovnávací paměti při nabízení do serveru protokolu HTTP (S) ke snížení využití paměti.
+Zakáže ukládání do vyrovnávací paměti při odesílání na server HTTP (S) ke snížení využití paměti.
 
 `--force-english-output`
 
-Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-k|--api-key <API_KEY>`
 
@@ -73,41 +73,41 @@ Klíč rozhraní API pro server.
 
 `-n|--no-symbols`
 
-Není push symboly (i pokud existuje).
+Nelze vložit symboly (i když je k dispozici).
 
 `--no-service-endpoint`
 
-Není připojit "v2/api/balíček" na adresu URL zdroje.
+"Api/v2/balíček" nemá připojení k zdrojová adresa URL.
 
 `-s|--source <SOURCE>`
 
-Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
+Určuje adresu URL serveru. Tato možnost je vyžadována, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
 
 `-sk|--symbol-api-key <API_KEY>`
 
-Klíč rozhraní API pro symbol server.
+Klíč rozhraní API pro server symbolů.
 
 `-ss|--symbol-source <SOURCE>`
 
-Určuje adresu URL serveru symbol.
+Určuje adresu URL serveru symbolů.
 
 `-t|--timeout <TIMEOUT>`
 
-Určuje časový limit pro vkládání na server v sekundách. Výchozí hodnota je 300 sekund (5 minut). Zadáním 0 (nula sekund) platí výchozí hodnota.
+Určuje časový limit pro odesílání na server v řádu sekund. Výchozí hodnota je 300 sekund (5 minut). Zadání 0 (nula sekund) použije výchozí hodnotu.
 
 # <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
 
 `-d|--disable-buffering`
 
-Zakáže ukládání do vyrovnávací paměti při nabízení do serveru protokolu HTTP (S) ke snížení využití paměti.
+Zakáže ukládání do vyrovnávací paměti při odesílání na server HTTP (S) ke snížení využití paměti.
 
 `--force-english-output`
 
-Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-k|--api-key <API_KEY>`
 
@@ -115,37 +115,37 @@ Klíč rozhraní API pro server.
 
 `-n|--no-symbols`
 
-Není push symboly (i pokud existuje).
+Nelze vložit symboly (i když je k dispozici).
 
 `-s|--source <SOURCE>`
 
-Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
+Určuje adresu URL serveru. Tato možnost je vyžadována, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
 
 `-sk|--symbol-api-key <API_KEY>`
 
-Klíč rozhraní API pro symbol server.
+Klíč rozhraní API pro server symbolů.
 
 `-ss|--symbol-source <SOURCE>`
 
-Určuje adresu URL serveru symbol.
+Určuje adresu URL serveru symbolů.
 
 `-t|--timeout <TIMEOUT>`
 
-Určuje časový limit pro vkládání na server v sekundách. Výchozí hodnota je 300 sekund (5 minut). Zadáním 0 (nula sekund) platí výchozí hodnota.
+Určuje časový limit pro odesílání na server v řádu sekund. Výchozí hodnota je 300 sekund (5 minut). Zadání 0 (nula sekund) použije výchozí hodnotu.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET pro základní 1.x](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 
 `-d|--disable-buffering`
 
-Zakáže ukládání do vyrovnávací paměti při nabízení do serveru protokolu HTTP (S) ke snížení využití paměti.
+Zakáže ukládání do vyrovnávací paměti při odesílání na server HTTP (S) ke snížení využití paměti.
 
 `--force-english-output`
 
-Vynutí spuštění pomocí invariantní, na základě angličtina jazykové verze aplikace.
+Přinutí aplikaci běžet v invariantní, základem je angličtina jazyková verze.
 
 `-h|--help`
 
-Vytiskne krátké nápovědy pro příkaz.
+Vytiskne krátký nápovědy pro příkaz.
 
 `-k|--api-key <API_KEY>`
 
@@ -153,52 +153,48 @@ Klíč rozhraní API pro server.
 
 `-n|--no-symbols`
 
-Není push symboly (i pokud existuje).
+Nelze vložit symboly (i když je k dispozici).
 
 `-s|--source <SOURCE>`
 
-Určuje adresu URL serveru. Tato možnost je povinná, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
+Určuje adresu URL serveru. Tato možnost je vyžadována, pokud `DefaultPushSource` konfigurační hodnota je nastavena v konfiguračním souboru NuGet.
 
 `-sk|--symbol-api-key <API_KEY>`
 
-Klíč rozhraní API pro symbol server.
+Klíč rozhraní API pro server symbolů.
 
 `-ss|--symbol-source <SOURCE>`
 
-Určuje adresu URL serveru symbol.
+Určuje adresu URL serveru symbolů.
 
 `-t|--timeout <TIMEOUT>`
 
-Určuje časový limit pro vkládání na server v sekundách. Výchozí hodnota je 300 sekund (5 minut). Zadáním 0 (nula sekund) platí výchozí hodnota.
+Určuje časový limit pro odesílání na server v řádu sekund. Výchozí hodnota je 300 sekund (5 minut). Zadání 0 (nula sekund) použije výchozí hodnotu.
 
 ---
 
 ## <a name="examples"></a>Příklady
 
-Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí zadání klíč rozhraní API:
+Nabízených oznámení *foo.nupkg* nabízených oznámení na výchozí zdroj určení klíče rozhraní API:
 
 `dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a`
 
-Nabízená *foo.nupkg* ke zdroji vlastní nabízené `http://customsource`, zadání klíč rozhraní API:
+Push *foo.nupkg* ke zdroji vlastní nabízené `http://customsource`, určení klíče rozhraní API:
 
 `dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s http://customsource/`
 
-Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí:
+Nabízených oznámení *foo.nupkg* pro výchozí zdroj nabízených oznámení:
 
 `dotnet nuget push foo.nupkg`
 
-Nabízených oznámení *foo.symbols.nupkg* ke zdroji výchozí symboly:
+Nabízených oznámení *foo.symbols.nupkg* pro výchozí zdroj symboly:
 
 `dotnet nuget push foo.symbols.nupkg`
 
-Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí zadání vypršení časového limitu 360 sekundu:
+Nabízených oznámení *foo.nupkg* ke zdroji nabízené výchozí zadání časového limitu 360 druhé:
 
 `dotnet nuget push foo.nupkg --timeout 360`
 
-Všechny sami *.nupkg* soubory v aktuálním adresáři ke zdroji nabízené výchozí:
+Nabízených oznámení všem *.nupkg* soubory v aktuálním adresáři pro výchozí zdroj nabízených oznámení:
 
 `dotnet nuget push *.nupkg`
-
-Všechny sami *.nupkg* soubory v aktuálním adresáři ke zdroji nabízené výchozí, zadáním souboru vlastní konfigurace *./config/My.Config*:
-
-`dotnet nuget push *.nupkg --config-file ./config/My.Config`

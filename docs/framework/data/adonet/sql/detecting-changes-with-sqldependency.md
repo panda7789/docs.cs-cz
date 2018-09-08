@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: e6a58316-f005-4477-92e1-45cc2eb8c5b4
 ms.openlocfilehash: 63d6a17e5aaf3e5d39ed0eda288e75c071be4d73
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44137782"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44183769"
 ---
 # <a name="detecting-changes-with-sqldependency"></a>Detekce změn pomocí SqlDependency
 A <xref:System.Data.SqlClient.SqlDependency> objektu lze přidružit <xref:System.Data.SqlClient.SqlCommand> aby bylo možné rozpoznat, kdy se výsledky dotazu se liší od těch, které původně načten. Můžete také přiřadit delegáta, kterého `OnChange` událost, která se aktivuje při změně výsledků pro přidružený příkaz. Je třeba přidružit <xref:System.Data.SqlClient.SqlDependency> pomocí příkazu před spuštěním příkazu. `HasChanges` Vlastnost <xref:System.Data.SqlClient.SqlDependency> lze také použít k určení, pokud výsledky dotazu se změnily od nejprve se data načetla.  

@@ -12,59 +12,57 @@ helpviewer_keywords:
 - generics [Visual Basic], procedures
 - generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
-ms.openlocfilehash: 686087e4520ea5e6e69e5906c628af3ad54749da
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9a88a979a6b46f897e5f04f4481d4a23e245b165
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33649393"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44195017"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic
-A *obecný postup*, také zavolat *obecná metoda*, je procedura definovaný s alespoň jeden typ parametru. To umožňuje přizpůsobit typy dat, které mají požadavky na jeho pokaždé, když se volá proceduru volajícího kódu.  
+A *obecný postup*, označované také jako *obecnou metodu*, postup definované s alespoň jedním parametrem typu. To umožňuje volajícímu kódu pro datové typy na své požadavky na přizpůsobení pokaždé, když volá proceduru.  
   
- Postup není obecné jednoduše na základě definovaný v obecné třídy nebo obecná struktura. Chcete-li být obecný, musí trvat minimálně jeden parametr typu, kromě všech normální parametrů, může to trvat. Obecné třídu nebo strukturu může obsahovat neobecné procedury a neobecná třída, struktura, nebo modul může obsahovat obecné procedury.  
+ Postup není obecná jednoduše tím, že je definována uvnitř obecnou třídu nebo o obecnou strukturu. Je obecný, musí trvat aspoň jeden parametr typu, kromě jakékoliv běžné parametry, které může trvat. Obecná třída nebo struktura může obsahovat neobecné postupy a neobecná třída, struktura, nebo modul může obsahovat obecné procedury.  
   
- Obecný postup můžete použít jeho parametry typu ve svém seznamu normální parametr, v její návratový typ, pokud má jeden a v jeho postupu kódu.  
+ Obecný postup můžete použít jeho parametry typu jejího seznamu parametrů normální, v jejím návratovém typu, pokud má kód z nich a v její postup.  
   
 ## <a name="type-inference"></a>Odvození typu  
- Obecný postup můžete volat bez nutnosti zadávat žádné argumenty typu vůbec. Pokud jste ji volat tímto způsobem, kompilátor se pokusí určit příslušné datové typy předat argumenty procedury typu. To se označuje jako *odvození typu*. Následující kód ukazuje volání v které kompilátor odvodí, že by měl předat typ `String` pro parametr typu `t`.  
+ Obecný postup lze volat bez poskytnutí vůbec žádné argumenty typu. Při volání tímto způsobem, kompilátor se pokusí určit příslušné datové typy k předávání argumentů podle postupu. Tento postup se nazývá *odvození typu*. Následující kód ukazuje volání ve kterém kompilátor odvodí, že by měla předat typ `String` na parametr typu `t`.  
   
  [!code-vb[VbVbalrDataTypes#15](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_1.vb)]  
   
- Pokud kompilátor nelze odvodit typ argumentů v kontextu volání, nahlásí chybu. Možnou příčinou takové chyby neshodě rozhraní pole rank. Předpokládejme například, že definujete normální parametr jako pole parametr typu. Když zavoláte obecný postup poskytuje řadu různých pořadí (počet dimenzí), je neshoda způsobí, že odvození typu selhání. Následující kód ukazuje volání v který předat do procedury, která očekává jednorozměrné pole dvourozměrná pole.  
+ Pokud kompilátor nemůže odvodit argumenty typu z kontextu volání, hlásí chybu. Jednou z možných příčin takové chyby je řadit nesoulad pole. Předpokládejme například, že definovat normální parametr jako pole parametru typu. Při volání obecný postup poskytuje celou řadu jiné hodnosti (počet rozměrů), neshoda způsobí, že odvození typu selhání. Následující kód ukazuje volání v které dvourozměrné pole se předává procedury, která očekává, že jednorozměrné pole.  
   
- `Public Sub demoSub(Of t)(ByVal arg() As t)`  
+```vb  
+Public Sub demoSub(Of t)(ByVal arg() As t)
+End Sub
+
+Public Sub callDemoSub()
+    Dim twoDimensions(,) As Integer
+    demoSub(twoDimensions)
+End Sub
+```
   
- `End Sub`  
+ Odvození typu proměnné lze vyvolat pouze vynecháním všechny argumenty typu. Pokud zadáte jeden argument typu, je třeba zadat všechny.  
   
- `Public Sub callDemoSub()`  
-  
- `Dim twoDimensions(,) As Integer`  
-  
- `demoSub(twoDimensions)`  
-  
- `End Sub`  
-  
- Odvození typu můžete vyvolat jenom vynecháním všechny argumenty typu. Pokud zadáte jeden argument typu, je nutné zadat všechny.  
-  
- Odvození typu je podporována pouze pro obecné procedury. Odvození typu obecné třídy, struktury, rozhraní nebo delegáti nelze vyvolat.  
+ Odvození typu je podporován pouze pro obecné procedury. Nejde vyvolat odvození typu na obecné třídy, struktury, rozhraní nebo delegátů.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- V následujícím příkladu definuje obecný `Function` postup najít konkrétní prvek v poli. Definuje jeden parametr typu a použije ji k vytvoření dva parametry v seznamu parametrů.  
+ Následující příklad definuje obecný `Function` procedury k nalezení konkrétní element v poli. Definuje jeden parametr typu a použije je k vytvoření dva parametry v seznamu parametrů.  
   
 ### <a name="code"></a>Kód  
  [!code-vb[VbVbalrDataTypes#14](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_2.vb)]  
   
 ### <a name="comments"></a>Komentáře  
- V předchozím příkladu vyžaduje možnost k porovnání `searchValue` proti každý element `searchArray`. Pokud chcete zajistit tuto možnost, omezuje parametr typu `T` implementovat <xref:System.IComparable%601> rozhraní. Kód používá <xref:System.IComparable%601.CompareTo%2A> metoda místo `=` operátor, protože není zaručeno, že pro zadaný argument typu `T` podporuje `=` operátor.  
+ V předchozím příkladu vyžaduje schopnost porovnávat `searchValue` proti každý prvek `searchArray`. Pokud chcete zajistit tuto možnost, omezuje parametr typu `T` k implementaci <xref:System.IComparable%601> rozhraní. Tento kód použije <xref:System.IComparable%601.CompareTo%2A> metoda místo `=` operátoru, protože není k dispozici žádná záruka, že argument typu zadaný pro `T` podporuje `=` operátor.  
   
- Můžete otestovat `findElement` postup následujícím kódem.  
+ Můžete testovat `findElement` procedury s následujícím kódem.  
   
  [!code-vb[VbVbalrDataTypes#13](../../../../visual-basic/language-reference/data-types/codesnippet/VisualBasic/generic-procedures_3.vb)]  
   
- Podle předchozích volání `MsgBox` zobrazit "0", "1" a "-1" v uvedeném pořadí.  
+ Předchozí volání `MsgBox` zobrazení "0", "1" a "-1" v uvedeném pořadí.  
   
 ## <a name="see-also"></a>Viz také  
  [Obecné typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)  

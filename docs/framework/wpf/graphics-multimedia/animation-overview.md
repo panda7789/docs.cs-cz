@@ -9,11 +9,11 @@ helpviewer_keywords:
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
 ms.openlocfilehash: 7a783f687dd8c9c21f796f2a8da7e0471a1f0d2b
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44064339"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44189468"
 ---
 # <a name="animation-overview"></a>Přehled animace
 <a name="introduction"></a>

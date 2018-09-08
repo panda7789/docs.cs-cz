@@ -8,11 +8,11 @@ helpviewer_keywords:
 - animation [WPF], decelerating
 ms.assetid: 4f383b2c-f94d-4a4e-9a06-f56f5dae95f9
 ms.openlocfilehash: b1649f27fc8ff850516eef2086dbce732915406b
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44135871"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44180433"
 ---
 # <a name="how-to-accelerate-or-decelerate-an-animation"></a>Postupy: Zrychlení a zpomalení animace
 Tento příklad ukazuje, jak vytvořit animaci, zrychlení a zpomalení v čase. V následujícím příkladu jsou animovat několik obdélníků pomocí animací s různými <xref:System.Windows.Media.Animation.Timeline.AccelerationRatio%2A> a <xref:System.Windows.Media.Animation.Timeline.DecelerationRatio%2A> nastavení.  

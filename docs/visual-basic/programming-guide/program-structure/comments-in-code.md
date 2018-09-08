@@ -15,11 +15,11 @@ helpviewer_keywords:
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
 ms.openlocfilehash: fafc80cc4847e9ec05f19fc7f3d31d2d5b11197a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43870338"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44194577"
 ---
 # <a name="comments-in-code-visual-basic"></a>Komentáře v kódu (Visual Basic)
 Při prohlížení příklady kódu, můžete často narazit na symbol komentáře (`'`). Tento symbol instruuje kompilátor jazyka Visual Basic, aby ignoroval text ním následuje nebo *komentář*. Komentáře jsou stručné vysvětlivky doplněné do kódu kvůli lepší orientaci těch, kteří si ho prohlížejí.  

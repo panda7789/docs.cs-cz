@@ -11,11 +11,11 @@ ms.assetid: 6b49314e-8bba-43ea-97ca-4e0255812f95
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a7fb9964d0e542c0937c55ae65bd88b3f7149fa8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44036022"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44187936"
 ---
 # <a name="type-design-guidelines"></a>Pokyny k návrhu typu
 Z pohledu CLR existují jenom dvě kategorie typů – typy odkazu a typy hodnot, ale pro účely diskuse o návrhu rozhraní framework, jsme typy rozdělit do více logických skupin, každou s vlastní pravidla konkrétního návrhu.  

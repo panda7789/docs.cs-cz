@@ -9,11 +9,11 @@ ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c4d1d5602ff224c1c8f3e0948fc93c9200b9661e
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44133685"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44189073"
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>Nabízené ověření XmlSchemaValidator
 <xref:System.Xml.Schema.XmlSchemaValidator> Třída poskytuje mechanismus efektivního, vysoce výkonné ověřit data XML oproti schémat XML v podobě nabízené. Například <xref:System.Xml.Schema.XmlSchemaValidator> třída umožňuje ověřit XML informační sadu místní bez nutnosti ho serializovat jako dokument XML a potom změny zpracování dokumentu pomocí ověřování čtecí modul XML.  

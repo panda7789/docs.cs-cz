@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic code, elements of
 - Visual Basic code
 ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
-ms.openlocfilehash: a8f6da4dc42244fbadbaf0e96b0dd281a3f7ccb2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 975bec73235b3b8f82088325e0d4abc50ce6b1dd
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879601"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44185360"
 ---
 # <a name="visual-basic-language-features"></a>Funkce jazyka Visual Basic
 Následující témata představují a popisují nezbytné součásti jazyka Visual Basic, objektově orientovaný programovací jazyk. Po vytvoření uživatelského rozhraní pro svoji aplikaci pomocí formuláře a ovládací prvky, je nutné napsat kód, který definuje chování aplikace. Stejně jako u moderní programovací jazyk Visual Basic podporuje řadu běžné programovací konstrukce a prvky jazyka.  
@@ -77,8 +77,9 @@ Následující témata představují a popisují nezbytné součásti jazyka Vis
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)  
  Obsahuje odkazy na témata, která popisují způsob použití XML v jazyce Visual Basic.  
   
-## <a name="related-sections"></a>Související oddíly  
- [Kolekce](https://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
+## <a name="related-sections"></a>Související oddíly
+
+ [Kolekce](../../../visual-basic/programming-guide/concepts/collections.md)  
  Popisuje typy kolekce, které jsou k dispozici v rozhraní .NET Framework. Ukazuje, jak použít jednoduché kolekce a kolekce párů klíč/hodnota.  
   
  [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  

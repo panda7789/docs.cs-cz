@@ -7,18 +7,18 @@ helpviewer_keywords:
 ms.assetid: d899d43c-335a-433e-a589-cd187192984f
 dev_langs:
 - CSharp
-ms.openlocfilehash: faa91d3e72ebd94b2f849f824ca7e47876793109
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cb42c265d9057ea4fdb76e72fc9cdb2368309cae
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33583263"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44181573"
 ---
 # <a name="basic-serialization"></a>Základní serializace
 
 [!INCLUDE [binary-serialization-warning](../../../includes/binary-serialization-warning.md)]
 
-Nejjednodušší způsob, jak vytvořit třídu serializovatelný je označte ji s <xref:System.SerializableAttribute> následujícím způsobem.  
+Nejjednodušší způsob, jak vytvořit třídu serializovatelný je označit pomocí <xref:System.SerializableAttribute> následujícím způsobem.  
   
 ```csharp  
 [Serializable]  
@@ -29,7 +29,7 @@ public class MyObject {
 }  
 ```  
   
-Následující příklad kódu ukazuje, jak lze do souboru serializovat instance této třídy.  
+Následující příklad kódu ukazuje, jak lze serializovat instance této třídy do souboru.  
   
 ```csharp  
 MyObject obj = new MyObject();  
@@ -42,9 +42,9 @@ formatter.Serialize(stream, obj);
 stream.Close();  
 ```  
   
-V tomto příkladu binární formátovací modul použije k serializaci. Je potřeba udělat je vytvoření instance datového proudu a formátovací modul, který chcete použít a pak zavolají **serializace** metodu formátování. Datový proud a objekt určený k serializaci jsou poskytovány jako parametry pro toto volání. I když není ukázáno explicitně v tomto příkladu, bude serializována všechny proměnné členů třídy – i proměnné, které jsou označeny jako soukromé. V tento aspekt binární serializace se liší od <xref:System.Xml.Serialization.XmlSerializer> třídy, která pouze serializuje veřejná pole. Informace na vyloučení členské proměnné z binární serializace najdete v tématu [selektivní serializace](selective-serialization.md).  
+V tomto příkladu binární formátovací modul použije k serializaci. Všechno, co potřebujete udělat, je vytvořit instanci datového proudu a formátovací modul, který máte v úmyslu použít a poté zavolejte **serializace** metodu na formátování. Datový proud a objekt určený k serializaci jsou poskytovány jako parametry pro toto volání. I když není ukázáno explicitně v tomto příkladu, bude serializována všechny proměnné členů třídy – i proměnné, které jsou označeny jako soukromé. V této aspekt binární serializace se liší od <xref:System.Xml.Serialization.XmlSerializer> třídu, která serializuje pouze veřejná pole. Informace o vyloučení proměnné členů z binární serializace naleznete v tématu [selektivní serializace](selective-serialization.md).  
   
-Obnovení objektu zpět do původní stavu je stejně jednoduché. Nejprve vytvořte datový proud pro čtení a <xref:System.Runtime.Serialization.Formatter>, a potom dá pokyn formátovací modul k deserializaci objektu. Následující příklad kódu ukazuje, jak to lze provést.  
+Obnovení objektu zpět do původní stavu je stejně jednoduché. Nejprve vytvořte datového proudu pro čtení a <xref:System.Runtime.Serialization.Formatter>, a potom pokyn formátovací modul k deserializaci objektu. Následující příklad kódu ukazuje, jak to lze provést.  
   
 ```csharp  
 IFormatter formatter = new BinaryFormatter();  
@@ -58,9 +58,9 @@ Console.WriteLine("n2: {0}", obj.n2);
 Console.WriteLine("str: {0}", obj.str);  
 ```  
   
-<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> Používá vyšší je velmi efektivně a vytvoří datový proud s compact bajtů. Všechny objekty serializované pomocí tohoto formátování lze deserializovat také s ním, díky čemuž je ideální nástroj pro serializaci objektů, které k deserializaci na rozhraní .NET Framework. Je důležité si všimnout, že konstruktory nejsou volána, když je objekt deserializován. Toto omezení je umístěn na deserializace z hlediska výkonu. Však to porušuje některé obvyklé smluv, které modul runtime provede pomocí objektu zapisovače a vývojáři se ujistěte, že znají důsledky při označení objektu jako serializovatelný.  
+<xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> Používá výše, je velmi efektivní a vytváří tok compact bajtů. Všechny objekty serializované pomocí tohoto formátování lze deserializovat také s ním, díky čemuž je ideální nástroj pro serializaci objektů, které k deserializaci na rozhraní .NET Framework. Je důležité si všimnout, že konstruktory nejsou volána, když je objekt deserializován. Toto omezení je umístěn na deserializace z hlediska výkonu. Však to porušuje některé obvyklé smluv, které modul runtime provede pomocí objektu zapisovače a vývojáři se ujistěte, že znají důsledky při označení objektu jako serializovatelný.  
   
-Pokud přenositelnost je vyžadováno, použijte <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> místo. Jednoduše nahradit **BinaryFormatter** v kódu výše s **SoapFormatter,** a volání **serializace** a **Deserialize** jako předtím. Tento formátovací modul vytváří následující výstup například využité nad.  
+Je-li přenositelnost je vyžadováno, použijte <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> místo. Jednoduše nahradit **BinaryFormatter** v kódu výše s **SoapFormatter,** a volat **serializace** a **Deserialize** stejně jako předtím. Tento formátovací modul vytváří následující výstup například využité nad.  
   
 ```xml  
 <SOAP-ENV:Envelope  
@@ -83,7 +83,7 @@ Pokud přenositelnost je vyžadováno, použijte <xref:System.Runtime.Serializat
 </SOAP-ENV:Envelope>  
 ```  
   
-Je důležité si uvědomit, že [Serializable](xref:System.SerializableAttribute) atribut nemůže být dědí. Je-li odvodit novou třídu z `MyObject`, musí být označen nové třídy s atributem také nebo nemůže být serializován. Například při pokusu o serializaci instance třídy níže získáte <xref:System.Runtime.Serialization.SerializationException> vás informuje o který `MyStuff` typ není označen jako serializovatelný.  
+Je důležité si uvědomit, že [Serializable](xref:System.SerializableAttribute) atribut nemůže být odvozeny. Je-li odvodit novou třídu z `MyObject`, musí být označen nové třídy s atributem také nebo nemůže být serializován. Například při pokusu o serializaci instancí třídy níže, získáte <xref:System.Runtime.Serialization.SerializationException> informací, které `MyStuff` typ není označen jako serializovatelný.  
   
 ```csharp  
 public class MyStuff : MyObject   
@@ -92,8 +92,9 @@ public class MyStuff : MyObject
 }  
 ```  
   
- Pomocí [Serializable](xref:System.SerializableAttribute) atribut je vhodné, ale má omezení popsaná ukázán. Odkazovat [serializace pokyny](serialization-guidelines.md) informace o kdy byste měli označit třídy pro serializaci. Serializace nelze přidat do třídy, poté, co byl zkompilován.  
+ Použití [Serializable](xref:System.SerializableAttribute) atribut je vhodné, ale má omezení, jak už jsme vám ukázali. Odkazovat [pokyny pro serializaci](serialization-guidelines.md) informace o tom, kdy byste měli označit třídu pro serializaci. Serializace nelze přidat do třídy, poté, co byl zkompilován.  
   
-## <a name="see-also"></a>Viz také  
- [Binární serializace](binary-serialization.md)  
- [Serializace XML a SOAP](xml-and-soap-serialization.md)
+## <a name="see-also"></a>Viz také:
+
+- [Binární serializace](binary-serialization.md)  
+- [Serializace XML a SOAP](xml-and-soap-serialization.md)

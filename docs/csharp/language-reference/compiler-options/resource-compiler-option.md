@@ -12,11 +12,11 @@ helpviewer_keywords:
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
 ms.openlocfilehash: e02eda66ab9fadbc7b5b042c8940096c70ef6a03
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44048280"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44182551"
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (možnosti kompilátoru C#)
 Vloží zadaný prostředek do výstupního souboru.  

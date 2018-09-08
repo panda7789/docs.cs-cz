@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: bc496a91-fefb-4ce0-ab4c-61f09964119a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b1e5784de277d59c7bc945cbe7b605653eec7bb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 27550a8fd8292029cad9c2e699374a190b1a532e
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33571014"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44185633"
 ---
 # <a name="equality-operators"></a>Operátory rovnosti
 Tato část popisuje přetížení operátory rovnosti a odkazuje na `operator==` a `operator!=` jako operátory rovnosti.  
@@ -25,30 +25,31 @@ Tato část popisuje přetížení operátory rovnosti a odkazuje na `operator==
   
  **✓ DO** Ujistěte se, že <xref:System.Object.Equals%2A?displayProperty=nameWithType> a operátory rovnosti obsahovat přesně stejnou sémantiku a podobné výkonové charakteristiky.  
   
- To často znamená, že `Object.Equals` musí být potlačena, pokud jsou přetížené operátory rovnosti.  
+ To často znamená, že `Object.Equals` musí být přepsána, když jsou přetížené operátory rovnosti.  
   
  **X AVOID** generování výjimek ve operátory rovnosti.  
   
- Vrátí hodnotu false, pokud jeden z argumentů hodnotu null místo vyvolání `NullReferenceException`.  
+ Vrátí hodnotu false, pokud jeden z argumentů má hodnotu null namísto vyvolání `NullReferenceException`.  
   
-## <a name="equality-operators-on-value-types"></a>Operátory rovnosti u typů hodnot  
+## <a name="equality-operators-on-value-types"></a>Operátory rovnosti na hodnotových typech  
  **✓ DO** přetížení operátory rovnosti u typů hodnot, pokud má smysl rovnosti.  
   
- Ve většině programovacích jazyků, neexistuje žádný výchozí implementaci třídy `operator==` u typů hodnot.  
+ Ve většině programovacích jazyků, neexistuje žádný výchozí implementace `operator==` pro typy hodnot.  
   
 ## <a name="equality-operators-on-reference-types"></a>Operátory rovnosti na odkazových typech  
  **X AVOID** přetížení operátory rovnosti na proměnlivé odkazové typy.  
   
- Mnoho jazyky mají operátory rovnosti předdefinované pro odkazové typy. Předdefinované operátory obvykle implementovat referenční rovnosti a když se změní výchozí chování na rovnosti hodnoty překvapil celá řada vývojářů.  
+ Řadu jiných jazyků mají operátory integrované rovnost pro typy odkazů. Integrované operátory obvykle implementují referenční rovnosti a celá řada vývojářů jsou překvapení, když se změní výchozí chování na rovnost hodnot.  
   
- Protože neměnitelnosti znesnadňuje mnohem Všimněte rozdíl mezi referenční rovnosti a rovnosti hodnoty pro neměnné odkazové typy zmírnit tento problém.  
+ Tento problém je nezměnitelný odkazový typů zmírnit, protože neměnnosti znesnadňuje mnohem Všimněte si rozdílu mezi referenční rovnosti a rovnost hodnot.  
   
  **X AVOID** přetížení operátory rovnosti na odkazových typech Pokud implementace by výrazně pomalejší než referenční rovnosti.  
   
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
- [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)  
+- [Pokyny k používání](../../../docs/standard/design-guidelines/usage-guidelines.md)

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '|= operator (OR assignment) [C#]'
 ms.assetid: 8315b8cf-dd15-402f-92f0-c7db931696ca
 ms.openlocfilehash: fe56005ce94656b5e8a075cddfb91dc0da096cf7
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43408420"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44194504"
 ---
 # <a name="-operator-c-reference"></a>|= – operátor (Referenční dokumentace jazyka C#)
 Operátor přiřazení OR.  

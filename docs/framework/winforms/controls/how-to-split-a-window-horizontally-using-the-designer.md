@@ -7,11 +7,11 @@ helpviewer_keywords:
 - windows [Windows Forms], splitting horizontally
 ms.assetid: 3872a176-891f-4c70-9779-b2ce85b0b102
 ms.openlocfilehash: c2b605a08ea29d1d0a1e92cb2b7e4dc1f2059c26
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43801395"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44206481"
 ---
 # <a name="how-to-split-a-window-horizontally-using-the-designer"></a>Postupy: Vodorovné rozdělení okna pomocí Návrháře
 Tento příklad vytvoří rozdělovače, který rozděluje <xref:System.Windows.Forms.SplitContainer> vodorovné ovládací prvek.  

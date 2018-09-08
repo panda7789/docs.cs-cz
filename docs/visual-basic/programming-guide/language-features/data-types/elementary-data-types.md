@@ -6,11 +6,11 @@ helpviewer_keywords:
 - data types [Visual Basic], elementary
 ms.assetid: dfad6fe9-2da6-49a4-b0b1-2d7ae0283de5
 ms.openlocfilehash: 0db989bbfcb8aa00278eb20bd269872c9447616f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734786"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44188199"
 ---
 # <a name="elementary-data-types-visual-basic"></a>Základní datové typy (Visual Basic)
 Visual Basic poskytuje sadu předdefinovaných datových typů, které můžete použít pro celou řadu vaše programovací prvky. Tato část popisuje tyto typy a jejich použití.  

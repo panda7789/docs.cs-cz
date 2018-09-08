@@ -11,15 +11,15 @@ helpviewer_keywords:
 ms.assetid: e9245edf-6bef-420d-a7c7-324117752783
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 60cd661fe321c7bc3346f4d20e373240d6c35b5a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 13bce09ca9fd1ae9ebb919a9245d8ccf87fbde1d
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33653157"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44174156"
 ---
 # <a name="-rootnamespace"></a>-rootnamespace
-Určuje obor názvů pro všechny deklarace typu.  
+Určuje obor názvů pro všechny deklarace typů.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,25 +31,26 @@ Určuje obor názvů pro všechny deklarace typu.
   
 |Termín|Definice|  
 |---|---|  
-|`namespace`|Název oboru názvů, do kterého chcete uzavřete všechny deklarace typu pro aktuální projekt.|  
+|`namespace`|Název oboru názvů, ve kterém chcete uzavřít všechny deklarace typů pro aktuální projekt.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud používáte Visual Studio spustitelný soubor (Devenv.exe) k sestavení projektu vytvořeny v integrovaném vývojovém prostředí sady Visual Studio, použijte `-rootnamespace` zadat hodnotu <xref:VSLangProj80.VBProjectProperties3.RootNamespace%2A> vlastnost. V tématu [příkazového řádku DEVENV](/visualstudio/ide/reference/devenv-command-line-switches) Další informace.  
+ Pokud používáte spustitelného souboru (Devenv.exe) sady Visual Studio ke kompilaci projektu vytvořeného v integrovaném vývojovém prostředí sady Visual Studio, použijte `-rootnamespace` k určení hodnoty <xref:VSLangProj80.VBProjectProperties3.RootNamespace%2A> vlastnost. Zobrazit [přepínače příkazového řádku nástroje Devenv](/visualstudio/ide/reference/devenv-command-line-switches) Další informace.  
   
- Použijte modul common language runtime MSIL Disassembler (`Ildasm.exe`) Chcete-li zobrazit názvy oborů názvů ve výstupním souboru.  
+ Použít modul common language runtime MSIL Disassembler (`Ildasm.exe`) Chcete-li zobrazit názvy oborů názvů do výstupního souboru.  
   
 |Chcete-li nastavit - rootnamespace v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte **aplikace** kartě.<br />3.  Změňte hodnotu v **kořenové Namespace** pole.|  
+|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **aplikace** kartu.<br />3.  Upravte hodnotu v **kořenové Namespace** pole.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód zkompiluje `In.vb` a uzavře všechny deklarace typu do oboru názvů `mynamespace`.  
+ Následující kód zkompiluje `In.vb` a uzavře všechny deklarace typů v oboru názvů `mynamespace`.  
   
 ```console
 vbc -rootnamespace:mynamespace in.vb  
 ```  
   
-## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
- [Ildasm.exe (IL Disassembler)](https://msdn.microsoft.com/library/f7dy01k1)  
- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+## <a name="see-also"></a>Viz také:
+
+- [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
+- [Ildasm.exe (IL Disassembler)](../../../framework/tools/ildasm-exe-il-disassembler.md)  
+- [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

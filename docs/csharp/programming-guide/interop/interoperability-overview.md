@@ -9,11 +9,11 @@ helpviewer_keywords:
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
 ms.openlocfilehash: 0bd53d97cec4370adc78fc715b1cea5ee5a3fd6f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43860439"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44208793"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Přehled interoperability (Průvodce programováním v C#)
 Téma popisuje metody, a umožňuje interoperabilitu mezi kód jazyka C# spravovaného a nespravovaného kódu.  

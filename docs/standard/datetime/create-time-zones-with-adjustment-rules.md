@@ -12,89 +12,89 @@ helpviewer_keywords:
 ms.assetid: c52ef192-13a9-435f-8015-3b12eae8c47c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c63b93e0dc587571605edb305979b8f97bf54cb7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 80a5c04f7807638a4a8b114828083835f348ac08
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33576491"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44191466"
 ---
 # <a name="how-to-create-time-zones-with-adjustment-rules"></a>Postupy: vytváření časových pásem s pravidly úpravy
 
-Informace o přesné časovém pásmu, který je požadován pro aplikace nemusí být na určitém systému k dispozici pro několik důvodů:
+Informace přesné časové pásmo, který vyžaduje aplikace nemusí být k dispozici na konkrétní systém z několika důvodů:
 
-* Časové pásmo nikdy byla definována v registru místního systému.
+* Časové pásmo je nikdy definována v registru místního systému.
 
-* Data o časovém pásmu byl změněn nebo odstraněn z registru.
+* Data o časovém pásmu, byla změněna nebo odebrána z registru.
 
-* Časové pásmo nemá přesné informace o úpravách časové pásmo pro určité historické období.
+* Časové pásmo nemá žádné přesné informace o úpravách časové pásmo pro konkrétní období historické.
 
-V těchto případech můžete volat <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metoda definovat časové pásmo požadované aplikací. Přetížení této metody můžete vytvořit časové pásmo s nebo bez pravidel úpravy. Pokud se časové pásmo podporuje letní čas, můžete definovat úpravy s pravidly buď pevné nebo plovoucí úpravy. (Pro definice těchto podmínkách, najdete v části "Časové pásmo terminologií" v [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md).)
+V těchto případech můžete volat <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metoda k definování časové pásmo požadovaná vaší aplikací. Přetížení této metody můžete použít k vytvoření časové pásmo s nebo bez pravidel úpravy. Podporuje-li časové pásmo letního času, můžete definovat úpravy pomocí pravidla buď pevnou nebo plovoucí úpravy. (Definice těchto pojmů najdete v části "Časové pásmo terminologie" v [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md).)
 
 > [!IMPORTANT]
-> Vlastní časová pásma vytvořená voláním <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metoda nejsou přidány do registru. Místo toho jsou dostupné pouze prostřednictvím odkazu na objekt vrácený <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> volání metody.
+> Vlastní časové pásmo vytvořených voláním <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> metoda nejsou přidány do registru. Místo toho jsou dostupné jenom prostřednictvím odkazu na objekt vrácený <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> volání metody.
 
-Toto téma ukazuje, jak vytvořit časové pásmo s pravidly úpravy. Vytvoření časové pásmo, které nepodporuje pravidla úpravy letního času naleznete v tématu [postupy: vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md).
+Toto téma ukazuje, jak vytváření časových pásem s pravidly úpravy. Vytvoření časového pásma, která nepodporuje pravidly úpravy letního času, najdete v tématu [postupy: vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md).
 
-### <a name="to-create-a-time-zone-with-floating-adjustment-rules"></a>Chcete-li vytvořit časové pásmo s plovoucí úpravy pravidel
+### <a name="to-create-a-time-zone-with-floating-adjustment-rules"></a>Chcete-li vytvořit časové pásmo s plovoucí pravidly úpravy
 
-1. Pro každou úpravu (který je pro každý přechod směrem od a zpět do standardního času v konkrétním časovém intervalu) postupujte takto:
+1. Pro každou úpravu (který je pro každý přechod ze a zpět v konkrétním časovém intervalu (běžný čas)) postupujte takto:
 
-    1. Zadejte počáteční čas přechodu pro úpravu časového pásma.
+    1. Definujte výchozí dobu přechodu pro úpravu časového pásma.
 
-       Je třeba volat <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> metoda a předejte ji <xref:System.DateTime> hodnotu, která definuje čas přechodu, celočíselná hodnota, která definuje měsíc přechodu, celočíselná hodnota, která definuje v týdnu, kdy dojde k přechodu, a <xref:System.DayOfWeek> hodnota, která definuje den v týdnu, kdy dojde k přechodu. Toto volání metody vytváří <xref:System.TimeZoneInfo.TransitionTime> objektu.
+       Je nutné volat <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> – metoda a předejte jej <xref:System.DateTime> hodnotu, která definuje čas přechodu, celočíselnou hodnotu, která definuje měsíc přechodu, celočíselnou hodnotu, která definuje v týdnu, ve kterém má dojít k přechodu a <xref:System.DayOfWeek> hodnota, která definuje dne v týdnu, ve kterém dojde k přechodu. Vytvoří instanci volání této metody <xref:System.TimeZoneInfo.TransitionTime> objektu.
 
-    2. Zadejte čas dokončení přechodu pro úpravu časového pásma. To vyžaduje další volání <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> metoda. Toto volání metody vytváří druhý <xref:System.TimeZoneInfo.TransitionTime> objektu.
+    2. Definujte čas dokončení přechodu pro úpravu časového pásma. To vyžaduje další volání <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A?displayProperty=nameWithType> metody. Toto volání metody vytváří sekundy <xref:System.TimeZoneInfo.TransitionTime> objektu.
 
-    3. Volání <xref:System.TimeZoneInfo.AdjustmentRule.CreateAdjustmentRule%2A> metoda a předejte ji efektivní počáteční a koncové datum úpravy, <xref:System.TimeSpan> objekt, který definuje množství času v přechodu a dvě <xref:System.TimeZoneInfo.TransitionTime> objekty, které definují při přechody do a z letní čas čas následovat. Toto volání metody vytváří <xref:System.TimeZoneInfo.AdjustmentRule> objektu.
+    3. Volání <xref:System.TimeZoneInfo.AdjustmentRule.CreateAdjustmentRule%2A> metoda a předejte jí efektivní počáteční a koncové datum úpravy, <xref:System.TimeSpan> objekt, který definuje množství času v přechodu a dva <xref:System.TimeZoneInfo.TransitionTime> objekty, které definují při přechody do a z letní čas dojde k času. Vytvoří instanci volání této metody <xref:System.TimeZoneInfo.AdjustmentRule> objektu.
 
-    4. Přiřazení <xref:System.TimeZoneInfo.AdjustmentRule> objekt, který má pole <xref:System.TimeZoneInfo.AdjustmentRule> objekty.
+    4. Přiřazení <xref:System.TimeZoneInfo.AdjustmentRule> objekt na pole <xref:System.TimeZoneInfo.AdjustmentRule> objekty.
 
-2. Definujte časové pásmo zobrazovaný název. Zobrazovaný název následuje poměrně standardní formát, ve kterém posun časového pásma z koordinovaný světový čas (UTC) uzavřený v závorkách a následuje řetězec, který identifikuje časové pásmo, jeden nebo více měst v časovém pásmu, nebo v jednom nebo více cou oložky nebo oblasti v časovém pásmu.
+2. Definujte časové pásmo zobrazovaný název. Zobrazovaný název následuje poměrně standardní formát, ve kterém časovém pásmu posun od koordinovaného světového času (UTC) není uzavřen v závorkách a následuje řetězec, který určí časové pásmo, jeden nebo více měst v časovém pásmu, nebo v jednom nebo více následujících cou oložky nebo oblasti v časovém pásmu.
 
-3. Definuje název časové pásmo (běžný čas). Obvykle se tento řetězec se používá jako identifikátor časového pásma.
+3. Definujte název časového pásma (běžný čas). Obvykle tento řetězec se také používá jako identifikátor časového pásma.
 
-4. Zadejte název časového pásma letní čas.
+4. Definujte název časového pásma letního času.
 
-5. Pokud chcete použít jiný identifikátor než standardní název časového pásma, definujte identifikátor časového pásma.
+5. Pokud chcete použít jiný identifikátor než název standardního časového pásma, definujte identifikátor časového pásma.
 
-6. Vytváření instancí <xref:System.TimeSpan> objekt, který definuje posun časového pásma od času UTC. Časová pásma s časy, které jsou novější než čas UTC mít kladný posun. Časová pásma s časy, které jsou starší než čas UTC mít záporný posun.
+6. Vytvořit instanci <xref:System.TimeSpan> objekt, který definuje posun časového pásma UTC. Časových pásem s časem, které jsou novější než čas UTC mít kladný posun. Časových pásem s časem, které jsou starší než čas UTC, mají negativní posun.
 
 7. Volání <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.TimeZoneInfo.AdjustmentRule%5B%5D%29?displayProperty=nameWithType> metoda pro vytvoření instance nového časového pásma.
 
 ## <a name="example"></a>Příklad
 
-V následujícím příkladu definuje centrální standardní časové pásmo pro Spojené státy americké, zahrnující pravidla úprav pro celou řadu časové intervaly z 1918 tohoto.
+Následující příklad definuje střed standardní časové pásmo pro USA, který obsahuje pravidla úpravy pro širokou škálu časových intervalech od 1918 až po současnost.
 
 [!code-csharp[System.TimeZone2.CreateTimeZone#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#5)]
 [!code-vb[System.TimeZone2.CreateTimeZone#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#5)]
 
-Časové pásmo vytvořené v tomto příkladu má více pravidel úpravy. Musí být dbát na to, že efektivní počáteční a koncové datum jakéhokoli pravidla úpravy nepřekrývají s daty z jiné pravidlo úpravy. Pokud dojde překrytí <xref:System.InvalidTimeZoneException> je vyvolána výjimka.
+Časové pásmo vytvořené v tomto příkladu má víc úpravy pravidel. Musí se dbát na to, že efektivní počáteční a koncové datum u libovolného pravidla úprav nepřekrývají s daty z jiné pravidlo úpravy. Pokud dojde k překrytí <xref:System.InvalidTimeZoneException> je vyvolána výjimka.
 
-Pro plovoucí úpravy pravidel, je předána hodnota 5 `week` parametr <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A> metoda k označení, že dojde k přechodu poslední týden v určitém měsíci.
+Pro plovoucí úpravy pravidel, je předána hodnota 5 `week` parametr <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A> indikace, že dojde k přechodu na poslední týden v daném měsíci.
 
-Při vytváření pole <xref:System.TimeZoneInfo.AdjustmentRule> objekty, které chcete použít v <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.TimeZoneInfo.AdjustmentRule%5B%5D%29?displayProperty=nameWithType> volání metody kód inicializovat pole velikosti požadované počtem úpravy, které mají být vytvořeny pro časové pásmo. Místo toho tento příklad kódu volá <xref:System.Collections.Generic.List%601.Add%2A> metodu pro přidání do obecný každé pravidlo úpravy <xref:System.Collections.Generic.List%601> kolekce <xref:System.TimeZoneInfo.AdjustmentRule> objekty. Kód pak zavolá <xref:System.Collections.Generic.List%601.CopyTo%2A> metoda kopírování členy této kolekce do pole.
+Při vytváření pole <xref:System.TimeZoneInfo.AdjustmentRule> objekty používané <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%2CSystem.String%2CSystem.TimeZoneInfo.AdjustmentRule%5B%5D%29?displayProperty=nameWithType> volání metody, kód může inicializovat pole na velikost požadovanou podle počtu úpravy mají být vytvořeny pro časové pásmo. Místo toho tento příklad kódu volá <xref:System.Collections.Generic.List%601.Add%2A> způsob, jak přidat každého pravidla úpravy pro obecný <xref:System.Collections.Generic.List%601> kolekce <xref:System.TimeZoneInfo.AdjustmentRule> objekty. Kód poté volá <xref:System.Collections.Generic.List%601.CopyTo%2A> metoda kopírování členy této kolekce do pole.
 
-V příkladu se používá také <xref:System.TimeZoneInfo.TransitionTime.CreateFixedDateRule%2A> metoda definovat pevným datem. Toto je podobná volání <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A> metoda, s tím rozdílem, že IT oddělení vyžaduje pouze čas, měsíc a den parametrů přechodu.
+V příkladu se také používá <xref:System.TimeZoneInfo.TransitionTime.CreateFixedDateRule%2A> metoda k definování úprav s pevným datem. Podobá se to volání <xref:System.TimeZoneInfo.TransitionTime.CreateFloatingDateRule%2A> metody, s tím rozdílem, že se vyžaduje jenom čas, měsícem a dnem v parametrech přechod.
 
-V příkladu lze otestovat pomocí kódu, například následující:
+V příkladu lze otestovat pomocí kódu, jako jsou následující:
 
 [!code-csharp[System.TimeZone2.CreateTimeZone#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#7)]
 [!code-vb[System.TimeZone2.CreateTimeZone#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#7)]
 
-## <a name="compiling-the-code"></a>Probíhá kompilace kódu
+## <a name="compiling-the-code"></a>Kompilování kódu
 
 Tento příklad vyžaduje:
 
-* Aby byl přidán odkaz na System.Core.dll do projektu.
+* Aby byl odkaz na System.Core.dll přidán do projektu.
 
-* Aby byly importované následujících oborů názvů:
+* Aby byly importované následující obory názvů:
 
   [!code-csharp[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#6)]
   [!code-vb[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#6)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-[Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
-[Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md)
-[postupy: vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)
+* [Data, časy a časová pásma](../../../docs/standard/datetime/index.md)
+* [Přehled časových pásem](../../../docs/standard/datetime/time-zone-overview.md)
+* [Postupy: Vytváření časových pásem bez pravidel úpravy](../../../docs/standard/datetime/create-time-zones-without-adjustment-rules.md)

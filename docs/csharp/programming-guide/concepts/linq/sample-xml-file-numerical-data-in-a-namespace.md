@@ -3,11 +3,11 @@ title: 'Ukázkový soubor XML: Numerická Data v Namespace3'
 ms.date: 07/20/2015
 ms.assetid: 51750cab-3c66-4511-90fb-b9d211308d31
 ms.openlocfilehash: 114657087a0aee69bc9be298025eac58923294b0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43885308"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44185607"
 ---
 # <a name="sample-xml-file-numerical-data-in-a-namespace"></a>Ukázkový soubor XML: Numerická Data v Namespace
 Následující soubor XML se používá v různých příkladů v [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci. Tento soubor obsahuje číselná data pro sčítání, agregovat a seskupení. XML je v oboru názvů.  

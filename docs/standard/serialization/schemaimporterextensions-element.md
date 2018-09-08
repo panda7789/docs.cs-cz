@@ -6,12 +6,12 @@ helpviewer_keywords:
 - schemaImporterExtensions element
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
-ms.openlocfilehash: 8bcd8abb138c645f61bf833b49cda2631d1778dd
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b5696c593fdeaabab66ea7c286c6e1309e6e8e38
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513110"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44204796"
 ---
 # <a name="ltschemaimporterextensionsgt-element"></a>&lt;schemaImporterExtensions&gt; – Element
 Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchemaImporter> pro mapování typů XSD na typy rozhraní .NET Framework. Další informace o konfiguračních souborech najdete v tématu [schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md).  
@@ -50,10 +50,11 @@ Obsahuje typy, které jsou používány <xref:System.Xml.Serialization.XmlSchema
 </system.xml.serialization>  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.Serialization.XmlSchemaImporter>  
- <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
- [\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)  
- [\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.Serialization.XmlSchemaImporter>  
+- <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>  
+- [Schéma konfiguračního souboru](../../../docs/framework/configure-apps/file-schema/index.md)  
+- [\<dateTimeSerialization > – Element](../../../docs/standard/serialization/datetimeserialization-element.md)  
+- [\<Přidat > – Element pro \<schemaImporterExtensions >](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)  
+- [\<system.xml.serialization> Element](../../../docs/standard/serialization/system-xml-serialization-element.md)

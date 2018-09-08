@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Option keyword [Visual Basic]
 ms.assetid: 6b2f41c4-2403-43b6-8a14-94a3775e5b47
 ms.openlocfilehash: f4996b0c03ee98fef31bc301dc957060afdfdac8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43866976"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44180329"
 ---
 # <a name="option-ltkeywordgt-statement"></a>Možnost &lt;– klíčové slovo&gt; – příkaz
 Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.  

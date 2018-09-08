@@ -3,11 +3,11 @@ title: Příkazy a parametry
 ms.date: 03/30/2017
 ms.assetid: b623f810-d871-49a5-b0f5-078cc3c34db6
 ms.openlocfilehash: 8e476d68b60272d944eecfe585fd77d8a7a8f08c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44046720"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44192144"
 ---
 # <a name="commands-and-parameters"></a>Příkazy a parametry
 Po navázání připojení ke zdroji dat, můžete spouštět příkazy a vracení výsledků z zdroje dat pomocí <xref:System.Data.Common.DbCommand> objektu. Můžete vytvořit příkaz pomocí jednoho z konstruktorů příkaz pro zprostředkovatele dat .NET Framework, kterou pracujete. Konstruktory může trvat volitelné argumenty, jako je například příkazu SQL ke spuštění ve zdroji dat <xref:System.Data.Common.DbConnection> objektu, nebo <xref:System.Data.Common.DbTransaction> objektu. Tyto objekty lze také nakonfigurovat jako vlastnosti příkazu. Můžete také vytvořit příkaz pro konkrétní připojení pomocí <xref:System.Data.Common.DbConnection.CreateCommand%2A> metodu `DbConnection` objektu. Příkaz jazyka SQL prováděný pomocí příkazu lze konfigurovat pomocí <xref:System.Data.Common.DbCommand.CommandText%2A> vlastnost.  

@@ -11,11 +11,11 @@ ms.assetid: f11ed467-af2f-4504-8a2e-299a6c36d44e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a4287879bd95f7bc1e1dc99f74fa0d7cc0fe737f
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44134971"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44191024"
 ---
 # <a name="how-to-wrap-eap-patterns-in-a-task"></a>Postupy: Zalomení vzoru EAP v úloze
 Následující příklad ukazuje, jak vystavit libovolné pořadí operací asynchronní vzor založený na událostech (EAP) jako jednu úlohu pomocí <xref:System.Threading.Tasks.TaskCompletionSource%601>. Tento příklad také ukazuje, jak používat <xref:System.Threading.CancellationToken> k vyvolání metody předdefinovaných zrušení na <xref:System.Net.WebClient> objekty.  

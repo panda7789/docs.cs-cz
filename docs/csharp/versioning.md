@@ -4,11 +4,11 @@ description: Pochopení principu správy verzí v C# a .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
 ms.openlocfilehash: 949b7414116169cada62b48392f37809f26d7ff9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44071502"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44185753"
 ---
 # <a name="versioning-in-c"></a>Správa verzí v jazyce C# #
 

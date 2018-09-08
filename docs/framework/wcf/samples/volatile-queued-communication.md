@@ -3,11 +3,11 @@ title: Nestálá komunikace ve frontě
 ms.date: 03/30/2017
 ms.assetid: 0d012f64-51c7-41d0-8e18-c756f658ee3d
 ms.openlocfilehash: 55c2b695cdc672216ef6a76bef55bc0d427336a0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44065820"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44193195"
 ---
 # <a name="volatile-queued-communication"></a>Nestálá komunikace ve frontě
 Tento příklad ukazuje, jak provádět nestálá komunikace ve frontě prostřednictvím přenosu služby Řízení front zpráv (MSMQ). Tato ukázka používá <xref:System.ServiceModel.NetMsmqBinding>. Služby v tomto případě je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.  

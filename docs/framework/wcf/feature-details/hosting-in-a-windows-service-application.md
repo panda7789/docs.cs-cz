@@ -3,11 +3,11 @@ title: Hostování v aplikaci služby pro Windows
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
 ms.openlocfilehash: 2b3935babec0c7cdc3ffca5dd11d693fdfee7a89
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44129018"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44187400"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>Hostování v aplikaci služby pro Windows
 Služby Windows (dříve označovaná jako služba systému Windows NT) najdete postup, model zvlášť vhodné pro aplikace, které musí být aktivní ve spustitelném souboru dlouho běžící a nezobrazují žádné formulář, uživatelského rozhraní. Životnosti procesu Windows service aplikaci spravuje správce řízení služeb (SCM), který umožňuje spuštění, zastavení a pozastavení aplikace služby Windows. Můžete nakonfigurovat procesů služeb Windows na automatické spuštění při spuštění počítače, takže vhodný hostitelské prostředí pro aplikace "always on". Další informace o aplikacích pro službu Windows najdete v tématu [aplikace služby Windows](https://go.microsoft.com/fwlink/?LinkId=89450).  

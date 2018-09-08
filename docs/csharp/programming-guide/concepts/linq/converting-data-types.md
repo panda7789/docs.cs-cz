@@ -3,11 +3,11 @@ title: Převádění datových typů (C#)
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
 ms.openlocfilehash: 54ef612ad4e92058d9af4d96b7b3cde9732b2f9c
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44032342"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44210049"
 ---
 # <a name="converting-data-types-c"></a>Převádění datových typů (C#)
 Převod metody změnit typ objektu, vstupu.  

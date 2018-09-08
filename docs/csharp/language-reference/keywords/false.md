@@ -8,11 +8,11 @@ helpviewer_keywords:
 - false keyword [C#]
 ms.assetid: a11aa532-efe2-442b-9fcc-8fdb33b8c8b4
 ms.openlocfilehash: 15243d4d7ecfe4600fbd6afbd0d1276ce25a58cc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43859420"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44198228"
 ---
 # <a name="false-c-reference"></a>false (Referenční dokumentace jazyka C#)
 Použít jako přetíženého operátoru nebo jako literál:  

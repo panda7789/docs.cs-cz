@@ -9,11 +9,11 @@ ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0c038b66e4ed62d614a25e717c52fdcc9c5f9a23
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43747769"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44208832"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (rozšíření ladění SOS)
 Nástroj SOS Debugging Extension (SOS.dll) pomáhá při ladění spravovaných programů v sadě Visual Studio a v ladicím programu sady Windows (WinDbg.exe) poskytováním informací o vnitřním prostředí modulu Common Language Runtime (CLR). Tento nástroj vyžaduje, aby měl projekt povoleno nespravované ladění. Knihovna SOS.dll je automaticky nainstalována společně s rozhraním .NET Framework. Pro použití knihovny SOS.dll v sadě Visual Studio, nainstalujte [Windows Driver Kit (WDK)](https://msdn.microsoft.com/windows/hardware/hh852362).  

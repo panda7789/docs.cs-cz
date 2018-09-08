@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: b1cc02d1-23b1-4439-a998-0da1899f3442
 ms.openlocfilehash: b88df66ef2e065d1db8d4033eb1fb0e47ebdd189
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879575"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44181401"
 ---
 # <a name="creating-a-dataview"></a>Vytvoření zobrazení dat
 Existují dva způsoby, jak vytvořit <xref:System.Data.DataView>. Můžete použít **DataView** konstruktoru, nebo můžete vytvořit odkaz na <xref:System.Data.DataTable.DefaultView%2A> vlastnost <xref:System.Data.DataTable>. **DataView** konstruktor může být prázdný, nebo může trvat buď **DataTable** jako jediný argument, nebo **DataTable** spolu s kritéria filtru, kritéria řazení a řádek Filtr stavu. Další informace o další argumenty nejsou k dispozici pro použití se službou **DataView**, naleznete v tématu [řazení a filtrování dat](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/sorting-and-filtering-data.md).  

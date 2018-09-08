@@ -9,11 +9,11 @@ ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e399a512d2bee636aec35e008c0632ce9c5fa781
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44068401"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44172639"
 ---
 # <a name="asynchronous-programming-patterns"></a>Vzory asynchronního programování
 

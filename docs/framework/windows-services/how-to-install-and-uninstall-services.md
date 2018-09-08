@@ -14,11 +14,11 @@ ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
 author: ghogen
 manager: douge
 ms.openlocfilehash: 9d8e84280b5821f8d8df36694198bd85fb8470d4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43659848"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44175832"
 ---
 # <a name="how-to-install-and-uninstall-services"></a>Postupy: Instalace a odinstalace služeb
 Vyvíjíte služby Windows s použitím rozhraní .NET Framework, můžete rychle nainstalovat aplikaci služby pomocí nástroje příkazového řádku InstallUtil.exe volána. Pokud jste vývojář, kdo chce vydání služby Windows, mohou uživatelé nainstalovat a odinstalovat jste používali InstallShield. Zobrazit [nasazení Instalační služby systému Windows](https://msdn.microsoft.com/library/121be21b-b916-43e2-8f10-8b080516d2a0).  

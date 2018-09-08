@@ -16,11 +16,11 @@ helpviewer_keywords:
 - 'declaring constants [Visual Basic], #const directive'
 ms.assetid: 707669e5-23f9-4f17-8622-a0d534429386
 ms.openlocfilehash: 58d786c5e16b1e667f7c7c78b0f7857cd9711239
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44066958"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44181362"
 ---
 # <a name="const-directive"></a>#Const – direktiva
 Definuje podmíněné konstanty kompilátoru v jazyce Visual Basic.  

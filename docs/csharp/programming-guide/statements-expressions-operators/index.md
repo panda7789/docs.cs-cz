@@ -10,11 +10,11 @@ helpviewer_keywords:
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
 ms.openlocfilehash: 1085de3447bd6101fcccf6cae7b37afac24d37f1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44047789"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44189978"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Příkazy, výrazy a operátory (Průvodce programováním v C#)
 Kód jazyka C#, která se skládá z aplikace se skládá z příkazů tvořené klíčová slova, výrazy a operátory. Tato část obsahuje informace týkající se tyto základní prvky programu v jazyce C#.  

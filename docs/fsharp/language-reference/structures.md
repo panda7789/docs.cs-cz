@@ -2,12 +2,12 @@
 title: Struktury (F#)
 description: 'Další informace o F # strukturu, typ compact objektu, který je často efektivnější než třída pro typy s menším objemem dat a jednoduché chování.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 889d493af3c9c388bdc7969c02bc7b021b82517d
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 08af88132dda28883e246b94585ff4ed8bd2f16a
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43799668"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44181924"
 ---
 # <a name="structures"></a>Struktury
 
@@ -48,9 +48,51 @@ Následující příklady kódu znázorňují definice struktury.
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet2501.fs)]
 
+## <a name="byreflike-structs"></a>ByRefLike struktury
+
+Můžete definovat vlastní struktury, která může splňovat `byref`-sémantiky, jako jsou: naleznete v tématu [ByRef](byrefs.md) Další informace. Používá se k tomu <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> atribut:
+
+```fsharp
+open System
+open System.Runtime.CompilerServices
+
+[<IsByRefLike; Struct>]
+type S(count1: Span<int>, count2: Span<int>) =
+    member x.Count1 = count1
+    member x.Count2 = count2
+```
+
+`IsByRefLike` neznamená `Struct`. Oba musí být k dispozici u typu.
+
+Objekt "`byref`– stejně jako" struktura v jazyce F # je typ hodnoty vázané na zásobníku. Přiděluje se nikdy na spravované haldě. A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků. Pravidla jsou:
+
+* Se může sloužit jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
+* Nemohou být statické nebo členy třídy či struktury normální instance.
+* Nemůže být zachyceno libovolné konstrukce uzavření (`async` metodách a výrazech lambda).
+* Nelze je použít jako na generický parametr.
+
+I když tato pravidla omezují velmi silného využití, dělají to ke splnění uskutečnění vysokovýkonného výpočetního prostředí bezpečným způsobem.
+
+## <a name="readonly-structs"></a>Struktury jen pro čtení
+
+Může opatřit poznámkami struktury s <xref:System.Runtime.CompilerServices.IsReadOnlyAttribute> atribut. Příklad:
+
+```fsharp
+[<IsReadOnly; Struct>]
+type S(count1: int, count2: int) =
+    member x.Count1 = count1
+    member x.Count2 = count2
+```
+
+`IsReadOnly` neznamená `Struct`. Je nutné přidat mít `IsReadOnly` struktury.
+
+Pomocí tohoto atributu vysílá metadat, umožníte tím F # a C# vědět, abyste ji považovat za `inref<'T>` a `in ref`v uvedeném pořadí.
+
+Definování proměnlivé hodnoty uvnitř struktury jen pro čtení, dojde k chybě.
+
 ## <a name="struct-records-and-discriminated-unions"></a>Rozlišovaná sjednocení a struktura záznamů
 
-Od verze F # 4.1, může představovat [záznamy](records.md) a [Rozlišované sjednocení](discriminated-unions.md) jako struktury s `[<Struct>]` atribut.  Další informace v každého článku.
+Může představovat [záznamy](records.md) a [Rozlišované sjednocení](discriminated-unions.md) jako struktury s `[<Struct>]` atribut.  Další informace v každého článku.
 
 ## <a name="see-also"></a>Viz také:
 

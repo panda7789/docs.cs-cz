@@ -3,11 +3,11 @@ title: Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
 ms.openlocfilehash: 25b564235b5d2b3b26b5d657f3e5f0bd5d594125
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44081307"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44185071"
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje používat deklarativní mechanizmus ukládání do mezipaměti, aktuálně k dispozici v ASP.NET ve vašich službách WCF Web HTTP. To vám umožní do mezipaměti odpovědi z servisní operace webových služeb HTTP WCF. Když uživatel odešle do služby, který je nakonfigurovaný pro ukládání do mezipaměti HTTP GET, ASP.NET, odešle zpět odpověď uložená v mezipaměti a není volána metoda služby. Když vyprší platnost mezipaměti, při příštím uživatel odešle HTTP GET, je volána metoda vaše služby a znovu do mezipaměti odpovědi. Další informace o ukládání do mezipaměti ASP.NET najdete v tématu [přehled ukládání do mezipaměti ASP.NET](https://go.microsoft.com/fwlink/?LinkId=152534)  

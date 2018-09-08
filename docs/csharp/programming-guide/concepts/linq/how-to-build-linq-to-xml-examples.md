@@ -3,11 +3,11 @@ title: 'Postupy: vytvoření LINQ to XML Příklady (C#)'
 ms.date: 07/20/2015
 ms.assetid: e5d18fa1-2704-48fe-a44b-1564f97c9e9c
 ms.openlocfilehash: da0d85db22de6bcb2038cbe0608983d39bd66383
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43882643"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44176668"
 ---
 # <a name="how-to-build-linq-to-xml-examples-c"></a>Postupy: vytvoření LINQ to XML Příklady (C#)
 Různé fragmenty kódu a příklady v této dokumentaci použít třídy a typy z různých oborů názvů. Při kompilaci kódu jazyka C#, je třeba zadat odpovídající `using` direktivy.  

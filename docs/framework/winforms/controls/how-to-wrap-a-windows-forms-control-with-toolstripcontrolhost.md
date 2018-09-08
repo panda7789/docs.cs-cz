@@ -10,43 +10,43 @@ helpviewer_keywords:
 - toolbars [Windows Forms], wrapping controls
 - ToolStrip control [Windows Forms], hosting controls
 ms.assetid: e2ce4990-661d-4882-a116-8a9eb575dc84
-ms.openlocfilehash: 09509705fc8e23b1b5e4fd8c67c12d0be84fc17a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b502890fcad051d2393bb175bb0795acee2df613
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33538301"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44209968"
 ---
 # <a name="how-to-wrap-a-windows-forms-control-with-toolstripcontrolhost"></a>Postupy: Zalomení ovládacího prvku Windows Forms pomocí ToolStripControlHost
-<xref:System.Windows.Forms.ToolStripControlHost> umožňuje hostování libovolný ovládacích prvků Windows Forms pomocí <xref:System.Windows.Forms.ToolStripControlHost> konstruktor nebo tím, že rozšíří <xref:System.Windows.Forms.ToolStripControlHost> sám sebe. Je snazší zalomení ovládacího prvku tím, že rozšíří <xref:System.Windows.Forms.ToolStripControlHost> a implementace vlastnosti a metody, které zveřejňují často použít vlastnosti a metody ovládacího prvku. Mohou také vystavovat události pro ovládací prvek v <xref:System.Windows.Forms.ToolStripControlHost> úroveň.  
+<xref:System.Windows.Forms.ToolStripControlHost> slouží k povolení hostování libovolného ovládacích prvků Windows Forms s použitím <xref:System.Windows.Forms.ToolStripControlHost> konstruktor nebo rozšířením <xref:System.Windows.Forms.ToolStripControlHost> samotný. Je snazší zabalení ovládacího prvku rozšířením <xref:System.Windows.Forms.ToolStripControlHost> a implementace vlastnosti a metody, které často vystavit použít vlastnosti a metody ovládacího prvku. Můžete také zveřejnit události pro ovládací prvek na <xref:System.Windows.Forms.ToolStripControlHost> úroveň.  
   
-### <a name="to-host-a-control-in-a-toolstripcontrolhost-by-derivation"></a>K hostiteli ovládacího prvku v ToolStripControlHost podle odvození  
+### <a name="to-host-a-control-in-a-toolstripcontrolhost-by-derivation"></a>Pro hostování ovládacího prvku v ToolStripControlHost podle odvození  
   
-1.  Rozšíření <xref:System.Windows.Forms.ToolStripControlHost>. Výchozí konstruktor, který volá předávání konstruktor základní třídy v ovládacím prvku požadované implementujte.  
+1.  Rozšíření <xref:System.Windows.Forms.ToolStripControlHost>. Implementujte výchozí konstruktor, který volá předávání konstruktor základní třídy požadovaný ovládací prvek.  
   
      [!code-cpp[System.Windows.Forms.ToolStripControlHost#10](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CPP/form1.cpp#10)]
      [!code-csharp[System.Windows.Forms.ToolStripControlHost#10](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CS/form1.cs#10)]
      [!code-vb[System.Windows.Forms.ToolStripControlHost#10](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/VB/form1.vb#10)]  
   
-2.  Deklarace vlastnosti stejného typu jako zabalené ovládací prvek a vrátí `Control` jako správný typ ovládacího prvku přistupujícího objektu vlastnosti.  
+2.  Deklarace vlastnosti stejného typu jako zabalené ovládací prvek a vrátí `Control` jako správný typ ovládacího prvku vlastnosti přístupového objektu.  
   
      [!code-cpp[System.Windows.Forms.ToolStripControlHost#11](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CPP/form1.cpp#11)]
      [!code-csharp[System.Windows.Forms.ToolStripControlHost#11](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CS/form1.cs#11)]
      [!code-vb[System.Windows.Forms.ToolStripControlHost#11](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/VB/form1.vb#11)]  
   
-3.  Zveřejněte jiné často používané vlastnosti a metody zabalené ovládacího prvku pomocí vlastnosti a metody ve třídě rozšířené.  
+3.  Vystavení další často používá vlastnosti a metody ovládacího prvku zabalené pomocí metod v rozšířené třídy a vlastnosti.  
   
      [!code-cpp[System.Windows.Forms.ToolStripControlHost#12](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CPP/form1.cpp#12)]
      [!code-csharp[System.Windows.Forms.ToolStripControlHost#12](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CS/form1.cs#12)]
      [!code-vb[System.Windows.Forms.ToolStripControlHost#12](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/VB/form1.vb#12)]  
   
-4.  Volitelně můžete přepsat <xref:System.Windows.Forms.ToolStripControlHost.OnSubscribeControlEvents%2A>, a <xref:System.Windows.Forms.ToolStripControlHost.OnUnsubscribeControlEvents%2A> metody a přidejte události ovládacího prvku, kterou chcete vystavit.  
+4.  Volitelně můžete přepsat <xref:System.Windows.Forms.ToolStripControlHost.OnSubscribeControlEvents%2A>, a <xref:System.Windows.Forms.ToolStripControlHost.OnUnsubscribeControlEvents%2A> metody a události ovládacích prvků cete přidat.  
   
      [!code-cpp[System.Windows.Forms.ToolStripControlHost#16](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CPP/form1.cpp#16)]
      [!code-csharp[System.Windows.Forms.ToolStripControlHost#16](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CS/form1.cs#16)]
      [!code-vb[System.Windows.Forms.ToolStripControlHost#16](../../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/VB/form1.vb#16)]  
   
-5.  Zadejte potřebné zabalení pro události, kterou chcete vystavit.  
+5.  Zadejte nezbytné zabalení pro události, kterou chcete zveřejnit.  
   
      [!code-cpp[System.Windows.Forms.ToolStripControlHost#17](../../../../samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CPP/form1.cpp#17)]
      [!code-csharp[System.Windows.Forms.ToolStripControlHost#17](../../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.ToolStripControlHost/CS/form1.cs#17)]
@@ -61,9 +61,9 @@ ms.locfileid: "33538301"
   
 -   Tento příklad vyžaduje:  
   
--   Odkazy na systém a System.Windows.Forms sestavení.  
+-   Odkazy na sestavení systému a System.Windows.Forms.  
   
- Informace o vytváření tento příklad z příkazového řádku pro Visual Basic a Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [vytváření pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit zadáním nebo vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](http://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
+ Informace o vytváření tento příklad z příkazového řádku pro Visual Basic nebo Visual C# najdete v tématu [sestavení z příkazového řádku](~/docs/visual-basic/reference/command-line-compiler/building-from-the-command-line.md) nebo [sestavení pomocí příkazového řádku csc.exe](~/docs/csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md). Tento příklad v sadě Visual Studio můžete také vytvořit vložením kódu do nového projektu.  Viz také [postupy: zkompilování a spuštění dokončení Windows Forms kód příklad pomocí sady Visual Studio](https://msdn.microsoft.com/library/Bb129228\(v=vs.110\)).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.ToolStripControlHost>  

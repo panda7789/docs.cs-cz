@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 4e530831-695e-49ff-8f0b-e5b0c526b8eb
 ms.openlocfilehash: 2a59a9fc1c3b2f52543f4cc69de22a5703fa9b8b
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44137483"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44192506"
 ---
 # <a name="writing-dataset-schema-information-as-xsd"></a>Zápis informací o schématu datové sady jako XSD
 Lze zapsat schéma <xref:System.Data.DataSet> jako jazyk (XSD) schématu definice schématu XML, takže, mohou přenášet, s nebo bez souvisejících dat v dokumentu XML. Schéma XML lze zapsat do souboru, datový proud <xref:System.Xml.XmlWriter>, nebo řetězec; jde použít ke generování silného typu **datovou sadu**. Další informace o silně typované **datovou sadu** objekty, najdete [typované datové sady](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/typed-datasets.md).  

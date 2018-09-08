@@ -2,12 +2,12 @@
 title: Jak článků (Průvodce v C#)
 description: Kolekce rychlé tipy a krátký, zaměřuje ukázky kódu
 ms.date: 12/20/2017
-ms.openlocfilehash: 86e245873c8316cc4ddd52fe59a06f2cac648e6c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9326235341ee38e46f4204b7b3d7f67cae2774af
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43507672"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44191688"
 ---
 # <a name="how-to-c"></a>Jak (C#)
 
@@ -65,7 +65,7 @@ Budete muset převést objekt na jiný typ.
 - [Převést řetězec `DateTime` ](../../standard/base-types/parsing-datetime.md).
 - [Převést pole bajtů na typ int](../programming-guide/types/how-to-convert-a-byte-array-to-an-int.md).
 - [Převod řetězce na číslo](../programming-guide/types/how-to-convert-a-string-to-a-number.md).
-- [Použití `as` a `is` bezpečně přetypovat na jiný typ](../programming-guide/types/how-to-safely-cast-by-using-as-and-is-operators.md).
+- [Použít porovnávání vzorů, `as` a `is` operátory bezpečně přetypovat na jiný typ](../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md).
 - [Definovat operátory převodu pro `struct` typy](../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md).
 - [Určení, zda je typ s možnou hodnotou Null typu](../programming-guide/nullable-types/how-to-identify-a-nullable-type.md).
 - [Převod mezi typy hodnot s povolenou hodnotou Null a Null](../programming-guide/nullable-types/using-nullable-types.md#conversion-from-a-nullable-type-to-an-underlying-type).

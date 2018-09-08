@@ -2,12 +2,12 @@
 title: Zrušení zbývajících asynchronních úloh po jedné z nich kompletní (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: c928b5a1-622f-4441-8baf-adca1dde197f
-ms.openlocfilehash: 5dab0c4aa14710fe78d2473675aea8b8c8bb73b9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 0f241d2769edf3efbba0aca3b19ef35b9cdad601
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43874794"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44207678"
 ---
 # <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Zrušení zbývajících asynchronních úloh po jedné z nich kompletní (Visual Basic)
 S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> metoda spolu s <xref:System.Threading.CancellationToken>, můžete po dokončení jednoho úkolu zrušit všechny zbývající úkoly. `WhenAny` Metoda přebírá argument, který je kolekce úkolů. Metoda spustí všechny úlohy a vrátí jeden úkol. Jedna úloha je dokončena po dokončení libovolné úlohy v kolekci.  
@@ -37,7 +37,7 @@ S použitím <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWi
  Pokud nechcete stáhnout projekt, můžete zkontrolovat soubor MainWindow.xaml.vb na konci tohoto tématu.  
   
 ## <a name="building-the-example"></a>Sestavení příkladu  
- V příkladu v tomto tématu se přidá do projektu, který je napsán v jazyce [zrušení asynchronní úlohy nebo seznamu úloh](https://msdn.microsoft.com/library/d6e4e801-df64-4705-98fc-df725a577fb0) zrušení seznamu úloh. V příkladu se používá stejné uživatelské rozhraní, i když **zrušit** tlačítko není použito explicitně.  
+ V příkladu v tomto tématu se přidá do projektu, který je napsán v jazyce [zrušení asynchronní úlohy nebo seznamu úloh](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) zrušení seznamu úloh. V příkladu se používá stejné uživatelské rozhraní, i když **zrušit** tlačítko není použito explicitně.  
   
  Chcete-li vytvořit příklad sami krok za krokem, postupujte podle pokynů v oddíle "Stahování příkladu", ale zvolte **CancelAListOfTasks** jako **spouštěný projekt**. Přidejte změny v tomto tématu do daného projektu.  
   
@@ -232,8 +232,9 @@ End Class
 ' Download complete.  
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Threading.Tasks.Task.WhenAny%2A>  
- [Doladění aplikace s modifikátorem Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
- [Asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Threading.Tasks.Task.WhenAny%2A>  
+- [Doladění aplikace s modifikátorem Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)  
+- [Asynchronní programování pomocí modifikátoru Async a operátoru Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)  
+- [Asynchronní vzorek: Jemné ladění aplikace](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

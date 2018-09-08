@@ -11,11 +11,11 @@ helpviewer_keywords:
 - '#Region keyword [Visual Basic]'
 ms.assetid: 90a6a104-3cbf-47d0-bdc4-b585d0921b87
 ms.openlocfilehash: 204b53751fce4f9a3e038ae7c44634522d54657c
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44097457"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44190712"
 ---
 # <a name="region-directive"></a>#Region – direktiva
 Sbalí a skryje části kódu v souborech Visual Basicu.  

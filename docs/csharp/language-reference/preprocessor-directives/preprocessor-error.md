@@ -7,11 +7,11 @@ helpviewer_keywords:
 - '#error directive [C#]'
 ms.assetid: f2a7f3af-4cf9-4111-b369-70204d24b26b
 ms.openlocfilehash: ed43c1f85142ec6c54e44db5e3b0b7de3ef36bb8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44067224"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44186692"
 ---
 # <a name="error-c-reference"></a>#error (referenční dokumentace jazyka C#)
 `#error` Umožňuje generovat [CS1029](../compiler-messages/cs1029.md) uživatelem definované chybové z určitého umístění ve vašem kódu. Příklad:  

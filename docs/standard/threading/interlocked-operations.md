@@ -13,11 +13,11 @@ ms.assetid: cbda7114-c752-4f3e-ada1-b1e8dd262f2b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6478ea94b6c54272a01497ac7b1cb1b197892309
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44131055"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44187374"
 ---
 # <a name="interlocked-operations"></a>Propojené operace
 <xref:System.Threading.Interlocked> Třída poskytuje metody, které se synchronizují přístup k proměnné, které jsou sdíleny více vlákny. Vlákna různé postupy můžete použít tento mechanismus, pokud je proměnná ve sdílené paměti. Propojené operace jsou atomické – to znamená, celá operace je jednotka, která se nedá přerušit jinou operací propojené na stejnou proměnnou. To je důležité v operačních systémech s preemptive multithreadingu, kde můžete vlákna pozastaví po načtení hodnoty z adresy paměti, ale před máte možnost ji změnit a uložte ho.  

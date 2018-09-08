@@ -5,29 +5,29 @@ helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-ms.openlocfilehash: 9d51aca4c7ad491c0b807ef6a40cb2581f97355b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 373f5815e1ca466545da4e2368bdf55e944d28f8
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589838"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44173311"
 ---
 # <a name="get-started-with-visual-basic"></a>Začínáme s jazykem Visual Basic
-Tato část dokumentace vám pomůže začít pracovat s vývoj aplikací jazyka Visual Basic.  
+Tato část dokumentace vám pomůže začít s vývojem aplikací jazyka Visual Basic.  
   
 ## <a name="get-started-with-visual-basic-and-net-core"></a>Začínáme s Visual Basic a .NET Core
 
-[Vytvoření aplikace Visual Basic Hello World s .NET Core v Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md)
+[Vytvoření aplikace Hello World jazyka Visual Basic pomocí .NET Core v sadě Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md)
 
 [Vytvoření knihovny tříd pomocí jazyka Visual Basic a platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md)  
 
 ## <a name="additional-information"></a>Další informace
 
 [Co je nového v jazyce Visual Basic](whats-new.md)   
-Obsahuje seznam nových funkcí v každé z verzí Visual Basic .NET.
+Obsahuje seznam nových funkcí v jednotlivých verzích jazyka Visual Basic .NET.
 
 [Zásadní změny v jazyce Visual Basic v sadě Visual Studio](breaking-changes-in-visual-studio.md)  
-Obsahuje seznam změn v této verzi, které může zabránit aplikaci v kompilaci nebo změnit jeho chování.  
+Obsahuje seznam změn v této verzi, které by mohly bránit aplikaci v kompilaci nebo změnit její chování za běhu.  
   
 [Další zdroje informací pro programátory, kteří používají Visual Basic](additional-resources.md)  
 Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpovědi na běžné problémy.  
@@ -38,12 +38,12 @@ Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpov�
 
 [Vytvoření knihovny tříd pomocí jazyka Visual Basic a platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md) 
 
-## <a name="see-also"></a>Viz také
- [Získat jazyka Visual Basic](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)  
- Poskytuje odkazy na stažení pro verzí sady Visual Studio, které zahrnují podporu jazyka Visual Basic, včetně bezplatné verze.  
+## <a name="see-also"></a>Viz také:
+ [Získejte Visual Basic](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)  
+ Poskytuje odkazy na stažení pro verze sady Visual Studio, které zahrnují podporu jazyka Visual Basic, včetně bezplatné verze.  
 
- [Základy jazyka Visual Basic pro začátečníky absolutní](https://mva.microsoft.com/en-US/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)  
- Microsoft Virtual Academy kurz, který se dozvíte, jaké základní informace o programování v jazyce Visual Basic.
+ [Základy jazyka Visual Basic pro naprosté začátečníky](https://mva.microsoft.com/en-US/training-courses/visual-basic-fundamentals-for-absolute-beginners-16507)  
+ Kurzu Microsoft Virtual Academy vás naučí základy programování v jazyce Visual Basic.
 
  [Objektově orientované programování](../programming-guide/concepts/object-oriented-programming.md)  
  Obsahuje odkazy na stránky, které představují objektově-orientované programování a popisují, jak vytvářet vlastní objekty a jak pomocí objektů zjednodušit psaní kódu.  
@@ -52,7 +52,7 @@ Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpov�
  Obsahuje odkazy na ukázkový kód v jazyce Visual Basic.  
   
  [Návody](../../visual-basic/walkthroughs.md)  
- Poskytuje seznam stránek nápovědy, které ukazují aspekty jazyka Visual Basic.  
+ Obsahuje seznam stránek nápovědy, které ukazují aspekty jazyka Visual Basic.  
   
  [Kontaktujte nás](/visualstudio/ide/talk-to-us)  
  Pojednává o tom, jak získat podporu a sdělit názor.  
@@ -60,10 +60,10 @@ Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpov�
  [Visual Studio](/visualstudio/)  
  Obsahuje odkazy na dokumentaci sady Visual Studio.  
   
- [C#](../../csharp/index.md) obsahuje odkazy na dokumentaci o vývoj aplikací pomocí Visual C#.  
+ [C#](../../csharp/index.md) obsahuje odkazy na dokumentaci o vývoji aplikací pomocí Visual C#.  
   
  [Visual C++](/cpp/)  
  Obsahuje odkazy na dokumentaci jazyka Visual C++.  
   
- [Office a vývoj pro SharePoint](https://msdn.microsoft.com/library/d2tx7z6d)  
- Poskytuje informace o použití aplikace Microsoft Office a Visual Studio jako součást obchodní aplikace.
+ [Office a vývoj pro SharePoint](/visualstudio/vsto/office-and-sharepoint-development-in-visual-studio)  
+ Poskytuje informace o použití aplikace Microsoft Office a sady Visual Studio jako součásti obchodních aplikací.

@@ -3,11 +3,11 @@ title: Ukázka proxy serveru zjišťování
 ms.date: 03/30/2017
 ms.assetid: 1dfa02df-15b1-4e97-9c8e-f5f2772711b0
 ms.openlocfilehash: 6fc0680bc6b61a6fe1b4b141c8b1e5081df5a124
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44127797"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44180394"
 ---
 # <a name="discovery-proxy-sample"></a>Ukázka proxy serveru zjišťování
 Tato ukázka předvádí, jak vytvořit implementace zjišťování proxy k ukládání informací o existujících služeb a jak můžou klienti dotazovat tohoto proxy informace. Tato ukázka se skládá ze tří projektů:  

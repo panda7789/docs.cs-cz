@@ -1,5 +1,5 @@
 ---
-title: 'Postup: provedení manipulace s řetězci základní v rozhraní .NET Framework'
+title: 'Postupy: manipulace s řetězci základní v rozhraní .NET Framework'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,15 +10,15 @@ helpviewer_keywords:
 ms.assetid: 121d1eae-251b-44c0-8818-57da04b8215e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2e8c6c3f9b7ec418fdbf6365a3e7d90fe65e9caa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1206648c694c9f09a600e3c70f4aa27118b2d458
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567182"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44178049"
 ---
-# <a name="how-to-perform-basic-string-manipulations-in-net"></a>Postup: provedení manipulace s řetězci základní v rozhraní .NET
-Následující příklad používá některé z metod popsaných v tématu [základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md) témata pro vytvoření třídy, která provádí manipulace s řetězci způsobem, který se může nacházet v reálné aplikaci. `MailToData` Třída obsahuje název a adresu osoby v samostatných vlastnosti a poskytuje způsob, jak kombinovat `City`, `State`, a `Zip` do jednoho řetězce pro zobrazení pro uživatele. Kromě toho třída umožňuje uživateli zadat města, státu a informace o PSČ jako jeden řetězec; aplikace automaticky analyzuje daný řetězec a vloží správné informace do odpovídající vlastnost.  
+# <a name="how-to-perform-basic-string-manipulations-in-net"></a>Postupy: manipulace s řetězci základní v .NET
+Následující příklad používá některé z metod popsaných v tématu [základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md) témata k vytvoření třídy, která provádí manipulace s řetězci způsobem, který se může nacházet v reálné aplikaci. `MailToData` Třída obsahuje název a adresu osoby v samostatných vlastnosti a poskytuje způsob, jak zkombinovat `City`, `State`, a `Zip` pole do jednoho řetězce pro zobrazení pro uživatele. Kromě toho třída umožňuje uživateli zadat město, stát a informace o PSČ jako jeden řetězec; aplikaci automaticky analyzuje jeden řetězec a vloží do odpovídající vlastnosti správné informace.  
   
  Pro zjednodušení tento příklad používá konzolovou aplikaci pomocí rozhraní příkazového řádku.  
   
@@ -26,7 +26,8 @@ Následující příklad používá některé z metod popsaných v tématu [zák
  [!code-csharp[Conceptual.String.BasicOps#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/basicops.cs#1)]
  [!code-vb[Conceptual.String.BasicOps#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/basicops.vb#1)]  
   
- Po provedení předchozí kód uživateli se zobrazí výzva k zadání názvu a adresy. Aplikace umístí informace do příslušných vlastností a zobrazí informace o uživateli, vytvoření jednoho řetězce, který zobrazí města, státu a informace o PSČ.  
+ Pokud je spuštěn předchozí kód, uživatel se zobrazí výzva, zadejte název nebo adresu. Aplikace umístí informace v příslušné vlastnosti a zobrazí informace uživateli vytvořit jeden řetězec, který zobrazuje Město, stát a informace o PSČ.  
   
-## <a name="see-also"></a>Viz také  
- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)
+## <a name="see-also"></a>Viz také:
+
+- [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)

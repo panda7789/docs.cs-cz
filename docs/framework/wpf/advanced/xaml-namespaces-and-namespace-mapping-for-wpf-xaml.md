@@ -15,11 +15,11 @@ helpviewer_keywords:
 - namespaces [WPF]
 ms.assetid: 5c0854e3-7470-435d-9fe2-93eec9d3634e
 ms.openlocfilehash: 9e93d3cd417d0d075fcebb8327ec51799884f8d6
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44064812"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44178140"
 ---
 # <a name="xaml-namespaces-and-namespace-mapping-for-wpf-xaml"></a>Obor názvů XAML mapování oboru názvů pro WPF XAML
 Dále toto téma vysvětluje přítomnost a účel dvě tak často, nenašla v kořenovém tagu souboru WPF XAML mapování oboru názvů XAML. Také popisuje, jak vytvořit podobná mapování pro elementy, které jsou definovány ve svém vlastním kódu a/nebo v rámci samostatné sestavení pomocí.  

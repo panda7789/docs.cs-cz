@@ -8,22 +8,23 @@ helpviewer_keywords:
 ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 29dd2e2ab097c38f81143e717e5f76f3ba284f96
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d41ba0c1e972eeee07b36ad0d15532f7b551ec2a
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570334"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44172941"
 ---
 # <a name="common-design-patterns"></a>Obecné vzory návrhu
-Existuje řada knih na softwaru vzory, vzor jazyky a antipatterns, které řeší velmi široký předmět vzory. Proto tato kapitola obsahuje pokyny a diskuzi související s velmi omezená sada schémat, které se často používají v návrhu rozhraní API rozhraní .NET Framework.  
+Existuje mnoho knih softwaru vzorců, vzor jazyky a antipatternů, které řeší velmi široký předmětem vzory. Proto tato kapitola obsahuje pokyny a informace související s velmi omezenou sadu vzorů, které se často používají v návrhu rozhraní API .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Vlastnosti závislosti](../../../docs/standard/design-guidelines/dependency-properties.md)  
  [Vzor pro metodu Dispose](../../../docs/standard/design-guidelines/dispose-pattern.md)  
  *Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*  
   
- *Provedení podle oprávnění Pearson Education, Inc. z [pokynů pro návrh Framework: konvence, Idioms a vzory pro jedno použití knihovny .NET, 2. vydání](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Abrams Brada publikovaná 22 Oct 2008 pomocí Designing Effective jako součást vývoj řady Microsoft Windows.*  
+ *Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*  
   
-## <a name="see-also"></a>Viz také  
- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)
+## <a name="see-also"></a>Viz také:
+
+- [Pokyny k návrhu architektury](../../../docs/standard/design-guidelines/index.md)

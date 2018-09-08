@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: f4680187de7318a6438bf6a5e6bd7c5f3acd05c2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44059934"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44180160"
 ---
 # <a name="startupflags-enumeration"></a>STARTUP_FLAGS – výčet
 Obsahuje hodnoty, které označují chování při spouštění modulu common language runtime (CLR). Uvolňování paměti je standardně nesouběžné a pouze v knihovně základních tříd je načtena do doménově neutrální oblasti.  

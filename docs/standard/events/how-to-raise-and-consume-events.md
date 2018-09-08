@@ -14,11 +14,11 @@ ms.assetid: 42afade7-3a02-4f2e-868b-95845f302f8f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: aa933e0fc589d0dbfec741e9db7fb11222cfdf38
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44064995"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44193214"
 ---
 # <a name="how-to-raise-and-consume-events"></a>Postupy: Vyvolávání a zpracovávání událostí
 Příklady v tomto tématu ukazují, jak pracovat s událostmi. Obsahují příklady <xref:System.EventHandler> delegovat, <xref:System.EventHandler%601> delegáta a vlastního delegáta pro ilustraci událostí, s daty a bez nich.  

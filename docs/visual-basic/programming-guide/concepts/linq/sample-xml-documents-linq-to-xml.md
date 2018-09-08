@@ -2,12 +2,12 @@
 title: Ukázkové dokumenty XML (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: a734cc4e-d95d-4631-91a2-81618c8ad894
-ms.openlocfilehash: f1860eed059de4b6922976da8d3b9190cf96bbed
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5ddfdd9c8b7114651cea59a0b356ee87f29bd62b
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43883997"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44186783"
 ---
 # <a name="sample-xml-documents-linq-to-xml"></a>Ukázkové dokumenty XML (LINQ to XML)
 Následující příklad soubory se používají v ukázky kódu a fragmenty kódu v průběhu [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] dokumentaci.  
@@ -26,7 +26,7 @@ Následující příklad soubory se používají v ukázky kódu a fragmenty kó
 |[Ukázkový soubor XML: Testovací konfigurace (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-test-configuration-linq-to-xml.md)|Dokument XML, který obsahuje některé pseudo test konfigurační data.|  
 |[Ukázkový soubor XML: Testovací konfigurace v názvovém prostoru](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-test-configuration-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje některé pseudo test konfigurační data.|  
 |[Ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)|Dokument XML, který obsahuje zákazníci a objednávky.|  
-|[Ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)|Definice schématu Xml (XSD), která ověřuje [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](https://msdn.microsoft.com/library/26790c41-5976-4558-a096-d0f67bfc4d92).|  
+|[Ukázkový soubor XSD: Zákazníci a objednávky](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)|Definice schématu Xml (XSD), která ověřuje [ukázkový soubor XML: Zákazníci a objednávky (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).|  
 |[Ukázkový soubor XML: Zákazníci a objednávky v názvovém prostoru](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje zákazníci a objednávky.|  
 |[Ukázkový soubor XML: Numerická data (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)|Dokument XML, který obsahuje data, které jsou vhodné pro sčítání a seskupení.|  
 |[Ukázkový soubor XML: Numerická data v názvovém prostoru](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md)|Dokument XML v oboru názvů, který obsahuje data, které jsou vhodné pro sčítání a seskupení.|  

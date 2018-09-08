@@ -5,11 +5,11 @@ f1_keywords:
 - vbrNetwork_NetworkNotAvailable
 ms.assetid: 8d2bac12-bc6a-42ae-b28b-80b026dfabce
 ms.openlocfilehash: f8659c1ef21dc61680d5de37f9de2b37732b06f9
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44133112"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44193600"
 ---
 # <a name="unable-to-ping-because-a-network-connection-is-not-available"></a>Nelze pro odeslání příkazu ping, protože není k dispozici síťové připojení
 Operaci nelze provést, protože je k dispozici žádné síťové připojení.  

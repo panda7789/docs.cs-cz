@@ -11,11 +11,11 @@ ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 18458e52c6cf38b2900036613676adea3f3b2d0b
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44098845"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44188121"
 ---
 # <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>Postupy: Zápis smyčky Parallel.For pomocí proměnných v místním vláknu
 Tento příklad ukazuje způsob použití místní proměnné vlákna k ukládání a načítání stavu v každé samostatné úlohy, který je vytvořen pomocí <xref:System.Threading.Tasks.Parallel.For%2A> smyčky. Pomocí dat thread local se můžete vyhnout nároky na velký počet přístupů na sdílený stav synchronizace. Místo psaní ke sdíleným prostředkům při každé iteraci, compute a uložte hodnotu, dokud nejsou dokončeny všechny iterace pro úlohu. Můžete napsat konečný výsledek jednou ke sdílenému prostředku nebo předávat na jinou metodu.  

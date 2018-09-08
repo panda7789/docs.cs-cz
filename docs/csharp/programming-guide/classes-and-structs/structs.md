@@ -6,11 +6,11 @@ helpviewer_keywords:
 - structs [C#]
 ms.assetid: b7cf4ff2-0eb7-4e5c-93d5-b2196b4f5d89
 ms.openlocfilehash: 27d4b0d7edf1b5e89e84ac1df5783d68ebb4efe0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43869393"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44186926"
 ---
 # <a name="structs-c-programming-guide"></a>Struktury (Průvodce programováním v C#)
 

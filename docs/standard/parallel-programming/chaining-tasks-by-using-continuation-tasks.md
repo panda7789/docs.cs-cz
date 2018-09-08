@@ -11,11 +11,11 @@ ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 308b834a133798104dcc47a16f8adc068ed937ec
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44098258"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44188342"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>Řetězení úloh pomocí úloh pokračování
 V asynchronním programování je velmi běžné, že jedna asynchronní operace při dokončení vyvolá druhou operaci a předá jí data. Tradičně se to stalo pomocí metod zpětného volání. V Task Parallel Library je stejná funkčnost zajištěna pomocí *pokračujících úloh*. Pokračující úloha (nazývaná také pouze pokračování) je asynchronní úloha, která je vyvolána jinou úlohou, která se nazývá *předchůdce*, jakmile je předchůdce dokončen.  

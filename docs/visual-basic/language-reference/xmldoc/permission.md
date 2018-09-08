@@ -6,11 +6,11 @@ helpviewer_keywords:
 - permission XML tag
 ms.assetid: 0edf0500-5cd7-49c0-9255-64c48f972b77
 ms.openlocfilehash: bcec5d968f5d0c5400c28e772df151b164888a47
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43658909"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44191843"
 ---
 # <a name="ltpermissiongt-visual-basic"></a>&lt;oprávnění&gt; (Visual Basic)
 Určuje požadované oprávnění pro tohoto člena.  

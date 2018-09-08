@@ -11,11 +11,11 @@ ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 34f9208ac5007e26967c136f0599cabfd66ba2ea
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44080512"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44189358"
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>Postupy: Procházení adresářů se soubory pomocí paralelní třídy
 V mnoha případech je iterace souboru operací, kterou lze snadno paralelizovat. Téma [postupy: iterovat adresářů se soubory pomocí jazyka PLINQ](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md) ukazuje nejjednodušší způsob, jak tuto úlohu proveďte pro řadu scénářů. Jakmile se však musí kód vypořádat s mnoha typy výjimek, mohou se při přístupu k systému souborů objevit komplikace. Následující příklad znázorňuje jeden ze způsobů řešení problému. Pro procházení všech souborů a složek v zadaném adresáři používá iteraci založenou na zásobníku a umožňuje kódu zachytit a zpracovat různé výjimky. Způsob zpracování výjimek záleží samozřejmě na vás.  
