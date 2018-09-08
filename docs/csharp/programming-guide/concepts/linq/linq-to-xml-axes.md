@@ -3,11 +3,11 @@ title: Osy LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 3f7d54ff-b608-43a1-9e2d-e70668b72df8
 ms.openlocfilehash: 6a27adb1c7e1dcfefda13a355700202ccda3ffab
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44071879"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44200838"
 ---
 # <a name="linq-to-xml-axes-c"></a>Osy LINQ to XML (C#)
 Po vytvoření stromu XML nebo načíst dokument XML do stromu XML, můžete ho najít prvky a atributy a jejich hodnoty získat dotazovat.  

@@ -2,12 +2,12 @@
 title: 'Postupy: sdílení sestavení s jinými aplikacemi (Visual Basic)'
 ms.date: 07/20/2015
 ms.assetid: 5388aedc-cb42-4622-8b70-8e701eee057a
-ms.openlocfilehash: a7f6b49e8389108528c44d7464a2e68149dfa940
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 3d29a3558a64c02fc8c59035f2fee5c64c4a776f
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44062894"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44200139"
 ---
 # <a name="how-to-share-an-assembly-with-other-applications-visual-basic"></a>Postupy: sdílení sestavení s jinými aplikacemi (Visual Basic)
 Sestavení mohou být privátní nebo sdílené: ve výchozím nastavení, většina jednoduché programy obsahovat soukromé sestavení vzhledem k tomu, že nejsou určena pro použití jiné aplikace.  
@@ -24,8 +24,10 @@ Sestavení mohou být privátní nebo sdílené: ve výchozím nastavení, vět�
   
 4.  Přidáte sestavení do globální mezipaměti sestavení. Další informace najdete v tématu [postupy: Instalace sestavení do globální mezipaměti sestavení](../../../../framework/app-domains/how-to-install-an-assembly-into-the-gac.md).  
   
-5.  Přístup k typům obsaženy v sestavení z jiných aplikací. Další informace najdete v tématu [postupy: odkazování na sestavení se silným názvem](https://msdn.microsoft.com/library/4c6a406a-b5eb-44fa-b4ed-4e95bb95a813).  
+5.  Přístup k typům obsaženy v sestavení z jiných aplikací. Další informace najdete v tématu [postupy: odkazování na sestavení se silným názvem](../../../../framework/app-domains/how-to-reference-a-strong-named-assembly.md).  
   
-## <a name="see-also"></a>Viz také  
- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md) [sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
- [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)
+## <a name="see-also"></a>Viz také:
+
+- [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)
+- [Sestavení a globální mezipaměti sestavení (Visual Basic)](../../../../visual-basic/programming-guide/concepts/assemblies-gac/index.md)  
+- [Programování se sestaveními](../../../../framework/app-domains/programming-with-assemblies.md)

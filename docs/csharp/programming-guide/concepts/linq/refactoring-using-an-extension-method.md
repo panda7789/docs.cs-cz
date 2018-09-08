@@ -3,11 +3,11 @@ title: Refaktoring pomocí rozšiřující metodu (C#)
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
 ms.openlocfilehash: 08c37923792e1ac6ee922bf052d39fb63b1685c7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43672245"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44201047"
 ---
 # <a name="refactoring-using-an-extension-method-c"></a>Refaktoring pomocí rozšiřující metodu (C#)
 Tento příklad je založen na předchozím příkladu [načtení textu odstavců (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md), refaktoring zřetězení řetězců pomocí čisté funkce, která je implementována jako metody rozšíření.  

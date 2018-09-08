@@ -3,11 +3,11 @@ title: 'Postupy: vytváření podepsaných přátelských sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
 ms.openlocfilehash: 8f310055db6899bf315310efc22b67bca2c4500f
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44140577"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44197086"
 ---
 # <a name="how-to-create-signed-friend-assemblies-c"></a>Postupy: vytváření podepsaných přátelských sestavení (C#)
 Tento příklad ukazuje způsob použití sestavení typu friend se sestaveními, která mít silné názvy. Obě sestavení musí být silný název. Přestože obě sestavení v tomto příkladu pomocí stejných klíčů, můžete použít různé klíče pro dvě sestavení.  

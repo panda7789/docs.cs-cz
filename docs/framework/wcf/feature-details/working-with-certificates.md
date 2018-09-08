@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: d0e54aeda1ee51fe7ba87c3ac69c556ea25e320f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 938998a2316af28071e54e909fa60b5edbda0f35
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43870208"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44198930"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
@@ -85,12 +85,12 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
  Při vytváření vlastní ověřovací data, je nejdůležitější metodu pro přepsání <xref:System.IdentityModel.Selectors.X509CertificateValidator.Validate%2A> metody. Příklad vlastní ověřování, najdete v článku [validátor certifikátu X.509](../../../../docs/framework/wcf/samples/x-509-certificate-validator.md) vzorku. Další informace najdete v tématu [vlastní pověření a ověřování pověření](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md).  
   
-## <a name="using-makecertexe-to-build-a-certificate-chain"></a>Chcete-li vytvořit řetěz certifikátů pomocí Makecert.exe  
- Certificate Creation Tool (Makecert.exe) vytvoří privátní klíče párů klíč/veřejný a certifikáty X.509. Můžete uložit privátní klíč, aby na disku a použít ho k vystavení a podepsat nové certifikáty, proto budete jen simulovat hierarchii zřetězené certifikátů. Nástroj je určen pro použití pouze jako vodítko při vývoji služeb a byste nikdy neměli používat k vytvoření certifikátů pro skutečné nasazení. Při vytváření služby WCF, použijte následující postup Sestavit řetěz certifikátů s Makecert.exe.  
+## <a name="using-the-powershell-new-selfsignedcertificate-cmdlet-to-build-a-certificate-chain"></a>Pomocí rutiny Powershellu New-SelfSignedCertificate Sestavit řetěz certifikátů  
+ Rutiny Powershellu New-SelfSignedCertificate vytvoří privátní klíče párů klíč/veřejný a certifikáty X.509. Můžete uložit privátní klíč, aby na disku a použít ho k vystavení a podepsat nové certifikáty, proto budete jen simulovat hierarchii zřetězené certifikátů. Rutina je určena pro použití pouze jako vodítko při vývoji služeb a byste nikdy neměli používat k vytvoření certifikátů pro skutečné nasazení. Při vývoji služeb WCF, sestavit řetěz certifikátů pomocí rutiny New-SelfSignedCertificate pomocí následujících kroků.  
   
-#### <a name="to-build-a-chain-of-trust-with-makecertexe"></a>Sestavit řetěz certifikátů s Makecert.exe  
+#### <a name="to-build-a-chain-of-trust-with-the-new-selfsignedcertificate-cmdlet"></a>Sestavit řetěz certifikátů pomocí rutiny New-SelfSignedCertificate  
   
-1.  Vytvořte dočasný kořenové autoritě (certifikát podepsaný svým držitelem) pomocí nástroje MakeCert.exe. Privátní klíč uložte na disk.  
+1.  Vytvořte dočasný kořenové autoritě (certifikát podepsaný svým držitelem) pomocí rutiny New-SelfSignedCertificate. Privátní klíč uložte na disk.  
   
 2.  Použití nového certifikátu k vystavení dalšího certifikátu, který obsahuje veřejný klíč.  
   

@@ -18,28 +18,29 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 21a858c1-3c99-4904-86ee-0d17b49804fa
-ms.openlocfilehash: a6363bc5900c797ebd3422430f368bf2668d3364
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4176d1a4cec91c5740b03c10d1a6d2cc263dba28
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567273"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44196995"
 ---
 # <a name="how-to-implement-a-client-of-the-event-based-asynchronous-pattern"></a>Postupy: Implementace klienta asynchronního vzoru založeného na událostech
-Následující příklad kódu ukazuje, jak používat komponenty, která dodržuje [na základě událostí přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). Formulář pro tento příklad používá `PrimeNumberCalculator` komponenty popsané v [postupy: implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
+Následující příklad kódu ukazuje, jak použít komponentu, která dodržuje [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md). Formulář pro tento příklad používá `PrimeNumberCalculator` komponenty popsané v [postupy: implementace komponenty, která podporuje asynchronní vzor založený na událostech](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md).  
   
- Když spouštíte projekt, který používá tento příklad, uvidíte formulář "Číslo Prime kalkulačky" s mřížka a dvě tlačítka: **spustit novou úlohu** a **zrušit**. Můžete kliknout na **spustit novou úlohu** tlačítko několikrát za sebou a pro každou klikněte na asynchronní operaci se začnou výpočet lze zjistit, je prime testovací náhodně generované číslo. Formulář pravidelně zobrazí průběh a přírůstkové výsledky. Každý je přiřazena ID jedinečný úkolu. Výsledek výpočet se zobrazí v **výsledek** sloupci; Pokud číslo test není prvotní, je označeno jako **složený,** a zobrazí se jeho první dělitel.  
+ Při spuštění projektu, který se používá v tomto příkladu se zobrazí "Kalkulačka Prime číslo" formulář s mřížky a dvě tlačítka: **spustit novou úlohu** a **zrušit**. Můžete kliknout **spustit novou úlohu** tlačítko několikrát za sebou a pro každou klikněte na asynchronní operace se začne výpočtu k určení, zda je číslo náhodně vygenerovaného testu prime. Formulář zobrazí pravidelně průběh a výsledky přírůstkové. Každá operace se přiřadí ID jedinečné úkolu. Výsledek výpočtu se zobrazí v **výsledek** sloupec; Pokud číslo testu není primární, je označena jako **složené,** a zobrazí se jeho první dělitel.  
   
- Všechny čekající operace se dají zrušit s **zrušit** tlačítko. Můžete provedeny více výběrů.  
+ Všechny čekající operace může být zrušen pomocí **zrušit** tlačítko. Nelze realizovat více výběrů.  
   
 > [!NOTE]
->  Většina čísla nebudou prime. Pokud číslo prime nebyly nalezeny po několik operací dokončené, jednoduše spusťte další informace o úlohách a nakonec najdete některé prvočísel.  
+>  Většina čísel nebude primární. Pokud po několika dokončené operace s nebyla nalezena Prvočíslo, jednoduše spustit více úkolů a nakonec najdete některé prvočísel.  
   
 ## <a name="example"></a>Příklad  
  [!code-csharp[System.ComponentModel.AsyncOperationManager#10](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/CS/primenumbercalculatormain.cs#10)]
  [!code-vb[System.ComponentModel.AsyncOperationManager#10](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.ComponentModel.AsyncOperationManager/VB/primenumbercalculatormain.vb#10)]  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ComponentModel.AsyncOperation>  
- <xref:System.ComponentModel.AsyncOperationManager>  
- <xref:System.Windows.Forms.WindowsFormsSynchronizationContext>
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.ComponentModel.AsyncOperation>  
+- <xref:System.ComponentModel.AsyncOperationManager>  
+- <xref:System.Windows.Forms.WindowsFormsSynchronizationContext>

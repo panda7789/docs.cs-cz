@@ -6,11 +6,11 @@ ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
 ms.openlocfilehash: 6be94c2e2cef443f69b2d6df7c2d490cb1fb629d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43873351"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44205059"
 ---
 # <a name="how-to-create-a-nuget-package-with-cross-platform-tools"></a>Vytvoření balíčku NuGet pomocí nástrojů pro různé platformy
 

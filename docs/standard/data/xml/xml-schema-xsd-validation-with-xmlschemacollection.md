@@ -9,11 +9,11 @@ ms.assetid: ad0b5717-3d32-41ad-a4d7-072c3e492b82
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0c570f812ec06c6ead0d12dc14c33fcdfd1f075c
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44128362"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44204874"
 ---
 # <a name="xml-schema-xsd-validation-with-xmlschemacollection"></a>Ověření schématu XML (XSD) s třídou XmlSchemaCollection
 Můžete použít <xref:System.Xml.Schema.XmlSchemaCollection> k ověření dokumentu XML pomocí schématu XML definice jazyk (XSD) schémat. <xref:System.Xml.Schema.XmlSchemaCollection> Ukládání schémata v kolekci, takže už nejsou načtena do paměti dojde k ověření při každé zvyšuje výkon. Pokud schéma existuje v kolekci schémat `schemaLocation` atribut se používá k vyhledání schématu v kolekci.  

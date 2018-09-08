@@ -11,11 +11,11 @@ helpviewer_keywords:
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
 ms.openlocfilehash: 71573de48cc51c48291fc4b82a0628d2d0f96caa
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43870156"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44198241"
 ---
 # <a name="from-clause-visual-basic"></a>From – klauzule (Visual Basic)
 Určuje jednu nebo více proměnných rozsahu a kolekce pro dotaz.  

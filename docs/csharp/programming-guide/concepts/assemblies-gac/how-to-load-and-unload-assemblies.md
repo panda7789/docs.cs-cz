@@ -3,11 +3,11 @@ title: 'Postupy: zavedení a uvolnění sestavení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 6a4f490f-3576-471f-9533-003737cad4a3
 ms.openlocfilehash: 2934ff07026d520f52309e50eb7da24731608292
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43868549"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44197534"
 ---
 # <a name="how-to-load-and-unload-assemblies-c"></a>Postupy: zavedení a uvolnění sestavení (C#)
 Sestavení odkazuje váš program bude automaticky načtených v okamžiku sestavení, ale je také možné načíst konkrétní sestavení do aktuální domény aplikace za běhu. Další informace najdete v tématu [postupy: načtení sestavení do domény aplikace](../../../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md).  

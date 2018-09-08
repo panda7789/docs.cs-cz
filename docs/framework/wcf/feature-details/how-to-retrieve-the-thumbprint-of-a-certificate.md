@@ -5,11 +5,11 @@ helpviewer_keywords:
 - certificates [WCF], retrieving thumbprint
 ms.assetid: da3101aa-78cd-4c34-9652-d1f24777eeab
 ms.openlocfilehash: f520e897ad467686e0dc151548a61ea8370eb07a
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44133227"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44204822"
 ---
 # <a name="how-to-retrieve-the-thumbprint-of-a-certificate"></a>Postupy: načtení kryptografického otisku certifikátu
 Při psaní aplikace Windows Communication Foundation (WCF), která používá certifikát X.509 pro ověřování, je často nutné zadat deklarací identity najdete v certifikátu. Například musíte zadat kryptografický otisk deklaraci identity při použití <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> výčtu v <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> metody. Vyhledání hodnoty deklarace identity sestává ze dvou kroků. Nejprve otevřete modul snap-in Certifikáty konzoly Microsoft Management Console (MMC). (Viz [postupy: zobrazení certifikátů pomocí modulu Snap-in konzoly MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md).) Za druhé jak je zde popsáno, vyhledejte příslušný certifikát a zkopírujte jeho kryptografický otisk (nebo jiné hodnoty deklarace identity).  

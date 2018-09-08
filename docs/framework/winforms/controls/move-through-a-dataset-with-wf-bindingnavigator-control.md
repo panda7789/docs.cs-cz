@@ -10,11 +10,11 @@ helpviewer_keywords:
 - examples [Windows Forms], BindingNavigator control
 ms.assetid: 146d97be-3d97-400e-accb-860bbf47729d
 ms.openlocfilehash: 272291a6c4d8b008b9efae23f392676ae1af7180
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43877238"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44205453"
 ---
 # <a name="how-to-move-through-a-dataset-with-the-windows-forms-bindingnavigator-control"></a>Postupy: Pohyb v prvku DataSet pomocí ovládacího prvku Windows Forms BindingNavigator
 Při sestavování aplikací řízených daty, často musíte pro zobrazení kolekce dat pro uživatele. <xref:System.Windows.Forms.BindingNavigator> Ovládacího prvku, v kombinaci s <xref:System.Windows.Forms.BindingSource> komponenty, poskytuje pohodlný a rozšiřitelné řešení pro přesun v kolekci a zobrazení postupně na položky.  

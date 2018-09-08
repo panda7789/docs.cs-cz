@@ -1,26 +1,26 @@
 ---
-title: Atribut a Namespace uzlu navigace pomocí objektem XPathNavigator nastaveným na
+title: Atribut a navigace Namespace uzlů pomocí XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 23975f88-e0af-4b88-93de-9e20e11880ad
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 34ce6ec5a4cc5ddd4542474dc9ce55ff64a274ec
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a0b632965306b7511a2abcf94d0c4c88ab850d4
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33577017"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44199359"
 ---
-# <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>Atribut a Namespace uzlu navigace pomocí objektem XPathNavigator nastaveným na
-<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje dvě sady metod navigace, v nalezen první sady, [uzlu nastavit navigační pomocí objektem XPathNavigator nastaveným na](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md) tématu, se používají k přejděte *uzlu sady* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu. Druhé sadě, popsané v tomto tématu slouží k přejděte *uzly atribut a obor názvů* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  
+# <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>Atribut a navigace Namespace uzlů pomocí XPathNavigator
+<xref:System.Xml.XPath.XPathNavigator> Třída poskytuje dvě sady navigačních metod, najít první sady v [uzlu nastavení navigace pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md) tématu, se používají pro navigaci *sad uzlů* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu. Druhá sada popsané v tomto tématu slouží k navigaci *uzly atributu a oboru názvů* v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  
   
 ## <a name="attribute-node-navigation"></a>Atribut uzlu navigace  
- Atributy jsou vlastnosti elementu, ne podřízených objektů daného elementu. Tento rozdíl je důležité, z důvodu metody <xref:System.Xml.XPath.XPathNavigator> třída používaná k přejděte na stejné úrovni, nadřazené a podřízené uzly.  
+ Atributy jsou vlastnosti elementu, nejsou podřízené objekty daného elementu. Tento rozdíl je důležitý, protože metody <xref:System.Xml.XPath.XPathNavigator> Třída použitá pro navigaci na stejné úrovni, nadřazenými a podřízenými uzly.  
   
- Například <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> metody nepoužívají se k přejděte z prvku, atributu nebo mezi atributy. Místo toho atributy mají odlišné metody navigace.  
+ Například <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> metody nepoužívají přejít z elementu, atributu nebo mezi atributy. Místo toho atributy mají různé metody navigace.  
   
- Následující způsoby atribut navigace <xref:System.Xml.XPath.XPathNavigator> třídy.  
+ Níže jsou atribut metody navigace <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
 -   <xref:System.Xml.XPath.XPathNavigator.MoveToAttribute%2A>  
   
@@ -28,17 +28,17 @@ ms.locfileid: "33577017"
   
 -   <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute%2A>  
   
- Element po aktuálním uzlu můžete použít <xref:System.Xml.XPath.XPathNavigator.HasAttributes%2A> vlastnosti chcete zobrazit, pokud jsou všechny atributy přidružené k tomuto prvku. Jakmile se ví, že element má atributy, existuje více metod pro přístup k atributům. Chcete-li načíst jeden atribut z elementu, použijte <xref:System.Xml.XPath.XPathNavigator.GetAttribute%2A> metoda. Přesunout <xref:System.Xml.XPath.XPathNavigator> na konkrétní atribut, pomocí <xref:System.Xml.XPath.XPathNavigator.MoveToAttribute%2A> metoda. Můžete také iterovat přes každý atribut elementu pomocí <xref:System.Xml.XPath.XPathNavigator.MoveToFirstAttribute%2A> metoda, za nímž následuje několik volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute%2A> metoda.  
+ Pokud aktuální uzel je element, můžete použít <xref:System.Xml.XPath.XPathNavigator.HasAttributes%2A> vlastnosti chcete zobrazit, pokud jsou všechny atributy přidružené k elementu. Poté, co je známo, že element má atributy, existuje několik metod pro přístup k atributům. Chcete-li načíst z elementu jeden atribut, použijte <xref:System.Xml.XPath.XPathNavigator.GetAttribute%2A> metody. Přesunout <xref:System.Xml.XPath.XPathNavigator> konkrétní atribut, použijte <xref:System.Xml.XPath.XPathNavigator.MoveToAttribute%2A> metody. Jednotlivé atributy elementu mohou také iteraci pomocí <xref:System.Xml.XPath.XPathNavigator.MoveToFirstAttribute%2A> metoda, za nímž následuje několik volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextAttribute%2A> metody.  
   
 > [!NOTE]
->  Když <xref:System.Xml.XPath.XPathNavigator> objekt je umístěn do atribut nebo obor názvů uzlu, <xref:System.Xml.XPath.XPathNavigator.MoveToChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirstChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToId%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> metody vždy vrátí `false`, a nemají vliv na pozici <xref:System.Xml.XPath.XPathNavigator>. Výjimky jsou <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToParent%2A>, a <xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A> metody.  
+>  Když <xref:System.Xml.XPath.XPathNavigator> objekt je umístěn na uzlu atribut nebo obor názvů <xref:System.Xml.XPath.XPathNavigator.MoveToChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirstChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToId%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> metody vždy vrátí `false`, a nemají žádný vliv na umístění <xref:System.Xml.XPath.XPathNavigator>. Výjimky jsou <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToParent%2A>, a <xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A> metody.  
   
 ## <a name="namespace-node-navigation"></a>Namespace uzlu navigace  
- Každý prvek má přidruženou sadu uzlů obor názvů, jeden pro každou jedinečných názvů předponu, která je vázána na identifikátor URI v oboru pro daný element oboru názvů (včetně předpona XML vázána `http://www.w3.org/XML/1998/namespace` názvů, který je implicitně deklarován v každé dokumentu XML) a jeden pro výchozí obor názvů, pokud je v oboru pro daný element. Element je nadřazená každé z těchto názvů uzlů; uzel oboru názvů však není podřízených objektů svého nadřízeného elementu.  
+ Každý prvek má přidruženy uzly oboru názvů, jeden pro každý jedinečných názvů předponu, která je vázána na obor názvů identifikátoru URI v oboru pro daný element (včetně předpona XML je vázán na `http://www.w3.org/XML/1998/namespace` obor názvů, který je implicitně deklarován ve všech dokumentech XML) a jeden pro výchozí obor názvů, pokud je v oboru pro daný element. Element je nadřazená každé z těchto názvů uzlů; uzel oboru názvů však není podřízených objektů svého nadřízeného elementu.  
   
- Stejně jako u atributů, <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> metody nepoužívají z elementu přejděte k uzlu oboru názvů, nebo mezi uzly oboru názvů. Místo toho obor názvů uzly mají odlišné metody navigace.  
+ Stejně jako u atributů, <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> metody nepoužívají přejít z elementu uzel oboru názvů, nebo mezi uzly oboru názvů. Místo toho uzly oboru názvů mají různé metody navigace.  
   
- Toto jsou obor názvů metody navigace <xref:System.Xml.XPath.XPathNavigator> třídy.  
+ Níže jsou obor názvů navigačních metod <xref:System.Xml.XPath.XPathNavigator> třídy.  
   
 -   <xref:System.Xml.XPath.XPathNavigator.MoveToNamespace%2A>  
   
@@ -46,15 +46,15 @@ ms.locfileid: "33577017"
   
 -   <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A>  
   
- V oboru pro libovolný element v dokumentu XML není vždy alespoň jeden uzel oboru názvů. Toto je uzel oboru názvů s předponou `xml` a identifikátor URI oboru názvů `http://www.w3.org/XML/1998/namespace`. Chcete-li získat identifikátor URI v oboru uvedeny konkrétní předpony oboru názvů, použijte <xref:System.Xml.XPath.XPathNavigator.GetNamespace%2A> metoda. Přesunout <xref:System.Xml.XPath.XPathNavigator> objekt pro konkrétní obor názvů uzlu, použijte <xref:System.Xml.XPath.XPathNavigator.MoveToNamespace%2A> metoda. Každý uzel oboru názvů v oboru pro daný element můžete také iteraci pomocí <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda následuje několik volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metoda.  
+ Je vždy alespoň jeden uzel oboru názvů v oboru pro libovolný prvek v dokumentu XML. Toto je uzel oboru názvů s předponou `xml` a identifikátor URI oboru názvů `http://www.w3.org/XML/1998/namespace`. Chcete-li získat identifikátor URI v oboru uvedeny konkrétní předpony oboru názvů, použijte <xref:System.Xml.XPath.XPathNavigator.GetNamespace%2A> metody. Přesunout <xref:System.Xml.XPath.XPathNavigator> objekt pro konkrétní obor názvů uzlu, použijte <xref:System.Xml.XPath.XPathNavigator.MoveToNamespace%2A> metody. Každý uzel oboru názvů v oboru pro daný element můžete také iteraci pomocí <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda a více volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metody.  
   
 > [!NOTE]
->  Když <xref:System.Xml.XPath.XPathNavigator> objekt je umístěn do atribut nebo obor názvů uzlu, <xref:System.Xml.XPath.XPathNavigator.MoveToChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirstChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToId%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> metody vždy vrátí `false`, a nemají vliv na pozici <xref:System.Xml.XPath.XPathNavigator>. Výjimky jsou <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToParent%2A>, a <xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A> metody.  
+>  Když <xref:System.Xml.XPath.XPathNavigator> objekt je umístěn na uzlu atribut nebo obor názvů <xref:System.Xml.XPath.XPathNavigator.MoveToChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirst%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFirstChild%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToFollowing%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToId%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToNext%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToPrevious%2A> metody vždy vrátí `false`, a nemají žádný vliv na umístění <xref:System.Xml.XPath.XPathNavigator>. Výjimky jsou <xref:System.Xml.XPath.XPathNavigator.MoveTo%2A>, <xref:System.Xml.XPath.XPathNavigator.MoveToParent%2A>, a <xref:System.Xml.XPath.XPathNavigator.MoveToRoot%2A> metody.  
   
-### <a name="the-xpathnamespacescope-enumeration"></a>XPathNamespaceScope – výčet  
- Při přechodu uzly oboru názvů <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> nelze volat metody s <xref:System.Xml.XPath.XPathNamespaceScope> parametr. Tyto metody chovat jinak než jejich protějšky volána bez parametrů. <xref:System.Xml.XPath.XPathNamespaceScope> Výčet má hodnoty <xref:System.Xml.XPath.XPathNamespaceScope.All>, <xref:System.Xml.XPath.XPathNamespaceScope.ExcludeXml>, nebo <xref:System.Xml.XPath.XPathNamespaceScope.Local>.  
+### <a name="the-xpathnamespacescope-enumeration"></a>Výčet XPathNamespaceScope  
+ Při navigaci uzly oboru názvů <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metody lze volat pomocí <xref:System.Xml.XPath.XPathNamespaceScope> parametru. Tyto metody chovat jinak než jejich protějšky zavolán bez parametrů. <xref:System.Xml.XPath.XPathNamespaceScope> Výčet má hodnoty <xref:System.Xml.XPath.XPathNamespaceScope.All>, <xref:System.Xml.XPath.XPathNamespaceScope.ExcludeXml>, nebo <xref:System.Xml.XPath.XPathNamespaceScope.Local>.  
   
- Následující příklady ukazují, co jsou obory názvů vrácený <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metody v různých oborech v dokumentu XML.  
+ Následující příklady ukazují, co jsou obory názvů vrácené <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metody v různých oborech v dokumentu XML.  
   
 ```xml  
 <root>  
@@ -64,18 +64,18 @@ ms.locfileid: "33577017"
 </root>  
 ```  
   
- Pořadí obor názvů (obor názvů <xref:System.Xml.XPath.XPathNavigator> je umístěn na po volání <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda následuje řadu volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metoda) je následující.  
+ Pořadí obor názvů (obor názvů <xref:System.Xml.XPath.XPathNavigator> je umístěn na po volání <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda následovaný sérii volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metoda) vypadá takto.  
   
--   Když umístěný na `element2`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
+-   Když umístíte na `element2`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
   
--   Když umístěný na `element1`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
+-   Když umístíte na `element1`: `xmlns:books="http://www.contoso.com/books"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
   
--   Když umístěný na `root`: `xmlns:xml="http://www.w3.org/XML/1998/namespace".`  
+-   Když umístíte na `root`: `xmlns:xml="http://www.w3.org/XML/1998/namespace".`  
   
 > [!NOTE]
->  <xref:System.Xml.XPath.XPathNavigator> Třída vrací uzly oboru názvů v pořadí zpětné dokumentu. Proto <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> v podstatě přejde na poslední uzel oboru názvů v aktuálním oboru.  
+>  <xref:System.Xml.XPath.XPathNavigator> Třídy vrátí uzly oboru názvů v pořadí reverzní dokumentů. Proto <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> v podstatě přejde na poslední uzel oboru názvů v aktuálním oboru.  
   
- Následující příklady ukazují, co jsou obory názvů vrácený <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metody s <xref:System.Xml.XPath.XPathNamespaceScope> výčtu zadané pro různé obory v dokumentu XML.  
+ Následující příklady ukazují, co jsou obory názvů vrácené <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> a <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metody s <xref:System.Xml.XPath.XPathNamespaceScope> výčet zadané v různých oborech v dokumentu XML.  
   
 ```xml  
 <root xmlns="http://www.contoso.com" xmlns:a="http://www.contoso.com/a" xmlns:b="http://www.contoso.com/b">  
@@ -85,7 +85,7 @@ ms.locfileid: "33577017"
 </root>  
 ```  
   
- Když umístěný na `child2`, pořadí obor názvů (obor názvů <xref:System.Xml.XPath.XPathNavigator> je umístěn na po volání <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda následuje řady volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> metoda) je následující.  
+ Při umístění na `child2`, pořadí obor názvů (obor názvů <xref:System.Xml.XPath.XPathNavigator> je umístěn na po volání <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> metoda následovaný sérii volání <xref:System.Xml.XPath.XPathNavigator.MoveToNextNamespace%2A> – metoda) je následující.  
   
 -   <xref:System.Xml.XPath.XPathNamespaceScope.All>: `xmlns:c="urn:c"`, `xmlns:a="urn:a"`, `xmlns=""`, `xmlns:b="http://www.contoso.com/b"`, `xmlns:a="http://www.contoso.com/a"`, `xmlns="http://www.contoso.com"`, a `xmlns:xml="http://www.w3.org/XML/1998/namespace"`.  
   
@@ -94,13 +94,14 @@ ms.locfileid: "33577017"
 -   <xref:System.Xml.XPath.XPathNamespaceScope.Local>: `xmlns:c="urn:c"`.  
   
 > [!NOTE]
->  <xref:System.Xml.XPath.XPathNavigator> Třída vrací uzly oboru názvů v pořadí zpětné dokumentu. Proto <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> v podstatě přejde na poslední uzel oboru názvů v aktuálním oboru.  
+>  <xref:System.Xml.XPath.XPathNavigator> Třídy vrátí uzly oboru názvů v pořadí reverzní dokumentů. Proto <xref:System.Xml.XPath.XPathNavigator.MoveToFirstNamespace%2A> v podstatě přejde na poslední uzel oboru názvů v aktuálním oboru.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Xml.XmlDocument>  
- <xref:System.Xml.XPath.XPathDocument>  
- <xref:System.Xml.XPath.XPathNavigator>  
- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
- [Navigace v sadě uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
- [Extrahování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)  
- [Přístup k datům XML silného typu pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Xml.XmlDocument>  
+- <xref:System.Xml.XPath.XPathDocument>  
+- <xref:System.Xml.XPath.XPathNavigator>  
+- [Zpracování dat XML pomocí modelu dat XPath](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+- [Navigace v sadě uzlů pomocí XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)  
+- [Extrahování dat XML pomocí XPathNavigator](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)  
+- [Přístup k datům XML silného typu pomocí XPathNavigator](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)

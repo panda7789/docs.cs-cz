@@ -7,11 +7,11 @@ ms.date: 07/26/2017
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
 ms.openlocfilehash: 515dd7a393d87811377aa5d9fb02de35943b6966
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879877"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44205754"
 ---
 # <a name="the-net-portability-analyzer"></a>.NET Portability Analyzeru
 

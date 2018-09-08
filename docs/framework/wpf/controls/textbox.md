@@ -8,11 +8,11 @@ helpviewer_keywords:
 - TextBox control [WPF]
 ms.assetid: 2512a277-e9d8-4de8-a12f-2bd95e8e7b60
 ms.openlocfilehash: c0826e007576dc0e97ef953e698f5f8d115742e9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43421693"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44196657"
 ---
 # <a name="textbox"></a>TextBox
 <xref:System.Windows.Controls.TextBox> Ovládacího prvku poskytuje podporu pro základní textové zadání v aplikaci WPF.  

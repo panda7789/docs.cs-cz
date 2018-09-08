@@ -14,11 +14,11 @@ ms.assetid: 12af9ff3-8587-4f31-90cf-6c2244e0fdae
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3da35dae374018f0695f79022e83ad397e98cb88
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43874781"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44202346"
 ---
 # <a name="how-to-use-specific-exceptions-in-a-catch-block"></a>Postup používání specifických výjimek v bloku catch
 

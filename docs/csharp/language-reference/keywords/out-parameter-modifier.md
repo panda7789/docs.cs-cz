@@ -4,12 +4,12 @@ ms.date: 03/06/2018
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: c9fb03560e30bab3cc71a6171c731d887e859f6c
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: bc31ae202ccbfee467dc0f6fa2cf515c751825ed
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44138874"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44201299"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out – modifikátor parametrů (Referenční dokumentace jazyka C#)
 `out` – Klíčové slovo způsobí, že argumenty, které mají být předány podle odkazu. Je třeba [ref](ref.md) – klíčové slovo, s výjimkou, že `ref` vyžaduje, aby před jeho předáním inicializovat proměnnou. Je také třeba [v](in-parameter-modifier.md) – klíčové slovo, s výjimkou, že `in` neumožňuje volané metody, chcete-li změnit hodnotu argumentu. Použití `out` parametr definici metody a volající metody musíte explicitně použít `out` – klíčové slovo. Příklad:  
@@ -41,9 +41,7 @@ Kompilátor volí přetížení optimální to provede spárováním odpovídaj�
  
 Vlastnosti nejsou proměnné a proto ji nelze předat jako `out` parametry.
   
- Informace o předávání polí naleznete v tématu [předávání polí pomocí parametrů ref a out](../../../csharp/programming-guide/arrays/passing-arrays-using-ref-and-out.md).  
-  
- Nelze použít `in`, `ref`, a `out` klíčová slova pro následující druhy metod:  
+Nelze použít `in`, `ref`, a `out` klíčová slova pro následující druhy metod:  
   
 -   Asynchronní metody, které definujete pomocí [asynchronní](../../../csharp/language-reference/keywords/async.md) modifikátor.  
   

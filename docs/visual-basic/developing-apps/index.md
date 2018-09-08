@@ -6,11 +6,11 @@ helpviewer_keywords:
 - applications [Visual Basic]
 ms.assetid: 1e1c0c81-6d95-4167-a98b-44b1efb6d25f
 ms.openlocfilehash: ecb2c0a09ce92a11a021b45576b5499900b25356
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44038716"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44200705"
 ---
 # <a name="developing-applications-with-visual-basic"></a>Vývoj aplikací pomocí jazyka Visual Basic
 Tato část obsahuje rámcové dokumentaci pro jazyk Visual Basic.  

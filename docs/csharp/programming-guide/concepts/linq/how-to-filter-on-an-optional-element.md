@@ -3,11 +3,11 @@ title: 'Postupy: filtrování volitelného elementu (C#)'
 ms.date: 07/20/2015
 ms.assetid: f99e2f93-fca5-403f-8a0c-770761d4905a
 ms.openlocfilehash: c781db261dbf673af7a11150971956b4c07da774
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44046626"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44205306"
 ---
 # <a name="how-to-filter-on-an-optional-element-c"></a>Postupy: filtrování volitelného elementu (C#)
 Někdy budete chtít filtrovat pro element, i když si nejste jisti, že objekt že existuje v dokumentu XML. Hledání by měl provádět tak, že pokud konkrétní element nemá podřízený element, pomocí filtrování pro něj nespouštějí výjimka nulového odkazu. V následujícím příkladu `Child5` nemá element `Type` podřízený element, ale dotaz stále se provede správně.  

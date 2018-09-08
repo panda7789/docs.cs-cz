@@ -3,11 +3,11 @@ title: Uživatelem definované funkce (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 3f9e6bbd-8e5a-43e1-809f-f8a61338e522
 ms.openlocfilehash: 03146d895c6ca780692228937fafcf25b24902aa
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43564945"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44205359"
 ---
 # <a name="user-defined-functions-entity-sql"></a>Uživatelem definované funkce (Entity SQL)
 Entita SQL podporuje volání uživatelem definované funkce v dotazu. Můžete definovat tyto vložené funkce s dotazem (naleznete v tématu [postupy: volání funkce definovaná uživatelem](https://msdn.microsoft.com/library/ad131b86-8b4e-4747-8605-d4fc64fb9d02)) nebo v rámci koncepčního modelu (naleznete v tématu [jak: definovat vlastní funkce v konceptuálním modelu](https://msdn.microsoft.com/library/0dad7b8b-58f6-4271-b238-f34810d68e5f)). Konceptuální model funkce jsou definované jako příkazu k Entity SQL v [DefiningExpression](https://msdn.microsoft.com/library/d3da8d8b-a048-47ee-8d81-0c2ea3acdd3e) prvek [funkce](https://msdn.microsoft.com/library/dc3beca7-55cf-4977-8db0-5064cdbab134) element v konceptuálním modelu.  

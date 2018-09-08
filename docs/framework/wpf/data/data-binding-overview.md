@@ -11,11 +11,11 @@ helpviewer_keywords:
 - conversion for data binding [WPF]
 ms.assetid: c707c95f-7811-401d-956e-2fffd019a211
 ms.openlocfilehash: 1b34b3369e5a045f45251d3285f10bf74b6f0d33
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44080849"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44195787"
 ---
 # <a name="data-binding-overview"></a>Přehled datových vazeb
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] vytváření datových vazeb nabízí jednoduchý a konzistentní způsob pro aplikace k zobrazení a interakci s daty. Elementy mohou být vázány na data z různých zdrojů dat ve formě [!INCLUDE[TLA#tla_clr](../../../../includes/tlasharptla-clr-md.md)] objekty a [!INCLUDE[TLA#tla_xml](../../../../includes/tlasharptla-xml-md.md)]. <xref:System.Windows.Controls.ContentControl>s jako <xref:System.Windows.Controls.Button> a <xref:System.Windows.Controls.ItemsControl>s jako <xref:System.Windows.Controls.ListBox> a <xref:System.Windows.Controls.ListView> mají integrované funkce, které umožňují flexibilní styly jednotlivých datových položek nebo kolekce datových položek. Řazení, filtrování a zobrazení skupiny můžete generovat na data.  

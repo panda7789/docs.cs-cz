@@ -13,11 +13,11 @@ helpviewer_keywords:
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
 ms.openlocfilehash: c7cae5be1d7e52186752d67354927084d118beb9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43884439"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44198878"
 ---
 # <a name="graphics-and-multimedia"></a>Grafika a multimédia
 <a name="introduction"></a>

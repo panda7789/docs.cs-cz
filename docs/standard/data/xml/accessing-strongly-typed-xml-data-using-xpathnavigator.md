@@ -9,11 +9,11 @@ ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 0c283d3c87effcf9e898bb769cc8991da6cea453
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44129463"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44199619"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Přístup k silně typované dat XML pomocí XPathNavigator
 Jako instanci datového modelu, XPath 2.0 <xref:System.Xml.XPath.XPathNavigator> třídy mohou obsahovat silného typu dat, která se mapuje na common language runtime (CLR) typy. Podle modelu dat XPath 2.0 může obsahovat pouze prvky a atributy dat silného typu. <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje mechanismus pro přístup k datům v rámci <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> jako silného typu dat, stejně jako mechanismus pro převod z jednoho datového typu na jiný objekt.  

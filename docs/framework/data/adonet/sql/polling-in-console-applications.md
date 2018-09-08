@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
 ms.openlocfilehash: 6b0d298e1959ff2fdcd46a9f218eb980671407be
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44067143"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44204731"
 ---
 # <a name="polling-in-console-applications"></a>Dotazování v konzolových aplikacích
 Asynchronních operací v ADO.NET umožňují zahájit časově náročné databázových operací na jedno vlákno při provádění dalších úloh v jiném vlákně. Ve většině scénářů si ale můžete se nakonec se dostanete do bodu, kde vaše aplikace by neměl pokračovat až do dokončení operace databáze. Pro tyto případy je užitečné k dotazování asynchronní operace k určení, zda operace byla dokončena nebo ne.  

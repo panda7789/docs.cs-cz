@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: 500335af-f9b5-413b-968a-e6d9a824478c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c871dabd9d027e5716c863985bed7ef3b955a358
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 67062ab87182bcb42793cb166323020178ac1688
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43672654"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44197298"
 ---
 # <a name="xslt-transformations-with-the-xsltransform-class"></a>Transformace XSLT s třídou XslTransform
 
@@ -96,13 +96,13 @@ public class Sample
 }
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-<xref:System.Xml.Xsl.XslTransform>  
-[Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)  
-[Implementace volitelného chování ve třídě XslTransform](implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)  
-[XPathNavigator v transformacích](xpathnavigator-in-transformations.md)  
-[XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)  
-[Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)  
-[Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)  
-[Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)  
+- <xref:System.Xml.Xsl.XslTransform>  
+- [Třída XslTransform implementuje procesor XSLT](xsltransform-class-implements-the-xslt-processor.md)  
+- [Implementace volitelného chování ve třídě XslTransform](implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)  
+- [XPathNavigator v transformacích](xpathnavigator-in-transformations.md)  
+- [XPathNodeIterator v transformacích](xpathnodeiterator-in-transformations.md)  
+- [Vstup XPathDocument do XslTransform](xpathdocument-input-to-xsltransform.md)  
+- [Vstup XmlDataDocument do XslTransform](xmldatadocument-input-to-xsltransform.md)  
+- [Vstup XmlDocument do XslTransform](xmldocument-input-to-xsltransform.md)  
