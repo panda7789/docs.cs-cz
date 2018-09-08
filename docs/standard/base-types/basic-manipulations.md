@@ -1,5 +1,5 @@
 ---
-title: 'Postup: provedení manipulace s řetězci základní v rozhraní .NET Framework'
+title: 'Postupy: manipulace s řetězci základní v rozhraní .NET Framework'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,23 +10,24 @@ helpviewer_keywords:
 ms.assetid: 121d1eae-251b-44c0-8818-57da04b8215e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2e8c6c3f9b7ec418fdbf6365a3e7d90fe65e9caa
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1206648c694c9f09a600e3c70f4aa27118b2d458
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33567182"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44178049"
 ---
-# <a name="how-to-perform-basic-string-manipulations-in-net"></a><span data-ttu-id="38937-102">Postup: provedení manipulace s řetězci základní v rozhraní .NET</span><span class="sxs-lookup"><span data-stu-id="38937-102">How to: Perform Basic String Manipulations in .NET</span></span>
-<span data-ttu-id="38937-103">Následující příklad používá některé z metod popsaných v tématu [základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md) témata pro vytvoření třídy, která provádí manipulace s řetězci způsobem, který se může nacházet v reálné aplikaci.</span><span class="sxs-lookup"><span data-stu-id="38937-103">The following example uses some of the methods discussed in the [Basic String Operations](../../../docs/standard/base-types/basic-string-operations.md) topics to construct a class that performs string manipulations in a manner that might be found in a real-world application.</span></span> <span data-ttu-id="38937-104">`MailToData` Třída obsahuje název a adresu osoby v samostatných vlastnosti a poskytuje způsob, jak kombinovat `City`, `State`, a `Zip` do jednoho řetězce pro zobrazení pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="38937-104">The `MailToData` class stores the name and address of an individual in separate properties and provides a way to combine the `City`, `State`, and `Zip` fields into a single string for display to the user.</span></span> <span data-ttu-id="38937-105">Kromě toho třída umožňuje uživateli zadat města, státu a informace o PSČ jako jeden řetězec; aplikace automaticky analyzuje daný řetězec a vloží správné informace do odpovídající vlastnost.</span><span class="sxs-lookup"><span data-stu-id="38937-105">Furthermore, the class allows the user to enter the city, state, and ZIP Code information as a single string; the application automatically parses the single string and enters the proper information into the corresponding property.</span></span>  
+# <a name="how-to-perform-basic-string-manipulations-in-net"></a><span data-ttu-id="2395b-102">Postupy: manipulace s řetězci základní v .NET</span><span class="sxs-lookup"><span data-stu-id="2395b-102">How to: Perform Basic String Manipulations in .NET</span></span>
+<span data-ttu-id="2395b-103">Následující příklad používá některé z metod popsaných v tématu [základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md) témata k vytvoření třídy, která provádí manipulace s řetězci způsobem, který se může nacházet v reálné aplikaci.</span><span class="sxs-lookup"><span data-stu-id="2395b-103">The following example uses some of the methods discussed in the [Basic String Operations](../../../docs/standard/base-types/basic-string-operations.md) topics to construct a class that performs string manipulations in a manner that might be found in a real-world application.</span></span> <span data-ttu-id="2395b-104">`MailToData` Třída obsahuje název a adresu osoby v samostatných vlastnosti a poskytuje způsob, jak zkombinovat `City`, `State`, a `Zip` pole do jednoho řetězce pro zobrazení pro uživatele.</span><span class="sxs-lookup"><span data-stu-id="2395b-104">The `MailToData` class stores the name and address of an individual in separate properties and provides a way to combine the `City`, `State`, and `Zip` fields into a single string for display to the user.</span></span> <span data-ttu-id="2395b-105">Kromě toho třída umožňuje uživateli zadat město, stát a informace o PSČ jako jeden řetězec; aplikaci automaticky analyzuje jeden řetězec a vloží do odpovídající vlastnosti správné informace.</span><span class="sxs-lookup"><span data-stu-id="2395b-105">Furthermore, the class allows the user to enter the city, state, and ZIP Code information as a single string; the application automatically parses the single string and enters the proper information into the corresponding property.</span></span>  
   
- <span data-ttu-id="38937-106">Pro zjednodušení tento příklad používá konzolovou aplikaci pomocí rozhraní příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="38937-106">For simplicity, this example uses a console application with a command-line interface.</span></span>  
+ <span data-ttu-id="2395b-106">Pro zjednodušení tento příklad používá konzolovou aplikaci pomocí rozhraní příkazového řádku.</span><span class="sxs-lookup"><span data-stu-id="2395b-106">For simplicity, this example uses a console application with a command-line interface.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="38937-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="38937-107">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="2395b-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="2395b-107">Example</span></span>  
  [!code-csharp[Conceptual.String.BasicOps#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/basicops.cs#1)]
  [!code-vb[Conceptual.String.BasicOps#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/basicops.vb#1)]  
   
- <span data-ttu-id="38937-108">Po provedení předchozí kód uživateli se zobrazí výzva k zadání názvu a adresy.</span><span class="sxs-lookup"><span data-stu-id="38937-108">When the preceding code is executed, the user is asked to enter his or her name and address.</span></span> <span data-ttu-id="38937-109">Aplikace umístí informace do příslušných vlastností a zobrazí informace o uživateli, vytvoření jednoho řetězce, který zobrazí města, státu a informace o PSČ.</span><span class="sxs-lookup"><span data-stu-id="38937-109">The application places the information in the appropriate properties and displays the information back to the user, creating a single string that displays the city, state, and ZIP Code information.</span></span>  
+ <span data-ttu-id="2395b-108">Pokud je spuštěn předchozí kód, uživatel se zobrazí výzva, zadejte název nebo adresu.</span><span class="sxs-lookup"><span data-stu-id="2395b-108">When the preceding code is executed, the user is asked to enter his or her name and address.</span></span> <span data-ttu-id="2395b-109">Aplikace umístí informace v příslušné vlastnosti a zobrazí informace uživateli vytvořit jeden řetězec, který zobrazuje Město, stát a informace o PSČ.</span><span class="sxs-lookup"><span data-stu-id="2395b-109">The application places the information in the appropriate properties and displays the information back to the user, creating a single string that displays the city, state, and ZIP Code information.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="38937-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="38937-110">See Also</span></span>  
- [<span data-ttu-id="38937-111">Základní operace s řetězci</span><span class="sxs-lookup"><span data-stu-id="38937-111">Basic String Operations</span></span>](../../../docs/standard/base-types/basic-string-operations.md)
+## <a name="see-also"></a><span data-ttu-id="2395b-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2395b-110">See also</span></span>
+
+- [<span data-ttu-id="2395b-111">Základní operace s řetězci</span><span class="sxs-lookup"><span data-stu-id="2395b-111">Basic String Operations</span></span>](../../../docs/standard/base-types/basic-string-operations.md)

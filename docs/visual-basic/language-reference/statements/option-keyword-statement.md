@@ -7,27 +7,27 @@ helpviewer_keywords:
 - Option keyword [Visual Basic]
 ms.assetid: 6b2f41c4-2403-43b6-8a14-94a3775e5b47
 ms.openlocfilehash: f4996b0c03ee98fef31bc301dc957060afdfdac8
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43866976"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44180329"
 ---
-# <a name="option-ltkeywordgt-statement"></a><span data-ttu-id="6e522-102">Možnost &lt;– klíčové slovo&gt; – příkaz</span><span class="sxs-lookup"><span data-stu-id="6e522-102">Option &lt;keyword&gt; Statement</span></span>
-<span data-ttu-id="6e522-103">Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.</span><span class="sxs-lookup"><span data-stu-id="6e522-103">Introduces a statement that specifies a compiler option that applies to the entire source file.</span></span>  
+# <a name="option-ltkeywordgt-statement"></a><span data-ttu-id="d2705-102">Možnost &lt;– klíčové slovo&gt; – příkaz</span><span class="sxs-lookup"><span data-stu-id="d2705-102">Option &lt;keyword&gt; Statement</span></span>
+<span data-ttu-id="d2705-103">Zavádí příkaz, který určuje možnost kompilátoru, která se vztahuje k celému zdrojovému souboru.</span><span class="sxs-lookup"><span data-stu-id="d2705-103">Introduces a statement that specifies a compiler option that applies to the entire source file.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6e522-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6e522-104">Remarks</span></span>  
- <span data-ttu-id="6e522-105">Možnosti kompilátoru můžete řídit, jestli všechny proměnné musí být explicitně deklarovány, zda zužujících převodů typu musí být explicitní nebo určuje, zda by měly být porovnány řetězců jako text nebo binární množství.</span><span class="sxs-lookup"><span data-stu-id="6e522-105">The compiler options can control whether all variables must be explicitly declared, whether narrowing type conversions must be explicit, or whether strings should be compared as text or as binary quantities.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="d2705-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d2705-104">Remarks</span></span>  
+ <span data-ttu-id="d2705-105">Možnosti kompilátoru můžete řídit, jestli všechny proměnné musí být explicitně deklarovány, zda zužujících převodů typu musí být explicitní nebo určuje, zda by měly být porovnány řetězců jako text nebo binární množství.</span><span class="sxs-lookup"><span data-stu-id="d2705-105">The compiler options can control whether all variables must be explicitly declared, whether narrowing type conversions must be explicit, or whether strings should be compared as text or as binary quantities.</span></span>  
   
- <span data-ttu-id="6e522-106">`Option` – Klíčové slovo lze použít v těchto kontextech:</span><span class="sxs-lookup"><span data-stu-id="6e522-106">The `Option` keyword can be used in these contexts:</span></span>  
+ <span data-ttu-id="d2705-106">`Option` – Klíčové slovo lze použít v těchto kontextech:</span><span class="sxs-lookup"><span data-stu-id="d2705-106">The `Option` keyword can be used in these contexts:</span></span>  
   
- [<span data-ttu-id="6e522-107">Příkaz Option Compare</span><span class="sxs-lookup"><span data-stu-id="6e522-107">Option Compare Statement</span></span>](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
+ [<span data-ttu-id="d2705-107">Příkaz Option Compare</span><span class="sxs-lookup"><span data-stu-id="d2705-107">Option Compare Statement</span></span>](../../../visual-basic/language-reference/statements/option-compare-statement.md)  
   
- [<span data-ttu-id="6e522-108">Příkaz Option Explicit</span><span class="sxs-lookup"><span data-stu-id="6e522-108">Option Explicit Statement</span></span>](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [<span data-ttu-id="d2705-108">Příkaz Option Explicit</span><span class="sxs-lookup"><span data-stu-id="d2705-108">Option Explicit Statement</span></span>](../../../visual-basic/language-reference/statements/option-explicit-statement.md)  
   
- [<span data-ttu-id="6e522-109">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="6e522-109">Option Infer Statement</span></span>](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [<span data-ttu-id="d2705-109">Příkaz Option Infer</span><span class="sxs-lookup"><span data-stu-id="d2705-109">Option Infer Statement</span></span>](../../../visual-basic/language-reference/statements/option-infer-statement.md)  
   
- [<span data-ttu-id="6e522-110">Příkaz Option Strict</span><span class="sxs-lookup"><span data-stu-id="6e522-110">Option Strict Statement</span></span>](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [<span data-ttu-id="d2705-110">Příkaz Option Strict</span><span class="sxs-lookup"><span data-stu-id="d2705-110">Option Strict Statement</span></span>](../../../visual-basic/language-reference/statements/option-strict-statement.md)  
   
-## <a name="see-also"></a><span data-ttu-id="6e522-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="6e522-111">See Also</span></span>  
- [<span data-ttu-id="6e522-112">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="6e522-112">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
+## <a name="see-also"></a><span data-ttu-id="d2705-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="d2705-111">See Also</span></span>  
+ [<span data-ttu-id="d2705-112">Klíčová slova</span><span class="sxs-lookup"><span data-stu-id="d2705-112">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
