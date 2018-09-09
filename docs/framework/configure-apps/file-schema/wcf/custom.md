@@ -3,23 +3,23 @@ title: '&lt;Vlastní&gt;'
 ms.date: 03/30/2017
 ms.assetid: a6f65a00-bd1a-4d4a-955a-fe009ec02ab8
 ms.openlocfilehash: 7d558be66b8a1e46d9743c5f8bf0bb9a8b4c349e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44031985"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44225422"
 ---
-# <a name="ltcustomgt"></a><span data-ttu-id="fb970-102">&lt;Vlastní&gt;</span><span class="sxs-lookup"><span data-stu-id="fb970-102">&lt;custom&gt;</span></span>
-<span data-ttu-id="fb970-103">Určuje nastavení pro službu překladače vlastní sdílené.</span><span class="sxs-lookup"><span data-stu-id="fb970-103">Specifies settings for a custom peer resolver service.</span></span>  
+# <a name="ltcustomgt"></a><span data-ttu-id="f600a-102">&lt;Vlastní&gt;</span><span class="sxs-lookup"><span data-stu-id="f600a-102">&lt;custom&gt;</span></span>
+<span data-ttu-id="f600a-103">Určuje nastavení pro službu překladače vlastní sdílené.</span><span class="sxs-lookup"><span data-stu-id="f600a-103">Specifies settings for a custom peer resolver service.</span></span>  
   
-<span data-ttu-id="fb970-104">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="fb970-104">\<system.serviceModel></span></span>  
-<span data-ttu-id="fb970-105">\<vazby ></span><span class="sxs-lookup"><span data-stu-id="fb970-105">\<bindings></span></span>  
-<span data-ttu-id="fb970-106">\<netPeerBinding ></span><span class="sxs-lookup"><span data-stu-id="fb970-106">\<netPeerBinding></span></span>  
-<span data-ttu-id="fb970-107">\<Vytvoření vazby ></span><span class="sxs-lookup"><span data-stu-id="fb970-107">\<binding></span></span>  
-<span data-ttu-id="fb970-108">\<překladač ></span><span class="sxs-lookup"><span data-stu-id="fb970-108">\<resolver></span></span>  
-<span data-ttu-id="fb970-109">\<vlastní ></span><span class="sxs-lookup"><span data-stu-id="fb970-109">\<custom></span></span>  
+<span data-ttu-id="f600a-104">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="f600a-104">\<system.serviceModel></span></span>  
+<span data-ttu-id="f600a-105">\<vazby ></span><span class="sxs-lookup"><span data-stu-id="f600a-105">\<bindings></span></span>  
+<span data-ttu-id="f600a-106">\<netPeerBinding ></span><span class="sxs-lookup"><span data-stu-id="f600a-106">\<netPeerBinding></span></span>  
+<span data-ttu-id="f600a-107">\<Vytvoření vazby ></span><span class="sxs-lookup"><span data-stu-id="f600a-107">\<binding></span></span>  
+<span data-ttu-id="f600a-108">\<překladač ></span><span class="sxs-lookup"><span data-stu-id="f600a-108">\<resolver></span></span>  
+<span data-ttu-id="f600a-109">\<vlastní ></span><span class="sxs-lookup"><span data-stu-id="f600a-109">\<custom></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fb970-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fb970-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f600a-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f600a-110">Syntax</span></span>  
   
 ```xml
 <custom address="Uri" 
@@ -29,36 +29,36 @@ ms.locfileid: "44031985"
 </custom>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="fb970-111">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="fb970-111">Attributes and Elements</span></span>  
- <span data-ttu-id="fb970-112">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="fb970-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="f600a-111">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="f600a-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="f600a-112">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="f600a-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="fb970-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="fb970-113">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="f600a-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="f600a-113">Attributes</span></span>  
   
-|<span data-ttu-id="fb970-114">Atribut</span><span class="sxs-lookup"><span data-stu-id="fb970-114">Attribute</span></span>|<span data-ttu-id="fb970-115">Popis</span><span class="sxs-lookup"><span data-stu-id="fb970-115">Description</span></span>|  
+|<span data-ttu-id="f600a-114">Atribut</span><span class="sxs-lookup"><span data-stu-id="f600a-114">Attribute</span></span>|<span data-ttu-id="f600a-115">Popis</span><span class="sxs-lookup"><span data-stu-id="f600a-115">Description</span></span>|  
 |---------------|-----------------|  
-|`address`|<span data-ttu-id="fb970-116">Identifikátor URI, který určuje adresu partnerského uzlu, který je hostitelem služby překladače vlastní sdílené.</span><span class="sxs-lookup"><span data-stu-id="fb970-116">A URI that specifies the endpoint address of the peer node that hosts the custom peer resolver service.</span></span>|  
-|`resolverType`|<span data-ttu-id="fb970-117">Řetězec, který určuje typ překladače vlastní sdílené služby.</span><span class="sxs-lookup"><span data-stu-id="fb970-117">A string that specifies the type of the custom peer resolver service.</span></span>|  
+|`address`|<span data-ttu-id="f600a-116">Identifikátor URI, který určuje adresu partnerského uzlu, který je hostitelem služby překladače vlastní sdílené.</span><span class="sxs-lookup"><span data-stu-id="f600a-116">A URI that specifies the endpoint address of the peer node that hosts the custom peer resolver service.</span></span>|  
+|`resolverType`|<span data-ttu-id="f600a-117">Řetězec, který určuje typ překladače vlastní sdílené služby.</span><span class="sxs-lookup"><span data-stu-id="f600a-117">A string that specifies the type of the custom peer resolver service.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="fb970-118">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="fb970-118">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="f600a-118">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="f600a-118">Child Elements</span></span>  
   
-|<span data-ttu-id="fb970-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="fb970-119">Element</span></span>|<span data-ttu-id="fb970-120">Popis</span><span class="sxs-lookup"><span data-stu-id="fb970-120">Description</span></span>|  
+|<span data-ttu-id="f600a-119">Prvek</span><span class="sxs-lookup"><span data-stu-id="f600a-119">Element</span></span>|<span data-ttu-id="f600a-120">Popis</span><span class="sxs-lookup"><span data-stu-id="f600a-120">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="fb970-121">\<identity ></span><span class="sxs-lookup"><span data-stu-id="fb970-121">\<identity></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|<span data-ttu-id="fb970-122">Určuje identitu pro nakonfigurovaný s tímto elementem překladače vlastní partnerských uzlů.</span><span class="sxs-lookup"><span data-stu-id="fb970-122">Specifies the identity for custom peer resolvers configured with this element.</span></span> <span data-ttu-id="fb970-123">Tento prvek je typu <xref:System.ServiceModel.Configuration.IdentityElement>.</span><span class="sxs-lookup"><span data-stu-id="fb970-123">This element is of type <xref:System.ServiceModel.Configuration.IdentityElement>.</span></span>|  
-|[<span data-ttu-id="fb970-124">\<záhlaví ></span><span class="sxs-lookup"><span data-stu-id="fb970-124">\<headers></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|<span data-ttu-id="fb970-125">Kolekce záhlaví adres, který slouží pro zprávy protokolu SOAP zpracovat rozpoznávání vlastní druhé strany.</span><span class="sxs-lookup"><span data-stu-id="fb970-125">A collection of address header used for SOAP messages handled by the custom peer resolver.</span></span>|  
+|[<span data-ttu-id="f600a-121">\<identity ></span><span class="sxs-lookup"><span data-stu-id="f600a-121">\<identity></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|<span data-ttu-id="f600a-122">Určuje identitu pro nakonfigurovaný s tímto elementem překladače vlastní partnerských uzlů.</span><span class="sxs-lookup"><span data-stu-id="f600a-122">Specifies the identity for custom peer resolvers configured with this element.</span></span> <span data-ttu-id="f600a-123">Tento prvek je typu <xref:System.ServiceModel.Configuration.IdentityElement>.</span><span class="sxs-lookup"><span data-stu-id="f600a-123">This element is of type <xref:System.ServiceModel.Configuration.IdentityElement>.</span></span>|  
+|[<span data-ttu-id="f600a-124">\<záhlaví ></span><span class="sxs-lookup"><span data-stu-id="f600a-124">\<headers></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|<span data-ttu-id="f600a-125">Kolekce záhlaví adres, který slouží pro zprávy protokolu SOAP zpracovat rozpoznávání vlastní druhé strany.</span><span class="sxs-lookup"><span data-stu-id="f600a-125">A collection of address header used for SOAP messages handled by the custom peer resolver.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="fb970-126">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="fb970-126">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="f600a-126">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="f600a-126">Parent Elements</span></span>  
   
-|<span data-ttu-id="fb970-127">Prvek</span><span class="sxs-lookup"><span data-stu-id="fb970-127">Element</span></span>|<span data-ttu-id="fb970-128">Popis</span><span class="sxs-lookup"><span data-stu-id="fb970-128">Description</span></span>|  
+|<span data-ttu-id="f600a-127">Prvek</span><span class="sxs-lookup"><span data-stu-id="f600a-127">Element</span></span>|<span data-ttu-id="f600a-128">Popis</span><span class="sxs-lookup"><span data-stu-id="f600a-128">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="fb970-129">\<překladač ></span><span class="sxs-lookup"><span data-stu-id="fb970-129">\<resolver></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|<span data-ttu-id="fb970-130">Mechanismus rozpoznávání partnera, který se používá pro partnerské sítě ID k sadě adres partnerských uzlů, jenž jsou součástí sítě.</span><span class="sxs-lookup"><span data-stu-id="fb970-130">A peer resolver that is used to resolve a peer mesh ID to a set of peer node addresses that represents several nodes that participate in the mesh.</span></span>|  
+|[<span data-ttu-id="f600a-129">\<překladač ></span><span class="sxs-lookup"><span data-stu-id="f600a-129">\<resolver></span></span>](../../../../../docs/framework/configure-apps/file-schema/wcf/resolver.md)|<span data-ttu-id="f600a-130">Mechanismus rozpoznávání partnera, který se používá pro partnerské sítě ID k sadě adres partnerských uzlů, jenž jsou součástí sítě.</span><span class="sxs-lookup"><span data-stu-id="f600a-130">A peer resolver that is used to resolve a peer mesh ID to a set of peer node addresses that represents several nodes that participate in the mesh.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="fb970-131">Poznámky</span><span class="sxs-lookup"><span data-stu-id="fb970-131">Remarks</span></span>  
- <span data-ttu-id="fb970-132">Tento prvek definuje základního nastavení pro vlastní sdílené překladač služby, včetně koncového bodu adresy partnerského uzlu hostování služby a nastavení konkrétní vazby.</span><span class="sxs-lookup"><span data-stu-id="fb970-132">This element defines the basic settings for a custom peer resolver service, including the endpoint address of the peer hosting the service and any specific binding settings.</span></span> <span data-ttu-id="fb970-133">Další informace o vytvoření vlastní mechanismus rozpoznávání najdete v tématu [přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419).</span><span class="sxs-lookup"><span data-stu-id="fb970-133">For more information on creating a custom resolver, see [Adding a Custom Resolver to a PeerChannel Application](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419).</span></span>  
+## <a name="remarks"></a><span data-ttu-id="f600a-131">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f600a-131">Remarks</span></span>  
+ <span data-ttu-id="f600a-132">Tento prvek definuje základního nastavení pro vlastní sdílené překladač služby, včetně koncového bodu adresy partnerského uzlu hostování služby a nastavení konkrétní vazby.</span><span class="sxs-lookup"><span data-stu-id="f600a-132">This element defines the basic settings for a custom peer resolver service, including the endpoint address of the peer hosting the service and any specific binding settings.</span></span> <span data-ttu-id="f600a-133">Další informace o vytvoření vlastní mechanismus rozpoznávání najdete v tématu [přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419).</span><span class="sxs-lookup"><span data-stu-id="f600a-133">For more information on creating a custom resolver, see [Adding a Custom Resolver to a PeerChannel Application](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419).</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fb970-134">Viz také</span><span class="sxs-lookup"><span data-stu-id="fb970-134">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="f600a-134">Viz také</span><span class="sxs-lookup"><span data-stu-id="f600a-134">See Also</span></span>  
  <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>  
  <xref:System.ServiceModel.PeerResolvers.PeerCustomResolverSettings>  
  <xref:System.ServiceModel.Configuration.PeerResolverElement.Custom%2A>  
  <xref:System.ServiceModel.Configuration.PeerCustomResolverElement>  
- [<span data-ttu-id="fb970-135">Překladače partnerských uzlů</span><span class="sxs-lookup"><span data-stu-id="fb970-135">Peer Resolvers</span></span>](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)  
- [<span data-ttu-id="fb970-136">Přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci</span><span class="sxs-lookup"><span data-stu-id="fb970-136">Adding a Custom Resolver to a PeerChannel Application</span></span>](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419)
+ [<span data-ttu-id="f600a-135">Překladače partnerských uzlů</span><span class="sxs-lookup"><span data-stu-id="f600a-135">Peer Resolvers</span></span>](../../../../../docs/framework/wcf/feature-details/peer-resolvers.md)  
+ [<span data-ttu-id="f600a-136">Přidání vlastní mechanismus rozpoznávání pro kanál PeerChannel aplikaci</span><span class="sxs-lookup"><span data-stu-id="f600a-136">Adding a Custom Resolver to a PeerChannel Application</span></span>](https://msdn.microsoft.com/library/12aa3787-2962-439c-ad27-46523c8b0419)
