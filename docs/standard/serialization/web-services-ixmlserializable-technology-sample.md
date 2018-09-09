@@ -3,11 +3,11 @@ title: Ukázka technologie IXmlSerializable webové služby
 ms.date: 03/30/2017
 ms.assetid: 0202d3f1-a50b-427d-a5bb-79208b8f1c22
 ms.openlocfilehash: 343755c062fc13891d84131a5f7682e2e1466a5a
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43866535"
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44252789"
 ---
 # <a name="web-services-ixmlserializable-technology-sample"></a>Ukázka technologie IXmlSerializable webové služby
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/IXmlSerializable.zip.exe)  

@@ -9,11 +9,11 @@ ms.assetid: 5711b225-6aa2-4e4f-9898-19f2d518ad1a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 69e22328c39ae68acc4baff12775b49fbac80696
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43869964"
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44252828"
 ---
 # <a name="reading-xml-data-using-xpathdocument-and-xmldocument"></a>Čtení dat XML pomocí XPathDocument a XmlDocument
 Existují dva způsoby, jak číst v dokumentu XML <xref:System.Xml.XPath?displayProperty=nameWithType> oboru názvů. Jeden je ke čtení dokumentu XML pomocí jen pro čtení <xref:System.Xml.XPath.XPathDocument> třídy a druhý je ke čtení dokumentu XML pomocí upravitelné <xref:System.Xml.XmlDocument> třídy v <xref:System.Xml?displayProperty=nameWithType> oboru názvů.  

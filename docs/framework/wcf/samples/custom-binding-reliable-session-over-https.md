@@ -3,11 +3,11 @@ title: Spolehlivá relace vlastních vazeb přes HTTPS
 ms.date: 03/30/2017
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
 ms.openlocfilehash: fb23dc6e6e2e13d759d29584ed6a990ae769ac8b
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44175488"
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44253114"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Spolehlivá relace vlastních vazeb přes HTTPS
 Tento příklad ukazuje použití zabezpečení přenosu SSL pomocí spolehlivé relace. Spolehlivé relace implementuje protokol zasílání zpráv WS-Reliable. Využitím WS-Security spolehlivých relací může mít zabezpečené stabilní relace. Ale v některých případech můžete místo toho použijte zabezpečení přenosu HTTP s protokolem SSL.  

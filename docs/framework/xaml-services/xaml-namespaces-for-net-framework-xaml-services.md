@@ -3,11 +3,11 @@ title: Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 ms.date: 03/30/2017
 ms.assetid: e4f15f13-c420-4c1e-aeab-9b6f50212047
 ms.openlocfilehash: ac6554cbdeb5bc6e0fe7fb96ea95d0143c293d22
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44137457"
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44227321"
 ---
 # <a name="xaml-namespaces-for-net-framework-xaml-services"></a>Obory názvů jazyka XAML pro technologii .NET Framework XAML Services
 Obor názvů XAML je pojem, který rozšiřuje definici oboru názvů XML. Podobně jako obor názvů XML, můžete definovat obor názvů XAML pomocí `xmlns` atribut v kódu. Obory názvů XAML jsou také reprezentované v datovém proudu uzlu XAML a jiných rozhraní API služeb XAML. Toto téma definuje pojem oboru názvů XAML a popisuje, jak lze definovat obory názvů XAML a jsou používány kontext schématu XAML a další aspekty rozhraní .NET Framework XAML Services.  

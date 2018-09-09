@@ -3,11 +3,11 @@ title: Fronty využívající transakce
 ms.date: 03/30/2017
 ms.assetid: b1b011dd-5e0b-482c-9bb0-9d8727038f14
 ms.openlocfilehash: db6a9686334eefb02b9360827a23ca8363127eb5
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44048026"
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44253192"
 ---
 # <a name="transacted-queues"></a>Fronty využívající transakce
 Tato ukázka předvádí, jak integrovat fronty a transakce ve Windows Workflow Foundation (WF) k vytváření spolehlivých a škálovatelných služeb. A <!--zz <xref:System.Activities.TransactionScope>--> `System.Activities.TransactionScope` je v pracovním postupu klienta použít k odeslání zprávy do fronty v transakci pomocí <xref:System.ServiceModel.NetMsmqBinding>. A <xref:System.ServiceModel.Activities.TransactedReceiveScope> se používá na serveru pro příjem zpráv z fronty a aktualizaci stavu pracovního postupu v rámci stejné transakce.  

@@ -8,11 +8,11 @@ ms.assetid: 7add905b-ff60-4353-af79-5089038d9a08
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1ae3449e37dd5b8ff19dd2f0116a3c2cfa051385
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43885841"
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44253231"
 ---
 # <a name="using-tpl-with-other-asynchronous-patterns"></a>Použití TPL s dalšími asynchronními vzory
 Task Parallel Library je možné s tradiční rozhraní .NET Framework asynchronních programovacích vzorech různými způsoby.  

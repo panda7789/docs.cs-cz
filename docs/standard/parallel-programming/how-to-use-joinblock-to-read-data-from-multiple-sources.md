@@ -13,11 +13,11 @@ ms.assetid: e9c1ada4-ac57-4704-87cb-2f5117f8151d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c49f7ad5162c9e2759ec8afed217451b4bcf04ff
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43892649"
+ms.lasthandoff: 09/09/2018
+ms.locfileid: "44227620"
 ---
 # <a name="how-to-use-joinblock-to-read-data-from-multiple-sources"></a>Postupy: Načítání dat z více zdrojů pomocí třídy JoinBlock
 Tento dokument popisuje, jak používat <xref:System.Threading.Tasks.Dataflow.JoinBlock%602> třídy provádět operace, když jsou k dispozici data z různých zdrojů. Také ukazuje, jak použít bez metody greedy režim povolit více bloků spojení sdílet zdroje dat efektivněji.
