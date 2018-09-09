@@ -12,11 +12,11 @@ ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ee61d01acbf9c409eaedc04ff3e949908e1d595e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43867852"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44225133"
 ---
 # <a name="best-practices-for-exceptions"></a>Doporučené postupy pro výjimky
 
