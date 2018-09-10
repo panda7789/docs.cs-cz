@@ -3,11 +3,11 @@ title: 'Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (C
 ms.date: 07/20/2015
 ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
 ms.openlocfilehash: 09ce574c68cbf11c0ee50df663692fd207038758
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43734233"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44069838"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Postupy: dotazu na duplicitní soubory v adresářovém stromu (LINQ) (C#)
 Někdy může nacházet v více složek soubory, které mají stejný název. Například v instalační složce aplikace Visual Studio, mají několik složek souboru readme.htm. Tento příklad ukazuje, jak se dotázat na tyto duplicitní názvy zadané kořenové složce. Druhý příklad ukazuje, jak provádět dotazy pro soubory, jejichž velikost a také odpovídat času vytvoření.  
