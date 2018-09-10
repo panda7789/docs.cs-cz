@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
 ms.openlocfilehash: 52c5dba1a21b0e8d8e5af1dc159941e5f4b4aa5f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43879702"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44221672"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL serveru
 Izolace snímku vylepšuje souběžnosti pro aplikace s online zpracováním transakcí.  
