@@ -8,11 +8,11 @@ helpviewer_keywords:
 - uint keyword [C#]
 ms.assetid: e93e42c6-ec72-4b0b-89df-2fd8d36f7a7b
 ms.openlocfilehash: e75abf8ac356eaed6c54dd0309316fb6755bf635
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43661266"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43858301"
 ---
 # <a name="uint-c-reference"></a>uint (Referenční dokumentace jazyka C#)
 

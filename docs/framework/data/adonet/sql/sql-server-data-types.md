@@ -3,11 +3,11 @@ title: SQL Server Data typy a ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 81b43550-23e8-43bb-b460-7eb8ac825c33
 ms.openlocfilehash: 878bbe41f259f1e50cd0a41669c7a352e78bc0f1
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
-ms.translationtype: MT
+ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43739617"
+ms.lasthandoff: 09/07/2018
+ms.locfileid: "44097032"
 ---
 # <a name="sql-server-data-types-and-adonet"></a>SQL Server Data typy a ADO.NET
 SQL Server a rozhraní .NET Framework jsou založeny na jiný typ systémy, které může způsobit ztrátu dat. K zachování integrity dat, zprostředkovatele dat .NET Framework pro SQL Server (<xref:System.Data.SqlClient>) poskytuje typy přístupové metody pro práci s daty formátu SQL Server. Výčty v můžete použít <xref:System.Data.SqlDbType> třídy k určení <xref:System.Data.SqlClient.SqlParameter> datové typy.  

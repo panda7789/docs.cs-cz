@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
 ms.openlocfilehash: cdc3e42adcb2c7eae52aab0b14d0f9c6a822eeea
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
-ms.translationtype: MT
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43417709"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43881974"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Základy formulářové aplikace Windows (Visual Basic)
 Důležitou součástí jazyka Visual Basic je schopnost vytvářet aplikace Windows Forms, které se spouštějí místně v počítačích uživatelů. Visual Studio můžete použít k vytvoření aplikace a uživatelské rozhraní pomocí Windows Forms. Aplikace modelu Windows Forms jsou založeny na třídách z <xref:System.Windows.Forms> oboru názvů.  

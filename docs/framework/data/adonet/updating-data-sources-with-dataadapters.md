@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
 ms.openlocfilehash: c334fb695f80bcac19167e9347d27d40f5139580
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43565429"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "44038254"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>Aktualizace zdrojů dat pomocí adaptérů dat
 `Update` Metodu <xref:System.Data.Common.DataAdapter> je volána k vyřešení změn z <xref:System.Data.DataSet> zpět do zdroje dat. `Update` Metoda, třeba `Fill` metoda, přebírá jako argumenty instance `DataSet`a volitelně <xref:System.Data.DataTable> objektu nebo `DataTable` název. `DataSet` Instance je `DataSet` , která obsahuje změny, které byly provedeny, a `DataTable` identifikuje tabulky, ze kterých se mají obnovit změny. Pokud ne `DataTable` je zadán první `DataTable` v `DataSet` se používá.  

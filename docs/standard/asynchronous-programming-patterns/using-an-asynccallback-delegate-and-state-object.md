@@ -14,11 +14,11 @@ ms.assetid: e3e5475d-c5e9-43f0-928e-d18df8ca1f1d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 46b7839a6bd0086a8ec82e416cdf7aed05707390
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44061181"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44213498"
 ---
 # <a name="using-an-asynccallback-delegate-and-state-object"></a>Použití delegáta AsyncCallback a stavového objektu
 Při použití <xref:System.AsyncCallback> delegovat ke zpracování výsledků asynchronních operací v samostatném vlákně, můžete použít stav objektu k předávání informací mezi zpětných dotazů a k načítání konečný výsledek. Toto téma popisuje tento postup tak, že rozbalíte v příkladu v [použití delegáta AsyncCallback k ukončení asynchronní operace](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md).  

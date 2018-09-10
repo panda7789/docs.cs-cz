@@ -30,11 +30,11 @@ ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: dd0fef0e8a2c4b94cd5dd7beb140e669c52a07a8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43554025"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43862313"
 ---
 # <a name="profiling-overview"></a>Přehled profilace
 <a name="top"></a> Profiler je nástroj, který sleduje spuštění jiné aplikace. Common language runtime (CLR) profiler je dynamická knihovna (DLL), který obsahuje funkce, které přijímají zprávy z a odesílání zpráv do CLR pomocí Profilování rozhraní API. Knihovna DLL profileru je načtena modulem CLR za běhu.  
