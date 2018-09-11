@@ -10,24 +10,24 @@ helpviewer_keywords:
 - Viewport3D [WPF]
 ms.assetid: 42bfbd99-c7c6-43f1-940b-90448faa412e
 ms.openlocfilehash: 297fe17b8844f7542255afcfe442fbf9b7a0d59d
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192701"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44352947"
 ---
-# <a name="how-to-hit-test-in-a-viewport3d"></a><span data-ttu-id="f1666-102">Postupy: Spuštění testu v objektu Viewport3D</span><span class="sxs-lookup"><span data-stu-id="f1666-102">How to: Hit Test in a Viewport3D</span></span>
-<span data-ttu-id="f1666-103">Tento příklad ukazuje, jak spuštění testu pro 3D vizuální prvky v <xref:System.Windows.Controls.Viewport3D>.</span><span class="sxs-lookup"><span data-stu-id="f1666-103">This example shows how to hit test for 3D Visuals in a <xref:System.Windows.Controls.Viewport3D>.</span></span>  
+# <a name="how-to-hit-test-in-a-viewport3d"></a><span data-ttu-id="20d60-102">Postupy: Spuštění testu v objektu Viewport3D</span><span class="sxs-lookup"><span data-stu-id="20d60-102">How to: Hit Test in a Viewport3D</span></span>
+<span data-ttu-id="20d60-103">Tento příklad ukazuje, jak spuštění testu pro 3D vizuální prvky v <xref:System.Windows.Controls.Viewport3D>.</span><span class="sxs-lookup"><span data-stu-id="20d60-103">This example shows how to hit test for 3D Visuals in a <xref:System.Windows.Controls.Viewport3D>.</span></span>  
   
- <span data-ttu-id="f1666-104">Protože <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> vrátí informace o vytváření 2D a 3D, je možné iterovat přes výsledky testů číst pouze 3D výsledky.</span><span class="sxs-lookup"><span data-stu-id="f1666-104">Because <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> returns 2D and 3D information, it is possible to iterate through the test results to read only 3D results.</span></span>  
+ <span data-ttu-id="20d60-104">Protože <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> vrátí informace o vytváření 2D a 3D, je možné iterovat přes výsledky testů číst pouze 3D výsledky.</span><span class="sxs-lookup"><span data-stu-id="20d60-104">Because <xref:System.Windows.Media.VisualTreeHelper.HitTest%2A> returns 2D and 3D information, it is possible to iterate through the test results to read only 3D results.</span></span>  
   
  [!code-csharp[HitTest3D#HitTest3D3DN4](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/Window1.xaml.cs#hittest3d3dn4)]
  [!code-vb[HitTest3D#HitTest3D3DN4](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HitTest3D/visualbasic/window1.xaml.vb#hittest3d3dn4)]  
   
- <span data-ttu-id="f1666-105"><xref:System.Windows.Media.HitTestResultBehavior> v následujícím kódu určuje způsob zpracování výsledků ověření pozice.</span><span class="sxs-lookup"><span data-stu-id="f1666-105">The <xref:System.Windows.Media.HitTestResultBehavior> in the following code determines how the hit test results are processed.</span></span>  <span data-ttu-id="f1666-106">`UpdateResultInfo` a `UpdateMaterial` místně definované metody.</span><span class="sxs-lookup"><span data-stu-id="f1666-106">`UpdateResultInfo` and `UpdateMaterial` are locally defined methods.</span></span>  
+ <span data-ttu-id="20d60-105"><xref:System.Windows.Media.HitTestResultBehavior> v následujícím kódu určuje způsob zpracování výsledků ověření pozice.</span><span class="sxs-lookup"><span data-stu-id="20d60-105">The <xref:System.Windows.Media.HitTestResultBehavior> in the following code determines how the hit test results are processed.</span></span>  <span data-ttu-id="20d60-106">`UpdateResultInfo` a `UpdateMaterial` místně definované metody.</span><span class="sxs-lookup"><span data-stu-id="20d60-106">`UpdateResultInfo` and `UpdateMaterial` are locally defined methods.</span></span>  
   
  [!code-csharp[HitTest3D#HitTest3D3DN5](../../../../samples/snippets/csharp/VS_Snippets_Wpf/HitTest3D/CSharp/Window1.xaml.cs#hittest3d3dn5)]
  [!code-vb[HitTest3D#HitTest3D3DN5](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/HitTest3D/visualbasic/window1.xaml.vb#hittest3d3dn5)]  
   
-## <a name="see-also"></a><span data-ttu-id="f1666-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="f1666-107">See Also</span></span>  
- [<span data-ttu-id="f1666-108">Spuštění testování ukázkové 3D</span><span class="sxs-lookup"><span data-stu-id="f1666-108">3-D Hit Testing Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=159959)
+## <a name="see-also"></a><span data-ttu-id="20d60-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="20d60-107">See Also</span></span>  
+ [<span data-ttu-id="20d60-108">Spuštění testování ukázkové 3D</span><span class="sxs-lookup"><span data-stu-id="20d60-108">3-D Hit Testing Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=159959)

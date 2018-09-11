@@ -3,32 +3,32 @@ title: 'Smyčky: Výraz while...do (F#)'
 description: Naleznete v tématu jak při... proveďte použit výraz provádět iterativní spuštění (opakování), zatímco je zadaný testovací podmínka pravdivá.
 ms.date: 05/16/2016
 ms.openlocfilehash: 5cf4461669221f91cb50e238c25494f03a10bbc2
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44208503"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44352554"
 ---
-# <a name="loops-whiledo-expression"></a><span data-ttu-id="a8883-103">Smyčky: Výraz while...do</span><span class="sxs-lookup"><span data-stu-id="a8883-103">Loops: while...do Expression</span></span>
+# <a name="loops-whiledo-expression"></a><span data-ttu-id="92d7a-103">Smyčky: Výraz while...do</span><span class="sxs-lookup"><span data-stu-id="92d7a-103">Loops: while...do Expression</span></span>
 
-<span data-ttu-id="a8883-104">`while...do` Použit výraz provádět iterativní spuštění (opakování), zatímco je zadaný testovací podmínka pravdivá.</span><span class="sxs-lookup"><span data-stu-id="a8883-104">The `while...do` expression is used to perform iterative execution (looping) while a specified test condition is true.</span></span>
+<span data-ttu-id="92d7a-104">`while...do` Použit výraz provádět iterativní spuštění (opakování), zatímco je zadaný testovací podmínka pravdivá.</span><span class="sxs-lookup"><span data-stu-id="92d7a-104">The `while...do` expression is used to perform iterative execution (looping) while a specified test condition is true.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="a8883-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a8883-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="92d7a-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="92d7a-105">Syntax</span></span>
 
 ```fsharp
 while test-expression do
     body-expression
 ```
 
-## <a name="remarks"></a><span data-ttu-id="a8883-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a8883-106">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="92d7a-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="92d7a-106">Remarks</span></span>
 
-<span data-ttu-id="a8883-107">*Výrazu testu* je vyhodnocen; Pokud je `true`, *výraz těla* provádí a testovací výraz je vyhodnocen znovu.</span><span class="sxs-lookup"><span data-stu-id="a8883-107">The *test-expression* is evaluated; if it is `true`, the *body-expression* is executed and the test expression is evaluated again.</span></span> <span data-ttu-id="a8883-108">*Výraz těla* musí mít typ `unit`.</span><span class="sxs-lookup"><span data-stu-id="a8883-108">The *body-expression* must have type `unit`.</span></span> <span data-ttu-id="a8883-109">Pokud je test výraz `false`, konce iterace.</span><span class="sxs-lookup"><span data-stu-id="a8883-109">If the test expression is `false`, the iteration ends.</span></span>
+<span data-ttu-id="92d7a-107">*Výrazu testu* je vyhodnocen; Pokud je `true`, *výraz těla* provádí a testovací výraz je vyhodnocen znovu.</span><span class="sxs-lookup"><span data-stu-id="92d7a-107">The *test-expression* is evaluated; if it is `true`, the *body-expression* is executed and the test expression is evaluated again.</span></span> <span data-ttu-id="92d7a-108">*Výraz těla* musí mít typ `unit`.</span><span class="sxs-lookup"><span data-stu-id="92d7a-108">The *body-expression* must have type `unit`.</span></span> <span data-ttu-id="92d7a-109">Pokud je test výraz `false`, konce iterace.</span><span class="sxs-lookup"><span data-stu-id="92d7a-109">If the test expression is `false`, the iteration ends.</span></span>
 
-<span data-ttu-id="a8883-110">Následující příklad ukazuje použití `while...do` výrazu.</span><span class="sxs-lookup"><span data-stu-id="a8883-110">The following example illustrates the use of the `while...do` expression.</span></span>
+<span data-ttu-id="92d7a-110">Následující příklad ukazuje použití `while...do` výrazu.</span><span class="sxs-lookup"><span data-stu-id="92d7a-110">The following example illustrates the use of the `while...do` expression.</span></span>
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-2/snippet5301.fs)]
 
-<span data-ttu-id="a8883-111">Výstup předchozího kódu je datový proud náhodných čísel od 1 do 20, poslední z nich je 10.</span><span class="sxs-lookup"><span data-stu-id="a8883-111">The output of the previous code is a stream of random numbers between 1 and 20, the last of which is 10.</span></span>
+<span data-ttu-id="92d7a-111">Výstup předchozího kódu je datový proud náhodných čísel od 1 do 20, poslední z nich je 10.</span><span class="sxs-lookup"><span data-stu-id="92d7a-111">The output of the previous code is a stream of random numbers between 1 and 20, the last of which is 10.</span></span>
 
 ```
 13 19 8 18 16 2 10
@@ -36,10 +36,10 @@ Found a 10!
 ```
 
 >[!NOTE]
-<span data-ttu-id="a8883-112">Můžete použít `while...do` ve výrazech pořadí a jiných výrazech výpočtu se v takovém případě přizpůsobenou verzi `while...do` výraz je použit.</span><span class="sxs-lookup"><span data-stu-id="a8883-112">You can use `while...do` in sequence expressions and other computation expressions, in which case a customized version of the `while...do` expression is used.</span></span> <span data-ttu-id="a8883-113">Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazech výpočtu](computation-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="a8883-113">For more information, see [Sequences](sequences.md), [Asynchronous Workflows](asynchronous-workflows.md), and [Computation Expressions](computation-expressions.md).</span></span>
+<span data-ttu-id="92d7a-112">Můžete použít `while...do` ve výrazech pořadí a jiných výrazech výpočtu se v takovém případě přizpůsobenou verzi `while...do` výraz je použit.</span><span class="sxs-lookup"><span data-stu-id="92d7a-112">You can use `while...do` in sequence expressions and other computation expressions, in which case a customized version of the `while...do` expression is used.</span></span> <span data-ttu-id="92d7a-113">Další informace najdete v tématu [pořadí](sequences.md), [asynchronní pracovní postupy](asynchronous-workflows.md), a [výrazech výpočtu](computation-expressions.md).</span><span class="sxs-lookup"><span data-stu-id="92d7a-113">For more information, see [Sequences](sequences.md), [Asynchronous Workflows](asynchronous-workflows.md), and [Computation Expressions](computation-expressions.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a8883-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a8883-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="92d7a-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="92d7a-114">See also</span></span>
 
-- [<span data-ttu-id="a8883-115">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="a8883-115">F# Language Reference</span></span>](index.md)
-- [<span data-ttu-id="a8883-116">Smyčky: `for...in` výraz</span><span class="sxs-lookup"><span data-stu-id="a8883-116">Loops: `for...in` Expression</span></span>](loops-for-in-expression.md)
-- [<span data-ttu-id="a8883-117">Smyčky: `for...to` výraz</span><span class="sxs-lookup"><span data-stu-id="a8883-117">Loops: `for...to` Expression</span></span>](loops-for-to-expression.md)
+- [<span data-ttu-id="92d7a-115">Referenční dokumentace jazyka F#</span><span class="sxs-lookup"><span data-stu-id="92d7a-115">F# Language Reference</span></span>](index.md)
+- [<span data-ttu-id="92d7a-116">Smyčky: `for...in` výraz</span><span class="sxs-lookup"><span data-stu-id="92d7a-116">Loops: `for...in` Expression</span></span>](loops-for-in-expression.md)
+- [<span data-ttu-id="92d7a-117">Smyčky: `for...to` výraz</span><span class="sxs-lookup"><span data-stu-id="92d7a-117">Loops: `for...to` Expression</span></span>](loops-for-to-expression.md)

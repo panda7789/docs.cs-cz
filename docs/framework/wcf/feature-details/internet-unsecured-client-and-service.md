@@ -8,42 +8,42 @@ ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: b2c71af169018f272a6ca538bba9191f9ddbc0dd
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44221997"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44342420"
 ---
-# <a name="internet-unsecured-client-and-service"></a><span data-ttu-id="ed1f2-102">Nezabezpečený internetový klient a služba</span><span class="sxs-lookup"><span data-stu-id="ed1f2-102">Internet Unsecured Client and Service</span></span>
-<span data-ttu-id="ed1f2-103">Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta Windows Communication Foundation (WCF) a služby.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-103">The following illustration shows an example of a public, unsecured Windows Communication Foundation (WCF) client and service.</span></span>  
+# <a name="internet-unsecured-client-and-service"></a><span data-ttu-id="b6743-102">Nezabezpečený internetový klient a služba</span><span class="sxs-lookup"><span data-stu-id="b6743-102">Internet Unsecured Client and Service</span></span>
+<span data-ttu-id="b6743-103">Následující obrázek znázorňuje příklad veřejné, zabezpečená klienta Windows Communication Foundation (WCF) a služby.</span><span class="sxs-lookup"><span data-stu-id="b6743-103">The following illustration shows an example of a public, unsecured Windows Communication Foundation (WCF) client and service.</span></span>  
   
- <span data-ttu-id="ed1f2-104">![Zabezpečená scénář cleint a službu Internet](../../../../docs/framework/wcf/feature-details/media/publicunsecured.gif "publicUnsecured")</span><span class="sxs-lookup"><span data-stu-id="ed1f2-104">![Unsecured Internet cleint and service scenario](../../../../docs/framework/wcf/feature-details/media/publicunsecured.gif "publicUnsecured")</span></span>  
+ <span data-ttu-id="b6743-104">![Zabezpečená scénář cleint a službu Internet](../../../../docs/framework/wcf/feature-details/media/publicunsecured.gif "publicUnsecured")</span><span class="sxs-lookup"><span data-stu-id="b6743-104">![Unsecured Internet cleint and service scenario](../../../../docs/framework/wcf/feature-details/media/publicunsecured.gif "publicUnsecured")</span></span>  
   
-|<span data-ttu-id="ed1f2-105">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="ed1f2-105">Characteristic</span></span>|<span data-ttu-id="ed1f2-106">Popis</span><span class="sxs-lookup"><span data-stu-id="ed1f2-106">Description</span></span>|  
+|<span data-ttu-id="b6743-105">Vlastnost</span><span class="sxs-lookup"><span data-stu-id="b6743-105">Characteristic</span></span>|<span data-ttu-id="b6743-106">Popis</span><span class="sxs-lookup"><span data-stu-id="b6743-106">Description</span></span>|  
 |--------------------|-----------------|  
-|<span data-ttu-id="ed1f2-107">Režim zabezpečení</span><span class="sxs-lookup"><span data-stu-id="ed1f2-107">Security Mode</span></span>|<span data-ttu-id="ed1f2-108">Žádné</span><span class="sxs-lookup"><span data-stu-id="ed1f2-108">None</span></span>|  
-|<span data-ttu-id="ed1f2-109">Přenos</span><span class="sxs-lookup"><span data-stu-id="ed1f2-109">Transport</span></span>|<span data-ttu-id="ed1f2-110">HTTP</span><span class="sxs-lookup"><span data-stu-id="ed1f2-110">HTTP</span></span>|  
-|<span data-ttu-id="ed1f2-111">Vazba</span><span class="sxs-lookup"><span data-stu-id="ed1f2-111">Binding</span></span>|<span data-ttu-id="ed1f2-112"><xref:System.ServiceModel.BasicHttpBinding> v kódu nebo [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-112"><xref:System.ServiceModel.BasicHttpBinding> in code, or the [\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element in configuration.</span></span>|  
-|<span data-ttu-id="ed1f2-113">Interoperabilita</span><span class="sxs-lookup"><span data-stu-id="ed1f2-113">Interoperability</span></span>|<span data-ttu-id="ed1f2-114">Stávající klienty webové služby a služby</span><span class="sxs-lookup"><span data-stu-id="ed1f2-114">With existing Web service clients and services</span></span>|  
-|<span data-ttu-id="ed1f2-115">Ověřování</span><span class="sxs-lookup"><span data-stu-id="ed1f2-115">Authentication</span></span>|<span data-ttu-id="ed1f2-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="ed1f2-116">None</span></span>|  
-|<span data-ttu-id="ed1f2-117">Integrita</span><span class="sxs-lookup"><span data-stu-id="ed1f2-117">Integrity</span></span>|<span data-ttu-id="ed1f2-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="ed1f2-118">None</span></span>|  
-|<span data-ttu-id="ed1f2-119">Důvěrnost</span><span class="sxs-lookup"><span data-stu-id="ed1f2-119">Confidentiality</span></span>|<span data-ttu-id="ed1f2-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="ed1f2-120">None</span></span>|  
+|<span data-ttu-id="b6743-107">Režim zabezpečení</span><span class="sxs-lookup"><span data-stu-id="b6743-107">Security Mode</span></span>|<span data-ttu-id="b6743-108">Žádné</span><span class="sxs-lookup"><span data-stu-id="b6743-108">None</span></span>|  
+|<span data-ttu-id="b6743-109">Přenos</span><span class="sxs-lookup"><span data-stu-id="b6743-109">Transport</span></span>|<span data-ttu-id="b6743-110">HTTP</span><span class="sxs-lookup"><span data-stu-id="b6743-110">HTTP</span></span>|  
+|<span data-ttu-id="b6743-111">Vazba</span><span class="sxs-lookup"><span data-stu-id="b6743-111">Binding</span></span>|<span data-ttu-id="b6743-112"><xref:System.ServiceModel.BasicHttpBinding> v kódu nebo [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element v konfiguraci.</span><span class="sxs-lookup"><span data-stu-id="b6743-112"><xref:System.ServiceModel.BasicHttpBinding> in code, or the [\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) element in configuration.</span></span>|  
+|<span data-ttu-id="b6743-113">Interoperabilita</span><span class="sxs-lookup"><span data-stu-id="b6743-113">Interoperability</span></span>|<span data-ttu-id="b6743-114">Stávající klienty webové služby a služby</span><span class="sxs-lookup"><span data-stu-id="b6743-114">With existing Web service clients and services</span></span>|  
+|<span data-ttu-id="b6743-115">Ověřování</span><span class="sxs-lookup"><span data-stu-id="b6743-115">Authentication</span></span>|<span data-ttu-id="b6743-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="b6743-116">None</span></span>|  
+|<span data-ttu-id="b6743-117">Integrita</span><span class="sxs-lookup"><span data-stu-id="b6743-117">Integrity</span></span>|<span data-ttu-id="b6743-118">Žádné</span><span class="sxs-lookup"><span data-stu-id="b6743-118">None</span></span>|  
+|<span data-ttu-id="b6743-119">Důvěrnost</span><span class="sxs-lookup"><span data-stu-id="b6743-119">Confidentiality</span></span>|<span data-ttu-id="b6743-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="b6743-120">None</span></span>|  
   
-## <a name="service"></a><span data-ttu-id="ed1f2-121">Služba</span><span class="sxs-lookup"><span data-stu-id="ed1f2-121">Service</span></span>  
- <span data-ttu-id="ed1f2-122">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-122">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="ed1f2-123">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="ed1f2-123">Do one of the following:</span></span>  
+## <a name="service"></a><span data-ttu-id="b6743-121">Služba</span><span class="sxs-lookup"><span data-stu-id="b6743-121">Service</span></span>  
+ <span data-ttu-id="b6743-122">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="b6743-122">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="b6743-123">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="b6743-123">Do one of the following:</span></span>  
   
--   <span data-ttu-id="ed1f2-124">Vytvoření samostatné služby pomocí kódu bez konfigurace.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-124">Create a stand-alone service using the code with no configuration.</span></span>  
+-   <span data-ttu-id="b6743-124">Vytvoření samostatné služby pomocí kódu bez konfigurace.</span><span class="sxs-lookup"><span data-stu-id="b6743-124">Create a stand-alone service using the code with no configuration.</span></span>  
   
--   <span data-ttu-id="ed1f2-125">Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-125">Create a service using the supplied configuration, but do not define any endpoints.</span></span>  
+-   <span data-ttu-id="b6743-125">Vytvoření služby pomocí zadaných konfigurací, ale nedefinují žádné koncové body.</span><span class="sxs-lookup"><span data-stu-id="b6743-125">Create a service using the supplied configuration, but do not define any endpoints.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="ed1f2-126">Kód</span><span class="sxs-lookup"><span data-stu-id="ed1f2-126">Code</span></span>  
- <span data-ttu-id="ed1f2-127">Následující kód ukazuje, jak vytvořit koncový bod se zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-127">The following code shows how to create an endpoint with no security.</span></span> <span data-ttu-id="ed1f2-128">Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> má režim zabezpečení nastavený na <xref:System.ServiceModel.BasicHttpSecurityMode.None>.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-128">By default, the <xref:System.ServiceModel.BasicHttpBinding> has the security mode set to <xref:System.ServiceModel.BasicHttpSecurityMode.None>.</span></span>  
+### <a name="code"></a><span data-ttu-id="b6743-126">Kód</span><span class="sxs-lookup"><span data-stu-id="b6743-126">Code</span></span>  
+ <span data-ttu-id="b6743-127">Následující kód ukazuje, jak vytvořit koncový bod se zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="b6743-127">The following code shows how to create an endpoint with no security.</span></span> <span data-ttu-id="b6743-128">Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> má režim zabezpečení nastavený na <xref:System.ServiceModel.BasicHttpSecurityMode.None>.</span><span class="sxs-lookup"><span data-stu-id="b6743-128">By default, the <xref:System.ServiceModel.BasicHttpBinding> has the security mode set to <xref:System.ServiceModel.BasicHttpSecurityMode.None>.</span></span>  
   
  [!code-csharp[C_UnsecuredService#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#1)]
  [!code-vb[C_UnsecuredService#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredservice/vb/source.vb#1)]  
   
-### <a name="service-configuration"></a><span data-ttu-id="ed1f2-129">Konfigurace služby</span><span class="sxs-lookup"><span data-stu-id="ed1f2-129">Service Configuration</span></span>  
- <span data-ttu-id="ed1f2-130">Následující kód nastaví stejný koncový bod pomocí konfigurace.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-130">The following code sets up the same endpoint using configuration.</span></span>  
+### <a name="service-configuration"></a><span data-ttu-id="b6743-129">Konfigurace služby</span><span class="sxs-lookup"><span data-stu-id="b6743-129">Service Configuration</span></span>  
+ <span data-ttu-id="b6743-130">Následující kód nastaví stejný koncový bod pomocí konfigurace.</span><span class="sxs-lookup"><span data-stu-id="b6743-130">The following code sets up the same endpoint using configuration.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -69,24 +69,24 @@ ms.locfileid: "44221997"
 </configuration>  
 ```  
   
-## <a name="client"></a><span data-ttu-id="ed1f2-131">Klient</span><span class="sxs-lookup"><span data-stu-id="ed1f2-131">Client</span></span>  
- <span data-ttu-id="ed1f2-132">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-132">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="ed1f2-133">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="ed1f2-133">Do one of the following:</span></span>  
+## <a name="client"></a><span data-ttu-id="b6743-131">Klient</span><span class="sxs-lookup"><span data-stu-id="b6743-131">Client</span></span>  
+ <span data-ttu-id="b6743-132">Následující kód a konfigurace mají běžet nezávisle.</span><span class="sxs-lookup"><span data-stu-id="b6743-132">The following code and configuration are meant to run independently.</span></span> <span data-ttu-id="b6743-133">Proveďte jednu z těchto akcí:</span><span class="sxs-lookup"><span data-stu-id="b6743-133">Do one of the following:</span></span>  
   
--   <span data-ttu-id="ed1f2-134">Vytvoření samostatného klienta pomocí kódu (a kód klienta).</span><span class="sxs-lookup"><span data-stu-id="ed1f2-134">Create a stand-alone client using the code (and client code).</span></span>  
+-   <span data-ttu-id="b6743-134">Vytvoření samostatného klienta pomocí kódu (a kód klienta).</span><span class="sxs-lookup"><span data-stu-id="b6743-134">Create a stand-alone client using the code (and client code).</span></span>  
   
--   <span data-ttu-id="ed1f2-135">Vytvoření klienta, která nedefinuje žádné adresy koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-135">Create a client that does not define any endpoint addresses.</span></span> <span data-ttu-id="ed1f2-136">Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-136">Instead, use the client constructor that takes the configuration name as an argument.</span></span> <span data-ttu-id="ed1f2-137">Příklad:</span><span class="sxs-lookup"><span data-stu-id="ed1f2-137">For example:</span></span>  
+-   <span data-ttu-id="b6743-135">Vytvoření klienta, která nedefinuje žádné adresy koncových bodů.</span><span class="sxs-lookup"><span data-stu-id="b6743-135">Create a client that does not define any endpoint addresses.</span></span> <span data-ttu-id="b6743-136">Místo toho použijte klienta konstruktor, který přijímá jako argument Název konfigurace.</span><span class="sxs-lookup"><span data-stu-id="b6743-136">Instead, use the client constructor that takes the configuration name as an argument.</span></span> <span data-ttu-id="b6743-137">Příklad:</span><span class="sxs-lookup"><span data-stu-id="b6743-137">For example:</span></span>  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
-### <a name="code"></a><span data-ttu-id="ed1f2-138">Kód</span><span class="sxs-lookup"><span data-stu-id="ed1f2-138">Code</span></span>  
- <span data-ttu-id="ed1f2-139">Následující kód ukazuje základní klienta WCF, který přistupuje k nezabezpečené koncový bod.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-139">The following code shows a basic WCF client that accesses an unsecured endpoint.</span></span>  
+### <a name="code"></a><span data-ttu-id="b6743-138">Kód</span><span class="sxs-lookup"><span data-stu-id="b6743-138">Code</span></span>  
+ <span data-ttu-id="b6743-139">Následující kód ukazuje základní klienta WCF, který přistupuje k nezabezpečené koncový bod.</span><span class="sxs-lookup"><span data-stu-id="b6743-139">The following code shows a basic WCF client that accesses an unsecured endpoint.</span></span>  
   
  [!code-csharp[C_UnsecuredClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#1)]
  [!code-vb[C_UnsecuredClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#1)]  
   
-### <a name="client-configuration"></a><span data-ttu-id="ed1f2-140">Konfigurace klienta</span><span class="sxs-lookup"><span data-stu-id="ed1f2-140">Client Configuration</span></span>  
- <span data-ttu-id="ed1f2-141">Následující kód konfiguruje klienta.</span><span class="sxs-lookup"><span data-stu-id="ed1f2-141">The following code configures the client.</span></span>  
+### <a name="client-configuration"></a><span data-ttu-id="b6743-140">Konfigurace klienta</span><span class="sxs-lookup"><span data-stu-id="b6743-140">Client Configuration</span></span>  
+ <span data-ttu-id="b6743-141">Následující kód konfiguruje klienta.</span><span class="sxs-lookup"><span data-stu-id="b6743-141">The following code configures the client.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -111,7 +111,7 @@ ms.locfileid: "44221997"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ed1f2-142">Viz také</span><span class="sxs-lookup"><span data-stu-id="ed1f2-142">See Also</span></span>  
- [<span data-ttu-id="ed1f2-143">Běžné scénáře zabezpečení</span><span class="sxs-lookup"><span data-stu-id="ed1f2-143">Common Security Scenarios</span></span>](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
- [<span data-ttu-id="ed1f2-144">Přehled zabezpečení</span><span class="sxs-lookup"><span data-stu-id="ed1f2-144">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)  
- [<span data-ttu-id="ed1f2-145">Model zabezpečení pro Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="ed1f2-145">Security Model for Windows Server App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="b6743-142">Viz také</span><span class="sxs-lookup"><span data-stu-id="b6743-142">See Also</span></span>  
+ [<span data-ttu-id="b6743-143">Běžné scénáře zabezpečení</span><span class="sxs-lookup"><span data-stu-id="b6743-143">Common Security Scenarios</span></span>](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)  
+ [<span data-ttu-id="b6743-144">Přehled zabezpečení</span><span class="sxs-lookup"><span data-stu-id="b6743-144">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+ [<span data-ttu-id="b6743-145">Model zabezpečení pro Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="b6743-145">Security Model for Windows Server App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
