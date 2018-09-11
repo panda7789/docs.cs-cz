@@ -11,11 +11,11 @@ helpviewer_keywords:
 - XAML [XAML Services], x:Key attribute
 ms.assetid: 1985cd45-f197-42d5-b75e-886add64b248
 ms.openlocfilehash: f77f0a952224f79ee95a755cb848a4f8b68c9602
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44274126"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44368465"
 ---
 # <a name="xkey-directive"></a>x:Key – direktiva
 Jednoznačně identifikuje elementy, které jsou vytvořeny a odkazovány ve slovníku definice XAML. Přidání `x:Key` hodnota prvku objektu XAML je nejběžnějším způsobem identifikace prostředku ve slovníku prostředků, například v WPF <xref:System.Windows.ResourceDictionary>.  

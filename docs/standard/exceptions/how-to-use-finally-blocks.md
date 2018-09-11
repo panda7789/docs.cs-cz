@@ -16,11 +16,11 @@ ms.assetid: 4b9c0137-04af-4468-91d1-b9014df8ddd2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 213ab53c68a37ac0ba5f337a1d6fc32bfe6f8989
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44190212"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44367584"
 ---
 # <a name="how-to-use-finally-blocks"></a>Postup použití bloku finally.
 

@@ -11,11 +11,11 @@ helpviewer_keywords:
 - templates [WPF]
 ms.assetid: c19049bb-5ceb-492d-afd2-751dca0ed8e3
 ms.openlocfilehash: 58d65ee9842270b07a76ff438c975955689197e9
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44198176"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44353613"
 ---
 # <a name="control-styles-and-templates"></a>Styly a šablony ovládacích prvků
 Ovládací prvky ve Windows Presentation Foundation (WPF) mít <xref:System.Windows.Controls.ControlTemplate> vizuálním stromu ovládacího prvku, který obsahuje. Úpravou můžete změnit strukturu a vzhled ovládacího prvku <xref:System.Windows.Controls.ControlTemplate> ovládacího prvku. Neexistuje žádný způsob, jak nahradit pouze část vizuálním stromu ovládacího prvku; Chcete-li změnit vizuálním stromu ovládacího prvku je nutné nastavit <xref:System.Windows.Controls.Control.Template%2A> vlastnost ovládacího prvku na jeho nové a kompletní <xref:System.Windows.Controls.ControlTemplate>.  

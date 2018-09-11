@@ -10,11 +10,11 @@ ms.assetid: 2f25e522-456a-48c3-8a53-e5f39275649f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0d3d0e2dbd57d9581d1c8b0ca42d1e9d556d8905
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44198501"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44354188"
 ---
 # <a name="version-compatibility-in-the-net-framework"></a>Kompatibilita verzí v rozhraní .NET Framework
 Zpětná kompatibilita znamená, že aplikace vyvinutá pro konkrétní verzi platformy poběží v novějších verzích této platformy. Rozhraní .NET Framework se snaží maximalizovat zpětnou kompatibilitu: zdrojový kód napsaný pro jednu verzi rozhraní .NET Framework by měl kompilovat v novějších verzích rozhraní .NET Framework a binární soubory, které běží na jednu verzi rozhraní .NET Framework by se měly chovat identicky v novější verze rozhraní .NET Framework.  

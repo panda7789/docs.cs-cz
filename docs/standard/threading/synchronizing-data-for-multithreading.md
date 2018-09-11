@@ -10,11 +10,11 @@ ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1a7561a09b1b47827b3476b5525863503765064f
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180134"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44365313"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronizace dat pro vícevláknové zpracování
 Při více vláken mohl provádět volání k vlastnostem a metodám jednoho objektu, je důležité, že tato volání synchronizovat. V opačném případě jedno vlákno může dojít k přerušení činnosti jiné vlákno a objekt může zůstat v neplatném stavu. Třídy, jejíž členové jsou chráněny i před přerušení práce se nazývá bezpečné pro vlákna.  

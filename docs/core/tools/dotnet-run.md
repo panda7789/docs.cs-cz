@@ -4,12 +4,12 @@ description: Spusťte příkaz dotnet poskytuje vhodnou možnost ke spuštění 
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 609ac27f21e6801992b9e10c7d465a805492859e
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: f560e6f795f00488818647a4b5c711dcf9d59dcd
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245249"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44367740"
 ---
 # <a name="dotnet-run"></a>Spusťte příkaz DotNet
 
@@ -44,7 +44,7 @@ dotnet run [-h|--help]
 
 `dotnet run` Příkaz poskytuje vhodnou možnost ke spuštění aplikace ze zdrojového kódu pomocí jednoho příkazu. To je užitečné pro rychlé iterativní vývoj z příkazového řádku. Příkaz závisí [ `dotnet build` ](dotnet-build.md) příkaz sestavení kódu. Všechny požadavky pro sestavení, jako je projekt, je potřeba obnovit nejdřív použijte k `dotnet run` také.
 
-Výstupní soubory jsou zapsány do výchozího umístění, což je `bin/<configuration>/<target>`. Například pokud máte `netcoreapp1.0` aplikace a spusťte `dotnet run`, výstup je umístěn v `bin/Debug/netcoreapp1.0`. Soubory jsou přepsány, podle potřeby. Dočasné soubory jsou umístěny v `obj` adresáře.
+Výstupní soubory jsou zapsány do výchozího umístění, což je `bin/<configuration>/<target>`. Například pokud máte `netcoreapp2.1` aplikace a spusťte `dotnet run`, výstup je umístěn v `bin/Debug/netcoreapp2.1`. Soubory jsou přepsány, podle potřeby. Dočasné soubory jsou umístěny v `obj` adresáře.
 
 Pokud projekt určuje více platforem, provádí `dotnet run` způsobí chybu, pokud `-f|--framework <FRAMEWORK>` možnost slouží k určení rozhraní framework.
 

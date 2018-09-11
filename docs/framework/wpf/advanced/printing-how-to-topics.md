@@ -6,11 +6,11 @@ helpviewer_keywords:
 - print system management [WPF]
 ms.assetid: 5f3d391a-4afd-49ee-ad99-ceb737c0c8a8
 ms.openlocfilehash: e9b54cd7e59a5a410bfc5c0fb1ba4973c5e482af
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44277296"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44360330"
 ---
 # <a name="printing-how-to-topics"></a>Postupy: Témata tisku
 Témata v této části ukazují, jak používat tisk a funkce pro správu tisku systému součástí [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] a také novou [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] cesta tisku.  

@@ -1,39 +1,39 @@
 ---
-title: Modernizovat životního cyklu vaší aplikace pomocí nástrojů DevOps v cloudu a kanály CI/CD
-description: Modernizovat existující aplikace .NET s kontejnery cloudu Azure a Windows | Modernizovat životního cyklu vaší aplikace pomocí nástrojů DevOps v cloudu a kanály CI/CD
+title: Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
+description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a Windows kontejnery | Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/30/2018
-ms.openlocfilehash: 63907a1911b4c95f0dbecb2af33964225cf3e7b1
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: c4d3eaa50f6c7645c954ca65bf42c6c1eab3a68d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33958209"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44366840"
 ---
-# <a name="modernize-your-apps-lifecycle-with-cicd-pipelines-and-devops-tools-in-the-cloud"></a>Modernizovat životního cyklu vaší aplikace pomocí nástrojů DevOps v cloudu a kanály CI/CD
+# <a name="modernize-your-apps-lifecycle-with-cicd-pipelines-and-devops-tools-in-the-cloud"></a>Modernizace životního cyklu aplikace pomocí kanálů CI/CD a nástrojů DevOps v cloudu
 
-Dnešní podnikům muset inovacemi. Zajistěte rychlé tempem být produktivní v marketplace. Poskytování vysoce kvalitních, moderní aplikace vyžaduje DevOps nástroje a procesy, které jsou důležité pro implementaci tohoto konstantní cyklu inovace. Správné nástroje DevOps vývojáři můžou zjednodušit průběžné nasazování a získat inovativní aplikace do rukou uživatelů rychleji.
+Dnešní firmy potřebují inovace rychlým tempem, chcete-li být konkurenceschopní na webu Marketplace. Poskytování vysoce kvalitních moderních aplikací vyžaduje procesy, které jsou nezbytné k implementaci tohoto konstantní cyklu inovace a nástroje DevOps. Ty správné nástroje DevOps mohou vývojáři zefektivnit průběžné nasazování a inovativní aplikace do rukou uživatelů rychleji získat.
 
-I když jsou osvědčených postupů průběžnou integraci a nasazení, zavedení kontejnery zavádí nové aspekty, zejména při práci s aplikacemi s více kontejneru.
+I když jsou dobře zavedený postupy průběžné integrace a nasazování, úvod kontejnery zavádí nové informace o nastaveních, zejména při práci s vícekontejnerových aplikací.
 
-Visual Studio Team Services podporuje průběžnou integraci a nasazení aplikací služby kontejneru na celou řadu prostředí prostřednictvím oficiální úlohy nasazení Team Services:
+Služby Azure DevOps podporují průběžnou integraci a nasazení vícekontejnerových aplikací do různých prostředí pomocí oficiální úlohy nasazení služby Azure DevOps:
 
--   [Nasazení na samostatný počítač hostitelů Docker](https://docs.microsoft.com/vsts/build-release/apps/cd/deploy-docker-windowsvm) (Linux nebo Windows Server 2016 nebo novější)
+-   [Nasazení samostatného virtuálního počítače hostitele Docker](https://docs.microsoft.com/azure/devops/build-release/apps/cd/deploy-docker-windowsvm) (Linux nebo Windows Server 2016 nebo novější)
 
 -   [Nasazení do Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-tutorial-deploy-app-with-cicd-vsts)
 
--   [Nasazení do Azure Container Service – Kubernetes](https://docs.microsoft.com/vsts/build-release/apps/cd/azure/deploy-container-kubernetes)
+-   [Nasazení do služby Azure Container Service – Kubernetes](https://docs.microsoft.com/azure/devops/build-release/apps/cd/azure/deploy-container-kubernetes)
 
-Také můžete nasadit, ale [Docker Swarm](https://blogs.msdn.microsoft.com/jcorioland/2016/11/29/full-ci-cd-pipeline-to-deploy-multi-containers-application-on-azure-container-service-docker-swarm-using-visual-studio-team-services/) nebo DC/OS pomocí úloh založených na skriptech Team Services.
+Také můžete nasadit, ale [Docker Swarm](https://blogs.msdn.microsoft.com/jcorioland/2016/11/29/full-ci-cd-pipeline-to-deploy-multi-containers-application-on-azure-container-service-docker-swarm-using-visual-studio-team-services/) nebo DC/OS pomocí služby Azure DevOps založených na skriptech úloh.
 
-Chcete-li pokračovat, usnadnění nasazení flexibility, zadejte tyto nástroje vynikající dev na testovací na produkční nasazení dojde u kontejneru zatížení s volbou vývoj a CI/CD řešení.
+Chcete-li pokračovat, usnadnění nasazení flexibilitu, tyto nástroje umožňují vynikající dev na test – k – produkčního nasazení prostředí pro úlohy kontejneru a řadu řešení CI/CD a vývoj.
 
-Obrázek 4 – 12 znázorňuje průběžné nasazování kanál, který se nasadí do clusteru s podporou Kubernetes v Azure Container Service.
+Obrázek 4-12 znázorňuje kanál průběžného nasazování, který se nasadí do clusteru Kubernetes ve službě Azure Container Service.
 
-![Visual Studio Team Services průběžné nasazování kanálu, nasazení do clusteru s podporou Kubernetes](./media/image12.png)
+![Azure kanálu průběžného nasazování služby DevOps nasazením do clusteru Kubernetes](./media/image12.png)
 
-> **Obrázek 4 – 12.** Visual Studio Team Services průběžné nasazování kanálu, nasazení do clusteru s podporou Kubernetes
+> **Obrázek 4 – 12.** Azure kanálu průběžného nasazování služby DevOps nasazením do clusteru Kubernetes
 
 >[!div class="step-by-step"]
 [Předchozí](modernize-your-apps-with-monitoring-and-telemetry.md)

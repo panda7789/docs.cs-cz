@@ -38,11 +38,11 @@ ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 856b7c8a842b173fbf3e31323ce7224fc05a4f12
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192844"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44361706"
 ---
 # <a name="the-regular-expression-object-model"></a>Model objektu regulárního výrazu
 <a name="introduction"></a> Toto téma popisuje objektový model používaný při práci s regulárními výrazy v rozhraní .NET. Obsahuje následující oddíly:  

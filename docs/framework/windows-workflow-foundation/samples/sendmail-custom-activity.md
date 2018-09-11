@@ -3,11 +3,11 @@ title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
 ms.openlocfilehash: e9d27711754c3aa8ff7f68c23f528c9f5c4356f7
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44189962"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44361292"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
 Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z <xref:System.Activities.AsyncCodeActivity> k odesílání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronní odeslání e-mailu a odesílání e-mailu s ověřováním. Poskytuje také některé funkce koncových uživatelů, jako je režim, nahrazování tokenů, soubor šablony a testujte cestu pro přetažení.  

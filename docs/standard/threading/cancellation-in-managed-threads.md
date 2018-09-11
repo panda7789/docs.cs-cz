@@ -11,11 +11,11 @@ ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 088faaf454d3b188cff681fb7c41f3966b2e93fd
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44228101"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44365764"
 ---
 # <a name="cancellation-in-managed-threads"></a>Zrušení ve spravovaných vláknech
 Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], rozhraní .NET Framework používá jednotný model pro kooperativní zrušení asynchronní nebo dlouhotrvající synchronní operace. Tento model je založen na zjednodušené objekt volána token zrušení. Objekt, který vyvolá jednu nebo více operací zrušitelný, třeba tak, že vytvoříte nová vlákna nebo úlohy, předá token pro každou operaci. Jednotlivé operace můžete zase předat další operace kopie token. Později objekt, který vytvoří token, který slouží k požadavku, že operace zastavit, co dělají. Pouze žádost o objekt může vydat žádost o zrušení a každý naslouchací proces je zodpovědný za řadí žádosti a reagovat na ni vhodné a včasné způsobem.  

@@ -8,11 +8,11 @@ ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6453e9983086dcb5b97ec134db9d74160d7a47cf
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180303"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44353666"
 ---
 # <a name="data-structures-for-parallel-programming"></a>Datové struktury pro paralelní programování
 Rozhraní .NET Framework verze 4 přináší několik nových typů, které jsou užitečné pro paralelní programování, včetně sady souběžných kolekcí tříd, zjednodušené synchronizace primitiv a typy pro opožděnou inicializaci. Můžete použít tyto typy s jakýmkoli jiným kódem aplikace s více vlákny, včetně Task Parallel Library a PLINQ.  

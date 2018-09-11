@@ -6,11 +6,11 @@ helpviewer_keywords:
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
 ms.openlocfilehash: 9ec163e1de018bd87348a5b39a1f34654d7d6d84
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44213988"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44354019"
 ---
 # <a name="query-keywords-c-reference"></a>Klíčová slova dotazu (referenční dokumentace jazyka C#)
 

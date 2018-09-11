@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 938998a2316af28071e54e909fa60b5edbda0f35
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 147de1cdde79ee29f8f316399ba2e41f93921073
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44198930"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44361599"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
@@ -55,7 +55,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
  Úložiště jsou chráněné pomocí seznamů řízení přístupu (ACL), podobně jako složky v počítači. Při vytváření služby podle Internetové informační služby (IIS) hostovaných [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] proces běží pod [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] účtu. Služba se používá, musí mít přístup k úložišti, který obsahuje certifikáty. Všechny hlavní obchody je pak chráněn rozhraním výchozí seznam, ale seznamy je možné upravit. Pokud vytvoříte samostatné role pro přístup k úložišti, je nutné udělit přístupová oprávnění této role. Zjistěte, jak upravit seznam přístupu pomocí nástroje WinHttpCertConfig.exe, najdete v článku [postupy: vytváření dočasných certifikátů pro použití během vývoje](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md). Další informace o používání certifikátů klienta se službou IIS najdete v tématu [volání webové služby pomocí klientského certifikátu pro ověřování ve webové aplikaci ASP.NET](https://go.microsoft.com/fwlink/?LinkId=88914).  
   
 ## <a name="chain-trust-and-certificate-authorities"></a>Řetězce důvěryhodnosti a certifikační autority  
- Certifikáty jsou vytvořeny v hierarchii, kde je každý jednotlivý certifikát certifikační Autority, která vydala certifikát propojen. Tento odkaz je certifikát Certifikační autority. Certifikát Certifikační autority pak odkazy na certifikační Autoritu, která vydala certifikát původního Certifikační autority. Tento postup se opakuje, dokud nenastane certifikát kořenové certifikační Autority. Certifikát kořenové certifikační Autority je ze své podstaty důvěryhodný.  
+ Certifikáty jsou vytvořeny v hierarchii, kde je každý jednotlivý certifikát certifikační Autority, která vydala certifikát propojen. Tento odkaz je certifikát Certifikační autority. Certifikát Certifikační autority pak odkazy na certifikační Autoritu, která vydala certifikát původní CA. Tento postup se opakuje, dokud nenastane certifikát kořenové certifikační Autority. Certifikát kořenové certifikační Autority je ze své podstaty důvěryhodný.  
   
  Digitální certifikáty se používají k ověřování entity spoléhání se na tuto hierarchii, také nazývané *řetězu certifikátů*. Můžete zobrazit řetězec některý z certifikátů pomocí modulu snap-in konzoly MMC poklepáním na některý z certifikátů a pak kliknete **cesta k certifikátu** kartu. Další informace o importu řetězy certifikátů certifikační autority najdete v tématu [postupy: určení certifikátu autority certifikát řetězu používá k ověření signatury](../../../../docs/framework/wcf/feature-details/specify-the-certificate-authority-chain-verify-signatures-wcf.md).  
   

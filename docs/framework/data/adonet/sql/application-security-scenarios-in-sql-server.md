@@ -3,11 +3,11 @@ title: Scénáře zabezpečení aplikací v systému SQL Server
 ms.date: 03/30/2017
 ms.assetid: 0164f3a4-406e-4693-bec3-03c8e18b46d7
 ms.openlocfilehash: bf4f4adfd5f49bd210026e40bd5fa4e67da10d75
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180212"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44368161"
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>Scénáře zabezpečení aplikací v systému SQL Server
 Neexistuje žádný jeden správný způsob, jak vytvořit zabezpečené klientské aplikace SQL Server. Každá aplikace je jedinečný v jeho požadavky na nasazení prostředí a uživatelům. Aplikace, který je přiměřeně zabezpečené při prvotním nasazení může být méně zabezpečené v čase. Není možné předpovědět jakékoli přesnost co hrozeb mohou vzniknout v budoucnu.  

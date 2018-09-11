@@ -10,11 +10,11 @@ ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 049268c29946e95ca7bb194f6cae38baf8f060f6
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180277"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44361940"
 ---
 # <a name="additional-class-libraries-and-apis"></a>Další knihovny tříd a rozhraní API
 

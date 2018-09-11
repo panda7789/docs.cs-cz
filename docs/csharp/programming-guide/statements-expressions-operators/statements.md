@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
 ms.openlocfilehash: 515ae6bb6030e80c80289ff888f07ade2f341792
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44187493"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44353891"
 ---
 # <a name="statements-c-programming-guide"></a>Příkazy (Průvodce programováním v C#)
 Akce, které přijímá programu jsou vyjádřeny v příkazech. Běžné akce zahrnují deklarování proměnných, přiřazování hodnot, volání metod ve smyčce přes kolekce a vytváření větví do jednoho nebo jiného bloku kódu, v závislosti na danou podmínku. Pořadí, ve kterém jsou spouštěny příkazy v programu v jazyce se nazývá tok řízení toku provádění. Tok řízení se může lišit při každém spuštění programu, v závislosti na tom, jak program reaguje na vstup, že bude dostávat v době běhu.  
