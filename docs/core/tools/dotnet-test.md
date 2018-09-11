@@ -5,23 +5,23 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
 ms.openlocfilehash: 7946196b27489870da1c16b15cbf5f078ae89c61
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44137197"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339601"
 ---
-# <a name="dotnet-test"></a><span data-ttu-id="2c7fe-103">DotNet test</span><span class="sxs-lookup"><span data-stu-id="2c7fe-103">dotnet test</span></span>
+# <a name="dotnet-test"></a><span data-ttu-id="b2b8b-103">DotNet test</span><span class="sxs-lookup"><span data-stu-id="b2b8b-103">dotnet test</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
-## <a name="name"></a><span data-ttu-id="2c7fe-104">Název</span><span class="sxs-lookup"><span data-stu-id="2c7fe-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="b2b8b-104">Název</span><span class="sxs-lookup"><span data-stu-id="b2b8b-104">Name</span></span>
 
-<span data-ttu-id="2c7fe-105">`dotnet test` -Ovladač test .NET ke spuštění testů jednotek.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-105">`dotnet test` - .NET test driver used to execute unit tests.</span></span>
+<span data-ttu-id="b2b8b-105">`dotnet test` -Ovladač test .NET ke spuštění testů jednotek.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-105">`dotnet test` - .NET test driver used to execute unit tests.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="2c7fe-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="2c7fe-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="b2b8b-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="b2b8b-106">Synopsis</span></span>
 
-# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="2c7fe-107">.NET core 2.1</span><span class="sxs-lookup"><span data-stu-id="2c7fe-107">.NET Core 2.1</span></span>](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="b2b8b-107">.NET core 2.1</span><span class="sxs-lookup"><span data-stu-id="b2b8b-107">.NET Core 2.1</span></span>](#tab/netcore21)
 
 ```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
@@ -29,7 +29,7 @@ dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] 
 dotnet test [-h|--help]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="2c7fe-108">.NET core 2.0</span><span class="sxs-lookup"><span data-stu-id="2c7fe-108">.NET Core 2.0</span></span>](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="b2b8b-108">.NET core 2.0</span><span class="sxs-lookup"><span data-stu-id="b2b8b-108">.NET Core 2.0</span></span>](#tab/netcore20)
 
 ```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
@@ -37,7 +37,7 @@ dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect
 dotnet test [-h|--help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="2c7fe-109">.NET core 1.x</span><span class="sxs-lookup"><span data-stu-id="2c7fe-109">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="b2b8b-109">.NET core 1.x</span><span class="sxs-lookup"><span data-stu-id="b2b8b-109">.NET Core 1.x</span></span>](#tab/netcore1x)
 
 ```console
 dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [-o|--output] [-s|--settings] [-t|--list-tests]  [-v|--verbosity]
@@ -46,253 +46,253 @@ dotnet test [-h|--help]
 
 ---
 
-## <a name="description"></a><span data-ttu-id="2c7fe-110">Popis</span><span class="sxs-lookup"><span data-stu-id="2c7fe-110">Description</span></span>
+## <a name="description"></a><span data-ttu-id="b2b8b-110">Popis</span><span class="sxs-lookup"><span data-stu-id="b2b8b-110">Description</span></span>
 
-<span data-ttu-id="2c7fe-111">`dotnet test` Příkaz se používá ke spuštění testů jednotek v daném projektu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-111">The `dotnet test` command is used to execute unit tests in a given project.</span></span> <span data-ttu-id="2c7fe-112">`dotnet test` Příkaz spustí zadaný pro projekt test runner konzolovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-112">The `dotnet test` command launches the test runner console application specified for a project.</span></span> <span data-ttu-id="2c7fe-113">Nástroj test runner sestavy úspěch nebo selhání jednotlivých testovacích a spustí testy, které jsou definovány pro rozhraní testování částí (například MSTest, NUnit nebo xUnit).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-113">The test runner executes the tests defined for a unit test framework (for example, MSTest, NUnit, or xUnit) and reports the success or failure of each test.</span></span> <span data-ttu-id="2c7fe-114">Nástroj test runner a knihovnu testu jednotky jsou dodávány jako balíčky NuGet a se obnoví jako běžný závislosti projektu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-114">The test runner and the unit test library are packaged as NuGet packages and are restored as ordinary dependencies for the project.</span></span>
+<span data-ttu-id="b2b8b-111">`dotnet test` Příkaz se používá ke spuštění testů jednotek v daném projektu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-111">The `dotnet test` command is used to execute unit tests in a given project.</span></span> <span data-ttu-id="b2b8b-112">`dotnet test` Příkaz spustí zadaný pro projekt test runner konzolovou aplikaci.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-112">The `dotnet test` command launches the test runner console application specified for a project.</span></span> <span data-ttu-id="b2b8b-113">Nástroj test runner sestavy úspěch nebo selhání jednotlivých testovacích a spustí testy, které jsou definovány pro rozhraní testování částí (například MSTest, NUnit nebo xUnit).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-113">The test runner executes the tests defined for a unit test framework (for example, MSTest, NUnit, or xUnit) and reports the success or failure of each test.</span></span> <span data-ttu-id="b2b8b-114">Nástroj test runner a knihovnu testu jednotky jsou dodávány jako balíčky NuGet a se obnoví jako běžný závislosti projektu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-114">The test runner and the unit test library are packaged as NuGet packages and are restored as ordinary dependencies for the project.</span></span>
 
-<span data-ttu-id="2c7fe-115">Projekty testů zadat nástroje test runner pomocí běžný `<PackageReference>` elementu, jak je znázorněno v následující ukázkový soubor projektu:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-115">Test projects specify the test runner using an ordinary `<PackageReference>` element, as seen in the following sample project file:</span></span>
+<span data-ttu-id="b2b8b-115">Projekty testů zadat nástroje test runner pomocí běžný `<PackageReference>` elementu, jak je znázorněno v následující ukázkový soubor projektu:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-115">Test projects specify the test runner using an ordinary `<PackageReference>` element, as seen in the following sample project file:</span></span>
 
 [!code-xml[XUnit Basic Template](../../../samples/snippets/csharp/xunit-test/xunit-test.csproj)]
 
-## <a name="arguments"></a><span data-ttu-id="2c7fe-116">Arguments</span><span class="sxs-lookup"><span data-stu-id="2c7fe-116">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="b2b8b-116">Arguments</span><span class="sxs-lookup"><span data-stu-id="b2b8b-116">Arguments</span></span>
 
 `PROJECT`
 
-<span data-ttu-id="2c7fe-117">Cesta k projektu testů.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-117">Path to the test project.</span></span> <span data-ttu-id="2c7fe-118">Pokud není zadán, použije se výchozí aktuální adresář.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-118">If not specified, it defaults to current directory.</span></span>
+<span data-ttu-id="b2b8b-117">Cesta k projektu testů.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-117">Path to the test project.</span></span> <span data-ttu-id="b2b8b-118">Pokud není zadán, použije se výchozí aktuální adresář.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-118">If not specified, it defaults to current directory.</span></span>
 
-## <a name="options"></a><span data-ttu-id="2c7fe-119">Možnosti</span><span class="sxs-lookup"><span data-stu-id="2c7fe-119">Options</span></span>
+## <a name="options"></a><span data-ttu-id="b2b8b-119">Možnosti</span><span class="sxs-lookup"><span data-stu-id="b2b8b-119">Options</span></span>
 
-# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="2c7fe-120">.NET core 2.1</span><span class="sxs-lookup"><span data-stu-id="2c7fe-120">.NET Core 2.1</span></span>](#tab/netcore21)
+# <a name="net-core-21tabnetcore21"></a>[<span data-ttu-id="b2b8b-120">.NET core 2.1</span><span class="sxs-lookup"><span data-stu-id="b2b8b-120">.NET Core 2.1</span></span>](#tab/netcore21)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-<span data-ttu-id="2c7fe-121">Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-121">Use the custom test adapters from the specified path in the test run.</span></span>
+<span data-ttu-id="b2b8b-121">Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-121">Use the custom test adapters from the specified path in the test run.</span></span>
 
 `--blame`
 
-<span data-ttu-id="2c7fe-122">Testy se spustí v režimu viny.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-122">Runs the tests in blame mode.</span></span> <span data-ttu-id="2c7fe-123">Tato možnost je užitečná v izolaci problematické testů způsobí hostitele testu při selhání.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-123">This option is helpful in isolating the problematic tests causing test host to crash.</span></span> <span data-ttu-id="2c7fe-124">Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml* , který zachycuje pořadí provádění testů před selhání.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-124">It creates an output file in the current directory as *Sequence.xml* that captures the order of tests execution before the crash.</span></span>
+<span data-ttu-id="b2b8b-122">Testy se spustí v režimu viny.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-122">Runs the tests in blame mode.</span></span> <span data-ttu-id="b2b8b-123">Tato možnost je užitečná v izolaci problematické testů způsobí hostitele testu při selhání.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-123">This option is helpful in isolating the problematic tests causing test host to crash.</span></span> <span data-ttu-id="b2b8b-124">Vytvoří výstupní soubor v aktuálním adresáři jako *Sequence.xml* , který zachycuje pořadí provádění testů před selhání.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-124">It creates an output file in the current directory as *Sequence.xml* that captures the order of tests execution before the crash.</span></span>
 
 `-c|--configuration {Debug|Release}`
 
-<span data-ttu-id="2c7fe-125">Definuje konfiguraci sestavení.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-125">Defines the build configuration.</span></span> <span data-ttu-id="2c7fe-126">Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-126">The default value is `Debug`, but your project's configuration could override this default SDK setting.</span></span>
+<span data-ttu-id="b2b8b-125">Definuje konfiguraci sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-125">Defines the build configuration.</span></span> <span data-ttu-id="b2b8b-126">Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-126">The default value is `Debug`, but your project's configuration could override this default SDK setting.</span></span>
 
 `--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
 
-<span data-ttu-id="2c7fe-127">Povolí shromažďování dat pro testovací běh.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-127">Enables data collector for the test run.</span></span> <span data-ttu-id="2c7fe-128">Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-128">For more information, see [Monitor and analyze test run](https://aka.ms/vstest-collect).</span></span>
+<span data-ttu-id="b2b8b-127">Povolí shromažďování dat pro testovací běh.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-127">Enables data collector for the test run.</span></span> <span data-ttu-id="b2b8b-128">Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-128">For more information, see [Monitor and analyze test run](https://aka.ms/vstest-collect).</span></span>
 
 `-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
 
-<span data-ttu-id="2c7fe-129">Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-129">Enables diagnostic mode for the test platform and write diagnostic messages to the specified file.</span></span>
+<span data-ttu-id="b2b8b-129">Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-129">Enables diagnostic mode for the test platform and write diagnostic messages to the specified file.</span></span>
 
 `-f|--framework <FRAMEWORK>`
 
-<span data-ttu-id="2c7fe-130">Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-130">Looks for test binaries for a specific [framework](../../standard/frameworks.md).</span></span>
+<span data-ttu-id="b2b8b-130">Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-130">Looks for test binaries for a specific [framework](../../standard/frameworks.md).</span></span>
 
 `--filter <EXPRESSION>`
 
-<span data-ttu-id="2c7fe-131">Filtruje testy v aktuálním projektu pomocí daného výrazu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-131">Filters out tests in the current project using the given expression.</span></span> <span data-ttu-id="2c7fe-132">Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-132">For more information, see the [Filter option details](#filter-option-details) section.</span></span> <span data-ttu-id="2c7fe-133">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-133">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
+<span data-ttu-id="b2b8b-131">Filtruje testy v aktuálním projektu pomocí daného výrazu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-131">Filters out tests in the current project using the given expression.</span></span> <span data-ttu-id="b2b8b-132">Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-132">For more information, see the [Filter option details](#filter-option-details) section.</span></span> <span data-ttu-id="b2b8b-133">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-133">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="2c7fe-134">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-134">Prints out a short help for the command.</span></span>
+<span data-ttu-id="b2b8b-134">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-134">Prints out a short help for the command.</span></span>
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
-<span data-ttu-id="2c7fe-135">Určuje protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-135">Specifies a logger for test results.</span></span>
+<span data-ttu-id="b2b8b-135">Určuje protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-135">Specifies a logger for test results.</span></span>
 
 `--no-build`
 
-<span data-ttu-id="2c7fe-136">Nepodporuje vytvoření testovacího projektu před jejím spuštěním.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-136">Doesn't build the test project before running it.</span></span> <span data-ttu-id="2c7fe-137">Také implicitní nastaví `--no-restore` příznak.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-137">It also implicit sets the `--no-restore` flag.</span></span>
+<span data-ttu-id="b2b8b-136">Nepodporuje vytvoření testovacího projektu před jejím spuštěním.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-136">Doesn't build the test project before running it.</span></span> <span data-ttu-id="b2b8b-137">Také implicitní nastaví `--no-restore` příznak.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-137">It also implicit sets the `--no-restore` flag.</span></span>
 
 `--no-restore`
 
-<span data-ttu-id="2c7fe-138">Při spuštění příkazu se nebude spouštět implicitní obnovení.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-138">Doesn't execute an implicit restore when running the command.</span></span>
+<span data-ttu-id="b2b8b-138">Při spuštění příkazu se nebude spouštět implicitní obnovení.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-138">Doesn't execute an implicit restore when running the command.</span></span>
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-<span data-ttu-id="2c7fe-139">Adresář, ve kterém chcete najít binární soubory, které chcete spustit.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-139">Directory in which to find the binaries to run.</span></span>
+<span data-ttu-id="b2b8b-139">Adresář, ve kterém chcete najít binární soubory, které chcete spustit.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-139">Directory in which to find the binaries to run.</span></span>
 
 `-r|--results-directory <PATH>`
 
-<span data-ttu-id="2c7fe-140">Adresář, kam výsledky testu budou umístěny.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-140">The directory where the test results are going to be placed.</span></span> <span data-ttu-id="2c7fe-141">Pokud zadaný adresář neexistuje, vytvoří se.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-141">If the specified directory doesn't exist, it's created.</span></span>
+<span data-ttu-id="b2b8b-140">Adresář, kam výsledky testu budou umístěny.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-140">The directory where the test results are going to be placed.</span></span> <span data-ttu-id="b2b8b-141">Pokud zadaný adresář neexistuje, vytvoří se.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-141">If the specified directory doesn't exist, it's created.</span></span>
 
 `-s|--settings <SETTINGS_FILE>`
 
-<span data-ttu-id="2c7fe-142">Nastavení se má použít při spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-142">Settings to use when running tests.</span></span>
+<span data-ttu-id="b2b8b-142">Nastavení se má použít při spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-142">Settings to use when running tests.</span></span>
 
 `-t|--list-tests`
 
-<span data-ttu-id="2c7fe-143">Seznam všech zjištěných testů v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-143">List all of the discovered tests in the current project.</span></span>
+<span data-ttu-id="b2b8b-143">Seznam všech zjištěných testů v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-143">List all of the discovered tests in the current project.</span></span>
 
 `-v|--verbosity <LEVEL>`
 
-<span data-ttu-id="2c7fe-144">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-144">Sets the verbosity level of the command.</span></span> <span data-ttu-id="2c7fe-145">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-145">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+<span data-ttu-id="b2b8b-144">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-144">Sets the verbosity level of the command.</span></span> <span data-ttu-id="b2b8b-145">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-145">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
-# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="2c7fe-146">.NET core 2.0</span><span class="sxs-lookup"><span data-stu-id="2c7fe-146">.NET Core 2.0</span></span>](#tab/netcore20)
+# <a name="net-core-20tabnetcore20"></a>[<span data-ttu-id="b2b8b-146">.NET core 2.0</span><span class="sxs-lookup"><span data-stu-id="b2b8b-146">.NET Core 2.0</span></span>](#tab/netcore20)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-<span data-ttu-id="2c7fe-147">Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-147">Use the custom test adapters from the specified path in the test run.</span></span>
+<span data-ttu-id="b2b8b-147">Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-147">Use the custom test adapters from the specified path in the test run.</span></span>
 
 `-c|--configuration {Debug|Release}`
 
-<span data-ttu-id="2c7fe-148">Definuje konfiguraci sestavení.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-148">Defines the build configuration.</span></span> <span data-ttu-id="2c7fe-149">Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-149">The default value is `Debug`, but your project's configuration could override this default SDK setting.</span></span>
+<span data-ttu-id="b2b8b-148">Definuje konfiguraci sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-148">Defines the build configuration.</span></span> <span data-ttu-id="b2b8b-149">Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-149">The default value is `Debug`, but your project's configuration could override this default SDK setting.</span></span>
 
 `--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
 
-<span data-ttu-id="2c7fe-150">Povolí shromažďování dat pro testovací běh.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-150">Enables data collector for the test run.</span></span> <span data-ttu-id="2c7fe-151">Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-151">For more information, see [Monitor and analyze test run](https://aka.ms/vstest-collect).</span></span>
+<span data-ttu-id="b2b8b-150">Povolí shromažďování dat pro testovací běh.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-150">Enables data collector for the test run.</span></span> <span data-ttu-id="b2b8b-151">Další informace najdete v tématu [monitorování a analýza testovacího běhu](https://aka.ms/vstest-collect).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-151">For more information, see [Monitor and analyze test run](https://aka.ms/vstest-collect).</span></span>
 
 `-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
 
-<span data-ttu-id="2c7fe-152">Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-152">Enables diagnostic mode for the test platform and write diagnostic messages to the specified file.</span></span>
+<span data-ttu-id="b2b8b-152">Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-152">Enables diagnostic mode for the test platform and write diagnostic messages to the specified file.</span></span>
 
 `-f|--framework <FRAMEWORK>`
 
-<span data-ttu-id="2c7fe-153">Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-153">Looks for test binaries for a specific [framework](../../standard/frameworks.md).</span></span>
+<span data-ttu-id="b2b8b-153">Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-153">Looks for test binaries for a specific [framework](../../standard/frameworks.md).</span></span>
 
 `--filter <EXPRESSION>`
 
-<span data-ttu-id="2c7fe-154">Filtruje testy v aktuálním projektu pomocí daného výrazu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-154">Filters out tests in the current project using the given expression.</span></span> <span data-ttu-id="2c7fe-155">Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-155">For more information, see the [Filter option details](#filter-option-details) section.</span></span> <span data-ttu-id="2c7fe-156">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-156">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
+<span data-ttu-id="b2b8b-154">Filtruje testy v aktuálním projektu pomocí daného výrazu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-154">Filters out tests in the current project using the given expression.</span></span> <span data-ttu-id="b2b8b-155">Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-155">For more information, see the [Filter option details](#filter-option-details) section.</span></span> <span data-ttu-id="b2b8b-156">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-156">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="2c7fe-157">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-157">Prints out a short help for the command.</span></span>
+<span data-ttu-id="b2b8b-157">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-157">Prints out a short help for the command.</span></span>
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
-<span data-ttu-id="2c7fe-158">Určuje protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-158">Specifies a logger for test results.</span></span>
+<span data-ttu-id="b2b8b-158">Určuje protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-158">Specifies a logger for test results.</span></span>
 
 `--no-build`
 
-<span data-ttu-id="2c7fe-159">Nepodporuje vytvoření testovacího projektu před jejím spuštěním.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-159">Doesn't build the test project before running it.</span></span> <span data-ttu-id="2c7fe-160">Také implicitní nastaví `--no-restore` příznak.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-160">It also implicit sets the `--no-restore` flag.</span></span>
+<span data-ttu-id="b2b8b-159">Nepodporuje vytvoření testovacího projektu před jejím spuštěním.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-159">Doesn't build the test project before running it.</span></span> <span data-ttu-id="b2b8b-160">Také implicitní nastaví `--no-restore` příznak.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-160">It also implicit sets the `--no-restore` flag.</span></span>
 
 `--no-restore`
 
-<span data-ttu-id="2c7fe-161">Při spuštění příkazu se nebude spouštět implicitní obnovení.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-161">Doesn't execute an implicit restore when running the command.</span></span>
+<span data-ttu-id="b2b8b-161">Při spuštění příkazu se nebude spouštět implicitní obnovení.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-161">Doesn't execute an implicit restore when running the command.</span></span>
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-<span data-ttu-id="2c7fe-162">Adresář, ve kterém chcete najít binární soubory, které chcete spustit.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-162">Directory in which to find the binaries to run.</span></span>
+<span data-ttu-id="b2b8b-162">Adresář, ve kterém chcete najít binární soubory, které chcete spustit.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-162">Directory in which to find the binaries to run.</span></span>
 
 `-r|--results-directory <PATH>`
 
-<span data-ttu-id="2c7fe-163">Adresář, kam výsledky testu budou umístěny.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-163">The directory where the test results are going to be placed.</span></span> <span data-ttu-id="2c7fe-164">Pokud zadaný adresář neexistuje, vytvoří se.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-164">If the specified directory doesn't exist, it's created.</span></span>
+<span data-ttu-id="b2b8b-163">Adresář, kam výsledky testu budou umístěny.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-163">The directory where the test results are going to be placed.</span></span> <span data-ttu-id="b2b8b-164">Pokud zadaný adresář neexistuje, vytvoří se.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-164">If the specified directory doesn't exist, it's created.</span></span>
 
 `-s|--settings <SETTINGS_FILE>`
 
-<span data-ttu-id="2c7fe-165">Nastavení se má použít při spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-165">Settings to use when running tests.</span></span>
+<span data-ttu-id="b2b8b-165">Nastavení se má použít při spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-165">Settings to use when running tests.</span></span>
 
 `-t|--list-tests`
 
-<span data-ttu-id="2c7fe-166">Seznam všech zjištěných testů v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-166">List all of the discovered tests in the current project.</span></span>
+<span data-ttu-id="b2b8b-166">Seznam všech zjištěných testů v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-166">List all of the discovered tests in the current project.</span></span>
 
 `-v|--verbosity <LEVEL>`
 
-<span data-ttu-id="2c7fe-167">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-167">Sets the verbosity level of the command.</span></span> <span data-ttu-id="2c7fe-168">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-168">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+<span data-ttu-id="b2b8b-167">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-167">Sets the verbosity level of the command.</span></span> <span data-ttu-id="b2b8b-168">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-168">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
-# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="2c7fe-169">.NET core 1.x</span><span class="sxs-lookup"><span data-stu-id="2c7fe-169">.NET Core 1.x</span></span>](#tab/netcore1x)
+# <a name="net-core-1xtabnetcore1x"></a>[<span data-ttu-id="b2b8b-169">.NET core 1.x</span><span class="sxs-lookup"><span data-stu-id="b2b8b-169">.NET Core 1.x</span></span>](#tab/netcore1x)
 
 `-a|--test-adapter-path <PATH_TO_ADAPTER>`
 
-<span data-ttu-id="2c7fe-170">Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-170">Use the custom test adapters from the specified path in the test run.</span></span>
+<span data-ttu-id="b2b8b-170">Používáte vlastní adaptéry testu ze zadané cesty v testovacím běhu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-170">Use the custom test adapters from the specified path in the test run.</span></span>
 
 `-c|--configuration {Debug|Release}`
 
-<span data-ttu-id="2c7fe-171">Definuje konfiguraci sestavení.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-171">Defines the build configuration.</span></span> <span data-ttu-id="2c7fe-172">Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-172">The default value is `Debug`, but your project's configuration could override this default SDK setting.</span></span>
+<span data-ttu-id="b2b8b-171">Definuje konfiguraci sestavení.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-171">Defines the build configuration.</span></span> <span data-ttu-id="b2b8b-172">Výchozí hodnota je `Debug`, ale váš projekt konfigurace může přepsat toto výchozí nastavení sady SDK.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-172">The default value is `Debug`, but your project's configuration could override this default SDK setting.</span></span>
 
 `-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
 
-<span data-ttu-id="2c7fe-173">Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-173">Enables diagnostic mode for the test platform and write diagnostic messages to the specified file.</span></span>
+<span data-ttu-id="b2b8b-173">Umožňuje diagnostickém režimu pro testovací platformy a zápis diagnostické zprávy do zadaného souboru.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-173">Enables diagnostic mode for the test platform and write diagnostic messages to the specified file.</span></span>
 
 `-f|--framework <FRAMEWORK>`
 
-<span data-ttu-id="2c7fe-174">Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-174">Looks for test binaries for a specific [framework](../../standard/frameworks.md).</span></span>
+<span data-ttu-id="b2b8b-174">Vyhledá binárních souborů testu pro konkrétní [framework](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-174">Looks for test binaries for a specific [framework](../../standard/frameworks.md).</span></span>
 
 `--filter <EXPRESSION>`
 
-<span data-ttu-id="2c7fe-175">Filtruje testy v aktuálním projektu pomocí daného výrazu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-175">Filters out tests in the current project using the given expression.</span></span> <span data-ttu-id="2c7fe-176">Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-176">For more information, see the [Filter option details](#filter-option-details) section.</span></span> <span data-ttu-id="2c7fe-177">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-177">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
+<span data-ttu-id="b2b8b-175">Filtruje testy v aktuálním projektu pomocí daného výrazu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-175">Filters out tests in the current project using the given expression.</span></span> <span data-ttu-id="b2b8b-176">Další informace najdete v tématu [možnost podrobnosti filtru](#filter-option-details) oddílu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-176">For more information, see the [Filter option details](#filter-option-details) section.</span></span> <span data-ttu-id="b2b8b-177">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-177">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="2c7fe-178">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-178">Prints out a short help for the command.</span></span>
+<span data-ttu-id="b2b8b-178">Vytiskne krátký nápovědy pro příkaz.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-178">Prints out a short help for the command.</span></span>
 
 `-l|--logger <LoggerUri/FriendlyName>`
 
-<span data-ttu-id="2c7fe-179">Určuje protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-179">Specifies a logger for test results.</span></span>
+<span data-ttu-id="b2b8b-179">Určuje protokolovací nástroj pro výsledky testů.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-179">Specifies a logger for test results.</span></span>
 
 `--no-build`
 
-<span data-ttu-id="2c7fe-180">Nepodporuje vytvoření testovacího projektu před jejím spuštěním.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-180">Doesn't build the test project before running it.</span></span>
+<span data-ttu-id="b2b8b-180">Nepodporuje vytvoření testovacího projektu před jejím spuštěním.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-180">Doesn't build the test project before running it.</span></span>
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-<span data-ttu-id="2c7fe-181">Adresář, ve kterém chcete najít binární soubory, které chcete spustit.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-181">Directory in which to find the binaries to run.</span></span>
+<span data-ttu-id="b2b8b-181">Adresář, ve kterém chcete najít binární soubory, které chcete spustit.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-181">Directory in which to find the binaries to run.</span></span>
 
 `-s|--settings <SETTINGS_FILE>`
 
-<span data-ttu-id="2c7fe-182">Nastavení se má použít při spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-182">Settings to use when running tests.</span></span>
+<span data-ttu-id="b2b8b-182">Nastavení se má použít při spuštění testů.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-182">Settings to use when running tests.</span></span>
 
 `-t|--list-tests`
 
-<span data-ttu-id="2c7fe-183">Seznam všech zjištěných testů v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-183">List all of the discovered tests in the current project.</span></span>
+<span data-ttu-id="b2b8b-183">Seznam všech zjištěných testů v aktuálním projektu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-183">List all of the discovered tests in the current project.</span></span>
 
 `-v|--verbosity <LEVEL>`
 
-<span data-ttu-id="2c7fe-184">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-184">Sets the verbosity level of the command.</span></span> <span data-ttu-id="2c7fe-185">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-185">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+<span data-ttu-id="b2b8b-184">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-184">Sets the verbosity level of the command.</span></span> <span data-ttu-id="b2b8b-185">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-185">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
 ---
 
-## <a name="examples"></a><span data-ttu-id="2c7fe-186">Příklady</span><span class="sxs-lookup"><span data-stu-id="2c7fe-186">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="b2b8b-186">Příklady</span><span class="sxs-lookup"><span data-stu-id="b2b8b-186">Examples</span></span>
 
-<span data-ttu-id="2c7fe-187">Spusťte testy v projektu v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-187">Run the tests in the project in the current directory:</span></span>
+<span data-ttu-id="b2b8b-187">Spusťte testy v projektu v aktuálním adresáři:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-187">Run the tests in the project in the current directory:</span></span>
 
 `dotnet test`
 
-<span data-ttu-id="2c7fe-188">Spustit testy v `test1` projektu:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-188">Run the tests in the `test1` project:</span></span>
+<span data-ttu-id="b2b8b-188">Spustit testy v `test1` projektu:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-188">Run the tests in the `test1` project:</span></span>
 
 `dotnet test ~/projects/test1/test1.csproj`
 
-<span data-ttu-id="2c7fe-189">Spuštění testů v projektu v aktuálním adresáři a vygenerovat soubor s výsledky testu ve formátu trx:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-189">Run the tests in the project in the current directory and generate a test results file in the trx format:</span></span>
+<span data-ttu-id="b2b8b-189">Spuštění testů v projektu v aktuálním adresáři a vygenerovat soubor s výsledky testu ve formátu trx:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-189">Run the tests in the project in the current directory and generate a test results file in the trx format:</span></span>
 
 `dotnet test --logger:trx`
 
-## <a name="filter-option-details"></a><span data-ttu-id="2c7fe-190">Možnost podrobnosti filtru</span><span class="sxs-lookup"><span data-stu-id="2c7fe-190">Filter option details</span></span>
+## <a name="filter-option-details"></a><span data-ttu-id="b2b8b-190">Možnost podrobnosti filtru</span><span class="sxs-lookup"><span data-stu-id="b2b8b-190">Filter option details</span></span>
 
 `--filter <EXPRESSION>`
 
-<span data-ttu-id="2c7fe-191">`<Expression>` má formát `<property><operator><value>[|&<Expression>]`.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-191">`<Expression>` has the format `<property><operator><value>[|&<Expression>]`.</span></span>
+<span data-ttu-id="b2b8b-191">`<Expression>` má formát `<property><operator><value>[|&<Expression>]`.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-191">`<Expression>` has the format `<property><operator><value>[|&<Expression>]`.</span></span>
 
-<span data-ttu-id="2c7fe-192">`<property>` je atribut `Test Case`.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-192">`<property>` is an attribute of the `Test Case`.</span></span> <span data-ttu-id="2c7fe-193">Toto jsou vlastnosti podporované rozhraní pro testování částí oblíbených:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-193">The following are the properties supported by popular unit test frameworks:</span></span>
+<span data-ttu-id="b2b8b-192">`<property>` je atribut `Test Case`.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-192">`<property>` is an attribute of the `Test Case`.</span></span> <span data-ttu-id="b2b8b-193">Toto jsou vlastnosti podporované rozhraní pro testování částí oblíbených:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-193">The following are the properties supported by popular unit test frameworks:</span></span>
 
-| <span data-ttu-id="2c7fe-194">Rozhraní pro testování</span><span class="sxs-lookup"><span data-stu-id="2c7fe-194">Test Framework</span></span> | <span data-ttu-id="2c7fe-195">Podporovaných vlastností</span><span class="sxs-lookup"><span data-stu-id="2c7fe-195">Supported properties</span></span>                                                                                      |
+| <span data-ttu-id="b2b8b-194">Rozhraní pro testování</span><span class="sxs-lookup"><span data-stu-id="b2b8b-194">Test Framework</span></span> | <span data-ttu-id="b2b8b-195">Podporovaných vlastností</span><span class="sxs-lookup"><span data-stu-id="b2b8b-195">Supported properties</span></span>                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| <span data-ttu-id="2c7fe-196">MSTest</span><span class="sxs-lookup"><span data-stu-id="2c7fe-196">MSTest</span></span>         | <ul><li><span data-ttu-id="2c7fe-197">FullyQualifiedName</span><span class="sxs-lookup"><span data-stu-id="2c7fe-197">FullyQualifiedName</span></span></li><li><span data-ttu-id="2c7fe-198">Název</span><span class="sxs-lookup"><span data-stu-id="2c7fe-198">Name</span></span></li><li><span data-ttu-id="2c7fe-199">Název třídy</span><span class="sxs-lookup"><span data-stu-id="2c7fe-199">ClassName</span></span></li><li><span data-ttu-id="2c7fe-200">Priorita</span><span class="sxs-lookup"><span data-stu-id="2c7fe-200">Priority</span></span></li><li><span data-ttu-id="2c7fe-201">TestCategory</span><span class="sxs-lookup"><span data-stu-id="2c7fe-201">TestCategory</span></span></li></ul> |
-| <span data-ttu-id="2c7fe-202">xUnit</span><span class="sxs-lookup"><span data-stu-id="2c7fe-202">xUnit</span></span>          | <ul><li><span data-ttu-id="2c7fe-203">FullyQualifiedName</span><span class="sxs-lookup"><span data-stu-id="2c7fe-203">FullyQualifiedName</span></span></li><li><span data-ttu-id="2c7fe-204">displayName</span><span class="sxs-lookup"><span data-stu-id="2c7fe-204">DisplayName</span></span></li><li><span data-ttu-id="2c7fe-205">Osobnostní rysy</span><span class="sxs-lookup"><span data-stu-id="2c7fe-205">Traits</span></span></li></ul>                                   |
+| <span data-ttu-id="b2b8b-196">MSTest</span><span class="sxs-lookup"><span data-stu-id="b2b8b-196">MSTest</span></span>         | <ul><li><span data-ttu-id="b2b8b-197">FullyQualifiedName</span><span class="sxs-lookup"><span data-stu-id="b2b8b-197">FullyQualifiedName</span></span></li><li><span data-ttu-id="b2b8b-198">Název</span><span class="sxs-lookup"><span data-stu-id="b2b8b-198">Name</span></span></li><li><span data-ttu-id="b2b8b-199">Název třídy</span><span class="sxs-lookup"><span data-stu-id="b2b8b-199">ClassName</span></span></li><li><span data-ttu-id="b2b8b-200">Priorita</span><span class="sxs-lookup"><span data-stu-id="b2b8b-200">Priority</span></span></li><li><span data-ttu-id="b2b8b-201">TestCategory</span><span class="sxs-lookup"><span data-stu-id="b2b8b-201">TestCategory</span></span></li></ul> |
+| <span data-ttu-id="b2b8b-202">xUnit</span><span class="sxs-lookup"><span data-stu-id="b2b8b-202">xUnit</span></span>          | <ul><li><span data-ttu-id="b2b8b-203">FullyQualifiedName</span><span class="sxs-lookup"><span data-stu-id="b2b8b-203">FullyQualifiedName</span></span></li><li><span data-ttu-id="b2b8b-204">displayName</span><span class="sxs-lookup"><span data-stu-id="b2b8b-204">DisplayName</span></span></li><li><span data-ttu-id="b2b8b-205">Osobnostní rysy</span><span class="sxs-lookup"><span data-stu-id="b2b8b-205">Traits</span></span></li></ul>                                   |
 
-<span data-ttu-id="2c7fe-206">`<operator>` Popisuje vztah mezi vlastnosti a hodnotu:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-206">The `<operator>` describes the relationship between the property and the value:</span></span>
+<span data-ttu-id="b2b8b-206">`<operator>` Popisuje vztah mezi vlastnosti a hodnotu:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-206">The `<operator>` describes the relationship between the property and the value:</span></span>
 
-| <span data-ttu-id="2c7fe-207">Operátor</span><span class="sxs-lookup"><span data-stu-id="2c7fe-207">Operator</span></span> | <span data-ttu-id="2c7fe-208">Funkce</span><span class="sxs-lookup"><span data-stu-id="2c7fe-208">Function</span></span>        |
+| <span data-ttu-id="b2b8b-207">Operátor</span><span class="sxs-lookup"><span data-stu-id="b2b8b-207">Operator</span></span> | <span data-ttu-id="b2b8b-208">Funkce</span><span class="sxs-lookup"><span data-stu-id="b2b8b-208">Function</span></span>        |
 | :------: | --------------- |
-| `=`      | <span data-ttu-id="2c7fe-209">Přesná shoda</span><span class="sxs-lookup"><span data-stu-id="2c7fe-209">Exact match</span></span>     |
-| `!=`     | <span data-ttu-id="2c7fe-210">Není přesná shoda</span><span class="sxs-lookup"><span data-stu-id="2c7fe-210">Not exact match</span></span> |
-| `~`      | <span data-ttu-id="2c7fe-211">Obsahuje</span><span class="sxs-lookup"><span data-stu-id="2c7fe-211">Contains</span></span>        |
+| `=`      | <span data-ttu-id="b2b8b-209">Přesná shoda</span><span class="sxs-lookup"><span data-stu-id="b2b8b-209">Exact match</span></span>     |
+| `!=`     | <span data-ttu-id="b2b8b-210">Není přesná shoda</span><span class="sxs-lookup"><span data-stu-id="b2b8b-210">Not exact match</span></span> |
+| `~`      | <span data-ttu-id="b2b8b-211">Obsahuje</span><span class="sxs-lookup"><span data-stu-id="b2b8b-211">Contains</span></span>        |
 
-<span data-ttu-id="2c7fe-212">`<value>` je řetězec.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-212">`<value>` is a string.</span></span> <span data-ttu-id="2c7fe-213">Všechna vyhledávání jsou malá a velká písmena.</span><span class="sxs-lookup"><span data-stu-id="2c7fe-213">All the lookups are case insensitive.</span></span>
+<span data-ttu-id="b2b8b-212">`<value>` je řetězec.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-212">`<value>` is a string.</span></span> <span data-ttu-id="b2b8b-213">Všechna vyhledávání jsou malá a velká písmena.</span><span class="sxs-lookup"><span data-stu-id="b2b8b-213">All the lookups are case insensitive.</span></span>
 
-<span data-ttu-id="2c7fe-214">Výraz bez `<operator>` je automaticky považováno za `contains` na `FullyQualifiedName` vlastnosti (například `dotnet test --filter xyz` je stejná jako `dotnet test --filter FullyQualifiedName~xyz`).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-214">An expression without an `<operator>` is automatically considered as a `contains` on `FullyQualifiedName` property (for example, `dotnet test --filter xyz` is same as `dotnet test --filter FullyQualifiedName~xyz`).</span></span>
+<span data-ttu-id="b2b8b-214">Výraz bez `<operator>` je automaticky považováno za `contains` na `FullyQualifiedName` vlastnosti (například `dotnet test --filter xyz` je stejná jako `dotnet test --filter FullyQualifiedName~xyz`).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-214">An expression without an `<operator>` is automatically considered as a `contains` on `FullyQualifiedName` property (for example, `dotnet test --filter xyz` is same as `dotnet test --filter FullyQualifiedName~xyz`).</span></span>
 
-<span data-ttu-id="2c7fe-215">Výrazy jde připojit k podmíněných operátorů:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-215">Expressions can be joined with conditional operators:</span></span>
+<span data-ttu-id="b2b8b-215">Výrazy jde připojit k podmíněných operátorů:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-215">Expressions can be joined with conditional operators:</span></span>
 
-| <span data-ttu-id="2c7fe-216">Operátor</span><span class="sxs-lookup"><span data-stu-id="2c7fe-216">Operator</span></span>            | <span data-ttu-id="2c7fe-217">Funkce</span><span class="sxs-lookup"><span data-stu-id="2c7fe-217">Function</span></span> |
+| <span data-ttu-id="b2b8b-216">Operátor</span><span class="sxs-lookup"><span data-stu-id="b2b8b-216">Operator</span></span>            | <span data-ttu-id="b2b8b-217">Funkce</span><span class="sxs-lookup"><span data-stu-id="b2b8b-217">Function</span></span> |
 | ------------------- | -------- |
-| <code>&#124;</code> | <span data-ttu-id="2c7fe-218">NEBO</span><span class="sxs-lookup"><span data-stu-id="2c7fe-218">OR</span></span>       |
-| `&`                 | <span data-ttu-id="2c7fe-219">AND</span><span class="sxs-lookup"><span data-stu-id="2c7fe-219">AND</span></span>      |
+| <code>&#124;</code> | <span data-ttu-id="b2b8b-218">NEBO</span><span class="sxs-lookup"><span data-stu-id="b2b8b-218">OR</span></span>       |
+| `&`                 | <span data-ttu-id="b2b8b-219">AND</span><span class="sxs-lookup"><span data-stu-id="b2b8b-219">AND</span></span>      |
 
-<span data-ttu-id="2c7fe-220">Je možné uzavřít do uvozovek výrazy v závorkách při použití podmíněných operátorů (například `(Name~TestMethod1) | (Name~TestMethod2)`).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-220">You can enclose expressions in parenthesis when using conditional operators (for example, `(Name~TestMethod1) | (Name~TestMethod2)`).</span></span>
+<span data-ttu-id="b2b8b-220">Je možné uzavřít do uvozovek výrazy v závorkách při použití podmíněných operátorů (například `(Name~TestMethod1) | (Name~TestMethod2)`).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-220">You can enclose expressions in parenthesis when using conditional operators (for example, `(Name~TestMethod1) | (Name~TestMethod2)`).</span></span>
 
-<span data-ttu-id="2c7fe-221">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="2c7fe-221">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
+<span data-ttu-id="b2b8b-221">Další informace a příklady o tom, jak použít selektivní jednotky filtrování testů, naleznete v tématu [spouštění selektivních testů jednotek](../testing/selective-unit-tests.md).</span><span class="sxs-lookup"><span data-stu-id="b2b8b-221">For more information and examples on how to use selective unit test filtering, see [Running selective unit tests](../testing/selective-unit-tests.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="2c7fe-222">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2c7fe-222">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b2b8b-222">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b2b8b-222">See also</span></span>
 
-* [<span data-ttu-id="2c7fe-223">Architektury a cíle</span><span class="sxs-lookup"><span data-stu-id="2c7fe-223">Frameworks and Targets</span></span>](../../standard/frameworks.md)  
-* [<span data-ttu-id="2c7fe-224">.NET core Runtime identifikátor (RID) katalogu</span><span class="sxs-lookup"><span data-stu-id="2c7fe-224">.NET Core Runtime IDentifier (RID) catalog</span></span>](../rid-catalog.md)
+* [<span data-ttu-id="b2b8b-223">Architektury a cíle</span><span class="sxs-lookup"><span data-stu-id="b2b8b-223">Frameworks and Targets</span></span>](../../standard/frameworks.md)  
+* [<span data-ttu-id="b2b8b-224">.NET core Runtime identifikátor (RID) katalogu</span><span class="sxs-lookup"><span data-stu-id="b2b8b-224">.NET Core Runtime IDentifier (RID) catalog</span></span>](../rid-catalog.md)

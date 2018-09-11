@@ -7,41 +7,41 @@ ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: a16416e580dabd6a9057e11a8183437529ca83e8
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44227646"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44271257"
 ---
-# <a name="extending-security"></a><span data-ttu-id="dccac-102">Rozšíření zabezpečení</span><span class="sxs-lookup"><span data-stu-id="dccac-102">Extending Security</span></span>
-<span data-ttu-id="dccac-103">Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="dccac-103">To accommodate new claim types and custom tokens, you can extend the security infrastructure of Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="dccac-104">Témata v této části ukazují, jak to lze provést.</span><span class="sxs-lookup"><span data-stu-id="dccac-104">The topics in this section show you how this is done.</span></span>  
+# <a name="extending-security"></a><span data-ttu-id="150e7-102">Rozšíření zabezpečení</span><span class="sxs-lookup"><span data-stu-id="150e7-102">Extending Security</span></span>
+<span data-ttu-id="150e7-103">Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="150e7-103">To accommodate new claim types and custom tokens, you can extend the security infrastructure of Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="150e7-104">Témata v této části ukazují, jak to lze provést.</span><span class="sxs-lookup"><span data-stu-id="150e7-104">The topics in this section show you how this is done.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="dccac-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="dccac-105">In This Section</span></span>  
- [<span data-ttu-id="dccac-106">Architektura zabezpečení</span><span class="sxs-lookup"><span data-stu-id="dccac-106">Security Architecture</span></span>](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)  
- <span data-ttu-id="dccac-107">Provede architekturu jako systém zabezpečení WCF.</span><span class="sxs-lookup"><span data-stu-id="dccac-107">Walks through the architecture of the WCF security system.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="150e7-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="150e7-105">In This Section</span></span>  
+ [<span data-ttu-id="150e7-106">Architektura zabezpečení</span><span class="sxs-lookup"><span data-stu-id="150e7-106">Security Architecture</span></span>](https://msdn.microsoft.com/library/16593476-d36a-408d-808c-ae6fd483e28f)  
+ <span data-ttu-id="150e7-107">Provede architekturu jako systém zabezpečení WCF.</span><span class="sxs-lookup"><span data-stu-id="150e7-107">Walks through the architecture of the WCF security system.</span></span>  
   
- [<span data-ttu-id="dccac-108">Vlastní přihlašovací údaje a jejich ověřování</span><span class="sxs-lookup"><span data-stu-id="dccac-108">Custom Credential and Credential Validation</span></span>](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
- <span data-ttu-id="dccac-109">Vysvětluje, jak modelem Identity se používá při ověřování vlastní přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="dccac-109">Explains how the Identity Model is used when validating custom credentials.</span></span>  
+ [<span data-ttu-id="150e7-108">Vlastní přihlašovací údaje a jejich ověřování</span><span class="sxs-lookup"><span data-stu-id="150e7-108">Custom Credential and Credential Validation</span></span>](../../../../docs/framework/wcf/extending/custom-credential-and-credential-validation.md)  
+ <span data-ttu-id="150e7-109">Vysvětluje, jak modelem Identity se používá při ověřování vlastní přihlašovací údaje.</span><span class="sxs-lookup"><span data-stu-id="150e7-109">Explains how the Identity Model is used when validating custom credentials.</span></span>  
   
- [<span data-ttu-id="dccac-110">Vlastní tokeny</span><span class="sxs-lookup"><span data-stu-id="dccac-110">Custom Tokens</span></span>](../../../../docs/framework/wcf/extending/custom-tokens.md)  
- <span data-ttu-id="dccac-111">Vystavené tokeny z tokenu služby zabezpečení (STS) jsou obvykle tokeny SAML.</span><span class="sxs-lookup"><span data-stu-id="dccac-111">Issued tokens from a Security Token Service (STS) are typically SAML tokens.</span></span> <span data-ttu-id="dccac-112">Toto téma vysvětluje, jak vytvořit vlastní typ tokenu.</span><span class="sxs-lookup"><span data-stu-id="dccac-112">This topic explains how to create a custom token type.</span></span>  
+ [<span data-ttu-id="150e7-110">Vlastní tokeny</span><span class="sxs-lookup"><span data-stu-id="150e7-110">Custom Tokens</span></span>](../../../../docs/framework/wcf/extending/custom-tokens.md)  
+ <span data-ttu-id="150e7-111">Vystavené tokeny z tokenu služby zabezpečení (STS) jsou obvykle tokeny SAML.</span><span class="sxs-lookup"><span data-stu-id="150e7-111">Issued tokens from a Security Token Service (STS) are typically SAML tokens.</span></span> <span data-ttu-id="150e7-112">Toto téma vysvětluje, jak vytvořit vlastní typ tokenu.</span><span class="sxs-lookup"><span data-stu-id="150e7-112">This topic explains how to create a custom token type.</span></span>  
   
- [<span data-ttu-id="dccac-113">Vlastní autorizace</span><span class="sxs-lookup"><span data-stu-id="dccac-113">Custom Authorization</span></span>](../../../../docs/framework/wcf/extending/custom-authorization.md)  
- <span data-ttu-id="dccac-114">Vysvětluje, jak implementovat vlastní autorizace.</span><span class="sxs-lookup"><span data-stu-id="dccac-114">Explains how to implement custom authorization.</span></span>  
+ [<span data-ttu-id="150e7-113">Vlastní autorizace</span><span class="sxs-lookup"><span data-stu-id="150e7-113">Custom Authorization</span></span>](../../../../docs/framework/wcf/extending/custom-authorization.md)  
+ <span data-ttu-id="150e7-114">Vysvětluje, jak implementovat vlastní autorizace.</span><span class="sxs-lookup"><span data-stu-id="150e7-114">Explains how to implement custom authorization.</span></span>  
   
- [<span data-ttu-id="dccac-115">Přepsání identity služby kvůli ověřování</span><span class="sxs-lookup"><span data-stu-id="dccac-115">Overriding the Identity of a Service for Authentication</span></span>](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
- <span data-ttu-id="dccac-116">Popisuje přepsání identity služby kvůli ověřování.</span><span class="sxs-lookup"><span data-stu-id="dccac-116">Describes how to override the identity of a service for authentication.</span></span>  
+ [<span data-ttu-id="150e7-115">Přepsání identity služby kvůli ověřování</span><span class="sxs-lookup"><span data-stu-id="150e7-115">Overriding the Identity of a Service for Authentication</span></span>](../../../../docs/framework/wcf/extending/overriding-the-identity-of-a-service-for-authentication.md)  
+ <span data-ttu-id="150e7-116">Popisuje přepsání identity služby kvůli ověřování.</span><span class="sxs-lookup"><span data-stu-id="150e7-116">Describes how to override the identity of a service for authentication.</span></span>  
   
- [<span data-ttu-id="dccac-117">Postupy: Vytvoření vlastního ověřovatele identity klientů</span><span class="sxs-lookup"><span data-stu-id="dccac-117">How to: Create a Custom Client Identity Verifier</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
- <span data-ttu-id="dccac-118">Ukazuje, jak se ověřit identitu vlastní koncový bod.</span><span class="sxs-lookup"><span data-stu-id="dccac-118">Demonstrates how to validate a custom endpoint identity.</span></span>  
+ [<span data-ttu-id="150e7-117">Postupy: Vytvoření vlastního ověřovatele identity klientů</span><span class="sxs-lookup"><span data-stu-id="150e7-117">How to: Create a Custom Client Identity Verifier</span></span>](../../../../docs/framework/wcf/extending/how-to-create-a-custom-client-identity-verifier.md)  
+ <span data-ttu-id="150e7-118">Ukazuje, jak se ověřit identitu vlastní koncový bod.</span><span class="sxs-lookup"><span data-stu-id="150e7-118">Demonstrates how to validate a custom endpoint identity.</span></span>  
   
- [<span data-ttu-id="dccac-119">Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování</span><span class="sxs-lookup"><span data-stu-id="dccac-119">How to: Use Separate X.509 Certificates for Signing and Encryption</span></span>](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
- <span data-ttu-id="dccac-120">Zprávy jsou obvykle podepsaný a zašifrovaný s jedním certifikátem.</span><span class="sxs-lookup"><span data-stu-id="dccac-120">Messages are typically signed and encrypted with a single certificate.</span></span> <span data-ttu-id="dccac-121">Toto téma vysvětluje, jak dva certifikáty je možné, v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="dccac-121">This topic explains how two certificates can be used, when required.</span></span>  
+ [<span data-ttu-id="150e7-119">Postupy: Použití samostatných certifikátů X.509 pro přihlašování a šifrování</span><span class="sxs-lookup"><span data-stu-id="150e7-119">How to: Use Separate X.509 Certificates for Signing and Encryption</span></span>](../../../../docs/framework/wcf/extending/how-to-use-separate-x-509-certificates-for-signing-and-encryption.md)  
+ <span data-ttu-id="150e7-120">Zprávy jsou obvykle podepsaný a zašifrovaný s jedním certifikátem.</span><span class="sxs-lookup"><span data-stu-id="150e7-120">Messages are typically signed and encrypted with a single certificate.</span></span> <span data-ttu-id="150e7-121">Toto téma vysvětluje, jak dva certifikáty je možné, v případě potřeby.</span><span class="sxs-lookup"><span data-stu-id="150e7-121">This topic explains how two certificates can be used, when required.</span></span>  
   
- [<span data-ttu-id="dccac-122">Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509</span><span class="sxs-lookup"><span data-stu-id="dccac-122">How to: Change the Cryptographic Provider for an X.509 Certificate's Private Key</span></span>](../../../../docs/framework/wcf/extending/change-cryptographic-provider-x509-certificate-private-key.md)  
- <span data-ttu-id="dccac-123">Vysvětluje, jak změnit zprostředkovatele kryptografických služeb používají k zajištění privátní klíč certifikátu X.509 a jak integrovat zprostředkovatele do rozhraní Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="dccac-123">Explains how to change the cryptographic provider used to provide an X.509 certificate's private key and how to integrate the provider into the Windows Communication Foundation (WCF) framework.</span></span>  
+ [<span data-ttu-id="150e7-122">Postupy: Změna zprostředkovatele kryptografických služeb pro privátní klíč certifikátu X.509</span><span class="sxs-lookup"><span data-stu-id="150e7-122">How to: Change the Cryptographic Provider for an X.509 Certificate's Private Key</span></span>](../../../../docs/framework/wcf/extending/change-cryptographic-provider-x509-certificate-private-key.md)  
+ <span data-ttu-id="150e7-123">Vysvětluje, jak změnit zprostředkovatele kryptografických služeb používají k zajištění privátní klíč certifikátu X.509 a jak integrovat zprostředkovatele do rozhraní Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="150e7-123">Explains how to change the cryptographic provider used to provide an X.509 certificate's private key and how to integrate the provider into the Windows Communication Foundation (WCF) framework.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="dccac-124">Odkaz</span><span class="sxs-lookup"><span data-stu-id="dccac-124">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="150e7-124">Odkaz</span><span class="sxs-lookup"><span data-stu-id="150e7-124">Reference</span></span>  
  <xref:System.ServiceModel.ServiceAuthorizationManager>  
   
  <xref:System.ServiceModel.Security>  
@@ -54,10 +54,10 @@ ms.locfileid: "44227646"
   
  <xref:System.IdentityModel.Selectors>  
   
-## <a name="related-sections"></a><span data-ttu-id="dccac-125">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="dccac-125">Related Sections</span></span>  
- [<span data-ttu-id="dccac-126">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="dccac-126">Security</span></span>](../../../../docs/framework/wcf/feature-details/security.md)  
+## <a name="related-sections"></a><span data-ttu-id="150e7-125">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="150e7-125">Related Sections</span></span>  
+ [<span data-ttu-id="150e7-126">Zabezpečení</span><span class="sxs-lookup"><span data-stu-id="150e7-126">Security</span></span>](../../../../docs/framework/wcf/feature-details/security.md)  
   
- [<span data-ttu-id="dccac-127">Základní programování WCF</span><span class="sxs-lookup"><span data-stu-id="dccac-127">Basic WCF Programming</span></span>](../../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [<span data-ttu-id="150e7-127">Základní programování WCF</span><span class="sxs-lookup"><span data-stu-id="150e7-127">Basic WCF Programming</span></span>](../../../../docs/framework/wcf/basic-wcf-programming.md)  
   
-## <a name="see-also"></a><span data-ttu-id="dccac-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="dccac-128">See Also</span></span>  
- [<span data-ttu-id="dccac-129">Přehled zabezpečení</span><span class="sxs-lookup"><span data-stu-id="dccac-129">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)
+## <a name="see-also"></a><span data-ttu-id="150e7-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="150e7-128">See Also</span></span>  
+ [<span data-ttu-id="150e7-129">Přehled zabezpečení</span><span class="sxs-lookup"><span data-stu-id="150e7-129">Security Overview</span></span>](../../../../docs/framework/wcf/feature-details/security-overview.md)
