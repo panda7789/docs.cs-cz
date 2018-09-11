@@ -7,11 +7,11 @@ helpviewer_keywords:
 - files [C#]
 ms.assetid: 0f2511cf-2b02-4b41-b001-b1754677c38f
 ms.openlocfilehash: 3625f7a108675a3a9ab6be16ef94ae7e7c107612
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44181034"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44261728"
 ---
 # <a name="file-system-and-the-registry-c-programming-guide"></a>Systém souborů a registr (Průvodce programováním v C#)
 Následující témata ukazují, jak provádět různé základní operace u souborů, složek a registru pomocí C# a rozhraní .NET Framework.  

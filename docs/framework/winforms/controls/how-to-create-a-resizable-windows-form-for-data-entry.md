@@ -12,11 +12,11 @@ helpviewer_keywords:
 - Windows Forms, resizable
 ms.assetid: babdf198-404c-485d-a914-ed370c6ecd99
 ms.openlocfilehash: a319fba43c6735cd5552dd71d1fb614a6192da97
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44205741"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44260941"
 ---
 # <a name="how-to-create-a-resizable-windows-form-for-data-entry"></a>Postupy: Vytvoření formuláře Windows s možností změny velikosti pro zadávání dat
 Dobré rozložení odpovídá změny v dimenzích jeho nadřazený formulář. Můžete použít <xref:System.Windows.Forms.TableLayoutPanel> ovládacího prvku na upravte si rozložení formuláře pro změnit velikost a umístění ovládacích prvků běžely jako změnu rozměrů formuláře. <xref:System.Windows.Forms.TableLayoutPanel> Ovládací prvek je také užitečné v případě změny v obsahu své ovládací prvky příčina změny v rozložení. Proces popsané v tomto postupu můžete provést v rámci prostředí sady Visual Studio.  Viz také [návod: vytvoření formuláře Windows umožňující změnu velikosti pro zadávání dat](https://msdn.microsoft.com/library/991eahec\(v=vs.110\)).  

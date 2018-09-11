@@ -13,11 +13,11 @@ ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 70955d496f5cf9e3bf44b9bc03a054d1c96efe98
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44217084"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44260016"
 ---
 # <a name="using-objects-that-implement-idisposable"></a>Použití objektů implementujících rozhraní IDisposable
 

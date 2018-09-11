@@ -3,11 +3,11 @@ title: Ověřování ze strany klienta
 ms.date: 03/30/2017
 ms.assetid: f0c1f805-1a81-4d0d-a112-bf5e2e87a631
 ms.openlocfilehash: 3f8b5ec3f8652ef50bbda3456669f2abf456472b
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44176534"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44262708"
 ---
 # <a name="client-validation"></a>Ověřování ze strany klienta
 Služby často publikování metadat povolit automatické generování a konfigurace proxy serveru typů klientů. Pokud služba není důvěryhodný, klientské aplikace by měl ověřit, metadata odpovídá klientská aplikace zásady týkající se zabezpečení, transakce, typ kontraktu služby a tak dále. Následující příklad ukazuje, jak zapsat klienta chování koncového bodu, která ověřuje koncový bod služby k zajištění, že tento koncový bod služby je bezpečné používat.  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
 ms.openlocfilehash: b732de508c8738de5e5e55168a6e17a1d88a3b02
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44212071"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44259818"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Anonymní typy (Průvodce programováním v C#)
 Anonymní typy poskytují pohodlný způsob, jak zapouzdřit sadu vlastnosti jen pro čtení bez nutnosti explicitně definovat typ nejprve do jediného objektu. Název typu je generovaný kompilátorem a není k dispozici na úrovni zdrojového kódu. Typ každé vlastnosti je odvozen kompilátorem.  

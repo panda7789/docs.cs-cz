@@ -9,11 +9,11 @@ ms.assetid: ee0038ef-b247-4747-a650-3c5c5cd58d8b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 51aa91b1acbae9f1a15ac12441090dd4c1c2dcb1
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44207054"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44259488"
 ---
 # <a name="attributes"></a>Atributy
 <xref:System.Attribute?displayProperty=nameWithType> slouží k definování uživatelských atributů, které základní třídy.  
