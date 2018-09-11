@@ -9,11 +9,11 @@ ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1d8b8c21af8ca0a21d97e8246ad82c42aaaf4974
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
-ms.translationtype: HT
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/10/2018
-ms.locfileid: "44272446"
+ms.locfileid: "44342592"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migrace z třídy XslTransform
 Architektura XSLT byla přepracována v [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)] release. <xref:System.Xml.Xsl.XslTransform> Třídy nahradila ji <xref:System.Xml.Xsl.XslCompiledTransform> třídy.  

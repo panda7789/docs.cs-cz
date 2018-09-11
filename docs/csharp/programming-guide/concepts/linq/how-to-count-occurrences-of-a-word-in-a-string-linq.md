@@ -3,11 +3,11 @@ title: 'Postupy: počítání výskytů slova v řetězci (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: f8e6f546-7c14-4aa1-8a75-e8d09f3b8ccd
 ms.openlocfilehash: 48eda99970744a659a803f52bb3a3c499390f5c8
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180944"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44352960"
 ---
 # <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>Postupy: počítání výskytů slova v řetězci (LINQ) (C#)
 Tento příklad ukazuje, jak můžete počítat výskyty zadaného slova v řetězci dotazu LINQ. Všimněte si, že počet, nejprve provést <xref:System.String.Split%2A> metoda je volána k vytvoření pole slov. Je snížení výkonu <xref:System.String.Split%2A> metody. Pokud je počet slov pouze operace s řetězci, měli byste zvážit použití <xref:System.Text.RegularExpressions.Regex.Matches%2A> nebo <xref:System.String.IndexOf%2A> metody místo. Ale pokud výkon není kritický problém nebo jste už rozdělili věty nad ním provádět jiné typy dotazů, pak je vhodné zprostředkovatel LINQ slouží pro počet slov nebo frází také.  

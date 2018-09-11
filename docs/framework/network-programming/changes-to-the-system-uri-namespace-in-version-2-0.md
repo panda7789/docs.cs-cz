@@ -6,11 +6,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: dbd12b3e08b6e21d26e2cb688a591cd4e03574dc
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
-ms.translationtype: HT
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/10/2018
-ms.locfileid: "44277728"
+ms.locfileid: "44342232"
 ---
 # <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Změny v oboru názvů System.Uri ve verzi 2.0
 Bylo provedeno několik změn <xref:System.Uri?displayProperty=nameWithType> třídy. Tyto změny oprava nesprávné chování, rozšířeného použitelnost a zvýšené zabezpečení.  

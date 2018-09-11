@@ -4,12 +4,12 @@ description: Vysvětluje, jak spravovat závislosti s nástroji .NET Core.
 author: blackdwarf
 ms.author: mairaw
 ms.date: 03/06/2017
-ms.openlocfilehash: c8f40b8571523b98da55b047fea8d2bf03b390a2
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: cbeb9ad17932f6abaf14333a71fab2b4b8fd099c
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244225"
+ms.lasthandoff: 09/11/2018
+ms.locfileid: "44353275"
 ---
 # <a name="managing-dependencies-with-net-core-sdk-10"></a>Správa závislostí s .NET Core SDK 1.0
 
@@ -32,7 +32,7 @@ Pokud jste se seznámili s nástrojem MSBuild, bude vypadat povědomě na jiné 
 Přidání závislostí, který je k dispozici pouze v konkrétní cíle se provádí pomocí podmínek stejně jako v následujícím příkladu:
 
 ```xml
-<PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp1.0'" />
+<PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
 ```
 
 Výše uvedené znamená, že závislost budou pouze platná, pokud sestavení se děje to uvedeny cíle. `$(TargetFramework)` v podmínce je vlastnost MSBuild, která je nastavena v projektu. Pro nejčastěji používané aplikace .NET Core nemusíte to provést. 
@@ -57,7 +57,7 @@ Potom jsme uložte projekt a spusťte `dotnet restore` příkaz a nainstalujte z
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp1.0</TargetFramework>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
