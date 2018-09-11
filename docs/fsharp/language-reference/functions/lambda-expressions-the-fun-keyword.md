@@ -3,11 +3,11 @@ title: 'Výrazy lambda: Klíčové slovo fun (F#)'
 description: 'Další informace o použití F # "zábavu" – klíčové slovo k definování výraz lambda, který je anonymní funkce.'
 ms.date: 05/16/2016
 ms.openlocfilehash: a37757f6b7328cd348bbf13f058a6dbc881769cf
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44141175"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44337015"
 ---
 # <a name="lambda-expressions-the-fun-keyword-f"></a>Výrazy lambda: Klíčové slovo fun (F#)
 

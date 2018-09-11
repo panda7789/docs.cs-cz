@@ -3,11 +3,11 @@ title: Expressions2
 ms.date: 03/30/2017
 ms.assetid: 43a85905-77b5-4893-bb38-1cb9b293d69d
 ms.openlocfilehash: e852b62e6d0b6b4b3ddc19b197902de5325310a1
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44214417"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44275090"
 ---
 # <a name="expressions"></a>Výrazy
 Tento příklad ukazuje, jak používat základní výrazy v pracovním postupu. Skládá se z pracovní postup, který vypočítá základní salary statistiky pro dva zaměstnance fiktivní společnosti. Dvě třídy `Employee` a `SalaryStats`, jsou definovány v Employee.cs a SalaryStats.cs. Tyto třídy se používají v pracovním postupu, který ukazuje, jak provádět jednoduché řetězec a aritmetické operace na vlastnosti proměnných komplexních typů.  

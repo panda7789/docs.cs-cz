@@ -5,11 +5,11 @@ helpviewer_keywords:
 - true operator [C#]
 ms.assetid: acaba817-5da5-4364-b3b2-2e5c75ec1839
 ms.openlocfilehash: 54b8d764dc673598474d6adbbee82e0223a16b93
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44197796"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44271309"
 ---
 # <a name="true-operator-c-reference"></a>true – – operátor (Referenční dokumentace jazyka C#)
 Vrátí [bool](../../../csharp/language-reference/keywords/bool.md) hodnotu `true` k označení, že operand má hodnotu true a vrátí `false` jinak.  

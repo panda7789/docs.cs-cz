@@ -3,11 +3,11 @@ title: Změna hostování návrháře
 ms.date: 03/30/2017
 ms.assetid: b676ad31-5f64-4d84-9a36-b4d7113a2f4d
 ms.openlocfilehash: 1901df62ccdeec3f75ce0d8cd85484f46fac4541
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44204666"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44274093"
 ---
 # <a name="designer-rehosting"></a>Změna hostování návrháře
 Změna hostování návrháře je běžný scénář, který odkazuje na hostování pracovního postupu návrhové plátno v rámci vlastní aplikace. Hostování aplikace, kterou většina lidí znají je Visual Studio, ale existuje mnoho scénářů, kdy zobrazení návrháře postupu provádění v aplikaci může být užitečné:  

@@ -3,11 +3,11 @@ title: Standardní operátory dotazu v dotazech LINQ to Entities
 ms.date: 08/21/2018
 ms.assetid: 7fa55a9b-6219-473d-b1e5-2884a32dcdff
 ms.openlocfilehash: 302fa281767fc95e9a9a2192382034b3a519cd92
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44217318"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44262263"
 ---
 # <a name="standard-query-operators-in-linq-to-entities-queries"></a>Standardní operátory dotazu v dotazech LINQ to Entities
 V dotazu zadejte informace, které chcete načíst ze zdroje dat. Dotaz můžete také určit, jak tyto informace by měl být seřazeny, seskupeny a tvarovány dříve, než se vrátí. LINQ poskytuje sadu metod standardního dotazu, které můžete použít v dotazu. Většina z těchto metod pracovat v pořadí; v tomto kontextu, sekvence je objekt, jehož typ implementuje <xref:System.Collections.Generic.IEnumerable%601> rozhraní nebo <xref:System.Linq.IQueryable%601> rozhraní. Funkce standardních dotazovacích operátorů dotazu obsahuje filtrování, projekce, agregace, řazení, seskupení, stránkování a další. Některé z více často používaných standardních dotazovacích operátorů mít vyhrazené klíčové slovo syntaxe tak, aby bylo možné volat pomocí syntaxe výrazu dotazu. Výraz dotazu je lépe čitelný, jiný způsob, jak vyjádřit dotaz než ekvivalentní založených na volání metody. Klauzule dotazového výrazu jsou přeloženy do volání metody dotazu v době kompilace. Seznam standardních operátorů dotazu, které mají klauzule výrazu dotazu ekvivalentní najdete v tématu [přehled standardních operátorů dotazu](https://msdn.microsoft.com/library/24cda21e-8af8-4632-b519-c404a839b9b2).  

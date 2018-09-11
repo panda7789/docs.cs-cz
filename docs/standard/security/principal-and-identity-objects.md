@@ -15,11 +15,11 @@ ms.assetid: aa5930ad-f3d7-40aa-b6f6-c6edcd5c64f7
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b8c7616a3187cd5fa28f231dffd15b0bfeea4b7f
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44201165"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44338769"
 ---
 # <a name="principal-and-identity-objects"></a>Objekty zabezpečení a identity
 Spravovaný kód může zjišťovat identitu nebo role objekt zabezpečení prostřednictvím <xref:System.Security.Principal.IPrincipal> objektu, který obsahuje odkaz na <xref:System.Security.Principal.IIdentity> objektu. Může být užitečné k porovnání objektů identity a zabezpečení na známé koncepty, jako jsou účty uživatelů a skupin. Ve většině prostředí sítě představují uživatelské účty uživatele nebo programy, zatímco skupinových účtů představují určité kategorie uživatelů a práv, které mohou mít. Obdobně objekty rozhraní .NET Framework identity představují uživatele, zatímco role představují členství ve skupinách a kontext zabezpečení. V rozhraní .NET Framework zapouzdří objekt zabezpečení identity objektu a rolí. Aplikace rozhraní .NET framework udělit práva k objektu zabezpečení na základě své identity nebo častěji, členství v roli.  

@@ -3,11 +3,11 @@ title: Použití aktivity InvokePowerShell
 ms.date: 03/30/2017
 ms.assetid: 956251a0-31ca-4183-bf76-d277c08585df
 ms.openlocfilehash: fa42cddd930b755e9938a02a137ee77ee273fad0
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44227698"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44269199"
 ---
 # <a name="using-the-invokepowershell-activity"></a>Použití aktivity InvokePowerShell
 Ukázka InvokePowerShell ukazuje, jak vyvolat pomocí příkazů prostředí Windows PowerShell `InvokePowerShell` aktivity.  

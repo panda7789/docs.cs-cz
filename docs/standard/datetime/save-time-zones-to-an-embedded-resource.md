@@ -13,11 +13,11 @@ ms.assetid: 3c96d83a-a057-4496-abb0-8f4b12712558
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 921874e774d18751c29db495dac1bc53d10cc8ad
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44211850"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44337717"
 ---
 # <a name="how-to-save-time-zones-to-an-embedded-resource"></a>Postupy: ukládání časových pásem do vloženého prostředku
 

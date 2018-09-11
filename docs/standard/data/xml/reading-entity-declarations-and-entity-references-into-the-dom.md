@@ -6,11 +6,11 @@ ms.assetid: 86dba977-5cc4-4567-964f-027ffabc47b2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e30b52b8cdfb4d185687d58c80f4475730031c86
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44185792"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44264269"
 ---
 # <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Čtení deklarací entit a odkazy na Entity do modelu DOM
 Entita je deklarace, která uvádí název, který se má použít v souboru XML místo obsahu nebo značky. Existují dvě části k entitám. Nejprve musíte tie název pro nahrazení obsahu pomocí deklarace entity. Vytvoří pomocí deklarace entity `<!ENTITY name "value">` syntaxe v definici typu dokumentu (DTD) nebo schématu XML. Za druhé název definovaný v deklaraci entity se následně používá v souboru XML. Při použití v souboru XML, je volána odkazu na entitu. Například následující deklaraci entita deklaruje entity názvu `publisher` jsou spojeny s obsahem "Microsoft Press".  

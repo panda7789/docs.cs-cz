@@ -3,11 +3,11 @@ title: '&lt;Vlastní&gt;'
 ms.date: 03/30/2017
 ms.assetid: a6f65a00-bd1a-4d4a-955a-fe009ec02ab8
 ms.openlocfilehash: 7d558be66b8a1e46d9743c5f8bf0bb9a8b4c349e
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44225422"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44266992"
 ---
 # <a name="ltcustomgt"></a>&lt;Vlastní&gt;
 Určuje nastavení pro službu překladače vlastní sdílené.  

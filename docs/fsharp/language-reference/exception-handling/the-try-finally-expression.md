@@ -3,11 +3,11 @@ title: 'Výjimky: Výraz try...finally (F#)'
 description: "Zjistěte, jak F # ' try... finally \"výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku."
 ms.date: 05/16/2016
 ms.openlocfilehash: 546a6b0619de6f51044600dc1ead73c6d5211299
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44211590"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44275142"
 ---
 # <a name="exceptions-the-tryfinally-expression"></a>Výjimky: Výraz try...finally
 

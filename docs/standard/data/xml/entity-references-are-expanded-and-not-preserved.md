@@ -6,11 +6,11 @@ ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 7a55aa71ff3976241b96dd12baef06a9a13ef9dd
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44222445"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44266862"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>Odkazy na entity jsou rozšířené a Nezachované
 Pokud odkaz na entitu je rozbalen a nahrazuje představuje, **XmlEntityReference** uzlu není vytvořena. Místo toho je analyzován entity prohlášení a uzlů vytvořené z obsahu v deklaraci zkopírují místo hodnoty **XmlEntityReference**. Proto v `&publisher;` například `&publisher;` neukládají, ale místo toho **XmlText** uzel je vytvořen.  

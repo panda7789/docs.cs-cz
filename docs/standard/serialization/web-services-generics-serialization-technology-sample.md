@@ -3,11 +3,11 @@ title: Ukázka technologie serializace obecných typů služby webového
 ms.date: 03/30/2017
 ms.assetid: cdc15ea4-f678-4729-8ebe-188ae720bef7
 ms.openlocfilehash: b233ed4374231c7e7ff2b6617a63c4e4c94612c2
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44177867"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44264971"
 ---
 # <a name="web-services-generics-serialization-technology-sample"></a>Ukázka technologie serializace obecných typů služby webového
 [Stáhněte si ukázky](https://download.microsoft.com/download/4/7/B/47B2164C-E780-4B10-8DE4-2CB5B886E0A6/Technologies/Serialization/Xml%20Serialization/GenericsSerialization.zip.exe)  

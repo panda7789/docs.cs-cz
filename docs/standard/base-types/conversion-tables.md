@@ -15,11 +15,11 @@ ms.assetid: 0ea65c59-85eb-4a52-94ca-c36d3bd13058
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 86642da8647d185d863607819bbb18de9e976e6b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44177724"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44264152"
 ---
 # <a name="type-conversion-tables-in-net"></a>Tabulky převodu typů v .NET
 Rozšiřující převod vyvolá při převodu hodnoty jednoho typu na jiný typ, který je roven nebo větší velikosti. Zužující převod nastane, pokud je hodnota jednoho typu je převedena na hodnotu jiný typ, který je menší velikost. Tabulky v tomto tématu ilustrují chování vykazují oba typy převodů.  

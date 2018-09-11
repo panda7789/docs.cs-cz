@@ -10,11 +10,11 @@ ms.assetid: 84526045-496f-489d-8517-a258cf76f040
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f7f7a779cc10b32d66a184107359b502cf094979
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44222120"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44277663"
 ---
 # <a name="code-contracts"></a>Kontrakty kódu
 Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstupních objekt podmínek ve vašem kódu. Předběžné podmínky jsou požadavky, které musí být splněny, při zadávání metody nebo vlastnosti. Vstupních popisují očekávání v době, kdy kód metody nebo vlastnosti se ukončí. Objekt výstupních podmínek popisují očekávaný stav pro třídu, která je v dobrém stavu.  

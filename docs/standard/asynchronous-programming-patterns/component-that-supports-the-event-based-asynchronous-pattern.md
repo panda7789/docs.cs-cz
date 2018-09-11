@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: 09746f01115a4b6bf3ca54cdc72c6ad936fbaaae
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 3fd01e19bc8aad8af709aee2fdaa020d8192d530
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042436"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339549"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>Postupy: Implementace komponenty, která podporuje asynchronní vzor založený na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  
@@ -58,7 +58,7 @@ Pokud píšete třída s atributem některé operace, které případně utrpít
 -   Vytvořte třídu s názvem `PrimeNumberCalculator` , která dědí z <xref:System.ComponentModel.Component>.  
   
 ## <a name="defining-public-asynchronous-events-and-delegates"></a>Definování veřejné asynchronní události a delegáti  
- Vaše komponenta komunikuje s klienty, kteří používají události. *MethodName *** dokončeno** klientů pro dokončení asynchronní úlohu, upozornění na událost a *MethodName *** ProgressChanged** událost informuje klienty pokroku asynchronní úlohu.  
+ Vaše komponenta komunikuje s klienty, kteří používají události. _MethodName_**dokončeno** klientů pro dokončení asynchronní úlohu, upozornění na událost a _MethodName_**ProgressChanged**událost informuje klienty pokroku asynchronní úlohu.  
   
 #### <a name="to-define-asynchronous-events-for-clients-of-your-component"></a>Chcete-li definovat asynchronní události pro klienty komponenty:  
   

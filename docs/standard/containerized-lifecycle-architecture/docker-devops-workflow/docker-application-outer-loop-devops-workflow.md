@@ -1,223 +1,223 @@
 ---
-title: Kroky v pracovním postupu vnější smyčky DevOps pro aplikaci Docker
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+title: Kroky v postupu DevOps vnější smyčky pro aplikaci v Dockeru
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 09/22/2017
-ms.openlocfilehash: b88eb5637bf266ab2e0a6d255f2e83f6aadc8af2
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/10/2018
+ms.openlocfilehash: a03853a508cfb3d5dd5fbfe66e4ef484b685faaa
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106159"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339032"
 ---
-# <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky v pracovním postupu vnější smyčky DevOps pro aplikaci Docker
+# <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky v postupu DevOps vnější smyčky pro aplikaci v Dockeru
 
-Obrázek 5-1 uvede začátku do konce Popis shromažďování kroky zahrnující pracovního postupu DevOps vnější smyčky.
+Obrázek 5-1 představuje začátku do konce znázornění postup skládající se z aplikací pracovních postupů DevOps vnější smyčky.
 
 ![](./media/image1.png)
 
-Obrázek 5-1: pracovní postup vnější smyčky DevOps pro Docker aplikací pomocí nástroje společnosti Microsoft
+Obrázek 5-1: DevOps vnější smyčky pracovní postup pro aplikace Dockeru pomocí nástrojů Microsoftu
 
-Nyní se podívejme se na každý z těchto kroků podrobněji.
+Teď se podívejme se na každý z těchto kroků podrobněji.
 
 ## <a name="step-1-inner-loop-development-workflow"></a>Krok 1: Pracovní postup vývoje vnitřní smyčky
 
-Tento krok je podrobně vysvětleny v kapitole 4, ale recap, zde je kde vnější smyčky začne, v okamžiku, kdy vývojář nabízených oznámení kódu do systému správy správy zdrojů (např. Git) inicializaci CI kanálu akce.
+Tento krok je podrobně popsána v kapitole 4, ale na rekapitulace, tady je kde vnější smyčky začíná, v okamžiku, kdy vývojář vloží kód do systému správy správy zdrojového kódu (např. Git) zahajuje akce kanálu CI.
 
-## <a name="step-2-source-code-control-integration-and-management-with-visual-studio-team-services-and-git"></a>Krok 2: Integrace ovládacích prvků zdrojového kódu a správy pomocí nástroje Visual Studio Team Services a Git
+## <a name="step-2-source-code-control-integration-and-management-with-azure-devops-services-and-git"></a>Krok 2: Integrace správy zdrojového kódu a správa pomocí služby Azure DevOps a Git
 
-V tomto kroku musíte mít systém správy verzí získat konsolidované verzi všechny kód pocházejících z různých vývojáři v týmu.
+V tomto kroku musíte mít systém správy verzí ke shromáždění konsolidované verzi veškerý kód pocházející z různými vývojáři v týmu.
 
-I když řízení zdrojového kódu (SCC) a správy zdrojového kódu zdát sekundu povaze na Většina vývojářů, při vytváření aplikací pro Docker v DevOps životní cyklus, je velmi důležité zdůraznit, že nesmí odeslat imagí Dockeru s aplikací přímo do globální Docker registru (například Azure kontejneru registru nebo úložiště Docker Hub) z počítače pro vývojáře. Naopak imagí Dockeru vydání a nasazovány do provozních prostředí musí být vytvořeny pouze na zdrojový kód, který je právě integrován v globální sestavení nebo kanálu CI podle vašeho úložiště zdrojového kódu (např. Git).
+I když zdát samozřejmostí pro většinu vývojářů, při vytváření aplikací Dockeru v DevOps životního cyklu, správy zdrojového kódu (SCC) a správy zdrojového kódu, je důležité zdůraznit, že nemůže odeslat Image Dockeru s aplikací přímo do globální registru Docker (jako je Azure Container Registry nebo Docker Hubu) z počítače pro vývojáře. Naopak imagí Dockeru do všeobecně dostupné a nasazené do produkčního prostředí musí být vytvořeny výhradně na zdrojový kód, který je integrován v kanálu CI podle vašeho úložiště zdrojového kódu (např. Git) nebo globálního sestavení.
 
-Místní obrázky vygenerována vývojáři sami má být používána pouze vývojáři při testování v rámci své vlastní počítače. Z tohoto důvodu je důležité mít aktivovaný z kódu SCC DevOps kanálu.
+Místní Image generovaných vývojáře sami by měly být používány pouze vývojáři při testování v rámci svých vlastních počítačích. To je důvod, proč je důležité mít aktivovat z kódu SCC kanálu DevOps.
 
-Visual Studio Team Services a serveru Team Foundation Server podporují Git a správy verzí Team Foundation. Můžete vybrat mezi nimi a použít jej pro prostředí Microsoft začátku do konce. Ale můžete také spravovat kód do externího úložiště (například Githubu, místní úložiště Git nebo Subversion) a stále možné se k nim připojit a získat kód jako výchozí bod pro svůj DevOps CI kanál.
+Azure DevOps služby a Team Foundation Server podporují Gitu a Team Foundation Version Control. Můžete zvolit mezi nimi a prostředí, použijte ho začátku do konce Microsoft. Ale také můžete spravovat svůj kód v externích úložištích (např. GitHub, v místním úložišti Git nebo Subversion) a stále se může připojit k němu a získat kód jako výchozí bod pro svůj kanál DevOps CI.
 
-## <a name="step-3-build-ci-integrate-and-test-with-visual-studio-team-services-and-docker"></a>Krok 3: Sestavení, CI, integrace a testování pomocí sady Visual Studio Team Services a Docker
+## <a name="step-3-build-ci-integrate-and-test-with-azure-devops-services-and-docker"></a>Krok 3: Sestavení, průběžná integrace, integrace a testování s Azure DevOps služby a Dockeru
 
-CI vyplývá jako standard pro testování moderní softwaru a doručení. Řešení Docker udržuje jasně oddělené oblasti zájmu mezi týmy vývoj a provoz. Neměnitelnosti imagí Dockeru zajišťuje opakovatelných nasazení mezi co vyvinuté, testovat prostřednictvím položky konfigurace a spuštění v produkčním prostředí. Modul docker nasazený na vývojáře přenosných počítačů a infrastruktury testovací zajišťuje kontejnery přenosné prostředích.
+Průběžná integrace se stal standardem pro moderní softwaru, testování a doručení. Řešení Dockeru udržuje jasně oddělené oblasti zájmu mezi týmy vývoje a provozu. Neměnnost imagí Dockeru zajišťuje opakovatelné nasazování mezi co vyvíjel, testovat pomocí položek konfigurace a spusťte v produkčním prostředí. Modul docker nasazených na přenosné počítače pro vývojáře a testovací infrastrukturu zpřístupňuje kontejnery přenosné mezi prostředími.
 
-V tomto okamžiku až budete mít systém správy verzí s správný kód odeslat, musíte *sestavení service* vyzvednutí kód a spusťte testy a globální sestavení.
+V tomto okamžiku až budete mít systém správy verzí se správným kódem odeslání, musíte *sestavení služby* vyzvednout kód a spouštět globální sestavení a testů.
 
-Interní pracovní postup pro tento krok (CI, sestavení, testovací) je o vytváření položek konfigurace kanálu skládající se z vašeho kódu úložiště (Git, atd.), vašem serveru sestavení (Visual Studio Team Services), modul Docker a Docker registru.
+Informace o vytváření kanálu CI skládající se z vašeho úložiště kódu (Git, atd.), váš server sestavení (Azure DevOps služby), modul Docker a Docker Registry je interní pracovní postup pro tento krok (průběžná integrace, sestavení, testování).
 
-Můžete Visual Studio Team Services jako základ pro vytváření aplikací a nastavení svůj kanál položek konfigurace a publikování integrovaný "artefakty" "artefakty úložiště," které je popsané v dalším kroku.
+Můžete Azure DevOps Services jako základ pro vytváření aplikací a nastavení kanálu CI a publikování "artefaktů sestavení" na "úložiště artefaktů," který je vysvětlen v dalším kroku.
 
-Při použití Docker pro nasazení "poslední artefakty" k nasazení jsou imagí Dockeru vaší aplikace nebo služby vložených v nich. K publikování nebo poslat tyto bitové kopie *Docker registru* (privátní úložiště jako ty, které může mít v registru kontejner Azure nebo veřejné jeden jako Docker Hub registru, který se běžně používá pro oficiální základní Image).
+Při použití Docker pro nasazení "konečné artefakty" nasazení jsou Image Dockeru s aplikací nebo služeb vložené v nich. Tyto Image jsou vloženy nebo publikovanou do *registru Dockeru* (soukromé úložiště jako ty, které můžete mít ve službě Azure Container Registry nebo veřejnou verzi jako registru Docker Hub, která se běžně používá pro oficiální základní Image).
 
-Tady je základní princip: CI kanálu bude spuštěna vypnout potvrzení změn do úložiště SCC jako Git. Potvrzení způsobí, že Visual Studio Team Services a spusťte úlohu sestavení v rámci kontejner Docker, po úspěšném dokončení této úlohy, nabízená bitovou kopii Docker Docker registru, jak je znázorněno na obrázku 5-2.
+Tady je základní princip: kanál CI bude začaly vypnout potvrzení pro úložiště SCC jako je Git. Potvrzení změn způsobí služby Azure DevOps a spustit úlohu sestavení a v kontejneru Dockeru, po úspěšném dokončení této úlohy, nasdílení image Dockeru do registru Dockeru, jak je znázorněno na obrázku 5-2.
 
 ![](./media/image2.png)
 
-Obrázek 5 – 2: kroky ve službě CI
+Obrázek 5 – 2: potřebnými kroky k CI
 
-Zde jsou základní kroky konfigurace pracovního postupu s Docker a Visual Studio Team Services:
+Tady jsou základní kroky pracovního postupu CI s využitím Dockeru a Azure DevOps služby:
 
-1.  Vývojář doručí potvrzení změn do úložiště SCC (Git/Visual Studio Team Services, GitHub, atd.).
+1.  Vývojář nasdílí potvrzení změn do úložiště SCC (Git/Azure DevOps Services, Githubu, atd.).
 
-2.  Pokud používáte Visual Studio Team Services nebo Git, CI je součástí, což znamená, že je stejně jednoduché jako výběrem zaškrtávacího políčka v sadě Visual Studio Team Services. Pokud používáte externí SCC (např. Githubu), *webhooku* bude oznámit Visual Studio Team Services aktualizace nebo nabízená Git/Githubu.
+2.  Pokud používáte Azure DevOps Services nebo Git, CI je součástí, což znamená, že je stejně jednoduché jako zaškrtnutím políčka ve službách Azure DevOps. Pokud používáte externí SCC (např. GitHub) *webhooku* budou upozornění služby Azure DevOps aktualizace nebo push pro Git/GitHub.
 
-3.  Visual Studio Team Services vrátí SCC úložiště, včetně soubor Docker popisující bitovou kopii, jakož i kód aplikace a testování.
+3.  Služby Azure DevOps si vyžádá SCC úložiště, včetně souboru DockerFile popisující bitovou kopii, jakož i kód aplikace a testů.
 
-4.  Visual Studio Team Services popisky s číslo sestavení a sestavení Docker image.
+4.  Služby Azure DevOps vytvoří image Dockeru a označí ji číslem sestavení.
 
-5.  Visual Studio Team Services vytvoří kontejner Docker v rámci zřízené Docker hostitele a spustí příslušné testy.
+5.  Služby Azure DevOps vytvoří instanci kontejneru Dockeru v rámci zřízené hostitele Docker a spouští příslušné testy.
 
-6.  Pokud jsou testy úspěšné, bitovou kopii je nejdřív relabeled smysluplný název, abyste věděli, je "blessed sestavení" (například "/ 1.0.0" nebo jiné štítek) a pak instaluje do vaší Docker registru (úložiště Docker Hub, Azure kontejneru registru, DTR atd.)
+6.  Pokud jsou testy úspěšné, image je nejprve relabeled na smysluplný název, abyste věděli, je "blessed sestavení" (například "/ 1.0.0" nebo libovolný popisek) a pak nahrány do registru Dockeru (Docker Hub, Azure Container Registry, DTR atd.)
 
-### <a name="implementing-the-ci-pipeline-with-visual-studio-team-services-and-the-docker-extension-for-visual-studio-team-services"></a>Implementace CI kanálu s Visual Studio Team Services a Docker rozšíření pro Visual Studio Team Services
+### <a name="implementing-the-ci-pipeline-with-azure-devops-services-and-the-docker-extension-for-azure-devops-services"></a>Implementace kanálu CI pomocí služby Azure DevOps a rozšíření Dockeru pro Azure DevOps služby
 
-[Rozšíření Visual Studio Team Services Docker](https://aka.ms/vstsdockerextension) přidá do kanálu CI se kterým můžete vytvářet bitové kopie Docker, nabízená imagí Dockeru ověření Docker registru, spustit imagí Dockeru nebo spuštění jiné operace, které nabízí úlohu Docker rozhraní příkazového řádku. Také přidá Docker Compose úloh, které můžete použít k sestavení, push a spouštět aplikace multicontainer Docker nebo spuštění jiné operace, které nabízí Docker Compose CLI, jak je znázorněno v obrázku 5-3.
+[Rozšíření Azure DevOps služby Docker](https://aka.ms/vstsdockerextension) přidá úkol do vašeho kanálu CI, se kterým můžete sestavit Image Dockeru, nasdílení změn imagí Dockeru do ověřeného registru Dockeru, spuštění imagí Dockeru nebo spustit další operace, které nabízí Dockeru ROZHRANÍ PŘÍKAZOVÉHO ŘÁDKU. Také přidá úkol Docker Compose, který můžete použít k sestavení, nasdílet a spusťte vícekontejnerových aplikací Dockeru nebo spuštění jiné operace, které rozhraní Docker Compose příkazového řádku, jak je znázorněno v obrázek 5-3.
 
 ![](./media/image3.png)
 
-Obrázek 5 – 3: kanálu Docker CI ve Visual Studio Team Services
+Obrázek 5-3: kanálu Docker CI v Azure DevOps služby
 
-Rozšíření Docker pomocí koncových bodů služby pro hostitelů Docker a pro kontejner nebo registrech bitové kopie. Výchozí úlohy pomocí místního hostitele Docker, pokud je k dispozici (to aktuálně vyžaduje vlastní agenta Visual Studio Team Services); jinak vyžadují připojení hostitelů Docker zadat. Akce, které jsou závislé na ověřovaného s Docker registru, například když zavedete bitovou kopii, vyžadují, abyste zadali Docker registru připojení.
+Rozšíření Docker můžete použít koncové body služby pro hostitele Dockeru a kontejnerů nebo registry imagí. Výchozí úkoly pomocí místního hostitele Docker, pokud je k dispozici (to aktuálně vyžaduje vlastní agenta služby Azure DevOps); v opačném případě vyžadují zadání připojení hostitele Dockeru. Akce, které jsou závislé na ověřuje pomocí registru Dockeru, jako je například nahráním image, vyžadují, abyste zadali Docker připojení k registru.
 
-Ve vašem účtu Visual Studio Team Services instalaci rozšíření je Visual Studio Team Services Docker následující součásti:
+Rozšíření Azure DevOps služby Docker nainstaluje následující součásti ve vašem účtu služby Azure DevOps:
 
--   Koncový bod služby pro připojení k registru Docker
+-   Koncový bod služby pro připojení k registru Dockeru
 
--   Koncový bod služby pro připojení k hostiteli kontejner Docker
+-   Koncový bod služby pro připojení k hostiteli kontejneru Dockeru
 
--   Úloha Docker proveďte následující:
+-   Docker úkolů můžete provádět následující:
 
--   Vytvoření obrázku
+-   Sestavte image
 
--   Odešlete bitovou kopii nebo úložiště do registru
+-   Nahrání image nebo úložiště do registru
 
--   Spustit bitovou kopii v kontejneru
+-   Spuštění image v kontejneru
 
--   Spusťte příkaz Docker
+-   Spuštění příkazu Dockeru
 
--   Úloha Docker Compose spustit příkaz Docker Compose
+-   Docker Compose úlohy ke spuštění příkazu Docker Compose
 
-Tyto úlohy Visual Studio Team Services sestavení hostitele nebo virtuálních počítačů Linux Docker zřízené v Azure a vaše upřednostňované Docker registru (registru kontejner Azure, úložiště Docker Hub, privátní DTR Docker nebo jiných Docker registru) můžete sestavit svůj Docker CI kanál v velmi konzistentní způsob.
+S těmito úlohami Azure DevOps služby sestavení linuxového Dockeru hostitelů/virtuálních počítačů zřízené v Azure a upřednostňované registru Dockeru (Azure Container Registry, Docker Hubu, privátní DTR Dockeru nebo jiných registru Dockeru) můžete sestavit v kanálu Docker CI velmi konzistentní způsob.
 
 ***Požadavky:***
 
--   Visual Studio Team Services, nebo na místní instalace, Team Foundation Server 2015 Update 3 nebo novější.
+-   Služby Azure DevOps, nebo na místní instalace Team Foundation Server 2015 Update 3 nebo novější.
 
--   Visual Studio Team Services agenta, který má Docker binární soubory.
+-   Azure DevOps služby agenta, který obsahuje binární soubory Docker.
 
-Snadný způsob, jak vytvořit jednu z těchto je se použije ke spuštění na základě bitové kopie Visual Studio Team Services agenta Docker kontejner Docker.
+Snadný způsob, jak vytvořit jeden z nich se má používat Docker ke spuštění kontejneru na základě image Dockeru agenta služby Azure DevOps.
 
-**Další informace o** číst informace o kompletace CI služby Docker sady Visual Studio Team kanálu a návody najdete na následujících serverech:
+**Další informace o** číst informace o sestavení CI Azure DevOps služby Docker kanálu a návody, naleznete na následujících stránkách:
 
-Spuštění agenta Visual Studio Team Services jako kontejner Docker: [ https://hub.docker.com/r/\ microsoft nebo služby vsts-agent nebo](https://hub.docker.com/r/microsoft/vsts-agent/)
+Spuštění agenta služby Azure DevOps jako kontejneru Docker: [ https://hub.docker.com/r/\ microsoft/vsts-agent /](https://hub.docker.com/r/microsoft/vsts-agent/)
 
-Služby VSTS Docker rozšíření: <https://aka.ms/vstsdockerextension>
+Rozšíření Azure Docker DevOps služby: <https://aka.ms/vstsdockerextension>
 
-Vytváření bitových kopií .NET Core Linux Docker s Visual Studio Team Services: <https://blogs.msdn.microsoft.com/stevelasker/2016/06/13/building-net-core-linux-docker-images-with-visual-studio-team-services/>
+Vytváření imagí Dockeru Linux .NET Core se službami Azure DevOps: <https://blogs.msdn.microsoft.com/stevelasker/2016/06/13/building-net-core-linux-docker-images-with-visual-studio-team-services/>
 
-Vytváření sestavení počítač založený na Linuxu Visual Studio Team služby s Docker podpory: <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
+Vytváření sestavení počítače založené na Linuxu Visual Studio Team Service s podporou Dockeru: <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
 
-### <a name="integrate-test-and-validate-multicontainer-docker-applications"></a>Integrace, testování a ověření multicontainer Docker aplikace
+### <a name="integrate-test-and-validate-multicontainer-docker-applications"></a>Integrovat, otestovat a ověřit vícekontejnerových aplikací Dockeru
 
-Většina aplikací Docker se obvykle skládají z několika kontejnerů než jednoho kontejneru. Dobrým příkladem je orientované mikroslužeb aplikace, pro které byste měli jednoho kontejneru typu jedné mikroslužby. Ale i bez výhradně následující vzory mikroslužeb přístup, je velmi pravděpodobné, že by aplikace Docker skládá z více kontejnerů nebo služby.
+Většina aplikací Dockeru se obvykle skládají z víc kontejnerů než jednoho kontejneru. Dobrým příkladem je aplikace orientované na mikroslužby pro kterou byste měli jeden kontejner na mikroslužbách. Ale i bez striktního vzory přístupu mikroslužeb, je velmi pravděpodobné, že vaši aplikaci v Dockeru by obsahovat více kontejnerů a služeb.
 
-Proto po vytvoření aplikace kontejnerů v kanálu CI, musíte také nasadit, integrace a testování aplikace jako celek se všemi jeho kontejnery v rámci hostitele integraci Docker nebo i do na zkušební cluster, do které jsou kontejnerů distribuován.
+Proto po vytvoření aplikace kontejnerů v kanálu CI, budete potřebovat k nasazení, integrovat a otestujte aplikaci jako celek se všemi jeho kontejnery v rámci hostitele služby integrace Dockeru nebo dokonce do testovací cluster, ke kterému jsou kontejnery distribuovat.
 
-Pokud používáte jednoho hostitele, můžete použít příkazy Docker jako docker-tvoří k vytváření a nasazování související kontejnery pro otestování a ověření prostředí Docker v jeden virtuální počítač. Ale pokud pracujete s clusteru služby orchestrator jako DC/OS, Kubernetes nebo Docker Swarm, budete muset nasazení kontejnerů přes jiný mechanismus nebo orchestrator, v závislosti na vybrané clusteru nebo plánovače.
+Pokud při použití jednoho hostitele, můžete použít příkazy Dockeru, jako je docker-compose pro sestavování a nasazování kontejnerů související k testování a validaci prostředí Docker v jednom virtuálním počítači. Ale při práci s clusterem orchestrator jako DC/OS, Kubernetes a Docker Swarm, budete muset nasadit prostřednictvím orchestrator, v závislosti na vybrané cluster a Plánovač a jiný mechanismus kontejnery.
 
-Následují několik typů testů, které se dají spouštět i proti Docker kontejnerů:
+Následuje několik typů testů, které lze spustit pro kontejnery Dockeru:
 
--   Testování částí pro Docker kontejnery
+-   Testy jednotek pro kontejnery Dockeru
 
--   Testování skupiny vzájemně souvisejících aplikací nebo mikroslužeb
+-   Testování skupin vzájemně propojené aplikace nebo mikroslužeb
 
--   Testování v produkčním a "Kanárských" verzích
+-   Testování v produkčním prostředí a "Kanárské" verze
 
-Důležité je, že při spuštění, integrace a funkčních testů, musíte spustit tyto testy z mimo kontejnery. Testy nesmí být definována a spustit v rámci kontejnerů, které nasazujete, protože kontejnery jsou založené na statických bitových kopií, které by měly být úplně stejně jako ty, které budete nasazovat do produkčního prostředí.
+Důležité je, že při spuštění integrace a funkční testy, musíte spustit tyto testy z mimo kontejnery. Testy nesmí být definována a spuštěna v rámci kontejnerů, které nasazujete, protože kontejnery jsou založeny na statické obrázky, které by měly být úplně stejně jako ty, které budete nasazovat do produkčního prostředí.
 
-Velmi vhodná možnost při testování pokročilejší scénáře jako testování několik clusterů (test clusteru, cluster pracovní a provozní cluster), je publikovat bitové kopie do registru k testování v různých clusterech.
+Je velmi vhodná možnost při testování pokročilejší scénáře, jako je testování (test clusteru, pracovní clusteru a clusteru pro produkční prostředí) několik clusterů k publikování Image do registru k testování v různých clusterech.
 
-### <a name="push-the-custom-application-docker-image-into-your-global-docker-registry"></a>Push bitovou kopii Docker vlastní aplikaci do globální registru Docker
+### <a name="push-the-custom-application-docker-image-into-your-global-docker-registry"></a>Odeslání image Dockeru vlastní aplikace na globální registru Dockeru
 
-Po imagí Dockeru byly testovány a ověřit, budete chtít značky a publikovat je do vašeho Docker registru. Docker registru je důležitých typů v životním cyklu aplikace Docker, protože je centrálním místem, kde ukládáte svůj vlastní test (neboli "blessed Image") k nasazení do QA a provozní prostředí.
+Po imagí Dockeru otestovali a ověřili, budete chtít označit a publikovat je do registru Dockeru. Registr Dockeru je důležité část v životním cyklu aplikace Dockeru, protože je centrální místo, kam ukládat vaše vlastní test (označuje se také jako "blessed Image") má být nasazen do dotazů a odpovědí a produkčního prostředí.
 
-Podobně jako jak kód aplikace, které jsou uložené v úložišti SCC (Git atd.) je "zdrojem pravdivosti", Docker registru je vaše "zdrojem pravdivosti" binární aplikace nebo služba bits k nasazení do QA nebo produkční prostředí.
+Podobně jako na to, jak kód aplikace, které jsou uložené v úložišti SCC (Git atd.) je "zdrojem pravdivých informací", "zdroji pravdivých informací" pro binární aplikace nebo služba bits k nasazení do prostředí QA nebo produkčním prostředí je registru Dockeru.
 
-Obvykle můžete chtít mít vaší privátní úložiště pro vaše vlastní Image, buď v privátní úložiště v registru kontejner Azure nebo místní registru jako důvěryhodné registru Docker nebo veřejného cloudu registru s omezeným přístupem (např. Úložiště docker Hub), i když v tomto případě Pokud váš kód není otevřený zdroj, musí důvěřovat zabezpečení od dodavatele. V obou případech metodu, pomocí kterého můžete to udělat je poměrně podobné a nakonec podle docker nabízené příkaz, jak je to znázorněno na obrázku 5-4.
+Obvykle můžete chtít mít privátní úložiště pro vaše vlastní Image do soukromého úložiště ve službě Azure Container Registry nebo v místním registru, jako je Docker Trusted Registry nebo veřejný cloud registru s omezeným přístupem (např. Docker Hubu), i když v tomto posledním případě, pokud není váš kód jako software open source musí důvěřovat zabezpečení od příslušného dodavatele. V obou případech metodu, pomocí kterého lze provést je hodně podobné a nakonec podle v příkazu push docker znázorněný v obrázku 5 až 4.
 
 ![](./media/image4.png)
 
-Obrázek 5-4: publikování vlastních bitových kopií do registru Docker
+Obrázek 5 – 4: publikování vlastní Image do registru Dockeru
 
-Existuje více nabídek Docker registrech od dodavatelů cloud jako registru kontejner Azure, Amazon Web Services kontejneru registru, Google kontejneru registru, molo registru a tak dále.
+Existuje několik nabídek registry Dockeru z cloudových vendorů, jako je Azure Container Registry, Amazon Web Services Container Registry, Google Container Registry, molo registru a tak dále.
 
-Pomocí rozšíření Visual Studio Team Services Docker, můžete nabízet sadu bitové kopie služby definované soubor docker-compose.yml s více značek ověření registru Docker (např. Azure registru kontejneru), jak je znázorněno v obrázku 5-5.
+Použití rozšíření Azure DevOps služby Docker, můžete nabízet sadu imagí služby určené soubor docker-compose.yml s více značek do ověřeného registru Dockeru (jako je Azure Container Registry), jak je znázorněno v obrázek 5 – 5.
 
 ![](./media/image5.png)
 
-Obrázek 5 – 5: použití Visual Studio Team Services k publikování vlastních bitových kopií do registru Docker
+Obrázek 5 – 5: publikování vlastní Image do registru Dockeru pomocí služby Azure DevOps
 
-**Další informace o** Další informace o Docker rozšíření pro Visual Studio Team Services, přejděte na <https://aka.ms/vstsdockerextension>. Další informace o registru kontejner Azure, přejděte na <https://aka.ms/azurecontainerregistry>.
+**Další informace o** Další informace o rozšíření Dockeru pro Azure DevOps služby, přejděte na <https://aka.ms/vstsdockerextension>. Další informace o službě Azure Container Registry, pokračujte <https://aka.ms/azurecontainerregistry>.
 
-## <a name="step-4-cd-deploy"></a>Krok 4: CD, nasazení
+## <a name="step-4-cd-deploy"></a>Krok 4: CD nasazení
 
-Neměnitelnosti imagí Dockeru zajišťuje opakovatelných nasazení co vyvinuté, testovat prostřednictvím položky konfigurace a spuštění v produkčním prostředí. Až budete mít imagí Dockeru aplikace publikována v registru systému Docker (privátní nebo veřejné), můžete je nasadit do několika prostředí, které by mohly mít (produkční, kontrolu kvality, pracovní, apod.) z vaší CD kanálu pomocí Visual Studio Team Services úlohy v kanálu nebo Visual Studio Team Services Release Management.
+Neměnnost imagí Dockeru zajišťuje opakovatelné nasazování s co vyvíjel, testovat pomocí položek konfigurace a spusťte v produkčním prostředí. Až budete mít Image Dockeru aplikace publikované v registru Dockeru (privátní nebo veřejné), můžete je nasadit do několika prostředí, které bude pravděpodobně (výroba, kontrola kvality, Fázování importu, atd.) z kanálu průběžného Doručování s využitím služby Azure DevOps úlohy kanálu nebo Azure DevOps služby Release Management.
 
-Ale v tuto chvíli to závisí na jaký druh Docker aplikace, kterou nasazujete. Nasazení jednoduchou aplikaci (z sestavení a nasazení hlediska) jako monolitický aplikace, která zahrnuje několik kontejnery nebo služeb a nasazené na několika serverech nebo virtuálních počítačů je příliš neliší od nasazení složitější aplikaci jako aplikace orientované mikroslužeb s možností hyperškálovatelný systém. Tyto dva scénáře jsou vysvětlené v následujících částech.
+Ale v tuto chvíli to závisí na druhu aplikaci v Dockeru, kterou nasazujete. Nasazení jednoduché aplikace (ze sestavení a nasazení hlediska) stejně jako monolitické aplikace zahrnující několik kontejnerů nebo služeb a nasazené na několika serverech nebo virtuálních počítačů se velmi liší od složitější aplikaci, jako je nasazení aplikace orientované na mikroslužby s mnoha funkcemi. Tyto dva scénáře jsou vysvětlené v následujících částech.
 
-### <a name="deploying-composed-docker-applications-to-multiple-docker-environments"></a>Nasazení skládá Docker aplikace pro prostředí s více Docker
+### <a name="deploying-composed-docker-applications-to-multiple-docker-environments"></a>Nasazení skládá aplikací Dockeru do různých prostředí Dockeru
 
-Podívejme se na méně komplexní scénář první: nasazení jednoduché hostitelů Docker (virtuální počítače nebo servery) v prostředí jednoho nebo několika prostředí (QA, přípravné nebo produkční prostředí). V tomto scénáři interně svůj CD kanál můžete použít docker-tvoří (z úloh nasazení Visual Studio Team Services) pro nasazení aplikací Docker pomocí jeho související sady kontejnery nebo služeb, jak ukazuje následující obrázek 5 a 6.
+Podívejme se nejprve sledovat bez komplexní scénář: nasazení do jednoduchého hostitelů Docker (virtuální počítače nebo servery) v prostředí jeden nebo více prostředí (dotazů a odpovědí, přípravným a produkčním prostředím). V tomto scénáři interně kanálu průběžného Doručování můžete použít docker-compose (z vaší úlohy nasazení služby Azure DevOps) při nasazování aplikací Dockeru s jeho související sadu kontejnerů a služeb, jak je znázorněno na obrázku 5 a 6.
 
 ![](./media/image6.png)
 
-Obrázek 5 – 6: nasazení kontejnery aplikací jednoduché registru prostředí hostitelů Docker
+Obrázek 5 a 6: nasazení kontejnerů aplikací jednoduché registru prostředí hostitele Docker
 
-Obrázek 5 – 7 označuje, jak připojit vaše CI sestavení do QA a testovací prostředí pomocí sady Visual Studio Team Services kliknutím Docker Compose v dialogovém okně Přidat úloha. Ale při nasazení v pracovním nebo produkčním prostředí, obvykle použijete zpracování prostředí s více funkcí správy verzí (jako kontrolu kvality, přípravné nebo produkční prostředí). Pokud nasazujete jednu hostitelů Docker, používá Visual Studio Team Services úkolů "Docker Compose" (což je vyvolání docker-tvoří až příkaz pod pokličkou). Pokud nasazujete do Azure Container Service, použije úloha Docker nasazení, jak je popsáno v následující části.
+Obrázek 5 – 7 ukazuje, jak připojit vaše sestavení CI pro kontrolu kvality a testovacích prostředí pomocí služby Azure DevOps kliknutím Docker Compose v dialogovém okně Přidat úkol. Ale při nasazení v přípravném nebo produkčním prostředí, obvykle použijete funkcím nástroje Release Management zpracování více prostředí (procesu kontroly kvality, jako jsou přípravným a produkčním prostředím). Pokud nasazujete na jednoho hostitele Docker, je pomocí služby Azure DevOps "Docker Compose" úloh (což je vyvolání docker-compose up příkaz pod pokličkou). Pokud nasazení provádíte do služby Azure Container Service, používá úlohy nasazení prostředí Docker, jak je vysvětleno v následující části.
 
 ![](./media/image7.png)
 
-Obrázek 5 – 7: Přidání Docker Compose úlohy v kanálu Visual Studio Team Services
+Obrázek 5 – 7: Přidání úkolu Docker Compose v kanálu služby Azure DevOps
 
-Když vytvoříte verze ve Visual Studio Team Services, trvá sadu vstupní artefakty. To by měla být neměnný po celou dobu verze ve více prostředích. Když zavedete kontejnery, identifikujte vstupní artefakty bitové kopie v registru pro nasazení. V závislosti na tom, jak tyto identifikovat budou se nezaručuje, zůstane po dobu trvání verze nejobvyklejší je případ se, když odkazujete "myimage:latest" ze souboru docker-compose.
+Při vytváření vydané verze ve službě Azure DevOps Services trvá sadu vstupní artefakty. Ty by měla být neměnný po celou dobu vydání napříč několika prostředími. Když zavádíte kontejnery, vstupní artefakty zjistit imagí v registru pro nasazení. V závislosti na tom, jak tyto identifikovat není zaručeno nebudou po dobu, vydání, se při odkazování na "myimage:latest" ze souboru docker-compose nejobvyklejší je případ.
 
-Docker rozšíření pro Visual Studio Team Services vám dává, které umožňuje vygenerovat artefaktů sestavení, které obsahují konkrétní registru image hodnoty Digest který zaručeně k jednoznačné identifikaci binární stejnou bitovou kopii. Jsou to, co Opravdu chcete použít jako vstup pro vydání.
+Rozšíření Dockeru pro Azure DevOps služby vám, které hodnoty Digest generovat artefaktů sestavení, které obsahují konkrétní registru image, která se zaručeně k jednoznačné identifikaci binární stejnou bitovou kopii. Jedná se o co skutečně chcete použít jako vstup pro vydanou verzi.
 
-### <a name="managing-releases-to-docker-environments-by-using-visual-studio-team-services-release-management"></a>Správa verzí do prostředí Docker pomocí Visual Studio Team Services Release Management
+### <a name="managing-releases-to-docker-environments-by-using-azure-devops-services-release-management"></a>Správa vydaných verzí do prostředí Dockeru pomocí Azure DevOps služby Release Management
 
-Prostřednictvím rozšíření Visual Studio Team Services, můžete vytvořit novou bitovou kopii, publikování do registru Docker, spusťte ho na hostitele se systémem Linux nebo Windows a použijte příkazy jako docker-tvoří k nasazení několika kontejnerů jako celá aplikace, to vše Vizuálu Možnosti správy verzí Team Services Studio určený pro prostředí s více, jak je znázorněno v obrázku 5 až 8.
+Prostřednictvím rozšíření Azure DevOps služby můžete vytvořit novou bitovou kopii, její publikování do registru Dockeru, spustit na hostitelích se systémem Linux nebo Windows a použít příkazech, jako je docker-compose pro nasazení několika kontejnerů jako celé aplikace, to vše prostřednictvím Azure DevOps Služby určené pro více prostředí, možnosti správy vydaných verzí, jak je znázorněno v obrázek 5 až 8.
 
 ![](./media/image8.png)
 
-Obrázek 5 – 8: konfigurace Visual Studio Team Services Docker Compose úlohy z Visual Studio Team Services Release Management
+Obrázek 5 – 8: Konfigurace úloh Azure DevOps služby Docker Compose v Azure DevOps služby Release Management
 
-Ale mějte na paměti, že scénář zobrazují v obrázku 5 a 6 a je implementována v obrázku 5 až 8 je poměrně základní (nasazení jednoduché hostitelů Docker a virtuální počítače a bude jediný kontejner nebo instance pro každý image) a pravděpodobně by měl být použity pouze pro vývoj nebo testování sc enarios. Ve většině scénářů produkční enterprise by budete chtít mít vysokou dostupnost (HA) a snadno spravovat škálovatelnost pomocí vyrovnávání zatížení napříč více uzly, serverů a virtuálních počítačů a "inteligentního převzetí služeb při selhání" proto, pokud server nebo uzel selže, jejích služeb a kontejnery přesune do jiného serveru hostitele nebo virtuálního počítače. V takovém případě musíte pokročilejší technologie, jako je kontejner clustery, orchestrators a plánovače. Proto je způsob, jak nasadit do těchto clusterů přesněji prostřednictvím pokročilých scénářích vysvětlené v další části.
+Však mít na paměti, že scénáře uvedené v obrázek 5 a 6 a implementovat v obrázek 5 až 8 je poměrně základní (je nasazování jednoduchý hostitelů Docker a virtuálním počítačům a bude možné jedním kontejnerem nebo instance pro každý obrázek) a pravděpodobně by měla sloužit pouze pro vývoj nebo testování sc enarios. Ve většině scénářů organizace produkčního prostředí, byste měli mít vysokou dostupnost (HA) a snadno spravovat škálovatelnosti pomocí služby Vyrovnávání zatížení napříč více uzly, servery a virtuální počítače navíc "inteligentní převzetí služeb při selhání" tak, pokud server nebo uzel selže, jejích služeb a kontejnery se přesune do jiné hostitelský server nebo virtuální počítač. V takovém případě potřebujete pokročilé technologie, jako jsou clustery kontejnerů a orchestrátorů, plánovače. Proto je způsob, jak nasadit do těchto clusterů přesně prostřednictvím pokročilých scénářů je vysvětleno v další části.
 
-### <a name="deploying-complex-docker-applications-to-docker-clusters-dcos-kubernetes-and-docker-swarm"></a>Nasazení aplikací komplexní Docker do clusterů Docker (DC/OS, Kubernetes a Docker Swarm)
+### <a name="deploying-complex-docker-applications-to-docker-clusters-dcos-kubernetes-and-docker-swarm"></a>Nasazení složitých aplikací Dockeru do Docker clusterů (DC/OS, Kubernetes a Docker Swarm)
 
-Povaze distribuovaných aplikací vyžaduje výpočetní prostředky, které se taky distribuují. Do mají funkce pro produkční škálování, je potřeba mít clustering možnosti, které zajišťují vysokou škálovatelnost a vysokou DOSTUPNOSTÍ na základě ve fondu prostředků.
+Povaze distribuovaných aplikací vyžaduje výpočetní prostředky, které se taky distribuují. Pokud chcete, aby funkce produkčním měřítku, musíte mít clusteringu, které poskytují vysokou škálovatelnost a vysokou DOSTUPNOSTÍ na základě ve fondu prostředků.
 
-Můžete nasadit kontejnery ručně do těchto clusterů z rozhraní příkazového řádku nástroje, jako je například Docker Swarm (například pomocí [vytvoření služby docker](https://docs.docker.com/engine/swarm/swarm-tutorial/deploy-service/)) nebo webového uživatelského rozhraní, jako [Mesosphere Marathon](https://mesosphere.github.io/marathon/docs/marathon-ui.html) pro DC/OS clustery, ale měli Rezervujte, který pouze pro testování včasnou nasazení nebo pro účely správy jako škálování na více systémů nebo účely monitorování.
+Můžete nasadit kontejnery ručně do těchto clusterů z rozhraní příkazového řádku nástroje, jako je Docker Swarm (například [vytvoření služby docker](https://docs.docker.com/engine/swarm/swarm-tutorial/deploy-service/)) nebo webovým uživatelským rozhraním, jako [Mesosphere Marathon](https://mesosphere.github.io/marathon/docs/marathon-ui.html) pro DC/OS clustery, ale měli Rezervujte, který pouze pro včasnou nasazení testování nebo pro účely správy, jako je škálování na více instancí nebo účely monitorování.
 
-Z hlediska CD a Visual Studio Team Services konkrétně můžete spustit úlohy speciálně učiněna nasazení z vašeho prostředí Visual Studio Team Services Release Management, které bude nasadit kontejnerizované aplikací pro distribuované clustery v Kontejner služby, jak ukazuje následující obrázek 5-9.
+Z hlediska CD a služeb Azure DevOps konkrétně, můžete spustit úlohy speciálně provedl nasazení z prostředí Azure DevOps služby Release Management, které se nasazují kontejnerizovaných aplikací do distribuované clusterů v kontejneru Služby, jak je znázorněno na obrázku 5 až 9.
 
 ![](./media/image9.png)
 
-Obrázek 5 – 9: nasazení distribuované aplikace do kontejneru služby
+Obrázek 5 až 9: nasazení distribuované aplikace do služby Container Service
 
-Na začátku při nasazení v určité clustery nebo orchestrators, tradičně použijete skriptů konkrétní nasazení a mechanismy pro každý orchestrator (tedy Mesosphere DC/OS nebo Kubernetes mechanismů jiné nasazení než Docker a Docker Swarm) místo jednodušší a snadno použitelné docker tvoří nástroj podle definice soubor docker-compose.yml. Však díky úlohy nasazení webu společnosti Microsoft Visual Studio Team Services Docker, zobrazí obrázek 5-10 nyní také můžete nasadit na DC/OS právě pomocí souboru známé docker-compose.yml, protože Microsoft provádí pro vás tento "překlad" (z vaší soubor docker-compose.yml do jiných formátů vyžaduje DC/OS).
+Na začátku při nasazování do některých clusterů nebo orchestrátorů, obvykle použijete mechanismy jednotlivých orchestrátorů (to znamená, Mesosphere DC/OS nebo Kubernetes, mějte připravené mechanismy jiné nasazení než Docker a Docker a skriptů pro konkrétní nasazení Swarm) namísto jednodušší a snadným ovládáním docker-compose nástroj na základě definice souboru docker-compose.yml. Ale díky Microsoft Azure DevOps služby Docker nasazení úloh zobrazí obrázek 5 až 10 nyní také můžete nasadit na DC/OS pouze pomocí souboru docker-compose.yml zkušenosti, protože Microsoft za vás provádí tento "překlad" (z vašeho soubor docker-compose.yml do jiných formátů vyžadované DC/OS).
 
 ![](./media/image10.png)
 
-Obrázek 5-10: Přidání úloha Docker nasazení do vašeho prostředí RM
+Obrázek 5 – 10: přidání úlohy nasazení Dockeru na váš správce prostředků prostředí
 
-Obrázek 5-11 ukazuje, jak můžete upravit úloha Docker nasazení a zadat typ cíle (Azure Container Service DC/OS, v tomto případě), váš soubor Docker Compose a připojení k registru Docker (např. Azure kontejneru registru nebo úložiště Docker Hub). Toto je, kde úloha načte připravené k použití vlastních Docker bitových kopií pro nasazení jako kontejnery v clusteru DC/OS.
+Obrázek 5 – 11 předvádí, jak můžete upravit úkol nasadit Docker a zadat typ cíle (Azure Container Service DC/OS, v tomto případě), váš soubor Docker Compose a připojení k registru Dockeru (jako je Azure Container Registry nebo Docker Hubu). Je to, kde úloha načte připravené k použití imagí vlastní Dockeru umožňující nasadit ho jako kontejnery v clusteru DC/OS.
 
 ![](./media/image11.png)
 
-Obrázek 5 – 11: Docker nasazení úloh definice nasazení Azure Container Service DC/OS
+Obrázek 5 – 11: Docker nasazení úloh definici nasazení Azure Container Service DC/OS
 
-**Další informace o** Další informace o kanálu disku CD s Visual Studio Team Services a Docker, najdete na následujících stránkách:
+**Další informace o** Další informace o kanálu CD se službami Azure DevOps a Docker, naleznete na následujících stránkách:
 
-Rozšíření sady Visual Studio Team Services pro Docker a Azure Container Service: [ https://aka.ms/\ vstsdockerextension](https://aka.ms/vstsdockerextension)
+Rozšíření Azure DevOps služby Docker a Azure Container Service: [ https://aka.ms/\ vstsdockerextension](https://aka.ms/vstsdockerextension)
 
 Azure Container Service: <https://aka.ms/azurecontainerservice>
 
@@ -225,13 +225,13 @@ Mesosphere DC/OS: <https://mesosphere.com/product/>
 
 ## <a name="step-5-run-and-manage"></a>Krok 5: Spuštění a Správa
 
-Vzhledem k tomu spouštění a správu aplikací v podniku produkční úroveň je hlavní předmět při sám sebe a z důvodu typ operace a lidí pracujících na této úrovni (IT oddělení) a také velký rozsah této oblasti, budeme mít odeberte celý další kapitoly k vysvětlením ho.
+Vzhledem k tomu, že spouštění a správu aplikací na podnikové produkční úroveň je hlavní předmět v a sám sebe a z důvodu typ operace a lidé pracují na této úrovni (IT oddělení) a také velký rozsah této oblasti, můžeme mít věnovala celý vedle kapitola s vysvětlením ho.
 
-## <a name="step-6-monitor-and-diagnose"></a>Krok 6: Sledování a Diagnostika
+## <a name="step-6-monitor-and-diagnose"></a>Krok 6: Monitorování a Diagnostika
 
-Toto téma taky je popsaná v další kapitoly jako součást úlohy, které IT oddělení provádí v produkční systémy; je ale důležité ukázat, že statistiky získat v tomto kroku musí kanálu zpět do vývojového týmu tak, aby je neustále vylepšené aplikace. Z tohoto hlediska, je také součástí DevOps, i když operace a úlohy jsou obvykle provádí IT.
+Toto téma také je obsaženo v následující kapitole jako součást úlohy, které IT oddělení provádí v produkční systémy; je však třeba zvýraznit, že poznatky získané v tomto kroku musí informačního kanálu zpět k vývojovému týmu tak, aby se neustále vylepšené aplikace. Z tohoto hlediska, je také součástí DevOps, i když se úkoly a operace se obvykle zpracovávají pomocí IT.
 
-Jenom v případě, že monitorování a Diagnostika jsou 100 procent v rámci sféru DevOps jsou monitorování procesů a analýzy provádí vývojový tým, proti prostředí testování nebo beta. To se provádí tak, že provedete zátěžové testování nebo jednoduše tak, že monitorování beta nebo QA prostředí, kde beta testery zkoušíte nové verze.
+Pouze v případě monitorování a Diagnostika jsou 100 % jeho obsahu v rámci sféry DevOps se monitorování procesů a analytics provádí vývojový tým proti testování nebo beta prostředí. To se provádí pomocí provádí zátěžové testování nebo jednoduše tak, že monitorování beta nebo dotazů a odpovědí prostředí, ve kterém jsou testerům beta verzí pokusu o nové verze.
 
 >[!div class="step-by-step"]
 [Předchozí](index.md)

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - My.Computer.Info object
 ms.assetid: 2eb2aa5f-303d-426c-918d-989c8b7b08d0
 ms.openlocfilehash: 9eabd2538d43c5a0104032c501da8cbf81b5c74d
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44204718"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44264425"
 ---
 # <a name="mycomputerinfo-object"></a>My.Computer.Info – objekt
 Poskytuje vlastnosti pro získání informací o paměť, načtená sestavení, název a operační systém počítače.  

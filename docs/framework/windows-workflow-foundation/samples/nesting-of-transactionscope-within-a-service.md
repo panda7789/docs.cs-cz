@@ -3,11 +3,11 @@ title: Vnoření TransactionScope služby
 ms.date: 03/30/2017
 ms.assetid: e7e1ba64-1384-4eba-add8-415636e2d6d0
 ms.openlocfilehash: cf73c0c2d061f1c997a8ade5d7b2bf61887915ca
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44187923"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44266417"
 ---
 # <a name="nesting-of-transactionscope-within-a-service"></a>Vnoření TransactionScope služby
 Tento příklad se skládá z těchto dvou scénářů, která spustí ukazující, jak zpracovat <xref:System.Activities.Statements.TransactionScope> instance aktivity v rámci služby. Nejprve transakce se inicializuje pomocí <xref:System.Activities.Statements.TransactionScope> aktivitu, chcete-li vytvořit novou transakci na straně klienta a <xref:System.ServiceModel.Activities.TransactedReceiveScope> pro příjem a oboru životnost transakce na serveru. První scénář v rámci služby běží sekundární <xref:System.Activities.Statements.TransactionScope> aktivity k předvedení vnořené <xref:System.Activities.Statements.TransactionScope> aktivity v rámci služby. Druhý scénář popisuje, jak jsou dodržovány vypršení časových limitů uvnitř vnořeného <xref:System.Activities.Statements.TransactionScope> aktivity.  

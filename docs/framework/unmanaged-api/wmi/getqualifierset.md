@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 635dc7605af00f2662a9f9553adefafcd25f9452
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44201241"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44267967"
 ---
 # <a name="getqualifierset-function"></a>GetQualifierSet – funkce
 Načte kvalifikátor, nastavte pro instanci třídy nebo definice třídy.

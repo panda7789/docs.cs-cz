@@ -3,11 +3,11 @@ title: 'Postupy: dotazování obsah textových souborů ve složce (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
 ms.openlocfilehash: dedb3b742805daa23151c61e89dd0835f730dd9c
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44204536"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44270161"
 ---
 # <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a>Postupy: dotazování obsah textových souborů ve složce (LINQ) (C#)
 Tento příklad ukazuje, jak dotaz nad všechny soubory ve stromové struktuře zadaný adresář, otevřete každý soubor a zkontrolujte jeho obsah. Tento typ technika může použít k vytváření indexů nebo obrácení pořadí indexů obsah adresářovém stromu. Hledání jednoduchého řetězce se provádí v tomto příkladu. Porovnávání vzorů složitější typy však lze provést s regulárním výrazem. Další informace najdete v tématu [postupy: kombinace dotazů LINQ s regulárními výrazy (C#)](../../../../csharp/programming-guide/concepts/linq/how-to-combine-linq-queries-with-regular-expressions.md).  

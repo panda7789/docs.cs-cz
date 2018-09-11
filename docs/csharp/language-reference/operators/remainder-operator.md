@@ -8,11 +8,11 @@ helpviewer_keywords:
 - '% operator [C#]'
 ms.assetid: 3b74f4f9-fd9c-45e7-84fa-c8d71a0dfad7
 ms.openlocfilehash: 9cd2f7ad3856feb34667686979c942ecb21887c2
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44215002"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44266693"
 ---
 # <a name="-operator-c-reference"></a>% – operátor (Referenční dokumentace jazyka C#)
 

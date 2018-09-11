@@ -18,17 +18,17 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-ms.openlocfilehash: 68b376d00762238b810f6463463aa78c492a1a1f
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: e11bf8af6f56cbdcdcc920cafe145edcf744efed
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44187728"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44337509"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>Postupy: Použití komponent, které podporují asynchronní vzor založený na událostech
 Řada komponent poskytují možnost asynchronní provádění své práce. <xref:System.Media.SoundPlayer> a <xref:System.Windows.Forms.PictureBox> komponenty, například umožňuje načíst podle názvu dalo čekat a Image "v pozadí" i když hlavní podproces stále spuštěná bez přerušení.  
   
- Použití asynchronních metod na třídu, která podporuje [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md) může být stejně snadné jako obslužná rutina události se připojuje k součásti *MethodName *** dokončeno** události stejně jako ostatní události. Při volání *MethodName *** asynchronní** metodu, aplikace bude pokračovat běží nepřetržitě až do *MethodName *** dokončeno** událost se vyvolá. V obslužné rutině události, můžete zkontrolovat <xref:System.ComponentModel.AsyncCompletedEventArgs> parametr určují, jestli asynchronní operace úspěšně dokončena nebo pokud byla zrušena.  
+ Použití asynchronních metod na třídu, která podporuje [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md) může být stejně snadné jako obslužná rutina události se připojuje k součásti _MethodName_  **Dokončení** události, stejně jako ostatní události. Při volání _MethodName_**asynchronní** metodu, aplikace bude nadále používat bez přerušení, dokud _MethodName_**dokončeno** událost se vyvolá. V obslužné rutině události, můžete zkontrolovat <xref:System.ComponentModel.AsyncCompletedEventArgs> parametr určují, jestli asynchronní operace úspěšně dokončena nebo pokud byla zrušena.  
   
  Další informace o používání obslužných rutin událostí, naleznete v tématu [Přehled obslužných rutin událostí](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).  
   
