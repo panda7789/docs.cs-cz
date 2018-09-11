@@ -36,12 +36,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: c13bdc47568aa8bbd934bb2b86410e17bbc485dc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3a419fb38d3b97b08c8aaa094265d8b426429ae4
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43562806"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44188667"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Obecné typy v jazyce Visual Basic (Visual Basic)
 A *obecného typu* je jediný prvek programování, které se přizpůsobí provádět stejné funkce pro širokou škálu datových typů. Při definování obecné třídy nebo proceduru není nutné definovat samostatné verze pro každý typ dat, pro které můžete chtít provést, které tuto funkci.  
@@ -145,17 +145,18 @@ A *obecného typu* je jediný prvek programování, které se přizpůsobí prov
   
 -   *Omezení*. Podmínka pro parametr typu, který omezí typ argumentu, kterou zadáte pro něj. Omezení může vyžadovat, že argument typu musí implementovat určité rozhraní, být nebo dědit z dané třídy, mít dostupný konstruktor bez parametrů nebo být typu odkaz nebo typ hodnoty. Tato omezení můžete kombinovat, ale můžete zadat maximálně jednu třídu.  
   
--   *Konstruovaný typ.*. Třídy, struktury, rozhraní, procedura nebo delegát deklarován zadáním argumentů typu pro svoje parametry typu z obecného typu.  
+-   *Konstruovaný typ*. Třídy, struktury, rozhraní, procedura nebo delegát deklarován zadáním argumentů typu pro svoje parametry typu z obecného typu.  
   
-## <a name="see-also"></a>Viz také  
- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
- [z](../../../../visual-basic/language-reference/statements/of-clause.md)  
- [jako](../../../../visual-basic/language-reference/statements/as-clause.md)  
- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
- [Kovariance a kontravariance](../../concepts/covariance-contravariance/index.md)  
- [Iterátory](https://msdn.microsoft.com/library/f45331db-d595-46ec-9142-551d3d1eb1a7)
+## <a name="see-also"></a>Viz také:
+
+- [Datové typy](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+- [Znaky typu](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)  
+- [Typy hodnot a odkazové typy](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)  
+- [Převody typů v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)  
+- [Řešení potíží s datovými typy](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)  
+- [Datové typy](../../../../visual-basic/language-reference/data-types/index.md)  
+- [z](../../../../visual-basic/language-reference/statements/of-clause.md)  
+- [jako](../../../../visual-basic/language-reference/statements/as-clause.md)  
+- [Datový typ Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)  
+- [Kovariance a kontravariance](../../concepts/covariance-contravariance/index.md)  
+- [Iterátory](../../../../visual-basic/programming-guide/concepts/iterators.md)

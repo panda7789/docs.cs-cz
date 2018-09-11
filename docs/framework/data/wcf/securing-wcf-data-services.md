@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, security
 ms.assetid: 99fc2baa-a040-4549-bc4d-f683d60298af
 ms.openlocfilehash: 56ece9c2c81f05047e85ab681e7cfe0da65f35b9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43555822"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44195741"
 ---
 # <a name="securing-wcf-data-services"></a>Zabezpečení služeb WCF Data Services
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikací přistupujících ke službám, které podporují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Měli postupovat také podle doporučení pro vytváření zabezpečených [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikací.  
@@ -50,7 +50,7 @@ context.Credentials = _
     New NetworkCredential(userName, password, domain)  
 ```  
   
- Další informace najdete v tématu [postupy: určení přihlašovacích údajů klienta Data žádosti o služby.](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md).  
+ Další informace najdete v tématu [postupy: určení přihlašovacích údajů klienta Data žádosti o služby](../../../../docs/framework/data/wcf/specify-client-creds-for-a-data-service-request-wcf.md).  
   
  Pokud datová služba vyžaduje přihlašovací pověření, která nelze zadat s použitím <xref:System.Net.NetworkCredential> objektu, jako jsou založené na deklaracích token nebo soubor cookie, je nutné ručně nastavit hlavičky v požadavku HTTP, obvykle `Authorization` a `Cookie` záhlaví. Další informace o tomto typu scénáře ověřování najdete v příspěvku [OData a ověřování: háčky na straně klienta](https://go.microsoft.com/fwlink/?LinkID=200385). Příklad nastavení hlaviček HTTP ve zprávě požadavku naleznete v tématu [jak: nastavit hlavičky v požadavku klienta](../../../../docs/framework/data/wcf/how-to-set-headers-in-the-client-request-wcf-data-services.md).  
   
