@@ -3,11 +3,11 @@ title: Omezení (F#)
 description: 'Další informace o F # omezení, které se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkce.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 9534db4ffd195022366af8c993658bd94f375f53
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43867826"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44177098"
 ---
 # <a name="constraints"></a>Omezení
 
