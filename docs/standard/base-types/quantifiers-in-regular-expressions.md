@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 39c39a9fbf096c0a4f74061ccdc48e6bc72fdbb2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
-ms.translationtype: MT
+ms.openlocfilehash: a982082611760e4f901c427af25a0a49a4e243a1
+ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43672698"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43886068"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí být k dispozici ve vstupu pro shodu, která se má najít.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  
@@ -271,6 +271,7 @@ Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí
  [!code-csharp[RegularExpressions.Quantifiers.EmptyMatch#2](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/cs/emptymatch4.cs#2)]
  [!code-vb[RegularExpressions.Quantifiers.EmptyMatch#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.quantifiers.emptymatch/vb/emptymatch4.vb#2)]  
   
-## <a name="see-also"></a>Viz také  
- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
- [Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)
+## <a name="see-also"></a>Viz také:
+
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)  
+- [Zpětné navracení](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)

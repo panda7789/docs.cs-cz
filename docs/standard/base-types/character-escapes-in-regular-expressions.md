@@ -16,12 +16,12 @@ helpviewer_keywords:
 ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0f19cbf305165c2553d5a493f7011a6aea19fb23
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9b390b1d3d935ad045d59dd6b3d2e42cdbe82dd7
+ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
 ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779455"
+ms.lasthandoff: 09/08/2018
+ms.locfileid: "44206153"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Řídicí sekvence znaků v regulárních výrazech
 Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících akcí:  
@@ -69,5 +69,6 @@ Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících
 |`(.+)`|Odpovídá jakémukoli znaku jednou nebo vícekrát. Toto je druhá zachytávající skupina.|  
 |`\r?\n`|Porovná žádný nebo jeden výskyt zalomení řádku a nový řádek.|  
   
-## <a name="see-also"></a>Viz také  
- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+## <a name="see-also"></a>Viz také:
+
+- [Jazyk regulárních výrazů – stručná referenční dokumentace](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)

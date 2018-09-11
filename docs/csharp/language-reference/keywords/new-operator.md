@@ -5,11 +5,11 @@ helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
 ms.openlocfilehash: 362217b247bd2ab7a2eec2f86cbaaf1a0652a3ad
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44079562"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44337210"
 ---
 # <a name="new-operator-c-reference"></a>New – operátor (referenční dokumentace jazyka C#)
 

@@ -7,11 +7,11 @@ helpviewer_keywords:
 - documents [WPF], serialization
 ms.assetid: 4839cd87-e206-4571-803f-0200098ad37b
 ms.openlocfilehash: 39466eb528003e36bfa05751f83619d86b78a2a7
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: HT
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44207119"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44262565"
 ---
 # <a name="document-serialization-and-storage"></a>Serializace a úložiště dokumentu
 Microsoft .NET Framework poskytuje výkonné prostředí pro vytváření a zobrazování vysoce kvalitní dokumenty.  Rozšířené funkce, které podporují – dokumenty a tok dokumenty, rozšířené zobrazení ovládacích prvků, v kombinaci s výkonné 2D a 3D grafické možnosti trvat aplikace rozhraní .NET Framework na zcela novou úroveň kvality a činnost koncového uživatele.  Dokáže flexibilně spravovat v paměti reprezentace dokumentu je klíčovou funkcí rozhraní .NET Framework a nebudou moct efektivně ukládat a načítat dokumenty z úložiště dat je potřeba téměř všechny aplikace.  Proces převodu dokumentu z interního vyjádření v paměti k externím úložišti, se nazývá serializace.  Proces zpětné čtení úložiště dat a znovu vytvořit původní instance v paměti je označován deserializace.  

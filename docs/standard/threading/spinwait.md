@@ -11,11 +11,11 @@ ms.assetid: 36012f42-34e5-4f86-adf4-973f433ed6c6
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1ff8b5b75d1d69d3d8c88810de1311540a239c52
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44209997"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44273408"
 ---
 # <a name="spinwait"></a>SpinWait
 <xref:System.Threading.SpinWait?displayProperty=nameWithType> je zjednodušené synchronizace typ, který můžete použít ve scénářích nízké úrovně, aby nákladné kontextu a přechody jádra, které jsou požadovány pro události jádra. Na vícejádrových počítačích když prostředek neočekává se bude vysílat pro dlouhou dobu, může být efektivnější pro čekání vlákno aktivovat v uživatelském režimu pro několik desítek nebo několik stovek cykly a pak zkuste získat prostředek. Pokud prostředek je k dispozici po pokryjte, jste uložili několik tisíc cyklů. Pokud je zdroj stále nejsou k dispozici, pak strávila pouze několik cyklů a můžete také zadat čekání na základě jádra. Tato kombinace pokryjte. potom čekání se někdy označuje jako *dvoufázové operace čekání*.  
