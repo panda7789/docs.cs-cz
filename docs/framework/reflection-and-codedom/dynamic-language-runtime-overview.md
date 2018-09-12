@@ -10,11 +10,11 @@ ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5a4645efc9276429cbdb0812f1ca501c89ea5dbb
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "44508450"
+ms.locfileid: "44709691"
 ---
 # <a name="dynamic-language-runtime-overview"></a>Přehled DLR (Dynamic Language Runtime)
 *Dynamickým jazykovým modulem runtime* (DLR) je prostředí modulu runtime, který přidá sadu služeb pro dynamické jazyky common language runtime (CLR). DLR usnadňuje vývoj dynamické jazyky spustit na rozhraní .NET Framework a přidat dynamické funkce pro staticky typu jazyky.  

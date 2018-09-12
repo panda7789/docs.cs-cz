@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
 ms.openlocfilehash: 9f1e3fe6d53266a4e1366c1a3d5396688a25df0f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
-ms.translationtype: HT
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "44511575"
+ms.locfileid: "44708595"
 ---
 # <a name="windows-applications-using-callbacks"></a>Aplikace Windows pomocí zpětných volání
 Ve většině případů asynchronní zpracování budete chtít spustit operaci databáze a pokračování ve spouštění jiných procesů bez čekání na dokončení operace databáze. Mnoho scénářů však vyžaduje něco, jakmile byla ukončena operace databáze. V aplikaci Windows například můžete delegovat dlouho běžící operace ve vlákně na pozadí při povolení vlákně uživatelského rozhraní nadále reagovat. Ale po dokončení operace databáze budete chtít použít výsledky k naplnění formuláře. Tento druh scénář nejlépe implementuje pomocí zpětného volání.  

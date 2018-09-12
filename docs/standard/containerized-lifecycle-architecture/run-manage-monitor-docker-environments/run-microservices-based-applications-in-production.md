@@ -1,37 +1,37 @@
 ---
-title: Spuštění sestavit a mikroslužeb aplikacím v produkčním prostředí
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+title: Spouštění skládá a mikroslužbových aplikací v produkčním prostředí
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: b4192ff1d67a3f70bb5eeb9a36245cfd35bafb53
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 18e6cb1fb5f496b66c89cb8e009a67894b8a76ad
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105628"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44706038"
 ---
-# <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spuštění sestavit a mikroslužeb aplikacím v produkčním prostředí
+# <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spouštění skládá a mikroslužbových aplikací v produkčním prostředí
 
-Aplikace sestává z několika mikroslužeb nutné k nasazení do clusterů orchestrator, aby bylo možné zjednodušit složitosti nasazení a nastavit jej jako přijatelná z hlediska IT. Bez clusteru služby orchestrator by bylo velmi obtížné nasadit a škálování aplikace komplexní mikroslužeb.
+Aplikace, které sestává z několika mikroslužeb je nutné nasadit do clusterů nástroje orchestrator, abyste zjednodušili složitost nasazení a bylo možné z hlediska IT. Bez clusteru služby orchestrator by bylo velmi obtížné nasadit a škálovat aplikace komplexní mikroslužeb.
 
-## <a name="introduction-to-orchestrators-schedulers-and-container-clusters"></a>Úvod do orchestrators plánovače a clustery kontejneru
+## <a name="introduction-to-orchestrators-schedulers-and-container-clusters"></a>Úvod do orchestrátorů, plánovače a clustery kontejnerů
 
-Dříve v této e knihy, zavedli jsme *clustery* a *plánovače* jako součást diskusi o architektura softwaru a vývoj. Příkladem Docker clustery jsou Docker Swarm a Mesosphere Datacenter operačního systému (DC/OS). Obě tyto můžete spouštět jako součást infrastruktury služby Microsoft Azure Container Service.
+Dříve v této e knihy, zavedli jsme *clustery* a *plánovači* jako součást diskuse o softwaru pro architekturu a vývoj. Mezi clustery Docker patří Docker Swarm a Mesosphere Datacenter operačního systému (DC/OS). Obě tyto můžete spouštět jako součást infrastruktury k dispozici ve službě Microsoft Azure Container Service.
 
-Když aplikace jsou instancemi mezi několika systémy hostitele, stane se atraktivní schopnost spravovat každý hostitelský systém a abstraktní rychle složitost základní platformy. Je přesněji co orchestrators a plánovače poskytují. Podívejme se stručný na je tady:
+Když aplikace jsou horizontálním navýšením kapacity napříč více hostitelských systémech, stane se atraktivní schopnost spravovat každý hostitelský systém a abstrakci složitost základní platformy. Přesně to je co poskytuje orchestrátorů a plánovače. Pojďme se na to stručný přehled je tady:
 
--   **Plánovače *** *"Plánování" odkazuje na schopnost Správce služby soubor do systém hostitele, který určuje jak spustit specifický kontejner. Spuštění kontejnery v clusteru Docker obvykle označují jako plánování. I když plánování odkazuje na konkrétní operace načítání definici služby v další obecné smysl, plánovače jsou zodpovědní za zapojování do systému init hostitele ke správě služeb v jakémkoli kapacity potřeby.
+- **Plánovači**. "Plánování" odkazuje na možnost pro správce k načtení souboru služby na hostitele systému, který vytváří spuštění konkrétní kontejner. Spouštění kontejnerů v clusteru Docker se obvykle označuje jako plánování. I když plánování odkazuje na konkrétní operace načítání definice služby, v obecnější smysl, zodpovídají za zapojení do hostitele init systému pro správu služeb v libovolné kapacitě potřebné plánovače.
 
-Scheduler clusteru má více cílů: efektivně pomocí prostředků clusteru, práce s uživatelem zadané umístění omezení, plánování aplikace rychle není ponechat je ve stavu čekající na vyřízení, má určitý stupeň "rovnosti," Probíhá robustní na chyby, a být vždy k dispozici.
+   Plánovač clusteru má více cílů: efektivní využívání prostředků clusteru, práce s omezeními uživatelem zadané umístění, plánování aplikacím rychle nesmí zůstat je ve stavu čekání, s určitý stupeň "rovnost," se na chyby, robustní a mít vždycky k dispozici.
 
--   **Orchestrace *** *platformy rozšířit funkce pro správu životního cyklu komplexní, multicontainer úlohy, které jsou nasazené na clusteru hostitelů. Podle poskytuje abstrakci infrastruktury hostitele, nástroje orchestration uživatelům poskytnout způsob, jak celý cluster považovat za cíl jedno nasazení.
+- **Orchestrace**. Platformy rozšířit možnosti správy životního cyklu složité a vícekontejnerových úlohám, které jsou nasazené na clusteru hostitelů. Podle abstrahovat hostitelské infrastruktury, nástroji pro orchestraci uživatelům poskytnout způsob, jak celý cluster považovat za cíl jedno nasazení.
 
-Proces orchestration zahrnuje nástrojů a platformu, která můžete automatizovat všechny aspekty správy aplikací z počáteční umístění nebo nasazení na kontejneru; Přesunutí kontejnery na různých hostitelích v závislosti na jeho hostitel stavu nebo výkonu. Správa verzí kumulativní aktualizace a monitorování funkce, které podporují škálování a převzetí služeb při selhání; stavu a mnoho dalších.
+   Proces Orchestrace zahrnuje nástroje a platformy, která můžete automatizovat všechny aspekty správy aplikací z počáteční umístění nebo nasazení na kontejneru; Přesunutí kontejnery na různých hostitelích v závislosti na jeho hostitel stavu nebo výkonu. Správa verzí a kumulativní aktualizace a funkce, které podporují škálování a převzetí služeb při selhání, sledování stavu a mnoho dalších.
 
-Orchestrace je široký termín, který odkazuje na kontejner plánování, Správa clusteru a možná zřizování další hostitele.
+   Orchestrace je obecný termín, který odkazuje na kontejner plánování, správu clusteru a možná zřizování další hostitele.
 
-Funkce poskytované verzí orchestrators a plánovače jsou velmi složité k vývoji a vytvořit od začátku, a proto obvykle by chcete použití orchestration řešení nabízí Dodavatelé.
+Funkce poskytované verzí orchestrátorů a plánovači jsou velmi složité k vývoji a vytvořit úplně od začátku, a proto je obvykle vhodné provést pomocí Orchestrace řešení nabízí dodavatelů.
 
 
 >[!div class="step-by-step"]

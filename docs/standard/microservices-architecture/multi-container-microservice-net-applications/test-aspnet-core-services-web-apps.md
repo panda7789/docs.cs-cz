@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 63576445a44df0c0bdbd22b263754bb3d2919963
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2702a273ade0e58ba93d556cfd1ecc5531027f93
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44195618"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44705359"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Testování služeb ASP.NET Core a webové aplikace
 
@@ -121,7 +121,7 @@ Jak je uvedeno výše, při testování vícekontejnerových aplikací, všechny
 
 Existuje několik přístupů, které můžete použít. V souboru docker-compose.yml, můžete použít k nasazení aplikace (nebo podobnosti, jako je docker-compose.ci.build.yml) na úrovni řešení můžete rozbalit vstupním bodem k použití [příkazu dotnet test](../../../core/tools/dotnet-test.md). Můžete také použít jiný soubor compose, který by na obrázku, který se zaměřujete na spuštění testů. S použitím jiný soubor compose pro integrační testy, které zahrnují mikroslužeb a databází v kontejnerech, abyste měli jistotu, že související data se vždy obnovit do původního stavu před spuštěním testů.
 
-Jakmile psaní aplikace je spuštěná, můžete využít výhod zarážky a výjimek, pokud používáte Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu CI v aplikaci Visual Studio Team Services nebo jakémkoli jiném systému CI/CD, který podporuje kontejnery Dockeru.
+Jakmile psaní aplikace je spuštěná, můžete využít výhod zarážky a výjimek, pokud používáte Visual Studio. Nebo můžete spustit testy integrace automaticky v kanálu CI v DevOps služby Azure nebo jakémkoli jiném systému CI/CD, který podporuje kontejnery Dockeru.
 
 >[!div class="step-by-step"]
 [Předchozí](subscribe-events.md)

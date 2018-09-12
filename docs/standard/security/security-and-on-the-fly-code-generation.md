@@ -11,11 +11,11 @@ ms.assetid: 6d221724-bb21-4d76-90c3-0ee2a2e69be2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ffb1081c80c31353ad38080ae16ef9f8a74b5481
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44365993"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44710301"
 ---
 # <a name="security-and-on-the-fly-code-generation"></a>Zabezpečení a průběžné vytváření kódu
 Některé knihovny fungují tak, že generování kódu a spouštěním provádět některé operace pro volajícího. Základní problém je generování kódu jménem nižší úrovně důvěryhodnosti kódu a běží na vyšší vztah důvěryhodnosti. Problém se zhoršuje, když volající může ovlivnit generování kódu, proto musíte zajistit, že je vygenerována pouze kód, které považujete za bezpečný.  

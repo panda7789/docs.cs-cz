@@ -3,11 +3,11 @@ title: Modelování a mapování
 ms.date: 03/30/2017
 ms.assetid: ec8a9515-3708-4cde-a688-4d8e6975f150
 ms.openlocfilehash: 81080c416fd18c51be6626cb70a23073e049051d
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
-ms.translationtype: HT
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/12/2018
-ms.locfileid: "44514420"
+ms.locfileid: "44710447"
 ---
 # <a name="modeling-and-mapping"></a>Modelování a mapování
 V [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], můžete definovat konceptuální model, úložiště modelu a mapování mezi těmito dvěma způsobem, která nejlépe vyhovuje vaší aplikace. Nástroje modelu dat Entity v sadě Visual Studio umožňují vytvářet. [souboru edmx](https://msdn.microsoft.com/library/f4c8e7ce-1db6-417e-9759-15f8b55155d4) z databáze nebo grafické modelu a aktualizujete soubor při změně databáze nebo model.  
