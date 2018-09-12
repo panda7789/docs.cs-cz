@@ -4,11 +4,11 @@ description: Další informace o zápisu "kopírování a aktualizace záznamu v
 author: ChrSteinert
 ms.date: 06/04/2016
 ms.openlocfilehash: d2b089e8a7fc5c7ee26139003e23d2eaa8a3174e
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44197393"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44494067"
 ---
 # <a name="copy-and-update-record-expressions"></a>Kopírování a aktualizace výrazů záznamů
 

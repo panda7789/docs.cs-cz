@@ -17,11 +17,11 @@ ms.assetid: fb7baaab-4c0d-47ad-8fd3-4591cf834709
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: abe4c130fb5da49ed0f53c776e23dba8fb5b15f7
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44064917"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44514170"
 ---
 # <a name="how-to-view-assembly-contents"></a>Postupy: Zobrazení obsahu sestavení
 Můžete použít [Ildasm.exe (IL Disassembler)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md) k zobrazení informací Microsoft intermediate language (MSIL) v souboru. Pokud je soubor zkoumají sestavení, můžete tyto informace zahrnout sestavení atributy, jakož i odkazy na jiných modulů a sestavení. Tyto informace mohou být užitečné při určování, zda je soubor sestavení nebo součástí sestavení, a zda soubor obsahuje odkazy na další moduly nebo sestavení.  

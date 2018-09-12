@@ -13,11 +13,11 @@ ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0ae36736ac7174ff7f77ae5bba45e1fd3880169c
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44342612"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44510230"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
 Nástroj PEVerify pomáhá vývojářům generujícím Microsoft Intermediate Language (MSIL) (například autorům kompilátorů a vývojářům skriptovacích modulů) zjistit, zda jejich kód MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud jako vývojář používáte takový kompilátor, můžete chtít ověřit, že nebyla ohrožena bezpečnost typů vašeho kódu. V této situaci můžete spustit nástroj PEVerify pro soubory ke kontrole jazyka MSIL a metadat.  

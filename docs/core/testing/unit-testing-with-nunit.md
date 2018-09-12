@@ -4,11 +4,11 @@ description: Další koncepty testů jednotek v C# a .NET Core prostřednictvím
 author: rprouse
 ms.date: 08/31/2018
 ms.openlocfilehash: 253e07c16740a39566cf37ee5742a32342c78c49
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44353639"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44699683"
 ---
 # <a name="unit-testing-c-with-nunit-and-net-core"></a>Testování C# s použitím NUnit a .NET Core
 

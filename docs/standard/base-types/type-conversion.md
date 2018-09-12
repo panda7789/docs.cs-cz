@@ -27,11 +27,11 @@ ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2d039e591e1f61a7be18dc224845f82b107d918f
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44211944"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44699943"
 ---
 # <a name="type-conversion-in-the-net-framework"></a>Převod typů v rozhraní .NET Framework
 <a name="top"></a> Každá hodnota má přidružen typ, který definuje atributy, jako je množství přidělené místo na hodnotě, rozsah možných hodnot, které může mít, a členy, které to umožňují. Mnoho hodnot lze vyjádřit ve formě více než jednoho typu. Například hodnotu 4 lze vyjádřit jako celé číslo nebo jako hodnotu s plovoucí desetinnou čárkou. Převod typu vytvoří hodnotu v novém typu, která je ekvivalentní hodnotě starého typu, ale nutně nezachová identitu (nebo přesnou hodnotu) původního objektu.  

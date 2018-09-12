@@ -1,368 +1,368 @@
 ---
-title: Postupy a technická získat Začínáme přehled
-description: Modernizovat existující aplikace .NET s cloudu Azure a Windows kontejnery | Postupy a technická získat Začínáme přehled
+title: Návody a technický přehled Začínáme
+description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows | Návody a technický přehled Začínáme
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 27de9d1c5475855a22f2d8a3518982605277f6d9
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 41fbeb3abc201ef03cf0c237a069e7687c98dd18
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34027386"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44700346"
 ---
-# <a name="walkthroughs-and-technical-get-started-overview"></a>Postupy a technická získat Začínáme přehled
+# <a name="walkthroughs-and-technical-get-started-overview"></a>Návody a technický přehled Začínáme
 
-K omezení velikosti elektronická kniha, provedeny další technickou dokumentaci a úplné návody k dispozici v úložišti GitHub. Online řada návodů, která je popsána v tato kapitola obsahuje podrobné nastavení několika prostředí, které jsou založeny na Windows kontejnery a nasazení do Azure.
+Omezení velikosti tuto elektronickou příručku, další technickou dokumentaci a úplné názorné postupy byly k dispozici v úložišti GitHub. Online řada návodů, který je popsaný v této kapitole zahrnuje podrobné nastavení více prostředí, které jsou založeny na kontejnery Windows a nasazení do Azure.
 
-Následující části popisují, co každý návod o svých cílů a vysoké úrovně vize a poskytuje diagram úlohy, které se podílejí. Můžete získat sami názorné postupy v *eShopModernizing* wiki úložišti GitHub aplikace v [ https://github.com/dotnet-architecture/eShopModernizing/wiki ](https://github.com/dotnet-architecture/eShopModernizing/wiki).
+Následující části popisují, co každého návodu je o cílech a vysoké úrovně pro zpracování obrazu a poskytuje diagramu úloh, které jsou zahrnuty. Můžete získat návody sami v *eShopModernizing* wiki úložiště GitHub aplikace na [ https://github.com/dotnet-architecture/eShopModernizing/wiki ](https://github.com/dotnet-architecture/eShopModernizing/wiki).
 
-## <a name="technical-walkthrough-list"></a>Seznamu technických návod
+## <a name="technical-walkthrough-list"></a>Seznam průvodcem produktem
 
-Následující kurzy get-started poskytovat konzistentní a komplexní technické pokyny pro ukázkové aplikace, které se dají navýšení a posunutí pomocí kontejnery a potom přesunout tak, že pomocí více možností nasazení v Azure.
+Následující návody pro get-started poskytují komplexní a konzistentní technické pokyny pro ukázkové aplikace, které můžete přenést a shift pomocí kontejnerů a přesuňte pomocí několika možností nasazení v Azure.
 
-Každá z následující kurzy používá nové ukázkových eShopLegacy a eShopModernizing aplikací, které jsou k dispozici na webu GitHub na [ https://github.com/dotnet-architecture/eShopModernizing ](https://github.com/dotnet-architecture/eShopModernizing).
+Každá z následujících návodech používá nové ukázkové eShopLegacy a eShopModernizing aplikace, které jsou k dispozici na Githubu v [ https://github.com/dotnet-architecture/eShopModernizing ](https://github.com/dotnet-architecture/eShopModernizing).
 
-- **Prohlídka eShop starší verze aplikací (aplikace směrného plánu modernizovat)**
+- **Prohlídka eShop starší verze aplikací (aplikace pro směrný plán pro modernizaci)**
 
-- **Containerize existující webových aplikací ASP.NET (WebForms & MVC) s kontejnery Windows**
+- **Kontejnerizace existující webových aplikací ASP.NET (WebForms & MVC) s kontejnery Windows**
 
-- **Containerize stávající služby WCF (vícevrstvé aplikace) s kontejnery Windows**
+- **Kontejnerizovat stávající službu WCF (aplikace pro N-vrstvá) s kontejnery Windows**
 
-- **Nasazení aplikace systému Windows na základě kontejnery pro virtuální počítače Azure**
+- **Nasazení aplikace založené na kontejnery Windows na virtuálních počítačích Azure**
 
-- **Nasazení aplikace na základě kontejnery Windows do Kubernetes v Azure Container Service**
+- **Nasazení aplikací na základě kontejnerů Windows v Kubernetes ve službě Azure Container Service**
 
-- **Nasazení aplikace na základě kontejnery Windows do Azure Service Fabric**
+- **Nasazení aplikace založené na kontejnery Windows do Azure Service Fabric**
 
 
 ## <a name="walkthrough-1-tour-of-eshop-legacy-apps"></a>Návod 1: Prohlídka eShop starší verze aplikací
 
-### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
+### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
 
-Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
+Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup:
 
 [návody eShopModernizing wiki](https://github.com/dotnet-architecture/eShopModernizing/wiki)
 
 
 ### <a name="overview"></a>Přehled
 
-V tomto návodu můžete prozkoumat počáteční implementace tři ukázkové starší verze aplikace. První dva ukázkové webové aplikace mají monolitický architekturu a byly vytvořeny pomocí klasického ASP.NET. Jeden aplikace je založena na technologii ASP.NET 4.x MVC; druhý aplikace je založena na webových formulářů ASP.NET 4.x. Třetí aplikace je 3vrstvé aplikace skládá klientskou aplikaci pro WinForms a straně serveru [Windows Communication Foundation (WCF)](../../framework/wcf/whats-wcf.md) služby.
+V tomto podrobném návodu můžete prozkoumat počáteční implementace tři ukázkové starší verze aplikace. První dva ukázkové webové aplikace mají monolitické architektury a byly vytvořeny pomocí klasického rozhraní ASP.NET. Jedna aplikace je založena na technologii ASP.NET 4.x MVC; Druhá aplikace je založena na webových formulářů ASP.NET 4.x. Třetí aplikace je 3vrstvé aplikace skládající se tak, že klientská aplikace WinForms a na straně serveru [Windows Communication Foundation (WCF)](../../framework/wcf/whats-wcf.md) služby.
 
 Všechny tyto aplikace jsou k dispozici na [úložiště GitHub eShopModernizing](https://github.com/dotnet-architecture/eShopModernizing).
 
 ### <a name="goals"></a>Cíle
 
-Hlavním cílem tohoto návodu je jednoduše a seznamte se s těmito aplikacemi a s jejich kódu a konfigurace. Aplikace můžete nakonfigurovat tak, aby se vygenerování a použití imitovaná data bez použití databáze SQL pro účely testování. Toto volitelné konfigurace je založená na vkládání závislostí odpojeného způsobem.
+Hlavním cílem tohoto návodu je jednoduše a seznamte se s těmito aplikacemi a s jejich kódu a konfigurace. Aplikace můžete nakonfigurovat tak, aby generovat a používat mock data bez použití databáze SQL pro účely testování. Tato volitelná konfigurace je založen na vkládání závislostí oddělující způsobem.
 
-### <a name="scenario-1-aspnet-web-apps"></a>Scénář 1: ASP.NET – webové aplikace
+### <a name="scenario-1-aspnet-web-apps"></a>Scénář 1: Webových aplikací ASP.NET
 
-Následující obrázek znázorňuje jednoduchý scénář původní starší verze webové aplikace ASP.NET.
+Následující obrázek znázorňuje jednoduchý scénář původní starší verze webových aplikací ASP.NET.
 
-> ![Scénář jednoduchého architektura původní starší verze webových aplikací ASP.NET](./media/image5-1.png)
+> ![Jednoduchá architektura scénář původní starší verze webových aplikací ASP.NET](./media/image5-1.png)
 >
 
-Z hlediska domény obchodní obě aplikace nabízejí katalogu stejné funkce pro správu. Členové týmu enterprise eShop využije aplikace k zobrazení a úpravy katalogu produktů. 
+Z hlediska domény firmy obě aplikace nabízejí katalogu stejné funkce pro správu. Členové týmu enterprise eShop využije aplikace k zobrazení a úprava katalog produktů. 
 
 Následující obrázek ukazuje na snímcích obrazovky počáteční aplikace.
 
-![Aplikace ASP.NET MVC a webových formulářů ASP.NET (technologie existující nebo starší)](./media/image5-2.png)
+![Aplikace ASP.NET MVC a ASP.NET Web Forms (technologie existující/starší verze)](./media/image5-2.png)
 
-Závislosti v technologii ASP.NET 4.x nebo starší verze (buď pro MVC nebo webových formulářů) znamená, že tyto aplikace se na .NET Core nespustí, pokud kód je plně přepsaná pomocí ASP.NET MVC jádra. 
+Závislosti v technologii ASP.NET 4.x a předchozími verzemi (buď pro MVC nebo pro webové formuláře) znamená, že se tyto aplikace nespustí v rozhraní .NET Core, pokud kód je úplně přepsán pomocí ASP.NET Core MVC. 
 
-### <a name="scenario-2-wcf-service-and-winforms-client-app-3-tier-app"></a>Scénář 2: Služby WCF a WinForms klienta aplikace (úroveň 3)
+### <a name="scenario-2-wcf-service-and-winforms-client-app-3-tier-app"></a>Scénář 2: Službu WCF a WinForms klientské aplikace (3vrstvé aplikace)
 
-Následující obrázek znázorňuje jednoduchý scénář původní vrstvy 3 starší verzi aplikace.
+Následující obrázek znázorňuje jednoduchý scénář původní 3vrstvá starší verze aplikace.
 
-> ![Scénář jednoduchého architektura původní starší verze 3vrstvé aplikace pomocí služby WCF a klientskou aplikaci WinForms](./media/image5-1.5.png)
+> ![Jednoduchá architektura scénář být vybavené klientskou aplikací WinForms a původní starší verze 3vrstvé aplikace se službou WCF](./media/image5-1.5.png)
 >
 
 ### <a name="benefits"></a>Výhody
 
-Výhody tohoto návodu jsou jednoduché: právě Seznamte se s kódem a počáteční aplikace.
+Výhody tohoto názorného postupu jsou jednoduché: stačí Seznamte se s kódem a počáteční aplikace.
 
 ### <a name="next-steps"></a>Další kroky
 
-Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu:
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
-  - [Prohlídka na základě technologie ASP.NET MVC a webových formulářů "starší" aplikace](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
-  - [Prohlídka na službu WCF směrného plánu a WinForms (3vrstvé) "starší" aplikace](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
+  - [Prohlídka na základní technologie ASP.NET MVC a aplikace webových formulářů "starší"](https://github.com/dotnet-architecture/eShopModernizing/wiki/01.-Tour-on-the-ASP.NET-MVC-and-WebForms-apps-implementation-code)
+  - [Prohlídka na aplikace WinForms v "starší" (3 vrstvy) a služby WCF směrného plánu](https://github.com/dotnet-architecture/eShopModernizing/wiki/21.-Tour-on-the-WCF-service-and-WinForms-apps)
 
 
-## <a name="walkthrough-2-containerize-your-existing-net-applications-with-windows-containers"></a>Návod 2: Containerize existující aplikace .NET s kontejnery Windows
+## <a name="walkthrough-2-containerize-your-existing-net-applications-with-windows-containers"></a>Návod 2: Kontejnerizace existující aplikace .NET s kontejnery Windows
 
 ### <a name="overview"></a>Přehled
 
-Použití Windows kontejnerů ke zlepšení nasazení existujících aplikací .NET, například algoritmů založených na rozhraní MVC a webových formulářů, WCF, výroby, vývoj a testovací prostředí.
+Kontejnery Windows použijte ke zlepšení nasazení existujících aplikací .NET, jako jsou systémy založené na MVC, webových formulářů nebo WCF, do produkčního prostředí, vývojová a testovací prostředí.
 
 ### <a name="goals"></a>Cíle
 
-Cílem tohoto návodu je tak, aby zobrazovalo několik možností pro containerizing stávající aplikace rozhraní .NET Framework. Můžeš:
+Cílem tohoto návodu je zobrazit několik možností pro uzavření do kontejneru existující aplikaci .NET Framework. Můžeš:
 
-- Containerize vaší aplikace pomocí [2017 nástroje sady Visual Studio pro Docker](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker) (Visual Studio 2017 nebo novější verze).
+- Kontejnerizujte své aplikace pomocí [Visual Studio 2017 Tools for Docker](/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker) (Visual Studio 2017 nebo novější verze).
 
-- Containerize aplikace tak, že ručně přidáte [soubor Docker](https://docs.docker.com/engine/reference/builder/)a potom pomocí [příkazového řádku Dockeru](https://docs.docker.com/engine/reference/commandline/cli/).
+- Kontejnerizujte své aplikace tak, že ručně přidáte [soubor Dockerfile](https://docs.docker.com/engine/reference/builder/)a následným použitím [rozhraní příkazového řádku Dockeru](https://docs.docker.com/engine/reference/commandline/cli/).
 
-- Containerize vaší aplikace pomocí [Img2Docker](https://github.com/docker/communitytools-image2docker-win) (nástroj open-source z Docker).
+- Kontejnerizujte své aplikace pomocí [Img2Docker](https://github.com/docker/communitytools-image2docker-win) nástroje (nástroj open source od Dockeru).
 
-Tento názorný postup se zaměřuje na Visual Studio Tools 2017 Docker přístup, ale jsou poměrně stejné z hlediska pomocí Dockerfiles tyto dva přístupy.
+Tento návod se zaměřuje na Visual Studio 2017 Tools for Docker přístup, ale ostatní dva přístupy jsou podobné ve vztahu pomocí soubory Dockerfile.
 
-### <a name="scenario-1-containerized-aspnet-web-apps"></a>Scénář 1: Kontejnerizované ASP.NET webové aplikace
+### <a name="scenario-1-containerized-aspnet-web-apps"></a>Scénář 1: ASP.NET Kontejnerizovaných webových aplikací
 
-Následující obrázek znázorňuje tento scénář pro kontejnerizované eShop starší verze webové aplikace aplikace.
+Následující obrázek znázorňuje scénář pro kontejnerizované eShop starší verze webové aplikace aplikace.
 
-> ![Diagram zjednodušení architektury kontejnerové aplikace ASP.NET ve vývojovém prostředí](./media/image5-3.png)
+> ![Diagram architektury zjednodušené kontejnerizovaných aplikací technologie ASP.NET ve vývojovém prostředí](./media/image5-3.png)
 >
 
 
-### <a name="scenario-2-containerized-wcf-service"></a>Scénář 2: Služby WCF Kontejnerizované
+### <a name="scenario-2-containerized-wcf-service"></a>Scénář 2: Služba kontejnerizovaná WCF
 
-Následující obrázek znázorňuje tento scénář pro 3vrstvé aplikace kontejnerizované službou WCF. 
+Následující obrázek znázorňuje scénář 3vrstvé aplikace s kontejnerizovaná služba WCF. 
 
-> ![Zjednodušená diagram architektury kontejnerové služby WCF ve vývojovém prostředí](./media/image5-3.5.png)
+> ![Zjednodušená diagram architektury kontejnerizované služby WCF ve vývojovém prostředí](./media/image5-3.5.png)
 >
 
 ### <a name="benefits"></a>Výhody
 
-Existují výhody používání aplikace monolitický v kontejneru. Nejprve je třeba vytvořit bitovou kopii pro aplikaci. Od tohoto okamžiku v každé nasazení běží ve stejném prostředí. Každý kontejner používá stejnou verzi operačního systému, má stejnou verzi závislostí nainstalována, používá stejnou verzi rozhraní .NET framework a je vytvořen pomocí stejného procesu. V podstatě řídit závislostí vaší aplikace pomocí Docker bitové kopie. Závislosti cestují k aplikaci při nasazení kontejnerů.
+Existují výhody používání monolitické aplikace v kontejneru. Nejprve vytvořte image pro aplikaci. Od tohoto okamžiku v každé nasazení běží ve stejném prostředí. Každý kontejner používá stejnou verzi operačního systému, má stejnou verzi závislosti nainstalované, používá stejnou verzi rozhraní .NET framework a je vytvořena pomocí stejného procesu. V podstatě řízení závislostí vaší aplikace pomocí image Dockeru. Závislosti cestují s aplikací při nasazování kontejnerů.
 
-Další výhodou je, že vývojáři aplikaci můžete spustit v konzistentní prostředí, které poskytuje Windows kontejnery. Problémy, které se zobrazují pouze u některých verzí můžete okamžitě, nanese místo zpřístupnění v pracovním nebo produkčním prostředí. Rozdíly ve vývojovém prostředí používá členové týmu pro vývoj podstatné menší při spuštění aplikace v kontejnerech.
+Další výhodou je, že vývojáři spuštěním aplikace v prostředí konzistentní vzhledem k aplikacím, které poskytuje kontejnery Windows. Problémy, které se zobrazují pouze u některých verzí můžete okamžitě, nanese místo zpřístupnění v přípravném nebo produkčním prostředí. Rozdíly ve vývojovém prostředí, které používají členové vývojového týmu méně důležitá, když aplikace běží v kontejnerech.
 
-Kontejnerizované aplikací mít také plošší křivky Škálováním na více systémů. Kontejnerizované aplikací umožňují mít další aplikace a instance služby (podle kontejnery) v virtuálního počítače nebo fyzického počítače ve srovnání s nasazení regulární aplikací na počítač. Výsledkem je vyšší hustotu a méně požadované prostředky, zejména v případě, že používáte orchestrators jako Kubernetes nebo Service Fabric.
+Kontejnerizované aplikace také mít plošší křivky horizontální navýšení kapacity. Kontejnerizovaných aplikací umožňují další aplikace a instance služby (podle kontejnerů) virtuálního počítače nebo fyzického počítače, ve srovnání s nasazení aplikace pravidelně na počítač. Výsledkem je vyšší hustota a méně požadované prostředky, zejména v případě, že používáte orchestrátorů, jako je Kubernetes nebo Service Fabric.
 
-Rozdělení do kontejnerů v situacích, ideální, není nutné provádět jakékoliv změny kódu aplikace (C\#). Ve většině scénářů bude třeba jen soubory metadat nasazení Docker (soubory Dockerfiles a Docker Compose).
+Kontejnerizace v situacích, ideální, nevyžaduje změny kódu aplikace (C\#). Ve většině případů stačí Docker nasazení metadat souborů (soubory Dockerfile a Docker Compose soubory).
 
 ### <a name="next-steps"></a>Další kroky
 
-Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu:
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
-  - [Postup containerize webové aplikace rozhraní .NET Framework s kontejnery Windows a Docker](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
-  - [Přidání podpory Docker do služby WCF](https://github.com/dotnet-architecture/eShopModernizing/wiki/22.-Adding-Docker-Support)
+  - [Jak kontejnerizovat aplikace webového rozhraní .NET Framework s kontejnery Windows a Dockeru](https://github.com/dotnet-architecture/eShopModernizing/wiki/02.-How-to-containerize-the-.NET-Framework-web-apps-with-Windows-Containers-and-Docker)
+  - [Přidání podpory Dockeru do služby WCF](https://github.com/dotnet-architecture/eShopModernizing/wiki/22.-Adding-Docker-Support)
 
 
 
-## <a name="walkthrough-3-deploy-your-windows-containers-based-app-to-azure-vms"></a>Návod 3: Nasazení aplikace systému Windows na základě kontejnery pro virtuální počítače Azure
+## <a name="walkthrough-3-deploy-your-windows-containers-based-app-to-azure-vms"></a>Návod 3: Nasazení aplikace založené na kontejnery Windows na virtuálních počítačích Azure
 
-### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
+### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
 
-Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing: [https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
+Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup: [https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
 
 ### <a name="overview"></a>Přehled
 
-Nasazení do hostitelů Docker v Windows Server 2016 virtuálního počítače (VM) v Azure umožňuje rychle nastavit vývoj/testovací/přípravného prostředí. Také poskytuje společné místo pro testery nebo podnikoví uživatelé k ověření aplikace. Virtuální počítače také může být platný že jako provozní prostředí služby (IaaS).
+Nasazení na hostitele Docker na Windows serveru 2016 virtuálního počítače (počítače) v Azure umožňuje rychle nastavit vývojové/testovací/přípravných prostředí. Také poskytuje společné místo pro testery nebo firemním uživatelům ověřovat aplikace. Virtuální počítač také může být platný cenu jako služba (IaaS) produkční prostředí.
 
 ### <a name="goals"></a>Cíle
 
-Cílem tohoto návodu je tak, aby zobrazovalo více alternativy, které máte, když nasadíte kontejnery Windows na virtuálních počítačích Azure, které jsou založené na systému Windows Server 2016 nebo novější verze.
+Cílem tohoto návodu je zobrazit více alternativy, které jste při nasazování kontejnerů Windows na virtuální počítače Azure, které jsou založené na Windows Server 2016 nebo novější verze.
 
 ### <a name="scenarios"></a>Scénáře
 
-Několik scénáře jsou popsané v tomto návodu.
+Několik scénáře jsou popsané v tomto názorném postupu.
 
-#### <a name="scenario-a-deploy-to-an-azure-vm-from-a-dev-pc-through-docker-engine-connection"></a>Scénář A: nasazení na virtuální počítač Azure ze dev počítače prostřednictvím připojení modulu Docker
+#### <a name="scenario-a-deploy-to-an-azure-vm-from-a-dev-pc-through-docker-engine-connection"></a>Scénář A: nasazení na Virtuálním počítači Azure z vývojář počítače přes připojení modul Docker
 
-![Nasazení na virtuální počítač Azure z vývojářů počítače prostřednictvím připojení k modulu Docker](./media/image5-4.png)
+![Nasazení na Virtuálním počítači Azure z vývojář PC prostřednictvím připojení k modulu Docker](./media/image5-4.png)
 
-> **Obrázek 5 – 4.** Nasazení na virtuální počítač Azure z vývojářů počítače prostřednictvím připojení k modulu Docker
+> **Obrázek 5 – 4.** Nasazení na Virtuálním počítači Azure z vývojář PC prostřednictvím připojení k modulu Docker
 
-#### <a name="scenario-b-deploy-to-an-azure-vm-through-a-docker-registry"></a>Scénář B: nasazení na virtuální počítač Azure prostřednictvím registru Docker
+#### <a name="scenario-b-deploy-to-an-azure-vm-through-a-docker-registry"></a>Scénář B: nasazení na Virtuálním počítači Azure pomocí registru Dockeru
 
-![Nasazení na virtuální počítač Azure prostřednictvím registru Docker](./media/image5-5.png)
+![Nasazení do virtuálního počítače Azure pomocí registru Dockeru](./media/image5-5.png)
 
-> **Obrázek 5-5.** Nasazení na virtuální počítač Azure prostřednictvím registru Docker
+> **Obrázek 5 – 5.** Nasazení do virtuálního počítače Azure pomocí registru Dockeru
 
-#### <a name="scenario-c-deploy-to-an-azure-vm-from-cicd-pipelines-in-visual-studio-team-services"></a>Scénář C: nasazení na virtuální počítač Azure z položek konfigurace nebo CD kanály v sadě Visual Studio Team Services
+#### <a name="scenario-c-deploy-to-an-azure-vm-from-cicd-pipelines-in-azure-devops-services"></a>Scénář C: nasazení na Virtuálním počítači Azure z kanálů CI/CD ve službách Azure DevOps
 
-![Nasazení z položek konfigurace nebo CD kanály v sadě Visual Studio Team Services na virtuální počítač Azure](./media/image5-6.png)
+![Nasazení na Virtuálním počítači Azure z kanálů CI/CD ve službách Azure DevOps](./media/image5-6.png)
 
-> **Obrázek 5 a 6.** Nasazení z položek konfigurace nebo CD kanály v sadě Visual Studio Team Services na virtuální počítač Azure
+> **Obrázek 5 a 6.** Nasazení na Virtuálním počítači Azure z kanálů CI/CD ve službách Azure DevOps
 
-### <a name="azure-vms-for-windows-containers"></a>Virtuální počítače Azure pro Windows kontejnery
+### <a name="azure-vms-for-windows-containers"></a>Virtuální počítače Azure pro kontejnery Windows
 
-Azure kontejnery virtuálních počítačů pro Windows jsou virtuální počítače na základě systému Windows Server 2016, Windows 10 nebo novější verze, jak k modulu Docker nastavení. Ve většině případů se používá Windows Server 2016 ve virtuálních počítačích Azure.
+Virtuální počítače pro Windows kontejnery služby Azure jsou virtuálních počítačů založených na Windows serveru 2016, Windows 10 nebo novější verze, s modul Docker nastavení. Ve většině případů se používá Windows Server 2016 ve virtuálních počítačích Azure.
 
-Virtuální počítač s názvem aktuálně poskytuje Azure **systému Windows Server 2016 s kontejnery**. Můžete vyzkoušet nové funkce kontejneru systému Windows Server s Windows Server Core nebo Windows Nano Server můžete použít tento virtuální počítač. Kontejner imagí operačního systému jsou nainstalované a je připravený k použití s Docker virtuálního počítače.
+Azure v současné době poskytuje virtuální počítač s názvem **Windows serveru 2016 s kontejnery**. Tento virtuální počítač můžete vyzkoušet nové funkce kontejneru Windows serveru s Windows Server Core nebo Windows Nano Server. Kontejnerové Image operačního systému jsou nainstalovány a pak je virtuální počítač připravený k použití s Dockerem.
 
 ### <a name="benefits"></a>Výhody
 
-I když Windows kontejnery mohou být nasazeny do místní 2016 virtuálních počítačů Windows serveru, když nasadíte do Azure, můžete získat snadný způsob, jak začít pracovat s virtuálními počítači kontejneru připravené k použití Windows serveru. Můžete také získat běžné online umístění, které je přístupné pro testery a automatické škálovatelnost prostřednictvím sady škálování virtuálního počítače Azure.
+I když se dají nasadit kontejnery Windows pro místní Windows Server 2016 virtuální počítače, při nasazování do Azure, budete mít snadný způsob, jak začít s virtuálními počítači kontejneru připravené k použití Windows serveru. Získáte také běžné online umístění, která je přístupná pro testery a automatické škálovatelnosti pomocí škálovací sady virtuálních počítačů Azure.
 
 ### <a name="next-steps"></a>Další kroky
 
-Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu:
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/03.-How-to-deploy-your-Windows-Containers-based-app-into-Azure-VMs-(Including-CI-CD))
 
-## <a name="walkthrough-4-deploy-your-windows-containers-based-apps-to-azure-container-instances-aci"></a>Návod 4: Nasazení aplikace na základě kontejnery Windows do Azure kontejner instancí (ACI)
+## <a name="walkthrough-4-deploy-your-windows-containers-based-apps-to-azure-container-instances-aci"></a>Návod 4: Nasazení aplikace založené na kontejnery Windows do služby Azure Container Instances (ACI)
 
-### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
+### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
 
-Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
+Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup:
 
-[Nasazení aplikace do ACI (instance kontejner Azure)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances))
+[Nasazení aplikace do služby ACI (Azure Container Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances))
 
 ### <a name="overview"></a>Přehled
 
-[Instance Azure kontejneru (ACI)](https://docs.microsoft.com/en-us/azure/container-instances/) je nejrychlejší způsob, jak mají dev/testovací/pracovní prostředí kontejnery, kde můžete nasadit jeden instancí kontejnerů.
+[Azure Container Instances (ACI)](https://docs.microsoft.com/en-us/azure/container-instances/) je nejrychlejší způsob, jak prostředí dev/test/přípravy kontejnerů, kde můžete nasadit jeden instancí kontejnerů.
 
 ### <a name="goals"></a>Cíle
 
-Tento návod ukazuje základní scénáře při nasazování Windows kontejnery Azure kontejner instancí (ACI) a jak můžete nasadit aplikace eShopModernizing do ACI.
+Tento návod ukazuje základní scénáře při nasazování kontejnerů Windows do Azure Container Instances (ACI) a jak můžete nasadit aplikace eShopModernizing do ACI.
 
 ### <a name="scenarios"></a>Scénáře
 
-Může být variace o nasazování aplikací eShopModernizing do ACI jako je nasazení jenom jednoho nebo všech aplikací (aplikace MVC, WebForms aplikaci nebo službu WCF). V následujícím scénáři znázorněném uvidíte aplikace ASP.NET MVC a kontejneru systému SQL Server oba dva nasazené jako kontejnery do ACI (instance kontejner Azure).
+Může existovat variace o nasazení aplikací eShopModernizing do ACI, jako je nasazení jenom v jednom nebo všechny aplikace (aplikace MVC, webových formulářů aplikaci nebo službu WCF). V následujícím scénáři je uvedeno níže můžete vidět aplikaci ASP.NET MVC a kontejner SQL serveru, jejich nasazení jako kontejnery do ACI (Azure Container Instances).
 
-![Nasazení na ACI z prostředí pro vývoj](./media/image5-3.5.6.png)
+![Nasazení do služby ACI z vývojového prostředí](./media/image5-3.5.6.png)
 
 ### <a name="benefits"></a>Výhody
 
-Azure instancí kontejnerů umožňuje snadno vytvářet a spravovat Docker kontejnerů v Azure, aniž by museli zřizovat virtuální počítače nebo přijmou vyšší úrovně služby. S ACI můžete přímo nasazení kontejneru systému Windows v Azure a umístěte ji do internet s platný plně kvalifikovaný název domény (FQDN) v řádu sekund (za předpokladu, že máte připravené bitové kopie kontejneru systému Windows v registru Docker jako úložiště Docker Hub nebo kontejneru Azure Registr).
+Služba Azure Container Instances usnadňuje vytváření a správu kontejnerů Dockeru v Azure, aniž byste museli zřizovat virtuální počítače nebo používat službu. Pomocí ACI můžete přímo nasadit kontejner Windows ve službě Azure a zveřejníte ho na Internetu s použitím plně kvalifikovaného názvu domény (FQDN) v řádu sekund (za předpokladu, že budete mít připravený kontejner Windows image v registru Dockeru jako Docker Hubu nebo služby Azure Container Registru).
 
 ### <a name="considerations"></a>Důležité informace
 
-Nasazení Windows kontejnery s buď úplné rozhraní .NET Framework / ASP.NET nebo SQL Server do Azure kontejner instancí (ACI) není dost tak rychlý jako nasazení na regulární Docker hostitele (např. Windows Server 2016 s kontejnery Windows), protože bitovou kopii Docker musí být Stáhnout (načtený z registru Docker) pokaždé, když a velikosti bitové kopie kontejneru SQL (15.1 GB) a bitovou kopii kontejneru ASP.NET (13.9 GB) jsou výrazně velký, ale je výrazně levnější než zachování vlastní hostitelů docker (trvale online Windows Server 2016 se virtuální počítač s Windows kontejnerů v Azure) není abychom zmínili celou orchestrator jako Kubernetes v Azure (AKS/ACS) nebo Azure Service Fabric, které jsou na druhé straně skvělé možnosti pro nasazení v produkčním prostředí.
+Nasazování kontejnerů Windows s buď úplné rozhraní .NET Framework / technologie ASP.NET nebo SQL serveru do Azure Container Instances (ACI) není úplně tak rychlý jako při nasazování na regulární hostitele Docker (např. Windows Server 2016 s kontejnery Windows), protože image Dockeru, musí být stažení (načtený z registru Dockeru) pokaždé, když a i když je mnohem levnější než udržování vašeho vlastního hostitele docker (trvale online jsou výrazně velké velikosti image kontejneru SQL (15.1 GB) a image kontejneru ASP.NET (13.9 GB) Windows Server 2016 s virtuálním Počítačem kontejnery Windows v Azure) nemluvě celý orchestrator, jako je Kubernetes v Azure (/ služby AKS ACS) nebo Azure Service Fabric, které jsou na druhé straně skvělou možností pro nasazení v produkčním prostředí.
 
-Jako hlavní uzavření pomocí Azure kontejner instancí je velmi poutavé možnost pro scénáře vývoje/testování a CI/CD kanály.
+Jako hlavní uzavření pomocí služby Azure Container Instances je velice přesvědčivý argument možnost pro scénáře vývoje/testování a pro kanály CI/CD.
 
 ## <a name="next-steps"></a>Další kroky
 
-Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu: 
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub: 
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-Deploying-the-Apps-to-ACI-(Azure-Container-Instances)TBD)
 
 
-## <a name="walkthrough-5-deploy-your-windows-containers-based-apps-to-kubernetes-in-azure-container-service"></a>Návod 5: Nasazení aplikace na základě kontejnery Windows do Kubernetes v Azure Container Service
+## <a name="walkthrough-5-deploy-your-windows-containers-based-apps-to-kubernetes-in-azure-container-service"></a>Návod 5: Nasazení aplikací na základě kontejnerů Windows v Kubernetes ve službě Azure Container Service
 
-### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
+### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
 
-Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
+Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup:
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD))
 
 ### <a name="overview"></a>Přehled
 
-Aplikace, která je založena na systému Windows kontejnery rychle muset platformy, přesunutí i další počítače z virtuálních počítačů IaaS. To je potřeba snadno dosáhnout vysoké škálovatelnost a lépe automatizované škálovatelnost a pro přináší značné vylepšení v automatizované nasazení a správa verzí. Tyto cíle můžete dosáhnout pomocí orchestrator [Kubernetes](https://kubernetes.io/), k dispozici v [služby kontejneru Azure](https://azure.microsoft.com/services/container-service/).
+Aplikace, která je založena na kontejnery Windows rychle muset použít platformy, přesunutí ještě více pryč z virtuálních počítačů IaaS. To je potřeba provést snadno dosáhnout vysoké škálovatelnosti a lépe automatizované škálovatelnost a přináší značné vylepšení v automatické nasazení a správy verzí. Tyto cíle lze dosáhnout pomocí orchestrátoru [Kubernetes](https://kubernetes.io/), která je dostupná v [služby Azure Container Service](https://azure.microsoft.com/services/container-service/).
 
 ### <a name="goals"></a>Cíle
 
-Cílem tohoto návodu je další informace o nasazení aplikace na základě kontejneru systému Windows k Kubernetes (také nazývané *K8s*) v Azure Container Service. Nasazení do Kubernetes od začátku je dvoustupňový proces:
+Cílem tohoto návodu je naučit se nasazovat aplikace založené na Windows kontejnerů Kubernetes (také nazývané *K8s*) ve službě Azure Container Service. Nasazování do Kubernetes úplně od začátku je dvoustupňový proces:
 
-1.  Nasaďte Kubernetes clusteru Azure Container Service.
+1.  Nasazení clusteru Kubernetes do služby Azure Container Service.
 
 2.  Nasazení aplikace a související prostředky do clusteru Kubernetes.
 
 ### <a name="scenarios"></a>Scénáře
 
-#### <a name="scenario-a-deploy-directly-to-a-kubernetes-cluster-from-a-dev-environment"></a>Scénář A: nasadit přímo do clusteru s podporou Kubernetes z prostředí vývojářů
+#### <a name="scenario-a-deploy-directly-to-a-kubernetes-cluster-from-a-dev-environment"></a>Scénář A: nasadit přímo do clusteru Kubernetes z vývojového prostředí
 
-![Nasazení přímo na clusteru s podporou Kubernetes z prostředí pro vývoj](./media/image5-7.png)
+![Nasadit do clusteru Kubernetes z vývojového prostředí](./media/image5-7.png)
 
-> **Obrázek 5 – 7.** Nasazení přímo na clusteru s podporou Kubernetes z prostředí pro vývoj
+> **Obrázek 5 – 7.** Nasadit do clusteru Kubernetes z vývojového prostředí
 
-#### <a name="scenario-b-deploy-to-a-kubernetes-cluster-from-cicd-pipelines-in-team-services"></a>Scénář B: nasadit do clusteru s podporou Kubernetes z položek konfigurace nebo CD kanálů v Team Services
+#### <a name="scenario-b-deploy-to-a-kubernetes-cluster-from-cicd-pipelines-in-azure-devops-services"></a>Scénář B: nasazení do clusteru Kubernetes z CI/CD kanálů služby Azure DevOps
 
-![Nasazení do clusteru s podporou Kubernetes z položek konfigurace nebo CD kanály v Team Services](./media/image5-8.png)
+![Nasazení do clusteru Kubernetes z kanálů CI/CD ve službách Azure DevOps](./media/image5-8.png)
 
-> **Obrázek 5-8.** Nasazení do clusteru s podporou Kubernetes z položek konfigurace nebo CD kanály v Team Services
+> **Obrázek 5 až 8.** Nasazení do clusteru Kubernetes z kanálů CI/CD ve službách Azure DevOps
 
 ### <a name="benefits"></a>Výhody
 
-Existuje mnoho výhod nasazení do clusteru s podporou v Kubernetes. Největší výhodou je, že dostanete prostředí produkční prostředí, ve kterém můžete škálovat aplikace založené na počet instancí kontejneru, které chcete použít (vnitřní škálovatelnost v existujícím uzlům) a na základě počtu uzlů nebo virtuální počítače v clusteru ( Globální škálovatelnost clusteru).
+Existuje mnoho výhod pro nasazení do clusteru v Kubernetes. Největší výhodou je, že dostanete prostředí připravené pro produkční prostředí, ve kterém můžete aplikace založená na počet instancí kontejneru chcete použít (vnitřní škálovatelnost v existujících uzlů) a na základě počtu virtuálních počítačů nebo uzly v clusteru (horizontálně navýšit Globální škálovatelnost clusteru).
 
-Azure Container Service optimalizuje oblíbených open-source nástrojů a technologií speciálně pro Azure. Získat otevřete řešení, která nabízí přenositelnost pro vaše kontejnery i pro konfiguraci aplikace. Vyberte velikost, počtu hostitelů, a nástrojů orchestrator-kontejneru služby zpracovává nic jiného.
+Služba Azure Container Service optimalizuje oblíbených opensourcových nástrojů a technologií konkrétně pro Azure. Získáte otevřené řešení, které nabízí přenositelnost pro vaše kontejnery i Konfigurace aplikací. Vyberete velikost, počet hostitelů, a nástroje orchestrator – kontejner služby postará o všechno ostatní.
 
-S Kubernetes mohou vývojáři průběhu od přemýšlení o fyzické a virtuální počítače k plánování zaměřené na kontejner infrastruktury, která usnadňuje následující funkce, mimo jiné:
+S využitím Kubernetes můžete průběh vývojáře od přemýšlení o fyzické a virtuální počítače, k plánování zaměřené na kontejner infrastruktury, která usnadňuje následující funkce, mimo jiné:
 
 - Aplikace založené na několika kontejnerů
 
-- Replikace instancí kontejnerů a vodorovné automatické škálování
+- Replikace container instances a automatické horizontální škálování
 
 - Pojmenování a zjišťování (například interní DNS)
 
 - Vyrovnávání zatížení
 
-- Vrácení aktualizace
+- Aktualizace se zajištěním provozu
 
-- Distribuce tajné klíče
+- Distribuce tajných kódů
 
 - Kontroly stavu aplikace
 
 ## <a name="next-steps"></a>Další kroky
 
-Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu: [https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD))
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub: [https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-C-CD))
 
-## <a name="walkthrough-6-deploy-your-windows-containers-based-apps-to-azure-service-fabric"></a>Návod 6: Nasazení aplikace na základě kontejnery Windows do Azure Service Fabric
+## <a name="walkthrough-6-deploy-your-windows-containers-based-apps-to-azure-service-fabric"></a>Návod 6: Nasazení aplikace založené na kontejnery Windows do Azure Service Fabric
 
-### <a name="technical-walkthrough-availability"></a>Technické návod dostupnosti
+### <a name="technical-walkthrough-availability"></a>Dostupnost průvodcem produktem
 
-Úplné technické návod je k dispozici na stránkách wiki úložišti GitHub eShopModernizing:
+Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou názorný postup:
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD))
 
 ### <a name="overview"></a>Přehled
 
-Aplikace založené na Windows kontejnery rychle musí používat platforem, přesunutí i další počítače z virtuálních počítačů IaaS. To je potřeba snadno dosáhnout vysoké škálovatelnost a lépe automatizované škálovatelnost a pro přináší značné vylepšení v automatizované nasazení a správa verzí. Pomocí orchestrator Azure Service Fabric, která je k dispozici v cloudu Azure, ale také k dispozici pro použití v místě, nebo i v různých veřejného cloudu, můžete dosáhnout těchto cílů.
+Aplikace založené na kontejnery Windows rychle musí používat platformy, přesunutí ještě více pryč z virtuálních počítačů IaaS. To je potřeba provést snadno dosáhnout vysoké škálovatelnosti a lépe automatizované škálovatelnost a přináší značné vylepšení v automatické nasazení a správy verzí. Pomocí Azure Service Fabric, která je k dispozici v cloudu Azure, ale také k dispozici pro použití v místním, orchestrator nebo dokonce i v různých veřejného cloudu, můžete dosáhnout těchto cílů.
 
 ### <a name="goals"></a>Cíle
 
-Cílem tohoto návodu je další informace o nasazení aplikace na základě kontejneru systému Windows do clusteru Service Fabric v Azure. Nasazení do Service Fabric od začátku je dvoustupňový proces:
+Cílem tohoto návodu je naučit se nasazovat aplikace založené na Windows kontejnerů do clusteru Service Fabric v Azure. Nasazení do Service Fabric úplně od začátku je dvoustupňový proces:
 
-1.  Cluster Service Fabric nasaďte do Azure (nebo do různých prostředí).
+1.  Nasazení clusteru Service Fabric do Azure (nebo do jiného prostředí).
 
-2.  Nasaďte aplikace a související prostředky do clusteru Service Fabric.
+2.  Nasazení aplikace a související prostředky do clusteru Service Fabric.
 
 ### <a name="scenarios"></a>Scénáře
 
-#### <a name="scenario-a-deploy-directly-to-a-service-fabric-cluster-from-a-dev-environment"></a>Scénář A: nasadit přímo na clusteru Service Fabric z prostředí vývojářů
+#### <a name="scenario-a-deploy-directly-to-a-service-fabric-cluster-from-a-dev-environment"></a>Scénář A: nasadit přímo do clusteru Service Fabric z vývojového prostředí
 
-![Nasazení z prostředí pro vývoj přímo na clusteru Service Fabric](./media/image5-9.png)
+![Nasadit do clusteru Service Fabric z vývojového prostředí](./media/image5-9.png)
 
-> **Obrázek 5-9.** Nasazení z prostředí pro vývoj přímo na clusteru Service Fabric
+> **Obrázek 5 až 9.** Nasadit do clusteru Service Fabric z vývojového prostředí
 
-### <a name="scenario-b-deploy-to-a-service-fabric-cluster-from-cicd-pipelines-in-team-services"></a>Scénář B: nasadit do clusteru Service Fabric z položek konfigurace nebo CD kanálů v Team Services
+### <a name="scenario-b-deploy-to-a-service-fabric-cluster-from-cicd-pipelines-in-azure-devops-services"></a>Scénář B: nasazení do clusteru Service Fabric z CI/CD kanálů služby Azure DevOps
 
-![Nasazení na cluster Service Fabric z položek konfigurace nebo CD kanály v sadě Visual Studio Team Services](./media/image5-10.png)
+![Nasazení do clusteru Service Fabric z kanálů CI/CD ve službách Azure DevOps](./media/image5-10.png)
 
-> **Obrázek 5-10.** Nasazení na cluster Service Fabric z položek konfigurace nebo CD kanály v sadě Visual Studio Team Services
+> **Obrázek 5 – 10.** Nasazení do clusteru Service Fabric z kanálů CI/CD ve službách Azure DevOps
 
 ## <a name="benefits"></a>Výhody
 
-Výhody nasazení na cluster Service Fabric se podobá výhody použití Kubernetes. Jeden rozdíl, ale je, že Service Fabric je víc vyspělých produkčním prostředí pro aplikace systému Windows ve srovnání s Kubernetes, který je ve fázi beta verzi pro Windows kontejnery v Kubernetes verze 1.9 (2017 prosince). Kubernetes je víc vyspělých prostředí pro Linux.
+Výhody nasazení do clusteru v Service Fabric jsou podobné výhody používání Kubernetes. Jedním z rozdílů, ale je, že Service Fabric je vyspělejší produkčním prostředí pro aplikace Windows ve srovnání s Kubernetes, který je ve fázi beta pro kontejnery Windows v Kubernetes verze 1.9 (prosinec 2017). Kubernetes je vyspělejší prostředí pro Linux.
 
-Hlavní výhodou používání Azure Service Fabric je, že dostanete prostředí produkční prostředí, ve kterém můžete škálovat aplikace založené na počet instancí kontejneru, které chcete použít (vnitřní škálovatelnost v existujícím uzlům) a na základě počtu uzly nebo virtuální počítače v clusteru (globální škálovatelnost clusteru).
+Hlavní výhodou použití Azure Service Fabric je, že dostanete prostředí připravené pro produkční prostředí, ve kterém můžete škálovat aplikace založená na počet instancí kontejneru chcete použít (vnitřní škálovatelnost v existujících uzlů) a podle počtu uzly nebo virtuální počítače v clusteru (globální škálovatelnost clusteru).
 
-Azure Service Fabric nabízí přenositelnost pro vaše kontejnery i pro konfiguraci aplikace. Můžete mít Service Fabric cluster v Azure a nainstalujte ji na místě ve svém vlastním datovém centru. Můžete nainstalovat i clusteru Service Fabric v jiném cloudu, jako je třeba [Amazon AWS](https://blogs.msdn.microsoft.com/azureservicefabric/2017/05/18/tutorial-how-to-create-a-service-fabric-standalone-cluster-with-aws-ec2-instances/).
+Azure Service Fabric nabízí přenositelnost pro vaše kontejnery i Konfigurace aplikací. Můžete použít Service Fabric cluster v Azure, nebo ji nainstalovat lokálně ve vašem vlastním datovém centru. Můžete nainstalovat i cluster Service Fabric v jiný cloud, jako je třeba [Amazon AWS](https://blogs.msdn.microsoft.com/azureservicefabric/2017/05/18/tutorial-how-to-create-a-service-fabric-standalone-cluster-with-aws-ec2-instances/).
 
-Pomocí Service Fabric mohou vývojáři průběhu od přemýšlení o fyzické a virtuální počítače k plánování zaměřené na kontejner infrastruktury, která usnadňuje následující funkce, mimo jiné:
+S využitím Service Fabric můžete průběh vývojáře od přemýšlení o fyzické a virtuální počítače k plánování zaměřené na kontejner infrastruktury, která usnadňuje následující funkce, mimo jiné:
 
-- Aplikace založené na několika kontejnerů.
+- Aplikace založené na několik kontejnerů.
 
-- Replikace instancí kontejnerů a vodorovné automatické škálování.
+- Replikace container instances a automatické horizontální škálování.
 
 - Pojmenování a zjišťování (například interní DNS).
 
 - Vyrovnávání zatížení.
 
-- Vrácení aktualizace.
+- Aktualizace se zajištěním provozu.
 
-- Distribuce tajných klíčů.
+- Distribuce tajných kódů.
 
-- Kontroluje stav aplikací.
+- Kontroluje se stav aplikace.
 
-Následující funkce jsou výhradní v Service Fabric (ve srovnání s další orchestrators):
+Tyto možnosti jsou výhradně v Service Fabric (ve srovnání se jiných orchestrátorů):
 
-- Funkce stavové služby prostřednictvím modelu aplikací spolehlivé služby.
+- Funkce stavové služby, prostřednictvím aplikačního modelu Reliable Services.
 
-- Vzor aktéři prostřednictvím aplikačního modelu Reliable Actors.
+- Model objektů actor, prostřednictvím aplikačního modelu Reliable Actors.
 
-- Nasaďte úplné kost procesy, kromě kontejnery systému Windows nebo Linux.
+- Nasazení úplné kost procesy, kromě kontejnery Windows nebo Linux.
 
-- Rozšířené kumulativní aktualizace a kontroly stavu.
+- Pokročilé kumulativní aktualizace a kontroly stavu.
 
 ### <a name="next-steps"></a>Další kroky
 
-Prozkoumejte podrobnější tento obsah na stránkách wiki Githubu:
+Tento obsah podrobnější zkoumání na Wiki úložiště GitHub:
 
 [https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD)](https://github.com/dotnet-architecture/eShopModernizing/wiki/05.-How-to-deploy-your-Windows-Containers-based-apps-into-Azure-Service-Fabric-(Including-CI-CD))
 

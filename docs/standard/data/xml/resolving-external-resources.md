@@ -6,11 +6,11 @@ ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ef31d101769dca00f5cff545c72b3afbd59bc638
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44268403"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44509983"
 ---
 # <a name="resolving-external-resources"></a>Překlad externích prostředků
 **Objekt XmlResolver** vlastnost **XmlDocument** používá **třídou XMLDocument nastavenou na** třídy najít prostředky, které nejsou vložené v datech XML, jako je například typ externího dokumentu definice (DTD), entit a schémata. Tyto položky mohou být umístěny v síti nebo na místním disku a identifikovat podle identifikátor URI (Uniform Resource). Díky tomu **XmlDocument** vyřešit **EntityReference** uzlů, které jsou k dispozici v dokumentu a ověřit dokument podle externí DTD nebo schématu.  

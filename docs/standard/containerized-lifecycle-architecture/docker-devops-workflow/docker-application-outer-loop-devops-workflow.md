@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/10/2018
 ms.openlocfilehash: a03853a508cfb3d5dd5fbfe66e4ef484b685faaa
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339032"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44511718"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Kroky v postupu DevOps vnější smyčky pro aplikaci v Dockeru
 

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - -> operator [C#]
 ms.assetid: e39ccdc1-f1ff-4a92-bf1d-ac2c8c11316a
 ms.openlocfilehash: fb95e508ce1339868723bcc3178851e8c1355c1f
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44271244"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44700580"
 ---
 # <a name="-gt-operator-c-reference"></a>-&gt; – Operátor (referenční dokumentace jazyka C#)
 `->` Operátor kombinuje ukazatel přesměrování a člen přístup.  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Atn function
 ms.assetid: 4d2d82e7-6924-42fe-a4a7-b4dd5bebbd0c
 ms.openlocfilehash: da0b612feb5b9a479d50f52cf65e38007ab3b196
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44360437"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44700190"
 ---
 # <a name="math-functions-visual-basic"></a>Matematické funkce (Visual Basic)
 Metody <xref:System.Math?displayProperty=nameWithType> třídy poskytují trigonometrických logaritmických a další běžné matematické funkce.  

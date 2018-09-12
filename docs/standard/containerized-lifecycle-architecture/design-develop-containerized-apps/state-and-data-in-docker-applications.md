@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.openlocfilehash: 78db191bdec4c25c11728d819d89eaaaff4bd7da
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44181612"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44494327"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 

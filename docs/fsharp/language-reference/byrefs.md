@@ -2,12 +2,12 @@
 title: 'ByRef (F #)'
 description: 'Další informace o typu byref a předávané typy v jazyce F #, které se používají pro programování nízké úrovně.'
 ms.date: 09/02/2018
-ms.openlocfilehash: 7d4138649ee39a0d342db2828ad4d32fbded978c
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.openlocfilehash: 6131104e4325f77da84368c337f998c6b2b5309b
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44338659"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44699643"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
@@ -105,7 +105,7 @@ Všechna tato pravidla společně znamenají, že držitele `inref` ukazatel nes
 
 Účelem `outref<'T>` se k označení, že ukazatele by měli číst jenom z. Nečekaně `outref<'T>` povolí čtení základní hodnotu bez ohledu na jeho název. Toto je pro účely kompatibility. Sémanticky `outref<'T>` se nijak neliší od `byref<'T>`.
 
-### <a name="interop-with-c"></a>Interoperabilita s C #
+### <a name="interop-with-c"></a>Interoperabilita s C# #
 
 C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí. Následující tabulka ukazuje, jak F # interpretuje co C# vydává:
 
@@ -196,7 +196,7 @@ Chcete-li zabránit implicitní zrušení odkazu, například předání odkazem
 Můžete také přímo přiřadit k vrácení `byref`. Vezměte v úvahu následující program (vysoce imperativní):
 
 ```fsharp
-ype C() =
+type C() =
     let mutable nums = [| 1; 3; 7; 15; 31; 63; 127; 255; 511; 1023 |]
 
     override __.ToString() = String.Join(' ', nums)

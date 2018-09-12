@@ -3,11 +3,11 @@ title: 'Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (C
 ms.date: 07/20/2015
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
 ms.openlocfilehash: c1c43bc47df1612be26c78351a9d30272a020160
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44366814"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44700778"
 ---
 # <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Postupy: zápis dotaz, který vyhledá elementy na základě kontextu (C#)
 V některých případech budete muset vytvořit dotaz, který vybere elementy podle jejich kontextu. Můžete filtrovat na základě před nebo za tímto elementů na stejné úrovni. Můžete filtrovat na základě podřízeného nebo nadřazeného elementy.  

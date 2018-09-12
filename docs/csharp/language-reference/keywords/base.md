@@ -10,11 +10,11 @@ helpviewer_keywords:
 - base keyword [C#]
 ms.assetid: 8b645dbe-1a33-49b8-8716-1c401f9a5ea5
 ms.openlocfilehash: 8719ab79273701173530760ad1bec837c4f4302d
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44353132"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44699563"
 ---
 # <a name="base-c-reference"></a>base (Referenční dokumentace jazyka C#)
 

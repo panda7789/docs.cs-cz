@@ -4,11 +4,11 @@ description: Úvod do procházení, dotazování a procházení stromu syntaxe.
 ms.date: 06/01/2018
 ms.custom: mvc
 ms.openlocfilehash: c372b1ba1e08a7d3b57ceea0d4449d03e55a39cf
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44342875"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44511666"
 ---
 # <a name="get-started-with-syntax-transformation"></a>Začínáme s syntaxe transformace
 

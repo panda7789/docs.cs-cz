@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC31200
 ms.assetid: 053e8cba-8584-45cc-9fa0-43d122779772
 ms.openlocfilehash: 893fdb1b9b3b5ace6b869c7b64ce7483ff523023
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44275753"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44699381"
 ---
 # <a name="xml-literals-and-xml-properties-are-not-supported-in-embedded-code-within-aspnet"></a>Ve vloženém kódu v prostředí ASP.NET nejsou podporovány literály XML a vlastnosti XML.
 Ve vloženém kódu v prostředí ASP.NET nejsou podporovány literály XML a vlastnosti XML. Pokud chcete používat funkce XML, přesuňte kód do kódu na pozadí.  

@@ -15,11 +15,11 @@ helpviewer_keywords:
 - DHTML [Windows Forms], embedding in Windows Forms
 ms.assetid: 55353a32-b09e-4479-a521-ff3a5ff9a708
 ms.openlocfilehash: 10b6bb3f55c8acd62101a48ea53b42e331e4210f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44354149"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44699911"
 ---
 # <a name="how-to-implement-two-way-communication-between-dhtml-code-and-client-application-code"></a>Postupy: Implementace obousměrné komunikace mezi kódem DHTML a kódem klientské aplikace
 Můžete použít <xref:System.Windows.Forms.WebBrowser> ovládacího prvku k přidání existujícího dynamického kódu HTML (DHTML) webové aplikace do klientských aplikací Windows Forms. To je užitečné, když jste investovali významné vývoji při vytváření ovládacích prvků na základě DHTML a budete chtít využít výhod bohaté možnosti uživatelského rozhraní Windows Forms aniž byste museli přepsat existující kód.  

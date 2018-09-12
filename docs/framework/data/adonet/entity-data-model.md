@@ -3,11 +3,11 @@ title: Entity Data Model
 ms.date: 03/30/2017
 ms.assetid: 2dda3d5b-4582-4ba0-a91d-fcd7a1498137
 ms.openlocfilehash: e76527b497434ada06762fcab931522fffa2a16b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44199177"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44508507"
 ---
 # <a name="entity-data-model"></a>Entity Data Model
 Entity Data Model (EDM) je sada koncepty, které popisují strukturu dat, bez ohledu na jeho uložených formuláře. Vypůjčí modelu EDM z relace Entity Model popsal Peter Svoboda v 1976, ale také založený na modelu relace Entity a rozšíří jeho tradiční použití.  

@@ -15,11 +15,11 @@ ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0c77832a4c578ddb2c8a427b133e53ab4ab5c5e3
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44267294"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44699722"
 ---
 # <a name="converting-times-between-time-zones"></a>Převádění časových údajů mezi časovými pásmy
 

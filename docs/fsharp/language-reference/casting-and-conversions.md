@@ -3,11 +3,11 @@ title: Přetypování a převody (F#)
 description: 'Zjistěte, jak programovací jazyk F # poskytuje operátory převodu pro aritmetické převody mezi různými primitivní typy.'
 ms.date: 05/16/2016
 ms.openlocfilehash: aca1a2523130ee485a7e7c9a6a45a410904cb246
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44338230"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44509548"
 ---
 # <a name="casting-and-conversions-f"></a>Přetypování a převody (F#)
 

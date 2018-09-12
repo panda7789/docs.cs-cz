@@ -5,11 +5,11 @@ helpviewer_keywords:
 - client area [Visual Basic], printing
 ms.assetid: c06c9c0e-bc07-48cd-9596-e29a2ff96236
 ms.openlocfilehash: b2f13d1ec151a5fd1967b522a601e0e19de04cbb
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44342914"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44510178"
 ---
 # <a name="how-to-print-the-client-area-of-a-form-visual-basic"></a>Postupy: Tisk klientské oblasti formuláře (Visual Basic)
 <xref:Microsoft.VisualBasic.PowerPacks.Printing.PrintForm> Komponenty umožňuje rychlý tisk obrázek formuláře bez použití <xref:System.Drawing.Printing.PrintDocument> komponenty. Následující postup ukazuje, jak vytisknout jenom klientské oblasti formuláře, bez záhlaví, ohraničení a posuvníky.  

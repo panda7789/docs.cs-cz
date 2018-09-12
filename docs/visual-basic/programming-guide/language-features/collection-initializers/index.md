@@ -6,17 +6,17 @@ f1_keywords:
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
-ms.openlocfilehash: e844a673f1a60d5a151a6ae612d4af7a6712eef4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c22599f50ac071245a1381d267f3f7cb66806174
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508341"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44700047"
 ---
 # <a name="collection-initializers-visual-basic"></a>Inicializátory kolekcí (Visual Basic)
 *Inicializátory kolekcí* poskytují zkrácený syntaxi, která vám umožní vytvořit kolekci a přidejte do ní počáteční sadu hodnot. Inicializátory kolekcí jsou užitečné při vytváření kolekce na základě sady známé hodnoty, například seznam možností v nabídce nebo kategorie, počáteční sadu číselných hodnot, statický seznam řetězců, jako je například den nebo měsíc názvy nebo zeměpisné umístění, jako seznam stavů, který se používá k ověření.  
   
- Další informace o kolekcích najdete v tématu [kolekce](https://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b).  
+ Další informace o kolekcích najdete v tématu [kolekce](../../../../visual-basic/programming-guide/concepts/collections.md).  
   
  Můžete identifikovat pomocí inicializátoru kolekce `From` – klíčové slovo následované složené závorky (`{}`). To se podobá syntaxi literálu pole, podle popisu v [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md). Následující příklady ukazují různé způsoby, jak použít inicializátory kolekce k vytvoření kolekce.  
   
@@ -76,14 +76,15 @@ ms.locfileid: "43508341"
 |[Postupy: Vytvoření metody přidání rozšíření používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|Ukazuje, jak vytvořit rozšiřující metoda volá `Add` , který slouží k naplnění kolekce s hodnotami z inicializátoru kolekce.|  
 |[Postupy: Vytvoření kolekce používané inicializátorem kolekce](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|Ukazuje, jak povolit používání inicializátoru kolekce zahrnutím `Add` metody ve třídě kolekce, která implementuje `IEnumerable`.|  
   
-## <a name="see-also"></a>Viz také  
- [Kolekce](https://msdn.microsoft.com/library/e76533a9-5033-4a0b-b003-9c2be60d185b)  
- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
- [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
- [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)  
- [Automaticky implementované vlastnosti](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
- [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)  
- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- [Postupy: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
+## <a name="see-also"></a>Viz také:
+
+- [Kolekce](../../../../visual-basic/programming-guide/concepts/collections.md)  
+- [Pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md)  
+- [Inicializátory objektů: pojmenované a anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)  
+- [Operátor New](../../../../visual-basic/language-reference/operators/new-operator.md)  
+- [Automaticky implementované vlastnosti](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)  
+- [Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)  
+- [Odvození místního typu](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)  
+- [Anonymní typy](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)  
+- [Úvod do LINQ v JAZYKU Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
+- [Postupy: Vytvoření seznamu položek](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)

@@ -13,11 +13,11 @@ ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a8266db66abb46ffc9503bdaeaf4ec4078177760
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
-ms.translationtype: MT
+ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44342836"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44511562"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Obecní delegáty pro manipulaci s poli a seznamy
 Toto téma obsahuje základní informace o obecných delegátů pro převody, predikáty vyhledávání a akce mají být provedeny na elementy pole nebo kolekce.  
