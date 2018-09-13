@@ -5,82 +5,82 @@ author: bleroy
 ms.author: mairaw
 ms.date: 05/29/2018
 ms.openlocfilehash: a12738d0cc8edcbb65d5b6fab6e7c8b209b0f4b5
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44181060"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44708948"
 ---
-# <a name="dotnet-store"></a><span data-ttu-id="125dd-103">DotNet Restore</span><span class="sxs-lookup"><span data-stu-id="125dd-103">dotnet store</span></span>
+# <a name="dotnet-store"></a><span data-ttu-id="692d9-103">DotNet Restore</span><span class="sxs-lookup"><span data-stu-id="692d9-103">dotnet store</span></span>
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 
-## <a name="name"></a><span data-ttu-id="125dd-104">Název</span><span class="sxs-lookup"><span data-stu-id="125dd-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="692d9-104">Název</span><span class="sxs-lookup"><span data-stu-id="692d9-104">Name</span></span>
 
-<span data-ttu-id="125dd-105">`dotnet store` -Ukládá zadané sestavení v [úložiště balíčků modulu runtime](../deploying/runtime-store.md).</span><span class="sxs-lookup"><span data-stu-id="125dd-105">`dotnet store` - Stores the specified assemblies in the [runtime package store](../deploying/runtime-store.md).</span></span>
+<span data-ttu-id="692d9-105">`dotnet store` -Ukládá zadané sestavení v [úložiště balíčků modulu runtime](../deploying/runtime-store.md).</span><span class="sxs-lookup"><span data-stu-id="692d9-105">`dotnet store` - Stores the specified assemblies in the [runtime package store](../deploying/runtime-store.md).</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="125dd-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="125dd-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="692d9-106">Souhrn</span><span class="sxs-lookup"><span data-stu-id="692d9-106">Synopsis</span></span>
 
 `dotnet store -m|--manifest -f|--framework -r|--runtime  [--framework-version] [-h|--help] [--output] [--skip-optimization] [--skip-symbols] [-v|--verbosity] [--working-dir]`
 
-## <a name="description"></a><span data-ttu-id="125dd-107">Popis</span><span class="sxs-lookup"><span data-stu-id="125dd-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="692d9-107">Popis</span><span class="sxs-lookup"><span data-stu-id="692d9-107">Description</span></span>
 
-<span data-ttu-id="125dd-108">`dotnet store` ukládá zadané sestavení v [úložiště balíčků modulu runtime](../deploying/runtime-store.md).</span><span class="sxs-lookup"><span data-stu-id="125dd-108">`dotnet store` stores the specified assemblies in the [runtime package store](../deploying/runtime-store.md).</span></span> <span data-ttu-id="125dd-109">Ve výchozím nastavení jsou sestavení optimalizované pro cílový modul runtime a rozhraní.</span><span class="sxs-lookup"><span data-stu-id="125dd-109">By default, assemblies are optimized for the target runtime and framework.</span></span> <span data-ttu-id="125dd-110">Další informace najdete v tématu [úložiště balíčků modulu runtime](../deploying/runtime-store.md) tématu.</span><span class="sxs-lookup"><span data-stu-id="125dd-110">For more information, see the [runtime package store](../deploying/runtime-store.md) topic.</span></span>
+<span data-ttu-id="692d9-108">`dotnet store` ukládá zadané sestavení v [úložiště balíčků modulu runtime](../deploying/runtime-store.md).</span><span class="sxs-lookup"><span data-stu-id="692d9-108">`dotnet store` stores the specified assemblies in the [runtime package store](../deploying/runtime-store.md).</span></span> <span data-ttu-id="692d9-109">Ve výchozím nastavení jsou sestavení optimalizované pro cílový modul runtime a rozhraní.</span><span class="sxs-lookup"><span data-stu-id="692d9-109">By default, assemblies are optimized for the target runtime and framework.</span></span> <span data-ttu-id="692d9-110">Další informace najdete v tématu [úložiště balíčků modulu runtime](../deploying/runtime-store.md) tématu.</span><span class="sxs-lookup"><span data-stu-id="692d9-110">For more information, see the [runtime package store](../deploying/runtime-store.md) topic.</span></span>
 
-## <a name="required-options"></a><span data-ttu-id="125dd-111">Požadované možnosti</span><span class="sxs-lookup"><span data-stu-id="125dd-111">Required options</span></span>
+## <a name="required-options"></a><span data-ttu-id="692d9-111">Požadované možnosti</span><span class="sxs-lookup"><span data-stu-id="692d9-111">Required options</span></span>
 
 `-f|--framework <FRAMEWORK>`
 
-<span data-ttu-id="125dd-112">Určuje, [Cílová architektura](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="125dd-112">Specifies the [target framework](../../standard/frameworks.md).</span></span>
+<span data-ttu-id="692d9-112">Určuje, [Cílová architektura](../../standard/frameworks.md).</span><span class="sxs-lookup"><span data-stu-id="692d9-112">Specifies the [target framework](../../standard/frameworks.md).</span></span>
 
 `-m|--manifest <PATH_TO_MANIFEST_FILE>`
 
-<span data-ttu-id="125dd-113">*Souboru manifestu balíčku úložiště* je soubor XML, který obsahuje seznam balíčků pro uložení.</span><span class="sxs-lookup"><span data-stu-id="125dd-113">The *package store manifest file* is an XML file that contains the list of packages to store.</span></span> <span data-ttu-id="125dd-114">Formát souboru manifestu je kompatibilní s formátem SDK – vizuální styl projektu.</span><span class="sxs-lookup"><span data-stu-id="125dd-114">The format of the manifest file is compatible with the SDK-style project format.</span></span> <span data-ttu-id="125dd-115">Ano, soubor projektu, který odkazuje na požadované balíčky je možné s `-m|--manifest` možnosti k uložení sestavení v úložiště balíčků modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="125dd-115">So, a project file that references the desired packages can be used with the `-m|--manifest` option to store assemblies in the runtime package store.</span></span> <span data-ttu-id="125dd-116">Pokud chcete zadat více souborů manifestu, opakujte pro každý soubor možnost a cestu.</span><span class="sxs-lookup"><span data-stu-id="125dd-116">To specify multiple manifest files, repeat the option and path for each file.</span></span> <span data-ttu-id="125dd-117">Příklad: `--manifest packages1.csproj --manifest packages2.csproj`.</span><span class="sxs-lookup"><span data-stu-id="125dd-117">For example: `--manifest packages1.csproj --manifest packages2.csproj`.</span></span>
+<span data-ttu-id="692d9-113">*Souboru manifestu balíčku úložiště* je soubor XML, který obsahuje seznam balíčků pro uložení.</span><span class="sxs-lookup"><span data-stu-id="692d9-113">The *package store manifest file* is an XML file that contains the list of packages to store.</span></span> <span data-ttu-id="692d9-114">Formát souboru manifestu je kompatibilní s formátem SDK – vizuální styl projektu.</span><span class="sxs-lookup"><span data-stu-id="692d9-114">The format of the manifest file is compatible with the SDK-style project format.</span></span> <span data-ttu-id="692d9-115">Ano, soubor projektu, který odkazuje na požadované balíčky je možné s `-m|--manifest` možnosti k uložení sestavení v úložiště balíčků modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="692d9-115">So, a project file that references the desired packages can be used with the `-m|--manifest` option to store assemblies in the runtime package store.</span></span> <span data-ttu-id="692d9-116">Pokud chcete zadat více souborů manifestu, opakujte pro každý soubor možnost a cestu.</span><span class="sxs-lookup"><span data-stu-id="692d9-116">To specify multiple manifest files, repeat the option and path for each file.</span></span> <span data-ttu-id="692d9-117">Příklad: `--manifest packages1.csproj --manifest packages2.csproj`.</span><span class="sxs-lookup"><span data-stu-id="692d9-117">For example: `--manifest packages1.csproj --manifest packages2.csproj`.</span></span>
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-<span data-ttu-id="125dd-118">[Identifikátor modulu runtime](../rid-catalog.md) do cíle.</span><span class="sxs-lookup"><span data-stu-id="125dd-118">The [runtime identifier](../rid-catalog.md) to target.</span></span>
+<span data-ttu-id="692d9-118">[Identifikátor modulu runtime](../rid-catalog.md) do cíle.</span><span class="sxs-lookup"><span data-stu-id="692d9-118">The [runtime identifier](../rid-catalog.md) to target.</span></span>
 
-## <a name="optional-options"></a><span data-ttu-id="125dd-119">Volitelné možnosti</span><span class="sxs-lookup"><span data-stu-id="125dd-119">Optional options</span></span>
+## <a name="optional-options"></a><span data-ttu-id="692d9-119">Volitelné možnosti</span><span class="sxs-lookup"><span data-stu-id="692d9-119">Optional options</span></span>
 
 `--framework-version <FRAMEWORK_VERSION>`
 
-<span data-ttu-id="125dd-120">Určuje verzi .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="125dd-120">Specifies the .NET Core SDK version.</span></span> <span data-ttu-id="125dd-121">Tato možnost umožňuje vybrat konkrétní verzi rozhraní framework verze mimo rámec určené `-f|--framework` možnost.</span><span class="sxs-lookup"><span data-stu-id="125dd-121">This option enables you to select a specific framework version beyond the framework specified by the `-f|--framework` option.</span></span>
+<span data-ttu-id="692d9-120">Určuje verzi .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="692d9-120">Specifies the .NET Core SDK version.</span></span> <span data-ttu-id="692d9-121">Tato možnost umožňuje vybrat konkrétní verzi rozhraní framework verze mimo rámec určené `-f|--framework` možnost.</span><span class="sxs-lookup"><span data-stu-id="692d9-121">This option enables you to select a specific framework version beyond the framework specified by the `-f|--framework` option.</span></span>
 
 `-h|--help`
 
-<span data-ttu-id="125dd-122">Zobrazí nápovědu informace.</span><span class="sxs-lookup"><span data-stu-id="125dd-122">Shows help information.</span></span>
+<span data-ttu-id="692d9-122">Zobrazí nápovědu informace.</span><span class="sxs-lookup"><span data-stu-id="692d9-122">Shows help information.</span></span>
 
 `-o|--output <OUTPUT_DIRECTORY>`
 
-<span data-ttu-id="125dd-123">Určuje cestu k úložiště balíčků modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="125dd-123">Specifies the path to the runtime package store.</span></span> <span data-ttu-id="125dd-124">Pokud není zadán, použije se výchozí *ukládání* podadresář instalační adresář uživatelského profilu .NET Core.</span><span class="sxs-lookup"><span data-stu-id="125dd-124">If not specified, it defaults to the *store* subdirectory of the user profile .NET Core installation directory.</span></span>
+<span data-ttu-id="692d9-123">Určuje cestu k úložiště balíčků modulu runtime.</span><span class="sxs-lookup"><span data-stu-id="692d9-123">Specifies the path to the runtime package store.</span></span> <span data-ttu-id="692d9-124">Pokud není zadán, použije se výchozí *ukládání* podadresář instalační adresář uživatelského profilu .NET Core.</span><span class="sxs-lookup"><span data-stu-id="692d9-124">If not specified, it defaults to the *store* subdirectory of the user profile .NET Core installation directory.</span></span>
 
 `--skip-optimization`
 
-<span data-ttu-id="125dd-125">Přeskočí fáze optimalizace.</span><span class="sxs-lookup"><span data-stu-id="125dd-125">Skips the optimization phase.</span></span>
+<span data-ttu-id="692d9-125">Přeskočí fáze optimalizace.</span><span class="sxs-lookup"><span data-stu-id="692d9-125">Skips the optimization phase.</span></span>
 
 `--skip-symbols`
 
-<span data-ttu-id="125dd-126">Přeskočí symbol generace.</span><span class="sxs-lookup"><span data-stu-id="125dd-126">Skips symbol generation.</span></span> <span data-ttu-id="125dd-127">V současné době můžete generovat jenom symboly, s Windows a Linux.</span><span class="sxs-lookup"><span data-stu-id="125dd-127">Currently, you can only generate symbols on Windows and Linux.</span></span>
+<span data-ttu-id="692d9-126">Přeskočí symbol generace.</span><span class="sxs-lookup"><span data-stu-id="692d9-126">Skips symbol generation.</span></span> <span data-ttu-id="692d9-127">V současné době můžete generovat jenom symboly, s Windows a Linux.</span><span class="sxs-lookup"><span data-stu-id="692d9-127">Currently, you can only generate symbols on Windows and Linux.</span></span>
 
 `-v|--verbosity <LEVEL>`
 
-<span data-ttu-id="125dd-128">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="125dd-128">Sets the verbosity level of the command.</span></span> <span data-ttu-id="125dd-129">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="125dd-129">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+<span data-ttu-id="692d9-128">Nastaví úroveň podrobností příkazu.</span><span class="sxs-lookup"><span data-stu-id="692d9-128">Sets the verbosity level of the command.</span></span> <span data-ttu-id="692d9-129">Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="692d9-129">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
 `-w|--working-dir <INTERMEDIATE_WORKING_DIRECTORY>`
 
-<span data-ttu-id="125dd-130">Pracovní adresář použité příkazem.</span><span class="sxs-lookup"><span data-stu-id="125dd-130">The working directory used by the command.</span></span> <span data-ttu-id="125dd-131">Pokud není zadán, použije *obj* podadresář aktuálního adresáře.</span><span class="sxs-lookup"><span data-stu-id="125dd-131">If not specified, it uses the *obj* subdirectory of the current directory.</span></span>
+<span data-ttu-id="692d9-130">Pracovní adresář použité příkazem.</span><span class="sxs-lookup"><span data-stu-id="692d9-130">The working directory used by the command.</span></span> <span data-ttu-id="692d9-131">Pokud není zadán, použije *obj* podadresář aktuálního adresáře.</span><span class="sxs-lookup"><span data-stu-id="692d9-131">If not specified, it uses the *obj* subdirectory of the current directory.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="125dd-132">Příklady</span><span class="sxs-lookup"><span data-stu-id="125dd-132">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="692d9-132">Příklady</span><span class="sxs-lookup"><span data-stu-id="692d9-132">Examples</span></span>
 
-<span data-ttu-id="125dd-133">Balíčky zadané v Store *packages.csproj* soubor projektu pro .NET Core 2.0.0:</span><span class="sxs-lookup"><span data-stu-id="125dd-133">Store the packages specified in the *packages.csproj* project file for .NET Core 2.0.0:</span></span>
+<span data-ttu-id="692d9-133">Balíčky zadané v Store *packages.csproj* soubor projektu pro .NET Core 2.0.0:</span><span class="sxs-lookup"><span data-stu-id="692d9-133">Store the packages specified in the *packages.csproj* project file for .NET Core 2.0.0:</span></span>
 
 `dotnet store --manifest packages.csproj --framework-version 2.0.0`
 
-<span data-ttu-id="125dd-134">Balíčky zadané v Store *packages.csproj* bez optimalizace:</span><span class="sxs-lookup"><span data-stu-id="125dd-134">Store the packages specified in the *packages.csproj* without optimization:</span></span>
+<span data-ttu-id="692d9-134">Balíčky zadané v Store *packages.csproj* bez optimalizace:</span><span class="sxs-lookup"><span data-stu-id="692d9-134">Store the packages specified in the *packages.csproj* without optimization:</span></span>
 
 `dotnet store --manifest packages.csproj --skip-optimization`
 
-## <a name="see-also"></a><span data-ttu-id="125dd-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="125dd-135">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="692d9-135">Viz také:</span><span class="sxs-lookup"><span data-stu-id="692d9-135">See also</span></span>
 
-* [<span data-ttu-id="125dd-136">Úložiště balíčků modulu runtime</span><span class="sxs-lookup"><span data-stu-id="125dd-136">Runtime package store</span></span>](../deploying/runtime-store.md)
+* [<span data-ttu-id="692d9-136">Úložiště balíčků modulu runtime</span><span class="sxs-lookup"><span data-stu-id="692d9-136">Runtime package store</span></span>](../deploying/runtime-store.md)
