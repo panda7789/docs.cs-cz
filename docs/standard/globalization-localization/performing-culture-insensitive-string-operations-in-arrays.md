@@ -10,11 +10,11 @@ ms.assetid: f12922e1-6234-4165-8896-63f0653ab478
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 22815b5ab993b36bc8bcb91f89f346cb6d812e19
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44251690"
+ms.lasthandoff: 09/12/2018
+ms.locfileid: "44705667"
 ---
 # <a name="performing-culture-insensitive-string-operations-in-arrays"></a>Provádění řetězcových operací nezávislých na jazykové verzi v polích
 Přetížení <xref:System.Array.Sort%2A?displayProperty=nameWithType> a <xref:System.Array.BinarySearch%2A?displayProperty=nameWithType> provedení řazení zohledňující jazykovou verzi pomocí výchozí metody <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost. Zohledňující jazykovou verzi výsledky vrácené tyto metody se může lišit podle jazykové verze kvůli rozdílům v pořadí řazení. Chcete-li odstranit chování závislé na jazykové verzi, použijte jednu z přetížení této metody, které přijímá `comparer` parametru. `comparer` Určuje parametr <xref:System.Collections.IComparer> implementace pro použití při porovnávání prvků v poli. Pro parametr, zadejte vlastní výchozí porovnávací metody třídu, která používá <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType>. Příklad vlastní výchozí porovnávací metody třídy je k dispozici v dílčím tématu "Používání SortedList – třída", které se nachází [provádění řetězcových operací nezávislých na jazykové verzi v kolekcích](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations-in-collections.md) tématu.  
