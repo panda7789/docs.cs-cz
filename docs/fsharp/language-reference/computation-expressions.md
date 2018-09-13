@@ -3,11 +3,11 @@ title: Výpočetní výrazy (F#)
 description: 'Zjistěte, jak vytvořit pohodlné syntaxe zápisu výpočtů v jazyce F #, která může být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby.'
 ms.date: 07/27/2018
 ms.openlocfilehash: ce81af7966a436b3973de277fb2a78ec06f4c471
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44365377"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45508535"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
