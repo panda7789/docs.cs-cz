@@ -3,20 +3,20 @@ title: 'ByRef (F #)'
 description: 'Další informace o typu byref a předávané typy v jazyce F #, které se používají pro programování nízké úrovně.'
 ms.date: 09/02/2018
 ms.openlocfilehash: 6131104e4325f77da84368c337f998c6b2b5309b
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44699643"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45508301"
 ---
-# <a name="byrefs"></a><span data-ttu-id="8ced7-103">Parametry ByRef</span><span class="sxs-lookup"><span data-stu-id="8ced7-103">Byrefs</span></span>
+# <a name="byrefs"></a><span data-ttu-id="0dd91-103">Parametry ByRef</span><span class="sxs-lookup"><span data-stu-id="0dd91-103">Byrefs</span></span>
 
-<span data-ttu-id="8ced7-104">F # obsahuje dva hlavním oblastem funkcí, které pracují v prostoru nízké úrovně programování:</span><span class="sxs-lookup"><span data-stu-id="8ced7-104">F# has two major feature areas that deal in the space of low-level programming:</span></span>
+<span data-ttu-id="0dd91-104">F # obsahuje dva hlavním oblastem funkcí, které pracují v prostoru nízké úrovně programování:</span><span class="sxs-lookup"><span data-stu-id="0dd91-104">F# has two major feature areas that deal in the space of low-level programming:</span></span>
 
-* <span data-ttu-id="8ced7-105">`byref` / `inref` / `outref` Typy, které jsou spravované ukazatele.</span><span class="sxs-lookup"><span data-stu-id="8ced7-105">The `byref`/`inref`/`outref` types, which are a managed pointers.</span></span> <span data-ttu-id="8ced7-106">Mají omezení týkající se použití tak, aby program, který není platný v době běhu nelze zkompilovat.</span><span class="sxs-lookup"><span data-stu-id="8ced7-106">They have restrictions on usage so that you cannot compile a program that is invalid at runtime.</span></span>
-* <span data-ttu-id="8ced7-107">A `byref`– například struktura, která je [struktura](structures.md) , který má podobnou sémantikou a omezení kompilace jako `byref<'T>`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-107">A `byref`-like struct, which is a [structure](structures.md) that has similar semantics and the same compile-time restrictions as `byref<'T>`.</span></span> <span data-ttu-id="8ced7-108">Jedním z příkladů je <xref:System.Span%601>.</span><span class="sxs-lookup"><span data-stu-id="8ced7-108">One example is <xref:System.Span%601>.</span></span>
+* <span data-ttu-id="0dd91-105">`byref` / `inref` / `outref` Typy, které jsou spravované ukazatele.</span><span class="sxs-lookup"><span data-stu-id="0dd91-105">The `byref`/`inref`/`outref` types, which are a managed pointers.</span></span> <span data-ttu-id="0dd91-106">Mají omezení týkající se použití tak, aby program, který není platný v době běhu nelze zkompilovat.</span><span class="sxs-lookup"><span data-stu-id="0dd91-106">They have restrictions on usage so that you cannot compile a program that is invalid at runtime.</span></span>
+* <span data-ttu-id="0dd91-107">A `byref`– například struktura, která je [struktura](structures.md) , který má podobnou sémantikou a omezení kompilace jako `byref<'T>`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-107">A `byref`-like struct, which is a [structure](structures.md) that has similar semantics and the same compile-time restrictions as `byref<'T>`.</span></span> <span data-ttu-id="0dd91-108">Jedním z příkladů je <xref:System.Span%601>.</span><span class="sxs-lookup"><span data-stu-id="0dd91-108">One example is <xref:System.Span%601>.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="8ced7-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8ced7-109">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="0dd91-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0dd91-109">Syntax</span></span>
 
 ```fsharp
 // Byref types as parameters
@@ -37,19 +37,19 @@ type S(count1: int, count2: int) =
     member x.Count2 = count2
 ```
 
-## <a name="byref-inref-and-outref"></a><span data-ttu-id="8ced7-110">ByRef, inref a outref</span><span class="sxs-lookup"><span data-stu-id="8ced7-110">Byref, inref, and outref</span></span>
+## <a name="byref-inref-and-outref"></a><span data-ttu-id="0dd91-110">ByRef, inref a outref</span><span class="sxs-lookup"><span data-stu-id="0dd91-110">Byref, inref, and outref</span></span>
 
-<span data-ttu-id="8ced7-111">Existují tři formy `byref`:</span><span class="sxs-lookup"><span data-stu-id="8ced7-111">There are three forms of `byref`:</span></span>
+<span data-ttu-id="0dd91-111">Existují tři formy `byref`:</span><span class="sxs-lookup"><span data-stu-id="0dd91-111">There are three forms of `byref`:</span></span>
 
-* <span data-ttu-id="8ced7-112">`inref<'T>`, spravovaného ukazatele pro čtení zdrojovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="8ced7-112">`inref<'T>`, a managed pointer for reading the underlying value.</span></span>
-* <span data-ttu-id="8ced7-113">`outref<'T>`, spravovaného ukazatele k zápisu do základní hodnotu.</span><span class="sxs-lookup"><span data-stu-id="8ced7-113">`outref<'T>`, a managed pointer for writing to the underlying value.</span></span>
-* <span data-ttu-id="8ced7-114">`byref<'T>`, spravovaného ukazatele pro čtení a zápis zdrojovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="8ced7-114">`byref<'T>`, a managed pointer for reading and writing the underlying value.</span></span>
+* <span data-ttu-id="0dd91-112">`inref<'T>`, spravovaného ukazatele pro čtení zdrojovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="0dd91-112">`inref<'T>`, a managed pointer for reading the underlying value.</span></span>
+* <span data-ttu-id="0dd91-113">`outref<'T>`, spravovaného ukazatele k zápisu do základní hodnotu.</span><span class="sxs-lookup"><span data-stu-id="0dd91-113">`outref<'T>`, a managed pointer for writing to the underlying value.</span></span>
+* <span data-ttu-id="0dd91-114">`byref<'T>`, spravovaného ukazatele pro čtení a zápis zdrojovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="0dd91-114">`byref<'T>`, a managed pointer for reading and writing the underlying value.</span></span>
 
-<span data-ttu-id="8ced7-115">A `byref<'T>` mohou být předány kde `inref<'T>` očekává.</span><span class="sxs-lookup"><span data-stu-id="8ced7-115">A `byref<'T>` can be passed where an `inref<'T>` is expected.</span></span> <span data-ttu-id="8ced7-116">Podobně `byref<'T>` mohou být předány kde `outref<'T>` očekává.</span><span class="sxs-lookup"><span data-stu-id="8ced7-116">Similarly, a `byref<'T>` can be passed where an `outref<'T>` is expected.</span></span>
+<span data-ttu-id="0dd91-115">A `byref<'T>` mohou být předány kde `inref<'T>` očekává.</span><span class="sxs-lookup"><span data-stu-id="0dd91-115">A `byref<'T>` can be passed where an `inref<'T>` is expected.</span></span> <span data-ttu-id="0dd91-116">Podobně `byref<'T>` mohou být předány kde `outref<'T>` očekává.</span><span class="sxs-lookup"><span data-stu-id="0dd91-116">Similarly, a `byref<'T>` can be passed where an `outref<'T>` is expected.</span></span>
 
-## <a name="using-byrefs"></a><span data-ttu-id="8ced7-117">Pomocí ByRef</span><span class="sxs-lookup"><span data-stu-id="8ced7-117">Using byrefs</span></span>
+## <a name="using-byrefs"></a><span data-ttu-id="0dd91-117">Pomocí ByRef</span><span class="sxs-lookup"><span data-stu-id="0dd91-117">Using byrefs</span></span>
 
-<span data-ttu-id="8ced7-118">Použití `inref<'T>`, je potřeba získat hodnotu ukazatele s `&`:</span><span class="sxs-lookup"><span data-stu-id="8ced7-118">To use a `inref<'T>`, you need to get a pointer value with `&`:</span></span>
+<span data-ttu-id="0dd91-118">Použití `inref<'T>`, je potřeba získat hodnotu ukazatele s `&`:</span><span class="sxs-lookup"><span data-stu-id="0dd91-118">To use a `inref<'T>`, you need to get a pointer value with `&`:</span></span>
 
 ```fsharp
 open System
@@ -61,7 +61,7 @@ let dt = DateTime.Now
 f &dt // Pass a pointer to 'dt'
 ```
 
-<span data-ttu-id="8ced7-119">Zapsat do ukazatele s použitím `outref<'T>` nebo `byref<'T>`, musíte také vzít ukazatel na hodnotu `mutable`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-119">To write to the pointer by using an `outref<'T>` or `byref<'T>`, you must also make the value you grab a pointer to `mutable`.</span></span>
+<span data-ttu-id="0dd91-119">Zapsat do ukazatele s použitím `outref<'T>` nebo `byref<'T>`, musíte také vzít ukazatel na hodnotu `mutable`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-119">To write to the pointer by using an `outref<'T>` or `byref<'T>`, you must also make the value you grab a pointer to `mutable`.</span></span>
 
 ```fsharp
 open System
@@ -77,63 +77,63 @@ let mutable dt = DateTime.Now
 f &dt
 ```
 
-<span data-ttu-id="8ced7-120">Pokud vytváříte pouze ukazatele namísto jeho čtení, zvažte použití `outref<'T>` místo `byref<'T>`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-120">If you are only writing the pointer instead of reading it, consider using `outref<'T>` instead of `byref<'T>`.</span></span>
+<span data-ttu-id="0dd91-120">Pokud vytváříte pouze ukazatele namísto jeho čtení, zvažte použití `outref<'T>` místo `byref<'T>`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-120">If you are only writing the pointer instead of reading it, consider using `outref<'T>` instead of `byref<'T>`.</span></span>
 
-### <a name="inref-semantics"></a><span data-ttu-id="8ced7-121">Sémantika Inref</span><span class="sxs-lookup"><span data-stu-id="8ced7-121">Inref semantics</span></span>
+### <a name="inref-semantics"></a><span data-ttu-id="0dd91-121">Sémantika Inref</span><span class="sxs-lookup"><span data-stu-id="0dd91-121">Inref semantics</span></span>
 
-<span data-ttu-id="8ced7-122">Vezměte v úvahu následující kód:</span><span class="sxs-lookup"><span data-stu-id="8ced7-122">Consider the following code:</span></span>
+<span data-ttu-id="0dd91-122">Vezměte v úvahu následující kód:</span><span class="sxs-lookup"><span data-stu-id="0dd91-122">Consider the following code:</span></span>
 
 ```fsharp
 let f (x: inref<SomeStruct>) = s.SomeField
 ```
 
-<span data-ttu-id="8ced7-123">Sémanticky to znamená, následující:</span><span class="sxs-lookup"><span data-stu-id="8ced7-123">Semantically, this means the following:</span></span>
+<span data-ttu-id="0dd91-123">Sémanticky to znamená, následující:</span><span class="sxs-lookup"><span data-stu-id="0dd91-123">Semantically, this means the following:</span></span>
 
-* <span data-ttu-id="8ced7-124">Držitel `x` ukazatele mohou používat pouze se načíst hodnotu.</span><span class="sxs-lookup"><span data-stu-id="8ced7-124">The holder of the `x` pointer may only use it to read the value.</span></span>
-* <span data-ttu-id="8ced7-125">Získat jakýkoli ukazatel na `struct` pole vnořené `SomeStruct` se daný typ `inref<_>`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-125">Any pointer acquired to `struct` fields nested within `SomeStruct` are given type `inref<_>`.</span></span>
+* <span data-ttu-id="0dd91-124">Držitel `x` ukazatele mohou používat pouze se načíst hodnotu.</span><span class="sxs-lookup"><span data-stu-id="0dd91-124">The holder of the `x` pointer may only use it to read the value.</span></span>
+* <span data-ttu-id="0dd91-125">Získat jakýkoli ukazatel na `struct` pole vnořené `SomeStruct` se daný typ `inref<_>`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-125">Any pointer acquired to `struct` fields nested within `SomeStruct` are given type `inref<_>`.</span></span>
 
-<span data-ttu-id="8ced7-126">Toto je také true:</span><span class="sxs-lookup"><span data-stu-id="8ced7-126">The following is also true:</span></span>
+<span data-ttu-id="0dd91-126">Toto je také true:</span><span class="sxs-lookup"><span data-stu-id="0dd91-126">The following is also true:</span></span>
 
-* <span data-ttu-id="8ced7-127">Neexistuje žádné nepřímo další vlákna nebo aliasy nemáte oprávnění k zápisu do `x`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-127">There is no implication that other threads or aliases do not have write access to `x`.</span></span>
-* <span data-ttu-id="8ced7-128">Neexistuje žádné nepřímo, který `SomeStruct` je neměnný základě `x` právě `inref`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-128">There is no implication that `SomeStruct` is immutable by virtue of `x` being an `inref`.</span></span>
+* <span data-ttu-id="0dd91-127">Neexistuje žádné nepřímo další vlákna nebo aliasy nemáte oprávnění k zápisu do `x`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-127">There is no implication that other threads or aliases do not have write access to `x`.</span></span>
+* <span data-ttu-id="0dd91-128">Neexistuje žádné nepřímo, který `SomeStruct` je neměnný základě `x` právě `inref`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-128">There is no implication that `SomeStruct` is immutable by virtue of `x` being an `inref`.</span></span>
 
-<span data-ttu-id="8ced7-129">Ale jazyka F # hodnotové typy, které **jsou** neměnné, `this` odvozena jako ukazatel `inref`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-129">However, for F# value types that **are** immutable, the `this` pointer is inferred to be an `inref`.</span></span>
+<span data-ttu-id="0dd91-129">Ale jazyka F # hodnotové typy, které **jsou** neměnné, `this` odvozena jako ukazatel `inref`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-129">However, for F# value types that **are** immutable, the `this` pointer is inferred to be an `inref`.</span></span>
 
-<span data-ttu-id="8ced7-130">Všechna tato pravidla společně znamenají, že držitele `inref` ukazatel nesmíte upravovat okamžité obsah paměti, který ukazatel ukazuje.</span><span class="sxs-lookup"><span data-stu-id="8ced7-130">All of these rules together mean that the holder of an `inref` pointer may not modify the immediate contents of the memory being pointed to.</span></span>
+<span data-ttu-id="0dd91-130">Všechna tato pravidla společně znamenají, že držitele `inref` ukazatel nesmíte upravovat okamžité obsah paměti, který ukazatel ukazuje.</span><span class="sxs-lookup"><span data-stu-id="0dd91-130">All of these rules together mean that the holder of an `inref` pointer may not modify the immediate contents of the memory being pointed to.</span></span>
 
-### <a name="outref-semantics"></a><span data-ttu-id="8ced7-131">Sémantika Outref</span><span class="sxs-lookup"><span data-stu-id="8ced7-131">Outref semantics</span></span>
+### <a name="outref-semantics"></a><span data-ttu-id="0dd91-131">Sémantika Outref</span><span class="sxs-lookup"><span data-stu-id="0dd91-131">Outref semantics</span></span>
 
-<span data-ttu-id="8ced7-132">Účelem `outref<'T>` se k označení, že ukazatele by měli číst jenom z.</span><span class="sxs-lookup"><span data-stu-id="8ced7-132">The purpose of `outref<'T>` is to indicate that the pointer should only be read from.</span></span> <span data-ttu-id="8ced7-133">Nečekaně `outref<'T>` povolí čtení základní hodnotu bez ohledu na jeho název.</span><span class="sxs-lookup"><span data-stu-id="8ced7-133">Unexpectedly, `outref<'T>` permits reading the underlying value despite its name.</span></span> <span data-ttu-id="8ced7-134">Toto je pro účely kompatibility.</span><span class="sxs-lookup"><span data-stu-id="8ced7-134">This is for compatibility purposes.</span></span> <span data-ttu-id="8ced7-135">Sémanticky `outref<'T>` se nijak neliší od `byref<'T>`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-135">Semantically, `outref<'T>` is no different than `byref<'T>`.</span></span>
+<span data-ttu-id="0dd91-132">Účelem `outref<'T>` se k označení, že ukazatele by měli číst jenom z.</span><span class="sxs-lookup"><span data-stu-id="0dd91-132">The purpose of `outref<'T>` is to indicate that the pointer should only be read from.</span></span> <span data-ttu-id="0dd91-133">Nečekaně `outref<'T>` povolí čtení základní hodnotu bez ohledu na jeho název.</span><span class="sxs-lookup"><span data-stu-id="0dd91-133">Unexpectedly, `outref<'T>` permits reading the underlying value despite its name.</span></span> <span data-ttu-id="0dd91-134">Toto je pro účely kompatibility.</span><span class="sxs-lookup"><span data-stu-id="0dd91-134">This is for compatibility purposes.</span></span> <span data-ttu-id="0dd91-135">Sémanticky `outref<'T>` se nijak neliší od `byref<'T>`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-135">Semantically, `outref<'T>` is no different than `byref<'T>`.</span></span>
 
-### <a name="interop-with-c"></a><span data-ttu-id="8ced7-136">Interoperabilita s C#</span><span class="sxs-lookup"><span data-stu-id="8ced7-136">Interop with C#</span></span> #
+### <a name="interop-with-c"></a><span data-ttu-id="0dd91-136">Interoperabilita s C#</span><span class="sxs-lookup"><span data-stu-id="0dd91-136">Interop with C#</span></span> #
 
-<span data-ttu-id="8ced7-137">C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí.</span><span class="sxs-lookup"><span data-stu-id="8ced7-137">C# supports the `in ref` and `out ref` keywords, in addition to `ref` returns.</span></span> <span data-ttu-id="8ced7-138">Následující tabulka ukazuje, jak F # interpretuje co C# vydává:</span><span class="sxs-lookup"><span data-stu-id="8ced7-138">The following table shows how F# interprets what C# emits:</span></span>
+<span data-ttu-id="0dd91-137">C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí.</span><span class="sxs-lookup"><span data-stu-id="0dd91-137">C# supports the `in ref` and `out ref` keywords, in addition to `ref` returns.</span></span> <span data-ttu-id="0dd91-138">Následující tabulka ukazuje, jak F # interpretuje co C# vydává:</span><span class="sxs-lookup"><span data-stu-id="0dd91-138">The following table shows how F# interprets what C# emits:</span></span>
 
-|<span data-ttu-id="8ced7-139">Konstrukce jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8ced7-139">C# construct</span></span>|<span data-ttu-id="8ced7-140">F # odvodí</span><span class="sxs-lookup"><span data-stu-id="8ced7-140">F# infers</span></span>|
+|<span data-ttu-id="0dd91-139">Konstrukce jazyka C#</span><span class="sxs-lookup"><span data-stu-id="0dd91-139">C# construct</span></span>|<span data-ttu-id="0dd91-140">F # odvodí</span><span class="sxs-lookup"><span data-stu-id="0dd91-140">F# infers</span></span>|
 |------------|---------|
-|<span data-ttu-id="8ced7-141">`ref` Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="8ced7-141">`ref` return value</span></span>|`outref<'T>`|
-|<span data-ttu-id="8ced7-142">`ref readonly` Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="8ced7-142">`ref readonly` return value</span></span>|`inref<'T>`|
-|<span data-ttu-id="8ced7-143">`in ref` Parametr</span><span class="sxs-lookup"><span data-stu-id="8ced7-143">`in ref` parameter</span></span>|`inref<'T>`|
-|<span data-ttu-id="8ced7-144">`out ref` Parametr</span><span class="sxs-lookup"><span data-stu-id="8ced7-144">`out ref` parameter</span></span>|`outref<'T>`|
+|<span data-ttu-id="0dd91-141">`ref` Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0dd91-141">`ref` return value</span></span>|`outref<'T>`|
+|<span data-ttu-id="0dd91-142">`ref readonly` Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0dd91-142">`ref readonly` return value</span></span>|`inref<'T>`|
+|<span data-ttu-id="0dd91-143">`in ref` Parametr</span><span class="sxs-lookup"><span data-stu-id="0dd91-143">`in ref` parameter</span></span>|`inref<'T>`|
+|<span data-ttu-id="0dd91-144">`out ref` Parametr</span><span class="sxs-lookup"><span data-stu-id="0dd91-144">`out ref` parameter</span></span>|`outref<'T>`|
 
-<span data-ttu-id="8ced7-145">V následující tabulce jsou uvedeny co F # vydává:</span><span class="sxs-lookup"><span data-stu-id="8ced7-145">The following table shows what F# emits:</span></span>
+<span data-ttu-id="0dd91-145">V následující tabulce jsou uvedeny co F # vydává:</span><span class="sxs-lookup"><span data-stu-id="0dd91-145">The following table shows what F# emits:</span></span>
 
-|<span data-ttu-id="8ced7-146">Konstrukce F #</span><span class="sxs-lookup"><span data-stu-id="8ced7-146">F# construct</span></span>|<span data-ttu-id="8ced7-147">Emitovaný konstrukce</span><span class="sxs-lookup"><span data-stu-id="8ced7-147">Emitted construct</span></span>|
+|<span data-ttu-id="0dd91-146">Konstrukce F #</span><span class="sxs-lookup"><span data-stu-id="0dd91-146">F# construct</span></span>|<span data-ttu-id="0dd91-147">Emitovaný konstrukce</span><span class="sxs-lookup"><span data-stu-id="0dd91-147">Emitted construct</span></span>|
 |------------|-----------------|
-|<span data-ttu-id="8ced7-148">`inref<'T>` Argument</span><span class="sxs-lookup"><span data-stu-id="8ced7-148">`inref<'T>` argument</span></span>|<span data-ttu-id="8ced7-149">`[In]` atribut na argumentu</span><span class="sxs-lookup"><span data-stu-id="8ced7-149">`[In]` attribute on argument</span></span>|
-|<span data-ttu-id="8ced7-150">`inref<'T>` Vrátí</span><span class="sxs-lookup"><span data-stu-id="8ced7-150">`inref<'T>` return</span></span>|<span data-ttu-id="8ced7-151">`modreq` atribut na hodnotu</span><span class="sxs-lookup"><span data-stu-id="8ced7-151">`modreq` attribute on value</span></span>|
-|<span data-ttu-id="8ced7-152">`inref<'T>` abstraktní datovou oblast nebo provádění</span><span class="sxs-lookup"><span data-stu-id="8ced7-152">`inref<'T>` in abstract slot or implementation</span></span>|<span data-ttu-id="8ced7-153">`modreq` v argumentu nebo return</span><span class="sxs-lookup"><span data-stu-id="8ced7-153">`modreq` on argument or return</span></span>|
-|<span data-ttu-id="8ced7-154">`outref<'T>` Argument</span><span class="sxs-lookup"><span data-stu-id="8ced7-154">`outref<'T>` argument</span></span>|<span data-ttu-id="8ced7-155">`[Out]` atribut na argumentu</span><span class="sxs-lookup"><span data-stu-id="8ced7-155">`[Out]` attribute on argument</span></span>|
+|<span data-ttu-id="0dd91-148">`inref<'T>` Argument</span><span class="sxs-lookup"><span data-stu-id="0dd91-148">`inref<'T>` argument</span></span>|<span data-ttu-id="0dd91-149">`[In]` atribut na argumentu</span><span class="sxs-lookup"><span data-stu-id="0dd91-149">`[In]` attribute on argument</span></span>|
+|<span data-ttu-id="0dd91-150">`inref<'T>` Vrátí</span><span class="sxs-lookup"><span data-stu-id="0dd91-150">`inref<'T>` return</span></span>|<span data-ttu-id="0dd91-151">`modreq` atribut na hodnotu</span><span class="sxs-lookup"><span data-stu-id="0dd91-151">`modreq` attribute on value</span></span>|
+|<span data-ttu-id="0dd91-152">`inref<'T>` abstraktní datovou oblast nebo provádění</span><span class="sxs-lookup"><span data-stu-id="0dd91-152">`inref<'T>` in abstract slot or implementation</span></span>|<span data-ttu-id="0dd91-153">`modreq` v argumentu nebo return</span><span class="sxs-lookup"><span data-stu-id="0dd91-153">`modreq` on argument or return</span></span>|
+|<span data-ttu-id="0dd91-154">`outref<'T>` Argument</span><span class="sxs-lookup"><span data-stu-id="0dd91-154">`outref<'T>` argument</span></span>|<span data-ttu-id="0dd91-155">`[Out]` atribut na argumentu</span><span class="sxs-lookup"><span data-stu-id="0dd91-155">`[Out]` attribute on argument</span></span>|
 
-### <a name="type-inference-and-overloading-rules"></a><span data-ttu-id="8ced7-156">Odvození typu proměnné a přetížení pravidla</span><span class="sxs-lookup"><span data-stu-id="8ced7-156">Type inference and overloading rules</span></span>
+### <a name="type-inference-and-overloading-rules"></a><span data-ttu-id="0dd91-156">Odvození typu proměnné a přetížení pravidla</span><span class="sxs-lookup"><span data-stu-id="0dd91-156">Type inference and overloading rules</span></span>
 
-<span data-ttu-id="8ced7-157">`inref<'T>` Typ je odvozen kompilátorem F # v následujících případech:</span><span class="sxs-lookup"><span data-stu-id="8ced7-157">An `inref<'T>` type is inferred by the F# compiler in the following cases:</span></span>
+<span data-ttu-id="0dd91-157">`inref<'T>` Typ je odvozen kompilátorem F # v následujících případech:</span><span class="sxs-lookup"><span data-stu-id="0dd91-157">An `inref<'T>` type is inferred by the F# compiler in the following cases:</span></span>
 
-1. <span data-ttu-id="8ced7-158">Parametr nebo návratový typ .NET, který má `IsReadOnly` atribut.</span><span class="sxs-lookup"><span data-stu-id="8ced7-158">A .NET parameter or return type that has an `IsReadOnly` attribute.</span></span>
-2. <span data-ttu-id="8ced7-159">`this` Ukazatel na strukturu typu, který nemá žádné proměnlivé pole.</span><span class="sxs-lookup"><span data-stu-id="8ced7-159">The `this` pointer on a struct type that has no mutable fields.</span></span>
-3. <span data-ttu-id="8ced7-160">Adresa umístění v paměti odvozené z jiného `inref<_>` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="8ced7-160">The address of a memory location derived from another `inref<_>` pointer.</span></span>
+1. <span data-ttu-id="0dd91-158">Parametr nebo návratový typ .NET, který má `IsReadOnly` atribut.</span><span class="sxs-lookup"><span data-stu-id="0dd91-158">A .NET parameter or return type that has an `IsReadOnly` attribute.</span></span>
+2. <span data-ttu-id="0dd91-159">`this` Ukazatel na strukturu typu, který nemá žádné proměnlivé pole.</span><span class="sxs-lookup"><span data-stu-id="0dd91-159">The `this` pointer on a struct type that has no mutable fields.</span></span>
+3. <span data-ttu-id="0dd91-160">Adresa umístění v paměti odvozené z jiného `inref<_>` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="0dd91-160">The address of a memory location derived from another `inref<_>` pointer.</span></span>
 
-<span data-ttu-id="8ced7-161">Když implicitní adresu `inref` jsou přijata, přetížení s parametrem typu `SomeType` je upřednostňována před přetížení s parametrem typu `inref<SomeType>`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-161">When an implicit address of an `inref` is being taken, an overload with an argument of type `SomeType` is preferred to an overload with an argument of type `inref<SomeType>`.</span></span> <span data-ttu-id="8ced7-162">Příklad:</span><span class="sxs-lookup"><span data-stu-id="8ced7-162">For example:</span></span>
+<span data-ttu-id="0dd91-161">Když implicitní adresu `inref` jsou přijata, přetížení s parametrem typu `SomeType` je upřednostňována před přetížení s parametrem typu `inref<SomeType>`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-161">When an implicit address of an `inref` is being taken, an overload with an argument of type `SomeType` is preferred to an overload with an argument of type `inref<SomeType>`.</span></span> <span data-ttu-id="0dd91-162">Příklad:</span><span class="sxs-lookup"><span data-stu-id="0dd91-162">For example:</span></span>
 
 ```fsharp
 type C() =
@@ -147,11 +147,11 @@ let v =  C.M(res)
 let v2 =  C.M2(res, 4)
 ```
 
-<span data-ttu-id="8ced7-163">V obou případech se přetížení, přičemž `System.DateTime` jsou vyřešeny místo přetížení, přičemž `inref<System.DateTime>`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-163">In both cases, the overloads taking `System.DateTime` are resolved rather than the overloads taking `inref<System.DateTime>`.</span></span>
+<span data-ttu-id="0dd91-163">V obou případech se přetížení, přičemž `System.DateTime` jsou vyřešeny místo přetížení, přičemž `inref<System.DateTime>`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-163">In both cases, the overloads taking `System.DateTime` are resolved rather than the overloads taking `inref<System.DateTime>`.</span></span>
 
-## <a name="byref-like-structs"></a><span data-ttu-id="8ced7-164">Struktury předávání odkazem.</span><span class="sxs-lookup"><span data-stu-id="8ced7-164">Byref-like structs</span></span>
+## <a name="byref-like-structs"></a><span data-ttu-id="0dd91-164">Struktury předávání odkazem.</span><span class="sxs-lookup"><span data-stu-id="0dd91-164">Byref-like structs</span></span>
 
-<span data-ttu-id="8ced7-165">Kromě `byref` / `inref` / `outref` trojice, můžete definovat vlastní struktury, která může splňovat `byref`-sémantiky, jako je.</span><span class="sxs-lookup"><span data-stu-id="8ced7-165">In addition to the `byref`/`inref`/`outref` trio, you can define your own structs that can adhere to `byref`-like semantics.</span></span> <span data-ttu-id="8ced7-166">Používá se k tomu <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> atribut:</span><span class="sxs-lookup"><span data-stu-id="8ced7-166">This is done with the <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> attribute:</span></span>
+<span data-ttu-id="0dd91-165">Kromě `byref` / `inref` / `outref` trojice, můžete definovat vlastní struktury, která může splňovat `byref`-sémantiky, jako je.</span><span class="sxs-lookup"><span data-stu-id="0dd91-165">In addition to the `byref`/`inref`/`outref` trio, you can define your own structs that can adhere to `byref`-like semantics.</span></span> <span data-ttu-id="0dd91-166">Používá se k tomu <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> atribut:</span><span class="sxs-lookup"><span data-stu-id="0dd91-166">This is done with the <xref:System.Runtime.CompilerServices.IsByRefLikeAttribute> attribute:</span></span>
 
 ```fsharp
 open System
@@ -163,22 +163,22 @@ type S(count1: Span<int>, count2: Span<int>) =
     member x.Count2 = count2
 ```
 
-<span data-ttu-id="8ced7-167">`IsByRefLike` neznamená `Struct`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-167">`IsByRefLike` does not imply `Struct`.</span></span> <span data-ttu-id="8ced7-168">Oba musí být k dispozici u typu.</span><span class="sxs-lookup"><span data-stu-id="8ced7-168">Both must be present on the type.</span></span>
+<span data-ttu-id="0dd91-167">`IsByRefLike` neznamená `Struct`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-167">`IsByRefLike` does not imply `Struct`.</span></span> <span data-ttu-id="0dd91-168">Oba musí být k dispozici u typu.</span><span class="sxs-lookup"><span data-stu-id="0dd91-168">Both must be present on the type.</span></span>
 
-<span data-ttu-id="8ced7-169">Objekt "`byref`– stejně jako" struktura v jazyce F # je typ hodnoty vázané na zásobníku.</span><span class="sxs-lookup"><span data-stu-id="8ced7-169">A "`byref`-like" struct in F# is a stack-bound value type.</span></span> <span data-ttu-id="8ced7-170">Přiděluje se nikdy na spravované haldě.</span><span class="sxs-lookup"><span data-stu-id="8ced7-170">It is never allocated on the managed heap.</span></span> <span data-ttu-id="8ced7-171">A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků.</span><span class="sxs-lookup"><span data-stu-id="8ced7-171">A `byref`-like struct is useful for high-performance programming, as it is enforced with set of strong checks about lifetime and non-capture.</span></span> <span data-ttu-id="8ced7-172">Pravidla jsou:</span><span class="sxs-lookup"><span data-stu-id="8ced7-172">The rules are:</span></span>
+<span data-ttu-id="0dd91-169">Objekt "`byref`– stejně jako" struktura v jazyce F # je typ hodnoty vázané na zásobníku.</span><span class="sxs-lookup"><span data-stu-id="0dd91-169">A "`byref`-like" struct in F# is a stack-bound value type.</span></span> <span data-ttu-id="0dd91-170">Přiděluje se nikdy na spravované haldě.</span><span class="sxs-lookup"><span data-stu-id="0dd91-170">It is never allocated on the managed heap.</span></span> <span data-ttu-id="0dd91-171">A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků.</span><span class="sxs-lookup"><span data-stu-id="0dd91-171">A `byref`-like struct is useful for high-performance programming, as it is enforced with set of strong checks about lifetime and non-capture.</span></span> <span data-ttu-id="0dd91-172">Pravidla jsou:</span><span class="sxs-lookup"><span data-stu-id="0dd91-172">The rules are:</span></span>
 
-* <span data-ttu-id="8ced7-173">Se může sloužit jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.</span><span class="sxs-lookup"><span data-stu-id="8ced7-173">They can be used as function parameters, method parameters, local variables, method returns.</span></span>
-* <span data-ttu-id="8ced7-174">Nemohou být statické nebo členy třídy či struktury normální instance.</span><span class="sxs-lookup"><span data-stu-id="8ced7-174">They cannot be static or instance members of a class or normal struct.</span></span>
-* <span data-ttu-id="8ced7-175">Nemůže být zachyceno libovolné konstrukce uzavření (`async` metodách a výrazech lambda).</span><span class="sxs-lookup"><span data-stu-id="8ced7-175">They cannot be captured by any closure construct (`async` methods or lambda expressions).</span></span>
-* <span data-ttu-id="8ced7-176">Nelze je použít jako na generický parametr.</span><span class="sxs-lookup"><span data-stu-id="8ced7-176">They cannot be used as a generic parameter.</span></span>
+* <span data-ttu-id="0dd91-173">Se může sloužit jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.</span><span class="sxs-lookup"><span data-stu-id="0dd91-173">They can be used as function parameters, method parameters, local variables, method returns.</span></span>
+* <span data-ttu-id="0dd91-174">Nemohou být statické nebo členy třídy či struktury normální instance.</span><span class="sxs-lookup"><span data-stu-id="0dd91-174">They cannot be static or instance members of a class or normal struct.</span></span>
+* <span data-ttu-id="0dd91-175">Nemůže být zachyceno libovolné konstrukce uzavření (`async` metodách a výrazech lambda).</span><span class="sxs-lookup"><span data-stu-id="0dd91-175">They cannot be captured by any closure construct (`async` methods or lambda expressions).</span></span>
+* <span data-ttu-id="0dd91-176">Nelze je použít jako na generický parametr.</span><span class="sxs-lookup"><span data-stu-id="0dd91-176">They cannot be used as a generic parameter.</span></span>
 
-<span data-ttu-id="8ced7-177">Tento poslední bod je zásadní pro kanál – vizuální styl programování v F #, jako `|>` je obecný, který parametrizuje vstupní typy. funkce.</span><span class="sxs-lookup"><span data-stu-id="8ced7-177">This last point is crucial for F# pipeline-style programming, as `|>` is a generic function that parameterizes its input types.</span></span> <span data-ttu-id="8ced7-178">Toto omezení mohou být zmírněny pro `|>` v budoucnu, jako je vložená a nepoužívá všechna volání do jiných vložených obecné funkce v těle.</span><span class="sxs-lookup"><span data-stu-id="8ced7-178">This restriction may be relaxed for `|>` in the future, as it is inline and does not make any calls to non-inlined generic functions in its body.</span></span>
+<span data-ttu-id="0dd91-177">Tento poslední bod je zásadní pro kanál – vizuální styl programování v F #, jako `|>` je obecný, který parametrizuje vstupní typy. funkce.</span><span class="sxs-lookup"><span data-stu-id="0dd91-177">This last point is crucial for F# pipeline-style programming, as `|>` is a generic function that parameterizes its input types.</span></span> <span data-ttu-id="0dd91-178">Toto omezení mohou být zmírněny pro `|>` v budoucnu, jako je vložená a nepoužívá všechna volání do jiných vložených obecné funkce v těle.</span><span class="sxs-lookup"><span data-stu-id="0dd91-178">This restriction may be relaxed for `|>` in the future, as it is inline and does not make any calls to non-inlined generic functions in its body.</span></span>
 
-<span data-ttu-id="8ced7-179">I když tato pravidla omezují velmi silného využití, dělají to ke splnění uskutečnění vysokovýkonného výpočetního prostředí bezpečným způsobem.</span><span class="sxs-lookup"><span data-stu-id="8ced7-179">Although these rules very strongly restrict usage, they do so to fulfill the promise of high-performance computing in a safe manner.</span></span>
+<span data-ttu-id="0dd91-179">I když tato pravidla omezují velmi silného využití, dělají to ke splnění uskutečnění vysokovýkonného výpočetního prostředí bezpečným způsobem.</span><span class="sxs-lookup"><span data-stu-id="0dd91-179">Although these rules very strongly restrict usage, they do so to fulfill the promise of high-performance computing in a safe manner.</span></span>
 
-## <a name="byref-returns"></a><span data-ttu-id="8ced7-180">Hodnoty typu ByRef</span><span class="sxs-lookup"><span data-stu-id="8ced7-180">Byref returns</span></span>
+## <a name="byref-returns"></a><span data-ttu-id="0dd91-180">Hodnoty typu ByRef</span><span class="sxs-lookup"><span data-stu-id="0dd91-180">Byref returns</span></span>
 
-<span data-ttu-id="8ced7-181">ByRef vrátí z funkcí F # nebo členy můžete vytvořen a využívat.</span><span class="sxs-lookup"><span data-stu-id="8ced7-181">Byref returns from F# functions or members can be produced and consumed.</span></span> <span data-ttu-id="8ced7-182">Při využívání `byref`– vrátí metoda hodnotu přistoupí implicitně přes ukazatel.</span><span class="sxs-lookup"><span data-stu-id="8ced7-182">When consuming a `byref`-returning method, the value is implicitly dereferenced.</span></span> <span data-ttu-id="8ced7-183">Příklad:</span><span class="sxs-lookup"><span data-stu-id="8ced7-183">For example:</span></span>
+<span data-ttu-id="0dd91-181">ByRef vrátí z funkcí F # nebo členy můžete vytvořen a využívat.</span><span class="sxs-lookup"><span data-stu-id="0dd91-181">Byref returns from F# functions or members can be produced and consumed.</span></span> <span data-ttu-id="0dd91-182">Při využívání `byref`– vrátí metoda hodnotu přistoupí implicitně přes ukazatel.</span><span class="sxs-lookup"><span data-stu-id="0dd91-182">When consuming a `byref`-returning method, the value is implicitly dereferenced.</span></span> <span data-ttu-id="0dd91-183">Příklad:</span><span class="sxs-lookup"><span data-stu-id="0dd91-183">For example:</span></span>
 
 ```fsharp
 let safeSum(bytes: Span<byte>) =
@@ -191,9 +191,9 @@ let sum = safeSum(mySpanOfBytes)
 printfn "%d" sum // 'sum' is of type 'int'
 ```
 
-<span data-ttu-id="8ced7-184">Chcete-li zabránit implicitní zrušení odkazu, například předání odkazem do více zřetězených volání, použijte `&x` (kde `x` je hodnota).</span><span class="sxs-lookup"><span data-stu-id="8ced7-184">To avoid the implicit dereference, such as passing a reference through multiple chained calls, use `&x` (where `x` is the value).</span></span>
+<span data-ttu-id="0dd91-184">Chcete-li zabránit implicitní zrušení odkazu, například předání odkazem do více zřetězených volání, použijte `&x` (kde `x` je hodnota).</span><span class="sxs-lookup"><span data-stu-id="0dd91-184">To avoid the implicit dereference, such as passing a reference through multiple chained calls, use `&x` (where `x` is the value).</span></span>
 
-<span data-ttu-id="8ced7-185">Můžete také přímo přiřadit k vrácení `byref`.</span><span class="sxs-lookup"><span data-stu-id="8ced7-185">You can also directly assign to a return `byref`.</span></span> <span data-ttu-id="8ced7-186">Vezměte v úvahu následující program (vysoce imperativní):</span><span class="sxs-lookup"><span data-stu-id="8ced7-186">Consider the following (highly imperative) program:</span></span>
+<span data-ttu-id="0dd91-185">Můžete také přímo přiřadit k vrácení `byref`.</span><span class="sxs-lookup"><span data-stu-id="0dd91-185">You can also directly assign to a return `byref`.</span></span> <span data-ttu-id="0dd91-186">Vezměte v úvahu následující program (vysoce imperativní):</span><span class="sxs-lookup"><span data-stu-id="0dd91-186">Consider the following (highly imperative) program:</span></span>
 
 ```fsharp
 type C() =
@@ -222,16 +222,16 @@ let main argv =
     0 // return an integer exit code
 ```
 
-<span data-ttu-id="8ced7-187">Toto je výstup:</span><span class="sxs-lookup"><span data-stu-id="8ced7-187">This is the output:</span></span>
+<span data-ttu-id="0dd91-187">Toto je výstup:</span><span class="sxs-lookup"><span data-stu-id="0dd91-187">This is the output:</span></span>
 
 ```console
 Original sequence: 1 3 7 15 31 63 127 255 511 1023
 New sequence:      1 3 7 30 31 63 127 255 511 1023
 ```
 
-## <a name="scoping-for-byrefs"></a><span data-ttu-id="8ced7-188">Vytváření oborů pro parametry ByRef</span><span class="sxs-lookup"><span data-stu-id="8ced7-188">Scoping for byrefs</span></span>
+## <a name="scoping-for-byrefs"></a><span data-ttu-id="0dd91-188">Vytváření oborů pro parametry ByRef</span><span class="sxs-lookup"><span data-stu-id="0dd91-188">Scoping for byrefs</span></span>
 
-<span data-ttu-id="8ced7-189">A `let`-vázaná hodnota nemůže mít svůj odkaz překročí obor, ve kterém byl definován.</span><span class="sxs-lookup"><span data-stu-id="8ced7-189">A `let`-bound value cannot have its reference exceed the scope in which it was defined.</span></span> <span data-ttu-id="8ced7-190">Například následující není povolena:</span><span class="sxs-lookup"><span data-stu-id="8ced7-190">For example, the following is disallowed:</span></span>
+<span data-ttu-id="0dd91-189">A `let`-vázaná hodnota nemůže mít svůj odkaz překročí obor, ve kterém byl definován.</span><span class="sxs-lookup"><span data-stu-id="0dd91-189">A `let`-bound value cannot have its reference exceed the scope in which it was defined.</span></span> <span data-ttu-id="0dd91-190">Například následující není povolena:</span><span class="sxs-lookup"><span data-stu-id="0dd91-190">For example, the following is disallowed:</span></span>
 
 ```fsharp
 let test2 () =
@@ -245,4 +245,4 @@ let test () =
     ()
 ```
 
-<span data-ttu-id="8ced7-191">Předchází se tak získání odlišné výsledky v závislosti na tom, pokud kompilujete s optimalizací zapnutí nebo vypnutí.</span><span class="sxs-lookup"><span data-stu-id="8ced7-191">This prevents you from getting different results depending on if you compile with optimizations on or off.</span></span>
+<span data-ttu-id="0dd91-191">Předchází se tak získání odlišné výsledky v závislosti na tom, pokud kompilujete s optimalizací zapnutí nebo vypnutí.</span><span class="sxs-lookup"><span data-stu-id="0dd91-191">This prevents you from getting different results depending on if you compile with optimizations on or off.</span></span>

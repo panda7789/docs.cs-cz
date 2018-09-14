@@ -3,19 +3,19 @@ title: chráněné vnitřní (C# Reference)
 ms.date: 11/15/2017
 author: sputier
 ms.openlocfilehash: 1a305cb84989f12350e2e7cc28dd18f9d0c7ae5e
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
-ms.translationtype: HT
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/13/2018
-ms.locfileid: "44778302"
+ms.locfileid: "45560683"
 ---
-# <a name="protected-internal-c-reference"></a><span data-ttu-id="06bea-102">chráněné vnitřní (C# Reference)</span><span class="sxs-lookup"><span data-stu-id="06bea-102">protected internal (C# Reference)</span></span>
+# <a name="protected-internal-c-reference"></a><span data-ttu-id="e64f3-102">chráněné vnitřní (C# Reference)</span><span class="sxs-lookup"><span data-stu-id="e64f3-102">protected internal (C# Reference)</span></span>
 
-<span data-ttu-id="06bea-103">`protected internal` – Kombinace klíčových slov je modifikátor přístupu členu.</span><span class="sxs-lookup"><span data-stu-id="06bea-103">The `protected internal` keyword combination is a member access modifier.</span></span> <span data-ttu-id="06bea-104">Chráněné vnitřní člen je přístupný z aktuálního sestavení nebo typy, které jsou odvozeny ze třídy obsahující.</span><span class="sxs-lookup"><span data-stu-id="06bea-104">A protected internal member is accessible from the current assembly or from types that are derived from the containing class.</span></span> <span data-ttu-id="06bea-105">Porovnání `protected internal` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](accessibility-levels.md).</span><span class="sxs-lookup"><span data-stu-id="06bea-105">For a comparison of `protected internal` with the other access modifiers, see [Accessibility Levels](accessibility-levels.md).</span></span>
+<span data-ttu-id="e64f3-103">`protected internal` – Kombinace klíčových slov je modifikátor přístupu členu.</span><span class="sxs-lookup"><span data-stu-id="e64f3-103">The `protected internal` keyword combination is a member access modifier.</span></span> <span data-ttu-id="e64f3-104">Chráněné vnitřní člen je přístupný z aktuálního sestavení nebo typy, které jsou odvozeny ze třídy obsahující.</span><span class="sxs-lookup"><span data-stu-id="e64f3-104">A protected internal member is accessible from the current assembly or from types that are derived from the containing class.</span></span> <span data-ttu-id="e64f3-105">Porovnání `protected internal` jiných přístupu modifikátory přístupu, najdete v článku [úrovní přístupu](accessibility-levels.md).</span><span class="sxs-lookup"><span data-stu-id="e64f3-105">For a comparison of `protected internal` with the other access modifiers, see [Accessibility Levels](accessibility-levels.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="06bea-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="06bea-106">Example</span></span>
+## <a name="example"></a><span data-ttu-id="e64f3-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="e64f3-106">Example</span></span>
 
-<span data-ttu-id="06bea-107">Chráněné vnitřní člena základní třídy je přístupný z libovolného typu v rámci jeho obsahujícího sestavení.</span><span class="sxs-lookup"><span data-stu-id="06bea-107">A protected internal member of a base class is accessible from any type within its containing assembly.</span></span> <span data-ttu-id="06bea-108">Je také dostupná v odvozené třídě nachází v jiném sestavení pouze v případě, že dojde k přístup prostřednictvím proměnné typu odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="06bea-108">It is also accessible in a derived class located in another assembly only if the access occurs through a variable of the derived class type.</span></span> <span data-ttu-id="06bea-109">Představte si třeba následující segment kódu:</span><span class="sxs-lookup"><span data-stu-id="06bea-109">For example, consider the following code segment:</span></span>
+<span data-ttu-id="e64f3-107">Chráněné vnitřní člena základní třídy je přístupný z libovolného typu v rámci jeho obsahujícího sestavení.</span><span class="sxs-lookup"><span data-stu-id="e64f3-107">A protected internal member of a base class is accessible from any type within its containing assembly.</span></span> <span data-ttu-id="e64f3-108">Je také dostupná v odvozené třídě nachází v jiném sestavení pouze v případě, že dojde k přístup prostřednictvím proměnné typu odvozené třídy.</span><span class="sxs-lookup"><span data-stu-id="e64f3-108">It is also accessible in a derived class located in another assembly only if the access occurs through a variable of the derived class type.</span></span> <span data-ttu-id="e64f3-109">Představte si třeba následující segment kódu:</span><span class="sxs-lookup"><span data-stu-id="e64f3-109">For example, consider the following code segment:</span></span>
 
 ```csharp
 // Assembly1.cs
@@ -54,25 +54,25 @@ class DerivedClass : BaseClass
     }
 }
 ```
-<span data-ttu-id="06bea-110">Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly2.cs`.</span><span class="sxs-lookup"><span data-stu-id="06bea-110">This example contains two files, `Assembly1.cs` and `Assembly2.cs`.</span></span>
-<span data-ttu-id="06bea-111">První soubor obsahuje veřejnou základní třídu, `BaseClass`a jiné třídy `TestAccess`.</span><span class="sxs-lookup"><span data-stu-id="06bea-111">The first file contains a public base class, `BaseClass`, and another class, `TestAccess`.</span></span> <span data-ttu-id="06bea-112">`BaseClass` vlastní chráněný interní člen `myValue`, který přistupuje `TestAccess` typu.</span><span class="sxs-lookup"><span data-stu-id="06bea-112">`BaseClass` owns a protected internal member, `myValue`, which is accessed by the `TestAccess` type.</span></span>
-<span data-ttu-id="06bea-113">V souboru druhý pokus o přístup k `myValue` prostřednictvím instance `BaseClass` dojde k chybě při přístupu do tohoto člena prostřednictvím instance třídy odvozená `DerivedClass` proběhne úspěšně.</span><span class="sxs-lookup"><span data-stu-id="06bea-113">In the second file, an attempt to access `myValue` through an instance of `BaseClass` will produce an error, while an access to this member through an instance of a derived class, `DerivedClass` will succeed.</span></span>
+<span data-ttu-id="e64f3-110">Tento příklad obsahuje dva soubory `Assembly1.cs` a `Assembly2.cs`.</span><span class="sxs-lookup"><span data-stu-id="e64f3-110">This example contains two files, `Assembly1.cs` and `Assembly2.cs`.</span></span>
+<span data-ttu-id="e64f3-111">První soubor obsahuje veřejnou základní třídu, `BaseClass`a jiné třídy `TestAccess`.</span><span class="sxs-lookup"><span data-stu-id="e64f3-111">The first file contains a public base class, `BaseClass`, and another class, `TestAccess`.</span></span> <span data-ttu-id="e64f3-112">`BaseClass` vlastní chráněný interní člen `myValue`, který přistupuje `TestAccess` typu.</span><span class="sxs-lookup"><span data-stu-id="e64f3-112">`BaseClass` owns a protected internal member, `myValue`, which is accessed by the `TestAccess` type.</span></span>
+<span data-ttu-id="e64f3-113">V souboru druhý pokus o přístup k `myValue` prostřednictvím instance `BaseClass` dojde k chybě při přístupu do tohoto člena prostřednictvím instance třídy odvozená `DerivedClass` proběhne úspěšně.</span><span class="sxs-lookup"><span data-stu-id="e64f3-113">In the second file, an attempt to access `myValue` through an instance of `BaseClass` will produce an error, while an access to this member through an instance of a derived class, `DerivedClass` will succeed.</span></span>
 
-<span data-ttu-id="06bea-114">Členy struktury nemůžou být `protected internal` protože struktury nelze dědit.</span><span class="sxs-lookup"><span data-stu-id="06bea-114">Struct members cannot be `protected internal` because the struct cannot be inherited.</span></span>
+<span data-ttu-id="e64f3-114">Členy struktury nemůžou být `protected internal` protože struktury nelze dědit.</span><span class="sxs-lookup"><span data-stu-id="e64f3-114">Struct members cannot be `protected internal` because the struct cannot be inherited.</span></span>
 
-## <a name="c-language-specification"></a><span data-ttu-id="06bea-115">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="06bea-115">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="e64f3-115">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e64f3-115">C# language specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="06bea-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="06bea-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e64f3-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="e64f3-116">See also</span></span>
 
-- [<span data-ttu-id="06bea-117">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="06bea-117">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="06bea-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="06bea-118">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="06bea-119">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="06bea-119">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="06bea-120">Modifikátory přístupu</span><span class="sxs-lookup"><span data-stu-id="06bea-120">Access Modifiers</span></span>](access-modifiers.md)
-- [<span data-ttu-id="06bea-121">Úrovně přístupnosti</span><span class="sxs-lookup"><span data-stu-id="06bea-121">Accessibility Levels</span></span>](accessibility-levels.md)
-- [<span data-ttu-id="06bea-122">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="06bea-122">Modifiers</span></span>](modifiers.md)
-- [<span data-ttu-id="06bea-123">public</span><span class="sxs-lookup"><span data-stu-id="06bea-123">public</span></span>](public.md)
-- [<span data-ttu-id="06bea-124">private</span><span class="sxs-lookup"><span data-stu-id="06bea-124">private</span></span>](private.md)
-- [<span data-ttu-id="06bea-125">internal</span><span class="sxs-lookup"><span data-stu-id="06bea-125">internal</span></span>](internal.md)
-- <span data-ttu-id="06bea-126">[Zajištění zabezpečení pro klíčových slov internal virtual](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="06bea-126">[Security concerns for internal virtual keywords](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))</span></span>
+- [<span data-ttu-id="e64f3-117">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e64f3-117">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="e64f3-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="e64f3-118">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="e64f3-119">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="e64f3-119">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="e64f3-120">Modifikátory přístupu</span><span class="sxs-lookup"><span data-stu-id="e64f3-120">Access Modifiers</span></span>](access-modifiers.md)
+- [<span data-ttu-id="e64f3-121">Úrovně přístupnosti</span><span class="sxs-lookup"><span data-stu-id="e64f3-121">Accessibility Levels</span></span>](accessibility-levels.md)
+- [<span data-ttu-id="e64f3-122">Modifikátory</span><span class="sxs-lookup"><span data-stu-id="e64f3-122">Modifiers</span></span>](modifiers.md)
+- [<span data-ttu-id="e64f3-123">public</span><span class="sxs-lookup"><span data-stu-id="e64f3-123">public</span></span>](public.md)
+- [<span data-ttu-id="e64f3-124">private</span><span class="sxs-lookup"><span data-stu-id="e64f3-124">private</span></span>](private.md)
+- [<span data-ttu-id="e64f3-125">internal</span><span class="sxs-lookup"><span data-stu-id="e64f3-125">internal</span></span>](internal.md)
+- <span data-ttu-id="e64f3-126">[Zajištění zabezpečení pro klíčových slov internal virtual](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="e64f3-126">[Security concerns for internal virtual keywords](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))</span></span>
