@@ -11,11 +11,11 @@ ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 49b01fdd14d1adfe0480f93150ab6e996aa84dee
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
-ms.translationtype: HT
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/13/2018
-ms.locfileid: "44757266"
+ms.locfileid: "45560932"
 ---
 # <a name="countdownevent"></a>CountdownEvent
 <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> je primitiv synchronizace, která byla odblokuje jeho čekajících vláken signalizován s určitým počtem opakování. <xref:System.Threading.CountdownEvent> určený pro scénáře, ve kterých je byste jinak museli používat <xref:System.Threading.ManualResetEvent> nebo <xref:System.Threading.ManualResetEventSlim> a ručně dekrementace proměnné před signalizace události. Například ve scénáři rozvětvení/spojení, stačí vytvořit <xref:System.Threading.CountdownEvent> , který má signálu počet 5, a pak start pěti pracovních položek ve vláknu fondu a každé pracovní položky pro volání <xref:System.Threading.CountdownEvent.Signal%2A> po dokončení. Každé volání <xref:System.Threading.CountdownEvent.Signal%2A> sníží počet signál o 1. Na hlavním vlákně, volání <xref:System.Threading.CountdownEvent.Wait%2A> bude blokovat, dokud počet signálu je nula.  
