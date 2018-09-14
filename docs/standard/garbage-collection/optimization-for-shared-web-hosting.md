@@ -10,28 +10,28 @@ ms.assetid: be98c0ab-7ef8-409f-8a0d-cb6e5b75ff20
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7831e383a3048523909b79ac5a4706f3c1c48371
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44178517"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45595357"
 ---
-# <a name="optimization-for-shared-web-hosting"></a><span data-ttu-id="6ab46-102">Optimalizace pro sdílené hostování webů</span><span class="sxs-lookup"><span data-stu-id="6ab46-102">Optimization for Shared Web Hosting</span></span>
-<span data-ttu-id="6ab46-103">Pokud jste správce pro server, které jsou sdíleny několika malými weby hostování, můžete optimalizovat výkon a zvýšit kapacitu webu přidáním následujícího kódu `gcTrimCommitOnLowMemory` nastavení `runtime` uzlu v souboru Aspnet.config v rozhraní .NET adresář:</span><span class="sxs-lookup"><span data-stu-id="6ab46-103">If you are the administrator for a server that is shared by hosting several small Web sites, you can optimize performance and increase site capacity by adding the following `gcTrimCommitOnLowMemory` setting to the `runtime` node in the Aspnet.config file in the .NET directory:</span></span>  
+# <a name="optimization-for-shared-web-hosting"></a><span data-ttu-id="2bb4f-102">Optimalizace pro sdílené hostování webů</span><span class="sxs-lookup"><span data-stu-id="2bb4f-102">Optimization for Shared Web Hosting</span></span>
+<span data-ttu-id="2bb4f-103">Pokud jste správce pro server, které jsou sdíleny několika malými weby hostování, můžete optimalizovat výkon a zvýšit kapacitu webu přidáním následujícího kódu `gcTrimCommitOnLowMemory` nastavení `runtime` uzlu v souboru Aspnet.config v rozhraní .NET adresář:</span><span class="sxs-lookup"><span data-stu-id="2bb4f-103">If you are the administrator for a server that is shared by hosting several small Web sites, you can optimize performance and increase site capacity by adding the following `gcTrimCommitOnLowMemory` setting to the `runtime` node in the Aspnet.config file in the .NET directory:</span></span>  
   
  `<gcTrimCommitOnLowMemory enabled="true|false"/>`  
   
 > [!NOTE]
->  <span data-ttu-id="6ab46-104">Toto nastavení se doporučuje jenom pro sdílený Web scénářích hostování.</span><span class="sxs-lookup"><span data-stu-id="6ab46-104">This setting is recommended only for shared Web hosting scenarios.</span></span>  
+>  <span data-ttu-id="2bb4f-104">Toto nastavení se doporučuje jenom pro sdílený Web scénářích hostování.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-104">This setting is recommended only for shared Web hosting scenarios.</span></span>  
   
- <span data-ttu-id="6ab46-105">Vzhledem k tomu, že systému uvolňování paměti zachová pro budoucí přidělení paměti, lze jeho potvrzeného místa více než je nezbytně nutné.</span><span class="sxs-lookup"><span data-stu-id="6ab46-105">Because the garbage collector retains memory for future allocations, its committed space can be more than what is strictly needed.</span></span> <span data-ttu-id="6ab46-106">Můžete snížit toto místo tak, aby vyhovovaly dobu při velkém zatížení na systémové paměti.</span><span class="sxs-lookup"><span data-stu-id="6ab46-106">You can reduce this space to accommodate times when there is a heavy load on system memory.</span></span> <span data-ttu-id="6ab46-107">Zmenšení potvrzené zlepšuje výkon a rozbalí kapacitu pro hostování více webů.</span><span class="sxs-lookup"><span data-stu-id="6ab46-107">Reducing this committed space improves performance and expands the capacity to host more sites.</span></span>  
+ <span data-ttu-id="2bb4f-105">Vzhledem k tomu, že systému uvolňování paměti zachová pro budoucí přidělení paměti, lze jeho potvrzeného místa více než je nezbytně nutné.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-105">Because the garbage collector retains memory for future allocations, its committed space can be more than what is strictly needed.</span></span> <span data-ttu-id="2bb4f-106">Můžete snížit toto místo tak, aby vyhovovaly dobu při velkém zatížení na systémové paměti.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-106">You can reduce this space to accommodate times when there is a heavy load on system memory.</span></span> <span data-ttu-id="2bb4f-107">Zmenšení potvrzené zlepšuje výkon a rozbalí kapacitu pro hostování více webů.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-107">Reducing this committed space improves performance and expands the capacity to host more sites.</span></span>  
   
- <span data-ttu-id="6ab46-108">Když `gcTrimCommitOnLowMemory` nastavení povolené, vyhodnotí zatížení paměti systému uvolňování paměti a přejde do režimu ořezávání, když zatížení dosáhne 90 %.</span><span class="sxs-lookup"><span data-stu-id="6ab46-108">When the `gcTrimCommitOnLowMemory` setting is enabled, the garbage collector evaluates the system memory load and enters a trimming mode when the load reaches 90%.</span></span> <span data-ttu-id="6ab46-109">Udržuje oříznutí režimu, dokud se zatížení sníží pod 85 %.</span><span class="sxs-lookup"><span data-stu-id="6ab46-109">It maintains the trimming mode until the load drops under 85%.</span></span>  
+ <span data-ttu-id="2bb4f-108">Když `gcTrimCommitOnLowMemory` nastavení povolené, vyhodnotí zatížení paměti systému uvolňování paměti a přejde do režimu ořezávání, když zatížení dosáhne 90 %.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-108">When the `gcTrimCommitOnLowMemory` setting is enabled, the garbage collector evaluates the system memory load and enters a trimming mode when the load reaches 90%.</span></span> <span data-ttu-id="2bb4f-109">Udržuje oříznutí režimu, dokud se zatížení sníží pod 85 %.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-109">It maintains the trimming mode until the load drops under 85%.</span></span>  
   
- <span data-ttu-id="6ab46-110">Při povolení podmínky systému uvolňování paměti může rozhodnout, že `gcTrimCommitOnLowMemory` nastavení nebude nápověda aktuální aplikace a ho ignorovat.</span><span class="sxs-lookup"><span data-stu-id="6ab46-110">When conditions permit, the garbage collector can decide that the `gcTrimCommitOnLowMemory` setting will not help the current application and ignore it.</span></span>  
+ <span data-ttu-id="2bb4f-110">Při povolení podmínky systému uvolňování paměti může rozhodnout, že `gcTrimCommitOnLowMemory` nastavení nebude nápověda aktuální aplikace a ho ignorovat.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-110">When conditions permit, the garbage collector can decide that the `gcTrimCommitOnLowMemory` setting will not help the current application and ignore it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="6ab46-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="6ab46-111">Example</span></span>  
- <span data-ttu-id="6ab46-112">Následující fragment XML ukazuje, jak povolit `gcTrimCommitOnLowMemory` nastavení.</span><span class="sxs-lookup"><span data-stu-id="6ab46-112">The following XML fragment shows how to enable the `gcTrimCommitOnLowMemory` setting.</span></span> <span data-ttu-id="6ab46-113">Symbol tří teček označuje další nastavení, která by byla `runtime` uzlu.</span><span class="sxs-lookup"><span data-stu-id="6ab46-113">Ellipses indicate other settings that would be in the `runtime` node.</span></span>  
+## <a name="example"></a><span data-ttu-id="2bb4f-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="2bb4f-111">Example</span></span>  
+ <span data-ttu-id="2bb4f-112">Následující fragment XML ukazuje, jak povolit `gcTrimCommitOnLowMemory` nastavení.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-112">The following XML fragment shows how to enable the `gcTrimCommitOnLowMemory` setting.</span></span> <span data-ttu-id="2bb4f-113">Symbol tří teček označuje další nastavení, která by byla `runtime` uzlu.</span><span class="sxs-lookup"><span data-stu-id="2bb4f-113">Ellipses indicate other settings that would be in the `runtime` node.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="UTF-8"?>  
@@ -44,6 +44,6 @@ ms.locfileid: "44178517"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="6ab46-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6ab46-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2bb4f-114">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2bb4f-114">See also</span></span>
 
-- [<span data-ttu-id="6ab46-115">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="6ab46-115">Garbage Collection</span></span>](../../../docs/standard/garbage-collection/index.md)
+- [<span data-ttu-id="2bb4f-115">Uvolňování paměti</span><span class="sxs-lookup"><span data-stu-id="2bb4f-115">Garbage Collection</span></span>](../../../docs/standard/garbage-collection/index.md)

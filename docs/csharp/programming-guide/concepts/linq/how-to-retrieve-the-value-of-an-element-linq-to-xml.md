@@ -3,19 +3,19 @@ title: 'Postupy: načtení hodnoty elementu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: 4228c007-07c9-4cf2-a45b-e7074c109581
 ms.openlocfilehash: 7537c111e7d869f8a3e2458706864960820f9764
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45520344"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45609707"
 ---
-# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a><span data-ttu-id="18836-102">Postupy: načtení hodnoty elementu (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="18836-102">How to: Retrieve the Value of an Element (LINQ to XML) (C#)</span></span>
-<span data-ttu-id="18836-103">Toto téma ukazuje, jak má být získána hodnota prvků.</span><span class="sxs-lookup"><span data-stu-id="18836-103">This topic shows how to get the value of elements.</span></span> <span data-ttu-id="18836-104">Chcete-li to provést dvěma způsoby.</span><span class="sxs-lookup"><span data-stu-id="18836-104">There are two main ways to do this.</span></span> <span data-ttu-id="18836-105">Jedním ze způsobů je přetypování <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> do požadovaného typu.</span><span class="sxs-lookup"><span data-stu-id="18836-105">One way is to cast an <xref:System.Xml.Linq.XElement> or an <xref:System.Xml.Linq.XAttribute> to the desired type.</span></span> <span data-ttu-id="18836-106">Operátor explicitního převodu potom převede obsah elementu nebo atributu na zadaný typ a přiřadí ji do proměnné.</span><span class="sxs-lookup"><span data-stu-id="18836-106">The explicit conversion operator then converts the contents of the element or attribute to the specified type and assigns it to your variable.</span></span> <span data-ttu-id="18836-107">Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="18836-107">Alternatively, you can use the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property or the <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> property.</span></span>  
+# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a><span data-ttu-id="78185-102">Postupy: načtení hodnoty elementu (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="78185-102">How to: Retrieve the Value of an Element (LINQ to XML) (C#)</span></span>
+<span data-ttu-id="78185-103">Toto téma ukazuje, jak má být získána hodnota prvků.</span><span class="sxs-lookup"><span data-stu-id="78185-103">This topic shows how to get the value of elements.</span></span> <span data-ttu-id="78185-104">Chcete-li to provést dvěma způsoby.</span><span class="sxs-lookup"><span data-stu-id="78185-104">There are two main ways to do this.</span></span> <span data-ttu-id="78185-105">Jedním ze způsobů je přetypování <xref:System.Xml.Linq.XElement> nebo <xref:System.Xml.Linq.XAttribute> do požadovaného typu.</span><span class="sxs-lookup"><span data-stu-id="78185-105">One way is to cast an <xref:System.Xml.Linq.XElement> or an <xref:System.Xml.Linq.XAttribute> to the desired type.</span></span> <span data-ttu-id="78185-106">Operátor explicitního převodu potom převede obsah elementu nebo atributu na zadaný typ a přiřadí ji do proměnné.</span><span class="sxs-lookup"><span data-stu-id="78185-106">The explicit conversion operator then converts the contents of the element or attribute to the specified type and assigns it to your variable.</span></span> <span data-ttu-id="78185-107">Alternativně můžete použít <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost nebo <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="78185-107">Alternatively, you can use the <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property or the <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> property.</span></span>  
   
- <span data-ttu-id="18836-108">Pomocí jazyka C# ale přetypování je obecně bude vhodnější.</span><span class="sxs-lookup"><span data-stu-id="18836-108">With C#, however, casting is generally the better approach.</span></span> <span data-ttu-id="18836-109">Pokud přetypovat element nebo atribut na typ připouštějící hodnotu Null, kód je jednodušší zápis při načtení hodnoty elementu (nebo atributu), který může nebo nemusí existovat.</span><span class="sxs-lookup"><span data-stu-id="18836-109">If you cast the element or attribute to a nullable type, the code is simpler to write when retrieving the value of an element (or attribute) that might or might not exist.</span></span> <span data-ttu-id="18836-110">V poslední příkladu v tomto tématu ukazuje to.</span><span class="sxs-lookup"><span data-stu-id="18836-110">The last example in this topic demonstrates this.</span></span> <span data-ttu-id="18836-111">Však nelze nastavit obsah elementu přetypování, jak můžete prostřednictvím <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="18836-111">However, you cannot set the contents of an element through casting, as you can through <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property.</span></span>  
+ <span data-ttu-id="78185-108">Pomocí jazyka C# ale přetypování je obecně bude vhodnější.</span><span class="sxs-lookup"><span data-stu-id="78185-108">With C#, however, casting is generally the better approach.</span></span> <span data-ttu-id="78185-109">Pokud přetypovat element nebo atribut na typ připouštějící hodnotu Null, kód je jednodušší zápis při načtení hodnoty elementu (nebo atributu), který může nebo nemusí existovat.</span><span class="sxs-lookup"><span data-stu-id="78185-109">If you cast the element or attribute to a nullable type, the code is simpler to write when retrieving the value of an element (or attribute) that might or might not exist.</span></span> <span data-ttu-id="78185-110">V poslední příkladu v tomto tématu ukazuje to.</span><span class="sxs-lookup"><span data-stu-id="78185-110">The last example in this topic demonstrates this.</span></span> <span data-ttu-id="78185-111">Však nelze nastavit obsah elementu přetypování, jak můžete prostřednictvím <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="78185-111">However, you cannot set the contents of an element through casting, as you can through <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> property.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="18836-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="18836-112">Example</span></span>  
- <span data-ttu-id="18836-113">K načtení hodnoty prvku, jenom udělíte <xref:System.Xml.Linq.XElement> objekt požadovaného typu.</span><span class="sxs-lookup"><span data-stu-id="18836-113">To retrieve the value of an element, you just cast the <xref:System.Xml.Linq.XElement> object to your desired type.</span></span> <span data-ttu-id="18836-114">Element na řetězec, můžete přetypovat vždy následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="18836-114">You can always cast an element to a string, as follows:</span></span>  
+## <a name="example"></a><span data-ttu-id="78185-112">Příklad</span><span class="sxs-lookup"><span data-stu-id="78185-112">Example</span></span>  
+ <span data-ttu-id="78185-113">K načtení hodnoty prvku, jenom udělíte <xref:System.Xml.Linq.XElement> objekt požadovaného typu.</span><span class="sxs-lookup"><span data-stu-id="78185-113">To retrieve the value of an element, you just cast the <xref:System.Xml.Linq.XElement> object to your desired type.</span></span> <span data-ttu-id="78185-114">Element na řetězec, můžete přetypovat vždy následujícím způsobem:</span><span class="sxs-lookup"><span data-stu-id="78185-114">You can always cast an element to a string, as follows:</span></span>  
   
 ```csharp  
 XElement e = new XElement("StringElement", "abcde");  
@@ -23,15 +23,15 @@ Console.WriteLine(e);
 Console.WriteLine("Value of e:" + (string)e);  
 ```  
   
- <span data-ttu-id="18836-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="18836-115">This example produces the following output:</span></span>  
+ <span data-ttu-id="78185-115">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="78185-115">This example produces the following output:</span></span>  
   
 ```  
 <StringElement>abcde</StringElement>  
 Value of e:abcde  
 ```  
   
-## <a name="example"></a><span data-ttu-id="18836-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="18836-116">Example</span></span>  
- <span data-ttu-id="18836-117">Také můžete přetypovat prvky na typy jiné než řetězec.</span><span class="sxs-lookup"><span data-stu-id="18836-117">You can also cast elements to types other than string.</span></span> <span data-ttu-id="18836-118">Například pokud máte element, který obsahuje celé číslo, lze jej přetypovat na `int`, jak je znázorněno v následujícím kódu:</span><span class="sxs-lookup"><span data-stu-id="18836-118">For example, if you have an element that contains an integer, you can cast it to `int`, as shown in the following code:</span></span>  
+## <a name="example"></a><span data-ttu-id="78185-116">Příklad</span><span class="sxs-lookup"><span data-stu-id="78185-116">Example</span></span>  
+ <span data-ttu-id="78185-117">Také můžete přetypovat prvky na typy jiné než řetězec.</span><span class="sxs-lookup"><span data-stu-id="78185-117">You can also cast elements to types other than string.</span></span> <span data-ttu-id="78185-118">Například pokud máte element, který obsahuje celé číslo, lze jej přetypovat na `int`, jak je znázorněno v následujícím kódu:</span><span class="sxs-lookup"><span data-stu-id="78185-118">For example, if you have an element that contains an integer, you can cast it to `int`, as shown in the following code:</span></span>  
   
 ```csharp  
 XElement e = new XElement("Age", "44");  
@@ -39,19 +39,19 @@ Console.WriteLine(e);
 Console.WriteLine("Value of e:" + (int)e);  
 ```  
   
- <span data-ttu-id="18836-119">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="18836-119">This example produces the following output:</span></span>  
+ <span data-ttu-id="78185-119">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="78185-119">This example produces the following output:</span></span>  
   
 ```  
 <Age>44</Age>  
 Value of e:44  
 ```  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="18836-120"> poskytuje explicitní přetypování operátory pro následující typy dat: `string\`, `bool\`, `bool?\`, `int\`, `int?\`, `uint\`, `uint?\`, `long\`, `long?\`, `ulong\`, `ulong?` , `float\`, `float?\`, `double\`, `double?\`, `decimal\`, `decimal?\`, `DateTime\`, `DateTime?\`, `TimeSpan\`, `TimeSpan?\`, `GUID\`, a `GUID?\`.</span><span class="sxs-lookup"><span data-stu-id="18836-120"> provides explicit cast operators for the following data types: `string\`, `bool\`, `bool?\`, `int\`, `int?\`, `uint\`, `uint?\`, `long\`, `long?\`, `ulong\`, `ulong?\`, `float\`, `float?\`, `double\`, `double?\`, `decimal\`, `decimal?\`, `DateTime\`, `DateTime?\`, `TimeSpan\`, `TimeSpan?\`, `GUID\`, and `GUID?\`.</span></span>  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="78185-120"> poskytuje explicitní přetypování operátory pro následující typy dat: `string\`, `bool\`, `bool?\`, `int\`, `int?\`, `uint\`, `uint?\`, `long\`, `long?\`, `ulong\`, `ulong?` , `float\`, `float?\`, `double\`, `double?\`, `decimal\`, `decimal?\`, `DateTime\`, `DateTime?\`, `TimeSpan\`, `TimeSpan?\`, `GUID\`, a `GUID?\`.</span><span class="sxs-lookup"><span data-stu-id="78185-120"> provides explicit cast operators for the following data types: `string\`, `bool\`, `bool?\`, `int\`, `int?\`, `uint\`, `uint?\`, `long\`, `long?\`, `ulong\`, `ulong?\`, `float\`, `float?\`, `double\`, `double?\`, `decimal\`, `decimal?\`, `DateTime\`, `DateTime?\`, `TimeSpan\`, `TimeSpan?\`, `GUID\`, and `GUID?\`.</span></span>  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="18836-121"> poskytuje stejné operátory přetypování pro <xref:System.Xml.Linq.XAttribute> objekty.</span><span class="sxs-lookup"><span data-stu-id="18836-121"> provides the same cast operators for <xref:System.Xml.Linq.XAttribute> objects.</span></span>  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="78185-121"> poskytuje stejné operátory přetypování pro <xref:System.Xml.Linq.XAttribute> objekty.</span><span class="sxs-lookup"><span data-stu-id="78185-121"> provides the same cast operators for <xref:System.Xml.Linq.XAttribute> objects.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="18836-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="18836-122">Example</span></span>  
- <span data-ttu-id="18836-123">Můžete použít <xref:System.Xml.Linq.XElement.Value%2A> vlastnost načíst obsah elementu:</span><span class="sxs-lookup"><span data-stu-id="18836-123">You can use the <xref:System.Xml.Linq.XElement.Value%2A> property to retrieve the contents of an element:</span></span>  
+## <a name="example"></a><span data-ttu-id="78185-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="78185-122">Example</span></span>  
+ <span data-ttu-id="78185-123">Můžete použít <xref:System.Xml.Linq.XElement.Value%2A> vlastnost načíst obsah elementu:</span><span class="sxs-lookup"><span data-stu-id="78185-123">You can use the <xref:System.Xml.Linq.XElement.Value%2A> property to retrieve the contents of an element:</span></span>  
   
 ```csharp  
 XElement e = new XElement("StringElement", "abcde");   
@@ -59,15 +59,15 @@ Console.WriteLine(e);
 Console.WriteLine("Value of e:" + e.Value);  
 ```  
   
- <span data-ttu-id="18836-124">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="18836-124">This example produces the following output:</span></span>  
+ <span data-ttu-id="78185-124">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="78185-124">This example produces the following output:</span></span>  
   
 ```  
 <StringElement>abcde</StringElement>  
 Value of e:abcde  
 ```  
   
-## <a name="example"></a><span data-ttu-id="18836-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="18836-125">Example</span></span>  
- <span data-ttu-id="18836-126">Někdy pokusu o načtení hodnoty elementu, i když si nejste jisti, že objekt že existuje.</span><span class="sxs-lookup"><span data-stu-id="18836-126">Sometimes you try to retrieve the value of an element even though you are not sure it exists.</span></span> <span data-ttu-id="18836-127">V takovém případě když přiřadíte elementu převedena na typ s možnou hodnotou Null (buď `string` nebo jeden z typů s povolenou hodnotou Null v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), pokud element neexistuje přiřazená proměnná je nastavená pouze na `null`.</span><span class="sxs-lookup"><span data-stu-id="18836-127">In this case, when you assign the casted element to a nullable type (either `string` or one of the nullable types in the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), if the element does not exist the assigned variable is just set to `null`.</span></span> <span data-ttu-id="18836-128">Následující kód ukazuje, že když element může nebo nemusí existovat, je jednodušší použít přetypování než <xref:System.Xml.Linq.XElement.Value%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="18836-128">The following code shows that when the element might or might not exist, it is easier to use casting than to use the <xref:System.Xml.Linq.XElement.Value%2A> property.</span></span>  
+## <a name="example"></a><span data-ttu-id="78185-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="78185-125">Example</span></span>  
+ <span data-ttu-id="78185-126">Někdy pokusu o načtení hodnoty elementu, i když si nejste jisti, že objekt že existuje.</span><span class="sxs-lookup"><span data-stu-id="78185-126">Sometimes you try to retrieve the value of an element even though you are not sure it exists.</span></span> <span data-ttu-id="78185-127">V takovém případě když přiřadíte elementu převedena na typ s možnou hodnotou Null (buď `string` nebo jeden z typů s povolenou hodnotou Null v [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), pokud element neexistuje přiřazená proměnná je nastavená pouze na `null`.</span><span class="sxs-lookup"><span data-stu-id="78185-127">In this case, when you assign the casted element to a nullable type (either `string` or one of the nullable types in the [!INCLUDE[dnprdnshort](~/includes/dnprdnshort-md.md)]), if the element does not exist the assigned variable is just set to `null`.</span></span> <span data-ttu-id="78185-128">Následující kód ukazuje, že když element může nebo nemusí existovat, je jednodušší použít přetypování než <xref:System.Xml.Linq.XElement.Value%2A> vlastnost.</span><span class="sxs-lookup"><span data-stu-id="78185-128">The following code shows that when the element might or might not exist, it is easier to use casting than to use the <xref:System.Xml.Linq.XElement.Value%2A> property.</span></span>  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -129,7 +129,7 @@ else
 Console.WriteLine("v4:{0}", v4 == null ? "element does not exist" : v4.ToString());  
 ```  
   
- <span data-ttu-id="18836-129">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="18836-129">This code produces the following output:</span></span>  
+ <span data-ttu-id="78185-129">Tento kód vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="78185-129">This code produces the following output:</span></span>  
   
 ```  
 c1:child 1 content  
@@ -143,8 +143,8 @@ v3:element does not exist
 v4:element does not exist  
 ```  
   
- <span data-ttu-id="18836-130">Obecně platí můžete napsat kód jednodušší při použití přetypování načíst obsah elementů a atributů.</span><span class="sxs-lookup"><span data-stu-id="18836-130">In general, you can write simpler code when using casting to retrieve the contents of elements and attributes.</span></span>  
+ <span data-ttu-id="78185-130">Obecně platí můžete napsat kód jednodušší při použití přetypování načíst obsah elementů a atributů.</span><span class="sxs-lookup"><span data-stu-id="78185-130">In general, you can write simpler code when using casting to retrieve the contents of elements and attributes.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="18836-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="18836-131">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="78185-131">Viz také</span><span class="sxs-lookup"><span data-stu-id="78185-131">See Also</span></span>
 
-- [<span data-ttu-id="18836-132">Osy LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="18836-132">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [<span data-ttu-id="78185-132">Osy LINQ to XML (C#)</span><span class="sxs-lookup"><span data-stu-id="78185-132">LINQ to XML Axes (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/linq-to-xml-axes.md)

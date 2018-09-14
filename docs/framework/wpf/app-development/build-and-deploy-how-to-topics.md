@@ -8,28 +8,28 @@ helpviewer_keywords:
 - WPF application [WPF], deploying
 ms.assetid: 88952ad2-5b74-48ca-a4c5-3f4fbb53ce12
 ms.openlocfilehash: bed7484f7ff487d1ff34ef1ff1e86bc8689a2cfc
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44198657"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45613966"
 ---
-# <a name="build-and-deploy-how-to-topics"></a><span data-ttu-id="8debe-102">Postupy: Témata sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="8debe-102">Build and Deploy How-to Topics</span></span>
-<span data-ttu-id="8debe-103">Následující témata ukazují, jak vytvořit soubory projektu pro různé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy aplikací.</span><span class="sxs-lookup"><span data-stu-id="8debe-103">The following topics show how to create project files for the various [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application types.</span></span>  
+# <a name="build-and-deploy-how-to-topics"></a><span data-ttu-id="23e71-102">Postupy: Témata sestavení a nasazení</span><span class="sxs-lookup"><span data-stu-id="23e71-102">Build and Deploy How-to Topics</span></span>
+<span data-ttu-id="23e71-103">Následující témata ukazují, jak vytvořit soubory projektu pro různé [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] typy aplikací.</span><span class="sxs-lookup"><span data-stu-id="23e71-103">The following topics show how to create project files for the various [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] application types.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="8debe-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8debe-104">In This Section</span></span>  
- [<span data-ttu-id="8debe-105">Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF</span><span class="sxs-lookup"><span data-stu-id="8debe-105">Configure IIS 5.0 and IIS 6.0 to Deploy WPF Applications</span></span>](../../../../docs/framework/wpf/app-development/how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md)  
- [<span data-ttu-id="8debe-106">Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby</span><span class="sxs-lookup"><span data-stu-id="8debe-106">Configure Visual Studio to Debug a XAML Browser Application to Call a Web Service</span></span>](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
- [<span data-ttu-id="8debe-107">Určení nainstalované verze WPF</span><span class="sxs-lookup"><span data-stu-id="8debe-107">Determine the Installed Version of WPF</span></span>](../../../../docs/framework/wpf/app-development/how-to-determine-the-installed-version-of-wpf.md)  
- [<span data-ttu-id="8debe-108">Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0</span><span class="sxs-lookup"><span data-stu-id="8debe-108">Detect Whether the .NET Framework 3.0 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
- [<span data-ttu-id="8debe-109">Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5</span><span class="sxs-lookup"><span data-stu-id="8debe-109">Detect Whether the .NET Framework 3.5 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
- [<span data-ttu-id="8debe-110">Zjištění, jestli je instalovaný modulu plugin WPF pro Firefox</span><span class="sxs-lookup"><span data-stu-id="8debe-110">Detect Whether the WPF Plug-In for Firefox Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed.md)  
+## <a name="in-this-section"></a><span data-ttu-id="23e71-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="23e71-104">In This Section</span></span>  
+ [<span data-ttu-id="23e71-105">Konfigurace služeb IIS 5.0 a IIS 6.0 pro nasazení aplikací WPF</span><span class="sxs-lookup"><span data-stu-id="23e71-105">Configure IIS 5.0 and IIS 6.0 to Deploy WPF Applications</span></span>](../../../../docs/framework/wpf/app-development/how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md)  
+ [<span data-ttu-id="23e71-106">Konfigurace sady Visual Studio pro ladění aplikace Prohlížeče XAML za účelem volání webové služby</span><span class="sxs-lookup"><span data-stu-id="23e71-106">Configure Visual Studio to Debug a XAML Browser Application to Call a Web Service</span></span>](../../../../docs/framework/wpf/app-development/configure-vs-to-debug-a-xaml-browser-to-call-a-web-service.md)  
+ [<span data-ttu-id="23e71-107">Určení nainstalované verze WPF</span><span class="sxs-lookup"><span data-stu-id="23e71-107">Determine the Installed Version of WPF</span></span>](../../../../docs/framework/wpf/app-development/how-to-determine-the-installed-version-of-wpf.md)  
+ [<span data-ttu-id="23e71-108">Zjištění, jestli je nainstalovaná platforma .NET Framework 3.0</span><span class="sxs-lookup"><span data-stu-id="23e71-108">Detect Whether the .NET Framework 3.0 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-0-is-installed.md)  
+ [<span data-ttu-id="23e71-109">Zjištění, jestli je nainstalovaná platforma .NET Framework 3.5</span><span class="sxs-lookup"><span data-stu-id="23e71-109">Detect Whether the .NET Framework 3.5 Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-net-framework-3-5-is-installed.md)  
+ [<span data-ttu-id="23e71-110">Zjištění, jestli je instalovaný modulu plugin WPF pro Firefox</span><span class="sxs-lookup"><span data-stu-id="23e71-110">Detect Whether the WPF Plug-In for Firefox Is Installed</span></span>](../../../../docs/framework/wpf/app-development/how-to-detect-whether-the-wpf-plug-in-for-firefox-is-installed.md)  
   
-## <a name="related-sections"></a><span data-ttu-id="8debe-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="8debe-111">Related Sections</span></span>  
- [<span data-ttu-id="8debe-112">Sestavení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="8debe-112">Building a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
+## <a name="related-sections"></a><span data-ttu-id="23e71-111">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="23e71-111">Related Sections</span></span>  
+ [<span data-ttu-id="23e71-112">Sestavení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="23e71-112">Building a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/building-a-wpf-application-wpf.md)  
   
- [<span data-ttu-id="8debe-113">Nasazení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="8debe-113">Deploying a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
+ [<span data-ttu-id="23e71-113">Nasazení aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="23e71-113">Deploying a WPF Application</span></span>](../../../../docs/framework/wpf/app-development/deploying-a-wpf-application-wpf.md)  
   
- [<span data-ttu-id="8debe-114">Postupy: vytvoření nového projektu aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="8debe-114">How to: Create a New WPF Application Project</span></span>](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)  
+ [<span data-ttu-id="23e71-114">Postupy: vytvoření nového projektu aplikace WPF</span><span class="sxs-lookup"><span data-stu-id="23e71-114">How to: Create a New WPF Application Project</span></span>](https://msdn.microsoft.com/library/1f6aea7a-33e1-4d3f-8555-1daa42e95d82)  
   
- [<span data-ttu-id="8debe-115">Postupy: vytvoření nového projektu aplikace prohlížeče WPF</span><span class="sxs-lookup"><span data-stu-id="8debe-115">How to: Create a New WPF Browser Application Project</span></span>](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f)
+ [<span data-ttu-id="23e71-115">Postupy: vytvoření nového projektu aplikace prohlížeče WPF</span><span class="sxs-lookup"><span data-stu-id="23e71-115">How to: Create a New WPF Browser Application Project</span></span>](https://msdn.microsoft.com/library/72ef4d90-e163-42a1-8df0-ea7ccfd1901f)

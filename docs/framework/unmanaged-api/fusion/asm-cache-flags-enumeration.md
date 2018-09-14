@@ -17,16 +17,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5b712c6ae5978e83dab085f48dd1fd572757384a
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44274645"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45585679"
 ---
-# <a name="asmcacheflags-enumeration"></a><span data-ttu-id="22ae1-102">ASM_CACHE_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="22ae1-102">ASM_CACHE_FLAGS Enumeration</span></span>
-<span data-ttu-id="22ae1-103">Určuje zdroj sestavení, která je reprezentována [iassemblycacheitem –](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md) v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="22ae1-103">Indicates the source of an assembly that is represented by [IAssemblyCacheItem](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md) in the global assembly cache.</span></span>  
+# <a name="asmcacheflags-enumeration"></a><span data-ttu-id="f99a9-102">ASM_CACHE_FLAGS – výčet</span><span class="sxs-lookup"><span data-stu-id="f99a9-102">ASM_CACHE_FLAGS Enumeration</span></span>
+<span data-ttu-id="f99a9-103">Určuje zdroj sestavení, která je reprezentována [iassemblycacheitem –](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md) v globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="f99a9-103">Indicates the source of an assembly that is represented by [IAssemblyCacheItem](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md) in the global assembly cache.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="22ae1-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="22ae1-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="f99a9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f99a9-104">Syntax</span></span>  
   
 ```  
 typedef enum {  
@@ -38,26 +38,26 @@ typedef enum {
 } ASM_CACHE_FLAGS;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="22ae1-105">Členové</span><span class="sxs-lookup"><span data-stu-id="22ae1-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="f99a9-105">Členové</span><span class="sxs-lookup"><span data-stu-id="f99a9-105">Members</span></span>  
   
-|<span data-ttu-id="22ae1-106">Člen</span><span class="sxs-lookup"><span data-stu-id="22ae1-106">Member</span></span>|<span data-ttu-id="22ae1-107">Popis</span><span class="sxs-lookup"><span data-stu-id="22ae1-107">Description</span></span>|  
+|<span data-ttu-id="f99a9-106">Člen</span><span class="sxs-lookup"><span data-stu-id="f99a9-106">Member</span></span>|<span data-ttu-id="f99a9-107">Popis</span><span class="sxs-lookup"><span data-stu-id="f99a9-107">Description</span></span>|  
 |------------|-----------------|  
-|`ASM_CACHE_ZAP`|<span data-ttu-id="22ae1-108">Vytvoří výčet mezipaměti předkompilovaných sestavení pomocí Ngen.exe.</span><span class="sxs-lookup"><span data-stu-id="22ae1-108">Enumerates the cache of precompiled assemblies by using Ngen.exe.</span></span>|  
-|`ASM_CACHE_GAC`|<span data-ttu-id="22ae1-109">Vytvoří výčet globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="22ae1-109">Enumerates the global assembly cache.</span></span>|  
-|`ASM_CACHE_DOWNLOAD`|<span data-ttu-id="22ae1-110">Vytvoří výčet sestavení, které byly staženy na vyžádání nebo která byla vytvořena stínová kopie.</span><span class="sxs-lookup"><span data-stu-id="22ae1-110">Enumerates the assemblies that have been downloaded on demand or that have been shadow-copied.</span></span>|  
-|`ASM_CACHE_ROOT`|<span data-ttu-id="22ae1-111">Označuje, že [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) funkce by měla vrátit cestu k mezipaměti globálního sestavení pro modul common language runtime (CLR) verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="22ae1-111">Indicates that the [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) function should return the path to the global assembly cache for the common language runtime (CLR) version 2.0.</span></span> <span data-ttu-id="22ae1-112">Smysl pouze v kontextu volání [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span><span class="sxs-lookup"><span data-stu-id="22ae1-112">Meaningful only in the context of a call to [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span></span>|  
-|`ASM_CACHE_ROOT_EX`|<span data-ttu-id="22ae1-113">Označuje, že [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) funkce by měla vrátit cestu do globální mezipaměti sestavení pro modul CLR verze 4.</span><span class="sxs-lookup"><span data-stu-id="22ae1-113">Indicates that the [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) function should return the path to the global assembly cache for CLR version 4.</span></span> <span data-ttu-id="22ae1-114">Smysl pouze v kontextu volání [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span><span class="sxs-lookup"><span data-stu-id="22ae1-114">Meaningful only in the context of a call to [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span></span>|  
+|`ASM_CACHE_ZAP`|<span data-ttu-id="f99a9-108">Vytvoří výčet mezipaměti předkompilovaných sestavení pomocí Ngen.exe.</span><span class="sxs-lookup"><span data-stu-id="f99a9-108">Enumerates the cache of precompiled assemblies by using Ngen.exe.</span></span>|  
+|`ASM_CACHE_GAC`|<span data-ttu-id="f99a9-109">Vytvoří výčet globální mezipaměti sestavení.</span><span class="sxs-lookup"><span data-stu-id="f99a9-109">Enumerates the global assembly cache.</span></span>|  
+|`ASM_CACHE_DOWNLOAD`|<span data-ttu-id="f99a9-110">Vytvoří výčet sestavení, které byly staženy na vyžádání nebo která byla vytvořena stínová kopie.</span><span class="sxs-lookup"><span data-stu-id="f99a9-110">Enumerates the assemblies that have been downloaded on demand or that have been shadow-copied.</span></span>|  
+|`ASM_CACHE_ROOT`|<span data-ttu-id="f99a9-111">Označuje, že [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) funkce by měla vrátit cestu k mezipaměti globálního sestavení pro modul common language runtime (CLR) verze 2.0.</span><span class="sxs-lookup"><span data-stu-id="f99a9-111">Indicates that the [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) function should return the path to the global assembly cache for the common language runtime (CLR) version 2.0.</span></span> <span data-ttu-id="f99a9-112">Smysl pouze v kontextu volání [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span><span class="sxs-lookup"><span data-stu-id="f99a9-112">Meaningful only in the context of a call to [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span></span>|  
+|`ASM_CACHE_ROOT_EX`|<span data-ttu-id="f99a9-113">Označuje, že [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) funkce by měla vrátit cestu do globální mezipaměti sestavení pro modul CLR verze 4.</span><span class="sxs-lookup"><span data-stu-id="f99a9-113">Indicates that the [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md) function should return the path to the global assembly cache for CLR version 4.</span></span> <span data-ttu-id="f99a9-114">Smysl pouze v kontextu volání [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span><span class="sxs-lookup"><span data-stu-id="f99a9-114">Meaningful only in the context of a call to [GetCachePath](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md).</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="22ae1-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="22ae1-115">Requirements</span></span>  
- <span data-ttu-id="22ae1-116">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="22ae1-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="f99a9-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="f99a9-115">Requirements</span></span>  
+ <span data-ttu-id="f99a9-116">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="f99a9-116">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="22ae1-117">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="22ae1-117">**Header:** Fusion.h</span></span>  
+ <span data-ttu-id="f99a9-117">**Záhlaví:** Fusion.h</span><span class="sxs-lookup"><span data-stu-id="f99a9-117">**Header:** Fusion.h</span></span>  
   
- <span data-ttu-id="22ae1-118">**Knihovna:** zahrnuty jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="22ae1-118">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="f99a9-118">**Knihovna:** zahrnuty jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="f99a9-118">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="22ae1-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="22ae1-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="f99a9-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="f99a9-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="22ae1-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="22ae1-120">See Also</span></span>  
- [<span data-ttu-id="22ae1-121">GetCachePath – funkce</span><span class="sxs-lookup"><span data-stu-id="22ae1-121">GetCachePath Function</span></span>](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md)  
- [<span data-ttu-id="22ae1-122">IAssemblyCacheItem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="22ae1-122">IAssemblyCacheItem Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md)  
- [<span data-ttu-id="22ae1-123">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="22ae1-123">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)
+## <a name="see-also"></a><span data-ttu-id="f99a9-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="f99a9-120">See Also</span></span>  
+ [<span data-ttu-id="f99a9-121">GetCachePath – funkce</span><span class="sxs-lookup"><span data-stu-id="f99a9-121">GetCachePath Function</span></span>](../../../../docs/framework/unmanaged-api/fusion/getcachepath-function.md)  
+ [<span data-ttu-id="f99a9-122">IAssemblyCacheItem – rozhraní</span><span class="sxs-lookup"><span data-stu-id="f99a9-122">IAssemblyCacheItem Interface</span></span>](../../../../docs/framework/unmanaged-api/fusion/iassemblycacheitem-interface.md)  
+ [<span data-ttu-id="f99a9-123">Výčty pro fúze</span><span class="sxs-lookup"><span data-stu-id="f99a9-123">Fusion Enumerations</span></span>](../../../../docs/framework/unmanaged-api/fusion/fusion-enumerations.md)

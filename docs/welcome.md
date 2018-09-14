@@ -9,60 +9,60 @@ ms.prod: dotnet
 ms.devlang: dotnet
 ms.custom: updateeachrelease
 ms.openlocfilehash: 117b3cb4fc780da3c7624c78c5c242fa6ed9126f
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519423"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45619114"
 ---
-# <a name="welcome-to-net"></a><span data-ttu-id="276e4-103">Vítejte v .NET</span><span class="sxs-lookup"><span data-stu-id="276e4-103">Welcome to .NET</span></span>
+# <a name="welcome-to-net"></a><span data-ttu-id="e7e46-103">Vítejte v .NET</span><span class="sxs-lookup"><span data-stu-id="e7e46-103">Welcome to .NET</span></span>
 
-<span data-ttu-id="276e4-104">Zobrazit [Začínáme s .NET Core](core/get-started.md) se naučíte, jak vytvářet aplikace s .NET Core.</span><span class="sxs-lookup"><span data-stu-id="276e4-104">See [Get started with .NET Core](core/get-started.md) to learn how to create .NET Core apps.</span></span>
+<span data-ttu-id="e7e46-104">Zobrazit [Začínáme s .NET Core](core/get-started.md) se naučíte, jak vytvářet aplikace s .NET Core.</span><span class="sxs-lookup"><span data-stu-id="e7e46-104">See [Get started with .NET Core](core/get-started.md) to learn how to create .NET Core apps.</span></span>
 
-<span data-ttu-id="276e4-105">Vytvoření mnoha typech aplikací pomocí .NET, jako je cloud, IoT a hry pomocí bezplatných nástrojů pro různé platformy.</span><span class="sxs-lookup"><span data-stu-id="276e4-105">Build many types of apps with .NET, such as cloud, IoT, and games using free cross-platform tools.</span></span> <span data-ttu-id="276e4-106">Vaše aplikace můžou běžet na Android, iOS, Linux, macOS a Windows.</span><span class="sxs-lookup"><span data-stu-id="276e4-106">Your apps can run on Android, iOS, Linux, macOS, and Windows.</span></span> <span data-ttu-id="276e4-107">Nasazení aplikací na serverech nebo stolních počítačů a publikování do obchodu s aplikacemi pro nasazení na mobilních zařízeních.</span><span class="sxs-lookup"><span data-stu-id="276e4-107">Deploy apps to servers or desktops and publish to app stores for deployment on mobile devices.</span></span> <span data-ttu-id="276e4-108">.NET je přístupná pro studenty a nadšence a všechny jsou Vítá vás účast v komunitě živá mezinárodní pro vývojáře a přispívání s přímým přístupem do mnohé z technologií .NET.</span><span class="sxs-lookup"><span data-stu-id="276e4-108">.NET is accessible to students and hobbyists, and all are welcome to participate in a lively international developer community and make direct contributions to many of the .NET technologies.</span></span>
+<span data-ttu-id="e7e46-105">Vytvoření mnoha typech aplikací pomocí .NET, jako je cloud, IoT a hry pomocí bezplatných nástrojů pro různé platformy.</span><span class="sxs-lookup"><span data-stu-id="e7e46-105">Build many types of apps with .NET, such as cloud, IoT, and games using free cross-platform tools.</span></span> <span data-ttu-id="e7e46-106">Vaše aplikace můžou běžet na Android, iOS, Linux, macOS a Windows.</span><span class="sxs-lookup"><span data-stu-id="e7e46-106">Your apps can run on Android, iOS, Linux, macOS, and Windows.</span></span> <span data-ttu-id="e7e46-107">Nasazení aplikací na serverech nebo stolních počítačů a publikování do obchodu s aplikacemi pro nasazení na mobilních zařízeních.</span><span class="sxs-lookup"><span data-stu-id="e7e46-107">Deploy apps to servers or desktops and publish to app stores for deployment on mobile devices.</span></span> <span data-ttu-id="e7e46-108">.NET je přístupná pro studenty a nadšence a všechny jsou Vítá vás účast v komunitě živá mezinárodní pro vývojáře a přispívání s přímým přístupem do mnohé z technologií .NET.</span><span class="sxs-lookup"><span data-stu-id="e7e46-108">.NET is accessible to students and hobbyists, and all are welcome to participate in a lively international developer community and make direct contributions to many of the .NET technologies.</span></span>
 
-## <a name="news"></a><span data-ttu-id="276e4-109">Novinky</span><span class="sxs-lookup"><span data-stu-id="276e4-109">News</span></span>
+## <a name="news"></a><span data-ttu-id="e7e46-109">Novinky</span><span class="sxs-lookup"><span data-stu-id="e7e46-109">News</span></span>
 
-<span data-ttu-id="276e4-110">Novinky o .NET najdete v těchto blozích:</span><span class="sxs-lookup"><span data-stu-id="276e4-110">For news about .NET, check the following blogs:</span></span>
+<span data-ttu-id="e7e46-110">Novinky o .NET najdete v těchto blozích:</span><span class="sxs-lookup"><span data-stu-id="e7e46-110">For news about .NET, check the following blogs:</span></span>
 
-- [<span data-ttu-id="276e4-111">Blog k .NET</span><span class="sxs-lookup"><span data-stu-id="276e4-111">.NET Blog</span></span>](https://blogs.msdn.microsoft.com/dotnet/)
-- [<span data-ttu-id="276e4-112">Blog technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="276e4-112">ASP.NET Blog</span></span>](https://blogs.msdn.microsoft.com/webdev/)
-- [<span data-ttu-id="276e4-113">Blog Visual Studio</span><span class="sxs-lookup"><span data-stu-id="276e4-113">The Visual Studio Blog</span></span>](https://blogs.msdn.microsoft.com/visualstudio/)
-- [<span data-ttu-id="276e4-114">Tým jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="276e4-114">The Visual Basic Team</span></span>](https://blogs.msdn.microsoft.com/vbteam/)
+- [<span data-ttu-id="e7e46-111">Blog k .NET</span><span class="sxs-lookup"><span data-stu-id="e7e46-111">.NET Blog</span></span>](https://blogs.msdn.microsoft.com/dotnet/)
+- [<span data-ttu-id="e7e46-112">Blog technologie ASP.NET</span><span class="sxs-lookup"><span data-stu-id="e7e46-112">ASP.NET Blog</span></span>](https://blogs.msdn.microsoft.com/webdev/)
+- [<span data-ttu-id="e7e46-113">Blog Visual Studio</span><span class="sxs-lookup"><span data-stu-id="e7e46-113">The Visual Studio Blog</span></span>](https://blogs.msdn.microsoft.com/visualstudio/)
+- [<span data-ttu-id="e7e46-114">Tým jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e7e46-114">The Visual Basic Team</span></span>](https://blogs.msdn.microsoft.com/vbteam/)
 
-<span data-ttu-id="276e4-115">Postupujte také nejnovější události .NET:</span><span class="sxs-lookup"><span data-stu-id="276e4-115">Also follow the latest .NET events:</span></span>
+<span data-ttu-id="e7e46-115">Postupujte také nejnovější události .NET:</span><span class="sxs-lookup"><span data-stu-id="e7e46-115">Also follow the latest .NET events:</span></span>
 
-- [<span data-ttu-id="276e4-116">Microsoft Build 2018</span><span class="sxs-lookup"><span data-stu-id="276e4-116">Microsoft Build 2018</span></span>](https://channel9.msdn.com/Events/Build/2018)
-- [<span data-ttu-id="276e4-117">.NET Conf</span><span class="sxs-lookup"><span data-stu-id="276e4-117">.NET Conf</span></span>](https://www.dotnetconf.net/)
+- [<span data-ttu-id="e7e46-116">Microsoft Build 2018</span><span class="sxs-lookup"><span data-stu-id="e7e46-116">Microsoft Build 2018</span></span>](https://channel9.msdn.com/Events/Build/2018)
+- [<span data-ttu-id="e7e46-117">.NET Conf</span><span class="sxs-lookup"><span data-stu-id="e7e46-117">.NET Conf</span></span>](https://www.dotnetconf.net/)
 
-<span data-ttu-id="276e4-118">Informace o nejnovějších funkcích přidány do implementace .NET a podporované jazyky, naleznete v následujících článcích:</span><span class="sxs-lookup"><span data-stu-id="276e4-118">For information about the latest features added to the .NET implementations and supported languages, see the following articles:</span></span>
+<span data-ttu-id="e7e46-118">Informace o nejnovějších funkcích přidány do implementace .NET a podporované jazyky, naleznete v následujících článcích:</span><span class="sxs-lookup"><span data-stu-id="e7e46-118">For information about the latest features added to the .NET implementations and supported languages, see the following articles:</span></span>
 
-- [<span data-ttu-id="276e4-119">Co je nového v .NET Core</span><span class="sxs-lookup"><span data-stu-id="276e4-119">What's new in .NET Core</span></span>](core/whats-new/index.md)
-- [<span data-ttu-id="276e4-120">Co je nového v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="276e4-120">What's new in the .NET Framework</span></span>](framework/whats-new/index.md)
-- [<span data-ttu-id="276e4-121">Co je nového v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="276e4-121">What's new in C#</span></span>](csharp/whats-new/index.md)
-- [<span data-ttu-id="276e4-122">Co je nového v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="276e4-122">What's new for Visual Basic</span></span>](visual-basic/getting-started/whats-new.md)
+- [<span data-ttu-id="e7e46-119">Co je nového v .NET Core</span><span class="sxs-lookup"><span data-stu-id="e7e46-119">What's new in .NET Core</span></span>](core/whats-new/index.md)
+- [<span data-ttu-id="e7e46-120">Co je nového v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="e7e46-120">What's new in the .NET Framework</span></span>](framework/whats-new/index.md)
+- [<span data-ttu-id="e7e46-121">Co je nového v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="e7e46-121">What's new in C#</span></span>](csharp/whats-new/index.md)
+- [<span data-ttu-id="e7e46-122">Co je nového v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e7e46-122">What's new for Visual Basic</span></span>](visual-basic/getting-started/whats-new.md)
 
-## <a name="documentation"></a><span data-ttu-id="276e4-123">Dokumentace</span><span class="sxs-lookup"><span data-stu-id="276e4-123">Documentation</span></span>
+## <a name="documentation"></a><span data-ttu-id="e7e46-123">Dokumentace</span><span class="sxs-lookup"><span data-stu-id="e7e46-123">Documentation</span></span>
 
-<span data-ttu-id="276e4-124">Tato dokumentace popisuje škálu .NET napříč platformami a jazyky.</span><span class="sxs-lookup"><span data-stu-id="276e4-124">This documentation covers the breadth of .NET across platforms and languages.</span></span>  <span data-ttu-id="276e4-125">Můžete začít s využitím .NET a jeho jazyků v některém z následujících částí:</span><span class="sxs-lookup"><span data-stu-id="276e4-125">You can get started with .NET and its languages in any of the following sections:</span></span>
+<span data-ttu-id="e7e46-124">Tato dokumentace popisuje škálu .NET napříč platformami a jazyky.</span><span class="sxs-lookup"><span data-stu-id="e7e46-124">This documentation covers the breadth of .NET across platforms and languages.</span></span>  <span data-ttu-id="e7e46-125">Můžete začít s využitím .NET a jeho jazyků v některém z následujících částí:</span><span class="sxs-lookup"><span data-stu-id="e7e46-125">You can get started with .NET and its languages in any of the following sections:</span></span>
 
-- [<span data-ttu-id="276e4-126">Průvodce technologií .NET</span><span class="sxs-lookup"><span data-stu-id="276e4-126">.NET Guide</span></span>](standard/index.md)
-- [<span data-ttu-id="276e4-127">Průvodce platformou .NET Core</span><span class="sxs-lookup"><span data-stu-id="276e4-127">.NET Core Guide</span></span>](core/index.md)
-- [<span data-ttu-id="276e4-128">Průvodce rozhraním .NET Framework</span><span class="sxs-lookup"><span data-stu-id="276e4-128">.NET Framework Guide</span></span>](framework/index.md)
-- [<span data-ttu-id="276e4-129">Průvodce jazykem C#</span><span class="sxs-lookup"><span data-stu-id="276e4-129">C# Guide</span></span>](csharp/index.md)
-- [<span data-ttu-id="276e4-130">Průvodce jazykem F#</span><span class="sxs-lookup"><span data-stu-id="276e4-130">F# Guide</span></span>](fsharp/index.md)
-- [<span data-ttu-id="276e4-131">Průvodce jazykem Visual Basic</span><span class="sxs-lookup"><span data-stu-id="276e4-131">Visual Basic Guide</span></span>](visual-basic/index.md)
+- [<span data-ttu-id="e7e46-126">Průvodce technologií .NET</span><span class="sxs-lookup"><span data-stu-id="e7e46-126">.NET Guide</span></span>](standard/index.md)
+- [<span data-ttu-id="e7e46-127">Průvodce platformou .NET Core</span><span class="sxs-lookup"><span data-stu-id="e7e46-127">.NET Core Guide</span></span>](core/index.md)
+- [<span data-ttu-id="e7e46-128">Průvodce rozhraním .NET Framework</span><span class="sxs-lookup"><span data-stu-id="e7e46-128">.NET Framework Guide</span></span>](framework/index.md)
+- [<span data-ttu-id="e7e46-129">Průvodce jazykem C#</span><span class="sxs-lookup"><span data-stu-id="e7e46-129">C# Guide</span></span>](csharp/index.md)
+- [<span data-ttu-id="e7e46-130">Průvodce jazykem F#</span><span class="sxs-lookup"><span data-stu-id="e7e46-130">F# Guide</span></span>](fsharp/index.md)
+- [<span data-ttu-id="e7e46-131">Průvodce jazykem Visual Basic</span><span class="sxs-lookup"><span data-stu-id="e7e46-131">Visual Basic Guide</span></span>](visual-basic/index.md)
 
-<span data-ttu-id="276e4-132">Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).</span><span class="sxs-lookup"><span data-stu-id="276e4-132">Additionally, you can browse the [.NET API reference](/dotnet/api).</span></span>
+<span data-ttu-id="e7e46-132">Kromě toho můžete přejít [reference k rozhraní API .NET](/dotnet/api).</span><span class="sxs-lookup"><span data-stu-id="e7e46-132">Additionally, you can browse the [.NET API reference](/dotnet/api).</span></span>
 
-## <a name="open-source"></a><span data-ttu-id="276e4-133">Open source</span><span class="sxs-lookup"><span data-stu-id="276e4-133">Open source</span></span>
+## <a name="open-source"></a><span data-ttu-id="e7e46-133">Open source</span><span class="sxs-lookup"><span data-stu-id="e7e46-133">Open source</span></span>
 
-<span data-ttu-id="276e4-134">Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs).</span><span class="sxs-lookup"><span data-stu-id="276e4-134">This documentation is completely [open source](https://github.com/dotnet/docs).</span></span> <span data-ttu-id="276e4-135">Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="276e4-135">You can contribute in any way you like, from creating issues to writing documentation.</span></span>  <span data-ttu-id="276e4-136">Velká část .NET samotného je navíc také otevřít zdroj:</span><span class="sxs-lookup"><span data-stu-id="276e4-136">Additionally, much of .NET itself is also open source:</span></span>
+<span data-ttu-id="e7e46-134">Tato dokumentace je zcela [opensourcových](https://github.com/dotnet/docs).</span><span class="sxs-lookup"><span data-stu-id="e7e46-134">This documentation is completely [open source](https://github.com/dotnet/docs).</span></span> <span data-ttu-id="e7e46-135">Můžete přispívat žádným způsobem, který vám vyhovuje, od vytváření problémy, které píšete dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="e7e46-135">You can contribute in any way you like, from creating issues to writing documentation.</span></span>  <span data-ttu-id="e7e46-136">Velká část .NET samotného je navíc také otevřít zdroj:</span><span class="sxs-lookup"><span data-stu-id="e7e46-136">Additionally, much of .NET itself is also open source:</span></span>
 
-- [<span data-ttu-id="276e4-137">Domovská stránka .NET core</span><span class="sxs-lookup"><span data-stu-id="276e4-137">.NET Core Home</span></span>](https://github.com/dotnet/core)
-- [<span data-ttu-id="276e4-138">Knihovny pro .NET</span><span class="sxs-lookup"><span data-stu-id="276e4-138">.NET Libraries</span></span>](https://github.com/dotnet/corefx)
-- [<span data-ttu-id="276e4-139">.NET core Runtime</span><span class="sxs-lookup"><span data-stu-id="276e4-139">.NET Core Runtime</span></span>](https://github.com/dotnet/coreclr)
-- [<span data-ttu-id="276e4-140">Platforma kompilátoru Roslyn (C# a Visual Basic) a prostředí IDE nástroje</span><span class="sxs-lookup"><span data-stu-id="276e4-140">Roslyn (C# and Visual Basic) Compiler Platform and IDE Tools</span></span>](https://github.com/dotnet/roslyn)
-- [<span data-ttu-id="276e4-141">Kompilátor F # a nástroje pro prostředí IDE</span><span class="sxs-lookup"><span data-stu-id="276e4-141">F# Compiler and IDE Tools</span></span>](https://github.com/microsoft/visualfsharp)
+- [<span data-ttu-id="e7e46-137">Domovská stránka .NET core</span><span class="sxs-lookup"><span data-stu-id="e7e46-137">.NET Core Home</span></span>](https://github.com/dotnet/core)
+- [<span data-ttu-id="e7e46-138">Knihovny pro .NET</span><span class="sxs-lookup"><span data-stu-id="e7e46-138">.NET Libraries</span></span>](https://github.com/dotnet/corefx)
+- [<span data-ttu-id="e7e46-139">.NET core Runtime</span><span class="sxs-lookup"><span data-stu-id="e7e46-139">.NET Core Runtime</span></span>](https://github.com/dotnet/coreclr)
+- [<span data-ttu-id="e7e46-140">Platforma kompilátoru Roslyn (C# a Visual Basic) a prostředí IDE nástroje</span><span class="sxs-lookup"><span data-stu-id="e7e46-140">Roslyn (C# and Visual Basic) Compiler Platform and IDE Tools</span></span>](https://github.com/dotnet/roslyn)
+- [<span data-ttu-id="e7e46-141">Kompilátor F # a nástroje pro prostředí IDE</span><span class="sxs-lookup"><span data-stu-id="e7e46-141">F# Compiler and IDE Tools</span></span>](https://github.com/microsoft/visualfsharp)
 
-<span data-ttu-id="276e4-142">Ostatní uživatele, kteří jsou již v aktivní se můžete zapojit [.NET komunity](https://www.microsoft.com/net/community) zjistit, co je nového, nebo požádat o pomoc.</span><span class="sxs-lookup"><span data-stu-id="276e4-142">You can join other people who are already active in the [.NET community](https://www.microsoft.com/net/community) to find out what's new or ask for help.</span></span>
+<span data-ttu-id="e7e46-142">Ostatní uživatele, kteří jsou již v aktivní se můžete zapojit [.NET komunity](https://www.microsoft.com/net/community) zjistit, co je nového, nebo požádat o pomoc.</span><span class="sxs-lookup"><span data-stu-id="e7e46-142">You can join other people who are already active in the [.NET community](https://www.microsoft.com/net/community) to find out what's new or ask for help.</span></span>

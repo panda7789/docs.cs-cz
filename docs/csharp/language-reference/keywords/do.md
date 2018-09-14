@@ -8,37 +8,37 @@ helpviewer_keywords:
 - do keyword [C#]
 ms.assetid: 50725f79-9ba6-4898-aa78-6e331568a1bb
 ms.openlocfilehash: 89c13f5b547c13052e229ff6eb3a39ae5babce41
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44509626"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45590994"
 ---
-# <a name="do-c-reference"></a><span data-ttu-id="2e842-102">do (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="2e842-102">do (C# Reference)</span></span>
+# <a name="do-c-reference"></a><span data-ttu-id="417cb-102">do (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="417cb-102">do (C# Reference)</span></span>
 
-<span data-ttu-id="2e842-103">`do` Příkaz opakuje příkaz nebo blok příkazů během zadaný logický výraz je vyhodnocen jako `true`.</span><span class="sxs-lookup"><span data-stu-id="2e842-103">The `do` statement executes a statement or a block of statements while a specified boolean expression evaluates to `true`.</span></span> <span data-ttu-id="2e842-104">Vzhledem k tomu, že tento výraz je vyhodnocen po každém spuštění smyčky, `do-while` cyklus se opakuje, jednou nebo vícekrát.</span><span class="sxs-lookup"><span data-stu-id="2e842-104">Because that expression is evaluated after each execution of the loop, a `do-while` loop executes one or more times.</span></span> <span data-ttu-id="2e842-105">Tím se liší od [při](while.md) smyčku, která spustí nulakrát nebo vícekrát.</span><span class="sxs-lookup"><span data-stu-id="2e842-105">This differs from the [while](while.md) loop, which executes zero or more times.</span></span>
+<span data-ttu-id="417cb-103">`do` Příkaz opakuje příkaz nebo blok příkazů během zadaný logický výraz je vyhodnocen jako `true`.</span><span class="sxs-lookup"><span data-stu-id="417cb-103">The `do` statement executes a statement or a block of statements while a specified boolean expression evaluates to `true`.</span></span> <span data-ttu-id="417cb-104">Vzhledem k tomu, že tento výraz je vyhodnocen po každém spuštění smyčky, `do-while` cyklus se opakuje, jednou nebo vícekrát.</span><span class="sxs-lookup"><span data-stu-id="417cb-104">Because that expression is evaluated after each execution of the loop, a `do-while` loop executes one or more times.</span></span> <span data-ttu-id="417cb-105">Tím se liší od [při](while.md) smyčku, která spustí nulakrát nebo vícekrát.</span><span class="sxs-lookup"><span data-stu-id="417cb-105">This differs from the [while](while.md) loop, which executes zero or more times.</span></span>
 
-<span data-ttu-id="2e842-106">Na libovolný bod v rámci `do` blok příkazů, můžete přerušit ze smyčky s použitím [přerušení](break.md) příkazu.</span><span class="sxs-lookup"><span data-stu-id="2e842-106">At any point within the `do` statement block, you can break out of the loop by using the [break](break.md) statement.</span></span>
+<span data-ttu-id="417cb-106">Na libovolný bod v rámci `do` blok příkazů, můžete přerušit ze smyčky s použitím [přerušení](break.md) příkazu.</span><span class="sxs-lookup"><span data-stu-id="417cb-106">At any point within the `do` statement block, you can break out of the loop by using the [break](break.md) statement.</span></span>
 
-<span data-ttu-id="2e842-107">Přejdete přímo na vyhodnocení `while` výrazem s použitím [pokračovat](continue.md) příkazu.</span><span class="sxs-lookup"><span data-stu-id="2e842-107">You can step directly to the evaluation of the `while` expression by using the [continue](continue.md) statement.</span></span> <span data-ttu-id="2e842-108">Pokud je výraz vyhodnocen `true`, běh programu pokračuje prvním příkazem ve smyčce.</span><span class="sxs-lookup"><span data-stu-id="2e842-108">If the expression evaluates to `true`, execution continues at the first statement in the loop.</span></span> <span data-ttu-id="2e842-109">V opačném případě běh programu pokračuje prvním příkazem za smyčky.</span><span class="sxs-lookup"><span data-stu-id="2e842-109">Otherwise, execution continues at the first statement after the loop.</span></span>
+<span data-ttu-id="417cb-107">Přejdete přímo na vyhodnocení `while` výrazem s použitím [pokračovat](continue.md) příkazu.</span><span class="sxs-lookup"><span data-stu-id="417cb-107">You can step directly to the evaluation of the `while` expression by using the [continue](continue.md) statement.</span></span> <span data-ttu-id="417cb-108">Pokud je výraz vyhodnocen `true`, běh programu pokračuje prvním příkazem ve smyčce.</span><span class="sxs-lookup"><span data-stu-id="417cb-108">If the expression evaluates to `true`, execution continues at the first statement in the loop.</span></span> <span data-ttu-id="417cb-109">V opačném případě běh programu pokračuje prvním příkazem za smyčky.</span><span class="sxs-lookup"><span data-stu-id="417cb-109">Otherwise, execution continues at the first statement after the loop.</span></span>
 
-<span data-ttu-id="2e842-110">Také můžete ukončit `do-while` smyčky pomocí [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.</span><span class="sxs-lookup"><span data-stu-id="2e842-110">You also can exit a `do-while` loop by the [goto](goto.md), [return](return.md), or [throw](throw.md) statements.</span></span>
+<span data-ttu-id="417cb-110">Také můžete ukončit `do-while` smyčky pomocí [goto](goto.md), [vrátit](return.md), nebo [throw](throw.md) příkazy.</span><span class="sxs-lookup"><span data-stu-id="417cb-110">You also can exit a `do-while` loop by the [goto](goto.md), [return](return.md), or [throw](throw.md) statements.</span></span>
 
-## <a name="example"></a><span data-ttu-id="2e842-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="2e842-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="417cb-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="417cb-111">Example</span></span>
 
-<span data-ttu-id="2e842-112">Následující příklad ukazuje použití `do` příkazu.</span><span class="sxs-lookup"><span data-stu-id="2e842-112">The following example shows the usage of the `do` statement.</span></span> <span data-ttu-id="2e842-113">Vyberte **spustit** ke spuštění příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="2e842-113">Select **Run** to run the example code.</span></span> <span data-ttu-id="2e842-114">Potom můžete upravit kód a potom ho spusťte znovu.</span><span class="sxs-lookup"><span data-stu-id="2e842-114">After that you can modify the code and run it again.</span></span>
+<span data-ttu-id="417cb-112">Následující příklad ukazuje použití `do` příkazu.</span><span class="sxs-lookup"><span data-stu-id="417cb-112">The following example shows the usage of the `do` statement.</span></span> <span data-ttu-id="417cb-113">Vyberte **spustit** ke spuštění příkladu kódu.</span><span class="sxs-lookup"><span data-stu-id="417cb-113">Select **Run** to run the example code.</span></span> <span data-ttu-id="417cb-114">Potom můžete upravit kód a potom ho spusťte znovu.</span><span class="sxs-lookup"><span data-stu-id="417cb-114">After that you can modify the code and run it again.</span></span>
 
 [!code-csharp-interactive[do loop example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#4)]
 
-## <a name="c-language-specification"></a><span data-ttu-id="2e842-115">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2e842-115">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="417cb-115">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="417cb-115">C# language specification</span></span>
 
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="2e842-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2e842-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="417cb-116">Viz také:</span><span class="sxs-lookup"><span data-stu-id="417cb-116">See also</span></span>
 
-- [<span data-ttu-id="2e842-117">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2e842-117">C# Reference</span></span>](../index.md)  
-- [<span data-ttu-id="2e842-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="2e842-118">C# Programming Guide</span></span>](../../programming-guide/index.md)  
-- [<span data-ttu-id="2e842-119">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2e842-119">C# Keywords</span></span>](index.md)  
-- [<span data-ttu-id="2e842-120">do-while – příkaz (C++)</span><span class="sxs-lookup"><span data-stu-id="2e842-120">do-while Statement (C++)</span></span>](/cpp/cpp/do-while-statement-cpp)  
-- [<span data-ttu-id="2e842-121">Příkazy iterace</span><span class="sxs-lookup"><span data-stu-id="2e842-121">Iteration Statements</span></span>](iteration-statements.md)  
-- [<span data-ttu-id="2e842-122">while – příkaz</span><span class="sxs-lookup"><span data-stu-id="2e842-122">while statement</span></span>](while.md)  
+- [<span data-ttu-id="417cb-117">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="417cb-117">C# Reference</span></span>](../index.md)  
+- [<span data-ttu-id="417cb-118">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="417cb-118">C# Programming Guide</span></span>](../../programming-guide/index.md)  
+- [<span data-ttu-id="417cb-119">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="417cb-119">C# Keywords</span></span>](index.md)  
+- [<span data-ttu-id="417cb-120">do-while – příkaz (C++)</span><span class="sxs-lookup"><span data-stu-id="417cb-120">do-while Statement (C++)</span></span>](/cpp/cpp/do-while-statement-cpp)  
+- [<span data-ttu-id="417cb-121">Příkazy iterace</span><span class="sxs-lookup"><span data-stu-id="417cb-121">Iteration Statements</span></span>](iteration-statements.md)  
+- [<span data-ttu-id="417cb-122">while – příkaz</span><span class="sxs-lookup"><span data-stu-id="417cb-122">while statement</span></span>](while.md)  
