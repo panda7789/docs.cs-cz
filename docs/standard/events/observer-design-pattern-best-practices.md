@@ -9,11 +9,11 @@ ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 03b77074323346e1a26fa07dc1ec873152da356b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44195049"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45519666"
 ---
 # <a name="observer-design-pattern-best-practices"></a>Doporučené postupy pro návrhový vzor Pozorovatel
 V rozhraní .NET Framework návrhový vzor pozorovatel implementované jako sada rozhraní. <xref:System.IObservable%601?displayProperty=nameWithType> Rozhraní představuje poskytovatele dat, který je také odpovídají za poskytování <xref:System.IDisposable> implementace, která umožňuje zrušit odběr oznámení pozorovatele. <xref:System.IObserver%601?displayProperty=nameWithType> Rozhraní představuje pozorovatele. Toto téma popisuje osvědčené postupy, které vývojáři by měly dodržovat při implementaci návrhový vzor pozorovatel pomocí těchto rozhraní.  

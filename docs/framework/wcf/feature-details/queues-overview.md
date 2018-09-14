@@ -5,11 +5,11 @@ helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
 ms.openlocfilehash: c181a415c8702c3032077728139b23e86d85d1f0
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44353392"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "44756948"
 ---
 # <a name="queues-overview"></a>Fronty – přehled
 Tato část představuje obecné a základní koncepty za komunikace ve frontě. Dalších částech podrobnější informace o zařazování do fronty koncepty je zde popsáno, jak jsou označované ve Windows Communication Foundation (WCF).  

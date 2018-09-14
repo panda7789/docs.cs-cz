@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aee713bc6e8fd7f5721a684f38cea03b2a2b3aa4
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 6a879cce8eb429e2daeaa5db963b3d95d1e944da
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43873182"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45520017"
 ---
 # <a name="task-based-asynchronous-programming"></a>Asynchronní programování založené na úlohách
 Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje asynchronní operaci. V některých ohledech úkol podobá vláknu nebo <xref:System.Threading.ThreadPool> pracovní položky, ale na vyšší úrovni abstrakce. Termín *paralelismus úloh* odkazuje na jeden nebo více nezávislých úloh, které jsou spuštěny souběžně. Úlohy poskytují dvě hlavní výhody:  
@@ -59,10 +59,10 @@ Task Parallel Library (TPL) je založena na konceptu *úloh*, což představuje 
  [!code-csharp[TPL_TaskIntro#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/run1.cs#2)]
  [!code-vb[TPL_TaskIntro#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/run1.vb#2)]  
   
- Můžete také použít <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metodu pro vytvoření a spuštění úlohy v rámci jedné operace. Tuto metodu použijte, když vytváření a plánování nemusí být odděleno a vyžadujete další možnosti vytvoření úkolu nebo použití určitého plánovače nebo pokud potřebujete předat další stav do úkolu pomocí jeho <xref:System.Threading.Tasks.Task.AsyncState%2A> vlastnost, jak je znázorněno Následující příklad.  
+ Můžete také použít <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> metodu pro vytvoření a spuštění úlohy v rámci jedné operace. Tuto metodu použijte, když vytváření a plánování nemusí být odděleno a vyžadujete další možnosti vytvoření úkolu nebo použití určitého plánovače nebo pokud potřebujete předat další stav do úkolu, který můžete načíst pomocí jeho <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> vlastnost, jak je znázorněno v následujícím příkladu.  
   
- [!code-csharp[TPL_TaskIntro#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/startnew1.cs#3)]
- [!code-vb[TPL_TaskIntro#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/startnew1.vb#3)]  
+ [!code-csharp[TPL_TaskIntro#3](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/asyncstate.cs#23)]
+ [!code-vb[TPL_TaskIntro#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/asyncstate.vb#23)]  
   
  <xref:System.Threading.Tasks.Task> a <xref:System.Threading.Tasks.Task%601> vystavují statickou <xref:System.Threading.Tasks.Task.Factory%2A> vlastnost, která vrátí výchozí instanci <xref:System.Threading.Tasks.TaskFactory>, takže můžete volat metodu jako `Task.Factory.StartNew()`. Také v následujícím příkladu jelikož úlohy jsou typu <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>, každá má veřejnou <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> vlastnost, která obsahuje výsledek výpočtu. Úlohy běží asynchronně a mohou být dokončeny v libovolném pořadí. Pokud <xref:System.Threading.Tasks.Task%601.Result%2A> vlastnost je přístupná před dokončením výpočtu, vlastnost blokuje volající vlákno, dokud hodnota není k dispozici.  
   

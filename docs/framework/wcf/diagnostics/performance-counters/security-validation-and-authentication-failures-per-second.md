@@ -5,11 +5,11 @@ ms.assetid: 266c3bd3-2ffc-4471-94b7-3675443be1ac
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 4836a5076401de2f7c3112b298cdadc0e0307962
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710275"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45518344"
 ---
 # <a name="security-validation-and-authentication-failures-per-second"></a>Ověřování zabezpečení a počet selhání ověření za sekundu
 Název čítače: ověřování zabezpečení a ověřování chyb za sekundu.  

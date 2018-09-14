@@ -20,11 +20,11 @@ ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8352a007cb1b9a92247db5d7a7351524ec3d4c2e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43875028"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45508275"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 <a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo specifické jazykové verze při provádění běžných operací, jako je například řazení a zobrazení řetězce. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například by řetězců, které se používají interně aplikace obvykle zpracovává stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězec dat, jako jsou XML značky HTML značky, uživatelská jména, cesty k souborům a názvy systémové objekty, jsou interpretovány, jako by byly zohledňující jazykovou verzi, v souladu s drobné chyby, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  

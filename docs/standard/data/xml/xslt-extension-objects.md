@@ -6,11 +6,11 @@ ms.assetid: a4ebdbad-087c-4cfe-acc0-17c48142f81a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 40a530190ee4b19d72399ab877cf26bad1090b9f
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44264113"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45516905"
 ---
 # <a name="xslt-extension-objects"></a>Objekty rozšíření XSLT
 Rozšíření objektů se používají k rozšíření funkcí šablon stylů. Rozšíření objektů jsou udržovány <xref:System.Xml.Xsl.XsltArgumentList> třídy.  

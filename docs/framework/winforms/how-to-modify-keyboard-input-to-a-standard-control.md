@@ -11,11 +11,11 @@ helpviewer_keywords:
 - keyboards [Windows Forms], keyboard input
 ms.assetid: 626d3712-d866-4988-bcda-a2d5b36ec0ba
 ms.openlocfilehash: c109615b9a0eb61d18f7f44e3248d2b24934ee5f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44514381"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507742"
 ---
 # <a name="how-to-modify-keyboard-input-to-a-standard-control"></a>Postupy: Úprava vstupu klávesnice do standardního ovládacího prvku
 Windows Forms poskytuje možnost využívat a úprava vstupu klávesnice. Využívání klíč odkazuje na zpracování klíč v rámci obslužnou rutinu metody nebo události tak, aby jiné metody a události, které dolů fronty zpráv neobdrží hodnotu klíče. Úprava klíč odkazuje na úpravy hodnoty vlastnosti klíč tak, aby metody a obslužné rutiny událostí další dolů fronty zpráv dostávat na jinou hodnotu klíče. Toto téma ukazuje, jak provádět tyto úlohy.  

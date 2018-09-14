@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4784e22d5a3eec031fbee00441958a62d66b52df
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44222104"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45513294"
 ---
 # <a name="inheritsfrom-function"></a>InheritsFrom – funkce
 Určuje, zda aktuální třídy nebo instance je odvozena od třídy zadaný nadřazený prvek.

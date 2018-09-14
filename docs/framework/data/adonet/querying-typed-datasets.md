@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ad712fa1-2baf-462a-b163-574cce6d376a
 ms.openlocfilehash: d956fd5f07c108146d20623bcf811266380c132c
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44270631"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45509997"
 ---
 # <a name="query-typed-datasets"></a>Dotazování typové datové sady
 

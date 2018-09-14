@@ -10,11 +10,11 @@ helpviewer_keywords:
 - classes [WPF], Freezable
 ms.assetid: 89c71692-4f43-4057-b611-67c6a8a863a2
 ms.openlocfilehash: a1006816168e405d0d79786b8430b802f1ec0928
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44354162"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507935"
 ---
 # <a name="freezable-objects-overview"></a>Přehled zablokovatelných objektů
 Toto téma popisuje, jak efektivně používat a vytvořte <xref:System.Windows.Freezable> objekty, které mají speciální funkcí, které může pomoct zlepšit výkon aplikace. Příklady zablokovatelných objektů: štětce, pera, transformace, geometrie a animace.  

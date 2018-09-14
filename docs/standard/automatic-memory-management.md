@@ -15,11 +15,11 @@ ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e343d48b5e50fdaef3a3667f066894dea03eeb80
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710911"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45519640"
 ---
 # <a name="automatic-memory-management"></a>Automatická správa paměti
 Automatická správa paměti je jedna ze služeb, které poskytuje modul Common Language Runtime během [Managed Execution](../../docs/standard/managed-execution-process.md). Modul Common Language Runtime systému uvolňování paměti spravuje přidělování a uvolňování paměti pro aplikaci. Pro vývojáře to znamená, že není nutné napsat kód k provedení paměti, že se úlohy správy počítačů při vývoji spravované aplikace. Automatická správa paměti může eliminovat běžné problémy, jako je například zapomínání uvolnění objektu a způsobuje nevrácení paměti nebo pokusu o přístup k paměti pro objekt, který již byl uvolněn. Tato část popisuje, jak systému uvolňování paměti přiděluje a uvolňuje paměť.  

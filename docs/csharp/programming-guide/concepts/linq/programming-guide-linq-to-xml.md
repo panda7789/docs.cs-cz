@@ -3,11 +3,11 @@ title: Průvodce programováním (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 4b1ffd10-ab81-4a0d-a0ca-e9876478d924
 ms.openlocfilehash: acb8271ad9ea338d31516c35bae46593a5fd2f78
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
-ms.translationtype: MT
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44276890"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "44756376"
 ---
 # <a name="programming-guide-linq-to-xml-c"></a>Průvodce programováním (LINQ to XML) (C#)
 Tato část obsahuje rámcové a postupy: informace o programování v jazyce [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  

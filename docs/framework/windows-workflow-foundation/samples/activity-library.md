@@ -3,11 +3,11 @@ title: Knihovna aktivit
 ms.date: 03/30/2017
 ms.assetid: 5323e9d4-71d6-47eb-bfa6-31feac62044d
 ms.openlocfilehash: 29b3efd648ac103526f572a2cac5b8b67c4b220a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44252418"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45519731"
 ---
 # <a name="activity-library"></a>Knihovna aktivit
 Tato část obsahuje ukázky, které předvádějí pokročilých vlastních aktivit Windows Workflow Foundation (WF).  

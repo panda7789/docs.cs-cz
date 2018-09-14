@@ -11,11 +11,11 @@ helpviewer_keywords:
 - errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
 ms.openlocfilehash: 84fce92183228cbfa5554a3ba45770a86e83bff5
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44099042"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507299"
 ---
 # <a name="error-statement"></a>Error – příkaz
 Simuluje výskyt chyby.  

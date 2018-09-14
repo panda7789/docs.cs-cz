@@ -3,11 +3,11 @@ title: Přehled Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: fc44adbe-1412-49ae-81af-0298be44aae6
 ms.openlocfilehash: a516f454abc81ae8f6f1c15c815fe2b671ecd98f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44513819"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45521293"
 ---
 # <a name="windows-workflow-overview"></a>Přehled Windows Workflow
 Pracovní postup je sada elemental jednotky nazvané *aktivity* , které jsou uloženy jako model, který popisuje proces reálného světa. Pracovní postupy umožňují popsat pořadí spuštění a závislé vztahy mezi částmi krátkodobé nebo dlouho probíhající práce. Tato práce prochází modelu od začátku do konce a aktivity mohou být prováděny osobami nebo funkcemi systému.  

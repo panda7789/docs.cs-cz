@@ -21,11 +21,11 @@ ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b1fa907be4571e0a5f95ab798210bedb154e9170
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44708436"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507729"
 ---
 # <a name="comparing-strings-in-net"></a>Porovnání řetězců v .NET
 .NET nabízí několik metod pro porovnání hodnot řetězců. Následující tabulka uvádí a popisuje metody porovnání hodnoty.  

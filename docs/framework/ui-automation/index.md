@@ -10,11 +10,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: 28686beeb030573ec195f46cea8305688d51c6a6
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
-ms.translationtype: MT
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44509866"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "44778273"
 ---
 # <a name="accessibility"></a>Usnadnění
 > [!NOTE]

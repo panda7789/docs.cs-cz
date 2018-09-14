@@ -6,11 +6,11 @@ helpviewer_keywords:
 - My.Computer.Clipboard object
 ms.assetid: 05d4ede9-1f9a-4495-87f0-77350b8d2e5d
 ms.openlocfilehash: 2f44908668fc48e8a45cd6f2dc686f3bb7ba4f67
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44270705"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "44756077"
 ---
 # <a name="mycomputerclipboard-object"></a>My.Computer.Clipboard – objekt
 Poskytuje metody pro práci do schránky.  

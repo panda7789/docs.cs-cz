@@ -11,11 +11,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 703d3c2260f46f46e85831f809386d5a3af647a4
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44698788"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507898"
 ---
 # <a name="network-programming-how-to-topics"></a>Postupy: témata programování vizuální vrstvy
 Následující seznam obsahuje odkazy na témata s postupy v rámcové dokumentaci k síťové programování.  

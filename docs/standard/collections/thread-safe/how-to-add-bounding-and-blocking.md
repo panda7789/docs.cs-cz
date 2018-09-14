@@ -8,11 +8,11 @@ ms.assetid: 4c2492de-3876-4873-b5a1-000bb404d770
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 3f52d1067a8aa907c8f1cf8b550eec82d1133b3f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44511247"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45516432"
 ---
 # <a name="how-to-add-bounding-and-blocking-functionality-to-a-collection"></a>Postupy: Přidání funkcí ohraničování a blokování do kolekce
 Tento příklad ukazuje, jak k přidání funkcí ohraničování a blokování do vlastní třídu kolekce implementací <xref:System.Collections.Concurrent.IProducerConsumerCollection%601?displayProperty=nameWithType> rozhraní ve třídě a pak pomocí instance třídy jako mechanismus pro interní úložiště <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType>. Další informace o funkcí ohraničování a blokování najdete v tématu [BlockingCollection – přehled](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md).  

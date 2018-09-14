@@ -3,11 +3,11 @@ title: '&lt;transport&gt; – &lt;netMsmqBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
 ms.openlocfilehash: 1b0de5e1d581384d00c18dbefbf7b170325e2061
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44174182"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515545"
 ---
 # <a name="lttransportgt-of-ltnetmsmqbindinggt"></a>&lt;transport&gt; – &lt;netMsmqBinding&gt;
 Definuje nastavení zabezpečení přenosu.  

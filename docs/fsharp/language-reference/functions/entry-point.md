@@ -3,11 +3,11 @@ title: Vstupní bod (F#)
 description: 'Zjistěte, jak nastavit vstupní bod do programu F #, zkompilovaný jako spustitelný soubor, ve kterém formálně spuštění.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 298500931d49c891a7a243295333df3a9f5d413e
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710340"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515208"
 ---
 # <a name="entry-point"></a>Vstupní bod
 

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - out keyword [C#]
 ms.assetid: f8c20dec-a8bc-426a-9882-4076b1db1e00
 ms.openlocfilehash: fedbdb12c1da108d17636770fb5c628195dce0d4
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44700689"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45520448"
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (generický modifikátor) (referenční dokumentace jazyka C#)
 

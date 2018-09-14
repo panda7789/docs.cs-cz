@@ -15,11 +15,11 @@ ms.assetid: a3ce6dfd-1f64-471b-8ad8-8cfaf406275d
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 852df5cb3eeea2ee5fa44ddce2f97e9c4f8d8b5a
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44352372"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45506403"
 ---
 # <a name="how-to-use-the-trycatch-block-to-catch-exceptions"></a>Postup používání bloku try/catch k zachycování výjimek
 

@@ -1,85 +1,86 @@
 ---
-title: Vytvoření aplikace Hello World s .NET Core a Visual Basic v Visual Studio 2017
-description: Naučte se vytvářet jednoduché konzolové aplikace .NET Core pomocí jazyka Visual Basic pomocí Visual Studio 2017.
+title: Vytvoření aplikace Hello World pomocí .NET Core a Visual Basic v sadě Visual Studio 2017
+description: Zjistěte, jak vytvořit jednoduchou konzolovou aplikaci .NET Core pomocí sady Visual Basic pomocí sady Visual Studio 2017.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/07/2017
 dev_langs:
 - vb
-ms.openlocfilehash: 63efffbb2c1ab9354f83e9ecc102bc205cdb9360
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: vs-dotnet
+ms.openlocfilehash: d6b58e491b2857f83fe9b2e55ed35630c42b79ed
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33217357"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45510162"
 ---
-# <a name="build-a-visual-basic-hello-world-application-with-net-core-in-visual-studio-2017"></a>Vytvoření aplikace Visual Basic Hello World s .NET Core v Visual Studio 2017
+# <a name="build-a-visual-basic-hello-world-application-with-net-core-in-visual-studio-2017"></a>Vytvoření aplikace Hello World jazyka Visual Basic pomocí .NET Core v sadě Visual Studio 2017
 
-Toto téma obsahuje podrobné Úvod do vytváření, ladění a publikování pomocí jazyka Visual Basic ve Visual Studio 2017 jednoduché aplikace konzoly .NET Core. Visual Studio 2017 poskytuje plnohodnotné vývojové prostředí pro vytváření aplikací .NET Core. Tak dlouho, dokud aplikace nemá závislosti specifické pro platformu, aplikace můžete spustit na jakékoli platformě s cílem .NET Core a systému, který má nainstalovaný .NET Core.
+Toto téma obsahuje podrobný Úvod k vytváření, ladění a publikování jednoduchou konzolovou aplikaci .NET Core pomocí jazyka Visual Basic v sadě Visual Studio 2017. Visual Studio 2017 poskytuje plnohodnotné vývojové prostředí pro sestavování aplikací .NET Core. Za předpokladu, aplikace nemá závislosti pro konkrétní platformu, aplikaci můžete spustit na libovolné platformě, který cílí na .NET Core a na jakémkoli počítači, který má nainstalovaný .NET Core.
 
 ## <a name="prerequisites"></a>Požadavky
 
-[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) se zatížením "Vývoj pro různé platformy .NET Core" nainstalována. Můžete vyvíjet aplikace pomocí rozhraní .NET 2.0 jádra.
+[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) s úlohou "Vývoj pro různé platformy .NET Core" nainstalované. Můžete vyvíjet aplikace s využitím .NET Core 2.0.
 
-Další informace najdete v tématu [požadavky pro .NET Core v systému Windows](../../core/windows-prerequisites.md).
+Další informace najdete v tématu [předpoklady pro .NET Core ve Windows](../../core/windows-prerequisites.md).
 
-## <a name="a-simple-hello-world-application"></a>Jednoduché aplikace Hello World
+## <a name="a-simple-hello-world-application"></a>Jednoduchou aplikaci Hello World
 
-Začněte tím, že vytvoření jednoduché aplikace konzoly "Hello World". Postupujte podle těchto kroků:
+Začněte vytvořením jednoduché konzolové aplikace "Hello World". Postupujte podle těchto kroků:
 
-1. Spusťte Visual Studio 2017. Vyberte **soubor** > **nový** > **projektu** z řádku nabídek. V *nový projekt** dialogovém okně, vyberte **jazyka Visual Basic** následuje uzlu **.NET Core** uzlu. Vyberte **konzolové aplikace (.NET Core)** šablona projektu. V **název** textové pole, zadejte "Hello World". Vyberte **OK** tlačítko.
+1. Spusťte Visual Studio 2017. Vyberte **souboru** > **nový** > **projektu** z řádku nabídek. V *nový projekt** dialogového okna, vyberte **jazyka Visual Basic** uzel, za nímž následuje **.NET Core** uzlu. Vyberte **Konzolová aplikace (.NET Core)** šablony projektu. V **název** textové pole, zadejte "Hello World". Vyberte **OK** tlačítko.
 
-   ![Dialogové okno Nový projekt s vybrané konzolové aplikace](./media/vb-with-visual-studio/new-project.png)
+   ![Dialogové okno nového projektu s vybraná aplikace konzoly](./media/vb-with-visual-studio/new-project.png)
    
-1. Visual Studio používá šablonu pro vytvoření projektu. Šablona konzolové aplikace jazyka Visual Basic pro .NET Core automaticky definuje třídu, `Program`, s jedinou metodu `Main`, která má <xref:System.String> pole jako argument. `Main` je vstupní bod aplikace, metoda, která je automaticky volána modulem runtime při jeho spuštění aplikace. Jsou k dispozici v žádných argumentů příkazového řádku zadán při spuštění aplikace *argumentů* pole.
+1. Visual Studio používá šablony k vytvoření projektu. Šablona konzolové aplikace jazyka Visual Basic pro .NET Core automaticky definuje třídu, `Program`, s jedinou metodu, `Main`, která přijímá <xref:System.String> pole jako argument. `Main` je vstupní bod aplikace metodu, která je automaticky volána modulem runtime při spuštění aplikace. Jsou k dispozici v jakékoli argumenty příkazového řádku při spuštění aplikace *args* pole.
 
-   ![Visual Studio a nový projekt HelloWorld](./media/vb-with-visual-studio/devenv.png)
+   ![Visual Studio a nový projekt Hello World](./media/vb-with-visual-studio/devenv.png)
 
-   Šablona vytvoří jednoduchou aplikaci "Hello World". Zavolá <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodu pro zobrazení řetězcového literálu "Hello, World!" v okně konzoly. Výběrem **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů můžete spustit program v režimu ladění. Pokud tak učiníte, v okně konzoly je viditelná pouze stručný časový interval před toto okno zavře. K tomu dochází, protože `Main` metoda ukončí a co nejdříve jeden příkaz v ukončení aplikace `Main` metody.
+   Šablona vytvoří jednoduchou aplikaci "Hello World". Volá <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metodu pro zobrazení řetězcový literál "Hello World!" v okně konzoly. Výběrem **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů můžete spustit program v režimu ladění. Pokud tak učiníte, v okně konzoly je viditelná pro jenom stručný časový interval předtím, než se toto okno zavře. K tomu dochází, `Main` metoda se ukončí a ukončení aplikace co nejdříve jeden příkaz v `Main` metody.
 
-1. Aby aplikace pozastavit předtím, než toto okno zavře okno konzoly, přidejte následující kód ihned po volání <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metoda:
+1. Aby v aplikaci k pozastavení před zavřením okna konzoly, přidejte následující kód bezprostředně po volání <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> metody:
 
    ```vb
    Console.Write("Press any key to continue...")
    Console.ReadKey(true)
    ```
-   Tento kód zobrazí výzvu k stisknutím libovolné klávesy a potom program pozastaví, dokud není stisknuta klíč.
+   Tento kód zobrazí výzvu k stisknutím libovolné klávesy a potom program pozastaví, dokud se stiskne klávesa.
 
-1. Na panelu nabídek vyberte **sestavení** > **sestavit řešení**. To zkompiluje vaším programem do převodní jazyk (IL), který je převést na binární kód kompilátorem v běhu (JIT).
+1. Na panelu nabídek vyberte **sestavení** > **sestavit řešení**. Tento program zkompiluje do intermediate language (IL), která se převádí do binárního kódu, kompilátor just-in-time (JIT).
 
-1. Spusťte program výběrem **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů.
+1. Spusťte program tak, že vyberete **HelloWorld** tlačítko s zelenou šipku na panelu nástrojů.
 
-   ![Okno konzoly zobrazující Hello World stisknutím libovolné klávesy pokračovat](./media/with-visual-studio/helloworld1.png)
+   ![Okna konzoly zobrazuje Hello World stisknutím libovolné klávesy pokračovat](./media/with-visual-studio/helloworld1.png)
 
-1. Stisknutím libovolné klávesy zavřete okno konzoly.
+1. Stisknutím jakékoli klávesy zavřete okno konzoly.
 
-## <a name="enhancing-the-hello-world-application"></a>Rozšíření aplikace Hello World
+## <a name="enhancing-the-hello-world-application"></a>Vylepšení aplikace Hello World
 
-Vylepšení aplikace požádat uživatele o své jméno a zobrazení spolu s datum a čas. Upravit a otestujte aplikaci, postupujte takto:
+Vylepšete vaše aplikace vyzve uživatele k jeho název a zobrazit společně s datum a čas. Upravit a otestujte aplikaci, postupujte takto:
 
-1. Zadejte následující kód jazyka Visual Basic v okně kód ihned po levá hranatá závorka, která následuje `Sub Main(args As String())` řádku a před první pravá závorka:
+1. Zadejte následující kód jazyka Visual Basic v okně kódu ihned po levá hranatá závorka, která následuje `Sub Main(args As String())` řádku a před první uzavírací závorku:
 
    [!code-vb[GettingStarted#1](../../../samples/snippets/core/tutorials/vb-with-visual-studio/helloworld.vb#1)]
 
-   Tento kód nahradí existující <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, <xref:System.Console.Write%2A?displayProperty=nameWithType>, a <xref:System.Console.ReadKey%2A?displayProperty=nameWithType> příkazy.
+   Tento kód nahradí stávající <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, <xref:System.Console.Write%2A?displayProperty=nameWithType>, a <xref:System.Console.ReadKey%2A?displayProperty=nameWithType> příkazy.
 
-   ![Visual Studio programový soubor s aktualizované Main – metoda](./media/vb-with-visual-studio/codewindow.png)
+   ![Visual Studio programový soubor s aktualizovanou metodu Main](./media/vb-with-visual-studio/codewindow.png)
 
-   Tento kód zobrazí "Jaký je název vaší?" v okně konzoly a počká, dokud nebude uživatel zadá řetězec následuje klávesu Enter. Ukládají se tento řetězec do proměnné s názvem `name`. Také načte hodnotu <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnost, která obsahuje aktuálním místním časem a přiřadí ji k proměnné s názvem `currentDate`. Nakonec se používá [interpolované řetězce](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) k zobrazení těchto hodnot v okně konzoly.
+   Tento kód zobrazí "Jaký je název vašeho?" v okně konzoly a počká, dokud uživatel zadá řetězec, za nímž následuje klávesu Enter. Ukládají se tento řetězec do proměnné s názvem `name`. Také načte hodnota <xref:System.DateTime.Now?displayProperty=nameWithType> vlastnost, která obsahuje aktuálním místním časem a přiřadí ji k proměnné s názvem `currentDate`. Nakonec se používá [interpolovaný řetězec](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) k zobrazení tyto hodnoty v okně konzoly.
 
-1. Kompilace programu výběrem **sestavení** > **sestavit řešení**.
+1. Kompilovat program výběrem **sestavení** > **sestavit řešení**.
 
-1. Spusťte program v režimu ladění v sadě Visual Studio vyberete zelenou šipku na panelu nástrojů, Stisknutím F5 nebo výběrem položky **ladění** > **spustit ladění** položku nabídky. Odpověď na výzvu zadáním názvu a stisknutím klávesy Enter.
+1. Spusťte program v režimu ladění v sadě Visual Studio vyberte zelenou šipku na panelu nástrojů, stisknutím klávesy F5 nebo výběrem položky **ladění** > **spustit ladění** položky nabídky. Na výzvy odpovíte zadáním názvu a stisknutím klávesy Enter.
 
-   ![Okno konzoly výstup je upravený program](./media/with-visual-studio/helloworld2.png)
+   ![Okno konzoly s výstupem upravené programu](./media/with-visual-studio/helloworld2.png)
 
-1. Stisknutím libovolné klávesy zavřete okno konzoly.
+1. Stisknutím jakékoli klávesy zavřete okno konzoly.
 
-Po vytvoření a spuštění aplikace. K vývoji professional aplikace, proveďte některé další kroky, aby vaše aplikace připravené pro verze:
+Jste vytvořili a spustili aplikaci. K vývoji profesionální aplikace, proveďte některé další kroky pro zajištění připraven k vydání aplikace:
 
-- Informace o ladění aplikace najdete v tématu [ladění aplikace C# Hello, World s Visual Studio 2017](debugging-with-visual-studio.md).
+- Informace o ladění vaší aplikace najdete v tématu [ladění jazyka C# aplikace Hello World pomocí sady Visual Studio 2017](debugging-with-visual-studio.md).
 
-- Informace o vývoji a publikování distribuovatelného verzi vaší aplikace, najdete v části [publikování aplikace C# Hello, World s Visual Studio 2017](publishing-with-visual-studio.md).
+- Informace o vývoji a publikování distribuovatelná verze vaší aplikace najdete v tématu [publikování C# aplikace Hello World pomocí sady Visual Studio 2017](publishing-with-visual-studio.md).
 
 <!--
 ## Related topics

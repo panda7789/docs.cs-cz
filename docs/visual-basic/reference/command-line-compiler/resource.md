@@ -12,11 +12,11 @@ ms.assetid: eee2f227-91f2-4f2b-a9d6-1c51c5320858
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2a69d0e15f9094860c4c66f3fe0a195a0a609db9
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44514339"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45510300"
 ---
 # <a name="-resource-visual-basic"></a>-prostředku (Visual Basic)
 Vloží spravovaný prostředek sestavení.  

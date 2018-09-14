@@ -14,11 +14,11 @@ ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5cd2fa6219f39a8506d865d85e1ce5f84d22a92f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44365499"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45519705"
 ---
 # <a name="asynchronous-programming-model-apm"></a>Model asynchronního programování (APM)
 Asynchronní operace, která používá <xref:System.IAsyncResult> vzoru návrhu je implementovaný jako dvě metody s názvem **Begin *** OperationName* a **End *** OperationName* , které začínají i končí asynchronní operace *OperationName* v uvedeném pořadí. Například <xref:System.IO.FileStream> třída poskytuje <xref:System.IO.FileStream.BeginRead%2A> a <xref:System.IO.FileStream.EndRead%2A> metody pro asynchronní čtení bajtů ze souboru. Tyto metody implementovat asynchronní verze <xref:System.IO.FileStream.Read%2A> metody.  

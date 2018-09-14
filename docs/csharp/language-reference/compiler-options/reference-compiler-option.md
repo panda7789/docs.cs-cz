@@ -14,11 +14,11 @@ helpviewer_keywords:
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
 ms.openlocfilehash: 131cdf62917ab2fc8d564b85c30d13c8971e5809
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44705018"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45514531"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference (možnosti kompilátoru C#)
 **– Referenční dokumentace** možnost způsobí, že kompilátor importovat [veřejné](../../../csharp/language-reference/keywords/public.md) zadávat informace do zadaného souboru do aktuálního projektu, což umožní k odkazování na metadata ze zadaných souborů sestavení.  

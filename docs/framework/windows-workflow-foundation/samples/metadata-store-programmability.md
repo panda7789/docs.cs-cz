@@ -3,11 +3,11 @@ title: Programovatelnost Store metadat
 ms.date: 03/30/2017
 ms.assetid: 5b613661-f3f9-4e07-8e88-28c9ea2fd8f8
 ms.openlocfilehash: 4ea6117686b985a9ea18ce4e5cc4ea2b5c25524c
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44276325"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45512527"
 ---
 # <a name="metadata-store-programmability"></a>Programovatelnost Store metadat
 Metadata úložiště je [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] funkce, která umožňuje přidružení libovolného metadat ve formě CLR atributy pro typy v době běhu. To umožňuje volné párování mezi běhové komponenty a jejich protějšky v době návrhu, jakož i změnit komponenty doby návrhu, aniž by to ovlivnilo modul runtime. Vzorek ukazuje, jak programovat proti úložišti metadat s použitím atributů typu za běhu, u kterého jsme nemají žádnou kontrolu nad zdroji. Terminologie obvykle používá je, že hostitelské aplikace registruje metadata pro sadu typů.  

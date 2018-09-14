@@ -11,11 +11,11 @@ ms.assetid: e8f7be3b-88de-4f33-ab14-dc008e76c1ba
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0652f5f3f3629257f8f67c6b4a0b9551ef547b62
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44221893"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45513624"
 ---
 # <a name="merge-options-in-plinq"></a>Možnosti sloučení v PLINQ
 Při provádění dotazu jako paralelně, PLINQ rozdělí zdrojovou sekvenci tak, aby více vláken může pracovat na různých částech souběžně, obvykle v samostatných vláknech. Výsledky jsou-li využívat v jednom vlákně, například v `foreach` (`For Each` v jazyce Visual Basic) smyčce, pak výsledky z každé vlákno musí být sloučeny zpět do jedné sekvence. Druh sloučení, který provádí PLINQ závisí na subjekty, které se nacházejí v dotazu. Například operátory, které zavádí novou objednávku na výsledcích musí uložit do vyrovnávací paměti všechny prvky ze všech vláken. Z pohledu konzumním vlákně (která je také, že uživatel aplikace) může plně ve vyrovnávací paměti dotaz spusťte znatelný dobu vypršení vytváří výsledek první. Ostatní operátory ve výchozím nastavení, se částečně uložená do vyrovnávací paměti; dávají výsledky v dávkách. Jeden operátor <xref:System.Linq.ParallelEnumerable.ForAll%2A> nemá vyrovnávací paměť ve výchozím nastavení. Bude vrácen všechny prvky ze všech vláken okamžitě.  

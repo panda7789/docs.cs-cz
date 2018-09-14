@@ -11,11 +11,11 @@ ms.assetid: 613a8bc7-6a28-4795-bd6c-1abd9050478f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 385e370f205851630f809b285a93c2609220efeb
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44341784"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45527431"
 ---
 # <a name="barrier-net-framework"></a>Bariéra [.NET Framework]
 A *bariéry* je uživatelem definovaný primitiv synchronizace, která umožňuje více vláken (označované jako *účastníci*) pracovat souběžně na algoritmus ve fázích. Každý účastník opakuje, dokud se nedosáhne barrier bod v kódu. Odbourejte překážky bránící představuje konec jednu fázi práce. Odbourejte překážky bránící dosáhne účastníka blokuje, dokud všichni účastníci dosáhnou této bariéry stejné. Jakmile všichni účastníci dosáhnou této bariéry, můžete volitelně vyvolat akce po fázi. Tuto fázi po akci můžete využívat k provádění akcí jedním vláknem a když jsou všechny ostatní vlákna budou i nadále zablokované. Po spuštění akce jsou všechny odblokované účastníci.  

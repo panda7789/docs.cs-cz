@@ -7,11 +7,11 @@ helpviewer_keywords:
 - WCF Data Services, client library
 ms.assetid: 679644c7-e3fc-422c-b14a-b44b683900d0
 ms.openlocfilehash: 665e424ada24e5e2990eccde7193a91dc039b265
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44709732"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515311"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>Asynchronní operace (WCF Data Services)
 Webové aplikace musí zohlednit vyšší latence mezi klientem a serverem než aplikace, které běží uvnitř interní sítě. Pokud chcete optimalizovat výkon a uživatelské prostředí aplikace, doporučujeme používat asynchronní metody <xref:System.Data.Services.Client.DataServiceContext> a <xref:System.Data.Services.Client.DataServiceQuery%601> třídy při přístupu k [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] servery prostřednictvím webu.  

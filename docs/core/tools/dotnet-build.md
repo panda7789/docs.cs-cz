@@ -4,14 +4,14 @@ description: Dotnet sestavení příkaz sestavení projektu a všechny jeho záv
 author: mairaw
 ms.author: mairaw
 ms.date: 05/25/2018
-ms.openlocfilehash: 6b0b7bc11b560d8632b38f1dfa4e7eb3ce6c54d2
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: dc5970fa1c8f3172916676819fa7789d84a5386e
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961454"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45518305"
 ---
-# <a name="dotnet-build"></a>DotNet – sestavení
+# <a name="dotnet-build"></a>DotNet sestavení
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 

@@ -3,11 +3,11 @@ title: InvokeMethod
 ms.date: 03/30/2017
 ms.assetid: 04988eb3-65f8-456d-b1bd-509f5d05a57c
 ms.openlocfilehash: 861e0cf160aec9814abcf8c27c37ce13a5d88b2a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44217058"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "44778613"
 ---
 # <a name="invokemethod"></a>InvokeMethod
 Tento příklad ukazuje různé způsoby použití <xref:System.Activities.Statements.InvokeMethod> aktivity k vyvolání metody dané třídy.  

@@ -3,11 +3,11 @@ title: Filtrování
 ms.date: 03/30/2017
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
 ms.openlocfilehash: 74915a45ed5ca1d13790f64c7921d1f750fa04d3
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44264926"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45527056"
 ---
 # <a name="filtering"></a>Filtrování
 Windows Communication Foundation (WCF) filtrování systému můžete použít filtry deklarativní podle zpráv a provozní rozhodování. Filtry můžete použít k určení, co dělat, a zobrazí se zpráva prozkoumáním část zprávy. Proces řazení do fronty, například můžete použít k dotazu XPath 1.0 ke kontrole element priority známé hlavičky. Chcete-li zjistit, jestli se má přesunout na začátek fronty zprávu.  

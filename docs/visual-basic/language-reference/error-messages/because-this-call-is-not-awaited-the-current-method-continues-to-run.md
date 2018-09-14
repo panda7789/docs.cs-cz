@@ -8,11 +8,11 @@ helpviewer_keywords:
 - BC42358
 ms.assetid: 43342515-c3c8-4155-9263-c302afabcbc2
 ms.openlocfilehash: fe820b9d2157c09428903a36427d3ff5e4c0045b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44206429"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45513726"
 ---
 # <a name="because-this-call-is-not-awaited-the-current-method-continues-to-run-before-the-call-is-completed"></a>Protože toto volání není očekáváno, spouštění aktuální metody pokračuje před dokončením volání.
 Protože toto volání neočekává, vykonávání aktuální metody pokračuje před dokončením volání. Jestli nebude lepší uplatňovat operátor 'Await' na výsledek volání.  

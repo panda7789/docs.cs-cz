@@ -3,11 +3,11 @@ title: 'Postupy: uzamknutí koncových bodů v podniku'
 ms.date: 03/30/2017
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
 ms.openlocfilehash: 032b69c1fae38576b0374b329f1ab6fe90e2b1a0
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44353801"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515779"
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>Postupy: uzamknutí koncových bodů v podniku
 Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalace klienta validátor koncový bod, který slouží k ověření všech klientských aplikací Windows Communication Foundation (WCF) nainstalována na počítačích.  

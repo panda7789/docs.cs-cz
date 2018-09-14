@@ -3,11 +3,11 @@ title: Struktury (F#)
 description: 'Další informace o F # strukturu, typ compact objektu, který je často efektivnější než třída pro typy s menším objemem dat a jednoduché chování.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 08af88132dda28883e246b94585ff4ed8bd2f16a
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44337952"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45508444"
 ---
 # <a name="structures"></a>Struktury
 

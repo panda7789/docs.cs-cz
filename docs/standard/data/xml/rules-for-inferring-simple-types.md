@@ -6,11 +6,11 @@ ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: dd5426de388ba2c7a22d66ce01d56a3139e36e38
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44339380"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507969"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Pravidla pro odvození jednoduchých typů
 Popisuje, jak <xref:System.Xml.Schema.XmlSchemaInference> třídy odvodí typ dat pro atributy a elementy.  

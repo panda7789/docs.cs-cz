@@ -7,11 +7,11 @@ helpviewer_keywords:
 - x:FactoryMethod directive [XAML Services]
 ms.assetid: 829bcbdf-5318-4afb-9a03-c310e0d2f23d
 ms.openlocfilehash: 436caa9b93467dcf2a0763bcc0962a2beb722315
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44509418"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45527867"
 ---
 # <a name="xfactorymethod-directive"></a>x:FactoryMethod – direktiva
 Určuje jiné metody než konstruktor, který procesor XAML by měla použít pro inicializaci objektu po vyřešení jeho základní typ.  

@@ -10,11 +10,11 @@ ms.assetid: 8a5ea56c-0140-4b51-8997-875ae6a8e0cb
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 10b2471d13d410826cec3404725117649442297b
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44511458"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507872"
 ---
 # <a name="building-xml-schemas"></a>Sestavování schémat XML
 Třídy v <xref:System.Xml.Schema?displayProperty=nameWithType> obor názvů mapovat na struktury definované v doporučení schématu XML World Wide Web Consortium (W3C) a slouží k sestavení XML schémata v paměti.  

@@ -3,11 +3,11 @@ title: Hodnoty (F#)
 description: 'Zjistěte, jak jsou množství, které mají konkrétní typ hodnoty v jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: f645481ce8395c11ae920aee06cbf07955aeb684
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44367949"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515565"
 ---
 # <a name="values"></a>Hodnoty
 

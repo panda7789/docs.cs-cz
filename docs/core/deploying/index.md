@@ -4,12 +4,12 @@ description: Nasazení aplikace .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 09/03/2018
-ms.openlocfilehash: 2ef63ebd737739b2c8e671d982c3844135689ab4
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: 390af06e81788c3f64f255e5c85efdaa167274f4
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44277155"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45510304"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 
@@ -61,7 +61,7 @@ Obsahuje také některé nevýhody:
 
 - Velikost nasazovaného balíčku je relativně velké, protože je nutné zahrnout .NET Core i vaše aplikace a jeho závislostí třetích stran.
 
-  Od verze rozhraní .NET Core 2.0, můžete snížit velikost vašeho nasazení v systémech Linux přibližně 28 MB pomocí .NET Core [ *invariantní režimu globalizace*](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Obvykle, .NET Core v Linuxu se může spolehnout [ICU knihovny](https://github.com/dotnet/docs/issues/http%22//icu-project.org) globalizace podporu. Ve výchozím režimu, nejsou součástí vašeho nasazení knihoven a všechny jazykové verze se chovat jako [jazykovou verzi invariannt](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
+  Od verze rozhraní .NET Core 2.0, můžete snížit velikost vašeho nasazení v systémech Linux přibližně 28 MB pomocí .NET Core [ *invariantní režimu globalizace*](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Obvykle, .NET Core v Linuxu se může spolehnout [ICU knihovny](https://github.com/dotnet/docs/issues/http%22//icu-project.org) globalizace podporu. Ve výchozím režimu, nejsou součástí vašeho nasazení knihoven a všechny jazykové verze se chovat jako [invariantní jazyková verze](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
 - Nasazení do systému mnoho samostatné aplikace .NET Core může spotřebovat významné množství místa na disku, od každé aplikace duplicitní soubory .NET Core.
 

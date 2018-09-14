@@ -13,11 +13,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 4d39dc28082fbed932a60228ac216f2f700c2e9f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44366056"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45526886"
 ---
 # <a name="ltstartupgt-element"></a>&lt;Po spuštění&gt; – Element
 Určuje informace o spuštění modulu runtime jazyka common.  

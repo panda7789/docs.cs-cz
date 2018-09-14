@@ -8,11 +8,11 @@ helpviewer_keywords:
 - implicit keyword [C#]
 ms.assetid: 34db590e-eb3a-4f11-88d0-ffb3cd753dab
 ms.openlocfilehash: 70379136fd4b14403eac919ac15590250b17b416
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44708943"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45521200"
 ---
 # <a name="implicit-c-reference"></a>implicit (referenční dokumentace jazyka C#)
 

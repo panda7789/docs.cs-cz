@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Popup control [WPF], specifying custom position
 ms.assetid: 28c24f39-d3aa-4ee2-b950-384b4a5dab92
 ms.openlocfilehash: e6e81a6e0819ba3eb39a1c568e6872414e671544
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44705728"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45518058"
 ---
 # <a name="how-to-specify-a-custom-popup-position"></a>Postupy: Určení vlastního překryvného umístění
 Tento příklad ukazuje, jak určit vlastní umístění pro <xref:System.Windows.Controls.Primitives.Popup> řídí, kdy <xref:System.Windows.Controls.Primitives.Popup.Placement%2A> je nastavena na <xref:System.Windows.Controls.Primitives.PlacementMode.Custom>.  

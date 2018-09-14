@@ -19,11 +19,11 @@ ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cf1fd3ff78065430800583eb97db986bad419710
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44080732"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45520004"
 ---
 # <a name="custom-numeric-format-strings"></a>Vlastní řetězce číselného formátu
 

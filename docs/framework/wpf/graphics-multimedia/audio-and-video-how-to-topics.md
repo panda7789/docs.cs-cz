@@ -8,11 +8,11 @@ helpviewer_keywords:
 - media [WPF]
 ms.assetid: f7d96707-ffb5-486c-9e85-db6f0d5ac547
 ms.openlocfilehash: d7c3a6b01591dd1c7fc7554a6e660f1ca7b12de1
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44507734"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45517304"
 ---
 # <a name="audio-and-video-how-to-topics"></a>Postupy: Témata audia a videa
 Následující témata ukazují, jak používat <xref:System.Windows.Controls.MediaElement> integrovat audio a video obsahu ve vašich aplikacích.  

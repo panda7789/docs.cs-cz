@@ -1,37 +1,37 @@
 ---
-title: Docker kontejnery, Image a registry
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Docker kontejnery, Image a registry
+title: Kontejnery dockeru, obrázky a registry
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Kontejnery dockeru, obrázky a registry
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 4716159d052fd8e229ac42e5d17c72717ac86d9f
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 08/31/2018
+ms.openlocfilehash: 651da766bc5931f5afa06699d1ec11fa40147e82
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37106457"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45521320"
 ---
-# <a name="docker-containers-images-and-registries"></a>Docker kontejnery, Image a registry
+# <a name="docker-containers-images-and-registries"></a>Kontejnery dockeru, obrázky a registry
 
-Při použití Docker, vytvoří vývojář aplikace nebo služby a balíčky ho a jeho závislosti do bitové kopie kontejneru. Obrázek je statický reprezentace aplikace nebo služby a jeho konfigurace a závislostí.
+Při použití Dockeru, vytvoří vývojář aplikace nebo služby a balíčky a jeho závislosti do image kontejneru. Bitovou je statických reprezentace aplikace nebo služby a jeho konfiguraci a závislostech.
 
-Ke spuštění aplikace nebo služby, je vytvořit vytvořit kontejner, který bude spuštěn na hostiteli Docker instance image aplikace. Kontejnery jsou původně testovány v prostředí pro vývoj nebo počítači.
+Ke spuštění aplikace nebo služby, je vytvořena instance aplikace image k vytvoření kontejneru, který bude spuštěn na hostitele Dockeru. Kontejnery jsou zpočátku testovat ve vývojovém prostředí nebo PC.
 
-Vývojáři měli uložit bitové kopie v registru, který funguje jako knihovny obrázků a je potřeba při nasazení v produkčním orchestrators. Docker udržuje veřejné registru prostřednictvím [úložiště Docker Hub](https://hub.docker.com/); jiných dodavatelů registrech poskytovat pro různé kolekce obrázků. Alternativně můžete podniků má privátní registru on-premises pro své vlastní imagí Dockeru.
+Vývojáři by měly ukládat Image v registru, který funguje jako knihovny imagí a je potřeba při nasazení do produkčního prostředí orchestrátorů. Udržuje prostřednictvím veřejného registru docker [Docker Hubu](https://hub.docker.com/); ostatní dodavatelé poskytují registrů pro různé kolekce imagí, včetně [Azure Container Registry](https://azure.microsoft.com/services/container-registry/). Alternativně můžete podniky mají privátního registru on-premises pro vlastní Image Dockeru.
 
-Obrázek 2 – 4 ukazuje, jak bitové kopie a registrech v Docker vztahují k ostatní součásti. Také ukazuje několik registru nabídky od dodavatelů.
+Obrázek 2 – 4 zobrazuje obrázky a registry v Dockeru vztah k jiné komponenty. Také ukazuje několik nabídek registru od dodavatelů.
 
-![](./media/image5.PNG)
+![Základní taxonomie v Dockeru: Registr je stejně jako bookshelf kde Image jsou uložené a k dispozici i pro vytváření kontejnerů ke spuštění služeb nebo webových aplikací. Existují privátní Docker registry v místním prostředí a ve veřejném cloudu. Docker Hubu je že veřejného registru udržuje Dockeru, podél Docker Trusted Registry podnikové řešení že Azure nabízí Azure Container Registry. AWS, Google a dalších také mít registry kontejnerů.](./media/image5.PNG)
 
-**Obrázek 2 – 4**. Taxonomii Docker podmínky a koncepty
+**Obrázek 2 – 4**. Taxonomie služby Docker terminologie a koncepty
 
-Vložení obrázků v registru umožňuje uložit bitů statické a neměnné aplikace, včetně jejich závislosti na úrovni framework. Tyto bitové kopie můžete poté by se verzí a nasazené v několika prostředích a proto zadejte jednotky konzistentní nasazení.
+Vložení imagí v registru umožňuje ukládat bits statické a neměnné aplikace, včetně všech jeho závislostí na úrovni rozhraní framework. Tyto Image můžete pak se systémovou správou verzí a nasazených v různých prostředích a proto poskytují jednotku, konzistentní nasazování.
 
-Privátní image registrech buď hostované místně nebo v cloudu, se doporučuje při:
+Privátní image registrů, buď hostovaný místně nebo v cloudu, se doporučuje při:
 
--   Bitové kopie nesmí veřejně sdílené z důvodu utajení.
+-   Bitové kopie nesmí veřejně sdílené z důvodu důvěrnost.
 
--   Chcete mít minimální latenci mezi vaší bitové kopie a prostředí pro vybrané nasazení. Například pokud produkční prostředí cloudu Azure, pravděpodobně chcete ukládat obrázků v registru kontejner Azure tak, aby latence sítě bude minimální. Podobným způsobem Pokud provozním prostředí je na místě, můžete chtít mít místní Docker důvěryhodné registru k dispozici v rámci stejné místní síti.
+-   Chcete mít minimální latence mezi vašich imagí a prostředí pro vybrané nasazení. Například pokud vaše produkční prostředí cloudu Azure, pravděpodobně chcete ukládat Image v [Azure Container Registry](https://azure.microsoft.com/services/container-registry/) tak, že bude minimální latence sítě. Podobným způsobem Pokud je v místním prostředí produkčního prostředí můžete chtít mít místní Docker Trusted Registry k dispozici v rámci stejné místní síti.
 
 >[!div class="step-by-step"]
 [Předchozí](docker-terminology.md)

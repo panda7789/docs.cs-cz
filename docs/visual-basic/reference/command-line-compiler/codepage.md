@@ -7,11 +7,11 @@ helpviewer_keywords:
 - -codepage compiler option [Visual Basic]
 ms.assetid: be36ec33-6800-4505-838c-4124564f5cc9
 ms.openlocfilehash: fda75383435fdff718d1d50bc8583afc9858e7e2
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44360940"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515481"
 ---
 # <a name="-codepage-visual-basic"></a>-codepage (Visual Basic)
 Určuje znakovou stránku pro všechny soubory zdrojového kódu dané kompilace.  

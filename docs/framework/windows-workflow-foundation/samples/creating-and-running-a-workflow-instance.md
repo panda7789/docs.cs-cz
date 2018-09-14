@@ -3,11 +3,11 @@ title: Vytvoření a spuštění Instance pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 19d27f47-0491-4569-8f53-51bc1d940e80
 ms.openlocfilehash: 571d41194ebc98be81646fb5bfdab060225015ca
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44705489"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45516578"
 ---
 # <a name="creating-and-running-a-workflow-instance"></a>Vytvoření a spuštění Instance pracovního postupu
 Tento příklad ukazuje, jak spustit instanci pracovního postupu. Ukazuje, jak k jeho provedení synchronního a asynchronního.  

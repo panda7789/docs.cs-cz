@@ -6,11 +6,11 @@ ms.assetid: b1f91616-3115-4264-9821-c66589d11d11
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 5361ef036d91435b674a1637ac8c2a9a757bf8ab
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44367754"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45516931"
 ---
 # <a name="editing-xml-data-using-xpathnavigator"></a>Úpravy dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody pro vkládat, upravovat a odebírat uzly a hodnot z dokumentu XML obsažených v <xref:System.Xml.XmlDocument> objektu. Chcete-li použít některé z těchto metod vložení, úpravu a odebrání uzlů a hodnot, <xref:System.Xml.XPath.XPathNavigator> objekt musí být upravitelné, to znamená, že jeho <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> vlastnost musí mít hodnotu true.  

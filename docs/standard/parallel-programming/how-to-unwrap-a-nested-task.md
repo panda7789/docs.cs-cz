@@ -11,11 +11,11 @@ ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 224f9273b0c8c9445a6a9e25f064e9726acc84f0
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44707747"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45526951"
 ---
 # <a name="how-to-unwrap-a-nested-task"></a>Postupy: Rozbalení vnořené úlohy
 Může vrátit úlohu z metody a potom počkejte nebo pokračovat z úkolu, jak je znázorněno v následujícím příkladu:  

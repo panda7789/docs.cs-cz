@@ -3,11 +3,11 @@ title: 'Postupy: generování textových souborů z XML (C#)'
 ms.date: 07/20/2015
 ms.assetid: 9ad283f7-7cac-42ff-bf32-92aa866e6883
 ms.openlocfilehash: 1e0c57b1fa16bb1b92cabaf4afa7ff7bf40824bd
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710752"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45509403"
 ---
 # <a name="how-to-generate-text-files-from-xml-c"></a>Postupy: generování textových souborů z XML (C#)
 Tento příklad ukazuje, jak vygenerovat soubor hodnot oddělených čárkami (CSV) ze souboru XML.  

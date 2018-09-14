@@ -11,11 +11,11 @@ ms.assetid: 6e2aa49b-fc84-4bcf-962b-17db98b7edcb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b1c8bfea5fc55bafbaa30d3b74edf60b674ef75c
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44699212"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515883"
 ---
 # <a name="how-to-listen-for-cancellation-requests-that-have-wait-handles"></a>Postupy: Naslouchání požadavkům zrušení, které mají obslužné rutiny čekání
 Pokud metoda je blokovaný, když se čeká na událost má být signalizován, nemůže kontrolu hodnoty tokenu zrušení a včas reagovat. První příklad ukazuje, jak tento problém vyřešit, při práci s událostmi, jako <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> , které nativně nepodporují rozhraní unified zrušení. Druhý příklad ukazuje jednodušší přístup, který používá <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>, který nepodporuje sjednocený zrušení.  

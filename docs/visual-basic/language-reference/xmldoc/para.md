@@ -6,11 +6,11 @@ helpviewer_keywords:
 - para XML tag
 ms.assetid: a3a18b6c-6416-4358-94ec-37b22675fd37
 ms.openlocfilehash: fa11c713a5ed5793b50865753f8bcdeaabf56e83
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44699709"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45515012"
 ---
 # <a name="ltparagt-visual-basic"></a>&lt;para&gt; (Visual Basic)
 Určuje, že obsah je formátován jako odstavce.  

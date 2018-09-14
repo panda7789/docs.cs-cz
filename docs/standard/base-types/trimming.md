@@ -18,11 +18,11 @@ ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1d13d4e115caa636e5d760b65bc98e195490f911
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44184090"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45508093"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Ořezávání a odebírání znaků z řetězců v .NET
 Pokud analyzujete větu na jednotlivá slova, může skončit s slova, která mají mezery (také nazývané prázdné znaky) na jednom konci slovo. V takovém případě můžete použít jednu z metod uvolnění dočasné paměti v **System.String** třídy odebrat libovolný počet mezery ani jiných znaků od určené pozice v řetězci. Následující tabulka popisuje dostupné metody uvolnění dočasné paměti.  

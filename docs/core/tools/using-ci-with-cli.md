@@ -4,12 +4,12 @@ description: Informace o použití sady .NET Core SDK a jeho nástroje na server
 author: guardrex
 ms.author: mairaw
 ms.date: 05/18/2017
-ms.openlocfilehash: 0835ffafc6c091c311b03c90f665cbd669cccfe9
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 207a6740f2a483d532c194b2bf8112898e9c3463
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43749931"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45521026"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Pomocí sady .NET Core SDK a nástroje v kontinuální integrace (CI)
 
@@ -34,11 +34,13 @@ Pomocí skriptu instalačního programu umožňuje instalaci bez oprávnění sp
 Skript instalačního programu je automatické spouštění na začátku operace sestavení pro načtení a instalaci požadované verze sady SDK. *Požadovanou verzi* je libovolné verzi sady SDK vyžadovat vaše projekty k sestavení. Skript umožňuje nainstalovat sadu SDK do místního adresáře na serveru, spustit nástroje z umístění instalace a potom vyčištění (nebo umožní službě CI vyčistit) po sestavení. Poskytuje zapouzdření a izolace pro celý váš proces sestavení. Odkaz na instalační skript se nachází v [nainstalujte dotnet](dotnet-install-script.md) tématu.
 
 > [!NOTE]
+> **Služby Azure DevOps**
+>
 > Pokud používáte skript instalačního programu, nativní závislosti nejsou nainstalovány automaticky. Pokud operační systém nemá, je nutné nainstalovat nativní závislosti. Zobrazit seznam požadavků [požadavky na nativní .NET Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md) tématu.
 
 ## <a name="ci-setup-examples"></a>Příklady nastavení položky konfigurace
 
-Tato část popisuje ruční instalaci pomocí skriptu prostředí PowerShell nebo prostředí bash, popisy několik softwaru jako řešení CI služby (SaaS). Řešení SaaS CI popsaná jsou [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [Visual Studio Team Services Build](https://docs.microsoft.com/vsts/build-release/index).
+Tato část popisuje ruční instalaci pomocí skriptu prostředí PowerShell nebo prostředí bash, popisy několik softwaru jako řešení CI služby (SaaS). Řešení SaaS CI popsaná jsou [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [ sestavení](https://docs.microsoft.com/azure/devops/build-release/index).
 
 ### <a name="manual-setup"></a>Ruční instalace
 
@@ -142,16 +144,16 @@ install:
   # See appveyor.yml example for install script
 ```
 
-### <a name="visual-studio-team-services-vsts"></a>Visual Studio Team Services (VSTS)
+### <a name="azure-devops-services"></a>Služby Azure DevOps
 
-Konfigurace Visual Studio Team Services (VSTS) k sestavení projektů .NET Core pomocí jedné z těchto přístupů:
+Konfigurace služby Azure DevOps k sestavení projektů .NET Core pomocí jedné z těchto přístupů:
 
 1. Spusťte skript ze [ruční instalaci krok](#manual-setup) pomocí příkazů.
-1. Vytvořte sestavení se skládá z několika úloh VSTS integrované sestavení, které jsou nakonfigurovány pro použití nástroje .NET Core.
+1. Vytvořte sestavení se skládá z několik úloh služby Azure DevOps integrované sestavení, které jsou nakonfigurovány pro použití nástroje .NET Core.
 
-Obě řešení jsou platné. Pomocí skriptu ruční instalace, řízení verze nástrojů, které jste dostali, protože si stáhnout jako součást sestavení. Sestavení je spuštěno ze skriptu, který je nutné vytvořit. Toto téma popisuje pouze možnost ručně. Další informace o vytváření sestavení s využitím VSTS úlohy sestavení, najdete ve VSTS [průběžnou integraci a nasazování](https://docs.microsoft.com/vsts/build-release/index) tématu.
+Obě řešení jsou platné. Pomocí skriptu ruční instalace, řízení verze nástrojů, které jste dostali, protože si stáhnout jako součást sestavení. Sestavení je spuštěno ze skriptu, který je nutné vytvořit. Toto téma popisuje pouze možnost ručně. Další informace o sestavování sestavení se službami Azure DevOps úlohy sestavení, navštivte web Azure DevOps Services [průběžnou integraci a nasazování](https://docs.microsoft.com/azure/devops/build-release/index) tématu.
 
-Použití skriptu ruční instalace ve VSTS, vytvořte novou definici sestavení a určete skript, který chcete spustit kroku sestavení. To lze provést pomocí uživatelského rozhraní VSTS:
+Použití skriptu ruční instalace služby Azure DevOps, vytvořte novou definici sestavení a určete skript, který chcete spustit kroku sestavení. To lze provést pomocí uživatelského rozhraní služby Azure DevOps:
 
 1. Začněte vytvořením nové definice sestavení. Jakmile se obrazovka, která poskytuje možnost určit, jaký typ sestavení, kterou chcete vytvořit, vyberte **prázdný** možnost.
 
@@ -171,7 +173,7 @@ Použití skriptu ruční instalace ve VSTS, vytvořte novou definici sestavení
 
 ## <a name="orchestrating-the-build"></a>Orchestrace sestavení
 
-Většina tento dokument popisuje, jak získat nástroje .NET Core a konfigurovat různé služby CI bez zadání informací o tom, jak orchestrovat, nebo *sestavují*, váš kód s .NET Core. Volby v tom, jak strukturovat proces sestavení závisí na mnoha faktorech, které nejde pokrýt obecné způsobem. Prozkoumat prostředky a ukázky, které jsou součástí sady dokumentace [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [VSTS](https://docs.microsoft.com/vsts/build-release/index) Další informace o orchestraci buildů v každé technologie.
+Většina tento dokument popisuje, jak získat nástroje .NET Core a konfigurovat různé služby CI bez zadání informací o tom, jak orchestrovat, nebo *sestavují*, váš kód s .NET Core. Volby v tom, jak strukturovat proces sestavení závisí na mnoha faktorech, které nejde pokrýt obecné způsobem. Prozkoumat prostředky a ukázky, které jsou součástí sady dokumentace [Travis CI](https://travis-ci.org/), [AppVeyor](https://www.appveyor.com/), a [Azure DevOps služby](https://docs.microsoft.com/azure/devops/build-release/index) Další informace o orchestraci vaší sestavení s každou technologii.
 
 Dvě obecné metody, které provedete v strukturování proces sestavení pro kód .NET Core pomocí nástroje .NET Core jsou přímo pomocí nástroje MSBuild nebo pomocí příkazů příkazového řádku .NET Core. Jaký přístup je potřeba se určuje podle vaší úrovně pohodlí přístupy a kompromisy složitost. Nástroj MSBuild poskytuje schopnost procesu sestavení je možné vyjádřit jako úlohy a cíle, ale obsahuje přidaná složitost studijních syntaxe souboru projektu MSBuild. Pomocí nástroje příkazového řádku .NET Core je možná jednodušší, ale vyžaduje, abyste psát logiku Orchestrace ve skriptovacím jazyce jako `bash` nebo prostředí PowerShell.
 

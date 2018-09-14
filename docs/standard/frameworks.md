@@ -7,11 +7,11 @@ ms.date: 05/31/2018
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
 ms.openlocfilehash: 76bf496e957022f4d97d3cf3f3975f334b1d5c45
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44141201"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45529724"
 ---
 # <a name="target-frameworks"></a>Cílové architektury
 

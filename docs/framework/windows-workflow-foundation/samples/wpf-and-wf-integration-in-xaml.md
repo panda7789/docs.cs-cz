@@ -3,11 +3,11 @@ title: Integrace WPF a WF v XAML
 ms.date: 03/30/2017
 ms.assetid: a4f53b48-fc90-4315-bca0-ba009562f488
 ms.openlocfilehash: 619f3b7ce2b854e27fe9229fd08727627ce37f1a
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44365923"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "44757419"
 ---
 # <a name="wpf-and-wf-integration-in-xaml"></a>Integrace WPF a WF v XAML
 Tento příklad ukazuje, jak vytvořit aplikaci, která využívá funkce Windows Presentation Foundation (WPF) a Windows Workflow Foundation (WF) v jednom dokumentu XAML. K tomu Ukázka používá rozšíření Windows Workflow Foundation (WF) a XAML.  

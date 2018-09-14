@@ -3,11 +3,11 @@ title: '&lt;security&gt; – &lt;netHttpBinding'
 ms.date: 03/30/2017
 ms.assetid: dc41f6f7-cabc-4a64-9fa0-ceabf861b348
 ms.openlocfilehash: 6357593be17c2d008204598d51610fa3dbf77c27
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44707931"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45527463"
 ---
 # <a name="ltsecuritygt-of-ltnethttpbinding"></a>&lt;security&gt; – &lt;netHttpBinding
 Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  
