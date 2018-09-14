@@ -3,11 +3,11 @@ title: 'Začínáme s jazykem F # pomocí nástrojů příkazového řádku'
 description: 'Informace o vytvoření jednoduchého řešení vícenásobného projektu v F # s použitím rozhraní příkazového řádku .NET Core pro všechny operační systémy (Windows, macOs nebo Linux).'
 ms.date: 03/26/2018
 ms.openlocfilehash: 8a82970f33c8bbe1b8cdd8fb6499b59b16d3cbf3
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44706864"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45569772"
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>Začínáme s jazykem F # pomocí rozhraní příkazového řádku .NET Core
 

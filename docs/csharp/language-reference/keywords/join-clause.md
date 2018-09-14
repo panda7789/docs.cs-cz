@@ -9,11 +9,11 @@ helpviewer_keywords:
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
 ms.openlocfilehash: dee11c1ab754e515c69f330a5919776cbcb1e775
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44368341"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45587672"
 ---
 # <a name="join-clause-c-reference"></a>join – klauzule (Referenční dokumentace jazyka C#)
 

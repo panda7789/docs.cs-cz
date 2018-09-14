@@ -18,11 +18,11 @@ ms.assetid: c4b7ed01-5e38-4959-a3b6-ef9765d6ccf1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 0eb24c7c4f2c60a9c16d903ab1e845b058e280f7
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710032"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45583752"
 ---
 # <a name="time-zone-overview"></a>Přehled časových pásem
 

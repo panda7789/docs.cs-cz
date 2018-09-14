@@ -11,11 +11,11 @@ ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 98d30cd89114aa4aa3d4f7f71f5174c54d3fcecb
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44265075"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45569372"
 ---
 # <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Postupy: Přidávání a odebírání položek v ConcurrentDictionary
 Tento příklad ukazuje, jak přidat, načíst, aktualizovat a odebírat položky z <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Tato kolekce třída je implementace bezpečné pro vlákna. Doporučujeme vám použít ho pokaždé, když se více vláken může být pokus o přístup k prvkům.  

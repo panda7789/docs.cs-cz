@@ -3,11 +3,11 @@ title: Použitelnost funkční transformace (C#)
 ms.date: 07/20/2015
 ms.assetid: c78107bd-b006-4574-a3d4-bbf808388ff3
 ms.openlocfilehash: baa3866c8c2c148a3080522d7c02e28e9d0fd945
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
-ms.translationtype: HT
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44756441"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45569109"
 ---
 # <a name="applicability-of-functional-transformation-c"></a>Použitelnost funkční transformace (C#)
 Čistě funkční transformace se dají použít v nejrůznějších situacích.  

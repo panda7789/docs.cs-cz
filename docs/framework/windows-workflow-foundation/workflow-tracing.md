@@ -3,11 +3,11 @@ title: Trasování pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
 ms.openlocfilehash: 27e56933043c9eb955500cdd1c5bbd06cb33bde8
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45560951"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591246"
 ---
 # <a name="workflow-tracing"></a>Trasování pracovních postupů
 Trasování pracovních postupů nabízí způsob, jak k zaznamenání diagnostických informací s použitím rozhraní .NET Framework naslouchacích procesů trasování. Trasování může povolit, pokud byl zjištěn problém s aplikací a zakázané znovu, až se problém vyřeší. Existují dva způsoby, jak může povolit trasování ladění pracovních postupů. Můžete je nakonfigurovat pomocí prohlížeče událostí trasování nebo můžete použít <xref:System.Diagnostics> k odesílání trasování událostí do souboru.  

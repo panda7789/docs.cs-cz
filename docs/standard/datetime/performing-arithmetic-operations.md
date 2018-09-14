@@ -17,11 +17,11 @@ ms.assetid: 87c7ddf2-f15e-48af-8602-b3642237e6d0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c2a50823b812541786cf1bebfd6b1262ce2e9314
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44708423"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45569161"
 ---
 # <a name="performing-arithmetic-operations-with-dates-and-times"></a>Provádění aritmetických operací s daty a časy
 
