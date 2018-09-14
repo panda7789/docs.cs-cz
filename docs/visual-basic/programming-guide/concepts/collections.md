@@ -3,11 +3,11 @@ title: Kolekce (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
 ms.openlocfilehash: 60519de1f580bf1cfa4aa067d4a999b20ea8d54d
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44700060"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45529776"
 ---
 # <a name="collections-visual-basic"></a>Kolekce (Visual Basic)
 U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů. Existují dva způsoby, jak seskupit objekty: vytvořením polí objektů a vytvořením kolekcí objektů.  

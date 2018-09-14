@@ -3,11 +3,11 @@ title: Připojovací řetězce
 ms.date: 03/30/2017
 ms.assetid: 78d516bc-c99f-4865-8ff1-d856bc1a01c0
 ms.openlocfilehash: 17d91c9b97e370afe3704d2a58f5228e3fec95f1
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
-ms.translationtype: HT
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44708293"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45508577"
 ---
 # <a name="connection-strings"></a>Připojovací řetězce
 Připojovací řetězec obsahuje informace o inicializaci, která je předána jako parametr od poskytovatele dat ke zdroji dat. Syntaxe závisí na poskytovateli dat a připojovací řetězec je analyzován při pokusu o otevření připojení. Připojovací řetězec používaný Entity Framework obsahují informace, které slouží pro připojení k podkladové zprostředkovatele dat ADO.NET, který podporuje rozhraní Entity Framework. Obsahují také informace o požadované modelu a souborů mapování.  
