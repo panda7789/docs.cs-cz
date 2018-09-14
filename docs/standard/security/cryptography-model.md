@@ -9,11 +9,11 @@ ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d74ce08197ac76a601202da8e35ca6f619207076
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44757021"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45614733"
 ---
 # <a name="net-framework-cryptography-model"></a>Kryptografický model rozhraní .NET framework
 Rozhraní .NET Framework poskytuje mnoho standardních kryptografických algoritmů implementace. Tyto algoritmy jsou snadné použití a nejbezpečnější možné výchozí vlastnosti. Kryptografický model rozhraní .NET Framework dědičnost objektů, stream návrhu a konfigurace je také velmi rozšiřitelné.  

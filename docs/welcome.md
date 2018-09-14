@@ -9,11 +9,11 @@ ms.prod: dotnet
 ms.devlang: dotnet
 ms.custom: updateeachrelease
 ms.openlocfilehash: 117b3cb4fc780da3c7624c78c5c242fa6ed9126f
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519423"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45619114"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 

@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
 ms.openlocfilehash: 874eeffe77d7f5e459be4d1a93cc2c45e8f8711a
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44698978"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45615035"
 ---
 # <a name="microsoft-technologies-in-cloud-optimized-applications"></a>Technologie Microsoft v aplikace optimalizované pro cloud
 

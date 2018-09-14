@@ -14,11 +14,11 @@ ms.assetid: 694a33c5-a040-450d-aed5-ac49fc88ce61
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5d2aaeaffaf3abbe1e8efcdb57d40e6ae60f89b5
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45561013"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591946"
 ---
 # <a name="walkthrough-creating-an-extensible-application"></a>Návod: Vytváření rozšiřitelné aplikace
 Tento návod popisuje, jak vytvořit kanál pro doplněk, který provádí funkce jednoduchou kalkulačku. Nepředvádí reálný scénář; Místo toho ukazuje základní funkce kanálu a jak doplněk může poskytovat služby hostitele.  

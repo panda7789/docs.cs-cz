@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Name attribute in XAML [XAML Services]
 ms.assetid: b7e61222-e8cf-48d2-acd0-6df3b7685d48
 ms.openlocfilehash: 08594d9757596eed470ffba8b5b63a01c493c358
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44199905"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45583632"
 ---
 # <a name="xname-directive"></a>x:Name – direktiva
 Jednoznačně identifikuje elementy XAML definované v XAML namescope. Obory názvů XAML a jejich modelů jedinečnost lze použít instance objektů, rozhraní poskytují rozhraní API nebo implementaci chování, které přistupují k graf objektu XAML vytvoří za běhu.  

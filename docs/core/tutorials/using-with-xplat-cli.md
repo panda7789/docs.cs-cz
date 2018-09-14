@@ -3,14 +3,14 @@ title: Začínáme s .NET Core pomocí rozhraní příkazového řádku
 description: Podrobný návod ukazuje, jak začít pracovat s .NET Core ve Windows, Linux nebo macOS pomocí rozhraní příkazového řádku .NET Core (CLI).
 author: cartermp
 ms.author: mairaw
-ms.date: 03/08/2017
+ms.date: 09/10/2018
 ms.technology: dotnet-cli
-ms.openlocfilehash: 5ec7168ebc2ee4fc428d1ab520e986842f111ca7
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: b31a0324c0d762e9898c681cc6581b3860d41f89
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44200314"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591890"
 ---
 # <a name="getting-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Začínáme s .NET Core ve Windows, Linux nebo macOS pomocí příkazového řádku
 
@@ -20,7 +20,7 @@ Pokud nejste obeznámeni s sada nástrojů .NET Core CLI, přečtěte si [.NET C
 
 ## <a name="prerequisites"></a>Požadavky
 
-- [.NET core SDK 1.0](https://www.microsoft.com/net/download/core).
+- [.NET core SDK 2.1](https://www.microsoft.com/net/download/core).
 - Textového editoru nebo editoru kódu podle vašeho výběru.
 
 ## <a name="hello-console-app"></a>Dobrý den, konzolová aplikace!
@@ -31,7 +31,6 @@ Otevřete příkazový řádek a vytvořte složku s názvem *Hello*. Přejděte
 
 ```console
 $ dotnet new console
-$ dotnet restore
 $ dotnet run
 ```
 
@@ -60,13 +59,12 @@ Pojďme si rychlý návod:
 
    [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-2. `$ dotnet restore`
+   `dotnet new` volání [ `dotnet restore` ](../tools/dotnet-restore.md) implicitně. `dotnet restore` volání do [NuGet](https://www.nuget.org/) (.NET Správce balíčků) Chcete-li obnovit strom závislostí. Analyzuje NuGet *Hello.csproj* soubor, soubory ke stažení závislosti definované v souboru (nebo získá z mezipaměti na svém počítači) a zapíše *obj/project.assets.json* soubor, který je potřeba kompilace a spuštění ukázky. 
+   
+   > [!IMPORTANT]
+   > Pokud používáte verzi sady SDK .NET Core 1.x, budete muset volat `dotnet restore` sami po volání `dotnet new`.
 
-   [`dotnet restore`](../tools/dotnet-restore.md) volání do [NuGet](https://www.nuget.org/) (.NET Správce balíčků) Chcete-li obnovit strom závislostí. Analyzuje NuGet *Hello.csproj* soubor, soubory ke stažení závislosti uvedené v souboru (nebo získá z mezipaměti na svém počítači) a zapíše *obj/project.assets.json* souboru.  *Project.assets.json* soubor je potřeba mít možnost kompilace a spuštění.
-
-   *Project.assets.json* soubor je trvalý a kompletní sadu grafu závislostí NuGet a další informace, které popisují aplikace.  Tento soubor je pro čtení pomocí jiných nástrojů, jako například [ `dotnet build` ](../tools/dotnet-build.md) a [ `dotnet run` ](../tools/dotnet-run.md), povolení k procesu zdrojový kód se správnou sadou závislostí NuGet a vazby řešení.
-
-3. `$ dotnet run`
+2. `$ dotnet run`
 
    [`dotnet run`](../tools/dotnet-run.md) volání [ `dotnet build` ](../tools/dotnet-build.md) zajistit, aby se sestavily cíle sestavení a poté zavolá `dotnet <assembly.dll>` spustit cílovou aplikaci.
 
@@ -75,10 +73,9 @@ Pojďme si rychlý návod:
     Hello World!
     ```
 
-    Alternativně můžete také spustit [ `dotnet build` ](../tools/dotnet-build.md) pro kompilaci kódu bez nutnosti spuštění sestavení konzolové aplikace. Výsledkem je kompilovanou aplikaci jako soubor DLL, který můžete spustit s `dotnet bin\Debug\netcoreapp1.0\Hello.dll` na Windows (použijte `/` systémů než Windows). Argumenty do aplikace můžete také zadat jak uvidíte později v tématu.
-
+    Alternativně můžete také spustit [ `dotnet build` ](../tools/dotnet-build.md) pro kompilaci kódu bez nutnosti spuštění sestavení konzolové aplikace. Výsledkem je kompilovanou aplikaci jako soubor DLL, který můžete spustit s `dotnet bin\Debug\netcoreapp2.1\Hello.dll` na Windows (použijte `/` systémů než Windows). Argumenty do aplikace můžete také zadat jak uvidíte později v tématu.
     ```console
-    $ dotnet bin\Debug\netcoreapp1.0\Hello.dll
+    $ dotnet bin\Debug\netcoreapp2.1\Hello.dll
     Hello World!
     ```
 

@@ -3,11 +3,11 @@ title: Soubor je aktuálně otevřena pro zápis
 ms.date: 07/20/2015
 ms.assetid: 80b3c5e8-3a5c-4d60-b1ac-b7460f0b30b0
 ms.openlocfilehash: 83867d30243d34e3043f786a5377f767b7a30963
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44353353"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45595474"
 ---
 # <a name="the-file-is-currently-open-for-writing"></a>Soubor je aktuálně otevřena pro zápis
 Byl proveden pokus o přístup k souboru, který je aktuálně otevřena pro zápis.  

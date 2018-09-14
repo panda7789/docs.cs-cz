@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 176ae3589443937331259ee4716570c66053de3c
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 36526da1fc678e933a75e19bac9c8e1d0a40909c
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44186185"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45597768"
 ---
 # <a name="implementing-a-dispose-method"></a>Implementace metody Dispose
 
@@ -107,7 +107,7 @@ Tady je obecný vzor implementace vzoru dispose pro základní třídu, která p
 
 Třída odvozená z třídy, která implementuje <xref:System.IDisposable> by neměla implementovat rozhraní <xref:System.IDisposable>, protože implementace ze základní třídy <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> je zděděná z příslušných odvozených tříd. Pokud chcete namísto toho implementovat pro odvozenou třídu vzor Dispose, musíte poskytnout následující:  
   
-* A `protected Dispose(Boolean)` metodu, která přepíše metodu základní třídy a provádí vlastní uvolnění prostředků odvozené třídy. Tato metoda by měla volat také `Dispose(Boolean)` metody základní třídy a předat ji hodnotu `true` pro *disposing* argument.  
+* A `protected Dispose(Boolean)` metodu, která přepíše metodu základní třídy a provádí vlastní uvolnění prostředků odvozené třídy. Tato metoda by měla volat také `Dispose(Boolean)` metody základní třídy a předat stav disposing argumentu.  
   
 * Třídu odvozenou z <xref:System.Runtime.InteropServices.SafeHandle> , která obtéká nespravovaný prostředek (doporučeno) nebo přepsání <xref:System.Object.Finalize%2A?displayProperty=nameWithType> metody. <xref:System.Runtime.InteropServices.SafeHandle> Třída poskytuje finalizační metodu, díky které nemusíte vytvářet kód. Pokud poskytnete finalizační metodu, měla by volat `Dispose(Boolean)` přetížení s *disposing* argument `false`.  
   

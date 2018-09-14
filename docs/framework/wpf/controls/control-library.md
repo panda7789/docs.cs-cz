@@ -8,11 +8,11 @@ helpviewer_keywords:
 - libraries [WPF], controls
 ms.assetid: c1b33289-c389-4ac2-b153-3cbb0d8324ad
 ms.openlocfilehash: 26f81a2bfeb5ef4e448ddcbc9b8bac521624a629
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526613"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45592747"
 ---
 # <a name="control-library"></a>Knihovna ovládacích prvků
 Knihovna ovládacích prvků Windows Presentation Foundation (WPF) obsahuje informace o ovládacích prvcích ve Windows Presentation Foundation (WPF), uvedeným podle abecedy.  

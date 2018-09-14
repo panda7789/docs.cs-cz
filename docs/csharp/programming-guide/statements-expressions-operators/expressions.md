@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, expressions
 ms.assetid: c7d8feb0-0e58-4f94-8bf6-4d070550a832
 ms.openlocfilehash: 3cf084102186d9e13727c36ed14e2ea72ca324f9
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45528324"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45615258"
 ---
 # <a name="expressions-c-programming-guide"></a>Výrazy (Průvodce programováním v C#)
 *Výraz* je posloupnost nula nebo více operátory, které lze vyhodnotit na jednu hodnotu, objekt, metodu nebo obor názvů a jednu nebo více operandů. Výrazy se může skládat z literálovou hodnotou, volání metody, operátor a jeho operandy nebo *jednoduchý název*. Název proměnné, člen typu, parametr metody, obor názvů nebo typ může být jednoduché názvy.  

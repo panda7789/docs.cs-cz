@@ -3,11 +3,11 @@ title: Vlastnosti Store Instance pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 5bf75f3c-8f33-450d-967f-6ee862c14c67
 ms.openlocfilehash: 3707e4912628380e5e06eeae1a6d608a4b0d5555
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44699316"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45597267"
 ---
 # <a name="properties-of-sql-workflow-instance-store"></a>Vlastnosti Store Instance pracovních postupů SQL
 Témata v této části obsahují podrobnosti o vlastnostech Store Instance pracovního postupu SQL.  

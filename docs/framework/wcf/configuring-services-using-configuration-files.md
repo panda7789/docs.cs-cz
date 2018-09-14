@@ -5,11 +5,11 @@ helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
 ms.openlocfilehash: 904abff4f3cae5873fe3cc9705dee84f73e2a523
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44361531"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591856"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem dává možnost poskytovat koncový bod a data o chování služby Přejme během nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  

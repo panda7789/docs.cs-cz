@@ -5,11 +5,11 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 09/03/2018
 ms.openlocfilehash: 390af06e81788c3f64f255e5c85efdaa167274f4
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45510304"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45614826"
 ---
 # <a name="net-core-application-deployment"></a>Nasazení aplikace .NET core
 

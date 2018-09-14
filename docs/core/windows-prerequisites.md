@@ -4,12 +4,12 @@ description: Informace v závislosti na vaší Windows potřebujete počítač p
 author: mairaw
 ms.author: mairaw
 ms.date: 08/31/2018
-ms.openlocfilehash: 477d303b50495070ba3a3540188deb274dd9f510
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 63c0de2b413f38458dba89506f4070760b3f53f8
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45514197"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45594760"
 ---
 # <a name="prerequisites-for-net-core-on-windows"></a>Předpoklady pro .NET Core ve Windows
 
@@ -61,7 +61,7 @@ Při spuštění na verzích Windows starších než Windows 10 a Windows server
 
 ## <a name="prerequisites-with-visual-studio-2017"></a>Požadavky sady Visual Studio 2017
 
-Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .NET Core SDK. [Visual Studio 2017](#visual-studio-2017) poskytuje integrované vývojové prostředí pro aplikace .NET Core ve Windows.
+Můžete použít libovolný editor k vývoji aplikací .NET Core pomocí sady .NET Core SDK. Visual Studio 2017 poskytuje integrované vývojové prostředí pro aplikace .NET Core ve Windows.
 
 Další informace o změnách v sadě Visual Studio 2017 v [poznámky k verzi](/visualstudio/releasenotes/vs2017-relnotes).
 

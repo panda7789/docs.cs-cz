@@ -9,11 +9,11 @@ helpviewer_keywords:
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
 ms.openlocfilehash: 854c8b61fa8164bccfc9451f2f163dab4a56388f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44360489"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45595331"
 ---
 # <a name="ltincludegt-c-programming-guide"></a>&lt;zahrnout&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

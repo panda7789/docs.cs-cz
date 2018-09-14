@@ -3,11 +3,11 @@ title: Delegáti (F#)
 description: 'Zjistěte, jak pracovat s Delegáti v jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: be58997dffe8fcd949bbc2d47d86ffccc157d43e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45517087"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45615427"
 ---
 # <a name="delegates"></a>Delegáty
 

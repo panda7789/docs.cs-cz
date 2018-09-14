@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
 ms.openlocfilehash: 0003e6c5e9499c066f47202a6dd03fc86268d679
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45517980"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591144"
 ---
 # <a name="specifying-xml-values-as-parameters"></a>Zadání hodnot XML jako parametry
 Pokud dotaz vyžaduje parametr, jehož hodnota je řetězec XML, vývojáři můžete zadat tuto hodnotu pomocí instance **SqlXml** datového typu. Neexistují žádné triky; ve skutečnosti Sloupce XML v systému SQL Server přijmout hodnoty parametrů v přesně stejným způsobem jako jiné datové typy.  

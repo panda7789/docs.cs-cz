@@ -4,12 +4,12 @@ description: Informace o nových funkcích v .NET Core.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 08/13/2017
-ms.openlocfilehash: 02aac2dab2b892927c0c98fae30bb287a6e24ad6
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.openlocfilehash: 4be579f2000c86b3dad412b24589fa8e7024d2f0
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44778454"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591760"
 ---
 # <a name="whats-new-in-net-core-20"></a>Co je nového v .NET Core 2.0
 
@@ -158,8 +158,8 @@ Nyní můžete nainstalovat sadu .NET Core SDK nezávisle na Visual Studio. Dík
 
 - [Mikroslužby a kontejnery Dockeru](../../standard/microservices-architecture/index.md)
 - [Webové aplikace s ASP.NET](../../standard/modern-web-apps-azure-architecture/index.md)
-- [Mobilní aplikace s využitím kódu Xamarin](/xamarin/xamarin-forms/enterprise-application-patterns/index.md)
-- [Aplikace, které jsou nasazeny do cloudu s Azure](/azure/architecture/reference-architectures/index.md)
+- [Mobilní aplikace s využitím kódu Xamarin](/xamarin/xamarin-forms/enterprise-application-patterns/index)
+- [Aplikace, které jsou nasazeny do cloudu s Azure](/azure/architecture/reference-architectures/index)
 
 ## <a name="see-also"></a>Viz také:
 

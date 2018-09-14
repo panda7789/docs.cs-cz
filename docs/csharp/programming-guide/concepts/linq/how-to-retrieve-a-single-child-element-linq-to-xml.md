@@ -3,11 +3,11 @@ title: 'Postupy: Načtení jednoho podřízeného elementu (LINQ to XML) (C#)'
 ms.date: 07/20/2015
 ms.assetid: ce37db9e-76fa-46eb-b4cc-e8f32d22ad90
 ms.openlocfilehash: 77ccd56d1d131a740bb90ef4258ef35504f5e3cb
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45509585"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45597874"
 ---
 # <a name="how-to-retrieve-a-single-child-element-linq-to-xml-c"></a>Postupy: Načtení jednoho podřízeného elementu (LINQ to XML) (C#)
 Toto téma vysvětluje, jak načíst jeden podřízený prvek, název podřízeného prvku. Pokud znáte název podřízeného prvku a že je pouze jeden element, který má tento název, může být vhodné k načtení pouze jednoho prvku, namísto kolekce.  

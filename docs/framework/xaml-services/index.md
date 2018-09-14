@@ -7,11 +7,11 @@ helpviewer_keywords:
 - System.Xaml [XAML Services], conceptual documentation
 ms.assetid: 0e11f386-808c-4eae-9ba6-029ad7ba2211
 ms.openlocfilehash: 373478e8c21fca66cbfbf7a58fc7d53f65ce5d0b
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45508314"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45617380"
 ---
 # <a name="xaml-services"></a>XAML Services
 Toto téma popisuje možnosti sady technologií označované jako rozhraní .NET Framework XAML Services. Většina služeb a rozhraní API popsané jsou umístěny v oboru názvů System.Xaml, což je sestavení představeny s nástrojem sestavení [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] sadu .NET core sestavení. Mezi tyto služby patří objekty pro vytváření čtečky a zapisovače, schéma třídy a podpora schématu, zapisujících tříd, vnitřní podporu pro jazyk XAML a dalších funkcí jazyka XAML.  

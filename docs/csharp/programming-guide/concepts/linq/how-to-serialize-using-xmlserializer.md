@@ -3,11 +3,11 @@ title: 'Postupy: serializace pomocí třídy XmlSerializer (C#)'
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
 ms.openlocfilehash: 32a23792947639c2c0eb1dc14b640c3786bdfd4c
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
-ms.translationtype: MT
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44777595"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45583593"
 ---
 # <a name="how-to-serialize-using-xmlserializer-c"></a>Postupy: serializace pomocí třídy XmlSerializer (C#)
 Toto téma ukazuje příklad, který serializuje a deserializuje pomocí <xref:System.Xml.Serialization.XmlSerializer>.  

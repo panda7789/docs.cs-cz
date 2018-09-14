@@ -12,12 +12,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: 805a495790266b34ede030b76fbd83e6f172ceaf
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 66412c620b8107312e5d58fef5cf1b5d9ee90107
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44206114"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45615511"
 ---
 # <a name="introducing-xml-serialization"></a>Představení serializace XML
 
@@ -111,7 +111,7 @@ Následující položky lze serializovat pomocí **XmLSerializer** třídy:
 
 ## <a name="advantages-of-using-xml-serialization"></a>Výhody použití serializace XML
 
-**XmlSerializer**třídy získáte kompletní a flexibilní kontrolu při serializaci objektu jako XML. Pokud vytváříte webové služby XML, můžete použít atributy, které řídí serializace za účelem třídy a členy zajistit, že výstup kódu XML odpovídá určité schéma.
+**XmlSerializer** třídy získáte kompletní a flexibilní kontrolu při serializaci objektu jako XML. Pokud vytváříte webové služby XML, můžete použít atributy, které řídí serializace za účelem třídy a členy zajistit, že výstup kódu XML odpovídá určité schéma.
 
 Například **XmlSerializer** vám umožní:
 

@@ -3,11 +3,11 @@ title: Rozšíření kontroly nad zpracováním a vykazováním chyb
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
 ms.openlocfilehash: 6492807b55b50662790cf25807a35ddd65fbe01d
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45560607"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45595292"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Rozšíření kontroly nad zpracováním a vykazováním chyb
 Tato ukázka předvádí, jak rozšířit řídit zpracování chyb a zpráv o chybách pomocí služby Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.IErrorHandler> rozhraní. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) s další kód přidá ke službě pro zpracování chyb. Vynutí klient několik chybové stavy. Služba zachycuje chyby a zaznamenává je do souboru.  

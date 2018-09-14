@@ -6,11 +6,11 @@ ms.author: wiwagn
 ms.date: 09/13/2017
 ms.custom: vs-dotnet
 ms.openlocfilehash: 031c0a433391fbe4cdd40f6ce648f476787baf48
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45529620"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45594351"
 ---
 # <a name="build-a-c-hello-world-application-with-net-core-in-visual-studio-2017"></a>Vytvořte si aplikaci C# Hello World pomocí .NET Core v sadě Visual Studio 2017
 

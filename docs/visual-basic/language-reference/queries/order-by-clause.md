@@ -11,11 +11,11 @@ helpviewer_keywords:
 - Order By statement [Visual Basic]
 ms.assetid: fa911282-6b81-44c7-acfa-46b5bb93df75
 ms.openlocfilehash: d4abb5f0b75ae4069c1dbe695a5c810b1f7aa6e1
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45558009"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45609850"
 ---
 # <a name="order-by-clause-visual-basic"></a>Order By – klauzule (Visual Basic)
 Určuje pořadí řazení výsledku dotazu.  

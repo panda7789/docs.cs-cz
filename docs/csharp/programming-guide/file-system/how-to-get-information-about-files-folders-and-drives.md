@@ -5,11 +5,11 @@ helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
 ms.openlocfilehash: 8ebacff0f3a1704ec001e3570d0df136f54baf9d
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44514222"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45589427"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Postupy: Získávání informací o souborech, složkách a jednotkách (Průvodce programováním v C#)
 Informace o systému souborů v rozhraní .NET Framework, přístupné pomocí následující třídy:  

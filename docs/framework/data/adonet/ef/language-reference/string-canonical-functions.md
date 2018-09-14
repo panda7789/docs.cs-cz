@@ -3,11 +3,11 @@ title: Řetězcové kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 5e2cbebd-5df3-47c7-b0e2-49a17ab22bfb
 ms.openlocfilehash: d4758f8325b99bc4bd91575dd774d2dabde1f925
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44272927"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45587711"
 ---
 # <a name="string-canonical-functions"></a>Řetězcové kanonické funkce
 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] zahrnuje řetězcové kanonické funkce.  

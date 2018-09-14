@@ -11,11 +11,11 @@ ms.assetid: a9ed3e4e-4f29-4207-b730-ed0a51ecbc19
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 216480e893f6dbebbb204cbf2bfebae8dc139ec4
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44705424"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45593853"
 ---
 # <a name="how-to-use-spinlock-for-low-level-synchronization"></a>Postupy: Použití SpinLock pro synchronizaci nízké úrovně
 Následující příklad ukazuje, jak používat <xref:System.Threading.SpinLock>.  

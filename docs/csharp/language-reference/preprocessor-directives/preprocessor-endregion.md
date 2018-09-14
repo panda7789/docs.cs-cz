@@ -7,11 +7,11 @@ helpviewer_keywords:
 - '#endregion directive [C#]'
 ms.assetid: 16099660-91b2-49e5-9646-77f9ef069526
 ms.openlocfilehash: 0ac711740a3d20d83787882b5ff38954bed2ac14
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44704940"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45596350"
 ---
 # <a name="endregion-c-reference"></a>#endregion (referenční dokumentace jazyka C#)
 `#endregion` označuje konec [#region](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md) bloku. Příklad:  

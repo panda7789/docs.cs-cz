@@ -11,11 +11,11 @@ helpviewer_keywords:
 - see C# XML tag
 ms.assetid: 0200de01-7e2f-45c4-9094-829d61236383
 ms.openlocfilehash: c37ad869b3eb904377cd4470a85cd557f6560290
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45527880"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591212"
 ---
 # <a name="ltseegt-c-programming-guide"></a>&lt;Zobrazit&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

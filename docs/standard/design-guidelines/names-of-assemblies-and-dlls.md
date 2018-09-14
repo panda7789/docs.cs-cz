@@ -11,11 +11,11 @@ ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 97bd152cff53fb1c2edb107b6d6b34bd91ca1c49
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45516221"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45613713"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>Názvy sestavení a knihoven DLL
 Sestavení je jednotka nasazení a identity pro programy pro spravovaný kód. I když sestavení může zahrnovat jeden nebo více souborů, obvykle sestavení mapování 1: 1 s knihovnou DLL. Proto tato část popisuje pouze knihovny DLL konvence, které pak můžou být mapované na zásady vytváření názvů sestavení.  

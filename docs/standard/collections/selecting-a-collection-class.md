@@ -13,11 +13,11 @@ ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d84bc5ac2256139626311ff7c848170c28ffbd5b
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44708163"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45591580"
 ---
 # <a name="selecting-a-collection-class"></a>Výběr třídy kolekce
 Je nutné pečlivě zvolit třídy kolekce. Pomocí nesprávného typu můžete omezit používání kolekce. Obecně platí, vyhněte se použití typů v <xref:System.Collections> obor názvů Pokud jsou specificky cílené na rozhraní .NET Framework verze 1.1. Obecné a souběžné verze kolekce jsou upřednostňovány kvůli jejich vyšší bezpečnost typů a dalších vylepšení.  

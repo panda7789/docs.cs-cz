@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: bde771051af034e7da72e9648fb3b0f37a95fa01
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: a614cfe3d3437426893d8748165b2ef4d6389765
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404386"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45587599"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
@@ -44,15 +44,15 @@ Ať už dáváte přednost úplné a výkonné IDE nebo editoru jednoduchý a fl
 
 Životní cyklus vývoje aplikací začíná od počítače každý vývojář, psaní kódu aplikace pomocí jejich upřednostňovaný jazyk a místní testování. Vývojáři rozhodnout jejich preferovaného systému správy zdrojového a můžete nakonfigurovat průběžnou integraci (CI) a/nebo průběžné doručování/nasazování (CD) pomocí serveru sestavení nebo na základě předdefinovaných funkcí Azure.
 
-Abyste mohli začít s vývojem aplikace ASP.NET Core pomocí CI/CD, můžete použít Visual Studio Team Services nebo vaše organizace vlastní Team Foundation Server (TFS).
+Abyste mohli začít s vývojem aplikace ASP.NET Core pomocí CI/CD, můžete použít Azure DevOps služby nebo vaše organizace vlastní Team Foundation Server (TFS).
 
 ### <a name="initial-setup"></a>Počáteční nastavení
 
 Pokud chcete vytvořit kanál pro vydávání verzí pro vaši aplikaci, musíte mít kód vaší aplikace ve správě zdrojového kódu. Nastavení místního úložiště a připojte ho do vzdáleného úložiště v týmovém projektu. Postupujte podle těchto pokynů:
 
-- [Sdílení kódu pomocí Gitu a Visual Studio](https://docs.microsoft.com/vsts/git/share-your-code-in-git-vs) nebo
+- [Sdílení kódu pomocí Gitu a Visual Studio](https://docs.microsoft.com/azure/devops/git/share-your-code-in-git-vs) nebo
 
-- [Sdílení kódu s TFVC a sady Visual Studio](https://docs.microsoft.com/vsts/tfvc/share-your-code-in-tfvc-vs)
+- [Sdílení kódu s TFVC a sady Visual Studio](https://docs.microsoft.com/azure/devops/tfvc/share-your-code-in-tfvc-vs)
 
 Vytvořte na Azure App Service, kde budete nasazovat aplikaci. Vytvoření webové aplikace tak, že přejdete do okna pro aplikační služby na portálu Azure portal. Klikněte na + Přidat, vyberte šablonu Web App, klikněte na tlačítko Vytvořit a zadejte název a další podrobnosti. Webová aplikace bude přístupné z {name}. azurewebsites.net.
 
@@ -62,13 +62,13 @@ Vytvořte na Azure App Service, kde budete nasazovat aplikaci. Vytvoření webov
 
 Proces sestavení CI provede automatické sestavení pokaždé, když se zaměřuje na úložiště správy zdrojového kódu v projektu nový kód. Získáte okamžitou zpětnou vazbu, ke které dojde k sestavení kódu (a v ideálním případě předá automatizované testy) a může potenciálně být nasazen. Toto sestavení CI vytvoří webové nasazení artefaktů balíček a publikujte ji za spotřebu procesem CD.
 
-[Definování procesu sestavení CI](https://docs.microsoft.com/vsts/build-release/apps/aspnet/build-aspnet-core#ci)
+[Definování procesu sestavení CI](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core#ci)
 
 Nezapomeňte si aktivovat nepřetržitou integraci, takže systém bude zařadit sestavení do fronty pokaždé, když se někdo z vašeho týmu potvrdí nový kód. Sestavení testu a ověřte, že je vytváření webového balíčku nasadit v jednom z jeho artefaktů.
 
 Po úspěšném sestavení, nasadí váš proces průběžného Doručování výsledky sestavení CI do webové aplikace Azure. Pokud chcete nastavit tuto konfiguraci, můžete vytvořit a nakonfigurovat *vydání*, který se nasadí do služby Azure App Service.
 
-[Definování procesu vydávání verzí CD](https://docs.microsoft.com/vsts/build-release/apps/aspnet/build-aspnet-core#cd)
+[Definování procesu vydávání verzí CD](https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core#cd)
 
 Po nakonfigurování svůj kanál CI/CD provést aktualizace webové aplikace a potvrzovat je do správy zdrojového kódu k jejich nasazení.
 
@@ -86,7 +86,7 @@ Vývoj aplikace ASP.NET Core pro nasazení do Azure se nijak neliší od vývoje
 
 #### <a name="step-2-application-code-repository"></a>Krok 2. Úložiště kódu aplikace
 
-Pokaždé, když budete připraveni sdílet svůj kód se svým týmem, by měl své změny odeslat z místního zdroje úložiště do úložiště sdílené zdrojového kódu vašeho týmu. Pokud jste pracovali na vlastní větvi, tento krok obvykle zahrnuje, sloučení kódu do větve sdílené (třeba podle zprávy z [žádosti o přijetí změn](https://docs.microsoft.com/vsts/git/pull-requests)).
+Pokaždé, když budete připraveni sdílet svůj kód se svým týmem, by měl své změny odeslat z místního zdroje úložiště do úložiště sdílené zdrojového kódu vašeho týmu. Pokud jste pracovali na vlastní větvi, tento krok obvykle zahrnuje, sloučení kódu do větve sdílené (třeba podle zprávy z [žádosti o přijetí změn](https://docs.microsoft.com/azure/devops/git/pull-requests)).
 
 #### <a name="step-3-build-server-continuous-integration-build-test-package"></a>Krok 3. Server sestavení: Průběžné integrace. sestavení, testování, balíček
 
@@ -107,7 +107,7 @@ Zatímco webová aplikace běží, můžete sledovat stav aplikace a shromažďo
 ## <a name="references"></a>Odkazy
 
 **Sestavení a nasazení aplikace ASP.NET Core do Azure**  
-<https://docs.microsoft.com/vsts/build-release/apps/aspnet/build-aspnet-core>
+<https://docs.microsoft.com/azure/devops/build-release/apps/aspnet/build-aspnet-core>
 
 >[!div class="step-by-step"]
 [Předchozí](test-asp-net-core-mvc-apps.md)

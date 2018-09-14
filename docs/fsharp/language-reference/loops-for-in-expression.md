@@ -3,11 +3,11 @@ title: 'Smyčky: Výraz for...in (F#)'
 description: 'V tématu Jak F # for... ve výrazu konstrukce opakování ve smyčce se používá k iteraci přes odpovídá vzoru v vyčíslitelné kolekce.'
 ms.date: 05/16/2016
 ms.openlocfilehash: c4fba1f1dea3993cafa2e37ad0f32d9fb2eed85a
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44708806"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45615758"
 ---
 # <a name="loops-forin-expression"></a>Smyčky: Výraz for...in
 

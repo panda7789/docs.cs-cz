@@ -6,11 +6,11 @@ helpviewer_keywords:
 - summary XML tag
 ms.assetid: 861c847d-dd94-478a-aa23-bf4899cdc848
 ms.openlocfilehash: 5ef9b7a98503ff36174de4418ca7d599c365f5aa
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44267040"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45593776"
 ---
 # <a name="ltsummarygt-visual-basic"></a>&lt;Souhrn&gt; (Visual Basic)
 Určuje souhrn člena.  
