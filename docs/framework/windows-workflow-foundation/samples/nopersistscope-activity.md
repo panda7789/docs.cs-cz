@@ -3,11 +3,11 @@ title: Aktivita NoPersistScope
 ms.date: 03/30/2017
 ms.assetid: 9a0baeb7-a05c-4fac-b905-252758cb71bb
 ms.openlocfilehash: 6543756594b6734aec39bf22c5ab6215605341b1
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44038780"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45529239"
 ---
 # <a name="nopersistscope-activity"></a>Aktivita NoPersistScope
 Tento příklad ukazuje, jak pracovat s neserializovatelná a uvolnitelné stav v rámci pracovního postupu. Je důležité, že pracovní postupy se nepokoušejte se zachovat neserializovatelná stavu a je také důležité kvůli uvolnitelné objekty na vyčištění po se používají v pracovním postupu.  

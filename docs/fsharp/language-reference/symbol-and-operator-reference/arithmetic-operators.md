@@ -3,11 +3,11 @@ title: Aritmetické operátory (F#)
 description: 'Další informace o aritmetických operátorů, které jsou k dispozici v programovacím jazyce F #.'
 ms.date: 04/04/2018
 ms.openlocfilehash: 008aa84b8736bb3a734ce8bb9713d34c17f1b76e
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44361956"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45560724"
 ---
 # <a name="arithmetic-operators"></a>Aritmetické operátory
 

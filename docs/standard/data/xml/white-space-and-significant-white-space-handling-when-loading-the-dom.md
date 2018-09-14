@@ -6,11 +6,11 @@ ms.assetid: 1b141a0a-50d8-4ebd-83cd-a84449bb22b2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1d9bbb14320b84a6d417c5c28026b169092de219
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44708176"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45560692"
 ---
 # <a name="white-space-and-significant-white-space-handling-when-loading-the-dom"></a>Mezer a významných mezer při načítání modelu DOM
 Při načítání dokumentu, můžete nastavit možnost zachovat mezer a vytvořit **XmlWhitespace** uzlů ve stromu dokumentu. Chcete-li vytvořit prázdné znaky uzly, nastavte **PreserveWhitespace** vlastnost na hodnotu true. Pokud je nastavena na **false**, což je výchozí, nejsou vytvořeny uzly mezer. Významné prázdné znaky uzly se vždy zachovají, a **XmlSignificantWhitespace** v paměti, která bude představovat tato data, bez ohledu na nastavení se vždy vytvářejí uzly **PreserveWhitespace** příznak.  

@@ -6,11 +6,11 @@ ms.assetid: c57b46e6-5c77-408f-bc4e-67a5dcc9cc05
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: dca266066a4e53a57789210fd61e90edfcc13b79
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44368174"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45529477"
 ---
 # <a name="accessing-xml-data-using-xpathnavigator"></a>Přístup k datům XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje metody pro přechod uzlů, extrahování dat XML a přístup k datům silného typu XML v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> objektu.  

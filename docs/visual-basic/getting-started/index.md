@@ -1,16 +1,16 @@
 ---
 title: Začínáme s jazykem Visual Basic
-ms.date: 08/10/2017
+ms.date: 09/10/2018
 helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-ms.openlocfilehash: 373f5815e1ca466545da4e2368bdf55e944d28f8
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.openlocfilehash: c17b3e1849664bb1a5d56b60e8f4121fedfcdae3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44367571"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557770"
 ---
 # <a name="get-started-with-visual-basic"></a>Začínáme s jazykem Visual Basic
 Tato část dokumentace vám pomůže začít s vývojem aplikací jazyka Visual Basic.  
@@ -31,12 +31,6 @@ Obsahuje seznam změn v této verzi, které by mohly bránit aplikaci v kompilac
   
 [Další zdroje informací pro programátory, kteří používají Visual Basic](additional-resources.md)  
 Obsahuje seznam webů a diskusních skupin, na kterých můžete nalézt odpovědi na běžné problémy.  
-
-## <a name="develop-net-core-applications-with-visual-basic"></a>Vývoj aplikací .NET Core pomocí jazyka Visual Basic
-
-[Vytvoření aplikace Hello World v jazyce Visual Basic pomocí .NET Core v sadě Visual Studio 2017](../../core/tutorials/vb-with-visual-studio.md) 
-
-[Vytvoření knihovny tříd pomocí jazyka Visual Basic a platformy .NET Core v sadě Visual Studio 2017](../../core/tutorials/vb-library-with-visual-studio.md) 
 
 ## <a name="see-also"></a>Viz také:
  [Získejte Visual Basic](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)  

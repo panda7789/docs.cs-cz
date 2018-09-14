@@ -6,11 +6,11 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
 ms.openlocfilehash: 9ece2fe051855d0fd39556f56a4343ead2c437bc
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44368072"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45527802"
 ---
 # <a name="wcf-data-services-45"></a>Datové služby WCF 4.5
 

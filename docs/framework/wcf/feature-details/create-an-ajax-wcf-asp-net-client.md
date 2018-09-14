@@ -2,12 +2,12 @@
 title: Vytvoření služby WCF s podporou jazyka AJAX a klienta ASP.NET v sadě Visual Studio
 ms.date: 08/17/2018
 ms.assetid: 95012df8-2a66-420d-944a-8afab261013e
-ms.openlocfilehash: 07a1e903991e09243572f2a99c19edae7f9793b6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 954ee0409f370c3fa28814a70d51334fd75f7b79
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43384283"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45558038"
 ---
 # <a name="how-to-create-an-ajax-enabled-wcf-service-and-an-aspnet-client-that-accesses-the-service"></a>Postupy: Vytvoření služby WCF, ve které je povolený AJAX, a klienta ASP.NET přistupujícího k ní
 
@@ -25,7 +25,7 @@ Toto téma ukazuje, jak pomocí sady Visual Studio k vytvoření služby s povol
 
 1. V **nová webová aplikace ASP.NET** dialogového okna, vyberte **prázdný** a pak vyberte **OK**.
 
-   ![Technologie ASP.NET webové aplikace typu dialogu v sadě Visual Studio](../media/create-an-ajax-wcf-asp-net-client/new-asp-net-web-app-type.png)
+   ![Technologie ASP.NET webové aplikace typu dialogu v sadě Visual Studio](media/create-an-ajax-wcf-asp-net-client/new-asp-net-web-app-type.png)
 
 ## <a name="add-a-web-form"></a>Přidejte webový formulář
 
@@ -51,7 +51,7 @@ Toto téma ukazuje, jak pomocí sady Visual Studio k vytvoření služby s povol
 
 1. V **přidat novou položku** dialogového okna, rozbalte **nainstalováno** > **Visual C#** > **webové** kategorie a pak Vyberte **služby WCF (podporou jazyka AJAX)** šablony.
 
-   ![Šablona služby WCF (podporou jazyka AJAX) položku v sadě Visual Studio](../media/create-an-ajax-wcf-asp-net-client/add-wcf-service.png)
+   ![Šablona služby WCF (podporou jazyka AJAX) položku v sadě Visual Studio](media/create-an-ajax-wcf-asp-net-client/add-wcf-service.png)
 
 1. Pojmenujte službu **CostService** a pak vyberte **přidat**.
 

@@ -3,11 +3,11 @@ title: 'Klíčové slovo Fixed (F #)'
 description: "Zjistěte, jak vám může \"pin\" místní do zásobníku, aby se zabránilo kolekce s F # 'fixed' – klíčové slovo."
 ms.date: 04/24/2017
 ms.openlocfilehash: 1bf1b2ad67d2dd7f854e569cfca7c06e8aec7f4c
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44271725"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45560370"
 ---
 # <a name="the-fixed-keyword"></a>Klíčové slovo Fixed
 

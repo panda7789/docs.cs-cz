@@ -5,11 +5,11 @@ author: cartermp
 ms.author: mairaw
 ms.date: 02/15/2018
 ms.openlocfilehash: 06d8d36d8369680c54af4d16513b2b871b57079c
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44709935"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45529672"
 ---
 # <a name="analyze-your-third-party-dependencies"></a>Analýza závislostí třetích stran
 
