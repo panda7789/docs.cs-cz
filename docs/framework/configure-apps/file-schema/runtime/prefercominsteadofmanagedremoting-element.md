@@ -8,62 +8,62 @@ ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c05e27226a58086c806e8977ba50a55873d1167e
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44222659"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45508340"
 ---
-# <a name="ltprefercominsteadofmanagedremotinggt-element"></a><span data-ttu-id="4c107-102">&lt;Prefercominsteadofmanagedremoting –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="4c107-102">&lt;PreferComInsteadOfManagedRemoting&gt; Element</span></span>
-<span data-ttu-id="4c107-103">Určuje, zda modul runtime použijí komunikace s objekty COM místo vzdálené komunikace pro všechna volání napříč hranicemi domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="4c107-103">Specifies whether the runtime will use COM interop instead of remoting for all calls across application domain boundaries.</span></span>  
+# <a name="ltprefercominsteadofmanagedremotinggt-element"></a><span data-ttu-id="2ec3e-102">&lt;Prefercominsteadofmanagedremoting –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="2ec3e-102">&lt;PreferComInsteadOfManagedRemoting&gt; Element</span></span>
+<span data-ttu-id="2ec3e-103">Určuje, zda modul runtime použijí komunikace s objekty COM místo vzdálené komunikace pro všechna volání napříč hranicemi domény aplikace.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-103">Specifies whether the runtime will use COM interop instead of remoting for all calls across application domain boundaries.</span></span>  
   
- <span data-ttu-id="4c107-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="4c107-104">\<configuration></span></span>  
-<span data-ttu-id="4c107-105">\<modul runtime ></span><span class="sxs-lookup"><span data-stu-id="4c107-105">\<runtime></span></span>  
-<span data-ttu-id="4c107-106">\<Prefercominsteadofmanagedremoting – ></span><span class="sxs-lookup"><span data-stu-id="4c107-106">\<PreferComInsteadOfManagedRemoting></span></span>  
+ <span data-ttu-id="2ec3e-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="2ec3e-104">\<configuration></span></span>  
+<span data-ttu-id="2ec3e-105">\<modul runtime ></span><span class="sxs-lookup"><span data-stu-id="2ec3e-105">\<runtime></span></span>  
+<span data-ttu-id="2ec3e-106">\<Prefercominsteadofmanagedremoting – ></span><span class="sxs-lookup"><span data-stu-id="2ec3e-106">\<PreferComInsteadOfManagedRemoting></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4c107-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4c107-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2ec3e-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2ec3e-107">Syntax</span></span>  
   
 ```xml  
 <PreferComInsteadOfManagedRemoting enabled="true|false"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="4c107-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="4c107-108">Attributes and Elements</span></span>  
- <span data-ttu-id="4c107-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="4c107-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2ec3e-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="2ec3e-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="2ec3e-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="4c107-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="4c107-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="2ec3e-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="2ec3e-110">Attributes</span></span>  
   
-|<span data-ttu-id="4c107-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="4c107-111">Attribute</span></span>|<span data-ttu-id="4c107-112">Popis</span><span class="sxs-lookup"><span data-stu-id="4c107-112">Description</span></span>|  
+|<span data-ttu-id="2ec3e-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="2ec3e-111">Attribute</span></span>|<span data-ttu-id="2ec3e-112">Popis</span><span class="sxs-lookup"><span data-stu-id="2ec3e-112">Description</span></span>|  
 |---------------|-----------------|  
-|`enabled`|<span data-ttu-id="4c107-113">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="4c107-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="4c107-114">Určuje, zda modul runtime použije komunikace s objekty COM místo vzdálené komunikace přes hranice aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="4c107-114">Indicates whether the runtime will use COM interop instead of remoting across application domain boundaries.</span></span>|  
+|`enabled`|<span data-ttu-id="2ec3e-113">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-113">Required attribute.</span></span><br /><br /> <span data-ttu-id="2ec3e-114">Určuje, zda modul runtime použije komunikace s objekty COM místo vzdálené komunikace přes hranice aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-114">Indicates whether the runtime will use COM interop instead of remoting across application domain boundaries.</span></span>|  
   
-## <a name="enabled-attribute"></a><span data-ttu-id="4c107-115">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="4c107-115">enabled Attribute</span></span>  
+## <a name="enabled-attribute"></a><span data-ttu-id="2ec3e-115">Atribut enabled</span><span class="sxs-lookup"><span data-stu-id="2ec3e-115">enabled Attribute</span></span>  
   
-|<span data-ttu-id="4c107-116">Hodnota</span><span class="sxs-lookup"><span data-stu-id="4c107-116">Value</span></span>|<span data-ttu-id="4c107-117">Popis</span><span class="sxs-lookup"><span data-stu-id="4c107-117">Description</span></span>|  
+|<span data-ttu-id="2ec3e-116">Hodnota</span><span class="sxs-lookup"><span data-stu-id="2ec3e-116">Value</span></span>|<span data-ttu-id="2ec3e-117">Popis</span><span class="sxs-lookup"><span data-stu-id="2ec3e-117">Description</span></span>|  
 |-----------|-----------------|  
-|`false`|<span data-ttu-id="4c107-118">Modul runtime bude používat vzdálenou komunikaci přes hranice aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="4c107-118">The runtime will use remoting across application domain boundaries.</span></span> <span data-ttu-id="4c107-119">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="4c107-119">This is the default.</span></span>|  
-|`true`|<span data-ttu-id="4c107-120">Modul runtime použije komunikace s objekty COM přes hranice aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="4c107-120">The runtime will use COM interop across application domain boundaries.</span></span>|  
+|`false`|<span data-ttu-id="2ec3e-118">Modul runtime bude používat vzdálenou komunikaci přes hranice aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-118">The runtime will use remoting across application domain boundaries.</span></span> <span data-ttu-id="2ec3e-119">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-119">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="2ec3e-120">Modul runtime použije komunikace s objekty COM přes hranice aplikačních domén.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-120">The runtime will use COM interop across application domain boundaries.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="4c107-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="4c107-121">Child Elements</span></span>  
- <span data-ttu-id="4c107-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="4c107-122">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="2ec3e-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="2ec3e-121">Child Elements</span></span>  
+ <span data-ttu-id="2ec3e-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="2ec3e-122">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="4c107-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="4c107-123">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="2ec3e-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="2ec3e-123">Parent Elements</span></span>  
   
-|<span data-ttu-id="4c107-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="4c107-124">Element</span></span>|<span data-ttu-id="4c107-125">Popis</span><span class="sxs-lookup"><span data-stu-id="4c107-125">Description</span></span>|  
+|<span data-ttu-id="2ec3e-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="2ec3e-124">Element</span></span>|<span data-ttu-id="2ec3e-125">Popis</span><span class="sxs-lookup"><span data-stu-id="2ec3e-125">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="4c107-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4c107-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`runtime`|<span data-ttu-id="4c107-127">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="4c107-127">Contains information about assembly binding and garbage collection.</span></span>|  
+|`configuration`|<span data-ttu-id="2ec3e-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`runtime`|<span data-ttu-id="2ec3e-127">Obsahuje informace o vazbách sestavení a uvolnění paměti.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-127">Contains information about assembly binding and garbage collection.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="4c107-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4c107-128">Remarks</span></span>  
- <span data-ttu-id="4c107-129">Při nastavení `enabled` atribut `true`, modul runtime chová takto:</span><span class="sxs-lookup"><span data-stu-id="4c107-129">When you set the `enabled` attribute to `true`, the runtime behaves as follows:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2ec3e-128">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2ec3e-128">Remarks</span></span>  
+ <span data-ttu-id="2ec3e-129">Při nastavení `enabled` atribut `true`, modul runtime chová takto:</span><span class="sxs-lookup"><span data-stu-id="2ec3e-129">When you set the `enabled` attribute to `true`, the runtime behaves as follows:</span></span>  
   
--   <span data-ttu-id="4c107-130">Modul runtime nevolá [IUnknown::QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) pro [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) rozhraní, kdy [IUnknown](https://go.microsoft.com/fwlink/?LinkId=148003) rozhraní přejde do domény prostřednictvím rozhraní modelu COM.</span><span class="sxs-lookup"><span data-stu-id="4c107-130">The runtime does not call [IUnknown::QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) for an [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface when an [IUnknown](https://go.microsoft.com/fwlink/?LinkId=148003) interface enters the domain through a COM interface.</span></span> <span data-ttu-id="4c107-131">Místo toho vytvoří [obálka volatelná za běhu](../../../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) kolem objektu.</span><span class="sxs-lookup"><span data-stu-id="4c107-131">Instead, it constructs a [Runtime Callable Wrapper](../../../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) around the object.</span></span>  
+-   <span data-ttu-id="2ec3e-130">Modul runtime nevolá [IUnknown::QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) pro [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) rozhraní, kdy [IUnknown](https://go.microsoft.com/fwlink/?LinkId=148003) rozhraní přejde do domény prostřednictvím rozhraní modelu COM.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-130">The runtime does not call [IUnknown::QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) for an [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface when an [IUnknown](https://go.microsoft.com/fwlink/?LinkId=148003) interface enters the domain through a COM interface.</span></span> <span data-ttu-id="2ec3e-131">Místo toho vytvoří [obálka volatelná za běhu](../../../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) kolem objektu.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-131">Instead, it constructs a [Runtime Callable Wrapper](../../../../../docs/framework/interop/runtime-callable-wrapper.md) (RCW) around the object.</span></span>  
   
--   <span data-ttu-id="4c107-132">Modul runtime E_NOINTERFACE vrátí, když přijme `QueryInterface` volání pro [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) rozhraní pro všechny [obálka volatelná aplikacemi COM](../../../../../docs/framework/interop/com-callable-wrapper.md) (CCW), který se vytvořil v této doméně.</span><span class="sxs-lookup"><span data-stu-id="4c107-132">The runtime returns E_NOINTERFACE when it receives a `QueryInterface` call for an [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface for any [COM Callable Wrapper](../../../../../docs/framework/interop/com-callable-wrapper.md) (CCW) that has been created in this domain.</span></span>  
+-   <span data-ttu-id="2ec3e-132">Modul runtime E_NOINTERFACE vrátí, když přijme `QueryInterface` volání pro [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) rozhraní pro všechny [obálka volatelná aplikacemi COM](../../../../../docs/framework/interop/com-callable-wrapper.md) (CCW), který se vytvořil v této doméně.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-132">The runtime returns E_NOINTERFACE when it receives a `QueryInterface` call for an [IManagedObject](../../../../../docs/framework/unmanaged-api/hosting/imanagedobject-interface.md) interface for any [COM Callable Wrapper](../../../../../docs/framework/interop/com-callable-wrapper.md) (CCW) that has been created in this domain.</span></span>  
   
- <span data-ttu-id="4c107-133">Tyto dvě chování Ujistěte se, že všechna volání přes COM rozhraní mezi spravovanými objekty napříč použití hranice domény aplikace modelu COM a interoperabilitu COM místo vzdálené komunikace.</span><span class="sxs-lookup"><span data-stu-id="4c107-133">These two behaviors ensure that all calls over COM interfaces between managed objects across application domain boundaries use COM and COM interop instead of remoting.</span></span>  
+ <span data-ttu-id="2ec3e-133">Tyto dvě chování Ujistěte se, že všechna volání přes COM rozhraní mezi spravovanými objekty napříč použití hranice domény aplikace modelu COM a interoperabilitu COM místo vzdálené komunikace.</span><span class="sxs-lookup"><span data-stu-id="2ec3e-133">These two behaviors ensure that all calls over COM interfaces between managed objects across application domain boundaries use COM and COM interop instead of remoting.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4c107-134">Příklad</span><span class="sxs-lookup"><span data-stu-id="4c107-134">Example</span></span>  
- <span data-ttu-id="4c107-135">Následující příklad ukazuje, jak určit, že modul runtime by měl používat COM interop přes hranice izolace:</span><span class="sxs-lookup"><span data-stu-id="4c107-135">The following example shows how to specify that the runtime should use COM interop across isolation boundaries:</span></span>  
+## <a name="example"></a><span data-ttu-id="2ec3e-134">Příklad</span><span class="sxs-lookup"><span data-stu-id="2ec3e-134">Example</span></span>  
+ <span data-ttu-id="2ec3e-135">Následující příklad ukazuje, jak určit, že modul runtime by měl používat COM interop přes hranice izolace:</span><span class="sxs-lookup"><span data-stu-id="2ec3e-135">The following example shows how to specify that the runtime should use COM interop across isolation boundaries:</span></span>  
   
 ```xml  
 <configuration>  
@@ -73,6 +73,6 @@ ms.locfileid: "44222659"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4c107-136">Viz také</span><span class="sxs-lookup"><span data-stu-id="4c107-136">See Also</span></span>  
- [<span data-ttu-id="4c107-137">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="4c107-137">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
- [<span data-ttu-id="4c107-138">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="4c107-138">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
+## <a name="see-also"></a><span data-ttu-id="2ec3e-136">Viz také</span><span class="sxs-lookup"><span data-stu-id="2ec3e-136">See Also</span></span>  
+ [<span data-ttu-id="2ec3e-137">Schéma nastavení běhového prostředí</span><span class="sxs-lookup"><span data-stu-id="2ec3e-137">Runtime Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/runtime/index.md)  
+ [<span data-ttu-id="2ec3e-138">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="2ec3e-138">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)
