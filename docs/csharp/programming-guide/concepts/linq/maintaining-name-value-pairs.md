@@ -3,38 +3,38 @@ title: Zachování dvojic název hodnota (C#)
 ms.date: 07/20/2015
 ms.assetid: 7b04b0f1-af64-42eb-8737-83f8861b5915
 ms.openlocfilehash: 28c01ce17881ffe7e8fcc35e2c23dec85d50955d
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45517031"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45658675"
 ---
-# <a name="maintaining-namevalue-pairs-c"></a><span data-ttu-id="cd893-102">Zachování dvojic název/hodnota (C#)</span><span class="sxs-lookup"><span data-stu-id="cd893-102">Maintaining Name/Value Pairs (C#)</span></span>
-<span data-ttu-id="cd893-103">Mnoho aplikací nutné udržovat informace, které nejlépe se ukládají jako dvojice název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="cd893-103">Many applications have to maintain information that is best kept as name/value pairs.</span></span> <span data-ttu-id="cd893-104">Tyto informace mohou být informace o konfiguraci nebo globální nastavení.</span><span class="sxs-lookup"><span data-stu-id="cd893-104">This information might be configuration information or global settings.</span></span> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="cd893-105"> obsahuje některé metody, které usnadňují zachovat sadu párů název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="cd893-105"> contains some methods that make it easy to keep a set of name/value pairs.</span></span> <span data-ttu-id="cd893-106">Buď můžete zachovat informace jako atributy nebo sadu podřízených elementů.</span><span class="sxs-lookup"><span data-stu-id="cd893-106">You can either keep the information as attributes or as a set of child elements.</span></span>  
+# <a name="maintaining-namevalue-pairs-c"></a><span data-ttu-id="8b1de-102">Zachování dvojic název/hodnota (C#)</span><span class="sxs-lookup"><span data-stu-id="8b1de-102">Maintaining Name/Value Pairs (C#)</span></span>
+<span data-ttu-id="8b1de-103">Mnoho aplikací nutné udržovat informace, které nejlépe se ukládají jako dvojice název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="8b1de-103">Many applications have to maintain information that is best kept as name/value pairs.</span></span> <span data-ttu-id="8b1de-104">Tyto informace mohou být informace o konfiguraci nebo globální nastavení.</span><span class="sxs-lookup"><span data-stu-id="8b1de-104">This information might be configuration information or global settings.</span></span> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]<span data-ttu-id="8b1de-105"> obsahuje některé metody, které usnadňují zachovat sadu párů název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="8b1de-105"> contains some methods that make it easy to keep a set of name/value pairs.</span></span> <span data-ttu-id="8b1de-106">Buď můžete zachovat informace jako atributy nebo sadu podřízených elementů.</span><span class="sxs-lookup"><span data-stu-id="8b1de-106">You can either keep the information as attributes or as a set of child elements.</span></span>  
   
- <span data-ttu-id="cd893-107">Jedním z rozdílů mezi chrání informace jako atributy nebo podřízené prvky je, že atributy obsahují omezení, že může existovat pouze jeden atribut s konkrétním názvem pro daný element.</span><span class="sxs-lookup"><span data-stu-id="cd893-107">One difference between keeping the information as attributes or as child elements is that attributes have the constraint that there can be only one attribute with a particular name for an element.</span></span> <span data-ttu-id="cd893-108">Toto omezení se nevztahuje na podřízené prvky.</span><span class="sxs-lookup"><span data-stu-id="cd893-108">This limitation does not apply to child elements.</span></span>  
+ <span data-ttu-id="8b1de-107">Jedním z rozdílů mezi chrání informace jako atributy nebo podřízené prvky je, že atributy obsahují omezení, že může existovat pouze jeden atribut s konkrétním názvem pro daný element.</span><span class="sxs-lookup"><span data-stu-id="8b1de-107">One difference between keeping the information as attributes or as child elements is that attributes have the constraint that there can be only one attribute with a particular name for an element.</span></span> <span data-ttu-id="8b1de-108">Toto omezení se nevztahuje na podřízené prvky.</span><span class="sxs-lookup"><span data-stu-id="8b1de-108">This limitation does not apply to child elements.</span></span>  
   
-## <a name="setattributevalue-and-setelementvalue"></a><span data-ttu-id="cd893-109">SetAttributeValue a SetElementValue</span><span class="sxs-lookup"><span data-stu-id="cd893-109">SetAttributeValue and SetElementValue</span></span>  
- <span data-ttu-id="cd893-110">Dvě metody, které usnadňují uchování páry název/hodnota jsou <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> a <xref:System.Xml.Linq.XElement.SetElementValue%2A>.</span><span class="sxs-lookup"><span data-stu-id="cd893-110">The two methods that facilitate keeping name/value pairs are <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> and <xref:System.Xml.Linq.XElement.SetElementValue%2A>.</span></span> <span data-ttu-id="cd893-111">Tyto dvě metody mají podobnou sémantikou.</span><span class="sxs-lookup"><span data-stu-id="cd893-111">These two methods have similar semantics.</span></span>  
+## <a name="setattributevalue-and-setelementvalue"></a><span data-ttu-id="8b1de-109">SetAttributeValue a SetElementValue</span><span class="sxs-lookup"><span data-stu-id="8b1de-109">SetAttributeValue and SetElementValue</span></span>  
+ <span data-ttu-id="8b1de-110">Dvě metody, které usnadňují uchování páry název/hodnota jsou <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> a <xref:System.Xml.Linq.XElement.SetElementValue%2A>.</span><span class="sxs-lookup"><span data-stu-id="8b1de-110">The two methods that facilitate keeping name/value pairs are <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> and <xref:System.Xml.Linq.XElement.SetElementValue%2A>.</span></span> <span data-ttu-id="8b1de-111">Tyto dvě metody mají podobnou sémantikou.</span><span class="sxs-lookup"><span data-stu-id="8b1de-111">These two methods have similar semantics.</span></span>  
   
- <span data-ttu-id="cd893-112"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A> můžete přidat, upravit nebo odebrat atributy elementu.</span><span class="sxs-lookup"><span data-stu-id="cd893-112"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A> can add, modify, or remove attributes of an element.</span></span>  
+ <span data-ttu-id="8b1de-112"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A> můžete přidat, upravit nebo odebrat atributy elementu.</span><span class="sxs-lookup"><span data-stu-id="8b1de-112"><xref:System.Xml.Linq.XElement.SetAttributeValue%2A> can add, modify, or remove attributes of an element.</span></span>  
   
--   <span data-ttu-id="cd893-113">Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem atributu, který ještě neexistuje, metoda vytvoří nový atribut a přidá jej do zadaného prvku.</span><span class="sxs-lookup"><span data-stu-id="cd893-113">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an attribute that does not exist, the method creates a new attribute and adds it to the specified element.</span></span>  
+-   <span data-ttu-id="8b1de-113">Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem atributu, který ještě neexistuje, metoda vytvoří nový atribut a přidá jej do zadaného prvku.</span><span class="sxs-lookup"><span data-stu-id="8b1de-113">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an attribute that does not exist, the method creates a new attribute and adds it to the specified element.</span></span>  
   
--   <span data-ttu-id="cd893-114">Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a s některými zadaný obsahu, obsah atributu nahrazují se zadaným obsahem.</span><span class="sxs-lookup"><span data-stu-id="cd893-114">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute and with some specified content, the contents of the attribute are replaced with the specified content.</span></span>  
+-   <span data-ttu-id="8b1de-114">Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atributu a s některými zadaný obsahu, obsah atributu nahrazují se zadaným obsahem.</span><span class="sxs-lookup"><span data-stu-id="8b1de-114">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute and with some specified content, the contents of the attribute are replaced with the specified content.</span></span>  
   
--   <span data-ttu-id="cd893-115">Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atribut a zadejte hodnotu null pro obsah, atribut se odebere ze svého nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="cd893-115">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute, and specify null for the content, the attribute is removed from its parent.</span></span>  
+-   <span data-ttu-id="8b1de-115">Při volání <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> s názvem existujícího atribut a zadejte hodnotu null pro obsah, atribut se odebere ze svého nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="8b1de-115">If you call <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> with a name of an existing attribute, and specify null for the content, the attribute is removed from its parent.</span></span>  
   
- <span data-ttu-id="cd893-116"><xref:System.Xml.Linq.XElement.SetElementValue%2A> můžete přidat, upravit nebo odebrat podřízené prvky prvku.</span><span class="sxs-lookup"><span data-stu-id="cd893-116"><xref:System.Xml.Linq.XElement.SetElementValue%2A> can add, modify, or remove child elements of an element.</span></span>  
+ <span data-ttu-id="8b1de-116"><xref:System.Xml.Linq.XElement.SetElementValue%2A> můžete přidat, upravit nebo odebrat podřízené prvky prvku.</span><span class="sxs-lookup"><span data-stu-id="8b1de-116"><xref:System.Xml.Linq.XElement.SetElementValue%2A> can add, modify, or remove child elements of an element.</span></span>  
   
--   <span data-ttu-id="cd893-117">Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízený element, který ještě neexistuje, metoda vytvoří nový prvek a přidá jej do zadaného prvku.</span><span class="sxs-lookup"><span data-stu-id="cd893-117">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of a child element that does not exist, the method creates a new element and adds it to the specified element.</span></span>  
+-   <span data-ttu-id="8b1de-117">Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem podřízený element, který ještě neexistuje, metoda vytvoří nový prvek a přidá jej do zadaného prvku.</span><span class="sxs-lookup"><span data-stu-id="8b1de-117">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of a child element that does not exist, the method creates a new element and adds it to the specified element.</span></span>  
   
--   <span data-ttu-id="cd893-118">Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a s některými zadaný obsahu, obsah elementu se nahradí se zadaným obsahem.</span><span class="sxs-lookup"><span data-stu-id="cd893-118">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element and with some specified content, the contents of the element are replaced with the specified content.</span></span>  
+-   <span data-ttu-id="8b1de-118">Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a s některými zadaný obsahu, obsah elementu se nahradí se zadaným obsahem.</span><span class="sxs-lookup"><span data-stu-id="8b1de-118">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element and with some specified content, the contents of the element are replaced with the specified content.</span></span>  
   
--   <span data-ttu-id="cd893-119">Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a zadejte hodnotu null pro obsah, elementu se odebere ze svého nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="cd893-119">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element, and specify null for the content, the element is removed from its parent.</span></span>  
+-   <span data-ttu-id="8b1de-119">Při volání <xref:System.Xml.Linq.XElement.SetElementValue%2A> s názvem existujícího prvku a zadejte hodnotu null pro obsah, elementu se odebere ze svého nadřazeného objektu.</span><span class="sxs-lookup"><span data-stu-id="8b1de-119">If you call <xref:System.Xml.Linq.XElement.SetElementValue%2A> with a name of an existing element, and specify null for the content, the element is removed from its parent.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="cd893-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="cd893-120">Example</span></span>  
- <span data-ttu-id="cd893-121">Následující příklad vytvoří element se žádné atributy.</span><span class="sxs-lookup"><span data-stu-id="cd893-121">The following example creates an element with no attributes.</span></span> <span data-ttu-id="cd893-122">Poté použije <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> metodu pro vytvoření a správa seznamu párů název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="cd893-122">It then uses the <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> method to create and maintain a list of name/value pairs.</span></span>  
+## <a name="example"></a><span data-ttu-id="8b1de-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="8b1de-120">Example</span></span>  
+ <span data-ttu-id="8b1de-121">Následující příklad vytvoří element se žádné atributy.</span><span class="sxs-lookup"><span data-stu-id="8b1de-121">The following example creates an element with no attributes.</span></span> <span data-ttu-id="8b1de-122">Poté použije <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> metodu pro vytvoření a správa seznamu párů název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="8b1de-122">It then uses the <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> method to create and maintain a list of name/value pairs.</span></span>  
   
 ```csharp  
 // Create an element with no content.  
@@ -57,7 +57,7 @@ root.SetAttributeValue("DefaultColor", null);
 Console.WriteLine(root);  
 ```  
   
- <span data-ttu-id="cd893-123">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="cd893-123">This example produces the following output:</span></span>  
+ <span data-ttu-id="8b1de-123">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8b1de-123">This example produces the following output:</span></span>  
   
 ```xml  
 <Root Top="22" Left="20" Bottom="122" Right="300" DefaultColor="Color.Red" />  
@@ -65,8 +65,8 @@ Console.WriteLine(root);
 <Root Top="10" Left="20" Bottom="122" Right="300" />  
 ```  
   
-## <a name="example"></a><span data-ttu-id="cd893-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="cd893-124">Example</span></span>  
- <span data-ttu-id="cd893-125">Následující příklad vytvoří element se žádné podřízené prvky.</span><span class="sxs-lookup"><span data-stu-id="cd893-125">The following example creates an element with no child elements.</span></span> <span data-ttu-id="cd893-126">Poté použije <xref:System.Xml.Linq.XElement.SetElementValue%2A> metodu pro vytvoření a správa seznamu párů název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="cd893-126">It then uses the <xref:System.Xml.Linq.XElement.SetElementValue%2A> method to create and maintain a list of name/value pairs.</span></span>  
+## <a name="example"></a><span data-ttu-id="8b1de-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="8b1de-124">Example</span></span>  
+ <span data-ttu-id="8b1de-125">Následující příklad vytvoří element se žádné podřízené prvky.</span><span class="sxs-lookup"><span data-stu-id="8b1de-125">The following example creates an element with no child elements.</span></span> <span data-ttu-id="8b1de-126">Poté použije <xref:System.Xml.Linq.XElement.SetElementValue%2A> metodu pro vytvoření a správa seznamu párů název/hodnota.</span><span class="sxs-lookup"><span data-stu-id="8b1de-126">It then uses the <xref:System.Xml.Linq.XElement.SetElementValue%2A> method to create and maintain a list of name/value pairs.</span></span>  
   
 ```csharp  
 // Create an element with no content.  
@@ -91,7 +91,7 @@ root.SetElementValue("DefaultColor", null);
 Console.WriteLine(root);  
 ```  
   
- <span data-ttu-id="cd893-127">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="cd893-127">This example produces the following output:</span></span>  
+ <span data-ttu-id="8b1de-127">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="8b1de-127">This example produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -118,8 +118,8 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="cd893-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="cd893-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8b1de-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="8b1de-128">See Also</span></span>
 
 - <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>  
 - <xref:System.Xml.Linq.XElement.SetElementValue%2A>  
-- [<span data-ttu-id="cd893-129">Změna stromů XML (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="cd893-129">Modifying XML Trees (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [<span data-ttu-id="8b1de-129">Změna stromů XML (LINQ to XML) (C#)</span><span class="sxs-lookup"><span data-stu-id="8b1de-129">Modifying XML Trees (LINQ to XML) (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
