@@ -8,11 +8,11 @@ ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 34f6078baba86868fa03f37873731c39e73ac81f
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45513791"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653080"
 ---
 # <a name="message-security-with-a-windows-client"></a>Zabezpečení zprávy s klientem Windows
 Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serverem zabezpečené pomocí režim zabezpečených zpráv. Klient a služba ověření pomocí přihlašovacích údajů Windows.  

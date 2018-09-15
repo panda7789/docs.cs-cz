@@ -15,11 +15,11 @@ ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2f39b079de1c97d0954ba013ba1c87a8bd606920
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45513611"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45652856"
 ---
 # <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Postupy: Zobrazení milisekund v hodnotách data a času
 Výchozí metody pro formátování hodnot data a času, jako například <xref:System.DateTime.ToString?displayProperty=nameWithType>, zahrnují hodiny, minuty a sekundy příslušné časové hodnoty, ale neobsahují komponentu milisekund. Toto téma popisuje způsob začlenění komponenty milisekund do příslušné hodnoty data a času ve formátovaných řetězcích data a času.  

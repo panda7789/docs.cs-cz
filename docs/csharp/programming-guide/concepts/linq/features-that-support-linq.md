@@ -5,11 +5,11 @@ helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
 ms.openlocfilehash: c617b2d7b56618867fe92cbe1d9ee04aa4c3ab64
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44207236"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653197"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 Následující část představuje nové jazykové konstrukce zavedené v jazyce C# 3.0. I když tyto nové funkce se používají v míře s [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, nejsou omezena na [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] a můžete použít v libovolném kontextu, kde můžete najít je užitečné.  

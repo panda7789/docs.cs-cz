@@ -6,11 +6,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 9a8230d382cfcf3709a2e4df42758470f3caea4e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526568"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653028"
 ---
 # <a name="network-programming-samples"></a>Ukázky programování sítě
 Tato část obsahuje popisy a odkazy na ke stažení síťové programování ukázky, které používají třídy v <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.Security>, <xref:System.Net.Sockets> a souvisejících oborech názvů. 

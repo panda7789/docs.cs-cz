@@ -12,11 +12,11 @@ ms.assetid: e8f58e17-2714-4821-802a-f8eb3b2baa62
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fc3af01167fe97b701bdb0c7bc37af02d8e8a77c
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44511903"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45658584"
 ---
 # <a name="threadsuspend-garbage-collection-and-safe-points"></a>Thread.Suspend, kolekce paměti a bezpečné body
 Při volání <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> ve vlákně, systém zjistí, že se požaduje pozastavení vlákna a umožňuje spuštění, dokud nedosáhne bezpečné bod před skutečně pozastavení vlákna vlákna. Bod bezpečné pro vlákna je bod v jeho spuštění, na které uvolňování paměti kolekce provést.  

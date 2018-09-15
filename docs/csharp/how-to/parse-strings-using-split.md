@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
 ms.openlocfilehash: b6170be2dbb3f11906bbaa6e5c3be3e48a976246
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519692"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646941"
 ---
 # <a name="how-to-parse-strings-using-stringsplit-c-guide"></a>Postupy: Analýza řetězců metodou String.Split (Průvodce v C#)
 

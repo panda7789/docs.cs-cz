@@ -9,11 +9,11 @@ ms.assetid: 877e9c62-b082-4bfb-bc5b-f47297eb30ef
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b76140fb7d79b1e191c0451cd7556963130d224a
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44369014"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646178"
 ---
 # <a name="xml-document-creation"></a>Vytváření dokumentů XML
 Existují dva způsoby, jak vytvořit dokument XML. Jedním ze způsobů je vytvoření **XmlDocument** bez parametrů. Druhý způsob je k vytvoření **XmlDocument** a předat jako parametr XmlNameTable. Následující příklad ukazuje, jak vytvořit nový, prázdný **XmlDocument** pomocí žádné parametry.  

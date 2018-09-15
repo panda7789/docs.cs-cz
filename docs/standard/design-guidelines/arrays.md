@@ -10,11 +10,11 @@ ms.assetid: 66a1b3d8-6f3f-4715-b235-e1ff95e32d8e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1ac7e28c3172f2ed68d402e1d04a1664644c7f25
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44361927"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45658715"
 ---
 # <a name="arrays"></a>Pole
 **✓ DO** raději pomocí kolekcí přes pole v veřejná rozhraní API. [Kolekce](../../../docs/standard/design-guidelines/guidelines-for-collections.md) čísti najdete podrobnosti o tom, jak si vybrat mezi kolekcí a polí.  

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - custom controls [Windows Forms], events using code
 ms.assetid: d89f1096-8061-42e2-a855-a1f053f1940a
 ms.openlocfilehash: 60ae01ca63f895bfb1c7aabbe3337596cd13933d
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44352856"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653119"
 ---
 # <a name="defining-an-event-in-windows-forms-controls"></a>Definování události v ovládacím prvku Windows Forms
 Další informace o definování vlastních událostí, naleznete v tématu [události](../../../../docs/standard/events/index.md). Pokud definujete událost, která nemá všechna související data, použijte základní typ pro data události <xref:System.EventArgs>a použijte <xref:System.EventHandler> jako delegát události. Provedete to už jen zbývá definovat člen události a chráněnou `On` *EventName* metodu, která vyvolává událost.  

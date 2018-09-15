@@ -10,11 +10,11 @@ helpviewer_keywords:
 - WCF Data Services, hosting
 ms.assetid: f6f768c5-4989-49e3-a36f-896ab4ded86e
 ms.openlocfilehash: af81e65dfd4661d62d7aa4a3e6075be312765cb7
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710194"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653210"
 ---
 # <a name="how-to-develop-a-wcf-data-service-running-on-iis"></a>Postupy: vývoj datové služby WCF ve službě IIS
 

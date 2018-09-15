@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Instancing Sample [Windows Communication Foundation]
 ms.assetid: c290fa54-f6ae-45a1-9186-d9504ebc6ee6
 ms.openlocfilehash: 1d193b0cac56f365a4f0a294145369502754a1b1
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44756805"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45658779"
 ---
 # <a name="instancing"></a>Vytváření instancí
 Instancing ukázce vytvoření instance nastavení chování, které řídí, jak se vytvářejí instance třídy služby v reakci na požadavky klientů. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka definuje kontrakt nové `ICalculatorInstance`, který dědí z `ICalculator`. Kontrakt určený `ICalculatorInstance` poskytuje tři další operace, kontroly stavu instance služby. Změnou nastavení vytvoření instance můžete sledovat změny v chování pomocí klienta.  

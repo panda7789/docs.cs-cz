@@ -12,11 +12,11 @@ ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e5008ede5054e8e6970bcb6f804fa1888244238f
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44509678"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653414"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>Postupy: Zrušení dotazu PLINQ
 Následující příklady ukazují dva způsoby, jak zrušení dotazu PLINQ. První příklad ukazuje, jak zrušit dotaz, který se skládá převážně procházení data. Druhý příklad ukazuje, jak zrušit dotaz, který obsahuje funkci uživatele, který je výpočetně náročná.  

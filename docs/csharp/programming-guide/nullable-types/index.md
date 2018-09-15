@@ -8,11 +8,11 @@ helpviewer_keywords:
 - types [C#], nullable
 ms.assetid: e473cb01-28ca-42be-9cea-f717055d72c6
 ms.openlocfilehash: 2af0704abcad00c75a5d40bfe2d0523d07ee6a3f
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44700804"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45658701"
 ---
 # <a name="nullable-types-c-programming-guide"></a>Typy s možnou hodnotou Null (C# Programming Guide)
 

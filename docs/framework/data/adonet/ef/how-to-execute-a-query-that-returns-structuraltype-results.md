@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 2314f2a2-b1c3-40c4-95bb-cdf9b21a7b53
 ms.openlocfilehash: 1a53ab6ab455975f0597eab76aeaa2db3ffd42a3
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45508509"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653002"
 ---
 # <a name="how-to-execute-a-query-that-returns-structuraltype-results"></a>Postupy: provedení dotazu, který vrátí výsledky typu StructuralType
 Toto téma ukazuje, jak provést příkaz pro koncepční model s použitím <xref:System.Data.EntityClient.EntityCommand> objekt a jak načíst <xref:System.Data.Metadata.Edm.StructuralType> výsledky s použitím <xref:System.Data.EntityClient.EntityDataReader>. <xref:System.Data.Metadata.Edm.EntityType>, <xref:System.Data.Metadata.Edm.RowType> a <xref:System.Data.Metadata.Edm.ComplexType> třídy odvozovat z <xref:System.Data.Metadata.Edm.StructuralType> třídy.  

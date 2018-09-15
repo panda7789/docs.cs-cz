@@ -13,11 +13,11 @@ ms.assetid: d3646e6d-5c1f-4922-8fb0-ec5effb30d60
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: c5b9dacc4995a126e1ee3f6062dca796194d4882
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519179"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45653041"
 ---
 # <a name="abstract-class-design"></a>Návrh abstraktní třídy
 **X DO NOT** definice veřejných nebo chráněného interní konstruktorů v abstraktních typech.  

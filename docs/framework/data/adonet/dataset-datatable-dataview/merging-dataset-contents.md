@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: e5e9309a-3ebb-4a9c-9d78-21c4e2bafc5b
 ms.openlocfilehash: 38d716552c4a52e01ef803ce197e4d588ed562c3
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45560867"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45658792"
 ---
 # <a name="merging-dataset-contents"></a>Slučování obsahu datové sady
 Můžete použít <xref:System.Data.DataSet.Merge%2A> metoda sloučit obsah <xref:System.Data.DataSet>, <xref:System.Data.DataTable>, nebo <xref:System.Data.DataRow> pole do existujícího `DataSet`. Několik faktorů a možnosti ovlivnit jak nová data se sloučí do existujícího `DataSet`.  

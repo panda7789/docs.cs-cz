@@ -3,11 +3,11 @@ title: Doporučené postupy hostování Internetové informační služby
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
 ms.openlocfilehash: 0ca5e20b846a1b10f5a52748ff06a4af958b2f4c
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45588524"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45658753"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé osvědčené postupy pro hostování služby Windows Communication Foundation (WCF).  
