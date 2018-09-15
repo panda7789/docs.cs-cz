@@ -4,12 +4,12 @@ description: Zjistěte, jak definovat a používat ref návratové a místní ho
 author: rpetrusha
 ms.author: ronpet
 ms.date: 04/04/2018
-ms.openlocfilehash: a869cd50c5512c9893b6e5056aa58e1f92ee26f4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6250d2b0c3490cce18623d6b06d5e1a352f22c09
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510562"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45616137"
 ---
 # <a name="ref-returns-and-ref-locals"></a>Návratové a místní referenční hodnoty
 
@@ -58,7 +58,7 @@ Ref návratové hodnoty je alias pro jiné proměnné v oboru volané metody. Lz
 - Při čtení jeho hodnotu při čtení hodnota proměnné je aliasy.
 - Je-li se vrátit *odkazem*, alias se vrátí na tuto proměnnou stejné.
 - Pokud předáte jiný způsob *odkazem*, jsou předáním odkazu na proměnnou je aliasy.
-- Je-li [lokální proměnná podle odkazu](#ref-local) alias, můžete vytvořit nový alias u stejné proměnné.
+- Je-li [lokální proměnná podle odkazu](#ref-locals) alias, můžete vytvořit nový alias u stejné proměnné.
 
 
 ## <a name="ref-locals"></a>Místní referenční hodnoty
@@ -122,7 +122,7 @@ Následující příklad ukazuje způsob, jakým `FindNumber` metody by mohla b�
 
 Tento druhý verze je mnohem efektivnější s delší pořadí ve scénářích, kde číslo žádá o blíž ke konci pole.
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [REF – klíčové slovo](../../language-reference/keywords/ref.md)  
 - [Referenční sémantika s typy hodnot](../../../csharp/reference-semantics-with-value-types.md)

@@ -6,11 +6,11 @@ ms.assetid: df363480-ba02-4233-9ddf-8434e421c4f1
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 10449867a37863798a0da2df9111bcd7addfc6ef
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45527393"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45625942"
 ---
 # <a name="result-tree-fragment-in-transformations"></a>Fragment stromu výsledků v transformacích
 

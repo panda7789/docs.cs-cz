@@ -3,11 +3,11 @@ title: 'Explicitní pole: Klíčové slovo val (F#)'
 description: 'Další informace o F # "val" klíčové slovo, které se používá k deklaraci umístění pro uložení hodnoty v typu třídy nebo struktury bez inicializace typu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 9cd06f7e90192be79490dd0ff67f118cce4339c3
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/14/2018
-ms.locfileid: "45569996"
+ms.locfileid: "45617367"
 ---
 # <a name="explicit-fields-the-val-keyword"></a>Explicitní pole: Klíčové slovo val
 

@@ -8,15 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 852efc14af02eec4608e133e4c75507cd881b80e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8dfe3fdbf71918a7ed2b6dccca24f58688bc14f2
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513601"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45617751"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 

@@ -3,11 +3,11 @@ title: Vazby let ve třídách (F#)
 description: 'Zjistěte, jak definovat privátní pole a soukromé funkce pro třídy F # s použitím "let" vazby v definici třídy.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 237eb98a57571a21c9187abf31f05160374cf4fc
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44274739"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45624402"
 ---
 # <a name="let-bindings-in-classes"></a>Vazby let ve třídách
 

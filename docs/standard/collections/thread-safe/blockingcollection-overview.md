@@ -11,11 +11,11 @@ ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 257435516b38d0e4389b7feceba68371bcc8f90e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519913"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45616549"
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection – přehled
 <xref:System.Collections.Concurrent.BlockingCollection%601> je třídy kolekce bezpečné pro vlákna, která poskytuje následující funkce:  

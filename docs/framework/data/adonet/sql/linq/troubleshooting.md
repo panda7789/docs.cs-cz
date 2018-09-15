@@ -3,11 +3,11 @@ title: Poradce při potížích
 ms.date: 03/30/2017
 ms.assetid: 8cd4401c-b12c-4116-a421-f3dcffa65670
 ms.openlocfilehash: 6fe4f789ca64c0646b77fdb66b0c6e2b73763293
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45509971"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45616614"
 ---
 # <a name="troubleshooting"></a>Poradce při potížích
 Následující informace uvádí některé problémy, může dojít v vaše [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] aplikací a nabízí návrhy k zamezení nebo jinak snižují dopad těchto problémů.  

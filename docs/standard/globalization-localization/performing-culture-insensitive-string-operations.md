@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 579ef891-1f83-4c63-9ebd-2f40406b5b91
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 748b4170e9e4c0df048c542d06bcb64a56ccf677
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 77269cd9cdb922c1f9576afa93d6599ec7a834e4
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45529003"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45617041"
 ---
 # <a name="performing-culture-insensitive-string-operations"></a>Provádění řetězcových operací nezávislých na jazykové verzi
 Většina metod rozhraní .NET Framework, které provádějí operace s řetězci zohledňující jazykovou verzi ve výchozím nastavení poskytovat přetížení metod, které umožňuje explicitně určit jazyková verze použitá předáním <xref:System.Globalization.CultureInfo> parametru. Tato přetížení umožňují odstranění v případě mapování a řazení pravidel a zaručit výsledků nezávislých na jazykové verzi.  
@@ -44,4 +44,5 @@ Většina metod rozhraní .NET Framework, které provádějí operace s řetězc
 
 ## <a name="see-also"></a>Viz také:
 
-- [Řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921)
+- [Řazení váhy tabulky (pro .NET v systémech Windows)](https://www.microsoft.com/en-us/download/details.aspx?id=10921)
+- [Výchozí kódování Unicode kolace Element tabulky (pro .NET Core v Linuxu a macOS)](https://www.unicode.org/Public/UCA/latest/allkeys.txt)

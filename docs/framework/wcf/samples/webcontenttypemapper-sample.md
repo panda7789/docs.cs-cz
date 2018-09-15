@@ -3,11 +3,11 @@ title: WebContentTypeMapper – ukázka
 ms.date: 03/30/2017
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
 ms.openlocfilehash: 91e5cca478521a343f7528f878f114b85eff2d08
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44262494"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45618529"
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper – ukázka
 Tato ukázka předvádí, jak namapovat nové typy obsahu formáty text zpráv Windows Communication Foundation (WCF).  

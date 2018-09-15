@@ -6,11 +6,11 @@ f1_keywords:
 - nameof
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
 ms.openlocfilehash: 726abfd903f37826a247e6e98c0d11f230447550
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519361"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45624824"
 ---
 # <a name="nameof-c-reference"></a>nameof (referenční dokumentace jazyka C#)
 
