@@ -3,11 +3,11 @@ title: Referenční dokumentace jazyka F#
 description: 'Najdete F # jazykové funkce informace z tohoto odkazu na jazyk tokeny, koncepty, typy, výrazy a témata konstrukce podporované kompilátorem.'
 ms.date: 05/16/2016
 ms.openlocfilehash: adce37ee393673b7611ad24f385c8b8106f6ce86
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710939"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646412"
 ---
 # <a name="f-language-reference"></a>Referenční dokumentace jazyka F#
 

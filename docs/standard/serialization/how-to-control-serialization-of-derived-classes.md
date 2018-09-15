@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: caa92596-9e15-4d91-acbe-56911ef47a84
 ms.openlocfilehash: 00eb4ba1f5f84c60f1ca51871f604b6ee27798c3
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557928"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45645720"
 ---
 # <a name="how-to-control-serialization-of-derived-classes"></a>Postupy: řízení serializace odvozených tříd
 Použití **XmlElementAttribute** atribut můžete změnit název elementu XML není jedinou možností k přizpůsobení serializaci objektů. Datový proud XML můžete také upravit tak, že vyplývající z existující třídy a instruující <xref:System.Xml.Serialization.XmlSerializer> instance jak k serializaci nové třídy.  

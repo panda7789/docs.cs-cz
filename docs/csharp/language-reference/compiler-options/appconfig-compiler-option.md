@@ -9,11 +9,11 @@ helpviewer_keywords:
 - appconfig compiler option [C#]
 ms.assetid: 1cdbcbcc-7813-4010-b5b8-e67c107c5a98
 ms.openlocfilehash: 33f79967c34736f2175e0bb6e2b5b88d211545c2
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45517954"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45638717"
 ---
 # <a name="-appconfig-c-compiler-options"></a>-appconfig (možnosti kompilátoru C#)
 **- Appconfig** – možnost kompilátoru umožňuje aplikaci v C# k určení umístění sestavení aplikace konfiguračního souboru (app.config) do common language runtime (CLR) v době vazby sestavení.  

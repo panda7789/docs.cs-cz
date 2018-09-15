@@ -1,37 +1,37 @@
 ---
-title: Pracovní postup docker aplikací devops s nástroji Microsoft
-description: Kontejnerizované Docker cyklu aplikací s platformy společnosti Microsoft a Toolsdevops pracovního postupu s nástroji Microsoft
+title: Pracovní postup devops aplikací dockeru pomocí nástrojů Microsoftu
+description: Kontejnerizované životní cyklus aplikace Dockeru s platformy Microsoft a Toolsdevops pracovního postupu pomocí nástrojů Microsoftu
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: b915c53b70192139c64c63d8b47110263e1621d0
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: d313cb8ff6762eba6534ca20b214063315a456f0
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104462"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45639182"
 ---
-# <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Pracovní postup docker aplikací DevOps s nástroji Microsoft
+# <a name="docker-application-devops-workflow-with-microsoft-tools"></a>Pracovní postup DevOps aplikací dockeru pomocí nástrojů Microsoftu
 
-Microsoft Visual Studio, Visual Studio Team Services, Team Foundation Server a Application Insights poskytují komplexní ekosystém pro vývoj a IT oddělení, která umožňují váš tým nástroje pro řízení projektů a rychlé vytvoření, testování a nasazení kontejnerové aplikace.
+Microsoft Visual Studio, Azure DevOps Services, Team Foundation Server a Application Insights poskytuje komplexní ekosystém pro vývoj a IT operace, které dejte týmu nástroje pro řízení projektů a rychle vytvářet, testovat a nasadit kontejnerizované aplikace.
 
-Pomocí sady Visual Studio a Visual Studio Team Services v cloudu, společně s Team Foundation Server – místní vývojové týmy efektivní sestavení, testování a verze kontejnerizované aplikace zaměřený na libovolnou platformu (Windows nebo Linux).
+Pomocí sady Visual Studio a služeb Azure DevOps v cloudu, spolu s Team Foundation Server v místním vývojovým týmům produktivní sestavení, testování a vydání kontejnerizovaných aplikací zaměřený na jakoukoli platformu (Windows nebo Linux).
 
-Nástroje sady Microsoft můžete automatizovat kanálu pro konkrétní implementace kontejnerizované aplikací – Docker, .NET Core nebo libovolnou kombinaci s jinými platformami – globální sestavení a nepřetržité integrace (CI) a testy s Visual Studio Team Services nebo Team Foundation Server, na průběžné nasazení (CD) do prostředí Docker (vývoj, pracovní, produkční) a k přenosu analytics informace o službách pro vývojový tým pomocí Application Insights. Každou potvrzenou změnou kódu můžete zahájit sestavení (CI) a automaticky nasadit službu do konkrétní kontejnerizované prostředí (CD).
+Nástroje sady Microsoft můžete automatizovat kanálu pro konkrétní implementace kontejnerizovaných aplikací – Docker, .NET Core nebo libovolnou kombinaci s jinými platformami – z globální sestavení kontinuální integrace (CI) a testy pomocí služby Azure DevOps nebo týmu Foundation Server, pro průběžné nasazování (CD) do prostředí Docker (vývoje, přípravy, výroby) a k přenosu analytics informace o službách pro vývojový tým pomocí Application Insights. Každé potvrzení kódu můžete zahájit sestavení (CI) a automaticky nasadit službu do konkrétních kontejnerové prostředí (CD).
 
-Vývojáři a testerům, sada můžete snadno a rychle zřizovat produkčního prostředí vývojová a testovací prostředí podle Docker pomocí šablon ve službě Microsoft Azure.
+Vývojáři a testeři mohou snadno a rychle zřídit vývojová a testovací prostředí podobném produkci založené na Dockeru pomocí šablony v Microsoft Azure.
 
-Složitost vývoj kontejnerizované aplikací zvyšuje vytrvale podle obchodních potřeb složitost a škálovatelnost. Dobrým příkladem jsou aplikace založené na mikroslužeb architektury. Při takovém prostředí úspěšná, musí váš projekt automatizovat celý životní cyklus – nejen sestavení a nasazení, ale také musí spravovat verzích, a také kolekce telemetrie. Visual Studio Team Services a Azure nabízí následující možnosti:
+Složitost vývoje kontejnerizovaných aplikací zvyšuje neustále podle potřeb firmy složitost a škálovatelnost. Dobrým příkladem jsou aplikací založených na architekturu mikroslužeb. K úspěšnému v takovém prostředí, musí váš projekt automatizovat celý životní cyklus – nejen sestavení a nasazení, ale také musí spravovat verze spolu s kolekce telemetrie. Azure DevOps služby a Azure nabízejí následující možnosti:
 
--   Správu zdrojového kódu Visual Studio Team Services nebo Team Foundation Server se (na základě Git nebo správy verzí Team Foundation), Agilního plánování (agilní, Scrum a CMMI podporuje), CI, Správa verzí a další nástroje pro agilní týmy.
+-   Správa zdrojového kódu Azure DevOps Services nebo Team Foundation Server se (na základě Gitu nebo Team Foundation Version Control), agilní plánování (Agile a Scrum, CMMI jsou podporovány), průběžná integrace, release management a další nástroje pro agilní týmy.
 
--   Visual Studio Team Services nebo Team Foundation Server zahrnují výkonný a rostoucí ekosystém rozšíření první a třetí strany, pomocí kterých můžete snadno vytvořit položky konfigurace, sestavení, testovací, doručení a release management kanálu pro mikroslužeb.
+-   Azure DevOps Services nebo Team Foundation Server patří výkonné a rostoucí ekosystém rozšíření prvních a třetích stran, se kterými můžete snadno vytvořit položky konfigurace, sestavení, testů, doručování a release management kanálu pro mikroslužby.
 
--   Spuštění automatizovaných testů v rámci vašeho kanálu sestavení v sadě Visual Studio Team Services.
+-   Spuštění automatizovaných testů v rámci vašeho kanálu sestavení ve službách Azure DevOps.
 
--   Visual Studio Team Services může posílit DevOps životního cyklu pro doručení na několika prostředích, nejen pro provozní prostředí, ale také pro testování, včetně A / B experimentování, [lesknice verzích](https://martinfowler.com/bliki/CanaryRelease.html)a tak dále.
+-   Služby Azure DevOps můžete posílit DevOps životní cyklus doručování do různých prostředí, ne jenom pro produkční prostředí, ale také pro testování, včetně A / B experimentování [testovací verze](https://martinfowler.com/bliki/CanaryRelease.html), a tak dále.
 
--   Organizace můžou snadno zřídit Docker kontejnery z privátní bitové kopie uložené v registru kontejner Azure společně s závislost na Azure součásti (Data, PaaS atd.) pomocí nástroje, pomocí kterých jsou již šablon Azure Resource Manageru možnost práce.
+-   Organizace můžou snadno zřídit kontejnery Dockeru z privátních imagí uložená spolu s všechny závislosti v komponentách Azure (Data, PaaS, atd.) ve službě Azure Container Registry pomocí šablon Azure Resource Manageru pomocí nástrojů, se kterými jsou již pohodlné práce.
 
 
 >[!div class="step-by-step"]

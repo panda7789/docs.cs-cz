@@ -3,11 +3,11 @@ title: Funkční transformace XML (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: fdbe5b91-f457-4b4e-a11b-def4bdd77bab
 ms.openlocfilehash: 06803feb0fe23ae4afe2237b64bf920f6e229060
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44778510"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45647006"
 ---
 # <a name="functional-transformation-of-xml-visual-basic"></a>Funkční transformace XML (Visual Basic)
 Toto téma popisuje čistě funkční transformace přístup k úpravě XML dokumenty a liší se od procedurálního přístupu.  

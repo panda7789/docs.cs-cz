@@ -3,11 +3,11 @@ title: Aktivita Policy v rozhraní .NET Framework 4.5
 ms.date: 03/30/2017
 ms.assetid: 8e375e0c-d7c1-4d69-88ab-36d52db0aa7e
 ms.openlocfilehash: 9d8983f2f1d3f75beffeacfff4b673f6c23c4204
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44709409"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646087"
 ---
 # <a name="policy-activity-in-net-framework-45"></a>Aktivita Policy v rozhraní .NET Framework 4.5
 Aktivita Policy4 umožňuje Windows Workflow Foundation v [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] (WF 3.5) <xref:System.Workflow.Activities.Rules.RuleSet> objektů, který se má použít v modelu Windows Workflow Foundation v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF 4.5) přímo pomocí stroj pravidel, která se dodává v WF 3.5. Pomocí této aktivity může vytvářet a spouštět WF 3.5 <xref:System.Workflow.Activities.Rules.RuleSet>. Další informace o stroj pravidel 3.5 WF zahrnutý jako součást modelu Windows Workflow Foundation přečtěte si úvod do pravidla modul Windows Workflow Foundation. Další informace o migraci pravidla, která WF v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)], přečtěte si prosím [pokyny k migraci](../../../../docs/framework/windows-workflow-foundation/migration-guidance.md).  

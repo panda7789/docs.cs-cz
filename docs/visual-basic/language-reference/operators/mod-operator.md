@@ -15,11 +15,11 @@ ms.assetid: 6ff7e40e-cec8-4c77-bff6-8ddd2791c25b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 456c19fc8e28517a0662b58e338028e1c75cd8c8
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45585861"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45638633"
 ---
 # <a name="mod-operator-visual-basic"></a>Mod – operátor (Visual Basic)
 Provede podíl dvou čísel a vrátí pouze zbytek.  

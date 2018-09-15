@@ -10,11 +10,11 @@ ms.assetid: 7cb4b0f3-7a10-4c93-b84d-733f7134fcf8
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 65c54fe9a076a219c61280a98c390b16f56b5015
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526529"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45649403"
 ---
 # <a name="field-design"></a>Návrh pole
 Princip zapouzdření je jedním z nejdůležitějších pojmy v objektově orientovaný návrh. Tento princip hlásí, že data uložená v objektu by měla být přístupné pouze pro tento objekt.  

@@ -9,11 +9,11 @@ ms.assetid: 97115892-410a-4657-ab47-1e14dfba73f8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e83cf82aee57b1f40f695700d8d0b38c12e0ac39
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45529271"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45647134"
 ---
 # <a name="xmldocument-input-to-xsltransform"></a>Vstup XmlDocument do XslTransform
 <xref:System.Xml.XmlDocument> Třída poskytuje možnosti úprav pro dokument XML. Pokud XML se musí upravit nebo změnit před odesláním do <xref:System.Xml.Xsl.XslTransform.Transform%2A> metody načtení XML do <xref:System.Xml.XmlDocument>, upravit ji a odeslat ho do <xref:System.Xml.Xsl.XslTransform>.  

@@ -9,11 +9,11 @@ ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: da1c9f25052bb2354b435cd28b7ff55d4a754ed1
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557902"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45645954"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Načtení uzlů bez stanoveného pořadí podle názvu nebo indexu
 **XmlNamedNodeMap** je popsána ve specifikaci World Wide Web Consortium (W3C) jako NamedNodeMap a je potřeba zpracovat neuspořádanou sadu uzlů s možností odkaz uzlů podle jejich názvu nebo indexu. Jediný způsob, kterým máte přístup **XmlNamedNodeMap** je, když **XmlNamedNodeMap** , je vrácena prostřednictvím metody nebo vlastnosti. Existují tři metody nebo vlastnosti, které vracejí **XmlNamedNodeMap**:  

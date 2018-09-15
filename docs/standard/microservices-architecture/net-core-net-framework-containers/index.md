@@ -1,19 +1,19 @@
 ---
-title: Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery
+title: Volba mezi .NET Core a .NET Framework pro kontejnery Dockeru
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Volba mezi .NET Core a .NET Framework pro kontejnery Dockeru
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 05/26/2017
-ms.openlocfilehash: 0f6689468eda1dd1b12c24927e650b2b01381274
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/11/2018
+ms.openlocfilehash: 9abff2614e4022408a069be25440196111db19ab
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104439"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45638857"
 ---
-# <a name="choosing-between-net-core-and-net-framework-for-docker-containers"></a>Volba mezi .NET Core a rozhraní .NET Framework pro Docker kontejnery
+# <a name="choosing-between-net-core-and-net-framework-for-docker-containers"></a>Volba mezi .NET Core a .NET Framework pro kontejnery Dockeru
 
-Existují dvě podporované implementace pro vytváření serverové kontejnerizované Docker aplikací pomocí .NET: [rozhraní .NET Framework](https://www.microsoft.com/net/download/framework) a [.NET Core](https://www.microsoft.com/net/download/core). Sdílejí mnoho součásti rozhraní .NET standardní a kód můžete sdílet mezi dva. Existují však základní rozdíly mezi nimi a implementace, které použijete, bude záviset na co chcete dosáhnout. Tato část obsahuje pokyny, když vyberte každou implementaci.
+Existují dvě podporované architektury pro vytváření na straně serveru kontejnerizovaných aplikací Dockeru s .NET: [rozhraní .NET Framework a .NET Core](https://www.microsoft.com/net/download). Mají mnoho součástí platformy .NET a kód můžete sdílet mezi nimi. Existují však základní rozdíly mezi nimi a rozhraní, které použijete, bude záviset na co chcete dosáhnout. Tato část obsahuje pokyny, kdy zvolit každého rozhraní.
 
 
 >[!div class="step-by-step"]

@@ -8,11 +8,11 @@ ms.assetid: bf00c380-706a-4e38-b829-454a480629fc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: f205040e0f044ab04112683c7bdb8edccdfb9f71
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45558122"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45641505"
 ---
 # <a name="common-io-tasks"></a>Obecné vstupně-výstupní úlohy
 <xref:System.IO> Obor názvů poskytuje několik tříd, které umožňují nejrůznější akce, jako je čtení a zápis, pro soubory, adresáře a datové proudy. Další informace najdete v tématu [Souborová služba a vstupně-výstupní operace Stream](../../../docs/standard/io/index.md).  

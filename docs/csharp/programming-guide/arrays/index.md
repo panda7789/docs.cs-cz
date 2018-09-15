@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
 ms.openlocfilehash: e0ed2d678363a29bb870a496846fc6f054769a4b
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45513034"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646688"
 ---
 # <a name="arrays-c-programming-guide"></a>Pole (Průvodce programováním v C#)
 

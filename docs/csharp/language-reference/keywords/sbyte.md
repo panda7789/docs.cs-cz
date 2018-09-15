@@ -8,11 +8,11 @@ helpviewer_keywords:
 - sbyte keyword [C#]
 ms.assetid: 1a9c7b48-73d1-4d33-b485-c4faf0a816bc
 ms.openlocfilehash: 1dca23c4a4216f1edc79b7701a002a28652aed26
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44367649"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45649520"
 ---
 # <a name="sbyte-c-reference"></a>sbyte (Referenční dokumentace jazyka C#)
 

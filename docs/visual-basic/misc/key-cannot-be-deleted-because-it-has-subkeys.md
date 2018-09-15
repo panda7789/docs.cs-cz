@@ -3,11 +3,11 @@ title: Klíč nelze odstranit, protože má podklíčů
 ms.date: 07/20/2015
 ms.assetid: 71d7f28f-42ef-4eb7-a39e-512c40b79977
 ms.openlocfilehash: da784f0d22e0cdd5db5054645d977918fca47f4b
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44265140"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45648444"
 ---
 # <a name="key-cannot-be-deleted-because-it-has-subkeys"></a>Klíč nelze odstranit, protože má podklíčů
 Klíč nelze odstranit, protože má podklíče.  

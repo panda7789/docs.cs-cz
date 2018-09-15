@@ -4,12 +4,12 @@ description: Zobrazit mapování mezi project.json a csproj prvky.
 author: natemcmaster
 ms.author: mairaw
 ms.date: 03/13/2017
-ms.openlocfilehash: 369075f91c0d5ea6c7eb5d09ac2535c4e60f28f6
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0079164470f87df665be6f9de62bc98d3fb51696
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518554"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45647366"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi project.json a csproj vlastnosti
 
@@ -487,7 +487,7 @@ Viz také [soubory](#files).
 ```
 
 Neexistuje žádný ekvivalent pro `owners` element v nástroji MSBuild.
-Pro `summary`, můžete použít MSBuild `<Description>` vlastnost, i v případě, hodnota `summary` není automaticky migrovat na tuto vlastnost, protože tato vlastnost je namapována na [ `description` ](#-other-common-root-level-options) elementu.
+Pro `summary`, můžete použít MSBuild `<Description>` vlastnost, i v případě, hodnota `summary` není automaticky migrovat na tuto vlastnost, protože tato vlastnost je namapována na [ `description` ](#other-common-root-level-options) elementu.
 
 ## <a name="scripts"></a>skripty
 

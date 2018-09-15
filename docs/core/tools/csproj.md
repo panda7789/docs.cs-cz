@@ -5,11 +5,11 @@ author: blackdwarf
 ms.author: mairaw
 ms.date: 09/22/2017
 ms.openlocfilehash: d868eb689af1d87ea2adb1f0069345cbb8195af7
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45514265"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646373"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 

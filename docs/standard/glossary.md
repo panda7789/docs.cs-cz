@@ -6,11 +6,11 @@ ms.author: tdykstra
 ms.date: 07/08/2017
 ms.technology: dotnet-standard
 ms.openlocfilehash: 11fad691021ec897348177c67134750e72b4ff7c
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710674"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45647433"
 ---
 # <a name="net-glossary"></a>.NET – Glosář
 

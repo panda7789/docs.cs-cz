@@ -8,11 +8,11 @@ helpviewer_keywords:
 - decrement operator (--) [C#]
 ms.assetid: 6b9cfe86-63c7-421f-9379-c9690fea8720
 ms.openlocfilehash: 615b100447233856ab3740d075d69e3ae19285fd
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45588082"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45648779"
 ---
 # <a name="---operator-c-reference"></a>-- – operátor (Referenční dokumentace jazyka C#)
 Operátor dekrementace (`--`) sníží svého operandu o 1. Operátor dekrementace se může objevit před nebo po jeho operandu: `--variable` a `variable--`. První forma je operace dekrementace předpony. Výsledkem operace je hodnota operandu "po" byl snížen. Druhá forma se operace dekrementace přípony. Výsledkem operace je hodnota operandu "před" byl snížen.  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
 ms.openlocfilehash: b43143fb3f27d127f93f5e8edd55b853ad604ef5
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44277676"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646386"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Řešení potíží s hybridními aplikacemi
 <a name="introduction"></a> Toto téma uvádí některé běžné problémy, které se mohou vyskytnout při vytváření hybridních aplikací, které obě používají [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] technologie.  

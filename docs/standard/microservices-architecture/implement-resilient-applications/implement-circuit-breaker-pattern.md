@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
 ms.openlocfilehash: 8cd3564e5240ec5a8783edb336957549be27ea6a
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45508496"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45647194"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace vzoru Circuit Breaker
 

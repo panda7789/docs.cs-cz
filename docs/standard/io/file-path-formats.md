@@ -9,19 +9,16 @@ helpviewer_keywords:
 - path formats, Windows
 author: rpetrusha
 ms.author: ronpet
-ms.workload:
-- dotnet
-- dotnetcore
-ms.openlocfilehash: 0efef54abd1da9631b5a560b49c6587d726e9193
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5821d15e71492bd54fa6b5d891f2ff38a2902a06
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861299"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646399"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Cesta formáty souborů v systémech Windows
 
-Členy typů v mnoha <xref:System.IO> zahrnovat obor názvů `path` parametr, který vám umožní zadat absolutní nebo relativní cesta k souboru systémového prostředku. Tato cesta je pak předán [výtahem rozhraní API file Windows](https://msdn.microsoft.com/library/windows/desktop/aa364407(v=vs.85).aspx). Toto téma popisuje formáty pro cesty k souborům, které vám v systémech Windows.
+Členy typů v mnoha <xref:System.IO> zahrnovat obor názvů `path` parametr, který vám umožní zadat absolutní nebo relativní cesta k souboru systémového prostředku. Tato cesta je pak předán [systém rozhraní API souborů Windows](https://msdn.microsoft.com/library/windows/desktop/aa364407(v=vs.85).aspx). Toto téma popisuje formáty pro cesty k souborům, které vám v systémech Windows.
 
 ## <a name="traditional-dos-paths"></a>Tradiční DOS cesty
 

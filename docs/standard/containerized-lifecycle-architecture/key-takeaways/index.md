@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.openlocfilehash: 24a4e826ece691a6a1221b39c164bba2eef8a059
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44778419"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646243"
 ---
 # <a name="key-takeaways"></a>Stěžejní zjištění
 

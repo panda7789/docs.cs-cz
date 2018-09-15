@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
 ms.openlocfilehash: c17b3e1849664bb1a5d56b60e8f4121fedfcdae3
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45557770"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45638766"
 ---
 # <a name="get-started-with-visual-basic"></a>Začínáme s jazykem Visual Basic
 Tato část dokumentace vám pomůže začít s vývojem aplikací jazyka Visual Basic.  

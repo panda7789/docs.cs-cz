@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 51096a2e-8b38-4c4d-a523-799bfdb7ec69
 ms.openlocfilehash: 4d5de5ed3f557842fb28a3cf92b1923a709195d2
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45568419"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45641609"
 ---
 # <a name="manipulating-data"></a>Manipulace s daty
 Před zavedením z více aktivních sad výsledků (MARS) museli vývojáři použít více připojení nebo ukazatele na straně serveru k vyřešení některých scénářích. Kromě toho při více připojení byly použity v transakční situaci, vázaná připojení (s **proceduru sp_getbindtoken** a **sp_bindsession**) byly zapotřebí. Následující scénáře ukazují, jak používat pro připojení MARS místo více připojení.  

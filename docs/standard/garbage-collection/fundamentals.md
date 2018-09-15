@@ -13,11 +13,11 @@ ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 741ddd0171244daceb4d5e283c0172e71b82f3d2
-ms.sourcegitcommit: 67de6cb5dd66a19f2180ba7e4d7aecc697f8a963
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44338724"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45638974"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>Základy kolekce paměti
 <a name="top"></a> V modulu common language runtime (CLR) slouží systému uvolňování paměti jako automatický správce paměti. Poskytuje následující výhody:  

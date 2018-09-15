@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 05/26/2017
-ms.openlocfilehash: 4c514f3a7dc1fb01b2f1ed2dddc9d938c1101809
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 7574a28fc3e8eb3288a81fa5a7ad26f34f1a3eb9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45514388"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45646217"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>Výzvy a řešení správy distribuovaných dat
 
@@ -19,7 +19,7 @@ Definování hranic mikroslužby je pravděpodobně první výzvy, které všem 
 
 Nejprve budete muset zaměřit na logické doménových modelů a související data aplikace. Musí se pokusí identifikovat oddělující ostrovy data a různých kontextech v rámci stejné aplikace. Každý kontext může mít různé obchodní jazyk (různé obchodní podmínky). Kontexty by měl definovány a spravovat nezávisle. Podmínky a entit používaných v těchto různých kontextech může zní podobně, ale může zjistit, že v konkrétním kontextu, obchodní konceptu s jedním používá pro jiný účel v jiném kontextu a dokonce může mít jiný název. Uživatel například může odkazovat jako uživatel v rámci identity nebo členství zákazníky v rámci CRM jako odběratel v pořadí kontextu a tak dále.
 
-Způsob identifikace hranic mezi několika kontextech aplikaci s jinou doménu pro každý kontext je přesně, jak můžete identifikovat hranice pro každou obchodní mikroslužeb a související doménový model a data. Vždy snaží minimalizovat párování mezi těmito mikroslužeb. Tato příručka obsahuje další podrobnosti o tento návrh modelu identifikace a domény v části [identifikace hranic mezi modelem a doménou u jednotlivých mikroslužeb](#identifying-domain-model-boundaries-for-each-microservice) později.
+Způsob identifikace hranic mezi několika kontextech aplikaci s jinou doménu pro každý kontext je přesně, jak můžete identifikovat hranice pro každou obchodní mikroslužeb a související doménový model a data. Vždy snaží minimalizovat párování mezi těmito mikroslužeb. Tato příručka obsahuje další podrobnosti o tento návrh modelu identifikace a domény v části [identifikace hranic mezi modelem a doménou u jednotlivých mikroslužeb](identify-microservice-domain-model-boundaries.md) později.
 
 ## <a name="challenge-2-how-to-create-queries-that-retrieve-data-from-several-microservices"></a>Výzvy \#2: vytvoření dotazů, které načítají data z několika mikroslužeb
 
@@ -57,7 +57,7 @@ Jak je uvedeno ve [věty](https://en.wikipedia.org/wiki/CAP_theorem), je nutné 
 
 Kromě toho kyseliny – vizuální styl nebo dvoufázového potvrzení transakce, je právě proti principů mikroslužeb; Většina databází NoSQL (např. služby Azure Cosmos DB, MongoDB atd.) nepodporují dvoufázového potvrzení transakce. Zachovat data konzistence napříč službami a databáze je však nezbytné. Tento problém souvisí na otázku, jak při určitých dat musí být redundantní šíří změny mezi různými mikroslužbami – například když potřebujete mít název nebo popis v katalogu mikroslužeb a košíku produktu mikroslužby.
 
-Dobrým řešením tohoto problému je použít konečnou konzistenci mezi mikroslužbami kloubové prostřednictvím komunikace založená na událostech a systémem publikování a odběr. Tato témata jsou popsané v části [asynchronní komunikace založená na událostech](#async_event_driven_communication) dále v tomto průvodci.
+Dobrým řešením tohoto problému je použít konečnou konzistenci mezi mikroslužbami kloubové prostřednictvím komunikace založená na událostech a systémem publikování a odběr. Tato témata jsou popsané v části [asynchronní komunikace založená na událostech](asynchronous-message-based-communication.md#asynchronous-event-driven-communication) dále v tomto průvodci.
 
 ## <a name="challenge-4-how-to-design-communication-across-microservice-boundaries"></a>Výzvy \#4: postup návrhu komunikace mezi hranic mikroslužby
 

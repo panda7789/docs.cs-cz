@@ -5,12 +5,12 @@ author: jralexander
 ms.author: johalex
 ms.date: 11/06/2017
 ms.custom: mvc
-ms.openlocfilehash: 0fe3fcdee1c508f5c8165b7709ca08e42d0b1d55
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d578ec5a25dbb5de3c88386e212e68cf3b267749
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44251768"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45638961"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 
@@ -147,11 +147,11 @@ Toto úložiště obsahuje ukázky, které demonstrují různé konfigurace Dock
 
 * [Image Microsoft SQL Server Developer Edition pro kontejnery Windows na Dockerhubu](https://hub.docker.com/r/microsoft/mssql-server-windows-developer/)
 
-#### <a name="visual-studio-team-services-vsts-agent"></a>Visual Studio Team Services (VSTS) agenta
+#### <a name="azure-devops-services-agent"></a>Agent Azure DevOps služby
 
-* [Visual Studio Team Services (VSTS) agenta Image v Dockerhubu](https://hub.docker.com/r/microsoft/vsts-agent/)
+* [Azure DevOps služby agenta Image v Dockerhubu](https://hub.docker.com/r/microsoft/vsts-agent/)
 
-* [Visual Studio Team Services (VSTS) Image agenta na Githubu](https://github.com/Microsoft/vsts-agent-docker)
+* [Azure DevOps služby agenta imagí na Githubu](https://github.com/Microsoft/vsts-agent-docker)
 
 #### <a name="operations-management-suite-oms-linux-agent"></a>Operations Management Suite (OMS) linuxového agenta
 

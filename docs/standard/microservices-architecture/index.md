@@ -4,14 +4,15 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 3585ec322f7ce82c5e178088d19ee6dadd58ab24
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 0f401f89b0a568b8dc7c3734b2f06fa3a14de110
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519816"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45648158"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro Kontejnerizované aplikace .NET
+
 ![Titulní knihy](./media/cover-small.png)
 
 **EDICE v2.1.02** – aktualizováno, aby ASP.NET Core 2.1
@@ -69,7 +70,7 @@ Také zjistíte Tato příručka užitečné, pokud jste technický pracovník s
 
 První části této příručky zavádí kontejnery Dockeru, popisuje, jak si vybrat mezi .NET Core a .NET Framework jako rozhraní pro vývoj a najdete zde přehled mikroslužeb. Tento obsah je pro architekty a technické pracovníky s rozhodovací pravomocí, kteří mají přehled, ale není potřeba zaměřit se na podrobnosti implementace kódu.
 
-Začíná druhé části v průvodci [aplikací založených na proces vývoje pro Docker](#ch_dev_process_for_docker_based_apps) oddílu. Zaměřuje se na vývoj a mikroslužeb vzory pro provádění aplikací pomocí .NET Core a Docker. Tato část bude mít největší zájem vývojářům a architektům, kteří chtějí soustředit se na kód a vzorců a podrobnosti implementace.
+Začíná druhé části v průvodci [aplikací založených na proces vývoje pro Docker](./docker-application-development-process/index.md) oddílu. Zaměřuje se na vývoj a mikroslužeb vzory pro provádění aplikací pomocí .NET Core a Docker. Tato část bude mít největší zájem vývojářům a architektům, kteří chtějí soustředit se na kód a vzorců a podrobnosti implementace.
 
 ## <a name="related-microservice-and-container-based-reference-application-eshoponcontainers"></a>Související mikroslužby a aplikace založené na kontejnerech odkaz: aplikaci eShopOnContainers
 
