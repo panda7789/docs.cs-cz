@@ -8,31 +8,31 @@ helpviewer_keywords:
 - TextBox control [WPF], how-to topics
 ms.assetid: 006aa461-fe37-4cd8-860a-d38d76e8b9f7
 ms.openlocfilehash: 2319ea8522a90705cf65006ffb368801921cda57
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44212045"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45624493"
 ---
-# <a name="textbox-how-to-topics"></a><span data-ttu-id="e0704-102">TextBox – postupy</span><span class="sxs-lookup"><span data-stu-id="e0704-102">TextBox How-to Topics</span></span>
-<span data-ttu-id="e0704-103">Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.TextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="e0704-103">This section provides examples that demonstrate how to accomplish common tasks using the <xref:System.Windows.Controls.TextBox> control.</span></span>  
+# <a name="textbox-how-to-topics"></a><span data-ttu-id="b4b7f-102">TextBox – postupy</span><span class="sxs-lookup"><span data-stu-id="b4b7f-102">TextBox How-to Topics</span></span>
+<span data-ttu-id="b4b7f-103">Tato část obsahuje příklady, které ukazují, jak provádět běžné úlohy pomocí <xref:System.Windows.Controls.TextBox> ovládacího prvku.</span><span class="sxs-lookup"><span data-stu-id="b4b7f-103">This section provides examples that demonstrate how to accomplish common tasks using the <xref:System.Windows.Controls.TextBox> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="e0704-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="e0704-104">In This Section</span></span>  
- [<span data-ttu-id="e0704-105">Vytvoření víceřádkového ovládacího prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-105">Create a Multiline TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-create-a-multiline-textbox-control.md)  
- [<span data-ttu-id="e0704-106">Zjištění, kdy došlo ke změně textu v prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-106">Detect When Text in a TextBox Has Changed</span></span>](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)  
- [<span data-ttu-id="e0704-107">Povolení znaků tabulátoru v ovládacím prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-107">Enable Tab Characters in a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-enable-tab-characters-in-a-textbox-control.md)  
- [<span data-ttu-id="e0704-108">Získání kolekce řádků z prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-108">Get a Collection of Lines from a TextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-get-a-collection-of-lines-from-a-textbox.md)  
- [<span data-ttu-id="e0704-109">Nastavení ovládacího prvku TextBox jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="e0704-109">Make a TextBox Control Read-Only</span></span>](../../../../docs/framework/wpf/controls/how-to-make-a-textbox-control-read-only.md)  
- [<span data-ttu-id="e0704-110">Umístění kurzoru na začátek nebo konec textu v ovládacím prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-110">Position the Cursor at the Beginning or End of Text in a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/position-the-cursor-at-the-beginning-or-end-of-text.md)  
- [<span data-ttu-id="e0704-111">Načtení výběru textu</span><span class="sxs-lookup"><span data-stu-id="e0704-111">Retrieve a Text Selection</span></span>](../../../../docs/framework/wpf/controls/how-to-retrieve-a-text-selection.md)  
- [<span data-ttu-id="e0704-112">Nastavení fokusu v ovládacím prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-112">Set Focus in a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-set-focus-in-a-textbox-control.md)  
- [<span data-ttu-id="e0704-113">Nastavení obsahu textu ovládacího prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-113">Set the Text Content of a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-set-the-text-content-of-a-textbox-control.md)  
- [<span data-ttu-id="e0704-114">Povolení kontroly pravopisu v ovládacím prvku pro úpravy textu</span><span class="sxs-lookup"><span data-stu-id="e0704-114">Enable Spell Checking in a Text Editing Control</span></span>](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md)  
- [<span data-ttu-id="e0704-115">Použití vlastní místní nabídky s prvkem TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-115">Use a Custom Context Menu with a TextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-use-a-custom-context-menu-with-a-textbox.md)  
- [<span data-ttu-id="e0704-116">Použití kontroly pravopisu s místní nabídkou</span><span class="sxs-lookup"><span data-stu-id="e0704-116">Use Spell Checking with a Context Menu</span></span>](../../../../docs/framework/wpf/controls/how-to-use-spell-checking-with-a-context-menu.md)  
- [<span data-ttu-id="e0704-117">Přidání vodoznaku do pole TextBox</span><span class="sxs-lookup"><span data-stu-id="e0704-117">Add a Watermark to a TextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-add-a-watermark-to-a-textbox.md)  
+## <a name="in-this-section"></a><span data-ttu-id="b4b7f-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="b4b7f-104">In This Section</span></span>  
+ [<span data-ttu-id="b4b7f-105">Vytvoření víceřádkového ovládacího prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-105">Create a Multiline TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-create-a-multiline-textbox-control.md)  
+ [<span data-ttu-id="b4b7f-106">Zjištění, kdy došlo ke změně textu v prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-106">Detect When Text in a TextBox Has Changed</span></span>](../../../../docs/framework/wpf/controls/how-to-detect-when-text-in-a-textbox-has-changed.md)  
+ [<span data-ttu-id="b4b7f-107">Povolení znaků tabulátoru v ovládacím prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-107">Enable Tab Characters in a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-enable-tab-characters-in-a-textbox-control.md)  
+ [<span data-ttu-id="b4b7f-108">Získání kolekce řádků z prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-108">Get a Collection of Lines from a TextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-get-a-collection-of-lines-from-a-textbox.md)  
+ [<span data-ttu-id="b4b7f-109">Nastavení ovládacího prvku TextBox jen pro čtení</span><span class="sxs-lookup"><span data-stu-id="b4b7f-109">Make a TextBox Control Read-Only</span></span>](../../../../docs/framework/wpf/controls/how-to-make-a-textbox-control-read-only.md)  
+ [<span data-ttu-id="b4b7f-110">Umístění kurzoru na začátek nebo konec textu v ovládacím prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-110">Position the Cursor at the Beginning or End of Text in a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/position-the-cursor-at-the-beginning-or-end-of-text.md)  
+ [<span data-ttu-id="b4b7f-111">Načtení výběru textu</span><span class="sxs-lookup"><span data-stu-id="b4b7f-111">Retrieve a Text Selection</span></span>](../../../../docs/framework/wpf/controls/how-to-retrieve-a-text-selection.md)  
+ [<span data-ttu-id="b4b7f-112">Nastavení fokusu v ovládacím prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-112">Set Focus in a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-set-focus-in-a-textbox-control.md)  
+ [<span data-ttu-id="b4b7f-113">Nastavení obsahu textu ovládacího prvku TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-113">Set the Text Content of a TextBox Control</span></span>](../../../../docs/framework/wpf/controls/how-to-set-the-text-content-of-a-textbox-control.md)  
+ [<span data-ttu-id="b4b7f-114">Povolení kontroly pravopisu v ovládacím prvku pro úpravy textu</span><span class="sxs-lookup"><span data-stu-id="b4b7f-114">Enable Spell Checking in a Text Editing Control</span></span>](../../../../docs/framework/wpf/controls/how-to-enable-spell-checking-in-a-text-editing-control.md)  
+ [<span data-ttu-id="b4b7f-115">Použití vlastní místní nabídky s prvkem TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-115">Use a Custom Context Menu with a TextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-use-a-custom-context-menu-with-a-textbox.md)  
+ [<span data-ttu-id="b4b7f-116">Použití kontroly pravopisu s místní nabídkou</span><span class="sxs-lookup"><span data-stu-id="b4b7f-116">Use Spell Checking with a Context Menu</span></span>](../../../../docs/framework/wpf/controls/how-to-use-spell-checking-with-a-context-menu.md)  
+ [<span data-ttu-id="b4b7f-117">Přidání vodoznaku do pole TextBox</span><span class="sxs-lookup"><span data-stu-id="b4b7f-117">Add a Watermark to a TextBox</span></span>](../../../../docs/framework/wpf/controls/how-to-add-a-watermark-to-a-textbox.md)  
   
-## <a name="reference"></a><span data-ttu-id="e0704-118">Odkaz</span><span class="sxs-lookup"><span data-stu-id="e0704-118">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="b4b7f-118">Odkaz</span><span class="sxs-lookup"><span data-stu-id="b4b7f-118">Reference</span></span>  
  <xref:System.Windows.Controls.TextBox>  
   
  <xref:System.Windows.Controls.RichTextBox>  
@@ -41,6 +41,6 @@ ms.locfileid: "44212045"
   
  <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="see-also"></a><span data-ttu-id="e0704-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="e0704-119">See Also</span></span>  
- [<span data-ttu-id="e0704-120">Ukázková galerie ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="e0704-120">WPF Controls Gallery Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160053)  
- [<span data-ttu-id="e0704-121">TextBox – styly a šablony</span><span class="sxs-lookup"><span data-stu-id="e0704-121">TextBox Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)
+## <a name="see-also"></a><span data-ttu-id="b4b7f-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="b4b7f-119">See Also</span></span>  
+ [<span data-ttu-id="b4b7f-120">Ukázková galerie ovládacích prvků WPF</span><span class="sxs-lookup"><span data-stu-id="b4b7f-120">WPF Controls Gallery Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160053)  
+ [<span data-ttu-id="b4b7f-121">TextBox – styly a šablony</span><span class="sxs-lookup"><span data-stu-id="b4b7f-121">TextBox Styles and Templates</span></span>](../../../../docs/framework/wpf/controls/textbox-styles-and-templates.md)

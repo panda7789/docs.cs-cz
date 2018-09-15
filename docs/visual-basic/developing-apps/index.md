@@ -6,40 +6,40 @@ helpviewer_keywords:
 - applications [Visual Basic]
 ms.assetid: 1e1c0c81-6d95-4167-a98b-44b1efb6d25f
 ms.openlocfilehash: ecb2c0a09ce92a11a021b45576b5499900b25356
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45515858"
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45625617"
 ---
-# <a name="developing-applications-with-visual-basic"></a><span data-ttu-id="5efe0-102">Vývoj aplikací pomocí jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5efe0-102">Developing Applications with Visual Basic</span></span>
-<span data-ttu-id="5efe0-103">Tato část obsahuje rámcové dokumentaci pro jazyk Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="5efe0-103">This section covers conceptual documentation for the Visual Basic language.</span></span>  
+# <a name="developing-applications-with-visual-basic"></a><span data-ttu-id="028f4-102">Vývoj aplikací pomocí jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="028f4-102">Developing Applications with Visual Basic</span></span>
+<span data-ttu-id="028f4-103">Tato část obsahuje rámcové dokumentaci pro jazyk Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="028f4-103">This section covers conceptual documentation for the Visual Basic language.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="5efe0-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="5efe0-104">In This Section</span></span>  
- [<span data-ttu-id="5efe0-105">Programování v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5efe0-105">Programming in Visual Basic</span></span>](../../visual-basic/developing-apps/programming/index.md)  
- <span data-ttu-id="5efe0-106">Zahrnuje celou řadu programovacích témata.</span><span class="sxs-lookup"><span data-stu-id="5efe0-106">Covers a variety of programming subjects.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="028f4-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="028f4-104">In This Section</span></span>  
+ [<span data-ttu-id="028f4-105">Programování v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="028f4-105">Programming in Visual Basic</span></span>](../../visual-basic/developing-apps/programming/index.md)  
+ <span data-ttu-id="028f4-106">Zahrnuje celou řadu programovacích témata.</span><span class="sxs-lookup"><span data-stu-id="028f4-106">Covers a variety of programming subjects.</span></span>  
   
- [<span data-ttu-id="5efe0-107">Vývoj s použitím oboru názvů My</span><span class="sxs-lookup"><span data-stu-id="5efe0-107">Development with My</span></span>](../../visual-basic/developing-apps/development-with-my/index.md)  
- <span data-ttu-id="5efe0-108">Tento článek popisuje nové funkce volána `My`, která poskytuje přístup k informacím a výchozí instance objektů, které se vztahují k aplikaci a její prostředí za běhu.</span><span class="sxs-lookup"><span data-stu-id="5efe0-108">Discusses a new feature called `My`, which provides access to information and default object instances that are related to an application and its run-time environment.</span></span>  
+ [<span data-ttu-id="028f4-107">Vývoj s použitím oboru názvů My</span><span class="sxs-lookup"><span data-stu-id="028f4-107">Development with My</span></span>](../../visual-basic/developing-apps/development-with-my/index.md)  
+ <span data-ttu-id="028f4-108">Tento článek popisuje nové funkce volána `My`, která poskytuje přístup k informacím a výchozí instance objektů, které se vztahují k aplikaci a její prostředí za běhu.</span><span class="sxs-lookup"><span data-stu-id="028f4-108">Discusses a new feature called `My`, which provides access to information and default object instances that are related to an application and its run-time environment.</span></span>  
   
- [<span data-ttu-id="5efe0-109">Přístup k datům v aplikacích jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5efe0-109">Accessing Data in Visual Basic Applications</span></span>](../../visual-basic/developing-apps/accessing-data.md)  
- <span data-ttu-id="5efe0-110">Obsahuje nápovědu o přístupu k datům v jazyce Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="5efe0-110">Contains Help on accessing data in Visual Basic.</span></span>  
+ [<span data-ttu-id="028f4-109">Přístup k datům v aplikacích jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="028f4-109">Accessing Data in Visual Basic Applications</span></span>](../../visual-basic/developing-apps/accessing-data.md)  
+ <span data-ttu-id="028f4-110">Obsahuje nápovědu o přístupu k datům v jazyce Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="028f4-110">Contains Help on accessing data in Visual Basic.</span></span>  
   
- [<span data-ttu-id="5efe0-111">Vytváření a používání komponent v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5efe0-111">Creating and Using Components in Visual Basic</span></span>](../../visual-basic/developing-apps/creating-and-using-components.md)  
- <span data-ttu-id="5efe0-112">Definuje pojem *komponenty* a popisuje, jak a kdy k vytvoření komponentů.</span><span class="sxs-lookup"><span data-stu-id="5efe0-112">Defines the term *component* and discusses how and when to create components.</span></span>  
+ [<span data-ttu-id="028f4-111">Vytváření a používání komponent v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="028f4-111">Creating and Using Components in Visual Basic</span></span>](../../visual-basic/developing-apps/creating-and-using-components.md)  
+ <span data-ttu-id="028f4-112">Definuje pojem *komponenty* a popisuje, jak a kdy k vytvoření komponentů.</span><span class="sxs-lookup"><span data-stu-id="028f4-112">Defines the term *component* and discusses how and when to create components.</span></span>  
   
- [<span data-ttu-id="5efe0-113">Tisk a vytváření sestav</span><span class="sxs-lookup"><span data-stu-id="5efe0-113">Printing and Reporting</span></span>](../../visual-basic/developing-apps/printing/index.md)  
- <span data-ttu-id="5efe0-114">Poskytuje přehledy a odkazy na relevantní dokumentaci týkající se tisk a vytváření sestav.</span><span class="sxs-lookup"><span data-stu-id="5efe0-114">Provides overviews and links to the relevant documentation related to printing and reporting.</span></span>  
+ [<span data-ttu-id="028f4-113">Tisk a vytváření sestav</span><span class="sxs-lookup"><span data-stu-id="028f4-113">Printing and Reporting</span></span>](../../visual-basic/developing-apps/printing/index.md)  
+ <span data-ttu-id="028f4-114">Poskytuje přehledy a odkazy na relevantní dokumentaci týkající se tisk a vytváření sestav.</span><span class="sxs-lookup"><span data-stu-id="028f4-114">Provides overviews and links to the relevant documentation related to printing and reporting.</span></span>  
   
- [<span data-ttu-id="5efe0-115">Základy formulářové aplikace Windows</span><span class="sxs-lookup"><span data-stu-id="5efe0-115">Windows Forms Application Basics</span></span>](../../visual-basic/developing-apps/windows-forms/index.md)  
- <span data-ttu-id="5efe0-116">Poskytuje informace o vytváření aplikací pro Windows Forms pomocí sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="5efe0-116">Provides information about creating Windows Forms applications by using Visual Studio.</span></span>  
+ [<span data-ttu-id="028f4-115">Základy formulářové aplikace Windows</span><span class="sxs-lookup"><span data-stu-id="028f4-115">Windows Forms Application Basics</span></span>](../../visual-basic/developing-apps/windows-forms/index.md)  
+ <span data-ttu-id="028f4-116">Poskytuje informace o vytváření aplikací pro Windows Forms pomocí sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="028f4-116">Provides information about creating Windows Forms applications by using Visual Studio.</span></span>  
   
- [<span data-ttu-id="5efe0-117">Přizpůsobení projektů a rozšíření Moje</span><span class="sxs-lookup"><span data-stu-id="5efe0-117">Customizing Projects and Extending My</span></span>](../../visual-basic/developing-apps/customizing-extending-my/index.md)  
- <span data-ttu-id="5efe0-118">Popisuje, jak můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty.</span><span class="sxs-lookup"><span data-stu-id="5efe0-118">Describes how you can customize project templates to provide additional `My` objects.</span></span>  
+ [<span data-ttu-id="028f4-117">Přizpůsobení projektů a rozšíření Moje</span><span class="sxs-lookup"><span data-stu-id="028f4-117">Customizing Projects and Extending My</span></span>](../../visual-basic/developing-apps/customizing-extending-my/index.md)  
+ <span data-ttu-id="028f4-118">Popisuje, jak můžete přizpůsobit šablony projektu k poskytnutí dalších `My` objekty.</span><span class="sxs-lookup"><span data-stu-id="028f4-118">Describes how you can customize project templates to provide additional `My` objects.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="5efe0-119">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="5efe0-119">Related Sections</span></span>  
- [<span data-ttu-id="5efe0-120">Průvodce programováním v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5efe0-120">Visual Basic Programming Guide</span></span>](../../visual-basic/programming-guide/index.md)  
- <span data-ttu-id="5efe0-121">Provede nepostradatelné prvky programování v jazyce Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="5efe0-121">Walks through the essential elements of programming with Visual Basic.</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="028f4-119">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="028f4-119">Related Sections</span></span>  
+ [<span data-ttu-id="028f4-120">Průvodce programováním v jazyce Visual Basic</span><span class="sxs-lookup"><span data-stu-id="028f4-120">Visual Basic Programming Guide</span></span>](../../visual-basic/programming-guide/index.md)  
+ <span data-ttu-id="028f4-121">Provede nepostradatelné prvky programování v jazyce Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="028f4-121">Walks through the essential elements of programming with Visual Basic.</span></span>  
   
- [<span data-ttu-id="5efe0-122">Referenční příručka jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="5efe0-122">Visual Basic Language Reference</span></span>](../../visual-basic/language-reference/index.md)  
- <span data-ttu-id="5efe0-123">Obsahuje referenční dokumentace jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="5efe0-123">Contains reference documentation for the Visual Basic language.</span></span>
+ [<span data-ttu-id="028f4-122">Referenční příručka jazyka Visual Basic</span><span class="sxs-lookup"><span data-stu-id="028f4-122">Visual Basic Language Reference</span></span>](../../visual-basic/language-reference/index.md)  
+ <span data-ttu-id="028f4-123">Obsahuje referenční dokumentace jazyka Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="028f4-123">Contains reference documentation for the Visual Basic language.</span></span>
