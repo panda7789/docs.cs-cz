@@ -9,35 +9,35 @@ helpviewer_keywords:
 - params keyword [C#]
 ms.assetid: 1690815e-b52b-4967-8380-5780aff08012
 ms.openlocfilehash: 089e31f3aad12c2303619e2a1998d0d6a5a0ad86
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44700502"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45638659"
 ---
-# <a name="params-c-reference"></a><span data-ttu-id="66f99-102">params (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="66f99-102">params (C# Reference)</span></span>
+# <a name="params-c-reference"></a><span data-ttu-id="6ea09-102">params (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="6ea09-102">params (C# Reference)</span></span>
 
-<span data-ttu-id="66f99-103">S použitím `params` – klíčové slovo, můžete zadat [parametr metody](method-parameters.md) , která přijímá proměnný počet argumentů.</span><span class="sxs-lookup"><span data-stu-id="66f99-103">By using the `params` keyword, you can specify a [method parameter](method-parameters.md) that takes a variable number of arguments.</span></span>
+<span data-ttu-id="6ea09-103">S použitím `params` – klíčové slovo, můžete zadat [parametr metody](method-parameters.md) , která přijímá proměnný počet argumentů.</span><span class="sxs-lookup"><span data-stu-id="6ea09-103">By using the `params` keyword, you can specify a [method parameter](method-parameters.md) that takes a variable number of arguments.</span></span>
 
-<span data-ttu-id="66f99-104">Můžete odeslat čárkami oddělený seznam argumentů typ zadaný v deklaraci parametru nebo pole argumentů zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="66f99-104">You can send a comma-separated list of arguments of the type specified in the parameter declaration or an array of arguments of the specified type.</span></span> <span data-ttu-id="66f99-105">Můžete také odeslat žádné argumenty.</span><span class="sxs-lookup"><span data-stu-id="66f99-105">You also can send no arguments.</span></span> <span data-ttu-id="66f99-106">Pokud odešlete bez argumentů, délka `params` seznamu je nula.</span><span class="sxs-lookup"><span data-stu-id="66f99-106">If you send no arguments, the length of the `params` list is zero.</span></span>
+<span data-ttu-id="6ea09-104">Můžete odeslat čárkami oddělený seznam argumentů typ zadaný v deklaraci parametru nebo pole argumentů zadaného typu.</span><span class="sxs-lookup"><span data-stu-id="6ea09-104">You can send a comma-separated list of arguments of the type specified in the parameter declaration or an array of arguments of the specified type.</span></span> <span data-ttu-id="6ea09-105">Můžete také odeslat žádné argumenty.</span><span class="sxs-lookup"><span data-stu-id="6ea09-105">You also can send no arguments.</span></span> <span data-ttu-id="6ea09-106">Pokud odešlete bez argumentů, délka `params` seznamu je nula.</span><span class="sxs-lookup"><span data-stu-id="6ea09-106">If you send no arguments, the length of the `params` list is zero.</span></span>
 
-<span data-ttu-id="66f99-107">Žádné další parametry nejsou povoleny po `params` – klíčové slovo v deklaraci metody a pouze jeden `params` – klíčové slovo je povolený v deklaraci metody.</span><span class="sxs-lookup"><span data-stu-id="66f99-107">No additional parameters are permitted after the `params` keyword in a method declaration, and only one `params` keyword is permitted in a method declaration.</span></span>
+<span data-ttu-id="6ea09-107">Žádné další parametry nejsou povoleny po `params` – klíčové slovo v deklaraci metody a pouze jeden `params` – klíčové slovo je povolený v deklaraci metody.</span><span class="sxs-lookup"><span data-stu-id="6ea09-107">No additional parameters are permitted after the `params` keyword in a method declaration, and only one `params` keyword is permitted in a method declaration.</span></span>
 
-<span data-ttu-id="66f99-108">Deklarovaný typ `params` parametr musí být jednorozměrné pole, jak ukazuje následující příklad.</span><span class="sxs-lookup"><span data-stu-id="66f99-108">The declared type of the `params` parameter must be a single-dimensional array, as the following example shows.</span></span> <span data-ttu-id="66f99-109">V opačném případě chybu kompilátoru [CS0225](../../misc/cs0225.md) vyvolá.</span><span class="sxs-lookup"><span data-stu-id="66f99-109">Otherwise, a compiler error [CS0225](../../misc/cs0225.md) occurs.</span></span>
+<span data-ttu-id="6ea09-108">Deklarovaný typ `params` parametr musí být jednorozměrné pole, jak ukazuje následující příklad.</span><span class="sxs-lookup"><span data-stu-id="6ea09-108">The declared type of the `params` parameter must be a single-dimensional array, as the following example shows.</span></span> <span data-ttu-id="6ea09-109">V opačném případě chybu kompilátoru [CS0225](../../misc/cs0225.md) vyvolá.</span><span class="sxs-lookup"><span data-stu-id="6ea09-109">Otherwise, a compiler error [CS0225](../../misc/cs0225.md) occurs.</span></span>
 
-## <a name="example"></a><span data-ttu-id="66f99-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="66f99-110">Example</span></span>
+## <a name="example"></a><span data-ttu-id="6ea09-110">Příklad</span><span class="sxs-lookup"><span data-stu-id="6ea09-110">Example</span></span>
 
-<span data-ttu-id="66f99-111">Následující příklad ukazuje různé způsoby, jimiž lze argumenty odesílat do `params` parametru.</span><span class="sxs-lookup"><span data-stu-id="66f99-111">The following example demonstrates various ways in which arguments can be sent to a `params` parameter.</span></span>
+<span data-ttu-id="6ea09-111">Následující příklad ukazuje různé způsoby, jimiž lze argumenty odesílat do `params` parametru.</span><span class="sxs-lookup"><span data-stu-id="6ea09-111">The following example demonstrates various ways in which arguments can be sent to a `params` parameter.</span></span>
 
 [!code-csharp[csrefKeywordsMethodParams#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsMethodParams/CS/csrefKeywordsMethodParams.cs#5)] 
 
-## <a name="c-language-specification"></a><span data-ttu-id="66f99-112">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="66f99-112">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="6ea09-112">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="6ea09-112">C# language specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="66f99-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="66f99-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6ea09-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6ea09-113">See also</span></span>
 
-- [<span data-ttu-id="66f99-114">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="66f99-114">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="66f99-115">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="66f99-115">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="66f99-116">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="66f99-116">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="66f99-117">Parametry metody</span><span class="sxs-lookup"><span data-stu-id="66f99-117">Method Parameters</span></span>](method-parameters.md)
+- [<span data-ttu-id="6ea09-114">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="6ea09-114">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="6ea09-115">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="6ea09-115">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="6ea09-116">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="6ea09-116">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="6ea09-117">Parametry metody</span><span class="sxs-lookup"><span data-stu-id="6ea09-117">Method Parameters</span></span>](method-parameters.md)

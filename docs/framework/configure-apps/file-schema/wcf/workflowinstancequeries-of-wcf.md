@@ -3,49 +3,49 @@ title: '&lt;workflowInstanceQueries&gt; služby WCF'
 ms.date: 03/30/2017
 ms.assetid: b0852f77-16e4-4d55-8eb7-a19feb0e8fc4
 ms.openlocfilehash: dfa75a7e4729244ba5887e6666c0fdfe840e9faf
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45508353"
+ms.lasthandoff: 09/15/2018
+ms.locfileid: "45647286"
 ---
-# <a name="ltworkflowinstancequeriesgt-of-wcf"></a><span data-ttu-id="7a468-102">&lt;workflowInstanceQueries&gt; služby WCF</span><span class="sxs-lookup"><span data-stu-id="7a468-102">&lt;workflowInstanceQueries&gt; of WCF</span></span>
-<span data-ttu-id="7a468-103">Představuje kolekci elementů konfigurace, které sledovat změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.</span><span class="sxs-lookup"><span data-stu-id="7a468-103">Represents a collection of configuration elements that track workflow instance life cycle changes such as a started or completed event.</span></span>  
+# <a name="ltworkflowinstancequeriesgt-of-wcf"></a><span data-ttu-id="94076-102">&lt;workflowInstanceQueries&gt; služby WCF</span><span class="sxs-lookup"><span data-stu-id="94076-102">&lt;workflowInstanceQueries&gt; of WCF</span></span>
+<span data-ttu-id="94076-103">Představuje kolekci elementů konfigurace, které sledovat změny životního cyklu instance pracovního postupu, jako je spuštěna nebo dokončené události.</span><span class="sxs-lookup"><span data-stu-id="94076-103">Represents a collection of configuration elements that track workflow instance life cycle changes such as a started or completed event.</span></span>  
   
- <span data-ttu-id="7a468-104">Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="7a468-104">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
+ <span data-ttu-id="94076-104">Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span><span class="sxs-lookup"><span data-stu-id="94076-104">For more information on tracking profile queries, see [Tracking Profiles](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)</span></span>  
   
- <span data-ttu-id="7a468-105">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="7a468-105">\<system.serviceModel></span></span>  
-<span data-ttu-id="7a468-106">\<sledování ></span><span class="sxs-lookup"><span data-stu-id="7a468-106">\<tracking></span></span>  
-<span data-ttu-id="7a468-107">\<profil trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="7a468-107">\<trackingProfile></span></span>  
-<span data-ttu-id="7a468-108">\<pracovní postup ></span><span class="sxs-lookup"><span data-stu-id="7a468-108">\<workflow></span></span>  
-<span data-ttu-id="7a468-109">\<workflowInstanceQueries ></span><span class="sxs-lookup"><span data-stu-id="7a468-109">\<workflowInstanceQueries></span></span>  
+ <span data-ttu-id="94076-105">\<system.serviceModel></span><span class="sxs-lookup"><span data-stu-id="94076-105">\<system.serviceModel></span></span>  
+<span data-ttu-id="94076-106">\<sledování ></span><span class="sxs-lookup"><span data-stu-id="94076-106">\<tracking></span></span>  
+<span data-ttu-id="94076-107">\<profil trackingProfile ></span><span class="sxs-lookup"><span data-stu-id="94076-107">\<trackingProfile></span></span>  
+<span data-ttu-id="94076-108">\<pracovní postup ></span><span class="sxs-lookup"><span data-stu-id="94076-108">\<workflow></span></span>  
+<span data-ttu-id="94076-109">\<workflowInstanceQueries ></span><span class="sxs-lookup"><span data-stu-id="94076-109">\<workflowInstanceQueries></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7a468-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7a468-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="94076-110">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="94076-110">Syntax</span></span>  
   
 ```xml
 <tracking>   <trackingProfile name="Name">       <workflow>          <workflowInstanceQueries>             <workflowInstanceQuery>                <states>                   <state name="Name"/>                </states>            </workflowInstanceQuery>         </workflowInstanceQueries>       </workflow>   </trackingProfile></tracking>  
 ```
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="7a468-111">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="7a468-111">Attributes and Elements</span></span>  
- <span data-ttu-id="7a468-112">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="7a468-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="94076-111">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="94076-111">Attributes and Elements</span></span>  
+ <span data-ttu-id="94076-112">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="94076-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="7a468-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="7a468-113">Attributes</span></span>  
- <span data-ttu-id="7a468-114">Žádné</span><span class="sxs-lookup"><span data-stu-id="7a468-114">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="94076-113">Atributy</span><span class="sxs-lookup"><span data-stu-id="94076-113">Attributes</span></span>  
+ <span data-ttu-id="94076-114">Žádné</span><span class="sxs-lookup"><span data-stu-id="94076-114">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="7a468-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="7a468-115">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="94076-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="94076-115">Child Elements</span></span>  
   
-|<span data-ttu-id="7a468-116">Prvek</span><span class="sxs-lookup"><span data-stu-id="7a468-116">Element</span></span>|<span data-ttu-id="7a468-117">Popis</span><span class="sxs-lookup"><span data-stu-id="7a468-117">Description</span></span>|  
+|<span data-ttu-id="94076-116">Prvek</span><span class="sxs-lookup"><span data-stu-id="94076-116">Element</span></span>|<span data-ttu-id="94076-117">Popis</span><span class="sxs-lookup"><span data-stu-id="94076-117">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="7a468-118">\<workflowInstanceQuery ></span><span class="sxs-lookup"><span data-stu-id="7a468-118">\<workflowInstanceQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|<span data-ttu-id="7a468-119">Dotaz, který se používá ke sledování změny životního cyklu instance pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="7a468-119">A query that is used to track workflow instance life cycle changes.</span></span>|  
+|[<span data-ttu-id="94076-118">\<workflowInstanceQuery ></span><span class="sxs-lookup"><span data-stu-id="94076-118">\<workflowInstanceQuery></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflowinstancequery.md)|<span data-ttu-id="94076-119">Dotaz, který se používá ke sledování změny životního cyklu instance pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="94076-119">A query that is used to track workflow instance life cycle changes.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="7a468-120">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="7a468-120">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="94076-120">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="94076-120">Parent Elements</span></span>  
   
-|<span data-ttu-id="7a468-121">Prvek</span><span class="sxs-lookup"><span data-stu-id="7a468-121">Element</span></span>|<span data-ttu-id="7a468-122">Popis</span><span class="sxs-lookup"><span data-stu-id="7a468-122">Description</span></span>|  
+|<span data-ttu-id="94076-121">Prvek</span><span class="sxs-lookup"><span data-stu-id="94076-121">Element</span></span>|<span data-ttu-id="94076-122">Popis</span><span class="sxs-lookup"><span data-stu-id="94076-122">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="7a468-123">\<pracovní postup ></span><span class="sxs-lookup"><span data-stu-id="7a468-123">\<workflow></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|<span data-ttu-id="7a468-124">Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný [ID definice aktivity](https://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx) vlastnost.</span><span class="sxs-lookup"><span data-stu-id="7a468-124">A configuration element that contains all queries for a specific workflow identified by the [activityDefinitionId](https://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx) property.</span></span>|  
+|[<span data-ttu-id="94076-123">\<pracovní postup ></span><span class="sxs-lookup"><span data-stu-id="94076-123">\<workflow></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/workflow.md)|<span data-ttu-id="94076-124">Konfigurace element, který obsahuje všechny dotazy týkající se konkrétního pracovního postupu identifikovaný [ID definice aktivity](https://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx) vlastnost.</span><span class="sxs-lookup"><span data-stu-id="94076-124">A configuration element that contains all queries for a specific workflow identified by the [activityDefinitionId](https://msdn.microsoft.com/library/system.servicemodel.activities.tracking.configuration.profileworkflowelement.activitydefinitionid(VS.100).aspx) property.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7a468-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7a468-125">Remarks</span></span>  
- <span data-ttu-id="7a468-126"><xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:</span><span class="sxs-lookup"><span data-stu-id="7a468-126">The <xref:System.Activities.Tracking.WorkflowInstanceQuery> is used to subscribe to the following <xref:System.Activities.Tracking.TrackingRecord> objects:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="94076-125">Poznámky</span><span class="sxs-lookup"><span data-stu-id="94076-125">Remarks</span></span>  
+ <span data-ttu-id="94076-126"><xref:System.Activities.Tracking.WorkflowInstanceQuery> Se používá k přihlášení k odběru následující <xref:System.Activities.Tracking.TrackingRecord> objekty:</span><span class="sxs-lookup"><span data-stu-id="94076-126">The <xref:System.Activities.Tracking.WorkflowInstanceQuery> is used to subscribe to the following <xref:System.Activities.Tracking.TrackingRecord> objects:</span></span>  
   
 -   <xref:System.Activities.Tracking.WorkflowInstanceRecord>  
   
@@ -57,8 +57,8 @@ ms.locfileid: "45508353"
   
 -   <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>  
   
-## <a name="example"></a><span data-ttu-id="7a468-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="7a468-127">Example</span></span>  
- <span data-ttu-id="7a468-128">Následující konfigurace přihlásí na úrovni instance sledování záznamů pro pracovní postup `Started` stav instance pomocí tohoto dotazu.</span><span class="sxs-lookup"><span data-stu-id="7a468-128">The following configuration subscribes to workflow instance-level tracking records for the `Started` instance state using this query.</span></span>  
+## <a name="example"></a><span data-ttu-id="94076-127">Příklad</span><span class="sxs-lookup"><span data-stu-id="94076-127">Example</span></span>  
+ <span data-ttu-id="94076-128">Následující konfigurace přihlásí na úrovni instance sledování záznamů pro pracovní postup `Started` stav instance pomocí tohoto dotazu.</span><span class="sxs-lookup"><span data-stu-id="94076-128">The following configuration subscribes to workflow instance-level tracking records for the `Started` instance state using this query.</span></span>  
   
 ```xml  
 <workflowInstanceQueries>  
@@ -70,8 +70,8 @@ ms.locfileid: "45508353"
 </workflowInstanceQueries>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7a468-129">Viz také</span><span class="sxs-lookup"><span data-stu-id="7a468-129">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="94076-129">Viz také</span><span class="sxs-lookup"><span data-stu-id="94076-129">See Also</span></span>  
  <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElementCollection?displayProperty=nameWithType>       
  <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>       
- [<span data-ttu-id="7a468-130">Sledování a trasování pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="7a468-130">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [<span data-ttu-id="7a468-131">Sledování profilů</span><span class="sxs-lookup"><span data-stu-id="7a468-131">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+ [<span data-ttu-id="94076-130">Sledování a trasování pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="94076-130">Workflow Tracking and Tracing</span></span>](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
+ [<span data-ttu-id="94076-131">Sledování profilů</span><span class="sxs-lookup"><span data-stu-id="94076-131">Tracking Profiles</span></span>](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
