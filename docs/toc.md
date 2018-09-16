@@ -82,7 +82,7 @@
 ### [Začínáme s .NET Core v systému macOS pomocí sady Visual Studio pro Mac](core/tutorials/using-on-mac-vs.md)
 ### [Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac](core/tutorials/using-on-mac-vs-full-solution.md)
 ### [Začínáme s .NET pomocí nástrojů CLI](core/tutorials/using-with-xplat-cli.md)
-#### [Uspořádání a testování projektů pomocí příkazového řádku .NET Core](core/tutorials/testing-with-cli.md)
+### [Uspořádání a testování projektů pomocí příkazového řádku .NET Core](core/tutorials/testing-with-cli.md)
 ### [Vývoj knihoven pomocí nástrojů pro různé platformy](core/tutorials/libraries.md)
 ### [Vývoj aplikací ASP.NET Core](core/tutorials/aspnet-core.md)
 ### [Správa verzí závislosti balíčků pro .NET Core 1.0](core/tutorials/managing-package-dependency-versions.md)
