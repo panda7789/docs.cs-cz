@@ -3,17 +3,17 @@ title: 'Rekurzivní funkce: Klíčové slovo rec (F#)'
 description: "Zjistěte, jak se používá klíčové slovo 'rec' F # pomocí klíčového slova \"let\" k definování rekurzivní funkce."
 ms.date: 05/16/2016
 ms.openlocfilehash: 5aab6ed8ab0fc3c0f0bcfc93c3ce6518ec53254f
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526678"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45675870"
 ---
-# <a name="recursive-functions-the-rec-keyword"></a><span data-ttu-id="a080e-103">Rekurzivní funkce: Klíčové slovo rec</span><span class="sxs-lookup"><span data-stu-id="a080e-103">Recursive Functions: The rec Keyword</span></span>
+# <a name="recursive-functions-the-rec-keyword"></a><span data-ttu-id="b7986-103">Rekurzivní funkce: Klíčové slovo rec</span><span class="sxs-lookup"><span data-stu-id="b7986-103">Recursive Functions: The rec Keyword</span></span>
 
-<span data-ttu-id="a080e-104">`rec` – Klíčové slovo se používá spolu s `let` – klíčové slovo do definuje rekurzivní funkce.</span><span class="sxs-lookup"><span data-stu-id="a080e-104">The `rec` keyword is used together with the `let` keyword to define a recursive function.</span></span>
+<span data-ttu-id="b7986-104">`rec` – Klíčové slovo se používá spolu s `let` – klíčové slovo do definuje rekurzivní funkce.</span><span class="sxs-lookup"><span data-stu-id="b7986-104">The `rec` keyword is used together with the `let` keyword to define a recursive function.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="a080e-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a080e-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b7986-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b7986-105">Syntax</span></span>
 
 ```fsharp
 // Recursive function:
@@ -28,27 +28,27 @@ function2-body
 ...
 ```
 
-## <a name="remarks"></a><span data-ttu-id="a080e-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="a080e-106">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="b7986-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="b7986-106">Remarks</span></span>
 
-<span data-ttu-id="a080e-107">Rekurzivní funkce, funkce, které volají samy, jsou explicitně označeny v jazyce F #.</span><span class="sxs-lookup"><span data-stu-id="a080e-107">Recursive functions, functions that call themselves, are identified explicitly in the F# language.</span></span> <span data-ttu-id="a080e-108">Díky tomu identifikátor, který definuje dostupné v oboru funkce.</span><span class="sxs-lookup"><span data-stu-id="a080e-108">This makes the identifer that is being defined available in the scope of the function.</span></span>
+<span data-ttu-id="b7986-107">Rekurzivní funkce, funkce, které volají samy, jsou explicitně označeny v jazyce F #.</span><span class="sxs-lookup"><span data-stu-id="b7986-107">Recursive functions, functions that call themselves, are identified explicitly in the F# language.</span></span> <span data-ttu-id="b7986-108">Díky tomu identifikátor, který definuje dostupné v oboru funkce.</span><span class="sxs-lookup"><span data-stu-id="b7986-108">This makes the identifer that is being defined available in the scope of the function.</span></span>
 
-<span data-ttu-id="a080e-109">Následující kód ukazuje rekurzivní funkci, která vypočítá *n*<sup>th</sup> Fibonacciho číslo.</span><span class="sxs-lookup"><span data-stu-id="a080e-109">The following code illustrates a recursive function that computes the *n*<sup>th</sup> Fibonacci number.</span></span>
+<span data-ttu-id="b7986-109">Následující kód ukazuje rekurzivní funkci, která vypočítá *n*<sup>th</sup> Fibonacciho číslo.</span><span class="sxs-lookup"><span data-stu-id="b7986-109">The following code illustrates a recursive function that computes the *n*<sup>th</sup> Fibonacci number.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
 
 >[!NOTE]
-<span data-ttu-id="a080e-110">V praxi jako je například výše uvedený kód totiž plýtváním paměti a času procesoru zahrnuje kterémkoli dříve vypočítané hodnoty.</span><span class="sxs-lookup"><span data-stu-id="a080e-110">In practice, code like that above is wasteful of memory and processor time because it involves the recomputation of previously computed values.</span></span>
+<span data-ttu-id="b7986-110">V praxi jako je například výše uvedený kód totiž plýtváním paměti a času procesoru zahrnuje kterémkoli dříve vypočítané hodnoty.</span><span class="sxs-lookup"><span data-stu-id="b7986-110">In practice, code like that above is wasteful of memory and processor time because it involves the recomputation of previously computed values.</span></span>
 
-<span data-ttu-id="a080e-111">Metody jsou implicitně rekurzivní v rámci typu; není nutné přidat `rec` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="a080e-111">Methods are implicitly recursive within the type; there is no need to add the `rec` keyword.</span></span> <span data-ttu-id="a080e-112">Vazby let v rámci třídy nejsou implicitně rekurzivní.</span><span class="sxs-lookup"><span data-stu-id="a080e-112">Let bindings within classes are not implicitly recursive.</span></span>
+<span data-ttu-id="b7986-111">Metody jsou implicitně rekurzivní v rámci typu; není nutné přidat `rec` – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="b7986-111">Methods are implicitly recursive within the type; there is no need to add the `rec` keyword.</span></span> <span data-ttu-id="b7986-112">Vazby let v rámci třídy nejsou implicitně rekurzivní.</span><span class="sxs-lookup"><span data-stu-id="b7986-112">Let bindings within classes are not implicitly recursive.</span></span>
 
-## <a name="mutually-recursive-functions"></a><span data-ttu-id="a080e-113">Vzájemně rekurzivní funkce</span><span class="sxs-lookup"><span data-stu-id="a080e-113">Mutually Recursive Functions</span></span>
+## <a name="mutually-recursive-functions"></a><span data-ttu-id="b7986-113">Vzájemně rekurzivní funkce</span><span class="sxs-lookup"><span data-stu-id="b7986-113">Mutually Recursive Functions</span></span>
 
-<span data-ttu-id="a080e-114">Někdy jsou funkce *vzájemně rekurzivní*, což znamená, že volání tvoří kruh, kde jedna funkce volá jinou která pak volá první, s libovolným počtem volání mezi.</span><span class="sxs-lookup"><span data-stu-id="a080e-114">Sometimes functions are *mutually recursive*, meaning that calls form a circle, where one function calls another which in turn calls the first, with any number of calls in between.</span></span> <span data-ttu-id="a080e-115">Je nutné definovat tyto funkce dohromady do jedné `let` vazba, pomocí `and` – klíčové slovo je propojit dohromady.</span><span class="sxs-lookup"><span data-stu-id="a080e-115">You must define such functions together in the one `let` binding, using the `and` keyword to link them together.</span></span>
+<span data-ttu-id="b7986-114">Někdy jsou funkce *vzájemně rekurzivní*, což znamená, že volání tvoří kruh, kde jedna funkce volá jinou která pak volá první, s libovolným počtem volání mezi.</span><span class="sxs-lookup"><span data-stu-id="b7986-114">Sometimes functions are *mutually recursive*, meaning that calls form a circle, where one function calls another which in turn calls the first, with any number of calls in between.</span></span> <span data-ttu-id="b7986-115">Je nutné definovat tyto funkce dohromady do jedné `let` vazba, pomocí `and` – klíčové slovo je propojit dohromady.</span><span class="sxs-lookup"><span data-stu-id="b7986-115">You must define such functions together in the one `let` binding, using the `and` keyword to link them together.</span></span>
 
-<span data-ttu-id="a080e-116">Následující příklad ukazuje dva vzájemně rekurzivní funkce.</span><span class="sxs-lookup"><span data-stu-id="a080e-116">The following example shows two mutually recursive functions.</span></span>
+<span data-ttu-id="b7986-116">Následující příklad ukazuje dva vzájemně rekurzivní funkce.</span><span class="sxs-lookup"><span data-stu-id="b7986-116">The following example shows two mutually recursive functions.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
 
-## <a name="see-also"></a><span data-ttu-id="a080e-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="a080e-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b7986-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b7986-117">See also</span></span>
 
-- [<span data-ttu-id="a080e-118">Funkce</span><span class="sxs-lookup"><span data-stu-id="a080e-118">Functions</span></span>](index.md)
+- [<span data-ttu-id="b7986-118">Funkce</span><span class="sxs-lookup"><span data-stu-id="b7986-118">Functions</span></span>](index.md)

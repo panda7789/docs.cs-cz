@@ -13,30 +13,30 @@ helpviewer_keywords:
 - FileOpen function
 ms.assetid: 4c145456-5453-4bda-aab5-578dc8bee59a
 ms.openlocfilehash: 05d849afb50a3b1c4eeecc3db26170bacc3517df
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45570207"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45682963"
 ---
-# <a name="mycomputerfilesystem-object"></a><span data-ttu-id="4aa48-102">My.Computer.FileSystem – objekt</span><span class="sxs-lookup"><span data-stu-id="4aa48-102">My.Computer.FileSystem Object</span></span>
-<span data-ttu-id="4aa48-103">Poskytuje vlastnosti a metody pro práci s disky, soubory a adresáře.</span><span class="sxs-lookup"><span data-stu-id="4aa48-103">Provides properties and methods for working with drives, files, and directories.</span></span>  
+# <a name="mycomputerfilesystem-object"></a><span data-ttu-id="edc7d-102">My.Computer.FileSystem – objekt</span><span class="sxs-lookup"><span data-stu-id="edc7d-102">My.Computer.FileSystem Object</span></span>
+<span data-ttu-id="edc7d-103">Poskytuje vlastnosti a metody pro práci s disky, soubory a adresáře.</span><span class="sxs-lookup"><span data-stu-id="edc7d-103">Provides properties and methods for working with drives, files, and directories.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4aa48-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4aa48-104">Remarks</span></span>  
- <span data-ttu-id="4aa48-105">Informace o tom, metody a vlastnosti `My.Computer.FileSystem` objektu, najdete v článku <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span><span class="sxs-lookup"><span data-stu-id="4aa48-105">For information about the methods and properties of the `My.Computer.FileSystem` object, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="edc7d-104">Poznámky</span><span class="sxs-lookup"><span data-stu-id="edc7d-104">Remarks</span></span>  
+ <span data-ttu-id="edc7d-105">Informace o tom, metody a vlastnosti `My.Computer.FileSystem` objektu, najdete v článku <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span><span class="sxs-lookup"><span data-stu-id="edc7d-105">For information about the methods and properties of the `My.Computer.FileSystem` object, see <xref:Microsoft.VisualBasic.FileIO.FileSystem>.</span></span>  
   
- <span data-ttu-id="4aa48-106">Další informace najdete v tématu [přístup k souborům s jazykem Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span><span class="sxs-lookup"><span data-stu-id="4aa48-106">For more information, see [File Access with Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span></span>  
+ <span data-ttu-id="edc7d-106">Další informace najdete v tématu [přístup k souborům s jazykem Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span><span class="sxs-lookup"><span data-stu-id="edc7d-106">For more information, see [File Access with Visual Basic](../../../visual-basic/developing-apps/programming/drives-directories-files/file-access.md).</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="4aa48-107">Můžete také použít třídy v <xref:System.IO?displayProperty=nameWithType> obor názvů pro práci s disky, soubory a adresáře.</span><span class="sxs-lookup"><span data-stu-id="4aa48-107">You can also use classes in the <xref:System.IO?displayProperty=nameWithType> namespace to work with drives, files, and directories.</span></span>  
+>  <span data-ttu-id="edc7d-107">Můžete také použít třídy v <xref:System.IO?displayProperty=nameWithType> obor názvů pro práci s disky, soubory a adresáře.</span><span class="sxs-lookup"><span data-stu-id="edc7d-107">You can also use classes in the <xref:System.IO?displayProperty=nameWithType> namespace to work with drives, files, and directories.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="4aa48-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="4aa48-108">Requirements</span></span>  
- <span data-ttu-id="4aa48-109">**Namespace:** <xref:Microsoft.VisualBasic.MyServices></span><span class="sxs-lookup"><span data-stu-id="4aa48-109">**Namespace:** <xref:Microsoft.VisualBasic.MyServices></span></span>  
+## <a name="requirements"></a><span data-ttu-id="edc7d-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="edc7d-108">Requirements</span></span>  
+ <span data-ttu-id="edc7d-109">**Namespace:** <xref:Microsoft.VisualBasic.MyServices></span><span class="sxs-lookup"><span data-stu-id="edc7d-109">**Namespace:** <xref:Microsoft.VisualBasic.MyServices></span></span>  
   
- <span data-ttu-id="4aa48-110">**Třída:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (poskytuje přístup k <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span><span class="sxs-lookup"><span data-stu-id="4aa48-110">**Class:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (provides access to <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span></span>  
+ <span data-ttu-id="edc7d-110">**Třída:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (poskytuje přístup k <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span><span class="sxs-lookup"><span data-stu-id="edc7d-110">**Class:** <xref:Microsoft.VisualBasic.MyServices.FileSystemProxy> (provides access to <xref:Microsoft.VisualBasic.FileIO.FileSystem>)</span></span>  
   
- <span data-ttu-id="4aa48-111">**Sestavení:** knihovny prostředí Runtime jazyka Visual Basic (v souboru Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="4aa48-111">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
+ <span data-ttu-id="edc7d-111">**Sestavení:** knihovny prostředí Runtime jazyka Visual Basic (v souboru Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="edc7d-111">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4aa48-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="4aa48-112">See Also</span></span>  
- [<span data-ttu-id="4aa48-113">Objekt My.Computer.FileSystem.SpecialDirectories</span><span class="sxs-lookup"><span data-stu-id="4aa48-113">My.Computer.FileSystem.SpecialDirectories Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)  
- [<span data-ttu-id="4aa48-114">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="4aa48-114">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)
+## <a name="see-also"></a><span data-ttu-id="edc7d-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="edc7d-112">See Also</span></span>  
+ [<span data-ttu-id="edc7d-113">Objekt My.Computer.FileSystem.SpecialDirectories</span><span class="sxs-lookup"><span data-stu-id="edc7d-113">My.Computer.FileSystem.SpecialDirectories Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-filesystem-specialdirectories-object.md)  
+ [<span data-ttu-id="edc7d-114">Objekt My.Computer</span><span class="sxs-lookup"><span data-stu-id="edc7d-114">My.Computer Object</span></span>](../../../visual-basic/language-reference/objects/my-computer-object.md)
