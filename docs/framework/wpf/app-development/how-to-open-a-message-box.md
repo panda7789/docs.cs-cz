@@ -9,11 +9,11 @@ helpviewer_keywords:
 - opening message boxes [WPF]
 ms.assetid: acaad17f-af43-4eca-a004-f1c9e7c6f292
 ms.openlocfilehash: f05190030ed6324917348fa1926abd5385e30f7e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44778549"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45687449"
 ---
 # <a name="how-to-open-a-message-box"></a>Postupy: otevření okna se zprávou
 Tento příklad ukazuje, jak otevřít okno se zprávou.  

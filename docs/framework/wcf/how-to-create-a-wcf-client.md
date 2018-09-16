@@ -5,12 +5,12 @@ helpviewer_keywords:
 - clients [WCF], running
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
-ms.openlocfilehash: 9e6d75bf8911a3c36e63b3bc108faae823434d1d
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.openlocfilehash: e5655a6fdc06e69d801cb38b7ee7412450f0d34c
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44509996"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45674140"
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a>Postupy: Vytvoření klienta Windows Communication Foundation
 
@@ -36,18 +36,18 @@ Toto téma popisuje, jak načíst metadata ze služby WCF a použijte ji k vytvo
 
 3.  Přidat odkaz na System.ServiceModel GettingStartedClient projektu kliknutím pravým tlačítkem myši **odkaz** ve složce GettingStartedClient projekt v Průzkumníku řešení a vyberte **přidat** Referenční dokumentace. V **přidat odkaz** dialogové okno Vybrat **Framework** na levé straně dialogového okna. Do textového pole hledání sestavení, zadejte v `System.ServiceModel`. V části System center dialogového okna vyberte **System.ServiceModel**, klikněte na tlačítko **přidat** tlačítko a klikněte na tlačítko **Zavřít** tlačítko. Uložte řešení kliknutím **Uložit vše** tlačítko níže v hlavní nabídce.
 
-4.  Dále přidáte odkaz na službu ve službě kalkulačku. Předtím, než budete moct provést, je nutné spustit aplikaci GettingStartedHost konzoly. Po spuštění hostitele, klikněte pravým tlačítkem **odkazy** ve složce projektu GettingStartedClient v **Průzkumníku řešení** a vyberte **přidat**  >   **Odkaz na službu**. Zadejte následující adresu URL do pole adresy **přidat odkaz na službu** dialogového okna: [ http://localhost:8000/ServiceModelSamples/Service ](http://localhost:8000/ServiceModelSamples/Service) a klikněte na tlačítko **přejděte** tlačítko. CalculatorService by pak zobrazí v seznamu služeb. Dvakrát klikněte na panel CalculatorService a bude rozbalit a zobrazit služby kontraktů implementovaných službou. Ponechte výchozí obor názvů, jak jsou a klikněte na tlačítko **OK** tlačítko.
+4.  Dále přidáte odkaz na službu ve službě kalkulačku. Předtím, než budete moct provést, je nutné spustit aplikaci GettingStartedHost konzoly. Po spuštění hostitele, klikněte pravým tlačítkem **odkazy** ve složce projektu GettingStartedClient v **Průzkumníku řešení** a vyberte **přidat**  >   **Odkaz na službu**. Zadejte následující adresu URL do pole adresy **přidat odkaz na službu** dialogového okna: [ http://localhost:8000/GettingStartedClient/Service ](http://localhost:8000/GettingStartedClient/Service) a klikněte na tlačítko **přejděte** tlačítko. CalculatorService by pak zobrazí v seznamu služeb. Dvakrát klikněte na panel CalculatorService a bude rozbalit a zobrazit služby kontraktů implementovaných službou. Ponechte výchozí obor názvů, jak jsou a klikněte na tlačítko **OK** tlačítko.
 
      Když přidáte odkaz na službu pomocí sady Visual Studio nové položky se zobrazí v Průzkumníku řešení ve složce odkazy na služby v rámci projektu GettingStartedClient.  Pokud používáte [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj se vygeneruje soubor zdrojového kódu a soubor app.config.
 
      Můžete také použít nástroj příkazového řádku [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pomocí příslušných přepínačů vytvořte klientský kód. Následující příklad generuje soubor kódu a konfiguračním souboru služby. První příklad ukazuje, jak generovat proxy serveru v jazyce Visual Basic a druhá ukazuje, jak vytvořit proxy serveru v jazyce C#:
 
     ```
-    svcutil.exe /language:vb /out:generatedProxy.vb /config:app.config http://localhost:8000/ServiceModelSamples/service
+    svcutil.exe /language:vb /out:generatedProxy.vb /config:app.config http://localhost:8000/GettingStartedClient/service
     ```
 
     ```csharp
-    svcutil.exe /language:cs /out:generatedProxy.cs /config:app.config http://localhost:8000/ServiceModelSamples/service
+    svcutil.exe /language:cs /out:generatedProxy.cs /config:app.config http://localhost:8000/GettingStartedClient/service
     ```
 
  Nyní jste vytvořili proxy server, který klientská aplikace bude používat k volání služby kalkulačku. Pokračovat k dalšímu tématu, v této sérii: [postupy: Konfigurace klienta](../../../docs/framework/wcf/how-to-configure-a-basic-wcf-client.md)
