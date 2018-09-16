@@ -8,11 +8,11 @@ helpviewer_keywords:
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
 ms.openlocfilehash: be2eefdc52d38df3071d457b7a71dbac6eaa2657
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526847"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45674517"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>Návod: Implementace IEnumerable(Of T) v jazyce Visual Basic
 <xref:System.Collections.Generic.IEnumerable%601> Rozhraní je implementováno třídy, které může vrátit posloupnost hodnot položek najednou. Výhodou vracející data, která je jedna položka v čase, že nemáte k načtení úplná sada dat do paměti pro práci s ní. Stačí načtení jednu položku z dat pomocí dostatek paměti. Třídy, které implementují `IEnumerable(T)` rozhraní jde použít s `For Each` smyčky nebo dotazů LINQ.  

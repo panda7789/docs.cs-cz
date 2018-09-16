@@ -5,11 +5,11 @@ author: blackdwarf
 ms.author: mairaw
 ms.date: 09/11/2017
 ms.openlocfilehash: 8d1c6ebb30bd45575bb61206799c9c3e5c47ff0c
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45527893"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45678318"
 ---
 # <a name="dotnet-install-scripts-reference"></a>odkazovat na DotNet instalačních skriptů
 

@@ -12,11 +12,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: 8763277052a15e7cde1a5b03e124551bc91328df
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45529156"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45685696"
 ---
 # <a name="create-a-client-side-ui-automation-provider"></a>Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]

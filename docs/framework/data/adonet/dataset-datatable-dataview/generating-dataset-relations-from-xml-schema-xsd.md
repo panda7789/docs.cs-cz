@@ -3,11 +3,11 @@ title: Generování relací datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 1c9a1413-c0d2-4447-88ba-9a2b0cbc0aa8
 ms.openlocfilehash: 7c73dcec3d23b094436791af6649de83b9eacad9
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45513932"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45664459"
 ---
 # <a name="generating-dataset-relations-from-xml-schema-xsd"></a>Generování relací datové sady ze schématu XML (XSD)
 V <xref:System.Data.DataSet>, formuláře přidružení mezi dvěma nebo více sloupců tak, že vytvoříte vztah nadřízenosti a podřízenosti. Existují tři způsoby, jak reprezentaci **datovou sadu** vztahu v rámci schématu schématu XML definice jazyk (XSD):  

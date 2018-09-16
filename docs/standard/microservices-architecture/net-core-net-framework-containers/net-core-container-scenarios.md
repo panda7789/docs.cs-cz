@@ -1,55 +1,57 @@
 ---
-title: Kdy zvolte .NET Core Docker kontejnerů
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Kdy zvolte .NET Core Docker kontejnerů
+title: Kdy pro kontejnery Dockeru zvolit .NET Core
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Kdy pro kontejnery Dockeru zvolit .NET Core
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/18/2017
-ms.openlocfilehash: 761a9579cc301b7ca4b949a2a83af20ab8bb0f20
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/11/2018
+ms.openlocfilehash: fa5efd3c2478965ef01efc39b57918ec2d35962a
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104649"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45666600"
 ---
-# <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy zvolte .NET Core Docker kontejnerů
+# <a name="when-to-choose-net-core-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Core
 
-Modularitu a lightweight povaha .NET Core je ideální pro kontejnery. Při nasazení a spusťte kontejner, jeho image je mnohem menší s .NET Core než v rozhraní .NET Framework. Naproti tomu musí používat rozhraní .NET Framework pro kontejner, základní bitové kopie na bitovou kopii systému Windows Server Core, což je mnohem větší než Nano Server systému Windows nebo Linux bitové kopie, které používáte pro .NET Core.
+Modulární struktura a zjednodušené povahu .NET Core je ideální pro kontejnery. Při nasazení a spuštění kontejneru, je mnohem menší s .NET Core s rozhraním .NET Framework než jeho image. Naproti tomu musí používat rozhraní .NET Framework pro kontejner, základní bitové kopie v imagi Windows Server Core, což je mnohem větším než Windows Nano Server nebo Linuxových imagí, které používáte pro .NET Core.
 
-Kromě toho .NET Core je a platformy, takže můžete nasadit aplikace na serveru s obrázky kontejneru Linux nebo Windows. Ale pokud používáte tradiční rozhraní .NET Framework, můžete nasadit jenom Image založené na Windows Server Core.
+Kromě toho .NET Core je multiplatformní, abyste mohli nasadit aplikace serveru s Linuxem nebo Windows Image kontejneru. Nicméně pokud používáte tradiční rozhraní .NET Framework, můžete nasadit jenom imagí založených na jádru Windows serveru.
 
-Následuje podrobnější vysvětlení důvod, proč zvolit .NET Core.
+Tady je podrobnější vysvětlení, proč zvolit .NET Core.
 
 ## <a name="developing-and-deploying-cross-platform"></a>Vývoj a nasazení pro různé platformy
 
-Je zřejmé Pokud vaším cílem je, aby aplikace (webové aplikace nebo služby), která můžete spustit na několika platformách podporovaných aplikací Docker (Linux a Windows), správná volba je .NET Core, protože rozhraní .NET Framework podporuje pouze systému Windows.
+Je zřejmé Pokud je vaším cílem je, aby aplikace (webová aplikace nebo služby), který může spouštět na více platformách podporovaných aplikací Dockeru (Linux a Windows), tou správnou volbou je .NET Core, protože rozhraní .NET Framework podporuje pouze Windows.
 
-.NET core také podporuje systému macOS jako vývojové platformy. Ale když nasadíte kontejnery Docker hostitele, které jsou hostiteli musí (aktuálně) být založená na Linux nebo Windows. Například ve vývojovém prostředí, můžete použít virtuální počítač s Linuxem spuštěna v počítačích Mac.
+.NET core podporuje také macOS jako vývojářskou platformu. Ale při nasazování kontejnerů do hostitele Docker, které jsou hostiteli musí (aktuálně) zakládat na Linuxu nebo Windows. Například ve vývojovém prostředí, můžete použít virtuální počítač s Linuxem spouštění v počítačích Mac.
 
-[Visual Studio](https://visualstudio.microsoft.com/) poskytuje integrované vývojové prostředí (IDE) pro Windows která podporuje vývoj Docker. 
+[Visual Studio](https://www.visualstudio.com/vs/) poskytuje integrované vývojové prostředí (IDE) pro Windows, která podporuje vývoj Dockeru.
 
-[Visual Studio pro Mac](https://visualstudio.microsoft.com/vs/visual-studio-mac/) IDE, vývoje Xamarin Studio, spuštěné v systému macOS a podporuje Docker od mid 2017.
+[Visual Studio pro Mac](https://www.visualstudio.com/vs/visual-studio-mac/) je integrované vývojové prostředí, vývoj Xamarin Studio, který běží v systému macOS a podporuje vývoj aplikací založených na Dockeru. To by měl být upřednostňovanou volbu pro vývojáře pracující na počítačích Mac, které také chtějí využívat výkonné integrované vývojové prostředí.
 
-Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (VS Code) v systému macOS, Linux a Windows. VS Code plně podporuje .NET Core, včetně technologie IntelliSense a ladění. Protože VS Code je lightweight editor, můžete ho vyvíjet kontejnerizované aplikace v systému Mac ve spojení s rozhraní příkazového řádku Dockeru a [nástrojů rozhraní příkazového řádku (CLI) .NET Core](../../../core/tools/index.md). S editory většina jiných výrobců jako Sublime Text, Emacs, vi a open-source OmniSharp projekt, který poskytuje podporu technologie IntelliSense pro jazyky rozhraní .NET, můžete také vybrat .NET Core. Kromě integrovaného vývojového prostředí a editory můžete použít rozhraní příkazového řádku .NET Core pro všechny podporované platformy.
+Můžete také použít [Visual Studio Code](https://code.visualstudio.com/) (VS Code) v systémech macOS, Linux a Windows. VS Code plně podporuje .NET Core, včetně technologie IntelliSense a ladění. Vzhledem k tomu, že VS Code je jednoduchý editor, je můžete použít pro vývoj kontejnerizovaných aplikací v počítačích Mac ve spojení s rozhraní příkazového řádku Dockeru a [rozhraní příkazového řádku .NET Core (CLI)](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x). .NET Core můžete také směrovat pomocí editorů nejvíce třetích stran, jako je Sublime (emacs), vi a OmniSharp projekt open source, který také poskytuje podporu technologie IntelliSense.
 
-## <a name="using-containers-for-new-green-field-projects"></a>Použití kontejnerů pro nové projekty ("zelená pole")
+Kromě Integrovaná vývojová prostředí a editory, můžete použít [rozhraní příkazového řádku .NET Core](https://docs.microsoft.com/dotnet/core/tools/?tabs=netcore2x) nástroje pro všechny podporované platformy.
 
-Kontejnery běžně se používají ve spojení s mikroslužeb architekturu, i když může být rovněž používají pro containerize webové aplikace nebo služby, které následují žádné architekturní vzor. Můžete použít rozhraní .NET Framework na Windows kontejnery, ale modularitu a lightweight povaha .NET Core je ideální pro kontejnery a mikroslužeb architektury. Když vytvoříte a nasadíte kontejner, jeho image je mnohem menší s .NET Core než v rozhraní .NET Framework.
+## <a name="using-containers-for-new-green-field-projects"></a>Pomocí kontejnerů pro nové projekty ("zelená pole")
 
-## <a name="creating-and-deploying-microservices-on-containers"></a>Vytvoření a nasazení mikroslužeb kontejnerům
+Kontejnery se běžně používají ve spojení s architekturu mikroslužeb, ačkoli může být také použit kontejnerizaci webových aplikací a služeb, které následují žádné z možných architektonických. Můžete použít rozhraní .NET Framework v kontejnerech Windows, ale modularitu a zjednodušené povaze .NET Core je ideální pro architektur mikroslužeb a kontejnerů. Když vytvoříte a nasadíte kontejner, je mnohem menší s .NET Core s rozhraním .NET Framework než jeho image.
 
-Můžete použít tradiční rozhraní .NET Framework pro vytváření aplikací na základě mikroslužeb (bez kontejnery) pomocí prostý procesů. Tímto způsobem, protože rozhraní .NET Framework je již nainstalován a sdílet mezi procesy, procesy se lehký a rychlé spuštění. Pokud používáte kontejnery, bitovou kopii pro tradiční rozhraní .NET Framework je také založena na jádru serveru Windows a který zpřístupňuje příliš velkou způsob mikroslužeb na kontejnery.
+## <a name="creating-and-deploying-microservices-on-containers"></a>Vytváření a nasazování mikroslužeb pro kontejnery
 
-.NET Core spočívá v tom, nejlepší candidate Pokud mikroslužeb zaměřené na konkrétní systém, který je založen na kontejnery, jsou osvojují, protože je lightweight .NET Core. Kromě toho související kontejneru Image, Linux image nebo bitovou kopii systému Windows Nano, jsou Štíhlá a malé provedení light kontejnery a rychlý start.
+Můžete použít tradiční rozhraní .NET Framework pro vytváření aplikací založených na mikroslužbách (bez kontejnery) s použitím jednoduché procesy. Tímto způsobem, protože rozhraní .NET Framework je již nainstalována a sdílet mezi procesy, procesy jsou světla a rychlé spuštění. Pokud používáte kontejnery, image pro tradiční rozhraní .NET Framework je taky založený na systému Windows Server Core a díky tomu se příliš těžká pro přístup založený na mikroslužbách v kontejnerech.
 
-Mikroslužbu měl by být co nejmenší: být light při otáčí nahoru, tak, aby měl malé nároky, tak, aby měl malé ohraničenou kontextu, představují malé části otázky a abyste mohli spustit a zastavit rychlé. Tyto požadavky můžete použít Image malé a fast doložit kontejneru jako obrázek kontejneru .NET Core.
+Naproti tomu .NET Core je nejlepší Release candidate, je-li využívají systém orientované na mikroslužby založenou na kontejnerech, protože .NET Core je jednoduché. Související kontejner Image, image Linuxu nebo image Windows Nano, jsou navíc Štíhlá a malé, provádění světla kontejnery a rychlý start.
 
-Architektura mikroslužeb můžete také kombinovat technologie přes hranice služby. To umožňuje postupné migrace pro nové mikroslužeb, které pracují ve spojení s další mikroslužeb nebo službou vyvinuté pomocí Node.js, Python, Java, GoLang ani jiné technologie .NET Core.
+Mikroslužba je určena být co nejmenší: při roztáčení být světlo, mají malé náklady, aby malé ohraničená kontextu (DDD, zkontrolujte [Domain-Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design)), představují malé oblast zájmu a bude možné spustit a rychle zastavit. Pro požadavky můžete použít Image malé a rychle instance kontejnerů jako image kontejneru .NET Core.
+
+Architektura mikroslužeb umožňuje kombinovat technologie přes hranice služeb. To umožňuje postupné migraci až po .NET Core pro nové mikroslužby, které pracují ve spojení s další mikroslužby nebo službami využily výsledky mnohaletých Node.js, Python, Java, go nebo jiné technologie.
 
 ## <a name="deploying-high-density-in-scalable-systems"></a>Nasazení s vysokou hustotou v škálovatelné systémy
 
-Když se na základě kontejneru systému potřebuje nejlepší možný hustotu, členitosti a výkonu, .NET Core a ASP.NET Core jsou nejlepší možnosti. ASP.NET Core je až 10 x rychlejší než ASP.NET v tradiční rozhraní .NET Framework a jeho vede dalších oblíbených oborovými technologiemi pro mikroslužeb, například servlets Java, přejděte a Node.js.
+Pokud váš systém založených na kontejnerech potřebuje nejlepší možné hustota, členitosti a výkonu, .NET Core a ASP.NET Core jsou nejlepší možností. ASP.NET Core je až 10 x rychlejší než technologie ASP.NET v tradiční rozhraní .NET Framework a vede další oblíbené oborovými technologiemi pro mikroslužby, jako jsou Java servletů, Go a Node.js.
 
-To je obzvláště důležité pro mikroslužeb architektury, kde můžete mít stovky mikroslužeb (kontejnerů) spuštěna. Pomocí ASP.NET Core bitových kopií (podle na .NET Core runtime) v systému Linux nebo Windows Nano můžete spustit systém s mnohem nižší číslo serverů nebo virtuální počítače, nakonec ukládání náklady na infrastrukturu a hostování.
+To je obzvláště důležité pro architekturu mikroslužeb, ve které jste mohli stovky mikroslužby (kontejnerů) spuštěná. S ASP.NET Core Image (na platformě .NET Core runtime) v systému Linux nebo Windows Nano můžete spustit váš systém s mnohem menším počtem serverů nebo virtuálních počítačů, takže v konečném důsledku ušetří náklady v infrastruktuře a hostování.
 
 
 >[!div class="step-by-step"]

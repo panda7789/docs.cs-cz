@@ -16,11 +16,11 @@ helpviewer_keywords:
 - Windows Forms, inheritance
 ms.assetid: 3381a5e4-e1a3-44e2-a765-a0b758937b85
 ms.openlocfilehash: 9bb6e6568822f3edcabf50a4fceb7cc6386f05ef
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45568758"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45666509"
 ---
 # <a name="how-to-use-the-modifiers-and-generatemember-properties"></a>Postupy: Používání modifikátorů a vlastností GenerateMember
 Umístíte-li komponenta ve formuláři Windows Forms, podle návrhu prostředí jsou k dispozici dvě vlastnosti: `GenerateMember` a `Modifiers`. `GenerateMember` Vlastnost určuje, když Návrhář formulářů Windows generuje členské proměnné pro komponentu. `Modifiers` Vlastnost je modifikátor přístupu, které jsou přiřazeny k této členské proměnné. Pokud hodnota `GenerateMember` vlastnost `false`, hodnota `Modifiers` vlastnost nemá žádný vliv.  

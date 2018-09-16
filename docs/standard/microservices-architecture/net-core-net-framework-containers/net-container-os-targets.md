@@ -1,53 +1,61 @@
 ---
-title: Jaké operačního systému k cíli s kontejnery rozhraní .NET
-description: Architektura Mikroslužeb .NET pro aplikace .NET Kontejnerizované | Jaké operačního systému k cíli s kontejnery rozhraní .NET
+title: Jaký operační systém mají cílit kontejnery .NET
+description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET | Jaký operační systém mají cílit kontejnery .NET
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 10/18/2017
-ms.openlocfilehash: fca5cf280d5abb85da78413a6eed463a2ffe6a88
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.date: 09/11/2018
+ms.openlocfilehash: b2ae1d2e732f152133dd8a8757b955e05cdd88eb
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104876"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45677809"
 ---
-# <a name="what-os-to-target-with-net-containers"></a>Jaké operačního systému k cíli s kontejnery rozhraní .NET
+# <a name="what-os-to-target-with-net-containers"></a>Jaký operační systém mají cílit kontejnery .NET
 
-Zadané různorodost operační systémy podporované nástrojem Docker a rozdíly mezi rozhraní .NET Framework a .NET Core, by měl cílové konkrétní operační systém a konkrétní verze v závislosti na rozhraní framework, který používáte. 
+Zadaný spektrum operačních systémech podporovaných produktem rozdíly mezi rozhraní .NET Framework a .NET Core a Docker, by měl cíl konkrétní operační systém a konkrétní verze v závislosti na rozhraní, které používáte.
 
-Pro systém Windows můžete použít Windows Server Core nebo Nano Server systému Windows. Tyto verze systému Windows zadejte různými charakteristikami (služba IIS v systému Windows Server Core a vlastním hostováním webového serveru jako Kestrel v Nano Server), které mohou být potřebné rozhraní .NET Framework nebo .NET Core, v uvedeném pořadí. 
+Pro Windows můžete použít Windows Server Core nebo Windows Nano Server. Tyto verze Windows poskytují různé vlastnosti (služba IIS v systému Windows Server Core a v místním prostředí webového serveru, jako Kestrel na Nano serveru), které může být potřeba pomocí rozhraní .NET Framework nebo .NET Core.
 
-Pro systémy Linux více distribucích jsou dostupné a podporované v oficiální imagí Dockeru .NET (například Debian).
+Více distribuce pro Linux, jsou dostupné a podporované v oficiální Image .NET Dockeru (např. Debian).
 
-Obrázek 3-1 se zobrazí možné verze operačního systému v závislosti na rozhraní .NET framework, který používá.
+Obrázek 3-1 se zobrazí možné verze operačního systému v závislosti na rozhraní .NET framework používá.
 
-![](./media/image1.png)
+![Při nasazování starších aplikací rozhraní .NET Framework, které máte na cílová jádra serveru systému Windows, kompatibilní s starší verze aplikace a služby IIS, má větší obrázek. Při nasazování aplikací .NET Core, můžete směrovat Windows Nano Server, což je cloudové prostředí, používá Kestrel a je menší a spouští rychleji. Můžete také směrovat Linux podporuje Debian, nástroj Alpine a další. Také používá Kestrel a je menší a spouští rychleji.](./media/image1.png)
 
-**Obrázek 3-1.** Operační systémy do cíle v závislosti na verze rozhraní .NET framework
+**Obrázek 3-1.** Operační systémy pro cílení v závislosti na verzi rozhraní .NET framework
 
-Můžete také vytvořit vlastní image Docker v případech, kde chcete použít jiný distro Linux nebo místo bitovou kopii s verzemi není poskytovaný společností Microsoft. Například může vytvořit bitovou kopii pomocí ASP.NET Core systémem tradiční rozhraní .NET Framework a Windows Server Core, což není tak běžné scénáře pro Docker.
+Můžete také vytvořit vlastní image Dockeru v případech, ve které chcete použít jiné distribuce Linuxu nebo místo bitovou kopii s verzemi, které neposkytuje Microsoft. Například může vytvořit bitovou kopii s ASP.NET Core využívající tradiční rozhraní .NET Framework a Windows Server Core, který je not tak běžné scénáře pro Docker.
 
-Když přidáte název bitové kopie do souboru soubor Docker, můžete vybrat operační systém a verze v závislosti na značku, kterou používáte, jako v následujících příkladech:
+Když přidáte název bitové kopie do souboru Dockerfile, můžete vybrat operační systém a verze v závislosti na značku, kterou používáte, stejně jako v následujících příkladech:
 
--   Microsoft /**dotnet:2.1 – modul runtime**
-
-        .NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
-
--   Microsoft /**dotnet:2.1-aspnetcore – modul runtime**
-    
-        ASP.NET Core 2.1 multi-architecture: Supports Linux and Windows Nano Server depending on the Docker host.
-        The aspnetcore image has a few optimizations for ASP.NET Core. 
-
--   Microsoft /**dotnet:2.1-aspnetcore-runtime-alpine** 
-
-        .NET Core 2.1 runtime-only on Linux Alpine distro
-
--   Microsoft /**dotnet:2.1-aspnetcore-runtime-nanoserver-1803** 
-
-        .NET Core 2.1 runtime-only on Windows Nano Server (Windows Server version 1803)
-
-
-
+<table>
+<thead>
+<tr class="header">
+<th>Image</th>
+<th>Komentáře</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Microsoft / dotnet:2.1 – modul runtime</td>
+<td>Více architektury .NET core 2.1: podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</td>
+</tr>
+<tr class="odd">
+<td>Microsoft / dotnet:2.1-aspnetcore-modulu runtime</td>
+<td><p>Architektura ASP.NET Core 2.1 více: podporuje Linux a Windows Nano serveru v závislosti na hostitele Dockeru.</p>
+<p>Aspnetcore image má několik optimalizací pro ASP.NET Core.</p></td>
+</tr>
+<tr class="even">
+<td>Microsoft / dotnet:2.1-aspnetcore-runtime – alpine</td>
+<td>.NET core 2.1 pouze modul runtime na Alpine distribuce Linuxu</td>
+</tr>
+<tr class="odd">
+<td>Microsoft / dotnet:2.1-aspnetcore-runtime-nanoserver-1803</td>
+<td>.NET core 2.1 pouze modul runtime Windows Nano Server (Windows Server verze 1803)</td>
+</tr>
+</tbody>
+</table>
 
 >[!div class="step-by-step"]
 [Předchozí](container-framework-choice-factors.md)

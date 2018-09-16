@@ -4,19 +4,19 @@ description: Další informace o .NET Core.
 author: richlander
 ms.author: mairaw
 ms.date: 08/01/2018
-ms.openlocfilehash: 5a8d0a45e0113afd1dbb5f243f3ed45f4bfc0760
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: d9943246b683c8fd892e7bc5fd09a10b72e31a5f
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087774"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45678937"
 ---
 # <a name="about-net-core"></a>Informace o .NET Core
 
 .NET core má následující vlastnosti:
 
 - **Různé platformy:** běží na Windows, macOS a Linux [operačních systémů](https://github.com/dotnet/core/blob/master/os-lifecycle-policy.md).
-- **Konzistentní v rámci celého architecures:** spustí váš kód s stejné chování na několik architektur, včetně x64 x86 a ARM.
+- **Konzistentní vzhledem k aplikacím v architekturách:** spustí váš kód s stejné chování na několik architektur, včetně x64 x86 a ARM.
 - **Nástroje příkazového řádku:** obsahuje – pomocí nástroje příkazového řádku, která se používá pro místní vývoj a ve scénářích průběžnou integraci.
 - **Flexibilní nasazení:** mohou být součástí vaší aplikace nebo nainstalovat vedle sebe uživatele – nebo celý počítač. Je možné s [kontejnery Dockeru](docker/index.md).
 - **Kompatibilní:** .NET Core je kompatibilní s rozhraní .NET Framework, Xamarin a Mono, prostřednictvím [.NET Standard](../standard/net-standard.md).

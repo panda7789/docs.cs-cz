@@ -15,11 +15,11 @@ ms.assetid: b609b277-edc6-4c74-b03e-ea73324ecbdb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 55b16d135449cad8ed489a8a3e21db326be0fae0
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45508186"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45668415"
 ---
 # <a name="how-to-round-trip-date-and-time-values"></a>Postupy: Hodnoty data a času round-trip
 V mnoha aplikacích hodnoty data a času slouží k jednoznačné identifikaci jediný bod v čase. Toto téma ukazuje, jak uložit a obnovit <xref:System.DateTime> hodnotu, <xref:System.DateTimeOffset> hodnotu a hodnotu data a času s časem zóna informace tak, aby se obnovená hodnota identifikuje ve stejnou dobu jako uloženou hodnotu.  

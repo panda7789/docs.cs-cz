@@ -10,11 +10,11 @@ ms.assetid: 739ec222-4eda-4cc9-a470-67e64a7a3f10
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 1a58260ecf5a4126554c23f1a5f8d7b3ba43f215
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45508158"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45668402"
 ---
 # <a name="programming-wcf-security"></a>Programování zabezpečení WCF
 Toto téma popisuje základní programovacích úloh umožňuje vytvořit zabezpečenou webovou aplikaci Windows Communication Foundation (WCF). Toto téma popisuje pouze ověřování, důvěrnost a integrita, souhrnně označované jako *přenos zabezpečení*. Toto téma nepopisuje autorizace (řízení přístupu k prostředkům nebo službám); informace o ověřování najdete v tématu [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  

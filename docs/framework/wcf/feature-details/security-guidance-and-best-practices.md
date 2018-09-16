@@ -7,11 +7,11 @@ ms.assetid: 79e4e6f7-0c00-4045-b0f0-e6a7c37c7788
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 95836865bcf8908583e3a5c347bfcef805997fdc
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45512865"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45678435"
 ---
 # <a name="security-guidance-and-best-practices"></a>Informace o zabezpečení a doporučené postupy
 Témata v této části poskytují pokyny a aspekty ke zvážení při vytváření zabezpečených aplikací Windows Communication Foundation (WCF). Další informace o systému Windows Server AppFabric a zabezpečení naleznete v tématu [zabezpečení modelu pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  

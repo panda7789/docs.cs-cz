@@ -9,11 +9,11 @@ helpviewer_keywords:
 - design-time errors [Windows Forms Designer]
 ms.assetid: ad408380-825a-46d8-9a4a-531b130b88ce
 ms.openlocfilehash: ec1801a1b695867a7edcd99394feebe1d0f6853a
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44366520"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45666587"
 ---
 # <a name="design-time-errors-in-the-windows-forms-designer"></a>Chyby v rámci doby návrhu v Návrháři formulářů Windows
 Toto téma vysvětluje význam a použití seznamu chyb při návrhu, který se zobrazí v sadě Microsoft Visual Studio, když Návrhář formulářů Windows nepodaří načíst. Pokud se zobrazí tento seznam chyb, by neměla interpretovat jako chyba v návrháři, ale jako pomůcka pro opravu chyb v kódu.  

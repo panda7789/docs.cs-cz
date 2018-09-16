@@ -3,11 +3,11 @@ title: Ukázka služby Net.TCP Port Sharing
 ms.date: 03/30/2017
 ms.assetid: 03da5959-0574-4e91-8a53-05854b6c55dc
 ms.openlocfilehash: db4cd5be73e3c170f2feaa1e76f275eb7d9cd226
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44710249"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45674569"
 ---
 # <a name="nettcp-port-sharing-sample"></a>Ukázka služby Net.TCP Port Sharing
 16bitové číslo, volá se, port, protokol TCP/IP používá k rozlišení připojení k více síťových aplikací, které běží na stejném počítači. Pokud aplikace naslouchá na portu, veškerý provoz TCP pro tento port přejde k dané aplikaci. Jiné aplikace nemůže naslouchat na portu ve stejnou dobu.  

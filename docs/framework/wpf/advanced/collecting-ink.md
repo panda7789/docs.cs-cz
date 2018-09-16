@@ -14,11 +14,11 @@ helpviewer_keywords:
 - DefaultDrawingAttributes property [WPF]
 ms.assetid: 66a3129d-9577-43eb-acbd-56c147282016
 ms.openlocfilehash: 25f9c0141a97d8e52e0883b14fd3e1f4574a05ea
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45527721"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45666886"
 ---
 # <a name="collect-ink"></a>Shromáždění inkoustu
 

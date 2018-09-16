@@ -3,11 +3,11 @@ title: 'Postupy: ladění prázdných sad výsledků dotazu (C#)'
 ms.date: 07/20/2015
 ms.assetid: b569f0dc-425e-45a6-acbf-770fb761c981
 ms.openlocfilehash: 4760b1e5274634954bd5fe4b3880fd4415af2510
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44082320"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45677848"
 ---
 # <a name="how-to-debug-empty-query-results-sets-c"></a>Postupy: ladění prázdných sad výsledků dotazu (C#)
 Jedním z nejběžnějších problémů při dotazování na stromy XML je, že pokud stromu XML má výchozí obor názvů, vývojář někdy zapíše dotaz jakoby nebyly v oboru názvů XML.  

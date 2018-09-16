@@ -19,11 +19,11 @@ ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b19bc78f44781923df6873ccc9720f4605731976
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45513925"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45678901"
 ---
 # <a name="localizability-review"></a>Revize lokalizovatelnosti
 Přezkoumání lokalizovatelnosti je mezikroku vývoj světově připravených aplikací. Ověřuje, že globalizovaná aplikace je připravena k lokalizaci a identifikuje jakýkoli kód, nebo všechny aspekty uživatelského rozhraní, které vyžadují speciální zacházení. Tento krok také pomáhá zajistit, že proces lokalizace nezpůsobí žádné funkčních chyb do vaší aplikace. Při všech problémech, přezkoumání lokalizovatelnosti vyvolané vyřeší, vaše aplikace je připravena k lokalizaci. Pokud je důkladné přezkoumání lokalizovatelnosti, by nemělo být upravit veškerý kód zdroje během proces lokalizace.  

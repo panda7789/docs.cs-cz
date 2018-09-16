@@ -11,11 +11,11 @@ ms.assetid: c67eccc7-004d-4b2f-987e-919cbbd62ef7
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: aaa08106126212345bb594cdeabe6e7281cd7b5e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45519744"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45668884"
 ---
 # <a name="how-to-control-ordering-in-a-plinq-query"></a>Postupy: Řazení ovládacích prvků v PLINQ dotazu
 Tyto příklady znázorňují způsob řazení v dotazu PLINQ s použitím ovládacích prvků <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> – metoda rozšíření.  

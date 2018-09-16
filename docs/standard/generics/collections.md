@@ -14,11 +14,11 @@ ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: cdead5a54c6e8dbe6fd61f82fc3985913bd7d381
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/11/2018
-ms.locfileid: "44367530"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45674036"
 ---
 # <a name="generic-collections-in-net"></a>Generování kolekcí v .NET
 

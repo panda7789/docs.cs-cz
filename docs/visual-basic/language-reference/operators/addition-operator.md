@@ -11,11 +11,11 @@ helpviewer_keywords:
 - sum operator [Visual Basic]
 ms.assetid: 5694778f-0a2c-4539-8009-f66f318fb46d
 ms.openlocfilehash: 91806c204c313956b292eb9c9be078991f733b4e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45510010"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45674049"
 ---
 # <a name="-operator-visual-basic"></a>+ – operátor (Visual Basic)
 Přidá dvou čísel nebo kladnou hodnotu číselného výrazu. Můžete také použít ke zřetězení dvou výrazů řetězec.  

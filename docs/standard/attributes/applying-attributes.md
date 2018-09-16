@@ -13,11 +13,11 @@ ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5d28da0c788d40222ccd689807d6e51f66b4ce78
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45509755"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45686047"
 ---
 # <a name="applying-attributes"></a>Použití atributů
 Na základě následujícího postupu použijte atribut na prvek kódu.  

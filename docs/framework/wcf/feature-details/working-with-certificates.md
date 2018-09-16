@@ -8,11 +8,11 @@ helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
 ms.openlocfilehash: 147de1cdde79ee29f8f316399ba2e41f93921073
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45516643"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45683248"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  

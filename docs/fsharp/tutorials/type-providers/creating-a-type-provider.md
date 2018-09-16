@@ -3,11 +3,11 @@ title: 'Kurz: Vytvoření zprostředkovatele typů (F #)'
 description: 'Zjistěte, jak vytvořit vlastní poskytovatelé typu jazyka F # v jazyce F # 3.0 prozkoumáním několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 3c998377b2c3a408d536ef416f3799bf7f04b6bd
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44275506"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45666912"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 

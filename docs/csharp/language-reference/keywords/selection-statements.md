@@ -5,11 +5,11 @@ helpviewer_keywords:
 - statements [C#], selection
 ms.assetid: cf21cfa2-34fb-48b0-9cbc-8bb4537a9a05
 ms.openlocfilehash: da3132a82e2cb0b3aaa55fbe82898414ebd31c12
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44709046"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45679528"
 ---
 # <a name="selection-statements-c-reference"></a>Příkazy výběru (Referenční dokumentace jazyka C#)
 Výběr příkazu způsobí, že řízení programu, který má být převedena do určitého toku na základě Určuje, zda je podmínka `true` nebo ne.  

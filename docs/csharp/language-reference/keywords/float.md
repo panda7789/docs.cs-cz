@@ -9,11 +9,11 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
 ms.openlocfilehash: 98f89ba3d79f7679b69ce10fd875b3caf69c5257
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45560565"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45668285"
 ---
 # <a name="float-c-reference"></a>float (Referenční dokumentace jazyka C#)
 

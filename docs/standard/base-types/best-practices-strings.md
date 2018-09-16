@@ -1,6 +1,6 @@
 ---
 title: Osvědčené postupy pro používání řetězců v .NET
-ms.date: 08/22/2018
+ms.date: 09/13/2018
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -19,12 +19,12 @@ helpviewer_keywords:
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8352a007cb1b9a92247db5d7a7351524ec3d4c2e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 6114553c6bcdac8521c80c10f470d4c38b15e738
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45508275"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45683244"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>Osvědčené postupy pro používání řetězců v .NET
 <a name="top"></a> .NET poskytuje rozsáhlou podporu pro vývoj globalizovaných a lokalizovaných aplikací a umožňuje snadno použít konvence aktuální jazykové verze nebo specifické jazykové verze při provádění běžných operací, jako je například řazení a zobrazení řetězce. Ale řazení a porovnávání řetězců není vždy operace zohledňující jazykovou verzi. Například by řetězců, které se používají interně aplikace obvykle zpracovává stejně jako všechny jazykové verze. Pokud jazykově nezávislá řetězec dat, jako jsou XML značky HTML značky, uživatelská jména, cesty k souborům a názvy systémové objekty, jsou interpretovány, jako by byly zohledňující jazykovou verzi, v souladu s drobné chyby, nízký výkon a v některých případech může být kód aplikace problémy se zabezpečením.  
@@ -123,10 +123,12 @@ ms.locfileid: "45508275"
  Porovnání řetězců je srdcem mnoho řetězec operací souvisejících se zabezpečením, zejména řazení a testování rovnosti. V určeném pořadí řazení řetězců: Pokud "my" před "string" v seřazený seznam řetězců, "my" musí porovnat menší než nebo rovno "string". Kromě toho porovnání implicitně definuje rovnosti. Operace porovnání vrátí hodnotu 0 pro řetězce, které považuje za stejné. Dobré výkladu je, že žádný řetězec není menší než ten druhý. Smysluplných operací zahrnujících řetězce obsahuje jedno nebo obě z následujících postupů: Výsledkem porovnání s jiným řetězcem a provádění operace jasně definované řazení.  
 
 > [!NOTE]
-> Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows.
+> Můžete stáhnout [řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921), sadu textové soubory, které obsahují informace o tom váhy znaků použitých v operacích řazení a porovnávání pro operační systémy Windows, a [výchozí kódování Unicode Kolace elementu Table](https://www.unicode.org/Public/UCA/latest/allkeys.txt), nejnovější verze tabulky váhy řazení pro systémy Linux a macOS. Konkrétní verze tabulky váhy řazení v Linuxu a macOS závisí na verzi [mezinárodní součásti pro kódování Unicode](http://site.icu-project.org/) knihovny nainstalované v systému. Informace o verzích ICU a Unicode verze, které implementují najdete v tématu [stahování ICU](http://site.icu-project.org/download).
 
  Však vaše rozhodnutí vyzkoušet dva řetězce pro rovnost nebo pořadí řazení nevydává jeden správný výsledek. Výsledek závisí na kritéria použitá pro porovnání řetězců. Zejména porovnávání řetězců, které jsou podle pořadového čísla nebo které jsou založeny malých a velkých písmen a řazení konvence aktuální jazykové verze nebo neutrální jazykové verze (národní prostředí bez ohledu na jazykovou verzi na základě v anglickém jazyce) mohou mít různé výsledky.  
-  
+
+Porovnání řetězců pomocí různých verzí rozhraní .NET nebo pomocí rozhraní .NET na různé operační systémy nebo verze operačního systému kromě toho může vrátit různé výsledky. Další informace najdete v tématu [řetězce a standardu Unicode](xref:System.String#Unicode). 
+
 <a name="current_culture"></a>   
 ### <a name="string-comparisons-that-use-the-current-culture"></a>Porovnávání řetězců, které používají aktuální jazykovou verzi  
  Jedno kritérium zahrnuje při porovnávání řetězců pomocí konvencí aktuální jazykové verze. Porovnání, které jsou založeny na aktuální jazykovou verzi pomocí aktuální jazykové verze vlákna nebo národní prostředí. Pokud uživatel není nastavena jazyková verze, použije se výchozí nastavení **místní nastavení** okno v Ovládacích panelech. Vždy byste měli použít porovnávání, které jsou založeny na aktuální jazykové verze, pokud jsou jazykově relevantní data a odráží interakci s uživatelem zohledňující jazykovou verzi.  

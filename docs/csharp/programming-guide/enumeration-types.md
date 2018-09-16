@@ -8,11 +8,11 @@ helpviewer_keywords:
 - bit flags [C#]
 ms.assetid: 64a9b731-9e3c-4336-8a09-018db2aa10b7
 ms.openlocfilehash: 3efedd48303c79bafde3704b0fdd6fcdd465a0a7
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45589190"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45686125"
 ---
 # <a name="enumeration-types-c-programming-guide"></a>Výčtové typy (C# Programming Guide)
 

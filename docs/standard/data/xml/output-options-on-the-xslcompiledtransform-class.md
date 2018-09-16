@@ -6,11 +6,11 @@ ms.assetid: 91ce8cba-386c-411e-bb38-0891a0393c0a
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 694d2be51d025ab054caf19e4aa2900216ad5b2e
-ms.sourcegitcommit: 8c2ece71e54f46aef9a2153540d0bda7e74b19a9
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44494041"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45678370"
 ---
 # <a name="output-options-on-the-xslcompiledtransform-class"></a>Možnosti výstupu na třídě XslCompiledTransform
 Toto téma popisuje dostupné možnosti výstup XSLT. Možnosti výstupu můžete zadat v šabloně stylů nebo na <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> metody.  

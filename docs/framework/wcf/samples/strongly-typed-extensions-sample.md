@@ -3,11 +3,11 @@ title: Ukázky rozšíření silného typování
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
 ms.openlocfilehash: eccb0ce240d01ab8592a44daddcfa7aa3d2023fb
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45568412"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45678396"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Ukázky rozšíření silného typování
 Ukázka používá <xref:System.ServiceModel.Syndication.SyndicationFeed> třídy pro účely tohoto příkladu. Tyto vzory se dají v této ukázce jsme vám ukázali lze však použít se všemi syndikace třídy, které podporují dat rozšíření.  

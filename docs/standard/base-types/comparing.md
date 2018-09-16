@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 977dc094-fe19-4955-98ec-d2294d04a4ba
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b1fa907be4571e0a5f95ab798210bedb154e9170
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: d8f126aa5b69c99beae740de261ac3da3c5d2544
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45507729"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45674621"
 ---
 # <a name="comparing-strings-in-net"></a>Porovnání řetězců v .NET
 .NET nabízí několik metod pro porovnání hodnot řetězců. Následující tabulka uvádí a popisuje metody porovnání hodnoty.  
@@ -154,4 +154,5 @@ ms.locfileid: "45507729"
 
 - [Základní operace s řetězci](../../../docs/standard/base-types/basic-string-operations.md)  
 - [Provádění řetězcových operací nezávislých na jazykové verzi](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
-- [Řazení váhy tabulky](https://www.microsoft.com/en-us/download/details.aspx?id=10921)
+- [Řazení váhy tabulky (pro .NET pro Windows)](https://www.microsoft.com/en-us/download/details.aspx?id=10921)
+- [Výchozí kódování Unicode kolace Element tabulky (pro .NET Core v Linuxu a macOS)](https://www.unicode.org/Public/UCA/latest/allkeys.txt)

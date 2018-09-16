@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d6b7f9cb-81be-44e1-bb94-56137954876d
 ms.openlocfilehash: ca739f703267f27932ec7450a59d7f4afaffd64b
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526652"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45666782"
 ---
 # <a name="retrieving-identity-or-autonumber-values"></a>Načítají se Identity nebo automatického číslování hodnoty
 Primární klíče v relační databázi je sloupec nebo kombinace sloupců, které vždy obsahovat jedinečné hodnoty. Znalost hodnotu primárního klíče umožňuje najít řádek, který jej obsahuje. Relační databáze modulů, jako je SQL Server, Oracle a Microsoft Access/Jet podporu vytváření automatické zvyšování hodnoty sloupce, které lze označit jako primární klíče. Tyto hodnoty jsou generovány serveru při přidání řádků do tabulky. V systému SQL Server nastavit vlastnost identity pro sloupec, v databázi Oracle vytvoříte pořadí a v aplikaci Microsoft Access vytvořit sloupec automatického číslování.  

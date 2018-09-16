@@ -11,11 +11,11 @@ ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: ab01005b6f73cf1dbae5d0e44df4440bf6a1d7e6
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45527496"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45677393"
 ---
 # <a name="walkthrough-my-first-wpf-desktop-application"></a>Návod: Moje první desktopová aplikace WPF
 

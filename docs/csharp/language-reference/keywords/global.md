@@ -8,11 +8,11 @@ helpviewer_keywords:
 - global keyword [C#]
 ms.assetid: 8932c16a-6959-42c2-86e7-2c4221ab788b
 ms.openlocfilehash: 837245e31a9a795aa2f13cfc6c33fefb6402801d
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44699657"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45664472"
 ---
 # <a name="global-c-reference"></a>global (Referenční dokumentace jazyka C#)
 

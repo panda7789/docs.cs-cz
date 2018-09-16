@@ -13,11 +13,11 @@ ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a0ffef95c8f9a187d5dac6902462d9747023384d
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44705862"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45685709"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na soubory a datovými proudy. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  

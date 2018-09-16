@@ -9,11 +9,11 @@ ms.assetid: 5412c90f-2703-4aa8-a9c4-1b8a35183c37
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 515edf26df6190d2bf4906f3de2d019b1a4175fb
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45512501"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45676188"
 ---
 # <a name="ordered-node-retrieval-by-index"></a>Načtení seřazených uzlů podle indexu
 World Wide Web Consortium (W3C) XML Document Object Model (DOM) také popisuje seznamu, který má schopnost zpracovávat uspořádaný seznam uzlů, na rozdíl od neuspořádanou sadu zpracována **XmlNamedNodeMap**. Je volána seznamu v rozhraní Microsoft .NET Framework **XmlNodeList**. Metody a vlastnosti, které vracejí **XmlNodeList** jsou:  

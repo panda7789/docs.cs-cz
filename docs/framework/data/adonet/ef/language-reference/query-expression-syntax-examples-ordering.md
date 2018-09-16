@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: bcbc9625-7cf7-476e-85d2-058f12682f54
 ms.openlocfilehash: bc8bfaabb9e90e66e4ec81e551fd66319a78ca7e
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "44756701"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45676175"
 ---
 # <a name="query-expression-syntax-examples-ordering"></a>Příklady syntaxe výrazů dotazů: řazení
 Příklady v tomto tématu ukazují, jak používat `OrderBy` a `OrderByDescending` metody k dotazování [AdventureWorks Sales Model](https://msdn.microsoft.com/library/f16cd988-673f-4376-b034-129ca93c7832) pomocí syntaxe výrazu dotazu. Model prodeje AdventureWorks používá v těchto příkladech je sestaven z tabulky kontaktu, adresa, produktu, SalesOrderHeader a podrobnosti prodejní objednávky v ukázkové databázi AdventureWorks.  

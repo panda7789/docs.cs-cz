@@ -3,12 +3,12 @@ title: Dokumentace kódu pomocí komentářů XML
 description: Zjistěte, jak váš kód, který se dokumentační komentáře XML dokumentu a generovat soubor dokumentace XML v době kompilace.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 4c94e98478e71449a3f9cc4bf1f21462e17a371b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e211543a6a5cc5f6f29d8c195492b474eb24a38d
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517478"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45683054"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
 
@@ -29,7 +29,7 @@ Soubor XML v době kompilace můžete vygenerovat pomocí jedné z následujíc�
    Můžete také zadat přesné absolutní nebo relativní cestu a název souboru XML. Následující příklad generuje soubor XML ve stejném adresáři jako ladicí verze aplikace:
 
    ```xml
-   <DocumentationFile>bin\Debug\netcoreapp1.0\App.xml</DocumentationFile>
+   <DocumentationFile>bin\Debug\netcoreapp2.1\App.xml</DocumentationFile>
    ```
 
 - Pokud vyvíjíte aplikace pomocí sady Visual Studio, klikněte pravým tlačítkem na projekt a vyberte **vlastnosti**. V dialogovém okně Vlastnosti vyberte **sestavení** kartě a zaškrtněte **soubor dokumentace XML**. Můžete také změnit umístění, do které kompilátor zapíše soubor.

@@ -6,11 +6,11 @@ ms.assetid: 5de945cb-88f4-49d7-b0e6-f098300cf357
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6bfc2e6def94d0830df4a4cdf738cdeef106de9f
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45509783"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45668168"
 ---
 # <a name="extension-methods"></a>Metody rozšíření
 Rozšiřující metody jsou jazyk funkce, která umožňuje statické metody, která se má volat pomocí syntaxe volání metody instance. Tyto metody musí přijmout nejmíň jeden parametr, který představuje instanci, kterou metoda se má operace provést.  

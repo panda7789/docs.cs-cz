@@ -3,11 +3,11 @@ title: Oznámení dotazů v SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
 ms.openlocfilehash: c4e58a3eecc18fb5693e9850163533b0a1a6a574
-ms.sourcegitcommit: ba5c189bf44d44204a3e8838e59ec378a62d82f3
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/12/2018
-ms.locfileid: "44699602"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45677724"
 ---
 # <a name="query-notifications-in-sql-server"></a>Oznámení dotazů v SQL serveru
 Oznámení dotazů založené na řešení infrastruktury služby Service Broker, povolit aplikace, která vás upozorní, když se data změnila. Tato funkce je zvláště užitečná pro aplikace, které poskytují mezipaměť informací z databáze, jako je například v případě webové aplikace a nutné upozornit, když je změněna zdrojová data.  

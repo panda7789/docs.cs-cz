@@ -3,11 +3,11 @@ title: Prostorové funkce
 ms.date: 03/30/2017
 ms.assetid: 90cb177d-88a0-45be-97e8-3b306283c6e0
 ms.openlocfilehash: ad6b722e84aae40354e30434b107752d02352645
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526665"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45676146"
 ---
 # <a name="spatial-functions"></a>Prostorové funkce
 Neexistuje žádný literál formát pro prostorové typy. Můžete však použít kanonické funkce Entity Framework volání pomocí řetězce ve formátu Well-Known Text. Například následující volání funkce vytvoří geometrie bodu:  

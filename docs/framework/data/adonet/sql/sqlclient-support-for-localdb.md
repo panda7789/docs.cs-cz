@@ -3,11 +3,11 @@ title: Podpora klienta SqlClient pro LocalDB
 ms.date: 03/30/2017
 ms.assetid: cf796898-5575-46f2-ae6e-21e5aa8c4123
 ms.openlocfilehash: 1ef75def3f3de44b5e23cb1197a4410dcf6b547f
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45569083"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45678240"
 ---
 # <a name="sqlclient-support-for-localdb"></a>Podpora klienta SqlClient pro LocalDB
 SQL Server s kódovým názvem Denali počínaje, bude k dispozici Odlehčená verze systému SQL Server LocalDB, volá. Toto téma popisuje, jak se připojit k databázi LocalDB.  

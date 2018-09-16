@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
 ms.openlocfilehash: 3e66e4f34afcf8cba03c60c92b5b69d8ca01961b
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45588563"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45675779"
 ---
 # <a name="performance-counters-in-adonet"></a>Čítače výkonu v ADO.NET
 ADO.NET 2.0 zavedené rozšířenou podporu pro čítače výkonu, která zahrnuje podporu pro obě <xref:System.Data.SqlClient> a <xref:System.Data.OracleClient>. <xref:System.Data.SqlClient> Čítačů výkonu k dispozici v předchozích verzích technologie ADO.NET byly zastaralé a nahradí nové čítače výkonu, které jsou popsané v tomto tématu. Čítače výkonu technologie ADO.NET můžete použít k monitorování stavu vaší aplikace a prostředky připojení, které používá. Čítače výkonu můžete monitorovat pomocí nástroje Sledování výkonu Windows nebo lze přistupovat programově pomocí <xref:System.Diagnostics.PerformanceCounter> třídy v <xref:System.Diagnostics> oboru názvů.  

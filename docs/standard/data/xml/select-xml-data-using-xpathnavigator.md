@@ -9,11 +9,11 @@ ms.assetid: c268c49e-32b9-4171-b782-dcb7b065fa73
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: fea54d36759b12b01fa7a68748d069c7890d84e4
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45507925"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45675909"
 ---
 # <a name="select-xml-data-using-xpathnavigator"></a>Výběr dat XML pomocí XPathNavigator
 <xref:System.Xml.XPath.XPathNavigator> Třída poskytuje sadu metod, které jsou použity k výběru sada uzlů v <xref:System.Xml.XPath.XPathDocument> nebo <xref:System.Xml.XmlDocument> pomocí výrazu XPath. Po výběru neprovedete iteraci vybrané sady uzlů.  

@@ -1,24 +1,28 @@
 ---
 title: Paralelní programování v .NET
-ms.date: 03/30/2017
+ms.date: 09/12/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - parallel programming
 ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 372ffd7e17f60b8045cd5f89d52456c5f9655de1
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 3d1cd0b797373da4cab59484e3e6302927d821ed
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43802300"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45676730"
 ---
 # <a name="parallel-programming-in-net"></a>Paralelní programování v .NET
 
-Mnoho osobních počítačů a pracovních stanic má několik jader procesoru, které umožňují více vláken současně. V blízké budoucnosti se očekává, že počítače budou mít mnohem více jader. V rámci využití výhod dostupného hardwaru lze kód paralelizovat a distribuovat tak práci mezi více procesorů. V minulosti paralelizace vyžadovala nízkoúrovňovou manipulaci s vlákny a zámky. Visual Studio 2010 a rozhraní .NET Framework 4 rozšiřují podporu pro paralelní programování poskytnutím nového modulu runtime, nových typů knihovny tříd a nových diagnostických nástrojů. Tyto funkce zjednodušují vývoj paralelních aplikací tak, aby bylo možné psát účinný, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken. Následující obrázek poskytuje podrobný přehled architektury paralelního programování v rozhraní .NET Framework 4.
+Mnoho osobních počítačů a pracovních stanic má více jader procesoru, které umožňují více vláken současně. Abyste mohli využívat hardware, můžete kód k rozložení práce mezi více procesorů paralelizovat.
 
- ![Architektura paralelní programování .NET](./media/tpl-architecture.png "TPL_Architecture")
+V minulosti paralelizace vyžadovala nízkoúrovňovou manipulaci s vlákny a zámky. Visual Studio a rozhraní .NET Framework rozšiřují podporu pro paralelní programování poskytnutím modul runtime, typy v knihovně tříd a diagnostické nástroje. Tyto funkce, které byly představeny s nástrojem rozhraní .NET Framework 4, zjednodušují vývoj paralelních aplikací. Můžete napsat efektivní, jemně odstupňovaný a škálovatelný paralelní kód v přirozeném stylu bez nutnosti pracovat přímo s vlákny nebo s fondem vláken.
+
+Následující obrázek poskytuje podrobný přehled architektury paralelního programování v rozhraní .NET Framework:
+
+![Architektura paralelní programování .NET](./media/tpl-architecture.png)
 
 ## <a name="related-topics"></a>Související témata
 

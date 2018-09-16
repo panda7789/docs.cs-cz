@@ -8,11 +8,11 @@ helpviewer_keywords:
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
 ms.openlocfilehash: ec19060008c1c06c54c89dbddee7d24001bcdebc
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45560133"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45677744"
 ---
 # <a name="lttypeparamgt-c-programming-guide"></a>&lt;typeparam&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

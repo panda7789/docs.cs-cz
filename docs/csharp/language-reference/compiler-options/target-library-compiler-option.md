@@ -9,11 +9,11 @@ helpviewer_keywords:
 - /target compiler options [C#], /target:library
 ms.assetid: c5670e88-2126-47c1-8d1c-217923837d17
 ms.openlocfilehash: e15210d189c4a553da72b418f583e44666bac2fc
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45560609"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45677289"
 ---
 # <a name="-targetlibrary-c-compiler-options"></a>-target: library (možnosti kompilátoru C#)
 **-Target: library** možnost způsobí, že kompilátor vytvoří dynamickou knihovnu (DLL) místo spustitelný soubor (EXE).  

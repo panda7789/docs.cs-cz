@@ -12,11 +12,11 @@ ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1c012b10f43a45699605e2d87a5b4a814c7dae28
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45521593"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45674491"
 ---
 # <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Postupy: vytvoření výčtu časových pásem přítomných na počítači
 

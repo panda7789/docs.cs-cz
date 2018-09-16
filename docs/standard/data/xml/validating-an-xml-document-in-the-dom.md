@@ -10,11 +10,11 @@ ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d0f5ae64eb1017570a56efab59a4bf1a66d5e02b
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45526600"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45676347"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Ověřování dokumentu XML v modelu DOM
 <xref:System.Xml.XmlDocument> Třídy nelze ověřit kód XML v objektu modelu dokumentu (DOM) proti schéma XML definice jazyk (XSD) schématu nebo dokumentu typ definice (DTD) ve výchozím nastavení; XML je jenom ověřit, být ve správném formátu.  

@@ -14,11 +14,11 @@ author: Xansky
 ms.author: mhopkins
 manager: markl
 ms.openlocfilehash: 6a44cd16513bffa47e56064ea7e0e05692cb78a7
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45517811"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45676743"
 ---
 # <a name="navigate-among-ui-automation-elements-with-treewalker"></a>Pohyb mezi elementy automatizace uživatelského rozhraní pomocí třídy TreeWalker
 > [!NOTE]
