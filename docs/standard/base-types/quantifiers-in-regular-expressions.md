@@ -17,11 +17,11 @@ ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a982082611760e4f901c427af25a0a49a4e243a1
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45514158"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45677354"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>Kvantifikátory v regulárních výrazech
 Kvantifikátory zadejte, kolik instancí znak, skupina nebo třída znaků musí být k dispozici ve vstupu pro shodu, která se má najít.  V následující tabulce jsou uvedeny kvantifikátory podporované rozhraním .NET.  

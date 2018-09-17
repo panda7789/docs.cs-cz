@@ -3,11 +3,11 @@ title: Kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
 ms.openlocfilehash: 24b2155c07b6b66820d373d6310ff6b1c6ab224f
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45527444"
+ms.lasthandoff: 09/16/2018
+ms.locfileid: "45679171"
 ---
 # <a name="collections-c"></a>Kolekce (C#)
 U mnoha aplikací chcete vytvářet a spravovat skupiny souvisejících objektů. Existují dva způsoby, jak seskupit objekty: vytvořením polí objektů a vytvořením kolekcí objektů.  
