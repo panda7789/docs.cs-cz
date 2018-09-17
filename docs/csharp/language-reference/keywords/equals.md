@@ -8,22 +8,22 @@ helpviewer_keywords:
 - equals keyword [C#]
 ms.assetid: e981309a-e4bf-444c-8a2b-5c695e6114b1
 ms.openlocfilehash: 30a8be7e81bae65e565d2a3ed28e225ac3094f13
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45641232"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45747228"
 ---
-# <a name="equals-c-reference"></a><span data-ttu-id="48877-102">equals (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="48877-102">equals (C# Reference)</span></span>
+# <a name="equals-c-reference"></a><span data-ttu-id="07deb-102">equals (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="07deb-102">equals (C# Reference)</span></span>
 
-<span data-ttu-id="48877-103">`equals` Kontextové klíčové slovo se používá v `join` klauzule ve výrazu dotazu pro porovnání elementy dvou sekvencí.</span><span class="sxs-lookup"><span data-stu-id="48877-103">The `equals` contextual keyword is used in a `join` clause in a query expression to compare the elements of two sequences.</span></span> <span data-ttu-id="48877-104">Další informace najdete v tématu [klauzule join](join-clause.md).</span><span class="sxs-lookup"><span data-stu-id="48877-104">For more information, see [join clause](join-clause.md).</span></span>
+<span data-ttu-id="07deb-103">`equals` Kontextové klíčové slovo se používá v `join` klauzule ve výrazu dotazu pro porovnání elementy dvou sekvencí.</span><span class="sxs-lookup"><span data-stu-id="07deb-103">The `equals` contextual keyword is used in a `join` clause in a query expression to compare the elements of two sequences.</span></span> <span data-ttu-id="07deb-104">Další informace najdete v tématu [klauzule join](join-clause.md).</span><span class="sxs-lookup"><span data-stu-id="07deb-104">For more information, see [join clause](join-clause.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="48877-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="48877-105">Example</span></span>
+## <a name="example"></a><span data-ttu-id="07deb-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="07deb-105">Example</span></span>
 
-<span data-ttu-id="48877-106">Následující příklad ukazuje použití `equals` – klíčové slovo v `join` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="48877-106">The following example shows the use of the `equals` keyword in a `join` clause.</span></span>
+<span data-ttu-id="07deb-106">Následující příklad ukazuje použití `equals` – klíčové slovo v `join` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="07deb-106">The following example shows the use of the `equals` keyword in a `join` clause.</span></span>
 
 [!code-csharp[csrefKeywordsContextual#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#12)]
 
-## <a name="see-also"></a><span data-ttu-id="48877-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="48877-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="07deb-107">Viz také:</span><span class="sxs-lookup"><span data-stu-id="07deb-107">See also</span></span>
 
-- [<span data-ttu-id="48877-108">LINQ (Language Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="48877-108">Language Integrated Query (LINQ)</span></span>](../../linq/index.md)
+- [<span data-ttu-id="07deb-108">LINQ (Language Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="07deb-108">Language Integrated Query (LINQ)</span></span>](../../linq/index.md)

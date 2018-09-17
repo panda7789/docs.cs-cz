@@ -18,16 +18,16 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a8d9e7d593c2a8a9cce798724b2705dee21a740e
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
-ms.translationtype: MT
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45527029"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45692720"
 ---
-# <a name="iclrstrongnamegethashfromassemblyfile-method"></a><span data-ttu-id="090ca-102">ICLRStrongName::GetHashFromAssemblyFile – metoda</span><span class="sxs-lookup"><span data-stu-id="090ca-102">ICLRStrongName::GetHashFromAssemblyFile Method</span></span>
-<span data-ttu-id="090ca-103">Získá hodnotu hash zadaného souboru sestavení, pomocí zadané hashovacího algoritmu.</span><span class="sxs-lookup"><span data-stu-id="090ca-103">Gets a hash of the specified assembly file, using the specified hash algorithm.</span></span>  
+# <a name="iclrstrongnamegethashfromassemblyfile-method"></a><span data-ttu-id="cb772-102">ICLRStrongName::GetHashFromAssemblyFile – metoda</span><span class="sxs-lookup"><span data-stu-id="cb772-102">ICLRStrongName::GetHashFromAssemblyFile Method</span></span>
+<span data-ttu-id="cb772-103">Získá hodnotu hash zadaného souboru sestavení, pomocí zadané hashovacího algoritmu.</span><span class="sxs-lookup"><span data-stu-id="cb772-103">Gets a hash of the specified assembly file, using the specified hash algorithm.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="090ca-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="090ca-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cb772-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cb772-104">Syntax</span></span>  
   
 ```  
 HRESULT GetHashFromAssemblyFile (  
@@ -39,34 +39,34 @@ HRESULT GetHashFromAssemblyFile (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="090ca-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="090ca-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="cb772-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="cb772-105">Parameters</span></span>  
  `szFilePath`  
- <span data-ttu-id="090ca-106">[in] Cesta k souboru, který má být mají hodnotu hash.</span><span class="sxs-lookup"><span data-stu-id="090ca-106">[in] The path to the file to be hashed.</span></span>  
+ <span data-ttu-id="cb772-106">[in] Cesta k souboru, který má být mají hodnotu hash.</span><span class="sxs-lookup"><span data-stu-id="cb772-106">[in] The path to the file to be hashed.</span></span>  
   
  `piHashAlg`  
- <span data-ttu-id="090ca-107">[out v] Konstanta, která určuje algoritmus hash.</span><span class="sxs-lookup"><span data-stu-id="090ca-107">[in, out] A constant that specifies the hash algorithm.</span></span> <span data-ttu-id="090ca-108">Použít nulu pro výchozí hashovací algoritmus.</span><span class="sxs-lookup"><span data-stu-id="090ca-108">Use zero for the default hash algorithm.</span></span>  
+ <span data-ttu-id="cb772-107">[out v] Konstanta, která určuje algoritmus hash.</span><span class="sxs-lookup"><span data-stu-id="cb772-107">[in, out] A constant that specifies the hash algorithm.</span></span> <span data-ttu-id="cb772-108">Použít nulu pro výchozí hashovací algoritmus.</span><span class="sxs-lookup"><span data-stu-id="cb772-108">Use zero for the default hash algorithm.</span></span>  
   
  `pbHash`  
- <span data-ttu-id="090ca-109">[out] Vrácená hodnota hash vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="090ca-109">[out] The returned hash buffer.</span></span>  
+ <span data-ttu-id="cb772-109">[out] Vrácená hodnota hash vyrovnávací paměti.</span><span class="sxs-lookup"><span data-stu-id="cb772-109">[out] The returned hash buffer.</span></span>  
   
  `cchHash`  
- <span data-ttu-id="090ca-110">[in] Požadovaná maximální velikost `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="090ca-110">[in] The requested maximum size of `pbHash`.</span></span>  
+ <span data-ttu-id="cb772-110">[in] Požadovaná maximální velikost `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="cb772-110">[in] The requested maximum size of `pbHash`.</span></span>  
   
  `pchHash`  
- <span data-ttu-id="090ca-111">[out] Velikost v bajtech, vrátil z `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="090ca-111">[out] The returned size, in bytes, of `pbHash`.</span></span>  
+ <span data-ttu-id="cb772-111">[out] Velikost v bajtech, vrátil z `pbHash`.</span><span class="sxs-lookup"><span data-stu-id="cb772-111">[out] The returned size, in bytes, of `pbHash`.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="090ca-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="090ca-112">Return Value</span></span>  
- <span data-ttu-id="090ca-113">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="090ca-113">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
+## <a name="return-value"></a><span data-ttu-id="cb772-112">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="cb772-112">Return Value</span></span>  
+ <span data-ttu-id="cb772-113">`S_OK` Pokud metoda dokončena úspěšně; v opačném případě hodnotu HRESULT označující selhání (viz [běžné hodnoty HRESULT](https://go.microsoft.com/fwlink/?LinkId=213878) seznam).</span><span class="sxs-lookup"><span data-stu-id="cb772-113">`S_OK` if the method completed successfully; otherwise, an HRESULT value that indicates failure (see [Common HRESULT Values](https://go.microsoft.com/fwlink/?LinkId=213878) for a list).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="090ca-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="090ca-114">Requirements</span></span>  
- <span data-ttu-id="090ca-115">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="090ca-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cb772-114">Požadavky</span><span class="sxs-lookup"><span data-stu-id="cb772-114">Requirements</span></span>  
+ <span data-ttu-id="cb772-115">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cb772-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="090ca-116">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="090ca-116">**Header:** MetaHost.h</span></span>  
+ <span data-ttu-id="cb772-116">**Záhlaví:** MetaHost.h</span><span class="sxs-lookup"><span data-stu-id="cb772-116">**Header:** MetaHost.h</span></span>  
   
- <span data-ttu-id="090ca-117">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="090ca-117">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="cb772-117">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="cb772-117">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="090ca-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="090ca-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
+ <span data-ttu-id="cb772-118">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cb772-118">**.NET Framework Versions:** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="090ca-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="090ca-119">See Also</span></span>  
- [<span data-ttu-id="090ca-120">GetHashFromAssemblyFileW – metoda</span><span class="sxs-lookup"><span data-stu-id="090ca-120">GetHashFromAssemblyFileW Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)  
- [<span data-ttu-id="090ca-121">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="090ca-121">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)
+## <a name="see-also"></a><span data-ttu-id="cb772-119">Viz také</span><span class="sxs-lookup"><span data-stu-id="cb772-119">See Also</span></span>  
+ [<span data-ttu-id="cb772-120">GetHashFromAssemblyFileW – metoda</span><span class="sxs-lookup"><span data-stu-id="cb772-120">GetHashFromAssemblyFileW Method</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromassemblyfilew-method.md)  
+ [<span data-ttu-id="cb772-121">ICLRStrongName – rozhraní</span><span class="sxs-lookup"><span data-stu-id="cb772-121">ICLRStrongName Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-interface.md)

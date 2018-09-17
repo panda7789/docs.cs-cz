@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d5fd96f390b0bba60d1b95d20273bbf670208d41
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45597655"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45745574"
 ---
-# <a name="imetadatadispenserexopenscopeonitypeinfo-method"></a><span data-ttu-id="b57a2-102">IMetaDataDispenserEx::OpenScopeOnITypeInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="b57a2-102">IMetaDataDispenserEx::OpenScopeOnITypeInfo Method</span></span>
-<span data-ttu-id="b57a2-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="b57a2-103">This method is not implemented.</span></span> <span data-ttu-id="b57a2-104">Pokud je volána, vrátí E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="b57a2-104">If called, it returns E_NOTIMPL.</span></span>  
+# <a name="imetadatadispenserexopenscopeonitypeinfo-method"></a><span data-ttu-id="81522-102">IMetaDataDispenserEx::OpenScopeOnITypeInfo – metoda</span><span class="sxs-lookup"><span data-stu-id="81522-102">IMetaDataDispenserEx::OpenScopeOnITypeInfo Method</span></span>
+<span data-ttu-id="81522-103">Tato metoda není implementována.</span><span class="sxs-lookup"><span data-stu-id="81522-103">This method is not implemented.</span></span> <span data-ttu-id="81522-104">Pokud je volána, vrátí E_NOTIMPL.</span><span class="sxs-lookup"><span data-stu-id="81522-104">If called, it returns E_NOTIMPL.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b57a2-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b57a2-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="81522-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="81522-105">Syntax</span></span>  
   
 ```  
 HRESULT OpenScopeOnITypeInfo (  
@@ -38,28 +38,28 @@ HRESULT OpenScopeOnITypeInfo (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="b57a2-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="b57a2-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="81522-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="81522-106">Parameters</span></span>  
  `pITI`  
- <span data-ttu-id="b57a2-107">[in] Ukazatel [ITypeInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) rozhraní, které poskytuje informace o typu, na kterém se má otevřít oboru.</span><span class="sxs-lookup"><span data-stu-id="b57a2-107">[in] Pointer to an [ITypeInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) interface that provides the type information on which to open the scope.</span></span>  
+ <span data-ttu-id="81522-107">[in] Ukazatel [ITypeInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) rozhraní, které poskytuje informace o typu, na kterém se má otevřít oboru.</span><span class="sxs-lookup"><span data-stu-id="81522-107">[in] Pointer to an [ITypeInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) interface that provides the type information on which to open the scope.</span></span>  
   
  `dwOpenFlags`  
- <span data-ttu-id="b57a2-108">[in] Režim otevření příznaky.</span><span class="sxs-lookup"><span data-stu-id="b57a2-108">[in] The open mode flags.</span></span>  
+ <span data-ttu-id="81522-108">[in] Režim otevření příznaky.</span><span class="sxs-lookup"><span data-stu-id="81522-108">[in] The open mode flags.</span></span>  
   
  `riid`  
- <span data-ttu-id="b57a2-109">[in] Požadované rozhraní.</span><span class="sxs-lookup"><span data-stu-id="b57a2-109">[in] The desired interface.</span></span>  
+ <span data-ttu-id="81522-109">[in] Požadované rozhraní.</span><span class="sxs-lookup"><span data-stu-id="81522-109">[in] The desired interface.</span></span>  
   
  `ppIUnk`  
- <span data-ttu-id="b57a2-110">[out] Ukazatel na ukazatel na vrácené rozhraní.</span><span class="sxs-lookup"><span data-stu-id="b57a2-110">[out] Pointer to a pointer to the returned interface.</span></span>  
+ <span data-ttu-id="81522-110">[out] Ukazatel na ukazatel na vrácené rozhraní.</span><span class="sxs-lookup"><span data-stu-id="81522-110">[out] Pointer to a pointer to the returned interface.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="b57a2-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="b57a2-111">Requirements</span></span>  
- <span data-ttu-id="b57a2-112">**Platforma:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b57a2-112">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="81522-111">Požadavky</span><span class="sxs-lookup"><span data-stu-id="81522-111">Requirements</span></span>  
+ <span data-ttu-id="81522-112">**Platforma:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="81522-112">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="b57a2-113">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="b57a2-113">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="81522-113">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="81522-113">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="b57a2-114">**Knihovna:** použit jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="b57a2-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="81522-114">**Knihovna:** použit jako prostředek v MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="81522-114">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="b57a2-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b57a2-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="81522-115">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="81522-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b57a2-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="b57a2-116">See Also</span></span>  
- [<span data-ttu-id="b57a2-117">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b57a2-117">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
- [<span data-ttu-id="b57a2-118">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="b57a2-118">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)
+## <a name="see-also"></a><span data-ttu-id="81522-116">Viz také</span><span class="sxs-lookup"><span data-stu-id="81522-116">See Also</span></span>  
+ [<span data-ttu-id="81522-117">IMetaDataDispenserEx – rozhraní</span><span class="sxs-lookup"><span data-stu-id="81522-117">IMetaDataDispenserEx Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
+ [<span data-ttu-id="81522-118">IMetaDataDispenser – rozhraní</span><span class="sxs-lookup"><span data-stu-id="81522-118">IMetaDataDispenser Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)

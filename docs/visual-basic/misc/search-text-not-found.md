@@ -5,19 +5,19 @@ f1_keywords:
 - vbrID744
 ms.assetid: 145f0a6d-7fdd-4d73-9dc6-5fea39a52896
 ms.openlocfilehash: 2eb764bfc78cba6c06a2c1ac9fd14f3caba1c7b2
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45685657"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45698494"
 ---
-# <a name="search-text-not-found"></a><span data-ttu-id="32b50-102">Hledaný text nebyl nalezen</span><span class="sxs-lookup"><span data-stu-id="32b50-102">Search text not found</span></span>
-<span data-ttu-id="32b50-103">Nebyl nalezen text, který jste zadali.</span><span class="sxs-lookup"><span data-stu-id="32b50-103">The text you specified was not found.</span></span>  
+# <a name="search-text-not-found"></a><span data-ttu-id="c1498-102">Hledaný text nebyl nalezen</span><span class="sxs-lookup"><span data-stu-id="c1498-102">Search text not found</span></span>
+<span data-ttu-id="c1498-103">Nebyl nalezen text, který jste zadali.</span><span class="sxs-lookup"><span data-stu-id="c1498-103">The text you specified was not found.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="32b50-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="32b50-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="c1498-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="c1498-104">To correct this error</span></span>  
   
-1.  <span data-ttu-id="32b50-105">Zkontrolujte, jestli zadaný text je napsaný správně.</span><span class="sxs-lookup"><span data-stu-id="32b50-105">Check that the specified text is spelled correctly.</span></span>  
+1.  <span data-ttu-id="c1498-105">Zkontrolujte, jestli zadaný text je napsaný správně.</span><span class="sxs-lookup"><span data-stu-id="c1498-105">Check that the specified text is spelled correctly.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="32b50-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="32b50-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c1498-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c1498-106">See also</span></span>
 
-- [<span data-ttu-id="32b50-107">Vyhledání a nahrazení textu</span><span class="sxs-lookup"><span data-stu-id="32b50-107">Find and replace text</span></span>](/visualstudio/ide/finding-and-replacing-text)
+- [<span data-ttu-id="c1498-107">Vyhledání a nahrazení textu</span><span class="sxs-lookup"><span data-stu-id="c1498-107">Find and replace text</span></span>](/visualstudio/ide/finding-and-replacing-text)
