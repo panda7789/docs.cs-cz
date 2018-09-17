@@ -3,11 +3,11 @@ title: Konstruktory (F#)
 description: 'Zjistěte, jak definovat a používat konstruktory v jazyce F # k vytvoření a inicializaci objektů třídy a struktury.'
 ms.date: 05/16/2016
 ms.openlocfilehash: ff2463f890034cce0bbaa85d9a5c93e50427cd03
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45658636"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45743914"
 ---
 # <a name="constructors"></a>Konstruktory
 

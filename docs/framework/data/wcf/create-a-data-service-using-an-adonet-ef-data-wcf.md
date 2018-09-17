@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF Data Services, providers
 - WCF Data Services, Entity Framework
 ms.assetid: 6d11fec8-0108-42f5-8719-2a7866d04428
-ms.openlocfilehash: 72439596ec6dc6c42024ed38116ba0026922154c
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 4bccd1e4655786ae24166cdc32619b420c4a54d3
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45679606"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45743771"
 ---
 # <a name="how-to-create-a-data-service-using-an-adonet-entity-framework-data-source-wcf-data-services"></a>Postupy: vytvoření datové služby pomocí zdroji dat ADO.NET Entity Framework (WCF Data Services)
 
@@ -34,7 +34,7 @@ Služby WCF Data Services zpřístupňuje entity data jako datové služby. Tato
 
 6. V **vlastnosti připojení** dialogové okno, zadejte název vašeho serveru, vyberte metodu ověřování, zadejte název databáze a pak klikněte na tlačítko **OK**.
 
-     **Vyberte datové připojení**dialogové okno s se aktualizuje se nastavení připojení k databázi.
+     **Vyberte datové připojení** dialogové okno se aktualizuje se nastavení připojení k databázi.
 
 7. Ujistěte se, že **uložit nastavení připojení v souboru App.Config jako entity:** je zaškrtnuté políčko. Pak klikněte na tlačítko **Další**.
 

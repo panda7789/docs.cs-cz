@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 10/30/2017
-ms.openlocfilehash: 0c4eda54fbb1f48095d52fa798ea839eb509a636
-ms.sourcegitcommit: bd4fa78f5a46133efdead1bc692a9aa2811d7868
+ms.openlocfilehash: d1c4166129716ccbbc86855e38d631f493b82290
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/23/2018
-ms.locfileid: "42754726"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45750255"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Definování vícekontejnerové aplikace pomocí docker-compose.yml 
 
@@ -126,7 +126,7 @@ Tato kontejnerizovaná služba má následující základní konfigurace:
 
 -   Název systému SQL Server je sql.data, které se stejným názvem, který pro kontejner, na kterém běží instance systému SQL Server pro Linux. Tato možnost je pohodlná; bude možné použít tento překlad (interní hostitele Dockeru) vyřeší síťovou adresu, takže není nutné znát interní IP adresa pro kontejnery, které spouštíte z jiných kontejnerů.
 
-Vzhledem k tomu, že připojovací řetězec je určené proměnnou prostředí, můžete tuto proměnnou nastavit prostřednictvím jiným způsobem a jiný čas. Například můžete nastavit různé připojovací řetězec při nasazení do produkčního prostředí v posledním hostitele nebo provedením z vašich kanálů CI/CD ve VSTS nebo upřednostňované systému DevOps.
+Vzhledem k tomu, že připojovací řetězec je určené proměnnou prostředí, můžete tuto proměnnou nastavit prostřednictvím jiným způsobem a jiný čas. Například můžete nastavit různé připojovací řetězec při nasazení do produkčního prostředí v posledním hostitele nebo provedením z vašich kanálů CI/CD v Azure DevOps služby nebo systému upřednostňované DevOps.
 
 -   Zpřístupňuje port 80 pro interní přístup ke službě catalog.api v rámci hostitele Dockeru. Hostitel je aktuálně virtuálního počítače s Linuxem, protože je založen na image Dockeru pro Linux, ale můžete nakonfigurovat tak, kontejner pro spuštění v imagi Windows místo.
 
@@ -180,7 +180,7 @@ Při cílení na jiné prostředí, byste měli použít více soubory compose. 
 
 Můžete použít soubor jednoho docker-compose.yml jako zjednodušené příkladů uvedených v předchozí části. Který však není doporučeno pro většinu aplikací.
 
-Ve výchozím nastavení přečte vytvořit dva soubory, docker-compose.yml a docker-compose.override.yml volitelné soubor. Jak ukazuje obrázek 8-11, když pomocí sady Visual Studio a povolení podpory Dockeru, Visual Studio také vytvoří soubor docker-compose.ci.build,yml další můžete použít z vašich kanálů CI/CD stejně jako ve VSTS.
+Ve výchozím nastavení přečte vytvořit dva soubory, docker-compose.yml a docker-compose.override.yml volitelné soubor. Jak ukazuje obrázek 8-11, když pomocí sady Visual Studio a povolení podpory Dockeru, Visual Studio také vytvoří soubor docker-compose.ci.build,yml další pro použití z vašich kanálů CI/CD jako ve službách Azure DevOps.
 
 ![](./media/image12.png)
 

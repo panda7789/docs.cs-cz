@@ -11,12 +11,12 @@ helpviewer_keywords:
 - walkthroughs [Windows Forms], visual inheritance
 - Windows Forms, inheritance
 ms.assetid: 01966086-3142-450e-8210-3fd4cb33f591
-ms.openlocfilehash: bc91e3bde54eedb4d9dbcfcb9f7faa0ccc98e397
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b17de01c4a5e89051393aa3c6bb2d0079535dbf6
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505621"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45746202"
 ---
 # <a name="walkthrough-demonstrating-visual-inheritance"></a>Návod: Demonstrace vizuálního dědění
 Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři základní a přidání nových ovládacích prvků. V tomto návodu vytvoříte základní formulář a zkompilovat ji do knihovny tříd. Bude import této knihovně tříd do jiného projektu a vytvoření nového formuláře, která dědí ze základního formuláře. V tomto návodu se dozvíte, jak:  
@@ -80,7 +80,7 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
     -   Nastavte **(název)** vlastnost **btnProtected**.  
   
-    -   Nastavte**modifikátory** vlastnost **chráněné**. To umožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnProtected**.  
+    -   Nastavte **modifikátory** vlastnost **chráněné**. To umožňuje pro formuláře, které dědí **Form1** k úpravě vlastností **btnProtected**.  
   
 4.  Dvakrát klikněte **Say Hello** tlačítko pro přidání obslužné rutiny události pro **klikněte na tlačítko** událostí.  
   
@@ -128,7 +128,7 @@ Vizuální dědění vám umožní zobrazit ovládací prvky ve formuláři zák
   
 #### <a name="to-add-an-inherited-form"></a>Přidat Zděděný formulář  
   
-1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **InheritanceTest** projekt, vyberte **přidat**a pak vyberte**nová položka**.  
+1.  V **Průzkumníku řešení**, klikněte pravým tlačítkem myši **InheritanceTest** projekt, vyberte **přidat**a pak vyberte **nová položka**.  
   
 2.  V **přidat novou položku** dialogové okno, vyberte **Windows Forms** kategorie (Pokud máte seznam kategorií) a pak vyberte **zděděné formuláře** šablony.  
   

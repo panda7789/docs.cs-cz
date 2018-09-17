@@ -3,11 +3,11 @@ title: Ukázky Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
 ms.openlocfilehash: e9b511606c6278e7d2b2fb1bc3cbd9c38b51b000
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45647759"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45698416"
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
 Tyto ukázky pokyny na různé aspekty Windows Workflow Foundation (WF).  

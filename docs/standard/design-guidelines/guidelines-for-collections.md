@@ -6,11 +6,11 @@ ms.assetid: 297b8f1d-b11f-4dc6-960a-8e990817304e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3571ebb2fdd2bcdfd8be1f0087d096e01f18790a
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45674088"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45964831"
 ---
 # <a name="guidelines-for-collections"></a>Pokyny pro kolekce
 Jakýkoli typ určený konkrétně pro manipulaci s skupinu objektů, které mají některé běžné charakteristiky lze považovat za kolekce. Je téměř vždy vhodné pro tyto typy implementace <xref:System.Collections.IEnumerable> nebo <xref:System.Collections.Generic.IEnumerable%601>, takže se v této části považujeme pouze typy implementace jeden nebo oba z těchto rozhraní být kolekce.  

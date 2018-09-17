@@ -3,11 +3,11 @@ title: Pole (F#)
 description: 'Zjistěte, jak vytvořit a používání polí v programovacím jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 27b73efc900ac2efc813fe66f81baa2e9ae1e843
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591838"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45743628"
 ---
 # <a name="arrays"></a>Pole
 

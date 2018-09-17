@@ -13,11 +13,11 @@ ms.assetid: c52ef192-13a9-435f-8015-3b12eae8c47c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 80a5c04f7807638a4a8b114828083835f348ac08
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45520461"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45696091"
 ---
 # <a name="how-to-create-time-zones-with-adjustment-rules"></a>Postupy: vytváření časových pásem s pravidly úpravy
 

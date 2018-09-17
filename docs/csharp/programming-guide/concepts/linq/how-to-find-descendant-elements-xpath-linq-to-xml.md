@@ -3,11 +3,11 @@ title: 'Postupy: vyhledání následnických elementů (XPath – LINQ to XML) (
 ms.date: 07/20/2015
 ms.assetid: b318da39-bb8b-4c56-a019-e13b12b01831
 ms.openlocfilehash: df1b151948b7b11757f2f8f312fa1f0bba00673a
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45675650"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45748599"
 ---
 # <a name="how-to-find-descendant-elements-xpath-linq-to-xml-c"></a>Postupy: vyhledání následnických elementů (XPath – LINQ to XML) (C#)
 Toto téma ukazuje, jak získat následovnické elementy s určitým názvem.  
