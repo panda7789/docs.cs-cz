@@ -36,7 +36,7 @@ XAML používá entity znaků, které jsou definované v kódu XML pro zvláštn
   
  Hlavní výjimkou je, že složené závorky ({a}) mají význam v XAML, protože tyto znaky informovat XAML procesoru, sekvence znaků uzavřeny ve složených závorkách musí být interpretován jako rozšíření značek. Další informace o rozšíření značek, naleznete v tématu [– rozšíření značek XAML přehled](../../../docs/framework/xaml-services/markup-extensions-for-xaml-overview.md).  
   
- Ale můžete pořád zobrazit složené závorky jako literální znaky pomocí řídicí sekvence, které je specifický pro XAML místo XML. Další informace najdete v tématu [ {} řídicí sekvence – rozšíření značek](escape-sequence-markup-extension.md).  
+ Ale můžete pořád zobrazit složené závorky jako literální znaky pomocí řídicí sekvence, které je specifický pro XAML místo XML. Další informace najdete v tématu [{} řídicí sekvence - rozšíření značek](escape-sequence-markup-extension.md).  
   
  Všimněte si, že zpětné lomítko (\\) nevyžaduje sekvence escape, když je zpracován jako řetězec.  
   

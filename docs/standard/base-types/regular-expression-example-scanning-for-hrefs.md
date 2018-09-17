@@ -16,11 +16,11 @@ ms.assetid: fae2c15b-7adf-4b15-b118-58eb3906994f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e6fe667ca908b2a4ba16e34e8e74dd39ca01f153
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
-ms.translationtype: MT
+ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44271927"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45507833"
 ---
 # <a name="regular-expression-example-scanning-for-hrefs"></a>Příklad regulárního výrazu: Vyhledávání atributů href
 Následující příklad hledá vstupní řetězec a zobrazí všechny href = "..." a jejich umístění v řetězci.  
