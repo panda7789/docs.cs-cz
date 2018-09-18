@@ -3,11 +3,11 @@ title: Měrné jednotky (F#)
 description: 'Zjistěte, jak plovoucí desetinnou čárkou a celé číslo se znaménkem hodnoty v jazyce F # můžete mít přidružené jednotky měření, které se obvykle používají k označení délku, svazek a velkokapacitních.'
 ms.date: 05/16/2016
 ms.openlocfilehash: ad2193e25f3c0cee6e73cd529ab43d1e4b6b549b
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45616150"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45972514"
 ---
 # <a name="units-of-measure"></a>Měrné jednotky
 

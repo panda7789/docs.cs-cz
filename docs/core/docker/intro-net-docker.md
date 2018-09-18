@@ -6,11 +6,11 @@ ms.author: johalex
 ms.date: 11/06/2017
 ms.custom: mvc
 ms.openlocfilehash: d578ec5a25dbb5de3c88386e212e68cf3b267749
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45638961"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45970640"
 ---
 # <a name="introduction-to-net-and-docker"></a>Úvod k .NET a Dockeru
 

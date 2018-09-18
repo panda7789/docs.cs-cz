@@ -3,11 +3,11 @@ title: Asynchronní návratové typy (C#)
 ms.date: 05/29/2017
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
 ms.openlocfilehash: 3d3c7d610dd1287d2c7284a5edd9c92810a74dba
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45674114"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45972479"
 ---
 # <a name="async-return-types-c"></a>Asynchronní návratové typy (C#)
 Asynchronní metody může mít tyto návratové typy:

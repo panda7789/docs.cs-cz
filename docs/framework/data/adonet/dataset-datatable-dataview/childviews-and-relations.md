@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d475d356-6abb-4701-8fd1-2906fb93dfba
 ms.openlocfilehash: e27ef72f0341524524a8f267eeeb13a6f46deb52
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
-ms.translationtype: HT
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/17/2018
-ms.locfileid: "45692589"
+ms.locfileid: "45964277"
 ---
 # <a name="childviews-and-relations"></a>ChildViews a relace
 Pokud existuje relace mezi tabulkami v <xref:System.Data.DataSet>, můžete vytvořit <xref:System.Data.DataView> obsahující řádky ze související podřízené tabulce pomocí <xref:System.Data.DataRowView.CreateChildView%2A> metodu <xref:System.Data.DataRowView> pro řádky v nadřazené tabulce. Například následující kód zobrazí **kategorie** a jejich souvisejících **produkty** abecedně seřazené podle **CategoryName** a **ProductName** .  

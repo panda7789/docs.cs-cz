@@ -3,11 +3,11 @@ title: Matematické kanonické funkce
 ms.date: 03/30/2017
 ms.assetid: 6f6cddc6-b561-4ebe-84b6-841ef5b4113b
 ms.openlocfilehash: 0fc9f4942c3f76f139ab7e4400005f0bfe80204e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45653184"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45969701"
 ---
 # <a name="math-canonical-functions"></a>Matematické kanonické funkce
 

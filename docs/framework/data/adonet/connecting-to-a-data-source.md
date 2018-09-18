@@ -3,11 +3,11 @@ title: Připojení ke zdroji dat v ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 9abc3f92-1be3-4e1a-b360-762dc689650e
 ms.openlocfilehash: f5788b9b0b19f32d03c917575db7b3f40324c0a2
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
-ms.translationtype: HT
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/17/2018
-ms.locfileid: "45696156"
+ms.locfileid: "45964576"
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>Připojení ke zdroji dat v ADO.NET
 V ADO.NET pomocí **připojení** objektu, který chcete připojit ke konkrétnímu zdroji dat zadáním potřebné ověřovací údaje v připojovacím řetězci. **Připojení** objektu použijete, závisí na typu zdroje dat.  

@@ -1,5 +1,5 @@
 ---
-title: Vytváření asynchronních požadavků
+title: Vytváření asynchronních žádostí
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,39 +14,39 @@ ms.assetid: 735d3fce-f80c-437f-b02c-5c47f5739674
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: 27860feed5fbb33fb007120d082599c8f80b240d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0f5729f0a3d36a631b227c77de51f68b95e8df22
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395905"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45972608"
 ---
-# <a name="making-asynchronous-requests"></a>Vytváření asynchronních požadavků
-<xref:System.Net> Třídy používat rozhraní .NET Framework standardní asynchronní programovací model pro asynchronní přístup k internetovým prostředkům. <xref:System.Net.WebRequest.BeginGetResponse%2A> a <xref:System.Net.WebRequest.EndGetResponse%2A> metody <xref:System.Net.WebRequest> třídy zahájení a dokončení asynchronní požadavky na internetové prostředky.  
+# <a name="making-asynchronous-requests"></a>Vytváření asynchronních žádostí
+<xref:System.Net> Třídy pomocí rozhraní .NET Framework standardní asynchronní programovací model pro asynchronní přístup k internetovým prostředkům. <xref:System.Net.WebRequest.BeginGetResponse%2A> a <xref:System.Net.WebRequest.EndGetResponse%2A> metody <xref:System.Net.WebRequest> třídy zahájení a dokončení asynchronní požadavky na internetové prostředky.  
   
 > [!NOTE]
->  Použití synchronní volání v asynchronní zpětné volání, které metody může mít za následek postihy ovlivňuje výkon. Internet žádosti provedené **WebRequest** a musí používat jeho následníky <xref:System.IO.Stream.BeginRead%2A?displayProperty=nameWithType> číst datový proud vrácený <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> metoda.  
+>  Použití synchronní volání v asynchronní zpětné volání metod může způsobit snížení výkonu. Internet požadavky provedené přes **WebRequest** a jejích potomků musí používat <xref:System.IO.Stream.BeginRead%2A?displayProperty=nameWithType> číst stream vrácený poskytovatelem <xref:System.Net.WebResponse.GetResponseStream%2A?displayProperty=nameWithType> metody.  
   
- Následující vzorový kód ukazuje, jak použít asynchronní volání s **WebRequest** třídy. Ukázka je program konzoly, která přebírá URI z příkazového řádku, požadavek na prostředek pro identifikátor URI a potom zobrazí data do konzoly nástroje, jako je přijaté z Internetu.  
+ Následující ukázkový kód ukazuje, jak použít asynchronní volání s **WebRequest** třídy. Vzorek je konzolový program, který přebírá identifikátor UIR z příkazového řádku, požadavek na prostředek v identifikátoru URI a potom zobrazí data do konzoly přijatá z Internetu.  
   
- Program definuje dvě třídy pro vlastní použití **RequestState** třídy, která předá dat napříč asynchronní volání, a **ClientGetAsync** třídy, která implementuje asynchronní požadavek na Internetového zdroji.  
+ Program definuje dvě třídy pro vlastní použití, **RequestState** třídu, která předá data napříč byla zahájena asynchronní volání, a **ClientGetAsync** třídy, která implementuje asynchronního požadavku pro Internetového zdroji.  
   
- **RequestState** třída zachovává stav žádosti napříč volání asynchronních metod, které obsloužit požadavek. Obsahuje **WebRequest** a <xref:System.IO.Stream> instancí, které obsahují aktuální požadavek na prostředek a datový proud obdrželi v odpovědi, vyrovnávací paměť, která obsahuje aktuálně získaná z internetových prostředků a data<xref:System.Text.StringBuilder> obsahující kompletní odpovědi. A **RequestState**se předá jako *stavu* parametr při <xref:System.AsyncCallback> metoda není zaregistrována **WebRequest.BeginGetResponse**.  
+ **RequestState** třídy zachovává stav žádosti napříč volání asynchronní metody, které služby pro tuto žádost. Obsahuje **WebRequest** a <xref:System.IO.Stream> instancí, které obsahují aktuální požadavek na prostředek a datový proud vyrovnávací paměti, která obsahuje data aktuálně přijatá z internetového zdroji a jakoodpověď<xref:System.Text.StringBuilder> , který obsahuje úplnou odpověď. A **RequestState** je předán jako *stavu* parametr při <xref:System.AsyncCallback> metoda je registrovaný pomocí **WebRequest.BeginGetResponse**.  
   
- **ClientGetAsync** třída implementuje asynchronní požadavek na internetových prostředků a zapíše výsledný odpověď do konzoly. Obsahuje metody a vlastnosti, které jsou popsané v následujícím seznamu.  
+ **ClientGetAsync** třída implementuje asynchronního požadavku k internetového zdroji a zapíše výsledný odpovědi do konzoly. Obsahuje metody a vlastnosti, které je popsáno v následujícím seznamu.  
   
 -   `allDone` Vlastnost obsahuje instanci <xref:System.Threading.ManualResetEvent> třídu, která signalizuje dokončení požadavku.  
   
--   `Main()` Metoda čte příkazového řádku a zahájí požadavek zadaný prostředek Internetu. Vytvoří **WebRequest** `wreq` a **RequestState** `rs`, volání **BeginGetResponse** k zahájení zpracování požadavků a pak volání `allDone.WaitOne()`metoda tak, aby aplikace nebude ukončena až do dokončení zpětného volání. Po odpovědi je pro čtení z Internetu, `Main()` zapíše ho do konzole a ukončení aplikace.  
+-   `Main()` Metoda načte příkazového řádku a zahájí žádost o zadaný internetového zdroji. Vytváří **WebRequest** `wreq` a **RequestState** `rs`, volání **BeginGetResponse** začala zpracovat požadavek a poté zavolá `allDone.WaitOne()`metodu tak, že aplikace nebude ukončeno až do dokončení zpětného volání. Poté, co je pro čtení odpovědi z internetového zdroji `Main()` zapisuje do konzoly a ukončením aplikace.  
   
--   `showusage()` Metoda zapíše příkazového řádku s příklad v konzole. Je volána metodou `Main()` při žádné URI zadání na příkazovém řádku.  
+-   `showusage()` Metoda zapíše příklad příkazového řádku v konzole. Je volána metodou `Main()` při zadaný žádný identifikátor URI na příkazovém řádku.  
   
--   `RespCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro daný požadavek Internetu. Vytvoří **WebResponse** instance obsahujícího odpověď z internetového zdroji, získá datového proudu odpovědi a pak spustí asynchronně čtení dat z datového proudu.  
+-   `RespCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro daný požadavek Internet. Vytváří **WebResponse** instance, který obsahuje odpověď z internetového zdroji získá datového proudu odpovědi a pak spustí asynchronnímu čtení dat z datového proudu.  
   
--   `ReadCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro čtení datového proudu odpovědi. Přenáší data přijatá z Internetu prostředku do **ResponseData** vlastnost **RequestState** instance a potom spustí jiné asynchronní čtení datového proudu odpovědi, dokud nebude žádná další data Vrátí. Jakmile byl načten všechna data, `ReadCallBack()` zavře datového proudu odpovědi a volání `allDone.Set()` metoda indikující, zda je v celé odpovědi **ResponseData**.  
+-   `ReadCallBack()` Metoda implementuje metodu asynchronní zpětné volání pro čtení datového proudu odpovědi. Přenosy dat přijatých z internetového zdroji do **ResponseData** vlastnost **RequestState** instance a potom spustí jiné asynchronní čtení z datového proudu odpovědi, dokud není žádná další data Vrátí. Jakmile všechna data byla načtena, `ReadCallBack()` zavře datový proud odpovědí a volání `allDone.Set()` indikace, že je k dispozici v celé odpovědi **ResponseData**.  
   
     > [!NOTE]
-    >  Je důležité, aby byly zavřeny všechny datové proudy sítě. Pokud nezavřete každý datový proud požadavku a odpovědi, bude vaše aplikace dostatek připojení k serveru a nemůže zpracovávat další požadavky.  
+    >  Je velmi důležité, že všechny datové proudy sítě zavřená. Pokud jste neukončíte každý datový proud požadavku a odpovědi, vaše aplikace vyčerpala volné připojení k serveru a nebudete moct zpracovávat další požadavky.  
   
 ```csharp  
 using System;  

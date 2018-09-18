@@ -11,11 +11,11 @@ helpviewer_keywords:
 - SecurityToken class
 ms.assetid: 6d892973-1558-4115-a9e1-696777776125
 ms.openlocfilehash: fd168bf2e5233d9119872b267aea466a7af07041
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45675766"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45970276"
 ---
 # <a name="how-to-create-a-custom-token"></a>Postupy: Vytvoření vlastního tokenu
 Toto téma ukazuje, jak vytvořit vlastní bezpečnostní token pomocí <xref:System.IdentityModel.Tokens.SecurityToken> třídy a jak ji integrovat s vlastního zprostředkovatele tokenů zabezpečení a ověřovací data. Příklad úplného kódu najdete v článku [vlastní Token](../../../../docs/framework/wcf/samples/custom-token.md) vzorku.  

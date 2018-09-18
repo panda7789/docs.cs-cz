@@ -13,11 +13,11 @@ helpviewer_keywords:
 - generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
 ms.openlocfilehash: 9a88a979a6b46f897e5f04f4481d4a23e245b165
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45618815"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45969769"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Obecné procedury v jazyce Visual Basic
 A *obecný postup*, označované také jako *obecnou metodu*, postup definované s alespoň jedním parametrem typu. To umožňuje volajícímu kódu pro datové typy na své požadavky na přizpůsobení pokaždé, když volá proceduru.  

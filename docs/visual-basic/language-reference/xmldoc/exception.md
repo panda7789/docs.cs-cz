@@ -6,11 +6,11 @@ helpviewer_keywords:
 - exception XML tag
 ms.assetid: c0517549-171e-4dae-ab88-a9c1700b6eee
 ms.openlocfilehash: 047805ad91d87550da80448fd10883ae58647bd6
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45687410"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45969493"
 ---
 # <a name="ltexceptiongt-visual-basic"></a>&lt;výjimka&gt; (Visual Basic)
 Určuje, jaké výjimky mohou být vyvolány.  

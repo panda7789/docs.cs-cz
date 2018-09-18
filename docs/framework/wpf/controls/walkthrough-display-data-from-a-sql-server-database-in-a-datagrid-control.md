@@ -8,12 +8,12 @@ helpviewer_keywords:
 - DataGrid [WPF], displaying data from SQL Server
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-ms.openlocfilehash: 1421d076ff202ec87a9d861ab2c7d1c1cdcdc1b7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: dba2ec98b25c9c65a795c462b18504a799df04bc
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43798723"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45972264"
 ---
 # <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>Návod: Zobrazení dat z databáze serveru SQL Server v ovládacím prvku DataGrid
 V tomto podrobném návodu, načtení dat z databáze SQL serveru a zobrazit tato data v <xref:System.Windows.Controls.DataGrid> ovládacího prvku. Použijete k vytvoření tříd entit, které představují data a zprostředkovatel LINQ slouží pro napsat dotaz, který načte zadaná data z entity třídy rozhraní ADO.NET Entity Framework.  
@@ -33,7 +33,7 @@ V tomto podrobném návodu, načtení dat z databáze SQL serveru a zobrazit tat
   
      Zobrazí se dialogové okno Přidat novou položku.  
   
-3.  V podokně nainstalované šablony vyberte **Data** a v seznamu šablon vyberte **ADO.NET Entity Data režimu**l.  
+3.  V podokně nainstalované šablony vyberte **Data** a v seznamu šablon vyberte **datový Model Entity ADO.NET**.  
   
      ![Vyberte datový Model ADO.NET Entity](../../../../docs/framework/wpf/controls/media/datagrid-sql-ef-step1.png "DataGrid_SQL_EF_Step1")  
   

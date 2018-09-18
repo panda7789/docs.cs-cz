@@ -3,11 +3,11 @@ title: Přidání odkazu na službu do řešení pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 83574cf3-9803-49bc-837f-432936dc9c76
 ms.openlocfilehash: 9dcbf779d948f6d295c2a23f5a09efc5ac989cdd
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45618071"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45972397"
 ---
 # <a name="adding-a-service-reference-in-a-workflow-solution"></a>Přidání odkazu na službu do řešení pracovního postupu
 

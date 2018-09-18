@@ -3,11 +3,11 @@ title: Externí funkce (F#)
 description: 'Další informace o podpoře jazyka F # pro volání funkcí v nativním kódu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: db0d3362d867b07b333951f3380c6735ff471d5e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45609159"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45973102"
 ---
 # <a name="external-functions"></a>Externí funkce
 

@@ -12,11 +12,11 @@ ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1874d5512f04f22b9c53bdc9e92d0c96e45d21c8
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45649487"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45972792"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: zjištění nainstalovaných verzí rozhraní .NET Framework
 

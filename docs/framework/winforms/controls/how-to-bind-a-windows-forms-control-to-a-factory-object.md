@@ -12,11 +12,11 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], examples
 ms.assetid: 7d59af89-ff82-41d8-a48a-f1fbae788b0d
 ms.openlocfilehash: f085e7b7d20f958a90777ddb820924a07a5e2d8d
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45597878"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45969597"
 ---
 # <a name="how-to-bind-a-windows-forms-control-to-a-factory-object"></a>Postupy: Vázání ovládacího prvku Windows Forms k objektu factory
 Při vytváření ovládacích prvků, které pracují s daty, někdy najdete je nezbytné pro vytvoření vazby ovládacího prvku na objekt nebo metoda, která generuje jiné objekty. Takový objekt nebo metoda je volána objekt pro vytváření. Zdroj dat může být například návratová hodnota z volání metody, namísto objektu v paměti nebo typu. K tomuto typu zdroje dat lze svázat ovládací prvek jako zdroj vrátí kolekci.  

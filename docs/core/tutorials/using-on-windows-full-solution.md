@@ -1,49 +1,50 @@
 ---
-title: Vytvoření kompletního řešení .NET Core do systému Windows, pomocí Visual Studio 2017
-description: Zjistěte, jak sestavit kompletní .NET Core řešení ve Visual Studio 2017 v systému Windows.
+title: Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017
+description: Zjistěte, jak k vytvoření kompletního řešení .NET Core v sadě Visual Studio 2017 na Windows.
 author: bleroy
 ms.author: mairaw
 ms.date: 11/16/2016
-ms.openlocfilehash: 52b8781cdc29ac776123402c982353ef437ce74f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.custom: vs-dotnet
+ms.openlocfilehash: 15537ea8c68b5c873bbf26ab0519a19de0b13230
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33214390"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45969558"
 ---
-# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Vytvoření kompletního řešení .NET Core do systému Windows, pomocí Visual Studio 2017
+# <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017
 
-Visual Studio 2017 poskytuje plnohodnotné vývojové prostředí pro vývoj aplikací .NET Core. Postupy v tomto dokumentu popisují kroky potřebné k vytvoření typické .NET Core řešení, které obsahuje opakovaně použitelné knihovny, testování a používání knihoven třetích stran. 
+Visual Studio 2017 poskytuje plnohodnotné vývojové prostředí pro vývoj aplikací .NET Core. Postupy v tomto dokumentu popisují kroky potřebné k začlenění typické řešení .NET Core, který obsahuje opakovaně použitelné knihovny, testování a přes knihovny třetích stran. 
 
 ## <a name="prerequisites"></a>Požadavky
 
-Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites.md) aktualizovat vaše prostředí.
+Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites.md) k aktualizaci vašeho prostředí.
 
-## <a name="a-solution-using-only-net-core-projects"></a>Řešení pomocí jenom .NET Core projekty
+## <a name="a-solution-using-only-net-core-projects"></a>Řešení, které využívá jenom projekty .NET Core
 
 ### <a name="writing-the-library"></a>Zápis knihovny
 
-1. V sadě Visual Studio, vyberte **soubor**, **nový**, **projektu**. V **nový projekt** dialogové okno, rozbalte **Visual C#** uzlu a zvolte **.NET Standard** uzel a potom vyberte **(.NET Standard)–Knihovnatříd**. 
+1. V sadě Visual Studio, zvolte **souboru**, **nový**, **projektu**. V **nový projekt** dialogového okna, rozbalte **Visual C#** uzlu a zvolte **.NET Standard** uzel a klikněte na tlačítko **knihovna tříd (.NET Standard)**. 
 
-2. Název projektu "Library" a "Golden" řešení. Nechte **vytvořit adresář pro řešení** zaškrtnutí. Click **OK**.
+2. Název projektu "Library" a "Golden" řešení. Ponechte **vytvořit adresář pro řešení** zaškrtnuto. Klikněte na tlačítko **OK**.
 
-3. V Průzkumníku řešení otevřete kontextovou nabídku **závislosti** uzel a zvolte **spravovat balíčky NuGet**.
+3. V Průzkumníku řešení otevřete kontextovou nabídku **závislosti** uzlu a zvolte **spravovat balíčky NuGet**.
 
-4. Vyberte "nuget.org" jako **zdroj balíčku**a vyberte **Procházet** kartě. Vyhledejte **Newtonsoft.Json**. Klikněte na tlačítko **nainstalovat**a přijměte licenční smlouvu. Balíček by se měla zobrazit v části **závislosti nebo NuGet** a automaticky obnovit.
+4. Zvolte možnost "nuget.org" jako **zdroj balíčku**a zvolte **Procházet** kartu. Vyhledat **Newtonsoft.Json**. Klikněte na tlačítko **nainstalovat**a přijměte licenční smlouvu. Balíček by se měl zobrazit v části **závislosti/NuGet** a se automaticky obnoví.
 
-5. Přejmenujte `Class1.cs` do souboru `Thing.cs`. Přijměte přejmenování třídy. Přidání metody: `public int Get(int number) => Newtonsoft.Json.JsonConvert.DeserializeObject<int>($"{number}");`
+5. Přejmenovat `Class1.cs` soubor `Thing.cs`. Přijměte přejmenování třídy. Přidejte metodu: `public int Get(int number) => Newtonsoft.Json.JsonConvert.DeserializeObject<int>($"{number}");`
 
 7. Na **sestavení** nabídce zvolte **sestavit řešení**.
 
-   Řešení má sestavit bez chyby.
+   Má řešení sestavit bez chyb.
 
-### <a name="writing-the-test-project"></a>Zápis k testovacímu projektu
+### <a name="writing-the-test-project"></a>Zápis testovacího projektu
 
-1. V Průzkumníku řešení otevřete kontextovou nabídku **řešení** uzel a zvolte **přidat**, **nový projekt**. V **nový projekt** dialogové okno, v části **Visual C# nebo .NET Core**, zvolte **projektu testování částí (.NET Core)**. Název "TestLibrary" a klikněte na tlačítko OK. 
+1. V Průzkumníku řešení otevřete kontextovou nabídku **řešení** uzlu a zvolte **přidat**, **nový projekt**. V **nový projekt** dialogového okna, v části **Visual C# / .NET Core**, zvolte **projekt testu jednotek (.NET Core)**. Pojmenujte ji "TestLibrary" a klikněte na tlačítko OK. 
 
-2. V **TestLibrary** projektu, otevřete kontextovou nabídku **závislosti** uzel a zvolte **přidat odkaz na**. Klikněte na tlačítko **projekty**, zkontrolujte projektu knihovny a klikněte na tlačítko OK. Tento postup přidá odkaz na knihovnu z testovacího projektu.
+2. V **TestLibrary** projektu, otevřete kontextovou nabídku **závislosti** uzlu a zvolte **přidat odkaz**. Klikněte na tlačítko **projekty**, zkontrolujte projekt knihovny a klikněte na tlačítko OK. To přidá odkaz na knihovnu z testovacího projektu.
 
-3. Přejmenujte `UnitTest1.cs` do souboru `LibraryTests.cs` a přijměte tříd přejmenujte. Přidat `using Library;` na začátek souboru a nahradit `TestMethod1` metoda následujícím kódem:
+3. Přejmenovat `UnitTest1.cs` do souboru `LibraryTests.cs` a přijměte přejmenování třídy. Přidat `using Library;` na začátek souboru a nahraďte `TestMethod1` metodu s následujícím kódem:
     ```csharp
     [TestMethod]
     public void ThingGetsObjectValFromNumber()
@@ -52,26 +53,26 @@ Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites
     }
     ```
 
-   Teď by měla být možné sestavit řešení. 
+   Teď by měl být možné sestavit řešení. 
    
-4. Na **testování** nabídce zvolte **Windows**, **testování Explorer** mohli okno Průzkumníka testů do pracovního prostoru. Za několik sekund `ThingGetsObjectValFromNumber` test by se měla objevit v Průzkumníka testů. Zvolte **spustit všechny**.
+4. Na **testování** nabídce zvolte **Windows**, **Průzkumníka testů** zajistí okna Průzkumníka testů do pracovního prostoru. Po několika sekundách `ThingGetsObjectValFromNumber` test by se měla zobrazit v Průzkumníku testů. Zvolte **spustit všechny**.
    
-   Test by měla předávat.
+   Test by měl úspěšný.
 
-### <a name="writing-the-console-app"></a>Zápis konzolové aplikace
+### <a name="writing-the-console-app"></a>Zápis aplikace konzoly
 
-1. V Průzkumníku řešení otevřete kontextu nabídku pro řešení a přidejte nový **konzolové aplikace (.NET Core)** projektu. Název "Aplikace".
+1. V Průzkumníku řešení otevřete kontextovou nabídku řešení a přidejte nový **Konzolová aplikace (.NET Core)** projektu. Název "Aplikace".
 
-2. V **aplikace** projektu, otevřete kontextovou nabídku **závislosti** uzel a zvolte **přidat**, **odkaz**. 
+2. V **aplikace** projektu, otevřete kontextovou nabídku **závislosti** uzlu a zvolte **přidat**, **odkaz**. 
 
-3. V **správce odkazů** dialogové okno, zkontrolujte **knihovny** pod **projekty**, **řešení** uzel a pak klikněte na tlačítko **OK**
+3. V **správce odkazů** dialogové okno Kontrola **knihovny** pod **projekty**, **řešení** uzlu a pak klikněte na tlačítko **OK**
 
-6. Otevřete kontextovou nabídku **aplikace** uzel a zvolte **nastavit jako spouštěný projekt**. Tím se zajistí, že stále mačkat F5 nebo CTRL + F5 spustí konzolovou aplikaci.
+6. Otevřete místní nabídku pro **aplikace** uzlu a zvolte **nastavit jako spouštěný projekt**. Tím se zajistí, že stisknutí F5 nebo CTRL + F5 se spustí aplikace konzoly.
 
-7. Otevřete `Program.cs` soubor, přidejte `using Library;` direktivy do horní části souboru a poté přidejte `Console.WriteLine($"The answer is {new Thing().Get(42)}.");` k `Main` metoda.
+7. Otevřít `Program.cs` přidejte `using Library;` na začátek souboru a pak přidejte `Console.WriteLine($"The answer is {new Thing().Get(42)}.");` k `Main` – metoda.
 
-8. Nastavení boru přerušení po řádek, který jste právě přidali.
+8. Nastavte zarážku po řádek, který jste právě přidali.
 
 9. Stisknutím klávesy F5 spusťte aplikaci...
 
-   Aplikace má sestavit bez chyby a měli průchodu zarážkou. Musíte mít také možnost zkontrolovat, že aplikace výstup "odpověď je 42.".
+   Aplikace má sestavit bez chyb a by měl zarážce. Musíte mít také možnost zkontrolovat, že aplikace výstupu "odpověď je 42.".

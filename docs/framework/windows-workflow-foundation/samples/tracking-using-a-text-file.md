@@ -3,11 +3,11 @@ title: Sledování pomocí textového souboru
 ms.date: 03/30/2017
 ms.assetid: 56a82682-73c2-4b91-a206-4d8bb12c561b
 ms.openlocfilehash: 19b4d544bc1d1c5bc9ebfa51b4ba28eb82c525d0
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45674595"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45969389"
 ---
 # <a name="tracking-using-a-text-file"></a>Sledování pomocí textového souboru
 Tato ukázka předvádí, jak rozšířit tak, že vytvoříte vlastní sledování účastník sledování ve Windows Workflow Foundation (WF). Sledování účastníci se tříd rozhraní .NET Framework, které přijímají sledování záznamů z modulu runtime, jako jsou emitovány. Můžete vytvořit sledování účastník přenést událostí sledování k libovolným cíl je povinné pro váš scénář. Například je účastník sledování ETW (událost trasování pro Windows) poskytuje jako součást [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)]. Účastník sledování v této ukázce zapíše záznamy ve formátu XML do textového souboru.  

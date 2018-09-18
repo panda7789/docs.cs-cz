@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Duplex Service Contract
 ms.assetid: bc5de6b6-1a63-42a3-919a-67d21bae24e0
 ms.openlocfilehash: 54b941541ae0da4900608e61f08f4ed99c9ea472
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45686294"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45969977"
 ---
 # <a name="duplex"></a>Duplex
 Duplexní ukázka ukazuje, jak definovat a implementovat duplexního kontraktu. Duplexní komunikaci nastane, pokud klient vytvoří relaci se službou a poskytuje službu na kanál, na kterém služba odesílat zprávy o zpět do klienta. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Duplexní kontrakt je definován jako dvojici rozhraní – primární rozhraní z klienta do služby a rozhraní zpětného volání ze služby ke klientovi. V této ukázce `ICalculatorDuplex` rozhraní umožňuje klientovi k provádění matematických operací výpočtu výsledku přes relaci. Služba vrátí výsledky v `ICalculatorDuplexCallback` rozhraní. Duplexní kontrakt vyžaduje relaci, protože kontextu musí být stanovena ke korelaci sadu zprávy odesílané mezi klientem a službou.  

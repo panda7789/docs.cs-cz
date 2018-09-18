@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Net Profile Named Pipe
 ms.assetid: e78e845f-c325-46e2-927d-81616f97f7d5
 ms.openlocfilehash: d69d647b4fe4c38a0b2b355ae72cedfee6894f4b
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45647681"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45973024"
 ---
 # <a name="netnamedpipebinding"></a>NetNamedPipeBinding
 Tento příklad ukazuje, `netNamedPipeBinding` vazbu, která poskytuje komunikaci mezi procesy ve stejném počítači. Pojmenované kanály napříč počítači nefungují. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) Kalkulačka služby.  

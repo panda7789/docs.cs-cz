@@ -11,11 +11,11 @@ ms.assetid: ab22ce03-78f9-4dca-8824-c7ed3bdccc27
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9ea4a61be3a76c30c564cbf98ba3318fc6c3e7d4
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45591196"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45972290"
 ---
 # <a name="using-standard-exception-types"></a>Použití standardních typů výjimek
 Tato část popisuje standardních výjimek poskytované rozhraní Framework a podrobnosti o jejich využití. V seznamu nejsou v žádném smyslu vyčerpávající. Najdete na referenční dokumentaci rozhraní .NET Framework pro použití jiných typů výjimek Framework.  

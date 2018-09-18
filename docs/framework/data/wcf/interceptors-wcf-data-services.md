@@ -9,11 +9,11 @@ helpviewer_keywords:
 - query interceptors [WCF Data Services]
 ms.assetid: e33ae8dc-8069-41d0-99a0-75ff28db7050
 ms.openlocfilehash: c2086d451af72157785796052af123cd210ee036
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
-ms.translationtype: HT
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/17/2018
-ms.locfileid: "45694906"
+ms.locfileid: "45969168"
 ---
 # <a name="interceptors-wcf-data-services"></a>Sběrače (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] umožňuje aplikaci tak, že můžete přidat vlastní logiku na operaci zachycení zpráv požadavků. Můžete použít tuto vlastní logiku pro ověření dat v příchozí zprávy. Také vám pomůže ho dál omezit obor dotazu požadavku, například vložit vlastní zásady autorizace na základě žádosti.  
