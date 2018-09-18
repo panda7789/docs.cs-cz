@@ -10,11 +10,11 @@ helpviewer_keywords:
 - layout system [WPF]
 ms.assetid: 3eecdced-3623-403a-a077-7595453a9221
 ms.openlocfilehash: 869780f2b6a625923ce869bcaafbbd2319f6cb23
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45674673"
+ms.lasthandoff: 09/17/2018
+ms.locfileid: "45964904"
 ---
 # <a name="layout"></a>Rozložení
 Toto téma popisuje [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] systém rozložení. Vysvětlení, jak a kdy probíhá výpočet rozložení je nezbytné pro vytváření uživatelských rozhraní v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
