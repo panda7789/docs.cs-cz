@@ -14,11 +14,11 @@ helpviewer_keywords:
 - binary serialization, examples
 ms.assetid: 22f1b818-7e0d-428a-8680-f17d6ebdd185
 ms.openlocfilehash: 4b83e841db1afc898c5c3c99ed4186fd264ed2ef
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45676542"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45994517"
 ---
 # <a name="how-to-chunk-serialized-data"></a>Postupy: bloku dat serializovaná data
 

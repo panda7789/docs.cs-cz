@@ -5,11 +5,11 @@ author: natemcmaster
 ms.author: mairaw
 ms.date: 03/13/2017
 ms.openlocfilehash: 0079164470f87df665be6f9de62bc98d3fb51696
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45744018"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46009653"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mapování mezi project.json a csproj vlastnosti
 

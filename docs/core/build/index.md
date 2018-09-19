@@ -5,11 +5,11 @@ author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
 ms.openlocfilehash: 2623c5d21121b71960d174301c35bdd0d7f8558a
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45618516"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46002083"
 ---
 # <a name="build-net-core-from-source"></a>Sestavení .NET Core ze zdroje
 

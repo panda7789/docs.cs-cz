@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: b555544e-7abb-4814-859b-ab9cdd7d8716
 ms.openlocfilehash: 31edbc8f4cbb09f8720b373780f1b0646a985b20
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45597898"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46001849"
 ---
 # <a name="systemtransactions-integration-with-sql-server"></a>Integrace System.Transactions s SQL serverem
 [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] Zavedená verze 2.0, který je přístupný prostřednictvím rozhraní transakce <xref:System.Transactions> oboru názvů. Toto rozhraní poskytuje transakce způsobem, který je plně integrovaná v [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], včetně [!INCLUDE[vstecado](../../../../includes/vstecado-md.md)].  

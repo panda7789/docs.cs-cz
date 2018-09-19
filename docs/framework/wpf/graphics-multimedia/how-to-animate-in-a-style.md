@@ -6,11 +6,11 @@ helpviewer_keywords:
 - styles [WPF], animating properties within
 ms.assetid: 6a791f3d-6b1f-4972-a2f9-35880bcfd954
 ms.openlocfilehash: a455bbfb9defbcf83f7e490f60031917a3b41779
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45742346"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46005645"
 ---
 # <a name="how-to-animate-in-a-style"></a>Jak animace ve stylu
 

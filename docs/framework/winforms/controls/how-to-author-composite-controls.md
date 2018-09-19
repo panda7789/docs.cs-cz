@@ -7,12 +7,12 @@ helpviewer_keywords:
 - user controls [Windows Forms], inheriting from
 - composite controls [Windows Forms], creating
 ms.assetid: 79c9cf05-5ab6-4a18-886d-88a64748b098
-ms.openlocfilehash: 2c7d2c94c376b671d6e9e4e4b71bc8a9b0fbc343
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 7abdeae4d19ceb6425f85e3cdd28f565a03d7ea4
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43798755"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46007429"
 ---
 # <a name="how-to-author-composite-controls"></a>Postupy: Vytváření složených ovládacích prvků
 Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete vytvářet je v rámci projektu aplikace klasické pracovní plochy Windows a používat pouze u formulářů v projektu. Nebo můžete vytvářet v projektu knihovny ovládací prvků Windows, zkompilujte projekt do sestavení a pomocí ovládacích prvků v jiných projektech. Dokonce je možné zdědit z nich a můžete si je přizpůsobit rychle pro zvláštní účely vizuální dědění.  
@@ -26,11 +26,11 @@ Složené ovládací prvky mohou být použity v mnoha způsoby. Můžete vytvá
   
 1.  Otevřete novou **aplikace Windows** projekt s názvem `DemoControlHost`.  
   
-2.  Na **projektu**nabídky, klikněte na tlačítko **přidat uživatelský ovládací prvek**.  
+2.  Na **projektu** nabídky, klikněte na tlačítko **přidat uživatelský ovládací prvek**.  
   
 3.  V **přidat novou položku** dialogové okno, poskytují třídy soubor (.vb nebo .cs) název, který chcete mít složeného ovládacího prvku.  
   
-4.  Klikněte na tlačítko **přidat** tlačítko pro vytvoření souboru třídy složeného ovládacího prvku.  
+4.  Vyberte **přidat** tlačítko pro vytvoření souboru třídy složeného ovládacího prvku.  
   
 5.  Přidání ovládacích prvků **nástrojů** na povrchu složeného ovládacího prvku.  
   

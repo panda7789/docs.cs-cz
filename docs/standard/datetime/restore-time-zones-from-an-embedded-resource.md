@@ -12,11 +12,11 @@ ms.assetid: 6b7b4de9-da07-47e3-8f4c-823f81798ee7
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 99d38b336b5e655dd1c96682eec90c5fbe8469d6
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45749535"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46006380"
 ---
 # <a name="how-to-restore-time-zones-from-an-embedded-resource"></a>Postupy: obnovení časových pásem ze vloženého prostředku
 

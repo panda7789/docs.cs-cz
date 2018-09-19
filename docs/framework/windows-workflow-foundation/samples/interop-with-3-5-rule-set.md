@@ -3,11 +3,11 @@ title: Zprostředkovatel komunikace s objekty sadou pravidel 3.5
 ms.date: 03/30/2017
 ms.assetid: 969f3295-d874-428c-a9c6-623e3d578e51
 ms.openlocfilehash: 5ea5454ef80bfd83611ed20392782d99cd8c0c25
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45743992"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46287621"
 ---
 # <a name="interop-with-35-rule-set"></a>Zprostředkovatel komunikace s objekty sadou pravidel 3.5
 Tato ukázka demonstruje použití <xref:System.Activities.Statements.Interop> aktivity integrovat vlastní aktivity v [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)] pomocí <!--zz <xref:System.Workflow.Activities.Policy> --> `System.Workflow.Activities.Policy` a pravidla. Předá data pro vlastní aktivity vazbou [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] proměnné závislosti vlastností vystavovaných třídami vlastní aktivity.  

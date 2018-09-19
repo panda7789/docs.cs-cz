@@ -13,11 +13,11 @@ ms.assetid: 69308f82-aa22-4ac5-833d-e748533b58e8
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b74e60daced88050413855070c880cd6c1cebfb1
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45595502"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46009722"
 ---
 # <a name="walkthrough-creating-a-dataflow-pipeline"></a>Postupy: Vytvoření kanálu toku dat
 Přestože lze použít <xref:System.Threading.Tasks.Dataflow.DataflowBlock.Receive%2A?displayProperty=nameWithType>, <xref:System.Threading.Tasks.Dataflow.DataflowBlock.ReceiveAsync%2A?displayProperty=nameWithType>, a <xref:System.Threading.Tasks.Dataflow.DataflowBlock.TryReceive%2A?displayProperty=nameWithType> metody pro příjem zpráv ze zdroje bloky, můžete také připojit blokům zpráv do formuláře *kanálu toku dat*. Kanálu toku dat je řada komponent, nebo *bloků toku dat*, z nichž každý provádí konkrétní úlohu, která přispívá k větší cíl. Každý blok toku dat v kanálu toku dat provádí práci, když přijme zprávu z jiného bloku toku dat. Obdobně to je montážní linky u automobilů výroby. Každý vozidla prochází montážní linky, jedné stanice sestaví rámce, dalším objektem nainstaluje modul a tak dále. Protože montážní linky umožňuje více vozidel pro sestavení ve stejnou dobu, poskytuje lepší propustnost než sestavení kompletní vozidel jeden po druhém.

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: 8f4e60eef443f772de3574d988ce48470f8c2017
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: acb9af688025fc6cbcd9e41fbc5a0c85f6ebb29e
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856176"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46009771"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (generování manifestu a nástroj pro úpravy)
 
@@ -40,8 +40,7 @@ Následující tabulka ukazuje příkazy podporované *Mage.exe*. Další inform
 |**-s,-Sign** `[signOptions]`|Použije k podpisu souboru pár klíčů nebo certifikát X509. Podpisy jsou do souboru vloženy jako prvky jazyka XML.<br /><br /> Musíte být připojeni k Internetu při podpisu manifestu určujícího **- TimestampUri** hodnotu.|
 |**-h,-? –, pomáhají** *[podrobné]*|Popíše všechny dostupné příkazy a jejich možnosti. Zadejte `verbose` podrobnou nápovědu.|
 
-<a name="NewUpdate"></a>
-## <a name="new-and-update-command-options"></a>Možnosti příkazů New a Update
+## <a name="new-and-update-command-options"></a>Nové a aktualizovat možnosti příkazu
 
 V následující tabulce jsou uvedeny možnosti podporované `-New` a `-Update` příkazy:
 
@@ -70,9 +69,9 @@ V následující tabulce jsou uvedeny možnosti podporované `-New` a `-Update` 
 |**-v, – verze** `versionNumber`|1.0.0.0|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Verze nasazení. Argument musí být platný řetězec verze ve formátu "*N.N.N.N*", kde"*N*" je 32bitové celé číslo bez znaménka.|
 |**– wpf, - WPFBrowserApp**  `isWPFApp`|false|Manifesty aplikací.<br /><br /> Manifesty nasazení.|Tento příznak použijte pouze tehdy, je-li aplikace aplikací Windows Presentation Foundation (WPF), která bude hostována v aplikaci Internet Explorer a není samostatně spustitelná. Platnými hodnotami jsou „true“ nebo „t“ a „false“ nebo „f“.<br /><br /> Pro manifesty aplikací vloží `hostInBrowser` atribut `entryPoint` elementu v manifestu aplikace.<br /><br /> Manifesty nasazení nastaví `install` atribut na `deployment` prvku na hodnotu false a uloží manifest s příponou .xbap. Zadání tohoto argumentu spolu s **– instalace** dojde k chybě, protože aplikace hostované prohlížečem nemůže být instalovanou offline aplikací.|
 
-<a name="Sign"></a>
 ## <a name="sign-command-options"></a>Možnosti příkazu Sign
- V následující tabulce jsou uvedeny možnosti podporované `-Sign` příkaz, který platí pro všechny typy souborů.
+
+V následující tabulce jsou uvedeny možnosti podporované `-Sign` příkaz, který platí pro všechny typy souborů.
 
 |Možnosti|Popis|
 |-------------|-----------------|
@@ -105,7 +104,11 @@ mage -Update c:\HelloWorldDeployment\HelloWorld.deploy -CertFile cert.pfx
 
  Manifesty aplikací také podporují vlastní oddíly trust. To pomáhá aplikacím podřídit se zásadě bezpečnosti požadovat nejmenší možná oprávnění, protože manifest lze nakonfigurovat tak, aby požadoval pouze specifická oprávnění potřebná ke spuštění aplikace. *Mage.exe* přímo nepodporuje přidávání vlastních oddílů trust. Můžete přidat pomocí textového editoru, analyzátoru jazyka XML nebo grafického nástroje *MageUI.exe*. Další informace o tom, jak používat *MageUI.exe* přidání vlastních oddílů trust naleznete v tématu [MageUI.exe (Manifest Generation and Editing Tool, grafický klient)](../../../docs/framework/tools/mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).
 
- Nové manifesty vytvořené ve verzi 4 nástroje *Mage.exe*, která je součástí sadou Visual Studio 2010, cílení [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Chcete-li cíleny na starší verze rozhraní .NET Framework, musíte použít starší verzi *Mage.exe*. Při přidávání nebo odstraňování sestavení z existujícího manifestu ani při opětovném podepisování existujícího manifestu, *Mage.exe* neaktualizuje cíl manifestu [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Následující tabulky ukazují tyto funkce a omezení.
+Visual Studio 2017 obsahuje verzi 4.6.1 *Mage.exe*. Manifesty vytvořené v této verzi *Mage.exe* cílit na .NET Framework 4. Pokud chcete cíleny na starší verze rozhraní .NET Framework, použijte dřívější verzi *Mage.exe*.
+
+Při přidání nebo odebrání sestavení z existujícího manifestu nebo znovu podepsat manifest existující *Mage.exe* neaktualizuje manifest pro cílové rozhraní .NET Framework 4.
+
+Následující tabulky ukazují tyto funkce a omezení:
 
 |Verze manifestu|Operace|Mage v2.0|Mage v4.0|
 |----------------------|---------------|---------------|---------------|
@@ -131,7 +134,9 @@ mage -Update c:\HelloWorldDeployment\HelloWorld.deploy -CertFile cert.pfx
 ||Přidat sestavení|Nepodporováno|OK|
 ||Odstranit sestavení|Nepodporováno|OK|
 
- Mage.exe vytváří nové manifesty, které se zaměřují [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Aplikace ClickOnce, které se zaměřují [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] mohou být spuštěny v rozhraní [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] a plnou verzi [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)]. Pokud vaše aplikace cílí na plnou verzi [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a nelze je spustit na [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)], odeberte klienta `<framework>` element pomocí textového editoru a znovu podepište manifest. Tady je ukázka `<framework>` element, který se zaměřuje [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)].
+ Mage.exe vytváří nové manifesty, které se zaměřují [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Aplikace ClickOnce, které se zaměřují [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] mohou být spuštěny v rozhraní [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] a plnou verzi rozhraní .NET Framework 4. Pokud vaše aplikace cílí na plnou verzi rozhraní .NET Framework 4 a nelze je spustit na [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)], odeberte klienta `<framework>` element pomocí textového editoru a znovu podepište manifest.
+
+Tady je ukázka `<framework>` element, který se zaměřuje [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]:
 
 ```xml
 <framework targetVersion="4.0" profile="client" supportedRuntime="4.0.20506" />
@@ -195,7 +200,7 @@ Následující příklad podepíše existující manifest nasazení pomocí digi
 mage -Sign deploy.application -CertFile cert.pfx -Password <passwd>
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 - [ClickOnce – zabezpečení a nasazení](/visualstudio/deployment/clickonce-security-and-deployment)
 - [Návod: Ruční nasazení aplikace ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)

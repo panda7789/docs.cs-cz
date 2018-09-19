@@ -12,12 +12,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: 66412c620b8107312e5d58fef5cf1b5d9ee90107
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: e1625d2cdf0be4106a43b9d40aef97ea2b5c4ec4
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615511"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45999460"
 ---
 # <a name="introducing-xml-serialization"></a>Představení serializace XML
 
@@ -61,7 +61,7 @@ Při vytvoření aplikace, která používá **XmlSerializer**, je třeba si uv�
 
 - Serializovaná citlivá data může být ohrožena.
 
-  Po **XmlSerializer**má serializovat data, je možné ho uložit jako soubor XML nebo jiného úložiště dat. Pokud vaše úložiště dat je k dispozici pro procesy nebo je zobrazen v intranetu nebo Internetu, můžete data odcizení a záměrně použity. Například pokud vytvoříte aplikaci, která serializuje objednávky obsahující čísla kreditních karet, je velmi důvěrná data. K tomu nedocházelo, vždy chránit úložiště dat a proveďte kroky, které chcete zachovat privátní.
+  Po **XmlSerializer** má serializovat data, je možné ho uložit jako soubor XML nebo jiného úložiště dat. Pokud vaše úložiště dat je k dispozici pro procesy nebo je zobrazen v intranetu nebo Internetu, můžete data odcizení a záměrně použity. Například pokud vytvoříte aplikaci, která serializuje objednávky obsahující čísla kreditních karet, je velmi důvěrná data. K tomu nedocházelo, vždy chránit úložiště dat a proveďte kroky, které chcete zachovat privátní.
 
 ## <a name="serialization-of-a-simple-class"></a>Serializace jednoduchou třídu
 

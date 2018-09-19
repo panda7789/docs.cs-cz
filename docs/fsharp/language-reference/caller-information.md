@@ -3,11 +3,11 @@ title: 'Informace o volajícím (F #)'
 description: Popisuje způsob použití atributů Argument informace o volajícím získat informace o volajícím z metody.
 ms.date: 04/25/2017
 ms.openlocfilehash: 0f2f4b16804d9156d234cc29d1f72ebe80a5b556
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45646204"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45991451"
 ---
 # <a name="caller-information"></a>Informace o volajícím
 

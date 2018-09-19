@@ -1,89 +1,98 @@
 ---
 title: 'Postupy: Definování kontraktu služby WCF'
-ms.date: 03/30/2017
+ms.date: 09/14/2018
 helpviewer_keywords:
 - service contracts [WCF], defining
+dev_langs:
+- CSharp
+- VB
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
-ms.openlocfilehash: 5e8abbf8c5f9b0696d90ccbee94c5d8f4dd8b1ec
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 4f85a51c47eb045d1d2f0111cb217199c9acf0d7
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33809222"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46009005"
 ---
 # <a name="how-to-define-a-windows-communication-foundation-service-contract"></a>Postupy: Definování kontraktu služby WCF
-Toto je první šesti úloh, které jsou potřebné pro vytvoření základní aplikace Windows Communication Foundation (WCF). Přehled všech šest úloh najdete v tématu [kurzu Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.  
-  
- Při vytváření služby WCF, první úlohou je definování kontraktu služby. Kontrakt služby specifikuje, jaké operace služby podporuje. Operace můžete představit jako metodu webové služby. Kontrakty se vytvoří definováním rozhraní C++, C# nebo Visual Basic (VB). Každá metoda v rozhraní odpovídá konkrétní operaci služby. Každé rozhraní musí mít <xref:System.ServiceModel.ServiceContractAttribute> použije na ni a každou operace musí mít <xref:System.ServiceModel.OperationContractAttribute> byt aplikovaný atribut. Pokud metoda v rozhraní, které má <xref:System.ServiceModel.ServiceContractAttribute> atribut nemá <xref:System.ServiceModel.OperationContractAttribute> atribut, taková metoda se nevystaví službou.  
-  
- Kód použitý pro tuto úlohu je najdete v příkladu za postupem.  
-  
-### <a name="to-define-a-service-contract"></a>K definování kontraktu služby  
-  
-1.  Otevřete [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] jako správce program pravým tlačítkem myši **spustit** nabídky a výběrem **spustit jako správce**.  
-  
-2.  Kliknutím na vytvořit projekt knihovny služby WCF **soubor** nabídky a výběrem **nový**, **projektu**. V **nový projekt** dialogu na levé straně dialogového okna rozbalte **Visual C#** pro projekt C# nebo **jiné jazyky** a potom **jazykaVisualBasic** pro projektu jazyka Visual Basic. V části jazyk vybraný vyberte **WCF** a zobrazí se seznam šablon projektu na části center dialogového okna. Vyberte **knihovny služby WCF**a typ `GettingStartedLib` v **název** textové pole a `GettingStarted` v **název řešení** textového pole v dolní části dialogového okna.  
-  
-3.  Visual Studio vytvoří projekt, který obsahuje soubory 3: IService1.cs (nebo IService1.vb) Service1.cs (nebo Service1.vb) a souboru App.config.  Soubor IService1 obsahuje výchozí smlouvy o poskytování služeb.  Soubor Service1 obsahuje výchozí implementace kontraktu služby. Soubor App.config obsahuje konfiguraci potřebné k načtení výchozí služba s Visual Studio hostitel služby WCF. Další informace o nástroji pro hostitele služeb WCF najdete v tématu [hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)  
-  
-4.  Otevřete soubor IService1.cs nebo IService1.vb a odstraňte kód v deklaraci oboru názvů ponechat deklaraci oboru názvů. V oboru názvů deklarace definujte nové rozhraní nazývá `ICalculator` jak je znázorněno v následujícím kódu.  
-  
-    ```  
-    // IService.cs  
-    using System;  
-    using System.Collections.Generic;  
-    using System.Linq;  
-    using System.Runtime.Serialization;  
-    using System.ServiceModel;  
-    using System.Text;  
-  
-    namespace GettingStartedLib  
-    {  
-            [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  
-            public interface ICalculator  
-            {  
-                [OperationContract]  
-                double Add(double n1, double n2);  
-                [OperationContract]  
-                double Subtract(double n1, double n2);  
-                [OperationContract]  
-                double Multiply(double n1, double n2);  
-                [OperationContract]  
-                double Divide(double n1, double n2);  
-            }  
-    }  
-    ```  
-  
-    ```  
-    ‘IService.vb  
-    Imports System  
-    Imports System.ServiceModel  
-  
-    Namespace GettingStartedLib  
-  
-        <ServiceContract(Namespace:="http://Microsoft.ServiceModel.Samples")> _  
-        Public Interface ICalculator  
-  
-            <OperationContract()> _  
-            Function Add(ByVal n1 As Double, ByVal n2 As Double) As Double  
-            <OperationContract()> _  
-            Function Subtract(ByVal n1 As Double, ByVal n2 As Double) As Double  
-            <OperationContract()> _  
-            Function Multiply(ByVal n1 As Double, ByVal n2 As Double) As Double  
-            <OperationContract()> _  
-            Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double  
-        End Interface  
-    End Namespace  
-    ```  
-  
-     Tento kontrakt definuje online kalkulačky. Upozornění `ICalculator` rozhraní je označené jako <xref:System.ServiceModel.ServiceContractAttribute> atribut. Tento atribut definuje obor názvů, který se používá k rozlišení názvu kontraktu. Každé operace kalkulačky je označené jako <xref:System.ServiceModel.OperationContractAttribute> atribut.  
-  
-    > [!NOTE]
-    >  Při používání atributů k anotaci rozhraním, člen nebo třídy, můžete vložit část "Atribut" od názvu atributu. Proto <xref:System.ServiceModel.ServiceContractAttribute> stane `[ServiceContract]` v jazyce C# nebo `<ServiceContract>` v jazyce Visual Basic.  
-  
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.ServiceContractAttribute>  
- <xref:System.ServiceModel.OperationContractAttribute>  
- [Postupy: Implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)  
- [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md)  
- [Vlastní hostování](../../../docs/framework/wcf/samples/self-host.md)
+
+Toto je první z šesti úkolů, muset vytvořit základní aplikaci Windows Communication Foundation (WCF). Přehled všech šesti úkoly, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.
+
+ Při vytváření služby WCF, je první úkol k definování kontraktu služby. Kontrakt služby specifikuje, jaké operace služba podporuje. Operace můžete představit jako metodu webové služby. Kontrakty se vytvoří definováním rozhraní C++, C# nebo Visual Basic (VB). Každá metoda v rozhraní odpovídá konkrétní operaci služby. Každé rozhraní musí mít <xref:System.ServiceModel.ServiceContractAttribute> použit a každá operace musí mít <xref:System.ServiceModel.OperationContractAttribute> byt aplikovaný atribut. Pokud metoda v rozhraní, který má <xref:System.ServiceModel.ServiceContractAttribute> atribut nemá <xref:System.ServiceModel.OperationContractAttribute> atribut, taková metoda se nevystaví službou.
+
+ Kód použitý pro tuto úlohu je najdete v příkladu za postupem.
+
+## <a name="define-a-service-contract"></a>Definování kontraktu služby
+
+1. Otevřít Visual Studio jako správce kliknutím pravým tlačítkem myši v programu **Start** nabídky a vyberete **Další** > **spustit jako správce**.
+
+2. Vytvořte projekt knihovny služby WCF.
+
+   1. Z **souboru** nabídce vyberte možnost **nový** > **projektu**.
+
+   2. V **nový projekt** na levé straně dialogového okna rozbalte **Visual C#** nebo **jazyka Visual Basic**a pak vyberte **WCF** kategorie. V části System center dialogového okna se zobrazí seznam šablon projektů. Vyberte **knihovny služby WCF**.
+
+   3. Zadejte `GettingStartedLib` v **název** textového pole a `GettingStarted` v **název řešení** textového pole v dolní části dialogového okna.
+
+   > [!NOTE]
+   > Pokud se nezobrazí **WCF** kategorii šablony projektu, budete muset nainstalovat **Windows Communication Foundation** komponentu sady Visual Studio. V **nový projekt** dialogovém okně klikněte na odkaz, který uvádí, že **otevřít instalační program Visual Studio**. Vyberte **jednotlivé komponenty** kartu a potom najděte a vyberte **Windows Communication Foundation** pod **vývojových aktivit** kategorie. Zvolte **změnit** zahájíte instalaci komponenty.
+
+   Visual Studio vytvoří projekt, který obsahuje 3 soubory: IService1.cs (nebo IService1.vb) Service1.cs (nebo Service1.vb) a souboru App.config. Soubor IService1 obsahuje výchozí smlouvy o poskytování služeb. Soubor Service1 obsahuje výchozí implementace kontraktu služby. Soubor App.config obsahuje konfigurace, které jsou potřebné k načtení výchozí službu s Visual Studio hostitel služby WCF. Další informace o nástroji pro hostitele služby WCF najdete v tématu [hostitel služby WCF (WcfSvcHost.exe)](../../../docs/framework/wcf/wcf-service-host-wcfsvchost-exe.md)
+
+3. Otevřete soubor IService1.cs nebo IService1.vb a odstranění kódu v rámci deklarace oboru názvů, byste museli opustit deklarace oboru názvů. Uvnitř oboru názvů deklarace definujte nové rozhraní s názvem `ICalculator` jak je znázorněno v následujícím kódu.
+
+    ```csharp
+    using System;
+    using System.ServiceModel;
+
+    namespace GettingStartedLib
+    {
+            [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]
+            public interface ICalculator
+            {
+                [OperationContract]
+                double Add(double n1, double n2);
+                [OperationContract]
+                double Subtract(double n1, double n2);
+                [OperationContract]
+                double Multiply(double n1, double n2);
+                [OperationContract]
+                double Divide(double n1, double n2);
+            }
+    }
+    ```
+
+    ```vb
+    Imports System.ServiceModel
+
+    Namespace GettingStartedLib
+
+        <ServiceContract(Namespace:="http://Microsoft.ServiceModel.Samples")> _
+        Public Interface ICalculator
+
+            <OperationContract()> _
+            Function Add(ByVal n1 As Double, ByVal n2 As Double) As Double
+            <OperationContract()> _
+            Function Subtract(ByVal n1 As Double, ByVal n2 As Double) As Double
+            <OperationContract()> _
+            Function Multiply(ByVal n1 As Double, ByVal n2 As Double) As Double
+            <OperationContract()> _
+            Function Divide(ByVal n1 As Double, ByVal n2 As Double) As Double
+        End Interface
+    End Namespace
+    ```
+
+     Tento kontrakt definuje online kalkulačku. Všimněte si, že `ICalculator` rozhraní je označeno příznakem s <xref:System.ServiceModel.ServiceContractAttribute> atribut. Tento atribut definuje obor názvů, který se používá k rozlišení názvu kontraktu. Každá operace kalkulačky je označená pomocí <xref:System.ServiceModel.OperationContractAttribute> atribut.
+
+## <a name="next-steps"></a>Další kroky
+
+> [!div class="nextstepaction"]
+> [Postupy: implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)
+
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.ServiceModel.ServiceContractAttribute>
+- <xref:System.ServiceModel.OperationContractAttribute>
+- [Postupy: Implementace kontraktu služby](../../../docs/framework/wcf/how-to-implement-a-wcf-contract.md)
+- [Začínáme](../../../docs/framework/wcf/samples/getting-started-sample.md)
+- [Vlastní hostování](../../../docs/framework/wcf/samples/self-host.md)

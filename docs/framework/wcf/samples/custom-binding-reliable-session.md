@@ -3,11 +3,11 @@ title: Spolehlivá relace s vlastními vazbami
 ms.date: 03/30/2017
 ms.assetid: c5fcd409-246f-4f3e-b3f1-629506ca4c04
 ms.openlocfilehash: 55ffdd741bf26c1a906c7b09dfa05839b25f1645
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45592046"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46002642"
 ---
 # <a name="custom-binding-reliable-session"></a>Spolehlivá relace s vlastními vazbami
 Seřazený seznam elementů diskrétní vazby je definován vlastní vazby. Tento příklad ukazuje, jak nakonfigurovat vlastní vazby s různými přenos a kódování prvků, zejména povolení spolehlivé relace zpráv.  

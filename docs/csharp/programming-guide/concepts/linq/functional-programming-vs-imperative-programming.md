@@ -3,11 +3,11 @@ title: Funkční programování vs. Imperativní programování (C#)
 ms.date: 07/20/2015
 ms.assetid: 5e35c5a0-c949-422a-873b-fca6b2254f57
 ms.openlocfilehash: 01be2758147b84af3410709aab62a0ca89b0c9cf
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45588615"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45991529"
 ---
 # <a name="functional-programming-vs-imperative-programming-c"></a>Funkční programování vs. Imperativní programování (C#)
 Toto téma porovnává a výrazně liší od tradičnější imperativního (procesního) programování s funkčního programování.  

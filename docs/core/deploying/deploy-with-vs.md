@@ -7,12 +7,13 @@ ms.date: 09/03/2018
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 62cfef08a8319981891c713c08c34eba5ab54b6f
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.custom: vs-dotnet
+ms.openlocfilehash: d73147c0633e23c5aaf5170ed6c79eacf1c8d928
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45595305"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46004400"
 ---
 # <a name="deploying-net-core-apps-with-visual-studio"></a>Nasazení .NET Core aplikací pomocí sady Visual Studio
 

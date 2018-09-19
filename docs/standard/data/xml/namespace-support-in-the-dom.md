@@ -6,11 +6,11 @@ ms.assetid: f0548ead-0fed-41ee-b33e-117ba900d3bc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: bcc796f8d895e3daa81a9607bd7c4941b747cf24
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45596751"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45990957"
 ---
 # <a name="namespace-support-in-the-dom"></a>Podpora Namespace v modelu DOM
 Je zcela oboru názvů s ohledem na XML Document Object Model (DOM). Jsou podporovány pouze s ohledem na obor názvů XML dokumentů. World Wide Web Consortium (W3C) určuje, že může být mimo obor názvů s deklaracemi modelu DOM aplikace, které implementují úrovně 1 a modelu DOM úrovně 2 funkcí jsou s ohledem na obor názvů. Všechny funkce v modelu DOM jazyka XML jsou však s ohledem na obor názvů bez ohledu na to, pokud je metoda od úrovně 1 nebo úrovně 2 modelu DOM doporučení.  

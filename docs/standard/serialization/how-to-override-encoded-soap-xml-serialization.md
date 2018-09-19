@@ -6,11 +6,11 @@ helpviewer_keywords:
 - SOAP, overriding encoded XML serialization
 ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
 ms.openlocfilehash: 721a27b4bba239f0d22a24e0e159ef36b742d1b7
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45646156"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46003773"
 ---
 # <a name="how-to-override-encoded-soap-xml-serialization"></a>Postupy: přepsání serializace XML kódovaný protokol SOAP
 [Příklad kódu](#tskhowtooverrideencodedsoapxmlserializationanchor1)  

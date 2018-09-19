@@ -3,11 +3,11 @@ title: Databáze trvalosti SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 4e594eec-2a31-4d49-ad31-aca2ecbb1f69
 ms.openlocfilehash: 3929148cf6a236db7d226b45da750e8d4ae1d0cc
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45570009"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46287318"
 ---
 # <a name="sql-server-persistence-database"></a>Databáze trvalosti SQL serveru
 Tato část obsahuje podrobné informace o zobrazení veřejného databáze nepodporuje Store Instance pracovního postupu SQL a ukazuje, jak zrušit serializaci vlastnosti primitivní instance data a zadávat dotazy na netrvalé instance.  

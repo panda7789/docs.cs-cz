@@ -10,11 +10,11 @@ ms.assetid: be98c0ab-7ef8-409f-8a0d-cb6e5b75ff20
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7831e383a3048523909b79ac5a4706f3c1c48371
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45748911"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46004865"
 ---
 # <a name="optimization-for-shared-web-hosting"></a>Optimalizace pro sdílené hostování webů
 Pokud jste správce pro server, které jsou sdíleny několika malými weby hostování, můžete optimalizovat výkon a zvýšit kapacitu webu přidáním následujícího kódu `gcTrimCommitOnLowMemory` nastavení `runtime` uzlu v souboru Aspnet.config v rozhraní .NET adresář:  

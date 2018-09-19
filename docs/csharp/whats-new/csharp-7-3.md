@@ -2,12 +2,12 @@
 title: Co je nového v jazyce C# 7.3
 description: Přehled nových funkcí v jazyce C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: 921374773d57d3fa6f8dd614f2691d345cf6eab7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 383346569be2c0daf333b0cb3b28e2a8fbb24f66
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511608"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46007266"
 ---
 # <a name="whats-new-in-c-73"></a>Co je nového v jazyce C# 7.3
 
@@ -82,7 +82,7 @@ class C
 }
 ```
 
-Další informace najdete v článku [ `fixed` příkaz](../language-reference/keywords/fixed-statement.md).
+Další informace najdete v článku na [ `fixed` příkaz](../language-reference/keywords/fixed-statement.md).
 
 ### <a name="ref-local-variables-may-be-reassigned"></a>`ref` může být přeřazen lokální proměnné
 

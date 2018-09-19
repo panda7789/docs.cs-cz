@@ -13,11 +13,11 @@ ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 8956726915ebe1c0b1c7654e62e2e28620274b4a
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45638672"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45999169"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Různé konstrukce v regulárních výrazech
 Regulární výrazy v rozhraní .NET obsahovat tři různé jazykové konstrukce. Jeden vám umožňuje povolit nebo zakázat určité možnosti porovnávání vzoru regulárního výrazu. Zbývající dvě umožní zahrnutí komentářů v regulárním výrazu.  

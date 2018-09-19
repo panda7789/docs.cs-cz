@@ -7,12 +7,13 @@ ms.date: 08/07/2017
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 8ea958ad5d3eba394eb914da81111a0eaf707cf4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.custom: vs-dotnet
+ms.openlocfilehash: 04fef4f84658b3a8b82e4e71b62c3bab8537424d
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43527077"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "45990970"
 ---
 # <a name="testing-a-class-library-with-net-core-in-visual-studio-2017"></a>Testování knihovny tříd pomocí platformy .NET Core v sadě Visual Studio 2017
 

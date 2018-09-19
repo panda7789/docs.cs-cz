@@ -3,11 +3,11 @@ title: Doprovodný obor transakcí
 ms.date: 03/30/2017
 ms.assetid: 37141708-a29f-4b6a-81fe-f8a11f825061
 ms.openlocfilehash: fa1da6df5ad5256665610c9b3c2df7d706cef63c
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45597211"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46000424"
 ---
 # <a name="transaction-convoy-scope"></a>Doprovodný obor transakcí
 Tato ukázka předvádí, jak vytvořit paralelní doprovodný zasílání zpráv aktivity vzorce ve spojení s <xref:System.ServiceModel.Activities.TransactedReceiveScope> modelování protokolu, kde počet operací může dojít v libovolném pořadí vše v rámci stejné transakce. Tento příklad také ukazuje, jak <xref:System.ServiceModel.Activities.TransactedReceiveScope> automaticky vytvoří novou transakci, pokud jeden není byly převedeny do serveru, tak klient nepoužívá používat z jakékoli transakce.  

@@ -3,11 +3,11 @@ title: Získání WorkflowInstanceId
 ms.date: 03/30/2017
 ms.assetid: bd7eea3b-1c28-4b84-9a67-003bc553aa81
 ms.openlocfilehash: 6725ed92bf785e5b7f7d61332944fcce8427388a
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45687566"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46007279"
 ---
 # <a name="get-workflowinstanceid"></a>Získání WorkflowInstanceId
 Tato ukázka předvádí, jak používat vlastní aktivitu, `GetWorkflowInstanceId` vrátit identifikátor instance pracovního postupu  

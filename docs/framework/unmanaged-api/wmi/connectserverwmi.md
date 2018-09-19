@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 163e61eef8a753b5b6470285e5e3ce63789e25a4
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970420"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46287738"
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
 Připojení přes DCOM k oboru názvů WMI vytvoří v zadaném počítači.  

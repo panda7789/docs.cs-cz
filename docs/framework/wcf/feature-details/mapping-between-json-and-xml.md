@@ -3,11 +3,11 @@ title: Mapování mezi JSON a XML
 ms.date: 03/30/2017
 ms.assetid: 22ee1f52-c708-4024-bbf0-572e0dae64af
 ms.openlocfilehash: 079ca9cebefcc96bffdb0ec4601a675ed83adefe
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43670727"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46288391"
 ---
 # <a name="mapping-between-json-and-xml"></a>Mapování mezi JSON a XML
 Čtečky a zapisovače vytvářených <xref:System.Runtime.Serialization.Json.JsonReaderWriterFactory> poskytují rozhraní API XML nad obsahem objektu zápis JSON (JavaScript). JSON zašifruje data pomocí některé podsady literálů objektů jazyka JavaScript. Čtečky a zapisovače vytvářených tento objekt pro vytváření se také používají při obsah JSON se odeslaný nebo přijatý aplikací Windows Communication Foundation (WCF) pomocí <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement> nebo <xref:System.ServiceModel.WebHttpBinding>.  
