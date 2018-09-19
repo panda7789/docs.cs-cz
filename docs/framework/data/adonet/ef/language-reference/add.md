@@ -3,11 +3,11 @@ title: + (Přidat)
 ms.date: 03/30/2017
 ms.assetid: 51769b02-a8f7-4177-9e99-bbd10e77092c
 ms.openlocfilehash: a3c41ef8cf393a4d1b1deb362d6a3614558a34ba
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
-ms.translationtype: HT
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/18/2018
-ms.locfileid: "45998952"
+ms.locfileid: "46287692"
 ---
 # <a name="-add"></a>+ (Přidat)
 Sečte dvě čísla.  

@@ -5,11 +5,11 @@ author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
 ms.openlocfilehash: a9cfebbeddbedc329432c805c5956b382a726a77
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
-ms.translationtype: HT
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988670"
+ms.locfileid: "46288166"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů rozhraní příkazového řádku .NET core
 
