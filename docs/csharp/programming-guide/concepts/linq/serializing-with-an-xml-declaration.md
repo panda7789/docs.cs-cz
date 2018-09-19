@@ -3,22 +3,22 @@ title: Serializace pomocí deklarace XML (C#)
 ms.date: 07/20/2015
 ms.assetid: c237fa4a-a042-40fd-886f-17b54c66bb75
 ms.openlocfilehash: 613280efc8c734c53c4af9252b4b83e2dd942f36
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45741651"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46006415"
 ---
-# <a name="serializing-with-an-xml-declaration-c"></a><span data-ttu-id="04ed4-102">Serializace pomocí deklarace XML (C#)</span><span class="sxs-lookup"><span data-stu-id="04ed4-102">Serializing with an XML Declaration (C#)</span></span>
-<span data-ttu-id="04ed4-103">Toto téma popisuje, jak řídit, jestli serializace generuje deklaraci XML.</span><span class="sxs-lookup"><span data-stu-id="04ed4-103">This topic describes how to control whether serialization generates an XML declaration.</span></span>  
+# <a name="serializing-with-an-xml-declaration-c"></a><span data-ttu-id="19b62-102">Serializace pomocí deklarace XML (C#)</span><span class="sxs-lookup"><span data-stu-id="19b62-102">Serializing with an XML Declaration (C#)</span></span>
+<span data-ttu-id="19b62-103">Toto téma popisuje, jak řídit, jestli serializace generuje deklaraci XML.</span><span class="sxs-lookup"><span data-stu-id="19b62-103">This topic describes how to control whether serialization generates an XML declaration.</span></span>  
   
-## <a name="xml-declaration-generation"></a><span data-ttu-id="04ed4-104">Generování deklarace XML</span><span class="sxs-lookup"><span data-stu-id="04ed4-104">XML Declaration Generation</span></span>  
- <span data-ttu-id="04ed4-105">Serializace do <xref:System.IO.File> nebo <xref:System.IO.TextWriter> pomocí <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> metoda nebo <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> metoda generuje deklaraci XML.</span><span class="sxs-lookup"><span data-stu-id="04ed4-105">Serializing to a <xref:System.IO.File> or a <xref:System.IO.TextWriter> using the <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> method or the <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> method generates an XML declaration.</span></span> <span data-ttu-id="04ed4-106">Při serializaci do <xref:System.Xml.XmlWriter>, nastavení zapisovače (zadané v poli <xref:System.Xml.XmlWriterSettings> objektu) určuje, zda bude generovat deklarace XML, nebo ne.</span><span class="sxs-lookup"><span data-stu-id="04ed4-106">When you serialize to an <xref:System.Xml.XmlWriter>, the writer settings (specified in an <xref:System.Xml.XmlWriterSettings> object) determine whether an XML declaration is generated or not.</span></span>  
+## <a name="xml-declaration-generation"></a><span data-ttu-id="19b62-104">Generování deklarace XML</span><span class="sxs-lookup"><span data-stu-id="19b62-104">XML Declaration Generation</span></span>  
+ <span data-ttu-id="19b62-105">Serializace do <xref:System.IO.File> nebo <xref:System.IO.TextWriter> pomocí <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> metoda nebo <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> metoda generuje deklaraci XML.</span><span class="sxs-lookup"><span data-stu-id="19b62-105">Serializing to a <xref:System.IO.File> or a <xref:System.IO.TextWriter> using the <xref:System.Xml.Linq.XElement.Save%2A?displayProperty=nameWithType> method or the <xref:System.Xml.Linq.XDocument.Save%2A?displayProperty=nameWithType> method generates an XML declaration.</span></span> <span data-ttu-id="19b62-106">Při serializaci do <xref:System.Xml.XmlWriter>, nastavení zapisovače (zadané v poli <xref:System.Xml.XmlWriterSettings> objektu) určuje, zda bude generovat deklarace XML, nebo ne.</span><span class="sxs-lookup"><span data-stu-id="19b62-106">When you serialize to an <xref:System.Xml.XmlWriter>, the writer settings (specified in an <xref:System.Xml.XmlWriterSettings> object) determine whether an XML declaration is generated or not.</span></span>  
   
- <span data-ttu-id="04ed4-107">Pokud serializujete na řetězec pomocí `ToString` metoda výsledného kódu XML nebude obsahovat deklaraci XML.</span><span class="sxs-lookup"><span data-stu-id="04ed4-107">If you are serializing to a string using the `ToString` method, the resulting XML will not include an XML declaration.</span></span>  
+ <span data-ttu-id="19b62-107">Pokud serializujete na řetězec pomocí `ToString` metoda výsledného kódu XML nebude obsahovat deklaraci XML.</span><span class="sxs-lookup"><span data-stu-id="19b62-107">If you are serializing to a string using the `ToString` method, the resulting XML will not include an XML declaration.</span></span>  
   
-### <a name="serializing-with-an-xml-declaration"></a><span data-ttu-id="04ed4-108">Serializace pomocí deklarace XML</span><span class="sxs-lookup"><span data-stu-id="04ed4-108">Serializing with an XML Declaration</span></span>  
- <span data-ttu-id="04ed4-109">Následující příklad vytvoří <xref:System.Xml.Linq.XElement>, uloží dokument k souboru a potom zobrazí soubor do konzoly:</span><span class="sxs-lookup"><span data-stu-id="04ed4-109">The following example creates an <xref:System.Xml.Linq.XElement>, saves the document to a file, and then prints the file to the console:</span></span>  
+### <a name="serializing-with-an-xml-declaration"></a><span data-ttu-id="19b62-108">Serializace pomocí deklarace XML</span><span class="sxs-lookup"><span data-stu-id="19b62-108">Serializing with an XML Declaration</span></span>  
+ <span data-ttu-id="19b62-109">Následující příklad vytvoří <xref:System.Xml.Linq.XElement>, uloží dokument k souboru a potom zobrazí soubor do konzoly:</span><span class="sxs-lookup"><span data-stu-id="19b62-109">The following example creates an <xref:System.Xml.Linq.XElement>, saves the document to a file, and then prints the file to the console:</span></span>  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -29,7 +29,7 @@ string str = File.ReadAllText("Root.xml");
 Console.WriteLine(str);  
 ```  
   
- <span data-ttu-id="04ed4-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="04ed4-110">This example produces the following output:</span></span>  
+ <span data-ttu-id="19b62-110">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="19b62-110">This example produces the following output:</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -38,8 +38,8 @@ Console.WriteLine(str);
 </Root>  
 ```  
   
-### <a name="serializing-without-an-xml-declaration"></a><span data-ttu-id="04ed4-111">Serializace bez deklarace XML</span><span class="sxs-lookup"><span data-stu-id="04ed4-111">Serializing without an XML Declaration</span></span>  
- <span data-ttu-id="04ed4-112">Následující příklad ukazuje, jak uložit <xref:System.Xml.Linq.XElement> do <xref:System.Xml.XmlWriter>.</span><span class="sxs-lookup"><span data-stu-id="04ed4-112">The following example shows how to save an <xref:System.Xml.Linq.XElement> to an <xref:System.Xml.XmlWriter>.</span></span>  
+### <a name="serializing-without-an-xml-declaration"></a><span data-ttu-id="19b62-111">Serializace bez deklarace XML</span><span class="sxs-lookup"><span data-stu-id="19b62-111">Serializing without an XML Declaration</span></span>  
+ <span data-ttu-id="19b62-112">Následující příklad ukazuje, jak uložit <xref:System.Xml.Linq.XElement> do <xref:System.Xml.XmlWriter>.</span><span class="sxs-lookup"><span data-stu-id="19b62-112">The following example shows how to save an <xref:System.Xml.Linq.XElement> to an <xref:System.Xml.XmlWriter>.</span></span>  
   
 ```csharp  
 StringBuilder sb = new StringBuilder();  
@@ -55,12 +55,12 @@ using (XmlWriter xw = XmlWriter.Create(sb, xws)) {
 Console.WriteLine(sb.ToString());  
 ```  
   
- <span data-ttu-id="04ed4-113">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="04ed4-113">This example produces the following output:</span></span>  
+ <span data-ttu-id="19b62-113">Tento příklad vytvoří následující výstup:</span><span class="sxs-lookup"><span data-stu-id="19b62-113">This example produces the following output:</span></span>  
   
 ```xml  
 <Root><Child>child content</Child></Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="04ed4-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="04ed4-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="19b62-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="19b62-114">See Also</span></span>
 
-- [<span data-ttu-id="04ed4-115">Serializace stromů XML (C#)</span><span class="sxs-lookup"><span data-stu-id="04ed4-115">Serializing XML Trees (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)
+- [<span data-ttu-id="19b62-115">Serializace stromů XML (C#)</span><span class="sxs-lookup"><span data-stu-id="19b62-115">Serializing XML Trees (C#)</span></span>](../../../../csharp/programming-guide/concepts/linq/serializing-xml-trees.md)

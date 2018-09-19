@@ -3,22 +3,22 @@ title: Databáze trvalosti SQL serveru
 ms.date: 03/30/2017
 ms.assetid: 4e594eec-2a31-4d49-ad31-aca2ecbb1f69
 ms.openlocfilehash: 3929148cf6a236db7d226b45da750e8d4ae1d0cc
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45570009"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46287318"
 ---
-# <a name="sql-server-persistence-database"></a><span data-ttu-id="17be1-102">Databáze trvalosti SQL serveru</span><span class="sxs-lookup"><span data-stu-id="17be1-102">SQL Server Persistence Database</span></span>
-<span data-ttu-id="17be1-103">Tato část obsahuje podrobné informace o zobrazení veřejného databáze nepodporuje Store Instance pracovního postupu SQL a ukazuje, jak zrušit serializaci vlastnosti primitivní instance data a zadávat dotazy na netrvalé instance.</span><span class="sxs-lookup"><span data-stu-id="17be1-103">This section provides details about public database views supported by the SQL Workflow Instance Store and shows how to de-serialize primitive instance data properties and how to query for non-persisted instances.</span></span>  
+# <a name="sql-server-persistence-database"></a><span data-ttu-id="2c533-102">Databáze trvalosti SQL serveru</span><span class="sxs-lookup"><span data-stu-id="2c533-102">SQL Server Persistence Database</span></span>
+<span data-ttu-id="2c533-103">Tato část obsahuje podrobné informace o zobrazení veřejného databáze nepodporuje Store Instance pracovního postupu SQL a ukazuje, jak zrušit serializaci vlastnosti primitivní instance data a zadávat dotazy na netrvalé instance.</span><span class="sxs-lookup"><span data-stu-id="2c533-103">This section provides details about public database views supported by the SQL Workflow Instance Store and shows how to de-serialize primitive instance data properties and how to query for non-persisted instances.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="17be1-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="17be1-104">In This Section</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="2c533-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="2c533-104">In This Section</span></span>  
   
--   [<span data-ttu-id="17be1-105">Schéma databáze trvalosti</span><span class="sxs-lookup"><span data-stu-id="17be1-105">Persistence Database Schema</span></span>](../../../docs/framework/windows-workflow-foundation/persistence-database-schema.md)  
+-   [<span data-ttu-id="2c533-105">Schéma databáze trvalosti</span><span class="sxs-lookup"><span data-stu-id="2c533-105">Persistence Database Schema</span></span>](../../../docs/framework/windows-workflow-foundation/persistence-database-schema.md)  
   
--   [<span data-ttu-id="17be1-106">Postupy: Deserializace vlastností data instance</span><span class="sxs-lookup"><span data-stu-id="17be1-106">How to: Deserialize Instance Data Properties</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-deserialize-instance-data-properties.md)  
+-   [<span data-ttu-id="2c533-106">Postupy: Deserializace vlastností data instance</span><span class="sxs-lookup"><span data-stu-id="2c533-106">How to: Deserialize Instance Data Properties</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-deserialize-instance-data-properties.md)  
   
--   [<span data-ttu-id="17be1-107">Postupy: Dotaz na netrvalé instance</span><span class="sxs-lookup"><span data-stu-id="17be1-107">How to: Query for Non-persisted Instances</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-query-for-non-persisted-instances.md)  
+-   [<span data-ttu-id="2c533-107">Postupy: Dotaz na netrvalé instance</span><span class="sxs-lookup"><span data-stu-id="2c533-107">How to: Query for Non-persisted Instances</span></span>](../../../docs/framework/windows-workflow-foundation/how-to-query-for-non-persisted-instances.md)  
   
-## <a name="see-also"></a><span data-ttu-id="17be1-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="17be1-108">See Also</span></span>  
- [<span data-ttu-id="17be1-109">Databáze trvalosti SQL serveru App Fabric</span><span class="sxs-lookup"><span data-stu-id="17be1-109">App Fabric SQL Server Persistence Database</span></span>](https://go.microsoft.com/fwlink/?LinkID=201202&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="2c533-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="2c533-108">See Also</span></span>  
+ [<span data-ttu-id="2c533-109">Databáze trvalosti SQL serveru App Fabric</span><span class="sxs-lookup"><span data-stu-id="2c533-109">App Fabric SQL Server Persistence Database</span></span>](https://go.microsoft.com/fwlink/?LinkID=201202&clcid=0x409)
