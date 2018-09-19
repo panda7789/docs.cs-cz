@@ -11,11 +11,11 @@ ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e04ccaf2ac97a3bd784c9aa110b53b16a31e920c
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615895"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46003048"
 ---
 # Co je nového v rozhraní .NET Framework <a name="introduction"></a>
 
