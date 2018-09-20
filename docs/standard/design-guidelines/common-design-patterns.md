@@ -9,22 +9,22 @@ ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: d41ba0c1e972eeee07b36ad0d15532f7b551ec2a
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45990230"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46323610"
 ---
-# <a name="common-design-patterns"></a><span data-ttu-id="d478b-102">Obecné vzory návrhu</span><span class="sxs-lookup"><span data-stu-id="d478b-102">Common Design Patterns</span></span>
-<span data-ttu-id="d478b-103">Existuje mnoho knih softwaru vzorců, vzor jazyky a antipatternů, které řeší velmi široký předmětem vzory.</span><span class="sxs-lookup"><span data-stu-id="d478b-103">There are numerous books on software patterns, pattern languages, and antipatterns that address the very broad subject of patterns.</span></span> <span data-ttu-id="d478b-104">Proto tato kapitola obsahuje pokyny a informace související s velmi omezenou sadu vzorů, které se často používají v návrhu rozhraní API .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="d478b-104">Thus, this chapter provides guidelines and discussion related to a very limited set of patterns that are used frequently in the design of the .NET Framework APIs.</span></span>  
+# <a name="common-design-patterns"></a><span data-ttu-id="c4679-102">Obecné vzory návrhu</span><span class="sxs-lookup"><span data-stu-id="c4679-102">Common Design Patterns</span></span>
+<span data-ttu-id="c4679-103">Existuje mnoho knih softwaru vzorců, vzor jazyky a antipatternů, které řeší velmi široký předmětem vzory.</span><span class="sxs-lookup"><span data-stu-id="c4679-103">There are numerous books on software patterns, pattern languages, and antipatterns that address the very broad subject of patterns.</span></span> <span data-ttu-id="c4679-104">Proto tato kapitola obsahuje pokyny a informace související s velmi omezenou sadu vzorů, které se často používají v návrhu rozhraní API .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="c4679-104">Thus, this chapter provides guidelines and discussion related to a very limited set of patterns that are used frequently in the design of the .NET Framework APIs.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="d478b-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="d478b-105">In This Section</span></span>  
- [<span data-ttu-id="d478b-106">Vlastnosti závislosti</span><span class="sxs-lookup"><span data-stu-id="d478b-106">Dependency Properties</span></span>](../../../docs/standard/design-guidelines/dependency-properties.md)  
- [<span data-ttu-id="d478b-107">Vzor pro metodu Dispose</span><span class="sxs-lookup"><span data-stu-id="d478b-107">Dispose Pattern</span></span>](../../../docs/standard/design-guidelines/dispose-pattern.md)  
- <span data-ttu-id="d478b-108">*Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*</span><span class="sxs-lookup"><span data-stu-id="d478b-108">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="c4679-105">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="c4679-105">In This Section</span></span>  
+ [<span data-ttu-id="c4679-106">Vlastnosti závislosti</span><span class="sxs-lookup"><span data-stu-id="c4679-106">Dependency Properties</span></span>](../../../docs/standard/design-guidelines/dependency-properties.md)  
+ [<span data-ttu-id="c4679-107">Vzor pro metodu Dispose</span><span class="sxs-lookup"><span data-stu-id="c4679-107">Dispose Pattern</span></span>](../../../docs/standard/design-guidelines/dispose-pattern.md)  
+ <span data-ttu-id="c4679-108">*Části © 2005, 2009 Microsoft Corporation. Všechna práva vyhrazena.*</span><span class="sxs-lookup"><span data-stu-id="c4679-108">*Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*</span></span>  
   
- <span data-ttu-id="d478b-109">*Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*</span><span class="sxs-lookup"><span data-stu-id="d478b-109">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
+ <span data-ttu-id="c4679-109">*Přetištěno podle oprávnění Pearson vzdělávání, Inc. z [pokyny k návrhu architektury: konvence, Idiomy a vzory pro opakovaně použitelného knihovny .NET, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina a Brad Abrams publikované 22 Oct 2008, Designing Effective jako části této série Microsoft Windows Development.*</span><span class="sxs-lookup"><span data-stu-id="c4679-109">*Reprinted by permission of Pearson Education, Inc. from [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) by Krzysztof Cwalina and Brad Abrams, published Oct 22, 2008 by Addison-Wesley Professional as part of the Microsoft Windows Development Series.*</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d478b-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d478b-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4679-110">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c4679-110">See also</span></span>
 
-- [<span data-ttu-id="d478b-111">Pokyny k návrhu architektury</span><span class="sxs-lookup"><span data-stu-id="d478b-111">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)
+- [<span data-ttu-id="c4679-111">Pokyny k návrhu architektury</span><span class="sxs-lookup"><span data-stu-id="c4679-111">Framework Design Guidelines</span></span>](../../../docs/standard/design-guidelines/index.md)

@@ -5,22 +5,22 @@ f1_keywords:
 - vbrTextFieldParser_FieldWidthsNothing
 ms.assetid: 623e0825-5640-4e47-8341-7eeec80fc145
 ms.openlocfilehash: cb9051269bf46e23d5ae070956994212d3e98675
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45658304"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46322441"
 ---
-# <a name="unable-to-read-fixed-width-fields-because-fieldwidths-is-nothing-or-empty"></a><span data-ttu-id="3b093-102">Nelze číst pole s pevnou šířkou, protože hodnoty parametru FieldWidths má hodnotu Nothing nebo je prázdný</span><span class="sxs-lookup"><span data-stu-id="3b093-102">Unable to read fixed width fields because FieldWidths is Nothing or empty</span></span>
-<span data-ttu-id="3b093-103">`TextFieldParser` Nemůže číst pole s pevnou šířkou, protože `FieldWidths` je nastavena na `Nothing` nebo je prázdný.</span><span class="sxs-lookup"><span data-stu-id="3b093-103">The `TextFieldParser` is unable to read fixed-width fields because the `FieldWidths` property is set to `Nothing` or is empty.</span></span>  
+# <a name="unable-to-read-fixed-width-fields-because-fieldwidths-is-nothing-or-empty"></a><span data-ttu-id="365fe-102">Nelze číst pole s pevnou šířkou, protože hodnoty parametru FieldWidths má hodnotu Nothing nebo je prázdný</span><span class="sxs-lookup"><span data-stu-id="365fe-102">Unable to read fixed width fields because FieldWidths is Nothing or empty</span></span>
+<span data-ttu-id="365fe-103">`TextFieldParser` Nemůže číst pole s pevnou šířkou, protože `FieldWidths` je nastavena na `Nothing` nebo je prázdný.</span><span class="sxs-lookup"><span data-stu-id="365fe-103">The `TextFieldParser` is unable to read fixed-width fields because the `FieldWidths` property is set to `Nothing` or is empty.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="3b093-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="3b093-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="365fe-104">Oprava této chyby</span><span class="sxs-lookup"><span data-stu-id="365fe-104">To correct this error</span></span>  
   
--   <span data-ttu-id="3b093-105">Nastavte `FieldWidths` na platnou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="3b093-105">Set `FieldWidths` to a valid value.</span></span>  
+-   <span data-ttu-id="365fe-105">Nastavte `FieldWidths` na platnou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="365fe-105">Set `FieldWidths` to a valid value.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3b093-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="3b093-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="365fe-106">Viz také:</span><span class="sxs-lookup"><span data-stu-id="365fe-106">See also</span></span>
 
-- [<span data-ttu-id="3b093-107">TextFieldParser.SetFieldWidths – metoda</span><span class="sxs-lookup"><span data-stu-id="3b093-107">TextFieldParser.SetFieldWidths Method</span></span>](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.SetFieldWidths%2A)  
-- [<span data-ttu-id="3b093-108">Vlastnost TextFieldParser.FieldWidths</span><span class="sxs-lookup"><span data-stu-id="3b093-108">TextFieldParser.FieldWidths Property</span></span>](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.FieldWidths%2A)  
-- [<span data-ttu-id="3b093-109">Postupy: Čtení z textových souborů s pevnou šířkou</span><span class="sxs-lookup"><span data-stu-id="3b093-109">How to: Read From Fixed-width Text Files</span></span>](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)  
-- [<span data-ttu-id="3b093-110">Objekt TextFieldParser</span><span class="sxs-lookup"><span data-stu-id="3b093-110">TextFieldParser Object</span></span>](../../visual-basic/language-reference/objects/textfieldparser-object.md)
+- [<span data-ttu-id="365fe-107">TextFieldParser.SetFieldWidths – metoda</span><span class="sxs-lookup"><span data-stu-id="365fe-107">TextFieldParser.SetFieldWidths Method</span></span>](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.SetFieldWidths%2A)  
+- [<span data-ttu-id="365fe-108">Vlastnost TextFieldParser.FieldWidths</span><span class="sxs-lookup"><span data-stu-id="365fe-108">TextFieldParser.FieldWidths Property</span></span>](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.FieldWidths%2A)  
+- [<span data-ttu-id="365fe-109">Postupy: Čtení z textových souborů s pevnou šířkou</span><span class="sxs-lookup"><span data-stu-id="365fe-109">How to: Read From Fixed-width Text Files</span></span>](../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)  
+- [<span data-ttu-id="365fe-110">Objekt TextFieldParser</span><span class="sxs-lookup"><span data-stu-id="365fe-110">TextFieldParser Object</span></span>](../../visual-basic/language-reference/objects/textfieldparser-object.md)
