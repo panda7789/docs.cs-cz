@@ -3,11 +3,11 @@ title: Podrobnosti implementace protokolu služeb WCF Data Services
 ms.date: 03/30/2017
 ms.assetid: 712d689b-fada-4cbb-bcdb-d65a3ef83b4c
 ms.openlocfilehash: 1d68e278fbac0137d1a5b2dca2daedba2294a7ee
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970029"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46323257"
 ---
 # <a name="wcf-data-services-protocol-implementation-details"></a>Podrobnosti implementace protokolu služeb WCF Data Services
 ## <a name="odata-protocol-implementation-details"></a>Podrobnosti implementace protokolu OData  

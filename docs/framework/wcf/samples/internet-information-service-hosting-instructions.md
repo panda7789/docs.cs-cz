@@ -2,49 +2,49 @@
 title: Pokyny k hostování služby IIS
 ms.date: 03/30/2017
 ms.assetid: 959a21c8-9d9d-4757-b255-4e57793ae9d6
-ms.openlocfilehash: 5d315fa482e423461eab171a19746b6ea792aac5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 303fe47df987901b09cee8cc4292f12bcda2b74d
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33507571"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46320916"
 ---
 # <a name="internet-information-service-hosting-instructions"></a>Pokyny k hostování služby IIS
-Ke spuštění ukázky, které jsou hostované pomocí Internetové informační služby (IIS), musí se ujistěte, že služba IIS je správně nainstalován a běží.  
+Ke spuštění ukázky, které jsou hostované v Internetové informační služby (IIS), musí se ujistěte, že IIS je správně nainstalován a běží.  
   
-### <a name="to-install-iis-version-75-on-windows-server-2008-r2"></a>Instalace služby IIS verze 7.5 na Windows Server 2008 R2  
+### <a name="to-install-iis-version-75-on-windows-server-2008-r2"></a>Chcete-li nainstalovat službu IIS verze 7.5 na Windows Server 2008 R2  
   
-1.  Z **správce serveru**, vyberte **role.** V části **Souhrn rolí**, klikněte na tlačítko **přidat role**.  
+1.  Z **správce serveru**vyberte **role.** V části **Souhrn rolí**, klikněte na tlačítko **přidat role**.  
   
-2.  Klikněte na tlačítko **Další** zobrazíte **vybrat role serveru** dialogové okno.  
+2.  Klikněte na tlačítko **Další** zobrazíte **vybrat role serveru** dialogového okna.  
   
-3.  Vyberte **aplikační Server** z **role** seznamu a pak klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro Role aplikačního serveru.  
+3.  Vyberte **aplikační Server** z **role** seznamu a potom klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro Role aplikačního serveru.  
   
-4.  Vyberte **webového serveru (IIS)** zaškrtávací políčko. Pokud se zobrazí výzva k instalaci další služby rolí a funkcí, klikněte na tlačítko **přidat požadované funkce**. Klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro roli webového serveru (IIS).  
+4.  Vyberte **webového serveru (IIS)** zaškrtávací políčko. Pokud se zobrazí výzva k instalaci služeb rolí a funkcí, klikněte na tlačítko **přidat požadované funkce**. Klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro roli webového serveru (IIS).  
   
-5.  Rozbalte položku **nástroje pro správu**a potom rozbalte **IIS 6 Management Compatibility**. Vyberte **IIS nástroje pro skriptování 6**. Pokud se zobrazí výzva k instalaci další služby rolí a funkcí, klikněte na tlačítko **přidat požadované služby rolí**. Klikněte na tlačítko **Další**.  
+5.  Rozbalte **nástroje pro správu**a potom rozbalte **IIS 6 Management Compatibility**. Vyberte **IIS 6 Scripting Tools**. Pokud se zobrazí výzva k instalaci služeb rolí a funkcí, klikněte na tlačítko **přidat požadované služby rolí**. Klikněte na tlačítko **Další**.  
   
-6.  Pokud souhrn výběr správné, klikněte na tlačítko **nainstalovat**.  
+6.  Pokud správnost souhrn výběry, klikněte na tlačítko **nainstalovat**.  
   
-7.  Po dokončení instalace, klikněte na tlačítko **Zavřít**.  
+7.  Po dokončení instalace klikněte na tlačítko **Zavřít**.  
   
-### <a name="to-install-iis-version-75-on-windows-7"></a>Instalace služby IIS verze 7.5 na systému Windows 7  
+### <a name="to-install-iis-version-75-on-windows-7"></a>Chcete-li nainstalovat službu IIS verze 7.5 na Windows 7  
   
-1.  Klikněte na tlačítko **spustit**a potom klikněte na **ovládací panely**.  
+1.  Klikněte na tlačítko **Start**a potom klikněte na tlačítko **ovládací panely**.  
   
-2.  Otevřete **programy** skupiny.  
+2.  Otevřít **programy** skupiny.  
   
-3.  V části **programy a funkce**, klikněte na tlačítko **zapnout nebo vypnout funkce systému Windows**.  
+3.  V části **programy a funkce**, klikněte na tlačítko **zapnout nebo vypnout funkce Windows**.  
   
 4.  **Řízení uživatelských účtů** se zobrazí dialogové okno. Klikněte na tlačítko **pokračovat**.  
   
-5.  **Funkce systému Windows** se zobrazí dialogové okno. Rozbalte položky s popiskem **Internetová informační služba**.  
+5.  **Funkce Windows** se zobrazí dialogové okno. Rozbalte položky označené **Internetová informační služba**.  
   
-6.  Rozbalte položky s popiskem **webové služby**.  
+6.  Rozbalte položky označené **webové služby**.  
   
-7.  Rozbalte položky s popiskem **funkce pro vývoj aplikací**.  
+7.  Rozbalte položky označené **funkce pro vývoj aplikací**.  
   
-8.  Zkontrolujte, zda že jsou vybrány následující položky:  
+8.  Ujistěte se, zda že jsou vybrány následující položky:  
   
     1.  **Rozšiřitelnost rozhraní .NET**  
   
@@ -54,55 +54,55 @@ Ke spuštění ukázky, které jsou hostované pomocí Internetové informační
   
     4.  **Filtry ISAPI**  
   
-9. V části položka s názvem bez přípony **webové služby**, rozbalte položku **společné funkce protokolu Http**.  
+9. V části položky označené **webové služby**, rozbalte **společné funkce protokolu Http**.  
   
-10. Zajistěte, aby **statický obsah** je vybrána.  
+10. Ujistěte se, že **statický obsah** zaškrtnuto.  
   
-11. V části položka s názvem bez přípony **webové služby**, rozbalte položku **zabezpečení**.  
+11. V části položky označené **webové služby**, rozbalte **zabezpečení**.  
   
-12. Ujistěte se, že **ověřování systému Windows** je vybrána.  
+12. Ujistěte se, že **ověřování Windows** zaškrtnuto.  
   
-13. V části **Internetová informační služba** adresáře, rozbalte položku s popiskem **nástroje webové správy**a potom vyberte **konzoly pro správu služby IIS**.  
+13. V části **Internetová informační služba** adresáře, rozbalte položku s popiskem **nástroje webové správy**a pak vyberte **Konzola pro správu služby IIS**.  
   
-14. Rozbalte položky s popiskem **IIS 6 Management Compatibility**a potom vyberte **nástroje pro skriptování na služby IIS 6**.  
+14. Rozbalte položky označené **IIS 6 Management Compatibility**a pak vyberte **IIS 6 Scripting Tools**.  
   
-15. V části **Internetová informační služba** adresáře, rozbalte položku s popiskem **rozhraní Microsoft .NET Framework 3.5.1**a potom vyberte **aktivace Windows Communication Foundation Http**.  
+15. V části **Internetová informační služba** adresáře, rozbalte položku s popiskem **rozhraní Microsoft .NET Framework 3.5.1**a pak vyberte **aktivace Windows Communication Foundation Http**.  
   
-16. Click **OK**.  
+16. Klikněte na tlačítko **OK**.  
   
-### <a name="to-install-iis-version-70-on-windows-server-2008"></a>Chcete-li nainstalovat službu IIS 7.0 v systému Windows Server 2008  
+### <a name="to-install-iis-version-70-on-windows-server-2008"></a>Chcete-li nainstalovat službu IIS verze 7.0 ve Windows serveru 2008  
   
-1.  Z **správce serveru**, vyberte **role**. V části **Souhrn rolí**, klikněte na tlačítko **přidat role**.  
+1.  Z **správce serveru**vyberte **role**. V části **Souhrn rolí**, klikněte na tlačítko **přidat role**.  
   
-2.  Klikněte na tlačítko **Další** zobrazíte **vybrat role serveru** dialogové okno.  
+2.  Klikněte na tlačítko **Další** zobrazíte **vybrat role serveru** dialogového okna.  
   
-3.  Vyberte **aplikační Server** z **role** seznamu a pak klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro Role aplikačního serveru.  
+3.  Vyberte **aplikační Server** z **role** seznamu a potom klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro Role aplikačního serveru.  
   
-4.  Vyberte **webového serveru (IIS)** zaškrtávací políčko. Pokud se zobrazí výzva k instalaci další služby rolí a funkcí, klikněte na tlačítko **přidat požadované funkce**. Klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro roli webového serveru (IIS).  
+4.  Vyberte **webového serveru (IIS)** zaškrtávací políčko. Pokud se zobrazí výzva k instalaci služeb rolí a funkcí, klikněte na tlačítko **přidat požadované funkce**. Klikněte na tlačítko **Další** dvakrát zobrazíte **vybrat služby rolí** dialogové okno pro roli webového serveru (IIS).  
   
-5.  Rozbalte položku **nástroje pro správu**a potom rozbalte **IIS 6 Management Compatibility**. Vyberte **IIS nástroje pro skriptování 6**. Pokud se zobrazí výzva k instalaci další služby rolí a funkcí, klikněte na tlačítko **přidat požadované služby rolí**. Klikněte na tlačítko **Další**.  
+5.  Rozbalte **nástroje pro správu**a potom rozbalte **IIS 6 Management Compatibility**. Vyberte **IIS 6 Scripting Tools**. Pokud se zobrazí výzva k instalaci služeb rolí a funkcí, klikněte na tlačítko **přidat požadované služby rolí**. Klikněte na tlačítko **Další**.  
   
-6.  Pokud souhrn výběr správné, klikněte na tlačítko **nainstalovat**.  
+6.  Pokud správnost souhrn výběry, klikněte na tlačítko **nainstalovat**.  
   
-7.  Po dokončení instalace, klikněte na tlačítko **Zavřít**.  
+7.  Po dokončení instalace klikněte na tlačítko **Zavřít**.  
   
-### <a name="to-install-iis-version-70-on-windows-vista"></a>Chcete-li nainstalovat službu IIS 7.0 v systému Windows Vista  
+### <a name="to-install-iis-version-70-on-windows-vista"></a>Chcete-li nainstalovat službu IIS verze 7.0 v systému Windows Vista  
   
-1.  Klikněte na tlačítko Start a pak klikněte na ovládacích panelech.  
+1.  Klikněte na tlačítko Start a potom klikněte na ovládacích panelech.  
   
 2.  Vyberte **programy** skupiny.  
   
-3.  V části **programy a funkce**, klikněte na tlačítko **zapnout nebo vypnout funkce systému Windows**.  
+3.  V části **programy a funkce**, klikněte na tlačítko **zapnout nebo vypnout funkce Windows**.  
   
 4.  **Řízení uživatelských účtů** se zobrazí dialogové okno. Klikněte na tlačítko **pokračovat**.  
   
-5.  **Funkce systému Windows** se zobrazí dialogové okno. Rozbalte položky s popiskem **Internetová informační služba**.  
+5.  **Funkce Windows** se zobrazí dialogové okno. Rozbalte položky označené **Internetová informační služba**.  
   
-6.  Rozbalte položky s popiskem **webové služby**.  
+6.  Rozbalte položky označené **webové služby**.  
   
-7.  Rozbalte položky s popiskem **funkce pro vývoj aplikací**.  
+7.  Rozbalte položky označené **funkce pro vývoj aplikací**.  
   
-8.  Zkontrolujte, zda že jsou vybrány následující položky:  
+8.  Ujistěte se, zda že jsou vybrány následující položky:  
   
     1.  **Rozšiřitelnost rozhraní .NET**  
   
@@ -112,58 +112,58 @@ Ke spuštění ukázky, které jsou hostované pomocí Internetové informační
   
     4.  **Filtry ISAPI**  
   
-9. Rozbalte položky s popiskem **nástroje webové správy**a potom vyberte **konzoly pro správu služby IIS**.  
+9. Rozbalte položky označené **nástroje webové správy**a pak vyberte **konzolu pro správu IIS**.  
   
-10. V části položka s názvem bez přípony **webové služby**, rozbalte položku **společné funkce protokolu Http**.  
+10. V části položky označené **webové služby**, rozbalte **společné funkce protokolu Http**.  
   
-11. Zajistěte, aby **statický obsah** je vybrána.  
+11. Ujistěte se, že **statický obsah** zaškrtnuto.  
   
-12. V části položka s názvem bez přípony **webové služby**, rozbalte položku **zabezpečení**.  
+12. V části položky označené **webové služby**, rozbalte **zabezpečení**.  
   
-13. Zajistěte, aby **ověřování systému Windows** je vybrána.  
+13. Ujistěte se, že **ověřování Windows** zaškrtnuto.  
   
-14. Rozbalte položky s popiskem **IIS 6 Management Compatibility**a potom vyberte **nástroje pro skriptování na služby IIS 6**.  
+14. Rozbalte položky označené **IIS 6 Management Compatibility**a pak vyberte **IIS 6 Scripting Tools**.  
   
-15. Rozbalte položky s popiskem **rozhraní Microsoft .NET Framework 3.0**a potom vyberte **aktivace Windows Communication Foundation Http**.  
+15. Rozbalte položky označené **rozhraní Microsoft .NET Framework 3.0**a pak vyberte **aktivace Windows Communication Foundation Http**.  
   
-16. Klikněte na tlačítko**OK**.  
+16. Klikněte na tlačítko **OK**.  
   
-### <a name="to-install-iis-version-60-on-windows-server-2003"></a>Instalace služby IIS verze 6.0 na Windows Server 2003  
+### <a name="to-install-iis-version-60-on-windows-server-2003"></a>Chcete-li nainstalovat službu IIS verze 6.0 v systému Windows Server 2003  
   
-1.  Z **Správa serveru**, klikněte na tlačítko **přidat nebo odebrat roli**a potom klikněte na **Další**.  
+1.  Z **Správa serveru**, klikněte na tlačítko **přidat nebo odebrat roli**a potom klikněte na tlačítko **Další**.  
   
-2.  Vyberte **aplikační server (IIS, ASP.NET)** z **Role serveru** seznamu a pak klikněte na tlačítko **Další**.  
+2.  Vyberte **aplikační server (IIS, ASP.NET)** z **Role serveru** seznamu a potom klikněte na tlačítko **Další**.  
   
-3.  Vyberte **povolit technologii ASP.NET** zaškrtněte políčko a potom klikněte na **Další**.  
+3.  Vyberte **povolit technologii ASP.NET** zaškrtněte políčko a potom klikněte na tlačítko **Další**.  
   
-4.  Pokud souhrn výběr správné, klikněte na tlačítko Další.  
+4.  Pokud správnost souhrn výběry, klikněte na tlačítko Další.  
   
-### <a name="to-install-iis-version-51-on-windows-xp-with-service-pack-2-and-service-pack-3-installed"></a>Chcete-li nainstalovat službu IIS verze 5.1 v systému Windows XP s aktualizací Service Pack 2 a aktualizací Service Pack 3 nainstalovány  
+### <a name="to-install-iis-version-51-on-windows-xp-with-service-pack-2-and-service-pack-3-installed"></a>Chcete-li nainstalovat službu IIS verze 5.1 na Windows XP s aktualizací Service Pack 2 a aktualizací Service Pack 3 nainstalovat  
   
 1.  V Ovládacích panelech klikněte na tlačítko **přidat nebo odebrat programy**.  
   
-2.  V **přidat nebo odebrat programy** dialogové okno, klikněte na tlačítko **přidat nebo odebrat součásti systému Windows**.  
+2.  V **přidat nebo odebrat programy** dialogové okno, klikněte na tlačítko **přidat nebo odebrat součásti Windows**.  
   
-3.  V **Průvodce součástmi systému Windows**, vyberte **Internetové informační služby (IIS)** zaškrtněte políčko a potom klikněte na **Další**.  
+3.  V **Průvodce součásti Windows**, vyberte **Internetové informační služby (IIS)** zaškrtněte políčko a potom klikněte na tlačítko **Další**.  
   
-4.  Pokud **soubory potřebné** se zobrazí dialogové okno, vložte disk instalace operačního systému, přejděte do složky i386 a pak klikněte na tlačítko **OK**.  
+4.  Pokud **soubory potřebné** dialogové okno se zobrazí, vložte instalační disk operačního systému, přejděte do složky i386 a pak klikněte na tlačítko **OK**.  
   
-5.  Po dokončení instalace, klikněte na tlačítko **Dokončit**.  
+5.  Po dokončení instalace klikněte na tlačítko **Dokončit**.  
   
 6.  Zavřete **přidat nebo odebrat programy** dialogové okno a potom zavřete **ovládací panely**.  
   
 ### <a name="to-verify-the-installation-of-iis-and-aspnet"></a>Ověření instalace služby IIS a ASP.NET  
   
-1.  Uložte soubor HTML nalezen na konci tohoto tématu v kořenovém adresáři \InetPub\wwwroot s názvem Default.aspx.  
+1.  Uložte soubor HTML najdete na konci tohoto tématu v kořenovém adresáři \InetPub\wwwroot a pojmenujte ho Default.aspx.  
   
 2.  Otevřete okno prohlížeče.  
   
-3.  Typ `http://localhost/Default.aspx` do pole Adresa a potom stiskněte klávesu ENTER.  
+3.  Typ `http://localhost/Default.aspx` do pole adresy a potom stiskněte klávesu ENTER.  
   
-4.  Webové stránky s textem "Hello World" by se zobrazit.  
+4.  By se zobrazit webovou stránku s textem "Hello World".  
   
 > [!NOTE]
->  Pokaždé, když instalujete novou verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], je nutné znovu zaregistrovat aspnet_isapi jako rozšíření webové služby pro službu IIS. Uděláte to tak, vydání `aspnet_regiis –I –enable` příkaz.  
+>  Pokaždé, když instalujete novou verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)], je nutné znovu zaregistrovat aspnet_isapi jako rozšíření webové služby pro službu IIS. Uděláte to tak, vydávat `aspnet_regiis –I –enable` příkazu.  
   
 ## <a name="sample-code"></a>Ukázkový kód  
   

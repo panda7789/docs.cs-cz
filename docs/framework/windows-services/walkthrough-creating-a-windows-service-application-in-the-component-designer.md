@@ -11,11 +11,11 @@ ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
 manager: douge
 ms.openlocfilehash: 27acdac5d34b96dd04fec1bb763edec9077ff928
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46288300"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46324415"
 ---
 # <a name="walkthrough-create-a-windows-service-app"></a>Návod: Vytvoření aplikace služby Windows
 

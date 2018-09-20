@@ -4,12 +4,12 @@ description: Zjistěte, jak můžete rozšířit nástroje rozhraní příkazov�
 author: blackdwarf
 ms.author: mairaw
 ms.date: 04/12/2017
-ms.openlocfilehash: a9cfebbeddbedc329432c805c5956b382a726a77
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.openlocfilehash: 9f54479704f547ada567619a82b24a47a0b104c4
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46288166"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46326579"
 ---
 # <a name="net-core-cli-tools-extensibility-model"></a>Model rozšiřitelnosti nástrojů rozhraní příkazového řádku .NET core
 
@@ -133,7 +133,7 @@ V následujícím příkladu vidíte cílový projekt pomocí souborů `csproj` 
 
 Použití vlastní cíle se uvede `<PackageReference>` , která odkazuje na balíček a jeho verzi v projektu, který se rozšiřuje. Na rozdíl od nástroje získat balíček vlastní cíle zahrnut do uzavření závislostí projektu náročné.
 
-Použití vlastní cíle závisí výhradně na tom, jak nakonfigurovat. Protože je cíl nástroje MSBuild, může záviset na daném cíli, spustit po jiném cíli a je také možné ručně vyvolat pomocí `dotnet msbuild /t:<target-name>` příkazu.
+Použití vlastní cíle závisí výhradně na tom, jak nakonfigurovat. Protože je cíl nástroje MSBuild, může záviset na daném cíli, spustit po jiném cíli a je také možné ručně vyvolat pomocí `dotnet msbuild -t:<target-name>` příkazu.
 
 Nicméně pokud chcete poskytovat lepší výkon pro vaše uživatele, můžete kombinovat jednotlivých projektů nástroje a vlastní cíle. V tomto scénáři nástroj jednotlivých projektů by v podstatě stačí přijmout cokoli, co potřebné parametry a, která převedla do požadované [ `dotnet msbuild` ](dotnet-msbuild.md) volání, které by se spustit cíl. Můžete zobrazit ukázku, tento druh synergii na [MVP Summit 2016 Hackathon ukázky](https://github.com/dotnet/MVPSummitHackathon2016) úložiště v [ `dotnet-packer` ](https://github.com/dotnet/MVPSummitHackathon2016/tree/master/dotnet-packer) projektu.
 

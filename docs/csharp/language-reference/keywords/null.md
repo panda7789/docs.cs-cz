@@ -8,11 +8,11 @@ helpviewer_keywords:
 - null keyword [C#]
 ms.assetid: fecb1c60-6232-4efe-87f7-9a86ba2e9119
 ms.openlocfilehash: 67961027c7eab40344251db3d57e4d80ca5e8cdc
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
-ms.translationtype: MT
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45741638"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46321033"
 ---
 # <a name="null-c-reference"></a>Null (Referenční dokumentace jazyka C#)
 

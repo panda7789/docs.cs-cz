@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fb187719ff502abe61ac5deb69c6427a4a64ab44
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45609914"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46321376"
 ---
 # <a name="spawninstance-function"></a>SpawnInstance – funkce
 Vytvoří novou instanci třídy.    

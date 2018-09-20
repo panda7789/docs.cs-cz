@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7ca4cc9fb65d1a4bd8713f969bbda5551ce5a2e2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46001048"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46325377"
 ---
 # <a name="qualifiersetdelete-function"></a>QualifierSet_Delete – funkce
 Odstraní zadaný kvalifikátor podle názvu.  

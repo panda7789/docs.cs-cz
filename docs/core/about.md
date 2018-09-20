@@ -5,11 +5,11 @@ author: richlander
 ms.author: mairaw
 ms.date: 08/01/2018
 ms.openlocfilehash: d9943246b683c8fd892e7bc5fd09a10b72e31a5f
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45969711"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46326391"
 ---
 # <a name="about-net-core"></a>Informace o .NET Core
 

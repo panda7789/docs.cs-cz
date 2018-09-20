@@ -9,11 +9,11 @@ ms.assetid: a4fb291f-5630-49ba-a49a-5b66c3b71e49
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9031f5df0d0f48dc2844cdfd0654ee4ab876cc22
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45745981"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46320747"
 ---
 # <a name="reading-an-xml-document-into-the-dom"></a>Čtení dokumentu XML do modelu DOM
 Informace o XML je načíst do paměti v různých formátech. Může být číst z řetězce, datového proudu, adresa URL, čtečky textu nebo třídu odvozenou z <xref:System.Xml.XmlReader>.  

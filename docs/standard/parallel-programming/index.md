@@ -8,11 +8,11 @@ ms.assetid: 4d83c690-ad2d-489e-a2e0-b85b898a672d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3d1cd0b797373da4cab59484e3e6302927d821ed
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45676730"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46320617"
 ---
 # <a name="parallel-programming-in-net"></a>Paralelní programování v .NET
 

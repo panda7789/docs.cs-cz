@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
 ms.openlocfilehash: 5d42ec77958e056b75b0e379f8ab520ac926c72a
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45972199"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46323194"
 ---
 # <a name="official-net-docker-images"></a>Oficiální Image .NET Dockeru
 

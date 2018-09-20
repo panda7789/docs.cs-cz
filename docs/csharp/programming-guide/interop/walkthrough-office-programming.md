@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 718be7e201788906fa0fad829922eb5b77b48aed
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 997affa2f4cc5332339a49450d68ab3aaadffc4b
+ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857307"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46321072"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Postupy: Programování pro Office (C# a Visual Basic)
 Visual Studio nabízí funkce v jazyce C# a Visual Basic, které zlepšují programování pro sadu Microsoft Office. Užitečné funkce jazyka C# zahrnout pojmenované a nepovinné argumenty a návratové hodnoty typu `dynamic`. Programování v modelu COM, můžete vynechat `ref` – klíčové slovo a získat přístup k indexované vlastnosti. Funkce v jazyce Visual Basic zahrnují automaticky implementované vlastnosti příkazy ve výrazech lambda a inicializátory kolekce.
@@ -176,7 +176,7 @@ Musíte mít aplikaci Microsoft Office Excel a Microsoft Office Word nainstalov�
   
 1.  V **Průzkumníka řešení**, klikněte na tlačítko **zobrazit všechny soubory** tlačítko. Rozbalte **odkazy** a pak zvolte položku **Microsoft.Office.Interop.Excel**. Zobrazíte stisknutím klávesy F4 **vlastnosti** okna.  
   
-2.  V **vlastnosti**okno, změna **Embed Interop Types** vlastnost z **True** k **False**.  
+2.  V **vlastnosti** okno Změnit **Embed Interop Types** vlastnost z **True** k **False**.  
   
 3.  Opakujte kroky 1 a 2 v tomto postupu pro `Microsoft.Office.Interop.Word`.  
   

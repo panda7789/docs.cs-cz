@@ -10,11 +10,11 @@ ms.assetid: 5388e02b-52f5-460e-a2b5-eeafe60eeebe
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9fbbe84811e3fa096b9e13c459143311bb75a198
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46288248"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46326631"
 ---
 # <a name="exception-throwing"></a>Vyvolání výjimek
 Vyvolání výjimek pokynů popsaných v této části vyžadují správné definice význam selhání spuštění. Chyba při spuštění vyvolá se při každém člena nelze provést, který byl navržený tak, aby se (co člen již název napovídá). Například pokud `OpenFile` metoda popisovač otevřený soubor nemůže vracet volajícímu, může být považován Chyba při spuštění.  

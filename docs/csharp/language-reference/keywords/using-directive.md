@@ -5,11 +5,11 @@ helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
 ms.openlocfilehash: 1ed7ac49cde6792cddff898e8b9930a83598e02c
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46008591"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46326030"
 ---
 # <a name="using-directive-c-reference"></a>using – direktiva (Referenční dokumentace jazyka C#)
 `using` – Direktiva má tři používá:  

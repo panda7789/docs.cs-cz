@@ -13,11 +13,11 @@ ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: b66881a8a42c0c34b5c2119f7404fe7787c8f3f2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988476"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46323753"
 ---
 # <a name="pausing-and-interrupting-threads"></a>Pozastavení a přerušení vlákna
 

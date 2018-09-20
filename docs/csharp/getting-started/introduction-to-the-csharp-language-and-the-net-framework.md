@@ -7,11 +7,11 @@ helpviewer_keywords:
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
 ms.openlocfilehash: 75ef14032ee2211d3b8d355f050ced67b4a04930
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988254"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46326290"
 ---
 # <a name="introduction-to-the-c-language-and-the-net-framework"></a>Úvod do jazyka C# a rozhraní .NET Framework
 

@@ -9,11 +9,11 @@ ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c24fe637514ba773cecc7824de276b1707a4e90c
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46288064"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46324552"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>XmlSchemaSet pro kompilaci schématu
 Popisuje <xref:System.Xml.Schema.XmlSchemaSet>, mezipaměti, kde můžete ukládat a ověření schématu XML definice jazyk (XSD) schémata.  

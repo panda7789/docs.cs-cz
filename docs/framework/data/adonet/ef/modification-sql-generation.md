@@ -3,11 +3,11 @@ title: Úpravy generování SQL
 ms.date: 03/30/2017
 ms.assetid: 2188a39d-46ed-4a8b-906a-c9f15e6fefd1
 ms.openlocfilehash: 8e0568e32094b6cc27137409f3d908928d82cebb
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45989953"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46323866"
 ---
 # <a name="modification-sql-generation"></a>Úpravy generování SQL
 Tato část popisuje, jak vyvinout úprav modulu generování SQL pro vaše (SQL:1999 – databáze kompatibilní) zprostředkovatele. Tento modul je zodpovědná za překládá úpravy stromu příkazů na příslušné příkazy SQL INSERT, UPDATE nebo DELETE.  

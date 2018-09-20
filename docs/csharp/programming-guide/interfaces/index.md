@@ -6,11 +6,11 @@ helpviewer_keywords:
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
 ms.openlocfilehash: fba595cca4d96fc9cd0f0966f45d1668181b2ec9
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45625084"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46321402"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 

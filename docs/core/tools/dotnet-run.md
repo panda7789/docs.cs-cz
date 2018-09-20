@@ -5,11 +5,11 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
 ms.openlocfilehash: f560e6f795f00488818647a4b5c711dcf9d59dcd
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45749982"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46324526"
 ---
 # <a name="dotnet-run"></a>Spusťte příkaz DotNet
 

@@ -2,21 +2,21 @@
 title: Přístup k informacím OperationContext ze služby pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
-ms.openlocfilehash: 11c10e83c02ec0e2e74462e84c68fd2fcd3ff761
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 15dd817dddbe3272b188f6b74697f8c5839d498b
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495564"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46326368"
 ---
 # <a name="accessing-operationcontext-from-a-workflow-service"></a>Přístup k informacím OperationContext ze služby pracovních postupů
-Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby pracovních postupů, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. Přepsání <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda, která se předá odkaz na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace tato vlastnost provádění načíst vlastní hlavičky, jakož i vlastní aktivity, který bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> informace budou načteny.  Toto téma také ukazuje, jak získat přístup na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí hlavičky prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  
+Přístup <xref:System.ServiceModel.OperationContext> uvnitř služby pracovního postupu, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní ve vlastnosti vlastní spuštění. Přepsat <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metodu, která je předána odkazem na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace této vlastnosti spuštění načíst vlastní hlavičky, stejně jako vlastní aktivitu, která bude přinášet tuto vlastnost na <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivita provede stejné chování jako <xref:System.Activities.Statements.Sequence> aktivity, s výjimkou, že <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř této, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> načte informace.  Toto téma také ukazuje, jak získat přístup k na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí záhlaví prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  
   
 ### <a name="implement-the-service-side-ireceivemessagecallback"></a>Implementace IReceiveMessageCallback straně služby  
   
 1.  Vytvořte prázdnou [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] řešení.  
   
-2.  Přidejte novou aplikaci konzoly s názvem `Service` k řešení.  
+2.  Přidat novou aplikaci konzoly s názvem `Service` do řešení.  
   
 3.  Přidejte odkazy na následující sestavení:  
   
@@ -49,13 +49,13 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-     Tento kód používá <xref:System.ServiceModel.OperationContext> předán do metody pro přístup k hlavičky příchozí zprávy.  
+     Tento kód používá <xref:System.ServiceModel.OperationContext> předané do metody pro přístup k příchozí zprávě záhlaví.  
   
-### <a name="implement-a-service-side-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a>Implementace aktivitu nativní straně služby pro přidání do NativeActivityContext IReceiveMessageCallback implementace  
+### <a name="implement-a-service-side-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a>Implementujte aktivitu nativní straně služby a přidejte implementaci IReceiveMessageCallback NativeActivityContext  
   
-1.  Přidání nové třídy odvozené od <xref:System.Activities.NativeActivity> názvem `ReceiveInstanceIdScope`.  
+1.  Přidejte novou třídu odvozenou z <xref:System.Activities.NativeActivity> volá `ReceiveInstanceIdScope`.  
   
-2.  Přidejte ke sledování podřízené aktivity, proměnné, index aktuální aktivity, místní proměnné a <xref:System.Activities.CompletionCallback> zpětného volání.  
+2.  Přidání místní proměnné k udržení přehledu o podřízené aktivity, proměnné, aktuální index aktivity a <xref:System.Activities.CompletionCallback> zpětného volání.  
   
     ```  
     public sealed class ReceiveInstanceIdScope : NativeActivity  
@@ -67,7 +67,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-3.  Implementace konstruktoru  
+3.  Implementací konstruktoru  
   
     ```  
     public ReceiveInstanceIdScope()  
@@ -144,9 +144,9 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
   
 ### <a name="implement-the-workflow-service"></a>Implementace služby pracovního postupu  
   
-1.  Otevřete existující `Program` třídy.  
+1.  Otevřít existující `Program` třídy.  
   
-2.  Definujte následující konstanty:  
+2.  Definují následující konstanty:  
   
     ```  
     class Program  
@@ -156,7 +156,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-3.  Přidat statickou metodu s názvem `GetWorkflowService` vytvářející služby pracovního postupu.  
+3.  Přidat volána statická metoda `GetWorkflowService` , který vytváří služba pracovního postupu.  
   
     ```  
     static Activity GetServiceWorkflow()  
@@ -194,7 +194,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
             }  
     ```  
   
-4.  Ve stávající `Main` metoda hostitele služby pracovního postupu.  
+4.  V existujícím `Main` metoda hostitele služby pracovního postupu.  
   
     ```  
     static void Main(string[] args)  
@@ -216,7 +216,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
   
 ### <a name="implement-the-client-side-isendmessagecallback"></a>Implementace ISendMessageCallback na straně klienta  
   
-1.  Přidejte novou aplikaci konzoly s názvem `Service` k řešení.  
+1.  Přidat novou aplikaci konzoly s názvem `Service` do řešení.  
   
 2.  Přidejte odkazy na následující sestavení:  
   
@@ -243,13 +243,13 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
         }  
     ```  
   
-     Tento kód používá <xref:System.ServiceModel.OperationContext> předaný do metody přidat vlastní hlavičku pro příchozí zprávy.  
+     Tento kód používá <xref:System.ServiceModel.OperationContext> předané do metody přidat vlastní hlavičku pro příchozí zprávy.  
   
-### <a name="implement-a-client-side-native-activity-to-add-the-client-side-isendmessagecallback-implementation-to-the-nativeactivitycontext"></a>Implementace aktivitu nativní straně klienta pro přidání do NativeActivityContext implementace ISendMessageCallback straně klienta  
+### <a name="implement-a-client-side-native-activity-to-add-the-client-side-isendmessagecallback-implementation-to-the-nativeactivitycontext"></a>Implementujte aktivitu nativní na straně klienta a přidat implementaci ISendMessageCallback na straně klienta NativeActivityContext  
   
-1.  Přidání nové třídy odvozené od <xref:System.Activities.NativeActivity> názvem `SendInstanceIdScope`.  
+1.  Přidejte novou třídu odvozenou z <xref:System.Activities.NativeActivity> volá `SendInstanceIdScope`.  
   
-2.  Přidejte ke sledování podřízené aktivity, proměnné, index aktuální aktivity, místní proměnné a <xref:System.Activities.CompletionCallback> zpětného volání.  
+2.  Přidání místní proměnné k udržení přehledu o podřízené aktivity, proměnné, aktuální index aktivity a <xref:System.Activities.CompletionCallback> zpětného volání.  
   
     ```  
     public sealed class SendInstanceIdScope : NativeActivity  
@@ -261,7 +261,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     }  
     ```  
   
-3.  Implementace konstruktoru  
+3.  Implementací konstruktoru  
   
     ```  
     public SendInstanceIdScope()  
@@ -372,13 +372,13 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
   
 2.  Přidejte odkazy na následující sestavení:  
   
-    1.  Systém.  
+    1.  System.Activities  
   
     2.  System.ServiceModel  
   
     3.  System.ServiceModel.Activities  
   
-3.  Otevřete generovaný soubor Program.cs a přidejte statickou metodu s názvem `GetClientWorkflow` vytvoření pracovního postupu klienta.  
+3.  Otevřete vygenerovaný soubor Program.cs a přidejte volána statická metoda `GetClientWorkflow` k vytvoření klienta pracovní postup.  
   
     ```  
     static Activity GetClientWorkflow()  
@@ -438,7 +438,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
             }  
     ```  
   
-4.  Přidejte následující hostování kód, který `Main()` metoda.  
+4.  Přidejte následující kód hostování na `Main()` metody.  
   
     ```  
     static void Main(string[] args)  
@@ -452,7 +452,7 @@ Pro přístup k <xref:System.ServiceModel.OperationContext> uvnitř služby prac
     ```  
   
 ## <a name="example"></a>Příklad  
- Tady je úplný zdrojový kód použitý v tomto tématu.  
+ Tady je úplný seznam všech zdroj kód použitý v tomto tématu.  
   
 ```  
 // ReceiveInstanceIdScope.cs  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
 ms.openlocfilehash: 84c5aee8d2bc7d31ebcfee98930d9a0847c527d5
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45678914"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46323868"
 ---
 # <a name="how-to-bind-to-a-web-service"></a>Postupy: Připojení k webové službě
 Tento příklad ukazuje, jak svázat objekty vrácené z volání metody webové služby.  

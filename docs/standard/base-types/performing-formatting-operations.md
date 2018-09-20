@@ -13,11 +13,11 @@ ms.assetid: 36e7e096-4e6c-4cf2-9ab6-68073026ea0e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a1d9f62055b497aa7522d589610c12badb2361d5
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747241"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46325770"
 ---
 # <a name="performing-formatting-operations"></a>Provádění operací formátování
 Následující témata obsahují podrobné pokyny pro provádění určitých operací formátování.  

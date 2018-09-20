@@ -3,11 +3,11 @@ title: FILESTREAM Data
 ms.date: 03/30/2017
 ms.assetid: bd8b845c-0f09-4295-b466-97ef106eefa8
 ms.openlocfilehash: eef03d171d288cb2bc62c3aaa477a95a5ce718c3
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45647840"
+ms.lasthandoff: 09/19/2018
+ms.locfileid: "46323662"
 ---
 # <a name="filestream-data"></a>FILESTREAM Data
 Atribut úložiště FILESTREAM je binárních (objektů BLOB) data uložená v sloupce varbinary(max). Před FILESTREAM ukládání binárních dat vyžaduje speciální zacházení. Nestrukturovaných dat, jako jsou textové dokumenty, obrázky a videa, je často uložená mimo databázi kvůli tomu obtížné spravovat.  
