@@ -10,11 +10,11 @@ ms.assetid: c6baed9f-2a25-4728-9a9a-53b7b14840cf
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: be4935d74affa227386aa6c63dad13e7e2f7d3dd
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45741998"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46480627"
 ---
 # <a name="event-based-asynchronous-pattern-eap"></a>Asynchronní vzor založený na událostech (EAP)
 

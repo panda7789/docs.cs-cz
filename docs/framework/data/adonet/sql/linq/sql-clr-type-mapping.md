@@ -2,12 +2,12 @@
 title: Mapování typů SQL a CLR
 ms.date: 07/23/2018
 ms.assetid: 4ed76327-54a7-414b-82a9-7579bfcec04b
-ms.openlocfilehash: ac00d78fff65f5d44a52f92509db3aa493952949
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: d5c0072d8561efa1211de191a1f2b6f3a1e55b7b
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43862102"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46478692"
 ---
 # <a name="sql-clr-type-mapping"></a>Mapování typů SQL a CLR
 V technologii LINQ to SQL datový model relační databáze mapuje na objektový model vyjádřený v programovacím jazyce podle vašeho výběru. Při spuštění aplikace, technologie LINQ to SQL integrovaný jazyk dotazů v objektovém modelu převádí na SQL a odesílá je do databáze pro spuštění. Když databázi vrátí výsledky, LINQ to SQL přeloží výsledky zpět na objekty, které můžete pracovat s vlastními programovací jazyk.  
@@ -122,7 +122,7 @@ V technologii LINQ to SQL datový model relační databáze mapuje na objektový
  Existuje mnoho dalších číselných mapování, které můžete, ale některé může vést k přetečení nebo data ztráty výjimky při převodu do nebo z databáze. Další informace najdete v tématu [typ mapování spustit čas chování matice](#BehaviorMatrix).  
   
 ### <a name="decimal-and-money-types"></a>Decimal a typy peníze  
- Výchozí přesnost systému SQL Server `DECIMAL` typ (18 desítkových číslic vlevo a vpravo od desetinné čárky) je mnohem menší než přesnost CLR <!--zz <xref:System.Decima?displayProperty=nameWithType>l --> `Decimal` typ, který je spárovaná s ve výchozím nastavení. To může způsobit ztrátu přesnosti při ukládání dat do databáze. Však stačí opak může dojít, pokud SQL Server `DECIMAL` typ je nakonfigurován s víc než 29 platnými číslicemi přesnosti. Pokud SQL Server `DECIMAL` typ byl nakonfigurován s větší přesností než CLR <xref:System.Decimal?displayProperty=nameWithType>, může dojít ke ztrátě přesnosti, při načítání dat z databáze.  
+ Výchozí přesnost systému SQL Server `DECIMAL` typ (18 desítkových číslic vlevo a vpravo od desetinné čárky) je mnohem menší než přesnost CLR <xref:System.Decimal?displayProperty=nameWithType> typ, který je spárovaná s ve výchozím nastavení. To může způsobit ztrátu přesnosti při ukládání dat do databáze. Však stačí opak může dojít, pokud SQL Server `DECIMAL` typ je nakonfigurován s víc než 29 platnými číslicemi přesnosti. Pokud SQL Server `DECIMAL` typ byl nakonfigurován s větší přesností než CLR <xref:System.Decimal?displayProperty=nameWithType>, může dojít ke ztrátě přesnosti, při načítání dat z databáze.  
   
  SQL Server `MONEY` a `SMALLMONEY` typy, které jsou také spárovat s modulem CLR <xref:System.Decimal?displayProperty=nameWithType> zadejte ve výchozím nastavení, mají mnohem menší přesností, což může vést ke ztrátě výjimky přetečení nebo dat při ukládání dat do databáze.  
   
