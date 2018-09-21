@@ -7,18 +7,18 @@ helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
 ms.openlocfilehash: 3957d58f61e51fab01618f5e1146be9cd0da58fd
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46323136"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46525565"
 ---
-# <a name="undef-c-reference"></a><span data-ttu-id="4c76b-102">#undef (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="4c76b-102">#undef (C# Reference)</span></span>
-<span data-ttu-id="4c76b-103">`#undef` můžete nedefinovat symbol, tak, že při použití symbolu jako výraz v [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktiv, bude výraz vyhodnocen na `false`.</span><span class="sxs-lookup"><span data-stu-id="4c76b-103">`#undef` lets you undefine a symbol, such that, by using the symbol as the expression in a [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) directive, the expression will evaluate to `false`.</span></span>  
+# <a name="undef-c-reference"></a><span data-ttu-id="3e968-102">#undef (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="3e968-102">#undef (C# Reference)</span></span>
+<span data-ttu-id="3e968-103">`#undef` můžete nedefinovat symbol, tak, že při použití symbolu jako výraz v [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktiv, bude výraz vyhodnocen na `false`.</span><span class="sxs-lookup"><span data-stu-id="3e968-103">`#undef` lets you undefine a symbol, such that, by using the symbol as the expression in a [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) directive, the expression will evaluate to `false`.</span></span>  
   
- <span data-ttu-id="4c76b-104">Symbol může být definována buď [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) – direktiva nebo [-definovat](../../../csharp/language-reference/compiler-options/define-compiler-option.md) – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="4c76b-104">A symbol can be defined either with the [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) directive or the [-define](../../../csharp/language-reference/compiler-options/define-compiler-option.md) compiler option.</span></span> <span data-ttu-id="4c76b-105">`#undef` Direktiva musí být uvedená v souboru, než použijete všechny příkazy, které nejsou také direktivy.</span><span class="sxs-lookup"><span data-stu-id="4c76b-105">The `#undef` directive must appear in the file before you use any statements that are not also directives.</span></span>  
+ <span data-ttu-id="3e968-104">Symbol může být definována buď [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) – direktiva nebo [-definovat](../../../csharp/language-reference/compiler-options/define-compiler-option.md) – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="3e968-104">A symbol can be defined either with the [#define](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md) directive or the [-define](../../../csharp/language-reference/compiler-options/define-compiler-option.md) compiler option.</span></span> <span data-ttu-id="3e968-105">`#undef` Direktiva musí být uvedená v souboru, než použijete všechny příkazy, které nejsou také direktivy.</span><span class="sxs-lookup"><span data-stu-id="3e968-105">The `#undef` directive must appear in the file before you use any statements that are not also directives.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4c76b-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="4c76b-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="3e968-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="3e968-106">Example</span></span>  
 
 ```csharp
 // preprocessor_undef.cs  
@@ -38,10 +38,10 @@ class MyClass
 }  
 ```
 
-<span data-ttu-id="4c76b-107">**LADĚNÍ není definován.**</span><span class="sxs-lookup"><span data-stu-id="4c76b-107">**DEBUG is not defined**</span></span>
+<span data-ttu-id="3e968-107">**LADĚNÍ není definován.**</span><span class="sxs-lookup"><span data-stu-id="3e968-107">**DEBUG is not defined**</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="4c76b-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="4c76b-108">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3e968-108">Viz také</span><span class="sxs-lookup"><span data-stu-id="3e968-108">See Also</span></span>
 
-- [<span data-ttu-id="4c76b-109">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="4c76b-109">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="4c76b-110">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="4c76b-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="4c76b-111">C# Direktivy preprocesoru</span><span class="sxs-lookup"><span data-stu-id="4c76b-111">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [<span data-ttu-id="3e968-109">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3e968-109">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="3e968-110">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="3e968-110">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="3e968-111">C# Direktivy preprocesoru</span><span class="sxs-lookup"><span data-stu-id="3e968-111">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)

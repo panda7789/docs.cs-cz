@@ -1,5 +1,5 @@
 ---
-title: '&lt;Přidat&gt; element pro &lt;appSettings&gt;'
+title: '&lt;Přidat&gt; – element pro &lt;appSettings&gt;'
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings/add
@@ -9,22 +9,22 @@ helpviewer_keywords:
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
 author: guardrex
 ms.author: mairaw
-ms.openlocfilehash: 35a9fc08033d2b9cd1dae5a1f1f3ddcd361f03eb
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: bcdac76528e7a8b07b56b6fd1d827c3c8072c371
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753635"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46529577"
 ---
-# <a name="add-element-for-appsettings"></a><span data-ttu-id="6183e-102">\<Přidat > elementu pro \<appSettings ></span><span class="sxs-lookup"><span data-stu-id="6183e-102">\<add> element for \<appSettings></span></span>
+# <a name="add-element-for-appsettings"></a><span data-ttu-id="50438-102">\<Přidat > – element pro \<appSettings ></span><span class="sxs-lookup"><span data-stu-id="50438-102">\<add> element for \<appSettings></span></span>
 
-<span data-ttu-id="6183e-103">Přidá vlastní nastavení aplikace.</span><span class="sxs-lookup"><span data-stu-id="6183e-103">Adds a custom application setting.</span></span>
+<span data-ttu-id="50438-103">Přidá nastavení vlastní aplikace.</span><span class="sxs-lookup"><span data-stu-id="50438-103">Adds a custom application setting.</span></span>
 
-<span data-ttu-id="6183e-104">[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="6183e-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
-<span data-ttu-id="6183e-105">&nbsp;&nbsp;[**\<appSettings >**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="6183e-105">&nbsp;&nbsp;[**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) </span></span>  
-<span data-ttu-id="6183e-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<Přidat >**</span><span class="sxs-lookup"><span data-stu-id="6183e-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**</span></span>
+<span data-ttu-id="50438-104">[**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span><span class="sxs-lookup"><span data-stu-id="50438-104">[**\<configuration>**](~/docs/framework/configure-apps/file-schema/configuration-element.md) </span></span>  
+<span data-ttu-id="50438-105">&nbsp;&nbsp;[**\<appSettings >**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) </span><span class="sxs-lookup"><span data-stu-id="50438-105">&nbsp;&nbsp;[**\<appSettings>**](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) </span></span>  
+<span data-ttu-id="50438-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<Přidat >**</span><span class="sxs-lookup"><span data-stu-id="50438-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="6183e-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6183e-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="50438-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="50438-107">Syntax</span></span>
 
 ```xml
 <appSettings>
@@ -32,26 +32,26 @@ ms.locfileid: "32753635"
 </appSettings>
 ```
 
-## <a name="attributes"></a><span data-ttu-id="6183e-108">Atributy</span><span class="sxs-lookup"><span data-stu-id="6183e-108">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="50438-108">Atributy</span><span class="sxs-lookup"><span data-stu-id="50438-108">Attributes</span></span>
 
-|           | <span data-ttu-id="6183e-109">Popis</span><span class="sxs-lookup"><span data-stu-id="6183e-109">Description</span></span> |
+|           | <span data-ttu-id="50438-109">Popis</span><span class="sxs-lookup"><span data-stu-id="50438-109">Description</span></span> |
 | --------- | ----------- |
-| <span data-ttu-id="6183e-110">**Klíč**</span><span class="sxs-lookup"><span data-stu-id="6183e-110">**key**</span></span>   | <span data-ttu-id="6183e-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="6183e-111">Required attribute.</span></span><br><br><span data-ttu-id="6183e-112">Určuje název klíč k přidání.</span><span class="sxs-lookup"><span data-stu-id="6183e-112">Specifies the name of the key to add.</span></span> |
-| <span data-ttu-id="6183e-113">**value**</span><span class="sxs-lookup"><span data-stu-id="6183e-113">**value**</span></span> | <span data-ttu-id="6183e-114">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="6183e-114">Required attribute.</span></span><br><br><span data-ttu-id="6183e-115">Určuje hodnotu klíč k přidání.</span><span class="sxs-lookup"><span data-stu-id="6183e-115">Specifies the value of the key to add.</span></span> |
+| <span data-ttu-id="50438-110">**Klíč**</span><span class="sxs-lookup"><span data-stu-id="50438-110">**key**</span></span>   | <span data-ttu-id="50438-111">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="50438-111">Required attribute.</span></span><br><br><span data-ttu-id="50438-112">Určuje název klíče pro přidání.</span><span class="sxs-lookup"><span data-stu-id="50438-112">Specifies the name of the key to add.</span></span> |
+| <span data-ttu-id="50438-113">**value**</span><span class="sxs-lookup"><span data-stu-id="50438-113">**value**</span></span> | <span data-ttu-id="50438-114">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="50438-114">Required attribute.</span></span><br><br><span data-ttu-id="50438-115">Určuje hodnotu klíče pro přidání.</span><span class="sxs-lookup"><span data-stu-id="50438-115">Specifies the value of the key to add.</span></span> |
 
-## <a name="parent-element"></a><span data-ttu-id="6183e-116">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="6183e-116">Parent element</span></span>
+## <a name="parent-element"></a><span data-ttu-id="50438-116">Nadřazený element</span><span class="sxs-lookup"><span data-stu-id="50438-116">Parent element</span></span>
 
-|     | <span data-ttu-id="6183e-117">Popis</span><span class="sxs-lookup"><span data-stu-id="6183e-117">Description</span></span> |
+|     | <span data-ttu-id="50438-117">Popis</span><span class="sxs-lookup"><span data-stu-id="50438-117">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="6183e-118">**\<appSettings >**</span><span class="sxs-lookup"><span data-stu-id="6183e-118">**\<appSettings>**</span></span>](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | <span data-ttu-id="6183e-119">Obsahuje nastavení vlastní aplikace, například cesty k souborům, adresy URL XML webových služeb nebo všechny ostatní informace vlastní konfigurace pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="6183e-119">Contains custom application settings, such as file paths, XML Web service URLs, or any other custom configuration information for an application.</span></span> |
+| [<span data-ttu-id="50438-118">**\<appSettings >**</span><span class="sxs-lookup"><span data-stu-id="50438-118">**\<appSettings>**</span></span>](~/docs/framework/configure-apps/file-schema/appsettings/appsettings-element-for-configuration.md) | <span data-ttu-id="50438-119">Obsahuje vlastní nastavení aplikace, jako je například cesty k souborům, adresy URL XML webových služeb nebo nějakých jiných informací vlastní konfigurace pro aplikaci.</span><span class="sxs-lookup"><span data-stu-id="50438-119">Contains custom application settings, such as file paths, XML Web service URLs, or any other custom configuration information for an application.</span></span> |
 
-## <a name="child-elements"></a><span data-ttu-id="6183e-120">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="6183e-120">Child elements</span></span>
+## <a name="child-elements"></a><span data-ttu-id="50438-120">Podřízené prvky</span><span class="sxs-lookup"><span data-stu-id="50438-120">Child elements</span></span>
 
-<span data-ttu-id="6183e-121">Žádné</span><span class="sxs-lookup"><span data-stu-id="6183e-121">None</span></span>
+<span data-ttu-id="50438-121">Žádné</span><span class="sxs-lookup"><span data-stu-id="50438-121">None</span></span>
 
-## <a name="example"></a><span data-ttu-id="6183e-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="6183e-122">Example</span></span>
+## <a name="example"></a><span data-ttu-id="50438-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="50438-122">Example</span></span>
 
-<span data-ttu-id="6183e-123">Následující příklad ukazuje, jak přidat vlastní konfigurace nastavení pro název aplikace:</span><span class="sxs-lookup"><span data-stu-id="6183e-123">The following example shows how to add a custom configuration setting for the application's name:</span></span>
+<span data-ttu-id="50438-123">Následující příklad ukazuje, jak přidat vlastní nastavení pro název aplikace:</span><span class="sxs-lookup"><span data-stu-id="50438-123">The following example shows how to add a custom configuration setting for the application's name:</span></span>
 
 ```xml
 <appSettings>
@@ -59,6 +59,15 @@ ms.locfileid: "32753635"
 </appSettings>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6183e-124">Viz také</span><span class="sxs-lookup"><span data-stu-id="6183e-124">See also</span></span>
+<span data-ttu-id="50438-124">V následujícím příkladu `<add>` element definovat dvě nastavení kompatibility v aplikaci technologie ASP.NET:</span><span class="sxs-lookup"><span data-stu-id="50438-124">The following example uses the `<add>` element to define two compatibility settings in an ASP.NET application:</span></span>
 
-[<span data-ttu-id="6183e-125">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="6183e-125">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)
+```xml
+<appSettings>
+  <add key="AppContext.SetSwitch:Switch.System.Globalization.NoAsyncCurrentCulture" value="true" />
+  <add key="AppContext.SetSwitch:Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets" value="true" />
+</appSettings>
+```
+
+## <a name="see-also"></a><span data-ttu-id="50438-125">Viz také:</span><span class="sxs-lookup"><span data-stu-id="50438-125">See also</span></span>
+
+[<span data-ttu-id="50438-126">Schéma konfiguračního souboru pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="50438-126">Configuration file schema for the .NET Framework</span></span>](~/docs/framework/configure-apps/file-schema/index.md)

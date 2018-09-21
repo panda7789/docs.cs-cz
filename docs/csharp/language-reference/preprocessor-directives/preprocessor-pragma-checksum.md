@@ -7,41 +7,41 @@ helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
 ms.openlocfilehash: 28a9ccfb9d36e648304a177294904ab1b7f18892
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
-ms.translationtype: HT
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46478237"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46508898"
 ---
-# <a name="pragma-checksum-c-reference"></a><span data-ttu-id="3b9bd-102">#pragma – kontrolní součet (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="3b9bd-102">#pragma checksum (C# Reference)</span></span>
-<span data-ttu-id="3b9bd-103">Generuje kontrolní součty zdrojových souborů, které vám pomůže s laděním [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-103">Generates checksums for source files to aid with debugging [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] pages.</span></span>  
+# <a name="pragma-checksum-c-reference"></a><span data-ttu-id="90796-102">#pragma – kontrolní součet (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="90796-102">#pragma checksum (C# Reference)</span></span>
+<span data-ttu-id="90796-103">Generuje kontrolní součty zdrojových souborů, které vám pomůže s laděním [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="90796-103">Generates checksums for source files to aid with debugging [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] pages.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3b9bd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3b9bd-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="90796-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="90796-104">Syntax</span></span>  
   
 ```csharp
 #pragma checksum "filename" "{guid}" "checksum bytes"  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="3b9bd-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3b9bd-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="90796-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="90796-105">Parameters</span></span>  
  `"filename"`  
- <span data-ttu-id="3b9bd-106">Název souboru, který vyžaduje monitorování pro změny nebo aktualizace.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-106">The name of the file that requires monitoring for changes or updates.</span></span>  
+ <span data-ttu-id="90796-106">Název souboru, který vyžaduje monitorování pro změny nebo aktualizace.</span><span class="sxs-lookup"><span data-stu-id="90796-106">The name of the file that requires monitoring for changes or updates.</span></span>  
   
  `"{guid}"`  
- <span data-ttu-id="3b9bd-107">Globálně jedinečný identifikátor (GUID) pro algoritmus hash.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-107">The Globally Unique Identifier (GUID) for the hash algorithm.</span></span>  
+ <span data-ttu-id="90796-107">Globálně jedinečný identifikátor (GUID) pro algoritmus hash.</span><span class="sxs-lookup"><span data-stu-id="90796-107">The Globally Unique Identifier (GUID) for the hash algorithm.</span></span>  
   
  `"checksum_bytes"`  
- <span data-ttu-id="3b9bd-108">Řetězec šestnáctkových číslic představující počet bajtů kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-108">The string of hexadecimal digits representing the bytes of the checksum.</span></span> <span data-ttu-id="3b9bd-109">Musí být sudý počet šestnáctkových číslic.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-109">Must be an even number of hexadecimal digits.</span></span> <span data-ttu-id="3b9bd-110">Lichý počet číslic za následek upozornění kompilace a direktiva se ignoruje.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-110">An odd number of digits results in a compile-time warning, and the directive are ignored.</span></span>  
+ <span data-ttu-id="90796-108">Řetězec šestnáctkových číslic představující počet bajtů kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="90796-108">The string of hexadecimal digits representing the bytes of the checksum.</span></span> <span data-ttu-id="90796-109">Musí být sudý počet šestnáctkových číslic.</span><span class="sxs-lookup"><span data-stu-id="90796-109">Must be an even number of hexadecimal digits.</span></span> <span data-ttu-id="90796-110">Lichý počet číslic za následek upozornění kompilace a direktiva se ignoruje.</span><span class="sxs-lookup"><span data-stu-id="90796-110">An odd number of digits results in a compile-time warning, and the directive are ignored.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="3b9bd-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3b9bd-111">Remarks</span></span>  
- <span data-ttu-id="3b9bd-112">Ladicí program sady Visual Studio používá kontrolní součet abyste měli jistotu, že vždy najde správný zdroj.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-112">The Visual Studio debugger uses a checksum to make sure  that it always finds the right source.</span></span> <span data-ttu-id="3b9bd-113">Kompilátor vypočítá kontrolního součtu pro zdrojový soubor a potom generuje výstup do souboru databáze (PDB) programu.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-113">The compiler computes the checksum for a source file, and then emits the output to the program database (PDB) file.</span></span> <span data-ttu-id="3b9bd-114">Ladicí program použije soubor PDB pro porovnání, která vypočítá pro zdrojový soubor kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-114">The debugger then uses the PDB to compare against the checksum that it computes for the source file.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="90796-111">Poznámky</span><span class="sxs-lookup"><span data-stu-id="90796-111">Remarks</span></span>  
+ <span data-ttu-id="90796-112">Ladicí program sady Visual Studio používá kontrolní součet abyste měli jistotu, že vždy najde správný zdroj.</span><span class="sxs-lookup"><span data-stu-id="90796-112">The Visual Studio debugger uses a checksum to make sure  that it always finds the right source.</span></span> <span data-ttu-id="90796-113">Kompilátor vypočítá kontrolního součtu pro zdrojový soubor a potom generuje výstup do souboru databáze (PDB) programu.</span><span class="sxs-lookup"><span data-stu-id="90796-113">The compiler computes the checksum for a source file, and then emits the output to the program database (PDB) file.</span></span> <span data-ttu-id="90796-114">Ladicí program použije soubor PDB pro porovnání, která vypočítá pro zdrojový soubor kontrolního součtu.</span><span class="sxs-lookup"><span data-stu-id="90796-114">The debugger then uses the PDB to compare against the checksum that it computes for the source file.</span></span>  
   
- <span data-ttu-id="3b9bd-115">Toto řešení nefunguje pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] projekty, protože počítaný kontrolního součtu je vytvořeném zdrojovém souboru, nikoli soubor .aspx.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-115">This solution does not work for [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] projects, because the computed checksum is for the generated source file, rather than the .aspx file.</span></span> <span data-ttu-id="3b9bd-116">Chcete-li vyřešit tento problém `#pragma checksum` poskytuje podporu kontrolního součtu pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-116">To address this problem, `#pragma checksum` provides checksum support for [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] pages.</span></span>  
+ <span data-ttu-id="90796-115">Toto řešení nefunguje pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] projekty, protože počítaný kontrolního součtu je vytvořeném zdrojovém souboru, nikoli soubor .aspx.</span><span class="sxs-lookup"><span data-stu-id="90796-115">This solution does not work for [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] projects, because the computed checksum is for the generated source file, rather than the .aspx file.</span></span> <span data-ttu-id="90796-116">Chcete-li vyřešit tento problém `#pragma checksum` poskytuje podporu kontrolního součtu pro [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] stránky.</span><span class="sxs-lookup"><span data-stu-id="90796-116">To address this problem, `#pragma checksum` provides checksum support for [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] pages.</span></span>  
   
- <span data-ttu-id="3b9bd-117">Při vytváření [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] projektu v jazyce Visual C#, vytvořeném zdrojovém souboru obsahuje kontrolní součet souboru .aspx, ze kterého se vygeneruje zdroj.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-117">When you create an [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] project in Visual C#, the generated source file contains a checksum for the .aspx file, from which the source is generated.</span></span> <span data-ttu-id="3b9bd-118">Kompilátor pak tyto informace zapisuje do souboru PDB.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-118">The compiler then writes this information into the PDB file.</span></span>  
+ <span data-ttu-id="90796-117">Při vytváření [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] projektu v jazyce Visual C#, vytvořeném zdrojovém souboru obsahuje kontrolní součet souboru .aspx, ze kterého se vygeneruje zdroj.</span><span class="sxs-lookup"><span data-stu-id="90796-117">When you create an [!INCLUDE[vstecasp](~/includes/vstecasp-md.md)] project in Visual C#, the generated source file contains a checksum for the .aspx file, from which the source is generated.</span></span> <span data-ttu-id="90796-118">Kompilátor pak tyto informace zapisuje do souboru PDB.</span><span class="sxs-lookup"><span data-stu-id="90796-118">The compiler then writes this information into the PDB file.</span></span>  
   
- <span data-ttu-id="3b9bd-119">Pokud kompilátor narazí ne `#pragma checksum` direktivy v souboru, se vypočítá kontrolního součtu a zapíše hodnoty do souboru PDB.</span><span class="sxs-lookup"><span data-stu-id="3b9bd-119">If the compiler encounters no `#pragma checksum` directive in the file, it computes the checksum and writes the value to the PDB file.</span></span>  
+ <span data-ttu-id="90796-119">Pokud kompilátor narazí ne `#pragma checksum` direktivy v souboru, se vypočítá kontrolního součtu a zapíše hodnoty do souboru PDB.</span><span class="sxs-lookup"><span data-stu-id="90796-119">If the compiler encounters no `#pragma checksum` directive in the file, it computes the checksum and writes the value to the PDB file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="3b9bd-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="3b9bd-120">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="90796-120">Příklad</span><span class="sxs-lookup"><span data-stu-id="90796-120">Example</span></span>  
   
 ```csharp
 class TestClass  
@@ -53,8 +53,8 @@ class TestClass
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3b9bd-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="3b9bd-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="90796-121">Viz také</span><span class="sxs-lookup"><span data-stu-id="90796-121">See Also</span></span>
 
-- [<span data-ttu-id="3b9bd-122">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="3b9bd-122">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="3b9bd-123">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="3b9bd-123">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="3b9bd-124">C# Direktivy preprocesoru</span><span class="sxs-lookup"><span data-stu-id="3b9bd-124">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
+- [<span data-ttu-id="90796-122">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="90796-122">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="90796-123">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="90796-123">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="90796-124">C# Direktivy preprocesoru</span><span class="sxs-lookup"><span data-stu-id="90796-124">C# Preprocessor Directives</span></span>](../../../csharp/language-reference/preprocessor-directives/index.md)
