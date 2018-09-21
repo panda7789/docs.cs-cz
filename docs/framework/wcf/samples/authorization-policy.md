@@ -3,11 +3,11 @@ title: Zásada autorizace
 ms.date: 03/30/2017
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
 ms.openlocfilehash: 78ca42abfd2df56edeeb273fcd8ba585aa16f635
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
-ms.translationtype: HT
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/21/2018
-ms.locfileid: "46508788"
+ms.locfileid: "46537953"
 ---
 # <a name="authorization-policy"></a>Zásada autorizace
 

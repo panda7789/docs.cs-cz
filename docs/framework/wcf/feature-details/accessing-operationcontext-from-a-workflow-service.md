@@ -3,11 +3,11 @@ title: Přístup k informacím OperationContext ze služby pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: b1dafe55-a20e-4db0-9ac8-90c315883cdd
 ms.openlocfilehash: 15dd817dddbe3272b188f6b74697f8c5839d498b
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46326368"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46540749"
 ---
 # <a name="accessing-operationcontext-from-a-workflow-service"></a>Přístup k informacím OperationContext ze služby pracovních postupů
 Přístup <xref:System.ServiceModel.OperationContext> uvnitř služby pracovního postupu, je nutné implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní ve vlastnosti vlastní spuštění. Přepsat <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metodu, která je předána odkazem na <xref:System.ServiceModel.OperationContext>. Toto téma vás provede procesem implementace této vlastnosti spuštění načíst vlastní hlavičky, stejně jako vlastní aktivitu, která bude přinášet tuto vlastnost na <xref:System.ServiceModel.Activities.Receive> za běhu.  Vlastní aktivita provede stejné chování jako <xref:System.Activities.Statements.Sequence> aktivity, s výjimkou, že <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř této, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a <xref:System.ServiceModel.OperationContext> načte informace.  Toto téma také ukazuje, jak získat přístup k na straně klienta <xref:System.ServiceModel.OperationContext> přidat odchozí záhlaví prostřednictvím <xref:System.ServiceModel.Activities.ISendMessageCallback> rozhraní.  

@@ -9,11 +9,11 @@ ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
 author: BrucePerlerMS
 manager: mbaldwin
 ms.openlocfilehash: 72a2ea1393daa7435ae233d1e420cf88b6f5b6af
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46009732"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46540577"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie zabezpečení WCF
 Některé o terminologii používané diskuse o zabezpečení mohou být obeznámeni. Toto téma poskytuje krátký vysvětlení některých pojmů pro zabezpečení, ale není určená k poskytování komplexní dokumentaci pro každou položku.  

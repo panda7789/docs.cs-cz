@@ -2,12 +2,12 @@
 title: 'Postupy: Použití filtrů'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
-ms.openlocfilehash: 6b1e02563fcc32a0095e2bdb5e25d0853fc05e84
-ms.sourcegitcommit: c66ba2df2d2ecfb214f85ee0687d298e4941c1a8
+ms.openlocfilehash: aee0f2e4fbf3b4e0802803b76aa557f2dec668bb
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/15/2018
-ms.locfileid: "42752257"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46508999"
 ---
 # <a name="how-to-use-filters"></a>Postupy: Použití filtrů
 Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu jsou směrovány dvě implementace službu kalkulačky, regularCalc a roundingCalc zprávy. Obou implementacích podporují stejné operace; jedna služba ale Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopen určit, jestli se má použít zaokrouhlení verze služby; Pokud je vyjádřená žádná předvolba služby zpráva je mezi těmito dvěma službami s vyrovnáváním zatížení. Operace vystavené obě služby jsou:  
@@ -113,7 +113,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
      To **MessageFilter** hledá RoundingCalculator záhlaví ve zprávě, která obsahuje hodnotu "zaokrouhlení". Tato hlavička nastavená klientem k označení, že se mají směrovat zprávy do služby roundingCalc.  
   
     > [!NOTE]
-    >  Předpona oboru názvů S12 na úrovni Standard je definované ve výchozím nastavení v tabulce obor názvů a představuje obor názvů "http://www.w3.org/2003/05/soap-envelope".  
+    > Předpona oboru názvů S12 na úrovni Standard je definované ve výchozím nastavení v tabulce obor názvů a představuje obor názvů `http://www.w3.org/2003/05/soap-envelope`.
   
 2.  Musíte také definovat filtry, které vyhledávají zprávy přijaté na dva virtuální koncové body. První virtuální koncový bod je koncový bod "normální/Kalkulačka". K tomuto koncovému bodu k označení, že se mají směrovat zprávy do služby regularCalc může klient odeslat požadavky. Definuje filtr, který používá následující konfiguraci <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> k určení, pokud byla zpráva doručena prostřednictvím koncového bodu s názvem zadaným v fulltextových dat filtru.  
   
@@ -132,7 +132,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
             filterData="http://localhost/routingservice/router/rounding/"/>  
     ```  
   
-     Pokud je přijata zpráva na adresu, která začíná řetězcem "http://localhost/routingservice/router/rounding/" pak vyhodnotí jako tento filtr **true**. Protože je základní adresu použitou touto konfigurací "http://localhost/routingservice/router"a je úplná adresa slouží ke komunikaci s tímto koncovým bodem adresa zadaná pro roundingEndpoint je "zaokrouhlení/Kalkulačka","http://localhost/routingservice/router/rounding/calculator", který odpovídá tomuto filtru.  
+     Pokud je přijata zpráva na adresu, která začíná `http://localhost/routingservice/router/rounding/` pak vyhodnotí jako tento filtr **true**. Protože je základní adresu použitou touto konfigurací `http://localhost/routingservice/router` a je úplná adresa slouží ke komunikaci s tímto koncovým bodem adresa zadaná pro roundingEndpoint je "zaokrouhlení/Kalkulačka" `http://localhost/routingservice/router/rounding/calculator`, který odpovídá tomuto filtru.  
   
     > [!NOTE]
     >  Filtr PrefixEndpointAddress nevyhodnocuje název hostitele při provádění shodu, protože je jeden hostitel lze odkazovat pomocí různých názvů hostitelů, které mohou všechny být platné způsoby odkazující na hostitele z klientské aplikace. Všechny tyto například může odkazovat na stejného hostitele:  
@@ -156,7 +156,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
                     filterData="group1"/>  
     ```  
   
-     Za běhu tento typ filtru střídá všechny definovaný filtr instance tohoto typu, které jsou nakonfigurované jako stejnou skupinu do jedné kolekce. To způsobí, že zprávy zpracované tento vlastní filtr do alternativní mezi vrácení `true` RoundRobinFilter1 a RoundRobinFilter2.  
+     Za běhu tento typ filtru střídá všechny definovaný filtr instance tohoto typu, které jsou nakonfigurované jako stejnou skupinu do jedné kolekce. To způsobí, že zprávy zpracované tento vlastní filtr do alternativní mezi vrácení `true` pro `RoundRobinFilter1` a `RoundRobinFilter2`.  
   
 ### <a name="define-filter-tables"></a>Definujte filtr tabulky  
   
@@ -165,7 +165,7 @@ Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směro
     > [!NOTE]
     >  Při zadávání prioritu filtr umožňuje řídit pořadí, ve které filtry se zpracovávají, může nepříznivě ovlivnit výkon služby směrování. Pokud je to možné, vytvořte filtr logiky tak, aby se nevyžaduje použití filtru priority.  
   
-     Následující tabulka filtr definuje a přidá "Třída XPathFilter" definovali dříve do tabulky s prioritou 2. Tato položka také určuje, že pokud "Třída XPathFilter" odpovídá zprávu, zpráva směrovány na "roundingCalcEndpoint"  
+     Následující tabulka filtr definuje a přidá "Třída XPathFilter" definovali dříve do tabulky s prioritou 2. Tato položka také určuje, že pokud `XPathFilter` odpovídá zprávu, zpráva se budou směrovat do `roundingCalcEndpoint`.  
   
     ```xml  
     <routing>  

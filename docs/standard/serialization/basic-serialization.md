@@ -8,11 +8,11 @@ ms.assetid: d899d43c-335a-433e-a589-cd187192984f
 dev_langs:
 - CSharp
 ms.openlocfilehash: cb42c265d9057ea4fdb76e72fc9cdb2368309cae
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46325796"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532010"
 ---
 # <a name="basic-serialization"></a>Základní serializace
 

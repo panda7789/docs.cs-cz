@@ -3,11 +3,11 @@ title: Aktivní vzorky (F#)
 description: 'Další informace o použití aktivní vzory definovat pojmenované oddíly, které rozdělit vstupní data v programovacím jazyce F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 4fb7d3e2b9c7e6f1c1ed9d64a47728c7f40017c8
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46006641"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46524412"
 ---
 # <a name="active-patterns"></a>Aktivní vzorky
 

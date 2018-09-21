@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
 ms.openlocfilehash: 9abff2614e4022408a069be25440196111db19ab
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46489874"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46562106"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-docker-containers"></a>Volba mezi .NET Core a .NET Framework pro kontejnery Dockeru
 

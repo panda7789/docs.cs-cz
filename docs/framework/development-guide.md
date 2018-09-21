@@ -6,12 +6,12 @@ helpviewer_keywords:
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c42311368bf94a2629f656b61b09cb7c2c5f68b6
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: a21f4cd8657a9d2c26ac481e7f2b00e6a2f502c9
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44205384"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46539535"
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a nasazení aplikací rozhraní .NET Framework. V části také obsahuje informace o oblastech technologií, jako jsou dynamické programování, interoperabilita, rozšiřitelnost, správa paměti a dělení na vlákna.  
@@ -64,10 +64,7 @@ Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a 
   
  [Výkon](../../docs/framework/performance/index.md)  
  Poskytuje informace o ukládání do mezipaměti, opožděné inicializaci, spolehlivosti a trasování událostí pro Windows.  
-  
- <!--zz [Advanced Reading for the .NET Framework](https://msdn.microsoft.com/library/faae8083-fecb-4514-b133-b0a5a32a7c3c)  
- Provides information about advanced development tasks and techniques in the .NET Framework, including extensibility, interoperability, and reflection. Also includes the reference topics for unmanaged APIs that can be used by managed apps, such as runtime hosts, compilers, disassemblers, debuggers, and profilers.  --> 
-  
+ 
 ## <a name="reference"></a>Odkaz  
  [Knihovna tříd rozhraní .NET framework](/dotnet/api/?view=netframework-4.7)  
  Poskytuje syntaxi, příklady kódu a informace o využití pro každou třídu, která je součástí [!INCLUDE[dnprdnshort](../../includes/dnprdnshort-md.md)] obory názvů.  
