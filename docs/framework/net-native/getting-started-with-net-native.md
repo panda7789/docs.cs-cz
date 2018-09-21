@@ -5,11 +5,11 @@ ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 41679d4041a6a5a7b9b71a451a083c539d6b4c7b
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45648025"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46529311"
 ---
 # <a name="getting-started-with-net-native"></a>Začínáme s .NET Native
 Ať už vytváříte nové aplikace Windows pro Windows 10 nebo migrujete stávající aplikace pro Windows Store, můžete použít stejnou sadu postupy. Chcete-li vytvořit [!INCLUDE[net_native](../../../includes/net-native-md.md)] aplikace, postupujte podle těchto kroků:  

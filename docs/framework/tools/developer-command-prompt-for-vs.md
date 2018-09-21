@@ -12,23 +12,23 @@ helpviewer_keywords:
 ms.assetid: 94fcf524-9045-4993-bfb2-e2d8bad44219
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4c95074190419dd3e984c7659ede917b83b97f08
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 20dc7caa9e4c3e023bf2848b1dd8c63a9b94a01b
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524713"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46526741"
 ---
 # <a name="developer-command-prompt-for-visual-studio"></a>Developer Command Prompt pro sadu Visual Studio
 
-Developer Command Prompt pro sadu Visual Studio automaticky nastaví proměnné prostředí, které vám umožní snadno používat nástroje rozhraní .NET Framework.
+Developer Command Prompt pro sadu Visual Studio umožňuje snadno používat nástroje rozhraní .NET Framework. Je příkazový řádek, který automaticky nastavuje určité proměnné prostředí.
 
 > [!div class="button"]
 [Stáhněte si Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017)
 
-## <a name="searching-for-the-command-prompt-on-your-machine"></a>Vyhledání příkazového řádku na vašem počítači
+## <a name="search-for-the-command-prompt-on-your-machine"></a>Hledat příkazový řádek na svém počítači
 
-Můžete mít více příkazových řádků, v závislosti na verzi sady Visual Studio a všech dodatečných sad SDK si nainstalujete. Například 64bitové verze sady Visual Studio poskytují 32bitové a 64bitové verze příkazového řádku. (32bitové a 64bitové verze Většina nástrojů jsou stejné, ale u několika nástrojů měnit konkrétní 32bitové a 64bitové prostředí) Pokud tyto kroky nefungují, můžete zkusit [ručně vyhledávání souborů na svém počítači](#manually-locating-the-files-on-your-machine) nebo [spuštění z příkazového řádku v sadě Visual Studio](#running-command-prompt-from-inside-visual-studio).
+Můžete mít více příkazových řádků, v závislosti na verzi sady Visual Studio a všech dodatečných sad SDK si nainstalujete. Například 64bitové verze sady Visual Studio poskytují 32bitové a 64bitové verze příkazového řádku. (32bitové a 64bitové verze Většina nástrojů jsou stejné, ale u několika nástrojů měnit konkrétní 32bitové a 64bitové prostředí) Pokud tyto kroky nefungují, můžete zkusit [ručně vyhledat soubory na svém počítači](#manually-locate-the-files-on-your-machine) nebo [spustit z příkazového řádku v sadě Visual Studio](#run-the-command-prompt-from-inside-visual-studio).
 
 ### <a name="in-windows-10"></a>V systému Windows 10
 
@@ -40,7 +40,7 @@ Můžete mít více příkazových řádků, v závislosti na verzi sady Visual 
 
 1. Přejděte na **Start** obrazovku stisknutím klávesy s logem Windows ![Windows logo](../get-started/media/windowskeyboardlogo.png "Windowskeyboardlogo") na klávesnici pro příklad.
 
-2. Na **Start** obrazovky, stiskněte klávesu `CTRL + TAB` otevřít **aplikace** seznamu a pak zadejte `V`. Zobrazí seznam, který zahrnuje všechny nainstalované sady Visual Studio příkazové řádky.
+2. Na **Start** obrazovky, stiskněte klávesu **Ctrl**+**kartu** otevřít **aplikace** seznamu a pak zadejte `V`. Zobrazí seznam, který zahrnuje všechny nainstalované sady Visual Studio příkazové řádky.
 
 3. Zvolte **Developer Command Prompt** (nebo příkazový řádek, který chcete použít).
 
@@ -66,7 +66,7 @@ Pokud máte jiné sady SDK nainstalované, jako [Windows 10 SDK](https://develop
 
 Obvykle, klávesové zkratky pro příkaz vyzve k instalaci jsou umístěny na **nabídky Start** složka pro sadu Visual Studio, jako je například nástroje Studio 2017\Visual C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Visual Studio. Ale pokud z nějakého důvodu není vyhledávání pro příkazový řádek přinést očekávané výsledky, můžete zkusit ruční nalezení klávesovou zkratku na svém počítači. Zkuste vyhledat název souboru příkazového řádku, jako například *VsDevCmd.bat*, nebo přejděte do složky nástrojů, jako je například C:\Program Files (x86) \Microsoft Visual Studio\2017\Enterprise\Common7\Tools (cesta změny podle vašeho Vizuálu Umístění sady Studio verze, vydání a instalace).
 
-## <a name="run-command-prompt-from-inside-visual-studio"></a>Příkaz spustit příkazový řádek v sadě Visual Studio
+## <a name="run-the-command-prompt-from-inside-visual-studio"></a>Spusťte z příkazového řádku v sadě Visual Studio
 
 Pro snadnější přístup, můžete přidat příkazový řádek sady Visual Studio pro vývojáře, nebo jiné příkazového řádku **nástroje** nabídky v sadě Visual Studio. Zpřístupnění nástroje, přidejte ho do seznam externích nástrojů. Tady jsou kroky:
 
@@ -87,6 +87,8 @@ Pro snadnější přístup, můžete přidat příkazový řádek sady Visual St
 8. Zvolte **OK** tlačítko.
 
    Přidat novou položku nabídky, a dostanete příkazový řádek z **nástroje** nabídky.
+
+   ![Položka nabídky příkazového řádku v sadě Visual Studio](media/command-prompt-vs-menu.png)
 
 ## <a name="see-also"></a>Viz také:
 

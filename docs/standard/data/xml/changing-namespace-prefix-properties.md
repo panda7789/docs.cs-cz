@@ -9,11 +9,11 @@ ms.assetid: d5c87cbe-4d69-429f-aad5-3103c2ca2770
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4a6597a3a57cd68c4dd17c4fbae882590f373709
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46477961"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46525686"
 ---
 # <a name="changing-namespace-prefix-properties"></a>Změna vlastností předpony Namespace
 **XmlNode** třída umožňuje změnit předponu oboru názvů, který je přidružený k daném uzlu. Například následující kód ukazuje předponu element mění.  

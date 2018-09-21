@@ -2,18 +2,18 @@
 title: Kolekce aktivit v WF
 ms.date: 03/30/2017
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
-ms.openlocfilehash: 442da07e78ee08b49ad0e023362cace23dcd5b8d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6b3a02cdd020d303519f605a206d62b42f4fe731
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516724"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46538385"
 ---
 # <a name="collection-activities-in-wf"></a>Kolekce aktivit v WF
-Kolekce aktivity se používají pro práci s objekty kolekce v pracovním postupu. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] má poskytované systémem aktivity pro přidávání a odebírání položek z kolekce, testování existence položky v kolekci a vymazání kolekce. `ExistsInCollection` a `RemoveFromCollection` mít <xref:System.Activities.OutArgument%601> typu <xref:System.Boolean>, který určuje výsledek.  
+Kolekce aktivity se používají pro práci s objekty kolekcí v pracovním postupu. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] má poskytované systémem aktivity pro přidávání a odebírání položek z kolekce, testování existence položku v kolekci a vymazání kolekce. `ExistsInCollection` a `RemoveFromCollection` mají <xref:System.Activities.OutArgument%601> typu <xref:System.Boolean>, který určuje výsledek.  
   
 > [!IMPORTANT]
->  Pokud kolekce aktivita se spustí před nastavením základní objekt kolekce <xref:System.InvalidOperationException> je vyvolána a chyb aktivity.  
+>  Pokud se kolekce aktivita provádí před nastavením základní objekt kolekce <xref:System.InvalidOperationException> je vyvolána a chyb aktivit.  
   
 ## <a name="collection-activities"></a>Kolekce aktivity  
   
@@ -21,11 +21,11 @@ Kolekce aktivity se používají pro práci s objekty kolekce v pracovním postu
 |-|-|  
 |<xref:System.Activities.Statements.AddToCollection%601>|Přidá položku do zadané kolekce.|  
 |<xref:System.Activities.Statements.ClearCollection%601>|Vymaže všechny položky z kolekce.|  
-|<xref:System.Activities.Statements.ExistsInCollection%601>|Vrátí `true` Pokud položku v kolekci existuje.|  
+|<xref:System.Activities.Statements.ExistsInCollection%601>|Vrátí `true` Pokud položka v kolekci existuje.|  
 |<xref:System.Activities.Statements.RemoveFromCollection%601>|Odebere položku z kolekce a vrátí `true` Pokud byla položka úspěšně odebrána.|  
   
-## <a name="using-collection-activities"></a>Pomocí kolekce aktivit  
- Následující příklad kódu ukazuje, jak pracovat s kolekcí deklarován jako proměnné pracovního postupu. Je kolekce používané <!--zz <xref:System.Collections.Generic.List%E2%80%991>--> `System.Collections.Generic.List` z <xref:System.String> objektů s názvem `fruitList`.  
+## <a name="using-collection-activities"></a>Použití aktivit collection  
+ Následující příklad kódu ukazuje, jak pracovat s kolekcí deklarován jako proměnné pracovního postupu. Kolekce, kterou používá se <xref:System.Collections.Generic.List%601> z <xref:System.String> objektů s názvem `fruitList`.  
   
 ```csharp  
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
@@ -227,7 +227,7 @@ Activity wf = new Sequence
   
  Výše uvedené ukázky kódu můžete vytvořit také pomocí <xref:Microsoft.CSharp.Activities.CSharpValue%601> místo <xref:Microsoft.VisualBasic.Activities.VisualBasicValue%601>  
   
-```  
+```csharp
 Variable<ICollection<string>> fruitList = new Variable<ICollection<string>>  
 {  
     Default = new CSharpValue<ICollection<string>>("new List<String> From {\"Apple\", \"Orange\"};"),  

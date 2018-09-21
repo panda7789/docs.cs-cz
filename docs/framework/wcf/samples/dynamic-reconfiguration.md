@@ -3,11 +3,11 @@ title: Dynamická rekonfigurace
 ms.date: 03/30/2017
 ms.assetid: b20786ae-cce6-4f91-b6cb-9cae116faf8b
 ms.openlocfilehash: a147a1d6cf61001832661376363ecc850ecad309
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45994348"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46537459"
 ---
 # <a name="dynamic-reconfiguration"></a>Dynamická rekonfigurace
 V této ukázce směrovací službou Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, který umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí směrovací službou. Tato ukázka předvádí, jak služba směrování můžete dynamicky překonfigurovat za běhu.  

@@ -10,11 +10,11 @@ ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 37abcb6b3a8fdf4ef91d5e946a97db7ca1428ce8
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46493084"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532737"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Přehled primitiv synchronizace
 <a name="top"></a> Rozhraní .NET Framework poskytuje celou řadu primitiv synchronizace pro řízení interakce vláken a jak se vyhnout konfliktům časování. Ty je možné zhruba rozdělit do tří kategorií: zamykání, signalizační a propojené operace.  

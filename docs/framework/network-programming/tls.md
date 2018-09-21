@@ -13,12 +13,12 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 author: blowdart
-ms.openlocfilehash: a45d57af1069bba9e3afe8c2e6e6d463115a4e39
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: a421b73edc1dd90be53d301d12160d39abe78f90
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43798909"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46540408"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 
@@ -178,6 +178,9 @@ Pro aplikace cílené na rozhraní .NET Framework 4.7.1 a novějších verzích,
 Další informace o protokoly TLS najdete v tématu [omezení rizik: protokoly TLS](../migration-guide/mitigation-tls-protocols.md). Další informace o `AppContext` přepínače, naleznete v tématu [ `<AppContextSwitchOverrides> Element` ](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md).
 
 ## <a name="configuring-security-via-the-windows-registry"></a>Konfigurace zabezpečení prostřednictvím registru Windows
+
+> [!WARNING]
+> Nastavení klíče registru ovlivní všechny aplikace v systému. Tuto možnost použijte pouze v případě počítače plně pod kontrolou a můžete řídit změny do registru.
 
 Pokud nastavení jednoho nebo obou `AppContext` přepínače nejsou možnost, můžete kontrolovat protokoly zabezpečení, které vaše aplikace používá s klíči registru Windows, které jsou popsané v této části. Nebudete moct používat jeden nebo oba `AppContext` přepne, pokud se svojí aplikací cílíte na verzi rozhraní .NET Framework starší než 4.6, nebo nelze upravit konfigurační soubor. Pokud chcete provést konfiguraci zabezpečení s registrem, potom nezadávejte hodnotu protokolu zabezpečení ve vašem kódu; To uděláte tak, by se mělo přepsat registru.
 

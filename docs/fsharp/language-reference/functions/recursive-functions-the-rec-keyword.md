@@ -3,11 +3,11 @@ title: 'Rekurzivní funkce: Klíčové slovo rec (F#)'
 description: "Zjistěte, jak se používá klíčové slovo 'rec' F # pomocí klíčového slova \"let\" k definování rekurzivní funkce."
 ms.date: 05/16/2016
 ms.openlocfilehash: 5aab6ed8ab0fc3c0f0bcfc93c3ce6518ec53254f
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45745968"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46508551"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>Rekurzivní funkce: Klíčové slovo rec
 

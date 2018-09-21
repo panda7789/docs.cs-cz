@@ -2,16 +2,16 @@
 title: Zásada autorizace
 ms.date: 03/30/2017
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-ms.openlocfilehash: eaf4dfc6e1f02a1cd98d9ab48af70426e8ba6151
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.openlocfilehash: 78ca42abfd2df56edeeb273fcd8ba585aa16f635
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44217292"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46508788"
 ---
 # <a name="authorization-policy"></a>Zásada autorizace
 
-Tento příklad ukazuje, jak implementovat zásady autorizace vlastních deklarací identity a přidružená služba vlastního Správce autorizací. To je užitečné, když služba usnadňující kontroly přístupu podle deklarací identity k operacím služby a před kontroly přístupu udělí volajícímu určitá práva. Tento příklad ukazuje obě proces přidávání deklarací identity, stejně jako proces pro provádění kontroly přístupu pro dokončené sadu deklarací identity. Všechny zprávy aplikace mezi klientem a serverem jsou podepsaný a zašifrovaný. Ve výchozím nastavení se `wsHttpBinding` vazby, uživatelské jméno a heslo, které poskytl klient, slouží k přihlášení k platný účet systému Windows NT. Tato ukázka předvádí, jak využívat vlastní <!--zz <xref:System.IdentityModel.Selectors.UsernamePasswordValidator>--> `System.IdentityModel.Selectors.UsernamePasswordValidator` k ověření klienta. Kromě toho tento příklad ukazuje ověřování do služby pomocí certifikátu X.509 klienta. Tento příklad ukazuje implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> a <xref:System.ServiceModel.ServiceAuthorizationManager>, která mezi nimi udělit přístup na konkrétní metody služby pro konkrétní uživatele. Tato ukázka je založena na [zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md), ale ukazuje, jak provádět transformace deklarací identity před verzí <xref:System.ServiceModel.ServiceAuthorizationManager> volána.
+Tento příklad ukazuje, jak implementovat zásady autorizace vlastních deklarací identity a přidružená služba vlastního Správce autorizací. To je užitečné, když služba usnadňující kontroly přístupu podle deklarací identity k operacím služby a před kontroly přístupu udělí volajícímu určitá práva. Tento příklad ukazuje obě proces přidávání deklarací identity, stejně jako proces pro provádění kontroly přístupu pro dokončené sadu deklarací identity. Všechny zprávy aplikace mezi klientem a serverem jsou podepsaný a zašifrovaný. Ve výchozím nastavení se `wsHttpBinding` vazby, uživatelské jméno a heslo, které poskytl klient, slouží k přihlášení k platný účet systému Windows NT. Tato ukázka předvádí, jak využívat vlastní <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> k ověření klienta. Kromě toho tento příklad ukazuje ověřování do služby pomocí certifikátu X.509 klienta. Tento příklad ukazuje implementaci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> a <xref:System.ServiceModel.ServiceAuthorizationManager>, která mezi nimi udělit přístup na konkrétní metody služby pro konkrétní uživatele. Tato ukázka je založena na [zabezpečení zpráv s uživatelským jménem](../../../../docs/framework/wcf/samples/message-security-user-name.md), ale ukazuje, jak provádět transformace deklarací identity před verzí <xref:System.ServiceModel.ServiceAuthorizationManager> volána.
 
 > [!NOTE]
 > Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.

@@ -12,11 +12,11 @@ ms.workload:
 - dotnet
 - dotnetcore
 ms.openlocfilehash: 50dee427913e1ec94a06f1202966bb0f7f5f2099
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46326687"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46525159"
 ---
 # <a name="handling-io-errors-in-net"></a>Zpracování chyb vstupně-výstupní operace v rozhraní .NET
 

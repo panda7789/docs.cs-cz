@@ -3,11 +3,11 @@ title: Práce s názvovými prostory XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 05cf4dc7-7b25-40f0-abc9-1bc35de4b48a
 ms.openlocfilehash: 4863794408adbfb8b51c4f125ee340eb718a5abe
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46491987"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46530151"
 ---
 # <a name="working-with-xml-namespaces-c"></a>Práce s názvovými prostory XML (C#)
 Témata v této části popisují, jak [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] podporuje obory názvů.  

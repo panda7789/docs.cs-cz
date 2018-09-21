@@ -3,11 +3,11 @@ title: Co je nového v jazyce C# 7.3
 description: Přehled nových funkcí v jazyce C# 7.3
 ms.date: 05/16/2018
 ms.openlocfilehash: 383346569be2c0daf333b0cb3b28e2a8fbb24f66
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46007266"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46539119"
 ---
 # <a name="whats-new-in-c-73"></a>Co je nového v jazyce C# 7.3
 

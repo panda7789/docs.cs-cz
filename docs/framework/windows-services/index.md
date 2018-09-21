@@ -13,11 +13,11 @@ ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
 author: ghogen
 manager: douge
 ms.openlocfilehash: aa5e18f7e0ee1fc0836054b692872b18678106f3
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46481725"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46537472"
 ---
 # <a name="develop-windows-service-apps"></a>Vývoj aplikací pro službu Windows
 

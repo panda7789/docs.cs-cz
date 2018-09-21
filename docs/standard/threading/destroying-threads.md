@@ -12,11 +12,11 @@ ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9a243c95aff77a5de2b3af15542c0bcc44870333
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46323334"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46525676"
 ---
 # <a name="destroying-threads"></a>Zničení vláken
 <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> Metoda se používá k zastavení spravovaným vláknem trvale. Při volání <xref:System.Threading.Thread.Abort%2A>, modul common language runtime vyvolá výjimku <xref:System.Threading.ThreadAbortException> v cílové vlákno, které cílové vlákno může zachytit. Další informace naleznete v tématu <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>.  

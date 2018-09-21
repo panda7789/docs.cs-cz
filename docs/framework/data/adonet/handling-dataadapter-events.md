@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-ms.openlocfilehash: 7013f855fb54f6c67c569ccabda91727359d22b2
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 3c2158e94f936dd2b28fe46310fd96df8dbc50fb
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43858623"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46525549"
 ---
 # <a name="handling-dataadapter-events"></a>Zpracování událostí adaptéru dat
 ADO.NET <xref:System.Data.Common.DataAdapter> zpřístupní tři události, které vám umožní reagovat na změny dat ve zdroji dat. Následující tabulka ukazuje `DataAdapter` události.  
@@ -155,7 +155,7 @@ Private Shared Sub FillError(sender As Object, _
     DataRow myRow = args.DataTable.Rows.Add(New Object() _  
       {args.Values(0), args.Values(1), DBNull.Value})  
     ' Set the RowError containing the value for the third column.  
-    args.RowError = _  
+    myRow.RowError = _  
       "OverflowException encountered. Value from data source: " & _  
       args.Values(2)  
     args.Continue = True  
@@ -178,7 +178,7 @@ protected static void FillError(object sender, FillErrorEventArgs args)
     DataRow myRow = args.DataTable.Rows.Add(new object[]  
        {args.Values[0], args.Values[1], DBNull.Value});  
     //Set the RowError containing the value for the third column.  
-    args.RowError =   
+    myRow.RowError =   
        "OverflowException Encountered. Value from data source: " +  
        args.Values[2];  
     args.Continue = true;  

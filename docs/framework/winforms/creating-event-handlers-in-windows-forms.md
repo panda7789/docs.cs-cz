@@ -9,11 +9,11 @@ helpviewer_keywords:
 - event handlers [Windows Forms]
 ms.assetid: 6514e530-c6b8-489c-a8d2-eda7b7072701
 ms.openlocfilehash: 9095946d52360c69fd6c4dd6285039fb3e1874d5
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45994595"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46540723"
 ---
 # <a name="creating-event-handlers-in-windows-forms"></a>Vytváření obslužných rutin událostí ve Windows Forms
 Obslužná rutina události je postup ve vašem kódu, který určuje, jaké akce se provádí při výskytu události, například když uživatel klikne na tlačítko nebo fronta zpráv přijme zprávu. Při vyvolání události provádějí obslužné rutiny události nebo obslužných rutin, které obdrží událost. Události je možné přiřadit k více obslužných rutin a metody, které zpracovávají konkrétní události je možné změnit dynamicky. Návrhář formulářů Windows můžete také použít k vytvoření obslužné rutiny události.  

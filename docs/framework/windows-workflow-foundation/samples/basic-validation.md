@@ -3,11 +3,11 @@ title: Základní ověřování
 ms.date: 03/30/2017
 ms.assetid: ba1343cc-aaab-4ade-b0c0-1dd5063bf4ad
 ms.openlocfilehash: 74d99e2d426e9ea5701fad80418fdf019112cc9e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45645811"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46539470"
 ---
 # <a name="basic-validation"></a>Základní ověřování
 Tento příklad se skládá z aktivit, `CreateProduct`, který ověří, jestli jeho `Cost` argumentu je menší než nebo roven jeho `Price` argument.  

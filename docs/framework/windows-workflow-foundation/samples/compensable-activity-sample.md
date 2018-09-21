@@ -3,11 +3,11 @@ title: Ukázka kompenzovatelná aktivita
 ms.date: 03/30/2017
 ms.assetid: 58f4898c-b2b8-44a4-9a73-3bef4da6d5ba
 ms.openlocfilehash: 3bf1d120cd700830a98f53495f7e9989ffec73db
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46477883"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46528954"
 ---
 # <a name="compensable-activity-sample"></a>Ukázka kompenzovatelná aktivita
 Tato ukázka předvádí, jak používat `CompensableActivity` aktivity k definování práce, která musí být provedeno pro danou akci během normálního provádění a práci, kterou je potřeba udělat, aby se nahradit tuto akci v případě potřeby později.  První část vzorek ukazuje, jak kompenzovatelná pracovní jednotky je možné definovat ve Windows Workflow Foundation (WF) pomocí `CompensableActivity` aktivity a jak jsou provedeny v úspěšného spuštění.  Druhá část vzorek ukazuje, jak stejné jednotky kompenzovatelná pracovní automaticky postará o kompenzaci při dosažení neočekávané události a zrušení instance pracovního postupu.  

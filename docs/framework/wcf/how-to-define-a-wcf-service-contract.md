@@ -8,11 +8,11 @@ dev_langs:
 - VB
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
 ms.openlocfilehash: 4f85a51c47eb045d1d2f0111cb217199c9acf0d7
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46489156"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46537875"
 ---
 # <a name="how-to-define-a-windows-communication-foundation-service-contract"></a>Postupy: Definování kontraktu služby WCF
 

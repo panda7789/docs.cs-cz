@@ -13,11 +13,11 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
 ms.openlocfilehash: e50f455ab83b0b057f8ce3c32f874e6856632d70
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46471616"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532542"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>Osvědčené postupy pro implementaci asynchronního vzoru založeného na událostech
 Asynchronní vzor založený na událostech poskytuje účinný způsob, jak vystavit asynchronní chování v třídy pomocí známých události a delegovat sémantiku. K implementaci asynchronního vzoru založeného na událostech, budete muset postupovat podle některých zvláštní chování požadavky. Následující části popisují požadavky a pokyny, které byste měli zvážit při implementaci třídy, která používá asynchronní vzor založený na událostech.  

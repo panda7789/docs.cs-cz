@@ -8,11 +8,11 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
 ms.openlocfilehash: 0824a43cba1a21cc9ae92b1f807c6a1369fd63ed
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
-ms.translationtype: HT
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46478511"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46530281"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace datové služby (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit datové služby, která zpřístupňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Data v těchto kanálech mohou pocházet z různých datových zdrojů. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Zprostředkovatelé dat používá k získání těchto dat jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Tito poskytovatelé patří [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, zprostředkovatel reflexe a sadu vlastních dat rozhraní poskytovatele služeb. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  

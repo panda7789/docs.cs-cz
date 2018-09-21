@@ -6,11 +6,11 @@ ms.author: ronpet
 ms.date: 04/14/2018
 ms.custom: mvc
 ms.openlocfilehash: da111790ebbc299df16297650347045b9395a90f
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46288211"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46532318"
 ---
 # <a name="string-interpolation"></a>Interpolace řetězců
 
