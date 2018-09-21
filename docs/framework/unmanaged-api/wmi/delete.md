@@ -17,18 +17,18 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 791e75aa60fd651dde1555339e31664a3523e1eb
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
-ms.translationtype: MT
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45649130"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46470898"
 ---
-# <a name="delete-function"></a><span data-ttu-id="6efd0-103">Odstranit funkci</span><span class="sxs-lookup"><span data-stu-id="6efd0-103">Delete function</span></span>
-<span data-ttu-id="6efd0-104">Odstraní zadanou vlastnost a všechny jeho kvalifikátory z definice třídy CIM.</span><span class="sxs-lookup"><span data-stu-id="6efd0-104">Deletes the specified property and all of its qualifiers from a CIM class definition.</span></span>
+# <a name="delete-function"></a><span data-ttu-id="2bf1c-103">Odstranit funkci</span><span class="sxs-lookup"><span data-stu-id="2bf1c-103">Delete function</span></span>
+<span data-ttu-id="2bf1c-104">Odstraní zadanou vlastnost a všechny jeho kvalifikátory z definice třídy CIM.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-104">Deletes the specified property and all of its qualifiers from a CIM class definition.</span></span>
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
     
-## <a name="syntax"></a><span data-ttu-id="6efd0-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6efd0-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2bf1c-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2bf1c-105">Syntax</span></span>  
   
 ```  
 HRESULT Delete (
@@ -38,43 +38,43 @@ HRESULT Delete (
 ); 
 ```  
 
-## <a name="parameters"></a><span data-ttu-id="6efd0-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="6efd0-106">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="2bf1c-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="2bf1c-106">Parameters</span></span>
 
 `vFunc`  
-<span data-ttu-id="6efd0-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="6efd0-107">[in] This parameter is unused.</span></span>
+<span data-ttu-id="2bf1c-107">[in] Tento parametr se nepoužívá.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-107">[in] This parameter is unused.</span></span>
 
 `ptr`  
-<span data-ttu-id="6efd0-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="6efd0-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
+<span data-ttu-id="2bf1c-108">[in] Ukazatel [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-108">[in] A pointer to an [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) instance.</span></span>
 
 `wszName`  
-<span data-ttu-id="6efd0-109">[in] Název vlastnosti, která má odstranit.</span><span class="sxs-lookup"><span data-stu-id="6efd0-109">[in] The name of the property to delete.</span></span> <span data-ttu-id="6efd0-110">`wszName` musí být ukazatel na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="6efd0-110">`wszName` must be a pointer to a valid `LPCWSTR`.</span></span>
+<span data-ttu-id="2bf1c-109">[in] Název vlastnosti, která má odstranit.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-109">[in] The name of the property to delete.</span></span> <span data-ttu-id="2bf1c-110">`wszName` musí být ukazatel na platný `LPCWSTR`.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-110">`wszName` must be a pointer to a valid `LPCWSTR`.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="6efd0-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="6efd0-111">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="2bf1c-111">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="2bf1c-111">Return value</span></span>
 
-<span data-ttu-id="6efd0-112">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="6efd0-112">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
+<span data-ttu-id="2bf1c-112">Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hlavičkový soubor, nebo je definovat jako konstanty v kódu:</span><span class="sxs-lookup"><span data-stu-id="2bf1c-112">The following values returned by this function are defined in the *WbemCli.h* header file, or you can define them as constants in your code:</span></span>
 
-|<span data-ttu-id="6efd0-113">Konstanta</span><span class="sxs-lookup"><span data-stu-id="6efd0-113">Constant</span></span>  |<span data-ttu-id="6efd0-114">Hodnota</span><span class="sxs-lookup"><span data-stu-id="6efd0-114">Value</span></span>  |<span data-ttu-id="6efd0-115">Popis</span><span class="sxs-lookup"><span data-stu-id="6efd0-115">Description</span></span>  |
+|<span data-ttu-id="2bf1c-113">Konstanta</span><span class="sxs-lookup"><span data-stu-id="2bf1c-113">Constant</span></span>  |<span data-ttu-id="2bf1c-114">Hodnota</span><span class="sxs-lookup"><span data-stu-id="2bf1c-114">Value</span></span>  |<span data-ttu-id="2bf1c-115">Popis</span><span class="sxs-lookup"><span data-stu-id="2bf1c-115">Description</span></span>  |
 |---------|---------|---------|
-| `WBEM_E_FAILED` | <span data-ttu-id="6efd0-116">0x80041001</span><span class="sxs-lookup"><span data-stu-id="6efd0-116">0x80041001</span></span> | <span data-ttu-id="6efd0-117">Došlo k nespecifikované chybě.</span><span class="sxs-lookup"><span data-stu-id="6efd0-117">An unspecified error has occurred.</span></span> |
-| `WBEM_E_INVALID_OPERATION` | <span data-ttu-id="6efd0-118">0x80041016</span><span class="sxs-lookup"><span data-stu-id="6efd0-118">0x80041016</span></span> | <span data-ttu-id="6efd0-119">Vlastnost nelze odstranit.</span><span class="sxs-lookup"><span data-stu-id="6efd0-119">The property cannot be deleted.</span></span> |
-| `WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="6efd0-120">0x80041008</span><span class="sxs-lookup"><span data-stu-id="6efd0-120">0x80041008</span></span> | <span data-ttu-id="6efd0-121">Formát  `wszzName` je neplatný.</span><span class="sxs-lookup"><span data-stu-id="6efd0-121">`wszzName` is invalid.</span></span> |
-| `WBEM_E_NOT_FOUND` | <span data-ttu-id="6efd0-122">0x80041002</span><span class="sxs-lookup"><span data-stu-id="6efd0-122">0x80041002</span></span> | <span data-ttu-id="6efd0-123">Zadaná vlastnost neexistuje.</span><span class="sxs-lookup"><span data-stu-id="6efd0-123">The specified property does not exist.</span></span> |
-| `WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="6efd0-124">0x80041006</span><span class="sxs-lookup"><span data-stu-id="6efd0-124">0x80041006</span></span> | <span data-ttu-id="6efd0-125">Není k dispozici dostatek paměti k dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="6efd0-125">There is not enough memory to complete the operation.</span></span> |
-| `WBEM_E_PROPAGATED_PROPERTY` | <span data-ttu-id="6efd0-126">0x8004101c</span><span class="sxs-lookup"><span data-stu-id="6efd0-126">0x8004101c</span></span> | <span data-ttu-id="6efd0-127">Vlastnost se dědí ze základní třídy.</span><span class="sxs-lookup"><span data-stu-id="6efd0-127">The property is inherited from a base class.</span></span> |
-| `WBEM_E_SYSTEM_PROPERTY` | | <span data-ttu-id="6efd0-128">Vlastnost je vlastnost systému.</span><span class="sxs-lookup"><span data-stu-id="6efd0-128">The property is a system property.</span></span> |
-|`WBEM_S_NO_ERROR` | <span data-ttu-id="6efd0-129">0</span><span class="sxs-lookup"><span data-stu-id="6efd0-129">0</span></span> | <span data-ttu-id="6efd0-130">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="6efd0-130">The function call was successful.</span></span>  |
-| `WBEM_E_RESET_TO_DEFAULT` | <span data-ttu-id="6efd0-131">0x80041030</span><span class="sxs-lookup"><span data-stu-id="6efd0-131">0x80041030</span></span> | <span data-ttu-id="6efd0-132">Funkce odstranit výchozí hodnotu pro aktuální třídu.</span><span class="sxs-lookup"><span data-stu-id="6efd0-132">The function deleted an override default value for the current class.</span></span> <span data-ttu-id="6efd0-133">Výchozí hodnota této vlastnosti v nadřazené třídě byl reactiviated.</span><span class="sxs-lookup"><span data-stu-id="6efd0-133">The default value for this property in the parent class has been reactiviated.</span></span> | 
+| `WBEM_E_FAILED` | <span data-ttu-id="2bf1c-116">0x80041001</span><span class="sxs-lookup"><span data-stu-id="2bf1c-116">0x80041001</span></span> | <span data-ttu-id="2bf1c-117">Došlo k nespecifikované chybě.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-117">An unspecified error has occurred.</span></span> |
+| `WBEM_E_INVALID_OPERATION` | <span data-ttu-id="2bf1c-118">0x80041016</span><span class="sxs-lookup"><span data-stu-id="2bf1c-118">0x80041016</span></span> | <span data-ttu-id="2bf1c-119">Vlastnost nelze odstranit.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-119">The property cannot be deleted.</span></span> |
+| `WBEM_E_INVALID_PARAMETER` | <span data-ttu-id="2bf1c-120">0x80041008</span><span class="sxs-lookup"><span data-stu-id="2bf1c-120">0x80041008</span></span> | <span data-ttu-id="2bf1c-121">Formát  `wszzName` je neplatný.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-121">`wszzName` is invalid.</span></span> |
+| `WBEM_E_NOT_FOUND` | <span data-ttu-id="2bf1c-122">0x80041002</span><span class="sxs-lookup"><span data-stu-id="2bf1c-122">0x80041002</span></span> | <span data-ttu-id="2bf1c-123">Zadaná vlastnost neexistuje.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-123">The specified property does not exist.</span></span> |
+| `WBEM_E_OUT_OF_MEMORY` | <span data-ttu-id="2bf1c-124">0x80041006</span><span class="sxs-lookup"><span data-stu-id="2bf1c-124">0x80041006</span></span> | <span data-ttu-id="2bf1c-125">Není k dispozici dostatek paměti k dokončení operace.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-125">There is not enough memory to complete the operation.</span></span> |
+| `WBEM_E_PROPAGATED_PROPERTY` | <span data-ttu-id="2bf1c-126">0x8004101c</span><span class="sxs-lookup"><span data-stu-id="2bf1c-126">0x8004101c</span></span> | <span data-ttu-id="2bf1c-127">Vlastnost se dědí ze základní třídy.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-127">The property is inherited from a base class.</span></span> |
+| `WBEM_E_SYSTEM_PROPERTY` | | <span data-ttu-id="2bf1c-128">Vlastnost je vlastnost systému.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-128">The property is a system property.</span></span> |
+|`WBEM_S_NO_ERROR` | <span data-ttu-id="2bf1c-129">0</span><span class="sxs-lookup"><span data-stu-id="2bf1c-129">0</span></span> | <span data-ttu-id="2bf1c-130">Volání funkce byla úspěšná.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-130">The function call was successful.</span></span>  |
+| `WBEM_E_RESET_TO_DEFAULT` | <span data-ttu-id="2bf1c-131">0x80041030</span><span class="sxs-lookup"><span data-stu-id="2bf1c-131">0x80041030</span></span> | <span data-ttu-id="2bf1c-132">Funkce odstranit výchozí hodnotu pro aktuální třídu.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-132">The function deleted an override default value for the current class.</span></span> <span data-ttu-id="2bf1c-133">Výchozí hodnota této vlastnosti v nadřazené třídě byl reactiviated.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-133">The default value for this property in the parent class has been reactiviated.</span></span> | 
 
-## <a name="remarks"></a><span data-ttu-id="6efd0-134">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6efd0-134">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="2bf1c-134">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2bf1c-134">Remarks</span></span>
 
-<span data-ttu-id="6efd0-135">Tato funkce zalamuje volání na [IWbemClassObject::Delete](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-delete) metody.</span><span class="sxs-lookup"><span data-stu-id="6efd0-135">This function wraps a call to the [IWbemClassObject::Delete](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-delete) method.</span></span>
+<span data-ttu-id="2bf1c-135">Tato funkce zalamuje volání na [IWbemClassObject::Delete](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-delete) metody.</span><span class="sxs-lookup"><span data-stu-id="2bf1c-135">This function wraps a call to the [IWbemClassObject::Delete](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-delete) method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="6efd0-136">Požadavky</span><span class="sxs-lookup"><span data-stu-id="6efd0-136">Requirements</span></span>  
- <span data-ttu-id="6efd0-137">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6efd0-137">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="2bf1c-136">Požadavky</span><span class="sxs-lookup"><span data-stu-id="2bf1c-136">Requirements</span></span>  
+ <span data-ttu-id="2bf1c-137">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="2bf1c-137">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6efd0-138">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="6efd0-138">**Header:** WMINet_Utils.idl</span></span>  
+ <span data-ttu-id="2bf1c-138">**Záhlaví:** WMINet_Utils.idl</span><span class="sxs-lookup"><span data-stu-id="2bf1c-138">**Header:** WMINet_Utils.idl</span></span>  
   
- <span data-ttu-id="6efd0-139">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="6efd0-139">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
+ <span data-ttu-id="2bf1c-139">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span><span class="sxs-lookup"><span data-stu-id="2bf1c-139">**.NET Framework Versions:** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6efd0-140">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6efd0-140">See also</span></span>  
-[<span data-ttu-id="6efd0-141">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="6efd0-141">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)
+## <a name="see-also"></a><span data-ttu-id="2bf1c-140">Viz také:</span><span class="sxs-lookup"><span data-stu-id="2bf1c-140">See also</span></span>  
+[<span data-ttu-id="2bf1c-141">WMI a čítače výkonu (referenční dokumentace nespravovaného rozhraní API)</span><span class="sxs-lookup"><span data-stu-id="2bf1c-141">WMI and Performance Counters (Unmanaged API Reference)</span></span>](index.md)

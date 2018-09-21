@@ -1,24 +1,24 @@
 ---
-title: 'Postupy: Konfigurace nastavení služby COM +'
+title: 'Postupy: Konfigurace nastavení služby modelu COM +'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 43964331f6728db0f094eaceb63e2c306d2dd3ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d14fd1434cb87dc62babeabb79cb780e568aacb7
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33490101"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46471682"
 ---
-# <a name="how-to-configure-com-service-settings"></a><span data-ttu-id="40a9c-102">Postupy: Konfigurace nastavení služby COM +</span><span class="sxs-lookup"><span data-stu-id="40a9c-102">How to: Configure COM+ Service Settings</span></span>
-<span data-ttu-id="40a9c-103">Při aplikační rozhraní přidat nebo odebrat pomocí nástroje Konfigurace služby COM +, konfigurace webové služby je aktualizovat v rámci konfiguračního souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="40a9c-103">When an application interface is added or removed by using the COM+ Service Configuration tool, the Web service configuration is updated within the application's configuration file.</span></span> <span data-ttu-id="40a9c-104">V modelu COM + hostované režimu, je umístěn soubor Application.config v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení).</span><span class="sxs-lookup"><span data-stu-id="40a9c-104">In the COM+ hosted mode, the Application.config file is placed in the Application Root Directory (%PROGRAMFILES%\ComPlus Applications\\{appid} is the default).</span></span> <span data-ttu-id="40a9c-105">V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.</span><span class="sxs-lookup"><span data-stu-id="40a9c-105">In either of the Web-hosted modes, the Web.config file is placed in the specified vroot directory.</span></span>  
+# <a name="how-to-configure-com-service-settings"></a><span data-ttu-id="7dcbb-102">Postupy: Konfigurace nastavení služby modelu COM +</span><span class="sxs-lookup"><span data-stu-id="7dcbb-102">How to: Configure COM+ Service Settings</span></span>
+<span data-ttu-id="7dcbb-103">Když rozhraním aplikace přidá nebo odebere pomocí nástroje Konfigurace služby COM +, aktualizuje se konfigurace webové služby v konfiguračním souboru aplikace.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-103">When an application interface is added or removed by using the COM+ Service Configuration tool, the Web service configuration is updated within the application's configuration file.</span></span> <span data-ttu-id="7dcbb-104">V režimu hostovány COM +, souboru Application.config nachází v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení).</span><span class="sxs-lookup"><span data-stu-id="7dcbb-104">In the COM+ hosted mode, the Application.config file is placed in the Application Root Directory (%PROGRAMFILES%\ComPlus Applications\\{appid} is the default).</span></span> <span data-ttu-id="7dcbb-105">V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-105">In either of the Web-hosted modes, the Web.config file is placed in the specified vroot directory.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="40a9c-106">Podepisování zpráv slouží jako ochrana proti manipulaci zpráv mezi klientem a serverem.</span><span class="sxs-lookup"><span data-stu-id="40a9c-106">Message signing should be used to protect against tampering of messages between a client and a server.</span></span> <span data-ttu-id="40a9c-107">Navíc zpráva nebo transport layer šifrování slouží k ochraně proti úniku informací z zpráv mezi klientem a serverem.</span><span class="sxs-lookup"><span data-stu-id="40a9c-107">Also, message or transport layer encryption should be used to protect against information disclosure from messages between a client and a server.</span></span> <span data-ttu-id="40a9c-108">Stejně jako u služby Windows Communication Foundation (WCF), měli byste použít omezení omezit počet souběžných volání, připojení, instancí a čekající operace.</span><span class="sxs-lookup"><span data-stu-id="40a9c-108">As with Windows Communication Foundation (WCF) services, you should use throttling to limit the number of concurrent calls, connections, instances, and pending operations.</span></span> <span data-ttu-id="40a9c-109">To pomáhá zabránit nadměrné spotřeby prostředků.</span><span class="sxs-lookup"><span data-stu-id="40a9c-109">This helps prevent over-consumption of resources.</span></span> <span data-ttu-id="40a9c-110">Omezení chování se specifikuje prostřednictvím nastavení konfiguračního souboru služby.</span><span class="sxs-lookup"><span data-stu-id="40a9c-110">Throttling behavior is specified through service configuration file settings.</span></span>  
+>  <span data-ttu-id="7dcbb-106">Podepisování zpráv by měla sloužit k ochraně proti padělání zpráv mezi klientem a serverem.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-106">Message signing should be used to protect against tampering of messages between a client and a server.</span></span> <span data-ttu-id="7dcbb-107">Navíc by měla sloužit k ochraně proti zpřístupnění informací ze zpráv mezi klientem a serverem vrstvě šifrování zprávy nebo přenos.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-107">Also, message or transport layer encryption should be used to protect against information disclosure from messages between a client and a server.</span></span> <span data-ttu-id="7dcbb-108">Stejně jako u služeb Windows Communication Foundation (WCF), měli byste použít omezení šířky pásma pro omezení počtu souběžných volání, připojení, instance a čekajících operací.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-108">As with Windows Communication Foundation (WCF) services, you should use throttling to limit the number of concurrent calls, connections, instances, and pending operations.</span></span> <span data-ttu-id="7dcbb-109">To pomáhá zabránit typu over-pass-the spotřebu prostředků.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-109">This helps prevent over-consumption of resources.</span></span> <span data-ttu-id="7dcbb-110">Chování při omezování chování se specifikuje prostřednictvím nastavení konfiguračního souboru služby.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-110">Throttling behavior is specified through service configuration file settings.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="40a9c-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="40a9c-111">Example</span></span>  
- <span data-ttu-id="40a9c-112">Vezměte v úvahu komponenty, která implementuje rozhraní následující:</span><span class="sxs-lookup"><span data-stu-id="40a9c-112">Consider a component that implements the following interface:</span></span>  
+## <a name="example"></a><span data-ttu-id="7dcbb-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="7dcbb-111">Example</span></span>  
+ <span data-ttu-id="7dcbb-112">Vezměte v úvahu komponenty, která implementuje rozhraní následující:</span><span class="sxs-lookup"><span data-stu-id="7dcbb-112">Consider a component that implements the following interface:</span></span>  
   
 ```  
 [Guid("C551FBA9-E3AA-4272-8C2A-84BD8D290AC7")]  
@@ -29,7 +29,7 @@ public interface IFinances
 }  
 ```  
   
- <span data-ttu-id="40a9c-113">Pokud je součást vystavený jako webovou službu, na odpovídající kontrakt služby, který je vystaven, a klienti potřebovat tak, aby odpovídala, vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="40a9c-113">If the component is exposed as a Web service, the corresponding service contract that is exposed, and that clients would need to conform to, is as follows:</span></span>  
+ <span data-ttu-id="7dcbb-113">Pokud součást vystavena jako webové služby, odpovídající kontraktu služby, který je přístupný a že klienti by se musí odpovídat, vypadá takto:</span><span class="sxs-lookup"><span data-stu-id="7dcbb-113">If the component is exposed as a Web service, the corresponding service contract that is exposed, and that clients would need to conform to, is as follows:</span></span>  
   
 ```  
 [ServiceContract(Session = true,  
@@ -45,21 +45,21 @@ public interface IFinancesContract : IDisposable
 ```  
   
 > [!NOTE]
->  <span data-ttu-id="40a9c-114">Identifikátory IID je součástí počáteční obor názvů pro kontrakt.</span><span class="sxs-lookup"><span data-stu-id="40a9c-114">IID forms part of the initial namespace for the contract.</span></span>  
+>  <span data-ttu-id="7dcbb-114">Identifikátor IID součástí počáteční obor názvů pro kontrakt.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-114">IID forms part of the initial namespace for the contract.</span></span>  
   
- <span data-ttu-id="40a9c-115">Klientské aplikace, které používají tuto službu potřebovat tak, aby odpovídala tento kontrakt, společně s použitím vazby, který je kompatibilní s verze zadaná v konfiguraci aplikace.</span><span class="sxs-lookup"><span data-stu-id="40a9c-115">Client applications that use this service would need to conform to this contract, along with using a binding that is compatible with the one specified in the application configuration.</span></span>  
+ <span data-ttu-id="7dcbb-115">Klientské aplikace, které používají tuto službu by bylo potřeba v souladu s touto smlouvou, spolu s využitím vazbu, která je kompatibilní s délkou zadanou v konfiguraci aplikace.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-115">Client applications that use this service would need to conform to this contract, along with using a binding that is compatible with the one specified in the application configuration.</span></span>  
   
- <span data-ttu-id="40a9c-116">Následující příklad kódu ukazuje výchozí konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="40a9c-116">The following code example shows a default configuration file.</span></span> <span data-ttu-id="40a9c-117">Probíhá Windows Communication Foundation (WCF) webové služby, to odpovídá schématu konfigurace modelu služby na úrovni standard a lze upravit stejným způsobem jako ostatní konfigurační soubory služby WCF.</span><span class="sxs-lookup"><span data-stu-id="40a9c-117">Being a Windows Communication Foundation (WCF) Web service, this conforms to the standard service model configuration schema and can be edited in the same way as other WCF services configuration files.</span></span>  
+ <span data-ttu-id="7dcbb-116">Následující příklad kódu ukazuje výchozí konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-116">The following code example shows a default configuration file.</span></span> <span data-ttu-id="7dcbb-117">Windows Communication Foundation (WCF) webové služby, to odpovídá schématu konfigurace model služeb standard služby a můžete upravit stejným způsobem jako ostatní konfigurační soubory služby WCF.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-117">Being a Windows Communication Foundation (WCF) Web service, this conforms to the standard service model configuration schema and can be edited in the same way as other WCF services configuration files.</span></span>  
   
- <span data-ttu-id="40a9c-118">Typické úpravy by mělo zahrnovat:</span><span class="sxs-lookup"><span data-stu-id="40a9c-118">Typical modifications would include:</span></span>  
+ <span data-ttu-id="7dcbb-118">Typické změny bude zahrnovat:</span><span class="sxs-lookup"><span data-stu-id="7dcbb-118">Typical modifications would include:</span></span>  
   
--   <span data-ttu-id="40a9c-119">Změna adresa koncového bodu z výchozího formuláře ApplicationName/ComponentName/InterfaceName na více použitelné podoby.</span><span class="sxs-lookup"><span data-stu-id="40a9c-119">Changing the endpoint address from the default ApplicationName/ComponentName/InterfaceName form to a more usable form.</span></span>  
+- <span data-ttu-id="7dcbb-119">Adresa koncového bodu z výchozí formulář ApplicationName/ComponentName/InterfaceName se mění na více použitelné podoby.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-119">Changing the endpoint address from the default ApplicationName/ComponentName/InterfaceName form to a more usable form.</span></span>  
   
--   <span data-ttu-id="40a9c-120">Úprava oboru názvů služby z výchozího "http://tempuri.org/InterfaceID" formuláře relevantnější formuláře.</span><span class="sxs-lookup"><span data-stu-id="40a9c-120">Modifying the namespace of the service from the default "http://tempuri.org/InterfaceID" form to a more relevant form.</span></span>  
+- <span data-ttu-id="7dcbb-120">Úprava oboru názvů služby z výchozího `http://tempuri.org/InterfaceID` formuláře relevantnější formuláře.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-120">Modifying the namespace of the service from the default `http://tempuri.org/InterfaceID` form to a more relevant form.</span></span>  
   
--   <span data-ttu-id="40a9c-121">Změna koncový bod používat různé přenosové vazby.</span><span class="sxs-lookup"><span data-stu-id="40a9c-121">Changing the endpoint to use a different transport binding.</span></span>  
+- <span data-ttu-id="7dcbb-121">Změna koncového bodu používat různé přenosové vazby.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-121">Changing the endpoint to use a different transport binding.</span></span>  
   
-     <span data-ttu-id="40a9c-122">V modelu COM +-hostované případě přenosu pojmenované kanály se používá ve výchozím nastavení, ale místo toho lze použít přenosu vypnout počítač jako TCP.</span><span class="sxs-lookup"><span data-stu-id="40a9c-122">In the COM+-hosted case, the named pipes transport is used by default, but an off-machine transport like TCP can be used instead.</span></span>  
+     <span data-ttu-id="7dcbb-122">V modelu COM +-hostované případu, přenos pojmenované kanály se používá ve výchozím nastavení, ale místo toho lze použít přenosu vypnout počítač např. TCP.</span><span class="sxs-lookup"><span data-stu-id="7dcbb-122">In the COM+-hosted case, the named pipes transport is used by default, but an off-machine transport like TCP can be used instead.</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -96,5 +96,5 @@ public interface IFinancesContract : IDisposable
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="40a9c-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="40a9c-123">See Also</span></span>  
- [<span data-ttu-id="40a9c-124">Integrace s aplikacemi modelu COM+</span><span class="sxs-lookup"><span data-stu-id="40a9c-124">Integrating with COM+ Applications</span></span>](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+## <a name="see-also"></a><span data-ttu-id="7dcbb-123">Viz také</span><span class="sxs-lookup"><span data-stu-id="7dcbb-123">See Also</span></span>  
+ [<span data-ttu-id="7dcbb-124">Integrace s aplikacemi modelu COM+</span><span class="sxs-lookup"><span data-stu-id="7dcbb-124">Integrating with COM+ Applications</span></span>](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)

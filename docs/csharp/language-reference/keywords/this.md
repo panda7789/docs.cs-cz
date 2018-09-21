@@ -9,48 +9,48 @@ helpviewer_keywords:
 - this keyword [C#]
 ms.assetid: d4f827fe-4710-410b-89b8-867dad44b8a3
 ms.openlocfilehash: df1bf6a3e6d24b231bf5e3c7a960f49084c4e53a
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970452"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46485821"
 ---
-# <a name="this-c-reference"></a><span data-ttu-id="7e4cf-103">this (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="7e4cf-103">this (C# Reference)</span></span>
-<span data-ttu-id="7e4cf-104">`this` – Klíčové slovo odkazuje na aktuální instanci třídy a slouží také jako modifikátor první parametr metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="7e4cf-104">The `this` keyword refers to the current instance of the class and is also used as a modifier of the first parameter of an extension method.</span></span>  
+# <a name="this-c-reference"></a><span data-ttu-id="f45ea-103">this (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="f45ea-103">this (C# Reference)</span></span>
+<span data-ttu-id="f45ea-104">`this` – Klíčové slovo odkazuje na aktuální instanci třídy a slouží také jako modifikátor první parametr metody rozšíření.</span><span class="sxs-lookup"><span data-stu-id="f45ea-104">The `this` keyword refers to the current instance of the class and is also used as a modifier of the first parameter of an extension method.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="7e4cf-105">Tento článek popisuje způsob používání `this` instancemi třídy.</span><span class="sxs-lookup"><span data-stu-id="7e4cf-105">This article discusses the use of `this` with class instances.</span></span> <span data-ttu-id="7e4cf-106">Další informace o jeho použití v metodách rozšíření naleznete v tématu [rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).</span><span class="sxs-lookup"><span data-stu-id="7e4cf-106">For more information about its use in extension methods, see [Extension Methods](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).</span></span>  
+>  <span data-ttu-id="f45ea-105">Tento článek popisuje způsob používání `this` instancemi třídy.</span><span class="sxs-lookup"><span data-stu-id="f45ea-105">This article discusses the use of `this` with class instances.</span></span> <span data-ttu-id="f45ea-106">Další informace o jeho použití v metodách rozšíření naleznete v tématu [rozšiřující metody](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).</span><span class="sxs-lookup"><span data-stu-id="f45ea-106">For more information about its use in extension methods, see [Extension Methods](../../../csharp/programming-guide/classes-and-structs/extension-methods.md).</span></span>  
   
- <span data-ttu-id="7e4cf-107">Tady jsou běžné způsoby použití `this`:</span><span class="sxs-lookup"><span data-stu-id="7e4cf-107">The following are common uses of `this`:</span></span>  
+ <span data-ttu-id="f45ea-107">Tady jsou běžné způsoby použití `this`:</span><span class="sxs-lookup"><span data-stu-id="f45ea-107">The following are common uses of `this`:</span></span>  
   
--   <span data-ttu-id="7e4cf-108">K získání způsobilosti členy skryta podobnými názvy, například:</span><span class="sxs-lookup"><span data-stu-id="7e4cf-108">To qualify members hidden by similar names, for example:</span></span>  
+-   <span data-ttu-id="f45ea-108">K získání způsobilosti členy skryta podobnými názvy, například:</span><span class="sxs-lookup"><span data-stu-id="f45ea-108">To qualify members hidden by similar names, for example:</span></span>  
   
  [!code-csharp[csrefKeywordsAccess#4](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_1.cs)]  
   
--   <span data-ttu-id="7e4cf-109">K předání objektu jako parametr do jiné metody, například:</span><span class="sxs-lookup"><span data-stu-id="7e4cf-109">To pass an object as a parameter to other methods, for example:</span></span>  
+-   <span data-ttu-id="f45ea-109">K předání objektu jako parametr do jiné metody, například:</span><span class="sxs-lookup"><span data-stu-id="f45ea-109">To pass an object as a parameter to other methods, for example:</span></span>  
   
     ```csharp  
     CalcTax(this);  
     ```  
   
--   <span data-ttu-id="7e4cf-110">Chcete-li deklarovat indexery, například:</span><span class="sxs-lookup"><span data-stu-id="7e4cf-110">To declare indexers, for example:</span></span>  
+-   <span data-ttu-id="f45ea-110">Chcete-li deklarovat indexery, například:</span><span class="sxs-lookup"><span data-stu-id="f45ea-110">To declare indexers, for example:</span></span>  
   
  [!code-csharp[csrefKeywordsAccess#5](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_2.cs)]  
   
- <span data-ttu-id="7e4cf-111">Statické členské funkce, protože existují na úrovni třídy, nikoli jako součást objektu, není nutné `this` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="7e4cf-111">Static member functions, because they exist at the class level and not as part of an object, do not have a `this` pointer.</span></span> <span data-ttu-id="7e4cf-112">Jedná se o chybu k odkazování na `this` uvnitř statické metody.</span><span class="sxs-lookup"><span data-stu-id="7e4cf-112">It is an error to refer to `this` in a static method.</span></span>  
+ <span data-ttu-id="f45ea-111">Statické členské funkce, protože existují na úrovni třídy, nikoli jako součást objektu, není nutné `this` ukazatele.</span><span class="sxs-lookup"><span data-stu-id="f45ea-111">Static member functions, because they exist at the class level and not as part of an object, do not have a `this` pointer.</span></span> <span data-ttu-id="f45ea-112">Jedná se o chybu k odkazování na `this` uvnitř statické metody.</span><span class="sxs-lookup"><span data-stu-id="f45ea-112">It is an error to refer to `this` in a static method.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7e4cf-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="7e4cf-113">Example</span></span>  
- <span data-ttu-id="7e4cf-114">V tomto příkladu `this` se použijí pro kvalifikaci `Employee` členy, třídy `name` a `alias`, které jsou skryté, podobně jako názvy.</span><span class="sxs-lookup"><span data-stu-id="7e4cf-114">In this example, `this` is used to qualify the `Employee` class members, `name` and `alias`, which are hidden by similar names.</span></span> <span data-ttu-id="7e4cf-115">Používá se také k objektu předat metodě `CalcTax`, který patří do jiné třídy.</span><span class="sxs-lookup"><span data-stu-id="7e4cf-115">It is also used to pass an object to the method `CalcTax`, which belongs to another class.</span></span>  
+## <a name="example"></a><span data-ttu-id="f45ea-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="f45ea-113">Example</span></span>  
+ <span data-ttu-id="f45ea-114">V tomto příkladu `this` se použijí pro kvalifikaci `Employee` členy, třídy `name` a `alias`, které jsou skryté, podobně jako názvy.</span><span class="sxs-lookup"><span data-stu-id="f45ea-114">In this example, `this` is used to qualify the `Employee` class members, `name` and `alias`, which are hidden by similar names.</span></span> <span data-ttu-id="f45ea-115">Používá se také k objektu předat metodě `CalcTax`, který patří do jiné třídy.</span><span class="sxs-lookup"><span data-stu-id="f45ea-115">It is also used to pass an object to the method `CalcTax`, which belongs to another class.</span></span>  
   
  [!code-csharp[csrefKeywordsAccess#3](../../../csharp/language-reference/keywords/codesnippet/CSharp/this_3.cs)]  
   
-## <a name="c-language-specification"></a><span data-ttu-id="7e4cf-116">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7e4cf-116">C# Language Specification</span></span>  
+## <a name="c-language-specification"></a><span data-ttu-id="f45ea-116">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="f45ea-116">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="7e4cf-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="7e4cf-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f45ea-117">Viz také</span><span class="sxs-lookup"><span data-stu-id="f45ea-117">See Also</span></span>
 
-- [<span data-ttu-id="7e4cf-118">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7e4cf-118">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="7e4cf-119">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="7e4cf-119">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="7e4cf-120">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="7e4cf-120">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
-- [<span data-ttu-id="7e4cf-121">base</span><span class="sxs-lookup"><span data-stu-id="7e4cf-121">base</span></span>](../../../csharp/language-reference/keywords/base.md)  
-- [<span data-ttu-id="7e4cf-122">Metody</span><span class="sxs-lookup"><span data-stu-id="7e4cf-122">Methods</span></span>](../../../csharp/programming-guide/classes-and-structs/methods.md)
+- [<span data-ttu-id="f45ea-118">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="f45ea-118">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="f45ea-119">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="f45ea-119">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="f45ea-120">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="f45ea-120">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+- [<span data-ttu-id="f45ea-121">base</span><span class="sxs-lookup"><span data-stu-id="f45ea-121">base</span></span>](../../../csharp/language-reference/keywords/base.md)  
+- [<span data-ttu-id="f45ea-122">Metody</span><span class="sxs-lookup"><span data-stu-id="f45ea-122">Methods</span></span>](../../../csharp/programming-guide/classes-and-structs/methods.md)

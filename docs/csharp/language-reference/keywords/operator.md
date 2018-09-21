@@ -9,42 +9,42 @@ helpviewer_keywords:
 - operator keyword [C#]
 ms.assetid: 59218cce-e90e-42f6-a6bb-30300981b86a
 ms.openlocfilehash: 1e11d7767b61becc39b1158fae9cb2abe997e4bd
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45560159"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46471418"
 ---
-# <a name="operator-c-reference"></a><span data-ttu-id="d719a-103">operator (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="d719a-103">operator (C# Reference)</span></span>
+# <a name="operator-c-reference"></a><span data-ttu-id="bedcc-103">operator (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="bedcc-103">operator (C# Reference)</span></span>
 
-<span data-ttu-id="d719a-104">Použití `operator` – klíčové slovo přetížení předdefinovaný operátor nebo k poskytování uživatelsky definovaný převod v deklaraci třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="d719a-104">Use the `operator` keyword to overload a built-in operator or to provide a user-defined conversion in a class or struct declaration.</span></span>
+<span data-ttu-id="bedcc-104">Použití `operator` – klíčové slovo přetížení předdefinovaný operátor nebo k poskytování uživatelsky definovaný převod v deklaraci třídy nebo struktury.</span><span class="sxs-lookup"><span data-stu-id="bedcc-104">Use the `operator` keyword to overload a built-in operator or to provide a user-defined conversion in a class or struct declaration.</span></span>
 
-<span data-ttu-id="d719a-105">Přetížení operátoru na vlastní třídy nebo struktury, vytvoříte v odpovídající typ deklarace operátoru.</span><span class="sxs-lookup"><span data-stu-id="d719a-105">To overload an operator on a custom class or struct, you create an operator declaration in the corresponding type.</span></span> <span data-ttu-id="d719a-106">Deklarace operátor, který přetěžuje předdefinovaný operátor C# musí splňovat následující pravidla:</span><span class="sxs-lookup"><span data-stu-id="d719a-106">The operator declaration that overloads a built-in C# operator must satisfy the following rules:</span></span>
+<span data-ttu-id="bedcc-105">Přetížení operátoru na vlastní třídy nebo struktury, vytvoříte v odpovídající typ deklarace operátoru.</span><span class="sxs-lookup"><span data-stu-id="bedcc-105">To overload an operator on a custom class or struct, you create an operator declaration in the corresponding type.</span></span> <span data-ttu-id="bedcc-106">Deklarace operátor, který přetěžuje předdefinovaný operátor C# musí splňovat následující pravidla:</span><span class="sxs-lookup"><span data-stu-id="bedcc-106">The operator declaration that overloads a built-in C# operator must satisfy the following rules:</span></span>
 
-- <span data-ttu-id="d719a-107">To zahrnuje i `public` a `static` modifikátor.</span><span class="sxs-lookup"><span data-stu-id="d719a-107">It includes both a `public` and a `static` modifier.</span></span>
-- <span data-ttu-id="d719a-108">Zahrnuje `operator X` kde `X` je název nebo symbol přetížení operátoru.</span><span class="sxs-lookup"><span data-stu-id="d719a-108">It includes `operator X` where `X` is the name or symbol of the operator being overloaded.</span></span>
-- <span data-ttu-id="d719a-109">Unární operátory mít jeden parametr a binární operátory mají dva parametry.</span><span class="sxs-lookup"><span data-stu-id="d719a-109">Unary operators have one parameter, and binary operators have two parameters.</span></span> <span data-ttu-id="d719a-110">V každém případě alespoň jeden parametr musí být stejného typu jako třída nebo struktura, která deklaruje operátor.</span><span class="sxs-lookup"><span data-stu-id="d719a-110">In each case, at least one parameter must be the same type as the class or struct that declares the operator.</span></span>
+- <span data-ttu-id="bedcc-107">To zahrnuje i `public` a `static` modifikátor.</span><span class="sxs-lookup"><span data-stu-id="bedcc-107">It includes both a `public` and a `static` modifier.</span></span>
+- <span data-ttu-id="bedcc-108">Zahrnuje `operator X` kde `X` je název nebo symbol přetížení operátoru.</span><span class="sxs-lookup"><span data-stu-id="bedcc-108">It includes `operator X` where `X` is the name or symbol of the operator being overloaded.</span></span>
+- <span data-ttu-id="bedcc-109">Unární operátory mít jeden parametr a binární operátory mají dva parametry.</span><span class="sxs-lookup"><span data-stu-id="bedcc-109">Unary operators have one parameter, and binary operators have two parameters.</span></span> <span data-ttu-id="bedcc-110">V každém případě alespoň jeden parametr musí být stejného typu jako třída nebo struktura, která deklaruje operátor.</span><span class="sxs-lookup"><span data-stu-id="bedcc-110">In each case, at least one parameter must be the same type as the class or struct that declares the operator.</span></span>
 
-<span data-ttu-id="d719a-111">Informace o tom, jak definovat operátory převodu, najdete v článku [explicitní](explicit.md) a [implicitní](implicit.md) články – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="d719a-111">For information about how to define conversion operators, see the [explicit](explicit.md) and [implicit](implicit.md) keyword articles.</span></span>
+<span data-ttu-id="bedcc-111">Informace o tom, jak definovat operátory převodu, najdete v článku [explicitní](explicit.md) a [implicitní](implicit.md) články – klíčové slovo.</span><span class="sxs-lookup"><span data-stu-id="bedcc-111">For information about how to define conversion operators, see the [explicit](explicit.md) and [implicit](implicit.md) keyword articles.</span></span>
 
-<span data-ttu-id="d719a-112">Přehled, které mohou být přetíženy operátory jazyka C# najdete v tématu [přetížitelné operátory](../../programming-guide/statements-expressions-operators/overloadable-operators.md) článku.</span><span class="sxs-lookup"><span data-stu-id="d719a-112">For an overview of the C# operators that can be overloaded, see the [Overloadable operators](../../programming-guide/statements-expressions-operators/overloadable-operators.md) article.</span></span>
+<span data-ttu-id="bedcc-112">Přehled, které mohou být přetíženy operátory jazyka C# najdete v tématu [přetížitelné operátory](../../programming-guide/statements-expressions-operators/overloadable-operators.md) článku.</span><span class="sxs-lookup"><span data-stu-id="bedcc-112">For an overview of the C# operators that can be overloaded, see the [Overloadable operators](../../programming-guide/statements-expressions-operators/overloadable-operators.md) article.</span></span>
 
-## <a name="example"></a><span data-ttu-id="d719a-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="d719a-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="bedcc-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="bedcc-113">Example</span></span>
 
-<span data-ttu-id="d719a-114">Následující příklad definuje `Fraction` typ, který představuje desetinná čísla.</span><span class="sxs-lookup"><span data-stu-id="d719a-114">The following example defines a `Fraction` type that represents fractional numbers.</span></span> <span data-ttu-id="d719a-115">Přetěžuje `+` a `*` operátory provádět desetinné sčítání a násobení a také poskytuje operátor převodu které převádí `Fraction` typ, který `double` typu.</span><span class="sxs-lookup"><span data-stu-id="d719a-115">It overloads the `+` and `*` operators to perform fractional addition and multiplication, and also provides a conversion operator that converts a `Fraction` type to a `double` type.</span></span>
+<span data-ttu-id="bedcc-114">Následující příklad definuje `Fraction` typ, který představuje desetinná čísla.</span><span class="sxs-lookup"><span data-stu-id="bedcc-114">The following example defines a `Fraction` type that represents fractional numbers.</span></span> <span data-ttu-id="bedcc-115">Přetěžuje `+` a `*` operátory provádět desetinné sčítání a násobení a také poskytuje operátor převodu které převádí `Fraction` typ, který `double` typu.</span><span class="sxs-lookup"><span data-stu-id="bedcc-115">It overloads the `+` and `*` operators to perform fractional addition and multiplication, and also provides a conversion operator that converts a `Fraction` type to a `double` type.</span></span>
 
 [!code-csharp[csrefKeywordsConversion#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsConversion/CS/csrefKeywordsConversion.cs#6)]
 
-## <a name="c-language-specification"></a><span data-ttu-id="d719a-116">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d719a-116">C# language specification</span></span>
+## <a name="c-language-specification"></a><span data-ttu-id="bedcc-116">specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="bedcc-116">C# language specification</span></span>
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a><span data-ttu-id="d719a-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d719a-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bedcc-117">Viz také:</span><span class="sxs-lookup"><span data-stu-id="bedcc-117">See also</span></span>
 
-- [<span data-ttu-id="d719a-118">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d719a-118">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="d719a-119">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="d719a-119">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="d719a-120">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="d719a-120">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="d719a-121">implicit</span><span class="sxs-lookup"><span data-stu-id="d719a-121">implicit</span></span>](implicit.md)
-- [<span data-ttu-id="d719a-122">explicit</span><span class="sxs-lookup"><span data-stu-id="d719a-122">explicit</span></span>](explicit.md)
-- [<span data-ttu-id="d719a-123">Přetížitelné operátory</span><span class="sxs-lookup"><span data-stu-id="d719a-123">Overloadable operators</span></span>](../../programming-guide/statements-expressions-operators/overloadable-operators.md)
-- [<span data-ttu-id="d719a-124">Postupy: Implementace uživatelem definovaných převodů mezi strukturami</span><span class="sxs-lookup"><span data-stu-id="d719a-124">How to: Implement User-Defined Conversions Between Structs</span></span>](../../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
+- [<span data-ttu-id="bedcc-118">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="bedcc-118">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="bedcc-119">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="bedcc-119">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="bedcc-120">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="bedcc-120">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="bedcc-121">implicit</span><span class="sxs-lookup"><span data-stu-id="bedcc-121">implicit</span></span>](implicit.md)
+- [<span data-ttu-id="bedcc-122">explicit</span><span class="sxs-lookup"><span data-stu-id="bedcc-122">explicit</span></span>](explicit.md)
+- [<span data-ttu-id="bedcc-123">Přetížitelné operátory</span><span class="sxs-lookup"><span data-stu-id="bedcc-123">Overloadable operators</span></span>](../../programming-guide/statements-expressions-operators/overloadable-operators.md)
+- [<span data-ttu-id="bedcc-124">Postupy: Implementace uživatelem definovaných převodů mezi strukturami</span><span class="sxs-lookup"><span data-stu-id="bedcc-124">How to: Implement User-Defined Conversions Between Structs</span></span>](../../programming-guide/statements-expressions-operators/how-to-implement-user-defined-conversions-between-structs.md)
