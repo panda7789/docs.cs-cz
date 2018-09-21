@@ -17,11 +17,11 @@ ms.assetid: f49cc9cc-db7d-4058-8b8a-422bc08b29b0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9b390b1d3d935ad045d59dd6b3d2e42cdbe82dd7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
-ms.translationtype: HT
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988598"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46481868"
 ---
 # <a name="character-escapes-in-regular-expressions"></a>Řídicí sekvence znaků v regulárních výrazech
 Zpětné lomítko (\\) v regulárním výrazu označuje jeden z následujících akcí:  
