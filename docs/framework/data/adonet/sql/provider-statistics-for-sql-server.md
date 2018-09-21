@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
 ms.openlocfilehash: d52c6bfdadf0a53ac4c5f62c37f1056c6702a82c
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
-ms.translationtype: HT
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46321085"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46471813"
 ---
 # <a name="provider-statistics-for-sql-server"></a>Statistiky zprostředkovatelů na SQL serveru
 Od verze rozhraní .NET Framework verze 2.0, zprostředkovatele dat .NET Framework pro SQL Server podporuje běhové statistiky. Je nutné povolit statistiky tak, že nastavíte <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> vlastnost <xref:System.Data.SqlClient.SqlConnection> objektu `True` po máte platné připojení objekt vytvořený. Po statistiky jsou povolené, můžete zkontrolovat je jako "snímku v čase" načtením <xref:System.Collections.IDictionary> odkazovat prostřednictvím <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objektu. Můžete zobrazit výčet prostřednictvím seznamu jako sada položek slovníku dvojice název/hodnota. Tyto páry název/hodnota Neseřazený. Kdykoli můžete volat <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> metodu <xref:System.Data.SqlClient.SqlConnection> objekt resetovat počítadla. Pokud statistiky shromažďování není povolený, výjimka se nevygeneroval. Kromě toho pokud <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> je volána bez <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> s byla nejdříve volána, jsou hodnoty získané počáteční hodnoty pro každou položku. Pokud povolíte statistiky, spusťte aplikaci na dobu a potom zakázat statistiky, hodnoty získané bude odpovídat hodnotám shromážděných až do chvíle, kdy byly zakázány statistiky. Na jednotlivá připojení jsou všechny statistické hodnoty shromážděné.  

@@ -2,12 +2,12 @@
 title: Funkce zjednodušení WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: 010f941850dedd73e9cc203ea2b180dae7d4742c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ded4fc93e5e8f33d98e58ffcb3cb98c2bff2b410
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526350"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46493229"
 ---
 # <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 Toto téma popisuje nové funkce, které usnadňují zápis WCF aplikací jednodušší.  
@@ -106,7 +106,7 @@ Toto téma popisuje nové funkce, které usnadňují zápis WCF aplikací jednod
 |----------------|-------------------|-----------------|  
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>|Hodnota Int32.MaxValue|Získá nebo nastaví maximální povolené délky pole. Tato kvóta omezuje maximální velikost pole primitivních elementů, které vrací čtecí funkce XML, včetně pole bajtů. Tato kvóta neomezuje využití paměti v samotné čtecí funkce XML, ale v libovolné součásti, která používá čtecí modul. Například, když <xref:System.Runtime.Serialization.DataContractSerializer> použije čtečku zabezpečený pomocí <xref:System.Xml.XmlDictionaryReaderQuotas.MaxArrayLength%2A>, není ji deserializovat bajtová pole větší než tuto kvótu.|  
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>|Hodnota Int32.MaxValue|Získá nebo nastaví maximální povolené bajty vrácené pro každé čtení. Tato kvóta omezuje počet bajtů, které jsou pro čtení v rámci jedné operace čtení při čtení elementu spuštění značku a její atributy. (V případech,-datovým proudem, se nepočítá samotný název elementu proti kvótu). Máte příliš mnoho atributů XML může použít nepřiměřené doba zpracování, protože názvy atributů musí být vráceny jedinečný. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A> omezuje tuto hrozbu.|  
-|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|hloubkové 128 uzlů|Tato kvóta omezuje maximální hloubka vnoření elementů XML.  <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> komunikuje se službou <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>: čtecí modul dat vždy udržuje v paměti pro aktuální element a všechny jeho předchůdce, tak maximální velikost paměti spotřeba čtečky je úměrný tato dvě nastavení. Při deserializaci graf objektu nejhlouběji vnořená, deserializátor musí pro přístup k celý zásobník a vyvolat neodstranitelné <xref:System.StackOverflowException>. Mezi XML vnoření a objekt vnoření pro obě existuje přímou spojitost s míněním <xref:System.Runtime.Serialization.DataContractSerializer> a <!--zz <xref:System.Runtime.Serialization.XmlSerializer>--> `System.Runtime.Serialization.XmlSerializer`. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> slouží ke zmírnění této hrozby.|  
+|<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A>|hloubkové 128 uzlů|Tato kvóta omezuje maximální hloubka vnoření elementů XML.  <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> komunikuje se službou <xref:System.Xml.XmlDictionaryReaderQuotas.MaxBytesPerRead%2A>: čtecí modul dat vždy udržuje v paměti pro aktuální element a všechny jeho předchůdce, tak maximální velikost paměti spotřeba čtečky je úměrný tato dvě nastavení. Při deserializaci graf objektu nejhlouběji vnořená, deserializátor musí pro přístup k celý zásobník a vyvolat neodstranitelné <xref:System.StackOverflowException>. Mezi XML vnoření a objekt vnoření pro obě existuje přímou spojitost s míněním <xref:System.Runtime.Serialization.DataContractSerializer> a <xref:System.Xml.Serialization.XmlSerializer>. <xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> slouží ke zmírnění této hrozby.|  
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>|Hodnota Int32.MaxValue|Tato kvóta omezuje maximální počet znaků povolených v tabulky názvů. Tabulka obsahuje některé řetězce (například obory názvů a předpony), jež byly objeveny při zpracování dokumentu XML. Protože tyto řetězce jsou ukládány do vyrovnávací paměti v paměti, tuto kvótu slouží aby se zabránilo nadměrnému ukládání do vyrovnávací paměti při streamování se očekává.|  
 |<xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>|Hodnota Int32.MaxValue|Tato kvóta omezení maximální velikost řetězce, který vrací čtecí funkce XML. Tato kvóta neomezuje využití paměti v samotné čtecí funkce XML, ale v komponentě, která používá čtecí modul. Například, když <xref:System.Runtime.Serialization.DataContractSerializer> použije čtečku zabezpečený pomocí <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>, to není deserializaci řetězců větší než tuto kvótu.|  
   

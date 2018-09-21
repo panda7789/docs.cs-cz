@@ -5,12 +5,12 @@ helpviewer_keywords:
 - localization [WPF interoperability]
 - hybrid applications [WPF interoperability]
 ms.assetid: fbc0c54e-930a-4c13-8e9c-27b83665010a
-ms.openlocfilehash: 685c68967f69e8933ff3dd2cd062e0893c7e2da6
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: e1d06085b4edb5c1e102eaab766ec7636194b991
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44076807"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482115"
 ---
 # <a name="walkthrough-localizing-a-hybrid-application"></a>Návod: Lokalizace hybridní aplikace
 
@@ -123,7 +123,7 @@ Můžete namapovat lokalizovatelné obsah sestavení prostředků s použitím i
 2.  Použijte následující příkaz k přiřazení identifikátory prostředků lokalizovatelných obsah.
 
     ```
-    msbuild /t:updateuid LocalizingWpfInWf.csproj
+    msbuild -t:updateuid LocalizingWpfInWf.csproj
     ```
 
 3.  V **Průzkumníka řešení**, dvakrát klikněte na panel **SimpleControl.xaml** ho otevřete v editoru kódu. Uvidíte, že `msbuild` příkaz má přidat `Uid` atribut na všechny prvky. To usnadňuje lokalizaci prostřednictvím přiřazení identifikátory prostředků.

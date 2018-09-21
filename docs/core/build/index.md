@@ -4,12 +4,12 @@ description: Zjistěte, jak sestavení .NET Core a .NET Core CLI ze zdrojového 
 author: bleroy
 ms.author: mairaw
 ms.date: 06/28/2017
-ms.openlocfilehash: 2623c5d21121b71960d174301c35bdd0d7f8558a
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: fa9c193ea4088f04745bdadc6040552e18c0858a
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002083"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46492873"
 ---
 # <a name="build-net-core-from-source"></a>Sestavení .NET Core ze zdroje
 
@@ -93,7 +93,7 @@ Aby bylo možné sestavit rozhraní příkazového řádku .NET Core, potřebuje
   * Xcode
   * OpenSSL
 
-Aby bylo možné sestavit, spustit `build.cmd` na Windows, nebo `build.sh` v Linuxu a macOS z kořenového adresáře. Pokud nechcete, aby ke spuštění testů, spouštění `build.cmd /t:Compile` nebo `./build.sh /t:Compile`. K vytvoření rozhraní příkazového řádku v systému macOS Sierra, je nutné nastavit proměnnou prostředí DOTNET_RUNTIME_ID spuštěním `export DOTNET_RUNTIME_ID=osx.10.11-x64`.
+Aby bylo možné sestavit, spustit `build.cmd` na Windows, nebo `build.sh` v Linuxu a macOS z kořenového adresáře. Pokud nechcete, aby ke spuštění testů, spouštění `build.cmd -t:Compile` nebo `./build.sh -t:Compile`. K vytvoření rozhraní příkazového řádku v systému macOS Sierra, je nutné nastavit proměnnou prostředí DOTNET_RUNTIME_ID spuštěním `export DOTNET_RUNTIME_ID=osx.10.11-x64`.
 
 ### <a name="using-your-build"></a>Pomocí sestavení
 

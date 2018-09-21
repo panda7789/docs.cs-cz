@@ -2,15 +2,16 @@
 title: Použití akcí k implementaci chování na straně serveru
 ms.date: 03/30/2017
 ms.assetid: 11a372db-7168-498b-80d2-9419ff557ba5
-ms.openlocfilehash: 415797114d1e6d2ff307f0d872361f7d415cad3c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 515553540053ed0c16085fde06e2cc2d2dedda1e
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43516258"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46471719"
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Použití akcí k implementaci chování na straně serveru
-Akcí OData, které poskytují způsob, jak implementovat chování, která funguje na prostředek získaných ze služby OData.  Představme si třeba digitální video jako prostředek, spoustu věcí, které můžou dělat s digitální video: vrácení se změnami, míra/comment nebo vrácení se změnami. Tyto jsou všechny příklady akcí, které mohou být prováděny datové služby WCF, která spravuje digitální video. Akce jsou popsány v odpovědi OData, který obsahuje prostředek, na který lze vyvolat akci. Když uživatel požádá o prostředek, který představuje digitální video odpovědi vrácené ze služby WCF Data Service obsahuje informace o akcích, které jsou k dispozici pro daný prostředek. Dostupnost akce může záviset na stav dat službě nebo prostředku. Pro příklad po digitální video je rezervován jej nelze zarezervovat jiným uživatelem. Klienti mohou vyvolat akci jednoduše tak, že zadáte adresu URL. Například http://MyServer/MovieService.svc/Movies(6) by identifikovat konkrétní digitální video a http://MyServer/MovieService.svc/Movies(6)/Checkout by měl vyvolat akci u konkrétního videa. Akce umožňují vystavit můžete model služby bez vystavení datového modelu. Příklad služby video budete pokračovat, můžete chtít umožnit uživateli hodnocení filmu, ale zveřejnit přímo jako zdroj dat hodnocení. Je možné implementovat míra akce, aby uživatel mohl hodnocení filmu, ale ne přímo přistupovat k datům hodnocení jako prostředek.  
+
+Akcí OData, které poskytují způsob, jak implementovat chování, která funguje na prostředek získaných ze služby OData. Představme si třeba digitální video jako prostředek, spoustu věcí, které můžou dělat s digitální video: vrácení se změnami, míra/comment nebo vrácení se změnami. Tyto jsou všechny příklady akcí, které mohou být prováděny datové služby WCF, která spravuje digitální video. Akce jsou popsány v odpovědi OData, který obsahuje prostředek, na který lze vyvolat akci. Když uživatel požádá o prostředek, který představuje digitální video odpovědi vrácené ze služby WCF Data Service obsahuje informace o akcích, které jsou k dispozici pro daný prostředek. Dostupnost akce může záviset na stav dat službě nebo prostředku. Pro příklad po digitální video je rezervován jej nelze zarezervovat jiným uživatelem. Klienti mohou vyvolat akci jednoduše tak, že zadáte adresu URL. Například `http://MyServer/MovieService.svc/Movies(6)` by identifikovat konkrétní digitální video a `http://MyServer/MovieService.svc/Movies(6)/Checkout` by měl vyvolat akci u konkrétního videa. Akce umožňují vystavit můžete model služby bez vystavení datového modelu. Příklad služby video budete pokračovat, můžete chtít umožnit uživateli hodnocení filmu, ale zveřejnit přímo jako zdroj dat hodnocení. Je možné implementovat míra akce, aby uživatel mohl hodnocení filmu, ale ne přímo přistupovat k datům hodnocení jako prostředek.
   
 ## <a name="implementing-an-action"></a>Implementace akce  
  K provedení akce služby je nutné implementovat <xref:System.IServiceProvider>, [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx), a [IDataServiceInvokable](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceinvokable(v=vs.113).aspx) rozhraní. <xref:System.IServiceProvider> umožňuje získat vaše implementace služby WCF Data Services [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx). [IDataServiceActionProvider](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceactionprovider(v=vs.113).aspx) umožňuje služeb WCF Data Services k vytvoření, najít, popsat a vyvolání akce služby. [IDataServiceInvokable](https://msdn.microsoft.com/library/system.data.services.providers.idataserviceinvokable(v=vs.113).aspx) umožňuje vyvolat kód, který implementuje chování služby akcí a získání požadovaných výsledků, pokud existuje. Mějte na paměti, že služeb WCF Data Services jsou jednotlivá volání služby WCF, nové instance služby vytvoří pokaždé, když je volána služby.  Ujistěte se, že žádná zbytečné práce se provádí při vytvoření služby.  
@@ -52,7 +53,7 @@ Akcí OData, které poskytují způsob, jak implementovat chování, která fung
 ## <a name="invoking-a-wcf-data-service-action"></a>Vyvolání akce WCF Data Service  
  Akce jsou vyvolány pomocí požadavku HTTP POST. Adresa URL určuje prostředek, za nímž následuje název akce. Parametry jsou předány v textu požadavku. Například pokud se služba s názvem MovieService, který vystavený akci názvem míry. Můžete použít následující adresu URL k vyvolání akce míra na konkrétní filmu:  
   
- http://MovieServer/MovieService.svc/Movies(1)/Rate  
+ `http://MovieServer/MovieService.svc/Movies(1)/Rate`
   
  Movies(1) určuje film, který chcete sazba a sazba míra akce. Skutečná hodnota hodnocení bude v textu požadavku HTTP, jak je znázorněno v následujícím příkladu:  
   
@@ -67,15 +68,15 @@ Host: localhost:15238
 ```  
   
 > [!WARNING]
->  Výše uvedený ukázkový kód bude fungovat jenom s WCF Data Services 5.2 a vyšší, který má podporu pro formát JSON light. Pokud používáte starší verzi služeb WCF Data Services, je nutné zadat json verbose content-type následujícím způsobem: `application/json;odata=verbose`.  
+> Výše uvedený ukázkový kód bude fungovat jenom s WCF Data Services 5.2 a vyšší, který má podporu pro formát JSON light. Pokud používáte starší verzi služeb WCF Data Services, je nutné zadat json verbose content-type následujícím způsobem: `application/json;odata=verbose`.  
   
  Případně můžete vyvolat akci pomocí klienta WCF Data Services, jak je znázorněno v následujícím fragmentu kódu.  
   
-```  
+```csharp
 MoviesModel context = new MoviesModel (new Uri("http://MyServer/MoviesService.svc/"));  
-            //...  
-            context.Execute(new Uri("http://MyServer/MoviesService.svc/Movies(1)/Rate"), "POST", new BodyOperationParameter("rating",4) );           
-```  
+//...  
+context.Execute(new Uri("http://MyServer/MoviesService.svc/Movies(1)/Rate"), "POST", new BodyOperationParameter("rating",4) );
+```
   
  Ve výše, fragmentu kódu `MoviesModel` třídy byl vytvořen pomocí Visual Studio a přidejte odkaz na službu WCF Data Service.  
   

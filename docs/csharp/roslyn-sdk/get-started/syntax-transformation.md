@@ -3,12 +3,12 @@ title: Začínáme s syntaxe transformace (rozhraní Roslyn API)
 description: Úvod do procházení, dotazování a procházení stromu syntaxe.
 ms.date: 06/01/2018
 ms.custom: mvc
-ms.openlocfilehash: c372b1ba1e08a7d3b57ceea0d4449d03e55a39cf
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.openlocfilehash: acba7ac590154ad8458d0d9a8abac55a12e96265
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46009820"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46493591"
 ---
 # <a name="get-started-with-syntax-transformation"></a>Začínáme s syntaxe transformace
 
@@ -30,7 +30,7 @@ Zvolte jednu ze dvou strategií pro syntaxe transformace. **Metody pro vytváře
 
 První transformace syntaxe ukazuje metody pro vytváření objektů. Chystáte se nahradit `using System.Collections;` příkazem `using System.Collections.Generic;` příkazu. Tento příklad ukazuje, jak vytvořit <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> objektů pomocí <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody pro vytváření objektů. Pro každý typ z **uzel**, **token**, nebo **triviální prvek** je metoda factory, který vytvoří instanci daného typu. Při vytváření stromu syntaxe vytváření uzly hierarchicky způsobem zdola nahoru. Potom budete transformace existující program nahrazujete stávající uzly s větve, které jste vytvořili.
 
-Spusťte sadu Visual Studio a vytvořte nový C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, zvolte **souboru** > **nový* > **projektu** zobrazíte dialogové okno Nový projekt. V části **Visual C#** > **rozšiřitelnost** zvolte **samostatný nástroj pro analýzu kódu**. V tomto rychlém startu má dva vzorové projekty, takže název řešení **SyntaxTransformationQuickStart**a název projektu **ConstructionCS**. Klikněte na tlačítko **OK**.
+Spusťte sadu Visual Studio a vytvořte nový C# **samostatný nástroj pro analýzu kódu** projektu. V sadě Visual Studio, zvolte **souboru** > **nový** > **projektu** zobrazíte dialogové okno Nový projekt. V části **Visual C#** > **rozšiřitelnost** zvolte **samostatný nástroj pro analýzu kódu**. V tomto rychlém startu má dva vzorové projekty, takže název řešení **SyntaxTransformationQuickStart**a název projektu **ConstructionCS**. Klikněte na tlačítko **OK**.
 
 Tento projekt používá <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> metody k vytvoření třídy <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType> představující `System.Collections.Generic` oboru názvů.
 

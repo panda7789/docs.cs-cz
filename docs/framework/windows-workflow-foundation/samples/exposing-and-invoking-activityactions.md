@@ -2,19 +2,19 @@
 title: Zveřejnění a vyvolání akcí aktivit
 ms.date: 03/30/2017
 ms.assetid: 97ce4797-426e-463d-9cc4-1261afad6df4
-ms.openlocfilehash: f36d88fc54e5150927113ed8825fbccad84129d4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 99207c33d82ec9028da2355cc792c366dc5e0cc6
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520120"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46479751"
 ---
 # <a name="exposing-and-invoking-activityactions"></a>Zveřejnění a vyvolání akcí aktivit
 Tato ukázka předvádí, jak vyvinout vlastní aktivity, která má <xref:System.Activities.ActivityAction>. Také ukazuje, jak tuto aktivitu použijte, tím, že poskytuje implementace <xref:System.Activities.ActivityAction>.  
   
- <xref:System.Activities.ActivityAction> Umožňuje autorovi aktivity vystavit "otvorů" konkrétní podpisy kde aktivity uživatele můžete zařadit vlastní chování. Například <!--zz <xref:System.Activities.Statements.ForEach>--> `System.Activities.Statements.ForEach` aktivity (která funguje v kolekci položek), má <xref:System.Activities.ActivityAction> , který umožňuje uživateli aktivity k chování, které působí na aktuální položku iterace.  
+ <xref:System.Activities.ActivityAction> Umožňuje autorovi aktivity vystavit "otvorů" konkrétní podpisy kde aktivity uživatele můžete zařadit vlastní chování. Například <xref:System.Activities.Statements.ForEach%601> aktivity (která funguje v kolekci položek), má <xref:System.Activities.ActivityAction> , který umožňuje uživateli aktivity k chování, které působí na aktuální položku iterace.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Otevřít **ActivityAction.sln** ukázkové řešení v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
   

@@ -2,12 +2,12 @@
 title: 'Postupy: Přístup ke službě z aplikace pracovního postupu'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
-ms.openlocfilehash: 5bc18b446d4bf818c874839a421793a997ddc543
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 460e5d0f1bbfdebf885176ed9fcc336b76731edd
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45595461"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46493291"
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Postupy: Přístup ke službě z aplikace pracovního postupu
 Toto téma popisuje, jak volat služby pracovních postupů z konzolové aplikace pracovního postupu. To závisí na dokončení [postupy: vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu. I když toto téma popisuje, jak volat z aplikace pracovního postupu služby pracovního postupu, stejně jako je možné volat jakékoli služby Windows Communication Foundation (WCF) z aplikace pracovního postupu.
@@ -42,13 +42,13 @@ Toto téma popisuje, jak volat služby pracovních postupů z konzolové aplikac
 
      ![Echo aktivity v sadě nástrojů](../../../../docs/framework/wcf/feature-details/media/echoactivity.JPG "EchoActivity")
 
-7.  Přetáhnout myší <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity na plochu návrháře. Je v části **tok řízení** části panelu nástrojů.
+7.  Přetáhnout myší <xref:System.Activities.Statements.Sequence> aktivity na plochu návrháře. Je v části **tok řízení** části panelu nástrojů.
 
-8.  S <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity v fokus, klikněte **proměnné** propojit a přidat proměnnou s řetězcem s názvem `inString`. Zadejte výchozí hodnotu proměnné `"Hello, world"` a proměnné řetězce s názvem `outString` jak je znázorněno v následujícím diagramu.
+8.  S <xref:System.Activities.Statements.Sequence> aktivity v fokus, klikněte **proměnné** propojit a přidat proměnnou s řetězcem s názvem `inString`. Zadejte výchozí hodnotu proměnné `"Hello, world"` a proměnné řetězce s názvem `outString` jak je znázorněno v následujícím diagramu.
 
      ![Přidání proměnné](../../../../docs/framework/wcf/feature-details/media/instringvar.JPG "inStringVar")
 
-9. Přetáhnout myší **Echo** aktivitu <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence`. V okně Vlastnosti vytvořit vazbu `inMsg` argument `inString` proměnné a `outMsg` argument `outString` proměnné, jak je znázorněno na následujícím obrázku. Tím se předají hodnotu `inString` proměnné pro operace a přijímá návratovou hodnotu a umístí jej do `outString` proměnné.
+9. Přetáhnout myší **Echo** aktivitu <xref:System.Activities.Statements.Sequence>. V okně Vlastnosti vytvořit vazbu `inMsg` argument `inString` proměnné a `outMsg` argument `outString` proměnné, jak je znázorněno na následujícím obrázku. Tím se předají hodnotu `inString` proměnné pro operace a přijímá návratovou hodnotu a umístí jej do `outString` proměnné.
 
      ![Připojení k proměnné argumenty](../../../../docs/framework/wcf/feature-details/media/argumentbind.JPG "ArgumentBind")
 

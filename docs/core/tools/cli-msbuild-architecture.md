@@ -3,12 +3,12 @@ title: Architektura nástroje příkazového řádku .NET core
 description: Další informace o .NET Core, nástroje vrstvy a co se změnilo v nejnovější verze.
 author: blackdwarf
 ms.date: 03/06/2017
-ms.openlocfilehash: 1d96a0b1e19bf84af0ab645ebd104afc899ae656
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 85987129421e8ee22f7cf7fe1d44e0768d95a214
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245126"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46490650"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Podrobný přehled změn v nástrojích pro .NET Core
 
@@ -63,7 +63,7 @@ Z hlediska provádění příkazů rozhraní příkazového řádku se jejich pa
     
 Tento příkaz je publikování aplikace do `pub` složky pomocí konfigurace "Verze". Tento příkaz načte interně přeloženy do následující vyvolání MSBuild: 
 
-   `dotnet msbuild /t:Publish /p:OutputPath=pub /p:Configuration=Release`
+   `dotnet msbuild -t:Publish -p:OutputPath=pub -p:Configuration=Release`
 
 Významné výjimka tohoto pravidla jsou `new` a `run` příkazy, protože nejsou implementované jako cílů MSBuild.
 

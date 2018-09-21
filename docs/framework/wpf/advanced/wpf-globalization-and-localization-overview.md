@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: 54c5caaf3ade07f342e94ad0359f00c1418eace4
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: d8fef7965e3248d5361d866a441783bf4968460e
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45646451"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46478890"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciálního zákazníka základní zlomek naplnění 6.5 miliard náš svět. Pokud chcete, aby vaše aplikace pro oslovení publika, nákladově efektivní lokalizaci skrytých váš produkt je jedním ze způsobů nejlepší a nejhospodárnějším oslovovat víc zákazníků.  
@@ -54,7 +54,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
 -   Použití atributů lokalizace řídit lokalizace místo selektivně vynechání <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti prvků. Zobrazit [atributy a komentáře lokalizace](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md) Další informace.  
   
--   Použití **msbuild /t:updateuid** a **/t:checkuid** přidat a zkontrolujte <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti v vaše [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Použití <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které sledují změny mezi vývojem a lokalizaci. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> Vlastnosti vám usnadní lokalizaci nové změnami vývoje. Pokud chcete ručně přidat <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které chcete [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], úloha je obvykle únavné a méně přesné.  
+-   Použití `msbuild -t:updateuid` a `-t:checkuid` přidat a zkontrolujte <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti ve vaší [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Použití <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které sledují změny mezi vývojem a lokalizaci. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> Vlastnosti vám usnadní lokalizaci nové změnami vývoje. Pokud chcete ručně přidat <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti, které chcete [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], úloha je obvykle únavné a méně přesné.  
   
     -   Upravit nebo změnit <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti po zahájení lokalizace.  
   
@@ -125,7 +125,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
  <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti jsou potřebné pro [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] fungovat správně.  
   
- Jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] ke sledování změn mezi vývojem a lokalizace [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti umožňují sloučení novější verze [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] s starší lokalizace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Přidáte <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnost spuštěním **msbuild /t:updateuid RunDialog.csproj** v příkazovém řádku. Toto je doporučený způsob přidávání <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti vzhledem k tomu, že je ručně přidáte je obvykle zdlouhavá a méně přesné. Můžete zkontrolovat, který <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> spuštěním jsou správně nastaveny vlastnosti **msbuild /t:checkuid RunDialog.csproj**.  
+ Jsou používány [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] lokalizace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] ke sledování změn mezi vývojem a lokalizace [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti umožňují sloučení novější verze [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] s starší lokalizace [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Přidáte <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnost spuštěním `msbuild -t:updateuid RunDialog.csproj` v příkazovém řádku. Toto je doporučený způsob přidávání <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> vlastnosti vzhledem k tomu, že je ručně přidáte je obvykle zdlouhavá a méně přesné. Můžete zkontrolovat, který <xref:System.Windows.Markup.Localizer.BamlLocalizableResourceKey.Uid%2A> spuštěním jsou správně nastaveny vlastnosti `msbuild -t:checkuid RunDialog.csproj`.
   
  [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Strukturovaná pomocí <xref:System.Windows.Controls.Grid> ovládací prvek, který je užitečných ovládací prvek pro využití výhod automatické rozložení v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Všimněte si, že dialogové okno se dělí do tři řádky a pět sloupců. Není jednou z definice řádků a sloupců má pevnou velikost; Proto [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] prvky, které jsou umístěny v každé buňce můžete přizpůsobit zvyšuje a snižuje velikost při lokalizaci.  
   

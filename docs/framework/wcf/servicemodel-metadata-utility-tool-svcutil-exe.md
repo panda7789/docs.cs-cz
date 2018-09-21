@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: 4c47013ebc84c6006d65a89e57217ce1c720b45a
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
-ms.translationtype: MT
+ms.openlocfilehash: f9ae53aeb988f23611adb4b00354f65918790d3b
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44197563"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46490163"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
@@ -192,7 +192,7 @@ Svcutil.exe lze generovat nezbytné kód serializace C# z zkompilovaná sestaven
 |/ reference:\<cesta k souboru >|Přidá zadané sestavení na sadu sestavení, které používá k vyřešení odkazů na typy.<br /><br /> Krátký tvar: `/r`|
 |/excludeType:\<typ >|Určuje plně kvalifikovaný nebo sestavením kvalifikovaný název typu, které se mají vyloučit z ověření nebo export.<br /><br /> Krátký tvar: `/et`|
 |/ out:\<souboru >|Určuje název souboru pro vygenerovaný kód. Tato možnost se ignoruje, pokud více sestavení jsou předány jako vstup do nástroje.<br /><br /> Výchozí hodnota: Odvozen od názvu sestavení.<br /><br /> Krátký tvar: `/o`|
-|/ UseSerializerForFaults|Určuje, že <!--zz <xref:System.Xml.XmlSerializer> --> `xref:System.Xml.XmlSerializer ` by měl sloužit pro čtení a zápis chyb, místo výchozího <xref:System.Runtime.Serialization.DataContractSerializer>.|
+|/ UseSerializerForFaults|Určuje, že <xref:System.Xml.Serialization.XmlSerializer> by měl sloužit pro čtení a zápis chyb, místo výchozího <xref:System.Runtime.Serialization.DataContractSerializer>.|
 
 ## <a name="examples"></a>Příklady
 

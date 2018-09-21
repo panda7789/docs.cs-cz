@@ -2,17 +2,17 @@
 title: Neobecná aktivita ForEach
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: b94ad54d248af7f6ad45c11b9860dd415db840f9
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 0274cd5b87e6039ff40afa3108986ffd113fc4fb
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43419314"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46478315"
 ---
 # <a name="non-generic-foreach"></a>Neobecná aktivita ForEach
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] ve svých nástrojů se dodává sadu tok řízení aktivit, včetně <xref:System.Activities.Statements.ForEach%601>, který umožňuje procházení <!--zz <xref:System.Collections.IEnumerable%601> --> `System.Collections.IEnumerable` kolekce.  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] ve svých nástrojů se dodává sadu tok řízení aktivit, včetně <xref:System.Activities.Statements.ForEach%601>, který umožňuje procházení <xref:System.Collections.Generic.IEnumerable%601> kolekce.  
   
- <xref:System.Activities.Statements.ForEach%601> vyžaduje jeho <xref:System.Activities.Statements.ForEach%601.Values%2A> vlastnost typu <!--zz <xref:System.Collections.IEnumerable%601> --> `System.Collections.IEnumerable`. To vylučuje uživatele od iterování celého datové struktury, které implementují <!--zz <xref:System.Collections.IEnumerable%601> --> `System.Collections.IEnumerable` rozhraní (třeba <xref:System.Collections.ArrayList>). Obecné verzi <xref:System.Activities.Statements.ForEach%601> překonává tento požadavek za cenu za běhu složitější pro zajištění kompatibility typy hodnot v kolekci.  
+ <xref:System.Activities.Statements.ForEach%601> vyžaduje jeho <xref:System.Activities.Statements.ForEach%601.Values%2A> vlastnost typu <xref:System.Collections.Generic.IEnumerable%601>. To vylučuje uživatele od iterování celého datové struktury, které implementují <xref:System.Collections.Generic.IEnumerable%601> rozhraní (třeba <xref:System.Collections.ArrayList>). Obecné verzi <xref:System.Activities.Statements.ForEach%601> překonává tento požadavek za cenu za běhu složitější pro zajištění kompatibility typy hodnot v kolekci.  
   
  Tento příklad ukazuje, jak implementovat neobecných <xref:System.Activities.Statements.ForEach%601> aktivita a její návrháře. Tuto aktivitu lze použít k iteraci v rámci <xref:System.Collections.ArrayList>.  
   

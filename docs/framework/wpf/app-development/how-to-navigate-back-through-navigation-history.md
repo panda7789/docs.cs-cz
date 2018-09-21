@@ -9,11 +9,11 @@ helpviewer_keywords:
 - navigation [WPF], through navigation history (back)
 ms.assetid: 9343234b-d864-441d-b8a7-d895cba80a87
 ms.openlocfilehash: 7266c9486524e962a859c34c9be5ab8f6d7bf7d5
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46322230"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46492104"
 ---
 # <a name="how-to-navigate-back-through-navigation-history"></a>Postupy: přecházení zpět v historii navigace
 Tento příklad ukazuje, jak přejít na položky zpět v historii navigace.  

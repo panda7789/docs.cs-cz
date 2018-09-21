@@ -4,12 +4,12 @@ description: Příkaz dotnet pack vytvoří balíčky NuGet pro projekt .NET Cor
 author: mairaw
 ms.author: mairaw
 ms.date: 05/29/2018
-ms.openlocfilehash: 8c2569ec7598b21fe9b673176143d0e54b9eb065
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 434f1c97af24d1417cd79edd52b63814fd4c6512
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44204848"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46473061"
 ---
 # <a name="dotnet-pack"></a>balíčku DotNet
 
@@ -43,7 +43,7 @@ Závislostí NuGet komprimovat komprimovaný objekt projektu jsou přidány do *
 
 Ve výchozím nastavení `dotnet pack` nejprve sestaví projekt. Pokud chcete-li toto chování vyhnout, předejte `--no-build` možnost. Tato možnost je často užitečné pro scénáře sestavení kontinuální integrace (CI), kdy víte, že kód byl vytvořen dříve.
 
-Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces balení. Další informace najdete v tématu [vlastnosti metadat NuGet](csproj.md#nuget-metadata-properties) a [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) části ukazuje, jak pomocí přepínače /p MSBuild pro několik různých scénářů.
+Můžete zadat vlastnosti nástroje MSBuild k `dotnet pack` příkaz pro proces balení. Další informace najdete v tématu [vlastnosti metadat NuGet](csproj.md#nuget-metadata-properties) a [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference). [Příklady](#examples) části ukazuje, jak pomocí přepínače -p MSBuild pro několik různých scénářů.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
@@ -109,6 +109,14 @@ Definuje hodnotu pro `$(VersionSuffix)` vlastnost MSBuild v projektu.
 
 Nastaví úroveň podrobností příkazu. Povolené hodnoty jsou `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, a `diag[nostic]`.
 
+> [!NOTE]
+> Webové projekty nejsou packable ve výchozím nastavení. Pokud chcete přepsat výchozí chování, přidejte následující vlastnost, která má vaše *.csproj* souboru:
+> ```xml
+> <PropertyGroup>
+>    <IsPackable>true</IsPackable>
+> </PropertyGroup>
+> ```
+
 # <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 
 `-c|--configuration {Debug|Release}`
@@ -173,11 +181,11 @@ S projektem verze příponu nakonfigurovaná jako `<VersionSuffix>$(VersionSuffi
 
 Nastavte verzi balíčku `2.1.0` s `PackageVersion` vlastnost MSBuild:
 
-`dotnet pack /p:PackageVersion=2.1.0`
+`dotnet pack -p:PackageVersion=2.1.0`
 
 Projekt pro konkrétní Pack [Cílová architektura](../../standard/frameworks.md):
 
-`dotnet pack /p:TargetFrameworks=net45`
+`dotnet pack -p:TargetFrameworks=net45`
 
 Zabalte projektu a použití konkrétního modulu runtime (Windows 10) pro operaci obnovení (.NET Core SDK 2.0 a novější):
 

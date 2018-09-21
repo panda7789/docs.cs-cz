@@ -1,21 +1,21 @@
 ---
-title: 'Postupy: Konfigurace nastavení služby COM +'
+title: 'Postupy: Konfigurace nastavení služby modelu COM +'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 43964331f6728db0f094eaceb63e2c306d2dd3ac
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d14fd1434cb87dc62babeabb79cb780e568aacb7
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33490101"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46471682"
 ---
-# <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby COM +
-Při aplikační rozhraní přidat nebo odebrat pomocí nástroje Konfigurace služby COM +, konfigurace webové služby je aktualizovat v rámci konfiguračního souboru aplikace. V modelu COM + hostované režimu, je umístěn soubor Application.config v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení). V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.  
+# <a name="how-to-configure-com-service-settings"></a>Postupy: Konfigurace nastavení služby modelu COM +
+Když rozhraním aplikace přidá nebo odebere pomocí nástroje Konfigurace služby COM +, aktualizuje se konfigurace webové služby v konfiguračním souboru aplikace. V režimu hostovány COM +, souboru Application.config nachází v kořenovém adresáři aplikace (%PROGRAMFILES%\ComPlus aplikace\\{appid} je výchozí nastavení). V některém z webových hostované režimy v souboru Web.config je umístěn v adresáři zadaný virtuální kořenový adresář.  
   
 > [!NOTE]
->  Podepisování zpráv slouží jako ochrana proti manipulaci zpráv mezi klientem a serverem. Navíc zpráva nebo transport layer šifrování slouží k ochraně proti úniku informací z zpráv mezi klientem a serverem. Stejně jako u služby Windows Communication Foundation (WCF), měli byste použít omezení omezit počet souběžných volání, připojení, instancí a čekající operace. To pomáhá zabránit nadměrné spotřeby prostředků. Omezení chování se specifikuje prostřednictvím nastavení konfiguračního souboru služby.  
+>  Podepisování zpráv by měla sloužit k ochraně proti padělání zpráv mezi klientem a serverem. Navíc by měla sloužit k ochraně proti zpřístupnění informací ze zpráv mezi klientem a serverem vrstvě šifrování zprávy nebo přenos. Stejně jako u služeb Windows Communication Foundation (WCF), měli byste použít omezení šířky pásma pro omezení počtu souběžných volání, připojení, instance a čekajících operací. To pomáhá zabránit typu over-pass-the spotřebu prostředků. Chování při omezování chování se specifikuje prostřednictvím nastavení konfiguračního souboru služby.  
   
 ## <a name="example"></a>Příklad  
  Vezměte v úvahu komponenty, která implementuje rozhraní následující:  
@@ -29,7 +29,7 @@ public interface IFinances
 }  
 ```  
   
- Pokud je součást vystavený jako webovou službu, na odpovídající kontrakt služby, který je vystaven, a klienti potřebovat tak, aby odpovídala, vypadá takto:  
+ Pokud součást vystavena jako webové služby, odpovídající kontraktu služby, který je přístupný a že klienti by se musí odpovídat, vypadá takto:  
   
 ```  
 [ServiceContract(Session = true,  
@@ -45,21 +45,21 @@ public interface IFinancesContract : IDisposable
 ```  
   
 > [!NOTE]
->  Identifikátory IID je součástí počáteční obor názvů pro kontrakt.  
+>  Identifikátor IID součástí počáteční obor názvů pro kontrakt.  
   
- Klientské aplikace, které používají tuto službu potřebovat tak, aby odpovídala tento kontrakt, společně s použitím vazby, který je kompatibilní s verze zadaná v konfiguraci aplikace.  
+ Klientské aplikace, které používají tuto službu by bylo potřeba v souladu s touto smlouvou, spolu s využitím vazbu, která je kompatibilní s délkou zadanou v konfiguraci aplikace.  
   
- Následující příklad kódu ukazuje výchozí konfigurační soubor. Probíhá Windows Communication Foundation (WCF) webové služby, to odpovídá schématu konfigurace modelu služby na úrovni standard a lze upravit stejným způsobem jako ostatní konfigurační soubory služby WCF.  
+ Následující příklad kódu ukazuje výchozí konfigurační soubor. Windows Communication Foundation (WCF) webové služby, to odpovídá schématu konfigurace model služeb standard služby a můžete upravit stejným způsobem jako ostatní konfigurační soubory služby WCF.  
   
- Typické úpravy by mělo zahrnovat:  
+ Typické změny bude zahrnovat:  
   
--   Změna adresa koncového bodu z výchozího formuláře ApplicationName/ComponentName/InterfaceName na více použitelné podoby.  
+- Adresa koncového bodu z výchozí formulář ApplicationName/ComponentName/InterfaceName se mění na více použitelné podoby.  
   
--   Úprava oboru názvů služby z výchozího "http://tempuri.org/InterfaceID" formuláře relevantnější formuláře.  
+- Úprava oboru názvů služby z výchozího `http://tempuri.org/InterfaceID` formuláře relevantnější formuláře.  
   
--   Změna koncový bod používat různé přenosové vazby.  
+- Změna koncového bodu používat různé přenosové vazby.  
   
-     V modelu COM +-hostované případě přenosu pojmenované kanály se používá ve výchozím nastavení, ale místo toho lze použít přenosu vypnout počítač jako TCP.  
+     V modelu COM +-hostované případu, přenos pojmenované kanály se používá ve výchozím nastavení, ale místo toho lze použít přenosu vypnout počítač např. TCP.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

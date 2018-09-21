@@ -19,11 +19,11 @@ helpviewer_keywords:
 - literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
 ms.openlocfilehash: eb218a9b72208b13700ebd18dbf588066839203d
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615700"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46492915"
 ---
 # <a name="short-data-type-visual-basic"></a>Short – datový typ (Visual Basic)
 Blokování podepsané 16bitová celá čísla (2bajtových), které v rozsahu od-32 768 až 32 767.  

@@ -10,18 +10,18 @@ helpviewer_keywords:
 ms.assetid: 11ee0b38-d663-4617-b793-35eb6c64e9fc
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: cdb11b283cc008e7f4bb060d1c2cb18706c824b7
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 86376919d7456167c58ada4145d213b39e050e33
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084715"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46489104"
 ---
 # <a name="eventwaithandle"></a>EventWaitHandle
 <xref:System.Threading.EventWaitHandle> Třída umožňuje vlákna ke komunikaci mezi sebou signalizace a čeká na signál. Obslužné rutiny události čekání (také označované jednoduše jako události) jsou obslužné rutiny čekání, které mohou být signalizovanými, aby verze jednoho nebo více čekajících vláken. Po to bylo signalizováno, popisovače čekání události se vynuluje, ručně nebo automaticky. <xref:System.Threading.EventWaitHandle> Může představovat buď místní události popisovač čekání (místní události), nebo událost s názvem systému počkat popisovač (s názvem události nebo viditelné pro všechny procesy systémové události).  
   
 > [!NOTE]
->  Obslužné rutiny čekání událostí nejsou události v tom smyslu, obvykle určená toto slovo v rozhraní .NET Framework. Neexistují žádné delegáty nebo obslužné rutiny události zahrnuté. Slova "událost" slouží k popisu je vzhledem k tomu, že se mají tradičně se označuje jako událostí operačního systému, a vzhledem k tomu, že v rámci signalizace popisovač čekání znamená čekajících vláken, která došlo k události.  
+>  Obslužné rutiny čekání událostí nejsou .NET [události](../events/index.md). Neexistují žádné delegáty nebo obslužné rutiny události zahrnuté. Slova "událost" slouží k popisu je vzhledem k tomu, že se mají tradičně se označuje jako událostí operačního systému, a vzhledem k tomu, že v rámci signalizace popisovač čekání znamená čekajících vláken, která došlo k události.  
   
  Obslužné rutiny čekání i místní a pojmenované události pomocí synchronizace systémové objekty, které jsou chráněny <xref:Microsoft.Win32.SafeHandles.SafeWaitHandle> obálky zajistit uvolnění prostředků. Můžete použít <xref:System.Threading.WaitHandle.Dispose%2A> metodu pro uvolnění prostředků ihned po dokončení používání objektu.  
   

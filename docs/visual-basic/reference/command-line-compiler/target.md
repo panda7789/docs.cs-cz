@@ -9,11 +9,11 @@ ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5e3f691da48db863edd20bc6881785940a5451ef
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46007011"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46478276"
 ---
 # <a name="-target-visual-basic"></a>-target (Visual Basic)
 Určuje formát výstupu kompilátoru.  

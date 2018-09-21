@@ -4,12 +4,12 @@ description: Informace o nových funkcích v .NET Core 2.1.
 author: rpetrusha
 ms.author: ronpet
 ms.date: 06/06/2018
-ms.openlocfilehash: 850df87666c5beb0594f0672d8f558c11653f973
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: aa80e6b7214f91c49803adde49a1e03d1971b3f6
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45746767"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46473457"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -66,7 +66,7 @@ Různé nástroje, které byly k dispozici pouze v jednotlivých projektů pomoc
 
 .NET core 2.1 podporuje *globální nástroje* – to znamená, vlastních nástrojů, které jsou k dispozici globálně z příkazového řádku. Model rozšiřitelnosti v předchozích verzích .NET Core zpřístupněn vlastních nástrojů na základě jednotlivých projektů pouze pomocí [ `DotnetCliToolReference` ](../tools/extensibility.md#consuming-per-project-tools).
 
-Instalovat nástroj globální, použijte [instalace nástrojů dotnet](..\tools\dotnet-tool-install.md) příkazu. Příklad:
+Instalovat nástroj globální, použijte [instalace nástrojů dotnet](../tools/dotnet-tool-install.md) příkazu. Příklad:
 
 ```console
 dotnet tool install -g dotnetsay

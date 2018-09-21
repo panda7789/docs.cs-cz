@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 342fd8a4da5f05112e2e0ea85f5b78196ca62fdd
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 1b0cae037371666f2f1cd2ccb8c509a5618e7397
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45589414"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46493383"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
@@ -62,7 +62,7 @@ Image kontejneru je způsob, jak zabalit aplikace nebo služby a ji nasadit spol
 
 Při použití Dockeru, Řekněme, že vývojáři nebudou slyšet, "to funguje na mém počítači, případně proč bezpečná není v produkčním prostředí?" Jednoduše můžete říct, "Se spustí v Dockeru", protože zabalené aplikace Dockeru se dá provést na všech podporovaných prostředí Dockeru, a tok se spustí tak, jak bylo zamýšleno na všechny cíle nasazení (vývoj, dotazů a odpovědí, Fázování importu, výroby, atd.).
 
-# <a name="a-simple-analogy"></a>Jednoduché přirovnání
+## <a name="a-simple-analogy"></a>Jednoduché přirovnání
 
 Jednoduché přirovnání možná může pomoct získat pochopit její podstatu základními koncepty Dockeru.
 

@@ -3,11 +3,11 @@ title: Serializace pomocí deklarace XML (C#)
 ms.date: 07/20/2015
 ms.assetid: c237fa4a-a042-40fd-886f-17b54c66bb75
 ms.openlocfilehash: 613280efc8c734c53c4af9252b4b83e2dd942f36
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
-ms.translationtype: MT
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46006415"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46481608"
 ---
 # <a name="serializing-with-an-xml-declaration-c"></a>Serializace pomocí deklarace XML (C#)
 Toto téma popisuje, jak řídit, jestli serializace generuje deklaraci XML.  

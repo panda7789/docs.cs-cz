@@ -2,12 +2,12 @@
 title: 'Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe'
 ms.date: 03/30/2017
 ms.assetid: 15524274-3167-4627-b722-d6cedb9fa8c6
-ms.openlocfilehash: 75068608c2b44ab772175aba7af8d8123457fb7c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 6643f0a5dba98afcef38870cf24d91e7d69a1440
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510946"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46481855"
 ---
 # <a name="how-to-use-svcutilexe-to-download-metadata-documents"></a>Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe
 Svcutil.exe můžete použít ke stažení metadat z službami a k uložení metadat do místních souborů. Pro schémata HTTP a HTTPS URL Svcutil.exe pokusí se načíst metadata pomocí WS-MetadataExchange a [zjišťování webové služby XML](https://go.microsoft.com/fwlink/?LinkId=94950). Pro všechny ostatní schémata URL Svcutil.exe používá pouze WS-MetadataExchange.  
@@ -15,13 +15,13 @@ Svcutil.exe můžete použít ke stažení metadat z službami a k uložení met
  Ve výchozím nastavení používá Svcutil.exe vazeb definovaných v <xref:System.ServiceModel.Description.MetadataExchangeBindings> třídy. Ke konfiguraci vazby používá pro WS-MetadataExchange, je nutné definovat koncový bod klienta v konfiguračním souboru pro Svcutil.exe (svcutil.exe.config), který používá `IMetadataExchange` kontrakt a, který má stejný název jako identifikátor URI (Uniform Resource) schéma adresu koncového bodu metadat.  
   
 > [!CAUTION]
->  Při spuštění Svcutil.exe k získání metadat pro službu, která poskytuje dva různé služby je smlouvách, že každý obsahuje operace se stejným názvem, Svcutil.exe zobrazí chyba s oznámením, "Nelze získat Metadata z..." Například pokud máte službu, která zveřejňuje kontrakt služby s názvem ICarService, který má operace získání (Auto c) a ve stejné službě zpřístupňuje kontrakt služby s názvem IBookService, který má operace Get (kniha b). Chcete-li tento problém obejít, proveďte jednu z následujících akcí:  
->   
->  -   Po přejmenování jedné z operací  
-> -   Nastavte <xref:System.ServiceModel.OperationContractAttribute.Name%2A> na jiný název.  
-> -   Jeden z oborů názvů operace nastavenou na jiný obor názvů pomocí <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> vlastnost.  
+> Při spuštění Svcutil.exe k získání metadat pro službu, která poskytuje dva různé služby je smlouvách, že každý obsahuje operace se stejným názvem, Svcutil.exe zobrazí chyba s oznámením, "Nelze získat Metadata z..." Například, pokud máte službu, která zveřejňuje kontrakt služby s názvem `ICarService` , který má operace `Get(Car c)` a ve stejné službě zpřístupňuje kontrakt služby s názvem `IBookService` , který má operace `Get(Book b)`. Chcete-li tento problém obejít, proveďte jednu z následujících akcí:
+>
+> - Po přejmenování jedné z operací.
+> - Nastavte <xref:System.ServiceModel.OperationContractAttribute.Name%2A> na jiný název.
+> - Jeden z oborů názvů operace nastavenou na jiný obor názvů pomocí <xref:System.ServiceModel.ServiceContractAttribute.Namespace%2A> vlastnost.
   
-### <a name="to-download-metadata-using-svcutilexe"></a>Chcete-li stáhnout metadata pomocí Svcutil.exe  
+## <a name="to-download-metadata-using-svcutilexe"></a>Chcete-li stáhnout metadata pomocí Svcutil.exe  
   
 1.  Vyhledejte nástroje Svcutil.exe v následujícím umístění:  
   

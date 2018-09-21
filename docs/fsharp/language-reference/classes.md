@@ -3,11 +3,11 @@ title: Třídy (F#)
 description: 'Zjistěte, jak třídy F # jsou typy, které představují objekty, které mohou mít vlastnosti, metody a události.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 71cd713d192d28565e879b79b2fc9e0530e5f841
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45742516"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46493032"
 ---
 # <a name="classes"></a>Třídy
 

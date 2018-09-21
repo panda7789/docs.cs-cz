@@ -7,12 +7,12 @@ dev_langs:
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
 author: BrucePerlerMS
 manager: mbaldwin
-ms.openlocfilehash: 9a04b8aaf9c6263a8935099963aaa1dc8d9100fd
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: c656811e493c11ca463ce85d71b716c681501f21
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664667"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46481894"
 ---
 # <a name="transport-security-overview"></a>Přehled zabezpečení přenosu
 Přenos mechanismy zabezpečení ve Windows Communication Foundation (WCF) závisí na vazby a přenosu používána. Například při použití <xref:System.ServiceModel.WSHttpBinding> třídy, je přenos protokolu HTTP a hlavní mechanismus pro zabezpečení přenosu je vrstva SSL (Secure Sockets) přes protokol HTTP, říká protokolu HTTPS. Toto téma popisuje mechanismy zabezpečení hlavní přenosu používána vazeb poskytovaných systémem WCF.  
@@ -21,7 +21,7 @@ Přenos mechanismy zabezpečení ve Windows Communication Foundation (WCF) závi
 >  Při použití zabezpečení SSL v rozhraní .NET Framework 3.5 a novější klient WCF používá zprostředkující certifikáty ve své vlastní úložiště certifikátů a zprostředkujících certifikátů přijatých během vyjednávání SSL k provedení ověřování řetězu certifikátů na služby certifikát. Rozhraní .NET framework 3.0 využívá jenom nainstalované v místním úložišti certifikátů zprostředkující certifikáty.  
   
 > [!WARNING]
->  Při použití zabezpečení přenosu <!--zz <xref:System.Treading.Thread.CurrentPrincipal%2A> --> `CurrentPrincipal` mohou být přepsány vlastnosti. Abyste tomu zabránili sadě děje <!--zz <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermission%2A> --> `PrincipalPermission` na hodnotu None. <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> je chování služby, které lze nastavit v popisu služby.  
+>  Při použití zabezpečení přenosu <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> mohou být přepsány vlastnosti. Abyste tomu zabránili sadě děje <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A?displayProperty=nameWithType> k <xref:System.ServiceModel.Description.PrincipalPermissionMode.None?displayProperty=nameWithType>. <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> je chování služby, které lze nastavit v popisu služby.  
   
 ## <a name="basichttpbinding"></a>BasicHttpBinding  
  Ve výchozím nastavení <xref:System.ServiceModel.BasicHttpBinding> třída neposkytuje zabezpečení. Tato vazba je určená pro interoperabilitu se webových služeb, které neimplementují zabezpečení. Však můžete přepnout na zabezpečení tak, že nastavíte <xref:System.ServiceModel.BasicHttpSecurity.Mode%2A> vlastnost na hodnotu s výjimkou <xref:System.ServiceModel.BasicHttpSecurityMode.None>. Pokud chcete povolit zabezpečení přenosu, nastavte vlastnost na <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>.  

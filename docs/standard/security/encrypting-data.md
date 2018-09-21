@@ -14,11 +14,11 @@ ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: b583df2eb6098fa28dd8999a6796e5053d13cab4
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
-ms.translationtype: MT
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46008515"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46479556"
 ---
 # <a name="encrypting-data"></a>Šifrování dat
 Symetrické šifrování a asymetrického šifrování se provádí pomocí jiné procesy. Symetrické šifrování se provádí na datové proudy a je proto užitečné k šifrování velkého objemu dat. Asymetrické šifrování se provádí na malý počet bajtů a proto je pouze pro malá množství dat užitečné.  

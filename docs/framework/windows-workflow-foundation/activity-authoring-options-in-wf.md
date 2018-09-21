@@ -1,38 +1,38 @@
 ---
-title: Vytváření možnosti aktivity WF
+title: Možnosti při vytváření aktivit v WF
 ms.date: 03/30/2017
 ms.assetid: b9061f5f-12c3-47f0-adbe-1330e2714c94
-ms.openlocfilehash: f91c74b4e3dc002ed2abf979619b84a81db65e78
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 219d759cd1390a83abfb90af509b21047085f6e9
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33516397"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46481251"
 ---
-# <a name="activity-authoring-options-in-wf"></a>Vytváření možnosti aktivity WF
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] poskytuje několik možností pro vytváření vlastních aktivit. Požadovanou metodu chcete použít pro danou aktivitu vytváření závisí na jaké běhové funkce jsou vyžadovány.  
+# <a name="activity-authoring-options-in-wf"></a>Možnosti při vytváření aktivit v WF
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] poskytuje několik možností, jak k tvorbě vlastních aktivit. Správný způsob, kterým pro danou aktivitu vytváření závisí na funkcích za běhu se vyžadují.  
   
-## <a name="deciding-which-base-activity-class-to-use-for-authoring-custom-activities"></a>Při rozhodování o tom, která aktivita se základní třídy na použití pro vytváření vlastních aktivit  
- Následující tabulka uvádí funkce, které jsou dostupné v základních tříd vlastní aktivity.  
+## <a name="deciding-which-base-activity-class-to-use-for-authoring-custom-activities"></a>Rozhodování o tom, jaké aktivity základní třídy na použití pro vytváření vlastních aktivit  
+ V následující tabulce jsou uvedeny funkce dostupné v základních třídách vlastní aktivity.  
   
-|Základní aktivitě – třída|Dostupné funkce|  
+|Třída základní aktivity|Funkce, které jsou k dispozici|  
 |-------------------------|------------------------|  
-|<xref:System.Activities.Activity>|Vytvoří skupiny poskytované systémem a vlastních aktivit do složených aktivit.|  
-|<xref:System.Activities.CodeActivity>|Implementuje imperativní funkce tím, že poskytuje <xref:System.Activities.CodeActivity%601.Execute%2A> metoda, která může být přepsána. Také poskytuje přístup k sledování, proměnné a argumenty...|  
-|<xref:System.Activities.NativeActivity>|Poskytuje všechny funkce <xref:System.Activities.CodeActivity>, plus přerušení spuštění aktivity, zrušení provedení podřízené aktivity, použití záložek a plánování aktivit, akcí aktivity a funkce.|  
-|<xref:System.Activities.DynamicActivity>|Poskytuje DOM jako přístup k vytváření aktivit, které sdílí rozhraní pomocí návrháře WF a běhu stroje prostřednictvím <!--zz <xref:System.ComponentModel.IcustomTypeDescriptor>--> `IcustomTypeDescriptor`, povolení nové aktivity, který se má vytvořit bez definování nových typů.|  
+|<xref:System.Activities.Activity>|Vytvoří skupiny poskytované systémem a vlastních aktivit do složené aktivity.|  
+|<xref:System.Activities.CodeActivity>|Implementuje funkce imperativní tím, že poskytuje <xref:System.Activities.CodeActivity%601.Execute%2A> metodu, která se dá přepsat. Také poskytuje přístup ke sledování, proměnné a argumenty...|  
+|<xref:System.Activities.NativeActivity>|Poskytuje všechny funkce <xref:System.Activities.CodeActivity>, plus přerušení provádění aktivity, zrušení podřízené aktivity spuštění, použití záložek a plánování aktivit, aktivit akce a funkce.|  
+|<xref:System.Activities.DynamicActivity>|Poskytuje modelu DOM jako přístup k vytváření aktivit, které sdílí rozhraní pomocí Návrháře pracovního postupu a za běhu strojů prostřednictvím <xref:System.ComponentModel.ICustomTypeDescriptor>, umožňuje nové aktivity, který se má vytvořit bez definování nových typů.|  
   
-## <a name="authoring-activities-using-activity"></a>Vytváření aktivit pomocí aktivity  
- Aktivity, které jsou odvozeny od <xref:System.Activities.Activity> tvoří funkce sestavte jiné existující aktivity. Tyto aktivity mohou být existující vlastní aktivity a aktivity z [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] knihovna aktivit. Ty se tyto aktivity je nejzákladnější způsob, jak vytvořit vlastní funkce. Tento přístup je obvykle provedeny, když pomocí prostředí visual návrhu pro vytváření pracovních postupů.  
+## <a name="authoring-activities-using-activity"></a>Použití aktivity aktivit autorizace  
+ Aktivity, které jsou odvozeny z <xref:System.Activities.Activity> compose funkce sloučením další existujících aktivit. Tyto aktivity mohou být existující vlastní aktivity a aktivit [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] knihovny aktivit. Tyto aktivity sestavení je nejzákladnější možnost pro vytvoření vlastní funkce. Tento přístup se nejčastěji používá při použití prostředí pro vizuální návrh pro vytváření pracovních postupů.  
   
 ## <a name="authoring-activities-using-codeactivity-or-asynccodeactivity"></a>Vytváření pomocí CodeActivity nebo AsyncCodeActivity aktivity  
- Aktivity, které jsou odvozeny od <xref:System.Activities.CodeActivity> nebo <xref:System.Activities.AsyncCodeActivity> můžete implementovat imperativní funkce přepsáním <xref:System.Activities.CodeActivity%601.Execute%2A> metoda s imperativní vlastní kód. Vlastní kód se spustí při spuštění aktivity modulem runtime. Když aktivity vytvořené v tomto případě má přístup k vlastní funkce, že nemáte příslušná oprávnění ke všem funkcím modulu runtime, jako je například úplný přístup k prostředí pro spuštění, umožňuje naplánovat podřízené aktivity, vytvoření záložku nebo podporu pro Zrušit nebo Abort – metoda. Když <xref:System.Activities.CodeActivity> provede, má přístup k snížené verzi prostředí pro spuštění (prostřednictvím <xref:System.Activities.CodeActivityContext> nebo <xref:System.Activities.AsyncCodeActivityContext> třída). Aktivity vytvořené pomocí <xref:System.Activities.CodeActivity> mít přístup k argumentu a proměnná rozlišení, rozšíření a sledování. Plánování asynchronní aktivity lze provést pomocí <xref:System.Activities.AsyncCodeActivity>.  
+ Aktivity, které jsou odvozeny z <xref:System.Activities.CodeActivity> nebo <xref:System.Activities.AsyncCodeActivity> můžete implementovat imperativní funkce tak, že přepíšete <xref:System.Activities.CodeActivity%601.Execute%2A> metodu s vlastní imperativního kódu. Vlastní kód se spustí, když modul runtime při spuštění této aktivity. Aktivity vytvořené tímto způsobem mají přístup k vlastní funkce, že nemáte příslušná oprávnění ke všem funkcím modulu runtime, jako je úplný přístup k prostředí pro spuštění, možnosti plánovat podřízené aktivity, vytváření záložek nebo podporu pro Zrušit nebo přerušení metody. Když <xref:System.Activities.CodeActivity> spustí, má přístup k nižší verzi prostředí pro spuštění (prostřednictvím <xref:System.Activities.CodeActivityContext> nebo <xref:System.Activities.AsyncCodeActivityContext> třídy). Aktivity vytvořené pomocí <xref:System.Activities.CodeActivity> mají přístup k argumentu a proměnná rozlišení, rozšíření a sledování. Plánování asynchronní aktivity lze provést pomocí <xref:System.Activities.AsyncCodeActivity>.  
   
-## <a name="authoring-activities-using-nativeactivity"></a>Vytváření pomocí NativeActivity aktivity  
- Aktivity, které jsou odvozeny od <xref:System.Activities.NativeActivity>, jako jsou ty, které jsou odvozeny od <xref:System.Activities.CodeActivity>, vytvořit imperativní funkce přepsáním <xref:System.Activities.NativeActivity.Execute%2A>, ale také mají přístup ke všem funkci modulu runtime pracovního postupu prostřednictvím <xref:System.Activities.NativeActivityContext> , který získá předaný do <xref:System.Activities.NativeActivity.Execute%2A> metoda. Tento kontext se podpora pro plánování a zrušení podřízené aktivity, provádění <xref:System.Activities.ActivityAction> a <!--zz <xref:System.Activities.ActivityFunc>--> `ActivityFunc` objekty, průchodu transakce do pracovního postupu, vyvolání asynchronní procesy, zrušení a přerušení spuštění, přístup k provádění vlastnosti a rozšíření a záložky (popisovačů pro opětovné pozastavený pracovní postupy).  
+## <a name="authoring-activities-using-nativeactivity"></a>Vytváření aktivit pomocí NativeActivity  
+ Aktivity, které jsou odvozeny z <xref:System.Activities.NativeActivity>, jako jsou ty, které jsou odvozeny z <xref:System.Activities.CodeActivity>, vytvořit imperativní funkce tak, že přepíšete <xref:System.Activities.NativeActivity.Execute%2A>, ale také mají přístup ke všem funkce modulu runtime pracovního postupu pomocí <xref:System.Activities.NativeActivityContext> , který získá předán <xref:System.Activities.NativeActivity.Execute%2A> metody. Tento kontext zahrnuje podporu pro plánování a pro zrušení podřízené aktivity, provádění <xref:System.Activities.ActivityAction> a <xref:System.Activities.ActivityFunc%601> objekty, tok transakcí do pracovního postupu, volání asynchronních procesů, zrušení a přeruší provádění, přístup k provádění vlastnosti a rozšíření a záložky (obslužné rutiny pro obnovení pozastavené pracovní postupy).  
   
-## <a name="authoring-activities-using-dynamicactivity"></a>Vytváření pomocí DynamicActivity aktivity  
- Na rozdíl od jiných tři typy aktivit, nové funkce nevytvoří odvozením nové typy z <xref:System.Activities.DynamicActivity> (třída je zapečetěná), ale místo toho sloučením funkce do <xref:System.Activities.DynamicActivity.Properties%2A> a <xref:System.Activities.DynamicActivity.Implementation%2A> vlastností pomocí dokument aktivity objektový model (DOM).  
+## <a name="authoring-activities-using-dynamicactivity"></a>Vytváření aktivit pomocí dynamické aktivity  
+ Na rozdíl od jiných tři typy aktivit, nové funkce nevytvoří odvozením nové typy z <xref:System.Activities.DynamicActivity> (zapečetěné třídy), ale místo toho sloučením funkce do <xref:System.Activities.DynamicActivity.Properties%2A> a <xref:System.Activities.DynamicActivity.Implementation%2A> vlastností pomocí dokument aktivity objektový model (DOM).  
   
-## <a name="authoring-activities-that-return-a-result"></a>Vytváření aktivit, které vrácení výsledku  
- Řada aktivit musí vrátit výsledek po jejich provádění. Přestože je možné definovat vlastní vždy <xref:System.Activities.OutArgument%601> na aktivity pro tento účel, doporučuje se místo toho použít <xref:System.Activities.Activity%601>, nebo jsou odvozeny od <xref:System.Activities.CodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>. Každý z těchto základních tříd má <xref:System.Activities.OutArgument%601> s názvem výsledek, který vaši aktivitu můžete použít pro svou vrácenou hodnotu. Aktivity, které vrácení výsledku musí být použit pouze pokud pouze jeden výsledek je nutné vrátit z aktivity; Pokud má být vrácen potřebovat více výsledků, oddělte <xref:System.Activities.OutArgument%601> Členové by měl být místo toho použít.
+## <a name="authoring-activities-that-return-a-result"></a>Vytváření aktivit, které vrací výsledek  
+ Řada aktivit musí vracet výsledek po jejich spuštění. I když je vždy definovat vlastní <xref:System.Activities.OutArgument%601> na aktivitu pro tento účel, doporučuje se místo toho použijte <xref:System.Activities.Activity%601>, nebo jsou odvozeny z <xref:System.Activities.CodeActivity%601> nebo <xref:System.Activities.NativeActivity%601>. Každá z těchto základních tříd má <xref:System.Activities.OutArgument%601> s názvem výsledek, který vaši aktivitu můžete použít jeho návratovou hodnotu. Aktivity, které vrací výsledek lze používat pouze pokud pouze jeden výsledek musí být vrácena z aktivity; Pokud potřebujete vrátit více výsledků, oddělte <xref:System.Activities.OutArgument%601> členy by místo toho používat.

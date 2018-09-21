@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 7dcdaa0d101ce45ba24226e0aba81b812d5b88da
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1190fb739e7c1873532e96b50399ac0deb6bb51c
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518303"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46478594"
 ---
 # <a name="how-to-localize-an-application"></a>Postupy: Lokalizace aplikace
 Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml – nástroj.  
@@ -46,11 +46,11 @@ Tento kurz vysvětluje vytvoření lokalizované aplikace s použitím locbaml �
   
 3.  Přidat identifikátory UID byly pro vaši [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] soubory. Identifikátory UID byly se používají ke sledování změn souborů a k identifikaci položky, které se musí přeložit. Chcete-li přidat identifikátory UID byly k souborům, spusťte **updateuid** v souboru projektu:  
   
-     **MSBuild /t:updateuid helloapp.csproj**  
+     **MSBuild – t: updateuid helloapp.csproj**  
   
      Chcete-li ověřit, zda máte žádné chybějící nebo duplicitní identifikátory UID, spusťte **checkuid**:  
   
-     **MSBuild /t:checkuid helloapp.csproj**  
+     **MSBuild – t: checkuid helloapp.csproj**  
   
      Po spuštění **updateuid**, vaše soubory by měly obsahovat identifikátory UID. Například v souboru Pane1.xaml HelloApp byste měli najít následující:  
   

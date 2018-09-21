@@ -2,21 +2,21 @@
 title: Přístup k informacím o identitě v rámci služby pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 0b832127-b35b-468e-a45f-321381170cbc
-ms.openlocfilehash: a87c21215c37fefd8d9306fd0ccd0c5b2a1dfd11
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7951782946f5b8ef989598d01229dcf193d97689
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33491972"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46480744"
 ---
 # <a name="accessing-identity-information-inside-a-workflow-service"></a>Přístup k informacím o identitě v rámci služby pracovních postupů
-Chcete-li získat přístup k o identitě v rámci služby pracovních postupů, musíte implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní pro provádění vlastní vlastnost. V <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda dostanete <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> přístup k informacím identity. Toto téma vás provede procesem implementace tato vlastnost spouštění, jakož i vlastní aktivity, která bude surface této vlastnosti <xref:System.ServiceModel.Activities.Receive> aktivity za běhu.  Vlastní aktivity budou implementovat stejné chování jako <!--zz <xref:System.ServiceModel.Activities.Sequence>--> `System.ServiceModel.Activities.Sequence` aktivity, s výjimkou, že pokud <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a informace o identitě bude načten.  
+Chcete-li získat přístup k o identitě v rámci služby pracovních postupů, musíte implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní v provádění vlastní vlastnost. V <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda můžete přistupovat <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> přístupu k informacím identity. Toto téma vás provede procesem implementace této vlastnosti spuštění, jakož i vlastní aktivitu, která bude přinášet tuto vlastnost <xref:System.ServiceModel.Activities.Receive> aktivity za běhu. Vlastní aktivita provede stejné chování jako <xref:System.Activities.Statements.Sequence> aktivity, s výjimkou, že <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř této, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a načte informace o identitě.  
   
-### <a name="implement-ireceivemessagecallback"></a>Implementace IReceiveMessageCallback  
+## <a name="implement-ireceivemessagecallback"></a>Implementace IReceiveMessageCallback  
   
 1.  Vytvořte prázdnou [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] řešení.  
   
-2.  Přidejte novou aplikaci konzoly s názvem `Service` k řešení.  
+2.  Přidat novou aplikaci konzoly s názvem `Service` do řešení.  
   
 3.  Přidejte odkazy na následující sestavení:  
   
@@ -48,15 +48,15 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-     Tento kód používá <xref:System.ServiceModel.OperationContext> předán do metody informací o identitě přístup.  
+     Tento kód používá <xref:System.ServiceModel.OperationContext> metodě předaná pro informace o identitě přístup.  
   
-### <a name="implement-a-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a>Implementace nativní aktivity pro přidání do NativeActivityContext IReceiveMessageCallback implementace  
+## <a name="implement-a-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a>Implementace nativeactivity přidejte implementaci IReceiveMessageCallback NativeActivityContext  
   
-1.  Přidání nové třídy odvozené od <xref:System.Activities.NativeActivity> názvem `AccessIdentityScope`.  
+1.  Přidejte novou třídu odvozenou z <xref:System.Activities.NativeActivity> volá `AccessIdentityScope`.  
   
-2.  Přidejte ke sledování podřízené aktivity, proměnné, index aktuální aktivity, místní proměnné a <xref:System.Activities.CompletionCallback> zpětného volání.  
+2.  Přidání místní proměnné k udržení přehledu o podřízené aktivity, proměnné, aktuální index aktivity a <xref:System.Activities.CompletionCallback> zpětného volání.  
   
-    ```  
+    ```csharp
     public sealed class AccessIdentityScope : NativeActivity  
     {  
         Collection<Activity> children;  
@@ -66,9 +66,9 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-3.  Implementace konstruktoru  
+3.  Implementací konstruktoru  
   
-    ```  
+    ```csharp
     public AccessIdentityScope() : base()  
     {  
         this.children = new Collection<Activity>();  
@@ -79,7 +79,7 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
   
 4.  Implementace `Activities` a `Variables` vlastnosti.  
   
-    ```  
+    ```csharp
     public Collection<Activity> Activities  
     {  
          get { return this.children; }  
@@ -93,7 +93,7 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
   
 5.  přepsání <xref:System.Activities.NativeActivity.CacheMetadata%2A>  
   
-    ```  
+    ```csharp
     protected override void CacheMetadata(NativeActivityMetadata metadata)  
     {  
         //call base.CacheMetadata to add the Activities and Variables to this activity's metadata  
@@ -105,7 +105,7 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
   
 6.  přepsání <xref:System.Activities.NativeActivity.Execute%2A>  
   
-    ```  
+    ```csharp
     protected override void Execute(NativeActivityContext context)  
     {  
        // Add the IReceiveMessageCallback implementation as an Execution property   
@@ -139,13 +139,13 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-### <a name="implement-the-workflow-service"></a>Implementace služby pracovního postupu  
+## <a name="implement-the-workflow-service"></a>Implementace služby pracovního postupu  
   
-1.  Otevřete existující `Program` třídy.  
+1.  Otevřít existující `Program` třídy.  
   
-2.  Definujte následující konstanty:  
+2.  Definují následující konstanty:  
   
-    ```  
+    ```csharp
     class Program  
     {  
        const string addr = "http://localhost:8080/Service";  
@@ -153,9 +153,9 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-3.  Přidat statickou metodu s názvem `GetWorkflowService` vytvářející služby pracovního postupu.  
+3.  Přidat volána statická metoda `GetWorkflowService` , který vytváří služba pracovního postupu.  
   
-    ```  
+    ```csharp
     static Activity GetServiceWorkflow()  
     {  
        Variable<string> echoString = new Variable<string>();  
@@ -192,9 +192,9 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
      }  
     ```  
   
-4.  Ve stávající `Main` metoda hostitele služby pracovního postupu.  
+4.  V existujícím `Main` metoda hostitele služby pracovního postupu.  
   
-    ```  
+    ```csharp
     static void Main(string[] args)  
     {  
        string addr = "http://localhost:8080/Service";  
@@ -213,21 +213,21 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-### <a name="implement-a-workflow-client"></a>Implementace klienta pracovního postupu  
+## <a name="implement-a-workflow-client"></a>Implementace klienta pracovního postupu  
   
 1.  Vytvořit nový projekt konzolové aplikace volá `Client`.  
   
 2.  Přidejte odkazy na následující sestavení:  
   
-    1.  Systém.  
+    1.  System.Activities  
   
     2.  System.ServiceModel  
   
     3.  System.ServiceModel.Activities  
   
-3.  Otevřete generovaný soubor Program.cs a přidejte statickou metodu s názvem `GetClientWorkflow` vytvoření pracovního postupu klienta.  
+3.  Otevřete vygenerovaný soubor Program.cs a přidejte volána statická metoda `GetClientWorkflow` k vytvoření klienta pracovní postup.  
   
-    ```  
+    ```csharp
     static Activity GetClientWorkflow()  
     {  
        Variable<string> echoString = new Variable<string>();  
@@ -245,7 +245,7 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
           OperationName = "Echo",  
           Content = new SendParametersContent()  
           {  
-             Parameters = { { "echoString", new InArgument<string>("Hello, World") } }   
+             Parameters = { { "echoString", new InArgument<string>("Hello, World") } }
           }  
        };  
   
@@ -253,12 +253,12 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
        {  
           Variables = { echoString },  
           Activities =  
-          {                      
+          {
              new CorrelationScope  
              {  
                 Body = new Sequence  
                 {  
-                   Activities =   
+                   Activities =
                    {  
                       echoRequest,  
                       new ReceiveReply  
@@ -271,17 +271,17 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
                       }  
                    }  
                 }  
-             },                      
-             new WriteLine { Text = new InArgument<string>( (e) => "Received Text: " + echoString.Get(e) ) },                      
+             },
+             new WriteLine { Text = new InArgument<string>( (e) => "Received Text: " + echoString.Get(e) ) },
              }  
           };  
        }  
     }  
     ```  
   
-4.  Přidejte následující hostování kód, který `Main()` metoda.  
+4.  Přidejte následující kód hostování na `Main()` metody.  
   
-    ```  
+    ```csharp
     static void Main(string[] args)  
     {  
        Activity workflow = GetClientWorkflow();  
@@ -292,10 +292,10 @@ Chcete-li získat přístup k o identitě v rámci služby pracovních postupů,
     }  
     ```  
   
-## <a name="example"></a>Příklad  
- Tady je úplný zdrojový kód použitý v tomto tématu.  
+## <a name="example"></a>Příklad
+ Tady je úplný seznam všech zdroj kód použitý v tomto tématu.  
   
-```  
+```csharp
 // AccessIdentityCallback.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -333,9 +333,9 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-```  
+```
   
-```  
+```csharp
 // AccessIdentityScope.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -381,9 +381,9 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         {  
             //call base.CacheMetadata to add the Activities and Variables to this activity's metadata  
             base.CacheMetadata(metadata);  
-            //add the private implementation variable: currentIndex   
+            //add the private implementation variable: currentIndex
             metadata.AddImplementationVariable(this.currentIndex);  
-        }                     
+        }
   
         protected override void Execute(  
             NativeActivityContext context)  
@@ -418,9 +418,9 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-```  
+```
   
-```  
+```csharp
 // Service.cs  
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
@@ -493,10 +493,10 @@ namespace Microsoft.Samples.AccessingOperationContext.Service
         }  
     }  
 }  
-```  
+```
   
-```  
-// client.cs   
+```csharp
+// client.cs
 //----------------------------------------------------------------  
 // Copyright (c) Microsoft Corporation.  All rights reserved.  
 //----------------------------------------------------------------  
@@ -546,12 +546,12 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
             {  
                 Variables = { echoString },  
                 Activities =  
-                {                      
+                {
                     new CorrelationScope  
                     {  
                         Body = new Sequence  
                         {  
-                            Activities =   
+                            Activities =
                             {  
                                 echoRequest,  
                                 new ReceiveReply  
@@ -564,8 +564,8 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
                                 }  
                             }  
                         }  
-                    },                      
-                    new WriteLine { Text = new InArgument<string>( (e) => "Received Text: " + echoString.Get(e) ) },                      
+                    },
+                    new WriteLine { Text = new InArgument<string>( (e) => "Received Text: " + echoString.Get(e) ) },
                 }  
             };  
         }  

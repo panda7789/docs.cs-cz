@@ -1,48 +1,48 @@
 ---
-title: příkaz msbuild DotNet - .NET Core rozhraní příkazového řádku
-description: Příkaz msbuild dotnet poskytuje přístup k MSBuild příkazového řádku.
+title: příkaz DotNet msbuild – rozhraní příkazového řádku .NET Core
+description: Příkaz dotnet msbuild poskytuje přístup k příkazovému řádku nástroje MSBuild.
 author: mairaw
 ms.author: mairaw
 ms.date: 05/25/2018
-ms.openlocfilehash: 58aac2a5314758b8711c0b014154022168fb671c
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
-ms.translationtype: MT
+ms.openlocfilehash: 76165590478b0e76d19d546c87e012da4716b6db
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34696842"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46471436"
 ---
-# <a name="dotnet-msbuild"></a>msbuild DotNet.
+# <a name="dotnet-msbuild"></a>DotNet msbuild
 
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 
 ## <a name="name"></a>Název
 
-`dotnet msbuild` -Sestavení projektu a všechny jeho závislé součásti.
+`dotnet msbuild` -Sestavení projektu a všechny jeho závislosti.
 
-## <a name="synopsis"></a>Stručný obsah
+## <a name="synopsis"></a>Souhrn
 
 `dotnet msbuild <msbuild_arguments> [-h]`
 
 ## <a name="description"></a>Popis
 
-`dotnet msbuild` Příkaz umožňuje přístup k plně funkční MSBuild.
+`dotnet msbuild` Příkaz umožňuje přístup k plně funkční nástroj MSBuild.
 
-Příkaz má přesný stejné schopnosti jako existující klient nástroje MSBuild příkazového řádku. Možnosti jsou všechny byly stejné. Další informace o dostupných možnostech najdete v tématu [Reference k příkazovému řádku MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
+Příkaz má přesně stejné funkce jako existující klient příkazového řádku MSBuild. Možnosti jsou stejné. Další informace o dostupných možnostech najdete v tématu [MSBuild Reference k příkazovému řádku](/visualstudio/msbuild/msbuild-command-line-reference).
 
 ## <a name="examples"></a>Příklady
 
-Sestavte projekt a jeho závislé součásti:
+Sestavení projektu a jeho závislosti:
 
 `dotnet msbuild`
 
-Sestavte projekt a jeho závislosti pomocí konfigurace verze:
+Sestavení projektu a jeho závislosti pomocí konfigurace vydané verze:
 
-`dotnet msbuild /p:Configuration=Release`
+`dotnet msbuild -p:Configuration=Release`
 
-Spusťte cíl publikování a publikování `osx.10.11-x64` identifikátorů RID:
+Spustit cíl publikování a publikování `osx.10.11-x64` identifikátorů RID:
 
-`dotnet msbuild /t:Publish /p:RuntimeIdentifiers=osx.10.11-x64`
+`dotnet msbuild -t:Publish -p:RuntimeIdentifiers=osx.10.11-x64`
 
-V části celý projekt s všechny cíle zahrnuté SDK:
+Zobrazit celý projekt s všechny cíle, které jsou součástí sady SDK:
 
-`dotnet msbuild /pp`
+`dotnet msbuild -pp`

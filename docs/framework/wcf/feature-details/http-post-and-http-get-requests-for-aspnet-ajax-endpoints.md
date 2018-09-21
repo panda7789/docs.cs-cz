@@ -2,14 +2,15 @@
 title: 'Postupy: volba mezi HTTP POST a HTTP GET požadavky u koncových bodů ASP.NET AJAX'
 ms.date: 03/30/2017
 ms.assetid: b47de82a-4c92-4af6-bceb-a5cb8bb8ede9
-ms.openlocfilehash: 079bbd98b3fc3d5538f87cad39a4a83a0dc1e242
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5cebdf0bae937d84ec23ed97a5d2feca24fff473
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863332"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46473048"
 ---
 # <a name="how-to-choose-between-http-post-and-http-get-requests-for-aspnet-ajax-endpoints"></a>Postupy: volba mezi HTTP POST a HTTP GET požadavky u koncových bodů ASP.NET AJAX
+
 Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpřístupňuje koncový bod s podporou technologie ASP.NET AJAX, který může být volána z jazyka JavaScript na webové stránce klienta. Základní postupy pro vytváření těchto služeb je podrobněji popsána [postupy: použití konfigurace k přidání koncového bodu ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/how-to-use-configuration-to-add-an-aspnet-ajax-endpoint.md) a [postupy: Přidání ASP.NET AJAX konfigurace koncového bodu bez použití](../../../../docs/framework/wcf/feature-details/how-to-add-an-aspnet-ajax-endpoint-without-using-configuration.md).  
   
  ASP.NET AJAX podporuje operace, které používají operace HTTP POST a HTTP GET, pomocí HTTP POST, je výchozí hodnota. Při vytváření operace, která nemá žádné vedlejší účinky a vrací data, která se mění jen zřídka nebo vůbec, použijte GET protokolu HTTP. Výsledky operací GET můžete uložit do mezipaměti, což znamená, že několik volání do stejné operace mohou způsobit pouze jeden požadavek na vaši službu. Ukládání do mezipaměti se provádí WCF, ale může probíhat na libovolné úrovni (do prohlížeče uživatele, na proxy server a další úrovně.) Ukládání do mezipaměti je výhodné, pokud chcete zvýšit výkon služby, ale nemusí být akceptovatelné Pokud, data se často mění, nebo pokud operace provede určitou akci.  
@@ -30,11 +31,11 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
   
  Příklad, který používá metodu POST, najdete v článku [AJAX služba využívající HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md) vzorku.  
   
-### <a name="to-create-a-wcf-service-that-responds-to-http-get-or-http-post-requests"></a>Vytvoření služby WCF, který reaguje na HTTP GET nebo POST protokolu HTTP žádosti  
+## <a name="to-create-a-wcf-service-that-responds-to-http-get-or-http-post-requests"></a>Vytvoření služby WCF, který reaguje na HTTP GET nebo POST protokolu HTTP žádosti
   
-1.  Definování základní kontraktu služby WCF s rozhraním označené <xref:System.ServiceModel.ServiceContractAttribute> atribut. Označit každou operaci s <xref:System.ServiceModel.OperationContractAttribute>. Přidat <xref:System.ServiceModel.Web.WebGetAttribute> atribut stanoví, že operace by měla reagovat na požadavky HTTP GET. Můžete také přidat <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut s ohledem na HTTP POST, nebo není zadán atribut výchozí nastavení je HTTP POST.  
+1. Definování základní kontraktu služby WCF s rozhraním označené <xref:System.ServiceModel.ServiceContractAttribute> atribut. Označit každou operaci s <xref:System.ServiceModel.OperationContractAttribute>. Přidat <xref:System.ServiceModel.Web.WebGetAttribute> atribut stanoví, že operace by měla reagovat na požadavky HTTP GET. Můžete také přidat <xref:System.ServiceModel.Web.WebInvokeAttribute> atribut s ohledem na HTTP POST, nebo není zadán atribut výchozí nastavení je HTTP POST.
   
-    ```  
+    ```csharp
     [ServiceContract]  
     public interface IMusicService  
     {  
@@ -58,9 +59,9 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
     }  
     ```  
   
-2.  Implementace `IMusicService` kontrakt služby s `MusicService`.  
+2. Implementace `IMusicService` kontrakt služby s `MusicService`.
   
-    ```  
+    ```csharp
     public class MusicService : IMusicService  
     {  
         public void AddAlbum(string user, string album)  
@@ -72,7 +73,7 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
     }  
     ```  
   
-3.  Vytvořte nový soubor s názvem služby s příponou .svc v aplikaci. Tento soubor upravit tak, že přidáte odpovídající [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) direktiv informace pro službu. Určit, že <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> se použije [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice pro automatickou konfiguraci koncového bodu ASP.NET AJAX.  
+3. Vytvořte nový soubor s názvem služby s příponou .svc v aplikaci. Tento soubor upravit tak, že přidáte odpovídající [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) direktiv informace pro službu. Určit, že <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> se použije [ \@ServiceHost](../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice pro automatickou konfiguraci koncového bodu ASP.NET AJAX.  
   
     ```  
     <%@ServiceHost   
@@ -83,11 +84,11 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zpř
     %>  
     ```  
   
-### <a name="to-call-the-service"></a>Volání služby  
+## <a name="to-call-the-service"></a>Volání služby  
   
-1.  Operace GET vaší služby bez žádný kód klienta, můžete otestovat pomocí prohlížeče. Například, pokud vaše služba je nakonfigurována na "http://example.com/service.svc"adresu, zadejte text"http://example.com/service.svc/LookUpArtist?album=SomeAlbum" do prohlížeče adresa vyvolá službu a způsobí, že odpověď na stažení nebo zobrazení.  
+1. Operace GET vaší služby bez žádný kód klienta, můžete otestovat pomocí prohlížeče. Například, pokud vaše služba je nakonfigurována na `http://example.com/service.svc` adresu zadáním `http://example.com/service.svc/LookUpArtist?album=SomeAlbum` do prohlížeče adresa vyvolá službu a způsobí, že odpověď na stažení nebo zobrazení.
   
-2.  Služby můžete použít s operacemi GET stejným způsobem jako jiné služby technologie ASP.NET AJAX – tak, že zadáte službu ovládací prvek adresy URL do kolekce skriptů správce skriptů AJAX technologie ASP.NET. Příklad najdete v tématu [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md).  
+2. Služby můžete použít s operacemi GET stejným způsobem jako jiné služby technologie ASP.NET AJAX – tak, že zadáte službu ovládací prvek adresy URL do kolekce skriptů správce skriptů AJAX technologie ASP.NET. Příklad najdete v tématu [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md).
   
 ## <a name="see-also"></a>Viz také  
  [Vytváření služeb WCF pro ASP.NET AJAX](../../../../docs/framework/wcf/feature-details/creating-wcf-services-for-aspnet-ajax.md)  

@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 163e61eef8a753b5b6470285e5e3ce63789e25a4
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
-ms.translationtype: MT
+ms.openlocfilehash: 244df48606f6d971d6b6e246c4f9b73f916cbdcd
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46287738"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46473535"
 ---
 # <a name="connectserverwmi-function"></a>ConnectServerWmi – funkce
 Připojení přes DCOM k oboru názvů WMI vytvoří v zadaném počítači.  
@@ -48,7 +48,7 @@ HRESULT ConnectServerWmi (
 
 `strNetworkResource` [in] Ukazatel na platný `BSTR` , který obsahuje cestu k objektu správný obor názvů rozhraní WMI. Zobrazit [poznámky](#remarks) části Další informace.
 
-`strUser` [in] Ukazatel na platný `BSTR` , která obsahuje uživatelské jméno. A `null` hodnota označuje aktuální kontext zabezpečení. Pokud se uživatel nachází v jiné doméně než tu, `strUser` může také obsahovat doména a uživatelské jméno oddělené zpětným lomítkem. `strUser` Můžete také být v uživatelském hlavní název (UPN) naformátovat, suhc jako *userName@domainName*. Zobrazit [poznámky](#remarks) části Další informace.
+`strUser` [in] Ukazatel na platný `BSTR` , která obsahuje uživatelské jméno. A `null` hodnota označuje aktuální kontext zabezpečení. Pokud se uživatel nachází v jiné doméně než tu, `strUser` může také obsahovat doména a uživatelské jméno oddělené zpětným lomítkem. `strUser` může být také ve formátu hlavního názvu (UPN) uživatele, například `userName@domainName`. Zobrazit [poznámky](#remarks) části Další informace.
 
 `strPassword` [in] Ukazatel na platný `BSTR` obsahující heslo. A `null` označuje aktuální kontext zabezpečení. Prázdný řetězec ("") označuje platné heslo nulové délky.
 

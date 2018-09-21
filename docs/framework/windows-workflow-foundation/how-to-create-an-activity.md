@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
 ms.openlocfilehash: deb1b6ca5c6fc996a015e32dd5e0c7b9bd6530fa
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45677307"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46472334"
 ---
 # <a name="how-to-create-an-activity"></a>Postupy: vytvoření aktivity
 Aktivity jsou základní jednotka chování v [!INCLUDE[wf1](../../../includes/wf1-md.md)]. Je možné implementovat logiku spouštění aktivity ve spravovaném kódu nebo se dá implementovat pomocí další aktivity. Toto téma ukazuje, jak vytvořit dvě aktivity. První aktivita je jednoduchá aktivita, která používá kód implementovat logiku jeho spuštění. Implementace druhou aktivitu se definuje pomocí další aktivity. Tyto aktivity se používají v následujících krocích v tomto kurzu.  

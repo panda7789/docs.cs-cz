@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: a0ffef95c8f9a187d5dac6902462d9747023384d
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 6bd0187f831db7fd68272e14c022efb45c8260f2
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45685709"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46482102"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na soubory a datovými proudy. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
@@ -41,6 +41,8 @@ Cesta konvence pojmenování a způsoby, jak vyjádřit cestu k souboru pro syst
   
 -   <xref:System.IO.Path> – poskytuje metody a vlastnosti pro zpracování řetězců adresářů způsobem napříč platformami.  
   
+ Vždy byste měli poskytnout robustní zpracování při volání metody systému souborů výjimek. Další informace najdete v tématu [vstupně-výstupních operací zpracování chyb](handling-io-errors.md).
+ 
  Kromě použití těchto tříd, uživatelé jazyka Visual Basic můžete použít metody a vlastnosti poskytované třídou <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> třídy pro soubor vstupně-výstupních operací.  
   
  Naleznete v tématu [postupy: kopírování adresářů](../../../docs/standard/io/how-to-copy-directories.md), [jak: Create a Directory Listing](https://msdn.microsoft.com/library/4d2772b1-b991-4532-a8a6-6ef733277e69), a [postupy: vytvoření výčtu adresářů a souborů](../../../docs/standard/io/how-to-enumerate-directories-and-files.md).  

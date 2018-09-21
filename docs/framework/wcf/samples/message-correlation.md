@@ -2,12 +2,12 @@
 title: Korelace zprávy
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: e4cd5dfd6f03370a408dc6f8fb39c983db3d43df
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: fd97f12f536da85619f300d36d02a10306f32aa5
+ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45999426"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46493179"
 ---
 # <a name="message-correlation"></a>Korelace zprávy
 Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace může odesílat zprávy MSMQ do služby Windows Communication Foundation (WCF) a korelace zpráv mezi aplikacemi odesílatele a příjemce v případě požadavku nebo odpovědi. Tato ukázka používá vazbu msmqIntegrationBinding. Služba není v tomto případě v místním prostředí konzolovou aplikaci, aby bylo možné sledovat, že služba, která bude přijímat zprávy zařazené do fronty. TIS.  
@@ -16,7 +16,7 @@ Tato ukázka předvádí, jak služby Řízení front zpráv (MSMQ) aplikace mů
   
  `IOrderProcessor` Operace jednosměrné služby, který je vhodný pro použití se službou Řízení front definuje kontrakt služby. Zprávy MSMQ nemá hlavičku akce, takže není možné automaticky mapovat různé zprávy služby MSMQ pro operaci smlouvy. Proto může existovat pouze jeden kontrakt operace v tomto případě. Pokud chcete definovat další operace smluv týkajících se služby, aplikace musíte zadat informace jako záhlaví, které v služby MSMQ zprávy (třeba popisek, nebo ID korelace) umožňuje rozhodnout, kterou kontrakt k odeslání. To je patrné [vlastní Demux](../../../../docs/framework/wcf/samples/custom-demux.md).  
   
- Zprávy služby MSMQ také neobsahuje informace ohledně toho, která hlavičky jsou namapovány na různé parametry kontrakt. Proto může existovat jenom jeden parametr v kontrakt. Parametr je typu <!--zz <xref:System.ServiceModel.MSMQIntegration.MsmqMessage%601>`MsmqMessage<T>`--> , `System.ServiceModel.MSMQIntegration.MsmqMessage` obsahující základní zprávy služby MSMQ. Typ "T" v `MsmqMessage<T>` třída reprezentuje data, která je serializován do textu zprávy MSMQ. V této ukázce `PurchaseOrder` je typ serializován do textu zprávy MSMQ.  
+ Zprávy služby MSMQ také neobsahuje informace ohledně toho, která hlavičky jsou namapovány na různé parametry kontrakt. Proto může existovat jenom jeden parametr v kontrakt. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>, která obsahuje základní zprávy služby MSMQ. Typ "T" v `MsmqMessage<T>` třída reprezentuje data, která je serializován do textu zprávy MSMQ. V této ukázce `PurchaseOrder` je typ serializován do textu zprávy MSMQ.  
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]  

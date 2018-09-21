@@ -2,12 +2,12 @@
 title: Výběr filtru
 ms.date: 03/30/2017
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-ms.openlocfilehash: bc3bba9a2b00b35f3e0cff1786ea98cfa881f311
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
-ms.translationtype: MT
+ms.openlocfilehash: 377d4f5c221ad37acf954b1dafc8712a388122ff
+ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43743138"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46478497"
 ---
 # <a name="choosing-a-filter"></a>Výběr filtru
 Při konfiguraci služby směrování, je důležité vybrat správnou zprávu filtry a nakonfigurujete je, aby bylo možné provést přesné shody proti přijímaných zpráv. Pokud filtry, které jste vybrali příliš rozsáhlá v jejich odpovídá nebo jsou nakonfigurovány nesprávně, zprávy jsou směrovány nesprávně. Pokud jsou příliš omezující filtry, pravděpodobně nemáte všechny platné trasy, které jsou k dispozici pro některé zprávy.  
@@ -16,7 +16,7 @@ Při konfiguraci služby směrování, je důležité vybrat správnou zprávu f
  Při výběru filtry, které používá služba směrování, je důležité pochopit, jak každý filtr funguje a jaké informace jsou k dispozici jako součást příchozí zprávy. Například pokud jsou všechny zprávy přes stejný koncový bod, filtry adres a Název_koncového_bodu nejsou užitečné protože těmto filtrům neodpovídají všechny zprávy.  
   
 ### <a name="action"></a>Akce  
- Zkontroluje filtr akce <xref:System.ServiceModel.Channels.MessageHeaders.Action%2A> vlastnost. Pokud obsah záhlaví akce ve zprávě odpovídají hodnotě dat filtru zadaná v konfiguraci filtr a potom tento filtr vrátí `true`. Následující příklad definuje `FilterElement` filtru akce, která používá tak, aby odpovídaly zprávy s hlavičkou akce, která obsahuje hodnotu "http://namespace/contract/operation/".  
+ Zkontroluje filtr akce <xref:System.ServiceModel.Channels.MessageHeaders.Action%2A> vlastnost. Pokud obsah záhlaví akce ve zprávě odpovídají hodnotě dat filtru zadaná v konfiguraci filtr a potom tento filtr vrátí `true`. Následující příklad definuje `FilterElement` filtru akce, která používá tak, aby odpovídaly zprávy s hlavičkou akce, která obsahuje hodnotu `http://namespace/contract/operation/`.
   
 ```xml  
 <filter name="action1" filterType="Action" filterData="http://namespace/contract/operation/" />  
@@ -47,7 +47,7 @@ EndpointAddressMessageFilter address1 = new EndpointAddressMessageFilter(new End
  Tento filtr by měla sloužit, když jsou příchozí zprávy adresované jedinečnou adresu.  
   
 ### <a name="endpointaddressprefix"></a>EndpointAddressPrefix  
- Filtr EndpointAddressPrefix je podobný filtrování EndpointAddress. Filtr EndpointAddressPrefix kontroluje EndpointAddress, který v byla přijata zpráva. Ale EndpointAddressPrefix filtr funguje jako zástupný znak to provede spárováním odpovídajících adresy, které začínají hodnotu zadanou v konfiguraci filtru. Následující příklad definuje `FilterElement` EndpointAddressPrefix filtr, který používá tak, aby odpovídaly všechny zprávy adresované na "http://\<název_hostitele > / vdir *".  
+ Filtr EndpointAddressPrefix je podobný filtrování EndpointAddress. Filtr EndpointAddressPrefix kontroluje EndpointAddress, který v byla přijata zpráva. Ale EndpointAddressPrefix filtr funguje jako zástupný znak to provede spárováním odpovídajících adresy, které začínají hodnotu zadanou v konfiguraci filtru. Následující příklad definuje `FilterElement` EndpointAddressPrefix filtr, který používá tak, aby odpovídaly všechny zprávy adresované `http://<hostname>/vdir*`.  
   
 ```xml  
 <filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/vdir" />  
