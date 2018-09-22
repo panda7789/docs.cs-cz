@@ -4,11 +4,11 @@ description: Jak seskupení výsledků podle sousedních klíčů pomocí jazyka
 ms.date: 08/14/2018
 ms.assetid: cbda9c08-151b-4c9e-82f7-c3d7f3dac66b
 ms.openlocfilehash: b5753c85bb07be4fc84b78a299eece961969ff9d
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46485717"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46696950"
 ---
 # <a name="group-results-by-contiguous-keys"></a>Seskupení výsledků podle sousedních klíčů
 

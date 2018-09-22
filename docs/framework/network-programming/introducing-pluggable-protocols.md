@@ -25,12 +25,12 @@ ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
 author: mcleblanc
 ms.author: markl
 manager: markl
-ms.openlocfilehash: aad12f48409216e8833b9cb6bffbd35b84f40091
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e850468e035e746fec9d10522cfc00cb04d5cd9a
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513769"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46577162"
 ---
 # <a name="introducing-pluggable-protocols"></a>Úvod k připojitelným protokolům
 Rozhraní Microsoft .NET Framework poskytuje vícevrstvou, rozšiřitelnou a spravovatelnou implementaci internetových služeb, které je možné integrovat se rychle a snadno do svých aplikací. Přístup k Internetu tříd v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů slouží k implementaci založeného na webu i internetových aplikací.  
@@ -43,7 +43,7 @@ Rozhraní Microsoft .NET Framework poskytuje vícevrstvou, rozšiřitelnou a spr
  Klientská aplikace odešle požadavek určením požadovaný prostředek Internet a komunikační protokol pro žádost a odpověď. V případě potřeby klient také poskytuje všechny další data potřebná k dokončení požadavku, jako je například proxy umístění nebo ověřovací údaje (uživatelské jméno, heslo atd.). Jakmile je vytvořen požadavek, můžete žádost odeslána na server.  
   
 ## <a name="identifying-resources"></a>Identifikace prostředků  
- Rozhraní .NET Framework používá k identifikaci požadovaný Internet zdrojů a komunikační protokol identifikátorem URI (Uniform Resource). Identifikátor URI se skládá z alespoň tři a případně čtyři, fragmenty: identifikátor schématu, která identifikuje komunikační protokol pro žádost a odpověď; Identifikátor serveru, který se skládá z názvu systému DNS (Domain Name) hostitele nebo adresu TCP, který jednoznačně identifikuje server na Internetu. identifikátor cesty, který vyhledá požadované informace na serveru. a volitelný řetězec dotazu, který předává informace od klienta k serveru. Například identifikátor URI "http://www.contoso.com/whatsnew.aspx?date=today" se skládá z identifikátor schématu "http", server identifikátor "www.contoso.com", cesty "/ whatsnew.aspx" a řetězce dotazu "? datum dnes =".  
+ Rozhraní .NET Framework používá k identifikaci požadovaný Internet zdrojů a komunikační protokol identifikátorem URI (Uniform Resource). Identifikátor URI se skládá z alespoň tři a případně čtyři, fragmenty: identifikátor schématu, která identifikuje komunikační protokol pro žádost a odpověď; Identifikátor serveru, který se skládá z názvu systému DNS (Domain Name) hostitele nebo adresu TCP, který jednoznačně identifikuje server na Internetu. identifikátor cesty, který vyhledá požadované informace na serveru. a volitelný řetězec dotazu, který předává informace od klienta k serveru. Například identifikátor URI `http://www.contoso.com/whatsnew.aspx?date=today` se skládá z identifikátor schématu "http", server identifikátor "www.contoso.com", cesty "/ whatsnew.aspx" a řetězce dotazu "? datum dnes =".  
   
  Po server obdržel požadavek a zpracovat odpověď, vrací odpověď klientské aplikaci. Odpověď obsahuje doplňující informace, jako je například typ obsahu (nezpracovaný text nebo data XML, třeba).  
   

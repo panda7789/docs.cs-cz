@@ -2,31 +2,34 @@
 title: Ukázky Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
-ms.openlocfilehash: e9b511606c6278e7d2b2fb1bc3cbd9c38b51b000
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: b6f614bd8543070ee69636344376b058988c2306
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698416"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46580613"
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
-Tyto ukázky pokyny na různé aspekty Windows Workflow Foundation (WF).  
-  
-Ukázky můžete stáhnout z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=150780).  
-  
+
+Tyto ukázky pokyny na různé aspekty Windows Workflow Foundation (WF).
+
+Ukázky můžete stáhnout z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=150780).
+
 > [!NOTE]
->  Tyto ukázky byly vytvořeny s [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] a [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], ale musí být kompatibilní s [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] a [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]. Další ukázky pro Windows Workflow Foundation v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] můžete najít na [kódu MSDN](https://aka.ms/WF45Samples).
-  
-## <a name="in-this-section"></a>V tomto oddílu  
- [Aplikace](../../../../docs/framework/windows-workflow-foundation/samples/application.md)  
- Obsahuje ukázky, které souvisejí s aplikací pracovních postupů.  
-  
- [Základy](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)  
- Obsahuje ukázky, které ukazují základní funkce Windows Workflow Foundation (WF).  
-  
- [Scénář](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)  
- Příklady scénářů Windows Workflow Foundation (WF).  
-  
- Ujistěte se, ukázky, které jsou obsaženy v této části použít nové funkce v jazyce C# 3.0. Podrobnosti o některé nové funkce C# 3.0, který může být obeznámeni, najdete v tématu [jazyka C# 3.0 přehled](https://go.microsoft.com/fwlink/?LinkId=193972).  
-  
- Ukázky můžete stáhnout z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=150780).
+> Tyto ukázky byly vytvořené pomocí sady Visual Studio 2010 a [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], ale musí být kompatibilní s novějšími verzemi sady Visual Studio a rozhraní .NET Framework. Další ukázky pro Windows Workflow Foundation v [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] můžete najít na [ukázky kódu MSDN](https://aka.ms/WF45Samples).
+
+## <a name="in-this-section"></a>V tomto oddílu
+
+[Aplikace](../../../../docs/framework/windows-workflow-foundation/samples/application.md)
+
+Obsahuje ukázky, které souvisejí s aplikací pracovních postupů.
+
+[Základy](../../../../docs/framework/windows-workflow-foundation/samples/basic.md)
+
+Obsahuje ukázky, které ukazují základní funkce Windows Workflow Foundation (WF).
+
+[Scénář](../../../../docs/framework/windows-workflow-foundation/samples/scenario.md)
+
+Příklady scénářů Windows Workflow Foundation (WF).
+
+Ukázky můžete stáhnout z [Microsoft Download Center](https://go.microsoft.com/fwlink/?LinkId=150780).

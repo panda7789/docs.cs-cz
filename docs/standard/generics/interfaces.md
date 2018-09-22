@@ -11,11 +11,11 @@ ms.assetid: 88bf5b04-d371-4edb-ba38-01ec7cabaacf
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a6c151798c807206cc7f4b2fbeb21e75e9142379
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46524873"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46695921"
 ---
 # <a name="generic-interfaces"></a>Obecná rozhraní
 Toto téma obsahuje základní informace o obecných rozhraní, které poskytují společné funkce napříč řady obecných typů.  

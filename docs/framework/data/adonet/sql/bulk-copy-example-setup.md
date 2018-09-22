@@ -3,11 +3,11 @@ title: Příklad nastavení hromadného kopírování
 ms.date: 03/30/2017
 ms.assetid: d4dde6ac-b8b6-4593-965a-635c8fb2dadb
 ms.openlocfilehash: 71daf489fdf5e7e12594e798bc3ac01b1c76b027
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46531387"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46579456"
 ---
 # <a name="bulk-copy-example-setup"></a>Příklad nastavení hromadného kopírování
 <xref:System.Data.SqlClient.SqlBulkCopy> Třídy lze použít k zápisu dat jenom do tabulek systému SQL Server. Ukázky kódu v tomto tématu použijte ukázkovou databázi systému SQL Server, **AdventureWorks**. Ukázky kódu pro neupravujte existující tabulky zapisovat data do tabulek, které je nutné nejprve vytvořit.  

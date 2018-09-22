@@ -5,11 +5,11 @@ ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: aaf5103dfee366466ff701ce3669bbabb97233ac
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45625636"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46699323"
 ---
 # <a name="lttypegt-element-net-native"></a>Element &lt;Type&gt; (.NET Native)
 Použije zásady modulu runtime určitého typu, jako je například třídy nebo struktury.  

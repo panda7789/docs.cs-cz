@@ -3,11 +3,11 @@ title: Zpracování chyb WCF
 ms.date: 03/30/2017
 ms.assetid: 1e4b1e0f-9598-449d-9d73-90bda62305b8
 ms.openlocfilehash: 4fad317d8cb696b29d9c8e4e4d8209abc28410f8
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46473444"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46580483"
 ---
 # <a name="wcf-error-handling"></a>Zpracování chyb WCF
 Chyb zjištěných aplikací WCF patří do jedné ze tří skupin:  

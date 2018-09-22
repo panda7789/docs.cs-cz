@@ -4,11 +4,11 @@ description: Další informace o .NET Core, nástroje vrstvy a co se změnilo v 
 author: blackdwarf
 ms.date: 03/06/2017
 ms.openlocfilehash: 85987129421e8ee22f7cf7fe1d44e0768d95a214
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46490650"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46696327"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Podrobný přehled změn v nástrojích pro .NET Core
 

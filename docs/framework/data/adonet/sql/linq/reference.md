@@ -3,11 +3,11 @@ title: Odkaz
 ms.date: 03/30/2017
 ms.assetid: 312c3935-a947-4220-a837-0039d9fc458b
 ms.openlocfilehash: 3edfbe7d650fead507946610de8e76d27e94136f
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46562753"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46698412"
 ---
 # <a name="reference"></a>Odkaz
 Tato část obsahuje referenční informace pro [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] vývojáři.  

@@ -3,11 +3,11 @@ title: Syndikace WCF – přehled
 ms.date: 03/30/2017
 ms.assetid: af6d4c39-e5e8-4099-aee6-5261feff9107
 ms.openlocfilehash: 60a919a03552f5195529ae0997e60d1fba55d7c3
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46507289"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46695871"
 ---
 # <a name="wcf-syndication-overview"></a>Syndikace WCF – přehled
 Windows Communication Foundation (WCF) poskytuje podporu pro vystavení informační kanály syndikace ze služby WCF. Syndikace virtuálních sítí je mechanismus integrace aplikace 00Z serveru zpřístupňuje některá data aplikace v interoperabilním formátu označuje jako informační kanál. Informační kanál je kolekce dat aplikací, který se skládá z některých metadat na úrovni kanálu (nadpis, Autor, adresy URL a další metadata) a řadou položky informačních kanálů. V rámci kanálu položky informačního kanálu se obvykle časově řazenou v chronologickém pořadí reverzní. Položky informačního kanálu obsahuje standardní sadu metadat na úrovni položek (název, adresu URL, datum vytvoření, kategorie a další metadata na úrovni položek) a libovolné množství dat konkrétní aplikace. Jsou dva nejběžnější typy informační kanály syndikace syndikace RSS (Really Simple) 2.0 a Atom 1.0, které jsou podporovány službou WCF.  

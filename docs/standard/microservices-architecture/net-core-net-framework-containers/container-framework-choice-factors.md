@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
 ms.openlocfilehash: 74b3749077fdb375f84ddacd98221aa4afcf2f67
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46539041"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46577845"
 ---
 # <a name="decision-table-net-frameworks-to-use-for-docker"></a>Tabulka rozhodnutí: rozhraní .NET Framework pro Docker
 

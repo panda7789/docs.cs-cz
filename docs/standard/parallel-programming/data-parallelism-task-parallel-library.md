@@ -11,11 +11,11 @@ ms.assetid: 3f05f33f-f1da-4b16-81c2-9ceff1bef449
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 2933d574b387ec0f444883bbafb41f602bc5dcc0
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46481985"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46577344"
 ---
 # <a name="data-parallelism-task-parallel-library"></a>Datový paralelismus (Task Parallel Library)
 *Datový paralelismus* odkazuje na scénáře, ve kterých se současně provádí stejnou operaci (paralelně) na prvky ve zdrojové kolekci nebo pole. V paralelní operace s daty zdrojové kolekce rozdělena tak, aby více vláken může souběžně pracovat na různých segmentů.  

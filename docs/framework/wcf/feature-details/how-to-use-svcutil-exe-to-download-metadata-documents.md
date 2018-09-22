@@ -3,11 +3,11 @@ title: 'Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe'
 ms.date: 03/30/2017
 ms.assetid: 15524274-3167-4627-b722-d6cedb9fa8c6
 ms.openlocfilehash: 6643f0a5dba98afcef38870cf24d91e7d69a1440
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46481855"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46586408"
 ---
 # <a name="how-to-use-svcutilexe-to-download-metadata-documents"></a>Postupy: Stažení dokumentů metadat pomocí nástroje Svcutil.exe
 Svcutil.exe můžete použít ke stažení metadat z službami a k uložení metadat do místních souborů. Pro schémata HTTP a HTTPS URL Svcutil.exe pokusí se načíst metadata pomocí WS-MetadataExchange a [zjišťování webové služby XML](https://go.microsoft.com/fwlink/?LinkId=94950). Pro všechny ostatní schémata URL Svcutil.exe používá pouze WS-MetadataExchange.  

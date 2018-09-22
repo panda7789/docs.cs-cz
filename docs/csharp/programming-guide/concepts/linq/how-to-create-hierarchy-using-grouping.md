@@ -3,11 +3,11 @@ title: 'Postupy: vytvoření hierarchie pomocí seskupení (C#)'
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
 ms.openlocfilehash: 8fa384ced04a90002f8f721266f163c874d6e0ff
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45994543"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46585557"
 ---
 # <a name="how-to-create-hierarchy-using-grouping-c"></a>Postupy: vytvoření hierarchie pomocí seskupení (C#)
 Tento příklad ukazuje, jak seskupit data a pak vygenerovat XML podle seskupení.  

@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: de08662a825a84f19a40863cf73481d89364ebd0
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988631"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46568086"
 ---
 # <a name="putclasswmi-function"></a>PutClassWmi – funkce
 Vytvoří novou třídu nebo aktualizuje nějakou existující.  

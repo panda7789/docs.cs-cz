@@ -4,12 +4,12 @@ description: Zjistěte, jak .NET Core vyhledá a vybere verze modulu runtime pro
 author: billwagner
 ms.author: wiwagn
 ms.date: 06/27/2018
-ms.openlocfilehash: 21697aa773abfbd88288d47323402a48c51d69ae
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 28a76cc17346c40517a21e8dc902bd6c2a84597f
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44204861"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46586919"
 ---
 # <a name="net-core-version-selection"></a>Výběr verze .NET core
 
@@ -31,7 +31,12 @@ Zbývající část tohoto dokumentu zkontroluje tyto čtyři scénáře.
 
 ## <a name="the-sdk-uses-the-latest-installed-version"></a>Sada SDK používá nejnovější verze
 
-Zahrnuje následující příkazy SDK `dotnet new`,, nebo `dotnet run`. `dotnet` Rozhraní příkazového řádku, musíte zvolit verzi sady SDK pro kterýkoli příkaz. Rozhraní příkazového řádku .NET Core využívá nejnovější sadu SDK ve výchozím nastavení nainstalovaná na počítači. .NET Core SDK v2.1.301 budete používat při instalaci, i v případě, že projekt, že pracujete s cílí .NET Core Runtime 2.0. Můžete používat nejnovější verze preview také vydaných verzí. Při cílení na dřívější verze modulu runtime .NET Core můžete využít výhod nejnovějších funkcí sady SDK a vylepšení. Můžete cílit více verzí modulu runtime .NET Core v různých projektech pomocí stejných nástrojů sady SDK pro všechny projekty.
+Zahrnuje následující příkazy SDK `dotnet new` a `dotnet run`. `dotnet` Rozhraní příkazového řádku, musíte zvolit ze sady SDK verze pro každý příkaz dotnet. Rozhraní příkazového řádku .NET Core využívá nejnovější sadu SDK na počítači nainstalovaný ve výchozím nastavení, i když:
+
+* Projekt cílí na starší verzi.
+* Nejnovější verze je verze preview.
+
+Aplikace můžou využívat nejnovější funkce sady SDK a vylepšení při cílení na dřívější verze modulu runtime .NET Core. Můžete cílit více verzí modulu runtime .NET Core v různých projektech pomocí stejných nástrojů sady SDK pro všechny projekty.
 
 Ve výjimečných případech budete muset použít starší verzi sady SDK. Zadejte v této verzi [ *global.json* souboru](../tools/global-json.md). Zásady "použít nejnovější" znamená, že používejte pouze *global.json* k určení sady .NET Core SDK verze starší než nejnovější verze.
 

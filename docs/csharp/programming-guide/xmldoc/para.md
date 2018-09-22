@@ -9,11 +9,11 @@ helpviewer_keywords:
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
 ms.openlocfilehash: e51df23db97aadddbc4c4e8c3cb38bda7ff7e3a4
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46472941"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46697312"
 ---
 # <a name="ltparagt-c-programming-guide"></a>&lt;para&gt; (C# Programming Guide)
 ## <a name="syntax"></a>Syntaxe  

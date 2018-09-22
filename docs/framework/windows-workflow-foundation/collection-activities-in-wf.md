@@ -3,11 +3,11 @@ title: Kolekce aktivit v WF
 ms.date: 03/30/2017
 ms.assetid: 2680c3e2-9902-4968-b98d-cab776103dbe
 ms.openlocfilehash: 6b3a02cdd020d303519f605a206d62b42f4fe731
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46538385"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46579170"
 ---
 # <a name="collection-activities-in-wf"></a>Kolekce aktivit v WF
 Kolekce aktivity se používají pro práci s objekty kolekcí v pracovním postupu. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] má poskytované systémem aktivity pro přidávání a odebírání položek z kolekce, testování existence položku v kolekci a vymazání kolekce. `ExistsInCollection` a `RemoveFromCollection` mají <xref:System.Activities.OutArgument%601> typu <xref:System.Boolean>, který určuje výsledek.  
