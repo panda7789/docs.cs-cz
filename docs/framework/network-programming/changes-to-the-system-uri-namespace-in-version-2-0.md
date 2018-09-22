@@ -6,23 +6,23 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: f300ab05f28feca8baa13c4078df622e1e7d9d19
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46531227"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46579443"
 ---
-# <a name="changes-to-the-systemuri-namespace-in-version-20"></a><span data-ttu-id="d18cb-102">Změny v oboru názvů System.Uri ve verzi 2.0</span><span class="sxs-lookup"><span data-stu-id="d18cb-102">Changes to the System.Uri namespace in version 2.0</span></span>
+# <a name="changes-to-the-systemuri-namespace-in-version-20"></a><span data-ttu-id="356c9-102">Změny v oboru názvů System.Uri ve verzi 2.0</span><span class="sxs-lookup"><span data-stu-id="356c9-102">Changes to the System.Uri namespace in version 2.0</span></span>
 
-<span data-ttu-id="d18cb-103">Bylo provedeno několik změn <xref:System.Uri?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="d18cb-103">Several changes were made to the <xref:System.Uri?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="d18cb-104">Tyto změny oprava nesprávné chování, rozšířeného použitelnost a zvýšené zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="d18cb-104">These changes fixed incorrect behavior, enhanced usability, and enhanced security.</span></span>
+<span data-ttu-id="356c9-103">Bylo provedeno několik změn <xref:System.Uri?displayProperty=nameWithType> třídy.</span><span class="sxs-lookup"><span data-stu-id="356c9-103">Several changes were made to the <xref:System.Uri?displayProperty=nameWithType> class.</span></span> <span data-ttu-id="356c9-104">Tyto změny oprava nesprávné chování, rozšířeného použitelnost a zvýšené zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="356c9-104">These changes fixed incorrect behavior, enhanced usability, and enhanced security.</span></span>
 
-## <a name="obsolete-and-deprecated-members"></a><span data-ttu-id="d18cb-105">Zastaralé a již zastaralé členy</span><span class="sxs-lookup"><span data-stu-id="d18cb-105">Obsolete and deprecated Members</span></span>
+## <a name="obsolete-and-deprecated-members"></a><span data-ttu-id="356c9-105">Zastaralé a již zastaralé členy</span><span class="sxs-lookup"><span data-stu-id="356c9-105">Obsolete and deprecated Members</span></span>
 
- <span data-ttu-id="d18cb-106">Konstruktory:</span><span class="sxs-lookup"><span data-stu-id="d18cb-106">Constructors:</span></span>
+ <span data-ttu-id="356c9-106">Konstruktory:</span><span class="sxs-lookup"><span data-stu-id="356c9-106">Constructors:</span></span>
 
-- <span data-ttu-id="d18cb-107">Všechny konstruktory, které mají `dontEscape` parametru.</span><span class="sxs-lookup"><span data-stu-id="d18cb-107">All constructors that have a `dontEscape` parameter.</span></span>
+- <span data-ttu-id="356c9-107">Všechny konstruktory, které mají `dontEscape` parametru.</span><span class="sxs-lookup"><span data-stu-id="356c9-107">All constructors that have a `dontEscape` parameter.</span></span>
 
- <span data-ttu-id="d18cb-108">Metody:</span><span class="sxs-lookup"><span data-stu-id="d18cb-108">Methods:</span></span>
+ <span data-ttu-id="356c9-108">Metody:</span><span class="sxs-lookup"><span data-stu-id="356c9-108">Methods:</span></span>
 
 - <xref:System.Uri.CheckSecurity%2A>
 
@@ -40,40 +40,40 @@ ms.locfileid: "46531227"
 
 - <xref:System.Uri.EscapeString%2A>
 
-## <a name="changes"></a><span data-ttu-id="d18cb-109">Změny</span><span class="sxs-lookup"><span data-stu-id="d18cb-109">Changes</span></span>
+## <a name="changes"></a><span data-ttu-id="356c9-109">Změny</span><span class="sxs-lookup"><span data-stu-id="356c9-109">Changes</span></span>
 
-- <span data-ttu-id="d18cb-110">Pro schémata identifikátoru URI, které se ví, že není nutné část dotazu (souboru, protokolu ftp a dalších) "?" znak je vždy uvozen řídicími znaky a není považováno za začátek <xref:System.Uri.Query%2A> část.</span><span class="sxs-lookup"><span data-stu-id="d18cb-110">For URI schemes that are known to not have a query part (file, ftp, and others), the '?' character is always escaped and is not considered the beginning of a <xref:System.Uri.Query%2A> part.</span></span>
+- <span data-ttu-id="356c9-110">Pro schémata identifikátoru URI, které se ví, že není nutné část dotazu (souboru, protokolu ftp a dalších) "?" znak je vždy uvozen řídicími znaky a není považováno za začátek <xref:System.Uri.Query%2A> část.</span><span class="sxs-lookup"><span data-stu-id="356c9-110">For URI schemes that are known to not have a query part (file, ftp, and others), the '?' character is always escaped and is not considered the beginning of a <xref:System.Uri.Query%2A> part.</span></span>
 
-- <span data-ttu-id="d18cb-111">Implicitní souboru identifikátory URI (ve formátu `c:\directory\file@name.txt`), fragment znak (#) je vždy uvozen řídicími znaky, pokud je požadována úplná unescaping nebo <xref:System.Uri.LocalPath%2A> je `true`.</span><span class="sxs-lookup"><span data-stu-id="d18cb-111">For implicit file URIs (of the form `c:\directory\file@name.txt`), the fragment character ('#') is always escaped unless full unescaping is requested or <xref:System.Uri.LocalPath%2A> is `true`.</span></span>
+- <span data-ttu-id="356c9-111">Implicitní souboru identifikátory URI (ve formátu `c:\directory\file@name.txt`), fragment znak (#) je vždy uvozen řídicími znaky, pokud je požadována úplná unescaping nebo <xref:System.Uri.LocalPath%2A> je `true`.</span><span class="sxs-lookup"><span data-stu-id="356c9-111">For implicit file URIs (of the form `c:\directory\file@name.txt`), the fragment character ('#') is always escaped unless full unescaping is requested or <xref:System.Uri.LocalPath%2A> is `true`.</span></span>
 
-- <span data-ttu-id="d18cb-112">Byla odebrána podpora UNC hostname; byla přijata specifikaci IDN představující mezinárodní názvy hostitelů.</span><span class="sxs-lookup"><span data-stu-id="d18cb-112">UNC hostname support was removed; the IDN specification for representing international hostnames was adopted.</span></span>
+- <span data-ttu-id="356c9-112">Byla odebrána podpora UNC hostname; byla přijata specifikaci IDN představující mezinárodní názvy hostitelů.</span><span class="sxs-lookup"><span data-stu-id="356c9-112">UNC hostname support was removed; the IDN specification for representing international hostnames was adopted.</span></span>
 
-- <span data-ttu-id="d18cb-113"><xref:System.Uri.LocalPath%2A> vždy vrátí řetězec zcela bez řídících znaků.</span><span class="sxs-lookup"><span data-stu-id="d18cb-113"><xref:System.Uri.LocalPath%2A> always returns a completely unescaped string.</span></span>
+- <span data-ttu-id="356c9-113"><xref:System.Uri.LocalPath%2A> vždy vrátí řetězec zcela bez řídících znaků.</span><span class="sxs-lookup"><span data-stu-id="356c9-113"><xref:System.Uri.LocalPath%2A> always returns a completely unescaped string.</span></span>
 
-- <span data-ttu-id="d18cb-114"><xref:System.Uri.ToString%2A> není unescape s uvozovacími znaky "%", "?", nebo znak "#".</span><span class="sxs-lookup"><span data-stu-id="d18cb-114"><xref:System.Uri.ToString%2A> does not unescape an escaped '%', '?', or '#' character.</span></span>
+- <span data-ttu-id="356c9-114"><xref:System.Uri.ToString%2A> není unescape s uvozovacími znaky "%", "?", nebo znak "#".</span><span class="sxs-lookup"><span data-stu-id="356c9-114"><xref:System.Uri.ToString%2A> does not unescape an escaped '%', '?', or '#' character.</span></span>
 
-- <span data-ttu-id="d18cb-115"><xref:System.Uri.Equals%2A> nyní zahrnuje <xref:System.Uri.Query%2A> část v kontrole rovnosti.</span><span class="sxs-lookup"><span data-stu-id="d18cb-115"><xref:System.Uri.Equals%2A> now includes the <xref:System.Uri.Query%2A> part in the equality check.</span></span>
+- <span data-ttu-id="356c9-115"><xref:System.Uri.Equals%2A> nyní zahrnuje <xref:System.Uri.Query%2A> část v kontrole rovnosti.</span><span class="sxs-lookup"><span data-stu-id="356c9-115"><xref:System.Uri.Equals%2A> now includes the <xref:System.Uri.Query%2A> part in the equality check.</span></span>
 
-- <span data-ttu-id="d18cb-116">Operátory "=="a"! =" jsou přepsat a že propojení se <xref:System.Uri.Equals%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="d18cb-116">Operators "==" and "!=" are overridden and linked to the <xref:System.Uri.Equals%2A> method.</span></span>
+- <span data-ttu-id="356c9-116">Operátory "=="a"! =" jsou přepsat a že propojení se <xref:System.Uri.Equals%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="356c9-116">Operators "==" and "!=" are overridden and linked to the <xref:System.Uri.Equals%2A> method.</span></span>
 
-- <span data-ttu-id="d18cb-117"><xref:System.Uri.IsLoopback%2A> nyní poskytuje konzistentní výsledky.</span><span class="sxs-lookup"><span data-stu-id="d18cb-117"><xref:System.Uri.IsLoopback%2A> now produces consistent results.</span></span>
+- <span data-ttu-id="356c9-117"><xref:System.Uri.IsLoopback%2A> nyní poskytuje konzistentní výsledky.</span><span class="sxs-lookup"><span data-stu-id="356c9-117"><xref:System.Uri.IsLoopback%2A> now produces consistent results.</span></span>
 
-- <span data-ttu-id="d18cb-118">Identifikátor URI "`file:///path`" je již přeloženy do `file://path`.</span><span class="sxs-lookup"><span data-stu-id="d18cb-118">The URI "`file:///path`" is no longer translated into `file://path`.</span></span>
+- <span data-ttu-id="356c9-118">Identifikátor URI "`file:///path`" je již přeloženy do `file://path`.</span><span class="sxs-lookup"><span data-stu-id="356c9-118">The URI "`file:///path`" is no longer translated into `file://path`.</span></span>
 
-- <span data-ttu-id="d18cb-119">"#" nyní považována za zakončením název hostitele.</span><span class="sxs-lookup"><span data-stu-id="d18cb-119">"#" is now recognized as a host name terminator.</span></span> <span data-ttu-id="d18cb-120">To znamená `http://contoso.com#fragment` je nyní převést na `http://contoso.com/#fragment`.</span><span class="sxs-lookup"><span data-stu-id="d18cb-120">That is, `http://contoso.com#fragment` is now converted to `http://contoso.com/#fragment`.</span></span>
+- <span data-ttu-id="356c9-119">"#" nyní považována za zakončením název hostitele.</span><span class="sxs-lookup"><span data-stu-id="356c9-119">"#" is now recognized as a host name terminator.</span></span> <span data-ttu-id="356c9-120">To znamená `http://contoso.com#fragment` je nyní převést na `http://contoso.com/#fragment`.</span><span class="sxs-lookup"><span data-stu-id="356c9-120">That is, `http://contoso.com#fragment` is now converted to `http://contoso.com/#fragment`.</span></span>
 
-- <span data-ttu-id="d18cb-121">Opravili jsme chybu při kombinování základní identifikátor URI s fragmentem.</span><span class="sxs-lookup"><span data-stu-id="d18cb-121">A bug when combining a base URI with a fragment has been fixed.</span></span>
+- <span data-ttu-id="356c9-121">Opravili jsme chybu při kombinování základní identifikátor URI s fragmentem.</span><span class="sxs-lookup"><span data-stu-id="356c9-121">A bug when combining a base URI with a fragment has been fixed.</span></span>
 
-- <span data-ttu-id="d18cb-122">Chyba v <xref:System.Uri.HostNameType%2A> vyřešen.</span><span class="sxs-lookup"><span data-stu-id="d18cb-122">A bug in <xref:System.Uri.HostNameType%2A> is fixed.</span></span>
+- <span data-ttu-id="356c9-122">Chyba v <xref:System.Uri.HostNameType%2A> vyřešen.</span><span class="sxs-lookup"><span data-stu-id="356c9-122">A bug in <xref:System.Uri.HostNameType%2A> is fixed.</span></span>
 
-- <span data-ttu-id="d18cb-123">Chyba při analýze NNTP opravena.</span><span class="sxs-lookup"><span data-stu-id="d18cb-123">A bug in NNTP parsing is fixed.</span></span>
+- <span data-ttu-id="356c9-123">Chyba při analýze NNTP opravena.</span><span class="sxs-lookup"><span data-stu-id="356c9-123">A bug in NNTP parsing is fixed.</span></span>
 
-- <span data-ttu-id="d18cb-124">Identifikátor URI ve formátu HTTP:contoso.com nyní výjimku analýzy.</span><span class="sxs-lookup"><span data-stu-id="d18cb-124">A URI of the form HTTP:contoso.com now throws a parsing exception.</span></span>
+- <span data-ttu-id="356c9-124">Identifikátor URI ve formátu HTTP:contoso.com nyní výjimku analýzy.</span><span class="sxs-lookup"><span data-stu-id="356c9-124">A URI of the form HTTP:contoso.com now throws a parsing exception.</span></span>
 
-- <span data-ttu-id="d18cb-125">Rozhraní správně zpracovává informací o uživateli v identifikátoru URI.</span><span class="sxs-lookup"><span data-stu-id="d18cb-125">The Framework correctly handles userinfo in a URI.</span></span>
+- <span data-ttu-id="356c9-125">Rozhraní správně zpracovává informací o uživateli v identifikátoru URI.</span><span class="sxs-lookup"><span data-stu-id="356c9-125">The Framework correctly handles userinfo in a URI.</span></span>
 
-- <span data-ttu-id="d18cb-126">Komprese cesty identifikátoru URI je vyřešen tak, aby přerušení identifikátor URI nelze procházení systému souborů kořenem.</span><span class="sxs-lookup"><span data-stu-id="d18cb-126">URI path compression is fixed so that a broken URI cannot traverse the file system above the root.</span></span>
+- <span data-ttu-id="356c9-126">Komprese cesty identifikátoru URI je vyřešen tak, aby přerušení identifikátor URI nelze procházení systému souborů kořenem.</span><span class="sxs-lookup"><span data-stu-id="356c9-126">URI path compression is fixed so that a broken URI cannot traverse the file system above the root.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="d18cb-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d18cb-127">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="356c9-127">Viz také:</span><span class="sxs-lookup"><span data-stu-id="356c9-127">See also</span></span>
 
 - <xref:System.Uri?displayProperty=nameWithType>

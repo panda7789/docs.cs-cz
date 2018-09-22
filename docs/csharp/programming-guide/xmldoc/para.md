@@ -9,32 +9,32 @@ helpviewer_keywords:
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
 ms.openlocfilehash: e51df23db97aadddbc4c4e8c3cb38bda7ff7e3a4
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46472941"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46697312"
 ---
-# <a name="ltparagt-c-programming-guide"></a><span data-ttu-id="4fb83-102">&lt;para&gt; (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="4fb83-102">&lt;para&gt; (C# Programming Guide)</span></span>
-## <a name="syntax"></a><span data-ttu-id="4fb83-103">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4fb83-103">Syntax</span></span>  
+# <a name="ltparagt-c-programming-guide"></a><span data-ttu-id="3390e-102">&lt;para&gt; (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="3390e-102">&lt;para&gt; (C# Programming Guide)</span></span>
+## <a name="syntax"></a><span data-ttu-id="3390e-103">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3390e-103">Syntax</span></span>  
   
 ```xml  
 <para>content</para>  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="4fb83-104">Parametry</span><span class="sxs-lookup"><span data-stu-id="4fb83-104">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="3390e-104">Parametry</span><span class="sxs-lookup"><span data-stu-id="3390e-104">Parameters</span></span>  
  `content`  
- <span data-ttu-id="4fb83-105">Text odstavce.</span><span class="sxs-lookup"><span data-stu-id="4fb83-105">The text of the paragraph.</span></span>  
+ <span data-ttu-id="3390e-105">Text odstavce.</span><span class="sxs-lookup"><span data-stu-id="3390e-105">The text of the paragraph.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="4fb83-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4fb83-106">Remarks</span></span>  
- <span data-ttu-id="4fb83-107">\<Para > Značka je určen pro použití uvnitř značky, například [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md), [ \<remarks >](../../../csharp/programming-guide/xmldoc/remarks.md), nebo [ \<vrátí >](../../../csharp/programming-guide/xmldoc/returns.md)a umožňuje přidání struktury textu.</span><span class="sxs-lookup"><span data-stu-id="4fb83-107">The \<para> tag is for use inside a tag, such as [\<summary>](../../../csharp/programming-guide/xmldoc/summary.md), [\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md), or [\<returns>](../../../csharp/programming-guide/xmldoc/returns.md), and lets you add structure to the text.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3390e-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3390e-106">Remarks</span></span>  
+ <span data-ttu-id="3390e-107">\<Para > Značka je určen pro použití uvnitř značky, například [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md), [ \<remarks >](../../../csharp/programming-guide/xmldoc/remarks.md), nebo [ \<vrátí >](../../../csharp/programming-guide/xmldoc/returns.md)a umožňuje přidání struktury textu.</span><span class="sxs-lookup"><span data-stu-id="3390e-107">The \<para> tag is for use inside a tag, such as [\<summary>](../../../csharp/programming-guide/xmldoc/summary.md), [\<remarks>](../../../csharp/programming-guide/xmldoc/remarks.md), or [\<returns>](../../../csharp/programming-guide/xmldoc/returns.md), and lets you add structure to the text.</span></span>  
   
- <span data-ttu-id="4fb83-108">Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.</span><span class="sxs-lookup"><span data-stu-id="4fb83-108">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
+ <span data-ttu-id="3390e-108">Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.</span><span class="sxs-lookup"><span data-stu-id="3390e-108">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4fb83-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="4fb83-109">Example</span></span>  
- <span data-ttu-id="4fb83-110">Zobrazit [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md) pro příklad použití \<para >.</span><span class="sxs-lookup"><span data-stu-id="4fb83-110">See [\<summary>](../../../csharp/programming-guide/xmldoc/summary.md) for an example of using \<para>.</span></span>  
+## <a name="example"></a><span data-ttu-id="3390e-109">Příklad</span><span class="sxs-lookup"><span data-stu-id="3390e-109">Example</span></span>  
+ <span data-ttu-id="3390e-110">Zobrazit [ \<summary >](../../../csharp/programming-guide/xmldoc/summary.md) pro příklad použití \<para >.</span><span class="sxs-lookup"><span data-stu-id="3390e-110">See [\<summary>](../../../csharp/programming-guide/xmldoc/summary.md) for an example of using \<para>.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4fb83-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="4fb83-111">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3390e-111">Viz také</span><span class="sxs-lookup"><span data-stu-id="3390e-111">See Also</span></span>
 
-- [<span data-ttu-id="4fb83-112">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="4fb83-112">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="4fb83-113">Doporučené značky pro komentáře dokumentace</span><span class="sxs-lookup"><span data-stu-id="4fb83-113">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [<span data-ttu-id="3390e-112">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="3390e-112">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="3390e-113">Doporučené značky pro komentáře dokumentace</span><span class="sxs-lookup"><span data-stu-id="3390e-113">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)

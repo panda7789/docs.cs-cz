@@ -9,30 +9,30 @@ helpviewer_keywords:
 - let clause [C#]
 ms.assetid: 13c9c1a4-ce57-48ef-8e1b-4c2a59b99fb4
 ms.openlocfilehash: 62294df7f0f2ebb3249dffd72ba4910fbae984c8
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46531652"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46576902"
 ---
-# <a name="let-clause-c-reference"></a><span data-ttu-id="dfd48-102">let – klauzule (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="dfd48-102">let clause (C# Reference)</span></span>
+# <a name="let-clause-c-reference"></a><span data-ttu-id="5a321-102">let – klauzule (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="5a321-102">let clause (C# Reference)</span></span>
 
-<span data-ttu-id="dfd48-103">Ve výrazu dotazu je někdy užitečné ukládat výsledek dílčí výraz. Chcete-li použít v následných klauzulí.</span><span class="sxs-lookup"><span data-stu-id="dfd48-103">In a query expression, it is sometimes useful to store the result of a sub-expression in order to use it in subsequent clauses.</span></span> <span data-ttu-id="dfd48-104">Můžete to provedete `let` – klíčové slovo, které vytvoří novou proměnnou rozsahu a inicializuje ji s výsledkem výrazu zadáte.</span><span class="sxs-lookup"><span data-stu-id="dfd48-104">You can do this with the `let` keyword, which creates a new range variable and initializes it with the result of the expression you supply.</span></span> <span data-ttu-id="dfd48-105">Po inicializaci s hodnotou proměnné rozsahu nelze použít pro ukládání hodnoty horní jiný.</span><span class="sxs-lookup"><span data-stu-id="dfd48-105">Once initialized with a value, the range variable cannot be used to store another value.</span></span> <span data-ttu-id="dfd48-106">Nicméně pokud proměnnou rozsahu obsahuje dotazovatelný typ, může být dotazován.</span><span class="sxs-lookup"><span data-stu-id="dfd48-106">However, if the range variable holds a queryable type, it can be queried.</span></span>
+<span data-ttu-id="5a321-103">Ve výrazu dotazu je někdy užitečné ukládat výsledek dílčí výraz. Chcete-li použít v následných klauzulí.</span><span class="sxs-lookup"><span data-stu-id="5a321-103">In a query expression, it is sometimes useful to store the result of a sub-expression in order to use it in subsequent clauses.</span></span> <span data-ttu-id="5a321-104">Můžete to provedete `let` – klíčové slovo, které vytvoří novou proměnnou rozsahu a inicializuje ji s výsledkem výrazu zadáte.</span><span class="sxs-lookup"><span data-stu-id="5a321-104">You can do this with the `let` keyword, which creates a new range variable and initializes it with the result of the expression you supply.</span></span> <span data-ttu-id="5a321-105">Po inicializaci s hodnotou proměnné rozsahu nelze použít pro ukládání hodnoty horní jiný.</span><span class="sxs-lookup"><span data-stu-id="5a321-105">Once initialized with a value, the range variable cannot be used to store another value.</span></span> <span data-ttu-id="5a321-106">Nicméně pokud proměnnou rozsahu obsahuje dotazovatelný typ, může být dotazován.</span><span class="sxs-lookup"><span data-stu-id="5a321-106">However, if the range variable holds a queryable type, it can be queried.</span></span>
 
-## <a name="example"></a><span data-ttu-id="dfd48-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="dfd48-107">Example</span></span>
+## <a name="example"></a><span data-ttu-id="5a321-107">Příklad</span><span class="sxs-lookup"><span data-stu-id="5a321-107">Example</span></span>
 
-<span data-ttu-id="dfd48-108">V následujícím příkladu `let` slouží dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="dfd48-108">In the following example `let` is used in two ways:</span></span>
+<span data-ttu-id="5a321-108">V následujícím příkladu `let` slouží dvěma způsoby:</span><span class="sxs-lookup"><span data-stu-id="5a321-108">In the following example `let` is used in two ways:</span></span>
 
-1. <span data-ttu-id="dfd48-109">Chcete-li vytvořit Výčtový typ, který je sám možné zadávat dotazy.</span><span class="sxs-lookup"><span data-stu-id="dfd48-109">To create an enumerable type that can itself be queried.</span></span>
+1. <span data-ttu-id="5a321-109">Chcete-li vytvořit Výčtový typ, který je sám možné zadávat dotazy.</span><span class="sxs-lookup"><span data-stu-id="5a321-109">To create an enumerable type that can itself be queried.</span></span>
 
-2. <span data-ttu-id="dfd48-110">Povolit dotaz tak, aby volání `ToLower` pouze jednou na proměnnou rozsahu `word`.</span><span class="sxs-lookup"><span data-stu-id="dfd48-110">To enable the query to call `ToLower` only one time on the range variable `word`.</span></span> <span data-ttu-id="dfd48-111">Bez použití `let`, budete muset volat `ToLower` v každé predikátu v `where` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="dfd48-111">Without using `let`, you would have to call `ToLower` in each predicate in the `where` clause.</span></span>
+2. <span data-ttu-id="5a321-110">Povolit dotaz tak, aby volání `ToLower` pouze jednou na proměnnou rozsahu `word`.</span><span class="sxs-lookup"><span data-stu-id="5a321-110">To enable the query to call `ToLower` only one time on the range variable `word`.</span></span> <span data-ttu-id="5a321-111">Bez použití `let`, budete muset volat `ToLower` v každé predikátu v `where` klauzuli.</span><span class="sxs-lookup"><span data-stu-id="5a321-111">Without using `let`, you would have to call `ToLower` in each predicate in the `where` clause.</span></span>
 
 [!code-csharp[cscsrefQueryKeywords#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Let.cs#28)]
 
-## <a name="see-also"></a><span data-ttu-id="dfd48-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dfd48-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5a321-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5a321-112">See also</span></span>
 
-- [<span data-ttu-id="dfd48-113">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="dfd48-113">C# Reference</span></span>](../../language-reference/index.md)
-- [<span data-ttu-id="dfd48-114">Klíčová slova dotazu (LINQ)</span><span class="sxs-lookup"><span data-stu-id="dfd48-114">Query Keywords (LINQ)</span></span>](query-keywords.md)
-- [<span data-ttu-id="dfd48-115">LINQ (Language Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="dfd48-115">Language Integrated Query (LINQ)</span></span>](../../linq/index.md)
-- [<span data-ttu-id="dfd48-116">Začínáme s dotazy LINQ v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="dfd48-116">Getting Started with LINQ in C#</span></span>](../../programming-guide/concepts/linq/getting-started-with-linq.md)
-- [<span data-ttu-id="dfd48-117">Zpracování výjimek ve výrazech dotazů</span><span class="sxs-lookup"><span data-stu-id="dfd48-117">Handle exceptions in query expressions</span></span>](../../linq/handle-exceptions-in-query-expressions.md)
+- [<span data-ttu-id="5a321-113">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="5a321-113">C# Reference</span></span>](../../language-reference/index.md)
+- [<span data-ttu-id="5a321-114">Klíčová slova dotazu (LINQ)</span><span class="sxs-lookup"><span data-stu-id="5a321-114">Query Keywords (LINQ)</span></span>](query-keywords.md)
+- [<span data-ttu-id="5a321-115">LINQ (Language Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="5a321-115">Language Integrated Query (LINQ)</span></span>](../../linq/index.md)
+- [<span data-ttu-id="5a321-116">Začínáme s dotazy LINQ v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="5a321-116">Getting Started with LINQ in C#</span></span>](../../programming-guide/concepts/linq/getting-started-with-linq.md)
+- [<span data-ttu-id="5a321-117">Zpracování výjimek ve výrazech dotazů</span><span class="sxs-lookup"><span data-stu-id="5a321-117">Handle exceptions in query expressions</span></span>](../../linq/handle-exceptions-in-query-expressions.md)
