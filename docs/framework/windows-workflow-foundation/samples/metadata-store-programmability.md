@@ -2,17 +2,17 @@
 title: Programovatelnost Store metadat
 ms.date: 03/30/2017
 ms.assetid: 5b613661-f3f9-4e07-8e88-28c9ea2fd8f8
-ms.openlocfilehash: 4ea6117686b985a9ea18ce4e5cc4ea2b5c25524c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 9f30fcdac131b8749a4d165875b9bbb584542843
+ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45998913"
+ms.lasthandoff: 09/21/2018
+ms.locfileid: "46562701"
 ---
 # <a name="metadata-store-programmability"></a>Programovatelnost Store metadat
 Metadata úložiště je [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] funkce, která umožňuje přidružení libovolného metadat ve formě CLR atributy pro typy v době běhu. To umožňuje volné párování mezi běhové komponenty a jejich protějšky v době návrhu, jakož i změnit komponenty doby návrhu, aniž by to ovlivnilo modul runtime. Vzorek ukazuje, jak programovat proti úložišti metadat s použitím atributů typu za běhu, u kterého jsme nemají žádnou kontrolu nad zdroji. Terminologie obvykle používá je, že hostitelské aplikace registruje metadata pro sadu typů.  
   
- V rámci výstupu, můžete si všimnout atribut další, neočekávané <!--zz <xref:System.Runtime.InteropServices.GUIDAttribute> --> `System.Runtime.InteropServices.GUIDAttribute`. Tím se přidá při používání metadat rozhraní API a nemá žádný vliv na spuštění ukázky.  
+ V rámci výstupu, můžete si všimnout atribut další, neočekávané <xref:System.Runtime.InteropServices.GuidAttribute>. Tím se přidá při používání metadat rozhraní API a nemá žádný vliv na spuštění ukázky.  
   
  V této ukázce:  
   
@@ -22,7 +22,7 @@ Metadata úložiště je [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] funkc
   
 -   Odložení metadat registrace pomocí mechanismu zpětného volání.  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+## <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
   
 1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení ProgrammingMetadataStore.sln.  
   
