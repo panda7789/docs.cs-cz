@@ -14,11 +14,11 @@ ms.assetid: f99a1d29-a2a8-47af-9707-9909f9010735
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 263e6394a57ec3e7ef00eb79671d9b8ac47e724f
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
-ms.translationtype: HT
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 09/22/2018
-ms.locfileid: "46568923"
+ms.locfileid: "46698542"
 ---
 # <a name="handling-and-throwing-exceptions-in-net"></a>Zpracování a vyvolání výjimek v rozhraní .NET
 
