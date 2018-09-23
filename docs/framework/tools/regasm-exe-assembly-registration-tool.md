@@ -10,11 +10,11 @@ ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 30b13c75907ad0bc4d6dbce6a3ecd07f1fbede11
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46539106"
+ms.lasthandoff: 09/22/2018
+ms.locfileid: "46586257"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe (nástroj registrace sestavení)
 
