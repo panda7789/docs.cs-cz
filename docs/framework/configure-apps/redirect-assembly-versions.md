@@ -12,11 +12,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: 060f2bfdc39e7fe4ab0a28a4aecec87db89d3428
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46537853"
+ms.lasthandoff: 09/23/2018
+ms.locfileid: "46705650"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 
