@@ -1,7 +1,7 @@
 ---
 title: '&lt;AppContextSwitchOverrides&gt; – Element'
 ms.custom: updateeachrelease
-ms.date: 04/19/2018
+ms.date: 09/19/2018
 helpviewer_keywords:
 - AppContextSwitchOverrides
 - compatibility switches
@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d16ce7f2744869c812b9988e91edd153d9cb4fd2
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: c06b63c492d31d1391b53a36ced5b5c7277f5ad6
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "32747522"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47027363"
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt; – Element
 Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.  
@@ -125,7 +125,21 @@ Definuje jeden nebo více přepínačů používané <xref:System.AppContext> t�
   
  Vývojáři knihoven můžete také definovat vlastní přepínače pro povolení volajícím chcete vyjádřit výslovný nesouhlas změněné funkce zavedeny v pozdějších verzích jejich knihoven. Další informace najdete v tématu <xref:System.AppContext> třídy.  
   
-## <a name="example"></a>Příklad  
+## <a name="switches-in-aspnet-applications"></a>Přepínače v aplikacích ASP.NET
+
+Můžete nakonfigurovat pomocí nastavení kompatibility tak, že přidáte aplikace ASP.NET [ \<Přidat >](~/docs/framework/configure-apps/file-schema/appsettings/add-element-for-appsettings.md) elementu [ \<appSettings >](~/docs/framework/configure-apps/file-schema/appsettings/index.md) část souboru web.config. 
+
+V následujícím příkladu `<add>` prvek a přidat dvě nastavení `<appSettings>` část souboru web.config:
+
+```xml
+<appSettings>
+  <add key="AppContext.SetSwitch:Switch.System.Globalization.NoAsyncCurrentCulture" value="true" />
+  <add key="AppContext.SetSwitch:Switch.System.Uri.DontEnableStrictRFC3986ReservedCharacterSets" value="true" />
+</appSettings>
+```
+
+## <a name="example"></a>Příklad
+
  V následujícím příkladu `AppContextSwitchOverrides` elementu k definování přepínače kompatibility jednu aplikaci, `Switch.System.Globalization.NoAsyncCurrentCulture`, jazykovou verzi, který brání z toku napříč vlákny v volání asynchronní metody.  
   
 ```xml  
