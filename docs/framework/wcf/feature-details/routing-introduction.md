@@ -2,12 +2,12 @@
 title: Směrování – úvod
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: 3ee7ea8271df47354a0897434bf8f203eaf09a51
-ms.sourcegitcommit: e8dc507cfdaad504fc9d4c83d28d24569dcef91c
+ms.openlocfilehash: e540e084305aee51d6820cc9ae43f7791d5c07d6
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "33496861"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47058458"
 ---
 # <a name="routing-introduction"></a>Směrování – úvod
 Směrovací služba poskytuje obecný modulární SOAP zprostředkovatel, který je schopen směrování zpráv na základě obsahu zpráv. Ve službě Směrování můžete vytvořit komplexní logiku směrování, která umožňuje implementovat scénáře, jako je služba agregace, Správa verzí služby, priority směrování a směrování vícesměrového vysílání. Směrovací služba taky poskytuje chyba zpracování, který umožňuje nastavení seznamů zálohování koncových bodů, do které se odešlou zprávy, pokud dojde k chybě při odesílání na cílové primární koncový bod.  
@@ -29,9 +29,9 @@ Směrovací služba poskytuje obecný modulární SOAP zprostředkovatel, který
  To znamená, že pokud vaše cílové koncové body pomocí smluv s více vzorky komunikace (jako je například míchání jednosměrnou a obousměrnou), nebude možné vytvořit koncový bod jedinou službou, která může přijímat a směrování zpráv do všech z nich. Musíte určit, jaké koncové body kompatibilní obrazce a definovat jeden nebo více koncových bodů služby, které se použijí pro příjem zpráv má být směrována na cílové koncové body.  
   
 > [!NOTE]
->  Při práci s smluv, které určují víc komunikačních schémat (například kombinaci jednosměrnou a obousměrnou operations), použití duplexního kontraktu na směrování služby, jako je řešení <xref:System.ServiceModel.Routing.IDuplexSessionRouter>. Ale to znamená, že vazba musí být schopné duplexní komunikaci, která nemusí být možné pro všechny scénáře. V situacích, kdy to není možné může být nutné které budou zohledňovat komunikaci do více koncových bodů nebo úpravách aplikace.  
+> Při práci s smluv, které určují víc komunikačních schémat (například kombinaci jednosměrnou a obousměrnou operations), použití duplexního kontraktu na směrování služby, jako je řešení <xref:System.ServiceModel.Routing.IDuplexSessionRouter>. Ale to znamená, že vazba musí být schopné duplexní komunikaci, která nemusí být možné pro všechny scénáře. V situacích, kdy to není možné může být nutné které budou zohledňovat komunikaci do více koncových bodů nebo úpravách aplikace.  
   
- Další informace o kontrakty pro směrování najdete v tématu [kontrakty pro směrování](../../../../docs/framework/wcf/feature-details/routing-contracts.md).  
+ Další informace o kontrakty pro směrování najdete v tématu [kontrakty pro směrování](routing-contracts.md).  
   
  Po definování koncového bodu služby, můžete použít **chování RoutingBehavior** přidružit konkrétní **konfigurace RoutingConfiguration** s koncovým bodem. Při konfiguraci pomocí konfiguračního souboru služby směrování **chování RoutingBehavior** slouží k určení filtru tabulky, která obsahuje logiku směrování používají ke zpracování zpráv přijatých na tomto koncovém bodu. Pokud konfigurujete směrovací služba prostřednictvím kódu programu můžete zadat filtr tabulky pomocí **konfigurace RoutingConfiguration**.  
   
@@ -51,7 +51,7 @@ Směrovací služba poskytuje obecný modulární SOAP zprostředkovatel, který
         <endpoint address=""  
                   binding="wsHttpBinding"  
                   name="reqReplyEndpoint"  
-                  contract="System.ServiceModel.Routing.IRequestReplyRouter" />      
+                  contract="System.ServiceModel.Routing.IRequestReplyRouter" />
       </service>  
     </services>  
     <behaviors>  
@@ -98,16 +98,16 @@ serviceHost.Description.Behaviors.Add(
      new RoutingBehavior(rc));  
 ```  
   
- Tento příklad konfiguruje službu směrování k vystavení jednoho koncového bodu s adresou "http://localhost:8000/routingservice/router", který se používá pro příjem zpráv bude směrovat. Protože zprávy jsou směrovány do koncových bodů požadavek odpověď, koncový bod služby používá <xref:System.ServiceModel.Routing.IRequestReplyRouter> kontraktu. Tato konfigurace taky definuje je koncový bod konkrétního klienta "http://localhost:8000/servicemodelsample/service", že zprávy jsou směrovány na. Filtr tabulky (není vidět) s názvem "routingTable1" obsahuje logiku směrování slouží ke směrování zpráv a je přidružen koncový bod služby s použitím **chování RoutingBehavior** (pro konfigurační soubor) nebo  **Konfigurace RoutingConfiguration** (pro programovou konfiguraci).  
+ Tento příklad konfiguruje službu směrování k vystavení jednoho koncového bodu s adresou `http://localhost:8000/routingservice/router`, který se používá pro příjem zpráv bude směrovat. Protože zprávy jsou směrovány do koncových bodů požadavek odpověď, koncový bod služby používá <xref:System.ServiceModel.Routing.IRequestReplyRouter> kontraktu. Tato konfigurace taky definuje je koncový bod konkrétního klienta `http://localhost:8000/servicemodelsample/service` zprávy jsou směrovány do. Filtr tabulky (není vidět) s názvem "routingTable1" obsahuje logiku směrování slouží ke směrování zpráv a je přidružen koncový bod služby s použitím **chování RoutingBehavior** (pro konfigurační soubor) nebo  **Konfigurace RoutingConfiguration** (pro programovou konfiguraci).  
   
 ### <a name="routing-logic"></a>Logiku směrování  
  K definování směrování logikou používanou pro směrování zpráv, musíte určit, co mohou být data obsažená v rámci příchozích zpráv jednoznačně reagovali na ni. Například pokud všechny cílové koncové body, které jsou směrování sdílet stejné akce SOAP hodnotu akce obsažené v něm není jasně ukazuje na jaké konkrétní koncového bodu zprávy by měl směrovat na. Pokud jeden konkrétní koncový bod musí jednoznačně směrovat zprávy, by měl filtrovat data, která jednoznačně identifikuje cílového koncového bodu, který se zpráva směruje do.  
   
- Směrovací služba nabízí několik **MessageFilter** implementace, které zkontrolovat konkrétní hodnoty ve zprávě, jako je například adresa, akce, název koncového bodu nebo dokonce dotaz XPath. Pokud žádná z těchto implementací nevyhovuje vašim potřebám, můžete vytvořit vlastní **MessageFilter** implementace. Další informace o filtrech zpráv a porovnání implementace používá služba Směrování najdete v tématu [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md) a [výběr filtru](../../../../docs/framework/wcf/feature-details/choosing-a-filter.md).  
+ Směrovací služba nabízí několik **MessageFilter** implementace, které zkontrolovat konkrétní hodnoty ve zprávě, jako je například adresa, akce, název koncového bodu nebo dokonce dotaz XPath. Pokud žádná z těchto implementací nevyhovuje vašim potřebám, můžete vytvořit vlastní **MessageFilter** implementace. Další informace o filtrech zpráv a porovnání implementace používá služba Směrování najdete v tématu [filtry zpráv](message-filters.md) a [výběr filtru](choosing-a-filter.md).  
   
  Několik filtrů zpráv jsou uspořádané do filtru tabulky, které každou **MessageFilter** s koncovým bodem v cílové. Volitelně můžete filtru tabulky lze také zadat seznam koncových bodů zálohování, které směrovací služba se pokusí odeslat zprávu, která se v případě selhání přenosu.  
   
- Ve výchozím nastavení se všechny filtry zpráv v tabulce filtrů vyhodnocují současně; Můžete však zadat <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.Priority%2A> , který způsobí, že filtry zpráv, který se má vyhodnotit v určitém pořadí. Všechny položky s nejvyšší prioritou jsou vyhodnoceny jako první a filtry zpráv nižší priority nebudou vyhodnoceny, pokud se najde shoda na vyšší úrovni priority. Další informace o filtru tabulky, najdete v části [filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md).  
+ Ve výchozím nastavení se všechny filtry zpráv v tabulce filtrů vyhodnocují současně; Můžete však zadat <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.Priority%2A> , který způsobí, že filtry zpráv, který se má vyhodnotit v určitém pořadí. Všechny položky s nejvyšší prioritou jsou vyhodnoceny jako první a filtry zpráv nižší priority nebudou vyhodnoceny, pokud se najde shoda na vyšší úrovni priority. Další informace o filtru tabulky, najdete v části [filtry zpráv](message-filters.md).  
   
  Následující příklady používají <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter>, který se hodnotí jako `true` pro všechny zprávy. To **MessageFilter** se přidá do tabulky "routingTable1" filtr, který přidruží **MessageFilter** s koncovým bodem klienta s názvem "CalculatorService". **Chování RoutingBehavior** pak určuje, že tato tabulka má být použito pro směrování zpráv zpracovaných v koncovém bodě služby.  
   
@@ -160,7 +160,7 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), endpointList);
   
 -   Několik filtrů musí vracet `true` při vyhodnocování zprávy.  
   
- Pokud jste splnili tyto podmínky se zpráva směruje na všechny koncové body všech filtrů, která se vyhodnotí `true`. Následující příklad definuje konfiguraci směrování, jejímž výsledkem zprávy směruje se oba koncové body v případě, že je adresa koncového bodu ve zprávě http://localhost:8000/routingservice/router/rounding.  
+ Pokud jste splnili tyto podmínky se zpráva směruje na všechny koncové body všech filtrů, která se vyhodnotí `true`. Následující příklad definuje konfiguraci směrování, jejímž výsledkem zprávy směruje se oba koncové body v případě, že je adresa koncového bodu ve zprávě `http://localhost:8000/routingservice/router/rounding`.  
   
 ```xml  
 <!--ROUTING SECTION -->  
@@ -357,19 +357,19 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), backupList);
 |Vzor|Relace|Transakce|Kontextu přijetí|Nepodporuje zálohování seznamu|Poznámky|  
 |-------------|-------------|-----------------|---------------------|---------------------------|-----------|  
 |Jednosměrný||||Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Pokud se tato zpráva vícesměrového vysílání, pouze zprávu na selhání kanálu je přesunout do jeho cílovou složku zálohy.|  
-|Jednosměrný||![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
-|Jednosměrný|||![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po zprávy se úspěšně přijatá, dokončení všech zobrazí kontexty. Pokud zpráva není úspěšně přijme libovolný koncový bod, nejsou dokončeny kontext přijetí.<br /><br /> Když se tato zpráva vícesměrového vysílání, kontext přijetí se dokončí, pouze pokud zpráva se úspěšně přijme aspoň jeden koncový bod (primárních nebo záložních). Pokud žádný z koncových bodů v některém z vícesměrového vysílání cesty úspěšně zobrazí zpráva, kontext přijetí nedokončí.|  
-|Jednosměrný||![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|Ano|Přerušit předchozí transakce, vytvořte novou transakci a znovu odeslat všechny zprávy. Cíl zálohy se přenáší zprávy, které došlo k chybě.<br /><br /> Po vytvoření transakce ve kterém veškeré přenosy dat úspěšné dokončení kontexty přijetí a potvrzení transakce.|  
-|Jednosměrný|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|||Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. V případě vícesměrového vysílání se znovu pouze zprávy v relaci došlo k chybě nebo relaci zavřete jehož relaci se nepovedlo odeslat do cíle zálohování.|  
-|Jednosměrný|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
-|Jednosměrný|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")||![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po všechny zprávy odešle dokončena bez chyb, relace indikuje žádné další zprávy a služba Směrování úspěšně zavře všechny odchozí relace kanálů, obdrží všechny kontexty jsou dokončeny, a kanálů příchozích relací je uzavřen.|  
-|Jednosměrný|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|Ano|Zrušit aktuální transakci a vytvořte novou. Znovu odešlete všechny předchozí zprávy v relaci. Poté, co byl vytvořen transakce které všechny zprávy se úspěšně odeslaly a relace indikuje, že se žádné další zprávy, všechny odchozí relace kanály zavřená, zobrazí všechny kontexty jsou dokončeny s transakcí, je kanálů příchozích relací zavření, a je transakce potvrzena.<br /><br /> Když probíhá relace vícesměrového vysílání zpráv, u kterých nedošlo k chybě se zopakuje pro stejný cíl jako před a zpráv, ke které došlo k chybě odesílají do cíle zálohování.|  
+|Jednosměrný||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Jednosměrný|||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po zprávy se úspěšně přijatá, dokončení všech zobrazí kontexty. Pokud zpráva není úspěšně přijme libovolný koncový bod, nejsou dokončeny kontext přijetí.<br /><br /> Když se tato zpráva vícesměrového vysílání, kontext přijetí se dokončí, pouze pokud zpráva se úspěšně přijme aspoň jeden koncový bod (primárních nebo záložních). Pokud žádný z koncových bodů v některém z vícesměrového vysílání cesty úspěšně zobrazí zpráva, kontext přijetí nedokončí.|  
+|Jednosměrný||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Přerušit předchozí transakce, vytvořte novou transakci a znovu odeslat všechny zprávy. Cíl zálohy se přenáší zprávy, které došlo k chybě.<br /><br /> Po vytvoření transakce ve kterém veškeré přenosy dat úspěšné dokončení kontexty přijetí a potvrzení transakce.|  
+|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|||Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. V případě vícesměrového vysílání se znovu pouze zprávy v relaci došlo k chybě nebo relaci zavřete jehož relaci se nepovedlo odeslat do cíle zálohování.|  
+|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Pokusí se znovu odeslat zprávu na záložního koncového bodu. Po všechny zprávy odešle dokončena bez chyb, relace indikuje žádné další zprávy a služba Směrování úspěšně zavře všechny odchozí relace kanálů, obdrží všechny kontexty jsou dokončeny, a kanálů příchozích relací je uzavřen.|  
+|Jednosměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|Ano|Zrušit aktuální transakci a vytvořte novou. Znovu odešlete všechny předchozí zprávy v relaci. Poté, co byl vytvořen transakce které všechny zprávy se úspěšně odeslaly a relace indikuje, že se žádné další zprávy, všechny odchozí relace kanály zavřená, zobrazí všechny kontexty jsou dokončeny s transakcí, je kanálů příchozích relací zavření, a je transakce potvrzena.<br /><br /> Když probíhá relace vícesměrového vysílání zpráv, u kterých nedošlo k chybě se zopakuje pro stejný cíl jako před a zpráv, ke které došlo k chybě odesílají do cíle zálohování.|  
 |Obousměrný||||Ano|Poslat cílovou složku zálohy.  Po kanál vrátí zprávu odpovědi, vrátí odpověď klientovi původní.|  
-|Obousměrný|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|||Ano|Odeslání všech zpráv na kanál pro cílovou složku zálohy.  Po kanál vrátí zprávu odpovědi, vrátí odpověď klientovi původní.|  
-|Obousměrný||![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
-|Obousměrný|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Obousměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|||Ano|Odeslání všech zpráv na kanál pro cílovou složku zálohy.  Po kanál vrátí zprávu odpovědi, vrátí odpověď klientovi původní.|  
+|Obousměrný||![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
+|Obousměrný|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")||Ne|Vyvolá se výjimka a transakce je vrácena zpět.|  
 |Duplex||||Ne|Duplexní komunikaci mimo relace se aktuálně nepodporuje.|  
-|Duplex|![Zaškrtávací políčko](../../../../docs/framework/wcf/feature-details/media/checkmark.gif "značky zaškrtnutí")|||Ano|Poslat cílovou složku zálohy.|  
+|Duplex|![Zaškrtávací políčko](media/checkmark.gif "značky zaškrtnutí")|||Ano|Poslat cílovou složku zálohy.|  
   
 ## <a name="hosting"></a>Hostování  
  Protože směrovací služba je implementovaná jako služba WCF, se musí být buď v rámci aplikace v místním prostředí nebo hostované službou IIS nebo WAS. Doporučuje se, že směrovací služba hostitelem služby IIS, WAS nebo aplikace služby Windows využít k automatickému spuštění a životního cyklu správy funkce dostupné v těchto prostředích.  
@@ -390,9 +390,9 @@ using (ServiceHost serviceHost =
 ```  
   
 ## <a name="routing-service-and-impersonation"></a>Služba Směrování a zosobnění  
- Směrovací služba WCF je možné s zosobnění pro odesílání a příjem zpráv. Použít obvyklé omezení Windows zosobnění. Pokud byste potřebovali nastavení účtu služby nebo oprávnění k použití zosobnění při zápisu vlastní služby, pak budete muset provést tyto stejné kroky pro použití zosobnění se směrovací službou. Další informace najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+ Směrovací služba WCF je možné s zosobnění pro odesílání a příjem zpráv. Použít obvyklé omezení Windows zosobnění. Pokud byste potřebovali nastavení účtu služby nebo oprávnění k použití zosobnění při zápisu vlastní služby, pak budete muset provést tyto stejné kroky pro použití zosobnění se směrovací službou. Další informace najdete v tématu [delegace a zosobnění](delegation-and-impersonation-with-wcf.md).  
   
- Zosobnění se směrovací službou vyžaduje použití zosobnění technologie ASP.NET v režimu kompatibility ASP.NET nebo používání přihlašovacích údajů Windows, které jsou nakonfigurované k povolení zosobnění. Další informace o režim kompatibility ASP.NET najdete v tématu [služby WCF a ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md).  
+ Zosobnění se směrovací službou vyžaduje použití zosobnění technologie ASP.NET v režimu kompatibility ASP.NET nebo používání přihlašovacích údajů Windows, které jsou nakonfigurované k povolení zosobnění. Další informace o režim kompatibility ASP.NET najdete v tématu [služby WCF a ASP.NET](wcf-services-and-aspnet.md).  
   
 > [!WARNING]
 >  Směrovací služba WCF nepodporuje zosobnění se základním ověřováním.  
@@ -402,6 +402,6 @@ using (ServiceHost serviceHost =
  Použití zosobnění přihlašovacích údajů Windows se směrovací službou musíte nakonfigurovat přihlašovací údaje a služby. Objekt přihlašovacích údajů klienta (<xref:System.ServiceModel.Security.WindowsClientCredential>, přístupné z <xref:System.ServiceModel.ChannelFactory>) definuje <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> vlastnost, která musí být nastaven tak, aby povolovala zosobnění. Nakonec ve službě je nutné nakonfigurovat <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> chování nastavení `ImpersonateCallerForAllOperations` k `true`. Směrovací služba používá tento příznak se rozhodnout, jestli se má vytvořit klienty pro předávání zpráv s zosobnění povoleno.  
   
 ## <a name="see-also"></a>Viz také  
- [Filtry zpráv](../../../../docs/framework/wcf/feature-details/message-filters.md)  
- [Kontrakty pro směrování](../../../../docs/framework/wcf/feature-details/routing-contracts.md)  
- [Výběr filtru](../../../../docs/framework/wcf/feature-details/choosing-a-filter.md)
+ [Filtry zpráv](message-filters.md)  
+ [Kontrakty pro směrování](routing-contracts.md)  
+ [Výběr filtru](choosing-a-filter.md)

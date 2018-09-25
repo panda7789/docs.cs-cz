@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
 ms.openlocfilehash: 3a781f17ac3cabebce17955b9a7e2edda4d4fd4b
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46485834"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47027344"
 ---
 # <a name="loading-a-dataset-from-xml"></a>Načtení datové sady z XML
 Obsah technologie ADO.NET <xref:System.Data.DataSet> lze vytvořit z datový proud XML nebo dokumentu. Kromě toho, s použitím rozhraní .NET Framework máte velkou flexibilitu nad načtení informací ze souboru XML a jak schématu nebo relační struktura <xref:System.Data.DataSet> se vytvoří.  

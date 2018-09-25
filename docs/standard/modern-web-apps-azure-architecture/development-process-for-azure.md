@@ -5,11 +5,11 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
 ms.openlocfilehash: a614cfe3d3437426893d8748165b2ef4d6389765
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46569186"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "46711373"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 

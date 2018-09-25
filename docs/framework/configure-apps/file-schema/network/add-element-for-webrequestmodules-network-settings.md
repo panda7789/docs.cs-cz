@@ -14,11 +14,11 @@ author: mcleblanc
 ms.author: markl
 manager: markl
 ms.openlocfilehash: f3c3ea63df8d99154c42e40b359180ad1065f6c5
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46539288"
+ms.lasthandoff: 09/24/2018
+ms.locfileid: "47027010"
 ---
 # <a name="ltaddgt-element-for-webrequestmodules-network-settings"></a>&lt;Přidat&gt; – Element pro webRequestModules (nastavení sítě)
 Přidá vlastní modul webové žádosti do aplikace.  
