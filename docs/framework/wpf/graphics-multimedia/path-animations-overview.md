@@ -9,11 +9,11 @@ helpviewer_keywords:
 - path animations [WPF]
 ms.assetid: 979c732c-df74-47a6-be96-8e07b3707d53
 ms.openlocfilehash: 0f795ad00823e7b1c37221f7417b09d3982c4c18
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47170188"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47216926"
 ---
 # <a name="path-animations-overview"></a>Přehled animací cesty
 <a name="introduction"></a> Toto téma představuje animace cesty, které vám umožní používat geometrické cesty k vygenerování výstupní hodnoty. Animace cesty jsou užitečné pro přesun a otočení objekty podél cest složité.  

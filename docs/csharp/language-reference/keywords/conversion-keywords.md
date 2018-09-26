@@ -7,11 +7,11 @@ helpviewer_keywords:
 - types [C#], conversion keywords
 ms.assetid: 8683ff14-5289-4efe-b4f5-1e6a075918ab
 ms.openlocfilehash: 34175f1bda169a9def9e3146214a6d5cd4d258e7
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47089033"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47230927"
 ---
 # <a name="conversion-keywords-c-reference"></a>Klíčová slova převodu (Referenční dokumentace jazyka C#)
 Tato část popisuje klíčová slova používaná v převodech typů:  

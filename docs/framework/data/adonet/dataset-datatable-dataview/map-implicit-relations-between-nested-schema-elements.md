@@ -3,11 +3,11 @@ title: Mapování implicitních relací mezi elementy ve vnořeném schématu
 ms.date: 03/30/2017
 ms.assetid: 6b25002a-352e-4d9b-bae3-15129458a355
 ms.openlocfilehash: 73cd8a83021934de3b8e3bf494a4f59dd32e183c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47085677"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47192781"
 ---
 # <a name="map-implicit-relations-between-nested-schema-elements"></a>Mapování implicitních relací mezi elementy ve vnořeném schématu
 Jazyk (XSD) schématu definice schématu XML může mít složité typy vnořené do jiné. V takovém případě proces mapování použije výchozí mapování a vytvoří v následující <xref:System.Data.DataSet>:  

@@ -5,11 +5,11 @@ author: mairaw
 ms.author: mairaw
 ms.date: 07/31/2018
 ms.openlocfilehash: 396c4ddf09854fa4582226bdb1422f8c929e459b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47083049"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47208630"
 ---
 # <a name="dotnet-new"></a>nový příkaz DotNet
 

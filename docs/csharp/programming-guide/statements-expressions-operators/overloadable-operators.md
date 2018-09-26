@@ -6,11 +6,11 @@ helpviewer_keywords:
 - operator overloading [C#]
 ms.assetid: 390d9d01-79fc-40ab-9ed3-0bf448da1b6a
 ms.openlocfilehash: f819e94fd532c10478ac39da9485126aa4380dd5
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075600"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47203798"
 ---
 # <a name="overloadable-operators-c-programming-guide"></a>Přetížitelné operátory (C# Programming Guide)
 

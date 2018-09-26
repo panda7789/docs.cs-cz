@@ -9,13 +9,12 @@ helpviewer_keywords:
 ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: e7ae01ae597d189166352230da4b80770d6518ae
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 524c950d19c84b28b44593e5aa42a92ee7bcb8a8
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526095"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47202218"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Klienti automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]

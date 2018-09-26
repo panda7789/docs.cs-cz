@@ -6,11 +6,11 @@ ms.assetid: 920cfe3b-d525-4bb2-abf6-9431651f9cf9
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 39e8afd8c22ca757141d2a7b556b115f8380e731
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111918"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47205574"
 ---
 # <a name="resolving-external-xslt-style-sheets-and-documents"></a>Překlad externích XSLT šablony stylů a dokumentů
 Existují několikrát během transformace, kdy budete muset vyřešit externím prostředkům.  

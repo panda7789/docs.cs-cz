@@ -9,11 +9,11 @@ helpviewer_keywords:
 - types [C#], reference types
 ms.assetid: 801cf030-6e2d-4a0d-9daf-1431b0c31f47
 ms.openlocfilehash: f99415fc9a2b728917cdf829ffb9e25823a824dd
-ms.sourcegitcommit: f513a91160b3fec289dd06646d0d6f81f8fcf910
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46287777"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47207432"
 ---
 # <a name="reference-types-c-reference"></a>Odkazové typy (referenční dokumentace jazyka C#)
 

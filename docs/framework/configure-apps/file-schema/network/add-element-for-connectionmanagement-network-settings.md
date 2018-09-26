@@ -13,11 +13,11 @@ ms.assetid: 856bf57d-1c63-46c7-a178-03d97b0a4149
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: cdc7e8501f7cf3f5cff4c29ca5b2d004ce7cd5c6
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47080322"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47216454"
 ---
 # <a name="ltaddgt-element-for-connectionmanagement-network-settings"></a>&lt;Přidat&gt; – Element pro connectionManagement (nastavení sítě)
 Přidá do seznamu pro správu připojení IP adresu nebo název DNS.  

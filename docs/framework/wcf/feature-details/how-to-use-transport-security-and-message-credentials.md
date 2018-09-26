@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: 6cc35346-c37a-4859-b82b-946c0ba6e68f
 author: BrucePerlerMS
 ms.openlocfilehash: 40fe7b1fa6a61b56d5dfdde75a92834f096a8be4
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082757"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47200409"
 ---
 # <a name="how-to-use-transport-security-and-message-credentials"></a>Postupy: Použití přihlašovacích údajů k zabezpečení přenosů a zpráv
 Zabezpečení služby pomocí přihlašovacích údajů k přenosu a zprávy používá nejlepší režimy dopravy a zprávu zabezpečení ve Windows Communication Foundation (WCF). V sum transport layer security poskytuje integritu a důvěrnost, zpráva vrstvy zabezpečení poskytuje širokou škálu přihlašovací údaje, které nejsou možné s mechanismy zabezpečení striktní přenosu. Toto téma popisuje základní kroky pro implementaci přenosu pomocí přihlašovacích údajů zprávy <xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.NetTcpBinding> vazby. Další informace o nastavení režimu zabezpečení rozhraní najdete v tématu [postupy: nastavení režimu zabezpečení rozhraní](../../../../docs/framework/wcf/how-to-set-the-security-mode.md).  

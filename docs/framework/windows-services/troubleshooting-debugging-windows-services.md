@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: cf859d4c-f04c-4cb7-81e3-bc7de8bea190
 author: ghogen
 ms.openlocfilehash: 0dbbebd14ce0ff5f69a12c256238c7e0a02494cb
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47110941"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47199941"
 ---
 # <a name="troubleshooting-debugging-windows-services"></a>Řešení potíží: Ladění služeb systému Windows
 Při ladění aplikace služby Windows, služby a **Windows Service Manager** pracovat. **Portálu Service Manager** spustí vaši službu voláním <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metody a poté počká 30 sekund <xref:System.ServiceProcess.ServiceBase.OnStart%2A> metoda vrátí. Pokud metoda nevrací v tuto chvíli, vedoucí ukazuje chybu, že službu nelze spustit.  

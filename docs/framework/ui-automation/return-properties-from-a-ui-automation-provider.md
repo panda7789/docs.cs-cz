@@ -12,11 +12,11 @@ ms.assetid: 5eba950e-b9e1-48eb-ab8e-b69db76bf589
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: ac5d539f99fe4f7a20d9030986120318840801bb
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47107945"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47231031"
 ---
 # <a name="return-properties-from-a-ui-automation-provider"></a>Vrácení vlastností ze zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]

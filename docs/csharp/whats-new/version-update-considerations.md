@@ -3,11 +3,11 @@ title: Verze a aktualizace důležité informace pro vývojáře v C#
 description: Představení nových funkcí jazyků v knihovně může mít vliv na kód, který ji používá.
 ms.date: 09/19/2018
 ms.openlocfilehash: 56685422e2c73dcca25acbdccb3a77a8de9df775
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075828"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47199928"
 ---
 # <a name="version-and-update-considerations-for-c-developers"></a>Verze a aktualizace důležité informace pro vývojáře v C#
 

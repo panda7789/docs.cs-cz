@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 0d5be591-9a7b-4a6f-a906-95d3abafe8db
 author: BrucePerlerMS
 ms.openlocfilehash: 470ffc007ed73b28beba24bd0eb9c670dea9337d
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47109378"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47199967"
 ---
 # <a name="security-considerations-for-secure-sessions"></a>Důležité informace o zabezpečení pro zabezpečené relace
 Měli byste zvážit následující položky, které mají vliv na zabezpečení při provádění zabezpečených relací. Další informace o aspektech týkajících se zabezpečení najdete v tématu [aspekty zabezpečení](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md) a [osvědčené postupy pro zabezpečení](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md).  
