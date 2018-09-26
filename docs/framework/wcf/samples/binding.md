@@ -2,28 +2,26 @@
 title: Binding1
 ms.date: 03/30/2017
 ms.assetid: 324fa627-d012-465a-b266-95594a09dac2
-ms.openlocfilehash: eb5e3e66e21c0552ce267673c17308765a932ce4
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 124a4bd252f838b737a06b76452619182bc9dea1
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33803563"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47192246"
 ---
 # <a name="binding"></a>Vazba
-Tato část obsahuje ukázky, která demonstruje použití atribut vazby elementu koncový bod.  
+Tato část obsahuje ukázky, které ukazují používání atribut vazby prvku koncový bod.  
   
-## <a name="in-this-section"></a>V tomto oddílu  
- [Kodér ByteStream](../../../../docs/framework/wcf/samples/bytestream-encoder.md)  
- Ukazuje, jak vytvořit `ByteStreamHttpBinding`, <xref:System.ServiceModel.Channels.Binding> který předvádí funkce encoder datového proudu bajtů.  
+## <a name="in-this-section"></a>V tomto oddílu
   
  [Základní vazby](../../../../docs/framework/wcf/samples/basic-binding.md)  
- Ukazuje základní vazby ve WCF.  
+ Ukazuje základní vazby ve službě WCF.  
   
  [Vlastní vazba](../../../../docs/framework/wcf/samples/custom-binding.md)  
- Představuje vlastní vazby ve WCF.  
+ Ukazuje vlastní vazby ve službě WCF.  
   
  [Síťové vazby](../../../../docs/framework/wcf/samples/net-binding.md)  
- Demonstruje vazba sítě ve WCF.  
+ Ukazuje síťové vazby ve službě WCF.  
   
  [Vazby WS](../../../../docs/framework/wcf/samples/ws-binding.md)  
- Demonstruje vazby služby systému Windows ve službě WCF.
+ Ukazuje vazby služby Windows ve službě WCF.

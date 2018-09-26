@@ -11,11 +11,11 @@ ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 2aaf590975d9fd3f5d78cb64d8d2b1c38c0e8dc7
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47113066"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47202533"
 ---
 # <a name="ltservicepointmanagergt-element-network-settings"></a>&lt;Třída servicePointManager&gt; – Element (nastavení sítě)
 Nakonfiguruje připojení k síťovým prostředkům.  

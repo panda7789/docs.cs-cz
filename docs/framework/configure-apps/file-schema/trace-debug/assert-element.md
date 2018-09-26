@@ -1,5 +1,5 @@
 ---
-title: '&lt;Assert –&gt; – Element'
+title: '&lt;vyhodnocení&gt; – Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/assert
@@ -10,20 +10,19 @@ helpviewer_keywords:
 ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: ab1644d23e4d6d78b62e701902e5ec39e134b38b
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b15e569ff6e42298c0a1de02f77ab7c302c70d86
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745117"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193509"
 ---
-# <a name="ltassertgt-element"></a>&lt;Assert –&gt; – Element
-Určuje, jestli se má zobrazit okno se zprávou při volání <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zprávy.  
+# <a name="ltassertgt-element"></a>&lt;vyhodnocení&gt; – Element
+Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zpráv do.  
   
  \<Konfigurace >  
 \<System.Diagnostics >  
-\<Assert – >  
+\<vyhodnocení >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,15 +37,15 @@ Určuje, jestli se má zobrazit okno se zprávou při volání <xref:System.Diag
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`assertuienabled`|Nepovinný atribut.<br /><br /> Určuje, zda Pokud chcete zobrazit zprávu pole při **Debug.Assert –** vyhodnocen jako metoda **false**.|  
-|`logfilename`|Nepovinný atribut.<br /><br /> Určuje název souboru pro zápis zprávy, když se **Debug.Assert –** vyhodnotí jako **false**.|  
+|`assertuienabled`|Nepovinný atribut.<br /><br /> Určuje, zda chcete-li zobrazit zprávu pole při **Debug.Assert –** vyhodnotí jako metoda **false**.|  
+|`logfilename`|Nepovinný atribut.<br /><br /> Určuje název souboru pro zápis zprávy, když **Debug.Assert –** vyhodnotí jako **false**.|  
   
 ## <a name="assertuienabled-attribute"></a>assertuienabled atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
 |`true`|Zobrazí okno se zprávou. Toto nastavení je výchozí.|  
-|`false`|Do pole zpráva nezobrazí.|  
+|`false`|Nezobrazuje okno se zprávou.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -56,13 +55,13 @@ Určuje, jestli se má zobrazit okno se zprávou při volání <xref:System.Diag
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.|  
+|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Oba atributy v  **\<assert >** element jsou volitelné. Okna zpráv můžete zakázat bez zadání souboru pro zápis zprávy, které mají, nebo můžete zadat soubor k zápisu zprávy do při opuštění zprávy polí povoleno.  
+ Oba atributy v  **\<vyhodnocení >** elementu jsou volitelné. Zakážete okna se zprávou bez zadání soubor pro zápis zprávy, které mají, nebo můžete určit soubor k zapsání zprávy při opuštění zprávy pole povolená.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak zakázat zobrazování okna zpráv při volání **Debug.Assert –** a zápis zpráv do `c:\log.txt`.  
+ Následující příklad ukazuje, jak zakázat zobrazování okna se zprávou, když voláte **Debug.Assert –** a zápis zpráv do `c:\log.txt`.  
   
 ```xml  
 <configuration>  

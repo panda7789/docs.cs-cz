@@ -5,11 +5,11 @@ ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 1ab211a45b5a3cb835d051c53d321dc39cac2f9f
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47086233"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193828"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>Ověření integrované Windows s rozšířenou ochranou
 Vylepšení, které ovlivňují způsob integrované ověřování zařizuje služba Windows byly provedeny <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream>, a související třídy v <xref:System.Net> a souvisejících oborech názvů. Byla přidána podpora pro rozšířené ochrany pro zvýšení zabezpečení.  

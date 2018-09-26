@@ -4,12 +4,12 @@ description: Popisuje, jak vytvořit globální nástroj. Nástroj globální je
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: 1ad3e5c585cbfcaecb7a4d04de068273ef240763
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 3860aad5e2c13714298d50bb9ac10daec3aadf01
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45991152"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47231207"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Vytvoření globální nástroje .NET Core pomocí rozhraní příkazového řádku .NET Core
 
@@ -167,7 +167,7 @@ dotnet pack
 Teď, když máte balíček, nainstalujte nástroj z tohoto balíčku: 
 
 ```console
-dotnet tool install --global --add-source ./nupkg botsay`
+dotnet tool install --global --add-source ./nupkg botsay
 ```
 
 `--add-source` Určuje parametr příkazového řádku .NET Core pro dočasně použití `./nupkg` složky (naše `<PackageOutputPath>` složky) jako další zdroj datového kanálu pro balíčky NuGet. Další informace o instalaci nástrojů pro globální, naleznete v tématu [globální nástroje .NET Core přehled][global-tool-info].

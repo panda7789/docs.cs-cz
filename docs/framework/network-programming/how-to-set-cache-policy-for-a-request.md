@@ -10,11 +10,11 @@ ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 03ddcbacf7de3753ca74c398e585447b2d769cd6
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078315"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47210624"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Postupy: nastavení zásad mezipaměti pro žádost
 Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost. V příkladu vstup, jako je identifikátor URI http://www.contoso.com/.  

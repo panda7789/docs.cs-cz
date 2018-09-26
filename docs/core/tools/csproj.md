@@ -4,12 +4,12 @@ description: Další informace o rozdílech mezi stávající a soubory csproj .
 author: blackdwarf
 ms.author: mairaw
 ms.date: 09/22/2017
-ms.openlocfilehash: d868eb689af1d87ea2adb1f0069345cbb8195af7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 1fd264da2863fbeb88900be0f6fe000acac08a09
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46004374"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47216913"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -83,11 +83,11 @@ S csproj doporučujeme, abyste výchozí globy odeberte z projektu a přidat jen
 
 Zatímco tyto změny csproj výrazně zjednodušit soubory projektu, můžete chtít zobrazit plně rozšířené projektu jako MSBuild ji vidí, jakmile jsou zahrnuty v sadě SDK a cíle. Předběžné zpracování projektu s [ `/pp` přepnout](/visualstudio/msbuild/msbuild-command-line-reference#preprocess) z [ `dotnet msbuild` ](dotnet-msbuild.md) příkaz, který ukazuje, které soubory se importují, jejich zdroje a svoje příspěvky k sestavení bez ve skutečnosti sestavení projektu:
 
-`dotnet msbuild /pp:fullproject.xml`
+`dotnet msbuild -pp:fullproject.xml`
 
 Pokud projekt obsahuje více cílových platforem, by měl výsledky příkazu, zaměřuje na pouze jeden z nich tak, že zadáte jako vlastnost MSBuild:
 
-`dotnet msbuild /p:TargetFramework=netcoreapp2.0 /pp:fullproject.xml`
+`dotnet msbuild -p:TargetFramework=netcoreapp2.0 -pp:fullproject.xml`
 
 ## <a name="additions"></a>Přidání
 
@@ -265,3 +265,37 @@ Základní cesta pro *souboru .nuspec* souboru.
 
 ### <a name="nuspecproperties"></a>NuspecProperties
 Středníkem oddělený seznam klíč = dvojice hodnot.
+
+## <a name="assemblyinfo-properties"></a>Vlastnosti souboru AssemblyInfo
+[Atributy sestavení](../../framework/app-domains/set-assembly-attributes.md) , která se obvykle používají ve *AssemblyInfo* souboru jsou teď automaticky generovány z vlastností.
+
+### <a name="properties-per-attribute"></a>Každý atribut vlastnosti
+
+Každý atribut má vlastnosti, které řídí jeho obsah a druhou pro zakázání jeho generaci, jak je znázorněno v následující tabulce:
+
+| Atribut                                                      | Vlastnost               | Vlastnost pro zákaz                             |
+|----------------------------------------------------------------|------------------------|-------------------------------------------------|
+| <xref:System.Reflection.AssemblyCompanyAttribute>              | `Company`              | `GenerateAssemblyCompanyAttribute`              |
+| <xref:System.Reflection.AssemblyConfigurationAttribute>        | `Configuration`        | `GenerateAssemblyConfigurationAttribute`        |
+| <xref:System.Reflection.AssemblyCopyrightAttribute>            | `Copyright`            | `GenerateAssemblyCopyrightAttribute`            |
+| <xref:System.Reflection.AssemblyDescriptionAttribute>          | `Description`          | `GenerateAssemblyDescriptionAttribute`          |
+| <xref:System.Reflection.AssemblyFileVersionAttribute>          | `FileVersion`          | `GenerateAssemblyFileVersionAttribute`          |
+| <xref:System.Reflection.AssemblyInformationalVersionAttribute> | `InformationalVersion` | `GenerateAssemblyInformationalVersionAttribute` |
+| <xref:System.Reflection.AssemblyProductAttribute>              | `Product`              | `GenerateAssemblyProductAttribute`              |
+| <xref:System.Reflection.AssemblyTitleAttribute>                | `AssemblyTitle`        | `GenerateAssemblyTitleAttribute`                |
+| <xref:System.Reflection.AssemblyVersionAttribute>              | `AssemblyVersion`      | `GenerateAssemblyVersionAttribute`              |
+| <xref:System.Resources.NeutralResourcesLanguageAttribute>      | `NeutralLanguage`      | `GenerateNeutralResourcesLanguageAttribute`     |
+
+Poznámky:
+
+* `AssemblyVersion` a `FileVersion` výchozí je převést hodnotu `$(Version)` bez přípony. Například pokud `$(Version)` je `1.2.3-beta.4`, pak bude hodnota `1.2.3`.
+* `InformationalVersion` Výchozí hodnota je hodnota `$(Version)`.
+* `InformationalVersion` má `$(SourceRevisionId)` připojí, pokud vlastnost je k dispozici. Je možné ho zakázat, pomocí `IncludeSourceRevisionInInformationalVersion`.
+* `Copyright` a `Description` vlastnosti jsou také používány pro NuGet metadat.
+* `Configuration` je sdílený v procesu sestavení a nastavené přes `--configuration` parametr `dotnet` příkazy.
+
+### <a name="generateassemblyinfo"></a>GenerateAssemblyInfo 
+Logická hodnota, která povolí nebo zakáže všechny generování souboru AssemblyInfo. Výchozí hodnota je `true`. 
+
+### <a name="generatedassemblyinfofile"></a>GeneratedAssemblyInfoFile 
+Cestu k souboru informací o vygenerované sestavení. Ve výchozím nastavení v souboru `$(IntermediateOutputPath)` adresáře (obj).

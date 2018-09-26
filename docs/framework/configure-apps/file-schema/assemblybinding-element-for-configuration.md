@@ -10,11 +10,11 @@ ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 5693b92ac35a357ff1f8643d0eb9ec2105acecb4
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47073460"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193353"
 ---
 # <a name="assemblybinding-element-for-configuration"></a>\<assemblybinding – > – element pro \<configuration >
 

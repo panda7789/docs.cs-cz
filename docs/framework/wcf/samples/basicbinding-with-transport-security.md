@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: f49b1de6-0254-4362-8ef2-fccd8ff9688b
 author: BrucePerlerMS
 ms.openlocfilehash: 6f68512089d6ab975557f58e883215ad70c3cc04
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47088396"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47192976"
 ---
 # <a name="basicbinding-with-transport-security"></a>Základní vazby u zabezpečení přenosu
 Tento příklad ukazuje použití zabezpečení přenosu SSL s základní vazby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  

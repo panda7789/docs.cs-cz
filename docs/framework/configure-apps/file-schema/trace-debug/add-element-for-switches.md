@@ -10,11 +10,11 @@ ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 0a1a2c9ec34c43eb1b9559d90a8da0d70193c19e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47109521"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47209123"
 ---
 # <a name="ltaddgt-element-for-ltswitchesgt"></a>&lt;Přidat&gt; – Element pro &lt;přepínače&gt;
 Určuje úroveň, kde je nastaven přepínač trasování.  

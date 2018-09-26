@@ -6,11 +6,11 @@ ms.author: johalex
 ms.date: 01/19/2018
 ms.custom: mvc
 ms.openlocfilehash: c64dddbe36b789a695c2603e78b29b38d8718f95
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082315"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47208380"
 ---
 # <a name="net-core-additional-tools"></a>Další nástroje .NET core
 

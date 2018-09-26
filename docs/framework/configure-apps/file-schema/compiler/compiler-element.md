@@ -13,11 +13,11 @@ ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: a26fc0bda341e85ca54f3dee4addd14e4164209c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47071009"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193954"
 ---
 # <a name="ltcompilergt-element"></a>&lt;Kompilátor&gt; – Element
 

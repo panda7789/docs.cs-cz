@@ -9,11 +9,11 @@ ms.assetid: d270ab45-542b-45c0-a240-e80aa4a61b95
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 481e2eeaa24c4e8bc2b6199d2bb4ab2c3c51e221
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108660"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47231005"
 ---
 # <a name="ui-automation-fundamentals"></a>Principy automatizace uživatelského rozhraní
 > [!NOTE]

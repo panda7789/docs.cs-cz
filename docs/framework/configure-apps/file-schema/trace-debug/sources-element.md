@@ -12,11 +12,11 @@ ms.assetid: c727b2e2-423a-4463-a223-013f40ff16a3
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: a9c5c5529e349eca2ba089ed6fb71da4bd48430a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47084446"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47203326"
 ---
 # <a name="ltsourcesgt-element"></a>&lt;zdroje&gt; – Element
 Určuje zdrojů trasování, které se zahájí trasovací zprávy.  

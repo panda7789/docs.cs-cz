@@ -5,11 +5,11 @@ ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 76ca5acc22eca07d372a2964cf3a6df4ea3b58d5
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077483"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47208422"
 ---
 # <a name="ltschemesettingsgt-element-uri-settings"></a>&lt;schemeSettings&gt; – Element (nastavení Uri)
 Určuje, jak <xref:System.Uri> pro konkrétní schémata, bude analyzována.  

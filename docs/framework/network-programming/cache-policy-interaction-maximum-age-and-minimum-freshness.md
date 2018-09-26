@@ -1,5 +1,5 @@
 ---
-title: Interakce zásad do mezipaměti – maximální stáří a minimální aktuálnosti
+title: Interakce zásad mezipaměti – maximální stáří a minimální novost
 ms.date: 03/30/2017
 helpviewer_keywords:
 - time-based cache policies
@@ -12,24 +12,23 @@ helpviewer_keywords:
 ms.assetid: 6567d451-ecec-496c-95a3-a415b99ba52a
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: d88ef1e736a16dddf156a1bc0e42f06d128d2c57
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a35bdeaf0fc6cf513363f3d990167f342a496c76
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394163"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193457"
 ---
-# <a name="cache-policy-interactionmaximum-age-and-minimum-freshness"></a>Interakce zásad do mezipaměti – maximální stáří a minimální aktuálnosti
-K zajištění, že nejčerstvější obsah se vrátí do klientské aplikace, výsledkem interakce klienta mezipaměti zásad a server opětovné ověření požadavků vždy nejvíce konzervativní zásady ukládání do mezipaměti. V příkladech v tomto tématu ilustrují zásady ukládání do mezipaměti pro prostředek, který se uloží do mezipaměti na 1. ledna a jeho platnost vyprší v lednu 4.  
+# <a name="cache-policy-interactionmaximum-age-and-minimum-freshness"></a>Interakce zásad mezipaměti – maximální stáří a minimální novost
+K zajištění, že nejčerstvější obsah se vrátí do klientské aplikace, interakce vždy klienta mezipaměti zásad serveru opětovné ověření požadavků a výsledkem nejrestriktivnější zásady ukládání do mezipaměti. Všechny příklady v tomto tématu ilustrují zásady ukládání do mezipaměti pro prostředek, který se uloží do mezipaměti na 1. ledna a končí 4. ledna.  
   
- Následující příklady ilustrují zásady mezipaměti, která je výsledkem interakci maximální stáří (`maxAge`) a minimální aktuálnosti (`minFresh`) hodnoty.  
+ Následující příklady znázorňují zásady ukládání do mezipaměti, která je výsledkem interakce maximální stáří (`maxAge`) a minimální novost (`minFresh`) hodnoty.  
   
--   Pokud je nastaví zásady ukládání do mezipaměti `maxAge` = 2 dny a `minFresh` není zadaný obsah je znovu ověřeny na 3.  
+-   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 2 dny a `minFresh` není zadaný obsah je ověřit 3. ledna.  
   
--   Pokud je nastaví zásady ukládání do mezipaměti `maxAge` = 2 dny a `minFresh` = 1 den, podle `maxAge`, obsah je novou dokud datum 3. Podle `minFresh`, obsah je novou dokud datum 3. Proto musí být znovu obsah ověřeny na 3.  
+-   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 2 dny a `minFresh` = 1 den, podle `maxAge`, až do ledna 3 je nový obsah. Podle `minFresh`, až do ledna 3 je nový obsah. Proto se musí ověřit obsah 3. ledna.  
   
--   Pokud je nastaví zásady ukládání do mezipaměti `maxAge` = 2 dny a `minFresh` = 2 dní, podle `maxAge`, obsah je novou dokud datum 3. Podle `minFresh` dokud leden 2 je novou obsah. Proto musí být znovu obsah ověřeny v lednu 2.  
+-   Pokud zásady ukládání do mezipaměti nastaví `maxAge` = 2 dny a `minFresh` = 2 dny podle `maxAge`, až do ledna 3 je nový obsah. Podle `minFresh` až do ledna 2 je nový obsah. Proto musíte ověřit obsah na 2. ledna.  
   
 ## <a name="see-also"></a>Viz také  
  [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - service contracts [WCF], implementing
 ms.assetid: d5ab51ba-61ae-403e-b3c8-e2669e326806
 ms.openlocfilehash: 569de6f49b56b46ccfeb22e9f0bd25bcf339b7e0
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47088136"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47202983"
 ---
 # <a name="how-to-implement-a-windows-communication-foundation-service-contract"></a>Postupy: implementace kontraktu služby Windows Communication Foundation
 

@@ -5,11 +5,11 @@ author: mairaw
 ms.author: mairaw
 ms.date: 03/08/2017
 ms.openlocfilehash: f5f4dd8f335d940d5c63baef73e83dd3d0eccf6e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47072788"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47216614"
 ---
 # <a name="projectjson-and-visual-studio-2015-with-net-core"></a>Project.JSON a Visual Studio 2015 se sadou .NET Core
 
