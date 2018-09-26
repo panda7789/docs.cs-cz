@@ -1,6 +1,6 @@
 ---
 title: Referenční tabulky pro typy (referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+ms.date: 09/21/2018
 f1_keywords:
 - cs.referencetables
 helpviewer_keywords:
@@ -8,36 +8,31 @@ helpviewer_keywords:
 - types [C#], reference tables
 - C# language, data types
 ms.assetid: 1d2b6a9b-31fd-4fa6-a7b2-bfd9c806ac8a
-ms.openlocfilehash: 2138bd85740b715466e263020125b367d6036c87
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f75a1cf0b118becd940bd1aa8ac66550d0852773
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529907"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083199"
 ---
-# <a name="reference-tables-for-types-c-reference"></a><span data-ttu-id="8d9d5-102">Referenční tabulky pro typy (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="8d9d5-102">Reference tables for types (C# Reference)</span></span>
+# <a name="reference-tables-for-types-c-reference"></a><span data-ttu-id="dbaa7-102">Referenční tabulky pro typy (referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="dbaa7-102">Reference tables for types (C# Reference)</span></span>
 
-<span data-ttu-id="8d9d5-103">Následující referenční tabulka představuje souhrn typů jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="8d9d5-103">The following reference tables summarize the C# types:</span></span>
+<span data-ttu-id="dbaa7-103">Následující referenční tabulka představuje souhrn typů jazyka C#:</span><span class="sxs-lookup"><span data-stu-id="dbaa7-103">The following reference tables summarize the C# types:</span></span>
 
-- [<span data-ttu-id="8d9d5-104">Tabulka předdefinovaných typů</span><span class="sxs-lookup"><span data-stu-id="8d9d5-104">Built-in Types Table</span></span>](built-in-types-table.md)
+|<span data-ttu-id="dbaa7-104">Tabulka</span><span class="sxs-lookup"><span data-stu-id="dbaa7-104">Table</span></span>|<span data-ttu-id="dbaa7-105">Popis</span><span class="sxs-lookup"><span data-stu-id="dbaa7-105">Description</span></span>|
+|---------|---------|
+|[<span data-ttu-id="dbaa7-106">Vestavěné typy</span><span class="sxs-lookup"><span data-stu-id="dbaa7-106">Built-in types</span></span>](built-in-types-table.md)|<span data-ttu-id="dbaa7-107">Obsahuje seznam předdefinovaných typů jazyka C# a odpovídající typy .NET.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-107">Lists built-in C# types and corresponding .NET types.</span></span>|
+|[<span data-ttu-id="dbaa7-108">Celočíselné typy</span><span class="sxs-lookup"><span data-stu-id="dbaa7-108">Integral types</span></span>](integral-types-table.md)|<span data-ttu-id="dbaa7-109">Poskytuje přehled o integrální typy.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-109">Provides an overview of the integral types.</span></span>|
+|[<span data-ttu-id="dbaa7-110">Typy s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="dbaa7-110">Floating-point types</span></span>](floating-point-types-table.md)|<span data-ttu-id="dbaa7-111">Poskytuje přehled typů s plovoucí desetinnou čárkou.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-111">Provides an overview of the floating-point types.</span></span>|
+|[<span data-ttu-id="dbaa7-112">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="dbaa7-112">Value types</span></span>](value-types-table.md)|<span data-ttu-id="dbaa7-113">Obsahuje seznam typů hodnot v jazyce C#.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-113">Lists C# value types.</span></span>|
+|[<span data-ttu-id="dbaa7-114">Výchozí hodnoty</span><span class="sxs-lookup"><span data-stu-id="dbaa7-114">Default values</span></span>](default-values-table.md)|<span data-ttu-id="dbaa7-115">Obsahuje seznam výchozích hodnot hodnotové typy C#.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-115">Lists default values of C# value types.</span></span>|
+|[<span data-ttu-id="dbaa7-116">Implicitní číselné převody</span><span class="sxs-lookup"><span data-stu-id="dbaa7-116">Implicit numeric conversions</span></span>](implicit-numeric-conversions-table.md)|<span data-ttu-id="dbaa7-117">Poskytuje základní informace o podporovaných implicitní převody mezi číselnými typy C#.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-117">Provides an overview of supported implicit conversions between C# numeric types.</span></span>|
+|[<span data-ttu-id="dbaa7-118">Explicitní číselné převody</span><span class="sxs-lookup"><span data-stu-id="dbaa7-118">Explicit numeric conversions</span></span>](explicit-numeric-conversions-table.md)|<span data-ttu-id="dbaa7-119">Poskytuje základní informace o podporovaných explicitní převody mezi číselnými typy C#.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-119">Provides an overview of supported explicit conversions between C# numeric types.</span></span>|
+|[<span data-ttu-id="dbaa7-120">Formátování číselných výsledků</span><span class="sxs-lookup"><span data-stu-id="dbaa7-120">Formatting numeric results</span></span>](formatting-numeric-results-table.md)|<span data-ttu-id="dbaa7-121">Poskytuje přehled řetězců standardního číselného formátu.</span><span class="sxs-lookup"><span data-stu-id="dbaa7-121">Provides an overview of standard numeric format strings.</span></span>|
 
-- [<span data-ttu-id="8d9d5-105">Celočíselné typy</span><span class="sxs-lookup"><span data-stu-id="8d9d5-105">Integral types</span></span>](integral-types-table.md)
+## <a name="see-also"></a><span data-ttu-id="dbaa7-122">Viz také:</span><span class="sxs-lookup"><span data-stu-id="dbaa7-122">See also</span></span>
 
-- [<span data-ttu-id="8d9d5-106">Typy s plovoucí desetinnou čárkou</span><span class="sxs-lookup"><span data-stu-id="8d9d5-106">Floating-point types</span></span>](floating-point-types-table.md)
-
-- [<span data-ttu-id="8d9d5-107">Výchozí hodnoty</span><span class="sxs-lookup"><span data-stu-id="8d9d5-107">Default values</span></span>](default-values-table.md)
-
-- [<span data-ttu-id="8d9d5-108">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="8d9d5-108">Value types</span></span>](value-types-table.md)
-
-- [<span data-ttu-id="8d9d5-109">Implicitní číselné převody</span><span class="sxs-lookup"><span data-stu-id="8d9d5-109">Implicit numeric conversions</span></span>](implicit-numeric-conversions-table.md)
-
-- [<span data-ttu-id="8d9d5-110">Tabulka explicitních číselných převodů</span><span class="sxs-lookup"><span data-stu-id="8d9d5-110">Explicit Numeric Conversions Table</span></span>](explicit-numeric-conversions-table.md)
-
-<span data-ttu-id="8d9d5-111">Informace o formátování výstupu číselné typy najdete v tématu [tabulka formátování číselných výsledků](formatting-numeric-results-table.md).</span><span class="sxs-lookup"><span data-stu-id="8d9d5-111">For information on formatting the output of numeric types, see [Formatting Numeric Results Table](formatting-numeric-results-table.md).</span></span>
-
-## <a name="see-also"></a><span data-ttu-id="8d9d5-112">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8d9d5-112">See also</span></span>
-
-- [<span data-ttu-id="8d9d5-113">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="8d9d5-113">C# Reference</span></span>](../../language-reference/index.md)
-- [<span data-ttu-id="8d9d5-114">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="8d9d5-114">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="8d9d5-115">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="8d9d5-115">Reference Types</span></span>](reference-types.md)
-- [<span data-ttu-id="8d9d5-116">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="8d9d5-116">Value Types</span></span>](value-types.md)
+- [<span data-ttu-id="dbaa7-123">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="dbaa7-123">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="dbaa7-124">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="dbaa7-124">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="dbaa7-125">Odkazové typy</span><span class="sxs-lookup"><span data-stu-id="dbaa7-125">Reference Types</span></span>](reference-types.md)
+- [<span data-ttu-id="dbaa7-126">Typy hodnot</span><span class="sxs-lookup"><span data-stu-id="dbaa7-126">Value Types</span></span>](value-types.md)

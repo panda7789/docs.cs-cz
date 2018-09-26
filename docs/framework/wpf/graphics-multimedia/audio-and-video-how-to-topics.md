@@ -8,30 +8,30 @@ helpviewer_keywords:
 - media [WPF]
 ms.assetid: f7d96707-ffb5-486c-9e85-db6f0d5ac547
 ms.openlocfilehash: d7c3a6b01591dd1c7fc7554a6e660f1ca7b12de1
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46583795"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47110265"
 ---
-# <a name="audio-and-video-how-to-topics"></a><span data-ttu-id="255f1-102">Postupy: Témata audia a videa</span><span class="sxs-lookup"><span data-stu-id="255f1-102">Audio and Video How-to Topics</span></span>
-<span data-ttu-id="255f1-103">Následující témata ukazují, jak používat <xref:System.Windows.Controls.MediaElement> integrovat audio a video obsahu ve vašich aplikacích.</span><span class="sxs-lookup"><span data-stu-id="255f1-103">The following topics demonstrate how to use the <xref:System.Windows.Controls.MediaElement> to integrate audio and video content in your applications.</span></span>  
+# <a name="audio-and-video-how-to-topics"></a><span data-ttu-id="f4eac-102">Postupy: Témata audia a videa</span><span class="sxs-lookup"><span data-stu-id="f4eac-102">Audio and Video How-to Topics</span></span>
+<span data-ttu-id="f4eac-103">Následující témata ukazují, jak používat <xref:System.Windows.Controls.MediaElement> integrovat audio a video obsahu ve vašich aplikacích.</span><span class="sxs-lookup"><span data-stu-id="f4eac-103">The following topics demonstrate how to use the <xref:System.Windows.Controls.MediaElement> to integrate audio and video content in your applications.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="255f1-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="255f1-104">In This Section</span></span>  
- [<span data-ttu-id="255f1-105">Postupy: dynamické přidávání elementu</span><span class="sxs-lookup"><span data-stu-id="255f1-105">How to: Add an Element Dynamically</span></span>](https://msdn.microsoft.com/library/d00f258a-7973-4de7-bc54-a3fc1f638419)  
- [<span data-ttu-id="255f1-106">Řízení elementu MediaElement (Přehrát, Pozastavit, Zastavit, Hlasitost a Rychlost)</span><span class="sxs-lookup"><span data-stu-id="255f1-106">Control a MediaElement (Play, Pause, Stop, Volume, and Speed)</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
- [<span data-ttu-id="255f1-107">Řízení elementu MediaElement pomocí scénáře</span><span class="sxs-lookup"><span data-stu-id="255f1-107">Control a MediaElement by Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md)  
- [<span data-ttu-id="255f1-108">Spuštění přehrání média pomocí události uživatele</span><span class="sxs-lookup"><span data-stu-id="255f1-108">Trigger Media Playback with a User Event</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-media-playback-with-a-user-event.md)  
- [<span data-ttu-id="255f1-109">Opětovné přehrání média</span><span class="sxs-lookup"><span data-stu-id="255f1-109">Repeat Media Playback</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-media-playback.md)  
- [<span data-ttu-id="255f1-110">Přehrání média pomocí animací</span><span class="sxs-lookup"><span data-stu-id="255f1-110">Play Media with Animations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-with-animations.md)  
- [<span data-ttu-id="255f1-111">Použití transformací na elementu MediaElement</span><span class="sxs-lookup"><span data-stu-id="255f1-111">Use Transforms on a MediaElement</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-transforms-on-a-mediaelement.md)  
+## <a name="in-this-section"></a><span data-ttu-id="f4eac-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f4eac-104">In This Section</span></span>  
+ [<span data-ttu-id="f4eac-105">Postupy: dynamické přidávání elementu</span><span class="sxs-lookup"><span data-stu-id="f4eac-105">How to: Add an Element Dynamically</span></span>](https://msdn.microsoft.com/library/d00f258a-7973-4de7-bc54-a3fc1f638419)  
+ [<span data-ttu-id="f4eac-106">Řízení elementu MediaElement (Přehrát, Pozastavit, Zastavit, Hlasitost a Rychlost)</span><span class="sxs-lookup"><span data-stu-id="f4eac-106">Control a MediaElement (Play, Pause, Stop, Volume, and Speed)</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-play-pause-stop-volume-and-speed.md)  
+ [<span data-ttu-id="f4eac-107">Řízení elementu MediaElement pomocí scénáře</span><span class="sxs-lookup"><span data-stu-id="f4eac-107">Control a MediaElement by Using a Storyboard</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-control-a-mediaelement-by-using-a-storyboard.md)  
+ [<span data-ttu-id="f4eac-108">Spuštění přehrání média pomocí události uživatele</span><span class="sxs-lookup"><span data-stu-id="f4eac-108">Trigger Media Playback with a User Event</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-trigger-media-playback-with-a-user-event.md)  
+ [<span data-ttu-id="f4eac-109">Opětovné přehrání média</span><span class="sxs-lookup"><span data-stu-id="f4eac-109">Repeat Media Playback</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-repeat-media-playback.md)  
+ [<span data-ttu-id="f4eac-110">Přehrání média pomocí animací</span><span class="sxs-lookup"><span data-stu-id="f4eac-110">Play Media with Animations</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-play-media-with-animations.md)  
+ [<span data-ttu-id="f4eac-111">Použití transformací na elementu MediaElement</span><span class="sxs-lookup"><span data-stu-id="f4eac-111">Use Transforms on a MediaElement</span></span>](../../../../docs/framework/wpf/graphics-multimedia/how-to-use-transforms-on-a-mediaelement.md)  
   
-## <a name="reference"></a><span data-ttu-id="255f1-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="255f1-112">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="f4eac-112">Odkaz</span><span class="sxs-lookup"><span data-stu-id="f4eac-112">Reference</span></span>  
  <xref:System.Windows.Controls.MediaElement>  
   
  <xref:System.Windows.Media.MediaPlayer>  
   
  <xref:System.Windows.Media.MediaTimeline>  
   
-## <a name="related-sections"></a><span data-ttu-id="255f1-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="255f1-113">Related Sections</span></span>  
- [<span data-ttu-id="255f1-114">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="255f1-114">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
+## <a name="related-sections"></a><span data-ttu-id="f4eac-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f4eac-113">Related Sections</span></span>  
+ [<span data-ttu-id="f4eac-114">Grafika a multimédia</span><span class="sxs-lookup"><span data-stu-id="f4eac-114">Graphics and Multimedia</span></span>](../../../../docs/framework/wpf/graphics-multimedia/index.md)
