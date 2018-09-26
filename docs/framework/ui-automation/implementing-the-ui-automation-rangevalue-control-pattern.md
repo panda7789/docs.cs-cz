@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 3736d1e8b23b8e05882a3fe016be0ac1a18ef51d
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: f1769e2c1534e259c09db01f4263d6cfabdc21db
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577448"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157490"
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>Implementace vzoru ovládacích prvků RangeValue pro automatizaci uživatelského rozhraní
 > [!NOTE]

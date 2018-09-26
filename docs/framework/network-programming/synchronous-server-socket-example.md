@@ -1,5 +1,5 @@
 ---
-title: Příklad soketu synchronní serveru
+title: Příklad synchronního serverového soketu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,16 +11,15 @@ helpviewer_keywords:
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 8b5dc8ed718402a128add375cc1adfb6d17713e8
-ms.sourcegitcommit: 88f251b08bf0718ce119f3d7302f514b74895038
+ms.openlocfilehash: 2edfeb85ee21b5d398938bc9500f463cd78a6c07
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "33955950"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080520"
 ---
-# <a name="synchronous-server-socket-example"></a>Příklad soketu synchronní serveru
-V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů. Server je vytvořené s soket synchronního spuštění serverové aplikace je pozastaven, kdy čeká připojení z klienta. Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.  
+# <a name="synchronous-server-socket-example"></a>Příklad synchronního serverového soketu
+Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů. Server je sestavován soket synchronního spuštění serverové aplikace je pozastaven, když se čeká na připojení z klienta. Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.  
   
 ```vb  
 Imports System  

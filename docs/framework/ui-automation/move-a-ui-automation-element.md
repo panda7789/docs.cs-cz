@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: 4042cb44-e27e-4a03-ac36-9be1eed65b47
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: cb239adc6dfb11c83fb983a41ea40ad8bf714038
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 144d2ce4b539a5eb4a744f176593b29f920cc528
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45741625"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085928"
 ---
 # <a name="move-a-ui-automation-element"></a>Přesunutí elementu automatizace uživatelského rozhraní
 > [!NOTE]

@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: 9fe2f01b-f7d8-49a8-a185-d4472b9976c0
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: d627b415c0530de4957b663869c74b762421a35c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d8c65be9135049be81694c3aa375df0b27641bf2
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509942"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111722"
 ---
 # <a name="raise-events-from-a-ui-automation-provider"></a>Vyvolávání událostí ze zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]

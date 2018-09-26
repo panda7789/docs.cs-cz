@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 2d45cf41-d8ae-4409-af3e-a96a7e476d85
 ms.openlocfilehash: ccf95ff250cc7c23b1ff981087de0f1310472880
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696552"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170493"
 ---
 # <a name="creating-a-datatable-from-a-dataview"></a>Vytvoření datové tabulky ze zobrazení dat
 Po načtení dat ze zdroje dat a vyplnili <xref:System.Data.DataTable> s daty, můžete chtít řadit, filtrovat nebo jinak omezit vrácená data bez načtení znovu. <xref:System.Data.DataView> Třídy to kvůli tomu je to možné. Kromě toho, pokud je potřeba vytvořit nový <xref:System.Data.DataTable> z <xref:System.Data.DataView>, můžete použít <xref:System.Data.DataView.ToTable%2A> metoda zkopírovat všechny řádky a sloupce nebo podmnožinu dat do nového <xref:System.Data.DataTable>. <xref:System.Data.DataView.ToTable%2A> Metoda poskytuje přetížení:  

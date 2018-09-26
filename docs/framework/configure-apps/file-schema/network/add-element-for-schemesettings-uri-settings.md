@@ -1,18 +1,17 @@
 ---
-title: '&lt;Přidat&gt; Element pro schemeSettings (nastavení Uri)'
+title: '&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)'
 ms.date: 03/30/2017
 ms.assetid: 594a7b3b-af23-4cfa-b616-0b2dddb1a705
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: bd8033b07b29066633e5217645f3ee06937179da
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9cca5e35bfc0aef448d2d515f5ac55ed9e2e2258
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32741851"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157610"
 ---
-# <a name="ltaddgt-element-for-schemesettings-uri-settings"></a>&lt;Přidat&gt; Element pro schemeSettings (nastavení Uri)
+# <a name="ltaddgt-element-for-schemesettings-uri-settings"></a>&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)
 Přidá nastavení schéma pro název schématu.  
   
  \<Konfigurace >  
@@ -30,13 +29,13 @@ Přidá nastavení schéma pro název schématu.
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Název schématu, pro kterou platí toto nastavení. Podporované jsou pouze hodnoty name = "http" a name = "https".|  
+|name|Název schématu, pro kterou toto nastavení se vztahuje. Jenom pro podporované hodnoty jsou název = "http" a název = "https".|  
   
 ## <a name="attribute-name-attribute"></a>{Atribut name} Atribut  
   
@@ -51,28 +50,28 @@ Přidá nastavení schéma pro název schématu.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<schemeSettings > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> bude analyzovat pro konkrétní schémat.|  
+|[\<schemeSettings > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|Určuje, jak <xref:System.Uri> pro konkrétní schémata, bude analyzována.|  
   
 ## <a name="remarks"></a>Poznámky  
- Ve výchozím nastavení <xref:System.Uri?displayProperty=nameWithType> třída zrušení – řídicí sekvence procent kódovaný cesta oddělovače před provedením cesta komprese. Tato možnost byla implementovaná jako vhodný mechanismus zabezpečení před útoky takto:  
+ Ve výchozím nastavení <xref:System.Uri?displayProperty=nameWithType> třídy řídících zrušení procent kódovaný oddělovače cesty před provedením komprese cestu. To bylo implementováno jako vhodný mechanismus zabezpečení před útoky, jako je následující:  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Pokud tento identifikátor URI předána dolů moduly není zpracování procent kódování znaků správně, to může způsobit vykonáván serveru následující příkaz:  
+ Pokud tento identifikátor URI bude předána do modulů zpracování procent kódování znaků správně, může vést provedených na serveru následující příkaz:  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> třídy první oddělovače zrušení – řídicí sekvence cestu a poté použije cesta komprese. Výsledek předáním škodlivý adresu URL výše na <xref:System.Uri?displayProperty=nameWithType> třídy konstruktor má za následek následující identifikátor URI:  
+ Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> třídy prvního oddělovače cesty zrušení – řídicí sekvence a poté použije komprese cestu. Výsledek předáním škodlivý adresa URL výše <xref:System.Uri?displayProperty=nameWithType> konstruktor za následek následující identifikátor URI třídy:  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- Toto výchozí chování můžete upravit tak, aby není zrušení řídicí procenta kódovaného cesta oddělovače pomocí možnosti konfigurace schemeSettings pro konkrétní schéma.  
+ Toto výchozí chování lze upravit a není zrušení-oddělovačů řídicí sekvence procenta zakódované cesty pomocí možnosti konfigurace schemeSettings pro konkrétní schéma.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu není uvozovací znaky oddělovače kódováním procent cestu pro schéma protokolu http.  
+ Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu není uvozovací znaky oddělovače procentuálně zakódovaný cestu pro schéma protokolu http.  
   
 ```xml  
 <configuration>  

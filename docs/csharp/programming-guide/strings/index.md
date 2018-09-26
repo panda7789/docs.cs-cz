@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 9b108a1613e01016c541d088612303c6aaa13629
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: a06a5144e91901417906f071efd8e19c10cf2cba
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37961464"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170649"
 ---
 # <a name="strings-c-programming-guide"></a>Řetězce (Průvodce programováním v C#)
 Řetězec je objekt typu <xref:System.String> jehož hodnota je text. Interně, text se ukládá jako sekvenční jen pro čtení kolekcí <xref:System.Char> objekty. Neexistuje žádný znak null ukončující řetězec jazyka C#; na konci řetězec jazyka C# proto může obsahovat libovolný počet vložené znaky null ('\0'). <xref:System.String.Length%2A> Vlastnost řetězce představuje počet `Char` objekty obsahuje, není počet znaků Unicode. Chcete-li získat přístup k jednotlivým kódové body sady Unicode v řetězci, použijte <xref:System.Globalization.StringInfo> objektu.  
@@ -64,7 +64,7 @@ ms.locfileid: "37961464"
 |\U|Řídicí sekvence Unicode pro náhradní páry.|\Unnnnnnnn|  
 |\u|řídicí sekvence Unicode|\u0041 = "A"|  
 |\v|Vertikální tabulátor|0x000B|  
-|\x|Řídicí sekvence Unicode podobný "\u" s výjimkou s proměnnou délkou.|\x0041 = "A"|  
+|\x|Řídicí sekvence Unicode podobný "\u" s výjimkou s proměnnou délkou.|\x0041 nebo \x41 = "A"|  
   
 > [!NOTE]
 >  V době kompilace doslovném řetězci jsou převedeny na běžné řetězce s stejné řídicí sekvence. Proto pokud doslovný řetězec zobrazení v okně kukátko ladicího programu, zobrazí se řídicí znaky, které byly přidány pomocí kompilátoru, ne verbatim verzi ze zdrojového kódu. Například doslovném řetězci @"C:\files.txt" se zobrazí v okně kukátko jako "C:\\\files.txt".  

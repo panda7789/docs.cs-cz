@@ -3,11 +3,11 @@ title: Přidání odkazu služby v přenosném dílčím projektu
 ms.date: 03/30/2017
 ms.assetid: 61ccfe0f-a34b-40ca-8f5e-725fa1b8095e
 ms.openlocfilehash: efe95a326e7c13237c7d2d74888c85bf919ed287
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46580236"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112741"
 ---
 # <a name="add-service-reference-in-a-portable-subset-project"></a>Přidání odkazu služby v přenosném dílčím projektu
 Přenosném dílčím projekty povolit programátorům sestavení .NET udržovat stromu jednoho zdrojového kódu a sestavovací systém. současně podporuje více implementací rozhraní .NET (desktop, Silverlight, Windows Phone a XBOX). Projekty v přenosném dílčím odkazovat pouze na přenosné knihovny .NET, které jsou sestavení rozhraní .NET framework, který lze použít v jakékoli implementaci rozhraní .NET.  

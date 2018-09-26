@@ -3,11 +3,11 @@ title: Dokument WordprocessingML se Styles3
 ms.date: 07/20/2015
 ms.assetid: 40e35de6-ac93-4bba-88ab-a018cbe93873
 ms.openlocfilehash: 8b21c9e8be957ea2b43405a96e343cea78197f68
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46526676"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083832"
 ---
 # <a name="wordprocessingml-document-with-styles"></a>Dokument WordprocessingML se styly
 Složitější dokumentů WordprocessingML mít odstavců, které jsou naformátované se styly.  

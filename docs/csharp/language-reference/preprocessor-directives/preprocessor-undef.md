@@ -7,11 +7,11 @@ helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
 ms.openlocfilehash: 3957d58f61e51fab01618f5e1146be9cd0da58fd
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46525565"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47089763"
 ---
 # <a name="undef-c-reference"></a>#undef (referenční dokumentace jazyka C#)
 `#undef` můžete nedefinovat symbol, tak, že při použití symbolu jako výraz v [#if](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md) direktiv, bude výraz vyhodnocen na `false`.  

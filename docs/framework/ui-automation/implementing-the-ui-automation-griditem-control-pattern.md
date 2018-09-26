@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: bffbae08-fe2a-42fd-ab84-f37187518916
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: bfe2e62e98dd206d85e87d8885a1c58786a420fc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 68de80e4a01de27c16c0ed85c4177c562d5e328b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855462"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47089945"
 ---
 # <a name="implementing-the-ui-automation-griditem-control-pattern"></a>Implementace vzoru ovládacích prvků GridItem pro automatizaci uživatelského rozhraní
 > [!NOTE]

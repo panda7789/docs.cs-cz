@@ -8,11 +8,11 @@ helpviewer_keywords:
 - break keyword [C#]
 ms.assetid: be2571ed-efb0-4965-b122-81e5b09db0b9
 ms.openlocfilehash: 9dc71cce3cc0ca4035df483d2b3a3ab9a3bab9c5
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46695825"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112890"
 ---
 # <a name="break-c-reference"></a>break (Referenční dokumentace jazyka C#)
 

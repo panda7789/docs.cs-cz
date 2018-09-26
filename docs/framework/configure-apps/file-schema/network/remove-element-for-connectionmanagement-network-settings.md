@@ -1,5 +1,5 @@
 ---
-title: '&lt;Odebrat&gt; Element pro connectionManagement – (nastavení sítě)'
+title: '&lt;Odebrat&gt; – Element pro connectionManagement (nastavení sítě)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement/remove
@@ -12,16 +12,15 @@ helpviewer_keywords:
 ms.assetid: 94b81775-5a22-4975-8c47-8620c40c3f35
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 8d503e06139fc6ce14f4d2c50c46e4bcfeb1b860
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d249cc412a1638e62b57b4976adc23fdf8f36e80
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754477"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085529"
 ---
-# <a name="ltremovegt-element-for-connectionmanagement-network-settings"></a>&lt;Odebrat&gt; Element pro connectionManagement – (nastavení sítě)
-Odebere ze seznamu pro správu připojení IP adresy nebo názvu DNS.  
+# <a name="ltremovegt-element-for-connectionmanagement-network-settings"></a>&lt;Odebrat&gt; – Element pro connectionManagement (nastavení sítě)
+Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.  
   
  \<Konfigurace >  
 \<system.net>  
@@ -55,15 +54,15 @@ Odebere ze seznamu pro správu připojení IP adresy nebo názvu DNS.
 |[connectionManagement –](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síti hostitele.|  
   
 ## <a name="remarks"></a>Poznámky  
- `remove` Element odebere položku seznamu správu připojení pro zadaný server.  
+ `remove` Element odstraní položku seznamu správy připojení na určeném serveru.  
   
  Hodnota `address` atribut by měl mít platnou IP adresu nebo název hostitele.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu odebere všechny položky připojení správy seznamu pro www.adventure-works.com serveru a poté konfiguruje aplikaci použít čtyři připojení k serveru www.contoso.com a dvě připojení na jiné servery.  
+ Následující příklad odebere všechny položky seznamu správu připojení pro server www.adventure-works.com a pak nakonfiguruje aplikaci pro použití čtyř připojení k serveru www.contoso.com a dvě spojení na všechny ostatní servery.  
   
 ```xml  
 <configuration>  

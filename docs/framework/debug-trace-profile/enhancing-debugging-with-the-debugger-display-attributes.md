@@ -16,11 +16,11 @@ ms.assetid: 72bb7aa9-459b-42c4-9163-9312fab4c410
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 4150658f713e626c5578c21cfada0f6410cbd37b
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46697494"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47109797"
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>Rozšíření ladění pomocí atributů zobrazení ladicího programu
 

@@ -4,21 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 17f68fbb92797928be911e530232e8638793687f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1537c17cb3c16beeb41cfaa4103e0664e93facc7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742569"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170597"
 ---
 # <a name="ltidngt-element-uri-settings"></a>&lt;IDN&gt; – Element (nastavení Uri)
-Určuje, zda analýza mezinárodní název domény (IDN) je použita na název domény.  
+Určuje, pokud analýza mezinárodních názvů domén (IDN) se použije na název domény.  
   
-## <a name="schema-hierarchy"></a>Schéma hierarchie  
- [\<Konfigurace > elementu](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+## <a name="schema-hierarchy"></a>Hierarchie schémat  
+ [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<Identifikátor URI > elementu (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
+ [\<Identifikátor URI > – Element (nastavení Uri)](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
   
  [\<IDN >](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)  
   
@@ -37,7 +36,7 @@ Určuje, zda analýza mezinárodní název domény (IDN) je použita na název d
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|`enabled`|Určuje, že pokud analýza mezinárodní název domény (IDN) se použije pro název domény výchozí hodnota je none.|  
+|`enabled`|Určuje, že jestli parsování mezinárodních názvů domén (IDN) se použije pro název domény výchozí hodnota je none.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -46,44 +45,44 @@ Určuje, zda analýza mezinárodní název domény (IDN) je použita na název d
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[identifikátor URI](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|Obsahuje nastavení, které určují, jak rozhraní .NET Framework zpracovává webové adresy vyjádřit pomocí identifikátorů URI (URI).|  
+|[Identifikátor URI](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).|  
   
 ## <a name="remarks"></a>Poznámky  
- Existující <xref:System.Uri> třída rozšířilo v rozhraní .NET Framework 3.5. 3.0 SP1 a s podporou pro mezinárodní prostředků identifikátory (IRI) a mezinárodní názvy domén (IDN) 2.0 SP1. Aktuální uživatelé neuvidí žádné chování se liší od rozhraní .NET Framework 2.0, pokud konkrétně povolit IRI a IDN podporovat. Tím se zajistí kompatibilitu aplikace s předchozí verze rozhraní .NET Framework.  
+ Existující <xref:System.Uri> bylo rozšířeno třídy v rozhraní .NET Framework 3.5. 3.0 SP1 a 2.0 SP1 s podporou International Resource identifikátory (IRI) a mezinárodní názvy domén (IDN). Aktuální uživatelé neuvidí žádné změny v chování rozhraní .NET Framework 2.0, pokud výslovně povolit IRI a IDN podporovat. Tím se zajistí kompatibilitu aplikací se staršími verzemi rozhraní .NET Framework.  
   
- Povolení podpory pro IRI, je potřeba udělat následující dvě změny:  
+ Povolení podpory pro IRI, jsou požadovány následující dvě změny:  
   
-1.  Přidejte následující řádek do souboru machine.config v adresáři rozhraní .NET Framework 2.0  
+1.  Přidejte následující řádek do souboru machine.config, v adresáři rozhraní .NET Framework 2.0  
   
     ```xml  
     <section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
     ```  
   
-2.  Zadejte, zda má, analýza mezinárodní název domény (IDN) použít na název domény a zda má být použita IRI Analýza pravidla. To lze provést v souboru machine.config nebo v souboru app.config.  
+2.  Zadejte, jestli chcete parsování mezinárodních názvů domén (IDN) k názvu domény a určuje, zda by měl použít IRI pravidel pro analýzu. To můžete udělat v souboru machine.config nebo v souboru app.config.  
   
  Existují tři možné hodnoty pro IDN v závislosti na servery DNS, které se používají:  
   
 -   IDN, povoleno = All  
   
-     Tato hodnota převede názvy domén, Unicode jejich ekvivalenty Punycode (IDN. názvy).  
+     Tato hodnota se převede názvy domén, Unicode na jejich ekvivalenty kódování Punycode (názvy IDN).  
   
 -   IDN, povoleno = AllExceptIntranet  
   
-     Tato hodnota se převést všechny názvy domén Unicode není v místním intranetu používat kódování Punycode ekvivalenty (IDN. názvy). V takovém případě pro zpracování mezinárodních názvů na místní Intranet, servery DNS, které se používají pro intranetové by měly podporovat překlad kódování Unicode.  
+     Tato hodnota se převede všechny názvy domén Unicode nejsou v místním intranetu používat kódování Punycode ekvivalenty (názvy IDN). V tomto případě zpracování mezinárodních názvů na místní Intranet, které se používají pro intranetové servery DNS by měly podporovat překlad kódování Unicode.  
   
 -   IDN, povoleno = None  
   
-     Tato hodnota nebude převést názvy domén Unicode používat kódování Punycode. Toto je výchozí hodnota, která je konzistentní s chování rozhraní .NET Framework 2.0.  
+     Tato hodnota neprovede konverzi názvy domén, Unicode používat kódování Punycode. Toto je výchozí hodnota je shodný se chování rozhraní .NET Framework 2.0.  
   
- Povolení IDN převede všechny popisky kódování Unicode v názvu domény jejich ekvivalenty u Punycode. Názvy Punycode obsahovat pouze znaky ASCII a vždy začínají předponou xn –. Důvodem je podpora existující servery DNS na Internetu, protože většina servery DNS podporují pouze znaky ASCII (viz RFC 3940).  
+ Povolení IDN převede všechny popisky kódování Unicode v názvu domény na jejich ekvivalenty kódování Punycode. Kódování Punycode názvy obsahovat pouze znaky ASCII a vždy začínají předponou xn –. Důvodem je k podpoře existujících serverů DNS na Internetu, protože většina servery DNS podporují jenom znaky ASCII (viz RFC 3940).  
   
 ### <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu analýzy IRI a IDN. názvy.  
+ Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu analýza IRI a názvy IDN.  
   
 ### <a name="code"></a>Kód  
   

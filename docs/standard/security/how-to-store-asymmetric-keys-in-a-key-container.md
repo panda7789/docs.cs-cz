@@ -18,11 +18,11 @@ ms.assetid: 0dbcbd8d-0dcf-40e9-9f0c-e3f162d35ccc
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: a5cd157f89797406fbe87c3d70c415d7b192d1a9
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46326566"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47110291"
 ---
 # <a name="how-to-store-asymmetric-keys-in-a-key-container"></a>Postupy: Uložení asymetrického klíče v kontejneru klíčů
 Asymetrické soukromé klíče by nikdy neměly být uloženy doslovně nebo ve formátu prostého textu v místním počítači. Pokud potřebujete uložit soukromý klíč, měli byste použít kontejner klíčů. Další informace o kontejnerech klíčů najdete v tématu [Principy úrovni počítače a kontejnery klíčů RSA individuální](https://msdn.microsoft.com/library/9a179f38-8fb7-4442-964c-fb7b9f39f5b9).  

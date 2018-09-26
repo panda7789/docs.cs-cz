@@ -11,20 +11,19 @@ helpviewer_keywords:
 ms.assetid: d40fba59-98f9-4783-ae0c-2ebea27ce77b
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: fc85610f5c3db7929f824fda2dd211300d9b05c1
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8ce303d33a83d972247609e5d02d16a4a57669ff
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742988"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083790"
 ---
 # <a name="ltcompilersgt-element"></a>&lt;Kompilátory&gt; – Element
-Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elementy.  
+Kontejner pro kompilátor – elementy konfigurace; obsahuje nulu nebo více [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) elementy.  
   
  \<Konfigurace >  
-\<System.CodeDom – >  
-\<Kompilátory > elementu  
+\<System.CodeDom >  
+\<Kompilátory > – Element  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,22 +43,22 @@ Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více [ \
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<kompilátoru > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|Kompilátor – konfigurační atributy Určuje jazyk zprostředkovatele.|  
+|[\<Kompilátor > – Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)|Určuje kompilátor – konfigurační atributy pro poskytovatele jazyka.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Konfigurace > elementu](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Určuje kompilátor – nastavení konfigurace pro zprostředkovatele dostupný jazyk.|  
+|[\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
+|[\<system.codedom> Element](../../../../../docs/framework/configure-apps/file-schema/compiler/system-codedom-element.md)|Určuje konfigurační nastavení kompilátoru pro zprostředkovatele dostupných poskytovatelů jazyka.|  
   
 ## <a name="remarks"></a>Poznámky  
- [ \<Kompilátory >](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md) element obsahuje konfigurační nastavení kompilátoru pro zprostředkovatelé jazyka v počítači. Každý [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) element určuje kompilátor – konfigurační atributy pro konkrétní jazyk zprostředkovatele.  
+ [ \<Compilers >](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md) element obsahuje konfigurační nastavení kompilátoru pro poskytovatele jazyka v počítači. Každý [ \<kompilátoru >](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md) prvek určuje kompilátor – konfigurační atributy pro konkrétní jazyk zprostředkovatele.  
   
- Rozhraní .NET Framework definuje počáteční kompilátoru a poskytovatele nastavení jazyka v konfiguračním souboru počítače (Machine.config). Vývojářům a dodavatelům kompilátoru můžete přidat nastavení konfigurace pro novou <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementace. Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> metoda prostřednictvím kódu programu výčet zprostředkovatele a kompilátoru konfigurace nastavení jazyka v počítači.  
+ Rozhraní .NET Framework definuje počáteční kompilátoru a poskytovatele nastavení jazyka v konfiguračním souboru počítače (Machine.config). Vývojářům a dodavatelům kompilátoru můžete přidat nastavení konfigurace pro nové <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> implementace. Použití <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> způsob, jak programově vytvářet výčty zprostředkovatele a kompilátoru konfigurace nastavení jazyka v počítači.  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element lze v konfiguračním souboru počítače a konfiguračním souboru aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače a konfigurační soubor aplikace.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje prvek typické kompilátoru konfigurace.  
@@ -85,4 +84,4 @@ Kontejner pro kompilátor – elementy konfigurace; obsahuje nula nebo více [ \
  <xref:System.CodeDom.Compiler.CodeDomProvider>  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
  [Schéma nastavení kompilátoru a poskytovatele jazyka](../../../../../docs/framework/configure-apps/file-schema/compiler/index.md)  
- [\<kompilátoru > elementu](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)
+ [\<Kompilátor > – Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compiler-element.md)

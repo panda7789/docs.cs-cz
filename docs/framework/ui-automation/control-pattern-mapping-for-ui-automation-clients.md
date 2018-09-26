@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: 8b81645b-8be3-4e26-9c98-4fb0fceca06b
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 02244043d802029364c7a725940f03ecdd21f573
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 6beeec86ba8bf16be432bc2ae2de20aa08a0d2d9
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864654"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113118"
 ---
 # <a name="control-pattern-mapping-for-ui-automation-clients"></a>Mapování vzorů ovládacích prvků pro klienty automatizace uživatelského rozhraní
 > [!NOTE]

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - My.Computer.Audio object
 ms.assetid: ab5bdd04-b0ce-48b2-91c5-6404ceca31d0
 ms.openlocfilehash: 805e2a87e586e96048dd40033e7d80a74dcc94e9
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586071"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111864"
 ---
 # <a name="mycomputeraudio-object"></a>My.Computer.Audio – objekt
 Poskytuje metody pro přehrávání zvuku.  

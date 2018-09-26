@@ -3,11 +3,11 @@ title: Přehled Entity Framework
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
 ms.openlocfilehash: 35eb3b1503c8754752662aef0c5101251d60d49c
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584003"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078263"
 ---
 # <a name="entity-framework-overview"></a>Přehled Entity Framework
 

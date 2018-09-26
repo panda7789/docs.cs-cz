@@ -5,11 +5,11 @@ f1_keywords:
 - vbrID51
 ms.assetid: 21266dbb-f4a1-4c5d-a646-27909cf53248
 ms.openlocfilehash: 219f7b31beec468a7d3e14e750a7163831f58548
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46581061"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111415"
 ---
 # <a name="internal-error-visual-basic"></a>Vnitřní chyba (Visual Basic)
 V jazyce Visual Basic došlo k interní selhání.  

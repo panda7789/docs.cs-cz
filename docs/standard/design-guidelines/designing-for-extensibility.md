@@ -11,11 +11,11 @@ ms.assetid: 1cdb8740-871a-456c-9bd9-db96ca8d79b3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 9c1690d0cdf1f57eaf0a794d6e71babfa4fa6425
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46697526"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157451"
 ---
 # <a name="designing-for-extensibility"></a>Navrhování pro rozšiřitelnost
 Jeden důležitý aspekt návrhu rozhraní, je zajistit, že pečlivě zvážit rozšíření rozhraní framework. Tento postup vyžaduje, že rozumíte nákladů a přínosů přidružené různé mechanismy rozšiřitelnosti. Tato kapitola vám pomůže rozhodnout, které mechanismus rozšíření – vytváření podtříd, události, virtuální členy, zpětná volání a tak dále – můžete nejlíp vyhovovat požadavkům vaší architektury.  

@@ -1,35 +1,34 @@
 ---
-title: Povolení a zakázání IPv6
+title: Povolení a zákaz IPv6
 ms.date: 03/30/2017
 ms.assetid: 6408d3ef-c9ba-49d9-b15e-fe74bd3ef031
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: b018d646816bda96945a440a890da20b81b1cbbc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f63d62c7605d32dfbe97193f8aed53f0fc547cff
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393929"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085837"
 ---
-# <a name="enabling-and-disabling-ipv6"></a>Povolení a zakázání IPv6
-Chcete-li používat protokol IPv6, ujistěte se, že používáte verzi operačního systému, který podporuje protokol IPv6 a ujistěte se, že operační systém a síťové třídy jsou konfigurována správně.  
+# <a name="enabling-and-disabling-ipv6"></a>Povolení a zákaz IPv6
+Pokud chcete použít protokol IPv6, ujistěte se, že používáte verzi operačního systému, který podporuje protokol IPv6 a zajistit správnou konfiguraci operačního systému a síťové třídy.  
   
-## <a name="configuration-steps"></a>Kroky konfigurace  
- Následující tabulka uvádí různé konfigurace  
+## <a name="configuration-steps"></a>Postup konfigurace  
+ V následující tabulce jsou uvedeny různé konfigurace  
   
-|Operační systém podporující protokol IPv6?|Sítě třídy povolen protokol IPv6?|Popis|  
+|Operační systém podporující protokol IPv6?|Síťové třídy povolen protokol IPv6?|Popis|  
 |-------------------------------------|---------------------------------------|-----------------|  
 |Ne|Ne|Můžete analyzovat adresy IPv6.|  
 |Ne|Ano|Můžete analyzovat adresy IPv6.|  
-|Ano|Ne|Můžete analyzovat adresy IPv6 a překládat adresy IPv6 pomocí metody rozlišování názvů není označena jako zastaralá.|  
-|Ano|Ano|Můžete analyzovat a řešit pomocí všech metod, včetně těch, které označeny jako zastaralé adresy IPv6.|  
+|Ano|Ne|Můžete analyzovat adresy IPv6 a překládat adresy IPv6 pomocí metody rozlišování názvů není označená jako zastaralá.|  
+|Ano|Ano|Můžete analyzovat a řešit adres IPv6 pomocí všech metod, včetně těch, které označená jako zastaralá.|  
   
- Upozorňujeme, že pokud chcete povolit podporu IPv6 pro všechny třídy v oboru názvů System.Net, je třeba upravit konfiguračního souboru počítače nebo konfiguračního souboru pro aplikaci. Konfigurační soubor pro aplikaci, má přednost před konfiguračního souboru počítače.  
+ Mějte na paměti, že pokud chcete povolit podporu protokolu IPv6 pro všechny třídy v oboru názvů System.Net, je třeba upravit konfigurační soubor počítače nebo konfiguračního souboru aplikace. Konfigurační soubor aplikace má vyšší prioritu než konfigurační soubor počítače.  
   
- Příklad toho, jak upravit konfigurační soubor na počítači *machine.config*, aby Ipv6 podpory najdete [postup: Upravte konfigurační soubor počítače. Chcete-li povolit podporu Ipv6](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md). Ujistěte se také, že je povolena podpora protokolu IPv6 pro operační systém.  
+ Příklad toho, jak upravit konfigurační soubor počítače *machine.config*k povolení podpory naleznete v protokolu Ipv6, [postupy: Úprava konfiguračního souboru počítače na povolení podpory Ipv6](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md). Také se ujistěte, že je povolena podpora protokolu IPv6 pro operační systém.  
   
- Rozhraní .NET Framework má přepínač konfigurace následujícím způsobem nastavit v konfiguračním souboru  
+ Rozhraní .NET Framework obsahuje konfigurační přepínač, nastavte v konfiguračním souboru následujícím způsobem  
   
 ```xml  
 <system.net>…  
@@ -39,12 +38,12 @@ Chcete-li používat protokol IPv6, ujistěte se, že používáte verzi operač
 </system.net>  
 ```  
   
- Pro rozhraní .NET Framework verze 1.1 a starší se hodnota **pro protokol ipv6** konfigurace přepínače určuje zda členy <xref:System.Net.Dns?displayProperty=nameWithType> třída vrátit adresy IPv6.  
+ Pro rozhraní .NET Framework verze 1.1 nebo starší, hodnota **podporuje protokol ipv6** konfigurační přepínač určuje, zda členové <xref:System.Net.Dns?displayProperty=nameWithType> třídy zpáteční adresu IPv6.  
   
- Pro rozhraní .NET Framework verze 2.0 nebo novější, pokud systém Windows podporuje protokol IPv6 a potom členy <xref:System.Net.Dns?displayProperty=nameWithType> třídy (například <xref:System.Net.Dns.GetHostEntry%2A?displayProperty=nameWithType> metoda), vrátí adresy IPv6 s jedním z omezení. Zastaralé členy DNS <xref:System.Net.Dns?displayProperty=nameWithType> (například <xref:System.Net.Dns.Resolve%2A?displayProperty=nameWithType> metoda) bude číst a rozpoznat hodnota v konfiguračním souboru pro nastavení pro protokol ipv6.  
+ Pro rozhraní .NET Framework verze 2.0 nebo novější, pokud Windows podporuje protokol IPv6 a členy <xref:System.Net.Dns?displayProperty=nameWithType> třídy, (například <xref:System.Net.Dns.GetHostEntry%2A?displayProperty=nameWithType> metoda), vrátí adresy IPv6 s jediným omezením. Zastaralé členy DNS <xref:System.Net.Dns?displayProperty=nameWithType> (například <xref:System.Net.Dns.Resolve%2A?displayProperty=nameWithType> metoda) přečte a rozpoznat hodnotu v konfiguračním souboru pro nastavení podporuje protokol ipv6.  
   
 ## <a name="see-also"></a>Viz také  
  [Protokol IP (Internet Protocol) verze 6](../../../docs/framework/network-programming/internet-protocol-version-6.md)  
  [Sokety](../../../docs/framework/network-programming/sockets.md)  
  [Schéma nastavení sítě](../../../docs/framework/configure-apps/file-schema/network/index.md)  
- [\<IPv6 > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)
+ [\<IPv6 > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/ipv6-element-network-settings.md)

@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: ac178408-1485-436f-8d3e-eee3bf80cb24
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: db94a1a4588c2f889da8adb1cb3e47e208ce1211
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e5d5e82c5c2cfc48c98559bd6ce14519bdfaa522
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528669"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085915"
 ---
 # <a name="implementing-the-ui-automation-tableitem-control-pattern"></a>Implementace vzoru ovládacích prvků TableItem pro automatizaci uživatelského rozhraní
 > [!NOTE]

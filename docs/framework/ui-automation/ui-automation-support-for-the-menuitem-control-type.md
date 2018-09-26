@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 54bce311-3d23-40b9-ba90-1bdbdaf8fbba
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: ff1b7320f26e63b9f9d0f6fea923374663802b1f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 39eca896b8b2102d33c5747fe42664713cb4f0f5
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46580028"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108241"
 ---
 # <a name="ui-automation-support-for-the-menuitem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuItem
 > [!NOTE]

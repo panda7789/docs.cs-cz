@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 53be78a6-cdcc-4af3-a464-5927d19c54e8
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 0aa921480d4aee0ec87103491018f2843a1d7b37
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 983e0fa4959c596e38aa557aaf385f7f876ddda2
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512801"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111136"
 ---
 # <a name="ui-automation-support-for-the-window-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku okno
 > [!NOTE]

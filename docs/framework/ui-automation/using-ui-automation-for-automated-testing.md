@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 2fe3d511b92ff055e80999fa498c24a44f771ebf
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4a43b33c1faf123ce05be70db102bc9b2ac541f3
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503365"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111487"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Použití automatizace uživatelského rozhraní pro automatizované testování
 > [!NOTE]

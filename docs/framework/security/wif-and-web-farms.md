@@ -3,13 +3,12 @@ title: Technologie WIF a webové farmy
 ms.date: 03/30/2017
 ms.assetid: fc3cd7fa-2b45-4614-a44f-8fa9b9d15284
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 365416a82881c32b8fdcd3211aa42acb9f273483
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f65e10fa44c9d245bc7d275ac0e1d8fe914bae0b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502726"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112507"
 ---
 # <a name="wif-and-web-farms"></a>Technologie WIF a webové farmy
 Při použití technologie Windows Identity Foundation (WIF) k zabezpečení prostředků aplikace předávající stranu, která je nasazená ve webové farmě, musíte provést určité kroky k zajištění, že technologie WIF zpracovávat tokeny z instancí aplikace předávající strany, který běží na různých počítače ve farmě. Dané zpracování zahrnuje ověřování podpisů tokenu relace, šifrování a dešifrování tokenů relace, ukládání do mezipaměti relace tokeny a zjišťování, odesílal tokeny zabezpečení.  

@@ -1,15 +1,15 @@
 ---
-title: Serializace ukázky pro rozhraní .NET Framework
+title: Ukázky serializace pro rozhraní .NET Framework
 ms.date: 03/30/2017
 ms.assetid: 6a56f66d-c80a-43e9-8e50-fb9b61120222
-ms.openlocfilehash: 67fef0855cbe33a32d4a3838e88a246cdc884dd4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5deae766b2b05fcb14c51666fa9fb988832a9a2d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33581466"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47087301"
 ---
-# <a name="serialization-samples-for-the-net-framework"></a>Serializace ukázky pro rozhraní .NET Framework
+# <a name="serialization-samples-for-the-net-framework"></a>Ukázky serializace pro rozhraní .NET Framework
 V této části ukazuje serializaci objektů v rozhraní .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
@@ -20,10 +20,7 @@ V této části ukazuje serializaci objektů v rozhraní .NET Framework.
  Ukazuje verze funkce tolerance serializace rozhraní .NET.  
   
  [Ukázka technologie serializace obecných typů ve webových službách](../../../docs/standard/serialization/web-services-generics-serialization-technology-sample.md)  
- Ukazuje, jak používat a řízení serializace obecných typů ve webové služby ASP.NET.  
-  
- [Ukázka technologie IXmlSerializable ve webových službách](../../../docs/standard/serialization/web-services-ixmlserializable-technology-sample.md)  
- Ukazuje, jak používat <xref:System.Xml.Serialization.IXmlSerializable> k řízení serializace vlastních typů ve webové služby ASP.NET.  
+ Ukazuje, jak používat a řídit serializace obecných typů v webové služby ASP.NET. 
   
  [Ukázka technologie SchemaImporterExtension](../../../docs/standard/serialization/schemaimporterextension-technology-sample.md)  
  Ukazuje vlastní <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension>.  

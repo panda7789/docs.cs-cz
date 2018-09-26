@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5996ce41c80cb54c4fcb9104c2993c85bcc2b466
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46526468"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082143"
 ---
 # <a name="deletemethod-function"></a>Funkce DeleteMethod
 Odstraní zadanou metodu z definice třídy CIM.

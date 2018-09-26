@@ -3,19 +3,18 @@ title: System.ServiceModel.Security.SecuritySessionServerCloseSendFailure
 ms.date: 03/30/2017
 ms.assetid: b848eeeb-07d6-4f2d-a14a-e62ee1968dfa
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: e2800a352e4f140665dbdbea55f318f7cb2bf50e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 883450a9bcffa0c364786c8c938916ce0b168b38
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33482724"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47107828"
 ---
 # <a name="systemservicemodelsecuritysecuritysessionserverclosesendfailure"></a>System.ServiceModel.Security.SecuritySessionServerCloseSendFailure
 System.ServiceModel.Security.SecuritySessionServerCloseSendFailure  
   
 ## <a name="description"></a>Popis  
- Došlo k chybě při odesílání relace zabezpečení blízko klienta.  
+ Došlo k chybě při odesílání relace zabezpečení klientovi zprávu zavřít.  
   
 ## <a name="see-also"></a>Viz také  
  [Trasování](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)  

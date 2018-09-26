@@ -1,23 +1,22 @@
 ---
-title: '&lt;Zrušte zaškrtnutí&gt;'
+title: '&lt;Vymazat&gt;'
 ms.date: 03/30/2017
 ms.assetid: 54dcd1d1-038f-4fc8-a3a4-56ba7a1ca0fd
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: d4d81a1b876c724ad60be399756fbe37c67b7153
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8f5d2e2b580d6a2824fd885f9b08cb2b2f0b244e
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754912"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111565"
 ---
-# <a name="ltcleargt"></a>&lt;Zrušte zaškrtnutí&gt;
-Vymaže všechny rutiny tokenu zabezpečení z aktuální kolekce obslužná rutina tokenu.  
+# <a name="ltcleargt"></a>&lt;Vymazat&gt;
+Vymaže všechny obslužné rutiny tokenů zabezpečení z aktuální kolekce obslužné rutiny tokenů.  
   
  \<system.identityModel>  
 \<identityConfiguration >  
 \<securityTokenHandlers >  
-\<Clear >  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,4 +44,4 @@ Vymaže všechny rutiny tokenu zabezpečení z aktuální kolekce obslužná rut
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.|
+|[\<securityTokenHandlers >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlers.md)|Určuje kolekci obslužné rutiny tokenů zabezpečení, které jsou registrované na koncový bod.|

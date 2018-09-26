@@ -1,18 +1,17 @@
 ---
-title: '&lt;roleClaimType&gt;'
+title: '&lt;RoleClaimType&gt;'
 ms.date: 03/30/2017
 ms.assetid: 69a49deb-6369-41ba-806b-ae8d21fac64b
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 909df1bd6054d9737f91c30c3c6b2d68b932281c
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 565bf30d334c62c8132c60f411e89f7b260c54f1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32755185"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084342"
 ---
-# <a name="ltroleclaimtypegt"></a>&lt;roleClaimType&gt;
-Určuje typ deklarace identity, která definuje typ deklarace role v kolekci <xref:System.Security.Claims.ClaimsIdentity> objektů vrácený <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metoda obslužná rutina tokenu.  
+# <a name="ltroleclaimtypegt"></a>&lt;RoleClaimType&gt;
+Určuje typ deklarace identity, která definuje typ deklarace role v kolekci <xref:System.Security.Claims.ClaimsIdentity> objektů vrácených podle <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A> metoda obslužné rutiny tokenů.  
   
  \<system.identityModel>  
 \<identityConfiguration >  
@@ -45,7 +44,7 @@ Určuje typ deklarace identity, která definuje typ deklarace role v kolekci <xr
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|value|Řetězec, který určuje identifikátor URI, který představuje typ deklarace identity deklarací identity pro typ deklarace role.|  
+|value|Řetězec určující identifikátor URI, který představuje typ deklarace identity z deklarací identity pro deklarace typu role.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -54,7 +53,7 @@ Určuje typ deklarace identity, která definuje typ deklarace role v kolekci <xr
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<samlSecurityTokenRequirement>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/samlsecuritytokenrequirement.md)|Poskytuje konfigurace <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> třídy, <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> , nebo odvozená třída buď z těchto tříd.|  
+|[\<samlSecurityTokenRequirement>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/samlsecuritytokenrequirement.md)|Poskytuje konfiguraci pro <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> třídy, <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> třídu nebo z odvozené třídy kterékoli z těchto tříd.|  
   
 ## <a name="remarks"></a>Poznámky  
  `<roleClaimType>` Nastaví element <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement.RoleClaimType%2A> vlastnost při <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> objekt je inicializován z konfigurace.  

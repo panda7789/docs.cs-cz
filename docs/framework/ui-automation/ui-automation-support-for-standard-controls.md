@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: cbfb640a068a2c1178d321480ee3a112db07b6ac
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 68fa7753be76b0681c40e540e86b11c89e7a8ca1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519985"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157022"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Podpora automatizace uživatelského rozhraní pro standardní ovládací prvky
 > [!NOTE]

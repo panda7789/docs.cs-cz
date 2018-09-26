@@ -11,33 +11,32 @@ helpviewer_keywords:
 ms.assetid: ae1ac356-267d-4753-8d7a-7a04eb45a9be
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 93d0d2ea5cf3b0329d9b1a03a233cff2d8133072
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 461043dbb57043c5c18ea703d45f8b3ae487d271
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767476"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112280"
 ---
 # <a name="web-settings-schema"></a>Schéma nastavení webu
-Nastavení webové zadejte procesoru a úroveň spuštění ASP.NET nastavení, které platí pro procesy chování spravované technologií ASP.NET, který je hostitelem vrstvy. Tato nastavení se liší od nastavení typ domény aplikace, které jsou určené v souboru Web.config aplikace technologie ASP.NET.  
+Nastavení webu zadejte procesoru a úroveň spuštění ASP.NET nastavení platná pro celého procesu chování spravuje hostování vrstvy technologie ASP.NET. Tato nastavení se liší od nastavení typ domény aplikace, která jsou uvedeny v souboru Web.config aplikace technologie ASP.NET.  
   
- Nastavení webové jsou obsažené v Aspnet.config soubory, které jsou umístěny v instalačních složkách verze rozhraní .NET Framework. Například soubor Aspnet.config pro [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] je v následující složce:  
+ Nastavení webu jsou obsaženy v souborech Aspnet.config, které jsou umístěné ve složce instalace pro verzi rozhraní .NET Framework. Například soubor Aspnet.config pro [!INCLUDE[dnprdnext](../../../../../includes/dnprdnext-md.md)] je v následující složce:  
   
  `C:\Windows\Microsoft.NET\Framework\v2.0.50727\`  
   
- Nastavení webové nepoužívají v další konfigurační soubory například souboru machine.config, kořenový soubor Web.config nebo souborů Web.config úrovni aplikace.  
+ Webové nastavení nepoužívají v žádné další konfigurační soubory, například souboru machine.config, kořenový soubor Web.config nebo souborech Web.config na úrovni aplikace.  
   
- [\<Konfigurace > elementu](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+ [\<Konfigurace > – Element](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [\<System.Web > elementu (webové nastavení)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)  
+ [\<System.Web > – Element (nastavení webu)](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)  
   
- [\<applicationPool > – Element (webové nastavení)](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)  
+ [\<applicationPool > – Element (nastavení webu)](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<system.web>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace, které používá ASP.NET hostování vrstvy.|  
-|[\<ApplicationPool >](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)|Určuje procesoru a nastavení ASP.NET úroveň spuštění, které platí pro procesy chování spravované technologií ASP.NET, který je hostitelem vrstvy.|  
+|[\<system.web>](../../../../../docs/framework/configure-apps/file-schema/web/system-web-element-web-settings.md)|Obsahuje informace, které používá vrstvy hostování technologie ASP.NET.|  
+|[\<ApplicationPool >](../../../../../docs/framework/configure-apps/file-schema/web/applicationpool-element-web-settings.md)|Určuje procesoru a úroveň spuštění ASP.NET nastavení platná pro celého procesu chování spravuje hostování vrstvy technologie ASP.NET.|  
   
 ## <a name="see-also"></a>Viz také  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)

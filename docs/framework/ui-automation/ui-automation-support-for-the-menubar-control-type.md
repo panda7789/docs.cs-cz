@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: c1202b21-c1f0-4560-853c-7b99bd73ad97
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: f2927ea6eed0bf23f75f960f8ecef0a1ad670253
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 7b73b4bf8887e5828e6341e55f48bbc867ed7268
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46698568"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47115032"
 ---
 # <a name="ui-automation-support-for-the-menubar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuBar
 > [!NOTE]

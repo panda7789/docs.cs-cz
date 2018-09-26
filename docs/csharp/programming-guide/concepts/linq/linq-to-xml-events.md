@@ -3,11 +3,11 @@ title: Události LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
 ms.openlocfilehash: 6308d81eac830e11b6d58f8e460dfa377663cd21
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46578547"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112267"
 ---
 # <a name="linq-to-xml-events-c"></a>Události LINQ to XML (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] události umožňují upozorněni, když je změněna stromu XML.  

@@ -1,5 +1,5 @@
 ---
-title: Modulární protokoly programování
+title: Programování připojitelných protokolů
 ms.date: 03/30/2017
 helpviewer_keywords:
 - downloading Internet resources, pluggable protocols
@@ -17,22 +17,21 @@ helpviewer_keywords:
 ms.assetid: 66ef8456-7576-4e97-8956-959b216373db
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: fe9f9216c00448391967b82c84207f95eaccdb53
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7d517ef2683b8468410880d2bb50f79b382367bf
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396134"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170149"
 ---
-# <a name="programming-pluggable-protocols"></a>Modulární protokoly programování
-Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základ pro připojitelné protokoly. Odvozené třídy specifické pro protokol z <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, můžete data žádosti z internetových prostředků a přečíst odpověď bez zadání protokol používá aplikace.  
+# <a name="programming-pluggable-protocols"></a>Programování připojitelných protokolů
+Abstraktní <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy poskytují základ pro připojitelné protokoly. Odvozené třídy pro konkrétní z <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, můžete data žádosti z internetového zdroji a čtení odpovědi bez zadání protokolu používá aplikace.  
   
- Před vytvořením konkrétního protokolu <xref:System.Net.WebRequest>, je nutné zaregistrovat jeho metody Create. Použít statickou <xref:System.Net.WebRequest.RegisterPrefix%28System.String%2CSystem.Net.IWebRequestCreate%29> metodu <xref:System.Net.WebRequest> k registraci <xref:System.Net.WebRequest> následné zpracování sadu požadavků na konkrétní schéma Internet, schéma a server nebo do schématu, serveru a cestu.  
+ Než budete moct vytvořit protokol konkrétní <xref:System.Net.WebRequest>, je nutné zaregistrovat jeho metody Create. Použití statické <xref:System.Net.WebRequest.RegisterPrefix%28System.String%2CSystem.Net.IWebRequestCreate%29> metoda <xref:System.Net.WebRequest> k registraci <xref:System.Net.WebRequest> následné zpracování sady požadavků na konkrétní schéma Internet, schéma a server nebo do schématu, server a cestu.  
   
- Ve většině případů bude moct posílat a přijímat data pomocí metody a vlastnosti <xref:System.Net.WebRequest> třídy. Ale pokud budete potřebovat přístup k vlastnosti specifické pro protokol, vám může přiřazení typu <xref:System.Net.WebRequest> ke konkrétní instanci odvozené třídy.  
+ Ve většině případů budete moct posílat a přijímat data pomocí metod a vlastností <xref:System.Net.WebRequest> třídy. Ale pokud potřebujete přístup k vlastnostem specifickým pro protokol, můžete přetypovat <xref:System.Net.WebRequest> k určité instanci odvozené třídy.  
   
- Chcete využít výhod modulární protokoly, vaše <xref:System.Net.WebRequest> následníky musíte zadat výchozí požadavků a odpovědí transakci, která nevyžaduje vlastnosti specifické pro protokol nastavení. Například <xref:System.Net.HttpWebRequest> třídy, které implementuje <xref:System.Net.WebRequest> třídy pro protokol HTTP, poskytuje `GET` požadavku ve výchozím nastavení a vrátí <xref:System.Net.HttpWebResponse> obsahující datový proud vrácený z webového serveru.  
+ Abyste mohli využívat připojitelných protokolů, vaše <xref:System.Net.WebRequest> následníků musí poskytovat výchozí transakce požadavků a odpovědí, který nevyžaduje konkrétní nastavení vlastností. Například <xref:System.Net.HttpWebRequest> třídy, která implementuje <xref:System.Net.WebRequest> třídy pro protokol HTTP, poskytuje `GET` žádost ve výchozím nastavení a vrátí <xref:System.Net.HttpWebResponse> datový proud vrácený z webového serveru, který obsahuje.  
   
 ## <a name="see-also"></a>Viz také  
  [Odvození ze žádosti WebRequest](../../../docs/framework/network-programming/deriving-from-webrequest.md)  

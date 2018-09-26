@@ -1,5 +1,5 @@
 ---
-title: '&lt;Odebrat&gt; Element pro bypasslist – (nastavení sítě)'
+title: '&lt;Odebrat&gt; – Element pro bypasslist (nastavení sítě)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/bypasslist/remove
@@ -12,20 +12,19 @@ helpviewer_keywords:
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 5c7918048743d53d8523ec399d1a11c67152a2bf
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b6c72d9780088fddcaa59e644ff8069afbb4e43d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742946"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47074976"
 ---
-# <a name="ltremovegt-element-for-bypasslist-network-settings"></a>&lt;Odebrat&gt; Element pro bypasslist – (nastavení sítě)
-Odebere seznam obcházení proxy adresy IP nebo název DNS.  
+# <a name="ltremovegt-element-for-bypasslist-network-settings"></a>&lt;Odebrat&gt; – Element pro bypasslist (nastavení sítě)
+Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.  
   
  \<Konfigurace >  
 \<system.net>  
-\<defaultProxy – >  
+\<defaultProxy >  
 \<bypasslist – >  
 \<Odebrat >  
   
@@ -53,20 +52,20 @@ Odebere seznam obcházení proxy adresy IP nebo název DNS.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[bypasslist –](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které se nedoporučuje používat proxy server.|  
+|[atribut bypasslist bude](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.|  
   
 ## <a name="remarks"></a>Poznámky  
- `remove` Element odebere regulární výrazy, které popisují IP adresy nebo názvy serverů DNS ze seznamu adres, které Nepoužívat proxy server. Adresy byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurace.  
+ `remove` Element odebere regulární výrazy popisující IP adres nebo názvů DNS serverů v seznamu adres, které obcházejí proxy server. Adresy byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii configuration.  
   
- Hodnota `address` atribut by měl mít regulární výraz, který popisuje sadu IP adres nebo názvů hostitelů.  
+ Hodnota `address` atribut musí být regulární výraz, který popisuje sadu IP adres nebo názvů hostitele.  
   
- Další informace o regulárních výrazech najdete v tématu. [Regulární výrazy rozhraní .NET framework](../../../../../docs/standard/base-types/regular-expressions.md).  
+ Další informace o formátování regulárních výrazů naleznete v tématu. [Regulárních výrazech .NET Frameworku](../../../../../docs/standard/base-types/regular-expressions.md).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere všechny předchozí definice pro doménu společnosti adventure-works.com a pak přidá do seznamu jednorázové přihlášení k doméně contoso.com.  
+ Následující příklad odebere všechny předchozí definice pro doménu společnosti adventure works.com a pak přidá do seznamu obcházení doménu contoso.com.  
   
 ```xml  
 <configuration>  

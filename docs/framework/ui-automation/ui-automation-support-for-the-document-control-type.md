@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: a79d594b-1ca0-4543-8dac-afd2c645201d
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: c75b0b1e3a901b9c83f14a783d05c2022335a5f5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 505d6f479a77c8a8579eba192250c08e932aea09
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515730"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083069"
 ---
 # <a name="ui-automation-support-for-the-document-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku dokument
 > [!NOTE]

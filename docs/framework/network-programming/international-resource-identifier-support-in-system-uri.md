@@ -1,50 +1,49 @@
 ---
-title: Podpora identifikátor mezinárodní prostředků v System.Uri
+title: Podpora mezinárodních identifikátorů prostředků v System.Uri
 ms.date: 03/30/2017
 ms.assetid: b5e994c3-3535-4aff-8e1b-b69be22e9a22
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: bf26f98773383ee6671162a53b84f155c18b5adf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ef44453dce2f59a2b481d0533b8bd28de516c630
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398246"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47156563"
 ---
-# <a name="international-resource-identifier-support-in-systemuri"></a>Podpora identifikátor mezinárodní prostředků v System.Uri
-<xref:System.Uri?displayProperty=nameWithType> Třída rozšířilo s podporou mezinárodní názvy domén (IDN) a mezinárodní prostředků identifikátor (IRI). Tato vylepšení jsou k dispozici v rozhraní .NET Framework 3.5 3.0 SP1 a 2.0 SP1.  
+# <a name="international-resource-identifier-support-in-systemuri"></a>Podpora mezinárodních identifikátorů prostředků v System.Uri
+<xref:System.Uri?displayProperty=nameWithType> Třídy bylo rozšířeno pomocí International Resource Identifier (IRI) a podporu mezinárodní názvy domén (IDN). Tato vylepšení jsou k dispozici v rozhraní .NET Framework 3.5, 3.0 SP1 a 2.0 SP1.  
   
-## <a name="iri-and-idn-support"></a>IRI a podporu IDN.  
- Webové adresy jsou obvykle vyjádřit pomocí identifikátorů URI (Uniform Resource) s velmi omezenou sadu znaků:  
+## <a name="iri-and-idn-support"></a>IRI a podporu IDN  
+ Webové adresy jsou obvykle vyjádřeny pomocí identifikátorů URI (Uniform Resource), které obsahují velmi omezené sady znaků:  
   
 -   Velká a malá písmena znaků ASCII – písmena anglické abecedy.  
   
 -   Číslice od 0 do 9.  
   
--   Malý počet dalších symboly ASCII.  
+-   Malý počet dalších symbolů ASCII.  
   
- Specifikace pro identifikátory URI jsou popsány v dokumentu RFC 2396 a RFC 3986 publikovaná Internet Engineering Task Force (IETF).  
+ Specifikace pro identifikátory URI jsou popsány v dokumentu RFC 2396 a RFC 3986 publikovaná pomocí Engineering Task Force IETF (Internet).  
   
- S nárůstem Internetu se zvyšuje potřeba k identifikaci prostředků pomocí jiných jazyků než angličtiny. Identifikátory, které usnadňují tohoto požadavku a povolit jiné znaky než ASCII (znaky znakové sady Unicode nebo ISO 10646) jsou označovány jako identifikátory prostředků mezinárodní (IRIs). Specifikace pro IRIs jsou popsány v dokumentu RFC 3987 publikovaná sdružení IETF DEFINUJE. Použití IRIs umožňuje adresu URL tak, aby obsahovala znaky Unicode.  
+ S nárůstem Internet je rostoucí potřebu pro identifikaci prostředků, pomocí jiné jazyky než angličtinu. Identifikátory, které usnadňují potřebě a umožňují jiné znaky než ASCII (znaků ve znakové sadě Unicode/ISO 10646) jsou označovány jako International Resource Identifier (IRIs). Specifikace pro IRIs jsou popsány v dokumentu RFC 3987 publikoval(a) IETF. Použití IRIs umožňuje adresu URL tak, aby obsahovala znaky Unicode.  
   
- Existující <xref:System.Uri?displayProperty=nameWithType> třída rozšířilo a poskytovat podporu IRI podle RFC 3987. Aktuální uživatelé neuvidí žádné chování se liší od rozhraní .NET Framework 2.0, pokud se konkrétně povolit IRI. Tím se zajistí kompatibilitu aplikace s předchozí verze rozhraní .NET Framework.  
+ Existující <xref:System.Uri?displayProperty=nameWithType> třídy se prodloužila, k poskytování podpory IRI podle RFC 3987. Aktuální uživatelé neuvidí žádné změny v chování rozhraní .NET Framework 2.0, pokud jsou specificky nepovolíte IRI. Tím se zajistí kompatibilitu aplikací se staršími verzemi rozhraní .NET Framework.  
   
- Aplikace můžete určit, zda chcete použít mezinárodní název domény (IDN) analýza u názvů domén a zda má být použita IRI Analýza pravidla. To lze provést v souboru machine.config nebo v souboru app.config.  
+ Aplikace můžete určit, jestli se má použít, analýze mezinárodních názvů domén (IDN) použitý pro názvy domén a určuje, zda by měl použít IRI pravidel pro analýzu. To můžete udělat v souboru machine.config nebo v souboru app.config.  
   
- Povolení IDN převede všechny popisky kódování Unicode v názvu domény jejich ekvivalenty u Punycode. Názvy Punycode obsahovat pouze znaky ASCII a vždy začínají předponou xn –. Důvodem je podpora existující servery DNS na Internetu, protože většina servery DNS podporují pouze znaky ASCII (viz RFC 3940).  
+ Povolení IDN převede všechny popisky kódování Unicode v názvu domény na jejich ekvivalenty kódování Punycode. Kódování Punycode názvy obsahovat pouze znaky ASCII a vždy začínají předponou xn –. Důvodem je k podpoře existujících serverů DNS na Internetu, protože většina servery DNS podporují jenom znaky ASCII (viz RFC 3940).  
   
- Povolení IRI a IDN. hodnota bude mít vliv <xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType> vlastnost. Povolení IRI a IDN. můžete také změnit chování <xref:System.Uri.Equals%2A?displayProperty=nameWithType>, <xref:System.Uri.OriginalString%2A?displayProperty=nameWithType>, <xref:System.Uri.GetComponents%2A?displayProperty=nameWithType>, a <xref:System.Uri.IsWellFormedOriginalString%2A> metody.  
+ Povolení IRI a IDN hodnota bude mít vliv <xref:System.Uri.DnsSafeHost%2A?displayProperty=nameWithType> vlastnost. Povolení IRI a IDN můžete také změnit chování <xref:System.Uri.Equals%2A?displayProperty=nameWithType>, <xref:System.Uri.OriginalString%2A?displayProperty=nameWithType>, <xref:System.Uri.GetComponents%2A?displayProperty=nameWithType>, a <xref:System.Uri.IsWellFormedOriginalString%2A> metody.  
   
- <xref:System.GenericUriParser?displayProperty=nameWithType> Třída rozšířilo také umožňuje vytvoření přizpůsobitelné analyzátor, který podporuje IRI a IDN. Chování <xref:System.GenericUriParser?displayProperty=nameWithType> předáním bitovou kombinaci hodnot, které jsou k dispozici v je zadaný objekt <xref:System.GenericUriParserOptions?displayProperty=nameWithType> výčet <xref:System.GenericUriParser?displayProperty=nameWithType> konstruktor. <xref:System.GenericUriParserOptions.IriParsing?displayProperty=nameWithType> Typ určuje analyzátor podporuje analýzy pravidla stanovená v dokumentu RFC 3987 pro mezinárodní prostředků identifikátory (IRI). Jestli je ve skutečnosti používat IRI závisí na Pokud je povoleno IRI.  
+ <xref:System.GenericUriParser?displayProperty=nameWithType> Třídy také bylo rozšířeno umožňující vytvoření přizpůsobitelné analyzátor, který podporuje IRI a IDN. Chování <xref:System.GenericUriParser?displayProperty=nameWithType> zadán objekt předáním bitová kombinace hodnot, které jsou k dispozici v <xref:System.GenericUriParserOptions?displayProperty=nameWithType> výčet <xref:System.GenericUriParser?displayProperty=nameWithType> konstruktoru. <xref:System.GenericUriParserOptions.IriParsing?displayProperty=nameWithType> Označuje analyzátor podporuje analýzy pravidel specifikovaných v dokumentu RFC 3987 pro identifikátory mezinárodní prostředků (IRI). Určuje, zda se ve skutečnosti používá IRI závisí na Pokud IRI je povolená.  
   
- <xref:System.GenericUriParserOptions.Idn?displayProperty=nameWithType> Typ určuje analyzátor podporuje mezinárodní domény název (IDN) analýza (IDN) názvů hostitelů. Určuje, zda IDN ve skutečnosti použije, závisí na Pokud je povoleno IDN.  
+ <xref:System.GenericUriParserOptions.Idn?displayProperty=nameWithType> Označuje analyzátor podporuje mezinárodních názvů domén (IDN) analýza (IDN) názvy hostitelů. Určuje, zda se ve skutečnosti používá IDN závisí na Pokud je povoleno IDN.  
   
- Povolení IRI analýza provede normalizaci a znak kontrola podle nejnovější IRI pravidla v dokumentu RFC 3987. Výchozí hodnota je pro IRI analýza zakážete normalizaci a kontrola znak se provádějí podle RFC 2396 a RFC 3986.  
+ Povolení IRI parsování provede normalizaci a znak kontroly podle nejnovějších IRI pravidla v dokumentu RFC 3987. Výchozí hodnota je pro IRI parsování zakážete normalizace a znak kontroluje dokončení podle RFC 2396 a RFC 3986.  
   
- IRI a IDN zpracování v <xref:System.Uri?displayProperty=nameWithType> třídy můžete řídit také pomocí <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> a <xref:System.Configuration.IdnElement?displayProperty=nameWithType> třídy nastavení konfigurace. <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> Nastavení povolí nebo zakáže IRI zpracování v <xref:System.Uri?displayProperty=nameWithType> třídy. <xref:System.Configuration.IdnElement?displayProperty=nameWithType> Nastavení povolí nebo zakáže IDN zpracování v <xref:System.Uri> třídy. <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> Taky nepřímo nastavení řídí IDN. Zpracování IRI musí být povolen pro zpracování tak, aby možné IDN. Pokud IRI zpracování je zakázána, bude zpracování IDN nastavit výchozí nastavení, kde chování rozhraní .NET Framework 2.0 se používá pro kompatibilitu a IDN. názvy nejsou.  
+ IRI a zpracování v IDN <xref:System.Uri?displayProperty=nameWithType> třídy je možné řídit také pomocí <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> a <xref:System.Configuration.IdnElement?displayProperty=nameWithType> třídy nastavení konfigurace. <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> Nastavení povolí nebo zakáže IRI zpracování <xref:System.Uri?displayProperty=nameWithType> třídy. <xref:System.Configuration.IdnElement?displayProperty=nameWithType> Nastavení povolí nebo zakáže zpracování v IDN <xref:System.Uri> třídy. <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> Nastavení taky nepřímo řídí IDN. Zpracování IRI musí být povolena pro zpracování bude možné IDN. Pokud IRI zpracování je zakázané, bude zpracování IDN nastavit na výchozí nastavení, pokud rozhraní .NET Framework 2.0 chování slouží k zajištění kompatibility a nepoužívají se názvy IDN.  
   
- Nastavení konfigurace pro <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> a <xref:System.Configuration.IdnElement?displayProperty=nameWithType> třídy konfigurace bude načten jednou při první <xref:System.Uri?displayProperty=nameWithType> třída je vytvořený. Změny nastavení konfigurace po uplynutí této doby se ignorují.  
+ Nastavení konfigurace pro <xref:System.Configuration.IriParsingElement?displayProperty=nameWithType> a <xref:System.Configuration.IdnElement?displayProperty=nameWithType> třídy pro konfiguraci se budou číst jednou při prvním <xref:System.Uri?displayProperty=nameWithType> třídy. Změny nastavení konfigurace po uplynutí této doby se ignorují.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Configuration.IdnElement?displayProperty=nameWithType>  

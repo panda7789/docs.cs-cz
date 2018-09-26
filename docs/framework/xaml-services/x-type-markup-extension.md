@@ -15,11 +15,11 @@ helpviewer_keywords:
 - Type markup extension in XAML [XAML Services]
 ms.assetid: e0e0ce6f-e873-49c7-8ad7-8b840eb353ec
 ms.openlocfilehash: e4d56c5b5deda0bd1df8827020e0b76cc6276c1c
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46579430"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112358"
 ---
 # <a name="xtype-markup-extension"></a>x:Type – rozšíření značek
 CLR poskytuje <xref:System.Type> objekt, který je základní typ pro zadaný typ XAML.  

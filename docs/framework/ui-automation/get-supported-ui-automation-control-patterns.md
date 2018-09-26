@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: 006c54c9-50bf-48d9-a855-9d62eb95603a
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: b0bc694148dbd91cd9e942a3f051aea9362fc150
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d948ff2f71ff7d4335cacc0fa3815dd75af4ad45
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511473"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47115045"
 ---
 # <a name="get-supported-ui-automation-control-patterns"></a>Získání podporovaných vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]

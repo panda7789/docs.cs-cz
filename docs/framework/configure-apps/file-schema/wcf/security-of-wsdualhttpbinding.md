@@ -3,13 +3,12 @@ title: '&lt;security&gt; – &lt;wsDualHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 023e0dd2a89c005928625cf95f3de61af81c7b6b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c817ea6faf5229a8d372a06b866c75e0f40af3b3
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514526"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113053"
 ---
 # <a name="ltsecuritygt-of-ltwsdualhttpbindinggt"></a>&lt;security&gt; – &lt;wsDualHttpBinding&gt;
 Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  

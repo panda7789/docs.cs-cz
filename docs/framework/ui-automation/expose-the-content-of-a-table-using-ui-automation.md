@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: ac3c5eaa-49c7-4653-b83e-532e2a2604a2
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 8be813a16e1cdbf8367a358d91cf3b958ac36398
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ad0dcc88ee3a0fcd62c5758cf9b49cd3206c6d3b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524622"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108506"
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní
 > [!NOTE]

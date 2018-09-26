@@ -23,13 +23,12 @@ helpviewer_keywords:
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: c7aebbfd0d25f6c5a9266857816a1723cb0c660e
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 4543802c3918a4761daa5a4fbbab366695823f73
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865658"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170536"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>Schéma konfiguračního souboru pro rozhraní .NET Framework
 

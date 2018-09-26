@@ -9,13 +9,12 @@ helpviewer_keywords:
 ms.assetid: 261dcc59-3a62-4e40-91dd-63ff9d2241c0
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 52dcb71a033ba4c2943ccda6787bf4a4e41d53d3
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: f15bdfd2643a8d4b17926d3a05cc15cb80e7a505
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577422"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112410"
 ---
 # <a name="ui-automation-control-types"></a>Typy ovládacích prvků pro automatizaci uživatelského rozhraní
 **Poznámka:** této dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů. Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).  

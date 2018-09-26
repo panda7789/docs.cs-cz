@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 3a29d185-65d8-42e3-bcc3-7f43e96f40c5
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 08ab6e94b819f9b9bfc275bf607f78b21dfa13a4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f705ccc3e033247e4617cfa585d8881815a021a2
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503938"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083514"
 ---
 # <a name="ui-automation-support-for-the-spinner-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku číselník
 > [!NOTE]

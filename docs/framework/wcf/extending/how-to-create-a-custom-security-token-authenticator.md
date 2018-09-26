@@ -8,13 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 ms.assetid: 10e245f7-d31e-42e7-82a2-d5780325d372
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 8cbc22be68aae976e939520383995652e896d529
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: cbedab4064173186251defead8394735de033cf7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696163"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111799"
 ---
 # <a name="how-to-create-a-custom-security-token-authenticator"></a>Postupy: vytvoření vlastní bezpečnostní ověřovací data tokenu
 Toto téma ukazuje, jak vytvořit ověřovací data tokenu zabezpečení vlastní a jak ji integrovat s Správce tokenů zabezpečení vlastní. Ověřovací data tokenu zabezpečení ověří obsah token zabezpečení, opatřeného příchozí zprávy. Pokud je ověření úspěšné, ověřovacích vrátí kolekci <xref:System.IdentityModel.Policy.IAuthorizationPolicy> instancí, které, při vyhodnocování, vrátí sadu deklarací identity.  

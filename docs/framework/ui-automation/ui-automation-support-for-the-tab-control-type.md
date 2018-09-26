@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: f8be2732-836d-4e4d-85e2-73aa39479bf4
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: de93aaab19c56bab298ec7af163937f053b4e569
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ffbc8e865ed371827b3d2e684ea2d0b36c87f82d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511568"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157152"
 ---
 # <a name="ui-automation-support-for-the-tab-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku karta
 > [!NOTE]

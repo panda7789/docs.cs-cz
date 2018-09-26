@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 4e0eeefb-e09b-46d2-b83b-0a7e35543ab8
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: cf6b6d7ebabc8e6cec52993c9a837f81f34669df
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 8e2d1e6774c6a8c00478bdb89bf541bb47a8a8a5
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584048"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47088279"
 ---
 # <a name="ui-automation-support-for-the-image-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku obrázek
 > [!NOTE]

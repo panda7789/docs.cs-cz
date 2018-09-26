@@ -16,11 +16,11 @@ ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 20050bee696f9d47324f1b095b0b3c1120f78255
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696726"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47087327"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Nahrazení v regulárních výrazech
 <a name="Top"></a> Substituce jsou prvky jazyka, které jsou rozpoznány pouze v rámci vzory pro nahrazení. Pro definování celého textu nebo jeho části, která má nahradit odpovídající text ve vstupním řetězci, používají vzor regulárního výrazu. Vzor pro nahrazení se může skládat z jedné nebo několika substitucí spolu s literálními znaky. Vzory pro nahrazení jsou poskytovány pro přetížení <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metodu, která mají `replacement` parametr a <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> metoda. Metody nahradí odpovídající vzor vzorem, který je definován `replacement` parametru.  

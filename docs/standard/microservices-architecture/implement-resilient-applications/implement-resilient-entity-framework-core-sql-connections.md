@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/08/2018
 ms.openlocfilehash: 59db9cdb894f76f54e77732be47dc6140a594121
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46561510"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170071"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implementace odolných připojení Entity Framework Core SQL
 

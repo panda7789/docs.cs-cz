@@ -4,11 +4,11 @@ description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
 ms.openlocfilehash: 13466b717d0676c2db5edf4c98a4ead3e673b96c
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46525578"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47087209"
 ---
 # <a name="rest-client"></a>Klient REST
 

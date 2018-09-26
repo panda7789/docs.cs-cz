@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 89f42247-c699-4afa-91e1-2baaf0d86c9d
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 0a072af63e9300cde5e67340716702efd18b5486
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: cab684ba9ceea392b245f04a9613832e1e262eab
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486255"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47109888"
 ---
 # <a name="ui-automation-support-for-the-separator-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku oddělovač
 > [!NOTE]

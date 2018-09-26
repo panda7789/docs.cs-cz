@@ -1,5 +1,5 @@
 ---
-title: TCP UDP
+title: UDP PROTOKOLU TCP
 ms.date: 03/30/2017
 helpviewer_keywords:
 - protocols, TCP/UDP
@@ -18,22 +18,21 @@ helpviewer_keywords:
 ms.assetid: df29b4b0-49e8-4923-82b9-13150dfc40f5
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 30630f397d491a6a5f251ddac14a4db90e53b999
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b3e39b952b37f70513b3a84ce6b6059b85e01c28
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394602"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080861"
 ---
-# <a name="tcp-udp"></a>TCP UDP
-Aplikace můžete použít protokol TCP (Transmission Control) a protokolu UDP (User Datagram) služby pomocí <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, a <xref:System.Net.Sockets.UdpClient> třídy. Tyto třídy protokolu jsou postavený na <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> třídy a postará o podrobnosti o přenosu dat.  
+# <a name="tcp-udp"></a>UDP PROTOKOLU TCP
+Protokolu TCP (Transmission Control) a protokolu UDP (User Datagram) služby se může používat aplikace <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, a <xref:System.Net.Sockets.UdpClient> třídy. Tyto třídy protokolu jsou zabudovány nad <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> třídy a aby se postaral o podrobnosti přenosu dat.  
   
- Třídy protokol použít synchronní metody sady **soketu** třídy poskytují jednoduchá a přímočará přístup k síťovým službám bez nutnosti zachování informací o stavu nebo znát podrobnosti o nastavení sokety specifické pro protokol. Použít asynchronní **soketu** metod, můžete použít asynchronní metody poskytl <xref:System.Net.Sockets.NetworkStream> třídy. Pro přístup k funkcím z **soketu** třídy nejsou viditelné protocol třídami, je nutné použít **soketu** – třída.  
+ Protokol třídy použijte synchronní metody **soketu** třídy poskytují jednoduché a nekomplikované přístup k síťovým službám bez režie zachování informací o stavu nebo znát podrobnosti o nastavení konkrétní sokety. Použití asynchronního **soketu** metody, můžete použít asynchronní metody poskytnuté <xref:System.Net.Sockets.NetworkStream> třídy. Pro přístup k funkcím nástroje **soketu** tříd nejsou viditelné v rámci protokolu tříd je nutné použít **soketu** třídy.  
   
- **TcpClient** a **TcpListener** představují síti pomocí **NetworkStream** třídy. Můžete použít <xref:System.Net.Sockets.TcpClient.GetStream%2A> má metoda vrátit datový proud sítě a pak zavolají datový proud <xref:System.Net.Sockets.NetworkStream.Read%2A> a <xref:System.Net.Sockets.NetworkStream.Write%2A> metody. **NetworkStream** nevlastní protokol třídy základní soketu, takže zavřením nemá vliv na soket.  
+ **TcpClient** a **TcpListener** představují síť používání **NetworkStream** třídy. Můžete použít <xref:System.Net.Sockets.TcpClient.GetStream%2A> má metoda vrátit datový proud sítě a poté zavolejte datový proud <xref:System.Net.Sockets.NetworkStream.Read%2A> a <xref:System.Net.Sockets.NetworkStream.Write%2A> metody. **NetworkStream** není vlastníkem soketu základní třídy protokol, tak jeho uzavřením nemá vliv na soketu.  
   
- **UdpClient** třída používá pro uložení datagramů UDP pole bajtů. Můžete použít <xref:System.Net.Sockets.UdpClient.Send%2A> metodu pro odeslání dat do sítě a <xref:System.Net.Sockets.UdpClient.Receive%2A> metodu datagramu příchozí.  
+ **UdpClient** třída používá pole bajtů pro uložení datagramů UDP. Můžete použít <xref:System.Net.Sockets.UdpClient.Send%2A> metoda k odesílání dat do sítě a <xref:System.Net.Sockets.UdpClient.Receive%2A> metoda přijímat příchozí datagram.  
   
 ## <a name="see-also"></a>Viz také  
  [Použití služeb TCP](../../../docs/framework/network-programming/using-tcp-services.md)  

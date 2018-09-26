@@ -18,11 +18,11 @@ helpviewer_keywords:
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
 ms.openlocfilehash: 3cb38cd9d7b27ab28b602e4e4c813d58d904abd3
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584133"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113777"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>Implementace asynchronního vzoru založeného na událostech
 Pokud píšete třída s atributem některé operace, které případně utrpíte významnému zpoždění, zvažte jeho asynchronní funkce implementací [založený na událostech přehled asynchronních vzorů](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md).  

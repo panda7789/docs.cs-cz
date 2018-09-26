@@ -5,13 +5,12 @@ helpviewer_keywords:
 - security [WCF], extending
 ms.assetid: a015a040-9fdf-4147-9ea9-f83b570be1d4
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: a16416e580dabd6a9057e11a8183437529ca83e8
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 3ae41e10a51ba0e4c27bcfbb1eb812e0015e5178
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45597040"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077808"
 ---
 # <a name="extending-security"></a>Rozšíření zabezpečení
 Tak, aby vyhovovaly nové typy deklarací identity a vlastní tokeny, můžete rozšířit Infrastruktura zabezpečení Windows Communication Foundation (WCF). Témata v této části ukazují, jak to lze provést.  

@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: e91a7393-a7f9-4838-a1a6-857438b24bc9
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: d5f40c19d537ffb48a1077a30e1a9b0d66c4f791
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f6b363e94b0247bc77f57c6a8ea1607f8600af2e
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519684"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170123"
 ---
 # <a name="ui-automation-support-for-the-calendar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku kalendář
 > [!NOTE]

@@ -11,11 +11,11 @@ ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e44fd3e6f806eef3805416dafd90a4855e79b3c7
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46525703"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111175"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>Potenciální nástrahy PLINQ
 V mnoha případech se může poskytnout PLINQ výrazné zlepšení výkonu přes sekvenčních LINQ to Objects dotazů. Paralelní provádění provádění dotazu však zavádí složitost, která může vést k problémům, které v sekvenčním kódu nejsou jako běžné nebo nejsou vůbec došlo k. Toto téma uvádí některé nedoporučované postupy při psaní dotazy PLINQ.  

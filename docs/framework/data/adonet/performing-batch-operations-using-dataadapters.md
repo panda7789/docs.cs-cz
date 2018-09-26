@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: e72ed5af-b24f-486c-8429-c8fd2208f844
 ms.openlocfilehash: cfc77ff3b030ffebf52feab0190f81fc4e581cf9
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696155"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47114967"
 ---
 # <a name="performing-batch-operations-using-dataadapters"></a>Provádění dávkových operací pomocí adaptérů dat
 Umožňuje podporu služby batch v ADO.NET <xref:System.Data.Common.DataAdapter> pro operace INSERT, UPDATE a DELETE ze skupin <xref:System.Data.DataSet> nebo <xref:System.Data.DataTable> na server, místo abyste odesílali jednu operaci najednou. Snížení počet zpátečních cest k serveru se obvykle vytváří nárůstu výkonu. Pro zprostředkovatele dat .NET pro SQL Server jsou podporovány dávkové aktualizace (<xref:System.Data.SqlClient>) a Oracle (<xref:System.Data.OracleClient>).  

@@ -3,11 +3,11 @@ title: Klienti
 ms.date: 03/30/2017
 ms.assetid: cce50025-0318-4a5e-9ce8-c67feab83b06
 ms.openlocfilehash: 844412b211fe6187e3475fc71b9c3ccca8dd178f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46580717"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108153"
 ---
 # <a name="clients"></a>Klienti
 Témata v této části se týkají architekturu klienta, jak pro přístup k Windows Communication Foundation (WCF) služba konfigurace klienta WCF a některé posouzení zabezpečení pro klienty WCF.  

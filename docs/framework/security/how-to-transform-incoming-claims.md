@@ -1,17 +1,16 @@
 ---
-title: 'Postupy: Transformovat příchozí deklarace identity'
+title: 'Postupy: Transformace příchozích deklarací identity'
 ms.date: 03/30/2017
 ms.assetid: 2831d514-d9d8-4200-9192-954bb6da1126
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: cb71e320116c3af73139f1a8083fa62e8a7e21a7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8673b4520d9727ae1aa78ef0bc9f435defb02598
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33400169"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171319"
 ---
-# <a name="how-to-transform-incoming-claims"></a>Postupy: Transformovat příchozí deklarace identity
+# <a name="how-to-transform-incoming-claims"></a>Postupy: Transformace příchozích deklarací identity
 ## <a name="applies-to"></a>Platí pro  
   
 -   Microsoft® Windows® Identity Foundation (WIF)  
@@ -19,7 +18,7 @@ ms.locfileid: "33400169"
 -   ASP.NET® webových formulářů  
   
 ## <a name="summary"></a>Souhrn  
- Tento postup obsahuje podrobné podrobné postupy pro vytvoření jednoduché aplikace webových formulářů ASP.NET pracujícím s deklaracemi a transformaci příchozí deklarace identity. Také poskytuje pokyny k testování aplikace k ověření, že transformované deklarace identity jsou uvedené při spuštění aplikace.  
+ Tento návod obsahuje podrobně popisuje postupy pro vytvoření jednoduché aplikace webových formulářů ASP.NET s deklaracemi identity a transformaci příchozí deklarace identity. Také poskytuje pokyny k otestování aplikace ověřit, že jsou předkládány transformované deklarace při spuštění aplikace.  
   
 ## <a name="contents"></a>Obsah  
   
@@ -29,49 +28,49 @@ ms.locfileid: "33400169"
   
 -   Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché rozhraní ASP.NET Web Forms aplikace  
+-   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – implementace deklarace identity pomocí vlastní ClaimsAuthenticationManager transformace  
+-   Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace  
   
 -   Krok 3 – Otestování řešení  
   
 ## <a name="objectives"></a>Cíle  
   
--   Konfigurace aplikace webových formulářů ASP.NET pro ověřování založené na deklaracích  
+-   Konfigurace aplikace webových formulářů ASP.NET pro ověřování nezaloženého na deklaracích  
   
--   Transformovat příchozí deklarace identity přidáním deklaraci identity role správce  
+-   Transformovat příchozí deklarace identity tak, že přidáte deklaraci identity správce rolí  
   
--   Testování aplikace webových formulářů ASP.NET, abyste viděli, zda pracuje správně  
+-   Otestovat aplikaci webových formulářů ASP.NET, abyste viděli, zda pracuje správně  
   
 ## <a name="overview"></a>Přehled  
- WIF zpřístupní třídy s názvem <xref:System.Security.Claims.ClaimsAuthenticationManager> umožňující uživatelům úpravám deklarací identity, než se mají zobrazovat předávající stranu aplikaci. <xref:System.Security.Claims.ClaimsAuthenticationManager> Je užitečné pro oddělené oblasti zájmu mezi ověřování a základního kódu aplikace. Následující příklad ukazuje, jak přidat roli do deklarací identity ve příchozí <xref:System.Security.Claims.ClaimsPrincipal> který může být vyžadován na základě RP.  
+ Technologie WIF zpřístupní třídu s názvem <xref:System.Security.Claims.ClaimsAuthenticationManager> , která umožňuje uživatelům změnit deklarace identity, předtím, než se zobrazí na aplikaci předávající stranu. <xref:System.Security.Claims.ClaimsAuthenticationManager> Je užitečné pro oddělení oblastí zájmu mezi ověřování a základního kódu aplikace. Následující příklad ukazuje, jak přidat roli v příchozí deklarace identity <xref:System.Security.Claims.ClaimsPrincipal> , které můžou vyžadovat RP.  
   
 ## <a name="summary-of-steps"></a>Přehled kroků  
   
--   Krok 1 – Vytvoření jednoduché rozhraní ASP.NET Web Forms aplikace  
+-   Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
   
--   Krok 2 – implementace deklarace identity pomocí vlastní ClaimsAuthenticationManager transformace  
+-   Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace  
   
 -   Krok 3 – Otestování řešení  
   
-## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Krok 1 – Vytvoření jednoduché rozhraní ASP.NET Web Forms aplikace  
+## <a name="step-1--create-a-simple-aspnet-web-forms-application"></a>Krok 1 – Vytvoření jednoduché aplikace webových formulářů ASP.NET  
  V tomto kroku vytvoříte novou aplikaci webových formulářů ASP.NET.  
   
 #### <a name="to-create-a-simple-aspnet-application"></a>Chcete-li vytvořit jednoduchou aplikaci ASP.NET  
   
 1.  Spusťte sadu Visual Studio jako správce v režimu se zvýšenými oprávněními.  
   
-2.  V sadě Visual Studio, klikněte na tlačítko **soubor**, klikněte na tlačítko **nový**a potom klikněte na **projektu**.  
+2.  V sadě Visual Studio, klikněte na tlačítko **souboru**, klikněte na tlačítko **nový**a potom klikněte na tlačítko **projektu**.  
   
-3.  V **nový projekt** okně klikněte na tlačítko **aplikaci webových formulářů ASP.NET**.  
+3.  V **nový projekt** okna, klikněte na tlačítko **aplikace webových formulářů ASP.NET**.  
   
 4.  V **název**, zadejte `TestApp` a stiskněte klávesu **OK**.  
   
-5.  Klikněte pravým tlačítkem myši **TestApp** projektu v části **Průzkumníku řešení**, pak vyberte **identit a přístupu**.  
+5.  Klikněte pravým tlačítkem myši **TestApp** projektu v rámci **Průzkumníku řešení**a pak vyberte **identit a přístupu**.  
   
-6.  **Identit a přístupu** se zobrazí v okně. V části **zprostředkovatelé**, vyberte **testování vaší aplikace pomocí místní služby tokenů zabezpečení vývoj**, pak klikněte na tlačítko **použít**.  
+6.  **Identit a přístupu** zobrazí se okno. V části **poskytovatelé**vyberte **testování aplikace s místní službu STS pro vývoj**, pak klikněte na tlačítko **použít**.  
   
-7.  V *Default.aspx* souboru, nahraďte existující kód následující a pak soubor uložte:  
+7.  V *Default.aspx* souboru, nahraďte existující kód následujícím kódem a pak soubor uložte:  
   
     ```  
     <%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true"  
@@ -88,7 +87,7 @@ ms.locfileid: "33400169"
     </asp:Content>  
     ```  
   
-8.  Otevření souboru kódu s názvem *Default.aspx.cs*. Nahraďte stávající kód následující příkaz, pak uložte soubor:  
+8.  Otevřete soubor kódu na pozadí s názvem *Default.aspx.cs*. Nahraďte stávající kód následujícím kódem a poté soubor uložte:  
   
     ```csharp  
     using System;  
@@ -109,20 +108,20 @@ ms.locfileid: "33400169"
     }  
     ```  
   
-## <a name="step-2--implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>Krok 2 – implementace deklarace identity pomocí vlastní ClaimsAuthenticationManager transformace  
- V tomto kroku se přepíše výchozí funkce v <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy pro přidání role správce do příchozí objekt zabezpečení.  
+## <a name="step-2--implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>Krok 2 – implementace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager transformace  
+ V tomto kroku se přepíše výchozí funkce v <xref:System.Security.Claims.ClaimsAuthenticationManager> třídy přidat roli správce příchozí instančnímu objektu.  
   
-#### <a name="to-implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>K implementaci pomocí vlastní ClaimsAuthenticationManager transformace deklarací identity  
+#### <a name="to-implement-claims-transformation-using-a-custom-claimsauthenticationmanager"></a>K implementaci transformace deklarací identity pomocí vlastní komponenty ClaimsAuthenticationManager  
   
 1.  V sadě Visual Studio, klikněte pravým tlačítkem myši na řešení, klikněte na tlačítko **přidat**a potom klikněte na **nový projekt**.  
   
-2.  V **přidat nový projekt** vyberte **knihovny tříd** z **Visual C#** šablony seznamu, zadejte `ClaimsTransformation`a potom stiskněte klávesu **OK**. Vytvoří se nový projekt ve složce řešení.  
+2.  V **přidat nový projekt** okně **knihovny tříd** z **Visual C#** šablony seznamu, zadejte `ClaimsTransformation`a potom stiskněte klávesu **OK**. Vytvoří se nový projekt ve složce řešení.  
   
-3.  Klikněte pravým tlačítkem na **odkazy** pod **ClaimsTransformation** projektu a pak klikněte na **přidat odkaz na**.  
+3.  Klikněte pravým tlačítkem na **odkazy** pod **ClaimsTransformation** projektu a pak klikněte na tlačítko **přidat odkaz**.  
   
-4.  V **správce odkazů** vyberte **System.IdentityModel**a potom klikněte na **OK**.  
+4.  V **správce odkazů** okně **System.IdentityModel**a potom klikněte na tlačítko **OK**.  
   
-5.  Otevřete **Class1.cs**, nebo pokud neexistuje, klikněte pravým tlačítkem na **ClaimsTransformation**, klikněte na tlačítko **přidat**, pak klikněte na tlačítko **třídy...**  
+5.  Otevřít **Class1.cs**, nebo pokud neexistuje, klikněte pravým tlačítkem na **ClaimsTransformation**, klikněte na tlačítko **přidat**, pak klikněte na tlačítko **třídy...**  
   
 6.  Přidejte následující direktivy using do souboru kódu:  
   
@@ -131,10 +130,10 @@ ms.locfileid: "33400169"
     using System.Security.Principal;  
     ```  
   
-7.  Přidejte následující třídy a metody do souboru kódu.  
+7.  V souboru kódu přidejte následující třídy a metody.  
   
     > [!WARNING]
-    >  Následující kód je pro demonstrační účely pouze; Ujistěte se, abyste ověřili určený oprávnění v produkčním kódu.  
+    >  Následující kód je pro demonstrační účely. Ujistěte se, že ověřte zamýšlené příslušná oprávnění v produkčním kódu.  
   
     ```csharp  
     public class ClaimsTransformationModule : ClaimsAuthenticationManager  
@@ -151,27 +150,27 @@ ms.locfileid: "33400169"
     }  
     ```  
   
-8.  Uložte tento soubor a sestavení **ClaimsTransformation** projektu.  
+8.  Uložte soubor a sestavení **ClaimsTransformation** projektu.  
   
-9. Ve vašem **TestApp** projekt ASP.NET, klikněte pravým tlačítkem na odkazy a pak klikněte na tlačítko **přidat odkaz na**.  
+9. Ve vaší **TestApp** projekt ASP.NET, klikněte pravým tlačítkem na odkazy a pak klikněte na tlačítko **přidat odkaz**.  
   
-10. V **správce odkazů** vyberte **řešení** v levé nabídce vyberte **ClaimsTransformation** z vyplněná možnosti a pak klikněte na tlačítko  **OK**.  
+10. V **správce odkazů** okně **řešení** v levé nabídce vyberte **ClaimsTransformation** mají údaj vyplněný možnosti a pak klikněte na  **OK**.  
   
-11. V kořenovém **Web.config** souboru, přejděte na  **\<system.identityModel >** položku. V rámci  **\<identityConfiguration >** elementy, přidejte následující řádek a soubor uložte:  
+11. V kořenovém adresáři **Web.config** souboru, přejděte  **\<system.identityModel >** položka. V rámci  **\<identityConfiguration >** prvky, přidejte následující řádek a soubor uložte:  
   
     ```xml  
     <claimsAuthenticationManager type="ClaimsTransformation.ClaimsTransformationModule, ClaimsTransformation" />  
     ```  
   
 ## <a name="step-3--test-your-solution"></a>Krok 3 – Otestování řešení  
- V tomto kroku testování vaší aplikace webových formulářů ASP.NET a ověřte, že deklarace identity jsou uvedené Pokud se uživatel přihlásí pomocí ověřování pomocí formulářů.  
+ V tomto kroku otestujte aplikaci webových formulářů ASP.NET a ověřte, že jsou předkládány deklarace, když se uživatel přihlásí pomocí ověřování pomocí formulářů.  
   
-#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>K testování aplikace webových formulářů ASP.NET pro deklarace identity pomocí ověřování pomocí formulářů  
+#### <a name="to-test-your-aspnet-web-forms-application-for-claims-using-forms-authentication"></a>K testování aplikace webových formulářů ASP.NET pro deklarace identity, ověřování pomocí formulářů  
   
-1.  Stiskněte klávesu **F5** sestavení a spuštění aplikace. By se měla zobrazit s *Default.aspx*.  
+1.  Stisknutím klávesy **F5** sestavíte a spustíte aplikaci. Mělo by se zobrazit s *Default.aspx*.  
   
-2.  Na *Default.aspx* stránky, měli byste vidět tabulku pod **vaše deklarace identity** záhlaví, která zahrnuje **vystavitele**, **OriginalIssuer**, **Typ**, **hodnotu**, a **ValueType** deklarací informace o vašem účtu. Poslední řádek by měla zobrazit následujícím způsobem:  
+2.  Na *Default.aspx* stránky, měli byste vidět tabulku pod **Your deklarací** nadpis, který obsahuje **vystavitele**, **OriginalIssuer**, **Typ**, **hodnotu**, a **ValueType** deklarací informace o vašem účtu. Poslední řádek by se měla zobrazit následujícím způsobem:  
   
     ||||||  
     |-|-|-|-|-|  
-    |MÍSTNÍ ÚŘAD|MÍSTNÍ ÚŘAD|http://schemas.microsoft.com/ws/2008/06/identity/claims/role|Správce|http://www.w3.org/2001/XMLSchema#string|
+    |MÍSTNÍ AUTORITA|MÍSTNÍ AUTORITA|http://schemas.microsoft.com/ws/2008/06/identity/claims/role|Správce|http://www.w3.org/2001/XMLSchema#string|

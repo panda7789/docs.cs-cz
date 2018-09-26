@@ -3,13 +3,12 @@ title: Zabezpečení zpráv pomocí zabezpečení přenosu
 ms.date: 03/30/2017
 ms.assetid: 9029771a-097e-448a-a13a-55d2878330b8
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 0ab04326404a4b90e30036594a7152e6118c2138
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: 1c2eafc4d1b955fe99d1c18314c490d7205b3f29
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44259940"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108272"
 ---
 # <a name="securing-messages-using-transport-security"></a>Zabezpečení zpráv pomocí zabezpečení přenosu
 Tato část popisuje zabezpečení přenosu služby Řízení front zpráv (MSMQ), který můžete použít k zabezpečení zprávy odeslané do fronty.  

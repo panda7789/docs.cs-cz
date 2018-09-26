@@ -3,11 +3,11 @@ title: -subsystemversion (možnosti kompilátoru C#)
 ms.date: 07/20/2015
 ms.assetid: a99fce81-9d92-4813-9874-bee777041445
 ms.openlocfilehash: ff4cd196edc1ec04f8abcecfa1a7a4e99e32dd56
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46508847"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157113"
 ---
 # <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion (možnosti kompilátoru C#)
 Určuje minimální verzi subsystému, na kterém poběží vygenerovaný spustitelný soubor, a tím určení verze Windows, na kterém můžete spustit spustitelný soubor. Nejčastěji tato možnost zajišťuje, že spustitelného souboru, který můžete využít konkrétní bezpečnostní funkce, které nejsou k dispozici ve starších verzích Windows.  

@@ -3,11 +3,11 @@ title: '&lt;soapProcessing&gt;'
 ms.date: 03/30/2017
 ms.assetid: e8707027-e6b8-4539-893d-3cd7c13fbc18
 ms.openlocfilehash: 296993f1a91a6da93f01610357f35dac4cfab9e6
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577724"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083897"
 ---
 # <a name="ltsoapprocessinggt"></a>&lt;soapProcessing&gt;
 

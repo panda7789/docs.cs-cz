@@ -1,21 +1,20 @@
 ---
-title: Referenci na konfigurační WIF
+title: Technologie WIF Configuration Reference
 ms.date: 03/30/2017
 ms.assetid: 098b80ba-9ebd-4078-a1cb-c1151036a207
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 03fe0645c47178bc1df91a3966a671ec8975fe33
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e2077135819cb41f2590e3bc1d60ecc376836271
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399241"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47173262"
 ---
-# <a name="wif-configuration-reference"></a>Referenci na konfigurační WIF
-Windows Identity Foundation (WIF) ve svých aplikacích můžete nakonfigurovat přidáním prvků do konfiguračního souboru. Toto téma obsahuje odkazy na referenční témata pro konfigurační prvky WIF.  
+# <a name="wif-configuration-reference"></a>Technologie WIF Configuration Reference
+Technologie Windows Identity Foundation (WIF) ve svých aplikacích můžete nakonfigurovat tak, že přidáte prvky ke konfiguračnímu souboru. Toto téma obsahuje odkazy na referenční témata pro konfigurační prvky technologie WIF.  
   
  [Schéma konfigurace WIF](../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/index.md)  
- Referenční dokumentace pro konfigurační prvky WIF.  
+ Referenční informace pro konfigurační prvky technologie WIF.  
   
  [Převody schématu konfigurace WIF](../../../docs/framework/security/wif-configuration-schema-conventions.md)  
- Obsahuje informace o obecné atributy a formát používaný WIF konfigurační prvky.
+ Obsahuje informace o obecných atributy a formátů používaných sadou konfigurační prvky technologie WIF.

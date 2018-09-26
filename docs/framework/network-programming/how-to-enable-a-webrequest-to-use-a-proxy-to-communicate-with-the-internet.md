@@ -7,16 +7,15 @@ dev_langs:
 ms.assetid: 63c0ef2c-44b5-4c54-9804-ba0b9b001ac7
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 0f57869dfecce3e59d0a255a6201dd966bc407e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 86bf21580db9bc6d9890f0935e283b653ba2e0b5
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396903"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077119"
 ---
 # <a name="how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet"></a>Postupy: povolení WebRequest ke komunikaci s Internetem použití proxy serveru
-Tento příklad vytvoří instanci globální proxy, která vám umožní žádné <xref:System.Net.WebRequest> ke komunikaci s Internetem použití proxy serveru. Příklad předpokládá, že je název proxy serveru `webproxy` a že komunikaci na portu 80, standardní port HTTP.  
+Tento příklad vytvoří instanci globální proxy, které umožní libovolné <xref:System.Net.WebRequest> ke komunikaci s Internetem použití proxy serveru. Příklad předpokládá, že je název proxy serveru `webproxy` a že komunikaci na portu 80, standardní port HTTP.  
   
 ## <a name="example"></a>Příklad  
   
@@ -33,7 +32,7 @@ GlobalProxySelection.Select = proxyObject
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na **System.Net** oboru názvů.  
+-   Odkazy **System.Net** oboru názvů.  
   
 ## <a name="see-also"></a>Viz také  
  [Použití aplikačních protokolů](../../../docs/framework/network-programming/using-application-protocols.md)  

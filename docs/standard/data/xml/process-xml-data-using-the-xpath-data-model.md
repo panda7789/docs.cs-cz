@@ -6,11 +6,11 @@ ms.assetid: 536c6fce-1453-4654-9c72-bca54d47e081
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: da8b623d3a73ca8791a0619c67b0ed3bd42447d3
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46699037"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170032"
 ---
 # <a name="process-xml-data-using-the-xpath-data-model"></a>Zpracování dat XML pomocí modelu dat XPath
 <xref:System.Xml?displayProperty=nameWithType> Obor názvů poskytuje programový reprezentace XML dokumenty, fragmentů, uzly nebo sad uzlů v paměti, pomocí <xref:System.Xml.XmlDocument> nebo <xref:System.Xml.XPath.XPathDocument> třídy.  

@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 03de6972-442a-4648-9f3e-efa654e3b949
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 68f37e3efca784b94be90d5779c9bc402f144448
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4cdf6a051552ab1effd9c4d9c783297a62602f7a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530331"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078159"
 ---
 # <a name="startup-settings-schema"></a>Schéma nastavení spouštění
 Nastavení spuštění zadat verzi common language runtime, který by měla spustit aplikace.  

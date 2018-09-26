@@ -3,13 +3,12 @@ title: Vytváření Moje první aplikace s deklaracemi identity v prostředí AS
 ms.date: 03/30/2017
 ms.assetid: 3ee8ee7f-caba-4267-9343-e313fae2876d
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: d889b0662d0b2df29b7e1e76e281c760c8965aac
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 76b02a0e6869b0d4de181b59296a0858aa80948c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43501075"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108790"
 ---
 # <a name="building-my-first-claims-aware-aspnet-web-application"></a>Vytváření Moje první aplikace s deklaracemi identity v prostředí ASP.NET
 ## <a name="applies-to"></a>Platí pro  

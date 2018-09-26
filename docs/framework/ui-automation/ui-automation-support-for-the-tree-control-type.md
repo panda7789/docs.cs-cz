@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 312dd04d-a86b-4072-8b12-2beeabdff5e3
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: c099d3e367bb037e61912d0c14fac9136985f6c1
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 3d0f4b2f2989791d0beacbe74e464d0a59d5a913
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43858119"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157399"
 ---
 # <a name="ui-automation-support-for-the-tree-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku strom
 > [!NOTE]

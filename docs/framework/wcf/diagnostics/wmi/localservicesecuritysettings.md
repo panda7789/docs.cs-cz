@@ -3,13 +3,12 @@ title: LocalServiceSecuritySettings
 ms.date: 03/30/2017
 ms.assetid: 490aa0e5-5242-4f8d-b505-5ec6287633b4
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 8f80af782c474ccf3a232ab353125fa223d4f5d1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c79eb11fcc1973a3ef25a78afb8b141443d865c3
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486894"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47156945"
 ---
 # <a name="localservicesecuritysettings"></a>LocalServiceSecuritySettings
 LocalServiceSecuritySettings  
@@ -43,106 +42,106 @@ class LocalServiceSecuritySettings
  Třída LocalServiceSecuritySettings má následující vlastnosti:  
   
 ### <a name="detectreplays"></a>DetectReplays  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Logická hodnota, která určuje, jestli jsou před zneužitím útoky na kanál zjistil a řešeny automaticky.  
+ Logická hodnota určující, zda jsou zjištěny a řešeny automaticky opakované útoky proti kanálu.  
   
 ### <a name="inactivitytimeout"></a>InactivityTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet čekající na vyřízení zabezpečení relací, které služba podporuje.  
+ Maximální počet nevyřešených bezpečnostních relací, které služba podporuje.  
   
 ### <a name="issuedcookielifetime"></a>IssuedCookieLifetime  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který určuje životnost vystaveno pro všechny nové soubory cookie zabezpečení.  
+ Interval TimeSpan, který určuje životnost vydanou pro všechny nové bezpečnostní soubory cookie.  
   
 ### <a name="maxcachedcookies"></a>MaxCachedCookies  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet souborů cookie, které mohou být uloženy v mezipaměti.  
+ Maximální počet souborů cookie, které lze uložit do mezipaměti.  
   
 ### <a name="maxclockskew"></a>Maxclockskew –  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který určuje maximální časový rozdíl mezi systémovými hodinami dvou komunikujících stran.  
+ Interval TimeSpan, který určuje maximální časový rozdíl mezi systémovými hodinami dvou komunikujících stran.  
   
 ### <a name="maxpendingsessions"></a>MaxPendingSessions  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet čekajících připojení služby.  
+ Maximální počet nevyřešených připojení služby.  
   
 ### <a name="maxstatefulnegotiations"></a>MaxStatefulNegotiations  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Počet vyjednávání zabezpečení, které mohou být souběžně aktivní.  
+ Počet bezpečnostních vyjednávání, které mohou být souběžně aktivní.  
   
 ### <a name="negotiationtimeout"></a>NegotiationTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který určuje maximální doba trvání fáze vyjednávání mezi serverem a klientem.  
+ Interval TimeSpan, který určuje maximální dobu trvání fáze bezpečnostního vyjednávání mezi serverem a klientem.  
   
 ### <a name="reconnecttransportonfailure"></a>ReconnectTransportOnFailure  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Logická hodnota, která určuje, zda připojení pomocí protokolu WS-spolehlivé zasílání zpráv se pokusí znovu připojit po selhání přenosu.  
+ Logická hodnota určující, zda připojení používající posílání WS-Reliable se pokusí znovu připojit po selhání přenosu.  
   
 ### <a name="replaycachesize"></a>ReplayCacheSize  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Počet uložené v mezipaměti náhodně generované identifikátory používá pro rozpoznání opětovného přehrání.  
+ Počet elementů v mezipaměti náhodně generované identifikátory použitých pro zjištění opakování.  
   
 ### <a name="replaywindow"></a>Třída ReplayWindow  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který určuje dobu, ve kterém jsou platné náhodně generované identifikátory jednotlivé zprávy.  
+ Interval TimeSpan, který určuje dobu, po kterou jsou platné náhodně generované identifikátory jednotlivých zpráv.  
   
 ### <a name="sessionkeyrenewalinterval"></a>SessionKeyRenewalInterval  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který určuje dobu, po které může iniciátor obnovuje klíč pro relace zabezpečení.  
+ Interval TimeSpan, který určuje dobu, po které iniciátor obnoví klíč relace zabezpečení.  
   
 ### <a name="sessionkeyrolloverinterval"></a>SessionKeyRolloverInterval  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který určuje časový interval je klíč předchozí relace při obnovení klíče platná pro příchozí zprávy.  
+ Časový interval, který určuje časový interval klíč předchozí relace platí na příchozích zprávách během obnovení klíče.  
   
 ### <a name="timestampvalidityduration"></a>TimestampValidityDuration  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který určuje dobu, ve kterém je platný časové razítko.  
+ Interval TimeSpan, který určuje dobu, ve kterém je platné časové razítko.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

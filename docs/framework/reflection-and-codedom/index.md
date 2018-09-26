@@ -8,11 +8,11 @@ ms.assetid: f78ec137-df0e-48c9-a7a0-5f6a1055f011
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e90857fcf02dbd0dd888b0658f3ab626bc5b11bd
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46580418"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47156550"
 ---
 # <a name="dynamic-programming-in-the-net-framework"></a>Dynamické programování v rozhraní .NET Framework
 Tato část dokumentace obsahuje informace o dynamické programování v rozhraní .NET Framework.  

@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: bb321126-4770-41da-983a-67b7b89d45dd
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 25d27faeac2c60a50801b817185aa1d5196e506d
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 59f35fb8f83faa78f035be18db3fc3d44d199085
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085131"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113894"
 ---
 # <a name="ui-automation-support-for-the-combobox-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ComboBox
 > [!NOTE]

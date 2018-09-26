@@ -3,11 +3,11 @@ title: Aktivace založená na konfiguraci v IIS a WAS
 ms.date: 03/30/2017
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
 ms.openlocfilehash: da98d237c066b70398d3238a75500e8a3abbe887
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586698"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47114993"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>Aktivace založená na konfiguraci v IIS a WAS
 

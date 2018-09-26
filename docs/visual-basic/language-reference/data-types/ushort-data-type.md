@@ -19,11 +19,11 @@ ms.assetid: 138db892-665d-4ba8-9cae-d8d91c4a8f39
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 038aad2c41f655d0699dab33df276132a70e3ede
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46696671"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170097"
 ---
 # <a name="ushort-data-type-visual-basic"></a>Ushort – datový typ (Visual Basic)
 

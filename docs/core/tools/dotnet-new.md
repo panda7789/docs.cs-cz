@@ -4,12 +4,12 @@ description: Vytvoří nový příkaz dotnet nových projektů .NET Core založe
 author: mairaw
 ms.author: mairaw
 ms.date: 07/31/2018
-ms.openlocfilehash: 2c82dda2d93225edb360316637e22964135cd5e4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 396c4ddf09854fa4582226bdb1422f8c929e459b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512552"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083049"
 ---
 # <a name="dotnet-new"></a>nový příkaz DotNet
 
@@ -228,8 +228,9 @@ Vyfiltruje šablony podle dostupných typů. Předdefinované hodnoty jsou "proj
 Odinstaluje zdroj nebo šablony pack na `PATH` nebo `NUGET_ID` k dispozici.
 
 > [!NOTE]
-> Chcete-li odinstalovat sadu pomocí šablony `PATH`, budete potřebovat plně kvalifikovanou cestu. Například *C:/uživatele/\<uživatele > /Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z obsahuje složky nebudou.
-> Kromě toho nesmí být znak konečné ukončující znak lomítka adresáře na cestu k šabloně.
+> Odinstalace pomocí zdroj `PATH`, budete potřebovat plně kvalifikovanou cestu. Například *C:/uživatele/\<uživatele > /Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* bude fungovat, ale *./GarciaSoftware.ConsoleTemplate.CSharp* z obsahuje složky nebudou. Kromě toho nesmí být znak konečné ukončující znak lomítka adresáře na cestu k šabloně.
+> 
+> Pokud se nemůžete určit `PATH` nebo `NUGET_ID` argumentů potřebných k odinstalaci šablonu s `dotnet new --uninstall` bez argumentu zobrazí seznam všech nainstalovaných šablon a argument nutné je odinstalovat.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET core 1.x](#tab/netcore1x)
 

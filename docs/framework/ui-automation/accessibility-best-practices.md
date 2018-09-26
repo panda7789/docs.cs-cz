@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 9b451e0c66d2c595826e90debfcb0fb3a2602fec
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 60e95d79ae7cd43b79ec4fd79285bfea071f20f8
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502423"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113131"
 ---
 # <a name="accessibility-best-practices"></a>Usnadnění – doporučené postupy
 > [!NOTE]

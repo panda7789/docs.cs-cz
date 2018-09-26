@@ -1,5 +1,5 @@
 ---
-title: Pomocí zabezpečené sokety vrstvy
+title: Pomocí zabezpečeného Sockets Layer
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,22 +17,21 @@ helpviewer_keywords:
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 2baedaa445f81e3e204f7414c5142232755581ed
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 25261185f263a775b6104f94d10874ff39035de9
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396243"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082185"
 ---
-# <a name="using-secure-sockets-layer"></a>Pomocí zabezpečené sokety vrstvy
-<xref:System.Net> Třídy použít Secure Sockets Layer (SSL) k šifrování připojení několik síťových protokolů.  
+# <a name="using-secure-sockets-layer"></a>Pomocí zabezpečeného Sockets Layer
+<xref:System.Net> Třídy použít k šifrování připojení pro několik síťových protokolů vrstvy SSL (Secure Sockets).  
   
- Pro připojení protokolu http <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy používat protokol SSL pro komunikaci s weboví hostitelé, které podporují protokol SSL. Rozhodnutí ohledně používání protokolu SSL je provedené <xref:System.Net.WebRequest> třídy, na základě v identifikátoru URI je zadána. Pokud identifikátor URI začíná řetězcem "https:", se používá protokol SSL; Pokud identifikátor URI začíná řetězcem "http:", je použít nešifrované připojení.  
+ Pro připojení prostřednictvím protokolu http <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy používat protokol SSL ke komunikaci s weboví hostitelé, které podporují protokol SSL. Provádí rozhodnutí pro použití protokolu SSL <xref:System.Net.WebRequest> třídy založené na identifikátor URI se klíči přiřadí. Pokud identifikátor URI začíná řetězcem "https:", se používá protokol SSL; Pokud identifikátor URI začíná řetězcem "http:", se používá s nešifrovaným připojením.  
   
- Chcete-li používat protokol SSL pomocí protokolu FTP (File Transfer), nastavte <xref:System.Net.FtpWebRequest.EnableSsl> vlastnost na hodnotu true před voláním <xref:System.Net.FtpWebRequest.GetResponse>. Podobně, chcete-li používat protokol SSL s transportní protokol SMTP (Simple Mail), nastavte <xref:System.Net.Mail.SmtpClient.EnableSsl> vlastnost na hodnotu true před odesláním e-mailu.  
+ Chcete-li používat protokol SSL pomocí protokolu FTP (File Transfer), nastavte <xref:System.Net.FtpWebRequest.EnableSsl> vlastnost na hodnotu true před voláním <xref:System.Net.FtpWebRequest.GetResponse>. Podobně pro použití protokolu SSL s přenosu protokolu SMTP (Simple Mail), nastavte <xref:System.Net.Mail.SmtpClient.EnableSsl> vlastnost na hodnotu true, před odesláním e-mailu.  
   
- <xref:System.Net.Security.SslStream> Třída poskytuje abstrakci se na základě datového proudu pro protokol SSL a nabízí mnoho způsobů, jak nakonfigurovat metody handshake SSL.  
+ <xref:System.Net.Security.SslStream> Třída poskytuje abstrakce založené na datový proud pro protokol SSL a nabízí mnoho způsobů, jak konfigurovat metodu handshake SSL.  
   
 ## <a name="example"></a>Příklad  
   
@@ -63,7 +62,7 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na **System.Net** oboru názvů.  
+-   Odkazy **System.Net** oboru názvů.  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení v síťovém programování](../../../docs/framework/network-programming/security-in-network-programming.md)  

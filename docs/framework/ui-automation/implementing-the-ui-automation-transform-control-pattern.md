@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 6f193380619d5e75eaacebe00f602a3716d91ddf
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 2c3a542d5db2557d351227f12276f61593787ba3
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861998"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108075"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>Implementace vzoru ovládacích prvků transformace pro automatizaci uživatelského rozhraní
 > [!NOTE]

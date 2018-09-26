@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: c3779d78-3164-43ae-8dae-bfaeafffdd65
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 7d089cf01f3cee0cac40c258e48de5e9f5f95df7
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.openlocfilehash: d67a6cb362a6d847760f2405017f03f2f03a9188
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46493565"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108258"
 ---
 # <a name="ui-automation-support-for-the-tooltip-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ToolTip
 > [!NOTE]

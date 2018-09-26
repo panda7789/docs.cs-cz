@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
 ms.openlocfilehash: 18e6cb1fb5f496b66c89cb8e009a67894b8a76ad
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703658"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086538"
 ---
 # <a name="run-composed-and-microservices-based-applications-in-production-environments"></a>Spouštění skládá a mikroslužbových aplikací v produkčním prostředí
 

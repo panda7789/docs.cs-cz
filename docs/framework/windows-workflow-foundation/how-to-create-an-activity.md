@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: c09b1e99-21b5-4d96-9c04-ec31db3f4436
 ms.openlocfilehash: 8aa6900b26bbe9f77fe0802a7929febe5af61269
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46539606"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112676"
 ---
 # <a name="how-to-create-an-activity"></a>Postupy: vytvoření aktivity
 

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - expressions [Visual Basic], returning control to
 ms.assetid: ac86e7f0-5a67-42c3-9834-0e0381efa3ec
 ms.openlocfilehash: fe200add4e29fe4bbe0fdf335dcd94107b8ff1eb
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46567618"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113566"
 ---
 # <a name="return-statement-visual-basic"></a>Return – příkaz (Visual Basic)
 Vrátí ovládací prvek kódu, který volá `Function`, `Sub`, `Get`, `Set`, nebo `Operator` postup.  

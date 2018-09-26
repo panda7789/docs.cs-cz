@@ -15,11 +15,11 @@ ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 8f979f3d09079f36d12408d0a82ef58e603da859
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584445"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47156906"
 ---
 # <a name="how-to-read-text-from-a-file"></a>Postupy: Čtení textu ze souboru
 Následující příklady znázorňují způsob synchronního a asynchronního čtení textu z textového souboru pomocí rozhraní .NET pro aplikace klasické pracovní plochy. V obou příkladech je při vytváření instance třídy <xref:System.IO.StreamReader> třídu, zadejte relativní nebo absolutní cesta k souboru. Následující příklady předpokládají, že soubor s názvem TestFile.txt je uložen ve stejné složce jako aplikace.  

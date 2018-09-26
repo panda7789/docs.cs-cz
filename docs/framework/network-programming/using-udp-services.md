@@ -1,5 +1,5 @@
 ---
-title: Pomocí služby UDP
+title: Použití služeb UDP
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,30 +19,29 @@ helpviewer_keywords:
 ms.assetid: d5c3477a-e798-454c-a890-738ba14c5707
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: bc325a551afd0190ea71b46cc53a275de635bda3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8aabd71a841af2b01c644d52806f213ca9c92ec2
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397631"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082130"
 ---
-# <a name="using-udp-services"></a>Pomocí služby UDP
-<xref:System.Net.Sockets.UdpClient> Třída komunikuje pomocí protokolu UDP síťové služby. Vlastnosti a metody <xref:System.Net.Sockets.UdpClient> abstraktní třída podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu UDP.  
+# <a name="using-udp-services"></a>Použití služeb UDP
+<xref:System.Net.Sockets.UdpClient> Třídy komunikuje se síťovými službami pomocí protokolu UDP. Vlastnosti a metody <xref:System.Net.Sockets.UdpClient> třídy abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu UDP.  
   
- Protokol UDP (User Datagram) je jednoduchý protokol, který umožňuje usilovně k doručování dat do vzdáleného hostitele. Protože protokolu UDP je protokol pro přenos, ale datagramy UDP odeslané na vzdálený koncový bod není zaručené doručení, ani jsou jejich zaručené doručení ve stejném pořadí, v níž jsou odesílány. Aplikace, které používají UDP musí být připraveny pro zpracování datagramy chybí, duplicitní a mimo pořadí.  
+ Protokolu UDP (User Datagram) je jednoduchý protokol, který se pokusí k doručování dat vzdáleného hostitele. Ale protože protokolu UDP je protokol pro přenos, odeslané na vzdálený koncový bod datagramy UDP zaručené doručení ani jsou zaručeně dorazí ve stejném pořadí, ve které se odesílají. Aplikace, které používají UDP musí být připravena ke zpracování datagramy chybí, duplicitní a mimo pořadí.  
   
- Chcete-li odeslat datagram, používat UDP, musíte znát síťová adresa hostující službu, kterou budete potřebovat a číslo portu UDP, který služba používá pro komunikaci síťového zařízení. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz www.iana.org/assignments/port-numbers). Služby, které nejsou na seznamu Iana může mít čísla portů v rozsahu 1 024 jednotek do 65 535.  
+ K odeslání datagram pomocí protokolu UDP, musíte znát síťová adresa síťového zařízení, který je hostitelem služby, které potřebujete a číslo portu UDP, který službu používá ke komunikaci. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz www.iana.org/assignments/port-numbers). Služby není na seznamu Iana může mít čísla portu v rozsahu 1 024 do 65 535.  
   
- Speciální síťové adresy se používají pro podporu zprávy všesměrového vysílání UDP v sítích založených na protokolu IP. Následující diskusi používá rodina IP verze 4 adres používaných na Internetu jako příklad.  
+ Speciální síťové adresy se používají pro podporu všesměrového vysílání zpráv UDP v sítích založených na protokolu IP. Následující diskuse používá rodina IP verze 4 adres jako příklad je použita na Internetu.  
   
- Zadejte rozsah adres protokolu IP verze 4 adresy pomocí 32bitová verze. Pomocí síťová maska 255.255.255.0 adres třídy C jsou tyto bity rozdělené do čtyř oktety. Když vyjádřené v desítkové soustavě, tvoří čtyři oktety obeznámeni s tečkami quad zápis, jako je například 192.168.100.2. Číslo sítě tvoří první dva oktety (192.168 v tomto příkladu), třetí oktet (100) definuje podsíť a poslední oktet (2) je identifikátor hostitele.  
+ Adresy IP verze 4 použijte k určení síťová adresa 32 bitů. Pomocí síťová maska 255.255.255.0 adres třídy C tyto bity jsou rozdělené do čtyř oktetech. Když vyjádřené v desítkové soustavě, tvoří čtyři oktety známými notacemi čtyřmi tečkami, jako je například 192.168.100.2. Číslo sítě tvoří první dva oktety (192.168 v tomto příkladu), třetí octet (100) definuje podsíť a poslední oktet (2) je identifikátor hostitele.  
   
- Nastavení služby bits IP adresy na jeden nebo 255.255.255.255, tvoří omezené adresy všesměrového vysílání. Odesílání datagramů UDP na tuto adresu doručení zprávy do libovolného hostitele v segmentu místní sítě. Protože směrovače nikdy předávat zprávy odeslané na tuto adresu, jenom hostitelé v segmentu sítě přijímat zprávy všesměrového vysílání.  
+ Nastavení všechny bity IP adresy na jeden nebo 255.255.255.255 tvoří omezené adresa všesměrového vysílání. Odesílání UDP datagram na tuto adresu doručí do libovolného hostitele v místní síti segmentu. Protože směrovače nikdy předávat zprávy na tuto adresu, zobrazí se pouze hostitelé v segmentu sítě všesměrového vysílání zpráva.  
   
- Vysílání můžete přesměrováni na konkrétní části sítě nastavením všechny bity identifikátor hostitele. Například pokud chcete odeslat vysílání všichni hostitelé v síti, který začíná 192.168.1 IP adresy, použijte adresu 192.168.1.255.  
+ Vysílání mohou přesměrováni na konkrétní části sítě tak, že nastavíte všechny bity identifikátor hostitele. Například k odesílání vysílání pro všechny hostitele v síti identifikovaných podle IP adresy, počínaje 192.168.1 použijte adresu 192.168.1.255.  
   
- Následující příklad kódu používá <xref:System.Net.Sockets.UdpClient> naslouchat odeslané na směrovanou adresu vysílání 192.168.1.255 na portu 11 000 datagramy UDP. Klient obdrží řetězec zprávy a zapíše zprávu do konzoly.  
+ Následující příklad kódu používá <xref:System.Net.Sockets.UdpClient> pro naslouchání odeslané na směrovanou adresu vysílání 192.168.1.255 na portu 11 000 datagramy UDP. Klient obdrží řetězec zprávy a zapisuje zprávy do konzoly.  
   
 ```vb  
 Imports System  
@@ -130,7 +129,7 @@ public class UDPListener
 }  
 ```  
   
- Následující příklad kódu používá <xref:System.Net.Sockets.UdpClient> odeslat datagramy UDP na směrovanou adresu vysílání 192.168.1.255, pomocí portu 11 000. Klient odešle zprávu řetězec zadaný v příkazovém řádku.  
+ Následující příklad kódu používá <xref:System.Net.Sockets.UdpClient> odesílat datagramů UDP na směrovanou adresu vysílání 192.168.1.255, pomocí portů 11 000. Klient odešle zprávu řetězci zadanému na příkazovém řádku.  
   
 ```vb  
 Imports System  

@@ -1,5 +1,5 @@
 ---
-title: Pomocí soketu asynchronní klienta
+title: Použití asynchronního klientského soketu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,24 +19,23 @@ helpviewer_keywords:
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 59d7e30bfa9bbaf2308e78f47de03bb7be69c44d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f4ab27a8e6cc5bd38620148b130823070e5102fa
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393680"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111279"
 ---
-# <a name="using-an-asynchronous-client-socket"></a>Pomocí soketu asynchronní klienta
-Soketu asynchronní klienta nepozastaví aplikace při čekání na dokončení operací sítě. Místo toho používá standardní asynchronní programovací model rozhraní .NET Framework ke zpracování připojení k síti na jedno vlákno, zatímco aplikace stále běží na původní vlákno. Asynchronní sockets jsou vhodné pro aplikace, která hodně využívají sítě nebo nelze počkejte na dokončení před pokračováním síťových operací.  
+# <a name="using-an-asynchronous-client-socket"></a>Použití asynchronního klientského soketu
+Asynchronního klientského soketu nepozastaví aplikace při čekání na dokončení operací sítě. Místo toho využívá standardní asynchronní programovací model rozhraní .NET Framework ke zpracování síťového připojení na jedno vlákno, zatímco aplikace stále běží v původním vláknu. Asynchronní sockets jsou vhodné pro aplikace, které usnadňují použití sítě nebo nemůže čekat na dokončení před pokračováním síťových operací.  
   
- <xref:System.Net.Sockets.Socket> Třída způsobem názvy rozhraní .NET Framework vzor pro asynchronní metody; například synchronní <xref:System.Net.Sockets.Socket.Receive%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginReceive%2A> a <xref:System.Net.Sockets.Socket.EndReceive%2A> metody.  
+ <xref:System.Net.Sockets.Socket> Třídy způsobem názvy rozhraní .NET Framework vzorku pro asynchronní metody; například synchronní <xref:System.Net.Sockets.Socket.Receive%2A> metoda odpovídá asynchronní <xref:System.Net.Sockets.Socket.BeginReceive%2A> a <xref:System.Net.Sockets.Socket.EndReceive%2A> metody.  
   
- Asynchronní operace vyžadují metody zpětného volání k vrácení výsledku operace. Pokud vaše aplikace není nutné znát výsledek, žádná metoda zpětného volání není potřeba. Ukázkový kód v této části ukazuje, jak pomocí metody zahájíte připojení k síťovým zařízením a metody zpětného volání a dokončete připojení, metoda zahájit odesílání dat a metody zpětného volání k dokončení odesílání a způsob, jak začít přijímat data a Metoda zpětného volání pro příjem dat ukončení.  
+ Asynchronní operace vyžadují metoda zpětného volání k vrácení výsledku operace. Pokud aplikace nepotřebuje vědět, výsledek, vyžaduje se žádná metoda zpětného volání. Ukázkový kód v této části ukazuje, jak pomocí metody spustíte připojení k síťovým zařízením a metody zpětného volání a dokončete připojení, metoda zahájit odesílání dat a metody zpětného volání k dokončení odesílání a metoda spuštění příjem dat a Metoda zpětného volání k ukončení přijímání dat  
   
- Asynchronní sockets pomocí více vláken z fondu podprocesů systému proces síťová připojení. Jedno vlákno zodpovídá za inicializaci odesílání nebo přijímání dat; jiná vlákna dokončení připojení k síťové zařízení a odesílat nebo přijímat data. V následujících příkladech instance <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> třída slouží k pozastavení provádění hlavního vlákna a signál při spuštění může pokračovat.  
+ Asynchronní sokety používají více vláken z fondu podprocesů systému pro proces připojení k síti. Jedno vlákno zodpovídá za inicializaci odesílání nebo přijímání dat; ostatní vlákna dokončete připojení ke službě síťového zařízení a odesílat nebo přijímat data. V následujících příkladech instance <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> třídy se používají k pozastavení provádění z hlavního vlákna a signál, pokud provádění může pokračovat.  
   
- V následujícím příkladu se pro připojení k síťovým zařízením, asynchronní soketu `Connect` metoda inicializuje **soketu** a potom zavolá <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> metodu předáním vzdálený koncový bod, který představuje síťové zařízení , připojit metoda zpětného volání a stavu objektu (klient **soketu**), který slouží k předání informací o stavu mezi asynchronní volání. V příkladu implementuje `Connect` metoda připojení zadaný **soketu** zadaný koncový bod. Předpokládá globální konfiguraci **ManualResetEvent** s názvem `connectDone`.  
+ V následujícím příkladu, pro připojení k síťovým zařízením, asynchronní soketu `Connect` metoda inicializuje **soketu** a pak zavolá <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> předejte vzdálený koncový bod, který představuje síťové zařízení , připojit metoda zpětného volání a stavu objektu (klient **soketu**), který se používá k předávání informací o stavu mezi byla zahájena asynchronní volání. V příkladu implementuje `Connect` metodu připojení zadanou **soketu** na zadaný koncový bod. Předpokládá globální **ManualResetEvent** s názvem `connectDone`.  
   
 ```vb  
 Public Shared Sub Connect(remoteEP As EndPoint, client As Socket)  
@@ -56,7 +55,7 @@ public static void Connect(EndPoint remoteEP, Socket client) {
 }  
 ```  
   
- Metoda zpětného volání připojit `ConnectCallback` implementuje <xref:System.AsyncCallback> delegovat. Připojení k vzdálené zařízení při vzdálené zařízení je k dispozici a pak signály vlákno aplikace, je připojení dokončena nastavením **ManualResetEvent** `connectDone`. Následující kód implementuje `ConnectCallback` metoda.  
+ Metoda zpětného volání připojit `ConnectCallback` implementuje <xref:System.AsyncCallback> delegovat. Připojení ke vzdálenému zařízení při vzdálené zařízení je k dispozici a potom signály vlákna aplikace, že se připojení tak, že nastavíte **ManualResetEvent** `connectDone`. Následující kód implementuje `ConnectCallback` metody.  
   
 ```vb  
 Private Shared Sub ConnectCallback(ar As IAsyncResult)  
@@ -98,7 +97,7 @@ private static void ConnectCallback(IAsyncResult ar) {
 }  
 ```  
   
- Příklad metoda `Send` kóduje data zadaný řetězec ve formátu ASCII a odešle ji asynchronně síťovému zařízení reprezentována zadaný časový limit soketu. Následující příklad implementuje `Send` metoda.  
+ Ukázková metoda `Send` kóduje zadaného řetězce data ve formátu ASCII a asynchronně odešle síťovému zařízení reprezentované zadaným soketu. Následující příklad implementuje `Send` metody.  
   
 ```vb  
 Private Shared Sub Send(client As Socket, data As [String])  
@@ -122,7 +121,7 @@ private static void Send(Socket client, String data) {
 }  
 ```  
   
- Metoda zpětného volání odesílání `SendCallback` implementuje <xref:System.AsyncCallback> delegovat. Síťové zařízení je připraven přijmout odešle data. Následující příklad ukazuje implementaci `SendCallback` metoda. Předpokládá globální konfiguraci **ManualResetEvent** s názvem `sendDone`.  
+ Metoda zpětného volání odesílání `SendCallback` implementuje <xref:System.AsyncCallback> delegovat. Když je připravena přijímat síťové zařízení odešle data. Následující příklad ukazuje implementaci `SendCallback` metody. Předpokládá globální **ManualResetEvent** s názvem `sendDone`.  
   
 ```vb  
 Private Shared Sub SendCallback(ar As IAsyncResult)  
@@ -160,7 +159,7 @@ private static void SendCallback(IAsyncResult ar) {
 }  
 ```  
   
- Čtení dat ze soketu klienta vyžaduje objekt stavu, který předává hodnoty mezi asynchronní volání. Následující třídy je objekt příklad stavu pro příjem dat ze soketu klienta. Obsahuje pole pro Soket klienta, vyrovnávací paměť pro přijatá data a <xref:System.Text.StringBuilder> pro uložení příchozí řetězec. Uvedení těchto polí objekt stavu umožňuje jejich hodnoty nutné zachovat napříč více volání čtení dat ze soketu klienta.  
+ Čtení dat z klientského soketu vyžaduje stav objektu, který předává hodnoty mezi byla zahájena asynchronní volání. Třída následující je příklad objekt stavu pro příjem dat z klientského soketu. Obsahuje pole pro klientského soketu vyrovnávací paměti pro přijatá data a <xref:System.Text.StringBuilder> k uložení vstupní řetězec data. Umístění těchto polí v objektu stavu umožňuje jejich hodnot zachovaná napříč více volání na čtení dat z klientského soketu.  
   
 ```vb  
 Public Class StateObject  
@@ -188,7 +187,7 @@ public class StateObject {
 }  
 ```  
   
- V příkladu `Receive` metoda nastaví stav objektu a pak zavolá **BeginReceive** metoda mají asynchronně číst data z klienta soketu. Následující příklad implementuje `Receive` metoda.  
+ V příkladu `Receive` metoda nastaví stav objektu a pak zavolá **BeginReceive** metody, které se mají asynchronně číst data z klientského soketu. Následující příklad implementuje `Receive` metody.  
   
 ```vb  
 Private Shared Sub Receive(client As Socket)  
@@ -222,9 +221,9 @@ private static void Receive(Socket client) {
 }  
 ```  
   
- Metoda zpětného volání receive `ReceiveCallback` implementuje **AsyncCallback** delegovat. Přijetí dat ze síťového zařízení a vytvoří řetězec zprávy. Při čtení jeden nebo více bajtů dat do vyrovnávací paměti dat ze sítě a pak zavolá **BeginReceive** metoda znovu, dokud data odeslaná klientem je dokončena. Jakmile je načíst všechna data z klienta, `ReceiveCallback` signály vlákno aplikace, data je dokončena nastavením **ManualResetEvent** `sendDone`.  
+ Zpětné volání metody receive `ReceiveCallback` implementuje **AsyncCallback** delegovat. Přijme data ze síťového zařízení a vytvoří řetězec zprávy. Načte jeden nebo více bajtů dat ze sítě do vyrovnávací paměti dat a pak zavolá **BeginReceive** metoda znovu, dokud data odeslaná klientem je dokončena. Jakmile data načítají z klienta, `ReceiveCallback` signály vlákna aplikace, že data jsou kompletní tak, že nastavíte **ManualResetEvent** `sendDone`.  
   
- Následující příklad kódu implementuje `ReceiveCallback` metoda. Předpokládá globální řetězec s názvem `response` , obsahuje přijaté řetězec a globální konfiguraci **ManualResetEvent** s názvem `receiveDone`. Server musí vypnout Soket klienta řádně k ukončení relace sítě.  
+ Následující příklad kódu implementuje `ReceiveCallback` metody. Globální řetězec s názvem předpokládá `response` , který obsahuje řetězec přijatých a globální **ManualResetEvent** s názvem `receiveDone`. Na serveru musí vypnout klientského soketu řádně k ukončení relace sítě.  
   
 ```vb  
 Private Shared Sub ReceiveCallback(ar As IAsyncResult)  

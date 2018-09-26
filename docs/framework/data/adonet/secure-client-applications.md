@@ -3,11 +3,11 @@ title: Zabezpečené klientské aplikace
 ms.date: 03/30/2017
 ms.assetid: 6239592e-fa7d-4dea-9f00-d296d0048b01
 ms.openlocfilehash: a3b035d59a39ca20f6a81fbd40d39069a7cc43c2
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46706288"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086181"
 ---
 # <a name="secure-client-applications"></a>Zabezpečené klientské aplikace
 Aplikace se obvykle skládají z mnoho částí, které musí ochránit před chybami zabezpečení, které by mohly způsobit ztrátu dat nebo jinak ohrozit zabezpečení systému. Vytváření zabezpečených uživatelské rozhraní může zabránit mnoho problémů zákonné zodpovědnosti organizací blokováním útočníci před získáním přístupu dat nebo dostatek systémových prostředků.  

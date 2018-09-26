@@ -11,25 +11,24 @@ helpviewer_keywords:
 ms.assetid: ad22b4b8-00af-4778-9cca-cb609ce1f8ff
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 74ffa8a0ced264b29cd30cdcd1ca8f9a87c8c358
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d05e0f374f4454c95dd02be8bd2eff573040f97e
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396958"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47087850"
 ---
 # <a name="interpreting-network-tracing"></a>Interpretace trasování sítě
-Pokud je povoleno sledování sítě, můžete použít trasování pro zachycení volání vaše aplikace provede na různých <xref:System.Net> třídy členy. Výstup z těchto volání může být podobná následující příklady.  
+Pokud je povoleno trasování sítě, můžete použít trasování pro zachycení volání, které vaše aplikace odešle do různých <xref:System.Net> členy třídy. Výstup z těchto volání může být podobně jako v následujících příkladech.  
   
 ```  
 [588]   (4357)   Entering Socket#33574638::Send()  
 [588]   (4387)   Exiting Socket#33574638::Send()-> 61#61  
 ```  
   
- V předchozím příkladu [588] je jedinečný identifikátor pro aktuální vlákno. (4357) a (4387) jsou časová razítka představující počet milisekund, po které uplynuly od spuštění aplikace. Data následující časové razítko zobrazují aplikace vstupující do a vystupující metodu **Socket.Send**. Objekt provádění **odeslat** metoda má 33574638 jako svůj jedinečný identifikátor. Konec trasování metoda obsahuje vrácenou hodnotu (61 v předchozím příkladu).  
+ V předchozím příkladu [588] je jedinečný identifikátor aktuálního vlákna. (4357) a (4387) jsou časové razítko označující počet milisekund uplynulých od spuštění aplikace. Data po časové razítko je vidět aplikace vstupující do a vystupující metodu **Socket.Send**. Objekt provádění **odeslat** metoda má 33574638 jako svůj jedinečný identifikátor. Trasování ukončovací metoda zahrnuje návratovou hodnotu (61 v předchozím příkladu).  
   
- Trasování sítě můžete zaznamenat síťový provoz, který se odesílá z nebo přijímá vaše aplikace využívá protokoly na úrovni aplikace jako je například protokol HTTP (Hypertext Transfer). Tato data se dají zachytit jako text a volitelně hexadecimální data. Hexadecimální dat je k dispozici, když zadáte **includehex** jako hodnotu **tracemode** atribut. (Podrobné informace o tento atribut najdete v tématu [postupy: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md).) Následující příklad trasování byla generována pomocí **includehex**.  
+ Trasování sítě můžete zaznamenávat síťový provoz, který je odeslaných nebo přijatých aplikací pomocí protokolů úrovni aplikace, jako je protokol HTTP (Hypertext Transfer). Tato data se dají zachytit jako text a volitelně data v šestnáctkovém formátu. Šestnáctkové data jsou k dispozici, když zadáte **includehex** jako hodnotu **tracemode** atribut. (Podrobné informace o tomto atributu naleznete v tématu [postupy: Konfigurace trasování sítě](../../../docs/framework/network-programming/how-to-configure-network-tracing.md).) Následující příklad trasování se vygeneroval pomocí **includehex**.  
   
  `[1692]   (1142)   00000000 : 47 45 54 20 2F 77 70 61-64 2E 64 61 74 20 48 54 : GET /wpad.dat HT`  
   
@@ -39,7 +38,7 @@ Pokud je povoleno sledování sítě, můžete použít trasování pro zachycen
   
  `[1692]   (1142)   00000030 : 6F 6E 3A 20 43 6C 6F 73-65 0D 0A 0D 0A     : on: Close....`  
   
- Vynechat hexadecimální data, zadejte **protocolonly** hodnotu **tracemode** atribut. Následující příklad ukazuje trasování při **protocolonly** je zadán.  
+ Pokud chcete vynechat, nechte šestnáctkových dat., zadejte **protocolonly** hodnotu **tracemode** atribut. Následující příklad ukazuje trasování při **protocolonly** určena.  
   
  `[2444]   (594)   Data from ConnectStream#33574638::WriteHeaders<<GET /wpad.dat HTTP/1.1`  
   

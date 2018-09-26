@@ -21,11 +21,11 @@ ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 49708175f8501c735a77b0f7f965a106b6e086f2
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46705757"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082602"
 ---
 # <a name="types-of-isolation"></a>Typy izolace
 Přístup k izolovanému úložišti je vždy omezen na uživatele, který jej vytvořil. K implementaci tohoto typu izolace, modul common language runtime používá stejný pojem identitu uživatele, který rozpoznává operační systém, který je identitu přidruženou k procesu, ve kterém kód běží při otevření úložiště. Tato identita je identity ověřeného uživatele, ale zosobnění může způsobit identity aktuálního uživatele, aby dynamicky měnit.  

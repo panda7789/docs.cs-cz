@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 84aa8dd866d5870d8cd4e6c8c4951fa1e49a4052
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9f2f5b157d8999cd254d6b389cdf7a2ca8ca1f8f
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43786359"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086019"
 ---
 # <a name="use-the-automationid-property"></a>Používání vlastnosti AutomationID
 > [!NOTE]

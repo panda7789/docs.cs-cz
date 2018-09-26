@@ -1,5 +1,5 @@
 ---
-title: Příklad soketu synchronní klienta
+title: Příklad synchronního klientského soketu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,16 +11,15 @@ helpviewer_keywords:
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 2931e1ee9644952f2f643941e2076a7e2d5762db
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 55fd8c33f80ecf3b31fdbacec1abd73ebab92396
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393114"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47110239"
 ---
-# <a name="synchronous-client-socket-example"></a>Příklad soketu synchronní klienta
-V následujícím příkladu programu vytvoří klienta, který se připojuje k serveru. Klient je postavený s soket synchronního, takže spuštění klienta aplikace je pozastaveno, dokud server vrátí odpověď. Aplikace odešle řetězec na server a potom zobrazí řetězec vrácená serverem v konzole.  
+# <a name="synchronous-client-socket-example"></a>Příklad synchronního klientského soketu
+Následující ukázkový program vytvoří klienta, která se připojuje k serveru. Klient je sestavena s soket synchronního, takže spuštění klientské aplikace je pozastaveno, dokud server vrátí odpověď. Aplikace odešle řetězec k serveru a pak zobrazí řetězec vrácený funkcí serveru na konzole.  
   
 ```vb  
 Imports System  

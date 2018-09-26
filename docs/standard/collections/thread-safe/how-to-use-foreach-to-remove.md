@@ -11,11 +11,11 @@ ms.assetid: 2096103c-22f7-420d-b631-f102bc33a6dd
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 44b71ed726af585259b015c608e49d8c81e4e22a
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46710667"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080841"
 ---
 # <a name="how-to-use-foreach-to-remove-items-in-a-blockingcollection"></a>Postupy: Použití příkazu ForEach k odebrání položek v kolekci BlockingCollection
 Kromě odebírání položek z <xref:System.Collections.Concurrent.BlockingCollection%601> pomocí <xref:System.Collections.Concurrent.BlockingCollection%601.Take%2A> a <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> metodu, můžete použít také [foreach](~/docs/csharp/language-reference/keywords/foreach-in.md) ([pro každou](~/docs/visual-basic/language-reference/statements/for-each-next-statement.md) v jazyce Visual Basic) k odebrání položek, dokud se přidání je dokončení a kolekce je prázdná. Tento postup se nazývá *mutace výčet* nebo *využívání výčet* proto, že na rozdíl od typické `foreach` (`For Each`) smyčky, výčet upraví tak, že odeberete zdrojové kolekce položky.  

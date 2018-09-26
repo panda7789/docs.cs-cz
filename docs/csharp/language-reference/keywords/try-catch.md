@@ -10,12 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 70830b08f9be95422761e0c096071d726a3950c8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d1fd290444bc7841e32d955a4e7f2134afdbd484
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517390"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113803"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
 Příkaz try-catch se skládá z `try` bloku, za nímž následuje jedna nebo více `catch` klauzule, které určují obslužné rutiny pro různé výjimky.  
@@ -43,7 +43,7 @@ catch (InvalidCastException e)
   
  Je možné použít více než jeden konkrétní `catch` klauzule ve stejném příkazu try-catch. V takovém případě pořadí `catch` klauzulí je důležité, protože `catch` klauzule jsou zkoumány podle pořadí. Zachycení více specifické výjimky než těch, které jsou specifické pro less. Kompilátor vytvoří chybu, pokud řazení, že vaše catch blokuje tak, aby novější bloku můžou být nikdy dosažen.  
   
- Pomocí `catch` argumentů je jedním ze způsobů filtrování pro výjimky, kterou chcete zpracovat.  Můžete také pomocí filtru výjimek, který prověří další výjimky můžete rozhodnout, jestli ji zpracovat.  Pokud filtr výjimek vrací hodnotu false, pak hledání pro obslužnou rutinu, bude pokračovat.  
+ Pomocí `catch` argumentů je jedním ze způsobů filtrování pro výjimky, kterou chcete zpracovat.  Můžete také použít filtr výjimek, který prověří další výjimky můžete rozhodnout, jestli ji zpracovat.  Pokud filtr výjimek vrací hodnotu false, pak hledání pro obslužnou rutinu, bude pokračovat.  
   
 ```csharp  
 catch (ArgumentException e) when (e.ParamName == "…")  

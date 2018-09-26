@@ -12,13 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 6b5f3f42158a8b86a247a0e8a1ada3a37edc0df1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4fe6a0c39388e72807043e9e1ccd2deb59afb656
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43499962"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085869"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Automatizace uživatelského rozhraní a změna velikosti obrazovky
 > [!NOTE]

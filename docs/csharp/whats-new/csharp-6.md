@@ -1,74 +1,77 @@
 ---
 title: Co je nového v jazyce C# 6 – Průvodce v C#
-description: Informace o nových funkcích v C# verze 6
+description: Informace o nových funkcích v jazyce C# verze 6
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: c23d4f45441451fbf8a2ad2f939bdb1ed6144154
-ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
+ms.openlocfilehash: f6f953eacc935d38cc7d45173109c96c52a5e2f3
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/25/2018
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084940"
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 
-6.0 verze jazyka C# obsahuje řadu funkcí, které zvýšení produktivity pro vývojáře. Funkce v této verzi patří:
+C# 6.0 vydání obsahovala řadu funkcí, které zvyšují produktivitu pro vývojáře. Funkce v této verzi patří:
 
 * [Auto vlastnosti jen pro čtení](#read-only-auto-properties):
-    - Můžete vytvořit jen pro čtení automaticky – vlastnosti, které lze nastavit pouze v konstruktory.
-* [Inicializátory automaticky vlastnost](#auto-property-initializers):
-    - Můžete napsat inicializace výrazy pro nastavení počáteční hodnota auto vlastnosti.
-* [Výraz vozidlo funkce členy](#expression-bodied-function-members):
-    - Můžete vytvořit metody jednořádkové použití výrazů lambda.
+    - Můžete vytvořit jen pro čtení automatické vlastnosti, které lze nastavit pouze v konstruktorech.
+* [Inicializátory automatickou vlastnost](#auto-property-initializers):
+    - Můžete psát výrazy inicializace nastavit počáteční hodnotu Automatická vlastnost.
+* [Členové s výrazem v těle funkce](#expression-bodied-function-members):
+    - Můžete vytvářet metody jednořádkové použití výrazů lambda.
 * [pomocí statické](#using-static):
-    - Všechny metody jedné třídy můžete importovat do aktuální obor názvů.
-* [Null – podmíněné operátory](#null-conditional-operators):
-    - Můžete výstižně a bezpečně přistupovat členům v objektu při kontrole stále null s podmíněný operátor s hodnotou null.
-* [Řetězec interpolace](#string-interpolation):
-    - Můžete napsat řetězec formátování výrazy pomocí vložené výrazy místo poziční argumenty.
+    - Všechny metody jednu třídu můžete importovat do aktuálního oboru názvů.
+* [Null – podmíněných operátorů](#null-conditional-operators):
+    - Stručně a výstižně a bezpečně dostanete členy objektu při pořád ještě se hledají null s hodnotou null podmiňovací operátor.
+* [Interpolace řetězců](#string-interpolation):
+    - Můžete napsat řetězce formátování výrazů vložené výrazy místo poziční argumenty.
 * [Filtry výjimek](#exception-filters):
-    - Můžete zachytit výrazy na základě vlastností výjimku nebo jiný stav programu. 
-* [nameof výrazy](#nameof-expressions):
-    - Můžete je nechat kompilátoru generovat řetězcové vyjádření symbolů.
-* [await v catch a nakonec blokuje](#await-in-catch-and-finally-blocks):
-    - Můžete použít `await` výrazy v umístění, které dříve je zakázána.
-* [index inicializátory](#index-initializers):
-    - Můžete vytvářet inicializace výrazy pro asociativní kontejnery, jakož i kontejnery pořadí.
-* [Rozšiřující metody pro Inicializátory kolekcí](#extension-add-methods-in-collection-initializers):
-    - Inicializátory kolekcí může se spoléhat na dostupné rozšiřující metody, kromě metod člen.
-* [Vylepšené rozlišení přetížení](#improved-overload-resolution):
-    - Některé konstruktory, které dříve generovány volání metod nejednoznačný nyní správně přeložit.
+    - Je možné zachytit výrazům založeným na vlastnosti výjimky nebo jiných stav programu. 
+* [Výrazy nameof](#nameof-expressions):
+    - Můžete nechat kompilátor generovat řetězcové reprezentace symboly.
+* [operátor await v catch a finally blokuje](#await-in-catch-and-finally-blocks):
+    - Můžete použít `await` výrazy v umístění, která dříve je zakázané.
+* [Inicializátory indexů](#index-initializers):
+    - Výrazy inicializace pro asociativní kontejnery, stejně jako kontejnery sekvence, můžete vytvářet.
+* [Rozšiřující metody pro inicializátory kolekce](#extension-add-methods-in-collection-initializers):
+    - Inicializátory kolekce můžete spolehnout na dostupné rozšiřující metody, kromě metod člena.
+* [Vylepšené řešení přetížení](#improved-overload-resolution):
+    - Některé konstrukce, které dříve vygenerovaný volání metody nejednoznačný nyní správně přeložit.
+* [`deterministic` – možnost kompilátoru](#deterministic-compiler-output):
+    - Možnost kompilátoru deterministické zajišťuje, následné kompilace se stejným zdrojem generovat stejný binární výstup.
 
-Celkový efekt těchto funkcí je psaní přesnější kód, který je také lépe čitelný. Syntaxe obsahuje menší procedury pro mnoho běžné postupy. Je snazší zjistit záměr návrh s menší procedury. Tyto funkce a další a budete zvýšit produktivitu, napsat srozumitelnější kód a více soustředit na základní funkce, než na konstrukce jazyka.
+Celkový efekt z těchto funkcí je, že napíšete stručnější kód, který je také lépe čitelný. Syntaxe obsahuje méně procedury pro mnoho běžných postupech. Je snazší zjistit záměr návrhu s méně procedury. Přečtěte si tyto funkce dobře a budete produktivnější, psát kód lépe čitelný a více se soustředit na základní funkce, než na konstrukce jazyka.
 
-Zbývající část tohoto tématu poskytuje podrobné informace o jednotlivých funkcí.
+Zbývající část tohoto tématu poskytuje podrobné informace o každé z těchto funkcí.
 
-## <a name="auto-property-enhancements"></a>Vylepšení automatického – vlastnost 
+## <a name="auto-property-enhancements"></a>Vylepšení automatickou vlastnost
 
-Syntaxe automaticky implementované vlastnosti (obvykle označuje jako 'auto vlastnosti') provedené velmi snadné vytváření vlastnosti, které měl jednoduché get a nastavení přístupových objektů:
+Syntaxe pro automaticky implementované vlastnosti (obvykle označované jako automatické vlastnosti) provedené velmii snadné vytváření vlastnosti, které bylo jednoduché get a set přístupové objekty:
 
 [!code-csharp[ClassicAutoProperty](../../../samples/snippets/csharp/new-in-6/oldcode.cs#ClassicAutoProperty)]
 
-Tento jednoduchý syntaktický však omezenou druhy vzorů, které může podporovat použití automatického vlastnosti. C# 6 vylepšuje možnosti automatického vlastnosti tak, aby je mohli používat další způsoby. Nebudete muset přejít na podrobnější syntaxe deklarace a manipulace s nimi pole Základní ručně tak často.
+Tato jednoduchá syntaxe však omezenou druhy vzorů, které může podporovat použití automatických vlastností. C# 6 vylepšuje možnosti automatické vlastnosti tak, aby je mohli používat ve více scénářích. Nebudete se muset vrátit zpět na podrobnější syntaxi deklarace a manipulace s pomocným polem ručně tak často.
 
-Nové syntaxe adresy scénáře vlastnosti jen pro čtení a inicializace proměnné úložiště za auto vlastnost.
+Nová syntaxe adresy scénáře pro vlastnosti jen pro čtení a pro inicializaci proměnné úložiště za automatickou vlastnost.
 
 ### <a name="read-only-auto-properties"></a>Auto vlastnosti jen pro čtení
 
-*Auto vlastnosti jen pro čtení* poskytnout přesnější syntaxe k vytvoření nedá změnit typy. Na nejbližší, které může dojít k neměnné typy v dřívějších verzích systému C# byla deklarovat privátní setter:
+*Auto vlastnosti jen pro čtení* poskytují stručnější syntaxi, vytvořte neměnný typy. Nejbližší, které můžete narazit na neměnné typy ve starších verzích jazyka C# došlo k deklaraci privátní metody setter:
 
 [!code-csharp[ClassicReadOnlyAutoProperty](../../../samples/snippets/csharp/new-in-6/oldcode.cs#ClassicReadOnlyAutoProperty)]
  
-Pomocí této syntaxe, kompilátor není zajistěte, aby byl typ skutečně neměnné. Pouze vynucuje, který `FirstName` a `LastName` vlastnosti nejsou změnit tak, že žádný kód mimo třídu.
+Pomocí této syntaxe, kompilátor nebude zajistěte, aby byl typ skutečně neměnné. Pouze rozdělení promítá `FirstName` a `LastName` vlastnosti nezmění v žádném kódu mimo třídu.
 
-Hodnota true, jen pro čtení chování povolit automatické – vlastnosti jen pro čtení. Je s pouze přistupující deklarovat vlastnost automaticky:
+True jen pro čtení chování povolit automatické – vlastnosti jen pro čtení. Deklarovat vlastnost automaticky s pouze přístupový objekt get:
 
 [!code-csharp[ReadOnlyAutoProperty](../../../samples/snippets/csharp/new-in-6/newcode.cs#ReadOnlyAutoProperty)]
 
-`FirstName` a `LastName` vlastnosti lze nastavit pouze v těle konstruktor:
+`FirstName` a `LastName` vlastnosti lze nastavit pouze v těle konstruktoru:
 
 [!code-csharp[ReadOnlyAutoPropertyConstructor](../../../samples/snippets/csharp/new-in-6/newcode.cs#ReadOnlyAutoPropertyConstructor)]
 
-Při operaci set `LastName` v jiné metody generuje `CS0200` došlo k chybě kompilace:
+Pokoušíte se nastavit `LastName` v jiné metody generuje `CS0200` Chyba kompilace:
 
 ```csharp
 public class Student
@@ -83,95 +86,100 @@ public class Student
 }
 ```
 
-Tato funkce umožňuje true jazyková podpora pro vytváření neměnné typy a pomocí syntaxe zkracují a pohodlný vlastnost automaticky.
+Tato funkce umožňuje true jazykovou podporu pro vytváření typů neměnných a pomocí syntaxe automatickou vlastnost stručnějším a pohodlné.
 
-### <a name="auto-property-initializers"></a>Inicializátory automaticky – vlastnost
+Pokud přidáte tuto syntaxi není neodebere dostupná metoda, je [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
 
-*Inicializátory automaticky vlastnost* umožňují deklarovat počáteční hodnota auto-vlastnosti jako součást deklarace vlastnosti.  V dřívějších verzích tyto vlastnosti třeba, aby měl setter a museli byste se inicializovat úložiště dat používá pole zálohování pomocí tohoto nastavení. Vezměte v úvahu tato třída pro studenty, který obsahuje název a seznam tříd Studentova:
+### <a name="auto-property-initializers"></a>Inicializátory automatickou vlastnost
+
+*Inicializátory automatickou vlastnost* umožňuje deklarovat počáteční hodnotu pro automatickou vlastnost jako součást deklarace vlastností.  V dřívějších verzích byste potřebovali mít nastavení těchto vlastností a je třeba použít tuto metodu setter se inicializovat datové úložiště používané pomocným polem. Vezměte v úvahu tuto třídu pro student, který obsahuje název a seznam tříd studenta:
 
 [!code-csharp[Construction](../../../samples/snippets/csharp/new-in-6/oldcode.cs#Construction)]
  
-S růstem této třídy může zahrnovat další konstruktory. Každý konstruktor musí inicializovat toto pole, nebo budete zavádět chyby.
+S růstem této třídy může obsahovat další konstruktory. Každý konstruktor musí inicializovat toto pole, nebo budete způsobit chyby.
 
-C# 6 umožňuje přiřadit počáteční hodnotu pro úložiště používá vlastnost automaticky v deklaraci automaticky vlastnost:
+C# 6 umožňuje přiřadit počáteční hodnotu pro úložiště využitá službou Automatické vlastnosti v deklaraci automatickou vlastnost:
 
 [!code-csharp[Initialization](../../../samples/snippets/csharp/new-in-6/newcode.cs#Initialization)]
 
-`Grades` Člen je inicializován, kde je deklarován. Který usnadňuje provést inicializaci právě jednou. Inicializace je součástí deklarace vlastnosti, což usnadňuje označení rovnosti přidělení úložiště s veřejné rozhraní pro `Student` objekty.
+`Grades` Člen je inicializovaný, ve kterém je deklarována. Který usnadňuje provedení inicializace přesně jednou. Inicializace je součástí deklaraci vlastnosti, což usnadňuje odpovídá přidělení úložiště pomocí veřejného rozhraní pro `Student` objekty.
 
-Inicializátory vlastnost lze použít s vlastností čtení/zápisu a také vlastnosti jen pro čtení, jak je uvedené v tomto poli.
+Vlastnosti lze použít s vlastností čtení/zápisu, jakož i vlastnosti jen pro čtení, jak je znázorněno zde.
 
 [!code-csharp[ReadWriteInitialization](../../../samples/snippets/csharp/new-in-6/newcode.cs#ReadWriteInitialization)]
 
-## <a name="expression-bodied-function-members"></a>Výraz vozidlo funkce členy
+## <a name="expression-bodied-function-members"></a>Členové tvoření výrazy – funkce
 
-Tělo mnoho členů, které jsme zapsat obsahovat pouze jeden příkaz, který může být reprezentován jako výraz. Zápisem člena výraz vozidlo místo toho můžete snížit této syntaxe. Funguje pro metody a vlastnosti jen pro čtení. Například přepsání `ToString()` je často skvělé kandidátem:
+Tělo mnoho členů, které jsme napsali obsahovat pouze jeden příkaz, který může být reprezentována jako výraz. Syntaxe můžete snížit napsáním na člena s výrazem v těle. Funguje to pro metody a vlastnosti jen pro čtení. Například přepsání `ToString()` často je vynikající kandidát:
 
 [!code-csharp[ToStringExpressionMember](../../../samples/snippets/csharp/new-in-6/newcode.cs#ToStringExpressionMember)]
 
-V také vlastnosti jen pro čtení můžete použít také výraz vozidlo členy:
+Můžete také použít s výrazem v těle členy v také vlastnosti jen pro čtení:
 
 [!code-csharp[FullNameExpressionMember](../../../samples/snippets/csharp/new-in-6/newcode.cs#FullNameExpressionMember)]
 
-## <a name="using-static"></a>pomocí statické
+Změna existujícího člena pro člena vozidlo výrazu je [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
 
-*Pomocí statické* vylepšení umožňuje importovat statické metody třídy jednu třídu. Dříve `using` příkaz naimportovány všechny typy v oboru názvů. 
 
-Statické metody třídy se často používáme v našem kódu. Opakovaně zadáním názvu třídy mohou skrývat význam kódu. Běžným příkladem jsou při psaní třídy, které provádějí mnoho číselné výpočty.
-Váš kód podestlána <xref:System.Math.Sin%2A>, <xref:System.Math.Sqrt%2A> a další volání různé metody v <xref:System.Math> třídy. Nové `using static` syntaxe provádět tyto třídy mnohem čisticí ke čtení. Zadejte třídu, kterou používáte:
+## <a name="using-static"></a>Pomocí statické
+
+*Pomocí statické* vylepšení umožňuje importovat statické metody jednu třídu. Dříve `using` příkaz naimportovány všechny typy v oboru názvů. 
+
+Často používáme statické metody třídy v rámci našeho kódu. Opakovaně zadávat název třídy může ztížit odhalení zjevného význam kódu. Běžným příkladem jsou při psaní třídy, které provádějí mnoho číselné výpočty.
+Váš kód podestlána <xref:System.Math.Sin%2A>, <xref:System.Math.Sqrt%2A> a jiných volání do různých metod v <xref:System.Math> třídy. Nové `using static` syntaxe můžete provádět tyto třídy mnohem čisticího modulu pro čtení. Můžete zadat třídu, kterou používáte:
 
 [!code-csharp[UsingStaticMath](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStaticMath)]
 
-A teď můžete použít libovolnou statickou metodu v <xref:System.Math> třída bez kvalifikace <xref:System.Math> třídy. <xref:System.Math> Třída je případ skvělé použití pro tuto funkci, protože neobsahuje žádné instance metody. Můžete také použít `using static` k importu třída statické metody pro třídu, která má statické a instance metody. Jedním z příkladů je nejvhodnější je <xref:System.String>:
+A teď můžete použít jakékoli statické metodě v <xref:System.Math> třídy bez kvalifikace <xref:System.Math> třídy. <xref:System.Math> Třída je případ vynikající možnosti využití pro tuto funkci, protože neobsahuje žádné metody instance. Můžete také použít `using static` importovat třídy statické metody pro třídu, která má statické a metody instance. Jedním z nejužitečnějších příkladů je <xref:System.String>:
 
 [!code-csharp[UsingStatic](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStatic)]
 
 > [!NOTE]
-> Je nutné použít plně kvalifikovaný název, `System.String` v statického pomocí příkazu. Nelze použít `string` – klíčové slovo místo. 
+> Musíte použít plně kvalifikovaný název třídy, `System.String` v statický příkaz using. Nelze použít `string` – klíčové slovo místo. 
 
-Nyní můžete volat statické metody definované v <xref:System.String> třída bez kvalifikace tyto metody jako členy této třídy:
+Nyní můžete volat statické metody definované v <xref:System.String> třídy bez kvalifikace tyto metody jako členy této třídy:
 
 [!code-csharp[UsingStaticString](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStaticString)]
 
-`static using` Funkce a rozšíření metody pracovat zajímavými způsoby a jazyk návrhu zahrnuté některá pravidla, které konkrétně řeší tyto interakce. Cílem je, chcete-li minimalizovat žádné pravděpodobnost nejnovější změny v existující základy kódu, včetně vašeho.
+`static using` Metody funkce a rozšíření interagovali zajímavé a návrhu jazyka zahrnuté některá pravidla, které konkrétně řeší tyto interakce. Cílem je minimalizovat jakékoli riziko rozbíjející změny v existujícím základů kódu, včetně těch vašich.
 
-Rozšiřující metody jsou pouze v oboru při volání pomocí syntaxe volání metody rozšíření, ne v případě, že se říká statickou metodu.
-To se často zobrazí v dotazech LINQ. Můžete importovat vzoru LINQ importováním <xref:System.Linq.Enumerable>.
+Rozšiřující metody jsou pouze v oboru při volány pomocí syntaxe volání metody rozšíření, ne v případě, že volá jako statická metoda.
+To se často zobrazí v dotazech LINQ. Vzor LINQ můžete importovat importováním <xref:System.Linq.Enumerable>.
 
 [!code-csharp[UsingStaticLinq](../../../samples/snippets/csharp/new-in-6/newcode.cs#usingStaticLinq)]
 
-To importuje všechny metody v <xref:System.Linq.Enumerable> třídy.
-Rozšiřující metody jsou však pouze v oboru při volání jako rozšiřující metody. Nejsou v oboru Pokud jsou volány pomocí syntaxe statickou metodu:
+Tento postup importuje všechny metody v <xref:System.Linq.Enumerable> třídy.
+Rozšiřující metody jsou však jenom v oboru při volání jako metody rozšíření. Nejsou v oboru Pokud jsou volány pomocí syntaxe statickou metodu:
 
 [!code-csharp[UsingStaticLinqMethod](../../../samples/snippets/csharp/new-in-6/newcode.cs#UsingStaticLinkMethod)]
 
-Toto rozhodnutí totiž rozšiřující metody jsou obvykle nazývá pomocí výrazů volání metody rozšíření. Ve výjimečných případu, kdy jsou volány pomocí statickou metodu volejte syntaxe je vyřešit nejednoznačnosti.
-Vyžadování název třídy jako součást volání zdá se, že vhodné.
+Toto rozhodnutí je vzhledem k tomu, že metody rozšíření jsou obvykle volány pomocí výrazy typu invocation – metoda rozšíření. Ve výjimečných případech, ve kterém jsou volány pomocí statické metody volání se vyřešit nejednoznačnost syntaxe.
+Vyžadování názvu třídy jako součást volání zdá se, že z pohledu.
 
-Je poslední funkce z `static using`. `static using` – Direktiva také importuje všechny vnořené typy. Můžete odkazovat všechny vnořené typy bez kvalifikace.
+Existuje jeden poslední funkci `static using`. `static using` Direktiva také importuje všechny vnořené typy. Která umožňuje odkazovat na jakékoli vnořené typy bez kvalifikace.
 
 ## <a name="null-conditional-operators"></a>Podmíněné operátory s Null
 
-Hodnoty Null zkomplikovat kódu. Je potřeba zkontrolovat každých přístup proměnných zajistit nejsou vyhodnocení `null`. *Null podmíněný operátor* díky ty kontroly mnohem snazší a plynulá práce.
+Hodnoty Null zkomplikovat kódu. Je potřeba zkontrolovat každý přístup proměnné k zajištění nejsou přesměrování `null`. *Null podmiňovací operátor* díky kontrol mnohem jednodušší a plynulé.
 
 Jednoduše nahradit přístup ke členu `.` s `?.`:
 
 [!code-csharp[NullConditional](../../../samples/snippets/csharp/new-in-6/program.cs#NullConditional)]
 
-V předchozím příkladu, proměnná `first` je přiřazen `null` Pokud je objekt osoba `null`. Jinak, získá přiřadí hodnota `FirstName` vlastnost. Co je nejdůležitější `?.` znamená, že tento řádek kódu negeneruje `NullReferenceException` při `person` proměnná `null`. Místo toho zkratům a vytváří `null`.
+V předchozím příkladu je proměnná `first` je přiřazena `null` Pokud objekt osoba `null`. V opačném případě získá přiřadí hodnota `FirstName` vlastnost. Co je nejdůležitější `?.` znamená, že negeneruje tento řádek kódu `NullReferenceException` při `person` proměnná je `null`. Místo toho zkratům a vytváří `null`.
 
-Také Upozorňujeme, že tento výraz vrátí `string`, bez ohledu na to hodnota `person`.
-V případě krátké circuiting `null` hodnota vrácená je zadán tak, aby odpovídaly úplné výraz.
+Všimněte si také, že tento výraz vrátí `string`bez ohledu hodnotu `person`.
+V případě krátký circuiting `null` vrácená hodnota je typu tak, aby odpovídaly úplného výrazu.
 
-Často můžete použít tento konstrukce s *null slučování* operátor přiřadit výchozí hodnoty, když jedna z vlastností `null`:
+Můžete často použít tento konstruktor s *nulové sloučení* operátor přiřadit výchozí hodnoty, pokud jedna z vlastností jsou `null`:
 
 [!code-csharp[NullCoalescing](../../../samples/snippets/csharp/new-in-6/program.cs#NullCoalescing)]
 
-Operand pravé straně `?.` operátor není omezen na vlastnosti nebo pole.
-Můžete ji použít i podmíněně volat metody. Se nejčastěji používá členských funkcí s hodnotou null podmíněný operátor bezpečně volat delegáti (nebo obslužné rutiny událostí), může být `null`.  Můžete to udělat pomocí volání metody delegáta `Invoke` metoda pomocí `?.` operátor pro přístup k členovi. Můžete zobrazit příklad v  
-[Delegovat vzory](../delegates-patterns.md#handling-null-delegates) tématu.
+Pravý operand na straně aplikace `?.` operátor není omezena pouze na vlastnosti nebo pole.
+Také vám pomůže ho podmíněně vyvolávat metody. Nejběžnější použití nástroje členské funkce s hodnotou null podmíněný operátor je pro bezpečné vyvolání delegátů (nebo obslužné rutiny událostí), které mohou být `null`.  Uděláte to pomocí volání delegáta `Invoke` pomocí metody `?.` operátor pro přístup k členu. Příklad v můžete vidět  
+[delegování vzorce](../delegates-patterns.md#handling-null-delegates) tématu.
 
-Pravidla `?.` operátor Ujistěte se, že je na levé straně operátoru vyhodnotit pouze jednou. To je důležité a umožňuje mnoho idioms, včetně příklad pomocí obslužných rutin událostí. Začněme využití obslužná rutina události. V předchozích verzích jazyka C# byli vyzváni k zápisu kódu takto:
+Pravidla `?.` operátor Ujistěte se, že levá strana operátoru je vyhodnocen pouze jednou. To je důležité a umožňuje mnoho idiomy, včetně příkladu pomocí obslužných rutin událostí. Začněme s využitím obslužné rutiny události. V předchozích verzích jazyka C# byla ukončena. doporučujeme psát kód následujícím způsobem:
 
 ```csharp
 var handler = this.SomethingHappened;
@@ -179,7 +187,7 @@ if (handler != null)
     handler(this, eventArgs);
 ```
 
-To se upřednostňované přes jednodušší syntaxe:
+To byla upřednostňované nad jednodušší syntaxí:
 
 ```csharp
 // Not recommended
@@ -188,202 +196,210 @@ if (this.SomethingHappened != null)
 ```
 
 > [!IMPORTANT]
-> V předchozím příkladu představuje časování. `SomethingHappened` Událost může mít Odběratelé, kteří v případě zaškrtnutí proti `null`, a tyto odběratele byl odebrán předtím, než se vyvolá událost. By to způsobilo <xref:System.NullReferenceException> vyvolání.
+> V předchozím příkladu představuje časování. `SomethingHappened` Událost může mít předplatitele, pokud je zaškrtnuto proti `null`, a tyto předplatitele byl odebrán předtím, než se vyvolá událost. Která by způsobila <xref:System.NullReferenceException> vyvolání.
 
-V této verzi druhý `SomethingHappened` obslužné rutiny události může obsahovat hodnotu null při testování, ale pokud jiný kód odebere obslužnou rutinu, ho může mít hodnotu null při volání obslužné rutiny události.
+V této verzi druhý `SomethingHappened` obslužná rutina události může být jiná než null při testování, ale pokud jiný kód odebere obslužnou rutinu, je stále možné null při byla volána obslužná rutina události.
 
-Generuje kód pro kompilátor `?.` operátor, který zajišťuje na levé straně (`this.SomethingHappened`) z `?.` výraz vyhodnocen jednou a výsledek je uložený v mezipaměti:
+Kompilátor generuje kód `?.` operátor, který zajistí na levé straně (`this.SomethingHappened`) z `?.` výraz se vyhodnotí jednou a výsledek je uložen do mezipaměti:
 
 ```csharp
 // preferred in C# 6:
 this.SomethingHappened?.Invoke(this, eventArgs);
 ```
 
-Zajištění, že je na levé straně vyhodnotit pouze jednou můžete také použít libovolný výraz, včetně volání metod, na levé straně `?.` i v případě, že musí vedlejší účinky, jsou vyhodnocovány jednou, takže vedlejší účinky nastane jenom jednou. Můžete zobrazit příklad v našem obsahu na [události](../events-overview.md#language-support-for-events).
+Zajištění, že na levé straně je vyhodnocen pouze jednou můžete také použít libovolný výraz, včetně volání metod na levé straně `?.` i v případě, že mají vedlejší účinky, jsou vyhodnocovány jednou, takže k vedlejším účinkům dochází pouze jednou. Můžete zobrazit příklad, v našem obsahu na [události](../events-overview.md#language-support-for-events).
 
-## <a name="string-interpolation"></a>Řetězec interpolace
+## <a name="string-interpolation"></a>Interpolace řetězců
 
-C# 6 obsahuje nové syntaxe pro sestavování řetězců z formátovacího řetězce a výrazy, které se vyhodnocují k vytvoření dalších řetězcové hodnoty.
+C# 6 obsahuje novou syntaxi pro vytvoření řetězce z formátovacího řetězce a výrazy, které jsou vyhodnocovány vytvoří další hodnoty řetězce.
 
-Tradičně, je potřeba k použití poziční parametry v metodě jako `string.Format`:
+Tradičně, museli jste pro použít poziční parametry v metodě, jako je `string.Format`:
 
 [!code-csharp[stringFormat](../../../samples/snippets/csharp/new-in-6/oldcode.cs#stringFormat)]
 
-S C# 6 nové [řetězec interpolace](../language-reference/tokens/interpolated.md) funkce umožňuje vložení výrazů do řetězce formátu. Jednoduše adresa řetězec s `$`:
+Pomocí jazyka C# 6 nové [interpolace](../language-reference/tokens/interpolated.md) funkce vám umožní vložit výrazy ve formátovacím řetězci. Jednoduše začínat řetězec s `$`:
 
 [!code-csharp[stringInterpolation](../../../samples/snippets/csharp/new-in-6/newcode.cs#FullNameExpressionMember)]
 
-Tento počáteční příklad používá vlastnost výrazy pro nahrazovanou výrazy. Můžete rozbalit na tuto syntaxi použít jakýkoli výraz. Například může výpočetní Studentova průměr studijních jako součást interpolace:
+Tento první příklad používá vlastnost výrazy pro nahrazeny výrazy. Můžete rozšířit na tahle syntaxe použít libovolný výraz. Například může vypočítat průměr student získal na podnikové úrovni jako součást interpolace:
 
 [!code-csharp[stringInterpolationExpression](../../../samples/snippets/csharp/new-in-6/newcode.cs#stringInterpolationExpression)]
 
-Spuštěný v předchozím příkladu, by zjistíte, že výstup `Grades.Average()` může mít většího počtu desetinných míst, než byste chtěli. Syntaxe interpolace řetězec podporuje všechny na formát řetězce k dispozici pomocí dříve formátování metody. Můžete přidat řetězce formátu uvnitř složené závorky. Přidat `:` následující výraz, který se formátu:
+Spuštěný v předchozím příkladu, jehož ekvivalent byste našli, který ve výstupu `Grades.Average()` může mít více desetinných míst, než byste chtěli. Syntaxe interpolace řetězce podporuje všechny na formát řetězce k dispozici pomocí dříve formátování metod. Přidání formátovacích řetězců uvnitř složených závorek. Přidat `:` následující výraz, který má formát:
 
 [!code-csharp[stringInterpolationFormat](../../../samples/snippets/csharp/new-in-6/newcode.cs#stringInterpolationFormat)]
 
 Naformátuje hodnotu pro předchozí řádek kódu `Grades.Average()` jako číslo s plovoucí desetinnou čárkou se dvěma desetinnými místy.
 
-`:` Vždy interpretována jako oddělovač mezi výraz, který je formátován a řetězec formátu. To může nastat problémy při výraz používá `:` jiným způsobem, jako je například podmíněný operátor:
+`:` Je vždy interpretováno jako oddělovač mezi výrazem formátovaného a formátovací řetězec. To může způsobit problémy při výraz používá `:` jiným způsobem, jako je například podmíněný operátor:
 
 ```csharp
 public string GetGradePointPercentages() =>
     $"Name: {LastName}, {FirstName}. G.P.A: {Grades.Any() ? Grades.Average() : double.NaN:F2}";
 ```
 
-V předchozím příkladu `:` je analyzovat jako začátek řetězec formátu, nejsou součástí podmíněný operátor. Ve všech případech, kdy k tomu dojde je nutné uvést výrazu v závorkách vynutit kompilátoru interpretovat výraz jako, který chcete:
+V předchozím příkladu `:` je analyzován jako začátek formátovací řetězec, podmiňovací operátor není součástí. Ve všech případech, kdy k tomu dojde je možné ohraničit výrazu v závorkách k vynucení Kompilátor interpretuje výraz jako určené pro instalaci:
 
 [!code-csharp[stringInterpolationConditional](../../../samples/snippets/csharp/new-in-6/newcode.cs#stringInterpolationConditional)]
 
-Nejsou k dispozici žádné omezení na výrazy, které můžete umístit mezi složenými závorkami. Můžete provést komplexní dotaz LINQ uvnitř řetězec interpolované k provádění výpočtů a zobrazit výsledek:
+Nejsou k dispozici žádné omezení na výrazy, které můžete umístit mezi závorkami. Můžete spustit složitého dotazu LINQ v interpolovaném řetězci provádět výpočty a zobrazí výsledek:
 
 [!code-csharp[stringInterpolationLinq](../../../samples/snippets/csharp/new-in-6/newcode.cs#stringInterpolationLinq)]
 
-Zobrazí se od této ukázky můžete dokonce vkládat řetězcového výrazu interpolace uvnitř jiného výrazu interpolace řetězec. V tomto příkladu je velmi pravděpodobné, by měly být složitější než jste v produkčním kódu.
-Místo toho je ilustrativní šířky funkci. Jakýkoli výraz jazyka C# mohou být umístěny ve složených závorkách interpolované řetězce.
+Zobrazí se od této ukázky můžete dokonce vnořit řetězcového výrazu interpolace uvnitř jiného výrazu interpolace řetězce. V tomto příkladu je velmi pravděpodobné, byste měli složitější než na kolik máte v produkčním kódu.
+Místo toho je příkladem škálu funkci. Libovolný výraz C# je možné použít ve složených závorkách interpolovaného řetězce.
 
-### <a name="string-interpolation-and-specific-cultures"></a>Řetězec interpolace a konkrétní jazykové verze
+### <a name="string-interpolation-and-specific-cultures"></a>Interpolace řetězců a specifické jazykové verze
 
-Všechny příklady uvedené v předchozí části formátu řetězce pomocí aktuální jazykovou verzi a jazyka v počítači kde kód spustí. Potřebujete často řetězec vytvořeného pomocí konkrétní jazykové verze formátu.
-Pokud chcete provést, použijte ke skutečnosti, že objekt vyprodukované interpolace řetězec může být implicitně převedena na <xref:System.FormattableString>.
+Všechny příkladů uvedených v předchozí části formátovací řetězce, pomocí aktuální jazykové verze a jazyk na počítači kde spustí kód. Často je potřeba formátovací řetězec vytvořený pomocí konkrétní jazykové verze.
+Provedete to, které používají skutečnost, že objekt vytvořený testovaným interpolace řetězců lze implicitně převést na <xref:System.FormattableString>.
 
-<xref:System.FormattableString> Instance obsahuje řetězec formátu a výsledky vyhodnocení výrazů před jejich převádění na řetězce. Můžete použít veřejné metody třídy <xref:System.FormattableString> zadat jazykovou verzi, při formátování řetězce. Například následující příklad vytvoří řetězec s využitím německé jazykové verze. (Používá znak ',' oddělovač desetinných míst a '.' tisíce znak oddělovače.)
+<xref:System.FormattableString> Instance obsahuje řetězec formátu a výsledky vyhodnocování výrazů před převedením na řetězce. Můžete použít veřejné metody <xref:System.FormattableString> zadat jazykovou verzi, při formátování řetězce. Například následující příklad vytvoří řetězec za použití Německá jazyková verze. (Jako oddělovač desetinných míst používá znak "," a "." znak jako tisíců oddělovač.)
 
 ```csharp
 FormattableString str = $"Average grade is {s.Grades.Average()}";
 var gradeStr = str.ToString(new System.Globalization.CultureInfo("de-DE"));
 ```
 
-Další informace najdete v tématu [řetězec interpolace](../language-reference/tokens/interpolated.md) tématu.
+Další informace najdete v tématu [interpolace](../language-reference/tokens/interpolated.md) tématu.
 
 ## <a name="exception-filters"></a>Filtry výjimek
 
-Další novou funkcí v C# 6 je *filtry výjimek*. Filtry výjimek jsou klauzule, které určují, kdy se má použít klauzuli dané catch.
-Pokud se používá pro filtr výjimek vyhodnocen jako `true`, klauzuli catch provádí běžného zpracování výjimku. Pokud je výsledkem výrazu `false`, pak se `catch` klauzule bylo přeskočeno.
+Další novou funkcí v jazyce C# 6 je *filtry výjimek*. Filtry výjimek jsou klauzule, které určují, kdy by použít klauzuli catch. daný.
+Pokud výraz použitý pro filtr výjimek vyhodnocuje na `true`, klauzule catch provádí běžného zpracování při výskytu výjimky. Pokud je výraz vyhodnocen `false`, pak bude `catch` klauzule se přeskočí.
 
-Je jedno použití zjistit informace o výjimce k určení, zda `catch` klauzule může zpracovat výjimku:
+Zjistit informace o výjimce k určení, zda je jedno použití `catch` klauzule může zpracovat výjimku:
 
 [!code-csharp[ExceptionFilter](../../../samples/snippets/csharp/new-in-6/NetworkClient.cs#ExceptionFilter)]
 
-Kód vygenerovaný filtry výjimek poskytuje lepší informace o výjimku, která je vyvolána a nebyl zpracován. Před filtry výjimek byly přidány do jazyka, museli byste vytvořit kód takto:
+Kód vygenerovaný filtry výjimek poskytuje lepší informace o výjimce, která je vyvolána a nebyl zpracován. Před filtry výjimek byly přidány do jazyka, je třeba vytvořit kód podobný tomuto:
 
 [!code-csharp[ExceptionFilterOld](../../../samples/snippets/csharp/new-in-6/NetworkClient.cs#ExceptionFilterOld)]
 
-Bod, kde je vyvolána výjimka změny mezi tyto dva příklady.
-V předchozí kód, kde `throw` klauzule, všechny analýzu trasování zásobníku nebo zkoumání výpisy stavu systému se zobrazí, zda byla výjimka vydána z `throw` příkaz v klauzuli vaší catch. Objekt skutečné výjimky bude obsahovat původní zásobníku volání, ale všechny ostatní informace o všech proměnných v zásobníku volání mezi tento bod throw a umístění původního bodu throw bylo ztraceno. 
+Místo, kde je vyvolána výjimka změny mezi tyto dva příklady.
+V předchozím kódu, kde `throw` klauzule, všechny analýzu trasování zásobníku nebo zkoumání výpisy při selhání se zobrazí, že byla vyvolána výjimka z `throw` klauzulí catch příkazu. Objekt výjimky skutečné obsahovala původní zásobník volání, ale všechny ostatní informace o proměnných v zásobníku volání od tohoto okamžiku throw umístění původního bodu throw bylo ztraceno. 
 
-Rozdíl oproti, zpracování kód pomocí filtru výjimek: výjimka výraz filtru se vyhodnocuje `false`. Proto nikdy zadá provádění `catch` klauzule. Protože `catch` klauzule nepracuje, bez uvolnění zásobníku probíhá. Pro všechny ladění aktivity, které by proběhnout později je zachovaná, throw znamená původní umístění.
+Rozdíl oproti, jak se zpracovávají kódu pomocí filtru výjimky: výraz filtru výjimky je vyhodnocen jako `false`. Proto nikdy zadá provádění `catch` klauzuli. Vzhledem k tomu, `catch` klauzule nespustí, žádné odvíjení zásobníku probíhá. Pro ladění činnosti, které by proběhnout později se zachovají, throw znamená, že původní umístění.
 
-Kdykoli budete potřebovat k vyhodnocení, pole nebo vlastnosti výjimky, aniž byste museli spoléhat výhradně na typ výjimky, použijte filtr výjimek pro zachování Další informace o ladění.
+Kdykoli budete potřebovat k vyhodnocení, pole nebo vlastnosti výjimky, namísto spoléhání se výhradně na typ výjimky, použijte filtr výjimek pro zachování Další informace o ladění.
 
-Další doporučené vzor s filtry výjimek je používat pro rutiny protokolování. Toto použití také využívá způsobem, ve kterém je zachová bodem throw výjimky, i když se vyhodnocuje filtru výjimek `false`.
+Další doporučené vzor s filtry výjimek je k jejich použití pro rutiny protokolování. Toto použití také využívá způsobem, ve kterém je zachová bodu vyvolání výjimky, i když filtr výjimek vyhodnocuje na `false`.
 
-Metoda protokolování by metodou, jehož argumentem je výjimka, která bezpodmínečně vrací `false`:
+Metoda protokolování bude metodou, jehož argumentem je výjimka, která bezpodmínečně vrací hodnotu `false`:
 
 [!code-csharp[ExceptionFilterLogging](../../../samples/snippets/csharp/new-in-6/ExceptionFilterHelpers.cs#ExceptionFilterLogging)]
 
-Vždy, když chcete k přihlášení k výjimce, můžete přidat klauzuli catch a použít tuto metodu jako filtr výjimek:
+Pokaždé, když se chcete přihlásit k výjimce, můžete přidat klauzuli catch a tuto metodu použít jako filtr výjimek:
 
 [!code-csharp[LogException](../../../samples/snippets/csharp/new-in-6/program.cs#LogException)]
 
-Výjimky jsou nikdy zachycena, protože `LogException` metoda vždy vrátí hodnotu `false`. Tento filtr výjimek vždy false znamená, že můžete umístit této obslužné rutiny protokolování před všechny ostatní obslužné rutiny výjimek:
+Výjimky jsou nikdy zachycena, protože `LogException` metoda vždy vrátí `false`. Tento filtr výjimek vždy false znamená, že tato obslužná rutina protokolování před všechny ostatní obslužné rutiny výjimek můžete umístit:
 
 [!code-csharp[LogExceptionRecovery](../../../samples/snippets/csharp/new-in-6/program.cs#LogExceptionRecovery)]
 
-V předchozím příkladu zvýrazňuje důležité omezující vlastnosti výjimky filtrů.
-Filtry výjimek povolit scénáře, kde může před více některou zobrazí další obecné klauzule catch výjimky. Je také možné, že se zobrazí v více klauzulí catch stejného typu Výjimka:
+V předchozím příkladu jsou zvýrazněné velmi důležitý aspekt filtry výjimek.
+Filtry výjimek umožňují scénáře, ve kterém může obecnější klauzuli catch. výjimky vyskytovat před konkrétnější jeden. Je také možné mít stejný typ výjimky, se zobrazí ve více klauzulí catch:
 
 [!code-csharp[HandleNotChanged](../../../samples/snippets/csharp/new-in-6/NetworkClient.cs#HandleNotChanged)]
 
-Další doporučené vzor pomáhá zabránit klauzule catch – zpracování výjimek, pokud je připojen ladicí program. Tento postup umožňuje spuštění aplikace s ladicím programem a zastavit provádění, když je vyvolána výjimka.
+Další doporučené vzor zabraňuje klauzule catch zpracování výjimek, když je připojen ladicí program. Tato technika umožňuje spouštět aplikace s ladicím programem a zastavit provádění, když dojde k výjimce.
 
-V kódu přidejte filtr výjimek tak, aby všechny kód pro obnovení se provádí jenom v případě, že není připojen ladicí program:
+Ve vašem kódu přidejte filtr výjimek, aby kód pro obnovení provádí pouze v případě, že není připojený ladicí program:
 
 [!code-csharp[LogExceptionDebugger](../../../samples/snippets/csharp/new-in-6/program.cs#LogExceptionDebugger)]
 
-Po přidání tohoto v kódu, můžete nastavit ladicí program na přerušení na všechny neošetřené výjimky. Ladicí program konce kdykoli a spusťte program v ladicím programu `PerformFailingOperation()` vyvolá `RecoverableException`.
-Ladicí program dělí program, protože klauzule catch nebudou provedeny z důvodu výjimky filtr vrací hodnotu false.
+Po přidání tohoto v kódu, nastavujete ladicí program na přerušení na všechny neošetřené výjimky. Spuštění programu v ladicím programu a ladicí program přeruší vždy, když `PerformFailingOperation()` vyvolá `RecoverableException`.
+Ladicí program přeruší programu, protože klauzule catch nebude provedeno z důvodu výjimky filtr vrátí hodnotu false.
 
 ## <a name="nameof-expressions"></a>`nameof` Výrazy
 
-`nameof` Výraz vyhodnocen jako název symbolu. Je skvělým způsobem, jak získat nástroje práce kdykoli budete potřebovat název proměnné, vlastnost nebo pole členů.
+`nameof` Výraz vyhodnocen jako název symbolu. To je skvělý způsob, jak získat nástroje pracovat pokaždé, když budete potřebovat název proměnné, vlastnost nebo pole členů.
 
-Mezi nejběžnější používá pro `nameof` je poskytnout název symbol, který způsobil výjimku:
+Jeden z nejčastěji používaných používá pro `nameof` je k poskytnutí názvu symbolu, která způsobila výjimku:
 
 [!code-csharp[nameof](../../../samples/snippets/csharp/new-in-6/NewCode.cs#UsingStaticString)]
 
-Použití jiné je XAML na základě aplikací, které implementují `INotifyPropertyChanged` rozhraní:
+Další možností použití je s XAML na základě aplikace, které implementují `INotifyPropertyChanged` rozhraní:
 
 [!code-csharp[nameofNotify](../../../samples/snippets/csharp/new-in-6/viewmodel.cs#nameofNotify)]
 
-Výhodou použití `nameof` operátor přes konstantní řetězec je, že nástroje můžete porozumět symbolu. Používáte-li přejmenovat symbol refaktoringu nástroje, můžete ho přejmenuje ho `nameof` výraz. Konstantní řetězce nemají této výhody. Vyzkoušejte si to ve svém oblíbeném editoru: Přejmenovat proměnnou a všechna `nameof` výrazy se aktualizuje také.
+Výhodou použití `nameof` operátor přes konstantní řetězce je, že nástroje by rozuměla symbolu. Pokud používáte nástroje pro refaktoring Přejmenování symbolu, ji budou přejmenujte ji v `nameof` výrazu. Konstantní řetězce nemají tuto výhodu. Vyzkoušejte si to sami ve svém oblíbeném editoru: přejmenování proměnnou a všechny `nameof` výrazy budou aktualizovat také.
 
-`nameof` Výraz vytvoří nekvalifikované název její argument (`LastName` v předchozích příkladech) i v případě, že používáte plně kvalifikovaný název pro argument:
+`nameof` Výraz vytvoří neúplný název svého argumentu (`LastName` v předchozích příkladech) i v případě, že používáte plně kvalifikovaný název argumentu:
 
 [!code-csharp[QualifiedNameofNotify](../../../samples/snippets/csharp/new-in-6/viewmodel.cs#QualifiedNameofNotify)]
 
-To `nameof` výraz vytváří `FirstName`, nikoli `UXComponents.ViewModel.FirstName`.
+To `nameof` výraz vytvoří `FirstName`, nikoli `UXComponents.ViewModel.FirstName`.
 
-## <a name="await-in-catch-and-finally-blocks"></a>Await v Catch a nakonec blokuje.
+## <a name="await-in-catch-and-finally-blocks"></a>Operátor await v Catch a blocích Finally
 
-C# 5 měl několik omezení kolem kam může být `await` výrazy.
-Jeden z nich byla odebrána v C# 6. Teď můžete použít `await` v `catch` nebo `finally` výrazy. 
+C# 5 má několik omezení kde mohli byste umístit `await` výrazy.
+Jedna z těchto byla odebrána v jazyce C# 6. Teď můžete použít `await` v `catch` nebo `finally` výrazy. 
 
-Přidání await výrazy v catch a nakonec bloky zdánlivě zkomplikovat ty zpracování. Přidejme příklad diskutovat o tom, jak se zobrazuje. V žádné asynchronní metody, můžete použít výraz await v a nakonec klauzule.
+Přidání await výrazy v catch a finally může zdát zkomplikovat ty zpracování bloky. Přidejme popisují, jak se zobrazuje příklad. V asynchronní metody, výrazu await v můžete klauzule finally.
 
-S C# 6 může také await ve výrazech catch. Tato možnost se nejčastěji používá s scénáře protokolování:
+Pomocí jazyka C# 6 může také čekat ve výrazech catch. To se nejčastěji používá v případě protokolování:
 
 [!code-csharp[AwaitFinally](../../../samples/snippets/csharp/new-in-6/NetworkClient.cs#AwaitFinally)]
 
-Podrobnosti implementace pro přidání `await` podporu uvnitř `catch` a `finally` klauzule zajistí, že její chování je konzistentní s chování synchronní kódu. Při provedení kódu `catch` nebo `finally` vyvolá klauzule, provádění hledá vhodný `catch` klauzuli v další blok okolního. Došlo k výjimce aktuální, dojde ke ztrátě této výjimky. Stejné se stane s očekávaná výrazy v `catch` a `finally` klauzule: vhodný `catch` je hledán, a aktuální výjimky, pokud existuje, bude ztracena.  
+Podrobnosti implementace pro přidání `await` podporovala uvnitř `catch` a `finally` klauzule zajistí, že její chování je konzistentní s chování pro synchronní kód. Při spouštění kódu v `catch` nebo `finally` klauzule vyvolá výjimku, provádění hledá vhodný `catch` klauzule v další okolní bloku. Pokud se aktuální výjimku, tato výjimka bude ztracena. Stejné se stane s očekávané výrazy v `catch` a `finally` klauzulí: vhodný `catch` prohledána, a na aktuální výjimku, pokud existuje, dojde ke ztrátě.  
 
 > [!NOTE]
-> Toto chování je z důvodu se doporučuje pro zápis `catch` a `finally` klauzule pečlivě, aby nedošlo k zavedení nových výjimek.
+> Toto chování je z důvodu se doporučuje pro zápis `catch` a `finally` klauzule pečlivě, aby nedošlo k zavedení nové výjimky.
 
-## <a name="index-initializers"></a>Inicializátory indexu
+## <a name="index-initializers"></a>Inicializátory indexů
 
-*Inicializátory index* je jednou ze dvou funkcí Inicializátory kolekcí více konzistentní s využití index. V dřívějších verzích jazyka C#, můžete použít *Inicializátory kolekcí* pouze s kolekcemi styl pořadí, včetně <xref:System.Collections.Generic.Dictionary%602> přidáním složené závorky kolem dvojice klíče a hodnoty:
+*Inicializátory indexů* je jedním ze dvou funkcí, které usnadňují inicializátory kolekce konzistentnější s využitím indexu. V dřívějších verzích jazyka C#, můžete použít *inicializátory kolekce* pouze s kolekcemi styl sekvence, včetně <xref:System.Collections.Generic.Dictionary%602> přidáním závorek kolem páry klíč-hodnota:
 
 [!code-csharp[ListInitializer](../../../samples/snippets/csharp/new-in-6/initializers.cs#ListInitializer)]
 
-Teď můžete použít je s <xref:System.Collections.Generic.Dictionary%602> kolekce a podobné typy. Nové syntaxe podporuje přiřazení do kolekce pomocí indexu:
+Teď je můžete využít s <xref:System.Collections.Generic.Dictionary%602> kolekce a podobné typy. Nová syntaxe podporuje přiřazení do kolekce pomocí indexu:
 
 [!code-csharp[DictionaryInitializer](../../../samples/snippets/csharp/new-in-6/initializers.cs#DictionaryInitializer)]
 
-Tato funkce znamená, že asociativní kontejnery můžete inicializovat pomocí syntaxe podobná co bylo nastavené pro kontejnery pořadí pro několik verzí.
+Tato funkce znamená, že asociativní kontejnery mohou být inicializovány pomocí syntaxe podobné co bylo nastavené pro kontejnery sekvence pro několik verzí.
 
-## <a name="extension-add-methods-in-collection-initializers"></a>Rozšíření `Add` metody v Inicializátory kolekcí
+## <a name="extension-add-methods-in-collection-initializers"></a>Rozšíření `Add` metody v inicializátory kolekce
 
-Další funkce, která usnadňuje inicializace kolekce je schopnost používat *metoda rozšíření* pro `Add` metoda. Tato funkce byla přidána parita s jazykem Visual Basic. 
+Další funkce, která usnadňuje inicializace kolekce je schopnost používat *– metoda rozšíření* pro `Add` metody. Tato funkce byla přidána parita s jazykem Visual Basic. 
 
-Tato funkce je velmi užitečné, když máte třídy vlastní kolekce, která má metoda s jiným názvem sémanticky přidávat nové položky.
+Tato funkce je nejužitečnější v případě, že máte vlastní třídu kolekce, která obsahuje metodu s jiným názvem sémanticky přidávat nové položky.
 
-Zvažte například kolekce studenty takto:
+Představte si třeba kolekce studentů takto:
 
 [!code-csharp[Enrollment](../../../samples/snippets/csharp/new-in-6/enrollment.cs#Enrollment)]
 
-`Enroll` Metoda přidá student. Ale není pomocí `Add` vzor.
-V předchozích verzích jazyka C#, nelze používat Inicializátory kolekcí s `Enrollment` objektu:
+`Enroll` Metoda přidá student. Ale jeho není postupujte `Add` vzor.
+V předchozích verzích jazyka C#, nelze používat inicializátory kolekce s `Enrollment` objektu:
 
 [!code-csharp[InitializeEnrollment](../../../samples/snippets/csharp/new-in-6/classList.cs#InitializeEnrollment)]
 
-Teď můžete, ale jenom v případě, že vytvoříte metody rozšíření, která mapuje `Add` k `Enroll`:
+Nyní můžete, ale pouze v případě, že vytvoření metody rozšíření, která mapuje `Add` k `Enroll`:
 
 [!code-csharp[ExtensionAdd](../../../samples/snippets/csharp/new-in-6/classList.cs#ExtensionAdd)]
 
-Co dělají pomocí této funkce je k mapování libovolné metody přidá položky do kolekce na metodu s názvem `Add` vytvořením metody rozšíření.
+Co právě děláte pomocí této funkce je k mapování libovolné metody přidá položky do kolekce na metodu s názvem `Add` tak, že vytvoříte metody rozšíření.
 
-## <a name="improved-overload-resolution"></a>Vylepšené přetížení řešení
+## <a name="improved-overload-resolution"></a>Vylepšené přetížení
 
-Tato funkce poslední je jednou z pravděpodobně nebude zjistíte. Nebyly konstrukce kde předchozí verzi kompilátor jazyka C# může našli některé volání metody zahrnující nejednoznačné výrazy lambda. Vezměte v úvahu tuto metodu:
+Tato funkce poslední je ten, který pravděpodobně nebude oznámení. Došlo k konstrukce předchozí verze kompilátoru jazyka C# může kde najdete některé volání metody zahrnující nejednoznačné výrazy lambda. Vezměte v úvahu tuto metodu:
 
 [!code-csharp[AsyncMethod](../../../samples/snippets/csharp/new-in-6/overloads.cs#AsyncMethod)]
 
-Voláním této metody pomocí syntaxe skupiny metoda skončí v dřívějších verzích jazyka C# s chybou:
+Voláním této metody pomocí syntaxe metody skupiny selže v dřívějších verzích jazyka C#:
 
 [!code-csharp[MethodGroup](../../../samples/snippets/csharp/new-in-6/overloads.cs#MethodGroup)]
  
-Starší kompilátoru nelze správně mezi rozlišit `Task.Run(Action)` a `Task.Run(Func<Task>())`. V předchozích verzích je třeba použít jako argument výraz lambda:
+Kompilátor starší nelze rozlišit správně mezi `Task.Run(Action)` a `Task.Run(Func<Task>())`. V předchozích verzích je třeba použít výraz lambda jako argument:
 
 [!code-csharp[Lambda](../../../samples/snippets/csharp/new-in-6/overloads.cs#Lambda)]
 
-Kompilátor jazyka C# 6 správně zjistí, `Task.Run(Func<Task>())` je lepší volbou.
+Určuje, který kompilátor jazyka C# 6 správně `Task.Run(Func<Task>())` je lepší volbou.
+
+### <a name="deterministic-compiler-output"></a>Výstup kompilátoru deterministické
+
+`-deterministic` Možnost instruuje kompilátor, aby vytvořit bajt po bajtu identické výstupního sestavení po sobě následujících souborů stejných zdrojových souborů.
+
+Ve výchozím nastavení vytvoří každé kompilaci jedinečný výstup na každý kompilace. Kompilátor přidá časové razítko a identifikátor GUID vygenerovaný z náhodných čísel. Tuto možnost použijte, pokud chcete k porovnání pro bajtech výstupu k zajištění konzistence se v rámci sestavení.
+
+Další informace najdete v tématu [– možnost kompilátoru deterministické](../language-reference/compiler-options/deterministic-compiler-option.md) článku.

@@ -25,11 +25,11 @@ helpviewer_keywords:
 - ToolStripMenuItems [Windows Forms], showing separator bars
 ms.assetid: aa5f19bb-b545-4378-bfa6-36ba592f0d7c
 ms.openlocfilehash: eb55796480bea896383da479fe23a5d8967a52e3
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46695391"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47090523"
 ---
 # <a name="how-to-add-enhancements-to-toolstripmenuitems"></a>Postupy: Přidání vylepšení do ToolStripMenuItems
 Můžete zlepšit použitelnost <xref:System.Windows.Forms.MenuStrip> a <xref:System.Windows.Forms.ContextMenuStrip> ovládacích prvků následujícími způsoby:  

@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 3cfe875f-b0c0-413d-9703-5f14e6a1a30e
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 3d9ab6de0c398f466efb5535f34553b78a715c8e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: db468a72f4ee39a5c58e0c5620dc38c0cae14c75
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525183"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085941"
 ---
 # <a name="implementing-the-ui-automation-toggle-control-pattern"></a>Implementace vzoru ovládacích prvků přepínání pro automatizaci uživatelského rozhraní
 > [!NOTE]

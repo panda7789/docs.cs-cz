@@ -10,11 +10,11 @@ ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 3b08154d1be7a8a5699682b3cee3faad4e384269
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586856"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47090211"
 ---
 # <a name="task-parallel-library-tpl"></a>Task Parallel Library (TPL)
 Task Parallel Library (TPL) je sada veřejných typů a rozhraní API v <xref:System.Threading?displayProperty=nameWithType> a <xref:System.Threading.Tasks?displayProperty=nameWithType> obory názvů. Účelem TPL je, aby byli vývojáři produktivnější díky zjednodušení procesu přidávání paralelismu a souběžného zpracování do aplikací. TPL nastavuje stupeň souběžnosti dynamicky, aby byly co nejefektivněji využity všechny procesory, které jsou k dispozici. Kromě toho Knihovna TPL zpracovává rozdělení práce, plánování vláken ve <xref:System.Threading.ThreadPool>, podporu zrušení, správu stavu a další podrobnosti nižší úrovně. Pomocí TPL můžete maximalizovat výkon kódu a zaměřit se na práci, pro kterou je aplikace navržena.  

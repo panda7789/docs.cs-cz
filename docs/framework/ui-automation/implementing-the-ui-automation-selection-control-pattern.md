@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 449c3068-a5d6-4f66-84c6-1bcc7dd4d209
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: fb37c55076f243c48604cbaafdb5fd32c94934f2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 2875df5da7dd5d807cf5aeac0de9aa0645599518
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002928"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47112689"
 ---
 # <a name="implementing-the-ui-automation-selection-control-pattern"></a>Implementace vzoru ovládacích prvků výběr pro automatizaci uživatelského rozhraní
 > [!NOTE]

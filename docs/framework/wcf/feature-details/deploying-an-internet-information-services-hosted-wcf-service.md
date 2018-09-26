@@ -3,11 +3,11 @@ title: Nasazení služby WCF hostované Internetovou informační službou
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
 ms.openlocfilehash: 99ed9ce5304717073057f6712a2b96d910d43bea
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703801"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170175"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>Nasazení služby WCF hostované Internetovou informační službou
 

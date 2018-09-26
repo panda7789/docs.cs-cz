@@ -20,11 +20,11 @@ ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 1c6e1db7d1edacfd0ce8770b9cc7b7f3f9c8ca2a
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586348"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47157753"
 ---
 # <a name="asynchronous-file-io"></a>Asynchronní I/O soubory
 

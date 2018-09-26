@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 3acaee5a-6ce8-4c3e-81c8-67e59eb74477
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 4c4f14f79960b98618a4f6a3450b1e1a2c05f731
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 708393ced89e56536b92f73f603695f00fb5e76e
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003539"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085850"
 ---
 # <a name="find-a-ui-automation-element-based-on-a-property-condition"></a>Hledání prvku automatizace uživatelského rozhraní na základě podmínky pro vlastnost
 > [!NOTE]

@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 87170464-7857-41f1-bcf7-bb41be31cb53
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: a4fd5c0b35e2d99cd81720aa0c7dd587f5cb3298
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c2269c34af7aa0e5df5c7c6466327ad59037c021
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510207"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111266"
 ---
 # <a name="ui-automation-support-for-the-radiobutton-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku RadioButton
 > [!NOTE]

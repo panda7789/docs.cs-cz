@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 28686beeb030573ec195f46cea8305688d51c6a6
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 12fc92c716cf0ff1ab15786a067ad955caee0d20
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698403"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086207"
 ---
 # <a name="accessibility"></a>Usnadnění
 > [!NOTE]

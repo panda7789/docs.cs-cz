@@ -3,11 +3,11 @@ title: Sledování účastníci
 ms.date: 03/30/2017
 ms.assetid: f13e360c-eeb7-4a49-98a0-8f6a52d64f68
 ms.openlocfilehash: e346e0df3417f6ac83854bd96d6e64dcf103ea93
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46711178"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086363"
 ---
 # <a name="tracking-participants"></a>Sledování účastníci
 Sledování účastníci jsou body rozšiřitelnosti, které umožňují vývojář pracovního postupu pro přístup k <xref:System.Activities.Tracking.InteropTrackingRecord.TrackingRecord%2A> objektů a jejich zpracování. [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] zahrnuje účastník standardní sledování, který zapíše záznamy sledování jako události trasování událostí pro Windows (ETW). Je-li který nesplňuje vaše požadavky, můžete také napsat vlastní sledování účastník.  

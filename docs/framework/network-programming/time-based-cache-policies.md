@@ -1,5 +1,5 @@
 ---
-title: Zásady založené na čase mezipaměti
+title: Zásady mezipaměti na základě času
 ms.date: 03/30/2017
 helpviewer_keywords:
 - time-based cache policies
@@ -19,46 +19,45 @@ helpviewer_keywords:
 ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: f25f04a144fa806297b018bf3548b8feb506f67d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d24fa2ece34d20a3d9e8d6f971eebae5da0f496e
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33392548"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47079607"
 ---
-# <a name="time-based-cache-policies"></a>Zásady založené na čase mezipaměti
-Zásady založené na čase mezipaměti definuje aktuálnosti položek v mezipaměti pomocí čas prostředku byl načteny, se k prostředku, vrácený hlavičky a aktuální čas. Při nastavení zásad založené na čase mezipaměti, můžete použít <xref:System.Net.Cache.HttpRequestCacheLevel.Default> zásady založené na čase nebo vytvořte vlastní zásadu založené na čase. Při použití výchozí zásady založené na čase prostředků získaných pomocí protokolu HTTP (Hypertext Transfer), přesný mezipaměti chování je určen podle hlavičky zahrnuty v odpovědi v mezipaměti a chování zadané v části 13 a 14 dokumentu RFC 2616 k dispozici na [ http://www.ietf.org ](http://www.ietf.org/). Příklad kódu, který ukazuje nastavení zásad založené na čase výchozí pro HTTP prostředky, najdete v části [postupy: nastavení zásady ukládání do mezipaměti Default Time-Based pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Příklady kódu, které ukazují, vytvoření a použití zásady mezipaměti najdete v tématu [konfiguraci ukládání do mezipaměti v síťových aplikací](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
+# <a name="time-based-cache-policies"></a>Zásady mezipaměti na základě času
+Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipaměti pomocí čas, kdy byla načtena prostředek, vrátí hlavičky prostředku a aktuální čas. Při nastavování zásad mezipaměti na základě času, můžete použít <xref:System.Net.Cache.HttpRequestCacheLevel.Default> podle času zásady nebo vytvořte vlastní zásadu podle času. Při použití výchozí zásady na základě času pro prostředky získané s použitím protokolu HTTP (Hypertext Transfer), chování přesné mezipaměti se určuje podle záhlaví zahrnutá v odpovědi v mezipaměti a chování zadané v části 13 a 14 dokumentu RFC 2616 k dispozici na [ http://www.ietf.org ](http://www.ietf.org/). Příklad kódu, který ukazuje nastavení výchozí zásady podle času pro HTTP prostředky, najdete v části [postupy: nastavení zásad mezipaměti Default Time-Based pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Příklady kódu, které ukazují, vytváření a používání mezipaměti zásad, najdete v části [konfiguraci ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  
   
 ## <a name="criteria-to-determine-freshness-of-cached-entries"></a>Kritéria k určení aktuálnosti položek v mezipaměti  
- Chcete-li přizpůsobit zásady založené na čase mezipaměti, můžete určit, že jedna nebo více z následujících kritérií použije k určení aktuálnosti položek v mezipaměti:  
+ Přizpůsobení zásad mezipaměti na základě času, můžete určit, že jedna nebo více z následujících kritérií použít k určení aktuálnosti položek v mezipaměti:  
   
 -   Maximální stáří  
   
--   Maximální typu prošlostí  
+-   Maximální neaktuálnost  
   
--   Minimální aktuálnosti  
+-   Minimální novost  
   
 -   Datum synchronizace mezipaměti  
   
 > [!NOTE]
->  Pomocí zásady ukládání do mezipaměti založené na čase výchozí Nezaměňujte za nastavení výchozí zásady mezipaměti pro vaši aplikaci. Výchozí zásady založené na čase je konkrétní zásadu, která lze použít na úrovni požadavku nebo aplikace. Výchozí zásady mezipaměti pro vaši aplikaci je zásada (na základě polohy nebo založené na čase), která se projeví při žádná zásada nastavená na vyžádání. Podrobnosti o nastavení výchozí zásady mezipaměti pro vaši aplikaci najdete v tématu <xref:System.Net.WebRequest.DefaultCachePolicy%2A>.  
+>  Pomocí výchozích zásad mezipaměti na základě času, neměly by být zaměňovány s nastavení zásad mezipaměti výchozí pro vaši aplikaci. Výchozí zásady podle času je konkrétní zásady, které lze použít na úrovni požadavku nebo aplikace. Zásady ukládání do mezipaměti výchozí pro vaši aplikaci se zásady (založená na poloze nebo založená na čase), které se projeví, když nejsou nastavené žádné zásady na vyžádání. Podrobnosti o nastavení mezipaměti výchozí zásady pro vaši aplikaci najdete v tématu <xref:System.Net.WebRequest.DefaultCachePolicy%2A>.  
   
 ### <a name="maximum-age"></a>Maximální stáří  
- Maximální stáří zásad kritérium určuje množství času, které lze použít v mezipaměti kopie prostředku. Pokud je starší než množství času, zadaný v mezipaměti kopie prostředku, musí být prostředek znovu ověřeny, kontrolou obsahu na serveru. Pokud maximální stáří by umožnilo prostředek, který se použije po vypršení platnosti, není tato kritéria dodržení, pokud je zadaná také hodnota maximální typu prošlostí.  
+ Kritérium zásady maximální stáří určuje množství času, které lze použít v mezipaměti kopii prostředku. Pokud je starší než určený čas v mezipaměti kopie prostředku, prostředek musí ověřit kontrolou obsahu na serveru. Pokud prostředek, který se použije po vypršení její platnosti by umožnilo maximální stáří, tato kritéria není podporována, pokud je zadána také hodnota maximální neaktuálnost.  
   
-### <a name="maximum-staleness"></a>Maximální typu Prošlostí  
- Kritérium zásady maximální typu prošlostí Určuje dobu, po vypršení platnosti obsahu je možné v mezipaměti kopie prostředku. Toto je pouze kritérium zásady mezipaměti, která umožňuje prostředků, který se má použít po vypršení jejich platnosti.  
+### <a name="maximum-staleness"></a>Maximální Neaktuálnost  
+ Kritérium zásady maximální neaktuálnost Určuje dobu, po vypršení platnosti obsahu je možné v mezipaměti kopie prostředku. Toto je pouze kritéria zásad mezipaměti, která umožňuje prostředky pro použití platnost vypršela.  
   
-### <a name="minimum-freshness"></a>Minimální aktuálnosti  
- Kritérium minimální aktuálnosti zásady určuje dobu, před vypršení platnosti obsahu je možné v mezipaměti kopie prostředku. Tato zásada nemá vliv způsobit položky mezipaměti vyprší před vypršením platnosti; proto aktuálnosti minimální a maximální typu prošlostí nastavení se vzájemně vylučují.  
+### <a name="minimum-freshness"></a>Minimální novost  
+ Kritérium zásady minimální novost Určuje dobu před vypršení platnosti obsahu je možné v mezipaměti kopie prostředku. Tato zásada má efekt sestavení položka v mezipaměti vyprší před vypršením platnosti; proto aktuálnosti minimální a maximální neaktuálnost nastavení se vzájemně vylučují.  
   
 ## <a name="cache-synchronization-date"></a>Datum synchronizace mezipaměti  
- Kritérium mezipaměti synchronizace data zásad určuje, kdy musí být uložené v mezipaměti kopii prostředku znovu ověřeny kontrolou obsahu na serveru. Pokud došlo ke změně obsahu vzhledem k tomu, že položka se ukládá do mezipaměti, je načíst ze serveru, uložené v mezipaměti a vrátí aplikaci. Pokud obsah se nezměnila, její časové razítko je aktualizovat a aplikace získá obsah v mezipaměti.  
+ Kritérium mezipaměti synchronizace data zásad určuje, kdy kopii prostředku v mezipaměti musí ověřit kontrolou obsahu na serveru. Pokud obsah změnila, protože položka byla uložena do mezipaměti, je načtení ze serveru, uložená v mezipaměti a vrátí aplikaci. Pokud nedošlo ke změně obsahu, se aktualizuje její časové razítko a aplikace obdrží obsah uložený v mezipaměti.  
   
- Datum mezipaměti synchronizace můžete zadat absolutní datum, kdy musí být znovu obsah uložený v mezipaměti ověřeny. Pokud položku vytvoří nová mezipaměť byl poslední znovu ověřeny před datem mezipaměti synchronizace, dojde k stále opětovné ověření se serverem. Pokud byl znovu položky mezipaměti ověřeny po datu synchronizace mezipaměti a neexistují žádné další aktuálnosti nebo požadavky opětovné ověření serveru, které zneplatnit položka v mezipaměti, použije se položku z mezipaměti. Pokud datum synchronizace mezipaměti je nastavené na datum v budoucnosti, položka je znovu ověřeny pokaždé, když se požaduje dokud předá datum synchronizace mezipaměti.  
+ Synchronizace data mezipaměti umožňuje zadat absolutní datum, kdy se musí ověřit obsah uložený v mezipaměti. Pokud se vytvoří nová položka byla naposledy ověřit před datem synchronizaci mezipaměti, opětovné ověření se serverem i přesto dochází ke. Pokud položka mezipaměti byla znovu po datu synchronizaci mezipaměti a neexistují žádné další aktuálnosti nebo opětovné ověření požadavků na server, které zneplatňují položka uložená v mezipaměti, použije se položky z mezipaměti. Pokud datum synchronizaci mezipaměti je nastaveno na datum v budoucnosti, položka je ověřit pokaždé, když je požadovaný dokud synchronizace data mezipaměti předá.  
   
- Následující témata obsahují informace o dopadech kombinace kritéria zásad založené na čase mezipaměti:  
+ Následující témata obsahují informace o dopadech kombinací kritérií zásad mezipaměti na základě času:  
   
 -   [Interakce zásad mezipaměti – maximální stáří a maximální neaktuálnost](../../../docs/framework/network-programming/cache-policy-interaction-maximum-age-and-maximum-staleness.md)  
   
@@ -69,4 +68,4 @@ Zásady založené na čase mezipaměti definuje aktuálnosti položek v mezipam
  [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
  [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)  
  [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
- [\<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
