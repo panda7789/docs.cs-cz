@@ -6,25 +6,25 @@ helpviewer_keywords:
 ms.assetid: 79e4e6f7-0c00-4045-b0f0-e6a7c37c7788
 author: BrucePerlerMS
 ms.openlocfilehash: 4dce8615ba28ddd6054145c282192f75e7817623
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078989"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198940"
 ---
-# <a name="security-guidance-and-best-practices"></a><span data-ttu-id="6606a-102">Informace o zabezpečení a doporučené postupy</span><span class="sxs-lookup"><span data-stu-id="6606a-102">Security Guidance and Best Practices</span></span>
-<span data-ttu-id="6606a-103">Témata v této části poskytují pokyny a aspekty ke zvážení při vytváření zabezpečených aplikací Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="6606a-103">The topics in this section present guidance for and items to consider when creating secure Windows Communication Foundation (WCF) applications.</span></span> <span data-ttu-id="6606a-104">Další informace o systému Windows Server AppFabric a zabezpečení naleznete v tématu [zabezpečení modelu pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)</span><span class="sxs-lookup"><span data-stu-id="6606a-104">For more information about Windows Server AppFabric and security see, [Security Model for Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)</span></span>  
+# <a name="security-guidance-and-best-practices"></a><span data-ttu-id="b372c-102">Informace o zabezpečení a doporučené postupy</span><span class="sxs-lookup"><span data-stu-id="b372c-102">Security Guidance and Best Practices</span></span>
+<span data-ttu-id="b372c-103">Témata v této části poskytují pokyny a aspekty ke zvážení při vytváření zabezpečených aplikací Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="b372c-103">The topics in this section present guidance for and items to consider when creating secure Windows Communication Foundation (WCF) applications.</span></span> <span data-ttu-id="b372c-104">Další informace o systému Windows Server AppFabric a zabezpečení naleznete v tématu [zabezpečení modelu pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)</span><span class="sxs-lookup"><span data-stu-id="b372c-104">For more information about Windows Server AppFabric and security see, [Security Model for Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="6606a-105">V této části</span><span class="sxs-lookup"><span data-stu-id="6606a-105">In this Section</span></span>  
- [<span data-ttu-id="6606a-106">Osvědčené postupy pro zabezpečení</span><span class="sxs-lookup"><span data-stu-id="6606a-106">Best Practices for Security</span></span>](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)  
- <span data-ttu-id="6606a-107">Doporučení a pomáhá vám zabezpečit vaše aplikace.</span><span class="sxs-lookup"><span data-stu-id="6606a-107">Recommendations to help you secure your applications.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="b372c-105">V této části</span><span class="sxs-lookup"><span data-stu-id="b372c-105">In this Section</span></span>  
+ [<span data-ttu-id="b372c-106">Osvědčené postupy pro zabezpečení</span><span class="sxs-lookup"><span data-stu-id="b372c-106">Best Practices for Security</span></span>](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)  
+ <span data-ttu-id="b372c-107">Doporučení a pomáhá vám zabezpečit vaše aplikace.</span><span class="sxs-lookup"><span data-stu-id="b372c-107">Recommendations to help you secure your applications.</span></span>  
   
- [<span data-ttu-id="6606a-108">Důležité informace o zabezpečení</span><span class="sxs-lookup"><span data-stu-id="6606a-108">Security Considerations</span></span>](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
- <span data-ttu-id="6606a-109">Položky můžete zvážit při vytváření aplikací WCF.</span><span class="sxs-lookup"><span data-stu-id="6606a-109">Items to consider when creating a WCF application.</span></span>  
+ [<span data-ttu-id="b372c-108">Důležité informace o zabezpečení</span><span class="sxs-lookup"><span data-stu-id="b372c-108">Security Considerations</span></span>](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)  
+ <span data-ttu-id="b372c-109">Položky můžete zvážit při vytváření aplikací WCF.</span><span class="sxs-lookup"><span data-stu-id="b372c-109">Items to consider when creating a WCF application.</span></span>  
   
- [<span data-ttu-id="6606a-110">Důležité informace o výkonu</span><span class="sxs-lookup"><span data-stu-id="6606a-110">Performance Considerations</span></span>](../../../../docs/framework/wcf/feature-details/performance-considerations.md)  
- <span data-ttu-id="6606a-111">Obsahuje položky týkajících se výkonu a zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="6606a-111">Contains entries related to performance and security.</span></span>  
+ [<span data-ttu-id="b372c-110">Důležité informace o výkonu</span><span class="sxs-lookup"><span data-stu-id="b372c-110">Performance Considerations</span></span>](../../../../docs/framework/wcf/feature-details/performance-considerations.md)  
+ <span data-ttu-id="b372c-111">Obsahuje položky týkajících se výkonu a zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="b372c-111">Contains entries related to performance and security.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6606a-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="6606a-112">See Also</span></span>  
- [<span data-ttu-id="6606a-113">Základní programování WCF</span><span class="sxs-lookup"><span data-stu-id="6606a-113">Basic WCF Programming</span></span>](../../../../docs/framework/wcf/basic-wcf-programming.md)  
- [<span data-ttu-id="6606a-114">Model zabezpečení pro Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="6606a-114">Security Model for Windows Server App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+## <a name="see-also"></a><span data-ttu-id="b372c-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="b372c-112">See Also</span></span>  
+ [<span data-ttu-id="b372c-113">Základní programování WCF</span><span class="sxs-lookup"><span data-stu-id="b372c-113">Basic WCF Programming</span></span>](../../../../docs/framework/wcf/basic-wcf-programming.md)  
+ [<span data-ttu-id="b372c-114">Model zabezpečení pro Windows Server App Fabric</span><span class="sxs-lookup"><span data-stu-id="b372c-114">Security Model for Windows Server App Fabric</span></span>](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)

@@ -10,17 +10,17 @@ ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 03ddcbacf7de3753ca74c398e585447b2d769cd6
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078315"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47210624"
 ---
-# <a name="how-to-set-cache-policy-for-a-request"></a><span data-ttu-id="781ca-102">Postupy: nastavení zásad mezipaměti pro žádost</span><span class="sxs-lookup"><span data-stu-id="781ca-102">How to: Set Cache Policy for a Request</span></span>
-<span data-ttu-id="781ca-103">Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost.</span><span class="sxs-lookup"><span data-stu-id="781ca-103">The following example demonstrates setting a cache policy for a request.</span></span> <span data-ttu-id="781ca-104">V příkladu vstup, jako je identifikátor URI http://www.contoso.com/.</span><span class="sxs-lookup"><span data-stu-id="781ca-104">The example input is a URI such as http://www.contoso.com/.</span></span>  
+# <a name="how-to-set-cache-policy-for-a-request"></a><span data-ttu-id="aa5ea-102">Postupy: nastavení zásad mezipaměti pro žádost</span><span class="sxs-lookup"><span data-stu-id="aa5ea-102">How to: Set Cache Policy for a Request</span></span>
+<span data-ttu-id="aa5ea-103">Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost.</span><span class="sxs-lookup"><span data-stu-id="aa5ea-103">The following example demonstrates setting a cache policy for a request.</span></span> <span data-ttu-id="aa5ea-104">V příkladu vstup, jako je identifikátor URI http://www.contoso.com/.</span><span class="sxs-lookup"><span data-stu-id="aa5ea-104">The example input is a URI such as http://www.contoso.com/.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="781ca-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="781ca-105">Example</span></span>  
- <span data-ttu-id="781ca-106">Následující příklad kódu vytvoří mezipaměť zásadu, která umožňuje požadovaný prostředek pro použití v mezipaměti, pokud nebylo v mezipaměti po dobu delší než jeden den.</span><span class="sxs-lookup"><span data-stu-id="781ca-106">The following code example creates a cache policy that allows the requested resource to be used from the cache if it has not been in the cache for longer than one day.</span></span> <span data-ttu-id="781ca-107">V příkladu se zobrazí zpráva, která označuje, zda byla z mezipaměti používá prostředku – například `"The response was retrieved from the cache : False."`– a pak zobrazí na prostředek.</span><span class="sxs-lookup"><span data-stu-id="781ca-107">The example displays a message that indicates whether the resource was used from the cache—for example, `"The response was retrieved from the cache : False."`—and then displays the resource.</span></span> <span data-ttu-id="781ca-108">Žádost lze splnit všechny mezipaměti mezi klientem a serverem.</span><span class="sxs-lookup"><span data-stu-id="781ca-108">A request can be fulfilled by any cache between the client and server.</span></span>  
+## <a name="example"></a><span data-ttu-id="aa5ea-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="aa5ea-105">Example</span></span>  
+ <span data-ttu-id="aa5ea-106">Následující příklad kódu vytvoří mezipaměť zásadu, která umožňuje požadovaný prostředek pro použití v mezipaměti, pokud nebylo v mezipaměti po dobu delší než jeden den.</span><span class="sxs-lookup"><span data-stu-id="aa5ea-106">The following code example creates a cache policy that allows the requested resource to be used from the cache if it has not been in the cache for longer than one day.</span></span> <span data-ttu-id="aa5ea-107">V příkladu se zobrazí zpráva, která označuje, zda byla z mezipaměti používá prostředku – například `"The response was retrieved from the cache : False."`– a pak zobrazí na prostředek.</span><span class="sxs-lookup"><span data-stu-id="aa5ea-107">The example displays a message that indicates whether the resource was used from the cache—for example, `"The response was retrieved from the cache : False."`—and then displays the resource.</span></span> <span data-ttu-id="aa5ea-108">Žádost lze splnit všechny mezipaměti mezi klientem a serverem.</span><span class="sxs-lookup"><span data-stu-id="aa5ea-108">A request can be fulfilled by any cache between the client and server.</span></span>  
   
 ```csharp  
 using System;  
@@ -107,9 +107,9 @@ Namespace Examples.System.Net.Cache
 End Namespace  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="781ca-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="781ca-109">See Also</span></span>  
- [<span data-ttu-id="781ca-110">Správa mezipaměti pro síťové aplikace</span><span class="sxs-lookup"><span data-stu-id="781ca-110">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
- [<span data-ttu-id="781ca-111">Zásady mezipaměti</span><span class="sxs-lookup"><span data-stu-id="781ca-111">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)  
- [<span data-ttu-id="781ca-112">Zásady mezipaměti na základě místa</span><span class="sxs-lookup"><span data-stu-id="781ca-112">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)  
- [<span data-ttu-id="781ca-113">Zásady mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="781ca-113">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [<span data-ttu-id="781ca-114">\<requestCaching – > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="781ca-114">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+## <a name="see-also"></a><span data-ttu-id="aa5ea-109">Viz také</span><span class="sxs-lookup"><span data-stu-id="aa5ea-109">See Also</span></span>  
+ [<span data-ttu-id="aa5ea-110">Správa mezipaměti pro síťové aplikace</span><span class="sxs-lookup"><span data-stu-id="aa5ea-110">Cache Management for Network Applications</span></span>](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
+ [<span data-ttu-id="aa5ea-111">Zásady mezipaměti</span><span class="sxs-lookup"><span data-stu-id="aa5ea-111">Cache Policy</span></span>](../../../docs/framework/network-programming/cache-policy.md)  
+ [<span data-ttu-id="aa5ea-112">Zásady mezipaměti na základě místa</span><span class="sxs-lookup"><span data-stu-id="aa5ea-112">Location-Based Cache Policies</span></span>](../../../docs/framework/network-programming/location-based-cache-policies.md)  
+ [<span data-ttu-id="aa5ea-113">Zásady mezipaměti na základě času</span><span class="sxs-lookup"><span data-stu-id="aa5ea-113">Time-Based Cache Policies</span></span>](../../../docs/framework/network-programming/time-based-cache-policies.md)  
+ [<span data-ttu-id="aa5ea-114">\<requestCaching – > – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="aa5ea-114">\<requestCaching> Element (Network Settings)</span></span>](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
