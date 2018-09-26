@@ -10,16 +10,15 @@ helpviewer_keywords:
 ms.assetid: 03db52ef-010e-44ea-b6fd-b9c900ecad50
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 728fff7b8626e227e692c713f4cb05049c14a9f1
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e74cc5fa99473562b158cd5068fb8bbaeb6a4a17
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742754"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083910"
 ---
 # <a name="ltcryptoclassgt-element"></a>&lt;cryptoclass –&gt; – Element
-Obsahuje třídy šifrování, která má mapování na popisného názvu do [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) element.  
+Obsahuje kryptografickou třídu, která nemá mapování na popisný název v [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) elementu.  
   
  \<Konfigurace >  
 \<mscorlib >  
@@ -41,7 +40,7 @@ Obsahuje třídy šifrování, která má mapování na popisného názvu do [ \
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`customClassName`|Požadovaný atribut.<br /><br /> Obsahuje informace o třídě šifrování. Pomocí tohoto atributu zadejte krátký název pro vlastní třídy. Zadejte řetězec, který splňuje požadavky uvedené v [určení plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`customClassName`|Požadovaný atribut.<br /><br /> Obsahuje informace o třídě kryptografie. Pomocí tohoto atributu zadejte krátký název pro vaši třídu. Je nutné zadat řetězec, který splňuje požadavky uvedené v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -51,13 +50,13 @@ Obsahuje třídy šifrování, která má mapování na popisného názvu do [ \
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`cryptoClasses`|Obsahuje seznam tříd šifrování, které mají mapování na popisného názvu do [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) element.|  
+|`cryptoClasses`|Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) elementu.|  
 |`cryptographySettings`|Obsahuje nastavení šifrování.|  
-|`cryptoNameMapping`|Obsahuje mapování třídy popisné názvy.|  
-|`mscorlib`|Obsahuje [ \<cryptographySettings – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md) element.|  
+|`cryptoNameMapping`|Obsahuje mapování tříd pro popisné názvy.|  
+|`mscorlib`|Obsahuje [ \<cryptographySettings – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md) elementu.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat  **\<cryptoclass – >** element tak, aby odkazovaly kryptografické třídy a ke konfiguraci modulu runtime. Řetězec "RSA" můžete poté předat do <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metoda a použít <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metoda vrátí `MyCryptoRSAClass` objektu.  
+ Následující příklad ukazuje způsob použití  **\<cryptoclass – >** element tak, aby odkazovaly kryptografickou třídu a konfigurace modulu runtime. Můžete poté předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metoda a použití <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metodu pro návrat `MyCryptoRSAClass` objektu.  
   
 ```xml  
 <configuration>  

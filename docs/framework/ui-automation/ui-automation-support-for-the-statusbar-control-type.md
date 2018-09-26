@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 48dee94a-5119-4939-a4c7-ffeaf794c732
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 4fb586b9ef34781eafbbe2deb66efdefff0eee19
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 44e1440ca9ab49ffcbc849991891eb5c4c0e7357
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085563"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082653"
 ---
 # <a name="ui-automation-support-for-the-statusbar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku StatusBar
 > [!NOTE]
@@ -61,7 +60,7 @@ ms.locfileid: "44085563"
   
 |– Vzor ovládacích prvků|Podpora|Poznámky|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IGridProvider>|Nepovinné|Ovládací prvky stavového řádku by měly podporovat vzoru ovládacích prvků mřížka, aby jednotlivé funkční součásti můžete sledovat a snadno odkazovat informace.|  
+|<xref:System.Windows.Automation.Provider.IGridProvider>|volitelná,|Ovládací prvky stavového řádku by měly podporovat vzoru ovládacích prvků mřížka, aby jednotlivé funkční součásti můžete sledovat a snadno odkazovat informace.|  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>Události automatizace uživatelského rozhraní vyžaduje  

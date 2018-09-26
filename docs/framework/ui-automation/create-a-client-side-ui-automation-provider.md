@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: d91edaf2-be28-41ec-a508-af421cb43c3d
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 8763277052a15e7cde1a5b03e124551bc91328df
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 76fa74a31e7198d0f380a4db71a4789fd7b0a31a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45685696"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084157"
 ---
 # <a name="create-a-client-side-ui-automation-provider"></a>Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]

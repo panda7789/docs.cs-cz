@@ -6,65 +6,64 @@ helpviewer_keywords:
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
-manager: douge
-ms.openlocfilehash: 7719af9393bee816665040d6e4ced191419d0855
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7a529a94edf3a4cf71150c04994d82b8f21eb996
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517859"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170948"
 ---
 # <a name="how-to-create-windows-services"></a>Postupy: Vytváření služeb systému Windows
-Když vytváříte službu, můžete použít šabloně projektu sady Visual Studio s názvem **služba systému Windows**. Tato šablona automaticky provede většinu práce vám tak, že odkazy na příslušné třídy a obory názvů, nastavení dědičnosti ze základní třídy pro služby, a přepsání několik metod budete pravděpodobně chcete přepsat.  
+Při vytváření služby můžete použít šablonu projektu sady Visual Studio volá **Windows Service**. Tato šablona automaticky provádí velkou část práce za vás odkazováním na příslušné třídy a obory názvů, nastavením dědičnosti ze základní třídy pro služby, a přepisováním několika metod, které budete pravděpodobně chtít přepsat.  
   
 > [!WARNING]
->  Šablona projektu služby systému Windows není k dispozici v edici Express sady Visual Studio.  
+>  Šablona projektu služby Windows není k dispozici v edici Express sady Visual Studio.  
   
- Minimálně vytvoření funkčnosti služby, musíte:  
+ Minimálně pro vytvoření funkční služby je potřeba:  
   
 -   Nastavte <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost.  
   
--   Vytvořte potřebné instalační programy pro aplikaci služby.  
+-   Vytvořte nezbytné instalační programy pro aplikaci služby.  
   
--   Přepsat a zadat kód pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody pro přizpůsobení způsobů, jak se chová služby.  
+-   A zadejte kód pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> metody, chcete-li přizpůsobit způsoby, jak se chová vaší služby.  
   
-### <a name="to-create-a-windows-service-application"></a>Vytvoření aplikace služby systému Windows  
+### <a name="to-create-a-windows-service-application"></a>Vytvoření aplikace služby Windows  
   
-1.  Vytvoření **služba systému Windows** projektu.  
-  
-    > [!NOTE]
-    >  Pokyny pro zápis služby bez použití šablony, v tématu [postupy: zápis služeb prostřednictvím kódu programu](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
-  
-2.  V **vlastnosti** nastavte <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost pro vaši službu.  
-  
-     ![Nastavte vlastnost ServiceName. ] (../../../docs/framework/windows-services/media/windowsservice-servicename.PNG "WindowsService_ServiceName")  
+1.  Vytvoření **Windows Service** projektu.  
   
     > [!NOTE]
-    >  Hodnota <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost musí vždy odpovídat názvu zaznamenávají v třídách Instalační služby. Pokud tuto vlastnost změníte, musíte aktualizovat <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost také třídy Instalační služby.  
+    >  Pokyny pro zápis služby bez použití šablony najdete v tématu [postupy: zápis služeb prostřednictvím kódu programu](../../../docs/framework/windows-services/how-to-write-services-programmatically.md).  
   
-3.  Nastavte následující vlastnosti k určení, jak bude vaše služba fungovat.  
+2.  V **vlastnosti** okno, nastaveno <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost pro vaši službu.  
+  
+     ![Nastavte vlastnost ServiceName. ](../../../docs/framework/windows-services/media/windowsservice-servicename.PNG "WindowsService_ServiceName")  
+  
+    > [!NOTE]
+    >  Hodnota <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnosti musí vždy odpovídat názvu v instalačních třídách. Pokud tuto vlastnost změníte, je nutné aktualizovat <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnost také instalačních tříd.  
+  
+3.  Nastavte libovolné z následujících vlastností určíte, jak služba funguje.  
   
     |Vlastnost|Nastavení|  
     |--------------|-------------|  
-    |<xref:System.ServiceProcess.ServiceBase.CanStop%2A>|`True` k označení, že služba bude přijímat žádosti o zastaví; `false` zabránit zastavenou službu.|  
-    |<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>|`True` k označení, že služba chce dostávat oznámení při vypnutí počítače, na kterém je umístěn mimo provoz, povolení k volání <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> postupu.|  
-    |<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>|`True` k označení, že služba bude přijímat požadavky pozastavit nebo obnovit systémem; `false` aby služby z je pozastavený a obnovený.|  
-    |<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>|`True` k označení, že služba dokáže zpracovat oznámení změny stavu napájení počítače; `false` zabránit službu upozornění na tyto změny.|  
-    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|`True` k zápisu informační položky do protokolu událostí aplikace, když služby provádí akce; `false` zakázat tuto funkci. Další informace najdete v tématu [postup: protokolu informace o služby](../../../docs/framework/windows-services/how-to-log-information-about-services.md). **Poznámka:** ve výchozím nastavení, <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> je nastaven na `true`.|  
+    |<xref:System.ServiceProcess.ServiceBase.CanStop%2A>|`True` Chcete-li určit, že služba bude přijímat žádosti o zastavení činnosti; `false` zabránit zastavení služby.|  
+    |<xref:System.ServiceProcess.ServiceBase.CanShutdown%2A>|`True` k označení, že služba chce obdržet oznámení, při vypnutí počítače, ve kterém žije, aby mohla volat <xref:System.ServiceProcess.ServiceBase.OnShutdown%2A> postup.|  
+    |<xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A>|`True` Chcete-li určit, že služba bude přijímat žádosti o pozastavení nebo obnovení činnosti; `false` zabránit službě pozastavit a obnovit.|  
+    |<xref:System.ServiceProcess.ServiceBase.CanHandlePowerEvent%2A>|`True` k označení, že služba může zpracovat oznámení změny stavu napájení počítače; `false` zabránit službě dostávat oznámení těchto změn.|  
+    |<xref:System.ServiceProcess.ServiceBase.AutoLog%2A>|`True` pro zápis informačních položek do protokolu událostí aplikace, když služba provede akci; `false` zakázat tuto funkci. Další informace najdete v tématu [jak: protokolu informace o služby](../../../docs/framework/windows-services/how-to-log-information-about-services.md). **Poznámka:** ve výchozím nastavení, <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> je nastavena na `true`.|  
   
     > [!NOTE]
-    >  Když <xref:System.ServiceProcess.ServiceBase.CanStop%2A> nebo <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> jsou nastaveny na `false`, **správce řízení služeb** vypne odpovídající možností v nabídce zastavit, pozastavit nebo službu dále používat.  
+    >  Když <xref:System.ServiceProcess.ServiceBase.CanStop%2A> nebo <xref:System.ServiceProcess.ServiceBase.CanPauseAndContinue%2A> jsou nastaveny na `false`, **správce řízení služeb** zakáže odpovídající možnosti nabídky zastavit, pozastavit nebo pokračovat ve službě.  
   
-4.  Přístup k editoru kódu a vyplňte chcete použít pro zpracování <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy.  
+4.  Přístup k editoru kódu a vyplňte zpracování, které požadujete pro <xref:System.ServiceProcess.ServiceBase.OnStart%2A> a <xref:System.ServiceProcess.ServiceBase.OnStop%2A> postupy.  
   
-5.  Přepište jiné metody, pro které chcete definovat funkce.  
+5.  Přepište všechny jiné metody, pro které chcete definovat funkci.  
   
-6.  Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [postupy: Přidání instalačních programů pro vaše aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
+6.  Přidejte nezbytné instalační programy pro aplikaci služby. Další informace najdete v tématu [postupy: Přidání instalačních programů do aplikace služby](../../../docs/framework/windows-services/how-to-add-installers-to-your-service-application.md).  
   
-7.  Sestavení projektu výběrem **sestavit řešení** z **sestavení** nabídky.  
+7.  Sestavte projekt výběrem **sestavit řešení** z **sestavení** nabídky.  
   
     > [!NOTE]
-    >  Není stisknutím klávesy F5 spusťte projekt – služba projektu nelze spustit tímto způsobem.  
+    >  Nepoužívejte klávesu F5 ke spuštění projektu – tímto způsobem nelze spustit projekt služby.  
   
 8.  Nainstalujte službu. Další informace najdete v tématu [postupy: instalace a odinstalace služeb](../../../docs/framework/windows-services/how-to-install-and-uninstall-services.md).  
   

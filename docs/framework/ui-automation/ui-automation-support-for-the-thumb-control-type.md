@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 13636338-e320-4355-b071-ede20a3fb1de
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: bc144714812800ef2d545c51c6c3999edfdd6c3d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 582ed85cba16974f968e54fc10b8552e5e32503f
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530519"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172242"
 ---
 # <a name="ui-automation-support-for-the-thumb-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku jezdec
 > [!NOTE]

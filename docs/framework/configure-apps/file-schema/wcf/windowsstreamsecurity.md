@@ -1,24 +1,23 @@
 ---
-title: '&lt;windowsStreamSecurity&gt;'
+title: '&lt;zabezpečení windowsstreamsecurity iniciuje&gt;'
 ms.date: 03/30/2017
 ms.assetid: 926bea29-90c7-4a26-9cf0-fb4aa44f6f70
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: a089a6fb61e8f7fac4116b2280a5c2fe0b703f94
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 6c1253e6f402da6b818a4438142e122f8b31809c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32755107"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084253"
 ---
-# <a name="ltwindowsstreamsecuritygt"></a>&lt;windowsStreamSecurity&gt;
-Zadejte nastavení zabezpečení systému Windows datového proudu vlastní vazby.  
+# <a name="ltwindowsstreamsecuritygt"></a>&lt;zabezpečení windowsstreamsecurity iniciuje&gt;
+Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
-\<windowsStreamSecurity >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
+\<zabezpečení windowsstreamsecurity iniciuje >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +32,7 @@ Zadejte nastavení zabezpečení systému Windows datového proudu vlastní vazb
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|ProtectionLevel|Definuje zabezpečení na úrovni zpráv. Podepisování zpráv snižuje riziko třetích stran manipulaci s zprávy při jejich přenosu. Během přenosu zajišťuje šifrování dat na úrovni o ochraně osobních údajů. Platné hodnoty patří:<br /><br /> -None: Žádná ochrana.<br />-Přihlášení: Zprávy jsou podepsané.<br />-EncryptAndSign: Zprávy jsou podepsat a zašifrovat.<br /><br /> Výchozí hodnota je EncryptAndSign.<br /><br /> Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.|  
+|Třída protectionLevel|Definuje zabezpečení na úrovni zprávy. Podepisování zpráv snižuje riziko manipulace s zprávy při jejich přenosu od jiných dodavatelů. Šifrování poskytuje data úrovně ochrany osobních údajů při přenosu. Platné hodnoty patří:<br /><br /> -Žádný: Žádná ochrana.<br />-Sign: Jsou podepsané zprávy.<br />-EncryptAndSign: Podepsaný a zašifrovaný zpráv.<br /><br /> Výchozí hodnota je EncryptAndSign.<br /><br /> Tento atribut je typu <xref:System.Net.Security.ProtectionLevel>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -42,10 +41,10 @@ Zadejte nastavení zabezpečení systému Windows datového proudu vlastní vazb
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vazba >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vazba vlastní vazby.|  
+|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
   
 ## <a name="remarks"></a>Poznámky  
- Přenosy, které používají protokol orientované na datový proud například TCP a pojmenované kanály podpory upgrady na základě datového proudu přenosu. Konkrétně WCF poskytuje upgrady zabezpečení. Konfigurace zabezpečení tento přenos je zapouzdřené elementem tuto konfiguraci a také zobrazením [ \<sslStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md), které mohou být konfigurovány a přidat do vlastní vazby  
+ Na základě datového proudu přenosu inovace podporují přenosy, které používají protokol orientovaný na stream jako je například TCP a pojmenované kanály. Konkrétně WCF poskytuje upgradů zabezpečení. Konfigurace tohoto zabezpečení přenosu jsou zapouzdřena objektem tento prvek konfigurace a také zobrazením [ \<sslStreamSecurity >](../../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md), které se konfigurují a přidat do vlastní vazby  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Channels.CustomBinding>  
@@ -54,4 +53,4 @@ Zadejte nastavení zabezpečení systému Windows datového proudu vlastní vazb
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

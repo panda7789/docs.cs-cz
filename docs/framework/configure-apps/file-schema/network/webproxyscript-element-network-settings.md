@@ -10,16 +10,15 @@ helpviewer_keywords:
 ms.assetid: a13c26db-6218-4af3-9696-38f24b23bfac
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 6843662b73f6b7d45dd12616f5118569a2d19975
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1e1450d2df424b32aacc5c113b5936001f65915a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754503"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085633"
 ---
 # <a name="ltwebproxyscriptgt-element-network-settings"></a>&lt;webproxyscript –&gt; – Element (nastavení sítě)
-Nakonfiguruje charakteristiky skript používá ke zjišťování webové proxy servery.  
+Konfiguruje vlastnosti souboru, který používá ke zjišťování webové proxy servery.  
   
  \<Konfigurace >  
 \<system.net>  
@@ -41,7 +40,7 @@ Nakonfiguruje charakteristiky skript používá ke zjišťování webové proxy 
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`downloadTimeout`|Určuje maximální dobu se stáhnout skript v hodiny, minuty a sekundy. Výchozí hodnota je jedna minuta.|  
+|`downloadTimeout`|Určuje maximální dobu se stáhnout skript do hodiny, minuty a sekundy. Výchozí hodnota je jedna minuta.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -50,12 +49,12 @@ Nakonfiguruje charakteristiky skript používá ke zjišťování webové proxy 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě <xref:System.Net> oboru názvů.|  
+|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="see-also"></a>Viz také  
  [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 4a83f1e67377a5ce699301770ff0369f8f760884
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8fedec60b6152e77d6f99bf55cf11ec909fa8f80
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508466"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083712"
 ---
 # <a name="specifying-an-assembly39s-location"></a>Určení sestavení&#39;s umístění
 Existují dva způsoby, jak zadat umístění sestavení:  

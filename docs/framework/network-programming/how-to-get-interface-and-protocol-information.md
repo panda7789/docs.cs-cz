@@ -6,16 +6,15 @@ helpviewer_keywords:
 ms.assetid: fd88d26c-4063-495e-a253-736ac3e6b23f
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 6c793f98e25c22ecb34b8aa8deb185048a08a1f9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ae4eb38c72a7f7629cea0f8137a4337553457808
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395083"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078459"
 ---
 # <a name="how-to-get-interface-and-protocol-information"></a>Postupy: získání rozhraní a informace o protokolu
-Tato ukázka ukazuje, jak číst statistik protokolu TCP pro síťové rozhraní.  
+Tento příklad znázorňuje způsob čtení statistik protokolu TCP pro síťové rozhraní.  
   
 ## <a name="example"></a>Příklad  
   
@@ -75,4 +74,4 @@ public static void ShowTcpStatistics(NetworkInterfaceComponent version)
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na **System.Net** oboru názvů.
+-   Odkazy **System.Net** oboru názvů.

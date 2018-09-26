@@ -5,20 +5,20 @@ helpviewer_keywords:
 - WS Security
 ms.assetid: d2221d1c-c9cb-48d1-b044-a3b4445c7f05
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 7bf731c1accd6eefc97c27af58ba139992ae1866
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: aed9c89395f7715b0d0d4478cd292b741e754629
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077171"
 ---
 # <a name="message-security-windows"></a>Zabezpečení zpráv – Windows
-Tento příklad ukazuje, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> vazba k zabezpečení na úrovni zpráv pomocí ověřování systému Windows. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce služba je hostovaná v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).  
+Tato ukázka předvádí, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> vazby pro použití zabezpečení na úrovni zprávy s ověřováním Windows. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce služba je hostována v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Výchozí zabezpečení [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) je zabezpečení zpráv pomocí ověřování systému Windows. Konfigurační soubory v této ukázce explicitně nastavit `mode` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) k `Message` a `clientCredentialType` atribut `Windows`. Tyto hodnoty jsou výchozí hodnoty pro tuto vazbu, ale byly explicitně nakonfigurovány, jak je znázorněno v následující ukázka konfigurace k předvedení jejich použití.  
+ Výchozí zabezpečení [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) je zabezpečení zpráv pomocí ověřování Windows. Konfigurační soubory v této ukázce explicitně nastavit `mode` atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-wshttpbinding.md) k `Message` a `clientCredentialType` atribut `Windows`. Tyto hodnoty jsou výchozí hodnoty pro tuto vazbu, ale byly explicitně nakonfigurovány, jak je znázorněno v následující ukázková konfigurace k předvedení jejich použití.  
   
 ```xml  
 <bindings>  
@@ -32,7 +32,7 @@ Tento příklad ukazuje, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBind
 </bindings>  
 ```  
   
- Konfigurace klienta koncový bod se skládá z absolutní adresu pro koncový bod služby, vazby a kontrakt. Klient vazba je konfigurován s odpovídající `securityMode` a `authenticationMode`.  
+ Konfigurace koncového bodu klienta se skládá z absolutní adresu pro koncový bod služby, vazba a kontrakt. Klient vazby je nakonfigurovaný s příslušnou `securityMode` a `authenticationMode`.  
   
 ```xml  
 <system.serviceModel>  
@@ -62,7 +62,7 @@ Tento příklad ukazuje, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBind
 </system.serviceModel>  
 ```  
   
- Zdrojový kód služby se změnilo k předvedení jak <xref:System.ServiceModel.OperationContext.ServiceSecurityContext%2A> lze použít pro přístup k identitu volajícího.  
+ Zdrojový kód služby byla změněna k předvedení jak <xref:System.ServiceModel.OperationContext.ServiceSecurityContext%2A> slouží pro přístup k identity volajícího.  
 
 ```csharp
 public string GetCallerIdentity()  
@@ -72,14 +72,14 @@ public string GetCallerIdentity()
 }  
 ```
 
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. První metoda volána - `GetCallerIdentity` -vrátí název identitu volajícího zpět do klienta. Stisknutím klávesy ENTER v okně konzoly vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. První metoda volána – `GetCallerIdentity` – vrátí název identity volajícího zpět do klienta. Stisknutím klávesy ENTER v okně konzoly vypnutí klient.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také

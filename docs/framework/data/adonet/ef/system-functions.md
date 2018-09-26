@@ -3,11 +3,11 @@ title: Funkce systému
 ms.date: 03/30/2017
 ms.assetid: b7c71b58-09e6-44ce-a3e5-a0fdb892fb86
 ms.openlocfilehash: 277f2f9c69610b134f3f95787f065f65b01712d2
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46697390"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083153"
 ---
 # <a name="system-functions"></a>Funkce systému
 Zprostředkovatel dat .NET Framework pro SQL Server (SqlClient) poskytuje následující funkce systému:  

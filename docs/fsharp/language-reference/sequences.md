@@ -3,11 +3,11 @@ title: Sekvence (F#)
 description: 'Další informace o použití F # pořadí, když máte velké, seřazené kolekce dat, ale Neočekáváme, že nemusí používat všechny elementy.'
 ms.date: 05/16/2016
 ms.openlocfilehash: cfe8d1e350a8ac46b7700c12aa84d250f8b35855
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577620"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078588"
 ---
 # <a name="sequences"></a>Sekvence
 

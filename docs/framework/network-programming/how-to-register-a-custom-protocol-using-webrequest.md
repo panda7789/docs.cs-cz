@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: Registrace vlastního protokolu pomocí WebRequest'
+title: 'Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,16 +7,15 @@ dev_langs:
 ms.assetid: 98ddbdb9-66b1-4080-92ad-51f5c447fcf8
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: e6902adeac04d95d576ae72469624a5b4f8aa0c6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1f78f98f94daa51c17a1294285e13dfddd457106
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394589"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172255"
 ---
-# <a name="how-to-register-a-custom-protocol-using-webrequest"></a>Postupy: Registrace vlastního protokolu pomocí WebRequest
-Tento příklad ukazuje postup registrace protokolu, které konkrétní classthat je definovaný v jiné oblasti. V tomto příkladu `CustomWebRequestCreator` je implementované uživatele objekt, který implementuje **vytvořit** metodu, která vrátí `CustomWebRequest` objektu. Příklad kódu předpokládá, že jste napsali `CustomWebRequest` kód, který implementuje vlastního protokolu.  
+# <a name="how-to-register-a-custom-protocol-using-webrequest"></a>Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest
+Tento příklad ukazuje, jak registrovat protokol, který konkrétní classthat je definována jinde. V tomto příkladu `CustomWebRequestCreator` je implementované uživatele objekt, který implementuje **vytvořit** metodu, která vrací `CustomWebRequest` objektu. Příklad kódu předpokládá, že jste napsali `CustomWebRequest` kód, který implementuje vlastní protokol.  
   
 ## <a name="example"></a>Příklad  
   
@@ -33,7 +32,7 @@ Dim req As WebRequest = WebRequest.Create("custom://customHost.contoso.com/")
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
- Odkazuje na <xref:System.Net> oboru názvů.  
+ Odkazy <xref:System.Net> oboru názvů.  
   
 ## <a name="see-also"></a>Viz také  
  [Programování připojitelných protokolů](../../../docs/framework/network-programming/programming-pluggable-protocols.md)

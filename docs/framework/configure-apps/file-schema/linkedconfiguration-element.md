@@ -13,17 +13,16 @@ helpviewer_keywords:
 ms.assetid: 8eb34f3b-427e-4288-a7ff-c73f489deb45
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 71769efa1233fc8a693219dc02ae56ea39c164e7
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: c5186aa94993ba551252db6fef55853b5b554789
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743794"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170818"
 ---
-# <a name="linkedconfiguration-element"></a>\<linkedconfiguration – > elementu
+# <a name="linkedconfiguration-element"></a>\<linkedconfiguration – > – element
 
-Určuje konfigurační soubor pro zahrnout.
+Určuje konfigurační soubor, který chcete zahrnout.
 
 [**\<Konfigurace >**](~/docs/framework/configure-apps/file-schema/configuration-element.md)   
 &nbsp;&nbsp;[**\<assemblybinding – >**](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
@@ -39,13 +38,13 @@ Určuje konfigurační soubor pro zahrnout.
 
 |           | Popis |
 | --------- | ----------- |
-| **href**  | Požadovaný atribut.<br><br>Adresa URL konfiguračního souboru, který chcete zahrnout. Pouze formát pro podporována **href** atribut je `file://`. Jsou podporovány místní soubory a soubory ve formátu UNC. |
+| **href**  | Požadovaný atribut.<br><br>Adresa URL konfiguračního souboru chcete zahrnout. Jediným formátem podporovaným **href** atribut je `file://`. Jsou podporovány místní soubory a soubory ve formátu UNC. |
 
 ## <a name="parent-element"></a>Nadřazený element
 
 |     | Popis |
 | --- | ----------- |
-| [**\<assemblybinding – >** – Element](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Určuje sestavení vazby zásady na úrovni konfigurace. |
+| [**\<assemblybinding – >** – Element](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md) | Určuje zásady vazeb sestavení na úrovni konfigurace. |
 
 ## <a name="child-elements"></a>Podřízené prvky
 
@@ -53,28 +52,28 @@ Určuje konfigurační soubor pro zahrnout.
 
 ## <a name="remarks"></a>Poznámky
 
-**\<Linkedconfiguration – >** element zjednodušuje údržbu sestavení součástí. Pokud jeden nebo více aplikací používat sestavení, který má konfigurační soubor umístěný v dobře známé umístění, můžete použít konfigurační soubory aplikace, které používají sestavení  **\<linkedconfiguration – >** Element zahrnout konfiguračního souboru sestavení, nikoli přímo včetně informace o konfiguraci. Při sestavení součástí je údržba, aktualizace konfiguračního souboru běžné poskytuje aktualizovaný konfigurační informace pro všechny aplikace, které používají sestavení.
+**\<Linkedconfiguration – >** element zjednodušuje údržbu pro sestavení komponent. Pokud jeden nebo více aplikací používat sestavení, která obsahuje konfigurační soubor umístěný v dobře známého umístění, můžete použít konfigurační soubory aplikace, které používají sestavení  **\<linkedconfiguration – >** Element zahrnout konfigurační soubor sestavení, nikoli přímo včetně informací o konfiguraci. Při sestavení součástí je údržba, aktualizace společné konfigurační soubor obsahuje informace aktualizovanou konfiguraci pro všechny aplikace, které používají sestavení.
 
 > [!NOTE]
-> **\<Linkedconfiguration – >** element není podporován pro aplikace s manifesty Windows vedle sebe.
+> **\<Linkedconfiguration – >** element není podporován pro aplikace s Windows manifesty vedle sebe.
 
-Následující pravidla budou řídit použití propojené konfigurační soubory:
+Následující pravidla určují, použití propojené konfigurační soubory:
 
-- Nastavení v zahrnuté konfigurační soubory pouze ovlivnit zavaděč vazby zásad a jsou používány pouze zavaděč. Zahrnuté konfigurační soubory, které může mít pouze vazby zásady nastavení, ale tato nastavení nemají žádný vliv.
+- Nastavení v souborech konfigurace na zahrnuté pouze ovlivnit zavaděč zásady vazeb a jsou používány pouze zavaděč. Konfigurace zahrnuté soubory mohou mít nastavení vazby zásady, ale tato nastavení nemají žádný vliv.
 
-- Pouze formát pro podporována `href` atribut je `file://`. Jsou podporovány místní soubory a soubory ve formátu UNC.
+- Jediným formátem podporovaným `href` atribut je `file://`. Jsou podporovány místní soubory a soubory ve formátu UNC.
 
 - Neexistuje žádné omezení počtu propojené konfigurace na konfigurační soubor.
 
-- Všechny propojené konfigurační soubory jsou sloučeny do jednoho souboru, podobně jako u chování `#include` direktivy v jazyce C/C++.
+- Všechny propojené konfigurační soubory jsou sloučeny do jednoho souboru, podobně jako chování `#include` direktiva v jazyce C/C++.
 
-- **\<Linkedconfiguration – >** element je povolena pouze v konfigurační soubory aplikace; je ignorován v *Machine.config*.
+- **\<Linkedconfiguration – >** element je povolen pouze v konfiguračních souborech aplikace, je ignorován v *Machine.config*.
 
-- Cyklické odkazy jsou zjištěna a byla ukončena. To znamená pokud  **\<linkedconfiguration – >** elementy řady konfigurační soubory tvoří cyklus, smyčky je zjištěna a zastavena.
+- Cyklické odkazy jsou zjištěny a byla ukončena. To znamená pokud  **\<linkedconfiguration – >** prvky z řady konfigurační soubory tvoří cyklus, smyčky je zjištěna a zastavena.
 
 ## <a name="example"></a>Příklad
 
-Následující příklad ukazuje, jak zahrnout soubor konfigurace z místního pevného disku:
+Následující příklad ukazuje, jak zahrnout konfigurační soubor z místního pevného disku:
 
 ```xml
 <configuration>
@@ -84,7 +83,7 @@ Následující příklad ukazuje, jak zahrnout soubor konfigurace z místního p
 </configuration>
 ```
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [**\<assemblybinding – >** – Element](~/docs/framework/configure-apps/file-schema/assemblybinding-element-for-configuration.md)   
 [Schéma konfiguračního souboru pro rozhraní .NET Framework](~/docs/framework/configure-apps/file-schema/index.md)

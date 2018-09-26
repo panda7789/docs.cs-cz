@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: 536acfd8-f827-452f-838a-e14fa3b87621
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 4d39dc28082fbed932a60228ac216f2f700c2e9f
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 7dfa196ad6aa71dd22bcb9bbd5a0857cccb819c5
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664550"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084257"
 ---
 # <a name="ltstartupgt-element"></a>&lt;Po spuštění&gt; – Element
 Určuje informace o spuštění modulu runtime jazyka common.  

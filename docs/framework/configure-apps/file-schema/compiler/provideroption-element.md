@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 75cc2003a88cc7be467b9062c37b6b5d9eb82f53
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.openlocfilehash: fab681042055edac0291b917f55656350261d6af
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46480666"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083816"
 ---
 # <a name="ltprovideroptiongt-element"></a>&lt;Hodnota providerOption&gt; – Element
 Určuje atributy verze kompilátoru poskytovatele jazyka.  

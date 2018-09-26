@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 016323cb-f800-4938-b77b-2eb25d646090
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 467209d9ead0101f841a017fc409657f2790f2ae
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: f9c00619cf39fa16164c8a3a1fef671744613079
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44195332"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086408"
 ---
 # <a name="ui-automation-support-for-the-menu-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku nabídka
 > [!NOTE]

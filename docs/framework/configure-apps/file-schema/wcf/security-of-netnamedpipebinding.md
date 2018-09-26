@@ -3,13 +3,12 @@ title: '&lt;security&gt; – &lt;netNamedPipeBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: bb3cb022-637e-49fd-92e8-6766038affa7
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 0e5a22d6e517bc7a05f74089b7c8ece8c8a4bd39
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: eee4cc13b5181caa4449c3ad6ebc5247cc7e0f1a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43882250"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077054"
 ---
 # <a name="ltsecuritygt-of-ltnetnamedpipebindinggt"></a>&lt;security&gt; – &lt;netNamedPipeBinding&gt;
 Definuje nastavení zabezpečení pro vazbu.  

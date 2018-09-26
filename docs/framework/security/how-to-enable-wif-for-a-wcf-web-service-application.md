@@ -3,13 +3,12 @@ title: 'Postupy: Povolení WIF pro aplikaci webové služby WCF'
 ms.date: 03/30/2017
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 71897299d68c2f0e43def8e70730ea456d6e9e24
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: c3d22d812fdd5a1fc7567b3da34e7fd5a59531cd
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46583977"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084836"
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Postupy: Povolení WIF pro aplikaci webové služby WCF
 ## <a name="applies-to"></a>Platí pro  

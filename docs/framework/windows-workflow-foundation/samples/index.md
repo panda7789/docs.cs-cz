@@ -3,11 +3,11 @@ title: Ukázky Windows Workflow
 ms.date: 03/30/2017
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
 ms.openlocfilehash: b6f614bd8543070ee69636344376b058988c2306
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46580613"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082104"
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
 

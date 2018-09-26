@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 2ec1c9dc-2e5c-4ef0-9958-81670ab88449
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: c5146ed8326b12e90d0fe6247b0c4aba3a69dd77
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 40c0ab5f18d5aae2c99dd66747d3435f0826af8b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485778"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171267"
 ---
 # <a name="configuration-element"></a>\<Konfigurace > – element
 

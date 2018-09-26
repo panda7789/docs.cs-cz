@@ -10,16 +10,15 @@ helpviewer_keywords:
 ms.assetid: c9673f81-bf9e-47fd-bc6f-6bc1c1c4c15e
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 7801c55cf6b3334347788013d9052038d5d2f3ec
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d23fc48a53ee47aacfc290b52887b800ce37477f
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32756615"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083608"
 ---
 # <a name="mapping-object-identifiers-to-cryptography-algorithms"></a>Mapování identifikátorů objektů na algoritmy šifrování
-Digitální podpisy Ujistěte se, že data není manipulováno při odeslání z jedné aplikace do jiného. Digitální podpis je obvykle počítaný použitím matematické funkce hash data, která mají být podepsané. Při formátování hodnotu hash podepsat, některé algoritmy digitální podpis připojí ASN.1 identifikátor objektu (OID) v rámci operace formátování. Identifikátor OID Určuje algoritmus, který se používá k výpočtu hodnoty hash. Identifikátory objektů rozšířit mechanismus na kryptografické algoritmy vlastní můžete namapovat algoritmy. Následující příklad ukazuje, jak k mapování identifikátor objektu na nový algoritmus hash.  
+Digitální podpisy Ujistěte se, že data bez dozoru při odeslání z jedné aplikace do jiného. Obvykle digitální podpis je vypočítán s použitím matematické funkce hash data, která mají být podepsán. Při formátování hodnoty hash podepsat, některé algoritmy digitálního podpisu připojí ASN.1 identifikátor objektu (OID) v rámci operace formátování. Identifikátor OID Určuje algoritmus, který byl použit pro výpočet hodnoty hash. Algoritmy můžete namapovat na identifikátory objektů rozšířit mechanismus kryptografie na vlastní algoritmy. Následující příklad ukazuje, jak namapovat identifikátor objektu na nový algoritmus hash.  
   
 ```xml  
 <configuration>  

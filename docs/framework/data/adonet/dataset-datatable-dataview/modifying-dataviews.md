@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: 697a3991-b660-4a5a-8a54-1a2304ff158e
 ms.openlocfilehash: 3b1e0cbfc6118ad9ca670f5d91183b78b2c99d89
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46697617"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47109740"
 ---
 # <a name="modifying-dataviews"></a>Úpravy zobrazení dat
 Můžete použít <xref:System.Data.DataView> Pokud chcete přidat, odstranit nebo upravit řádky dat v podkladové tabulce. Umožňuje používat **DataView** upravovat data v podkladové tabulce je řízen pomocí nastavení jedné z vlastností tři logické **DataView**. Tyto vlastnosti jsou <xref:System.Data.DataView.AllowNew%2A>, <xref:System.Data.DataView.AllowEdit%2A>, a <xref:System.Data.DataView.AllowDelete%2A>. Jsou nastaveny na **true** ve výchozím nastavení.  

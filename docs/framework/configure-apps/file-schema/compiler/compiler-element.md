@@ -12,13 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 84000d8762c5d5cfd8d2359a377ffcd5b50ab07c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a26fc0bda341e85ca54f3dee4addd14e4164209c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502847"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47071009"
 ---
 # <a name="ltcompilergt-element"></a>&lt;Kompilátor&gt; – Element
 

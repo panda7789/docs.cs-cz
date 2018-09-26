@@ -3,13 +3,12 @@ title: '&lt;remove&gt;'
 ms.date: 03/30/2017
 ms.assetid: 4058e2f1-7db4-4d1a-84dd-1b52836f2ae6
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 596cab4494ef3ba200fd0a046d7935f648fb7c4f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 410fef1a43f9202d56c4957b1162c53ee056ae3f
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503212"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47074911"
 ---
 # <a name="ltremovegt"></a>&lt;remove&gt;
 Odebere obslužnou rutinu tokenu se zadaným zabezpečením z kolekce obslužné rutiny tokenů.  

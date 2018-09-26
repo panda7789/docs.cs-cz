@@ -12,16 +12,15 @@ helpviewer_keywords:
 ms.assetid: 1f55050a-b2a3-4868-a3c0-da20826150f3
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: b7f41bc477f8d8095bf73859c02b7e2fc2443c14
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 71d2edac1dd9a84c9d3c92049d2494c7c5bd54b0
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742871"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47083699"
 ---
 # <a name="cryptography-settings-schema"></a>Schéma nastavení šifrování
-Schéma nastavení šifrování obsahuje prvky, které určují, jak k mapování názvů popisný algoritmů na třídy, které implementují kryptografické algoritmy.  
+Schéma nastavení šifrování obsahuje elementy, které určují způsob mapování popisné názvy algoritmů tříd, které implementují algoritmy šifrování.  
   
  [**\<Konfigurace >**](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
@@ -35,7 +34,7 @@ Schéma nastavení šifrování obsahuje prvky, které určují, jak k mapován�
   
  [**\<cryptoclass – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)  
   
- [**\<nameEntry >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)  
+ [**\<nameEntry – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)  
   
  [**\<oidmap – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)  
   
@@ -43,14 +42,14 @@ Schéma nastavení šifrování obsahuje prvky, které určují, jak k mapován�
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[**\<cryptoClasses –**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclasses-element.md)|Obsahuje seznam tříd šifrování, které mají mapování na popisného názvu do  **\<nameEntry >** element.|  
-|[**\<cryptoclass –**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|Obsahuje třídy šifrování, která má mapování na popisného názvu do  **\<nameEntry >** element.|  
+|[**\<cryptoClasses –**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclasses-element.md)|Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování  **\<nameEntry >** elementu.|  
+|[**\<cryptoclass –**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|Obsahuje kryptografickou třídu, která nemá mapování na popisný název v  **\<nameEntry >** elementu.|  
 |[**\<cryptographySettings –**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptographysettings-element.md)|Obsahuje nastavení šifrování.|  
-|[**\<cryptoNameMapping –**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|Obsahuje mapování třídy popisné názvy.|  
-|[**\<mscorlib >** element pro nastavení kryptografie](../../../../../docs/framework/configure-apps/file-schema/cryptography/mscorlib-element-for-cryptography-settings.md)|Obsahuje  **\<cryptographySettings – >** element.|  
-|[**\<nameEntry >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)|Mapuje název třídy algoritmus popisný název, který umožňuje jednu třídu k mít mnoho popisné názvy.|  
-|[**\<oidentry – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|Mapuje ASN.1 identifikátor objektu (OID) popisný název.|  
-|[**\<oidmap – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Obsahuje ASN.1 OID mapování třídy.|  
+|[**\<cryptoNameMapping**>](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptonamemapping-element.md)|Obsahuje mapování tříd pro popisné názvy.|  
+|[**\<mscorlib >** – element pro nastavení kryptografie](../../../../../docs/framework/configure-apps/file-schema/cryptography/mscorlib-element-for-cryptography-settings.md)|Obsahuje  **\<cryptographySettings – >** elementu.|  
+|[**\<nameEntry – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md)|Název třídy mapuje na algoritmus popisný název, který umožňuje jedna třída má mnoho popisné názvy.|  
+|[**\<oidentry – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.|  
+|[**\<oidmap – >**](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidmap-element.md)|Obsahuje mapování ASN.1 OID pro třídy.|  
   
 ## <a name="see-also"></a>Viz také  
  [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  

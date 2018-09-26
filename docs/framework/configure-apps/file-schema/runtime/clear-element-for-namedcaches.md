@@ -1,5 +1,5 @@
 ---
-title: '&lt;Vymazat&gt; Element pro &lt;namedCaches&gt;'
+title: '&lt;Vymazat&gt; – Element pro &lt;namedCaches&gt;'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - <clear> element for <namedCaches>
@@ -7,20 +7,19 @@ helpviewer_keywords:
 ms.assetid: ea01a858-65da-4348-800f-5e3df59d4d79
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: cdd6e4a4849a031dc6bcad909509498406fcb129
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 17043cdd4bcabf2e5e14c7b9c31b8c1747d2c866
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745510"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171943"
 ---
-# <a name="ltcleargt-element-for-ltnamedcachesgt"></a>&lt;Vymazat&gt; Element pro &lt;namedCaches&gt;
-Vymaže všechny `namedCache` položek v `namedCaches` kolekci pro mezipaměť.  
+# <a name="ltcleargt-element-for-ltnamedcachesgt"></a>&lt;Vymazat&gt; – Element pro &lt;namedCaches&gt;
+Vymaže všechny `namedCache` položky `namedCaches` kolekce pro mezipaměť.  
   
  \<system.runtime.caching>  
 \<memoryCache >  
-\<namedCaches >  
+\<namedcaches – >  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -48,10 +47,10 @@ Vymaže všechny `namedCache` položek v `namedCaches` kolekci pro mezipaměť.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
+|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci prvků konfigurace nastavení pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instancí.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element vymaže všechny `namedCache` položky v kolekci s názvem mezipaměti pro mezipaměť. Můžete použít `clear` element před použitím `add` elementu, který chcete přidat novou položku s názvem mezipaměti Chcete-li být jistý, neexistují žádné další s názvem mezipaměti v kolekci.  
+ `clear` Element vymaže všechny `namedCache` položky v kolekci s názvem mezipaměti pro mezipaměť. Můžete použít `clear` prvek před použitím `add` prvek, který chcete přidat novou položku pojmenovanou mezipaměť, aby bylo možné je potřeba mít jistotu, neexistují žádné jiné s názvem mezipaměti v kolekci.  
   
 ## <a name="see-also"></a>Viz také  
- [\<namedCaches > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+ [\<namedcaches – > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

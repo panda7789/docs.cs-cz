@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: d8fef7965e3248d5361d866a441783bf4968460e
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: fcf5b8f872e2f97497ff5387adb755da1832bf8c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47058406"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111313"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciálního zákazníka základní zlomek naplnění 6.5 miliard náš svět. Pokud chcete, aby vaše aplikace pro oslovení publika, nákladově efektivní lokalizaci skrytých váš produkt je jedním ze způsobů nejlepší a nejhospodárnějším oslovovat víc zákazníků.  
@@ -29,7 +29,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
 -   Vyhněte se použití absolutní umístění a pevné velikosti pro rozložení obsahu; Místo toho použijte relativní nebo automatické nastavení velikosti.
   
-    -   Použití <xref:System.Windows.Window.SizeToContent%2A>; a zachování šířky a výšky nastavena na `Auto`.  
+    -   Použití <xref:System.Windows.Window.SizeToContent%2A> a zachování šířky a výšky nastavena na `Auto`.  
   
     -   Vyhněte se použití <xref:System.Windows.Controls.Canvas> rozložení [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]s.  
   
@@ -39,7 +39,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
 -   Povolit <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> na <xref:System.Windows.Controls.TextBlock> aby nedošlo k oříznutí.
   
--   Nastavte **XML: lang** atribut. Tento atribut popisuje jazykovou verzi konkrétní elementu a jeho podřízené prvky. Hodnota této vlastnosti změní chování několik funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Například změní chování dělení slov, kontrolu pravopisu, číslo nahrazení, složitým tvarování a zpětné volání. Zobrazit [globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md) pro další informace o nastavení [XML: lang v XAML](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md).  
+-   Nastavte `xml:lang` atribut. Tento atribut popisuje jazykovou verzi konkrétní elementu a jeho podřízené prvky. Hodnota této vlastnosti změní chování několik funkcí v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Například změní chování dělení slov, kontrolu pravopisu, číslo nahrazení, složitým tvarování a zpětné volání. Zobrazit [globalizace pro WPF](../../../../docs/framework/wpf/advanced/globalization-for-wpf.md) pro další informace o nastavení [XML: lang v XAML](../../../../docs/framework/xaml-services/xml-lang-handling-in-xaml.md).  
   
 -   Vytvořte přizpůsobené složený font získat lepší kontrolu nad písma, které se používají pro různé jazyky. Ve výchozím nastavení [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] používá písmo GlobalUserInterface.composite ve vašem adresáři Windows\Fonts.  
   
@@ -64,7 +64,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
          Pokud se rozhodnete zahrnout Zdrojový jazyk v hlavním sestavení vynecháním `<UICulture>` značky v souboru projektu, nastavte `UltimateResourceFallback` umístění jako hlavní sestavení namísto satelitní (například `[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]`).  
   
-<a name="workflow_to_localize"></a>   
+<a name="workflow_to_localize" />   
 ## <a name="localize-a-wpf-application"></a>Lokalizace aplikace WPF  
  Když lokalizujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, máte několik možností. Například můžete vytvořit vazbu lokalizovatelné prostředky v aplikaci [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru, uložit Lokalizovatelný text v tabulkách resx, nebo mít vaše lokalizátora použít [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory. Tato část popisuje lokalizace pracovního postupu, který používá formuláře BAML z XAML, který poskytuje několik výhod:  
   
@@ -92,7 +92,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
  ![Nelokalizované pracovní postup](../../../../docs/framework/wpf/advanced/media/localizationworkflow2.png "LocalizationWorkflow2")  
   
-<a name="examples_of_localization"></a>   
+<a name="examples_of_localization" />   
 ## <a name="examples-of-wpf-localization"></a>Příklady lokalizace WPF  
  Tato část obsahuje příklady lokalizované aplikace, které vám pomohou pochopit, jak sestavit a lokalizaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
   
@@ -137,7 +137,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
  Všimněte si, že v příkladu používá funkci sdílí velikosti <xref:System.Windows.Controls.Grid>. Poslední tři sloupce využít to tak, že sami ve stejném <xref:System.Windows.Controls.DefinitionBase.SharedSizeGroup%2A>. Jako jeden byste očekávali od názvu vlastnosti, díky tomu sloupce, které chcete sdílet stejnou velikost. Proto při "Procházet..." získá lokalizovaný řetězec delší "Durchsuchen...", všechna tlačítka Zvětšit šířku nemuseli malé tlačítko "OK" a nepřiměřeně velké tlačítko "Durchsuchen...".  
   
- **Xml:lang**  
+ **Xml:lang**
   
  `Xml:lang="en-US"`  
   
@@ -146,7 +146,9 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
  **Vytváření satelitní sestavení prostředků**  
   
  *V csproj:*  
-  
+
+ Upravit `.csproj` soubor a přidejte následující značku Nepodmíněný `<PropertyGroup>`:
+ 
  `<UICulture>en-US</UICulture>`  
   
  Všimněte si, že přidání `UICulture` hodnotu. Pokud je nastavené na platný <xref:System.Globalization.CultureInfo> hodnotu, třeba cs cz, sestavení projektu vygeneruje satelitní sestavení s všechny lokalizovatelné prostředky v ní.  
@@ -197,7 +199,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
  **LocBaml.exe /generate RunDialog.resources.dll /trans:RunDialog.resources.dll.CSV /out: . /cul:de-DE**  
   
- V Německu [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)], pokud je tato resources.dll je umístěn ve složce de-DE vedle hlavní sestavení, tento prostředek se automaticky načte místo ve složce en US. Pokud nemáte německé verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] to pokud chcete otestovat, nastavit jazykovou verzi na libovolné jazykovou verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] používáte (tj en US) a nahradit původní resources.dll.  
+ V Německu [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)], pokud je tato resources.dll je umístěn ve složce de-DE vedle hlavní sestavení, tento prostředek se automaticky načte místo ve složce en US. Pokud nemáte německé verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] to pokud chcete otestovat, nastavit jazykovou verzi na libovolné jazykovou verzi [!INCLUDE[TLA#tla_mswin](../../../../includes/tlasharptla-mswin-md.md)] používáte (například `en-US`) a nahradit původní knihovny DLL prostředků.  
   
  **Načítání satelitních prostředků**  
   
@@ -246,7 +248,7 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
  **Vyhněte se použití pevné dimenze pro ovládací prvky a panelů**  
   
- Podívejte se prostřednictvím Homepage.xaml, Všimněte si, že kromě pevnou šířku a výšku zadaný pro celý [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] nahoře <xref:System.Windows.Controls.DockPanel>, neexistují žádné pevné dimenze. Vyhněte se využívat pevné dimenze, abyste zabránili oříznutí lokalizovaný text, který může být delší než zdrojový text. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] panely a automaticky použije resize na základě obsahu, které obsahují ovládací prvky. Většina ovládací prvky také mít minimální a maximální dimenze, které můžete nastavit pro další ovládací prvek (tedy hodnota MinWidth = "20"). S <xref:System.Windows.Controls.Grid>, relativní šířky a výšky můžete také nastavit pomocí "*" (například Width = "0,25\*") nebo použijte jeho velikost buňky funkce pro sdílení obsahu.  
+ Podívejte se prostřednictvím Homepage.xaml, Všimněte si, že kromě pevnou šířku a výšku zadaný pro celý [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] nahoře <xref:System.Windows.Controls.DockPanel>, neexistují žádné pevné dimenze. Vyhněte se využívat pevné dimenze, abyste zabránili oříznutí lokalizovaný text, který může být delší než zdrojový text. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] panely a automaticky použije resize na základě obsahu, které obsahují ovládací prvky. Většina ovládací prvky také mít minimální a maximální dimenze, které můžete nastavit pro další ovládací prvek (například, hodnota MinWidth = "20"). S <xref:System.Windows.Controls.Grid>, můžete také nastavit relativní šířky a výšky pomocí "\*" (například `Width="0.25*"`) nebo použijte jeho velikost buňky funkci sdílení.  
   
  **Komentáře lokalizace**  
   
@@ -275,26 +277,20 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
  [!code-xaml[LocalizationComAtt#LocalizationAttributesOverridden](../../../../samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributesoverridden)]  
   
  Lokalizace výchozí atributy, které [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje lze také přepsat pomocí kódu, abyste mohli správně nastavit správný výchozí hodnoty pro vlastní ovládací prvky. Příklad:  
-  
- `[Localizability(Readability = Readability.Readable, Modifiability=Modifiability.Unmodifiable, LocalizationCategory.None)]`  
-  
- `public class CorporateLogo: TextBlock`  
-  
- `{`  
-  
- `…`  
-  
- `..`  
-  
- `.`  
-  
- `}`  
-  
+
+```csharp 
+[Localizability(Readability = Readability.Readable, Modifiability=Modifiability.Unmodifiable, LocalizationCategory.None)] 
+public class CorporateLogo : TextBlock
+{
+    // ...
+}
+``` 
+ 
  Jednotlivé atributy instance nastavit [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] přednost hodnoty nastavené v kódu na vlastní ovládací prvky. Další informace o atributy a komentáře, naleznete v tématu [atributy a komentáře lokalizace](../../../../docs/framework/wpf/advanced/localization-attributes-and-comments.md).  
   
  **Použití náhradní lokality písma a složená písma**  
   
- Pokud zadáte písma, která nepodporuje daný bod kódu rozsah, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] bude automaticky použití náhradní lokality, který provádí pomocí globální Interface.compositefont uživatele, který je umístěn v adresáři Windows\Fonts. Složená písma pracovat stejně jako jakákoli jiná písma a je možné explicitně nastavením elementu FontFamily (to znamená FontFamily = "Globální uživatelské rozhraní"). Vytváření vlastních složený font a určením co písma pro konkrétní bod kódu oblasti a jazyky můžete zadat vlastní záložní předvoleb písma.  
+ Pokud zadáte písma, která nepodporuje daný bod kódu rozsah, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] bude automaticky použití náhradní lokality, který provádí pomocí globální Interface.compositefont uživatele, který je umístěn v adresáři Windows\Fonts. Složená písma pracovat stejně jako jakákoli jiná písma a je možné explicitně nastavením elementu `FontFamily` (například `FontFamily="Global User Interface"`). Vytváření vlastních složený font a určením co písma pro konkrétní bod kódu oblasti a jazyky můžete zadat vlastní záložní předvoleb písma.  
   
  Další informace o složená písma naleznete v tématu <xref:System.Windows.Media.FontFamily>.  
   

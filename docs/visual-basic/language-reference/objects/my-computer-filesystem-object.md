@@ -13,11 +13,11 @@ helpviewer_keywords:
 - FileOpen function
 ms.assetid: 4c145456-5453-4bda-aab5-578dc8bee59a
 ms.openlocfilehash: 05d849afb50a3b1c4eeecc3db26170bacc3517df
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46699076"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070406"
 ---
 # <a name="mycomputerfilesystem-object"></a>My.Computer.FileSystem – objekt
 Poskytuje vlastnosti a metody pro práci s disky, soubory a adresáře.  

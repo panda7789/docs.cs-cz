@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: informace o uživateli přiřadit skupiny připojení'
+title: 'Postupy: přiřazení uživatelských informací pro seskupení připojení'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,22 +7,21 @@ dev_langs:
 ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 51e000019999056fd707c1fbf4fa1a9b0a8e7bc9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 009c23d0015f366ab5f1ee92609f0131465d827b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395142"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080660"
 ---
-# <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: informace o uživateli přiřadit skupiny připojení
+# <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: přiřazení uživatelských informací pro seskupení připojení
 
   
- Následující příklad ukazuje, jak přiřadit informace uživatele do skupiny připojení za předpokladu, že aplikace nastaví proměnné *uživatelské jméno*, *SecurelyStoredPassword*, a  *Domény* předtím, než se nazývá této části kódu a že *uživatelské jméno* je jedinečný.  
+ Následující příklad ukazuje, jak se přiřazení uživatelských informací pro seskupení připojení, za předpokladu, že aplikace nastaví proměnné *uživatelské jméno*, *SecurelyStoredPassword*, a  *Domény* před voláním této části kódu a který *uživatelské jméno* je jedinečný.  
   
 ### <a name="to-assign-user-information-to-a-group-connection"></a>Informace o uživateli přiřadit skupiny připojení  
   
-1.  Vytvořte skupinu název připojení.  
+1.  Vytvoření názvu skupiny připojení.  
   
     ```csharp  
     SHA1Managed Sha1 = new SHA1Managed();  
@@ -36,7 +35,7 @@ ms.locfileid: "33395142"
     Dim secureGroupName As [String] = Encoding.Default.GetString(updHash)  
     ```  
   
-2.  Vytvořte žádost pro konkrétní adresy URL. Například následující kód vytvoří žádost pro adresu URL `http://www.contoso.com.`  
+2.  Vytvořte požadavek na konkrétní adresu URL. Například následující kód vytvoří žádost pro adresu URL `http://www.contoso.com.`  
   
     ```csharp  
     WebRequest myWebRequest=WebRequest.Create("http://www.contoso.com");  
@@ -46,7 +45,7 @@ ms.locfileid: "33395142"
     Dim myWebRequest As WebRequest = WebRequest.Create("http://www.contoso.com")  
     ```  
   
-3.  Nastavte přihlašovací údaje a připojení GroupName pro webové žádosti a volání **GetResponse** načíst **WebResponse** objektu.  
+3.  Nastavit přihlašovací údaje a připojení GroupName pro webové žádosti a volání **GetResponse** k načtení **WebResponse** objektu.  
   
     ```csharp  
     myWebRequest.Credentials = new NetworkCredential(UserName, SecurelyStoredPassword, Domain);   
@@ -62,7 +61,7 @@ ms.locfileid: "33395142"
     Dim myWebResponse As WebResponse = myWebRequest.GetResponse()  
     ```  
   
-4.  Po použití objektu WebRespose zavřete datového proudu odpovědi.  
+4.  Zavřete datový proud odpovědí po použití WebRespose objektu.  
   
     ```csharp  
     MyWebResponse.Close();  

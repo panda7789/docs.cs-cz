@@ -1,51 +1,52 @@
 ---
-title: Co je nového v C# 7.2
-description: Přehled nových funkcí v C# 7.2.
+title: Co je nového v jazyce C# 7.2
+description: Přehled nových funkcí v jazyce C# 7.2.
 ms.date: 08/16/2017
-ms.openlocfilehash: b813bf5b38ef17986b21e928c9c86e583174c7d1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 87fd67b37a31a02960334a2b2a325724e0cc2c73
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47109573"
 ---
-# <a name="whats-new-in-c-72"></a>Co je nového v C# 7.2
+# <a name="whats-new-in-c-72"></a>Co je nového v jazyce C# 7.2
 
-C# 7.2 je jiné verze bodu, který přidává několik užitečných funkcí.
-Jeden motivu pro tuto verzi je efektivnější práci s typy hodnot vyhnout nepotřebné kopie nebo přidělení. 
+C# 7.2 je jiný bod. Tato verze přidává řadu užitečných funkcí.
+Jeden motiv pro tuto verzi je efektivnější práci s typy hodnot se vyhnout zbytečným kopie nebo přidělení. 
 
-Zbývající součásti jsou malé, dobrý obsahovat funkce.
+Zbývající součásti jsou malé, nice mají funkce.
 
-C# 7.2 používá [výběr verze jazyka](csharp-7-1.md#language-version-selection) prvku konfigurace vyberte verzi jazyka kompilátoru.
+Používá C# 7.2 [výběr verze jazyka](../language-reference/configure-language-version.md) konfigurační prvek a vyberte verzi jazyka kompilátoru.
 
-Mezi nové jazykové funkce v této verzi jsou:
+Nové funkce jazyků v této verzi jsou:
 
 * [Referenční sémantika s typy hodnot](#reference-semantics-with-value-types)
-  - Kombinace syntaxe vylepšení, které umožňují práci s typy hodnot pomocí sémantiky odkaz.
-* [Bez koncové pojmenované argumenty](#non-trailing-named-arguments)
-  - Pojmenované argumenty může následovat poziční argumenty.
-* [Úvodní podtržítka v číselné literály](#leading-underscores-in-numeric-literals)
-  - Číselné literály teď může mít úvodní podtržítka před žádné tištěné číslice.
+  - Kombinace syntaxe vylepšení, které umožňují práci s typy hodnot pomocí odkazové sémantiky.
+* [Nekoncové pojmenované argumenty](#non-trailing-named-arguments)
+  - Pojmenované argumenty může být následován poziční argumenty.
+* [Úvodní podtržítka v numerických literálech](#leading-underscores-in-numeric-literals)
+  - Číselné literály teď můžou mít úvodní podtržítka před všechny tištěné číslice.
 * [`private protected` Modifikátor přístupu](#private-protected-access-modifier)
-  - `private protected` – Modifikátor přístupu umožňuje přístup k odvozené třídy ve stejném sestavení.
+  - `private protected` Modifikátor přístupu umožňuje přístup pro odvozené třídy ve stejném sestavení.
 
-## <a name="reference-semantics-with-value-types"></a>Odkaz na sémantiku s typy hodnot
+## <a name="reference-semantics-with-value-types"></a>Referenční sémantika s typy hodnot
 
-Jazykové funkce byla zavedená v 7.2 umožňují pracovat s typy hodnot při používání sémantiky odkaz. Jsou navrženy pro zvýšení výkonu pomocí minimalizace kopírování typy hodnot, aniž by docházelo k přidělení paměti související s používáním odkazové typy. Funkce patří:
+Jazykových funkcí 7.2 zavedený umožňují pracovat s typy hodnot a zároveň pomocí odkazové sémantiky. Jsou určené ke zvýšení výkonu minimalizací kopírování hodnotové typy bez dalších nákladů na přidělení paměti spojených s použitím typy odkazů. Mezi funkce patří:
 
- - `in` – Modifikátor parametrů, chcete-li určit, že je argument předaná odkaz ale nedojde ke změně volané metodou.
- - `ref readonly` Modifikátor na metoda vrátí označíte, že metoda vrátí jeho hodnotu odkazem, ale neumožňuje zápisy na tento objekt.
- - `readonly struct` Prohlášení znamená, že struktury se nedá změnit a mají být předány jako `in` parametru její metody člen.
- - `ref struct` Prohlášení znamená, že typu Struktura přistupují k spravované paměti přímo a musí vždy zásobníku přidělit.
+ - `in` Modifikátor parametrů k určení, zda je argument předaný odkazem, ale nedojde ke změně ve volané metody. Přidání `in` modifikátor na argument [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes).
+ - `ref readonly` Modifikátor metoda vrátí hodnotu označující, že metoda vrátí jeho hodnota podle odkazu, ale neumožňuje zápisy do tohoto objektu. Přidání `ref readonly` modifikátor [zdroj kompatibilní změnu](version-update-considerations.md#source-compatible-changes), pokud je vrácená přiřadit hodnotu. Přidávání `readonly` modifikačních do existujícího `ref` návratový příkaz je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). Vyžaduje volající aktualizovat deklarace `ref` místní proměnné k zahrnutí `readonly` modifikátor.
+ - `readonly struct` Deklarace můžete určit, že struktura je neměnná a mají být předány jako `in` parametr metody jeho členů. Přidání `readonly` modifikátor na existující deklaraci struktury [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
+ - `ref struct` Deklarace můžete určit, že typu Struktura přistupuje k nim spravované paměti přímo a musí vždy zásobníku přidělovat. Přidávání `ref` Modifikátor pro stávající `struct` deklarace je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). A `ref struct` nemůže být členem třídy nebo použít v jiných umístěních, kde mohou být přiděleny do haldy.
 
-Můžete si přečíst informace o všech těchto změn v [typů hodnot pomocí sémantiky odkaz](../reference-semantics-with-value-types.md).
+Můžete si přečíst další informace o všech těchto změn v [pomocí typů hodnot pomocí odkazové sémantiky](../reference-semantics-with-value-types.md).
 
-## <a name="non-trailing-named-arguments"></a>Bez koncové pojmenované argumenty
+## <a name="non-trailing-named-arguments"></a>Nekoncové pojmenované argumenty
 
-Volání metody teď může použít pojmenované argumenty, které předcházet argumentů umístění těchto pojmenovaných argumenty po na správném místě. Další informace najdete v části [pojmenované a nepovinné argumenty](../programming-guide/classes-and-structs/named-and-optional-arguments.md).
+Volání metody teď může použít pojmenované argumenty, které předcházet poziční argumenty, pokud tyto pojmenované argumenty jsou do správné polohy. Další informace najdete v části [pojmenované a nepovinné argumenty](../programming-guide/classes-and-structs/named-and-optional-arguments.md).
 
-## <a name="leading-underscores-in-numeric-literals"></a>Úvodní podtržítka v číselné literály
+## <a name="leading-underscores-in-numeric-literals"></a>Úvodní podtržítka v numerických literálech
 
-Implementace podpory pro číslice oddělovače v C# 7.0 neumožnila `_` jako první znak literálovou hodnotou. Hex a binární číselné literály může teď začínají `_`. 
+Implementace podpory pro oddělovače číslic v jazyce C# 7.0 neměli povolit `_` bude první znak hodnota literálu. Hex a binární číselné literály teď začít s `_`. 
 
 Příklad:
 
@@ -53,8 +54,8 @@ Příklad:
 int binaryValue = 0b_0101_0101;
 ```
 
-## <a name="private-protected-access-modifier"></a>_privátní chráněné_ – modifikátor přístupu
+## <a name="private-protected-access-modifier"></a>_privátní, chráněné_ modifikátor přístupu
 
-Nakonec novou modifikátor přístupu složené: `private protected` znamená, že může být členem přistupovat pomocí obsahující třídu nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. Při `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení `private protected` omezuje přístup na odvozené typy deklarován ve stejném sestavení.
+A konečně, nový modifikátor přístupu složené: `private protected` označuje, že můžou být dostupné členy obsahující třídu nebo odvozené třídy, které jsou deklarovány ve stejném sestavení. Zatímco `protected internal` umožňuje přístup odvozené třídy nebo třídy, které jsou ve stejném sestavení, `private protected` omezuje přístup k odvozené typy deklarované ve stejném sestavení.
 
-Další informace najdete v části [přístup modifikátory](../language-reference/keywords/access-modifiers.md) v dokumentu.
+Další informace najdete v části [modifikátorů přístupu](../language-reference/keywords/access-modifiers.md) v referenční dokumentaci jazyka.

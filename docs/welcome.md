@@ -5,15 +5,13 @@ author: mairaw
 ms.author: mairaw
 ms.date: 09/07/2018
 ms.topic: article
-ms.prod: dotnet
-ms.devlang: dotnet
 ms.custom: updateeachrelease
-ms.openlocfilehash: 117b3cb4fc780da3c7624c78c5c242fa6ed9126f
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 020976efd12685c32c6d3a107fe403883359ed7f
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45619114"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113602"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 

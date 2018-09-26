@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 41787927-df1f-4f4a-aba3-641662854fc4
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 522caed7e8006157f99e65e99bf52743871444ad
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 7455ce7f0c1dbc71bed6e7656663d3cd67325447
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45988497"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111474"
 ---
 # <a name="ui-automation-textpattern-overview"></a>Přehled prvku TextPattern automatizace uživatelského rozhraní
 > [!NOTE]

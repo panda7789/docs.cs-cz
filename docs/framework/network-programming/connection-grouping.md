@@ -10,18 +10,17 @@ helpviewer_keywords:
 ms.assetid: 2ec502e8-4ba0-4c22-9410-f28eaf4eee63
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: bbf34f1e653e95ea30a3e9945fc74c99cfdc3a45
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d7a13172c32d7ae47cbe290587ff7620e6060da
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395044"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084738"
 ---
 # <a name="connection-grouping"></a>Seskupení připojení
-Připojení seskupení přidruží konkrétní požadavky v rámci jedné aplikace do fondu definované připojení. To může být požadované aplikace střední vrstvy, která se připojuje k serveru back-end jménem uživatele a používá ověřovací protokol, který podporuje delegování, jako je třeba Kerberos, nebo aplikací střední vrstvy, který poskytuje svoje vlastní přihlašovací údaje, jako v Následující příklad. Předpokládejme například, že uživatel, Jan, navštíví interní web, který zobrazí informace o jeho mzdy. Po ověření Jan střední vrstvy aplikační server používá Michalův pověření pro připojení k back-end serverů se načíst informace o jeho mzdy. V dalším kroku Susan navštíví web a požádá o jeho mzdy informace. Protože aplikace střední vrstvy je již k připojení pomocí přihlašovacích údajů Michalův, odpoví back-end serverů Michalův informacemi. Ale pokud je přiřazena každý požadavek odeslaný back-end serverů do skupiny připojení vytvořen z uživatelské jméno, pak každý uživatel patří do fondu samostatného připojení a nesmí omylem sdílet informace o ověřování s jiným uživatelem.  
+Seskupení připojení přidruží konkrétní požadavky v rámci jedné aplikace do fondu definovaná připojení. To může být požadované aplikace střední vrstvy, která se připojuje k back endového serveru jménem uživatele a používá protokol ověřování, který podporuje delegování, jako je třeba Kerberos, nebo aplikace střední vrstvy, který poskytuje svoje vlastní přihlašovací údaje, jako Následující příklad. Předpokládejme například, že uživatel, Joe, navštíví interní web, který zobrazuje své mzdové informace. Po ověření Joe, server aplikace střední vrstvy používá Michalův přihlašovací údaje pro připojení k back endového serveru načíst své mzdové informace. V dalším kroku Susan navštíví web a požádá o své mzdové informace. Vzhledem k tomu, že připojení pomocí přihlašovacích údajů Jana už vytvořil aplikace střední vrstvy, back-end server odpoví Michalův informace. Pokud ale aplikace přiřadí každého požadavku odeslaného do back-end serverů do skupiny připojení vytvořený z uživatelského jména, pak každý uživatel patří do samostatného připojení fondu a nesmí omylem sdílet ověřovací údaje s jiným uživatelem.  
   
- Žádost o přiřadit ke skupině pro konkrétní připojení, je nutné přiřadit název, který <xref:System.Net.WebRequest.ConnectionGroupName%2A> vlastnost vaší <xref:System.Net.WebRequest> před provedením požadavku.  
+ Na žádost o přiřazení ke skupině konkrétních připojení, je nutné přiřadit název, který <xref:System.Net.WebRequest.ConnectionGroupName%2A> vlastnictví vaší <xref:System.Net.WebRequest> před provedením požadavku.  
   
 ## <a name="see-also"></a>Viz také  
  [Správa připojení](../../../docs/framework/network-programming/managing-connections.md)  

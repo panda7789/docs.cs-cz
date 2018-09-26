@@ -1,5 +1,5 @@
 ---
-title: Příklad soketu asynchronní klienta
+title: Příklad asynchronního klientského soketu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,16 +11,15 @@ helpviewer_keywords:
 ms.assetid: d4ac53a0-b50b-4232-9726-d47d25fcc38a
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: d295841173ee2f3bf018a2058b4eac1629c4828f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 562129b7deea4af9b91dfc92f83a538f6f89f06a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33390296"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47110306"
 ---
-# <a name="asynchronous-client-socket-example"></a>Příklad soketu asynchronní klienta
-V následujícím příkladu programu vytvoří klienta, který se připojuje k serveru. Klient je vytvořené s nástroji asynchronní soketu a spuštění aplikace klienta není pozastaven, když server vrátí odpověď. Aplikace odešle řetězec na server a potom zobrazí řetězec vrácená serverem v konzole.  
+# <a name="asynchronous-client-socket-example"></a>Příklad asynchronního klientského soketu
+Následující ukázkový program vytvoří klienta, která se připojuje k serveru. Klient je sestavena s asynchronní soketu, takže spuštění klientské aplikace není pozastaveno, zatímco server vrátí odpověď. Aplikace odešle řetězec k serveru a pak zobrazí řetězec vrácený funkcí serveru na konzole.  
   
 ```vb  
 Imports System  

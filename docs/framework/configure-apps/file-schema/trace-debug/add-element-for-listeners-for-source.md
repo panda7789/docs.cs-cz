@@ -1,5 +1,5 @@
 ---
-title: '&lt;Přidat&gt; Element pro &lt;naslouchací procesy&gt; pro &lt;zdroje&gt;'
+title: '&lt;Přidat&gt; – Element pro &lt;naslouchacích procesů&gt; pro &lt;zdroje&gt;'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.diagnostics/sources/source/listeners/add
@@ -10,22 +10,21 @@ helpviewer_keywords:
 ms.assetid: 4ce36ac1-81ef-48e8-b8b2-b5a5b0e2adcb
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: ba8ff652003a9167ec370643797ac9300b83889a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: c0ab15f6eca8b20653530583016eb849273c4ce1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745653"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47072027"
 ---
-# <a name="ltaddgt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;Přidat&gt; Element pro &lt;naslouchací procesy&gt; pro &lt;zdroje&gt;
-Přidá naslouchací proces a `Listeners` kolekce zdroje trasování.  
+# <a name="ltaddgt-element-for-ltlistenersgt-for-ltsourcegt"></a>&lt;Přidat&gt; – Element pro &lt;naslouchacích procesů&gt; pro &lt;zdroje&gt;
+Přidá naslouchací proces pro `Listeners` kolekci pro zdroj trasování.  
   
  \<Konfigurace >  
 \<System.Diagnostics >  
 \<zdroje >  
 \<zdroj >  
-\<moduly pro naslouchání >  
+\<naslouchací procesy >  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,57 +42,57 @@ Přidá naslouchací proces a `Listeners` kolekce zdroje trasování.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`type`|Atribut je povinný, pokud jste odkazující na naslouchací proces ve `sharedListeners` kolekce, ve kterém případ, je potřeba pouze na ni odkazuje podle názvu (najdete v článku [příklad](#example)).<br /><br /> Určuje typ naslouchacího procesu. Je nutné použít řetězec, který splňuje požadavky uvedené v [určení plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
-|`initializeData`|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro zadanou třídu. A <xref:System.Configuration.ConfigurationException> je vyvolána, pokud třída nemá konstruktor, který přebírá řetězec.|  
+|`type`|Požadovaný atribut, pokud už odkazuje na naslouchací proces ve `sharedListeners` kolekce, ve kterém malá a velká je potřeba pouze na ni odkazovat podle názvu (viz [příklad](#example)).<br /><br /> Určuje typ naslouchací proces. Je nutné použít řetězec, který splňuje požadavky uvedené v [zadání plně kvalifikované názvy typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md).|  
+|`initializeData`|Nepovinný atribut.<br /><br /> Řetězec předaný konstruktoru pro zadanou třídu. A <xref:System.Configuration.ConfigurationException> je vyvolána, pokud třída nemá konstruktor, který přijímá řetězec.|  
 |`name`|Nepovinný atribut.<br /><br /> Určuje název naslouchacího procesu.|  
-|`traceOutputOptions`|Nepovinný atribut.<br /><br /> Určuje, <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> hodnota vlastnosti pro naslouchací proces trasování.|  
-|[vlastní atributy]|Volitelných atributů.<br /><br /> Určuje hodnotu atributy specifické pro naslouchací proces identifikovaný <xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A> metoda pro tento naslouchací proces. <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A> Navíc atributu je jedinečná <xref:System.Diagnostics.DelimitedListTraceListener> třídy.|  
+|`traceOutputOptions`|Nepovinný atribut.<br /><br /> Určuje, <xref:System.Diagnostics.TraceListener.TraceOutputOptions%2A> hodnota vlastnosti pro posluchače trasování.|  
+|[vlastní atributy]|Volitelné atributy.<br /><br /> Určuje hodnotu pro atributy specifické pro naslouchací proces identifikován <xref:System.Diagnostics.TraceListener.GetSupportedAttributes%2A> metody pro tuto naslouchací proces. <xref:System.Diagnostics.DelimitedListTraceListener.Delimiter%2A> je příkladem atribut navíc jedinečné pro <xref:System.Diagnostics.DelimitedListTraceListener> třídy.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Filtr >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-listeners-for-source.md)|Přidá filtr do naslouchací proces ve `Listeners` kolekce zdroje trasování.|  
+|[\<Filtr >](../../../../../docs/framework/configure-apps/file-schema/trace-debug/filter-element-for-add-for-listeners-for-source.md)|Přidá filtr do naslouchacího procesu v `Listeners` kolekci pro zdroj trasování.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`system.diagnostics`|Určuje naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.|  
-|`sources`|Obsahuje trasování zdrojů, které zahájí trasování zpráv.|  
-|`source`|Určuje zdroj trasování, který iniciuje trasování zpráv.|  
-|`listeners`|Určuje naslouchací procesy, které shromažďování, ukládání a směrování zpráv.|  
+|`system.diagnostics`|Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.|  
+|`sources`|Obsahuje zdrojů trasování, které se zahájí trasovací zprávy.|  
+|`source`|Určuje zdroj trasování, který iniciuje trasovací zprávy.|  
+|`listeners`|Určuje naslouchací procesy, které shromažďování, ukládání a směrovat zprávy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Naslouchací proces třídy součástí rozhraní .NET Framework odvozena od <xref:System.Diagnostics.TraceListener> třídy.  
+ Naslouchací proces třídy součástí rozhraní .NET Framework jsou odvozeny od <xref:System.Diagnostics.TraceListener> třídy.  
   
- Pokud nezadáte `name` atribut naslouchací proces trasování, <xref:System.Diagnostics.TraceListener.Name%2A> vlastnost naslouchací proces trasování výchozí nastavení je prázdný řetězec (""). Pokud vaše aplikace má pouze jeden naslouchací proces, můžete jej přidat bez určení názvu a můžete jej odebrat zadáním prázdný řetězec pro název. Ale, pokud aplikace obsahuje více než jeden naslouchací proces, měli byste určit jedinečný název pro každý naslouchací proces trasování, které umožňuje identifikovat a spravovat jednotlivé trasování – moduly naslouchání v <xref:System.Diagnostics.TraceSource.Listeners%2A?displayProperty=nameWithType> kolekce.  
-  
-> [!NOTE]
->  Přidání více než jeden naslouchací proces trasování stejného typu a se stejným názvem výsledkem pouze jeden naslouchací daného typu a název, který se přidává do `Listeners` kolekce. Však můžete prostřednictvím kódu programu přidat více identické moduly pro naslouchání na `Listeners` kolekce.  
-  
- Hodnota `initializeData` atribut závisí na typu naslouchacího procesu vytvoříte. Ne všechny trasování – moduly naslouchání vyžadují, aby `initializeData`.  
+ Pokud nezadáte `name` atribut naslouchací proces trasování <xref:System.Diagnostics.TraceListener.Name%2A> vlastnost naslouchací služby stopy výchozí hodnota je prázdný řetězec (""). Pokud vaše aplikace má pouze jeden naslouchací proces, ho přidáte bez zadání názvu a můžete ho odebrat tak, že zadáte název prázdný řetězec. Ale, pokud aplikace obsahuje více než jeden naslouchací proces, měli byste určit jedinečný název pro každý naslouchací proces trasování, které umožňuje identifikovat a spravovat naslouchacích procesů jednotlivých trasování v <xref:System.Diagnostics.TraceSource.Listeners%2A?displayProperty=nameWithType> kolekce.  
   
 > [!NOTE]
->  Při použití `initializeData` atributu, může získat kompilátoru upozornění "není deklarován atribut 'initializeData'." Toto upozornění se zobrazí, protože nastavení konfigurace se ověřují vůči abstraktní základní třída <xref:System.Diagnostics.TraceListener>, který nebyl rozpoznán `initializeData` atribut. Obvykle můžete toto upozornění pro implementace naslouchací proces trasování, které mají konstruktor, který přebírá parametr ignorovat.  
+>  Přidání více než jeden naslouchací proces trasování stejného typu a se stejnou pojmenujte výsledky v pouze jeden naslouchací daného typu a se přidávají do `Listeners` kolekce. Však můžete programově přidat několik identických naslouchacích procesů k `Listeners` kolekce.  
   
- Následující tabulka ukazuje naslouchací procesy trasování, které jsou součástí rozhraní .NET Framework a popisuje hodnotu jejich `initializeData` atributy.  
+ Hodnota `initializeData` atributu závisí na typu naslouchacího procesu vytvoříte. Ne všechny moduly pro naslouchání trasování vyžadují, abyste určili `initializeData`.  
   
-|Trasovací třída naslouchací proces|Hodnota initializeData – atribut|  
+> [!NOTE]
+>  Při použití `initializeData` atributu, může se zobrazit kompilátoru upozornění "není deklarovaný atribut"initializeData"." K tomuto upozornění dochází, protože nastavení konfigurace se ověří proti abstraktní základní třída <xref:System.Diagnostics.TraceListener>, které nebylo rozpoznáno `initializeData` atribut. Obvykle můžete ignorovat toto upozornění pro implementace naslouchací proces trasování, které mají konstruktor, který přijímá parametr.  
+  
+ Následující tabulka uvádí naslouchacích procesů trasování, které jsou součástí rozhraní .NET Framework a popisuje výhody jejich `initializeData` atributy.  
+  
+|Třída naslouchací proces trasování|Hodnota atributu initializeData|  
 |--------------------------|------------------------------------|  
-|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|`useErrorStream` Hodnota <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A> konstruktor.  Nastavte `initializeData` atribut "`true`"zápis trasování a ladění výstupu na standardní chybový proud; ji nastavte na"`false`" k zápisu do standardního výstupního datového proudu.|  
-|<xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType>|Název souboru <xref:System.Diagnostics.DelimitedListTraceListener> zapisuje do.|  
+|<xref:System.Diagnostics.ConsoleTraceListener?displayProperty=nameWithType>|`useErrorStream` Hodnota <xref:System.Diagnostics.ConsoleTraceListener.%23ctor%2A> konstruktoru.  Nastavte `initializeData` atribut "`true`"zápis trasování a ladění výstupu na standardní chybový proud; nastavte ho na"`false`" k zápisu do standardního výstupního datového proudu.|  
+|<xref:System.Diagnostics.DelimitedListTraceListener?displayProperty=nameWithType>|Název souboru <xref:System.Diagnostics.DelimitedListTraceListener> zapíše do.|  
 |<xref:System.Diagnostics.EventLogTraceListener?displayProperty=nameWithType>|Název existující zdroj protokolu událostí.|  
-|<xref:System.Diagnostics.EventSchemaTraceListener?displayProperty=nameWithType>|Název souboru, který <xref:System.Diagnostics.EventSchemaTraceListener> zapisuje do.|  
-|<xref:System.Diagnostics.TextWriterTraceListener?displayProperty=nameWithType>|Název souboru, který <xref:System.Diagnostics.TextWriterTraceListener> zapisuje do.|  
-|<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Název souboru, který <xref:System.Diagnostics.XmlWriterTraceListener> zapisuje do.|  
+|<xref:System.Diagnostics.EventSchemaTraceListener?displayProperty=nameWithType>|Název souboru, který <xref:System.Diagnostics.EventSchemaTraceListener> zapíše do.|  
+|<xref:System.Diagnostics.TextWriterTraceListener?displayProperty=nameWithType>|Název souboru, který <xref:System.Diagnostics.TextWriterTraceListener> zapíše do.|  
+|<xref:System.Diagnostics.XmlWriterTraceListener?displayProperty=nameWithType>|Název souboru, který <xref:System.Diagnostics.XmlWriterTraceListener> zapíše do.|  
   
 ## <a name="configuration-file"></a>Konfigurační soubor  
- Tento element lze v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
+ Tento element lze použít v konfiguračním souboru počítače (Machine.config) a konfigurační soubor aplikace.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat `<add>` elementy přidat posluchače `console` a `textListener` k `Listeners` kolekci pro zdroj trasování `TraceSourceApp`. `textListener` Naslouchací proces zapisuje do souboru myListener.log výstup trasování.  
+ Následující příklad ukazuje, jak používat `<add>` prvky pro přidání posluchače `console` a `textListener` k `Listeners` kolekce pro zdroj trasování `TraceSourceApp`. `textListener` Naslouchacího procesu zapisuje do souboru myListener.log výstupu trasování.  
   
 ```xml  
 <configuration>  

@@ -33,45 +33,44 @@ helpviewer_keywords:
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 8020a92345ba85a99c0b46b2d4247d677defd054
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 776e0a728b56aa2acfb7a033c2a7244b2cc824f9
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397920"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172638"
 ---
 # <a name="handling-errors"></a>Zpracování chyb
-<xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy generování výjimek obou systému (například <xref:System.ArgumentException>) a výjimky webových (které jsou <xref:System.Net.WebException> vyvolané <xref:System.Net.WebRequest.GetResponse%2A> – metoda).  
+<xref:System.Net.WebRequest> a <xref:System.Net.WebResponse> třídy vyvolávat výjimky i systému (například <xref:System.ArgumentException>) a výjimky pro konkrétní Web (které jsou <xref:System.Net.WebException> vyvolané <xref:System.Net.WebRequest.GetResponse%2A> – metoda).  
   
- Každý **výjimku WebException** zahrnuje <xref:System.Net.WebException.Status%2A> vlastnost, která obsahuje hodnoty z <xref:System.Net.WebExceptionStatus> výčtu. Můžete zkontrolovat **stav** vlastnost určete chybu, která došlo k chybě a proveďte správné kroky, chcete-li vyřešit chyby.  
+ Každý **o výjimku WebException** zahrnuje <xref:System.Net.WebException.Status%2A> vlastnost, která obsahuje hodnoty z <xref:System.Net.WebExceptionStatus> výčtu. Můžete zkontrolovat **stav** vlastnost zjistit chyby, ke které došlo k chybě a správné kroky k vyřešení chyby.  
   
- Následující tabulka popisuje možné hodnoty **stav** vlastnost.  
+ Následující tabulka popisuje možné hodnoty pro **stav** vlastnost.  
   
 |Stav|Popis|  
 |------------|-----------------|  
-|ConnectFailure|Vzdálená služba nemůže být kontaktován na úrovni přenosu.|  
+|ConnectFailure|Vzdálenou službu nešlo kontaktovat na úrovni přenosu.|  
 |ConnectionClosed|Připojení bylo předčasně ukončeno.|  
-|KeepAliveFailure|Server zavřel připojení pomocí sady udržování záhlaví.|  
+|KeepAliveFailure|Server uzavřel připojení vytvořené pomocí sady hlavičky Keep-alive.|  
 |NameResolutionFailure|Název služby nešlo přeložit název hostitele.|  
-|Požadavku|Odpověď ze serveru přijata dokončení, ale uvedené chybu na úrovni protokolu.|  
-|ReceiveFailure|Dokončení odpověď nebyla přijata ze vzdáleného serveru.|  
+|Požadavku|Odpověď přijatou ze serveru byl dokončen, ale uvedené chybě na úrovni protokolu.|  
+|ReceiveFailure|Úplnou odpověď nebyla přijata ze vzdáleného serveru.|  
 |RequestCanceled|Požadavek byl zrušen.|  
-|SecureChannelFailure|Došlo k chybě v propojení zabezpečený kanál.|  
-|SendFailure|Dokončení požadavku nebylo možné odeslat ke vzdálenému serveru.|  
+|SecureChannelFailure|Kanál zabezpečeného odkazu došlo k chybě.|  
+|SendFailure|Ke vzdálenému serveru nelze odeslat žádost o dokončení.|  
 |ServerProtocolViolation|Odpověď serveru nebyla platná odpověď HTTP.|  
 |Úspěch|Byla zjištěna žádná chyba.|  
-|Časový limit|Byla přijata žádná odpověď v rámci časového limitu, nastavte pro daný požadavek.|  
+|časový limit|V rámci časového limitu pro žádost nebyla přijata žádná odpověď.|  
 |TrustFailure|Nebylo možné ověřit certifikát serveru.|  
-|MessageLengthLimitExceeded|Byla přijata zpráva překročení zadané omezení při odesílání požadavku nebo přijímání odpověď ze serveru.|  
+|MessageLengthLimitExceeded|Byla přijata zpráva, která překročila limit zadaný při odesílání požadavku nebo příjmu odpovědi ze serveru.|  
 |Čekající na vyřízení|Interní Asynchronní požadavek čeká na vyřízení.|  
 |PipelineFailure|Tato hodnota podporuje infrastrukturu rozhraní .NET Framework a není určena pro použití přímo v kódu.|  
-|ProxyNameResolutionFailure|Název překladače služby nešlo přeložit název hostitele proxy serveru.|  
+|ProxyNameResolutionFailure|Službě překládání názvu nešlo přeložit název hostitele proxy serveru.|  
 |Neznámé chyby|Došlo k výjimce neznámého typu.|  
   
- Když **stav** vlastnost je **WebExceptionStatus.ProtocolError**, **WebResponse** , který obsahuje odpověď ze serveru je k dispozici. Tato odpověď k určení skutečné zdroj Chyba protokolu můžete zkontrolovat.  
+ Když **stav** vlastnost **WebExceptionStatus.ProtocolError**, **WebResponse** , který obsahuje odpověď ze serveru je k dispozici. Můžete zkontrolovat tuto odpověď určit skutečný zdroj chyby protokolu.  
   
- Následující příklad ukazuje, jak zachytit **výjimku WebException**.  
+ Následující příklad ukazuje, jak zachytit **o výjimku WebException**.  
   
 ```csharp  
 try   
@@ -166,9 +165,9 @@ Catch e As Exception
 End Try  
 ```  
   
- Aplikace, které používají <xref:System.Net.Sockets.Socket> třída throw <xref:System.Net.Sockets.SocketException> když dojde k chybám v systému Windows soketu. <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, A <xref:System.Net.Sockets.UdpClient> třídy jsou postavený na **soketu** třídy a výjimku **SocketExceptions** také.  
+ Aplikace, které používají <xref:System.Net.Sockets.Socket> třídy throw <xref:System.Net.Sockets.SocketException> když dojde k chybám na soketu Windows. <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, A <xref:System.Net.Sockets.UdpClient> třídy jsou zabudovány nad **soketu** třídy a vyvolat **SocketExceptions** také.  
   
- Když **SocketException** je vyvolána výjimka, **SocketException** třídy sady <xref:System.Net.Sockets.SocketException.ErrorCode%2A> vlastnost poslední chyba soketu operačního systému, který došlo k chybě. Další informace o chybových kódech soketu najdete v dokumentaci kód chyby rozhraní Winsock 2.0 API na webu MSDN.  
+ Když **socketexception –** je vyvolána výjimka, **socketexception –** třídy sady <xref:System.Net.Sockets.SocketException.ErrorCode%2A> vlastnost poslední chyba soketu operačního systému, ke které došlo. Další informace o chybových kódech soketu najdete v dokumentaci kód chyby rozhraní Winsock 2.0 API na webu MSDN.  
   
 ## <a name="see-also"></a>Viz také  
  [Základy zpracování výjimek](../../../docs/standard/exceptions/exception-handling-fundamentals.md)  

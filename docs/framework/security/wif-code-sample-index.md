@@ -3,13 +3,12 @@ title: Index ukázkového kódu WIF
 ms.date: 03/30/2017
 ms.assetid: 6711f01a-4743-43ce-95ab-5e2302a363ea
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: fc626e139cb29d3827a289acd24b7ea842a1af01
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b4c73bac9ddda83d78a4d9c95e3864d8d4e8ec4e
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43858649"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070315"
 ---
 # <a name="wif-code-sample-index"></a>Index ukázkového kódu WIF
 Následují ukázky kódu pro Windows Identity Foundation 4.5:  

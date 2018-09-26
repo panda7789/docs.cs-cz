@@ -3,13 +3,12 @@ title: SymmetricSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: b2e182b6-c041-4d80-a926-6058068d9f79
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 7fc720f4f0be25a0cec25d979942af8472efa4ee
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 180b64f6f37e5c765585e52b292319816618be28
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33485053"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47076511"
 ---
 # <a name="symmetricsecuritybindingelement"></a>SymmetricSecurityBindingElement
 SymmetricSecurityBindingElement  
@@ -25,28 +24,28 @@ class SymmetricSecurityBindingElement : SecurityBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída třídu SymmetricSecurityBindingElement nedefinuje žádné metody.  
+ Element SymmetricSecurityBindingElement Třída nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída třídu SymmetricSecurityBindingElement má následující vlastnosti:  
+ Element SymmetricSecurityBindingElement třída má následující vlastnosti:  
   
 ### <a name="messageprotectionorder"></a>MessageProtectionOrder  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Pořadí zpráva šifrování a podepisování pro tuto vazbu.  
+ Pořadí zpráv šifrování a podepisování pro tuto vazbu.  
   
 ### <a name="requiresignatureconfirmation"></a>RequireSignatureConfirmation  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Jestli vazby vyžaduje potvrzení podpisu.  
+ Určuje, zda vytvoření vazby vyžaduje potvrzení podpisu.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

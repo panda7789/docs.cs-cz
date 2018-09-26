@@ -10,20 +10,19 @@ helpviewer_keywords:
 ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 06c653d8759224e1112183a7e86e9797a97402af
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 4d51010d6236103d252507802e14d01230d90219
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753765"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47075197"
 ---
 # <a name="ltmodulegt-element-network-settings"></a>&lt;modul&gt; – Element (nastavení sítě)
-Přidá nový modul proxy serveru k aplikaci.  
+Přidá nový modul proxy serveru do aplikace.  
   
  \<Konfigurace >  
 \<system.net>  
-\<defaultProxy – >  
+\<defaultProxy >  
 \<modul >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -41,7 +40,7 @@ Přidá nový modul proxy serveru k aplikaci.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`type`|Zadejte plně kvalifikovaný název (indikován <xref:System.Type.FullName%2A> vlastnost) a název sestavení (indikován <xref:System.Reflection.Assembly.FullName%2A> vlastnost), oddělené čárkou, který implementuje proxy serveru.|  
+|`type`|Plně kvalifikovaného názvu (indikován <xref:System.Type.FullName%2A> vlastnost) a název sestavení (indikován <xref:System.Reflection.Assembly.FullName%2A> vlastnost), oddělená čárkou, která implementuje proxy serveru.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -50,18 +49,18 @@ Přidá nový modul proxy serveru k aplikaci.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[defaultProxy –](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Nakonfiguruje server proxy protokolu HTTP (Hypertext Transfer).|  
+|[defaultProxy](../../../../../docs/framework/configure-apps/file-schema/network/defaultproxy-element-network-settings.md)|Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).|  
   
 ## <a name="remarks"></a>Poznámky  
- `module` Element zaregistruje třídy proxy, které implementují <xref:System.Net.IWebProxy> rozhraní. Po registraci třídu proxy `module` slouží k vyžádání informací prostřednictvím podporovaných proxy serveru.  
+ `module` Zaregistruje element třídy proxy, které implementují <xref:System.Net.IWebProxy> rozhraní. Po registraci třídu proxy `module` slouží k vyžádání informací prostřednictvím podporovaných proxy.  
   
- Hodnota `type` atribut by měl mít název třídy modulu a názvu z jeho odpovídající dynamického propojení knihovny (DLL).  
+ Hodnota `type` atribut by měl být název třídy modulu a název z jeho odpovídající dynamické propojení knihovna (DLL).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad zaregistruje třídu vlastní proxy server.  
+ Následující příklad registruje třídu vlastní proxy server.  
   
 ```xml  
 <configuration>  

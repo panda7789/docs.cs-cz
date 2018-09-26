@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 3b7a4e13-0305-45d5-bc33-1f4133c50782
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 7ecc56a9589ca49e8edd0a2c547239d6b7456e0c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f200f2f2a739ac49b96b9294a50c06732000028a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515787"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078016"
 ---
 # <a name="ui-automation-support-for-the-titlebar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku TitleBar
 > [!NOTE]

@@ -8,13 +8,12 @@ helpviewer_keywords:
 - security [WCF], providing credentials
 ms.assetid: db8cb478-aa43-478b-bf97-c6489ad7c7fd
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 37827398ffd6041aa841e23381b6b072b297f089
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 3e304aa12d5e1c7aaa992191e6ed9ed25b026f9f
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515447"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073622"
 ---
 # <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: vytvoření vlastního zprostředkovatele tokenů zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkovatele tokenů zabezpečení a jak integrovat Správce tokenů zabezpečení vlastního zprostředkovatele.  

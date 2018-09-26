@@ -1,21 +1,20 @@
 ---
-title: 'Postupy: zjištění dostupnosti sítě a vyřešte změny'
+title: 'Postupy: zjištění dostupnosti sítě a vyřešení změn'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Network
 ms.assetid: d4377115-4a76-4848-ab23-4898d65c771c
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 9056c8b2ecf18c4a57d356e7c9698984df1558eb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c0357c4000a7efdb838a40f2f3f907c1dd313c58
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396256"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172294"
 ---
-# <a name="how-to-detect-network-availability-and-address-changes"></a>Postupy: zjištění dostupnosti sítě a vyřešte změny
-Tato ukázka ukazuje, jak detekovat změny v adresa síťového rozhraní.  
+# <a name="how-to-detect-network-availability-and-address-changes"></a>Postupy: zjištění dostupnosti sítě a vyřešení změn
+Tento příklad ukazuje, jak zjišťovat změny v adresa síťového rozhraní.  
   
 ## <a name="example"></a>Příklad  
   
@@ -51,4 +50,4 @@ namespace Examples.Net.AddressChanges
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na **System.Net** oboru názvů.
+-   Odkazy **System.Net** oboru názvů.

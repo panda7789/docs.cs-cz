@@ -5,11 +5,11 @@ helpviewer_keywords:
 - bitmap effects [WPF]
 ms.assetid: 23cb338e-4b59-4b52-b294-96431f9c9568
 ms.openlocfilehash: 97b878621d5aa1860cd955755d9bbc344b95b993
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46537511"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171722"
 ---
 # <a name="bitmap-effects-overview"></a>Přehled efektů bitmap
 Bitmapové efekty povolit návrháři a vývojáři použít vizuální efekty k vykreslení obsahu Windows Presentation Foundation (WPF). Například bitmapových efektů umožňují snadno použít <xref:System.Windows.Media.Effects.DropShadowBitmapEffect> vliv nebo rozostření mohou mít vliv na bitovou kopii nebo tlačítko.  

@@ -3,13 +3,12 @@ title: SecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: ef93b6e6-3524-48a8-94d3-c8837f1872f9
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: ceb674ea7c20386acb821d3a41c1ad0c743a7607
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 19c65b3028ad63b8a78205d00f44cc32322648d5
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487552"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47069971"
 ---
 # <a name="securitybindingelement"></a>SecurityBindingElement
 SecurityBindingElement  
@@ -29,26 +28,26 @@ class SecurityBindingElement : BindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída elementu SecurityBindingElement nedefinuje žádné metody.  
+ Třída SecurityBindingElement nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída elementu SecurityBindingElement má následující vlastnosti:  
+ Třída SecurityBindingElement má následující vlastnosti:  
   
-### <a name="defaultalgorithmsuite"></a>defaultAlgorithmSuite  
+### <a name="defaultalgorithmsuite"></a>DefaultAlgorithmSuite  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Určuje algoritmy pro použití s vazby.  
+ Určuje algoritmy, které mají být použity s vazbou.  
   
-### <a name="includetimestamp"></a>includeTimestamp  
- Datový typ: logická hodnota  
+### <a name="includetimestamp"></a>IncludeTimestamp  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Logická hodnota, která určuje, zda každá zpráva obsahuje časové razítko.  
+ Logická hodnota určující, zda každá zpráva obsahuje časovou známku.  
   
-### <a name="keyentropymode"></a>keyEntropyMode  
+### <a name="keyentropymode"></a>KeyEntropyMode  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
@@ -60,16 +59,16 @@ class SecurityBindingElement : BindingElement
   
  Přístup k typu: jen pro čtení  
   
- Vlastnosti konkrétní bezpečnostní vazby pro místní služby.  
+ Specifické vlastnosti zabezpečení vazby pro lokální službu.  
   
-### <a name="messagesecurityversion"></a>messageSecurityVersion  
+### <a name="messagesecurityversion"></a>MessageSecurityVersion  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Je verze použitá pro zabezpečení zpráv.  
+ Verze použitá pro zabezpečení zprávy.  
   
-### <a name="securityheaderlayout"></a>securityHeaderLayout  
+### <a name="securityheaderlayout"></a>SecurityHeaderLayout  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
@@ -78,7 +77,7 @@ class SecurityBindingElement : BindingElement
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

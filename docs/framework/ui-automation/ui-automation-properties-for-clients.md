@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: c1ab9a9eeae6de29fc838e263225050ec4122f2d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2e0c2764f96a2592ad0a4dfe5caa46536373eb80
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505638"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47088708"
 ---
 # <a name="ui-automation-properties-for-clients"></a>Vlastnosti automatizace uživatelského rozhraní pro klienty
 > [!NOTE]

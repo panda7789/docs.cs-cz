@@ -10,16 +10,15 @@ helpviewer_keywords:
 ms.assetid: 10b79aef-327b-4718-a892-e11f55e4d169
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 4b73e5d781829292513e809c39ac9de9dfc6d0e8
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5b1707d7490de07520603f6fdf6d1ee1a44ffba7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742481"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171410"
 ---
 # <a name="ltipv6gt-element-network-settings"></a>&lt;IPv6&gt; – Element (nastavení sítě)
-Umožňuje Internet Protocol version 6 (IPv6) odpovědí z zastaralé členy <xref:System.Net.Dns> třídy.  
+Umožňuje Internet Protocol verze 6 (IPv6) odpovědí z zastaralé členy <xref:System.Net.Dns> třídy.  
   
  \<Konfigurace >  
 \<system.net>  
@@ -41,7 +40,7 @@ Umožňuje Internet Protocol version 6 (IPv6) odpovědí z zastaralé členy <xr
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`enabled`|Určuje, jestli členy <xref:System.Net.Dns> třída vraťte Internet Protocol verze 6 adresy (IPv6). Výchozí hodnota je `false`.|  
+|`enabled`|Určuje, zda členové <xref:System.Net.Dns> třídy vrátit Internet Protocol verze 6 adresy (IPv6). Výchozí hodnota je `false`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -50,13 +49,13 @@ Umožňuje Internet Protocol version 6 (IPv6) odpovědí z zastaralé členy <xr
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě <xref:System.Net> oboru názvů.|  
+|[Nastavení](../../../../../docs/framework/configure-apps/file-schema/network/settings-element-network-settings.md)|Nakonfiguruje možnosti základní sítě pro <xref:System.Net> oboru názvů.|  
   
 ## <a name="remarks"></a>Poznámky  
- Toto nastavení umožňuje podporu protokolu IPv6 pro zastaralé členy <xref:System.Net.Dns> – třída: <xref:System.Net.Dns.BeginGetHostByName%2A>, <xref:System.Net.Dns.BeginResolve%2A>, <xref:System.Net.Dns.EndGetHostByName%2A>, <xref:System.Net.Dns.EndResolve%2A>, <xref:System.Net.Dns.GetHostByAddress%2A>, <xref:System.Net.Dns.GetHostByName%2A>, a <xref:System.Net.Dns.Resolve%2A>. Pro ostatní členové <xref:System.Net?displayProperty=nameWithType> obor názvů, adresy IPv6 mohou vráceny, pokud je povolen protokol IPv6 v operačním systému.  
+ Toto nastavení umožňuje podporu protokolu IPv6 pro zastaralé členy <xref:System.Net.Dns> třídy: <xref:System.Net.Dns.BeginGetHostByName%2A>, <xref:System.Net.Dns.BeginResolve%2A>, <xref:System.Net.Dns.EndGetHostByName%2A>, <xref:System.Net.Dns.EndResolve%2A>, <xref:System.Net.Dns.GetHostByAddress%2A>, <xref:System.Net.Dns.GetHostByName%2A>, a <xref:System.Net.Dns.Resolve%2A>. Pro ostatní členy <xref:System.Net?displayProperty=nameWithType> obor názvů, IPv6 adresy mohou být vráceny Pokud v operačním systému je povolen protokol IPv6.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad ukazuje, jak povolit podporu IPv6 <xref:System.Net.Dns> třídy.  

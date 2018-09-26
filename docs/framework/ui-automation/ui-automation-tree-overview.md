@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: 03b98058-bdb3-47a0-8ff7-45e6cdf67166
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 042f3f82a88e987131145f38c1d8f5ecfa8dc487
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.openlocfilehash: a7fca5d86cf8679e0845a7051b4ace5b91766030
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46484608"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086337"
 ---
 # <a name="ui-automation-tree-overview"></a>Přehled stromu automatizace uživatelského rozhraní
 > [!NOTE]

@@ -4,13 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: f300ab05f28feca8baa13c4078df622e1e7d9d19
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 97decd9054dfcdfc41204bf7683aebb95096e9d2
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46579443"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47074584"
 ---
 # <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Změny v oboru názvů System.Uri ve verzi 2.0
 

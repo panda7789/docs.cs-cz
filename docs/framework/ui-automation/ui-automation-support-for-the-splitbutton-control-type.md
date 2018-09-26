@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 14b05ccf-bcd8-4045-9bae-f7679cd98711
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 3e20f39d0c1b35017afa1d50e3ffef85a7743b8f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5b4bd79d9895a2868f9caf6ac4a2e67faef5f9c0
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502192"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172229"
 ---
 # <a name="ui-automation-support-for-the-splitbutton-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku SplitButton
 > [!NOTE]

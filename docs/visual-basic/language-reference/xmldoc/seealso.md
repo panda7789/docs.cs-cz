@@ -6,11 +6,11 @@ helpviewer_keywords:
 - seealso XML tag
 ms.assetid: 36050c95-1af2-4284-b9b6-1a70691ed978
 ms.openlocfilehash: a792bbea108bcdf33d430c47773466ef3dccdb0c
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46539989"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171865"
 ---
 # <a name="ltseealsogt-visual-basic"></a>&lt;Viz také&gt; (Visual Basic)
 Určuje odkaz, který se zobrazí v části Viz také.  

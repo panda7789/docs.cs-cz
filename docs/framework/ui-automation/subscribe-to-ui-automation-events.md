@@ -12,13 +12,12 @@ helpviewer_keywords:
 ms.assetid: b688effa-b3e8-4b05-944d-05ed89a245aa
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: c6845a85f9d3e07a4ecc9aad1ec11df8cdbc1f7a
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 9f2a48066356d594a3aeaa003089053297bf4ff8
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46699089"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171761"
 ---
 # <a name="subscribe-to-ui-automation-events"></a>Přihlášení k odběru událostí automatizace uživatelského rozhraní
 > [!NOTE]

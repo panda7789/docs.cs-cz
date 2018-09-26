@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: 55d419c0-2201-4101-90c9-2888df4dbb47
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 6180a5091b6072af97fd108b27a8dbe6cfd71324
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 247a353a3f68289a85e581fd9b9c308e442a9412
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43501270"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084066"
 ---
 # <a name="expose-a-server-side-ui-automation-provider"></a>Vystavení zprostředkovatele automatizace uživatelského rozhraní na straně serveru
 > [!NOTE]

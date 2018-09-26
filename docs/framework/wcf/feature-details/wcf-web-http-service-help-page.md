@@ -3,11 +3,11 @@ title: Stránka nápovědy webové služby HTTP WCF
 ms.date: 03/30/2017
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
 ms.openlocfilehash: d0fe4f99fea4d414c95244e535cd75891f921790
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46698516"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47075697"
 ---
 # <a name="wcf-web-http-service-help-page"></a>Stránka nápovědy webové služby HTTP WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] poskytuje automatickou stránku nápovědy pro služby webových služeb HTTP WCF. Tato stránka nápovědy obsahuje popis jednotlivých operace, požadavků a odpovědí formáty a schémata. Tato funkce je ve výchozím nastavení vypnuté. Když uživatel přejde do služby webových služeb HTTP WCF a přidá "/ Help" na konci adresy URL, například http://localhost:8000/Customers/Help, stránku nápovědy jako tento text.  

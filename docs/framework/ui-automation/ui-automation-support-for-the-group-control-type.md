@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 18e01bab-01f8-4567-b867-88dce9c4a435
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: a5bc202c0297eb3f0d4f6fa06b3beca0f9112272
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 327b1f1a6bfd8ba828c90ffaec01a94936e07bd3
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44207392"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47071166"
 ---
 # <a name="ui-automation-support-for-the-group-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku skupina
 > [!NOTE]

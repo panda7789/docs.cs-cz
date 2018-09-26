@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 060f2bfdc39e7fe4ab0a28a4aecec87db89d3428
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: c4c96b874456297ede61c96e46fee8d90ebcafb6
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46705650"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073681"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 

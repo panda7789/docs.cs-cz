@@ -6,74 +6,73 @@ dev_langs:
 - vb
 ms.assetid: 640676b6-c75a-4ff7-aea4-b1a1524d71b2
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: ef2f02bb5ad6e7458ae11e7880fe403f3a6e9916
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 85954dd89bdb576b68d234a364a406a6e0d2145b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493409"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47079880"
 ---
 # <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci
-Pomocí tokenu kontextu zabezpečení stavová (SCT) v zabezpečené relaci může relace odolat službu recyklovány. Například při bezstavové SCT se používá v zabezpečené relaci a Internetové informační služby (IIS) je obnovit, pak data relace, která souvisí se službou se ztratí. Tato data relace zahrnuje mezipamětí tokenů SCT. Ano při příštím klient odešle služba bezstavové SCT, vrátí se chyba, protože nelze načíst klíč, který je přidružen SCT. Pokud se ale používá stavová SCT, klíč, který je přidružen SCT obsažené v SCT. Vzhledem k tomu, že klíč obsažené v SCT a proto obsažené v zprávu, není služba recyklovány vliv zabezpečené relace. Ve výchozím nastavení používá Windows Communication Foundation (WCF) bezstavové SCTs v zabezpečené relaci. Toto téma podrobné informace o tom, jak použít stavová SCTs v zabezpečené relaci.  
+Pomocí tokenu kontextu zabezpečení stavové (SCT) v zabezpečené relaci dokázal relace neumožňovala recyklaci služby. Například při bezstavové SCT se používá v zabezpečené relaci a obnovit Internetové informační služby (IIS), potom data relace, která souvisí se službou se ztratí. Tato data relace zahrnují SCT mezipaměť tokenu. Proto při příštím klient odešle službě bezstavové SCT vrátí chybu, protože klíč, který je přidružený k SCT nelze načíst. Pokud však použijete stavové SCT, klíč, který je přidružený k SCT obsažené v SCT. Protože klíč je součástí SCT a proto v něm obsažené, nemá vliv službu neumožňovala recyklaci, zabezpečenou relaci. Ve výchozím nastavení používá Windows Communication Foundation (WCF) bezstavové SCTs v zabezpečené relaci. Toto téma podrobně popisuje, jak použít stavová SCTs v zabezpečené relaci.  
   
 > [!NOTE]
->  Stavová SCTs nelze použít v zabezpečené relaci, která zahrnuje kontraktu, která je odvozena z <xref:System.ServiceModel.Channels.IDuplexChannel>.  
+>  Stavové SCTs nelze použít v zabezpečené relaci, která zahrnuje kontrakt, který je odvozen od <xref:System.ServiceModel.Channels.IDuplexChannel>.  
   
 > [!NOTE]
->  Pro aplikace, které používají stavová SCTs v zabezpečené relaci musí být přístup z více vláken identity pro službu uživatelský účet, který má profil uživatele. Když je služba spuštěna pod účtem, který nemá profil uživatele, jako například `Local Service`, může být vyvolána výjimka.  
+>  Pro aplikace, které používají stavové SCTs v zabezpečené relaci identitu vlákna služby musí být uživatelský účet, který se má profil přidruženého uživatele. Když je služba spuštěna pod účtem, který nemá profil uživatele, jako například `Local Service`, může být vyvolána výjimka.  
   
 > [!NOTE]
->  Když zosobnění je potřeba na systému Windows XP, použijte zabezpečené relace bez stavová SCT. V případě stavová SCTs používají s zosobnění, <xref:System.InvalidOperationException> je vyvolána výjimka. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
+>  Když zosobnění je potřeba na Windows XP, použijte zabezpečené relaci bez stavové SCT. Když zosobnění, se používají stavové SCTs <xref:System.InvalidOperationException> je vyvolána výjimka. Další informace najdete v tématu [nepodporované scénáře](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
   
-### <a name="to-use-stateful-scts-in-a-secure-session"></a>Použít stavová SCTs v zabezpečené relaci  
+### <a name="to-use-stateful-scts-in-a-secure-session"></a>Použití stavové SCTs v zabezpečené relace  
   
--   Vytvoření vlastní vazby, která určuje, že protokolu SOAP zprávy jsou chráněny zabezpečené relace, který používá stavová SCT.  
+-   Vytvoření vlastní vazby, která určuje, že zprávy protokolu SOAP jsou chráněné službou, která používá stavové SCT zabezpečenou relaci.  
   
-    1.  Definovat vlastní vazby přidáním [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) do konfiguračního souboru pro službu.  
+    1.  Definujte vlastní vazbu tak, že přidáte [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) do konfiguračního souboru služby.  
   
         ```xml  
         <customBinding>  
         ```  
   
-    2.  Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) podřízený element [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+    2.  Přidat [ \<vazby >](../../../../docs/framework/misc/binding.md) podřízený element pro [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
-         Zadejte název vazby nastavením `name` atribut jedinečný název v rámci konfiguračního souboru.  
+         Zadejte název vazby tak, že nastavíte `name` atribut jedinečný název v konfiguračním souboru.  
   
         ```xml  
         <binding name="StatefulSCTSecureSession">  
         ```  
   
-    3.  Zadejte režim ověřování pro zprávy odeslané do a z této služby přidáním [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) podřízený element [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
+    3.  Zadejte režim ověřování pro zprávy odeslané do a z této služby tak, že přidáte [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) podřízený element pro [ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md).  
   
-         Zadejte, že zabezpečené relace používá nastavení `authenticationMode` atribut `SecureConversation`. Zadejte, že stavová SCTs používají nastavení `requireSecurityContextCancellation` atribut `false`.  
+         Určí, že je použit zabezpečenou relaci tak, že nastavíte `authenticationMode` atribut `SecureConversation`. Určete, že se používají stavové SCTs nastavením `requireSecurityContextCancellation` atribut `false`.  
   
         ```xml  
         <security authenticationMode="SecureConversation"  
                   requireSecurityContextCancellation="false">  
         ```  
   
-    4.  Zadejte, jak je ověřený klient během zabezpečené relace je vytvořeno přidáním [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
+    4.  Zadejte, jak je ověření klienta při vytvoření zabezpečené relace tak, že přidáte [ \<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md) podřízený element pro [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md).  
   
-         Zadejte, jak se ověřit nastavení klienta `authenticationMode` atribut.  
+         Zadejte, jak proběhne ověření nastavení klienta `authenticationMode` atribut.  
   
         ```xml  
         <secureConversationBootstrap authenticationMode="UserNameForCertificate" />  
         ```  
   
-    5.  Určete kódování zpráv přidáním element kódování [ \<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
+    5.  Určete kódování zprávy přidáním element kódování [ \<textMessageEncoding >](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md).  
   
         ```xml  
         <textMessageEncoding />  
         ```  
   
-    6.  Zadejte přenos přidáním element přenosu, například [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
+    6.  Zadejte přenos přidáním element přenosu [ \<httpTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md).  
   
         ```xml  
         <httpTransport />  
         ```  
   
-     Následující příklad kódu používá konfiguraci Pokud chcete zadat vlastní vazby, zprávy můžete použít s stavová SCTs v zabezpečené relaci.  
+     Následující příklad kódu používá konfigurace k určení vlastní vazby, zprávy můžete použít s stavové SCTs v zabezpečené relaci.  
   
     ```xml  
     <customBinding>  
@@ -89,14 +88,14 @@ Pomocí tokenu kontextu zabezpečení stavová (SCT) v zabezpečené relaci mů�
     ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu vytvoří vlastní vazby, který používá <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> režim ověřování bootstrap zabezpečené relaci.  
+ Následující příklad kódu vytvoří vlastní vazby, který používá <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> režim ověřování ke spuštění zabezpečenou relaci.  
   
  [!code-csharp[c_CreateStatefulSCT#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_createstatefulsct/cs/secureservice.cs#2)]
  [!code-vb[c_CreateStatefulSCT#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_createstatefulsct/vb/secureservice.vb#2)]  
   
- Při ověřování systému Windows se používá v kombinaci s stavová SCT, není naplnit WCF <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost s skutečné volající je identity, ale místo toho nastaví vlastnost na anonymní. Protože zabezpečení WCF nutné znovu vytvořit obsah kontext zabezpečení služby pro každý požadavek z příchozí SCT, server není udržování přehledu o zabezpečení relací v paměti. Vzhledem k tomu, že není možné serializovat <xref:System.Security.Principal.WindowsIdentity> instance do SCT, <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost vrací anonymní identity.  
+ Při ověřování Windows se používá v kombinaci s stavové SCT, WCF nevyplní <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> vlastnost s skutečné volající vaší identity, ale místo toho vlastnost nastavena na anonymní. Protože zabezpečení WCF muset znovu vytvořit obsah kontext zabezpečení služby pro každý požadavek z příchozí SCT, server přehled o zabezpečení relací v paměti. Vzhledem k tomu, že není možné serializovat <xref:System.Security.Principal.WindowsIdentity> instance do SCT, <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> anonymní identity vrátí vlastnost.  
   
- Následující konfigurace vykazuje toto chování.  
+ Toto chování je třeba následující konfiguraci.  
   
 ```xml  
 <customBinding>  
@@ -112,4 +111,4 @@ Pomocí tokenu kontextu zabezpečení stavová (SCT) v zabezpečené relaci mů�
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<třídě customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

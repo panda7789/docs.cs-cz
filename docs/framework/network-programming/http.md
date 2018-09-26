@@ -15,24 +15,23 @@ helpviewer_keywords:
 ms.assetid: 985fe5d8-eb71-4024-b361-41fbdc1618d8
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: ed61a8addd204320560c773e917613c52e56bff4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0c99e63f09d756bfff8cced846c2fe0f61722b8c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394456"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078445"
 ---
 # <a name="http"></a>HTTP
-Rozhraní .NET Framework poskytuje komplexní podporu pro protokol HTTP, který tvoří většina všechny přenosy z Internetu, se <xref:System.Net.HttpWebRequest> a <xref:System.Net.HttpWebResponse> třídy. Tyto třídy odvozené od <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, jsou vráceny ve výchozím nastavení vždy, když statickou metodu <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> zaznamená identifikátor URI začínající "http" nebo "https". Ve většině případů **WebRequest** a **WebResponse** třídy poskytují všechny možnosti, které je potřeba provést žádost, ale pokud budete potřebovat přístup k funkce specifické pro HTTP, které jsou zveřejněné jako vlastnosti, které přiřazení typu Tyto třídy **HttpWebRequest** nebo **HttpWebResponse**.  
+Rozhraní .NET Framework poskytuje komplexní podporu pro protokol HTTP, které tvoří většinou všechny přenosy z Internetu, se <xref:System.Net.HttpWebRequest> a <xref:System.Net.HttpWebResponse> třídy. Tyto třídy odvozené z <xref:System.Net.WebRequest> a <xref:System.Net.WebResponse>, jsou vráceny ve výchozím nastavení pokaždé, když se statickou metodu <xref:System.Net.WebRequest.Create%2A?displayProperty=nameWithType> zaznamená identifikátor URI začínající řetězcem "http" nebo "https". Ve většině případů **WebRequest** a **WebResponse** třídy poskytují všechny možnosti, které je nezbytné k odeslání požadavku, ale pokud potřebujete přístup k funkcím specifickým pro HTTP jako vlastnosti, můžete přetypovat Tyto třídy **HttpWebRequest** nebo **HttpWebResponse**.  
   
- **HttpWebRequest** a **HttpWebResponse** zapouzdřují standardní transakce požadavku a odpovědi HTTP a poskytovat přístup k společné hlavičky HTTP. Tyto třídy také podporují většinu funkcí HTTP 1.1, včetně zřetězení příkazů, odesílání a přijímání dat v bloky dat, ověřování, předběžné ověření, šifrování, podpora proxy, se ověřování certifikátu serveru a správu připojení. Vlastní hlavičky a není zajišťováno prostřednictvím vlastnosti můžete ukládat a přistupovat prostřednictvím **hlavičky** vlastnost.  
+ **HttpWebRequest** a **HttpWebResponse** zapouzdřují standardní transakce požadavku a odpovědi HTTP a poskytují přístup k společné hlavičky HTTP. Tyto třídy také podporují většinu funkcí protokolu HTTP 1.1, včetně paralelní zpracování, odesílání a přijímání dat do bloků dat, ověřování, předběžné ověření, šifrování, podpora proxy, ověření certifikátu serveru a připojení správy. Vlastní hlavičky a není k dispozici prostřednictvím vlastností můžete uložené v a získat přístup prostřednictvím **záhlaví** vlastnost.  
   
- **HttpWebRequest** je výchozí třídy používané **WebRequest** a není potřeba před můžete předat identifikátor URI pro být zaregistrován **WebRequest.Create** metoda.  
+ **HttpWebRequest** je výchozí třídou používané **WebRequest** a nemusí být před předáním identifikátor URI pro zaregistrovaný **WebRequest.Create** metoda.  
   
- Můžete použít aplikaci držet se přesměrování HTTP automaticky nastavením <xref:System.Net.HttpWebRequest.AllowAutoRedirect%2A> vlastnost **true** (výchozí). Aplikace bude přesměrovávat požadavky a <xref:System.Net.HttpWebResponse.ResponseUri%2A> vlastnost **HttpWebResponse** bude obsahovat skutečné webového prostředku, který odpověděl na žádost. Pokud nastavíte **AllowAutoRedirect** k **false**, aplikace musí být schopna zpracovávat přesměrování jako chyby protokolu HTTP.  
+ Provedete aplikace následovat i přesměrování HTTP automaticky tak, že nastavíte <xref:System.Net.HttpWebRequest.AllowAutoRedirect%2A> vlastnost **true** (výchozí). Aplikace bude přesměrovávat žádosti a <xref:System.Net.HttpWebResponse.ResponseUri%2A> vlastnost **HttpWebResponse** bude obsahovat skutečná webového prostředku, který odpověděl na požadavek. Pokud nastavíte **AllowAutoRedirect** k **false**, vaše aplikace musí být schopný zvládnout přesměrování jako chyby protokolu HTTP.  
   
- Aplikace obdrží zachytávání chyb protokolu HTTP <xref:System.Net.WebException> s <xref:System.Net.WebException.Status%2A> nastavena na <xref:System.Net.WebExceptionStatus>. <xref:System.Net.WebException.Response%2A> Vlastnost obsahuje **WebResponse** odeslaných serverem a označuje skutečného došlo k chybě protokolu HTTP.  
+ Aplikace zobrazí chyby protokolu HTTP pomocí zachycování <xref:System.Net.WebException> s <xref:System.Net.WebException.Status%2A> nastavena na <xref:System.Net.WebExceptionStatus>. <xref:System.Net.WebException.Response%2A> Obsahuje vlastnost **WebResponse** odeslané serverem a označuje skutečné došlo k chybě protokolu HTTP.  
   
 ## <a name="see-also"></a>Viz také  
  [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  

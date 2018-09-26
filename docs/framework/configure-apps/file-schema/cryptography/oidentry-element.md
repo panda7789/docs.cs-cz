@@ -10,16 +10,15 @@ helpviewer_keywords:
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: db209bac487ccbb98f7f0aeb272f51169e7a0148
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: c5be6ef95693f274e5cb2002e5642d5e58a7661a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32746352"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082065"
 ---
 # <a name="ltoidentrygt-element"></a>&lt;oidentry –&gt; – Element
-Mapuje ASN.1 identifikátor objektu (OID) popisný název.  
+Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.  
   
  \<Konfigurace >  
 \<mscorlib >  
@@ -40,7 +39,7 @@ Mapuje ASN.1 identifikátor objektu (OID) popisný název.
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|**OID**|Požadovaný atribut.<br /><br /> Určuje Identifikátor ASN.1 odpovídající algoritmus implementovaný ve třídě.|  
+|**IDENTIFIKÁTOR OBJEKTU**|Požadovaný atribut.<br /><br /> Určuje Identifikátor ASN.1 odpovídající algoritmus implementovaný pomocí vaší třídy.|  
 |**Jméno**|Požadovaný atribut.<br /><br /> Určuje hodnotu **název** atribut [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) značky.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
@@ -53,13 +52,13 @@ Mapuje ASN.1 identifikátor objektu (OID) popisný název.
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`cryptographySettings`|Obsahuje nastavení šifrování.|  
 |`mscorlib`|Obsahuje `cryptographySettings` elementu.|  
-|`oidMap`|Obsahuje ASN.1 objektu (OID) identifikátor mapování třídy.|  
+|`oidMap`|Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.|  
   
 ## <a name="remarks"></a>Poznámky  
- Identifikátory objektů ASN.1 identifikovat v některé formáty kryptografické algoritmy. Mapování identifikátorů objektů na popisné názvy pro algoritmy, které chcete identifikovat.  
+ Identifikátory objektů ASN.1 identifikovat v některé formáty kryptografické algoritmy. Mapování identifikátorů objektů na popisné názvy algoritmů, které chcete identifikovat.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat  **\<oidentry – >** element k mapování identifikátor objektu pro algoritmus hash RIPEMD-160 na implementaci pro tento algoritmus hash.  
+ Následující příklad ukazuje způsob použití  **\<oidentry – >** element namapovat identifikátor objektu pro algoritmus hash RIPEMD 160 implementace algoritmu hash.  
   
 ```xml  
 <configuration>  

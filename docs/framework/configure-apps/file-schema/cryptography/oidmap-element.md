@@ -10,16 +10,15 @@ helpviewer_keywords:
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: db39d7de3566647b5171b71940c78a9a0ab6f5f1
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ec2ba884f0f60182dd59bb6a4491e223f43ce1a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33350219"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073538"
 ---
 # <a name="ltoidmapgt-element"></a>&lt;oidmap –&gt; – Element
-Obsahuje ASN.1 objektu (OID) identifikátor mapování třídy.  
+Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.  
   
  \<Konfigurace >  
 \<mscorlib >  
@@ -43,7 +42,7 @@ Obsahuje ASN.1 objektu (OID) identifikátor mapování třídy.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<oidentry – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|Mapuje identifikátor OID ASN.1 popisný název.|  
+|[\<oidentry – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/oidentry-element.md)|Identifikátor OID ASN.1 se mapuje na popisný název.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -54,7 +53,7 @@ Obsahuje ASN.1 objektu (OID) identifikátor mapování třídy.
 |`mscorlib`|Obsahuje `cryptographySettings` elementu.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat  **\<oidmap – >** element tak, aby obsahovala mapování identifikátor OID pro algoritmus hash RIPEMD-160 k implementaci pro tento algoritmus hash.  
+ Následující příklad ukazuje způsob použití  **\<oidmap – >** element tak, aby obsahovala mapování identifikátor OID pro algoritmus hash RIPEMD 160 k implementaci tohoto algoritmu hash.  
   
 ```xml  
 <configuration>  

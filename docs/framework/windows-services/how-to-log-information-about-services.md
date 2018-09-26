@@ -13,57 +13,56 @@ helpviewer_keywords:
 - logs, service applications
 ms.assetid: c0d8140f-c055-4d8e-a2e0-37358a550116
 author: ghogen
-manager: douge
-ms.openlocfilehash: a046c62de8789cbe438dcc849ffc23991a803ea2
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5556b83346aba5bc48eddb930dedc56f4786bdb5
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33513959"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47113621"
 ---
 # <a name="how-to-log-information-about-services"></a>Postupy: Zaznamenávání informací o službách
-Všechny projekty služby systému Windows ve výchozím nastavení, mají možnost využívat v protokolu událostí aplikace a do něj zapisovat informace a výjimky. Můžete použít <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost označující, zda chcete tuto funkci v aplikaci. Ve výchozím nastavení je protokolování zapnuto služby, které vytvoříte pomocí šablony projektu služby systému Windows. Můžete použít statické formu <xref:System.Diagnostics.EventLog> třída pro psaní informace o službě do protokolů, aniž by bylo nutné vytvořit instanci <xref:System.Diagnostics.EventLog> součást nebo ručně zaregistrovat zdroj.  
+Všechny projekty služeb Windows ve výchozím nastavení, mají možnost pracovat v protokolu událostí aplikace a do ní zapisovat informace a výjimek. Můžete použít <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost určit, jestli chcete tuto funkci ve vaší aplikaci. Ve výchozím nastavení je protokolování zapnuto na jakoukoli službu, které vytvoříte pomocí šablony projektu služby Windows. Můžete použít statické formu <xref:System.Diagnostics.EventLog> třídu pro zápis služby informace do protokolu bez nutnosti vytvářet instance <xref:System.Diagnostics.EventLog> komponenta nebo ruční registraci zdroje.  
   
- Instalační program služby automaticky registruje každé služby v projektu jako platný zdroj události protokolu aplikace v počítači, kterém je nainstalována služba, když je zapnuté protokolování. Služba zaznamená do protokolu informace pokaždé, když služba spuštění, zastavení, pozastavena, byl obnoven, nainstalován nebo odinstalovat. Zaznamená také všechny chyby, ke kterým dochází. Není potřeba psaní jakéhokoli kódu službě zapisovat položky protokolu, při použití výchozí chování; Služba zpracovává to pro vás automaticky.  
+ Instalační program pro vaši službu automaticky zaregistruje každé služby ve vašem projektu jako platný zdroj události protokolu aplikace na počítači, kde je služba nainstalována, když je vypnuté protokolování. Služba protokoluje informace pokaždé, když službu je spuštění, zastavení, pozastaveno, obnovení, nainstalované nebo odinstalovat. Také zaznamenává všechny chyby, ke kterým dochází. Není potřeba psát kód pro zápis položky do protokolu, při použití výchozí chování; Služba zpracovává to pro vás automaticky.  
   
- Pokud chcete zapisovat do protokolu událostí, než v protokolu aplikace, je nutné nastavit <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost `false`, vytvořte vlastní vlastní protokol událostí v kódu služby a registraci služby jako platný zdroj položek pro tento protokol. Pak musíte napsat kódu k zaznamenání položky do protokolu vždy, když akce, které vás zajímají.  
+ Pokud chcete zapisovat do protokolu událostí než protokolu aplikace, je nutné nastavit <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost `false`vytvořit vlastní vlastního protokolu událostí v rámci vašeho kódu služby a registraci služby jako platný zdroj položek pro tento protokol. Pak musíte napsat, že se zobrazí kód pro záznam položky protokolu pokaždé, když akce, které vás zajímají.  
   
 > [!NOTE]
->  Pokud používáte vlastní protokol událostí a konfiguraci aplikace služby pro zápis do, nesmíte pokoušet přístup k protokolu událostí před nastavením služby <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastností v kódu. Protokol událostí, musí tato vlastnost hodnotu k registraci služby jako platný zdroj událostí.  
+>  Pokud používáte vlastního protokolu událostí a nakonfigurovat aplikaci služby pro zápis do něj, nesmí pokus o přístup do protokolu událostí před nastavením služby <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> vlastnosti ve vašem kódu. V protokolu událostí musí tato vlastnost hodnotu pro registraci služby jako platný zdroj událostí.  
   
-### <a name="to-enable-default-event-logging-for-your-service"></a>Povolení protokolování událostí výchozí služby  
+### <a name="to-enable-default-event-logging-for-your-service"></a>Povolení protokolování událostí výchozí pro vaši službu  
   
--   Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro příslušné součásti na `true`.  
+-   Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu do `true`.  
   
     > [!NOTE]
-    >  Ve výchozím nastavení je tato vlastnost nastavena `true`. Není nutné explicitně nastavit Pokud vytváříte složitější zpracování, např. vyhodnocení podmínku a pak nastavení <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastností na základě výsledku této podmínky.  
+    >  Ve výchozím nastavení, tato vlastnost nastavena na `true`. Není nutné nastavovat to explicitně, pokud nevytváříte složitější zpracování, jako jsou například vyhodnocení podmínky a pak nastavení <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> nastavenou na výsledek této podmínky.  
   
-### <a name="to-disable-event-logging-for-your-service"></a>Zakázání protokolování událostí pro služby  
+### <a name="to-disable-event-logging-for-your-service"></a>Chcete-li zakázat protokolování událostí pro vaši službu  
   
--   Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro příslušné součásti na `false`.  
+-   Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost pro komponentu do `false`.  
   
      [!code-csharp[VbRadconService#17](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#17)]
      [!code-vb[VbRadconService#17](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#17)]  
   
-### <a name="to-set-up-logging-to-a-custom-log"></a>Nastavení protokolování do vlastní protokolu  
+### <a name="to-set-up-logging-to-a-custom-log"></a>Nastavení protokolování do vlastního protokolu  
   
 1.  Nastavte <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> vlastnost `false`.  
   
     > [!NOTE]
     >  Je nutné nastavit <xref:System.ServiceProcess.ServiceBase.AutoLog%2A> na hodnotu false, aby bylo možné používat vlastní protokol.  
   
-2.  Nastavit instanci <xref:System.Diagnostics.EventLog> součásti v aplikaci služby systému Windows.  
+2.  Nastavení instance <xref:System.Diagnostics.EventLog> komponentu v aplikaci služby Windows.  
   
-3.  Vytvořit vlastní protokol voláním <xref:System.Diagnostics.EventLog.CreateEventSource%2A> metoda a zadání zdrojový řetězec a název protokolu soubor chcete vytvořit.  
+3.  Vytvoření vlastního protokolu pomocí volání <xref:System.Diagnostics.EventLog.CreateEventSource%2A> metoda a určení zdrojový řetězec a název protokolu souboru chcete vytvořit.  
   
 4.  Nastavte <xref:System.Diagnostics.EventLog.Source%2A> vlastnost <xref:System.Diagnostics.EventLog> instanci komponenty zdrojový řetězec, který jste vytvořili v kroku 3.  
   
-5.  Zapisovat vaše položky přímým přístupem <xref:System.Diagnostics.EventLog.WriteEntry%2A> metodu <xref:System.Diagnostics.EventLog> instanci součásti.  
+5.  Zapisovat položky díky přístupu <xref:System.Diagnostics.EventLog.WriteEntry%2A> metodu na <xref:System.Diagnostics.EventLog> instance komponenty.  
   
-     Následující kód ukazuje, jak nastavit protokolování do vlastního protokolu.  
+     Následující kód ukazuje, jak nastavit protokolování, aby se vlastní protokol.  
   
     > [!NOTE]
-    >  V tomto příkladu kódu, instance <xref:System.Diagnostics.EventLog> komponenta má název `eventLog1` (`EventLog1` v jazyce Visual Basic). Pokud jste vytvořili instanci s jiným názvem v kroku 2, změňte kód odpovídajícím způsobem.  
+    >  V tomto příkladu kódu, instance <xref:System.Diagnostics.EventLog> komponenta má název `eventLog1` (`EventLog1` v jazyce Visual Basic). Pokud jste vytvořili instanci s jiným názvem v kroku 2, kód odpovídajícím způsobem měnit.  
   
      [!code-csharp[VbRadconService#14](../../../samples/snippets/csharp/VS_Snippets_VBCSharp/VbRadconService/CS/MyNewService.cs#14)]
      [!code-vb[VbRadconService#14](../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbRadconService/VB/MyNewService.vb#14)]  

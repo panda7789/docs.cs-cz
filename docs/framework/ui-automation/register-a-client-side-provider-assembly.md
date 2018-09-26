@@ -12,13 +12,12 @@ helpviewer_keywords:
 ms.assetid: a03af4d9-2771-43cc-b07b-d468dca23190
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 41dde3d63c95ae95e64dadb7658db7299ba53646
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 51813a6b21114a60831aa1e51e69cad61805f0e4
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524230"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070419"
 ---
 # <a name="register-a-client-side-provider-assembly"></a>Registrace sestavení zprostředkovatele na straně klienta
 > [!NOTE]

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - access keywords [C#]
 ms.assetid: 3b680d9c-0998-42df-8ba7-5783f7abda75
 ms.openlocfilehash: 7700c49a609a90faf9b3b8b90719a223952d7e9e
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703723"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172716"
 ---
 # <a name="access-keywords-c-reference"></a>Klíčová slova přístupu (Referenční dokumentace jazyka C#)
 Tato část představuje následující klíčová slova přístupu:  

@@ -3,11 +3,11 @@ title: Vlastnosti (F#)
 description: 'Další informace o F # vlastnosti, které jsou členy, které představují hodnoty přidružené k objektu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 75d21415b44ccc1c26ef5f478d5f5de20c3412e8
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46537411"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47109993"
 ---
 # <a name="properties"></a>Vlastnosti
 

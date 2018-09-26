@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: a9afd992a12392ae0ad1c27eea305cb7e367686d
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: f3a706edaeba551139368568a7467e0cdab3524c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874413"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171605"
 ---
 # <a name="ltmailsettingsgt-element-network-settings"></a>&lt;mailSettings&gt; – Element (nastavení sítě)
 Konfiguruje možnosti pro odesílání pošty.  
@@ -47,7 +46,7 @@ Konfiguruje možnosti pro odesílání pošty.
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
-|**– Element**|**Popis**|  
+|**Element**|**Popis**|  
 |-----------------|---------------------|  
 |[\<system.Net > – Element (nastavení sítě)](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.|  
   

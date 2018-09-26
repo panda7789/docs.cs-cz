@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: ec722dff-6009-4279-b86a-e18d3fa94ebf
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 8f948f95250b078d5af90506359a3b92f9c85601
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 12d101b3cd8b7c387cb37b62bc0e777d7294affc
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503252"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086434"
 ---
 # <a name="use-caching-in-ui-automation"></a>Použití mezipaměti při automatizaci uživatelského rozhraní
 > [!NOTE]

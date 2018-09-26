@@ -8,11 +8,11 @@ helpviewer_keywords:
 - void keyword [C#]
 ms.assetid: 0d2d8a95-fe20-4fbd-bf5d-c1e54bce71d4
 ms.openlocfilehash: 223db893dd42181c234d9a07c1a1c00af26f0c30
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46528510"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47110200"
 ---
 # <a name="void-c-reference"></a>void (Referenční dokumentace jazyka C#)
 Při použití jako návratový typ pro metodu, `void` Určuje, že metoda nevrací hodnotu.

@@ -1,24 +1,23 @@
 ---
-title: Vlastní Token obslužné rutiny
+title: Obslužné rutiny vlastních tokenů
 ms.date: 03/30/2017
 ms.assetid: 5062669f-8bfc-420a-a25d-d8ab992ab10e
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 18be4babf7e9cfbfe9ebfb43da6f98a8544b2fe6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c27abb5df7f895a9dec5f7f784f1a3ff0b31edb7
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33399974"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082380"
 ---
-# <a name="custom-token-handlers"></a>Vlastní Token obslužné rutiny
-Toto téma popisuje tokenu obslužné rutiny v WIF a jak se používají ke zpracování tokeny. Téma také popisuje, co je potřeba vytvořit vlastní tokenu obslužné rutiny pro typy tokenů, které nejsou podporované ve výchozím nastavení v WIF.  
+# <a name="custom-token-handlers"></a>Obslužné rutiny vlastních tokenů
+Toto téma popisuje obslužné rutiny tokenů v technologie WIF a jak se používají ke zpracování tokenů. Téma také popisuje, co je potřebné k vytvoření obslužné rutiny vlastních tokenů pro typy tokenů, které nejsou podporovány ve výchozím nastavení technologie WIF.  
   
-## <a name="introduction-to-token-handlers-in-wif"></a>Úvod do tokenu obslužné rutiny v WIF  
- WIF spoléhá na token obslužné rutiny zabezpečení k vytváření, čtení, zápisu a ověření tokenů pro předávající stranu aplikace nebo služby tokenů zabezpečení (STS). Token obslužné rutiny jsou body rozšiřitelnosti pro přidání vlastní obslužnou rutinu tokenu v kanálu WIF nebo přizpůsobení způsobu, jakým existující token obslužné rutiny spravuje tokeny. WIF poskytuje devět předdefinovaných zabezpečení tokenu obslužných rutin, které můžete upravit nebo zcela potlačena za účelem změnit funkce v případě potřeby.  
+## <a name="introduction-to-token-handlers-in-wif"></a>Úvod do obslužné rutiny tokenů technologie WIF  
+ Technologie WIF spoléhá na obslužné rutiny tokenů zabezpečení k vytváření, čtení, zápis a ověřovat tokeny pro předávající stranu aplikace nebo služby tokenů zabezpečení (STS). Obslužné rutiny tokenů jsou body rozšiřitelnosti pro přidání obslužné rutiny vlastních tokenů do kanálu WIF nebo přizpůsobení způsobu, jakým spravuje existující token obslužné rutiny tokenů. Technologie WIF poskytuje devět předdefinovaných obslužné rutiny tokenů zabezpečení, které můžete upravit nebo zcela přepsat funkci podle potřeby změnit.  
   
-## <a name="built-in-security-token-handlers-in-wif"></a>Integrované zabezpečení tokenu obslužné rutiny v WIF  
- WIF 4.5 zahrnuje devět třídy obslužná rutina tokenu zabezpečení, které jsou odvozeny od abstraktní základní třída <xref:System.IdentityModel.Tokens.SecurityTokenHandler>:  
+## <a name="built-in-security-token-handlers-in-wif"></a>Obslužné rutiny tokenů zabezpečení integrované technologie WIF  
+ Technologie WIF 4.5 obsahuje devět třídy obslužné rutiny tokenů zabezpečení, které jsou odvozeny od abstraktní základní třída <xref:System.IdentityModel.Tokens.SecurityTokenHandler>:  
   
 -   <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler>  
   
@@ -38,14 +37,14 @@ Toto téma popisuje tokenu obslužné rutiny v WIF a jak se používají ke zpra
   
 -   <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler>  
   
-## <a name="adding-a-custom-token-handler"></a>Přidání vlastní obslužnou rutinu tokenu  
- Některé typy tokenů, jako jsou jednoduché webové tokeny (SWT) a webové tokeny JSON (JWT) nemají integrovanou tokenu obslužné rutiny, které jsou poskytované WIF. Pro tyto typy tokenů a pro ostatní, které nemají integrovanou obslužnou rutinu musíte provést následující kroky k vytvoření vlastní obslužnou rutinu tokenu.  
+## <a name="adding-a-custom-token-handler"></a>Přidání obslužné rutiny vlastních tokenů  
+ Některé typy tokenů, jako je například jednoduchých webových tokenů (SWT) a webové tokeny JSON (JWT) nemají integrovanou obslužné rutiny tokenů poskytované technologie WIF. Pro tyto typy tokenů a pro ostatní uživatele, které nemají předdefinované obslužnou rutinu je třeba provést následující kroky a vytvoříte vlastní obslužná rutina tokenů.  
   
-#### <a name="adding-a-custom-token-handler"></a>Přidání vlastní obslužnou rutinu tokenu  
+#### <a name="adding-a-custom-token-handler"></a>Přidání obslužné rutiny vlastních tokenů  
   
-1.  Vytvořte novou třídu odvozenou od <xref:System.IdentityModel.Tokens.SecurityTokenHandler>.  
+1.  Vytvořte novou třídu, která je odvozena z <xref:System.IdentityModel.Tokens.SecurityTokenHandler>.  
   
-2.  Přepsat tyto metody a zadejte vlastní implementace:  
+2.  Přepsat následující metody a zadejte vlastní implementaci:  
   
     -   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.CanReadToken%2A>  
   
@@ -59,7 +58,7 @@ Toto téma popisuje tokenu obslužné rutiny v WIF a jak se používají ke zpra
   
     -   <xref:System.IdentityModel.Tokens.SecurityTokenHandler.ValidateToken%2A>  
   
-3.  Přidat odkaz na nové vlastní tokenu obslužná rutina v *Web.config* nebo *App.config* v souboru  **\<system.identityModel >** část, která platí pro WIF. Například následující kód konfigurace určuje nový token obslužná rutina s názvem **MyCustomTokenHandler** který se nachází v **CustomToken** oboru názvů.  
+3.  Přidejte odkaz na nové vlastní obslužnou rutinu tokenu v *Web.config* nebo *App.config* souborů v rámci  **\<system.identityModel >** části, která platí pro technologie WIF. Například následující kód konfigurace určuje nový token obslužná rutina s názvem **MyCustomTokenHandler** , který se nachází **CustomToken** oboru názvů.  
   
     ```xml  
     <system.identityModel>  
@@ -71,7 +70,7 @@ Toto téma popisuje tokenu obslužné rutiny v WIF a jak se používají ke zpra
     </system.identityModel>  
     ```  
   
-     Všimněte si, že pokud zadáte vlastní tokenu obslužná rutina pro zpracování typ tokenu, který už má integrovanou obslužná rutina tokenu, je nutné přidat  **\<odebrat >** elementu, který chcete vyřadit výchozí obslužnou rutinu a místo toho použít vaší vlastní obslužné rutiny. Například následující konfigurace nahradí výchozí <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> s vlastní tokenu obslužnou rutinou:  
+     Všimněte si, že pokud poskytujete vlastní token obslužné rutiny pro zpracování tokenu typ, který už má integrované obslužná rutina tokenů, budete muset přidat  **\<odebrat >** element vyřadit výchozí obslužnou rutinu a místo toho použít vlastní obslužnou rutinu. Například následující konfigurace nahradí výchozí <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> s vlastní obslužná rutina tokenů:  
   
     ```xml  
     <system.identityModel>  

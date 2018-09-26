@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: d2e48891-2dbe-409e-8655-2f753908e29b
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: f9ff82987474e78e7d724c22cd32e5fa7518f0f3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2803f297225319a5512c7e24cedd9440d44c1f7d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519021"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47071102"
 ---
 # <a name="ui-automation-support-for-the-header-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku záhlaví
 > [!NOTE]

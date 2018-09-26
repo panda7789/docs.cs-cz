@@ -1,22 +1,21 @@
 ---
-title: '&lt;cookieHandler&gt;'
+title: '&lt;z toho důvodu&gt;'
 ms.date: 03/30/2017
 ms.assetid: bfdc127f-8d94-4566-8bef-f583c6ae7398
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 7fcdf1e89c3b68daa36ee80fe7234737c61a5a3c
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 99bf6edb4e4f631eba292990c65c1f0c8553d8c0
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758136"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084693"
 ---
-# <a name="ltcookiehandlergt"></a>&lt;cookieHandler&gt;
-Nakonfiguruje <xref:System.IdentityModel.Services.CookieHandler> , <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) používá ke čtení a zápis souborů cookie.  
+# <a name="ltcookiehandlergt"></a>&lt;z toho důvodu&gt;
+Konfiguruje <xref:System.IdentityModel.Services.CookieHandler> , který <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM) používá ke čtení a zápis souborů cookie.  
   
  \<system.identityModel.services >  
 \<federationConfiguration >  
-\<cookieHandler >  
+\<z toho důvodu >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,18 +45,18 @@ Nakonfiguruje <xref:System.IdentityModel.Services.CookieHandler> , <xref:System.
 |---------------|-----------------|  
 |name|Určuje základní název pro všechny soubory cookie zapsána. Výchozí hodnota je "FedAuth".|  
 |cesta|Určuje hodnotu cesty pro všechny soubory cookie zapsána. Výchozí hodnota je "HttpRuntime.AppDomainAppVirtualPath".|  
-|režim|Jeden z <xref:System.IdentityModel.Services.CookieHandlerMode> hodnoty, které určuje typ obslužné rutiny souborů cookie používá správce zabezpečení účtů. Mohou být použity následující hodnoty:<br /><br /> -"Výchozí" – stejný jako "Chunked".<br />-"Blokové" – používá instanci <xref:System.IdentityModel.Services.ChunkedCookieHandler> třídy. Tato obslužná rutina souboru cookie zajistí, že jednotlivé soubory cookie nepřekračují nastavit maximální velikost. Se dosahuje tak, že potenciálně "rozdělování" jednoho logického souboru cookie do několika souborů cookie na přenosu.<br />– "Vlastní" – používá instanci vlastní třídy odvozené od <xref:System.IdentityModel.Services.CookieHandler>. Odvozené třídy odkazuje `<customCookieHandler>` podřízený element.<br /><br /> Výchozí hodnota je "Default".|  
-|persistentSessionLifetime|Určuje životnost trvalé relací. Pokud nula, se vždycky použijí přechodný relací. Výchozí hodnota je "0:0:0", který určuje přechodný relace. Maximální hodnota je "365:0:0", který určuje relaci 365 dnů. Hodnota musí být zadán podle následující omezení: `<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />`, kde levou krajní hodnotu určuje počet dnů, hodin určuje střední hodnota (pokud existuje) a pravou krajní hodnotu (pokud existuje) určuje počet minut.|  
-|requireSsl|Určuje, zda je příznak "Zabezpečeného" vygenerované pro všechny soubory cookie zapsána. Pokud je tato hodnota nastavená, soubory cookie relace přihlášení bude k dispozici pouze prostřednictvím protokolu HTTPS. Výchozí hodnota je "true".|  
-|hideFromScript|Určuje, zda je pro všechny soubory cookie zapsána vygenerované příznak "HttpOnly". Některé webové prohlížeče respektovat tento příznak udržováním klientský skript v přístupu k hodnotě souboru cookie. Výchozí hodnota je "true".|  
+|režim|Jeden z <xref:System.IdentityModel.Services.CookieHandlerMode> hodnoty, které určuje typ obslužné rutiny souborů cookie používá SAM. Slouží následující hodnoty:<br /><br /> -"Výchozí" – stejně jako "Bloku dat".<br />-"Blokové" – používá instanci <xref:System.IdentityModel.Services.ChunkedCookieHandler> třídy. Tato obslužná rutina souboru cookie zajistí, že jednotlivé soubory cookie nepřekračují nastavení maximální velikosti. Provádí se to tak potenciálně "bloků" jeden logický soubor cookie do několika souborů cookie v přenosu.<br />– "Vlastní" – používá instanci vlastní třídy odvozené od <xref:System.IdentityModel.Services.CookieHandler>. Odvozené třídy odkazuje `<customCookieHandler>` podřízený element.<br /><br /> Výchozí hodnota je "Výchozí".|  
+|persistentSessionLifetime|Určuje dobu životnosti trvalých relací. Pokud je nula, se vždycky použijí přechodné relace. Výchozí hodnota je "0:0:0", který určuje přechodné relace. Maximální hodnota je "365:0:0", který určuje relaci 365 dnů. Hodnota se musí nastavit podle následující omezení: `<xs:pattern value="([0-9.]+:){0,1}([0-9]+:){0,1}[0-9.]+" />`, kde levou krajní hodnotu určuje dny, hodiny určuje střední hodnotu (pokud existuje) a pravou krajní hodnotu (pokud existuje) určuje minut.|  
+|Vlastnost RequireSsl|Určuje, zda je příznak "Zabezpečení" vygenerován pro všechny soubory cookie zapsána. Pokud je tato hodnota nastavena, soubory cookie relace přihlášení budou k dispozici pouze prostřednictvím protokolu HTTPS. Výchozí hodnota je "true".|  
+|hideFromScript|Určuje, zda je příznak "HttpOnly" vygenerován pro všechny soubory cookie zapsána. V některých webových prohlížečích případném dalším sdílení dodržovat tento příznak udržováním skriptu na straně klienta v přístupu k hodnotě souboru cookie. Výchozí hodnota je "true".|  
 |doména|Hodnota domény pro všechny soubory cookie zapsána. Výchozí hodnota je "".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chunkedCookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/chunkedcookiehandler.md)|Nakonfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento element může být pouze existuje-li `mode` atribut `<cookieHandler>` element je "Výchozí" nebo "Blokové".|  
-|[\<customCookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/customcookiehandler.md)|Nastaví typ obslužné rutiny vlastní soubor cookie. Tento element musí být přítomen Pokud `mode` atribut `<cookieHandler>` element je "Vlastní". Nemůže být k dispozici pro všechny ostatní hodnoty `mode` atribut. Vlastní typ musí být odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy.|  
+|[\<chunkedCookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/chunkedcookiehandler.md)|Konfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento element může být pouze přítomen, pokud `mode` atribut `<cookieHandler>` elementu je "Výchozí" nebo "Rozdělený do bloků dat".|  
+|[\<customCookieHandler >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/customcookiehandler.md)|Nastaví typ obslužné rutiny vlastních souborů cookie. Tento element musí být k dispozici Pokud `mode` atribut `<cookieHandler>` elementu je "Vlastní". Nemůže být k dispozici pro všechny ostatní hodnoty `mode` atribut. Vlastní typ musí být odvozen od <xref:System.IdentityModel.Services.CookieHandler> třídy.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -66,19 +65,19 @@ Nakonfiguruje <xref:System.IdentityModel.Services.CookieHandler> , <xref:System.
 |[\<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
   
 ## <a name="remarks"></a>Poznámky  
- <xref:System.IdentityModel.Services.CookieHandler> Zodpovídá za čtení a zápis nezpracované soubory cookie na HTTP úroveň protokolu. Můžete nakonfigurovat buď <xref:System.IdentityModel.Services.ChunkedCookieHandler> nebo obslužná rutina vlastní soubor cookie odvozené od <xref:System.IdentityModel.Services.CookieHandler> třídy.  
+ <xref:System.IdentityModel.Services.CookieHandler> Zodpovídá za čtení a zápis nezpracovaných souborů cookie na HTTP úroveň protokolu. Můžete nakonfigurovat buď <xref:System.IdentityModel.Services.ChunkedCookieHandler> nebo vlastní soubor cookie obslužnou rutinu odvozené z <xref:System.IdentityModel.Services.CookieHandler> třídy.  
   
- Pokud chcete konfigurovat soubor cookie rozdělený obslužná rutina, nastavte atribut režimu "Chunked" nebo "Výchozí". Výchozí velikost bloku je 2000 bajtů, ale může volitelně zadejte velikost bloku různých zahrnutím `<chunkedCookieHandler>` podřízený element.  
+ Pokud chcete nakonfigurovat obslužná rutina bloku dat souboru cookie, nastavte atribut mode "Bloku dat" nebo "Výchozí". Výchozí velikost bloku je 2 000 bajtů, ale můžete volitelně zadat velikost bloku dat různých zahrnutím `<chunkedCookieHandler>` podřízený element.  
   
- Pokud chcete konfigurovat vlastní soubor cookie obslužnou rutinu, nastavte atribut režimu k "Vlastní". Musíte zadat také `<customCookieHandler>` podřízený element, který odkazuje na typ vaší vlastní obslužné rutiny.  
+ Pokud chcete nakonfigurovat vlastní soubor cookie obslužnou rutinu, nastavte atribut mode na "Vlastní". Musíte zadat také `<customCookieHandler>` podřízený prvek, který odkazuje na typ vlastní obslužnou rutinu.  
   
- `<cookieHandler>` Element je reprezentována <xref:System.IdentityModel.Services.CookieHandlerElement> třídy. Soubor cookie obslužnou rutinu, která byla zadaná v konfiguraci je k dispozici z <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> vlastnost <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> nastavit u objektu <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost.  
+ `<cookieHandler>` Prvek je reprezentován <xref:System.IdentityModel.Services.CookieHandlerElement> třídy. Obslužná rutina souboru cookie, který byl zadán v konfiguraci je k dispozici <xref:System.IdentityModel.Services.Configuration.FederationConfiguration.CookieHandler%2A> vlastnost <xref:System.IdentityModel.Services.Configuration.FederationConfiguration> nastavena na objekt <xref:System.IdentityModel.Services.FederatedAuthentication.FederationConfiguration%2A?displayProperty=nameWithType> vlastnost.  
   
 ## <a name="example"></a>Příklad  
- Následují XML `<cookieHandler>` elementu. V tomto příkladu protože `mode` atribut nezadá, použije výchozí soubor cookie obslužnou rutinu správce zabezpečení účtů. Toto je instance <xref:System.IdentityModel.Services.ChunkedCookieHandler> třídy. Protože `<chunkedCookieHandler>` podřízený element nezadáte, použije se výchozí velikost bloku. Protokol HTTPS se nevyžaduje, protože `requireSsl` nastavený atribut `false`.  
+ Zobrazí se následující XML `<cookieHandler>` elementu. V tomto příkladu protože `mode` atribut není zadán, použije výchozí soubor cookie obslužnou rutinu SAM. Toto je instance <xref:System.IdentityModel.Services.ChunkedCookieHandler> třídy. Vzhledem k tomu, `<chunkedCookieHandler>` podřízený prvek není zadán, použije se výchozí velikost bloku. Protokol HTTPS se nevyžaduje, protože `requireSsl` atribut je nastaven `false`.  
   
 > [!WARNING]
->  V tomto příkladu není potřeba HTTPS zapisovat soubory cookie relace. Důvodem je, že `requireSsl` atributu u `<cookieHandler>` element je nastaven na hodnotu `false`. Toto nastavení se nedoporučuje pro většinu produkční prostředí, protože ho může představovat bezpečnostní riziko.  
+>  V tomto příkladu není HTTPS vyžadovaných k zápisu souborů cookie relace. Je to proto, `requireSsl` atribut na `<cookieHandler>` prvek je nastaven na `false`. Toto nastavení se nedoporučuje pro většinu produkčních prostředí, protože to může představovat bezpečnostní riziko.  
   
 ```xml  
 <cookieHandler requireSsl="false" />  

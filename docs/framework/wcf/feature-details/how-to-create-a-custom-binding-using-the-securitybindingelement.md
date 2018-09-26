@@ -8,31 +8,30 @@ helpviewer_keywords:
 - security [WCF], creating custom bindings
 ms.assetid: 203a9f9e-3a73-427c-87aa-721c56265b29
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 1e288daeb717fa9fa041d552cac4ec5d0cd28808
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e0adbe9d1689e840d940dd22fcfe05f54e2131fa
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33495629"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171735"
 ---
 # <a name="how-to-create-a-custom-binding-using-the-securitybindingelement"></a>Postupy: Vytvoření vlastní vazby pomocí elementu SecurityBindingElement
-Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které lze konfigurovat, ale neposkytuje úplnou flexibilitu při konfiguraci všech možností zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazby přímo z jednotlivých vazby elementů a zvýrazňuje některé z nastavení zabezpečení, které je možné zadat při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb najdete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
+Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných systémem, které můžete konfigurovat, ale neposkytují úplnou flexibilitu při konfiguraci všechny možnosti zabezpečení, které podporuje WCF. Toto téma ukazuje, jak vytvořit vlastní vazbu přímo z elementů vazby jednotlivých a zvýrazní některá nastavení zabezpečení, které můžete nastavit při vytváření takovou vazbu. Další informace o vytváření vlastních vazeb naleznete v tématu [rozšíření vazby](../../../../docs/framework/wcf/extending/extending-bindings.md).  
   
 > [!WARNING]
->  <xref:System.ServiceModel.Channels.SecurityBindingElement> nepodporuje <xref:System.ServiceModel.Channels.IDuplexSessionChannel> kanálu tvar, který se používá výchozí kanál obrazce pomocí protokolu TCP při přenosu <xref:System.ServiceModel.TransferMode> je nastaven na <xref:System.ServiceModel.TransferMode.Buffered>. Je nutné nastavit <xref:System.ServiceModel.TransferMode> k <xref:System.ServiceModel.TransferMode.Streamed> Chcete-li použít <xref:System.ServiceModel.Channels.SecurityBindingElement> v tomto scénáři.  
+>  <xref:System.ServiceModel.Channels.SecurityBindingElement> nepodporuje <xref:System.ServiceModel.Channels.IDuplexSessionChannel> kanálu tvar, což je výchozí kanál tvar použití protokolu TCP při přenosu <xref:System.ServiceModel.TransferMode> je nastavena na <xref:System.ServiceModel.TransferMode.Buffered>. Je nutné nastavit <xref:System.ServiceModel.TransferMode> k <xref:System.ServiceModel.TransferMode.Streamed> Chcete-li použít <xref:System.ServiceModel.Channels.SecurityBindingElement> v tomto scénáři.  
   
 ## <a name="creating-a-custom-binding"></a>Vytvoření vlastní vazby  
- Ve službě WCF se všechny vazby jsou složená z *elementů vazby*. Každý prvek vazba je odvozena z <xref:System.ServiceModel.Channels.BindingElement> třídy. Pro standardní vazby poskytované systémem prvky vazby vytvoříte a nakonfigurujete, i když můžete přizpůsobit některé z nastavení vlastností.  
+ Ve službě WCF všechny vazby jsou tvořené *elementů vazby*. Každý element vazby je odvozen od <xref:System.ServiceModel.Channels.BindingElement> třídy. Pro standardní vazeb poskytovaných systémem elementů vazby se vytvoří a nakonfigurují automaticky, i když můžete přizpůsobit některé z nastavení vlastností.  
   
- Naproti tomu Pokud chcete vytvořit vlastní vazby, prvky vazeb vytvoříte a nakonfigurujete a <xref:System.ServiceModel.Channels.CustomBinding> je vytvořený z elementů vazby.  
+ Naproti tomu k vytvoření vlastní vazby, elementy vazby jsou vytvoření a konfiguraci a <xref:System.ServiceModel.Channels.CustomBinding> je vytvořený z elementů vazby.  
   
- K tomu, přidáte do kolekce reprezentována instanci prvky jednotlivé vazby <xref:System.ServiceModel.Channels.BindingElementCollection> a poté nastavit `Elements` vlastnost `CustomBinding` rovná tohoto objektu. Je nutné přidat prvky vazby v následujícím pořadí: toku transakcí, spolehlivé relace, zabezpečení, složené duplexní, jednosměrné, zabezpečení datového proudu, kódování zpráv a přenosu. Všimněte si, že ne všechny prvky vazby uvedené jsou potřeba v každé vazby.  
+ K tomu přidat prvky jednotlivých vazby do kolekce reprezentována instance <xref:System.ServiceModel.Channels.BindingElementCollection> třídy a pak nastavte `Elements` vlastnost `CustomBinding` rovná tohoto objektu. Je nutné přidat prvky vazby v následujícím pořadí: tok transakce, stabilní relace, zabezpečení, kompozitní duplexní, jednosměrný Stream zabezpečení, kódování zpráv a přenosu. Všimněte si, že jsou všechny prvky vazby uvedené nezbytné Každá vazba.  
   
 ## <a name="securitybindingelement"></a>SecurityBindingElement  
- Tři prvky vazeb se týkají úrovně zabezpečení zpráv, které dědí z <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. Jsou tři <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, a <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> Slouží k poskytování zabezpečení smíšeného režimu. Další dva elementy se používají při vrstvě zpráv poskytuje zabezpečení.  
+ Tři prvky vazby se vztahují k úrovni zabezpečení zpráv, které jsou odvozeny z <xref:System.ServiceModel.Channels.SecurityBindingElement> třídy. Jsou tři <xref:System.ServiceModel.Channels.TransportSecurityBindingElement>, <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>, a <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>. <xref:System.ServiceModel.Channels.TransportSecurityBindingElement> Slouží k zajištění zabezpečení smíšeného režimu. Dva elementy se používají při vrstva zpráv poskytuje zabezpečení.  
   
- Další třídy se používají, když je k dispozici zabezpečení na úrovni přenosu:  
+ Další třídy se používají při zabezpečení na úrovni přenosu je k dispozici:  
   
 -   <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>  
   
@@ -40,20 +39,20 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
   
 -   <xref:System.ServiceModel.Channels.WindowsStreamSecurityBindingElement>  
   
-## <a name="required-binding-elements"></a>Požadované elementů vazby  
- Existuje velký počet prvky možné vazby, které lze spojit do vazbu. Ne všechny tyto kombinace jsou platné. V této části popisuje požadované prvky, které musí být v vazby zabezpečení.  
+## <a name="required-binding-elements"></a>Vyžaduje elementů vazby  
+ Existuje velký počet vazeb prvky, které je možné kombinovat do vazby. Ne všechny tyto kombinace jsou platné. Tato část popisuje požadované prvky, které musí být součástí vazby zabezpečení.  
   
- Vazby platný zabezpečení závisí na mnoha faktorech, včetně následujících:  
+ Vazby zabezpečení platné závisí na mnoha faktorech, včetně následujících:  
   
 -   Režim zabezpečení.  
   
 -   Přenosový protokol.  
   
--   Vzorce výměny zpráv (MEP) uvedených ve smlouvě.  
+-   Vzorce výměny zpráv (MEP) uvedené ve smlouvě.  
   
- Následující tabulka uvádí konfigurace zásobníku element platnou vazbu pro každou kombinaci předchozí faktorů. Všimněte si, že jsou minimální požadavky. Prvky vazeb další můžete přidat k vazba, jako je například prvky vazby, prvky vazeb transakce a další prvky vazby kódování zprávy.  
+ Následující tabulka uvádí konfigurace zásobníku element platnou vazbu pro každou kombinaci na předchozích faktorech. Všimněte si, že jsou minimální požadavky. Elementy další vazby můžete přidat do vazby, jako je například elementy vazby, transakce elementů vazby a další prvky vazby kódování zprávy.  
   
-|Režim zabezpečení.|Přenos|Kontrakt vzorce výměny zpráv|Kontrakt vzorce výměny zpráv|Kontrakt vzorce výměny zpráv|  
+|Režim zabezpečení|Přenos|Kontrakt vzoru výměny zpráv|Kontrakt vzoru výměny zpráv|Kontrakt vzoru výměny zpráv|  
 |-------------------|---------------|---------------------------------------|---------------------------------------|---------------------------------------|  
 |||`Datagram`|`Request Reply`|`Duplex`|  
 |Přenos|protokol HTTPS||||  
@@ -61,23 +60,23 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
 |||HttpsTransportBindingElement|HttpsTransportBindingElement||  
 ||TCP||||  
 |||OneWayBindingElement|||  
-|||Protokol SSL nebo Windows StreamSecurityBindingElement|Protokol SSL nebo Windows StreamSecurityBindingElement|Protokol SSL nebo Windows StreamSecurityBindingElement|  
+|||Protokol SSL nebo třídu StreamSecurityBindingElement Windows|Protokol SSL nebo třídu StreamSecurityBindingElement Windows|Protokol SSL nebo třídu StreamSecurityBindingElement Windows|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
-|Zpráva|http|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement|Prvek SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
+|Zpráva|http|SymmetricSecurityBindingElement|SymmetricSecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
 |||||CompositeDuplexBindingElement|  
 |||OneWayBindingElement||OneWayBindingElement|  
 |||HttpTransportBindingElement|HttpTransportBindingElement|HttpTransportBindingElement|  
-||TCP|SecurityBindingElement|SecurityBindingElement|Prvek SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
+||TCP|SecurityBindingElement|SecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
-|Smíšená (přenosu s pověřením zpráv)|protokol HTTPS|TransportSecurityBindingElement|TransportSecurityBindingElement||  
+|Smíšená (přenosu s přihlašovacími údaji zprávy)|protokol HTTPS|TransportSecurityBindingElement|TransportSecurityBindingElement||  
 |||OneWayBindingElement|||  
 |||HttpsTransportBindingElement|HttpsTransportBindingElement||  
-||TCP|TransportSecurityBindingElement|Prvek SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|Prvek SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
+||TCP|TransportSecurityBindingElement|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|Element SymmetricSecurityBindingElement (režim ověřování = SecureConversation)|  
 |||OneWayBindingElement|||  
-|||Protokol SSL nebo Windows StreamSecurityBindingElement|Protokol SSL nebo Windows StreamSecurityBindingElement|Protokol SSL nebo Windows StreamSecurityBindingElement|  
+|||Protokol SSL nebo třídu StreamSecurityBindingElement Windows|Protokol SSL nebo třídu StreamSecurityBindingElement Windows|Protokol SSL nebo třídu StreamSecurityBindingElement Windows|  
 |||TcpTransportBindingElement|TcpTransportBindingElement|TcpTransportBindingElement|  
   
- Všimněte si, že jsou mnoho konfigurovat nastavení na SecurityBindingElements. Další informace najdete v tématu [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).  
+ Všimněte si, že existují mnoho konfigurovatelných nastavení na SecurityBindingElements. Další informace najdete v tématu [režimy ověřování SecurityBindingElement](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md).  
   
  Další informace najdete v tématu [zabezpečené konverzace a zabezpečené relace](../../../../docs/framework/wcf/feature-details/secure-conversations-and-secure-sessions.md).  
   
@@ -87,22 +86,22 @@ Windows Communication Foundation (WCF) zahrnuje několik vazeb poskytovaných sy
   
 1.  Vytvoření instance <xref:System.ServiceModel.Channels.BindingElementCollection> třída s názvem `outputBec`.  
   
-2.  Zavolejte statickou metodu `M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement(true)`, které vrací instanci třídy <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> třídy.  
+2.  Zavolejte statickou metodu `M:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement(true)`, která vrací instanci <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> třídy.  
   
 3.  Přidat <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> do kolekce (`outputBec`) voláním `Add` metodu <xref:System.Collections.ObjectModel.Collection%601> z <xref:System.ServiceModel.Channels.BindingElement> třídy.  
   
-4.  Vytvoření instance <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třídu a přidejte ji do kolekce (`outputBec`). Určuje kódování použité vazbou.  
+4.  Vytvoření instance <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> třídu a přidejte ho do kolekce (`outputBec`). Určuje kódování použité vazbou.  
   
-5.  Vytvoření <xref:System.ServiceModel.Channels.HttpTransportBindingElement> a přidejte ji do kolekce (`outputBec`). Určuje, že vazba používá přenos HTTP.  
+5.  Vytvoření <xref:System.ServiceModel.Channels.HttpTransportBindingElement> a přidejte ho do kolekce (`outputBec`). Určuje, že vazba používá přenos pomocí protokolu HTTP.  
   
-6.  Vytvoření nové vlastní vazby tak, že vytvoříte instanci <xref:System.ServiceModel.Channels.CustomBinding> třídy a předávání kolekce `outputBec` konstruktoru.  
+6.  Vytvořte novou vlastní vazbu tak, že vytvoříte instanci <xref:System.ServiceModel.Channels.CustomBinding> třídy a předávání kolekce `outputBec` konstruktoru.  
   
-7.  Výsledná vazba vlastní celá řada stejné vlastnosti jako standardní <xref:System.ServiceModel.WSHttpBinding>. Určuje úroveň zprávy zabezpečení a přihlašovací údaje systému Windows, ale zakáže zabezpečených relací, vyžaduje, aby přihlašovací údaje služby zadaný out-of-band a podpisy, nešifruje. Poslední se dá nastavit jenom podle nastavení <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A> vlastnost, jak je znázorněno v kroku 4. Další dvě se dá řídit pomocí nastavení na standardní vazby.  
+7.  Výsledný vlastní vazby sdílí řadu stejné vlastnosti jako standardní <xref:System.ServiceModel.WSHttpBinding>. Určuje zabezpečení na úrovni zpráv a přihlašovací údaje Windows, ale zakáže zabezpečených relací, vyžaduje, aby zadaný out-of-band, přihlašovací údaje služby a podpisy, nešifruje. Poslední se dá nastavit jenom podle nastavení <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement.MessageProtectionOrder%2A> vlastnost, jak je znázorněno v kroku 4. Další dvě jako se dá řídit pomocí nastavení na standardní vazbu.  
   
 ## <a name="example"></a>Příklad  
   
 ### <a name="description"></a>Popis  
- Následující příklad obsahuje kompletní funkci pro vytvoření vlastní vazby, který používá <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
+ Následující příklad obsahuje kompletní funkce k vytvoření vlastní vazby, který používá <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
 ### <a name="code"></a>Kód  
  [!code-csharp[c_CustomBinding#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_custombinding/cs/c_custombinding.cs#20)]

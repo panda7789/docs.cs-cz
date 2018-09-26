@@ -3,22 +3,21 @@ title: '&lt;secureConversationAuthentication&gt; – &lt;serviceCredential&gt;'
 ms.date: 03/30/2017
 ms.assetid: 0bd3fac7-befd-4a45-ba51-c200b33be0fd
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 7b56d12793ad35e6f951638465e77b92a66a6fd0
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 3adcf7ba9814bcf494d345cf0e3f47c57df2152c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749329"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47173405"
 ---
 # <a name="ltsecureconversationauthenticationgt-of-ltservicecredentialgt"></a>&lt;secureConversationAuthentication&gt; – &lt;serviceCredential&gt;
-Určuje nastavení pro službu zabezpečené konverzaci.  
+Určuje nastavení pro služby zabezpečené konverzace.  
   
  \<system.ServiceModel>  
 \<chování >  
 \<serviceBehaviors >  
 \<chování >  
-\<– serviceCredentials >  
+\<serviceCredentials >  
 \<secureConversationAuthentication >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -43,10 +42,10 @@ Určuje nastavení pro službu zabezpečené konverzaci.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<– serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje pověření, která se použije v ověřování služby a nastavení související s ověření pověření klienta.|  
+|[\<serviceCredentials >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)|Určuje přihlašovací údaje pro ověřování služby a nastavení vztahující se k ověření přihlašovacích údajů klienta.|  
   
 ## <a name="remarks"></a>Poznámky  
- Tento prvek konfigurace slouží k určení seznam typů známé deklarace identity pro soubory cookie serializaci tokenu pro kontext zabezpečení (SCT), stejně jako kodéru pro kódování a zabezpečit informace soubory cookie. Další informace o SCT najdete v tématu <xref:System.ServiceModel.Security.SecureConversationServiceCredential>.  
+ Použijte tento prvek konfigurace pro zadání seznamu známé deklarace typů pro serializaci soubory cookie zabezpečení kontextu Token (SCT), stejně jako kodéru pro kódování a zabezpečit informace soubory cookie. Další informace o SCT najdete v tématu <xref:System.ServiceModel.Security.SecureConversationServiceCredential>.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.SecureConversationServiceElement>  

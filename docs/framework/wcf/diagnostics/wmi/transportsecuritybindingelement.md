@@ -3,13 +3,12 @@ title: TransportSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 31b8cd3b-3be5-4b6c-93f0-69d7aaf791d0
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: dd2c509359190deff7a1f3c9a625a8d90b2605b8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8cde88433b7d9a32a1822c6f723b349739a450a8
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33484382"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073486"
 ---
 # <a name="transportsecuritybindingelement"></a>TransportSecurityBindingElement
 TransportSecurityBindingElement  
@@ -23,11 +22,11 @@ class TransportSecurityBindingElement : SecurityBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída TransportSecurityBindingElement dědí z elementu SecurityBindingElement ale nedefinuje další metody nebo vlastnosti.  
+ Třídu TransportSecurityBindingElement dědí z třídy SecurityBindingElement, ale nedefinuje další metody nebo vlastnosti.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: f295bbf44d6272879e8ea8e74c435d206b7af913
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: fdd192f7ba6273cb4f7927ccb6b34963b3aaea7d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46581152"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070551"
 ---
 # <a name="ui-automation-events-for-clients"></a>Události automatizace uživatelského rozhraní pro klienty
 > [!NOTE]

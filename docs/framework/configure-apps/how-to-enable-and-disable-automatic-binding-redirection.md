@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: cf38bd753127e40c61512411c7aa2ebbbd7687db
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 9b9c9cbdb89ccf67942dcccee37ea410c6fa39a5
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45746923"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47079540"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>Postupy: Povolení a zákaz automatického přesměrování vazby
 

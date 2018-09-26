@@ -9,13 +9,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-manager: douge
-ms.openlocfilehash: 27acdac5d34b96dd04fec1bb763edec9077ff928
-ms.sourcegitcommit: dfb2a100cfb4d3902c042f17b3204f49bc7635e7
+ms.openlocfilehash: 79447ede354de104607117f657182023a2e57127
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/20/2018
-ms.locfileid: "46493604"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084979"
 ---
 # <a name="walkthrough-create-a-windows-service-app"></a>Návod: Vytvoření aplikace služby Windows
 

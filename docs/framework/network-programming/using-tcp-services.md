@@ -1,5 +1,5 @@
 ---
-title: Pomocí služby TCP
+title: Použití služeb TCP
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,20 +18,19 @@ helpviewer_keywords:
 ms.assetid: d2811830-3bcb-495c-b82d-cda9cf919aad
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: d11566182cc9d0b4f2634350868ec94a0685d996
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e6ab51da72a7cecac02a2bbd5664dee164239401
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33397166"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108647"
 ---
-# <a name="using-tcp-services"></a>Pomocí služby TCP
-<xref:System.Net.Sockets.TcpClient> Třída vyžaduje data z internetových prostředků pomocí protokolu TCP. Metody a vlastnosti **TcpClient** abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu TCP. Protože připojení k vzdálené zařízení je reprezentována jako datový proud, data můžete číst a zapisovat s techniky zpracování datového proudu rozhraní .NET Framework.  
+# <a name="using-tcp-services"></a>Použití služeb TCP
+<xref:System.Net.Sockets.TcpClient> Třídy vyžaduje data z internetových prostředků pomocí protokolu TCP. Metody a vlastnosti **TcpClient** abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu TCP. Protože připojení ke vzdálenému zařízení je reprezentován jako datový proud, můžete data čtení a zápis s techniky zpracování datového proudu rozhraní .NET Framework.  
   
- Protokol TCP naváže připojení se vzdálený koncový bod a pak toto připojení používá k odesílání a příjmu datových paketů. TCP je odpovědný za dodržování, datových paketů odesílaných ke koncovému bodu i po jejich příchodu sestaví ve správném pořadí.  
+ Protokolu TCP naváže připojení se vzdálený koncový bod a potom použije toto připojení k odesílání a příjmu datových paketů. TCP zodpovídá za to, že datových paketů odesílaných ke koncovému bodu i týkajícím se této ve správném pořadí při doručení.  
   
- K navázání připojení TCP, musíte znát adresu síťového zařízení, který je hostitelem služby, které potřebujete, a musí znát port TCP, který službu používá ke komunikaci. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz www.iana.org/assignments/port-numbers). Služby, které nejsou na seznamu Iana může mít čísla portů v rozsahu 1 024 jednotek do 65 535.  
+ K navázání připojení TCP, musíte znát adresu síťového zařízení, který je hostitelem služby, které potřebujete a navíc musí znát port TCP, který službu používá ke komunikaci. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz www.iana.org/assignments/port-numbers). Služby není na seznamu Iana může mít čísla portu v rozsahu 1 024 do 65 535.  
   
  Následující příklad ukazuje nastavení nahoru **TcpClient** pro připojení k serveru čas na portu TCP 13.  
   
@@ -103,9 +102,9 @@ public class TcpTimeClient {
 }  
 ```  
   
- <xref:System.Net.Sockets.TcpListener> slouží k monitorování portu TCP pro příchozí požadavky a poté vytvořit buď **soketu** nebo **TcpClient** který spravuje připojení ke klientovi. <xref:System.Net.Sockets.TcpListener.Start%2A> Metoda umožňuje naslouchá a <xref:System.Net.Sockets.TcpListener.Stop%2A> metoda zakáže naslouchá na portu. <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A> Metoda přijímá příchozí požadavky na připojení a vytváří **TcpClient** pro zpracování požadavku a <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A> metoda přijímá příchozí požadavky na připojení a vytváří **soketu**pro zpracování požadavku.  
+ <xref:System.Net.Sockets.TcpListener> slouží k monitorování portu TCP pro příchozí požadavky a vytvořte buď **soketu** nebo **TcpClient** , který spravuje připojení ke klientovi. <xref:System.Net.Sockets.TcpListener.Start%2A> Metoda umožňuje naslouchá a <xref:System.Net.Sockets.TcpListener.Stop%2A> metoda zakáže naslouchá na portu. <xref:System.Net.Sockets.TcpListener.AcceptTcpClient%2A> Metoda přijímá příchozí požadavky na připojení a vytváří **TcpClient** pro zpracování požadavku a <xref:System.Net.Sockets.TcpListener.AcceptSocket%2A> metoda přijímá příchozí požadavky na připojení a vytváří **soketu**žádost zpracovat.  
   
- Následující příklad ukazuje, vytváření s použitím serveru sítě čas **TcpListener** monitorování portu TCP 13. Když je přijatá příchozí požadavek na připojení, čas server odpoví aktuální datum a čas z hostitelského serveru.  
+ Následující příklad ukazuje vytváření s použitím serveru sítě čas **TcpListener** monitorování portu TCP 13. Když je přijat příchozí požadavek na připojení, čas server jako odpověď vrátí aktuální datum a čas z hostitelského serveru.  
   
 ```vb  
 Imports System  

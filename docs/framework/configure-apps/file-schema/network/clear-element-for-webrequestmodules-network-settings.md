@@ -1,5 +1,5 @@
 ---
-title: '&lt;Vymazat&gt; Element pro webRequestModules – (nastavení sítě)'
+title: '&lt;Vymazat&gt; – Element pro webRequestModules (nastavení sítě)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/webRequestModules/clear
@@ -12,21 +12,20 @@ helpviewer_keywords:
 ms.assetid: 48f38bcb-f30c-4b74-a8f0-1a3caf1aa96f
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 4d89fbc757198f25219b8051bf77dbdeea0cef53
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 2b313aa2481b1257715ac4dbc6d452e2120f4726
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752725"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070380"
 ---
-# <a name="ltcleargt-element-for-webrequestmodules-network-settings"></a>&lt;Vymazat&gt; Element pro webRequestModules – (nastavení sítě)
-Odebere všechny registrované moduly žádost webové aplikace.  
+# <a name="ltcleargt-element-for-webrequestmodules-network-settings"></a>&lt;Vymazat&gt; – Element pro webRequestModules (nastavení sítě)
+Odebere všechny registrované moduly webové žádosti z aplikace.  
   
  \<Konfigurace >  
 \<system.net>  
 \<webRequestModules>  
-\<Clear >  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,16 +46,16 @@ Odebere všechny registrované moduly žádost webové aplikace.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly sloužící k požadavku na informace z hostitelů v síti.|  
+|[webRequestModules](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element odebere všechny registrované moduly webové žádosti, které byly dříve definované v konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurace.  
+ `clear` Element odebere všechny registrované webových požadavek modulů, které byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii configuration.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vymaže všechny moduly webové žádosti a pak zaregistruje modul webové žádosti pro protokol HTTP.  
+ V následujícím příkladu vymaže všechny moduly webové žádosti a pak zaregistruje webový modul požadavku pro protokol HTTP.  
   
 ```xml  
 <configuration>  

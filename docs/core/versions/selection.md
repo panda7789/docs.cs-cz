@@ -5,11 +5,11 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 06/27/2018
 ms.openlocfilehash: 28a76cc17346c40517a21e8dc902bd6c2a84597f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586919"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084849"
 ---
 # <a name="net-core-version-selection"></a>Výběr verze .NET core
 

@@ -11,11 +11,11 @@ ms.assetid: bc177b2f-7528-4ae4-83db-aacfb04b86d0
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 51cc5296a7b3f6d75b5e56d6bbc74330fa147848
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703736"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070603"
 ---
 # <a name="design-guidelines-for-exceptions"></a>Pokyny k návrhu pro výjimky
 Zpracování výjimek má mnoho výhod oproti hlášení chyb na základě vrátit hodnotu. Návrh dobrý framework pomáhá vývojář aplikace začít využívat výhod výjimky. Tato část vás seznámí s výhodami výjimky a zobrazí pokyny pro jejich efektivní využití.  

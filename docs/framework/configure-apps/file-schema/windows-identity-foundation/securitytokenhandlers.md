@@ -3,16 +3,15 @@ title: '&lt;securityTokenHandlers&gt;'
 ms.date: 03/30/2017
 ms.assetid: f11a631d-4094-4e11-bb03-4ede74b30281
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 16827aa774a8a76f16106a8650423d0d7f084982
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e63f02add81495e474b59b6c5cc090bd69add3d2
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32758071"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082980"
 ---
 # <a name="ltsecuritytokenhandlersgt"></a>&lt;securityTokenHandlers&gt;
-Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový bod.  
+Určuje kolekci obslužné rutiny tokenů zabezpečení, které jsou registrované na koncový bod.  
   
  \<system.identityModel>  
 \<identityConfiguration >  
@@ -36,26 +35,26 @@ Určuje kolekci zabezpečení tokenu rutin, které jsou registrovány koncový b
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Určuje název kolekce obslužná rutina tokenu. Jsou pouze hodnoty rozpoznáno rozhraní "ActAs" a "OnBehalfOf". Pokud obslužná rutina tokenu kolekce jsou zadané s některou z těchto názvů, kolekce se použije při zpracování ActAs nebo prostřednictvím profilu OnBehalfOf tokeny v uvedeném pořadí.|  
+|name|Určuje název kolekce obslužné rutiny tokenů. Pouze hodnoty rozpoznán v rámci rozhraní jsou "ActAs" a "Prostřednictvím profilu OnBehalfOf". Pokud s některou z těchto názvů jsou zadané obslužné rutiny tokenů kolekce, kolekce se použije při zpracování ActAs nebo OnBehalfOf tokeny v uvedeném pořadí.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Obslužná rutina tokenu zabezpečení se přidá do kolekce obslužná rutina tokenu.|  
-|[\<clear>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/clear.md)|Vymaže všechny rutiny tokenu zabezpečení z kolekce obslužná rutina tokenu.|  
-|[\<remove>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/remove.md)|Obslužná rutina tokenu zabezpečení se odebere z kolekce obslužná rutina tokenu.|  
-|[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Poskytuje konfigurace pro kolekci tokenu obslužné rutiny.|  
+|[\<add>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/add.md)|Přidá obslužnou rutinu tokenu zabezpečení do kolekce obslužné rutiny tokenů.|  
+|[\<clear>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/clear.md)|Vymaže všechny obslužné rutiny tokenů zabezpečení z kolekce obslužné rutiny tokenů.|  
+|[\<remove>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/remove.md)|Odebere obslužnou rutinu tokenu zabezpečení z kolekce obslužné rutiny tokenů.|  
+|[\<securityTokenHandlerConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/securitytokenhandlerconfiguration.md)|Poskytuje konfiguraci pro kolekci obslužné rutiny tokenů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identity úrovně služeb.|  
+|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
   
 ## <a name="remarks"></a>Poznámky  
- V konfiguraci služby můžete zadat jednu nebo více pojmenované kolekcí obslužných rutin, token zabezpečení. Můžete zadat název pro kolekci pomocí `name` atribut. Pouze názvy, které zpracovává rozhraní jsou "ActAs" a "OnBehalfOf". Pokud v těchto kolekcích existuje obslužné rutiny, použijí se pomocí služby tokenů zabezpečení (STS) namísto výchozí obslužné rutiny při zpracování `ActAs` a `OnBehalfOf` tokeny.  
+ V konfiguraci služby můžete zadat jednu nebo více pojmenovaný kolekcí obslužné rutiny tokenů zabezpečení. Můžete zadat název pro kolekci pomocí `name` atribut. Pouze názvy, které rozhraní zpracovává jsou "ActAs" a "Prostřednictvím profilu OnBehalfOf". Pokud obslužných rutin v těchto kolekcích, používají se pomocí služby tokenů zabezpečení (STS) namísto výchozích obslužných rutin při zpracování `ActAs` a `OnBehalfOf` tokeny.  
   
- Ve výchozím nastavení, je kolekce naplněný následující typy obslužných rutin: <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>, <xref:System.IdentityModel.Tokens.KerberosSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.RsaSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler>, a <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler>. Kolekce můžete upravit pomocí `<add>`, `<remove>`, a `<clear>` elementy. Je nutné zajistit, že pouze jeden obslužná rutina žádný konkrétní typ v kolekci existuje. Například pokud odvozujete obslužnou rutinu z <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> třídy buď vaší obslužné rutiny nebo <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> může být nakonfigurována v jedné kolekci, ale ne obojí.  
+ Ve výchozím nastavení, kolekce se vyplní následující typy obslužných rutin: <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler>, <xref:System.IdentityModel.Tokens.KerberosSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.WindowsUserNameSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.RsaSecurityTokenHandler>, <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler>, a <xref:System.IdentityModel.Tokens.EncryptedSecurityTokenHandler>. Kolekce můžete upravit pomocí `<add>`, `<remove>`, a `<clear>` elementy. Musíte zajistit, že v kolekci existuje pouze jedna obslužná rutina určitého typu. Například, pokud jsou odvozeny z obslužné rutiny <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> třídy buď vaše obslužná rutina nebo <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> se dá nakonfigurovat v jedné kolekce, ale ne obojí.  
   
- Použití `<securityTokenHandlerConfiguration>` element ke specifikaci nastavení konfigurace pro obslužné rutiny, v kolekci. Nastavení zadána prostřednictvím tohoto elementu přepíšou zadaný u služby pomocí [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) element. Některé obslužné rutiny (včetně několik typů předdefinované obslužné rutiny) může podporovat další konfiguraci prostřednictvím podřízeného prvku `<add>` elementu. Bylo nastaveno na obslužnou rutinu přepsat ekvivalentní nastavení zadané v kolekci nebo službu.
+ Použití `<securityTokenHandlerConfiguration>` element k určení nastavení konfigurace pro obslužné rutiny v kolekci. Bylo nastaveno prostřednictvím tohoto prvku mají přednost před akcemi zadané na této služby prostřednictvím [ \<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md) elementu. Některé obslužné rutiny (včetně několik typů integrovaných obslužná rutina) může podporovat další konfiguraci prostřednictvím podřízený prvek `<add>` elementu. Bylo nastaveno na obslužnou rutinu přepsat ekvivalentní nastavení zadané v kolekci nebo službu.

@@ -11,11 +11,11 @@ ms.assetid: 53706c7e-397d-467a-98cd-c0d1fd63ba5e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: bc36c926ba81de8a59ff3af69719bec6b7370efc
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586841"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47111240"
 ---
 # <a name="understanding-speedup-in-plinq"></a>Porozumění zrychlení v PLINQ
 Pro urychlení spuštění LINQ to Objects dotazů spuštěním dotazu delegáty paralelně na vícejádrových počítačích je primárním účelem PLINQ. PLINQ poskytuje nejlepší výkon při zpracování jednotlivých prvků ve zdrojové kolekci je nezávislé, bez sdíleného stavu zahrnutých mezi jednotlivé delegátů. Tyto operace jsou běžné v technologii LINQ to Objects a PLINQ a jsou často nazývány "*delightfully paralelní*" vzhledem k tomu, že je to možné snadno plánování z více vláken. Ale ne všechny dotazy sestávat jen z delightfully paralelních operací; ve většině případů se dotaz týká některé operátory, které buď nemůže být paralelizována nebo, který zpomalit paralelního provádění. A i s dotazy, které jsou zcela delightfully paralelní, musí i nadále oddílů zdroj dat a plánování práce na vlákna a obvykle sloučit výsledky po dokončení dotazu PLINQ. Všechny tyto operace přidání do výpočetní náklady paralelizace; Tyto náklady přidávání paralelizace se nazývají *režii*. Cílem je dosáhnout optimálního výkonu v dotazu PLINQ maximalizovat části, které jsou delightfully paralelní a části, které vyžadují režii minimalizovat. Tento článek obsahuje informace, které vám pomůže psát dotazy PLINQ, které jsou co nejúčinnější při pořád vracet správné výsledky.  

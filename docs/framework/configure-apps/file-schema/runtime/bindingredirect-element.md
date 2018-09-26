@@ -1,5 +1,5 @@
 ---
-title: '&lt;bindingRedirect –&gt; – Element'
+title: '&lt;bindingRedirect&gt; – Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/runtime/assemblyBinding/dependentAssembly/bindingRedirect
@@ -11,22 +11,21 @@ helpviewer_keywords:
 ms.assetid: 67784ecd-9663-434e-bd6a-26975e447ac0
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 08dc7a55b5b0c580f19d137496b9405fa4e18a5f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 535519c65aba7ce13703bb33a16b09cde84c3f03
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745289"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085544"
 ---
-# <a name="ltbindingredirectgt-element"></a>&lt;bindingRedirect –&gt; – Element
+# <a name="ltbindingredirectgt-element"></a>&lt;bindingRedirect&gt; – Element
 Přesměruje jednu verzi sestavení k jiné.  
   
  \<Konfigurace >  
 \<modul runtime >  
 \<assemblybinding – >  
 \<dependentAssembly >  
-\<bindingRedirect – >  
+\<bindingRedirect >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,8 +42,8 @@ newVersion="new assembly version"/>
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`oldVersion`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení, která byla původně požadována. Formát čísla verze sestavení je *major.minor.build.revision*. Platné hodnoty pro jednotlivé části tohoto čísla verze jsou 0 až 65535.<br /><br /> Můžete také zadat rozsah verzí v tomto formátu:<br /><br /> *n.n.n.n - n.n.n.n*|  
-|`newVersion`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení místo na původně požadovanou verzi ve formátu: *n.n.n.n*<br /><br /> Tuto hodnotu můžete zadat starší verze než `oldVersion`.|  
+|`oldVersion`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení, která byla původně požadována. Číslo verze sestavení má *major.minor.build.revision*. Platné hodnoty pro jednotlivé části tohoto čísla verze jsou 0 až 65535.<br /><br /> Můžete také zadat rozsah verzí v tomto formátu:<br /><br /> *n.n.n.n - n.n.n.n*|  
+|`newVersion`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení použít namísto původně požadované verze ve formátu: *n.n.n.n*<br /><br /> Tato hodnota může určit starší verze než `oldVersion`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
@@ -62,11 +61,11 @@ newVersion="new assembly version"/>
 |`runtime`|Obsahuje informace o vazbách sestavení a uvolnění paměti.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při sestavování aplikace rozhraní .NET Framework v rámci sestavení se silným názvem používá aplikace ve výchozím nastavení při spuštění zmíněnou verzi, a to i tehdy, pokud je k dispozici nová verze. Aplikaci však můžete nastavit tak, aby se spustila v rámci novější verze sestavení. Podrobnosti o tom, jak modul runtime používá tyto soubory určení verze sestavení použít, najdete v části [jak modul Runtime vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
+ Při sestavování aplikace rozhraní .NET Framework v rámci sestavení se silným názvem používá aplikace ve výchozím nastavení při spuštění zmíněnou verzi, a to i tehdy, pokud je k dispozici nová verze. Aplikaci však můžete nastavit tak, aby se spustila v rámci novější verze sestavení. Podrobnosti o tom, jak modul runtime používá tyto soubory k určení verze sestavení, které chcete použít, najdete v článku [jak modul Runtime vyhledává sestavení](../../../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).  
   
- Můžete přesměrovat více než jedna verze sestavení, a to včetně několika `bindingRedirect` elementů v `dependentAssembly` elementu. Můžete také vytvořit přesměrování z novější verze na starší verzi sestavení.  
+ Můžete přesměrovat více než jedna verze sestavení zahrnutím více `bindingRedirect` prvky `dependentAssembly` elementu. Můžete také vytvořit přesměrování z novější verze na starší verzi sestavení.  
   
- Explicitní přesměrování vazeb sestavení v konfiguračním souboru aplikace vyžaduje oprávnění zabezpečení. To platí pro přesměrování sestavení rozhraní .NET Framework a sestavení třetích stran. Je povoleno nastavením <xref:System.Security.Permissions.SecurityPermissionFlag> příznak na <xref:System.Security.Permissions.SecurityPermission>. Další informace najdete v tématu [sestavení vazby bezpečnostní oprávnění k přesměrování](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md).  
+ Explicitní přesměrování vazeb sestavení v konfiguračním souboru aplikace vyžaduje oprávnění zabezpečení. To platí pro přesměrování sestavení rozhraní .NET Framework a sestavení třetích stran. Oprávnění je udělován nastavením <xref:System.Security.Permissions.SecurityPermissionFlag> příznaku <xref:System.Security.Permissions.SecurityPermission>. Další informace najdete v tématu [sestavení oprávnění zabezpečení přesměrování vazby](../../../../../docs/framework/configure-apps/assembly-binding-redirection-security-permission.md).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad znázorňuje způsob přesměrování jedné verze sestavení na jinou.  

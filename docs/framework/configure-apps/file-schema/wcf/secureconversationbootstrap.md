@@ -3,21 +3,20 @@ title: '&lt;secureConversationBootstrap&gt;'
 ms.date: 03/30/2017
 ms.assetid: 66b46f95-fa2d-4b5b-b6ce-0572ab0cdd50
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: f7eab333899f5fc379db8fb5683ea3d29d04943c
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 703e89342cbfd4a957c10419d6583e85ec6f6d2a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32751594"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47079841"
 ---
 # <a name="ltsecureconversationbootstrapgt"></a>&lt;secureConversationBootstrap&gt;
-Určuje výchozí hodnoty používané pro inicializaci služby Zabezpečené konverzaci.  
+Určuje výchozí hodnoty pro inicializaci služby zabezpečené konverzace.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
 \<zabezpečení >  
 \<secureConversationBootstrap >  
   
@@ -50,31 +49,31 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`allowSerializedSigningTokenOnReply`|Volitelné. Logická hodnota, která určuje, pokud serializovaný token lze použít v odpovědi. Výchozí hodnota je `false`. Při použití duální vazby, nastavení výchozí hodnotu `true` všechna nastavení provedené budou ignorovány.|  
-|`authenticationMode`|Určuje režim ověřování protokolu SOAP používá mezi iniciátoru a odpovídající počítač.<br /><br /> Výchozí hodnota je sspiNegotiated.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Configuration.AuthenticationMode>.|  
-|`defaultAlgorithmSuite`|Sada algoritmů zabezpečení definuje z různých algoritmů, například kanonizace, ověřování algoritmem Digest, KeyWrap, podpisu, šifrování a algoritmy KeyDerivation. Všechny sady algoritmus zabezpečení definuje hodnoty pro tyto různé parametry. Zabezpečení na základě zpráv se opírá tyto algoritmy.<br /><br /> Tento atribut se používá při práci s jinou platformu, která požádá sady algoritmů, které jsou jiné než výchozí. Byste měli být vědomi silné a slabé stránky relevantní algoritmů při provádění změn tohoto nastavení. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Výchozí hodnota je `Basic256`.|  
-|`includeTimestamp`|Logická hodnota, která určuje, zda časová razítka jsou zahrnuta v každé zprávě. Výchozí hodnota je `true`.|  
-|`keyEntropyMode`|Určuje způsob, že se vypočítávají klíče pro zabezpečení zpráv. Klíče může být založen na klienta materiál klíče pouze na služby materiál klíče pouze nebo jejich kombinaci. Platné hodnoty jsou:<br /><br /> -ClientEntropy: Klíč relace je založena na zadaný materiál klíče klienta.<br />-ServerEntropy: Klíč relace je založena na službu poskytovanou materiál klíče.<br />-CombinedEntropy: Klíč relace je založena na klienta a služby poskytuje klíčový materiál.<br /><br /> Výchozí hodnota je CombinedEntropy.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>.|  
-|`messageProtectionOrder`|Nastaví pořadí, ve zpráv, které jsou použity algoritmy úrovně zabezpečení ke zprávě. Platné hodnoty patří:<br /><br /> -SignBeforeEncrypt: Nejdřív přihlásit a šifrování.<br />-SignBeforeEncryptAndEncryptSignature: Podepisování, šifrování a šifrování podpis.<br />-EncryptBeforeSign: Šifrování nejprve a pak přihlásit.<br /><br /> SignBeforeEncryptAndEncryptSignature je výchozí hodnota při vzájemnými certifikáty pomocí protokolu WS-zabezpečení 1.1.  SignBeforeEncrypt je výchozí hodnota se WS-Security 1.0.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Security.MessageProtectionOrder>.|  
-|`messageSecurityVersion`|Nastaví verzi protokolu WS-zabezpečení, který se používá. Platné hodnoty patří:<br /><br /> -WSSecurityJan2004<br />-WSSecurityXXX2005<br /><br /> Výchozí hodnota je WSSecurityXXX2005. Tento atribut je typu <xref:System.ServiceModel.MessageSecurityVersion>.|  
-|`requireDerivedKeys`|Logická hodnota, která určuje, zda klíčů může být odvozen od původního doklad klíče. Výchozí hodnota je `true`.|  
-|`requireSecurityContextCancellation`|Logická hodnota, která určuje, jestli kontext zabezpečení by měl být zrušena a byla ukončena, pokud se už nevyžaduje. Výchozí hodnota je `true`.|  
-|`requireSignatureConfirmation`|Logická hodnota, která určuje, zda je povoleno potvrzení podpisu WS-zabezpečení. Pokud nastavíte hodnotu `true`, podpisy zpráv potvrdí odpovídající partner. Výchozí hodnota je `false`.<br /><br /> Potvrzení podpisu se používá pro potvrzení, zda služba reaguje v úplné povědomí o požadavek.|  
-|`securityHeaderLayout`|Určuje pořadí prvků v záhlaví zabezpečení. Platné hodnoty jsou:<br /><br /> -Strict. Položky budou přidány do záhlaví zabezpečení podle obecné zásady "deklarovat před použitím".<br />-Hodnotě lax. Položky budou přidány do záhlaví zabezpečení v libovolném pořadí, který potvrdí k WSS: zabezpečení protokolu SOAP zprávy.<br />-LaxWithTimestampFirst. Položky budou přidány do záhlaví zabezpečení v libovolném pořadí, který potvrdí k WSS: zabezpečení zpráv protokolu SOAP s tím rozdílem, že prvním elementem v záhlaví zabezpečení musí být wsse:Timestamp element.<br />-LaxWithTimestampLast. Položky budou přidány do záhlaví zabezpečení v libovolném pořadí, který potvrdí k WSS: zabezpečení zpráv protokolu SOAP s tím rozdílem, že posledním prvkem v záhlaví zabezpečení musí být wsse:Timestamp element.<br /><br /> Výchozí hodnota je Strict.<br /><br /> Tento element je typu <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
+|`allowSerializedSigningTokenOnReply`|Volitelné. Logická hodnota určující, pokud pro odpověď možné použít serializovaný token. Výchozí hodnota je `false`. Při použití duální vazby, výchozí nastavení `true` ignorují se jakékoli nastavení provedli.|  
+|`authenticationMode`|Určuje režim ověřování zpráv SOAP mezi iniciátorem a příjemce.<br /><br /> Výchozí nastavení je sspiNegotiated.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Configuration.AuthenticationMode>.|  
+|`defaultAlgorithmSuite`|Sada algoritmů zabezpečení definuje z různých algoritmy například převodu do kanonického tvaru, Digest, KeyWrap, podpisu, Encryption a keyderivation. Každá sada algoritmů zabezpečení definuje hodnoty pro tyto různé parametry. Zabezpečení na základě zpráv je dosaženo pomocí těchto algoritmů.<br /><br /> Tento atribut se používá při práci s jinou platformu, která požádá o pro sadu algoritmů, které jsou jiné než výchozí. Měli byste vědět silné a slabé stránky relevantní algoritmů při provádění změn pro toto nastavení. Tento atribut je typu <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>. Výchozí hodnota je `Basic256`.|  
+|`includeTimestamp`|Logická hodnota určující, zda jsou časová razítka zahrnuta v každé zprávě. Výchozí hodnota je `true`.|  
+|`keyEntropyMode`|Určuje způsob, že se vypočítávají klíčů pro zabezpečení zpráv. Klíče může být založen na klienta materiál klíče, jenom na klíče materiál služby pouze nebo kombinaci obojího. Platné hodnoty jsou:<br /><br /> -ClientEntropy: Klíče relace je na základě vypnutí klient klíče k dispozici.<br />-ServerEntropy: Klíče relace je založená mimo službu poskytovanou materiál klíče.<br />-CombinedEntropy: Klíče relace je založená klienta a služby k dispozici šifrovací klíče.<br /><br /> Výchozí hodnota je CombinedEntropy.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Security.SecurityKeyEntropyMode>.|  
+|`messageProtectionOrder`|Nastaví pořadí, ve zpráv, které jsou použity algoritmy zabezpečení na úrovni zprávy. Platné hodnoty patří:<br /><br /> -SignBeforeEncrypt: Nejdřív se přihlaste a pak šifrování.<br />-SignBeforeEncryptAndEncryptSignature: Podepsat, šifrování a šifrování podpis.<br />-EncryptBeforeSign: Nejprve šifrování a pak přihlásit.<br /><br /> SignBeforeEncryptAndEncryptSignature je výchozí hodnota při používání vzájemnými certifikáty s WS-Security 1.1.  SignBeforeEncrypt je výchozí hodnota se 1.0 WS-Security.<br /><br /> Tento atribut je typu <xref:System.ServiceModel.Security.MessageProtectionOrder>.|  
+|`messageSecurityVersion`|Nastaví verzi WS-Security, který se používá. Platné hodnoty patří:<br /><br /> -WSSecurityJan2004<br />-WSSecurityXXX2005<br /><br /> Výchozí hodnota je WSSecurityXXX2005. Tento atribut je typu <xref:System.ServiceModel.MessageSecurityVersion>.|  
+|`requireDerivedKeys`|Logická hodnota určující, zda mohou být klíče odvozeny z původního ověřovacího klíče. Výchozí hodnota je `true`.|  
+|`requireSecurityContextCancellation`|Logická hodnota, která určuje, zda by měl kontext zabezpečení zrušen a byla ukončena, když se už nevyžaduje. Výchozí hodnota je `true`.|  
+|`requireSignatureConfirmation`|Logická hodnota určující, zda je povoleno potvrzení podpisu WS-Security. Pokud je nastavena na `true`, podpisy zpráv potvrdí straně odpovídajícího. Výchozí hodnota je `false`.<br /><br /> Potvrzení podpisu se používá pro potvrzení, že je služba reagovat v úplné povědomí o požadavek.|  
+|`securityHeaderLayout`|Určuje pořadí prvků v záhlaví zabezpečení. Platné hodnoty jsou:<br /><br /> -Strict. Položky jsou přidány do záhlaví zabezpečení podle obecné zásady "deklarovat před použitím".<br />-Lax. Položky jsou přidány do záhlaví zabezpečení v libovolném pořadí, která potvrzuje WSS: zabezpečení zpráv SOAP.<br />-LaxWithTimestampFirst. Položky jsou přidány do záhlaví zabezpečení v libovolném pořadí, která potvrzuje WSS: zabezpečení zprávy protokolu SOAP s tím rozdílem, že první prvek v záhlaví zabezpečení musí být prvek wsse:Timestamp.<br />-LaxWithTimestampLast. Položky jsou přidány do záhlaví zabezpečení v libovolném pořadí, která potvrzuje WSS: zabezpečení zprávy protokolu SOAP s tím rozdílem, že po posledním prvku v záhlaví zabezpečení musí být prvek wsse:Timestamp.<br /><br /> Výchozí hodnota je Strict.<br /><br /> Tento prvek je typu <xref:System.ServiceModel.Channels.SecurityHeaderLayout>.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<– issuedTokenParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Určuje aktuální vystavený token. Tento element je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>.|  
-|[\<localClientSettings >](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|Určuje nastavení zabezpečení místního klienta pro tuto vazbu. Tento element je typu <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>.|  
-|[\<localServiceSettings >](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|Určuje nastavení zabezpečení na místní služby pro tuto vazbu. Tento element je typu <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>.|  
+|[\<issuedTokenParameters >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtokenparameters.md)|Určuje aktuální vydaný token. Tento prvek je typu <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>.|  
+|[\<localClientSettings >](../../../../../docs/framework/configure-apps/file-schema/wcf/localclientsettings-element.md)|Určuje nastavení zabezpečení místního klienta pro tuto vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>.|  
+|[\<localServiceSettings >](../../../../../docs/framework/configure-apps/file-schema/wcf/localservicesettings-element.md)|Určuje nastavení zabezpečení místní služby pro tuto vazbu. Tento prvek je typu <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení u vlastních vazeb.|  
+|[\<zabezpečení >](../../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md)|Určuje možnosti zabezpečení pro vlastní vazbu.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>  
@@ -84,6 +83,6 @@ messageProtectionOrder="SignBeforeEncrypt/SignBeforeEncryptAndEncryptSignature/E
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)  
  [Postupy: Vytvoření vlastní vazby pomocí SecurityBindingElement](../../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)  
  [Zabezpečení vlastních vazeb](../../../../../docs/framework/wcf/samples/custom-binding-security.md)

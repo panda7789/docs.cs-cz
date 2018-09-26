@@ -1,5 +1,5 @@
 ---
-title: '&lt;cryptoClasses –&gt; – Element'
+title: '&lt;cryptoClasses&gt; – Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/mscorlib/cryptographySettings/cryptoNameMapping/cryptoClasses
@@ -10,16 +10,15 @@ helpviewer_keywords:
 ms.assetid: 290d5f96-946d-4f02-babb-1d31ec0b8295
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 2706d2466bd7139d8a6c20802c32dd19f64abb40
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 671302003c3a1f3a37e1773aeeae9cb09a457d13
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743001"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47107750"
 ---
-# <a name="ltcryptoclassesgt-element"></a>&lt;cryptoClasses –&gt; – Element
-Obsahuje seznam tříd šifrování, které mají mapování na popisného názvu do [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) element.  
+# <a name="ltcryptoclassesgt-element"></a>&lt;cryptoClasses&gt; – Element
+Obsahuje seznam šifrovacích tříd, které mají na popisný název v mapování [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) elementu.  
   
  \<Konfigurace >  
 \<mscorlib >  
@@ -44,7 +43,7 @@ Obsahuje seznam tříd šifrování, které mají mapování na popisného názv
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<cryptoclass – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|Obsahuje třídy šifrování, která má mapování na popisného názvu do  **\<nameEntry >** element.|  
+|[\<cryptoclass – >](../../../../../docs/framework/configure-apps/file-schema/cryptography/cryptoclass-element.md)|Obsahuje kryptografickou třídu, která nemá mapování na popisný název v  **\<nameEntry >** elementu.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -52,11 +51,11 @@ Obsahuje seznam tříd šifrování, které mají mapování na popisného názv
 |-------------|-----------------|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
 |`cryptographySettings`|Obsahuje nastavení šifrování.|  
-|`cryptoNameMapping`|Obsahuje mapování třídy popisné názvy.|  
+|`cryptoNameMapping`|Obsahuje mapování tříd pro popisné názvy.|  
 |`mscorlib`|Obsahuje `cryptographySettings` elementu.|  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak používat  **\<cryptoclass – >** element tak, aby odkazovaly kryptografické třídy a ke konfiguraci modulu runtime. Řetězec "RSA" můžete poté předat do <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metoda a použít <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metoda vrátí `MyCryptoRSAClass` objektu.  
+ Následující příklad ukazuje způsob použití  **\<cryptoclass – >** element tak, aby odkazovaly kryptografickou třídu a konfigurace modulu runtime. Můžete poté předat řetězec "RSA" <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> metoda a použití <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> metodu pro návrat `MyCryptoRSAClass` objektu.  
   
 ```xml  
 <configuration>  

@@ -3,11 +3,11 @@ title: '&lt;comContract&gt;'
 ms.date: 03/30/2017
 ms.assetid: 3f8e1c0c-cfdf-4c79-ac65-c64e9323a51c
 ms.openlocfilehash: e2addbada7f55076ae919d93c897991a7ec0fcd8
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703405"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070302"
 ---
 # <a name="ltcomcontractgt"></a>&lt;comContract&gt;
 Určuje kontrakt služby integrace modelu COM +.  

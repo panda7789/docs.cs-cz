@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: 0ab8d42c-5b8b-481b-b788-2caecc2f0191
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: c02ac48915668443a3c2e75f335b9d4d5636e469
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 7d8df325d18c3657d4955fa534d29bb7fdbc595c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486301"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47176578"
 ---
 # <a name="ui-automation-threading-issues"></a>Potíže s vlákny při automatizaci uživatelského rozhraní
 > [!NOTE]

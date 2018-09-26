@@ -1,5 +1,5 @@
 ---
-title: Na základě umístění mezipaměti zásad
+title: Zásady mezipaměti na základě polohy
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Cache If Available policy
@@ -17,41 +17,40 @@ helpviewer_keywords:
 ms.assetid: e41d7f1a-0a6a-4dee-97d1-c6a8b6a07fc2
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: b4109cef8d527d397903854e05a2204a3e551938
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0344bbfc02a66a6f2ec9dace126bfae6811860be
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394504"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47176500"
 ---
-# <a name="location-based-cache-policies"></a>Na základě umístění mezipaměti zásad
-Zásady na základě umístění mezipaměti definuje aktuálnosti platné položky v mezipaměti založené na požadovaný prostředek mohou odkud. Prostředek v mezipaměti je platný Pokud použití nemá není porušují požadavky na zadaný server opětovné ověření. Na základě umístění mezipaměti není vytvořená zásada, programově pomocí <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru třídy. Typ zásady na základě polohy předaný konstruktoru pomocí <xref:System.Net.Cache.RequestCacheLevel> nebo <xref:System.Net.Cache.HttpRequestCacheLevel> hodnota výčtu. Příklady kódu, které vytvářejí na základě umístění mezipaměti zásady, najdete v části [postupy: nastavení zásady na základě umístění mezipaměti pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Následující části popisují jednotlivé typy zásad na základě umístění mezipaměti pro protokol HTTP (http a https) prostředky.  
+# <a name="location-based-cache-policies"></a>Zásady mezipaměti na základě polohy
+Zásady mezipaměti na základě umístění definují aktuálnosti platné položky uložené v mezipaměti založené na požadovaný prostředek mohou být odkud. Prostředek v mezipaměti je platný pokud jeho použití není porušovat požadavky na zadaný server opětovné ověření. Zásady mezipaměti na základě umístění je vytvořená prostřednictvím kódu programu pomocí <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru třídy. Je předán typ zásady založená na poloze pomocí konstruktoru <xref:System.Net.Cache.RequestCacheLevel> nebo <xref:System.Net.Cache.HttpRequestCacheLevel> hodnota výčtu. Příklady kódu, které vytvářejí zásady mezipaměti na základě polohy, naleznete v tématu [postupy: nastavení zásad mezipaměti na základě umístění pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Následující části popisují jednotlivé typy zásad mezipaměti na základě umístění pro prostředky protokol HTTP (http a https).  
   
 ## <a name="cache-if-available-policy"></a>Pokud je k dispozici do mezipaměti zásad  
- Pokud platný požadovaný prostředek je v místní mezipaměti, se používá v mezipaměti prostředků; žádost pro daný prostředek, jinak hodnota je odeslána na server. Pokud požadovaný prostředek k dispozici ve všech mezipaměti mezi klientem a serverem, požadavek můžete splnit zprostředkující mezipaměti.  
+ Pokud platné požadovaný prostředek je v místní mezipaměti, se používá v mezipaměti prostředků; v opačném případě je vyslána žádost pro prostředek serveru. Pokud požadovaný prostředek je k dispozici v libovolné mezipaměti mezi klientem a serverem, je možné splnit žádost zprostředkující mezipaměti.  
   
 ## <a name="cache-only-policy"></a>Pouze zásady mezipaměti  
- Pokud platný požadovaný prostředek je v místní mezipaměti, použije se v mezipaměti prostředků. Pokud je zadána tato úroveň zásady mezipaměti, <xref:System.Net.WebException> je vyvolána výjimka, pokud položka není v místní mezipaměti.  
+ Pokud platné požadovaný prostředek je v místní mezipaměti, se používá v mezipaměti prostředků. Pokud je zadána tato úroveň zásad mezipaměti, <xref:System.Net.WebException> je vyvolána výjimka, pokud položka se nenachází v místní mezipaměti.  
   
 ## <a name="cache-or-next-cache-only-policy"></a>Ukládat do mezipaměti nebo další mezipaměti pouze zásady  
- Pokud platný požadovaný prostředek je v místní mezipaměti nebo zprostředkující mezipaměti v místní síti, se používá v mezipaměti prostředků. V opačném <xref:System.Net.WebException> je vyvolána výjimka. V ukládání do mezipaměti protokolu HTTP můžete toho dosáhnout pomocí direktiva ovládací prvek mezipaměti jen v případě mezipaměti.  
+ Pokud platné požadovaný prostředek je v místní mezipaměti nebo zprostředkující mezipaměti v místní síti, se používá v mezipaměti prostředků. V opačném případě <xref:System.Net.WebException> je vyvolána výjimka. Ukládání do mezipaměti protokolu HTTP toho můžete dosáhnout použitím direktivy ovládací prvek mezipaměti pouze if-do mezipaměti.  
   
-## <a name="no-cache-no-store-policy"></a>Žádné mezipaměti bez uložení zásady  
- Požadovaný prostředek se nikdy nepoužívá z jakékoli mezipaměti a nikdy je umístěn v jakékoli mezipaměti. Pokud požadovaný zdroj je k dispozici v místní mezipaměti, bude odebrán. Tato úroveň zásad označuje zprostředkující mezipamětí, že se mělo odstranit také prostředku. V ukládání do mezipaměti protokolu HTTP můžete toho dosáhnout pomocí direktiva ovládací prvek mezipaměti žádné úložiště.  
+## <a name="no-cache-no-store-policy"></a>Žádná mezipaměť ne Store zásad  
+ Požadovaný prostředek se nikdy nepoužívá žádné mezipaměti a je umístěn všechny mezipaměti. Pokud požadovaný prostředek je k dispozici v místní mezipaměti, bude odebrán. Tato úroveň zásad označuje zprostředkující mezipamětí, že se mělo odstranit také na prostředek. Ukládání do mezipaměti protokolu HTTP toho můžete dosáhnout použitím direktivy no-store mezipaměti ovládacího prvku.  
   
 ## <a name="refresh-policy"></a>Aktualizovat zásady  
- Požadovaný prostředek lze použít, je-li získat ze serveru nebo nalezených v mezipaměti než místní mezipaměti. Předtím, než požadavek můžete splnit zprostředkující mezipaměti, musí mezipaměť znovu ověřit jeho položka uložená v mezipaměti se serverem. V ukládání do mezipaměti protokolu HTTP, to je dosaženo pomocí maximální stáří = 0 mezipaměti ovládacího prvku směrnice a hlavičku – direktiva Pragma bez mezipaměti.  
+ Požadovaný prostředek je možné, je-li získat ze serveru nebo nalezených v mezipaměti, než v místní mezipaměti. Předtím, než je možné splnit žádost zprostředkující mezipaměti, musí tuto mezipaměť znovu ověřit jeho položka uložená v mezipaměti se serverem. Ukládání do mezipaměti protokolu HTTP, toho můžete dosáhnout použitím max-age = 0 mezipaměti ovládacího prvku směrnice a záhlaví – direktiva Pragma no-cache.  
   
 ## <a name="reload-policy"></a>Znovu načíst zásady  
- Požadované prostředky musí získat ze serveru. Odpověď je uložen v místní mezipaměti. V ukládání do mezipaměti protokolu HTTP můžete toho dosáhnout pomocí direktiva ovládací prvek mezipaměti ne mezipaměť a hlavičku – direktiva Pragma bez mezipaměti.  
+ Požadované prostředky se musí získat od serveru. Odpověď může být uložen v místní mezipaměti. Ukládání do mezipaměti protokolu HTTP toho můžete dosáhnout použitím direktivy no-cache mezipaměti ovládacího prvku a záhlaví – direktiva Pragma no-cache.  
   
-## <a name="revalidate-policy"></a>Znovu ověřit zásad  
- Porovná kopie prostředku v mezipaměti s kopií na serveru. Pokud je kopie na serveru novější, se používá ke zpracování požadavku a nahradí kopie v mezipaměti. Pokud je kopie v mezipaměti stejná jako kopii na serveru, se používá kopie uložené v mezipaměti. V ukládání do mezipaměti protokolu HTTP můžete toho dosáhnout pomocí podmíněného žádosti.  
+## <a name="revalidate-policy"></a>Znovu ověřit zásady  
+ Porovná kopie prostředku v mezipaměti s kopií na serveru. Pokud je novější kopie na serveru, se používá ke zpracování požadavku a nahradí kopii v mezipaměti. Pokud je kopie v mezipaměti je stejný jako kopii na serveru, použije se kopie v mezipaměti. Ukládání do mezipaměti protokolu HTTP toho můžete dosáhnout použitím Podmíněný požadavek.  
   
 ## <a name="see-also"></a>Viz také  
  [Správa mezipaměti pro síťové aplikace](../../../docs/framework/network-programming/cache-management-for-network-applications.md)  
  [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
  [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)  
  [Konfigurace mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md)  
- [\<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

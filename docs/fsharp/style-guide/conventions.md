@@ -1,32 +1,32 @@
 ---
-title: 'F # – konvence kódování'
-description: 'Další obecné pokyny a idioms při psaní kódu pro jazyk F #.'
+title: 'Převody kódování F #'
+description: 'Další obecné pokyny a idiomy při psaní kódu jazyka F #.'
 ms.date: 05/14/2018
-ms.openlocfilehash: f3d16f735ddc1901aeaa5ebb39e2fa2b70a3d836
-ms.sourcegitcommit: 43924acbdbb3981d103e11049bbe460457d42073
+ms.openlocfilehash: b9afd1fbfbd9d8e04d9bfaa07615de045b7e05fe
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/23/2018
-ms.locfileid: "34457979"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078468"
 ---
-# <a name="f-coding-conventions"></a>F # – konvence kódování
+# <a name="f-coding-conventions"></a>Převody kódování F #
 
-Následující konvence jsou formulovali ze zkušeností práce velké F # základy kódu. [Pět principů dobrý F # – kód](index.md#five-principles-of-good-f-code) jsou základem jednotlivá doporučení. Se jedná o [F # součást pokynů pro návrh](component-design-guidelines.md), ale platí pro všechny F # kód, ne jenom komponenty, například knihovny.
+Následující konvence jsou formulovat z prostředí pro práci s velké F # základů kódu. [Pět zásady dobré kódu jazyka F #](index.md#five-principles-of-good-f-code) jsou základem pro jednotlivá doporučení. Se vztahují k [pokyny pro návrh komponentu F #](component-design-guidelines.md), ale platí pro všechny kódu jazyka F #, ne jenom komponent, jako jsou knihovny.
 
 ## <a name="organizing-code"></a>Uspořádání kódu
 
-Dva primární způsoby uspořádání kód funkce F #: moduly a obory názvů. Ty jsou podobné, ale mají následující rozdíly:
+F # obsahuje dva primární způsoby, jak organizovat kód: modulů a oborů názvů. Ty jsou podobné, ale mají tyto věci:
 
-* Obory názvů zjišťují jako obory názvů .NET. Moduly jsou kompilovány jako statické třídy.
-* Obory názvů jsou vždy nejvyšší úrovně. Moduly lze nejvyšší úrovně a vnořené v rámci dalších modulů.
-* Obory názvů, může zahrnovat víc souborů. Moduly nelze.
-* Moduly může být doplněny pomocí `[<RequireQualifiedAccess>]` a `[<AutoOpen>]`.
+* Obory názvů jsou kompilovány jako obory názvů rozhraní .NET. Moduly jsou kompilovány jako statické třídy.
+* Obory názvů jsou vždy nejvyšší úrovně. Moduly je možné nejvyšší úrovně a vnořené v jiných modulů.
+* Obory názvů může zahrnovat více souborů. Moduly nelze.
+* Moduly, může být doplněny pomocí `[<RequireQualifiedAccess>]` a `[<AutoOpen>]`.
 
-Podle následujících pokynů můžete použít k uspořádání vašeho kódu.
+Podle následujících pokynů můžete použít k uspořádání kódu.
 
-### <a name="prefer-namespaces-at-the-top-level"></a>Dáváte přednost obory názvů na nejvyšší úrovni
+### <a name="prefer-namespaces-at-the-top-level"></a>Dáváte přednost oborů názvů na nejvyšší úrovni
 
-Pro všechny veřejně použití kódu jsou obory názvů přednostní modulů na nejvyšší úrovni. Vzhledem k tomu, že se kompilují jako obory názvů .NET, jsou použití z jazyka C# s žádný problém.
+Pro všechny veřejně použitelné kódu obory názvů jsou přednostní moduly na nejvyšší úrovni. Vzhledem k tomu, že se kompilují jako obory názvů .NET, jsou použitelné z jazyka C# s žádný problém.
 
 ```fsharp
 // Good!
@@ -36,7 +36,7 @@ type MyClass() =
     ...
 ```
 
-Použití modulu nejvyšší úrovně se nemůže nacházet jiný při volat pouze z F #, ale pro C# příjemci, může být sledován volající tak, že aby se dosáhlo nároku `MyClass` s `MyCode` modulu.
+Použití nejvyšší úrovně modulu nemusí vypadat jinak, při volání pouze z jazyka F #, ale pro C# spotřebitele, může být sledován volající tak, že k získání způsobilosti `MyClass` s `MyCode` modulu.
 
 ```fsharp
 // Bad!
@@ -48,9 +48,9 @@ type MyClass() =
 
 ### <a name="carefully-apply-autoopen"></a>Pečlivě použít. `[<AutoOpen>]`
 
-`[<AutoOpen>]` Konstrukce můžete znečištění směrovány správu rozsah co je k dispozici pro volající a kde něco pochází z odpověď je "magic". Obecně se to dobré. Výjimku pro toto pravidlo je základní knihovny F #, samotné (i když tento fakt je také trochu sporná).
+`[<AutoOpen>]` Konstrukce můžete znečištění směrovány správu rozsah co je k dispozici pro volající a odpověď na něco ze kterého pochází je "magické". Většinou to není dobrá věc. Výjimkou z tohoto pravidla je základní knihovny F #, samotný (i když tato skutečnost je také bit kontroverzním).
 
-Je však pro vaše pohodlí Pokud máte pomocné funkce pro veřejné rozhraní API, který chcete uspořádat samostatně z této veřejné rozhraní API.
+Je však pohodlí Pokud máte pomocnou funkci pro veřejné rozhraní API, kterou chcete uspořádat samostatně z této veřejné rozhraní API.
 
 ```fsharp
 module MyAPI =
@@ -67,15 +67,15 @@ module MyAPI =
         helper1 x y z
 ```
 
-To vám umožní podrobnosti této aplikace samostatné implementace z veřejné rozhraní API funkce bez nutnosti k plnému určení pomocné rutiny pokaždé, když ji volat.
+Díky tomu můžete podrobnosti implementace čistě samostatné z veřejné rozhraní API funkce bez nutnosti k plnému určení pomocné rutiny pokaždé, když ji volat.
 
-Kromě toho vystavení rozšiřující metody a tvůrci výrazů na úrovni oboru názvů se přehledně vyjadřují pomocí `[<AutoOpen>]`.
+Kromě toho vystavuje metody rozšíření a Tvůrce výrazů na úrovni oboru názvů lze elegantně vyjádřit pomocí `[<AutoOpen>]`.
 
-### <a name="use-requirequalifiedaccess-whenever-names-could-conflict-or-you-feel-it-helps-with-readability"></a>Použití `[<RequireQualifiedAccess>]` kdykoli může dojít ke konfliktu názvů, nebo si myslíte, že pomáhá s čitelnost
+### <a name="use-requirequalifiedaccess-whenever-names-could-conflict-or-you-feel-it-helps-with-readability"></a>Použití `[<RequireQualifiedAccess>]` vždy, když mohla být v konfliktu názvů, nebo máte pocit, že pomáhá s čitelnost
 
-Přidávání `[<RequireQualifiedAccess>]` atribut na modul označuje, že modul nemusí otevřít a že vyžadují explicitní odkazy na elementy modulu kvalifikovaný přístup. Například `Microsoft.FSharp.Collections.List` modul má tento atribut.
+Přidávání `[<RequireQualifiedAccess>]` atribut do modulu označuje, že modul nelze otevřít, a přístup, vyžaduje explicitní odkazy na elementy modulu kvalifikovaný. Například `Microsoft.FSharp.Collections.List` modul nemá tento atribut.
 
-To je užitečné, když funkce a hodnoty v modulu mají názvy, které mohou v konfliktu s názvy v dalších modulů. Vyžadování kvalifikovaný přístup může výrazně zvýšit dlouhodobé udržovatelnosti a evolvability knihovny.
+To je užitečné, když funkce a hodnoty v modulu mají názvy, které jsou pravděpodobně v konfliktu s názvy v dalších modulů. Které vyžadují přístup pro kvalifikovaný může výrazně zvýšit dlouhodobou udržovatelnost a ovlivňujících knihovny.
 
 ```fsharp
 [<RequireQualifiedAccess>]
@@ -90,11 +90,11 @@ let parsed = StringTokenization.parse s // Must qualify to use 'parse'
 
 ### <a name="sort-open-statements-topologically"></a>Řazení `open` příkazy topologically
 
-V jazyce F #, záleží na pořadí deklarace, včetně s `open` příkazy. To je rozdíl oproti C#, kde účinku `using` a `using static` je nezávislá řazení tyto příkazy v souboru.
+V jazyce F #, záleží na pořadí deklarace, včetně `open` příkazy. To je rozdíl oproti C#, ve kterém účinek `using` a `using static` je nezávislý na pořadí těchto příkazů do souboru.
 
-V F # elementy otevřít do oboru stínové ostatní již existuje. To znamená, že změna `open` příkazy může změnit význam kódu. V důsledku toho všechny libovolný řazení všech `open` příkazy (například, alfanumericky) se obecně nedoporučuje, přidejte generovat různé chování, které by se dalo očekávat.
+V jazyce F # prvky otevřít do oboru stínové ostatní již existuje. To znamená, že změny pořadí `open` příkazů může změnit význam kódu. V důsledku toho všechny libovolného řazení všech `open` příkazy (například alfanumericky) se obecně nedoporučuje, přidejte generovat různé chování by se dalo očekávat.
 
-Místo toho doporučujeme řazení je [topologically](https://en.wikipedia.org/wiki/Topological_sorting); to znamená, pořadí vaše `open` příkazy v pořadí, ve kterém _vrstvy_ jsou definovány vašeho systému. Provádění alfanumerické řazení v rámci různých úrovní topologické může také zvážit.
+Namísto toho doporučujeme je seřadit [topologically](https://en.wikipedia.org/wiki/Topological_sorting); to znamená pořadí vaše `open` příkazů v pořadí, ve kterém _vrstvy_ systému jsou definovány. Provádění alfanumerické řazení v rámci různých topologické vrstvy mohou také zvážit.
 
 Jako příklad uvádíme topologické řazení pro F # kompilátoru veřejné rozhraní API souboru služby:
 
@@ -142,11 +142,11 @@ open Internal.Utilities
 open Internal.Utilities.Collections
 ```
 
-Všimněte si, že konec řádku odděluje jednotlivé úrovně řazen alfanumericky později topologické vrstvy. To ještě jednou organizuje kód bez omylem stínový provoz hodnoty.
+Všimněte si, že konec řádku odděluje topologické vrstvy s každou vrstvou seřazený alfanumericky později. To čistě slouží k uspořádání kódu bez náhodně stínováním hodnoty.
 
-## <a name="use-classes-to-contain-values-that-have-side-effects"></a>Pomocí třídy obsahují hodnoty, které mají vedlejší efekty
+## <a name="use-classes-to-contain-values-that-have-side-effects"></a>Použití tříd obsahující hodnoty, které mají vedlejší účinky
 
-Existují tolikrát, kolikrát po inicializaci hodnotu může mít vedlejší účinky, jako je například vytvoření instance kontextu databáze nebo jiných vzdálený prostředek. Jedná se o tempting k inicializaci takové věci v modulu a použít ho v následujících funkcí:
+Mnohokrát se vám při inicializaci hodnota může mít vedlejší účinky, jako je vytvoření instance kontextu do databáze nebo jiného vzdáleného prostředku. Je lákavé k inicializaci prvků v modulu a jeho použití v následující funkce:
 
 ```fsharp
 // This is bad!
@@ -161,15 +161,15 @@ module MyApi =
     let function2 arg = doSutffWith dep1 dep2 dep3 arg
 ```
 
-Toto je často vhodné z několika důvodů:
+To je často vhodné mít několik důvodů:
 
-Nejprve je konfigurace aplikace vložena do základu kódu s `dep1` a `dep2`. Toto je obtížné v, že větší základy kódu.
+Nejprve konfigurace aplikace se vloží do základu kódu `dep1` a `dep2`. Toto je obtížné udržovat v větší základů kódu.
 
-Druhý, staticky inicializovaného data nesmí obsahovat hodnoty, které nejsou bezpečné pro přístup z více vláken, pokud samotné příslušné součásti bude používat více vláken. To jasně porušení podle `dep3`.
+Druhý, staticky inicializovaná data by neměl obsahovat hodnoty, které nejsou vláknově bezpečné, pokud vaše komponenta samotné používat více vláken. To je jasně byla porušena `dep3`.
 
-Nakonec inicializace modulu zkompiluje do statického konstruktoru pro celý kompilace jednotku. V případě chyby inicializace vázané na umožňují hodnotu v tomto modulu manifesty jako `TypeInitializationException` pak mezipaměti po celou dobu života aplikace. To může být obtížné diagnostikovat. Obvykle je vnitřní výjimka, která můžete se pokusit o důvodu, ale pokud není, nejsou k dispozici žádné o tom, co je hlavní příčinu.
+Nakonec inicializace modulu kompiluje do statického konstruktoru pro celý kompilační jednotky. Pokud v inicializace hodnoty vazbou let v tomto modulu dojde k jakékoli chybě, manifesty jako `TypeInitializationException` , která se pak zapíší do mezipaměti po celou dobu života aplikace. To může být obtížné diagnostikovat. Obvykle je vnitřní výjimku, která se může pokusit o důvodu, ale pokud není, nejsou k dispozici žádné o tom, co je hlavní příčinu.
 
-Právě použijte místo toho jednoduchá pro závislosti:
+Stačí použijte místo toho jednoduchou třídu pro uložení závislosti:
 
 ```fsharp
 type MyParametricApi(dep1, dep2, dep3) =
@@ -179,18 +179,18 @@ type MyParametricApi(dep1, dep2, dep3) =
 
 To umožňuje následující:
 
-1. Když zavedete všechny závislé stavu mimo rozhraní API, sám sebe.
-2. Konfiguraci lze provést nyní mimo rozhraní API.
-3. Chyby v inicializaci pro závislé hodnoty nejsou pravděpodobně se projeví jako `TypeInitializationException`.
-4. Rozhraní API je nyní snazší otestovat.
+1. Doručením (push) libovolný závislé stavu mimo samotné rozhraní API.
+2. Konfiguraci můžete nyní provést mimo rozhraní API.
+3. Chyby při inicializaci pro závislé hodnoty nejsou pravděpodobně se projeví jako `TypeInitializationException`.
+4. Rozhraní API je teď snazší testování.
 
-## <a name="error-management"></a>Chyba správy
+## <a name="error-management"></a>Správa chyb
 
-Správa chyby ve velkých systémů je komplexní a nuanced zařízeními a neexistují žádné silver odrážek zajištění vaše systémy jsou odolné proti chybám a chovat správně. Následující pokyny by měl nabízí pokyny v navigace tento prostor obtížná.
+Správa chyb v rozsáhlých systémů je složitá a odlišování zařízeními a neexistují žádné silver odrážky zajištění vašich systémů jsou odolné proti chybám a dobře se chovají. Tyto pokyny byste měli nabízet podle pokynů uvedených v procházení tohoto obtížné prostoru.
 
-### <a name="represent-error-cases-and-illegal-state-in-types-intrinsic-to-your-domain"></a>Představují případech chyb a neplatný stav v typy vnitřní k vaší doméně
+### <a name="represent-error-cases-and-illegal-state-in-types-intrinsic-to-your-domain"></a>Představují případy chyb a neplatný stav v typech, které jsou přirozené pro vaši doménu
 
-S [Rozlišované sjednocení](../language-reference/discriminated-unions.md), F # vám dává možnost představující stav vadný programu v systému typu. Příklad:
+S [Rozlišované sjednocení](../language-reference/discriminated-unions.md), F # vám dává možnost představující stav vadným programu v systému typů. Příklad:
 
 ```fsharp
 type MoneyWithdrawalResult =
@@ -200,7 +200,7 @@ type MoneyWithdrawalResult =
     | UndisclosedFailure
 ```
 
-V takovém případě existují tři způsoby známé, které stažení peníze z účtu bank může selhat. Každý případ chyby představuje v typu a proto být provedeny bezpečně v rámci programu.
+V tomto případě existují tři způsoby známé, které zrušení peníze od bankovním účtu může selhat. Každý případ chyby je reprezentován v typu a mohou tedy řešit bezpečně v celém programu.
 
 ```fsharp
 let handleWithdrawal amount =
@@ -212,35 +212,35 @@ let handleWithdrawal amount =
     | UndisclosedFailure -> printfn "Failed: unknown"
 ```
 
-Obecně platí, pokud je model různé způsoby, že něco můžete **nezdaří** ve vaší doméně, pak kód pro zpracování chyb už považován za něco musí řešit kromě toku regulární programu. Je jednoduše součástí normálního toku programu a nejsou považovány **výjimečných**. Existují dvě hlavní výhody k tomuto:
+Obecně platí, pokud různé způsoby, jak lze modelovat, že něco můžete **selhání** ve vaší doméně, pak kód pro zpracování chyb už se počítá jako něco musí čelit vedle regulární programu. Je jednoduše součástí normálního toku programu a nejsou považovány za **výjimečných**. Existují dvě hlavní výhody tohoto:
 
-1. Je také spravovat jako doménu v průběhu času mění.
-2. Chybových případech se snadněji testování částí.
+1. Je snazší Údržba jako vaši doménu v průběhu času mění.
+2. Případy chyb je snazší testování částí.
 
-### <a name="use-exceptions-when-errors-cannot-be-represented-with-types"></a>Použijte výjimky, pokud není možné vyjádřit chyby s typy
+### <a name="use-exceptions-when-errors-cannot-be-represented-with-types"></a>Použijte výjimky, pokud chyby nejde reprezentovat typy
 
-Ne všechny chyby může být reprezentován v doméně problému. Jsou tyto druhy chyb *výjimečných* ve své podstatě, proto možnost vyvolávání a zachycení výjimek v jazyce F #.
+Ne všechny chyby lze znázornit v doméně problému. Tyto druhy chyb jsou *výjimečných* ze své podstaty, proto schopnost vyvolat a zachycení výjimek v jazyce F #.
 
-První, doporučujeme, abyste si přečetli [pokynů pro návrh výjimka](../../standard/design-guidelines/exceptions.md). To platí také pro F #.
+Nejprve se doporučuje, abyste si přečetli [pokyny pro návrh výjimek](../../standard/design-guidelines/exceptions.md). Tyto platí také pro F #.
 
-K dispozici v F # pro účely vyvolávání výjimek hlavní konstrukce považovat za v následujícím pořadí podle priority:
+Hlavní konstrukce, které jsou k dispozici v jazyce F # za účelem vyvolání výjimky by měl být v následujícím pořadí podle priority:
 
 | Funkce | Syntaxe | Účel |
 |----------|--------|---------|
 | `nullArg` | `nullArg "argumentName"` | Vyvolá `System.ArgumentNullException` s názvem zadaného argumentu. |
 | `invalidArg` | `invalidArg "argumentName" "message"` | Vyvolá `System.ArgumentException` s názvem zadaného argumentu a zprávy. |
 | `invalidOp` | `invalidOp "message"` | Vyvolá `System.InvalidOperationException` se zadanou zprávou. |
-|`raise`| `raise (ExceptionType("message"))` | Pro obecné účely mechanismus pro vyvolávání výjimek. |
+|`raise`| `raise (ExceptionType("message"))` | Pro obecné účely mechanismus pro vyvolání výjimky. |
 | `failwith` | `failwith "message"` | Vyvolá `System.Exception` se zadanou zprávou. |
-| `failwithf` | `failwithf "format string" argForFormatString` | Vyvolá `System.Exception` zprávou určenému řetězec formátu a jeho vstupů. |
+| `failwithf` | `failwithf "format string" argForFormatString` | Vyvolá `System.Exception` a zobrazí se zpráva určená formátovací řetězec a jeho vstupů. |
 
-Použití `nullArg`, `invalidArg` a `invalidOp` jako mechanizmus pro throw `ArgumentNullException`, `ArgumentException` a `InvalidOperationException` při vhodné.
+Použití `nullArg`, `invalidArg` a `invalidOp` jako mechanismus pro vyvolání `ArgumentNullException`, `ArgumentException` a `InvalidOperationException` vhodných.
 
-`failwith` a `failwithf` funkce je nutno obecně protože vyvolají základní `Exception` typ, není určité výjimky. Dle [pokynů pro návrh výjimka](../../standard/design-guidelines/exceptions.md), kterou chcete vygenerovat více konkrétních výjimek, pokud je možné.
+`failwith` a `failwithf` funkce by měla být obecně vyhnout, protože vyvolají základní `Exception` typ, ne určité výjimky. Jak je uvedeno [pokyny pro návrh výjimek](../../standard/design-guidelines/exceptions.md), chcete vyvolat více specifické výjimky, pokud je to možné.
 
 ### <a name="using-exception-handling-syntax"></a>Pomocí syntaxe zpracování výjimek
 
-F # podporuje vzory výjimky prostřednictvím `try...with` syntaxe:
+Jazyk F # podporuje vzory výjimky prostřednictvím `try...with` syntaxi:
 
 ```fsharp
 try
@@ -250,25 +250,25 @@ with
 | :? System.Security.SecurityException as e -> // Do something with it here
 ```
 
-Sjednocování funkce provést při krátkodobém výjimka porovnávání vzorů může být poněkud složité, pokud chcete zachovat čistou kód. Takové to je možné použít [aktivní vzorky](../language-reference/active-patterns.md) jako prostředek k skupiny funkce, které obaluje s případem chyba s výjimkou samotné. Může být například využívají rozhraní API, která při vyhodí výjimku, obklopuje cenné informace v metadatech výjimka. Rozbalování hodnotu užitečné v těle zaznamenané výjimky uvnitř aktivní vzor a vrací hodnota může být užitečné v některých situacích.
+Sjednocování funkci provést i v případě výjimku s porovnáváním vzorů může být trochu složité, pokud chcete zachovat čistý kód. Jeden takový způsob, jak se o to postarají je použití [aktivní vzory](../language-reference/active-patterns.md) jako způsob, jak kolem s případem chyba s výjimkou samotné funkce skupiny. Může být například využívání rozhraní API, když dojde k výjimce, uzavře cenné informace v metadatech výjimky. Rozbalení užitečné hodnotu v těle Zachycenou výjimku uvnitř Active vzor a vrací hodnota může být užitečné v některých situacích.
 
 ### <a name="do-not-use-monadic-error-handling-to-replace-exceptions"></a>Nepoužívejte monadic nahradit výjimky pro zpracování chyb
 
-Výjimky jsou považovány za poněkud taboo v funkční programování. Výjimky skutečně, porušení čistotu, takže je bezpečné vzít v úvahu je konce není funkční. Ale když ve skutečnosti kde kód musí být spuštěn a že runtime, který může dojít k chybám bude ignorovat. Obecně platí napište kód za předpokladu, že většina věci čistý ani celkový, chcete-li minimalizovat nepříjemným výskyt nečekaných událostí.
+Výjimky jsou považovány za poněkud taboo do funkčního programování. Ve skutečnosti výjimky porušují čistoty tak, aby byl bezpečně zvažovat je to docela není funkční. Ale ve skutečnosti je množství kde musíte spustit kód a tohoto modulu runtime, které může dojít k chybám bude ignorovat. Obecně za předpokladu, že většinu toho, co jsou čistě ani celkový, chcete-li minimalizovat nepříjemným překvapením psaní kódu.
 
-Je důležité vzít v úvahu následující základní síly/aspektů výjimky s ohledem na jejich relevance a vhodnost v modulu runtime rozhraní .NET a mezi jazyky ekosystém jako celek:
+Je důležité vzít v úvahu následující základní výhody/aspekty výjimky s ohledem na jejich důležitosti a vhodnost v modulu runtime .NET a ekosystém mezi jazyky jako celku:
 
-1. Obsahují podrobné diagnostické informace, které je velmi užitečné při ladění problém.
+1. Obsahují podrobné diagnostické informace, které je velmi užitečné při ladění chyby.
 2. Jsou dobře porozumí modul runtime a jinými jazyky rozhraní .NET.
-3. Významné standardní ve srovnání s kódem, který prochází mimo jeho způsob, jak se může snížit *vyhnout* výjimky implementací určitou podmnožinu jejich sémantiku na základě ad hoc.
+3. Se může redukovat významné ve srovnání s kódem, který dostane mimo jeho způsob, jak *vyhnout* výjimky implementací určité dílčí sady z jejich sémantiku na základě ad-hoc.
 
-Tento třetí bod je velmi důležité. Pro triviální komplexních operací selhání použít výjimky může mít za následek práci s struktury takto:
+Tento třetí bod je velmi důležité. Triviální složitých operací použití výjimky může vést k práci s struktury následujícím způsobem:
 
 ```fsharp
 Result<Result<MyType, string>, string list>
 ```
 
-Což může způsobit snadno křehké kódu jako porovnávání se na chyby "stringly zadány":
+Což může snadno způsobit křehké kód například porovnávání vzorů "stringly typu" chyby:
 
 ```fsharp
 let result = doStuff()
@@ -280,7 +280,7 @@ match result with
     else ... // Who knows?
 ```
 
-Kromě toho může být tempting swallow všechny výjimky v desire "jednoduchý" funkce, která vrátí hodnotu typu "nicer":
+Kromě toho může být lákavé spolknout jakoukoliv výjimku v touhy "jednoduchý" funkce, která vrátí "nicer" typ:
 
 ```fsharp
 // This is bad!
@@ -289,7 +289,7 @@ let tryReadAllText (path : string) =
     with _ -> None
 ```
 
-Bohužel `tryReadAllText` může vyvolat množství výjimky podle velkého počtu věcí, které může dojít v systému souborů a tento kód zahodí rychle žádné informace o co může ve skutečnosti se špatně ve vašem prostředí. Pokud jste s typem výsledku, nahraďte tento kód, pak jste zpět "stringly zadány" Chyba při analýze zpráva:
+Bohužel `tryReadAllText` může vyvolat množství výjimek, které jsou založené na řadu věcí, které může dojít v systému souborů a tento kód zahodí okamžitě žádné informace o co může ve skutečnosti být špatně ve vašem prostředí. Pokud je tento kód nahradit typu výsledku, pak jste zpět "stringly typu" Chyba při analýze zprávy:
 
 ```fsharp
 // This is bad!
@@ -305,9 +305,9 @@ match r with
     else ...
 ```
 
-A umístění samotného objektu výjimka v `Error` konstruktor právě vynutí správně zabývat typ výjimky v lokalitě volání místo ve funkci. To efektivně vytvoří zaškrtnuté výjimky, které jsou často unfun řešení jako volající rozhraní API.
+A umístění samotného objektu výjimky v `Error` konstruktor právě vynutí správně řešit typ výjimky v lokalitě volání, nikoli ve funkci. To efektivně vytvoří výjimky kontrolovaný, kterých je známo, že unfun řešit jako volající rozhraní API.
 
-Dobrou alternativou k uvedených příkladech je k zachycení *konkrétní* výjimky a vrátí hodnotu smysl v kontextu této výjimky. Pokud změníte `tryReadAllText` funkce následujícím způsobem `None` další význam:
+Dobrou alternativou výše uvedených příkladech se k zachycení *konkrétní* výjimky a vrácení smysluplné hodnoty v rámci této výjimky. Pokud změníte `tryReadAllText` následujícím způsobem funkci `None` má další význam:
 
 ```fsharp
 let tryReadAllTextIfPresent (path : string) =
@@ -315,21 +315,21 @@ let tryReadAllTextIfPresent (path : string) =
     with :? FileNotFoundException -> None
 ```
 
-Místo funguje jako catch-all, tato funkce bude nyní správně zpracování případu, když soubor nebyl nalezen a přiřadit tento význam vraťte se. Tuto hodnotu můžete mapování v takovém případě chyba, při není zahození žádné kontextové informace nebo vynucení volající řešení případu, které nemusí být důležité v tomto bodě v kódu.
+Místo funguje jako pokrývající vše, tato funkce bude nyní správně zpracování případu, pokud soubor se nepovedlo najít a přiřadit tento význam pro vrácení. Tuto hodnotu můžete namapovat na takovém Chyba při rušení žádné kontextové informace ani Vynucení volající řešit případ, který nemusí být od tohoto okamžiku v kódu.
 
-Typy, jako `Result<'Success, 'Error>` jsou vhodné pro základní operace, kde budou nejsou vnořené, a volitelné typů F # jsou ideální pro udávající, kdy se něco může buď vrátit *něco* nebo *nic*. Nejsou náhradní server pro výjimky, když a nesmí být při pokusu o používá k nahrazení výjimky. Místo toho se má být použita uvážlivě na adresu konkrétních aspektů výjimku a zásady správy chybová cílové způsoby.
+Typy, jako `Result<'Success, 'Error>` jsou vhodné pro základní operace, kde nejsou vnořené, a volitelné typů F # jsou ideální pro udávající, kdy se něco může buď vrátit *něco* nebo *nic*. Nejsou náhradou za výjimky, ale a neměl by se při pokusu o nahradit výjimky. Místo toho se musí uplatnit uvážlivě na adresu specifických aspektů výjimky a chybové zásady správy cílové způsoby.
 
-## <a name="partial-application-and-point-free-programming"></a>Částečné aplikace a bez bodu programování
+## <a name="partial-application-and-point-free-programming"></a>Částečné použití argumentů a bodu bez programování
 
-F # podporuje částečné aplikace a proto různé způsoby, jak program ve stylu volného bodu. To může být užitečné pro opakované použití kódu v modulu nebo implementace něco, ale obecně se něco vystavit veřejně. Obecně platí bez bodu programování není důsledku v a sám sebe a můžete přidat kognitivní představují významnou překážkou pro uživatele, kteří nejsou ponořena ve stylu.
+F # podporuje částečné použití argumentů a proto různé způsoby, jak program ve stylu bez bodu. To může být užitečné pro opakované využívání kódu v rámci modulu nebo provádění něco, ale není obvykle něco, co je veřejně zpřístupnit. Obecně platí bodu bez programování není důsledku v a sám sebe a můžete přidat kognitivní významnou překážkou pro uživatele, kteří nejsou ponoří ve stylu.
 
-### <a name="do-not-use-partial-application-and-currying-in-public-apis"></a>Nepoužívejte částečné aplikace a currying veřejné rozhraní API
+### <a name="do-not-use-partial-application-and-currying-in-public-apis"></a>Nepoužívejte částečné použití argumentů a curryfikace ve veřejných rozhraní API
 
-S výjimkou malé může být matoucí pro spotřebitele použití částečné aplikace v veřejná rozhraní API. Obvykle `let`-vázané hodnoty v F # – kód **hodnoty**, nikoli **funkce hodnoty**. Kombinování společně hodnoty a hodnoty, funkce může způsobit ukládání malý počet řádků kódu za s bit režie kognitivní, obzvláště pokud se například v kombinaci s operátory `>>` k vytváření funkcí.
+S výjimkou malý použití částečné použití argumentů ve veřejných rozhraní API může být matoucí pro uživatele. Obvykle `let`– hodnoty vazby v kódu F # jsou **hodnoty**, nikoli **funkce hodnoty**. Kombinace společně hodnoty a hodnoty funkcí může vést k uložení malý počet řádků kódu výměnou za hodně nemuseli jsme se zdržovat, zejména v případě, že v kombinaci s operátory, jako `>>` sestavit funkce.
 
-### <a name="consider-the-tooling-implications-for-point-free-programming"></a>Zvažte dopad nástrojů pro programování bez bodu
+### <a name="consider-the-tooling-implications-for-point-free-programming"></a>Zvažte případné dopady nástroje bodu bez programování
 
-Curryfikované funkce není popisku jejich argumentů. Tato akce nemá tooling dopad. Vezměte v úvahu následující dvě funkce:
+Curryfikované funkce neoznačuje popiskem svých argumentů. Tato akce nemá vliv nástrojů. Vezměte v úvahu tyto dvě funkce:
 
 ```fsharp
 let func name age =
@@ -339,7 +339,7 @@ let funcWithApplication =
     printfn "My name is %s and I am %d years old!"
 ```
 
-Obě jsou platná funkce, ale `funcWithApplication` je curryfikované funkce. Po přesunutí ukazatele myši jejich typy v editoru, zobrazí toto:
+Obě jsou platná funkce, ale `funcWithApplication` curryfikované funkce. Když najedete myší jejich typy v editoru, uvidíte toto:
 
 ```fsharp
 val func : name:string -> age:int -> unit
@@ -347,17 +347,17 @@ val func : name:string -> age:int -> unit
 val funcWithApplication : (string -> int -> unit)
 ```
 
-V lokalitě volání popisů tlačítek v nástrojů, jako je například Visual Studio nebude poskytují smysluplný informace o tom, co `string` a `int` ve skutečnosti představují vstupní typy.
+V lokalitě volání popisků v nástroje, jako je Visual Studio vám neposkytne smysluplné informace o tom, co `string` a `int` ve skutečnosti představují vstupní typy.
 
-Pokud narazíte na bodu bez kódu jako `funcWithApplication` se veřejně použití, doporučuje se provést plnou expanzí η tak, aby nástrojů můžete vybrat až dále smysluplné názvy argumenty.
+Pokud narazíte na kódu bez bodu jako `funcWithApplication` , který je veřejně použitelné, doporučuje se provést plnou expanzí η tak, aby nástrojů můžete vybrat až dále smysluplné názvy argumentů.
 
-Kromě toho ladění kódu bez bodu může být náročné, pokud není možné. Ladicí nástroje závisí na hodnotách, které jsou vázány na názvy (například `let` vazby) tak, aby si můžete prohlédnout v polovině pomocných hodnot prostřednictvím spuštění. Pokud váš kód neobsahuje žádné hodnoty, chcete-li prověřit, není nic k ladění. V budoucnu, nástroje pro ladění může vyvíjet syntetizovat tyto hodnoty založená na cestách ke dříve spuštění, ale není vhodné zajistila vaše dokumenty na *potenciální* ladění funkce.
+Kromě toho ladění kódu bez bod může být náročné, pokud není možné. Ladicí nástroje spoléhají na hodnoty, které jsou vázány na názvy (například `let` vazby) tak, aby si mohli prohlédnout hodnoty, ležící polovině spuštění. Pokud váš kód neobsahuje žádné hodnoty ke kontrole, není nutné nic ladění. V budoucnu, nástroje pro ladění může vyvíjet tak, aby odpovídaly tyto hodnoty na základě dříve provedený cest, ale není vhodné zajistila vaše sázka na *potenciální* ladění funkcí.
 
-### <a name="consider-partial-application-as-a-technique-to-reduce-internal-boilerplate"></a>Vezměte v úvahu částečné aplikace jako techniku ke snížení interní standardní
+### <a name="consider-partial-application-as-a-technique-to-reduce-internal-boilerplate"></a>Vezměte v úvahu částečné použití argumentů jako technika na interní redukovat
 
-Na rozdíl od předchozího bodu částečné aplikace je skvělý nástroj pro snížení zatížení často používaný v aplikaci nebo interní podrobnější informace o rozhraní API. Může být užitečné pro testování složitější rozhraní API, kde je často používaný často problémové jak nakládat s částí. Například následující kód ukazuje, jak můžete provést co nejvíce mocking architektury získáte bez nutnosti převádět vnější závislosti na těchto rozhraní a nemusíte se učit se souvisejícím sled prací rozhraní API.
+Na rozdíl od předchozího bodu částečné použití argumentů je skvělý nástroj pro snížení často používaný v rámci aplikace nebo interní podrobnější informace o rozhraní API. Může být užitečné při provádění složitějších rozhraní API, kde je často používaný text často problémy řešit testování částí. Například následující kód ukazuje, jak dosáhnout co nejvíce napodobování architektury získáte bez nutnosti přepínat externí závislost na těchto rozhraní a nemusíte se učit se souvisejícím sled prací rozhraní API.
 
-Zvažte například následující topografie řešení:
+Představte si třeba následující topografie řešení:
 
 ```
 MySolution.sln
@@ -366,7 +366,7 @@ MySolution.sln
 |_/API.fsproj
 ```
 
-`ImplementationLogic.fsproj` může například vystavení kódu:
+`ImplementationLogic.fsproj` kód může zveřejnit jako například:
 
 ```fsharp
 module Transactions =
@@ -379,7 +379,7 @@ type Transactor(ctx, currentBalance) =
         ...
 ```
 
-Testování částí `Transactions.doTransaction` v `ImplementationLogic.Tests.fspoj` je snadné:
+Testování částí `Transactions.doTransaction` v `ImplementationLogic.Tests.fspoj` snadno:
 
 ```fsharp
 namespace TransactionsTestingUtil
@@ -390,7 +390,7 @@ module TransactionsTestable =
     let getTestableTransactionRoutine mockContext = Transactions.doTransaction mockContext
 ```
 
-Částečně použití `doTransaction` s mocking kontextu objektu umožňuje volání funkce ve všech testů jednotek bez nutnosti vytvořit mocked kontextu pokaždé, když:
+Částečně použití `doTransaction` napodobování kontextu objektu umožňuje volání funkce ve všech testování částí, aniž by bylo nutné vytvořit imitaci kontextu pokaždé, když:
 
 ```fsharp
 namespace TransactionTests
@@ -414,43 +414,43 @@ let ``Test withdrawal transaction with 0.0 for balance``() =
     Assert.Equal(expected, actual)
 ```
 
-Tento postup by neměl všeobecně aplikuje vaší celý codebase, ale je dobrým způsobem, jak snížit často používaný pro složité internals a tyto interní informace o testování částí.
+Tento postup neměl být všeobecně aplikován na celém základu kódu, ale je dobrým způsobem, jak redukovat pro složité interní informace a tyto interní informace o testování částí.
 
 ## <a name="access-control"></a>Řízení přístupu
 
-F # má několik možností [řízení přístupu](../language-reference/access-control.md), zděděné z co je k dispozici v modulu runtime rozhraní .NET. Tyto nejsou použitelné jenom pro typy – je lze využít pro funkce, příliš.
+F # obsahuje několik možností [řízení přístupu](../language-reference/access-control.md), zděděné z co je k dispozici v modulu .NET runtime. Ty nejsou použitelné pouze pro typy – můžete využít pro funkce je moc.
 
-* Dáváte přednost jinou hodnotu než`public` typů a členů mají být veřejně použití. Tím se minimalizují také jaké několika příjemci k
-* Zajistit, aby všechny pomocné funkce `private`.
-* Zvažte použití `[<AutoOpen>]` na privátní modul pomocných funkcí, pokud budou množství.
+* Preferovat jinou hodnotu než`public` typy a členy, dokud nebudete potřebovat, aby to byla veřejně použitelné. Tím se minimalizují také jaké několik příjemců do
+* Přitom se snaží zachovat všechny funkce pomocné rutiny `private`.
+* Zvažte použití `[<AutoOpen>]` v privátní modulu pomocné funkce, pokud budou mnoho.
 
-## <a name="type-inference-and-generics"></a>Odvození typu a obecné typy
+## <a name="type-inference-and-generics"></a>Odvození typu proměnné a obecné typy
 
-Odvození typu můžete uložit v zadávání spoustu standardní. A Automatická Generalizace v kompilátoru F # můžete napsat kód více obecné s téměř žádné další úsilí na druhé straně. Tyto funkce však nejsou všeobecně funkční.
+Odvození typu proměnné můžete uložit z psát spoustu často používaný text. A Automatická Generalizace v kompilátoru F # můžete napsat obecnějším kód s téměř žádná práce navíc z vaší strany. Tyto funkce však nejsou univerzálně dobré.
 
-* Vezměte v úvahu označování názvy argumentu s explicitní typy v veřejná rozhraní API a nespoléhejte na odvození typu proměnné pro tuto.
+* Vezměte v úvahu názvy argumentů značení s explicitní typy ve veřejných rozhraní API a nespoléhejte na odvození typu proměnné pro tuto.
 
-    Důvodem je, že **jste** by měla být v ovládacím prvku tvaru rozhraní API, není kompilátoru. I když kompilátor můžete provést úlohu dobře v odvození typů pro vás, je možné, že tvar změnu rozhraní API, pokud internals, který přitom spoléhá na změnily typy. To může být to, co chcete použít, ale bude skoro určitě výsledkem narušující změně rozhraní API, který pak bude mít podřízené příjemci k řešení. Místo toho když explicitně řídíte tvaru veřejné rozhraní API, pak můžete řídit, tyto změny ukončování řádků. V podmínky DDD to může být představit jako vrstva proti poškození.
+    Důvodem je, že **vám** by měl být kontrolu nad tvar vaše rozhraní API, není kompilátor. Ačkoli kompilátor může provést úlohu pořádku v odvození typů za vás, je možné mít tvar změny rozhraní API, pokud se změnily interní informace, které spoléhá na typy. To může být žádoucí, ale je téměř jistě způsobí narušující změně rozhraní API se pak bude mít podřízené příjemci. Místo toho pokud explicitně určit tvar objektu veřejné rozhraní API, pak můžete určit tyto nejnovější změny. V podmínkách DDD to můžete představit jako vrstvu odolnou proti poškození.
 
-* Vezměte v úvahu smysluplný pojmenujete obecné argumenty.
+* Zvažte smysluplný název k obecným argumentům.
 
-    Pokud píšete skutečně obecném kódu, které nejsou specifické pro konkrétní domény, může pomoci nějaký výstižný název jinými programátory pochopení, které pracují v doméně. Například parametr typu s názvem `'Document` v kontextu interakci s dokumentem databáze je jasnější, že dokument obecné typy jsou přípustné podle funkce nebo člen pracujete s.
+    Pokud píšete skutečně obecný kód, který není specifická pro konkrétní domény, výstižný název může pomoci ostatním programátorům principy, které pracují v doméně. Například parametr typu s názvem `'Document` v kontextu interakci s dokumentem databáze zvýší jeho srozumitelnost, že typy obecného dokumentu může přijmout funkce nebo člen pracujete.
 
-* Vezměte v úvahu názvy parametrů obecného typu s PascalCase.
+* Vezměte v úvahu názvy parametrů obecného typu pomocí PascalCase.
 
-    Toto je obecná moct provádět akce v rozhraní .NET, proto se doporučuje používat PascalCase místo snake_case nebo camelCase.
+    Toto je hlavní způsob, jak k provádění akcí v .NET, proto se doporučuje použít PascalCase spíše než formátu snake_case nebo camelCase.
 
-Nakonec Automatická generalizace není vždy skvělým nástrojem pro osoby, které jsou nové F # nebo velké základu kódu. Není režie kognitivní pomocí součásti, které jsou obecné. Kromě toho pokud automaticky zobecněný funkce nejsou používat s různými typy vstupu (samostatně, pokud jsou určeny k použití jako takový umožňují) a potom žádné skutečné výhody jim se obecné v tomto bodě v čase. Vždy zvažte, pokud kód, který píšete budou ve skutečnosti využívat Obecné.
+A konečně Automatická generalizace není vždy skvělým nástrojem pro uživatele, kteří začínají s F # nebo velký základ kódu. V používání komponent, které jsou obecné, je nemuseli jsme se zdržovat. Kromě toho pokud automaticky obecné funkce nejsou použity s různými typy vstupu (umožňují samostatně, pokud jsou určeny pro použití jako takový), pak neexistuje žádné skutečné výhody je právě obecný od tohoto okamžiku v čase. Vždy zvažte, pokud kód, který píšete se skutečně přínosné obecný.
 
 ## <a name="performance"></a>Výkon
 
-F # hodnoty jsou neměnné ve výchozím nastavení, která umožňuje vyhnout určité třídy chyb (zejména těchto zahrnující souběžnosti a paralelismus). Ale v určitých případech se pro dosažení optimálního (nebo i přiměřené) efektivitu dobu provádění nebo přidělení paměti rozpětí pracovní může nejlépe implementovat pomocí místní mutace stavu. To je možné v základu přihlášení s F # s použitím `mutable` – klíčové slovo.
+F # hodnoty jsou neměnné ve výchozím nastavení, což vám umožní vyhnout určité třídy chyb (zejména těchto zahrnující souběžnosti a paralelismu). Ale v některých případech, tak, abyste dosáhli optimálního (nebo dokonce přiměřené) účinnosti doba provádění nebo přidělení paměti, rozsah práce může nejlépe dají implementovat pomocí místní mutace stavu. To je možné v základu vyjádření souhlasu s jazykem F # s `mutable` – klíčové slovo.
 
-Ale použití `mutable` v jazyce F # může mít rozporu s funkční čistotu. To je v pořádku, pokud upravit očekávání z čistoty [referenční průhlednost](https://en.wikipedia.org/wiki/Referential_transparency). Referenční průhlednost - není čistotu - je cílem při zápisu funkce F #. To umožňuje zapisovat rozhraní je funkční přes na základě mutace implementace pro výkon kódu kritického pro.
+Nicméně použití `mutable` v jazyce F # mohou mít pocit rozporu s funkční čistoty. To je v pořádku, pokud nastavíte očekávání z čistoty [referenční transparentnosti](https://en.wikipedia.org/wiki/Referential_transparency). Referenční transparentnost – ne čistoty - je cílem při psaní funkcí F #. To umožňuje psaní funkční rozhraní průběhu na základě mutace implementace výkonu kritického kódu.
 
-### <a name="wrap-mutable-code-in-immutable-interfaces"></a>Zalomení měnitelný kódu v neměnné rozhraní
+### <a name="wrap-mutable-code-in-immutable-interfaces"></a>Zabalení proměnlivé kód v neměnných rozhraní
 
-S referenční transparentnosti jako cíl je důležité napsat kód, který nevystavuje měnitelný underbelly výkonu důležitých funkcí. Například následující kód implementuje `Array.contains` funkce v základní knihovny F #:
+S referenční transparentnosti jako cíl je velmi důležité napsat kód, který nemůže vystavovat proměnlivé underbelly kritickém pro výkon funkce. Například následující kód implementuje `Array.contains` funkce v základní knihovně F #:
 
 ```fsharp
 [<CompiledName("Contains")>]
@@ -464,11 +464,11 @@ let inline contains value (array:'T[]) =
     state
 ```
 
-Volání této funkce vícekrát pole Základní nezmění, ani nebude vyžadovat údržbu žádný měnitelný stav v jeho použití. Referentially transparentní, je to i v případě, že téměř každý jednotlivý řádek kódu v něm používá mutace.
+Volání této funkce více než jednou podkladové pole nezmění, ani je potřeba, aby vám spravovat jakékoli proměnlivý stav v její použití. Referentially transparentní, je i v případě, téměř každý jednotlivý řádek kódu v rámci něj používá mutace.
 
-### <a name="consider-encapsulating-mutable-data-in-classes"></a>Vezměte v úvahu zapouzdřením měnitelný datový ve třídách
+### <a name="consider-encapsulating-mutable-data-in-classes"></a>Vezměte v úvahu zapouzdření proměnlivé datové ve třídách
 
-Předchozí příklad používá k zapouzdření operace pomocí měnitelný datový jedné funkce. To není vždy dostatečná pro složitější datových sad. Vezměte v úvahu následující sady funkcí:
+Předchozí příklad použil jedné funkce k zapouzdření pomocí proměnlivé datové operace. To není vždy dostatečná pro složitější datových sad. Vezměte v úvahu následující sady funkcí:
 
 ```fsharp
 open System.Collections.Generic
@@ -487,7 +487,7 @@ let closureTableContains (key, value) (t: Dictionary<_, HashSet<_>>) =
     | (false, _) -> false
 ```
 
-Tento kód je původce, ale zveřejňuje na základě mutace datová struktura, že se opravdu jedná odpovědné za údržbu. To může být uzavřen uvnitř třídu bez základní členů, které můžete změnit:
+Tento kód je výkonné, ale zveřejňuje na základě mutace datová struktura, že volající zodpovídají za údržbu. To může být zabaleny uvnitř třídy bez základní členů, které můžete změnit:
 
 ```fsharp
 open System.Collections.Generic
@@ -510,11 +510,11 @@ type Closure1Table() =
         | (false, _) -> false
 ```
 
-`Closure1Table` zapouzdří podkladová struktura dat na základě mutace, a tím není vynucení volající udržovat podkladová struktura data. Třídy jsou efektivní způsob, jak zapouzdřit data a rutin, které jsou založené na mutace bez vystavení podrobnosti pro volající.
+`Closure1Table` zapouzdřuje základní na základě mutace datové struktury, a tím nevynucuje volající k údržbě základní datová struktura. Třídy jsou efektivní způsob, jak zapouzdřit dat a postupy, které jsou založeny na mutace bez vystavení podrobnosti o volajícím.
 
-### <a name="prefer-let-mutable-to-reference-cells"></a>Dáváte přednost `let mutable` na referenční buňky
+### <a name="prefer-let-mutable-to-reference-cells"></a>Preferovat `let mutable` na odkazové buňky
 
-Referenční buňky představují způsob, jak představují odkaz na hodnotu než vlastní hodnota. Přestože mohou být použity pro kód kritický pro výkon, se obecně nedoporučuje. Podívejte se na následující příklad:
+Odkazové buňky jsou způsob, jak reprezentaci odkaz na hodnotu než samotná hodnota. I když mohou být použity pro kód kritickém pro výkon, se obecně nedoporučuje. Vezměte v úvahu v následujícím příkladu:
 
 ```fsharp
 let kernels =
@@ -528,7 +528,7 @@ let kernels =
     !acc |> Seq.toList
 ```
 
-Použijte odkaz na buňku teď "zahltí" všechny následné kódu pomocí museli dereference a znovu referenční základní data. Místo toho zvažte `let mutable`:
+Použít odkazovou buňku nyní "zahltí" všechny následné kódu pomocí museli přistoupit přes ukazatel a znovu odkazují na podkladová data. Místo toho zvažte `let mutable`:
 
 ```fsharp
 let kernels =
@@ -542,11 +542,11 @@ let kernels =
     acc |> Seq.toList
 ```
 
-Kromě zajištění dostatečného jediný bod mutace uprostřed výrazu lambda, všechny ostatní kód, který dotykem `acc` to lze provést tak, aby se neliší využití od normální `let`-vázaný neměnné hodnotu. To bude usnadňují časem změnit.
+Kromě jediný bod mutace uprostřed výraz lambda, všechny ostatní kód, který se dotýká `acc` můžete udělat tak, aby se nijak neliší použití normální `let`-hranice neměnné hodnotu. To bude usnadňují v průběhu času měnit.
 
 ## <a name="object-programming"></a>Objekt programování
 
-F # má plnou podporu pro objekty a objektově orientované koncepty (ú). I když mnohé koncepty ú jsou výkonný a užitečné, ne všechny z nich jsou ideální používat. Následující seznamy nabízí pokyny k kategorií ú funkcí na vysoké úrovni.
+F # obsahuje plnou podporu pro objekty a objektově orientované koncepty (zálohy). I když mnohé koncepty zálohy jsou výkonné a užitečné, některé z nich jsou ideální pro použití. Následující seznamy nabízí pokyny k kategorie funkcí zálohy na vysoké úrovni.
 
 **Zvažte použití těchto funkcí v mnoha situacích:**
 
@@ -554,16 +554,16 @@ F # má plnou podporu pro objekty a objektově orientované koncepty (ú). I kdy
 * Členy instance
 * Implicitní konstruktory
 * Statické členy
-* Indexer zápis (`arr.[x]`)
+* Notace indexeru (`arr.[x]`)
 * Pojmenované a nepovinné argumenty
 * Rozhraní a implementace rozhraní
 
-**Nemáte přístup pro tyto funkce nejprve, ale uvážlivě aplikovat když jsou vhodné k vyřešení problému:**
+**Nedostanou pro účely těchto funkcí nejprve, ale uvážlivě je použije, pokud jsou vhodné k vyřešení problému:**
 
 * Přetěžování metody
-* Zapouzdřené měnitelný dat
+* Zapouzdřené proměnlivé datové
 * Operátory pro typy
-* Automaticky vlastnosti
+* Automatické vlastnosti
 * Implementace `IDisposable` a `IEnumerable`
 * Rozšíření typů
 * Události
@@ -571,20 +571,20 @@ F # má plnou podporu pro objekty a objektově orientované koncepty (ú). I kdy
 * Delegáty
 * Výčty
 
-**Pokud je třeba ji používat obecně předejít tyto funkce:**
+**Pokud je nutné použít obecně nepoužívejte tyto funkce:**
 
-* Hierarchie dědičnosti na základě typu a implementace dědičnosti
+* Hierarchie dědičnosti na základě typu a implementaci dědičnosti
 * Hodnoty Null a `Unchecked.defaultof<_>`
 
-### <a name="prefer-composition-over-inheritance"></a>Dáváte přednost složení přes dědičnost
+### <a name="prefer-composition-over-inheritance"></a>Preferovat složení prostřednictvím dědičnosti
 
-[Složení přes dědičnost](https://en.wikipedia.org/wiki/Composition_over_inheritance) je dlouhotrvající stylu, které můžete řídit kód dobrý F #. Základní princip je, že by neměl vystavit základní třídu a vynutit volající dědění z získat funkce základní třídy.
+[Složení prostřednictvím dědičnosti](https://en.wikipedia.org/wiki/Composition_over_inheritance) je dlouhotrvající idiom, která může splňovat dobré kódu jazyka F #. Základním principem je, že by neměla vystavit základní třídu a vynutit volající dědit ze základní třídy pro funkce.
 
-### <a name="use-object-expressions-to-implement-interfaces-if-you-dont-need-a-class"></a>Implementace rozhraní, pokud nepotřebujete třídu pomocí objektové výrazy
+### <a name="use-object-expressions-to-implement-interfaces-if-you-dont-need-a-class"></a>Můžete implementovat rozhraní, pokud už nepotřebujete třídu objektové výrazy
 
-[Objekt výrazy](../language-reference/object-expressions.md) umožňují implementovat rozhraní za chodu na hodnotu bez nutnosti Uděláte to tak uvnitř třídu vazby implementovaných rozhraní. Je to vhodné, zvlášť pokud je _pouze_ musí implementovat rozhraní a není nutné pro úplné třídu.
+[Výrazy objektu](../language-reference/object-expressions.md) vám umožňují v reálném čase, implementovat rozhraní implementované rozhraní vazby na hodnotu bez nutnosti učinit uvnitř třídy. To se může hodit, zejména v případě můžete _pouze_ musí implementovat rozhraní a nepotřebujete úplné třídy.
 
-Například, zde je kód, který běží v [Ionide](http://ionide.io/) zadat akce opravy na kód, pokud je symbol, který jste přidali `open` příkaz pro:
+Například tady je kód, který běží v [Ionide](http://ionide.io/) poskytnout akce opravy kódu, pokud jste přidali symbol, který není nutné `open` příkaz pro:
 
 ```fsharp
     let private createProvider () =
@@ -608,11 +608,11 @@ Například, zde je kód, který běží v [Ionide](http://ionide.io/) zadat akc
         }
 ```
 
-Protože při interakci s Visual Studio kód rozhraní API není nutné pro třídu, objektové výrazy jsou ideální nástrojem pro to. Rovněž jsou důležité pro testování, pokud chcete se zakázaným inzerováním na rozhraní s testovací rutiny ad hoc způsobem částí.
+Protože není nutné pro třídu při práci s kódem API sady Visual Studio, objektové výrazy jsou ideální nástroj pro tento. Jsou také užitečná pro testování částí, pokud chcete zástupných procedur na rozhraní s testovací rutiny ad hoc způsobem.
 
 ## <a name="type-abbreviations"></a>Zkratky typů
 
-[Typ – zkratky](../language-reference/type-abbreviations.md) jsou pohodlný způsob, jak přiřadit štítek jiného typu, například podpis funkce nebo více komplexního typu. Například následující alias přiřadí štítek co je potřeba k definování výpočetní s [CNTK](https://www.microsoft.com/cognitive-toolkit/), hluboká učení knihovny:
+[Typ – zkratky](../language-reference/type-abbreviations.md) jsou pohodlný způsob, jak přiřadit popisek k jinému typu, jako je například podpis funkce nebo více komplexního typu. Například následující alias přiřadí popisek co je potřeba definovat výpočet s [CNTK](https://www.microsoft.com/en-us/cognitive-toolkit/), obsáhlý learning knihovny:
 
 ```fsharp
 open CNTK
@@ -621,24 +621,24 @@ open CNTK
 type Computation = DeviceDescriptor -> Variable -> Function
 ```
 
-`Computation` Název je pohodlný způsob, jak označují všechny funkce, která odpovídá podpisu je aliasy. Pomocí zkratky typů jako to je vhodné a umožňuje více stručného kódu.
+`Computation` Jmenuje pohodlný způsob, jak označit všechny funkce, která odpovídá podpisu je aliasing. Použití zkratky typů tímto způsobem je vhodné a umožňuje stručnější kódu.
 
-### <a name="avoid-using-type-abbreviations-to-represent-your-domain"></a>Nepoužívejte zkratky typů představují doménu
+### <a name="avoid-using-type-abbreviations-to-represent-your-domain"></a>Vyhněte se použití zkratky typů k vyjádření vaší domény
 
-I když zkratky typů jsou vhodné pro pojmenujete funkce podpisy, může se jednat matoucí při zkrácený zápis parametru jiné typy. Vezměte v úvahu tato zkratka:
+I když zkratky typů jsou vhodné pro poskytnutí názvu podpisech funkcí, mohou být matoucí při zkrácený zápis parametru jiné typy. Vezměte v úvahu tato zkratka:
 
 ```fsharp
 // Does not actually abstract integers.
 type BufferSize = int
 ```
 
-To může být matoucí několika způsoby:
+To může být matoucí několika různými způsoby:
 
 * `BufferSize` není abstrakci; je právě jiný název pro celé číslo.
-* Pokud `BufferSize` je vystaven ve veřejné rozhraní API, ho můžete snadno dojít k nesprávné interpretaci rozumí více než jen `int`. Obecně platí, typ domény mají více atributů k nim a nejsou primitivní typy, jako je `int`. Tato zkratka v rozporu se předpokládá, že.
-* Malá a velká písmena z `BufferSize` (PascalCase) znamená, že tento typ obsahuje další data.
-* Tento alias nenabízí vyšší přehlednost ve srovnání s poskytováním pojmenovaný argument funkci.
-* Zkratka nebude manifest v kompilovaném IL; je právě celé číslo a tento alias je konstrukce kompilaci.
+* Pokud `BufferSize` je přístupný ve veřejném rozhraní API, se můžete snadno dojít k nesprávné interpretaci znamená více než jen `int`. Obecně platí, typy domén mít víc atributů k nim a nejsou primitivními typy jako `int`. Tato zkratka je v rozporu tento předpoklad.
+* Použití malých a velkých `BufferSize` (PascalCase) znamená, že tento typ obsahuje další data.
+* Tento alias se nebude poskytovat lepší čitelnosti ve srovnání s poskytováním pojmenovaný argument pro funkci.
+* Zkratka neprojeví v kompilovaných IL; je pouze celé číslo a tento alias je konstrukce za kompilace.
 
 ```fsharp
 module Networking =
@@ -647,4 +647,4 @@ module Networking =
         ...
 ```
 
-V souhrnu, nebezpečí s zkratky typů je, že jsou **není** abstrakce nad typy jsou zkrácený zápis parametru. V předchozím příkladu `BufferSize` je právě `int` skrytě se žádná další data ani žádné výhody ze systému typ kromě toho, co `int` již má.
+Stručně řečeno, trávení s zkratky typů je, že jsou **není** abstrakce typy jsou zkrácený zápis parametru. V předchozím příkladu `BufferSize` je právě `int` skrytě se žádná další data ani žádné výhody z typu systému kromě co `int` už má.

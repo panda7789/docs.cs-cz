@@ -3,13 +3,12 @@ title: AsymmetricSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 7bd3b6be-8f77-4927-93ae-6fa371893cca
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 09bfaa3ab4f2aceb3e80644953a87686fca9830c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 63af1c9a607cb9f81e2c0abf795ee2b3432cbf9c
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33484359"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47075054"
 ---
 # <a name="asymmetricsecuritybindingelement"></a>AsymmetricSecurityBindingElement
 AsymmetricSecurityBindingElement  
@@ -35,18 +34,18 @@ class AsymmetricSecurityBindingElement : SecurityBindingElement
   
  Přístup k typu: jen pro čtení  
   
- Pořadí zpráva šifrování a podepisování pro tuto vazbu.  
+ Pořadí zpráv šifrování a podepisování pro tuto vazbu.  
   
 ### <a name="requiresignatureconfirmation"></a>RequireSignatureConfirmation  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Jestli vazby vyžaduje potvrzení podpisu.  
+ Určuje, zda vytvoření vazby vyžaduje potvrzení podpisu.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

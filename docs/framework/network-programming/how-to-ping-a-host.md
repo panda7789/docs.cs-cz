@@ -6,16 +6,15 @@ helpviewer_keywords:
 ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 62ab62520e42fcf3ecfb8bd7fd6b57485451e6e4
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e066af175982b71fb42bf2eec75fe9d92f532e61
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394024"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080692"
 ---
 # <a name="how-to-ping-a-host"></a>Postupy: příkaz Ping na hostitele
-Tento příklad ukazuje, jak na příkaz ping vzdálený hostitel.  
+Tento příklad ukazuje, jak pomocí příkazu ping vzdálený hostitel.  
   
 ## <a name="example"></a>Příklad  
   
@@ -126,4 +125,4 @@ namespace Examples.System.Net.NetworkInformation.PingTest
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na **System.Net** oboru názvů.
+-   Odkazy **System.Net** oboru názvů.

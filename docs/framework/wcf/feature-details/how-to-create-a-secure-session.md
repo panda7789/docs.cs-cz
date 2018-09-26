@@ -8,35 +8,34 @@ helpviewer_keywords:
 - security [WCF], creating a session
 ms.assetid: b6f42b5a-bbf7-45cf-b917-7ec9fa7ae110
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: ce351a87e70b09a2f68654af817e28fa3145d79d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 01ad849090bd66ba7e0b4e062f78ad7a04ad059d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493194"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084680"
 ---
 # <a name="how-to-create-a-secure-session"></a>Postupy: vytvoření zabezpečené relace
-S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, vazby poskytované systémem Windows Communication Foundation (WCF) automaticky použít zabezpečených relací, pokud je povolená zabezpečení zpráv.  
+S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, vazeb poskytovaných systémem Windows Communication Foundation (WCF) automaticky pomocí zabezpečených relací, pokud je povoleno zabezpečení zpráv.  
   
- Ve výchozím nastavení zabezpečených relací není i po webový server, který recykluje. Po vytvoření zabezpečené relace mezipaměti klienta a služby, klíč, který je přidružen zabezpečené relace. Jak se vyměňují zprávy, se vyměňují jenom identifikátor ke klíči v mezipaměti. Pokud webový server je recykluje, mezipaměti je také recykluje, tak, aby webový server nemůže načíst uložené v mezipaměti klíče pro identifikátor. V takovém případě je klientovi zpět vyvolána výjimka. Zabezpečených relací, které používají tokenu kontextu zabezpečení stavová (SCT) přežijí recyklovány webového serveru. Další informace o používání stavová SCT v zabezpečené relaci najdete v tématu [postupy: vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
+ Ve výchozím nastavení zabezpečených relací nepřežije webový server, který se recykluje. Po vytvoření zabezpečené relace, klient a služba mezipaměti klíč, který je přidružený k zabezpečené relace. Jak se vyměňují zprávy, se vyměňují pouze identifikátor pro klíč uložený v mezipaměti. Pokud se recykluje webový server, mezipaměť je také recyklovat, tak, aby webový server nemůže načíst uložené v mezipaměti klíče pro identifikátor. Pokud k tomu dojde, výjimka je vyvolána zpět do klienta. Zabezpečené relace, které používají token kontextu zabezpečení stavové (SCT) přežijí neumožňovala recyklaci, webový server. Další informace o používání stavové SCT v zabezpečené relaci v tématu [jak: vytvořit Token kontextu zabezpečení pro zabezpečenou relaci](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
-### <a name="to-specify-that-a-service-uses-secure-sessions-by-using-one-of-the-system-provided-bindings"></a>Chcete-li určit, že služba používá zabezpečených relací pomocí jedné z vazby poskytované systémem  
+### <a name="to-specify-that-a-service-uses-secure-sessions-by-using-one-of-the-system-provided-bindings"></a>Chcete-li určit, že služba používá zabezpečených relací pomocí jedné z vazeb poskytovaných systémem  
   
--   Nakonfigurujte službu, která používá vazbu poskytované systémem, který podporuje zabezpečení zpráv.  
+-   Konfigurace vazeb poskytovaných systémem, který podporuje zabezpečení zpráv pomocí ve službě.  
   
-     S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, pokud jsou vazby poskytované systémem nakonfigurovány pro použití zabezpečení zpráv WCF automaticky používá zabezpečených relací. Následující tabulka uvádí vazby poskytované systémem, které podporují zabezpečení zpráv a zda je zabezpečení zpráv výchozího mechanismu zabezpečení.  
+     S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md) vazby, když jsou vazeb poskytovaných systémem nakonfigurovány pro použití zabezpečení zpráv WCF automaticky používá zabezpečených relací. V následující tabulce jsou uvedeny vazeb poskytovaných systémem, které podporují zabezpečení zpráv a zda je zabezpečení zpráv výchozího mechanismu zabezpečení.  
   
-    |Vazby poskytované systémem|Konfigurační element|Zabezpečení zpráv na ve výchozím nastavení|  
+    |Vazeb poskytovaných systémem|Element konfigurace|Zabezpečení zpráv na ve výchozím nastavení|  
     |------------------------------|---------------------------|------------------------------------|  
     |<xref:System.ServiceModel.BasicHttpBinding>|[\<basicHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)|Ne|  
     |<xref:System.ServiceModel.WSHttpBinding>|[\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)|Ano|  
     |<xref:System.ServiceModel.WSDualHttpBinding>|[\<wsDualHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)|Ano|  
     |<xref:System.ServiceModel.WSFederationHttpBinding>|[\<wsFederationHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|Ano|  
     |<xref:System.ServiceModel.NetTcpBinding>|[\<netTcpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)|Ne|  
-    |<xref:System.ServiceModel.NetMsmqBinding>|[\<– netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|Ne|  
+    |<xref:System.ServiceModel.NetMsmqBinding>|[\<netMsmqBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/netmsmqbinding.md)|Ne|  
   
-     Následující příklad kódu používá k určení vazbu s názvem konfigurace `wsHttpBinding_Calculator` používající [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)zabezpečení zpráv a zabezpečené relace.  
+     Následující příklad kódu používá k určení vazeb s názvem konfigurace `wsHttpBinding_Calculator` , která používá [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)zabezpečení zpráv a zabezpečené relace.  
   
     ```xml  
     <bindings>  
@@ -50,21 +49,21 @@ S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configu
     </bindings>  
     ```  
   
-     Následující příklad kódu určuje, že [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)zabezpečení zpráv a zabezpečení relací se používají k zabezpečení `secureCalculator` služby.  
+     Následující příklad kódu určuje, že [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)zabezpečení zpráv a zabezpečené relace se používají k zabezpečení `secureCalculator` služby.  
   
      [!code-csharp[c_CreateSecureSession#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#1)]
      [!code-vb[c_CreateSecureSession#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_createsecuresession/vb/secureservice.vb#1)]  
   
     > [!NOTE]
-    >  Může být vypnuto zabezpečených relací pro [ <wsHttpBinding> ](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) nastavením `establishSecurityContext` atribut `false`. Pro ostatní poskytované systémem vazby zabezpečených relací lze pouze vypnout tak, že vytvoříte vlastní vazby.  
+    >  Zabezpečené relace lze vypnout pro [ <wsHttpBinding> ](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md) nastavením `establishSecurityContext` atribut `false`. Pro jiných vazeb poskytovaných systémem zabezpečených relací můžete vypnout jenom tak, že vytvoříte vlastní vazby.  
   
-### <a name="to-specify-that-a-service-uses-secure-sessions-by-using-a-custom-binding"></a>Chcete-li určit, že služba používá zabezpečených relací pomocí vlastní vazby  
+### <a name="to-specify-that-a-service-uses-secure-sessions-by-using-a-custom-binding"></a>Chcete-li určit, že služba používá zabezpečených relací s použitím vlastní vazby  
   
--   Vytvoření vlastní vazby, která určuje, že protokolu SOAP zprávy jsou chráněny zabezpečené relaci.  
+-   Vytvoření vlastní vazby, která určuje, že zprávy protokolu SOAP jsou chráněny zabezpečenou relaci.  
   
-     Další informace o vytváření vlastních vazeb najdete v tématu [postupy: přizpůsobení vazbu System-Provided](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md).  
+     Další informace o vytvoření vlastní vazby, naleznete v tématu [postupy: přizpůsobení vazeb System-Provided](../../../../docs/framework/wcf/extending/how-to-customize-a-system-provided-binding.md).  
   
-     Následující příklad kódu používá konfiguraci určuje vlastní vazby této zprávy pomocí zabezpečené relaci.  
+     Následující příklad kódu používá konfigurace k určení vlastních vazeb této zprávy pomocí zabezpečenou relaci.  
   
     ```xml  
     <bindings>  
@@ -80,7 +79,7 @@ S výjimkou produktů [ \<basicHttpBinding >](../../../../docs/framework/configu
     </bindings>  
     ```  
   
-     Následující příklad kódu vytvoří vlastní vazby, který používá <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> režim ověřování bootstrap zabezpečené relaci.  
+     Následující příklad kódu vytvoří vlastní vazby, který používá <xref:System.ServiceModel.Configuration.AuthenticationMode.MutualCertificate> režim ověřování ke spuštění zabezpečenou relaci.  
   
      [!code-csharp[c_CreateSecureSession#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_createsecuresession/cs/secureservice.cs#2)]
      [!code-vb[c_CreateSecureSession#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_createsecuresession/vb/secureservice.vb#2)]  

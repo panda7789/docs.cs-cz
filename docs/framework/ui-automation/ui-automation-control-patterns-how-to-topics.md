@@ -9,13 +9,12 @@ helpviewer_keywords:
 ms.assetid: 72c80262-8ca9-4624-9bd6-96984c5b7c5c
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: a5b67340ca63637bd5ba2e59e4e5b774abbae58d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 44f4befc03c886e51a19a44f45f7cbdc20f60fe3
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526700"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47076271"
 ---
 # <a name="ui-automation-control-patterns-how-to-topics"></a>Postupy: Témata vzorů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]

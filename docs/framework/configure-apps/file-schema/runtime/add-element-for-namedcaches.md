@@ -1,5 +1,5 @@
 ---
-title: '&lt;Přidat&gt; Element pro &lt;namedCaches&gt;'
+title: '&lt;Přidat&gt; – Element pro &lt;namedCaches&gt;'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - add element for <namedCaches>
@@ -7,20 +7,19 @@ helpviewer_keywords:
 ms.assetid: ce2a63a8-c829-4742-a6ea-72ee5d89f169
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: d65dfd9a1560f2657f48b327277b64ab77014b47
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 695ee744bdf2226f0647c4cdf142a2dca4e97a4a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743820"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47085811"
 ---
-# <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;Přidat&gt; Element pro &lt;namedCaches&gt;
-Přidá `namedCache` položku s `namedCaches` kolekci pro mezipaměť.  
+# <a name="ltaddgt-element-for-ltnamedcachesgt"></a>&lt;Přidat&gt; – Element pro &lt;namedCaches&gt;
+Přidá `namedCache` položku a `namedCaches` kolekce pro mezipaměť.  
   
  \<system.runtime.caching>  
 \<memoryCache >  
-\<namedCaches >  
+\<namedcaches – >  
 \<add>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -42,10 +41,10 @@ Přidá `namedCache` položku s `namedCaches` kolekci pro mezipaměť.
   
 |Atribut|Popis|  
 |-|-|  
-|`CacheMemoryLimitMegabytes`|Celočíselná hodnota, která určuje maximální povolená velikost (v megabajtech), instanci <xref:System.Runtime.Caching.MemoryCache> můžete dosáhnout. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> heuristiky Automatická změna velikosti třídy se používají ve výchozím nastavení.|  
+|`CacheMemoryLimitMegabytes`|Celočíselná hodnota, která určuje maximální povolenou velikost (v megabajtech), která instance <xref:System.Runtime.Caching.MemoryCache> růst, aby. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> heuristiky automatické přizpůsobení velikosti třídy se používají ve výchozím nastavení.|  
 |`Name`|Název mezipaměti.|  
-|`PhysicalMemoryLimitPercentage`|Celočíselná hodnota mezi 0 a 100 určující maximální procento paměti fyzicky nainstalovaném počítači, která mohou být spotřebovávána mezipaměti. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> heuristiky Automatická změna velikosti třídy se používají ve výchozím nastavení.|  
-|`PollingInterval`|Hodnota, která určuje časový interval, po jejímž uplynutí implementace mezipaměti porovná aktuální zatížení paměti do paměti absolutní a na základě procenta omezení, které jsou nastavené pro instanci mezipaměti. Tato hodnota je uvedeno ve formátu hh: mm".|  
+|`PhysicalMemoryLimitPercentage`|Celočíselná hodnota mezi 0 a 100 určující maximální procento paměti fyzicky nainstalované počítače, které mohou být spotřebovány mezipaměti. Výchozí hodnota je 0, což znamená, že <xref:System.Runtime.Caching.MemoryCache> heuristiky automatické přizpůsobení velikosti třídy se používají ve výchozím nastavení.|  
+|`PollingInterval`|Hodnota, která určuje časový interval, po jejímž uplynutí implementaci mezipaměti porovná aktuální zatížení paměti do paměti absolutní a založený na procentech omezení, které jsou nastavené pro instanci mezipaměti. Tato hodnota se zadává ve formátu "hh: mm:".|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  `None`  
@@ -54,13 +53,13 @@ Přidá `namedCache` položku s `namedCaches` kolekci pro mezipaměť.
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci nastavení konfigurace pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instance.|  
+|[\<namedCaches>](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)|Obsahuje kolekci prvků konfigurace nastavení pro pojmenované <xref:System.Runtime.Caching.MemoryCache> instancí.|  
   
 ## <a name="remarks"></a>Poznámky  
- `add` Element přidá položku do `namedCaches` kolekci pro mezipaměť. Můžete použít [vymazat](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md) element před použitím `add` elementu, který chcete být jisti, že neexistují žádné další s názvem mezipaměti v kolekci. Tento element lze použít v souboru machine.config a v souboru Web.config.  
+ `add` Element přidá záznam, tím `namedCaches` kolekce pro mezipaměť. Můžete použít [vymazat](../../../../../docs/framework/configure-apps/file-schema/runtime/clear-element-for-namedcaches.md) prvek před použitím `add` element je potřeba mít jistotu, že neexistují žádné jiné s názvem mezipaměti v kolekci. Tento element lze použít v souboru machine.config a v souboru Web.config.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak definovat nastavení pro výchozí `namedCache` položku na `namedCaches` kolekci pro mezipaměť.  
+ Následující příklad ukazuje, jak definovat nastavení pro výchozí `namedCache` položku a `namedCaches` kolekce pro mezipaměť.  
   
 ```xml  
 <configuration>  
@@ -80,4 +79,4 @@ Přidá `namedCache` položku s `namedCaches` kolekci pro mezipaměť.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [\<namedCaches > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)
+ [\<namedcaches – > – Element (nastavení mezipaměti)](../../../../../docs/framework/configure-apps/file-schema/runtime/namedcaches-element-cache-settings.md)

@@ -1,5 +1,5 @@
 ---
-title: Příklad soketu asynchronní serveru
+title: Příklad asynchronního serverového soketu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,16 +11,15 @@ helpviewer_keywords:
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 9b770101e4295ea0c254905dd31f0e57527346fa
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.openlocfilehash: 6816b22014f9e6669abe0b1aab62d0863e1f895b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728398"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47090133"
 ---
-# <a name="asynchronous-server-socket-example"></a>Příklad soketu asynchronní serveru
-V následujícím příkladu programu vytvoří server, který přijímá požadavky na připojení od klientů. Server je vytvořené s asynchronní soketu a spuštění aplikace server není pozastaven, kdy čeká připojení z klienta. Aplikace obdrží řetězec z klienta, zobrazí řetězec v konzole a pak vrátí řetězec zpět do klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" signál konec zprávy.  
+# <a name="asynchronous-server-socket-example"></a>Příklad asynchronního serverového soketu
+Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů. Server je sestavena s asynchronní soketu, tak, že není pozastavené spuštění serverové aplikace čeká připojení z klienta. Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.  
   
 ```vb  
 Imports System  

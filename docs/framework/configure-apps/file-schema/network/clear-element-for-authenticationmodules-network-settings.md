@@ -1,5 +1,5 @@
 ---
-title: '&lt;Vymazat&gt; Element pro authenticationModules – (nastavení sítě)'
+title: '&lt;Vymazat&gt; – Element pro authenticationModules (nastavení sítě)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/authenticationModules/clear
@@ -12,21 +12,20 @@ helpviewer_keywords:
 ms.assetid: dc522c45-4a80-4831-8955-f7b68a47edfd
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 94e0242ca685e8b0118a55ba44fb0569c13f10f3
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: ef12a475dde103023d3411fb68efb3bdb4f6d116
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32751984"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47076690"
 ---
-# <a name="ltcleargt-element-for-authenticationmodules-network-settings"></a>&lt;Vymazat&gt; Element pro authenticationModules – (nastavení sítě)
+# <a name="ltcleargt-element-for-authenticationmodules-network-settings"></a>&lt;Vymazat&gt; – Element pro authenticationModules (nastavení sítě)
 Vymaže všechny moduly ověřování z aplikace.  
   
  \<Konfigurace >  
 \<system.net>  
 \<authenticationModules – >  
-\<Clear >  
+\<Vymazat >  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -47,13 +46,13 @@ Vymaže všechny moduly ověřování z aplikace.
   
 |**Element**|**Popis**|  
 |-----------------|---------------------|  
-|[authenticationModules –](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověřování žádostí o síti.|  
+|[authenticationModules –](../../../../../docs/framework/configure-apps/file-schema/network/authenticationmodules-element-network-settings.md)|Určuje moduly používané k ověření síťové požadavky.|  
   
 ## <a name="remarks"></a>Poznámky  
- `clear` Element odebere všechny ověřovací moduly, které byly dříve definované v konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurace.  
+ `clear` Element odebere všechny moduly ověřování, které byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii konfigurace.  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
  Následující příklad odebere všechny moduly nakonfigurované ověřování.  

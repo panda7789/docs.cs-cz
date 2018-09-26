@@ -3,13 +3,12 @@ title: Řešení ReliableSecureProfile
 ms.date: 03/30/2017
 ms.assetid: 921edc41-e91b-40f9-bde9-b6148b633e61
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: dfdafbcdc461c80192e310a86d5bff50f0885283
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 8bb7c6f9835fc7c0926e918563f85a28281f8a89
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46540934"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073564"
 ---
 # <a name="reliable-secure-profile"></a>Řešení ReliableSecureProfile
 Tato ukázka předvádí, jak sestavit WCF a [spolehlivý zabezpečený profil](https://go.microsoft.com/fwlink/?LinkId=178140) (RSP). Tato ukázka předvádí, provádění [vytvořit připojení](https://go.microsoft.com/fwlink/?LinkId=178141) kanál, který se může skládat spolu s spolehlivé zasílání zpráv a volitelně zabezpečeného kanálu k vytvoření spolehlivé zabezpečené vazby na základě RSP specifikace.  

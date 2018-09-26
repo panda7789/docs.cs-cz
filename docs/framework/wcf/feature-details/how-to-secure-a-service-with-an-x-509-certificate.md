@@ -6,71 +6,70 @@ dev_langs:
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 73fd9919d1403ef592e5b81c11b6eb659baea669
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1c5ab5e76ebed549df09b365a5a271f81003a517
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493039"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073551"
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>Postupy: Zabezpečení služby certifikátem X.509
-Zabezpečení služby certifikátem X.509 je základní technika, použít většinu vazby ve Windows Communication Foundation (WCF). Toto téma vás provede kroky konfigurace služba s vlastním hostováním společně s certifikátem X.509.  
+Zabezpečení služby certifikátem X.509 je základní technika, používat většinu vazby Windows Communication Foundation (WCF). Toto téma vás provede kroky konfigurace v místním prostředí služby pomocí certifikátu X.509.  
   
- Předpokladem je platný certifikát, který slouží k ověření serveru. Certifikát musí být k serveru vydán důvěryhodnou certifikační autoritou. Pokud certifikát platný není, všechny klient pokouší použít službu nebude důvěřovat služby a v důsledku toho budou provedeny žádné připojení. Další informace o používání certifikátů najdete v tématu [práce s certifikáty](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ Předpokladem je platný certifikát, který slouží k ověření tohoto serveru. Certifikát musí být na server vydán důvěryhodnou certifikační autoritou. Pokud certifikát není platný, jakýkoli klient pokouší použít služba nebude důvěřovat služby a v důsledku toho se nevytváří žádné připojení. Další informace o používání certifikátů najdete v tématu [Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
 ### <a name="to-configure-a-service-with-a-certificate-using-code"></a>Pro konfiguraci služby pomocí certifikátu pomocí kódu  
   
-1.  Vytvoření kontraktu služby a implementovaná službu. Další informace najdete v tématu [návrh a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md).  
+1.  Vytvoření kontraktu služby a služba implementovaná. Další informace najdete v tématu [návrh a implementace služeb](../../../../docs/framework/wcf/designing-and-implementing-services.md).  
   
-2.  Vytvoření instance <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte režim zabezpečení na <xref:System.ServiceModel.SecurityMode.Message>, jak je znázorněno v následujícím kódu.  
+2.  Vytvoření instance <xref:System.ServiceModel.WSHttpBinding> třídy a nastavte jeho režim zabezpečení na <xref:System.ServiceModel.SecurityMode.Message>, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[C_SecureWithCertificate#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#1)]
      [!code-vb[C_SecureWithCertificate#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#1)]  
   
-3.  Vytvořte dvě <xref:System.Type> proměnné, jednu pro typ smlouvy a implementovaná kontrakt, jak je znázorněno v následujícím kódu.  
+3.  Pak vytvoříte další dva <xref:System.Type> proměnné, jedno pro typ kontraktu a implementovaného kontraktu, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[C_SecureWithCertificate#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#2)]
      [!code-vb[C_SecureWithCertificate#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#2)]  
   
-4.  Vytvoření instance <xref:System.Uri> třídy pro bázovou adresu služby. Protože `WSHttpBinding` používá přenos HTTP, identifikátor URI (Uniform Resource) musí začínat řetězcem schéma této nebo Windows Communication Foundation (WCF) vyvolá výjimku, když je otevřen službu.  
+4.  Vytvoření instance <xref:System.Uri> třídy pro bázovou adresu služby. Vzhledem k tomu, `WSHttpBinding` používá přenos pomocí protokolu HTTP, identifikátor URI (Uniform Resource) musí začínat řetězcem tohoto schématu nebo Windows Communication Foundation (WCF) vyvolá výjimku při otevření služby.  
   
      [!code-csharp[C_SecureWithCertificate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#3)]
      [!code-vb[C_SecureWithCertificate#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#3)]  
   
-5.  Vytvořit novou instanci třídy <xref:System.ServiceModel.ServiceHost> se proměnná typu implementovaná kontraktu a identifikátor URI.  
+5.  Vytvořit novou instanci třídy <xref:System.ServiceModel.ServiceHost> třída s atributem proměnná typu implementovaného kontraktu a identifikátor URI.  
   
      [!code-csharp[C_SecureWithCertificate#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#4)]
      [!code-vb[C_SecureWithCertificate#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#4)]  
   
-6.  Přidat <xref:System.ServiceModel.Description.ServiceEndpoint> služby pomocí <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> metoda. Předejte kontrakt, vazbu a adresu koncového bodu do konstruktoru, jak je znázorněno v následujícím kódu.  
+6.  Přidat <xref:System.ServiceModel.Description.ServiceEndpoint> pomocí služby <xref:System.ServiceModel.ServiceHost.AddServiceEndpoint%2A> metody. Předejte kontrakt, vazbu a adresu koncového bodu konstruktoru, jak je znázorněno v následujícím kódu.  
   
      [!code-csharp[C_SecureWithCertificate#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#5)]
      [!code-vb[C_SecureWithCertificate#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#5)]  
   
-7.  Volitelné. Načtení metadat ze služby, vytvořte novou <xref:System.ServiceModel.Description.ServiceMetadataBehavior> objektu a nastavte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`.  
+7.  Volitelné. Chcete-li načíst metadata ze služby, vytvořte nový <xref:System.ServiceModel.Description.ServiceMetadataBehavior> objektu a nastavit <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`.  
   
      [!code-csharp[C_SecureWithCertificate#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#6)]
      [!code-vb[C_SecureWithCertificate#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#6)]  
   
-8.  Použití <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> třída přidat platný certifikát pro službu. Metodu můžete použít některou z několika metod se najít certifikát. Tento příklad používá <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> výčtu. Výčet Určuje, že zadaná hodnota je název sady entit, který certifikát byl vydán.  
+8.  Použití <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> metodu <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential> třídy přidat platného certifikátu ve službě. Metodu můžete použít některou z několika metod najít certifikát. V tomto příkladu <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindBySubjectName> výčtu. Výčet Určuje, že zadaná hodnota je název sady entit, který byl vydán certifikát.  
   
      [!code-csharp[C_SecureWithCertificate#7](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#7)]
      [!code-vb[C_SecureWithCertificate#7](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#7)]  
   
-9. Volání <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> metoda zahájit naslouchání služby. Pokud vytvoříte konzolovou aplikaci, zavolejte <xref:System.Console.ReadLine%2A> metoda zachovat služby ve stavu naslouchání.  
+9. Volání <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> metoda zahájit naslouchání služby. Pokud vytvoříte konzolovou aplikaci, zavolejte <xref:System.Console.ReadLine%2A> metoda udržet službu ve stavu naslouchání.  
   
      [!code-csharp[C_SecureWithCertificate#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#8)]
      [!code-vb[C_SecureWithCertificate#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#8)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> metoda pro konfiguraci služby pomocí certifikátu X.509.  
+ V následujícím příkladu <xref:System.ServiceModel.Security.X509CertificateRecipientServiceCredential.SetCertificate%2A> metodu pro konfiguraci služby pomocí certifikátu X.509.  
   
  [!code-csharp[C_SecureWithCertificate#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#9)]
  [!code-vb[C_SecureWithCertificate#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#9)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Následující obory názvů jsou nezbytné pro kompilaci kódu:  
+ Pro zkompilování kódu se vyžaduje následující obory názvů:  
   
 -   <xref:System>  
   

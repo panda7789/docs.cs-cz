@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 181708fd-2595-4c43-9abd-75811627d64c
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: e3008b710a6fcaba476fd8c425beaa8eb11f9e52
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e055733a8f3d1ecb9c1fcea336bbe90ddd155731
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43527550"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172846"
 ---
 # <a name="ui-automation-support-for-the-dataitem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataItem
 > [!NOTE]

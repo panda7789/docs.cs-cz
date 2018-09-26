@@ -1,18 +1,17 @@
 ---
-title: '&lt;ServiceCertificate&gt;'
+title: '&lt;serviceCertificate&gt;'
 ms.date: 03/30/2017
 ms.assetid: 42c7f291-2ec3-43c5-8872-35897ff3c660
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: af59562dbf6c13970526f1665a9ba2c57c4f32ee
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 008d2269a72759117658e27ec130cc8cf62cfdfa
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32766774"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084303"
 ---
-# <a name="ltservicecertificategt"></a>&lt;ServiceCertificate&gt;
-Nakonfiguruje certifikátu X.509, který se používá k šifrování a dešifrování tokenů.  
+# <a name="ltservicecertificategt"></a>&lt;serviceCertificate&gt;
+Nakonfiguruje certifikát X.509, který se používá k šifrování a dešifrování tokenů.  
   
  \<system.identityModel.services >  
 \<federationConfiguration >  
@@ -39,7 +38,7 @@ Nakonfiguruje certifikátu X.509, který se používá k šifrování a dešifro
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<certificateReference >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatereference.md)|Určuje nastavení, které se používají k vyhledání a ověření certifikátu X.509. certifikát v úložišti certifikátů.|  
+|[\<certificateReference >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/certificatereference.md)|Určuje nastavení, které se používají k vyhledání a ověřit certifikát X.509 v úložišti certifikátů.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -48,7 +47,7 @@ Nakonfiguruje certifikátu X.509, který se používá k šifrování a dešifro
 |[\<federationConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/federationconfiguration.md)|Obsahuje nastavení, která konfigurace <xref:System.IdentityModel.Services.WSFederationAuthenticationModule> (WSFAM) a <xref:System.IdentityModel.Services.SessionAuthenticationModule> (SAM).|  
   
 ## <a name="example"></a>Příklad  
- Následující kód XML ukazuje použití \<serviceCertificate > elementu. Soubor XML je převzat ze `CustomToken` ukázka.  
+ Následující kód XML ukazuje použití \<serviceCertificate > elementu. XML je převzata z `CustomToken` vzorku.  
   
 ```xml  
 <serviceCertificate>  

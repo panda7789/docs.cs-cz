@@ -1,5 +1,5 @@
 ---
-title: '&lt;Přidat&gt; Element pro connectionManagement – (nastavení sítě)'
+title: '&lt;Přidat&gt; – Element pro connectionManagement (nastavení sítě)'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#add
@@ -12,15 +12,14 @@ helpviewer_keywords:
 ms.assetid: 856bf57d-1c63-46c7-a178-03d97b0a4149
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: c6cfd036a98c345da23fc7b3699987c9678e149d
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: cdc7e8501f7cf3f5cff4c29ca5b2d004ce7cd5c6
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32753739"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080322"
 ---
-# <a name="ltaddgt-element-for-connectionmanagement-network-settings"></a>&lt;Přidat&gt; Element pro connectionManagement – (nastavení sítě)
+# <a name="ltaddgt-element-for-connectionmanagement-network-settings"></a>&lt;Přidat&gt; – Element pro connectionManagement (nastavení sítě)
 Přidá do seznamu pro správu připojení IP adresu nebo název DNS.  
   
  \<Konfigurace >  
@@ -44,8 +43,8 @@ Přidá do seznamu pro správu připojení IP adresu nebo název DNS.
   
 |**Atribut**|**Popis**|  
 |-------------------|---------------------|  
-|`address`|Řetězec popisující IP adresu nebo název DNS.|  
-|`maxconnection`|Maximální počet připojení povolených pro server. Pokud nejsou zadané, výchozí hodnota je 2.|  
+|`address`|Řetězec, který popisuje IP adresu nebo název DNS.|  
+|`maxconnection`|Maximální počet povolených připojení k serveru. Pokud není zadán, výchozí hodnota je 2.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -57,15 +56,15 @@ Přidá do seznamu pro správu připojení IP adresu nebo název DNS.
 |[connectionManagement –](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|Určuje maximální počet připojení k síti hostitele.|  
   
 ## <a name="remarks"></a>Poznámky  
- Hodnota `address` atribut by měl mít buď hvězdičku označíte, všechna připojení, nebo řetězec ve formátu `<schema>://<idn_hostname>[:<port>]`.  
+ Hodnota `address` atribut by měl mít hvězdičky označující všechna připojení nebo řetězec ve formě `<schema>://<idn_hostname>[:<port>]`.  
   
- Pokud identifikátor URI předaný všechny rozhraní API HTTP obsahuje znakové sady Unicode, název bude převeden interně pomocí <xref:System.Uri.DnsSafeHost%2A> kterého může vrátit řetězec punicode (chování závisí na aktuální konfiguraci IDN).  
+ Pokud identifikátor URI předána žádná rozhraní HTTP API obsahuje kódování Unicode, název se převedou interně pomocí <xref:System.Uri.DnsSafeHost%2A> které může vrátit řetězec punicode (chování závisí na aktuální konfiguraci IDN).  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
- Tento element lze použít v konfiguračním souboru aplikace nebo v konfiguračním souboru počítače (Machine.config).  
+ Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad konfiguruje aplikaci použít čtyři připojení k serveru www.contoso.com a dvě připojení na jiné servery.  
+ Následující příklad nastaví aplikace pro použití čtyř připojení k serveru www.contoso.com a dvě spojení na všechny ostatní servery.  
   
 ```xml  
 <configuration>  

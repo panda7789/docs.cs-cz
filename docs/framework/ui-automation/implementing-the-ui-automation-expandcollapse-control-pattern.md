@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: b8150be1c71d256243385ca201acdd96daad3880
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 307cbfa9b41440ebfe2b0d9fd15715a32b8a7cca
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528946"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082679"
 ---
 # <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a>Implementace vzoru ovládacích prvků ExpandCollapse pro automatizaci uživatelského rozhraní
 > [!NOTE]

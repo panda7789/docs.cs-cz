@@ -9,40 +9,39 @@ helpviewer_keywords:
 - federation
 ms.assetid: 675fa143-6a4e-4be3-8afc-673334ab55ec
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 97fc358ac66bb92ccc40c92207bf6561f61b84f6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e81469f5ac55b1c698dc99af0782dbdedab33339
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33489873"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47088344"
 ---
 # <a name="how-to-disable-secure-sessions-on-a-wsfederationhttpbinding"></a>Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding
-Některé služby mohou vyžadovat federované přihlašovací údaje, ale nepodporuje zabezpečených relací. V takovém případě je třeba zakázat funkci zabezpečené relace. Na rozdíl od <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`>, <xref:System.ServiceModel.WSFederationHttpBinding> třída neposkytuje způsob, jak zakázat zabezpečených relací při komunikaci se službou. Místo toho musíte vytvořit vlastní vazby, který nahradí bootstrap nastavení zabezpečené relace.  
+Některé služby může vyžadovat federované přihlašovací údaje, ale nepodporuje zabezpečených relací. V takovém případě je nutné zakázat funkci zabezpečenou relaci. Na rozdíl od <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`>, <xref:System.ServiceModel.WSFederationHttpBinding> třída neposkytuje způsob, jak zakázání zabezpečených relací při komunikaci se službou. Místo toho musíte vytvořit vlastní vazby, který nahradí nastavení zabezpečenou relaci bootstrap.  
   
- Toto téma ukazuje, jak upravit elementů vazby obsažená v rámci <xref:System.ServiceModel.WSFederationHttpBinding> k vytvoření vlastní vazby. Výsledkem je stejný jako <xref:System.ServiceModel.WSFederationHttpBinding> s tím rozdílem, že nepoužívá zabezpečených relací.  
+ Toto téma ukazuje, jak upravit elementů vazby obsažená v rámci <xref:System.ServiceModel.WSFederationHttpBinding> k vytvoření vlastní vazby. Výsledek je stejný jako <xref:System.ServiceModel.WSFederationHttpBinding> s tím rozdílem, že ho nepoužívá zabezpečených relací.  
   
-### <a name="to-create-a-custom-federated-binding-without-secure-session"></a>Chcete-li vytvořit vlastní federované vazby bez zabezpečené relace  
+### <a name="to-create-a-custom-federated-binding-without-secure-session"></a>Můžete vytvořit vlastní federované vazby bez zabezpečené relace  
   
-1.  Vytvoření instance <xref:System.ServiceModel.WSFederationHttpBinding> třídy imperativní v kódu nebo načtením jeden z konfiguračního souboru.  
+1.  Vytvoření instance <xref:System.ServiceModel.WSFederationHttpBinding> třídy imperativně v kódu nebo načtením jeden z konfiguračního souboru.  
   
-2.  Klon <xref:System.ServiceModel.WSFederationHttpBinding> do <xref:System.ServiceModel.Channels.CustomBinding>.  
+2.  Klonování <xref:System.ServiceModel.WSFederationHttpBinding> do <xref:System.ServiceModel.Channels.CustomBinding>.  
   
 3.  Najít <xref:System.ServiceModel.Channels.SecurityBindingElement> v <xref:System.ServiceModel.Channels.CustomBinding>.  
   
 4.  Najít <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters> v <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   
-5.  Nahradí původní <xref:System.ServiceModel.Channels.SecurityBindingElement> s elementem vazby bootstrap zabezpečení z <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>.  
+5.  Ten původní nahradí <xref:System.ServiceModel.Channels.SecurityBindingElement> s element vazby zabezpečení samozavádění z <xref:System.ServiceModel.Security.Tokens.SecureConversationSecurityTokenParameters>.  
   
 ## <a name="example"></a>Příklad  
- Tento následující příklad vytvoří vlastní federované vazby bez zabezpečené relace.  
+ Následující příklad vytvoří vlastní federované vazby bez zabezpečenou relaci.  
   
  [!code-csharp[c_CustomFederationBinding#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customfederationbinding/cs/c_customfederationbinding.cs#0)]
  [!code-vb[c_CustomFederationBinding#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customfederationbinding/vb/c_customfederationbinding.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
   
--   Kompilace příkladu kódu, vytvořte projekt, který odkazuje na sestavení System.ServiceModel.dll.  
+-   Příklad kódu zkompilovat, vytvořte projekt aplikace a odkazuje na sestavení System.ServiceModel.dll.  
   
 ## <a name="see-also"></a>Viz také  
  [Vazby a zabezpečení](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)

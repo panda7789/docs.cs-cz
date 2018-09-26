@@ -1,5 +1,5 @@
 ---
-title: Pomocí soket synchronního serveru
+title: Použití synchronního serverového soketu
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,20 +19,19 @@ helpviewer_keywords:
 ms.assetid: d1ce882e-653e-41f5-9289-844ec855b804
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 4f04255edf9533612dd6b0733331fb18587ff3f8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2e79c9a75e4513be91af1104195af3614b49092d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33398141"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47176487"
 ---
-# <a name="using-a-synchronous-server-socket"></a>Pomocí soket synchronního serveru
-Synchronní serveru sockets pozastavit provádění aplikace, dokud obdrží žádost o připojení soketu. Sokety synchronní serveru nejsou vhodné pro aplikace, které hodně využívají sítě v jejich operaci, ale mohou být vhodný pro jednoduché síťových aplikací.  
+# <a name="using-a-synchronous-server-socket"></a>Použití synchronního serverového soketu
+Sokety synchronního serverového pozastavit provádění aplikace, dokud obdrží požadavek na připojení soketu. Sokety synchronního serverového nejsou vhodné pro aplikace, které usnadňují použití sítě v jejich operaci, ale mohou být vhodný pro jednoduchá síť aplikace.  
   
- Po <xref:System.Net.Sockets.Socket> je nastaven tak, aby naslouchala na k koncový bod pomocí <xref:System.Net.Sockets.Socket.Bind%2A> a <xref:System.Net.Sockets.Socket.Listen%2A> metody, je připravena přijímat požadavky na příchozí připojení pomocí <xref:System.Net.Sockets.Socket.Accept%2A> metoda. Aplikace je pozastaveno, dokud je přijal žádost o připojení při **přijmout** metoda je volána.  
+ Po <xref:System.Net.Sockets.Socket> nastavená tak, aby naslouchala na koncový bod pomocí <xref:System.Net.Sockets.Socket.Bind%2A> a <xref:System.Net.Sockets.Socket.Listen%2A> metody, je připraven tak, aby přijímal požadavky na příchozí připojení pomocí <xref:System.Net.Sockets.Socket.Accept%2A> metody. Aplikace je pozastaveno, dokud je přijata žádost o připojení při **přijmout** metoda je volána.  
   
- Po přijetí požadavku na připojení **přijmout** vrátí novou **soketu** instance, který je přidružen připojujícího se klienta. Následující příklad načte data z klienta, zobrazí v konzole a vrátí data zpět do klienta. **Soketu** neurčuje libovolný protokol pro zasílání zpráv, takže řetězec "\<EOF >" označuje konec daty zprávy. Předpokládá, že **soketu** s názvem `listener` byl inicializován a vázána na koncový bod.  
+ Při přijetí požadavku na připojení **přijmout** vrátí nový **soketu** instanci, která souvisí s připojujícího se klienta. Následující příklad čte data z klienta, zobrazí se v konzole a vypisuje data zpět do klienta. **Soketu** neurčuje libovolného protokolu pro zasílání zpráv, tedy řetězec "\<EOF >" označuje konec data zprávy. Předpokládá, že **soketu** s názvem `listener` byl inicializován a vázán na koncový bod.  
   
 ```vb  
 Console.WriteLine("Waiting for a connection...")  

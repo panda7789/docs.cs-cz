@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: 5ee2de3f-256c-43ec-b64c-62ace91f9983
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 6f023a16d431e0a92d7d0068b9a6a014b6f17db8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7e531e7ecdcc6e5cbdbc770b008d2c07873aca16
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521654"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47086421"
 ---
 # <a name="invoke-a-control-using-ui-automation"></a>Vyvolání ovládacího prvku s použitím automatizace uživatelského rozhraní
 > [!NOTE]

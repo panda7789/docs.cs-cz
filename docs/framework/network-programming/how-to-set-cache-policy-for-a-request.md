@@ -9,19 +9,18 @@ helpviewer_keywords:
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 98cd64aaab66d69c29c022d770b34bb0efdb4bef
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 03ddcbacf7de3753ca74c398e585447b2d769cd6
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395424"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078315"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Postupy: nastavení zásad mezipaměti pro žádost
-Následující příklad ukazuje, nastavení zásady mezipaměti pro požadavek. V příkladu vstup, jako je to identifikátor URI http://www.contoso.com/.  
+Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost. V příkladu vstup, jako je identifikátor URI http://www.contoso.com/.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad kódu vytvoří zásadu mezipaměti, která umožňuje požadovaný prostředek pro použití v mezipaměti, pokud nebylo v mezipaměti po dobu delší než jeden den. V příkladu se zobrazí zpráva, která určuje, zda prostředek byl použit z mezipaměti – například `"The response was retrieved from the cache : False."`– a potom zobrazí prostředku. Žádost o lze splnit všechny mezipaměti mezi klientem a serverem.  
+ Následující příklad kódu vytvoří mezipaměť zásadu, která umožňuje požadovaný prostředek pro použití v mezipaměti, pokud nebylo v mezipaměti po dobu delší než jeden den. V příkladu se zobrazí zpráva, která označuje, zda byla z mezipaměti používá prostředku – například `"The response was retrieved from the cache : False."`– a pak zobrazí na prostředek. Žádost lze splnit všechny mezipaměti mezi klientem a serverem.  
   
 ```csharp  
 using System;  
@@ -113,4 +112,4 @@ End Namespace
  [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
  [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)  
  [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [\<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

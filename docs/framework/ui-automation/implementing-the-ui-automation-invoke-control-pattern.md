@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: e5b1e239-49f8-468e-bfec-1fba02ec9ac4
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 29a403026980a6b72ecdf3a8b6a9d017faf7816a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f6afb850b16493bab79dd368ba1ff126305f96aa
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523882"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077639"
 ---
 # <a name="implementing-the-ui-automation-invoke-control-pattern"></a>Implementace vzoru ovládacích prvků vyvolání pro automatizaci uživatelského rozhraní
 > [!NOTE]

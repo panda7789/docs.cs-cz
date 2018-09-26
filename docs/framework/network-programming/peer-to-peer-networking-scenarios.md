@@ -4,70 +4,69 @@ ms.date: 03/30/2017
 ms.assetid: d23b1a64-2e08-4014-882a-c1dd766bdcc2
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: d0a6bcbacf18d9f70f9fde69d2249d1e12653cb3
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3f15e555f64479d18c5fb5d18522a3dbe33e3521
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395450"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080945"
 ---
 # <a name="peer-to-peer-networking-scenarios"></a>Scénáře pro sítě peer-to-Peer
-Peer-to-peer sítě umožňuje nebo rozšiřuje následující scénáře:  
+Sítě peer-to-peer umožňuje nebo rozšiřuje následující scénáře:  
   
 ## <a name="real-time-communications-rtc"></a>Komunikace v reálném čase (RTC)  
   
 -   Bez serveru zasílání rychlých zpráv  
   
- RTC existuje ještě dnes. Uživatelé počítačů můžete chat a mít hlasové nebo video konverzace s odpovídajícími položkami ještě dnes. Však mnoho stávajících programů a jejich komunikační protokoly spoléhat na serverech, fungovat. Pokud se účastní bezdrátové síti ad-hoc nebo jsou součástí izolovanou síť, nebudete moci používat tato zařízení RTC. Technologie peer-to-peer umožňuje rozšíření RTC technologie, které tyto další síťové prostředí.  
+ RTC existuje ještě dnes. Uživatelé počítačů můžete chatovat a hlasové nebo video konverzací s svoje konkurenty ještě dnes. Však mnoho existujících programů a jejich komunikační protokoly spoléhat na serverech, fungovat. Pokud se účastníte v bezdrátové sítě ad hoc nebo jsou součástí izolované sítě, nemůžete použít tyto RTC zařízení. Technologie peer-to-peer umožňuje rozšíření RTC technologiemi, které tyto další síťové prostředí.  
   
 -   V reálném čase matchmaking a hraní her  
   
- Podobá se RTC, v reálném čase hraní her existuje ještě dnes. Existuje mnoho webových herní lokalit, které nahrazovat herní komunita přes Internet. Umožňuje najít další hráče s podobnými zájmy a hrát hry společně nabízejí. Problém je, že herní lokality existovat jenom na Internetu a jsou mají za cíl zajistit náruživé hráči kdo chce hrát proti nejlepší hráči na světě. Tyto weby sledovat a poskytnout statistiky pro proces usnadní. Tyto weby jsou však neumožňují hráči na nastavení služby ad-hoc herní mezi přátel v různých prostředích sítí. Tuto možnost můžete poskytnout sítě peer-to-peer.  
+ Podobně jako RTC, v reálném čase hry existuje ještě dnes. Existuje mnoho webové herní servery, které slouží různým herní komunitě přes Internet. Možnost vyhledat jiné hráčům s podobnými zájmy a hry společně nabízejí. Problém je, že herní servery existují jenom na Internetu a jsou zaměřených avid hráče chcete přehrát proti nejlepších hráčů v celém světě. Tyto weby sledování a poskytnout statistiky proces usnadní. Tyto servery jsou ale neumožňují hráče nastavení ad-hoc hru mezi přáteli v různých síťových prostředích. Tuto možnost můžete poskytnout sítě peer-to-peer.  
   
 ## <a name="collaboration"></a>Spolupráce  
   
--   Řešení cílem pracovních prostorů projektu  
+-   Pracovní prostory projektů řešení cíle  
   
- Sdílený pracovní prostor aplikace povolit pro vytvoření ad-hoc pracovních skupinách a pak umožnit vlastníky pracovní skupiny k naplnění sdíleného pracovního prostoru s nástroji a obsah, který vám umožní skupiny k vyřešení problému. To může zahrnovat zprávy panely kancelářské nástroje a soubory.  
+ Sdíleného pracovního prostoru aplikace umožňující vytváření pracovních skupinách ad-hoc a následné povolení vlastníky pracovní skupiny k naplnění sdíleného pracovního prostoru s nástroji a obsah, který vám umožní skupiny k vyřešení problému. To může zahrnovat vývěsky, nástroje pro produktivitu a soubory.  
   
--   Sdílí soubory s ostatními uživateli  
+-   Sdílí soubory s ostatními  
   
- Podmnožinu sdílení projektu pracovního prostoru je umožňují sdílet soubory. Přestože tato možnost existuje ještě dnes s aktuální verzí systému Windows, může být zvýšena pomocí peer-to-peer sítě chcete zpřístupnit obsah souboru způsobem snadno a popisný. Umožní snadný přístup k neuvěřitelné řadu na hranici z Internetu nebo v výpočetních prostředí ad-hoc zvyšuje hodnotu výpočetních sítě.  
+ Podmnožinu sdílení pracovního prostoru projektu je možnost sdílení souborů. I když se tato možnost existuje ještě dnes s aktuální verzí systému Windows, může být zvýšena prostřednictvím sítě peer-to-peer zpřístupnit obsah souboru způsobem snadno a popisný. Umožňuje snadný přístup k neuvěřitelné řadu na hranici sítě Internet nebo ve výpočetních prostředích ad-hoc zvyšuje hodnotu výpočetního prostředí sítě.  
   
 -   Sdílení prostředí  
   
- S čím dál víc běžně se vyskytujícím bezdrátovým připojením, peer-to-peer sítě vám umožní online ve skupině partnerské uzly a mohli sdílet své zkušenosti (například cenách, vzájemné součinnosti rock nebo dovolenou výletních) při jejich dochází.  
+ Se stále více běžně se vyskytujícím bezdrátové připojení, sítě peer-to-peer vám umožní být online ve skupině partnerské uzly a mohli sdílet své zkušenosti (například cenách, rock koncertní nebo o dovolenou přepravní) zatímco se vyskytují.  
   
 ## <a name="content-distribution"></a>Distribuce obsahu  
   
--   Textové zprávy  
+-   Text zprávy  
   
- Peer-to-peer sítě můžete povolit pro šíření textových informací ve formě souborů nebo zprávy do velké skupiny uživatelů. Příkladem je seznam zprávy.  
+ Sítě peer-to-peer umožňuje šíření informací založený na textu ve formě souborů nebo zprávy k velké skupině uživatelů. Příkladem je seznam zpráv.  
   
 -  
   
 -   Audio a video  
   
- Peer-to-peer sítě můžete povolit také pro šíření informací zvuku a videa pro velkou skupinu uživatelů, jako je například velké schůzku vzájemné součinnosti nebo společnosti. Distribuce obsahu dnes, musíte nakonfigurovat servery vysoké kapacity pro shromažďování a distribuci zátěže stovky nebo tisíce uživatelů. S prací v síti peer-to-peer, by jen někteří z nich partnerské uzly ve skutečnosti získat obsah z centralizované servery. Tyto partnerské uzly by vyplnění tyto informace několik další lidem, kteří ho poslat ostatním a tak dále. Zátěž distribuci obsahu je distribuován do partnerské uzly v cloudu. Partnerského uzlu, který chce dostávat obsah by najít nejbližší distribuce sdílené a získat obsah z nich.  
+ Pro šíření informací zvuku nebo videa k velké skupině uživatelů, jako je například velké schůzky koncertní nebo společnosti můžete také povolit sítě peer-to-peer. Distribuce obsahu dnes, musíte nakonfigurovat servery vysoké kapacity můžete shromažďovat a distribuovat zatížení na stovky nebo tisíce uživatelů. Pomocí sítě peer-to-peer, by pouze na několik partnerské uzly ve skutečnosti získat obsah z centralizované servery. Tyto partnerské uzly by vyplnění tyto informace na několik více lidí, kteří odeslat ji ostatním uživatelům a tak dále. Zatížení distribuci obsahu je distribuován do partnerské uzly v cloudu. Partnerský uzel, který chce přijmout obsah by najít nejbližší distribuce partnerským zařízením a získat obsah z nich.  
   
 -  
   
--   Distribuci aktualizací produktu  
+-   Distribuce aktualizace produktu  
   
- Peer-to-peer sítě můžete zadat taky efektivní mechanismus pro distribuci softwaru, jako je aktualizace produktu (aktualizace zabezpečení a aktualizace service Pack). Partnerského uzlu, který má připojení k serveru distribuce softwaru můžete získat aktualizace produktu a rozšíření ostatním členům své skupiny.  
+ Sítě peer-to-peer, můžete také zadat efektivní mechanismus pro distribuci softwaru, jako je například aktualizace produktu (aktualizace zabezpečení a aktualizace service Pack). Partnerský uzel, který má připojení k serveru pro distribuci softwaru můžete získat aktualizace produktu a šířit do ostatních členů dané skupiny.  
   
 -  
   
 ## <a name="distributed-processing"></a>Distribuované zpracování  
   
--   Dělení a distribuci úloh  
+-   Dělení a distribuční úlohy  
   
- Velkých výpočetních úloh je možné rozdělit nejprve do samostatné menší výpočetní úlohy užitečný pro výpočetní prostředky na partnera. Sdílené udělat dělení velkých výpočetních úloh. Potom peer-to-peer sítě můžete distribuovat jednotlivé úkoly, které mají samostatné partnerské uzly ve skupině. Každé sdílené provede výpočetní úkolu a sestavy svůj výsledek centralizované akumulace bodu.  
+ Velký výpočetní úkol je první rozdělit do samostatných menších výpočetní úlohy, které jsou vhodná pro výpočetní prostředky na partnera. Partnerský uzel může provést rozdělením velkých výpočetních úloh. Sítě peer-to-peer, pak můžete distribuovat jednotlivých úkolů na samostatném partnerské uzly ve skupině. Každé sdílené sestavy výsledek zpět do bodu centralizované akumulací a provádí její výpočetní úlohu.  
   
 -   Agregace prostředky počítače  
   
- Jiný způsob, jak využívat peer-to-peer sítě pro distribuované zpracování je pro spuštění programů u každého partnera, který běží v době nečinnosti procesoru a jsou součástí větší výpočetní úlohu, která koordinuje centrální server. Agregací procesory více počítačů, sítě peer-to-peer, můžete upravit skupiny rovnocenných počítačů na velké paralelní procesoru na velkých výpočetních úloh.  
+ Dalším způsobem, jak využívat sítě peer-to-peer pro distribuované zpracování je pro spuštění programů u každého partnera, který spustí během doby nečinnosti procesoru a jsou součástí větší výpočetní úkol, který koordinuje přes centrálního serveru. Na základě agregace procesorů více počítačů, sítě peer-to-peer můžete proměnit skupiny rovnocenných počítačů velké paralelní procesoru pro rozsáhlé výpočetní úlohy.  
   
 -  
   

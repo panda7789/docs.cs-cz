@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: přizpůsobení zásady založené na čase mezipaměti'
+title: 'Postupy: přizpůsobení zásad mezipaměti na základě času'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,20 +11,19 @@ helpviewer_keywords:
 ms.assetid: 8d84f936-2376-4356-9264-03162e0f9279
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: fd2856ffcf6b21ba34771c231f608ad725b21763
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2d46f88b40fc48eb819877c49ff9e04e487a0f5a
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33390962"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47087395"
 ---
-# <a name="how-to-customize-a-time-based-cache-policy"></a>Postupy: přizpůsobení zásady založené na čase mezipaměti
-Při vytváření zásad založené na čase mezipaměti můžete přizpůsobit chování ukládání do mezipaměti zadáním hodnot pro maximální stáří, aktuálnosti minimální, maximální typu prošlostí nebo mezipaměti synchronizace datum. <xref:System.Net.Cache.HttpRequestCachePolicy> Objektu obsahuje několik konstruktorů, které vám umožní zadat platné kombinace tyto hodnoty.  
+# <a name="how-to-customize-a-time-based-cache-policy"></a>Postupy: přizpůsobení zásad mezipaměti na základě času
+Při vytváření zásad mezipaměti na základě času, můžete přizpůsobit chování ukládání do mezipaměti tak, že zadáte hodnoty pro maximální stáří, minimální novost, maximální neaktuálnost nebo datum synchronizace mezipaměti. <xref:System.Net.Cache.HttpRequestCachePolicy> Objekt, který poskytuje několik konstruktorů, které vám umožňují určit platné kombinace těchto hodnot.  
   
-### <a name="to-create-a-time-based-cache-policy-that-uses-a-cache-synchronization-date"></a>Chcete-li vytvořit zásadu založené na čase mezipaměti, která používá Datum synchronizace mezipaměti  
+### <a name="to-create-a-time-based-cache-policy-that-uses-a-cache-synchronization-date"></a>Vytvoření zásad mezipaměti na základě času, který používá data synchronizaci mezipaměti  
   
--   Vytvoření zásady založené na čase mezipaměti, která používá Datum synchronizace mezipaměti předáním <xref:System.DateTime> do objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor.  
+-   Vytvoření zásady mezipaměti na základě času, který používá data synchronizaci mezipaměti předáním <xref:System.DateTime> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateLastSyncPolicy(DateTime when)  
@@ -46,16 +45,16 @@ Při vytváření zásad založené na čase mezipaměti můžete přizpůsobit 
     End Function  
     ```  
   
- Výstup bude vypadat takto:  
+ Výstup je podobný následujícímu:  
   
 ```  
 When: 1/14/2004 8:07:30 AM  
 Level:Default CacheSyncDate:1/14/2004 8:07:30 AM  
 ```  
   
-### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness"></a>Chcete-li vytvořit zásady založené na čase mezipaměti, který je založen na minimální aktuálnosti  
+### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness"></a>Vytvoření zásad mezipaměti na základě času, který je založen na minimální novost  
   
--   Vytvoření zásady založené na čase mezipaměti, který je založen na minimální aktuálnosti zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> jako `cacheAgeControl` hodnotu parametru a předávání <xref:System.TimeSpan> do objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor.  
+-   Vytvoření zásady mezipaměti na základě času, který je založen na minimální novost zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MinFresh> jako `cacheAgeControl` hodnotu parametru a předávání <xref:System.TimeSpan> objektu <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateMinFreshPolicy(TimeSpan span)  
@@ -85,9 +84,9 @@ CreateMinFreshPolicy(new TimeSpan(1,0,0));
 Level:Default MinFresh:3600  
 ```  
   
-### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness-and-maximum-age"></a>Chcete-li vytvořit zásady založené na čase mezipaměti, který je založen na aktuálnosti minimální a maximální stáří  
+### <a name="to-create-a-time-based-cache-policy-that-is-based-on-minimum-freshness-and-maximum-age"></a>Vytvoření zásad mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří  
   
--   Vytvoření zásady založené na čase mezipaměti, která je na základě aktuálnosti minimální a maximální stáří zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> jako `cacheAgeControl` hodnotu parametru a předání dvou <xref:System.TimeSpan> objekty ke <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor, má-li zadat maximální stáří prostředky a druhý k určení minimální aktuálnosti povolené pro objekt vrácené z mezipaměti.  
+-   Vytvoření zásady mezipaměti na základě času, který je založen na aktuálnosti minimální a maximální stáří zadáním <xref:System.Net.Cache.HttpCacheAgeControl.MaxAgeAndMinFresh> jako `cacheAgeControl` hodnotu parametru a předání dvou <xref:System.TimeSpan> objektů <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktor, chcete-li určit maximální stáří prostředky a druhý k určení minimální novost povolené pro objekt vrácený z mezipaměti.  
   
     ```csharp  
     public static HttpRequestCachePolicy CreateFreshAndAgePolicy(TimeSpan freshMinimum, TimeSpan ageMaximum)  
@@ -122,4 +121,4 @@ Level:Default MaxAge:36000 MinFresh:18000
  [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
  [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)  
  [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [\<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

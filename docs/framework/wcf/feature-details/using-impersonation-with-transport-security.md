@@ -3,58 +3,57 @@ title: Použití zosobnění se zabezpečením přenosu
 ms.date: 03/30/2017
 ms.assetid: 426df8cb-6337-4262-b2c0-b96c2edf21a9
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 5a4b05031061183cf0dddd82c900065155b1e561
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 537bb1d9cfbda98b0e92833d94b40097fae205fd
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33501691"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47088591"
 ---
 # <a name="using-impersonation-with-transport-security"></a>Použití zosobnění se zabezpečením přenosu
-*Zosobnění* přístup je schopnost serverová aplikace na identitu klienta. Je běžné pro služby použít zosobnění při ověření přístupu k prostředkům. Aplikace bude spuštěna pomocí účtu služby, ale když server přijme připojení klienta, zosobňuje klienta tak, aby kontroly přístupu se provádí pomocí pověření klienta. Zabezpečení přenosu je mechanizmus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu ve Windows Communication Foundation (WCF) s funkcí zosobnění. Další informace o zosobnění pomocí zabezpečení zpráv najdete v tématu [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
+*Zosobnění* je schopnost serveru aplikace, abyste mohli na identity klienta. Je běžné, že služby pro použití zosobnění při ověření přístupu k prostředkům. Serverová aplikace běží, pomocí účtu služby, ale pokud server přijme připojení klienta, klient zosobní tak, aby kontroly přístupu se provádí pomocí přihlašovacích údajů klienta. Zabezpečení přenosu sítí je mechanismus pro předávání přihlašovacích údajů a zabezpečení komunikace pomocí těchto přihlašovacích údajů. Toto téma popisuje pomocí zabezpečení přenosu pomocí zosobnění funkce ve Windows Communication Foundation (WCF). Další informace o zosobnění pomocí zabezpečení zpráv, najdete v části [delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md).  
   
 ## <a name="five-impersonation-levels"></a>Pět úrovní zosobnění  
  Zabezpečení přenosu využívá pět úrovní zosobnění, jak je popsáno v následující tabulce.  
   
 |Úroveň zosobnění|Popis|  
 |-------------------------|-----------------|  
-|Žádné|Aplikace serveru nebude pokoušet o zosobnit klienta.|  
-|Anonymní|Aplikace serveru mohou provádět kontroly přístupu na pověření klienta, ale nepřijímá žádné informace o identitu klienta. Tato úroveň zosobnění má smysl pouze pro komunikaci ve počítače, jako jsou pojmenované kanály. Pomocí `Anonymous` s připojení ke vzdálené zvýší úroveň na úroveň zosobnění identifikace.|  
-|Identifikace|Serverové aplikace zná identitu klienta a lze provést ověření přístupu na základě pověření klienta, ale nelze zosobnit klienta. Identifikovat je výchozí úroveň zosobnění použít s přihlašovacími údaji SSPI ve WCF, pokud zprostředkovatel tokenu poskytuje různé zosobnění úroveň.|  
-|Impersonate|Serverové aplikace můžete přístup k prostředkům na serveru, jako klient kromě provádění kontroly přístupu. Aplikace serveru nemají přístup k prostředkům na vzdálených počítačích pomocí identity klienta, protože zosobněnou token nemá přihlašovací údaje k síti|  
-|Delegát|Kromě nutnosti stejné schopnosti jako `Impersonate`, úroveň zosobnění delegát také umožňuje serveru aplikaci přístup k prostředkům na vzdálených počítačích pomocí identity klienta a předávat identity k ostatním aplikacím.<br /><br /> **Důležité** účet domény serveru musí být označen jako důvěryhodný pro delegování na řadič domény, který používá tyto další funkce. Tato úroveň zosobnění nelze použít s účty domény klienta označený jako důvěrné.|  
+|Žádné|Serverová aplikace nebude pokoušet o zosobnit klienta.|  
+|Anonymní|Serverová aplikace může provádět kontroly přístupu na pověření klienta, ale nepřijímá žádné informace o identitu klienta. Tato úroveň zosobnění má smysl pouze pro komunikaci na počítači, jako jsou pojmenované kanály. Pomocí `Anonymous` pomocí připojení vzdálené povýší úroveň zosobnění k identifikovat.|  
+|Identifikace|Serverová aplikace zná identitu klienta a můžete provádět ověření přístupu na základě přihlašovacích údajů klienta, ale nelze zosobnit klienta. Identifikujte je výchozí úroveň zosobnění použít s přihlašovacími údaji SSPI ve službě WCF, pokud poskytovatel tokenu poskytuje úroveň zosobnění jiný.|  
+|Impersonate|Serverová aplikace může přistupovat k prostředkům počítače serveru jako klienta kromě provádění kontroly přístupu. Serverová aplikace nemá přístup k prostředkům na vzdálených počítačích pomocí identity klienta, protože zosobněného token nemá žádné přihlašovací údaje k síti|  
+|Delegát|Kromě stejné funkce jako `Impersonate`, úroveň zosobnění delegát rovněž umožňuje aplikaci server pro přístup k prostředkům na vzdálených počítačích pomocí identity klienta a k předání identity k ostatním aplikacím.<br /><br /> **Důležité** účet domény serveru musí být označen jako důvěryhodný pro delegování na řadiči domény, který chcete použít tyto další funkce. Tato úroveň zosobnění nelze použít s označené jako citlivé účty domény klienta.|  
   
- Úrovně nejčastěji používaná k zabezpečení přenosu jsou `Identify` a `Impersonate`. Úrovně `None` a `Anonymous` typické vhodné používat, a mnoho přenosy nepodporují tyto úrovně pomocí ověřování. `Delegate` Úroveň je výkonné funkce, která by měla být používána opatrně. Jenom důvěryhodných serverů aplikace by měly mít oprávnění k delegování přihlašovacích údajů.  
+ Existují tyto úrovně zabezpečení přenosu nejčastěji používaná `Identify` a `Impersonate`. Úrovně `None` a `Anonymous` nedoporučují pro běžné použití, a mnoho přenosy nepodporují použití těchto úrovních s ověřením. `Delegate` Úroveň je výkonná funkce, která by měla být používána opatrně. Jenom důvěryhodných serverů aplikace by měly mít oprávnění k delegování přihlašovacích údajů.  
   
- Použití zosobnění na `Impersonate` nebo `Delegate` úrovně vyžaduje server aplikací mít `SeImpersonatePrivilege` oprávnění. Pokud je spuštěn na účet členem skupiny Administrators nebo na účet s identifikátor SID Service (síťová služba, místní služba nebo Local System), má aplikace ve výchozím nastavení toto oprávnění. Zosobnění nevyžaduje vzájemné ověřování klienta a serveru. Některé schémat ověřování, které podporují zosobnění, jako je například protokol NTLM, nelze použít vzájemné ověření.  
+ Použití zosobnění na `Impersonate` nebo `Delegate` úrovně vyžaduje se serverová aplikace mohla mít `SeImpersonatePrivilege` oprávnění. Aplikace toto oprávnění má ve výchozím nastavení, pokud je spuštěn na účet členem skupiny Administrators nebo v rámci účtu s SID služby (síťová služba, místní služba nebo místního systému). Zosobnění nevyžaduje vzájemného ověřování klienta a serveru. Některé schémata ověřování, které podporují zosobnění, jako je například ověřování NTLM, nemohou být součástí vzájemného ověřování.  
   
-## <a name="transport-specific-issues-with-impersonation"></a>Přenos specifické problémy s zosobnění  
- Volba přenosu ve WCF ovlivní možné volby pro zosobnění. Tato část popisuje problémy, které mají vliv na standardního protokolu HTTP a s názvem kanálu přenosy ve službě WCF. Vlastní přenosy mají své vlastní omezení na podporu pro zosobnění.  
+## <a name="transport-specific-issues-with-impersonation"></a>Vyhledávají chyby specifické pro přenos pomocí zosobnění  
+ Volba přenosu ve službě WCF ovlivňuje zvolit je možné pro zosobnění. Tato část popisuje problémy neovlivňují standardního protokolu HTTP a s názvem přenosy kanálu ve službě WCF. Vlastní přenosy mít vlastní omezení podpory pro zosobnění.  
   
-### <a name="named-pipe-transport"></a>S názvem kanálu přenosu  
- Následující položky se používají s přenos pojmenovaný kanál:  
+### <a name="named-pipe-transport"></a>S názvem kanál přenosu  
+ Následující položky se používají s pojmenovaný kanál přenosu:  
   
--   Pojmenovaný kanál přenosu je určena pro použití pouze v místním počítači. Pojmenovaný kanál přenosu ve WCF explicitně zakáže připojení mezi počítači.  
+-   Pojmenovaný kanál přenosu je určen pro použití pouze v místním počítači. Pojmenovaný kanál přenosu ve službě WCF výslovně zakazuje připojení mezi počítači.  
   
--   Pojmenované kanály nelze použít s `Impersonate` nebo `Delegate` úroveň zosobnění. Pojmenovaný kanál nelze vynutit záruku na počítače v těchto úrovní zosobnění.  
+-   Pojmenované kanály nelze použít s `Impersonate` nebo `Delegate` úroveň zosobnění. Pojmenovaný kanál nelze vynutit záruka na počítači, na těchto úrovních zosobnění.  
   
- Další informace o pojmenované kanály najdete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
+ Další informace o pojmenovaných kanálů najdete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   
-### <a name="http-transport"></a>Přenos HTTP  
- Vazby, které používají přenos HTTP (<xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.BasicHttpBinding>) podporují několik schémat ověřování, jak je popsáno v [ověřování protokolu HTTP Principy](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md). Zosobnění úroveň podporované závisí na schéma ověřování. Následující položky se používají s přenos HTTP:  
+### <a name="http-transport"></a>Přenos pomocí protokolu HTTP  
+ Vazby, které používají přenos pomocí protokolu HTTP (<xref:System.ServiceModel.WSHttpBinding> a <xref:System.ServiceModel.BasicHttpBinding>) podporují více schémat ověřování, jak je vysvětleno v [Princip ověřování HTTP](../../../../docs/framework/wcf/feature-details/understanding-http-authentication.md). Nepodporuje úroveň zosobnění závisí na schéma ověřování. Následující položky se používají s přenos pomocí protokolu HTTP:  
   
 -   `Anonymous` Schéma ověřování ignoruje zosobnění.  
   
--   `Basic` Schéma ověřování podporuje pouze `Delegate` úroveň. Upgradují všechny nižší úrovně zosobnění.  
+-   `Basic` Schéma ověřování podporuje pouze `Delegate` úroveň. Budou upgradovat všechny nižší úrovně zosobnění.  
   
 -   `Digest` Schéma ověřování podporuje pouze `Impersonate` a `Delegate` úrovně.  
   
--   `NTLM` Schéma ověřování, které lze vybírat přímo nebo prostřednictvím vyjednávání, podporuje pouze `Delegate` úrovni v místním počítači.  
+-   `NTLM` Schéma ověřování, lze vybrat buď přímo nebo prostřednictvím vyjednávání, podporuje jenom `Delegate` úrovně v místním počítači.  
   
--   Schéma ověřování protokolu Kerberos, které lze vybrat pouze prostřednictvím vyjednávání, lze použít s libovolnou úroveň zosobnění podporované.  
+-   Schéma ověřování protokolu Kerberos, které lze vybrat pouze prostřednictvím vyjednávání, jde použít s libovolnou úroveň zosobnění podporované.  
   
- Další informace o přenos HTTP najdete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
+ Další informace o přenos pomocí protokolu HTTP, naleznete v tématu [volba přenosu](../../../../docs/framework/wcf/feature-details/choosing-a-transport.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Delegace a zosobnění](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)  

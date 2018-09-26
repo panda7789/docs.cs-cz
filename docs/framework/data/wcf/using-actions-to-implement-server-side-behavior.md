@@ -3,11 +3,11 @@ title: Použití akcí k implementaci chování na straně serveru
 ms.date: 03/30/2017
 ms.assetid: 11a372db-7168-498b-80d2-9419ff557ba5
 ms.openlocfilehash: 515553540053ed0c16085fde06e2cc2d2dedda1e
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46697773"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47171891"
 ---
 # <a name="using-actions-to-implement-server-side-behavior"></a>Použití akcí k implementaci chování na straně serveru
 

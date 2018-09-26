@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 85152efd-f4c5-430c-8878-3371cc598616
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: c58c6efb24c66fe3e6f77d48a20b05702a343edb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d9636c52518fea984a5251e6f36e19639598d75d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524217"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47075644"
 ---
 # <a name="ui-automation-support-for-the-toolbar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ToolBar
 > [!NOTE]

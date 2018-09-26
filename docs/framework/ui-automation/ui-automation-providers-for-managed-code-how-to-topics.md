@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 88bc4212-3f4e-4bac-bae0-faef31944b71
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 351f0a2bc35ed1dd90be926e272f6aa3e92e495e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 8670b6cca65003a1f86e5caacda9aa4545434c01
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43503689"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077086"
 ---
 # <a name="ui-automation-providers-for-managed-code-how-to-topics"></a>Postupy: Témata zprostředkovatelů automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]

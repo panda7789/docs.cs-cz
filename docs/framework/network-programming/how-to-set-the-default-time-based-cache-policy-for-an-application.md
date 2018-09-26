@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: nastavení výchozích zásad založené na čase mezipaměti pro aplikaci'
+title: 'Postupy: nastavení výchozích zásad mezipaměti na základě času pro aplikaci'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,25 +11,24 @@ helpviewer_keywords:
 ms.assetid: 6bfce066-a2e7-4add-a05e-85c12ec9f07f
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 021a13b9124cf54712643e33cbf0ca77ec828b27
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 1e08026f8d1ec8b39f7ef3c2c34efad9e51b8fe9
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396669"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47074885"
 ---
-# <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a>Postupy: nastavení výchozích zásad založené na čase mezipaměti pro aplikaci
-Výchozí zásady založené na čase mezipaměti umožňuje aplikaci tak, aby měl své mezipaměti chování definované hlavičky odeslané s uložené v mezipaměti prostředků a chování mezipaměti definované v části 13 a 14 k dispozici v dokumentu RFC 2616 [ http://www.ietf.org ](http://www.ietf.org/). To je vhodné mezipaměti chování pro většinu aplikací.  
+# <a name="how-to-set-the-default-time-based-cache-policy-for-an-application"></a>Postupy: nastavení výchozích zásad mezipaměti na základě času pro aplikaci
+Umožňuje aplikaci mít své mezipaměti chování definované hlavičky posílané s prostředkem v mezipaměti a chování mezipaměti definované v části 13 a 14 k dispozici v dokumentu RFC 2616 výchozích zásad mezipaměti na základě času [ http://www.ietf.org ](http://www.ietf.org/). Toto je chování mezipaměti vhodné pro většinu aplikací.  
   
 ### <a name="to-set-the-default-automatic-policy-for-an-application"></a>Chcete-li nastavit automatické výchozí zásady pro aplikace  
   
 1.  Vytvořte objekt výchozí zásady založené na čase.  
   
-2.  Objekt zásad nastavte jako výchozí pro doménu aplikace.  
+2.  Nastavte jako výchozí pro doménu aplikace objektu zásad.  
   
 ## <a name="example"></a>Příklad  
- Dva příklady v této části vytvořit identickými zásadami.  
+ Tyto dva příklady v této části vytvořit identickými zásadami.  
   
  Následující příklad vytvoří výchozí zásady založené na čase a nastaví jej jako výchozí pro doménu aplikace.  
   
@@ -48,7 +47,7 @@ Public Shared Sub SetDefaultTimeBasedPolicy ()
 End Sub  
 ```  
   
- Můžete taky vytvořit zásady založené na čase mezipaměti výchozí pomocí <xref:System.Net.Cache.RequestCachePolicy> třídy, jak je znázorněno v následujícím příkladu:  
+ Můžete také vytvořit pomocí zásad mezipaměti na základě času výchozí <xref:System.Net.Cache.RequestCachePolicy> třídy, jak je znázorněno v následujícím příkladu:  
   
 ```csharp  
 public static void SetDefaultTimeBasedPolicy2()  
@@ -70,4 +69,4 @@ End Sub
  [Zásady mezipaměti](../../../docs/framework/network-programming/cache-policy.md)  
  [Zásady mezipaměti na základě místa](../../../docs/framework/network-programming/location-based-cache-policies.md)  
  [Zásady mezipaměti na základě času](../../../docs/framework/network-programming/time-based-cache-policies.md)  
- [\<requestCaching – > elementu (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)
+ [\<requestCaching – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)

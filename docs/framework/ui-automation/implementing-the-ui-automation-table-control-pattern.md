@@ -8,13 +8,12 @@ helpviewer_keywords:
 ms.assetid: 880cd85c-aa8c-4fb5-9369-45491d34bb78
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 7466a7cc25ac742483e21fc1ee4a631bd43bc5a3
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.openlocfilehash: 4c0a868866100a77e027c03f5fb94ad9987d0c65
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45528510"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077613"
 ---
 # <a name="implementing-the-ui-automation-table-control-pattern"></a>Implementace vzoru ovládacích prvků tabulka pro automatizaci uživatelského rozhraní
 > [!NOTE]

@@ -3,13 +3,12 @@ title: PeerSecuritySettings
 ms.date: 03/30/2017
 ms.assetid: 24ae0d35-f3a3-419b-afd6-686e22aae27b
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 58b372f26fee7dc180d75731fd4855db569c87c7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c74ee82d7aa3a23f0ee6a69185ad45857c31bb0b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33484517"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47087876"
 ---
 # <a name="peersecuritysettings"></a>PeerSecuritySettings
 PeerSecuritySettings  
@@ -35,7 +34,7 @@ class PeerSecuritySettings
   
  Přístup k typu: jen pro čtení  
   
- Jestli úroveň zprávy a koncový bod nakonfigurovaná pomocí této vazby používá zabezpečení na úrovni přenosu.  
+ Určuje, zda zpráva úrovni a koncovým bodem nakonfigurovaným s vazbou používají zabezpečení na úrovni přenosu.  
   
 ### <a name="transport"></a>Přenos  
  Datový typ: třída PeerTransportSecuritySettings  
@@ -46,7 +45,7 @@ class PeerSecuritySettings
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

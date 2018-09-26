@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: cf62d09c6b4cd5a135e6daf4749ecdfb56b50cd4
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f59549d83e5662f236a44f112b473b2d233f4669
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779323"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073696"
 ---
 # <a name="ui-automation-control-types-overview"></a>Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]

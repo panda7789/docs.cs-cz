@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: přístup k vlastnosti specifické pro protokol HTTP'
+title: 'Postupy: přístup k vlastnostem specifickým pro HTTP'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,16 +7,15 @@ dev_langs:
 ms.assetid: f8848c7e-f5c5-4d42-b86d-9951ff8f4146
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 20773d2224f9c04f3b0f9d0906c9e6fc215c5619
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f008cf82b80e29f8fe741034a0e820b5eae5b0ba
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33389610"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084810"
 ---
-# <a name="how-to-access-http-specific-properties"></a>Postupy: přístup k vlastnosti specifické pro protokol HTTP
-Tento příklad ukazuje, jak vypnout HTTP **udržování** chování a získání verze protokolu číslo z webového serveru.  
+# <a name="how-to-access-http-specific-properties"></a>Postupy: přístup k vlastnostem specifickým pro HTTP
+Tento příklad ukazuje, jak chcete-li vypnout HTTP **Keep-alive** chování a získejte verzi protokolu číslo z webového serveru.  
   
 ## <a name="example"></a>Příklad  
   
@@ -50,7 +49,7 @@ HttpWResp.Close();
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
  Tento příklad vyžaduje:  
   
--   Odkazuje na **System.Net** oboru názvů.  
+-   Odkazy **System.Net** oboru názvů.  
   
 ## <a name="see-also"></a>Viz také  
  [Přístup k internetu přes proxy server](../../../docs/framework/network-programming/accessing-the-internet-through-a-proxy.md)  

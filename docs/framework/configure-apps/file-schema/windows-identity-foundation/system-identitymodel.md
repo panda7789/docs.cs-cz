@@ -3,16 +3,15 @@ title: '&lt;system.identityModel&gt;'
 ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 6faeadc9fcdffc8c8aa14fdcc744896b45a941f0
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 1b3121a6e7e036ec268cf83ffbf545c0e669a9b9
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32755250"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077327"
 ---
 # <a name="ltsystemidentitymodelgt"></a>&lt;system.identityModel&gt;
-Poskytuje konfigurace pro povolení možnosti Windows Identity Foundation (WIF) v aplikacích.  
+Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.  
   
  \<system.identityModel>  
   
@@ -33,7 +32,7 @@ Poskytuje konfigurace pro povolení možnosti Windows Identity Foundation (WIF) 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identity úrovně služeb.|  
+|[\<identityConfiguration >](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|Určuje nastavení identit na úrovni služby.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
@@ -42,10 +41,10 @@ Poskytuje konfigurace pro povolení možnosti Windows Identity Foundation (WIF) 
 |`<configuration>`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
   
 ## <a name="remarks"></a>Poznámky  
- Přidat `<system.identityModel>` oddíl konfiguračního souboru pro konfiguraci služby nebo aplikace pro používání Windows Identity Foundation (WIF). `<system.identityModel>` Element je reprezentována <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> třídy.  
+ Přidat `<system.identityModel>` části do konfiguračního souboru pro konfiguraci služby nebo aplikace pro používání technologie Windows Identity Foundation (WIF). `<system.identityModel>` Prvek je reprezentován <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> třídy.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak přidat `<system.identityModel>` oddíl konfiguračního souboru. Je nutné nejdříve přidat deklaraci konfigurace části a oboru názvů, v části `<configSections>` elementu. Potom můžete přidat `<system.IdentityModel>` element konfigurační soubor k určení minimálně jedna konfigurace identity.  
+ Následující příklad ukazuje, jak přidat `<system.identityModel>` části ke konfiguračnímu souboru. Konfigurace části a obor názvů deklarace podle musíte nejprve přidat `<configSections>` elementu. Potom můžete přidat `<system.IdentityModel>` element zadat jednu nebo několik konfigurací identit konfigurační soubor.  
   
 ```xml  
 <configuration>  

@@ -1,64 +1,66 @@
 ---
-title: Pomocí sady Visual Studio Tools for Docker (Visual Studio na Windows)
+title: Visual Studio Tools for Docker ve Windows
 description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/12/2018
 ms.custom: vs-dotnet
-ms.openlocfilehash: af14c92ab27885deec878dc33e7b94035f43e65b
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: cd140c12ef4a0187cce096e013937d5c98cd4b39
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46581217"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47170792"
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí sady Visual Studio Tools for Docker (Visual Studio na Windows)
 
-Pracovní postup vývoje při použití Visual Studio Tools for Docker je podobný pracovní postup při používání Visual Studio Code a rozhraní příkazového řádku Dockeru. Ve skutečnosti je založen na stejné rozhraní příkazového řádku Dockeru, ale je snadné začít, zjednodušuje a poskytuje větší produktivitu pro sestavení, spouštět a vytvořit úkolů. Je také možné spouštět a ladit své kontejnery prostřednictvím jednoduché akce, jako je F5 a Ctrl + F5 v sadě Visual Studio. Díky podpoře Orchestrace volitelný kontejner, kromě možnosti spuštění a ladění jednoho kontejneru můžete spustit a ladit skupinu kontejnerů (celé řešení) ve stejnou dobu. Pouze definuje kontejnery ve stejném *docker-compose.yml* souboru na úrovni řešení.
+Visual Studio Tools for Docker pracovní postup pro vývojáře je podobný používání Visual Studio Code a rozhraní příkazového řádku Dockeru (je založená na stejné rozhraní příkazového řádku Dockeru). Visual Studio Tools pro Docker díky ještě jednodušší, abyste mohli začít, zjednodušuje a poskytuje větší produktivitu pro sestavení, spouštět a vytvořte úkoly. Spustit a ladit své kontejnery prostřednictvím jednoduché akce, jako je **F5** a **Ctrl**+**F5**.
 
-## <a name="configuring-your-local-environment"></a>Konfigurace vašeho místního prostředí
+> [!NOTE]
+> Tento článek se týká sady Visual Studio ve Windows a ne Visual Studio pro Mac.
 
-Podporu dockeru je zahrnuta v sadě Visual Studio 2017 s žádným z nainstalovaných úlohách .NET a .NET Core. Docker pro Windows instalovat samostatně.
+## <a name="configure-your-local-environment"></a>Konfigurace vašeho místního prostředí
 
-S nejnovější verzí Docker pro Windows je jednodušší než někdy k vývoji aplikací Dockeru vzhledem k tomu, že instalační program je jasné, jak je vysvětleno v následující odkazy.
+S nejnovější verzí Docker pro Windows ([https://docs.docker.com/docker-for-windows/](https://docs.docker.com/docker-for-windows/)), nastavení jednoduché usnadňuje vývoj aplikací Dockeru.
 
-**Další informace:** Další informace o instalaci Dockeru pro Windows, přejděte na <https://docs.docker.com/docker-for-windows/>.
+Podporu dockeru je zahrnuta v sadě Visual Studio 2017. Stáhnete Visual Studio 2017: [https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs)
 
-**Další informace:** pokyny k instalaci sady Visual Studio, přejděte na [ https://visualstudio.microsoft.com/downloads/ ](https://visualstudio.microsoft.com/downloads/).
+## <a name="use-docker-tools-in-visual-studio-2017"></a>Použití nástrojů Dockeru v sadě Visual Studio 2017
 
-Pokud chcete zobrazit informace o instalaci Visual Studio Tools for Docker, přejděte na <http://aka.ms/vstoolsfordocker> a <https://docs.microsoft.com/aspnet/core/host-and-deploy/docker/visual-studio-tools-for-docker>.
+Existují dvě úrovně podpory Dockeru, které můžete přidat do projektu. V projektech webových aplikací .NET Core, lze přidat *soubor Dockerfile* soubor do projektu povolení podpory Dockeru. Další úrovní je podpora orchestrátoru kontejnerů, které přidává *soubor Dockerfile* do projektu (pokud ještě neexistuje) a *docker-compose.yml* souboru na úrovni řešení.
 
-## <a name="using-docker-tools-in-visual-studio-2017"></a>S použitím nástrojů Docker v sadě Visual Studio 2017
+**Přidat** > **podporu Dockeru** a **přidat** > **podporu Orchestrátoru kontejnerů** jsou příkazy umístěné v místní nabídce (nebo kontextovou nabídku) uzel projektu pro projekt webové aplikace v **Průzkumníka řešení**, jak ukazuje obrázek 4 – 26:
 
-Při přidávání podpory Docker do projektu (viz obrázek 4 – 26), sada Visual Studio přidá *soubor Dockerfile* do kořenového adresáře projektu.
+![Přidejte podporu Dockeru nabídky v sadě Visual Studio](media/add-docker-support-menu.png)
 
-![Zapnutí podpory řešení Dockeru v projektu sady Visual Studio 2017](./media/image32.png)
+Obrázek 4 – 26: Přidání podpory Dockeru do projektu sady Visual Studio 2017
 
-Obrázek 4 – 26: zapnutí podpory řešení Dockeru v projektu sady Visual Studio 2017
+### <a name="add-docker-support"></a>Přidání podpory Dockeru
 
- Podpora Orchestrace kontejnerů pomocí Docker Compose, se přidá ve výchozím nastavení v sadě Visual Studio 2017 verze 15.7 nebo starší. Podpora Orchestrace kontejnerů je přihlašovaná funkce v sadě Visual Studio 2017 verze 15.8 nebo později, v takovém případě Docker Compose a Service Fabric se nepodporuje.
+Můžete přidat podporu Dockeru do existujícího projektu webové aplikace .NET Core tak, že vyberete **přidat** > **podporu Dockeru** v **Průzkumníka řešení**. Můžete také povolit podporu Dockeru během vytváření projektu tak, že vyberete **povolit podporu Dockeru** v **nová webová aplikace ASP.NET Core** dialogové okno, které se otevře po kliknutí na **OK** v **nový projekt** dialogové okno, jak ukazuje obrázek 4 – 27.
 
-Pomocí sady Visual Studio verze 15,8 a novější můžete přidat podporu pro více projektů v řešení, že mají přiřazeným kontejnerem. Klikněte pravým tlačítkem na uzel řešení nebo projektu v **Průzkumníka řešení**a zvolte **přidat** > **podpora Orchestrace kontejnerů**.  Klikněte na tlačítko **Docker Compose** nebo **Service Fabric** Spravovat kontejnery.
+![Povolit podporu Dockeru pro novou webovou aplikaci ASP.NET Core v sadě Visual Studio](./media/enable-docker-support-visual-studio.png)
 
-Pokud zvolíte **Docker Compose**, sada Visual Studio přidá oddíl služby ve vašem řešení *docker-compose.yml* soubory (nebo vytvoří soubory, pokud nebyla neexistují). Je snadný způsob, jak začít vytváření řešení více kontejnerů; pak můžete otevřít *docker-compose.yml* soubory a provede jejich aktualizaci rozšířených o další funkce.
+Obrázek 4 – 27: povolte podporu Dockeru během vytváření projektu v sadě Visual Studio 2017
 
-Tato akce přidá požadované konfigurace řádky kódu *docker-compose.yml* nastavená na úrovni řešení.
+Když přidáváte nebo povolit podporu Dockeru, sada Visual Studio přidá *soubor Dockerfile* soubor do projektu.
 
-Také můžete zapnout podporu Dockeru při vytváření projektu aplikace ASP.NET Core v sadě Visual Studio 2017, jak ukazuje obrázek 4 – 27.
+> [!NOTE]
+> Když povolíte podporu Docker Compose během vytváření projektu pro projekt webové aplikace .NET Framework (nikoli projekt .NET Core webové aplikace), jak ukazuje obrázek 4 – 28, přidá se také podpora orchestrátoru kontejnerů.
+>
+> ![Povolit Docker compose podpory pro rozhraní .NET Framework projektu webové aplikace](media/enable-docker-compose-support.png)
 
-![Zapnutí podpory Dockeru při vytváření projektu](./media/image33.png)
+> Obrázek 4 – 28: Povolení podpory Docker Compose v projektu webové aplikace .NET Framework v sadě Visual Studio 2017
 
-Obrázek 4 – 27: zapnutí podpory Dockeru při vytváření projektu
+### <a name="add-container-orchestrator-support"></a>Přidat podporu orchestrátoru kontejnerů
 
-Po přidání podpory Dockeru do svého řešení v sadě Visual Studio, také uvidíte nový uzel stromu **Průzkumníka řešení** s přidaného *docker-compose.yml* soubory, jak je znázorněno v obrázek 4 – 28.
+Pokud chcete vytvořit vícekontejnerových řešení, přidáte podporu orchestrátoru kontejnerů do vašich projektů. Když chcete přidat podporu orchestrátoru kontejnerů, Visual Studio přidá *soubor Dockerfile* projektu (pokud ještě neexistuje) a globální *docker-compose.yml* souboru na úrovni řešení. To vám umožní spouštět a ladit skupinu kontejnerů (celé řešení) ve stejnou dobu, pokud jsou definovány ve stejném *docker-compose.yml* souboru. Pokud *docker-compose.yml* již existuje, požadovaných řádků kódu, konfigurace sady Visual Studio právě přidá k němu.
 
-![soubory docker-compose.yml nyní zobrazit v Průzkumníku řešení](./media/image34.PNG)
+Poté, co přidáte do projektu podporu Orchestrace kontejnerů, se zobrazí soubor Dockerfile přidat do projektu a **docker-compose** přidán do řešení ve složce **Průzkumníka řešení**, jak ukazuje obrázek 4 – 29:
 
-Obrázek 4 – 28: soubory docker-compose.yml nově zobrazují v **Průzkumníka řešení**
+![Soubory docker v Průzkumníku řešení v sadě Visual Studio](media/docker-support-solution-explorer.png)
 
-Můžete nasadit aplikace s více kontejnerů pomocí jediného *docker-compose.yml* souboru při spuštění `docker-compose up`, nicméně sady Visual Studio přidá skupinu z nich, takže mohou přepsat hodnoty v závislosti na prostředí (vývojové a produkční) a provedení příkazu zadejte (vydání a ladění). Tato funkce je lepší vysvětlení najdete v dalších kapitolách.
-
-Service Fabric místo Docker Compose můžete také použít ke správě několika kontejnerů. Zobrazit [kurz: nasazení aplikace .NET v kontejneru Windows do Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-host-app-in-a-container).
+Obrázek 4 – 29: Docker soubory v Průzkumníku řešení v sadě Visual Studio 2017
 
 **Další informace:** další podrobnosti o implementaci služby a použití sady Visual Studio Tools for Docker v následujících článcích:
 

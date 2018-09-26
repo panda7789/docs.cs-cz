@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 1c479bc423ba17e527926bbf9c7dae6ffd8845d1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ab7e2546ce7267e77e5ea7000e94059e8c162b5d
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526049"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47172557"
 ---
 # <a name="ui-automation-events-overview"></a>Přehled událostí automatizace uživatelského rozhraní
 > [!NOTE]

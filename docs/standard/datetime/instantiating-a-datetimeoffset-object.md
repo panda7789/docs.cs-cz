@@ -14,11 +14,11 @@ ms.assetid: 9648375f-d368-4373-a976-3332ece00c0a
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6d8f4254da256bf2814f66aa62d43204fb302701
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584159"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47070718"
 ---
 # <a name="instantiating-a-datetimeoffset-object"></a>Vytvoření instance objektu DateTimeOffset
 

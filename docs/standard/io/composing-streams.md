@@ -16,11 +16,11 @@ ms.assetid: da761658-a535-4f26-a452-b30df47f73d5
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 5e52b827f337892c33ec61b9affa1cc646a759c5
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577019"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082302"
 ---
 # <a name="composing-streams"></a>Skládání datových proudů
 Záložní úložiště je paměťové médium, například disku nebo paměti. Každý záložní úložiště implementuje vlastní datový proud jako implementace <xref:System.IO.Stream> třídy. Každý typ datového proudu čte a zapisuje bajtů z a do jeho dané záložního úložiště. Datové proudy, které se připojují k zálohování úložišť jsou volány základní datové proudy. Základní datové proudy mít konstruktory, které mají parametry potřebné k připojení datový proud záložního úložiště. Například <xref:System.IO.FileStream> konstruktory, které určují parametr cesty, která určuje, jak budou sdílet soubor, procesy a tak dále.  

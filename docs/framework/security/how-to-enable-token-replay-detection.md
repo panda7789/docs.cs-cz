@@ -3,13 +3,12 @@ title: 'Postupy: Povolení zjišťování opakování tokenů'
 ms.date: 03/30/2017
 ms.assetid: 5a9f5771-f5f6-4100-8501-406aa20d731a
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: dd5adf39c37fce92d4caf1d85e2a6a12e9e6b59b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 373177924a0a2e03bd43237510c918694cd5a340
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504350"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47075343"
 ---
 # <a name="how-to-enable-token-replay-detection"></a>Postupy: Povolení zjišťování opakování tokenů
 ## <a name="applies-to"></a>Platí pro  

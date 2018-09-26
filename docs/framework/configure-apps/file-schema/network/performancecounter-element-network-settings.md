@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 564cef8ae53bf4a455a2e8032a296aa36e309917
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 549f3dcfd7225937fd04ad2116e2be311687861b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517509"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47074937"
 ---
 # <a name="ltperformancecountergt-element-network-settings"></a>&lt;performanceCounter&gt; – Element (nastavení sítě)
 Povolí nebo zakáže čítače výkonu sítě.  

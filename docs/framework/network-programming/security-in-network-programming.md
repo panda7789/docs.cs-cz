@@ -1,5 +1,5 @@
 ---
-title: Zabezpečení v síťové programování - rozhraní .NET Framework
+title: Zabezpečení v síťovém programování – rozhraní .NET Framework
 ms.date: 03/14/2018
 helpviewer_keywords:
 - sending data, Internet security
@@ -14,31 +14,30 @@ helpviewer_keywords:
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: a684fd1a7ce8cce52e00511b114cb4905ed0a42b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e47828f14ffbaac57a43ddbf53094e220acb082
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393163"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080243"
 ---
-# <a name="security-in-network-programming"></a>Zabezpečení v síťové programování
+# <a name="security-in-network-programming"></a>Zabezpečení v síťovém programování
 
-Rozhraní .NET Framework <xref:System.Net> obor názvů třídy poskytují integrovanou podporu pro oblíbené Internet ověřovací mechanismy a přístupová oprávnění kódu rozhraní .NET Framework.  
+Rozhraní .NET Framework <xref:System.Net> tříd v oboru názvů poskytují integrovanou podporu pro oblíbené Internetové aplikace ověřovacích mechanismů a pro oprávnění přístupu ke kódu rozhraní .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu
 
-[Zabezpečení TLS (Transport Layer) osvědčené postupy v rozhraní .NET Framework](tls.md)  
-Popisuje osvědčené postupy TLS s .NET Framwork.
+[Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework](tls.md)  
+Popisuje TLS osvědčených postupů pomocí rozhraní .NET Framework.
  
 [Použití protokolu SSL (Secure Sockets Layer)](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
-Popisuje, jak používat připojení Secure Sockets Layer (SSL).  
+Popisuje, jak používat připojení vrstvy SSL (Secure Sockets).  
   
 [Ověřování v internetu](../../../docs/framework/network-programming/internet-authentication.md)  
-Popisuje, jak vytvořit ověřené připojení k serverům HTTP pomocí metody ověřování protokolu HTTP.  
+Popisuje způsob použití metod ověřování protokolu HTTP k navázání ověřeného připojení k serverům HTTP.  
   
 [Oprávnění pro web a sokety](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
-Popisuje postup nastavení zabezpečení přístupu kódu pro aplikace, které používají připojení k Internetu.  
+Popisuje, jak nastavit zabezpečení přístupu ke kódu pro aplikace, které používají připojení k Internetu.  
   
 ## <a name="related-sections"></a>Související oddíly
 

@@ -1,5 +1,5 @@
 ---
-title: '&lt;codeBase&gt; – Element'
+title: '&lt;základ kódu&gt; – Element'
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#codeBase
@@ -11,16 +11,15 @@ helpviewer_keywords:
 ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 3b614546e8ed23cc1a5e169a33fb5878695037ae
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: d7563d3a0ba545bfd8d1b80981fcce607d230873
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745991"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47073180"
 ---
-# <a name="ltcodebasegt-element"></a>&lt;codeBase&gt; – Element
-Určuje, kde sestavení modul common language runtime.  
+# <a name="ltcodebasegt-element"></a>&lt;základ kódu&gt; – Element
+Určuje, kde najít sestavení modulu common language runtime.  
   
  \<Konfigurace >  
 \<modul runtime >  
@@ -43,14 +42,14 @@ href="URL of assembly"/>
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|`href`|Požadovaný atribut.<br /><br /> Určuje adresu URL, kde zadaná verze sestavení modulu runtime.|  
-|`version`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení, ve kterém základu kódu se vztahuje na. Formát čísla verze sestavení je *major.minor.build.revision*.|  
+|`href`|Požadovaný atribut.<br /><br /> Určuje adresu URL, kde modul runtime může najít zadanou verzi sestavení.|  
+|`version`|Požadovaný atribut.<br /><br /> Určuje verzi sestavení, ve kterém základu kódu se vztahuje na. Číslo verze sestavení má *major.minor.build.revision*.|  
   
 ## <a name="version-attribute"></a>verze atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Platné hodnoty pro každou část číslo verze jsou 0 až 65535.|Nelze použít.|  
+|Platné hodnoty pro každou část čísla verze jsou 0 až 65535.|Nelze použít.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -59,20 +58,20 @@ href="URL of assembly"/>
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|`buildproviders`|Definuje kolekci zprostředkovatelů sestavení používá ke kompilaci vlastních souborů prostředků. Může mít libovolný počet poskytovatele sestavení.|  
-|`compilation`|Nakonfiguruje všechna nastavení kompilace, která používá technologii ASP.NET.|  
+|`buildproviders`|Definuje kolekci zprostředkovatelů sestavení používá ke kompilaci soubory vlastních prostředků. Můžete mít libovolný počet poskytovatelé sestavení.|  
+|`compilation`|Nakonfiguruje všechna nastavení kompilace, která používá ASP.NET.|  
 |`configuration`|Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.|  
-|`System.web`|Určuje kořenový element pro konfigurační oddíl technologie ASP.NET.|  
+|`System.web`|Určuje kořenový element části o konfiguraci technologie ASP.NET.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pro modul runtime používat  **\<codeBase >** nastavení v konfiguračním souboru počítače nebo soubor zásad vydavatele, soubor musí také přesměrování verze sestavení. Konfigurační soubory aplikace mohou mít nastavení codebase bez přesměrování verze sestavení. Po určení, které verze sestavení se má použít, se vztahuje codebase nastavení ze souboru, který určuje verzi modulu runtime. Pokud je uvedené žádné codebase, sondy modulu runtime pro sestavení obvyklým způsobem.  
+ Pro modul runtime pro použití  **\<codeBase >** nastavení v konfiguračním souboru počítače nebo soubor zásad vydavatele, soubor musíte také vytvořit přesměrování verze sestavení. Konfigurační soubory aplikace mohou mít nastavení základu kódu bez přesměrování verze sestavení. Po určení verze sestavení, které chcete použít, se vztahuje nastavení základu kódu ze souboru, který určuje verzi modulu runtime. Pokud je uveden žádný základ kódu, modul runtime sondy pro sestavení obvyklým způsobem.  
   
- Pokud sestavení se silným názvem, codebase nastavení může být kdekoli na místního intranetu nebo Internetu. Pokud je sestavení privátní sestavení, nastavení codebase musí být cesta relativní vzhledem k adresáři aplikace.  
+ Pokud sestavení se silným názvem, nastavení základu kódu může být kdekoli na místním intranetu nebo Internetu. Je-li soukromé sestavení je sestavení, nastavení základu kódu musí být cesta relativní k adresáři vaší aplikace.  
   
- Pro sestavení bez silný název, verze ignorováno a zavaděč používá první vzhled \<codebase > uvnitř \<dependentAssembly >. Pokud je položka v konfiguračním souboru aplikace, který provede přesměrování vazby sestavení, přesměrování bude mít přednost i v případě, že verze sestavení neshoduje vazby požadavku.  
+ Pro sestavení bez silného názvu, verze ignorovány a používá zavaděč první výskyt \<codebase > uvnitř \<dependentAssembly >. Pokud existuje položka v konfiguračním souboru aplikace, který přesměrovává vazby na jiné sestavení, přesměrování bude mít přednost i v případě, že verze sestavení neshoduje požadavek na vytvoření vazby.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak k určení, kde sestavení modulu runtime.  
+ Následující příklad ukazuje, jak určit, kde najít sestavení modulu runtime.  
   
 ```xml  
 <configuration>  

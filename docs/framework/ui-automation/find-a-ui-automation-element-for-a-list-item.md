@@ -11,13 +11,12 @@ helpviewer_keywords:
 ms.assetid: c326ad2b-2144-4f64-ae4c-d850c74f95c5
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: b569b43d83e8a7f1b0fa82b79bc1fc40977b72ba
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 4e8822ce8d33d285475be5ec85d36c5085d46f4b
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46576928"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47173002"
 ---
 # <a name="find-a-ui-automation-element-for-a-list-item"></a>Hledání prvku automatizace uživatelského rozhraní pro položku seznamu
 > [!NOTE]

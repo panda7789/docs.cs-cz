@@ -6,11 +6,11 @@ ms.assetid: a42f81b3-0403-4e34-b346-7d2129804e54
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 67fdbcdbff64bcd91c80fbeaec0c41982b68d98f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46695378"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47078185"
 ---
 # <a name="creating-new-entity-references"></a>Vytváření nových odkazů na Entity
 **CreateEntityReference** metoda vytvoří nový **XmlEntityReference** uzlu. Pokud chcete zobrazit, pokud je už deklarovaný název entity, na kterou se odkazuje vypadá XML Document Object Model (DOM). Pokud ano, podřízené uzly **XmlEntityReference** uzlu jsou zkopírovány z uzlu entity prohlášení. Pokud neexistuje žádná deklarace entity, který odpovídá, prázdný textový uzel je připojen jako jediný podřízený uzel odkazu entity. Protože podřízené uzly **XmlEntityReference** uzlu jsou kopie jiných uzlech, tyto podřízené uzly jsou jen pro čtení a nelze ji změnit.  
