@@ -4,11 +4,11 @@ description: Jak k provádění poddotazů na operace seskupení pomocí jazyka 
 ms.date: 12/1/2016
 ms.assetid: d75a588e-9b6f-4f37-b195-f99ec8503855
 ms.openlocfilehash: 514db81b80557a3026589f00177910cc9446c0f4
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47089075"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193470"
 ---
 # <a name="perform-a-subquery-on-a-grouping-operation"></a>Provádění poddotazů na operace seskupení
 

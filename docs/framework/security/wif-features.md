@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 7e13cae9-7cd1-491f-aa75-0735320a7be6
 author: BrucePerlerMS
 ms.openlocfilehash: d2896d9afb3dbee0e0cb8348d229d399a2c3437a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108426"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47206330"
 ---
 # <a name="wif-features"></a>Funkce technologie WIF
 -   [Nástroj Identita a přístup pro Visual Studio 2012](../../../docs/framework/security/identity-and-access-tool-for-vs.md)  

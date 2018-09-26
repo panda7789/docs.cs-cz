@@ -9,11 +9,11 @@ ms.assetid: 234d11a0-7ce7-4309-8989-2f4720e02f78
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 94c4642221f88f4d41ee436ee6a46c830ea1811c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075434"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47200370"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>Implementace vzoru ovládacích prvků mřížka pro automatizaci uživatelského rozhraní
 > [!NOTE]

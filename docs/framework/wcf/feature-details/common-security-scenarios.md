@@ -6,11 +6,11 @@ helpviewer_keywords:
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
 author: BrucePerlerMS
 ms.openlocfilehash: 081518fb1b3eb1f66c772cd401c19c0eb523d32a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111253"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47200825"
 ---
 # <a name="common-security-scenarios"></a>Běžné scénáře zabezpečení
 Témata v této části katalogu počet možných klienta a konfigurace zabezpečení služby. Konfigurace se liší podle počtu faktorů. Například, jestli je služba nebo klient na intranetu, nebo určuje, zda je zabezpečení poskytované Windows nebo přenosu (například HTTPS).  

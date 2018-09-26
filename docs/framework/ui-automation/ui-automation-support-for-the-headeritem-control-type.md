@@ -9,11 +9,11 @@ ms.assetid: 09ce1310-ee31-493c-a71e-010bafc42fcf
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: cfbf554bb3b8cdd05338879af5be1abcc0a17de1
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47172677"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193067"
 ---
 # <a name="ui-automation-support-for-the-headeritem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku HeaderItem
 > [!NOTE]

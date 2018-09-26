@@ -3,11 +3,11 @@ title: Použití interoperability s výměnou externích dat
 ms.date: 03/30/2017
 ms.assetid: 96f6fe26-5305-494f-9119-7748e0c4b3fa
 ms.openlocfilehash: 534321e5b5568e0dd0988333dc98ccc18ff33df8
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47076532"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47195963"
 ---
 # <a name="using-interop-with-external-data-exchange"></a>Použití interoperability s výměnou externích dat
 <xref:System.Activities.Statements.Interop> Aktivita slouží ke spuštění aktivity z Windows Workflow Foundation (WF) v [!INCLUDE[vstecwinfx](../../../../includes/vstecwinfx-md.md)] a [!INCLUDE[netfx35_long](../../../../includes/netfx35-long-md.md)] (WF3) a pracovních postupů v rámci Windows Workflow Foundation v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] (WF4). Tento příklad ukazuje, jak nakonfigurovat a spustit WF3 pracovního postupu, který používá <xref:System.Workflow.Activities.ExternalDataExchangeService> (a odpovídající vlastní aktivity pro volání metod a zpracování událostí) s použitím <xref:System.Activities.Statements.Interop> aktivity ve službě WF4 pracovního postupu.  

@@ -17,11 +17,11 @@ topic_type:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 67abf017040b9e6bbe9b10e560c8d57c124ae84e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108088"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196639"
 ---
 # <a name="putinstancewmi-function"></a>PutInstanceWmi – funkce
 Vytvoří nebo aktualizuje instance existující třídy. Instance se zapisují do úložiště služby WMI. 

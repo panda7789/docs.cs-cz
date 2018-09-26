@@ -8,11 +8,11 @@ helpviewer_keywords:
 - Line control [Visual Basic], topic list
 ms.assetid: 29ee3a5f-920f-4677-85bc-bd7425ab57e8
 ms.openlocfilehash: 6d052af15257f00f43ad21b08765ab3c882b31bf
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47109310"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47205957"
 ---
 # <a name="line-and-shape-controls-visual-studio"></a>Line a Shape – ovládací prvky (Visual Studio)
 Ovládací prvky jazyka Visual Basic Power Pack Line a Shape jsou grafické prvky, které vám umožní kreslení čar vodorovné, svislé a diagonální, obdélníky, čtverce, elipsy, kruhy a obdélníky a čtverce zaoblené rohy ve formuláři nebo kontejneru.  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 5bad60aa-6084-4c7b-aefd-9b581f04382e
 author: BrucePerlerMS
 ms.openlocfilehash: f7cd2268eefa0176ab71a3d5d3bc82c178664742
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075093"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47194039"
 ---
 # <a name="endpoint-security-validation-and-authentication-failures"></a>Koncový bod: Počet chyb ověřování zabezpečení
 Název čítače: počet chyb ověření zabezpečení  

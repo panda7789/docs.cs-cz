@@ -29,11 +29,11 @@ ms.assetid: 20a104ae-1649-4649-a005-531a5cf74c93
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 8c992a96f2fa8d55d1fe16c03922cc8dbb39451c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47089997"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47194006"
 ---
 # <a name="ipv6-addressing"></a>Adresování IPv6
 V Internet Protocol verze 6 (IPv6) jsou adresy 128 bitů. Jedním z důvodů rozsáhlý adresní prostor je rozdělit do hierarchie směrování domén, které odpovídají Internetu topologie dostupných adres. Dalším důvodem je mapovat adresy síťových adaptérů (nebo rozhraní), které se zařízení připojují k síti. IPv6 obsahuje schopnost přeložit adresy na nejnižší úrovni, na úrovni síťových rozhraní, a také funkce automatické konfigurace.  

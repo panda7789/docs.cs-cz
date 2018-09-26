@@ -20,11 +20,11 @@ ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: f4ab27a8e6cc5bd38620148b130823070e5102fa
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111279"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198446"
 ---
 # <a name="using-an-asynchronous-client-socket"></a>Použití asynchronního klientského soketu
 Asynchronního klientského soketu nepozastaví aplikace při čekání na dokončení operací sítě. Místo toho využívá standardní asynchronní programovací model rozhraní .NET Framework ke zpracování síťového připojení na jedno vlákno, zatímco aplikace stále běží v původním vláknu. Asynchronní sockets jsou vhodné pro aplikace, které usnadňují použití sítě nebo nemůže čekat na dokončení před pokračováním síťových operací.  

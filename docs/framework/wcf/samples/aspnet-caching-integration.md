@@ -2,15 +2,15 @@
 title: Integrace mezipaměti ASP.NET
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-ms.openlocfilehash: 55e6213bf0c4c212ebcf4e68882d16532c0e4229
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 376e188bcabbff1d87e7b45aa281e2a2b92a13b6
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46002785"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197445"
 ---
 # <a name="aspnet-caching-integration"></a>Integrace mezipaměti ASP.NET
-Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programovací model webových služeb HTTP WCF. Podrobnosti najdete [služba základních prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázky v místním prostředí verze tohoto scénáře, který popisuje implementaci služby do hloubky. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  
+Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programovací model webových služeb HTTP WCF. Toto téma se zaměřuje na funkce integrace výstupní mezipaměti technologie ASP.NET.  
   
 ## <a name="demonstrates"></a>Demonstruje  
  Integrace s ASP.NET výstupní mezipaměti  
@@ -29,7 +29,7 @@ Tato ukázka předvádí, jak využívat výstupní mezipaměti ASP.NET programo
   
  V souboru Service.cs ukázkový projekt služby jak `GetCustomer` a `GetCustomers` operace jsou označené <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>, která poskytuje název profilu mezipaměti "CacheFor60Seconds". V souboru Web.config projekt služby, profil mezipaměti "CacheFor60Seconds" není k dispozici <`caching`> elementu <`system.web`>. Pro tento profil mezipaměti, hodnota `duration` atribut je "60", takže odpovědi přidružený k tomuto profilu jsou uložené v mezipaměti do výstupní mezipaměti ASP.NET po dobu 60 sekund. Také, pro tento profil mezipaměti `varmByParam` atribut je nastaven na "format" požádá s různými hodnotami parametru `format` parametru řetězce dotazu odpovědi v mezipaměti samostatně. A konečně, mezipaměti profilu `varyByHeader` atribut je nastaven na "Přijmout", takže jejich odpovědi v mezipaměti samostatně žádosti se různé hodnoty hlavičky Accept.  
   
- Soubor program.cs v projektu klienta ukazuje, jak tohoto klienta lze vytvořené využitím <xref:System.Net.HttpWebRequest>. Všimněte si, že toto je pouze jeden způsob, jak získat přístup ke službě WCF. Je také možné získat přístup ke službě pomocí ostatních tříd rozhraní .NET Framework jako objekt pro vytváření kanálů WCF a <xref:System.Net.WebClient>. Další ukázky v sadě SDK (například [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) vzorku a [automatický výběr formátu](../../../../docs/framework/wcf/samples/automatic-format-selection.md) ukázkové) ukazují, jak použít tyto třídy komunikovat se službou WCF.  
+ Soubor program.cs v projektu klienta ukazuje, jak tohoto klienta lze vytvořené využitím <xref:System.Net.HttpWebRequest>. Všimněte si, že toto je pouze jeden způsob, jak získat přístup ke službě WCF. Je také možné získat přístup ke službě pomocí ostatních tříd rozhraní .NET Framework jako objekt pro vytváření kanálů WCF a <xref:System.Net.WebClient>. Další ukázky v sadě SDK (například [základní služba HTTP](../../../../docs/framework/wcf/samples/basic-http-service.md) ukázkové) ukazují, jak použít tyto třídy komunikovat se službou WCF.  
   
 ## <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
  Ukázkový soubor obsahuje tři projekty:  

@@ -3,13 +3,12 @@ title: Počet neautorizovaných volání zabezpečení za sekundu
 ms.date: 03/30/2017
 ms.assetid: 0f189767-8c05-478a-8f0b-9228e5d351e5
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 4d4970c6f6552163114b33a34ae87c6ed56b5e13
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 20c8da5fcdca0c99fd53fb5ce0d7cbf15552997a
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703457"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47192264"
 ---
 # <a name="security-calls-not-authorized-per-second"></a>Počet neautorizovaných volání zabezpečení za sekundu
 Název čítače: Zabezpečení počet neautorizovaných volání za sekundu.  

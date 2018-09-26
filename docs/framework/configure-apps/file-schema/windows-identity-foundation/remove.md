@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 4058e2f1-7db4-4d1a-84dd-1b52836f2ae6
 author: BrucePerlerMS
 ms.openlocfilehash: 410fef1a43f9202d56c4957b1162c53ee056ae3f
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47074911"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198719"
 ---
 # <a name="ltremovegt"></a>&lt;remove&gt;
 Odebere obslužnou rutinu tokenu se zadaným zabezpečením z kolekce obslužné rutiny tokenů.  

@@ -3,11 +3,11 @@ title: Proměnné a sledování Argument
 ms.date: 03/30/2017
 ms.assetid: 8f3d9d30-d899-49aa-b7ce-a8d0d32c4ff0
 ms.openlocfilehash: 45ed3761cd7ead82650023b93a2f32a43e847339
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47156361"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47195872"
 ---
 # <a name="variable-and-argument-tracking"></a>Proměnné a sledování Argument
 Při sledování provádění pracovního postupu, je často užitečné extrahovat data. Tímto způsobem další kontext při přístupu k sledování záznamů příspěvek provádění. V [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], můžete extrahovat všechny viditelné proměnné nebo argumentu v rámci oboru žádnou aktivitu v pracovním postupu pomocí sledování. Sledování profily umožňují snadno extrahovat data.  

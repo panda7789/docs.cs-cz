@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: f11a631d-4094-4e11-bb03-4ede74b30281
 author: BrucePerlerMS
 ms.openlocfilehash: e63f02add81495e474b59b6c5cc090bd69add3d2
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082980"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47206167"
 ---
 # <a name="ltsecuritytokenhandlersgt"></a>&lt;securityTokenHandlers&gt;
 Určuje kolekci obslužné rutiny tokenů zabezpečení, které jsou registrované na koncový bod.  

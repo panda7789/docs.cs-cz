@@ -9,11 +9,11 @@ ms.assetid: b0fcdd87-3add-4345-bca9-e891205e02ba
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: b45ea5f032b0315de2c37e65f61a30ab4dc13e49
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070367"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47199252"
 ---
 # <a name="implementing-the-ui-automation-value-control-pattern"></a>Implementace vzoru ovládacích prvků hodnota pro automatizaci uživatelského rozhraní
 > [!NOTE]

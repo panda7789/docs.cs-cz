@@ -3,11 +3,11 @@ title: Pouze služba základní XAML
 ms.date: 03/30/2017
 ms.assetid: c106feb0-0245-43b5-aefe-93ce0e4d38eb
 ms.openlocfilehash: f4f296a97b9c3093874c5ec8e05023e84b0af44a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47074707"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47206395"
 ---
 # <a name="basic-xaml-only-service"></a>Pouze služba základní XAML
 Tento příklad ukazuje, jak vytvořit službu pouze XAML. Tento scénář je služba diagnostiky pro problémy související s automobilu. Služba se implementuje jako pracovní postup, který klient zeptá na několik otázek a Diagnostikujte problém. Existují dva typy služby můžete diagnostikovat problémy (Auto nezačíná ani klimatizace, nebudou fungovat). Pracovní postup využívá k tomu tři jednoduché servisní operace požadavku/odpovědi šablony z návrháře. Služba je hostována ve službě IIS tak, že vytvoříte virtuální adresář služby IIS a kopírování service1.xamlx a soubory Web.config do virtuálního adresáře, kompilované není vyžadován žádný kód. Ve výchozím nastavení tato ukázka automaticky zkopíruje potřebné soubory do virtuálního adresáře vytvoří, když budete postupovat podle pokynů nastavení pro ukázky WCF a WF: [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md) při sestavování v sadě Visual Studio 2010.  

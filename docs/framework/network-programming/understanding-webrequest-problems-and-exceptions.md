@@ -5,11 +5,11 @@ ms.assetid: 74a361a5-e912-42d3-8f2e-8e9a96880a2b
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: bb974ecb20cfde63b25992f4deb759111195879d
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47079893"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196600"
 ---
 # <a name="understanding-webrequest-problems-and-exceptions"></a>Principy problémů a výjimek WebRequest
 <xref:System.Net.WebRequest> a odvozené třídy (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, a <xref:System.Net.FileWebRequest>) vyvolat výjimky pro signalizaci nestandardní podmínky. Někdy není zřejmé řešení těchto problémů.  

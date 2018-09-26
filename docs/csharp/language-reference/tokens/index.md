@@ -13,11 +13,11 @@ ms.assetid: 4c5c0539-2e37-40b7-91ce-75af5aabd3f9
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7cc105b335069635791e9e558fe6f9a28eba8b60
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090354"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47192115"
 ---
 # <a name="c-special-characters"></a>C# speciální znaky
 

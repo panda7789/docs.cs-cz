@@ -9,11 +9,11 @@ ms.assetid: 9ac1b522-77ab-4cdc-852a-20fcdc9ae498
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 2c6f2d001c6513211cf15993285e3564f7613402
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47080348"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47205106"
 ---
 # <a name="sosdll-sos-debugging-extension"></a>SOS.dll (rozšíření ladění SOS)
 

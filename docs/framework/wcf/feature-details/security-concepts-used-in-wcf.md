@@ -3,13 +3,12 @@ title: Koncepty zabezpečení používané ve službě WCF
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: c309b5e5c461b58e887ea634bf3b5177b7c0329b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9fdb9d2075fe6b9521a0df6804e0c46ca59c90f0
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521338"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47188233"
 ---
 # <a name="security-concepts-used-in-wcf"></a>Koncepty zabezpečení používané ve službě WCF
 Zabezpečení Windows Communication Foundation (WCF) je postavené na koncepty již používán a nasadit v různých zabezpečení infrastruktury.  

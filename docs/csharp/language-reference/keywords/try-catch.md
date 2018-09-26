@@ -11,11 +11,11 @@ helpviewer_keywords:
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
 ms.openlocfilehash: d1fd290444bc7841e32d955a4e7f2134afdbd484
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47113803"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193616"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (Referenční dokumentace jazyka C#)
 Příkaz try-catch se skládá z `try` bloku, za nímž následuje jedna nebo více `catch` klauzule, které určují obslužné rutiny pro různé výjimky.  

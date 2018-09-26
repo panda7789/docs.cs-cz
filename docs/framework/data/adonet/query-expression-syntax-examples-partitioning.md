@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: beb5f361-1ac8-44fb-afa1-2aacea15f166
 ms.openlocfilehash: 456e4289af2c71ee2ef96f48939dc9f7b70c6bc0
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47084719"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47206540"
 ---
 # <a name="query-expression-syntax-examples-partitioning-linq-to-dataset"></a>Příklady syntaxe výrazů dotazů: Dělení (LINQ to DataSet)
 Příklady v tomto tématu ukazují, jak používat <xref:System.Linq.Enumerable.Skip%2A> a <xref:System.Linq.Enumerable.Take%2A> metody pro dotazování <xref:System.Data.DataSet> pomocí syntaxe výrazu dotazu.  

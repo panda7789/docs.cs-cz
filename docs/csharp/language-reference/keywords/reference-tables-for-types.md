@@ -9,11 +9,11 @@ helpviewer_keywords:
 - C# language, data types
 ms.assetid: 1d2b6a9b-31fd-4fa6-a7b2-bfd9c806ac8a
 ms.openlocfilehash: f75a1cf0b118becd940bd1aa8ac66550d0852773
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47083199"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47207332"
 ---
 # <a name="reference-tables-for-types-c-reference"></a>Referenční tabulky pro typy (referenční dokumentace jazyka C#)
 

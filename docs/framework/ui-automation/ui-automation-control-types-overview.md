@@ -8,11 +8,11 @@ ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: f59549d83e5662f236a44f112b473b2d233f4669
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47073696"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197770"
 ---
 # <a name="ui-automation-control-types-overview"></a>Přehled typů ovládacích prvků pro automatizaci uživatelského rozhraní
 > [!NOTE]

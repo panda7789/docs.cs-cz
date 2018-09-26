@@ -3,11 +3,11 @@ title: '&lt;commonParameters&gt;'
 ms.date: 03/30/2017
 ms.assetid: ffc20832-34d6-4622-8174-81924fd53514
 ms.openlocfilehash: 5e4c19c48709ffd81cb00e9820e6c3cdb297ec7e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47086394"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47207964"
 ---
 # <a name="ltcommonparametersgt"></a>&lt;commonParameters&gt;
 Představuje kolekci parametrů, které jsou používány globálně u více služeb. Tato kolekce bude obvykle obsahují řetězec připojení k databázi, kterou může sdílet trvalé služby.  

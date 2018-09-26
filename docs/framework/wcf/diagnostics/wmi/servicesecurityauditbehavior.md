@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 2c5809e7-5364-44ce-bc71-848be4672e2a
 author: BrucePerlerMS
 ms.openlocfilehash: 8f43ee752830d95db6bbbdbe311b6d77735e31b5
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070146"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196887"
 ---
 # <a name="servicesecurityauditbehavior"></a>ServiceSecurityAuditBehavior
 ServiceSecurityAuditBehavior  

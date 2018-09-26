@@ -12,11 +12,11 @@ ms.assetid: ac3c5eaa-49c7-4653-b83e-532e2a2604a2
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: ad0dcc88ee3a0fcd62c5758cf9b49cd3206c6d3b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108506"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47192963"
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>Vystavení obsahu tabulky s použitím automatizace uživatelského rozhraní
 > [!NOTE]

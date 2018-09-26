@@ -11,11 +11,11 @@ ms.assetid: f325f0d8-1715-41ea-85ca-45b82ffea8bc
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: becd247e07a2ece2865251e7a8bbd10f0750ddb3
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47086379"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47195807"
 ---
 # <a name="implement-ui-automation-providers-in-a-client-application"></a>Implementace zprostředkovatelů automatizace uživatelského rozhraní v klientských aplikacích
 > [!NOTE]

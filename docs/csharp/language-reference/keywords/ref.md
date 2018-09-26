@@ -8,11 +8,11 @@ helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
 ms.openlocfilehash: e0b82de125246e95d8dce2a7afc20119a8a1fe4f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47027801"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47207960"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 

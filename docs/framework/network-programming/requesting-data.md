@@ -20,11 +20,11 @@ ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: a163374810cbc06ca048c1bdd304de9519db140c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47157054"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47195703"
 ---
 # <a name="requesting-data"></a>Požadavek na Data
 Vývoj aplikací, které běží v distribuované provozní prostředí dnešní Internet vyžaduje metodu efektivní a snadno použitelné pro načítání dat ze všech typů prostředků. Připojitelných protokolů umožňují vyvíjet aplikace, které používají jednotné rozhraní pro načtení dat z více protokolů sítě Internet.  

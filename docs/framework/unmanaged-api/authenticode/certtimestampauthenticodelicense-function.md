@@ -11,11 +11,11 @@ ms.assetid: d468325a-21c5-43ce-8567-84e342b22308
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: fd77a8a81718837d55f3018564d0f4ba8fdc95ee
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47072557"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198901"
 ---
 # <a name="certtimestampauthenticodelicense-function"></a>Funkce CertTimestampAuthenticodeLicense
 Časová razítka na Authenticode XrML licence.  

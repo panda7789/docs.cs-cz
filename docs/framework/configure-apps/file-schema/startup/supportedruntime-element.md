@@ -12,11 +12,11 @@ ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: b86ffdd242a95a0c5c34efb3f38b3501f3f2ba6c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108537"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197796"
 ---
 # <a name="ltsupportedruntimegt-element"></a>&lt;supportedRuntime&gt; – Element
 

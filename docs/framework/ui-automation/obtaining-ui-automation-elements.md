@@ -7,13 +7,12 @@ helpviewer_keywords:
 ms.assetid: c2caaf45-e59c-42a1-bc9b-77a6de520171
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 9994f6a3026c790acdb35af3300379786f615607
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 16bc9475599510a5e55f246d49aaa0be19314979
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518880"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47208682"
 ---
 # <a name="obtaining-ui-automation-elements"></a>Získání elementů automatizace uživatelského rozhraní
 > [!NOTE]

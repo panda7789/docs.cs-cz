@@ -25,11 +25,11 @@ ms.assetid: 4b48e22d-e4e5-48f0-be80-d549bda97415
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 7fcc3c78192866ecbcefe03573d3e253ac6b6138
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47115058"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198420"
 ---
 # <a name="introducing-pluggable-protocols"></a>Úvod k připojitelným protokolům
 Rozhraní Microsoft .NET Framework poskytuje vícevrstvou, rozšiřitelnou a spravovatelnou implementaci internetových služeb, které je možné integrovat se rychle a snadno do svých aplikací. Přístup k Internetu tříd v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů slouží k implementaci založeného na webu i internetových aplikací.  

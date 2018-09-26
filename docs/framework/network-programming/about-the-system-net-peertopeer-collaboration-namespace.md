@@ -5,11 +5,11 @@ ms.assetid: b5d8c1c1-6844-4947-9759-c7f1b564bded
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 0b9e95c4ca723166639adf5b93d0811638378470
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070835"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47195755"
 ---
 # <a name="about-the-systemnetpeertopeercollaboration-namespace"></a>O Namespace System.Net.PeerToPeer.Collaboration
 <xref:System.Net.PeerToPeer.Collaboration> Obor názvů obsahuje třídy a rozhraní API, která slouží k implementaci aktivity spolupráce peer pomocí infrastruktury spolupráci Peer-to-Peer.  

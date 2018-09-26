@@ -12,11 +12,11 @@ ms.assetid: 5e87881c-9c13-4b52-8ad1-e34bb46e8aaa
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: c62a469b3e31283e5790c747092a8fe504ef8c2a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47107906"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47200552"
 ---
 # <a name="security-changes-in-the-net-framework"></a>Změny zabezpečení v rozhraní .NET Framework
 Nejdůležitější změny zabezpečení v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] v silné názvy. Zobrazit [vylepšené silné názvy](../../../docs/framework/app-domains/enhanced-strong-naming.md) popis těchto změn.  

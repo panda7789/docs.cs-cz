@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: aee33e50-936f-4486-9ca8-c1520c19a62d
 author: BrucePerlerMS
 ms.openlocfilehash: f3269dc96dee2d534a8dd6677abeb6afae8776bd
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47115081"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196717"
 ---
 # <a name="how-to-secure-messages-within-reliable-sessions"></a>Postupy: Zabezpečené zprávy ve spolehlivých relacích
 

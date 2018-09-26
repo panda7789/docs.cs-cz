@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: b2e182b6-c041-4d80-a926-6058068d9f79
 author: BrucePerlerMS
 ms.openlocfilehash: 180b64f6f37e5c765585e52b292319816618be28
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47076511"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198849"
 ---
 # <a name="symmetricsecuritybindingelement"></a>SymmetricSecurityBindingElement
 SymmetricSecurityBindingElement  

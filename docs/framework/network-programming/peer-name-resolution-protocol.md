@@ -5,11 +5,11 @@ ms.assetid: 11940511-c124-4d91-ae31-d4ed6e81ee58
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: f17c5e7e2fa7a5eba66f0b9dd8c950a7464eea8e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47171332"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196746"
 ---
 # <a name="peer-name-resolution-protocol"></a>Protokol PNRP
 V prostředích peer-to-peer partnerské uzly použít konkrétní název řešení systémy druhé strany umístění v síti (adresy, protokoly a porty) z názvů nebo jiných typů identifikátorů. V minulosti má bylo složité peer name resolution Protocol ze své podstaty přechodné připojení, stejně jako ostatní nedostatky v v systému DNS (Domain Name).  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: c99048ee-062b-4b21-bb9b-77c465a318c6
 author: BrucePerlerMS
 ms.openlocfilehash: 51fca7f5ec2e64131343248dffadfa19c397a082
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077158"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47205193"
 ---
 # <a name="systemservicemodelsecuritysecurityclientsessionkeyrenewed"></a>System.ServiceModel.Security.SecurityClientSessionKeyRenewed
 System.ServiceModel.Security.SecurityClientSessionKeyRenewed  

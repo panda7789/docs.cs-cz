@@ -9,11 +9,11 @@ ms.assetid: ac178408-1485-436f-8d3e-eee3bf80cb24
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: e5d5e82c5c2cfc48c98559bd6ce14519bdfaa522
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47085915"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196554"
 ---
 # <a name="implementing-the-ui-automation-tableitem-control-pattern"></a>Implementace vzoru ovládacích prvků TableItem pro automatizaci uživatelského rozhraní
 > [!NOTE]

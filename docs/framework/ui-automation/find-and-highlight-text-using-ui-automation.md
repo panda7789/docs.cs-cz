@@ -15,11 +15,11 @@ ms.assetid: b77693f5-87bb-4b29-a297-05ff882e2044
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 1f9b1ce1b92086f34a8c18917966b71cf7018ca2
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47113527"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47200461"
 ---
 # <a name="find-and-highlight-text-using-ui-automation"></a>Hledání a zvýrazňování textu s použitím automatizace uživatelského rozhraní
 > [!NOTE]

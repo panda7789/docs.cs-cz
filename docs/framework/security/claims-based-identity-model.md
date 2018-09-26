@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 4a96a9af-d980-43be-bf91-341a23401431
 author: BrucePerlerMS
 ms.openlocfilehash: 7248cf51946d4bf798209c047ec2c7ed3bb04ebe
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077576"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197939"
 ---
 # <a name="claims-based-identity-model"></a>Model deklarovaných identit
 Při vytváření aplikací pracujících s deklaracemi je identita uživatele ve vaší aplikaci reprezentována jako sada deklarací. Deklarace může být jméno uživatele, jiné můžou být e-mailovou adresu. Princip spočívá v tom, že je nakonfigurován externí systém identit, který vaší aplikaci poskytuje vše, co pro každou žádost potřebuje o uživateli vědět, a současně pomocí kryptografických metod zaručuje, že přijatá data identity pocházejí z důvěryhodného zdroje.  

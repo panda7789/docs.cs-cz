@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/07/2018
 ms.openlocfilehash: 1aaddc96ee509815da9fc4e6519e1fb454f74b13
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47083108"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198680"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 

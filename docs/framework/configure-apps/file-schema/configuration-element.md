@@ -11,11 +11,11 @@ ms.assetid: 2ec1c9dc-2e5c-4ef0-9958-81670ab88449
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 40c0ab5f18d5aae2c99dd66747d3435f0826af8b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47171267"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47200318"
 ---
 # <a name="configuration-element"></a>\<Konfigurace > – element
 

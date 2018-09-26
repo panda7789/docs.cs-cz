@@ -7,16 +7,16 @@ helpviewer_keywords:
 - numeric formatting [C#]
 - String.Format method
 ms.assetid: 120ba537-4448-4c62-8676-7a8fdd98f496
-ms.openlocfilehash: c29884dc868049a68cc46d44f4373d9dc1007f92
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 6f1cb5b49139cf9661e678cfc0ecc884a2749622
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46576824"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47203888"
 ---
 # <a name="formatting-numeric-results-table-c-reference"></a>Tabulka formátování číselných výsledků (referenční dokumentace jazyka C#)
 
-Následující tabulka uvádí podporované specifikátorů pro formátování číselných výsledků. Formátovaný výsledek odpovídá "en US" <xref:System.Globalization.CultureInfo>.
+Následující tabulka uvádí podporované specifikátorů pro formátování číselných výsledků. Formátovaný výsledek v posledním sloupci odpovídá "en US" <xref:System.Globalization.CultureInfo>.
 
 |Specifikátor formátu|Popis|Příklady|Výsledek|  
 |----------------------|-----------------|--------------|------------|  

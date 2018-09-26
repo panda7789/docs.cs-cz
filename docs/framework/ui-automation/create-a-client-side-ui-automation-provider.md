@@ -11,11 +11,11 @@ ms.assetid: d91edaf2-be28-41ec-a508-af421cb43c3d
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 76fa74a31e7198d0f380a4db71a4789fd7b0a31a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47084157"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196106"
 ---
 # <a name="create-a-client-side-ui-automation-provider"></a>Vytvoření zprostředkovatele automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]

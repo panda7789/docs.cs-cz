@@ -15,11 +15,11 @@ ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 3e47828f14ffbaac57a43ddbf53094e220acb082
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47080243"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47205090"
 ---
 # <a name="security-in-network-programming"></a>Zabezpečení v síťovém programování
 

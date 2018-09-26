@@ -8,11 +8,11 @@ helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
 ms.openlocfilehash: abb679971771f6bff5bd1c84ff744e2fcbb9c45a
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46529830"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47188723"
 ---
 # <a name="using-the-xmlserializer-class"></a>Používání třídy XmlSerializer
 Windows Communication Foundation (WCF) můžete použít dva různé serializace technologií Chcete-li data ve vaší aplikaci do souboru XML, která se přenášejí mezi klienty a služeb, proces s názvem serializace.  

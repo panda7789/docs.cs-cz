@@ -6,11 +6,11 @@ helpviewer_keywords:
 ms.assetid: d2221d1c-c9cb-48d1-b044-a3b4445c7f05
 author: BrucePerlerMS
 ms.openlocfilehash: aed9c89395f7715b0d0d4478cd292b741e754629
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077171"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197076"
 ---
 # <a name="message-security-windows"></a>Zabezpečení zpráv – Windows
 Tato ukázka předvádí, jak nakonfigurovat <xref:System.ServiceModel.WSHttpBinding> vazby pro použití zabezpečení na úrovni zprávy s ověřováním Windows. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce služba je hostována v Internetové informační služby (IIS) a klient je konzolová aplikace (.exe).  

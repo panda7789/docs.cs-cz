@@ -10,11 +10,11 @@ helpviewer_keywords:
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
 ms.openlocfilehash: f8fd3237d71bc1960678565192c7ef9ddcb2c366
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577701"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196626"
 ---
 # <a name="panels-overview"></a>Přehled panelů
 <xref:System.Windows.Controls.Panel> prvky jsou komponenty, které řídí vykreslování elementů, jejich velikost a rozměry, jejich pozice a uspořádání jejich podřízený obsah. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Poskytuje řadu předdefinovaných <xref:System.Windows.Controls.Panel> elementy jakož i možnost vytvořit vlastní <xref:System.Windows.Controls.Panel> elementy.  

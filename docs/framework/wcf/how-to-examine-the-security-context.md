@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: 389b5a57-4175-4bc0-ada0-fc750d51149f
 author: BrucePerlerMS
 ms.openlocfilehash: c2cb1f6d06961546a04b4a132bf9861c925ca421
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47113855"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197991"
 ---
 # <a name="how-to-examine-the-security-context"></a>Postupy: Prozkoumání kontextu zabezpečení
 Při programování služby Windows Communication Foundation (WCF), kontext zabezpečení služby vám umožní určit podrobnosti o přihlašovací údaje pro klienta a deklarace identity použít k ověřování ve službě. To se provádí pomocí vlastnosti <xref:System.ServiceModel.ServiceSecurityContext> třídy.  

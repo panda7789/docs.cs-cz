@@ -8,11 +8,11 @@ ms.assetid: 7ce550d6-8f7c-4ea7-add8-5bc27a7b51be
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 009c23d0015f366ab5f1ee92609f0131465d827b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47080660"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193095"
 ---
 # <a name="how-to-assign-user-information-to-group-connections"></a>Postupy: přiřazení uživatelských informací pro seskupení připojení
 

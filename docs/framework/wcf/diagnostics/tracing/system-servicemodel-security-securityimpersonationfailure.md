@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: e0e61834-72ac-4a58-af32-94e3206a9369
 author: BrucePerlerMS
 ms.openlocfilehash: f783272ec06454aeafc81b2946d515a645d075ba
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070686"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47195664"
 ---
 # <a name="systemservicemodelsecuritysecurityimpersonationfailure"></a>System.ServiceModel.Security.SecurityImpersonationFailure
 System.ServiceModel.Security.SecurityImpersonationFailure  

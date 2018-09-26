@@ -22,11 +22,11 @@ ms.assetid: 8cce2742-8d52-4643-9dd2-64ddf38aa878
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 66b20c299252ff1f218a8131758e2cf03640aac6
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090094"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47199533"
 ---
 # <a name="basic-and-digest-authentication"></a>Základní a ověřování algoritmem Digest
 <xref:System.Net> Provádění basic a ověřování algoritmem digest splňuje RFC2617 – ověřování pomocí protokolu HTTP: Basic a ověřování algoritmem Digest (k dispozici na webu World Wide Web Consortium na www.w3.org).  

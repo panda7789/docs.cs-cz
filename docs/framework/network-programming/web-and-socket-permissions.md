@@ -18,11 +18,11 @@ ms.assetid: d51ad8cb-03ae-4a51-bfcd-cfcf6b98afa9
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 2aa7d54ae88a6dacf61488515a8ba3f13c54405e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47157035"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47200890"
 ---
 # <a name="web-and-socket-permissions"></a>Web a oprávnění soketu
 Internetové zabezpečení pro aplikace využívající <xref:System.Net> obor názvů poskytuje <xref:System.Net.WebPermission> a <xref:System.Net.SocketPermission> třídy. **Oprávnění WebPermission** třídy ovládací prvky aplikace přímo do data žádosti z identifikátoru URI nebo identifikátor URI neslouží k Internetu. **SocketPermission** třídy aplikaci prvku správné použití ovládacích prvků <xref:System.Net.Sockets.Socket> tak, aby přijímal data na jiný místní port nebo se obrátit na vzdálené zařízení pomocí protokolu přenosu na jiné adrese založené na hostiteli, číslo portu, a Přenosový protokol soketu.  

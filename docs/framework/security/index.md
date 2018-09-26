@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 7eb50bcb-38d8-4afb-86aa-2573586697c2
 author: BrucePerlerMS
 ms.openlocfilehash: 00feb727f72cedb2d25eab974148f81c1344eaf0
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47071962"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196799"
 ---
 # <a name="windows-identity-foundation"></a>Windows Identity Foundation
 -   [Novinky ve Windows Workflow Foundation 4.5](../../../docs/framework/security/whats-new-in-wif.md)  

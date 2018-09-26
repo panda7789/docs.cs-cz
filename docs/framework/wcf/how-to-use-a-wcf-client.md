@@ -8,11 +8,11 @@ dev_langs:
 - VB
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
 ms.openlocfilehash: 12e911fb899cb85121c129b762828cdda01e64f1
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47112663"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193080"
 ---
 # <a name="how-to-use-a-windows-communication-foundation-client"></a>Postupy: Používání klienta Windows Communication Foundation
 

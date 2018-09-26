@@ -10,13 +10,12 @@ helpviewer_keywords:
 ms.assetid: b51206f2-1281-4ad0-9820-ea39d88ae577
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 31dacad6b2b7c891ff8c32151f9bf02e8639375f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: fa89d652c4a3d0cc1fcbd234b6cff851ce777bb3
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46580444"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196919"
 ---
 # <a name="ui-automation-text-pattern"></a>Vzor ovládacích prvků text pro automatizaci uživatelského rozhraní
 > [!NOTE]

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 286cd191-4fd5-4c4e-a223-9c71cf7fdead
 author: BrucePerlerMS
 ms.openlocfilehash: 045fb60f6ae0fb54dce7fd9bc8c634caee5fddcd
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47170688"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47205319"
 ---
 # <a name="ltsecuritygt-of-ltnettcpbindinggt"></a>&lt;security&gt; – &lt;netTcpBinding&gt;
 Definuje nastavení zabezpečení pro vazbu.  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - WCF clients [WCF], running
 ms.assetid: a67884cc-1c4b-416b-8c96-5c954099f19f
 ms.openlocfilehash: 1eadb5008575a1a53d685db14d68e42d0dce1360
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070673"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197523"
 ---
 # <a name="how-to-create-a-windows-communication-foundation-client"></a>Postupy: Vytvoření klienta Windows Communication Foundation
 

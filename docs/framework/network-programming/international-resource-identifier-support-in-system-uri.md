@@ -5,11 +5,11 @@ ms.assetid: b5e994c3-3535-4aff-8e1b-b69be22e9a22
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: ef44453dce2f59a2b481d0533b8bd28de516c630
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47156563"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47199161"
 ---
 # <a name="international-resource-identifier-support-in-systemuri"></a>Podpora mezinárodních identifikátorů prostředků v System.Uri
 <xref:System.Uri?displayProperty=nameWithType> Třídy bylo rozšířeno pomocí International Resource Identifier (IRI) a podporu mezinárodní názvy domén (IDN). Tato vylepšení jsou k dispozici v rozhraní .NET Framework 3.5, 3.0 SP1 a 2.0 SP1.  

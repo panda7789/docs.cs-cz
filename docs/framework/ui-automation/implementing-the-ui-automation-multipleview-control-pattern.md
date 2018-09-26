@@ -9,11 +9,11 @@ ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 4fe991aa0a558851ac6b69640e7eac6875df8d4f
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090458"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198199"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>Implementace vzoru ovládacích prvků MultipleView pro automatizaci uživatelského rozhraní
 > [!NOTE]

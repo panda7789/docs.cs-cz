@@ -6,11 +6,11 @@ helpviewer_keywords:
 - generics [C#], default keyword
 - default keyword [C#], generic programming
 ms.openlocfilehash: 94866f22fb3ad921a834cffb16fe17e44cef5965
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47085434"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47192625"
 ---
 # <a name="default-value-expressions-c-programming-guide"></a>výrazy s výchozími hodnotami (C# programovací příručka)
 

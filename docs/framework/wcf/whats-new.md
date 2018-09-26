@@ -6,11 +6,11 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
 ms.openlocfilehash: 008bfb0042d31c7fbd1e853ba3ead4c1247dfa7c
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47027359"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47204450"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Co je nového ve WCF 4.5
 

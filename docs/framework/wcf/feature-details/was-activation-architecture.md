@@ -3,11 +3,11 @@ title: Architektura aktivace WAS
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
 ms.openlocfilehash: 64219649e7b743b7dd3a67673c3f2409aeeba486
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090432"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197302"
 ---
 # <a name="was-activation-architecture"></a>Architektura aktivace WAS
 V tomto tématu najdete výčet a tento článek popisuje komponenty služby Aktivace procesu Windows (WAS).  

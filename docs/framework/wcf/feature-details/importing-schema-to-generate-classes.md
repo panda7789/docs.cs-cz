@@ -9,11 +9,11 @@ helpviewer_keywords:
 - XsdDataContractImporter class
 ms.assetid: b9170583-8c34-43bd-97bb-6c0c8dddeee0
 ms.openlocfilehash: 0d18ee811763a1a3db6905bdbd18540ab5c97c05
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108511"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197368"
 ---
 # <a name="importing-schema-to-generate-classes"></a>Import schématu pro generování tříd
 Chcete-li generovat třídy ze schémat, které lze použít s Windows Communication Foundation (WCF), použijte <xref:System.Runtime.Serialization.XsdDataContractImporter> třídy. Toto téma popisuje proces a odchylky.  

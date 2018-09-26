@@ -11,11 +11,11 @@ ms.assetid: e1a253ff-e0fb-4df8-95ff-d01a90d4cb19
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 16dc60fa9cd8782efbe1b6028413138b5991839e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078198"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47193719"
 ---
 # <a name="how-to-synchronize-concurrent-operations-with-a-barrier"></a>Postupy: Synchronizace souběh operací pomocí bariéry
 Následující příklad ukazuje, jak synchronizovat souběžné úkoly se <xref:System.Threading.Barrier>.  

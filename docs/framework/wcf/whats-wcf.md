@@ -7,11 +7,11 @@ helpviewer_keywords:
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
 ms.openlocfilehash: f202d922b441d86838dd41992104ceecfc9bbabf
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47109050"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197627"
 ---
 # <a name="what-is-windows-communication-foundation"></a>Co je to Windows Communication Foundation
 

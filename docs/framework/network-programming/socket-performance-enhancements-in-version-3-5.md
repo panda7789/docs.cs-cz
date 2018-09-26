@@ -5,11 +5,11 @@ ms.assetid: 225aa5f9-c54b-4620-ab64-5cd100cfd54c
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: ddf098d0da7411515592c5bfa5bbac2153d7f0eb
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111922"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47197119"
 ---
 # <a name="socket-performance-enhancements-in-version-35"></a>Vylepšení výkonu soketů ve verzi 3.5
 <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> Třídy vylepšili jsme ve verzi 3.5 pro použití aplikacemi, které můžete dosáhnout nejvyšší výkon sítě asynchronní vstupně-výstupních operací. Řadu nových tříd se přidaly jako součást sadu rozšíření <xref:System.Net.Sockets.Socket> třídu, která poskytují alternativní asynchronní zpracování, které mohou využívat specializované vysoce výkonné soketu aplikací. Tato vylepšení byly navrženy speciálně pro serverové aplikace sítě, které vyžadují vysoký výkon. Aplikace můžete použít rozšířené asynchronní vzor výhradně, nebo pouze v cílové horké oblastí aplikace (při přijetí velkého objemu dat, třeba).  

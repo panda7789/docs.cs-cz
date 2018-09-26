@@ -3,11 +3,11 @@ title: Zabezpečení zpráv ve WCF
 ms.date: 03/30/2017
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
 ms.openlocfilehash: 81d9acde3c8fab1860904074199066cca55c7186
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47113842"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47195248"
 ---
 # <a name="message-security-in-wcf"></a>Zabezpečení zpráv ve WCF
 Windows Communication Foundation (WCF) má dva hlavní režimy pro zajištění zabezpečení (`Transport` a `Message`) a třetí režimu (`TransportWithMessageCredential`), který kombinuje dvě. Toto téma popisuje zabezpečení zpráv a důvodů, proč ho použít.  

@@ -3,11 +3,11 @@ title: System.ServiceModel.Channels.MsmqMoveOrDeleteAttemptFailed
 ms.date: 03/30/2017
 ms.assetid: d75d39da-7502-4a6a-91b9-eaa05b8e24d5
 ms.openlocfilehash: 7e7bd48d206456af6a5a8662516c4d9c82b3ed2f
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47157256"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196898"
 ---
 # <a name="systemservicemodelchannelsmsmqmoveordeleteattemptfailed"></a>System.ServiceModel.Channels.MsmqMoveOrDeleteAttemptFailed
 Nelze přesunout nebo odstraňovat zprávy.  

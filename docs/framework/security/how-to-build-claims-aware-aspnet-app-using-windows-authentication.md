@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 11c53d9d-d34a-44b4-8b5e-22e3eaeaee93
 author: BrucePerlerMS
 ms.openlocfilehash: 2c7877c452c729b30029cad1a8e17600f3dc9661
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47112423"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198525"
 ---
 # <a name="how-to-build-claims-aware-aspnet-application-using-windows-authentication"></a>Postupy: Sestavení aplikace ASP.NET pracující s deklaracemi identity pomocí ověřování Windows
 ## <a name="applies-to"></a>Platí pro  

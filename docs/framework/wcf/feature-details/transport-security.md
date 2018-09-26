@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 86c94153-e48d-4539-b6cf-cd8060582e7f
 author: BrucePerlerMS
 ms.openlocfilehash: 7a52ac584abe766a7517436e697aff89333c9833
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47171423"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198160"
 ---
 # <a name="transport-security"></a>Zabezpečení přenosu
 Zabezpečení přenosu ve Windows Communication Foundation (WCF) závisí na vazbu vybrané. Přenos, který implementuje vazbu určuje skutečné zabezpečení. Témata v této části popisují, které jsou implementovány mechanismů a jejich možnosti.  

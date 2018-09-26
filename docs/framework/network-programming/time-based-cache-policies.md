@@ -20,11 +20,11 @@ ms.assetid: 74f0bcaf-5c95-40c1-9967-f3bbf1d2360a
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: d24fa2ece34d20a3d9e8d6f971eebae5da0f496e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47079607"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47198082"
 ---
 # <a name="time-based-cache-policies"></a>Zásady mezipaměti na základě času
 Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipaměti pomocí čas, kdy byla načtena prostředek, vrátí hlavičky prostředku a aktuální čas. Při nastavování zásad mezipaměti na základě času, můžete použít <xref:System.Net.Cache.HttpRequestCacheLevel.Default> podle času zásady nebo vytvořte vlastní zásadu podle času. Při použití výchozí zásady na základě času pro prostředky získané s použitím protokolu HTTP (Hypertext Transfer), chování přesné mezipaměti se určuje podle záhlaví zahrnutá v odpovědi v mezipaměti a chování zadané v části 13 a 14 dokumentu RFC 2616 k dispozici na [ http://www.ietf.org ](http://www.ietf.org/). Příklad kódu, který ukazuje nastavení výchozí zásady podle času pro HTTP prostředky, najdete v části [postupy: nastavení zásad mezipaměti Default Time-Based pro aplikaci](../../../docs/framework/network-programming/how-to-set-the-default-time-based-cache-policy-for-an-application.md). Příklady kódu, které ukazují, vytváření a používání mezipaměti zásad, najdete v části [konfiguraci ukládání do mezipaměti v síťových aplikacích](../../../docs/framework/network-programming/configuring-caching-in-network-applications.md).  

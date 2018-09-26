@@ -9,11 +9,11 @@ ms.assetid: c1202b21-c1f0-4560-853c-7b99bd73ad97
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 7b73b4bf8887e5828e6341e55f48bbc867ed7268
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47115032"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196866"
 ---
 # <a name="ui-automation-support-for-the-menubar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku MenuBar
 > [!NOTE]

@@ -9,11 +9,11 @@ ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ab4d3bf7db928f926b802c08ee5e61edf86055b6
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47085213"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47196748"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>Zastaralé typy v rozhraní .NET Framework
 <a name="introduction"></a> V tabulkách v tomto článku jsou uvedeny typy, které jsou zastaralé v [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a [!INCLUDE[net_v46](../../../includes/net-v46-md.md)]uspořádaných podle sestavení. Pokud chcete zobrazit seznam zastaralých typů a doporučené alternativy v každé sestavení pomocí následujících odkazů. Protože tyto typy jsou zastaralé, jsou zastaralé také jejich členy. Seznam dalších zastaralé členy v knihovně tříd rozhraní .NET Framework najdete v tématu [zastaralé členy](../../../docs/framework/whats-new/obsolete-members.md).
