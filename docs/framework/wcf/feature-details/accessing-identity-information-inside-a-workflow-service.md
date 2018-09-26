@@ -3,30 +3,30 @@ title: Přístup k informacím o identitě v rámci služby pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 0b832127-b35b-468e-a45f-321381170cbc
 ms.openlocfilehash: 7951782946f5b8ef989598d01229dcf193d97689
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46585504"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108366"
 ---
-# <a name="accessing-identity-information-inside-a-workflow-service"></a><span data-ttu-id="1c436-102">Přístup k informacím o identitě v rámci služby pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="1c436-102">Accessing Identity Information inside a Workflow Service</span></span>
-<span data-ttu-id="1c436-103">Chcete-li získat přístup k o identitě v rámci služby pracovních postupů, musíte implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní v provádění vlastní vlastnost.</span><span class="sxs-lookup"><span data-stu-id="1c436-103">To access identity information inside a workflow service, you must implement the <xref:System.ServiceModel.Activities.IReceiveMessageCallback> interface in a custom execution property.</span></span> <span data-ttu-id="1c436-104">V <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda můžete přistupovat <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> přístupu k informacím identity.</span><span class="sxs-lookup"><span data-stu-id="1c436-104">In the <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> method you can access the <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> to access identity information.</span></span> <span data-ttu-id="1c436-105">Toto téma vás provede procesem implementace této vlastnosti spuštění, jakož i vlastní aktivitu, která bude přinášet tuto vlastnost <xref:System.ServiceModel.Activities.Receive> aktivity za běhu.</span><span class="sxs-lookup"><span data-stu-id="1c436-105">This topic will walk you through implementing this execution property, as well as a custom activity that will surface this property to the <xref:System.ServiceModel.Activities.Receive> activity at runtime.</span></span> <span data-ttu-id="1c436-106">Vlastní aktivita provede stejné chování jako <xref:System.Activities.Statements.Sequence> aktivity, s výjimkou, že <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř této, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a načte informace o identitě.</span><span class="sxs-lookup"><span data-stu-id="1c436-106">The custom activity will implement the same behavior as a <xref:System.Activities.Statements.Sequence> activity, except that when a <xref:System.ServiceModel.Activities.Receive> is placed inside of it, the <xref:System.ServiceModel.Activities.IReceiveMessageCallback> will be called and the identity information will be retrieved.</span></span>  
+# <a name="accessing-identity-information-inside-a-workflow-service"></a><span data-ttu-id="d7d13-102">Přístup k informacím o identitě v rámci služby pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="d7d13-102">Accessing Identity Information inside a Workflow Service</span></span>
+<span data-ttu-id="d7d13-103">Chcete-li získat přístup k o identitě v rámci služby pracovních postupů, musíte implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> rozhraní v provádění vlastní vlastnost.</span><span class="sxs-lookup"><span data-stu-id="d7d13-103">To access identity information inside a workflow service, you must implement the <xref:System.ServiceModel.Activities.IReceiveMessageCallback> interface in a custom execution property.</span></span> <span data-ttu-id="d7d13-104">V <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> metoda můžete přistupovat <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> přístupu k informacím identity.</span><span class="sxs-lookup"><span data-stu-id="d7d13-104">In the <xref:System.ServiceModel.Activities.IReceiveMessageCallback.OnReceiveMessage(System.ServiceModel.OperationContext,System.Activities.ExecutionProperties)> method you can access the <xref:System.ServiceModel.OperationContext.ServiceSecurityContext> to access identity information.</span></span> <span data-ttu-id="d7d13-105">Toto téma vás provede procesem implementace této vlastnosti spuštění, jakož i vlastní aktivitu, která bude přinášet tuto vlastnost <xref:System.ServiceModel.Activities.Receive> aktivity za běhu.</span><span class="sxs-lookup"><span data-stu-id="d7d13-105">This topic will walk you through implementing this execution property, as well as a custom activity that will surface this property to the <xref:System.ServiceModel.Activities.Receive> activity at runtime.</span></span> <span data-ttu-id="d7d13-106">Vlastní aktivita provede stejné chování jako <xref:System.Activities.Statements.Sequence> aktivity, s výjimkou, že <xref:System.ServiceModel.Activities.Receive> je umístěn uvnitř této, <xref:System.ServiceModel.Activities.IReceiveMessageCallback> bude volána a načte informace o identitě.</span><span class="sxs-lookup"><span data-stu-id="d7d13-106">The custom activity will implement the same behavior as a <xref:System.Activities.Statements.Sequence> activity, except that when a <xref:System.ServiceModel.Activities.Receive> is placed inside of it, the <xref:System.ServiceModel.Activities.IReceiveMessageCallback> will be called and the identity information will be retrieved.</span></span>  
   
-## <a name="implement-ireceivemessagecallback"></a><span data-ttu-id="1c436-107">Implementace IReceiveMessageCallback</span><span class="sxs-lookup"><span data-stu-id="1c436-107">Implement IReceiveMessageCallback</span></span>  
+## <a name="implement-ireceivemessagecallback"></a><span data-ttu-id="d7d13-107">Implementace IReceiveMessageCallback</span><span class="sxs-lookup"><span data-stu-id="d7d13-107">Implement IReceiveMessageCallback</span></span>  
   
-1.  <span data-ttu-id="1c436-108">Vytvořte prázdnou [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] řešení.</span><span class="sxs-lookup"><span data-stu-id="1c436-108">Create an empty [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] solution.</span></span>  
+1.  <span data-ttu-id="d7d13-108">Vytvořte prázdnou [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] řešení.</span><span class="sxs-lookup"><span data-stu-id="d7d13-108">Create an empty [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] solution.</span></span>  
   
-2.  <span data-ttu-id="1c436-109">Přidat novou aplikaci konzoly s názvem `Service` do řešení.</span><span class="sxs-lookup"><span data-stu-id="1c436-109">Add a new console application called `Service` to the solution.</span></span>  
+2.  <span data-ttu-id="d7d13-109">Přidat novou aplikaci konzoly s názvem `Service` do řešení.</span><span class="sxs-lookup"><span data-stu-id="d7d13-109">Add a new console application called `Service` to the solution.</span></span>  
   
-3.  <span data-ttu-id="1c436-110">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="1c436-110">Add references to the following assemblies:</span></span>  
+3.  <span data-ttu-id="d7d13-110">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="d7d13-110">Add references to the following assemblies:</span></span>  
   
-    1.  <span data-ttu-id="1c436-111">System.Runtime.Serialization</span><span class="sxs-lookup"><span data-stu-id="1c436-111">System.Runtime.Serialization</span></span>  
+    1.  <span data-ttu-id="d7d13-111">System.Runtime.Serialization</span><span class="sxs-lookup"><span data-stu-id="d7d13-111">System.Runtime.Serialization</span></span>  
   
-    2.  <span data-ttu-id="1c436-112">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="1c436-112">System.ServiceModel</span></span>  
+    2.  <span data-ttu-id="d7d13-112">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="d7d13-112">System.ServiceModel</span></span>  
   
-    3.  <span data-ttu-id="1c436-113">System.ServiceModel.Activities</span><span class="sxs-lookup"><span data-stu-id="1c436-113">System.ServiceModel.Activities</span></span>  
+    3.  <span data-ttu-id="d7d13-113">System.ServiceModel.Activities</span><span class="sxs-lookup"><span data-stu-id="d7d13-113">System.ServiceModel.Activities</span></span>  
   
-4.  <span data-ttu-id="1c436-114">Přidejte novou třídu s názvem `AccessIdentityCallback` a implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="1c436-114">Add a new class called `AccessIdentityCallback` and implement <xref:System.ServiceModel.Activities.IReceiveMessageCallback> as shown in the following example.</span></span>  
+4.  <span data-ttu-id="d7d13-114">Přidejte novou třídu s názvem `AccessIdentityCallback` a implementovat <xref:System.ServiceModel.Activities.IReceiveMessageCallback> jak je znázorněno v následujícím příkladu.</span><span class="sxs-lookup"><span data-stu-id="d7d13-114">Add a new class called `AccessIdentityCallback` and implement <xref:System.ServiceModel.Activities.IReceiveMessageCallback> as shown in the following example.</span></span>  
   
     ```csharp  
     class AccessIdentityCallback : IReceiveMessageCallback  
@@ -48,13 +48,13 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-     <span data-ttu-id="1c436-115">Tento kód používá <xref:System.ServiceModel.OperationContext> metodě předaná pro informace o identitě přístup.</span><span class="sxs-lookup"><span data-stu-id="1c436-115">This code uses the <xref:System.ServiceModel.OperationContext> passed into the method to access identity information.</span></span>  
+     <span data-ttu-id="d7d13-115">Tento kód používá <xref:System.ServiceModel.OperationContext> metodě předaná pro informace o identitě přístup.</span><span class="sxs-lookup"><span data-stu-id="d7d13-115">This code uses the <xref:System.ServiceModel.OperationContext> passed into the method to access identity information.</span></span>  
   
-## <a name="implement-a-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a><span data-ttu-id="1c436-116">Implementace nativeactivity přidejte implementaci IReceiveMessageCallback NativeActivityContext</span><span class="sxs-lookup"><span data-stu-id="1c436-116">Implement a Native activity to add the IReceiveMessageCallback implementation to the NativeActivityContext</span></span>  
+## <a name="implement-a-native-activity-to-add-the-ireceivemessagecallback-implementation-to-the-nativeactivitycontext"></a><span data-ttu-id="d7d13-116">Implementace nativeactivity přidejte implementaci IReceiveMessageCallback NativeActivityContext</span><span class="sxs-lookup"><span data-stu-id="d7d13-116">Implement a Native activity to add the IReceiveMessageCallback implementation to the NativeActivityContext</span></span>  
   
-1.  <span data-ttu-id="1c436-117">Přidejte novou třídu odvozenou z <xref:System.Activities.NativeActivity> volá `AccessIdentityScope`.</span><span class="sxs-lookup"><span data-stu-id="1c436-117">Add a new class derived from <xref:System.Activities.NativeActivity> called `AccessIdentityScope`.</span></span>  
+1.  <span data-ttu-id="d7d13-117">Přidejte novou třídu odvozenou z <xref:System.Activities.NativeActivity> volá `AccessIdentityScope`.</span><span class="sxs-lookup"><span data-stu-id="d7d13-117">Add a new class derived from <xref:System.Activities.NativeActivity> called `AccessIdentityScope`.</span></span>  
   
-2.  <span data-ttu-id="1c436-118">Přidání místní proměnné k udržení přehledu o podřízené aktivity, proměnné, aktuální index aktivity a <xref:System.Activities.CompletionCallback> zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="1c436-118">Add local variables to keep track of child activities, variables, current activity index, and a <xref:System.Activities.CompletionCallback> callback.</span></span>  
+2.  <span data-ttu-id="d7d13-118">Přidání místní proměnné k udržení přehledu o podřízené aktivity, proměnné, aktuální index aktivity a <xref:System.Activities.CompletionCallback> zpětného volání.</span><span class="sxs-lookup"><span data-stu-id="d7d13-118">Add local variables to keep track of child activities, variables, current activity index, and a <xref:System.Activities.CompletionCallback> callback.</span></span>  
   
     ```csharp
     public sealed class AccessIdentityScope : NativeActivity  
@@ -66,7 +66,7 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-3.  <span data-ttu-id="1c436-119">Implementací konstruktoru</span><span class="sxs-lookup"><span data-stu-id="1c436-119">Implement the constructor</span></span>  
+3.  <span data-ttu-id="d7d13-119">Implementací konstruktoru</span><span class="sxs-lookup"><span data-stu-id="d7d13-119">Implement the constructor</span></span>  
   
     ```csharp
     public AccessIdentityScope() : base()  
@@ -77,7 +77,7 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-4.  <span data-ttu-id="1c436-120">Implementace `Activities` a `Variables` vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="1c436-120">Implement the `Activities` and `Variables` properties.</span></span>  
+4.  <span data-ttu-id="d7d13-120">Implementace `Activities` a `Variables` vlastnosti.</span><span class="sxs-lookup"><span data-stu-id="d7d13-120">Implement the `Activities` and `Variables` properties.</span></span>  
   
     ```csharp
     public Collection<Activity> Activities  
@@ -91,7 +91,7 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-5.  <span data-ttu-id="1c436-121">přepsání <xref:System.Activities.NativeActivity.CacheMetadata%2A></span><span class="sxs-lookup"><span data-stu-id="1c436-121">Override <xref:System.Activities.NativeActivity.CacheMetadata%2A></span></span>  
+5.  <span data-ttu-id="d7d13-121">přepsání <xref:System.Activities.NativeActivity.CacheMetadata%2A></span><span class="sxs-lookup"><span data-stu-id="d7d13-121">Override <xref:System.Activities.NativeActivity.CacheMetadata%2A></span></span>  
   
     ```csharp
     protected override void CacheMetadata(NativeActivityMetadata metadata)  
@@ -103,7 +103,7 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-6.  <span data-ttu-id="1c436-122">přepsání <xref:System.Activities.NativeActivity.Execute%2A></span><span class="sxs-lookup"><span data-stu-id="1c436-122">Override <xref:System.Activities.NativeActivity.Execute%2A></span></span>  
+6.  <span data-ttu-id="d7d13-122">přepsání <xref:System.Activities.NativeActivity.Execute%2A></span><span class="sxs-lookup"><span data-stu-id="d7d13-122">Override <xref:System.Activities.NativeActivity.Execute%2A></span></span>  
   
     ```csharp
     protected override void Execute(NativeActivityContext context)  
@@ -139,11 +139,11 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-## <a name="implement-the-workflow-service"></a><span data-ttu-id="1c436-123">Implementace služby pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="1c436-123">Implement the workflow service</span></span>  
+## <a name="implement-the-workflow-service"></a><span data-ttu-id="d7d13-123">Implementace služby pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="d7d13-123">Implement the workflow service</span></span>  
   
-1.  <span data-ttu-id="1c436-124">Otevřít existující `Program` třídy.</span><span class="sxs-lookup"><span data-stu-id="1c436-124">Open the existing `Program` class.</span></span>  
+1.  <span data-ttu-id="d7d13-124">Otevřít existující `Program` třídy.</span><span class="sxs-lookup"><span data-stu-id="d7d13-124">Open the existing `Program` class.</span></span>  
   
-2.  <span data-ttu-id="1c436-125">Definují následující konstanty:</span><span class="sxs-lookup"><span data-stu-id="1c436-125">Define the following constants:</span></span>  
+2.  <span data-ttu-id="d7d13-125">Definují následující konstanty:</span><span class="sxs-lookup"><span data-stu-id="d7d13-125">Define the following constants:</span></span>  
   
     ```csharp
     class Program  
@@ -153,7 +153,7 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-3.  <span data-ttu-id="1c436-126">Přidat volána statická metoda `GetWorkflowService` , který vytváří služba pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="1c436-126">Add a static method called `GetWorkflowService` that creates the workflow service.</span></span>  
+3.  <span data-ttu-id="d7d13-126">Přidat volána statická metoda `GetWorkflowService` , který vytváří služba pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="d7d13-126">Add a static method called `GetWorkflowService` that creates the workflow service.</span></span>  
   
     ```csharp
     static Activity GetServiceWorkflow()  
@@ -192,7 +192,7 @@ ms.locfileid: "46585504"
      }  
     ```  
   
-4.  <span data-ttu-id="1c436-127">V existujícím `Main` metoda hostitele služby pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="1c436-127">In the existing `Main` method, host the workflow service.</span></span>  
+4.  <span data-ttu-id="d7d13-127">V existujícím `Main` metoda hostitele služby pracovního postupu.</span><span class="sxs-lookup"><span data-stu-id="d7d13-127">In the existing `Main` method, host the workflow service.</span></span>  
   
     ```csharp
     static void Main(string[] args)  
@@ -213,19 +213,19 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-## <a name="implement-a-workflow-client"></a><span data-ttu-id="1c436-128">Implementace klienta pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="1c436-128">Implement a workflow client</span></span>  
+## <a name="implement-a-workflow-client"></a><span data-ttu-id="d7d13-128">Implementace klienta pracovního postupu</span><span class="sxs-lookup"><span data-stu-id="d7d13-128">Implement a workflow client</span></span>  
   
-1.  <span data-ttu-id="1c436-129">Vytvořit nový projekt konzolové aplikace volá `Client`.</span><span class="sxs-lookup"><span data-stu-id="1c436-129">Create a new console application project called `Client`.</span></span>  
+1.  <span data-ttu-id="d7d13-129">Vytvořit nový projekt konzolové aplikace volá `Client`.</span><span class="sxs-lookup"><span data-stu-id="d7d13-129">Create a new console application project called `Client`.</span></span>  
   
-2.  <span data-ttu-id="1c436-130">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="1c436-130">Add references to the following assemblies:</span></span>  
+2.  <span data-ttu-id="d7d13-130">Přidejte odkazy na následující sestavení:</span><span class="sxs-lookup"><span data-stu-id="d7d13-130">Add references to the following assemblies:</span></span>  
   
-    1.  <span data-ttu-id="1c436-131">System.Activities</span><span class="sxs-lookup"><span data-stu-id="1c436-131">System.Activities</span></span>  
+    1.  <span data-ttu-id="d7d13-131">System.Activities</span><span class="sxs-lookup"><span data-stu-id="d7d13-131">System.Activities</span></span>  
   
-    2.  <span data-ttu-id="1c436-132">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="1c436-132">System.ServiceModel</span></span>  
+    2.  <span data-ttu-id="d7d13-132">System.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="d7d13-132">System.ServiceModel</span></span>  
   
-    3.  <span data-ttu-id="1c436-133">System.ServiceModel.Activities</span><span class="sxs-lookup"><span data-stu-id="1c436-133">System.ServiceModel.Activities</span></span>  
+    3.  <span data-ttu-id="d7d13-133">System.ServiceModel.Activities</span><span class="sxs-lookup"><span data-stu-id="d7d13-133">System.ServiceModel.Activities</span></span>  
   
-3.  <span data-ttu-id="1c436-134">Otevřete vygenerovaný soubor Program.cs a přidejte volána statická metoda `GetClientWorkflow` k vytvoření klienta pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="1c436-134">Open the generated Program.cs file and add a static method called `GetClientWorkflow` to create the client workflow.</span></span>  
+3.  <span data-ttu-id="d7d13-134">Otevřete vygenerovaný soubor Program.cs a přidejte volána statická metoda `GetClientWorkflow` k vytvoření klienta pracovní postup.</span><span class="sxs-lookup"><span data-stu-id="d7d13-134">Open the generated Program.cs file and add a static method called `GetClientWorkflow` to create the client workflow.</span></span>  
   
     ```csharp
     static Activity GetClientWorkflow()  
@@ -279,7 +279,7 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-4.  <span data-ttu-id="1c436-135">Přidejte následující kód hostování na `Main()` metody.</span><span class="sxs-lookup"><span data-stu-id="1c436-135">Add the following hosting code to the `Main()` method.</span></span>  
+4.  <span data-ttu-id="d7d13-135">Přidejte následující kód hostování na `Main()` metody.</span><span class="sxs-lookup"><span data-stu-id="d7d13-135">Add the following hosting code to the `Main()` method.</span></span>  
   
     ```csharp
     static void Main(string[] args)  
@@ -292,8 +292,8 @@ ms.locfileid: "46585504"
     }  
     ```  
   
-## <a name="example"></a><span data-ttu-id="1c436-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="1c436-136">Example</span></span>
- <span data-ttu-id="1c436-137">Tady je úplný seznam všech zdroj kód použitý v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="1c436-137">Here is a complete listing of the source code used in this topic.</span></span>  
+## <a name="example"></a><span data-ttu-id="d7d13-136">Příklad</span><span class="sxs-lookup"><span data-stu-id="d7d13-136">Example</span></span>
+ <span data-ttu-id="d7d13-137">Tady je úplný seznam všech zdroj kód použitý v tomto tématu.</span><span class="sxs-lookup"><span data-stu-id="d7d13-137">Here is a complete listing of the source code used in this topic.</span></span>  
   
 ```csharp
 // AccessIdentityCallback.cs  
@@ -573,7 +573,7 @@ namespace Microsoft.Samples.AccessingOperationContext.Client
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1c436-138">Viz také</span><span class="sxs-lookup"><span data-stu-id="1c436-138">See Also</span></span>  
- [<span data-ttu-id="1c436-139">Služby pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="1c436-139">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
- [<span data-ttu-id="1c436-140">Přístup k OperationContext</span><span class="sxs-lookup"><span data-stu-id="1c436-140">Accessing OperationContext</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
- [<span data-ttu-id="1c436-141">Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu</span><span class="sxs-lookup"><span data-stu-id="1c436-141">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)
+## <a name="see-also"></a><span data-ttu-id="d7d13-138">Viz také</span><span class="sxs-lookup"><span data-stu-id="d7d13-138">See Also</span></span>  
+ [<span data-ttu-id="d7d13-139">Služby pracovních postupů</span><span class="sxs-lookup"><span data-stu-id="d7d13-139">Workflow Services</span></span>](../../../../docs/framework/wcf/feature-details/workflow-services.md)  
+ [<span data-ttu-id="d7d13-140">Přístup k OperationContext</span><span class="sxs-lookup"><span data-stu-id="d7d13-140">Accessing OperationContext</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/accessing-operationcontext.md)  
+ [<span data-ttu-id="d7d13-141">Vytváření pracovních postupů, aktivit a výrazů pomocí imperativního kódu</span><span class="sxs-lookup"><span data-stu-id="d7d13-141">Authoring Workflows, Activities, and Expressions Using Imperative Code</span></span>](../../../../docs/framework/windows-workflow-foundation/authoring-workflows-activities-and-expressions-using-imperative-code.md)

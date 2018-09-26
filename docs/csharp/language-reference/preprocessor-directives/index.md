@@ -8,37 +8,37 @@ helpviewer_keywords:
 - keywords [C#], preprocessor directives
 ms.assetid: f2406090-b244-4f7e-ab72-3698fefed724
 ms.openlocfilehash: 1c0a97cabce347be0bc9367f3d090a1fc699db19
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584656"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47082159"
 ---
-# <a name="c-preprocessor-directives"></a><span data-ttu-id="5fcd1-102">C# direktivy preprocesoru</span><span class="sxs-lookup"><span data-stu-id="5fcd1-102">C# preprocessor directives</span></span>
-<span data-ttu-id="5fcd1-103">Tato část obsahuje informace o následujících C# direktivy preprocesoru:</span><span class="sxs-lookup"><span data-stu-id="5fcd1-103">This section contains information about the following C# preprocessor directives:</span></span>
+# <a name="c-preprocessor-directives"></a><span data-ttu-id="18b51-102">C# direktivy preprocesoru</span><span class="sxs-lookup"><span data-stu-id="18b51-102">C# preprocessor directives</span></span>
+<span data-ttu-id="18b51-103">Tato část obsahuje informace o následujících C# direktivy preprocesoru:</span><span class="sxs-lookup"><span data-stu-id="18b51-103">This section contains information about the following C# preprocessor directives:</span></span>
 
-- [<span data-ttu-id="5fcd1-104">#if</span><span class="sxs-lookup"><span data-stu-id="5fcd1-104">#if</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)
-- [<span data-ttu-id="5fcd1-105">#else</span><span class="sxs-lookup"><span data-stu-id="5fcd1-105">#else</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md)
-- [<span data-ttu-id="5fcd1-106">#elif</span><span class="sxs-lookup"><span data-stu-id="5fcd1-106">#elif</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md)
-- [<span data-ttu-id="5fcd1-107">#endif</span><span class="sxs-lookup"><span data-stu-id="5fcd1-107">#endif</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md)
-- [<span data-ttu-id="5fcd1-108">#define</span><span class="sxs-lookup"><span data-stu-id="5fcd1-108">#define</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md)
-- [<span data-ttu-id="5fcd1-109">#undef</span><span class="sxs-lookup"><span data-stu-id="5fcd1-109">#undef</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)
-- [<span data-ttu-id="5fcd1-110">#warning</span><span class="sxs-lookup"><span data-stu-id="5fcd1-110">#warning</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md)
-- [<span data-ttu-id="5fcd1-111">#error</span><span class="sxs-lookup"><span data-stu-id="5fcd1-111">#error</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md)
-- [<span data-ttu-id="5fcd1-112">#line</span><span class="sxs-lookup"><span data-stu-id="5fcd1-112">#line</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-line.md)
-- [<span data-ttu-id="5fcd1-113">#region</span><span class="sxs-lookup"><span data-stu-id="5fcd1-113">#region</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md)
-- [<span data-ttu-id="5fcd1-114">#endregion</span><span class="sxs-lookup"><span data-stu-id="5fcd1-114">#endregion</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-endregion.md)
-- [<span data-ttu-id="5fcd1-115">#pragma</span><span class="sxs-lookup"><span data-stu-id="5fcd1-115">#pragma</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma.md)
-- [<span data-ttu-id="5fcd1-116">#pragma warning</span><span class="sxs-lookup"><span data-stu-id="5fcd1-116">#pragma warning</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)
-- [<span data-ttu-id="5fcd1-117">#pragma checksum</span><span class="sxs-lookup"><span data-stu-id="5fcd1-117">#pragma checksum</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)
+- [<span data-ttu-id="18b51-104">#if</span><span class="sxs-lookup"><span data-stu-id="18b51-104">#if</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-if.md)
+- [<span data-ttu-id="18b51-105">#else</span><span class="sxs-lookup"><span data-stu-id="18b51-105">#else</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-else.md)
+- [<span data-ttu-id="18b51-106">#elif</span><span class="sxs-lookup"><span data-stu-id="18b51-106">#elif</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-elif.md)
+- [<span data-ttu-id="18b51-107">#endif</span><span class="sxs-lookup"><span data-stu-id="18b51-107">#endif</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-endif.md)
+- [<span data-ttu-id="18b51-108">#define</span><span class="sxs-lookup"><span data-stu-id="18b51-108">#define</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-define.md)
+- [<span data-ttu-id="18b51-109">#undef</span><span class="sxs-lookup"><span data-stu-id="18b51-109">#undef</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-undef.md)
+- [<span data-ttu-id="18b51-110">#warning</span><span class="sxs-lookup"><span data-stu-id="18b51-110">#warning</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-warning.md)
+- [<span data-ttu-id="18b51-111">#error</span><span class="sxs-lookup"><span data-stu-id="18b51-111">#error</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-error.md)
+- [<span data-ttu-id="18b51-112">#line</span><span class="sxs-lookup"><span data-stu-id="18b51-112">#line</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-line.md)
+- [<span data-ttu-id="18b51-113">#region</span><span class="sxs-lookup"><span data-stu-id="18b51-113">#region</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-region.md)
+- [<span data-ttu-id="18b51-114">#endregion</span><span class="sxs-lookup"><span data-stu-id="18b51-114">#endregion</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-endregion.md)
+- [<span data-ttu-id="18b51-115">#pragma</span><span class="sxs-lookup"><span data-stu-id="18b51-115">#pragma</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma.md)
+- [<span data-ttu-id="18b51-116">#pragma warning</span><span class="sxs-lookup"><span data-stu-id="18b51-116">#pragma warning</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md)
+- [<span data-ttu-id="18b51-117">#pragma checksum</span><span class="sxs-lookup"><span data-stu-id="18b51-117">#pragma checksum</span></span>](../../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-checksum.md)
 
-<span data-ttu-id="5fcd1-118">Viz témata pro další informace a příklady.</span><span class="sxs-lookup"><span data-stu-id="5fcd1-118">See the individual topics for more information and examples.</span></span>
+<span data-ttu-id="18b51-118">Viz témata pro další informace a příklady.</span><span class="sxs-lookup"><span data-stu-id="18b51-118">See the individual topics for more information and examples.</span></span>
 
-<span data-ttu-id="5fcd1-119">Ačkoli kompilátor nemá samostatné preprocesoru, direktivy popsané v této části jsou zpracovávány jako by došlo k jedné.</span><span class="sxs-lookup"><span data-stu-id="5fcd1-119">Although the compiler doesn't have a separate preprocessor, the directives described in this section are processed as if there were one.</span></span> <span data-ttu-id="5fcd1-120">Slouží k pomáhají v podmíněné kompilace.</span><span class="sxs-lookup"><span data-stu-id="5fcd1-120">They are used to help in conditional compilation.</span></span> <span data-ttu-id="5fcd1-121">Na rozdíl od jazyka C a C++ direktivy nelze použít tyto direktivy makra.</span><span class="sxs-lookup"><span data-stu-id="5fcd1-121">Unlike C and C++ directives, you cannot use these directives to create macros.</span></span>
+<span data-ttu-id="18b51-119">Ačkoli kompilátor nemá samostatné preprocesoru, direktivy popsané v této části jsou zpracovávány jako by došlo k jedné.</span><span class="sxs-lookup"><span data-stu-id="18b51-119">Although the compiler doesn't have a separate preprocessor, the directives described in this section are processed as if there were one.</span></span> <span data-ttu-id="18b51-120">Slouží k pomáhají v podmíněné kompilace.</span><span class="sxs-lookup"><span data-stu-id="18b51-120">They are used to help in conditional compilation.</span></span> <span data-ttu-id="18b51-121">Na rozdíl od jazyka C a C++ direktivy nelze použít tyto direktivy makra.</span><span class="sxs-lookup"><span data-stu-id="18b51-121">Unlike C and C++ directives, you cannot use these directives to create macros.</span></span>
 
-<span data-ttu-id="5fcd1-122">Direktivy preprocesoru musí být pouze instrukce na řádek.</span><span class="sxs-lookup"><span data-stu-id="5fcd1-122">A preprocessor directive must be the only instruction on a line.</span></span>
+<span data-ttu-id="18b51-122">Direktivy preprocesoru musí být pouze instrukce na řádek.</span><span class="sxs-lookup"><span data-stu-id="18b51-122">A preprocessor directive must be the only instruction on a line.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5fcd1-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="5fcd1-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="18b51-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="18b51-123">See also</span></span>
 
-- [<span data-ttu-id="5fcd1-124">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="5fcd1-124">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="5fcd1-125">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="5fcd1-125">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)
+- [<span data-ttu-id="18b51-124">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="18b51-124">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="18b51-125">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="18b51-125">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)

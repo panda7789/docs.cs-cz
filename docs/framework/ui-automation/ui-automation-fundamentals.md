@@ -8,31 +8,30 @@ helpviewer_keywords:
 ms.assetid: d270ab45-542b-45c0-a240-e80aa4a61b95
 author: Xansky
 ms.author: mhopkins
-manager: markl
-ms.openlocfilehash: 82c123e50e58c162a8cc6758bcb446e3484d9bb8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 481e2eeaa24c4e8bc2b6199d2bb4ab2c3c51e221
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500611"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47108660"
 ---
-# <a name="ui-automation-fundamentals"></a><span data-ttu-id="8137d-102">Principy automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8137d-102">UI Automation Fundamentals</span></span>
+# <a name="ui-automation-fundamentals"></a><span data-ttu-id="cacac-102">Principy automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="cacac-102">UI Automation Fundamentals</span></span>
 > [!NOTE]
->  <span data-ttu-id="8137d-103">Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="8137d-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="8137d-104">Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).</span><span class="sxs-lookup"><span data-stu-id="8137d-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
+>  <span data-ttu-id="cacac-103">Tato dokumentace je určená pro vývojáře rozhraní .NET Framework, kteří chtějí používat spravovanou [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] tříd definovaných v <xref:System.Windows.Automation> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="cacac-103">This documentation is intended for .NET Framework developers who want to use the managed [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] classes defined in the <xref:System.Windows.Automation> namespace.</span></span> <span data-ttu-id="cacac-104">Nejnovější informace o [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], naleznete v tématu [Windows Automation API: automatizace uživatelského rozhraní](https://go.microsoft.com/fwlink/?LinkID=156746).</span><span class="sxs-lookup"><span data-stu-id="cacac-104">For the latest information about [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], see [Windows Automation API: UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).</span></span>  
   
- <span data-ttu-id="8137d-105">Tato část obsahuje podrobný přehled [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)].</span><span class="sxs-lookup"><span data-stu-id="8137d-105">This section contains high-level overviews of the [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)].</span></span>  
+ <span data-ttu-id="cacac-105">Tato část obsahuje podrobný přehled [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)].</span><span class="sxs-lookup"><span data-stu-id="cacac-105">This section contains high-level overviews of the [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)].</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="8137d-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="8137d-106">In This Section</span></span>  
- [<span data-ttu-id="8137d-107">Přehled automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8137d-107">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)  
- [<span data-ttu-id="8137d-108">Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility</span><span class="sxs-lookup"><span data-stu-id="8137d-108">UI Automation and Microsoft Active Accessibility</span></span>](../../../docs/framework/ui-automation/ui-automation-and-microsoft-active-accessibility.md)  
- [<span data-ttu-id="8137d-109">Přehled stromu automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8137d-109">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
- [<span data-ttu-id="8137d-110">Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8137d-110">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
- [<span data-ttu-id="8137d-111">Přehled vlastností automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8137d-111">UI Automation Properties Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
- [<span data-ttu-id="8137d-112">Přehled událostí automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8137d-112">UI Automation Events Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
- [<span data-ttu-id="8137d-113">Přehled zabezpečení automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="8137d-113">UI Automation Security Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-security-overview.md)  
- [<span data-ttu-id="8137d-114">Použití automatizace uživatelského rozhraní pro automatizované testování</span><span class="sxs-lookup"><span data-stu-id="8137d-114">Using UI Automation for Automated Testing</span></span>](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
+## <a name="in-this-section"></a><span data-ttu-id="cacac-106">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="cacac-106">In This Section</span></span>  
+ [<span data-ttu-id="cacac-107">Přehled automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="cacac-107">UI Automation Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-overview.md)  
+ [<span data-ttu-id="cacac-108">Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility</span><span class="sxs-lookup"><span data-stu-id="cacac-108">UI Automation and Microsoft Active Accessibility</span></span>](../../../docs/framework/ui-automation/ui-automation-and-microsoft-active-accessibility.md)  
+ [<span data-ttu-id="cacac-109">Přehled stromu automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="cacac-109">UI Automation Tree Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-tree-overview.md)  
+ [<span data-ttu-id="cacac-110">Přehled vzorů ovládacích prvků pro automatizaci uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="cacac-110">UI Automation Control Patterns Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-control-patterns-overview.md)  
+ [<span data-ttu-id="cacac-111">Přehled vlastností automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="cacac-111">UI Automation Properties Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-properties-overview.md)  
+ [<span data-ttu-id="cacac-112">Přehled událostí automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="cacac-112">UI Automation Events Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-events-overview.md)  
+ [<span data-ttu-id="cacac-113">Přehled zabezpečení automatizace uživatelského rozhraní</span><span class="sxs-lookup"><span data-stu-id="cacac-113">UI Automation Security Overview</span></span>](../../../docs/framework/ui-automation/ui-automation-security-overview.md)  
+ [<span data-ttu-id="cacac-114">Použití automatizace uživatelského rozhraní pro automatizované testování</span><span class="sxs-lookup"><span data-stu-id="cacac-114">Using UI Automation for Automated Testing</span></span>](../../../docs/framework/ui-automation/using-ui-automation-for-automated-testing.md)  
   
-## <a name="reference"></a><span data-ttu-id="8137d-115">Odkaz</span><span class="sxs-lookup"><span data-stu-id="8137d-115">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="cacac-115">Odkaz</span><span class="sxs-lookup"><span data-stu-id="cacac-115">Reference</span></span>  
  <xref:System.Windows.Automation>  
   
  <xref:System.Windows.Automation.Provider>  

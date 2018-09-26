@@ -1,5 +1,5 @@
 ---
-title: 'Postupy: vytvoření soket'
+title: 'Postupy: vytvoření soketu'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,19 +19,18 @@ helpviewer_keywords:
 ms.assetid: c64a049c-5981-43bc-a2dc-1851473589c7
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 600ea82965c332c8620db689abb50965f15f0067
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2ec87d45a4e7140aa2c1d901492952cd25634025
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396945"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47075009"
 ---
-# <a name="how-to-create-a-socket"></a><span data-ttu-id="af0b6-102">Postupy: vytvoření soket</span><span class="sxs-lookup"><span data-stu-id="af0b6-102">How to: Create a Socket</span></span>
-<span data-ttu-id="af0b6-103">Než použijete soket pro komunikaci se vzdáleným zařízením soket musí být inicializován s informace o protokolu a síťových adres.</span><span class="sxs-lookup"><span data-stu-id="af0b6-103">Before you can use a socket to communicate with remote devices, the socket must be initialized with protocol and network address information.</span></span> <span data-ttu-id="af0b6-104">V konstruktoru pro <xref:System.Net.Sockets.Socket> třída má parametrů, které určují rodina adres, typ soketu a typ protokolu, který soketu používá k vytvoření připojení.</span><span class="sxs-lookup"><span data-stu-id="af0b6-104">The constructor for the <xref:System.Net.Sockets.Socket> class has parameters that specify the address family, socket type, and protocol type that the socket uses to make connections.</span></span>  
+# <a name="how-to-create-a-socket"></a><span data-ttu-id="f8cb1-102">Postupy: vytvoření soketu</span><span class="sxs-lookup"><span data-stu-id="f8cb1-102">How to: Create a Socket</span></span>
+<span data-ttu-id="f8cb1-103">Než použijete soket pro komunikaci se vzdálenými zařízeními soketu. je nutné inicializovat s informace o protokolu a síťové adrese.</span><span class="sxs-lookup"><span data-stu-id="f8cb1-103">Before you can use a socket to communicate with remote devices, the socket must be initialized with protocol and network address information.</span></span> <span data-ttu-id="f8cb1-104">Konstruktor pro <xref:System.Net.Sockets.Socket> třída obsahuje parametry, které určují rodina adres, typ soketu a typ protokolu, který využívá soket, aby připojení.</span><span class="sxs-lookup"><span data-stu-id="f8cb1-104">The constructor for the <xref:System.Net.Sockets.Socket> class has parameters that specify the address family, socket type, and protocol type that the socket uses to make connections.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="af0b6-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="af0b6-105">Example</span></span>  
- <span data-ttu-id="af0b6-106">Následující příklad vytvoří soketu, který lze použít pro komunikaci v síti založené na protokolu TCP, jako je Internet.</span><span class="sxs-lookup"><span data-stu-id="af0b6-106">The following example creates a Socket that can be used to communicate on a TCP/IP-based network, such as the Internet.</span></span>  
+## <a name="example"></a><span data-ttu-id="f8cb1-105">Příklad</span><span class="sxs-lookup"><span data-stu-id="f8cb1-105">Example</span></span>  
+ <span data-ttu-id="f8cb1-106">Následující příklad vytvoří soket, který slouží ke komunikaci v síti založené na TCP/IP, jako je Internet.</span><span class="sxs-lookup"><span data-stu-id="f8cb1-106">The following example creates a Socket that can be used to communicate on a TCP/IP-based network, such as the Internet.</span></span>  
   
 ```csharp  
 Socket s = new Socket(AddressFamily.InterNetwork,   
@@ -43,7 +42,7 @@ Dim s as New Socket(AddressFamily.InterNetwork, _
    SocketType.Stream, ProtocolType.Tcp)  
 ```  
   
- <span data-ttu-id="af0b6-107">Místo TCP použít UDP, změňte typ protokolu, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="af0b6-107">To use UDP instead of TCP, change the protocol type, as in the following example:</span></span>  
+ <span data-ttu-id="f8cb1-107">Místo TCP použít UDP, změňte typ protokolu, jako v následujícím příkladu:</span><span class="sxs-lookup"><span data-stu-id="f8cb1-107">To use UDP instead of TCP, change the protocol type, as in the following example:</span></span>  
   
 ```csharp  
 Socket s = new Socket(AddressFamily.InterNetwork,   
@@ -55,14 +54,14 @@ Dim s as New Socket(AddressFamily.InterNetwork, _
    SocketType.Dgram, ProtocolType.Udp)  
 ```  
   
- <span data-ttu-id="af0b6-108"><xref:System.Net.Sockets.AddressFamily> Výčet určuje rodiny standardní adres používané **soketu** třída přeložit síťových adres (například **AddressFamily.InterNetwork** člen Určuje IP adresu Rodina adres verze 4).</span><span class="sxs-lookup"><span data-stu-id="af0b6-108">The <xref:System.Net.Sockets.AddressFamily> enumeration specifies the standard address families used by the **Socket** class to resolve network addresses (for example, the **AddressFamily.InterNetwork** member specifies the IP version 4 address family).</span></span>  
+ <span data-ttu-id="f8cb1-108"><xref:System.Net.Sockets.AddressFamily> Výčet určuje rodiny standardní adres používané **soketu** třídy vyřešit síťových adres (například **AddressFamily.InterNetwork** člen Určuje IP adresu Rodina adres verze 4).</span><span class="sxs-lookup"><span data-stu-id="f8cb1-108">The <xref:System.Net.Sockets.AddressFamily> enumeration specifies the standard address families used by the **Socket** class to resolve network addresses (for example, the **AddressFamily.InterNetwork** member specifies the IP version 4 address family).</span></span>  
   
- <span data-ttu-id="af0b6-109"><xref:System.Net.Sockets.SocketType> Výčet Určuje typ soketu (například **SocketType.Stream** člen označuje standardní soket pro odesílání a příjmu dat pomocí řízení toku).</span><span class="sxs-lookup"><span data-stu-id="af0b6-109">The <xref:System.Net.Sockets.SocketType> enumeration specifies the type of socket (for example, the **SocketType.Stream** member indicates a standard socket for sending and receiving data with flow control).</span></span>  
+ <span data-ttu-id="f8cb1-109"><xref:System.Net.Sockets.SocketType> Výčet Určuje typ soketu (například **SocketType.Stream** člen označuje standardní soket pro odesílání a přijímání dat pomocí toku řízení).</span><span class="sxs-lookup"><span data-stu-id="f8cb1-109">The <xref:System.Net.Sockets.SocketType> enumeration specifies the type of socket (for example, the **SocketType.Stream** member indicates a standard socket for sending and receiving data with flow control).</span></span>  
   
- <span data-ttu-id="af0b6-110"><xref:System.Net.Sockets.ProtocolType> Výčet Určuje protokol sítě použít při komunikaci na **soketu** (například **ProtocolType.Tcp** označuje, že soketem používá TCP; **ProtocolType.Udp** označuje, že soketem používá UDP).</span><span class="sxs-lookup"><span data-stu-id="af0b6-110">The <xref:System.Net.Sockets.ProtocolType> enumeration specifies the network protocol to use when communicating on the **Socket** (for example, **ProtocolType.Tcp** indicates that the socket uses TCP; **ProtocolType.Udp** indicates that the socket uses UDP).</span></span>  
+ <span data-ttu-id="f8cb1-110"><xref:System.Net.Sockets.ProtocolType> Výčet Určuje protokol sítě při komunikaci na **soketu** (například **ProtocolType.Tcp** označuje, že používá soket TCP; **ProtocolType.Udp** označuje, že soketu používá UDP).</span><span class="sxs-lookup"><span data-stu-id="f8cb1-110">The <xref:System.Net.Sockets.ProtocolType> enumeration specifies the network protocol to use when communicating on the **Socket** (for example, **ProtocolType.Tcp** indicates that the socket uses TCP; **ProtocolType.Udp** indicates that the socket uses UDP).</span></span>  
   
- <span data-ttu-id="af0b6-111">Po **soketu** je vytvořen, ho můžete iniciovat připojení k vzdálený koncový bod nebo přijímat připojení ze vzdálených zařízení.</span><span class="sxs-lookup"><span data-stu-id="af0b6-111">After a **Socket** is created, it can either initiate a connection to a remote endpoint or receive connections from remote devices.</span></span>  
+ <span data-ttu-id="f8cb1-111">Po **soketu** je vytvořen, ho můžete inicializovat připojení a vzdálený koncový bod nebo přijímat připojení ze vzdálených zařízeních.</span><span class="sxs-lookup"><span data-stu-id="f8cb1-111">After a **Socket** is created, it can either initiate a connection to a remote endpoint or receive connections from remote devices.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="af0b6-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="af0b6-112">See Also</span></span>  
- [<span data-ttu-id="af0b6-113">Použití klientských soketů</span><span class="sxs-lookup"><span data-stu-id="af0b6-113">Using Client Sockets</span></span>](../../../docs/framework/network-programming/using-client-sockets.md)  
- [<span data-ttu-id="af0b6-114">Naslouchání pomocí soketů</span><span class="sxs-lookup"><span data-stu-id="af0b6-114">Listening with Sockets</span></span>](../../../docs/framework/network-programming/listening-with-sockets.md)
+## <a name="see-also"></a><span data-ttu-id="f8cb1-112">Viz také</span><span class="sxs-lookup"><span data-stu-id="f8cb1-112">See Also</span></span>  
+ [<span data-ttu-id="f8cb1-113">Použití klientských soketů</span><span class="sxs-lookup"><span data-stu-id="f8cb1-113">Using Client Sockets</span></span>](../../../docs/framework/network-programming/using-client-sockets.md)  
+ [<span data-ttu-id="f8cb1-114">Naslouchání pomocí soketů</span><span class="sxs-lookup"><span data-stu-id="f8cb1-114">Listening with Sockets</span></span>](../../../docs/framework/network-programming/listening-with-sockets.md)

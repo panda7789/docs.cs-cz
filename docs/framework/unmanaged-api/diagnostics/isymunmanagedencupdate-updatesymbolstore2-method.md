@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 78d9e27299c9d7ed7d6cb9b09dd659ba081c5fde
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586817"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47077067"
 ---
-# <a name="isymunmanagedencupdateupdatesymbolstore2-method"></a><span data-ttu-id="ad0b7-102">ISymUnmanagedENCUpdate::UpdateSymbolStore2 – metoda</span><span class="sxs-lookup"><span data-stu-id="ad0b7-102">ISymUnmanagedENCUpdate::UpdateSymbolStore2 Method</span></span>
-<span data-ttu-id="ad0b7-103">Umožňuje kompilátoru chcete vynechat, nechte funkce, které nebyly upraveny z datového proudu databáze (PDB) programu, pokud informace o řádku splňuje požadavky.</span><span class="sxs-lookup"><span data-stu-id="ad0b7-103">Allows a compiler to omit functions that have not been modified from the program database (PDB) stream, provided the line information meets the requirements.</span></span> <span data-ttu-id="ad0b7-104">Informace o správné řádku se dá určit pomocí staré informace o řádku PDB a jeden rozdílové hodnoty všech řádků ve funkci.</span><span class="sxs-lookup"><span data-stu-id="ad0b7-104">The correct line information can be determined with the old PDB line information and one delta for all lines in the function.</span></span>  
+# <a name="isymunmanagedencupdateupdatesymbolstore2-method"></a><span data-ttu-id="0f4ea-102">ISymUnmanagedENCUpdate::UpdateSymbolStore2 – metoda</span><span class="sxs-lookup"><span data-stu-id="0f4ea-102">ISymUnmanagedENCUpdate::UpdateSymbolStore2 Method</span></span>
+<span data-ttu-id="0f4ea-103">Umožňuje kompilátoru chcete vynechat, nechte funkce, které nebyly upraveny z datového proudu databáze (PDB) programu, pokud informace o řádku splňuje požadavky.</span><span class="sxs-lookup"><span data-stu-id="0f4ea-103">Allows a compiler to omit functions that have not been modified from the program database (PDB) stream, provided the line information meets the requirements.</span></span> <span data-ttu-id="0f4ea-104">Informace o správné řádku se dá určit pomocí staré informace o řádku PDB a jeden rozdílové hodnoty všech řádků ve funkci.</span><span class="sxs-lookup"><span data-stu-id="0f4ea-104">The correct line information can be determined with the old PDB line information and one delta for all lines in the function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ad0b7-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ad0b7-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="0f4ea-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0f4ea-105">Syntax</span></span>  
   
 ```  
 HRESULT UpdateSymbolStore2(  
@@ -36,21 +36,21 @@ HRESULT UpdateSymbolStore2(
     [in]  ULONG         cDeltaLines);  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="ad0b7-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="ad0b7-106">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="0f4ea-106">Parametry</span><span class="sxs-lookup"><span data-stu-id="0f4ea-106">Parameters</span></span>  
  `pIStream`  
- <span data-ttu-id="ad0b7-107">[in] Ukazatel [IStream](/windows/desktop/api/objidl/nn-objidl-istream) , který obsahuje informace o řádku.</span><span class="sxs-lookup"><span data-stu-id="ad0b7-107">[in] A pointer to an [IStream](/windows/desktop/api/objidl/nn-objidl-istream) that contains the line information.</span></span>  
+ <span data-ttu-id="0f4ea-107">[in] Ukazatel [IStream](/windows/desktop/api/objidl/nn-objidl-istream) , který obsahuje informace o řádku.</span><span class="sxs-lookup"><span data-stu-id="0f4ea-107">[in] A pointer to an [IStream](/windows/desktop/api/objidl/nn-objidl-istream) that contains the line information.</span></span>  
   
  `pDeltaLines`  
- <span data-ttu-id="ad0b7-108">[in] Ukazatel [symlinedelta –](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md) struktura obsahující řádky, které se změnily.</span><span class="sxs-lookup"><span data-stu-id="ad0b7-108">[in] A pointer to a [SYMLINEDELTA](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md) structure that contains the lines that have changed.</span></span>  
+ <span data-ttu-id="0f4ea-108">[in] Ukazatel [symlinedelta –](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md) struktura obsahující řádky, které se změnily.</span><span class="sxs-lookup"><span data-stu-id="0f4ea-108">[in] A pointer to a [SYMLINEDELTA](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md) structure that contains the lines that have changed.</span></span>  
   
  `cDeltaLines`  
- <span data-ttu-id="ad0b7-109">[in] A `ULONG` , který představuje počet řádků, které se změnily.</span><span class="sxs-lookup"><span data-stu-id="ad0b7-109">[in] A `ULONG` that represents the number of lines that have changed.</span></span>  
+ <span data-ttu-id="0f4ea-109">[in] A `ULONG` , který představuje počet řádků, které se změnily.</span><span class="sxs-lookup"><span data-stu-id="0f4ea-109">[in] A `ULONG` that represents the number of lines that have changed.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="ad0b7-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="ad0b7-110">Return Value</span></span>  
- <span data-ttu-id="ad0b7-111">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="ad0b7-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="0f4ea-110">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="0f4ea-110">Return Value</span></span>  
+ <span data-ttu-id="0f4ea-111">Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.</span><span class="sxs-lookup"><span data-stu-id="0f4ea-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ad0b7-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="ad0b7-112">Requirements</span></span>  
- <span data-ttu-id="ad0b7-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="ad0b7-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="0f4ea-112">Požadavky</span><span class="sxs-lookup"><span data-stu-id="0f4ea-112">Requirements</span></span>  
+ <span data-ttu-id="0f4ea-113">**Záhlaví:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="0f4ea-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ad0b7-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="ad0b7-114">See Also</span></span>  
- [<span data-ttu-id="ad0b7-115">ISymUnmanagedENCUpdate – rozhraní</span><span class="sxs-lookup"><span data-stu-id="ad0b7-115">ISymUnmanagedENCUpdate Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)
+## <a name="see-also"></a><span data-ttu-id="0f4ea-114">Viz také</span><span class="sxs-lookup"><span data-stu-id="0f4ea-114">See Also</span></span>  
+ [<span data-ttu-id="0f4ea-115">ISymUnmanagedENCUpdate – rozhraní</span><span class="sxs-lookup"><span data-stu-id="0f4ea-115">ISymUnmanagedENCUpdate Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedencupdate-interface.md)

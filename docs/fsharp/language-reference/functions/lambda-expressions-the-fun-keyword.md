@@ -3,25 +3,25 @@ title: 'Výrazy lambda: Klíčové slovo fun (F#)'
 description: 'Další informace o použití F # "zábavu" – klíčové slovo k definování výraz lambda, který je anonymní funkce.'
 ms.date: 05/16/2016
 ms.openlocfilehash: a37757f6b7328cd348bbf13f058a6dbc881769cf
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46580743"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080171"
 ---
-# <a name="lambda-expressions-the-fun-keyword-f"></a><span data-ttu-id="c05ba-103">Výrazy lambda: Klíčové slovo fun (F#)</span><span class="sxs-lookup"><span data-stu-id="c05ba-103">Lambda Expressions: The fun Keyword (F#)</span></span>
+# <a name="lambda-expressions-the-fun-keyword-f"></a><span data-ttu-id="278b1-103">Výrazy lambda: Klíčové slovo fun (F#)</span><span class="sxs-lookup"><span data-stu-id="278b1-103">Lambda Expressions: The fun Keyword (F#)</span></span>
 
-<span data-ttu-id="c05ba-104">`fun` – Klíčové slovo se používá k definování výraz lambda, to znamená, anonymní funkce.</span><span class="sxs-lookup"><span data-stu-id="c05ba-104">The `fun` keyword is used to define a lambda expression, that is, an anonymous function.</span></span>
+<span data-ttu-id="278b1-104">`fun` – Klíčové slovo se používá k definování výraz lambda, to znamená, anonymní funkce.</span><span class="sxs-lookup"><span data-stu-id="278b1-104">The `fun` keyword is used to define a lambda expression, that is, an anonymous function.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="c05ba-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c05ba-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="278b1-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="278b1-105">Syntax</span></span>
 
 ```fsharp
 fun parameter-list -> expression
 ```
 
-## <a name="remarks"></a><span data-ttu-id="c05ba-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c05ba-106">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="278b1-106">Poznámky</span><span class="sxs-lookup"><span data-stu-id="278b1-106">Remarks</span></span>
 
-<span data-ttu-id="c05ba-107">*Seznam parametrů* se obvykle skládá z názvů a volitelně typy parametrů.</span><span class="sxs-lookup"><span data-stu-id="c05ba-107">The *parameter-list* typically consists of names and, optionally, types of parameters.</span></span> <span data-ttu-id="c05ba-108">Obecně platí *seznam parametrů* může skládat z jakékoli vzorky F #.</span><span class="sxs-lookup"><span data-stu-id="c05ba-108">More generally, the *parameter-list* can be composed of any F# patterns.</span></span> <span data-ttu-id="c05ba-109">Úplný seznam možných vzory, naleznete v tématu [porovnávání vzorů](../pattern-matching.md).</span><span class="sxs-lookup"><span data-stu-id="c05ba-109">For a full list of possible patterns, see [Pattern Matching](../pattern-matching.md).</span></span> <span data-ttu-id="c05ba-110">Seznam platných parametrů zahrnují následující příklady.</span><span class="sxs-lookup"><span data-stu-id="c05ba-110">Lists of valid parameters include the following examples.</span></span>
+<span data-ttu-id="278b1-107">*Seznam parametrů* se obvykle skládá z názvů a volitelně typy parametrů.</span><span class="sxs-lookup"><span data-stu-id="278b1-107">The *parameter-list* typically consists of names and, optionally, types of parameters.</span></span> <span data-ttu-id="278b1-108">Obecně platí *seznam parametrů* může skládat z jakékoli vzorky F #.</span><span class="sxs-lookup"><span data-stu-id="278b1-108">More generally, the *parameter-list* can be composed of any F# patterns.</span></span> <span data-ttu-id="278b1-109">Úplný seznam možných vzory, naleznete v tématu [porovnávání vzorů](../pattern-matching.md).</span><span class="sxs-lookup"><span data-stu-id="278b1-109">For a full list of possible patterns, see [Pattern Matching](../pattern-matching.md).</span></span> <span data-ttu-id="278b1-110">Seznam platných parametrů zahrnují následující příklady.</span><span class="sxs-lookup"><span data-stu-id="278b1-110">Lists of valid parameters include the following examples.</span></span>
 
 ```fsharp
 // Lambda expressions with parameter lists.
@@ -36,16 +36,16 @@ fun (a, b) -> …
 fun head :: tail -> …
 ```
 
-<span data-ttu-id="c05ba-111">*Výraz* tělo funkce posledního výrazu z nich generuje návratovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="c05ba-111">The *expression* is the body of the function, the last expression of which generates a return value.</span></span> <span data-ttu-id="c05ba-112">Příklady výrazů lambda platné patří:</span><span class="sxs-lookup"><span data-stu-id="c05ba-112">Examples of valid lambda expressions include the following:</span></span>
+<span data-ttu-id="278b1-111">*Výraz* tělo funkce posledního výrazu z nich generuje návratovou hodnotu.</span><span class="sxs-lookup"><span data-stu-id="278b1-111">The *expression* is the body of the function, the last expression of which generates a return value.</span></span> <span data-ttu-id="278b1-112">Příklady výrazů lambda platné patří:</span><span class="sxs-lookup"><span data-stu-id="278b1-112">Examples of valid lambda expressions include the following:</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet301.fs)]
 
-## <a name="using-lambda-expressions"></a><span data-ttu-id="c05ba-113">Používání výrazů lambda</span><span class="sxs-lookup"><span data-stu-id="c05ba-113">Using Lambda Expressions</span></span>
+## <a name="using-lambda-expressions"></a><span data-ttu-id="278b1-113">Používání výrazů lambda</span><span class="sxs-lookup"><span data-stu-id="278b1-113">Using Lambda Expressions</span></span>
 
-<span data-ttu-id="c05ba-114">Výrazy lambda jsou zvláště užitečné, pokud chcete provádět operace v seznamu nebo z jiné kolekce a chcete se vyhnout nadbytečné práci spojené se definice funkce.</span><span class="sxs-lookup"><span data-stu-id="c05ba-114">Lambda expressions are especially useful when you want to perform operations on a list or other collection and want to avoid the extra work of defining a function.</span></span> <span data-ttu-id="c05ba-115">Řada funkcí knihovny F # přebírají hodnoty funkce jako argumenty a může být zvláště praktické použití lambda výrazů v těchto případech.</span><span class="sxs-lookup"><span data-stu-id="c05ba-115">Many F# library functions take function values as arguments, and it can be especially convenient to use a lambda expression in those cases.</span></span> <span data-ttu-id="c05ba-116">Následující kód platí pro prvky seznamu výraz lambda.</span><span class="sxs-lookup"><span data-stu-id="c05ba-116">The following code applies a lambda expression to elements of a list.</span></span> <span data-ttu-id="c05ba-117">V takovém případě anonymní funkce přičte 1 k každý prvek seznamu.</span><span class="sxs-lookup"><span data-stu-id="c05ba-117">In this case, the anonymous function adds 1 to every element of a list.</span></span>
+<span data-ttu-id="278b1-114">Výrazy lambda jsou zvláště užitečné, pokud chcete provádět operace v seznamu nebo z jiné kolekce a chcete se vyhnout nadbytečné práci spojené se definice funkce.</span><span class="sxs-lookup"><span data-stu-id="278b1-114">Lambda expressions are especially useful when you want to perform operations on a list or other collection and want to avoid the extra work of defining a function.</span></span> <span data-ttu-id="278b1-115">Řada funkcí knihovny F # přebírají hodnoty funkce jako argumenty a může být zvláště praktické použití lambda výrazů v těchto případech.</span><span class="sxs-lookup"><span data-stu-id="278b1-115">Many F# library functions take function values as arguments, and it can be especially convenient to use a lambda expression in those cases.</span></span> <span data-ttu-id="278b1-116">Následující kód platí pro prvky seznamu výraz lambda.</span><span class="sxs-lookup"><span data-stu-id="278b1-116">The following code applies a lambda expression to elements of a list.</span></span> <span data-ttu-id="278b1-117">V takovém případě anonymní funkce přičte 1 k každý prvek seznamu.</span><span class="sxs-lookup"><span data-stu-id="278b1-117">In this case, the anonymous function adds 1 to every element of a list.</span></span>
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-1/snippet302.fs)]
 
-## <a name="see-also"></a><span data-ttu-id="c05ba-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c05ba-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="278b1-118">Viz také:</span><span class="sxs-lookup"><span data-stu-id="278b1-118">See also</span></span>
 
-- [<span data-ttu-id="c05ba-119">Funkce</span><span class="sxs-lookup"><span data-stu-id="c05ba-119">Functions</span></span>](index.md)
+- [<span data-ttu-id="278b1-119">Funkce</span><span class="sxs-lookup"><span data-stu-id="278b1-119">Functions</span></span>](index.md)

@@ -1,25 +1,24 @@
 ---
-title: '&lt;Typ claimType&gt;'
+title: '&lt;Typ ClaimType&gt;'
 ms.date: 03/30/2017
 ms.assetid: d17b5831-9a2c-45c4-b0d1-68f48e72e861
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 94f8586a9ca63b8c1f1128cdda4a74ccfe0f5416
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 805377565b6e835fd9ffba915a003bc56529a3b6
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32767424"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47084212"
 ---
-# <a name="ltclaimtypegt"></a><span data-ttu-id="9071c-102">&lt;Typ claimType&gt;</span><span class="sxs-lookup"><span data-stu-id="9071c-102">&lt;claimType&gt;</span></span>
-<span data-ttu-id="9071c-103">Určuje jedno volitelné nebo požadované pravidlo pro příchozí tokeny zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="9071c-103">Specifies a single optional or required claim for incoming security tokens.</span></span>  
+# <a name="ltclaimtypegt"></a><span data-ttu-id="d3cac-102">&lt;Typ ClaimType&gt;</span><span class="sxs-lookup"><span data-stu-id="d3cac-102">&lt;claimType&gt;</span></span>
+<span data-ttu-id="d3cac-103">Určuje jednu deklaraci nepovinné nebo povinné pro příchozí tokeny zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="d3cac-103">Specifies a single optional or required claim for incoming security tokens.</span></span>  
   
- <span data-ttu-id="9071c-104">\<system.identityModel></span><span class="sxs-lookup"><span data-stu-id="9071c-104">\<system.identityModel></span></span>  
-<span data-ttu-id="9071c-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="9071c-105">\<identityConfiguration></span></span>  
-<span data-ttu-id="9071c-106">\<claimTypeRequired ></span><span class="sxs-lookup"><span data-stu-id="9071c-106">\<claimTypeRequired></span></span>  
-<span data-ttu-id="9071c-107">\<Typ claimType ></span><span class="sxs-lookup"><span data-stu-id="9071c-107">\<claimType></span></span>  
+ <span data-ttu-id="d3cac-104">\<system.identityModel></span><span class="sxs-lookup"><span data-stu-id="d3cac-104">\<system.identityModel></span></span>  
+<span data-ttu-id="d3cac-105">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="d3cac-105">\<identityConfiguration></span></span>  
+<span data-ttu-id="d3cac-106">\<claimTypeRequired ></span><span class="sxs-lookup"><span data-stu-id="d3cac-106">\<claimTypeRequired></span></span>  
+<span data-ttu-id="d3cac-107">\<Typ claimType ></span><span class="sxs-lookup"><span data-stu-id="d3cac-107">\<claimType></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9071c-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9071c-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="d3cac-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d3cac-108">Syntax</span></span>  
   
 ```xml  
 <system.identityModel>  
@@ -32,21 +31,21 @@ ms.locfileid: "32767424"
 </system.identityModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="9071c-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="9071c-109">Attributes and Elements</span></span>  
- <span data-ttu-id="9071c-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="9071c-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="d3cac-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="d3cac-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="d3cac-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="d3cac-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="9071c-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="9071c-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="d3cac-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="d3cac-111">Attributes</span></span>  
   
-|<span data-ttu-id="9071c-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="9071c-112">Attribute</span></span>|<span data-ttu-id="9071c-113">Popis</span><span class="sxs-lookup"><span data-stu-id="9071c-113">Description</span></span>|  
+|<span data-ttu-id="d3cac-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="d3cac-112">Attribute</span></span>|<span data-ttu-id="d3cac-113">Popis</span><span class="sxs-lookup"><span data-stu-id="d3cac-113">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="9071c-114">– typ</span><span class="sxs-lookup"><span data-stu-id="9071c-114">type</span></span>|<span data-ttu-id="9071c-115">Typ deklarace.</span><span class="sxs-lookup"><span data-stu-id="9071c-115">The claim type.</span></span> <span data-ttu-id="9071c-116">Obvykle identifikátoru URI.</span><span class="sxs-lookup"><span data-stu-id="9071c-116">Typically a URI.</span></span> <span data-ttu-id="9071c-117">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="9071c-117">Required.</span></span>|  
-|<span data-ttu-id="9071c-118">optional</span><span class="sxs-lookup"><span data-stu-id="9071c-118">optional</span></span>|<span data-ttu-id="9071c-119">Logická hodnota, která určuje, jestli je typ deklarace volitelné.</span><span class="sxs-lookup"><span data-stu-id="9071c-119">A boolean value that specifies whether the claim type is optional.</span></span> <span data-ttu-id="9071c-120">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="9071c-120">Optional.</span></span>|  
+|<span data-ttu-id="d3cac-114">– typ</span><span class="sxs-lookup"><span data-stu-id="d3cac-114">type</span></span>|<span data-ttu-id="d3cac-115">Typ deklarace identity.</span><span class="sxs-lookup"><span data-stu-id="d3cac-115">The claim type.</span></span> <span data-ttu-id="d3cac-116">Obvykle identifikátor URI.</span><span class="sxs-lookup"><span data-stu-id="d3cac-116">Typically a URI.</span></span> <span data-ttu-id="d3cac-117">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="d3cac-117">Required.</span></span>|  
+|<span data-ttu-id="d3cac-118">optional</span><span class="sxs-lookup"><span data-stu-id="d3cac-118">optional</span></span>|<span data-ttu-id="d3cac-119">Logická hodnota určující, zda je typ deklarace identity volitelné.</span><span class="sxs-lookup"><span data-stu-id="d3cac-119">A boolean value that specifies whether the claim type is optional.</span></span> <span data-ttu-id="d3cac-120">Volitelné.</span><span class="sxs-lookup"><span data-stu-id="d3cac-120">Optional.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="9071c-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="9071c-121">Child Elements</span></span>  
- <span data-ttu-id="9071c-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="9071c-122">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="d3cac-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="d3cac-121">Child Elements</span></span>  
+ <span data-ttu-id="d3cac-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="d3cac-122">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="9071c-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="9071c-123">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="d3cac-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="d3cac-123">Parent Elements</span></span>  
   
-|<span data-ttu-id="9071c-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="9071c-124">Element</span></span>|<span data-ttu-id="9071c-125">Popis</span><span class="sxs-lookup"><span data-stu-id="9071c-125">Description</span></span>|  
+|<span data-ttu-id="d3cac-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="d3cac-124">Element</span></span>|<span data-ttu-id="d3cac-125">Popis</span><span class="sxs-lookup"><span data-stu-id="d3cac-125">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9071c-126">\<claimTypeRequired ></span><span class="sxs-lookup"><span data-stu-id="9071c-126">\<claimTypeRequired></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|<span data-ttu-id="9071c-127">Určuje sadu požadované deklarací identity pro příchozí tokeny zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="9071c-127">Specifies the set of required claims for incoming security tokens.</span></span>|
+|[<span data-ttu-id="d3cac-126">\<claimTypeRequired ></span><span class="sxs-lookup"><span data-stu-id="d3cac-126">\<claimTypeRequired></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/claimtyperequired.md)|<span data-ttu-id="d3cac-127">Určuje sadu požadované deklarace identit pro příchozí tokeny zabezpečení.</span><span class="sxs-lookup"><span data-stu-id="d3cac-127">Specifies the set of required claims for incoming security tokens.</span></span>|

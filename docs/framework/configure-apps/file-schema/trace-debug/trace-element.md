@@ -12,22 +12,21 @@ helpviewer_keywords:
 ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: 59d5083632630513d2afc1f8d78400310451e46f
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 55a7eb431432b67b3252853d14bf93be304ee883
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32746056"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47176344"
 ---
-# <a name="lttracegt-element"></a><span data-ttu-id="deb95-102">&lt;trasování&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="deb95-102">&lt;trace&gt; Element</span></span>
-<span data-ttu-id="deb95-103">Obsahuje naslouchací procesy, které shromažďování, ukládání a směrovat trasovací zprávy.</span><span class="sxs-lookup"><span data-stu-id="deb95-103">Contains listeners that collect, store, and route tracing messages.</span></span>  
+# <a name="lttracegt-element"></a><span data-ttu-id="23fa7-102">&lt;trasování&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="23fa7-102">&lt;trace&gt; Element</span></span>
+<span data-ttu-id="23fa7-103">Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.</span><span class="sxs-lookup"><span data-stu-id="23fa7-103">Contains listeners that collect, store, and route tracing messages.</span></span>  
   
- <span data-ttu-id="deb95-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="deb95-104">\<configuration></span></span>  
-<span data-ttu-id="deb95-105">\<System.Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="deb95-105">\<system.diagnostics></span></span>  
-<span data-ttu-id="deb95-106">\<trasování ></span><span class="sxs-lookup"><span data-stu-id="deb95-106">\<trace></span></span>  
+ <span data-ttu-id="23fa7-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="23fa7-104">\<configuration></span></span>  
+<span data-ttu-id="23fa7-105">\<System.Diagnostics ></span><span class="sxs-lookup"><span data-stu-id="23fa7-105">\<system.diagnostics></span></span>  
+<span data-ttu-id="23fa7-106">\<trasování ></span><span class="sxs-lookup"><span data-stu-id="23fa7-106">\<trace></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="deb95-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="deb95-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="23fa7-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="23fa7-107">Syntax</span></span>  
   
 ```xml  
 <trace autoflush="true|false"   
@@ -35,46 +34,46 @@ ms.locfileid: "32746056"
        useGlobalLock="true| false"/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="deb95-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="deb95-108">Attributes and Elements</span></span>  
- <span data-ttu-id="deb95-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="deb95-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="23fa7-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="23fa7-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="23fa7-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="23fa7-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="deb95-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="deb95-110">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="23fa7-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="23fa7-110">Attributes</span></span>  
   
-|<span data-ttu-id="deb95-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="deb95-111">Attribute</span></span>|<span data-ttu-id="deb95-112">Popis</span><span class="sxs-lookup"><span data-stu-id="deb95-112">Description</span></span>|  
+|<span data-ttu-id="23fa7-111">Atribut</span><span class="sxs-lookup"><span data-stu-id="23fa7-111">Attribute</span></span>|<span data-ttu-id="23fa7-112">Popis</span><span class="sxs-lookup"><span data-stu-id="23fa7-112">Description</span></span>|  
 |---------------|-----------------|  
-|`autoflush`|<span data-ttu-id="deb95-113">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="deb95-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="deb95-114">Určuje, zda naslouchací procesy trasování automaticky vyprázdnění výstupní vyrovnávací paměť po každé operace zápisu.</span><span class="sxs-lookup"><span data-stu-id="deb95-114">Specifies whether the trace listeners automatically flush the output buffer after every write operation.</span></span>|  
-|`indentsize`|<span data-ttu-id="deb95-115">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="deb95-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="deb95-116">Určuje počet prostory pro odsazení.</span><span class="sxs-lookup"><span data-stu-id="deb95-116">Specifies the number of spaces to indent.</span></span>|  
-|`useGlobalLock`|<span data-ttu-id="deb95-117">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="deb95-117">Optional attribute.</span></span><br /><br /> <span data-ttu-id="deb95-118">Určuje, zda má být použita globální zámek.</span><span class="sxs-lookup"><span data-stu-id="deb95-118">Indicates whether the global lock should be used.</span></span>|  
+|`autoflush`|<span data-ttu-id="23fa7-113">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="23fa7-113">Optional attribute.</span></span><br /><br /> <span data-ttu-id="23fa7-114">Určuje, zda naslouchacími procesy trasování automaticky vyprázdní výstupní vyrovnávací paměť po každé operaci zápisu.</span><span class="sxs-lookup"><span data-stu-id="23fa7-114">Specifies whether the trace listeners automatically flush the output buffer after every write operation.</span></span>|  
+|`indentsize`|<span data-ttu-id="23fa7-115">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="23fa7-115">Optional attribute.</span></span><br /><br /> <span data-ttu-id="23fa7-116">Určuje počet mezer pro odsazení.</span><span class="sxs-lookup"><span data-stu-id="23fa7-116">Specifies the number of spaces to indent.</span></span>|  
+|`useGlobalLock`|<span data-ttu-id="23fa7-117">Nepovinný atribut.</span><span class="sxs-lookup"><span data-stu-id="23fa7-117">Optional attribute.</span></span><br /><br /> <span data-ttu-id="23fa7-118">Označuje, zda má být použita globální zámku.</span><span class="sxs-lookup"><span data-stu-id="23fa7-118">Indicates whether the global lock should be used.</span></span>|  
   
-## <a name="autoflush-attribute"></a><span data-ttu-id="deb95-119">autoflush atribut</span><span class="sxs-lookup"><span data-stu-id="deb95-119">autoflush Attribute</span></span>  
+## <a name="autoflush-attribute"></a><span data-ttu-id="23fa7-119">autoflush atribut</span><span class="sxs-lookup"><span data-stu-id="23fa7-119">autoflush Attribute</span></span>  
   
-|<span data-ttu-id="deb95-120">Hodnota</span><span class="sxs-lookup"><span data-stu-id="deb95-120">Value</span></span>|<span data-ttu-id="deb95-121">Popis</span><span class="sxs-lookup"><span data-stu-id="deb95-121">Description</span></span>|  
+|<span data-ttu-id="23fa7-120">Hodnota</span><span class="sxs-lookup"><span data-stu-id="23fa7-120">Value</span></span>|<span data-ttu-id="23fa7-121">Popis</span><span class="sxs-lookup"><span data-stu-id="23fa7-121">Description</span></span>|  
 |-----------|-----------------|  
-|`false`|<span data-ttu-id="deb95-122">Není k vyprázdnění automaticky výstupní vyrovnávací paměť.</span><span class="sxs-lookup"><span data-stu-id="deb95-122">Does not automatically flush the output buffer.</span></span> <span data-ttu-id="deb95-123">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="deb95-123">This is the default.</span></span>|  
-|`true`|<span data-ttu-id="deb95-124">Automaticky vyprázdní vyrovnávací paměť pro výstup.</span><span class="sxs-lookup"><span data-stu-id="deb95-124">Automatically flushes the output buffer.</span></span>|  
+|`false`|<span data-ttu-id="23fa7-122">Není vyprázdnění automaticky výstupní vyrovnávací paměť.</span><span class="sxs-lookup"><span data-stu-id="23fa7-122">Does not automatically flush the output buffer.</span></span> <span data-ttu-id="23fa7-123">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="23fa7-123">This is the default.</span></span>|  
+|`true`|<span data-ttu-id="23fa7-124">Automaticky vyprázdní vyrovnávací paměť pro výstup.</span><span class="sxs-lookup"><span data-stu-id="23fa7-124">Automatically flushes the output buffer.</span></span>|  
   
-## <a name="usegloballock-attribute"></a><span data-ttu-id="deb95-125">useGlobalLock atribut</span><span class="sxs-lookup"><span data-stu-id="deb95-125">useGlobalLock Attribute</span></span>  
+## <a name="usegloballock-attribute"></a><span data-ttu-id="23fa7-125">useGlobalLock atribut</span><span class="sxs-lookup"><span data-stu-id="23fa7-125">useGlobalLock Attribute</span></span>  
   
-|<span data-ttu-id="deb95-126">Hodnota</span><span class="sxs-lookup"><span data-stu-id="deb95-126">Value</span></span>|<span data-ttu-id="deb95-127">Popis</span><span class="sxs-lookup"><span data-stu-id="deb95-127">Description</span></span>|  
+|<span data-ttu-id="23fa7-126">Hodnota</span><span class="sxs-lookup"><span data-stu-id="23fa7-126">Value</span></span>|<span data-ttu-id="23fa7-127">Popis</span><span class="sxs-lookup"><span data-stu-id="23fa7-127">Description</span></span>|  
 |-----------|-----------------|  
-|`false`|<span data-ttu-id="deb95-128">Pokud je naslouchací proces vláken; nepoužívá globální zámek jinak použije globální zámek.</span><span class="sxs-lookup"><span data-stu-id="deb95-128">Does not use the global lock if the listener is thread safe; otherwise, uses the global lock.</span></span>|  
-|`true`|<span data-ttu-id="deb95-129">Využívá globální zámek bez ohledu na to, jestli naslouchací proces je zaručeno bezpečné používání vláken.</span><span class="sxs-lookup"><span data-stu-id="deb95-129">Uses the global lock regardless of whether the listener is thread safe.</span></span> <span data-ttu-id="deb95-130">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="deb95-130">This is the default.</span></span>|  
+|`false`|<span data-ttu-id="23fa7-128">Nepoužívá globální uzamčení, pokud je bezpečná; pro naslouchací proces v opačném případě používá globální zámku.</span><span class="sxs-lookup"><span data-stu-id="23fa7-128">Does not use the global lock if the listener is thread safe; otherwise, uses the global lock.</span></span>|  
+|`true`|<span data-ttu-id="23fa7-129">Používá globální zámek bez ohledu na to, jestli je bezpečná pro naslouchací proces.</span><span class="sxs-lookup"><span data-stu-id="23fa7-129">Uses the global lock regardless of whether the listener is thread safe.</span></span> <span data-ttu-id="23fa7-130">Toto nastavení je výchozí.</span><span class="sxs-lookup"><span data-stu-id="23fa7-130">This is the default.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="deb95-131">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="deb95-131">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="23fa7-131">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="23fa7-131">Child Elements</span></span>  
   
-|<span data-ttu-id="deb95-132">Prvek</span><span class="sxs-lookup"><span data-stu-id="deb95-132">Element</span></span>|<span data-ttu-id="deb95-133">Popis</span><span class="sxs-lookup"><span data-stu-id="deb95-133">Description</span></span>|  
+|<span data-ttu-id="23fa7-132">Prvek</span><span class="sxs-lookup"><span data-stu-id="23fa7-132">Element</span></span>|<span data-ttu-id="23fa7-133">Popis</span><span class="sxs-lookup"><span data-stu-id="23fa7-133">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="deb95-134">\<moduly pro naslouchání ></span><span class="sxs-lookup"><span data-stu-id="deb95-134">\<listeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|<span data-ttu-id="deb95-135">Určuje naslouchací proces, který shromažďuje, úložiště a směrování zpráv.</span><span class="sxs-lookup"><span data-stu-id="deb95-135">Specifies a listener that collects, stores, and routes messages.</span></span>|  
+|[<span data-ttu-id="23fa7-134">\<naslouchací procesy ></span><span class="sxs-lookup"><span data-stu-id="23fa7-134">\<listeners></span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/listeners-element-for-trace.md)|<span data-ttu-id="23fa7-135">Určuje naslouchací proces, který shromažďuje, ukládá a provádí směrování zpráv.</span><span class="sxs-lookup"><span data-stu-id="23fa7-135">Specifies a listener that collects, stores, and routes messages.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="deb95-136">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="deb95-136">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="23fa7-136">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="23fa7-136">Parent Elements</span></span>  
   
-|<span data-ttu-id="deb95-137">Prvek</span><span class="sxs-lookup"><span data-stu-id="deb95-137">Element</span></span>|<span data-ttu-id="deb95-138">Popis</span><span class="sxs-lookup"><span data-stu-id="deb95-138">Description</span></span>|  
+|<span data-ttu-id="23fa7-137">Prvek</span><span class="sxs-lookup"><span data-stu-id="23fa7-137">Element</span></span>|<span data-ttu-id="23fa7-138">Popis</span><span class="sxs-lookup"><span data-stu-id="23fa7-138">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="deb95-139">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="deb95-139">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`system.diagnostics`|<span data-ttu-id="deb95-140">Určuje naslouchací procesy trasování, které shromažďování, ukládání a směrování zpráv a úroveň, kde je nastaven na přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="deb95-140">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
+|`configuration`|<span data-ttu-id="23fa7-139">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="23fa7-139">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`system.diagnostics`|<span data-ttu-id="23fa7-140">Určuje, kteří shromažďování, ukládání a směrovat zprávy a úroveň, kde je nastaven přepínač trasování.</span><span class="sxs-lookup"><span data-stu-id="23fa7-140">Specifies trace listeners that collect, store, and route messages and the level where a trace switch is set.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="deb95-141">Příklad</span><span class="sxs-lookup"><span data-stu-id="deb95-141">Example</span></span>  
- <span data-ttu-id="deb95-142">Následující příklad ukazuje, jak používat `<trace>` elementu, který chcete přidat naslouchací proces `MyListener` k `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="deb95-142">The following example shows how to use the `<trace>` element to add the listener `MyListener` to the `Listeners` collection.</span></span> <span data-ttu-id="deb95-143">`MyListener` Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.</span><span class="sxs-lookup"><span data-stu-id="deb95-143">`MyListener` creates a file that is named `MyListener.log` and writes the output to the file.</span></span> <span data-ttu-id="deb95-144">`useGlobalLock` Je atribut nastaven na `false`, což způsobí, že globální zámek nechcete použít v případě naslouchací proces trasování je zaručeno bezpečné používání vláken.</span><span class="sxs-lookup"><span data-stu-id="deb95-144">The `useGlobalLock` attribute is set to `false`, which causes the global lock not to be used if the trace listener is thread safe.</span></span> <span data-ttu-id="deb95-145">`autoflush` Je atribut nastaven na `true`, což způsobí, že naslouchací proces trasování k zápisu do souboru bez ohledu na to, jestli <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="deb95-145">The `autoflush` attribute is set to `true`, which causes the trace listener to write to the file regardless of whether the <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> method is called.</span></span> <span data-ttu-id="deb95-146">`indentsize` Je nastavena na hodnotu 0 (nula), což způsobí, že naslouchací proces pro odsazení nulové prostory při <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="deb95-146">The `indentsize` attribute is set to 0 (zero), which causes the listener to indent zero spaces when the <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> method is called.</span></span>  
+## <a name="example"></a><span data-ttu-id="23fa7-141">Příklad</span><span class="sxs-lookup"><span data-stu-id="23fa7-141">Example</span></span>  
+ <span data-ttu-id="23fa7-142">Následující příklad ukazuje způsob použití `<trace>` prvek a přidat naslouchací proces `MyListener` k `Listeners` kolekce.</span><span class="sxs-lookup"><span data-stu-id="23fa7-142">The following example shows how to use the `<trace>` element to add the listener `MyListener` to the `Listeners` collection.</span></span> <span data-ttu-id="23fa7-143">`MyListener` Vytvoří soubor s názvem `MyListener.log` a zapíše výstup do souboru.</span><span class="sxs-lookup"><span data-stu-id="23fa7-143">`MyListener` creates a file that is named `MyListener.log` and writes the output to the file.</span></span> <span data-ttu-id="23fa7-144">`useGlobalLock` Atribut je nastaven na `false`, což způsobí, že globální zámek nechcete použít, pokud je bezpečná pro posluchače trasování.</span><span class="sxs-lookup"><span data-stu-id="23fa7-144">The `useGlobalLock` attribute is set to `false`, which causes the global lock not to be used if the trace listener is thread safe.</span></span> <span data-ttu-id="23fa7-145">`autoflush` Atribut je nastaven na `true`, což způsobí, že naslouchací proces trasování pro zápis do souboru bez ohledu na to, zda <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="23fa7-145">The `autoflush` attribute is set to `true`, which causes the trace listener to write to the file regardless of whether the <xref:System.Diagnostics.Trace.Flush%2A?displayProperty=nameWithType> method is called.</span></span> <span data-ttu-id="23fa7-146">`indentsize` Atribut je nastaven na hodnotu 0 (nula), což způsobí, že naslouchací proces odsazení nulové prostory při <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> metoda je volána.</span><span class="sxs-lookup"><span data-stu-id="23fa7-146">The `indentsize` attribute is set to 0 (zero), which causes the listener to indent zero spaces when the <xref:System.Diagnostics.Trace.Indent%2A?displayProperty=nameWithType> method is called.</span></span>  
   
 ```xml  
 <configuration>  
@@ -88,9 +87,9 @@ ms.locfileid: "32746056"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="deb95-147">Viz také</span><span class="sxs-lookup"><span data-stu-id="deb95-147">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="23fa7-147">Viz také</span><span class="sxs-lookup"><span data-stu-id="23fa7-147">See Also</span></span>  
  <xref:System.Diagnostics.TraceListener>  
  <xref:System.Diagnostics.DefaultTraceListener>  
  <xref:System.Diagnostics.TextWriterTraceListener>  
  <xref:System.Diagnostics.EventLogTraceListener>  
- [<span data-ttu-id="deb95-148">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="deb95-148">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)
+ [<span data-ttu-id="23fa7-148">Trasování a ladění schématu nastavení</span><span class="sxs-lookup"><span data-stu-id="23fa7-148">Trace and Debug Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/trace-debug/index.md)

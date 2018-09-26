@@ -1,5 +1,5 @@
 ---
-title: Zabezpečení v síťové programování - rozhraní .NET Framework
+title: Zabezpečení v síťovém programování – rozhraní .NET Framework
 ms.date: 03/14/2018
 helpviewer_keywords:
 - sending data, Internet security
@@ -14,33 +14,32 @@ helpviewer_keywords:
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
 author: mcleblanc
 ms.author: markl
-manager: markl
-ms.openlocfilehash: a684fd1a7ce8cce52e00511b114cb4905ed0a42b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3e47828f14ffbaac57a43ddbf53094e220acb082
+ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393163"
+ms.lasthandoff: 09/25/2018
+ms.locfileid: "47080243"
 ---
-# <a name="security-in-network-programming"></a><span data-ttu-id="1949d-102">Zabezpečení v síťové programování</span><span class="sxs-lookup"><span data-stu-id="1949d-102">Security in network programming</span></span>
+# <a name="security-in-network-programming"></a><span data-ttu-id="451a9-102">Zabezpečení v síťovém programování</span><span class="sxs-lookup"><span data-stu-id="451a9-102">Security in network programming</span></span>
 
-<span data-ttu-id="1949d-103">Rozhraní .NET Framework <xref:System.Net> obor názvů třídy poskytují integrovanou podporu pro oblíbené Internet ověřovací mechanismy a přístupová oprávnění kódu rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="1949d-103">The .NET Framework <xref:System.Net> namespace classes provide built-in support for popular Internet application authentication mechanisms and for .NET Framework code access permissions.</span></span>  
+<span data-ttu-id="451a9-103">Rozhraní .NET Framework <xref:System.Net> tříd v oboru názvů poskytují integrovanou podporu pro oblíbené Internetové aplikace ověřovacích mechanismů a pro oprávnění přístupu ke kódu rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="451a9-103">The .NET Framework <xref:System.Net> namespace classes provide built-in support for popular Internet application authentication mechanisms and for .NET Framework code access permissions.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="1949d-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="1949d-104">In this section</span></span>
+## <a name="in-this-section"></a><span data-ttu-id="451a9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="451a9-104">In this section</span></span>
 
-[<span data-ttu-id="1949d-105">Zabezpečení TLS (Transport Layer) osvědčené postupy v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="1949d-105">Transport Layer Security (TLS) best practices with .NET Framework</span></span>](tls.md)  
-<span data-ttu-id="1949d-106">Popisuje osvědčené postupy TLS s .NET Framwork.</span><span class="sxs-lookup"><span data-stu-id="1949d-106">Describes TLS best practices with the .NET Framwork.</span></span>
+[<span data-ttu-id="451a9-105">Zabezpečení TLS (Transport Layer) osvědčené postupy s rozhraním .NET Framework</span><span class="sxs-lookup"><span data-stu-id="451a9-105">Transport Layer Security (TLS) best practices with .NET Framework</span></span>](tls.md)  
+<span data-ttu-id="451a9-106">Popisuje TLS osvědčených postupů pomocí rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="451a9-106">Describes TLS best practices with the .NET Framwork.</span></span>
  
-[<span data-ttu-id="1949d-107">Použití protokolu SSL (Secure Sockets Layer)</span><span class="sxs-lookup"><span data-stu-id="1949d-107">Using Secure Sockets Layer</span></span>](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
-<span data-ttu-id="1949d-108">Popisuje, jak používat připojení Secure Sockets Layer (SSL).</span><span class="sxs-lookup"><span data-stu-id="1949d-108">Describes how to use Secure Sockets Layer (SSL) connections.</span></span>  
+[<span data-ttu-id="451a9-107">Použití protokolu SSL (Secure Sockets Layer)</span><span class="sxs-lookup"><span data-stu-id="451a9-107">Using Secure Sockets Layer</span></span>](../../../docs/framework/network-programming/using-secure-sockets-layer.md)  
+<span data-ttu-id="451a9-108">Popisuje, jak používat připojení vrstvy SSL (Secure Sockets).</span><span class="sxs-lookup"><span data-stu-id="451a9-108">Describes how to use Secure Sockets Layer (SSL) connections.</span></span>  
   
-[<span data-ttu-id="1949d-109">Ověřování v internetu</span><span class="sxs-lookup"><span data-stu-id="1949d-109">Internet Authentication</span></span>](../../../docs/framework/network-programming/internet-authentication.md)  
-<span data-ttu-id="1949d-110">Popisuje, jak vytvořit ověřené připojení k serverům HTTP pomocí metody ověřování protokolu HTTP.</span><span class="sxs-lookup"><span data-stu-id="1949d-110">Describes how to use HTTP authentication methods to establish authenticated connections to HTTP servers.</span></span>  
+[<span data-ttu-id="451a9-109">Ověřování v internetu</span><span class="sxs-lookup"><span data-stu-id="451a9-109">Internet Authentication</span></span>](../../../docs/framework/network-programming/internet-authentication.md)  
+<span data-ttu-id="451a9-110">Popisuje způsob použití metod ověřování protokolu HTTP k navázání ověřeného připojení k serverům HTTP.</span><span class="sxs-lookup"><span data-stu-id="451a9-110">Describes how to use HTTP authentication methods to establish authenticated connections to HTTP servers.</span></span>  
   
-[<span data-ttu-id="1949d-111">Oprávnění pro web a sokety</span><span class="sxs-lookup"><span data-stu-id="1949d-111">Web and Socket Permissions</span></span>](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
-<span data-ttu-id="1949d-112">Popisuje postup nastavení zabezpečení přístupu kódu pro aplikace, které používají připojení k Internetu.</span><span class="sxs-lookup"><span data-stu-id="1949d-112">Describes how to set code access security for applications that use Internet connections.</span></span>  
+[<span data-ttu-id="451a9-111">Oprávnění pro web a sokety</span><span class="sxs-lookup"><span data-stu-id="451a9-111">Web and Socket Permissions</span></span>](../../../docs/framework/network-programming/web-and-socket-permissions.md)  
+<span data-ttu-id="451a9-112">Popisuje, jak nastavit zabezpečení přístupu ke kódu pro aplikace, které používají připojení k Internetu.</span><span class="sxs-lookup"><span data-stu-id="451a9-112">Describes how to set code access security for applications that use Internet connections.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="1949d-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="1949d-113">Related sections</span></span>
+## <a name="related-sections"></a><span data-ttu-id="451a9-113">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="451a9-113">Related sections</span></span>
 
-[<span data-ttu-id="1949d-114">Síťové programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="1949d-114">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)  
-<span data-ttu-id="1949d-115">Představuje třídy v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů.</span><span class="sxs-lookup"><span data-stu-id="1949d-115">Introduces the classes in the <xref:System.Net> and <xref:System.Net.Sockets> namespaces.</span></span>
+[<span data-ttu-id="451a9-114">Síťové programování v rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="451a9-114">Network Programming in the .NET Framework</span></span>](../../../docs/framework/network-programming/index.md)  
+<span data-ttu-id="451a9-115">Představuje třídy v <xref:System.Net> a <xref:System.Net.Sockets> obory názvů.</span><span class="sxs-lookup"><span data-stu-id="451a9-115">Introduces the classes in the <xref:System.Net> and <xref:System.Net.Sockets> namespaces.</span></span>
