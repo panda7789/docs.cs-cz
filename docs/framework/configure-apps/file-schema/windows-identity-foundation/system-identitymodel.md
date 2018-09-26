@@ -4,47 +4,47 @@ ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
 ms.openlocfilehash: 1b3121a6e7e036ec268cf83ffbf545c0e669a9b9
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077327"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47206135"
 ---
-# <a name="ltsystemidentitymodelgt"></a><span data-ttu-id="4dafa-102">&lt;system.identityModel&gt;</span><span class="sxs-lookup"><span data-stu-id="4dafa-102">&lt;system.identityModel&gt;</span></span>
-<span data-ttu-id="4dafa-103">Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.</span><span class="sxs-lookup"><span data-stu-id="4dafa-103">Provides configuration for enabling Windows Identity Foundation (WIF) options in applications.</span></span>  
+# <a name="ltsystemidentitymodelgt"></a><span data-ttu-id="2f450-102">&lt;system.identityModel&gt;</span><span class="sxs-lookup"><span data-stu-id="2f450-102">&lt;system.identityModel&gt;</span></span>
+<span data-ttu-id="2f450-103">Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.</span><span class="sxs-lookup"><span data-stu-id="2f450-103">Provides configuration for enabling Windows Identity Foundation (WIF) options in applications.</span></span>  
   
- <span data-ttu-id="4dafa-104">\<system.identityModel></span><span class="sxs-lookup"><span data-stu-id="4dafa-104">\<system.identityModel></span></span>  
+ <span data-ttu-id="2f450-104">\<system.identityModel></span><span class="sxs-lookup"><span data-stu-id="2f450-104">\<system.identityModel></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4dafa-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4dafa-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="2f450-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2f450-105">Syntax</span></span>  
   
 ```xml  
 <system.identityModel>  
 </system.identityModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="4dafa-106">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="4dafa-106">Attributes and Elements</span></span>  
- <span data-ttu-id="4dafa-107">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="4dafa-107">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="2f450-106">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="2f450-106">Attributes and Elements</span></span>  
+ <span data-ttu-id="2f450-107">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="2f450-107">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="4dafa-108">Atributy</span><span class="sxs-lookup"><span data-stu-id="4dafa-108">Attributes</span></span>  
- <span data-ttu-id="4dafa-109">Žádné</span><span class="sxs-lookup"><span data-stu-id="4dafa-109">None</span></span>  
+### <a name="attributes"></a><span data-ttu-id="2f450-108">Atributy</span><span class="sxs-lookup"><span data-stu-id="2f450-108">Attributes</span></span>  
+ <span data-ttu-id="2f450-109">Žádné</span><span class="sxs-lookup"><span data-stu-id="2f450-109">None</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="4dafa-110">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="4dafa-110">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="2f450-110">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="2f450-110">Child Elements</span></span>  
   
-|<span data-ttu-id="4dafa-111">Prvek</span><span class="sxs-lookup"><span data-stu-id="4dafa-111">Element</span></span>|<span data-ttu-id="4dafa-112">Popis</span><span class="sxs-lookup"><span data-stu-id="4dafa-112">Description</span></span>|  
+|<span data-ttu-id="2f450-111">Prvek</span><span class="sxs-lookup"><span data-stu-id="2f450-111">Element</span></span>|<span data-ttu-id="2f450-112">Popis</span><span class="sxs-lookup"><span data-stu-id="2f450-112">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="4dafa-113">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="4dafa-113">\<identityConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|<span data-ttu-id="4dafa-114">Určuje nastavení identit na úrovni služby.</span><span class="sxs-lookup"><span data-stu-id="4dafa-114">Specifies service-level identity settings.</span></span>|  
+|[<span data-ttu-id="2f450-113">\<identityConfiguration ></span><span class="sxs-lookup"><span data-stu-id="2f450-113">\<identityConfiguration></span></span>](../../../../../docs/framework/configure-apps/file-schema/windows-identity-foundation/identityconfiguration.md)|<span data-ttu-id="2f450-114">Určuje nastavení identit na úrovni služby.</span><span class="sxs-lookup"><span data-stu-id="2f450-114">Specifies service-level identity settings.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="4dafa-115">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="4dafa-115">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="2f450-115">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="2f450-115">Parent Elements</span></span>  
   
-|<span data-ttu-id="4dafa-116">Prvek</span><span class="sxs-lookup"><span data-stu-id="4dafa-116">Element</span></span>|<span data-ttu-id="4dafa-117">Popis</span><span class="sxs-lookup"><span data-stu-id="4dafa-117">Description</span></span>|  
+|<span data-ttu-id="2f450-116">Prvek</span><span class="sxs-lookup"><span data-stu-id="2f450-116">Element</span></span>|<span data-ttu-id="2f450-117">Popis</span><span class="sxs-lookup"><span data-stu-id="2f450-117">Description</span></span>|  
 |-------------|-----------------|  
-|`<configuration>`|<span data-ttu-id="4dafa-118">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="4dafa-118">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`<configuration>`|<span data-ttu-id="2f450-118">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="2f450-118">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="4dafa-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4dafa-119">Remarks</span></span>  
- <span data-ttu-id="4dafa-120">Přidat `<system.identityModel>` části do konfiguračního souboru pro konfiguraci služby nebo aplikace pro používání technologie Windows Identity Foundation (WIF).</span><span class="sxs-lookup"><span data-stu-id="4dafa-120">Add a `<system.identityModel>` section to the configuration file to configure a service or application to use Windows Identity Foundation (WIF).</span></span> <span data-ttu-id="4dafa-121">`<system.identityModel>` Prvek je reprezentován <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> třídy.</span><span class="sxs-lookup"><span data-stu-id="4dafa-121">The `<system.identityModel>` element is represented by the <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> class.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="2f450-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2f450-119">Remarks</span></span>  
+ <span data-ttu-id="2f450-120">Přidat `<system.identityModel>` části do konfiguračního souboru pro konfiguraci služby nebo aplikace pro používání technologie Windows Identity Foundation (WIF).</span><span class="sxs-lookup"><span data-stu-id="2f450-120">Add a `<system.identityModel>` section to the configuration file to configure a service or application to use Windows Identity Foundation (WIF).</span></span> <span data-ttu-id="2f450-121">`<system.identityModel>` Prvek je reprezentován <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> třídy.</span><span class="sxs-lookup"><span data-stu-id="2f450-121">The `<system.identityModel>` element is represented by the <xref:System.IdentityModel.Configuration.SystemIdentityModelSection> class.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4dafa-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="4dafa-122">Example</span></span>  
- <span data-ttu-id="4dafa-123">Následující příklad ukazuje, jak přidat `<system.identityModel>` části ke konfiguračnímu souboru.</span><span class="sxs-lookup"><span data-stu-id="4dafa-123">The following example shows how to add a `<system.identityModel>` section to a configuration file.</span></span> <span data-ttu-id="4dafa-124">Konfigurace části a obor názvů deklarace podle musíte nejprve přidat `<configSections>` elementu.</span><span class="sxs-lookup"><span data-stu-id="4dafa-124">You must first add the configuration section and namespace declaration under the `<configSections>` element.</span></span> <span data-ttu-id="4dafa-125">Potom můžete přidat `<system.IdentityModel>` element zadat jednu nebo několik konfigurací identit konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="4dafa-125">Then you can add the `<system.IdentityModel>` element to your configuration file to specify one or more identity configurations.</span></span>  
+## <a name="example"></a><span data-ttu-id="2f450-122">Příklad</span><span class="sxs-lookup"><span data-stu-id="2f450-122">Example</span></span>  
+ <span data-ttu-id="2f450-123">Následující příklad ukazuje, jak přidat `<system.identityModel>` části ke konfiguračnímu souboru.</span><span class="sxs-lookup"><span data-stu-id="2f450-123">The following example shows how to add a `<system.identityModel>` section to a configuration file.</span></span> <span data-ttu-id="2f450-124">Konfigurace části a obor názvů deklarace podle musíte nejprve přidat `<configSections>` elementu.</span><span class="sxs-lookup"><span data-stu-id="2f450-124">You must first add the configuration section and namespace declaration under the `<configSections>` element.</span></span> <span data-ttu-id="2f450-125">Potom můžete přidat `<system.IdentityModel>` element zadat jednu nebo několik konfigurací identit konfigurační soubor.</span><span class="sxs-lookup"><span data-stu-id="2f450-125">Then you can add the `<system.IdentityModel>` element to your configuration file to specify one or more identity configurations.</span></span>  
   
 ```xml  
 <configuration>  
@@ -75,5 +75,5 @@ ms.locfileid: "47077327"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4dafa-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="4dafa-126">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="2f450-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="2f450-126">See Also</span></span>  
  <xref:System.IdentityModel.Configuration.SystemIdentityModelSection>

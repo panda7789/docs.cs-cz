@@ -11,54 +11,54 @@ ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: c5be6ef95693f274e5cb2002e5642d5e58a7661a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082065"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47206166"
 ---
-# <a name="ltoidentrygt-element"></a><span data-ttu-id="7fcef-102">&lt;oidentry –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="7fcef-102">&lt;oidEntry&gt; Element</span></span>
-<span data-ttu-id="7fcef-103">Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.</span><span class="sxs-lookup"><span data-stu-id="7fcef-103">Maps an ASN.1 object identifier (OID) to a friendly name.</span></span>  
+# <a name="ltoidentrygt-element"></a><span data-ttu-id="8161c-102">&lt;oidentry –&gt; – Element</span><span class="sxs-lookup"><span data-stu-id="8161c-102">&lt;oidEntry&gt; Element</span></span>
+<span data-ttu-id="8161c-103">Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.</span><span class="sxs-lookup"><span data-stu-id="8161c-103">Maps an ASN.1 object identifier (OID) to a friendly name.</span></span>  
   
- <span data-ttu-id="7fcef-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="7fcef-104">\<configuration></span></span>  
-<span data-ttu-id="7fcef-105">\<mscorlib ></span><span class="sxs-lookup"><span data-stu-id="7fcef-105">\<mscorlib></span></span>  
-<span data-ttu-id="7fcef-106">\<cryptographySettings – ></span><span class="sxs-lookup"><span data-stu-id="7fcef-106">\<cryptographySettings></span></span>  
-<span data-ttu-id="7fcef-107">\<oidmap – ></span><span class="sxs-lookup"><span data-stu-id="7fcef-107">\<oidMap></span></span>  
-<span data-ttu-id="7fcef-108">\<oidentry – ></span><span class="sxs-lookup"><span data-stu-id="7fcef-108">\<oidEntry></span></span>  
+ <span data-ttu-id="8161c-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="8161c-104">\<configuration></span></span>  
+<span data-ttu-id="8161c-105">\<mscorlib ></span><span class="sxs-lookup"><span data-stu-id="8161c-105">\<mscorlib></span></span>  
+<span data-ttu-id="8161c-106">\<cryptographySettings – ></span><span class="sxs-lookup"><span data-stu-id="8161c-106">\<cryptographySettings></span></span>  
+<span data-ttu-id="8161c-107">\<oidmap – ></span><span class="sxs-lookup"><span data-stu-id="8161c-107">\<oidMap></span></span>  
+<span data-ttu-id="8161c-108">\<oidentry – ></span><span class="sxs-lookup"><span data-stu-id="8161c-108">\<oidEntry></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7fcef-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7fcef-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="8161c-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8161c-109">Syntax</span></span>  
   
 ```xml  
 <oidEntry OID="object identifier number" name="friendly name" />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="7fcef-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="7fcef-110">Attributes and Elements</span></span>  
- <span data-ttu-id="7fcef-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="7fcef-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="8161c-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="8161c-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="8161c-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="8161c-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="7fcef-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="7fcef-112">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="8161c-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="8161c-112">Attributes</span></span>  
   
-|<span data-ttu-id="7fcef-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="7fcef-113">Attribute</span></span>|<span data-ttu-id="7fcef-114">Popis</span><span class="sxs-lookup"><span data-stu-id="7fcef-114">Description</span></span>|  
+|<span data-ttu-id="8161c-113">Atribut</span><span class="sxs-lookup"><span data-stu-id="8161c-113">Attribute</span></span>|<span data-ttu-id="8161c-114">Popis</span><span class="sxs-lookup"><span data-stu-id="8161c-114">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="7fcef-115">**IDENTIFIKÁTOR OBJEKTU**</span><span class="sxs-lookup"><span data-stu-id="7fcef-115">**OID**</span></span>|<span data-ttu-id="7fcef-116">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="7fcef-116">Required attribute.</span></span><br /><br /> <span data-ttu-id="7fcef-117">Určuje Identifikátor ASN.1 odpovídající algoritmus implementovaný pomocí vaší třídy.</span><span class="sxs-lookup"><span data-stu-id="7fcef-117">Specifies the ASN.1 OID corresponding to the algorithm implemented by your class.</span></span>|  
-|<span data-ttu-id="7fcef-118">**Jméno**</span><span class="sxs-lookup"><span data-stu-id="7fcef-118">**name**</span></span>|<span data-ttu-id="7fcef-119">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="7fcef-119">Required attribute.</span></span><br /><br /> <span data-ttu-id="7fcef-120">Určuje hodnotu **název** atribut [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) značky.</span><span class="sxs-lookup"><span data-stu-id="7fcef-120">Specifies the value for the **name** attribute in the [\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) tag.</span></span>|  
+|<span data-ttu-id="8161c-115">**IDENTIFIKÁTOR OBJEKTU**</span><span class="sxs-lookup"><span data-stu-id="8161c-115">**OID**</span></span>|<span data-ttu-id="8161c-116">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="8161c-116">Required attribute.</span></span><br /><br /> <span data-ttu-id="8161c-117">Určuje Identifikátor ASN.1 odpovídající algoritmus implementovaný pomocí vaší třídy.</span><span class="sxs-lookup"><span data-stu-id="8161c-117">Specifies the ASN.1 OID corresponding to the algorithm implemented by your class.</span></span>|  
+|<span data-ttu-id="8161c-118">**Jméno**</span><span class="sxs-lookup"><span data-stu-id="8161c-118">**name**</span></span>|<span data-ttu-id="8161c-119">Požadovaný atribut.</span><span class="sxs-lookup"><span data-stu-id="8161c-119">Required attribute.</span></span><br /><br /> <span data-ttu-id="8161c-120">Určuje hodnotu **název** atribut [ \<nameEntry >](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) značky.</span><span class="sxs-lookup"><span data-stu-id="8161c-120">Specifies the value for the **name** attribute in the [\<nameEntry>](../../../../../docs/framework/configure-apps/file-schema/cryptography/nameentry-element.md) tag.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="7fcef-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="7fcef-121">Child Elements</span></span>  
- <span data-ttu-id="7fcef-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="7fcef-122">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="8161c-121">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="8161c-121">Child Elements</span></span>  
+ <span data-ttu-id="8161c-122">Žádné</span><span class="sxs-lookup"><span data-stu-id="8161c-122">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="7fcef-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="7fcef-123">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="8161c-123">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="8161c-123">Parent Elements</span></span>  
   
-|<span data-ttu-id="7fcef-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="7fcef-124">Element</span></span>|<span data-ttu-id="7fcef-125">Popis</span><span class="sxs-lookup"><span data-stu-id="7fcef-125">Description</span></span>|  
+|<span data-ttu-id="8161c-124">Prvek</span><span class="sxs-lookup"><span data-stu-id="8161c-124">Element</span></span>|<span data-ttu-id="8161c-125">Popis</span><span class="sxs-lookup"><span data-stu-id="8161c-125">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="7fcef-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="7fcef-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
-|`cryptographySettings`|<span data-ttu-id="7fcef-127">Obsahuje nastavení šifrování.</span><span class="sxs-lookup"><span data-stu-id="7fcef-127">Contains cryptography settings.</span></span>|  
-|`mscorlib`|<span data-ttu-id="7fcef-128">Obsahuje `cryptographySettings` elementu.</span><span class="sxs-lookup"><span data-stu-id="7fcef-128">Contains the `cryptographySettings` element.</span></span>|  
-|`oidMap`|<span data-ttu-id="7fcef-129">Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.</span><span class="sxs-lookup"><span data-stu-id="7fcef-129">Contains ASN.1 object identifier (OID) mappings to classes.</span></span>|  
+|`configuration`|<span data-ttu-id="8161c-126">Kořenový prvek v každém konfiguračním souboru, který je používán modulem Common Language Runtime (CLR) a aplikacemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="8161c-126">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`cryptographySettings`|<span data-ttu-id="8161c-127">Obsahuje nastavení šifrování.</span><span class="sxs-lookup"><span data-stu-id="8161c-127">Contains cryptography settings.</span></span>|  
+|`mscorlib`|<span data-ttu-id="8161c-128">Obsahuje `cryptographySettings` elementu.</span><span class="sxs-lookup"><span data-stu-id="8161c-128">Contains the `cryptographySettings` element.</span></span>|  
+|`oidMap`|<span data-ttu-id="8161c-129">Obsahuje ASN.1 objekt identifikátor (OID), mapování na třídy.</span><span class="sxs-lookup"><span data-stu-id="8161c-129">Contains ASN.1 object identifier (OID) mappings to classes.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="7fcef-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="7fcef-130">Remarks</span></span>  
- <span data-ttu-id="7fcef-131">Identifikátory objektů ASN.1 identifikovat v některé formáty kryptografické algoritmy.</span><span class="sxs-lookup"><span data-stu-id="7fcef-131">ASN.1 object identifiers identify algorithms in some cryptographic formats.</span></span> <span data-ttu-id="7fcef-132">Mapování identifikátorů objektů na popisné názvy algoritmů, které chcete identifikovat.</span><span class="sxs-lookup"><span data-stu-id="7fcef-132">Map object identifiers to friendly names for the algorithms you want to identify.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="8161c-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8161c-130">Remarks</span></span>  
+ <span data-ttu-id="8161c-131">Identifikátory objektů ASN.1 identifikovat v některé formáty kryptografické algoritmy.</span><span class="sxs-lookup"><span data-stu-id="8161c-131">ASN.1 object identifiers identify algorithms in some cryptographic formats.</span></span> <span data-ttu-id="8161c-132">Mapování identifikátorů objektů na popisné názvy algoritmů, které chcete identifikovat.</span><span class="sxs-lookup"><span data-stu-id="8161c-132">Map object identifiers to friendly names for the algorithms you want to identify.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="7fcef-133">Příklad</span><span class="sxs-lookup"><span data-stu-id="7fcef-133">Example</span></span>  
- <span data-ttu-id="7fcef-134">Následující příklad ukazuje způsob použití  **\<oidentry – >** element namapovat identifikátor objektu pro algoritmus hash RIPEMD 160 implementace algoritmu hash.</span><span class="sxs-lookup"><span data-stu-id="7fcef-134">The following example shows how to use the **\<oidEntry>** element to map an object identifier for the RIPEMD-160 hash algorithm to an implementation of that hash algorithm.</span></span>  
+## <a name="example"></a><span data-ttu-id="8161c-133">Příklad</span><span class="sxs-lookup"><span data-stu-id="8161c-133">Example</span></span>  
+ <span data-ttu-id="8161c-134">Následující příklad ukazuje způsob použití  **\<oidentry – >** element namapovat identifikátor objektu pro algoritmus hash RIPEMD 160 implementace algoritmu hash.</span><span class="sxs-lookup"><span data-stu-id="8161c-134">The following example shows how to use the **\<oidEntry>** element to map an object identifier for the RIPEMD-160 hash algorithm to an implementation of that hash algorithm.</span></span>  
   
 ```xml  
 <configuration>  
@@ -80,9 +80,9 @@ ms.locfileid: "47082065"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="7fcef-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="7fcef-135">See Also</span></span>  
- [<span data-ttu-id="7fcef-136">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="7fcef-136">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [<span data-ttu-id="7fcef-137">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="7fcef-137">Cryptography Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
- [<span data-ttu-id="7fcef-138">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="7fcef-138">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)  
- [<span data-ttu-id="7fcef-139">Konfigurace šifrovacích tříd</span><span class="sxs-lookup"><span data-stu-id="7fcef-139">Configuring Cryptography Classes</span></span>](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)  
- [<span data-ttu-id="7fcef-140">Mapování identifikátorů objektů na algoritmy šifrování</span><span class="sxs-lookup"><span data-stu-id="7fcef-140">Mapping Object Identifiers to Cryptography Algorithms</span></span>](../../../../../docs/framework/configure-apps/map-object-identifiers-to-cryptography-algorithms.md)
+## <a name="see-also"></a><span data-ttu-id="8161c-135">Viz také</span><span class="sxs-lookup"><span data-stu-id="8161c-135">See Also</span></span>  
+ [<span data-ttu-id="8161c-136">Schéma konfiguračního souboru</span><span class="sxs-lookup"><span data-stu-id="8161c-136">Configuration File Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+ [<span data-ttu-id="8161c-137">Schéma nastavení šifrování</span><span class="sxs-lookup"><span data-stu-id="8161c-137">Cryptography Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
+ [<span data-ttu-id="8161c-138">Kryptografické služby</span><span class="sxs-lookup"><span data-stu-id="8161c-138">Cryptographic Services</span></span>](../../../../../docs/standard/security/cryptographic-services.md)  
+ [<span data-ttu-id="8161c-139">Konfigurace šifrovacích tříd</span><span class="sxs-lookup"><span data-stu-id="8161c-139">Configuring Cryptography Classes</span></span>](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)  
+ [<span data-ttu-id="8161c-140">Mapování identifikátorů objektů na algoritmy šifrování</span><span class="sxs-lookup"><span data-stu-id="8161c-140">Mapping Object Identifiers to Cryptography Algorithms</span></span>](../../../../../docs/framework/configure-apps/map-object-identifiers-to-cryptography-algorithms.md)
