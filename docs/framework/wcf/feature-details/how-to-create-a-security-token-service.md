@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
 author: BrucePerlerMS
 ms.openlocfilehash: dd2c4f32978107a82ce940e0ef984c70f461b2c3
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47172190"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47400038"
 ---
 # <a name="how-to-create-a-security-token-service"></a>Postupy: Vytvoření služby tokenů zabezpečení
 Služba tokenů zabezpečení implementuje protokol definovaných ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a zpráv exchange vzory pro vystavování, obnovení, zrušení a ověřování tokenů zabezpečení. Služba tokenů zabezpečení obsahuje nejméně jeden z těchto možností. Toto téma vypadá nanejvýš běžný scénář: implementace vystavování tokenů.  

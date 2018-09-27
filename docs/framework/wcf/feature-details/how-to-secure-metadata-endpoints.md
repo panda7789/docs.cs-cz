@@ -7,11 +7,11 @@ dev_langs:
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
 author: BrucePerlerMS
 ms.openlocfilehash: f1dae4b9d2976ddbc941e49843324a29ec8885a4
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090224"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47400012"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Postupy: Zabezpečené koncové body metadat
 Metadata služby mohou obsahovat citlivé údaje o aplikaci, která uživatel se zlými úmysly využívat. Příjemci služby budete možná muset zabezpečené mechanismus pro získání metadat o vaší služby. Proto je někdy nezbytné pro publikování metadata pomocí zabezpečeného koncového bodu.  

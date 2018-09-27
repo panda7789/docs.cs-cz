@@ -8,11 +8,11 @@ ms.assetid: 1d853695-973c-48ae-b382-4132ae702805
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: b35014993f10c3a60c16f784e7dd11b9a20f4f4c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47071933"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47400592"
 ---
 # <a name="ui-automation-security-overview"></a>Přehled zabezpečení automatizace uživatelského rozhraní
 > [!NOTE]

@@ -13,11 +13,11 @@ ms.assetid: 47ec4adc-f39f-4bcd-8680-1ec21fd26890
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 64df186be7d9e503ac22e177bca8da31e165f240
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47188181"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47402666"
 ---
 # <a name="ltaddgt-element-for-webrequestmodules-network-settings"></a>&lt;Přidat&gt; – Element pro webRequestModules (nastavení sítě)
 Přidá vlastní modul webové žádosti do aplikace.  

@@ -11,11 +11,11 @@ ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 3e014c7a47a53a424bbaef51c9acb28e59b43078
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47083186"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47401300"
 ---
 # <a name="ltrequestcachinggt-element-network-settings"></a>&lt;requestCaching –&gt; – Element (nastavení sítě)
 Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.  

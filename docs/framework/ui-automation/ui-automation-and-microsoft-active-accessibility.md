@@ -10,11 +10,11 @@ ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 1b7dbc8dffb15485ec035049d2da7aac6915eb58
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47071193"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47401404"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>Automatizace uživatelského rozhraní a technologie Microsoft Active Accessibility
 > [!NOTE]

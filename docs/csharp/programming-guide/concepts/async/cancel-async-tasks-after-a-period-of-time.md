@@ -3,11 +3,11 @@ title: Zrušení asynchronních úloh po určitou dobu (C#)
 ms.date: 07/20/2015
 ms.assetid: 194282c2-399f-46da-a7a6-96674e00b0b3
 ms.openlocfilehash: b95b87e1e93a9c8f8c74680a917a128d45172ed5
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47027840"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397342"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-c"></a>Zrušení asynchronních úloh po určitou dobu (C#)
 

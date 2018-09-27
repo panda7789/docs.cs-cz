@@ -12,11 +12,11 @@ ms.assetid: fdefc6c3-b836-4cfe-8dec-1484bfdc5551
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: ced02347a27c85babb614cb4f0fea3248753f1b8
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47109953"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47401154"
 ---
 # <a name="obtain-text-attributes-using-ui-automation"></a>Získání textových atributů s použitím automatizace uživatelského rozhraní
 > [!NOTE]

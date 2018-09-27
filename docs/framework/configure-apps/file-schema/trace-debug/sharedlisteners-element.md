@@ -14,11 +14,11 @@ ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: b312ea8180c464fb9f955e7d7079cac930c8bf05
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070133"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397108"
 ---
 # <a name="ltsharedlistenersgt-element"></a>&lt;sharedListeners&gt; – Element
 Obsahuje moduly pro naslouchání, které všechny zdroje nebo trasování – element může odkazovat.  Tyto moduly pro naslouchání se nezobrazí žádné trasování ve výchozím nastavení a není možné načíst tyto moduly pro naslouchání v době běhu. Naslouchací procesy, které jsou identifikovány jako sdílené moduly pro naslouchání lze přidat do zdroje nebo trasování podle názvu.  

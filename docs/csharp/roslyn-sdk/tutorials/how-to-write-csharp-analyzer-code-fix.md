@@ -4,11 +4,11 @@ description: Tento kurz obsahuje podrobné pokyny k sestavení analyzátor a opr
 ms.date: 08/01/2018
 ms.custom: mvc
 ms.openlocfilehash: 2959fe3008bfca972d3a164ed27d05c2a8b0e69a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47171748"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397995"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Kurz: Zápis první opravu analyzátoru a kódu
 

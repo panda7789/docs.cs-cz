@@ -11,11 +11,11 @@ ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: e83f12d849f6f6a587bccc85fbf6fe8fe24026f0
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108101"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397225"
 ---
 # <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;httpWebRequest&gt; – Element (nastavení sítě)
 Přizpůsobí parametrů webové žádosti.  

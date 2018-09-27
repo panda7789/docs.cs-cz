@@ -1,93 +1,93 @@
 ---
-title: Standardní vzory událostí rozhraní .NET
-description: Další informace o události vzory .NET a postup vytvoření zdroje Standardní událostí a přihlášení k odběru a zpracování standardních událostí v kódu.
+title: Standardní vzory událostí .NET
+description: Další informace o vzory událostí .NET a vytvoření zdroje událostí úrovně standard a odběru a zpracování standardní události ve vašem kódu.
 ms.date: 06/20/2016
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: 9bd9f71726647966dd1e4426b260484decb048c6
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.openlocfilehash: 0b10c440f4d05533032aa94819ec879f6a1ca2a4
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34827245"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47399947"
 ---
-# <a name="standard-net-event-patterns"></a>Standardní vzory událostí rozhraní .NET
+# <a name="standard-net-event-patterns"></a>Standardní vzory událostí .NET
 
 [Předchozí](events-overview.md)
 
-Události rozhraní .NET obecně podle několik známé vzorce. Standardizace na tyto vzory znamená, že vývojáři můžou využít znalosti o tyto standardní vzorce, které lze použít pro žádné program událostí rozhraní .NET.
+Události .NET obvykle postupují podle několik známých vzorců. Standardizují používáním těchto vzorců znamená, že vývojáři mohou využít znalost těchto standardní vzory, které lze použít u každého programu událost .NET.
 
-Přejděte přes tyto standardní vzory, budete mít všechny znalostní báze, které potřebujete k vytvoření zdroje Standardní událostí a přihlášení k odběru a zpracování standardních událostí v kódu.
+Podívejme se tyto standardní vzory tak budou mít všechny znalosti potřebné k vytvoření zdroje událostí úrovně standard a odběru a zpracování standardní události ve vašem kódu.
 
-## <a name="event-delegate-signatures"></a>Podpisy delegáta událostí
+## <a name="event-delegate-signatures"></a>Podpisy delegáta události
 
-Standardní podpis pro delegáta události .NET je:
+Standardní podpisu pro delegáta události .NET je:
 
 ```csharp
 void OnEventRaised(object sender, EventArgs args);
 ```
 
-Návratový typ je neplatné. Události jsou založené na Delegáti a jsou vícesměroví delegáti. U každého zdroje událostí, která podporuje více odběrateli. Jeden návratovou hodnotu z metody nemá škálování víc odběratelům událostí. Které návratová hodnota nemá najdete zdroje událostí po vyvolání události? Později v tomto článku uvidíte, jak vytvořit událost protokoly, které podporují událostí Odběratelé, kteří tyto informace sestav ke zdroji událostí.
+Návratový typ je typ void. Události jsou založeny na delegáty a jsou vícesměroví delegáti. U každého zdroje událostí, která podporuje několik předplatitelů. Jednu návratovou hodnotu z metody neškáluje několika odběratelům události. Který vrátí hodnotu nemá viz zdroj událostí po vyvolání události? Dále v tomto článku uvidíte, jak vytvořit tyto sestavy informace zdroje událostí protokoly událostí, které podporují odběratelů událostí.
 
-Seznam argumentů obsahuje dva argumenty: odesílatel a argumenty událostí. Typ doba kompilace `sender` je `System.Object`, i když znáte pravděpodobně více odvozený typ, který by měl být vždy správný. Podle konvence, použijte `object`.
+Seznam argumentů obsahuje dva argumenty: odesílatele a argumenty události. Typ času kompilace `sender` je `System.Object`, i když pravděpodobně znáte více odvozený typ, který by měl být vždy správná. Podle konvence, použijte `object`.
 
-Druhý argument obvykle byl typ, který je odvozený od `System.EventArgs`. (Se zobrazí v [další části](modern-events.md) už vynucované touto konvencí.) Pokud váš typ události není nutné žádné další argumenty, bude stále zadat oba argumenty.
-Speciální hodnotu, `EventArgs.Empty` že se mají používat k označení, že vaše události neobsahuje žádné další informace.
+Druhý argument obvykle byl typ, který je odvozen z `System.EventArgs`. (Zobrazí se vám v [další části](modern-events.md) , který tato konvence je už nebudou vynucené.) Pokud váš typ události není nutné žádné další argumenty, se stále poskytovat oba argumenty.
+Je zvláštní hodnota `EventArgs.Empty` , používejte k označení, že události neobsahuje žádné další informace.
 
-Umožňuje vytvořit třídu, která obsahuje soubory v adresáři, nebo libovolná z jejích podadresářů využívajících vzor. Tato součást se vyvolá událost pro každý soubor nalezeny, který odpovídá vzorku.
+Vytvořme třídu, která obsahuje seznam souborů v adresáři nebo některý z jeho podadresářů, které se řídí vzorem. Tato součást vyvolává událost pro každý soubor nalezen odpovídající vzoru.
 
-Pomocí model událostí obsahuje některé výhody návrhu. Můžete vytvořit víc naslouchacích procesů událostí, které provádět různé akce, když se najde soubor hledané kombinaci. Kombinování různých naslouchací procesy můžete vytvářet robustnější algoritmy.
+Použití modelu event obsahuje některé výhody návrhu. Můžete vytvořit víc naslouchacích procesů událostí, které provádí různé akce, když se najde soubor hledané kombinaci. Kombinování různých naslouchacích procesů můžete vytvořit robustnější algoritmy.
 
-Tady je deklaraci argument počáteční události pro hledání hledané kombinaci souboru: 
+Tady je počáteční událost deklaraci argumentu pro vyhledání souboru hledané kombinaci: 
 
 [!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgsV1 "Define event arguments")]
 
-I když tento typ vypadá jako typ malé, pouze data, by měl postupovat podle konvence a nastavit jej jako odkaz (`class`) typu. To znamená, že se předají objekt argument odkazem a všechny aktualizace dat, bude zobrazit všechny odběratele. První verze je objekt neměnné. By měla přednost zkontrolujte vlastnosti ve vaší typ argumentu události neměnné. Tímto způsobem jednoho odběratele nelze změnit hodnoty, než jiné odběratele uvidí je. (Existují výjimky, jak se zobrazí níže).  
+I v případě, že tento typ vypadá jako malé, pouze pro datový typ, by měl postupovat podle úmluvy a usnadňují odkaz (`class`) typu. To znamená, že objekt argument se předá odkazem a všechny aktualizace dat se můžou zobrazit všichni předplatitelé. První verze je neměnný objekt. Měli dát přednost aby vlastnosti v váš typ argumentu události neměnné. Tímto způsobem jednoho odběratele nelze změnit hodnoty, než je uvidí jiného předplatitele. (Existují výjimky, jak uvidíte níže).  
 
-Dále je potřeba vytvořit deklaraci události ve třídě FileSearcher. Využití `EventHandler<T>` typ znamená, že nemusíte vytvářet ještě jiné definice typu. Jednoduše použijte obecné specializace.
+Dále musíme vytvořit deklaraci události ve třídě FileSearcher. Využití `EventHandler<T>` typ znamená, že není nutné vytvořit další definici typu. Jednoduše použijte specializaci obecný.
 
-Umožňuje vyplnit třídu FileSearcher k vyhledávání souborů, které odpovídají vzorku a vygenerovat správný událostí při zjištění shody.
+Pojďme vyplňte FileSearcher třídy budou hledány soubory, které odpovídají vzoru a vyvolání správné události při zjištění shody.
 
 [!code-csharp[FileSearxcher](../../samples/csharp/events/Program.cs#FileSearcherV1 "Create the initial file searcher")]
 
-## <a name="definining-and-raising-field-like-events"></a>Definining a aktivaci událostí jako pole
+## <a name="defining-and-raising-field-like-events"></a>Definování a vyvolávání událostí jako pole
 
-Nejjednodušší způsob, jak přidat událost do vaší třídy je pro tuto událost deklarovat jako veřejné pole, jako v předchozím příkladu:
+Chcete-li tuto událost deklarovat jako veřejné pole, jako v předchozím příkladu je nejjednodušší způsob, jak přidat událost do vaší třídy:
 
 [!code-csharp[DeclareEvent](../../samples/csharp/events/Program.cs#DeclareEvent "Declare the file found event")]
 
-To vypadá ho je deklarace veřejné pole, které by se zdají být chybný postup objektově orientované. Chcete chránit přístup k datům prostřednictvím vlastnosti nebo metody. Když to zkontrolujte vypadat jako chybný postup kód vygenerovaný kompilátor vytváření obálek tak, aby objektů událostí lze přistupovat pouze bezpečné způsoby. K dispozici jenom operace na pole podobné události jsou přidejte obslužnou rutinu:
+Vypadá to na to je deklarace veřejné pole, které by se zdají být chybný postup objektově orientovaný. Chcete chránit přístup k datům prostřednictvím vlastnosti nebo metody. Když to provést, vypadají, jako chybný postupem je kód generovaný kompilátorem vytváření obálek tak, aby objekty událostí lze přistupovat pouze v nouzovém způsoby. Pouze operace dostupné na pole podobné události jsou přidat obslužnou rutinu:
 
 [!code-csharp[DeclareEventHandler](../../samples/csharp/events/Program.cs#DeclareEventHandler "Declare the file found event handler")]
 
-a obslužné rutiny odebírání:
+a odebrat obslužnou rutinu:
 
 [!code-csharp[RemoveEventHandler](../../samples/csharp/events/Program.cs#RemoveHandler "Remove the event handler")]
 
-Všimněte si, že je místní proměnná pro obslužnou rutinu. Pokud jste použili text argument lambda, odebrat nebude fungovat správně. By být jinou instanci delegáta a bezobslužně Neprovádět žádnou akci.
+Všimněte si, že je lokální proměnná pro obslužnou rutinu. Pokud jste použili tělo výrazu lambda, odebrat nebude fungovat správně. To bude jinou instanci delegáta a tiše Neprovádět žádnou akci.
 
-Kód mimo třídy nemohou vyvolat události, ani můžete provádět žádné jiné operace.
+Kód mimo třídy nemohou vyvolat události, ani provádět jiné operace.
 
-## <a name="returning-values-from-event-subscribers"></a>Vrácení hodnoty z události odběratele
+## <a name="returning-values-from-event-subscribers"></a>Vrací hodnoty od odběratelů událostí
 
-Vaše jednoduché verze funguje bez problémů. Umožňuje přidat další funkcí: zrušení.
+Jednoduchá verze funguje správně. Přidáme další funkce: zrušení.
 
-Když zvýšíte nachází události, moduly pro naslouchání byste měli mít k zastavení další zpracování, pokud tento soubor je, že poslední Hledat.
+Při zvýšení nalezených událostí naslouchacích procesů měl zastaví další zpracování, pokud tento soubor je, že žádá o poslední z nich.
 
-Obslužné rutiny událostí nevrátí hodnotu, takže potřebujete komunikovat, jiným způsobem. Vzor standardní událostí používá objekt EventArgs pro zahrnutí polí, které události odběratele používat ke komunikaci Storno.
+Obslužné rutiny událostí nesmí vracet hodnotu, proto musíte ke komunikaci, která jiným způsobem. Vzor standardních událostí používá objekt EventArgs pro zahrnutí polí, které odběratelů událostí můžete použít ke komunikaci Storno.
 
-Existují dva různé vzorce, které by mohly být použity, podle sémantika kontrakt Storno. V obou případech přidáte logická pole EventArguments pro událost nalezený soubor. 
+Existují dva různé vzorce, které mohou být využity, podle sémantiky smlouvy zrušit. V obou případech přidáte pole boolean EventArguments nalezený soubor události. 
 
-Jeden vzor by umožnilo žádné jednoho odběratele na tlačítko Storno.
-Pro tento vzor, je inicializováno nové pole `false`. Všechny odběratele lze změnit na `true`. Po všech Odběratelé, kteří mají vidět vyvolaná událost, komponentu FileSearcher prozkoumá logickou hodnotu a provede akci.
+Jeden vzor by umožnilo jakékoli jednoho odběratele na zrušení operace.
+Pro tento model je nové pole inicializovány na `false`. Libovolný předplatitel lze změnit na `true`. Po všichni předplatitelé viděli vyvolaná událost, součást FileSearcher prozkoumá logickou hodnotu a provede akci.
 
-Druhý vzor by pouze zrušte operaci, pokud všechny Odběratelé, kteří chtěli operace byla zrušena. V tomto vzoru se inicializovat nové pole označíte, má-li zrušit operaci, a všechny odběratele může změnit se indikovat, že by měl v operaci pokračovat.
-Po všech Odběratelé, kteří mají vidět vyvolaná událost, komponentu FileSearcher prověří logickou hodnotu a provede akci. V tomto vzoru je jeden další krok: součást musí vědět, pokud žádné Odběratelé, kteří mají vidět události. Pokud neexistují žádné odběratele, pole by nesprávně indikovat Storno.
+Druhý vzor by pouze zrušit operaci, pokud všichni předplatitelé operace byla zrušena. V tomto vzoru nové pole je inicializován do značí by měla operaci zrušit a libovolný předplatitel by mohl změnit označující, že by operace měla pokračovat.
+Po všichni předplatitelé viděli vyvolaná událost, součást FileSearcher prozkoumá logickou hodnotu a provede akci. Existuje jeden další krok v tomto vzoru: součást potřebuje vědět, pokud jste viděli všechny předplatitele události. Pokud neexistují žádné předplatitele, pole by označoval zrušení nesprávně.
 
-Umožňuje implementovat první verzi pro tato ukázka. Je nutné přidat pole boolean s názvem `CancelRequested` k `FileFoundArgs` typu:
+Můžeme implementovat první verzi pro tuto ukázku. Je třeba přidat pole boolean s názvem `CancelRequested` k `FileFoundArgs` typu:
 
 [!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgs "Update event arguments")]
 
-Toto nové pole je automaticky inicializován na `false`, výchozí hodnota pro pole Boolean, tak nejsou omylem zrušit. Jediná další změna součást je kontrola příznak po vyvolání události pro zobrazení, pokud žádné z odběratele, kteří odeslali žádost o zrušení:
+Toto nové pole je automaticky inicializován na `false`, výchozí hodnota pro pole Boolean, takže nezrušíte omylem. Jediná další změna součást je kontrola příznak po vyvolání události pro zobrazení, pokud některý z odběratele odeslali žádost o zrušení:
 
 ```csharp
 public void List(string directory, string searchPattern)
@@ -102,10 +102,10 @@ public void List(string directory, string searchPattern)
 }
 ```
 
-Jednou z výhod tohoto vzoru je, že to není narušující změně.
-Žádná z odběratele požadovaný zrušení před, a stále nejsou. Žádný kód odběratele musí, aktualizaci, pokud chtějí nový protokol Storno. Je velmi volně vázány.
+Jednou z výhod tohoto modelu je, že to není zásadní změnu.
+Žádný odběratelů požadováno zrušení před a stále nejsou. Žádný kód odběratele musí, aktualizaci, pokud chtějí podporují nový protokol Storno. Je velmi volně vázány.
 
-Umožňuje aktualizovat odběratele tak, aby požadavků zrušení, jakmile najde první spustitelný soubor:
+Umožňuje aktualizovat odběratele tak, aby požaduje zrušení, jakmile nalezne první spustitelný soubor:
 
 ```csharp
 EventHandler<FileFoundArgs> onFileFound = (sender, eventArgs) =>
@@ -115,36 +115,36 @@ EventHandler<FileFoundArgs> onFileFound = (sender, eventArgs) =>
 };
 ```
 
-## <a name="adding-another-event-declaration"></a>Přidání jiného deklarace událostí
+## <a name="adding-another-event-declaration"></a>Přidání další deklarace událostí
 
-Umožňuje přidat jeden další funkce a ukažte, ostatní idioms jazyk pro události. Přidejme přetížení `Search()` metoda, který prochází skrz všechny podadresáře při hledání souborů.
+Pojďme přidat jeden další funkce a ukazují další idiomy jazyk pro události. Přidejme přetížení `Search()` metodu, která prochází přes všechny podadresáře při hledání souborů.
 
-To může získat být časově náročná operace v adresáři s mnoha podadresářů. Přidejme událost, která se získá vyvolá, když začne každou nové vyhledávání v adresáři. To umožňuje odběratele, kteří mají sledování postupu a aktualizovat uživatele o průběhu. Všechny ukázky, které jste vytvořili, pokud jsou veřejné. Provedeme tato interní událost. To znamená, že můžete provést také typy používané pro interní argumenty také.
+To mohl být dlouhotrvající operace v adresáři s mnoha podadresáře. Přidejme událost, která získá vyvolá, když začne každé nové prohledávání adresáře. To umožňuje předplatitelům sledování průběhu a aktualizaci uživatele jde o průběhu. Všechny ukázky, které jste vytvořili zatím byly veřejné. Vnitřní událost vytvoříme tohoto objektu. To znamená, že můžete provést také typy používané pro interní argumenty také.
 
-Spusťte tak, že vytvoříte novou třídu odvozenou EventArgs pro vytváření sestav nový adresář a průběh. 
+Začnete vytvořením nového EventArgs odvozené třídy pro vytváření sestav nový adresář a průběh. 
 
 [!code-csharp[DirEventArgs](../../samples/csharp/events/Program.cs#SearchDirEventArgs "Define search directory event arguments")]
 
-Znovu postupujte podle doporučení pro neměnné odkaz pro argumenty událostí.
+Znovu postupujte podle doporučení pro nezměnitelný odkazový typ pro argumenty události.
 
-V dalším kroku definujte událost. Tentokrát budete používat jinou syntaxi. Kromě použití syntaxe pole, můžete explicitně vytvořit vlastnosti s přidat a odebrat obslužné rutiny. V této ukázce nebude potřebovat další kód v těchto obslužných rutin, ale to ukazuje, jak by je vytvořit.
+Dále definujte události. Tentokrát použijeme odlišnou syntaxi. Kromě použití syntaxe pole, můžete explicitně vytvořit vlastnost, s přidat a odebrat obslužné rutiny. V této ukázce nebude potřebovat další kód v těchto obslužných rutinách, ale to ukazuje, jak by je vytvořit.
 
 [!code-csharp[Declare event with add and remove handlers](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Declare the event with add and remove handlers")]
 
-V mnoha směrech kód napsaný v tomto poli zrcadlení, že kód kompilátor generuje pro definice pole událostí Seznámili jste se dříve. Vytvoření událostí pomocí syntaxe velmi podobná používá pro [vlastnosti](properties.md). Všimněte si, že obslužných rutin mají odlišné názvy: `add` a `remove`. Toto nastavení se nazývá k přihlášení k odběru události nebo odhlášení odběru událostí. Všimněte si, že také musíte deklarovat privátní základní pole pro uložení proměnné události. Inicializací na hodnotu null.
+V mnoha směrech kód, který napíšete zde zrcadlení, že kód, kompilátor vygeneruje pro definice pole událostí jste viděli dříve. Vytvořit událost pomocí syntaxe velmi podobné, který používá pro [vlastnosti](properties.md). Všimněte si, že obslužných rutin mají odlišné názvy: `add` a `remove`. Nazývají se přihlášení k odběru události, nebo zrušit odběr události. Všimněte si, že je také třeba deklarovat privátní pomocné pole k uložení proměnné události. Je inicializován na hodnotu null.
 
-V dalším kroku přidejme přetížení metody Search(), který prochází podadresáře a vyvolá obou události. Nejjednodušší způsob, jak tomu se má používat výchozí argument k určení, zda chcete vyhledávat všechny adresáře:
+V dalším kroku přidejme přetížení metody Search(), který prochází skrz podadresářů a vyvolává události, i. Nejjednodušší způsob, jak to provést, je výchozí argument použít k určení, zda chcete vyhledávat všechny adresáře:
 
 [!code-csharp[SearchImplementation](../../samples/csharp/events/Program.cs#FinalImplementation "Implementation to search directories")]
 
-V tomto okamžiku můžete spustit aplikace volání přetížení pro vyhledávání všech dílčí adresářů. Neexistují žádné odběratele na nové `ChangeDirectory` událostí, ale pomocí `?.Invoke()` stylu zajistí, že to funguje správně.
+V tomto okamžiku spustíte aplikaci volání přetížení pro vyhledávání všech podadresářích. Nejsou žádné předplatitele na novém `ChangeDirectory` události, ale používat `?.Invoke()` idiom zajistí, že to funguje správně.
 
- Přidejme obslužnou rutinu k zápisu řádku, který zobrazuje průběh v okně konzoly. 
+ Přidejme obslužnou rutinu zapsat řádek, který zobrazuje průběh v okně konzoly. 
 
 [!code-csharp[Search](../../samples/csharp/events/Program.cs#Search "Declare event handler")]
 
-Seznámili jste se vzorů, které je třeba v rámci ekosystému .NET.
-Podle informací tyto vzory a konvence, budete psát idiomatickou C# a .NET rychle.
+Už víte, vzorů, které jsou použity v celém ekosystému .NET.
+Podle studijního tyto vzory a konvence, budete psát idiomatickou C# a .NET rychle.
 
 V dalším kroku se zobrazí některé změny v tyto vzory v nejnovější verzi rozhraní .NET.
 

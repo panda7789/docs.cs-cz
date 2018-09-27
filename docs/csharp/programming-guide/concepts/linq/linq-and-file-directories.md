@@ -3,11 +3,11 @@ title: LINQ a souborové adresáře (C#)
 ms.date: 07/20/2015
 ms.assetid: b66c55e4-0f72-44e5-b086-519f9962335c
 ms.openlocfilehash: 4bdd21cf4d8558f140b265f195368082964c34c4
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47085368"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47396793"
 ---
 # <a name="linq-and-file-directories-c"></a>LINQ a souborové adresáře (C#)
 Mnoho operací systému souborů jsou v podstatě dotazy a jsou proto vhodné k přístupu LINQ.  

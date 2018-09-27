@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: ae5c68a8-14a2-4c6e-b9e0-3e94e3e9135e
 author: BrucePerlerMS
 ms.openlocfilehash: 3f0810a705b5f46ee68a891f9b4ced42efdcb757
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077588"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47399486"
 ---
 # <a name="ltsecuritygt-of-ltmsmqintegrationbindinggt"></a>&lt;security&gt; – &lt;msmqIntegrationBinding&gt;
 Definuje nastavení zabezpečení přenosu pro kanál integrace služby Řízení front zpráv (MSMQ).  

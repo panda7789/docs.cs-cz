@@ -4,11 +4,11 @@ description: Zjistěte, jak váš kód, který se dokumentační komentáře XML
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
 ms.openlocfilehash: e211543a6a5cc5f6f29d8c195492b474eb24a38d
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47115080"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397056"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
 

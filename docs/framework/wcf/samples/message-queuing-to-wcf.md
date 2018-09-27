@@ -2,17 +2,17 @@
 title: Řízení front zpráv do WCF
 ms.date: 03/30/2017
 ms.assetid: 6d718eb0-9f61-4653-8a75-d2dac8fb3520
-ms.openlocfilehash: 983fd2ef7338e24c67e3556849e73c2feaf97a60
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 16b9c9fa3c66ad86fe9502b14fc09ff8d543d58a
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525695"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47396991"
 ---
 # <a name="message-queuing-to-windows-communication-foundation"></a>Řízení front zpráv do WCF
 Tato ukázka předvádí, jak aplikace služby Řízení front zpráv (MSMQ) zprávy MSMQ odeslat do služby Windows Communication Foundation (WCF). Služba je v místním prostředí konzolovou aplikaci pro vám umožní sledovat službu přijímání zpráv zařazených do fronty.  
   
- Kontrakt služby je `IOrderProcessor`, která definuje jednosměrné, který je vhodný pro použití s frontami služby. Zprávy MSMQ nemá hlavičku akce, takže není možné automaticky mapovat různé zprávy služby MSMQ pro operaci smlouvy. Proto může být pouze jeden kontrakt. Pokud chcete definovat více než jeden kontrakt služby, aplikace musí poskytovat informace ohledně toho, která záhlaví zprávy služby MSMQ (například popisku nebo ID korelace) umožňuje rozhodnout, kterou kontrakt k odeslání. To je patrné [vlastní Demux](../../../../docs/framework/wcf/samples/custom-demux.md).  
+ Kontrakt služby je `IOrderProcessor`, která definuje jednosměrné, který je vhodný pro použití s frontami služby. Zprávy MSMQ nemá hlavičku akce, takže není možné automaticky mapovat různé zprávy služby MSMQ pro operaci smlouvy. Proto může být pouze jeden kontrakt. Pokud chcete definovat více než jeden kontrakt služby, aplikace musí poskytovat informace ohledně toho, která záhlaví zprávy služby MSMQ (například popisku nebo ID korelace) umožňuje rozhodnout, kterou kontrakt k odeslání.
   
  Zprávy služby MSMQ neobsahuje informace ohledně toho, která hlavičky jsou namapovány na různé parametry kontrakt. Parametr je typu <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`), která obsahuje základní zprávy služby MSMQ. Typ "T" v <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>(`MsmqMessage<T>`) třída reprezentuje data, která je serializován do textu zprávy MSMQ. V této ukázce `PurchaseOrder` je typ serializován do textu zprávy MSMQ.  
   

@@ -2,17 +2,17 @@
 title: Ukázka koncového bodu správy pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 3ac6e08f-c43d-4bb7-83c3-e3890a4dac03
-ms.openlocfilehash: 3d99cbef20895381f5e40ee939e1d94a409f1391
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 398ace1c198f0db0268c44083ccc98c5ba2d2c7f
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078382"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47399122"
 ---
 # <a name="workflow-management-endpoint-sample"></a>Ukázka koncového bodu správy pracovního postupu
 Tento příklad ukazuje použití ovládacího prvku koncový bod pracovního postupu vytvoření a spuštění pracovních postupů, místně i vzdáleně. Vzorek ukazuje, jak hostovat koncové body typu ovládacího prvku a zápis klientů, které volají kontrolní koncový bod pro vytvoření a spuštění instance pracovního postupu. Pracovní postup není služba.  
   
- Na straně služby vzorku je hostovaný pracovního postupu pomocí třídy WorkflowServiceHost a přidá koncového bodu WorkflowControlEndpoint tak, aby klienti můžou provádět operace správy (pozastavit, Start atd.). Uživatelem definované CreationEndpoint je taky přidaný ke povolit pracovní postup, který se má vytvořit. Služba potom použije tyto koncové body pro spuštění pracovního postupu v pozastaveném stavu a poté obnovit pracovního postupu. Klient provede stejné operace, ale z kódu klienta. Pro další informace o těchto rozhraní, naleznete v tématu [kontrolní koncový bod pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md) a [postupy: hostování pracovního postupu bez služby ve službě IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-non-service-workflow-in-iis.md)  
+ Na straně služby vzorku je hostovaný pracovního postupu pomocí třídy WorkflowServiceHost a přidá koncového bodu WorkflowControlEndpoint tak, aby klienti můžou provádět operace správy (pozastavit, Start atd.). Uživatelem definované CreationEndpoint je taky přidaný ke povolit pracovní postup, který se má vytvořit. Služba potom použije tyto koncové body pro spuštění pracovního postupu v pozastaveném stavu a poté obnovit pracovního postupu. Klient provede stejné operace, ale z kódu klienta. Pro další informace o těchto rozhraní, naleznete v tématu [kontrolní koncový bod pracovního postupu](../../../../docs/framework/wcf/feature-details/workflow-control-endpoint.md).  
   
 #### <a name="to-run-the-sample"></a>Chcete-li spustit ukázku  
   

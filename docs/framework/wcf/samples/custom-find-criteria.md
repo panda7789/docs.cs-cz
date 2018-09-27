@@ -3,11 +3,11 @@ title: Vlastní kritérium hledání
 ms.date: 03/30/2017
 ms.assetid: b2723929-8829-424d-8015-a37ba2ab4f68
 ms.openlocfilehash: 699260fcef7680710f721d213dbf1126ebf7a896
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070465"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47400774"
 ---
 # <a name="custom-find-criteria"></a>Vlastní kritérium hledání
 Tato ukázka předvádí, jak vytvořit vlastní obor shoda pomocí logiky a jak implementovat vlastní zjišťování služby. Klienti používají vlastní obor funkci přiřazování k upřesnění a další postaveny funkce poskytované systémem hledání zjišťování WCF. Scénář, který obsahuje tato ukázka je následujícím způsobem:  

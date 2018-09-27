@@ -8,11 +8,11 @@ ms.assetid: 63c0ef2c-44b5-4c54-9804-ba0b9b001ac7
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 86bf21580db9bc6d9890f0935e283b653ba2e0b5
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077119"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397787"
 ---
 # <a name="how-to-enable-a-webrequest-to-use-a-proxy-to-communicate-with-the-internet"></a>Postupy: povolení WebRequest ke komunikaci s Internetem použití proxy serveru
 Tento příklad vytvoří instanci globální proxy, které umožní libovolné <xref:System.Net.WebRequest> ke komunikaci s Internetem použití proxy serveru. Příklad předpokládá, že je název proxy serveru `webproxy` a že komunikaci na portu 80, standardní port HTTP.  

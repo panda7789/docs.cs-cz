@@ -12,11 +12,11 @@ ms.assetid: 67784ecd-9663-434e-bd6a-26975e447ac0
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 535519c65aba7ce13703bb33a16b09cde84c3f03
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47085544"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47400605"
 ---
 # <a name="ltbindingredirectgt-element"></a>&lt;bindingRedirect&gt; – Element
 Přesměruje jednu verzi sestavení k jiné.  

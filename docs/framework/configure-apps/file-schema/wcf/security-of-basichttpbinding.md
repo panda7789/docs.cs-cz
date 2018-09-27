@@ -3,13 +3,12 @@ title: '&lt;security&gt; – &lt;basicHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6432708d-5465-4bd9-bfc2-466742db99cb
 author: BrucePerlerMS
-manager: mbaldwin
-ms.openlocfilehash: 2adb5736cca59d42ab3c62d61513bbfd80a4be04
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 670cd661c3f7bc7e8c0e7d52ad10fa0c8e003c06
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47027788"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397735"
 ---
 # <a name="ltsecuritygt-of-ltbasichttpbindinggt"></a>&lt;security&gt; – &lt;basicHttpBinding&gt;
 Definuje možnosti zabezpečení [ \<basicHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md).  

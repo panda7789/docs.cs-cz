@@ -5,11 +5,11 @@ helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
 ms.openlocfilehash: f171a6380840fe2cb828ee06985317f002b353de
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077942"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397251"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Vazby ve Windows Communication Foundation – přehled
 Vazby jsou objekty, které se používají k určení detaily komunikace, které jsou vyžadovány pro připojení ke koncovému bodu služby Windows Communication Foundation (WCF). Každý koncový bod služby WCF vyžaduje vazbu být správně zadaný. Toto téma popisuje typy komunikace – podrobnosti, které definují vazby elementy vazby, které vazby jsou součástí WCF a jak vazbu se dá nastavit pro koncový bod.  

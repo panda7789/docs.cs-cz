@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 243a5148-bbd1-447f-a8a5-6e7792c0a3f1
 author: BrucePerlerMS
 ms.openlocfilehash: 848dbf56436e1589697ffdb64d617961f29ac506
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47071100"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47398008"
 ---
 # <a name="ltsecuritygt-of-ltcustombindinggt"></a>&lt;security&gt; – &lt;customBinding&gt;
 Určuje možnosti zabezpečení pro vlastní vazbu.  

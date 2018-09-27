@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: b8222922-35d9-4361-8bc0-d360164a9266
 author: BrucePerlerMS
 ms.openlocfilehash: 179a27b34e12d9dbefe721c8b4325861e6b9334b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47172898"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47396780"
 ---
 # <a name="systemservicemodelsecuritysecuritytokenprovideropened"></a>System.ServiceModel.Security.SecurityTokenProviderOpened
 System.ServiceModel.Security.SecurityTokenProviderOpened  

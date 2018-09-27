@@ -5,11 +5,11 @@ ms.assetid: c98731b4-b542-46a2-9947-1cea63c186b2
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 4ff5f131cfd9fac48e653b98e05d5e46dcfb0bec
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075171"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47399018"
 ---
 # <a name="ipv6-routing"></a>Směrování IPv6
 Flexibilní mechanismus směrování je výhodou IPv6. Kvůli způsobu, jakým IPv4, které byly ID sítě a jsou přidělené a velké směrovací tabulky musí být udržována směrovače, které jsou na Internetu páteřních. Tyto směrovače, jestliže musíte znát všechny trasy k předávání paketů, které jsou potenciálně směrované do kteréhokoli uzlu na Internetu. S jeho schopnost agregační adresy IPv6 umožňuje flexibilní adresování a výrazně snižuje velikost směrovací tabulky. V této nové architektuře adresování zprostředkující směrovače musí sledovat pouze místní část své síti pro předávání zpráv správně.  

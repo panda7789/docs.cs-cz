@@ -6,11 +6,11 @@ ms.author: wiwagn
 ms.date: 12/15/2017
 ms.custom: vs-dotnet
 ms.openlocfilehash: 4623f4efa8637bd30f378006a92bfc4965429182
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082913"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47399226"
 ---
 # <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Ladění aplikace Hello World pomocí sady Visual Studio 2017
 

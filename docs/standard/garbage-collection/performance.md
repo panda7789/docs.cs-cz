@@ -9,11 +9,11 @@ ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 69a11e99966467de005ab92d3dcdebaa70bbdbe4
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46584289"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397980"
 ---
 # <a name="garbage-collection-and-performance"></a>Kolekce paměti a výkon
 <a name="top"></a> Toto téma popisuje problémy spojené s uvolňování paměti kolekce a využití paměti. Řeší problémy, které se vztahují na spravované haldě a vysvětluje, jak minimalizovat dopad uvolňování paměti u svých aplikací. Všechny problémy obsahuje odkazy na postupy, které můžete použít k prozkoumání problémů.  

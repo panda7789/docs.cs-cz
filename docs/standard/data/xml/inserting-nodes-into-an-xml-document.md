@@ -6,11 +6,11 @@ ms.assetid: 891e54f5-54f6-4bb4-b624-9d1b6a1f1216
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 1472bdef3a4e6244f5eb8e943c28243ae8e9f3df
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47072950"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397644"
 ---
 # <a name="inserting-nodes-into-an-xml-document"></a>Vkládání uzlů do dokumentu XML
 Dokument můžete upravit tak, že vloží nové uzly. Uzly mohou být nově vytvořeny ve stejném dokumentu, nebo je můžete importovat z jiného dokumentu. Další informace o vytváření nových uzlů najdete v tématu [vytvoření nových uzlů v modelu DOM](../../../../docs/standard/data/xml/create-new-nodes-in-the-dom.md). Další informace o kopírování existujících uzlů najdete v tématu [kopírování existujících uzlů](../../../../docs/standard/data/xml/copy-existing-nodes.md), [kopírování existujících uzlů z jednoho dokumentu do jiného](../../../../docs/standard/data/xml/copying-existing-nodes-from-one-document-to-another.md), nebo [kopírování fragmentů dokumentu](../../../../docs/standard/data/xml/copying-document-fragments.md).  

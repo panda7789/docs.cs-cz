@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: 3abbb2ec-78d2-41e6-b9f9-6662d4e2cdc7
 author: ghogen
 ms.openlocfilehash: 904a82a3cc725221defb6795bf813b8cbc490c41
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47073577"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397017"
 ---
 # <a name="how-to-write-services-programmatically"></a>Postupy: Zápis služeb prostřednictvím kódu programu
 Pokud se rozhodnete nepoužívat šablonu projektu služby Windows, můžete napsat vlastní služby nastavením dědičnosti a další prvky infrastruktury sami. Když vytvoříte službu prostřednictvím kódu programu, je třeba provést několik kroků, které pro vás by jinak zpracovat šablonu:  

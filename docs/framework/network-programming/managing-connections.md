@@ -20,11 +20,11 @@ ms.assetid: 9b3d3de7-189f-4f7d-81ae-9c29c441aaaa
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 1e4eb6c88bfad132f9e974445adf9ae0d6531f57
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47085187"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47399434"
 ---
 # <a name="managing-connections"></a>Správa připojení
 Aplikace, které používají protokol HTTP pro připojení k datovým prostředkům můžete použít rozhraní .NET Framework <xref:System.Net.ServicePoint> a <xref:System.Net.ServicePointManager> třídy ke správě připojení k Internetu a aby to pomohl ostatním dosažení optimálního škálování a výkon.  

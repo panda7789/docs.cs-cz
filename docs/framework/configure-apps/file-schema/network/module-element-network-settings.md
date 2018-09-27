@@ -11,11 +11,11 @@ ms.assetid: 10318725-9666-4d65-ab61-b94c64e59f13
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 4d51010d6236103d252507802e14d01230d90219
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075197"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47397186"
 ---
 # <a name="ltmodulegt-element-network-settings"></a>&lt;modul&gt; – Element (nastavení sítě)
 Přidá nový modul proxy serveru do aplikace.  

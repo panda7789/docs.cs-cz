@@ -3,11 +3,11 @@ title: Odchylky obecných rozhraní (C#)
 ms.date: 07/20/2015
 ms.assetid: 4828a8f9-48c0-4128-9749-7fcd6bf19a06
 ms.openlocfilehash: 11d0c8665412bb513cb68d58203a454b7c97e052
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47107763"
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47399778"
 ---
 # <a name="variance-in-generic-interfaces-c"></a>Odchylky obecných rozhraní (C#)
 Rozhraní .NET framework 4 zavedena podpora odchylku pro existující několik obecných rozhraní. Podpora Variance umožňuje implicitní převod z třídy, které implementují tato rozhraní. Následující rozhraní jsou nyní variant:  
