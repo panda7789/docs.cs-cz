@@ -13,50 +13,50 @@ ms.assetid: 301584ca-a914-4100-b180-3b288d3b099e
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: ca6c8e9334bdfcdf4d79c5a91612ee117445d9cb
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47170636"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47237407"
 ---
-# <a name="ltcleargt-element-for-bypasslist-network-settings"></a><span data-ttu-id="8df0b-102">&lt;Vymazat&gt; – Element pro bypasslist (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="8df0b-102">&lt;clear&gt; Element for bypasslist (Network Settings)</span></span>
-<span data-ttu-id="8df0b-103">Vymaže seznam obcházení proxy serveru.</span><span class="sxs-lookup"><span data-stu-id="8df0b-103">Clears the proxy bypass list.</span></span>  
+# <a name="ltcleargt-element-for-bypasslist-network-settings"></a><span data-ttu-id="21691-102">&lt;Vymazat&gt; – Element pro bypasslist (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="21691-102">&lt;clear&gt; Element for bypasslist (Network Settings)</span></span>
+<span data-ttu-id="21691-103">Vymaže seznam obcházení proxy serveru.</span><span class="sxs-lookup"><span data-stu-id="21691-103">Clears the proxy bypass list.</span></span>  
   
- <span data-ttu-id="8df0b-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="8df0b-104">\<configuration></span></span>  
-<span data-ttu-id="8df0b-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="8df0b-105">\<system.net></span></span>  
-<span data-ttu-id="8df0b-106">\<defaultProxy ></span><span class="sxs-lookup"><span data-stu-id="8df0b-106">\<defaultProxy></span></span>  
-<span data-ttu-id="8df0b-107">\<bypasslist – ></span><span class="sxs-lookup"><span data-stu-id="8df0b-107">\<bypasslist></span></span>  
-<span data-ttu-id="8df0b-108">\<Vymazat ></span><span class="sxs-lookup"><span data-stu-id="8df0b-108">\<clear></span></span>  
+ <span data-ttu-id="21691-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="21691-104">\<configuration></span></span>  
+<span data-ttu-id="21691-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="21691-105">\<system.net></span></span>  
+<span data-ttu-id="21691-106">\<defaultProxy ></span><span class="sxs-lookup"><span data-stu-id="21691-106">\<defaultProxy></span></span>  
+<span data-ttu-id="21691-107">\<bypasslist – ></span><span class="sxs-lookup"><span data-stu-id="21691-107">\<bypasslist></span></span>  
+<span data-ttu-id="21691-108">\<Vymazat ></span><span class="sxs-lookup"><span data-stu-id="21691-108">\<clear></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8df0b-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8df0b-109">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="21691-109">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="21691-109">Syntax</span></span>  
   
 ```xml  
 <clear/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="8df0b-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="8df0b-110">Attributes and Elements</span></span>  
- <span data-ttu-id="8df0b-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="8df0b-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="21691-110">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="21691-110">Attributes and Elements</span></span>  
+ <span data-ttu-id="21691-111">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="21691-111">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="8df0b-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="8df0b-112">Attributes</span></span>  
- <span data-ttu-id="8df0b-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="8df0b-113">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="21691-112">Atributy</span><span class="sxs-lookup"><span data-stu-id="21691-112">Attributes</span></span>  
+ <span data-ttu-id="21691-113">Žádné</span><span class="sxs-lookup"><span data-stu-id="21691-113">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="8df0b-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="8df0b-114">Child Elements</span></span>  
- <span data-ttu-id="8df0b-115">Žádné</span><span class="sxs-lookup"><span data-stu-id="8df0b-115">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="21691-114">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="21691-114">Child Elements</span></span>  
+ <span data-ttu-id="21691-115">Žádné</span><span class="sxs-lookup"><span data-stu-id="21691-115">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="8df0b-116">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="8df0b-116">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="21691-116">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="21691-116">Parent Elements</span></span>  
   
-|<span data-ttu-id="8df0b-117">**Element**</span><span class="sxs-lookup"><span data-stu-id="8df0b-117">**Element**</span></span>|<span data-ttu-id="8df0b-118">**Popis**</span><span class="sxs-lookup"><span data-stu-id="8df0b-118">**Description**</span></span>|  
+|<span data-ttu-id="21691-117">**Element**</span><span class="sxs-lookup"><span data-stu-id="21691-117">**Element**</span></span>|<span data-ttu-id="21691-118">**Popis**</span><span class="sxs-lookup"><span data-stu-id="21691-118">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="8df0b-119">atribut bypasslist bude</span><span class="sxs-lookup"><span data-stu-id="8df0b-119">bypasslist</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|<span data-ttu-id="8df0b-120">Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.</span><span class="sxs-lookup"><span data-stu-id="8df0b-120">Provides a set of regular expressions that describe addresses that do not use a proxy.</span></span>|  
+|[<span data-ttu-id="21691-119">atribut bypasslist bude</span><span class="sxs-lookup"><span data-stu-id="21691-119">bypasslist</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/bypasslist-element-network-settings.md)|<span data-ttu-id="21691-120">Poskytuje sadu regulární výrazy, které popisují adresy, které nepoužívají proxy server.</span><span class="sxs-lookup"><span data-stu-id="21691-120">Provides a set of regular expressions that describe addresses that do not use a proxy.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="8df0b-121">Poznámky</span><span class="sxs-lookup"><span data-stu-id="8df0b-121">Remarks</span></span>  
- <span data-ttu-id="8df0b-122">`clear` Element vymaže všechny položky ze seznamu jednorázové přihlášení.</span><span class="sxs-lookup"><span data-stu-id="8df0b-122">The `clear` element clears all entries from the bypass list.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="21691-121">Poznámky</span><span class="sxs-lookup"><span data-stu-id="21691-121">Remarks</span></span>  
+ <span data-ttu-id="21691-122">`clear` Element vymaže všechny položky ze seznamu jednorázové přihlášení.</span><span class="sxs-lookup"><span data-stu-id="21691-122">The `clear` element clears all entries from the bypass list.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="8df0b-123">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="8df0b-123">Configuration Files</span></span>  
- <span data-ttu-id="8df0b-124">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="8df0b-124">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="21691-123">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="21691-123">Configuration Files</span></span>  
+ <span data-ttu-id="21691-124">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="21691-124">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8df0b-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="8df0b-125">Example</span></span>  
- <span data-ttu-id="8df0b-126">Následující příklad vymaže seznamu obcházení a přidá do seznamu obcházení dvě adresy.</span><span class="sxs-lookup"><span data-stu-id="8df0b-126">The following example clears the bypass list and then adds two addresses to the bypass list.</span></span> <span data-ttu-id="8df0b-127">První obcházejí proxy serveru pro všechny servery v doméně contoso.com; druhý vynechá proxy serveru pro všechny servery, IP adresa začíná s 192.168.</span><span class="sxs-lookup"><span data-stu-id="8df0b-127">The first bypasses the proxy for all servers in the contoso.com domain; the second bypasses the proxy for all servers whose IP address begins with 192.168.</span></span>  
+## <a name="example"></a><span data-ttu-id="21691-125">Příklad</span><span class="sxs-lookup"><span data-stu-id="21691-125">Example</span></span>  
+ <span data-ttu-id="21691-126">Následující příklad vymaže seznamu obcházení a přidá do seznamu obcházení dvě adresy.</span><span class="sxs-lookup"><span data-stu-id="21691-126">The following example clears the bypass list and then adds two addresses to the bypass list.</span></span> <span data-ttu-id="21691-127">První obcházejí proxy serveru pro všechny servery v doméně contoso.com; druhý vynechá proxy serveru pro všechny servery, IP adresa začíná s 192.168.</span><span class="sxs-lookup"><span data-stu-id="21691-127">The first bypasses the proxy for all servers in the contoso.com domain; the second bypasses the proxy for all servers whose IP address begins with 192.168.</span></span>  
   
 ```xml  
 <configuration>  
@@ -72,6 +72,6 @@ ms.locfileid: "47170636"
 </configuration>   
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8df0b-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="8df0b-128">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="21691-128">Viz také</span><span class="sxs-lookup"><span data-stu-id="21691-128">See Also</span></span>  
  <xref:System.Net.WebProxy?displayProperty=nameWithType>  
- [<span data-ttu-id="8df0b-129">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="8df0b-129">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+ [<span data-ttu-id="21691-129">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="21691-129">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
