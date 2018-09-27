@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 2831d514-d9d8-4200-9192-954bb6da1126
 author: BrucePerlerMS
 ms.openlocfilehash: 8673b4520d9727ae1aa78ef0bc9f435defb02598
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47171319"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47235962"
 ---
 # <a name="how-to-transform-incoming-claims"></a>Postupy: Transformace příchozích deklarací identity
 ## <a name="applies-to"></a>Platí pro  

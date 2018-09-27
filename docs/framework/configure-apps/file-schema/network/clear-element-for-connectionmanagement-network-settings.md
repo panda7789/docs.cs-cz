@@ -13,11 +13,11 @@ ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 9542332085d0b0319c55db63fd98c9dd8eb3f576
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070497"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47235923"
 ---
 # <a name="ltcleargt-element-for-connectionmanagement-network-settings"></a>&lt;Vymazat&gt; – Element pro connectionManagement (nastavení sítě)
 Zruší připojení seznamu pro správu.  

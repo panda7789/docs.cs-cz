@@ -11,11 +11,11 @@ ms.assetid: 09576b1a-291f-435c-980e-dee32d899ae1
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: cb9e37c80c7bc32a29022ede0bffc06a0f6ac5b1
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078029"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47234939"
 ---
 # <a name="get-ui-automation-element-properties"></a>Získání vlastností elementů automatizace uživatelského rozhraní
 > [!NOTE]

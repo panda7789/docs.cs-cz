@@ -13,11 +13,11 @@ ms.assetid: 301584ca-a914-4100-b180-3b288d3b099e
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: ca6c8e9334bdfcdf4d79c5a91612ee117445d9cb
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47170636"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47237407"
 ---
 # <a name="ltcleargt-element-for-bypasslist-network-settings"></a>&lt;Vymazat&gt; – Element pro bypasslist (nastavení sítě)
 Vymaže seznam obcházení proxy serveru.  

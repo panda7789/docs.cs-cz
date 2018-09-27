@@ -5,11 +5,11 @@ author: guardrex
 ms.author: mairaw
 ms.date: 05/18/2017
 ms.openlocfilehash: 207a6740f2a483d532c194b2bf8112898e9c3463
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47083030"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47233232"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Pomocí sady .NET Core SDK a nástroje v kontinuální integrace (CI)
 

@@ -13,11 +13,11 @@ ms.assetid: dc522c45-4a80-4831-8955-f7b68a47edfd
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: ef12a475dde103023d3411fb68efb3bdb4f6d116
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47076690"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47235910"
 ---
 # <a name="ltcleargt-element-for-authenticationmodules-network-settings"></a>&lt;Vymazat&gt; – Element pro authenticationModules (nastavení sítě)
 Vymaže všechny moduly ověřování z aplikace.  

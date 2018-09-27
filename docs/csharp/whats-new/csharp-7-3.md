@@ -2,12 +2,12 @@
 title: Co je nového v jazyce C# 7.3
 description: Přehled nových funkcí v jazyce C# 7.3
 ms.date: 05/16/2018
-ms.openlocfilehash: 383346569be2c0daf333b0cb3b28e2a8fbb24f66
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 570da53059242c0242609ddcba5cb23f1728aa9f
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47027896"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47235228"
 ---
 # <a name="whats-new-in-c-73"></a>Co je nového v jazyce C# 7.3
 
@@ -36,7 +36,7 @@ Nové možnosti kompilátoru jsou:
 
 Zbývající část tohoto článku poskytuje podrobnosti a odkazy na další informace o každé vylepšení.
 
-## <a name="enabling-more-performant-safe-code"></a>Povolení více výkonné bezpečného kódu
+## <a name="enabling-more-efficient-safe-code"></a>Povolení efektivnější bezpečný kód
 
 Je třeba schopni napsat kód jazyka C#, bezpečně, který funguje stejně dobře jako nezabezpečený kód. Nouzový kód se vyhnete třídy chyb, jako je například přetečení vyrovnávací paměti, ukazatele stray a další chyby přístupu k paměti. Tyto nové funkce rozšířili schopnosti ověřitelný bezpečný kód. Snažit se psát více kódu pomocí bezpečné konstrukce. Tyto funkce to usnadní.
 
@@ -127,6 +127,8 @@ Teď můžete zadat typ <xref:System.Enum?displayProperty=nameWithType> nebo <xr
 Můžete také použít novou `unmanaged` omezení, chcete-li určit, že musí být parametr typu **nespravovaný typ**. **Nespravovaný typ** je typ, který není typem odkazu a neobsahuje jakéhokoliv odkazového typu na libovolné úrovni vnoření.
 
 Další informace najdete v článcích na [ `where` obecná omezení](../language-reference/keywords/where-generic-type-constraint.md) a [omezení parametrů typů](../programming-guide/generics/constraints-on-type-parameters.md).
+
+Přidání k existujícím typům těchto omezení je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). Uzavřených obecných typů pravděpodobně přestane splňovat tyto nové omezení.
 
 ## <a name="make-existing-features-better"></a>Vylepšit stávajících funkcí
 

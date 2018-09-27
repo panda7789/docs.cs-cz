@@ -11,13 +11,12 @@ helpviewer_keywords:
 - .NET applications, Windows applications
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
 author: ghogen
-manager: douge
-ms.openlocfilehash: aa5e18f7e0ee1fc0836054b692872b18678106f3
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 79de8adbc0f994653f308882b335da2ffa5f7455
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46583026"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47233163"
 ---
 # <a name="develop-windows-service-apps"></a>Vývoj aplikací pro službu Windows
 
