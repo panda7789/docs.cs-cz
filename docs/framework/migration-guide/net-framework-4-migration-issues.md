@@ -8,11 +8,11 @@ ms.assetid: df478548-8c05-4de2-8ba7-adcdbe1c2a60
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 351bf675d33a060019cbf22437d7945537a21707
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47171683"
+ms.lasthandoff: 09/26/2018
+ms.locfileid: "47236135"
 ---
 # <a name="net-framework-4-migration-issues"></a>Problémy s migrací rozhraní .NET framework 4
 
