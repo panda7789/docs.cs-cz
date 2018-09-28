@@ -13,49 +13,49 @@ ms.assetid: 48f38bcb-f30c-4b74-a8f0-1a3caf1aa96f
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 2b313aa2481b1257715ac4dbc6d452e2120f4726
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070380"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47425913"
 ---
-# <a name="ltcleargt-element-for-webrequestmodules-network-settings"></a><span data-ttu-id="66bac-102">&lt;Vymazat&gt; – Element pro webRequestModules (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="66bac-102">&lt;clear&gt; Element for webRequestModules (Network Settings)</span></span>
-<span data-ttu-id="66bac-103">Odebere všechny registrované moduly webové žádosti z aplikace.</span><span class="sxs-lookup"><span data-stu-id="66bac-103">Removes all registered Web request modules from the application.</span></span>  
+# <a name="ltcleargt-element-for-webrequestmodules-network-settings"></a><span data-ttu-id="043a4-102">&lt;Vymazat&gt; – Element pro webRequestModules (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="043a4-102">&lt;clear&gt; Element for webRequestModules (Network Settings)</span></span>
+<span data-ttu-id="043a4-103">Odebere všechny registrované moduly webové žádosti z aplikace.</span><span class="sxs-lookup"><span data-stu-id="043a4-103">Removes all registered Web request modules from the application.</span></span>  
   
- <span data-ttu-id="66bac-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="66bac-104">\<configuration></span></span>  
-<span data-ttu-id="66bac-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="66bac-105">\<system.net></span></span>  
-<span data-ttu-id="66bac-106">\<webRequestModules></span><span class="sxs-lookup"><span data-stu-id="66bac-106">\<webRequestModules></span></span>  
-<span data-ttu-id="66bac-107">\<Vymazat ></span><span class="sxs-lookup"><span data-stu-id="66bac-107">\<clear></span></span>  
+ <span data-ttu-id="043a4-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="043a4-104">\<configuration></span></span>  
+<span data-ttu-id="043a4-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="043a4-105">\<system.net></span></span>  
+<span data-ttu-id="043a4-106">\<webRequestModules></span><span class="sxs-lookup"><span data-stu-id="043a4-106">\<webRequestModules></span></span>  
+<span data-ttu-id="043a4-107">\<Vymazat ></span><span class="sxs-lookup"><span data-stu-id="043a4-107">\<clear></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="66bac-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="66bac-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="043a4-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="043a4-108">Syntax</span></span>  
   
 ```xml  
 <clear/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="66bac-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="66bac-109">Attributes and Elements</span></span>  
- <span data-ttu-id="66bac-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="66bac-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="043a4-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="043a4-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="043a4-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="043a4-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="66bac-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="66bac-111">Attributes</span></span>  
- <span data-ttu-id="66bac-112">Žádné</span><span class="sxs-lookup"><span data-stu-id="66bac-112">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="043a4-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="043a4-111">Attributes</span></span>  
+ <span data-ttu-id="043a4-112">Žádné</span><span class="sxs-lookup"><span data-stu-id="043a4-112">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="66bac-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="66bac-113">Child Elements</span></span>  
- <span data-ttu-id="66bac-114">Žádné</span><span class="sxs-lookup"><span data-stu-id="66bac-114">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="043a4-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="043a4-113">Child Elements</span></span>  
+ <span data-ttu-id="043a4-114">Žádné</span><span class="sxs-lookup"><span data-stu-id="043a4-114">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="66bac-115">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="66bac-115">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="043a4-115">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="043a4-115">Parent Elements</span></span>  
   
-|<span data-ttu-id="66bac-116">**Element**</span><span class="sxs-lookup"><span data-stu-id="66bac-116">**Element**</span></span>|<span data-ttu-id="66bac-117">**Popis**</span><span class="sxs-lookup"><span data-stu-id="66bac-117">**Description**</span></span>|  
+|<span data-ttu-id="043a4-116">**Element**</span><span class="sxs-lookup"><span data-stu-id="043a4-116">**Element**</span></span>|<span data-ttu-id="043a4-117">**Popis**</span><span class="sxs-lookup"><span data-stu-id="043a4-117">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="66bac-118">webRequestModules</span><span class="sxs-lookup"><span data-stu-id="66bac-118">webRequestModules</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|<span data-ttu-id="66bac-119">Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.</span><span class="sxs-lookup"><span data-stu-id="66bac-119">Specifies modules to use to request information from network hosts.</span></span>|  
+|[<span data-ttu-id="043a4-118">webRequestModules</span><span class="sxs-lookup"><span data-stu-id="043a4-118">webRequestModules</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/webrequestmodules-element-network-settings.md)|<span data-ttu-id="043a4-119">Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.</span><span class="sxs-lookup"><span data-stu-id="043a4-119">Specifies modules to use to request information from network hosts.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="66bac-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="66bac-120">Remarks</span></span>  
- <span data-ttu-id="66bac-121">`clear` Element odebere všechny registrované webových požadavek modulů, které byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii configuration.</span><span class="sxs-lookup"><span data-stu-id="66bac-121">The `clear` element removes all registered Web request modules that were defined earlier in the configuration file or at a higher level in the configuration hierarchy.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="043a4-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="043a4-120">Remarks</span></span>  
+ <span data-ttu-id="043a4-121">`clear` Element odebere všechny registrované webových požadavek modulů, které byly dříve definovány v konfiguračním souboru nebo na vyšší úrovni v hierarchii configuration.</span><span class="sxs-lookup"><span data-stu-id="043a4-121">The `clear` element removes all registered Web request modules that were defined earlier in the configuration file or at a higher level in the configuration hierarchy.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="66bac-122">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="66bac-122">Configuration Files</span></span>  
- <span data-ttu-id="66bac-123">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="66bac-123">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="043a4-122">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="043a4-122">Configuration Files</span></span>  
+ <span data-ttu-id="043a4-123">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="043a4-123">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="66bac-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="66bac-124">Example</span></span>  
- <span data-ttu-id="66bac-125">V následujícím příkladu vymaže všechny moduly webové žádosti a pak zaregistruje webový modul požadavku pro protokol HTTP.</span><span class="sxs-lookup"><span data-stu-id="66bac-125">The following example clears all Web request modules and then registers a Web request module for HTTP.</span></span>  
+## <a name="example"></a><span data-ttu-id="043a4-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="043a4-124">Example</span></span>  
+ <span data-ttu-id="043a4-125">V následujícím příkladu vymaže všechny moduly webové žádosti a pak zaregistruje webový modul požadavku pro protokol HTTP.</span><span class="sxs-lookup"><span data-stu-id="043a4-125">The following example clears all Web request modules and then registers a Web request module for HTTP.</span></span>  
   
 ```xml  
 <configuration>  
@@ -71,6 +71,6 @@ ms.locfileid: "47070380"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="66bac-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="66bac-126">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="043a4-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="043a4-126">See Also</span></span>  
  <xref:System.Net.WebRequest>  
- [<span data-ttu-id="66bac-127">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="66bac-127">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+ [<span data-ttu-id="043a4-127">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="043a4-127">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
