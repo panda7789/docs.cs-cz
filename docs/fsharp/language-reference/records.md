@@ -3,11 +3,11 @@ title: Záznamy (F#)
 description: 'Zjistěte, jak F # záznamy představují jednoduchý agregace pojmenovaných hodnot, volitelně s členy.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 6103d96b6b80a9e2ed168755958dbe800f7fa862
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111149"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47425963"
 ---
 # <a name="records"></a>Záznamy
 

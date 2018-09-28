@@ -5,11 +5,11 @@ ms.date: 06/04/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: 7d2935fafe9dbad28205c8a896d97d80474a686f
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47113816"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47436138"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 

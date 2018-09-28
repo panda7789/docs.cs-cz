@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 214e88fe-0476-4604-bca6-1b2f25fe1194
 author: BrucePerlerMS
 ms.openlocfilehash: 49663218e2896b2528f27e7db6f200984f4f7b2e
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47070701"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47425976"
 ---
 # <a name="systemservicemodelsecuritysecuritysessionclosedresponsesendfailure"></a>System.ServiceModel.Security.SecuritySessionClosedResponseSendFailure
 System.ServiceModel.Security.SecuritySessionClosedResponseSendFailure  

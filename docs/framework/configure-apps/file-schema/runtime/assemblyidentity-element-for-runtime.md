@@ -12,11 +12,11 @@ ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 2b0d7968ce2cf8f326004c9e564cb2e7912c1a0a
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47077340"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47436242"
 ---
 # <a name="ltassemblyidentitygt-element-for-ltruntimegt"></a>&lt;Vlastnost assemblyIdentity&gt; – Element pro &lt;modulu runtime&gt;
 Obsahuje identifikační informace o sestavení.  

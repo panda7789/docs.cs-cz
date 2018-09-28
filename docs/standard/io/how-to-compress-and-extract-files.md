@@ -13,11 +13,11 @@ ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 669936d15cfe1ea125ed36ffdfcfd093b6aacbe1
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46530869"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47424425"
 ---
 # <a name="how-to-compress-and-extract-files"></a>Postupy: komprese a extrahování souborů
 

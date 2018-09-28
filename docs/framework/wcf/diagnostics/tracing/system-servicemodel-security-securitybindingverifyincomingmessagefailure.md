@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: a4447ad6-7f41-47ef-bdd1-8b4a908e156f
 author: BrucePerlerMS
 ms.openlocfilehash: 6337b3649bf390a510cd3f392c6d4620ed51417d
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47073083"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47436112"
 ---
 # <a name="systemservicemodelsecuritysecuritybindingverifyincomingmessagefailure"></a>System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure
 System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure  

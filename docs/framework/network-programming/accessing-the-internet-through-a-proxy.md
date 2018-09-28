@@ -15,11 +15,11 @@ ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 32799b14c88ee098e15e0ffa1dfa5aaa585cdc73
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47090036"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47421273"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k Internetu prostřednictvím proxy serveru
 Pokud váš web používá k zajištění přístupu k Internetu proxy server, musíte nakonfigurovat instanci proxy umožňují aplikaci komunikovat se serverem proxy webových.  

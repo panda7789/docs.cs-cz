@@ -9,11 +9,11 @@ ms.assetid: 329891d7-b609-49e6-920a-09ea8a627d07
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 666f8f60e27a2e513d9d33ddb6ca09c312e40126
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078068"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47421744"
 ---
 # <a name="ui-automation-support-for-the-scrollbar-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ScrollBar
 > [!NOTE]

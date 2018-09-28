@@ -5,11 +5,11 @@ author: mairaw
 ms.author: mairaw
 ms.date: 05/25/2018
 ms.openlocfilehash: 76165590478b0e76d19d546c87e012da4716b6db
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082328"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47421187"
 ---
 # <a name="dotnet-msbuild"></a>DotNet msbuild
 

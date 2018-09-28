@@ -3,11 +3,11 @@ title: 'Postupy: Přístup ke službě z aplikace pracovního postupu'
 ms.date: 03/30/2017
 ms.assetid: 925ef8ea-5550-4c9d-bb7b-209e20c280ad
 ms.openlocfilehash: 460e5d0f1bbfdebf885176ed9fcc336b76731edd
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075238"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47421830"
 ---
 # <a name="how-to-access-a-service-from-a-workflow-application"></a>Postupy: Přístup ke službě z aplikace pracovního postupu
 Toto téma popisuje, jak volat služby pracovních postupů z konzolové aplikace pracovního postupu. To závisí na dokončení [postupy: vytvoření služby pracovního postupu pomocí aktivit zasílání zpráv](../../../../docs/framework/wcf/feature-details/how-to-create-a-workflow-service-with-messaging-activities.md) tématu. I když toto téma popisuje, jak volat z aplikace pracovního postupu služby pracovního postupu, stejně jako je možné volat jakékoli služby Windows Communication Foundation (WCF) z aplikace pracovního postupu.

@@ -11,11 +11,11 @@ ms.assetid: 1263de11-3e0a-4f94-97c9-710b2ae53817
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 34173812f4f6fac940632e23e6641e458250a4ee
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47110889"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47436125"
 ---
 # <a name="ltwebrequestmodulesgt-element-network-settings"></a>&lt;Element webRequestModules&gt; – Element (nastavení sítě)
 Určuje moduly, které použijte k vyžádání informace z hostitelů v síti.  

@@ -6,11 +6,11 @@ helpviewer_keywords:
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
 ms.openlocfilehash: fcf5b8f872e2f97497ff5387adb755da1832bf8c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111313"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47424464"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
 Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciálního zákazníka základní zlomek naplnění 6.5 miliard náš svět. Pokud chcete, aby vaše aplikace pro oslovení publika, nákladově efektivní lokalizaci skrytých váš produkt je jedním ze způsobů nejlepší a nejhospodárnějším oslovovat víc zákazníků.  

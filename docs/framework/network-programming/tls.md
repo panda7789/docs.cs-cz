@@ -13,12 +13,12 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 author: blowdart
-ms.openlocfilehash: a421b73edc1dd90be53d301d12160d39abe78f90
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 96d37934b5e852b69c692bb1606d2998dac6f63a
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111352"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47424477"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 
@@ -182,7 +182,7 @@ Další informace o protokoly TLS najdete v tématu [omezení rizik: protokoly T
 > [!WARNING]
 > Nastavení klíče registru ovlivní všechny aplikace v systému. Tuto možnost použijte pouze v případě počítače plně pod kontrolou a můžete řídit změny do registru.
 
-Pokud nastavení jednoho nebo obou `AppContext` přepínače nejsou možnost, můžete kontrolovat protokoly zabezpečení, které vaše aplikace používá s klíči registru Windows, které jsou popsané v této části. Nebudete moct používat jeden nebo oba `AppContext` přepne, pokud se svojí aplikací cílíte na verzi rozhraní .NET Framework starší než 4.6, nebo nelze upravit konfigurační soubor. Pokud chcete provést konfiguraci zabezpečení s registrem, potom nezadávejte hodnotu protokolu zabezpečení ve vašem kódu; To uděláte tak, by se mělo přepsat registru.
+Pokud nastavení jednoho nebo obou `AppContext` přepínače není, můžete kontrolovat protokoly zabezpečení, které vaše aplikace používá s klíči registru Windows, které jsou popsané v této části. Nebudete moct používat jeden nebo oba `AppContext` přepne, pokud vaše aplikace běží na rozhraní .NET Framework 4.5.2 nebo starší, nebo pokud nelze upravit konfigurační soubor. Pokud chcete provést konfiguraci zabezpečení s registrem, nezadávejte hodnotu protokol zabezpečení ve vašem kódu; To uděláte tak přepíše nastavení registru.
 
 Názvy klíčů registru se podobně jako názvy odpovídajících `AppContext` ale bez přepínače `DontEnable` přidáno před název. Například `AppContext` přepnout `DontEnableSchUseStrongCrypto` klíč registru se nazývá [SchUseStrongCrypto](#schusestrongcrypto).
 

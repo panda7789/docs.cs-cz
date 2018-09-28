@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: e0e6d091-9a97-4888-8f2c-cbcee42d90ee
 author: BrucePerlerMS
 ms.openlocfilehash: e6324087afa62f276766c733284dc69e425b89bc
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47078510"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47425859"
 ---
 # <a name="building-my-first-claims-aware-wcf-service"></a>Vytváření Moje první Claims-Aware WCF Service
 ## <a name="applies-to"></a>Platí pro  

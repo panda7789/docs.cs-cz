@@ -6,11 +6,11 @@ ms.assetid: a0b536b6-cdb3-4a44-86c2-3b2ebc7bd4c9
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: e7fb30104f36a565f4e6742c8f808c48e4ef39ec
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47157714"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47421742"
 ---
 # <a name="xmldatadocument-input-to-xsltransform"></a>Vstup XmlDataDocument do XslTransform
 > [!NOTE]

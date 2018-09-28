@@ -10,11 +10,11 @@ ms.assetid: 665b01b5-25f5-47a1-ab11-cffe8ebbf2a7
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: ebd8feb00f397faab4a231005ef90a55895c6f67
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47112319"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47424373"
 ---
 # <a name="ui-automation-clients-for-managed-code-how-to-topics"></a>Postupy: Témata klientů automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]

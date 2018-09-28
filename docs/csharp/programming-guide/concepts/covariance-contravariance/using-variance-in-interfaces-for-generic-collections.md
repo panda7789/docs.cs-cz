@@ -3,11 +3,11 @@ title: Použití odchylky v rozhraní pro obecné kolekce (C#)
 ms.date: 07/20/2015
 ms.assetid: a44f0708-10fa-4c76-82cd-daa6e6b31e8e
 ms.openlocfilehash: 66a1eac33d5f715f52bd83c43bac4452df41aabd
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47111322"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47421005"
 ---
 # <a name="using-variance-in-interfaces-for-generic-collections-c"></a>Použití odchylky v rozhraní pro obecné kolekce (C#)
 Kovariantní rozhraní umožňuje její metody k vrácení více odvozené typy než procesory zadané v rozhraní. Rozhraní kontravariantní umožňuje její metody přijímají parametry méně odvozené typy než platformám zadaným v rozhraní.  

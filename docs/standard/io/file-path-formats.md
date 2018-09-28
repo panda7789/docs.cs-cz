@@ -10,11 +10,11 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 5821d15e71492bd54fa6b5d891f2ff38a2902a06
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47058445"
+ms.lasthandoff: 09/28/2018
+ms.locfileid: "47424386"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Cesta formáty souborů v systémech Windows
 
