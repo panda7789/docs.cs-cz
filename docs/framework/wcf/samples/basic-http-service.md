@@ -2,12 +2,12 @@
 title: Základní služba HTTP
 ms.date: 03/30/2017
 ms.assetid: 27048b43-8a54-4f2a-9952-594bbfab10ad
-ms.openlocfilehash: 914ad5f04d980fd53cd07251461367356f00b4cc
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f97fcab1200b9c13860ab8030378b5402b087d7a
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43516624"
+ms.lasthandoff: 09/29/2018
+ms.locfileid: "47455720"
 ---
 # <a name="basic-http-service"></a>Základní služba HTTP
 Tento příklad ukazuje, jak implementovat služby založené na protokolu HTTP, na základě RPC - popularly označuje jako služba "POX" (Plain Old XML) – pomocí služby Windows Communication Foundation (WCF) REST programovacího modelu. Tato ukázka obsahuje dvě součásti: v místním prostředí služby WCF HTTP (Service.cs) a Konzolová aplikace (Program.cs), který vytvoří službu a provede volání do něj.  
@@ -21,7 +21,7 @@ Tento příklad ukazuje, jak implementovat služby založené na protokolu HTTP,
   
  Soubor App.config Konfiguruje službu WCF s výchozím <xref:System.ServiceModel.Description.WebHttpEndpoint> , který má <xref:System.ServiceModel.Description.WebHttpEndpoint.HelpEnabled%2A> nastavenou na `true`. V důsledku toho infrastruktura WCF vytvoří automatické stránce nápovědy HTML založené na `http://localhost:8000/Customers/help` , který poskytuje informace o tom, jak vytvořit požadavky HTTP na službu a jak využívat služby odpověď HTTP.  
   
- Program.cs ukazuje, jak lze pomocí objektu pro vytváření kanálů WCF provádět volání do služby a zpracování odpovědi. Všimněte si, že toto je pouze jeden způsob, jak získat přístup ke službě WCF. Je také možné získat přístup ke službě pomocí ostatních tříd rozhraní .NET Framework jako <xref:System.Net.HttpWebRequest> a <xref:System.Net.WebClient>. Další ukázky v sadě SDK (například [automatický výběr formátu](../../../../docs/framework/wcf/samples/automatic-format-selection.md) ukázkové a [služba základních prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md) ukázkové) ukazují, jak použít tyto třídy komunikovat se službou WCF.  
+ Program.cs ukazuje, jak lze pomocí objektu pro vytváření kanálů WCF provádět volání do služby a zpracování odpovědi. Všimněte si, že toto je pouze jeden způsob, jak získat přístup ke službě WCF. Je také možné získat přístup ke službě pomocí ostatních tříd rozhraní .NET Framework jako <xref:System.Net.HttpWebRequest> a <xref:System.Net.WebClient>.
   
  Ukázka obsahuje služba v místním prostředí a klient i spuštění v rámci konzolové aplikace. Konzolová aplikace běží, klient vytvářejí požadavky na službu a zapíše relevantní informace z odpovědi v okně konzoly.  
   
@@ -41,7 +41,3 @@ Tento příklad ukazuje, jak implementovat služby založené na protokolu HTTP,
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\BasicHttpService`  
-  
-## <a name="see-also"></a>Viz také  
- [Automatický výběr formátu](../../../../docs/framework/wcf/samples/automatic-format-selection.md)  
- [Služba základních prostředků](../../../../docs/framework/wcf/samples/basic-resource-service.md)
