@@ -8,11 +8,11 @@ helpviewer_keywords:
 - serialization, XML Schema Definition tool
 ms.assetid: 3c03f855-f931-47ff-bbc6-50c0367a16e4
 ms.openlocfilehash: 326a62ab8ccc04b93c9304758ff068f35cf3ecf4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
-ms.translationtype: MT
+ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47233268"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47862747"
 ---
 # <a name="the-xml-schema-definition-tool-and-xml-serialization"></a>Nástroj pro definici schématu XML a serializace XML
 Nástroj definici schématu XML ([nástroj definici schématu XML (Xsd.exe)](../../../docs/standard/serialization/xml-schema-definition-tool-xsd-exe.md)) je nainstalováno rozhraní .NET Framework nástroje jako součást sady Windows® Software Development Kit (SDK). Nástroj je určen především ke dvěma účelům:  

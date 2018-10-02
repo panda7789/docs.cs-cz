@@ -2,12 +2,12 @@
 title: Korelace trvanlivého duplexního přenosu
 ms.date: 03/30/2017
 ms.assetid: 8eb0e49a-6d3b-4f7e-a054-0d4febee2ffb
-ms.openlocfilehash: 82c052ff87eb8b125dfc64e1567dbd00d255894d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: f2f5fe557f1f8754758d0dd9b4042cacc62cc61f
+ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205483"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47862887"
 ---
 # <a name="durable-duplex-correlation"></a>Korelace trvanlivého duplexního přenosu
 Korelace trvanlivého duplexního přenosu, označované také jako zpětné volání korelace, je užitečné, když služba pracovního postupu má požadavek na odeslání zpětné volání počáteční volajícímu. Na rozdíl od WCF duplexní zpětného volání v každém okamžiku v budoucnu se může stát a není vázaný na jeden kanál nebo kanál životnost; Jediným požadavkem je, že volající mít aktivní koncový bod naslouchání pro zpětné volání zprávy. To umožňuje dvě služby pracovního postupu pro komunikaci v rámci dlouhotrvající konverzace. Toto téma obsahuje přehled korelace trvanlivého duplexního přenosu.  
@@ -198,7 +198,4 @@ WF2 - Items sent
 WF1 - Items Received  
 ```  
   
- V tomto příkladu obou pracovních postupů explicitně spravovat pomocí korelace <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>. Protože pouze jeden korelace v pracovních postupech tyto ukázky, výchozí <xref:System.ServiceModel.Activities.CorrelationHandle> správy by byl dostatečná.  
-  
-## <a name="see-also"></a>Viz také  
- [Trvanlivý duplexní přenos &#91;ukázky WF&#93;](../../../../docs/framework/windows-workflow-foundation/samples/durable-duplex.md)
+ V tomto příkladu obou pracovních postupů explicitně spravovat pomocí korelace <xref:System.ServiceModel.Activities.CallbackCorrelationInitializer>. Protože pouze jeden korelace v pracovních postupech tyto ukázky, výchozí <xref:System.ServiceModel.Activities.CorrelationHandle> správy by byl dostatečná.

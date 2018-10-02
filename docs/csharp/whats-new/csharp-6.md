@@ -4,11 +4,11 @@ description: Informace o nových funkcích v jazyce C# verze 6
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
 ms.openlocfilehash: f6f953eacc935d38cc7d45173109c96c52a5e2f3
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208182"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47863712"
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 

@@ -1,22 +1,24 @@
 ---
-title: Imperativní ověření založené na kódu
+title: Imperativní ověřování na základě kódu
 ms.date: 03/30/2017
 ms.assetid: ae12537c-455e-42b1-82f4-cea4c46c023e
-ms.openlocfilehash: 87585050d7ab8c9adc5f0ac4ac5396862975cc25
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac77132e3469bdffa6f88f8c6d617c6faa1c9323
+ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33515455"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47862417"
 ---
-# <a name="imperative-code-based-validation"></a>Imperativní ověření založené na kódu
-Imperativní ověřování založené na kódu poskytuje jednoduchý způsob, jak aktivity pro ověřování o samotné a je k dispozici pro aktivity, které jsou odvozeny od <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, a <xref:System.Activities.NativeActivity>. Ověřovací kód, který určuje všechny chyby ověření nebo upozornění je přidána do aktivity.  
+# <a name="imperative-code-based-validation"></a>Imperativní ověřování na základě kódu
+
+Imperativní ověřování na základě kódu poskytuje jednoduchý způsob pro aktivitu pro ověřování o sobě a je k dispozici pro aktivity, které jsou odvozeny z <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, a <xref:System.Activities.NativeActivity>. Ověřovací kód, který určuje všechny chyby nebo varování ověření je přidána do aktivity.  
   
-## <a name="using-code-based-validation"></a>Pomocí ověřování založené na kódu  
- Podporuje ověřování založené na kódu aktivity, které jsou odvozeny od <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, a <xref:System.Activities.NativeActivity>. Ověření kódu mohou být umístěny v <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsání a ověření chyby nebo výstrahy mohou být přidány do argument metadat. V následujícím příkladu převzat ze [základní ověření](../../../docs/framework/windows-workflow-foundation/samples/basic-validation.md) ukázkové, pokud `Cost` je větší než `Price`, Chyba ověření se přidá do metadat.  
+## <a name="using-code-based-validation"></a>Použití ověřování na základě kódu
+
+Podporuje ověřování na základě kódu aktivity, které jsou odvozeny z <xref:System.Activities.CodeActivity>, <xref:System.Activities.AsyncCodeActivity>, a <xref:System.Activities.NativeActivity>. Kód pro ověření je možné použít v <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsat a chyby nebo varování ověření lze přidat na argument metadat. V následujícím příkladu Pokud `Cost` je větší než `Price`, chyby ověřování se přidá do metadat.  
   
 > [!NOTE]
->  Všimněte si, že `Cost` a `Price` nejsou argumenty pro aktivity, ale jsou vlastnosti, které jsou nastaveny v době návrhu. To znamená proč jejich hodnoty lze ověřit v <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsat. Hodnota dat předávaných mezi argument nelze ověřit v době návrhu, protože není až do spuštění toku dat, ale argumenty aktivity může být ověřen zajistit, že je vázána pomocí `RequiredArgument` atribut a přetížení skupiny. Tento příklad kódu se zobrazí `RequiredArgument` atribut pro `Description` argument a pokud není vázaný a je generována chyba ověření. Vyžaduje argumenty jsou popsané v [vyžaduje argumenty a přetížení skupiny](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md).  
+> Všimněte si, že `Cost` a `Price` nejsou argumenty na aktivitu, ale jsou vlastnosti, které jsou nastaveny v době návrhu. To znamená proč jejich hodnoty můžete ověřit v <xref:System.Activities.CodeActivity.CacheMetadata%2A> přepsat. Hodnota dat předávaných argument nejde ověřit v době návrhu, protože není až do spuštění toku dat, ale může být ověřen argumenty aktivity k zajištění, že jsou vázány s použitím `RequiredArgument` atribut a skupiny přetížení. Tento příklad kódu se zobrazí `RequiredArgument` atribut pro `Description` argument a pokud příčka není svázána, je vygenerována chyba ověření. Povinné argumenty jsou popsané v [povinné argumenty a skupiny přetížení](../../../docs/framework/windows-workflow-foundation/required-arguments-and-overload-groups.md).  
   
 ```csharp  
 public sealed class CreateProduct : CodeActivity  
@@ -47,10 +49,10 @@ public sealed class CreateProduct : CodeActivity
 }  
 ```  
   
- Ve výchozím nastavení, je chyba ověření do metadat při <xref:System.Activities.CodeActivityMetadata.AddValidationError%2A> je volána. K přidání upozornění ověření použijte <xref:System.Activities.CodeActivityMetadata.AddValidationError%2A> přetížení, které přijímá <xref:System.Activities.Validation.ValidationError>a určit, že <xref:System.Activities.Validation.ValidationError> představuje upozornění nastavením <xref:System.Activities.Validation.ValidationError.IsWarning%2A> vlastnost.  
+ Ve výchozím nastavení, se přidá chyby ověření v metadatech při <xref:System.Activities.CodeActivityMetadata.AddValidationError%2A> je volána. Chcete-li přidat upozornění ověření, použijte <xref:System.Activities.CodeActivityMetadata.AddValidationError%2A> přetížení, které přijímá <xref:System.Activities.Validation.ValidationError>a určit, že <xref:System.Activities.Validation.ValidationError> představuje upozornění tak, že nastavíte <xref:System.Activities.Validation.ValidationError.IsWarning%2A> vlastnost.  
   
- Ověření nastane, když pracovní postup se mění v Návrháři pracovních postupů a všechny chyby ověření nebo upozornění se zobrazí v Návrháři pracovních postupů. Ověřování také dochází za běhu, při vyvolání pracovního postupu, a pokud dojde k chybám ověření, <xref:System.Activities.InvalidWorkflowException> logiku ověření výchozí vyvolá výjimku. Další informace o vyvolání ověření a přístup k žádné ověření varování nebo chyby najdete v tématu [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
+ Ověření vyvolá se při změně pracovního postupu v Návrháři pracovních postupů a všechny chyby nebo varování ověření se zobrazí v Návrháři pracovních postupů. Ověření se také dojde za běhu, když uživatel vyvolá pracovní postup, a pokud dojde k chybám ověření, <xref:System.Activities.InvalidWorkflowException> logiku ověřování výchozí vyvolá výjimku. Další informace o volání ověřování a přístup k žádným ověření upozornění ani chyby, najdete v části [vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
   
- Jakékoli výjimky, které jsou vyvolány z <xref:System.Activities.CodeActivity.CacheMetadata%2A> nejsou považovány za chyby ověření. Tyto výjimky bude vyhnuli z volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> a musí být zpracována volající.  
+ Všechny výjimky, které jsou vyvolány z <xref:System.Activities.CodeActivity.CacheMetadata%2A> nemají být považována za chyby ověření. Tyto výjimky budou návrat z volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A> a volající musí být zpracován.  
   
- Ověřování založené na kódu je užitečné pro ověřování aktivity, která obsahuje kód, ale nemá viditelnost do další aktivity v pracovním postupu. Deklarativní omezení ověření poskytuje možnost ověření vztahy mezi aktivity a další aktivity v pracovním postupu a věnuje se [deklarativní omezení](../../../docs/framework/windows-workflow-foundation/declarative-constraints.md) tématu.
+ Ověřování na základě kódu je užitečné pro ověřování aktivity, která obsahuje kód, ale nemá vhled do další aktivity v pracovním postupu. Deklarativní omezení ověření umožňuje ověřovat vztahy mezi aktivity a další aktivity v pracovním postupu a věnuje se [deklarativní omezení](../../../docs/framework/windows-workflow-foundation/declarative-constraints.md) tématu.
