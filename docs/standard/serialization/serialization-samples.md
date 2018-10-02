@@ -3,30 +3,30 @@ title: Ukázky serializace pro rozhraní .NET Framework
 ms.date: 03/30/2017
 ms.assetid: 6a56f66d-c80a-43e9-8e50-fb9b61120222
 ms.openlocfilehash: 5deae766b2b05fcb14c51666fa9fb988832a9a2d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47215818"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035289"
 ---
-# <a name="serialization-samples-for-the-net-framework"></a><span data-ttu-id="f52a9-102">Ukázky serializace pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="f52a9-102">Serialization Samples for the .NET Framework</span></span>
-<span data-ttu-id="f52a9-103">V této části ukazuje serializaci objektů v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="f52a9-103">This section demonstrates serializing objects in the .NET Framework.</span></span>  
+# <a name="serialization-samples-for-the-net-framework"></a><span data-ttu-id="3bb12-102">Ukázky serializace pro rozhraní .NET Framework</span><span class="sxs-lookup"><span data-stu-id="3bb12-102">Serialization Samples for the .NET Framework</span></span>
+<span data-ttu-id="3bb12-103">V této části ukazuje serializaci objektů v rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="3bb12-103">This section demonstrates serializing objects in the .NET Framework.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="f52a9-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f52a9-104">In This Section</span></span>  
- [<span data-ttu-id="f52a9-105">Ukázka technologie základní serializace</span><span class="sxs-lookup"><span data-stu-id="f52a9-105">Basic Serialization Technology Sample</span></span>](../../../docs/standard/serialization/basic-serialization-technology-sample.md)  
- <span data-ttu-id="f52a9-106">Ukazuje, jak k serializaci grafu objektů v paměti do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="f52a9-106">Demonstrates how to serialize an object graph in memory to a stream.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="3bb12-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="3bb12-104">In This Section</span></span>  
+ [<span data-ttu-id="3bb12-105">Ukázka technologie základní serializace</span><span class="sxs-lookup"><span data-stu-id="3bb12-105">Basic Serialization Technology Sample</span></span>](../../../docs/standard/serialization/basic-serialization-technology-sample.md)  
+ <span data-ttu-id="3bb12-106">Ukazuje, jak k serializaci grafu objektů v paměti do datového proudu.</span><span class="sxs-lookup"><span data-stu-id="3bb12-106">Demonstrates how to serialize an object graph in memory to a stream.</span></span>  
   
- [<span data-ttu-id="f52a9-107">Ukázka technologie serializace tolerantní vůči verzím</span><span class="sxs-lookup"><span data-stu-id="f52a9-107">Version Tolerant Serialization Technology Sample</span></span>](../../../docs/standard/serialization/version-tolerant-serialization-technology-sample.md)  
- <span data-ttu-id="f52a9-108">Ukazuje verze funkce tolerance serializace rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="f52a9-108">Demonstrates the version tolerance features of .NET Serialization.</span></span>  
+ [<span data-ttu-id="3bb12-107">Ukázka technologie serializace tolerantní vůči verzím</span><span class="sxs-lookup"><span data-stu-id="3bb12-107">Version Tolerant Serialization Technology Sample</span></span>](../../../docs/standard/serialization/version-tolerant-serialization-technology-sample.md)  
+ <span data-ttu-id="3bb12-108">Ukazuje verze funkce tolerance serializace rozhraní .NET.</span><span class="sxs-lookup"><span data-stu-id="3bb12-108">Demonstrates the version tolerance features of .NET Serialization.</span></span>  
   
- [<span data-ttu-id="f52a9-109">Ukázka technologie serializace obecných typů ve webových službách</span><span class="sxs-lookup"><span data-stu-id="f52a9-109">Web Services Generics Serialization Technology Sample</span></span>](../../../docs/standard/serialization/web-services-generics-serialization-technology-sample.md)  
- <span data-ttu-id="f52a9-110">Ukazuje, jak používat a řídit serializace obecných typů v webové služby ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="f52a9-110">Shows how to use and control the serialization of generics in ASP.NET Web Services.</span></span> 
+ [<span data-ttu-id="3bb12-109">Ukázka technologie serializace obecných typů ve webových službách</span><span class="sxs-lookup"><span data-stu-id="3bb12-109">Web Services Generics Serialization Technology Sample</span></span>](../../../docs/standard/serialization/web-services-generics-serialization-technology-sample.md)  
+ <span data-ttu-id="3bb12-110">Ukazuje, jak používat a řídit serializace obecných typů v webové služby ASP.NET.</span><span class="sxs-lookup"><span data-stu-id="3bb12-110">Shows how to use and control the serialization of generics in ASP.NET Web Services.</span></span> 
   
- [<span data-ttu-id="f52a9-111">Ukázka technologie SchemaImporterExtension</span><span class="sxs-lookup"><span data-stu-id="f52a9-111">SchemaImporterExtension Technology Sample</span></span>](../../../docs/standard/serialization/schemaimporterextension-technology-sample.md)  
- <span data-ttu-id="f52a9-112">Ukazuje vlastní <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension>.</span><span class="sxs-lookup"><span data-stu-id="f52a9-112">Demonstrates a custom <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension>.</span></span>  
+ [<span data-ttu-id="3bb12-111">Ukázka technologie SchemaImporterExtension</span><span class="sxs-lookup"><span data-stu-id="3bb12-111">SchemaImporterExtension Technology Sample</span></span>](../../../docs/standard/serialization/schemaimporterextension-technology-sample.md)  
+ <span data-ttu-id="3bb12-112">Ukazuje vlastní <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension>.</span><span class="sxs-lookup"><span data-stu-id="3bb12-112">Demonstrates a custom <xref:System.Xml.Serialization.Advanced.SchemaImporterExtension>.</span></span>  
   
- [<span data-ttu-id="f52a9-113">Vlastní pořadí serializace pomocí třídy XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="f52a9-113">Custom Serialization Order With XmlSerializer</span></span>](../../../docs/standard/serialization/custom-serialization-order-with-xmlserializer.md)  
- <span data-ttu-id="f52a9-114">Ukazuje, jak lze řídit pořadí elementů serializované a deserializovat pro serializaci kódu XML.</span><span class="sxs-lookup"><span data-stu-id="f52a9-114">Shows how to control the order of serialized and deserialized elements for XML serialization.</span></span>  
+ [<span data-ttu-id="3bb12-113">Vlastní pořadí serializace pomocí třídy XmlSerializer</span><span class="sxs-lookup"><span data-stu-id="3bb12-113">Custom Serialization Order With XmlSerializer</span></span>](../../../docs/standard/serialization/custom-serialization-order-with-xmlserializer.md)  
+ <span data-ttu-id="3bb12-114">Ukazuje, jak lze řídit pořadí elementů serializované a deserializovat pro serializaci kódu XML.</span><span class="sxs-lookup"><span data-stu-id="3bb12-114">Shows how to control the order of serialized and deserialized elements for XML serialization.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="f52a9-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="f52a9-115">Related Sections</span></span>  
- [<span data-ttu-id="f52a9-116">Serializace</span><span class="sxs-lookup"><span data-stu-id="f52a9-116">Serialization</span></span>](../../../docs/standard/serialization/index.md)
+## <a name="related-sections"></a><span data-ttu-id="3bb12-115">Související oddíly</span><span class="sxs-lookup"><span data-stu-id="3bb12-115">Related Sections</span></span>  
+ [<span data-ttu-id="3bb12-116">Serializace</span><span class="sxs-lookup"><span data-stu-id="3bb12-116">Serialization</span></span>](../../../docs/standard/serialization/index.md)

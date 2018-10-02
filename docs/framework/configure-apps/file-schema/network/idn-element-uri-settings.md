@@ -5,23 +5,23 @@ ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 1537c17cb3c16beeb41cfaa4103e0664e93facc7
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205941"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48027543"
 ---
-# <a name="ltidngt-element-uri-settings"></a><span data-ttu-id="cc160-102">&lt;IDN&gt; – Element (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="cc160-102">&lt;idn&gt; Element (Uri Settings)</span></span>
-<span data-ttu-id="cc160-103">Určuje, pokud analýza mezinárodních názvů domén (IDN) se použije na název domény.</span><span class="sxs-lookup"><span data-stu-id="cc160-103">Specifies if Internationalized Domain Name (IDN) parsing is applied to a domain name.</span></span>  
+# <a name="ltidngt-element-uri-settings"></a><span data-ttu-id="ea11e-102">&lt;IDN&gt; – Element (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="ea11e-102">&lt;idn&gt; Element (Uri Settings)</span></span>
+<span data-ttu-id="ea11e-103">Určuje, pokud analýza mezinárodních názvů domén (IDN) se použije na název domény.</span><span class="sxs-lookup"><span data-stu-id="ea11e-103">Specifies if Internationalized Domain Name (IDN) parsing is applied to a domain name.</span></span>  
   
-## <a name="schema-hierarchy"></a><span data-ttu-id="cc160-104">Hierarchie schémat</span><span class="sxs-lookup"><span data-stu-id="cc160-104">Schema Hierarchy</span></span>  
- [<span data-ttu-id="cc160-105">\<Konfigurace > – Element</span><span class="sxs-lookup"><span data-stu-id="cc160-105">\<configuration> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
+## <a name="schema-hierarchy"></a><span data-ttu-id="ea11e-104">Hierarchie schémat</span><span class="sxs-lookup"><span data-stu-id="ea11e-104">Schema Hierarchy</span></span>  
+ [<span data-ttu-id="ea11e-105">\<Konfigurace > – Element</span><span class="sxs-lookup"><span data-stu-id="ea11e-105">\<configuration> Element</span></span>](../../../../../docs/framework/configure-apps/file-schema/configuration-element.md)  
   
- [<span data-ttu-id="cc160-106">\<Identifikátor URI > – Element (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="cc160-106">\<Uri> Element (Uri Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
+ [<span data-ttu-id="ea11e-106">\<Identifikátor URI > – Element (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="ea11e-106">\<Uri> Element (Uri Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)  
   
- [<span data-ttu-id="cc160-107">\<IDN ></span><span class="sxs-lookup"><span data-stu-id="cc160-107">\<idn></span></span>](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)  
+ [<span data-ttu-id="ea11e-107">\<IDN ></span><span class="sxs-lookup"><span data-stu-id="ea11e-107">\<idn></span></span>](../../../../../docs/framework/configure-apps/file-schema/network/idn-element-uri-settings.md)  
   
-## <a name="syntax"></a><span data-ttu-id="cc160-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cc160-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ea11e-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ea11e-108">Syntax</span></span>  
   
 ```xml  
 <idn  
@@ -29,62 +29,62 @@ ms.locfileid: "47205941"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="cc160-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="cc160-109">Attributes and Elements</span></span>  
- <span data-ttu-id="cc160-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="cc160-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="ea11e-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="ea11e-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="ea11e-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="ea11e-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="cc160-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="cc160-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="ea11e-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="ea11e-111">Attributes</span></span>  
   
-|<span data-ttu-id="cc160-112">**Element**</span><span class="sxs-lookup"><span data-stu-id="cc160-112">**Element**</span></span>|<span data-ttu-id="cc160-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="cc160-113">**Description**</span></span>|  
+|<span data-ttu-id="ea11e-112">**Element**</span><span class="sxs-lookup"><span data-stu-id="ea11e-112">**Element**</span></span>|<span data-ttu-id="ea11e-113">**Popis**</span><span class="sxs-lookup"><span data-stu-id="ea11e-113">**Description**</span></span>|  
 |-----------------|---------------------|  
-|`enabled`|<span data-ttu-id="cc160-114">Určuje, že jestli parsování mezinárodních názvů domén (IDN) se použije pro název domény výchozí hodnota je none.</span><span class="sxs-lookup"><span data-stu-id="cc160-114">Specifies if Internationalized Domain Name (IDN) parsing is applied to a domain name The default value is none.</span></span>|  
+|`enabled`|<span data-ttu-id="ea11e-114">Určuje, že jestli parsování mezinárodních názvů domén (IDN) se použije pro název domény výchozí hodnota je none.</span><span class="sxs-lookup"><span data-stu-id="ea11e-114">Specifies if Internationalized Domain Name (IDN) parsing is applied to a domain name The default value is none.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="cc160-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="cc160-115">Child Elements</span></span>  
- <span data-ttu-id="cc160-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="cc160-116">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="ea11e-115">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="ea11e-115">Child Elements</span></span>  
+ <span data-ttu-id="ea11e-116">Žádné</span><span class="sxs-lookup"><span data-stu-id="ea11e-116">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="cc160-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="cc160-117">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="ea11e-117">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="ea11e-117">Parent Elements</span></span>  
   
-|<span data-ttu-id="cc160-118">**Element**</span><span class="sxs-lookup"><span data-stu-id="cc160-118">**Element**</span></span>|<span data-ttu-id="cc160-119">**Popis**</span><span class="sxs-lookup"><span data-stu-id="cc160-119">**Description**</span></span>|  
+|<span data-ttu-id="ea11e-118">**Element**</span><span class="sxs-lookup"><span data-stu-id="ea11e-118">**Element**</span></span>|<span data-ttu-id="ea11e-119">**Popis**</span><span class="sxs-lookup"><span data-stu-id="ea11e-119">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="cc160-120">Identifikátor URI</span><span class="sxs-lookup"><span data-stu-id="cc160-120">uri</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|<span data-ttu-id="cc160-121">Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).</span><span class="sxs-lookup"><span data-stu-id="cc160-121">Contains settings that specify how the .NET Framework handles web addresses expressed using uniform resource identifiers (URIs).</span></span>|  
+|[<span data-ttu-id="ea11e-120">Identifikátor URI</span><span class="sxs-lookup"><span data-stu-id="ea11e-120">uri</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/uri-element-uri-settings.md)|<span data-ttu-id="ea11e-121">Obsahuje nastavení, které určují způsob, jakým rozhraní .NET Framework zpracovává webové adresy vyjádřena pomocí uniform resource Identifier (identifikátory URI).</span><span class="sxs-lookup"><span data-stu-id="ea11e-121">Contains settings that specify how the .NET Framework handles web addresses expressed using uniform resource identifiers (URIs).</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="cc160-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cc160-122">Remarks</span></span>  
- <span data-ttu-id="cc160-123">Existující <xref:System.Uri> bylo rozšířeno třídy v rozhraní .NET Framework 3.5.</span><span class="sxs-lookup"><span data-stu-id="cc160-123">The existing <xref:System.Uri> class has been extended in .NET Framework 3.5.</span></span> <span data-ttu-id="cc160-124">3.0 SP1 a 2.0 SP1 s podporou International Resource identifikátory (IRI) a mezinárodní názvy domén (IDN).</span><span class="sxs-lookup"><span data-stu-id="cc160-124">3.0 SP1, and 2.0 SP1 with support for International Resource Identifiers (IRI) and Internationalized Domain Names (IDN).</span></span> <span data-ttu-id="cc160-125">Aktuální uživatelé neuvidí žádné změny v chování rozhraní .NET Framework 2.0, pokud výslovně povolit IRI a IDN podporovat.</span><span class="sxs-lookup"><span data-stu-id="cc160-125">Current users will not see any change from the .NET Framework 2.0 behavior unless they specifically enable IRI and IDN support.</span></span> <span data-ttu-id="cc160-126">Tím se zajistí kompatibilitu aplikací se staršími verzemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="cc160-126">This ensures application compatibility with prior versions of the .NET Framework.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="ea11e-122">Poznámky</span><span class="sxs-lookup"><span data-stu-id="ea11e-122">Remarks</span></span>  
+ <span data-ttu-id="ea11e-123">Existující <xref:System.Uri> bylo rozšířeno třídy v rozhraní .NET Framework 3.5.</span><span class="sxs-lookup"><span data-stu-id="ea11e-123">The existing <xref:System.Uri> class has been extended in .NET Framework 3.5.</span></span> <span data-ttu-id="ea11e-124">3.0 SP1 a 2.0 SP1 s podporou International Resource identifikátory (IRI) a mezinárodní názvy domén (IDN).</span><span class="sxs-lookup"><span data-stu-id="ea11e-124">3.0 SP1, and 2.0 SP1 with support for International Resource Identifiers (IRI) and Internationalized Domain Names (IDN).</span></span> <span data-ttu-id="ea11e-125">Aktuální uživatelé neuvidí žádné změny v chování rozhraní .NET Framework 2.0, pokud výslovně povolit IRI a IDN podporovat.</span><span class="sxs-lookup"><span data-stu-id="ea11e-125">Current users will not see any change from the .NET Framework 2.0 behavior unless they specifically enable IRI and IDN support.</span></span> <span data-ttu-id="ea11e-126">Tím se zajistí kompatibilitu aplikací se staršími verzemi rozhraní .NET Framework.</span><span class="sxs-lookup"><span data-stu-id="ea11e-126">This ensures application compatibility with prior versions of the .NET Framework.</span></span>  
   
- <span data-ttu-id="cc160-127">Povolení podpory pro IRI, jsou požadovány následující dvě změny:</span><span class="sxs-lookup"><span data-stu-id="cc160-127">To enable support for IRI, the following two changes are required:</span></span>  
+ <span data-ttu-id="ea11e-127">Povolení podpory pro IRI, jsou požadovány následující dvě změny:</span><span class="sxs-lookup"><span data-stu-id="ea11e-127">To enable support for IRI, the following two changes are required:</span></span>  
   
-1.  <span data-ttu-id="cc160-128">Přidejte následující řádek do souboru machine.config, v adresáři rozhraní .NET Framework 2.0</span><span class="sxs-lookup"><span data-stu-id="cc160-128">Add the following line to the machine.config file under the .NET Framework 2.0 directory</span></span>  
+1.  <span data-ttu-id="ea11e-128">Přidejte následující řádek do souboru machine.config, v adresáři rozhraní .NET Framework 2.0</span><span class="sxs-lookup"><span data-stu-id="ea11e-128">Add the following line to the machine.config file under the .NET Framework 2.0 directory</span></span>  
   
     ```xml  
     <section name="uri" type="System.Configuration.UriSection, System, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />  
     ```  
   
-2.  <span data-ttu-id="cc160-129">Zadejte, jestli chcete parsování mezinárodních názvů domén (IDN) k názvu domény a určuje, zda by měl použít IRI pravidel pro analýzu.</span><span class="sxs-lookup"><span data-stu-id="cc160-129">Specify whether you want Internationalized Domain Name (IDN) parsing applied to the domain name and whether IRI parsing rules should be applied.</span></span> <span data-ttu-id="cc160-130">To můžete udělat v souboru machine.config nebo v souboru app.config.</span><span class="sxs-lookup"><span data-stu-id="cc160-130">This can be done in the machine.config or in the app.config file.</span></span>  
+2.  <span data-ttu-id="ea11e-129">Zadejte, jestli chcete parsování mezinárodních názvů domén (IDN) k názvu domény a určuje, zda by měl použít IRI pravidel pro analýzu.</span><span class="sxs-lookup"><span data-stu-id="ea11e-129">Specify whether you want Internationalized Domain Name (IDN) parsing applied to the domain name and whether IRI parsing rules should be applied.</span></span> <span data-ttu-id="ea11e-130">To můžete udělat v souboru machine.config nebo v souboru app.config.</span><span class="sxs-lookup"><span data-stu-id="ea11e-130">This can be done in the machine.config or in the app.config file.</span></span>  
   
- <span data-ttu-id="cc160-131">Existují tři možné hodnoty pro IDN v závislosti na servery DNS, které se používají:</span><span class="sxs-lookup"><span data-stu-id="cc160-131">There are three possible values for IDN depending on the DNS servers that are used:</span></span>  
+ <span data-ttu-id="ea11e-131">Existují tři možné hodnoty pro IDN v závislosti na servery DNS, které se používají:</span><span class="sxs-lookup"><span data-stu-id="ea11e-131">There are three possible values for IDN depending on the DNS servers that are used:</span></span>  
   
--   <span data-ttu-id="cc160-132">IDN, povoleno = All</span><span class="sxs-lookup"><span data-stu-id="cc160-132">idn enabled = All</span></span>  
+-   <span data-ttu-id="ea11e-132">IDN, povoleno = All</span><span class="sxs-lookup"><span data-stu-id="ea11e-132">idn enabled = All</span></span>  
   
-     <span data-ttu-id="cc160-133">Tato hodnota se převede názvy domén, Unicode na jejich ekvivalenty kódování Punycode (názvy IDN).</span><span class="sxs-lookup"><span data-stu-id="cc160-133">This value will convert any Unicode domain names to their Punycode equivalents (IDN names).</span></span>  
+     <span data-ttu-id="ea11e-133">Tato hodnota se převede názvy domén, Unicode na jejich ekvivalenty kódování Punycode (názvy IDN).</span><span class="sxs-lookup"><span data-stu-id="ea11e-133">This value will convert any Unicode domain names to their Punycode equivalents (IDN names).</span></span>  
   
--   <span data-ttu-id="cc160-134">IDN, povoleno = AllExceptIntranet</span><span class="sxs-lookup"><span data-stu-id="cc160-134">idn enabled = AllExceptIntranet</span></span>  
+-   <span data-ttu-id="ea11e-134">IDN, povoleno = AllExceptIntranet</span><span class="sxs-lookup"><span data-stu-id="ea11e-134">idn enabled = AllExceptIntranet</span></span>  
   
-     <span data-ttu-id="cc160-135">Tato hodnota se převede všechny názvy domén Unicode nejsou v místním intranetu používat kódování Punycode ekvivalenty (názvy IDN).</span><span class="sxs-lookup"><span data-stu-id="cc160-135">This value will convert all Unicode domain names not on the local Intranet to use the Punycode equivalents (IDN names).</span></span> <span data-ttu-id="cc160-136">V tomto případě zpracování mezinárodních názvů na místní Intranet, které se používají pro intranetové servery DNS by měly podporovat překlad kódování Unicode.</span><span class="sxs-lookup"><span data-stu-id="cc160-136">In this case to handle international names on the local Intranet, the DNS servers that are used for the Intranet should support Unicode name resolution.</span></span>  
+     <span data-ttu-id="ea11e-135">Tato hodnota se převede všechny názvy domén Unicode nejsou v místním intranetu používat kódování Punycode ekvivalenty (názvy IDN).</span><span class="sxs-lookup"><span data-stu-id="ea11e-135">This value will convert all Unicode domain names not on the local Intranet to use the Punycode equivalents (IDN names).</span></span> <span data-ttu-id="ea11e-136">V tomto případě zpracování mezinárodních názvů na místní Intranet, které se používají pro intranetové servery DNS by měly podporovat překlad kódování Unicode.</span><span class="sxs-lookup"><span data-stu-id="ea11e-136">In this case to handle international names on the local Intranet, the DNS servers that are used for the Intranet should support Unicode name resolution.</span></span>  
   
--   <span data-ttu-id="cc160-137">IDN, povoleno = None</span><span class="sxs-lookup"><span data-stu-id="cc160-137">idn enabled = None</span></span>  
+-   <span data-ttu-id="ea11e-137">IDN, povoleno = None</span><span class="sxs-lookup"><span data-stu-id="ea11e-137">idn enabled = None</span></span>  
   
-     <span data-ttu-id="cc160-138">Tato hodnota neprovede konverzi názvy domén, Unicode používat kódování Punycode.</span><span class="sxs-lookup"><span data-stu-id="cc160-138">This value will not convert any Unicode domain names to use Punycode.</span></span> <span data-ttu-id="cc160-139">Toto je výchozí hodnota je shodný se chování rozhraní .NET Framework 2.0.</span><span class="sxs-lookup"><span data-stu-id="cc160-139">This is the default value which is consistent with the .NET Framework 2.0 behaviour.</span></span>  
+     <span data-ttu-id="ea11e-138">Tato hodnota neprovede konverzi názvy domén, Unicode používat kódování Punycode.</span><span class="sxs-lookup"><span data-stu-id="ea11e-138">This value will not convert any Unicode domain names to use Punycode.</span></span> <span data-ttu-id="ea11e-139">Toto je výchozí hodnota je shodný se chování rozhraní .NET Framework 2.0.</span><span class="sxs-lookup"><span data-stu-id="ea11e-139">This is the default value which is consistent with the .NET Framework 2.0 behaviour.</span></span>  
   
- <span data-ttu-id="cc160-140">Povolení IDN převede všechny popisky kódování Unicode v názvu domény na jejich ekvivalenty kódování Punycode.</span><span class="sxs-lookup"><span data-stu-id="cc160-140">Enabling IDN will convert all Unicode labels in a domain name to their Punycode equivalents.</span></span> <span data-ttu-id="cc160-141">Kódování Punycode názvy obsahovat pouze znaky ASCII a vždy začínají předponou xn –.</span><span class="sxs-lookup"><span data-stu-id="cc160-141">Punycode names contain only ASCII characters and always start with the xn-- prefix.</span></span> <span data-ttu-id="cc160-142">Důvodem je k podpoře existujících serverů DNS na Internetu, protože většina servery DNS podporují jenom znaky ASCII (viz RFC 3940).</span><span class="sxs-lookup"><span data-stu-id="cc160-142">The reason for this is to support existing DNS servers on the Internet, since most DNS servers only support ASCII characters (see RFC 3940).</span></span>  
+ <span data-ttu-id="ea11e-140">Povolení IDN převede všechny popisky kódování Unicode v názvu domény na jejich ekvivalenty kódování Punycode.</span><span class="sxs-lookup"><span data-stu-id="ea11e-140">Enabling IDN will convert all Unicode labels in a domain name to their Punycode equivalents.</span></span> <span data-ttu-id="ea11e-141">Kódování Punycode názvy obsahovat pouze znaky ASCII a vždy začínají předponou xn –.</span><span class="sxs-lookup"><span data-stu-id="ea11e-141">Punycode names contain only ASCII characters and always start with the xn-- prefix.</span></span> <span data-ttu-id="ea11e-142">Důvodem je k podpoře existujících serverů DNS na Internetu, protože většina servery DNS podporují jenom znaky ASCII (viz RFC 3940).</span><span class="sxs-lookup"><span data-stu-id="ea11e-142">The reason for this is to support existing DNS servers on the Internet, since most DNS servers only support ASCII characters (see RFC 3940).</span></span>  
   
-### <a name="configuration-files"></a><span data-ttu-id="cc160-143">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="cc160-143">Configuration Files</span></span>  
- <span data-ttu-id="cc160-144">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="cc160-144">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+### <a name="configuration-files"></a><span data-ttu-id="ea11e-143">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="ea11e-143">Configuration Files</span></span>  
+ <span data-ttu-id="ea11e-144">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="ea11e-144">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="cc160-145">Příklad</span><span class="sxs-lookup"><span data-stu-id="cc160-145">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="ea11e-145">Příklad</span><span class="sxs-lookup"><span data-stu-id="ea11e-145">Example</span></span>  
   
-### <a name="description"></a><span data-ttu-id="cc160-146">Popis</span><span class="sxs-lookup"><span data-stu-id="cc160-146">Description</span></span>  
- <span data-ttu-id="cc160-147">Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu analýza IRI a názvy IDN.</span><span class="sxs-lookup"><span data-stu-id="cc160-147">The following example shows a configuration used by the <xref:System.Uri> class to support IRI parsing and IDN names.</span></span>  
+### <a name="description"></a><span data-ttu-id="ea11e-146">Popis</span><span class="sxs-lookup"><span data-stu-id="ea11e-146">Description</span></span>  
+ <span data-ttu-id="ea11e-147">Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu analýza IRI a názvy IDN.</span><span class="sxs-lookup"><span data-stu-id="ea11e-147">The following example shows a configuration used by the <xref:System.Uri> class to support IRI parsing and IDN names.</span></span>  
   
-### <a name="code"></a><span data-ttu-id="cc160-148">Kód</span><span class="sxs-lookup"><span data-stu-id="cc160-148">Code</span></span>  
+### <a name="code"></a><span data-ttu-id="ea11e-148">Kód</span><span class="sxs-lookup"><span data-stu-id="ea11e-148">Code</span></span>  
   
 ```xml  
 <configuration>  
@@ -95,7 +95,7 @@ ms.locfileid: "47205941"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="cc160-149">Viz také</span><span class="sxs-lookup"><span data-stu-id="cc160-149">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="ea11e-149">Viz také</span><span class="sxs-lookup"><span data-stu-id="ea11e-149">See Also</span></span>  
  <xref:System.Configuration.IdnElement?displayProperty=nameWithType>  
  <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
- [<span data-ttu-id="cc160-150">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="cc160-150">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+ [<span data-ttu-id="ea11e-150">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="ea11e-150">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

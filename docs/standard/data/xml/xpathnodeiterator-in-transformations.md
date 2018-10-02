@@ -9,16 +9,16 @@ ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6f71d409729707f4af93fd7f8d5b82a99404579b
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
-ms.translationtype: HT
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47862657"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48027779"
 ---
-# <a name="xpathnodeiterator-in-transformations"></a><span data-ttu-id="6c29c-102">XPathNodeIterator v transformacích</span><span class="sxs-lookup"><span data-stu-id="6c29c-102">XPathNodeIterator in Transformations</span></span>
-<span data-ttu-id="6c29c-103"><xref:System.Xml.XPath.XPathNodeIterator> Poskytuje metody k iteraci v rámci sady uzlů, které jsou vytvořené jako výsledek dotazu jazyk XML Path (XPath) nebo fragment stromu výsledek převeden na uzlu nastavte pomocí metody sada uzlů.</span><span class="sxs-lookup"><span data-stu-id="6c29c-103">The <xref:System.Xml.XPath.XPathNodeIterator> provides methods to iterate over a set of nodes created as the result of an XML Path Language (XPath) query or a result tree fragment converted to a node set by use of the node-set method.</span></span> <span data-ttu-id="6c29c-104"><xref:System.Xml.XPath.XPathNodeIterator> Umožňuje iterovat přes uzly v rámci této sady uzlu.</span><span class="sxs-lookup"><span data-stu-id="6c29c-104">The <xref:System.Xml.XPath.XPathNodeIterator> enables you to iterate over the nodes within that node set.</span></span> <span data-ttu-id="6c29c-105">Jakmile se načte sadu uzlu, <xref:System.Xml.XPath.XPathNodeIterator> třída poskytuje jen pro čtení, dopředné kurzoru vybrané sady uzlů.</span><span class="sxs-lookup"><span data-stu-id="6c29c-105">Once a node set is retrieved, the <xref:System.Xml.XPath.XPathNodeIterator> class provides a read-only, forward-only cursor to the selected set of nodes.</span></span> <span data-ttu-id="6c29c-106">Sada uzlů je vytvořen v pořadí dokumentů, takže volání této metody přesune na další uzel v pořadí dokumentů.</span><span class="sxs-lookup"><span data-stu-id="6c29c-106">The node set is created in document order, so calling this method moves to the next node in document order.</span></span> <span data-ttu-id="6c29c-107"><xref:System.Xml.XPath.XPathNodeIterator> uzel stromu všech uzlů v sadě nesestaví.</span><span class="sxs-lookup"><span data-stu-id="6c29c-107"><xref:System.Xml.XPath.XPathNodeIterator> does not build a node tree of all the nodes in the set.</span></span> <span data-ttu-id="6c29c-108">Místo toho poskytuje okno s jedním uzlem data, odhalují základní uzel, na který odkazuje na při pohybu ve stromové struktuře.</span><span class="sxs-lookup"><span data-stu-id="6c29c-108">Instead, it provides a single node window into the data, exposing the underlying node it points to as you move around in the tree.</span></span> <span data-ttu-id="6c29c-109">Metody a vlastnosti, které jsou k dispozici <xref:System.Xml.XPath.XPathNodeIterator> třídy umožňují získat informace z aktuálního uzlu.</span><span class="sxs-lookup"><span data-stu-id="6c29c-109">The methods and properties available from the <xref:System.Xml.XPath.XPathNodeIterator> class enable you to get information from the current node.</span></span> <span data-ttu-id="6c29c-110">Seznam dostupných metod a vlastností najdete v tématu <xref:System.Windows.Forms.ToolBar>.</span><span class="sxs-lookup"><span data-stu-id="6c29c-110">For a list of the available methods and properties, see <xref:System.Windows.Forms.ToolBar>.</span></span>  
+# <a name="xpathnodeiterator-in-transformations"></a><span data-ttu-id="8dcdc-102">XPathNodeIterator v transformacích</span><span class="sxs-lookup"><span data-stu-id="8dcdc-102">XPathNodeIterator in Transformations</span></span>
+<span data-ttu-id="8dcdc-103"><xref:System.Xml.XPath.XPathNodeIterator> Poskytuje metody k iteraci v rámci sady uzlů, které jsou vytvořené jako výsledek dotazu jazyk XML Path (XPath) nebo fragment stromu výsledek převeden na uzlu nastavte pomocí metody sada uzlů.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-103">The <xref:System.Xml.XPath.XPathNodeIterator> provides methods to iterate over a set of nodes created as the result of an XML Path Language (XPath) query or a result tree fragment converted to a node set by use of the node-set method.</span></span> <span data-ttu-id="8dcdc-104"><xref:System.Xml.XPath.XPathNodeIterator> Umožňuje iterovat přes uzly v rámci této sady uzlu.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-104">The <xref:System.Xml.XPath.XPathNodeIterator> enables you to iterate over the nodes within that node set.</span></span> <span data-ttu-id="8dcdc-105">Jakmile se načte sadu uzlu, <xref:System.Xml.XPath.XPathNodeIterator> třída poskytuje jen pro čtení, dopředné kurzoru vybrané sady uzlů.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-105">Once a node set is retrieved, the <xref:System.Xml.XPath.XPathNodeIterator> class provides a read-only, forward-only cursor to the selected set of nodes.</span></span> <span data-ttu-id="8dcdc-106">Sada uzlů je vytvořen v pořadí dokumentů, takže volání této metody přesune na další uzel v pořadí dokumentů.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-106">The node set is created in document order, so calling this method moves to the next node in document order.</span></span> <span data-ttu-id="8dcdc-107"><xref:System.Xml.XPath.XPathNodeIterator> uzel stromu všech uzlů v sadě nesestaví.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-107"><xref:System.Xml.XPath.XPathNodeIterator> does not build a node tree of all the nodes in the set.</span></span> <span data-ttu-id="8dcdc-108">Místo toho poskytuje okno s jedním uzlem data, odhalují základní uzel, na který odkazuje na při pohybu ve stromové struktuře.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-108">Instead, it provides a single node window into the data, exposing the underlying node it points to as you move around in the tree.</span></span> <span data-ttu-id="8dcdc-109">Metody a vlastnosti, které jsou k dispozici <xref:System.Xml.XPath.XPathNodeIterator> třídy umožňují získat informace z aktuálního uzlu.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-109">The methods and properties available from the <xref:System.Xml.XPath.XPathNodeIterator> class enable you to get information from the current node.</span></span> <span data-ttu-id="8dcdc-110">Seznam dostupných metod a vlastností najdete v tématu <xref:System.Windows.Forms.ToolBar>.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-110">For a list of the available methods and properties, see <xref:System.Windows.Forms.ToolBar>.</span></span>  
   
- <span data-ttu-id="6c29c-111">Protože <xref:System.Xml.XPath.XPathNodeIterator> přejde v rámci sady uzlů vytvořené z dotazu XPath a přesune pouze vpřed, je způsob, jak přesunout pomocí <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="6c29c-111">Since an <xref:System.Xml.XPath.XPathNodeIterator> moves over a set of nodes created from an XPath query and moves forward only, the way to move is by using the <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> method.</span></span> <span data-ttu-id="6c29c-112">Návratový typ této metody je `Boolean`, vracející `true` Pokud je přesune k dalšímu vybraného uzlu, a `false` Pokud neexistují žádné další vybrané uzly.</span><span class="sxs-lookup"><span data-stu-id="6c29c-112">The return type of this method is `Boolean`, returning `true` if it moves to the next selected node, and `false` if there are no more selected nodes.</span></span> <span data-ttu-id="6c29c-113">Vrátí-li `true`, v následujícím seznamu jsou uvedeny dostupné vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="6c29c-113">If it returns `true`, the following list shows the properties available:</span></span>  
+ <span data-ttu-id="8dcdc-111">Protože <xref:System.Xml.XPath.XPathNodeIterator> přejde v rámci sady uzlů vytvořené z dotazu XPath a přesune pouze vpřed, je způsob, jak přesunout pomocí <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> metody.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-111">Since an <xref:System.Xml.XPath.XPathNodeIterator> moves over a set of nodes created from an XPath query and moves forward only, the way to move is by using the <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> method.</span></span> <span data-ttu-id="8dcdc-112">Návratový typ této metody je `Boolean`, vracející `true` Pokud je přesune k dalšímu vybraného uzlu, a `false` Pokud neexistují žádné další vybrané uzly.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-112">The return type of this method is `Boolean`, returning `true` if it moves to the next selected node, and `false` if there are no more selected nodes.</span></span> <span data-ttu-id="8dcdc-113">Vrátí-li `true`, v následujícím seznamu jsou uvedeny dostupné vlastnosti:</span><span class="sxs-lookup"><span data-stu-id="8dcdc-113">If it returns `true`, the following list shows the properties available:</span></span>  
   
 -   <xref:System.Xml.XPath.XPathNodeIterator.Current%2A>  
   
@@ -26,9 +26,9 @@ ms.locfileid: "47862657"
   
 -   <xref:System.Xml.XPath.XPathNodeIterator.Count%2A>  
   
- <span data-ttu-id="6c29c-114">Při hledání v uzlu nastavení při prvním volání <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> třeba umístit <xref:System.Xml.XPath.XPathNodeIterator> na prvním uzlu vybrané sady.</span><span class="sxs-lookup"><span data-stu-id="6c29c-114">When you are looking at a node set for the first time, a call to <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> must be made to position the <xref:System.Xml.XPath.XPathNodeIterator> on the first node of the selected set.</span></span> <span data-ttu-id="6c29c-115">To umožňuje nějakou smyčku, která má být proveden zápis.</span><span class="sxs-lookup"><span data-stu-id="6c29c-115">This allows a while loop to be written.</span></span>  
+ <span data-ttu-id="8dcdc-114">Při hledání v uzlu nastavení při prvním volání <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> třeba umístit <xref:System.Xml.XPath.XPathNodeIterator> na prvním uzlu vybrané sady.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-114">When you are looking at a node set for the first time, a call to <xref:System.Xml.XPath.XPathNodeIterator.MoveNext%2A> must be made to position the <xref:System.Xml.XPath.XPathNodeIterator> on the first node of the selected set.</span></span> <span data-ttu-id="8dcdc-115">To umožňuje nějakou smyčku, která má být proveden zápis.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-115">This allows a while loop to be written.</span></span>  
   
- <span data-ttu-id="6c29c-116">Následující příklad kódu ukazuje, jak předat <xref:System.Xml.XPath.XPathNodeIterator> do <xref:System.Xml.Xsl.XslTransform> jako parametr v <xref:System.Xml.Xsl.XsltArgumentList>.</span><span class="sxs-lookup"><span data-stu-id="6c29c-116">The following code example shows how to pass an <xref:System.Xml.XPath.XPathNodeIterator> to an <xref:System.Xml.Xsl.XslTransform> as a parameter in the <xref:System.Xml.Xsl.XsltArgumentList>.</span></span> <span data-ttu-id="6c29c-117">Vstup do kódu je **books.xml**, a šablona stylů je **text.xsl**.</span><span class="sxs-lookup"><span data-stu-id="6c29c-117">The input to the code is **books.xml**, and the style sheet is **text.xsl**.</span></span> <span data-ttu-id="6c29c-118">Soubor **test.xml** je <xref:System.Xml.XPath.XPathDocument>.</span><span class="sxs-lookup"><span data-stu-id="6c29c-118">The file **test.xml** is the <xref:System.Xml.XPath.XPathDocument>.</span></span>  
+ <span data-ttu-id="8dcdc-116">Následující příklad kódu ukazuje, jak předat <xref:System.Xml.XPath.XPathNodeIterator> do <xref:System.Xml.Xsl.XslTransform> jako parametr v <xref:System.Xml.Xsl.XsltArgumentList>.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-116">The following code example shows how to pass an <xref:System.Xml.XPath.XPathNodeIterator> to an <xref:System.Xml.Xsl.XslTransform> as a parameter in the <xref:System.Xml.Xsl.XsltArgumentList>.</span></span> <span data-ttu-id="8dcdc-117">Vstup do kódu je **books.xml**, a šablona stylů je **text.xsl**.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-117">The input to the code is **books.xml**, and the style sheet is **text.xsl**.</span></span> <span data-ttu-id="8dcdc-118">Soubor **test.xml** je <xref:System.Xml.XPath.XPathDocument>.</span><span class="sxs-lookup"><span data-stu-id="8dcdc-118">The file **test.xml** is the <xref:System.Xml.XPath.XPathDocument>.</span></span>  
   
 ```vb  
 Imports System  
@@ -89,7 +89,7 @@ public class sample
 }  
 ```  
   
-## <a name="booksxml"></a><span data-ttu-id="6c29c-119">Books.XML</span><span class="sxs-lookup"><span data-stu-id="6c29c-119">books.xml</span></span>  
+## <a name="booksxml"></a><span data-ttu-id="8dcdc-119">Books.XML</span><span class="sxs-lookup"><span data-stu-id="8dcdc-119">books.xml</span></span>  
   
 ```xml  
 <?xml version='1.0'?>  
@@ -122,7 +122,7 @@ public class sample
 </bookstore>  
 ```  
   
-## <a name="testxsl"></a><span data-ttu-id="6c29c-120">test.xsl</span><span class="sxs-lookup"><span data-stu-id="6c29c-120">test.xsl</span></span>  
+## <a name="testxsl"></a><span data-ttu-id="8dcdc-120">test.xsl</span><span class="sxs-lookup"><span data-stu-id="8dcdc-120">test.xsl</span></span>  
   
 ```xml  
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"  
@@ -142,13 +142,13 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 </xsl:stylesheet>  
 ```  
   
-## <a name="testxml"></a><span data-ttu-id="6c29c-121">test.XML</span><span class="sxs-lookup"><span data-stu-id="6c29c-121">test.xml</span></span>  
+## <a name="testxml"></a><span data-ttu-id="8dcdc-121">test.XML</span><span class="sxs-lookup"><span data-stu-id="8dcdc-121">test.xml</span></span>  
   
 ```xml  
 <Title attr="Test">this is a test</Title>  
 ```  
   
-## <a name="output-outxml"></a><span data-ttu-id="6c29c-122">Výstup (out.xml)</span><span class="sxs-lookup"><span data-stu-id="6c29c-122">Output (out.xml)</span></span>  
+## <a name="output-outxml"></a><span data-ttu-id="8dcdc-122">Výstup (out.xml)</span><span class="sxs-lookup"><span data-stu-id="8dcdc-122">Output (out.xml)</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -158,6 +158,6 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
 </out>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="6c29c-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="6c29c-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8dcdc-123">Viz také:</span><span class="sxs-lookup"><span data-stu-id="8dcdc-123">See also</span></span>
 
-- [<span data-ttu-id="6c29c-124">Třída XslTransform implementuje procesor XSLT</span><span class="sxs-lookup"><span data-stu-id="6c29c-124">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [<span data-ttu-id="8dcdc-124">Třída XslTransform implementuje procesor XSLT</span><span class="sxs-lookup"><span data-stu-id="8dcdc-124">XslTransform Class Implements the XSLT Processor</span></span>](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
