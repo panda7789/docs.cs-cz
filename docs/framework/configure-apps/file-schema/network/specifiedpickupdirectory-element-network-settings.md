@@ -11,11 +11,11 @@ ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: b62dc1a9118f7d4f1f693ade36626deaecd23999
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
-ms.translationtype: MT
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47072758"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47459734"
 ---
 # <a name="ltspecifiedpickupdirectorygt-element-network-settings"></a>&lt;specifiedPickupDirectory&gt; – Element (nastavení sítě)
 Konfiguruje místní adresář pro server Simple Mail Transport Protocol (SMTP).  

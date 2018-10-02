@@ -21,11 +21,11 @@ ms.assetid: e993b7c3-087f-45d8-9c02-9dded936d804
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 65bd172d184b1346000c2bc84cb888dfab28bb61
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47079108"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47459773"
 ---
 # <a name="network-tracing-in-the-net-framework"></a>Trasování sítě v rozhraní .NET Framework
 Trasování sítě v rozhraní .NET Framework poskytuje přístup k informacím o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací. Tato funkce je užitečná při ladění aplikací během vývoje a také pro analýzu nasazených aplikací. Výstup poskytovaný trasováním sítě je přizpůsobitelný tak, aby podporoval různé scénáře využití v době vývoje a v produkčním prostředí.  

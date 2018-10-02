@@ -8,11 +8,11 @@ helpviewer_keywords:
 - keywords [C#], preprocessor directives
 ms.assetid: f2406090-b244-4f7e-ab72-3698fefed724
 ms.openlocfilehash: 1c0a97cabce347be0bc9367f3d090a1fc699db19
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47082159"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47459643"
 ---
 # <a name="c-preprocessor-directives"></a>C# direktivy preprocesoru
 Tato část obsahuje informace o následujících C# direktivy preprocesoru:

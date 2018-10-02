@@ -2,12 +2,12 @@
 title: Výpočetní výrazy (F#)
 description: 'Zjistěte, jak vytvořit pohodlné syntaxe zápisu výpočtů v jazyce F #, která může být sekvencování a spojovat pomocí konstruktorů toků řízení a vazby.'
 ms.date: 07/27/2018
-ms.openlocfilehash: ce81af7966a436b3973de277fb2a78ec06f4c471
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 148d1a661fb7630782c6dc48507a66e7bdc1d56b
+ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45685735"
+ms.lasthandoff: 10/01/2018
+ms.locfileid: "47459799"
 ---
 # <a name="computation-expressions"></a>Výpočetní výrazy
 
@@ -88,7 +88,7 @@ Pokud je vytvořit vazbu volání výrazu výpočtu s `let`, nezískáte výsled
 ```fsharp
 let doThingsAsync data url =
     async {
-        do! sumbitData data url
+        do! submitData data url
         ...
     }
 ```
