@@ -3,11 +3,11 @@ title: 'Návod: Přístup k webu pomocí modifikátoru async a operátoru await 
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
 ms.openlocfilehash: 24ce1e405019ef83ff6bcbb61552d6fc5d911935
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47455746"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48036094"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>Návod: Přístup k webu pomocí modifikátoru async a operátoru await (C#)
 

@@ -10,11 +10,11 @@ helpviewer_keywords:
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
 ms.openlocfilehash: 79447ede354de104607117f657182023a2e57127
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47084979"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035226"
 ---
 # <a name="walkthrough-create-a-windows-service-app"></a>Návod: Vytvoření aplikace služby Windows
 

@@ -11,11 +11,11 @@ ms.assetid: 3cb6092a-58c9-4ca0-84a5-0e54d5d00a0d
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 8f9b43a2c2d58df77d739baf897ddd4562523d13
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47202917"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035393"
 ---
 # <a name="enable-navigation-in-a-ui-automation-fragment-provider"></a>Povolení navigace u zprostředkovatele fragmentu automatizace uživatelského rozhraní na straně klienta
 > [!NOTE]

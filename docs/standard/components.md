@@ -6,11 +6,11 @@ ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
 ms.openlocfilehash: e131ab48b666f2d22d8bd02e41ed76e415a2597d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47456022"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48034938"
 ---
 # <a name="net-architectural-components"></a>Architekturálních komponentách .NET
 

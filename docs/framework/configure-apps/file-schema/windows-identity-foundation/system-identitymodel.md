@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 210ce7e9-d07b-400c-800f-5f525dcf95e8
 author: BrucePerlerMS
 ms.openlocfilehash: 1b3121a6e7e036ec268cf83ffbf545c0e669a9b9
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47206135"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032276"
 ---
 # <a name="ltsystemidentitymodelgt"></a>&lt;system.identityModel&gt;
 Poskytuje konfiguraci pro povolení technologie Windows Identity Foundation (WIF) možnosti v aplikacích.  

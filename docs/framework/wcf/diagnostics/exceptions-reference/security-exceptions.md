@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 76d5e5cd-e4f4-404f-9a5a-ec3522494ad8
 author: BrucePerlerMS
 ms.openlocfilehash: 9e5795da5765e3dadfb169b1819b7154bd6ce0a9
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47233240"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48036224"
 ---
 # <a name="security-exceptions"></a>Výjimky zabezpečení
 Toto téma obsahuje seznam všech bezpečnostním výjimkám.  

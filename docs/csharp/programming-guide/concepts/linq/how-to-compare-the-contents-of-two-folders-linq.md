@@ -3,11 +3,11 @@ title: 'Postupy: porovnání obsahu dvou složek (LINQ) (C#)'
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
 ms.openlocfilehash: 1517d1f9e451306e40835e6032e2aff2fe3e60ab
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47455707"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035146"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>Postupy: porovnání obsahu dvou složek (LINQ) (C#)
 Tento příklad ukazuje tři způsoby, jak porovnat dvě výpisu souborů zobrazuje:  

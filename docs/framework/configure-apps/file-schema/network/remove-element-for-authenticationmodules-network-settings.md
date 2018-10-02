@@ -13,11 +13,11 @@ ms.assetid: abf79949-b05c-465a-b51c-bbeda9a74173
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 332f8eb4fb1a5a02df76c5745522037b029a2407
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47072787"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028534"
 ---
 # <a name="ltremovegt-element-for-authenticationmodules-network-settings"></a>&lt;Odebrat&gt; – Element pro authenticationModules (nastavení sítě)
 Odebere ověřovací modul z aplikace.  

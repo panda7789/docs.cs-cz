@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 926bea29-90c7-4a26-9cf0-fb4aa44f6f70
 author: BrucePerlerMS
 ms.openlocfilehash: 6c1253e6f402da6b818a4438142e122f8b31809c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193158"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032449"
 ---
 # <a name="ltwindowsstreamsecuritygt"></a>&lt;zabezpečení windowsstreamsecurity iniciuje&gt;
 Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.  

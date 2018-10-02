@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: 6e01dd9f-b5dd-4474-b24c-06e124de4ff7
 author: BrucePerlerMS
 ms.openlocfilehash: 32fd1ebede841488d1bfabd2f92bd3fb1ffb55e8
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193184"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035653"
 ---
 # <a name="how-to-set-the-security-mode"></a>Postupy: Nastavení režimu zabezpečení
 Zabezpečení Windows Communication Foundation (WCF) má tři běžné režimy zabezpečení, které se nacházejí na nejvíce předdefinovaných vazeb: přenos zpráv a "přenos s přihlašovacími údaji zprávy." Další dva režimy jsou specifické pro dvě vazby: v režimu "pouze přenosu credential" nalezen <xref:System.ServiceModel.BasicHttpBinding>a "I" režim na <xref:System.ServiceModel.NetMsmqBinding>. Ale v tomto tématu se soustřeďuje na tři běžných režimů zabezpečení: <xref:System.ServiceModel.SecurityMode.Transport>, <xref:System.ServiceModel.SecurityMode.Message>, a <xref:System.ServiceModel.SecurityMode.TransportWithMessageCredential>.  

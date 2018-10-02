@@ -13,11 +13,11 @@ helpviewer_keywords:
 - types [Visual Basic], user-defined
 ms.assetid: 9bd1deea-2a89-4cdc-812c-6dcbb947c391
 ms.openlocfilehash: 9377d889f56049720ab10439582300913f5cbb37
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47170136"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028397"
 ---
 # <a name="structure-statement"></a>Structure – příkaz
 Deklaruje název struktury a zavádí definici proměnných, vlastností, událostí a postupů, které tvoří strukturu.  

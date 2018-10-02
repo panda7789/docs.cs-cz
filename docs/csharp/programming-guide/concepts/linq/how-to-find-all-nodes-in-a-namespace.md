@@ -3,11 +3,11 @@ title: 'Postupy: vyhledání všech uzlů v Namespace (C#)'
 ms.date: 07/20/2015
 ms.assetid: 3a38b913-a53e-4d0e-a19d-8782bffd3364
 ms.openlocfilehash: 0675795da7c190e6d105ac61027c28f161961099
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47230953"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48033113"
 ---
 # <a name="how-to-find-all-nodes-in-a-namespace-c"></a>Postupy: vyhledání všech uzlů v Namespace (C#)
 Můžete filtrovat podle oboru názvů jednotlivých elementu nebo atributu k vyhledání všech uzlů v tomto konkrétním oboru názvů.  

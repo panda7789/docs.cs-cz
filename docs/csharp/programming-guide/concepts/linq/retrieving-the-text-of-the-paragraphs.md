@@ -3,11 +3,11 @@ title: Načtení textu odstavců (C#)
 ms.date: 07/20/2015
 ms.assetid: 127d635e-e559-408f-90c8-2bb621ca50ac
 ms.openlocfilehash: 1d23addb4c4c1ea17343585392fbe08fef08568a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208786"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48030519"
 ---
 # <a name="retrieving-the-text-of-the-paragraphs-c"></a>Načtení textu odstavců (C#)
 Tento příklad je založen na předchozím příkladu [načtení odstavců a jejich stylů (C#)](../../../../csharp/programming-guide/concepts/linq/retrieving-the-paragraphs-and-their-styles.md). Tento nový příklad načte text k jednotlivým odstavcům jako řetězec.  

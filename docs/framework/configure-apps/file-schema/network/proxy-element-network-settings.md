@@ -11,11 +11,11 @@ ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: f4ab3d4e7ce6686a43e4c5258a56e72203c38ebd
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47209472"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48033386"
 ---
 # <a name="ltproxygt-element-network-settings"></a>&lt;proxy&gt; – Element (nastavení sítě)
 Definuje proxy server.  

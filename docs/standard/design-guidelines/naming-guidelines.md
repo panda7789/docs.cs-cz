@@ -14,11 +14,11 @@ ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 70888e068782add5ebe5ae1c7da3bdee842faea8
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47398875"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48026963"
 ---
 # <a name="naming-guidelines"></a>Pokyny pro pojmenování
 Následující konzistentní sadu konvence pojmenování ve vývoji rozhraní může být hlavní příspěvek do rozhraní framework použitelnost. To umožňuje rozhraní pro mnoho vývojářů na široce oddělených projektech. Nad rámec konzistence formuláře názvy prvků framework snadno pochopitelný a musí obsahovat funkci jednotlivých prvků.  

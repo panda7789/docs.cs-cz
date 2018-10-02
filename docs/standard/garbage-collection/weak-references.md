@@ -11,11 +11,11 @@ ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 65492beb888da1986f456d3fd000fc02f340f3c4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47398703"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48030599"
 ---
 # <a name="weak-references"></a>Slabé odkazy
 Systému uvolňování paměti nelze shromáždit objektu používá aplikace, zatímco kód aplikace může dosáhnout tohoto objektu. Aplikace se říká, že mají silného odkazu na objekt.  

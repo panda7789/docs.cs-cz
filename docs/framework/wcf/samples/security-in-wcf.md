@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 05d73638-30a9-43b4-8c86-f27f57b6eef1
 author: BrucePerlerMS
 ms.openlocfilehash: 6f005fade22df9476f5411e9a55334320300169c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47399658"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48029231"
 ---
 # <a name="security-in-wcf"></a>Zabezpečení ve službě WCF
 Tato část obsahuje ukázky související se zabezpečením Windows Communication Foundation (WCF).  

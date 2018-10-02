@@ -11,11 +11,11 @@ ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: c1783776b62532a2bd28067ca9bdb6ae4c80c717
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47400319"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48027431"
 ---
 # <a name="ltdefaultproxygt-element-network-settings"></a>&lt;defaultProxy&gt; – Element (nastavení sítě)
 Konfiguruje server proxy protokolu HTTP (Hypertext Transfer).  

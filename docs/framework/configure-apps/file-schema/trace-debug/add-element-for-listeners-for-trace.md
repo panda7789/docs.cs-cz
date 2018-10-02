@@ -11,11 +11,11 @@ ms.assetid: 81e804a3-ef11-4d39-bbde-bfa012c179e2
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: fd8ddf5daec4ab7e4de636a2f14cf413aedaa99a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47455759"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032748"
 ---
 # <a name="ltaddgt-element-for-ltlistenersgt-for-lttracegt"></a>&lt;Přidat&gt; – Element pro &lt;naslouchacích procesů&gt; pro &lt;trasování&gt;
 Přidá naslouchací proces pro **naslouchacích procesů** kolekce.  

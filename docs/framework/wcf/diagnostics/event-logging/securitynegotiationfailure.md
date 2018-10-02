@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 2060a678-f97b-4491-acd9-6c57c732afd7
 author: BrucePerlerMS
 ms.openlocfilehash: 1833838b71610c2a07aeaaa6ba43fcbbf3ff22df
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47401063"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48046325"
 ---
 # <a name="securitynegotiationfailure"></a>SecurityNegotiationFailure
 ID: 172  

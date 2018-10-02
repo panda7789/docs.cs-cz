@@ -8,11 +8,11 @@ helpviewer_keywords:
 - object keyword [C#]
 ms.assetid: 93f60c0b-e17a-40a9-9362-cca5fb77b0e7
 ms.openlocfilehash: b36703828e6027a89297ac88edaf2b55ec18f42e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47207653"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48029944"
 ---
 # <a name="object-c-reference"></a>object (Referenční dokumentace jazyka C#)
 

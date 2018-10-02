@@ -9,11 +9,11 @@ helpviewer_keywords:
 - let clause [C#]
 ms.assetid: 13c9c1a4-ce57-48ef-8e1b-4c2a59b99fb4
 ms.openlocfilehash: 62294df7f0f2ebb3249dffd72ba4910fbae984c8
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47230707"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48026357"
 ---
 # <a name="let-clause-c-reference"></a>let – klauzule (Referenční dokumentace jazyka C#)
 

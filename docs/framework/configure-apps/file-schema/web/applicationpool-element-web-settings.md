@@ -8,11 +8,11 @@ ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: d5d6ee0b5153c734249e64a4d29f6621edcc61bf
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/29/2018
-ms.locfileid: "47456061"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48046484"
 ---
 # <a name="ltapplicationpoolgt-element-web-settings"></a>&lt;applicationPool&gt; – Element (nastavení webu)
 Určuje nastavení konfigurace, který ASP.NET používá ke správě celého procesu chování, když aplikaci ASP.NET běží v integrovaném režimu [!INCLUDE[iisver](../../../../../includes/iisver-md.md)] nebo novější.  

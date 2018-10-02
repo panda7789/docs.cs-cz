@@ -6,11 +6,11 @@ ms.assetid: b153baaa-130c-4169-860b-e580591de91e
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: cf3a3b984936cb4eb947d650cc8c63db5a9a8ea5
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47210136"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028327"
 ---
 # <a name="developing-for-multiple-platforms-with-the-net-framework"></a>Vývoj pro různé platformy s .NET Frameworkem
 Můžete vyvíjet aplikace pro Microsoft i jiných společností než Microsoft platformy pomocí rozhraní .NET Framework a sady Visual Studio.  

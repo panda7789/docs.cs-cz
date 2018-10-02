@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
 author: BrucePerlerMS
 ms.openlocfilehash: c03b4fff41b66d2da6e912be613fb4341484518b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205166"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032189"
 ---
 # <a name="security-concerns-for-message-logging"></a>Zajištění zabezpečení pro protokolování zpráv
 Toto téma popisuje, jak můžete chránit citlivá data před vystaven protokolů zpráv, jakož i události generované modulem protokolování zpráv.  

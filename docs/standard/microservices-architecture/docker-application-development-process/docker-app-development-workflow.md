@@ -5,11 +5,11 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/05/2018
 ms.openlocfilehash: 16e539af2ab503bddbd958ae4b60662b5923b1f1
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47088916"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035380"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Pracovní postup vývoje aplikací Dockeru
 

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - keywords [C#], exception handling
 ms.assetid: 6d0323a3-3164-411c-9b84-a3606bd0e13c
 ms.openlocfilehash: 1d48981e0d36053fce1249b27cd15551ed59dc91
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208221"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48025130"
 ---
 # <a name="exception-handling-statements-c-reference"></a>Příkazy zpracování výjimek (Referenční dokumentace jazyka C#)
 C# obsahuje integrovanou podporu pro zpracování neobvyklých situací označuje jako výjimky, které mohou nastat při provádění programu. Tyto výjimky jsou zpracovávány kód, který je mimo běžný tok řízení.  

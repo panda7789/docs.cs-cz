@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, security
 ms.assetid: 99fc2baa-a040-4549-bc4d-f683d60298af
 ms.openlocfilehash: 56ece9c2c81f05047e85ab681e7cfe0da65f35b9
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47204096"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032436"
 ---
 # <a name="securing-wcf-data-services"></a>Zabezpečení služeb WCF Data Services
 Toto téma popisuje důležité informace o zabezpečení, které jsou specifické pro vývoj, nasazování a spouštění [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] a aplikací přistupujících ke službám, které podporují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)]. Měli postupovat také podle doporučení pro vytváření zabezpečených [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] aplikací.  

@@ -2,12 +2,12 @@
 title: Řešení potíží – korelace
 ms.date: 03/30/2017
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
-ms.openlocfilehash: 56b17d0a865d1a6c1afaa2844878c82b755afdc7
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: fecfaf7374823bb19a4ad3d7f6cb2dbbdf139703
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397150"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48027920"
 ---
 # <a name="troubleshooting-correlation"></a>Řešení potíží – korelace
 Korelace se používá k propojení zprávy služby pracovního postupu k sobě navzájem a pro instanci pracovního postupu správný, ale pokud není správně nakonfigurována, nebude přijímat zprávy a aplikace nebude fungovat správně. Toto téma obsahuje základní informace o několik metod pro řešení potíží s korelace a také uvádí některé běžné problémy, které může dojít, když použijete korelace.
@@ -76,7 +76,7 @@ class CustomFactory : WorkflowServiceHostFactory
 host.WorkflowExtensions.Add(new ConsoleTrackingParticipant());
 ```
 
- Sledování účastník, jako je například ConsoleTrackingParticipant je užitečné pro pracovní postup v místním prostředí služby, které mají okno konzoly. Pro hostované webové služby, třeba použít účastníkem sledování, která zaznamenává informace o sledování do odolného úložiště, jako je například předdefinované <xref:System.Activities.Tracking.EtwTrackingParticipant>, nebo vlastní sledování účastník, který protokoluje informace do souboru, například `TextWriterTrackingParticpant` z [ Sledování pomocí textového souboru](../../../../docs/framework/windows-workflow-foundation/samples/tracking-using-a-text-file.md) vzorku.
+ Sledování účastník, jako je například ConsoleTrackingParticipant je užitečné pro pracovní postup v místním prostředí služby, které mají okno konzoly. Pro hostované webové služby, třeba použít účastníkem sledování, která zaznamenává informace o sledování do odolného úložiště, jako je například předdefinované <xref:System.Activities.Tracking.EtwTrackingParticipant>, nebo vlastní sledování účastník, který protokoluje informace do souboru.
 
  Další informace o sledování a konfiguraci sledování pro služby hostované webového pracovního procesu, naleznete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md), [konfigurace sledování pracovního postupu](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)a [ Sledování &#91;ukázky WF&#93; ](../../../../docs/framework/windows-workflow-foundation/samples/tracking.md) ukázky.
 
@@ -214,7 +214,7 @@ sm:body()/xg0:AddItemMessage/xg0:CartId
 sm:header()/tempuri:CartId
 ```
 
- To můžete potvrdit prozkoumáním tělo zprávy.
+To můžete potvrdit prozkoumáním tělo zprávy.
 
 ```xml
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
@@ -230,7 +230,7 @@ sm:header()/tempuri:CartId
 </s:Envelope>
 ```
 
- Následující příklad ukazuje <xref:System.ServiceModel.Activities.Receive> aktivity, které jsou nakonfigurované pro `AddItem` operaci, která používá předchozí kontraktu zprávy přijímat data. Dotaz XPath je správně nakonfigurován.
+Následující příklad ukazuje <xref:System.ServiceModel.Activities.Receive> aktivity, které jsou nakonfigurované pro `AddItem` operaci, která používá předchozí kontraktu zprávy přijímat data. Dotaz XPath je správně nakonfigurován.
 
 ```xaml
 <Receive CorrelatesWith="[CCHandle] OperationName="AddItem" ServiceContractName="p:IService">
@@ -247,5 +247,3 @@ sm:header()/tempuri:CartId
   </ReceiveMessageContent>
 </Receive>
 ```
-
-Další informace o korelace na základě obsahu, najdete v článku [korelační Kalkulačka](../../../../docs/framework/windows-workflow-foundation/samples/correlated-calculator.md) vzorku.

@@ -1,31 +1,27 @@
 ---
-title: Ukázky služby Windows Communication Foundation (WCF)
-ms.date: 03/30/2017
+title: Dokumentace ke službě ukázky Windows Communication Foundation (WCF)
+ms.date: 09/24/2018
 ms.assetid: 89d4efce-7832-4dd5-82a8-0e574b3302f9
-ms.openlocfilehash: a8ac756a5c52093015f32942de3791853bdd17c4
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 5fe191aa3bc005aacf1e32bfb6533b8dfd6f23fb
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44087599"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48027829"
 ---
-# <a name="windows-communication-foundation-wcf-samples"></a>Ukázky služby Windows Communication Foundation (WCF)
-Tyto ukázky pokyny na různé aspekty Windows Communication Foundation (WCF).  
+# <a name="windows-communication-foundation-wcf-samples"></a>Ukázky Windows Communication Foundation (WCF)
+
+Můžete si stáhnout [ukázky Windows Communication Foundation (WCF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780). Ukázky pokyny na různé aspekty Windows Communication Foundation (WCF).
   
--   C# verze ukázek najdete v části [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780).  
-  
--   Visual Basic verze ukázek najdete v části [ukázky jazyka Visual Basic 2010](https://go.microsoft.com/fwlink/?LinkID=193373) a klikněte na tlačítko **WF HYPERLINK "javascript:__doPostBack('ctl00$ctl00$Content$TabContentPanel$Content$ReleaseFiles$FileList$ctl02$ FileNameLink', '') "_WCF_Samples.zip**.  
-  
- Windows Workflow Foundation (WF) [aplikace](../../../../docs/framework/windows-workflow-foundation/samples/application.md) ukázky ukazují také několik WCFfeatures.  
-  
- Pokud chcete nainstalovat samostatnou verzi dokumentace a aplikaci Help viewer, stáhněte si [v Microsoft Windows SDK 7.1](https://go.microsoft.com/fwlink/?LinkID=194146).  
+> [!TIP]
+> Články v této části popisují některé z ukázek v balíček ke stažení. Úplnou dokumentaci sady, které pokrývá všechny ukázky, zkontrolujte [dokumentace rozhraní .NET Framework 4 pro ukázky WCF](/previous-versions/dotnet/netframework-4.0/dd483346(v%3dvs.100)).
+
+Windows Workflow Foundation (WF) [aplikace](../../windows-workflow-foundation/samples/application.md) ukázky ukazují také několik funkcí WCF.
   
 ## <a name="in-this-section"></a>V tomto oddílu  
- [Základy](../../../../docs/framework/wcf/samples/basic.md)  
- Korelační diagram znázorňuje ukázky, které ilustrují základním funkcím WCF.  
-  
- Rozšiřitelnost  
- Korelační diagram znázorňuje ukázky, které se vztahují k funkci zjišťování.  
-  
- [Scénář](../../../../docs/framework/wcf/samples/scenario.md)  
- Představuje scénář WCF.
+
+[Základní](basic.md) – ukázky, které ilustrují základním funkcím WCF.  
+
+[Rozšiřitelnost](extensibility.md) – ukázky, které se vztahují k funkci zjišťování.  
+
+[Scénář](scenario.md) – představuje scénář WCF.

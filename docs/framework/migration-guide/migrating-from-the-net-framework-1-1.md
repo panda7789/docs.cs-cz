@@ -8,11 +8,11 @@ ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 546bb50531e62abafe8ab016e2c138ffa9d8720d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47399882"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48034951"
 ---
 # <a name="migrating-from-the-net-framework-11"></a>Migrace z rozhraní .NET Framework 1.1
 

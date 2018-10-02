@@ -9,11 +9,11 @@ ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 6f71d409729707f4af93fd7f8d5b82a99404579b
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
-ms.translationtype: HT
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47862657"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48027779"
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>XPathNodeIterator v transformacích
 <xref:System.Xml.XPath.XPathNodeIterator> Poskytuje metody k iteraci v rámci sady uzlů, které jsou vytvořené jako výsledek dotazu jazyk XML Path (XPath) nebo fragment stromu výsledek převeden na uzlu nastavte pomocí metody sada uzlů. <xref:System.Xml.XPath.XPathNodeIterator> Umožňuje iterovat přes uzly v rámci této sady uzlu. Jakmile se načte sadu uzlu, <xref:System.Xml.XPath.XPathNodeIterator> třída poskytuje jen pro čtení, dopředné kurzoru vybrané sady uzlů. Sada uzlů je vytvořen v pořadí dokumentů, takže volání této metody přesune na další uzel v pořadí dokumentů. <xref:System.Xml.XPath.XPathNodeIterator> uzel stromu všech uzlů v sadě nesestaví. Místo toho poskytuje okno s jedním uzlem data, odhalují základní uzel, na který odkazuje na při pohybu ve stromové struktuře. Metody a vlastnosti, které jsou k dispozici <xref:System.Xml.XPath.XPathNodeIterator> třídy umožňují získat informace z aktuálního uzlu. Seznam dostupných metod a vlastností najdete v tématu <xref:System.Windows.Forms.ToolBar>.  
