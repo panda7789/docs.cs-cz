@@ -18,16 +18,16 @@ topic_type:
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: faa9bc412e67e0e49ee969bd8b246a424fe628a0
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47204648"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48034334"
 ---
-# <a name="imetadataemitapplyeditandcontinue-method"></a><span data-ttu-id="40895-102">IMetaDataEmit::ApplyEditAndContinue – metoda</span><span class="sxs-lookup"><span data-stu-id="40895-102">IMetaDataEmit::ApplyEditAndContinue Method</span></span>
-<span data-ttu-id="40895-103">Aktualizuje aktuální obor sestavení změny provedené v Zadaná metadata.</span><span class="sxs-lookup"><span data-stu-id="40895-103">Updates the current assembly scope with the changes made in the specified metadata.</span></span>  
+# <a name="imetadataemitapplyeditandcontinue-method"></a><span data-ttu-id="9dfa4-102">IMetaDataEmit::ApplyEditAndContinue – metoda</span><span class="sxs-lookup"><span data-stu-id="9dfa4-102">IMetaDataEmit::ApplyEditAndContinue Method</span></span>
+<span data-ttu-id="9dfa4-103">Aktualizuje aktuální obor sestavení změny provedené v Zadaná metadata.</span><span class="sxs-lookup"><span data-stu-id="9dfa4-103">Updates the current assembly scope with the changes made in the specified metadata.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="40895-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="40895-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9dfa4-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9dfa4-104">Syntax</span></span>  
   
 ```  
 HRESULT ApplyEditAndContinue (   
@@ -35,21 +35,21 @@ HRESULT ApplyEditAndContinue (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="40895-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="40895-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="9dfa4-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="9dfa4-105">Parameters</span></span>  
  `pImport`  
- <span data-ttu-id="40895-106">\[v\] ukazatel [IUnknown](/cpp/atl/iunknown) objekt, který reprezentuje delta metadat ze souboru (PE portable executable).</span><span class="sxs-lookup"><span data-stu-id="40895-106">\[in\] Pointer to an [IUnknown](/cpp/atl/iunknown) object that represents the delta metadata from the portable executable (PE) file.</span></span>
+ <span data-ttu-id="9dfa4-106">\[v\] ukazatel [IUnknown](/cpp/atl/iunknown) objekt, který reprezentuje delta metadat ze souboru (PE portable executable).</span><span class="sxs-lookup"><span data-stu-id="9dfa4-106">\[in\] Pointer to an [IUnknown](/cpp/atl/iunknown) object that represents the delta metadata from the portable executable (PE) file.</span></span>
   
- <span data-ttu-id="40895-107">Metadata rozdílů je blok metadata, která obsahuje změny, které byly provedeny na kopii skutečného metadata modulu.</span><span class="sxs-lookup"><span data-stu-id="40895-107">The delta metadata is the block of metadata that includes the changes that were made to the copy of the module's actual metadata.</span></span>  
+ <span data-ttu-id="9dfa4-107">Metadata rozdílů je blok metadata, která obsahuje změny, které byly provedeny na kopii skutečného metadata modulu.</span><span class="sxs-lookup"><span data-stu-id="9dfa4-107">The delta metadata is the block of metadata that includes the changes that were made to the copy of the module's actual metadata.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="40895-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="40895-108">Requirements</span></span>  
- <span data-ttu-id="40895-109">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="40895-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9dfa4-108">Požadavky</span><span class="sxs-lookup"><span data-stu-id="9dfa4-108">Requirements</span></span>  
+ <span data-ttu-id="9dfa4-109">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9dfa4-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="40895-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="40895-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="9dfa4-110">**Záhlaví:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="9dfa4-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="40895-111">**Knihovna:** použit jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="40895-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="9dfa4-111">**Knihovna:** použit jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="9dfa4-111">**Library:** Used as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="40895-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="40895-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="9dfa4-112">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9dfa4-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="40895-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="40895-113">See Also</span></span>  
- [<span data-ttu-id="40895-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="40895-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
- [<span data-ttu-id="40895-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="40895-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
+## <a name="see-also"></a><span data-ttu-id="9dfa4-113">Viz také</span><span class="sxs-lookup"><span data-stu-id="9dfa4-113">See Also</span></span>  
+ [<span data-ttu-id="9dfa4-114">IMetaDataEmit – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9dfa4-114">IMetaDataEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)  
+ [<span data-ttu-id="9dfa4-115">IMetaDataEmit2 – rozhraní</span><span class="sxs-lookup"><span data-stu-id="9dfa4-115">IMetaDataEmit2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)

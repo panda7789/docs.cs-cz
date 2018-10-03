@@ -5,21 +5,21 @@ ms.assetid: 594a7b3b-af23-4cfa-b616-0b2dddb1a705
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 9cca5e35bfc0aef448d2d515f5ac55ed9e2e2258
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47206200"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028794"
 ---
-# <a name="ltaddgt-element-for-schemesettings-uri-settings"></a><span data-ttu-id="f7f31-102">&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="f7f31-102">&lt;add&gt; Element for schemeSettings (Uri Settings)</span></span>
-<span data-ttu-id="f7f31-103">Přidá nastavení schéma pro název schématu.</span><span class="sxs-lookup"><span data-stu-id="f7f31-103">Adds a scheme setting for a scheme name.</span></span>  
+# <a name="ltaddgt-element-for-schemesettings-uri-settings"></a><span data-ttu-id="75da6-102">&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="75da6-102">&lt;add&gt; Element for schemeSettings (Uri Settings)</span></span>
+<span data-ttu-id="75da6-103">Přidá nastavení schéma pro název schématu.</span><span class="sxs-lookup"><span data-stu-id="75da6-103">Adds a scheme setting for a scheme name.</span></span>  
   
- <span data-ttu-id="f7f31-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="f7f31-104">\<configuration></span></span>  
-<span data-ttu-id="f7f31-105">\<identifikátor URI ></span><span class="sxs-lookup"><span data-stu-id="f7f31-105">\<uri></span></span>  
-<span data-ttu-id="f7f31-106">\<schemeSettings ></span><span class="sxs-lookup"><span data-stu-id="f7f31-106">\<schemeSettings></span></span>  
-<span data-ttu-id="f7f31-107">\<add></span><span class="sxs-lookup"><span data-stu-id="f7f31-107">\<add></span></span>  
+ <span data-ttu-id="75da6-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="75da6-104">\<configuration></span></span>  
+<span data-ttu-id="75da6-105">\<identifikátor URI ></span><span class="sxs-lookup"><span data-stu-id="75da6-105">\<uri></span></span>  
+<span data-ttu-id="75da6-106">\<schemeSettings ></span><span class="sxs-lookup"><span data-stu-id="75da6-106">\<schemeSettings></span></span>  
+<span data-ttu-id="75da6-107">\<add></span><span class="sxs-lookup"><span data-stu-id="75da6-107">\<add></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f7f31-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="f7f31-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="75da6-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="75da6-108">Syntax</span></span>  
   
 ```xml  
 <add
@@ -28,50 +28,50 @@ ms.locfileid: "47206200"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="f7f31-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="f7f31-109">Attributes and Elements</span></span>  
- <span data-ttu-id="f7f31-110">Následující části popisují atributy, podřízené prvky a nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="f7f31-110">The following sections describe attributes, child elements, and parent elements</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="75da6-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="75da6-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="75da6-110">Následující části popisují atributy, podřízené prvky a nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="75da6-110">The following sections describe attributes, child elements, and parent elements</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="f7f31-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="f7f31-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="75da6-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="75da6-111">Attributes</span></span>  
   
-|<span data-ttu-id="f7f31-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="f7f31-112">Attribute</span></span>|<span data-ttu-id="f7f31-113">Popis</span><span class="sxs-lookup"><span data-stu-id="f7f31-113">Description</span></span>|  
+|<span data-ttu-id="75da6-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="75da6-112">Attribute</span></span>|<span data-ttu-id="75da6-113">Popis</span><span class="sxs-lookup"><span data-stu-id="75da6-113">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="f7f31-114">name</span><span class="sxs-lookup"><span data-stu-id="f7f31-114">name</span></span>|<span data-ttu-id="f7f31-115">Název schématu, pro kterou toto nastavení se vztahuje.</span><span class="sxs-lookup"><span data-stu-id="f7f31-115">The scheme name for which this setting applies.</span></span> <span data-ttu-id="f7f31-116">Jenom pro podporované hodnoty jsou název = "http" a název = "https".</span><span class="sxs-lookup"><span data-stu-id="f7f31-116">The only supported values are name="http" and name="https".</span></span>|  
+|<span data-ttu-id="75da6-114">name</span><span class="sxs-lookup"><span data-stu-id="75da6-114">name</span></span>|<span data-ttu-id="75da6-115">Název schématu, pro kterou toto nastavení se vztahuje.</span><span class="sxs-lookup"><span data-stu-id="75da6-115">The scheme name for which this setting applies.</span></span> <span data-ttu-id="75da6-116">Jenom pro podporované hodnoty jsou název = "http" a název = "https".</span><span class="sxs-lookup"><span data-stu-id="75da6-116">The only supported values are name="http" and name="https".</span></span>|  
   
-## <a name="attribute-name-attribute"></a><span data-ttu-id="f7f31-117">{Atribut name} Atribut</span><span class="sxs-lookup"><span data-stu-id="f7f31-117">{Attribute name} Attribute</span></span>  
+## <a name="attribute-name-attribute"></a><span data-ttu-id="75da6-117">{Atribut name} Atribut</span><span class="sxs-lookup"><span data-stu-id="75da6-117">{Attribute name} Attribute</span></span>  
   
-|<span data-ttu-id="f7f31-118">Hodnota</span><span class="sxs-lookup"><span data-stu-id="f7f31-118">Value</span></span>|<span data-ttu-id="f7f31-119">Popis</span><span class="sxs-lookup"><span data-stu-id="f7f31-119">Description</span></span>|  
+|<span data-ttu-id="75da6-118">Hodnota</span><span class="sxs-lookup"><span data-stu-id="75da6-118">Value</span></span>|<span data-ttu-id="75da6-119">Popis</span><span class="sxs-lookup"><span data-stu-id="75da6-119">Description</span></span>|  
 |-----------|-----------------|  
-|<span data-ttu-id="f7f31-120">genericUriParserOptions</span><span class="sxs-lookup"><span data-stu-id="f7f31-120">genericUriParserOptions</span></span>|<span data-ttu-id="f7f31-121">Možnosti analyzátoru pro toto schéma.</span><span class="sxs-lookup"><span data-stu-id="f7f31-121">The parser options for this scheme.</span></span> <span data-ttu-id="f7f31-122">Jedinou podporovanou hodnotou je genericUriParserOptions = "DontUnescapePathDotsAndSlashes".</span><span class="sxs-lookup"><span data-stu-id="f7f31-122">The only supported value is genericUriParserOptions= "DontUnescapePathDotsAndSlashes".</span></span>|  
+|<span data-ttu-id="75da6-120">genericUriParserOptions</span><span class="sxs-lookup"><span data-stu-id="75da6-120">genericUriParserOptions</span></span>|<span data-ttu-id="75da6-121">Možnosti analyzátoru pro toto schéma.</span><span class="sxs-lookup"><span data-stu-id="75da6-121">The parser options for this scheme.</span></span> <span data-ttu-id="75da6-122">Jedinou podporovanou hodnotou je genericUriParserOptions = "DontUnescapePathDotsAndSlashes".</span><span class="sxs-lookup"><span data-stu-id="75da6-122">The only supported value is genericUriParserOptions= "DontUnescapePathDotsAndSlashes".</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="f7f31-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="f7f31-123">Child Elements</span></span>  
- <span data-ttu-id="f7f31-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="f7f31-124">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="75da6-123">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="75da6-123">Child Elements</span></span>  
+ <span data-ttu-id="75da6-124">Žádné</span><span class="sxs-lookup"><span data-stu-id="75da6-124">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="f7f31-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="f7f31-125">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="75da6-125">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="75da6-125">Parent Elements</span></span>  
   
-|<span data-ttu-id="f7f31-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="f7f31-126">Element</span></span>|<span data-ttu-id="f7f31-127">Popis</span><span class="sxs-lookup"><span data-stu-id="f7f31-127">Description</span></span>|  
+|<span data-ttu-id="75da6-126">Prvek</span><span class="sxs-lookup"><span data-stu-id="75da6-126">Element</span></span>|<span data-ttu-id="75da6-127">Popis</span><span class="sxs-lookup"><span data-stu-id="75da6-127">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="f7f31-128">\<schemeSettings > – Element (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="f7f31-128">\<schemeSettings> Element (Uri Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|<span data-ttu-id="f7f31-129">Určuje, jak <xref:System.Uri> pro konkrétní schémata, bude analyzována.</span><span class="sxs-lookup"><span data-stu-id="f7f31-129">Specifies how a <xref:System.Uri> will be parsed for specific schemes.</span></span>|  
+|[<span data-ttu-id="75da6-128">\<schemeSettings > – Element (nastavení Uri)</span><span class="sxs-lookup"><span data-stu-id="75da6-128">\<schemeSettings> Element (Uri Settings)</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/schemesettings-element-uri-settings.md)|<span data-ttu-id="75da6-129">Určuje, jak <xref:System.Uri> pro konkrétní schémata, bude analyzována.</span><span class="sxs-lookup"><span data-stu-id="75da6-129">Specifies how a <xref:System.Uri> will be parsed for specific schemes.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="f7f31-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="f7f31-130">Remarks</span></span>  
- <span data-ttu-id="f7f31-131">Ve výchozím nastavení <xref:System.Uri?displayProperty=nameWithType> třídy řídících zrušení procent kódovaný oddělovače cesty před provedením komprese cestu.</span><span class="sxs-lookup"><span data-stu-id="f7f31-131">By default, the <xref:System.Uri?displayProperty=nameWithType> class un-escapes percent encoded path delimiters before executing path compression.</span></span> <span data-ttu-id="f7f31-132">To bylo implementováno jako vhodný mechanismus zabezpečení před útoky, jako je následující:</span><span class="sxs-lookup"><span data-stu-id="f7f31-132">This was implemented as a security mechanism against attacks like the following:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="75da6-130">Poznámky</span><span class="sxs-lookup"><span data-stu-id="75da6-130">Remarks</span></span>  
+ <span data-ttu-id="75da6-131">Ve výchozím nastavení <xref:System.Uri?displayProperty=nameWithType> třídy řídících zrušení procent kódovaný oddělovače cesty před provedením komprese cestu.</span><span class="sxs-lookup"><span data-stu-id="75da6-131">By default, the <xref:System.Uri?displayProperty=nameWithType> class un-escapes percent encoded path delimiters before executing path compression.</span></span> <span data-ttu-id="75da6-132">To bylo implementováno jako vhodný mechanismus zabezpečení před útoky, jako je následující:</span><span class="sxs-lookup"><span data-stu-id="75da6-132">This was implemented as a security mechanism against attacks like the following:</span></span>  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- <span data-ttu-id="f7f31-133">Pokud tento identifikátor URI bude předána do modulů zpracování procent kódování znaků správně, může vést provedených na serveru následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="f7f31-133">If this URI gets passed down to modules not handling percent encoded characters correctly, it could result in the following command being executed by the server:</span></span>  
+ <span data-ttu-id="75da6-133">Pokud tento identifikátor URI bude předána do modulů zpracování procent kódování znaků správně, může vést provedených na serveru následující příkaz:</span><span class="sxs-lookup"><span data-stu-id="75da6-133">If this URI gets passed down to modules not handling percent encoded characters correctly, it could result in the following command being executed by the server:</span></span>  
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- <span data-ttu-id="f7f31-134">Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> třídy prvního oddělovače cesty zrušení – řídicí sekvence a poté použije komprese cestu.</span><span class="sxs-lookup"><span data-stu-id="f7f31-134">For this reason, <xref:System.Uri?displayProperty=nameWithType> class first un-escapes path delimiters and then applies path compression.</span></span> <span data-ttu-id="f7f31-135">Výsledek předáním škodlivý adresa URL výše <xref:System.Uri?displayProperty=nameWithType> konstruktor za následek následující identifikátor URI třídy:</span><span class="sxs-lookup"><span data-stu-id="f7f31-135">The result of passing the malicious URL above to <xref:System.Uri?displayProperty=nameWithType> class constructor results in the following URI:</span></span>  
+ <span data-ttu-id="75da6-134">Z tohoto důvodu <xref:System.Uri?displayProperty=nameWithType> třídy prvního oddělovače cesty zrušení – řídicí sekvence a poté použije komprese cestu.</span><span class="sxs-lookup"><span data-stu-id="75da6-134">For this reason, <xref:System.Uri?displayProperty=nameWithType> class first un-escapes path delimiters and then applies path compression.</span></span> <span data-ttu-id="75da6-135">Výsledek předáním škodlivý adresa URL výše <xref:System.Uri?displayProperty=nameWithType> konstruktor za následek následující identifikátor URI třídy:</span><span class="sxs-lookup"><span data-stu-id="75da6-135">The result of passing the malicious URL above to <xref:System.Uri?displayProperty=nameWithType> class constructor results in the following URI:</span></span>  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
- <span data-ttu-id="f7f31-136">Toto výchozí chování lze upravit a není zrušení-oddělovačů řídicí sekvence procenta zakódované cesty pomocí možnosti konfigurace schemeSettings pro konkrétní schéma.</span><span class="sxs-lookup"><span data-stu-id="f7f31-136">This default behavior can be modified to not un-escape percent encoded path delimiters using the schemeSettings configuration option for a specific scheme.</span></span>  
+ <span data-ttu-id="75da6-136">Toto výchozí chování lze upravit a není zrušení-oddělovačů řídicí sekvence procenta zakódované cesty pomocí možnosti konfigurace schemeSettings pro konkrétní schéma.</span><span class="sxs-lookup"><span data-stu-id="75da6-136">This default behavior can be modified to not un-escape percent encoded path delimiters using the schemeSettings configuration option for a specific scheme.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="f7f31-137">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="f7f31-137">Configuration Files</span></span>  
- <span data-ttu-id="f7f31-138">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="f7f31-138">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="75da6-137">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="75da6-137">Configuration Files</span></span>  
+ <span data-ttu-id="75da6-138">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="75da6-138">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f7f31-139">Příklad</span><span class="sxs-lookup"><span data-stu-id="f7f31-139">Example</span></span>  
- <span data-ttu-id="f7f31-140">Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu není uvozovací znaky oddělovače procentuálně zakódovaný cestu pro schéma protokolu http.</span><span class="sxs-lookup"><span data-stu-id="f7f31-140">The following example shows a configuration used by the <xref:System.Uri> class to support not escaping percent-encoded path delimiters for the http scheme.</span></span>  
+## <a name="example"></a><span data-ttu-id="75da6-139">Příklad</span><span class="sxs-lookup"><span data-stu-id="75da6-139">Example</span></span>  
+ <span data-ttu-id="75da6-140">Následující příklad ukazuje konfigurace používané <xref:System.Uri> třídy pro podporu není uvozovací znaky oddělovače procentuálně zakódovaný cestu pro schéma protokolu http.</span><span class="sxs-lookup"><span data-stu-id="75da6-140">The following example shows a configuration used by the <xref:System.Uri> class to support not escaping percent-encoded path delimiters for the http scheme.</span></span>  
   
 ```xml  
 <configuration>  
@@ -83,11 +83,11 @@ ms.locfileid: "47206200"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f7f31-141">Viz také</span><span class="sxs-lookup"><span data-stu-id="f7f31-141">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="75da6-141">Viz také</span><span class="sxs-lookup"><span data-stu-id="75da6-141">See Also</span></span>  
  <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>  
  <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>  
  <xref:System.Configuration.UriSection?displayProperty=nameWithType>  
  <xref:System.Configuration.UriSection.SchemeSettings%2A?displayProperty=nameWithType>  
  <xref:System.GenericUriParserOptions?displayProperty=nameWithType>  
  <xref:System.Uri?displayProperty=nameWithType>  
- [<span data-ttu-id="f7f31-142">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="f7f31-142">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+ [<span data-ttu-id="75da6-142">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="75da6-142">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

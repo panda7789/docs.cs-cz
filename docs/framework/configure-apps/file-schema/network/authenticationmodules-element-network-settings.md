@@ -11,54 +11,54 @@ ms.assetid: 10fcfaad-82ef-4692-871a-0aec9dfbe75e
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 394a686fe07036d6c3ac2bc51fb3503e1ee4a9e6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47235871"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028443"
 ---
-# <a name="ltauthenticationmodulesgt-element-network-settings"></a><span data-ttu-id="68f00-102">&lt;Element authenticationModules&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="68f00-102">&lt;authenticationModules&gt; Element (Network Settings)</span></span>
-<span data-ttu-id="68f00-103">Určuje moduly používané k ověření síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="68f00-103">Specifies modules used to authenticate network requests.</span></span>  
+# <a name="ltauthenticationmodulesgt-element-network-settings"></a><span data-ttu-id="cdfd9-102">&lt;Element authenticationModules&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="cdfd9-102">&lt;authenticationModules&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="cdfd9-103">Určuje moduly používané k ověření síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-103">Specifies modules used to authenticate network requests.</span></span>  
   
- <span data-ttu-id="68f00-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="68f00-104">\<configuration></span></span>  
-<span data-ttu-id="68f00-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="68f00-105">\<system.net></span></span>  
-<span data-ttu-id="68f00-106">\<authenticationModules – ></span><span class="sxs-lookup"><span data-stu-id="68f00-106">\<authenticationModules></span></span>  
+ <span data-ttu-id="cdfd9-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="cdfd9-104">\<configuration></span></span>  
+<span data-ttu-id="cdfd9-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="cdfd9-105">\<system.net></span></span>  
+<span data-ttu-id="cdfd9-106">\<authenticationModules – ></span><span class="sxs-lookup"><span data-stu-id="cdfd9-106">\<authenticationModules></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="68f00-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="68f00-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cdfd9-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cdfd9-107">Syntax</span></span>  
   
 ```xml  
 <authenticationModules>   
 </authenticationModules>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="68f00-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="68f00-108">Attributes and Elements</span></span>  
- <span data-ttu-id="68f00-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="68f00-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="cdfd9-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="cdfd9-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="cdfd9-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="68f00-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="68f00-110">Attributes</span></span>  
- <span data-ttu-id="68f00-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="68f00-111">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="cdfd9-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="cdfd9-110">Attributes</span></span>  
+ <span data-ttu-id="cdfd9-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="cdfd9-111">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="68f00-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="68f00-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="cdfd9-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="cdfd9-112">Child Elements</span></span>  
   
-|<span data-ttu-id="68f00-113">**Element**</span><span class="sxs-lookup"><span data-stu-id="68f00-113">**Element**</span></span>|<span data-ttu-id="68f00-114">**Popis**</span><span class="sxs-lookup"><span data-stu-id="68f00-114">**Description**</span></span>|  
+|<span data-ttu-id="cdfd9-113">**Element**</span><span class="sxs-lookup"><span data-stu-id="cdfd9-113">**Element**</span></span>|<span data-ttu-id="cdfd9-114">**Popis**</span><span class="sxs-lookup"><span data-stu-id="cdfd9-114">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="68f00-115">add</span><span class="sxs-lookup"><span data-stu-id="68f00-115">add</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-authenticationmodules-network-settings.md)|<span data-ttu-id="68f00-116">Přidá modul ověřování do aplikace.</span><span class="sxs-lookup"><span data-stu-id="68f00-116">Adds an authentication module to the application.</span></span>|  
-|[<span data-ttu-id="68f00-117">Vymazat</span><span class="sxs-lookup"><span data-stu-id="68f00-117">clear</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-authenticationmodules-network-settings.md)|<span data-ttu-id="68f00-118">Vymaže všechny moduly ověřování z aplikace.</span><span class="sxs-lookup"><span data-stu-id="68f00-118">Clears all authentication modules from the application.</span></span>|  
-|[<span data-ttu-id="68f00-119">remove</span><span class="sxs-lookup"><span data-stu-id="68f00-119">remove</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-authenticationmodules-network-settings.md)|<span data-ttu-id="68f00-120">Odebere ověřovací modul z aplikace.</span><span class="sxs-lookup"><span data-stu-id="68f00-120">Removes an authentication module from the application.</span></span>|  
+|[<span data-ttu-id="cdfd9-115">add</span><span class="sxs-lookup"><span data-stu-id="cdfd9-115">add</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-authenticationmodules-network-settings.md)|<span data-ttu-id="cdfd9-116">Přidá modul ověřování do aplikace.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-116">Adds an authentication module to the application.</span></span>|  
+|[<span data-ttu-id="cdfd9-117">Vymazat</span><span class="sxs-lookup"><span data-stu-id="cdfd9-117">clear</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-authenticationmodules-network-settings.md)|<span data-ttu-id="cdfd9-118">Vymaže všechny moduly ověřování z aplikace.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-118">Clears all authentication modules from the application.</span></span>|  
+|[<span data-ttu-id="cdfd9-119">remove</span><span class="sxs-lookup"><span data-stu-id="cdfd9-119">remove</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-authenticationmodules-network-settings.md)|<span data-ttu-id="cdfd9-120">Odebere ověřovací modul z aplikace.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-120">Removes an authentication module from the application.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="68f00-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="68f00-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="cdfd9-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="cdfd9-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="68f00-122">**Element**</span><span class="sxs-lookup"><span data-stu-id="68f00-122">**Element**</span></span>|<span data-ttu-id="68f00-123">**Popis**</span><span class="sxs-lookup"><span data-stu-id="68f00-123">**Description**</span></span>|  
+|<span data-ttu-id="cdfd9-122">**Element**</span><span class="sxs-lookup"><span data-stu-id="cdfd9-122">**Element**</span></span>|<span data-ttu-id="cdfd9-123">**Popis**</span><span class="sxs-lookup"><span data-stu-id="cdfd9-123">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="68f00-124">System.NET</span><span class="sxs-lookup"><span data-stu-id="68f00-124">system.net</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|<span data-ttu-id="68f00-125">Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="68f00-125">Contains settings that specify how the .NET Framework connects to the network.</span></span>|  
+|[<span data-ttu-id="cdfd9-124">System.NET</span><span class="sxs-lookup"><span data-stu-id="cdfd9-124">system.net</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|<span data-ttu-id="cdfd9-125">Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-125">Contains settings that specify how the .NET Framework connects to the network.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="68f00-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="68f00-126">Remarks</span></span>  
- <span data-ttu-id="68f00-127">`authenticationModule` Prvek určuje moduly ověřování, které provádí proces ověřování se serverem.</span><span class="sxs-lookup"><span data-stu-id="68f00-127">The `authenticationModule` element specifies the authentication modules that conduct the authentication process with a server.</span></span> <span data-ttu-id="68f00-128">Ověřovací modul musí implementovat <xref:System.Net.IAuthenticationModule> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="68f00-128">An authentication module must implement the <xref:System.Net.IAuthenticationModule> interface.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cdfd9-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cdfd9-126">Remarks</span></span>  
+ <span data-ttu-id="cdfd9-127">`authenticationModule` Prvek určuje moduly ověřování, které provádí proces ověřování se serverem.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-127">The `authenticationModule` element specifies the authentication modules that conduct the authentication process with a server.</span></span> <span data-ttu-id="cdfd9-128">Ověřovací modul musí implementovat <xref:System.Net.IAuthenticationModule> rozhraní.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-128">An authentication module must implement the <xref:System.Net.IAuthenticationModule> interface.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="68f00-129">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="68f00-129">Configuration Files</span></span>  
- <span data-ttu-id="68f00-130">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="68f00-130">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="cdfd9-129">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="cdfd9-129">Configuration Files</span></span>  
+ <span data-ttu-id="cdfd9-130">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="cdfd9-130">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="68f00-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="68f00-131">Example</span></span>  
- <span data-ttu-id="68f00-132">Následující příklad povolí ověřovací modul.</span><span class="sxs-lookup"><span data-stu-id="68f00-132">The following example enables an authentication module.</span></span> <span data-ttu-id="68f00-133">Měli byste nahradit hodnoty pro verzi a PublicKeyToken správné hodnoty pro zadaný modul.</span><span class="sxs-lookup"><span data-stu-id="68f00-133">You should replace the values for Version and PublicKeyToken with the correct values for the specified module.</span></span>  
+## <a name="example"></a><span data-ttu-id="cdfd9-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="cdfd9-131">Example</span></span>  
+ <span data-ttu-id="cdfd9-132">Následující příklad povolí ověřovací modul.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-132">The following example enables an authentication module.</span></span> <span data-ttu-id="cdfd9-133">Měli byste nahradit hodnoty pro verzi a PublicKeyToken správné hodnoty pro zadaný modul.</span><span class="sxs-lookup"><span data-stu-id="cdfd9-133">You should replace the values for Version and PublicKeyToken with the correct values for the specified module.</span></span>  
   
 ```xml  
 <configuration>  
@@ -71,7 +71,7 @@ ms.locfileid: "47235871"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="68f00-134">Viz také</span><span class="sxs-lookup"><span data-stu-id="68f00-134">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="cdfd9-134">Viz také</span><span class="sxs-lookup"><span data-stu-id="cdfd9-134">See Also</span></span>  
  <xref:System.Net.IAuthenticationModule>  
  <xref:System.Net.AuthenticationManager>  
- [<span data-ttu-id="68f00-135">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="68f00-135">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+ [<span data-ttu-id="cdfd9-135">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="cdfd9-135">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
