@@ -19,11 +19,11 @@ ms.assetid: df29b4b0-49e8-4923-82b9-13150dfc40f5
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: b3e39b952b37f70513b3a84ce6b6059b85e01c28
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47421583"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032150"
 ---
 # <a name="tcp-udp"></a>UDP PROTOKOLU TCP
 Protokolu TCP (Transmission Control) a protokolu UDP (User Datagram) služby se může používat aplikace <xref:System.Net.Sockets.TcpClient>, <xref:System.Net.Sockets.TcpListener>, a <xref:System.Net.Sockets.UdpClient> třídy. Tyto třídy protokolu jsou zabudovány nad <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> třídy a aby se postaral o podrobnosti přenosu dat.  
