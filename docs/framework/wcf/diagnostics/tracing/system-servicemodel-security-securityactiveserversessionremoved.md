@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: f62789ea-d455-43f5-ab6c-21588184b528
 author: BrucePerlerMS
 ms.openlocfilehash: 8a6551cc880927cab290638edfcf463bdf767814
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47216647"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48031341"
 ---
 # <a name="systemservicemodelsecuritysecurityactiveserversessionremoved"></a>System.ServiceModel.Security.SecurityActiveServerSessionRemoved
 System.ServiceModel.Security.SecurityActiveServerSessionRemoved  

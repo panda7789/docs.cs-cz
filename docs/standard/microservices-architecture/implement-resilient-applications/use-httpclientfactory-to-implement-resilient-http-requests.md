@@ -4,12 +4,12 @@ description: HttpClientFactory je sebevědomý factory, dostupné od verze rozhr
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 6fd30a9358ca9c07b2a6e2ec591e4c5d7db54ccb
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d40e587966b2e62a197ad10770bf3e28bcbcb511
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513210"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48037213"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
 
@@ -71,7 +71,7 @@ Pouhým přidáním tříd typový klient s AddHttpClient(), vždy, když použi
 
 ### <a name="httpclient-lifetimes"></a>Životnost HttpClient
 
-Pokaždé, když dojde `HttpClient` objekt z IHttpClientFactory, novou instanci třídy `HttpClient` je vrácena. Bude existovat objekt HttpMessageHandler ** za názvem typu klienta. Můžu`HttpClientFactory` bude fond instancí objekt HttpMessageHandler vytvořeny procesem ke snížení spotřeby prostředků. Objekt HttpMessageHandler instance mohou být znovu použity z fondu při vytváření nového `HttpClient` instance Pokud nevypršela platnost svého životního cyklu.
+Pokaždé, když dojde `HttpClient` objekt z IHttpClientFactory, novou instanci třídy `HttpClient` je vrácena. Bude existovat objekt HttpMessageHandler ** za názvem typu klienta. `IHttpClientFactory` objekt HttpMessageHandler instance vytvořené výrobou ke snížení spotřeby prostředků se fondu. Objekt HttpMessageHandler instance mohou být znovu použity z fondu při vytváření nového `HttpClient` instance Pokud nevypršela platnost svého životního cyklu.
 
 Sdružování obslužných rutin je žádoucí, protože každá obslužná rutina obvykle spravuje svou vlastní základní připojení protokolu HTTP; vytváření více obslužných rutin, než je nezbytné, může způsobit zpoždění připojení. Některé obslužné rutiny také zachovat připojení otevřené po neomezenou dobu, což může zabránit obslužnou rutinu reakce na změny DNS.
 

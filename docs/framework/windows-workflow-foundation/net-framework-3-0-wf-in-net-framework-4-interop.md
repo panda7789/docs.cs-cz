@@ -2,12 +2,12 @@
 title: Používání aktivit WF rozhraní .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 ms.date: 03/30/2017
 ms.assetid: 71f112ba-abb0-46f7-b05f-a5d2eb9d0c5c
-ms.openlocfilehash: b2dac91ffa0f4bf5e1c1afea1fc6f6629c345857
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 386f71f21a4164f6f0ffc0ed19aab68abbe5a0b5
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43467502"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48029255"
 ---
 # <a name="using-net-framework-30-wf-activities-in-net-framework-4-with-the-interop-activity"></a>Používání aktivit WF rozhraní .NET Framework 3.0 v rozhraní .NET Framework 4 pomocí aktivity interoperability
 <xref:System.Activities.Statements.Interop> Aktivita je [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] aktivity (WF 4.5), která zabalí [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivitu (WF 3.5) v rámci [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] pracovního postupu. Aktivita WF 3 může být jednoho listu aktivity nebo celý strom aktivit. Spuštění (včetně zrušení a zpracování výjimek) a stálost [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)] aktivitu, ke kterým došlo v kontextu [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] instance pracovního postupu, který spouští.  
@@ -52,7 +52,4 @@ ms.locfileid: "43467502"
   
 3.  WF 3 sledování záznamy aktivity v rámci <xref:System.Activities.Statements.Interop> aktivit jsou k dispozici WF 4.5 sledování účastníci jako <xref:System.Activities.Tracking.InteropTrackingRecord> objekty. <xref:System.Activities.Tracking.InteropTrackingRecord> je odvozený z <xref:System.Activities.Tracking.CustomTrackingRecord>.  
   
-4.  Vlastní aktivity WF 3 můžou přistupovat k datům pomocí fronty pracovního postupu v součinnosti prostředí stejným způsobem jako v modulu runtime pracovního postupu WF 3. Nejsou potřeba žádné změny kódu vlastní aktivity. Na hostiteli, data jsou ve frontě do fronty pracovního postupu WF 3 pomocí obnovení <xref:System.Activities.Bookmark>. Název záložky se formátu řetězce <xref:System.IComparable> název fronty pracovního postupu.  
-  
-## <a name="see-also"></a>Viz také  
- [Použití aktivity rozhraní .NET Framework 3.0 nebo .NET Framework 3.5 v pracovním postupu rozhraní .NET Framework 4.5](../../../docs/framework/windows-workflow-foundation/samples/using-a-net-3-0-or-net-3-5-activity-in-a-net-4-5-workflow.md)
+4.  Vlastní aktivity WF 3 můžou přistupovat k datům pomocí fronty pracovního postupu v součinnosti prostředí stejným způsobem jako v modulu runtime pracovního postupu WF 3. Nejsou potřeba žádné změny kódu vlastní aktivity. Na hostiteli, data jsou ve frontě do fronty pracovního postupu WF 3 pomocí obnovení <xref:System.Activities.Bookmark>. Název záložky se formátu řetězce <xref:System.IComparable> název fronty pracovního postupu.

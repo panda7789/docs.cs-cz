@@ -5,11 +5,11 @@ ms.assetid: 4095ba51-de20-4f87-b562-018abe422c91
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 3f4e3dbdc3dae425e44cd1c0890e8fef9d42a780
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47436060"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028393"
 ---
 # <a name="ltremovegt-element-for-schemesettings-uri-settings"></a>&lt;Odebrat&gt; – Element pro schemeSettings (nastavení Uri)
 Odstraní schéma nastavení pro název schématu.  

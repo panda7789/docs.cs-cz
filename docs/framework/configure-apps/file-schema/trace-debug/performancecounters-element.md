@@ -11,11 +11,11 @@ ms.assetid: a71f605b-c7d9-4501-a5c3-abcbb964a43f
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 69d6deafb6aad88f5d379c7e8d4ac707e4c51815
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47209818"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032462"
 ---
 # <a name="ltperformancecountersgt-element"></a>&lt;čítače výkonu&gt; – Element
 Určuje velikost globální paměť sdílenou čítače výkonu.  

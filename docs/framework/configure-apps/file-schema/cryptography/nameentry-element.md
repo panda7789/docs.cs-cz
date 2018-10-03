@@ -11,11 +11,11 @@ ms.assetid: 7d7535e9-4b4a-4b8c-82e2-e40dff5a7821
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 9f8176ca3ee2340100978aef044140dafdeb179b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47400722"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028430"
 ---
 # <a name="ltnameentrygt-element"></a>&lt;nameEntry&gt; – Element
 Název třídy mapuje na algoritmus popisný název, který umožňuje jedna třída má mnoho popisné názvy.  

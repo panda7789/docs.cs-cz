@@ -3,11 +3,11 @@ title: Významných je pouze prvních osm znaků názvu vlastního protokolu
 ms.date: 07/20/2015
 ms.assetid: db2a0252-9ddd-4e93-a239-6a690cc09557
 ms.openlocfilehash: c994399a657de3872e70edce0a9168e22f781ce3
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402679"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035094"
 ---
 # <a name="only-the-first-eight-characters-of-a-custom-log-name-are-significant"></a>Významných je pouze prvních osm znaků názvu vlastního protokolu
 Při kontrole názvy protokolů událostí jedinečný, jsou považovány za pouze prvních 8 znaků. Ke konfliktu může dojít z protokolů událostí, které sdílejí svých prvních 8 znaků.  

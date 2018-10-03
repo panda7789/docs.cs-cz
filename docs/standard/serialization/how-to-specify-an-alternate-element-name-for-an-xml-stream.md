@@ -13,11 +13,11 @@ helpviewer_keywords:
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
 ms.openlocfilehash: 8cb6a66f9fc7a67ae99574e783fd889537b9b11a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208312"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48034490"
 ---
 # <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>Postupy: určení alternativního názvu elementu pro Stream XML
 [Příklad kódu](#cpconoverridingserializationofclasseswithxmlattributeoverridesclassanchor1)  

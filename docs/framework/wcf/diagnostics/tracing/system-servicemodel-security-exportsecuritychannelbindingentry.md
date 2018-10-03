@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 043bad66-0a09-47c2-ae90-d1f225f52a24
 author: BrucePerlerMS
 ms.openlocfilehash: fb8c93119fdd9d68daf5a84ed64eda1741a53826
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47203105"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48030707"
 ---
 # <a name="systemservicemodelsecurityexportsecuritychannelbindingentry"></a>System.ServiceModel.Security.ExportSecurityChannelBindingEntry
 System.ServiceModel.Security.ExportSecurityChannelBindingEntry  

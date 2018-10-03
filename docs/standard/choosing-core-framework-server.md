@@ -4,12 +4,12 @@ description: Průvodce, na kterou implementaci rozhraní .NET, měli byste zvá�
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: dbb5bd21d2fa43167a9624be2baec3f591d10920
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: ab44cca7c9a832dc7e5f03cfc2972de9d0785fd4
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864959"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48046536"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -87,7 +87,7 @@ Některé technologie rozhraní .NET Framework nejsou k dispozici v .NET Core. N
 
 * Aplikace webových formulářů ASP.NET: webové formuláře ASP.NET jsou dostupné pouze v rozhraní .NET Framework. ASP.NET Core nelze použít pro webové formuláře ASP.NET. Nejsou žádné plány zpřístupnit webových formulářů ASP.NET pro .NET Core.
 
-* Aplikace webové stránky ASP.NET: webové stránky ASP.NET nejsou zahrnuty v ASP.NET Core. ASP.NET Core [Razor Pages](/aspnet/core/mvc/razor-pages/) mnoho podobností s webovými stránkami.
+* Aplikace webové stránky ASP.NET: webové stránky ASP.NET nejsou zahrnuty v ASP.NET Core. 
 
 * Implementace služby WCF. I když dojde [knihovna klienta WCF](https://github.com/dotnet/wcf) k využívání služeb WCF v .NET Core, implementaci serveru WCF je momentálně dostupný jenom v rozhraní .NET Framework. Tento scénář není součástí aktuální plán pro .NET Core, ale je nepovažoval v budoucnosti.
 
@@ -104,6 +104,7 @@ Některé společnosti Microsoft nebo třetích stran platformy .NET Core nepodp
 ## <a name="see-also"></a>Viz také:
 
 * [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
+* [ASP.NET Core, které cílí na rozhraní .NET Framework](/aspnet/core#target-framework)
 * [Cílové verze rozhraní .NET Framework](frameworks.md)
 * [Průvodce platformou .NET Core](../core/index.md)  
 * [Portování z rozhraní .NET Framework do .NET Core](../core/porting/index.md)  

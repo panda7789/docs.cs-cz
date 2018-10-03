@@ -5,11 +5,11 @@ ms.assetid: f0370e08-9fa6-4ee5-ab78-9a58a20a7da2
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 436c84c948a867acedf69af1bc7b3e78c308ce54
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193548"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48031968"
 ---
 # <a name="peer-name-publication-and-resolution"></a>Publikace Peer Name a řešení
 ## <a name="publishing-a-peer-name"></a>Publikování název partnerského zařízení  

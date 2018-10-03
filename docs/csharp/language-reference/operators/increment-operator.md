@@ -8,11 +8,11 @@ helpviewer_keywords:
 - ++ operator [C#]
 ms.assetid: e9dec353-070b-44fb-98ed-eb8fdf753feb
 ms.openlocfilehash: a52f614ce1bbfb8e9d9be686b277c1e69f6f9d35
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47202248"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48030467"
 ---
 # <a name="-operator-c-reference"></a>++ – operátor (Referenční dokumentace jazyka C#)
 Operátor Inkrementace (`++`) svého operandu zvýší o hodnotu 1. Operátor Inkrementace může objevit před nebo po jeho operandu: `++variable` a `variable++`.  

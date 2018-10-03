@@ -3,11 +3,11 @@ title: Services2
 ms.date: 03/30/2017
 ms.assetid: 462a2218-f8c6-4fb7-95bc-64765459c429
 ms.openlocfilehash: 3987b170f216064073f14afb489bd7afb5228c77
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47206366"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48035777"
 ---
 # <a name="services"></a>Služby
 Tato část obsahuje ukázky, které předvádějí služby Windows Communication Foundation (WCF).  

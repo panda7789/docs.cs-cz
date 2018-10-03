@@ -11,11 +11,11 @@ ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: ae8fbb47986e5baaecb919ce79ae384a8427737a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47231122"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48032228"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>Zařazování dat s voláním platformy
 Volání funkcí exportovaných z nespravovaná knihovna, vyžaduje aplikaci rozhraní .NET Framework prototypu funkce ve spravovaném kódu, který představuje nespravované funkci. K vytvoření prototypu, který umožňuje platformu vyvolání zařazování dat správně, musíte provést následující:  

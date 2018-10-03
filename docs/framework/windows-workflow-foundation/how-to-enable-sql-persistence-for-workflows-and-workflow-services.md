@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-ms.openlocfilehash: 55869c3c8a957de98962378cc1a93e7058e24e38
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d79c8fc364d13c00049523f7788ada258af6ec98
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524867"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48028335"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů
 
@@ -72,7 +72,7 @@ Můžete zapnout stálost v místním prostředí pracovních postupů, které p
    ```
 
 > [!NOTE]
-> Najdete v článku [uchování aplikace pracovního postupu](../../../docs/framework/windows-workflow-foundation/samples/persisting-a-workflow-application.md) ukázku v [trvalost](../../../docs/framework/windows-workflow-foundation/samples/persistence.md) příklad povolení trvalosti pro pracovní postupy pomocí <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>a [postupy: vytvoření a spuštění dlouhodobého Spuštění pracovního postupu](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md) kroku [kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) pokyny krok za krokem.  
+> Najdete v článku [postupy: vytváření a spouštění dlouhém pracovním postupu spuštění](../../../docs/framework/windows-workflow-foundation/how-to-create-and-run-a-long-running-workflow.md) kroku [kurz Začínáme](../../../docs/framework/windows-workflow-foundation/getting-started-tutorial.md) pokyny krok za krokem.  
 
 ## <a name="enabling-persistence-for-self-hosted-workflow-services-that-use-the-workflowservicehost"></a>Povolení trvalosti pro pracovní postup služby místním, použít hostitele služby pracovního postupu
 
@@ -82,7 +82,7 @@ Můžete povolit trvalost pro služby v místním prostředí pracovních postup
 
 Následující postup obsahuje kroky pro použití <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> třídy k povolení trvalosti pro služby pracovních postupů v místním prostředí.  
 
-##### <a name="to-enable-persistence-using-sqlworkflowinstancestorebehavior"></a>Chcete-li zapnout stálost pomocí SqlWorkflowInstanceStoreBehavior
+#### <a name="to-enable-persistence-using-sqlworkflowinstancestorebehavior"></a>Chcete-li zapnout stálost pomocí SqlWorkflowInstanceStoreBehavior
 
 1.  Přidejte odkaz na System.ServiceModel.dll.  
   
@@ -116,9 +116,6 @@ Následující postup obsahuje kroky pro použití <xref:System.ServiceModel.Act
     ```csharp
     host.Open();
     ```
-
-> [!IMPORTANT]
-> Najdete v článku [integrovaných konfiguračních](../../../docs/framework/windows-workflow-foundation/samples/built-in-configuration.md) ukázku v [trvalost](../../../docs/framework/windows-workflow-foundation/samples/persistence.md) příklad povolení trvalosti pro pracovní postup služby pomocí `SqlWorkflowInstanceStoreBehavior` třídy.  
 
 ### <a name="using-the-durableinstancingoptions-property"></a>Pomocí vlastnosti DurableInstancingOptions
 

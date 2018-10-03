@@ -11,11 +11,11 @@ ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: c5be6ef95693f274e5cb2002e5642d5e58a7661a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47206166"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48033126"
 ---
 # <a name="ltoidentrygt-element"></a>&lt;oidentry –&gt; – Element
 Identifikátor objektu (OID) ASN.1 se mapuje na popisný název.  

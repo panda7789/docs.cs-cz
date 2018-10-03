@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 899d663e-6a6d-49e9-9480-182b6860ae17
 author: BrucePerlerMS
 ms.openlocfilehash: 1894a75debc0eeef3a31c9af54a83eac7202982e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47401430"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48036577"
 ---
 # <a name="systemservicemodelsecuritysecurityserversessioncloseresponsereceived"></a>System.ServiceModel.Security.SecurityServerSessionCloseResponseReceived
 System.ServiceModel.Security.SecurityServerSessionCloseReceived  

@@ -3,11 +3,11 @@ title: 'Základní typy (F #)'
 description: 'Objevte základní typy, které se používají v jazyce F #.'
 ms.date: 07/09/2018
 ms.openlocfilehash: 8f948d066323527b09b1d3f9f4167b95b1c875cf
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47203811"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48026932"
 ---
 # <a name="basic-types"></a>Základní typy
 

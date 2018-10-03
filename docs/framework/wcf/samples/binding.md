@@ -3,11 +3,11 @@ title: Binding1
 ms.date: 03/30/2017
 ms.assetid: 324fa627-d012-465a-b266-95594a09dac2
 ms.openlocfilehash: 124a4bd252f838b737a06b76452619182bc9dea1
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47192246"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48026818"
 ---
 # <a name="binding"></a>Vazba
 Tato část obsahuje ukázky, které ukazují používání atribut vazby prvku koncový bod.  

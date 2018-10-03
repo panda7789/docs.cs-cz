@@ -4,11 +4,11 @@ description: 'Příručka k používání služeb Azure s jazykem F #'
 author: sylvanc
 ms.date: 09/22/2016
 ms.openlocfilehash: b0efa919e846086e2dee131fb5791abc409b5bcb
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47399031"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48033542"
 ---
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 

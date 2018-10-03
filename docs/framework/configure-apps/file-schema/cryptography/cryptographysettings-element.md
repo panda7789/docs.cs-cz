@@ -11,11 +11,11 @@ ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: dc55acd7a698ef37d45e8a412db684c13a3b8b16
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47203368"
+ms.lasthandoff: 10/02/2018
+ms.locfileid: "48025441"
 ---
 # <a name="ltcryptographysettingsgt-element"></a>&lt;cryptographySettings&gt; – Element
 Obsahuje nastavení šifrování.  
