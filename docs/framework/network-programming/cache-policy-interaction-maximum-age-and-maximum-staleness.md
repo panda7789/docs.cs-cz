@@ -12,11 +12,11 @@ ms.assetid: 7f775925-89a1-4956-ba90-c869c1749a94
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: c512f03cd3c0cfc4463e54538f12898fbbf45f7e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47235773"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48245176"
 ---
 # <a name="cache-policy-interactionmaximum-age-and-maximum-staleness"></a>Interakce zásad mezipaměti – maximální stáří a maximální Neaktuálnost
 K zajištění, že nejčerstvější obsah se vrátí do klientské aplikace, interakce vždy klienta mezipaměti zásad serveru opětovné ověření požadavků a výsledkem nejrestriktivnější zásady ukládání do mezipaměti. Všechny příklady v tomto tématu ilustrují zásady ukládání do mezipaměti pro prostředek, který se uloží do mezipaměti na 1. ledna a končí 4. ledna.  

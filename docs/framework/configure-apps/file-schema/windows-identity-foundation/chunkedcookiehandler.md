@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 7220de45-1d14-4aec-a29e-4a2ea8ac861f
 author: BrucePerlerMS
 ms.openlocfilehash: f5592e0fd02d34b2882182196e0aa9425672a8fe
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47400813"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48244931"
 ---
 # <a name="ltchunkedcookiehandlergt"></a>&lt;chunkedCookieHandler&gt;
 Konfiguruje <xref:System.IdentityModel.Services.ChunkedCookieHandler>. Tento element může být pouze přítomen, pokud `mode` atribut `<cookieHandler>` elementu je "Výchozí" nebo "Rozdělený do bloků dat".  

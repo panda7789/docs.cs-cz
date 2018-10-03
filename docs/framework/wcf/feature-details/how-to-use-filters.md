@@ -3,11 +3,11 @@ title: 'Postupy: Použití filtrů'
 ms.date: 03/30/2017
 ms.assetid: f2c7255f-c376-460e-aa20-14071f1666e5
 ms.openlocfilehash: aee0f2e4fbf3b4e0802803b76aa557f2dec668bb
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47421726"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48245189"
 ---
 # <a name="how-to-use-filters"></a>Postupy: Použití filtrů
 Toto téma popisuje základní kroky potřebné k vytvoření konfigurace směrování, která používá více filtrů. V tomto příkladu jsou směrovány dvě implementace službu kalkulačky, regularCalc a roundingCalc zprávy. Obou implementacích podporují stejné operace; jedna služba ale Zaokrouhlí všechny výpočty na nejbližší celočíselnou hodnotu před vrácením. Klientská aplikace musí být schopen určit, jestli se má použít zaokrouhlení verze služby; Pokud je vyjádřená žádná předvolba služby zpráva je mezi těmito dvěma službami s vyrovnáváním zatížení. Operace vystavené obě služby jsou:  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
 ms.openlocfilehash: e8ac320c1edde05074d42652a708320d10690550
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47421285"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48245247"
 ---
 # <a name="ltnettcpbindinggt"></a>&lt;NetTcpBinding&gt;
 Určuje zabezpečená, spolehlivá a optimalizovaná vazby vhodné pro komunikaci mezi počítači. Ve výchozím nastavení vygeneruje zásobník modulu runtime komunikace s Windows zabezpečení pro zabezpečení zpráv a ověřování protokolu TCP pro doručování zpráv a kódování binární zprávy.  

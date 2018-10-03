@@ -6,12 +6,12 @@ ms.date: 04/12/2018
 ms.technology: dotnet-standard
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1c99f59478b61bd382d6bf9529d2921407cc70bc
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 19353bd068e3b04bc3d852c1e22db9c97ebef628
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44253153"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48245046"
 ---
 # <a name="whats-new-in-the-net-standard"></a>Co je nového v .NET Standard
 
@@ -55,7 +55,7 @@ Některé nové funkce do <xref:System> obor názvů v rozhraní .NET Standard 2
 
 ### <a name="support-for-net-framework-libraries"></a>Podporu pro knihovny rozhraní .NET Framework
 
-Drtivou většinu knihoven cílit .NET Framework, nikoli .NET Standard. Většina výzev v těchto knihoven jsou však k rozhraním API, které jsou součástí rozhraní .NET Standard 2.0. Počínaje rozhraním .NET Standard 2.0, dostanete knihovny rozhraní .NET Framework z knihovny .NET Standard s využitím [kompatibility](https://github.com/dotnet/standard/blob/master/docs/planning/netstandard-20/README.md#assembly-unification). Tato vrstva kompatibility je transparentní pro vývojáře; nemusíte dělat nic výhod knihovny rozhraní .NET Framework.
+Drtivou většinu knihoven cílit .NET Framework, nikoli .NET Standard. Většina výzev v těchto knihoven jsou však k rozhraním API, které jsou součástí rozhraní .NET Standard 2.0. Počínaje rozhraním .NET Standard 2.0, dostanete knihovny rozhraní .NET Framework z knihovny .NET Standard s využitím [kompatibility](https://github.com/dotnet/standard/blob/master/docs/planning/netstandard-2.0/README.md#assembly-unification). Tato vrstva kompatibility je transparentní pro vývojáře; nemusíte dělat nic výhod knihovny rozhraní .NET Framework.
 
 Jeden požadavkem je, že rozhraní API volané knihovny tříd rozhraní .NET Framework musí být součástí rozhraní .NET Standard 2.0.
 

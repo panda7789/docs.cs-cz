@@ -6,11 +6,11 @@ ms.assetid: dc2e2b65-f623-4dc3-938b-d2a054d6832c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 59e288a756a022763bae2235964a8b25a9d72bd1
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47861697"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48244617"
 ---
 # <a name="converting-net-framework-types-to-strings"></a>Převádění typů rozhraní .NET Framework na řetězce
 Pokud chcete převést na řetězec, typ rozhraní .NET Framework, použijte **ToString** metody. **ToString** metoda vrátí řetězcovou reprezentaci objektu předaný typ. Následující tabulka uvádí typy rozhraní .NET Framework, které vrací řetězec ve formátu, který se mapuje na specifikace schématu XML (XSD).  

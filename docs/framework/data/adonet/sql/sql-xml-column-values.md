@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: d97ce4da-f09c-4d1e-85b7-a0ccedd7246a
 ms.openlocfilehash: b46c763e7cddfc7617c9a6a23428f83a54955ba0
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208747"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48244695"
 ---
 # <a name="sql-xml-column-values"></a>Hodnoty pro sloupce SQL XML
 Systém SQL Server podporuje `xml` datový typ, a vývojáři mohou načítat sad výsledků dotazu, včetně tohoto typu pomocí standardní chování <xref:System.Data.SqlClient.SqlCommand> třídy. `xml` Sloupec se dá načíst stejně, jako je načten žádný sloupec (do <xref:System.Data.SqlClient.SqlDataReader>, například), ale pokud chcete pracovat s obsahem sloupci ve formátu XML, musíte použít <xref:System.Xml.XmlReader>.  

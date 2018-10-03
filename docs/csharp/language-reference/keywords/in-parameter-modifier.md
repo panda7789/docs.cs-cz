@@ -4,16 +4,16 @@ ms.date: 03/06/2018
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 54abd5192d0d9bb49be0a9feb8e5e4eaeb691a0c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 36bd4ab7cd5ed4ab01a7fda7991df94c26ed5d1a
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512012"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48244968"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v parametru modifikátor (referenční dokumentace jazyka C#)
 
-`in` – Klíčové slovo způsobí, že argumenty, které mají být předány podle odkazu. Je třeba [ref](ref.md) nebo [si](out-parameter-modifier.md) klíčová slova, kromě toho, že `in` nemůže upravit argumentů volané metody. Vzhledem k tomu `ref` argumenty se dají měnit, `out` argumenty musí být upravena klíčovým volajícího a jsou tyto změny pozorovat ve volání kontextu.
+`in` – Klíčové slovo způsobí, že argumenty, které mají být předány podle odkazu. Je třeba [ref](ref.md) nebo [si](out-parameter-modifier.md) klíčová slova, kromě toho, že `in` nemůže upravit argumentů volané metody. Vzhledem k tomu `ref` argumenty se dají měnit, `out` argumenty musí být upravena klíčovým volané metody a jsou tyto změny pozorovat ve volání kontextu.
 
 [!code-csharp-interactive[cs-in-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/InParameterModifier.cs#1)]  
 

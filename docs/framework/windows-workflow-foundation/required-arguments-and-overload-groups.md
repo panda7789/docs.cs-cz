@@ -1,19 +1,19 @@
 ---
-title: Vyžaduje argumenty a skupiny přetížení
+title: Povinné argumenty a skupiny přetížení
 ms.date: 03/30/2017
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
-ms.openlocfilehash: 794a0a531fbd26d9e4242d40be5147ab41547192
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d25702e573acd9a0815c232cdf6935d6e9651631
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517557"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48244864"
 ---
-# <a name="required-arguments-and-overload-groups"></a>Vyžaduje argumenty a skupiny přetížení
-Aktivity lze nakonfigurovat tak, aby některé argumenty jsou povinné vázat pro aktivitu platná pro provedení. `RequiredArgument` Atribut slouží k označení, že některé argumenty u aktivit jsou povinné a `OverloadGroup` atribut slouží k seskupení kategorie povinnými argumenty. Pomocí atributy mohou aktivity tvůrci poskytnout jednoduché nebo komplexní aktivity ověření konfigurace.  
+# <a name="required-arguments-and-overload-groups"></a>Povinné argumenty a skupiny přetížení
+Aktivity lze nastavit tak, aby některé argumenty jsou povinné vázat pro aktivitu platná pro spuštění. `RequiredArgument` Atribut se používá k označení, že se vyžadují některé argumenty pro aktivitu a `OverloadGroup` atribut se používá k seskupení kategorie povinnými argumenty. Pomocí atributů lze aktivity autoři uvádějí aktivitu jednoduchých nebo složitých ověření konfigurace.  
   
-## <a name="using-required-arguments"></a>Pomocí povinnými argumenty  
- Použít `RequiredArgument` atribut v aktivitě, zda jsou požadované argumenty pomocí <xref:System.Activities.RequiredArgumentAttribute>. V tomto příkladu `Add` aktivity je definovaný, dvěma vyžaduje argumenty.  
+## <a name="using-required-arguments"></a>Povinné argumenty  
+ Použít `RequiredArgument` atribut v aktivitě, označení požadovaného argumentů pomocí <xref:System.Activities.RequiredArgumentAttribute>. V tomto příkladu `Add` aktivity je definován, že má dvě povinné argumenty.  
   
 ```csharp  
 public sealed class Add : CodeActivity<int>  
@@ -31,7 +31,7 @@ public sealed class Add : CodeActivity<int>
 }  
 ```  
   
- V jazyce XAML, povinnými argumenty jsou uvedeny i pomocí <xref:System.Activities.RequiredArgumentAttribute>. V tomto příkladu `Add` aktivity se definuje pomocí tří argumentů a používá <xref:System.Activities.Statements.Assign%601> aktivita k provedení operace přidání.  
+ V XAML, povinnými argumenty jsou také uvedeny pomocí <xref:System.Activities.RequiredArgumentAttribute>. V tomto příkladu `Add` aktivity je definován pomocí tří argumentů a použije <xref:System.Activities.Statements.Assign%601> aktivita k provedení operace přidání.  
   
 ```xaml  
 <Activity x:Class="ValidationDemo.Add" ...>  
@@ -59,14 +59,15 @@ public sealed class Add : CodeActivity<int>
 </Activity>  
 ```  
   
- Pokud se používá aktivitu a není vázán buď povinnými argumenty se vrátí následující chybu ověřování.  
+ Pokud se používá aktivitu a není vázaná buď povinnými argumenty vrátil následující chybu ověření.  
   
- **Nebyla zadána hodnota pro argument požadované aktivity 'Operand1'.**  
+ **Nebyla zadána hodnota pro povinný argument aktivity "Operand1".**  
 > [!NOTE]
->  Další informace o kontrole a zpracování chyb při ověřování a upozornění najdete v tématu [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
+> Další informace o zjišťování a zpracování chyb při ověřování a upozornění, najdete v části [vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
   
-## <a name="using-overload-groups"></a>Použití skupin přetížení  
- Přetížení skupiny zadejte metodu, která určuje, které kombinace argumenty jsou platné v aktivitě. Argumenty jsou seskupeny dohromady pomocí <xref:System.Activities.OverloadGroupAttribute>. Každou skupinu je zadaný název, který je zadán <xref:System.Activities.OverloadGroupAttribute>, aktivita je platná, pokud je vázána jen jednu sadu argumentů ve skupině přetížení. V následujícím příkladu převzaty z [OverloadGroups](../../../docs/framework/windows-workflow-foundation/samples/overloadgroups.md) ukázce `CreateLocation` třída definovaná.  
+## <a name="using-overload-groups"></a>Používání skupiny přetížení
+
+Přetížené skupiny poskytují metoda označující, jaké kombinace argumentů jsou platné v nějaké aktivitě. Argumenty jsou seskupené dohromady pomocí <xref:System.Activities.OverloadGroupAttribute>. Každá skupina je přiřazen název, který je určen <xref:System.Activities.OverloadGroupAttribute>. Aktivita je platný, pokud jsou svázány pouze jednu sadu argumentů v přetížené skupině. V následujícím příkladu `CreateLocation` třída je definována.  
   
 ```csharp  
 class CreateLocation: Activity  
@@ -103,9 +104,9 @@ class CreateLocation: Activity
 }  
 ```  
   
- Cílem této aktivity je zadejte umístění v USA. K tomuto účelu uživatele aktivity umístění můžete zadat pomocí jednoho ze tří skupin argumentů. Pokud chcete zadat platné kombinace argumenty, jsou definovány tři skupiny přetížení. `G1` obsahuje `Latitude` a `Longitude` argumenty. `G2` obsahuje `Street`, `City`, a `State`. `G3` obsahuje `Street` a `Zip`. `Name` je také požadovaný argument, ale není součástí skupiny přetížení. Pro tuto aktivitu platná `Name` by musel být vázána společně s všechny argumenty ze skupiny přetížení pouze jeden.  
+ Cílem této aktivity je a zadejte umístění v USA. K tomuto účelu můžete zadat uživatelské aktivity umístění pomocí jedné ze tří skupin argumentů. Chcete-li určit platné kombinace argumentů, jsou definovány tři přetížené skupiny. `G1` obsahuje `Latitude` a `Longitude` argumenty. `G2` obsahuje `Street`, `City`, a `State`. `G3` obsahuje `Street` a `Zip`. `Name` je také požadovaný argument, ale není součástí skupiny přetížení. Pro tuto aktivitu platná `Name` musel být vázaný spolu s všechny argumenty z jeden a pouze jednu přetíženou skupinu.  
   
- V následujícím příkladu převzaty z [databáze Access aktivity](../../../docs/framework/windows-workflow-foundation/samples/database-access-activities.md) ukázku, existují dvě přetížení skupin: `ConnectionString` a `ConfigFileSectionName`. Pro tuto aktivitu. Chcete-li být platný, buď `ProviderName` a `ConnectionString` argumenty musí být vázán, nebo `ConfigName` argument, ale ne obojí.  
+ V následujícím příkladu se pořídí z [aktivity přístupu k databázi](../../../docs/framework/windows-workflow-foundation/samples/database-access-activities.md) ukázku, existují dvě přetížení skupin: `ConnectionString` a `ConfigFileSectionName`. Pro tuto aktivitu platit, buď `ProviderName` a `ConnectionString` argumenty musí být vázán, nebo `ConfigName` argument, ale ne obojí.  
   
 ```  
 Public class DbUpdate: AsyncCodeActivity  
@@ -141,21 +142,21 @@ Public class DbUpdate: AsyncCodeActivity
 }  
 ```  
   
- Při definování skupinu přetížení:  
+ Při definování přetížené skupiny:  
   
--   Skupinu přetížení nemůže být podmnožinu nebo ekvivalentní sadu jiné skupiny pro přetížení.  
+-   Přetížené skupiny nemůže být dílčí nebo ekvivalentní sadu jiného přetíženou skupinu.  
   
     > [!NOTE]
-    >  Existuje jedna výjimka tohoto pravidla. Pokud skupinu přetížení je podmnožinou jiné přetížení skupiny a do něj podmnožinu obsahuje pouze argumenty kde `RequiredArgument` je `false`, pak přetížení skupina je neplatná.  
+    >  Existuje jedna výjimka tohoto pravidla. Pokud přetížené skupiny jsou podmnožinou jiné skupiny přetížení a dílčí obsahuje argumenty, pouze pokud `RequiredArgument` je `false`, přetíženou skupinu je platný.  
   
--   Přetížení skupiny může dojít k překrytí, ale jedná se o chybu, pokud průniku skupiny obsahuje všechny požadované argumenty jednoho nebo obou skupin přetížení. V předchozím příkladu `G2` a `G3` přetížení skupiny překryté, ale protože průnik neobsahoval všechny argumenty jednoho nebo obou skupin byla platná.  
+-   Přetížené skupiny může dojít k překrytí, ale jedná se o chybu, pokud je určena průsečíkem skupiny obsahuje všechny požadované argumenty alespoň jednu z přetížených skupin. V předchozím příkladu `G2` a `G3` přetížení překrývajících se skupiny, ale protože je určena průsečíkem neobsahovala všechny argumenty jednoho nebo obou skupin toto byla platná.  
   
- Při vytváření vazby argumenty ve skupině přetížení:  
+ Při vytváření vazby argumenty v přetížené skupiny:  
   
--   Skupinu přetížení je považována za hranice, pokud všechny `RequiredArgument` argumenty ve skupině je vázána.  
+-   Přetížené skupiny se považuje za mez, zda mají všechny `RequiredArgument` argumenty ve skupině jsou vázána.  
   
--   Pokud skupina má nula `RequiredArgument` argumentů a alespoň jeden argument vázán, pak skupinu se považuje za hranice.  
+-   Pokud má skupina nula `RequiredArgument` argumenty a aspoň jeden argument vázán, pak skupinu se považuje za s vazbou.  
   
--   Pokud žádné přetížení skupiny jsou svázané s Pokud jedna skupina přetížení neobsahuje žádné je chyba ověření `RequiredArgument` argumenty v ní.  
+-   Je chyba ověřování, pokud žádné přetížené skupiny jsou vázány, není-li jednu přetíženou skupinu nemá žádné `RequiredArgument` argumenty v ní.  
   
--   Jedná se o chybu do mají více než jednu skupinu přetížení vázán, který je, všechny požadované argumenty ve skupině jedním přetížením jsou svázané s a také vázán některý argument v jiné skupině přetížení.
+-   Jedná se o chybu mít více než jednu přetíženou skupinu vázán, který je, jsou vázána všechny požadované argumenty v jednu přetíženou skupinu a jsou svázaná některý argument v jiné skupině přetížení.

@@ -10,11 +10,11 @@ ms.assetid: e1ed1197-3e9e-4e78-8845-92e82787faed
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 524c950d19c84b28b44593e5aa42a92ee7bcb8a8
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47202218"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48244526"
 ---
 # <a name="ui-automation-clients-for-managed-code"></a>Klienti automatizace uživatelského rozhraní pro spravovaný kód
 > [!NOTE]
