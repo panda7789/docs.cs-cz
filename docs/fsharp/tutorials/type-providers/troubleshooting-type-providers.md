@@ -4,7 +4,7 @@ description: 'Zjistěte potenciální řešení problémů, ke kterým máte pra
 ms.date: 05/16/2016
 ms.openlocfilehash: f3b8ffdaf615563305b7b84b45a9ed1e066d0dcc
 ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
 ms.lasthandoff: 10/03/2018
 ms.locfileid: "48244916"
