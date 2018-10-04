@@ -8,16 +8,16 @@ ms.assetid: 98ddbdb9-66b1-4080-92ad-51f5c447fcf8
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 1f78f98f94daa51c17a1294285e13dfddd457106
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48244547"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48579761"
 ---
-# <a name="how-to-register-a-custom-protocol-using-webrequest"></a><span data-ttu-id="ee0ab-102">Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest</span><span class="sxs-lookup"><span data-stu-id="ee0ab-102">How to: Register a Custom Protocol Using WebRequest</span></span>
-<span data-ttu-id="ee0ab-103">Tento příklad ukazuje, jak registrovat protokol, který konkrétní classthat je definována jinde.</span><span class="sxs-lookup"><span data-stu-id="ee0ab-103">This example shows how to register a protocol specific classthat is defined elsewhere.</span></span> <span data-ttu-id="ee0ab-104">V tomto příkladu `CustomWebRequestCreator` je implementované uživatele objekt, který implementuje **vytvořit** metodu, která vrací `CustomWebRequest` objektu.</span><span class="sxs-lookup"><span data-stu-id="ee0ab-104">In this example, `CustomWebRequestCreator` is the user-implemented object that implements the **Create** method that returns the `CustomWebRequest` object.</span></span> <span data-ttu-id="ee0ab-105">Příklad kódu předpokládá, že jste napsali `CustomWebRequest` kód, který implementuje vlastní protokol.</span><span class="sxs-lookup"><span data-stu-id="ee0ab-105">The code example assumes that you have written the `CustomWebRequest` code that implements the custom protocol.</span></span>  
+# <a name="how-to-register-a-custom-protocol-using-webrequest"></a><span data-ttu-id="45228-102">Postupy: Registrace vlastního protokolu pomocí žádosti WebRequest</span><span class="sxs-lookup"><span data-stu-id="45228-102">How to: Register a Custom Protocol Using WebRequest</span></span>
+<span data-ttu-id="45228-103">Tento příklad ukazuje, jak registrovat protokol, který konkrétní classthat je definována jinde.</span><span class="sxs-lookup"><span data-stu-id="45228-103">This example shows how to register a protocol specific classthat is defined elsewhere.</span></span> <span data-ttu-id="45228-104">V tomto příkladu `CustomWebRequestCreator` je implementované uživatele objekt, který implementuje **vytvořit** metodu, která vrací `CustomWebRequest` objektu.</span><span class="sxs-lookup"><span data-stu-id="45228-104">In this example, `CustomWebRequestCreator` is the user-implemented object that implements the **Create** method that returns the `CustomWebRequest` object.</span></span> <span data-ttu-id="45228-105">Příklad kódu předpokládá, že jste napsali `CustomWebRequest` kód, který implementuje vlastní protokol.</span><span class="sxs-lookup"><span data-stu-id="45228-105">The code example assumes that you have written the `CustomWebRequest` code that implements the custom protocol.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ee0ab-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="ee0ab-106">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="45228-106">Příklad</span><span class="sxs-lookup"><span data-stu-id="45228-106">Example</span></span>  
   
 ```csharp  
 WebRequest.RegisterPrefix("custom", new CustomWebRequestCreator());  
@@ -29,10 +29,10 @@ WebRequest.RegisterPrefix("custom", New CustomWebRequestCreator())
 Dim req As WebRequest = WebRequest.Create("custom://customHost.contoso.com/")  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="ee0ab-107">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="ee0ab-107">Compiling the Code</span></span>  
- <span data-ttu-id="ee0ab-108">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="ee0ab-108">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="45228-107">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="45228-107">Compiling the Code</span></span>  
+ <span data-ttu-id="45228-108">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="45228-108">This example requires:</span></span>  
   
- <span data-ttu-id="ee0ab-109">Odkazy <xref:System.Net> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="ee0ab-109">References to the <xref:System.Net> namespace.</span></span>  
+ <span data-ttu-id="45228-109">Odkazy <xref:System.Net> oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="45228-109">References to the <xref:System.Net> namespace.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ee0ab-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="ee0ab-110">See Also</span></span>  
- [<span data-ttu-id="ee0ab-111">Programování připojitelných protokolů</span><span class="sxs-lookup"><span data-stu-id="ee0ab-111">Programming Pluggable Protocols</span></span>](../../../docs/framework/network-programming/programming-pluggable-protocols.md)
+## <a name="see-also"></a><span data-ttu-id="45228-110">Viz také</span><span class="sxs-lookup"><span data-stu-id="45228-110">See Also</span></span>  
+ [<span data-ttu-id="45228-111">Programování připojitelných protokolů</span><span class="sxs-lookup"><span data-stu-id="45228-111">Programming Pluggable Protocols</span></span>](../../../docs/framework/network-programming/programming-pluggable-protocols.md)

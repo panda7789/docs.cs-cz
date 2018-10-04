@@ -7,16 +7,16 @@ ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: e066af175982b71fb42bf2eec75fe9d92f532e61
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402747"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48264381"
 ---
-# <a name="how-to-ping-a-host"></a><span data-ttu-id="27f8d-102">Postupy: příkaz Ping na hostitele</span><span class="sxs-lookup"><span data-stu-id="27f8d-102">How to: Ping a Host</span></span>
-<span data-ttu-id="27f8d-103">Tento příklad ukazuje, jak pomocí příkazu ping vzdálený hostitel.</span><span class="sxs-lookup"><span data-stu-id="27f8d-103">This sample shows how to ping a remote host.</span></span>  
+# <a name="how-to-ping-a-host"></a><span data-ttu-id="04654-102">Postupy: příkaz Ping na hostitele</span><span class="sxs-lookup"><span data-stu-id="04654-102">How to: Ping a Host</span></span>
+<span data-ttu-id="04654-103">Tento příklad ukazuje, jak pomocí příkazu ping vzdálený hostitel.</span><span class="sxs-lookup"><span data-stu-id="04654-103">This sample shows how to ping a remote host.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="27f8d-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="27f8d-104">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="04654-104">Příklad</span><span class="sxs-lookup"><span data-stu-id="04654-104">Example</span></span>  
   
 ```  
 using System;  
@@ -122,7 +122,7 @@ namespace Examples.System.Net.NetworkInformation.PingTest
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="27f8d-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="27f8d-105">Compiling the Code</span></span>  
- <span data-ttu-id="27f8d-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="27f8d-106">This example requires:</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="04654-105">Probíhá kompilace kódu</span><span class="sxs-lookup"><span data-stu-id="04654-105">Compiling the Code</span></span>  
+ <span data-ttu-id="04654-106">Tento příklad vyžaduje:</span><span class="sxs-lookup"><span data-stu-id="04654-106">This example requires:</span></span>  
   
--   <span data-ttu-id="27f8d-107">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="27f8d-107">References to the **System.Net** namespace.</span></span>
+-   <span data-ttu-id="04654-107">Odkazy **System.Net** oboru názvů.</span><span class="sxs-lookup"><span data-stu-id="04654-107">References to the **System.Net** namespace.</span></span>
