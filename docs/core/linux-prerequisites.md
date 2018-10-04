@@ -4,12 +4,12 @@ description: Podporované verze systému Linux a závislosti .NET Core pro vývo
 author: jralexander
 ms.author: johalex
 ms.date: 08/20/2018
-ms.openlocfilehash: d0e5b203dc8e1ec6807f28de7d910c74a2ffe665
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4939dfb642c2aef9da593a193f42334f1d57e067
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506846"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580731"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Požadavky pro .NET Core v Linuxu
 
@@ -35,8 +35,8 @@ NET Core 2.1 je podporována v následujících distribucích systému Linux/ver
 * CentOS 7 - 64-bit (`x86_64` nebo `amd64`) 
 * Oracle Linux 7 - 64-bit (`x86_64` nebo `amd64`) 
 * Fedora 28, 27 - 64-bit (`x86_64` nebo `amd64`) 
-* Debian 9 (64-bit, ARM32), 8.7 nebo novější verze - 64-bit (`x86_64` nebo `amd64`)
-* Ubuntu 18.04 (64-bit, ARM32), 16.04, 14.04 - 64-bit (`x86_64` nebo `amd64`)
+* Debian 9 (64-bit, `arm32`), 8.7 nebo novější verze - 64-bit (`x86_64` nebo `amd64`)
+* Ubuntu 18.04 (64-bit, `arm32`), 16.04, 14.04 - 64-bit (`x86_64` nebo `amd64`)
 * Linux Mint 18, 17 – 64-bit (`x86_64` nebo `amd64`)
 * openSUSE 42.3 nebo novější verze - 64-bit (`x86_64` nebo `amd64`)
 * SUSE Enterprise Linux (SLES) 12 aktualizace Service Pack 2 nebo novější - 64-bit (`x86_64` nebo `amd64`)

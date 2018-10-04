@@ -2,47 +2,47 @@
 title: Postup konfiguračního kanálu
 ms.date: 03/30/2017
 ms.assetid: 3b749493-bd8a-4ccb-893e-5948901a1486
-ms.openlocfilehash: 1f95356b0b473b297b36c7661c849589e9c0d6ef
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b5dbabf8cdc28cc2beaf343b0377528c6ced1c66
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520811"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778585"
 ---
 # <a name="configuration-channel-factory"></a>Postup konfiguračního kanálu
-Tento příklad zahrnuje použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>. <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> Umožňuje centrální správu z konfigurace klienta WCF. To může být užitečné v situacích, ve kterých je konfigurace vybrané nebo změnit po dobu načítání domény aplikace.  
-  
-## <a name="demonstrates"></a>Demonstruje  
- <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>  
-  
-## <a name="discussion"></a>Diskuse  
- Tento příklad ukazuje způsob použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> přidat konkrétní konfigurační soubor do klientské aplikace, aniž byste museli používat výchozí konfigurační soubor aplikace.  
-  
- Vzorek se skládá ze dvou projektů. První projekt je jednoduchou službu, na kterém běží odpovídání na zprávy přicházející z klientů. Je druhý projekt klientské aplikace, který vytváří dvě <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> objektů pomocí <xref:System.Configuration.ExeConfigurationFileMap> Test.config konfiguračního souboru a použije je ke komunikaci se službou. Oba klienti komunikaci se službou pomocí zadané v Test.config konfigurace.  
-  
- Následující kód přidá vlastní konfigurační soubor do klientské aplikace.  
-  
-```  
-ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();  
-fileMap.ExeConfigFilename = "Test.config";  
-Configuration newConfiguration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);  
-  
-ConfigurationChannelFactory<ICalculatorChannel> factory1 = new ConfigurationChannelFactory<ICalculatorChannel>("endpoint1", newConfiguration, new EndpointAddress("http://localhost:8000/servicemodelsamples/service"));  
-ICalculatorChannel client1 = factory1.CreateChannel();  
-```  
-  
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
-  
-1.  Otevřít [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] s oprávněními správce.  
-  
-2.  Klikněte pravým tlačítkem na řešení ConfigurationChannelFactory (2 projektů) a pak vyberte **vlastnosti**.  
-  
-3.  V **společné vlastnosti**vyberte **spouštěný projekt**a potom klikněte na tlačítko **více projektů po spuštění**.  
-  
-4.  Přesunout **služby** projekt na začátku seznamu, se **akce 'Start'** a poté přesuňte **klienta** projektu po **služby**projektu, také se **akce 'Start'**, takže **klienta** projektu se spustí až po **služby** projektu.  
-  
-5.  Klikněte na tlačítko **OK**a potom stiskněte klávesu F5 (nebo CTRL + F5) ke spuštění ukázky.  
-  
+Tento příklad zahrnuje použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>. <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> Umožňuje centrální správu z konfigurace klienta WCF. To může být užitečné v situacích, ve kterých je konfigurace vybrané nebo změnit po dobu načítání domény aplikace.
+
+## <a name="demonstrates"></a>Demonstruje
+ <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601>
+
+## <a name="discussion"></a>Diskuse
+ Tento příklad ukazuje způsob použití <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> přidat konkrétní konfigurační soubor do klientské aplikace, aniž byste museli používat výchozí konfigurační soubor aplikace.
+
+ Vzorek se skládá ze dvou projektů. První projekt je jednoduchou službu, na kterém běží odpovídání na zprávy přicházející z klientů. Je druhý projekt klientské aplikace, který vytváří dvě <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> objektů pomocí <xref:System.Configuration.ExeConfigurationFileMap> Test.config konfiguračního souboru a použije je ke komunikaci se službou. Oba klienti komunikaci se službou pomocí zadané v Test.config konfigurace.
+
+ Následující kód přidá vlastní konfigurační soubor do klientské aplikace.
+
+```
+ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap();
+fileMap.ExeConfigFilename = "Test.config";
+Configuration newConfiguration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+
+ConfigurationChannelFactory<ICalculatorChannel> factory1 = new ConfigurationChannelFactory<ICalculatorChannel>("endpoint1", newConfiguration, new EndpointAddress("http://localhost:8000/servicemodelsamples/service"));
+ICalculatorChannel client1 = factory1.CreateChannel();
+```
+
+#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku
+
+1.  Otevřete Visual Studio 2012 s oprávněními správce.
+
+2.  Klikněte pravým tlačítkem na řešení ConfigurationChannelFactory (2 projektů) a pak vyberte **vlastnosti**.
+
+3.  V **společné vlastnosti**vyberte **spouštěný projekt**a potom klikněte na tlačítko **více projektů po spuštění**.
+
+4.  Přesunout **služby** projekt na začátku seznamu, se **akce 'Start'** a poté přesuňte **klienta** projektu po **služby**projektu, také se **akce 'Start'**, takže **klienta** projektu se spustí až po **služby** projektu.
+
+5.  Klikněte na tlačítko **OK**a potom stiskněte klávesu F5 (nebo CTRL + F5) ke spuštění ukázky.
+
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   

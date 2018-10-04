@@ -5,11 +5,11 @@ ms.assetid: 1da7f5ff-5a67-44ba-b165-f3e5de008e4a
 author: guardrex
 ms.author: mairaw
 ms.openlocfilehash: 049a51fb7b92ef1601b435a49ae4678f052ac509
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47194033"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48579774"
 ---
 # <a name="windows-workflow-foundation-wf-migration-guidance"></a>Pokyny k migraci Windows Workflow Foundation (WF)
 

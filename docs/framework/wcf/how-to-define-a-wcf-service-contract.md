@@ -7,15 +7,14 @@ dev_langs:
 - CSharp
 - VB
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
-ms.openlocfilehash: 4f85a51c47eb045d1d2f0111cb217199c9acf0d7
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 9f7f696b1f5be2e96c50938f4627271d891deb32
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46537875"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582197"
 ---
 # <a name="how-to-define-a-windows-communication-foundation-service-contract"></a>Postupy: Definování kontraktu služby WCF
-
 Toto je první z šesti úkolů, muset vytvořit základní aplikaci Windows Communication Foundation (WCF). Přehled všech šesti úkoly, naleznete v tématu [kurz Začínáme](../../../docs/framework/wcf/getting-started-tutorial.md) tématu.
 
  Při vytváření služby WCF, je první úkol k definování kontraktu služby. Kontrakt služby specifikuje, jaké operace služba podporuje. Operace můžete představit jako metodu webové služby. Kontrakty se vytvoří definováním rozhraní C++, C# nebo Visual Basic (VB). Každá metoda v rozhraní odpovídá konkrétní operaci služby. Každé rozhraní musí mít <xref:System.ServiceModel.ServiceContractAttribute> použit a každá operace musí mít <xref:System.ServiceModel.OperationContractAttribute> byt aplikovaný atribut. Pokud metoda v rozhraní, který má <xref:System.ServiceModel.ServiceContractAttribute> atribut nemá <xref:System.ServiceModel.OperationContractAttribute> atribut, taková metoda se nevystaví službou.

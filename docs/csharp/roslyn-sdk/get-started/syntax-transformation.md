@@ -3,12 +3,12 @@ title: Začínáme s syntaxe transformace (rozhraní Roslyn API)
 description: Úvod do procházení, dotazování a procházení stromu syntaxe.
 ms.date: 06/01/2018
 ms.custom: mvc
-ms.openlocfilehash: acba7ac590154ad8458d0d9a8abac55a12e96265
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 3f8d152a2e17bc9e480bd0a76488c563720a63b1
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47400787"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266712"
 ---
 # <a name="get-started-with-syntax-transformation"></a>Začínáme s syntaxe transformace
 
@@ -120,7 +120,7 @@ public override SyntaxNode VisitLocalDeclarationStatement(LocalDeclarationStatem
 ```
 
 > [!NOTE]
-> Mnohé z rozhraní Roslyn API deklarovat návratové typy, které jsou základní třídy skutečné typy modulu runtime vrátila. n mnoho scénářů, jeden druh uzlu může být zcela - nahrazuje jiný druh uzlu nebo dokonce odebrat. V tomto příkladu <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)> metoda vrátí hodnotu <xref:Microsoft.CodeAnalysis.SyntaxNode>, namísto odvozeným typem tohoto <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax>. Vrátí nový tento RW <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> uzel je založené na existující.
+> Mnohé z rozhraní Roslyn API deklarovat návratové typy, které jsou základní třídy skutečné typy modulu runtime vrátila. V mnoha případech může zcela - nahrazuje jiný druh uzlu jeden typ uzlu nebo dokonce odebrat. V tomto příkladu <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter.VisitLocalDeclarationStatement(Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax)> metoda vrátí hodnotu <xref:Microsoft.CodeAnalysis.SyntaxNode>, namísto odvozeným typem tohoto <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax>. Vrátí nový tento RW <xref:Microsoft.CodeAnalysis.CSharp.Syntax.LocalDeclarationStatementSyntax> uzel je založené na existující.
 
 V tomto rychlém startu zpracovává deklarace místních proměnných. Můžete rozšířit ji do jiné deklarace, jako `foreach` smyčky, `for` smyčky, LINQ – výrazy a výrazy lambda. Kromě toho tento RW bude pouze transformace deklarací v nejjednodušší podobě:
 

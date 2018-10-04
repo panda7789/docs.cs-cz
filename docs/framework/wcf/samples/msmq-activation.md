@@ -2,12 +2,12 @@
 title: Aktivace MSMQ
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: a03f5783e732c4a0f3f13cf6abd7ec4803c07c8f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: a179fca70a97b4fd9c7b21bdf548afdda59dda91
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779309"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48780151"
 ---
 # <a name="msmq-activation"></a>Aktivace MSMQ
 Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation Service (), které se načítají z fronty zpráv. Tento příklad používá `netMsmqBinding` a je založena na [obousměrné komunikace](../../../../docs/framework/wcf/samples/two-way-communication.md) vzorku. Služby v tomto případě je hostované webové aplikace a klient je v místním prostředí a vypíše do konzoly sledovat stav nákupní objednávky odeslané.  
@@ -20,7 +20,7 @@ Tento příklad ukazuje, jak hostovat aplikace ve Windows WAS Process Activation
 >   
 >  \<InstallDrive >: \WF_WCF_Samples  
 >   
->  Pokud tento adresář neexistuje, přejděte na Windows Communication Foundation (WCF) hypertextový odkaz "https://go.microsoft.com/fwlink/?LinkId=150780" \t "_blank" a ukázky Windows Workflow Foundation (WF) pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] stáhnout všechny WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
+>  Pokud tento adresář neexistuje, přejděte na Windows Communication Foundation (WCF) hypertextový odkaz "https://go.microsoft.com/fwlink/?LinkId=150780"\t"\_prázdný" a ukázky Windows Workflow Foundation (WF) pro [!INCLUDE[netfx40_long](../../../../includes/netfx40-long-md.md)] stáhnout všechny WCF a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
 >  \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.  
   
@@ -76,7 +76,8 @@ public class OrderProcessorService : IOrderProcessor
             client.OrderStatus(po.PONumber, po.Status);  
             scope.Complete();  
         }  
-    }  
+    }
+}
 ```  
   
  Vytvoření vazby na použití klienta je zadán pomocí konfiguračního souboru.  
@@ -173,7 +174,7 @@ public class OrderStatusService : IOrderStatus
   
  Je vytvářena fronta stav objednávky v `Main` metody. Konfigurace klienta zahrnuje konfiguraci služby stavu objednávky pro hostování služby stavu objednávky, jak je znázorněno v následující ukázková konfigurace.  
   
-```csharp  
+```xml  
 <appSettings>  
     <!-- use appSetting to configure MSMQ queue name -->  
     <add key="targetQueueName" value=".\private$\ServiceModelSamples/service.svc" />  
@@ -269,7 +270,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
         > [!NOTE]
         >  Tento příkaz je jeden řádek textu.  
   
-         Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí http://localhost/servicemodelsamples a net.msmq://localhost/servicemodelsamples.  
+         Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí `http://localhost/servicemodelsamples` a `net.msmq://localhost/servicemodelsamples`.
   
 7.  Pokud jste neudělali dříve, ujistěte se, že je povolená aktivace služby MSMQ. Z **Start** nabídky, klikněte na tlačítko **spustit**a typ `Services.msc`. V seznamu služeb pro vyhledejte **adaptér naslouchání Net.Msmq**. Klikněte pravým tlačítkem a vyberte **vlastnosti**. Nastavte **typ spouštění** k **automatické**, klikněte na tlačítko **použít** a klikněte na tlačítko **Start** tlačítko. Tento krok je třeba provést pouze jednou před první využití služby adaptér naslouchání Net.Msmq.  
   

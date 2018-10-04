@@ -24,378 +24,371 @@ helpviewer_keywords:
 - focus [WPF]
 - mouse position [WPF]
 ms.assetid: ee5258b7-6567-415a-9b1c-c0cbe46e79ef
-ms.openlocfilehash: 77f69fb73d40c76257accc989d4a9a57ed992cf6
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 4492b92268828943d222fbf624781bc0b9ce7901
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36207648"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48781593"
 ---
 # <a name="input-overview"></a>Přehled vstupu
-<a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] pro získání vstupu z mnoha různých zařízení, včetně myši, klávesnice, touch a pera. Toto téma popisuje služeb poskytovaných [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětluje architektuře vstupní systémy.  
-  
-  
-<a name="input_api"></a>   
-## <a name="input-api"></a>Vstup rozhraní API  
- Primární vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] ohrožení nachází na třídy base element: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>.  Další informace o základní prvky najdete v tématu [základní přehled elementy](../../../../docs/framework/wpf/advanced/base-elements-overview.md).  Tyto třídy poskytují funkce pro vstupní události související s stisknutí klávesy, tlačítka myši, kolečka myši, pohybu myši, fokus správy a zachycení myši, a další. Tím, že vstup [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na základní prvky místo považuje všechny vstupní události jako služba, vstupní architektura umožňuje vstupních událostech se, která byla vytvořena pomocí konkrétního objektu v uživatelském rozhraní a které podporují příslušné události směrování schéma více než jeden element má příležitost zpracovat vstupní události. Mnoho událostí vstupní mít pár události související s nimi.  Například klíč událost vypnutí přidružen <xref:System.Windows.Input.Keyboard.KeyDown> a <xref:System.Windows.Input.Keyboard.PreviewKeyDown> události.  Rozdíl ve tyto události je v tom, jak se směrují do cílového elementu.  Tunelové propojení, události Preview dolů stromu element z kořenového prvku do cílového elementu.  Probublávání události vyvolat z cílového elementu pro kořenový element.  Událost směrování v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je podrobněji popsána dále v tomto přehledu a v [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
-  
-### <a name="keyboard-and-mouse-classes"></a>Klávesnice a myši třídy  
- Kromě vstup [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na třídy base element <xref:System.Windows.Input.Keyboard> třídy a <xref:System.Windows.Input.Mouse> třídy poskytují další [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] pro práci s klávesnici a myš vstup.  
-  
- Příklady vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na <xref:System.Windows.Input.Keyboard> třídy jsou <xref:System.Windows.Input.Keyboard.Modifiers%2A> vlastnost, která vrací <xref:System.Windows.Input.ModifierKeys> aktuálně stisknutí a <xref:System.Windows.Input.Keyboard.IsKeyDown%2A> metoda, která určuje, zda je zadaný klíč stisknutí.  
-  
- Následující příklad používá <xref:System.Windows.Input.Keyboard.GetKeyStates%2A> metoda k určení, zda <xref:System.Windows.Input.Key> je ve stavu dolů.  
-  
+<a name="introduction"></a> [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Subsystému poskytuje výkonný [!INCLUDE[TLA#tla_api](../../../../includes/tlasharptla-api-md.md)] získávání vstupu z nejrůznějších zařízení, včetně myši, klávesnice, dotykové ovládání a stylus. Toto téma popisuje služby poskytované [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] a vysvětlení architektury vstupní systémy.
+
+
+<a name="input_api"></a>
+## <a name="input-api"></a>Vstupní rozhraní API
+ Primární vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] expozice se nachází na základní element třídy: <xref:System.Windows.UIElement>, <xref:System.Windows.ContentElement>, <xref:System.Windows.FrameworkElement>, a <xref:System.Windows.FrameworkContentElement>.  Další informace o základní prvky, naleznete v tématu [přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md).  Tyto třídy nakonfigurovánu vstupní události související s stisknutí kláves, tlačítka myši, kolečka myši, pohybu myši, fokus správy a zachycení myši, pár. Tak, že vstup [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na základní prvky, místo považuje všechny vstupní události jako služba, vstupní architektura umožňuje použít jako zdroj podle určitého objektu v uživatelském rozhraní a pro podporu schématu směrování událostí, kterým vstupní události více než jeden element má příležitost pro zpracování vstupních událostí. Mnoho vstupní události mají dvojice událostí spojených s nimi.  Například je přidružený klíč událost vypnutí <xref:System.Windows.Input.Keyboard.KeyDown> a <xref:System.Windows.Input.Keyboard.PreviewKeyDown> události.  Rozdíl v těchto událostí je v tom, jak se směrují do cílového elementu.  Tunelové propojení událostí ve verzi Preview dolů stromem prvků z kořenový element do cílového elementu.  Šíření událostí vyvolat z cílového elementu do kořenového elementu.  Směrování událostí ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je podrobněji dále v tomto přehledu a v [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).
+
+### <a name="keyboard-and-mouse-classes"></a>Klávesnice a myši třídy
+ Kromě vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] u tříd base element <xref:System.Windows.Input.Keyboard> třídy a <xref:System.Windows.Input.Mouse> třídy poskytují další [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] pro práci s klávesnicí a myší vstup.
+
+ Příklady vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na <xref:System.Windows.Input.Keyboard> třídy jsou <xref:System.Windows.Input.Keyboard.Modifiers%2A> vlastnost, která vrací <xref:System.Windows.Input.ModifierKeys> aktuálně stisknutí a <xref:System.Windows.Input.Keyboard.IsKeyDown%2A> metoda, která určuje, zda je zadaný klíč se stiskne.
+
+ Následující příklad používá <xref:System.Windows.Input.Keyboard.GetKeyStates%2A> metodu k určení, zda <xref:System.Windows.Input.Key> je ve stavu dolů.
+
  [!code-csharp[keyargssnippetsample#KeyEventArgsKeyBoardGetKeyStates](../../../../samples/snippets/csharp/VS_Snippets_Wpf/KeyArgsSnippetSample/CSharp/Window1.xaml.cs#keyeventargskeyboardgetkeystates)]
- [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardGetKeyStates](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardgetkeystates)]  
-  
- Příklady vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na <xref:System.Windows.Input.Mouse> třídy jsou <xref:System.Windows.Input.Mouse.MiddleButton%2A>, který získá stav tlačítko myši střední a <xref:System.Windows.Input.Mouse.DirectlyOver%2A>, který získá element ukazatel myši nad právě.  
-  
- Následující příklad určuje, zda <xref:System.Windows.Input.Mouse.LeftButton%2A> v myší <xref:System.Windows.Input.MouseButtonState.Pressed> stavu.  
-  
+ [!code-vb[keyargssnippetsample#KeyEventArgsKeyBoardGetKeyStates](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/KeyArgsSnippetSample/visualbasic/window1.xaml.vb#keyeventargskeyboardgetkeystates)]
+
+ Příklady vstupu [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] na <xref:System.Windows.Input.Mouse> třídy jsou <xref:System.Windows.Input.Mouse.MiddleButton%2A>, která získá stav prostřední tlačítko myši, a <xref:System.Windows.Input.Mouse.DirectlyOver%2A>, který získá prvek ukazatel myši nad je aktuálně.
+
+ Následující příklad určuje, zda <xref:System.Windows.Input.Mouse.LeftButton%2A> myši probíhá <xref:System.Windows.Input.MouseButtonState.Pressed> stavu.
+
  [!code-csharp[mouserelatedsnippets#MouseRelatedSnippetsGetLeftButtonMouse](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MouseRelatedSnippets/CSharp/Window1.xaml.cs#mouserelatedsnippetsgetleftbuttonmouse)]
- [!code-vb[mouserelatedsnippets#MouseRelatedSnippetsGetLeftButtonMouse](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetsgetleftbuttonmouse)]  
-  
- <xref:System.Windows.Input.Mouse> a <xref:System.Windows.Input.Keyboard> třídy jsou popsané v tomto přehledu podrobněji.  
-  
-### <a name="stylus-input"></a>Vstup pera  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] má integrovaná podpora <xref:System.Windows.Input.Stylus>.  <xref:System.Windows.Input.Stylus> Pera vstup, provedené pomocí Oblíbené [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)].  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace může považovat za pera myš pomocí myši [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], ale [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] taky zpřístupňuje abstrakce pera zařízení, které používají model podobná klávesnici a myš.  Všechny související s pera [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] obsahovat slovo "Pera".  
-  
- Protože pera může fungovat jako myš, aplikace, které podporují pouze vstup z myši můžete stále získat určité úrovně podpory pera automaticky. Když pera slouží takovým způsobem, aplikace je zadána možnost zpracování události odpovídající pera a pak zpracovává odpovídající událost myší. Kromě toho jsou vyšší úrovně služeb, jako je vstup rukopisu také k dispozici prostřednictvím abstrakce pera zařízení.  Další informace o rukopisu jako vstup najdete v tématu [Začínáme s rukopisu](../../../../docs/framework/wpf/advanced/getting-started-with-ink.md).  
-  
-<a name="event_routing"></a>   
-## <a name="event-routing"></a>Směrování událostí  
- A <xref:System.Windows.FrameworkElement> může obsahovat další prvky jako podřízené prvky v jeho obsahu modelu, které tvoří je strom z elementů.  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], nadřazeného elementu mohl účastnit vstup pokyn k její podřízené elementy nebo jiných následníky od blokováním události. Toto je užitečná zejména při vytváření ovládacích prvků mimo menší ovládacích prvků, tento proces se označuje jako "řízení složení" nebo "skládání." Další informace o elementu stromy a jak element stromy vztahují k události trasy najdete v tématu [stromy v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md).  
-  
- Událost směrování je proces předávání událostí více elementů, aby mohli nabízet významné odpovědí (prostřednictvím zpracování) na událost, která může mít různé elementem Source vybrat určitý objekt nebo elementu na trase.  Směrované události pomocí jednoho z tři směrování mechanismů: přímo, šíření a tunelové propojení.  V přímé směrování, source element je jediným prvkem upozornění a události není směruje na další prvky. Však přímé směrované události stále nabízí některé další možnosti, které jsou k dispozici pro směrované události oproti standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události. Šíření funguje nahoru k element tak, že první upozornění elementu, který pak jako zdroj událostí, nadřazeného elementu a tak dále.  Tunelové propojení spustí v kořenu stromu elementu a funguje dolů, s původní element source.  Další informace o směrované události najdete v tématu [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
-  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní události obvykle mají páry, které se skládá z tunelu událostí a probublávání událostí.  Tunelové události jsou rozlišeny určeny z probublávání událostí s předponou "Náhled".  Například <xref:System.Windows.Input.Mouse.PreviewMouseMove> je tunelové verze událost pohybu myší a <xref:System.Windows.Input.Mouse.MouseMove> je probublávání verze této události. Tato událost párování je konvence prováděné na úrovni elementu a není vyplývajících funkce [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] událostí systému. Podrobnosti najdete v části události vstup grafického subsystému WPF v [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
-  
-<a name="handling_input_events"></a>   
-## <a name="handling-input-events"></a>Vstupní zpracování událostí  
- Pokud chcete získat vstup na element, musí být přidružen danou událost obslužné rutiny události.  V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Toto je jednoduchá: odkazovat na název události jako atribut elementu, který bude naslouchat pro tuto událost.  Potom nastavte hodnotu atributu název obslužné rutiny události, které definujete, podle delegáta.  Obslužné rutiny události musí být napsaný v kódu, například C# a může být zahrnutý v souboru kódu na pozadí.  
-  
- Události klávesnice nastane, když operační systém sestavy klíče akce, ke kterým dojde během fokus klávesnice je v elementu. Události myši a pera každý rozdělit do dvou kategorií: události, které sestavy změny v umístění ukazatele vzhledem k elementu a události, které sestavy změny ve stavu tlačítek zařízení.  
-  
-### <a name="keyboard-input-event-example"></a>Příklad vstupní události klávesnice  
- Následující příklad naslouchá na stisknutí klávesy šipka doleva.  A <xref:System.Windows.Controls.StackPanel> je vytvořen, který má <xref:System.Windows.Controls.Button>.  Obslužné rutiny události pro naslouchání stisknutí klávesy šipka doleva je připojen k <xref:System.Windows.Controls.Button> instance.  
-  
- První část příkladu vytvoří <xref:System.Windows.Controls.StackPanel> a <xref:System.Windows.Controls.Button> a připojí obslužné rutiny události pro <xref:System.Windows.UIElement.KeyDown>.  
-  
- [!code-xaml[InputOvw#Input_OvwKeyboardExampleXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#input_ovwkeyboardexamplexaml)]  
-  
+ [!code-vb[mouserelatedsnippets#MouseRelatedSnippetsGetLeftButtonMouse](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/MouseRelatedSnippets/visualbasic/window1.xaml.vb#mouserelatedsnippetsgetleftbuttonmouse)]
+
+ <xref:System.Windows.Input.Mouse> a <xref:System.Windows.Input.Keyboard> třídy jsou podrobně popsané v další uvedených v tomto přehledu.
+
+### <a name="stylus-input"></a>Vstup pomocí pera
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] je integrovaná podpora <xref:System.Windows.Input.Stylus>.  <xref:System.Windows.Input.Stylus> Pera vstup provedené pomocí oblíbených [!INCLUDE[TLA#tla_tpc](../../../../includes/tlasharptla-tpc-md.md)].  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace lze považovat za stylus myši pomocí myši [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)], ale [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] také poskytuje abstrakce zařízení stylus, která používají model podobný klávesnici a myš.  Všechny související stylus [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] obsahovat slovo "Stylus".
+
+ Vzhledem k tomu stylus může fungovat jako myš, aplikace, které podporují pouze vstup z myši může stále získat určitou úroveň podpory stylus automaticky. Pokud se stylus slouží takovým způsobem, aplikace je příležitost pro zpracování události odpovídající stylus a poté zpracuje odpovídající událost myši. Kromě toho jsou vyšší úrovně služeb, jako je vstupu inkoustu také k dispozici prostřednictvím abstrakce stylus zařízení.  Další informace o inkoustu jako vstup, naleznete v tématu [Začínáme s rukopisem](../../../../docs/framework/wpf/advanced/getting-started-with-ink.md).
+
+<a name="event_routing"></a>
+## <a name="event-routing"></a>Směrování událostí
+ A <xref:System.Windows.FrameworkElement> může obsahovat další prvky jako podřízené prvky v jeho obsahu modelu, které tvoří stromové struktuře prvků.  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], nadřazeného elementu mohl podílet na vstup směrované do jeho podřízených prvků nebo jiných následníky ve zpracování událostí. To je obzvláště užitečná při vytváření ovládacích prvků z menších ovládací prvky, tento proces se označuje jako "kompozice ovládacích prvků" nebo "skládání." Další informace o elementu stromy a vztah element stromů trasy události najdete v tématu [stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md).
+
+ Směrování událostí je proces předávání událostí do více prvků, aby mohli nabízet výrazné odpověď na událost, která může mít jiný element Source (prostřednictvím zpracování) vybrat určitý objekt nebo element na trase.  Směrované události použijte jednu z tři mechanismy směrování: přímé, šíření a tunelové propojení.  V přímé směrování, source element je jediným prvkem upozornění a události se nesměruje na další prvky. Však s přímým přístupem směrované události stále nabízí některé další možnosti, které jsou k dispozici pro směrovaných událostí na rozdíl od standardní [!INCLUDE[TLA2#tla_clr](../../../../includes/tla2sharptla-clr-md.md)] události. Šíření funguje nahoru stromem prvků tak, že první upozornění elementu, který zdroj události, pak nadřazeného elementu a tak dále.  Tunelové propojení začíná v kořenovém adresáři strom prvku a funguje dolů, s původní element source.  Další informace o směrované události najdete v tématu [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).
+
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní události obvykle dodáváno v párech, které se skládá z tunelového propojení událost a šíření událostí.  Šíření událostí s předponou "Preview" rozlišit tunelového propojení události.  Například <xref:System.Windows.Input.Mouse.PreviewMouseMove> je verze tunelového propojení událost pohybu myší a <xref:System.Windows.Input.Mouse.MouseMove> šíření verze této události. Tato událost párování je konvence, která se implementuje na úrovni elementu a není přináší schopnost [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] systém událostí. Podrobnosti najdete v tématu v části WPF vstupní události [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).
+
+<a name="handling_input_events"></a>
+## <a name="handling-input-events"></a>Zpracování vstupních událostí
+ Pro vstup na element, musí být obslužná rutina události spojené s danou událost.  V [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] Toto je jednoduchý: referenční název události jako atribut prvku, který bude naslouchat pro tuto událost.  Potom nastavte hodnotu atributu název obslužné rutiny události, který určíte, založené na delegáta.  Obslužná rutina události musí být napsaný v kódu, jako je C# a mohou být zahrnuty v souboru kódu na pozadí.
+
+ Události klávesnice dojít, když operační systém sestavy klíčových akcí, ke kterým dochází při fokusu klávesnice na elementu. Události myši a stylus každý spadají do dvou kategorií: událostí, které sestavu se změnami polohy ukazatele vzhledem k elementu a události, které sestavu se změnami stavu zařízení tlačítka.
+
+### <a name="keyboard-input-event-example"></a>Příklad událost vstupu klávesnice
+ Následující příklad naslouchá stisknutí klávesy Šipka dolů.  A <xref:System.Windows.Controls.StackPanel> je vytvořen, který má <xref:System.Windows.Controls.Button>.  Obslužná rutina události pro naslouchání stisknutí klávesy šipka doleva je připojen k <xref:System.Windows.Controls.Button> instance.
+
+ První část tento příklad vytvoří <xref:System.Windows.Controls.StackPanel> a <xref:System.Windows.Controls.Button> a připojí obslužnou rutinu události pro <xref:System.Windows.UIElement.KeyDown>.
+
+ [!code-xaml[InputOvw#Input_OvwKeyboardExampleXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#input_ovwkeyboardexamplexaml)]
+
  [!code-csharp[InputOvw#Input_OvwKeyboardExampleUICodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml.cs#input_ovwkeyboardexampleuicodebehind)]
- [!code-vb[InputOvw#Input_OvwKeyboardExampleUICodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwkeyboardexampleuicodebehind)]  
-  
- Druhá část je napsána v kódu a definuje obslužnou rutinu události.  Po stisknutí klávesy šipka doleva a <xref:System.Windows.Controls.Button> má právě fokus klávesnice, spustí obslužnou rutinu a <xref:System.Windows.Controls.Control.Background%2A> barva <xref:System.Windows.Controls.Button> se změnilo.  Pokud stisknutí klávesy, ale není klávesu šipka vlevo <xref:System.Windows.Controls.Control.Background%2A> barva <xref:System.Windows.Controls.Button> se změní zpět na jeho počáteční barvu.  
-  
+ [!code-vb[InputOvw#Input_OvwKeyboardExampleUICodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwkeyboardexampleuicodebehind)]
+
+ Druhá část je napsána v kódu a definuje obslužnou rutinu události.  Se stiskla klávesa Šipka vlevo a <xref:System.Windows.Controls.Button> má fokus klávesnice, spustí obslužnou rutinu a <xref:System.Windows.Controls.Control.Background%2A> barvu <xref:System.Windows.Controls.Button> se změnilo.  Pokud se stiskne klávesu, ale není klávesu šipka dolů <xref:System.Windows.Controls.Control.Background%2A> barvu <xref:System.Windows.Controls.Button> se změní zpět na svůj počáteční barvu.
+
  [!code-csharp[InputOvw#Input_OvwKeyboardExampleHandlerCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml.cs#input_ovwkeyboardexamplehandlercodebehind)]
- [!code-vb[InputOvw#Input_OvwKeyboardExampleHandlerCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwkeyboardexamplehandlercodebehind)]  
-  
-### <a name="mouse-input-event-example"></a>Příklad vstupní událostí myši  
- V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> barva <xref:System.Windows.Controls.Button> se změní, když ukazatel myši vstoupí <xref:System.Windows.Controls.Button>.  <xref:System.Windows.Controls.Control.Background%2A> Barva se obnoví, když opustí myší <xref:System.Windows.Controls.Button>.  
-  
- První část příkladu vytvoří <xref:System.Windows.Controls.StackPanel> a <xref:System.Windows.Controls.Button> řízení a připojí obslužné rutiny událostí <xref:System.Windows.UIElement.MouseEnter> a <xref:System.Windows.UIElement.MouseLeave> události <xref:System.Windows.Controls.Button>.  
-  
- [!code-xaml[InputOvw#Input_OvwMouseExampleXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#input_ovwmouseexamplexaml)]  
-  
+ [!code-vb[InputOvw#Input_OvwKeyboardExampleHandlerCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwkeyboardexamplehandlercodebehind)]
+
+### <a name="mouse-input-event-example"></a>Příklad událost vstupu myší
+ V následujícím příkladu <xref:System.Windows.Controls.Control.Background%2A> barvu <xref:System.Windows.Controls.Button> se změní, pokud kurzor myši vstoupí <xref:System.Windows.Controls.Button>.  <xref:System.Windows.Controls.Control.Background%2A> Barva se obnoví, když ukazatel myši opustí <xref:System.Windows.Controls.Button>.
+
+ První část tento příklad vytvoří <xref:System.Windows.Controls.StackPanel> a <xref:System.Windows.Controls.Button> řídit a připojí obslužné rutiny událostí pro <xref:System.Windows.UIElement.MouseEnter> a <xref:System.Windows.UIElement.MouseLeave> události <xref:System.Windows.Controls.Button>.
+
+ [!code-xaml[InputOvw#Input_OvwMouseExampleXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#input_ovwmouseexamplexaml)]
+
  [!code-csharp[InputOvw#Input_OvwMouseExampleUICodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml.cs#input_ovwmouseexampleuicodebehind)]
- [!code-vb[InputOvw#Input_OvwMouseExampleUICodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwmouseexampleuicodebehind)]  
-  
- Druhá část v příkladu je napsána v kódu a definuje obslužné rutiny událostí.  Při přesunutí myši zadá <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Control.Background%2A> barva <xref:System.Windows.Controls.Button> se změní na <xref:System.Windows.Media.Brushes.SlateGray%2A>.  Když opustí myší <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Control.Background%2A> barva <xref:System.Windows.Controls.Button> se změní zpět na <xref:System.Windows.Media.Brushes.AliceBlue%2A>.  
-  
+ [!code-vb[InputOvw#Input_OvwMouseExampleUICodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwmouseexampleuicodebehind)]
+
+ Druhá část v příkladu je napsána v kódu a definuje obslužné rutiny událostí.  Pokud ukazatel myši vstoupí <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Control.Background%2A> barvu <xref:System.Windows.Controls.Button> se změní na <xref:System.Windows.Media.Brushes.SlateGray%2A>.  Když ukazatel myši opustí <xref:System.Windows.Controls.Button>, <xref:System.Windows.Controls.Control.Background%2A> barvu <xref:System.Windows.Controls.Button> se změní zpět na <xref:System.Windows.Media.Brushes.AliceBlue%2A>.
+
  [!code-csharp[InputOvw#Input_OvwMouseExampleEneterHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml.cs#input_ovwmouseexampleeneterhandler)]
- [!code-vb[InputOvw#Input_OvwMouseExampleEneterHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwmouseexampleeneterhandler)]  
-  
+ [!code-vb[InputOvw#Input_OvwMouseExampleEneterHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwmouseexampleeneterhandler)]
+
  [!code-csharp[InputOvw#Input_OvwMouseExampleLeaveHandler](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml.cs#input_ovwmouseexampleleavehandler)]
- [!code-vb[InputOvw#Input_OvwMouseExampleLeaveHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwmouseexampleleavehandler)]  
-  
-<a name="text_input"></a>   
-## <a name="text-input"></a>Zadávání textu  
- <xref:System.Windows.ContentElement.TextInput> Událostí umožňuje naslouchat pro zadávání textu způsobem nezávislé na zařízení. Klávesnice je primární způsob rukopisu vstupu, ale rozpoznávání řeči, text a další vstupní zařízení mohou generovat textový vstup také.  
-  
- Pro vstup z klávesnice [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poprvé odešle odpovídající <xref:System.Windows.ContentElement.KeyDown> / <xref:System.Windows.ContentElement.KeyUp> události. Pokud nejsou zpracovány tyto události a klíč je textový místo (řízení klíč například směrové šipky) nebo funkční klávesy, pak <xref:System.Windows.ContentElement.TextInput> událost se vyvolá.  Není vždy jednoduché mapování 1: 1 mezi <xref:System.Windows.ContentElement.KeyDown> / <xref:System.Windows.ContentElement.KeyUp> a <xref:System.Windows.ContentElement.TextInput> události protože více stisknutí kláves může generovat jednoho znaku zadávání textu a jeden stisknutí kláves může generovat více znaků řetězce.  To platí hlavně pro jazyky, jako je například čínština, japonština nebo korejština, které používají [!INCLUDE[TLA#tla_ime#plural](../../../../includes/tlasharptla-imesharpplural-md.md)] ke generování tisíce možné znaků v jejich odpovídající abeced.  
-  
- Když [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] odešle <xref:System.Windows.ContentElement.KeyUp> / <xref:System.Windows.ContentElement.KeyDown> událostí, <xref:System.Windows.Input.KeyEventArgs.Key%2A> je nastaven na <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> Pokud stisknutí kláves může být součástí <xref:System.Windows.ContentElement.TextInput> události (Pokud ALT + S stisknutí, například). To umožňuje kód <xref:System.Windows.ContentElement.KeyDown> obslužné rutiny události zkontrolujte <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> a, pokud je nalezen, nechte zpracování pro obslužnou rutinu následně vyvolané <xref:System.Windows.ContentElement.TextInput> událostí. V těchto případech různé vlastnosti <xref:System.Windows.Input.TextCompositionEventArgs> argument můžete použít k určení původní stisknutí kláves. Podobně pokud [!INCLUDE[TLA2#tla_ime](../../../../includes/tla2sharptla-ime-md.md)] je aktivní, <xref:System.Windows.Input.Key> má hodnotu <xref:System.Windows.Input.Key.ImeProcessed?displayProperty=nameWithType>, a <xref:System.Windows.Input.KeyEventArgs.ImeProcessedKey%2A> dává původní klávesu nebo stisknutí kláves.  
-  
- V následujícím příkladu definuje obslužnou rutinu pro <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události a obslužné rutiny pro <xref:System.Windows.UIElement.KeyDown> událostí.  
-  
- První segment kódu nebo značek vytvoří uživatelské rozhraní.  
-  
- [!code-xaml[InputOvw#Input_OvwTextInputXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#input_ovwtextinputxaml)]  
-  
+ [!code-vb[InputOvw#Input_OvwMouseExampleLeaveHandler](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwmouseexampleleavehandler)]
+
+<a name="text_input"></a>
+## <a name="text-input"></a>Textové zadání
+ <xref:System.Windows.ContentElement.TextInput> Událostí umožňuje naslouchat vstupní text způsobem nezávislým na zařízení. Klávesnice je hlavním prostředkem rukopisného textu vstupu, ale řeči, a ostatní vstupní zařízení můžete vygenerovat textový vstup také.
+
+ Vstup z klávesnice [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poprvé odešle odpovídající <xref:System.Windows.ContentElement.KeyDown> / <xref:System.Windows.ContentElement.KeyUp> události. Pokud nejsou zpracovány tyto události a klíčem je textový místo (ovládací prvek klíč jako je směrové šipky) nebo funkční klávesy, o <xref:System.Windows.ContentElement.TextInput> událost se vyvolá.  Není vždy jednoduché mapování 1: 1 mezi <xref:System.Windows.ContentElement.KeyDown> / <xref:System.Windows.ContentElement.KeyUp> a <xref:System.Windows.ContentElement.TextInput> události protože více stisknutí kláves můžete generovat jeden znak z textové zadání a jeden stisknutí kláves můžete generovat více znak řetězce.  To platí zejména pro jazyků, které používají, jako je čínštiny, japonštiny a korejštiny [!INCLUDE[TLA#tla_ime#plural](../../../../includes/tlasharptla-imesharpplural-md.md)] generovat tisíce možných znaků v jejich odpovídající písmena abecedy.
+
+ Při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] odešle <xref:System.Windows.ContentElement.KeyUp> / <xref:System.Windows.ContentElement.KeyDown> události, <xref:System.Windows.Input.KeyEventArgs.Key%2A> je nastavena na <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> Pokud stisknutí kláves stát součástí <xref:System.Windows.ContentElement.TextInput> události (Pokud ALT + S například stisknutí). To umožňuje kód v <xref:System.Windows.ContentElement.KeyDown> obslužná rutina události ke kontrole <xref:System.Windows.Input.Key.System?displayProperty=nameWithType> a, pokud je nalezen, ponechte zpracování pro obslužnou rutinu následně vyvolanou <xref:System.Windows.ContentElement.TextInput> událostí. V těchto případech se různé vlastnosti objektu <xref:System.Windows.Input.TextCompositionEventArgs> argument můžete použít k určení původní stisknutí kláves. Podobně pokud [!INCLUDE[TLA2#tla_ime](../../../../includes/tla2sharptla-ime-md.md)] je aktivní, <xref:System.Windows.Input.Key> má hodnotu <xref:System.Windows.Input.Key.ImeProcessed?displayProperty=nameWithType>, a <xref:System.Windows.Input.KeyEventArgs.ImeProcessedKey%2A> poskytuje původní stisk klávesy nebo stisknutí kláves.
+
+ Následující příklad definuje obslužnou rutinu pro <xref:System.Windows.Controls.Primitives.ButtonBase.Click> události a obslužné rutiny pro <xref:System.Windows.UIElement.KeyDown> událostí.
+
+ První segment kódu nebo značky vytvoří uživatelské rozhraní.
+
+ [!code-xaml[InputOvw#Input_OvwTextInputXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml#input_ovwtextinputxaml)]
+
  [!code-csharp[InputOvw#Input_OvwTextInputUICodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml.cs#input_ovwtextinputuicodebehind)]
- [!code-vb[InputOvw#Input_OvwTextInputUICodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwtextinputuicodebehind)]  
-  
- Druhý segment kódu obsahuje obslužné rutiny událostí.  
-  
+ [!code-vb[InputOvw#Input_OvwTextInputUICodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwtextinputuicodebehind)]
+
+ Druhý segment kódu obsahuje obslužné rutiny událostí.
+
  [!code-csharp[InputOvw#Input_OvwTextInputHandlersCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/InputOvw/CSharp/Page1.xaml.cs#input_ovwtextinputhandlerscodebehind)]
- [!code-vb[InputOvw#Input_OvwTextInputHandlersCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwtextinputhandlerscodebehind)]  
-  
- Protože vstupních událostech vyvolat událost na základě trasy, <xref:System.Windows.Controls.StackPanel> obdrží vstup bez ohledu na to, který element má fokus klávesnice. <xref:System.Windows.Controls.TextBox> Řízení nejprve upozornění a `OnTextInputKeyDown` obslužná rutina je volán, pouze pokud <xref:System.Windows.Controls.TextBox> se nepodařilo zpracovat vstup. Pokud <xref:System.Windows.UIElement.PreviewKeyDown> událostí se používá místo <xref:System.Windows.UIElement.KeyDown> událostí, `OnTextInputKeyDown` jako první obslužná rutina.  
-  
- V tomto příkladu je zapsán logiku zpracování dvakrát – jednou pro CTRL + O a znovu na tlačítko click – událost. To můžete zjednodušit pomocí příkazů, místo zpracování vstupních událostech přímo.  Příkazy jsou popsané v tomto přehledu a v [tvorba příkazů přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
-  
-<a name="touch_and_manipulation"></a>   
-## <a name="touch-and-manipulation"></a>Dotykové ovládání a manipulace  
- Nový hardware a rozhraní API v operačním systému Windows 7 poskytují aplikace možnost přijímat vstup z více úpravy současně. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím zjistit a reagovat na touch způsobem podobná neodpovídá na požadavky jiného vstupu, například myši nebo klávesnice, podle vyvolávání událostí, když dojde k dotykového ovládání.  
-  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje dva typy událostí, když dojde k touch: touch události a zpracování události. Události touch poskytují nezpracovaná data o každém prstem na dotykovou obrazovku a jeho přesunu. Zpracování událostí interpretace vstupu jako určité akce. Oba typy událostí, které jsou popsané v této části.  
-  
-### <a name="prerequisites"></a>Požadavky  
- Je nutné následující součásti vyvíjet aplikace, která reaguje na touch.  
-  
--   [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)].  
-  
--   Windows 7.  
-  
--   Zařízení, například dotykovou obrazovku, který podporuje Windows Touch.  
-  
-### <a name="terminology"></a>Terminologie  
- Když je popsána touch, se používají následující termíny.  
-  
--   **Touch** je typ vstupu uživatele, který rozpozná Windows 7. Obvykle je touch inicializovat umístěním prsty, které na obrazovce touch-velká a malá písmena. Všimněte si, že zařízení, jako jsou dotykové, které je běžné pro přenosné počítače nepodporují dotykového ovládání, pokud zařízení jenom převede prstem pozice a přesun jako vstup z myši.  
-  
--   **Vícedotykové** je dotykového ovládání, ke kterému dochází z více než jeden bod současně. Windows 7 a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje vícedotykové. Vždy, když je touch popsané v dokumentaci k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], koncepty, na které se týkají vícedotykové.  
-  
--   A **manipulaci s** nastane, když touch interpretována jako fyzické akce, který se použije pro objekt. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], zpracování události interpretace vstupu jako manipulaci s překlad, rozšíření nebo otočení.  
-  
--   A `touch device` představuje zařízení, která vytváří touch vstupu, například jeden prstem na dotykovou obrazovku.  
-  
-### <a name="controls-that-respond-to-touch"></a>Ovládací prvky, které reagují na dotykového ovládání  
- Ovládací prvky posunout tak, že přetáhnete prstem napříč ovládacího prvku, pokud má obsah, který je přesunut mimo zobrazení oblasti.  
-  
--   <xref:System.Windows.Controls.ComboBox>  
-  
--   <xref:System.Windows.Controls.ContextMenu>  
-  
--   <xref:System.Windows.Controls.DataGrid>  
-  
--   <xref:System.Windows.Controls.ListBox>  
-  
--   <xref:System.Windows.Controls.ListView>  
-  
--   <xref:System.Windows.Controls.MenuItem>  
-  
--   <xref:System.Windows.Controls.TextBox>  
-  
--   <xref:System.Windows.Controls.ToolBar>  
-  
--   <xref:System.Windows.Controls.TreeView>  
-  
- <xref:System.Windows.Controls.ScrollViewer> Definuje <xref:System.Windows.Controls.ScrollViewer.PanningMode%2A?displayProperty=nameWithType> přidružená vlastnost, která umožňuje určit, jestli touch je povoleno posouvání ve vodorovném směru, ve svislém směru, oba nebo ani jeden z nich. <xref:System.Windows.Controls.ScrollViewer.PanningDeceleration%2A?displayProperty=nameWithType> Vlastnost určuje, jak rychle posouvání zpomalí, když uživatel zruší prstem z dotykovou obrazovku. <xref:System.Windows.Controls.ScrollViewer.PanningRatio%2A?displayProperty=nameWithType> Přidružená vlastnost určuje poměr posouvání posun přeložit posun manipulaci.  
-  
-### <a name="touch-events"></a>Touch – události  
- Základní třídy, <xref:System.Windows.UIElement>, <xref:System.Windows.UIElement3D>, a <xref:System.Windows.ContentElement>, definovat události, které můžete odebírat, vaše aplikace bude odpovídat touch. Touch události jsou užitečné, když vaše aplikace interpretuje touch jako něco jiného než manipulace s objekt. Například by se aplikace, která umožňuje uživatelům kreslení prsty jeden nebo více přihlásit k touch události.  
-  
- Všechny tři třídy definovat následující události, které se chovají podobně, bez ohledu na to definující třídu.  
-  
--   <xref:System.Windows.UIElement.TouchDown>  
-  
--   <xref:System.Windows.UIElement.TouchMove>  
-  
--   <xref:System.Windows.UIElement.TouchUp>  
-  
--   <xref:System.Windows.UIElement.TouchEnter>  
-  
--   <xref:System.Windows.UIElement.TouchLeave>  
-  
--   <xref:System.Windows.UIElement.PreviewTouchDown>  
-  
--   <xref:System.Windows.UIElement.PreviewTouchMove>  
-  
--   <xref:System.Windows.UIElement.PreviewTouchUp>  
-  
--   <xref:System.Windows.UIElement.GotTouchCapture>  
-  
--   <xref:System.Windows.UIElement.LostTouchCapture>  
-  
- Podobně jako události klávesnice a myši jsou události touch směrované události. Události, které začínají `Preview` tunel události a události, které začínají `Touch` probublávání události. Další informace o směrované události najdete v tématu [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md). Při zpracování těchto událostí můžete získat pozici vstupu, relativně k libovolný element, voláním <xref:System.Windows.Input.TouchEventArgs.GetTouchPoint%2A> nebo <xref:System.Windows.Input.TouchEventArgs.GetIntermediateTouchPoints%2A> metoda.  
-  
- Zjistit, interakce mezi události dotykového ovládání, představte si situaci, kde uživatel vloží jedním prstem na element, přesune prstu v elementu a pak zruší prstu ze elementu. Následující obrázek znázorňuje spuštění probublávání události (tunelu události, které byly vynechány pro jednoduchost).  
-  
- ![Posloupnost událostí dotykového ovládání. ] (../../../../docs/framework/wpf/advanced/media/ndp-touchevents.png "NDP_TouchEvents")  
-Touch – události  
-  
- Následující seznam popisuje posloupnost událostí na předchozím obrázku.  
-  
-1.  <xref:System.Windows.UIElement.TouchEnter> Události dojde jednou, když uživatel uloží prstem v elementu.  
-  
-2.  <xref:System.Windows.UIElement.TouchDown> Události dojde jednou.  
-  
-3.  <xref:System.Windows.UIElement.TouchMove> Událostí vyskytuje opakovaně, protože uživatel přesune prstu v rámci elementu.  
-  
-4.  <xref:System.Windows.UIElement.TouchUp> Události dojde jednou, pokud uživatel zruší prstu ze elementu.  
-  
-5.  <xref:System.Windows.UIElement.TouchLeave> Události dojde jednou.  
-  
- Pokud jsou použity více než dva prsty, dochází k události pro každý prstu.  
-  
-### <a name="manipulation-events"></a>Zpracování událostí  
- Pro případy, kdy aplikace umožňuje uživateli upravit objekt <xref:System.Windows.UIElement> třída definuje zpracování událostí. Na rozdíl od události dotykového ovládání, které jednoduše sestavy pozici dotykového ovládání událostí zpracování sestavy, jak jde interpretovat vstup. Existují tři typy manipulace, překlad, rozšíření a otočení. Následující seznam popisuje, jak má být vyvolán tři typy manipulace.  
-  
--   Vložit prstem objektu a přesouvat mezi dotykovou obrazovku k vyvolání manipulaci s překlad prstu. To obvykle přesune objekt.  
-  
--   Vložit dvěma prsty objektu a přesunout prsty blíže společně nebo dále kromě navzájem k vyvolání manipulaci s rozšíření. To obvykle změní velikost objektu.  
-  
--   Vložit dvěma prsty objektu a otočit prsty kolem druhým k vyvolání manipulaci s otočení. To obvykle otočí objekt.  
-  
- Více než jeden typ zpracování může dojít současně.  
-  
- Pokud jste způsobit reagovat na manipulaci s objekty, můžete mít objekt pravděpodobně nečinnosti. To můžete provést vašich objektů simulovat fyzické world. Například když push knihy napříč tabulku, pokud nabízené pevný dostatečně adresáře budou nadále přesunout po jeho uvolnění. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje simulovat toto chování zobrazením zpracování událostí po prsty, které uživatele uvolní objekt.  
-  
- Informace o tom, jak vytvořit aplikaci, která umožňuje uživatelům přesunout, změnit velikost a otočení objektu najdete v tématu [návod: vytváření vaše první Touch aplikaci](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md).  
-  
- <xref:System.Windows.UIElement> Definuje následující události manipulaci.  
-  
--   <xref:System.Windows.UIElement.ManipulationStarting>  
-  
--   <xref:System.Windows.UIElement.ManipulationStarted>  
-  
--   <xref:System.Windows.UIElement.ManipulationDelta>  
-  
--   <xref:System.Windows.UIElement.ManipulationInertiaStarting>  
-  
--   <xref:System.Windows.UIElement.ManipulationCompleted>  
-  
--   <xref:System.Windows.UIElement.ManipulationBoundaryFeedback>  
-  
- Ve výchozím nastavení <xref:System.Windows.UIElement> neobdrží tyto události manipulaci. Pro příjem událostí zpracování na <xref:System.Windows.UIElement>, nastavte <xref:System.Windows.UIElement.IsManipulationEnabled%2A?displayProperty=nameWithType> k `true`.  
-  
-#### <a name="the-execution-path-of-manipulation-events"></a>Cesta spuštění zpracování událostí  
- Představte si třeba situaci, kdy uživatel "vyvolá" objekt. Uživatel uloží prstem na objekt, přesune prstu napříč dotykovou obrazovku pro krátkou vzdálenost a pak zruší prstu, když je přesunutí. Důsledkem je, že bude objekt přesunout pod prstem uživatele a nadále přesunout po uživatel zruší prstu.  
-  
- Následující obrázek znázorňuje cestu spuštění zpracování události a důležité informace o jednotlivých událostí.  
-  
- ![Pořadí zpracování událostí. ] (../../../../docs/framework/wpf/advanced/media/ndp-manipulationevents.png "NDP_ManipulationEvents")  
-Zpracování událostí  
-  
- Následující seznam popisuje posloupnost událostí na předchozím obrázku.  
-  
-1.  <xref:System.Windows.UIElement.ManipulationStarting> Události dojde, když uživatel umístí prstem na objekt. Tato událost mimo jiné umožňuje nastavit <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> vlastnost. V následných událostech pozici manipulaci bude vzhledem k <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>. V události s výjimkou <xref:System.Windows.UIElement.ManipulationStarting>, tato vlastnost je jen pro čtení, proto <xref:System.Windows.UIElement.ManipulationStarting> událost je jenom jednou, kterou můžete nastavit tuto vlastnost.  
-  
-2.  <xref:System.Windows.UIElement.ManipulationStarted> Vedle dojde k události. Tato událost hlásí původ manipulaci.  
-  
-3.  <xref:System.Windows.UIElement.ManipulationDelta> Událostí vyskytuje opakovaně jako přesunutí prsty, které uživatele na dotykovou obrazovku. <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> Vlastnost <xref:System.Windows.Input.ManipulationDeltaEventArgs> třída hlásí, zda manipulaci se interpretuje jako přesun, rozšíření nebo překlad. Toto je, kde můžete provést většinu práce manipulace s objekt.  
-  
-4.  <xref:System.Windows.UIElement.ManipulationInertiaStarting> Události dojde, když prsty, které uživatele přerušení spojení se objekt. Tato událost umožňuje určit zpomalení manipulace při nečinnosti. To je proto objektu mohou napodobovat různých fyzických mezery nebo atributy, pokud si zvolíte. Předpokládejme například, že aplikace obsahuje dva objekty, které představují položky na fyzické světě a jedna je větší než druhý. Můžete nastavit objekt větší zpomalení rychleji než světlejší objekt.  
-  
-5.  <xref:System.Windows.UIElement.ManipulationDelta> Událostí vyskytuje opakovaně, protože dojde k nečinnosti. Všimněte si, že k této události dochází při přesunutí prsty, které uživatele v rámci dotykovou obrazovku a při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] simuluje nečinnosti. Jinými slovy <xref:System.Windows.UIElement.ManipulationDelta> dojde před a po <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí. <xref:System.Windows.Input.ManipulationDeltaEventArgs.IsInertial%2A?displayProperty=nameWithType> Vlastnost sestavy jestli <xref:System.Windows.UIElement.ManipulationDelta> dojde k události při nečinnosti, abyste mohli zkontrolovat vlastnosti a provádět různé akce, v závislosti na jeho hodnotu.  
-  
-6.  <xref:System.Windows.UIElement.ManipulationCompleted> Dojde k události při manipulaci a všechny nečinnost ukončení. To znamená, že po všech <xref:System.Windows.UIElement.ManipulationDelta> dojde k události, <xref:System.Windows.UIElement.ManipulationCompleted> na signalizaci dokončení manipulaci dojde k události.  
-  
- <xref:System.Windows.UIElement> Definuje také <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> událostí. K této události dochází při <xref:System.Windows.Input.ManipulationDeltaEventArgs.ReportBoundaryFeedback%2A> metoda je volána <xref:System.Windows.UIElement.ManipulationDelta> událostí. <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> Událostí umožňuje aplikace nebo součásti, které slouží k poskytnutí zpětné vazby visual, pokud se objekt dotkne hranici. Například <xref:System.Windows.Window> třídu obslužné rutiny <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> událost způsobí okno mírně přejít, když dojde k jeho hrany.  
-  
- Můžete zrušit manipulaci voláním <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A> metodu argumenty událostí v každém případě manipulaci s výjimkou <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> událostí. Při volání <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A>, události manipulaci už jsou vyvolány a myš k událostem pro dotykového ovládání. Následující tabulka popisuje vztah mezi době, kdy je zrušená manipulaci a události myši, ke kterým dochází.  
-  
-|Událost, která se nazývá zrušit v|Události myši, které nastaly pro vstup, který již došlo k chybě|  
-|----------------------------------------|-----------------------------------------------------------------|  
-|<xref:System.Windows.UIElement.ManipulationStarting> A <xref:System.Windows.UIElement.ManipulationStarted>|Myš dolů události.|  
-|<xref:System.Windows.UIElement.ManipulationDelta>|Události myši přesunutí a pohybu myší dolů.|  
-|<xref:System.Windows.UIElement.ManipulationInertiaStarting> A <xref:System.Windows.UIElement.ManipulationCompleted>|Pohybu myší dolů, přesuňte myš a pohybu myší nahoru události.|  
-  
- Všimněte si, že při volání <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A> při manipulaci se nachází v nečinnosti, vrátí metoda `false` a vstup nevyvolá událostí myši.  
-  
-### <a name="the-relationship-between-touch-and-manipulation-events"></a>Vztah mezi Touch a zpracování událostí  
- A <xref:System.Windows.UIElement> může vždy přijímat události dotykového ovládání. Když <xref:System.Windows.UIElement.IsManipulationEnabled%2A> je nastavena na `true`, <xref:System.Windows.UIElement> může přijímat touch a zpracování události.  Pokud <xref:System.Windows.UIElement.TouchDown> událost není zpracována (to znamená, <xref:System.Windows.RoutedEventArgs.Handled%2A> vlastnost je `false`), logiku zpracování zaznamená touch do elementu a generuje zpracování události. Pokud <xref:System.Windows.RoutedEventArgs.Handled%2A> je nastavena na `true` v <xref:System.Windows.UIElement.TouchDown> událostí, zpracování logiky negeneruje zpracování událostí. Následující obrázek znázorňuje vztah mezi touch události a zpracování události.  
-  
- ![Vztah mezi touch a zpracování události](../../../../docs/framework/wpf/advanced/media/ndp-touchmanipulateevents.png "NDP_TouchManipulateEvents")  
-Dotykové ovládání a zpracování událostí  
-  
- Následující seznam popisuje vztah mezi touch a zpracování události, které je vidět na předchozím obrázku.  
-  
--   Vygeneruje-li první zařízení touch <xref:System.Windows.UIElement.TouchDown> událostí na <xref:System.Windows.UIElement>, volání logiku zpracování <xref:System.Windows.UIElement.CaptureTouch%2A> metodu, která generuje <xref:System.Windows.UIElement.GotTouchCapture> událostí.  
-  
--   Při <xref:System.Windows.UIElement.GotTouchCapture> dojde, volání logiku zpracování <xref:System.Windows.Input.Manipulation.AddManipulator%2A?displayProperty=nameWithType> metodu, která generuje <xref:System.Windows.UIElement.ManipulationStarting> událostí.  
-  
--   Při <xref:System.Windows.UIElement.TouchMove> k událostem, vygeneruje zpracování logiky <xref:System.Windows.UIElement.ManipulationDelta> události, které nastaly před <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.  
-  
--   Při poslední touch zařízení element vyvolá <xref:System.Windows.UIElement.TouchUp> generuje logiku zpracování událostí, <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.  
-  
-<a name="focus"></a>   
-## <a name="focus"></a>Fokus  
- Existují dvě hlavní koncepty, které se týkají fokusu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]: fokus a logické fokus klávesnice.  
-  
-### <a name="keyboard-focus"></a>Fokus klávesnice  
- Fokus klávesnice odkazuje na element, který přijímá vstup z klávesnice.  Může existovat pouze jeden element celkově plochy, který má právě fokus klávesnice.  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], bude mít elementu, který má právě fokus klávesnice <xref:System.Windows.IInputElement.IsKeyboardFocused%2A> nastavena na `true`.  Statické <xref:System.Windows.Input.Keyboard> metoda <xref:System.Windows.Input.Keyboard.FocusedElement%2A> vrátí elementu, který má právě fokus klávesnice.  
-  
- Pomocí klávesy tabulátor do elementu nebo klepněte na tlačítko myši na některé prvky, jako například lze získat fokus klávesnice <xref:System.Windows.Controls.TextBox>.  Fokus klávesnice jsou k dispozici prostřednictvím kódu programu pomocí <xref:System.Windows.Input.Keyboard.Focus%2A> metodu <xref:System.Windows.Input.Keyboard> třídy.  <xref:System.Windows.Input.Keyboard.Focus%2A> pokusí se poskytnout fokus klávesnice zadaný element.  Vrácený element <xref:System.Windows.Input.Keyboard.Focus%2A> je elementu, který má právě fokus klávesnice.  
-  
- Aby se element získat fokus klávesnice <xref:System.Windows.UIElement.Focusable%2A> vlastnost a <xref:System.Windows.UIElement.IsVisible%2A> vlastnosti musí být nastavena na **true**.  Některé třídy, jako například <xref:System.Windows.Controls.Panel>, mají <xref:System.Windows.UIElement.Focusable%2A> nastavena na `false` ve výchozím nastavení; proto možná budete muset nastavit tuto vlastnost na `true` Pokud chcete být schopni získat fokus daný element.  
-  
- Následující příklad používá <xref:System.Windows.Input.Keyboard.Focus%2A> nastavit fokus klávesnice na <xref:System.Windows.Controls.Button>.  Nastavit počáteční fokusu v aplikaci je doporučené místo <xref:System.Windows.FrameworkElement.Loaded> obslužné rutiny události.  
-  
+ [!code-vb[InputOvw#Input_OvwTextInputHandlersCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InputOvw/VisualBasic/Page1.xaml.vb#input_ovwtextinputhandlerscodebehind)]
+
+ Vzhledem k tomu, že vstupní události vyvolat trasa událostí <xref:System.Windows.Controls.StackPanel> přijímá vstup bez ohledu na to, který prvek má fokus klávesnice. <xref:System.Windows.Controls.TextBox> Ovládací prvek nejprve obdrží oznámení a `OnTextInputKeyDown` je obslužná rutina volána pouze v případě, <xref:System.Windows.Controls.TextBox> nedošlo ke zpracování vstupu. Pokud <xref:System.Windows.UIElement.PreviewKeyDown> události se použije namísto <xref:System.Windows.UIElement.KeyDown> událostí, `OnTextInputKeyDown` obslužná rutina se nazývá nejprve.
+
+ V tomto příkladu logika zpracování vytvořená dvakrát – jednou pro CTRL + O a znovu pro tlačítka. Kliknutím na událost. To se dá zjednodušit pomocí příkazů, namísto zpracování vstupních událostí přímo.  Příkazy jsou popsané v tomto přehledu a [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md).
+
+<a name="touch_and_manipulation"></a>
+## <a name="touch-and-manipulation"></a>Dotykové ovládání a manipulaci s
+ Nový hardware a rozhraní API v operačním systému Windows 7 poskytují aplikace možnost přijímat vstup z více dotyků současně. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím detekovat a reagovat na dotykové ovládání v podobně, jak reagovat na jiného vstupu, například myš či klávesnice, vyvoláním události, když dojde k dotykové ovládání.
+
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje dva typy událostí, když dojde k dotykové ovládání: touch události a manipulace s událostmi. Události touch poskytují nezpracovaná data o každé prstem na k tomu dotykovou obrazovku a její pohyb. Manipulace s událostmi interpretace vstupu jako určité akce. Oba typy událostí, které jsou popsány v této části.
+
+### <a name="prerequisites"></a>Požadavky
+ Budete potřebovat následující komponenty pro vývoj aplikací, který reaguje na dotyk.
+
+-   Visual Studio 2010.
+
+-   Windows 7.
+
+-   Zařízení, např. k tomu dotykovou obrazovku, který podporuje Windows Touch.
+
+### <a name="terminology"></a>Terminologie
+ Pokud tady nezvládneme probrat touch se používají následující termíny.
+
+-   **Touch** je typ vstupu uživatele, který je rozpoznán Windows 7. Obvykle je zahájeno touch vložením prsty na dotykovou obrazovku. Všimněte si, že zařízení, jako jsou touchpadu, která je společná pro přenosné počítače nepodporují dotykového ovládání, pokud se zařízení převede pouze umístění a přesun jako vstup z myši prstem.
+
+-   **Vícedotykové** je dotykového ovládání, ke které dochází z více než jeden bod současně. Windows 7 a [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podporuje vícedotykové. Vždy, když touch je podrobněji popsána v dokumentaci k [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], koncepty platí pro platformu.
+
+-   A **manipulaci s** nastane, pokud dotykovou interpretována jako fyzické akci, která je použita na objekt. V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], manipulace s událostmi interpretace vstupu jako manipulaci s překladem, rozšíření nebo otočení.
+
+-   A `touch device` představuje zařízení, která vytváří dotykové ovládání, jako je jednotné prstem na k tomu dotykovou obrazovku.
+
+### <a name="controls-that-respond-to-touch"></a>Ovládací prvky, které reagují na dotykové ovládání
+ Následující ovládací prvky můžete posouvat přetažením prstem přes ovládací prvek, pokud má obsah, který je posunu mimo zobrazení.
+
+-   <xref:System.Windows.Controls.ComboBox>
+
+-   <xref:System.Windows.Controls.ContextMenu>
+
+-   <xref:System.Windows.Controls.DataGrid>
+
+-   <xref:System.Windows.Controls.ListBox>
+
+-   <xref:System.Windows.Controls.ListView>
+
+-   <xref:System.Windows.Controls.MenuItem>
+
+-   <xref:System.Windows.Controls.TextBox>
+
+-   <xref:System.Windows.Controls.ToolBar>
+
+-   <xref:System.Windows.Controls.TreeView>
+
+ <xref:System.Windows.Controls.ScrollViewer> Definuje <xref:System.Windows.Controls.ScrollViewer.PanningMode%2A?displayProperty=nameWithType> přidružená vlastnost, která umožňuje určit, jestli touch je povoleno posouvání vodorovně, svisle, obou nebo ani jeden. <xref:System.Windows.Controls.ScrollViewer.PanningDeceleration%2A?displayProperty=nameWithType> Vlastnost určuje, jak rychle posouvání zpomalí, když uživatel zruší prstem z dotykovou obrazovku. <xref:System.Windows.Controls.ScrollViewer.PanningRatio%2A?displayProperty=nameWithType> Připojená vlastnost určuje poměr posouvání posun pro převod manipulaci s posun.
+
+### <a name="touch-events"></a>Události dotyku
+ Základní třídy <xref:System.Windows.UIElement>, <xref:System.Windows.UIElement3D>, a <xref:System.Windows.ContentElement>, definovat události, které se k odběru tak vaše aplikace bude reagovat na dotykového ovládání. Dotykové ovládání události jsou užitečné, pokud vaše aplikace interpretuje dotykové ovládání jako něco jiného než objekt manipulace s. Aplikace, která umožňuje uživateli pro kreslení prsty na jeden nebo více by předplatit události dotyku.
+
+ Všechny tři třídy definují následující události, které se chovají podobně, bez ohledu na to definující třídy.
+
+-   <xref:System.Windows.UIElement.TouchDown>
+
+-   <xref:System.Windows.UIElement.TouchMove>
+
+-   <xref:System.Windows.UIElement.TouchUp>
+
+-   <xref:System.Windows.UIElement.TouchEnter>
+
+-   <xref:System.Windows.UIElement.TouchLeave>
+
+-   <xref:System.Windows.UIElement.PreviewTouchDown>
+
+-   <xref:System.Windows.UIElement.PreviewTouchMove>
+
+-   <xref:System.Windows.UIElement.PreviewTouchUp>
+
+-   <xref:System.Windows.UIElement.GotTouchCapture>
+
+-   <xref:System.Windows.UIElement.LostTouchCapture>
+
+ Události dotykové ovládání jako události klávesnice a myši, jsou směrované události. Události, které začínají `Preview` jsou tunelování události a události, které začínají `Touch` jsou šíření událostí. Další informace o směrované události najdete v tématu [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md). Při zpracování těchto událostí můžete získat pozice vstupu, vzhledem k libovolný prvek voláním <xref:System.Windows.Input.TouchEventArgs.GetTouchPoint%2A> nebo <xref:System.Windows.Input.TouchEventArgs.GetIntermediateTouchPoints%2A> metody.
+
+ Informace o tom interakce mezi události dotykového ovládání, vezměte v úvahu scénář, kde uživatel umístí jedním prstem na element, přesune prstu v elementu a pak zruší prstem z elementu. Následující obrázek znázorňuje provedení šíření událostí (pro zjednodušení jsou vynechány tunelového propojení událostí).
+
+ ![Posloupnost událostí dotykové ovládání. ](../../../../docs/framework/wpf/advanced/media/ndp-touchevents.png "NDP_TouchEvents") události dotyku
+
+ Následující seznam popisuje posloupnost událostí v předchozí ilustraci.
+
+1.  <xref:System.Windows.UIElement.TouchEnter> Události dojde jednou, když uživatel přepne prstem na elementu.
+
+2.  <xref:System.Windows.UIElement.TouchDown> Jednou dojde k události.
+
+3.  <xref:System.Windows.UIElement.TouchMove> Dojde k události více než jednou, jak uživatel přesouvá prstu v rámci elementu.
+
+4.  <xref:System.Windows.UIElement.TouchUp> Události dojde jednou, když uživatel zruší prstem z elementu.
+
+5.  <xref:System.Windows.UIElement.TouchLeave> Jednou dojde k události.
+
+ Pokud jsou používány více než dvěma prsty, dochází k události pro každý prstem.
+
+### <a name="manipulation-events"></a>Manipulace s událostmi
+ Pro případy, kdy aplikace umožňuje uživateli manipulovat s objektu <xref:System.Windows.UIElement> třída definuje manipulace s událostmi. Na rozdíl od touch události, které se ohlásí pozice dotykového ovládání manipulace s událostmi zprávu, jak se dá interpretovat vstupu. Existují tři typy manipulace, překlad, rozšíření a otočení. Následující seznam popisuje tři typy manipulace vyvolat.
+
+-   Vložit prstem na objekt a sdílením dotykovou obrazovku k vyvolání manipulaci s překladem prstu. To obvykle přesune objekt.
+
+-   Umístit dvěma prsty na objekt a přesunout prsty blíže společně nebo jsou kromě navzájem k vyvolání manipulaci s rozšíření. To obvykle změní velikost objektu.
+
+-   Vložit dvěma prsty na objekt a otočit prsty kolem vzájemně k vyvolání manipulaci s otočení. To obvykle otočí objektu.
+
+ Manipulace s více než jeden typ může probíhají souběžně.
+
+ Až způsobíte reagovat na manipulaci s objekty, budete mít objekt pravděpodobně nečinnost. Díky tomu se objekty simulovat fyzického světa. Například při vkládání knize napříč tabulku, pak možné nabídnout pevné dostatečně adresáře bude dál přecházejí po jeho uvolnění. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje simulovat toto chování vyvolání manipulace s událostí po uživatele prsty uvolní objekt.
+
+ Informace o tom, jak vytvořit aplikaci, která umožňuje uživateli přesunutí, změna velikosti a otočení objektu najdete v tématu [návod: vytvoření první dotykové aplikace](../../../../docs/framework/wpf/advanced/walkthrough-creating-your-first-touch-application.md).
+
+ <xref:System.Windows.UIElement> Definuje následující manipulace s událostmi.
+
+-   <xref:System.Windows.UIElement.ManipulationStarting>
+
+-   <xref:System.Windows.UIElement.ManipulationStarted>
+
+-   <xref:System.Windows.UIElement.ManipulationDelta>
+
+-   <xref:System.Windows.UIElement.ManipulationInertiaStarting>
+
+-   <xref:System.Windows.UIElement.ManipulationCompleted>
+
+-   <xref:System.Windows.UIElement.ManipulationBoundaryFeedback>
+
+ Ve výchozím nastavení <xref:System.Windows.UIElement> neobdrží tyto manipulace s událostmi. Pro příjem manipulace s událostmi <xref:System.Windows.UIElement>, nastavte <xref:System.Windows.UIElement.IsManipulationEnabled%2A?displayProperty=nameWithType> k `true`.
+
+#### <a name="the-execution-path-of-manipulation-events"></a>Cesta provedení manipulace s událostí
+ Představte si třeba situaci, kdy uživatel "vyvolá" objekt. Uživatel umístí prstem na objekt, přesune prstu přes dotykovou obrazovku na krátké vzdálenosti a pak zruší prstu, zatímco se přesouvá. Výsledek tohoto je, že objekt bude přesouvat pod prstem uživatele a dál přecházejí po uživatel zruší prstu.
+
+ Následující obrázek znázorňuje cesta provedení manipulace s událostmi a důležité informace o každé události.
+
+ ![Pořadí zpracování událostí. ](../../../../docs/framework/wpf/advanced/media/ndp-manipulationevents.png "NDP_ManipulationEvents") manipulace s událostmi
+
+ Následující seznam popisuje posloupnost událostí v předchozí ilustraci.
+
+1.  <xref:System.Windows.UIElement.ManipulationStarting> Události dojde, když uživatel umístí prstem na objekt. Tato událost mimo jiné umožňuje nastavit <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> vlastnost. V následných událostech pozice manipulace bude relativně k <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A>. V události jiných než <xref:System.Windows.UIElement.ManipulationStarting>, tato vlastnost je jen pro čtení, proto <xref:System.Windows.UIElement.ManipulationStarting> událost je jenom čas, který tuto vlastnost lze nastavit.
+
+2.  <xref:System.Windows.UIElement.ManipulationStarted> Dále dojde k události. Tato událost hlásí původu manipulaci.
+
+3.  <xref:System.Windows.UIElement.ManipulationDelta> Více než jednou jako přesunutí uživatele prsty na dotykové obrazovce dojde k události. <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> Vlastnost <xref:System.Windows.Input.ManipulationDeltaEventArgs> třídy hlásí, zda manipulace je interpretován jako přesun, rozšíření nebo překlad. To je, kde provádět většinu práce manipulace s objektu.
+
+4.  <xref:System.Windows.UIElement.ManipulationInertiaStarting> Události dojde, když uživatele prsty ztratí kontaktu s objektem. Tato událost vám umožňuje určit zpomalení manipulace při nečinnosti. Jedná se proto objektu může emulovat různých fyzických mezery nebo atributy, pokud se rozhodnete. Předpokládejme například, že vaše aplikace má dva objekty, které představují položky ve skutečnosti a jeden je těžší než ten druhý. Můžete vytvořit objekt těžší zpomalení rychleji než světlejší objektu.
+
+5.  <xref:System.Windows.UIElement.ManipulationDelta> Jako nečinnost dojde k výskytu události více než jednou. Všimněte si, že k této události dojde při prsty uživatele přesouvat v rámci dotykovou obrazovku a při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] simuluje nečinnost. Jinými slovy <xref:System.Windows.UIElement.ManipulationDelta> dojde před a po <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí. <xref:System.Windows.Input.ManipulationDeltaEventArgs.IsInertial%2A?displayProperty=nameWithType> Vlastnosti sestavy, zda <xref:System.Windows.UIElement.ManipulationDelta> dojde k události při nečinnosti, vám umožní zkontrolovat vlastnosti a provádět různé akce, v závislosti na jeho hodnotu.
+
+6.  <xref:System.Windows.UIElement.ManipulationCompleted> Výskytu události po ukončení manipulaci a jakékoli nečinnost. To znamená, že po všech <xref:System.Windows.UIElement.ManipulationDelta> dojde k událostem, <xref:System.Windows.UIElement.ManipulationCompleted> dojde k události na signál, manipulaci s je dokončena.
+
+ <xref:System.Windows.UIElement> Také definuje <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> událostí. Této události dojde, když <xref:System.Windows.Input.ManipulationDeltaEventArgs.ReportBoundaryFeedback%2A> metoda je volána <xref:System.Windows.UIElement.ManipulationDelta> událostí. <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> Událostí umožňuje aplikace nebo součásti poskytují vizuální zpětnou vazbu, pokud objekt narazí na hranici. Například <xref:System.Windows.Window> třídy obslužné rutiny <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> události a způsobit, že v okně mírně přesunout, pokud dojde k jeho okraj.
+
+ Manipulace s můžete zrušit po zavolání <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A> metodu na argumenty události v každém případě manipulace s výjimkou <xref:System.Windows.UIElement.ManipulationBoundaryFeedback> událostí. Při volání <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A>, už jsou vyvolány manipulace s událostmi a události myši se generují pro dotykové ovládání. Následující tabulka popisuje vztah mezi čas, kdy se zruší manipulaci a události myši, ke kterým dochází.
+
+|Událost, která se nazývá zrušit v|Události myši, ke kterým dochází pro vstup, který již došlo k chybě|
+|----------------------------------------|-----------------------------------------------------------------|
+|<xref:System.Windows.UIElement.ManipulationStarting> a <xref:System.Windows.UIElement.ManipulationStarted>|Myš dolů události.|
+|<xref:System.Windows.UIElement.ManipulationDelta>|Pohybu myší dolů a události pohybu myši.|
+|<xref:System.Windows.UIElement.ManipulationInertiaStarting> a <xref:System.Windows.UIElement.ManipulationCompleted>|Pohybu myší dolů, přesuňte myš a pohybu myší nahoru události.|
+
+ Všimněte si, že pokud zavoláte <xref:System.Windows.Input.ManipulationStartingEventArgs.Cancel%2A> při manipulaci s je v nečinnosti, metoda vrátí `false` a vstup nevyvolává události myši.
+
+### <a name="the-relationship-between-touch-and-manipulation-events"></a>Vztah mezi dotykového ovládání a manipulace s událostmi
+ A <xref:System.Windows.UIElement> vždy může přijímat události dotykové ovládání. Když <xref:System.Windows.UIElement.IsManipulationEnabled%2A> je nastavena na `true`, <xref:System.Windows.UIElement> může přijímat dotykového ovládání a manipulace s událostí.  Pokud <xref:System.Windows.UIElement.TouchDown> nezpracovává události (to znamená <xref:System.Windows.RoutedEventArgs.Handled%2A> vlastnost je `false`), logika zpracování touch na prvek zachytí a vygeneruje manipulace s událostmi. Pokud <xref:System.Windows.RoutedEventArgs.Handled%2A> je nastavena na `true` v <xref:System.Windows.UIElement.TouchDown> událostí, zpracování logiky negeneruje manipulace s událostmi. Následující ilustrace znázorňuje vztah mezi dotyků a manipulace s událostmi.
+
+ ![Vztah mezi dotykového ovládání a manipulace s událostmi](../../../../docs/framework/wpf/advanced/media/ndp-touchmanipulateevents.png "NDP_TouchManipulateEvents") dotykového ovládání a manipulace s událostí
+
+ Následující seznam popisuje vztah mezi dotykového ovládání a manipulace s událostí, které je znázorněno na předchozím obrázku.
+
+-   Při první dotykové ovládání zařízení generuje <xref:System.Windows.UIElement.TouchDown> událostí na <xref:System.Windows.UIElement>, volání logiku zpracování <xref:System.Windows.UIElement.CaptureTouch%2A> metodu, která generuje <xref:System.Windows.UIElement.GotTouchCapture> událostí.
+
+-   Když <xref:System.Windows.UIElement.GotTouchCapture> dojde k volání logiku zpracování <xref:System.Windows.Input.Manipulation.AddManipulator%2A?displayProperty=nameWithType> metodu, která generuje <xref:System.Windows.UIElement.ManipulationStarting> událostí.
+
+-   Když <xref:System.Windows.UIElement.TouchMove> dojde k událostem, generuje logiku zpracování <xref:System.Windows.UIElement.ManipulationDelta> události, ke kterým dochází před <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.
+
+-   Po poslední touch zařízení element vyvolá <xref:System.Windows.UIElement.TouchUp> generuje logiku zpracování událostí, <xref:System.Windows.UIElement.ManipulationInertiaStarting> událostí.
+
+<a name="focus"></a>
+## <a name="focus"></a>fokus
+ Existují dva hlavní koncepty, které se týkají fokus v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]: klávesnice fokus a logický fokus.
+
+### <a name="keyboard-focus"></a>Fokus klávesnice
+ Fokus klávesnice odkazuje na element, který přijímá vstup z klávesnice.  Může existovat na celém klasické pracovní plochy pouze jeden element, který má fokus klávesnice.  V [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], bude mít element, který má fokus klávesnice <xref:System.Windows.IInputElement.IsKeyboardFocused%2A> nastavena na `true`.  Statické <xref:System.Windows.Input.Keyboard> metoda <xref:System.Windows.Input.Keyboard.FocusedElement%2A> vrátí prvek, který má právě fokus klávesnice.
+
+ Fokus klávesnice můžete získat, procházení tabulátorem element nebo kliknutím myši na některé prvky <xref:System.Windows.Controls.TextBox>.  Fokus klávesnice je také možné získat prostřednictvím kódu programu pomocí <xref:System.Windows.Input.Keyboard.Focus%2A> metodu <xref:System.Windows.Input.Keyboard> třídy.  <xref:System.Windows.Input.Keyboard.Focus%2A> pokusy o fokus klávesnice specifikovaný element.  Element vrácen podle <xref:System.Windows.Input.Keyboard.Focus%2A> je prvek, který má právě fokus klávesnice.
+
+ Aby se element, který má získat fokus klávesnice <xref:System.Windows.UIElement.Focusable%2A> vlastnost a <xref:System.Windows.UIElement.IsVisible%2A> vlastnosti musí být nastaveno na **true**.  Některé třídy, jako například <xref:System.Windows.Controls.Panel>, mají <xref:System.Windows.UIElement.Focusable%2A> nastavena na `false` ve výchozím nastavení; proto bude pravděpodobně nutné tuto vlastnost nastavte na `true` Pokud chcete tento element být schopni získat fokus.
+
+ Následující příklad používá <xref:System.Windows.Input.Keyboard.Focus%2A> nastavit fokus klávesnice pro <xref:System.Windows.Controls.Button>.  Nastavit počáteční fokus v aplikaci je doporučené místo <xref:System.Windows.FrameworkElement.Loaded> obslužné rutiny události.
+
  [!code-csharp[focussample#FocusSampleSetFocus](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FocusSample/CSharp/Window1.xaml.cs#focussamplesetfocus)]
- [!code-vb[focussample#FocusSampleSetFocus](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#focussamplesetfocus)]  
-  
- Další informace o fokus klávesnice najdete v tématu [fokus přehled](../../../../docs/framework/wpf/advanced/focus-overview.md).  
-  
-### <a name="logical-focus"></a>Logické fokusu  
- Logické fokus odkazuje <xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType> v oboru fokus.  Může být více elementů, které mají logické fokusu v aplikaci, ale může existovat pouze jeden element, který má právě fokus logické v konkrétní výběr oboru.  
-  
- Fokus obor je kontejnerový element, který sleduje <xref:System.Windows.Input.FocusManager.FocusedElement%2A> ve svém oboru.  Při deaktivaci obor fokus, cílených elementu dojde ke ztrátě fokus klávesnice, ale zachová logické fokus.  Když se fokus vrátí do oboru fokus, bude cílených element získat fokus klávesnice.  To umožňuje fokus klávesnice změnit mezi více obory fokus, ale zajistí, že cílených element v rámci oboru fokus zůstane cílených element když se fokus vrátí.  
-  
- Element mohou být změněny na obor fokusu v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] nastavením <xref:System.Windows.Input.FocusManager> přidružená vlastnost <xref:System.Windows.Input.FocusManager.IsFocusScope%2A> k `true`, nebo v kódu pomocí nastavení přidružená vlastnost pomocí <xref:System.Windows.Input.FocusManager.SetIsFocusScope%2A> metoda.  
-  
- Následující příklad vytvoří <xref:System.Windows.Controls.StackPanel> do oboru fokus nastavením <xref:System.Windows.Input.FocusManager.IsFocusScope%2A> přidružená vlastnost.  
-  
- [!code-xaml[MarkupSnippets#MarkupIsFocusScopeXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MarkupSnippets/CSharp/Window1.xaml#markupisfocusscopexaml)]  
-  
+ [!code-vb[focussample#FocusSampleSetFocus](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSample/visualbasic/window1.xaml.vb#focussamplesetfocus)]
+
+ Další informace o fokus klávesnice, naleznete v tématu [detailní přehled](../../../../docs/framework/wpf/advanced/focus-overview.md).
+
+### <a name="logical-focus"></a>Logický fokus
+ Logický fokus odkazuje <xref:System.Windows.Input.FocusManager.FocusedElement%2A?displayProperty=nameWithType> v oboru fokus.  Může existovat více prvků, které mají logický fokus v aplikaci, ale může existovat pouze jeden element, který má logický fokus v konkrétní výběr oboru.
+
+ Obor fokus je prvek kontejneru, který uchovává informace o <xref:System.Windows.Input.FocusManager.FocusedElement%2A> ve svém oboru.  Při deaktivaci obor fokus, element s fokusem ztratí fokus klávesnice, ale zachová logický fokus.  Když se fokus vrátí do oboru fokus, element s fokusem získá fokus klávesnice.  To umožňuje fokus klávesnice změnit mezi více obory fokus, ale díky, cílených element v rámci oboru fokus zůstane element s fokusem, když se fokus vrátí.
+
+ Elementu je možné zapnout do oboru fokus v [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] nastavením <xref:System.Windows.Input.FocusManager> přidružená vlastnost <xref:System.Windows.Input.FocusManager.IsFocusScope%2A> k `true`, nebo v kódu tak, že nastavíte vlastnost připojené pomocí <xref:System.Windows.Input.FocusManager.SetIsFocusScope%2A> metody.
+
+ Následující příklad provede <xref:System.Windows.Controls.StackPanel> do oboru fokus nastavíte <xref:System.Windows.Input.FocusManager.IsFocusScope%2A> přidružená vlastnost.
+
+ [!code-xaml[MarkupSnippets#MarkupIsFocusScopeXAML](../../../../samples/snippets/csharp/VS_Snippets_Wpf/MarkupSnippets/CSharp/Window1.xaml#markupisfocusscopexaml)]
+
  [!code-csharp[FocusSnippets#FocusSetIsFocusScope](../../../../samples/snippets/csharp/VS_Snippets_Wpf/FocusSnippets/CSharp/Window1.xaml.cs#focussetisfocusscope)]
- [!code-vb[FocusSnippets#FocusSetIsFocusScope](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focussetisfocusscope)]  
-  
- Třídy v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] který jsou obory fokus ve výchozím nastavení jsou <xref:System.Windows.Window>, <xref:System.Windows.Controls.Menu>, <xref:System.Windows.Controls.ToolBar>, a <xref:System.Windows.Controls.ContextMenu>.  
-  
- Element, který má právě fokus klávesnice, bude mít i logické fokus pro fokus oboru, který patří do; Proto nastavení fokusu na element s <xref:System.Windows.Input.Keyboard.Focus%2A> metodu <xref:System.Windows.Input.Keyboard> třídu nebo třídy base element se pokusí o poskytnou element fokus klávesnice a logické fokus.  
-  
- K určení cílených element v oboru fokus, použijte <xref:System.Windows.Input.FocusManager.GetFocusedElement%2A>. Můžete změnit cílených element pro obor fokus <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>.  
-  
- Další informace o logické fokus najdete v tématu [fokus přehled](../../../../docs/framework/wpf/advanced/focus-overview.md).  
-  
-<a name="mouse_position"></a>   
-## <a name="mouse-position"></a>Pozice myši  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] poskytuje užitečné informace s ohledem na souřadnic prostory.  Například koordinaci `(0,0)` souřadnice levého horního, ale levém které elementy ve stromové struktuře? Element, který je cílem vstupní? Element připojit vaše obslužná rutina události? Nebo něco jiného? Aby nedocházelo k záměně, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] je potřeba zadat vaše rámec při práci s souřadnice získaných pomocí myši. <xref:System.Windows.Input.Mouse.GetPosition%2A> Metoda vrátí souřadnice ukazatele myši relativně k daného elementu.  
-  
-<a name="mouse_capture"></a>   
-## <a name="mouse-capture"></a>Zachycení myši  
- Zařízení myši konkrétně nastaveno modální vlastnosti označuje jako zachycení myši. Zachycení myši slouží k udržování přechodném stavu vstupní při spuštění operace přetahování myší, tak, aby ostatní operací zahrnujících nominální na obrazovce umístění ukazatele myši nedojde k nutně. Při přetažení nelze kliknout uživatele bez přerušení a přetáhněte proto většinu upozornění myš nad nevhodných při zachycení myši drží přetáhněte počátek. Zpřístupní vstupní systému [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , můžete určit myši zaznamenat stav, a také [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] můžete vynutit zachycení myši na konkrétní element, nebo zrušte myši zaznamenat stav. Další informace o operací přetažení myší najdete v tématu [přetažení a vyřadit přehled](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md).  
-  
-<a name="commands"></a>   
-## <a name="commands"></a>Příkazy  
- Příkazy Povolit vstupní zpracování více sémantického úrovni, než zařízení vstup.  Příkazy, jako jsou jednoduché direktivy `Cut`, `Copy`, `Paste`, nebo `Open`.  Příkazy jsou užitečné pro centrální správu logika příkaz.  Stejný příkaz může k němu přistupovat z <xref:System.Windows.Controls.Menu>na <xref:System.Windows.Controls.ToolBar>, nebo pomocí klávesové zkratky. Příkazy také poskytují mechanismus pro zakázat ovládacích prvků, když příkaz nedostupný.  
-  
- <xref:System.Windows.Input.RoutedCommand> je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] implementace <xref:System.Windows.Input.ICommand>.  Když <xref:System.Windows.Input.RoutedCommand> proveden, <xref:System.Windows.Input.CommandManager.PreviewExecuted> a <xref:System.Windows.Input.CommandManager.Executed> událost se vyvolá při cíl příkazu, který tunelové propojení a bublin prostřednictvím stromu element jako jiného vstupu.  Pokud příkaz cíl není nastavena, bude prvek s fokus klávesnice cíl příkazu.  Logiky, která k provedení příkazu je připojen k <xref:System.Windows.Input.CommandBinding>.  Při <xref:System.Windows.Input.CommandManager.Executed> dosáhne událostí <xref:System.Windows.Input.CommandBinding> pro tuto konkrétní příkaz <xref:System.Windows.Input.ExecutedRoutedEventHandler> na <xref:System.Windows.Input.CommandBinding> je volána.  Tato rutina provede akci příkazu.  
-  
- Další informace o tvorba příkazů najdete v tématu [tvorba příkazů přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
-  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje knihovnu běžných příkazů, které se skládá z <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.MediaCommands>, <xref:System.Windows.Input.ComponentCommands>, <xref:System.Windows.Input.NavigationCommands>, a <xref:System.Windows.Documents.EditingCommands>, nebo můžete definovat vlastní.  
-  
- Následující příklad ukazuje, jak nastavit <xref:System.Windows.Controls.MenuItem> tak, že když po kliknutí na bude vyvolán <xref:System.Windows.Input.ApplicationCommands.Paste%2A> příkaz na <xref:System.Windows.Controls.TextBox>, v případě <xref:System.Windows.Controls.TextBox> má fokus klávesnice.  
-  
- [!code-xaml[CommandingOverviewSnippets#CommandingOverviewSimpleCommand](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewsimplecommand)]  
-  
+ [!code-vb[FocusSnippets#FocusSetIsFocusScope](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/FocusSnippets/visualbasic/window1.xaml.vb#focussetisfocusscope)]
+
+ Třídy v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] jsou obory fokus ve výchozím nastavení jsou <xref:System.Windows.Window>, <xref:System.Windows.Controls.Menu>, <xref:System.Windows.Controls.ToolBar>, a <xref:System.Windows.Controls.ContextMenu>.
+
+ Element, který má právě fokus klávesnice, budou také mít logický fokus pro obor fokus, do které patří. Proto nastavení fokusu na element s <xref:System.Windows.Input.Keyboard.Focus%2A> metodu <xref:System.Windows.Input.Keyboard> třídu nebo třídy base element se pokusí získá fokus klávesnice elementu a logický fokus.
+
+ Zjistíte element s fokusem v oboru fokus <xref:System.Windows.Input.FocusManager.GetFocusedElement%2A>. Chcete-li změnit element s fokusem pro obor fokus, použijte <xref:System.Windows.Input.FocusManager.SetFocusedElement%2A>.
+
+ Další informace o logický fokus, naleznete v tématu [detailní přehled](../../../../docs/framework/wpf/advanced/focus-overview.md).
+
+<a name="mouse_position"></a>
+## <a name="mouse-position"></a>Pozice myši
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] obsahuje užitečné informace z hlediska souřadnicových prostorech.  Například koordinaci `(0,0)` souřadnice levého horního, ale levou horní které element ve stromové struktuře? Prvek, který je cílem vstupní? Prvek, který jste připojili vaše obslužná rutina události? Nebo něco jiného? Aby nedocházelo k záměně, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] vstupní [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] vyžaduje zadání vašeho referenčním rámcem při práci s souřadnice získaných myši. <xref:System.Windows.Input.Mouse.GetPosition%2A> Metoda vrátí souřadnic ukazatele myši relativně vzhledem k zadanému prvku.
+
+<a name="mouse_capture"></a>
+## <a name="mouse-capture"></a>Zachycení myši
+ Zařízení myši výslovně uložení modální charakteristiku označované jako zachycení myši. Zachycení myši slouží k udržování přechodný stav vstupní při zahájení operace přetažení myší, aby další operace, které zahrnují o nominálních na obrazovce pozice ukazatele myši nedojde nutně. Při přetažení nemůže uživatel kliknout bez přerušení přetažení myší, díky nevhodný většina mouseover pomůcky, dokud je držen zachycení myši přetáhněte původním umístění. Poskytuje vstupní systém [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , které můžete určit stav zachycení myši, stejně jako [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] , která vynutí zachycení myši konkrétní elementu nebo vymazat stav zachycení myši. Další informace o operací přetažení myší, naleznete v tématu [vyřadit přehled a přetáhněte](../../../../docs/framework/wpf/advanced/drag-and-drop-overview.md).
+
+<a name="commands"></a>
+## <a name="commands"></a>Příkazy
+ Příkazy povolí vstupní zpracování více sémantických úrovni, než vstupní zařízení.  Příkazy jsou jednoduché direktivy, jako je například `Cut`, `Copy`, `Paste`, nebo `Open`.  Příkazy jsou užitečné pro centrální správu logiky příkazu.  Ten samý příkaz by mohly být přístupné z <xref:System.Windows.Controls.Menu>na <xref:System.Windows.Controls.ToolBar>, nebo pomocí klávesové zkratky. Příkazy taky mělo poskytovat mechanismus pro zakázání ovládacích prvků při příkazu stane nedostupným.
+
+ <xref:System.Windows.Input.RoutedCommand> je [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] provádění <xref:System.Windows.Input.ICommand>.  Když <xref:System.Windows.Input.RoutedCommand> provádí, <xref:System.Windows.Input.CommandManager.PreviewExecuted> a <xref:System.Windows.Input.CommandManager.Executed> na daném cíli příkazu, které tunelové propojení a bubliny prostřednictvím stromem prvků, jako jsou ostatní vstupy jsou vyvolány události.  Pokud cíl příkazu není nastavena, bude prvek s fokus klávesnice cíli příkazu.  Logika, která provede příkaz je připojen k <xref:System.Windows.Input.CommandBinding>.  Při <xref:System.Windows.Input.CommandManager.Executed> dosáhne událostí <xref:System.Windows.Input.CommandBinding> pro tento konkrétní příkaz <xref:System.Windows.Input.ExecutedRoutedEventHandler> na <xref:System.Windows.Input.CommandBinding> je volána.  Tato obslužná rutina provede akci příkazu.
+
+ Další informace o příkazů najdete v tématu [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md).
+
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje knihovnu běžných příkazů, které se skládá z <xref:System.Windows.Input.ApplicationCommands>, <xref:System.Windows.Input.MediaCommands>, <xref:System.Windows.Input.ComponentCommands>, <xref:System.Windows.Input.NavigationCommands>, a <xref:System.Windows.Documents.EditingCommands>, nebo můžete definovat vlastní.
+
+ Následující příklad ukazuje, jak nastavit <xref:System.Windows.Controls.MenuItem> tak, aby po kliknutí se vyvolá <xref:System.Windows.Input.ApplicationCommands.Paste%2A> příkaz <xref:System.Windows.Controls.TextBox>, předpokládá <xref:System.Windows.Controls.TextBox> má fokus klávesnice.
+
+ [!code-xaml[CommandingOverviewSnippets#CommandingOverviewSimpleCommand](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml#commandingoverviewsimplecommand)]
+
  [!code-csharp[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](../../../../samples/snippets/csharp/VS_Snippets_Wpf/CommandingOverviewSnippets/CSharp/Window1.xaml.cs#commandingoverviewcommandtargetcodebehind)]
- [!code-vb[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcommandtargetcodebehind)]  
-  
- Další informace o příkazech v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], najdete v části [tvorba příkazů přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md).  
-  
-<a name="the_input_system_and_base_elements"></a>   
-## <a name="the-input-system-and-base-elements"></a>Vstupní systému a základní prvky  
- Vstupní události, jako je například přidružené události definované <xref:System.Windows.Input.Mouse>, <xref:System.Windows.Input.Keyboard>, a <xref:System.Windows.Input.Stylus> třídy jsou vyvolané vstupní systémem a vložit do konkrétní pozici v modelu objektu podle vstupů do testování vizuálním stromu za běhu.  
-  
- Všechny události, <xref:System.Windows.Input.Mouse>, <xref:System.Windows.Input.Keyboard>, a <xref:System.Windows.Input.Stylus> definovat, jak je přidružená událost je také znovu vystavené třídy base element <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement> jako nový směrované události. Element base směrované události se generují třídy zpracování původní přidružená událost a opakovaného použití data události.  
-  
- Pokud vstupní událost se sváže s konkrétní zdrojový prvek prostřednictvím implementace jeho base element vstupní událost, lze ho směrovat pomocí zbytek trasu událost, která je založena na kombinaci logické a vizuální stromu objektů a zpracovávat kód aplikace.  Obecně je pohodlnější ke zpracování těchto zařízení související vstupní událostí pomocí směrované události na <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>, protože můžete použít intuitivnější událostí syntaxe obslužné rutiny i v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a v kódu. Můžete zadat, aby zpracování připojené události, který spustil proces místo, ale by čelí několik výhrad: přidružená událost mohou být označeny zpracováván zpracování třídy base element a budete muset použít přístupových metod, nikoliv syntaxi true událostí v pořadí pro připojení obslužné rutiny pro přidružené události.  
-  
-<a name="whats_next"></a>   
-## <a name="whats-next"></a>Co je další  
- Nyní máte několik postupů pro zpracování vstupu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Také byste měli mít lepší představu o různé typy vstupních událostech a mechanismů směrované události používané [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
-  
- Další prostředky jsou k dispozici, vysvětlují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] framework elementy a událostí směrování podrobněji. Najdete další informace najdete v následujících přehledech [tvorba příkazů přehled](../../../../docs/framework/wpf/advanced/commanding-overview.md), [fokus přehled](../../../../docs/framework/wpf/advanced/focus-overview.md), [základní prvky přehled](../../../../docs/framework/wpf/advanced/base-elements-overview.md), [stromy v grafickém subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md), a [směrovány Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).  
-  
-## <a name="see-also"></a>Viz také  
- [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md)  
- [Přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md)  
- [Přehled směrovaných událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md)  
- [Přehled základních elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md)  
- [Vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)
+ [!code-vb[CommandingOverviewSnippets#CommandingOverviewCommandTargetCodeBehind](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/CommandingOverviewSnippets/visualbasic/window1.xaml.vb#commandingoverviewcommandtargetcodebehind)]
+
+ Další informace o příkazech v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], naleznete v tématu [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md).
+
+<a name="the_input_system_and_base_elements"></a>
+## <a name="the-input-system-and-base-elements"></a>Vstupní systém a základní elementy
+ Vstupní události, například připojené události definované <xref:System.Windows.Input.Mouse>, <xref:System.Windows.Input.Keyboard>, a <xref:System.Windows.Input.Stylus> třídy jsou vyvolané vstupní systémem a vloží na konkrétní pozici v objektu model založený na přístupů k testování vizuální strom za běhu.
+
+ Všechny události, která <xref:System.Windows.Input.Mouse>, <xref:System.Windows.Input.Keyboard>, a <xref:System.Windows.Input.Stylus> definovat jako připojených událostí je také znovu vystavené třídy základní element <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement> jako nové směrované události. Element base směrovat události se generují z tříd zpracování původní připojené události a opětovné použití data události.
+
+ Jakmile je vstupní události spojené s konkrétní zdrojového elementu prostřednictvím implementace její základní prvek vstupní události, jde ho směrovat pomocí zbytek trasy události, která je založena na kombinaci logické a vizuální strom objektů a zpracovat kód aplikace.  Obecně je vhodnější pro zpracování těchto zařízení: vstupní události použití směrovaných událostí na <xref:System.Windows.UIElement> a <xref:System.Windows.ContentElement>, protože používáte intuitivnější události syntaxe obslužné rutiny i v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] a v kódu. Můžete se rozhodnout zpracování připojené události, která iniciovala proces místo toho, ale bude mít několik potíže s: přidružená událost může být označena zpracováván zpracování element základní třídy a je třeba použít přístupové metody spíše než syntaxe true událost v pořadí připojení obslužných rutin pro připojené události.
+
+<a name="whats_next"></a>
+## <a name="whats-next"></a>Co se chystá
+ Teď máte několik postupů pro zpracování vstupu v [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  Také byste měli mít lepší pochopení různých typů vstupních událostí a směrovaných událostí mechanismů používané [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+
+ Jsou k dispozici další prostředky, které popisují [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prvky rozhraní framework a směrování událostí podrobněji. Následující přehledy pro další informace najdete v tématu [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md), [detailní přehled](../../../../docs/framework/wpf/advanced/focus-overview.md), [základní prvky přehled](../../../../docs/framework/wpf/advanced/base-elements-overview.md), [stromy v subsystému WPF](../../../../docs/framework/wpf/advanced/trees-in-wpf.md), a [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md).
+
+## <a name="see-also"></a>Viz také
+ [Přehled fokusu](../../../../docs/framework/wpf/advanced/focus-overview.md) [přehled příkazů](../../../../docs/framework/wpf/advanced/commanding-overview.md) [směrovat Přehled událostí](../../../../docs/framework/wpf/advanced/routed-events-overview.md) [základní přehled elementů](../../../../docs/framework/wpf/advanced/base-elements-overview.md) [vlastnosti](../../../../docs/framework/wpf/advanced/properties-wpf.md)
