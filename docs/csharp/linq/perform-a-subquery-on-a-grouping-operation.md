@@ -4,27 +4,27 @@ description: Jak k provádění poddotazů na operace seskupení pomocí jazyka 
 ms.date: 12/1/2016
 ms.assetid: d75a588e-9b6f-4f37-b195-f99ec8503855
 ms.openlocfilehash: 514db81b80557a3026589f00177910cc9446c0f4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
-ms.translationtype: MT
+ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193470"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48244643"
 ---
-# <a name="perform-a-subquery-on-a-grouping-operation"></a><span data-ttu-id="d5d2f-103">Provádění poddotazů na operace seskupení</span><span class="sxs-lookup"><span data-stu-id="d5d2f-103">Perform a subquery on a grouping operation</span></span>
+# <a name="perform-a-subquery-on-a-grouping-operation"></a><span data-ttu-id="b6568-103">Provádění poddotazů na operace seskupení</span><span class="sxs-lookup"><span data-stu-id="b6568-103">Perform a subquery on a grouping operation</span></span>
 
-<span data-ttu-id="d5d2f-104">Tento článek popisuje dva různé způsoby vytvoření dotazu, který seřadí zdroj dat do skupin a potom provede poddotaz v každé skupině jednotlivě.</span><span class="sxs-lookup"><span data-stu-id="d5d2f-104">This article shows two different ways to create a query that orders the source data into groups, and then performs a subquery over each group individually.</span></span> <span data-ttu-id="d5d2f-105">Základní postup v obou příkladech je seskupení zdrojové prvky pomocí *pokračování* s názvem `newGroup`a potom generovat nové poddotaz proti `newGroup`.</span><span class="sxs-lookup"><span data-stu-id="d5d2f-105">The basic technique in each example is to group the source elements by using a *continuation* named `newGroup`, and then generating a new subquery against `newGroup`.</span></span> <span data-ttu-id="d5d2f-106">Tato poddotaz spustí pro každou novou skupinu, která se vytvořila vnější dotaz.</span><span class="sxs-lookup"><span data-stu-id="d5d2f-106">This subquery is run against each new group that is created by the outer query.</span></span> <span data-ttu-id="d5d2f-107">Všimněte si, že v tomto konkrétním příkladu závěrečný výstup skupinu, ale plochý sekvence anonymních typů.</span><span class="sxs-lookup"><span data-stu-id="d5d2f-107">Note that in this particular example the final output is not a group, but a flat sequence of anonymous types.</span></span>  
+<span data-ttu-id="b6568-104">Tento článek popisuje dva různé způsoby vytvoření dotazu, který seřadí zdroj dat do skupin a potom provede poddotaz v každé skupině jednotlivě.</span><span class="sxs-lookup"><span data-stu-id="b6568-104">This article shows two different ways to create a query that orders the source data into groups, and then performs a subquery over each group individually.</span></span> <span data-ttu-id="b6568-105">Základní postup v obou příkladech je seskupení zdrojové prvky pomocí *pokračování* s názvem `newGroup`a potom generovat nové poddotaz proti `newGroup`.</span><span class="sxs-lookup"><span data-stu-id="b6568-105">The basic technique in each example is to group the source elements by using a *continuation* named `newGroup`, and then generating a new subquery against `newGroup`.</span></span> <span data-ttu-id="b6568-106">Tato poddotaz spustí pro každou novou skupinu, která se vytvořila vnější dotaz.</span><span class="sxs-lookup"><span data-stu-id="b6568-106">This subquery is run against each new group that is created by the outer query.</span></span> <span data-ttu-id="b6568-107">Všimněte si, že v tomto konkrétním příkladu závěrečný výstup skupinu, ale plochý sekvence anonymních typů.</span><span class="sxs-lookup"><span data-stu-id="b6568-107">Note that in this particular example the final output is not a group, but a flat sequence of anonymous types.</span></span>  
   
-<span data-ttu-id="d5d2f-108">Další informace o tom, jak skupiny, najdete v části [group – klauzule](../language-reference/keywords/group-clause.md).</span><span class="sxs-lookup"><span data-stu-id="d5d2f-108">For more information about how to group, see [group clause](../language-reference/keywords/group-clause.md).</span></span>  
+<span data-ttu-id="b6568-108">Další informace o tom, jak skupiny, najdete v části [group – klauzule](../language-reference/keywords/group-clause.md).</span><span class="sxs-lookup"><span data-stu-id="b6568-108">For more information about how to group, see [group clause](../language-reference/keywords/group-clause.md).</span></span>  
   
-<span data-ttu-id="d5d2f-109">Další informace o pokračování naleznete v tématu [do](../language-reference/keywords/into.md).</span><span class="sxs-lookup"><span data-stu-id="d5d2f-109">For more information about continuations, see [into](../language-reference/keywords/into.md).</span></span> <span data-ttu-id="d5d2f-110">Následující příklad používá jako zdroj dat pro strukturu dat v paměti, ale stejné zásady platí i pro jakýkoli druh zdroje dat LINQ.</span><span class="sxs-lookup"><span data-stu-id="d5d2f-110">The following example uses an in-memory data structure as the data source, but the same principles apply for any kind of LINQ data source.</span></span>  
+<span data-ttu-id="b6568-109">Další informace o pokračování naleznete v tématu [do](../language-reference/keywords/into.md).</span><span class="sxs-lookup"><span data-stu-id="b6568-109">For more information about continuations, see [into](../language-reference/keywords/into.md).</span></span> <span data-ttu-id="b6568-110">Následující příklad používá jako zdroj dat pro strukturu dat v paměti, ale stejné zásady platí i pro jakýkoli druh zdroje dat LINQ.</span><span class="sxs-lookup"><span data-stu-id="b6568-110">The following example uses an in-memory data structure as the data source, but the same principles apply for any kind of LINQ data source.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d5d2f-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="d5d2f-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b6568-111">Příklad</span><span class="sxs-lookup"><span data-stu-id="b6568-111">Example</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="d5d2f-112">Obsahuje odkazy na objekty, které jsou definovány ve vzorovém kódu v tomto příkladu [dotazování na kolekci objektů](query-a-collection-of-objects.md).</span><span class="sxs-lookup"><span data-stu-id="d5d2f-112">This example contains references to objects that are defined in the sample code in [Query a collection of objects](query-a-collection-of-objects.md).</span></span>
+> <span data-ttu-id="b6568-112">Obsahuje odkazy na objekty, které jsou definovány ve vzorovém kódu v tomto příkladu [dotazování na kolekci objektů](query-a-collection-of-objects.md).</span><span class="sxs-lookup"><span data-stu-id="b6568-112">This example contains references to objects that are defined in the sample code in [Query a collection of objects](query-a-collection-of-objects.md).</span></span>
 
 [!code-csharp[csProgGuideLINQ#23](~/samples/snippets/csharp/concepts/linq/how-to-perform-a-subquery-on-a-grouping-operation_1.cs)]  
 
-## <a name="see-also"></a><span data-ttu-id="d5d2f-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="d5d2f-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b6568-113">Viz také:</span><span class="sxs-lookup"><span data-stu-id="b6568-113">See also</span></span>
 
-- [<span data-ttu-id="d5d2f-114">LINQ (Language Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="d5d2f-114">Language Integrated Query (LINQ)</span></span>](index.md)
+- [<span data-ttu-id="b6568-114">LINQ (Language Integrated Query)</span><span class="sxs-lookup"><span data-stu-id="b6568-114">Language Integrated Query (LINQ)</span></span>](index.md)
