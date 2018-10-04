@@ -9,35 +9,35 @@ helpviewer_keywords:
 - Windows Forms, anchoring and docking WPF content
 - interoperability [WPF]
 ms.assetid: 5efb1c53-1484-43d6-aa8a-f4861b99bb8a
-ms.openlocfilehash: 1466591a06e9e7ca61f94683e037566f8d0cb31a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 062b9b943d187ccd4105f3772688c563f540d696
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509772"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266666"
 ---
 # <a name="walkthrough-arranging-wpf-content-on-windows-forms-at-design-time"></a>Návod: Uspořádání obsahu WPF ve Windows Forms během návrhu
-Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako je například ukotvení a zarovnávacích čar, k uspořádání ovládacích prvků Windows Presentation Foundation (WPF).  
-  
- V tomto podrobném návodu můžete provádět následující úlohy:  
-  
--   Vytvoření projektu.  
-  
--   Vytvoření ovládacího prvku WPF.  
-  
--   Hostitelské ovládací prvky WPF v panelu rozložení.  
-  
--   Pomocí zarovnávacích čar Zarovnat ovládací prvky WPF.  
-  
--   Ukotvení a ovládacích prvků WPF.  
-  
+Tento návod ukazuje způsob použití funkcí rozložení Windows Forms, jako je například ukotvení a zarovnávacích čar, k uspořádání ovládacích prvků Windows Presentation Foundation (WPF).
+
+ V tomto podrobném návodu můžete provádět následující úlohy:
+
+-   Vytvoření projektu.
+
+-   Vytvoření ovládacího prvku WPF.
+
+-   Hostitelské ovládací prvky WPF v panelu rozložení.
+
+-   Pomocí zarovnávacích čar Zarovnat ovládací prvky WPF.
+
+-   Ukotvení a ovládacích prvků WPF.
+
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
   
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
--   [!INCLUDE[vs_dev11_long](../../../../includes/vs-dev11-long-md.md)].  
+-   Visual Studio 2012.  
   
 ## <a name="creating-the-project"></a>Vytvoření projektu  
  Prvním krokem je vytvoření projektu Windows Forms.  

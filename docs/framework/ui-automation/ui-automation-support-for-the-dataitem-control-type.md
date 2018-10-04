@@ -9,11 +9,11 @@ ms.assetid: 181708fd-2595-4c43-9abd-75811627d64c
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: e055733a8f3d1ecb9c1fcea336bbe90ddd155731
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48032414"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48263450"
 ---
 # <a name="ui-automation-support-for-the-dataitem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku DataItem
 > [!NOTE]

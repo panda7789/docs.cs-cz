@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 1df08cbb-68c5-4d36-9f88-a776a8117de8
 author: BrucePerlerMS
 ms.openlocfilehash: b49aea0ee78b68f199d1ac9e9a1050960342bcb2
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
-ms.translationtype: HT
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48244851"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777049"
 ---
 # <a name="peertransportsecuritysettings"></a>PeerTransportSecuritySettings
 PeerTransportSecuritySettings  

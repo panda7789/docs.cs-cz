@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 ms.assetid: 7667770e-d163-4ad6-a303-085cf73db2f2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 9cb7807fbfc1fbaf039fd7aef04331210dfa7cfa
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 39b7228de775f4dc92e932731ad9967315437e6e
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47089932"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777393"
 ---
 # <a name="mef-for-net-for-windows-store-apps"></a>Rozhraní MEF pro .NET pro aplikace Windows Store
 <xref:System.Composition?displayProperty=nameWithType> a jeho podřízené obory názvů obsahují typy pro vývoj rozšiřitelných [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí Managed Extensibility Framework (MEF). Tyto obory názvů jsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] dílčí pro [!INCLUDE[win8](../../../includes/win8-md.md)] operačního systému.  
   
- Tyto obory názvů nejsou součástí základní knihovny tříd distribuované s rozhraním .NET Framework. Chcete-li nainstalovat tyto obory názvů, otevřete projekt v [!INCLUDE[vs_dev11_long](../../../includes/vs-dev11-long-md.md)], zvolte **spravovat balíčky NuGet** z **projektu** nabídky a vyhledejte online balíček Microsoft.Composition.  
+ Tyto obory názvů nejsou součástí základní knihovny tříd distribuované s rozhraním .NET Framework. Pokud chcete nainstalovat tyto obory názvů, otevřete projekt v sadě Visual Studio, zvolte **spravovat balíčky NuGet** z **projektu** nabídky a vyhledejte online balíček Microsoft.Composition.  
   
 -   <xref:System.Composition?displayProperty=nameWithType> poskytuje třídy, které tvoří základní rozhraní MEF pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
   

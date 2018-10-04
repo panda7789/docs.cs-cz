@@ -3,11 +3,11 @@ title: Co je nového v jazyce C# 7.2
 description: Přehled nových funkcí v jazyce C# 7.2.
 ms.date: 08/16/2017
 ms.openlocfilehash: 87fd67b37a31a02960334a2b2a325724e0cc2c73
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47400800"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48261352"
 ---
 # <a name="whats-new-in-c-72"></a>Co je nového v jazyce C# 7.2
 

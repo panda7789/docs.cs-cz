@@ -11,11 +11,11 @@ ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: f62775a41f70e4dd96c749acd99bf8b850d96407
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48032618"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580696"
 ---
 # <a name="how-to-send-data-using-the-webrequest-class"></a>Postupy: odesílání dat pomocí třídy WebRequest
 Následující postup popisuje kroky, které používají k odesílání dat na server. Tento postup se běžně používá k odesílání dat na webovou stránku.  

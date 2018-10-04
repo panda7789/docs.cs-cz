@@ -2,22 +2,22 @@
 title: Externí Toolkit sady pravidel
 ms.date: 03/30/2017
 ms.assetid: a306d283-a031-475e-aa01-9ae86e7adcb0
-ms.openlocfilehash: f418c71b39611e64afea168ed40418dbe981521a
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f545d083bb6caf9daca3ce553d0a1ee6711b0062
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43803353"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48584257"
 ---
 # <a name="external-ruleset-toolkit"></a>Externí Toolkit sady pravidel
-Obvykle při použití pravidla v rámci aplikace pracovního postupu pravidla jsou součástí sestavení. V některých případech můžete chtít spravovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez nutnosti opětovného sestavování a nasazování sestavení pracovního postupu. Tato ukázka umožňuje spravovat a upravovat sady pravidel v databázi a zpřístupnit tyto sady pravidel z pracovního postupu za běhu. To umožňuje spuštěné instance pracovního postupu, jak automaticky začlenit změny sady pravidel.  
-  
- Ukázka externích nástrojů sady pravidel obsahuje nástroj formulářů Windows, který vám pomůže spravovat a upravovat sady pravidel verze v databázi. Zahrnuje také aktivitu a hostitelská služba pro provádění těchto pravidel.  
-  
+Obvykle při použití pravidla v rámci aplikace pracovního postupu pravidla jsou součástí sestavení. V některých případech můžete chtít spravovat sady pravidel odděleně od sestavení tak, aby bylo možné aktualizovat bez nutnosti opětovného sestavování a nasazování sestavení pracovního postupu. Tato ukázka umožňuje spravovat a upravovat sady pravidel v databázi a zpřístupnit tyto sady pravidel z pracovního postupu za běhu. To umožňuje spuštěné instance pracovního postupu, jak automaticky začlenit změny sady pravidel.
+
+ Ukázka externích nástrojů sady pravidel obsahuje nástroj formulářů Windows, který vám pomůže spravovat a upravovat sady pravidel verze v databázi. Zahrnuje také aktivitu a hostitelská služba pro provádění těchto pravidel.
+
 > [!NOTE]
 >  Tato ukázka vyžaduje [Microsoft SQL Server](https://go.microsoft.com/fwlink/?LinkId=96181).  
   
- [!INCLUDE[vsprvsext](../../../../includes/vsprvsext-md.md)] poskytuje editor sady pravidel v rámci Windows Workflow Foundation (WF). Můžete spustit tento editor dvojitým kliknutím `Policy` aktivity v pracovním postupu; serializuje definovaný objekt RuleSet .rules souboru spojené s pracovním postupem ( `Policy` aktivity spouští instanci sady pravidel pro pracovní postup). Při sestavování projektu pracovního postupu je .rules soubor zkompilovaný do sestavení jako prostředek.  
+ Visual Studio poskytuje v editoru sady pravidel v rámci Windows Workflow Foundation (WF). Můžete spustit tento editor dvojitým kliknutím `Policy` aktivity v pracovním postupu; serializuje definovaný objekt RuleSet .rules souboru spojené s pracovním postupem ( `Policy` aktivity spouští instanci sady pravidel pro pracovní postup). Při sestavování projektu pracovního postupu je .rules soubor zkompilovaný do sestavení jako prostředek.  
   
  Součástí této ukázky zahrnout:  
   

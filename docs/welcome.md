@@ -7,11 +7,11 @@ ms.date: 09/07/2018
 ms.topic: article
 ms.custom: updateeachrelease
 ms.openlocfilehash: 020976efd12685c32c6d3a107fe403883359ed7f
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028151"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48579096"
 ---
 # <a name="welcome-to-net"></a>Vítejte v .NET
 

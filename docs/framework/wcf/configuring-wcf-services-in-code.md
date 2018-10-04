@@ -3,11 +3,11 @@ title: Konfigurace služeb WCF v kódu
 ms.date: 03/30/2017
 ms.assetid: 193c725d-134f-4d31-a8f8-4e575233bff6
 ms.openlocfilehash: abd75e514d698e73c2297a5dc2e511f89f0534b1
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037453"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582434"
 ---
 # <a name="configuring-wcf-services-in-code"></a>Konfigurace služeb WCF v kódu
 Windows Communication Foundation (WCF) umožňuje vývojářům konfigurovat služeb pomocí konfiguračních souborů nebo kódu.  Konfigurační soubory jsou užitečné, pokud je potřeba nakonfigurovat po nasazení služby. Při použití konfiguračních souborů, odborníci na IT jenom je potřeba aktualizovat konfigurační soubor, žádné rekompilace je povinný. Konfigurační soubory, ale lze komplexní a obtížné na správu. Neexistuje žádná podpora pro ladění konfigurační soubory a konfigurační prvky, které je odkazováno dle názvy, které umožňuje vytváření konfigurační soubory obtížné a náchylné k chybě. WCF můžete také nakonfigurovat v kódu. V dřívějších verzích konfigurace služby WCF (4.0 a starší) v kódu bylo snadné v místním prostředí scénáře <xref:System.ServiceModel.ServiceHost> třída je možné nakonfigurovat koncové body a chování před voláním ServiceHost.Open povolená. Ve scénářích hostovaná na webu, ale nemáte přímý přístup k <xref:System.ServiceModel.ServiceHost> třídy. Konfigurace webového hostovaná služba byla potřeba k vytvoření `System.ServiceModel.ServiceHostFactory` vytvořený <xref:System.ServiceModel.Activation.ServiceHostFactory> a provedení všech potřebných konfigurace. Počínaje .NET 4.5 WCF poskytuje snadný způsob, jak nakonfigurovat i v místním prostředí a web hostované služby v kódu.  

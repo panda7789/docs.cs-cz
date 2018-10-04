@@ -5,12 +5,12 @@ author: tdykstra
 ms.author: tdykstra
 ms.date: 07/08/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 11fad691021ec897348177c67134750e72b4ff7c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 4ffcf56ba171192048a736b58ddcfa591fd3af58
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698481"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580846"
 ---
 # <a name="net-glossary"></a>.NET – Glosář
 
@@ -38,7 +38,7 @@ Zobrazit [dokumentace k ASP.NET Core](/aspnet/#pivot=core).
 
 ## <a name="assembly"></a>sestavení
 
-A *.dll*/*.exe* soubor, který může obsahovat sadu rozhraní API, která je možné vyvolat v aplikacích nebo jiná sestavení.
+A *.dll*/*.exe* soubor, který může obsahovat sadu rozhraní API, která mohou být volány aplikací nebo jiná sestavení.
 
 Sestavení může obsahovat typy, jako jsou rozhraní, třídy, struktury, výčty a delegáti. Sestavení v projektu *bin* složky jsou někdy označovány jako *binární soubory*. Viz také [knihovny](#library).
 
@@ -46,13 +46,13 @@ Sestavení může obsahovat typy, jako jsou rozhraní, třídy, struktury, výč
 
 Modul Common Language Runtime.
 
-Přesné význam závisí na kontextu, ale to se obvykle odkazuje na modul runtime rozhraní .NET Framework. Modul CLR zpracovává přidělení paměti a správu. Modul CLR je také virtuální počítač, který nejen spustí aplikace, ale také vygeneruje a zkompiluje kód v běhu pomocí kompilátoru JIT. Aktuální implementace Microsoft CLR je jenom pro Windows.
+Přesné význam závisí na kontextu, ale to se obvykle odkazuje na modul runtime rozhraní .NET Framework. Modul CLR zpracovává přidělení paměti a správu. Modul CLR je také virtuální počítač, který nejen spustí aplikace, ale také generuje a kompilaci kódu pomocí na průběžné [JIT](#jit) kompilátoru. Aktuální implementace Microsoft CLR je jenom pro Windows.
 
 ## <a name="coreclr"></a>CoreCLR
 
 .NET core CLR.
 
-Tato CLR je sestaven z základní jako CLR stejný kód. Původně CoreCLR byl modul runtime technologie Silverlight a byl navržen pro spouštění na více platforem, konkrétně Windows a OS X. CoreCLR je teď součástí sady .NET Core a představuje zjednodušenou verzi modulu CLR. Je stále modulu runtime napříč platformami, nyní včetně podpory pro řadu distribucí systému Linux. CoreCLR je také virtuální počítač s možností spouštění JIT a kód.
+Tato CLR je sestaven z základní jako CLR stejný kód. Původně CoreCLR byl modul runtime technologie Silverlight a byl navržen pro spouštění na více platforem, konkrétně Windows a OS X. CoreCLR je teď součástí sady .NET Core a představuje zjednodušenou verzi modulu CLR. Stále [multiplatformní](#cross-platform) modulu runtime, nyní včetně podpory pro řadu distribucí systému Linux. CoreCLR je také virtuální počítač s možností spouštění JIT a kód.
 
 ## <a name="corefx"></a>CoreFX
 
@@ -67,6 +67,10 @@ Modul runtime .NET core.
 Na rozdíl od CLR/CoreCLR, CoreRT není virtuální počítač, což znamená, že neobsahuje funkce pro generování a spuštění kódu v běhu, protože neobsahuje [JIT](#jit). , Ale patří [GC](#gc) a možnost identifikace typu modulu runtime (RTTI) a reflexe. Ale jeho typ systému je navržený tak, aby metadata pro účely reflexe není povinné. Díky tomu máte [AOT](#aot) nástroj řetězec, který můžete propojit tokeny nadbytečný metadat a (důležitější) identifikovat kód, který se aplikace nepoužívá. CoreRT je ve vývoji.
 
 Zobrazit [Úvod do .NET Native a CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md)
+
+## <a name="cross-platform"></a>pro různé platformy
+
+Možnost vyvíjet a spouštět aplikace, která je možné v několika různých operačních systémech, jako je Linux, Windows a iOS, aniž byste museli znovu napsat speciálně pro každý z nich. Díky tomu opakovanému použití kódu a konzistenci mezi aplikací na různých platformách.
 
 ## <a name="ecosystem"></a>Ekosystém
 
@@ -136,7 +140,7 @@ Zobrazit [balíčky, Metabalíčky a architektury](../core/packages.md)
 
 ## <a name="mono"></a>Mono
 
-Mono je implementace .NET, který se používá hlavně při malý modul runtime je povinný. Je modul runtime, který zajišťuje provoz aplikací v Xamarinu na Android, Mac, iOS, tvOS a watchOS a se zaměřuje především na aplikace, které vyžadují malé náklady.
+Mono je open source [multiplatformní](#cross-platform) implementace .NET, který se používá hlavně při malý modul runtime je povinný. Je modul runtime, který zajišťuje provoz aplikací v Xamarinu na Android, Mac, iOS, tvOS a watchOS a se zaměřuje především na aplikace, které vyžadují malé náklady.
 
 Podporuje všechny aktuálně publikované verze .NET Standard.
 

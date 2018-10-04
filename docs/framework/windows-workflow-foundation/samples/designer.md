@@ -3,11 +3,11 @@ title: Návrhář
 ms.date: 03/30/2017
 ms.assetid: bf28aae3-ddfb-4a86-b55d-1957f08c4e10
 ms.openlocfilehash: 7fa97d5e9d9f83a134e91b0d50f923d72d36f12b
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48031417"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777036"
 ---
 # <a name="designer"></a>Návrhář
 Tato část obsahuje ukázky, které ukazují, jak používat [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)].  

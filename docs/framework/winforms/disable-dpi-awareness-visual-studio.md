@@ -6,12 +6,12 @@ ms.prod: visual-studio-dev15
 ms.technology: vs-ide-designers
 author: gewarren
 ms.author: gewarren
-ms.openlocfilehash: 7ecffedbe536f293945227d817e507f012816737
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 3b290b67ca97065dfc408c09850cf0b5720d65ae
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037038"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48263502"
 ---
 # <a name="disable-dpi-awareness-in-visual-studio"></a>Zakázání sledování DPI v sadě Visual Studio
 
@@ -68,6 +68,10 @@ Visual Studio můžete označit jako nepodporující DPI úpravou registru. Otev
 Pokud chcete nastavit zobrazení nastavení na 100 % změna měřítka ve Windows 10, zadejte **nastavení zobrazení** na hlavním panelu vyhledávacího pole a pak vyberte **změně nastavení zobrazení**. V **nastavení** okno, nastavte **změnit velikost textu, aplikací a dalších položek** k **100 %**.
 
 Nastavení displeje škálování na 100 % může nežádoucí, protože uživatelské rozhraní může být příliš malá, aby byla použitelná.
+
+## <a name="troubleshoot"></a>Řešení potíží
+
+Pokud přechod sledování DPI nefunguje podle očekávání v sadě Visual Studio, zkontrolujte, zda máte `dpiAwareness` hodnotu **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File provádění Options\devenv.exe**  podklíče v editoru registru. Odstraňte hodnotu, pokud je k dispozici.
 
 ## <a name="see-also"></a>Viz také:
 

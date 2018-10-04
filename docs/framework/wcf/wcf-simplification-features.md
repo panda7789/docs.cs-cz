@@ -2,12 +2,12 @@
 title: Funkce zjednodušení WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: ded4fc93e5e8f33d98e58ffcb3cb98c2bff2b410
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 2a2b1bc90729f2c8c3303c5d8ce6befc4dff3980
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196493"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580833"
 ---
 # <a name="wcf-simplification-features"></a>Funkce zjednodušení WCF
 Toto téma popisuje nové funkce, které usnadňují zápis WCF aplikací jednodušší.  
@@ -92,9 +92,9 @@ Toto téma popisuje nové funkce, které usnadňují zápis WCF aplikací jednod
 |--------------|--------|-----------------|----------------------|  
 |třídě channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 sekund|Tato vlastnost určuje, jak dlouho může trvat připojení TCP autentizaci pomocí .net Framing protokolu. Klient potřebuje k odesílání nějaká počáteční data předtím, než má server dostatek informací k provedení ověřování. Tento časový limit je záměrně provedli menší než ReceiveTimeout (10 minut) tak, aby škodlivé neověřené klienty nezachovat připojení vázané na serveru pro dlouho. Výchozí hodnota je 30 sekund. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|  
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * počet procesorů|Tato vlastnost úrovni soketu popisuje počet "čekající na přijmout" požadavky ve frontě. Pokud nevyřízené položky fronty naslouchání zaplní, budou odmítnuty nové žádosti o soketu. Další informace o <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|  
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počtu procesorů pro SMSvcHost.exe|Tato vlastnost omezuje počet kanálů, které serveru může být čekání na naslouchací proces. Když MaxPendingAccepts je příliš nízké, bude existovat malý interval času, ve kterém všechny kanály čekání spustili údržby připojení, ale nové kanály, které jste začali naslouchání. Připojení můžou přijít během tohoto intervalu a selže, protože nic čeká se na serveru. Tuto vlastnost lze nastavit tak, že nastavíte <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> vlastnost většímu počtu. Další informace najdete v tématu <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> a [konfigurace služby Sdílení portů Net.TCP](https://msdn.microsoft.com/library/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)|  
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * počet procesorů pro přenos<br /><br /> 4 \* počtu procesorů pro SMSvcHost.exe|Tato vlastnost omezuje počet kanálů, které serveru může být čekání na naslouchací proces. Když MaxPendingAccepts je příliš nízké, bude existovat malý interval času, ve kterém všechny kanály čekání spustili údržby připojení, ale nové kanály, které jste začali naslouchání. Připojení můžou přijít během tohoto intervalu a selže, protože nic čeká se na serveru. Tuto vlastnost lze nastavit tak, že nastavíte <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A> vlastnost většímu počtu. Další informace najdete v tématu <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> a [konfigurace služby Sdílení portů Net.TCP](../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)|  
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * počet procesorů|Tato vlastnost určuje, kolik připojení přenosu přijal, ale nebyly vyzvednou ServiceModel dispečera. Chcete-li nastavit tuto hodnotu, použijte `MaxConnections` ve vazbě nebo `maxOutboundConnectionsPerEndpoint` v elementu vazby. Další informace o <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|  
-|receiveTimeout|SMSvcHost.exe|30 sekund|Tato vlastnost určuje časový limit pro vytváření datových rámců TCP a jejich odesílání z podkladové připojení. To existuje umístí limitu množství času, které se ukládají SMSvcHost.exe služby znamenají angažovaní číst data preambule z příchozí připojení. Další informace najdete v tématu [konfigurace služby Sdílení portů Net.TCP](https://msdn.microsoft.com/library/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0).|  
+|receiveTimeout|SMSvcHost.exe|30 sekund|Tato vlastnost určuje časový limit pro vytváření datových rámců TCP a jejich odesílání z podkladové připojení. To existuje umístí limitu množství času, které se ukládají SMSvcHost.exe služby znamenají angažovaní číst data preambule z příchozí připojení. Další informace najdete v tématu [konfigurace služby Sdílení portů Net.TCP](../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md).|  
   
 > [!NOTE]
 >  Tyto nové výchozí hodnoty se používají pouze v případě, že nasadíte služby WCF na počítači s rozhraním .NET Framework 4.5. Pokud provádíte nasazení stejnou službu na počítači pomocí rozhraní .NET Framework 4.0, jsou použity výchozí hodnoty rozhraní .NET Framework 4.0. V takových případech se doporučuje k nakonfigurování těchto nastavení explicitně.  

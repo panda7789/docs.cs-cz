@@ -9,11 +9,11 @@ ms.assetid: aa80d155-060d-41b4-a636-1ceb424afee8
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: d1e771a95542153dfad0981d3198e6b4c31cdeb9
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030824"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48261417"
 ---
 # <a name="using-user-filtered-exception-handlers"></a>Používání obslužných rutin uživatelsky filtrovaných výjimek
 Visual Basic v současné době podporuje uživatelsky filtrovaných výjimek. Obslužných rutin uživatelsky filtrovaných výjimek zachytit a zpracovat výjimky založené na požadavcích, které definujete pro výjimku. Použijte tyto obslužné rutiny **Catch** příkaz **při** – klíčové slovo.  

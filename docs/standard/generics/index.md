@@ -29,11 +29,11 @@ ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
 author: mairaw
 ms.author: mairaw
 ms.openlocfilehash: 104a0018896eb95255cf4054f9402ce5160b95f7
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027894"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48584140"
 ---
 # <a name="generics-in-net"></a>Obecné typy v .NET
 

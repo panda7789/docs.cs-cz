@@ -14,11 +14,11 @@ ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: f4ae905b7500a8555691557b264985acf538d075
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036986"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48776815"
 ---
 # <a name="proxy-configuration"></a>Konfigurace proxy serveru
 Proxy server zpracovává požadavky klientů na prostředky. Proxy server můžete vrátit požadovaný prostředek uloženou v mezipaměti nebo předání požadavku na server, ve kterém je prostředek umístěn. Proxy může zlepšit výkon sítě snížením počtu požadavky odeslané na vzdálených serverech. Proxy servery lze také omezit přístup k prostředkům.  

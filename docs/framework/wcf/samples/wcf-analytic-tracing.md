@@ -2,12 +2,12 @@
 title: Analytické trasování WCF
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: 006f8aa0bc2f32e43269aa83433e8ca7a773a1c9
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 9464f2a4c9bc52134e439c98b06ae50c828a14f6
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46532805"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580432"
 ---
 # <a name="wcf-analytic-tracing"></a>Analytické trasování WCF
 Tato ukázka předvádí, jak přidat vlastní události trasování do datového proudu analytického trasování, které Windows Communication Foundation (WCF) zapisuje do trasování událostí pro Windows v [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Analytické trasování jsou určené k tomu, aby, získat přehled o vaší služby bez nutnosti platit penalizace vysoký výkon. Tento příklad ukazuje způsob použití <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> rozhraní API pro zápis událostí, které integrace se službami WCF.  
@@ -43,7 +43,7 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete soubor řešení WCFAnalyticTracingExtensibility.sln.  
+1.  Pomocí sady Visual Studio 2012, otevřete soubor řešení WCFAnalyticTracingExtensibility.sln.  
   
 2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
@@ -53,7 +53,7 @@ Tato ukázka předvádí, jak přidat vlastní události trasování do datovéh
   
 4.  Spustíte klienta testu WCF (WcfTestClient.exe).  
   
-     Testovací klient WCF (WcfTestClient.exe) se nachází v \< [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] adresář instalace > \Common7\IDE\ WcfTestClient.exe (výchozí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] adresář instalace je C:\Program Files\Microsoft Visual Studio 10.0).  
+     Testovací klient WCF (WcfTestClient.exe) se nachází v \<Visual Studio 2012 nainstalovat Dir > \Common7\IDE\ WcfTestClient.exe (výchozí adresář instalace sady Visual Studio 2012 je C:\Program Files\Microsoft Visual Studio 10.0).  
   
 5.  V rámci testovacího klienta WCF, přidání služby tak, že vyberete **souboru**a potom **přidat službu**.  
   

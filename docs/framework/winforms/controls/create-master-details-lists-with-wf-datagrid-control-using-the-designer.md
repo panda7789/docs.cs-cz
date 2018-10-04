@@ -6,14 +6,15 @@ helpviewer_keywords:
 - DataGrid control [Windows Forms], master-details lists
 - related tables [Windows Forms], displaying in DataGrid control
 ms.assetid: 19438ba2-f687-4417-a2fb-ab1cd69d4ded
-ms.openlocfilehash: 44cb9cc77e109acd7dd4b2e02f4c93a4f9a35407
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: aec02e38fbe80302108397543144b1cc9c3ea346
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43501331"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266779"
 ---
 # <a name="how-to-create-master-details-lists-with-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Vytváření hlavních-podrobných seznamů s ovládacím prvkem Windows Forms DataGrid pomocí Návrháře
+
 > [!NOTE]
 >  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
@@ -26,10 +27,10 @@ ms.locfileid: "43501331"
   
 ### <a name="to-create-a-master-details-list-in-the-designer"></a>Chcete-li vytvořit seznam hlavních podrobných v Návrháři  
   
-1.  Přidejte dva <xref:System.Windows.Forms.DataGrid> ovládací prvky do formuláře. Další informace najdete v tématu [postupy: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [postupy: přidání položek panelu nástrojů](https://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0).  
+1.  Přidejte dva <xref:System.Windows.Forms.DataGrid> ovládací prvky do formuláře. Další informace najdete v tématu [postupy: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [postupy: přidání položek panelu nástrojů](https://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0).  
   
     > [!NOTE]
-    >  Následující kroky se nevztahují na [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], který používá **zdroje dat** okno pro vytvoření vazby dat doby návrhu. Další informace najdete v tématu [vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) a [postupy: zobrazení souvisejících dat ve formulářové aplikaci Windows](https://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd).  
+    >  Následující kroky se nevztahují na Visual Studio 2005, který používá **zdroje dat** okno pro vytvoření vazby dat doby návrhu. Další informace najdete v tématu [vytvoření vazby ovládacích prvků k datům v sadě Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio) a [postupy: zobrazení souvisejících dat ve formulářové aplikaci Windows](https://msdn.microsoft.com/library/60b1f1ec-6257-42ab-83f0-06d54ed364fd).  
   
 2.  Přetáhněte dvě nebo více tabulek z **Průzkumníka serveru** do formuláře.  
   

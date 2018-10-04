@@ -9,11 +9,11 @@ helpviewer_keywords:
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
 ms.openlocfilehash: 60a75946d30b1555aea01507d846e790dd00f767
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030876"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777705"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Statické třídy a jejich členové (Průvodce programováním v C#)
 A [statické](../../../csharp/language-reference/keywords/static.md) třída je v podstatě stejný jako nestatické třídy, ale je jedním z rozdílů: Nelze vytvořit instanci statické třídy. Jinými slovy, nelze použít [nové](../../../csharp/language-reference/keywords/new.md) – klíčové slovo vytvoření proměnné typu třídy. Protože neexistuje žádná instance proměnné, přístup jako objekty její členové statické třídy pomocí samotný název třídy. Například, pokud mají statickou třídu, která se jmenuje `UtilityClass` , který má veřejnou metodu s názvem `MethodA`, zavolejte metodu, jak je znázorněno v následujícím příkladu:  

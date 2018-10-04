@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 3ee8ee7f-caba-4267-9343-e313fae2876d
 author: BrucePerlerMS
 ms.openlocfilehash: 76b02a0e6869b0d4de181b59296a0858aa80948c
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48245137"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778153"
 ---
 # <a name="building-my-first-claims-aware-aspnet-web-application"></a>Vytváření Moje první aplikace s deklaracemi identity v prostředí ASP.NET
 ## <a name="applies-to"></a>Platí pro  

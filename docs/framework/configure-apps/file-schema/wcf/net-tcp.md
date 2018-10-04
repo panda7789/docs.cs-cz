@@ -2,12 +2,12 @@
 title: '&lt;net.tcp&gt;'
 ms.date: 03/30/2017
 ms.assetid: 8bc2f2be-11c1-4bab-9018-1d21ae568d94
-ms.openlocfilehash: ae6837bf6dc8167e165a3adcd1fca8abc3dcd396
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: c67aeca183eb476460fa0be2c6dcd9c6077165d8
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500808"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48579340"
 ---
 # <a name="ltnettcpgt"></a>&lt;net.tcp&gt;
 Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umožňuje sdílet stejný port TCP mezi více procesy.  
@@ -71,9 +71,9 @@ Určuje nastavení konfigurace sítě. TCP služba Sdílení portů, která umo�
 |[\<system.serviceModel.activation>](../../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel-activation.md)|Obsahuje nastavení konfigurace pro naslouchací proces SMSvcHost.exe.|  
   
 ## <a name="remarks"></a>Poznámky  
- Další informace o sdílení portů najdete v tématu [sdílení portů Net.TCP](https://msdn.microsoft.com/library/f13692ee-a179-4439-ae72-50db9534eded). Postup konfigurace služby Sdílení portů najdete v tématu [konfigurace služby Sdílení portů Net.TCP](https://msdn.microsoft.com/library/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0).  
+ Další informace o sdílení portů najdete v tématu [sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md). Postup konfigurace služby Sdílení portů najdete v tématu [konfigurace služby Sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md).  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Activation.Configuration.NetTcpSection>  
- [Sdílení portů Net.TCP](https://msdn.microsoft.com/library/f13692ee-a179-4439-ae72-50db9534eded)  
- [Konfigurace služby sdílení portů Net.TCP](https://msdn.microsoft.com/library/b6dd81fa-68b7-4e1b-868e-88e5901b7ea0)
+ [Sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)  
+ [Konfigurace služby sdílení portů Net.TCP](../../../../../docs/framework/wcf/feature-details/configuring-the-net-tcp-port-sharing-service.md)

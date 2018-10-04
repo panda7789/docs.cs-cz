@@ -11,11 +11,11 @@ ms.assetid: ef4c3229-b151-4d85-8091-e6456af9b935
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: b15e569ff6e42298c0a1de02f77ab7c302c70d86
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48034516"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266140"
 ---
 # <a name="ltassertgt-element"></a>&lt;vyhodnocení&gt; – Element
 Určuje, jestli se má zobrazit okno se zprávou, když zavoláte <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> metoda; také určuje název souboru pro zápis zpráv do.  

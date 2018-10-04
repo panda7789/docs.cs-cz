@@ -2,26 +2,26 @@
 title: Sledování SQL
 ms.date: 03/30/2017
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-ms.openlocfilehash: 5f8d7bbd57965b4d7399373416caea87d4d84187
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 84d3fb994c790301ceb55b945bf972c21ed2a971
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779140"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48584315"
 ---
 # <a name="sql-tracking"></a>Sledování SQL
-Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, který zapíše záznamy sledování k databázi SQL. Windows Workflow Foundation (WF) umožňuje získat přehled o spuštění instance pracovního postupu pro sledování pracovního postupu. Modul runtime sledování vysílá pracovního postupu při provádění pracovního postupu pro sledování záznamů. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).  
-  
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
-  
-1.  Ověření je třeba SQL Server 2008, SQL Server 2008 Express nebo novější nainstalován. Skripty zabaleny s ukázkou předpokládá použití instance SQL Express na místním počítači. Pokud máte jinou instanci, upravte prosím databázi související skripty před spuštěním ukázky.  
-  
-2.  Vytvořte databázi serveru SQL Server sledování spuštěním Trackingsetup.cmd v adresáři skriptů (\WF\Basic\Tracking\SqlTracking\CS\Scripts). Tím se vytvoří databázi s názvem TrackingSample.  
-  
+Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, který zapíše záznamy sledování k databázi SQL. Windows Workflow Foundation (WF) umožňuje získat přehled o spuštění instance pracovního postupu pro sledování pracovního postupu. Modul runtime sledování vysílá pracovního postupu při provádění pracovního postupu pro sledování záznamů. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md).
+
+#### <a name="to-use-this-sample"></a>Pro fungování této ukázky
+
+1.  Ověření je třeba SQL Server 2008, SQL Server 2008 Express nebo novější nainstalován. Skripty zabaleny s ukázkou předpokládá použití instance SQL Express na místním počítači. Pokud máte jinou instanci, upravte prosím databázi související skripty před spuštěním ukázky.
+
+2.  Vytvořte databázi serveru SQL Server sledování spuštěním Trackingsetup.cmd v adresáři skriptů (\WF\Basic\Tracking\SqlTracking\CS\Scripts). Tím se vytvoří databázi s názvem TrackingSample.
+
     > [!NOTE]
     >  Tento skript vytvoří databázi na výchozí instanci systému SQL Express. Pokud chcete nainstalovat na jinou instanci databáze, upravte skript Trackingsetup.cmd.  
   
-3.  Otevřete SqlTrackingSample.sln v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
+3.  Otevřete SqlTrackingSample.sln v sadě Visual Studio 2010.  
   
 4.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
   
@@ -48,8 +48,8 @@ Tato ukázka předvádí, jak napsat vlastní sledování účastník SQL, kter�
 1.  Spusťte skript theTrackingcleanup.cmd v adresáři ukázkové (\WF\Basic\Tracking\SqlTracking).  
   
     > [!NOTE]
-    >  Trackingcleanup.cmd pokusí odstranit databázi v místním počítači SQL Express. Pokud používáte jiné instance systému SQL server, upravte Trackingcleanup.cmd.  
-  
+    >  Trackingcleanup.cmd pokusí odstranit databázi v místním počítači SQL Express. Pokud používáte jiné instance systému SQL server, upravte Trackingcleanup.cmd.
+
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   

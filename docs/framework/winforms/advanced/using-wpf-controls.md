@@ -6,11 +6,11 @@ helpviewer_keywords:
 - interoperability [WPF]
 ms.assetid: 03c85dce-26ad-44cd-bc1d-8e0cb56de096
 ms.openlocfilehash: be925bdceea3dd01c568d85fe025d6e037066454
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
-ms.translationtype: HT
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47459656"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778205"
 ---
 # <a name="using-wpf-controls"></a>Používání ovládacích prvků WPF
 Ovládací prvky Windows Presentation Foundation (WPF) můžete použít ve svých aplikacích pomocí formulářů Windows. I když jsou dvě technologie jiné zobrazení, jejich vzájemnou spolupráci plynule.  

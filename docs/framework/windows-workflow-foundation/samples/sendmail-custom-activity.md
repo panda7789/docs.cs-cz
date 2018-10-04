@@ -2,12 +2,12 @@
 title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: e9d27711754c3aa8ff7f68c23f528c9f5c4356f7
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: f51914ae01ea680ae09be8080cce1aa866bd6ec7
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747202"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266662"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
 Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z <xref:System.Activities.AsyncCodeActivity> k odesílání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronní odeslání e-mailu a odesílání e-mailu s ověřováním. Poskytuje také některé funkce koncových uživatelů, jako je režim, nahrazování tokenů, soubor šablony a testujte cestu pro přetažení.  
@@ -119,7 +119,7 @@ new SendMail
   
 ##### <a name="to-run-this-sample"></a>Tuto ukázku spustit  
   
-1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení SendMail.sln.  
+1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení SendMail.sln.  
   
 2.  Ujistěte se, že máte přístup k SMTP serveru platný. Zobrazit pokyny k instalaci.  
   

@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8cfe1f76cfe489095dfa996bce8005d2777966b7
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 125aab04b5b323855e44c02e0c576b99618d70df
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43748087"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48779826"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
@@ -49,7 +49,7 @@ Když kompilujete aplikace, můžete určit, že se má spustit v operačním sy
   
 -   Informace o tom, jak stáhnout 64bitovou verzi modulu CLR najdete v tématu [rozhraní .NET Framework Developer Center stáhne](https://go.microsoft.com/fwlink/?LinkId=50953) na webu MSDN.  
   
--   Informace o Visual Studio – podpora pro vytváření 64bitových aplikací najdete v tématu [podporu služby Visual Studio IDE 64-Bit](https://msdn.microsoft.com/library/b08ff3ad-c6fd-468f-94d5-01a61aab6833).  
+-   Informace o Visual Studio – podpora pro vytváření 64bitových aplikací najdete v tématu [podporu služby Visual Studio IDE 64-Bit](/visualstudio/ide/visual-studio-ide-64-bit-support).  
   
 ## <a name="compiler-support-for-creating-64-bit-applications"></a>Podpora kompilátoru pro vytváření 64bitových aplikací  
  Ve výchozím nastavení, při použití rozhraní .NET Framework a začít vytvářet aplikace pro 32bitové nebo 64bitové počítače, aplikace bude spuštěna na 64bitovém počítači jako nativní aplikaci (tedy ne v modulu WOW64). V následující tabulce jsou uvedeny dokumenty, které popisují, jak použít kompilátory sady Visual Studio k vytvoření 64bitových aplikací, které se spustí jako nativní v prostředí WOW64, nebo obojí.  

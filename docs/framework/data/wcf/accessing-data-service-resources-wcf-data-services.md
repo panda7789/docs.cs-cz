@@ -9,11 +9,11 @@ helpviewer_keywords:
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
 ms.openlocfilehash: d4f4de1fa12418bd56f9680e5414bfe7dd0aa128
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47210081"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48263320"
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>Přístup k prostředkům datové služby (WCF Data Services)
 [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] podporuje [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] k vystavení dat jako informační kanál s prostředky, které jsou adresovat pomocí identifikátorů URI. Tyto prostředky jsou reprezentovány podle konvencí relace entity [modelu Entity Data Model](../../../../docs/framework/data/adonet/entity-data-model.md). V tomto modelu entity představují provozní jednotek dat, které jsou datové typy v aplikační doméně, jako je například zákazníky, objednávky, položky a produkty. Entity data je přístupné a změnit pomocí sémantiky representational state Transfer (REST), konkrétně standardní HTTP příkazy GET, PUT, POST a DELETE.  

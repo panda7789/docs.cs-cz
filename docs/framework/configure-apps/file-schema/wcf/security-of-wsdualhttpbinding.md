@@ -3,12 +3,12 @@ title: '&lt;security&gt; – &lt;wsDualHttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
 author: BrucePerlerMS
-ms.openlocfilehash: c817ea6faf5229a8d372a06b866c75e0f40af3b3
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 761eb9d111630d64d0fe4450c7a8950a8181366d
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033100"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48776523"
 ---
 # <a name="ltsecuritygt-of-ltwsdualhttpbindinggt"></a>&lt;security&gt; – &lt;wsDualHttpBinding&gt;
 Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md).  
@@ -67,5 +67,5 @@ Definuje možnosti zabezpečení [ \<wsDualHttpBinding >](../../../../../docs/fr
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

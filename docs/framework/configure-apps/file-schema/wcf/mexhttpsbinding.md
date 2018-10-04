@@ -2,12 +2,12 @@
 title: '&lt;mexHttpsBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: f2ed3774-78b9-4a15-b79b-655f1ad68b86
-ms.openlocfilehash: ff9ddf8e7486fb8abd174716002575520c546ea4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d56e90162f2a852ff4d0b66abcf3fe03c4110c37
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43514352"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777302"
 ---
 # <a name="ltmexhttpsbindinggt"></a>&lt;mexHttpsBinding&gt;
 Určuje nastavení pro vazby používané k výměně zpráv WS-MetadataExchange (WS-MEX) přes protokol HTTPS.  
@@ -66,5 +66,5 @@ Určuje nastavení pro vazby používané k výměně zpráv WS-MetadataExchange
  [Metadata](../../../../../docs/framework/wcf/feature-details/metadata.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

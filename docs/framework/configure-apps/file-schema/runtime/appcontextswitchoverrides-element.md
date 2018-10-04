@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c06b63c492d31d1391b53a36ced5b5c7277f5ad6
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: ed2a81c4ec4f679b99f5f5a4d2a2c21270691e93
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028169"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778403"
 ---
 # <a name="ltappcontextswitchoverridesgt-element"></a>&lt;AppContextSwitchOverrides&gt; – Element
 Definuje jeden nebo více přepínačů používané <xref:System.AppContext> třídě poskytnout mechanismus výslovného nesouhlasu pro nové funkce.  
@@ -93,7 +93,7 @@ Definuje jeden nebo více přepínačů používané <xref:System.AppContext> t�
 |`Switch.System.Security.Cryptography.`<br/>`DoNotAddrOfCspParentWindowHandle`|Ovládací prvky, zda hodnota [CspParameters.ParentWindowHandle](xref:System.Security.Cryptography.CspParameters.ParentWindowHandle) vlastnost je [IntPtr](xref:System.IntPtr) , že zpracování představuje umístění okna v paměti, nebo zda je popisovač okna (popisovačem HWND). Další informace najdete v tématu [omezení rizik: CspParameters.ParentWindowHandle očekává, že popisovačem HWND](Mitigation:%20CspParameters.ParentWindowHandle%20Expects%20an%20HWND.md). |Rozhraní .NET framework 4.7|   
 |`Switch.System.Security.Cryptography.Pkcs.`<br/>`UseInsecureHashAlgorithms`|Určuje, zda je výchozí nastavení pro některé operace SignedCMS SHA1 nebo SHA256. |Rozhraní .NET framework 4.7.1|
 |`Switch.System.Security.Cryptography.Xml.`<br/>`UseInsecureHashAlgorithms`|Určuje, zda je výchozí nastavení pro některé operace SignedXML SHA1 nebo SHA256. |Rozhraní .NET framework 4.7.1|
-|`Switch.System.ServiceModel.`<br/>`AllowUnsignedToHeader`|Určuje, zda `TransportWithMessageCredential` umožňuje režim zabezpečení zpráv pomocí bez znaménka "na" záhlaví. To je přepínač opt-in. Další informace najdete v tématu [změny v modulu Runtime v rozhraní .NET Framework 4.6.1](https://msdn.microsoft.com/library/mt592686.aspx#WCF).|.NET Framework 4.6.1| 
+|`Switch.System.ServiceModel.`<br/>`AllowUnsignedToHeader`|Určuje, zda `TransportWithMessageCredential` umožňuje režim zabezpečení zpráv pomocí bez znaménka "na" záhlaví. To je přepínač opt-in. Další informace najdete v tématu [změny v modulu Runtime v rozhraní .NET Framework 4.6.1](~/docs/framework/migration-guide/runtime/4.5.2-4.6.1.md#windows-communication-foundation-wcf).|.NET Framework 4.6.1| 
 |`Switch.System.ServiceModel.`<br/>`DisableAddressHeaderCollectionValidation`>|Ovládací prvky, zda <xref:System.ServiceModel.Channels.AddressHeaderCollection.%23ctor(System.Collections.Generic.IEnumerable{System.ServiceModel.Channels.AddressHeader})> vyvolá konstruktor <xref:System.ArgumentException> Pokud jeden z elementů je `null`.|Rozhraní .NET framework 4.7.1| 
 |`Switch.System.ServiceModel.`<br />`DisableCngCertificates`|Určuje, že zda pokus o použití X509 certifikáty pomocí zprostředkovatele úložiště klíčů CSG vyvolá výjimku. Další informace najdete v tématu [zabezpečení přenosu WCF podporuje certifikáty na Uložit pomocí CNG](~/docs/framework/migration-guide/retargeting/4.6.1-4.6.2.md#wcf-transport-security-supports-certificates-stored-using-cng).|.NET Framework 4.6.1|
 |`Switch.System.ServiceModel.`<br/>`DisableExplicitConnectionCloseHeader`|Při použití přenosového protokolu HTTP s využitím služby v místním prostředí, pokud tuto hodnotu nastavíte `true` způsobí, že WCF ignorovat přidávání aplikací `Connection: close` záhlaví hlavičky odpovědi pro požadavek. Tuto hodnotu nastavíte na `false` umožňuje přidání `Connection: close` záhlaví hlavičky odpovědi, což vede k uzavření žádosti o soketu po odeslání odpovědi.|.NET Framework 4.6|

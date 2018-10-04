@@ -9,11 +9,11 @@ helpviewer_keywords:
 - service contracts [WCF], asynchronous operations
 ms.assetid: db8a51cb-67e6-411b-9035-e5821ed350c9
 ms.openlocfilehash: c2948cf76f7763eae51689973346965bc6c720a8
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027939"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266786"
 ---
 # <a name="synchronous-and-asynchronous-operations"></a>Synchronní a asynchronní operace
 Toto téma popisuje implementace a volání operace asynchronní služby.  

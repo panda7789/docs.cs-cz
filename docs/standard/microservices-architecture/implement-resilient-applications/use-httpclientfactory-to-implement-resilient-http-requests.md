@@ -4,12 +4,12 @@ description: HttpClientFactory je sebevědomý factory, dostupné od verze rozhr
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: d40e587966b2e62a197ad10770bf3e28bcbcb511
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 800dc410d0cc49aecb7d936d50f9e575389cf278
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037213"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778494"
 ---
 # <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Použití HttpClientFactory k implementaci odolných požadavky HTTP
 
@@ -17,7 +17,7 @@ ms.locfileid: "48037213"
 
 ## <a name="issues-with-the-original-httpclient-class-available-in-net-core"></a>Problémy s původní třídy HttpClient, která je k dispozici v .NET Core
 
-Původní a dobře vědět [HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) třídu lze snadno použít, ale v některých případech se nepoužívá správně celá řada vývojářů. 
+Původní a dobře známých [HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient?view=netstandard-2.0) třídu lze snadno použít, ale v některých případech se nepoužívá správně celá řada vývojářů. 
 
 Jako první problém, i když tato třída je jedno použití, používat s `using` příkaz není nejlepší volbou protože i při vyřazení `HttpClient` objekt základního soketu neuvolní okamžitě a může způsobit závažné potíže s názvem "sockets vyčerpání ". Další informace o tomto problému najdete v tématu [používáte HttpClient nesprávné a je to destabilizing váš software](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/) blogový příspěvek.
 

@@ -9,11 +9,11 @@ helpviewer_keywords:
 - '!= operator [C#]'
 ms.assetid: eeff7a4e-ad6f-462d-9f8d-49e9b91c6c97
 ms.openlocfilehash: e974ffb1b25944e24fca23864dc7e932ec1876d5
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037132"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48779170"
 ---
 # <a name="-operator-c-reference"></a>!= – operátor (Referenční dokumentace jazyka C#)
 Operátor nerovnosti (`!=`) vrací hodnotu false, pokud jeho operandy jsou stejné, jinak hodnotu true. Pro všechny typy, včetně řetězce a objektu jsou předdefinované operátory nerovnost. Lze přetěžovat uživatelsky definované typy `!=` operátor.  

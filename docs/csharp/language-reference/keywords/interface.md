@@ -7,11 +7,11 @@ helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
 ms.openlocfilehash: 4adc7ba106e0044ba6aff94ea3180d9c8e3ded7b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47235660"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48779280"
 ---
 # <a name="interface-c-reference"></a>interface (Referenční dokumentace jazyka C#)
 

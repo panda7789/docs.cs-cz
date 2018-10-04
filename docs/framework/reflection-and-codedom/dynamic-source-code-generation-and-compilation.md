@@ -13,11 +13,11 @@ ms.assetid: d077a3e8-bd81-4bdf-b6a3-323857ea30fb
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a90b4214e244bc1f9c5f8e71782e604bd6c7b619
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47108478"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582590"
 ---
 # <a name="dynamic-source-code-generation-and-compilation"></a>Dynamické vytváření a kompilování zdrojového kódu
 Rozhraní .NET Framework obsahuje mechanismus volá se, kód modelu objektu dokumentu (CodeDOM), který umožňuje vývojářům aplikací, které generují zdrojový kód ke generování zdrojového kódu ve více programovacích jazyků v době běhu na základě jednoho modelu, který představuje kód k vykreslení.  

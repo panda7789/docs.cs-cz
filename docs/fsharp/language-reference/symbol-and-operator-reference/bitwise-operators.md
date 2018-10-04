@@ -3,11 +3,11 @@ title: Bitové operátory (F#)
 description: 'Další informace o bitové operátory, které jsou k dispozici v programovacím jazyce F #.'
 ms.date: 07/20/2018
 ms.openlocfilehash: ed76fcf5f9c569a2f288cf260e99dc29fd65ef3b
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027429"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48581505"
 ---
 # <a name="bitwise-operators"></a>Bitové operátory
 

@@ -8,11 +8,11 @@ dev_langs:
 - csharp
 - vb
 ms.openlocfilehash: a7e810372d831699eae777186385e45fe65cdf45
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48046497"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266578"
 ---
 # <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
 

@@ -8,11 +8,11 @@ helpviewer_keywords:
 - when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
 ms.openlocfilehash: a71cbdce256b1c1bd5d101d66f216fb229d70adf
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47401128"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777354"
 ---
  # <a name="when-c-reference"></a>Když (referenční dokumentace jazyka C#)
 

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: bfc64b3d-64e9-4093-a6a4-72e933917af7
 author: BrucePerlerMS
 ms.openlocfilehash: c3d22d812fdd5a1fc7567b3da34e7fd5a59531cd
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47863519"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48584191"
 ---
 # <a name="how-to-enable-wif-for-a-wcf-web-service-application"></a>Postupy: Povolení WIF pro aplikaci webové služby WCF
 ## <a name="applies-to"></a>Platí pro  

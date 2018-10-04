@@ -6,20 +6,19 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], getting started
 - getting started [WCF]
 ms.assetid: df939177-73cb-4440-bd95-092a421516a1
-ms.openlocfilehash: 204869d0a7a7b8d56449c28cb37b18624a1701cf
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 5947e70b0dc4ef5838322722f2ee2a55034bae96
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47207124"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582171"
 ---
 # <a name="getting-started-tutorial"></a>Kurz Začínáme
-
 Témata obsažené v této části jsou určeny umožňují rychlé odhalení pro Windows Communication Foundation (WCF) programovací prostředí. Jsou navrženy dokončit v pořadí podle seznamu v dolní části tohoto tématu. Absolvování tohoto kurzu pochopíte úvodní kroky potřebné k vytváření služeb WCF a klientských aplikací. Služba zpřístupňuje jeden nebo více koncových bodů, každý z nich vystavuje jednu nebo víc operací služeb. *Koncový bod* služby určuje adresu, kde najdete službu, vazbu, která obsahuje informace, které popisuje, jak klient musí komunikovat s službu a kontrakt, který definuje funkce poskytovaných službou svým klientům.
 
  Po dokončení řady témat v tomto kurzu, budete mít funkční službu a klient zavolá službu. První tři témata popisují definování kontraktu služby, implementace kontraktu služby a jak pro hostování služby. Vytvořená služba je v rámci konzolové aplikace v místním prostředí. Služby mohou být také hostovány v rámci Internetové informační služby (IIS). Další informace o tom, jak to provést, najdete v části [postupy: hostování služby WCF v IIS](../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md). Služba je nakonfigurována v kódu; služba však lze také nastavit v konfiguračním souboru. Další informace o použití konfiguračního souboru naleznete v tématu [konfigurace služeb pomocí konfiguračních souborů](../../../docs/framework/wcf/configuring-services-using-configuration-files.md).
 
- Následující tři tématech najdete popis postupu vytvoření proxy serveru klienta, konfigurovat klientskou aplikaci a používat proxy server klienta k volání operace služby, vystavený službou. Služby publikování metadat, které definují informace, které klientská aplikace potřebuje ke komunikaci se službou. [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] automatizuje proces přístup k tato metadata a použije ho k vytvořit a konfigurovat klientskou aplikaci pro službu. Pokud nepoužíváte [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], můžete použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vytvořit a konfigurovat klientskou aplikaci pro službu.
+ Následující tři tématech najdete popis postupu vytvoření proxy serveru klienta, konfigurovat klientskou aplikaci a používat proxy server klienta k volání operace služby, vystavený službou. Služby publikování metadat, které definují informace, které klientská aplikace potřebuje ke komunikaci se službou. Visual Studio 2012 automatizuje proces přístup k tato metadata a použije ho k vytvořit a konfigurovat klientskou aplikaci pro službu. Pokud nepoužíváte Visual Studio 2012, můžete použít [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vytvořit a konfigurovat klientskou aplikaci pro službu.
 
 Témata v této části předpokládají, že používáte jako vývojové prostředí sady Visual Studio. Pokud používáte jiné vývojové prostředí, ignorujte Visual Studio konkrétní pokyny.
 

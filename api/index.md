@@ -7,13 +7,14 @@ quickFilterColumn2: xamarinios-10.8,xamarinandroid-7.1,xamarinmac-3.0
 quickFilterColumn3: azure-dotnet,aspnetcore-2.1
 ms.topic: landing-page
 ms.custom: updateeachrelease
-ms.openlocfilehash: c5253472b987496b39f48af2e89e902c8b2a2aea
-ms.sourcegitcommit: bbf70abe6b46073148f78cbf0619de6092b5800c
+ms.date: 06/01/2018
+ms.openlocfilehash: 8f6cda89a618939c23e6672f67e59f8f86a2dc99
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34728703"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582249"
 ---
 # <a name="net-api-browser"></a>Prohlížeč rozhraní API pro .NET
 
-Vítejte v prohlížeči rozhraní API .NET – vaše centralizované pro všechny. Na základě NET rozhraní API od společnosti Microsoft. Spusťte hledání pro všechny spravované rozhraní API tak, že zadáte do pole níže. Další informace o rozhraní API prohlížeče [v našem blogu](https://aka.ms/apibrowser). Pokud máte jakékoli zpětnou vazbu, vytvořte nový problém v [MicrosoftDocs nebo zpětnou vazbu úložišti na Githubu](https://github.com/MicrosoftDocs/feedback/issues). 
+Vítá vás prohlížeč rozhraní API .NET – vaše univerzálním nástrojem pro všechny. Na základě NET rozhraní API od Microsoftu. Spusťte hledání pro všechny spravované rozhraní API tak, že zadáte do pole níže. Další informace o API Browser [v našem blogovém příspěvku](https://aka.ms/apibrowser). Pokud máte nějaké připomínky, vytvořte nový problém v [MicrosoftDocs/úložišti zpětné vazby na Githubu](https://github.com/MicrosoftDocs/feedback/issues).

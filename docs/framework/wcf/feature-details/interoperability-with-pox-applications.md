@@ -3,11 +3,11 @@ title: Vzájemná funkční spolupráce s aplikacemi POX
 ms.date: 03/30/2017
 ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
 ms.openlocfilehash: b7fdb4e16bce52025515ced065d0f48cffb7fa3f
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035029"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778007"
 ---
 # <a name="interoperability-with-pox-applications"></a>Vzájemná funkční spolupráce s aplikacemi POX
 

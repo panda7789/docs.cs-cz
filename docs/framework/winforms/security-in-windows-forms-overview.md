@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 54fc56e5e7d6ee5cd0e7bc55bd22c7d4127eb4d3
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 36d38756f7df88ec04aca781525f0f6b0a48b768
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747121"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580927"
 ---
 # <a name="security-in-windows-forms-overview"></a>Přehled zabezpečení ve Windows Forms
 Před vydáním [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], všechny kód spuštěný na uživatele v počítači měl stejné práva nebo oprávnění pro přístup k prostředkům, které měl uživatel počítače. Například pokud byl uživatel pro přístup k systému souborů, kód byl povolen přístup k systému souborů. Uživatel byl povolen přístup k databázi, kód byl povolen přístup k této databázi. Ačkoli tato práva nebo oprávnění může být přijatelný pro kód v spustitelné soubory, které uživatel nainstaloval explicitně v místním počítači, se nemusí být přijatelné pro potenciálně škodlivý kód pocházející z Internetu nebo intranetu. Tento kód by neměl být přístup k prostředkům počítače uživatele bez oprávnění.  
@@ -49,7 +49,7 @@ Před vydáním [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)], v�
   
  Pokud budete požadovat volitelné oprávnění, musí zpracovat výjimky zabezpečení, které budou generovány, pokud aplikace provádí akci, která vyžaduje oprávnění nebyla udělena. Odpovídající zpracování <xref:System.Security.SecurityException> zajistí, že vaše aplikace může i nadále fungovat. Aplikace může výjimku použít k určení, zda by měla funkce deaktivuje pro daného uživatele. Například můžete zakázat aplikaci **Uložit** možnost nabídky, pokud není uděleno oprávnění požadovaný soubor.  
   
- Někdy je těžké vědět, pokud máte s prohlašovanou příslušná oprávnění. Volání metody, která vypadá neškodného na povrchu, například může přístup k systému souborů v určitém okamžiku během jejího provádění. Pokud nezvolíte nasazení aplikace s požadovanými oprávněními, se může otestovat bez problémů při ladění na vašem počítači, ale selhat při nasazení. Oba [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] sady SDK a [!INCLUDE[vsprvslong](../../../includes/vsprvslong-md.md)] obsahovat nástroje pro výpočet oprávnění aplikace potřebuje: příkaz MT.exe čára a vlastnost Calculate Permissions sady Visual Studio, v uvedeném pořadí.  
+ Někdy je těžké vědět, pokud máte s prohlašovanou příslušná oprávnění. Volání metody, která vypadá neškodného na povrchu, například může přístup k systému souborů v určitém okamžiku během jejího provádění. Pokud nezvolíte nasazení aplikace s požadovanými oprávněními, se může otestovat bez problémů při ladění na vašem počítači, ale selhat při nasazení. Oba [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)] sady SDK a sady Visual Studio 2005 obsahovat nástroje pro výpočet oprávnění aplikace potřebuje: příkaz MT.exe čára a vlastnost Calculate Permissions sady Visual Studio, v uvedeném pořadí.  
   
  Následující témata popisují další funkce zabezpečení Windows Forms.  
   

@@ -11,11 +11,11 @@ ms.assetid: 0d635c35-ffa8-4dc8-bbc9-12fcd5445776
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 4daa7f0ec869771e8e7ceb11f6871e4b5791badd
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48029681"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48779722"
 ---
 # <a name="support-control-patterns-in-a-ui-automation-provider"></a>Podpora vzorů ovládacích prvků u zprostředkovatele automatizace uživatelského rozhraní
 > [!NOTE]

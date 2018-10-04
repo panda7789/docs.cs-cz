@@ -3,11 +3,11 @@ title: Atributy (F#)
 description: 'Zjistěte, jak povolit metadata použije programovací konstrukce F # atributy.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 3e7f1d0ff383e1070b3db72e633f80ea37150548
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035159"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580790"
 ---
 # <a name="attributes"></a>Atributy
 

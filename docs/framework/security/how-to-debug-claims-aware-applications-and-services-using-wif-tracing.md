@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 3d51ba59-3adb-4ca4-bd33-5027531af687
 author: BrucePerlerMS
 ms.openlocfilehash: e10d8d2ea869b03586b4680ad8320aeb2de90620
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035276"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48584270"
 ---
 # <a name="how-to-debug-claims-aware-applications-and-services-using-wif-tracing"></a>Postupy: Ladění s deklaracemi identity aplikace a služby pomocí trasování WIF
 ## <a name="applies-to"></a>Platí pro  

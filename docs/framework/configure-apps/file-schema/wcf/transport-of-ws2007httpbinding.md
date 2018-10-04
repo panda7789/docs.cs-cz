@@ -2,12 +2,12 @@
 title: '&lt;transport&gt; – &lt;ws2007HttpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 692befa3-8b0b-4ec5-b601-755874e98eb0
-ms.openlocfilehash: 35af47551f742b0e48220611a874605fb752b626
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5c7e96beee2fc1e4780729e56f10a52b63dde4e8
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857650"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580060"
 ---
 # <a name="lttransportgt-of-ltws2007httpbindinggt"></a>&lt;transport&gt; – &lt;ws2007HttpBinding&gt;
 Definuje nastavení ověřování pro přenos pomocí protokolu HTTP.  
@@ -81,5 +81,5 @@ transport clientCredentialType =
  [Zabezpečení služeb a klientů](../../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

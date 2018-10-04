@@ -8,12 +8,12 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: 157bd07f3332883f010ef26ba920dae88276051b
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 8b2516b4e5b418e560d5763d8e551d2ab7646da3
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084674"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48584348"
 ---
 # <a name="group-clause-c-reference"></a>group – klauzule (Referenční dokumentace jazyka C#)
 
@@ -53,7 +53,7 @@ Následující příklad ukazuje použití bool hodnotu pro klíč k rozdělení
 
 ### <a name="grouping-by-numeric-range"></a>Seskupení podle číselného rozsahu
 
-Následující příklad používá výraz k vytvoření klíče číselné skupiny, které představují širokou percentil. Všimněte si použití [nechat](let-clause.md) jako vhodné umístění pro uložení metodu výsledek volání, takže není nutné volat metodu dvěma časy `group` klauzuli. Všimněte si také v `group` klauzule, že aby se zabránilo výjimka "dělení nulou" kód zkontroluje, ujistěte se, že student nemá průměrem nula. Další informace o tom, jak bezpečně použít metody ve výrazech dotazů najdete v tématu [postupy: zpracování výjimek ve výrazech dotazů](../../programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).
+Následující příklad používá výraz k vytvoření klíče číselné skupiny, které představují širokou percentil. Všimněte si použití [nechat](let-clause.md) jako vhodné umístění pro uložení metodu výsledek volání, takže není nutné volat metodu dvěma časy `group` klauzuli. Další informace o tom, jak bezpečně použít metody ve výrazech dotazů najdete v tématu [postupy: zpracování výjimek ve výrazech dotazů](../../programming-guide/linq-query-expressions/how-to-handle-exceptions-in-query-expressions.md).
 
 [!code-csharp[cscsrefQueryKeywords#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#15)]
 

@@ -2,35 +2,35 @@
 title: Vizuální sledování pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 0143448f-2044-40a0-8a3d-941f6d12468b
-ms.openlocfilehash: 7433d2497b9a9993093e13e88e073fb40403e3b6
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 4b6dac8020ba8df0fad57b8cbd0853b4aeb4e75d
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44085725"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48261378"
 ---
 # <a name="visual-workflow-tracking"></a>Vizuální sledování pracovního postupu
-Tato ukázka předvádí, jak psát visual pracovního postupu pro sledování aplikací pomocí funkce pro ladění k dispozici prostřednictvím [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].  
-  
-## <a name="sample-details"></a>Ukázka podrobnosti  
- Aplikace spouští pracovní postup jednoduchý vývojový diagram (definováno v Workflow.xaml) a znovu je hostitelem návrháře postupu provádění zobrazit aktuálně prováděné pracovního postupu. Při spuštění pracovního postupu aktuálně spouštěné aktivity se zobrazí se žlutá šipka osnovy a ladění. Kromě toho sledování záznamů vygenerovaných tímto pracovním postupem se také zobrazí v okně aplikace. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Další informace o opětovné hostování návrháře postupu provádění zobrazit [změna hostování návrháře postupu provádění](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md).  
-  
- Simulátor pracovních postupů funguje tak, že zachování dvě slovníky. Jeden obsahuje mapování mezi aktuálně prováděné objekt aktivity a číslo řádku XAML, ve kterém je vytvořena instance aktivity. Druhý obsahuje mapování mezi ID instance aktivity a objekt aktivity. Když jsou vydávány sledování záznamů pomocí vlastní profil sledování tracking profile, aplikace určuje ID instance aktuálně spouštěné aktivity a mapuje zpět do souboru XAML, která je vytvořena instance. Návrhář postupu provádění se změněným hostováním pak vydal pokyn ke zvýraznění aktivity na návrhové ploše a použít stejným způsobem jako pracovní postup ladicího programu, konkrétně kreslení žluté ohraničení kolem aktivity a zobrazení žlutá šipka sledovat levému okraji Návrhář.  
-  
-#### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
-  
-1.  Otevřete soubor WorkflowSimulator.sln z adresáře ukázka v [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)].  
-  
-2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.  
-  
-3.  Stisknutím CTRL + F5 ke spuštění ukázky. Soubor Workflow.xaml zobrazí v okně návrháře postupu provádění se změněným hostováním.  
-  
-4.  Klikněte na tlačítko **souboru** nabídky a vybereme **spustit pracovní postup...** .  
-  
-5.  Všimněte si, že aktuálně spouštěné aktivity je zvýrazněn, jak je popsáno výše a sledování záznamů se zobrazí na pravé straně okna aplikace.  
-  
-6.  Po dokončení pracovního postupu, klikněte na možnost žádné záznamy sledování, chcete-li prověřit aktivity, které odpovídá.  
-  
+Tato ukázka předvádí, jak psát visual pracovního postupu pro sledování aplikací pomocí funkce pro ladění k dispozici prostřednictvím [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].
+
+## <a name="sample-details"></a>Ukázka podrobnosti
+ Aplikace spouští pracovní postup jednoduchý vývojový diagram (definováno v Workflow.xaml) a znovu je hostitelem návrháře postupu provádění zobrazit aktuálně prováděné pracovního postupu. Při spuštění pracovního postupu aktuálně spouštěné aktivity se zobrazí se žlutá šipka osnovy a ladění. Kromě toho sledování záznamů vygenerovaných tímto pracovním postupem se také zobrazí v okně aplikace. Další informace o sledování pracovního postupu najdete v tématu [pracovního postupu pro sledování a trasování](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md). Další informace o opětovné hostování návrháře postupu provádění zobrazit [změna hostování návrháře postupu provádění](../../../../docs/framework/windows-workflow-foundation/rehosting-the-workflow-designer.md).
+
+ Simulátor pracovních postupů funguje tak, že zachování dvě slovníky. Jeden obsahuje mapování mezi aktuálně prováděné objekt aktivity a číslo řádku XAML, ve kterém je vytvořena instance aktivity. Druhý obsahuje mapování mezi ID instance aktivity a objekt aktivity. Když jsou vydávány sledování záznamů pomocí vlastní profil sledování tracking profile, aplikace určuje ID instance aktuálně spouštěné aktivity a mapuje zpět do souboru XAML, která je vytvořena instance. Návrhář postupu provádění se změněným hostováním pak vydal pokyn ke zvýraznění aktivity na návrhové ploše a použít stejným způsobem jako pracovní postup ladicího programu, konkrétně kreslení žluté ohraničení kolem aktivity a zobrazení žlutá šipka sledovat levému okraji Návrhář.
+
+#### <a name="to-use-this-sample"></a>Pro fungování této ukázky
+
+1.  Otevřete soubor WorkflowSimulator.sln z adresáře ukázka v sadě Visual Studio 2010.
+
+2.  Stiskněte kombinaci kláves CTRL + SHIFT + B, abyste mohli sestavit řešení.
+
+3.  Stisknutím CTRL + F5 ke spuštění ukázky. Soubor Workflow.xaml zobrazí v okně návrháře postupu provádění se změněným hostováním.
+
+4.  Klikněte na tlačítko **souboru** nabídky a vybereme **spustit pracovní postup...** .
+
+5.  Všimněte si, že aktuálně spouštěné aktivity je zvýrazněn, jak je popsáno výše a sledování záznamů se zobrazí na pravé straně okna aplikace.
+
+6.  Po dokončení pracovního postupu, klikněte na možnost žádné záznamy sledování, chcete-li prověřit aktivity, které odpovídá.
+
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   

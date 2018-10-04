@@ -2,19 +2,19 @@
 title: 'Postup: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami'
 ms.date: 03/30/2017
 ms.assetid: 53d094e2-6901-4aa1-88b8-024b27ccf78b
-ms.openlocfilehash: 6ccc4ddc6ba273f6f41efb023f077dd6b87c7ffb
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 12fc8706eb81df281571bb6ab54f7c2a2805f351
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196549"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580419"
 ---
 # <a name="how-to-create-a-workflow-service-with-messaging-activities"></a>Postup: Vytvoření služby pracovního postupu pomocí činnosti související se zprávami
 Toto téma popisuje, jak vytvořit jednoduchý pracovní postup službu pomocí aktivit zasílání zpráv. Toto téma se zaměřuje na mechanismu vytvoření služby pracovního postupu, kde se skládá pouze z aktivity zasílání zpráv služby. Ve službě reálného světa pracovní postup obsahuje mnoho dalších aktivit. Služba implementuje jednu operaci volat odezvu, která přebírá řetězec a vrátí řetězec volajícímu. Toto téma je první v řadě dvou tématech. Další téma [postupy: přístup k Service z aplikace pracovního postupu](../../../../docs/framework/wcf/feature-details/how-to-access-a-service-from-a-workflow-application.md) popisuje, jak vytvořit aplikace pracovního postupu, která může volat služby vytvořené v tomto tématu.  
   
 ### <a name="to-create-a-workflow-service-project"></a>Chcete-li vytvořit projekt služby pracovního postupu  
   
-1.  Spustit [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
+1.  Spusťte sadu Visual Studio 2012.  
   
 2.  Klikněte na tlačítko **souboru** nabídce vyberte možnost **nový**a potom **projektu** zobrazíte **dialogové okno nového projektu**. Vyberte **pracovního postupu** ze seznamu nainstalovaných šablon a **aplikace služeb pracovního postupu WCF** ze seznamu typů projektů. Pojmenujte projekt `MyWFService` a použijte výchozí umístění, jak je znázorněno na následujícím obrázku.  
   

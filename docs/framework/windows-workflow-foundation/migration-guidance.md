@@ -2,12 +2,12 @@
 title: Pokyny k migraci
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-ms.openlocfilehash: 93d523c51c45f9b6f6235a7645fa126fcb09b6e5
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 73488354a807d8bf7d90c97b95f1021d884efd27
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027387"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777955"
 ---
 # <a name="migration-guidance"></a>Pokyny k migraci
 V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost Microsoft vydává druhý hlavní verze Windows Workflow Foundation (WF). [!INCLUDE[wf1](../../../includes/wf1-md.md)] byla vydána v [!INCLUDE[vstecwinfx](../../../includes/vstecwinfx-md.md)] (to zahrnuté typy v oborech názvů System.Workflow.* barvy; dnes označovány jako WF3) a vylepšení v [!INCLUDE[netfx35_short](../../../includes/netfx35-short-md.md)]. WF3 je také součástí [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], ale existuje souběžně s novou technologií pracovního postupu (typy v System.Activities.\* oborů názvů; označuje jako WF4). Při zvažování, kdy se má přijmout WF4, je potřeba nejprve uznávají řídit načasování.  
@@ -16,7 +16,7 @@ V [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)], společnost 
   
 -   WF3 aplikace spouštět [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] beze změny a i nadále mít přitom plnou podporu.  
   
--   Je možné vytvořit nové WF3 aplikace a existující aplikace lze upravit v [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)] a jsou plně podporovány.  
+-   Je možné vytvořit nové WF3 aplikace a existující aplikace lze upravovat v sadě Visual Studio 2012 a jsou plně podporovány.  
   
  Proto rozhodnutí přijmout rozhraní .NET Framework 4 je oddělený od rozhodnout a přesunout do WF4 (System.Activities.*) z WF3 (System.Workflow.\*). Toto téma obsahuje odkazy na pokyny k migraci pracovního postupu, který poskytuje informace o práci s WF3 a WF4.  
   

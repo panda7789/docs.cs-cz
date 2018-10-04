@@ -6,11 +6,11 @@ helpviewer_keywords:
 - <include> XML tag
 ms.assetid: ba8e9173-82cd-460b-8938-a075a2dfb36d
 ms.openlocfilehash: da7a6c15c558fc56dbc6a874d4a28c4434f67668
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48046380"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778702"
 ---
 # <a name="ltincludegt-visual-basic"></a>&lt;zahrnout&gt; (Visual Basic)
 Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.  

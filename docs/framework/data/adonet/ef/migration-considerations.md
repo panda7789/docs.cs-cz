@@ -2,12 +2,12 @@
 title: Aspekty migrace (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: d6643986190b376e188b19851b044bcf05ff7f02
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: cf705caa84742d654465a2dba005f2d8f32abcca
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511019"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778020"
 ---
 # <a name="migration-considerations-entity-framework"></a>Aspekty migrace (Entity Framework)
 [!INCLUDE[vstecado](../../../../../includes/vstecado-md.md)] Entity Framework poskytuje několik výhod do stávající aplikace. Jeden z nejpoužívanějších důležité tyto výhody je schopnost oddělit struktury dat používané aplikace ze schématu ve zdroji dat pomocí konceptuálního modelu. To umožňuje snadno vytvářet budoucí změny model úložiště nebo zdroj dat bez kompenzační změn aplikace. Další informace o výhodách používání [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)], naleznete v tématu [přehled Entity Framework](../../../../../docs/framework/data/adonet/ef/overview.md) a [modelu Entity Data Model](../../../../../docs/framework/data/adonet/entity-data-model.md).  
@@ -29,11 +29,11 @@ ms.locfileid: "43511019"
  Cesta k migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)] závisí na typu aplikace i na stávající strategie přístupu data. Však můžete vždycky musí provádět následující úkoly při migraci do existující aplikaci [!INCLUDE[adonet_ef](../../../../../includes/adonet-ef-md.md)].  
   
 > [!NOTE]
->  Všechny tyto úlohy se provádí automaticky při použití nástroje modelu Entity Data Model od [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)]. Další informace najdete v tématu [postupy: použití Průvodce datovým modelem Entity](https://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
+>  Všechny tyto úlohy provádějí automaticky při použití nástroje modelu Entity Data Model od verze Visual Studio 2008. Další informace najdete v tématu [postupy: použití Průvodce datovým modelem Entity](https://msdn.microsoft.com/library/dadb058a-c5d9-4c5c-8b01-28044112231d).  
   
 1.  Upgrade aplikace.  
   
-     Projekt vytvořený pomocí dřívější verze sady Visual Studio a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] musí upgradovat na použití [!INCLUDE[vsOrcas](../../../../../includes/vsorcas-md.md)] SP1 a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1.  
+     Projekt vytvořený pomocí dřívější verze sady Visual Studio a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] musí být upgradována na Visual Studio 2008 SP1 a [!INCLUDE[dnprdnshort](../../../../../includes/dnprdnshort-md.md)] od verze 3.5 SP1.  
   
 2.  Definujte modely a mapování.  
   

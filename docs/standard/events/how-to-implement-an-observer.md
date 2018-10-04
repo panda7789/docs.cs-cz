@@ -12,11 +12,11 @@ ms.assetid: 8ecfa9f5-b500-473d-bcf0-5652ffb1e53d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 6426e8bd138d06d3655562de6384e46a12c09279
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036882"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48583984"
 ---
 # <a name="how-to-implement-an-observer"></a>Postupy: Implementace pozorovatele
 Návrhový vzor pozorovatel vyžaduje rozdělení pozorovatele, který registruje upozornění a poskytovatele, který monitoruje dat a odesílání oznámení na jeden nebo více pozorovatelů. Toto téma popisuje, jak vytvořit pozorovatele. Související téma [postupy: implementace poskytovatele](../../../docs/standard/events/how-to-implement-a-provider.md), popisuje, jak vytvořit poskytovatele.  

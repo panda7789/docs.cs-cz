@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 20a289a5-6450-46dd-bb83-c394379b857b
 author: BrucePerlerMS
 ms.openlocfilehash: 0af4f3a2373d951f4bd65e985eeb0b9d400d081d
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030060"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580396"
 ---
 # <a name="systemservicemodelsecuritynegotiationauthenticatorattached"></a>System.ServiceModel.Security.NegotiationAuthenticatorAttached
 System.ServiceModel.Security.NegotiationAuthenticatorAttached  

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 15d15f57-1482-419b-b841-fff7318b69d8
 author: BrucePerlerMS
 ms.openlocfilehash: 4f0ecefbeb61e86915d92758faec4ccb1a32eae2
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028937"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580757"
 ---
 # <a name="systemservicemodelsecuritysecuritypendingserversessionadded"></a>System.ServiceModel.Security.SecurityPendingServerSessionAdded
 System.ServiceModel.Security.SecurityPendingServerSessionAdded  

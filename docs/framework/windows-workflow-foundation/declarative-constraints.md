@@ -2,23 +2,23 @@
 title: Deklarativní omezení
 ms.date: 03/30/2017
 ms.assetid: 67001ed1-7f4d-4ada-ae57-a31176901a53
-ms.openlocfilehash: bf794d5b14d2d278dc4068309f25e6f0ddcf3342
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5599513405c77aa213b329b085075660baed5c47
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33517657"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580486"
 ---
 # <a name="declarative-constraints"></a>Deklarativní omezení
-Deklarativní omezení poskytují výkonný metodu ověření pro aktivitu a jeho vztahů s dalšími aktivitami. Omezení jsou nakonfigurovány pro aktivitu během procesu vytváření, ale další omezení lze zadat také od hostitele pracovního postupu. Toto téma obsahuje přehled používání deklarativní omezení pro ověřování aktivity.  
+Deklarativní omezení poskytují výkonný způsob ověření aktivita a její vztahy s ostatními aktivitami. Omezení jsou konfigurovány pro aktivitu během procesu vytváření, ale je také možné zadat další omezení, tak hostitele pracovního postupu. Toto téma obsahuje přehled používání deklarativní omezení pro ověřování aktivity.  
   
-## <a name="using-declarative-constraints"></a>Pomocí deklarativní omezení  
- Omezení je aktivitou, která obsahuje logiku ověření. Tato aktivita omezení můžete vytvořené v kódu nebo v jazyce XAML. Po vytvoření aktivity omezení autoři aktivitu přidat tomuto omezení <xref:System.Activities.Activity.Constraints%2A> vlastnost aktivity na ověřit, nebo se používají pro další ověřování pomocí omezení <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> instance . Logiku ověření se může skládat z jednoduché ověření, jako je například ověřování aktivity metadata, ale můžete také provést ověření, který bere v úvahu relace aktuální aktivity k její nadřazené, děti a na stejné úrovni jako aktivity. Omezení vytvořené pomocí <xref:System.Activities.Validation.Constraint%601> aktivity a několik dalších ověření aktivity jsou uvedeny vám pomůže při vytváření ověření chyby a upozornění a k poskytování informací o souvisejících činností v pracovním postupu.  
+## <a name="using-declarative-constraints"></a>Použití deklarativní omezení  
+ Omezení je aktivitou, která obsahuje logiku ověřování. Tato aktivita omezení se můžou vytvořit v kódu nebo v XAML. Po vytvoření aktivity omezení autoři aktivitu přidat tomuto omezení <xref:System.Activities.Activity.Constraints%2A> vlastnost aktivity k ověření, nebo používají omezení pro další ověřování s použitím <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> instance . Logiku ověřování se může skládat z jednoduchého ověření, jako je například ověřování metadat aktivity, ale můžete také provést ověření, který bere v úvahu vztah aktuální aktivitu do aktivity jeho nadřazeného, podřízené položky a na stejné úrovni. Omezení jsou vytvořené s použitím <xref:System.Activities.Validation.Constraint%601> aktivity a několika dalších ověřování aktivit jsou k dispozici jako pomoc s vytváření chyby a upozornění ověření a k poskytnutí informací o související aktivity v pracovním postupu.  
   
-### <a name="assertvalidation-and-addvalidationerror"></a>AssertValidation a AddValidationError  
- <xref:System.Activities.Validation.AssertValidation> Aktivita vyhodnotí výraz odkazuje jeho <xref:System.Activities.Validation.AssertValidation.Assertion%2A> vlastnost, a pokud je výsledkem výrazu `false`, ověření chyby nebo upozornění je přidán do <xref:System.Activities.Validation.ValidationResults>. <xref:System.Activities.Validation.AssertValidation.Message%2A> Vlastnost popisuje chybu ověření a <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> vlastnost určuje, zda je chybu ověřování k chybě nebo upozornění. Výchozí hodnota pro <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> je `false`.  
+### <a name="assertvalidation-and-addvalidationerror"></a>AssertValidation a metodu AddValidationError  
+ <xref:System.Activities.Validation.AssertValidation> Aktivita vyhodnotí výraz odkazuje jeho <xref:System.Activities.Validation.AssertValidation.Assertion%2A> vlastnost, a pokud je výraz vyhodnocen `false`, upozornění a chyby ověřování se přidá do <xref:System.Activities.Validation.ValidationResults>. <xref:System.Activities.Validation.AssertValidation.Message%2A> Vlastnost popisuje chybu ověření a <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> vlastnost určuje, zda Chyba ověřování je chybu nebo upozornění. Výchozí hodnota pro <xref:System.Activities.Validation.AssertValidation.IsWarning%2A> je `false`.  
   
- V následujícím příkladu je deklarován omezení, která vrací upozornění ověření, pokud <xref:System.Activities.Activity.DisplayName%2A> aktivity ověřován je dva znaků nebo méně. Parametr obecného typu používá pro <xref:System.Activities.Validation.Constraint%601> Určuje typ aktivity, které je ověřeno omezením. Toto omezení používá <xref:System.Activities.Activity> jako Obecné zadejte a slouží k ověření všechny typy aktivit.  
+ V následujícím příkladu je deklarován omezení, která vrací upozornění ověření, pokud <xref:System.Activities.Activity.DisplayName%2A> aktivity se ověřují se dvou znaků nebo méně. Parametr obecného typu pro <xref:System.Activities.Validation.Constraint%601> Určuje typ aktivity, který je potvrzen v omezení. Toto omezení používá <xref:System.Activities.Activity> jako obecného typu a slouží k ověření všech druhů aktivit.  
   
 ```csharp  
 public static Constraint ActivityDisplayNameIsNotSetWarning()  
@@ -41,7 +41,7 @@ public static Constraint ActivityDisplayNameIsNotSetWarning()
 }  
 ```  
   
- Pokud chcete zadat toto omezení pro aktivitu, je přidán do <xref:System.Activities.Activity.Constraints%2A> aktivity, jak je znázorněno v následujícím příkladu kódu.  
+ Pokud chcete zadat toto omezení pro aktivitu, přidá se do <xref:System.Activities.Activity.Constraints%2A> aktivity, jak je znázorněno v následujícím příkladu kódu.  
   
 ```csharp  
 public sealed class SampleActivity : CodeActivity  
@@ -55,14 +55,15 @@ public sealed class SampleActivity : CodeActivity
 }  
 ```  
   
- Hostitel může také zadat toto omezení pro aktivity v pracovním postupu pomocí <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>, která je popsaná v další části.  
+ Hostitel může také určit toto omezení pro aktivity v pracovním postupu pomocí <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A>, který je popsaný v další části.  
   
- <xref:System.Activities.Validation.AddValidationError> Aktivity se používá ke generování ověřování chyb nebo upozornění bez nutnosti vyhodnocení výrazu. Jeho vlastnosti jsou podobné <xref:System.Activities.Validation.AssertValidation> a lze jej použít ve spojení s aktivity toku řízení omezení, jako <xref:System.Activities.Statements.If> aktivity.  
+ <xref:System.Activities.Validation.AddValidationError> Aktivita se používá k vygenerování upozornění a Chyba ověření bez nutnosti vyhodnocení výrazu. Její vlastnosti jsou podobné <xref:System.Activities.Validation.AssertValidation> a ho můžou používat ve spojení s aktivity toku řízení omezení, jako <xref:System.Activities.Statements.If> aktivity.
   
-### <a name="workflow-relationship-activities"></a>Aktivity pracovního postupu relace  
- Jsou k dispozici několik ověření aktivity které poskytují informace o další aktivity v pracovním postupu ve vztahu k aktivity, která je ověřována. <xref:System.Activities.Validation.GetParentChain> Vrátí kolekci aktivity, která obsahuje všechny aktivity mezi aktuální aktivitu a kořenové aktivity. <xref:System.Activities.Validation.GetChildSubtree> poskytuje kolekci aktivity, která obsahuje podřízené aktivity v rekurzivní vzor, a <xref:System.Activities.Validation.GetWorkflowTree> získá všechny aktivity v pracovním postupu.  
+### <a name="workflow-relationship-activities"></a>Relace aktivit pracovního postupu
+
+Jsou k dispozici několik ověřování aktivity, které poskytují informace o aktivitách pracovního postupu ve vztahu k aktivity ověřován. <xref:System.Activities.Validation.GetParentChain> Vrátí kolekci aktivity, která obsahuje všechny aktivity mezi aktuální aktivitu a kořenovou aktivitu. <xref:System.Activities.Validation.GetChildSubtree> obsahuje kolekce aktivit, která obsahuje podřízené aktivity ve vzoru rekurzivní a <xref:System.Activities.Validation.GetWorkflowTree> získá všechny aktivity v pracovním postupu.  
   
- V následujícím příkladu z [ověření vztahy aktivity](../../../docs/framework/windows-workflow-foundation/samples/activity-relationships-validation.md) ukázce `CreateState` aktivity je definována. `CreateState` Aktivity musí být obsažena v `CreateCountry` aktivitu a `GetParent` metoda vrátí omezení, které vynucuje tento požadavek. `GetParent` používá <xref:System.Activities.Validation.GetParentChain> aktivity ve spojení s <xref:System.Activities.Statements.ForEach%601> aktivita ke kontrole nadřazené aktivity `CreateState` aktivity a určit, pokud se splní požadavek.  
+V následujícím příkladu `CreateState` aktivity je definována. `CreateState` Aktivity musí být obsažena v rámci `CreateCountry` aktivitu a `GetParent` metoda vrátí omezení, které vynucuje tento požadavek. `GetParent` používá <xref:System.Activities.Validation.GetParentChain> aktivity ve spojení s <xref:System.Activities.Statements.ForEach%601> aktivita ke kontrole nadřazené aktivity `CreateState` aktivity a určit, pokud požadavek se splní.  
   
 ```csharp  
 public sealed class CreateState : CodeActivity  
@@ -134,12 +135,10 @@ public sealed class CreateState : CodeActivity
         // not needed for the sample  
     }  
 }  
-```  
-  
- Další informace najdete v tématu Windows Workflow Foundation [ověření](../../../docs/framework/windows-workflow-foundation/samples/validation.md) ukázky.  
+```
   
 ## <a name="additional-constraints"></a>Další omezení  
- Autoři hostitele pracovního postupu můžete zadat omezení další ověřování pro aktivity v pracovním postupu vytváření omezení a jejich přidáním <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> slovník <xref:System.Activities.Validation.ValidationSettings> instance. Každá položka v <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> obsahuje typ aktivity, pro který platí omezení a seznam další omezení pro tento typ aktivity. Po vyvolání ověření pro pracovní postup Každá aktivita zadaného typu, včetně odvozené třídy, vyhodnotí se omezení. V tomto příkladu `ActivityDisplayNameIsNotSetWarning` omezení z předchozí části platí pro všechny aktivity v pracovním postupu.  
+ Autoři hostitele pracovního postupu můžete určit další ověření omezení pro aktivity v pracovním postupu vytváření omezení a jejich přidání na <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> slovník <xref:System.Activities.Validation.ValidationSettings> instance. Každou položku v <xref:System.Activities.Validation.ValidationSettings.AdditionalConstraints%2A> obsahuje typ aktivity, pro které platí omezení a seznam další omezení pro tento typ aktivity. Při vyvolání ověření pracovního postupu, každá aktivita zadaného typu, včetně odvozených tříd, vyhodnotí jako omezení. V tomto příkladu `ActivityDisplayNameIsNotSetWarning` omezením z předchozí části platí pro všechny aktivity v pracovním postupu.  
   
 ```csharp  
 Activity wf = new Sequence  
@@ -177,4 +176,4 @@ else
 }  
 ```  
   
- Pokud <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> je `true`, pak pouze zadané další omezení jsou vyhodnocována po ověření je vyvolán při volání <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. To může být užitečné pro zkontrolujete pracovní postupy pro ověřování podle konfigurace. Všimněte si ale, že po vyvolání pracovního postupu logiku ověření nakonfigurované v pracovním postupu vyhodnotí a musí projít pro pracovní postup úspěšně zahájíte. Další informace o vyvolání ověření najdete v tématu [ověření aktivity vyvolání](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).
+ Pokud <xref:System.Activities.Validation.ValidationSettings.OnlyUseAdditionalConstraints%2A> vlastnost <xref:System.Activities.Validation.ValidationSettings> je `true`, pak pouze zadaný další omezení se vyhodnocují při vyvolání ověření zavoláním <xref:System.Activities.Validation.ActivityValidationServices.Validate%2A>. To může být užitečné pro kontrolu pracovních postupů pro ověřování podle konfigurace. Všimněte si však, že když uživatel vyvolá pracovní postup, logiku ověřování, které jsou nakonfigurované v pracovním postupu je vyhodnocen a musíte předat pro pracovní postup, chcete-li úspěšně začít. Další informace o vyvolání ověřování najdete v tématu [vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).

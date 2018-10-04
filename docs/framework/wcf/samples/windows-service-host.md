@@ -5,19 +5,19 @@ helpviewer_keywords:
 - NT Service
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
-ms.openlocfilehash: 0283fd8b3fd275be9787bb75763e9395091426a3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 65797863fc8187ffebbcb660e9fb285bfa1aabd0
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513668"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48583851"
 ---
 # <a name="windows-service-host"></a>Hostitel služby Windows
-V této ukázce hostovaný ve spravované službě Windows služby Windows Communication Foundation (WCF). Windows Services jsou řízeny pomocí apletu služby v **ovládací panely** a dá se spustit automaticky po restartu systému. Ukázka se skládá z programu klienta a aplikace služby Windows. Služba je implementovaný jako .exe program a obsahuje vlastní kód hostování. V jiných prostředích hostingu, jako je například Windows procesu aktivační služby (WAS) nebo internetové informační služby (IIS), není nutné pro vás bude psaní hostování kódu.  
-  
+V této ukázce hostovaný ve spravované službě Windows služby Windows Communication Foundation (WCF). Windows Services jsou řízeny pomocí apletu služby v **ovládací panely** a dá se spustit automaticky po restartu systému. Ukázka se skládá z programu klienta a aplikace služby Windows. Služba je implementovaný jako .exe program a obsahuje vlastní kód hostování. V jiných prostředích hostingu, jako je například Windows procesu aktivační služby (WAS) nebo internetové informační služby (IIS), není nutné pro vás bude psaní hostování kódu.
+
 > [!NOTE]
->  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.  
-  
+>  Postupu a sestavení pokyny k instalaci pro tuto ukázku se nachází na konci tohoto tématu.
+
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
@@ -59,7 +59,7 @@ V této ukázce hostovaný ve spravované službě Windows služby Windows Commu
   
 2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Po řešení je sestavený Build, spusťte z zvýšenými Setup.bat [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] příkazového řádku pro instalaci služby Windows pomocí Installutil.exe nástroje. Služba by se zobrazit v služeb.  
+3.  Po řešení je sestavený Build, spusťte z příkazového řádku se zvýšenými oprávněními Visual Studio 2012 pro instalaci služby Windows pomocí Installutil.exe nástroje Setup.bat. Služba by se zobrazit v služeb.  
   
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   

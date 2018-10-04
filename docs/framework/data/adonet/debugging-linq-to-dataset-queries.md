@@ -2,15 +2,16 @@
 title: Ladění dotazech LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
-ms.openlocfilehash: fd10e6c715529ba937ba09732a254d311158b0f1
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: c1014db4cad54420b917585becd2a2031638c1d9
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086001"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266257"
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>Ladění dotazech LINQ to DataSet
-[!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)] podporuje ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu. Existují však určité rozdíly mezi ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a jiné-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu. Většina funkcí ladění pracuje s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkazy, včetně posílení, nastavení zarážek a zobrazení výsledků, které jsou zobrazeny v oknech ladicího programu. Však odložené dotazu provádění ve službě má některé vedlejší účinky, které byste měli zvážit během ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a narazíte na určitá omezení pomocí funkce upravit a pokračovat. Toto téma popisuje aspekty ladění, které jsou jedinečné pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] ve srovnání s jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu.  
+
+Visual Studio podporuje ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu. Existují však určité rozdíly mezi ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a jiné-[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu. Většina funkcí ladění pracuje s [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkazy, včetně posílení, nastavení zarážek a zobrazení výsledků, které jsou zobrazeny v oknech ladicího programu. Však odložené dotazu provádění ve službě má některé vedlejší účinky, které byste měli zvážit během ladění [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] kódu a narazíte na určitá omezení pomocí funkce upravit a pokračovat. Toto téma popisuje aspekty ladění, které jsou jedinečné pro [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] ve srovnání s jinou hodnotu než[!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] spravovaného kódu.  
   
 ## <a name="viewing-results"></a>Zobrazení výsledků  
  Můžete zobrazit výsledek [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] příkaz pomocí datových tipů, okna kukátka a dialogového okna rychlého kukátka. Pomocí okna zdroje můžete pozastavíte ukazatel myši na dotazu v okně zdroje a zobrazí se datatip. Můžete zkopírovat [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)] proměnné a vložte ho do okna kukátka nebo dialogového okna rychlého kukátka. V [!INCLUDE[linq_dataset](../../../../includes/linq-dataset-md.md)], dotaz není vyhodnocen při vytváření nebo deklaraci, ale pouze při spuštění dotazu. Tento postup se nazývá *odložené provedení*. Proměnné dotazu, proto nemá hodnotu, dokud není vyhodnocen. Další informace najdete v tématu [dotazy v LINQ to DataSet](../../../../docs/framework/data/adonet/queries-in-linq-to-dataset.md).  

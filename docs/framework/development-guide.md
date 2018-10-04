@@ -7,11 +7,11 @@ ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: a21f4cd8657a9d2c26ac481e7f2b00e6a2f502c9
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47209535"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48779800"
 ---
 # <a name="net-framework-development-guide"></a>Průvodce vývojem s použitím rozhraní .NET Framework
 Tato část vysvětluje, jak vytvořit, konfigurovat, ladění, zabezpečení a nasazení aplikací rozhraní .NET Framework. V části také obsahuje informace o oblastech technologií, jako jsou dynamické programování, interoperabilita, rozšiřitelnost, správa paměti a dělení na vlákna.  

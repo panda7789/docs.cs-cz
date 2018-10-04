@@ -2,16 +2,16 @@
 title: Základní ukázka
 ms.date: 03/30/2017
 ms.assetid: c1910bc1-3d0a-4fa6-b12a-4ed6fe759620
-ms.openlocfilehash: 8c99b4955dcc00015d54391dcb509b312190ddab
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 29edc8acb0293210e66e31660e3215220440fbae
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508706"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580313"
 ---
 # <a name="basic-sample"></a>Základní ukázka
-Tato ukázka předvádí, jak je nechat zjistitelné služby a jak vyhledat a volat zjistitelné služby. Tento příklad se skládá ze dvou projektů: klienta a služby.  
-  
+Tato ukázka předvádí, jak je nechat zjistitelné služby a jak vyhledat a volat zjistitelné služby. Tento příklad se skládá ze dvou projektů: klienta a služby.
+
 > [!NOTE]
 >  Tato ukázka implementuje zjišťování v kódu.  Ukázku, která implementuje zjišťování v konfiguraci najdete v tématu [konfigurace](../../../../docs/framework/wcf/samples/configuration-sample.md).  
   
@@ -84,7 +84,7 @@ static void InvokeCalculatorService(ServiceEndpoint serviceEndpoint)
   
 1.  Tato ukázka používá koncové body HTTP a pokud chcete tuto ukázku spustit, musíte přidat správné seznamy ACL adresy URL. Další informace najdete v tématu [konfigurace HTTP a HTTPS](https://go.microsoft.com/fwlink/?LinkId=70353). Provádění se zvýšenými oprávněními následující příkaz by měl přidat příslušné seznamy ACL. Můžete nahradit doména a uživatelské jméno pro následující argumenty, pokud příkaz nefunguje, jak je. `netsh http add urlacl url=http://+:8000/ user=%DOMAIN%\%UserName%`  
   
-2.  Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete Basic.sln a sestavit ukázku.  
+2.  Pomocí sady Visual Studio 2012, otevřete Basic.sln a sestavit ukázku.  
   
 3.  Spusťte aplikaci service.exe.  
   

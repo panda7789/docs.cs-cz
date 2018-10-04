@@ -1,12 +1,12 @@
 ---
 title: 'Návod: Uchování objektu pomocí jazyka C#'
 ms.date: 04/26/2018
-ms.openlocfilehash: c3cff57f008eb524c2d2bec406431e4c41dca617
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 85c447ae43086cc789338e77555b7400a523662a
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47231489"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48580168"
 ---
 # <a name="walkthrough-persisting-an-object-using-c"></a>Návod: uchování objektu pomocí jazyka C# #
 
@@ -28,6 +28,8 @@ V tomto návodu vytvoříte základní `Loan` objektu a zachovat data do souboru
 
 > [!TIP]
 > Je potřeba nainstalovat editor kódu? Zkuste [sady Visual Studio](https://visualstudio.com/downloads)!
+
+* V příkladu vyžaduje C# 7.3. Zobrazit [vyberte verzi jazyka C#](../../../language-reference/configure-language-version.md) 
 
 Můžete prozkoumat ukázkový kód online [v úložišti GitHub s ukázkami .NET](https://github.com/dotnet/samples/tree/master/csharp/serialization).
 

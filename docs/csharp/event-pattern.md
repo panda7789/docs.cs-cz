@@ -4,11 +4,11 @@ description: Další informace o vzory událostí .NET a vytvoření zdroje udá
 ms.date: 06/20/2016
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
 ms.openlocfilehash: 0b10c440f4d05533032aa94819ec879f6a1ca2a4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47399947"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266764"
 ---
 # <a name="standard-net-event-patterns"></a>Standardní vzory událostí .NET
 

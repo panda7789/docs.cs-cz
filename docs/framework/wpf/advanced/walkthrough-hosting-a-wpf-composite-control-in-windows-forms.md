@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting WPF content in Windows Forms [WPF]
 ms.assetid: 0ac41286-4c1b-4b17-9196-d985cb844ce1
-ms.openlocfilehash: 09f634c870eb78c16192ed30ffbbfdc71fdd5142
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b49d09ce81c0605ecd82b67ec4c0b24973ac293c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856163"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582811"
 ---
 # <a name="walkthrough-hosting-a-wpf-composite-control-in-windows-forms"></a>Návod: Hostování kompozitního ovládacího prvku WPF v rozhraní Windows Forms
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] poskytuje bohaté prostředí pro vytváření aplikací. Pokud však máte značné investice [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] kódu, může být mnohem efektivnější Rozšiřte svoje stávající [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aplikace s [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] namísto jeho přepsání úplně od začátku. Běžný scénář, kdy je, když chcete vložit jednu nebo více ovládacích prvků implementovaný pomocí [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] v rámci vaší aplikace Windows Forms. Další informace o přizpůsobení ovládacích prvků WPF v tématu [přizpůsobení ovládacího prvku](../../../../docs/framework/wpf/controls/control-customization.md).  
@@ -27,9 +27,8 @@ ms.locfileid: "43856163"
  Kompletní výpis kódu úloh v tomto návodu, naleznete v tématu [hostování složeného ovládacího prvku WPF ve Windows Forms vzorku](https://go.microsoft.com/fwlink/?LinkID=159996).  
   
 ## <a name="prerequisites"></a>Požadavky  
- K dokončení tohoto návodu budete potřebovat následující komponenty:  
-  
--   [!INCLUDE[vs_dev10_long](../../../../includes/vs-dev10-long-md.md)].  
+
+Visual Studio k dokončení tohoto návodu potřebujete.  
   
 ## <a name="implementing-the-wpf-composite-control"></a>Implementace složeného ovládacího prvku WPF  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] Složeného ovládacího prvku použitého v tomto příkladu je jednoduché zadávání dat formuláře, který přebírá uživatelské jméno a adresa. Když uživatel klikne dvě tlačítka k označení, že je úloha dokončena, ovládací prvek vyvolá vlastní událost, vrátí tyto informace k hostiteli. Následující obrázek ukazuje ovládací prvek vykreslené.  

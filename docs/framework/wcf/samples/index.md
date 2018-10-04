@@ -3,11 +3,11 @@ title: Dokumentace ke službě ukázky Windows Communication Foundation (WCF)
 ms.date: 09/24/2018
 ms.assetid: 89d4efce-7832-4dd5-82a8-0e574b3302f9
 ms.openlocfilehash: 5fe191aa3bc005aacf1e32bfb6533b8dfd6f23fb
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027829"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48261274"
 ---
 # <a name="windows-communication-foundation-wcf-samples"></a>Ukázky Windows Communication Foundation (WCF)
 

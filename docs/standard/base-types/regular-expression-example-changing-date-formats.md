@@ -16,11 +16,11 @@ ms.assetid: 5fcc75a5-09d7-45ae-a4c0-9ad6085ac83d
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e8c26608115a22a5402d671c5f5e51c75442a0a5
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48029493"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48264385"
 ---
 # <a name="regular-expression-example-changing-date-formats"></a>Příklad regulárního výrazu: Změna formátů data
 Následující příklad kódu používá <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> metody lze nahradit data, která bude mít formát _služba ._protokol *mm*/*dd*/*rr* s daty, která mít formát _služba ._protokol *dd*-*mm*-*rr*.  

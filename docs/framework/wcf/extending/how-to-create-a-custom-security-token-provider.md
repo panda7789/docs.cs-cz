@@ -9,11 +9,11 @@ helpviewer_keywords:
 ms.assetid: db8cb478-aa43-478b-bf97-c6489ad7c7fd
 author: BrucePerlerMS
 ms.openlocfilehash: 3e304aa12d5e1c7aaa992191e6ed9ed25b026f9f
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027479"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48266244"
 ---
 # <a name="how-to-create-a-custom-security-token-provider"></a>Postupy: vytvoření vlastního zprostředkovatele tokenů zabezpečení
 Toto téma ukazuje, jak vytvořit nové typy tokenů s vlastního zprostředkovatele tokenů zabezpečení a jak integrovat Správce tokenů zabezpečení vlastního zprostředkovatele.  

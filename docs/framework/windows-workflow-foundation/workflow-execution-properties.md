@@ -1,26 +1,23 @@
 ---
-title: Vlastnosti pracovního postupu provádění
+title: Vlastnosti spuštění pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: a50e088e-3a45-4267-bd51-1a3e6c2d246d
-ms.openlocfilehash: 2681152ba89baa2f65d5402a8c8c9d872cadb65b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2b72782b4b9fef127e61bb22b7800740af1d8d2b
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33518641"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582067"
 ---
-# <a name="workflow-execution-properties"></a>Vlastnosti pracovního postupu provádění
-Pomocí místní úložiště vláken (TLS) modul CLR udržuje kontextu spuštění pro každé vlákno. Tento kontext spuštění řídí vlastnosti dobře známé vlákna například identity vláken vedlejším transakce a sadou kromě vlákno uživatelem definované vlastnosti jako aktuální oprávnění s názvem sloty.  
+# <a name="workflow-execution-properties"></a>Vlastnosti spuštění pracovního postupu
+Pomocí úložiště thread local (TLS) CLR udržuje kontext spuštění pro každé vlákno. Tento kontext spuštění se řídí vlákno dobře známé vlastnosti, jako je identitu vlákna okolí transakce a sadou kromě vlákna uživatelem definované vlastnosti, jako je aktuální oprávnění s názvem sloty.  
   
- Na rozdíl od přímo cílení na modulu CLR programů jsou programy pracovního postupu hierarchicky vymezená stromy aktivit, které se spouští v prostředí bez ohledu na vlákno. To znamená, že standardních mechanismů TLS nelze použít přímo k určení, jaké kontext je v oboru pro daný pracovní položku. Například dvě paralelních větvích provádění může používat jinou transakcí, ale Plánovač může interleave jejich spuštění ve stejném vlákně, CLR.  
+ Na rozdíl od programy přímo cílí na modulu CLR pracovní postup programy jsou hierarchicky vymezené stromů aktivit, které jsou spuštěny v prostředí bez ohledu na vlákno. Z toho vyplývá, že standardních mechanismů protokolu TLS nelze přímo použít k určení, jaké kontext je v oboru pro daný pracovní položky. Například dva paralelních větvích provádění použít jiné transakce, ale Plánovač může prokládání jejich spuštění ve stejném vlákně modulu CLR.  
   
- Pracovní postup provádění vlastnosti poskytují mechanismus k přidání konkrétních vlastností kontextu do prostředí aktivity. To umožňuje aktivitu deklarovat, vlastnosti, které jsou v oboru pro jeho podstromu a také poskytuje háky pro nastavení a zrušení TLS správně vzájemnou spolupráci s objekty CLR.  
+ Vlastnosti spuštění pracovního postupu poskytují mechanismus pro přidání kontextu specifické vlastnosti aktivity prostředí. To umožňuje aktivitu, chcete-li deklarovat vlastnosti, které jsou v oboru pro jeho podstromu a také poskytuje zachytávání pro nastavení a opětné TLS správně zajistit vzájemnou funkční spolupráci s objekty CLR.  
   
-## <a name="creating-and-using-workflow-execution-properties"></a>Vytvoření a použití vlastností pracovního postupu provádění  
- Pracovní postup provádění vlastnosti obvykle implementovat <xref:System.Activities.IExecutionProperty> rozhraní, i když vlastnosti, které jsou zaměřené na zasílání zpráv může implementovat <xref:System.ServiceModel.Activities.ISendMessageCallback> a <xref:System.ServiceModel.Activities.IReceiveMessageCallback> místo. Pokud chcete vytvořit vlastnost spuštění pracovního postupu, vytvořte třídu, která implementuje <xref:System.Activities.IExecutionProperty> rozhraní a implementovat členy <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> a <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A>. Tito členové poskytnout vlastnost provádění příležitost správně nastavit a přerušit lokální úložiště vláken při každé pulse pracovní aktivity, která obsahuje vlastnosti, včetně žádné podřízené aktivity. V tomto příkladu `ConsoleColorProperty` této sady je vytvořena `Console.ForegroundColor`.  
-  
-> [!NOTE]
->  Následující příklad kódu v tomto tématu podle [provádění vlastnosti](../../../docs/framework/windows-workflow-foundation/samples/execution-properties.md) ukázka.  
+## <a name="creating-and-using-workflow-execution-properties"></a>Vytváření a používání běhové vlastnosti pracovního postupu  
+ Vlastnosti spuštění pracovního postupu obvykle implementují <xref:System.Activities.IExecutionProperty> rozhraní, když vlastnosti, zaměřuje na zasílání zpráv může implementovat <xref:System.ServiceModel.Activities.ISendMessageCallback> a <xref:System.ServiceModel.Activities.IReceiveMessageCallback> místo. Pro vytvoření vlastnosti spuštění pracovního postupu, vytvořte třídu, která implementuje <xref:System.Activities.IExecutionProperty> rozhraní a implementovat členy <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> a <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A>. Tyto členy, poskytne vlastnost spuštění příležitost správně nastavit a začít odstraňovat úložiště thread local během každé pulse pracovní aktivity, která obsahuje vlastnosti, včetně všechny podřízené aktivity. V tomto příkladu `ConsoleColorProperty` vytvoření této sady `Console.ForegroundColor`.  
   
 ```csharp  
 class ConsoleColorProperty : IExecutionProperty  
@@ -48,7 +45,7 @@ class ConsoleColorProperty : IExecutionProperty
 }  
 ```  
   
- Autoři aktivitu můžete použít tuto vlastnost tak, že zaregistrujete v aktivity spustit přepsání. V tomto příkladu `ConsoleColorScope` aktivity je definován, se zaregistruje `ConsoleColorProperty` přidáním jeho <xref:System.Activities.NativeActivityContext.Properties%2A> kolekce aktuální <xref:System.Activities.NativeActivityContext>.  
+ Aktivita autoři tuto vlastnost můžete použít tak, že zaregistrujete ho v aktivity spuštění přepsat. V tomto příkladu `ConsoleColorScope` aktivity je definován, která se registruje `ConsoleColorProperty` tak, že ji přidáte <xref:System.Activities.NativeActivityContext.Properties%2A> kolekce aktuálního <xref:System.Activities.NativeActivityContext>.  
   
 ```csharp  
 public sealed class ConsoleColorScope : NativeActivity  
@@ -73,7 +70,7 @@ public sealed class ConsoleColorScope : NativeActivity
 }  
 ```  
   
- Při spuštění aktivity textu pulse práce, <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> je volána metoda vlastnosti a po dokončení, pulse práce <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A> je volána. V tomto příkladu se vytvoří pracovní postup používající <xref:System.Activities.Statements.Parallel> aktivitu tři větve. Použít první dvě pobočky `ConsoleColorScope` aktivity a třetí větev neexistuje. Všechny tři větve obsahovat dvě <xref:System.Activities.Statements.WriteLine> aktivity a <xref:System.Activities.Statements.Delay> aktivity. Když <xref:System.Activities.Statements.Parallel> provádí aktivity, aktivity, které jsou obsaženy v větve provést prokládaná způsobem, ale jako provádí každou aktivitu podřízené barvu konzoly správné použití je `ConsoleColorProperty`.  
+ Při spuštění aktivity tělo pulse práce, <xref:System.Activities.IExecutionProperty.SetupWorkflowThread%2A> volání metody, vlastnosti a po dokončení, pulse práce <xref:System.Activities.IExecutionProperty.CleanupWorkflowThread%2A> je volána. V tomto příkladu se vytvoří pracovní postup, který používá <xref:System.Activities.Statements.Parallel> aktivity tři větví. Používat nejdřív dvě větve `ConsoleColorScope` aktivity a třetí větve tak není. Všechny tři větve obsahují dva <xref:System.Activities.Statements.WriteLine> aktivity a <xref:System.Activities.Statements.Delay> aktivity. Když <xref:System.Activities.Statements.Parallel> aktivity spustí, aktivity, které jsou obsaženy v větve provést prokládané způsobem, ale protože každá podřízená aktivita spustí barvu správné konzole použití `ConsoleColorProperty`.  
   
 ```csharp  
 Activity wf = new Parallel  
@@ -148,7 +145,7 @@ Activity wf = new Parallel
 WorkflowInvoker.Invoke(wf);  
 ```  
   
- Po vyvolání pracovní postup je následující výstup zapsán do okna konzoly.  
+ Když uživatel vyvolá pracovní postup, následující výstup je zapsán do okna konzoly.  
   
 ```  
 Start blue text.  
@@ -160,9 +157,9 @@ End default text.
 ```  
   
 > [!NOTE]
->  I když ho není zobrazené ve výstupu předchozí, každý řádek textu v okně konzoly se zobrazí v barvu uvedené.  
+>  I když není zobrazený ve výstupu předchozí, jednotlivé řádky textu v okně konzoly se zobrazí v označeném barvu.  
   
- Vlastnosti pracovního postupu provádění lze použít autory vlastní aktivitu, a také poskytují mechanismus pro Správa popisovačů pro aktivity, jako <xref:System.ServiceModel.Activities.CorrelationScope> a <xref:System.Activities.Statements.TransactionScope> aktivity.  
+ Vlastnosti spuštění pracovního postupu je možné autory vlastní aktivitu, a také poskytují mechanismus pro Správa popisovačů pro aktivity, jako <xref:System.ServiceModel.Activities.CorrelationScope> a <xref:System.Activities.Statements.TransactionScope> aktivity.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Activities.IExecutionProperty>  

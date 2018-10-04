@@ -2,16 +2,16 @@
 title: Proces schválení dokumentu
 ms.date: 03/30/2017
 ms.assetid: 9b240937-76a7-45cd-8823-7f82c34d03bd
-ms.openlocfilehash: 874ee560407c3054b4f270a35e5100eaf9e174b8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 34b63acaacde274210343a1135f3ed39a2df885e
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508927"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48582707"
 ---
 # <a name="document-approval-process"></a>Proces schválení dokumentu
-Tento příklad ukazuje použití mnoha funkcí Windows Workflow Foundation (WF) a Windows Communication Foundation (WCF) společně. Společně implementují scénář proces schválení dokumentu. Klientská aplikace může odesílat dokumenty pro schválení a schválit dokumenty. Aplikace Správce schválení existuje pro usnadnění komunikace mezi klienty a vynucení pravidel procesu schvalování. Proces schválení je pracovní postup, který můžete spustit několik typů schválení. Aktivity slouží k získání jedné schválení, schválení kvora (procento sada schvalovatelů) a komplexní schválení proces, který se skládá z jedné schválení v pořadí a kvora.  
-  
+Tento příklad ukazuje použití mnoha funkcí Windows Workflow Foundation (WF) a Windows Communication Foundation (WCF) společně. Společně implementují scénář proces schválení dokumentu. Klientská aplikace může odesílat dokumenty pro schválení a schválit dokumenty. Aplikace Správce schválení existuje pro usnadnění komunikace mezi klienty a vynucení pravidel procesu schvalování. Proces schválení je pracovní postup, který můžete spustit několik typů schválení. Aktivity slouží k získání jedné schválení, schválení kvora (procento sada schvalovatelů) a komplexní schválení proces, který se skládá z jedné schválení v pořadí a kvora.
+
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
@@ -80,11 +80,11 @@ Tento příklad ukazuje použití mnoha funkcí Windows Workflow Foundation (WF)
   
 ##### <a name="to-set-up-the-database"></a>K nastavení databáze  
   
-1.  Z [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] otevřít příkazový řádek s oprávněními správce, přejděte na tuto složku DocumentApprovalProcess a spustit Setup.cmd.  
+1.  Z příkazového řádku sady Visual Studio 2010 otevřeného s oprávněními správce přejděte na tuto složku DocumentApprovalProcess a spustit Setup.cmd.  
   
 ##### <a name="to-set-up-the-application"></a>Nastavení aplikace  
   
-1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení DocumentApprovalProcess.sln.  
+1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení DocumentApprovalProcess.sln.  
   
 2.  Abyste mohli sestavit řešení, stiskněte kombinaci kláves CTRL + SHIFT + B.  
   
@@ -146,4 +146,4 @@ Tento příklad ukazuje použití mnoha funkcí Windows Workflow Foundation (WF)
   
 ##### <a name="to-clean-up"></a>Vyčistit  
   
-1.  Z [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)] příkazový řádek, přejděte do složky DocumentApprovalProcess a spusťte Cleanup.cmd.
+1.  Z příkazového řádku sady Visual Studio 2010 přejděte do složky DocumentApprovalProcess a spusťte Cleanup.cmd.

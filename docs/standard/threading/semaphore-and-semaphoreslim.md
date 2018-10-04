@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8e98862aba937724c799adef597260a06ed495f6
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: e7d7f791fbc68a526f428f4f79d9b379a23ca771
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44199762"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48579995"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semafor a SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType> Třída představuje pojmenované (systémové) nebo místní "Semaphore". Je dynamického zajišťování obálku kolem objektu semafor Win32. Win32 semafory jsou počítání semaforů, které je možné použít k řízení přístupu k fondu zdrojů.  
@@ -25,7 +25,7 @@ ms.locfileid: "44199762"
  <xref:System.Threading.SemaphoreSlim> Třída představuje semafor odlehčený, rychlý, který se dá použít pro čekání v rámci jednoho procesu při velmi krátké očekávané době čekání. <xref:System.Threading.SemaphoreSlim> spoléhá na synchronizací primitiv modulem common language runtime (CLR) k dispozici co nejvíc. Ale také poskytuje obslužné rutiny čekání laxně inicializovaný, na základě jádra podle potřeby pro podporu čekání na více semafory. <xref:System.Threading.SemaphoreSlim> také podporuje použití tokenů zrušení, ale nepodporuje s názvem semafory nebo použijte popisovač čekání synchronizace.  
   
 ## <a name="managing-a-limited-resource"></a>Správa prostředků omezené  
- Vlákna zadejte semafor voláním <xref:System.Threading.WaitHandle.WaitOne%2A> metodu, která se dědí z <xref:System.Threading.WaitHandle> třídy, v případě <xref:System.Threading.Semaphore?displayProperty=nameWithType> objektu, nebo <xref:System.Threading.SemaphoreSlim.Wait%2A?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.WaitAsync%2A?displayProperty=nameWithType> metodu v případě <xref:System.Threading.SemaphoreSlim> objektu... Při volání se vrátí se odečte počet na semaforu. Když vlákno požádá o vstupu a počet je nula, vlákno blokováno. Jako vláken verzi semafor voláním <xref:System.Threading.Semaphore.Release%2A?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.Release%2A?displayProperty=nameWithType> metody blokovaná vlákna budou moci zadat. Blokovaná vlákna k zadání semafor je zaručeno pořadí, jako je například první dovnitř, první ven (FIFO) nebo poslední dovnitř, první ven (LIFO).  
+ Vlákna zadejte semafor voláním <xref:System.Threading.WaitHandle.WaitOne%2A> metodu, která se dědí z <xref:System.Threading.WaitHandle> třídy, v případě <xref:System.Threading.Semaphore?displayProperty=nameWithType> objektu, nebo <xref:System.Threading.SemaphoreSlim.Wait%2A?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.WaitAsync%2A?displayProperty=nameWithType> metodu v případě <xref:System.Threading.SemaphoreSlim> objektu. Při volání se vrátí se odečte počet na semaforu. Když vlákno požádá o vstupu a počet je nula, vlákno blokováno. Jako vláken verzi semafor voláním <xref:System.Threading.Semaphore.Release%2A?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.Release%2A?displayProperty=nameWithType> metody blokovaná vlákna budou moci zadat. Blokovaná vlákna k zadání semafor je zaručeno pořadí, jako je například první dovnitř, první ven (FIFO) nebo poslední dovnitř, první ven (LIFO).  
   
  Vlákno můžete zadat semafor více než jednou voláním <xref:System.Threading.Semaphore?displayProperty=nameWithType> objektu <xref:System.Threading.WaitHandle.WaitOne%2A> metoda nebo <xref:System.Threading.SemaphoreSlim> objektu <xref:System.Threading.SemaphoreSlim.Wait%2A> metoda opakovaně. Vydat semafor vlákna můžete buď zavolat <xref:System.Threading.Semaphore.Release?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.Release?displayProperty=nameWithType> metody přetížení stejný počet, kolikrát, nebo volání <xref:System.Threading.Semaphore.Release%28System.Int32%29?displayProperty=nameWithType> nebo <xref:System.Threading.SemaphoreSlim.Release%28System.Int32%29?displayProperty=nameWithType> metoda přetížení a zadat počet položek, které mají být všeobecně dostupné.  
   

@@ -2,12 +2,12 @@
 title: '&lt;netTcpContextBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 1d4715e1-5fff-4c3d-a226-18f21d0b30c4
-ms.openlocfilehash: 6cb29638e6a8c71371ce230ec3e08f2daedaaa44
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: aba2ab207ca39b88312c956550219e4ad5c133f5
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43516353"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48778059"
 ---
 # <a name="ltnettcpcontextbindinggt"></a>&lt;netTcpContextBinding&gt;
 Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje, aby úroveň ochrany byla podepsána. ContextExchangeMechanism pro NetTcpContextBinding je SOAPHeader.  
@@ -103,5 +103,5 @@ Určuje kontext pro <xref:System.ServiceModel.NetTcpBinding> , která vyžaduje,
  [\<netTcpBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/nettcpbinding.md)  
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Konfigurace vazeb poskytovaných systémem](../../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služeb a klientů](../../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  [\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)

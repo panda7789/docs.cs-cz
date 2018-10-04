@@ -5,11 +5,11 @@ author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
 ms.openlocfilehash: ab44cca7c9a832dc7e5f03cfc2972de9d0785fd4
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48046536"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48777877"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
