@@ -7,14 +7,14 @@ helpviewer_keywords:
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c18659fa3db1f2e7e047f1bbdc4f75ba6e96f0c6
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 33fdaf883e465b1c39b2f4d00d31c5d6b000a5cc
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44252444"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48781080"
 ---
-# <a name="net-framework-versions-and-dependencies"></a>Verze a závislosti rozhraní .NET Framework
+# <a name="net-framework-versions-and-dependencies"></a>Rozhraní .NET framework verze a závislosti
 Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime (CLR), knihovny základních tříd a další spravované knihovny. Toto téma popisuje klíčové funkce rozhraní .NET Framework podle verzí, poskytuje informace o základních verzích CLR a přidružených vývojových prostředích a identifikuje verze, které jsou nainstalovány v operačním systému Windows.  
   
 > [!NOTE]
@@ -40,7 +40,7 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
 |4.5.1<br/><br/>[Nové funkce](../whats-new/index.md#whats-new-in-the-net-framework-451)|4|2013|✓ 8.1<br />+ 8<br />+ 7<br />+ Vista|✓ 2012 R2<br />+ 2012<br />+ 2008 R2 SP1<br />+ 2008 SP2|Použití `Release` DWORD:<br /><br /> -378675 (Windows 8.1)<br />-378758 (ostatní)<br /><br /> (viz [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md))|  
 |4.5<br/><br/>[Nové funkce](../whats-new/index.md#whats-new-in-the-net-framework-45)|4|2012|✓ 8<br />+ 7<br />+ Vista|✓ 2012<br />+ 2008 R2 SP1<br />+ 2008 SP2|Použití `Release` DWORD:<br /><br /> 378389<br /><br />(viz [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md))|  
 |4<br/><br/>[Nové funkce](../whats-new/index.md)|4|2010|+ 7<br />+ Vista|+ 2008 R2 SP1<br />+ 2008 SP2<br />+ 2003|Zobrazit [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)|  
-|3.5<br/><br/>[Nové funkce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms171868\(v=vs.90\))|2.0|2008|✓ 10\*<br/>✓ 8.1\*<br />✓ 8\*<br />✓ 7<br />+ Vista|✓2008 R2 SP1\*<br />+ 2012 R2\*<br />+ 2012\*<br />+ 2008 SP2<br />+ 2003|Zobrazit [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)|  
+|3.5<br/><br/>[Nové funkce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms171868\(v=vs.90\))|2.0|2008|✓ 10\*<br/>✓ 8.1\*<br />✓ 8\*<br />✓ 7<br />+ Vista|  Windows Server verze 1803\* <br/> + Windows Server verze 1709\* <br/> + 2016\* <br/>+ 2012 R2\*<br />+ 2012\*<br />✓2008 R2 SP1\*<br />+ 2008 SP2<br />+ 2003|Zobrazit [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)|  
 |3.0<br/><br/>Nový:<br/>WPF, WCF, WF, služba CardSpace|2.0|-|✓ Vista|✓ 2008 R2 SP1*<br />✓ 2008 S AKTUALIZACÍ SP2\*<br />+ 2003|Zobrazit [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)|  
 |2.0<br/><br/>[Nové funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-2.0/ms229284\(v%3dvs.80\))|2.0|2005|-|✓ 2008 R2 SP1<br />✓ 2008 S AKTUALIZACÍ SP2<br />✓ 2003|Zobrazit [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)|  
 |1.1<br/><br/>[Nové funkce](https://docs.microsoft.com/previous-versions/dotnet/netframework-1.1/9wtde3k4\(v%3dvs.71\))|1.1|2003|-|✓ 2003|Zobrazit [pokyny](../../../docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)|  
@@ -52,7 +52,7 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
 
  Obecně platí, že byste neměli odinstalovávat verze rozhraní .NET Framework, které jsou nainstalovány ve vašem počítači, protože na konkrétní verzi může záviset aplikace, kterou používáte, a ta se může poškodit, pokud je verze odebrána. V jednom počítači můžete najednou načíst několik verzí rozhraní .NET Framework. To znamená, že můžete nainstalovat rozhraní .NET Framework bez odinstalování předchozích verzí. Další informace najdete v tématu [Začínáme](../../../docs/framework/get-started/index.md).
 
-## <a name="targeting-and-running-net-framework-apps-for-version-45-and-later"></a>Aplikace pro cílení na a spouštění rozhraní .NET Framework verze 4.5 a vyšší  
+## <a name="targeting-and-running-net-framework-apps-for-version-45-and-later"></a>Zacílení a spuštění aplikací rozhraní .NET Framework verze 4.5 a vyšší  
  [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Je místní aktualizace, který nahrazuje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] v počítači a obdobně rozhraní .NET Framework 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1 a 4.7.2 jsou aktualizace na místě [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], což znamená, že budou používat stejné verze modulu runtime, ale verze sestavení jsou aktualizované a nové typy a členy. Po instalaci jedné z těchto aktualizací, vaše [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], rozhraní .NET Framework 4.6 nebo aplikací rozhraní .NET Framework 4.7 by měly být nadále běžet, aniž by opětovnou kompilaci. Opačně to však neplatí. Nedoporučujeme spouštění aplikací, které se zaměřují novější verzi rozhraní .NET Framework ve starší verzi rozhraní .NET Framework. Například nedoporučujeme spouštět aplikace cíle [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] na [!INCLUDE[net_v45](../../../includes/net-v45-md.md)]. Platí následující pokyny:  
   
 -   V sadě Visual Studio, můžete použít [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] jako cílový rámec pro projekt (tím se nastaví <xref:Microsoft.Build.Tasks.GetReferenceAssemblyPaths.TargetFrameworkMoniker%2A?displayProperty=nameWithType> vlastnost) ke kompilaci projektu jako [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] sestavení nebo spustitelný soubor. Toto sestavení nebo spustitelný soubor pak lze v libovolném počítači, který má [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], 4.5.1, 4.5.2, 4.6, 4.6.1, 4.6.2, 4.7, 4.7.1 nebo 4.7.2 nainstalované.  
@@ -80,6 +80,6 @@ Všechny verze rozhraní .NET Framework obsahují modul Common Language Runtime 
   
 ## <a name="see-also"></a>Viz také:
 
-[Kompatibilita verzí](../../../docs/framework/migration-guide/version-compatibility.md)   
-[Zásady životního cyklu podpory rozhraní Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607)   
-[Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+- [Kompatibilita verzí](../../../docs/framework/migration-guide/version-compatibility.md)   - 
+- [Zásady životního cyklu podpory rozhraní Microsoft .NET Framework](https://go.microsoft.com/fwlink/?LinkId=196607)   
+- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)

@@ -2,42 +2,42 @@
 title: Proces nákupu v podniku
 ms.date: 03/30/2017
 ms.assetid: a5e57336-4290-41ea-936d-435593d97055
-ms.openlocfilehash: a5e0d6191967c592d5a32baa7eee3f1659a27e50
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 1817b7af00abd9240eb427f61ed9f0255d51c60d
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43802908"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48781658"
 ---
 # <a name="corporate-purchase-process"></a>Proces nákupu v podniku
-Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces nákupu návrhy (RFP) na základě s automatický výběr nejlepší návrh. Kombinuje <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastní aktivitu pro vytvoření pracovního postupu, který představuje proces.  
-  
- Tato ukázka obsahuje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] klientskou aplikaci, která umožňuje komunikaci s procesem jako jiný účastníky (jako původní žadatel nebo konkrétního dodavatele).  
-  
-## <a name="requirements"></a>Požadavky  
-  
--   [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)].  
-  
--   [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
-  
-## <a name="demonstrates"></a>Demonstruje  
-  
--   Vlastní aktivity.  
-  
--   Složení aktivit.  
-  
--   Záložky.  
-  
--   Trvalost.  
-  
--   Schematizovanými trvalosti.  
-  
--   Trasování.  
-  
--   Sledování.  
-  
--   Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientů ([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových aplikací a aplikací WinForms).  
-  
+Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces nákupu návrhy (RFP) na základě s automatický výběr nejlepší návrh. Kombinuje <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601>, a <xref:System.Activities.Statements.ForEach%601> a vlastní aktivitu pro vytvoření pracovního postupu, který představuje proces.
+
+ Tato ukázka obsahuje [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] klientskou aplikaci, která umožňuje komunikaci s procesem jako jiný účastníky (jako původní žadatel nebo konkrétního dodavatele).
+
+## <a name="requirements"></a>Požadavky
+
+-   Visual Studio 2012.
+
+-   [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].
+
+## <a name="demonstrates"></a>Demonstruje
+
+-   Vlastní aktivity.
+
+-   Složení aktivit.
+
+-   Záložky.
+
+-   Trvalost.
+
+-   Schematizovanými trvalosti.
+
+-   Trasování.
+
+-   Sledování.
+
+-   Hostování [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v různých klientů ([!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webových aplikací a aplikací WinForms).
+
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   
@@ -143,7 +143,7 @@ Tento příklad ukazuje, jak vytvořit velmi základní požadavek na proces ná
   
 #### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
   
-1.  Pomocí [!INCLUDE[vs2010](../../../../includes/vs2010-md.md)], otevřete soubor řešení PurchaseProcess.sln.  
+1.  Pomocí sady Visual Studio 2010, otevřete soubor řešení PurchaseProcess.sln.  
   
 2.  Chcete-li spustit projekt webového klienta, otevřete **Průzkumníku řešení** a klikněte pravým tlačítkem myši **webového klienta** projektu. Vyberte **nastavit jako spouštěný projekt**.  
   

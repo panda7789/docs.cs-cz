@@ -2,12 +2,12 @@
 title: Přehled manipulace a nečinnosti
 ms.date: 03/30/2017
 ms.assetid: dd31b89b-eab6-45a1-8d0b-11e0eb84b234
-ms.openlocfilehash: 41c22dc305f8ef653705436544ab2342e55ed02a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 93d995d7afec24dedf168274fe29f6a250c0a532
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521236"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48793263"
 ---
 # <a name="manipulations-and-inertia-overview"></a>Přehled manipulace a nečinnosti
 *Manipulace* povolit uživatelům přesunout, otočit a změnit velikost prvky uživatelského rozhraní (UI) s použitím *manipulátory*. Manipulátor představuje myši nebo (v případě dotykově ovládaný) stylus nebo prstem.  
@@ -25,7 +25,7 @@ ms.locfileid: "43521236"
   
  Obrázek se manipulovat dvě manipulátory  
   
- Manipulace s zpracování poskytuje architekturu, která monitoruje podmnožinu manipulátory a interpretuje je, jako kdyby jejich fungují společně, namísto nezávisle na sobě. Můžete vytvořit několik manipulaci s objekty procesoru současně, jeden pro každý prvek uživatelského rozhraní na manipulovat v aplikaci. Manipulace s procesor je informován o kterém vstupní zařízení pro sledování a sestavy manipulace prostřednictvím [události .NET](https://msdn.microsoft.com/library/17sde2xt.aspx).  
+ Manipulace s zpracování poskytuje architekturu, která monitoruje podmnožinu manipulátory a interpretuje je, jako kdyby jejich fungují společně, namísto nezávisle na sobě. Můžete vytvořit několik manipulaci s objekty procesoru současně, jeden pro každý prvek uživatelského rozhraní na manipulovat v aplikaci. Manipulace s procesor je informován o kterém vstupní zařízení pro sledování a sestavy manipulace prostřednictvím [události .NET](../../../docs/standard/events/index.md).  
   
  Procesor manipulaci s nemá žádné informace o konkrétní elementu, který je právě zpracováván. Změny aplikace samostatně platí pro konkrétní aplikaci prvku. Například aplikace použije transformace pro bitovou kopii nebo jej chcete zobrazit v jeho novém umístění nebo s novou velikost nebo orientaci překreslí.  
   

@@ -2,7 +2,7 @@
 title: Požadavky na systém rozhraní .NET framework
 description: Zjistěte, jaké jsou hardware, operační systém a softwarové požadavky pro instalaci rozhraní .NET Framework 4.5 a novější verze.
 ms.custom: updateeachrelease
-ms.date: 04/10/2018
+ms.date: 10/01/2018
 helpviewer_keywords:
 - software requirements
 - .NET Framework, system requirements
@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 909b9369aba6b22899ae3fe7ac15eb470c5c2697
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b8f9205863ce65b480aa048f99df62d9b522aac9
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509175"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48793406"
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -26,6 +26,8 @@ Tabulky v tomto tématu poskytují hardware, operační systém a softwarové po
 * Rozhraní .NET framework 4.5 a jeho novější vydání (4.5.1 a 4.5.2).
 * Rozhraní .NET framework 4.6 a jeho novější vydání (4.6.1 a 4.6.2).
 * Rozhraní .NET framework 4.7 a jeho novější vydání (4.7.1 a 4.7.2).
+
+Informace o rozhraní .NET Framework verze starší než .NET Framework 4.5, najdete v [rozhraní .NET Framework verze a závislosti](../migration-guide/versions-and-dependencies.md).
 
 Vývojová prostředí, které umožňují vývoj aplikací pro rozhraní .NET Framework mají samostatnou sadu požadavků.
 
@@ -105,6 +107,6 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 ## <a name="see-also"></a>Viz také:
 
-[Průvodce instalací](../../../docs/framework/install/index.md)   
-[Začínáme se službou](../../../docs/framework/get-started/index.md)   
-[Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)
+- [Průvodce instalací](../../../docs/framework/install/index.md)   
+- [Začínáme](../../../docs/framework/get-started/index.md)   
+- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)

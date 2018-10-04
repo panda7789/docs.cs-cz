@@ -10,12 +10,12 @@ helpviewer_keywords:
 - touch-sensitive applications [WPF], creating
 - creating a touchscreen application [WPF]
 ms.assetid: d69e602e-9a25-4e24-950b-e89eaa2a906b
-ms.openlocfilehash: ee2eddf0ad0818658920aff19919c4b5fef807b9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 935999fd5ada93bedebb38462f9faa93b8ec923f
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511405"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48781476"
 ---
 # <a name="walkthrough-creating-your-first-touch-application"></a>Návod: Vytvoření první aplikace
 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] umožňuje aplikacím na dotykového ovládání. Například můžete pracovat s aplikací pomocí jedné nebo více prsty na dotyk zařízení, např. k tomu dotykovou obrazovku tento návod vytvoří aplikaci, která umožňuje uživateli přesunutí, změna velikosti nebo otočení jednoho objektu pomocí touch.  
@@ -23,9 +23,7 @@ ms.locfileid: "43511405"
 ## <a name="prerequisites"></a>Požadavky  
  K dokončení tohoto návodu budete potřebovat následující komponenty:  
   
--   [!INCLUDE[vs_dev10_ext](../../../../includes/vs-dev10-ext-md.md)].  
-  
--   Windows 7.  
+-   Visual Studio.  
   
 -   Zařízení, která přijímá dotykové ovládání, jako je například k tomu dotykovou obrazovku, který podporuje Windows Touch.  
   
@@ -50,40 +48,41 @@ ms.locfileid: "43511405"
      <xref:System.Windows.UIElement.ManipulationStarting> Dojde k události při [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] zjistí, že touch vstup začne pracovat s objektu. Kód určuje, že pozice manipulace by měl být vzhledem k <xref:System.Windows.Window> nastavením <xref:System.Windows.Input.ManipulationStartingEventArgs.ManipulationContainer%2A> vlastnost.  
   
      [!code-csharp[BasicManipulation#ManipulationStarting](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationstarting)]
-     [!code-vb[BasicManipulation#ManipulationStarting](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationstarting)]  
-  
-5.  V `MainWindow` třídy, přidejte následující <xref:System.Windows.Input.ManipulationDelta> obslužné rutiny události.  
-  
-     <xref:System.Windows.Input.ManipulationDelta> Události dojde, když dotykem vstup změny pozice a může dojít k více než jednou při manipulaci s. Události může také dojít v případě prstem je vyvolána. Například, pokud uživatel přetáhne prstem obrazovce <xref:System.Windows.Input.ManipulationDelta> více než jednou jako přesune prstem dojde k události. Pokud uživatel prstem na obrazovce, <xref:System.Windows.Input.ManipulationDelta> udržuje pro simulaci nečinnost výskytu události.  
-  
-     Kód se vztahuje <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> k <xref:System.Windows.UIElement.RenderTransform%2A> z <xref:System.Windows.Shapes.Rectangle> ji přesunout, jak uživatel přesouvá dotykem vstup. Také zkontroluje, zda <xref:System.Windows.Shapes.Rectangle> je mimo hranice <xref:System.Windows.Window> při výskytu události při nečinnosti. Pokud ano, aplikace volá <xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A?displayProperty=nameWithType> metoda end manipulaci.  
-  
+     [!code-vb[BasicManipulation#ManipulationStarting](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationstarting)]
+
+5.  V `MainWindow` třídy, přidejte následující <xref:System.Windows.Input.ManipulationDelta> obslužné rutiny události.
+
+     <xref:System.Windows.Input.ManipulationDelta> Události dojde, když dotykem vstup změny pozice a může dojít k více než jednou při manipulaci s. Události může také dojít v případě prstem je vyvolána. Například, pokud uživatel přetáhne prstem obrazovce <xref:System.Windows.Input.ManipulationDelta> více než jednou jako přesune prstem dojde k události. Pokud uživatel prstem na obrazovce, <xref:System.Windows.Input.ManipulationDelta> udržuje pro simulaci nečinnost výskytu události.
+
+     Kód se vztahuje <xref:System.Windows.Input.ManipulationDeltaEventArgs.DeltaManipulation%2A> k <xref:System.Windows.UIElement.RenderTransform%2A> z <xref:System.Windows.Shapes.Rectangle> ji přesunout, jak uživatel přesouvá dotykem vstup. Také zkontroluje, zda <xref:System.Windows.Shapes.Rectangle> je mimo hranice <xref:System.Windows.Window> při výskytu události při nečinnosti. Pokud ano, aplikace volá <xref:System.Windows.Input.ManipulationDeltaEventArgs.Complete%2A?displayProperty=nameWithType> metoda end manipulaci.
+
      [!code-csharp[BasicManipulation#ManipulationDelta](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationdelta)]
-     [!code-vb[BasicManipulation#ManipulationDelta](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]  
-  
-6.  V `MainWindow` třídy, přidejte následující <xref:System.Windows.UIElement.ManipulationInertiaStarting> obslužné rutiny události.  
-  
-     <xref:System.Windows.UIElement.ManipulationInertiaStarting> Události dojde, když uživatel vyvolá všechny prsty na obrazovce. Kód nastaví počáteční a zpomalení přesunu, rozšíření a otočení obdélníku.  
-  
+     [!code-vb[BasicManipulation#ManipulationDelta](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationdelta)]
+
+6.  V `MainWindow` třídy, přidejte následující <xref:System.Windows.UIElement.ManipulationInertiaStarting> obslužné rutiny události.
+
+     <xref:System.Windows.UIElement.ManipulationInertiaStarting> Události dojde, když uživatel vyvolá všechny prsty na obrazovce. Kód nastaví počáteční a zpomalení přesunu, rozšíření a otočení obdélníku.
+
      [!code-csharp[BasicManipulation#ManipulationInertiaStarting](../../../../samples/snippets/csharp/VS_Snippets_Wpf/basicmanipulation/csharp/mainwindow.xaml.cs#manipulationinertiastarting)]
-     [!code-vb[BasicManipulation#ManipulationInertiaStarting](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationinertiastarting)]  
-  
-7.  Sestavte a spusťte projekt.  
-  
-     Měli byste vidět v okně se zobrazí červený čtvereček.  
-  
-## <a name="testing-the-application"></a>Testování aplikace  
- K otestování aplikace, zkuste následující manipulací. Všimněte si, že můžete provést více než jednu z následujících akcí ve stejnou dobu.  
-  
--   Přesunout <xref:System.Windows.Shapes.Rectangle>, umístí prstem <xref:System.Windows.Shapes.Rectangle> a napříč obrazovkou se pohybují prstu.  
-  
--   Pro změnu velikosti <xref:System.Windows.Shapes.Rectangle>, umístí dvěma prsty <xref:System.Windows.Shapes.Rectangle> a přesunout prsty blíže společně nebo jsou od sebe navzájem.  
-  
--   Obměna <xref:System.Windows.Shapes.Rectangle>, umístí dvěma prsty <xref:System.Windows.Shapes.Rectangle> a otočení prsty kolem sebe navzájem.  
-  
- Způsobit nečinnost, rychle zvýšit prsty na obrazovce při provádění předchozího manipulací. <xref:System.Windows.Shapes.Rectangle> Budou i nadále přesunutí, změna velikosti nebo otočení na několik sekund, než přestane.  
-  
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.UIElement.ManipulationStarting?displayProperty=nameWithType>  
- <xref:System.Windows.UIElement.ManipulationDelta?displayProperty=nameWithType>  
- <xref:System.Windows.UIElement.ManipulationInertiaStarting?displayProperty=nameWithType>
+     [!code-vb[BasicManipulation#ManipulationInertiaStarting](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/basicmanipulation/visualbasic/mainwindow.xaml.vb#manipulationinertiastarting)]
+
+7.  Sestavte a spusťte projekt.
+
+     Měli byste vidět v okně se zobrazí červený čtvereček.
+
+## <a name="testing-the-application"></a>Testování aplikace
+ K otestování aplikace, zkuste následující manipulací. Všimněte si, že můžete provést více než jednu z následujících akcí ve stejnou dobu.
+
+-   Přesunout <xref:System.Windows.Shapes.Rectangle>, umístí prstem <xref:System.Windows.Shapes.Rectangle> a napříč obrazovkou se pohybují prstu.
+
+-   Pro změnu velikosti <xref:System.Windows.Shapes.Rectangle>, umístí dvěma prsty <xref:System.Windows.Shapes.Rectangle> a přesunout prsty blíže společně nebo jsou od sebe navzájem.
+
+-   Obměna <xref:System.Windows.Shapes.Rectangle>, umístí dvěma prsty <xref:System.Windows.Shapes.Rectangle> a otočení prsty kolem sebe navzájem.
+
+ Způsobit nečinnost, rychle zvýšit prsty na obrazovce při provádění předchozího manipulací. <xref:System.Windows.Shapes.Rectangle> Budou i nadále přesunutí, změna velikosti nebo otočení na několik sekund, než přestane.
+
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Windows.UIElement.ManipulationStarting?displayProperty=nameWithType>
+- <xref:System.Windows.UIElement.ManipulationDelta?displayProperty=nameWithType>
+- <xref:System.Windows.UIElement.ManipulationInertiaStarting?displayProperty=nameWithType>

@@ -6,15 +6,15 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], bindings
 - bindings [WCF]
 ms.assetid: 83639133-89f7-43f0-b4ef-8d9e57c08d25
-ms.openlocfilehash: 1930826cf51d67ceb789e20920ca42f04d1adc1b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: e69cd500c50e9d76824d0e438a1af86f3a722c52
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47199330"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48780690"
 ---
 # <a name="windows-communication-foundation-bindings"></a>Vazby WCF
-Windows Communication Foundation (WCF) odděluje, jak software pro aplikaci vypíše jak komunikuje s jiným softwarem. Vazby se používají k určení přenosu, kódování a podrobnosti protokolu pro klienty a služby musí komunikovat mezi sebou. Vazby WCF používá ke generování podkladové síťové vyjádření koncového bodu, takže většina podrobnosti vazby musí schválit stranami, které komunikují. Nejjednodušší způsob, jak toho dosáhnout, je pro klienty služby použít stejné vazby, který koncový bod pro použití služby. Další informace o tom, jak to provést, najdete v části [vazby pomocí konfigurace služby Windows Communication Foundation a klientům](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb).  
+Windows Communication Foundation (WCF) odděluje, jak software pro aplikaci vypíše jak komunikuje s jiným softwarem. Vazby se používají k určení přenosu, kódování a podrobnosti protokolu pro klienty a služby musí komunikovat mezi sebou. Vazby WCF používá ke generování podkladové síťové vyjádření koncového bodu, takže většina podrobnosti vazby musí schválit stranami, které komunikují. Nejjednodušší způsob, jak toho dosáhnout, je pro klienty služby použít stejné vazby, který koncový bod pro použití služby. Další informace o tom, jak to provést, najdete v části [pomocí vazby na konfiguraci služeb a klientů](~/docs/framework/wcf/using-bindings-to-configure-services-and-clients.md).  
   
  Vazba se skládá z kolekce elementů vazby. Každý prvek popisuje určitý aspekt jak koncový bod komunikuje s klienty. Vazby musí obsahovat alespoň jeden element vazby přenosu, aspoň jeden kódování zpráv element vazby (které ve výchozím nastavení můžou poskytovat element vazby přenosu) a prvky vazeb protokolu libovolný počet dalších. Proces, který modul runtime mimo tento popis umožňuje každé vazby přispívat kód do tohoto modulu runtime.  
   
@@ -26,7 +26,7 @@ Windows Communication Foundation (WCF) odděluje, jak software pro aplikaci vyp�
  [Konfigurace vazeb poskytovaných systémem](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)  
  Popisuje, jak používat a upravovat vazby, které poskytuje WCF k podpoře běžných scénářů.  
   
- [Používání vazeb ke konfiguraci služby Windows Communication Foundation a klientů](https://msdn.microsoft.com/library/bd8b277b-932f-472f-a42a-b02bb5257dfb)  
+ [Používání vazeb ke konfiguraci služeb a klientů](../../../../docs/framework/wcf/using-bindings-to-configure-services-and-clients.md)  
  Popisuje, jak definovat vazby Windows Communication Foundation (WCF) pro služby a klienti imperativně v kódu a deklarativně pomocí konfigurace.  
   
  [Vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md)  

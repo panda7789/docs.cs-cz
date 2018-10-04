@@ -2,12 +2,12 @@
 title: Odstraňování potíží s instalací
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: 0270bd8c1006b39805e3486c4fef0cb379089ea8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 13828bee07dd455cd2b94d20d4afa7ea416ce186
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43805127"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48780125"
 ---
 # <a name="troubleshooting-setup-issues"></a>Odstraňování potíží s instalací
 Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Foundation (WCF).  
@@ -67,7 +67,7 @@ Toto téma popisuje, jak řešit problémy, nastavte Windows Communication Found
  Chcete-li vyřešit tento problém, použijte [nástroj WorkFlow Service Registration (WFServicesReg.exe)](../../../docs/framework/wcf/workflow-service-registration-tool-wfservicesreg-exe.md) s `/c` přepínač tak, aby správně nakonfigurovat mapy skriptů služby IIS na počítači. [Nástroj workFlow Service Registration (WFServicesReg.exe)](../../../docs/framework/wcf/workflow-service-registration-tool-wfservicesreg-exe.md) lze nalézt v %windir%\Microsoft.NET\framework\v3.5\ nebo %windir%\Microsoft.NET\framework64\v3.5\  
   
 ## <a name="could-not-load-type-systemservicemodelactivationhttpmodule-from-assembly-systemservicemodel-version-3000-cultureneutral-publickeytokenb77a5c561934e089"></a>Nelze načíst typ 'System.ServiceModel.Activation.HttpModule' ze sestavení ' System.ServiceModel, verze 3.0.0.0, Culture = neutral, PublicKeyToken = b77a5c561934e089 "  
- K této chybě dochází, pokud [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] je nainstalován a pak je povolená aktivace WCF protokolem HTTP. Řešení tohoto problému spusťte následující příkaz z příkazového řádku uvnitř [!INCLUDE[vs2010](../../../includes/vs2010-md.md)] příkazového řádku:  
+ K této chybě dochází, pokud [!INCLUDE[netfx40_short](../../../includes/netfx40-short-md.md)] je nainstalován a pak je povolená aktivace WCF protokolem HTTP. Chcete-li vyřešit problém spuštěním následujícího příkazu příkazového řádku z uvnitř Developer Command Prompt pro sadu Visual Studio:  
   
 ```Output  
 aspnet_regiis.exe -i -enable  

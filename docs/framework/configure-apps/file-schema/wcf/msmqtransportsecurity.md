@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 092e911b-ab1b-4069-a26e-6134c3299e06
 author: BrucePerlerMS
 ms.openlocfilehash: 2d9fd78e349f5c3affb1184ba0ee146eb7076922
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47399135"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48793718"
 ---
 # <a name="ltmsmqtransportsecuritygt"></a>&lt;msmqTransportSecurity&gt;
 Určuje nastavení zabezpečení přenosu služby MSMQ pro vlastní vazbu.  

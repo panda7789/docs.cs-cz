@@ -4,37 +4,37 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - routing [WCF], message filters
 ms.assetid: cb33ba49-8b1f-4099-8acb-240404a46d9a
-ms.openlocfilehash: e129924de53fb0dba61798cc492729c8af69ed94
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: fc4656a76894eb3a844bc9f2187847fd9eff0ffe
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33496932"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48780450"
 ---
 # <a name="message-filters"></a>Filtry zpráv
-Implementace založená na obsahu směrování, služba Směrování používá <xref:System.ServiceModel.Dispatcher.MessageFilter> implementací, které kontrola určité části zprávy, jako je například adresu, název koncového bodu nebo konkrétní příkaz XPath. Pokud žádné filtry zpráv s [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] vašim požadavkům, můžete vytvořit vlastní filtr tak, že vytvoříte novou implementací základu <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  
+K implementaci, směrování na základě obsahu, směrovací služba používá <xref:System.ServiceModel.Dispatcher.MessageFilter> implementace, které kontrolovat určité části zprávy, jako je například adresu, název koncového bodu nebo konkrétní příkaz XPath. Pokud žádné filtry zpráv součástí [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] vašim potřebám, můžete vytvořit vlastní filtr tak, že vytvoříte novou implementaci základní třídy <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  
   
- Při konfiguraci služby směrování, je nutné zadat filtr elementy (<xref:System.ServiceModel.Routing.Configuration.FilterElement> objekty) popisují typ **MessageFilter** a všechny podpůrné data potřebná k vytvoření filtru rozhraní, jako je například hodnoty konkrétní řetězec pro vyhledávání pro v rámci zprávy. Všimněte si, že vytváření prvků filtr definuje pouze filtry jednotlivých zpráv; použít filtry k vyhodnocení a směrování zpráv, které je třeba definovat tabulku filtru (<xref:System.ServiceModel.Routing.Configuration.FilterTableEntryCollection>).  
+ Při konfiguraci služby směrování, je nutné definovat prvků filtru (<xref:System.ServiceModel.Routing.Configuration.FilterElement> objekty), které popisují typ **MessageFilter** a všechny podpůrné data požadovaná k vytvoření filtru, například konkrétní řetězec hodnoty pro hledání pro v rámci zprávy. Všimněte si, že vytváření prvků filtr definuje pouze filtry jednotlivých zpráv; použití filtrů k vyhodnocení a směrování zpráv, musíte také definovat tabulku filtru (<xref:System.ServiceModel.Routing.Configuration.FilterTableEntryCollection>).  
   
- Každý záznam v tabulce filtr odkazuje na element filtru a určuje klienta koncového bodu, který zprávu budou směrované na, pokud zpráva odpovídá filtru. Položky tabulky filtru taky umožňují určit kolekci zálohování koncových bodů (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>), která definuje seznam koncových bodů, které zprávy budou předány v případě selhání přenosu při odesílání na primární koncový bod. Tyto koncové body se pokusila v pořadí určeném, dokud jeden neuspěje.  
+ Každý záznam v tabulce filtrů odkazuje na element filtr a Určuje koncový bod klienta, který zpráva bude směrován do zpráva odpovídá filtru. Filtrovat položky tabulky také umožňují zadat kolekce zálohování koncových bodů (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>), která definuje seznam koncových bodů, které zprávy budou předány v případě selhání přenosu při odesílání na primární koncový bod. Tyto koncové body, vyzkouší se v uvedeném pořadí, dokud jeden neuspěje.  
   
 ## <a name="message-filters"></a>Filtry zpráv  
- Filtry zpráv, používá služba Směrování zadejte běžné funkce Výběr zpráv, například vyhodnocení název koncového bodu, který zpráva byla odeslána na akce SOAP nebo adresu nebo předponu adresy, který vám byl zaslán zprávy. Filtry lze také připojit se `AND` podmínek, takže zprávy budou směrované jenom na koncový bod, pokud zpráva odpovídá oba filtry. Můžete také vytvořit vlastní filtry tak, že vytvoříte vlastní implementaci <xref:System.ServiceModel.Dispatcher.MessageFilter>.  
+ Filtry zpráv používá služba Směrování poskytují společné funkce výběru zprávy, například vyhodnocení názvu koncového bodu, který na akce SOAP, nebo adresu nebo předponu adresy, která byla zaslána zpráva byla odeslána zpráva. Filtry lze také připojit se `AND` podmínky tak, aby se zprávy budou směrovány pouze na koncový bod, pokud zpráva odpovídá oba filtry. Můžete také vytvořit vlastní filtry tak, že vytvoříte vlastní implementace <xref:System.ServiceModel.Dispatcher.MessageFilter>.  
   
- Následující tabulka uvádí <xref:System.ServiceModel.Routing.Configuration.FilterType> používaný službou Směrování třídu, která implementuje filtr konkrétní zpráv a požadované <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A> parametry.  
+ Následující tabulce jsou uvedeny <xref:System.ServiceModel.Routing.Configuration.FilterType> využívané ve službě Směrování třídy, která implementuje konkrétní zprávu filtr a požadované <xref:System.ServiceModel.Routing.Configuration.FilterElement.FilterData%2A> parametry.  
   
-|Typ filtru|Popis|Filtrování dat význam|Příklad filtru|  
+|Typ filtru|Popis|Filtrovat podle Data|Příklad filtru|  
 |------------------|-----------------|-------------------------|--------------------|  
-|Akce|Používá <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> třídy tak, aby odpovídaly zprávy obsahující určité akce.|Akce při filtrování.|\<Název filtru = "action1" filterType = "Action" fulltextových dat filtru = "http://namespace/contract/operation" / >|  
-|EndpointAddress|Používá <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující konkrétní adresu.|Adresa pro filtrování po (v hlavičce na).|\<Název filtru = "adresa1" filterType = fulltextových dat filtru "EndpointAddress" = "http://host/vdir/s.svc/b" / >|  
-|EndpointAddressPrefix|Používá <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> třída, s <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující předponu konkrétní adresu.|Adresa pro filtrování při porovnáváním nejdelší předpon.|\<Název filtru = "prefix1" filterType = "EndpointAddressPrefix" fulltextových dat filtru = "http://host/" / >|  
-|A|Používá <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> třídu, která vždy vyhodnotí splněny obě podmínky před vrácením.|fulltextových dat filtru se nepoužívá; Místo toho Filtr1 a Filtr2 mají názvy odpovídající filtry zpráv (také v tabulce), které by měl být **a**ed společně.|\<Název filtru = "and1" filterType = "A" Filtr1 = "adresa1" Filtr2 = "action1" / >|  
-|Vlastní|Uživatelem definovaný typ, který rozšiřuje <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy a má konstruktor trvá řetězec.|Atribut customType je typ plně kvalifikovaný název třídy Vytvoření; fulltextových dat filtru je řetězec, které mají být předána do konstruktoru, při vytváření filtru.|\<Název filtru = "vlastní1" filterType = "Vlastní" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" fulltextových dat filtru = "Vlastní Data" / >|  
-|EndpointName|Používá <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> třídy tak, aby odpovídaly zprávy na základě názvu koncového bodu služby se dostali na.|Název koncového bodu služby, například: "serviceEndpoint1".  To by měl být jeden z koncových bodů zveřejněný ve službě Směrování.|\<Název filtru = "stock1" filterType = fulltextových dat filtru "Koncový bod" = "SvcEndpoint" / >|  
-|MatchAll|Používá <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> třídy. Tento filtr odpovídá všechny příchozí zprávy.|fulltextových dat filtru se nepoužije. Tento filtr bude vždy odpovídat všechny zprávy.|\<Název filtru = "matchAll1" filterType = "MatchAll" / >|  
-|XPath|Používá <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> třídy tak, aby odpovídaly konkrétní dotazů XPath v rámci zprávy.|Dotaz XPath pro použití při kontrole shody zprávy.|\<Název filtru = "XPath1" filterType = fulltextových dat filtru "XPath" = "//ns:element" / >|  
+|Akce|Používá <xref:System.ServiceModel.Dispatcher.ActionMessageFilter> třídy tak, aby odpovídaly zpráv obsahujících určité akce.|Akce, který se má filtrovat.|\<Název filtru = filterType "action1" = "Action" fulltextových dat filtru = "http://namespace/contract/operation" / >|  
+|EndpointAddress|Používá <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> třídy s <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující konkrétní adresu.|Adresa chcete filtrovat (v záhlaví Komu).|\<Název filtru = "adresa1" filterType = fulltextových dat filtru "EndpointAddress" = "http://host/vdir/s.svc/b" / >|  
+|EndpointAddressPrefix|Používá <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> třídy s <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter.IncludeHostNameInComparison%2A>  ==  `true` tak, aby odpovídaly zprávy obsahující předponu konkrétní adresu.|Adresa pro filtrování při použití nejdelší odpovídající předpona.|\<Název filtru = "prefix1" filterType = fulltextových dat filtru "EndpointAddressPrefix" = "http://host/" / >|  
+|a|Používá <xref:System.ServiceModel.Dispatcher.StrictAndMessageFilter> třídu, která se vždycky vyhodnotí jako obě podmínky před vrácením.|fulltextových dat filtru se nepoužívá; Místo toho Filtr1 a Filtr2 mají názvy odpovídající filtry zpráv (také v tabulce), které by měly být **a**ed společně.|\<Název filtru = filterType "and1" = "A" Filtr1 = Filtr2 "adresa1" = "action1" / >|  
+|Vlastní|Uživatelem definovaný typ, který rozšiřuje <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy a má konstruktor, který přebírá řetězec.|Název plně kvalifikovaný typ třídy k vytvoření; je customtype – atribut fulltextových dat filtru je řetězec, který má předat konstruktoru při vytváření filtru.|\<Název filtru = filterType "vlastní1" = "Vlastní" customType="CustomAssembly.CustomMsgFilter, CustomAssembly" fulltextových dat filtru = "Vlastní Data" / >|  
+|EndpointName|Používá <xref:System.ServiceModel.Dispatcher.EndpointNameMessageFilter> třídy tak, aby odpovídaly zprávy na základě názvu koncového bodu služby se dostali na.|Název koncového bodu služby, například: "serviceEndpoint1".  To by měl být jeden z koncových bodů zveřejněné na směrovací služba.|\<Název filtru = "stock1" filterType = fulltextových dat filtru "Koncového bodu" = "SvcEndpoint" / >|  
+|MatchAll|Používá <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter> třídy. Tento filtr odpovídá všechny příchozí zprávy.|fulltextových dat filtru se nepoužívá. Tento filtr bude vždy odpovídat všechny zprávy.|\<Název filtru = filterType "matchAll1" = "MatchAll" / >|  
+|XPath|Používá <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> třídy tak, aby odpovídaly určité dotazy XPath v něm.|Dotaz XPath, který se má použít při přiřazování zpráv.|\<Název filtru = "XPath1" filterType = fulltextových dat filtru "Cesta XPath" = "//ns:element" / >|  
   
- V následujícím příkladu definuje filtr položky, které používají filtry XPath EndpointName a PrefixEndpointAddress zpráv. Tento příklad také ukazuje pomocí vlastního filtru pro RoundRobinFilter1 a RoundRobinFilter2 položky.  
+ Následující příklad definuje filtr položky, které používají filtry XPath, Název_koncového_bodu a PrefixEndpointAddress zpráv. Tento příklad také znázorňuje použití vlastního filtru pro RoundRobinFilter1 a RoundRobinFilter2 položky.  
   
 ```xml  
 <filters>  
@@ -54,24 +54,24 @@ Implementace založená na obsahu směrování, služba Směrování používá 
 ```  
   
 > [!NOTE]
->  Jednoduše definice filtru nezpůsobí zprávy, které má být porovnán s filtru. Filtr musí být přidaný do filtru tabulky a který je pak přidružené koncový bod služby, které jsou vystavené směrovací služby.  
+>  Jednoduše definuje filtr nezpůsobí zprávy má být porovnán s filtru. Filtr musí být přidané do tabulky filtru, který je přidružený k koncový bod služby, vystavený službou směrování.  
   
 ### <a name="namespace-table"></a>Namespace tabulky  
- Pokud používáte filtr XPath, se může stát velmi velký kvůli použití technologie oborů názvů filtru data, která obsahuje dotaz XPath. Ke zmírnění tohoto problému směrovací služby umožňuje definovat vlastní předpony oboru názvů pomocí tabulky oboru názvů.  
+ Pokud používáte filtr XPath, může být příliš velké vzhledem k použití oborů názvů filtrování dat, která obsahuje dotaz XPath. Ke zmírnění tohoto problému směrovací služby umožňuje definovat vlastní předpony oboru názvů pomocí oboru názvů tabulek.  
   
- Obor názvů tabulka je kolekce <xref:System.ServiceModel.Routing.Configuration.NamespaceElement> objekty, které definuje předpony oboru názvů pro běžné obory názvů, který lze použít v XPath. Níže jsou uvedeny výchozí obory názvů a obor názvů předpon, které jsou obsaženy v tabulce oboru názvů.  
+ Obor názvů tabulky je kolekce <xref:System.ServiceModel.Routing.Configuration.NamespaceElement> objekty, které definuje předpony oboru názvů pro běžné obory názvů, který lze použít v XPath. Toto jsou výchozí obory názvů a obor názvů předpony, které jsou obsaženy v tabulce oboru názvů.  
   
 |Předpona|Obor názvů|  
 |------------|---------------|  
-|s11|http://schemas.xmlsoap.org/soap/envelope|  
-|s12|http://www.w3.org/2003/05/soap-envelope|  
-|wsaAugust2004|http://schemas.xmlsoap.org/ws/2004/08/addressing|  
-|wsa10|http://www.w3.org/2005/08/addressing|  
-|SM|http://schemas.microsoft.com/serviceModel/2004/05/xpathfunctions|  
-|tempuri|http://tempuri.org|  
-|Pož|http://schemas.microsoft.com/2003/10/Serialization|  
+|s11|`http://schemas.xmlsoap.org/soap/envelope`|  
+|s12|`http://www.w3.org/2003/05/soap-envelope`|  
+|wsaAugust2004|`http://schemas.xmlsoap.org/ws/2004/08/addressing`|  
+|wsa10|`http://www.w3.org/2005/08/addressing`|  
+|SM|`http://schemas.microsoft.com/serviceModel/2004/05/xpathfunctions`|  
+|tempuri|`http://tempuri.org`|  
+|ser|`http://schemas.microsoft.com/2003/10/Serialization`|  
   
- Když víte, že budete používat konkrétní obor názvů v dotazech XPath, můžete ho přidat do oboru názvů tabulky společně s jedinečný obor názvů a použijte předponu v jakékoli dotaz XPath místo úplné obor názvů. V následujícím příkladu definuje předponu "vlastní" obor "http://my.custom.namespace", která je pak použita v dotazu XPath obsažené v fulltextových dat filtru.  
+ Pokud víte, že budete používat konkrétní obor názvů v dotazech XPath, můžete ho přidat do oboru názvů tabulek spolu s předponu oboru názvů jedinečný a použijte předponu každého dotazu XPath místo úplné oboru názvů. Následující příklad definuje předponu "vlastní" pro obor názvů `"http://my.custom.namespace"`, které se pak použije obsažená v fulltextových dat filtru dotazu XPath.  
   
 ```xml  
 <namespaceTable>  
@@ -83,7 +83,7 @@ Implementace založená na obsahu směrování, služba Směrování používá 
 ```  
   
 ## <a name="filter-tables"></a>Filtr tabulky  
- Když každý prvek filtr definuje logické porovnání, které lze použít pro zprávu, tabulka filtru obsahuje přidružení mezi element filtru a koncový bod cílového klienta. Tabulka Filtr je pojmenovaná kolekce <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement> objekty, které definují přidružení mezi filtr, koncový bod primární cílové a seznam koncových bodů alternativní zálohování. Položky filtru tabulky lze také určit volitelné prioritu pro každou podmínku filtrování. V následujícím příkladu definuje dva filtry a pak definuje filtr tabulku, která přidruží koncový bod cílové každého filtru.  
+ Zatímco každý prvek filtr definuje logické porovnání, který lze použít na zprávu, tabulky filtru poskytuje přidružení mezi prvkem filtr a cílový koncový bod klienta. Filtr tabulky je soubor s názvem <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement> objekty, které definují přidružení mezi filtr koncovým bodem v cílové primární a seznam alternativní koncové body záloh. Filtrovat položky tabulky také umožňují určit volitelné prioritu pro každou podmínku filtru. Následující příklad definuje dva filtry a pak definuje filtr tabulku, která se přidruží koncový bod cílové každého filtru.  
   
 ```xml  
 <routing>  
@@ -102,15 +102,15 @@ Implementace založená na obsahu směrování, služba Směrování používá 
 </routing>  
 ```  
   
-### <a name="filter-evaluation-priority"></a>Priorita vyhodnocování filtru  
- Ve výchozím nastavení všechny položky v tabulce filtru se vyhodnocují současně a zpráva vyhodnocovaný směrována na koncové spojené s každou položku odpovídající filtru. Pokud více filtrů vyhodnocení `true`a zpráva je jednosměrný nebo duplexní, zprávy vícesměrového vysílání do koncových bodů pro všechny filtry odpovídající. Zprávy požadavku a odpovědi nemůže být vícesměrového vysílání, protože pouze jednu odpověď může být vrácen do klienta.  
+### <a name="filter-evaluation-priority"></a>Priorita vyhodnocení filtru  
+ Ve výchozím nastavení všechny položky v tabulce filtrů jsou vyhodnoceny současně a zpráva právě vyhodnocuje se směruje do koncových bodů spojené s každou položku odpovídající filtr. Pokud mají více filtrů `true`a zpráva je jednosměrné nebo obousměrné je zprávy vícesměrového vysílání do koncových bodů pro všechny odpovídající filtry. Zprávy požadavek odpověď nemůže být vícesměrového vysílání, protože pouze jednu odpověď může být vrácen do klienta.  
   
- Složitější logikou, směrování lze provést zadáním úrovně priority pro každý filtr; Směrovací služby nejprve vyhodnotí všechny filtry na nejvyšší úroveň priority. Pokud zpráva odpovídá filtru této úrovně, jsou zpracovávány žádné filtry s nižší prioritou. Jednosměrný příchozí zprávy je třeba nejprve porovnán s všechny filtry s prioritou 2. Zpráva neodpovídá libovolný filtr na této úrovni s prioritou, takže teď že se zpráva s prioritou 1 porovná filtry. Dva filtry priority 1 odpovídající zprávu, a protože je jednosměrný zpráva se směruje na obou cílové koncové body.  Vzhledem k tomu, že byla nalezena shoda mezi filtry priority 1, jsou vyhodnoceny žádné filtry s prioritou 0.  
+ Složitější logiku směrování lze provést zadáním úrovně priority u každého filtru. Směrovací služba nejdřív vyhodnotí všechny filtry na úrovni nejvyšší prioritou. Pokud zpráva odpovídá filtru této úrovně, se zpracovávají žádné filtry s nižší prioritou. Například jednosměrný příchozí zprávy nejprve vyhodnotí oproti všechny filtry s prioritou 2. Zprávy se neshoduje s libovolný filtr na této úrovni prioritu, proto vám teď že zprávy se porovná s filtry s prioritou 1. Dva filtry priority 1 odpovídat zprávu, a protože je jednosměrná zpráva se směruje do obou cílové koncové body.  Protože byla nalezena shoda mezi filtry priority 1, jsou vyhodnocovány žádné filtry prioritu 0.  
   
 > [!NOTE]
->  Pokud je zadána žádná priorita, se používá výchozí s prioritou 0.  
+>  Pokud není zadána žádná priorita, použije se výchozí prioritu 0.  
   
- V následujícím příkladu definuje filtr tabulku, která určuje priority 2, 1 a 0 pro filtry odkazuje v tabulce.  
+ Následující příklad definuje filtr tabulku, která určuje priority 2 a 1, 0 pro filtry odkazuje v tabulce.  
   
 ```xml  
 <filterTables>  
@@ -127,13 +127,13 @@ Implementace založená na obsahu směrování, služba Směrování používá 
 </filterTables>  
 ```  
   
- V předchozím příkladu Pokud zpráva odpovídá Třída XPathFilter, bude směrována roundingCalcEndpoint a žádné další filtry v tabulce bude vyhodnoceno, protože všechny ostatní filtry jsou s nižší prioritou. Ale pokud zpráva neodpovídá Třída XPathFilter ho se pak vyhodnotí proti všechny filtry další s nižší prioritou, EndpointNameFilter a PrefixAddressFilter.  
+ V předchozím příkladu Pokud zpráva odpovídá Třída XPathFilter, bude směrována roundingCalcEndpoint a žádné další filtry. v tabulce se vyhodnotit, protože se všemi ostatními filtry s nižší prioritou. Ale pokud zprávy neodpovídá Třída XPathFilter ho pak se vyhodnotí pro všechny filtry další nižší prioritou EndpointNameFilter a PrefixAddressFilter.  
   
 > [!NOTE]
->  Pokud je to možné, používejte výhradní filtry místo zadání priority, protože vyhodnocení priority může způsobit snížení výkonu.  
+>  Pokud je to možné, používejte filtry exkluzivní místo určení prioritu, protože vyhodnocení priority může způsobit snížení výkonu.  
   
 ### <a name="backup-lists"></a>Zálohování seznamy  
- Každý filtr ve filtru tabulky Volitelně můžete zadat seznam zálohování, což je pojmenovaná kolekce koncových bodů (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>). Tato kolekce obsahuje seřazený seznam koncových bodů, které zprávy budou předány v případě systému <xref:System.ServiceModel.CommunicationException> při odesílání na primární koncový bod uvedený v <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.EndpointName%2A>. V následujícím příkladu definuje seznam zálohování s názvem "backupServiceEndpoints", který obsahuje dva koncové body.  
+ Každý filtr v tabulce filtrů můžete volitelně zadat záložní seznam, který je pojmenovaná kolekce koncových bodů (<xref:System.ServiceModel.Routing.Configuration.BackupEndpointCollection>). Tato kolekce obsahuje uspořádaný seznam koncových bodů, které zprávy se dá přenést k v <xref:System.ServiceModel.CommunicationException> při odesílání do primárního koncového bodu určeného v <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.EndpointName%2A>. Následující příklad definuje záložní seznam s názvem "backupServiceEndpoints", který obsahuje dva koncové body.  
   
 ```xml  
 <filterTables>  
@@ -149,4 +149,4 @@ Implementace založená na obsahu směrování, služba Směrování používá 
 </backupLists>  
 ```  
   
- V předchozím příkladu, bude-li odeslat na primární koncový bod "Cílové" selže, směrovací služby pokusí odesílání na každý koncový bod v uvedeném pořadí, první odesílání backupServiceQueue a následně odesílání do alternateServiceQueue, pokud poslat backupServiceQueue selže. Pokud selžou všechny koncové body zálohování, se vrátí chybu.
+ V předchozím příkladu, pokud se nepodaří odeslat na primární koncový bod "Cíl", směrovací služba zkusí odesílání do každého koncového bodu v pořadí, v jakém jsou uvedeny, první odesílání backupServiceQueue a následně odesláním do alternateServiceQueue, pokud Odeslat backupServiceQueue selže. Pokud selžou i všechny koncové body pro zálohování, je vrácena chyba.
