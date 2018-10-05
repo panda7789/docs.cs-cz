@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e04ccaf2ac97a3bd784c9aa110b53b16a31e920c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 6ab205ad12b60651443e0fc409e890ea93168ebd
+ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003048"
+ms.lasthandoff: 10/03/2018
+ms.locfileid: "48264184"
 ---
 # Co je nového v rozhraní .NET Framework <a name="introduction"></a>
 
@@ -1382,9 +1382,9 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
          Je vhodné použít konzistentní formát pro přepínače, protože jsou formální smlouvu vystavené knihovny. Tady jsou dvě zřejmé formátů.
 
-        - *Přepínač*. *obor názvů*. *switchName*
+        - *Přepínač*. *obor názvů*.*switchName*
 
-        - *Přepínač*. *Knihovna*. *switchName*
+        - *Přepínač*. *Knihovna*.*switchName*
 
     - **Změny asynchronního zpracování (TAP) založené na úlohách**
 
@@ -1655,7 +1655,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
  Hlavní nové vlastnosti a vylepšení v rozhraní .NET Framework 4.5.1 zahrnují:
 
-- Automatické přesměrování vazby pro sestavení. Počínaje [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], při kompilaci aplikace zaměřené [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [postupy: povolení a zakázání automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
+- Automatické přesměrování vazby pro sestavení. Od verze Visual Studio 2013, pokud kompilujete aplikace, která se zaměřuje [!INCLUDE[net_v451](../../../includes/net-v451-md.md)], přesměrování vazby může být přidáno do konfiguračního souboru aplikace Pokud vaše aplikace nebo její součásti odkazují na více verzí stejného sestavení. Můžete také povolit tuto funkci pro projekty, které jsou cíleny na starší verze rozhraní .NET Framework. Další informace najdete v tématu [postupy: povolení a zakázání automatického přesměrování vazby](../../../docs/framework/configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md).
 
 - Schopnost shromažďovat diagnostické informace umožňující vývojářům zvyšovat výkon serverových a cloudových aplikací. Další informace najdete v tématu <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityId%2A> a <xref:System.Diagnostics.Tracing.EventSource.WriteEventWithRelatedActivityIdCore%2A> metody v <xref:System.Diagnostics.Tracing.EventSource> třídy.
 
@@ -1679,17 +1679,17 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
     </appSettings>
     ```
 
- Vylepšení při ladění aplikací v rozhraní .NET Framework [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)] patří:
+ Vylepšení při ladění aplikací rozhraní .NET Framework v sadě Visual Studio 2013 zahrnují:
 
-- Návratové hodnoty v ladicím programu sady Visual Studio. Při ladění spravované aplikace v [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], zobrazí okno Automatické hodnoty návratové typy a hodnoty u metod. Tyto informace jsou k dispozici pro desktop, Windows Store a aplikací Windows Phone. Další informace najdete v tématu [Kontrola návratových hodnot volání metod](https://msdn.microsoft.com/library/e3245b37-8e2e-4200-ba84-133726e95f1f\(v=vs.120\).aspx) v knihovně MSDN.
+- Návratové hodnoty v ladicím programu sady Visual Studio. Při ladění spravované aplikace v sadě Visual Studio 2013, zobrazí okno Automatické hodnoty návratové typy a hodnoty pro metody. Tyto informace jsou k dispozici pro desktop, Windows Store a aplikací Windows Phone. Další informace najdete v tématu [Kontrola návratových hodnot volání metod](https://msdn.microsoft.com/library/e3245b37-8e2e-4200-ba84-133726e95f1f\(v=vs.120\).aspx) v knihovně MSDN.
 
-- Upravit a pokračovat pro 64bitové aplikace. [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)] podporuje funkce upravit a pokračovat pro 64bitové spravované aplikace pro desktop, Windows Store a Windows Phone. Stávající omezení zůstávají v platnosti pro 32bitové a 64bitové aplikace (viz poslední část [podporované změny kódu (C#)](/visualstudio/debugger/supported-code-changes-csharp) článku).
+- Upravit a pokračovat pro 64bitové aplikace. Visual Studio 2013 podporuje funkce upravit a pokračovat pro 64bitové spravované aplikace pro desktop, Windows Store a Windows Phone. Stávající omezení zůstávají v platnosti pro 32bitové a 64bitové aplikace (viz poslední část [podporované změny kódu (C#)](/visualstudio/debugger/supported-code-changes-csharp) článku).
 
-- Asynchronní ladění. Chcete-li snadněji ladit asynchronní aplikace v [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], zásobník volání skryje kód infrastruktury poskytovaný kompilátory, aby podporoval asynchronní programování a také řetězy v logicky nadřízených snímcích, takže můžete postupovat podle logického provádění programu více jasně. Okno úlohy nahrazuje okno paralelní úkoly a zobrazuje úlohy, které se týkají konkrétní zarážky a také zobrazuje všechny úkoly, které jsou aktuálně aktivní nebo plánované v aplikaci. Může číst informace o této funkci v části "asynchronní ladění" [oznámení .NET Framework 4.5.1](https://blogs.msdn.microsoft.com/dotnet/2013/06/26/announcing-the-net-framework-4-5-1-preview/).
+- Asynchronní ladění. Chcete-li snadněji ladit asynchronní aplikace v sadě Visual Studio 2013, zásobník volání skryje kód infrastruktury poskytovaný kompilátory, aby podporoval asynchronní programování a také zřetězený v logicky nadřízených snímcích, takže můžete postupovat podle logického program spuštění více jasně. Okno úlohy nahrazuje okno paralelní úkoly a zobrazuje úlohy, které se týkají konkrétní zarážky a také zobrazuje všechny úkoly, které jsou aktuálně aktivní nebo plánované v aplikaci. Může číst informace o této funkci v části "asynchronní ladění" [oznámení .NET Framework 4.5.1](https://blogs.msdn.microsoft.com/dotnet/2013/06/26/announcing-the-net-framework-4-5-1-preview/).
 
 - Lepší podpora výjimek součásti prostředí Windows Runtime. V [!INCLUDE[win81](../../../includes/win81-md.md)], výjimky, které vznikají v aplikacích pro Windows Store, uchovávají informace o chybě, která způsobila výjimku, i přes jazykové hranice. Může číst informace o této funkci v části "Vývoj aplikací pro Windows Store" [oznámení .NET Framework 4.5.1](https://blogs.msdn.microsoft.com/dotnet/2013/06/26/announcing-the-net-framework-4-5-1-preview/).
 
- Počínaje [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], můžete použít [profilu nástroj Optimalizace řízený spravovanými (Mpgo.exe)](../../../docs/framework/tools/mpgo-exe-managed-profile-guided-optimization-tool.md) optimalizovat [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
+ Od verze Visual Studio 2013, můžete použít [profilu nástroj Optimalizace řízený spravovanými (Mpgo.exe)](../../../docs/framework/tools/mpgo-exe-managed-profile-guided-optimization-tool.md) optimalizovat [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
 
  Nové funkce v technologii ASP.NET 4.5.1 naleznete v tématu [ASP.NET and Web Tools pro Visual Studio 2013 – poznámky k](/aspnet/visual-studio/overview/2013/release-notes).
 
@@ -1752,7 +1752,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 ### <a name="tools"></a>Nástroje
  V [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], Resource File Generator (Resgen.exe) umožňuje vytvořit soubor .resw pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] vložené aplikace ze souboru .resources v sestavení rozhraní .NET Framework. Další informace najdete v tématu [Resgen.exe (Generátor zdrojových souborů)](../../../docs/framework/tools/resgen-exe-resource-file-generator.md).
 
- Optimalizace řízená spravovanými profily (Mpgo.exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních bitových kopií. Nástroj příkazového řádku generuje data profilu pro sestavení aplikací nativních bitových kopií. Zobrazit [Mpgo.exe (nástroj pro optimalizaci na základě spravovaného profilu)](../../../docs/framework/tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Počínaje [!INCLUDE[vs_dev12](../../../includes/vs-dev12-md.md)], můžete použít Mpgo.exe k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
+ Optimalizace řízená spravovanými profily (Mpgo.exe) umožňuje zlepšit dobu spuštění aplikace, využití paměti (velikost pracovní sady) a propustnost optimalizací sestavení nativních bitových kopií. Nástroj příkazového řádku generuje data profilu pro sestavení aplikací nativních bitových kopií. Zobrazit [Mpgo.exe (nástroj pro optimalizaci na základě spravovaného profilu)](../../../docs/framework/tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Od verze Visual Studio 2013, můžete použít Mpgo.exe k optimalizaci [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací, jakož i aplikace klasické pracovní plochy.
 
 <a name="parallel" />
 

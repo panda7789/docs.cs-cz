@@ -2,19 +2,19 @@
 title: 'Postupy: Programové přidání možností rozpoznání do klienta a služby WCF'
 ms.date: 03/30/2017
 ms.assetid: 4f7ae7ab-6fc8-4769-9730-c14d43f7b9b1
-ms.openlocfilehash: e32128a20a765762249e6892232447c56036c2d8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 407777b1545fb12eb3ed1787fdba86991c894fdb
+ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524137"
+ms.lasthandoff: 10/04/2018
+ms.locfileid: "48779891"
 ---
 # <a name="how-to-programmatically-add-discoverability-to-a-wcf-service-and-client"></a>Postupy: Programové přidání možností rozpoznání do klienta a služby WCF
 Toto téma vysvětluje, jak zjistitelnost služby Windows Communication Foundation (WCF). Je založen na [hostování na vlastním serveru](https://go.microsoft.com/fwlink/?LinkId=145523) vzorku.  
   
 ### <a name="to-configure-the-existing-self-host-service-sample-for-discovery"></a>Ke konfiguraci existující ukázka hostování na vlastním serveru služby pro zjišťování  
   
-1.  Otevřete řešení hostování na vlastním serveru v [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)]. Tato ukázka se nachází v adresáři TechnologySamples\Basic\Service\Hosting\SelfHost.  
+1.  Otevřete řešení hostování na vlastním serveru v sadě Visual Studio 2012. Tato ukázka se nachází v adresáři TechnologySamples\Basic\Service\Hosting\SelfHost.  
   
 2.  Přidejte odkaz na `System.ServiceModel.Discovery.dll` do projektu služby. Může se zobrazit chybová zpráva s oznámením "systém. ServiceModel.Discovery.dll nebo některá z jeho závislostí, vyžaduje novější verzi [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] než verze zadaná v projektu... " Pokud se zobrazí tato zpráva, klikněte pravým tlačítkem na projekt v Průzkumníku řešení a zvolte **vlastnosti**. V **vlastnosti projektu** okno, ujistěte se, že **Cílová architektura** je [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].  
   
