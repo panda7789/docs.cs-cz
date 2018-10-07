@@ -2,28 +2,22 @@
 title: Sledování
 ms.date: 03/30/2017
 ms.assetid: afdcd9bd-b462-4b2a-aac7-bebf9c80be81
-ms.openlocfilehash: 9683256585b3076a4bad0398e859d9d5a156f56f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 329dcaab093a4cb177fcba64e4bacbe9c9af4710
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33515144"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48845899"
 ---
-# <a name="tracking"></a><span data-ttu-id="6385f-102">Sledování</span><span class="sxs-lookup"><span data-stu-id="6385f-102">Tracking</span></span>
-<span data-ttu-id="6385f-103">Tato část obsahuje ukázky, která ukazují pracovní postup sledování v systému Windows Workflow Foundation (WF).</span><span class="sxs-lookup"><span data-stu-id="6385f-103">This section contains samples that demonstrate workflow tracking in Windows Workflow Foundation (WF).</span></span>  
+# <a name="tracking"></a><span data-ttu-id="f5a70-102">Sledování</span><span class="sxs-lookup"><span data-stu-id="f5a70-102">Tracking</span></span>
+<span data-ttu-id="f5a70-103">Tato část obsahuje ukázky, které předvádějí pracovního postupu pro sledování ve Windows Workflow Foundation (WF).</span><span class="sxs-lookup"><span data-stu-id="f5a70-103">This section contains samples that demonstrate workflow tracking in Windows Workflow Foundation (WF).</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="6385f-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="6385f-104">In This Section</span></span>  
- [<span data-ttu-id="6385f-105">Vlastní sledování</span><span class="sxs-lookup"><span data-stu-id="6385f-105">Custom Tracking</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/custom-tracking.md)  
- <span data-ttu-id="6385f-106">Ukazuje, jak vytvořit vlastní sledování účastník a zapisovat obsah data sledování do konzoly.</span><span class="sxs-lookup"><span data-stu-id="6385f-106">Demonstrates how to create a custom tracking participant and write the contents of the tracking data to console.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="f5a70-104">V tomto oddílu</span><span class="sxs-lookup"><span data-stu-id="f5a70-104">In This Section</span></span>  
+ [<span data-ttu-id="f5a70-105">Vlastní sledování</span><span class="sxs-lookup"><span data-stu-id="f5a70-105">Custom Tracking</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/custom-tracking.md)  
+ <span data-ttu-id="f5a70-106">Demonstruje postup vytvoření vlastního účastníka sledování a zapisovat obsah data sledování do konzoly.</span><span class="sxs-lookup"><span data-stu-id="f5a70-106">Demonstrates how to create a custom tracking participant and write the contents of the tracking data to console.</span></span>  
   
- [<span data-ttu-id="6385f-107">Sledování událostí v Trasování událostí ve Windows</span><span class="sxs-lookup"><span data-stu-id="6385f-107">Tracking Events into Event Tracing in Windows</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/tracking-events-into-event-tracing-in-windows.md)  
- <span data-ttu-id="6385f-108">Ukazuje, jak povolit [!INCLUDE[wf1](../../../../includes/wf1-md.md)] sledování v rámci pracovního postupu služby a emitování sledování událostí v trasování událostí pro Windows (ETW).</span><span class="sxs-lookup"><span data-stu-id="6385f-108">Demonstrates how to enable [!INCLUDE[wf1](../../../../includes/wf1-md.md)] tracking on a workflow service and emit the tracking events in Event Tracing for Windows (ETW).</span></span>  
+ [<span data-ttu-id="f5a70-107">Sledování událostí v Trasování událostí ve Windows</span><span class="sxs-lookup"><span data-stu-id="f5a70-107">Tracking Events into Event Tracing in Windows</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/tracking-events-into-event-tracing-in-windows.md)  
+ <span data-ttu-id="f5a70-108">Ukazuje, jak povolit [!INCLUDE[wf1](../../../../includes/wf1-md.md)] v pracovním postupu pro sledování služeb a generovat sledování událostí v trasování událostí pro Windows (ETW).</span><span class="sxs-lookup"><span data-stu-id="f5a70-108">Demonstrates how to enable [!INCLUDE[wf1](../../../../includes/wf1-md.md)] tracking on a workflow service and emit the tracking events in Event Tracing for Windows (ETW).</span></span>  
   
- [<span data-ttu-id="6385f-109">Sledování SQL</span><span class="sxs-lookup"><span data-stu-id="6385f-109">SQL Tracking</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)  
- <span data-ttu-id="6385f-110">Ukazuje, jak psát vlastní účastník sledování SQL, který zapíše sledování záznamů do databáze SQL.</span><span class="sxs-lookup"><span data-stu-id="6385f-110">Demonstrates how to write a custom SQL tracking participant, that writes tracking records to a SQL database.</span></span>  
-  
- [<span data-ttu-id="6385f-111">Extrahování dat WF pomocí sledování</span><span class="sxs-lookup"><span data-stu-id="6385f-111">Extract WF Data using Tracking</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/extract-wf-data-using-tracking.md)  
- <span data-ttu-id="6385f-112">Ukazuje, jak používat k extrahování proměnné pracovního postupu a argumenty z aktivit pracovního postupu sledování.</span><span class="sxs-lookup"><span data-stu-id="6385f-112">Demonstrates how to use workflow tracking to extract workflow variables and arguments from activities.</span></span>  
-  
- [<span data-ttu-id="6385f-113">Sledování pomocí textového souboru</span><span class="sxs-lookup"><span data-stu-id="6385f-113">Tracking Using a Text File</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/tracking-using-a-text-file.md)  
- <span data-ttu-id="6385f-114">Ukazuje, jak rozšířit sledování v [!INCLUDE[wf1](../../../../includes/wf1-md.md)] tak, že vytvoříte vlastní sledování účastník.</span><span class="sxs-lookup"><span data-stu-id="6385f-114">Demonstrates how to extend tracking in [!INCLUDE[wf1](../../../../includes/wf1-md.md)] by creating a custom tracking participant.</span></span>
+ [<span data-ttu-id="f5a70-109">Sledování SQL</span><span class="sxs-lookup"><span data-stu-id="f5a70-109">SQL Tracking</span></span>](../../../../docs/framework/windows-workflow-foundation/samples/sql-tracking.md)  
+ <span data-ttu-id="f5a70-110">Ukazuje, jak psát vlastní účastník sledování SQL, který zapíše záznamy sledování k databázi SQL.</span><span class="sxs-lookup"><span data-stu-id="f5a70-110">Demonstrates how to write a custom SQL tracking participant, that writes tracking records to a SQL database.</span></span>

@@ -8,40 +8,40 @@ helpviewer_keywords:
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
 ms.openlocfilehash: ec19060008c1c06c54c89dbddee7d24001bcdebc
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48780801"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847513"
 ---
-# <a name="lttypeparamgt-c-programming-guide"></a><span data-ttu-id="2b209-102">&lt;typeparam&gt; (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="2b209-102">&lt;typeparam&gt; (C# Programming Guide)</span></span>
-## <a name="syntax"></a><span data-ttu-id="2b209-103">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2b209-103">Syntax</span></span>  
+# <a name="lttypeparamgt-c-programming-guide"></a><span data-ttu-id="cea32-102">&lt;typeparam&gt; (C# Programming Guide)</span><span class="sxs-lookup"><span data-stu-id="cea32-102">&lt;typeparam&gt; (C# Programming Guide)</span></span>
+## <a name="syntax"></a><span data-ttu-id="cea32-103">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cea32-103">Syntax</span></span>  
   
 ```xml  
 <typeparam name="name">description</typeparam>  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="2b209-104">Parametry</span><span class="sxs-lookup"><span data-stu-id="2b209-104">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="cea32-104">Parametry</span><span class="sxs-lookup"><span data-stu-id="cea32-104">Parameters</span></span>  
  `name`  
- <span data-ttu-id="2b209-105">Název parametru typu.</span><span class="sxs-lookup"><span data-stu-id="2b209-105">The name of the type parameter.</span></span> <span data-ttu-id="2b209-106">Název uzavřete do dvojitých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="2b209-106">Enclose the name in double quotation marks (" ").</span></span>  
+ <span data-ttu-id="cea32-105">Název parametru typu.</span><span class="sxs-lookup"><span data-stu-id="cea32-105">The name of the type parameter.</span></span> <span data-ttu-id="cea32-106">Název uzavřete do dvojitých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="cea32-106">Enclose the name in double quotation marks (" ").</span></span>  
   
  `description`  
- <span data-ttu-id="2b209-107">Popis pro parametr typu.</span><span class="sxs-lookup"><span data-stu-id="2b209-107">A description for the type parameter.</span></span>  
+ <span data-ttu-id="cea32-107">Popis pro parametr typu.</span><span class="sxs-lookup"><span data-stu-id="cea32-107">A description for the type parameter.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="2b209-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="2b209-108">Remarks</span></span>  
- <span data-ttu-id="2b209-109">`<typeparam>` Značky byste měli použít ve komentář pro obecný typ nebo metoda prohlášení k popisu parametr typu.</span><span class="sxs-lookup"><span data-stu-id="2b209-109">The `<typeparam>` tag should be used in the comment for a generic type or method declaration to describe a type parameter.</span></span> <span data-ttu-id="2b209-110">Přidáte značku pro každý typ parametru obecného typu nebo metody.</span><span class="sxs-lookup"><span data-stu-id="2b209-110">Add a tag for each type parameter of the generic type or method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cea32-108">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cea32-108">Remarks</span></span>  
+ <span data-ttu-id="cea32-109">`<typeparam>` Značky byste měli použít ve komentář pro obecný typ nebo metoda prohlášení k popisu parametr typu.</span><span class="sxs-lookup"><span data-stu-id="cea32-109">The `<typeparam>` tag should be used in the comment for a generic type or method declaration to describe a type parameter.</span></span> <span data-ttu-id="cea32-110">Přidáte značku pro každý typ parametru obecného typu nebo metody.</span><span class="sxs-lookup"><span data-stu-id="cea32-110">Add a tag for each type parameter of the generic type or method.</span></span>  
   
- <span data-ttu-id="2b209-111">Další informace najdete v tématu [obecných typů](../../../csharp/programming-guide/generics/index.md).</span><span class="sxs-lookup"><span data-stu-id="2b209-111">For more information, see [Generics](../../../csharp/programming-guide/generics/index.md).</span></span>  
+ <span data-ttu-id="cea32-111">Další informace najdete v tématu [obecných typů](../../../csharp/programming-guide/generics/index.md).</span><span class="sxs-lookup"><span data-stu-id="cea32-111">For more information, see [Generics](../../../csharp/programming-guide/generics/index.md).</span></span>  
   
- <span data-ttu-id="2b209-112">Text `<typeparam>` značky se zobrazí v IntelliSense, [okno prohlížeče objektů](https://msdn.microsoft.com/library/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda) kódu komentář webové sestavy.</span><span class="sxs-lookup"><span data-stu-id="2b209-112">The text for the `<typeparam>` tag will be displayed in IntelliSense, the [Object Browser Window](https://msdn.microsoft.com/library/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda) code comment web report.</span></span>  
+ <span data-ttu-id="cea32-112">Text `<typeparam>` značky se zobrazí v IntelliSense, [okno prohlížeče objektů](https://msdn.microsoft.com/library/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda) kódu komentář webové sestavy.</span><span class="sxs-lookup"><span data-stu-id="cea32-112">The text for the `<typeparam>` tag will be displayed in IntelliSense, the [Object Browser Window](https://msdn.microsoft.com/library/3c7f1673-1f0d-41b1-94ca-a3dcfcb82cda) code comment web report.</span></span>  
   
- <span data-ttu-id="2b209-113">Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.</span><span class="sxs-lookup"><span data-stu-id="2b209-113">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
+ <span data-ttu-id="cea32-113">Kompilovat s [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) pro zpracování dokumentačních komentářů do souboru.</span><span class="sxs-lookup"><span data-stu-id="cea32-113">Compile with [/doc](../../../csharp/language-reference/compiler-options/doc-compiler-option.md) to process documentation comments to a file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="2b209-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="2b209-114">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="cea32-114">Příklad</span><span class="sxs-lookup"><span data-stu-id="cea32-114">Example</span></span>  
  [!code-csharp[csProgGuideDocComments#13](../../../csharp/programming-guide/xmldoc/codesnippet/CSharp/typeparam_1.cs)]  
   
-## <a name="see-also"></a><span data-ttu-id="2b209-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="2b209-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cea32-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="cea32-115">See Also</span></span>
 
-- [<span data-ttu-id="2b209-116">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="2b209-116">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="2b209-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="2b209-117">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="2b209-118">Doporučené značky pro komentáře dokumentace</span><span class="sxs-lookup"><span data-stu-id="2b209-118">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
+- [<span data-ttu-id="cea32-116">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="cea32-116">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="cea32-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="cea32-117">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="cea32-118">Doporučené značky pro komentáře dokumentace</span><span class="sxs-lookup"><span data-stu-id="cea32-118">Recommended Tags for Documentation Comments</span></span>](../../../csharp/programming-guide/xmldoc/recommended-tags-for-documentation-comments.md)
