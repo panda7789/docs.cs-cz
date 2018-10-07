@@ -9,12 +9,12 @@ helpviewer_keywords:
 - frames [Windows Forms], accessing
 - DOM [Windows Forms], accessing frames in managed HTML
 ms.assetid: cdeeaa22-0be4-4bbf-9a75-4ddc79199f8d
-ms.openlocfilehash: 5b214a3b3c8d59d27a60b5cee28ea168edb9bf4a
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: b1a858e88ff27de19e2ebbd69c14060813873c13
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43779770"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847633"
 ---
 # <a name="accessing-frames-in-the-managed-html-document-object-model"></a>Přístup k rámcům v modelu spravovaného objektu dokumentu HTML
 Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo windows, které může obsahovat vlastní odlišné dokumentů HTML. Pomocí snímků usnadňuje vytvoření stránky HTML, ve kterých zůstat statický, jako je například navigační panel, jeden nebo více kusů stránky, zatímco jiné rámce neustále měnit jejich obsah.  
@@ -34,7 +34,7 @@ Některé dokumenty HTML se skládají z celkového počtu *snímků*, nebo wind
 3.  Při přístupu `FRAME` nebo `IFRAME` značky pomocí <xref:System.Windows.Forms.HtmlWindow.WindowFrameElement%2A> vlastnost <xref:System.Windows.Forms.HtmlWindow>, <xref:System.Windows.Forms.HtmlElement.Children%2A> kolekce nebo metod, jako <xref:System.Windows.Forms.HtmlElementCollection.GetElementsByName%2A> nebo <xref:System.Windows.Forms.HtmlDocument.GetElementById%2A>, načítají elementu rámce. Reprezentuje statické vlastnosti rámce, včetně adresy URL zadané v původním souboru HTML.  
   
 ## <a name="frames-and-security"></a>Rámce a zabezpečení  
- Přístup k snímků je složité fakt, že spravovaný model HTML DOM implementuje bezpečnostní opatření, označované jako *mezi rámci skriptovací zabezpečení*. Pokud dokument obsahuje `FRAMESET` s dvěma nebo více `FRAME`s v různých doménách, tyto `FRAME`s nemůžou komunikovat mezi sebou. Jinými slovy `FRAME` , zobrazí obsah z webu nelze přístup k informacím o `FRAME` , který je hostitelem lokality třetích stran, jako http://www.adatum.com/. Se implementuje toto zabezpečení na úrovni <xref:System.Windows.Forms.HtmlWindow> třídy. Obecné informace můžete získat informace o `FRAME` hostování jiný web, jako je například její adresu URL, ale nelze získat přístup k jeho <xref:System.Windows.Forms.HtmlWindow.Document%2A> nebo změna velikosti či umístění jeho hostování `FRAME` nebo `IFRAME`.  
+ Přístup k snímků je složité fakt, že spravovaný model HTML DOM implementuje bezpečnostní opatření, označované jako *mezi rámci skriptovací zabezpečení*. Pokud dokument obsahuje `FRAMESET` s dvěma nebo více `FRAME`s v různých doménách, tyto `FRAME`s nemůžou komunikovat mezi sebou. Jinými slovy `FRAME` , zobrazí obsah z webu nelze přístup k informacím o `FRAME` , který je hostitelem lokality třetích stran, jako `http://www.adatum.com/`. Se implementuje toto zabezpečení na úrovni <xref:System.Windows.Forms.HtmlWindow> třídy. Obecné informace můžete získat informace o `FRAME` hostování jiný web, jako je například její adresu URL, ale nelze získat přístup k jeho <xref:System.Windows.Forms.HtmlWindow.Document%2A> nebo změna velikosti či umístění jeho hostování `FRAME` nebo `IFRAME`.  
   
  Toto pravidlo platí také pro windows, které můžete otevřít pomocí <xref:System.Windows.Forms.HtmlWindow.Open%2A> a <xref:System.Windows.Forms.HtmlWindow.OpenNew%2A> metody. Pokud je okno otevření v jiné doméně než stránky hostované v <xref:System.Windows.Forms.WebBrowser> ovládacího prvku, nebudete moci přesunout okno nebo zkontrolovat jeho obsah. Tato omezení se vynucují také, pokud použijete <xref:System.Windows.Forms.WebBrowser> ovládací prvek pro zobrazení webové stránky, která se liší od webu použít k nasazení aplikace založené na formulářích Windows. Pokud používáte [!INCLUDE[ndptecclick](../../../../includes/ndptecclick-md.md)] technologie nasazení k instalaci aplikace z webu a použít <xref:System.Windows.Forms.WebBrowser> k zobrazení webu B, nebudete mít k datům přístup k webu B.  
   

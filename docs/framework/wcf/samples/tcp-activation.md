@@ -2,12 +2,12 @@
 title: Aktivace protokolem TCP
 ms.date: 03/30/2017
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-ms.openlocfilehash: c10cc1edfb06d55fc8a59a32bf905c95b20a19dc
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 0a65e5ca20a11f50133efc90e6da923280a30f46
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084621"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48846549"
 ---
 # <a name="tcp-activation"></a>Aktivace protokolem TCP
 Tato ukázka předvádí, který je hostitelem služby, které používá služby aktivační procesů Windows (WAS) k aktivaci služby, která komunikuje přes protokol net.tcp. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -175,7 +175,7 @@ Press <ENTER> to terminate client.
         ```  
   
         > [!NOTE]
-        >  Tento příkaz je jeden řádek textu. Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí obou http://localhost/servicemodelsamples a net.tcp://localhost/servicemodelsamples.  
+        > Tento příkaz je jeden řádek textu. Tento příkaz umožňuje aplikaci /servicemodelsamples přistupovat pomocí obou `http://localhost/servicemodelsamples` a `net.tcp://localhost/servicemodelsamples`.  
   
 4.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   

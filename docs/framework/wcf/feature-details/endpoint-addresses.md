@@ -6,20 +6,20 @@ helpviewer_keywords:
 - Windows Communication Foundation [WCF], addresses
 - WCF [WCF], addresses
 ms.assetid: 13f269e3-ebb1-433c-86cf-54fbd866a627
-ms.openlocfilehash: cc81e7ad45c308f5ecf476641dfd65fe47b36098
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 59b3aa87056cc2d32512c8b9ea68c0a6d5935814
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855712"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847402"
 ---
 # <a name="endpoint-addresses"></a>Adresy koncových bodů
 Každý koncový bod má adresu přidruženo, který se používá k vyhledání a identifikaci koncového bodu. Tato adresa sestává především z identifikátor URI (Uniform Resource), která určuje umístění koncového bodu. Adresa koncového bodu je vyjádřena v programovacím modelu pomocí rozhraní Windows Communication Foundation (WCF) <xref:System.ServiceModel.EndpointAddress> třídu, která obsahuje volitelný <xref:System.ServiceModel.EndpointAddress.Identity%2A> vlastnost, která umožňuje ověření koncového bodu jiné koncové body, které vyměňovat zprávy a sadu volitelné <xref:System.ServiceModel.EndpointAddress.Headers%2A> vlastnosti, které definují další hlavičky SOAP, vyžaduje ke zpřístupnění služby. Poskytují další volitelné záhlaví a podrobnější informace o adresách k vaší identifikaci nebo interakci s koncový bod služby. Adresa koncového bodu je reprezentována na lince jako referenci koncového bodu WS-Addressing (EPR).  
   
 ## <a name="uri-structure-of-an-address"></a>Identifikátor URI struktury adresy  
- Adresa URI pro většinu přenosy obsahuje čtyři části. Například čtyři části identifikátoru URI http://www.fabrikam.com:322/mathservice.svc/secureEndpoint může být uvedeno následujícím způsobem:  
+ Adresa URI pro většinu přenosy obsahuje čtyři části. Například čtyři části identifikátoru URI `http://www.fabrikam.com:322/mathservice.svc/secureEndpoint` může být uvedeno následujícím způsobem:  
   
--   Schéma: http:  
+-   Schéma: `http:`
   
 -   Počítač: `www.fabrikam.com`  
   
@@ -56,9 +56,9 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
   
  Web může obsahovat například následující základní adresy:  
   
--   http://payroll.myorg.com/Service.svc  
+- `http://payroll.myorg.com/Service.svc`
   
--   http://shipping.myorg.com/Service.svc  
+- `http://shipping.myorg.com/Service.svc`
   
  S [!INCLUDE[netfx35_short](../../../../includes/netfx35-short-md.md)], zadejte předponu filtr na úrovni AppDomain v konfiguračním souboru. To provedete [ \<baseAddressPrefixFilters >](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddressprefixfilters.md) element, který obsahuje seznam předpon. Příchozí základní adresy poskytované službou IIS, jsou filtrovány podle seznamu volitelné předpony. Ve výchozím nastavení Pokud není zadána předponu, všechny adresy se předaly. Určení výsledky předponu v pouze odpovídající základní adresa pro toto schéma, které se budou předávat.  
   
@@ -75,7 +75,7 @@ Každý koncový bod má adresu přidruženo, který se používá k vyhledání
 </system.serviceModel>  
 ```  
   
- V předchozím příkladu net.tcp://payroll.myorg.com: 8000 a http://shipping.myorg.com:8000 jsou pouze základní adresy pro jejich příslušných systémů, které jsou předány prostřednictvím.  
+ V předchozím příkladu `net.tcp://payroll.myorg.com:8000` a `http://shipping.myorg.com:8000` jsou pouze základní adresy pro jejich příslušných systémů, které jsou předány prostřednictvím.  
   
  `baseAddressPrefixFilter` Nepodporuje zástupné znaky.  
   

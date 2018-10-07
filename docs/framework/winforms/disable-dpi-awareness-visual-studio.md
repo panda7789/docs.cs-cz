@@ -7,11 +7,11 @@ ms.technology: vs-ide-designers
 author: gewarren
 ms.author: gewarren
 ms.openlocfilehash: 3b290b67ca97065dfc408c09850cf0b5720d65ae
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48263502"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847575"
 ---
 # <a name="disable-dpi-awareness-in-visual-studio"></a>Zakázání sledování DPI v sadě Visual Studio
 

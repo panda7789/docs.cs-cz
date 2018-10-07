@@ -5,11 +5,11 @@ helpviewer_keywords:
 - false operator keyword [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
 ms.openlocfilehash: e73113bd37dbb68590267141ad037f78919520bc
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47862881"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848059"
 ---
 # <a name="false-operator-c-reference"></a>false – – operátor (referenční dokumentace jazyka C#)
 

@@ -2,21 +2,21 @@
 title: Element &lt;defaultCertificate&gt;
 ms.date: 03/30/2017
 ms.assetid: f1ddf364-9a00-45d3-b989-ff381c154ce6
-ms.openlocfilehash: a4af1c6ec452b24634fa50162fa71f069e2451f5
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 9b99ee36fdb924ea12f3023984a3aa4b590937e8
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32751009"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847851"
 ---
 # <a name="ltdefaultcertificategt-element"></a>Element &lt;defaultCertificate&gt;
-Určuje certifikát X.509, který se má použít při služby nebo služby tokenů zabezpečení neposkytuje jeden prostřednictvím vyjednávání protokolu.  
+Určuje certifikát X.509, který se má použít při služba nebo STS neposkytne pomocí protokolu vyjednávání.  
   
  \<system.ServiceModel>  
 \<chování >  
 část endpointBehaviors  
 \<chování >  
-\<clientCredentials >  
+\<třídu clientCredentials >  
 \<serviceCertificate >  
 \<defaultCertificate >  
   
@@ -30,28 +30,28 @@ x509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|findValue|Řetězec. Hodnota, kterou chcete vyhledat.|  
-|X509FindType|Výčet. Jeden z pole certifikátu pro vyhledávání.|  
-|storeLocation|Výčet. Mezi dvěma systému úložiště prohledávaných umístění.|  
-|storeName|Výčet. Jeden z úložiště systému pro vyhledávání.|  
+|findValue|řetězec. Hodnota, kterou chcete vyhledat.|  
+|X509FindType|Výčet. Jeden z pole certifikátu k prohledání.|  
+|storeLocation|Výčet. Jedno ze dvou systémových úložišť k prohledání.|  
+|storeName|Výčet. Jedno ze systémových úložišť k prohledání.|  
   
 ## <a name="findvalue-attribute"></a>findValue atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|String|Hodnota závisí na poli (zadané v atributu X509FindType) být vyhledán. Například pokud hledání kryptografický otisk, hodnota musí být řetězec o délce hexadecimální číslice.|  
+|String|Hodnota závisí na poli (určenému atributem X509FindType) být vyhledán. Například pokud hledání kryptografickým otiskem, hodnota musí být řetězec šestnáctkových čísel.|  
   
 ## <a name="x509findtype-attribute"></a>Atribut x509FindType  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Hodnoty patří: FindByThumbprint, FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName, FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
+|Výčet|Mezi hodnoty patří: FindByThumbprint FindBySubjectName, FindBySubjectDistinguishedName, FindByIssuerName, FindByIssuerDistinguishedName, FindBySerialNumber, FindByTimeValid, FindByTimeNotYetValid, FindBySerialNumber, FindByTimeExpired, FindByTemplateName FindByApplicationPolicy, FindByCertificatePolicy, FindByExtension, FindByKeyUsage, FindBySubjectKeyIdentifier.|  
   
 ## <a name="storelocation-attribute"></a>storeLocation atribut  
   
@@ -63,7 +63,7 @@ x509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Hodnoty patří: CertificateAuthority adresáře, AuthRoot, zakázané, Moje, Root, TrustedPeople a TrustedPublisher.|  
+|Výčet|Mezi hodnoty patří: adresáře, AuthRoot, CertificateAuthority zakázané, My, Root, TrustedPeople a TrustedPublisher.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -72,13 +72,13 @@ x509FindType="FindByThumbPrint/FindBySubjectName/FindBySubjectDistinguishedName/
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát pro použití při ověřování služby klienta.|  
+|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný při ověřování služby ke klientovi.|  
   
 ## <a name="remarks"></a>Poznámky  
- U vazeb, které používají zabezpečení zpráv pomocí certifikátů certifikát určený element tato konfigurace se používá k šifrování zpráv do služby a očekává se použije pro podepisování odpovědi klientovi službou. Ukládají se jeden certifikát, který se má použít, když je zadán žádný certifikát služby.  
+ U vazeb, které používají zabezpečení na základě certifikátů zpráv certifikát určený tento prvek konfigurace se používá k šifrování zpráv ve službě a měl by používat službu pro podepisování odpovědi klientovi. Ukládají se jeden certifikát má být použit při služby je určen žádný certifikát.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad určuje certifikát má použít pro koncové body, jejichž URI začíná http://www.contoso.com a certifikát má použít pro všechny ostatní koncové body, které neprovádět vyjednávání certifikátu.  
+ Následující příklad určuje certifikát používaný pro koncové body, jehož identifikátor URI začíná `http://www.contoso.com` a certifikát má použít pro všechny ostatní koncové body, které neprovádějte vyjednávání certifikátu.  
   
 ```xml  
 <serviceCertificate>  

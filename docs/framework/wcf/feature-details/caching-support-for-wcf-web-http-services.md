@@ -2,12 +2,12 @@
 title: Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 ms.date: 03/30/2017
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-ms.openlocfilehash: 25b564235b5d2b3b26b5d657f3e5f0bd5d594125
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: ef7a03a9e4c6e188e3c7a000fc4a6050e678556d
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45972985"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847634"
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Podpora ukládání dat do mezipaměti pro webové HTTP služby WCF
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] umožňuje používat deklarativní mechanizmus ukládání do mezipaměti, aktuálně k dispozici v ASP.NET ve vašich službách WCF Web HTTP. To vám umožní do mezipaměti odpovědi z servisní operace webových služeb HTTP WCF. Když uživatel odešle do služby, který je nakonfigurovaný pro ukládání do mezipaměti HTTP GET, ASP.NET, odešle zpět odpověď uložená v mezipaměti a není volána metoda služby. Když vyprší platnost mezipaměti, při příštím uživatel odešle HTTP GET, je volána metoda vaše služby a znovu do mezipaměti odpovědi. Další informace o ukládání do mezipaměti ASP.NET najdete v tématu [přehled ukládání do mezipaměti ASP.NET](https://go.microsoft.com/fwlink/?LinkId=152534)  
@@ -58,7 +58,7 @@ public class Service
 </system.web>  
 ```  
   
- Toto je stejný prvek konfigurace, který je k dispozici pro aplikace ASP.NET. Další informace o profilech mezipaměti ASP.NET najdete v tématu <xref:System.Web.Configuration.OutputCacheProfile>. Webové služby HTTP jsou nejdůležitější atributy v profilu mezipaměti: `cacheDuration` a `varyByParam`. Tyto atributy jsou potřeba. `cacheDuration` Nastaví množství času, které do mezipaměti odpovědi v řádu sekund. `varyByParam` Umožňuje zadat parametr řetězce dotazu, který slouží k mezipaměti odpovědí. Všechny požadavky provedené s hodnotami parametrů řetězce dotazu jsou zvlášť v mezipaměti. Například po provedení počáteční žádosti http://MyServer/MyHttpService/MyOperation?param=10 všechny následné požadavky provedené přes stejný identifikátor URI by vrátila odpověď uložená v mezipaměti (tak dlouho, dokud nebyla uplynula doba uložení do mezipaměti). Odpovědi na podobné žádosti, která je stejná, ale má jinou hodnotu pro parametr parametru řetězce dotazu jsou zvlášť do mezipaměti. Pokud nechcete, aby tento zvláštní chování ukládání do mezipaměti, nastavte `varyByParam` na "žádný".  
+ Toto je stejný prvek konfigurace, který je k dispozici pro aplikace ASP.NET. Další informace o profilech mezipaměti ASP.NET najdete v tématu <xref:System.Web.Configuration.OutputCacheProfile>. Webové služby HTTP jsou nejdůležitější atributy v profilu mezipaměti: `cacheDuration` a `varyByParam`. Tyto atributy jsou potřeba. `cacheDuration` Nastaví množství času, které do mezipaměti odpovědi v řádu sekund. `varyByParam` Umožňuje zadat parametr řetězce dotazu, který slouží k mezipaměti odpovědí. Všechny požadavky provedené s hodnotami parametrů řetězce dotazu jsou zvlášť v mezipaměti. Například po provedení počáteční žádosti `http://MyServer/MyHttpService/MyOperation?param=10`, všechny následné požadavky provedené přes stejný identifikátor URI by vrátila odpověď uložená v mezipaměti (tak dlouho, dokud nebyla uplynula doba uložení do mezipaměti). Odpovědi na podobné žádosti, která je stejná, ale má jinou hodnotu pro parametr parametru řetězce dotazu jsou zvlášť do mezipaměti. Pokud nechcete, aby tento zvláštní chování ukládání do mezipaměti, nastavte `varyByParam` na "žádný".  
   
 ## <a name="sql-cache-dependency"></a>Závislosti mezipaměti SQL  
  Odpovědi na webu HTTP služby můžete také uložit do mezipaměti závislosti mezipaměti SQL. Pokud vaše webové služby WCF HTTP závisí na data uložená ve službě SQL database, můžete ukládat do mezipaměti odpovědi služby a zneplatnit odpověď uložená v mezipaměti, když data v SQL databázi tabulku změn. Toto chování je zcela nastaven v souboru Web.config. Nejdřív je nutné definovat připojovacího řetězce v <`connectionStrings`> element.  

@@ -3,11 +3,11 @@ title: Možnosti při vytváření aktivit v WF
 ms.date: 03/30/2017
 ms.assetid: b9061f5f-12c3-47f0-adbe-1330e2714c94
 ms.openlocfilehash: 219d759cd1390a83abfb90af509b21047085f6e9
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580864"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848202"
 ---
 # <a name="activity-authoring-options-in-wf"></a>Možnosti při vytváření aktivit v WF
 [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] poskytuje několik možností, jak k tvorbě vlastních aktivit. Správný způsob, kterým pro danou aktivitu vytváření závisí na funkcích za běhu se vyžadují.  

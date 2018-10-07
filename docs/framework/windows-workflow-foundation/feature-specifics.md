@@ -2,12 +2,12 @@
 title: Specifické funkce aplikace Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: b18c6dd76762f4495ac475cd3dfa4e1995733b59
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 6929150f786f0d6b4a5887eb5c0758ebcfdd411c
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44205072"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48846003"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Specifické funkce aplikace Windows Workflow Foundation
 [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] Přidá celou řadu funkcí pro Windows Workflow Foundation. Tento dokument popisuje několik nových funkcí a poskytuje podrobnosti o scénářích, ve kterých mohou být užitečné.  
@@ -17,19 +17,11 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started-with-messaging-activities"></a>Začínáme se službou zasílání zpráv aktivity  
   
--   V [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], vytvořte projekt aplikace služby pracovního postupu WCF. A <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> pár se umístí na plátně.  
+-   V sadě Visual Studio 2012 vytvořte projekt aplikace služby pracovního postupu WCF. A <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> pár se umístí na plátně.  
   
--   Klikněte pravým tlačítkem na projekt a vyberte **přidat odkaz na službu**.  Přejděte do existující webové služby WSDL a klikněte na tlačítko **OK**.  Sestavení projektu zobrazíte generované aktivity (implementované pomocí <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply>) ve vašem panelu nástrojů.  
+-   Klikněte pravým tlačítkem na projekt a vyberte **přidat odkaz na službu**.  Přejděte do existující webové služby WSDL a klikněte na tlačítko **OK**.  Sestavení projektu zobrazíte generované aktivity (implementované pomocí <xref:System.ServiceModel.Activities.Send> a <xref:System.ServiceModel.Activities.ReceiveReply>) ve vašem panelu nástrojů.
   
--   Ukázky pro tyto aktivity najdete v následujících částech:  
-  
-    -   Basic: [služby](../../../docs/framework/windows-workflow-foundation/samples/services.md)  
-  
-    -   Scénáře: [služby](../../../docs/framework/windows-workflow-foundation/samples/services.md)  
-  
--   [Rámcové dokumentaci](https://go.microsoft.com/fwlink/?LinkId=204801)  
-  
--   [Dokumentace zasílání zpráv návrháře aktivit](https://go.microsoft.com/fwlink/?LinkId=204802)  
+-   [Dokumentace služby pracovního postupu](../wcf/feature-details/workflow-services.md)
   
 ### <a name="messaging-activities-example-scenario"></a>Zasílání zpráv aktivity ukázkový scénář  
  A `BestPriceFinder` služby zdůrazňuje k více službám letecká společnost najít tu nejlepší cenu lístek pro konkrétní trasy.  Implementace této situace se vyžaduje použití zpráv aktivit k přijímání požadavků cena, načíst ceny z back endové služby a odpovědět na požadavek cena tu nejlepší cenu.  To by také vyžadují, abyste pomocí další aktivity out-of-box můžete vytvořit obchodní logiku pro výpočet tu nejlepší cenu.  
@@ -47,15 +39,11 @@ ms.locfileid: "44205072"
   
 -   Ukázky pro <xref:System.ServiceModel.WorkflowServiceHost> najdete v následujících částech:  
   
-    -   [Spuštění](../../../docs/framework/windows-workflow-foundation/samples/execution.md)  
+    -   [Spuštění](samples/execution.md)
   
-    -   Basic: [služby](../../../docs/framework/windows-workflow-foundation/samples/services.md)  
+    -   Aplikace: [pozastaveno Správa instancí](samples/suspended-instance-management.md)  
   
-    -   Scénáře: [služby](../../../docs/framework/windows-workflow-foundation/samples/services.md)  
-  
-    -   Aplikace: [pozastaveno Správa instancí](../../../docs/framework/windows-workflow-foundation/samples/suspended-instance-management.md)  
-  
--   [Rámcové dokumentaci hostitele služby pracovního postupu](https://go.microsoft.com/fwlink/?LinkId=204807)  
+-   [Přehled hostování služeb pracovních postupů](../wcf/feature-details/hosting-workflow-services-overview.md)  
   
 ### <a name="workflowservicehost-scenario"></a>Scénář hostitele služby pracovního postupu  
  Služba BestPriceFinder zdůrazňuje k více službám letecká společnost najít tu nejlepší cenu lístek pro konkrétní trasy.  Implementace této situace se vyžaduje k hostování pracovního postupu v <xref:System.ServiceModel.WorkflowServiceHost>.  Aktivit zpráv ho využít také k přijímání požadavků cena, načíst ceny z back endové služby a odpovědět na požadavek cena tu nejlepší cenu.  
@@ -79,15 +67,9 @@ ms.locfileid: "44205072"
   
 -   Příklad mapování část dat do instance služby je korelace na základě obsahu, který mapuje část dat (například ID objednávky) na instance určitý pracovní postup.  
   
-    -   U všech aktivit, zasílání zpráv, klikněte na `CorrelationInitializers` vlastnost a přidejte <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> pomocí <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné vytvořené výše. Dvakrát klikněte na požadovanou vlastnost zprávy (třeba OrderID) z rozevírací nabídky. Nastavte `CorrelatesWith` vlastnost <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné využité nad.  
+    -   U všech aktivit, zasílání zpráv, klikněte na `CorrelationInitializers` vlastnost a přidejte <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> pomocí <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné vytvořené výše. Dvakrát klikněte na požadovanou vlastnost zprávy (třeba OrderID) z rozevírací nabídky. Nastavte `CorrelatesWith` vlastnost <xref:System.ServiceModel.Activities.CorrelationHandle> proměnné využité nad. 
   
--   Ukázky:  
-  
-    -   Basic: [služby](../../../docs/framework/windows-workflow-foundation/samples/services.md)  
-  
-    -   Scénáře: [služby](../../../docs/framework/windows-workflow-foundation/samples/services.md)  
-  
-    -   [Rámcové dokumentaci korelace](https://go.microsoft.com/fwlink/?LinkId=204939)  
+-   [Rámcové dokumentaci korelace](../wcf/feature-details/correlation.md)  
   
 ### <a name="correlation-scenario"></a>Scénář korelace  
  Pracovního postupu zpracování objednávky se používá k vytvoření nového pořadí a aktualizuje se existující objednávky, které jsou v procesu.  Implementace této situace se vyžaduje k hostování pracovního postupu v <xref:System.ServiceModel.WorkflowServiceHost> a použít pro zasílání zpráv aktivity.  Bude také vyžadovat korelace na základě `orderId` zajistit, že jsou provedeny aktualizace správné pracovního postupu.  
@@ -155,7 +137,7 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started"></a>Začínáme  
   
--   V [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], vytvořte konzolovou aplikaci pracovního postupu. Vývojový diagram přidáte v Návrháři pracovních postupů.  
+-   V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Vývojový diagram přidáte v Návrháři pracovních postupů.  
   
 -   Vývojový diagram funkce používá následující třídy:  
   
@@ -171,9 +153,7 @@ ms.locfileid: "44205072"
   
 -   Ukázky:  
   
-    -   [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
-  
-    -   [Scénář stavového stroje s využitím kombinace FlowChart a Pick](../../../docs/framework/windows-workflow-foundation/samples/statemachine-scenario-using-a-combination-of-flowchart-and-pick.md)  
+    -   [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md) 
   
     -   [Proces náboru](../../../docs/framework/windows-workflow-foundation/samples/hiring-process.md)  
   
@@ -201,7 +181,7 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started"></a>Začínáme  
   
--   V [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], vytvořte konzolovou aplikaci pracovního postupu. Přidáte procedurálních aktivit v Návrháři pracovních postupů.  
+-   V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidáte procedurálních aktivit v Návrháři pracovních postupů.  
   
 -   Ukázky:  
   
@@ -226,11 +206,7 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started"></a>Začínáme  
   
--   V [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.InvokeMethod> aktivity v Návrháři pracovních postupů a nakonfigurovat statické a instanci metody na něj.  
-  
--   Ukázky:  
-  
-    -   [InvokeMethod](../../../docs/framework/windows-workflow-foundation/samples/invokemethod.md)  
+-   V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.InvokeMethod> aktivity v Návrháři pracovních postupů a nakonfigurovat statické a instanci metody na něj.  
   
 -   Návrháře dokumentace: [Návrhář aktivity InvokeMethod](/visualstudio/workflow-designer/invokemethod-activity-designer)  
   
@@ -245,13 +221,9 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started"></a>Začínáme  
   
--   V [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.TryCatch> aktivity v Návrháři pracovních postupů.  
+-   V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.TryCatch> aktivity v Návrháři pracovních postupů.  
   
--   Ukázky:  
-  
-    1.  [Zpracování chyb v aktivitě FlowChart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
-  
-    2.  [Použití procedurálních aktivit](../../../docs/framework/windows-workflow-foundation/samples/using-procedural-activities.md)  
+-   Ukázka: [selhání zpracování v aktivitě Flowchart pomocí TryCatch](../../../docs/framework/windows-workflow-foundation/samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)  
   
 -   Návrháře dokumentace: [návrháři aktivit zpracování chyb](/visualstudio/workflow-designer/error-handling-activity-designers)  
   
@@ -263,7 +235,7 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started"></a>Začínáme  
   
--   V [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.Pick> aktivity v Návrháři pracovních postupů.  
+-   V sadě Visual Studio 2012 Vytvořte konzolovou aplikaci pracovního postupu. Přidat <xref:System.Activities.Statements.Pick> aktivity v Návrháři pracovních postupů.  
   
 -   Ukázka: [použití aktivity Pick](../../../docs/framework/windows-workflow-foundation/samples/using-the-pick-activity.md)  
   
@@ -337,7 +309,7 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started"></a>Začínáme  
   
-1.  V [!INCLUDE[vs2010](../../../includes/vs2010-md.md)], vytvořte projekt aplikace služby pracovního postupu WCF. A <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> pár se umístí na plátně spustit.  
+1.  V sadě Visual Studio 2010 vytvořte projekt aplikace služby pracovního postupu WCF. A <xref:System.ServiceModel.Activities.Receive> a <xref:System.ServiceModel.Activities.SendReply> pár se umístí na plátně spustit.  
   
 2.  Otevřete soubor web.config a přidat trasování událostí pro Windows sledování chování se žádný profil.  
   
@@ -358,7 +330,7 @@ ms.locfileid: "44205072"
   
 ### <a name="getting-started"></a>Začínáme  
   
-1.  V [!INCLUDE[vs_current_long](../../../includes/vs-current-long-md.md)], vytvořit pracovní postup, který obsahuje implicitní nebo explicitní <xref:System.Activities.Statements.Persist> aktivity. Přidat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> chování na hostitele služby pracovního postupu. To můžete udělat v kódu nebo konfiguračního souboru aplikace.  
+1.  V sadě Visual Studio 2012, vytvořit pracovní postup, který obsahuje implicitní nebo explicitní <xref:System.Activities.Statements.Persist> aktivity. Přidat <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> chování na hostitele služby pracovního postupu. To můžete udělat v kódu nebo konfiguračního souboru aplikace.  
   
 2.  Ukázky: [trvalosti](../../../docs/framework/windows-workflow-foundation/samples/persistence.md)  
   

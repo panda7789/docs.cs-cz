@@ -5,11 +5,11 @@ helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
 ms.openlocfilehash: d0ad7ee0bc3ea1d15197e6b8d9888d60b21a2f15
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48032693"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48846213"
 ---
 # <a name="wcf-performance-counters"></a>Čítače výkonu WCF
 Windows Communication Foundation (WCF) obsahuje velké sady čítače výkonu umožňují měřit výkon vaší aplikace.  

@@ -5,42 +5,42 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6e0cacc1-9b11-4665-adb7-577a62626fd6
-ms.openlocfilehash: 229cc4a5a06059159eb045da234d9f09de0f6c0d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac356ac9acd3f0b14fb3da902f1a9c3cfbdd9ef7
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33493026"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847890"
 ---
 # <a name="how-to-create-a-basic-atom-feed"></a>Postupy: Vytvoření základního informačního kanálu Atom
-Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje syndikace informačního kanálu. Toto téma popisuje postup vytvoření syndikace služby, která zveřejňuje Atom syndikace informačního kanálu.  
+Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zveřejňuje informačního kanálu syndikace. Toto téma popisuje, jak vytvořit služby syndikace, který zpřístupňuje informačního kanálu syndikace Atom.  
   
-### <a name="to-create-a-basic-syndication-service"></a>Vytvoření služby základní syndikace  
+### <a name="to-create-a-basic-syndication-service"></a>Chcete-li vytvořit základní syndikační služby  
   
-1.  Definování kontraktu služby pomocí rozhraní označené jako <xref:System.ServiceModel.Web.WebGetAttribute> atribut. Každé operace, která je vystavená, protože by měla vrátit syndikace informační kanál <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> objektu.  
+1.  Definování kontraktu služby pomocí rozhraní označené <xref:System.ServiceModel.Web.WebGetAttribute> atribut. Každá operace, která je vystavena jako informační kanál syndikace by mělo vrátit <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> objektu.  
   
      [!code-csharp[htAtomBasic#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#0)]
      [!code-vb[htAtomBasic#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#0)]  
   
     > [!NOTE]
-    >  Všechny operace služby, které se vztahují <xref:System.ServiceModel.Web.WebGetAttribute> jsou namapované na požadavky HTTP GET. Pokud chcete mapovat tuto operaci na jinou metodu HTTP, používat <xref:System.ServiceModel.Web.WebInvokeAttribute> místo. Další informace najdete v tématu [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
+    >  Všechny operace služby, které se vztahují <xref:System.ServiceModel.Web.WebGetAttribute> jsou mapovány na požadavky HTTP GET. Chcete-li namapovat operace jinou metodu HTTP, použijte <xref:System.ServiceModel.Web.WebInvokeAttribute> místo. Další informace najdete v tématu [postupy: vytvoření základní služby WCF Web HTTP](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md).  
   
-2.  Implementujte kontrakt služby.  
+2.  Implementace kontraktu služby.  
   
      [!code-csharp[htAtomBasic#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#1)]
      [!code-vb[htAtomBasic#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#1)]  
   
-3.  Vytvoření <xref:System.ServiceModel.Syndication.SyndicationFeed> objektu a přidejte vytváření, kategorie a popis.  
+3.  Vytvoření <xref:System.ServiceModel.Syndication.SyndicationFeed> objektu a přidejte Autor, kategorie a popis.  
   
      [!code-csharp[htAtomBasic#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#2)]
      [!code-vb[htAtomBasic#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#2)]  
   
-4.  Vytvořit několik <xref:System.ServiceModel.Syndication.SyndicationItem> objekty.  
+4.  Vytvoření několika <xref:System.ServiceModel.Syndication.SyndicationItem> objekty.  
   
      [!code-csharp[htAtomBasic#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#3)]
      [!code-vb[htAtomBasic#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#3)]  
   
-5.  Přidat <xref:System.ServiceModel.Syndication.SyndicationItem> objekty k informačnímu kanálu.  
+5.  Přidat <xref:System.ServiceModel.Syndication.SyndicationItem> objekty do informačního kanálu.  
   
      [!code-csharp[htAtomBasic#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#4)]
      [!code-vb[htAtomBasic#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#4)]  
@@ -57,30 +57,30 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zve�
      [!code-csharp[htAtomBasic#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#6)]
      [!code-vb[htAtomBasic#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#6)]  
   
-2.  Otevření hostitele služby, načtěte informačního kanálu ze služby, zobrazit informační kanál a počkejte uživateli stiskněte klávesu ENTER.  
+2.  Otevření hostitele služby, načtení informačního kanálu ze služby, zobrazit informační kanál a čekat, uživatel stisknout klávesu ENTER.  
   
      [!code-csharp[htAtomBasic#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#8)]
      [!code-vb[htAtomBasic#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#8)]  
   
-### <a name="to-call-getblog-with-an-http-get"></a>K volání GetBlog() s HTTP GET  
+### <a name="to-call-getblog-with-an-http-get"></a>Chcete-li volat GetBlog() s HTTP GET  
   
-1.  Otevřete Internet Explorer, zadejte následující adresu URL a stiskněte klávesu ENTER: http://localhost:8000/BlogService/GetBlog  
+1.  Spusťte aplikaci Internet Explorer, zadejte následující adresu URL a stiskněte klávesu ENTER: `http://localhost:8000/BlogService/GetBlog`  
   
-     Adresa URL obsahuje základní adresa služby (http://localhost:8000/BlogService), relativní adresa koncového bodu a volat operace služby.  
+     Adresa URL obsahuje základní adresa služby (`http://localhost:8000/BlogService`), relativní adresu koncového bodu a operace služby, která volá.  
   
 ### <a name="to-call-getblog-from-code"></a>GetBlog() volat z kódu  
   
-1.  Vytvoření <xref:System.Xml.XmlReader> s základní adresu a při volání metody.  
+1.  Vytvoření <xref:System.Xml.XmlReader> k základní adrese a metodu voláte.  
   
      [!code-csharp[htAtomBasic#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/snippets.cs#9)]
      [!code-vb[htAtomBasic#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/snippets.vb#9)]  
   
-2.  Zavolejte statickou <xref:System.ServiceModel.Syndication.SyndicationFeed.Load%28System.Xml.XmlReader%29> předávání v případě metody <xref:System.Xml.XmlReader> jste právě vytvořili.  
+2.  Zavolejte statickou <xref:System.ServiceModel.Syndication.SyndicationFeed.Load%28System.Xml.XmlReader%29> metodu <xref:System.Xml.XmlReader> jste právě vytvořili.  
   
      [!code-csharp[htAtomBasic#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/snippets.cs#10)]
      [!code-vb[htAtomBasic#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/snippets.vb#10)]  
   
-     To vyvolá operaci služby a naplní novou <xref:System.ServiceModel.Syndication.SyndicationFeed> k formátování vrácená z operace služby.  
+     To vyvolá operaci služby a naplní nový <xref:System.ServiceModel.Syndication.SyndicationFeed> formátování vrácená z operace služby.  
   
 3.  Přístup k objekt informačního kanálu.  
   
@@ -88,13 +88,13 @@ Windows Communication Foundation (WCF) umožňuje vytvořit službu, která zve�
      [!code-vb[htAtomBasic#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/snippets.vb#11)]  
   
 ## <a name="example"></a>Příklad  
- Zde je úplný výpis pro tento příklad kódu.  
+ Následuje úplný výpis v tomto příkladu kódu.  
   
  [!code-csharp[htAtomBasic#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/htatombasic/cs/program.cs#12)]
  [!code-vb[htAtomBasic#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htatombasic/vb/program.vb#12)]  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- Při kompilování předchozí kód, odkazuje System.ServiceModel.dll a System.ServiceModel.Web.dll.  
+ Při kompilaci předchozí kód, odkazovat System.ServiceModel.dll a System.ServiceModel.Web.dll.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.WebHttpBinding>  

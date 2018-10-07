@@ -2,12 +2,12 @@
 title: WebContentTypeMapper – ukázka
 ms.date: 03/30/2017
 ms.assetid: a4fe59e7-44d8-43c6-a1f8-40c45223adca
-ms.openlocfilehash: 91e5cca478521a343f7528f878f114b85eff2d08
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 572bea9fc38668d554ef467be7689ac01b652fb8
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45618529"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847594"
 ---
 # <a name="webcontenttypemapper-sample"></a>WebContentTypeMapper – ukázka
 Tato ukázka předvádí, jak namapovat nové typy obsahu formáty text zpráv Windows Communication Foundation (WCF).  
@@ -58,7 +58,7 @@ public class JsonContentTypeMapper : WebContentTypeMapper
   
 2.  Sestavte řešení WebContentTypeMapperSample.sln, jak je popsáno v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Přejděte na http://localhost/ServiceModelSamples/JCTMClientPage.htm (neotevírejte JCTMClientPage.htm v prohlížeči z adresáře projektu).  
+3.  Přejděte na `http://localhost/ServiceModelSamples/JCTMClientPage.htm` (neotevírejte JCTMClientPage.htm v prohlížeči z adresáře projektu).  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

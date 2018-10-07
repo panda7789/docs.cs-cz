@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 51f8ffa3-c253-4201-a3d3-c4fad85ae097
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d25bac953ff68422a1dddc54bdb01b4b4f241cbb
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 9414a8927fe511c0c39aa140974ec2d590a52a7d
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664524"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48846250"
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a>Předávání typů v modulu Common Language Runtime
 Předávání typů vám umožní přesunout typu na jiné sestavení bez nutnosti znovu kompilovat aplikace, které používají původní sestavení.  
@@ -44,9 +44,9 @@ Předávání typů vám umožní přesunout typu na jiné sestavení bez nutnos
   
 3.  Kompilace, která nyní obsahuje typ sestavení.  
   
-4.  Znovu zkompilujte použití typu budou umístěné, s odkazem na sestavení, která nyní obsahuje typ sestavení. Například pokud kompilujete soubor jazyka C# z příkazového řádku, použijte [/Reference (možnosti kompilátoru C#)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) možnost určit, který obsahuje typ sestavení. V jazyce C++, použijte [#using](https://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a) směrnice ve zdrojovém souboru k určení, která obsahuje typ sestavení.  
+4.  Znovu zkompilujte použití typu budou umístěné, s odkazem na sestavení, která nyní obsahuje typ sestavení. Například pokud kompilujete soubor jazyka C# z příkazového řádku, použijte [/Reference (možnosti kompilátoru C#)](~/docs/csharp/language-reference/compiler-options/reference-compiler-option.md) možnost určit, který obsahuje typ sestavení. V jazyce C++, použijte [#using](/cpp/preprocessor/hash-using-directive-cpp) směrnice ve zdrojovém souboru k určení, která obsahuje typ sestavení.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>  
  [Předávání typů (C++/CLI)](/cpp/windows/type-forwarding-cpp-cli)  
- [#using – direktiva](https://msdn.microsoft.com/library/870b15e5-f361-40a8-ba1c-c57d75c8809a)
+ [#using – direktiva](/cpp/preprocessor/hash-using-directive-cpp)

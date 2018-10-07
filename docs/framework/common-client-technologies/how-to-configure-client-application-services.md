@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - client application services, configuring
 ms.assetid: 34a8688a-a32c-40d3-94be-c8e610c6a4e8
-ms.openlocfilehash: a65c216397f240b77eb81f88d8f2a2da122e1ccf
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 6f754a2a66187ac94d31d0d5a3a665c969652d26
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861621"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48846510"
 ---
 # <a name="how-to-configure-client-application-services"></a>Postupy: Konfigurace klientských aplikačních služeb
 Toto téma popisuje, jak pomocí sady Visual Studio **Návrháře projektu** povolení a konfigurace klientských aplikačních služeb. Klientské aplikační služby můžete použít k ověření uživatelů a načíst role uživatele a nastavení z existující [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační službu. Po konfiguraci, můžete přístup povolené služby v kódu aplikace, jak je popsáno v [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md). Další informace o [!INCLUDE[ajax_current_short](../../../includes/ajax-current-short-md.md)] aplikační služby, najdete v článku [přehled aplikačních služeb ASP.NET](https://msdn.microsoft.com/library/1162e529-0d70-44b2-b3ab-83e60c695013).  
   
- Můžete povolit a nakonfigurovat klientské aplikační služby na **služby** stránku **Návrháře projektu**. **Služby** stránka aktualizuje hodnoty v souboru App.config vašeho projektu. Pro přístup k **Návrháře projektu**, použijte **vlastnosti** příkaz **projektu** nabídky. Další informace o **služby** stránky, přečtěte si téma [stránka služby, Návrhář projektu](https://msdn.microsoft.com/library/bb398109).  
+ Můžete povolit a nakonfigurovat klientské aplikační služby na **služby** stránku **Návrháře projektu**. **Služby** stránka aktualizuje hodnoty v souboru App.config vašeho projektu. Pro přístup k **Návrháře projektu**, použijte **vlastnosti** příkaz **projektu** nabídky. Další informace o **služby** stránky, přečtěte si téma [stránka služby, Návrhář projektu](/visualstudio/ide/reference/services-page-project-designer).  
   
  Následující postup popisuje, jak provést základní konfiguraci pro klientské aplikační služby. Pokročilá konfigurace, které možnosti jsou popsané v předchozích částech.  
   
@@ -143,7 +143,7 @@ Toto téma popisuje, jak pomocí sady Visual Studio **Návrháře projektu** pov
 ## <a name="see-also"></a>Viz také  
  [Klientské aplikační služby](../../../docs/framework/common-client-technologies/client-application-services.md)  
  [Přehled klientských aplikačních služeb](../../../docs/framework/common-client-technologies/client-application-services-overview.md)  
- [Stránka Služby, Návrhář projektu](https://msdn.microsoft.com/library/bb398109)  
+ [Stránka Služby, Návrhář projektu](/visualstudio/ide/reference/services-page-project-designer)  
  [Dialogové okno Pokročilé nastavení služeb](/visualstudio/ide/reference/advanced-settings-for-services-dialog-box)  
  [Postupy: Implementace přihlášení uživatele u klientských aplikačních služeb](../../../docs/framework/common-client-technologies/how-to-implement-user-login-with-client-application-services.md)  
  [Návod: Použití klientských aplikačních služeb](../../../docs/framework/common-client-technologies/walkthrough-using-client-application-services.md)  

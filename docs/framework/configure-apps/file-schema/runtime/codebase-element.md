@@ -12,11 +12,11 @@ ms.assetid: d48a3983-2297-43ff-a14d-1f29d3995822
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: d7563d3a0ba545bfd8d1b80981fcce607d230873
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028212"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847285"
 ---
 # <a name="ltcodebasegt-element"></a>&lt;základ kódu&gt; – Element
 Určuje, kde najít sestavení modulu common language runtime.  

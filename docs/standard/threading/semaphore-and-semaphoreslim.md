@@ -13,11 +13,11 @@ ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: e7d7f791fbc68a526f428f4f79d9b379a23ca771
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48579995"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847605"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semafor a SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType> Třída představuje pojmenované (systémové) nebo místní "Semaphore". Je dynamického zajišťování obálku kolem objektu semafor Win32. Win32 semafory jsou počítání semaforů, které je možné použít k řízení přístupu k fondu zdrojů.  

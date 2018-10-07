@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
-ms.openlocfilehash: 6be94c2e2cef443f69b2d6df7c2d490cb1fb629d
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 0be8d302568bc08d2c3dacfdf5738eff4b97d4b2
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44205059"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48848098"
 ---
 # <a name="how-to-create-a-nuget-package-with-cross-platform-tools"></a>Vytvoření balíčku NuGet pomocí nástrojů pro různé platformy
 
@@ -21,7 +21,7 @@ Pro .NET Core 1.0 se očekává distribuována jako balíčky NuGet knihoven.  T
 
 Představte si, že jste napsali úžasnou novou knihovnu, která chcete distribuovat přes NuGet.  Můžete vytvořit balíček NuGet pomocí nástrojů pro různé platformy k tomu přesně!  V následujícím příkladu se předpokládá knihovnu s názvem **SuperAwesomeLibrary** cíle, které `netstandard1.0`.
 
-Pokud máte přechodné závislosti; To znamená, že projekt, který závisí na jiný projekt, budete muset Ujistěte se, že k obnovení balíčků pro celé řešení s `dotnet restore` příkaz před vytvořením balíčku NuGet.  Pokud tak neučiníte způsobí `dotnet pack` příkaz nebude správně fungovat.
+Pokud máte přechodné závislosti; To znamená, že projekt, který závisí na jiném balíčku, budete muset Ujistěte se, že k obnovení balíčků pro celé řešení s `dotnet restore` příkaz před vytvořením balíčku NuGet.  Pokud tak neučiníte způsobí `dotnet pack` příkaz nebude správně fungovat.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 74b89d9a-22be-4799-b9fb-e3dfa5426dec
 author: BrucePerlerMS
 ms.openlocfilehash: 502eb49616c4b274b59c64a3e4f2c65af9fcda5e
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48777864"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847986"
 ---
 # <a name="systemservicemodelsecuritysecuritysessiondemuxfailure"></a>System.ServiceModel.Security.SecuritySessionDemuxFailure
 System.ServiceModel.Security.SecuritySessionDemuxFailure  

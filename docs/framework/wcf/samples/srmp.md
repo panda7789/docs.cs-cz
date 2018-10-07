@@ -2,12 +2,12 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: 62075cccfa8ff2c6a181d633756a5f9bc8969932
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 417506fa1eb64f3c60c5028c24cfbe5d34101b7f
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46581308"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847500"
 ---
 # <a name="srmp"></a>SRMP
 Tento příklad znázorňuje způsob provedení transakčního komunikaci ve frontě pomocí služby Řízení front zpráv (MSMQ) přes protokol HTTP.  
@@ -66,7 +66,7 @@ Tento příklad znázorňuje způsob provedení transakčního komunikaci ve fro
       <netMsmqBinding>  
         <binding name="srmpBinding"  
                  queueTransferProtocol="Srmp">  
-          <security mode="None"></security>  
+          <security mode="None" />  
         </binding>  
       </netMsmqBinding>  
     </bindings>  

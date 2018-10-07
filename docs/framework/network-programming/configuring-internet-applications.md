@@ -23,12 +23,12 @@ helpviewer_keywords:
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: d2f3f015689510237142572f230b53ba7bd393ca
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 81b0f69306a0f9a4ed6d35e3c8ef95271a779294
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48780950"
+ms.lasthandoff: 10/07/2018
+ms.locfileid: "48847929"
 ---
 # <a name="configuring-internet-applications"></a>Konfigurace internetových aplikací
 [ \<System.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) prvek konfigurace obsahuje informace o konfiguraci sítě pro aplikace. Použití [ \<system.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) element, můžete nastavit proxy servery, nastavit správu parametry připojení a vlastní moduly ověřování a žádosti do aplikace zahrnout.  
@@ -37,7 +37,7 @@ ms.locfileid: "48780950"
   
  Je důležité si uvědomit, že nastavení aplikace Microsoft Internet Explorer spolu s nastavením konfigurace se přednost před pozdější a současně.  
   
- Následující příklad nastaví výchozí proxy server adresu serveru na http://proxyserver, označuje, že by neměla používat pro místní adresy proxy serveru a určuje, že všechny požadavky na servery umístěné v doméně contoso.com by měl používat proxy server.  
+ Následující příklad nastaví výchozí proxy server adresu serveru na `http://proxyserver`, označuje, že by neměla používat pro místní adresy proxy serveru a určuje, že všechny požadavky na servery umístěné v doméně contoso.com by měl používat proxy server.  
   
 ```xml  
 <configuration>  
