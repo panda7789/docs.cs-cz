@@ -2,12 +2,12 @@
 title: Zjednodušená konfigurace pro služby WCF
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: ebdf7ab62676bb0c8ac99a5335a3047fcdd5a9b3
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 333469cecdf2acae72e6d1add8f96829a127dcf8
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500710"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836719"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Zjednodušená konfigurace pro služby WCF
 Tento příklad ukazuje, jak implementovat a konfigurovat typické službu a klienta s použitím Windows Communication Foundation (WCF). Tato ukázka představuje základ pro všechny další ukázky základní technologii.  
@@ -37,7 +37,7 @@ Tento příklad ukazuje, jak implementovat a konfigurovat typické službu a kli
 </configuration>  
 ```  
   
- V [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], `<service>` element je volitelné. Když služba nedefinuje žádné koncové body, koncový bod pro každou základní adresu a implementovat kontrakt jsou přidány do služby. Základní adresa je připojeným k názvu kontraktu určit koncový bod a vazbu určuje schéma adres. Následující příklad kódu ukazuje zjednodušený konfigurační soubor. Podle konfigurace, služba může získat přístup na adrese http://localhost/servicemodelsamples/service.svc klientem na stejném počítači. Pro klienty ve vzdálených počítačích pro přístup ke službě musí se zadat název plně kvalifikované domény místo localhost. Služba nevystavuje metadata ve výchozím nastavení. V důsledku toho služba Zapne <xref:System.ServiceModel.Description.ServiceMetadataBehavior> chování.  
+ V [!INCLUDE[netfx40_short](../../../../includes/netfx40-short-md.md)], `<service>` element je volitelné. Když služba nedefinuje žádné koncové body, koncový bod pro každou základní adresu a implementovat kontrakt jsou přidány do služby. Základní adresa je připojeným k názvu kontraktu určit koncový bod a vazbu určuje schéma adres. Následující příklad kódu ukazuje zjednodušený konfigurační soubor. Podle konfigurace, služba může získat přístup na adrese `http://localhost/servicemodelsamples/service.svc` klientem na stejném počítači. Pro klienty ve vzdálených počítačích pro přístup ke službě musí se zadat název plně kvalifikované domény místo localhost. Služba nevystavuje metadata ve výchozím nastavení. V důsledku toho služba Zapne <xref:System.ServiceModel.Description.ServiceMetadataBehavior> chování.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  

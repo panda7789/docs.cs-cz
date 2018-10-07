@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Svcutil.exe
 - clients [WCF], consuming services
 ms.assetid: 1abf3d9f-b420-46f1-b628-df238751f308
-ms.openlocfilehash: f9ae53aeb988f23611adb4b00354f65918790d3b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 01a30ac6cb252eba51cfff8a221c28425f347b0a
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200760"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48837257"
 ---
 # <a name="servicemodel-metadata-utility-tool-svcutilexe"></a>Nástroj ServiceModel Metadata Utility (Svcutil.exe)
 
@@ -236,7 +236,7 @@ Následující příkaz vygeneruje typy serializace pro <xref:System.Xml.Seriali
 
 Pokud používáte nástroj svcutil generovat metadata pro službu, může zobrazit následující zpráva:
 
-Chyba: Nelze získat Metadata z http://localhost:8000/somesservice/mex při čtení dat XML se překročila kvóta pro počet znaků tabulky názvů maximální (16384). Tabulka je datová struktura používaná k uložení řetězců nalezených při zpracování XML - dlouhé dokumenty XML s neopakujícími názvy elementů, názvy atributů a hodnoty atributů mohou aktivovat tuto kvótu. Tuto kvótu jde zvýšit změnou vlastnosti MaxNameTableCharCount u objektu XmlDictionaryReaderQuotas, který se používá při vytváření čtecí funkce XML.
+Chyba: Nelze získat Metadata z `http://localhost:8000/somesservice/mex` při čtení dat XML se překročila kvóta pro počet znaků tabulky názvů maximální (16384). Tabulka je datová struktura používaná k uložení řetězců nalezených při zpracování XML - dlouhé dokumenty XML s neopakujícími názvy elementů, názvy atributů a hodnoty atributů mohou aktivovat tuto kvótu. Tuto kvótu jde zvýšit změnou vlastnosti MaxNameTableCharCount u objektu XmlDictionaryReaderQuotas, který se používá při vytváření čtecí funkce XML.
 
 Tuto chybu může způsobovat služba, která vrátí velký soubor WSDL, když požádáte o jeho metadata. Problém je, že je překročena kvóta znak pro nástroje svcutil.exe. Tato hodnota nastavena, aby se zabránilo útoky na dostupnost služby (dos). Tuto kvótu můžete zvýšit tak, že zadáte následující konfigurační soubor pro svcutil.
 

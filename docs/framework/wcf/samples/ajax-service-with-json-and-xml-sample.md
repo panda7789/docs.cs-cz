@@ -2,24 +2,24 @@
 title: Ukázka služby AJAX s protokoly JSON a XML
 ms.date: 03/30/2017
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-ms.openlocfilehash: 1beb89c11fccefec24ccbebc3fe30033a646718d
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 17b0fd362ac84c7fbc0c9e88fb3d318966356bc6
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43520071"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836190"
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>Ukázka služby AJAX s protokoly JSON a XML
 Tento příklad ukazuje, jak použít Windows Communication Foundation (WCF) k vytvoření služby asynchronní JavaScript a XML (AJAX), který vrací data JavaScript Object Notation (JSON) nebo XML. Služby AJAX můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) vzorku.  
   
- Na rozdíl od ostatních AJAX vzorků, tato ukázka nepoužívá technologie ASP.NET AJAX a <xref:System.Web.UI.ScriptManager> ovládacího prvku. Některé další konfigurace služeb WCF AJAX je přístupný z jakékoli stránky HTML pomocí JavaScriptu a tento scénář je znázorněna zde. Příklad použití WCF pomocí ASP.NET AJAX, naleznete v tématu [AJAX ukázky](https://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).  
+ Na rozdíl od ostatních AJAX vzorků, tato ukázka nepoužívá technologie ASP.NET AJAX a <xref:System.Web.UI.ScriptManager> ovládacího prvku. Některé další konfigurace služeb WCF AJAX je přístupný z jakékoli stránky HTML pomocí JavaScriptu a tento scénář je znázorněna zde. Příklad použití WCF pomocí ASP.NET AJAX, naleznete v tématu [AJAX ukázky](https://msdn.microsoft.com/library/f3fa45b3-44d5-4926-8cc4-a13c30a3bf3e).
   
  Tento příklad ukazuje, jak přepnout typ odpovědi z operace mezi JSON a XML. Tato funkce je dostupná bez ohledu na to, zda je služba nakonfigurována přistupovat pomocí technologie ASP.NET AJAX nebo stránku HTML/JavaScript klienta.  
   
 > [!NOTE]
->  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
+> Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.
   
- Chcete-li povolit používání technologie ASP.NET AJAX klientů, použijte <xref:System.ServiceModel.Activation.WebServiceHostFactory> (ne <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) v souboru SVC. <xref:System.ServiceModel.Activation.WebServiceHostFactory> Přidá <xref:System.ServiceModel.Description.WebHttpEndpoint> standardní koncový bod ke službě. Koncový bod je nakonfigurována na prázdnou adresu relativní k souboru .svc; To znamená, že je adresa služby http://localhost/ServiceModelSamples/service.svc, se žádné další přípony jiný než název operace.  
+Chcete-li povolit používání technologie ASP.NET AJAX klientů, použijte <xref:System.ServiceModel.Activation.WebServiceHostFactory> (ne <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>) v souboru SVC. <xref:System.ServiceModel.Activation.WebServiceHostFactory> Přidá <xref:System.ServiceModel.Description.WebHttpEndpoint> standardní koncový bod ke službě. Koncový bod je nakonfigurována na prázdnou adresu relativní k souboru .svc; To znamená, že je adresa služby `http://localhost/ServiceModelSamples/service.svc`, se žádné další přípony jiný než název operace.  
   
 ```svc
 <%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>  
@@ -109,7 +109,7 @@ xmlHttp.onreadystatechange=function(){
   
 2.  Sestavte řešení XmlAjaxService.sln, jak je popsáno v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Přejděte na http://localhost/ServiceModelSamples/XmlAjaxClientPage.htm (neotevírejte XmlAjaxClientPage.htm v prohlížeči z adresáře projektu).  
+3.  Přejděte na `http://localhost/ServiceModelSamples/XmlAjaxClientPage.htm` (neotevírejte XmlAjaxClientPage.htm v prohlížeči z adresáře projektu).  
   
 ## <a name="see-also"></a>Viz také  
  [Služba AJAX využívající HTTP POST](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)

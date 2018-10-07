@@ -4,12 +4,12 @@ description: Další informace o dotnet instalačních skriptů k instalaci nás
 author: blackdwarf
 ms.author: mairaw
 ms.date: 09/11/2017
-ms.openlocfilehash: 8d1c6ebb30bd45575bb61206799c9c3e5c47ff0c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: ea14424297dcf1dab8711197bee1d3b3e19879c1
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46004007"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48837073"
 ---
 # <a name="dotnet-install-scripts-reference"></a>odkazovat na DotNet instalačních skriptů
 
@@ -33,8 +33,8 @@ macOS nebo Linux:
 
 Doporučujeme použít stabilní verzi, která je hostována na [hlavní webové stránky .NET Core](https://dot.net). Přímé cesty pro skripty jsou:
 
-* https://dot.net/v1/dotnet-install.sh (bash, UNIX)
-* https://dot.net/v1/dotnet-install.ps1 (Prostředí Powershell, Windows)
+* <https://dot.net/v1/dotnet-install.sh> (bash, UNIX)
+* <https://dot.net/v1/dotnet-install.ps1> (Prostředí Powershell, Windows)
 
 Hlavní užitečnost tyto skripty se scénáře automatizace a zařízení bez oprávnění správce. Existují dva skripty: jeden je skript prostředí PowerShell, který funguje ve Windows. Tento skript je skriptu bash, která funguje v systému Linux/macOS. Skripty mají stejné chování. Skriptu bash také přečte přepínače prostředí PowerShell, takže přepínače prostředí PowerShell můžete použít skript v systémech Linux nebo macOS s.
 

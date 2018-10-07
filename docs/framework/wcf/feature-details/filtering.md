@@ -2,12 +2,12 @@
 title: Filtrování
 ms.date: 03/30/2017
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
-ms.openlocfilehash: 74915a45ed5ca1d13790f64c7921d1f750fa04d3
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 49813ac0f493d628a941b3060be93ef19bb1e802
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208104"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836064"
 ---
 # <a name="filtering"></a>Filtrování
 Windows Communication Foundation (WCF) filtrování systému můžete použít filtry deklarativní podle zpráv a provozní rozhodování. Filtry můžete použít k určení, co dělat, a zobrazí se zpráva prozkoumáním část zprávy. Proces řazení do fronty, například můžete použít k dotazu XPath 1.0 ke kontrole element priority známé hlavičky. Chcete-li zjistit, jestli se má přesunout na začátek fronty zprávu.  
@@ -42,7 +42,7 @@ Windows Communication Foundation (WCF) filtrování systému můžete použít f
   
 ### <a name="prefix-endpoint-address-filters"></a>Předpony adres filtrech koncového bodu  
   
-1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy s identifikátorem URI. Například filtr určení adresy http://www.adatum.com odpovídá zprávy adresované do http://www.adatum.com/userA.  
+1.  <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> Funguje stejně jako <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> filtrovat, s tím rozdílem, že shody může být na předponě zprávy s identifikátorem URI. Například filtr určení adresy `http://www.adatum.com` odpovídá zprávy adresované do `http://www.adatum.com/userA`.  
   
 ### <a name="xpath-message-filters"></a>Filtry zpráv XPath  
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> Výraz XPath používá k určení, jestli dokument XML obsahuje konkrétní prvky, atributy, text nebo jiné XML syntaktické konstrukce. Tento filtr je optimalizována pro být velice efektivní pro striktní podmnožinou XPath. Jazyk XML Path je popsána v [W3C XML Path Language 1.0 – specifikace](https://go.microsoft.com/fwlink/?LinkId=94779).  

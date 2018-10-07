@@ -5,12 +5,12 @@ author: bleroy
 ms.author: mairaw
 ms.date: 11/16/2016
 ms.custom: vs-dotnet
-ms.openlocfilehash: 15537ea8c68b5c873bbf26ab0519a19de0b13230
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: c21c257b55c4389ea4a60fca55eb83cff60ff3b5
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45969558"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48840937"
 ---
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017
 
@@ -24,7 +24,7 @@ Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites
 
 ### <a name="writing-the-library"></a>Zápis knihovny
 
-1. V sadě Visual Studio, zvolte **souboru**, **nový**, **projektu**. V **nový projekt** dialogového okna, rozbalte **Visual C#** uzlu a zvolte **.NET Standard** uzel a klikněte na tlačítko **knihovna tříd (.NET Standard)**. 
+1. V sadě Visual Studio, zvolte **souboru**, **nový**, **projektu**. V **nový projekt** dialogového okna, rozbalte **Visual C#** uzlu a zvolte **.NET Standard** uzel a klikněte na tlačítko **knihovna tříd (.NET Standard)**. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.Net Standard](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
 
 2. Název projektu "Library" a "Golden" řešení. Ponechte **vytvořit adresář pro řešení** zaškrtnuto. Klikněte na tlačítko **OK**.
 

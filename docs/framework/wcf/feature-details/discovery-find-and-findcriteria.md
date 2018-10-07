@@ -2,12 +2,12 @@
 title: Hledání zjišťování a kritéria hledání
 ms.date: 03/30/2017
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-ms.openlocfilehash: bd54a7bc896870035972daf1ea6f56d84dc5414e
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 7c389a4f0b8fb9789db33fe3edbb01a1d6302137
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583920"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836800"
 ---
 # <a name="discovery-find-and-findcriteria"></a>Hledání zjišťování a kritéria hledání
 Operace hledání zjišťování inicializuje klienta ke zjištění jednu nebo více služeb a je jedním z hlavní akce zjišťování. Provádění najít odešle zprávu WS-Discovery Probe přes síť. Služby, které odpovídají kritériím zadaným zprávy WS-Discovery ProbeMatch odpověď. Další informace o zjišťování zpráv, najdete v článku [specifikace WS-Discovery](https://go.microsoft.com/fwlink/?LinkID=122347).  
@@ -28,7 +28,7 @@ Operace hledání zjišťování inicializuje klienta ke zjištění jednu nebo 
   
     -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact?displayProperty=nameWithType> porovnání řetězců základní malá a velká písmena.  
   
-    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> shody podle segmentů oddělených pomocí "/". Hledání http://contoso/building1 odpovídá služby s oborem http://contoso/building/floor1. Všimněte si, že neodpovídá http://contoso/building100 vzhledem k tomu, že poslední dva segmenty se neshodují.  
+    -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> shody podle segmentů oddělených pomocí "/". Hledání `http://contoso/building1` odpovídá služby s oborem `http://contoso/building/floor1`. Všimněte si, že neodpovídá `http://contoso/building100` vzhledem k tomu, že poslední dva segmenty se neshodují.  
   
     -   <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap?displayProperty=nameWithType> Porovná obory podle segmentů pomocí adresy URL protokolu LDAP.  
   

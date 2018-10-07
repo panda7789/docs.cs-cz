@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: dda11511904d452a3a5101417f8ab8a33c00204f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 74c3b825bbd51a082f20e8e2009e1ca5f0b35100
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857092"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48837150"
 ---
 # <a name="getting-started-sample"></a>Ukázka Začínáme
 Ukázka Začínáme ukazuje, jak implementovat typické služby a typické klienta pomocí Windows Communication Foundation (WCF). Tato ukázka představuje základ pro všechny další ukázky základní technologii.  
@@ -141,9 +141,9 @@ public class CalculatorService : ICalculator
   
  Služba zpřístupňuje koncový bod na základní adrese poskytované hostitelem služby IIS nebo WAS. Je vazba konfigurována se standardní <xref:System.ServiceModel.WSHttpBinding>, která poskytuje komunikaci pomocí protokolu HTTP a standardní protokoly webové služby pro adresování a zabezpečení. Smlouva je `ICalculator` službou implementována.  
   
- Podle konfigurace, služba může získat přístup na adrese http://localhost/servicemodelsamples/service.svc klientem na stejném počítači. Pro klienty na computersto vzdálený přístup službu je nutné zadat název plně kvalifikované domény místo localhost.  
+ Podle konfigurace, služba může získat přístup na adrese `http://localhost/servicemodelsamples/service.svc` klientem na stejném počítači. Pro klienty ve vzdálených počítačích pro přístup ke službě musí se zadat název plně kvalifikované domény místo localhost.  
   
- Ve výchozím nastavení nevystavuje rozhraní metadat. V důsledku toho služba Zapne <xref:System.ServiceModel.Description.ServiceMetadataBehavior> a zpřístupňuje koncový bod metadat exchange (MEX) na http://localhost/servicemodelsamples/service.svc/mex. Následující konfigurace ukazuje to.  
+ Ve výchozím nastavení nevystavuje rozhraní metadat. V důsledku toho služba Zapne <xref:System.ServiceModel.Description.ServiceMetadataBehavior> a zpřístupňuje koncový bod metadat exchange (MEX) na `http://localhost/servicemodelsamples/service.svc/mex`. Následující konfigurace ukazuje to.  
   
 ```xaml  
 <system.serviceModel>  

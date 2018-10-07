@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: a6c27cbf-30c0-4f8b-ad21-0e4e25e5fc7a
 author: BrucePerlerMS
 ms.openlocfilehash: d8c99863817323a8c6ddaf1c371670528c3e4f68
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037268"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48839211"
 ---
 # <a name="systemservicemodelsecuritysecuritysessionabortedfaultreceived"></a>System.ServiceModel.Security.SecuritySessionAbortedFaultReceived
 System.ServiceModel.Security.SecuritySessionAbortedFaultReceived  

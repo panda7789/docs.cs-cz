@@ -2,12 +2,12 @@
 title: Nastavení vlastností Use a Style
 ms.date: 03/30/2017
 ms.assetid: c09a0600-116f-41cf-900a-1b7e4ea4e300
-ms.openlocfilehash: d5e6409e3921d40b14b940786f6344aea657b84b
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: c4cee5fac84d8fb47565cc4ebde47f04365b989e
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865537"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836845"
 ---
 # <a name="setting-the-use-and-style-properties"></a>Nastavení vlastností Use a Style
 Tento příklad znázorňuje způsob použití vlastností použití a stylu na <xref:System.ServiceModel.XmlSerializerFormatAttribute> a <xref:System.ServiceModel.DataContractFormatAttribute>. Tyto vlastnosti vliv na způsob formátování zprávy. Ve výchozím nastavení, text zprávy je formátováno s stylu nastavena na <xref:System.ServiceModel.OperationFormatStyle.Document>. Tato nastavení se dá nastavit na úrovni kontraktu služby nebo úroveň operace kontraktu.  
@@ -73,7 +73,7 @@ public interface IUseAndStyleCalculator
 }  
 ```  
   
- Pokud chcete zobrazit rozdíl mezi různými <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> a <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> nastavení, upravovat ve službě, znovu vygenerovat klienta, spusťte ukázku a zkontrolujte soubor c:\logs\message.logs pomocí nástroje prohlížeče trasování služeb. Také sledovat dopad na metadata zobrazením http://localhost/ServiceModelSamples/service.svc?wsdl. Metadata služby je obvykle rozdělit do více stránek. Na stránce hlavní wsdl obsahuje vazby WSDL, ale zobrazit http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0 sledovat definice zpráv.  
+ Pokud chcete zobrazit rozdíl mezi různými <xref:System.ServiceModel.XmlSerializerFormatAttribute.Use%2A> a <xref:System.ServiceModel.XmlSerializerFormatAttribute.Style%2A> nastavení, upravovat ve službě, znovu vygenerovat klienta, spusťte ukázku a zkontrolujte soubor c:\logs\message.logs pomocí nástroje prohlížeče trasování služeb. Také sledovat dopad na metadata zobrazením `http://localhost/ServiceModelSamples/service.svc?wsdl`. Metadata služby je obvykle rozdělit do více stránek. Na stránce hlavní wsdl obsahuje vazby WSDL, ale zobrazit `http://localhost/ServiceModelSamples/service.svc?wsdl=wsdl0` sledovat definice zpráv.  
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   

@@ -1,51 +1,51 @@
 ---
-title: Portování do .NET Core z rozhraní .NET Framework
-description: Princip přenosem a zjistit nástroje, které vás může být užitečná při portování rozhraní .NET Framework projektu na .NET Core.
+title: Portování do .NET Core v rozhraní .NET Framework
+description: Vysvětlení procesu přenosem a zjišťování nástroje, které vám můžou pomoct při přenášení do rozhraní .NET Framework projektu .NET Core.
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: bf4f50ca915f21cdda6b99ae6bdf9e837eca3ae7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: d273b3abe46de59aa55b5b9a531d3c572a065124
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33210079"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48835389"
 ---
-# <a name="porting-to-net-core-from-net-framework"></a>Portování do .NET Core z rozhraní .NET Framework
+# <a name="porting-to-net-core-from-net-framework"></a>Portování do .NET Core v rozhraní .NET Framework
 
-Pokud máte k dispozici kód spuštěný na rozhraní .NET Framework, může zajímat spuštěním kódu v .NET Core 1.0.  Tento článek obsahuje přehled procesu přenosem a seznam nástroje, které vás může být užitečná při portování do .NET Core.
+Pokud máte kód spuštěný na rozhraní .NET Framework, může zajímat spouštění kódu v .NET Core 1.0.  Tento článek obsahuje přehled procesu přenosem a seznam nástrojů, které vám můžou pomoct při přenášení do .NET Core.
 
-## <a name="overview-of-the-porting-process"></a>Přehled procesu přenosem
+## <a name="overview-of-the-porting-process"></a>Přehled procesu přenos
 
-Doporučený postup pro přenos zahrnuje následující sérii kroků.  Každou z těchto součástí procesu jsou popsané v podrobněji další články.
+Doporučený postup pro přenesení následuje následující sérii kroků.  Každá z těchto částí procesu se budeme věnovat jednotlivě podrobněji v dalších článcích.
 
-1. Identifikovat a účet pro svoje závislosti třetích stran.
+1. Identifikujte a účtu pro vašeho závislostí třetích stran.
 
-   To bude zahrnovat vysvětlení, co vaše třetích stran závislosti jsou, jak jsou závislé na je, jak a zjistěte, zda také běží na .NET Core a postup můžete provést v případě ne.
+   To bude zahrnovat porozumění jaké závislostí třetích stran se, jak jsou závislé na nich, jak a zjistěte, jestli jsou také běží na .NET Core a kroky můžete provést v případě ne.
    
-2. Změňte cíl všechny projekty, které chcete port na cílové rozhraní .NET Framework 4.6.2.
+2. Přesměrovat všechny projekty, které chcete port pro cílové rozhraní .NET Framework 4.6.2.
 
-   Zajistíte, že můžete použít rozhraní API alternativy pro specifické pro rozhraní .NET Framework cíle v případech, kde .NET Core nepodporuje dané rozhraní API.
+   Tím se zajistí, že můžete použít alternativy rozhraní API pro .NET Framework specifické cíle v případech, kdy .NET Core nemůže zajišťovat podporu pro dané rozhraní API.
    
-3. Použití [nástroj Analyzátor přenositelnost rozhraní API](https://github.com/Microsoft/dotnet-apiport/) analyzovat vaše sestavení a vytvořte plán na port, na základě jeho výsledků.
+3. Použití [.NET Portability Analyzeru](../../standard/analyzers/portability-analyzer.md) analyzovat vaše sestavení a vývoj plánu na port na základě jejích výsledků.
 
-   Nástroj Analyzátor přenositelnost API analyzovat zkompilovaná sestavení a generovat sestavy, která se zobrazují souhrnné informace vysoké úrovně přenositelnost a rozpis každé rozhraní API používáte, není k dispozici na .NET Core.  Můžete použít tuto sestavu spolu s analýzu vašeho základu kódu při vytváření plánu o tom, jak budete prostřednictvím portu vašeho kódu.
+   Nástroj Analyzátor přenositelnosti rozhraní API analyzuje zkompilovaným sestavením a generovat sestavy, která zobrazuje souhrn vyšší úrovně přenositelnost a přehled každé rozhraní API používáte, není k dispozici v rozhraní .NET Core.  Můžete použít tuto sestavu spolu s analýzu vašeho základu kódu pro jak budete přeneste kód přes při vytváření plánu.
    
-4. Port testy kódu.
+4. Přeneste kód testy.
 
-   Portování do .NET Core je velkou změnu do vaší codebase, a proto se důrazně doporučujeme získat testy přesně tak, aby testy můžete spustit jako portu kód přes.  Mstestu, xUnit a NUnit podporovat dnes .NET Core 1.0.
+   Přenos aplikací .NET Core je velkou změnu do vašeho základu kódu, se důrazně doporučujeme zobrazíte testy přenáší tak, aby jako port kód prostřednictvím je možné spustit testy.  MSTest, xUnit a NUnit podpora .NET Core 1.0 ještě dnes.
    
-6. Spuštění plánu pro přenos!
+6. Spuštění vašeho plánu pro přenos!
 
-## <a name="tools-to-help"></a>Nástrojů, které pomůžou
+## <a name="tools-to-help"></a>Nástroje, které pomáhají
 
-Tady je seznam krátké nástroje, které najdete užitečné:
+Tady je krátký seznam nástrojů, které najdete užitečné:
 
-* NuGet - [klienta Nuget](https://dist.nuget.org/index.html) nebo [Explorer balíček NuGet](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), Správce balíčků společnosti Microsoft pro implementace rozhraní .NET.
-* Přenositelnost Analyzer API - [nástroj pro příkazový řádek](https://github.com/Microsoft/dotnet-apiport/releases) nebo [rozšíření sady Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b), nástrojů, který můžete vygenerovat sestavu, jak přenosné kódu je mezi rozhraní .NET Framework a .NET Core pomocí sestavení podle rozpis těchto problémů.  V tématu [nástrojů můžete v procesu](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/) Další informace.
-* Reverse balíček vyhledávání - A [užitečné webové služby](https://packagesearch.azurewebsites.net) , které umožňuje hledat typ a vyhledejte balíčky, které obsahují typu.
+* NuGet – [pro klienta Nuget](https://dist.nuget.org/index.html) nebo [NuGet – Průzkumník balíčků](https://github.com/NuGetPackageExplorer/NuGetPackageExplorer), Správce balíčků od Microsoftu pro implementace .NET.
+* Rozhraní API Portability Analyzeru - [nástroj příkazového řádku](https://github.com/Microsoft/dotnet-apiport/releases) nebo [rozšíření sady Visual Studio](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b), sada nástrojů, který může vygenerovat sestavu jak přenosného kódu je mezi rozhraní .NET Framework a .NET Core s Rozpis sestavení podle problémů.  Zobrazit [nástroje, které vám pomohou v procesu](https://github.com/Microsoft/dotnet-apiport/blob/master/docs/HowTo/) Další informace.
+* Reverzního vyhledávání balíčků – A [užitečné webová služba](https://packagesearch.azurewebsites.net) , který umožňuje hledat typ a vyhledat balíčky obsahující tohoto typu.
 
 ## <a name="next-steps"></a>Další kroky
 
-[Analýza závislostmi třetích stran.](third-party-deps.md)
+[Analýza závislostí třetích stran.](third-party-deps.md)
    

@@ -7,11 +7,11 @@ ms.assetid: bbf20f5b-eca1-4661-af04-cb8837f9af05
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: e066af175982b71fb42bf2eec75fe9d92f532e61
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48264381"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836145"
 ---
 # <a name="how-to-ping-a-host"></a>Postupy: příkaz Ping na hostitele
 Tento příklad ukazuje, jak pomocí příkazu ping vzdálený hostitel.  

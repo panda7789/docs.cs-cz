@@ -5,12 +5,12 @@ author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/12/2018
 ms.custom: vs-dotnet
-ms.openlocfilehash: 7daac744238feb38358e4cc0ab185e90257aa98d
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: faae4b3e3ef96d1d8dd73b7ac313b0a5deffec34
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027452"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48838231"
 ---
 # <a name="using-visual-studio-tools-for-docker-visual-studio-on-windows"></a>Pomocí sady Visual Studio Tools for Docker (Visual Studio na Windows)
 
@@ -65,6 +65,23 @@ Poté, co přidáte do projektu podporu Orchestrace kontejnerů, se zobrazí sou
 Obrázek 4 – 29: Docker soubory v Průzkumníku řešení v sadě Visual Studio 2017
 
 Pokud *docker-compose.yml* již existuje, požadovaných řádků kódu, konfigurace sady Visual Studio právě přidá k němu.
+
+## <a name="configure-docker-tools"></a>Konfigurace nástroje Dockeru
+
+V hlavní nabídce zvolte **nástroje** > **možnosti**a rozbalte **kontejnerových nástrojů** > **nastavení**. Nastavení nástroje kontejneru se zobrazí.
+
+![](./media/visual-studio-docker-tools-options.png)
+
+Obrázek 4-30: Možnosti nástrojů Dockeru
+
+V následující tabulce může pomoct při rozhodování, jak nastavit tyto možnosti.
+
+| Název | Výchozí nastavení | Popis |
+| -----|:---------------:| ----------- |
+| Automaticky získat požadované Image Dockeru při načtení projektu | On | Pro zvýšení výkonu, při načítání projektů Visual Studio spustí operaci Docker pull na pozadí tak, že až budete připravení ke spuštění kódu, se image nestáhne již nebo probíhá stahování. Pokud jste právě načítá projekty a procházení kódu, můžete to vypnout aby se zabránilo stahování imagí kontejnerů, které nepotřebujete. |
+| Automaticky spustit kontejnery na pozadí | On | Znovu pro zajištění zvýšeného výkonu sady Visual Studio vytvoří kontejner s připojí svazek připravené pro když sestavíte a spustíte svůj kontejner. Pokud chcete řídit, kdy se vytvoří kontejner, vypněte toto. |
+| Automaticky ukončit kontejnery na řešení zavřít | On | Pokud byste o ni kontejnerů pro vaše řešení, aby kontinuálně běžely po zavření řešení nebo zavření sady Visual Studio, vypnutí této funkce. |
+| Nezobrazovat výzvu důvěřující certifikátu SSL pro localhost | Off | Visual Studio nadále výzvu pro nové projekty i po certifikát SSL byl důvěryhodný pro starší projektu. Můžete nastavit toto políčko, aby předejít výzvu, při otevření jiné projekty. |
 
 **Další informace:** další podrobnosti o implementaci služby a použití sady Visual Studio Tools for Docker v následujících článcích:
 

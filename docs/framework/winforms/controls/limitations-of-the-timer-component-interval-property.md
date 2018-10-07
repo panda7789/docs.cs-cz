@@ -7,12 +7,12 @@ helpviewer_keywords:
 - timers [Windows Forms], Windows-based
 - Timer component [Windows Forms], limitations of Interval property
 ms.assetid: 7e5fb513-77e7-4046-a8e8-aab94e61ca0f
-ms.openlocfilehash: e5b9e7e43369913f0cdc9c7f2111bd4fe58675e6
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 9710568c3c21878aa6aad626e3152168a2f0c2fe
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43465652"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836391"
 ---
 # <a name="limitations-of-the-windows-forms-timer-component39s-interval-property"></a>Omezení součásti Windows Forms Timer&#39;vlastnosti Interval s
 Windows Forms <xref:System.Windows.Forms.Timer> komponenta má <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost, která určuje počet milisekund, které prochází mezi jeden časovače událostí a dalších. Pokud součást je zakázáno, časovač bude dál přijímat <xref:System.Windows.Forms.Timer.Tick> událost v intervalech přibližně stejnou dobu.  
@@ -26,7 +26,7 @@ Windows Forms <xref:System.Windows.Forms.Timer> komponenta má <xref:System.Wind
   
 -   Není zaručeno, že interval uplyne přesně včas. Aby se zajistila přesnost, časovač by měl zkontrolovat systémové hodiny podle potřeby, spíše než zkuste udržovat přehled o celkové čas interně.  
   
--   Přesnost <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost je v milisekundách. Některé počítače zadejte ve vysokém rozlišení čítač, který má vyšší než milisekund rozlišení. Dostupnost tyto čítače závisí na hardwaru procesoru vašeho počítače. Další informace najdete v článku 172338, "Jak na použití QueryPerformanceCounter do kódu v době," znalostní báze Microsoft Knowledge Base na http://support.microsoft.com.  
+-   Přesnost <xref:System.Windows.Forms.Timer.Interval%2A> vlastnost je v milisekundách. Některé počítače zadejte ve vysokém rozlišení čítač, který má vyšší než milisekund rozlišení. Dostupnost tyto čítače závisí na hardwaru procesoru vašeho počítače.
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Windows.Forms.Timer>  

@@ -5,11 +5,11 @@ helpviewer_keywords:
 - extending [WF], Workflow Designer
 ms.assetid: 98135077-0f5d-4d16-9337-01094e843537
 ms.openlocfilehash: ed4ccb45e4470eb03cec856e865d4b50220816e3
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48777536"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48836456"
 ---
 # <a name="customizing-the-workflow-design-experience"></a>Kustomizace možností návrhu pracovního postupu
 
