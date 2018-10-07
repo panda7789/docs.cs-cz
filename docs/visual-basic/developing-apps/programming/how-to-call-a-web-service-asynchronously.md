@@ -5,32 +5,32 @@ helpviewer_keywords:
 - asynchronous calls [Visual Basic]
 - Web services [Visual Basic], accessing
 ms.assetid: ff8046f4-f1f2-4d8b-90b7-95e3f7415418
-ms.openlocfilehash: 8968eaa8edd8dee177906a6c801f2f46c2a740d7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bf109780f26ce2fa4d5dbaa63832e765970b5cb4
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33589032"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48842688"
 ---
-# <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a><span data-ttu-id="30c2c-102">Postupy: Asynchronní volání webové služby (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="30c2c-102">How to: Call a Web Service Asynchronously (Visual Basic)</span></span>
-<span data-ttu-id="30c2c-103">Tento příklad připojí obslužnou rutinu pro asynchronní obslužnou rutinu události webové služby, tak, aby bylo možné získat výsledek asynchronní volání metody.</span><span class="sxs-lookup"><span data-stu-id="30c2c-103">This example attaches a handler to a Web service's asynchronous handler event, so that it can retrieve the result of an asynchronous method call.</span></span> <span data-ttu-id="30c2c-104">Tento příklad používá DemoTemperatureService webovou službu v http://www.xmethods.net.</span><span class="sxs-lookup"><span data-stu-id="30c2c-104">This example used the DemoTemperatureService Web service at http://www.xmethods.net.</span></span>  
+# <a name="how-to-call-a-web-service-asynchronously-visual-basic"></a><span data-ttu-id="632c3-102">Postupy: Asynchronní volání webové služby (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="632c3-102">How to: Call a Web Service Asynchronously (Visual Basic)</span></span>
+<span data-ttu-id="632c3-103">Tento příklad připojí obslužnou rutinu pro webovou službu asynchronní obslužné rutiny událostí, tak, aby bylo možné získat výsledku volání asynchronní metody.</span><span class="sxs-lookup"><span data-stu-id="632c3-103">This example attaches a handler to a Web service's asynchronous handler event, so that it can retrieve the result of an asynchronous method call.</span></span> <span data-ttu-id="632c3-104">Tento příklad používá DemoTemperatureService webová služba na `http://www.xmethods.net`.</span><span class="sxs-lookup"><span data-stu-id="632c3-104">This example used the DemoTemperatureService Web service at `http://www.xmethods.net`.</span></span>  
   
- <span data-ttu-id="30c2c-105">Když odkazujete webové služby ve vašem projektu v prostředí Visual Studio integrované vývoj prostředí (IDE), je přidán do `My.WebServices` objekt a rozhraní IDE vygeneruje třídu proxy klienta pro přístup k zadané webové služby</span><span class="sxs-lookup"><span data-stu-id="30c2c-105">When you reference a Web service in your project in the Visual Studio Integrated Development Environment (IDE), it is added to the `My.WebServices` object, and the IDE generates a client proxy class to access a specified Web service</span></span>  
+ <span data-ttu-id="632c3-105">Při odkazování na webovou službu v projektu v Visual Studio integrované vývojové prostředí (IDE), přidá se do `My.WebServices` objektu a rozhraní IDE vytvoří klientskou proxy třídu pro přístup k zadané webové služby</span><span class="sxs-lookup"><span data-stu-id="632c3-105">When you reference a Web service in your project in the Visual Studio Integrated Development Environment (IDE), it is added to the `My.WebServices` object, and the IDE generates a client proxy class to access a specified Web service</span></span>  
   
- <span data-ttu-id="30c2c-106">Třídu proxy umožňuje, abyste mohli volat metody webové služby synchronně, kdy aplikace čeká na dokončení funkce.</span><span class="sxs-lookup"><span data-stu-id="30c2c-106">The proxy class allows you to call the Web service methods synchronously, where your application waits for the function to complete.</span></span> <span data-ttu-id="30c2c-107">Kromě toho proxy serveru vytvoří další členy k usnadnění asynchronní volání metody.</span><span class="sxs-lookup"><span data-stu-id="30c2c-107">In addition, the proxy creates additional members to help call the method asynchronously.</span></span> <span data-ttu-id="30c2c-108">Pro každou funkci webové služby *NameOfWebServiceFunction*, vytvoří proxy *NameOfWebServiceFunction* `Async` podprogramu, *NameOfWebServiceFunction* `Completed` události a *NameOfWebServiceFunction* `CompletedEventArgs` třídy.</span><span class="sxs-lookup"><span data-stu-id="30c2c-108">For each Web service function, *NameOfWebServiceFunction*, the proxy creates a *NameOfWebServiceFunction*`Async` subroutine, a *NameOfWebServiceFunction*`Completed` event, and a *NameOfWebServiceFunction*`CompletedEventArgs` class.</span></span> <span data-ttu-id="30c2c-109">Tento příklad ukazuje, jak používat pro přístup k asynchronní členy `getTemp` funkce DemoTemperatureService webové služby.</span><span class="sxs-lookup"><span data-stu-id="30c2c-109">This example demonstrates how to use the asynchronous members to access the `getTemp` function of the DemoTemperatureService Web service.</span></span>  
+ <span data-ttu-id="632c3-106">Třída proxy umožňují volání metody webové služby synchronně, kdy aplikace čeká na dokončení funkce.</span><span class="sxs-lookup"><span data-stu-id="632c3-106">The proxy class allows you to call the Web service methods synchronously, where your application waits for the function to complete.</span></span> <span data-ttu-id="632c3-107">Kromě toho proxy serveru vytvoří další členy k usnadnění asynchronní volání metody.</span><span class="sxs-lookup"><span data-stu-id="632c3-107">In addition, the proxy creates additional members to help call the method asynchronously.</span></span> <span data-ttu-id="632c3-108">Pro každou funkci webové služby *NameOfWebServiceFunction*, vytvoří proxy *NameOfWebServiceFunction* `Async` podprogramu, *NameOfWebServiceFunction* `Completed` události a *NameOfWebServiceFunction* `CompletedEventArgs` třídy.</span><span class="sxs-lookup"><span data-stu-id="632c3-108">For each Web service function, *NameOfWebServiceFunction*, the proxy creates a *NameOfWebServiceFunction*`Async` subroutine, a *NameOfWebServiceFunction*`Completed` event, and a *NameOfWebServiceFunction*`CompletedEventArgs` class.</span></span> <span data-ttu-id="632c3-109">Tento příklad ukazuje, jak použít asynchronní členy pro přístup k `getTemp` funkce DemoTemperatureService webové služby.</span><span class="sxs-lookup"><span data-stu-id="632c3-109">This example demonstrates how to use the asynchronous members to access the `getTemp` function of the DemoTemperatureService Web service.</span></span>  
   
 > [!NOTE]
->  <span data-ttu-id="30c2c-110">Tento kód nefunguje v webových aplikací, protože nepodporuje ASP.NET `My.WebServices` objektu.</span><span class="sxs-lookup"><span data-stu-id="30c2c-110">This code does not work in Web applications, because ASP.NET does not support the `My.WebServices` object.</span></span>  
+>  <span data-ttu-id="632c3-110">Tento kód nefunguje ve webových aplikacích, protože prostředí ASP.NET nepodporuje `My.WebServices` objektu.</span><span class="sxs-lookup"><span data-stu-id="632c3-110">This code does not work in Web applications, because ASP.NET does not support the `My.WebServices` object.</span></span>  
   
-### <a name="to-call-a-web-service-asynchronously"></a><span data-ttu-id="30c2c-111">Chcete-li asynchronní volání webové služby</span><span class="sxs-lookup"><span data-stu-id="30c2c-111">To call a Web service asynchronously</span></span>  
+### <a name="to-call-a-web-service-asynchronously"></a><span data-ttu-id="632c3-111">Pro asynchronní volání webové služby</span><span class="sxs-lookup"><span data-stu-id="632c3-111">To call a Web service asynchronously</span></span>  
   
-1.  <span data-ttu-id="30c2c-112">Odkaz webovou službu DemoTemperatureService na http://www.xmethods.net.</span><span class="sxs-lookup"><span data-stu-id="30c2c-112">Reference the DemoTemperatureService Web service at http://www.xmethods.net.</span></span> <span data-ttu-id="30c2c-113">Adresa</span><span class="sxs-lookup"><span data-stu-id="30c2c-113">The address is</span></span>  
+1.  <span data-ttu-id="632c3-112">Odkazovat DemoTemperatureService webová služba na `http://www.xmethods.net`.</span><span class="sxs-lookup"><span data-stu-id="632c3-112">Reference the DemoTemperatureService Web service at `http://www.xmethods.net`.</span></span> <span data-ttu-id="632c3-113">Tato adresa</span><span class="sxs-lookup"><span data-stu-id="632c3-113">The address is</span></span>  
   
     ```  
     http://www.xmethods.net/sd/2001/DemoTemperatureService.wsdl  
     ```  
   
-2.  <span data-ttu-id="30c2c-114">Přidání obslužné rutiny události pro `getTempCompleted` událostí:</span><span class="sxs-lookup"><span data-stu-id="30c2c-114">Add an event handler for the `getTempCompleted` event:</span></span>  
+2.  <span data-ttu-id="632c3-114">Přidat obslužnou rutinu události pro `getTempCompleted` události:</span><span class="sxs-lookup"><span data-stu-id="632c3-114">Add an event handler for the `getTempCompleted` event:</span></span>  
   
     ```  
     Private Sub getTempCompletedHandler(ByVal sender As Object,   
@@ -41,15 +41,15 @@ ms.locfileid: "33589032"
     ```  
   
     > [!NOTE]
-    >  <span data-ttu-id="30c2c-115">Nelze použít `Handles` příkaz přidružit obslužné rutiny události s `My.WebServices` události objektu.</span><span class="sxs-lookup"><span data-stu-id="30c2c-115">You cannot use the `Handles` statement to associate an event handler with the `My.WebServices` object's events.</span></span>  
+    >  <span data-ttu-id="632c3-115">Nelze použít `Handles` příkaz přidružení obslužné rutiny události s `My.WebServices` objektu události.</span><span class="sxs-lookup"><span data-stu-id="632c3-115">You cannot use the `Handles` statement to associate an event handler with the `My.WebServices` object's events.</span></span>  
   
-3.  <span data-ttu-id="30c2c-116">Přidat pole, které chcete sledovat, pokud obslužná rutina události přidala `getTempCompleted` událostí:</span><span class="sxs-lookup"><span data-stu-id="30c2c-116">Add a field to track if the event handler has been added to the `getTempCompleted` event:</span></span>  
+3.  <span data-ttu-id="632c3-116">Přidat pole ke sledování, zda obslužná rutina události je přidaný do `getTempCompleted` události:</span><span class="sxs-lookup"><span data-stu-id="632c3-116">Add a field to track if the event handler has been added to the `getTempCompleted` event:</span></span>  
   
     ```  
     Private handlerAttached As Boolean = False  
     ```  
   
-4.  <span data-ttu-id="30c2c-117">Přidání metody pro přidání obslužné rutiny události pro `getTempCompleted` událost, pokud je to nutné a k volání `getTempAsynch` metoda:</span><span class="sxs-lookup"><span data-stu-id="30c2c-117">Add a method to add the event handler to the `getTempCompleted` event, if necessary, and to call the `getTempAsynch` method:</span></span>  
+4.  <span data-ttu-id="632c3-117">Přidejte metodu pro přidání obslužné rutiny události pro `getTempCompleted` událost v případě potřeby a k volání `getTempAsynch` metody:</span><span class="sxs-lookup"><span data-stu-id="632c3-117">Add a method to add the event handler to the `getTempCompleted` event, if necessary, and to call the `getTempAsynch` method:</span></span>  
   
     ```  
     Sub CallGetTempAsync(ByVal zipCode As Integer)  
@@ -63,8 +63,8 @@ ms.locfileid: "33589032"
     End Sub  
     ```  
   
-     <span data-ttu-id="30c2c-118">K volání `getTemp` webové metoda asynchronně, volejte `CallGetTempAsync` metoda.</span><span class="sxs-lookup"><span data-stu-id="30c2c-118">To call the `getTemp` Web method asynchronously, call the `CallGetTempAsync` method.</span></span> <span data-ttu-id="30c2c-119">Po dokončení metody webové služby, hodnoty předána `getTempCompletedHandler` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="30c2c-119">When the Web method finishes, its return value is passed to the `getTempCompletedHandler` event handler.</span></span>  
+     <span data-ttu-id="632c3-118">Volání `getTemp` webovou metodu asynchronně, zavolejte `CallGetTempAsync` metody.</span><span class="sxs-lookup"><span data-stu-id="632c3-118">To call the `getTemp` Web method asynchronously, call the `CallGetTempAsync` method.</span></span> <span data-ttu-id="632c3-119">Po dokončení metody webové služby, vrácená hodnota předána `getTempCompletedHandler` obslužné rutiny události.</span><span class="sxs-lookup"><span data-stu-id="632c3-119">When the Web method finishes, its return value is passed to the `getTempCompletedHandler` event handler.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="30c2c-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="30c2c-120">See Also</span></span>  
- [<span data-ttu-id="30c2c-121">Přístup k aplikačním webovým službám</span><span class="sxs-lookup"><span data-stu-id="30c2c-121">Accessing Application Web Services</span></span>](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
- [<span data-ttu-id="30c2c-122">Objekt My.WebServices</span><span class="sxs-lookup"><span data-stu-id="30c2c-122">My.WebServices Object</span></span>](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+## <a name="see-also"></a><span data-ttu-id="632c3-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="632c3-120">See Also</span></span>  
+ [<span data-ttu-id="632c3-121">Přístup k aplikačním webovým službám</span><span class="sxs-lookup"><span data-stu-id="632c3-121">Accessing Application Web Services</span></span>](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
+ [<span data-ttu-id="632c3-122">Objekt My.WebServices</span><span class="sxs-lookup"><span data-stu-id="632c3-122">My.WebServices Object</span></span>](../../../visual-basic/language-reference/objects/my-webservices-object.md)
