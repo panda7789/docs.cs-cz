@@ -2,12 +2,12 @@
 title: Doporučené postupy hostování Internetové informační služby
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: 0ca5e20b846a1b10f5a52748ff06a4af958b2f4c
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 2cb193cd2f504b5010ede6887e814e0c4d0a1a3c
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47073590"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48840742"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé osvědčené postupy pro hostování služby Windows Communication Foundation (WCF).  
@@ -33,7 +33,7 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
  Zvýšení výkonu střední vrstvy scénáře také vytvořit pomocí asynchronního rozhraní API generovaný `svcutil /a` možnost. `/a` Možnost způsobí, že [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke generování `BeginXXX/EndXXX` metod pro každou operaci služby, které umožňuje vzdálené volání potenciálně dlouhotrvající na vlákna na pozadí.  
   
 ## <a name="wcf-in-multi-homed-or-multi-named-scenarios"></a>U scénářů s více adresami nebo více pojmenované WCF  
- Nasadíte služby WCF v IIS webové farmy služby, kde sadu počítačů sdílet společný externí název (například http://www.contoso.com) ale jednotlivě řešený různé názvy hostitelů (například http://www.contoso.com může směrovat provoz do dvou různých počítačích s názvem http://machine1.internal.contoso.com a http://machine2.internal.contoso.com). Tento scénář nasazení plně podporuje WCF, ale vyžaduje speciální konfigurace web služby IIS, který hostuje služby WCF k zobrazení správné (externí) název hostitele v metadatech služby (Web Services Description Language).  
+ Nasadíte služby WCF v IIS webové farmy služby, kde sadu počítačů sdílet společný externí název (například `http://www.contoso.com`) jsou jednotlivě řešený různé názvy hostitelů, ale (například `http://www.contoso.com` může směrovat provoz do dvou různých počítačích s názvem `http://machine1.internal.contoso.com` a `http://machine2.internal.contoso.com`). Tento scénář nasazení plně podporuje WCF, ale vyžaduje speciální konfigurace web služby IIS, který hostuje služby WCF k zobrazení správné (externí) název hostitele v metadatech služby (Web Services Description Language).  
   
  Ujistěte se, že se zobrazí správný název hostitele v metadatech služby WCF generuje, nakonfigurujte výchozí identitu pro web služby IIS, který je hostitelem služeb WCF pro použití explicitní název hostitele. Počítačů umístěných ve farmě www.contoso.com byste například použít vazbu webu služby IIS z *:80:www.contoso.com pro protokol HTTP a \*: 443:www.contoso.com pro protokol HTTPS.  
   

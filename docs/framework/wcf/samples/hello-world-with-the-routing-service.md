@@ -2,50 +2,50 @@
 title: Hello World se směrovací službou
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: 490d91da22b11c269c4d3c11d376087919a608e0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 52b5c3b167cbbfb032d8e6104a118c5c9384938e
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43519196"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48845772"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World se směrovací službou
-Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, která umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí služby směrování. V této ukázce je Kalkulačka klient nakonfigurovaný pro odesílání zpráv do koncového bodu určeného směrovače. Směrovací služba je nakonfigurována tak, aby přijímal všechny zprávy odeslané do ní a předávají do koncového bodu, který odpovídá službu kalkulačky. Proto jsou zpráv odeslaných z klienta přijatých směrovač a přesměrovala do aktuální Kalkulačka služby. Zprávy ze služby Kalkulačka odesílají zpět do směrovač, který je zase předá zpět do klienta kalkulačky.  
-  
-### <a name="to-use-this-sample"></a>Pro fungování této ukázky  
-  
-1.  Pomocí [!INCLUDE[vs_current_long](../../../../includes/vs-current-long-md.md)], otevřete HelloRoutingService.sln.  
-  
-2.  Stiskněte klávesu F5 nebo CTRL + SHIFT + B.  
-  
+Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, která umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí služby směrování. V této ukázce je Kalkulačka klient nakonfigurovaný pro odesílání zpráv do koncového bodu určeného směrovače. Směrovací služba je nakonfigurována tak, aby přijímal všechny zprávy odeslané do ní a předávají do koncového bodu, který odpovídá službu kalkulačky. Proto jsou zpráv odeslaných z klienta přijatých směrovač a přesměrovala do aktuální Kalkulačka služby. Zprávy ze služby Kalkulačka odesílají zpět do směrovač, který je zase předá zpět do klienta kalkulačky.
+
+### <a name="to-use-this-sample"></a>Pro fungování této ukázky
+
+1.  Pomocí sady Visual Studio 2012, otevřete HelloRoutingService.sln.
+
+2.  Stiskněte klávesu F5 nebo CTRL + SHIFT + B.
+
     > [!NOTE]
-    >  Pokud stisknete klávesu F5, spustí se automaticky Kalkulačka klienta. Pokud stisknete CTRL + SHIFT + B (sestavení), je nutné spustit následující aplikace sami.  
-    >  
-    > 1.  Kalkulačka klienta (./CalculatorClient/bin/client.exe  
-    > 2.  Kalkulačka služby (. / CalculatorService/bin/service.exe)  
-    > 3.  Služba směrování (. / RoutingService/bin/RoutingService.exe)  
-  
-3.  Stisknutím klávesy ENTER klienta.  
-  
-     Byste měli vidět následující výstup:  
-  
-     Add(100,15.99) = 115.99  
-  
-     SUBTRACT(145,76.54) = 68.46  
-  
-     MULTIPLY(9,81.25) = 731.25  
-  
-     Divide(22,7) = 3.14285714285714  
-  
-## <a name="configurable-via-code-or-appconfig"></a>Konfigurovat pomocí kódu nebo souboru App.Config  
- Ukázka lodí umožňují definovat chování ve směrovači použít soubor App.config. Můžete také změnit název souboru App.config na něco jiného, tak, aby nebyl rozpoznán a zrušte komentář u volání metod, které ConfigureRouterViaCode(). Některé z metod má za následek stejné chování směrovače.  
-  
-### <a name="scenario"></a>Scénář  
- Tato ukázka předvádí, směrovač, který funguje jako základní zprávy odeslané. Směrovací služba funguje jako uzel transparentní proxy server nakonfigurovaný tak, aby předávání zpráv přímo do předkonfigurovaného sadu cílové koncové body.  
-  
-### <a name="real-world-scenario"></a>Reálné scénáře  
- Contoso chce zvýšit flexibilitu, které se má v pojmenování, adresy, konfigurace a zabezpečení svých služeb. Provedete to tak, že umístit základní zprávy odeslané před jejich služby tak, aby fungoval jako veřejný internetový koncový bod. To umožňuje umístit další zabezpečení před jejich skutečné služby a usnadňují implementace řešení nebo Správa verzí služby škálované později.  
-  
+    >  Pokud stisknete klávesu F5, spustí se automaticky Kalkulačka klienta. Pokud stisknete CTRL + SHIFT + B (sestavení), je nutné spustit následující aplikace sami.
+    >
+    > 1.  Kalkulačka klienta (./CalculatorClient/bin/client.exe
+    > 2.  Kalkulačka služby (. / CalculatorService/bin/service.exe)
+    > 3.  Služba směrování (. / RoutingService/bin/RoutingService.exe)
+
+3.  Stisknutím klávesy ENTER klienta.
+
+     Byste měli vidět následující výstup:
+
+     Add(100,15.99) = 115.99
+
+     SUBTRACT(145,76.54) = 68.46
+
+     MULTIPLY(9,81.25) = 731.25
+
+     Divide(22,7) = 3.14285714285714
+
+## <a name="configurable-via-code-or-appconfig"></a>Konfigurovat pomocí kódu nebo souboru App.Config
+ Ukázka lodí umožňují definovat chování ve směrovači použít soubor App.config. Můžete také změnit název souboru App.config na něco jiného, tak, aby nebyl rozpoznán a zrušte komentář u volání metod, které ConfigureRouterViaCode(). Některé z metod má za následek stejné chování směrovače.
+
+### <a name="scenario"></a>Scénář
+ Tato ukázka předvádí, směrovač, který funguje jako základní zprávy odeslané. Směrovací služba funguje jako uzel transparentní proxy server nakonfigurovaný tak, aby předávání zpráv přímo do předkonfigurovaného sadu cílové koncové body.
+
+### <a name="real-world-scenario"></a>Reálné scénáře
+ Contoso chce zvýšit flexibilitu, které se má v pojmenování, adresy, konfigurace a zabezpečení svých služeb. Provedete to tak, že umístit základní zprávy odeslané před jejich služby tak, aby fungoval jako veřejný internetový koncový bod. To umožňuje umístit další zabezpečení před jejich skutečné služby a usnadňují implementace řešení nebo Správa verzí služby škálované později.
+
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
 >   

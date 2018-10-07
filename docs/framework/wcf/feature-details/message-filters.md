@@ -5,11 +5,11 @@ helpviewer_keywords:
 - routing [WCF], message filters
 ms.assetid: cb33ba49-8b1f-4099-8acb-240404a46d9a
 ms.openlocfilehash: fc4656a76894eb3a844bc9f2187847fd9eff0ffe
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48780450"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48839102"
 ---
 # <a name="message-filters"></a>Filtry zpráv
 K implementaci, směrování na základě obsahu, směrovací služba používá <xref:System.ServiceModel.Dispatcher.MessageFilter> implementace, které kontrolovat určité části zprávy, jako je například adresu, název koncového bodu nebo konkrétní příkaz XPath. Pokud žádné filtry zpráv součástí [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] vašim potřebám, můžete vytvořit vlastní filtr tak, že vytvoříte novou implementaci základní třídy <xref:System.ServiceModel.Dispatcher.MessageFilter> třídy.  

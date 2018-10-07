@@ -2,12 +2,12 @@
 title: Spolupráce s webovými službami ASMX
 ms.date: 03/30/2017
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
-ms.openlocfilehash: ff1b497dde615e5c14417bd0ad14f1dbfd80d5e2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 58e0a527e853436acf4ab6420d2dd28cbdfbd1fa
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43864534"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48842448"
 ---
 # <a name="interoperating-with-asmx-web-services"></a>Spolupráce s webovými službami ASMX
 Tento příklad ukazuje, jak integrovat existující ASMX webové služby Windows Communication Foundation (WCF) klientské aplikace.  
@@ -46,7 +46,7 @@ public class CalculatorService : System.Web.Services.WebService
     }  
 ```  
   
- Podle konfigurace, služba může získat přístup na adrese http://localhost/servicemodelsamples/service.asmx klientem na stejném počítači. Pro klienty ve vzdálených počítačích pro přístup ke službě je nutné zadat použitím kvalifikovaného názvu domény místo localhost.  
+ Podle konfigurace, služba může získat přístup na adrese `http://localhost/servicemodelsamples/service.asmx` klientem na stejném počítači. Pro klienty ve vzdálených počítačích pro přístup ke službě je nutné zadat použitím kvalifikovaného názvu domény místo localhost.  
   
  Komunikace se provádí prostřednictvím klienta vygenerovaný [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Klient je součástí generatedClient.cs souboru. ASMX služby musí být k dispozici pro generování kódu proxy, protože se používá k načtení aktualizovanými metadaty. Spusťte následující příkaz z příkazového řádku v adresáři klienta ke generování typové proxy.  
   

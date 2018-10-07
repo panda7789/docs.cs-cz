@@ -3,11 +3,11 @@ title: Přehled manipulace a nečinnosti
 ms.date: 03/30/2017
 ms.assetid: dd31b89b-eab6-45a1-8d0b-11e0eb84b234
 ms.openlocfilehash: 93d995d7afec24dedf168274fe29f6a250c0a532
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48793263"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48845811"
 ---
 # <a name="manipulations-and-inertia-overview"></a>Přehled manipulace a nečinnosti
 *Manipulace* povolit uživatelům přesunout, otočit a změnit velikost prvky uživatelského rozhraní (UI) s použitím *manipulátory*. Manipulátor představuje myši nebo (v případě dotykově ovládaný) stylus nebo prstem.  

@@ -1,34 +1,34 @@
 ---
-title: 'Základní komunikace: HTTP HTTPS přenosové kanály'
+title: 'Základní komunikace: HTTP-HTTPS přenosové kanály'
 ms.date: 03/30/2017
 ms.assetid: 6c0a23c9-a663-461c-bdab-58b4d3e23642
-ms.openlocfilehash: fbdb5b350425aad7108402dec939f036e971d053
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4c4a2537ae615943ffac299a8c8cd00c67094360
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33473324"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48844186"
 ---
-# <a name="core-communications-httphttps-transport-channels"></a>Základní komunikace: Protokolu HTTP nebo HTTPS přenosové kanály
-Toto téma uvádí všechny výjimky generované Windows Communication Foundation (WCF) přenosu HTTP a HTTPS kanály.  
+# <a name="core-communications-httphttps-transport-channels"></a>Základní komunikace: Přenosové kanály HTTP/HTTPS
+Toto téma uvádí všechny výjimky generované Windows Communication Foundation (WCF), přenosové kanály HTTP/HTTPS.  
   
 ## <a name="exception-list"></a>Seznam výjimek  
   
-|Kód prostředku|Řetězec prostředku|  
+|Kód zdroje|Řetězec prostředku|  
 |-------------------|---------------------|  
-|DigestExplicitCredsImpersonationLevel|Úroveň zosobnění zadaný byla zadána. Ověřování hodnotou hash HTTP podporuje pouze úroveň 'Zosobnění' při použití s explicitní přihlašovací údaje.|  
-|FramingContentTypeMismatch|Zadaná služba nepodporuje zadaný typ obsahu. Může být neshoda vazby klienta a služby.|  
-|Hosting_SslSettingsMisconfigured|Nastavení protokolu SSL pro službu zadaný neodpovídají definicím služby IIS.|  
-|HttpAuthSchemeAndClientCert|Objekt factory naslouchací proces HTTPS byla nakonfigurována tak, aby vyžadovala klientský certifikát a zadané schéma ověřování. Ale pouze jednu formu ověření klienta, může být nutná najednou.|  
-|HttpReceiveFailure|Došlo k chybě při přijímání odpověď HTTP do zadané. Vazby koncového bodu služby, nemusí být pomocí protokolu HTTP. Další možností je, že kontext požadavku protokolu HTTP se ukončila serverem kvůli vypnutí služby. Zobrazit další podrobnosti v protokolech serveru.|  
-|HttpRegistrationAccessDenied|HTTP nelze zaregistrovat zadanou adresu URL. Váš proces nemá přístupová práva na tento obor názvů (viz http://msdn.microsoft.com/library/default.asp?url=/library/http/http/namespace_reservations_registrations_and_routing.asp podrobnosti).|  
-|HttpRegistrationAlreadyExists|HTTP nelze zaregistrovat zadanou adresu URL. Jiná aplikace již zaregistrován tuto adresu URL s protokolem HTTP. SYS.|  
-|HttpRegistrationPortInUse|HTTP nelze zaregistrovat zadanou adresu URL, protože je zadaný port TCP používá jiná aplikace.|  
-|HttpSendFailure|Došlo k chybě při vytváření zadaný požadavek HTTP. Zkontrolujte, zda je příčinou není neshodou vazeb zabezpečení. Ujistěte se také, že služba není nakonfigurována pro Secure Sockets Layer.|  
-|MessageXmlProtocolError|Vyskytl se problém se souborem XML, který jste získali od sítě. Viz vnitřní výjimka další podrobnosti.|  
-|MissingContentType|Příjemce vrátila chybu, která znamená, že byla v požadavku na zadaný typ obsahu. Viz vnitřní výjimka Další informace.|  
-|ProxyAuthenticationLevelMismatch|Zadat pověření pro ověření proxy serveru HTTP požadavek vzájemné ověřování, který je přísnější než požadavek na ověření cílového serveru.|  
-|ProxyImpersonationLevelMismatch|Zadat pověření pro ověření proxy serveru HTTP úrovně omezení zosobnění, který je přísnější než omezení pro ověření cílového serveru.|  
-|SecureChannelFailure|Nelze vytvořit zabezpečený kanál pro Secure Socket Layer/Transport Layer Security s zadaný autoritou.|  
-|TrustFailure|Nelze navázat vztah důvěryhodnosti pro Secure Socket Layer / Transport Layer Security zabezpečený kanál s zadaný autoritou.|  
-|UseDefaultWebProxyCantBeUsedWithExplicitProxyAddress|Nelze zadat adresou explicitní proxy serveru, jakož i UseDefaultWebProxy = true v vaší HttpTransportBinding elementu.|
+|DigestExplicitCredsImpersonationLevel|Byla zadána úroveň zosobnění zadané. Ověřování algoritmem HTTP Digest podporuje pouze úroveň 'Zosobnění' při použití s explicitním pověřením.|  
+|FramingContentTypeMismatch|Zadaný typ obsahu není podporována zadaná služba. Vazby klienta a služby se pravděpodobně neshodují.|  
+|Hosting_SslSettingsMisconfigured|Nastavení (Secure Sockets Layer) pro zadanou službu neshodují Internetová informační služba.|  
+|HttpAuthSchemeAndClientCert|Výroba naslouchací proces protokolu HTTPS byla nakonfigurována tak, aby vyžadovala certifikát klienta a zadané schéma ověřování. Však pouze jednu formu ověření klienta může vyžadovat najednou.|  
+|HttpReceiveFailure|Během příjmu odpovědi protokolu HTTP na zadaný došlo k chybě. Vazba koncového bodu služby, nemusí být pomocí protokolu HTTP. Další možností je, že byl ji server ukončí kontext požadavku protokolu HTTP z důvodu vypnutí služby. Zobrazit další podrobnosti najdete v protokolech serveru.|  
+|HttpRegistrationAccessDenied|Protokol HTTP nelze zaregistrovat zadanou adresu URL. Váš proces nemá přístupová práva k tomuto oboru názvů (viz [Namespace rezervace, registrace a směrování](/windows/desktop/http/namespace-reservations-registrations-and-routing) podrobnosti).|  
+|HttpRegistrationAlreadyExists|Protokol HTTP nelze zaregistrovat zadanou adresu URL. Jiná aplikace již tuto adresu URL zaregistrovala přes HTTP. SYS.|  
+|HttpRegistrationPortInUse|Protokol HTTP nelze zaregistrovat zadanou adresu URL, protože zadaný port TCP používán jinou aplikací.|  
+|HttpSendFailure|Při vytváření požadavku protokolu HTTP na zadaný došlo k chybě. Ujistěte se, že příčinou není neshodou vazby zabezpečení. Také se ujistěte, že služba není nakonfigurována pro (Secure Sockets Layer).|  
+|MessageXmlProtocolError|Došlo k potížím s XML, který byl přijat ze sítě. Viz vnitřní výjimka pro další podrobnosti.|  
+|MissingContentType|Příjemce vrátil chybu, která označuje, že nebyl nalezen v požadavku na zadaný typ obsahu. Viz vnitřní výjimka pro další informace.|  
+|ProxyAuthenticationLevelMismatch|Pověření pro ověření proxy serveru HTTP určilo požadavek vzájemného ověřování, který je přísnější než požadavek na ověření cílového serveru.|  
+|ProxyImpersonationLevelMismatch|Pověření pro ověření proxy serveru HTTP určilo omezení úrovně zosobnění, který je přísnější než omezení ověření cílového serveru.|  
+|SecureChannelFailure|Nelze vytvořit zabezpečený kanál pro Secure Socket Layer/Transport Layer Security s zadané oprávněním.|  
+|TrustFailure|Nelze navázat vztah důvěryhodnosti pro Secure Socket Layer / Transport Layer Security zabezpečený kanál pomocí zadané oprávnění.|  
+|UseDefaultWebProxyCantBeUsedWithExplicitProxyAddress|Nelze zadat adresou explicitní proxy serveru, jakož i UseDefaultWebProxy = true v elementu vaše HttpTransportBinding.|

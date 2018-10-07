@@ -18,11 +18,11 @@ ms.assetid: 05026813-f3bd-4d7c-9e0b-fc588eb3d114
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 08715f2824dcb7dbc2c6aa26fd3bd8bd71b97038
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48779217"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48845083"
 ---
 # <a name="how-to-create-a-public-private-key-pair"></a>Postupy: vytvoření páru veřejného a privátního klíče
 

@@ -2,12 +2,12 @@
 title: 'Instalaci F #'
 description: 'Informace o instalaci F # založeny na vašem prostředí.'
 ms.date: 08/28/2018
-ms.openlocfilehash: 6c10b958e35bf7925965d076a48839b0ce19d2c0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 909e1c07ff7f6d52db77a987639d1c749146fdca
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515894"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48844004"
 ---
 # <a name="install-f"></a>Instalaci F # #
 
@@ -17,13 +17,13 @@ Můžete nainstalovat F # několika různými způsoby v závislosti na vašem p
 
 Pokud stahujete [sady Visual Studio](https://visualstudio.microsoft.com/) poprvé, bude nejprve nainstalovat Instalační program sady Visual Studio. Instalace odpovídající SKU sady Visual Studio pomocí instalačního programu. Pokud už máte nainstalovaný, klikněte na tlačítko **změnit**.
 
-Dále uvidíte seznam úloh. Vyberte **vývoj pro ASP.NET a web**, který nainstaluje podporu F #, podpora .NET Core a projekty F # podpora pro ASP.NET Core.
+Dále uvidíte seznam úloh. Vyberte **vývoj pro ASP.NET a web** instalace podporu F # a .NET Core pro projekty ASP.NET Core.
 
 Klepnutím na tlačítko **změnit** v dolní pravé straně.  Tím se nainstaluje všechno, co jste vybrali. Pak můžete otevřít Visual Studio 2017 s podporou jazyka F # kliknutím **spuštění**.
 
 ## <a name="install-f-with-visual-studio-for-mac"></a>Instalaci F # pomocí sady Visual Studio pro Mac
 
-F # je nainstalovaný ve výchozím nastavení v [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), bez ohledu na to, konfigurace, které zvolíte.
+F # je nainstalovaný ve výchozím nastavení v [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/), bez ohledu na to, konfiguraci, kterou zvolíte.
 
 Po dokončení instalace zvolte možnost "Spustit Visual Studio". Také ho můžete spustit v systému macOS prostřednictvím hledání.
 

@@ -2,12 +2,12 @@
 title: Dělení na vlákna (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: 704bb04b-ff23-471d-ab12-3cec1c2bca59
-ms.openlocfilehash: f477a36c6ffa0b5a809c8ba899b21d19a8c9a2d8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 366c88db5d229120b1e626f275b4eeb8ecd42dba
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861943"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48844992"
 ---
 # <a name="threading-visual-basic"></a>Dělení na vlákna (Visual Basic)
 Práce s vlákny umožňuje programu jazyka Visual Basic k provedení souběžné zpracování tak, že máte více než jednu operaci najednou. Například můžete dělení na vlákna pro monitorování vstup od uživatele, provedení úlohy na pozadí a zpracování současných vstupů.  
@@ -37,5 +37,4 @@ Práce s vlákny umožňuje programu jazyka Visual Basic k provedení souběžn�
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Synchronizace vláken (Visual Basic)](../../../../visual-basic/programming-guide/concepts/threading/thread-synchronization.md)|Popisuje, jak řídit interakce vlákna.|  
 |[Dělení na vlákna](../../../../standard/threading/index.md)|Popisuje, jak implementovat práce s vlákny v rozhraní .NET Framework.|

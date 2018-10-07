@@ -2,12 +2,12 @@
 title: Poskytovatel WMI
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: c3eb97537706282491de1863224e1502d6b56fda
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 7947d9a1bedfe7a2a550a7b4d52b3cf5a8f40126
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45617931"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48839395"
 ---
 # <a name="wmi-provider"></a>Poskytovatel WMI
 Tento příklad ukazuje, jak shromažďovat data ze služby Windows Communication Foundation (WCF) za běhu pomocí zprostředkovatele Windows Management Instrumentation (WMI), který je součástí WCF. Tato ukázka také ukazuje, jak přidat ke službě WMI objekt definovaný uživatelem. Ukázka aktivuje zprostředkovatele rozhraní WMI na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a ukazuje, jak shromažďovat data z `ICalculator` service za běhu.  
@@ -125,7 +125,7 @@ cscript EnumerateCustomObjects.js
   
 2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Publikování služby schématu WMI spuštěním InstallUtil.exe (výchozí umístění pro InstallUtil.exe je "% WINDIR%\Microsoft.NET\Framework\v4.0.30319") na service.dll soubor v adresáři hostování. Tento krok je pouze potřeba provést, pokud byly provedeny změny do souboru service.dll. Další informace najdete v tématu poskytuje informace o správě instrumentace aplikace v: http://msdn2.microsoft.com/library/ms186147.aspx v části "Jak na: publikování schéma k rozhraní WMI pro instrumentované aplikace".  
+3.  Publikování služby schématu WMI spuštěním InstallUtil.exe (výchozí umístění pro InstallUtil.exe je "% WINDIR%\Microsoft.NET\Framework\v4.0.30319") na service.dll soubor v adresáři hostování. Tento krok je pouze potřeba provést, pokud byly provedeny změny do souboru service.dll.
   
 4.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   

@@ -3,11 +3,11 @@ title: Transakce pracovního postupu
 ms.date: 03/30/2017
 ms.assetid: 6081fb02-c0f2-483d-97b8-f3b7dc03011d
 ms.openlocfilehash: e2a0c301abac562904e976fe09e5a68697b191e5
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48779956"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48838088"
 ---
 # <a name="workflow-transactions"></a>Transakce pracovního postupu
 

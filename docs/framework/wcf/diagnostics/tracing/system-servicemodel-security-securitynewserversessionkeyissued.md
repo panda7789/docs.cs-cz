@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 2fccc492-61ea-45a8-8f1b-be65dedc5e46
 author: BrucePerlerMS
 ms.openlocfilehash: 8d69df947ca97c1dc1e6601cb27c8b777d701eef
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028992"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48842512"
 ---
 # <a name="systemservicemodelsecuritysecuritynewserversessionkeyissued"></a>System.ServiceModel.Security.SecurityNewServerSessionKeyIssued
 System.ServiceModel.Security.SecurityNewServerSessionKeyIssued  

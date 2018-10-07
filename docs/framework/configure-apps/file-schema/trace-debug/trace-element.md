@@ -13,11 +13,11 @@ ms.assetid: 7931c942-63c1-47c3-a045-9d9de3cacdbf
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 55a7eb431432b67b3252853d14bf93be304ee883
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48780814"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48845434"
 ---
 # <a name="lttracegt-element"></a>&lt;trasování&gt; – Element
 Obsahuje moduly pro naslouchání, které shromažďování, ukládání a směrovat trasovací zprávy.  

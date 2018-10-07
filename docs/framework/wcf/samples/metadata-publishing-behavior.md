@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, metadata publishing sample
 - Metadata Publishing Behaviors Sample [Windows Communication Foundation]
 ms.assetid: 78c13633-d026-4814-910e-1c801cffdac7
-ms.openlocfilehash: c3e26454cc9b29620d80a86df7d7aee131e18200
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b728d1c5a794fa6e0cadef136050d8fa31fb4afe
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197080"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48838790"
 ---
 # <a name="metadata-publishing-behavior"></a>Chování publikování metadat
 Ukázka chování publikování metadat ukazuje, jak řídit funkce publikování metadat služby. Pokud chcete zabránit neúmyslnému zveřejnění metadat služby potenciálně citlivých, výchozí konfigurace pro služby Windows Communication Foundation (WCF) zakáže publikování metadat. Toto chování je ve výchozím nastavení zabezpečený, ale také znamená, že nemůžete použít metadat importovat nástroj (například Svcutil.exe) ke generování kódu klienta, který je potřeba volat službu, není-li v konfiguraci není explicitně povoleno chování publikování metadat služby.  
@@ -23,7 +23,7 @@ Ukázka chování publikování metadat ukazuje, jak řídit funkce publikován�
 > [!NOTE]
 >  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
- Pro službu, která zpřístupňují metadata a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> musí být nakonfigurovaná na službu. Když toto chování je k dispozici, můžete publikovat metadat nakonfigurováním zveřejnit koncový bod <xref:System.ServiceModel.Description.IMetadataExchange> kontrakt jako implementaci protokolu WS-MetadataExchange (MEX). Pro zjednodušení této smlouvy se předala zkrácený konfigurační název "IMetadataExchange". Této ukázce se používá `mexHttpBinding`, což je usnadnění standardní vazbu, která je ekvivalentní `wsHttpBinding` s režimem zabezpečení nastaveno `None`. Relativní adresa "mex" se používá koncový bod, který se při vyřešení proti základní služby adresu výsledkem adresy koncového bodu z http://localhost/servicemodelsamples/service.svc/mex. Následuje ukázka konfigurace chování:  
+ Pro službu, která zpřístupňují metadata a <xref:System.ServiceModel.Description.ServiceMetadataBehavior> musí být nakonfigurovaná na službu. Když toto chování je k dispozici, můžete publikovat metadat nakonfigurováním zveřejnit koncový bod <xref:System.ServiceModel.Description.IMetadataExchange> kontrakt jako implementaci protokolu WS-MetadataExchange (MEX). Pro zjednodušení této smlouvy se předala zkrácený konfigurační název "IMetadataExchange". Této ukázce se používá `mexHttpBinding`, což je usnadnění standardní vazbu, která je ekvivalentní `wsHttpBinding` s režimem zabezpečení nastaveno `None`. Relativní adresa "mex" se používá koncový bod, který se při vyřešení proti základní služby adresu výsledkem adresy koncového bodu z `http://localhost/servicemodelsamples/service.svc/mex`. Následuje ukázka konfigurace chování:  
   
 ```xml  
 <behaviors>  
@@ -55,7 +55,7 @@ Ukázka chování publikování metadat ukazuje, jak řídit funkce publikován�
           contract="IMetadataExchange" />  
 ```  
   
- Tato ukázka nastaví <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`, což také poskytuje metadata služby pomocí HTTP GET. Pokud chcete povolit koncový bod metadat HTTP GET, služba musí mít základní adresu HTTP. Řetězec dotazu `?wsdl` se používá na základní adresu služby pro přístup k metadatům. Například pokud chcete zobrazit WSDL pro služby ve webovém prohlížeči použijete adresu http://localhost/servicemodelsamples/service.svc?wsdl. Alternativně můžete použít toto chování ke zveřejnění metadat prostřednictvím protokolu HTTPS tak, že nastavíte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> k `true`. To vyžaduje základní adresu HTTPS.  
+ Tato ukázka nastaví <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> vlastnost `true`, což také poskytuje metadata služby pomocí HTTP GET. Pokud chcete povolit koncový bod metadat HTTP GET, služba musí mít základní adresu HTTP. Řetězec dotazu `?wsdl` se používá na základní adresu služby pro přístup k metadatům. Například pokud chcete zobrazit WSDL pro služby ve webovém prohlížeči použijete adresu `http://localhost/servicemodelsamples/service.svc?wsdl`. Alternativně můžete použít toto chování ke zveřejnění metadat prostřednictvím protokolu HTTPS tak, že nastavíte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> k `true`. To vyžaduje základní adresu HTTPS.  
   
  Pro přístup k použití koncového bodu služby MEX [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
@@ -63,7 +63,7 @@ Ukázka chování publikování metadat ukazuje, jak řídit funkce publikován�
   
  Tím se vytvoří klienta na základě metadat služby.  
   
- Chcete-li získat přístup k metadatům služby pomocí HTTP GET, přejděte v prohlížeči na http://localhost/servicemodelsamples/service.svc?wsdl.  
+ Chcete-li získat přístup k metadatům služby pomocí HTTP GET, přejděte v prohlížeči na `http://localhost/servicemodelsamples/service.svc?wsdl`.  
   
  Pokud odeberete toto chování a pokusu o otevření služby, obdržíte výjimku. K této chybě dochází, protože bez chování, koncový bod nakonfigurovaný s `IMetadataExchange` smlouvy nemá žádnou implementaci.  
   

@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 4712a888-f154-4395-8887-ef14a88a6497
 author: BrucePerlerMS
 ms.openlocfilehash: 4cd86a858223997ed379d2b26518e14f6d3ebb3e
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037200"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48845356"
 ---
 # <a name="ltaddgt"></a>&lt;add&gt;
 Přidá obslužnou rutinu tokenu zabezpečení do kolekce obslužné rutiny tokenů.  

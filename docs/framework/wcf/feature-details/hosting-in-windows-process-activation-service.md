@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: 0fe38b690d093e5a0bbe90d2b62e56b5d0cb4816
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: d51cd3bcef44c32c24630c1a3a332b2144a41469
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44188381"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48839420"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>Hostování v Aktivační službě procesů systému Windows
 Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovních procesů, které obsahují tento hostitel služby Windows Communication Foundation (WCF) aplikace. Model zpracování služby WAS zobecňuje [!INCLUDE[iis601](../../../../includes/iis601-md.md)] model procesu pro server HTTP odebráním závislosti na protokolu HTTP. To umožňuje službám WCF pomocí protokolu HTTP a jiných protokolů než HTTP, jako je například Net.TCP v hostitelském prostředí, který podporuje aktivaci založenou na zprávách a nabízí schopnost hostovat velký počet aplikací na daném počítači.  
@@ -45,8 +45,8 @@ Služby Aktivace procesu Windows (WAS) spravuje aktivace a dobu života pracovn�
   
  Služby a prostředky v rámci aplikace lze také řešit. V rámci aplikace prostředků aplikace se tak vyřeší, relativní k cestě základní aplikace. Předpokládejme například, že společnosti na contoso.com název počítače má vazby webu pro protokoly HTTP i protokol Net.TCP. Také Předpokládejme, že lokality obsahuje jednu aplikaci v /Billing, která poskytuje službu na GetOrders.svc. Potom Pokud služba GetOrders.svc vystavena koncového bodu s relativní adresu SecureEndpoint, koncový bod služby by vystavit na následující dva identifikátory URI:  
   
- http://contoso.com/Billing/GetOrders.svc/SecureEndpoint  
-NET.TCP://contoso.com/Billing/GetOrders.svc/SecureEndpoint  
+- `http://contoso.com/Billing/GetOrders.svc/SecureEndpoint`
+- `net.tcp://contoso.com/Billing/GetOrders.svc/SecureEndpoint`
   
 ## <a name="the-was-runtime"></a>WAS modulu Runtime  
  Aplikace jsou uspořádány do lokality pro účely řešení a správy. V době běhu aplikace jsou také seskupeny do fondů aplikací. Fond aplikací může zastřešovat i různým aplikacím z mnoha různých lokalit. Všechny aplikace ve fondu aplikací sdílejí společnou sadu vlastností za běhu. Například všechny jsou spouštěny pod stejnou verzi modulu common language runtime (CLR) a všechny sdílejí společnou identitu procesu. Každý fond aplikací odpovídá instance pracovního procesu (w3wp.exe). Každé spravované aplikace běžících v rámci fondu sdílených aplikací je izolovaná od jiných aplikací prostřednictvím CLR AppDomain.  

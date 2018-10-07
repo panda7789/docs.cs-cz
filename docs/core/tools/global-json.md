@@ -5,12 +5,12 @@ author: mairaw
 ms.author: mairaw
 ms.date: 07/30/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: 8241b3afb518acf237c7b6181085e19576e5ce2f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 05ec296c4c8210c63c7c1b5ce63ef598ca6ac719
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43778466"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48838075"
 ---
 # <a name="globaljson-overview"></a>Přehled Global.JSON
 
@@ -96,12 +96,12 @@ S .NET Core SDK byl nalezen 1.x, pokud jste zadali, verzi a přesná shoda není
 ## <a name="troubleshooting-build-warnings"></a>Řešení potíží s upozorněními sestavení
 
 > [!WARNING]
-> Pracujete s předběžnou verzi .NET Core SDK. Verze sady SDK prostřednictvím souboru global.json můžete definovat v aktuálním projektu. Informace najdete na https://go.microsoft.com/fwlink/?linkid=869452
+> Pracujete s předběžnou verzi .NET Core SDK. Verze sady SDK prostřednictvím souboru global.json můžete definovat v aktuálním projektu. Informace najdete na <https://go.microsoft.com/fwlink/?linkid=869452>
 
 Toto upozornění signalizuje, že váš projekt se kompiluje ve verzi preview sady .NET Core SDK, jak je vysvětleno v [pravidel](#matching-rules) oddílu. Verze .NET core SDK mají historie a bez závazků toho, že vysoce kvalitní. Nicméně, pokud už nechcete používat verzi preview, přidejte *global.json* soubor struktuře hierarchie projektu zadat verzi sady SDK, která se má použít a použijte `dotnet --list-sdks` potvrďte, že na svém počítači je nainstalována verze. Po vydání nové verze, na použití nové verze, buď odeberte *global.json* souboru nebo ji chcete používat novější verzi.
 
 > [!WARNING]
-> Při spuštění projektu "{výchozí projekt}" cíleného na rozhraní framework '. NETCoreApp' verze {targetFrameworkVersion}. Tato verze nástroje příkazového řádku .NET Core Entity Framework podporuje pouze verze 2.0 nebo vyšší. Informace o používání starší verze nástrojů najdete v tématu https://go.microsoft.com/fwlink/?linkid=871254
+> Při spuštění projektu "{výchozí projekt}" cíleného na rozhraní framework '. NETCoreApp' verze {targetFrameworkVersion}. Tato verze nástroje příkazového řádku .NET Core Entity Framework podporuje pouze verze 2.0 nebo vyšší. Informace o používání starší verze nástrojů najdete v tématu <https://go.microsoft.com/fwlink/?linkid=871254>
 
 Spouští se sadou .NET Core SDK 2.1 (vs. 2.1.300) `dotnet ef` příkaz je zahrnutý v sadě SDK. Toto upozornění signalizuje, že váš projekt cílí na EF Core 1.0 a 1.1, který není kompatibilní s .NET Core SDK 2.1 a novějších verzích. Chcete-li zkompilovat váš projekt, nainstalujte .NET Core SDK 2.0 (vs. 2.1.201) a starších na vašem počítači a definovat požadovanou verzi sady SDK pomocí *global.json* souboru. Další informace o `dotnet ef` naleznete [nástroje příkazového řádku .NET Core EF](/ef/core/miscellaneous/cli/dotnet).
 

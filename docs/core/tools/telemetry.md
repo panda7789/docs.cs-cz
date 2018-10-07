@@ -4,12 +4,12 @@ description: Seznamte se s funkcemi telemetrie .NET Core SDK, které shromažďu
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2018
-ms.openlocfilehash: b60fc9d9d619334269343fd858a782cdfeb09ba4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a20d79e132726cb342064b681218ee568fab2c13
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513337"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48841613"
 ---
 # <a name="net-core-sdk-telemetry"></a>Telemetrická data sady SDK .NET core
 
@@ -106,7 +106,7 @@ Je distribuce Microsoftu .NET Core licenci [smlouva EULA KNIHOVNY MICROSOFT .NET
 
 [Balíčky .NET NuGet](https://www.nuget.org/profiles/dotnetframework) používají stejné licence, ale nepovolí telemetrie (naleznete v tématu [oboru](#scope)).
 
-> 2. DATA. Software může shromažďovat informace o vás a vaše užívání tohoto softwaru a zasílat je společnosti Microsoft. Microsoft může použít tyto informace k vylepšování našich produktů a služeb. Můžete získat další informace o shromažďování dat a používat v dokumentaci nápovědy a v prohlášení o ochraně osobních údajů na adrese http://go.microsoft.com/fwlink/?LinkId=528096. Pracuje vaše užívání tohoto softwaru vyjadřujete souhlas s těmito postupy.
+> 2. DATA. Software může shromažďovat informace o vás a vaše užívání tohoto softwaru a zasílat je společnosti Microsoft. Microsoft může použít tyto informace k vylepšování našich produktů a služeb. Můžete získat další informace o shromažďování dat a používat v dokumentaci nápovědy a v prohlášení o ochraně osobních údajů na adrese <http://go.microsoft.com/fwlink/?LinkId=528096>. Pracuje vaše užívání tohoto softwaru vyjadřujete souhlas s těmito postupy.
 
 ## <a name="disclosure"></a>Zpřístupnění
 

@@ -8,23 +8,23 @@ helpviewer_keywords:
 - strings [Visual Basic], converting to arrays
 - string conversion [Visual Basic], arrays
 ms.assetid: 1b54b686-ab29-413b-adce-6bd5422376eb
-ms.openlocfilehash: c109143601e304b1ec15a60c71d65fe6bd15aae8
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: cc12b70cddcb93a72b4421a8ddd93542ef84f55b
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33648616"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48845187"
 ---
 # <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a>Postupy: Převod řetězce na pole znaků v jazyce Visual Basic
-Někdy je užitečné používat data o znaky v řetězec vašeho a pozice z těchto znaků v řetězci, například když analyzujete řetězec. Tento příklad ukazuje, jak můžete získat pole znaky v řetězci voláním řetězec <xref:System.String.ToCharArray%2A> metoda.  
+Někdy je užitečné mít data o znaky v váš řetězec a umístění těchto znaků v řetězci, například když je analýza řetězce. Tento příklad ukazuje, jak získat pole znaků v řetězci pomocí volání řetězce <xref:System.String.ToCharArray%2A> metody.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad ukazuje, jak rozdělit řetězec do `Char` pole a jak rozdělit řetězec do `String` pole jeho textových znaků Unicode. Důvody, proč tento rozdíl je, že znaky znakové sady Unicode text může skládat ze dvou nebo více `Char` znaků (například náhradní pár nebo kombinování sekvenci znaků). Další informace najdete v tématu <xref:System.Globalization.TextElementEnumerator> a "Ve standardu Unicode" na http://www.unicode.org.  
+ Tento příklad ukazuje, jak rozdělit řetězec do `Char` pole a jak rozdělit řetězec do `String` pole jeho textové znaky kódování Unicode. Důvod pro tento rozdíl je, že znaky kódování Unicode se může skládat ze dvou nebo více `Char` znaky (například náhradní pár nebo kombinování posloupnosti znaků). Další informace najdete v tématu <xref:System.Globalization.TextElementEnumerator> a [standardu Unicode](https://www.unicode.org/standard/standard.html).  
   
  [!code-vb[VbVbalrStrings#75](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-a-string-to-an-array-of-characters_1.vb)]  
   
 ## <a name="example"></a>Příklad  
- Je obtížné rozdělit řetězec na jeho text znaky znakové sady Unicode, ale to je nezbytné, pokud potřebujete informace o vizuální reprezentace řetězec. Tento příklad používá <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> metodu za účelem získání informací o textových znaků Unicode, které tvoří řetězec.  
+ Je obtížnější rozdělit řetězec na jeho textové znaky Unicode, ale to je nezbytné, pokud potřebujete informace o bude obsahovat vizuální reprezentaci řetězce. V tomto příkladu <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> metodu k získání informací o textové znaky Unicode, které společně tvoří řetězec.  
   
  [!code-vb[VbVbalrStrings#76](../../../../visual-basic/language-reference/functions/codesnippet/VisualBasic/how-to-convert-a-string-to-an-array-of-characters_2.vb)]  
   
@@ -32,5 +32,5 @@ Někdy je užitečné používat data o znaky v řetězec vašeho a pozice z tě
  <xref:System.String.Chars%2A>  
  <xref:System.Globalization.StringInfo?displayProperty=nameWithType>  
  [Postupy: Přístup ke znakům v řetězcích](../../../../visual-basic/programming-guide/language-features/strings/how-to-access-characters-in-strings.md)  
- [Převod mezi řetězci a ostatními typy dat v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  
+ [Převod mezi řetězci a ostatními datovými typy v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)  
  [Řetězce](../../../../visual-basic/programming-guide/language-features/strings/index.md)

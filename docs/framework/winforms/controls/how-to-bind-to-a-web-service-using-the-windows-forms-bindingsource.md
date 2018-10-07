@@ -12,12 +12,12 @@ helpviewer_keywords:
 - controls [Windows Forms], binding to Web service
 - BindingSource component [Windows Forms], examples
 ms.assetid: ee261207-4573-4cb9-a8cb-5185037e0fba
-ms.openlocfilehash: fdbf1e1b419e5ad296376ec1f06fd361077895c4
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 34d40cb9b0f4929330473ae0dc2f4c12dd309270
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46702891"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48840164"
 ---
 # <a name="how-to-bind-to-a-web-service-using-the-windows-forms-bindingsource"></a>Postupy: Připojení k webové službě pomocí Windows Forms BindingSource
 Pokud chcete vytvořit vazbu ovládacího prvku Windows Form do výsledků získaných z volání webové služby XML, můžete použít <xref:System.Windows.Forms.BindingSource> komponenty. Tento postup je podobný vazby <xref:System.Windows.Forms.BindingSource> komponentu do typu. Je nutné vytvořit proxy server na straně klienta, který obsahuje metody a typy, které jsou vystavené webové služby. Generování proxy server na straně klienta z webové služby (.asmx) samotný nebo jeho soubor webové služby WSDL (Description Language). Váš proxy server na straně klienta navíc musí vystavit pole komplexní typy použité ve webové službě jako veřejné vlastnosti. Pak vytvoříte vazbu <xref:System.Windows.Forms.BindingSource> na jeden z typů v webové služby serveru proxy.  
@@ -32,7 +32,7 @@ Pokud chcete vytvořit vazbu ovládacího prvku Windows Form do výsledků získ
   
 4.  Pomocí nástroje WSDL zadat `wsdl` a adresa URL pro .asmx nebo souboru WSDL pro webovou službu, za nímž následuje obor názvů vaší aplikace a volitelně jazyk k práci používáte.  
   
-     Následující příklad kódu používá webovou službu v http://webservices.eraserver.net/zipcoderesolver/zipcoderesolver.asmx. Například pro typ jazyka C# `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService`, nebo pro typ jazyka Visual Basic `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService /language:VB`. Předáním cesty do jazyka WSDL jako argument nástroj vygeneruje proxy server na straně klienta ve stejném adresáři a obor názvů jako vaši aplikaci v daném jazyce. Pokud používáte Visual Studio, přidejte soubor do projektu.  
+     Následující příklad kódu používá webovou službu v `http://webservices.eraserver.net/zipcoderesolver/zipcoderesolver.asmx`. Například pro typ jazyka C# `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService`, nebo pro typ jazyka Visual Basic `wsdl http://webservices.eraserver.net.zipcoderesolver/zipcoderesolver.asmx /n:BindToWebService /language:VB`. Předáním cesty do jazyka WSDL jako argument nástroj vygeneruje proxy server na straně klienta ve stejném adresáři a obor názvů jako vaši aplikaci v daném jazyce. Pokud používáte Visual Studio, přidejte soubor do projektu.  
   
 5.  Vyberte typ proxy serveru na straně klienta k vytvoření vazby.  
   

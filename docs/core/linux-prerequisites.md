@@ -5,11 +5,11 @@ author: jralexander
 ms.author: johalex
 ms.date: 08/20/2018
 ms.openlocfilehash: 4939dfb642c2aef9da593a193f42334f1d57e067
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580731"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48842265"
 ---
 # <a name="prerequisites-for-net-core-on-linux"></a>Požadavky pro .NET Core v Linuxu
 

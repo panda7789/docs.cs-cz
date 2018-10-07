@@ -2,22 +2,22 @@
 title: '&lt;localIssuer&gt;'
 ms.date: 03/30/2017
 ms.assetid: 26bdd0df-0e7d-4b9e-bbeb-f28c53769385
-ms.openlocfilehash: 9118d1462d4790bb457fc8dc2f7c74b6e69de43a
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: cb5afb0e73ad0a07ea43f06915f4e477d7f8f985
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32749111"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48841550"
 ---
 # <a name="ltlocalissuergt"></a>&lt;localIssuer&gt;
-Určuje adresu a vazba místního vystavitele, který se má použít k získání tokenu zabezpečení.  
+Určuje adresu a vazbu lokálního vystavitele, který se má použít k získání tokenu zabezpečení.  
   
  \<system.ServiceModel>  
 \<chování >  
 část endpointBehaviors  
 \<chování >  
-\<clientCredentials >  
-\<issuedToken >  
+\<třídu clientCredentials >  
+\<třídy issuedToken >  
 \<localIssuer >  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -29,34 +29,34 @@ Určuje adresu a vazba místního vystavitele, který se má použít k získán
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|adresa|Požadovaný řetězec. Určuje identifikátor URI místního vystavitele.|  
-|vazba|Volitelný řetězec. Jeden z vazby poskytované systémem. Seznam najdete v tématu [System-Provided vazby](../../../../../docs/framework/wcf/system-provided-bindings.md).|  
-|bindingConfiguration|Volitelný řetězec. Určuje konfiguraci vazby v konfiguračním souboru nalézt.|  
+|adresa|Povinný řetězec. Určuje identifikátor URI místního vystavitele.|  
+|vazba|Volitelný řetězec. Jedna z vazeb poskytovaných systémem. Seznam najdete v tématu [System-Provided vazby](../../../../../docs/framework/wcf/system-provided-bindings.md).|  
+|bindingConfiguration|Volitelný řetězec. Určuje konfiguraci vazby nacházející se v konfiguračním souboru.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje informace o identitě pro místního vystavitele.|  
-|[\<hlavičky >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce hlavičky adresy, které jsou požadovány k správně adres místního vystavitele. Můžete použít `add` – klíčové slovo přidat hlavičku do této kolekce.|  
+|[\<identity >](../../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)|Určuje informace o identitě pro lokálního vystavitele.|  
+|[\<záhlaví >](../../../../../docs/framework/configure-apps/file-schema/wcf/headers-element.md)|Kolekce záhlaví adres nutných ke správnému adresování lokálního vystavitele. Můžete použít `add` – klíčové slovo do této kolekce přidat hlavičku.|  
   
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<issuedToken >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní token používaný k ověření klienta ke službě.|  
+|[\<třídy issuedToken >](../../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)|Určuje vlastní token pro ověření klienta ke službě.|  
   
 ## <a name="remarks"></a>Poznámky  
- Při získávání tokenu vydaných z zabezpečení tokenu služby (STS), klient aplikace musí být nakonfigurována s adresou a vazbou, který bude používat pro komunikaci se služba tokenů zabezpečení. Když <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL služby tokenů zabezpečení, nebo pokud je adresa vystavitele federované vazby http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous nebo `null`, kanálu klienta Windows Communication Foundation (WCF) používá hodnoty zadané ve `address`a `binding` ke komunikaci s služby tokenů zabezpečení získat vydaný token. Další informace týkající se konfigurace místního vystavitele najdete v tématu [postupy: Konfigurace místního vystavitele](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
+ Při získávání vydaný token z tokenu služby zabezpečení (STS), klientská aplikace musí být nakonfigurované s adresou a vazba k použití pro komunikaci pomocí služby STS. Když <xref:System.ServiceModel.WSFederationHttpBinding> neposkytuje adresu URL pro službu tokenů zabezpečení, nebo když je adresa vystavitele federované vazby `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` nebo `null`, kanálu klienta Windows Communication Foundation (WCF) používá hodnoty zadané ve `address`a `binding` ke komunikaci s služby STS pro získání vydaný token. Další informace týkající se konfigurace místního vystavitele najdete v tématu [postupy: Konfigurace místního vystavitele](../../../../../docs/framework/wcf/feature-details/how-to-configure-a-local-issuer.md).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nastavuje `address`, `binding`, a `bindingConfiguration` atributy `localIssuer` elementu.  
+ Následující příklad nastaví `address`, `binding`, a `bindingConfiguration` atributy `localIssuer` elementu.  
   
 ```xml  
 <system.serviceModel>  

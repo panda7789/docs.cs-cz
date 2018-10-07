@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 8cd3564e5240ec5a8783edb336957549be27ea6a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 343b9cc23f9d72d75a83ad785a3d565b8f5704e7
+ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47203460"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48842682"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace vzoru Circuit Breaker
 
@@ -96,7 +96,7 @@ Pro instanci Jakmile je aplikace spuštěna, můžete povolit middleware tím, �
 
 `http://localhost:5103/failing?enable` 
 
-Potom můžete zkontrolovat stav použitím tohoto identifikátoru URI http://localhost:5103/failing, jak ukazuje obrázek 10 až 4.
+Potom můžete zkontrolovat stav použitím tohoto identifikátoru URI `http://localhost:5103/failing`, jak ukazuje obrázek 10 až 4.
 
 ![](./media/image4.png)
 

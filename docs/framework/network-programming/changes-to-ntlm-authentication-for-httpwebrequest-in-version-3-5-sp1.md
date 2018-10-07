@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 8bf0b428-5a21-4299-8d6e-bf8251fd978a
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: b679c137d31c1212e1e6c82fd41f89b9de7a18d4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: d67dec8814dc659e012b55439c2c8debd21e03ed
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47231153"
+ms.lasthandoff: 10/06/2018
+ms.locfileid: "48844797"
 ---
 # <a name="changes-to-ntlm-authentication-for-httpwebrequest-in-version-35-sp1"></a>Změny v ověřování NTLM pro HttpWebRequest ve verzi 3.5 SP1
 Byly provedeny změny zabezpečení v rozhraní .NET Framework verze 3.5 SP1 a novější, které ovlivňují jak integrované ověřování zařizuje služba Windows <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Security.NegotiateStream>, a související třídy v oboru názvů System.Net. Tyto změny mohou ovlivnit aplikace, které používají tyto třídy pro vytvoření webových požadavků a přijímání odpovědí, kde se používá integrované ověřování Windows, které jsou založené na NTLM. Tato změna může ovlivnit, webové servery a klientské aplikace, které jsou nakonfigurovány pro použití integrovaného ověřování Windows.  
@@ -22,7 +22,7 @@ Byly provedeny změny zabezpečení v rozhraní .NET Framework verze 3.5 SP1 a n
 ## <a name="changes"></a>Změny  
  Proces ověřování NTLM, použít pro integrované ověřování Windows zahrnuje challenge vydané do cílového počítače a odesílaných zpět do klientského počítače. Když počítač obdrží výzvu, že jej generovat samotný, ověřování se nezdaří, pokud propojení není back připojení smyčky (IPv4 adresu 127.0.0.1, příklad).  
   
- Při přístupu k služby spuštěné na interním webovém serveru, je společné pro přístup ke službě pomocí adresy URL podobná http://contoso/service nebo https://contoso/service. Název "contoso" není často název počítače, na kterém je nasazená služba. <xref:System.Net> a související obory názvů podporují pomocí služby Active Directory, DNS a NetBIOS, místní počítač hostuje soubor (obvykle WINDOWS\system32\drivers\etc\hosts, například) nebo soubor lmhosts místního počítače (obvykle WINDOWS\system32\ drivers\etc\lmhosts, například) k překladu názvů na adresy. Název "contoso" se vyřeší tak, aby požadavky odeslané na "contoso" se odesílají do počítače příslušný server.  
+ Při přístupu k služby spuštěné na interním webovém serveru, je společné pro přístup ke službě pomocí adresy URL podobná `http://contoso/service` nebo `https://contoso/service`. Název "contoso" není často název počítače, na kterém je nasazená služba. <xref:System.Net> a související obory názvů podporují pomocí služby Active Directory, DNS a NetBIOS, místní počítač hostuje soubor (obvykle WINDOWS\system32\drivers\etc\hosts, například) nebo soubor lmhosts místního počítače (obvykle WINDOWS\system32\ drivers\etc\lmhosts, například) k překladu názvů na adresy. Název "contoso" se vyřeší tak, aby požadavky odeslané na "contoso" se odesílají do počítače příslušný server.  
   
  Při konfiguraci pro velká nasazení, je také běžné, že název jednoho virtuálního serveru má být poskytnut do nasazení s základní názvy počítačů použita nikdy klientské aplikace i koncové uživatele. Například může volat www.contoso.com serveru, ale v interní síti jednoduše použít "contoso". Tento název se nazývá hlavičku hostitele v žádosti webového klienta. Podle specifikace protokolu HTTP určuje pole hlavičky požadavku hostitele Internet hostitele a port číslo požadovaný prostředek. Tyto informace se získávají z původní identifikátor URI zadaný uživatelem nebo odkazující prostředků (obecně adresu URL protokolu HTTP). V rozhraní .NET Framework verze 4, tyto informace můžete také nastavit klienta pomocí nového <xref:System.Net.HttpWebRequest.Host%2A> vlastnost.  
   
