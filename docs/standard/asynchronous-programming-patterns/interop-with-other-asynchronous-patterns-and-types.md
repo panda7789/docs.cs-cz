@@ -15,11 +15,11 @@ ms.assetid: f120a5d9-933b-4d1d-acb6-f034a57c3749
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 05b53016712f75e45636979d77bfd27116ce8e14
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48263135"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850658"
 ---
 # <a name="interop-with-other-asynchronous-patterns-and-types"></a>Interoperabilita s jinými asynchronními vzory a typy
 Rozhraní .NET Framework 1.0 zavedené <xref:System.IAsyncResult> vzor, jinak známé jako [asynchronního programovacího modelu (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md), nebo `Begin/End` vzor.  Přidání rozhraní .NET Framework 2.0 [události asynchronní vzor založený (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md).  Od verze rozhraní .NET Framework 4 [úkolově orientovanou asynchronní vzor (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) nahrazuje funkce APM a protokolu EAP, ale umožňuje snadno vytvářet migraci rutin z předchozích vzory.  

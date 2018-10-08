@@ -9,11 +9,11 @@ ms.assetid: 9c2a0e70-3a39-4ba9-96ea-a7fe531fae9f
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: aa2e4d260ce7cee33bb72b807affc87220e57e8a
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48778871"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850293"
 ---
 # <a name="ui-automation-support-for-the-checkbox-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku CheckBox
 > [!NOTE]

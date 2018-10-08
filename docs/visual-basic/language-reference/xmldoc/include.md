@@ -5,12 +5,12 @@ helpviewer_keywords:
 - include XML tag
 - <include> XML tag
 ms.assetid: ba8e9173-82cd-460b-8938-a075a2dfb36d
-ms.openlocfilehash: da7a6c15c558fc56dbc6a874d4a28c4434f67668
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 0f143f8c023102f44b41e3898f29d18be0083128
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48778702"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48849480"
 ---
 # <a name="ltincludegt-visual-basic"></a>&lt;zahrnout&gt; (Visual Basic)
 Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.  
@@ -37,7 +37,7 @@ Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.
 ## <a name="remarks"></a>Poznámky  
  Použití `<include>` značka, které odkazují na komentáře do jiného souboru, které popisují typy a členy ve zdrojovém kódu. Jedná se o alternativu k uvedení dokumentační komentáře přímo v souboru zdrojového kódu.  
   
- `<include>` Značky používá doporučení W3C jazyk XML Path (XPath) verze 1.0. Další informace o tom, jak přizpůsobit vaší `<include>` použijte je k dispozici na http://www.w3.org/TR/xpath.  
+ `<include>` Značky používá doporučení W3C jazyk XML Path (XPath) verze 1.0. Další informace o tom, jak přizpůsobit vaší `<include>` , najdete v tématu <https://www.w3.org/TR/xpath>.  
   
 ## <a name="example"></a>Příklad  
  V tomto příkladu `<include>` značka Import ze souboru s názvem člena dokumentační komentáře `commentFile.xml`.  

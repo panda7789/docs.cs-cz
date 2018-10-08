@@ -9,15 +9,15 @@ helpviewer_keywords:
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 03ddcbacf7de3753ca74c398e585447b2d769cd6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 4c74777a9af3df346c093ea9c3d68e788d075bd5
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47210624"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48849461"
 ---
 # <a name="how-to-set-cache-policy-for-a-request"></a>Postupy: nastavení zásad mezipaměti pro žádost
-Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost. V příkladu vstup, jako je identifikátor URI http://www.contoso.com/.  
+Následující příklad ukazuje, nastavení zásad mezipaměti pro žádost. V příkladu vstup, jako je identifikátor URI `http://www.contoso.com/`.  
   
 ## <a name="example"></a>Příklad  
  Následující příklad kódu vytvoří mezipaměť zásadu, která umožňuje požadovaný prostředek pro použití v mezipaměti, pokud nebylo v mezipaměti po dobu delší než jeden den. V příkladu se zobrazí zpráva, která označuje, zda byla z mezipaměti používá prostředku – například `"The response was retrieved from the cache : False."`– a pak zobrazí na prostředek. Žádost lze splnit všechny mezipaměti mezi klientem a serverem.  

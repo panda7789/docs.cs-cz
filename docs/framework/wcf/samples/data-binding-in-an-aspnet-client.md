@@ -2,12 +2,12 @@
 title: Vazba dat v klientovi ASP.NET
 ms.date: 03/30/2017
 ms.assetid: 68b49fa6-94e7-4d4c-a34e-902a2b3770b6
-ms.openlocfilehash: a3d4213729c8025592a756242a6174d7ace63eaa
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: dde5ec9ac944b205051b2499c7aceac2e6d84b92
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43511641"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850234"
 ---
 # <a name="data-binding-in-an-aspnet-client"></a>Vazba dat v klientovi ASP.NET
 Tato ukázka předvádí, jak vytvořit vazbu dat vrácených typické služby Windows Communication Foundation (WCF) v aplikaci webových formulářů.  
@@ -27,7 +27,7 @@ Tato ukázka předvádí, jak vytvořit vazbu dat vrácených typické služby W
   
 2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Tato ukázka klienta je webová stránka, na kterém běží pod vývojovému webovému serveru. Pokud chcete spustit vývojovému webovému serveru, zadejte na příkazovém řádku následující: "`%SystemDrive%\Program Files\Common Files\Microsoft Shared\DevServer\9.0\WebDev.WebServer.EXE" /port:8000 /path:<WebFormsSamplePath>\CS\client /vpath:/client`. Vyhledejte http://localhost:8000/client. Chcete-li tuto ukázku spustit na počítačích, nahradit všechny odkazy na `localhost` v souboru Web.config klienta s názvem počítače serveru.  
+3.  Tato ukázka klienta je webová stránka, na kterém běží pod vývojovému webovému serveru. Pokud chcete spustit vývojovému webovému serveru, zadejte na příkazovém řádku následující: `%SystemDrive%\Program Files\Common Files\Microsoft Shared\DevServer\9.0\WebDev.WebServer.EXE" /port:8000 /path:<WebFormsSamplePath>\CS\client /vpath:/client`. Vyhledejte `http://localhost:8000/client`. Chcete-li tuto ukázku spustit na počítačích, nahradit všechny odkazy na `localhost` v souboru Web.config klienta s názvem počítače serveru.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno na svém počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  
@@ -36,6 +36,4 @@ Tato ukázka předvádí, jak vytvořit vazbu dat vrácených typické služby W
 >   
 >  Pokud tento adresář neexistuje, přejděte na [Windows Communication Foundation (WCF) a ukázky Windows Workflow Foundation (WF) pro rozhraní .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) stáhnout všechny Windows Communication Foundation (WCF) a [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ukázky. Tato ukázka se nachází v následujícím adresáři.  
 >   
->  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WebForms`  
-  
-## <a name="see-also"></a>Viz také
+>  `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WebForms`

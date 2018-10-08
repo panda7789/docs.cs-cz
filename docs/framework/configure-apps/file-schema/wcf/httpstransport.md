@@ -2,20 +2,20 @@
 title: '&lt;httpsTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: f6ed4bc0-7e38-4348-9259-30bf61eb9435
-ms.openlocfilehash: c4629005541d4dac2444ca68a12cdfaea2529a27
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 972fc94234d5eeabcdb428bc5f0cff81e69cec9b
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32750112"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850306"
 ---
 # <a name="lthttpstransportgt"></a>&lt;httpsTransport&gt;
-Určuje přenosového protokolu HTTP pro přenos protokolu SOAP zprávy pro vlastní vazby.  
+Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastní vazbu.  
   
  \<system.serviceModel>  
 \<vazby >  
-\<customBinding >  
-\<Vazba >  
+\<třídě customBinding >  
+\<Vytvoření vazby >  
 \<httpsTransport>  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -46,21 +46,21 @@ Určuje přenosového protokolu HTTP pro přenos protokolu SOAP zprávy pro vlas
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|allowCookies|Logická hodnota, která určuje, zda klient přijímá soubory cookie a rozšiřuje je na dalších požadavků. Výchozí hodnota je `false`.<br /><br /> Tento atribut můžete použít při používání ASMX webové služby, které používají soubory cookie. Tímto způsobem mohou být jisti, že soubory cookie, kterou vrátil server se automaticky zkopírují do všechny budoucí požadavky pro tuto službu.|  
-|AuthenticationScheme|Určuje protokol, používá k ověření klientských požadavků zpracovávaných naslouchací proces protokolu HTTP. Platné hodnoty patří:<br /><br /> -Digest: Určuje ověřování hodnotou hash.<br />-Vyjednávání: Vyjedná s klientem nástroje k určení schéma ověřování. Pokud klient i server podporovat protokolu Kerberos, použije se; jinak se používá protokol NTLM.<br />– Protokol Ntlm: Určuje ověřování NTLM.<br />– Základní: Určuje základní ověřování.<br />-Anonymní: Určuje anonymní ověřování.<br /><br /> Výchozí hodnota je anonymní. Tento atribut je typu <xref:System.Net.AuthenticationSchemes>. Tento atribut lze nastavit pouze jednou.|  
-|bypassProxyOnLocal|Logická hodnota, která označuje, zda Nepoužívat proxy server pro místní adresy. Výchozí hodnota je `false`.<br /><br /> Místní adresa je ten, který je v místní síti LAN nebo intranet.<br /><br /> Windows Communication Foundation (WCF) vždy ignoruje proxy server, pokud začíná adresu služby http://localhost.<br /><br /> Pokud chcete klientům jít přes proxy server při posuzování ke službám ve stejném počítači, se musí používat název hostitele místo localhost.|  
-|hostnameComparisonMode|Určuje režim porovnání hostname HTTP použitá k analýze identifikátory URI. Platné hodnoty jsou,<br /><br /> -StrongWildcard: ("+") odpovídá všechny možné názvy hostitelů v rámci zadané schéma, port a relativní identifikátor URI.<br />-Přesnou: žádné zástupné znaky<br />-WeakWildcard: ("*") shoduje s názvem všechny možné hostitele zadané schéma, port a relativní UIR, která nejsou explicitně shoduje nebo přes mechanismus silné zástupný znak v kontextu.<br /><br /> Výchozí hodnota je StrongWildcard. Tento atribut je typu `System.ServiceModel.HostnameComparison`.|  
-|manualAddressing|Logická hodnota, která umožňuje uživatelům převzít kontrolu nad adresování zprávy. Tato vlastnost se obvykle používá ve scénářích směrovače, kde aplikace určuje, které jeden z několika cílů odeslat zprávu na.<br /><br /> Pokud nastavíte hodnotu `true`, kanál předpokládá zpráva již splněna a k němu nepřidává žádné další informace. Uživatel pak může jednotlivě adres každou zprávu.<br /><br /> Pokud nastavíte hodnotu `false`, výchozího mechanismu adresování Windows Communication Foundation (WCF) automaticky vytvoří adresy pro všechny zprávy.<br /><br /> Výchozí hodnota je `false`.|  
-|maxBufferPoolSize|Kladné celé číslo, které určuje maximální velikost fondu vyrovnávací paměti. Výchozí hodnota je 524288.<br /><br /> Mnoho části služby WCF pomocí vyrovnávací paměti. Vytváření a zničení pokaždé, když se používají vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměti je také nákladné. S fondy vyrovnávací paměti můžete provést vyrovnávací paměti z fondu, ho použít a po dokončení se vraťte do fondu. Proto je předejde režijní náklady v vytváření a zničení vyrovnávací paměti.|  
-|maxBufferSize|Kladné celé číslo, které určuje maximální velikost vyrovnávací paměti. Výchozí hodnota je 524288|  
-|MaxReceivedMessageSize|Kladné celé číslo, které určuje maximální povolená velikost zprávy, bude moci přijmout. Výchozí hodnota je 65536.|  
+|allowCookies|Logická hodnota určující, zda klient přijímá soubory cookie a šíří je v budoucích požadavcích. Výchozí hodnota je `false`.<br /><br /> Tento atribut lze použít při interakci s ASMX webovými službami, které používají soubory cookie. Tímto způsobem máte jistotu, že soubory cookie vrácený ze serveru se automaticky zkopírují do všechny budoucí požadavky za danou službu.|  
+|AuthenticationScheme|Určuje protokol použitý pro ověřování požadavků klientů, jenž jsou zpracovány při naslouchání protokolu HTTP. Platné hodnoty patří:<br /><br /> -Algoritmus Digest: Určuje ověřování hodnotou hash.<br />-Vyjednat: Vyjedná s klientem nástroje k určení schéma ověřování. Pokud klient i server podporovat protokol Kerberos, je použit. v opačném případě je použit protokol NTLM.<br />– Protokol Ntlm: Určuje ověřování protokolem NTLM.<br />-Basic: Určuje základní ověřování.<br />-Anonymní: Určuje anonymní ověřování.<br /><br /> Výchozí hodnota je Anonymous. Tento atribut je typu <xref:System.Net.AuthenticationSchemes>. Tento atribut lze nastavit pouze jednou.|  
+|bypassProxyOnLocal|Logická hodnota určující, zda obejít proxy server pro místní adresy. Výchozí hodnota je `false`.<br /><br /> Místní adresa je ten, který je v místní síti LAN nebo intranet.<br /><br /> Pokud začíná adresu služby Windows Communication Foundation (WCF) vždy ignoruje proxy `http://localhost`.<br /><br /> Pokud chcete klientům přejít přes proxy server, když mluvíme ke službám ve stejném počítači, se musí používat název hostitele místo localhost.|  
+|hostnameComparisonMode|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Platné hodnoty jsou,<br /><br /> -StrongWildcard: ("+") odpovídá všechny možné názvy hostitelů v rámci zadané schéma, port a relativní identifikátor URI.<br />-Přesné: žádné zástupné znaky<br />-WeakWildcard: ("*") shoduje s názvem všech možných hostitele v rámci zadané schéma, port a relativní UIR, nebyly explicitně odpovídající nebo mechanismem silný zástupný znak.<br /><br /> Výchozí hodnota je StrongWildcard. Tento atribut je typu `System.ServiceModel.HostnameComparison`.|  
+|Vlastnost manualAddressing|Logická hodnota, která umožňuje uživateli řídit adresování zpráv. Tato vlastnost se obvykle používá ve scénářích směrovače, kde aplikace určuje, který z nich několik cílů odeslat zprávu do.<br /><br /> Pokud je nastavena na `true`, kanál se předpokládá zprávu už nemá řešení a k němu nepřidává žádné další informace. Uživatel může pak Adresujte všechny zprávy jednotlivě.<br /><br /> Pokud je nastavena na `false`, výchozího mechanismu adresování Windows Communication Foundation (WCF) automaticky vytvoří adresy pro všechny zprávy.<br /><br /> Výchozí hodnota je `false`.|  
+|maxBufferPoolSize|Kladné celé číslo, které určuje maximální velikost fondu vyrovnávacích pamětí. Výchozí hodnota je 524288.<br /><br /> Mnoho částí WCF pomocí vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|  
+|Třída maxBufferSize|Kladné celé číslo, které určuje maximální velikost vyrovnávací paměti. Výchozí hodnota je 524288|  
+|maxReceivedMessageSize|Kladné celé číslo, určující maximální povolenou velikost zprávy, která může být přijata. Výchozí hodnota je 65536.|  
 |proxyAddress|Identifikátor URI, který určuje adresu proxy serveru HTTP. Pokud `useSystemWebProxy` je `true`, toto nastavení musí být `null`. Výchozí hodnota je `null`.|  
-|ProxyAuthenticationScheme|Určuje protokol použitý pro ověřování proxy serveru HTTP zpracovává požadavky klienta. Platné hodnoty patří:<br /><br /> -None: Neprobíhá žádné ověřování.<br />-Digest: Určuje ověřování hodnotou hash.<br />-Vyjednávání: Vyjedná s klientem nástroje k určení schéma ověřování. Pokud klient i server podporovat protokolu Kerberos, použije se; jinak se používá protokol NTLM.<br />– Protokol Ntlm: Určuje ověřování NTLM.<br />– Základní: Určuje základní ověřování.<br />-Anonymní: Určuje anonymní ověřování.<br />-IntegratedWindowsAuthentication: Určuje ověřování systému Windows.<br /><br /> Výchozí hodnota je anonymní. Tento atribut je typu <xref:System.Net.AuthenticationSchemes>.|  
-|sféry|Řetězec, který určuje sféry, použijte na proxy serveru. Výchozí hodnota je prázdný řetězec.<br /><br /> Servery používají sfér k oddílu chráněným prostředkům. Každý oddíl může mít svou vlastní databázi schéma nebo autorizace ověřování. Sfér se používají pouze pro základní a ověřování algoritmem digest. Jakmile klient úspěšně ověří, je platný pro všechny prostředky v dané sféry ověřování. Podrobný popis sfér, najdete v dokumentu RFC 2617 na http://www.ietf.org.|  
-|RequireClientCertificate|Logická hodnota, která určuje, pokud server vyžaduje, aby klient zajistit certifikát klienta v rámci metody handshake pro protokol HTTPS. Výchozí hodnota je `false`.|  
-|transferMode|Určuje, zda jsou zprávy do vyrovnávací paměti nebo prostřednictvím datového proudu nebo požadavku nebo odpovědi. Platné hodnoty patří:<br /><br /> -Uložená do vyrovnávací paměti: Zprávy požadavku a odpovědi jsou uložená do vyrovnávací paměti.<br />-Streamování: Streamovaných zprávy požadavku a odpovědi.<br />-StreamedRequest: Zprávu požadavku je streamování a zprávu odpovědi do vyrovnávací paměti.<br />-StreamedResponse: Zprávu požadavku do vyrovnávací paměti a je streamování zprávu odpovědi.<br /><br /> Výchozí hodnota je uložená do vyrovnávací paměti. Tento atribut je typu <xref:System.ServiceModel.TransferMode>.|  
-|UnsafeConnectionNtlmAuthentication|Logická hodnota, která určuje, zda je na serveru povoleno Unsafe sdílení připojení. Výchozí hodnota je `false`. Pokud je povoleno, ověřování protokolem NTLM se provádí jednou v každé připojení TCP.|  
-|useDefaultWebProxy|Logická hodnota, která určuje, jestli jsou nastavení proxy serveru celého systému použít místo nastavení specifická pro uživatele. Výchozí hodnota je `true`.|  
+|proxyAuthenticationScheme|Určuje protokol použitý pro ověřování požadavků klientů zpracovávaných HTTP proxy. Platné hodnoty patří:<br /><br /> -Žádný: Neprobíhá žádné ověřování.<br />-Algoritmus Digest: Určuje ověřování hodnotou hash.<br />-Vyjednat: Vyjedná s klientem nástroje k určení schéma ověřování. Pokud klient i server podporovat protokol Kerberos, je použit. v opačném případě je použit protokol NTLM.<br />– Protokol Ntlm: Určuje ověřování protokolem NTLM.<br />-Basic: Určuje základní ověřování.<br />-Anonymní: Určuje anonymní ověřování.<br />-IntegratedWindowsAuthentication: Určuje ověřování Windows.<br /><br /> Výchozí hodnota je Anonymous. Tento atribut je typu <xref:System.Net.AuthenticationSchemes>.|  
+|Sféra|Řetězec určující sféru na serveru nebo proxy serveru. Výchozí hodnota je prázdný řetězec.<br /><br /> Servery používají sféry při vytváření oddílů chráněným prostředkům. Každý oddíl může mít vlastní databázi schéma a/nebo povolení ověřování. Sféry se používají pouze pro základní a ověřování algoritmem digest. Po klienta úspěšně ověřen, je platný pro všechny prostředky v danou sféru ověřování. Podrobný popis sféry, naleznete v tématu RFC 2617 na [IETF webu](https://www.ietf.org).|  
+|requireClientCertificate|Logická hodnota určující, zda server vyžaduje od klienta klientský certifikát jako součást metody handshake HTTPS. Výchozí hodnota je `false`.|  
+|režim přenosu|Určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu nebo požadavek nebo odpověď. Platné hodnoty patří:<br /><br /> -Ukládány do vyrovnávací paměti: Zpráv požadavků a odpovědí jsou ukládány do vyrovnávací paměti.<br />-Streamování: Se streamují zprávy požadavků a odpovědí.<br />-StreamedRequest: Streamuje zprávy požadavku a odpovědi do vyrovnávací paměti.<br />-StreamedResponse: Zprávy s požadavkem je uložená do vyrovnávací paměti a Streamovat zprávy s odpovědí.<br /><br /> Výchozí hodnota je uložená do vyrovnávací paměti. Tento atribut je typu <xref:System.ServiceModel.TransferMode>.|  
+|unsafeConnectionNtlmAuthentication|Logická hodnota určující, zda je na serveru povoleno nezabezpečené sdílení připojení. Výchozí hodnota je `false`. Pokud je povoleno, ověřování protokolem NTLM se provádí jednou pro každé připojení TCP.|  
+|useDefaultWebProxy|Logická hodnota, která určuje, jestli uživatelovo specifické nastavení jsou upřednostňována nastavení proxy pro celý počítač. Výchozí hodnota je `true`.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -69,10 +69,10 @@ Určuje přenosového protokolu HTTP pro přenos protokolu SOAP zprávy pro vlas
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<Vazba >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vazba vlastní vazby.|  
+|[\<Vytvoření vazby >](../../../../../docs/framework/misc/binding.md)|Definuje všechny možnosti vázání pro vlastní vazbu.|  
   
 ## <a name="remarks"></a>Poznámky  
- `httpsTransport` Element je výchozím bodem pro vytvoření vlastní vazby, který implementuje přenosový protokol HTTPS. HTTPS je primární přenosu použitý pro zajištění zabezpečené spolupráce. Pomocí Windows Communication Foundation (WCF) a zajišťuje interakci s zásobníky jiné webové služby je podporován protokol HTTPS.  
+ `httpsTransport` Element je výchozí bod pro vytvoření vlastní vazby, který implementuje přenosový protokol HTTPS. HTTPS je primární přenosu používá pro účely zabezpečenou spolupráci. HTTPS je podporována v Windows Communication Foundation (WCF) k zajištění interoperability s zásobníky jiné webové služby.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Configuration.HttpsTransportElement>  
@@ -84,4 +84,4 @@ Určuje přenosového protokolu HTTP pro přenos protokolu SOAP zprávy pro vlas
  [Vazby](../../../../../docs/framework/wcf/bindings.md)  
  [Rozšíření vazeb](../../../../../docs/framework/wcf/extending/extending-bindings.md)  
  [Vlastní vazby](../../../../../docs/framework/wcf/extending/custom-bindings.md)  
- [\<customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)
+ [\<třídě customBinding >](../../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)

@@ -2,12 +2,12 @@
 title: 'Vzory návrhu: Založený na seznamu publikování a odběru'
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 2807cc8cc197ff39417e3b6375ebbd595cf73c54
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: caec9a9aa6de267cb5407ad4a7166701740f9a63
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664693"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850124"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>Vzory návrhu: Založený na seznamu publikování a odběru
 Tento příklad znázorňuje vzor založený na seznamu publikování a odběru implementovaná jako program Windows Communication Foundation (WCF).  
@@ -118,7 +118,7 @@ public class PriceChangeEventArgs : EventArgs
   
 ### <a name="to-run-the-sample-on-the-same-machine"></a>Ke spuštění ukázky ve stejném počítači  
   
-1.  Test, můžete přístup ke službě pomocí prohlížeče zadáním následující adresy: http://localhost/servicemodelsamples/service.svc. Stránka s potvrzením má být zobrazena v odpovědi.  
+1.  Test, můžete přístup ke službě pomocí prohlížeče zadáním následující adresy: `http://localhost/servicemodelsamples/service.svc`. Stránka s potvrzením má být zobrazena v odpovědi.  
   
 2.  Spustit Client.exe z \client\bin\\, ze složky specifické pro jazyk. Činnost klienta se zobrazí v okně konzoly klienta. Spuštění několika klienty.  
   

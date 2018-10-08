@@ -3,11 +3,11 @@ title: Informace o volajícím (C#)
 ms.date: 07/20/2015
 ms.assetid: ffad3d24-2fb7-4641-9124-53b5bc91d339
 ms.openlocfilehash: 4a0e4d6ecad1863832a33ba91485d0c12675cd57
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48777062"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850462"
 ---
 # <a name="caller-information-c"></a>Informace o volajícím (C#)
 

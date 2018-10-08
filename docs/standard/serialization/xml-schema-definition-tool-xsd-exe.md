@@ -2,12 +2,12 @@
 title: Nástroje definice schématu XML (Xsd.exe)
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: a3a16e92dab6994de6bfa99c248ff0b13658e22d
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 23dea344b123b377224aad5816137aa246b8f596
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45615440"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850860"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>Nástroje definice schématu XML (Xsd.exe)
 Nástroj pro definici schématu XML (Xsd.exe) generuje schématu XML nebo běžné language runtime třídy z XDR, XML a XSD souborů nebo ze třídy v sestavení modulu runtime.  
@@ -86,7 +86,7 @@ xsd {file.dll | file.exe} [/outputdir:directory] [/type:typename [...]][/paramet
  Třídy, které mají XSD  
  Generuje schématu XML z typ nebo typy v sestavení soubor za běhu. Generované schéma definuje ve formátu XML, který je používán `System.Xml.Serialization.XmlSerializer`.  
   
- XSD.exe umožňuje pracovat s schémat XML, které následují definici schématu XML (XSD) jazyk navrhovaná World Wide Web Consortium (W3C). Další informace o definici schématu XML návrh nebo standardu XML naleznete v tématu http://w3.org.  
+ XSD.exe umožňuje pracovat s schémat XML, které následují definici schématu XML (XSD) jazyk navrhovaná World Wide Web Consortium (W3C). Další informace o definici schématu XML návrh nebo standardu XML naleznete v tématu <https://w3.org>.  
   
 ## <a name="setting-options-with-an-xml-file"></a>Nastavení možností pomocí souboru XML  
  S použitím `/parameters` přepínače, můžete určit jednoho souboru XML, který nastaví různé možnosti. Možnosti můžete nastavit, závisí na tom, jak používáte nástroj XSD.exe. Vybrat možnost generování schémat, generování kódu soubory nebo soubory s kódem, mezi které patří generování `DataSet` funkce. Můžete například nastavit `<assembly\>` element na název spustitelného souboru (.exe) nebo souboru typu knihovna (DLL) při generování schématu, ale ne v případě, že generování souboru kódu. Následující kód XML ukazuje, jak lze použít `<generateSchemas\>` element se zadaným spustitelného souboru:  

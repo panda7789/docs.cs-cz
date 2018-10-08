@@ -3,11 +3,11 @@ title: 'Postupy: vytvoření koncového bodu služby v konfiguraci'
 ms.date: 06/16/2016
 ms.assetid: f474e25d-2a27-4f31-84c5-395c442b8e70
 ms.openlocfilehash: 63a40576b805952197cec5af2f89a5dc4b5d3545
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266270"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850593"
 ---
 # <a name="how-to-create-a-service-endpoint-in-configuration"></a>Postupy: vytvoření koncového bodu služby v konfiguraci
 Koncové body mají klienti obdržet přístup k funkcím, které nabízí služba Windows Communication Foundation (WCF). Můžete definovat jeden nebo víc koncových bodů služby pomocí kombinace relativní a absolutní koncový bod adresy, nebo pokud nejsou definovány žádné koncové body služby, modul runtime, poskytuje některé ve výchozím nastavení za vás. Toto téma ukazuje, jak přidat koncové body pomocí konfiguračního souboru, které obsahují relativní a absolutní adresu.  

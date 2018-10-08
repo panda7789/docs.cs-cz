@@ -20,12 +20,12 @@ helpviewer_keywords:
 - parent table navigation in DataGrid
 - child tables [Windows Forms], dataGrid control
 ms.assetid: 85604bce-bc03-49d9-9030-dda8896c44b1
-ms.openlocfilehash: 9f939175a77ff080b37491a36c15edbb8af15933
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: a4a8f33b45fa8433013cfa34fbc55f0db90737c4
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43462461"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850684"
 ---
 # <a name="datagrid-control-overview-windows-forms"></a>DataGrid – přehled ovládacího prvku (Windows Forms)
 > [!NOTE]
@@ -90,7 +90,7 @@ DataGrid vázán na data s více tabulkami
 |Více souvisejícími tabulkami.|Mřížky můžete zobrazit zobrazení stromu pro výběr tabulky s, nebo můžete určit, že mřížky se zobrazí nadřazené tabulky. Přejít na související podřízené řádky uživatelům záznamů v nadřazené tabulce.|  
   
 > [!NOTE]
->  Tabulky v datové sadě se týkají používání <xref:System.Data.DataRelation>.  Viz také [hypertextový odkaz "http://msdn.microsoft.com/library/dbwcse3d(v=vs.110)" vztahy v datových sadách](https://msdn.microsoft.com/library/dbwcse3d\(v=vs.110\)) nebo [vztahy v datových sadách](https://msdn.microsoft.com/library/dbwcse3d\(v=vs.120\)).  
+> Tabulky v datové sadě se týkají používání <xref:System.Data.DataRelation>. Viz také [vytváření vztahů mezi tabulkami](/visualstudio/data-tools/relationships-in-datasets).
   
  Když <xref:System.Windows.Forms.DataGrid> ovládací prvek je zobrazení tabulky a <xref:System.Windows.Forms.DataGrid.AllowSorting%2A> je nastavena na `true`, přeuspořádat dat kliknutím na záhlaví sloupců. Uživatele můžete také přidat řádky a upravovat buňky.  
   

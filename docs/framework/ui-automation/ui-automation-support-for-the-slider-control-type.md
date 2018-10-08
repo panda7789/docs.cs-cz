@@ -9,11 +9,11 @@ ms.assetid: 045ea62f-7b50-46cf-a5a9-8eb97704355f
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: bb88d113c84ce099eb0d7ec631abc125393e7e6e
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48778033"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850267"
 ---
 # <a name="ui-automation-support-for-the-slider-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku posuvník
 > [!NOTE]

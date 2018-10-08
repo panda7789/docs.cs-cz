@@ -10,11 +10,11 @@ helpviewer_keywords:
 - -linkres compiler option [Visual Basic]
 ms.assetid: cf4dcad8-17b7-404c-9184-29358aa05b15
 ms.openlocfilehash: 97e0ccd46f413cc05b659731436bb141ee178419
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48034555"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48849909"
 ---
 # <a name="-linkresource-visual-basic"></a>-linkresource (Visual Basic)
 Vytvoří odkaz na spravovaný prostředek.  

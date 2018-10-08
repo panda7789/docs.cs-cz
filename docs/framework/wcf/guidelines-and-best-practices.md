@@ -9,11 +9,11 @@ helpviewer_keywords:
 - Windows Communication Foundation, guidelines
 ms.assetid: 5098ba46-6e8d-4e02-b0c5-d737f9fdad84
 ms.openlocfilehash: 54af876a361dfee7a00e3fd29f43f4b643b07913
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48262024"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850436"
 ---
 # <a name="guidelines-and-best-practices"></a>Směrnice a doporučené postupy
 Tento oddíl obsahuje témata, která poskytují pokyny pro vytváření aplikací pro Windows Communication Foundation (WCF).  
