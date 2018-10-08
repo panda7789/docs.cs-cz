@@ -5,46 +5,46 @@ helpviewer_keywords:
 - include XML tag
 - <include> XML tag
 ms.assetid: ba8e9173-82cd-460b-8938-a075a2dfb36d
-ms.openlocfilehash: da7a6c15c558fc56dbc6a874d4a28c4434f67668
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 0f143f8c023102f44b41e3898f29d18be0083128
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48778702"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48849480"
 ---
-# <a name="ltincludegt-visual-basic"></a><span data-ttu-id="d6fb6-102">&lt;zahrnout&gt; (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="d6fb6-102">&lt;include&gt; (Visual Basic)</span></span>
-<span data-ttu-id="d6fb6-103">Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-103">Refers to another file that describes the types and members in your source code.</span></span>  
+# <a name="ltincludegt-visual-basic"></a><span data-ttu-id="cea30-102">&lt;zahrnout&gt; (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="cea30-102">&lt;include&gt; (Visual Basic)</span></span>
+<span data-ttu-id="cea30-103">Odkazuje na jiný soubor, který popisuje typy a členy ve zdrojovém kódu.</span><span class="sxs-lookup"><span data-stu-id="cea30-103">Refers to another file that describes the types and members in your source code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d6fb6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d6fb6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cea30-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cea30-104">Syntax</span></span>  
   
 ```xml  
 <include file="filename" path="tagpath[@name='id']" />  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="d6fb6-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="d6fb6-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="cea30-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="cea30-105">Parameters</span></span>  
  `filename`  
- <span data-ttu-id="d6fb6-106">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-106">Required.</span></span> <span data-ttu-id="d6fb6-107">Název souboru, který obsahuje dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-107">The name of the file containing the documentation.</span></span> <span data-ttu-id="d6fb6-108">Název souboru může být kvalifikovány s cestou.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-108">The file name can be qualified with a path.</span></span> <span data-ttu-id="d6fb6-109">Uzavřete `filename` do dvojitých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="d6fb6-109">Enclose `filename` in double quotation marks (" ").</span></span>  
+ <span data-ttu-id="cea30-106">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="cea30-106">Required.</span></span> <span data-ttu-id="cea30-107">Název souboru, který obsahuje dokumentaci.</span><span class="sxs-lookup"><span data-stu-id="cea30-107">The name of the file containing the documentation.</span></span> <span data-ttu-id="cea30-108">Název souboru může být kvalifikovány s cestou.</span><span class="sxs-lookup"><span data-stu-id="cea30-108">The file name can be qualified with a path.</span></span> <span data-ttu-id="cea30-109">Uzavřete `filename` do dvojitých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="cea30-109">Enclose `filename` in double quotation marks (" ").</span></span>  
   
  `tagpath`  
- <span data-ttu-id="d6fb6-110">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-110">Required.</span></span> <span data-ttu-id="d6fb6-111">Cesta klíčových slov do `filename` , který vede ke značce `name`.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-111">The path of the tags in `filename` that leads to the tag `name`.</span></span> <span data-ttu-id="d6fb6-112">Vložte cestu do dvojitých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="d6fb6-112">Enclose the path in double quotation marks (" ").</span></span>  
+ <span data-ttu-id="cea30-110">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="cea30-110">Required.</span></span> <span data-ttu-id="cea30-111">Cesta klíčových slov do `filename` , který vede ke značce `name`.</span><span class="sxs-lookup"><span data-stu-id="cea30-111">The path of the tags in `filename` that leads to the tag `name`.</span></span> <span data-ttu-id="cea30-112">Vložte cestu do dvojitých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="cea30-112">Enclose the path in double quotation marks (" ").</span></span>  
   
  `name`  
- <span data-ttu-id="d6fb6-113">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-113">Required.</span></span> <span data-ttu-id="d6fb6-114">Specifikátor názvem ve značce, který předchází komentáře.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-114">The name specifier in the tag that precedes the comments.</span></span> <span data-ttu-id="d6fb6-115">`Name` bude mít `id`.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-115">`Name` will have an `id`.</span></span>  
+ <span data-ttu-id="cea30-113">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="cea30-113">Required.</span></span> <span data-ttu-id="cea30-114">Specifikátor názvem ve značce, který předchází komentáře.</span><span class="sxs-lookup"><span data-stu-id="cea30-114">The name specifier in the tag that precedes the comments.</span></span> <span data-ttu-id="cea30-115">`Name` bude mít `id`.</span><span class="sxs-lookup"><span data-stu-id="cea30-115">`Name` will have an `id`.</span></span>  
   
  `id`  
- <span data-ttu-id="d6fb6-116">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-116">Required.</span></span> <span data-ttu-id="d6fb6-117">ID značky, které předchází komentáře.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-117">The ID for the tag that precedes the comments.</span></span> <span data-ttu-id="d6fb6-118">ID uzavřete do jednoduchých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="d6fb6-118">Enclose the ID in single quotation marks (' ').</span></span>  
+ <span data-ttu-id="cea30-116">Požadováno.</span><span class="sxs-lookup"><span data-stu-id="cea30-116">Required.</span></span> <span data-ttu-id="cea30-117">ID značky, které předchází komentáře.</span><span class="sxs-lookup"><span data-stu-id="cea30-117">The ID for the tag that precedes the comments.</span></span> <span data-ttu-id="cea30-118">ID uzavřete do jednoduchých uvozovek ("").</span><span class="sxs-lookup"><span data-stu-id="cea30-118">Enclose the ID in single quotation marks (' ').</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d6fb6-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="d6fb6-119">Remarks</span></span>  
- <span data-ttu-id="d6fb6-120">Použití `<include>` značka, které odkazují na komentáře do jiného souboru, které popisují typy a členy ve zdrojovém kódu.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-120">Use the `<include>` tag to refer to comments in another file that describe the types and members in your source code.</span></span> <span data-ttu-id="d6fb6-121">Jedná se o alternativu k uvedení dokumentační komentáře přímo v souboru zdrojového kódu.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-121">This is an alternative to placing documentation comments directly in your source code file.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cea30-119">Poznámky</span><span class="sxs-lookup"><span data-stu-id="cea30-119">Remarks</span></span>  
+ <span data-ttu-id="cea30-120">Použití `<include>` značka, které odkazují na komentáře do jiného souboru, které popisují typy a členy ve zdrojovém kódu.</span><span class="sxs-lookup"><span data-stu-id="cea30-120">Use the `<include>` tag to refer to comments in another file that describe the types and members in your source code.</span></span> <span data-ttu-id="cea30-121">Jedná se o alternativu k uvedení dokumentační komentáře přímo v souboru zdrojového kódu.</span><span class="sxs-lookup"><span data-stu-id="cea30-121">This is an alternative to placing documentation comments directly in your source code file.</span></span>  
   
- <span data-ttu-id="d6fb6-122">`<include>` Značky používá doporučení W3C jazyk XML Path (XPath) verze 1.0.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-122">The `<include>` tag uses the W3C XML Path Language (XPath) Version 1.0 Recommendation.</span></span> <span data-ttu-id="d6fb6-123">Další informace o tom, jak přizpůsobit vaší `<include>` použijte je k dispozici na http://www.w3.org/TR/xpath.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-123">More information for ways to customize your `<include>` use is available at http://www.w3.org/TR/xpath.</span></span>  
+ <span data-ttu-id="cea30-122">`<include>` Značky používá doporučení W3C jazyk XML Path (XPath) verze 1.0.</span><span class="sxs-lookup"><span data-stu-id="cea30-122">The `<include>` tag uses the W3C XML Path Language (XPath) Version 1.0 Recommendation.</span></span> <span data-ttu-id="cea30-123">Další informace o tom, jak přizpůsobit vaší `<include>` , najdete v tématu <https://www.w3.org/TR/xpath>.</span><span class="sxs-lookup"><span data-stu-id="cea30-123">For more information about ways to customize your `<include>` use, see <https://www.w3.org/TR/xpath>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="d6fb6-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="d6fb6-124">Example</span></span>  
- <span data-ttu-id="d6fb6-125">V tomto příkladu `<include>` značka Import ze souboru s názvem člena dokumentační komentáře `commentFile.xml`.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-125">This example uses the `<include>` tag to import member documentation comments from a file called `commentFile.xml`.</span></span>  
+## <a name="example"></a><span data-ttu-id="cea30-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="cea30-124">Example</span></span>  
+ <span data-ttu-id="cea30-125">V tomto příkladu `<include>` značka Import ze souboru s názvem člena dokumentační komentáře `commentFile.xml`.</span><span class="sxs-lookup"><span data-stu-id="cea30-125">This example uses the `<include>` tag to import member documentation comments from a file called `commentFile.xml`.</span></span>  
   
  [!code-vb[VbVbcnXmlDocComments#4](../../../visual-basic/language-reference/xmldoc/codesnippet/VisualBasic/include_1.vb)]  
   
- <span data-ttu-id="d6fb6-126">Formát `commentFile.xml` vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="d6fb6-126">The format of the `commentFile.xml` is as follows.</span></span>  
+ <span data-ttu-id="cea30-126">Formát `commentFile.xml` vypadá takto.</span><span class="sxs-lookup"><span data-stu-id="cea30-126">The format of the `commentFile.xml` is as follows.</span></span>  
   
 ```xml  
 <Docs>  
@@ -59,5 +59,5 @@ ms.locfileid: "48778702"
 </Docs>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="d6fb6-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="d6fb6-127">See Also</span></span>  
- [<span data-ttu-id="d6fb6-128">Značky pro komentáře XML</span><span class="sxs-lookup"><span data-stu-id="d6fb6-128">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/index.md)
+## <a name="see-also"></a><span data-ttu-id="cea30-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="cea30-127">See Also</span></span>  
+ [<span data-ttu-id="cea30-128">Značky pro komentáře XML</span><span class="sxs-lookup"><span data-stu-id="cea30-128">XML Comment Tags</span></span>](../../../visual-basic/language-reference/xmldoc/index.md)
