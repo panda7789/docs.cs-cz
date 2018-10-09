@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: d40c509f-5a5e-46cc-94cb-a951e9ab6843
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 2db6d4229ac777801aff792c86fe0e5e9a1b4994
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 51d07fadcf359c2b44f22ca9868d0f12e24b80c5
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45964381"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873114"
 ---
 # <a name="creating-a-cryptographic-scheme"></a>Vytváření šifrovacích schémat
 Kryptografické součásti rozhraní .NET Framework mohou být kombinovány pro vytvoření různých schémat k šifrování a dešifrování dat.  
@@ -30,7 +30,7 @@ Kryptografické součásti rozhraní .NET Framework mohou být kombinovány pro 
   
 5.  Smluvní strany souhlasí potom zahájit konverzaci pomocí symetrického šifrování.  
   
- Vytváření šifrovacích schémat není jednoduchý úkol. Další informace o používání kryptografie naleznete v tématu šifrování v dokumentaci Platform SDK na http://msdn.microsoft.com/library.  
+ Vytváření šifrovacích schémat není jednoduchý úkol.
   
 ## <a name="see-also"></a>Viz také:
 

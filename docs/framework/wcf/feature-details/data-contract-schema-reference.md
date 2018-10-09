@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts [WCF], schema reference
 ms.assetid: 9ebb0ebe-8166-4c93-980a-7c8f1f38f7c0
-ms.openlocfilehash: 5eb4caee5c2057e112ed4f5a88f46fa82b1f57cc
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 33661061e1a5db4f7826c1a8eca188f8c782b58f
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44088034"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873716"
 ---
 # <a name="data-contract-schema-reference"></a>Schéma kontraktů dat – referenční informace
 Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Runtime.Serialization.DataContractSerializer> k popisu common language runtime (CLR) typy pro serializaci kódu XML.  
@@ -47,7 +47,7 @@ Toto téma popisuje dílčí sady schématu XML (XSD) používá <xref:System.Ru
 |`elementFormDefault`|Musí být kvalifikovaný. Všechny elementy musí být kvalifikován pro schéma, aby ho podporoval účet `DataContractSerializer`. To můžete provést buď nastavením xs:schema/@elementFormDefault "kvalifikovaný" nebo nastavením xs:element/@form na "kvalifikovaný" na každý jednotlivý element deklarace.|  
 |`finalDefault`|Ignorovat.|  
 |`Id`|Ignorovat.|  
-|`targetNamespace`|Podporované a namapována na obor názvů kontraktu dat. Pokud tento atribut není zadán, použije se prázdný obor názvů. Vyhrazený obor názvů nemůže být http://schemas.microsoft.com/2003/10/Serialization/.|  
+|`targetNamespace`|Podporované a namapována na obor názvů kontraktu dat. Pokud tento atribut není zadán, použije se prázdný obor názvů. Vyhrazený obor názvů nemůže být `http://schemas.microsoft.com/2003/10/Serialization/`.|  
 |`version`|Ignorovat.|  
   
 ### <a name="xsschema-contents"></a>\<xs:Schema >: obsah  
@@ -524,7 +524,7 @@ public class Employee : Person
 |`positiveInteger`|<xref:System.Int64>.|  
   
 ## <a name="iserializable-types-mapping"></a>Typy iSerializable mapování  
- V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.0, `ISerializable` byla zavedená jako obecný mechanismus k serializaci objektů pro přenos trvalého nebo data. Existuje několik instancí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, které implementují `ISerializable` a, které mohou být předány mezi aplikacemi. `DataContractSerializer` přirozeně poskytuje podporu pro `ISerializable` třídy. `DataContractSerializer` Mapuje `ISerializable` implementace schématu typy, které se liší pouze podle typu QName (úplný název) a jsou kolekce vlastností. Například `DataContractSerializer` mapuje <xref:System.Exception> pro následující typ XSD v http://schemas.datacontract.org/2004/07/System oboru názvů.  
+ V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] verze 1.0, `ISerializable` byla zavedená jako obecný mechanismus k serializaci objektů pro přenos trvalého nebo data. Existuje několik instancí [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] typy, které implementují `ISerializable` a, které mohou být předány mezi aplikacemi. `DataContractSerializer` přirozeně poskytuje podporu pro `ISerializable` třídy. `DataContractSerializer` Mapuje `ISerializable` implementace schématu typy, které se liší pouze podle typu QName (úplný název) a jsou kolekce vlastností. Například `DataContractSerializer` mapuje <xref:System.Exception> pro následující typ XSD v `http://schemas.datacontract.org/2004/07/System` oboru názvů.  
   
 ```xml  
 <xs:complexType name="Exception">  
@@ -541,7 +541,7 @@ public class Employee : Person
 ## <a name="datacontract-serialization-schema"></a>Schéma serializace pomocí kontraktu DataContract  
  Počet schémata exportované sadou `DataContractSerializer` používat typy, elementů a atributů z oboru názvů zvláštní serializaci smlouvy dat:  
   
- http://schemas.microsoft.com/2003/10/Serialization  
+ `http://schemas.microsoft.com/2003/10/Serialization`
   
  Toto je úplnou deklaraci schématu serializaci dat smlouvy.  
   

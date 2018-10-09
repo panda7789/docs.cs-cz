@@ -4,12 +4,12 @@ description: Zjistěte, jak přenést a podržte klávesu shift a modernizace st
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 4/28/2018
-ms.openlocfilehash: 07e1a1e2ef145dce1b292d9425f33fcd99ffd1ae
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: b22ddd8a63d183571f9ca3a63fb7ae84ebb88510
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747001"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873493"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows (verze 2.)
 
@@ -25,7 +25,7 @@ Copyright © 2018 Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 
-Tato kniha je dostupná zdarma ve formě elektronickou knihu (elektronická kniha) k dispozici prostřednictvím více kanálů v Microsoftu, jako http://dot.net/architecture.
+Tato kniha je dostupná zdarma ve formě elektronickou knihu (elektronická kniha) k dispozici prostřednictvím více kanálů v Microsoftu, jako <http://dot.net/architecture>.
 
 Pokud máte dotazy týkající se této knihy, e-mailové adrese [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book)
 
@@ -33,7 +33,7 @@ Tato kniha je k dispozici "jako-je" a vyjadřuje zobrazení autora a názory. Zo
 
 Některé zde uvedené příklady jsou k dispozici pouze pro ilustraci a jsou smyšlené. Žádný skutečný vztah nebo spojení ani je určena ji vyvozovat.
 
-Microsoft a ochranné známky uvedený na http://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft. Všechny ostatní značky jsou majetkem příslušných vlastníků.
+Microsoft a ochranné známky uvedený na <https://www.microsoft.com> na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft. Všechny ostatní značky jsou majetkem příslušných vlastníků.
 
 Autor:
 > **De la Torre Cesarovi**, vyšší ODP., .NET produktu Team, Microsoft Corp.

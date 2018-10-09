@@ -11,11 +11,11 @@ ms.assetid: 10fcfaad-82ef-4692-871a-0aec9dfbe75e
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 394a686fe07036d6c3ac2bc51fb3503e1ee4a9e6
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48777562"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873346"
 ---
 # <a name="ltauthenticationmodulesgt-element-network-settings"></a>&lt;Element authenticationModules&gt; – Element (nastavení sítě)
 Určuje moduly používané k ověření síťové požadavky.  

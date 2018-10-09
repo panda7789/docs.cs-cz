@@ -6,11 +6,11 @@ dev_langs:
 - vb
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
 ms.openlocfilehash: d79c8fc364d13c00049523f7788ada258af6ec98
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48778715"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873226"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>Postupy: povolení trvalosti SQL pro pracovní postupy a služby pracovních postupů
 

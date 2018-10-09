@@ -3,11 +3,11 @@ title: Ukázková dokumentace Windows pracovního postupu (WF)
 ms.date: 09/24/2018
 ms.assetid: e0aef017-4381-4f2f-a904-6e1ed898687e
 ms.openlocfilehash: 64153e885cd4203134d429d2d8b8e246628de5fb
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266531"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873456"
 ---
 # <a name="windows-workflow-wf-samples"></a>Ukázky Windows Workflow
 

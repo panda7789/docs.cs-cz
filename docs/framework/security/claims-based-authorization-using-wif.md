@@ -3,12 +3,12 @@ title: Pomocí technologie WIF autorizace deklarovaných identit
 ms.date: 03/30/2017
 ms.assetid: e24000a3-8fd8-4c0e-bdf0-39882cc0f6d8
 author: BrucePerlerMS
-ms.openlocfilehash: c13ea5c9f2f62c9c01139741d06de35dd2ff4be1
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 65254b31570ebf65d10c4d8c1f0fa776a6e2bae1
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47236053"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48872918"
 ---
 # <a name="claims-based-authorization-using-wif"></a>Pomocí technologie WIF autorizace deklarovaných identit
 V aplikaci předávající strany autorizace určuje, k jakým prostředkům má ověřená identita povolen přístup a jaké operace s těmito prostředky smí provádět. Nesprávná nebo slabá autorizace může vést k úniku informací nebo neoprávněným úpravám dat. Toto téma popisuje, jak webové aplikace a služby technologie ASP.NET pracující s deklaracemi mohou implementovat autorizaci s použitím technologie Windows Identity Foundation (WIF) a služby tokenů zabezpečení (STS), jako je například Služba řízení přístupu Microsoft Azure (ACS).  
@@ -36,7 +36,7 @@ V aplikaci předávající strany autorizace určuje, k jakým prostředkům m
 ### <a name="expressing-roles-as-claims"></a>Vyjádření rolí jako deklarací  
  Když **IsInRole()** metoda je volána, je kontrola se kontroluje, zda má aktuální uživatel tuto roli. V aplikacích pracujících s deklaracemi je role vyjádřena pomocí deklarace typu Role, která by měla být k dispozici v tokenu. Deklarace typu Role je vyjádřena pomocí následujícího identifikátoru URI:  
   
- http://schemas.microsoft.com/ws/2008/06/identity/claims/role  
+ `http://schemas.microsoft.com/ws/2008/06/identity/claims/role`
   
  K dispozici je několik možností, jak do tokenu doplnit deklaraci typu Role:  
   

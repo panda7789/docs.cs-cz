@@ -2,12 +2,12 @@
 title: Zásada autorizace
 ms.date: 03/30/2017
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-ms.openlocfilehash: 78ca42abfd2df56edeeb273fcd8ba585aa16f635
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 16549b90692d8061abe729521075e0f248446513
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198316"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873476"
 ---
 # <a name="authorization-policy"></a>Zásada autorizace
 
@@ -284,7 +284,7 @@ Nebo můžete provést totéž v konfiguraci:
 
 Windows Communication Foundation (WCF) poskytuje bohaté možnosti založené na deklaracích model pro provádění kontroly přístupu. <xref:System.ServiceModel.ServiceAuthorizationManager> Objekt se používá k provádění kontroly přístupu a určit, jestli deklarace identity přidružené ke klientovi splňují požadavky potřebné pro přístup k metodě služby.
 
-Pro demonstrační účely, tento příklad ukazuje implementaci <xref:System.ServiceModel.ServiceAuthorizationManager> , který implementuje <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metoda umožňující uživateli přístup k metodám založené na deklaracích identity typu http://example.com/claims/allowedoperation jehož hodnota je identifikátor URI akce, která je operace mohou být volána.
+Pro demonstrační účely, tento příklad ukazuje implementaci <xref:System.ServiceModel.ServiceAuthorizationManager> , který implementuje <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> metoda umožňující uživateli přístup k metodám založené na deklaracích identity typu `http://example.com/claims/allowedoperation` jehož hodnota je identifikátor URI akce, která je operace mohou být volána.
 
 ```csharp
 public class MyServiceAuthorizationManager : ServiceAuthorizationManager

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-ms.openlocfilehash: e0d703e16ab89243c7f7cf57dc858a0a3889a590
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 7a63ff5e070c9986fb5890fbf09fb7d4e8cccc9f
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44253257"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873161"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Postupy: Formátování ovládacího prvku Windows Forms DataGrid pomocí Návrháře
+
 > [!NOTE]
 >  <xref:System.Windows.Forms.DataGridView> Ovládací prvek nahradí a přidá funkce, které <xref:System.Windows.Forms.DataGrid> řízení; však <xref:System.Windows.Forms.DataGrid> ovládací prvek se zachovává kvůli zpětné kompatibilitě a budoucí použití, pokud se rozhodnete. Další informace najdete v tématu [rozdíly mezi Windows Forms DataGridView a DataGrid – ovládací prvky](../../../../docs/framework/winforms/controls/differences-between-the-windows-forms-datagridview-and-datagrid-controls.md).  
   
@@ -32,7 +33,7 @@ ms.locfileid: "44253257"
   
  Jako první krok v datové mřížce formátování, můžete nastavit vlastnosti <xref:System.Windows.Forms.DataGrid> samotný. Tyto možnosti barvu a formát tvoří základ, ze kterého můžete pak provádět změny v závislosti na datových tabulek a sloupců zobrazených.  
   
- Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [postupy: vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [postupy: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V [!INCLUDE[vsprvslong](../../../../includes/vsprvslong-md.md)], <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [postupy: přidání položek panelu nástrojů](https://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0).  
+ Následující postup vyžaduje, **aplikace Windows** projektu s formulář obsahující <xref:System.Windows.Forms.DataGrid> ovládacího prvku. Informace o nastavení takový projekt, naleznete v tématu [postupy: vytvoření projektu aplikace Windows](https://msdn.microsoft.com/library/b2f93fed-c635-4705-8d0e-cf079a264efa) a [postupy: Přidání ovládacích prvků Windows Forms](../../../../docs/framework/winforms/controls/how-to-add-controls-to-windows-forms.md). V sadě Visual Studio 2005 <xref:System.Windows.Forms.DataGrid> ovládací prvek není v **nástrojů** ve výchozím nastavení. Další informace najdete v tématu [postupy: přidání položek panelu nástrojů](https://msdn.microsoft.com/library/458e119e-17fe-450b-b889-e31c128bd7e0).  
   
 > [!NOTE]
 >  Dialogová okna a příkazy nabídek, které vidíte, se mohou lišit od těch popsaných v nápovědě v závislosti na aktivních nastaveních nebo edici. Chcete-li změnit nastavení, zvolte **nastavení importu a exportu** na **nástroje** nabídky. Další informace najdete v tématu [přizpůsobení integrovaného vývojového prostředí sady Visual Studio](/visualstudio/ide/personalizing-the-visual-studio-ide).  
@@ -70,36 +71,37 @@ ms.locfileid: "44253257"
     |<xref:System.Windows.Forms.DataGrid.SelectionForeColor%2A>|Při výběru řádku nebo buňky, to je barvu popředí.|  
   
     > [!NOTE]
-    >  K přizpůsobení barev ovládacích prvků, je možné provádět ovládacího prvku nejsou dostupné kvůli špatnému barva výběru (například red a zelená). Použití barev, které jsou k dispozici na **systémové barvy** palety chcete vyhnout tomuto problému.  
-  
-     Následující postup vyžaduje, <xref:System.Windows.Forms.DataGrid> ovládací prvek vázán na data tabulky. Další informace najdete v tématu [postupy: vázání ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).  
-  
-### <a name="to-set-the-table-and-column-style-of-a-data-table-at-design-time"></a>Nastavit styl tabulky a sloupce z tabulky dat v době návrhu  
-  
-1.  Vyberte <xref:System.Windows.Forms.DataGrid> ovládací prvek na formuláři.  
-  
-2.  V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnosti a klikněte na tlačítko **tlačítko se třemi tečkami** (![VisualStudioEllipsesButton snímek obrazovky](../../../../docs/framework/winforms/media/vbellipsesbutton.png " vbEllipsesButton")) tlačítko.  
-  
-3.  V **Editor kolekce styl DataGridTableStyle** dialogové okno, klikněte na tlačítko **přidat** styl tabulky přidat do kolekce.  
-  
-     S **Editor kolekce styl DataGridTableStyle**, můžete přidat a odebrat styly tabulky, zobrazení sady a vlastnosti rozložení a sada mapování názvu pro styly tabulky.  
-  
-4.  Nastavte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> nastavte název mapování pro každý styl tabulky.  
-  
-     Název mapování slouží k určení, jaký styl tabulky je nutné používat s které tabulky.  
-  
-5.  V **Editor kolekce styl DataGridTableStyle**, vyberte <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnosti a klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton ")).  
-  
-6.  V **Editor kolekce Styl DataGridColumnStyle** dialogovém okně Přidat styly sloupců styl tabulky, který jste vytvořili.  
-  
-     S **Editor kolekce Styl DataGridColumnStyle**, můžete přidat a odebrat styly sloupců, nastavit vlastnosti zobrazení a rozložení a nastavte název mapování a formátování řetězce data sloupců.  
-  
+    >  K přizpůsobení barev ovládacích prvků, je možné provádět ovládacího prvku nejsou dostupné kvůli špatnému barva výběru (například red a zelená). Použití barev, které jsou k dispozici na **systémové barvy** palety chcete vyhnout tomuto problému.
+
+     Následující postup vyžaduje, <xref:System.Windows.Forms.DataGrid> ovládací prvek vázán na data tabulky. Další informace najdete v tématu [postupy: vázání ovládacího prvku Windows Forms DataGrid ke zdroji dat](../../../../docs/framework/winforms/controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md).
+
+### <a name="to-set-the-table-and-column-style-of-a-data-table-at-design-time"></a>Nastavit styl tabulky a sloupce z tabulky dat v době návrhu
+
+1.  Vyberte <xref:System.Windows.Forms.DataGrid> ovládací prvek na formuláři.
+
+2.  V **vlastnosti** okna, vyberte <xref:System.Windows.Forms.DataGrid.TableStyles%2A> vlastnosti a klikněte na tlačítko **tlačítko se třemi tečkami** (![VisualStudioEllipsesButton snímek obrazovky](../../../../docs/framework/winforms/media/vbellipsesbutton.png " vbEllipsesButton")) tlačítko.
+
+3.  V **Editor kolekce styl DataGridTableStyle** dialogové okno, klikněte na tlačítko **přidat** styl tabulky přidat do kolekce.
+
+     S **Editor kolekce styl DataGridTableStyle**, můžete přidat a odebrat styly tabulky, zobrazení sady a vlastnosti rozložení a sada mapování názvu pro styly tabulky.
+
+4.  Nastavte <xref:System.Windows.Forms.DataGridTableStyle.MappingName%2A> nastavte název mapování pro každý styl tabulky.
+
+     Název mapování slouží k určení, jaký styl tabulky je nutné používat s které tabulky.
+
+5.  V **Editor kolekce styl DataGridTableStyle**, vyberte <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> vlastnosti a klikněte na tlačítko se třemi tečkami (![snímek obrazovky VisualStudioEllipsesButton](../../../../docs/framework/winforms/media/vbellipsesbutton.png "vbEllipsesButton ")).
+
+6.  V **Editor kolekce Styl DataGridColumnStyle** dialogovém okně Přidat styly sloupců styl tabulky, který jste vytvořili.
+
+     S **Editor kolekce Styl DataGridColumnStyle**, můžete přidat a odebrat styly sloupců, nastavit vlastnosti zobrazení a rozložení a nastavte název mapování a formátování řetězce data sloupců.
+
     > [!NOTE]
-    >  Další informace o formátovacích řetězcích naleznete v tématu [Formatting Types](../../../../docs/standard/base-types/formatting-types.md).  
-  
-## <a name="see-also"></a>Viz také  
- <xref:System.Windows.Forms.GridTableStylesCollection>  
- <xref:System.Windows.Forms.GridColumnStylesCollection>  
- <xref:System.Windows.Forms.DataGrid>  
- [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)  
- [Ovládací prvek DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)
+    >  Další informace o formátovacích řetězcích naleznete v tématu [Formatting Types](../../../../docs/standard/base-types/formatting-types.md).
+
+## <a name="see-also"></a>Viz také
+
+- <xref:System.Windows.Forms.GridTableStylesCollection>
+- <xref:System.Windows.Forms.GridColumnStylesCollection>
+- <xref:System.Windows.Forms.DataGrid>
+- [Postupy: Odstranění či skrytí sloupců v ovládacím prvku Windows Forms DataGrid](../../../../docs/framework/winforms/controls/how-to-delete-or-hide-columns-in-the-windows-forms-datagrid-control.md)
+- [Ovládací prvek DataGrid](../../../../docs/framework/winforms/controls/datagrid-control-windows-forms.md)

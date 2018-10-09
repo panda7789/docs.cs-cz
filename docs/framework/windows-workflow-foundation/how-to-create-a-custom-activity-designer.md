@@ -3,11 +3,11 @@ title: 'Postupy: vytvoření vlastního návrháře aktivit'
 ms.date: 03/30/2017
 ms.assetid: 2f3aade6-facc-44ef-9657-a407ef8b9b31
 ms.openlocfilehash: 86cd3544e9117cca273b6c8dde8454672f14a36a
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48777679"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873005"
 ---
 # <a name="how-to-create-a-custom-activity-designer"></a>Postupy: vytvoření vlastního návrháře aktivit
 

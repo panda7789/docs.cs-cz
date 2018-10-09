@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: b443f1b066d3c8ef0e798206510616aace32b377
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: bba0b93ee7e68ae0320460c6a45ab252ac34c326
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582733"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873492"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Vytvoření jednoduché mikroslužby CRUD řízené daty
 
@@ -393,7 +393,7 @@ Až to uděláte, můžete spustit aplikaci a přejděte následující koncové
   http://<your-root-url>/swagger/
 ```
 
-Dříve jste viděli vygenerované uživatelské rozhraní vytvořené Swashbuckle pro adresu URL jako třeba http://&lt;your kořenové url &gt; /swagger/uživatelského rozhraní. Obrázek 8 až 9 také uvidíte jak otestovat všechny metody rozhraní API.
+Dříve jste viděli vygenerované uživatelské rozhraní vytvořené Swashbuckle pro adresu URL jako `http://<your-root-url>/swagger/ui`. Obrázek 8 až 9 také uvidíte jak otestovat všechny metody rozhraní API.
 
 ![](./media/image10.png)
 

@@ -3,11 +3,11 @@ title: Hosting1
 ms.date: 03/30/2017
 ms.assetid: 8a6ec5d4-d191-49cc-bb0f-a07639dc60d4
 ms.openlocfilehash: 6cbd05bd0d478898807ef0bfadfc64f1feea0574
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48780222"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48873758"
 ---
 # <a name="hosting"></a>Hostování
 Tato část obsahuje ukázky, které předvádějí hostitelské služby Windows Communication Foundation (WCF).  
