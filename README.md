@@ -1,17 +1,16 @@
-# .NET Docs
+# <a name="net-docs"></a>Dokumentace rozhraní .NET
 
-This repo contains work-in-progress documentation for .NET. To contribute, see the [Contributing Guide](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) and the [issues list](https://github.com/dotnet/docs/issues). 
+Toto úložiště obsahuje rámcové dokumentaci pro rozhraní .NET. [Webu Dokumentace k .NET](https://docs.microsoft.com/dotnet) je sestaven z více úložišť kromě tohle:
 
-We welcome contributions to help us improve and complete the .NET docs. Feel free to copy/paste documentation from [.NET Framework docs](https://msdn.microsoft.com/library/w0x726c2.aspx) as a starting point for .NET docs. We anticipate that [Xamarin](http://developer.xamarin.com/api/root/classlib/), [Mono](http://docs.go-mono.com/?link=root%3a%2fclasslib) and [Unity](http://docs.unity3d.com/Manual/index.html) will also use this documentation.
+- [Ukázky kódu a fragmenty kódu](https://github.com/dotnet/samples)
+- [Referenční dokumentace rozhraní API](https://github.com/dotnet/dotnet-api-docs)
+- [Odkaz na sadu SDK platformy kompilátoru .NET](https://github.com/dotnet/roslyn-api-docs)
 
-This project has adopted the code of conduct defined by the Contributor Covenant
-to clarify expected behavior in our community.
-For more information, see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
+Tady jsou sledovány problémy a úkoly pro všechny tři z těchto úložišť. Máme velké komunity využití těchto prostředků. Usnadňujeme naše nezaručené reagovat na problémy včas. Si můžete přečíst více o našich postupů pro klasifikaci a řešení problémů v našich [vydá zásad](issues-policy.md) tématu.
 
-Samples Build Status
-===
+Vítáme všechny příspěvky do Pomozte nám vylepšit a dokončete dokumentace rozhraní .NET. Abyste mohli přispívat, najdete v článku [projekty .NET komunitní přispěvatelé](https://github.com/dotnet/docs/projects/35) inspiraci. [Přispívání průvodce](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) obsahuje pokyny o postupech, které používáme. Nebo zkontrolujte, [seznamu problémů na](https://github.com/dotnet/docs/issues) pro úlohy, které vás zajímají.
 
-| Samples | Ubuntu 16.04<br/>_.NET Core 1.1.0_ | Ubuntu 16.04<br/>_.NET Core 2.0.0-preview_  |
-| ------------- |------------| -----|
-| `/samples/core` | ![](https://constructors.visualstudio.com/_apis/public/build/definitions/3186585f-1677-4c9e-a8b2-baac48a4032a/56/badge)| ![](https://constructors.visualstudio.com/_apis/public/build/definitions/3186585f-1677-4c9e-a8b2-baac48a4032a/57/badge) |
-|`/samples/csharp`| ![](https://constructors.visualstudio.com/_apis/public/build/definitions/3186585f-1677-4c9e-a8b2-baac48a4032a/54/badge)| ![](https://constructors.visualstudio.com/_apis/public/build/definitions/3186585f-1677-4c9e-a8b2-baac48a4032a/55/badge) |
+Očekáváme, že [Xamarin](https://docs.microsoft.com/xamarin), [Mono](http://docs.go-mono.com/?link=root%3a%2fclasslib) a [Unity](http://docs.unity3d.com/Manual/index.html) bude také použití této dokumentace.
+
+Tento projekt přijímá pravidla chování definované paktu Přispěvatel vyjasnit očekávané chování v naší komunitě.
+Další informace najdete v tématu [.NET Foundation chování](https://dotnetfoundation.org/code-of-conduct).
