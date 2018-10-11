@@ -7,53 +7,53 @@ f1_keywords:
 helpviewer_keywords:
 - unsafe keyword [C#]
 ms.assetid: 7e818009-1c6e-4b9e-b769-3728a01586a0
-ms.openlocfilehash: b4615021a4fc3391ac0ae703b6c97301b44aa60e
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: f4fcff02166091ae5dbd83e7ddf7762373fd9836
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45596526"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49086450"
 ---
-# <a name="unsafe-c-reference"></a><span data-ttu-id="ae57a-102">unsafe (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="ae57a-102">unsafe (C# Reference)</span></span>
-<span data-ttu-id="ae57a-103">`unsafe` – Klíčové slovo označuje nezabezpečený kontext, který se vyžaduje pro libovolnou operaci s ukazateli.</span><span class="sxs-lookup"><span data-stu-id="ae57a-103">The `unsafe` keyword denotes an unsafe context, which is required for any operation involving pointers.</span></span> <span data-ttu-id="ae57a-104">Další informace najdete v tématu [nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md).</span><span class="sxs-lookup"><span data-stu-id="ae57a-104">For more information, see [Unsafe Code and Pointers](../../../csharp/programming-guide/unsafe-code-pointers/index.md).</span></span>  
+# <a name="unsafe-c-reference"></a><span data-ttu-id="14420-102">unsafe (Referenční dokumentace jazyka C#)</span><span class="sxs-lookup"><span data-stu-id="14420-102">unsafe (C# Reference)</span></span>
+<span data-ttu-id="14420-103">`unsafe` – Klíčové slovo označuje nezabezpečený kontext, který se vyžaduje pro libovolnou operaci s ukazateli.</span><span class="sxs-lookup"><span data-stu-id="14420-103">The `unsafe` keyword denotes an unsafe context, which is required for any operation involving pointers.</span></span> <span data-ttu-id="14420-104">Další informace najdete v tématu [nezabezpečený kód a ukazatele](../../../csharp/programming-guide/unsafe-code-pointers/index.md).</span><span class="sxs-lookup"><span data-stu-id="14420-104">For more information, see [Unsafe Code and Pointers](../../../csharp/programming-guide/unsafe-code-pointers/index.md).</span></span>  
   
- <span data-ttu-id="ae57a-105">Můžete použít `unsafe` modifikátor v deklaraci typu nebo člena.</span><span class="sxs-lookup"><span data-stu-id="ae57a-105">You can use the `unsafe` modifier in the declaration of a type or a member.</span></span> <span data-ttu-id="ae57a-106">Textové celý rozsah tento typ nebo člen je proto považován za nezabezpečený kontext.</span><span class="sxs-lookup"><span data-stu-id="ae57a-106">The entire textual extent of the type or member is therefore considered an unsafe context.</span></span> <span data-ttu-id="ae57a-107">Například tady je metody deklarované s `unsafe` modifikátor:</span><span class="sxs-lookup"><span data-stu-id="ae57a-107">For example, the following is a method declared with the `unsafe` modifier:</span></span>  
+ <span data-ttu-id="14420-105">Můžete použít `unsafe` modifikátor v deklaraci typu nebo člena.</span><span class="sxs-lookup"><span data-stu-id="14420-105">You can use the `unsafe` modifier in the declaration of a type or a member.</span></span> <span data-ttu-id="14420-106">Textové celý rozsah tento typ nebo člen je proto považován za nezabezpečený kontext.</span><span class="sxs-lookup"><span data-stu-id="14420-106">The entire textual extent of the type or member is therefore considered an unsafe context.</span></span> <span data-ttu-id="14420-107">Například tady je metody deklarované s `unsafe` modifikátor:</span><span class="sxs-lookup"><span data-stu-id="14420-107">For example, the following is a method declared with the `unsafe` modifier:</span></span>  
   
 ```csharp  
-      unsafe static void FastCopy(byte[] src, byte[] dst, int count)  
+unsafe static void FastCopy(byte[] src, byte[] dst, int count)  
 {  
     // Unsafe context: can use pointers here.  
 }  
 ```  
   
- <span data-ttu-id="ae57a-108">Obor nezabezpečeném kontextu rozšiřuje ze seznamu parametrů na konec metody, takže ukazatele lze také v seznamu parametrů:</span><span class="sxs-lookup"><span data-stu-id="ae57a-108">The scope of the unsafe context extends from the parameter list to the end of the method, so pointers can also be used in the parameter list:</span></span>  
+ <span data-ttu-id="14420-108">Obor nezabezpečeném kontextu rozšiřuje ze seznamu parametrů na konec metody, takže ukazatele lze také v seznamu parametrů:</span><span class="sxs-lookup"><span data-stu-id="14420-108">The scope of the unsafe context extends from the parameter list to the end of the method, so pointers can also be used in the parameter list:</span></span>  
   
 ```csharp  
 unsafe static void FastCopy ( byte* ps, byte* pd, int count ) {...}  
 ```  
   
- <span data-ttu-id="ae57a-109">Můžete také použít blok unsafe umožní použít nezabezpečený kód v tomto bloku.</span><span class="sxs-lookup"><span data-stu-id="ae57a-109">You can also use an unsafe block to enable the use of an unsafe code inside this block.</span></span> <span data-ttu-id="ae57a-110">Příklad:</span><span class="sxs-lookup"><span data-stu-id="ae57a-110">For example:</span></span>  
+ <span data-ttu-id="14420-109">Můžete také použít blok unsafe umožní použít nezabezpečený kód v tomto bloku.</span><span class="sxs-lookup"><span data-stu-id="14420-109">You can also use an unsafe block to enable the use of an unsafe code inside this block.</span></span> <span data-ttu-id="14420-110">Příklad:</span><span class="sxs-lookup"><span data-stu-id="14420-110">For example:</span></span>  
   
 ```csharp  
-      unsafe  
+unsafe  
 {  
     // Unsafe context: can use pointers here.  
 }  
 ```  
   
- <span data-ttu-id="ae57a-111">Chcete-li zkompilovat nebezpečný kód, je nutné zadat [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="ae57a-111">To compile unsafe code, you must specify the [/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) compiler option.</span></span> <span data-ttu-id="ae57a-112">Nezabezpečený kód není možné ověřit modulem common language runtime.</span><span class="sxs-lookup"><span data-stu-id="ae57a-112">Unsafe code is not verifiable by the common language runtime.</span></span>  
+ <span data-ttu-id="14420-111">Chcete-li zkompilovat nebezpečný kód, je nutné zadat [/ unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) – možnost kompilátoru.</span><span class="sxs-lookup"><span data-stu-id="14420-111">To compile unsafe code, you must specify the [/unsafe](../../../csharp/language-reference/compiler-options/unsafe-compiler-option.md) compiler option.</span></span> <span data-ttu-id="14420-112">Nezabezpečený kód není možné ověřit modulem common language runtime.</span><span class="sxs-lookup"><span data-stu-id="14420-112">Unsafe code is not verifiable by the common language runtime.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ae57a-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="ae57a-113">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="14420-113">Příklad</span><span class="sxs-lookup"><span data-stu-id="14420-113">Example</span></span>  
  [!code-csharp[csrefKeywordsModifiers#22](../../../csharp/language-reference/keywords/codesnippet/CSharp/unsafe_1.cs)]  
   
-## <a name="c-language-specification"></a><span data-ttu-id="ae57a-114">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="ae57a-114">C# Language Specification</span></span>  
+## <a name="c-language-specification"></a><span data-ttu-id="14420-114">Specifikace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="14420-114">C# Language Specification</span></span>  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a><span data-ttu-id="ae57a-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="ae57a-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="14420-115">Viz také</span><span class="sxs-lookup"><span data-stu-id="14420-115">See Also</span></span>
 
-- [<span data-ttu-id="ae57a-116">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="ae57a-116">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
-- [<span data-ttu-id="ae57a-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="ae57a-117">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
-- [<span data-ttu-id="ae57a-118">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="ae57a-118">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
-- [<span data-ttu-id="ae57a-119">fixed – příkaz</span><span class="sxs-lookup"><span data-stu-id="ae57a-119">fixed Statement</span></span>](../../../csharp/language-reference/keywords/fixed-statement.md)  
-- [<span data-ttu-id="ae57a-120">Nebezpečný kód a ukazatele</span><span class="sxs-lookup"><span data-stu-id="ae57a-120">Unsafe Code and Pointers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
-- [<span data-ttu-id="ae57a-121">Vyrovnávací paměti pevné velikosti</span><span class="sxs-lookup"><span data-stu-id="ae57a-121">Fixed Size Buffers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
+- [<span data-ttu-id="14420-116">Referenční dokumentace jazyka C#</span><span class="sxs-lookup"><span data-stu-id="14420-116">C# Reference</span></span>](../../../csharp/language-reference/index.md)  
+- [<span data-ttu-id="14420-117">Průvodce programováním v jazyce C#</span><span class="sxs-lookup"><span data-stu-id="14420-117">C# Programming Guide</span></span>](../../../csharp/programming-guide/index.md)  
+- [<span data-ttu-id="14420-118">Klíčová slova jazyka C#</span><span class="sxs-lookup"><span data-stu-id="14420-118">C# Keywords</span></span>](../../../csharp/language-reference/keywords/index.md)  
+- [<span data-ttu-id="14420-119">fixed – příkaz</span><span class="sxs-lookup"><span data-stu-id="14420-119">fixed Statement</span></span>](../../../csharp/language-reference/keywords/fixed-statement.md)  
+- [<span data-ttu-id="14420-120">Nebezpečný kód a ukazatele</span><span class="sxs-lookup"><span data-stu-id="14420-120">Unsafe Code and Pointers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/index.md)  
+- [<span data-ttu-id="14420-121">Vyrovnávací paměti pevné velikosti</span><span class="sxs-lookup"><span data-stu-id="14420-121">Fixed Size Buffers</span></span>](../../../csharp/programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
