@@ -3,11 +3,11 @@ title: Ladění dotazech LINQ to DataSet
 ms.date: 03/30/2017
 ms.assetid: f4c54015-8ce2-4c5c-8d18-7038144cc66d
 ms.openlocfilehash: c1014db4cad54420b917585becd2a2031638c1d9
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266257"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49087619"
 ---
 # <a name="debugging-linq-to-dataset-queries"></a>Ladění dotazech LINQ to DataSet
 

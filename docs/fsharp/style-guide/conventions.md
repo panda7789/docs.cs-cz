@@ -2,12 +2,12 @@
 title: 'Převody kódování F #'
 description: 'Další obecné pokyny a idiomy při psaní kódu jazyka F #.'
 ms.date: 05/14/2018
-ms.openlocfilehash: b9afd1fbfbd9d8e04d9bfaa07615de045b7e05fe
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 21119b6d69e00f359104bfb6eab7681bdbfb8d78
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47237397"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49087385"
 ---
 # <a name="f-coding-conventions"></a>Převody kódování F #
 
@@ -420,7 +420,7 @@ Tento postup neměl být všeobecně aplikován na celém základu kódu, ale je
 
 F # obsahuje několik možností [řízení přístupu](../language-reference/access-control.md), zděděné z co je k dispozici v modulu .NET runtime. Ty nejsou použitelné pouze pro typy – můžete využít pro funkce je moc.
 
-* Preferovat jinou hodnotu než`public` typy a členy, dokud nebudete potřebovat, aby to byla veřejně použitelné. Tím se minimalizují také jaké několik příjemců do
+* Preferovat jinou hodnotu než`public` typy a členy, dokud nebudete potřebovat, aby to byla veřejně použitelné. Tím se minimalizují také jaké několik příjemců do.
 * Přitom se snaží zachovat všechny funkce pomocné rutiny `private`.
 * Zvažte použití `[<AutoOpen>]` v privátní modulu pomocné funkce, pokud budou mnoho.
 

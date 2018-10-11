@@ -9,29 +9,29 @@ helpviewer_keywords:
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
 author: BrucePerlerMS
-ms.openlocfilehash: dd2c4f32978107a82ce940e0ef984c70f461b2c3
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 6dbf0e2be0a75fccd84a82fe2b3c8ab41762de83
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48046731"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49087723"
 ---
 # <a name="how-to-create-a-security-token-service"></a>Postupy: Vytvoření služby tokenů zabezpečení
 Služba tokenů zabezpečení implementuje protokol definovaných ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a zpráv exchange vzory pro vystavování, obnovení, zrušení a ověřování tokenů zabezpečení. Služba tokenů zabezpečení obsahuje nejméně jeden z těchto možností. Toto téma vypadá nanejvýš běžný scénář: implementace vystavování tokenů.  
   
 ## <a name="issuing-tokens"></a>Vystavování tokenů  
- WS-Trust definuje formáty zpráv, na základě `RequestSecurityToken` element schématu XML definice jazyk (XSD) schématu, a `RequestSecurityTokenResponse` element schématu XSD pro provádění vystavování tokenů. Kromě toho definuje přidružené identifikátory Uniform Resource (identifikátory URI) akce. Akci přidruženou k identifikátoru URI `RequestSecurityToken` zpráva http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue. Akci přidruženou k identifikátoru URI `RequestSecurityTokenResponse` zpráva http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue.  
+ WS-Trust definuje formáty zpráv, na základě `RequestSecurityToken` element schématu XML definice jazyk (XSD) schématu, a `RequestSecurityTokenResponse` element schématu XSD pro provádění vystavování tokenů. Kromě toho definuje přidružené identifikátory Uniform Resource (identifikátory URI) akce. Akci přidruženou k identifikátoru URI `RequestSecurityToken` zpráva `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue`. Akci přidruženou k identifikátoru URI `RequestSecurityTokenResponse` zpráva `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue`.  
   
 ### <a name="request-message-structure"></a>Struktura zprávy požadavku  
  Struktura zprávy požadavku problém se obvykle skládá z následujících položek:  
   
--   Žádost o zadejte identifikátor URI s hodnotou http://schemas.xmlsoap.org/ws/2005/02/trust/Issue.  
+-   Žádost o zadejte identifikátor URI s hodnotou `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue`.
   
--   Token typu identifikátoru URI. Pro tokeny zabezpečení kontrolní výrazy SAML (Markup Language) 1.1, hodnota tohoto identifikátoru URI je http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1.  
+-   Token typu identifikátoru URI. Pro tokeny zabezpečení kontrolní výrazy SAML (Markup Language) 1.1, hodnota tohoto identifikátoru URI je `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`.  
   
 -   Velikost klíče hodnota, která určuje počet bitů v klíči, který se má přidružit vydaný token.  
   
--   Klíče typu identifikátoru URI. Pro symetrické klíče, hodnota tohoto identifikátoru URI je http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey.  
+-   Klíče typu identifikátoru URI. Pro symetrické klíče, hodnota tohoto identifikátoru URI je `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey`.  
   
  Kromě toho několik dalších položek, může být k dispozici:  
   

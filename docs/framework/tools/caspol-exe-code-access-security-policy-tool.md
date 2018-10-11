@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: d2bf6123-7b0c-4e60-87ad-a39a1c3eb2e0
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c12444e435fa844095827411ba0e068303163bf4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: cfb1e29229393b44c193c4e88005ebc350dbcc6f
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47201137"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49086853"
 ---
 # <a name="caspolexe-code-access-security-policy-tool"></a>Caspol.exe (nástroj zásad zabezpečení přístupu kódu)
 Nástroj Code Access Security (CAS) Policy (Caspol.exe) umožňuje uživatelům a správcům měnit zásady zabezpečení pro úroveň zásad počítače, úroveň zásad uživatele a úroveň zásad podniku.  
@@ -90,7 +90,7 @@ caspol [options]
 |**-pub** { **-cert** *název_souboru_certifikátu*&#124;<br /><br /> **-soubor** *název_podepsaného_souboru* &#124; **-hex***šestnáctkový_řetězec* }  |Určuje kód, který obsahuje zadaného vydavatele softwaru, jak je označeno souborem certifikátu, podpisem na souboru nebo šestnáctkovou reprezentací certifikátu X509. Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.PublisherMembershipCondition?displayProperty=nameWithType>.|  
 |**– lokality** *webu*|Určuje kód, který obsahuje zadanou webovou stránku původu. Příklad:<br /><br /> `-site** www.proseware.com`<br /><br /> Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.SiteMembershipCondition?displayProperty=nameWithType>.|  
 |**-strong – soubor** *název_souboru* {*název* &#124; **- noname**} {*verze* &#124; **- noversion**}|Určuje kód, který má specifický silný název určený název souboru, název sestavení jako řetězec a verze sestavení ve formátu *hlavní*. *vedlejší*. *sestavení*. *Revize*. Příklad:<br /><br /> **-strong – soubor** myAssembly.exe myAssembly. 1.2.3.4.<br /><br /> Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.StrongNameMembershipCondition?displayProperty=nameWithType>.|  
-|**-url** *adresy URL*|Určuje kód pocházející ze zadané adresy URL. Adresa URL musí obsahovat protokol, jako je například http:// nebo ftp://. Kromě toho zástupný znak (\*) slouží k určení více sestavení z určité adresy URL. **Poznámka:** vzhledem k tomu, že adresa URL může být identifikována pomocí více názvů, pomocí adresy URL jako podmínky členství není bezpečným způsobem pro zjištění identity kódu. Kdykoli je to možné, použijte podmínku členství silného názvu, podmínku vydavatele nebo podmínku hodnoty hash. <br /><br /> Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.UrlMembershipCondition?displayProperty=nameWithType>.|  
+|**-url** *adresy URL*|Určuje kód pocházející ze zadané adresy URL. Adresa URL musí obsahovat protokol, jako například `http://` nebo `ftp://`. Kromě toho zástupný znak (\*) slouží k určení více sestavení z určité adresy URL. **Poznámka:** vzhledem k tomu, že adresa URL může být identifikována pomocí více názvů, pomocí adresy URL jako podmínky členství není bezpečným způsobem pro zjištění identity kódu. Kdykoli je to možné, použijte podmínku členství silného názvu, podmínku vydavatele nebo podmínku hodnoty hash. <br /><br /> Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.UrlMembershipCondition?displayProperty=nameWithType>.|  
 |**-zóny** *Název_zóny*|Určuje kód pomocí zadané zóny původu. *Název_zóny* argument může být jedna z následujících hodnot: **MyComputer**, **intranetu**, **důvěryhodné**, **Internet** , nebo **nedůvěryhodné**. Další informace o této podmínce členství najdete v tématu <xref:System.Security.Policy.ZoneMembershipCondition> třídy.|  
   
  *Příznaky* argument, který lze použít s **– addgroup** a **– chggroup** volby, je specifikován pomocí jedné z následujících akcí.  

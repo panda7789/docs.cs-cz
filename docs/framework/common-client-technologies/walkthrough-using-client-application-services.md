@@ -8,12 +8,12 @@ helpviewer_keywords:
 - application services host [client application services]
 - client application services, walkthroughs
 ms.assetid: bb7c8950-4517-4dae-b705-b74a14059b26
-ms.openlocfilehash: b800848fc3cefb1f82fb5822007bc670c1684363
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: d09ad4b1f518ac6f4c42dffd4b3ca17249b95700
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43788925"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49087853"
 ---
 # <a name="walkthrough-using-client-application-services"></a>Návod: Použití klientských aplikačních služeb
 Toto téma popisuje, jak vytvořit aplikaci Windows, která používá k ověřování uživatelů a získání role uživatele a nastavení klientských aplikačních služeb.  
@@ -35,9 +35,8 @@ Toto téma popisuje, jak vytvořit aplikaci Windows, která používá k ověřo
 -   Povolte režim offline. Zaškrtávací políčko bude poskytovat tak, aby uživatelé můžou zadat jejich stav připojení. Pak použijete tuto hodnotu určující, zda poskytovatelů služeb aplikací klienta bude dat místně uložených v mezipaměti namísto přístup ke své webové služby. Když se aplikace vrátí do režimu online nakonec bude ověřovat znovu aktuálního uživatele.  
   
 ## <a name="prerequisites"></a>Požadavky  
- Budete potřebovat následující komponenty k dokončení tohoto návodu:  
-  
--   [!INCLUDE[vs_orcas_long](../../../includes/vs-orcas-long-md.md)].  
+
+Visual Studio k dokončení tohoto návodu potřebujete.
   
 ## <a name="creating-the-client-application"></a>Vytvoření klientské aplikace  
  První věc, která bude provádět, je vytvoření projektu Windows Forms. Tento návod používá Windows Forms, protože se seznámíte s ním více lidí, ale proces se podobá pro projekty Windows Presentation Foundation (WPF).  

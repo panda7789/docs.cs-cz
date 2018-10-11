@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 52ca30fe29025e637005b95ebc14fce8f320e8f4
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 3f30fb473b486efc8381faa9076b98763935b0ae
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44084751"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49086061"
 ---
 # <a name="class-c-reference"></a>class (Referenční dokumentace jazyka C#)
 
@@ -39,7 +39,7 @@ V jazyce C# je povolena pouze jedna dědičnost. Jinými slovy třída může d�
 
 Třídy, které deklarujete přímo v rámci oboru názvů, ne vnořené v rámci jiné třídy, může být buď [veřejné](../../../csharp/language-reference/keywords/public.md) nebo [interní](../../../csharp/language-reference/keywords/internal.md). Třídy jsou `internal` ve výchozím nastavení.
 
-Členy třídy, včetně vnořené třídy, může být [veřejné](../../../csharp/language-reference/keywords/public.md), `protected internal`, [chráněné](../../../csharp/language-reference/keywords/protected.md), [interní](../../../csharp/language-reference/keywords/internal.md), [privátní](../../../csharp/language-reference/keywords/private.md), nebo `private protected`. Jsou členové [privátní](../../../csharp/language-reference/keywords/private.md) ve výchozím nastavení.
+Členy třídy, včetně vnořené třídy, může být [veřejné](public.md), [interní chráněné](protected-internal.md), [chráněné](protected.md), [interní](internal.md), [ privátní](private.md), nebo [private, protected](private-protected.md). Jsou členové `private` ve výchozím nastavení.
 
 Další informace najdete v tématu [modifikátory přístupu](../../../csharp/programming-guide/classes-and-structs/access-modifiers.md).
 

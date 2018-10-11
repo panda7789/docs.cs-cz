@@ -3,11 +3,11 @@ title: Ukázky serializace pro rozhraní .NET Framework
 ms.date: 03/30/2017
 ms.assetid: 6a56f66d-c80a-43e9-8e50-fb9b61120222
 ms.openlocfilehash: 5deae766b2b05fcb14c51666fa9fb988832a9a2d
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035289"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49086035"
 ---
 # <a name="serialization-samples-for-the-net-framework"></a>Ukázky serializace pro rozhraní .NET Framework
 V této části ukazuje serializaci objektů v rozhraní .NET Framework.  

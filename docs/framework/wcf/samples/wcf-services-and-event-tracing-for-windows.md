@@ -2,12 +2,12 @@
 title: Služby WCF a Trasování událostí pro Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: 26ce5fcb07b06a52f69ad8655adea563c177b055
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 6684f6415fa6ee82a59fc9b54911b5c65d6dadb2
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266868"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49086580"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>Služby WCF a Trasování událostí pro Windows
 Tento příklad ukazuje, jak pomocí analytického trasování ve Windows Communication Foundation (WCF) vysílat události do Event Tracing for Windows (ETW). Analytické trasování jsou události, protože ho na klíčových místech v zásobníku WCF, které umožňují Poradce při potížích pro služby WCF v produkčním prostředí.
@@ -34,7 +34,7 @@ Tento příklad ukazuje, jak pomocí analytického trasování ve Windows Commun
 
 5.  V rámci testovacího klienta WCF, přidání služby tak, že vyberete **souboru**a potom **přidat službu**.
 
-     Přidáte adresu koncového bodu do vstupního pole. Výchozí hodnota je http://localhost:1378/Calculator.svc.
+     Přidáte adresu koncového bodu do vstupního pole. Výchozí hodnota je `http://localhost:1378/Calculator.svc`.
 
 6.  Otevřete Prohlížeč událostí aplikace.
 

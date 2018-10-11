@@ -12,11 +12,11 @@ ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 7088c7f7765f0c5cfc4d6151dcda6f57b8de10d2
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580008"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49086645"
 ---
 # <a name="compiling-an-interop-project"></a>Kompilace projektu interoperability
 

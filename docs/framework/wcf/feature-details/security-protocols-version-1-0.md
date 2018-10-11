@@ -3,33 +3,33 @@ title: Protokoly zabezpečení verze 1.0
 ms.date: 03/30/2017
 ms.assetid: ee3402d2-1076-410b-a3cb-fae0372bd7af
 author: BrucePerlerMS
-ms.openlocfilehash: 043a092855b7f5827c03b1d247b03328ba561edf
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 59d82fc3238f12b33f3111c88854b9d6348a5e27
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036276"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49086788"
 ---
 # <a name="security-protocols-version-10"></a>Protokoly zabezpečení verze 1.0
 Protokoly webových služeb zabezpečení poskytují webové služby bezpečnostní mechanismy, které pokrývají všechny stávající Podnikové zasílání zpráv požadavků na zabezpečení. Tato část popisuje podrobnosti Windows Communication Foundation (WCF) verze 1.0 (implementované v <xref:System.ServiceModel.Channels.SecurityBindingElement>) pro protokoly zabezpečení následujících webových služeb.  
   
 |Specifikace/dokumentu|Odkaz|  
 |-|-|  
-|WSS: Zabezpečení zpráv SOAP 1.0|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf|  
-|Doplněk WSS: Token uživatelského jména profilu 1.0|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf|  
-|Doplněk WSS: X509 Token profilu 1.0|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0.pdf|  
-|Doplněk WSS: SAML 1.1 Token profilu 1.0|http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.0.pdf|  
-|Doplněk WSS: Zabezpečení zpráv SOAP 1.1|http://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf|  
-|Doplněk WSS uživatelské jméno Token Profile 1.1|http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf|  
-|Doplněk WSS: X.509 Token Profile 1.1|http://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf|  
-|Doplněk WSS: Token protokolu Kerberos Profile 1.1|http://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf|  
-|Doplněk WSS: SAML 1.1 Token Profile 1.1|http://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf|  
-|WS-Secure Conversation|http://msdn.microsoft.com/ws/2005/02/ws-secure-conversation/|  
-|WS-Trust|http://msdn.microsoft.com/ws/2005/02/ws-trust/|  
+|WSS: Zabezpečení zpráv SOAP 1.0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf>|
+|Doplněk WSS: Token uživatelského jména profilu 1.0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf>|
+|Doplněk WSS: X509 Token profilu 1.0|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0.pdf>|
+|Doplněk WSS: SAML 1.1 Token profilu 1.0|<https://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.0.pdf>|
+|Doplněk WSS: Zabezpečení zpráv SOAP 1.1|<https://www.oasis-open.org/committees/download.php/16790/wss-v1.1-spec-os-SOAPMessageSecurity.pdf>|
+|Doplněk WSS uživatelské jméno Token Profile 1.1|<https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0.pdf>|
+|Doplněk WSS: X.509 Token Profile 1.1|<https://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf>|
+|Doplněk WSS: Token protokolu Kerberos Profile 1.1|<https://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf>|
+|Doplněk WSS: SAML 1.1 Token Profile 1.1|<https://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf>|
+|WS-Secure Conversation|<http://specs.xmlsoap.org/ws/2005/02/sc/WS-SecureConversation.pdf>|
+|WS-Trust|<http://specs.xmlsoap.org/ws/2005/02/trust/ws-trust.pdf>|
 |Poznámka: aplikace:<br /><br /> Pomocí WS-Trust pro TLS Handshake|K publikování|  
 |Poznámka: aplikace:<br /><br /> Pomocí WS-Trust pro SPNEGO|K publikování|  
 |Poznámka: aplikace:<br /><br /> Webové služby adresování Reference koncového bodu a Identity|K publikování|  
-|WS-SecurityPolicy 1.1<br /><br /> (2005/07)|http://msdn.microsoft.com/ws/2005/07/ws-security-policy/<br /><br /> ve znění chyby odeslání technického výboru OASIS WS-SX http://www.oasis-open.org/archives/ws-sx/200512/msg00017.html|  
+|WS-SecurityPolicy 1.1<br /><br /> (2005/07)|<http://specs.xmlsoap.org/ws/2005/07/securitypolicy/ws-securitypolicy.pdf><br /><br /> ve znění [chyby](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html) odeslané do technického výboru OASIS WS-SX |  
   
  WCF, verze 1, poskytuje 17 režimy ověřování, které můžete použít jako základ pro konfigurace zabezpečení webové služby. Každý režim je optimalizovaný pro sadu běžných požadavků na nasazení, jako například:  
   
@@ -69,9 +69,9 @@ Protokoly webových služeb zabezpečení poskytují webové služby bezpečnost
   
 |Předpona|Obor názvů|  
 |------------|---------------|  
-|s|http://www.w3.org/2003/05/soap-envelope|  
-|SP|http://schemas.xmlsoap.org/ws/2005/07/securitypolicy|  
-|a|http://www.w3.org/2005/08/addressing|  
+|s|<https://www.w3.org/2003/05/soap-envelope/>|
+|SP|<http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/>|
+|a|<https://www.w3.org/2005/08/addressing>|  
 |wsse|DEFINUJE – IDENTIFIKÁTOR URI OASIS WSS 1.0|  
 |wsse11|DEFINUJE – IDENTIFIKÁTOR URI OASIS WSS 1.1|  
 |areálu|Definuje – nástroj URI OASIS WSS 1.0|  
@@ -79,8 +79,8 @@ Protokoly webových služeb zabezpečení poskytují webové služby bezpečnost
 |WST|Definuje – WS-Trust 2005/02 identifikátoru URI|  
 |wssc|Definuje – WS-SecureConversation 2005/02 identifikátoru URI|  
 |wsaw|Definuje – obor názvů WS-Addressing zásad|  
-|soubor WSP|http://schemas.xmlsoap.org/ws/2004/09/policy|  
-|mssp|http://schemas.microsoft.com/ws/2005/07/securitypolicy|  
+|soubor WSP|<http://schemas.xmlsoap.org/ws/2004/09/policy>|  
+|mssp|<http://schemas.xmlsoap.org/ws/2005/07/securitypolicy>|
   
 ## <a name="1-token-profiles"></a>1. Token profily  
  Webové služby zabezpečení specifikace představují přihlašovací údaje jako tokeny zabezpečení. WCF podporuje následující typy tokenů:  
