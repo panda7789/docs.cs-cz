@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: ab96e8f3395a78c88184872a2c78b71fb2bf7b9e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7e43d423109ea39a725a4bfa8b9d2b22a25cfb5c
+ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522108"
+ms.lasthandoff: 10/11/2018
+ms.locfileid: "49087333"
 ---
 # <a name="consuming-a-dataset-from-an-xml-web-service"></a>Spotřebování datové sady z webové služby XML
 <xref:System.Data.DataSet> Byl navržen v odpojeném návrhu v části pro usnadnění pohodlný přenos dat přes Internet. **Datovou sadu** je "serializovatelný", můžete nastavit jako vstup nebo výstup z webové služby XML bez jakékoli další kódování požadované Streamovat obsah **datovou sadu** z webové služby XML do klienta a zpět. **Datovou sadu** je implicitně převeden na datový proud XML ve formátu formát DiffGram, posílaných prostřednictvím sítě a pak znovu vytvořena z datový proud XML jako **datovou sadu** na přijímající straně. To poskytuje velmi jednoduché a flexibilní metodu pro předávání a vracení relačních dat pomocí webové služby XML. Další informace o formátu formát DiffGram najdete v tématu [DiffGrams](../../../../../docs/framework/data/adonet/dataset-datatable-dataview/diffgrams.md).  
@@ -163,7 +163,7 @@ ms.locfileid: "43522108"
   
      Aby bylo možné využívat metody vystavené, vyžadují klienti XML webové služby serveru proxy protokolu SOAP. Můžete použít Visual Studio vygenerovat tento proxy server za vás. Nastavením webový odkaz na existující webové služby z Visual Studia vyvolá transparentně všechny chování, které jsou popsané v tomto kroku. Pokud chcete vytvořit třídu proxy, sami, pokračujte v této diskuse. Ve většině případů ale pomocí sady Visual Studio k vytvoření třídy proxy pro klientské aplikace je dostačující.  
   
-     Proxy server můžete vytvořit pomocí jazyka nástroj pro popis webových služeb. Například, pokud webové služby XML je přístupný na adrese URL http://myserver/data/DataSetSample.asmx, například následující příkaz vytvořit proxy Visual Basic .NET s oborem názvů z **WebData.DSSample** a uloží je v souboru sample.vb.  
+     Proxy server můžete vytvořit pomocí jazyka nástroj pro popis webových služeb. Například, pokud webové služby XML je přístupný na adrese URL `http://myserver/data/DataSetSample.asmx`, například následující příkaz vytvořit proxy Visual Basic .NET s oborem názvů z **WebData.DSSample** a uloží je v souboru sample.vb.  
   
     ```console
     wsdl /l:VB -out:sample.vb http://myserver/data/DataSetSample.asmx /n:WebData.DSSample  
