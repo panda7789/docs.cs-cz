@@ -5,12 +5,12 @@ helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 1aac40793fabe152e18a1bf1b634058e85b31481
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a6725463b042d51e20e5b293d7177903d2d35956
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515758"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123628"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>Postupy: Iterace v adresářovém stromě (Průvodce programováním v C#)
 Fráze "iterace v adresářovém stromu" znamená, že pro přístup k každý soubor v každé vnořené podadresáři uvedený kořenový adresář na libovolnou hloubku. Nemáte nutně otevřete každý soubor. Můžete načíst jenom název souboru nebo podadresáře jako `string`, nebo můžete získat další informace ve formě <xref:System.IO.FileInfo?displayProperty=nameWithType> nebo <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> objektu.  
@@ -54,7 +54,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  Pokud musíte uložit obsah strom adresářové struktury v paměti nebo na disku, nejlepší možností je uložit pouze <xref:System.IO.FileSystemInfo.FullName%2A> vlastnosti (typu `string`) pro každý soubor. Potom můžete tento řetězec použít k vytvoření nového <xref:System.IO.FileInfo> nebo <xref:System.IO.DirectoryInfo> objektu podle potřeby, nebo otevřete každý soubor, který vyžaduje další zpracování.  
   
 ## <a name="robust-programming"></a>Robustní programování  
- Kód iterace robustní souboru musí vzít v úvahu mnoho složitostí systému souborů. Další informace o systému souborů Windows, naleznete v tématu [technické informace o systému souborů NTFS](https://technet.microsoft.com/library/81cc8a8a-bd32-4786-a849-03245d68d8e4).  
+ Kód iterace robustní souboru musí vzít v úvahu mnoho složitostí systému souborů. Další informace o systému souborů Windows, naleznete v tématu [přehled systému souborů NTFS](/windows-server/storage/file-server/ntfs-overview).  
   
 ## <a name="see-also"></a>Viz také
 

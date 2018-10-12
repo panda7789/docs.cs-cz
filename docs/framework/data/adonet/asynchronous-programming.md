@@ -1,13 +1,13 @@
 ---
 title: Asynchronní programování
-ms.date: 03/30/2017
+ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 0c5c3f52f6afa0e1fa48d33167feabeb8d5b76f5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0c16fecc9e79f36c122c13909be0eeba848b7c20
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504972"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123654"
 ---
 # <a name="asynchronous-programming"></a>Asynchronní programování
 
@@ -23,8 +23,9 @@ Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnsh
 3.  <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A?displayProperty=nameWithType>  
   
  Tato funkce zůstane v SqlClient v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
-  
- Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], tyto metody se už nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.  
+
+> [!TIP]
+> Počínaje [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)], tyto starší verze metody už nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.  
   
 ## <a name="asynchronous-programming-features-added-in-includenetv45includesnet-v45-mdmd"></a>Asynchronní programování funkce přidané ve [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]  
  Nová funkce pro asynchronní programování poskytuje jednoduché techniku, aby asynchronní kód.  
@@ -87,6 +88,9 @@ Toto téma popisuje podporu pro asynchronní programování v [!INCLUDE[dnprdnsh
 -   <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType>  
   
  Jiné asynchronní členy byly přidány pro podporu [streamování SqlClient podporují](../../../../docs/framework/data/adonet/sqlclient-streaming-support.md).  
+
+> [!TIP]
+> Nový asynchronní metody nevyžadují `Asynchronous Processing=true` v připojovacím řetězci.  
   
 ### <a name="synchronous-to-asynchronous-connection-open"></a>Synchronní asynchronního připojení otevřené  
  Můžete upgradovat stávající aplikace pro použití nové asynchronní funkce. Předpokládejme například, aplikace má synchronní připojení algoritmus a blokuje vlákno uživatelského rozhraní, pokaždé, když se připojuje k databázi a po připojení aplikace volá uloženou proceduru, která signalizuje jiných uživatelů k tomu, který právě přihlášení.  

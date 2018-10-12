@@ -4,12 +4,12 @@ description: Zjistěte, jak k detekování a zmírnění chyby zabezpečení ča
 ms.date: 06/12/2018
 author: blowdart
 ms.author: mairaw
-ms.openlocfilehash: 6d16b6849bfd4744f1828cda38a537f842243c1d
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 4f1d6df3c0368fa0273d871ff32564c159e62a2c
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840518"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123641"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>Časování chybami zabezpečení pomocí režimu CBC Symetrické dešifrování pomocí odsazení
 
@@ -65,7 +65,7 @@ V minulosti došlo shody, které jsou důležité k šifrování i ověřování
 
 Třída chyby zabezpečení označované jako "padding oracle útoky" označuje existovat více než deset let. Tyto chyby útočníkovi umožnit dešifrovat data zašifrovaná pomocí bloku symetrické algoritmy, například AES a 3DES pomocí více než 4096 pokusů na jednoho datového bloku. Ujistěte se, tyto nedostatky zabezpečení použijte skutečnost, že block šifer se nejčastěji používají s daty ověřitelný odsazení na konci. Bylo zjištěno, že pokud útočník lze manipulovat s šifrovaného textu a zjistěte, zda úmyslné poškozování způsobilo chybu ve formátu odsazení na konci, útočník může data dešifrovat.
 
-Na začátku praktické útoky jsou založené na službách, které vrátí různé chybové kódy na základě na, jestli byl platný, jako je například Chyba zabezpečení technologie ASP.NET odsazení [MS10-070](https://technet.microsoft.com/library/security/ms10-070.aspx). Společnost Microsoft však nyní věří, že je potřeba provést podobné útoky pomocí pouze rozdíly mezi časování mezi zpracování platný a neplatný odsazení.
+Na začátku praktické útoky jsou založené na službách, které vrátí různé chybové kódy na základě na, jestli byl platný, jako je například Chyba zabezpečení technologie ASP.NET odsazení [MS10-070](/security-updates/SecurityBulletins/2010/ms10-070). Společnost Microsoft však nyní věří, že je potřeba provést podobné útoky pomocí pouze rozdíly mezi časování mezi zpracování platný a neplatný odsazení.
 
 Za předpokladu, že podpis používá schéma šifrování a ověření podpisu se provádí s pevnou modul runtime pro danou délku dat (bez ohledu na obsah), můžete ověřit integritu dat bez generování žádné informace Útočník prostřednictvím [kanál ze strany](https://en.wikipedia.org/wiki/Side-channel_attack). Protože kontroly integrity odmítne všechny zmanipulovanou zprávy, je zmírnit hrozby oracle odsazení.
 

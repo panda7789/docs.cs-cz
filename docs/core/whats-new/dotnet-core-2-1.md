@@ -1,15 +1,18 @@
 ---
 title: Co je nového v .NET Core 2.1
 description: Informace o nových funkcích v .NET Core 2.1.
+dev_langs:
+- csharp
+- vb
 author: rpetrusha
 ms.author: ronpet
-ms.date: 06/06/2018
-ms.openlocfilehash: aa80e6b7214f91c49803adde49a1e03d1971b3f6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.date: 10/10/2018
+ms.openlocfilehash: bf14e21ec4d390d8ab753bfa45533442ff4f6e68
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47400064"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49120944"
 ---
 # <a name="whats-new-in-net-core-21"></a>Co je nového v .NET Core 2.1
 
@@ -166,9 +169,11 @@ Můžete se rozhodnout do vrstvené kompilace v některém ze dvou způsobů.
 
 Bez těchto typů, při předávání takové položky jako část pole nebo jeho část vyrovnávací paměti budete muset vytvořit kopii nějakou část dat před předáním na metodu. Tyto typy poskytují virtuální zobrazení data, která eliminuje potřebu další paměť přidělení a operací kopírování.
 
-Následující příklad používá <xref:System.Span%601> instance virtuální zviditelňují 10 prvků pole.
+Následující příklad používá <xref:System.Span%601> a <xref:System.Memory%601> instance virtuální zviditelňují 10 prvků pole.
 
 [!CODE-csharp[Span\<T>](~/samples/core/whats-new/whats-new-in-21/cs/program.cs)]
+
+[!CODE-vb[Memory\<T>](~/samples/core/whats-new/whats-new-in-21/vb/program.vb)]
 
 ### <a name="brotli-compression"></a>Brotli komprese
 

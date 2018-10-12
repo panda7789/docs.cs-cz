@@ -2,12 +2,12 @@
 title: Ukázka samostatného diagnostického informačního kanálu
 ms.date: 03/30/2017
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-ms.openlocfilehash: 64222297373f194a33b5520ecd71b0acc7755359
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 6def1d02ed46675d98db115f77ac36bb9f9401de
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43418294"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123550"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>Ukázka samostatného diagnostického informačního kanálu
 Tento příklad ukazuje, jak vytvořit pro syndikaci Windows Communication Foundation (WCF) informační kanál RSS/Atom. Je to základní program "Hello World", který ukazuje základy objektový model a jak ho nastavit na službu Windows Communication Foundation (WCF).  
@@ -49,7 +49,7 @@ WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http:/
 <%@ ServiceHost Language="C#|VB" Debug="true" Service="ProcessService" %>  
 ```  
   
- Protože tato služba přijímá požadavky pomocí standardní HTTP GET, můžete použít libovolného klienta RSS nebo s ohledem na ATOM pro přístup ke službě. Například můžete zobrazit výstup této služby tak, že přejdete do http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss v prohlížeči podporující RSS, jako je například Internet Explorer 7.  
+ Protože tato služba přijímá požadavky pomocí standardní HTTP GET, můžete použít libovolného klienta RSS nebo s ohledem na ATOM pro přístup ke službě. Například můžete zobrazit výstup této služby tak, že přejdete do `http://localhost:8000/diagnostics/feed/?format=atom` nebo `http://localhost:8000/diagnostics/feed/?format=rss` v prohlížeči podporující RSS.
   
  Můžete také použít [jak the WCF syndikace objektu modelu mapuje na Atom a RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md) syndikovaný data číst a zpracovat je pomocí imperativního kódu.  
   
@@ -82,7 +82,7 @@ foreach (SyndicationItem i in feed.Items)
   
 3.  Spusťte konzolovou aplikaci.  
   
-4.  Je spuštěn konzolovou aplikaci, přejděte na http://localhost:8000/diagnostics/feed/?format=atom nebo http://localhost:8000/diagnostics/feed/?format=rss pomocí prohlížeče podporující RSS.  
+4.  Je spuštěn konzolovou aplikaci, přejděte na `http://localhost:8000/diagnostics/feed/?format=atom` nebo `http://localhost:8000/diagnostics/feed/?format=rss` pomocí prohlížeče podporující RSS.  
   
 > [!IMPORTANT]
 >  Vzorky mohou již být nainstalováno ve vašem počítači. Před pokračováním zkontrolujte následující adresář (výchozí).  

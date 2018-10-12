@@ -17,15 +17,15 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1dc87b201638bab974c59722a69300977b14cf08
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5825f0425947f109ed834879684357fef7b70959
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33426933"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123771"
 ---
 # <a name="isymunmanagedwriterdefinesequencepoints-method"></a>ISymUnmanagedWriter::DefineSequencePoints – metoda
-Definuje skupinu bodů pořadí v rámci aktuální metoda. Každý počáteční řádek a počáteční sloupec definovat spuštění příkazu v rámci metody. Každý ukončení řádku a končí sloupec definovat konci příkazu v rámci metody. Pole musí být seřazeny ve vzestupném pořadí odsazení. Posun je vždy měří od začátku metodu v bajtech.  
+Definuje skupinu pořadí bodů v aktuální metodě. Každé počáteční řádek a počáteční sloupec definovat spuštění příkazu v rámci metody. Každý ukončení řádku a poslední sloupec definovat konec příkazu v rámci metody. Tato pole mají být řazeny ve vzestupném pořadí podle posunů. Posun je vždy prováděno od samého začátku metody v bajtech.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,28 +42,28 @@ HRESULT DefineSequencePoints(
   
 #### <a name="parameters"></a>Parametry  
  `document`  
- [v] Dokument objekt, pro které jsou definovány body sekvence.  
+ [in] Objekt dokumentu, pro které jsou definovány body sekvence.  
   
  `spCount`  
- [v] A `ULONG32` , která určuje velikost jednotlivých `offsets`, `lines`, `columns`, `endLines`, a `endColumns` vyrovnávací paměti.  
+ [in] A `ULONG32` , který označuje velikost jednotlivých `offsets`, `lines`, `columns`, `endLines`, a `endColumns` vyrovnávací paměti.  
   
  `offsets`  
- [v] Posun body sekvence se měří od začátku metody.  
+ [in] Posun body sekvence měřená od začátku metody.  
   
  `lines`  
- [v] Počáteční řádek čísla bodů pořadí.  
+ [in] Počáteční řádek čísla body sekvence.  
   
  `columns`  
- [v] Počáteční sloupec čísla body sekvence.  
+ [in] Počáteční sloupec čísla body sekvence.  
   
  `endLines`  
- [v] Koncová čísla řádků bodů pořadí. Tento parametr je volitelný.  
+ [in] Koncového čísla řádku body sekvence. Tento parametr je volitelný.  
   
  `endColumns`  
- [v] Koncová čísla sloupců body sekvence. Tento parametr je volitelný.  
+ [in] Koncového čísla sloupce body sekvence. Tento parametr je volitelný.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  

@@ -3,11 +3,11 @@ title: Řešení potíží – korelace
 ms.date: 03/30/2017
 ms.assetid: 98003875-233d-4512-a688-4b2a1b0b5371
 ms.openlocfilehash: fecfaf7374823bb19a4ad3d7f6cb2dbbdf139703
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48793731"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121889"
 ---
 # <a name="troubleshooting-correlation"></a>Řešení potíží – korelace
 Korelace se používá k propojení zprávy služby pracovního postupu k sobě navzájem a pro instanci pracovního postupu správný, ale pokud není správně nakonfigurována, nebude přijímat zprávy a aplikace nebude fungovat správně. Toto téma obsahuje základní informace o několik metod pro řešení potíží s korelace a také uvádí některé běžné problémy, které může dojít, když použijete korelace.

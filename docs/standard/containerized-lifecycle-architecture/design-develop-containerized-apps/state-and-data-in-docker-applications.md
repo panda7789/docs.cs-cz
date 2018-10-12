@@ -4,18 +4,18 @@ description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 78db191bdec4c25c11728d819d89eaaaff4bd7da
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 9b048beb0eb913fc6587dcc639a16df8153c550b
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586034"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123225"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Stav a data v aplikacích Dockeru
 
 Primitivní kontejnerů je neměnnosti. Při porovnání k virtuálnímu počítači, není jako společného výskytu zmizí kontejnery. Virtuální počítač se nemusí podařit v různých formách z dead procesy, přetížené procesoru nebo úplné nebo selhání disku. Zatím Očekáváme, že virtuální počítač k dispozici a běžné, aby zajistil, že data udržovat selhání jednotky jsou jednotky RAID.
 
-Ale kontejnerů jsou považované za instance procesů. Proces nemá udržovat trvalého stavu. I v případě, že kontejner může zapisovat do své místní úložiště, by ekvivalentní za předpokladu, že bude trvalé paměti jedné kopie za předpokladu, že tato instance bude kolem po neomezenou dobu. Byste měli předpokládat, že jsou kontejnery, jako jsou procesy, duplicitní, ukončeny, nebo když spravovaný pomocí orchestrátoru kontejneru, mohou být přesunuty.
+Ale kontejnerů jsou považované za instance procesů. Proces nemá udržovat trvalého stavu. I v případě, že kontejner může zapisovat do své místní úložiště, by ekvivalentní za předpokladu, že bude trvalé paměti jedné kopie za předpokladu, že instance bude po neomezeně dlouho. Byste měli předpokládat, že jsou kontejnery, jako jsou procesy, duplicitní, ukončeny, nebo když spravovaný pomocí orchestrátoru kontejneru, mohou být přesunuty.
 
 Docker používá funkci označovanou jako *překryv systému souborů* k implementaci procesu na kopírování zápisů, která ukládá všechny aktualizované informace o kořenové systému souborů kontejneru ve srovnání s původní bitové kopie, na které je založená. Tyto změny budou ztraceny, pokud kontejner se pak odstraní ze systému. Kontejner, proto nemá trvalého úložiště ve výchozím nastavení. I když je možné uložit stav kontejneru, návrhu systému tomuto by konfliktu se zásadou architektury kontejneru.
 

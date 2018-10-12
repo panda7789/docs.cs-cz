@@ -3,13 +3,13 @@ title: Modernizujte stávající .NET aplikací s Azure Cloud a kontejnerů Wind
 description: Zjistěte, jak přenést a podržte klávesu shift a modernizace stávajících aplikací do cloudu Azure a kontejnery s tuto elektronickou příručku.
 author: CESARDELATORRE
 ms.author: wiwagn
-ms.date: 4/28/2018
-ms.openlocfilehash: b22ddd8a63d183571f9ca3a63fb7ae84ebb88510
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.date: 04/28/2018
+ms.openlocfilehash: f4ca3789ec4b3d84960f2ecd4494a899339a787b
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873493"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121438"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows (verze 2.)
 

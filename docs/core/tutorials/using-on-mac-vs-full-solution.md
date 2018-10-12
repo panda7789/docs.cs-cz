@@ -4,12 +4,12 @@ description: Toto téma vás provede sestavení řešení .NET Core, která obsa
 author: guardrex
 ms.author: mairaw
 ms.date: 06/12/2017
-ms.openlocfilehash: 17d7cc5b085b4d47ebf1e5ed9a766be9d5d8b01f
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 589b3e72f7e8425051a96f66f07f24327d273c45
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530493"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122817"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -32,7 +32,7 @@ Další informace o požadavky najdete v článku [předpoklady pro .NET Core v 
 
 ## <a name="building-a-library"></a>Vytváření knihovny
 
-1. Na úvodní obrazovce vyberte **nový projekt**. V **nový projekt** dialogového okna v části **Multiplatformní** uzlu, vyberte **knihovna .NET Standard** šablony. Vyberte **Další**.
+1. Na úvodní obrazovce vyberte **nový projekt**. V **nový projekt** dialogového okna v části **Multiplatformní** uzlu, vyberte **knihovna .NET Standard** šablony. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.Net Standard](https://docs.microsoft.com/en-us/dotnet/standard/net-standard). Vyberte **Další**.
 
    ![Dialogové okno nového projektu](./media/using-on-mac-vs-full-solution/vsmacfull01.png)
 

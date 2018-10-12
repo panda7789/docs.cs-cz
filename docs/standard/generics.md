@@ -1,29 +1,27 @@
 ---
 title: Obecné typy (Obecné) – přehled
-description: Zjistěte, jak obecné fungovat jako kód šablony, které umožňují definovat bezpečnost typů datové struktury bez potvrzení typ skutečná data.
+description: Zjistěte, jak kód šablony, které umožňují definovat typ vláknově bezpečných datových struktur bez potvrzení do skutečný datový typ plnit obecných typů.
 author: kuhlenh
 ms.author: wiwagn
-ms.date: 06/20/2016
-ms.technology: dotnet-standard
-ms.assetid: a315b111-8e48-446c-ab19-acb6405894a7
-ms.openlocfilehash: ad6216998dff70ca7e36b52b374c5ffb9fd0cd45
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.date: 10/09/2018
+ms.openlocfilehash: 1d1899d482738bc6cc9f638b6a74eab8d4ca70c1
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33575476"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121178"
 ---
-# <a name="generic-types-generics-overview"></a>Obecné typy (Obecné) – přehled
+# <a name="generic-types-overview"></a>Přehled obecných typů
 
-Používáme obecné vždy v jazyce C#, ať už implicitně nebo explicitně. Při použití LINQ v jazyku C#, se někdy zjistíte, že pracujete s rozhraní IEnumerable<T>? Nebo pokud jste viděli někdy online ukázka "Obecné úložiště" pro rozhovoru s databází pomocí rozhraní Entity Framework, se zobrazí, většina metody vrací IQueryable<T>? Vám může mít zajímalo co **T** se v těchto příkladech a proč je zde?
+Vývojáři pomocí obecných typů neustále v .NET, zda implicitně nebo explicitně. Při použití LINQ v .NET, Všimli jste si někdy, že pracujete s <xref:System.Collections.Generic.IEnumerable%601>? Nebo pokud jste někdy viděli online ukázky "obecného úložiště" pro komunikaci se databází pomocí Entity Frameworku, nebyla uvidíte, že většina metod vrátí IQueryable<T>? Vám může mít přemýšleli, co **T** je v těchto příkladech a proč je tady.
 
-Poprvé rozhraní .NET Framework 2.0, obecné typy související se situací změny jazyka C# a Common Language Runtime (CLR). **Obecné typy** jsou v podstatě "kód šablonu", který umožňuje vývojářům definovat [bezpečnost typů](https://msdn.microsoft.com/library/hbzz1a9a.aspx) datové struktury bez potvrzení typ skutečná data. Například `List<T>` je [obecnou kolekci](xref:System.Collections.Generic) , lze deklarovat a použít s žádným typem: `List<int>`, `List<string>`, `List<Person>`atd.
+Poprvé byla představena v rozhraní .NET Framework 2.0, **obecných typů** jsou v podstatě "kód šablony", který umožňuje vývojářům definovat [zajišťující bezpečnost typů](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hbzz1a9a(v=vs.100)) datové struktury bez potvrzení do skutečný datový typ. Například <xref:System.Collections.Generic.List%601> je [obecné kolekce](xref:System.Collections.Generic) , který můžete deklarovat a používat s libovolného typu, jako například `List<int>`, `List<string>`, nebo `List<Person>`.
 
-Ano co je bod? Obecné typy jsou užitečné Chcete-li to porozumět, musíme si prohlédněte určité třídy před a po přidání obecné typy. Podívejme se na `ArrayList`. V jazyce C# 1.0 `ArrayList` elementy byly typu `object`. To znamenalo, že byl libovolný element, který byl přidán bezobslužně převeden do `object`; stejné co se stane na čtení elementy ze seznamu (Tento proces se označuje jako [zabalení](../../docs/csharp/programming-guide/types/boxing-and-unboxing.md) a rozbalení v uvedeném pořadí). Zabalení a rozbalení mít vliv výkonu. Více než ale není v době kompilace zjistit, co je skutečný typ dat v seznamu. Díky tomu pro některé křehké kód. Obecné typy tento problém vyřešit tím, že poskytuje další informace o typu dat, které bude obsahovat každou instanci seznamu. Jednoduše PUT, lze přidat pouze celých čísel na `List<int>` a přidat pouze osoby, aby `List<Person>`atd.
+Abyste pochopili, proč jsou užitečné obecných typů, Pojďme se podívat na konkrétní třídu před a po přidání obecných typů: <xref:System.Collections.ArrayList>. V rozhraní .NET Framework 1.0 `ArrayList` elementy byly typu <xref:System.Object>. To znamená, že byl tiše převod libovolný prvek přidán `Object`. Stejné by mohlo dojít při čtení prvky ze seznamu. Tento proces se označuje jako [zabalení a rozbalení](../csharp/programming-guide/types/boxing-and-unboxing.md), a to má vliv na výkon. A víc než ale neexistuje žádný způsob, jak určit typ dat v seznamu v době kompilace. Díky tomu pro některé křehké kód. Obecné typy tento problém vyřešit tak, že definujete typ dat, který bude obsahovat každou instanci seznamu. Například můžete přidat pouze celých čísel na `List<int>` a přidávat jenom osoby `List<Person>`.
 
-Obecné typy jsou také k dispozici v době běhu nebo **reified**. To znamená, že modul runtime ví, jaký typ dat struktura používáte a můžete ho uložit v paměti efektivněji.
+Obecné typy jsou také k dispozici za běhu. To znamená, že modul runtime ví, jaký typ struktury dat používáte a můžete ho uložit do paměti efektivněji.
 
-Tady je malý program, který ukazuje efektivitu znalost data struktury typu za běhu:
+V následujícím příkladu je malý program, který ukazuje efektivitu znalost data strukturovat typu za běhu:
 
 ```csharp
   using System;
@@ -55,18 +53,20 @@ Tady je malý program, který ukazuje efektivitu znalost data struktury typu za 
   }
 ```
 
-Tento program vypočítá následující výstup:
+Tento program vytvoří výstup podobný následujícímu:
 
 ```console
-Generic Sort: System.Collections.Generic.List\`1[System.Int32] Time taken: 0.0789ms
-Non-Generic Sort: System.Collections.ArrayList Time taken: 2.4324ms
+Generic Sort: System.Collections.Generic.List`1[System.Int32]
+ Time taken: 0.0034ms
+Non-Generic Sort: System.Collections.ArrayList
+ Time taken: 0.2592ms
 ```
 
-První věcí, kterou jste si všimli, že je zde řazení seznamu Obecné je mnohem rychlejší než neobecnou seznam. Také můžete si všimnout, že typ pro obecné seznamu je odlišné ([System.Int32]), zatímco typ seznamu neobecnou je zobecněn. Vzhledem k tomu, že modul runtime zná obecná `List<int>` je typu int, může ukládat prvky seznamu v základní pole celé číslo v paměti, zatímco neobecnou `ArrayList` má přetypovat každý element seznamu jako objekt uložen v objektu pole v paměti. Jak je znázorněno prostřednictvím v tomto příkladu, navíc odlitků trvat až čas a zpomalit řazení seznamu.
+První věc, kterou si všimnete, že je zde řazení obecného seznamu je výrazně rychlejší než řazení seznamu Obecné. Můžete také všimnout, jestli je typ obecný seznam jedinečných ([System.Int32]), že typ seznamu neobecnou je zobecněný. Vzhledem k tomu, že modul runtime ví Obecné `List<int>` je typu <xref:System.Int32>, může ukládat prvky seznamu v podkladové pole celé číslo v paměti, zatímco neobecné `ArrayList` má převést každý prvek seznamu na objekt. Jak ukazuje tento příklad, navíc přetypování trvat až čas a zpomalit řazení seznamu.
 
-Užitečné věc o běhu znalost typ vaší obecného je lépe ladění prostředí. Když ladíte obecný v jazyce C#, víte, jaký typ každého elementu je datová struktura. Bez obecné typy byste měli žádné nápad jaký typ každý element.
+Další výhodou znalost typu vaše obecný modul runtime je lepší možnosti ladění. Při ladění obecný v jazyce C#, víte, jaký typ je každý prvek datové struktury. Bez obecných typů by nemáte představu, jaký typ byl každý prvek.
 
-## <a name="further-reading-and-resources"></a>Další čtení a prostředky
+## <a name="see-also"></a>Viz také:
 
-*   [Úvod do obecnými typy C#](https://msdn.microsoft.com/library/ms379564.aspx)
-*   [C# Průvodce programováním – obecné typy](../../docs/csharp/programming-guide/generics/index.md)
+- [Úvod do obecných typů jazyka C#](https://msdn.microsoft.com/library/ms379564.aspx)
+- [Programování průvodce v C# – obecné typy](../../docs/csharp/programming-guide/generics/index.md)

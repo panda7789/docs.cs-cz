@@ -2,12 +2,12 @@
 title: Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 ms.date: 05/22/2017
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: bd1493319dd7f742158fe7d3e1b286a4900b05b5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7e95010f966119db72a32c21408852d6c3bd6521
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43529160"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122835"
 ---
 # <a name="asynchronous-programming-with-async-and-await-c"></a>Asynchronní programování pomocí modifikátoru async a operátoru await (C#)
 Pomocí asynchronního programování se můžete vyhnout kritickým bodům a zlepšit celkovou rychlost reakce aplikace. Tradiční techniky pro psaní asynchronních aplikací však mohou být složité, takže je obtížné je napsat, ladit a udržovat.  
@@ -173,7 +173,7 @@ Zadáte <xref:System.Threading.Tasks.Task%601> jako návratový typ, pokud metod
   
 Použijete <xref:System.Threading.Tasks.Task> jako návratový typ, pokud metoda nemá žádný návratový příkaz nebo má návratový příkaz, který nevrací operand.  
 
-Od verze C# 7.0, můžete také zadat jiné návratovým typem, za předpokladu, že tento typ zahrnuje `GetAwaiter` metoda. <xref:System.Threading.Tasks.ValueTask%601> je příkladem takového typu. Je k dispozici [System.Threading.Tasks.Extension](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) balíček NuGet.
+Od verze C# 7.0, můžete také zadat jiné návratovým typem, za předpokladu, že obsahuje typ `GetAwaiter` metody. <xref:System.Threading.Tasks.ValueTask%601> je příkladem takového typu. Je k dispozici [System.Threading.Tasks.Extension](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) balíček NuGet.
   
  Následující příklad ukazuje, jak deklarovat a volat metodu, která se vrátí <xref:System.Threading.Tasks.Task%601> nebo <xref:System.Threading.Tasks.Task>.  
   

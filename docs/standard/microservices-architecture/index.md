@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 0f401f89b0a568b8dc7c3734b2f06fa3a14de110
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 38f638b76a38c470daf51cb7be8566feb4b6362f
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47088494"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121360"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro Kontejnerizované aplikace .NET
 
@@ -171,7 +171,7 @@ Tato kniha je k dispozici "jako-je" a vyjadřuje zobrazení autora a názory. Zo
 
 Některé zde uvedené příklady jsou k dispozici pouze pro ilustraci a jsou smyšlené. Žádný skutečný vztah nebo spojení ani je určena ji vyvozovat.
 
-Microsoft a ochranné známky uvedený na http://www.microsoft.com na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft.
+Microsoft a ochranné známky uvedený na <https://www.microsoft.com> na webové stránce "Ochranné známky" jsou obchodní známky společností skupiny Microsoft.
 
 Mac a macOS jsou ochranné známky společnosti Apple Inc.
 

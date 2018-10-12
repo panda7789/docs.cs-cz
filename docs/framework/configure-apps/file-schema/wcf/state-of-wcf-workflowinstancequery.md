@@ -2,21 +2,22 @@
 title: '&lt;state&gt; služby WCF, &lt;workflowInstanceQuery&gt;'
 ms.date: 03/30/2017
 ms.assetid: 40f21055-766c-4be9-86c4-d1d899007098
-ms.openlocfilehash: 69ebedec40243d3e6580b8350c1253fca83e0802
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 427cba7a51bfb908171e476cd703c6a40fd6e144
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32754568"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123212"
 ---
 # <a name="ltstategt-of-wcf-ltworkflowinstancequerygt"></a>&lt;state&gt; služby WCF, &lt;workflowInstanceQuery&gt;
 Představuje kolekci předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.  
   
- Další informace o sledování profil dotazů najdete v tématu [sledování profily](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
+ Další informace o sledování profil dotazy naleznete v tématu [sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)  
   
- \<system.serviceModel>  
+\<system.serviceModel>  
 \<sledování >  
-\<trackingProfile >  
+\<profily >  
+\<profil trackingProfile >  
 \<pracovní postup >  
 \<workflowInstanceQueries >  
 \<workflowInstanceQuery >  
@@ -26,31 +27,48 @@ Představuje kolekci předplacenému stavy z instance sledovaných pracovního p
 ## <a name="syntax"></a>Syntaxe  
   
 ```xml
-<tracking>   <trackingProfile name="Name">       <workflow>          <workflowInstanceQueries>             <workflowInstanceQuery>                <states>                   <state name="Name"/>                </states>            </workflowInstanceQuery>         </workflowInstanceQueries>       </workflow>   </trackingProfile></tracking>  
+<tracking>
+  <profiles>
+    <trackingProfile name="Name">
+      <workflow>
+        <workflowInstanceQueries>
+          <workflowInstanceQuery>
+            <states>
+              <state name="Name"/>
+            </states>
+          </workflowInstanceQuery>
+        </workflowInstanceQueries>
+      </workflow>
+    </trackingProfile>
+  </profiles>
+</tracking>  
 ```
   
-## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují atributy, podřízené prvky a nadřazené prvky.  
+## <a name="attributes-and-elements"></a>Atributy a elementy
+
+Následující části popisují atributy, podřízené prvky a nadřazené prvky.
   
-### <a name="attributes"></a>Atributy  
-  
+### <a name="attributes"></a>Atributy
+
 |Atribut|Popis|  
 |---------------|-----------------|  
-|name|Řetězec, který určuje předplacenému stavu z instance sledovaných pracovního postupu, pokud je vytvořena položka sledování.|  
+|`name`|Řetězec, který určuje předplacenému stavu z instance sledovaných pracovního postupu, pokud je vytvořena položka sledování.|  
   
-### <a name="child-elements"></a>Podřízené elementy  
- Žádné  
-  
-### <a name="parent-elements"></a>Nadřazené elementy  
-  
+### <a name="child-elements"></a>Podřízené prvky
+
+Žádné
+
+### <a name="parent-elements"></a>Nadřazené prvky
+
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<stavy >](../../../../../docs/framework/configure-apps/file-schema/windows-workflow-foundation/states.md)|Kolekce předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.|  
+|[\<stavy >](states-of-wcf-workflowinstancequery.md)|Kolekce předplacenému stavy z instance sledovaných pracovního postupu při vytváření záznamů sledování.|  
   
 ## <a name="remarks"></a>Poznámky  
- Vrácené záznamy jsou filtrovány státy v této kolekci.  
+
+Vrácené záznamy jsou filtrovány státy v této kolekci.  
   
- Stav možné hodnoty jsou popsány v následující tabulce.  
+Stav možné hodnoty jsou popsány v následující tabulce:
   
 |Stav|Popis|  
 |-----------|-----------------|  
@@ -68,22 +86,24 @@ Představuje kolekci předplacenému stavy z instance sledovaných pracovního p
 |Ukončen|Instance pracovního postupu je ukončeno.|  
 |Pozastavení|Pozastavení je instance pracovního postupu.|  
   
-## <a name="example"></a>Příklad  
- Následující konfigurace přihlásí na úrovni instance sledování záznamů pro pracovní postup `Started` stav instance pomocí tohoto dotazu.  
+## <a name="example"></a>Příklad
+
+Následující konfigurace přihlásí na úrovni instance sledování záznamů pro pracovní postup `Started` stav instance pomocí tohoto dotazu.  
   
-```xml  
-<workflowInstanceQueries>  
-    <workflowInstanceQuery>  
-      <states>  
-        <state name="Started"/>  
-      </states>  
-    </workflowInstanceQuery>  
-</workflowInstanceQueries>  
+```xml
+<workflowInstanceQueries>
+  <workflowInstanceQuery>  
+    <states>  
+      <state name="Started"/>  
+    </states>  
+  </workflowInstanceQuery>  
+</workflowInstanceQueries>
 ```  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>       
- <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElement?displayProperty=nameWithType>       
- <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>       
- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)  
- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
+- <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElement?displayProperty=nameWithType>
+- <xref:System.Activities.Tracking.WorkflowInstanceQuery?displayProperty=nameWithType>
+- [Sledování a trasování pracovních postupů](../../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [Sledování profilů](../../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)

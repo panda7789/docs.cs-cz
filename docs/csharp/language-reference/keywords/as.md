@@ -1,6 +1,6 @@
 ---
 title: as (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+ms.date: 10/11/2018
 f1_keywords:
 - as_CSharpKeyword
 - as
@@ -8,17 +8,19 @@ helpviewer_keywords:
 - type conversion [C#], as keyword
 - as keyword [C#]
 ms.assetid: a9be126b-cbf4-4990-a70d-d0e1983cad0e
-ms.openlocfilehash: aee80b3262ccd9432d7c311dddec47185b66d05f
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: ce3163f7d957df96a5c0304adc0b3083d8e20104
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583066"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122710"
 ---
 # <a name="as-c-reference"></a>as (Referenční dokumentace jazyka C#)
 Můžete použít `as` operátor pro provádění určitých typů převody mezi typy kompatibilní odkazů nebo [typy připouštějící hodnotu Null](../../../csharp/programming-guide/nullable-types/index.md). Následující kód ukazuje příklad.  
   
 [!code-csharp[csrefKeywordsOperator#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsOperator/CS/csrefKeywordsOperators.cs#1)]
+
+Jak ukazuje příklad, potřebujete porovnat výsledek `as` výraz s `null` ke kontrole, pokud je úspěšný převod. Od verze C# 7.0, můžete použít [je](is.md) výraz pro testování, převod bude úspěšné a podmíněně přidělit proměnné v případě, že převod je úspěšný. V mnoha případech je stručnější než při použití `as` operátor. Další informace najdete v tématu [vzor typu](is.md#type) část [ `is` operátor](is.md) článku.
   
 ## <a name="remarks"></a>Poznámky  
  `as` Operátor je jako operace přetypování. Nicméně, pokud převod není možný, `as` vrátí `null` namísto vyvolání výjimky. Vezměte v úvahu v následujícím příkladu:  

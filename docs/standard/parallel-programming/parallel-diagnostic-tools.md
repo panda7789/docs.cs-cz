@@ -8,11 +8,11 @@ ms.assetid: 38f7302a-ddf6-4179-ba19-f49e00395b9f
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 4649f33fe07e7780630fbd11170bb54046617c14
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48026936"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123108"
 ---
 # <a name="parallel-diagnostic-tools"></a>Paralelní diagnostické nástroje
 Visual Studio poskytuje rozsáhlou podporu pro ladění a profilování vícevláknových aplikacích.  

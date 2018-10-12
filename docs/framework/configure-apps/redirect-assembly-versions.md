@@ -11,11 +11,11 @@ ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: c4c96b874456297ede61c96e46fee8d90ebcafb6
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48263914"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123615"
 ---
 # <a name="redirecting-assembly-versions"></a>Přesměrování verzí sestavení
 

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 905092cfdcbcbeb95fdfa689c09a847491595d9d
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 1b5bada61a9d6374a1b961603fcf575199dee591
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857320"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121399"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Strategie zabezpečení WPF – zabezpečení platformy
 Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpečení, také využívá podkladovou platformu, která obsahuje operační systém, funkce zabezpečení [!INCLUDE[TLA2#tla_clr](../../../includes/tla2sharptla-clr-md.md)], a [!INCLUDE[TLA2#tla_ie](../../../includes/tla2sharptla-ie-md.md)]. Tyto vrstvy se dá zajistit [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] silné zabezpečení obrany v modelu, který se pokouší vyhnout jakékoli jediným bodem selhání, jak je znázorněno na následujícím obrázku:  
@@ -88,7 +88,7 @@ Windows Presentation Foundation (WPF) poskytuje širokou škálu služeb zabezpe
 #### <a name="defense-in-depth-layer"></a>Vrstvy v obrany  
  Protože [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] jsou obecně v izolovaném prostoru prostřednictvím Internetu sadu oprávnění zóny, odebírání těchto oprávnění nepoškodí [!INCLUDE[TLA#tla_winfxwebapp#plural](../../../includes/tlasharptla-winfxwebappsharpplural-md.md)] z hlediska kompatibility. Místo toho se vytvoří další úroveň v obrany; Pokud aplikace v izolovaném prostoru je schopen zneužít jinými vrstvami a zneužití procesu, proces bude stále pouze máte omezená oprávnění.  
   
- Zobrazit [pomocí nejméně privilegovaný uživatelský účet](https://technet.microsoft.com/library/cc700846.aspx).  
+ Zobrazit [pomocí nejméně privilegovaný uživatelský účet](https://docs.microsoft.com/previous-versions/tn-archive/cc700846%28v=technet.10%29).  
   
 <a name="Common_Language_Runtime_Security"></a>   
 ## <a name="common-language-runtime-security"></a>Zabezpečení služby Common Language Runtime  

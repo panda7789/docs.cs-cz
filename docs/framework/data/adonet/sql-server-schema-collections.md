@@ -2,12 +2,12 @@
 title: Kolekce schémat SQL serveru
 ms.date: 03/30/2017
 ms.assetid: c6403cc3-d78b-4f85-bab1-ada7a3446ec5
-ms.openlocfilehash: 7020c74d41ce1feef38c4dfc66117a7b8c8eff4e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 7f710af5c05942d2ff1718c9d59d4d776f45c6e7
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43508487"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123862"
 ---
 # <a name="sql-server-schema-collections"></a>Kolekce schémat SQL serveru
 Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje další schéma kolekce kromě společné kolekce schémat. Kolekce schémat mírně lišit podle verze SQL serveru, který používáte. Pokud chcete určit seznam kolekcí nepodporuje schéma, zavolejte **GetSchema** metody bez argumentů nebo názvem kolekce schématu "MetaDataCollections". Vrátí <xref:System.Data.DataTable> seznam kolekcí nepodporuje schéma, počet omezení, které každá podporují a počet identifikátor částí, které používají.  
@@ -28,7 +28,7 @@ Poskytovatel dat rozhraní Microsoft .NET Framework pro SQL Server podporuje dal
 |CONSTRAINT_SCHEMA|String|Schéma, které obsahuje omezení.|  
 |CONSTRAINT_NAME|String|Jméno.|  
 |TABLE_CATALOG|String|Omezení název tabulky je součástí.|  
-|TABLE_SCHEMA|String|Schéma, který obsahuje tabulku.|  
+|TABLE_SCHEMA|String|Schéma, které obsahuje tabulku.|  
 |TABLE_NAME|String|Název tabulky|  
 |CONSTRAINT_TYPE|String|Typ omezení. Je povolen pouze "cizí klíč".|  
 |IS_DEFERRABLE|String|Určuje, zda je omezení nebyla. Vrátí číslo|  

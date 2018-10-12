@@ -9,11 +9,11 @@ ms.assetid: 34f533bf-fc14-4e78-8fee-fb7107345fab
 author: Xansky
 ms.author: mhopkins
 ms.openlocfilehash: 95e0e44584a25543577628d1ff8a8b3dae87d34e
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48779254"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122711"
 ---
 # <a name="ui-automation-support-for-the-listitem-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku ListItem
 > [!NOTE]

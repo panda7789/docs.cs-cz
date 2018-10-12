@@ -4,12 +4,12 @@ description: Další informace o rozdílech mezi stávající a soubory csproj .
 author: blackdwarf
 ms.author: mairaw
 ms.date: 09/22/2017
-ms.openlocfilehash: 1fd264da2863fbeb88900be0f6fe000acac08a09
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 0efca768545ab11319b2fe7b062cb6a4e751dc4d
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47216913"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121412"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Dodatky k formátu csproj pro .NET Core
 
@@ -110,11 +110,11 @@ Položka, která určuje závislostí NuGet v projektu. `Include` Atribut určuj
 `Version` Určuje verzi balíčku, který se obnovit. Atribut respektuje pravidla [správy verzí NuGet](/nuget/create-packages/dependency-versions#version-ranges) schéma. Výchozí chování je shoda přesnou verzi. Například zadání `Version="1.2.3"` je ekvivalentní zápisu NuGet `[1.2.3]` pro přesné 1.2.3 verzi balíčku.
 
 #### <a name="includeassets-excludeassets-and-privateassets"></a>IncludeAssets, ExcludeAssets a PrivateAssets
-`IncludeAssets` atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by měl používat. 
+`IncludeAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by měl používat. 
 
-`ExcludeAssets` atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by neměla využívat.
+`ExcludeAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by neměla využívat.
 
-`PrivateAssets` atribut určuje, jaké prostředky, které patří do balíčku určeného `<PackageReference>` by měl používat, ale, že by neměla posílat do příští projekt. 
+`PrivateAssets` atribut určuje, jaké prostředky, které patří do určeného balíčku `<PackageReference>` by měl používat, ale ne směrovat do příští projekt. 
 
 > [!NOTE]
 > `PrivateAssets` je ekvivalentní *project.json*/*xproj* `SuppressParent` elementu.

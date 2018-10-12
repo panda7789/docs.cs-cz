@@ -3,11 +3,11 @@ title: 'Instalaci F #'
 description: 'Informace o instalaci F # založeny na vašem prostředí.'
 ms.date: 08/28/2018
 ms.openlocfilehash: 909e1c07ff7f6d52db77a987639d1c749146fdca
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48844004"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49120931"
 ---
 # <a name="install-f"></a>Instalaci F # #
 

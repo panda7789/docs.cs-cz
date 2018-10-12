@@ -5,11 +5,11 @@ ms.assetid: 7667770e-d163-4ad6-a303-085cf73db2f2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 39b7228de775f4dc92e932731ad9967315437e6e
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48777393"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121113"
 ---
 # <a name="mef-for-net-for-windows-store-apps"></a>Rozhraní MEF pro .NET pro aplikace Windows Store
 <xref:System.Composition?displayProperty=nameWithType> a jeho podřízené obory názvů obsahují typy pro vývoj rozšiřitelných [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí Managed Extensibility Framework (MEF). Tyto obory názvů jsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] dílčí pro [!INCLUDE[win8](../../../includes/win8-md.md)] operačního systému.  

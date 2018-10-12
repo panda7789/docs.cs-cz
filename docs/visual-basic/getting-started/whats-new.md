@@ -1,6 +1,6 @@
 ---
 title: Co je nového v jazyce Visual Basic
-ms.date: 02/15/2018
+ms.date: 10/04/2018
 f1_keywords:
 - VB.StartPage.WhatsNew
 helpviewer_keywords:
@@ -10,16 +10,16 @@ helpviewer_keywords:
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ae29553b6a431c3f20f0e5e34614842946532a9b
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 07e6b201056614237a433ed7a297d40eab23da59
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925608"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122624"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
-Toto téma obsahuje seznam názvů klíčových funkcí pro každou verzi jazyka Visual Basic s podrobný popis nové a vylepšené funkce v nejnovější verzi jazyka.
+Toto téma obsahuje seznam názvů klíčovou funkcí pro každou verzi jazyka Visual Basic s podrobný popis nové a vylepšené funkce v nejnovějších verzích tohoto jazyka.
   
 ## <a name="current-version"></a>Aktuální verze
 
@@ -69,6 +69,10 @@ Například následující volání metody, které má dva poziční argumenty m
 ```vb
 StudentInfo.Display("Mary", age:=19, #9/21/1998#)
 ```
+
+[`Private Protected` členský modifikátor přístupu](../language-reference/modifiers/private-protected.md)
+
+Tato nová kombinace – klíčové slovo definuje člen, který je přístupný podle všech členů v jeho obsahující třídy a typy odvozené od obsahující třídy, ale pouze v případě, které také najdete v něm obsažené sestavení. Vzhledem k tomu, že nelze dědit struktury, `Private Protected` může používat jedině pro členy třídy.
 
 **Hex/binární soubor/osmičkové počáteční oddělovač**
 

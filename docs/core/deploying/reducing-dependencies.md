@@ -4,12 +4,12 @@ description: Omezte závislosti balíčků, při vytváření knihovny project.j
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: ae314800f789cee363728def8347b5e6990acb0b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 67d53b45e5cb02f146f763966d1f76e8a8a469ce
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44193605"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122569"
 ---
 # <a name="reducing-package-dependencies-with-projectjson"></a>Omezení závislosti balíčku s project.json
 
@@ -127,7 +127,7 @@ V dalším kroku zkopírujte odkazy na balíčky do `dependencies` části kniho
 }
 ```
 
-To je poměrně velké balíčky, mnoho kterému jistě nejsou potřebné pro rozšíření typy kolekcí.  Můžete odebrat balíčky, které ručně nebo pomocí nástroje, jako [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) používá k identifikaci, který ve skutečnosti balíčky kódu.
+To je poměrně velké balíčky, z nichž mnohá jistě nejsou potřebné pro rozšíření typy kolekcí.  Můžete odebrat balíčky, které ručně nebo pomocí nástroje, jako [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) používá k identifikaci, který ve skutečnosti balíčky kódu.
 
 Tady je oříznutý balíčku by mohla vypadat:
 

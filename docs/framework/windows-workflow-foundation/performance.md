@@ -2,12 +2,12 @@
 title: Výkon Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: c7dc098eee5f17e18f76c0b54a097a22f5d844b1
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 78e9ac1cc350fe8c04222b2698569412961d3b52
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873690"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123810"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon Windows Workflow Foundation 4
 Dustinu Metzgar
@@ -287,7 +287,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  I s komplexní pracovní postupy s mnoha hloubky a vysoký počet aktivit výsledky výkonu jsou konzistentní s jinými propustnost čísly uvedené dříve v tomto článku.  Propustnost vaší WF4 je řádově rychleji a má být porovnána na logaritmickém měřítku.
 
 ### <a name="memory"></a>Paměť
- Nároky na paměť Windows Workflow Foundation se měří v dvě klíčové oblasti: pracovní postup složitost a počet definice pracovního postupu.  Měření paměti byly provedeny na pracovní stanici, 64bitová verze Windows 7.  Existuje mnoho způsobů, jak získat měření velikost pracovní sady například monitorování čítače výkonu, dotazování Environment.WorkingSet nebo pomocí některého nástroje, například VMMap dostupné z [VMMap](https://technet.microsoft.com/sysinternals/dd535533.aspx). Kombinace metod byla použita pro získání a ověřit výsledky jednotlivých testů.
+ Nároky na paměť Windows Workflow Foundation se měří v dvě klíčové oblasti: pracovní postup složitost a počet definice pracovního postupu.  Měření paměti byly provedeny na pracovní stanici, 64bitová verze Windows 7.  Existuje mnoho způsobů, jak získat měření velikost pracovní sady například monitorování čítače výkonu, dotazování Environment.WorkingSet nebo pomocí některého nástroje, například VMMap dostupné z [VMMap](/sysinternals/downloads/vmmap). Kombinace metod byla použita pro získání a ověřit výsledky jednotlivých testů.
 
 ### <a name="workflow-complexity-test"></a>Test složitost pracovního postupu
  Pracovní postup složitost zkušební měření pracovní sada rozdíl podle složitosti pracovního postupu.  Kromě komplexní pracovní postupy používají v předchozí části, se přidají nové variace pro dvě základní případy: jedna aktivita pracovního postupu a pořadí s aktivitami 1000.  Pro tyto testy jsou pracovní postupy inicializován a provést do dokončení jedinou smyčku sériového portu po dobu jedné minuty.  Variace každý test běží třikrát a data zaznamenaná průměr těchto tří spuštění.

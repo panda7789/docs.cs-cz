@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: 3ec7acb7bdb5e0e22965475ec267616694842ed0
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 069bfacd1ae08b5c84d6e304b2f12f18e1eecb22
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842083"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122848"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Práce s daty v aplikacích ASP.NET Core
 
@@ -91,7 +91,7 @@ var brandItems = await _context.CatalogBrands
 
 Je důležité v příkladu výše a přidejte volání do ToListAsync, aby bylo možné okamžitě spustit dotaz. V opačném případě bude příkaz Přiřadit položku IQueryable<SelectListItem> k brandItems, který nebude provedeno, dokud je ve výčtu. Existují výhody a nevýhody vrací typ IQueryable výsledky z metod. Umožňuje dotazu, které EF Core vytvoří dále upravit, ale můžete také za následek chyby, které se vztahuje pouze na za běhu, pokud operace jsou přidány do dotazu, který nelze přeložit EF Core. Obecně je bezpečnější pro předání nějaké filtry do metody provádí přístup k datům a vrátit zpět kolekce v paměti (například seznamu<T>) jako výsledek.
 
-EF Core sleduje změny u entit, který načte z trvalého úložiště. Pokud chcete uložit změny do sledované entity, stačí zavolat metodu SaveChanges objekt dbcontext, ujistěte se, že se že jedná o stejnou instanci DbContext, který byl použit pro načtení entity. Přidávání a odebírání entity je přímo na odpovídající vlastnosti DbSet, znovu s volání SaveChanges pro spuštění databázových příkazů. Následující příklad ukazuje přidání, aktualizace nebo odebrání entity z trvalého úložiště.
+EF Core sleduje změny u entit, který načte z trvalého úložiště. Pokud chcete uložit změny do sledované entity, stačí zavolat metodu SaveChanges objekt dbcontext, ujistěte se, že se že jedná o stejnou instanci DbContext, který byl použit pro načtení entity. Přidávání a odebírání entity se provádí přímo na odpovídající vlastnosti DbSet, znovu s volání SaveChanges pro spuštění databázových příkazů. Následující příklad ukazuje přidání, aktualizace nebo odebrání entity z trvalého úložiště.
 
 ```csharp
 // create

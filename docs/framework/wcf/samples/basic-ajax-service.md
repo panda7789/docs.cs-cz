@@ -2,12 +2,12 @@
 title: Základní služba AJAX
 ms.date: 03/30/2017
 ms.assetid: d66d0c91-0109-45a0-a901-f3e4667c2465
-ms.openlocfilehash: d8da6469101511b6b5a9ce19a11f1e5e3fe9d83e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 2218c8e062f8fe0b799213831099a112a2df732b
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43524880"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121009"
 ---
 # <a name="basic-ajax-service"></a>Základní služba AJAX
 Tento příklad ukazuje, jak pomocí služby Windows Communication Foundation (WCF) základní asynchronní jazyka JavaScript technologie ASP.NET a XML (AJAX) službu (služba, která můžete přistupovat pomocí kódu jazyka JavaScript z webového prohlížeče klienta). Služba používá <xref:System.ServiceModel.Web.WebGetAttribute> atribut zajistíte, že služba reaguje na požadavky HTTP GET a je nakonfigurován na použití formátu dat JavaScript Object Notation (JSON) pro odpovědi.  
@@ -29,7 +29,7 @@ public interface ICalculator
 }
 ```
 
- Používá ukázkový soubor SVC <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, který přidá <xref:System.ServiceModel.Description.WebScriptEndpoint> standardní koncový bod ke službě. Koncový bod je nakonfigurována na prázdnou adresu vzhledem k souboru SVC. To znamená, že je adresa služby http://localhost/ServiceModelSamples/service.svc, se žádné další přípony jiný než název operace.  
+ Používá ukázkový soubor SVC <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, který přidá <xref:System.ServiceModel.Description.WebScriptEndpoint> standardní koncový bod ke službě. Koncový bod je nakonfigurována na prázdnou adresu vzhledem k souboru SVC. To znamená, že je adresa služby `http://localhost/ServiceModelSamples/service.svc`, se žádné další přípony jiný než název operace.  
 
 ```svc
 <%@ServiceHost language="C#" Debug="true" Service="Microsoft.Samples.SimpleAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebScriptServiceHostFactory" %>
@@ -48,7 +48,7 @@ public interface ICalculator
 </system.serviceModel>  
 ```  
   
- <xref:System.ServiceModel.Description.WebScriptEndpoint> Nastaví výchozí formát dat pro službu do formátu JSON místo XML. Abyste mohli vyvolat službu, přejděte na http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200 po dokončení sady si a sestavte kroky uvedené dále v tomto tématu. Tato funkce testování se povoluje pomocí požadavku HTTP GET.  
+ <xref:System.ServiceModel.Description.WebScriptEndpoint> Nastaví výchozí formát dat pro službu do formátu JSON místo XML. Abyste mohli vyvolat službu, přejděte na `http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200` po dokončení sady si a sestavte kroky uvedené dále v tomto tématu. Tato funkce testování se povoluje pomocí požadavku HTTP GET.  
   
  Klient SimpleAjaxClientPage.aspx webová stránka obsahuje kód technologie ASP.NET se vyvolat službu pokaždé, když uživatel klikne jedno z tlačítek operace na stránce. `ScriptManager` Ovládací prvek se používá aby proxy pro službu pomocí JavaScriptu.  
 

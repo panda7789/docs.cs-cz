@@ -8,11 +8,11 @@ ms.assetid: bdf89bea-1623-45ee-a57b-cf7c90395efa
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 14bf011c3711a267b8cf5a1fc0497a347468387d
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49087814"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121750"
 ---
 # <a name="how-to-create-com-wrappers"></a>Postupy: Vytváření obálek COM
 

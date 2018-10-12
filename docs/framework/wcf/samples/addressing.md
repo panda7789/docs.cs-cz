@@ -2,12 +2,12 @@
 title: Adresování
 ms.date: 03/30/2017
 ms.assetid: d438e6f2-d0f3-43aa-b259-b51b5bda2e64
-ms.openlocfilehash: 6f2ab732fd5758358c7347087694cab8d56703bf
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 0e18039db51a1060661b435640c356fd0610a68a
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/02/2018
-ms.locfileid: "43468362"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123199"
 ---
 # <a name="addressing"></a>Adresování
 Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bodu. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). V této ukázce je služba v místním prostředí. Službu a klienta jsou konzolové aplikace. Služba definuje několik koncových bodů pomocí kombinace relativní a absolutní koncový bod adresy.  
@@ -40,7 +40,7 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- V takovém případě je relativní adresa prázdná (""), takže adresu koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je http://localhost:8000/servicemodelsamples/service.  
+ V takovém případě je relativní adresa prázdná (""), takže adresu koncového bodu je stejný jako základní adresu. Adresa skutečný koncový bod je `http://localhost:8000/servicemodelsamples/service`.
   
  Druhá definice koncového bodu také určuje relativní adresa, jak je znázorněno v následující ukázková konfigurace.  
   
@@ -53,7 +53,7 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Relativní adresa "test", se připojí k základní adrese. Adresa skutečný koncový bod je http://localhost:8000/servicemodelsamples/service/test.  
+ Relativní adresa "test", se připojí k základní adrese. Adresa skutečný koncový bod je `http://localhost:8000/servicemodelsamples/service/test`.
   
  Třetí definice koncového bodu určuje absolutní adresu, jak je znázorněno v následující ukázková konfigurace.  
   
@@ -63,9 +63,9 @@ Příklad adresování ukazuje různé aspekty a vlastnosti adresy koncového bo
           contract="Microsoft.ServiceModel.Samples.ICalculator" />  
 ```  
   
- Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je http://localhost:8001/hello/servicemodelsamples.  
+ Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je `http://localhost:8001/hello/servicemodelsamples`.
   
- Na čtvrté adresu koncového bodu určuje absolutní adresu a různé přenosové – TCP. Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je NET.TCP://localhost: 9000/servicemodelsamples/služby.  
+ Na čtvrté adresu koncového bodu určuje absolutní adresu a různé přenosové – TCP. Základní adresa hraje žádná role v adrese. Adresa skutečný koncový bod je `net.tcp://localhost:9000/servicemodelsamples/service`.
   
 ```xml  
 <!-- The absolute address specified, different transport: -->  

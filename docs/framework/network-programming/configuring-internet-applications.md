@@ -24,11 +24,11 @@ ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
 author: mcleblanc
 ms.author: markl
 ms.openlocfilehash: 81b0f69306a0f9a4ed6d35e3c8ef95271a779294
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49087775"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122341"
 ---
 # <a name="configuring-internet-applications"></a>Konfigurace internetových aplikací
 [ \<System.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) prvek konfigurace obsahuje informace o konfiguraci sítě pro aplikace. Použití [ \<system.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) element, můžete nastavit proxy servery, nastavit správu parametry připojení a vlastní moduly ověřování a žádosti do aplikace zahrnout.  

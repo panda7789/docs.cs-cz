@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 6453ef66-19b4-41f3-b712-52d0c2abc9ca
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5d82f41e3722ab568f14fbbb00bb0972d759a329
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 4a0332a642f9377eed2769ea5aedb1be85853274
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43485910"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49122751"
 ---
 # <a name="ltsupportportabilitygt-element"></a>&lt;supportPortability&gt; – Element
 Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých implementacích rozhraní .NET Framework zakázáním výchozího chování, které považuje za ekvivalent pro účely přenositelnosti aplikace sestavení.  
@@ -79,5 +79,5 @@ Určuje, že aplikace může odkazovat na stejné sestavení ve dvou různých i
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [/ appconfig (možnosti kompilátoru C#)](https://msdn.microsoft.com/library/ee523958.aspx)  
+ [/ appconfig (možnosti kompilátoru C#)](../../../../../docs/csharp/language-reference/compiler-options/appconfig-compiler-option.md)  
  [Přehled sjednocení sestavení rozhraní .NET framework](https://msdn.microsoft.com/library/8d8cc65e-031d-463b-bde3-2c6dc2e3bc48)

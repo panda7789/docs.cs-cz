@@ -4,18 +4,18 @@ description: Najděte si materiály pro další informace o vytváření aplikac
 author: thraka
 ms.author: adegeo
 ms.date: 06/27/2018
-ms.openlocfilehash: fa5deb46b64e1a09c9ad6582486a993a24336b42
-ms.sourcegitcommit: 702d5ffc6e733b6c4ded85bf1c92e2293638ee9a
+ms.openlocfilehash: 3fff7884082c46477d37b08560a2c71e7ee345e5
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/04/2018
-ms.locfileid: "37792397"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49121251"
 ---
 # <a name="get-started-with-net-core"></a>Začínáme s .NET Core
 
 Tento článek obsahuje informace o zahájení práce s .NET Core. .NET core je nainstalovat ve Windows, Linuxu a macOS. Můžete kód ve svém oblíbeném textovém editoru a vytvářet multiplatformní knihovny a aplikace. 
 
-Pokud si nejste jisti, co je .NET Core nebo toho, jak souvisí jiné technologie .NET, začínat [co je .NET](https://www.microsoft.com/net/learn/what-is-dotnet) Přehled. Jednoduše řečeno, .NET Core je open source, napříč platformami implementace .NET.
+Pokud si nejste jisti, co je .NET Core nebo toho, jak souvisí jiné technologie .NET, začínat [co je .NET](https://www.microsoft.com/net/learn/dotnet/what-is-dotnet) Přehled. Jednoduše řečeno, .NET Core je open source, napříč platformami implementace .NET.
 
 ## <a name="create-an-application"></a>Vytvoření aplikace
 
