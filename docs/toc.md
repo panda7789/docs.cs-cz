@@ -241,6 +241,7 @@
 ### [C# 6](csharp/whats-new/csharp-6.md)
 ### [Historie verzí jazyka C#](csharp/whats-new/csharp-version-history.md)
 ### [Vztahy mezi jazykem a architekturou](csharp/whats-new/relationships-between-language-and-library.md)
+### [Důležité informace o verzích a aktualizacích](csharp/whats-new/version-update-considerations.md)
 <!-- End What's New -->
 ## Koncepty jazyka C#
 ### [Systém typů jazyka C#](csharp/programming-guide/types/index.md)
