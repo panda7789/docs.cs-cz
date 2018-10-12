@@ -8,7 +8,8 @@
 ### [Analýza syntaxe](get-started/syntax-analysis.md)
 ### [Sémantická analýza](get-started/semantic-analysis.md)
 ### [Transformace syntaxe](get-started/syntax-transformation.md)
-
+## Kurzy
+### [Sestavení vašeho prvního analyzátoru a opravy kódu](tutorials/how-to-write-csharp-analyzer-code-fix.md)
 
 <!-- Taken from https://github.com/dotnet/roslyn/wiki/Samples-and-Walkthroughs -->
 <!--

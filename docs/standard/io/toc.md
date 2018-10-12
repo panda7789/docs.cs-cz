@@ -14,6 +14,7 @@
 ### [Skládání streamů](composing-streams.md)
 ### [Postupy: Převádění mezi streamy rozhraní .NET Framework a streamy prostředí Windows Runtime](how-to-convert-between-dotnet-streams-and-winrt-streams.md)
 ## [Asynchronní vstupně-výstupní operace se soubory](asynchronous-file-i-o.md)
+## [Ošetření chyb vstupně-výstupních operací](handling-io-errors.md)
 ## [Izolované úložiště](isolated-storage.md)
 ### [Typy izolace](types-of-isolation.md)
 ### [Postupy: Získávání úložišť pro izolované úložiště](how-to-obtain-stores-for-isolated-storage.md)
