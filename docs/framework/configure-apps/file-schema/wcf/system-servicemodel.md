@@ -8,15 +8,15 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: ef3af4663462ff2bb93622e128e58a3ac039dcf5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 50cc8fdbf175a7148795078e4d243df21d34a40e
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33353208"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49308510"
 ---
 # <a name="ltsystemservicemodelgt"></a>&lt;system.serviceModel&gt;
-Tento konfigurační oddíl obsahuje všechny konfigurační prvky ServiceModel Windows Communication Foundation (WCF).  
+Tento oddíl konfigurace obsahuje všechny elementy konfigurace ServiceModel Windows Communication Foundation (WCF).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -45,7 +45,9 @@ Tento konfigurační oddíl obsahuje všechny konfigurační prvky ServiceModel 
   <services>  
   </services>
   <standardEndpoints>  
-  </standardEndpoints>  
+  </standardEndpoints>
+  <tracking>
+  </tracking>
 </system.serviceModel>  
 ```  
   
@@ -59,19 +61,20 @@ Tento konfigurační oddíl obsahuje všechny konfigurační prvky ServiceModel 
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)|Tento oddíl definuje dva podřízené kolekce s názvem `endpointBehaviors` a `serviceBehaviors`.  Každá kolekce definuje chování elementy spotřebovávají koncové body a služby. Každý prvek chování je identifikován jeho jedinečné `name` atributu.|  
-|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tato část obsahuje kolekci standardní a vlastní vazby. Každá položka je identifikována jeho jedinečné `name`. Služby používají vazby jejich propojováním pomocí `name`.|  
+|[\<chování >](../../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)|Tento oddíl definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.  Každou kolekci definuje chování elementů používané koncové body a služby. Každý prvek chování je identifikován jeho jedinečné `name` atributu.|  
+|[\<vazby >](../../../../../docs/framework/configure-apps/file-schema/wcf/bindings.md)|Tato část obsahuje sadu standardních a vlastních vazeb. Každá položka je identifikován jeho jedinečné `name`. Služby používají vazby jejich propojením pomocí `name`.|  
 |[\<klient >](../../../../../docs/framework/configure-apps/file-schema/wcf/client.md)|Tato část obsahuje seznam koncových bodů, které klient používá pro připojení ke službě.|  
-|[\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)|Tento oddíl definuje kontrakty COM povolen pro WCF a rozhraní COM zprostředkovatel komunikace s objekty.|  
-|[\<commonBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)|V této části můžete definovat pouze v souboru machine.config. Definuje dva podřízené kolekce s názvem `endpointBehaviors` a `serviceBehaviors`.  Každá kolekce definuje chování elementy spotřebovávají všech koncových bodů WCF a služeb na počítači.  Pokud chování je definovaný jak v `<commonBehaviors>` a `<behaviors>` jejich chování v oddílech \<chování > části je přednost.|  
-|[\<Rozšíření >](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions-section.md)|Tato část obsahuje kolekci rozšíření, která uživateli umožňuje vytvořit uživatelem definované vazby, chování a dalších aspektů rozšíření.|  
-|[\<Diagnostika >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|Tato část obsahuje nastavení pro diagnostiku funkcím WCF. Uživatel může povolit či zakázat trasování, čítače výkonu a zprostředkovatele rozhraní WMI a můžete přidat vlastní zprávu filtry.|  
-|[\<protocolMapping >](../../../../../docs/framework/configure-apps/file-schema/wcf/protocolmapping.md)|Tento oddíl definuje sadu výchozí protokol mapování mezi přenosu protokolu schémata (např. http, net.tcp, net.pipe atd.) a vazeb WCF.|  
-|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Tento oddíl definuje sadu směrování filtry, které určují typ služby Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> použije při vyhodnocení příchozí zprávy, jakož i směrování tabulky definující cílové koncové body k odesílání zpráv do kdy odpovídá filtru.|  
-|[\<serviceHostingEnvironment >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)|Tento oddíl definuje, co zadejte službu, kterou vytvoří hostitelské prostředí konkrétního přenosu. Pokud tato část je prázdná, použije se výchozí typ.|  
-|[\<služby >](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Oddíl obsahuje kolekci služeb. U každé služby definované v sestavení, obsahuje tento prvek `service` element zadání nastavení pro službu.|  
-|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Tento oddíl definuje kolekce standardních koncových bodů, které jsou opakovaně použitelné předem nakonfigurované koncové body. Koncový bod standardní bude mít jeden nebo více adresy, vazby a atributy kontrakt nastavte na pevnou hodnotu. Například v koncový bod zjišťování vyřešen kontrakt. Standardní koncové body můžete taky rozšířit koncový bod služby s nové vlastnosti podobná definování vlastní vazby.|  
-  
+|[\<comContracts>](../../../../../docs/framework/configure-apps/file-schema/wcf/comcontracts.md)|Tento oddíl definuje kontrakty COM pro WCF a modelu COM interop povolené.|  
+|[\<commonBehaviors >](../../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)|Tato část lze definovat pouze v souboru machine.config. Definuje dvě podkolekce s `endpointBehaviors` a `serviceBehaviors`.  Každou kolekci definuje chování elementů používané všech koncových bodů WCF a služeb na počítači.  Pokud chování je definován v `<commonBehaviors>` a `<behaviors>` části, chování \<chování > části je přednost.|  
+|[\<Diagnostika >](../../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md)|Tato část obsahuje nastavení pro funkce Diagnostika služby WCF. Uživatel můžete povolit nebo zakázat trasování, čítače výkonu a zprostředkovatele rozhraní WMI a můžete přidat vlastní zprávu filtry.|  
+|[\<Rozšíření >](../../../../../docs/framework/configure-apps/file-schema/wcf/extensions-section.md)|Tento oddíl obsahuje kolekci rozšíření, které umožňují uživateli vytvořit uživatelem definované vazby, chování a další aspekty rozšíření.|  
+|[\<protocolMapping >](../../../../../docs/framework/configure-apps/file-schema/wcf/protocolmapping.md)|Tento oddíl definuje sadu výchozích mapování protokolů mezi schématy přenosových protokolů (např. http, net.tcp, net.pipe atd.) a vazbami WCF.|  
+|[\<směrování >](../../../../../docs/framework/configure-apps/file-schema/wcf/routing.md)|Tento oddíl definuje sady směrovacích filtrů, které určují typ služby Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> má být použit při vyhodnocování příchozích zpráv, jakož i směrovací tabulky, které definujjí koncové body pro odesílání zpráv do kdy filtr hledá shodu.|  
+|[\<serviceHostingEnvironment >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicehostingenvironment.md)|Tento oddíl definuje, jaký typ služby, který vytvoří instanci hostitelské prostředí pro konkrétní přenos. Pokud v této části je prázdný, je použit výchozí typ.|  
+|[\<služby >](../../../../../docs/framework/configure-apps/file-schema/wcf/services.md)|Oddíl obsahuje kolekci služeb. U každé služby definované v sestavení, obsahuje tento element `service` prvek nastavení pro službu.|  
+|[\<standardEndpoints >](../../../../../docs/framework/configure-apps/file-schema/wcf/standardendpoints.md)|Tento oddíl definuje kolekci standardních koncových bodů, které jsou opakovaně použitelnými koncovými body. Standardní koncový bod bude mít jednu nebo více adresa, vazba a kontrakt atributy nastavit na pevnou hodnotu. Například v koncový bod zjišťování vyřešen kontrakt. Standardní koncové body můžete použít také k rozšíření koncového bodu služby s novou vlastností k definování vlastních vazeb.|
+|[\<sledování >](../../../../../docs/framework/configure-apps/file-schema/wcf/tracking-of-wcf.md)|Tento oddíl definuje nastavení sledování služby pracovního postupu.|
+
 ### <a name="parent-elements"></a>Nadřazené elementy  
   
 |Prvek|Popis|  
@@ -79,20 +82,20 @@ Tento konfigurační oddíl obsahuje všechny konfigurační prvky ServiceModel 
 |\<Konfigurace >|Kořenový element pro všechny elementy konfigurace v konfiguračním souboru .NET.|  
   
 ## <a name="remarks"></a>Poznámky  
- WCF nepřidá elementy konfigurační oddíly z jiných produktů.  
+ WCF nepřidá prvky do oddílu konfigurace ostatních produktů.  
   
- Služby WCF, které jsou definovány v `services` oddílu konfiguračního souboru. Sestavení může obsahovat libovolný počet služeb. Každá služba má svůj vlastní `service` konfigurační oddíl. Části a jejího obsahu definovat kontrakt služby, chování a koncové body konkrétní služby.  
+ Služby WCF, které jsou definovány v `services` oddílu konfiguračního souboru. Sestavení může obsahovat libovolný počet služeb. Každá služba má svůj vlastní `service` konfigurační oddíl. Části a její obsah definování kontraktu služby, chování a koncové body konkrétní služby.  
   
- Pouze služby `name` atribut je požadován.  Ve výchozím nastavení název služby popisuje základní typ CLR použít k implementaci služby; Můžete však změnit vlastnost ConfigurationName na <xref:System.ServiceModel.ServiceContractAttribute> potlačit požadavek na typ CLR.  
+ Pouze služby `name` atribut je vyžadován.  Ve výchozím nastavení název služby popisuje základní typ CLR používaný k implementaci služby; Můžete však změnit vlastnost ConfigurationName na <xref:System.ServiceModel.ServiceContractAttribute> přepsat požadovaný typ CLR.  
   
- `behaviorConfiguration` Atribut je volitelný. Určuje chování služby používané služby. Nastavení chování tímto atributem propojit chování služby definovaný v oboru stejné konfigurační soubor (tj. stejný soubor nebo soubor nadřazené).  
+ `behaviorConfiguration` Atribut je volitelný. Určuje chování služby používané službou. Chování určené jinou tento atribut musí odkazovat na chování služby definované v oboru stejný konfigurační soubor (tj. na stejný soubor nebo nadřazený soubor).  
   
- Každá služba vystavuje jeden nebo více koncové body definované v `endpoint` elementu. Každý koncový bod má svou vlastní adresu a vazby. Všechny vazby používaných v rámci konfiguračního souboru musí být definován v oboru souboru.  
+ Každá služba zpřístupňuje jeden nebo více koncových bodů podle `endpoint` elementu. Každý koncový bod má svou vlastní adresu a vazbu. Všechny vazby používá v konfiguračním souboru musí být definován v rozsahu souboru.  
   
- Vazby jsou propojeny s koncových bodů prostřednictvím kombinace atributů `name` a `bindingConfiguration`. `binding` Atribut definuje, ve které části je definovaný vazby. `bindingConfiguration` Atribut definuje, které nakonfigurovanou vazbu v rámci části vazby se používá. Vazba části můžete definovat několik nakonfigurované vazby.  
+ Vazby jsou propojeny do koncových bodů prostřednictvím kombinace atributů `name` a `bindingConfiguration`. `binding` Atribut definuje, ve které části je definována vazby. `bindingConfiguration` Atribut definuje, které nakonfigurovanou vazbu v rámci oddílu vazby se používá. Část vazby můžete definovat několik nakonfigurované vazby.  
   
 ## <a name="example"></a>Příklad  
- Jedná se o příklad konfiguračního souboru WCF.  
+ Toto je příklad konfiguračního souboru WCF.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

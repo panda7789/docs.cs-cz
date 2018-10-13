@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: edc34eaa7704d788ff4b63328a2b6c0622d17e13
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 96e3ae8bf826931f39fab58fc2b7ad3f58f8e431
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502919"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49308575"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
 
@@ -154,7 +154,7 @@ Web a instalační programy jsou určeny pro počítače s x86 a x64 (viz [poža
 
 - Musíte mít pověření správce k instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], jeho bod vydané verze, rozhraní .NET Framework 4.6 a jeho novější vydání a rozhraní .NET Framework 4.7 a jeho vydání bodu.
 
-- Rozhraní .NET Framework 4.5 redistributable byl aktualizován na 9. října 2012 Chcete-li opravit problém související s nesprávným časovým razítkem v digitálním certifikátu, která způsobila digitální podpis souborů vytvořila a podepsala společnost Microsoft vyprší předčasně ukončen. Pokud jste dříve nainstalovali rozhraní .NET Framework 4.5 redistributable package s datem 16. srpna 2012, doporučujeme aktualizovat kopii nejnovější redistributovatelnou z [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=245484). Další informace o tomto problému najdete v tématu [Microsoft Security Advisory 2749655](https://technet.microsoft.com/security/advisory/2749655) a [znalostní báze Knowledge Base 2770445](https://support.microsoft.com/kb/2770445).
+- Rozhraní .NET Framework 4.5 redistributable byl aktualizován na 9. října 2012 Chcete-li opravit problém související s nesprávným časovým razítkem v digitálním certifikátu, která způsobila digitální podpis souborů vytvořila a podepsala společnost Microsoft vyprší předčasně ukončen. Pokud jste dříve nainstalovali rozhraní .NET Framework 4.5 redistributable package s datem 16. srpna 2012, doporučujeme aktualizovat kopii nejnovější redistributovatelnou z [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=245484). Další informace o tomto problému najdete v tématu [Microsoft Security Advisory 2749655](https://docs.microsoft.com/security-updates/SecurityAdvisories/2012/2749655) a [znalostní báze Knowledge Base 2770445](https://support.microsoft.com/kb/2770445).
 
 ## <a name="to-install-language-packs"></a>Chcete-li nainstalovat jazykové sady
 

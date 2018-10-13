@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f7f7a779cc10b32d66a184107359b502cf094979
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 569be83b902e7634a0c22e78c3f3c3a23985076c
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45649210"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49308549"
 ---
 # <a name="code-contracts"></a>Kontrakty kódu
 Kontrakty kódu poskytují způsob, jak určit předpoklady, vstupních a výstupních objekt podmínek ve vašem kódu. Předběžné podmínky jsou požadavky, které musí být splněny, při zadávání metody nebo vlastnosti. Vstupních popisují očekávání v době, kdy kód metody nebo vlastnosti se ukončí. Objekt výstupních podmínek popisují očekávaný stav pro třídu, která je v dobrém stavu.  
@@ -90,7 +90,7 @@ Contract.EndContractBlock(); // All previous "if" checks are preconditions
   
 -   Hodnotu prestate neplatná následná odkazuje na hodnotu výrazu na začátku metody nebo vlastnosti. Používá výraz `Contract.OldValue<T>(e)`, kde `T` je typ `e`. Pokaždé, když je kompilátor může odvodit typ, můžete vynechat argument obecného typu. (Například kompilátor jazyka C# vždy odvodí typ protože přebírá argument.) Existuje několik omezení na co může dojít v `e` a kontext, ve kterých může zobrazit staré výrazu. Původní výraz nemůže obsahovat jiný výraz staré. Co je nejdůležitější staré výrazu musí odkazovat na hodnotu, která byla uložena ve stavu Předběžná podmínka metody. Jinými slovy, musí být výraz, který může být vyhodnocen, dokud je předběžná podmínka metody `true`. Tady je několik instancí tohoto pravidla.  
   
-    -   Hodnota musí existovat ve stavu Předběžná podmínka metody. Aby bylo možné odkazovat pole v objektu, předběžné podmínky musí zaručit, že je vždy nenulový.  
+    -   Hodnota musí existovat ve stavu Předběžná podmínka metody. Aby bylo možné odkazovat pole v objektu, předběžné podmínky musí zaručit, že objekt je vždy nenulový.  
   
     -   Nelze se odkazovat na návratovou hodnotu metody v původní výraz:  
   

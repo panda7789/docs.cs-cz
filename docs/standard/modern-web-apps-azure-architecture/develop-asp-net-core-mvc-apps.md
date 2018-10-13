@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: 2fd3eb1e123959130884b96ee9d2e59b83c41b0a
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: de6b2e6650d173d325b2a717f5ee47506c307de7
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404642"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49308588"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Vývoj aplikace ASP.NET Core MVC aplikace
 
@@ -290,7 +290,7 @@ Další informace o implementaci filtry a stáhněte si ukázky práce z článk
 
 ## <a name="security"></a>Zabezpečení
 
-Zabezpečení webových aplikací je velké tématu, s mnoha aspekty. Na nejzákladnější úrovni zabezpečení je nutné si ověřit, budete vědět, kdo je pocházející z daného požadavku a pak zajistit, že tento požadavek má jenom přístup k prostředkům, které by měl. Ověřování provádí porovnání se žádostí o těch v úložišti důvěryhodných dat, pokud chcete zobrazit, pokud požadavek má být považována za pocházející ze známého entity zadané přihlašovací údaje. Autorizace je proces omezení přístupu k určitým prostředkům na základě identity uživatele. Třetí potíže se zabezpečením chrání požadavky z odposlouchávání třetími stranami, u kterých byste měli aspoň [Ujistěte se, že se vaše aplikace používá protokol SSL](/aspnet/core/security/enforcing-ssl).
+Zabezpečení webových aplikací je velké tématu, s mnoha aspekty. Na nejzákladnější úrovni zabezpečení je nutné si ověřit, budete vědět, kdo je pocházející z daného požadavku a pak zajistit, že žádost má jenom přístup k prostředkům, které by měl. Ověřování provádí porovnání se žádostí o těch v úložišti důvěryhodných dat, pokud chcete zobrazit, pokud požadavek má být považována za pocházející ze známého entity zadané přihlašovací údaje. Autorizace je proces omezení přístupu k určitým prostředkům na základě identity uživatele. Třetí potíže se zabezpečením chrání požadavky z odposlouchávání třetími stranami, u kterých byste měli aspoň [Ujistěte se, že se vaše aplikace používá protokol SSL](/aspnet/core/security/enforcing-ssl).
 
 ### <a name="authentication"></a>Ověřování
 

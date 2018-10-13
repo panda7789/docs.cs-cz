@@ -3,11 +3,11 @@ title: Imperativní ověřování na základě kódu
 ms.date: 03/30/2017
 ms.assetid: ae12537c-455e-42b1-82f4-cea4c46c023e
 ms.openlocfilehash: ac77132e3469bdffa6f88f8c6d617c6faa1c9323
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48779670"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49308289"
 ---
 # <a name="imperative-code-based-validation"></a>Imperativní ověřování na základě kódu
 

@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 07/02/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 46db9dc7ff425c483f1a9f61da5e806e598b16d5
-ms.sourcegitcommit: 60645077dc4b62178403145f8ef691b13ffec28e
+ms.openlocfilehash: eddafc14de3a38cbf6f238199733ee667e6868b3
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/10/2018
-ms.locfileid: "37937181"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49308562"
 ---
 # <a name="tutorial-use-mlnet-to-cluster-iris-flowers-clustering"></a>Kurz: Použití ML.NET do clusteru květin iris (clustery)
 
@@ -86,7 +86,7 @@ Odeberte stávající definice třídy a přidejte následující kód, který d
 
 `IrisData` je třída vstupní data a obsahuje definice pro jednotlivé funkce z datové sady. Použití [sloupec](xref:Microsoft.ML.Runtime.Api.ColumnAttribute) atributy indexů zdrojových sloupců v souboru datové sady.
 
-`ClusterPrediction` Třída reprezentuje výstup model clusteringu u `IrisData` instance. Použití [Názevsloupce](xref:Microsoft.ML.Runtime.Api.ColumnNameAttribute) atribut pro vytvoření vazby `PredictedClusterId` a `Distances` polím **PredictedLabel** a **skóre** sloupce v uvedeném pořadí. V případě clusteru úloh má tyto sloupce následující význam:
+`ClusterPrediction` Třída reprezentuje výstup model clusteringu u `IrisData` instance. Použití [Názevsloupce](xref:Microsoft.ML.Runtime.Api.ColumnNameAttribute) atribut pro vytvoření vazby `PredictedClusterId` a `Distances` polím **PredictedLabel** a **skóre** sloupce v uvedeném pořadí. V případě clusteru úloh tyto sloupce mají následující význam:
 
 - **PredictedLabel** sloupec obsahuje ID předpokládané clusteru.
 - **Skóre** sloupec obsahuje pole s kvadratických Euclidean vzdálenosti se centroids clusteru. Délka pole je rovna počtu clusterů.

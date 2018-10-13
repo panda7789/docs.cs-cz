@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: b064497c-d956-46b8-838d-7a0223c7e200
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 97096d6fa41cd25a92c23cd47008b33fb6037190
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 034dbfaf63826f8fd3b04e23ea4568e41783eb38
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195404"
+ms.lasthandoff: 10/13/2018
+ms.locfileid: "49308237"
 ---
 # <a name="network-isolation-for-windows-store-apps"></a>Izolace sítě pro aplikace Windows Store
 Třídy v <xref:System.Net>, <xref:System.Net.Http>, a <xref:System.Net.Http.Headers> obory názvů slouží k vývoji aplikací Windows Store a desktopové aplikace. Při použití v aplikaci Windows Store, třídy v těchto oborech názvů jsou ovlivněny izolace sítě, součástí modelu zabezpečení aplikace používané [!INCLUDE[win8](../../../includes/win8-md.md)]. Musí být povoleno příslušné síťové funkce v manifestu aplikace pro Windows Store aplikaci pro systém umožňující přístup k síti.  
@@ -19,7 +19,7 @@ Třídy v <xref:System.Net>, <xref:System.Net.Http>, a <xref:System.Net.Http.Hea
   
 1.  Určení směru síťové požadavky na přístup potřebné aplikace. To může být odchozích požadavků klientem iniciované nebo nevyžádaná příchozí požadavky nebo může být kombinaci těchto typů požadavku sítě.  
   
-2.  Určete typ síťové prostředky, které tato aplikace bude komunikovat s. Aplikace může potřebovat komunikovat s důvěryhodným prostředky v síti domácí nebo pracovní. Aplikace může být nutné pro komunikaci s prostředky v síti Internet. Aplikace může potřebovat přístup na oba typy síťových prostředků.  
+2.  Určete typ síťové prostředky, které aplikace budou komunikovat s. Aplikace může potřebovat komunikovat s důvěryhodným prostředky v síti domácí nebo pracovní. Aplikace může být nutné pro komunikaci s prostředky v síti Internet. Aplikace může potřebovat přístup na oba typy síťových prostředků.  
   
 3.  Konfigurace možností sítě minimální požadovanou izolaci v manifestu aplikace.  
   
