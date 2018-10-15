@@ -8,15 +8,15 @@ helpviewer_keywords:
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 40d8edd2b2166b0c90da1ce640dcd16bc33ed9f7
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 4839513f28de0fd79de7a8dc5245d4d0a2fb1622
+ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525306"
+ms.lasthandoff: 10/12/2018
+ms.locfileid: "49123797"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>Čítače výkonu v rozhraní .NET Framework
-Toto téma obsahuje seznam čítačů výkonu najdete v [sledování výkonu](https://technet.microsoft.com/library/cc749249.aspx).  
+Toto téma obsahuje seznam čítačů výkonu najdete v [Windows Performance Monitor](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
   
 -   [Čítače výkonu výjimky](#exception)  
   
