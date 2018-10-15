@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 9542332085d0b0319c55db63fd98c9dd8eb3f576
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 7802a64716f8bde278fe3f8ed8214f6ac01eadbc
+ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839465"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49316516"
 ---
 # <a name="ltcleargt-element-for-connectionmanagement-network-settings"></a>&lt;Vymazat&gt; – Element pro connectionManagement (nastavení sítě)
 Zruší připojení seznamu pro správu.  
@@ -55,7 +55,7 @@ Zruší připojení seznamu pro správu.
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad vymaže seznamu pro správu připojení a pak přidá nové položky správy připojení pro server www.contoso.com a všechny ostatní sítě hostitele.  
+ V následujícím příkladu vymaže seznamu pro správu připojení a pak přidá nové položky správy připojení pro server `www.contoso.com` a všechny ostatní sítě hostitele.  
   
 ```xml  
 <configuration>  

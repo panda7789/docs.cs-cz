@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: bc0b75db5b3f35087df70c9155a1ba3b39ceae4d
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 1736dd8fcb308bceee5f100149919ff9ec45510d
+ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028417"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49316321"
 ---
 # <a name="ltconnectionmanagementgt-element-network-settings"></a>&lt;Element connectionManagement&gt; – Element (nastavení sítě)
 Určuje maximální počet připojení k síti hostitele.  
@@ -58,7 +58,7 @@ Určuje maximální počet připojení k síti hostitele.
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad nastaví aplikace pro použití čtyř připojení k serveru www.contoso.com a dvě spojení na všechny ostatní servery.  
+ Následující příklad nastaví použití čtyř připojení k serveru aplikace `www.contoso.com` a dvě spojení na všechny ostatní servery.  
   
 ```xml  
 <configuration>  

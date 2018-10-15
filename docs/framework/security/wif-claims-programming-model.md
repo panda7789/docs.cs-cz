@@ -3,12 +3,12 @@ title: Technologie WIF deklarací programovací Model
 ms.date: 03/30/2017
 ms.assetid: 149cb875-9b1c-4695-b88a-fbf1725a02f9
 author: BrucePerlerMS
-ms.openlocfilehash: 95df026684f536a64ffe15f65264c470dff164da
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 91b719967cd4ab9fd412e5c0799bb5e1921a4801
+ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197555"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49316503"
 ---
 # <a name="wif-claims-programming-model"></a>Technologie WIF deklarací programovací Model
 ASP.NET a služby Windows Communication Foundation (WCF) obvykle vývojáři IIdentity a IPrincipal rozhraní pro práci s informací o identitě uživatele. V rozhraní .NET 4.5 Windows Identity Foundation (WIF) byla integrována tak, že deklarace identity jsou teď vždy k dispozici pro všechny instanční objekt, jak je znázorněno v následujícím diagramu:
@@ -23,7 +23,7 @@ ASP.NET a služby Windows Communication Foundation (WCF) obvykle vývojáři IId
 
 - <xref:System.Security.Claims.Claim.Value%2A> obsahuje hodnotu deklarace identity, je vyjádřena jako řetězec. Například e-mailová adresa může být reprezentován jako "someone@contoso.com".
 
-- <xref:System.Security.Claims.Claim.ValueType%2A> představuje typ hodnoty deklarace identity a je obvykle identifikátor URI. Například typ string je vyjádřena jako `http://www.w3.org/2001/XMLSchema#string`. Typ hodnoty musí být QName podle schématu XML. Hodnota musí být ve formátu `namespace#format` k povolení technologie WIF do výstupního platnou hodnotu QName. Pokud obor názvů není dobře definovaný obor názvů, vygenerovaný kód XML nelze pravděpodobně schématu ověřit, protože nebude publikovaného souboru XSD pro tento obor názvů. Výchozí typ hodnoty je `http://www.w3.org/2001/XMLSchema#string`. Podrobnosti najdete na [ http://www.w3.org/2001/XMLSchema ](https://go.microsoft.com/fwlink/?LinkId=209155) pro dobře známou hodnotu typy, které lze bezpečně použít.
+- <xref:System.Security.Claims.Claim.ValueType%2A> představuje typ hodnoty deklarace identity a je obvykle identifikátor URI. Například typ string je vyjádřena jako `http://www.w3.org/2001/XMLSchema#string`. Typ hodnoty musí být QName podle schématu XML. Hodnota musí být ve formátu `namespace#format` k povolení technologie WIF do výstupního platnou hodnotu QName. Pokud obor názvů není dobře definovaný obor názvů, vygenerovaný kód XML nelze pravděpodobně schématu ověřit, protože nebude publikovaného souboru XSD pro tento obor názvů. Výchozí typ hodnoty je `http://www.w3.org/2001/XMLSchema#string`. Informace o typech dobře známou hodnotu, které lze bezpečně použít, najdete v článku [W3C XML schématu](https://www.w3.org/2001/XMLSchema) stránky.
 
 - <xref:System.Security.Claims.Claim.Issuer%2A> je identifikátor službu tokenů zabezpečení (STS), která vydala deklarace identity. To může být reprezentován jako adresu URL služby STS nebo název, který představuje službu STS, jako například `https://sts1.contoso.com/sts`.
 

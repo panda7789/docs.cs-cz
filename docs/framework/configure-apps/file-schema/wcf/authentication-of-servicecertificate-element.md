@@ -2,21 +2,21 @@
 title: '&lt;authentication&gt; elementu &lt;serviceCertificate&gt;'
 ms.date: 03/30/2017
 ms.assetid: 733b67b4-08a1-4d25-9741-10046f9357ef
-ms.openlocfilehash: 9ef17c8bedf6bcef21a7c59d98a86bb20ad2da80
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 811d54b49d8cd4fddbf196dbb524c5d303805c4f
+ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752543"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49316451"
 ---
 # <a name="ltauthenticationgt-of-ltservicecertificategt-element"></a>&lt;authentication&gt; elementu &lt;serviceCertificate&gt;
-Určuje nastavení proxy serveru klienta používaná k ověřování certifikáty služby, které jsou získány pomocí vyjednávání SSL/TLS.  
+Určuje nastavení klientského serveru proxy k ověření certifikátů služby, které jsou získány pomocí vyjednávání protokolu SSL/TLS.  
   
  \<system.ServiceModel>  
 \<chování >  
 část endpointBehaviors  
 \<chování >  
-\<clientCredentials >  
+\<třídu clientCredentials >  
 \<serviceCertificate >  
 \<ověřování >  
   
@@ -29,16 +29,16 @@ trustedStoreLocation="LocalMachine/CurrentUser" />
 ```  
   
 ## <a name="attributes-and-elements"></a>Atributy a elementy  
- Následující části popisují nadřazené elementy, atributy a podřízené elementy  
+ Následující části popisují atributy, podřízené prvky a nadřazené elementy  
   
 ### <a name="attributes"></a>Atributy  
   
 |Atribut|Popis|  
 |---------------|-----------------|  
-|customCertificateValidatorType|Řetězec. Typ a sestavení, které slouží k ověření vlastního typu.|  
-|certificateValidationMode|Určuje jeden ze tří režimů slouží k ověření přihlašovacích údajů. Pokud nastavena na `Custom`, pak musí být uveden také customCertificateValidator. Výchozí hodnota je `ChainTrust`.|  
-|revocationMode|Jeden z režimů používá k ověření pro seznamy odvolaných certifikátů (CRL). Výchozí hodnota je `Online`.|  
-|trustedStoreLocation|Jedno z umístění úložiště dvě systému: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá, když je klientovi vyjednal certifikát služby. Ověření se provádí před **důvěryhodné osoby** uložit do umístění zadaného úložiště. Výchozí hodnota je `CurrentUser`.|  
+|customCertificateValidatorType|řetězec. Typ a sestavení používané pro ověření vlastního typu.|  
+|certificateValidationMode|Určuje jeden ze tří režimů používaných pro ověření pověření. Pokud hodnotu `Custom`, pak musí být rovněž dodán customCertificateValidator. Výchozí hodnota je `ChainTrust`.|  
+|revocationMode|Jeden z režimů pro kontrolu seznamu odvolaných certifikátů (CRL). Výchozí hodnota je `Online`.|  
+|trustedStoreLocation|Jeden z umístění dvou systémových úložišť: `LocalMachine` nebo `CurrentUser`. Tato hodnota se používá při certifikát služby se vyjedná do klienta. Ověření se provádí proti **důvěryhodné osoby** uložit do umístění určeného úložiště. Výchozí hodnota je `CurrentUser`.|  
   
 ## <a name="customcertificatevalidator-attribute"></a>customCertificateValidator atribut  
   
@@ -50,19 +50,19 @@ trustedStoreLocation="LocalMachine/CurrentUser" />
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: None, PeerTrust, ChainTrust, PeerOrChainTrust, vlastní.<br /><br /> Další informace najdete v tématu [práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
+|Výčet|Jeden z následujících hodnot: None, PeerTrust, ChainTrust, PeerOrChainTrust, vlastní.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
 ## <a name="revocationmode-attribute"></a>revocationMode atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: NoCheck, Online, do režimu Offline.<br /><br /> Další informace najdete v tématu [práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
+|Výčet|Jeden z následujících hodnot: NoCheck, Online, Offline.<br /><br /> Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).|  
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation atribut  
   
 |Hodnota|Popis|  
 |-----------|-----------------|  
-|Výčet|Jeden z následujících hodnot: LocalMachine nebo CurrentUser. Výchozí hodnota je CurrentUser. Pokud klientská aplikace běží pod účtem system, certifikát je obvykle v rámci LocalMachine. Pokud klientská aplikace běží pod účtem uživatele, pak certifikát je obvykle v CurrentUser.|  
+|Výčet|Jeden z následujících hodnot: LocalMachine nebo CurrentUser. Výchozí hodnota je CurrentUser. Pokud klientská aplikace běží pod účtem systému, certifikátu je obvykle v rámci LocalMachine. Pokud klientská aplikace běží pod účtem uživatele, certifikát je obvykle v CurrentUser.|  
   
 ### <a name="child-elements"></a>Podřízené elementy  
  Žádné  
@@ -71,15 +71,15 @@ trustedStoreLocation="LocalMachine/CurrentUser" />
   
 |Prvek|Popis|  
 |-------------|-----------------|  
-|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát pro použití při ověřování služby klienta.|  
+|[\<serviceCertificate >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-clientcredentials-element.md)|Určuje certifikát používaný při ověřování služby ke klientovi.|  
   
 ## <a name="remarks"></a>Poznámky  
- `certificateValidationMode` Atribut tohoto elementu konfigurace určuje úroveň důvěryhodnosti používá k ověření certifikátů. Ve výchozím nastavení je úroveň nastavena na `ChainTrust`, která určuje, že každý certifikát, je nutné nalézt v hierarchii certifikátů končí na důvěryhodné certifikační autority v horní části řetězu. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu `PeerOrChainTrust`, která určuje, že samoobslužné vydaných certifikátů (peer vztahu důvěryhodnosti) jsou přijaty a také certifikáty, které jsou v důvěryhodné řetězu. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samoobslužné vydaných certifikátů nemusí zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte `ChainTrust` místo hodnoty. Můžete také nastavit hodnotu `Custom` nebo `None`. Použít `Custom` hodnotu, je nutné také nastavit `customCertificateValidator` atribut sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní třídy X509CertificateValidator. Další informace najdete v tématu [postupy: vytvoření služby, který využívá validátor certifikátu vlastní](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
+ `certificateValidationMode` Atribut tento prvek konfigurace určuje úroveň vztahu důvěryhodnosti používá k ověřování certifikátů. Ve výchozím nastavení, úroveň je nastavena `ChainTrust`, která určuje, že každý certifikát musí být nalezena v hierarchii certifikátů důvěryhodné certifikační autority v horní části řetězce s koncovkou. Toto je nejbezpečnější režim. Můžete také nastavit hodnotu `PeerOrChainTrust`, která určuje, že jsou přijímány samostatně vydané certifikáty (peer vztahu důvěryhodnosti) a také certifikáty, které jsou v důvěryhodným řetězem. Tato hodnota se používá při vývoji a ladění klientů a služeb, protože samostatně vydané certifikáty nemusí být zakoupenému od důvěryhodné autority. Při nasazování klienta, použijte `ChainTrust` místo hodnoty. Můžete také nastavit hodnotu `Custom` nebo `None`. Použít `Custom` hodnotu, je nutné nastavit také `customCertificateValidator` atribut na sestavení a typ použitý k ověření certifikátu. Pokud chcete vytvořit vlastní vlastní validátor, musí dědit z abstraktní třídy X509CertificateValidator. Další informace najdete v tématu [postupy: vytvoření služby, která používá vlastní validátor certifikátů](../../../../../docs/framework/wcf/extending/how-to-create-a-service-that-employs-a-custom-certificate-validator.md).  
   
- `revocationMode` Atribut určuje, jak certifikáty jsou zaškrtnutá políčka pro odvolání. Výchozí hodnota je `online` což naznačuje, že certifikáty budou automaticky odvolání zkontrolovat. Další informace najdete v tématu [práce s certifikáty](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
+ `revocationMode` Atribut určuje, jak kontroluje odvolání certifikátů. Výchozí hodnota je `online` což znamená, že certifikáty se automaticky vráceny na zrušení. Další informace najdete v tématu [Working with Certificates](../../../../../docs/framework/wcf/feature-details/working-with-certificates.md).  
   
 ## <a name="example"></a>Příklad  
- V následujícím příkladu se dvě úlohy. Určuje první certifikát služby pro klienta pro použití při komunikaci s koncovými body, jejichž název domény je www.contoso.com přes protokol HTTP. Druhý Určuje odvolání režimu a úložiště umístění, která používají při ověřování.  
+ Následující příklad provádí dvě úlohy. Určuje první certifikát služby pro klienty při komunikaci s koncovými body, jejichž název domény je `www.contoso.com` přes protokol HTTP. Za druhé Určuje odvolání režimu a úložiště umístění použité během ověřování.  
   
 ```xml  
 <serviceCertificate>  

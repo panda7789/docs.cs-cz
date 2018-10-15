@@ -2,12 +2,12 @@
 title: Dynamická aktualizace
 ms.date: 03/30/2017
 ms.assetid: 8b6ef19b-9691-4b4b-824c-3c651a9db96e
-ms.openlocfilehash: dea930de2103a24aa48b1d0a31a3cbf5fc0ae26c
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 9b26bde8e524275d2eef34afc3f6442e2ebeea6f
+ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44076716"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49323120"
 ---
 # <a name="dynamic-update"></a>Dynamická aktualizace
 Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům aplikací k aktualizaci pracovního postupu definici trvalé instance práce. To může být implementace opravy chyb, nové požadavky, nebo tak, aby vyhovovaly neočekávaným změnám. Toto téma obsahuje základní informace o dynamické aktualizace funkcích uvedených ve [!INCLUDE[net_v45](../../../includes/net-v45-md.md)].  
@@ -24,7 +24,7 @@ Dynamická aktualizace poskytuje mechanismus pro pracovní postup vývojářům 
 4.  [Použijte mapu aktualizace instance požadované trvalá pracovního postupu](../../../docs/framework/windows-workflow-foundation/dynamic-update.md#Apply)  
   
 > [!NOTE]
->  Všimněte si, že kroky 1 až 3, které zahrnují vytváření mapa aktualizace, se dají provést nezávisle na instalaci aktualizace nezměnilo. Běžný scénář tím, že pracovní postup pro vývojáře se vytvoří aktualizace mapování v režimu offline a správce použije aktualizace později.  
+>  Všimněte si, že kroky 1 až 3, které zahrnují vytváření mapa aktualizace, se dají provést nezávisle na instalaci aktualizace nezměnilo. Běžný scénář, že pracovní postup pro vývojáře se vytvořit mapa aktualizace do režimu offline a pak správce použije aktualizace později.  
   
  Toto téma obsahuje přehled procesu dynamické aktualizace do trvalé instanci pracovního postupu Xaml kompilované přidat novou aktivitu.  
   
