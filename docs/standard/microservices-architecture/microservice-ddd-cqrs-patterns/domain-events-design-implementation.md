@@ -348,8 +348,8 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
 [*http://dddcommunity.org/wp-content/uploads/files/pdf\_articles/Vernon\_2011\_2.pdf*](https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf)</span></span>
 
 -   <span data-ttu-id="109de-291">**Jimmy Bogard. Posílení vaší domény: domény události**
-    *<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *</span><span class="sxs-lookup"><span data-stu-id="109de-291">**Jimmy Bogard. Strengthening your domain: Domain Events**
-*<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> *</span></span>
+    \*<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> \*</span><span class="sxs-lookup"><span data-stu-id="109de-291">**Jimmy Bogard. Strengthening your domain: Domain Events**
+\*<https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/> \*</span></span>
 
 -   <span data-ttu-id="109de-292">**ADAM Truong. Příklad události modelu domény**
     [*https://www.tonytruong.net/domain-events-pattern-example/*](https://www.tonytruong.net/domain-events-pattern-example/)</span><span class="sxs-lookup"><span data-stu-id="109de-292">**Tony Truong. Domain Events Pattern Example**
