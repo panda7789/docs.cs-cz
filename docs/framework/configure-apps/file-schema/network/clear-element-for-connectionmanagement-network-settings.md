@@ -12,50 +12,50 @@ helpviewer_keywords:
 ms.assetid: fb259282-84c4-4dc4-a226-78d904a6edc3
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: 9542332085d0b0319c55db63fd98c9dd8eb3f576
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 7802a64716f8bde278fe3f8ed8214f6ac01eadbc
+ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839465"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49316516"
 ---
-# <a name="ltcleargt-element-for-connectionmanagement-network-settings"></a><span data-ttu-id="e2da3-102">&lt;Vymazat&gt; – Element pro connectionManagement (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="e2da3-102">&lt;clear&gt; Element for connectionManagement (Network Settings)</span></span>
-<span data-ttu-id="e2da3-103">Zruší připojení seznamu pro správu.</span><span class="sxs-lookup"><span data-stu-id="e2da3-103">Clears the connection management list.</span></span>  
+# <a name="ltcleargt-element-for-connectionmanagement-network-settings"></a><span data-ttu-id="6ea0e-102">&lt;Vymazat&gt; – Element pro connectionManagement (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="6ea0e-102">&lt;clear&gt; Element for connectionManagement (Network Settings)</span></span>
+<span data-ttu-id="6ea0e-103">Zruší připojení seznamu pro správu.</span><span class="sxs-lookup"><span data-stu-id="6ea0e-103">Clears the connection management list.</span></span>  
   
- <span data-ttu-id="e2da3-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="e2da3-104">\<configuration></span></span>  
-<span data-ttu-id="e2da3-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="e2da3-105">\<system.net></span></span>  
-<span data-ttu-id="e2da3-106">\<connectionManagement – ></span><span class="sxs-lookup"><span data-stu-id="e2da3-106">\<connectionManagement></span></span>  
-<span data-ttu-id="e2da3-107">\<Vymazat ></span><span class="sxs-lookup"><span data-stu-id="e2da3-107">\<clear></span></span>  
+ <span data-ttu-id="6ea0e-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="6ea0e-104">\<configuration></span></span>  
+<span data-ttu-id="6ea0e-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="6ea0e-105">\<system.net></span></span>  
+<span data-ttu-id="6ea0e-106">\<connectionManagement – ></span><span class="sxs-lookup"><span data-stu-id="6ea0e-106">\<connectionManagement></span></span>  
+<span data-ttu-id="6ea0e-107">\<Vymazat ></span><span class="sxs-lookup"><span data-stu-id="6ea0e-107">\<clear></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="e2da3-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e2da3-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="6ea0e-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6ea0e-108">Syntax</span></span>  
   
 ```xml  
 <clear/>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="e2da3-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="e2da3-109">Attributes and Elements</span></span>  
- <span data-ttu-id="e2da3-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="e2da3-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="6ea0e-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="6ea0e-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="6ea0e-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="6ea0e-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="e2da3-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="e2da3-111">Attributes</span></span>  
- <span data-ttu-id="e2da3-112">Žádné</span><span class="sxs-lookup"><span data-stu-id="e2da3-112">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="6ea0e-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="6ea0e-111">Attributes</span></span>  
+ <span data-ttu-id="6ea0e-112">Žádné</span><span class="sxs-lookup"><span data-stu-id="6ea0e-112">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="e2da3-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="e2da3-113">Child Elements</span></span>  
- <span data-ttu-id="e2da3-114">Žádné</span><span class="sxs-lookup"><span data-stu-id="e2da3-114">None.</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="6ea0e-113">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="6ea0e-113">Child Elements</span></span>  
+ <span data-ttu-id="6ea0e-114">Žádné</span><span class="sxs-lookup"><span data-stu-id="6ea0e-114">None.</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="e2da3-115">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="e2da3-115">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="6ea0e-115">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="6ea0e-115">Parent Elements</span></span>  
   
-|<span data-ttu-id="e2da3-116">**Element**</span><span class="sxs-lookup"><span data-stu-id="e2da3-116">**Element**</span></span>|<span data-ttu-id="e2da3-117">**Popis**</span><span class="sxs-lookup"><span data-stu-id="e2da3-117">**Description**</span></span>|  
+|<span data-ttu-id="6ea0e-116">**Element**</span><span class="sxs-lookup"><span data-stu-id="6ea0e-116">**Element**</span></span>|<span data-ttu-id="6ea0e-117">**Popis**</span><span class="sxs-lookup"><span data-stu-id="6ea0e-117">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="e2da3-118">connectionManagement –</span><span class="sxs-lookup"><span data-stu-id="e2da3-118">connectionManagement</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|<span data-ttu-id="e2da3-119">Určuje maximální počet připojení k síti hostitele.</span><span class="sxs-lookup"><span data-stu-id="e2da3-119">Specifies the maximum number of connections to a network host.</span></span>|  
+|[<span data-ttu-id="6ea0e-118">connectionManagement –</span><span class="sxs-lookup"><span data-stu-id="6ea0e-118">connectionManagement</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md)|<span data-ttu-id="6ea0e-119">Určuje maximální počet připojení k síti hostitele.</span><span class="sxs-lookup"><span data-stu-id="6ea0e-119">Specifies the maximum number of connections to a network host.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="e2da3-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="e2da3-120">Remarks</span></span>  
- <span data-ttu-id="e2da3-121">`clear` Element vymaže všechny položky v seznamu připojení správy.</span><span class="sxs-lookup"><span data-stu-id="e2da3-121">The `clear` element clears all entries from the connection management list.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="6ea0e-120">Poznámky</span><span class="sxs-lookup"><span data-stu-id="6ea0e-120">Remarks</span></span>  
+ <span data-ttu-id="6ea0e-121">`clear` Element vymaže všechny položky v seznamu připojení správy.</span><span class="sxs-lookup"><span data-stu-id="6ea0e-121">The `clear` element clears all entries from the connection management list.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="e2da3-122">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="e2da3-122">Configuration Files</span></span>  
- <span data-ttu-id="e2da3-123">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="e2da3-123">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="6ea0e-122">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="6ea0e-122">Configuration Files</span></span>  
+ <span data-ttu-id="6ea0e-123">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="6ea0e-123">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="e2da3-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="e2da3-124">Example</span></span>  
- <span data-ttu-id="e2da3-125">Následující příklad vymaže seznamu pro správu připojení a pak přidá nové položky správy připojení pro server www.contoso.com a všechny ostatní sítě hostitele.</span><span class="sxs-lookup"><span data-stu-id="e2da3-125">The following example clears the connection management list and then adds new connection management entries for the server www.contoso.com and all other network hosts.</span></span>  
+## <a name="example"></a><span data-ttu-id="6ea0e-124">Příklad</span><span class="sxs-lookup"><span data-stu-id="6ea0e-124">Example</span></span>  
+ <span data-ttu-id="6ea0e-125">V následujícím příkladu vymaže seznamu pro správu připojení a pak přidá nové položky správy připojení pro server `www.contoso.com` a všechny ostatní sítě hostitele.</span><span class="sxs-lookup"><span data-stu-id="6ea0e-125">The following example clears the connection management list and then adds new connection management entries for the server `www.contoso.com` and all other network hosts.</span></span>  
   
 ```xml  
 <configuration>  
@@ -69,7 +69,7 @@ ms.locfileid: "48839465"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="e2da3-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="e2da3-126">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="6ea0e-126">Viz také</span><span class="sxs-lookup"><span data-stu-id="6ea0e-126">See Also</span></span>  
  <xref:System.Net.ServicePoint>  
  <xref:System.Net.ServicePointManager>  
- [<span data-ttu-id="e2da3-127">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="e2da3-127">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+ [<span data-ttu-id="6ea0e-127">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="6ea0e-127">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

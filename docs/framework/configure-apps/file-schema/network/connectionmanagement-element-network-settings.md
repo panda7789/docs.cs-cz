@@ -10,55 +10,55 @@ helpviewer_keywords:
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: bc0b75db5b3f35087df70c9155a1ba3b39ceae4d
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 1736dd8fcb308bceee5f100149919ff9ec45510d
+ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028417"
+ms.lasthandoff: 10/15/2018
+ms.locfileid: "49316321"
 ---
-# <a name="ltconnectionmanagementgt-element-network-settings"></a><span data-ttu-id="32cdf-102">&lt;Element connectionManagement&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="32cdf-102">&lt;connectionManagement&gt; Element (Network Settings)</span></span>
-<span data-ttu-id="32cdf-103">Určuje maximální počet připojení k síti hostitele.</span><span class="sxs-lookup"><span data-stu-id="32cdf-103">Specifies the maximum number of connections to a network host.</span></span>  
+# <a name="ltconnectionmanagementgt-element-network-settings"></a><span data-ttu-id="c0f35-102">&lt;Element connectionManagement&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="c0f35-102">&lt;connectionManagement&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="c0f35-103">Určuje maximální počet připojení k síti hostitele.</span><span class="sxs-lookup"><span data-stu-id="c0f35-103">Specifies the maximum number of connections to a network host.</span></span>  
   
- <span data-ttu-id="32cdf-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="32cdf-104">\<configuration></span></span>  
-<span data-ttu-id="32cdf-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="32cdf-105">\<system.net></span></span>  
-<span data-ttu-id="32cdf-106">\<connectionManagement – ></span><span class="sxs-lookup"><span data-stu-id="32cdf-106">\<connectionManagement></span></span>  
+ <span data-ttu-id="c0f35-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="c0f35-104">\<configuration></span></span>  
+<span data-ttu-id="c0f35-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="c0f35-105">\<system.net></span></span>  
+<span data-ttu-id="c0f35-106">\<connectionManagement – ></span><span class="sxs-lookup"><span data-stu-id="c0f35-106">\<connectionManagement></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="32cdf-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="32cdf-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c0f35-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c0f35-107">Syntax</span></span>  
   
 ```xml  
 <connectionManagement>   
 </connectionManagement>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="32cdf-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="32cdf-108">Attributes and Elements</span></span>  
- <span data-ttu-id="32cdf-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="32cdf-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="c0f35-108">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="c0f35-108">Attributes and Elements</span></span>  
+ <span data-ttu-id="c0f35-109">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="c0f35-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="32cdf-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="32cdf-110">Attributes</span></span>  
- <span data-ttu-id="32cdf-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="32cdf-111">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="c0f35-110">Atributy</span><span class="sxs-lookup"><span data-stu-id="c0f35-110">Attributes</span></span>  
+ <span data-ttu-id="c0f35-111">Žádné</span><span class="sxs-lookup"><span data-stu-id="c0f35-111">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="32cdf-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="32cdf-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="c0f35-112">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="c0f35-112">Child Elements</span></span>  
   
-|<span data-ttu-id="32cdf-113">**Element**</span><span class="sxs-lookup"><span data-stu-id="32cdf-113">**Element**</span></span>|<span data-ttu-id="32cdf-114">**Popis**</span><span class="sxs-lookup"><span data-stu-id="32cdf-114">**Description**</span></span>|  
+|<span data-ttu-id="c0f35-113">**Element**</span><span class="sxs-lookup"><span data-stu-id="c0f35-113">**Element**</span></span>|<span data-ttu-id="c0f35-114">**Popis**</span><span class="sxs-lookup"><span data-stu-id="c0f35-114">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="32cdf-115">add</span><span class="sxs-lookup"><span data-stu-id="32cdf-115">add</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-connectionmanagement-network-settings.md)|<span data-ttu-id="32cdf-116">Přidá do seznamu pro správu připojení IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="32cdf-116">Adds an IP address or DNS name to the connection management list.</span></span>|  
-|[<span data-ttu-id="32cdf-117">Vymazat</span><span class="sxs-lookup"><span data-stu-id="32cdf-117">clear</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-connectionmanagement-network-settings.md)|<span data-ttu-id="32cdf-118">Zruší připojení seznamu pro správu.</span><span class="sxs-lookup"><span data-stu-id="32cdf-118">Clears the connection management list.</span></span>|  
-|[<span data-ttu-id="32cdf-119">remove</span><span class="sxs-lookup"><span data-stu-id="32cdf-119">remove</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-connectionmanagement-network-settings.md)|<span data-ttu-id="32cdf-120">Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="32cdf-120">Removes an IP address or DNS name from the connection management list.</span></span>|  
+|[<span data-ttu-id="c0f35-115">add</span><span class="sxs-lookup"><span data-stu-id="c0f35-115">add</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/add-element-for-connectionmanagement-network-settings.md)|<span data-ttu-id="c0f35-116">Přidá do seznamu pro správu připojení IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="c0f35-116">Adds an IP address or DNS name to the connection management list.</span></span>|  
+|[<span data-ttu-id="c0f35-117">Vymazat</span><span class="sxs-lookup"><span data-stu-id="c0f35-117">clear</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/clear-element-for-connectionmanagement-network-settings.md)|<span data-ttu-id="c0f35-118">Zruší připojení seznamu pro správu.</span><span class="sxs-lookup"><span data-stu-id="c0f35-118">Clears the connection management list.</span></span>|  
+|[<span data-ttu-id="c0f35-119">remove</span><span class="sxs-lookup"><span data-stu-id="c0f35-119">remove</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/remove-element-for-connectionmanagement-network-settings.md)|<span data-ttu-id="c0f35-120">Odebere ze seznamu pro správu připojení IP adresu nebo název DNS.</span><span class="sxs-lookup"><span data-stu-id="c0f35-120">Removes an IP address or DNS name from the connection management list.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="32cdf-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="32cdf-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="c0f35-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="c0f35-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="32cdf-122">**Element**</span><span class="sxs-lookup"><span data-stu-id="32cdf-122">**Element**</span></span>|<span data-ttu-id="32cdf-123">**Popis**</span><span class="sxs-lookup"><span data-stu-id="32cdf-123">**Description**</span></span>|  
+|<span data-ttu-id="c0f35-122">**Element**</span><span class="sxs-lookup"><span data-stu-id="c0f35-122">**Element**</span></span>|<span data-ttu-id="c0f35-123">**Popis**</span><span class="sxs-lookup"><span data-stu-id="c0f35-123">**Description**</span></span>|  
 |-----------------|---------------------|  
-|[<span data-ttu-id="32cdf-124">System.NET</span><span class="sxs-lookup"><span data-stu-id="32cdf-124">system.net</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|<span data-ttu-id="32cdf-125">Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="32cdf-125">Contains settings that specify how the .NET Framework connects to the network.</span></span>|  
+|[<span data-ttu-id="c0f35-124">System.NET</span><span class="sxs-lookup"><span data-stu-id="c0f35-124">system.net</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md)|<span data-ttu-id="c0f35-125">Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.</span><span class="sxs-lookup"><span data-stu-id="c0f35-125">Contains settings that specify how the .NET Framework connects to the network.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="32cdf-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="32cdf-126">Remarks</span></span>  
- <span data-ttu-id="32cdf-127">`connectionManagement` Element definuje maximální počet připojení k serveru nebo skupiny serverů.</span><span class="sxs-lookup"><span data-stu-id="32cdf-127">The `connectionManagement` element defines the maximum number of connections to a server or group of servers.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c0f35-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c0f35-126">Remarks</span></span>  
+ <span data-ttu-id="c0f35-127">`connectionManagement` Element definuje maximální počet připojení k serveru nebo skupiny serverů.</span><span class="sxs-lookup"><span data-stu-id="c0f35-127">The `connectionManagement` element defines the maximum number of connections to a server or group of servers.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="32cdf-128">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="32cdf-128">Configuration Files</span></span>  
- <span data-ttu-id="32cdf-129">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="32cdf-129">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="c0f35-128">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="c0f35-128">Configuration Files</span></span>  
+ <span data-ttu-id="c0f35-129">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="c0f35-129">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="32cdf-130">Příklad</span><span class="sxs-lookup"><span data-stu-id="32cdf-130">Example</span></span>  
- <span data-ttu-id="32cdf-131">Následující příklad nastaví aplikace pro použití čtyř připojení k serveru www.contoso.com a dvě spojení na všechny ostatní servery.</span><span class="sxs-lookup"><span data-stu-id="32cdf-131">The following example configures an application to use four connections to the server www.contoso.com and two connections to all other servers.</span></span>  
+## <a name="example"></a><span data-ttu-id="c0f35-130">Příklad</span><span class="sxs-lookup"><span data-stu-id="c0f35-130">Example</span></span>  
+ <span data-ttu-id="c0f35-131">Následující příklad nastaví použití čtyř připojení k serveru aplikace `www.contoso.com` a dvě spojení na všechny ostatní servery.</span><span class="sxs-lookup"><span data-stu-id="c0f35-131">The following example configures an application to use four connections to the server `www.contoso.com` and two connections to all other servers.</span></span>  
   
 ```xml  
 <configuration>  
@@ -71,7 +71,7 @@ ms.locfileid: "48028417"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="32cdf-132">Viz také</span><span class="sxs-lookup"><span data-stu-id="32cdf-132">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="c0f35-132">Viz také</span><span class="sxs-lookup"><span data-stu-id="c0f35-132">See Also</span></span>  
  <xref:System.Net.ServicePoint>  
  <xref:System.Net.ServicePointManager>  
- [<span data-ttu-id="32cdf-133">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="32cdf-133">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+ [<span data-ttu-id="c0f35-133">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="c0f35-133">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
