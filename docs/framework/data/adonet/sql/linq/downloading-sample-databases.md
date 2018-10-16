@@ -1,56 +1,56 @@
 ---
-title: Stažení ukázkových databází
-ms.date: 03/30/2017
+title: Získání ukázkových databází pro ukázky kódu ADO.NET
+description: Stažení ukázkových databází používaných pro ukázky kódu v dokumentaci k rozhraní ADO.NET, jakož i nástroje SQL Server a správu
+ms.date: 10/12/2018
 ms.assetid: ef9d69a1-9461-43fe-94bb-7c836754bcb5
-ms.openlocfilehash: e0b842385762a486ffcc775974e15334c77b589b
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 75ae1895d683b669f51b33130fc2f47010e39814
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46585451"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347500"
 ---
-# <a name="downloading-sample-databases"></a><span data-ttu-id="238a2-102">Stažení ukázkových databází</span><span class="sxs-lookup"><span data-stu-id="238a2-102">Downloading Sample Databases</span></span>
-<span data-ttu-id="238a2-103">Počet ukázky a návody v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] pomocí dokumentace k ukázkové databázi Northwind a SQL Server Express Edition.</span><span class="sxs-lookup"><span data-stu-id="238a2-103">A number of samples and walkthroughs in the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation use the Northwind sample database and SQL Server Express Edition.</span></span> <span data-ttu-id="238a2-104">Tyto produkty zdarma si můžete stáhnout z webu společnosti Microsoft ke stažení.</span><span class="sxs-lookup"><span data-stu-id="238a2-104">You can download these products free of charge from the Microsoft download site.</span></span>  
+# <a name="get-the-sample-databases-for-adonet-code-samples"></a><span data-ttu-id="c3545-103">Získání ukázkových databází pro ukázky kódu ADO.NET</span><span class="sxs-lookup"><span data-stu-id="c3545-103">Get the sample databases for ADO.NET code samples</span></span>
+
+<span data-ttu-id="c3545-104">Počet ukázky a návody v [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] dokumentaci použít ukázkové databáze a serveru SQL Server Express.</span><span class="sxs-lookup"><span data-stu-id="c3545-104">A number of samples and walkthroughs in the [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] documentation use sample databases and SQL Server Express.</span></span> <span data-ttu-id="c3545-105">Tyto produkty zdarma si můžete stáhnout z Microsoftu.</span><span class="sxs-lookup"><span data-stu-id="c3545-105">You can download these products free of charge from Microsoft.</span></span>
+
+## <a name="get-the-adventureworks-sample-database"></a><span data-ttu-id="c3545-106">Získat ukázkovou databází AdventureWorks</span><span class="sxs-lookup"><span data-stu-id="c3545-106">Get the AdventureWorks sample database</span></span>
+
+<span data-ttu-id="c3545-107">Stáhněte si ukázkovou databází AdventureWorks z následující úložiště GitHub:</span><span class="sxs-lookup"><span data-stu-id="c3545-107">Download the AdventureWorks sample database from the following GitHub repository:</span></span>
+
+[<span data-ttu-id="c3545-108">Ukázkových databází AdventureWorks</span><span class="sxs-lookup"><span data-stu-id="c3545-108">AdventureWorks sample databases</span></span>](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)
+
+<span data-ttu-id="c3545-109">Po stažení zálohy databáze (\*.bak) souborech, obnovení zálohy do instance systému SQL Server pomocí SQL Server Management Studio (SSMS).</span><span class="sxs-lookup"><span data-stu-id="c3545-109">After you download one of the database backup (\*.bak) files, restore the backup to an instance of SQL Server by using SQL Server Management Studio (SSMS).</span></span> <span data-ttu-id="c3545-110">Zobrazit [získat SQL Server Management Studio](#get_ssms).</span><span class="sxs-lookup"><span data-stu-id="c3545-110">See [Get SQL Server Management Studio](#get_ssms).</span></span>
+
+## <a name="get-the-northwind-sample-database"></a><span data-ttu-id="c3545-111">Získat ukázkovou databázi Northwind</span><span class="sxs-lookup"><span data-stu-id="c3545-111">Get the Northwind sample database</span></span>
+
+<span data-ttu-id="c3545-112">Stažení ukázkové databáze Northwind na následující stránce na webu Microsoft Download Center:</span><span class="sxs-lookup"><span data-stu-id="c3545-112">Download the Northwind sample database from the following page in the Microsoft Download Center:</span></span>
+
+[<span data-ttu-id="c3545-113">Ukázkové databáze Pubs a Northwind</span><span class="sxs-lookup"><span data-stu-id="c3545-113">Northwind and Pubs Sample Databases</span></span>](https://go.microsoft.com/fwlink?linkid=64296)
+
+<span data-ttu-id="c3545-114">Po stažení souboru poklikejte na soubor k extrahování databází a skripty.</span><span class="sxs-lookup"><span data-stu-id="c3545-114">After the file has downloaded, double-click the file to extract the databases and scripts.</span></span> <span data-ttu-id="c3545-115">Ve výchozím nastavení jsou soubory nainstalovaného ve složce `<drive>:\SQL Server 2000 Sample Databases`.</span><span class="sxs-lookup"><span data-stu-id="c3545-115">By default, the files are installed in the folder `<drive>:\SQL Server 2000 Sample Databases`.</span></span>
+
+<span data-ttu-id="c3545-116">Před použitím databáze Northwind, musíte udělat jednu z následujících akcí:</span><span class="sxs-lookup"><span data-stu-id="c3545-116">Before you can use the Northwind database, you have to do one of the following things:</span></span>
+
+- <span data-ttu-id="c3545-117">Znovu vytvořit databázi na instanci systému SQL Server spuštěním `instnwnd.sql` soubor skriptu v instalační složce Nástroje.</span><span class="sxs-lookup"><span data-stu-id="c3545-117">Recreate the database on an instance of SQL Server by running the `instnwnd.sql` script file in the installation folder.</span></span>
+
+- <span data-ttu-id="c3545-118">Připojit `northwnd.mdf` soubor k odpovídajícímu `*.ldf` souboru protokolu určeného k instanci systému SQL Server.</span><span class="sxs-lookup"><span data-stu-id="c3545-118">Attach the `northwnd.mdf` file with its corresponding `*.ldf` log file to an instance of SQL Server.</span></span>
+
+## <a name="get_sql"></a> <span data-ttu-id="c3545-119">Získat SQL Server Express</span><span class="sxs-lookup"><span data-stu-id="c3545-119">Get SQL Server Express</span></span>
+
+<span data-ttu-id="c3545-120">SQL Server Express je zdarma, základní edice systému SQL Server, který je možné znovu distribuovat s aplikací.</span><span class="sxs-lookup"><span data-stu-id="c3545-120">SQL Server Express is a free, entry-level edition of SQL Server that you can redistribute with applications.</span></span> <span data-ttu-id="c3545-121">Stáhněte SQL Server Express z následující stránky:</span><span class="sxs-lookup"><span data-stu-id="c3545-121">Download SQL Server Express from the following page:</span></span>
   
-## <a name="downloading-the-northwind-database"></a><span data-ttu-id="238a2-105">Stahování databázi Northwind</span><span class="sxs-lookup"><span data-stu-id="238a2-105">Downloading the Northwind Database</span></span>  
+[<span data-ttu-id="c3545-122">Edice SQL serveru Express</span><span class="sxs-lookup"><span data-stu-id="c3545-122">SQL Server Express Editions</span></span>](https://www.microsoft.com/sql-server/sql-server-editions-express)
+
+<span data-ttu-id="c3545-123">Pokud používáte [sady Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), SQL Server Express LocalDB je součástí Community edition, stejně jako edice Professional a vyšší.</span><span class="sxs-lookup"><span data-stu-id="c3545-123">If you're using [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), SQL Server Express LocalDB is included in the Community edition as well as the Professional and higher editions.</span></span>  
+
+## <a name="get_ssms"></a> <span data-ttu-id="c3545-124">Získat SQL Server Management Studio</span><span class="sxs-lookup"><span data-stu-id="c3545-124">Get SQL Server Management Studio</span></span>
+<span data-ttu-id="c3545-125">Pokud chcete zobrazit nebo upravit databázi, kterou jste stáhli, můžete použít SQL Server Management Studio (SSMS).</span><span class="sxs-lookup"><span data-stu-id="c3545-125">If you want to view or modify a database that you've downloaded, you can use SQL Server Management Studio (SSMS).</span></span> <span data-ttu-id="c3545-126">SSMS stáhněte z následující stránky:</span><span class="sxs-lookup"><span data-stu-id="c3545-126">Download SSMS from the following page:</span></span>
+
+[<span data-ttu-id="c3545-127">Stáhněte si SQL Server Management Studio (SSMS)</span><span class="sxs-lookup"><span data-stu-id="c3545-127">Download SQL Server Management Studio (SSMS)</span></span>](/sql/ssms/download-sql-server-management-studio-ssms) 
+
+<span data-ttu-id="c3545-128">Můžete také zobrazit a spravovat databáze v prostředí integrovaného vývojového (prostředí IDE) sady Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="c3545-128">You can also view and manage databases in the Visual Studio integrated development environment (IDE).</span></span> <span data-ttu-id="c3545-129">V [sady Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), připojte se k databázi z **Průzkumník objektů systému SQL Server**, nebo vytvoření datového připojení k databázi v **Průzkumníka serveru**.</span><span class="sxs-lookup"><span data-stu-id="c3545-129">In [Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2017), connect to the database from **SQL Server Object Explorer**, or create a Data Connection to the database in **Server Explorer**.</span></span> <span data-ttu-id="c3545-130">Otevření těchto podoken explorer z **zobrazení** nabídky.</span><span class="sxs-lookup"><span data-stu-id="c3545-130">Open these explorer panes from the **View** menu.</span></span>
   
-#### <a name="to-download-and-install-the-northwind-sample-database-for-sql-server"></a><span data-ttu-id="238a2-106">Ke stažení a instalaci ukázkové databáze Northwind pro SQL Server</span><span class="sxs-lookup"><span data-stu-id="238a2-106">To download and install the Northwind sample database for SQL Server</span></span>  
-  
-1.  <span data-ttu-id="238a2-107">Spusťte aplikaci Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="238a2-107">Start Internet Explorer.</span></span>  
-  
-2.  <span data-ttu-id="238a2-108">Přejděte [ukázkové databáze Pubs a Northwind](https://go.microsoft.com/fwlink?linkid=64296) webu.</span><span class="sxs-lookup"><span data-stu-id="238a2-108">Go to the [Northwind and Pubs Sample Databases](https://go.microsoft.com/fwlink?linkid=64296) Web site.</span></span>  
-  
-3.  <span data-ttu-id="238a2-109">Klikněte na tlačítko **Stáhnout**.</span><span class="sxs-lookup"><span data-stu-id="238a2-109">Click **Download**.</span></span>  
-  
-4.  <span data-ttu-id="238a2-110">V **stažení souboru** dialogu **Uložit**.</span><span class="sxs-lookup"><span data-stu-id="238a2-110">In the **File Download** dialog box, select **Save**.</span></span>  
-  
-5.  <span data-ttu-id="238a2-111">Po stažení souboru dvakrát klikněte **Nwind.exe** sloužící k instalaci databáze.</span><span class="sxs-lookup"><span data-stu-id="238a2-111">After the file has downloaded, double-click the **Nwind.exe** file to install the database.</span></span>  
-  
-     <span data-ttu-id="238a2-112">Ve výchozím nastavení, je databáze nainstalována na *jednotky*: \SQL Server 2000 Sample Databases.</span><span class="sxs-lookup"><span data-stu-id="238a2-112">By default, the database is installed at *drive*:\SQL Server 2000 Sample Databases.</span></span>  
-  
-## <a name="downloading-sql-server-express-edition"></a><span data-ttu-id="238a2-113">Stahuje se SQL Server Express Edition</span><span class="sxs-lookup"><span data-stu-id="238a2-113">Downloading SQL Server Express Edition</span></span>  
- <span data-ttu-id="238a2-114">SQL Server Express Edition je k dispozici bez poplatků a je možné znovu distribuovat ji s aplikacemi.</span><span class="sxs-lookup"><span data-stu-id="238a2-114">SQL Server Express Edition is available without charge, and you can redistribute it with applications.</span></span> <span data-ttu-id="238a2-115">Pokud používáte Visual Studio, SQL Server Express Edition je součástí verze Pro a větší.</span><span class="sxs-lookup"><span data-stu-id="238a2-115">If you are using Visual Studio, SQL Server Express Edition is included in the Pro and greater editions.</span></span>  
-  
-#### <a name="to-download-and-install-sql-server-express-edition"></a><span data-ttu-id="238a2-116">Stáhněte si a nainstalujte SQL Server Express Edition</span><span class="sxs-lookup"><span data-stu-id="238a2-116">To download and install SQL Server Express Edition</span></span>  
-  
-1.  <span data-ttu-id="238a2-117">Spusťte aplikaci Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="238a2-117">Start Internet Explorer.</span></span>  
-  
-2.  <span data-ttu-id="238a2-118">Přejděte [Microsoft Download Center](https://go.microsoft.com/fwlink?linkid=74602) webu.</span><span class="sxs-lookup"><span data-stu-id="238a2-118">Go to the [Microsoft Download Center](https://go.microsoft.com/fwlink?linkid=74602) Web site.</span></span>  
-  
-3.  <span data-ttu-id="238a2-119">V dialogovém okně klíčová slova zadejte **SQL Server Express**.</span><span class="sxs-lookup"><span data-stu-id="238a2-119">In the keywords box, type **SQL Server Express**.</span></span>  
-  
-4.  <span data-ttu-id="238a2-120">Klikněte na tlačítko **Přejít**.</span><span class="sxs-lookup"><span data-stu-id="238a2-120">Click **Go**.</span></span>  
-  
-5.  <span data-ttu-id="238a2-121">Na stránce výsledky, klikněte na odkaz **Microsoft SQL Server 2005 Express Edition** stránce pro stažení.</span><span class="sxs-lookup"><span data-stu-id="238a2-121">On the results page, click the link to the **Microsoft SQL Server 2005 Express Edition** download page.</span></span>  
-  
-6.  <span data-ttu-id="238a2-122">Postupujte podle pokynů k instalaci na webové stránce.</span><span class="sxs-lookup"><span data-stu-id="238a2-122">Follow the installation instructions on the Web site.</span></span>  
-  
-## <a name="downloading-management-studio-express"></a><span data-ttu-id="238a2-123">Stažení Management Studio Express</span><span class="sxs-lookup"><span data-stu-id="238a2-123">Downloading Management Studio Express</span></span>  
- <span data-ttu-id="238a2-124">Pokud chcete upravit databázi, která jste si stáhli, máte přístup k databázi z **Průzkumníka serveru** v sadě Visual Studio integrované vývojové prostředí (IDE), nebo použijte Microsoft SQL Server Management Studio Express (SSMSE) .</span><span class="sxs-lookup"><span data-stu-id="238a2-124">If you want to modify a database that you have downloaded, you can access the database from **Server Explorer** in the Visual Studio integrated development environment (IDE), or use Microsoft SQL Server Management Studio Express (SSMSE).</span></span>  
-  
-#### <a name="to-download-management-studio-express"></a><span data-ttu-id="238a2-125">Stažení Management Studio Express</span><span class="sxs-lookup"><span data-stu-id="238a2-125">To download Management Studio Express</span></span>  
-  
--   <span data-ttu-id="238a2-126">Postupujte podle pokynů na adrese [SSMSE lokality](https://go.microsoft.com/fwlink/?LinkId=95933).</span><span class="sxs-lookup"><span data-stu-id="238a2-126">Follow the instructions at the [SSMSE site](https://go.microsoft.com/fwlink/?LinkId=95933).</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="238a2-127">Viz také</span><span class="sxs-lookup"><span data-stu-id="238a2-127">See Also</span></span>  
- [<span data-ttu-id="238a2-128">Začínáme</span><span class="sxs-lookup"><span data-stu-id="238a2-128">Getting Started</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
+## <a name="see-also"></a><span data-ttu-id="c3545-131">Viz také:</span><span class="sxs-lookup"><span data-stu-id="c3545-131">See also</span></span>
+
+- [<span data-ttu-id="c3545-132">Začínáme</span><span class="sxs-lookup"><span data-stu-id="c3545-132">Getting Started</span></span>](../../../../../../docs/framework/data/adonet/sql/linq/getting-started.md)
