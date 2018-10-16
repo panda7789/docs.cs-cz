@@ -2,12 +2,12 @@
 title: Tok řízení v asynchronních programech (C#)
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: 49123dde51acaa82a2d8fa7d27fdf27087675034
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: c4f1213eb9162985170c8eb1176fe01d8c721d2e
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46586776"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347952"
 ---
 # <a name="control-flow-in-async-programs-c"></a>Tok řízení v asynchronních programech (C#)
 
@@ -47,7 +47,7 @@ public partial class MainWindow : Window
         // TWO
         HttpClient client = new HttpClient();
         Task<string> getStringTask =
-            client.GetStringAsync("http://msdn.microsoft.com");
+            client.GetStringAsync("https://msdn.microsoft.com");
 
         // THREE
         string urlContents = await getStringTask;
@@ -212,7 +212,7 @@ Spusťte projekt, proveďte následující kroky:
                 resultsTextBox.Text += "\r\n           Calling HttpClient.GetStringAsync.\r\n";
 
                 // GetStringAsync returns a Task<string>.
-                Task<string> getStringTask = client.GetStringAsync("http://msdn.microsoft.com");
+                Task<string> getStringTask = client.GetStringAsync("https://msdn.microsoft.com");
 
                 resultsTextBox.Text += "\r\nTHREE: Back in AccessTheWebAsync.\r\n" +
                     "           Task getStringTask is started.";
@@ -287,7 +287,7 @@ V `AccessTheWebAsync`, asynchronní metoda <xref:System.Net.Http.HttpClient.GetS
  `client.GetStringAsync` Metoda vrátí úlohu řetězce, který je přiřazen `getStringTask` proměnné v `AccessTheWebAsync`. Následující řádek v příkladu programu ukazuje volání do `client.GetStringAsync` a přiřazení.
 
 ```csharp
-Task<string> getStringTask = client.GetStringAsync("http://msdn.microsoft.com");
+Task<string> getStringTask = client.GetStringAsync("https://msdn.microsoft.com");
 ```
 
  Úlohy si můžete představit jako za příslib od `client.GetStringAsync` nakonec vytvoří vytvoření skutečného řetězce. Do té doby Pokud `AccessTheWebAsync` má pracovní postup, která není závislá na přislíbeném řetězci z `client.GetStringAsync`, této práci pokračovat během `client.GetStringAsync` čeká. V tomto příkladu představují následující řádky výstupu, které nesou označení "Tři", příležitost k nezávislé práci.
@@ -311,7 +311,7 @@ string urlContents = await getStringTask;
  Výraz await pozastaví `AccessTheWebAsync` dokud `client.GetStringAsync` vrátí. Do té doby se ovládací prvek vrátí volajícímu metody `AccessTheWebAsync`, `startButton_Click`.
 
 > [!NOTE]
-> Obvykle můžete očekávat volání asynchronní metody okamžitě. Například následující přiřazení může nahradit předchozí kód, který vytvoří a poté očekává `getStringTask`: `string urlContents = await client.GetStringAsync("http://msdn.microsoft.com");`
+> Obvykle můžete očekávat volání asynchronní metody okamžitě. Například následující přiřazení může nahradit předchozí kód, který vytvoří a poté očekává `getStringTask`: `string urlContents = await client.GetStringAsync("https://msdn.microsoft.com");`
 >
 > V tomto tématu je později použit operátor await pro výstupní řádky, které označí tok řízení programem.
 

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2a2a27f788fa84c41ccb818266fffc816237bb48
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 13dfdfd89bf91510146ce388620d3e51c2aa1f02
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44248914"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347503"
 ---
 # <a name="net-native-reflection-api-reference"></a>Informace o rozhraní API reflexe .NET Native
 [!INCLUDE[net_native](../../../includes/net-native-md.md)] zahrnuje tři nové typy výjimek: [System.Runtime.CompilerServices.MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md), [System.Reflection.MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md), a [ System.Reflection.MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md). Mějte na paměti následující skutečnosti související všechny výjimky tři typy:  
@@ -20,9 +20,9 @@ ms.locfileid: "44248914"
  Ke zpracování těchto výjimek v kódu.  
  Tyto výjimky signalizují, obou těchto metadat, které vaše aplikace vyžaduje chybí ( [MissingInteropDataException](../../../docs/framework/net-native/missinginteropdataexception-class-net-native.md) a [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) výjimky) nebo že implementační kód vyžadované vaší aplikaci chybí ( [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimka). Opravte tyto podmínky výjimek tak, že upravíte direktivy modulu runtime (. rd.xml) soubor zpřístupnit požadované metadata nebo provádění kódu za běhu. Další informace najdete v tématu [direktivy modulu Runtime (rd.xml) odkaz na soubor konfigurace](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md). Jsou k dispozici dva Poradce při potížích, zadejte odpovídající položky k nahrání souboru direktiv modulu runtime, který odstraní [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) a [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky:  
   
--   [Poradce při potížích MissingMetadataException](http://dotnet.github.io/native/troubleshooter/type.html) pro typy.  
+-   [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/type.html) pro typy.  
   
--   [Poradce při potížích MissingMetadataException](http://dotnet.github.io/native/troubleshooter/method.html) pro metody.  
+-   [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) pro metody.  
   
 > [!NOTE]
 >  Tento odkaz na dokumenty tři typy výjimek, které jsou jedinečné pro [!INCLUDE[net_native](../../../includes/net-native-md.md)]. Referenční dokumentace pro rozhraní API reflexe .NET Framework core, najdete v části [obory názvů System.Reflection](https://msdn.microsoft.com/library/gg145033.aspx). Referenční dokumentace pro rozhraní API vzájemné spolupráce pro rozhraní .NET Framework core, najdete v části <xref:System.Runtime.InteropServices>.  

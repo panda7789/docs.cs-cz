@@ -18,19 +18,19 @@ helpviewer_keywords:
 ms.assetid: d2811830-3bcb-495c-b82d-cda9cf919aad
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: e6ab51da72a7cecac02a2bbd5664dee164239401
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 6c586416daedca63628672ddf090fa808fad3f4e
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195459"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347587"
 ---
 # <a name="using-tcp-services"></a>Použití služeb TCP
 <xref:System.Net.Sockets.TcpClient> Třídy vyžaduje data z internetových prostředků pomocí protokolu TCP. Metody a vlastnosti **TcpClient** abstraktní podrobnosti o vytváření <xref:System.Net.Sockets.Socket> pro podávání žádostí a příjmu dat pomocí protokolu TCP. Protože připojení ke vzdálenému zařízení je reprezentován jako datový proud, můžete data čtení a zápis s techniky zpracování datového proudu rozhraní .NET Framework.  
   
  Protokolu TCP naváže připojení se vzdálený koncový bod a potom použije toto připojení k odesílání a příjmu datových paketů. TCP zodpovídá za to, že datových paketů odesílaných ke koncovému bodu i týkajícím se této ve správném pořadí při doručení.  
   
- K navázání připojení TCP, musíte znát adresu síťového zařízení, který je hostitelem služby, které potřebujete a navíc musí znát port TCP, který službu používá ke komunikaci. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz www.iana.org/assignments/port-numbers). Služby není na seznamu Iana může mít čísla portu v rozsahu 1 024 do 65 535.  
+ K navázání připojení TCP, musíte znát adresu síťového zařízení, který je hostitelem služby, které potřebujete a navíc musí znát port TCP, který službu používá ke komunikaci. Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (viz [název služby a registru číslo portu protokolu přenosu](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Služby není na seznamu Iana může mít čísla portu v rozsahu 1 024 do 65 535.  
   
  Následující příklad ukazuje nastavení nahoru **TcpClient** pro připojení k serveru čas na portu TCP 13.  
   

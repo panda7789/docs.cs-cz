@@ -4,41 +4,41 @@ ms.date: 03/30/2017
 ms.assetid: ee8c5e17-35ea-48a1-8767-83298caac1e8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0b53150c90e473e7c4ed32991c43ff0b8ca5b75b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 45a053d2aefa8a295e0e8d52818472647e4ef834
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33396282"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347581"
 ---
 # <a name="net-native-general-troubleshooting"></a>Obecné řešení potíží s .NET Native
-Toto téma popisuje postupy řešení potíží s potenciálními problémy, které se můžete setkat při vývoji aplikací s [!INCLUDE[net_native](../../../includes/net-native-md.md)].  
+Toto téma popisuje postupy řešení potíží s potenciální problémy, které se mohou vyskytnout při vývoji aplikací s využitím [!INCLUDE[net_native](../../../includes/net-native-md.md)].  
   
--   **Problém:** okně výstupu sestavení, správně neaktualizuje.  
+-   **Problém:** správně neaktualizuje okno výstupu sestavení.  
   
-     **Řešení:** ve výstupním okně sestavení není aktualizován, dokud se nedokončí sestavení. Sestavení může trvat až několik minut, proto může docházet ke zpoždění v zobrazení aktualizací.  
+     **Řešení:** v okně výstupu sestavení není aktualizován, dokud se nedokončí sestavení. Dobu sestavení může být až několik minut, proto může docházet ke zpoždění v zobrazení aktualizací.  
   
--   **Problém:** prodejní vaší aplikace pro ARM zvýšilo čas sestavení.  
+-   **Problém:** maloobchodního prodeje vašich aplikací pro ARM zvýšil při sestavení.  
   
-     **Řešení:** při nasazení aplikace do zařízení ARM [!INCLUDE[net_native](../../../includes/net-native-md.md)] infrastruktury je volána. Tato kompilace provede velký počet optimalizace a zajistit, že sémantika nestatické například reflexe pokračovat v práci. Kromě toho část rozhraní .NET Framework, který používá aplikace je staticky propojené v pro optimální výkon a musí být zkompilovány do nativního kódu také. Z tohoto důvodu kompilace trvá déle.  
+     **Řešení:** při nasazení aplikace do zařízení ARM, [!INCLUDE[net_native](../../../includes/net-native-md.md)] infrastruktury je vyvolána. Tato kompilace provádí velké množství optimalizace při zajištění tuto sémantiku nestatické, jako je odraz pokračovat v práci. Kromě toho část aplikace využívá rozhraní .NET Framework je staticky propojena k zajištění optimálního výkonu a musí být kompilovány do nativního kódu i. To je důvod, proč kompilace trvá déle.  
   
-     Dobu kompilace jsou však stále do jedné minuty standardní kompilace pro většinu aplikací na standardní vývojovém počítači.  Právě generování nativních bitových kopií pro rozhraní .NET Framework na standardní vývojovém počítači obvykle trvá několik minut.  I s všechny optimalizace k vylepšení generovaného kódu a včetně rozhraní .NET Framework časy sestavení aplikace jsou obvykle minutu nebo dvě.  
+     Časy kompilace jsou však stále během minuty standardní kompilace pro většinu aplikací na standardní vývojovém počítači.  Právě generování nativních bitových kopií pro rozhraní .NET Framework v počítači vývoje ve standardu obvykle trvá několik minut.  I přes všechny optimalizace pro zlepšení generovaného kódu a pomocí rozhraní .NET Framework včetně doby sestavení aplikace jsou obvykle minutu nebo dvě.  
   
-     Jsme nadále fungovat na zvýšení výkonu kompilace zjišťováním kompilace vícevláknových a další optimalizace.  
+     Pokračujeme v práci na zlepšení výkonu kompilace zjišťováním vícevláknovou kompilaci a další optimalizace.  
   
--   **Problém:** nevíte, pokud vaše aplikace byl kompilován s použitím [!INCLUDE[net_native](../../../includes/net-native-md.md)].  
+-   **Problém:** si nejste jisti, pokud vaše aplikace byla sestavena pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)].  
   
-     **Řešení:** Pokud [!INCLUDE[net_native](../../../includes/net-native-md.md)] kompilátoru je volána, můžete si všimnout již sestavení časy a Správce úloh se zobrazí různé [!INCLUDE[net_native](../../../includes/net-native-md.md)] součást procesy, například ILC.exe a nutc_driver.exe.  
+     **Řešení:** Pokud [!INCLUDE[net_native](../../../includes/net-native-md.md)] compiler je vyvolán, můžete si všimnout delší doby sestavení a Správce úloh se zobrazí různé [!INCLUDE[net_native](../../../includes/net-native-md.md)] komponenty procesy, jako je například ILC.exe a nutc_driver.exe.  
   
-     Po úspěšném sestavení projektu s [!INCLUDE[net_native](../../../includes/net-native-md.md)], zjistíte výstup pod obj\\*konfigurace*\ *architektura* \\  *název projektu*. ilc\out.  Poslední nativní balíčku obsahu najdete v části bin\\*architektura*\\*konfigurace*\AppX. Obsah konečné nativní balíčku se v části \bin\\*architektura*\\*konfigurace*\AppX Pokud jste nasadili aplikace.  
+     Po úspěšném sestavení svého projektu pomocí [!INCLUDE[net_native](../../../includes/net-native-md.md)], najdete ve výstupu pod obj\\*config*\ *arch* \\  *ProjectName*. ilc\out.  Nativní finálním balíčku obsahu najdete v části bin\\*arch*\\*config*\AppX. Nativní finálním balíčku obsahu jsou v rámci \bin\\*arch*\\*config*\AppX Pokud jste nasadili aplikaci.  
   
--   **Problém:** aplikace .NET Native zkompilovat je vyvolání výjimky za běhu (obvykle [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) nebo [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky), nevyvolá výjimku Při kompilaci bez .NET Native.  
+-   **Problém:** .NET Native kompilací aplikace vyvolává výjimky modulu CLR (obvykle [MissingMetadataException](../../../docs/framework/net-native/missingmetadataexception-class-net-native.md) nebo [MissingRuntimeArtifactException](../../../docs/framework/net-native/missingruntimeartifactexception-class-net-native.md) výjimky), který ho nevyvolala Při kompilaci bez .NET Native.  
   
-     **Řešení:** výjimky jsou vyvolány, protože .NET Native neposkytl metadata nebo implementace kód, který je jinak k dispozici prostřednictvím reflexe. (Další informace najdete v tématu [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md).) Odstranit výjimku, budete muset přidat položku s vaší [runtime (rd.xml) direktivy souboru](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md) tak, aby řetězu .NET Native nástroj můžete zpřístupnit metadata nebo implementaci kódu v době běhu. Jsou k dispozici dva Poradce při potížích, bude generovat potřeby položku pro přidání do souboru direktivy modulu runtime:  
+     **Řešení:** výjimky jsou vyvolány, protože .NET Native neposkytl metadata nebo implementační kód, který je jinak k dispozici prostřednictvím reflexe. (Další informace najdete v tématu [.NET Native a kompilace](../../../docs/framework/net-native/net-native-and-compilation.md).) Chcete-li odstranit výjimky, budete muset přidat položku pro váš [soubor modulu runtime (rd.xml) direktivy](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md) tak, aby .NET Native řetězce nástrojů můžete zpřístupnit metadata nebo provádění kódu za běhu. Jsou k dispozici dva Poradce při potížích, která bude generovat nezbytné položku a přidejte do souboru direktiv modulu runtime:  
   
-    -   [MissingMetadataException Poradce při potížích s](http://dotnet.github.io/native/troubleshooter/type.html) pro typy.  
+    -   [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/type.html) pro typy.  
   
-    -   [MissingMetadataException Poradce při potížích s](http://dotnet.github.io/native/troubleshooter/method.html) pro metody.  
+    -   [Poradce při potížích MissingMetadataException](https://dotnet.github.io/native/troubleshooter/method.html) pro metody.  
   
      Další informace najdete v tématu [reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md).  
   

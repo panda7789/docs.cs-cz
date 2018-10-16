@@ -18,12 +18,12 @@ helpviewer_keywords:
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: ee10681c8beddac06d5c4eae453f4070b2bf1b4e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 2bfc497076c99337d22512c657a40ba3963c974c
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195547"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347874"
 ---
 # <a name="using-client-sockets"></a>Použití klientských soketů
 Předtím, než můžete zahájit konverzaci prostřednictvím <xref:System.Net.Sockets.Socket>, je nutné vytvořit datový kanál mezi vaší aplikací a vzdáleným zařízením. I když existují jiné rodiny adres sítě a protokoly, tento příklad ukazuje, jak vytvořit připojení TCP/IP k vzdálené služby.  
@@ -42,7 +42,7 @@ IPHostEntry ipHostInfo = Dns.Resolve("host.contoso.com");
 IPAddress ipAddress = ipHostInfo.AddressList[0];  
 ```  
   
- Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (pro další informace najdete v tématu www.iana.org/assignments/port-numbers). Další služby můžou jste se zaregistrovali čísla portu v rozsahu 1 024 do 65 535. Následující kód je kombinací IP adresu pro host.contoso.com s číslem portu, chcete-li vytvořit vzdálený koncový bod pro připojení.  
+ Internet Assigned Numbers Authority (Iana) definuje čísla portů pro běžné služby (Další informace najdete v tématu [název služby a registru číslo portu protokolu přenosu](https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml)). Další služby můžou jste se zaregistrovali čísla portu v rozsahu 1 024 do 65 535. Následující kód je kombinací IP adresu pro host.contoso.com s číslem portu, chcete-li vytvořit vzdálený koncový bod pro připojení.  
   
 ```vb  
 Dim ipe As New IPEndPoint(ipAddress, 11000)  

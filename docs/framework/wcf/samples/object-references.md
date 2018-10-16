@@ -2,12 +2,12 @@
 title: Odkazy na objekty
 ms.date: 03/30/2017
 ms.assetid: 7a93d260-91c3-4448-8f7a-a66fb562fc23
-ms.openlocfilehash: 1aa8b1c9d135186dba9e4da75f0c7cb9297d8e5c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 00caccaeed8cebeec2e053d418ae6a5bf9a12138
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46000239"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347741"
 ---
 # <a name="object-references"></a>Odkazy na objekty
 Tento příklad ukazuje, jak předat objekty podle odkazů mezi serverem a klientem. Ukázka používá simulované *sociálních sítí*. Sociální síť se skládá z `Person` třídu, která obsahuje seznam přátel, ve kterých každý typu friend je instance `Person` třídy s vlastním seznamu přátel. Tím se vytvoří graf objektů. Služba zpřístupňuje operace v těchto sociálních sítích.  
@@ -20,7 +20,7 @@ Tento příklad ukazuje, jak předat objekty podle odkazů mezi serverem a klien
 ## <a name="service"></a>Služba  
  `Person` Třída nemá <xref:System.Runtime.Serialization.DataContractAttribute> atribut, pomocí <xref:System.Runtime.Serialization.DataContractAttribute.IsReference%2A> nastaveno na `true` deklarovat jako typ odkazu. Mají všechny vlastnosti <xref:System.Runtime.Serialization.DataMemberAttribute> atribut.  
   
-```  
+```csharp
 [DataContract(IsReference=true)]  
 public class Person  
 {  
@@ -53,7 +53,7 @@ public class Person
   
  `GetPeopleInNetwork` Operace přebírá parametr typu `Person` a vrátí všechny uživatele v síti; to znamená, že všichni uživatelé ve `friends` seznamu vašeho přítele přátel a tak dále, aniž by duplicitní položky.  
   
-```  
+```csharp
 public List<Person> GetPeopleInNetwork(Person p)  
 {  
     List<Person> people = new List<Person>();  
@@ -65,7 +65,7 @@ public List<Person> GetPeopleInNetwork(Person p)
   
  `GetMutualFriends` Operace přebírá parametr typu `Person` a vrátí všechny přátele v seznamu, kteří mají také tuto osobu v jejich `friends` seznamu.  
   
-```  
+```csharp
 public List<Person> GetMutualFriends(Person p)  
 {  
     List<Person> mutual = new List<Person>();  
@@ -80,7 +80,7 @@ public List<Person> GetMutualFriends(Person p)
   
  `GetCommonFriends` Operace přebírá seznam typů `Person`. Seznam by měl mít dvě `Person` objektů v ní. Operace vrátí seznam hodnot `Person` objekty, které jsou v `friends` oba seznamy `Person` objekty ve vstupním seznamu.  
   
-```  
+```csharp
 public List<Person> GetCommonFriends(List<Person> people)  
 {  
     List<Person> common = new List<Person>();  

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - Visual C#, creating applications
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
-ms.openlocfilehash: 987f8e25014e8ce6413c998f6eb78d821558ecec
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 27bd71d4caf59a44a45c70217aa351cf43a5c1c7
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518661"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49349118"
 ---
 # <a name="developing-client-applications-with-the-net-framework"></a>Vývoj klientských aplikací s použitím rozhraní .NET Framework
 
@@ -55,7 +55,7 @@ Zobrazí seznam API rozhraní .NET Framework můžete použít pro vytváření 
 [Vývoj pro různé platformy](../../docs/standard/cross-platform/index.md)  
 Popisuje různé metody rozhraní .NET Framework můžete cílit na více typy klientských aplikací.
 
-[Začínáme s weby ASP.NET](http://www.asp.net/get-started/websites)  
+[Začínáme s weby ASP.NET](https://www.asp.net/get-started/websites)  
 Popisuje způsoby, kterými vám umožní vytvářet webové aplikace s využitím technologie ASP.NET.
 
 ## <a name="see-also"></a>Viz také:

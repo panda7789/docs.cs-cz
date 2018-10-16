@@ -2,12 +2,12 @@
 title: Ukázka oznámení
 ms.date: 03/30/2017
 ms.assetid: 954a75e4-9a97-41d6-94fc-43765d4205a9
-ms.openlocfilehash: a82056844c9ec8f77bce4b0adec481a025894d1f
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: d03f22b7dd4d9886151e61a2a846f2dc64e661c3
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43865719"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347501"
 ---
 # <a name="announcements-sample"></a>Ukázka oznámení
 Tento příklad ukazuje, jak používat funkci oznámení funkci zjišťování. Oznámení povolte službám posílat zprávy oznámení, které obsahují metadata týkající se služby. Ve výchozím nastavení hello oznámení se odešle, když služba po spuštění a bye oznámení se odešle, když je služba ukončena. Tato oznámení mohou být vícesměrového vysílání nebo mohou být odesílány typu point-to-point. Tento příklad se skládá z klienta a služby dva projekty.  
@@ -15,7 +15,7 @@ Tento příklad ukazuje, jak používat funkci oznámení funkci zjišťování.
 ## <a name="service"></a>Služba  
  Tento projekt obsahuje službu kalkulačky v místním prostředí. V `Main` metody vytvoření hostitele služby a koncového bodu služby se přidá do ní. Další, <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> se vytvoří. Pokud chcete povolit oznámení, musí koncový bod oznámení přidaný do <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>. V tomto případě je standardní koncový bod, používat UDP, vícesměrového vysílání se přidá jako koncový bod oznámení. Toto oznámení vysílá prostřednictvím dobře známé adrese UDP.  
   
-```  
+```csharp
 Uri baseAddress = new Uri("http://localhost:8000/" + Guid.NewGuid().ToString());  
   
 // Create a ServiceHost for the CalculatorService type.  
@@ -39,7 +39,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(CalculatorService), base
 ## <a name="client"></a>Klient  
  V tomto projektu, Všimněte si, že hostitele klienta <xref:System.ServiceModel.Discovery.AnnouncementService>. Kromě toho jsou registrovány dvou delegátů událostí. Tyto události určují, co klient nemá při přijetí oznámení týkající se online i offline.  
   
-```  
+```csharp
 // Create an AnnouncementService instance  
 AnnouncementService announcementService = new AnnouncementService();  
   
@@ -50,7 +50,7 @@ announcementService.OfflineAnnouncementReceived += OnOfflineEvent;
   
  `OnOnlineEvent` a `OnOfflineEvent` metody zpracovávají hello a bye zprávy oznámení v uvedeném pořadí.  
   
-```  
+```csharp
 static void OnOnlineEvent(object sender, AnnouncementEventArgs e)  
 {  
     Console.WriteLine();              

@@ -4,12 +4,12 @@ description: Žádost o přijetí změn Azure Durable functions
 author: cecilphillip
 ms.author: cephilli
 ms.date: 06/26/2018
-ms.openlocfilehash: b3f0587241a940941f40512504f7838ef94e3150
-ms.sourcegitcommit: 4c158beee818c408d45a9609bfc06f209a523e22
+ms.openlocfilehash: 241eff4f30e63b2bb34664d6f783f854a000e7fd
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37404891"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347777"
 ---
 # <a name="orchestration-patterns"></a>Vzory Orchestrace
 
@@ -154,7 +154,7 @@ public static async Task CheckStockPrice([OrchestrationTrigger] DurableOrchestra
 ## <a name="recommended-resources"></a>Doporučené studijní materiály
 
 * [Odolná služba Azure Functions](https://docs.microsoft.com/azure/azure-functions/durable-functions-overview)
-* [Testování jednotek v .NET Core a .NET Standard](https://docs.microsoft.com/en-us/dotnet/core/testing/)
+* [Testování jednotek v .NET Core a .NET Standard](https://docs.microsoft.com/dotnet/core/testing/)
 
 >[!div class="step-by-step"]
 [Předchozí](durable-azure-functions.md)

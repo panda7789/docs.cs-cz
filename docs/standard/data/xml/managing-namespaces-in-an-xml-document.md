@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c8d08d6fd6fb783f5cb8c7e714bffa2b655ffb41
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 620f9e59d65630895c01aff7d47c76876f3319d1
+ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44214820"
+ms.lasthandoff: 10/16/2018
+ms.locfileid: "49347796"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Správa oborů názvů v dokumentu XML
 Obory názvů XML přidružit identifikátory URI předdefinované a vlastní názvy prvků a atributů v dokumentu XML. Tato přidružení vytvoříte definovat předpony pro obor názvů URI a použijte tyto předpony kvalifikovat názvy prvků a atributů v datech XML. Obory názvů zabránit kolize názvů prvků a atributů a povolit elementů a atributů se stejným názvem, zpracovat a ověřen jiným způsobem.  
@@ -23,7 +23,7 @@ Obory názvů XML přidružit identifikátory URI předdefinované a vlastní n�
   
  kde `<name>` je Předpona oboru názvů a `<"uri">` je identifikátor URI pro určení oboru názvů. Po deklaraci předpona, která vám pomůže ho kvalifikovat prvkům a atributům v dokumentu XML a přidružit je k oboru názvů identifikátoru URI. Předpona oboru názvů, protože se používají v celém dokumentu by mělo být krátký délku.  
   
- Tento příklad definuje dvě `BOOK` elementy. První prvek prvku je kvalifikována předponu, `mybook`, a druhý prvek je kvalifikována předponu, `bb`. Každou předponu je přidružen jiný obor názvů identifikátoru URI:  
+ Tento příklad definuje dvě `BOOK` elementy. První prvek je kvalifikována předponu, `mybook`, a druhý prvek je kvalifikována předponu, `bb`. Každou předponu je přidružen jiný obor názvů identifikátoru URI:  
   
 ```xml  
 <mybook:BOOK xmlns:mybook="http://www.contoso.com/books.dtd">  
