@@ -123,12 +123,12 @@
     },
     {
       "path_to_root": "_csharplang",
-      "url": "https://github.com/dotnet/csharplang",
+      "url": "https://github.com/dotnet/csharplang.cs-cz",
       "branch": "master"
     },
     {
       "path_to_root": "_vblang",
-      "url": "https://github.com/dotnet/vblang",
+      "url": "https://github.com/dotnet/vblang.cs-cz",
       "branch": "master"
     },
     {
