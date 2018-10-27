@@ -16,36 +16,36 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1b87ccc3d6c3e957d0384499048032e35247093a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ede896cdb93217fcfba9d66ed7102bcc1ba762e9
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33436478"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50041827"
 ---
-# <a name="iclrsyncmanager-interface"></a><span data-ttu-id="69cdd-102">ICLRSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="69cdd-102">ICLRSyncManager Interface</span></span>
-<span data-ttu-id="69cdd-103">Definuje metody, které umožňují hostitele k načtení informací o požadovaných úkolů a ke zjištění zablokování v jeho implementaci synchronizace.</span><span class="sxs-lookup"><span data-stu-id="69cdd-103">Defines methods that allow the host to get information about requested tasks and to detect deadlocks in its synchronization implementation.</span></span>  
+# <a name="iclrsyncmanager-interface"></a><span data-ttu-id="425d3-102">ICLRSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="425d3-102">ICLRSyncManager Interface</span></span>
+<span data-ttu-id="425d3-103">Definuje metody, které umožňují hostitele a získat informace o požadované úlohy zjišťování případů zablokování v rámci příslušné implementace synchronizace.</span><span class="sxs-lookup"><span data-stu-id="425d3-103">Defines methods that allow the host to get information about requested tasks and to detect deadlocks in its synchronization implementation.</span></span>  
   
-## <a name="methods"></a><span data-ttu-id="69cdd-104">Metody</span><span class="sxs-lookup"><span data-stu-id="69cdd-104">Methods</span></span>  
+## <a name="methods"></a><span data-ttu-id="425d3-104">Metody</span><span class="sxs-lookup"><span data-stu-id="425d3-104">Methods</span></span>  
   
-|<span data-ttu-id="69cdd-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="69cdd-105">Method</span></span>|<span data-ttu-id="69cdd-106">Popis</span><span class="sxs-lookup"><span data-stu-id="69cdd-106">Description</span></span>|  
+|<span data-ttu-id="425d3-105">Metoda</span><span class="sxs-lookup"><span data-stu-id="425d3-105">Method</span></span>|<span data-ttu-id="425d3-106">Popis</span><span class="sxs-lookup"><span data-stu-id="425d3-106">Description</span></span>|  
 |------------|-----------------|  
-|[<span data-ttu-id="69cdd-107">CreateRWLockOwnerIterator – metoda</span><span class="sxs-lookup"><span data-stu-id="69cdd-107">CreateRWLockOwnerIterator Method</span></span>](iclrsyncmanager-createrwlockowneriterator-method.md)|<span data-ttu-id="69cdd-108">Požadavky, které modul CLR (CLR) vytvořit iterace pro hostitele použít k určení sady úloh čeká na zámek čtení a zápis.</span><span class="sxs-lookup"><span data-stu-id="69cdd-108">Requests that the common language runtime (CLR) create an iterator for the host to use to determine the set of tasks waiting on a reader-writer lock.</span></span>|  
-|[<span data-ttu-id="69cdd-109">DeleteRWLockOwnerIterator – metoda</span><span class="sxs-lookup"><span data-stu-id="69cdd-109">DeleteRWLockOwnerIterator Method</span></span>](iclrsyncmanager-deleterwlockowneriterator-method.md)|<span data-ttu-id="69cdd-110">Požadavky, že modulu CLR destroy iterátor, který byl vytvořen volání `CreateRWLockOwnerIterator`.</span><span class="sxs-lookup"><span data-stu-id="69cdd-110">Requests that the CLR destroy an iterator that was created by a call to `CreateRWLockOwnerIterator`.</span></span>|  
-|[<span data-ttu-id="69cdd-111">GetMonitorOwner – metoda</span><span class="sxs-lookup"><span data-stu-id="69cdd-111">GetMonitorOwner Method</span></span>](iclrsyncmanager-getmonitorowner-method.md)|<span data-ttu-id="69cdd-112">Získá úloha, která vlastní zadaný monitorování.</span><span class="sxs-lookup"><span data-stu-id="69cdd-112">Gets the task that owns the specified monitor.</span></span>|  
-|[<span data-ttu-id="69cdd-113">GetRWLockOwnerNext – metoda</span><span class="sxs-lookup"><span data-stu-id="69cdd-113">GetRWLockOwnerNext Method</span></span>](iclrsyncmanager-getrwlockownernext-method.md)|<span data-ttu-id="69cdd-114">Získá další úloha, která čeká na aktuální zámek čtení a zápis.</span><span class="sxs-lookup"><span data-stu-id="69cdd-114">Gets the next task that is waiting on the current reader-writer lock.</span></span>|  
+|[<span data-ttu-id="425d3-107">CreateRWLockOwnerIterator – metoda</span><span class="sxs-lookup"><span data-stu-id="425d3-107">CreateRWLockOwnerIterator Method</span></span>](iclrsyncmanager-createrwlockowneriterator-method.md)|<span data-ttu-id="425d3-108">Požadavky, které modul CLR (CLR) vytvořit iterátor pro hostitele použít k určení sady úloh čeká na zámek čtení a zápis.</span><span class="sxs-lookup"><span data-stu-id="425d3-108">Requests that the common language runtime (CLR) create an iterator for the host to use to determine the set of tasks waiting on a reader-writer lock.</span></span>|  
+|[<span data-ttu-id="425d3-109">DeleteRWLockOwnerIterator – metoda</span><span class="sxs-lookup"><span data-stu-id="425d3-109">DeleteRWLockOwnerIterator Method</span></span>](iclrsyncmanager-deleterwlockowneriterator-method.md)|<span data-ttu-id="425d3-110">Požadavky, že modul CLR zničit iterátor, který byl vytvořen voláním `CreateRWLockOwnerIterator`.</span><span class="sxs-lookup"><span data-stu-id="425d3-110">Requests that the CLR destroy an iterator that was created by a call to `CreateRWLockOwnerIterator`.</span></span>|  
+|[<span data-ttu-id="425d3-111">GetMonitorOwner – metoda</span><span class="sxs-lookup"><span data-stu-id="425d3-111">GetMonitorOwner Method</span></span>](iclrsyncmanager-getmonitorowner-method.md)|<span data-ttu-id="425d3-112">Získá úkol, který vlastní zadané monitorování.</span><span class="sxs-lookup"><span data-stu-id="425d3-112">Gets the task that owns the specified monitor.</span></span>|  
+|[<span data-ttu-id="425d3-113">GetRWLockOwnerNext – metoda</span><span class="sxs-lookup"><span data-stu-id="425d3-113">GetRWLockOwnerNext Method</span></span>](iclrsyncmanager-getrwlockownernext-method.md)|<span data-ttu-id="425d3-114">Získá další úkol, který čeká na uzamčení čtení a zápis.</span><span class="sxs-lookup"><span data-stu-id="425d3-114">Gets the next task that is waiting on the current reader-writer lock.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="69cdd-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="69cdd-115">Requirements</span></span>  
- <span data-ttu-id="69cdd-116">**Platformy:** najdete v části [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="69cdd-116">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="425d3-115">Požadavky</span><span class="sxs-lookup"><span data-stu-id="425d3-115">Requirements</span></span>  
+ <span data-ttu-id="425d3-116">**Platformy:** naleznete v tématu [požadavky na systém](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="425d3-116">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="69cdd-117">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="69cdd-117">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="425d3-117">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="425d3-117">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="69cdd-118">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="69cdd-118">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="425d3-118">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="425d3-118">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="69cdd-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="69cdd-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="425d3-119">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="425d3-119">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="69cdd-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="69cdd-120">See Also</span></span>  
+## <a name="see-also"></a><span data-ttu-id="425d3-120">Viz také</span><span class="sxs-lookup"><span data-stu-id="425d3-120">See Also</span></span>  
  <xref:System.Threading.Thread>  
- [<span data-ttu-id="69cdd-121">IHostSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="69cdd-121">IHostSyncManager Interface</span></span>](ihostsyncmanager-interface.md)  
- <span data-ttu-id="69cdd-122">[Spravovaná a nespravovaná vlákna](https://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="69cdd-122">[Managed and Unmanaged Threading](https://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5(v=vs.100))</span></span>  
- [<span data-ttu-id="69cdd-123">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="69cdd-123">Hosting Interfaces</span></span>](hosting-interfaces.md)
+ [<span data-ttu-id="425d3-121">IHostSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="425d3-121">IHostSyncManager Interface</span></span>](ihostsyncmanager-interface.md)  
+ <span data-ttu-id="425d3-122">[Spravovaná a nespravovaná vlákna](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))</span><span class="sxs-lookup"><span data-stu-id="425d3-122">[Managed and Unmanaged Threading](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))</span></span>  
+ [<span data-ttu-id="425d3-123">Rozhraní pro hostování</span><span class="sxs-lookup"><span data-stu-id="425d3-123">Hosting Interfaces</span></span>](hosting-interfaces.md)

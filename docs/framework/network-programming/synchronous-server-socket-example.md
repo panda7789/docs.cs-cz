@@ -9,17 +9,15 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 2edfeb85ee21b5d398938bc9500f463cd78a6c07
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 51fe16b3e0859a9ab39dcd34a55e51bd4bcad86d
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198992"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50045912"
 ---
-# <a name="synchronous-server-socket-example"></a><span data-ttu-id="4fa17-102">Příklad synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="4fa17-102">Synchronous Server Socket Example</span></span>
-<span data-ttu-id="4fa17-103">Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů.</span><span class="sxs-lookup"><span data-stu-id="4fa17-103">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="4fa17-104">Server je sestavován soket synchronního spuštění serverové aplikace je pozastaven, když se čeká na připojení z klienta.</span><span class="sxs-lookup"><span data-stu-id="4fa17-104">The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="4fa17-105">Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta.</span><span class="sxs-lookup"><span data-stu-id="4fa17-105">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="4fa17-106">Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.</span><span class="sxs-lookup"><span data-stu-id="4fa17-106">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
+# <a name="synchronous-server-socket-example"></a><span data-ttu-id="fe633-102">Příklad synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="fe633-102">Synchronous Server Socket Example</span></span>
+<span data-ttu-id="fe633-103">Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů.</span><span class="sxs-lookup"><span data-stu-id="fe633-103">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="fe633-104">Server je sestavován soket synchronního spuštění serverové aplikace je pozastaven, když se čeká na připojení z klienta.</span><span class="sxs-lookup"><span data-stu-id="fe633-104">The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="fe633-105">Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta.</span><span class="sxs-lookup"><span data-stu-id="fe633-105">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="fe633-106">Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.</span><span class="sxs-lookup"><span data-stu-id="fe633-106">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
   
 ```vb  
 Imports System  
@@ -157,7 +155,7 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="4fa17-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="4fa17-107">See Also</span></span>  
- [<span data-ttu-id="4fa17-108">Příklad synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="4fa17-108">Synchronous Client Socket Example</span></span>](../../../docs/framework/network-programming/synchronous-client-socket-example.md)  
- [<span data-ttu-id="4fa17-109">Použití synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="4fa17-109">Using a Synchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
- [<span data-ttu-id="4fa17-110">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="4fa17-110">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)
+## <a name="see-also"></a><span data-ttu-id="fe633-107">Viz také</span><span class="sxs-lookup"><span data-stu-id="fe633-107">See Also</span></span>  
+ [<span data-ttu-id="fe633-108">Příklad synchronního klientského soketu</span><span class="sxs-lookup"><span data-stu-id="fe633-108">Synchronous Client Socket Example</span></span>](../../../docs/framework/network-programming/synchronous-client-socket-example.md)  
+ [<span data-ttu-id="fe633-109">Použití synchronního serverového soketu</span><span class="sxs-lookup"><span data-stu-id="fe633-109">Using a Synchronous Server Socket</span></span>](../../../docs/framework/network-programming/using-a-synchronous-server-socket.md)  
+ [<span data-ttu-id="fe633-110">Příklady kódu soketu</span><span class="sxs-lookup"><span data-stu-id="fe633-110">Socket Code Examples</span></span>](../../../docs/framework/network-programming/socket-code-examples.md)
