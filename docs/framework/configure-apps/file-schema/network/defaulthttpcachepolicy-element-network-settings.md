@@ -8,24 +8,22 @@ helpviewer_keywords:
 - defaultHttpCachePolicy element
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 1e1b27cb8c0df4450c1a08151af19913b65fc2b3
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: d88d99b663b0aaeb0ae432cf02675a45c4c8bc1f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48782139"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192002"
 ---
-# <a name="ltdefaulthttpcachepolicygt-element-network-settings"></a><span data-ttu-id="422ff-102">&lt;defaulthttpcachepolicy –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="422ff-102">&lt;defaultHttpCachePolicy&gt; Element (Network Settings)</span></span>
-<span data-ttu-id="422ff-103">Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="422ff-103">Describes whether HTTP caching is active and describes the default caching policy.</span></span>  
+# <a name="ltdefaulthttpcachepolicygt-element-network-settings"></a><span data-ttu-id="4bf88-102">&lt;defaulthttpcachepolicy –&gt; – Element (nastavení sítě)</span><span class="sxs-lookup"><span data-stu-id="4bf88-102">&lt;defaultHttpCachePolicy&gt; Element (Network Settings)</span></span>
+<span data-ttu-id="4bf88-103">Popisuje, zda HTTP, ukládání do mezipaměti je aktivní a popisuje výchozí zásady ukládání do mezipaměti.</span><span class="sxs-lookup"><span data-stu-id="4bf88-103">Describes whether HTTP caching is active and describes the default caching policy.</span></span>  
   
- <span data-ttu-id="422ff-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="422ff-104">\<configuration></span></span>  
-<span data-ttu-id="422ff-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="422ff-105">\<system.net></span></span>  
-<span data-ttu-id="422ff-106">\<requestCaching – ></span><span class="sxs-lookup"><span data-stu-id="422ff-106">\<requestCaching></span></span>  
-<span data-ttu-id="422ff-107">\<defaulthttpcachepolicy – ></span><span class="sxs-lookup"><span data-stu-id="422ff-107">\<defaultHttpCachePolicy></span></span>  
+ <span data-ttu-id="4bf88-104">\<Konfigurace ></span><span class="sxs-lookup"><span data-stu-id="4bf88-104">\<configuration></span></span>  
+<span data-ttu-id="4bf88-105">\<system.net></span><span class="sxs-lookup"><span data-stu-id="4bf88-105">\<system.net></span></span>  
+<span data-ttu-id="4bf88-106">\<requestCaching – ></span><span class="sxs-lookup"><span data-stu-id="4bf88-106">\<requestCaching></span></span>  
+<span data-ttu-id="4bf88-107">\<defaulthttpcachepolicy – ></span><span class="sxs-lookup"><span data-stu-id="4bf88-107">\<defaultHttpCachePolicy></span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="422ff-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="422ff-108">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4bf88-108">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4bf88-108">Syntax</span></span>  
   
 ```xml  
 <defaultHttpCachePolicy  
@@ -36,37 +34,37 @@ ms.locfileid: "48782139"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="422ff-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="422ff-109">Attributes and Elements</span></span>  
- <span data-ttu-id="422ff-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="422ff-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="4bf88-109">Atributy a elementy</span><span class="sxs-lookup"><span data-stu-id="4bf88-109">Attributes and Elements</span></span>  
+ <span data-ttu-id="4bf88-110">Následující části popisují atributy, podřízené prvky a nadřazené prvky.</span><span class="sxs-lookup"><span data-stu-id="4bf88-110">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="422ff-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="422ff-111">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="4bf88-111">Atributy</span><span class="sxs-lookup"><span data-stu-id="4bf88-111">Attributes</span></span>  
   
-|<span data-ttu-id="422ff-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="422ff-112">Attribute</span></span>|<span data-ttu-id="422ff-113">Popis</span><span class="sxs-lookup"><span data-stu-id="422ff-113">Description</span></span>|  
+|<span data-ttu-id="4bf88-112">Atribut</span><span class="sxs-lookup"><span data-stu-id="4bf88-112">Attribute</span></span>|<span data-ttu-id="4bf88-113">Popis</span><span class="sxs-lookup"><span data-stu-id="4bf88-113">Description</span></span>|  
 |---------------|-----------------|  
-|`maximumAge`|<span data-ttu-id="422ff-114">Určuje maximální dobu, než objekt uložený v mezipaměti je označena jako neplatná.</span><span class="sxs-lookup"><span data-stu-id="422ff-114">Specifies the maximum time interval before a cached object is marked as expired.</span></span>|  
-|`maximumStale`|<span data-ttu-id="422ff-115">Určuje maximální dobu, po čase vypočítané aktuálnosti před objekt uložený v mezipaměti je označena jako neplatná.</span><span class="sxs-lookup"><span data-stu-id="422ff-115">Specifies the maximum time past the computed freshness time before a cached object is marked as expired.</span></span>|  
-|`minimumFresh`|<span data-ttu-id="422ff-116">Určuje minimální dobu pro objekt uložený v mezipaměti k považovat za čerstvý.</span><span class="sxs-lookup"><span data-stu-id="422ff-116">Specifies the minimum time for a cached object to be considered fresh.</span></span>|  
-|`policyLevel`|<span data-ttu-id="422ff-117">Určuje, zda je automatické zásady ukládání do mezipaměti, nebo zda obejít mezipaměť.</span><span class="sxs-lookup"><span data-stu-id="422ff-117">Specifies whether the caching policy is automatic, or whether the cache is bypassed.</span></span> <span data-ttu-id="422ff-118">Výchozí hodnota je `BypassCache`.</span><span class="sxs-lookup"><span data-stu-id="422ff-118">The default value is `BypassCache`.</span></span>|  
+|`maximumAge`|<span data-ttu-id="4bf88-114">Určuje maximální dobu, než objekt uložený v mezipaměti je označena jako neplatná.</span><span class="sxs-lookup"><span data-stu-id="4bf88-114">Specifies the maximum time interval before a cached object is marked as expired.</span></span>|  
+|`maximumStale`|<span data-ttu-id="4bf88-115">Určuje maximální dobu, po čase vypočítané aktuálnosti před objekt uložený v mezipaměti je označena jako neplatná.</span><span class="sxs-lookup"><span data-stu-id="4bf88-115">Specifies the maximum time past the computed freshness time before a cached object is marked as expired.</span></span>|  
+|`minimumFresh`|<span data-ttu-id="4bf88-116">Určuje minimální dobu pro objekt uložený v mezipaměti k považovat za čerstvý.</span><span class="sxs-lookup"><span data-stu-id="4bf88-116">Specifies the minimum time for a cached object to be considered fresh.</span></span>|  
+|`policyLevel`|<span data-ttu-id="4bf88-117">Určuje, zda je automatické zásady ukládání do mezipaměti, nebo zda obejít mezipaměť.</span><span class="sxs-lookup"><span data-stu-id="4bf88-117">Specifies whether the caching policy is automatic, or whether the cache is bypassed.</span></span> <span data-ttu-id="4bf88-118">Výchozí hodnota je `BypassCache`.</span><span class="sxs-lookup"><span data-stu-id="4bf88-118">The default value is `BypassCache`.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="422ff-119">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="422ff-119">Child Elements</span></span>  
- <span data-ttu-id="422ff-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="422ff-120">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="4bf88-119">Podřízené elementy</span><span class="sxs-lookup"><span data-stu-id="4bf88-119">Child Elements</span></span>  
+ <span data-ttu-id="4bf88-120">Žádné</span><span class="sxs-lookup"><span data-stu-id="4bf88-120">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="422ff-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="422ff-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="4bf88-121">Nadřazené elementy</span><span class="sxs-lookup"><span data-stu-id="4bf88-121">Parent Elements</span></span>  
   
-|<span data-ttu-id="422ff-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="422ff-122">Element</span></span>|<span data-ttu-id="422ff-123">Popis</span><span class="sxs-lookup"><span data-stu-id="422ff-123">Description</span></span>|  
+|<span data-ttu-id="4bf88-122">Prvek</span><span class="sxs-lookup"><span data-stu-id="4bf88-122">Element</span></span>|<span data-ttu-id="4bf88-123">Popis</span><span class="sxs-lookup"><span data-stu-id="4bf88-123">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="422ff-124">requestCaching –</span><span class="sxs-lookup"><span data-stu-id="422ff-124">requestCaching</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|<span data-ttu-id="422ff-125">Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="422ff-125">Controls the caching mechanism for network requests.</span></span>|  
+|[<span data-ttu-id="4bf88-124">requestCaching –</span><span class="sxs-lookup"><span data-stu-id="4bf88-124">requestCaching</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/requestcaching-element-network-settings.md)|<span data-ttu-id="4bf88-125">Určuje mechanismus ukládání do mezipaměti pro síťové požadavky.</span><span class="sxs-lookup"><span data-stu-id="4bf88-125">Controls the caching mechanism for network requests.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="422ff-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="422ff-126">Remarks</span></span>  
- <span data-ttu-id="422ff-127">Hodnota `policyLevel` atribut je buď `BypassCache` nebo `Default`.</span><span class="sxs-lookup"><span data-stu-id="422ff-127">The value for the `policyLevel` attribute is either `BypassCache` or `Default`.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4bf88-126">Poznámky</span><span class="sxs-lookup"><span data-stu-id="4bf88-126">Remarks</span></span>  
+ <span data-ttu-id="4bf88-127">Hodnota `policyLevel` atribut je buď `BypassCache` nebo `Default`.</span><span class="sxs-lookup"><span data-stu-id="4bf88-127">The value for the `policyLevel` attribute is either `BypassCache` or `Default`.</span></span>  
   
- <span data-ttu-id="422ff-128">Hodnoty `maximumAge`, `maximumStale`, a `minimumFresh` prvky jsou buď explicitní čas intervalu ve formátu *d*. *hh*:*mm*:*ss* (dny, hodiny, minuty a sekundy), nebo konstanty `minValue` nebo `maxValue`podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="422ff-128">Values for the `maximumAge`, `maximumStale`, and `minimumFresh` elements are either an explicit time interval with a format of *d*.*hh*:*mm*:*ss* (days, hours, minutes, and seconds), or the constants `minValue` or `maxValue`, as appropriate.</span></span>  
+ <span data-ttu-id="4bf88-128">Hodnoty `maximumAge`, `maximumStale`, a `minimumFresh` prvky jsou buď explicitní čas intervalu ve formátu *d*. *hh*:*mm*:*ss* (dny, hodiny, minuty a sekundy), nebo konstanty `minValue` nebo `maxValue`podle potřeby.</span><span class="sxs-lookup"><span data-stu-id="4bf88-128">Values for the `maximumAge`, `maximumStale`, and `minimumFresh` elements are either an explicit time interval with a format of *d*.*hh*:*mm*:*ss* (days, hours, minutes, and seconds), or the constants `minValue` or `maxValue`, as appropriate.</span></span>  
   
-## <a name="configuration-files"></a><span data-ttu-id="422ff-129">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="422ff-129">Configuration Files</span></span>  
- <span data-ttu-id="422ff-130">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="422ff-130">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
+## <a name="configuration-files"></a><span data-ttu-id="4bf88-129">Konfigurační soubory</span><span class="sxs-lookup"><span data-stu-id="4bf88-129">Configuration Files</span></span>  
+ <span data-ttu-id="4bf88-130">Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).</span><span class="sxs-lookup"><span data-stu-id="4bf88-130">This element can be used in the application configuration file or the machine configuration file (Machine.config).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="422ff-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="422ff-131">Example</span></span>  
- <span data-ttu-id="422ff-132">Následující příklad ukazuje, jak zadat minimální aktuální čas šest hodin, maximální stáří času o dva dny a maximální zastaralé dobu čtyř hodin.</span><span class="sxs-lookup"><span data-stu-id="422ff-132">The following example shows how to specify a minimum fresh time of six hours, a maximum age time of two days, and a maximum stale time of four hours.</span></span>  
+## <a name="example"></a><span data-ttu-id="4bf88-131">Příklad</span><span class="sxs-lookup"><span data-stu-id="4bf88-131">Example</span></span>  
+ <span data-ttu-id="4bf88-132">Následující příklad ukazuje, jak zadat minimální aktuální čas šest hodin, maximální stáří času o dva dny a maximální zastaralé dobu čtyř hodin.</span><span class="sxs-lookup"><span data-stu-id="4bf88-132">The following example shows how to specify a minimum fresh time of six hours, a maximum age time of two days, and a maximum stale time of four hours.</span></span>  
   
 ```xml  
 <configuration>  
@@ -82,8 +80,8 @@ ms.locfileid: "48782139"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="422ff-133">Viz také</span><span class="sxs-lookup"><span data-stu-id="422ff-133">See Also</span></span>  
- <xref:System.Net.Cache>  
- <xref:System.Net.WebRequest>  
- <xref:System.Net.Cache.RequestCacheLevel>  
- [<span data-ttu-id="422ff-134">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="422ff-134">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+## <a name="see-also"></a><span data-ttu-id="4bf88-133">Viz také</span><span class="sxs-lookup"><span data-stu-id="4bf88-133">See Also</span></span>  
+- <xref:System.Net.Cache>  
+- <xref:System.Net.WebRequest>  
+- <xref:System.Net.Cache.RequestCacheLevel>  
+- [<span data-ttu-id="4bf88-134">Schéma nastavení sítě</span><span class="sxs-lookup"><span data-stu-id="4bf88-134">Network Settings Schema</span></span>](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
