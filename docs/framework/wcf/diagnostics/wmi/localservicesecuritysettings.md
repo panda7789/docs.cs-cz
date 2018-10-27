@@ -2,20 +2,19 @@
 title: LocalServiceSecuritySettings
 ms.date: 03/30/2017
 ms.assetid: 490aa0e5-5242-4f8d-b505-5ec6287633b4
-author: BrucePerlerMS
-ms.openlocfilehash: c79eb11fcc1973a3ef25a78afb8b141443d865c3
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: c1f3abe2d016ccab9b136752c4b2e6697ca59e66
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316217"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188843"
 ---
 # <a name="localservicesecuritysettings"></a>LocalServiceSecuritySettings
 LocalServiceSecuritySettings  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class LocalServiceSecuritySettings  
 {  
   boolean DetectReplays;  

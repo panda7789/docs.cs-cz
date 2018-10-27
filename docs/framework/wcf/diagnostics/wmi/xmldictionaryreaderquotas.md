@@ -2,19 +2,19 @@
 title: XmlDictionaryReaderQuotas
 ms.date: 03/30/2017
 ms.assetid: 9b4ca8b4-0a89-4758-97ab-528a8ce18f07
-ms.openlocfilehash: 78914d52a9e57fe2e48adcfc0d7b6f911a0d8b3a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9bc519509b00383be333ac605688950d2709117c
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487825"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50044226"
 ---
 # <a name="xmldictionaryreaderquotas"></a>XmlDictionaryReaderQuotas
 XmlDictionaryReaderQuotas  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class XmlDictionaryReaderQuotas  
 {  
   sint32 MaxArrayLength;  
@@ -26,10 +26,10 @@ class XmlDictionaryReaderQuotas
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída XmlDictionaryReaderQuotas, který nedefinuje žádné metody.  
+ Třídu XmlDictionaryReaderQuotas, který nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída XmlDictionaryReaderQuotas, který má následující vlastnosti:  
+ Třídu XmlDictionaryReaderQuotas, který má následující vlastnosti:  
   
 ### <a name="maxarraylength"></a>MaxArrayLength  
  Datový typ: sint32  
@@ -43,32 +43,32 @@ class XmlDictionaryReaderQuotas
   
  Přístup k typu: jen pro čtení  
   
- Maximální povolená bajtů vrácených pro každý pro čtení.  
+ Maximální povolené bajty vrácené na při každém čtení.  
   
 ### <a name="maxdepth"></a>MaxDepth  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální hloubka vnořeného uzlu pro každý pro čtení.  
+ Maximální hloubku vnořeného uzlu při každém čtení.  
   
 ### <a name="maxnametablecharcount"></a>MaxNameTableCharCount  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet znaků v názvu tabulky povolené.  
+ Maximum znaků povolených v názvu tabulky.  
   
 ### <a name="maxstringcontentlength"></a>MaxStringContentLength  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet znaků v obsahu elementu XML povolen.  
+ Maximum znaků povolených v obsahu prvku XML.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

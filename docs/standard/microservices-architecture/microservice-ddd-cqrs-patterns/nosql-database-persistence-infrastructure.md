@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: a5fce347193921305c264df34be99063920af715
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: bb119d62691a714a0c7dbc99079dfc1a1fac3aae
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45747105"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188557"
 ---
 # <a name="using-nosql-databases-as-a-persistence-infrastructure"></a>Použití databází NoSQL jako infrastruktury trvalosti
 
@@ -54,7 +54,7 @@ Například následující kód JSON je ukázková implementace agregace pořad�
 
 ## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Úvod do služby Azure Cosmos DB a nativní rozhraní API Cosmos DB
 
-[Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/introduction) je globálně distribuovaná databázová služba od Microsoftu pro klíčové aplikace. Azure Cosmos DB poskytuje [globální distribuce na klíč](https://docs.microsoft.com/en-us/azure/cosmos-db/distribute-data-globally), [elastické škálování propustnosti a úložiště](https://docs.microsoft.com/en-us/azure/cosmos-db/partition-data) po celém světě, řádu milisekund na 99. percentilu, [pět jasně definovaných úrovní konzistence](https://docs.microsoft.com/en-us/azure/cosmos-db/consistency-levels)a zaručenou vysokou dostupnost, vše zajištěné [špičkové smlouvy SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automaticky indexuje data](http://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) aniž byste se museli starat o správu schémat a indexů. Více modelů a podporuje dokument, klíč hodnota, graf a úložiště se sloupcovou strukturou datových modelů.
+[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) je globálně distribuovaná databázová služba od Microsoftu pro klíčové aplikace. Azure Cosmos DB poskytuje [globální distribuce na klíč](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally), [elastické škálování propustnosti a úložiště](https://docs.microsoft.com/azure/cosmos-db/partition-data) po celém světě, řádu milisekund na 99. percentilu, [pět jasně definovaných úrovní konzistence](https://docs.microsoft.com/azure/cosmos-db/consistency-levels)a zaručenou vysokou dostupnost, vše zajištěné [špičkové smlouvy SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/). Azure Cosmos DB [automaticky indexuje data](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf) aniž byste se museli starat o správu schémat a indexů. Více modelů a podporuje dokument, klíč hodnota, graf a úložiště se sloupcovou strukturou datových modelů.
 
 ![](./media/image19.1.png) Obrázek 9-19. Globální distribuce služby Azure Cosmos DB
 
@@ -123,7 +123,7 @@ Ale když trvale uložíte modelu do databáze NoSQL, kód a výrazně porovnán
 
 Databáze Azure Cosmos DB můžete přistupovat z kódu .NET spuštěných v kontejnerech, stejně jako jakékoli jiné aplikace .NET. Například Locations.API a Marketing.API mikroslužeb v aplikaci eShopOnContainers jsou implementované tak spotřebují databází Azure Cosmos DB.
 
-Existuje ale omezení ve službě Azure Cosmos DB z Dockeru vývojové prostředí hlediska. I když dojde místní [emulátor služby Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator) možné spouštět v místním vývojovém počítači (například počítač), jako opožděné 2017 právě podporuje Windows, Linuxu ne. 
+Existuje ale omezení ve službě Azure Cosmos DB z Dockeru vývojové prostředí hlediska. I když dojde místní [emulátor služby Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/local-emulator) možné spouštět v místním vývojovém počítači (například počítač), jako opožděné 2017 právě podporuje Windows, Linuxu ne. 
 
 Je také možné spustit tuto emulátor v Dockeru, ale jen na kontejnery Windows s, nikoli kontejnery Linuxu. To je počáteční postižení pro vývojové prostředí, pokud vaše aplikace bude nasazena jako kontejnery Linux, od, aktuálně, nelze nasadit systémy Linux a kontejnery Windows na Docker pro Windows ve stejnou dobu. Buď všechny kontejnery, které nasazuje, musí být pro Linux nebo Windows.  
 
@@ -137,7 +137,7 @@ Databáze cosmos DB podporovat rozhraní MongoDB API pro .NET, stejně jako nati
 
 To je velmi efektivní přístup pro testování konceptů v prostředí Dockeru s kontejnery Linuxu, protože [image Dockeru MongoDB](https://hub.docker.com/r/_/mongo/) je více architektury image, která podporuje kontejnery Linuxu Dockeru a kontejnerech Dockeru Windows.
 
-Jak je znázorněno na obrázku 9-21, pomocí rozhraní MongoDB API aplikaci eShopOnContainers podporuje kontejnery MongoDB, Linux a Windows pro místní vývojové prostředí, ale pak můžete přesunout ke škálovatelným, PaaS cloudové řešení jako Azure Cosmos DB pomocí jednoduše [změna připojovací řetězec MongoDB tak, aby odkazovala na službu Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account). 
+Jak je znázorněno na obrázku 9-21, pomocí rozhraní MongoDB API aplikaci eShopOnContainers podporuje kontejnery MongoDB, Linux a Windows pro místní vývojové prostředí, ale pak můžete přesunout ke škálovatelným, PaaS cloudové řešení jako Azure Cosmos DB pomocí jednoduše [změna připojovací řetězec MongoDB tak, aby odkazovala na službu Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account). 
 
 ![](./media/image20-bis.png) Obrázek 9-21. pomocí kontejnerů MongoDB pro vývoj env nebo služby Azure Cosmos DB pro produkční aplikaci eShopOnContainers
 
@@ -147,7 +147,7 @@ Své vlastní kontejnery .NET Core můžete spustit na místním vývojovém hos
 
 Vymazat výhodou pomocí rozhraní MongoDB API je, že vaše řešení může běžet v obou databázových strojů, MongoDB nebo Azure Cosmos DB, migrace do různých prostředí by tak měly být snadné. Někdy je však vhodné používat nativní rozhraní API (který je nativní rozhraní API Cosmos DB) Pokud chcete naplno využít možnosti konkrétní databázového stroje.
 
-Další porovnání mezi jednoduše pomocí databáze MongoDB a Cosmos DB v cloudu najdete v tématu [výhody používání služby Azure Cosmos DB na této stránce](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction). 
+Další porovnání mezi jednoduše pomocí databáze MongoDB a Cosmos DB v cloudu najdete v tématu [výhody používání služby Azure Cosmos DB na této stránce](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction). 
 
 
 ### <a name="analyze-your-approach-for-production-applications-mongodb-api-vs-cosmos-db-api"></a>Analyzovat svůj přístup pro aplikace v produkčním prostředí: rozhraní MongoDB API služby vs. Rozhraní API služby cosmos DB
@@ -295,29 +295,29 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 #ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
 ```
 
-By měl Odkomentujte řádek ESHOP_AZURE_COSMOSDB a aktualizace je vaším připojovacím řetězcem služby Azure Cosmos DB, který jste získali z portálu Azure jako podrobně [připojení aplikace MongoDB ke službě Azure Cosmos DB](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account).
+By měl Odkomentujte řádek ESHOP_AZURE_COSMOSDB a aktualizace je vaším připojovacím řetězcem služby Azure Cosmos DB, který jste získali z portálu Azure jako podrobně [připojení aplikace MongoDB ke službě Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account).
 
 Pokud `ESHOP_AZURE_COSMOSDB` globální proměnné je prázdný, což znamená, že je opatřený komentáři out v `.env` soubor kontejneru se použije výchozí připojovací řetězec MongoDB odkazující na místní kontejner MongoDB nasazené v aplikaci eShopOnContainers, který se nazývá `nosql.data`, jak je znázorněno v následujícím kódu .yml. 
 
 #### <a name="additional-resources"></a>Další zdroje
 
 -   **Modelování dat dokumentů databází NoSQL**
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/en-us/azure/cosmos-db/modeling-data)
+    [*https://docs.microsoft.com/azure/cosmos-db/modeling-data*](https://docs.microsoft.com/azure/cosmos-db/modeling-data)
 
 -   **Vaughn Vernon. Ideální řízeného doménou návrhu agregace Store?**
     [*https://vaughnvernon.co/?p=942*](https://vaughnvernon.co/?p=942)
 
 -   **Úvod do služby Azure Cosmos DB: rozhraní API pro MongoDB** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)
+    [*https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction*](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)
 
 -   **Azure Cosmos DB: Sestavení webové aplikace MongoDB API pomocí .NET a webu Azure portal** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/en-us/azure/cosmos-db/create-mongodb-dotnet )
+    [*https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet *](https://docs.microsoft.com/azure/cosmos-db/create-mongodb-dotnet )
 
 -   **Pro místní vývoj a testování používat emulátor služby Azure Cosmos DB** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/en-us/azure/cosmos-db/local-emulator)
+    [*https://docs.microsoft.com/azure/cosmos-db/local-emulator*](https://docs.microsoft.com/azure/cosmos-db/local-emulator)
 
 -   **Připojení aplikace MongoDB ke službě Azure Cosmos DB** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/en-us/azure/cosmos-db/connect-mongodb-account)
+    [*https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account*](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account)
 
 -   **Image Dockeru emulátor Cosmos DB (kontejner Windows)** 
     [*https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/*](https://hub.docker.com/r/microsoft/azure-cosmosdb-emulator/)
@@ -326,7 +326,7 @@ Pokud `ESHOP_AZURE_COSMOSDB` globální proměnné je prázdný, což znamená, 
     [*https://hub.docker.com/r/_/mongo/*](https://hub.docker.com/r/_/mongo/)
 
 -   **Použití MongoChef (Studio 3T) pomocí služby Azure Cosmos DB: rozhraní API pro účet MongoDB** 
-    [*https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-mongochef)
+    [*https://docs.microsoft.com/azure/cosmos-db/mongodb-mongochef*](https://docs.microsoft.com/azure/cosmos-db/mongodb-mongochef)
 
 
 >[!div class="step-by-step"]

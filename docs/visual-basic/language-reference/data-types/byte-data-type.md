@@ -7,14 +7,12 @@ helpviewer_keywords:
 - Byte data type
 - data types [Visual Basic], assigning
 ms.assetid: eed44dff-eaee-4937-a89f-444e418e74f6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3b106005ff07f55e05ae66dba94041cd8b5c24bb
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 70e1028042807eb77fc74b30174e1962bc00f4c0
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47203353"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192392"
 ---
 # <a name="byte-data-type-visual-basic"></a>Byte – datový typ (Visual Basic)
 Obsahuje 8 bitů (1bajtový) celá čísla bez znaménka, které v rozsahu od 0 do 255.

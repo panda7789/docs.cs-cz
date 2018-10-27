@@ -4,12 +4,12 @@ description: Další koncepty testů jednotek v C# a .NET Core prostřednictvím
 author: ncarandini
 ms.author: wiwagn
 ms.date: 09/08/2017
-ms.openlocfilehash: efeb12eb43539b0a85168b1162e0f8b94ad67e90
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 1c2b0bdd4bf76a17217db0c98b8f951f7d58f2ea
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44213829"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183773"
 ---
 # <a name="unit-testing-c-with-mstest-and-net-core"></a>Testování C# s MSTest a .NET Core
 
@@ -88,11 +88,11 @@ Následující osnovy ukazuje rozložení konečné řešení:
         PrimeServiceTests.csproj
 ```
 
-Spustit [ `dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj` ](../tools/dotnet-sln.md) v *testování použití dotnet testování částí* adresáře. 
+Spustit [ `dotnet sln add .\PrimeService.Tests\PrimeService.Tests.csproj` ](../tools/dotnet-sln.md) v *jednotky – testování použití mstest* adresáře. 
 
 ## <a name="creating-the-first-test"></a>Vytvoření prvního testu
 
-Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresář a vytvořit nový soubor jazyka C# s názvem *PrimeService_IsPrimeShould.cs* s následujícím obsahem:
+Volá TDD přístup pro zápis jednoho selhává testování, takže předat a potom zopakováním postupu. Odebrat *UnitTest1.cs* z *PrimeService.Tests* adresáře a vytvořte nový C# soubor s názvem *PrimeService_IsPrimeShould.cs* s následujícím obsahem:
 
 ```csharp
 using Microsoft.VisualStudio.TestTools.UnitTesting;

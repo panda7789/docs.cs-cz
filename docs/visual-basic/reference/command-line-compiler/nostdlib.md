@@ -6,14 +6,12 @@ helpviewer_keywords:
 - -nostdlib compiler option [Visual Basic]
 - /nostdlib compiler option [Visual Basic]
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3764409f13a00f6d8a050bfbdd0f59e537a5ded3
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 957eca6066a316a4f4daf7e6de972df98082c26c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/01/2018
-ms.locfileid: "43456289"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183292"
 ---
 # <a name="-nostdlib-visual-basic"></a>-nostdlib (Visual Basic)
 Způsobí, že kompilátor, aby automaticky odkazovat na standardní knihovny.  

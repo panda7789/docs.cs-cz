@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: 9f1e3fe6d53266a4e1366c1a3d5396688a25df0f
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: c80f65ad2a4c7c48e32615c3cfdf754996f91bc1
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45664511"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187868"
 ---
 # <a name="windows-applications-using-callbacks"></a>Aplikace Windows pomocí zpětných volání
 Ve většině případů asynchronní zpracování budete chtít spustit operaci databáze a pokračování ve spouštění jiných procesů bez čekání na dokončení operace databáze. Mnoho scénářů však vyžaduje něco, jakmile byla ukončena operace databáze. V aplikaci Windows například můžete delegovat dlouho běžící operace ve vlákně na pozadí při povolení vlákně uživatelského rozhraní nadále reagovat. Ale po dokončení operace databáze budete chtít použít výsledky k naplnění formuláře. Tento druh scénář nejlépe implementuje pomocí zpětného volání.  
@@ -248,7 +248,7 @@ private void Form1_FormClosing(object sender, System.Windows.Forms.FormClosingEv
     {  
         MessageBox.Show(this, "Can't close the form until " +  
         "the pending asynchronous command has completed. Please " +  
-        wait...");  
+        "wait...");
         e.Cancel = true;  
     }  
 }  

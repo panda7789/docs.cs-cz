@@ -2,12 +2,12 @@
 title: Konfigurace vaší aplikace
 ms.date: 03/30/2017
 ms.assetid: a2f995b0-669d-4721-b00f-4561ec7eb6a4
-ms.openlocfilehash: e06c428526c5383c6908521075cd2eca977ce89f
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: e9a5429ef573fdee9478b63b76d2da8005215c93
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43481233"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187345"
 ---
 # <a name="configuring-your-application"></a>Konfigurace vaší aplikace
 Windows Communication Foundation (WCF) využívá konfigurační systém .NET a umožňuje vám nakonfigurovat služby v počítači a aplikační oboru.  
@@ -21,7 +21,7 @@ Windows Communication Foundation (WCF) využívá konfigurační systém .NET a 
  Nastavení konfigurace definované aplikací, které jsou definovány v `<appSettings>` skupiny oddílů. Další informace o nastavení aplikace v .NET konfigurační soubory, naleznete v tématu [ \<appSettings >](https://go.microsoft.com/fwlink/?LinkId=95159).  
   
 ## <a name="using-the-configuration-editor"></a>Pomocí editoru konfigurace  
- WCF[nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) umožňuje správcům a vývojářům umožňuje vytvářet a upravovat nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro vazby WCF, chování, služby a diagnostické nástroje bez přímou úpravou konfiguračních souborů XML.  
+ WCF [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md) umožňuje správcům a vývojářům umožňuje vytvářet a upravovat nastavení konfigurace pro služby WCF pomocí grafického uživatelského rozhraní. Pomocí tohoto nástroje můžete spravovat nastavení pro vazby WCF, chování, služby a diagnostické nástroje bez přímou úpravou konfiguračních souborů XML.  
   
 ## <a name="editing-configuration-files-in-visual-studio"></a>Úprava konfiguračních souborů v sadě Visual Studio  
  Úprava konfiguračního souboru projektu služby WCF v sadě Visual Studio, klikněte pravým tlačítkem myši klikněte na něj v **Průzkumníka řešení** a zvolte **upravit konfigurace WCF** položka kontextové nabídky. Tím se spustí [nástroj Configuration Editor (SvcConfigEditor.exe)](../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md).  

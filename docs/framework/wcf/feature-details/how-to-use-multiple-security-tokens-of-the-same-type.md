@@ -2,13 +2,12 @@
 title: 'Postupy: použití více tokenů zabezpečení stejného typu'
 ms.date: 03/30/2017
 ms.assetid: cf179f48-4ed4-4caa-86a5-ef8eecc231cd
-author: BrucePerlerMS
-ms.openlocfilehash: 9d1dab0f4da82e4db96471f0a8cf25c32bd5eced
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b8daf8a2cecfc6a7b17911bb50ad292d481188c7
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198914"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50184257"
 ---
 # <a name="how-to-use-multiple-security-tokens-of-the-same-type"></a>Postupy: použití více tokenů zabezpečení stejného typu
 -   V [!INCLUDE[dnprdnshort](../../../../includes/dnprdnshort-md.md)] 3.0, klienta zprávy pouze omezením jeden token daného typu. Zprávy klienta teď může obsahovat více tokenů typu. Toto téma ukazuje, jak zahrnout více tokenů stejného typu zprávy klienta.  

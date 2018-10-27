@@ -6,12 +6,12 @@ ms.author: mairaw
 ms.date: 07/19/2018
 ms.technology: dotnet-standard
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 91dbbefd247b5e175da7dc3560b6323cbec1972b
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: bdaaa22f20f21e823459914a900997050a6624a6
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45595554"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50186067"
 ---
 # <a name="net-standard"></a>.NET standard
 
@@ -49,6 +49,8 @@ Obecně platí, doporučujeme vám umožní zacílit *nejnižší* verzi .NET St
 
 1. Cílení na další nižší verzi .NET Standard a sestavte projekt.
 2. Pokud váš projekt se sestaví úspěšně, opakujte kroku 1. V opačném případě změnit cílení na další vyšší verze a verze, kterou byste měli použít.
+
+Cílení na .NET Standard nižší verze však zavádí řadu závislostí podpory. Pokud váš projekt cílí na .NET Standard 1.x, doporučujeme vám *také* cílit na .NET Standard 2.0. To zjednodušuje graf závislostí pro uživatele vaší knihovny, které běží na rozhraní .NET Standard 2.0 kompatibilní, a snižuje počet balíčků, které potřebují ke stažení.
 
 ### <a name="net-standard-versioning-rules"></a>.NET standard pravidla správy verzí
 

@@ -4,12 +4,12 @@ description: Toto téma vás provede sestavení řešení .NET Core, která obsa
 author: guardrex
 ms.author: mairaw
 ms.date: 06/12/2017
-ms.openlocfilehash: 589b3e72f7e8425051a96f66f07f24327d273c45
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: fbbbbc20b45981a41695eac73dcc251ef74a0cb6
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122817"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50186015"
 ---
 # <a name="building-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Vytvoření kompletního řešení .NET Core v systému macOS pomocí sady Visual Studio pro Mac
 
@@ -20,7 +20,7 @@ V tomto kurzu se dozvíte, jak vytvořit aplikaci, která přijímá hledaným s
 > [!NOTE]
 > Vaše zpětná vazba je vysoce Vážíme si toho. Existují dva způsoby, jak můžete poskytnout zpětnou vazbu vývojovému týmu sady Visual Studio pro Mac:
 > * V sadě Visual Studio pro Mac, vyberte **pomáhají** > **nahlásit problém** z nabídky nebo **nahlásit problém** na úvodní obrazovce, která se otevře okno podání hlášení o chybě. Svou zpětnou vazbu sledujte na portálu [komunity vývojářů](https://developercommunity.visualstudio.com/spaces/41/index.html).
-> * Máte nějaký návrh, vyberte **pomáhají** > **poslat návrh** z nabídky nebo **poslat návrh** na úvodní obrazovce, která přejde na [ Visual Studio pro webovou stránku Mac UserVoice](https://visualstudio.uservoice.com/forums/563332-visual-studio-for-mac).
+> * Máte nějaký návrh, vyberte **pomáhají** > **poslat návrh** z nabídky nebo **poslat návrh** na úvodní obrazovce, která přejde na [ Visual Studio pro webové stránce komunity vývojářů Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
 ## <a name="prerequisites"></a>Požadavky
 
@@ -32,7 +32,7 @@ Další informace o požadavky najdete v článku [předpoklady pro .NET Core v 
 
 ## <a name="building-a-library"></a>Vytváření knihovny
 
-1. Na úvodní obrazovce vyberte **nový projekt**. V **nový projekt** dialogového okna v části **Multiplatformní** uzlu, vyberte **knihovna .NET Standard** šablony. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.Net Standard](https://docs.microsoft.com/en-us/dotnet/standard/net-standard). Vyberte **Další**.
+1. Na úvodní obrazovce vyberte **nový projekt**. V **nový projekt** dialogového okna v části **.NET Core** uzlu, vyberte **knihovna .NET Standard** šablony. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.NET Standard](../../standard/net-standard.md). Vyberte **Další**.
 
    ![Dialogové okno nového projektu](./media/using-on-mac-vs-full-solution/vsmacfull01.png)
 

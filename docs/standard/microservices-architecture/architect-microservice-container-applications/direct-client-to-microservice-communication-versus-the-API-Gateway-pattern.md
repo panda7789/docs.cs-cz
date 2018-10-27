@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/07/2018
-ms.openlocfilehash: 1aaddc96ee509815da9fc4e6519e1fb454f74b13
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 00763a806c18b45b366068f865f4ecb4c5cd743b
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198680"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183604"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>Vzor brány rozhraní API a přímá komunikace klienta mikroslužeb
 
@@ -84,13 +84,13 @@ Musíte být opatrní při implementaci vzor brány rozhraní API. Obvykle není
 
 Proto brány rozhraní API by měly být oddělené na základě obchodní hranice a klientské aplikace a ne act jako jeden agregátor interní mikroslužeb.
 
-Při rozdělování úroveň rozhraní API brány do více bran rozhraní API, pokud aplikace obsahuje víc klientských aplikací, které mohou být primární kontingenční tabulku při identifikaci více typů brány rozhraní API, takže můžete mít různé fasáda pro potřeby každou klientskou aplikaci. Tento případ je vzor s názvem "Back-endu pro front-endu" ([BFF](http://samnewman.io/patterns/architectural/bff/)) tam, kde každá brána rozhraní API můžete zadat jiné rozhraní API navržených pro jednotlivé typy aplikací klienta, případně i na základě provedení klientských implementací konkrétní adaptér kódu, které pod tím volá více interní mikroslužeb, jak je znázorněno na následujícím obrázku:
+Při rozdělování úroveň rozhraní API brány do více bran rozhraní API, pokud aplikace obsahuje víc klientských aplikací, které mohou být primární kontingenční tabulku při identifikaci více typů brány rozhraní API, takže můžete mít různé fasáda pro potřeby každou klientskou aplikaci. Tento případ je vzor s názvem "Back-endu pro front-endu" ([BFF](https://samnewman.io/patterns/architectural/bff/)) tam, kde každá brána rozhraní API můžete zadat jiné rozhraní API navržených pro jednotlivé typy aplikací klienta, případně i na základě provedení klientských implementací konkrétní adaptér kódu, které pod tím volá více interní mikroslužeb, jak je znázorněno na následujícím obrázku:
 
 ![Diagram znázorňující několik vlastních rozhraní API brány](./media/image13.1.png)
 
 **Obrázek 4 – 13.1**. Použití více bran vlastní rozhraní API
 
-Předchozí obrázek znázorňuje zjednodušenou architektury s využitím více podrobných brány rozhraní API. V tomto případě jsou hranice pro každou bránu rozhraní API založené výhradně na "Back-endu pro front-endu" ([BFF](http://samnewman.io/patterns/architectural/bff/)) vzor, proto založený na rozhraní API pro potřeby za klientské aplikace. Ale ve větších aplikací by měl také dále a vytvořit další brány rozhraní API založené na obchodní hranice jako druhý návrh kontingenční tabulku.
+Předchozí obrázek znázorňuje zjednodušenou architektury s využitím více podrobných brány rozhraní API. V tomto případě jsou hranice pro každou bránu rozhraní API založené výhradně na "Back-endu pro front-endu" ([BFF](https://samnewman.io/patterns/architectural/bff/)) vzor, proto založený na rozhraní API pro potřeby za klientské aplikace. Ale ve větších aplikací by měl také dále a vytvořit další brány rozhraní API založené na obchodní hranice jako druhý návrh kontingenční tabulku.
 
 ## <a name="main-features-in-the-api-gateway-pattern"></a>Hlavní funkce v vzor brány rozhraní API
 
@@ -168,7 +168,7 @@ Po počáteční architektury a vysvětlení části vzorce, následující čá
 
 - **Vzor brány rozhraní API** [*https://docs.microsoft.com/azure/architecture/microservices/gateway*](https://docs.microsoft.com/azure/architecture/microservices/gateway)
 
-- **Agregace a skládání modelu** [*http://microservices.io/patterns/data/api-composition.html*](http://microservices.io/patterns/data/api-composition.html)
+- **Agregace a skládání modelu** [*https://microservices.io/patterns/data/api-composition.html*](https://microservices.io/patterns/data/api-composition.html)
 
 - **Azure API Management** [*https://azure.microsoft.com/services/api-management/*](https://azure.microsoft.com/services/api-management/)
 

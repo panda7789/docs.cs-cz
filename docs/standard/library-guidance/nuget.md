@@ -4,16 +4,16 @@ description: Doporučené osvědčené postupy pro vytváření balíčků nuget
 author: jamesnk
 ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 845af3b34827e1f284bb52e040f9de09f22baf37
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 479d1786c232ef1f843877169954e847453681c9
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49087867"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185616"
 ---
 # <a name="nuget"></a>NuGet
 
-NuGet je Správce balíčků pro .NET ekosystému a vývojáři hlavní způsob, jak vyhledat a získat open source knihoven .NET. Primární hostitele pro veřejné balíčky NuGet je NuGet.org, bezplatná služba poskytovaného společností Microsoft pro hostování balíčků NuGet, ale můžete publikovat do vlastní služby NuGet jako MyGet a Azure DevOps.
+NuGet je Správce balíčků pro .NET ekosystému a vývojáři hlavní způsob, jak vyhledat a získat open source knihoven .NET. [NuGet.org](https://www.nuget.org/), je bezplatná služba poskytovaného společností Microsoft pro balíčky NuGet hostují primární hostitele pro veřejné balíčky NuGet, ale můžete publikovat vlastní služeb NuGet, třeba [MyGet](https://www.myget.org/) a [artefakty Azure ](https://azure.microsoft.com/services/devops/artifacts/).
 
 ![NuGet](./media/nuget/nuget-logo.png "NuGet")
 
@@ -21,7 +21,7 @@ NuGet je Správce balíčků pro .NET ekosystému a vývojáři hlavní způsob,
 
 Balíček NuGet (`*.nupkg`) je soubor zip, který obsahuje sestavení .NET a přidružená metadata.
 
-Existují dva hlavní způsoby, jak vytvořit balíček NuGet. Novější a doporučený způsob je pro vytvoření balíčku sady SDK – vizuální styl projektu (soubor projektu obsah začíná `<Project Sdk="Microsoft.NET.Sdk">`). Sestavení a cíle jsou automaticky přidány do balíčku a zbývající metadat se přidá do souboru MSBuild, jako je číslo název a verzi balíčku. Kompilace s [ `dotnet pack` ](../../core/tools/dotnet-pack.md) příkaz výstupy `*.nupkg` souboru místo sestavení.
+Existují dva hlavní způsoby, jak vytvořit balíček NuGet. Novější a doporučený způsob je pro vytvoření balíčku sady SDK – vizuální styl projektu (soubor projektu, jehož obsah začíná `<Project Sdk="Microsoft.NET.Sdk">`). Sestavení a cíle jsou automaticky přidány do balíčku a zbývající metadat se přidá do souboru MSBuild, jako je číslo název a verzi balíčku. Kompilace s [ `dotnet pack` ](../../core/tools/dotnet-pack.md) příkaz výstupy `*.nupkg` souboru místo sestavení.
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -62,7 +62,7 @@ Balíček NuGet podporuje mnoho [vlastnosti metadat](/nuget/reference/nuspec). N
 
 **✔️ ZVAŽTE** zvolíte název balíčku NuGet s předponou, který splňuje rezervace předpony Nugetu [kritéria](/nuget/reference/id-prefix-reservation).
 
-**✔️ ZVAŽTE** pomocí `LICENSE` soubor ve správě zdrojového kódu, jako `LicenseUrl`. Třeba https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md.
+**✔️ ZVAŽTE** pomocí `LICENSE` soubor ve správě zdrojového kódu, jako `LicenseUrl`. Například [LICENSE.md](https://github.com/JamesNK/Newtonsoft.Json/blob/c4af75c8e91ca0d75aa6c335e8c106780c4f7712/LICENSE.md).
 
 > [!IMPORTANT]
 > Projekt bez licence výchozí hodnota je [exkluzivní copyright](https://choosealicense.com/no-permission/), může znemožnit ostatním uživatelům.
@@ -92,13 +92,22 @@ Balíčky NuGet s příponou verze jsou považovány za [předběžné verze](/n
 
 ## <a name="symbol-packages"></a>Balíčky symbolů
 
-Podporuje NuGet [generování balíčku samostatný symbol](/nuget/create-packages/symbol-packages) obsahující ladit soubory PDB souběžně s hlavní balíček, který obsahuje sestavení .NET. Představu o balíčky symbolů je už hostovaný na serveru symbolů a stáhnou jenom nástroje, jako je Visual Studio na vyžádání.
+Soubory symbolů (`*.pdb`) jsou produkované kompilátorem .NET spolu s sestavení. Umístění se symboly mapy provádění soubory do původního zdrojového kódu, můžete procházet zdrojový kód, protože je spuštěn pomocí ladicího programu. Podporuje NuGet [generování balíčku samostatný symbol](/nuget/create-packages/symbol-packages) obsahující soubory symbolů souběžně s hlavní balíček, který obsahuje sestavení .NET. Představu o balíčky symbolů je už hostovaný na serveru symbolů a stáhnou jenom nástroje, jako je Visual Studio na vyžádání.
 
-Aktuálně hlavní veřejný hostitel pro symboly – [SymbolSource](http://www.symbolsource.org/) -nepodporuje souborům portable PDB vytvořené pomocí sady SDK – vizuální styl není užitečné projekty a balíčky symbolů.
+Aktuálně hlavní veřejný hostitel pro symboly – [SymbolSource](http://www.symbolsource.org/) -nepodporuje novou [soubory portable symbolů](https://github.com/dotnet/core/blob/master/Documentation/diagnostics/portable_pdb.md) (`*.pdb`) vytvořené projekty založenými na sadě SDK a symbol balíčky nejsou uloženy užitečné. Dokud nedojde k doporučený hostitel pro balíčky symbolů, soubory symbolů může být vložen do hlavního balíčku NuGet. Pokud vytváříte balíček NuGet použití sady SDK – vizuální styl projektu můžete vložit soubory symbolů tak, že nastavíte `AllowedOutputExtensionsInPackageBuildOutputFolder` vlastnost: 
 
-**✔️ ZVAŽTE** vkládání PDB do hlavního balíčku NuGet.
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+ <PropertyGroup>
+    <!-- Include symbol files (*.pdb) in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+</Project>
+```
 
-**❌ Nepoužívejte** vytváří se balíček symbolů, který obsahuje soubory PDB.
+**✔️ ZVAŽTE** vložení soubory symbolů do hlavního balíčku NuGet.
+
+**❌ Nepoužívejte** vytváří se balíček symbolů, který obsahuje soubory symbolů.
 
 >[!div class="step-by-step"]
 [Předchozí](./strong-naming.md)

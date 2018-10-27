@@ -2,12 +2,12 @@
 title: Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: fa1bfcc5cfaf4a3ba1f5116be7b3f1851ce293af
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 3cbdd5ddc6f742846542e508d1dc0165cd6fde22
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698533"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183786"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Podpora vícenásobného přístupu v aplikacích s modifikátorem Async (Visual Basic)
 Pokud zahrnete asynchronní kód ve vaší aplikaci, by měl zvážit a případně zabránit vícenásobnému přístupu, který se vztahuje k nutnosti opětovného zadávání asynchronní operace ještě před dokončením. Pokud neidentifikujete a nemanipulujete vícenásobnému přístupu, může to způsobit neočekávané výsledky.  
@@ -647,14 +647,14 @@ End Function
         Private Function SetUpURLList() As List(Of String)  
             Dim urls = New List(Of String) From  
             {  
-                "http://msdn.microsoft.com/library/hh191443.aspx",  
-                "http://msdn.microsoft.com/library/aa578028.aspx",  
-                "http://msdn.microsoft.com/library/jj155761.aspx",  
-                "http://msdn.microsoft.com/library/hh290140.aspx",  
-                "http://msdn.microsoft.com/library/hh524395.aspx",  
-                "http://msdn.microsoft.com/library/ms404677.aspx",  
-                "http://msdn.microsoft.com",  
-                "http://msdn.microsoft.com/library/ff730837.aspx"  
+                "https://msdn.microsoft.com/library/hh191443.aspx",  
+                "https://msdn.microsoft.com/library/aa578028.aspx",  
+                "https://msdn.microsoft.com/library/jj155761.aspx",  
+                "https://msdn.microsoft.com/library/hh290140.aspx",  
+                "https://msdn.microsoft.com/library/hh524395.aspx",  
+                "https://msdn.microsoft.com/library/ms404677.aspx",  
+                "https://msdn.microsoft.com",  
+                "https://msdn.microsoft.com/library/ff730837.aspx"  
             }  
             Return urls  
         End Function  
@@ -665,7 +665,7 @@ End Function
             ' Global Monospace.  
   
             ' Strip off the "http:'".  
-            Dim displayURL = url.Replace("http://", "")  
+            Dim displayURL = url.Replace("https://", "")  
             ' Display position in the URL list, the URL, and the number of bytes.  
             ResultsTextBox.Text &= String.Format(vbCrLf & "{0}. {1,-58} {2,8}", pos, displayURL, content.Length)  
         End Sub  

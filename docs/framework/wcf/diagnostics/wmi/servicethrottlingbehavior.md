@@ -2,19 +2,19 @@
 title: ServiceThrottlingBehavior
 ms.date: 03/30/2017
 ms.assetid: 37b9e517-1f1f-4ec4-9fcb-2b8016794f5b
-ms.openlocfilehash: 9a7fbf93dbdbf1a6debcf865b4883b5784e2ff4a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: edc154fcce0058455f1376a2a45807c92f7f2457
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487604"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190947"
 ---
 # <a name="servicethrottlingbehavior"></a>ServiceThrottlingBehavior
 ServiceThrottlingBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp  
 class ServiceThrottlingBehavior : Behavior  
 {  
   sint32 MaxConcurrentCalls;  
@@ -24,35 +24,35 @@ class ServiceThrottlingBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída třídy ServiceThrottlingBehavior nedefinuje žádné metody.  
+ Třídy ServiceThrottlingBehavior nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída třídy ServiceThrottlingBehavior má následující vlastnosti:  
+ Třídy ServiceThrottlingBehavior má následující vlastnosti:  
   
 ### <a name="maxconcurrentcalls"></a>maxConcurrentCalls  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet zpráv ve všech objektech dispečera v ServiceHost aktivně zpracovávají.  
+ Maximální počet zpráv aktivně pracujících přes veškeré objekty odesílatele v ServiceHost.  
   
-### <a name="maxconcurrentinstances"></a>maxConcurrentInstances  
+### <a name="maxconcurrentinstances"></a>MaxConcurrentInstances  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet objekty služby, které mohou být prováděny současně.  
+ Maximální počet objektů služeb, které můžete provést najednou.  
   
-### <a name="maxconcurrentsessions"></a>maxConcurrentSessions  
+### <a name="maxconcurrentsessions"></a>MaxConcurrentSessions  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet relací, které hostitele může přijmout najednou.  
+ Maximální počet relací, které může hostitel najednou přijmout.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

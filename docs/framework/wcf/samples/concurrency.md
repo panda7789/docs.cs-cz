@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, concurency sample
 - Concurrency Sample [Windows Communication Foundation]
 ms.assetid: f8dbdfb3-6858-4f95-abe3-3a1db7878926
-ms.openlocfilehash: 892def5d9788dfdf86d312aa04cf89e891323971
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f8925157714621f8b97893bc25e41685778416f5
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528424"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50186002"
 ---
 # <a name="concurrency"></a>Souběžnost
 Ukázka souběžnosti znázorňuje použití <xref:System.ServiceModel.ServiceBehaviorAttribute> s <xref:System.ServiceModel.ConcurrencyMode> výčet, který řídí, zda instance služby zpracovává zprávy postupně sekvenčně nebo současně. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), která implementuje `ICalculator` kontrakt služby. Tato ukázka definuje kontrakt nové `ICalculatorConcurrency`, který dědí z `ICalculator`, poskytuje dvě další operace Kontrola stavu služby souběžnosti. Změnou nastavení souběžnosti můžete sledovat změny v chování pomocí klienta.  
@@ -32,7 +32,7 @@ Ukázka souběžnosti znázorňuje použití <xref:System.ServiceModel.ServiceBe
   
  Určuje chování souběžnosti s třídu služby `[ServiceBehavior(ConcurrencyMode=<setting>)]` atributu, jak je znázorněno v ukázce kódu, který následuje. Tak, že změníte, které řádky jsou označené jako komentář, můžete experimentovat s `Single` a `Multiple` režimy souběžnosti. Nezapomeňte znovu sestavit službě po změně režimu souběžnosti.  
   
-```  
+```csharp
 // Single allows a single message to be processed sequentially by each service instance.  
 //[ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Single, InstanceContextMode = InstanceContextMode.Single)]  
   

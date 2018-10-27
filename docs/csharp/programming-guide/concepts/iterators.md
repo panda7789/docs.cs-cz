@@ -2,12 +2,12 @@
 title: Iterovat kolekcí v jazyce C#
 ms.date: 08/14/2018
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-ms.openlocfilehash: d8a39569df517dffa8ff4b2f638f089f420e44c7
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 2b358e8272820bf6fb5bcb45763bae980b91962f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48024503"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50191191"
 ---
 # <a name="iterators-c"></a>Iterátory (C#)
 
@@ -342,7 +342,7 @@ Na každou následnou iterací z `foreach` smyčky (nebo přímého volání `IE
 
 Nepodporují iterátory <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType> metody. Zdůrazňujeme od začátku, musíte získat nový iterátoru. Volání <xref:System.Collections.IEnumerator.Reset%2A> na iterátor vrácené z metody iterátoru vyvolá <xref:System.NotSupportedException>.
 
-Další informace najdete v tématu [specifikace jazyka C#](../../../csharp/language-reference/language-specification/index.md).
+Další informace najdete v tématu [specifikace jazyka C#](~/_csharplang/spec/classes.md#iterators).
 
 ## <a name="use-of-iterators"></a>Používání iterátorů
 

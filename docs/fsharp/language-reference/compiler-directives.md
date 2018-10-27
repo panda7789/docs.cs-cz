@@ -2,12 +2,12 @@
 title: Direktivy kompilátoru (F#)
 description: 'Další informace o F # jazyka direktivy preprocesoru, direktivy podmíněné kompilace, direktivy line a direktivy kompilátoru.'
 ms.date: 05/16/2016
-ms.openlocfilehash: eeb33cd3b1d6a228555724a307bf2e2407c6b4c3
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 5ac375ac5acd0609a6556f9e0481d169df827c98
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44042452"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181365"
 ---
 # <a name="compiler-directives"></a>Direktivy kompilátoru
 
@@ -33,7 +33,7 @@ Výsledek vypnutí upozornění se vztahuje na celý soubor, včetně části so
 
 ## <a name="conditional-compilation-directives"></a>Direktivy podmíněné kompilace
 
-Kód, který je deaktivováno pomocí jedné z těchto směrnic zobrazeno šedě v editoru StudioCode Vizuálu.
+Kód, který je deaktivováno pomocí jedné z těchto směrnic zobrazeno šedě v editoru kódu sady Visual Studio.
 
 >[!NOTE]
 Chování direktivy podmíněné kompilace není stejný jako v jiných jazycích. Například nelze použít logické výrazy zahrnující symbolů, a `true` a `false` nemají zvláštní význam. Symboly, které můžete použít `if` – direktiva musí být definován pomocí příkazového řádku nebo v nastavení projektu, neexistuje žádný `define` direktiva preprocesoru.

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -pathmap compiler option [C#]
 - pathmap compiler option [C#]
 - /pathmap compiler option [C#]
-ms.openlocfilehash: 277ab8e094f28fd5e3cbba4de12e742bb9614730
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: abcc67a16e257a15599431a8fefe7753e6d52549
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583745"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190317"
 ---
 # <a name="-pathmap-c-compiler-options"></a>-pathmap (možnosti kompilátoru C#)
 
@@ -34,7 +34,7 @@ Chcete-li určit víc cest připojené zdroje, oddělte každou čárkou.
 
 ## <a name="remarks"></a>Poznámky
 
-Kompilátor zapíše zdrojová_cesta_operačního_systému cestu do jeho výstup z následujících důvodů:
+Kompilátor zapíše zdrojovou cestu do jeho výstup z následujících důvodů:
 
 1. Zdrojová cesta je nahrazen pro argument při <xref:System.Runtime.CompilerServices.CallerFilePathAttribute> platí pro volitelný parametr.
 1. Zdrojová cesta se vloží do souboru PDB.

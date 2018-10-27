@@ -8,14 +8,12 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: f4ab3d4e7ce6686a43e4c5258a56e72203c38ebd
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 3a6d5b080c74fbd3f6ebca9882c1667951cfcb91
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033386"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183670"
 ---
 # <a name="ltproxygt-element-network-settings"></a>&lt;proxy&gt; – Element (nastavení sítě)
 Definuje proxy server.  
@@ -93,5 +91,5 @@ Definuje proxy server.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

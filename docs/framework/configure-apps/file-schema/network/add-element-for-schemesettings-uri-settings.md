@@ -2,14 +2,12 @@
 title: '&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)'
 ms.date: 03/30/2017
 ms.assetid: 594a7b3b-af23-4cfa-b616-0b2dddb1a705
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 9cca5e35bfc0aef448d2d515f5ac55ed9e2e2258
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 266686007f9e2b00bcfc3222d4380aee64d0098e
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48781239"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50044629"
 ---
 # <a name="ltaddgt-element-for-schemesettings-uri-settings"></a>&lt;Přidat&gt; – Element pro schemeSettings (nastavení Uri)
 Přidá nastavení schéma pro název schématu.  

@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 2c30799a-a826-46b4-a25d-c584027a6c67
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: c7c2837bef57a7bb495a72e6b4d99b0bb6c80d60
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 5d46694d772aed7e92f95cc26da86985d4f8b0ff
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582863"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50191061"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Postupy: Podepsání sestavení silným názvem
 Existuje několik způsobů, jak můžete podepsat sestavení pomocí silného názvu:  
@@ -98,9 +98,9 @@ al /out:MyAssembly.dll MyModule.netmodule /keyfile:sgKey.snk
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
- [Postupy: Vytvoření páru veřejného a soukromého klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
- [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)  
- [Správa sestavení a podepsání manifestu](/visualstudio/ide/managing-assembly-and-manifest-signing)  
- [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)
+- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)  
+- [Postupy: Vytvoření páru veřejného a soukromého klíče](../../../docs/framework/app-domains/how-to-create-a-public-private-key-pair.md)  
+- [Al.exe (linker sestavení)](../../../docs/framework/tools/al-exe-assembly-linker.md)  
+- [Zpoždění podepsání sestavení](../../../docs/framework/app-domains/delay-sign-assembly.md)  
+- [Správa sestavení a podepsání manifestu](/visualstudio/ide/managing-assembly-and-manifest-signing)  
+- [Stránka Podepisování, Návrhář projektu](/visualstudio/ide/reference/signing-page-project-designer)

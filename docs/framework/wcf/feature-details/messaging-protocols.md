@@ -2,12 +2,12 @@
 title: Protokoly zasílání zpráv
 ms.date: 03/30/2017
 ms.assetid: 5b20bca7-87b3-4c8f-811b-f215b5987104
-ms.openlocfilehash: 7d94b917f3d8d2fd7faed28b9320edc240724e0b
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 4678980520266879b41bea6e10f075a2df116457
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/23/2018
-ms.locfileid: "46703008"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183851"
 ---
 # <a name="messaging-protocols"></a>Protokoly zasílání zpráv
 
@@ -47,7 +47,7 @@ Dokument/specifikace:
 
 Následující obory názvů XML a přidružené předpony se používají v tomto tématu:
 
-| Předponu | Namespace Uniform Resource Identifier (URI) | [---|---| | s.11 | `http://schemas.xmlsoap.org/soap/envelope`| | S12 na úrovni Standard | `http://www.w3.org/2003/05/soap-envelope`| | wsa | `http://www.w3.org/2004/08/addressing`| | wsam | `http://www.w3.org/2007/05/addressing/metadata`| | wsap | `http://schemas.xmlsoap.org/ws/2004/09/policy/addressing`| | wsa10 | `http://www.w3.org/2005/08/addressing`| | wsaw10 | `http://www.w3.org/2006/05/addressing/wsdl`| | xop | `http://www.w3.org/2004/08/xop/include`| | xmime |`http://www.w3.org/2004/06/xmlmime`<br /><br /> `http://www.w3.org/2005/05/xmlmime`| | distribučního bodu |`http://schemas.microsoft.com/net/2006/06/duplex`|
+| Předponu | Namespace Uniform Resource Identifier (URI) | [---|---| | s.11 | `http://schemas.xmlsoap.org/soap/envelope` || S12 na úrovni Standard | `http://www.w3.org/2003/05/soap-envelope` || wsa | `http://www.w3.org/2004/08/addressing` || wsam | `http://www.w3.org/2007/05/addressing/metadata` || wsap | `http://schemas.xmlsoap.org/ws/2004/09/policy/addressing` || wsa10 | `http://www.w3.org/2005/08/addressing` || wsaw10 | `http://www.w3.org/2006/05/addressing/wsdl` || xop | `http://www.w3.org/2004/08/xop/include` || xmime |`http://www.w3.org/2004/06/xmlmime`<br /><br /> `http://www.w3.org/2005/05/xmlmime` | | distribučního bodu |`http://schemas.microsoft.com/net/2006/06/duplex` |
 
 ## <a name="soap-11-and-soap-12"></a>Protokol SOAP 1.1 a SOAP 1.2
 
@@ -190,20 +190,20 @@ Když koncového bodu WCF je nakonfigurován pro zprávu s danou `Action` Pokud 
 ### <a name="web-services-addressing-faults"></a>Na vyřešení chyby webové služby
 R3411: WCF vytvoří následující chyby definované WS-Addressing 2004/08.
 
-|Kód|příčina|
+| Kód | příčina |
 |----------|-----------|
-|`wsa:DestinationUnreachable`|Zpráva dorazila s `ReplyTo` , která se liší od adresa pro odpovědi pro tento kanál, neexistuje žádný koncový bod na adrese určené v záhlaví Komu.|
-|`wsa:ActionNotSupported`|kanály infrastruktury nebo dispečer spojená s koncovým bodem nebyl rozpoznán akce určená ve `Action` záhlaví.|
+| `wsa:DestinationUnreachable` | Zpráva dorazila s `ReplyTo` , která se liší od adresa pro odpovědi pro tento kanál, neexistuje žádný koncový bod na adrese určené v záhlaví Komu. |
+| `wsa:ActionNotSupported` | kanály infrastruktury nebo dispečer spojená s koncovým bodem nebyl rozpoznán akce určená ve `Action` záhlaví. |
 
 R3412: WCF vytvoří následující chyby definované WS-Addressing 1.0.
 
-|Kód|příčina|
+| Kód | příčina |
 |----------|-----------|
-|`wsa10:InvalidAddressingHeader`|Duplicitní `wsa:To`, `wsa:ReplyTo`, `wsa:From` nebo `wsa:MessageID`. Duplicitní `wsa:RelatesTo` se stejným `RelationshipType`.|
-|`wsa10:MessageAddressingHeaderRequired`|Chybí požadované záhlaví adresování.|
-|`wsa10:DestinationUnreachable`|Zpráva dorazila s `ReplyTo` , která se liší od adresa pro odpovědi pro tento kanál. Neexistuje žádný koncový bod na adrese určené v záhlaví Komu.|
-|`wsa10:ActionNotSupported`|Zadaná v akci `Action` hlavička nebyla rozpoznána infrastruktury kanály nebo dispečer spojená s koncovým bodem.|
-|`wsa10:EndpointUnavailable`|Kanál RM odešle tato porucha zpět, která koncový bod nezpracuje pořadí na základě posouzení `CreateSequence` adrese záhlaví zprávy.|
+| `wsa10:InvalidAddressingHeader` | Duplicitní `wsa:To`, `wsa:ReplyTo`, `wsa:From` nebo `wsa:MessageID`. Duplicitní `wsa:RelatesTo` se stejným `RelationshipType`. |
+| `wsa10:MessageAddressingHeaderRequired` | Chybí požadované záhlaví adresování. |
+| `wsa10:DestinationUnreachable` | Zpráva dorazila s `ReplyTo` , která se liší od adresa pro odpovědi pro tento kanál. Neexistuje žádný koncový bod na adrese určené v záhlaví Komu. |
+| `wsa10:ActionNotSupported` | Zadaná v akci `Action` hlavička nebyla rozpoznána infrastruktury kanály nebo dispečer spojená s koncovým bodem. |
+| `wsa10:EndpointUnavailable` | Kanál RM odešle tato porucha zpět, která koncový bod nezpracuje pořadí na základě posouzení `CreateSequence` adrese záhlaví zprávy. |
 
 Do mapy kódu v předchozích tabulkách `FaultCode` v protokolu SOAP 1.1 a `SubCode` (kód = odesílatele) v protokolu SOAP 1.2.
 

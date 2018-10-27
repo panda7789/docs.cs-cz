@@ -16,14 +16,12 @@ helpviewer_keywords:
 - UI literal type characters [Visual Basic]
 - data types [Visual Basic], integral
 ms.assetid: db7ddd34-4f23-46f5-84dd-8b0f83bb8729
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: df89c099042de8acef687a5fd11fc0dbf7de86a7
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 660e51338d274bbe25da800ca701e6fb9eccbcda
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44083494"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183201"
 ---
 # <a name="uinteger-data-type"></a>UInteger – datový typ
 

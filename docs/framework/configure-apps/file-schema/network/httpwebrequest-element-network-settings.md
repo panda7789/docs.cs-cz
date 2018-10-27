@@ -8,14 +8,12 @@ helpviewer_keywords:
 - <httpWebRequest> element
 - httpWebRequest element
 ms.assetid: 52acd9d2-5bdc-4dc4-9c2a-f0a476ccbb31
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: e83f12d849f6f6a587bccc85fbf6fe8fe24026f0
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 586b3e7219c72b6cd00653d6d0be3a74f6359709
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397225"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50048980"
 ---
 # <a name="lthttpwebrequestgt-element-network-settings"></a>&lt;httpWebRequest&gt; – Element (nastavení sítě)
 Přizpůsobí parametrů webové žádosti.  

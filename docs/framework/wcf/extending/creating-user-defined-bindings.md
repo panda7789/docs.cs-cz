@@ -4,50 +4,50 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - user-defined bindings [WCF]
 ms.assetid: c4960675-d701-4bc9-b400-36a752fdd08b
-ms.openlocfilehash: c9d37163770f2fd192a6fd2a03878b28f0237646
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 7be7c156ec20a15cf8d1a12d8d1f429b6c2c33a9
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806741"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50186054"
 ---
 # <a name="creating-user-defined-bindings"></a>Vytváření uživatelem definovaných vazeb
-Chcete-li vytvořit vazby není poskytovaný systému několika způsoby:  
+Existuje několik způsobů, jak vytvořit vazby není k dispozici v systému:  
   
--   Vytvoření vlastní vazby, na základě <xref:System.ServiceModel.Channels.CustomBinding> třídy, která je kontejner, který je vyplnit prvky vazeb. Vlastní vazba se pak přidá do koncového bodu služby. Můžete vytvořit vlastní vazby, které buď programově, nebo v konfiguraci aplikace souboru. Pokud chcete použít prvku vazby z konfiguračního souboru aplikace, musíte rozšířit prvku vazby <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Další informace o vlastních vazeb najdete v tématu [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md) a <xref:System.ServiceModel.Channels.CustomBinding>.  
+-   Vytvoření vlastní vazby, na základě <xref:System.ServiceModel.Channels.CustomBinding> třídy, což je kontejner, který vyplnit elementů vazby. Vlastní vazba se pak přidá do koncového bodu služby. Můžete vytvořit vlastní vazby, ať už prostřednictvím kódu programu nebo v konfiguraci application souboru. Chcete-li použít prvek vazby z konfiguračního souboru aplikace, musíte rozšířit element vazby <xref:System.ServiceModel.Configuration.BindingElementExtensionElement>. Další informace o vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md) a <xref:System.ServiceModel.Channels.CustomBinding>.  
   
--   Můžete vytvořit třídu odvozenou od standardní vazby. Například můžete odvození třídy z <xref:System.ServiceModel.WSHttpBinding> a přepsání <xref:System.ServiceModel.Channels.CustomBinding.CreateBindingElements%2A> metoda získat prvky vazby a vložit vlastní vazby element nebo vytvořit konkrétní hodnotu pro zabezpečení.  
+-   Můžete vytvořit třídu, která je odvozena od standardní vazbu. Například lze odvodit třídu z <xref:System.ServiceModel.WSHttpBinding> a přepsat <xref:System.ServiceModel.Channels.CustomBinding.CreateBindingElements%2A> metodou získat elementy vazby a vložit vlastní prvek vazby nebo vytvoření určitou hodnotu pro zabezpečení.  
   
--   Můžete vytvořit nový <xref:System.ServiceModel.Channels.Binding> typ zcela řídit implementace celý vazby.  
+-   Můžete vytvořit nový <xref:System.ServiceModel.Channels.Binding> typ úplnou kontrolu nad implementace celé vazby.  
   
 ## <a name="the-order-of-binding-elements"></a>Pořadí elementů vazby  
- Každý prvek vazby představuje krok zpracování při odesílání nebo přijímání zprávy. V době běhu prvky vazeb vytvořit kanály a naslouchací procesy nezbytné k sestavení odchozí a příchozí zásobníky kanálu.  
+ Každý prvek vazby představuje krok zpracování při odesílání nebo přijímání zpráv. Za běhu elementy vazby vytvořte kanály a naslouchací procesy potřebné k vývoji odchozí a příchozí zásobníky kanálu.  
   
- Existují tři hlavní typy elementů vazby: prvky vazeb protokolu, kódování prvky vazeb a elementů přenosové vazby.  
+ Existují tři hlavní typy elementů vazby: elementy vazby protokolu, kódování elementů vazby a elementů přenosové vazby.  
   
- Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které fungují na zprávy. Kanály a naslouchací procesy vytvořené tyto prvky vazeb můžete přidat, odebrat nebo změnit obsah zprávy. Danou vazbu může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. Windows Communication Foundation (WCF) obsahuje několik prvky vazby protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
+ Prvky vazeb protokolu – Tyhle elementy reprezentují vyšší úrovně kroky zpracování, které mohly reagovat na zprávy. Kanály a naslouchací procesy vytvořené tyto elementy vazby můžete přidat, odebrat nebo změnit obsah zprávy. Zadaná vazba může mít libovolný počet elementů vazby protokolu, každý dědění z <xref:System.ServiceModel.Channels.BindingElement>. Windows Communication Foundation (WCF) obsahuje několik elementů vazby protokolu, včetně <xref:System.ServiceModel.Channels.ReliableSessionBindingElement> a <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement>.  
   
- Kódování prvku vazby – tyto prvky představují transformace mezi zprávu a kódování připraveni k přenosu v drátové síti. Typické vazby WCF obsahovat přesně jeden kódování prvku vazby. Příklady kódování prvky vazeb <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Pokud element kódování vazba není určena pro vazbu, bude použito výchozí kódování. Výchozí hodnota je text při přenosu HTTP a binární jinak.  
+ Kódování Element vazby – tyto prvky představují transformace mezi zprávu a kódování připravené pro přenos na lince. Typické vazby WCF obsahovat přesně jeden element vazby kódování. Příklady kódování elementů vazby <xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>, <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement>a <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>. Pokud kódování element vazby není zadané pro vazbu, bude použito výchozí kódování. Výchozí hodnota je text, pokud je přenos protokolu HTTP a binární jinak.  
   
- Element vazby přenosu – Tyhle elementy reprezentují přenosem kódování zprávy v protokolu přenosu. Typické vazby WCF obsahovat přesně jeden element vazby přenos, který dědí z <xref:System.ServiceModel.Channels.TransportBindingElement>. Příklady přenosu elementů vazby <xref:System.ServiceModel.Channels.TcpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpTransportBindingElement>a <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>.  
+ Element vazby přenosu – Tyhle elementy reprezentují přenosu kódování zprávy protokolu přenosu. Typické vazby WCF obsahovat právě jeden element vazby přenosu, která dědí z <xref:System.ServiceModel.Channels.TransportBindingElement>. Příklady přenosu elementů vazby <xref:System.ServiceModel.Channels.TcpTransportBindingElement>, <xref:System.ServiceModel.Channels.HttpTransportBindingElement>a <xref:System.ServiceModel.Channels.NamedPipeTransportBindingElement>.  
   
- Při vytváření nové vazby, je důležité pořadí prvků přidané vazby. Vždy přidáte prvky vazeb v následujícím pořadí:  
+ Při vytváření nové vazby, je důležité pořadí prvků přidaných vazby. Vždy přidáte prvky vazeb v následujícím pořadí:  
   
-|Vrstva|Možnosti|Požadováno|  
+|Vrstvy|Možnosti|Požadováno|  
 |-----------|-------------|--------------|  
 |Tok transakcí|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement?displayProperty=nameWithType>|Ne|  
 |Spolehlivost|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement?displayProperty=nameWithType>|Ne|  
 |Zabezpečení|<xref:System.ServiceModel.Channels.SecurityBindingElement?displayProperty=nameWithType>|Ne|  
-|Složené duplexní režim|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement?displayProperty=nameWithType>|Ne|  
-|Kódování|Text, binární, MTOM, vlastní|Ano*|  
-|Přenos|TCP, pojmenované kanály, HTTP, HTTPS, služby MSMQ, vlastní|Ano|  
+|Kompozitní duplexní režim|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement?displayProperty=nameWithType>|Ne|  
+|Kódování|Text, binární soubor, MTOM, vlastní|Ano*|  
+|Přenos|TCP, pojmenované kanály, protokolu HTTP, HTTPS, služby MSMQ, vlastní|Ano|  
   
- * Protože kódování je vyžadován pro každé vazby, pokud není zadán kódování, WCF přidá výchozí kódování pro vás. Výchozí hodnota je Text/XML pro přenosy protokolu HTTP a HTTPS a binární jinak.  
+ * Vzhledem k tomu kódování se vyžaduje pro každou vazbu, pokud kódování není zadán, WCF přidá výchozí kódování pro vás. Výchozí hodnota je Text/XML pro přenosy HTTP a HTTPS a binární jinak.  
   
-## <a name="creating-a-new-binding-element"></a>Vytváření nového elementu vazby  
- Kromě typy odvozené z <xref:System.ServiceModel.Channels.BindingElement> , jsou k dispozici WCF, můžete vytvořit vlastní prvky vazeb. To umožňuje přizpůsobit způsob, jakým se vytvoří zásobník vazby a součásti, které v ní přejděte tak, že vytvoříte vlastní <xref:System.ServiceModel.Channels.BindingElement> kterou lze sestavit s další poskytované systémem typy v zásobníku.  
+## <a name="creating-a-new-binding-element"></a>Vytvoření nového elementu vazby  
+ Kromě typů odvozených z <xref:System.ServiceModel.Channels.BindingElement> , které jsou k dispozici ve WCF, můžete vytvořit vlastní elementy vazby. Díky tomu můžete přizpůsobit tak, jak vytvořit stack vazby a komponenty, které najdete v něm tak, že vytvoříte vlastní <xref:System.ServiceModel.Channels.BindingElement> , který se může skládat s jinými poskytované systémem typy v zásobníku.  
   
- Například, pokud budete implementovat `LoggingBindingElement` , který poskytuje schopnost protokolovat zprávy do databáze, je nutné umístit nad kanál přenosu v zásobníku kanálu. V takovém případě aplikace vytvoří vlastní vazby, která tvoří `LoggingBindingElement` s `TcpTransportBindingElement`, jako v následujícím příkladu.  
+ Například, pokud se rozhodnete implementovat `LoggingBindingElement` , která poskytuje schopnost protokolovat zprávy do databáze, je nutné umístit nad přenosový kanál v zásobníku kanálu. V tomto případě aplikace vytvoří vlastní vazby, který se skládá `LoggingBindingElement` s `TcpTransportBindingElement`, jako v následujícím příkladu.  
   
 ```csharp  
 Binding customBinding = new CustomBinding(  
@@ -56,25 +56,25 @@ Binding customBinding = new CustomBinding(
 );  
 ```  
   
- Jak psát Vaše nového elementu vazby závisí na jeho přesný funkce. Jednou z ukázek, [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md), poskytuje podrobný popis toho, jak implementovat jednoho druhu prvku vazby.  
+ Jak psát váš nový prvek vazby, závisí na jeho přesná funkce. Jednou z ukázek, [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md), poskytuje podrobný popis toho, jak implementovat jeden typ elementu vazby.  
   
-## <a name="creating-a-new-binding"></a>Vytvořením vazby  
- Element uživatele vytvořit vazbu lze použít dvěma způsoby. Předchozí část ukazuje první způsob: prostřednictvím vlastní vazby. Vlastní vazby umožňuje uživateli vytvořit své vlastní vazby založené na libovolnou sadu elementů, včetně těch vytvořené uživatelem vazby.  
+## <a name="creating-a-new-binding"></a>Vytváří se nová vazba  
+ Element vazby uživatel vytvořil lze použít dvěma způsoby. V předchozím oddílu ukazuje první způsob: prostřednictvím vlastní vazby. Vlastní vazba umožňuje uživateli vytvořit své vlastní vazbu na základě libovolného sady elementů, včetně těch uživatel vytvořil vazby.  
   
- Pokud používáte vazby ve více než jednu aplikaci, vytvořte vlastní vazbu a rozšířit <xref:System.ServiceModel.Channels.Binding>. Tím je zabráněno ruční vytvoření vlastní vazby pokaždé, když chcete použít. Uživatelem definované vazby umožňuje definovat chování vazby a zahrnují prvky uživatelem definované vazby. A je *předem zabalené*: není nutné znovu vytvořit vazbu pokaždé, když ji používáte.  
+ Pokud tuto vazbu využíval ve více než jednu aplikaci, vytvořte vlastní vazby a rozšířit <xref:System.ServiceModel.Channels.Binding>. Tím se vyhnete ruční vytvoření vlastní vazby pokaždé, když chcete použít. Uživatelem definované vazby umožňuje definovat chování vazby a obsahují prvky uživatelem definované vazby. A je *předem zabalené*: není nutné znovu vytvořit vazby pokaždé, když ho používáte.  
   
  Minimálně musí implementovat uživatelem definované vazby <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> metoda a <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnost.  
   
- <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> Metoda vrátí novou <xref:System.ServiceModel.Channels.BindingElementCollection> obsahující prvky vazby pro vazbu. Kolekce je seřadit a by měl obsahovat prvky vazby protokolu nejprve, za nímž následuje kódování prvku vazby, za nímž následuje prvku vazby přenosu. Při používání prvky vazby poskytované systémem WCF, je třeba postupovat podle prvku vazby řazení pravidla stanovená dokumentem [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md). Tato kolekce by měla odkazovat nikdy objekty odkazuje v rámci třídy uživatelem definované vazby; v důsledku toho musí vracet vazby autoři `Clone()` z <xref:System.ServiceModel.Channels.BindingElementCollection> při každém volání <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A>.  
+ <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> Metoda vrátí nový <xref:System.ServiceModel.Channels.BindingElementCollection> obsahující prvky vazby pro vazbu. Kolekce je seřazen a může obsahovat elementy vazby protokolu nejprve, za nímž následuje kódování element vazby, za nímž následuje element vazby přenosu. Při používání vazeb poskytovaných systémem WCF prvků, je třeba dodržovat element vazby řazení pravidla stanovená dokumentem [vlastní vazby](../../../../docs/framework/wcf/extending/custom-bindings.md). Tato kolekce by měly odkazovat nikdy objekty, v rámci třídy uživatelem definované vazby; v důsledku toho musí vracet vazby autoři `Clone()` z <xref:System.ServiceModel.Channels.BindingElementCollection> pro všechna volání <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A>.  
   
- <xref:System.ServiceModel.Channels.Binding.Scheme%2A> Vlastnost představuje schéma identifikátoru URI pro přenosový protokol používána na vazby. Například *WSHttpBinding* a *NetTcpBinding* vrácení "http" a "net.tcp" z jejich odpovídajících <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnosti.  
+ <xref:System.ServiceModel.Channels.Binding.Scheme%2A> Vlastnost představuje schéma identifikátoru URI pro přenosový protokol používá ve vazbě. Například *WSHttpBinding* a *NetTcpBinding* vrátit "http" a "net.tcp" z jejich odpovídajících <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnosti.  
   
- Úplný seznam volitelné metod a vlastností pro uživatelem definované vazby najdete v tématu <xref:System.ServiceModel.Channels.Binding>.  
+ Úplný seznam volitelné metody a vlastnosti pro uživatelem definované vazby, naleznete v tématu <xref:System.ServiceModel.Channels.Binding>.  
   
 ### <a name="example"></a>Příklad  
- Implementuje vazba profilu v tomto příkladu `SampleProfileUdpBinding`, která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `SampleProfileUdpBinding` Obsahuje až čtyři prvky vazeb v něm: jeden uživatel vytvořen `UdpTransportBindingElement`; a tři poskytované systémem: `TextMessageEncodingBindingElement`, `CompositeDuplexBindingElement`, a `ReliableSessionBindingElement`.  
+ Implementuje vazba profilu v tomto příkladu `SampleProfileUdpBinding`, která je odvozena z <xref:System.ServiceModel.Channels.Binding>. `SampleProfileUdpBinding` Obsahuje až čtyři elementy vazby v něm: jeden uživatel vytvořil `UdpTransportBindingElement`; a tři poskytované systémem: `TextMessageEncodingBindingElement`, `CompositeDuplexBindingElement`, a `ReliableSessionBindingElement`.  
   
-```  
+```csharp
 public override BindingElementCollection CreateBindingElements()  
 {     
     BindingElementCollection bindingElements = new BindingElementCollection();  
@@ -90,33 +90,33 @@ public override BindingElementCollection CreateBindingElements()
 ```  
   
 ## <a name="security-restrictions-with-duplex-contracts"></a>Omezení zabezpečení s duplexní kontrakty  
- Ne všechny prvky vazby jsou vzájemně kompatibilní. Konkrétně existují některá omezení na zabezpečení prvky vazeb při použití s duplexní kontrakty.  
+ Ne všechny prvky vazeb jsou navzájem kompatibilní. Konkrétně existují některá omezení týkající se zabezpečení elementů vazby při použití s duplexní kontrakty.  
   
-### <a name="one-shot-security"></a>Jednorázové zabezpečení  
- "Jednorázové" zabezpečení, kde jsou všechna potřebná zabezpečovací přihlašovací údaje odeslány do jedné zprávy nastavením můžete implementovat `negotiateServiceCredential` atribut \<zpráva > prvku konfigurace `false`.  
+### <a name="one-shot-security"></a>Konečný zabezpečení  
+ Můžete implementovat "jednorázové" zabezpečení, všechny potřebné zabezpečené přihlašovací údaje se odešle do jedné zprávy tak, že nastavíte `negotiateServiceCredential` atribut \<zpráva > prvku konfigurace `false`.  
   
- Jednorázové ověřování s duplexní kontrakty nefunguje.  
+ Konečný ověřování nefunguje s duplexní kontrakty.  
   
- Pro kontraktů požadavek-odpověď jednorázové ověření funguje pouze v případě, že vazba zásobníku pod elementem vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instance.  
+ Pro kontraktů požadavek-odpověď, jednorázové ověření funguje pouze v případě, že vazba zásobníku pod element vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instancí.  
   
- Pro jednosměrné kontrakty jednorázové ověření funguje, pokud vazba zásobníku pod elementem vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel>, <xref:System.ServiceModel.Channels.IRequestSessionChannel>, <xref:System.ServiceModel.Channels.IOutputChannel> nebo <xref:System.ServiceModel.Channels.IOutputSessionChannel> instance.  
+ Pro jednosměrné kontrakty, jednorázové ověření funguje v případě, že vazba zásobníku pod element vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel>, <xref:System.ServiceModel.Channels.IRequestSessionChannel>, <xref:System.ServiceModel.Channels.IOutputChannel> nebo <xref:System.ServiceModel.Channels.IOutputSessionChannel> instancí.  
   
-### <a name="cookie-mode-security-context-tokens"></a>Tokeny kontextu zabezpečení režim souboru cookie  
- Tokeny kontextu zabezpečení režim souboru cookie nelze použít s duplexní kontrakty.  
+### <a name="cookie-mode-security-context-tokens"></a>Režim souborů cookie tokeny kontextu zabezpečení  
+ Tokeny kontextu zabezpečení souborů cookie režimu nelze použít s duplexní kontrakty.  
   
- Pro kontraktů požadavek-odpověď kontextu zabezpečení režim souboru cookie tokeny pracovní pouze v případě vazby zásobníku pod elementem vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instance.  
+ Pro kontraktů požadavek-odpověď, tokeny kontextu zabezpečení režim souborů cookie pracovní pouze v případě vazby zásobníku pod element vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instancí.  
   
- Kontext zabezpečení režim souboru cookie pro jednosměrné kontrakty tokeny funguje, pokud vazba zásobníku pod elementem vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instance.  
+ Pro jednosměrné kontrakty, kontext zabezpečení režim souborů cookie tokeny funguje, pokud vazba zásobníku pod element vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instancí.  
   
-### <a name="session-mode-security-context-tokens"></a>Režim relace tokenů kontextu zabezpečení  
- Režim relace SCT funguje pro duplexní kontrakty, pokud vazba zásobníku pod elementem vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IDuplexChannel> nebo <xref:System.ServiceModel.Channels.IDuplexSessionChannel> instance.  
+### <a name="session-mode-security-context-tokens"></a>Režim relace tokeny kontextu zabezpečení  
+ Režim relace SCT funguje pro duplexní kontrakty, pokud vazba zásobníku pod element vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IDuplexChannel> nebo <xref:System.ServiceModel.Channels.IDuplexSessionChannel> instancí.  
   
- Režim relace SCT funguje pro požadavek-odpověď smlouvy, pokud vazba zásobníku pod elementem vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IDuplexChannel>, <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel>, instancí.  
+ Režim relace SCT funguje pro požadavek-odpověď smlouvy, pokud vazba zásobníku pod element vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IDuplexChannel>, <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel>, instance.  
   
- Režim relace SCT funguje pro kontrakty 1 způsob, pokud vazba zásobníku pod elementem vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IDuplexChannel>, <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instance.  
+ Režim relace SCT funguje pro kontrakty 1-způsob, jak v případě vazby zásobníku pod element vazby zabezpečení podporuje vytváření <xref:System.ServiceModel.Channels.IDuplexChannel>, <xref:System.ServiceModel.Channels.IDuplexSessionChannel>, <xref:System.ServiceModel.Channels.IRequestChannel> nebo <xref:System.ServiceModel.Channels.IRequestSessionChannel> instancí.  
   
-## <a name="deriving-from-a-standard-binding"></a>Odvozování z standardní vazby  
- Místo vytvoření zcela nové třídy vazba, je možné rozšířit jednu z existujících vazby poskytované systémem. Podobně jako v předchozím případě je nutné přepsat <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> metoda a <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnost.  
+## <a name="deriving-from-a-standard-binding"></a>Odvozený od standardního vazby  
+ Místo vytvoření zcela nové třídy vazby, je možné si můžete rozšířit jednu existující vazby poskytované systémem. Podobně jako v předchozím případě je nutné přepsat <xref:System.ServiceModel.Channels.Binding.CreateBindingElements%2A> metoda a <xref:System.ServiceModel.Channels.Binding.Scheme%2A> vlastnost.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Channels.Binding>  

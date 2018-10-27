@@ -2,12 +2,12 @@
 title: OperationContextScope
 ms.date: 03/30/2017
 ms.assetid: 11c11108-8eb4-4d49-95a0-83285a812262
-ms.openlocfilehash: 09ead071c5d8320452724edbb1c7f7f5e0124421
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 499d3e9824ede493043b996d581b079ec23938f8
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857966"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190824"
 ---
 # <a name="operationcontextscope"></a>OperationContextScope
 Ukázka OperationContextScope ukazuje, jak odeslat další informace o používání hlaviček volání Windows Communication Foundation (WCF). V této ukázce serverů i klientů jsou konzolové aplikace.  
@@ -20,7 +20,7 @@ Ukázka OperationContextScope ukazuje, jak odeslat další informace o použív�
 ## <a name="messageheaderreader"></a>MessageHeaderReader  
  Toto je ukázková služba, která přijme zprávu od klienta a pokusí se vyhledat hlavičku v <xref:System.ServiceModel.OperationContext.IncomingMessageHeaders%2A> kolekce. Klient předá identifikátoru GUID, který odešle v hlavičce a služba načte vlastní hlavičky a pokud existuje, porovná ho s identifikátorem GUID jako argument předaný klientem.  
   
-```  
+```csharp
 public bool RetrieveHeader(string guid)  
 {  
      MessageHeaders messageHeaderCollection =   
@@ -57,7 +57,7 @@ public bool RetrieveHeader(string guid)
 ## <a name="messageheaderclient"></a>MessageHeaderClient  
  Toto je implementace klienta, který používá proxy server generovaných [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ke komunikaci se vzdálenou službou. Nejprve vytvoří dva objekty proxy `MessageHeaderReaderClient`.  
   
-```  
+```csharp
 //Create two clients to the remote service.  
 MessageHeaderReaderClient client1 = new MessageHeaderReaderClient();  
 MessageHeaderReaderClient client2 = new MessageHeaderReaderClient();  
@@ -65,7 +65,7 @@ MessageHeaderReaderClient client2 = new MessageHeaderReaderClient();
   
  Klient pak vytvoří OperationContextScope a obory na `client1`. Přidá <xref:System.ServiceModel.Channels.MessageHeader> k <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders%2A> a vyvolá jednoho volání na obou klientských počítačích. Zajišťuje, že záhlaví se odesílají pouze na `client1` a ne v `client2` zkontrolovat návratovou hodnotu z `RetrieveHeader` volání.  
   
-```  
+```csharp
 using (new OperationContextScope(client1.InnerChannel))  
 {  
     //Create a new GUID that is sent as the header.  
@@ -92,7 +92,7 @@ using (new OperationContextScope(client1.InnerChannel))
   
  Tato ukázka je v místním prostředí. Následující ukázkový výstup spuštění ukázka je k dispozici:  
   
-```  
+```console  
 Prompt> Service.exe  
 The service is ready.  
 Press <ENTER> to terminate service.  

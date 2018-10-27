@@ -6,19 +6,19 @@ helpviewer_keywords:
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 1bee42db7b9a92723b0640d0b3747a7921b8617c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1b16ad5b3426316197d69fc137e2da7f96e7ab49
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43525759"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185638"
 ---
 # <a name="controlling-net-framework-logging"></a>Řízení přihlašování rozhraní .NET Framework
 Pro zaznamenání událostí modulu Common Language Runtime (CLR) je možné použít trasování událostí systému Windows (ETW). Můžete vytvořit a zobrazit trasování pomocí následujících nástrojů:  
   
--   [Logman](https://go.microsoft.com/fwlink/?LinkId=150916) a [Tracerpt](https://go.microsoft.com/fwlink/?LinkId=150919) nástroje příkazového řádku, které jsou součástí operačního systému Windows.  
+-   [Logman](/windows-server/administration/windows-commands/logman) a [Tracerpt](/windows-server/administration/windows-commands/tracerpt_1) nástroje příkazového řádku, které jsou součástí operačního systému Windows.  
   
--   [Xperf](https://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) nástroje v [Windows Performance Toolkit](https://msdn.microsoft.com/library/windows/hardware/hh162945.aspx). Další informace o nástroji Xperf naleznete v tématu [blogu Windows Performance](https://go.microsoft.com/fwlink/?LinkId=179509).  
+-   [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) nástroje v [Windows Performance Toolkit](/windows-hardware/test/wpt/). Další informace o nástroji Xperf naleznete v tématu [blogu Windows Performance](https://go.microsoft.com/fwlink/?LinkId=179509).  
   
  Pro zaznamenání informací události modulu CLR musí být v počítači nainstalován zprostředkovatel modulu CLR. Pokud chcete potvrdit, že je daný poskytovatel nainstalován, zadejte `logman query providers` příkazového řádku. Zobrazí se seznam zprostředkovatelů. Tento seznam by měl obsahovat následující záznam pro zprostředkovatele modulu CLR.  
   
@@ -28,12 +28,12 @@ Provider                                 GUID
 .NET Common Language Runtime    {E13C0D23-CCBC-4E12-931B-D9CC2EEE27E4}.  
 ```  
   
- Pokud není zprostředkovatel modulu CLR uveden, můžete instalaci na Windows Vista a novějších operačních systémů s použitím Windows [Wevtutil](https://go.microsoft.com/fwlink/?LinkID=150915) nástroj příkazového řádku. Otevřete okno příkazového řádku jako správce. Změňte adresář na výzvy [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] složky (% WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET verze >\ ). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:  
+ Pokud není zprostředkovatel modulu CLR uveden, můžete instalaci na Windows Vista a novějších operačních systémů s použitím Windows [Wevtutil](/windows-server/administration/windows-commands/wevtutil) nástroj příkazového řádku. Otevřete okno příkazového řádku jako správce. Změňte adresář na výzvy [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] složky (% WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET verze >\ ). Tato složka obsahuje soubor CLR-ETW.man. Pro instalaci zprostředkovatele modulu CLR zadejte v příkazovém řádku následující příkaz:  
   
  `wevtutil im CLR-ETW.man`  
   
 ## <a name="capturing-clr-etw-events"></a>Zachycení událostí CLR ETW  
- Můžete použít [Logman](https://go.microsoft.com/fwlink/?LinkId=150916) a [Xperf](https://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) nástroje příkazového řádku k zachycení událostí trasování událostí pro Windows a [Tracerpt](https://go.microsoft.com/fwlink/?LinkId=150919) a [Xperf](https://msdn.microsoft.com/library/windows/hardware/hh162920.aspx) k dekódování události trasování.  
+ Můžete použít [Logman](/windows-server/administration/windows-commands/logman) a [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) nástroje příkazového řádku k zachycení událostí trasování událostí pro Windows a [Tracerpt](/windows-server/administration/windows-commands/tracerpt_1) a [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) k dekódování události trasování.  
   
  K zapnutí protokolování musí uživatel specifikovat tři věci:  
   
@@ -109,5 +109,5 @@ Provider                                 GUID
      Tento příkaz způsobí, že nástroj XPerf vypíše paměť událostí do souboru CSV, který je možné zobrazit. Protože různé události mají různá pole, tento soubor CSV obsahuje před daty více než jeden řádek záhlaví. První pole každého řádku je typ události, který určuje záhlaví, které se má použít pro určení zbývajících polí.  
   
 ## <a name="see-also"></a>Viz také  
- [Sada Windows Performance Toolkit](https://go.microsoft.com/fwlink/?LinkID=161141)  
+ [Sada Windows Performance Toolkit](/windows-hardware/test/wpt/)  
  [Události Trasování událostí pro Windows v CLR (Common Language Runtime)](../../../docs/framework/performance/etw-events-in-the-common-language-runtime.md)

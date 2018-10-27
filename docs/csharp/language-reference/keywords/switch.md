@@ -12,26 +12,26 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 08b63d67b6175d18bee1317cc8908d876fbb4039
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: b23c43ebdb8d4277344949a18b1bc999b27d60e9
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836761"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188609"
 ---
 # <a name="switch-c-reference"></a>Přepnout (referenční dokumentace jazyka C#)
 
 `switch` je příkaz výběru, který vybere jeden *oddíl přepínání* ke spuštění ze seznamu kandidátů podle porovnávání s *odpovídat výrazu*.
 
-[!code-csharp[switch#1](../../../../samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]
+[!code-csharp[switch#1](~/samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]
 
 `switch` Příkazu se často používá jako alternativu k [if-else](if-else.md) sestavit, pokud jeden výraz je testován vůči tři nebo více podmínek. Například následující `switch` příkaz určuje, zda proměnná typu `Color` obsahuje jednu ze tří hodnot:
 
-[!code-csharp[switch#3](../../../../samples/snippets/csharp/language-reference/keywords/switch/switch3.cs#1)]
+[!code-csharp[switch#3](~/samples/snippets/csharp/language-reference/keywords/switch/switch3.cs#1)]
 
 Je ekvivalentní v následujícím příkladu, který používá `if` - `else` vytvořit.
 
-[!code-csharp[switch#3a](../../../../samples/snippets/csharp/language-reference/keywords/switch/switch3a.cs#1)]
+[!code-csharp[switch#3a](~/samples/snippets/csharp/language-reference/keywords/switch/switch3a.cs#1)]
 
 ## <a name="the-match-expression"></a>Výraz shody
 
@@ -98,7 +98,7 @@ Můžete tento problém vyřešit a vyloučit upozornění kompilátoru v jednom
 
 - Změnou pořadí oddílů přepínače.
 
-- Pomocí < /a name = "kdy" > při klauzule</a> v `case` popisek.
+- Pomocí [po klauzuli](#when) v `case` popisek.
 
 ## <a name="the-default-case"></a>`default` Případ
 
@@ -171,11 +171,11 @@ case null:
 
 Následující příklad používá vzor typu k poskytnutí informací o různé druhy typů kolekce.
 
-[!code-csharp[switch#5](../../../../samples/snippets/csharp/language-reference/keywords/switch/type-pattern.cs#1)]
+[!code-csharp[type-pattern#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern.cs#1)]
 
 Bez porovnávání vzorů, může být napsán takto následujícím způsobem. Použití porovnávání vzorů typu produkuje kompaktnějším čitelné kódu pomocí tím eliminuje nutnost otestovat, jestli je výsledek převodu `null` nebo provádět opakované přetypování.
 
-[!code-csharp[switch#6](../../../../samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
+[!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
 ## <a name="a-namewhen--the-case-statement-and-the-when-clause"></a><a name="when" /> `case` Příkazu a `when` – klauzule
 
@@ -183,13 +183,13 @@ Od verze C# 7.0, protože příkazy case musí být vzájemně se vylučující,
 
 Následující příklad definuje základní `Shape` třídy, `Rectangle` třídu odvozenou od `Shape`a `Square` třídu odvozenou od `Rectangle`. Používá `when` klauzule zajistěte, aby `ShowShapeInfo` zpracovává `Rectangle` objekt, který má přiřazenou stejné délky a šířky jako `Square` i v případě, že nebyla inicializována jako `Square` objektu. Metoda se nepokusí k zobrazení informací o objektu, který je buď `null` nebo tvar, jehož obsah je nula.
 
-[!code-csharp[switch#8](../../../../samples/snippets/csharp/language-reference/keywords/switch/when-clause.cs#1)]
+[!code-csharp[when-clause#1](~/samples/snippets/csharp/language-reference/keywords/switch/when-clause.cs#1)]
 
 Všimněte si, že `when` klauzule v příkladu, která se pokusí otestovat, jestli `Shape` objekt `null` nespustí. Vzor správný typ pro testování `null` je `case null:`.
 
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
-Další informace najdete v tématu [příkazu switch](/dotnet/csharp/language-reference/language-specification/statements#the-switch-statement) v [specifikace jazyka C#](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
+Další informace najdete v tématu [příkazu switch](~/_csharplang/spec/statements.md#the-switch-statement) v [specifikace jazyka C#](../language-specification/index.md). Specifikace jazyka je úplným a rozhodujícím zdrojem pro syntaxi a použití jazyka C#.
 
 ## <a name="see-also"></a>Viz také:
 

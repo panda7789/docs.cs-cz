@@ -2,12 +2,12 @@
 title: Doporučené postupy hostování Internetové informační služby
 ms.date: 03/30/2017
 ms.assetid: 0834768e-9665-46bf-86eb-d4b09ab91af5
-ms.openlocfilehash: 2cb193cd2f504b5010ede6887e814e0c4d0a1a3c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 5efa4c56cafe32dcc6864ba0bd68d14ea10b15e3
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840742"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187567"
 ---
 # <a name="internet-information-services-hosting-best-practices"></a>Doporučené postupy hostování Internetové informační služby
 Toto téma popisuje některé osvědčené postupy pro hostování služby Windows Communication Foundation (WCF).  
@@ -35,7 +35,7 @@ Toto téma popisuje některé osvědčené postupy pro hostování služby Windo
 ## <a name="wcf-in-multi-homed-or-multi-named-scenarios"></a>U scénářů s více adresami nebo více pojmenované WCF  
  Nasadíte služby WCF v IIS webové farmy služby, kde sadu počítačů sdílet společný externí název (například `http://www.contoso.com`) jsou jednotlivě řešený různé názvy hostitelů, ale (například `http://www.contoso.com` může směrovat provoz do dvou různých počítačích s názvem `http://machine1.internal.contoso.com` a `http://machine2.internal.contoso.com`). Tento scénář nasazení plně podporuje WCF, ale vyžaduje speciální konfigurace web služby IIS, který hostuje služby WCF k zobrazení správné (externí) název hostitele v metadatech služby (Web Services Description Language).  
   
- Ujistěte se, že se zobrazí správný název hostitele v metadatech služby WCF generuje, nakonfigurujte výchozí identitu pro web služby IIS, který je hostitelem služeb WCF pro použití explicitní název hostitele. Počítačů umístěných ve farmě www.contoso.com byste například použít vazbu webu služby IIS z *:80:www.contoso.com pro protokol HTTP a \*: 443:www.contoso.com pro protokol HTTPS.  
+ Ujistěte se, že se zobrazí správný název hostitele v metadatech služby WCF generuje, nakonfigurujte výchozí identitu pro web služby IIS, který je hostitelem služeb WCF pro použití explicitní název hostitele. Třeba počítače, které se nacházejí uvnitř `www.contoso.com` farmy byste použít vazbu webu služby IIS z *:80:www.contoso.com pro protokol HTTP a \*: 443:www.contoso.com pro protokol HTTPS.  
   
  Vazby webu služby IIS můžete nakonfigurovat pomocí modulu snap-in Microsoft Management Console (MMC) služby IIS.  
   

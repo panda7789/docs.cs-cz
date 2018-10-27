@@ -2,14 +2,12 @@
 title: Změny v oboru názvů System.Uri ve verzi 2.0
 ms.date: 03/30/2017
 ms.assetid: 35883fe9-2d09-4d8b-80ca-cf23a941e459
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 97decd9054dfcdfc41204bf7683aebb95096e9d2
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 987010b8367069e8089df3f809d23f258bb68f2b
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47194920"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188429"
 ---
 # <a name="changes-to-the-systemuri-namespace-in-version-20"></a>Změny v oboru názvů System.Uri ve verzi 2.0
 

@@ -10,51 +10,51 @@ helpviewer_keywords:
 - images [Windows Forms], creating
 - GDI+, creating images
 ms.assetid: 162861f9-f050-445e-8abb-b2c43a918b8b
-ms.openlocfilehash: 3c25ddcfb3a566055afd5e233c2a69b3b7a8c66e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 54175e27ca46431299db369f67f02051ef08d0d2
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33526485"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185193"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>Postupy: Vytváření grafických objektů pro kreslení
-Předtím, než můžete kreslení čar a tvarů, vykreslení text, nebo zobrazit a pracovat s obrázky s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je nutné vytvořit <xref:System.Drawing.Graphics> objektu. <xref:System.Drawing.Graphics> Objektu představuje [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení prostor a je objekt, který se používá k vytvoření grafické bitové kopie.  
+Předtím, než můžete kreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s obrázky s [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)], je potřeba vytvořit <xref:System.Drawing.Graphics> objektu. <xref:System.Drawing.Graphics> Objekt představuje [!INCLUDE[ndptecgdiplus](../../../../includes/ndptecgdiplus-md.md)] kreslení ploše a je objekt, který se používá k vytvoření grafické obrázky.  
   
- Při práci s grafiky existují dva kroky:  
+ Při práci s grafikou existují dva kroky:  
   
 1.  Vytváření <xref:System.Drawing.Graphics> objektu.  
   
-2.  Pomocí <xref:System.Drawing.Graphics> objekt, který chcete kreslení čar a tvarů, vykreslení text, nebo zobrazit a pracovat s obrázky.  
+2.  Použití <xref:System.Drawing.Graphics> objektů pro kreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s obrázky.  
   
 ## <a name="creating-a-graphics-object"></a>Vytvoření objektu grafiky  
- Objekt grafiky lze vytvořit v mnoha různými způsoby.  
+ Grafický objekt můžete vytvořit mnoha různými způsoby.  
   
 #### <a name="to-create-a-graphics-object"></a>Chcete-li vytvořit objekt grafiky  
   
--   Získat odkaz na objekt grafiky jako součást <xref:System.Windows.Forms.PaintEventArgs> v <xref:System.Windows.Forms.Control.Paint> událost formuláře nebo ovládacího prvku. To je obvykle jak získat odkaz na objekt grafiky při vytváření kódu vykreslování ovládacího prvku. Podobně můžete také získat objekt grafiky jako vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> při zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí pro <xref:System.Drawing.Printing.PrintDocument>.  
+-   Jako součást, zobrazí se odkaz na objekt grafiky <xref:System.Windows.Forms.PaintEventArgs> v <xref:System.Windows.Forms.Control.Paint> události formuláře nebo ovládacího prvku. To je obvykle získání odkazu na objekt grafiky při vytváření Malování kódu pro ovládací prvek. Podobně můžete získat také grafický objekt jako vlastnost <xref:System.Drawing.Printing.PrintPageEventArgs> při zpracování <xref:System.Drawing.Printing.PrintDocument.PrintPage> událostí pro <xref:System.Drawing.Printing.PrintDocument>.  
   
      -nebo-  
   
--   Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> metoda ovládacího prvku nebo formuláře získat odkaz na <xref:System.Drawing.Graphics> objekt, který reprezentuje kreslicí plochy tohoto ovládacího prvku nebo formuláře. Tuto metodu použijte, pokud chcete k vykreslení na formulář nebo ovládací prvek, který již existuje.  
+-   Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> ovládacího prvku nebo formuláře k získání odkazu na metodu <xref:System.Drawing.Graphics> objekt, který reprezentuje na návrhovém povrchu tohoto ovládacího prvku nebo formuláře. Tuto metodu použijte, pokud chcete vykreslovat na formulář nebo ovládací prvek, který již existuje.  
   
      -nebo-  
   
--   Vytvoření <xref:System.Drawing.Graphics> objekt z libovolného objektu, který dědí z <xref:System.Drawing.Image>. Tento přístup je užitečné, pokud chcete změnit již existující bitové kopie.  
+-   Vytvoření <xref:System.Drawing.Graphics> objekt z libovolného objektu, která dědí z <xref:System.Drawing.Image>. Tento přístup je užitečný, pokud chcete změnit již existující image.  
   
-     Následujících oddílech najdete podrobnosti o každém z těchto procesů.  
+     Následující části obsahují podrobné informace o každé z těchto procesů.  
   
 ## <a name="painteventargs-in-the-paint-event-handler"></a>PaintEventArgs v obslužné rutině události Malování  
- Při programování <xref:System.Windows.Forms.PaintEventHandler> pro ovládací prvky nebo <xref:System.Drawing.Printing.PrintDocument.PrintPage> pro <xref:System.Drawing.Printing.PrintDocument>, objekt grafiky je k dispozici jako jedna z vlastností <xref:System.Windows.Forms.PaintEventArgs> nebo <xref:System.Drawing.Printing.PrintPageEventArgs>.  
+ Při programování <xref:System.Windows.Forms.PaintEventHandler> pro ovládací prvky nebo <xref:System.Drawing.Printing.PrintDocument.PrintPage> pro <xref:System.Drawing.Printing.PrintDocument>, grafický objekt je k dispozici jako jedna z vlastností objektu <xref:System.Windows.Forms.PaintEventArgs> nebo <xref:System.Drawing.Printing.PrintPageEventArgs>.  
   
-#### <a name="to-obtain-a-reference-to-a-graphics-object-from-the-painteventargs-in-the-paint-event"></a>Chcete-li získat odkaz na objekt grafiky z PaintEventArgs v událost Malování  
+#### <a name="to-obtain-a-reference-to-a-graphics-object-from-the-painteventargs-in-the-paint-event"></a>K získání odkazu na objekt grafiky z PaintEventArgs v událost malby  
   
 1.  Deklarovat <xref:System.Drawing.Graphics> objektu.  
   
-2.  Přiřaďte proměnnou odkazovat na <xref:System.Drawing.Graphics> objekt předaný v rámci <xref:System.Windows.Forms.PaintEventArgs>.  
+2.  Přiřazení proměnné odkazovat <xref:System.Drawing.Graphics> objekt předán jako součást <xref:System.Windows.Forms.PaintEventArgs>.  
   
-3.  Vložení kódu k vyplnění formuláře nebo ovládacího prvku.  
+3.  Vložte kód pro vykreslení formulář nebo ovládací prvek.  
   
-     Následující příklad ukazuje, jak odkazovat <xref:System.Drawing.Graphics> objektu z <xref:System.Windows.Forms.PaintEventArgs> v <xref:System.Windows.Forms.Control.Paint> událostí:  
+     Následující příklad ukazuje způsob vytvoření odkazu <xref:System.Drawing.Graphics> objektu z <xref:System.Windows.Forms.PaintEventArgs> v <xref:System.Windows.Forms.Control.Paint> události:  
   
     ```vb  
     Private Sub Form1_Paint(sender As Object, pe As PaintEventArgs) Handles _  
@@ -89,12 +89,12 @@ Předtím, než můžete kreslení čar a tvarů, vykreslení text, nebo zobrazi
        }  
     ```  
   
-## <a name="creategraphics-method"></a>CreateGraphics – metoda  
- Můžete také <xref:System.Windows.Forms.Control.CreateGraphics%2A> metoda ovládacího prvku nebo formuláře získat odkaz na <xref:System.Drawing.Graphics> objekt, který reprezentuje kreslicí plochy tohoto ovládacího prvku nebo formuláře.  
+## <a name="creategraphics-method"></a>Metodu CreateGraphics  
+ Můžete také použít <xref:System.Windows.Forms.Control.CreateGraphics%2A> ovládacího prvku nebo formuláře k získání odkazu na metodu <xref:System.Drawing.Graphics> objekt, který reprezentuje na návrhovém povrchu tohoto ovládacího prvku nebo formuláře.  
   
-#### <a name="to-create-a-graphics-object-with-the-creategraphics-method"></a>Chcete-li vytvořit objekt grafiky s metodou CreateGraphics  
+#### <a name="to-create-a-graphics-object-with-the-creategraphics-method"></a>Chcete-li vytvořit grafický objekt s metodu CreateGraphics  
   
--   Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> metoda formuláře nebo ovládacího prvku, na který chcete vykreslit grafiky.  
+-   Volání <xref:System.Windows.Forms.Control.CreateGraphics%2A> metody formuláře nebo ovládacího prvku, na který chcete vykreslit grafiky.  
   
     ```vb  
     Dim g as Graphics  
@@ -117,14 +117,14 @@ Předtím, než můžete kreslení čar a tvarů, vykreslení text, nebo zobrazi
     g = this->CreateGraphics();  
     ```  
   
-## <a name="create-from-an-image-object"></a>Vytvoření z bitové kopie objektu  
- Kromě toho můžete vytvořit objekt grafiky z libovolného objektu, která je odvozena z <xref:System.Drawing.Image> třídy.  
+## <a name="create-from-an-image-object"></a>Vytvořit z Image objektu  
+ Kromě toho můžete vytvořit grafický objekt z libovolného objektu, která je odvozena od <xref:System.Drawing.Image> třídy.  
   
 #### <a name="to-create-a-graphics-object-from-an-image"></a>Chcete-li vytvořit objekt grafiky z bitové kopie  
   
--   Volání <xref:System.Drawing.Graphics.FromImage%2A?displayProperty=nameWithType> metodu název proměnné bitové kopie, ze kterého chcete vytvořit <xref:System.Drawing.Graphics> objektu.  
+-   Volání <xref:System.Drawing.Graphics.FromImage%2A?displayProperty=nameWithType> metodu název proměnné Image, ze kterého chcete vytvořit <xref:System.Drawing.Graphics> objektu.  
   
-     Následující příklad ukazuje, jak používat <xref:System.Drawing.Bitmap> objektu:  
+     Následující příklad ukazuje způsob použití <xref:System.Drawing.Bitmap> objektu:  
   
     ```vb  
     Dim myBitmap as New Bitmap("C:\Documents and Settings\Joe\Pics\myPic.bmp")  
@@ -144,24 +144,22 @@ Předtím, než můžete kreslení čar a tvarů, vykreslení text, nebo zobrazi
     ```  
   
 > [!NOTE]
->  Můžete vytvořit pouze <xref:System.Drawing.Graphics> objekty z neindexované .bmp soubory, jako jsou soubory .bmp 16bitové, 24bitový a 32bitové verze. Každý pixel soubory .bmp neindexované obsahuje barvu, na rozdíl od pixelů indexované .bmp souborů, které podržte index k tabulce barev.  
+>  Můžete vytvořit pouze <xref:System.Drawing.Graphics> objekty ze souborů neindexované .bmp, jako jsou například soubory .bmp 16-bit, 24 bitů a 32-bit. Každý pixel neindexované BMP obsahuje barvu, na rozdíl od indexované .bmp soubory, které uložení indexu tabulky barev v pixelech.  
   
--  
+## <a name="drawing-and-manipulating-shapes-and-images"></a>Kreslení a manipulace s nimi obrazce a obrázky  
+ Po jeho vytvoření, <xref:System.Drawing.Graphics> objekt slouží k vykreslení čar a obrazců, vykreslení textu, nebo zobrazení a manipulaci s imagí. Instanční objekty, které se používají s <xref:System.Drawing.Graphics> objektu jsou:  
   
-## <a name="drawing-and-manipulating-shapes-and-images"></a>Kreslení a manipulace s nimi tvarů a bitové kopie  
- Po vytvoření <xref:System.Drawing.Graphics> objekt může sloužit k kreslení čar a tvarů, vykreslení text, nebo zobrazit a pracovat s obrázky. Hlavní objekty, které se používají s <xref:System.Drawing.Graphics> objekt jsou:  
+-   <xref:System.Drawing.Pen> Třídy – používat pro kreslení čar, osnovy obrazce nebo jiné geometrické reprezentace vykreslování.  
   
--   <xref:System.Drawing.Pen> Třída – používat pro kreslení čar, osnovy tvarů nebo jiných geometrickou reprezentace vykreslování.  
+-   <xref:System.Drawing.Brush> Třídy – používané pro vyplnění oblasti grafiky, jako je například vyplněné obrazce, Image nebo text.  
   
--   <xref:System.Drawing.Brush> Třída – použít pro naplnění oblastí grafiky, jako je například vyplněné tvary, Image nebo text.  
+-   <xref:System.Drawing.Font> Třídy – popisuje, co budou použity při generování text obrazce.  
   
--   <xref:System.Drawing.Font> Třída – obsahuje popis co obrazce pro použití při vykreslování textu.  
+-   <xref:System.Drawing.Color> Struktura – představuje různé barvy pro zobrazení.  
   
--   <xref:System.Drawing.Color> Struktura – představuje různé barvy k zobrazení.  
+#### <a name="to-use-the-graphics-object-you-have-created"></a>Použití objektu grafiky, které jste vytvořili  
   
-#### <a name="to-use-the-graphics-object-you-have-created"></a>Použití grafických objektu, který jste vytvořili  
-  
--   Pracovat na příslušný objekt uvedené výše k vykreslení, co potřebujete.  
+-   Práce s odpovídající objekt uvedené výše, chcete-li nakreslit, co potřebujete.  
   
      Další informace naleznete v následujících tématech:  
   

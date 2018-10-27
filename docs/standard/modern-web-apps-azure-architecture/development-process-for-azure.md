@@ -4,12 +4,12 @@ description: Navrhování moderních webových aplikací pomocí ASP.NET Core a 
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/28/2018
-ms.openlocfilehash: a614cfe3d3437426893d8748165b2ef4d6389765
-ms.sourcegitcommit: daa8788af67ac2d1cecd24f9f3409babb2f978c9
+ms.openlocfilehash: 487a303e5cf572cf4173423588ee7fb5a93cb394
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/01/2018
-ms.locfileid: "47863595"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185615"
 ---
 # <a name="development-process-for-azure"></a>Proces vývoje pro Azure
 
@@ -94,7 +94,7 @@ Nové sestavení se aktivuje na server sestavení pokaždé, když je do úloži
 
 #### <a name="step-4-build-server-continuous-delivery"></a>Krok 4. Sestavení serveru: Průběžné doručování
 
-Po sestavení bylo dokončeno, proces průběžného Doručování vyzvedne, až bude vytvořen artefaktů sestavení. Bude se jednat webové nasazení balíčku. Server sestavení se nasadí do služby Azure App Service, nahradí všechny existující služby nově vytvořené sadou tento balíček. Obvykle tento krok, zaměřuje přípravné prostředí, ale některé aplikace nasadit přímo do produkčního prostředí prostřednictvím proces průběžného Doručování.
+Po úspěšném sestavení proces průběžného Doručování vyzvedne, až bude vytvořen artefaktů sestavení. Bude se jednat webové nasazení balíčku. Server sestavení se nasadí do služby Azure App Service, nahradí všechny existující služby nově vytvořené sadou tento balíček. Obvykle tento krok, zaměřuje přípravné prostředí, ale některé aplikace nasadit přímo do produkčního prostředí prostřednictvím proces průběžného Doručování.
 
 #### <a name="step-5-azure-app-service-web-app"></a>Krok 5. Webová aplikace Azure App Service
 

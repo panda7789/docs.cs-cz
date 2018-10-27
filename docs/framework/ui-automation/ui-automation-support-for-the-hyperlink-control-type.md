@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 110cceea-5932-4955-a1a6-13afc51422b2
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 2e454f968bbb80f0e59142dc623fde5d455a78d1
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 8e2140d02b39a181f55da2c0bed4826dc893f068
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47200425"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185798"
 ---
 # <a name="ui-automation-support-for-the-hyperlink-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku hypertextový odkaz
 > [!NOTE]
@@ -59,7 +59,7 @@ ms.locfileid: "47200425"
 |---------------------------------------|--------------------|-----------|  
 |<xref:System.Windows.Automation.Provider.IInvokeProvider>|Ano|Všechny ovládací prvky hyperlink musí podporovat model Invoke.|  
 |<xref:System.Windows.Automation.Provider.IValueProvider>|Závisí|Ovládací prvky hypertextový odkaz by měl podporovat vzoru ovládacích prvků hodnota, pokud odkaz obsahuje informace, které jsou použitelnější a srozumitelné pro uživatele.|  
-|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|Třeba `"http://www...."`.|Adresa URL pro internetovou nebo intranetovou adresu je příkladem hypertextový odkaz, který obsahuje informace, které jsou srozumitelné pro uživatele. Programový odkaz, ale má smysl pouze k aplikaci a nedoporučuje se používat pro vlastnost Value.|  
+|<xref:System.Windows.Automation.Provider.IValueProvider.Value>|Třeba `"https://www...."`.|Adresa URL pro internetovou nebo intranetovou adresu je příkladem hypertextový odkaz, který obsahuje informace, které jsou srozumitelné pro uživatele. Programový odkaz, ale má smysl pouze k aplikaci a nedoporučuje se používat pro vlastnost Value.|  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>Události automatizace uživatelského rozhraní vyžaduje  

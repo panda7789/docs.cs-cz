@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: c617b2d7b56618867fe92cbe1d9ee04aa4c3ab64
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 51cc24fd8054b87b6c92a02450420a9c4abef525
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45653197"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50191087"
 ---
 # <a name="c-features-that-support-linq"></a>Funkce C# podporující LINQ
 Následující část představuje nové jazykové konstrukce zavedené v jazyce C# 3.0. I když tyto nové funkce se používají v míře s [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dotazy, nejsou omezena na [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] a můžete použít v libovolném kontextu, kde můžete najít je užitečné.  
@@ -47,13 +47,26 @@ var query = from str in stringArray
 ```csharp  
 Customer cust = new Customer { Name = "Mike", Phone = "555-1212" };  
 ```  
-  
- Další informace najdete v tématu [inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md).  
-  
+Pokračujte v našich `Customer` třídy, se předpokládá, že je zdroj dat s názvem `IncomingOrders`a že pro jednotlivé objednávky s velkým `OrderSize`, jsme chtěli vytvořit nový `Customer` podle pořadí. Dotaz LINQ mohou být provedeny na tento zdroj dat a použití inicializace objektu tak, aby vyplnil kolekce:
+```csharp
+var newLargeOrderCustomers = from o in IncomingOrders
+                            where o.OrderSize > 5
+                            select new Customer { Name = o.Name, Phone = o.Phone };
+```
+Zdroj dat může mít více vlastností ležící pod pokličkou než `Customer` třídy jako `OrderSize`, ale s inicializace objektu se lisovaný data vrácená z dotazu na požadovaný datový typ, jsme zvolte data, která je relevantní pro naše třída. V důsledku toho jsme teď mají `IEnumerable` vyplněný novými `Customer`s jsme chtěli. Výše uvedené je také možné psát v syntaxe využívající metody LINQ na:
+```csharp
+var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
+```
+ Další informace naleznete v tématu:
+ 
+ - [Inicializátory objektu a kolekce](../../../../csharp/programming-guide/classes-and-structs/object-and-collection-initializers.md)
+
+ - [Syntaxe výrazu dotazu pro standardní operátory dotazu](../../../../csharp/programming-guide/concepts/linq/query-expression-syntax-for-standard-query-operators.md)
+
 ## <a name="anonymous-types"></a>Anonymní typy  
  Anonymní typ, který je vytvořen kompilátorem a název typu je dostupná jenom pro kompilátor. Anonymní typy poskytují pohodlný způsob, jak seskupit sadu vlastností dočasně ve výsledku dotazu bez nutnosti definovat samostatně pojmenovaných typů. Anonymní typy jsou inicializovány s výraz new a inicializátoru objektu, jak je znázorněno zde:  
   
-```  
+```csharp
 select new {name = cust.Name, phone = cust.Phone};  
 ```  
   
@@ -74,16 +87,7 @@ select new {name = cust.Name, phone = cust.Phone};
 -   [Výrazy lambda](../../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)  
   
 -   [Stromy výrazů (C#)](../../../../csharp/programming-guide/concepts/expression-trees/index.md)  
-  
-## <a name="auto-implemented-properties"></a>Automaticky implementované vlastnosti  
- Automaticky implementované vlastnosti stručnější Zkontrolujte deklaraci vlastnosti. Když deklarujete vlastnost, jak je znázorněno v následujícím příkladu, kompilátor vytvoří privátní, anonymní pomocným polem, které nejsou přístupné s výjimkou prostřednictvím vlastnosti getter a setter.  
-  
-```csharp  
-public string Name {get; set;}  
-```  
-  
- Další informace najdete v tématu [implemented Properties](../../../../csharp/programming-guide/classes-and-structs/auto-implemented-properties.md).  
-  
+   
 ## <a name="see-also"></a>Viz také
 
 - [Language-Integrated Query (LINQ) (C#)](../../../../csharp/programming-guide/concepts/linq/index.md)

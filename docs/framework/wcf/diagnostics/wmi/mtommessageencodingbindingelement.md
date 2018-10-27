@@ -2,19 +2,19 @@
 title: MtomMessageEncodingBindingElement
 ms.date: 03/30/2017
 ms.assetid: 4a9c6c3d-e561-4b2d-a693-7e84bdd3534a
-ms.openlocfilehash: 83fa879fbef94e2dc9c142dfb92a51a54a7b60cb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 49a640a666131491366646d6d486d25a515e35bf
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486524"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185703"
 ---
 # <a name="mtommessageencodingbindingelement"></a>MtomMessageEncodingBindingElement
 MtomMessageEncodingBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class MtomMessageEncodingBindingElement : MessageEncodingBindingElement  
 {  
   string Encoding;  
@@ -35,32 +35,32 @@ class MtomMessageEncodingBindingElement : MessageEncodingBindingElement
   
  Přístup k typu: jen pro čtení  
   
- Kódování znakové sady, který se má použít pro vysílání zpráv v vazby.  
+ Kódování znakové sady, chcete-li být použito pro vysílání zpráv z vazby.  
   
 ### <a name="maxreadpoolsize"></a>maxReadPoolSize  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Celé číslo, které definuje počet zpráv lze číst souběžně bez přidělení nového čtečky.  
+ Celé číslo, které definuje počet zpráv lze souběžně číst bez přidělení nových čtecích zařízení.  
   
 ### <a name="maxwritepoolsize"></a>maxWritePoolSize  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Celé číslo, které definuje počet zpráv lze najednou odeslat bez přiděluje nový zapisovače.  
+ Celé číslo, které definuje počet zpráv souběžně poslaných bez přidělení nových modulů pro zápis.  
   
-### <a name="readerquotas"></a>ReaderQuotas  
+### <a name="readerquotas"></a>readerQuotas  
  Datový typ: XmlDictionaryReaderQuotas, který  
   
  Přístup k typu: jen pro čtení  
   
- Kvóty čtečky.  
+ Kvóty čtecích zařízení.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

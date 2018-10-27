@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1149a3c3589cec0e952088a772ca036028c58ff5
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b905c8bb89e4b163952b9640b53fc3992ba5ca10
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43521351"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50189547"
 ---
 # <a name="icordebugmetadatalocatorgetmetadata-method"></a>ICorDebugMetaDataLocator::GetMetaData – metoda
 Dotaz vrátí úplnou cestu k modulu, jehož metadat je potřeba k dokončení operace, které ladicí program požadovaný ladicí program.  
@@ -46,7 +46,7 @@ HRESULT GetMetaData(
  [in] Řetězec zakončený hodnotou null, který představuje úplnou cestu k souboru. Pokud je úplná cesta není k dispozici, název a příponu souboru (*filename*. *rozšíření*).  
   
  `dwImageTimeStamp`  
- [in] Časové razítko ze záhlaví PE souboru obrázku. Tento parametr může potenciálně použít pro server symbolů ([SymSrv](https://msdn.microsoft.com/library/cc266470.aspx)) vyhledávání.  
+ [in] Časové razítko ze záhlaví PE souboru obrázku. Tento parametr může potenciálně použít pro server symbolů ([SymSrv](/windows/desktop/debug/using-symsrv)) vyhledávání.  
   
  `dwImageSize`  
  [in] Velikost bitové kopie ze záhlaví PE souboru. Tento parametr lze použít potenciálně pro vyhledávání SymSrv.  

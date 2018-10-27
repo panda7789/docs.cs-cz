@@ -2,12 +2,12 @@
 title: Přehled manipulace a nečinnosti
 ms.date: 03/30/2017
 ms.assetid: dd31b89b-eab6-45a1-8d0b-11e0eb84b234
-ms.openlocfilehash: 52cef7e617d577e6a63c8eaa79a6d9f74dd54bdf
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 6396c174b341b5ae937fa931488ee1bd3a5fcbd5
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086736"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187816"
 ---
 # <a name="manipulations-and-inertia-overview"></a>Přehled manipulace a nečinnosti
 *Manipulace* povolit uživatelům přesunout, otočit a změnit velikost prvky uživatelského rozhraní (UI) s použitím *manipulátory*. Manipulátor představuje myši nebo (v případě dotykově ovládaný) stylus nebo prstem.  
@@ -41,7 +41,7 @@ ms.locfileid: "49086736"
  Manipulátory jsou přidávání, přesunout a odebírání pro prvek uživatelského rozhraní, aplikace aktualizuje <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D> objektu voláním <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metody. Po prvním zahájení manipulace <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Started> událost se vyvolá.  
   
 > [!NOTE]
-> Manipulace s zpracování je mnohem efektivnější, při použití v prostředí založených na snímcích aktualizace. Při použití manipulace s zpracování v aplikaci Microsoft XNA, to není žádný problém vzhledem k tomu, že poskytuje založených na snímcích aktualizací pomocí rozhraní XNA framework [Game.Update](/previous-versions/windows/xna/bb199616%28v%3dxnagamestudio.41%29) metody. V jiném prostředí (například WinForms), musíte poskytnout vlastní logiku založených na snímcích pro shromažďování manipulace a pravidelně jim odesílání <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda v dávce.  
+> Manipulace s zpracování je mnohem efektivnější, při použití v prostředí založených na snímcích aktualizace. Při použití manipulace s zpracování v aplikaci Microsoft XNA, to není žádný problém vzhledem k tomu, že poskytuje založených na snímcích aktualizací pomocí rozhraní XNA framework [Game.Update](https://docs.microsoft.com/previous-versions/windows/xna/bb199616%28v%3dxnagamestudio.41%29) metody. V jiném prostředí (například WinForms), musíte poskytnout vlastní logiku založených na snímcích pro shromažďování manipulace a pravidelně jim odesílání <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.ProcessManipulators%2A> metoda v dávce.  
   
  Jako počet manipulátory nebo změnit jejich pozici <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> událost se vyvolá. Vlastnosti <xref:System.Windows.Input.Manipulations.Manipulation2DDeltaEventArgs> objekt, který je předán <xref:System.Windows.Input.Manipulations.ManipulationProcessor2D.Delta> obslužná rutina události zadejte změny původu, škálování, otočení a překladu, ke kterým došlo od poslední události. Původ manipulace změní, když manipulátory přesunout, a při přidání nebo odebrání manipulátory. Překlad hodnoty určují, kolik X nebo Y přesun obsahuje manipulaci.  
   

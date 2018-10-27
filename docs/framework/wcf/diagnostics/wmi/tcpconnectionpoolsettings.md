@@ -2,19 +2,19 @@
 title: TcpConnectionPoolSettings
 ms.date: 03/30/2017
 ms.assetid: 19acfba3-c057-4dbc-bac7-8674d7844d83
-ms.openlocfilehash: 4a30ad3ddfef5d39942345b0e0d5274eeff8e596
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: f9e1c043579f632f16a7cf36bf34c2467a743e47
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33485918"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50189560"
 ---
 # <a name="tcpconnectionpoolsettings"></a>TcpConnectionPoolSettings
 TcpConnectionPoolSettings  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class TcpConnectionPoolSettings  
 {  
   string GroupName;  
@@ -35,32 +35,32 @@ class TcpConnectionPoolSettings
   
  Přístup k typu: jen pro čtení  
   
- Název skupiny fondu připojení používá prvku vazby.  
+ Název skupiny fondu připojení používaný prvkem vazby.  
   
 ### <a name="idletimeout"></a>IdleTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Maximální čas, kdy může být připojení nečinnosti, než dojde k odpojení.  
+ Maximální doba, kterou může být připojení nečinné, než je odpojeno.  
   
 ### <a name="leasetimeout"></a>LeaseTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Maximální dobu pro dokončení před vypršením časového limitu operace zapůjčení.  
+ Maximální doba operace zapůjčení před vypršením časového limitu.  
   
 ### <a name="maxoutboundconnectionsperendpoint"></a>MaxOutboundConnectionsPerEndpoint  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet odchozí připojení pro každý koncový bod.  
+ Maximální počet odchozích připojení pro každý koncový bod.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

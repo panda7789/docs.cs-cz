@@ -3,12 +3,12 @@ title: Vytvoření klienta REST s využitím .NET Core
 description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 13466b717d0676c2db5edf4c98a4ead3e673b96c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 521c6edfa7163219ea86c6fb8444bc95859c9aa1
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397917"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50170299"
 ---
 # <a name="rest-client"></a>Klient REST
 
@@ -57,7 +57,7 @@ Většina editory kódu bude poskytovat dokončování pro různé verze knihove
 Po provedení těchto změn, měli byste spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) znovu tak, aby se balíček nainstaluje do systému.
 
 ## <a name="making-web-requests"></a>Vytváření webových požadavků
-Teď jste připravení začít, načítání dat z webu. V této aplikaci, nemusíte se věnovat čtení informací z [rozhraní API Githubu](https://developer.github.com/v3/). Načteme informace o projektech v rámci [.NET Foundation](http://www.dotnetfoundation.org/) zastřešující. Začnete tím, že požadavek na rozhraní API Githubu k načtení informací o projektech. Koncový bod, který budete používat: [ https://api.github.com/orgs/dotnet/repos ](https://api.github.com/orgs/dotnet/repos). Budete chtít získat všechny informace o těchto projektů, takže budete používat požadavek HTTP GET.
+Teď jste připravení začít, načítání dat z webu. V této aplikaci, nemusíte se věnovat čtení informací z [rozhraní API Githubu](https://developer.github.com/v3/). Načteme informace o projektech v rámci [.NET Foundation](https://www.dotnetfoundation.org/) zastřešující. Začnete tím, že požadavek na rozhraní API Githubu k načtení informací o projektech. Koncový bod, který budete používat: [ https://api.github.com/orgs/dotnet/repos ](https://api.github.com/orgs/dotnet/repos). Budete chtít získat všechny informace o těchto projektů, takže budete používat požadavek HTTP GET.
 Váš prohlížeč také používá HTTP GET požadavky, takže vložíte je, že adresy URL do prohlížeče informací vám bude přijímat a zpracování.
 
 Můžete použít <xref:System.Net.Http.HttpClient> třídy k vytvoření webových požadavků. Všechny moderní rozhraní .NET API, jako jsou <xref:System.Net.Http.HttpClient> podporuje pouze asynchronní metody pro jeho dlouho běžící rozhraní API.

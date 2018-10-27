@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 22e4c6dd1feb83ad0012b031238d0fafa7104d10
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: eac5f9f6c8b47a6f14898eac2505ecc890015010
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193993"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188117"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>Použití asynchronního vzoru založeného na úloze
 
@@ -744,7 +744,7 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
     btnDownload.IsEnabled = false;
     try
     {
-        txtContents.Text = await m_webPages["http://www.microsoft.com"];
+        txtContents.Text = await m_webPages["https://www.microsoft.com"];
     }
     finally { btnDownload.IsEnabled = true; }
 }

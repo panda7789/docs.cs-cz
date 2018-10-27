@@ -14,28 +14,21 @@ helpviewer_keywords:
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ddf8f52ab98d0188235d8c9f97293adced4bfe90
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 2e1db5447be5f46873b6648fc6791426b2886a75
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698312"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192613"
 ---
 # <a name="application-domains"></a>Aplikační domény
+
 Operační systémy a běhová prostředí obvykle poskytují určitou formu izolace mezi aplikacemi. Například Windows používá procesy k izolaci aplikací. Tato izolace je nezbytná k zajištění, že kód spuštěný v jedné aplikaci nemohl nepříznivě ovlivnit jiné nesouvisející aplikace.  
   
  Aplikační domény poskytují izolační hranici pro zabezpečení, spolehlivosti a správy verzí a pro uvolňování sestavení. Aplikační domény jsou obvykle vytvářeny hostitelská prostředí modulu runtime, která jsou odpovědná za spuštění modul common language runtime, před spuštěním aplikace.  
   
- Témata v této části dokumentace vysvětlují, jak použit aplikační domény k poskytování izolace mezi sestaveními.  
-  
- Tento přehled obsahuje následující části:  
-  
--   [Výhody izolace aplikací](#benefits)  
-  
--   [Referenční informace](#reference)  
-  
-<a name="benefits"></a>   
-## <a name="the-benefits-of-isolating-applications"></a>Výhody izolace aplikací  
+## <a name="the-benefits-of-isolating-applications"></a>Výhody izolace aplikací
+
  V minulosti byly hranice procesů použity k izolaci aplikací spuštěných na stejném počítači. Každá aplikace je načtena jako samostatný proces, který ji izoluje od jiných aplikací spuštěných na stejném počítači.  
   
  Aplikace jsou izolovány vzhledem k tomu, že adresy paměti jsou procesně relativní; ukazatel paměti předaný z jednoho procesu nelze žádným smysluplným způsobem v cílovém procesu. Kromě toho nemůžete provádět přímá volání mezi dvěma procesy. Místo toho musíte použít proxy servery, které zajišťují určitou úroveň dereference.  
@@ -61,9 +54,9 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
 -   Oprávnění udělená kódu mohou být řízena domény aplikace, ve kterém kód běží.  
   
-  
-## <a name="application-domains-and-assemblies"></a>Domény a sestavení aplikací  
- Toto téma popisuje vztah mezi doménami aplikací a sestaveními. Předtím, než může spustit kód, který ho obsahuje, je nutné načíst sestavení do domény aplikace. Spuštění Typická aplikace způsobí, že několik sestavení mají být načtena do domény aplikace.  
+## <a name="application-domains-and-assemblies"></a>Doménám a sestavením aplikací
+
+ Tato část popisuje vztah mezi doménami aplikací a sestaveními. Předtím, než může spustit kód, který ho obsahuje, je nutné načíst sestavení do domény aplikace. Spuštění Typická aplikace způsobí, že několik sestavení mají být načtena do domény aplikace.  
   
  Způsob, jakým je sestavení načteno Určuje, zda jeho just-in-time (JIT) kompilaci kódu může být sdílen více aplikačními doménami v procesu, a zda může být uvolněna z procesu sestavení.  
   
@@ -95,21 +88,24 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
 -   Všechny závislosti sestavení musí být umístěn a načíst, když je sestavení načteno jako doménově neutrální, protože závislost, která nemůže být načtena jako doménově neutrální, brání sestavení jsou načtena jako doménově neutrální.  
   
-## <a name="application-domains-and-threads"></a>Domény aplikace a vlákna  
+## <a name="application-domains-and-threads"></a>Domény aplikace a vlákna
+
  Domény aplikace tvoří hranici izolace zabezpečení, správy verzí, spolehlivost a uvolňování spravovaného kódu. Vlákno je konstrukce operační systém používá modul common language runtime k provádění kódu. Veškerého spravovaného kódu v době běhu, je načteno do domény aplikace a běží na jeden nebo více spravovaných vláken.  
   
  Není k dispozici 1: 1 korelace mezi doménami aplikace a vlákna. V jediné doméně aplikace v daném okamžiku můžete spustit několik vláken a konkrétní vlákno nejsou omezené na jedné aplikace domény aplikace. To znamená, že jsou zdarma přes hranice aplikační domény; vláken nové vlákno není vytvořena pro každou doménu aplikace.  
   
- V daném okamžiku každé vlákno spustí v doméně aplikace. Žádného, jednoho nebo více vláken může být spuštěno v libovolné doméně aplikace. Čas spuštění uchovává informace o která vlákna jsou spuštěny v které domény aplikace. Můžete najít doménu, ve kterém je vlákno provádění v každém okamžiku voláním <xref:System.Threading.Thread.GetDomain%2A?displayProperty=nameWithType> metody.  
-  
-### <a name="application-domains-and-cultures"></a>Aplikační domény a jazykové verze  
+ V daném okamžiku každé vlákno spustí v doméně aplikace. Žádného, jednoho nebo více vláken může být spuštěno v libovolné doméně aplikace. Uchovává informace o modulu runtime, která vlákna jsou spuštěny v které domény aplikace. Můžete najít doménu, ve kterém je vlákno provádění v každém okamžiku voláním <xref:System.Threading.Thread.GetDomain%2A?displayProperty=nameWithType> metody.
+
+### <a name="application-domains-and-cultures"></a>Aplikační domény a jazykové verze
+
  Jazykové verze, která je reprezentována <xref:System.Globalization.CultureInfo> objektu, je spojen s vlákny. Můžete získat jazykovou verzi, která souvisí s aktuálně spuštěné vlákno s použitím <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti kde můžete získat nebo nastavit jazykovou verzi, která souvisí s aktuálně spuštěné vlákno s použitím <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost. Pokud jazykovou verzi, která souvisí s vláknem explicitně nastavené pomocí <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> vlastnost, pokračuje souviset s tímto vláknem po vlákno překročí hranice domény aplikace. V opačném případě určení jazykové verze, která souvisí s vláknem v daném okamžiku hodnotou <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> vlastnost v aplikační doméně, ve kterém je spuštěn vlákna:  
   
 -   Pokud hodnota vlastnosti není `null`, jazykovou verzi, která je vrácena vlastností je přidružené vlákno (a tedy vrácené <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> a <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> vlastnosti).  
   
 -   Pokud je hodnota vlastnosti `null`, je spojen s vláknem aktuální systémovou kulturu.  
   
-## <a name="programming-with-application-domains"></a>Programování pomocí domén aplikace  
+## <a name="programming-with-application-domains"></a>Programování pomocí domén aplikace
+
  Aplikační domény jsou obvykle vytvořit a spravovat prostřednictvím kódu programu pomocí hostitelská prostředí modulu runtime. Ale někdy programu aplikace může být také vhodné pro práci s doménami aplikace. Programu aplikace může například načíst součásti do domény, aby bylo možné uvolnění domény aplikace (a komponenta) bez nutnosti zastavení celé aplikace.  
   
  <xref:System.AppDomain> Je programové rozhraní do domény aplikace. Tato třída obsahuje metody pro vytvoření a uvolnění domény, chcete-li vytvořit instance typů v doménách a k registraci pro různá upozornění, jako je například uvolnění domény aplikace. Následující tabulce jsou uvedeny běžně používané <xref:System.AppDomain> metody.  
@@ -126,7 +122,8 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
   
  Nespravovaná rozhraní, je popsáno v modulu common language runtime hostování specifikace rozhraní také poskytnout přístup k aplikační domény. Hostitelská prostředí modulu runtime slouží k vytvoření a získat přístup do domény aplikace uvnitř procesu rozhraní z nespravovaného kódu.  
   
-## <a name="complusloaderoptimization-environment-variable"></a>COMPLUS_LoaderOptimization – proměnná prostředí  
+## <a name="the-complusloaderoptimization-environment-variable"></a>Complus_loaderoptimization – proměnná prostředí
+
  Proměnné prostředí, která nastaví výchozí zásady optimalizace zavaděče spustitelného souboru.  
   
 ### <a name="syntax"></a>Syntaxe  
@@ -135,7 +132,8 @@ Operační systémy a běhová prostředí obvykle poskytují určitou formu izo
 COMPLUS_LoaderOptimization = 1  
 ```  
   
-### <a name="remarks"></a>Poznámky  
+### <a name="remarks"></a>Poznámky
+
  Typická aplikace několik sestavení načte do domény aplikace předtím, než mohou být provedeny v kódu, které obsahují.  
   
  Způsob, jakým je načteno sestavení určuje, zda jeho just-in-time (JIT) kompilaci kódu může být sdílen více aplikačními doménami v procesu.  
@@ -149,7 +147,8 @@ COMPLUS_LoaderOptimization = 1
 > [!CAUTION]
 >  Příznak prostředí COMPLUS_LoaderOptimization byl navržen pro použití v rámci diagnostiky a testovací scénáře. S se zapnutým příznakem můžete způsobit vážné zpomalování a zvýšení využití paměti.  
   
-### <a name="code-example"></a>Příklad kódu  
+### <a name="code-example"></a>Příklad kódu
+
  K vynucení všechna sestavení zavedeny jako doménově neutrální pro IISADMIN, připojte service můžete dosáhnout přidáním `COMPLUS_LoaderOptimization=1` víceřetězcovou hodnotu prostředí v klíči HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\IISADMIN.  
   
 ```  
@@ -159,6 +158,9 @@ Type = REG_MULTI_SZ
 Value (to append) = COMPLUS_LoaderOptimization=1  
 ```  
   
-<a name="reference"></a>   
-## <a name="reference"></a>Odkaz  
- <xref:System.MarshalByRefObject?displayProperty=nameWithType>
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.AppDomain?displayProperty=nameWithType>
+- <xref:System.MarshalByRefObject?displayProperty=nameWithType>
+- [Programování s doménami aplikací a sestaveními](index.md)
+- [Používání domén aplikací](use.md)

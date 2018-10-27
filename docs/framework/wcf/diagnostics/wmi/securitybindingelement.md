@@ -2,20 +2,19 @@
 title: SecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: ef93b6e6-3524-48a8-94d3-c8837f1872f9
-author: BrucePerlerMS
-ms.openlocfilehash: 19c65b3028ad63b8a78205d00f44cc32322648d5
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 601e3fafd9aa876186b7f78dfdcb87a2336ddfcd
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47396845"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185768"
 ---
 # <a name="securitybindingelement"></a>SecurityBindingElement
 SecurityBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class SecurityBindingElement : BindingElement  
 {  
   string DefaultAlgorithmSuite;  

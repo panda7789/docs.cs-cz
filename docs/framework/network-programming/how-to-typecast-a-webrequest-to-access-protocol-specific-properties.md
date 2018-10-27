@@ -5,14 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d9a8eae2-7454-46f9-b43b-c98477c5bcde
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: b4cde78ead9bdb8becf0f12497f4b37ad5a73bb3
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: ec5b9f1db17cf1c90484b0a44063efef9fa16cf9
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582236"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180085"
 ---
 # <a name="how-to-typecast-a-webrequest-to-access-protocol-specific-properties"></a>Postupy: zadání žádosti WebRequest pro přístup k protokolu konkrétním vlastnostem
 Tento příklad ukazuje, jak zadání žádosti WebRequest, aby měli přístup ke konkrétním vlastnostem protokolu.  

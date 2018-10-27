@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 1c8eb2e7-f20a-42f9-a795-71503486a0f5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 27e1433415bdc6303555ab9ae04a20e097248535
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: e4dedc6b527706fc9f22add903feb30ad2884eab
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46937615"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188817"
 ---
 # <a name="clr-profilers-and-windows-store-apps"></a>Profilery CLR a aplikace pro Windows Store
 
@@ -100,7 +100,7 @@ Když se Windows pokusí se načíst vaše knihovna DLL Profiler, tak ověří, 
 
 - Ujistěte se, že váš Profiler knihovny DLL je podepsané.
 
-- Informujte uživatele, že musí nainstalovat vývojářskou licenci na Windows 8 počítači před pomocí nástrojů. To můžete udělat automaticky ze sady Visual Studio, nebo ručně z příkazového řádku. Další informace najdete v tématu [získat vývojářskou licenci](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx).
+- Informujte uživatele, že musí nainstalovat vývojářskou licenci na Windows 8 počítači před pomocí nástrojů. To můžete udělat automaticky ze sady Visual Studio, nebo ručně z příkazového řádku. Další informace najdete v tématu [získat vývojářskou licenci](https://docs.microsoft.com/previous-versions/windows/apps/hh974578(v=win.10)).
 
 **Oprávnění systému souborů**
 
@@ -124,7 +124,7 @@ Pokud proces pokusí spustit aplikaci Windows Store B procesu, proces A měl bý
 
 Nejprve budete chtít požádat uživatele, váš profiler která aplikace Windows Store spustit. Pro aplikace klasické pracovní plochy případně by zobrazil dialogové okno Procházet souboru a uživatel by vyhledejte a vyberte soubor s příponou .exe. Ale aplikace Windows Store se liší a pomocí dialogového okna procházení nedává smysl. Místo toho je lepší uživateli zobrazit seznam nainstalovaných pro tohoto uživatele můžete vybírat z aplikací pro Windows Store.
 
-Můžete použít [PackageManager třídy](https://msdn.microsoft.com/library/windows/apps/windows.management.deployment.packagemanager.aspx) k vygenerování tohoto seznamu. `PackageManager` je třída Windows Runtime, která je k dispozici pro aplikace klasické pracovní plochy a je ve skutečnosti *pouze* k dispozici pro aplikace klasické pracovní plochy.
+Můžete použít <xref:Windows.Management.Deployment.PackageManager> k vygenerování tohoto seznamu. `PackageManager` je třída Windows Runtime, která je k dispozici pro aplikace klasické pracovní plochy a je ve skutečnosti *pouze* k dispozici pro aplikace klasické pracovní plochy.
 
 Následující příklad kódu z hypotetické uživatelského rozhraní Profiler zapsán jako desktopové aplikace v C# yses `PackageManager` vytvořit seznam aplikací pro Windows:
 
@@ -137,7 +137,7 @@ IEnumerable<Package> packages = packageManager.FindPackagesForUser(currentUserSI
 
 **Určení blok vlastní prostředí**
 
-Nové rozhraní modelu COM, [IPackageDebugSettings](https://msdn.microsoft.com/library/hh438393\(v=vs.85\).aspx), vám umožní přizpůsobit chování při spuštění aplikace pro Windows Store pro usnadnění některé formy diagnostiky. Jeden z jeho metod [EnableDebugging](https://msdn.microsoft.com/library/hh438395\(v=vs.85\).aspx), umožňuje předat blok prostředí do aplikace Windows Store, při jeho spuštění, společně s další užitečné efekty třeba zákaz automatického procesu pozastavení. Blok prostředí je důležité, protože se jedná, které je potřeba zadat proměnné prostředí (`COR_PROFILER`, `COR_ENABLE_PROFILING`, a `COR_PROFILER_PATH)`) používaná platformou CLR pro načtení knihovny DLL Profiler.
+Nové rozhraní modelu COM, [IPackageDebugSettings](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings), vám umožní přizpůsobit chování při spuštění aplikace pro Windows Store pro usnadnění některé formy diagnostiky. Jeden z jeho metod [EnableDebugging](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-ipackagedebugsettings-enabledebugging), umožňuje předat blok prostředí do aplikace Windows Store, při jeho spuštění, společně s další užitečné efekty třeba zákaz automatického procesu pozastavení. Blok prostředí je důležité, protože se jedná, které je potřeba zadat proměnné prostředí (`COR_PROFILER`, `COR_ENABLE_PROFILING`, a `COR_PROFILER_PATH)`) používaná platformou CLR pro načtení knihovny DLL Profiler.
 
 Vezměte v úvahu následující fragment kódu:
 
@@ -180,7 +180,7 @@ Existuje několik položek, které je potřeba získat vpravo:
 
 **Spuštění aplikace Windows Store**
 
-Nakonec dorazila chvíli spustit aplikaci Windows Store. Pokud jste již již zkusili dělat sami, mohli jste si všimnout, který [CreateProcess](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa) není jak vytvořit proces aplikace Windows Store. Místo toho budete muset použít [IApplicationActivationManager::ActivateApplication](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) metody. K tomuto účelu, budete muset získat ID modelu uživatele aplikace, která je spuštěna aplikace Windows Store. A to znamená, že budete muset udělat pár si prostřednictvím manifest.
+Nakonec dorazila chvíli spustit aplikaci Windows Store. Pokud jste již zkusili dělat sami, mohli jste si všimnout, který [CreateProcess](/windows/desktop/api/processthreadsapi/nf-processthreadsapi-createprocessa) není jak vytvořit proces aplikace Windows Store. Místo toho budete muset použít [IApplicationActivationManager::ActivateApplication](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-iapplicationactivationmanager-activateapplication) metody. K tomuto účelu, budete muset získat ID modelu uživatele aplikace, která je spuštěna aplikace Windows Store. A to znamená, že budete muset udělat pár si prostřednictvím manifest.
 
 Během iterace s použitím vašich balíčků (naleznete v části "Volba Windows Store do profilu aplikace" v [spuštění zatížení](#startup-load) výše v části), je vhodné vzít sadu aplikací, které jsou součástí manifestu aktuální balíček:
 
@@ -221,7 +221,7 @@ appActivationMgr.ActivateApplication(appUserModelId, appArgs, ACTIVATEOPTIONS.AO
 
 **Nezapomeňte volat DisableDebugging**
 
-Když jste volali [IPackageDebugSettings::EnableDebugging](https://msdn.microsoft.com/library/hh438395\(v=VS.85\).aspx), provedli promise, který by se vyčištění po sobě voláním [IPackageDebugSettings::DisableDebugging](https://msdn.microsoft.com/library/hh438394\(v=vs.85\).aspx) metoda, takže je nutné provést Když je relace profilování.
+Když jste volali [IPackageDebugSettings::EnableDebugging](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-ipackagedebugsettings-enabledebugging), provedli promise, který by se vyčištění po sobě voláním [IPackageDebugSettings::DisableDebugging](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-ipackagedebugsettings-disabledebugging) metoda, takže je nutné provést Když je relace profilování.
 
 ### <a name="attach-load"></a>Připojit zatížení
 
@@ -229,7 +229,7 @@ Když Profiler uživatelské rozhraní se chce připojit své DLL Profiler k apl
 
 **EnableDebugging**
 
-Stejně jako u zatížení po spuštění, zavolejte [IPackageDebugSettings::EnableDebugging](https://msdn.microsoft.com/library/hh438395\(v=VS.85\).aspx) metody. Nepotřebujete předávání blok prostředí, ale budete potřebovat jeden z jejích funkcí: Zakázání automatického procesu pozastavení. Jinak, když vaše uživatelské rozhraní Profiler volá [AttachProfiler](iclrprofiling-attachprofiler-method.md), může být pozastavený cílové aplikace Windows Store. Ve skutečnosti to je pravděpodobně Pokud uživatel je nyní interakci s Profiler uživatelské rozhraní a aplikací Windows Store není aktivní na všech obrazovkách uživatele. A pokud se Windows Store je aplikace pozastavená, nebude moct reagovat na všechny signál, že modul CLR odešle k němu připojit Profiler knihovny DLL.
+Stejně jako u zatížení po spuštění, zavolejte [IPackageDebugSettings::EnableDebugging](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-ipackagedebugsettings-enabledebugging) metody. Nepotřebujete předávání blok prostředí, ale budete potřebovat jeden z jejích funkcí: Zakázání automatického procesu pozastavení. Jinak, když vaše uživatelské rozhraní Profiler volá [AttachProfiler](iclrprofiling-attachprofiler-method.md), může být pozastavený cílové aplikace Windows Store. Ve skutečnosti to je pravděpodobně Pokud uživatel je nyní interakci s Profiler uživatelské rozhraní a aplikací Windows Store není aktivní na všech obrazovkách uživatele. A pokud se Windows Store je aplikace pozastavená, nebude moct reagovat na všechny signál, že modul CLR odešle k němu připojit Profiler knihovny DLL.
 
 Proto je vhodné provést vypadat přibližně takto:
 
@@ -243,7 +243,7 @@ Toto je stejný volání, které by provedete pro případ zatížení po spušt
 
 **DisableDebugging**
 
-Jako vždy, nezapomeňte volat [IPackageDebugSettings::DisableDebugging](https://msdn.microsoft.com/library/hh438394\(v=vs.85\).aspx) dokončení vaší relace profilování.
+Jako vždy, nezapomeňte volat [IPackageDebugSettings::DisableDebugging](/windows/desktop/api/shobjidl_core/nf-shobjidl_core-ipackagedebugsettings-disabledebugging) dokončení vaší relace profilování.
 
 ## <a name="running-inside-the-windows-store-app"></a>Spuštění v aplikaci Windows Store
 
@@ -273,7 +273,7 @@ Můžete zjistit, že naprosto nejde provést bez dané rozhraní API a nemůže
 
 ### <a name="reduced-permissions"></a>Sníženými oprávněními
 
-Jde nad rámec tohoto tématu, chcete-li vypsat všechny způsoby, kterými oprávnění aplikace Windows Store se liší od aplikací klasické pracovní plochy. Ale určitě chování se bude lišit při každém váš Profiler knihovny DLL (při načtení do aplikace Windows Store v porovnání s aplikace klasické pracovní plochy) pokusí o přístup ke všem prostředkům. Systém souborů je Nejběžnějším příkladem. Existuje ale několik místa na disku, který je povolen přístup k dané aplikaci Windows Store (naleznete v tématu [souborů přístup a oprávnění (aplikace Windows Runtime](https://msdn.microsoft.com/library/windows/apps/hh967755.aspx)), váš Profiler knihovny DLL bude v rámci omezení. Důkladně otestujte váš kód.
+Jde nad rámec tohoto tématu, chcete-li vypsat všechny způsoby, kterými oprávnění aplikace Windows Store se liší od aplikací klasické pracovní plochy. Ale určitě chování se bude lišit při každém váš Profiler knihovny DLL (při načtení do aplikace Windows Store v porovnání s aplikace klasické pracovní plochy) pokusí o přístup ke všem prostředkům. Systém souborů je Nejběžnějším příkladem. Existuje ale několik místa na disku, který je povolen přístup k dané aplikaci Windows Store (naleznete v tématu [souborů přístup a oprávnění (aplikace Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/hh967755(v=win.10))), váš Profiler knihovny DLL bude v rámci omezení. Důkladně otestujte váš kód.
 
 ### <a name="inter-process-communication"></a>Komunikace mezi procesy
 
@@ -298,7 +298,7 @@ ApplicationData appData =
 tempDir = appData.TemporaryFolder.Path;
 ```
 
-Mezitím vaše knihovna DLL Profiler může v podstatě to samé udělá, i když může informace snadno vrátíte do [ApplicationData](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.aspx) pomocí [ApplicationData.Current](https://msdn.microsoft.com/library/windows/apps/windows.storage.applicationdata.current.aspx) vlastnost.
+Mezitím vaše knihovna DLL Profiler může v podstatě to samé udělá, i když může informace snadno vrátíte do <xref:Windows.Storage.ApplicationData> pomocí [ApplicationData.Current](xref:Windows.Storage.ApplicationData.Current%2A) vlastnost.
 
 **Komunikaci prostřednictvím událostí**
 
@@ -412,8 +412,8 @@ Je možné použít rozhraní API profilování CLR k analýze spravovaném kód
 
 **Aplikace Windows Store**
 
-- [Přístup k souborům a oprávnění (aplikace pro Windows Runtime](https://msdn.microsoft.com/library/windows/apps/hh967755.aspx)
+- [Přístup k souborům a oprávnění (aplikace pro Windows Runtime](https://docs.microsoft.com/previous-versions/windows/apps/hh967755%28v=win.10%29)
 
-- [Získat vývojářskou licenci](https://msdn.microsoft.com/library/windows/apps/Hh974578.aspx)
+- [Získat vývojářskou licenci](https://docs.microsoft.com/previous-versions/windows/apps/hh974578%28v=win.10%29)
 
-- [IPackageDebugSettings rozhraní](https://msdn.microsoft.com/library/hh438393\(v=vs.85\).aspx)
+- [IPackageDebugSettings rozhraní](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-ipackagedebugsettings)

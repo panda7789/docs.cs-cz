@@ -2,12 +2,12 @@
 title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
-ms.openlocfilehash: 730b1188a95d0e35d7431d43884e867e5520585e
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 6d568c1c78677b53f4b79f5aefd3a56d71c2685f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838973"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182928"
 ---
 # <a name="servicehost"></a>\@Hostitel služby
 Přidruží objekt pro vytváření použitý k vytvoření hostitele služby pomocí ní zajistit také jejich hostování a ostatní programovací aspekty vyžaduje přístup k nebo zkompilovat kód hostování zadaný v souboru SVC.  
@@ -43,7 +43,7 @@ CodeBehind = "CodeBehind"%>
 ## <a name="remarks"></a>Poznámky  
  <xref:System.ServiceModel.ServiceHost> Použít k hostování služby je bodu rozšiřitelnosti v rámci programovací model Windows Communication Foundation (WCF). Objekt pro vytváření vzorek se používá k vytvoření instance <xref:System.ServiceModel.ServiceHost> protože se jedná, případně polymorfní typ, který by neměl přímo vytvořit instanci hostitelského prostředí.  
   
- Výchozí implementace používá <xref:System.ServiceModel.Activation.ServiceHostFactory> k vytvoření instance <xref:System.ServiceModel.ServiceHost>. Ale můžete zadat vlastní objekt pro vytváření (jedna, která vrací odvozené hostitelů) tak, že zadáte název typu CLR továrny implementace v [ @ServiceHost ](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice.  
+ Výchozí implementace používá <xref:System.ServiceModel.Activation.ServiceHostFactory> k vytvoření instance <xref:System.ServiceModel.ServiceHost>. Ale můžete zadat vlastní objekt pro vytváření (jedna, která vrací odvozené hostitelů) tak, že zadáte název typu CLR továrny implementace v [ \@ServiceHost](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice.  
   
  Pokud chcete použít objekt pro vytváření hostitele služby vlastní vlastní místo výchozí objekt pro vytváření, stačí zadat název typu v [ @ServiceHost ](../../../../../docs/framework/configure-apps/file-schema/wcf-directive/servicehost.md) směrnice následujícím způsobem:  
   

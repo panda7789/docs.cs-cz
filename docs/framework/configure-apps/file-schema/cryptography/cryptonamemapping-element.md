@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: c59c9494-149b-4ce6-b38d-371f896ae85c
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: ad1611701dca48244f3b2a93ecc3ea86363081ed
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 3909b9cd012ef47f5a191dbc1e7978a5852e62fe
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47230791"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50184163"
 ---
 # <a name="ltcryptonamemappinggt-element"></a>&lt;cryptoNameMapping&gt; – Element
 Obsahuje mapování tříd pro popisné názvy.  
@@ -77,7 +77,7 @@ Obsahuje mapování tříd pro popisné názvy.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)  
- [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)
+- [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)  
+- [Schéma nastavení šifrování](../../../../../docs/framework/configure-apps/file-schema/cryptography/index.md)  
+- [Kryptografické služby](../../../../../docs/standard/security/cryptographic-services.md)  
+- [Konfigurace šifrovacích tříd](../../../../../docs/framework/configure-apps/configure-cryptography-classes.md)

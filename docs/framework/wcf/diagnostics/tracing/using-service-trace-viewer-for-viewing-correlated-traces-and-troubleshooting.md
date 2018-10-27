@@ -2,27 +2,27 @@
 title: Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
 ms.date: 03/30/2017
 ms.assetid: 05d2321c-8acb-49d7-a6cd-8ef2220c6775
-ms.openlocfilehash: cfa1ec0e486943d196ec016be87544f17a0114e6
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: b43c7f3d8018c119dbabf8f55ec115a00e1ac077
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806767"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188791"
 ---
 # <a name="using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting"></a>Použití prohlížeče trasování služeb k zobrazení korelovaných tras a řešení problémů
-Toto téma popisuje formát dat trasování, jak zobrazit a přístupy, které použití prohlížeče trasování služby problém s vaší aplikací.  
+Toto téma popisuje formátu trace dat, jak zobrazit a přístupů, které použití prohlížeče trasování služeb k řešení problémů s aplikací.  
   
-## <a name="using-the-service-trace-viewer-tool"></a>Pomocí nástroje prohlížeče trasování služby  
- Nástroj prohlížeče trasování služeb Windows Communication Foundation (WCF) umožňuje korelovat diagnostické trasování vyprodukované naslouchací procesy WCF najít hlavní příčinu chyby. Tento nástroj poskytuje způsob, jak snadno zobrazit, skupiny a filtrovat trasování, aby mohli diagnostikovat, opravit a zkontrolujte problémy s služby WCF. Další informace o použití tohoto nástroje najdete v tématu [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
+## <a name="using-the-service-trace-viewer-tool"></a>Pomocí nástroje prohlížeče trasování služeb  
+ Nástroj prohlížeče trasování služeb Windows Communication Foundation (WCF) umožňuje korelovat diagnostická trasování vytvářených naslouchacích procesů WCF najít hlavní příčinu chyby. Nástroj poskytuje způsob, jak snadno zobrazit, skupiny a filtrovat trasování, takže můžete diagnostikovat, opravit a ověřit problémy se službami WCF. Další informace o použití tohoto nástroje najdete v tématu [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md).  
   
- Toto téma obsahuje snímky obrazovky trasování generované systémem [trasování a protokolování zpráv](../../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázkové, při zobrazení pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Toto téma ukazuje, jak pochopit obsah trasování, aktivity a jejich korelace a jak analyzovat velké počty trasování, při řešení potíží.  
+ Toto téma obsahuje snímky obrazovky generovány spuštěním trasování [trasování a protokolování zpráv](../../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázkový při prohlížení pomocí [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Toto téma ukazuje, jak můžete porozumět obsah trasování, aktivit a jejich korelaci a jak analyzovat velké množství trasování při řešení potíží s.  
   
 ## <a name="viewing-trace-content"></a>Obsah zobrazení trasování  
- Trasování událostí obsahuje následující nejdůležitější informace:  
+ Události trasování obsahuje následující nejdůležitější informace:  
   
--   Název aktivity Pokud nastavíte.  
+-   Název aktivity při nastavení.  
   
--   Emisí čas.  
+-   Emise čas.  
   
 -   Úroveň trasování.  
   
@@ -32,32 +32,32 @@ Toto téma popisuje formát dat trasování, jak zobrazit a přístupy, které p
   
 -   Id vlákna.  
   
--   Trasování jedinečný identifikátor, který je adresu URL, která směřuje k cíli v Microsoft Docs, ze kterého můžete získat další informace o trasování.  
+-   Trasování jedinečný identifikátor, který je adresa URL, která směřuje k cíli v Microsoft Docs, ze kterého můžete získat další informace o trasování.  
   
- Všechny tyto se zobrazí v horním pravém panelu do prohlížeče trasování služeb nebo **základní informace** části v pravém panelu při výběru trasování formátovaný zobrazení.  
+ Všechny tyto uvidíte v horním pravém panelu v prohlížeče trasování služeb nebo **základní informace** část v zobrazení formátovaného pravém panelu při výběru trasování.  
   
 > [!NOTE]
->  Pokud klienta a služby jsou na stejném počítači, trasování pro obě aplikace bude k dispozici. Ty lze filtrovat pomocí **název procesu** sloupce.  
+>  Pokud klienta a služby jsou ve stejném počítači, bude k dispozici trasování pro obě aplikace. Ty lze filtrovat pomocí **název procesu** sloupce.  
   
- Kromě toho formátovaný zobrazení taky obsahuje popis pro trasování a další podrobné informace, pokud je k dispozici. K tomu může zahrnovat výjimka typu a zprávy, zásobníky volání zpráva akce, z/do pole a další informace o výjimce.  
+ Kromě toho formátovaný zobrazení poskytuje také popis pro trasovacího a další podrobné informace, pokud je k dispozici. Druhá možnost může zahrnovat výjimka typu a zpráva, zásobníky volání akce zprávy, z/do pole a další informace o výjimce.  
   
- V zobrazení XML značky xml užitečné patří:  
+ V XML-zobrazení značky xml užitečné, patří:  
   
--   \<Podtyp > (úroveň trasování).  
+-   `<SubType>` (úroveň trasování).  
   
--   \<TimeCreated >.  
+-   `<TimeCreated>`.  
   
--   \<Zdroj > (název zdroje trasování).  
+-   `<Source>` (název zdroje trasování).  
   
--   \<Korelace > (id aktivity nastaven při generování trasování).  
+-   `<Correlation>` (id aktivity nastaven při generování trasování).  
   
--   \<Provádění > (id procesu a vlákno).  
+-   `<Execution>` (id procesu a vlákně).  
   
--   \<Počítače >.  
+-   `<Computer>`.  
   
--   \<ExtendedData >, včetně \<akce >, \<MessageID > a \<aktivity > nastaveny v hlavičce zprávy při odesílání zprávy.  
+-   `<ExtendedData>`, včetně `<Action>`, `<MessageID>` a `<ActivityId>` nastavit v záhlaví zprávy při odesílání zprávy.  
   
- Pokud si projdete trasování "Odeslané zprávy přes kanál", může se zobrazit následující obsah.  
+ Pokud zobrazíte "Odeslané zprávy přes kanál" trasování, může se zobrazit následující obsah.  
   
 ```xml  
 <E2ETraceEvent xmlns="http://schemas.microsoft.com/2004/06/E2ETraceEvent">  
@@ -105,98 +105,98 @@ Toto téma popisuje formát dat trasování, jak zobrazit a přístupy, které p
 ```  
   
 ## <a name="servicemodel-e2e-tracing"></a>Trasování ServiceModel E2E  
- Když `System.ServiceModel` zdroj trasování nastavena `switchValue` jiné než vypnuté, a `ActivityTracing`, WCF vytvoří aktivity a přenosy pro zpracování WCF.  
+ Při `System.ServiceModel` zdroj trasování nastavená `switchValue` jiné než vypnuté, a `ActivityTracing`, WCF vytvoří aktivity a přenosy WCF zpracování.  
   
- Aktivita je logické jednotky, skupiny všech trasování související s touto jednotkou zpracování zpracování. Můžete například definovat jednu aktivitu pro každý požadavek. Přenosy vytvořit příčinnou relaci mezi aktivitami v rámci koncové body. Šíření ID aktivity umožňuje aktivity se týkají napříč koncovými body. To můžete provést nastavením `propagateActivity` = `true` v konfiguraci na každý koncový bod. Aktivity, přenosy a šíření umožňují provádět korelace chyby. Tímto způsobem můžete najít hlavní příčinu chyby rychleji.  
+ Aktivita je logické jednotky zpracování, které skupiny všechna trasování související pro tento procesor. Například můžete definovat jednu aktivitu pro každý požadavek. Přenosy vytvořit příčinnou vztah mezi aktivity v rámci koncových bodů. Šíření ID aktivity umožňuje týkají aktivity napříč koncovými body. To můžete udělat tak, že nastavíte `propagateActivity` = `true` v konfiguraci na každý koncový bod. Aktivity, přenosy a šíření umožňují provádět korelace chyby. Tímto způsobem můžete najít hlavní příčinu chyby rychleji.  
   
- Na straně klienta je vytvořena jedna aktivita WCF pro každé volání modelu objektu (například Open ChannelFactory, přidat, dělení a atd.) Každé volání operací se zpracovává aktivitu "Proces Action".  
+ Na straně klienta se vytvoří jedna aktivita WCF pro každé volání modelu objektu (například otevřít třídu ChannelFactory, přidat, rozdělit a atd.) Každé volání operace, jsou zpracovávána v aktivity jako "Action procesu".  
   
- Na následujícím snímku obrazovky z extrahovat [trasování a protokolování zpráv](../../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) levém panelu ukázkové zobrazí seznam aktivity vytvořené v procesu klienta, seřazené podle času vytvoření. Následuje seznam chronologickém aktivit:  
+ Na následujícím snímku obrazovky, extrahovat z [trasování a protokolování zpráv](../../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) ukázka na levém panelu zobrazí seznam aktivit, které jsou vytvořeny během procesu klienta, seřazené podle času vytvoření. Následuje chronologický seznam aktivit:  
   
--   Sestavit kanálu (třídu ClientBase).  
+-   Vytvořený objekt pro vytváření kanálů (třídu ClientBase).  
   
--   Otevřít kanálu.  
+-   Otevřít objekt pro vytváření kanálů.  
   
--   Zpracovat přidat akci.  
+-   Přidat akci zpracování.  
   
--   Nastavení relace Secure (Tato došlo k na první požadavek) a zpracovat tři zprávy odpovědi infrastruktury zabezpečení: RVNÍ RSTR, SCT (proces zprávy 1, 2, 3).  
+-   Nastavte zabezpečenou relaci (Tento došlo k na první žádost o) a zpracovat tři odpovědích zabezpečení infrastruktury: RVNÍ RSTR, SCT (proces zpráva 1, 2, 3).  
   
--   Zpracování Subtract, násobit a dělení požadavky.  
+-   Zpracování Subtract, násobit a požádá o dělení.  
   
--   Uzavřený vytváření kanálů, a tak uzavřený zabezpečené relace a zpracuje odpověď na zprávu zabezpečení Storno.  
+-   Zavření objekt pro vytváření kanálů, a tím zabezpečené relaci a zpracuje odpověď na zprávu zabezpečení Storno.  
   
- Z důvodu wsHttpBinding vidíte zprávy infrastruktury zabezpečení.  
+ Protože vazba wsHttpBinding vidíme zprávy Infrastruktura zabezpečení.  
   
 > [!NOTE]
->  Ve službě WCF, ukážeme odpovědí na zprávy původně zpracovávána v samostatnou aktivitě (proces zprávy) před jsme korelovat odpovídající akce proces aktivitě, která zahrnuje zprávu požadavku, prostřednictvím přenos. To se stane pro zprávy infrastruktury a asynchronní požadavky a je vzhledem k tomu, že jsme musí zkontrolujte zprávy, čtení hlavičku aktivity a identifikovat existující aktivitu procesu akce s tímto id ke korelaci do ní. Synchronní požadavkům jsme blokují pro odpověď a proto vědět proces akci, která má vztah k odpovědi.  
+>  Ve službě WCF, ukážeme odpovědích zpočátku zpracovávána v samostatných aktivity (zpracovat zprávu) předtím, než jsme korelovat je odpovídající aktivity procesu akce, která obsahuje zprávy s požadavkem, k tomu přenos. To se stane pro zprávy o infrastrukturu a asynchronní požadavků a je vzhledem k tomu, že jsme musí zkontrolovat zprávy, přečíst hlavičku activityId a identifikovat existující aktivitu akce. proces s tímto identifikátorem ke korelaci do něj. Synchronní žádosti jsme pro odpovědi, blokují a vědět, tedy procesu akci, která má vztah k odpovědi.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace4.gif "e2eTrace4")  
-Činnosti klienta WCF uvedené podle času vytvoření (levém panelu) a jejich vnořených aktivit a trasování (horním pravém panelu)  
+Uvedený čas vytvoření (levý panel) a jejich vnořené aktivity a trasování (pravý horní panel) činnosti klienta WCF  
   
- Když jsme v levém panelu vyberte aktivitu, jsme můžete zobrazit vnořených aktivit a trasování v horním pravém panelu. Proto je snížené hierarchické zobrazení seznamu aktivit na levé straně na základě vybrané nadřazené aktivity. Vybraná akce procesu přidat je první požadavek, a proto tato aktivita obsahuje aktivitu nastavit až zabezpečené relace (přenos pro přenos zpět z) a trasování pro vlastní zpracování přidat akci.  
+ Když vybereme aktivitu na levém panelu, můžeme vidět v pravém horním rohu panelu vnořené aktivity a trasování. Proto je toto snížené hierarchické zobrazení seznamu aktivit na levé straně na základě vybrané nadřazené aktivity. Vzhledem k tomu, že je vybraný proces akce přidat první žádost, tato aktivita obsahuje aktivitu nastavit až zabezpečenou relaci (přenos pro přenos zpátky ze) a trasování pro vlastní zpracování přidat akci.  
   
- Když dvakrát kliknete na akci procesu přidat aktivitu v levém panelu, vidíte grafické reprezentace klienta WCF aktivity související s přidat. První aktivitu na levé straně je aktivita kořenové (0000), což je výchozí aktivity. WCF přenáší vedlejším aktivita. Pokud to není definován, mimo 0000 přenáší WCF. Druhá aktivita, proces přidat akci, zde přenáší mimo 0. Potom jsme najdete v části instalace zabezpečené relace.  
+ Když dvakrát kliknete na Přidat aktivitu na levém panelu Akce proces, můžeme vidět grafická reprezentace klienta WCF aktivity související s přidat. První aktivitu na levé straně je kořenová aktivita (0000), což je výchozí aktivita. Přenosy WCF mimo okolí aktivity. Pokud není definována, mimo 0000 přenosy WCF. Druhá aktivita zpracovat přidání akce, tady, přenáší z 0. Potom jsme naleznete v tématu Instalace zabezpečenou relaci.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace5.gif "e2eTrace5")  
-Graf zobrazení činnosti klienta WCF: vedlejším aktivity (sem 0), akce procesu a nastavit si zabezpečené relace  
+Graf přehled činnosti klienta WCF: okolí aktivity (zde 0), proces akce a nastavte si zabezpečenou relaci  
   
- V horním pravém panelu jsme můžete zobrazit všechny trasování týkající se činnosti procesu přidat akci. Konkrétně jsme odeslala zprávu požadavku ("odeslané zprávy přes kanál") a přijaté odpovědi ("přijaté zprávy přes kanál") do stejné aktivity. To je znázorněno v následujícím grafu. Pro přehlednost nastavení zabezpečení relace aktivity sbalena v grafu.  
+ V pravém horním rohu panelu vidět všechna trasování týkající se činnosti proces přidání akce. Konkrétně jsme poslali žádost ("odeslaná zpráva přes kanál") a přijaté odpovědi ("přijatá zpráva přes kanál") do stejné aktivity. To je ukázáno v následujícím grafu. Pro přehlednost je sbalený nastavte zabezpečenou relaci aktivity v grafu.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace6.gif "e2eTrace6")  
-Seznam trasování aktivity akce proces: jsme žádost odesílat a přijímat odpovědi do stejné aktivity.  
+Seznam trasování pro aktivitu akce. proces: jsme žádost odesílat a přijímat odpovědi do stejné aktivity.  
   
- Zde jsme načtení trasování klienta pouze pro přehlednost, ale služba trasování (přijata zpráva požadavku a odeslat zprávu odpovědi) se ve stejné aktivitě při jsou i načíst v nástroji a `propagateActivity` byla nastavena na `true.` to na novější obrázku je zobrazený.  
+ Tady, se nám načíst trasování klienta pouze pro přehlednost, ale trasování služeb (byla přijata zpráva požadavku a odpovědi zpráva odeslaná) zobrazí stejné aktivity v případě, že jsou také načteny v nástroji a `propagateActivity` byl nastaven na `true.` to je ukázáno dále obrázku.  
   
- Ve službě aktivity modelu mapuje koncepty WCF následujícím způsobem:  
+ Ve službě model aktivity mapuje koncepty WCF následujícím způsobem:  
   
-1.  Nemůžeme vytvořit a otevřete ServiceHost (to může vytvořit několik aktivit souvisejících s hostiteli, například v případě zabezpečení).  
+1.  Můžeme vytvářet a otevřete ServiceHost (to může vytvořit několik aktivit souvisejících s hostiteli, například v případě zabezpečení).  
   
-2.  Vytvoříme naslouchat na aktivitu pro každý naslouchací proces v hostiteli služby (s přenosy a deaktivovat otevřete ServiceHost).  
+2.  Vytvoříme naslouchat na aktivitu pro každý naslouchací proces ve hostitele ServiceHost (s přenosy do a z Open ServiceHost).  
   
-3.  Zjistí-li naslouchací proces žádost komunikace iniciované klientem, přenáší k aktivitě "Přijímat bajtů", ve kterém jsou zpracovány všechny bajtů odeslaných z klienta. V této aktivity jsme se zobrazí chyby připojení, ke kterým došlo během interakce služby klienta.  
+3.  Pokud naslouchací proces zjistí žádost komunikace iniciované klientem, přenáší ho na aktivitu "Přijímat bajtů", ve kterém jsou zpracovány všechny bajtů odeslaných z klienta. V rámci této aktivity můžeme vidět žádné chyby připojení, ke kterým došlo během interakce služba klienta.  
   
-4.  Pro každou sadu bajtů, které je přijaly, která odpovídá na zprávu jsme zpracovat tyto bajtů aktivity "Proces zprávu", kde vytváříme objekt zpráv WCF. V této aktivitě vidíte chyby související s chybný obálky nebo chybnou zprávu.  
+4.  Pro každou sadu bajtů, které se přijal, která odpovídá na zprávu zpracujeme těchto bajtů v aktivitě "Zpracovat zprávu", kde můžeme vytvořit objekt zprávy WCF. V této aktivitě vidíme chyby související s chybný obálky nebo chybnou zprávu.  
   
-5.  Jakmile zprávy je vytvořen, jsme přeneste do procesu akce aktivity. Pokud `propagateActivity` je nastaven na `true` na klienta a služby, tato aktivita má stejné id jako definované v klientovi a popsané. Z této fázi jsme spustit, abyste mohli využívat výhod přímé korelace napříč koncovými body, protože všechny vygenerované v WCF trasování, které se vztahují k žádosti jsou ve stejné aktivity, včetně zpracování zprávy odpovědi.  
+5.  Jakmile je vytvořen zprávy, jsme přenést do aktivity procesu akce. Pokud `propagateActivity` je nastavena na `true` na klienta a služby, tato aktivita má stejné id jako definovaný v klientovi a je popsáno výše. V této fázi začneme těžit z přímou spojitost s míněním napříč koncovými body, protože všechna trasování, protože ho ve službě WCF, které se vztahují na žádost v této aktivity, včetně zpracování zpráv odpovědí.  
   
-6.  Pro akci mimo proces vytvoříme aktivitu "Execute uživatelský kód" izolovat trasování vygenerované v jednu vygenerované v WCF z uživatelského kódu. V předchozím příkladu jsou vydávány trasování "Service odešle odpověď přidat" aktivity "Execute uživatelský kód" není v rámci aktivity klientem, rozšíří Pokud jsou k dispozici.  
+6.  Pro akci mimo proces se nám vytvořit aktivitu "Spouštění uživatelského kódu" izolovat trasování v uživatelském kódu z těch, které jsou emitovány ve službě WCF, protože ho. V předchozím příkladu je vygenerován trasování "Service odešle odpověď přidat" aktivity "Spouštění uživatelského kódu" není v aktivitě rozšíří klientem, pokud je k dispozici.  
   
- Na obrázku, který následuje první aktivitu na levé straně je aktivita kořenové (0000), což je výchozí aktivity. Následující tři aktivity jsou otevřete hostiteli služby. Aktivity ve sloupci 5 je naslouchací proces a zbývajících aktivit (6 až 8) popisují WCF zpracování zprávy ze bajtů zpracování tak, aby aktivace kódu uživatele.  
+ Na obrázku, který následuje první aktivitu na levé straně je kořenová aktivita (0000), což je výchozí aktivita. Následující tři aktivit jsou k otevření hostitele ServiceHost. Aktivita ve sloupci 5 je naslouchací proces a zbývajících aktivit (6 až 8) popisují WCF zpracování zprávy, bajty zpracování aktivace kódu uživatele.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace7.gif "e2eTrace7")  
 Seznam aktivit služby WCF  
   
- Následující snímek obrazovky ukazuje aktivity pro klienta a služby a zvýrazňuje aktivitu přidat akci proces napříč procesy (oranžová). Dvojice šipek, které se týkají žádosti a odpovědi zpráv odesílaných i přijímaných v: klienta a služby. Trasování procesu akce jsou oddělené v rámci procesy v grafu, ale zobrazí v rámci téže aktivity v pravém panelu. V tomto panelu jsme najdete v trasování klienta pro odeslané zprávy, za nímž následuje trasování služby pro zprávy přijaté a zpracovány.  
+ Na následujícím snímku obrazovky činnosti klienta a služby se zobrazí a zvýrazní zpracovat akci Přidání aktivity napříč procesy (oranžová). Šipky se týkají požadavků a odpovědí zpráv odesílaných i přijímaných klienta a služby. Trasování procesu akce jsou odděleny napříč procesy v grafu, ale zobrazí jako součást do stejné aktivity v pravém horním panelu. V tomto panelu vidět trasování klienta pro odeslané zprávy, za nímž následuje trasování služby pro přijatá a zpracovaná zprávy.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace8.gif "e2eTrace8")  
-Zobrazení grafu obou aktivit klienta a služby WCF  
+Zobrazení grafu obou činnosti klienta a služby WCF  
   
- V následujícím scénáři chyba jsou související chyby a upozornění trasování na klienta a služby. Nejprve je vyvolána výjimka v uživatelském kódu ve službě (zelený aktivity nejvíce vpravo, která obsahuje upozornění trasování pro výjimku "služba nemůže zpracovat tento požadavek v uživatelském kódu."). Při odeslání odpovědi klientovi, je upozornění trasování znovu vygenerované k označení selhání zprávy (levém růžový aktivita). Klient poté uzavře svého klienta WCF (žlutý aktivita na straně levém), který zruší připojení ke službě. Služba vrátí chybu (nejdelší růžový aktivita na pravé straně).  
+ V následujícím scénáři chyba jsou související chyby a upozornění trasování na klienta a služby. V uživatelském kódu ve službě (úplně vpravo zelené aktivity, která obsahuje upozornění trasování pro výjimku "službu nelze zpracovat tento požadavek v uživatelském kódu.") je nejprve vyvolána výjimka. Při odesílání odpovědi klientovi trasování upozornění je znovu vygenerován pro označení chybová zpráva (levý růžový aktivita). Klient pak zavře klienta WCF (žlutá aktivita na straně levém), který zruší připojení ke službě. Služba vyvolá chybu (nejdelší růžový aktivity na pravé straně).  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/wcfc-e2etrace9s.gif "wcfc_e2etrace9s")  
-Chyba korelace mezi klienta a služby  
+Chyba korelací napříč klienta a služby  
   
- Ukázka sloužící ke generování toto trasování je řadu synchronní požadavků pomocí wsHttpBinding. Existují odchylky od tohoto grafu pro scénáře bez zabezpečení nebo s asynchronní požadavků, kde zahrnuje na začátku a konce operacích, které tvoří asynchronního volání akce proces aktivity a zobrazuje přenosů, aby se zpětné volání. Další informace o dalších scénářích najdete v tématu [scénáře trasování začátku do konce](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md).  
+ Ukázka používá ke generování těchto trasování je řada synchronní žádosti pomocí vazba wsHttpBinding. Existují odchylky od tohoto grafu pro scénáře bez zabezpečení nebo s asynchronní požadavků, kde aktivitu akce. proces zahrnuje begin a end operací, které představují asynchronní volání a zobrazuje přenosy do zpětného volání aktivity. Další informace o dalších scénářů, najdete v části [začátku do konce trasování scénáře](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md).  
   
-## <a name="troubleshooting-using-the-service-trace-viewer"></a>Řešení potíží s použití prohlížeče trasování služeb  
- Při načítání trasovací soubory v nástroji Prohlížeč trasování služby, můžete vybrat všechny red nebo žlutou aktivity na levém panelu zjistit příčinu problému v aplikaci. 000 aktivita má obvykle neošetřené výjimky, které bublinový až uživatele.  
+## <a name="troubleshooting-using-the-service-trace-viewer"></a>Řešení problémů pomocí prohlížeče trasování služeb  
+ Při načítání trasovací soubory v nástroji Prohlížeč trasování služeb, můžete vybrat žádnou aktivitu žluté nebo červené na levém panelu zjistit příčinu problému ve vaší aplikaci. 000 aktivit obvykle má neošetřené výjimky, které se až uživatel.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace10.gif "e2eTrace10")  
-Výběr red nebo žlutou aktivity k nalezení kořene problém  
+Výběrem žluté nebo červené aktivity zjistit příčinu problému  
   
- V horním pravém panelu můžete zkontrolovat trasování pro aktivity, které jste vybrali na levé straně. Můžete pak zkontrolujte red nebo žlutou trasování tohoto panelu a zjistit, jak jsou korelační. V předchozím grafu vidíte trasování upozornění pro klienta a služby do stejné aktivity procesu akce.  
+ V pravém horním rohu panelu můžete zkontrolovat trasování aktivity, které jste vybrali na levé straně. Potom můžete zkontrolovat žluté nebo červené trasování v panelu a zobrazit, jak se korelují. V předchozím grafu vidíme trasování upozornění pro klienta a služby do procesu akce aktivity.  
   
- Pokud toto trasování není poskytnout hlavní příčinu chyby, můžete využít grafu poklepáním na vybranou aktivitou na levém panelu (sem procesu akce). Pak se zobrazí graf s souvisejících činností. Můžete rozbalit souvisejících činností (kliknutím na znak "+") k vyhledání prvního emitovaného trasování v red nebo žlutý související aktivity. Zachovat rozbalení aktivity, které bylo provedeno těsně před red nebo žlutou trasování zájmu, následující přenosy souvisejících činností nebo zpráva toky napříč koncovými body, dokud nebude sledovat hlavní příčinu problému.  
+ Pokud toto trasování není poskytnout hlavní příčinu chyby, můžete využít graf dvojitým kliknutím na vybranou aktivitou na levém panelu (zde akce proces). Zobrazí graf s souvisejících aktivit. Můžete rozbalit souvisejících aktivit (kliknutím symboly "+") k vyhledání prvního emitovaný trasování v red nebo žlutá v souvisejících aktivit. Zachovejte rozbalení aktivity, ke kterým došlo před žluté nebo červené trasování zájmu následující převody souvisejících činností nebo zprávy toků napříč koncovými body, dokud sledování hlavní příčinu problému.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/wcfc-e2etrace9s.gif "wcfc_e2etrace9s")  
-Rozšiřování aktivit ke sledování hlavní příčinu problému  
+Rozbalení aktivity pro sledování hlavní příčinu problému  
   
- Pokud ServiceModel `ActivityTracing` je vypnuto, ale ServiceModel trasování je, uvidíte ServiceModel trasování vygenerované v 0000 aktivity. To však vyžaduje další úsilí pochopit korelaci toto trasování.  
+ Pokud ServiceModel `ActivityTracing` je vypnuté, ale ServiceModel trasování je zapnutý, můžete zobrazit, protože ho v aktivitě 0000 trasování ServiceModel. Ale to vyžaduje další úsilí o korelaci těchto trasování.  
   
- Pokud je povoleno protokolování zpráv, můžete na kartě zpráva zobrazíte zpráv, které je ovlivněno chyba. Dvojitým kliknutím na soubor zprávy v red nebo žlutý, uvidíte graf zobrazení souvisejících činností. Tyto aktivity jsou ty, které nejvíce související na žádost o, kde došlo k chybě.  
+ Pokud je povoleno protokolování zpráv, můžete na kartě zpráva zobrazíte zpráv, které má vliv chyby. Dvojitým kliknutím zprávy v red nebo žlutou barvou, zobrazí se zobrazení grafu aktivit souvisejících. Tyto aktivity jsou ty, které nejvíce úzce souvisí s žádost, ve kterém došlo k chybě.  
   
  ![Použití prohlížeče trasování](../../../../../docs/framework/wcf/diagnostics/tracing/media/e2etrace11.gif "e2eTrace11")  
-Proces řešení potíží, můžete také vybrat red nebo žlutou zprávu trasování a dvakrát klikněte na něj sledovat hlavní příčinu  
+Proces řešení potíží, můžete také vybrat žluté nebo červené zprávy trasování a dvojím kliknutím ho sledujte hlavní příčinu  
   
 ## <a name="see-also"></a>Viz také  
  [Scénáře komplexního trasování](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)  

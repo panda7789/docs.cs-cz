@@ -2,19 +2,19 @@
 title: ServiceMetadataBehavior
 ms.date: 03/30/2017
 ms.assetid: 0f194476-72f1-467e-bdce-674306316e64
-ms.openlocfilehash: e96a732f8b3b4d78d597429905cc7dd290dcc606
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 19a04b6432f1ecc38a3b906b7e677175863134db
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33485997"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188830"
 ---
 # <a name="servicemetadatabehavior"></a>ServiceMetadataBehavior
 ServiceMetadataBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class ServiceMetadataBehavior : Behavior  
 {  
   string ExternalMetadataLocation;  
@@ -26,49 +26,49 @@ class ServiceMetadataBehavior : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída ServiceMetadataBehavior nedefinuje žádné metody.  
+ Třídu ServiceMetadataBehavior nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída ServiceMetadataBehavior má následující vlastnosti:  
+ Třídu ServiceMetadataBehavior má následující vlastnosti:  
   
-### <a name="externalmetadatalocation"></a>ExternalMetadataLocation  
+### <a name="externalmetadatalocation"></a>externalMetadataLocation  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Nastaví umístění, do kterého službu přesměruje požadavků na metadata.  
+ Nastaví umístění, do kterého služba přesměruje požadavky metadat.  
   
-### <a name="httpgetenabled"></a>HttpGetEnabled  
- Datový typ: logická hodnota  
+### <a name="httpgetenabled"></a>httpGetEnabled  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda služba zveřejňuje jeho WSDL na adrese řízené `HttpGetUrl` atribut.  
+ Určuje, zda služba zveřejňuje své WSDL na adrese řídí `HttpGetUrl` atribut.  
   
-### <a name="httpgeturl"></a>HttpGetUrl  
+### <a name="httpgeturl"></a>Vlastnost httpGetUrl  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Nastaví umístění, kde je služba WSDL zveřejněna k získání pomocí protokolu HTTP.  
+ Nastaví umístění, kde je služba WSDL zveřejněna k získání pomocí HTTP.  
   
-### <a name="httpsgetenabled"></a>HttpsGetEnabled  
- Datový typ: logická hodnota  
+### <a name="httpsgetenabled"></a>httpsGetEnabled  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda služba zveřejňuje jeho WSDL přes protokol HTTPS na adrese řízené `HttpsGetUrl` atribut.  
+ Určuje, zda služba zveřejňuje své WSDL přes HTTPS na adrese kontrolované pomocí `HttpsGetUrl` atribut.  
   
-### <a name="httpsgeturl"></a>HttpsGetUrl  
+### <a name="httpsgeturl"></a>Vlastnost httpsGetUrl  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Nastaví umístění, kde je služba WSDL zveřejněna k získání pomocí protokolu HTTPS.  
+ Nastaví umístění, kde je služba WSDL zveřejněna k získání pomocí HTTPS.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

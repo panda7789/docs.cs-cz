@@ -2,13 +2,12 @@
 title: SecurityNegotiationSuccess
 ms.date: 03/30/2017
 ms.assetid: 884dc3ae-c2ff-4793-b60c-d01d44712687
-author: BrucePerlerMS
-ms.openlocfilehash: 15f176cc0f41370436b6e064d0cb4771e08bdb6d
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 9179b0ce92e2f9842cb125e7283c310a416ae3d1
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47086565"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187098"
 ---
 # <a name="securitynegotiationsuccess"></a>SecurityNegotiationSuccess
 ID: 171  

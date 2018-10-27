@@ -3,12 +3,12 @@ title: Konzolová aplikace
 description: V tomto kurzu se naučíte mnoho funkcí v jazyce C# a .NET Core.
 ms.date: 03/06/2017
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: da3f8f913d452b5c3c9dcda6079067c879a678dd
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: 9255ad9b1fefc828e767fb8e6ccc62b2eaf23fd6
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46937589"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183617"
 ---
 # <a name="console-application"></a>Konzolová aplikace
 
@@ -155,7 +155,7 @@ Spusťte ukázku a budete moct rychlost čtení na její předem nakonfigurovan�
 
 ## <a name="async-tasks"></a>Úloh s modifikátorem Async
 
-V tomto posledním kroku přidáte kód pro zápis výstupu asynchronně v jednom úkolu, při také běží jiné úlohy ke čtení vstupu od uživatele Pokud chtějí urychlit nebo zpomalit zobrazení textu. Tato akce nemá několika krocích a do konce, budete mít všechny aktualizace, které potřebujete.
+V tomto posledním kroku budete přidejte kód pro zápis výstupu asynchronně v jednom úkolu, při vstupu od uživatele, pokud je to vyžadováno pro urychlení nebo zpomalit zobrazení textu také běží jiné úlohy ke čtení nebo úplně zastavit zobrazení textu. Tato akce nemá několika krocích a do konce, budete mít všechny aktualizace, které potřebujete.
 Prvním krokem je vytvoření asynchronní <xref:System.Threading.Tasks.Task> vrací metoda, která představuje kód zatím jste vytvořili pro čtení a zobrazení souboru.
 
 Přidejte tuto metodu za účelem vaše `Program` třídy (je převzata z těla vaše `Main` metoda):
@@ -190,7 +190,7 @@ Tady v `Main`, kód synchronně čekání. Měli byste použít `await` operáto
 > [!NOTE]
 > Pokud používáte C# 7.1 nebo novější, můžete vytvořit konzolové aplikace s [ `async` `Main` metoda](../whats-new/csharp-7-1.md#async-main).
 
-Dále je třeba zadat druhý asynchronní metodu ke čtení z konzoly a podívejte se ' <' (méně než) a ">" (větší) klíče. Tady je pro tuto úlohu, které přidáte metodu:
+Dále je třeba zadat druhý asynchronní metodu ke čtení z konzoly a podívejte se ' <' (méně než), ">" (větší) a "X" nebo "x" klíče. Tady je pro tuto úlohu, které přidáte metodu:
 
 ```csharp
 private static async Task GetInput()
@@ -208,13 +208,18 @@ private static async Task GetInput()
             {
                 delay += 10;
             }
+            else if (key.KeyChar == 'X' || key.KeyChar == 'x')
+            {
+                break;
+            }
         } while (true);
     };
     await Task.Run(work);
 }
 ```
 
-Tím se vytvoří pro reprezentaci výrazu lambda <xref:System.Action> delegáta, který čte klíč z konzoly a upravuje místní proměnnou představující zpoždění, když uživatel stiskne ' <' (méně než) nebo ">" (větší) klíče. Tato metoda používá <xref:System.Console.ReadKey> blokovat a čekat, uživatel ke stisknutí klávesy.
+Tím se vytvoří pro reprezentaci výrazu lambda <xref:System.Action> delegáta, který čte klíč z konzoly a upravuje místní proměnnou představující zpoždění, když uživatel stiskne ' <' (méně než) nebo ">" (větší) klíče. Metody delegáta dokončí, když uživatel stiskne "X" nebo "x" klíče, které uživateli umožní zastavit zobrazení textu v každém okamžiku.
+Tato metoda používá <xref:System.Console.ReadKey> blokovat a čekat, uživatel ke stisknutí klávesy.
 
 Dokončete tuto funkci je potřeba vytvořit nový `async Task` vrací metoda, která spustí oba z těchto úloh (`GetInput` a `ShowTeleprompter`) a také spravuje sdílených dat mezi těmito dvěma úkoly.
 

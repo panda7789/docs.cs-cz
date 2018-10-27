@@ -5,12 +5,12 @@ author: bleroy
 ms.author: mairaw
 ms.date: 11/16/2016
 ms.custom: vs-dotnet
-ms.openlocfilehash: c21c257b55c4389ea4a60fca55eb83cff60ff3b5
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: b3e466511fcae447f5bb54b83f13b25bc90c6539
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840937"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185076"
 ---
 # <a name="building-a-complete-net-core-solution-on-windows-using-visual-studio-2017"></a>Vytvoření kompletního řešení .NET Core ve Windows pomocí sady Visual Studio 2017
 
@@ -24,7 +24,7 @@ Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites
 
 ### <a name="writing-the-library"></a>Zápis knihovny
 
-1. V sadě Visual Studio, zvolte **souboru**, **nový**, **projektu**. V **nový projekt** dialogového okna, rozbalte **Visual C#** uzlu a zvolte **.NET Standard** uzel a klikněte na tlačítko **knihovna tříd (.NET Standard)**. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.Net Standard](https://docs.microsoft.com/en-us/dotnet/standard/net-standard)
+1. V sadě Visual Studio, zvolte **souboru**, **nový**, **projektu**. V **nový projekt** dialogového okna, rozbalte **Visual C#** uzlu a zvolte **.NET Standard** uzel a klikněte na tlačítko **knihovna tříd (.NET Standard)**. Tím se vytvoří knihovny .NET Standard, který cílí na .NET Core stejně jako jiné implementace .NET, která podporuje verzi 2.0 [.NET Standard](../../standard/net-standard.md).
 
 2. Název projektu "Library" a "Golden" řešení. Ponechte **vytvořit adresář pro řešení** zaškrtnuto. Klikněte na tlačítko **OK**.
 
@@ -73,6 +73,6 @@ Postupujte podle pokynů [naší stránce s požadavky](../windows-prerequisites
 
 8. Nastavte zarážku po řádek, který jste právě přidali.
 
-9. Stisknutím klávesy F5 spusťte aplikaci...
+9. Stisknutím klávesy F5 spusťte aplikaci.
 
    Aplikace má sestavit bez chyb a by měl zarážce. Musíte mít také možnost zkontrolovat, že aplikace výstupu "odpověď je 42.".

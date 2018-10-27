@@ -1,5 +1,5 @@
 ---
-title: Vytvoření výčtu řetězců formátu
+title: Výčet řetězců formátu – .NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,24 +12,46 @@ helpviewer_keywords:
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 956dc7daad91d9daa3ac950d7f5897404dd314c2
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 2c71592537a31527bda6db08da8c36e798270d5a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041262"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190850"
 ---
-# <a name="enumeration-format-strings"></a>Vytvoření výčtu řetězců formátu
+# <a name="enumeration-format-strings"></a>Výčet řetězců formátu
+
 Můžete použít <xref:System.Enum.ToString%2A?displayProperty=nameWithType> metodu pro vytvoření nového objektu řetězec, který představuje číselná, šestnáctkové číslo nebo řetězcové hodnoty na člena výčtu. Tato metoda přebírá jeden výčet formátování řetězce k určení, které se mají vracet hodnotu.
 
-Následující tabulka uvádí výčet formátování řetězců a hodnoty, které vracejí. Tyto specifikátory formátu nerozlišují malá a velká písmena.
+Výčet formátování řetězců a hodnoty, které vracejí naleznete v následujících částech. Tyto specifikátory formátu nerozlišují malá a velká písmena.
 
-| Formátovací řetězec | Výsledek |
-| ------------- | ------ |
-| G nebo g | Zobrazí výčet položku jako hodnotu řetězce, pokud je to možné a v opačném případě se zobrazí celočíselnou hodnotu aktuální instance. Pokud je definován výčet s **příznaky** nastaven atribut řetězců jsou hodnoty pro každou platnou položku zřetězených dohromady, oddělené čárkami. Pokud **příznaky** atribut není nastaven, je neplatná hodnota zobrazí jako číselného vstupu. Následující příklad ukazuje specifikátor formátu.<br /><br />[!code-csharp[Formatting.Enum#1](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#1)] [!code-vb[Formatting.Enum#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#1)] |
-| F nebo f | Zobrazí výčet položku jako řetězcovou hodnotu, pokud je to možné. Pokud hodnota může být zcela zobrazena jako souhrn položky ve výčtu (i v případě, **příznaky** atribut není k dispozici), řetězcové hodnoty pro každou platnou položku jsou společně zřetězených, oddělené čárkami. Pokud hodnotu nelze určit zcela podle položek výčtu, hodnota formátována jako hodnota celého čísla. Následující příklad ukazuje specifikátor formátu F.<br /><br />[!code-csharp[Formatting.Enum#2](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#2)] [!code-vb[Formatting.Enum#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#2)] |
-| D nebo d | Zobrazí výčet položku jako celočíselnou hodnotu v nejkratší možné reprezentaci. Následující příklad ukazuje specifikátor formátu D.<br /><br />[!code-csharp[Formatting.Enum#3](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#3)] [!code-vb[Formatting.Enum#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#3)] |
-| X nebo x | Zobrazí výčet položku jako šestnáctková hodnota. Hodnota je reprezentován počátečními nulami podle potřeby zajistit, že hodnota je minimální osm číslic v délce. Následující příklad ukazuje specifikátor formátu X.<br /><br /> [!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)] [!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)] |
+## <a name="g-or-g"></a>G nebo g
+
+Zobrazí výčet položku jako hodnotu řetězce, pokud je to možné a v opačném případě se zobrazí celočíselnou hodnotu aktuální instance. Pokud je definován výčet s **příznaky** nastaven atribut řetězců jsou hodnoty pro každou platnou položku zřetězených dohromady, oddělené čárkami. Pokud **příznaky** atribut není nastaven, je neplatná hodnota zobrazí jako číselného vstupu. Následující příklad ukazuje specifikátor formátu.
+
+[!code-csharp[Formatting.Enum#1](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#1)]
+[!code-vb[Formatting.Enum#1](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#1)]
+
+## <a name="f-or-f"></a>F nebo f
+
+Zobrazí výčet položku jako řetězcovou hodnotu, pokud je to možné. Pokud hodnota může být zcela zobrazena jako souhrn položky ve výčtu (i v případě, **příznaky** atribut není k dispozici), řetězcové hodnoty pro každou platnou položku jsou společně zřetězených, oddělené čárkami. Pokud hodnotu nelze určit zcela podle položek výčtu, hodnota formátována jako hodnota celého čísla. Následující příklad ukazuje specifikátor formátu F.
+
+[!code-csharp[Formatting.Enum#2](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#2)]
+[!code-vb[Formatting.Enum#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#2)]
+
+## <a name="d-or-d"></a>D nebo d
+
+Zobrazí výčet položku jako celočíselnou hodnotu v nejkratší možné reprezentaci. Následující příklad ukazuje specifikátor formátu D.
+
+[!code-csharp[Formatting.Enum#3](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#3)]
+[!code-vb[Formatting.Enum#3](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#3)]
+
+## <a name="x-or-x"></a>X nebo x
+
+Zobrazí výčet položku jako šestnáctková hodnota. Hodnota je reprezentován počátečními nulami podle potřeby zajistit, že hodnota je minimální osm číslic v délce. Následující příklad ukazuje specifikátor formátu X.
+
+[!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]      
+[!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]
 
 ## <a name="example"></a>Příklad
 

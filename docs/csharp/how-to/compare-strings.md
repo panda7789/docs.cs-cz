@@ -5,12 +5,12 @@ ms.date: 03/20/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: 3c841a1152613ec877bb6172dc8d053bf060b33b
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 36529414d5b51e9e4ade7447ff6e5e908e5153ab
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515277"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188570"
 ---
 # <a name="how-to-compare-strings-in-c"></a>Jak bude probíhat porovnávání řetězců v jazyce C\#
 
@@ -21,7 +21,7 @@ Faktory ovlivňující porovnávání řetězců jsou složité tyto dvě otázk
 - Můžete použít pořadí nebo jazykové porovnání.
 - Můžete použít, pokud to je případ.
 - Jazyková verze můžete vybrat konkrétní porovnání.
-- Lingvistická comparisions jsou jazykovou verzi a platformy, které jsou závislé.
+- Porovnání nezávislá na jsou jazykovou verzi a platformy, které jsou závislé.
 
 [!INCLUDE[interactive-note](~/includes/csharp-interactive-note.md)]
 
@@ -45,7 +45,7 @@ Chcete-li určit porovnání velká a malá písmena. Je také statické <xref:S
 ## <a name="linguistic-comparisons"></a>Porovnání nezávislá na
 
 Řetězce lze provést řazení také použití jazykových pravidel pro aktuální jazykovou verzi.
-To se někdy označuje jako "pořadí řazení slov." Při provádění lingvistické srovnání některé nealfanumerické znaky Unicode mohou mít zvláštní váhu přiřazené. Například pomlčka "-" může mít velmi malou přiřazenou váhu, tak, aby "co-op" a "coop" zobrazily vedle sebe v pořadí řazení. Kromě toho může být některé znaky Unicode odpovídá sekvenci z alfanumerických znaků. Následující příklad používá frázi "Jejich taneček v ulici." v Německu "ss" a "ß". Lingvistických (ve Windows), "ss" je rovno Essetz Němčina: znak "ß" v "en US" a "de-DE" jazykové verze.
+To se někdy označuje jako "pořadí řazení slov." Při provádění jazykové porovnání některé nealfanumerické znaky Unicode mohou mít zvláštní váhu přiřazené. Například pomlčka "-" může mít velmi malou přiřazenou váhu, tak, aby "co-op" a "coop" zobrazily vedle sebe v pořadí řazení. Kromě toho může být některé znaky Unicode odpovídá sekvenci z alfanumerických znaků. Následující příklad používá frázi "Jejich taneček v ulici." v Německu "ss" a "ß". Lingvistických (ve Windows), "ss" je rovno Essetz Němčina: znak "ß" v "en US" a "de-DE" jazykové verze.
 
 [!code-csharp-interactive[Comparing strings using linguistic rules](../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs#3)]
 
@@ -82,7 +82,7 @@ Porovnání zohledňující jazykovou verzi se obvykle používají porovnání 
 <co-op> is less than <cop> using ordinal comparison
 ```
 
-Jazykové comparisions jsou závislé na aktuální jazykovou verzi a jsou závislé operačního systému. Je nutné provést, který v úvahu při práci s porovnávání řetězců.
+Porovnání nezávislá na jsou závislé na aktuální jazykovou verzi a jsou závislé operačního systému. Je nutné provést, který v úvahu při práci s porovnávání řetězců.
 
 ## <a name="linguistic-sorting-and-searching-strings-in-arrays"></a>Jazyková řazení a hledání řetězců v polích
 

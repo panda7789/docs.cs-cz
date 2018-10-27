@@ -2,13 +2,12 @@
 title: Možnosti zabezpečení u vlastních vazeb
 ms.date: 03/30/2017
 ms.assetid: a2425679-484a-4e6c-9c98-7da7304f1516
-author: BrucePerlerMS
-ms.openlocfilehash: 35d2477af3dc7ce6fdd075055fff9e687bdc2a60
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: c18bec095866c70622c75834e8a4d5fe6a491b08
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196730"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190889"
 ---
 # <a name="security-capabilities-with-custom-bindings"></a>Možnosti zabezpečení u vlastních vazeb
 Umožňuje zvládnout běžné úkoly zabezpečení pomocí jedné z vazeb poskytovaných systémem. Pokud potřebujete větší kontrolu, ale můžete vytvořit vlastní vazby s <xref:System.ServiceModel.Channels.SecurityBindingElement>, jak je popsáno v těchto tématech. Další informace o vlastních vazeb naleznete v tématu [vlastních vazeb](../../../../docs/framework/wcf/extending/custom-bindings.md).  

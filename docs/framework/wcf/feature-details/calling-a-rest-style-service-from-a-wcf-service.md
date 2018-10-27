@@ -2,18 +2,18 @@
 title: Volání služby typu REST ze služby WCF
 ms.date: 03/30/2017
 ms.assetid: 77df81d8-7f53-4daf-8d2d-bf7996e94d5a
-ms.openlocfilehash: 8f520b1f77b9ca41b9fd2b8d51c1b935ab1e0a87
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: be9f15d35ec00ba91a06abf5a0a413b59452270b
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33488508"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50184234"
 ---
 # <a name="calling-a-rest-style-service-from-a-wcf-service"></a>Volání služby typu REST ze služby WCF
-Při volání z regulární služby WCF (založený na protokolu SOAP) služby ve stylu REST, přepíše kontext operaci na metodě služby (která obsahuje informace o příchozího požadavku) kontext, který má být používána odchozího požadavku. To způsobí, že metody GET protokolu HTTP žádosti o změnu na požadavky HTTP POST. Chcete-li vynutit službu WCF na používání správné kontextu pro volání služby stylu REST, vytvořte novou <xref:System.ServiceModel.OperationContextScope> a volání služby stylu REST z uvnitř oblasti kontextu operace. Toto téma popisuje, jak k vytvoření jednoduchý příklad, který tento postup ukazuje.  
+Při volání služby typu REST – vizuální styl od pravidelných služby WCF (založený na protokolu SOAP), přepíše kontext operace na metodu služby (který obsahuje informace o příchozího požadavku) kontext, který by měly být používány odchozí požadavek. To způsobí, že požadavky HTTP GET, chcete-li změnit na požadavky HTTP POST. Chcete-li vynutit služby WCF ve správném kontextu použít pro volání služby REST – vizuální styl, vytvořte nový <xref:System.ServiceModel.OperationContextScope> a volání služby REST – vizuální styl od uvnitř oboru kontextu operace. Toto téma popisuje, jak vytvořit jednoduchý příklad, který znázorňuje tento postup.  
   
 ## <a name="define-the-rest-style-service-contract"></a>Definování kontraktu služby ve stylu REST  
- Definování kontraktu služby jednoduché stylu REST:  
+ Definování kontraktu služby jednoduchého stylu REST:  
   
 ```csharp
 [ServiceContract]
@@ -46,7 +46,7 @@ public class RestService : IRestInterface
 ```
   
 ## <a name="define-the-wcf-service-contract"></a>Definování kontraktu služby WCF  
- Definování kontraktu služby WCF, který se použije k volání služby stylu REST:  
+ Definování kontraktu služby WCF, který se použije k vyvolání služby REST-style:  
   
 ```csharp
 [ServiceContract]
@@ -79,8 +79,8 @@ public class NormalService : INormalInterface
 }  
 ```  
   
-## <a name="create-the-client-proxy-for-the-rest-style-service"></a>Vytvořit proxy klienta pro službu stylu REST  
- Pomocí <!--zz<xref:System.ServiceModel.ClientBase%60>--> `System.ServiceModel.ClientBase` implementace proxy klienta. Pro každou metodu s názvem, nový <xref:System.ServiceModel.OperationContextScope> se vytvoří a používá k volání operace.  
+## <a name="create-the-client-proxy-for-the-rest-style-service"></a>Vytvořit proxy klienta pro službu REST-style.  
+ Pomocí <xref:System.ServiceModel.ClientBase%601> implementace proxy serveru klienta. Pro každou metodu s názvem, nová <xref:System.ServiceModel.OperationContextScope> se vytvoří a použít k volání operace.  
   
 ```csharp
 public class MyRestClient : ClientBase<IRestInterface>, IRestInterface
@@ -110,7 +110,7 @@ public class MyRestClient : ClientBase<IRestInterface>, IRestInterface
 ```  
   
 ## <a name="host-and-call-the-services"></a>Hostování a volání služeb  
- Hostitel obě služby v aplikaci konzoly, přidání potřebné koncových bodů a chování. A pak zavolají regulární služby WCF:  
+ Hostitelem obou služeb v konzolové aplikaci, přidání koncových bodů potřebné a chování. A pak vyvolejte regulární služby WCF:  
   
 ```csharp
 public static void Main()
@@ -133,8 +133,8 @@ public static void Main()
 }
 ```  
   
-## <a name="complete-code-listing"></a>Výpis úplného kódu  
- Níže uvádíme úplný seznam všech ukázka implementované v tomto tématu:  
+## <a name="complete-code-listing"></a>Úplný výpis kódu  
+ Následuje úplný ukázkový implementované v tomto tématu:  
   
 ```csharp
 public class CallingRESTSample  

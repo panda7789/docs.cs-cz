@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: 23ab534ef31773efc69b6a68e73ec30bde4f6e61
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9f5a7eff25fb202ba84f0bd49893748b507326fd
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502656"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188167"
 ---
 # <a name="default-message-contract"></a>Výchozí kontrakt zprávy
 Výchozí kontrakt zprávy ukázce služby, kde je předán vlastní uživatelsky definovanou zprávu do a z operací služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) , který implementuje rozhraní kalkulačku jako služba typu. Místo operace jednotlivé služby pro sčítání, odčítání, násobení a dělení používané [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), tento příklad předává vlastní zprávu, která obsahuje operandy a operátor a vrátí výsledek aritmetické výpočtu.  
@@ -21,7 +21,7 @@ Výchozí kontrakt zprávy ukázce služby, kde je předán vlastní uživatelsk
   
  Ve službě, je definován operaci jedinou službou, která přijímá a vrací vlastní zprávy typu `MyMessage`. I když v této ukázce jsou zprávy požadavků a odpovědí stejného typu, jsou samozřejmě možné jiná zpráva smluv v případě potřeby.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface ICalculator  
 {  
@@ -33,7 +33,7 @@ public interface ICalculator
   
  Vlastní zpráva `MyMessage` je definován ve třídě opatřen poznámkou <xref:System.ServiceModel.MessageContractAttribute>, <xref:System.ServiceModel.MessageHeaderAttribute> a <xref:System.ServiceModel.MessageBodyMemberAttribute> atributy. Třetí konstruktor se používá v této ukázce. Použití kontraktů zpráv umožňuje vykonávat plnou kontrolu nad zprávu protokolu SOAP. V této ukázce <xref:System.ServiceModel.MessageHeaderAttribute> atribut se používá pro umístění `Operation` v záhlaví SOAP. Operandy `N1`, `N2` a `Result` být použit v těle SOAP, protože mají <xref:System.ServiceModel.MessageBodyMemberAttribute> atribut.  
   
-```  
+```csharp
 [MessageContract]  
 public class MyMessage  
 {  
@@ -99,7 +99,7 @@ public class MyMessage
   
  Implementace třídy obsahuje kód `Calculate` operace služby. `CalculateService` Třídy získá operandy a operátor ze zprávy požadavku a vytvoří zprávu odpovědi, který obsahuje výsledek výpočtu požadovaný, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 // Service class which implements the service contract.  
 public class CalculatorService : ICalculator  
 {  
@@ -133,29 +133,31 @@ public class CalculatorService : ICalculator
   
  Byl vytvořen kód klienta vygenerovaný pro klienta [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) nástroj. Nástroj automaticky vytváří typy kontraktů zpráv v kódu generovaného klienta v případě potřeby. `/messageContract` Příkazu lze zadat pro vynucení generování kontraktů zpráv.  
   
-```  
+```console  
 svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" /o:client\generatedClient.cs http://localhost/servicemodelsamples/service.svc/mex  
 ```  
   
  Následující ukázkový kód ukazuje klienta pomocí `MyMessage` zprávy.  
   
-```  
+```csharp
 // Create a client with given client endpoint configuration  
 CalculatorClient client = new CalculatorClient();  
   
 // Perform addition using a typed message.  
   
-MyMessage request = new MyMessage();  
-request.N1 = 100D;  
-request.N2 = 15.99D;  
-request.Operation = "+";  
+MyMessage request = new MyMessage() 
+                    {  
+                        N1 = 100D,  
+                        N2 = 15.99D,  
+                        Operation = "+"  
+                    };
 MyMessage response = ((ICalculator)client).Calculate(request);  
 Console.WriteLine("Add({0},{1}) = {2}", request.N1, request.N2, response.Result);  
 ```  
   
  Při spuštění ukázky výpočty jsou zobrazeny v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-```  
+```console  
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  

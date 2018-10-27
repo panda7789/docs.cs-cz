@@ -10,14 +10,12 @@ helpviewer_keywords:
 - <remove> element, webRequestModules
 - <webRequestModules>, remove element
 ms.assetid: dd84d2fe-2f4f-457a-9d3c-441d0d21cc10
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: d0da0fd2edae4687ea80b4a23cc82a25ead9cb7b
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 2f787206c503c047a34383e12c5676296e39c1fe
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47208578"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190746"
 ---
 # <a name="ltremovegt-element-for-webrequestmodules-network-settings"></a>&lt;Odebrat&gt; – Element pro webRequestModules (nastavení sítě)
 Vlastní modul požadavku webového odstraní z aplikace.  
@@ -56,13 +54,14 @@ Vlastní modul požadavku webového odstraní z aplikace.
 ## <a name="remarks"></a>Poznámky  
  `remove` Element odebere registrovaný modul požadavku webového pro zadaný identifikátor URI předponu.  
   
- Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI – například "http", nebo "`http://www.contoso.com` ".  
+ Hodnota `prefix` atribut by měl mít počáteční znaky platný identifikátor URI – například "`http`", nebo "`http://www.contoso.com`".  
   
 ## <a name="configuration-files"></a>Konfigurační soubory  
  Tento element lze použít v konfiguračním souboru aplikace nebo konfiguračního souboru počítače (Machine.config).  
   
 ## <a name="example"></a>Příklad  
- Následující příklad odebere existující webový modul požadavku pro protokol HTTP a pak zaregistruje nový modul vlastní webové žádosti pro požadavky HTTP na www.contoso.com.  
+
+Následující příklad odebere existující webový modul požadavku pro protokol HTTP a poté registrů nový modul vlastní webového požadavku pro protokol HTTP žádostí o `www.contoso.com`.
   
 ```xml  
 <configuration>  
@@ -79,5 +78,5 @@ Vlastní modul požadavku webového odstraní z aplikace.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.Net.WebRequest>  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- <xref:System.Net.WebRequest>  
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

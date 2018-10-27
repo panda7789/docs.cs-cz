@@ -9,14 +9,12 @@ helpviewer_keywords:
 - netcf compiler option [Visual Basic]
 - /netcf compiler option [Visual Basic]
 ms.assetid: db7cfa59-c315-401c-a59b-0daf355343d6
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 36b2cba14f15cebdcc7f371f53f46b657ab12758
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: d213f0f95d047a3758a4c85e4dc8263f82dcac8a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43854399"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50184566"
 ---
 # <a name="-netcf"></a>-netcf
 Nastaví kompilátor k cíli [!INCLUDE[Compact](~/includes/compact-md.md)].  

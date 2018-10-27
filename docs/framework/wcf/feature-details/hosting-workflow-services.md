@@ -2,18 +2,18 @@
 title: Hostování služeb pracovních postupů
 ms.date: 03/30/2017
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-ms.openlocfilehash: f75b8cc4cde0372b995c39a5da3ae4b71590743e
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d51157863984314583c5d225bc9d8d0b6cf74874
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505543"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50186093"
 ---
 # <a name="hosting-workflow-services"></a>Hostování služeb pracovních postupů
 Služba pracovního postupu musí být hostovaný, aby se reagovat na příchozí zprávy. Služby pracovních postupů pomocí infrastruktury přenosu zpráv WCF a proto hostované podobným způsobem. Stejně jako služby WCF služby pracovních postupů je možné hostovat ve spravované aplikaci, v rámci Internetové informační služby (IIS) nebo v rámci služby pro aktivační proces Windows (WAS). Kromě toho je možné hostovat služby pracovních postupů v rámci Windows Server App Fabric. Další informace o systému Windows Server App Fabric najdete v části [dokumentace ke službě Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193037), [funkce hostování AppFabric](https://go.microsoft.com/fwlink/?LinkId=196494), a [AppFabric hostování koncepty](https://go.microsoft.com/fwlink/?LinkId=196495). Další informace o různých způsobech hostitele WCF služeb najdete v tématu [hostování služeb](../../../../docs/framework/wcf/hosting-services.md).
 
 ## <a name="hosting-in-a-managed-application"></a>Hostování ve spravované aplikaci
- K hostování služby pracovního postupu ve spravované aplikaci, použijte <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. <xref:System.ServiceModel.Activities.WorkflowServiceHost> Konstruktor umožňuje zadat instanci pracovního postupu služby typu singleton, definice pracovního postupu služby nebo aktivitou, která používá zasílání zpráv aktivity pracovního postupu. Volání <<!--zz xref:System.ServiceModel.Activities.WorkflowServiceHost.Open%2A--> `System.ServiceModel.Activities.WorkflowServiceHost.Open`> způsobí, že služba započít naslouchání pro příchozí zprávy.
+ K hostování služby pracovního postupu ve spravované aplikaci, použijte <xref:System.ServiceModel.Activities.WorkflowServiceHost> třídy. <xref:System.ServiceModel.Activities.WorkflowServiceHost> Konstruktor umožňuje zadat instanci pracovního postupu služby typu singleton, definice pracovního postupu služby nebo aktivitou, která používá zasílání zpráv aktivity pracovního postupu. Volání <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> způsobí, že služba započít naslouchání pro příchozí zprávy.
 
 ## <a name="hosting-under-iis-or-was"></a>Hostování v rámci služby IIS nebo WAS
  Hostování služby pracovního procesu v rámci služby IIS nebo WAS zahrnuje vytvoření virtuálního adresáře a umístění souborů do virtuálního adresáře, které definují službě a její chování. Při hostování služby pracovního procesu v rámci služby IIS nebo WAS zde je několik možností:

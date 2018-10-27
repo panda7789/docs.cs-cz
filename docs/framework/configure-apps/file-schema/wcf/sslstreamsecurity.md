@@ -2,13 +2,12 @@
 title: '&lt;sslStreamSecurity&gt;'
 ms.date: 03/30/2017
 ms.assetid: 430a378b-a742-4858-8a12-9f9b235fd627
-author: BrucePerlerMS
-ms.openlocfilehash: 6eacf1833ecf980696d75c5dbcaaba3ba6403d92
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: ecc67c2b3972ccb5bc8a1fe9ae9b400292642d53
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196327"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50184488"
 ---
 # <a name="ltsslstreamsecuritygt"></a>&lt;sslStreamSecurity&gt;
 Představuje vlastní prvek vazby, který podporuje zabezpečení kanálu pomocí datového proudu protokolu SSL.  

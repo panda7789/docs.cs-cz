@@ -5,12 +5,12 @@ author: cartermp
 ms.author: mairaw
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: e131ab48b666f2d22d8bd02e41ed76e415a2597d
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: b98095cd6afd408331ab8c8f6bb15e7741d3073a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845388"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50189690"
 ---
 # <a name="net-architectural-components"></a>Architekturálních komponentách .NET
 
@@ -63,7 +63,7 @@ Další informace o Mono, najdete v článku [dokumentace Mono](https://www.mono
 
 UPW je implementace .NET, která je určená k vytváření moderních, dotykově ovládaný Windows aplikací a softwaru pro Internet věcí (IoT). Je určený ke sjednocení různé typy zařízení, které můžete chtít zaměřit, včetně počítače, tablety, phablets, telefony a dokonce i Xbox. UPW poskytuje mnoho služeb, jako jsou centralizované app storu, spouštěcí prostředí (AppContainer) a sada rozhraní API Windows nahrazujícím Win32 (WinRT). Aplikace může být napsané v jazyce C++, C#, VB.NET a JavaScript. Při použití jazyka C# a VB.NET, jsou k dispozici rozhraní API .NET pomocí .NET Core.
 
-Další informace o UPW, naleznete v tématu [Úvod k univerzální platformě Windows](https://docs.microsoft.com/windows/uwp/get-started/universal-application-platform-guide).
+Další informace o UPW, naleznete v tématu [Úvod k univerzální platformě Windows](/windows/uwp/get-started/universal-application-platform-guide).
 
 ## <a name="net-runtimes"></a>Moduly .NET runtime
 

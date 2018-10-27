@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 7cdf34ff6ae506ba209300685da3752820b250a2
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 98ef688c1136a81a5b57c3fdfee73c53024186e7
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43516747"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50191035"
 ---
 # <a name="putmethod-function"></a>PutMethod – funkce
 Vytvoří metodu.
@@ -80,11 +80,11 @@ Následující hodnoty vrácené touto funkcí jsou definovány v *WbemCli.h* hl
 
 Tato funkce zalamuje volání na [IWbemClassObject::PutMethod](/windows/desktop/api/wbemcli/nf-wbemcli-iwbemclassobject-putmethod) metody.
 
-Volání této metody je podporována pouze v případě `ptr` je definice třídy CIM. Zpracování metody není k dispozici [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) ukazatele, které odkazují na instance CIM.
+Volání této metody je podporována pouze v případě `ptr` je definice třídy CIM. Zpracování metody není k dispozici [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) ukazatele, které odkazují na instance CIM.
 
 Uživatelé nemůžou vytvářet metody s názvy, které začínat ani končit podtržítkem. To je vyhrazen pro systémové třídy a vlastnosti.
 
-Pro metodu `in` a `out` jsou popsány parametry jako vlastnosti v [IWbemClassObject](https://msdn.microsoft.com/library/aa391433%28v=vs.85%29.aspx?f=255&MSPPError=-2147217396) objekty.
+Pro metodu `in` a `out` jsou popsány parametry jako vlastnosti v [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) objekty.
 
 `[in/out]` Parametr může být definován tak, že přidáte na oba objekty, na které odkazují stejnou vlastnost `pInSignature` a `pOutSignature` parametry. V takovém případě vlastnosti sdílet stejný **ID** hodnotu kvalifikátoru.
 

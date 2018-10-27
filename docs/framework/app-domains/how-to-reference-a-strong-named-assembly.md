@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 4c6a406a-b5eb-44fa-b4ed-4e95bb95a813
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: abc53381bf6cc8458b83edf5586b76fe7ed5f303
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 18844a9e8eff574d061b044bf88bc7857ce8033e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47199885"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182980"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Postupy: Odkazování na sestavení se silným názvem
 Proces pro odkazování na typy a prostředky v sestavení se silným názvem je obvykle transparentní. Odkaz můžete provést v době kompilace (časné vazby) nebo v době běhu.  
@@ -71,4 +71,4 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
  **sériové číslo - tp \<**  *souboru veřejného klíče* **>**  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)
+- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

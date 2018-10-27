@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], methods
 ms.assetid: 673eeea2-4b48-4faa-9c4e-2e89449221b9
-ms.openlocfilehash: 0fb5267e6324d3dffd1ad5a72ef3718c8cdd08b8
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: c6846b28813273cf99334b0427e304651e4cf5ee
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44251479"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187163"
 ---
 # <a name="generic-methods-c-programming-guide"></a>Obecné metody (Průvodce programováním v C#)
 Obecná metoda je metoda, která je deklarována s parametry typu, následujícím způsobem:  
@@ -43,7 +43,7 @@ Obecná metoda je metoda, která je deklarována s parametry typu, následujíc�
  [!code-csharp[csProgGuideGenerics#28](../../../csharp/programming-guide/generics/codesnippet/CSharp/generic-methods_7.cs)]  
   
 ## <a name="c-language-specification"></a>Specifikace jazyka C#  
- Další informace najdete v tématu [Specifikace jazyka C#](../../../csharp/language-reference/language-specification/index.md).  
+ Další informace najdete v tématu [Specifikace jazyka C#](~/_csharplang/spec/classes.md#methods).  
   
 ## <a name="see-also"></a>Viz také
 

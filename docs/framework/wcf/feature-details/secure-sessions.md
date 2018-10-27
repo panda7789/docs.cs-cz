@@ -2,13 +2,12 @@
 title: Zabezpečené relace
 ms.date: 03/30/2017
 ms.assetid: 7b50602f-d7b5-42e9-8e92-1f0413df0d8b
-author: BrucePerlerMS
-ms.openlocfilehash: 09c261afb2c64a46fc1f4619c4ec6b2e87b3fbbf
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 1f3a1e23f7cac2540216365acfca5c23cddfce71
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48847383"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190837"
 ---
 # <a name="secure-sessions"></a>Zabezpečené relace
 Funkce služby Windows Communication Foundation (WCF) je spolehlivé relace, které zaručuje, že jsou zprávy přijímány v pořadí, ve kterém byly odeslány. Témata v této části popisují vliv zabezpečení můžete zvážit při vytváření spolehlivé relace. Další informace o spolehlivých relací najdete v tématu [s využitím relací](../../../../docs/framework/wcf/using-sessions.md).  

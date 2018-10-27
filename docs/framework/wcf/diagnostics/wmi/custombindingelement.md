@@ -2,18 +2,19 @@
 title: CustomBindingElement
 ms.date: 03/30/2017
 ms.assetid: df959dc5-1aef-4338-a123-6ff3e7bc37af
-ms.openlocfilehash: 2261af592120eac65923108ed5a20265fccb6b4b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ff0d7d8d6c6cb180043a834a60ca58159ca84c58
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183142"
 ---
 # <a name="custombindingelement"></a>CustomBindingElement
 CustomBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class CustomBindingElement : BindingElement  
 {  
   string Name;  
@@ -31,11 +32,11 @@ class CustomBindingElement : BindingElement
   
  Přístup k typu: jen pro čtení  
   
- Řetězec, který obsahuje název konfigurace vazby. Tato hodnota je řetězec definovaný uživatelem, který funguje jako identifikační řetězec pro vlastní vazby.  
+ Řetězec, který obsahuje konfigurační název vazby. Tato hodnota je uživatelem definovaný řetězec, který funguje jako identifikační řetězec pro vlastní vazbu.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

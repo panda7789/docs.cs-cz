@@ -2,12 +2,12 @@
 title: Zabezpečený přístup k datům
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: 7083f68457aa8f87b01f523abc5742d24bafcbfd
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: e5bb96a091dcd64f12d086d864643d00c34d8f17
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43513784"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185937"
 ---
 # <a name="secure-data-access"></a>Zabezpečený přístup k datům
 Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezpečení k dispozici v základní úložiště dat nebo databázi. Také je potřeba zvážit důsledky zabezpečení jiných funkcích nebo komponenty, které vaše aplikace může obsahovat.  
@@ -88,7 +88,7 @@ Chcete-li psát bezpečný kód ADO.NET, budete muset pochopit mechanizmy zabezp
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Spolupráce s nespravovaným kódem](../../../../docs/framework/interop/index.md)|Obsahuje témata popisující, jak k vystavení komponent COM pro rozhraní .NET Framework a jak k vystavení součástí .NET Framework do modelu COM.|  
-|[Rozšířená interoperabilita modelu COM](https://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb)|Obsahuje Pokročilá témata, jako je například primárních sestavení vzájemné spolupráce, práce s vlákny a vlastní zařazování.|  
+|[Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx)|Obsahuje Pokročilá témata, jako je například primárních sestavení vzájemné spolupráce, práce s vlákny a vlastní zařazování.|  
   
 ## <a name="see-also"></a>Viz také  
  [Zabezpečení aplikací ADO.NET](../../../../docs/framework/data/adonet/securing-ado-net-applications.md)  

@@ -3,12 +3,12 @@ title: Průvodce jazykem F#
 description: 'Tento průvodce obsahuje přehled různých studijních materiálů pro F # je funkcionální programovací jazyk, který běží na rozhraní .NET.'
 author: cartermp
 ms.date: 08/03/2018
-ms.openlocfilehash: d3e10b6eb99f35b8eddeaa1f0ae257dd17d5cc41
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 5cd5bd95373c8a52a8d2b2348a51970560e8b272
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43480675"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188362"
 ---
 # <a name="f-guide"></a>Průvodce jazykem F#
 
@@ -56,7 +56,7 @@ Průvodce jazykem F # poskytuje mnoho materiály a učte jazyka F #.
 
 [Webu fragmenty kódu F #](http://www.fssnip.net) obsahuje obrovské sady ukazující, jak provést téměř čehokoliv v jazyce F #, od absolutní Začátečník do vysoce pokročilé fragmenty kódu.
 
-[F # Software Foundation Slack](http://fsharp.org/guides/slack/) je skvělým místem pro začátečníky a nabídne specialistů je vysoce aktivní, a má některé z celého světa nejlepší F # programátoři k dispozici pro chat. Důrazně doporučujeme připojení.
+[F # Software Foundation Slack](https://fsharp.org/guides/slack/) je skvělým místem pro začátečníky a nabídne specialistů je vysoce aktivní, a má některé z celého světa nejlepší F # programátoři k dispozici pro chat. Důrazně doporučujeme připojení.
 
 ## <a name="the-f-software-foundation"></a>V F # Software Foundation
 
@@ -64,4 +64,4 @@ I když společnost Microsoft se hlavního vývojáře jazyka F # a jeho nástro
 
 Mise Software Foundation F # je podporovat, ochranu a předem programovací jazyk, F # a podpora a usnadnění růstu různorodým a mezinárodní komunita F # programátorů.
 
-Další informace a zapojení, projděte si [fsharp.org](http://fsharp.org). Je zdarma pro připojení a sítě vývojáři F # v základ je něco, co nechcete nechat ujít!
+Další informace a zapojení, projděte si [fsharp.org](https://fsharp.org). Je zdarma pro připojení a sítě vývojáři F # v základ je něco, co nechcete nechat ujít!

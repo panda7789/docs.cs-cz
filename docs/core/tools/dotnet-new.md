@@ -3,13 +3,13 @@ title: nový příkaz DotNet – rozhraní příkazového řádku .NET Core
 description: Vytvoří nový příkaz dotnet nových projektů .NET Core založených na zadané šabloně.
 author: mairaw
 ms.author: mairaw
-ms.date: 07/31/2018
-ms.openlocfilehash: 396c4ddf09854fa4582226bdb1422f8c929e459b
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.date: 10/24/2018
+ms.openlocfilehash: 56d76f1dd54097f9cf20129d74057235290c273c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036127"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188196"
 ---
 # <a name="dotnet-new"></a>nový příkaz DotNet
 
@@ -65,27 +65,27 @@ Příkaz volání [modulu šablon](https://github.com/dotnet/templating) vytvoř
 
 Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -l` získat seznam dostupných šablon. V následující tabulce jsou uvedeny šablony, které jsou předinstalovány se sadou .NET Core SDK 2.1.300. Výchozí jazyk šablony se zobrazí v závorkách.
 
-|Popis šablony                          | Název šablony   | Jazyky     |
-|----------------------------------------------|-----------------|---------------|
-| Konzolová aplikace                          | `console`       | [C#], F #, VB  |
-| Knihovna tříd                                | `classlib`      | [C#], F #, VB  |
-| Projekt testu jednotek                            | `mstest`        | [C#], F #, VB  |
-| Projekt testů xUnit                           | `xunit`         | [C#], F #, VB  |
-| Stránka Razor                                   | `page`          | [C#]          |
-| MVC ViewImports                              | `viewimports`   | [C#]          |
-| MVC ViewStart                                | `viewstart`     | [C#]          |
-| ASP.NET Core je prázdný                           | `web`           | [C#], F #      |
-| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`           | [C#], F #      |
-| Webové aplikace ASP.NET Core                         | `razor`         | [C#]          |
-| ASP.NET Core pomocí Angular                    | `angular`       | [C#]          |
-| ASP.NET Core pomocí React.js                   | `react`         | [C#]          |
-| ASP.NET Core pomocí React.js a Redux         | `reactredux`    | [C#]          |
-| Webové rozhraní API ASP.NET Core                         | `webapi`        | [C#], F #      |
-| Knihovny tříd Razor                          | `razorclasslib` | [C#]          |
-| soubor Global.JSON                             | `globaljson`    |               |
-| NuGet config                                 | `nugetconfig`   |               |
-| Webové konfigurace                                   | `webconfig`     |               |
-| Soubor řešení                                | `sln`           |               |
+|Popis šablony                          | Název šablony    | Jazyky     |
+|----------------------------------------------|------------------|---------------|
+| Konzolová aplikace                          | `console`        | [C#], F#, VB  |
+| Knihovna tříd                                | `classlib`       | [C#], F#, VB  |
+| Projekt testu jednotek                            | `mstest`         | [C#], F#, VB  |
+| Projekt testů xUnit                           | `xunit`          | [C#], F#, VB  |
+| Stránka Razor                                   | `page`           | [C#]          |
+| MVC ViewImports                              | `viewimports`    | [C#]          |
+| MVC ViewStart                                | `viewstart`      | [C#]          |
+| ASP.NET Core je prázdný                           | `web`            | [C#],F#      |
+| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`            | [C#],F#      |
+| Webové aplikace ASP.NET Core                         | `razor`, `webapp`| [C#]          |
+| ASP.NET Core pomocí Angular                    | `angular`        | [C#]          |
+| ASP.NET Core pomocí React.js                   | `react`          | [C#]          |
+| ASP.NET Core pomocí React.js a Redux         | `reactredux`     | [C#]          |
+| Webové rozhraní API ASP.NET Core                         | `webapi`         | [C#],F#      |
+| Knihovny tříd Razor                          | `razorclasslib`  | [C#]          |
+| soubor Global.JSON                             | `globaljson`     |               |
+| NuGet config                                 | `nugetconfig`    |               |
+| Webové konfigurace                                   | `webconfig`      |               |
+| Soubor řešení                                | `sln`            |               |
 
 # <a name="net-core-20tabnetcore20"></a>[.NET core 2.0](#tab/netcore20)
 
@@ -93,17 +93,17 @@ Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -l` získat se
 
 |Popis šablony                          | Název šablony | Jazyky     |
 |----------------------------------------------|---------------|---------------|
-| Konzolová aplikace                          | `console`     | [C#], F #, VB  |
-| Knihovna tříd                                | `classlib`    | [C#], F #, VB  |
-| Projekt testu jednotek                            | `mstest`      | [C#], F #, VB  |
-| Projekt testů xUnit                           | `xunit`       | [C#], F #, VB  |
-| ASP.NET Core je prázdný                           | `web`         | [C#], F #      |
-| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`         | [C#], F #      |
+| Konzolová aplikace                          | `console`     | [C#], F#, VB  |
+| Knihovna tříd                                | `classlib`    | [C#], F#, VB  |
+| Projekt testu jednotek                            | `mstest`      | [C#], F#, VB  |
+| Projekt testů xUnit                           | `xunit`       | [C#], F#, VB  |
+| ASP.NET Core je prázdný                           | `web`         | [C#],F#      |
+| Webové aplikace ASP.NET Core (Model-View-Controller) | `mvc`         | [C#],F#      |
 | Webové aplikace ASP.NET Core                         | `razor`       | [C#]          |
 | ASP.NET Core pomocí Angular                    | `angular`     | [C#]          |
 | ASP.NET Core pomocí React.js                   | `react`       | [C#]          |
 | ASP.NET Core pomocí React.js a Redux         | `reactredux`  | [C#]          |
-| Webové rozhraní API ASP.NET Core                         | `webapi`      | [C#], F #      |
+| Webové rozhraní API ASP.NET Core                         | `webapi`      | [C#],F#      |
 | soubor Global.JSON                             | `globaljson`  |               |
 | NuGet config                                 | `nugetconfig` |               |
 | Webové konfigurace                                   | `webconfig`   |               |
@@ -118,12 +118,12 @@ Příkaz obsahuje výchozí seznam šablon. Použití `dotnet new -all` získat 
 
 |Popis šablony  | Název šablony | Jazyky |
 |----------------------|---------------|-----------|
-| Konzolová aplikace  | `console`     | [C#], F #  |
-| Knihovna tříd        | `classlib`    | [C#], F #  |
-| Projekt testu jednotek    | `mstest`      | [C#], F #  |
-| Projekt testů xUnit   | `xunit`       | [C#], F #  |
+| Konzolová aplikace  | `console`     | [C#],F#  |
+| Knihovna tříd        | `classlib`    | [C#],F#  |
+| Projekt testu jednotek    | `mstest`      | [C#],F#  |
+| Projekt testů xUnit   | `xunit`       | [C#],F#  |
 | ASP.NET Core je prázdný   | `web`         | [C#]      |
-| Webové aplikace ASP.NET Core | `mvc`         | [C#], F #  |
+| Webové aplikace ASP.NET Core | `mvc`         | [C#],F#  |
 | Webové rozhraní API ASP.NET Core | `webapi`      | [C#]      |
 | NuGet config         | `nugetconfig` |           |
 | Webové konfigurace           | `webconfig`   |           |

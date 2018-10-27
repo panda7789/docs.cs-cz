@@ -8,17 +8,17 @@ helpviewer_keywords:
 - printing XPS files programmatically [WPF]
 - XPS files [WPF], printing programmatically
 ms.assetid: 0b1c0a3f-b19e-43d6-bcc9-eb3ec4e555ad
-ms.openlocfilehash: 25c0b34bd33bee626df14c8dbedce0b82e895b58
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: a42f9b2101266857e56dee6836f4c3b27b3c6f96
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857336"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188322"
 ---
 # <a name="how-to-programmatically-print-xps-files"></a>Postupy: Tisk souborů XPS z programu
 Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A> metoda tisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory bez zahájení <xref:System.Windows.Controls.PrintDialog> nebo v zásadě, všechny [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] vůbec.  
   
- Můžete také vytisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory použijte všechny různé <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter>. Další informace o tom [tisk dokumentu XPS](https://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c(v=vs.90)).  
+ Můžete také vytisknout [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] soubory použijte všechny různé <xref:System.Windows.Xps.XpsDocumentWriter.Write%2A> a <xref:System.Windows.Xps.XpsDocumentWriter.WriteAsync%2A> metody <xref:System.Windows.Xps.XpsDocumentWriter>. Další informace o tom [tisk dokumentu XPS](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771525(v=vs.90)).  
   
  Dalším způsobem, jak tisk [!INCLUDE[TLA#tla_xps](../../../../includes/tlasharptla-xps-md.md)] , je použít <xref:System.Windows.Controls.PrintDialog.PrintDocument%2A> nebo <xref:System.Windows.Controls.PrintDialog.PrintVisual%2A> metody <xref:System.Windows.Controls.PrintDialog> ovládacího prvku. Zobrazit [vyvolání dialogového okna Tisk](how-to-invoke-a-print-dialog.md).  
   
@@ -56,7 +56,7 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
   
  Tato maskování vám umožní předat `true` jako konečný parametr <xref:System.Printing.PrintQueue.AddJob%28System.String%2CSystem.String%2CSystem.Boolean%29> aniž by to způsobilo výjimku, ale od té doby  *\<PseudoXPSPrinter >* není ve skutečnosti XPSDrv tiskárna vytiskne pouze uvolňování paměti.  
   
- **Poznámka:** pro zjednodušení výše uvedený příklad používá přítomnost \*XPS rozšíření jako jeho test, který je soubor [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]. Ale [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] soubory nemusí mít toto rozšíření. [IsXPS.exe (isxps pro kontrolu shody nástroj)](https://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3(v=vs.100)) je jeden ze způsobů, jak soubor pro testování [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] platnosti.  
+ **Poznámka:** pro zjednodušení výše uvedený příklad používá přítomnost \*XPS rozšíření jako jeho test, který je soubor [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)]. Ale [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] soubory nemusí mít toto rozšíření. [IsXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100)) je jeden ze způsobů, jak soubor pro testování [!INCLUDE[TLA2#tla_xps](../../../../includes/tla2sharptla-xps-md.md)] platnosti.  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Printing.PrintQueue>  
@@ -64,8 +64,8 @@ Můžete použít jednu přetížení <xref:System.Printing.PrintQueue.AddJob%2A
  <xref:System.Threading.ApartmentState>  
  <xref:System.STAThreadAttribute>  
  [XPS](https://www.microsoft.com/xps)  
- [Tisk dokumentu XPS](https://msdn.microsoft.com/library/849555c8-0c4e-48c0-86bc-a5494c69b36c(v=vs.90))  
- [Spravovaná a nespravovaná vlákna](https://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5(v=vs.100))  
- [isXPS.exe (isxps pro kontrolu shody nástroj)](https://msdn.microsoft.com/library/bfbb433f-7ab6-417a-90f0-71443d76bcb3(v=vs.100))  
+ [Tisk dokumentu XPS](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771525(v=vs.90))  
+ [Spravovaná a nespravovaná vlákna](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))  
+ [isXPS.exe (isxps pro kontrolu shody nástroj)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa348104(v=vs.100))  
  [Dokumenty v platformě WPF](documents-in-wpf.md)  
  [Přehled tisku](printing-overview.md)

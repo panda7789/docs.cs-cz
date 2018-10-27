@@ -2,29 +2,29 @@
 title: Podpora streamování SqlClient
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: f881318677949f5507c3e1c4a4b5606dd880c396
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7c9c7300678b9e285965a3c1b673a92b6f26973e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33364733"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50191036"
 ---
 # <a name="sqlclient-streaming-support"></a>Podpora streamování SqlClient
-Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumentů, bitové kopie a mediálních souborů). Databáze systému SQL Server může uchovávat binární rozsáhlé objekty (objekty BLOB), ale načítání objektů BLOB můžete použít velké množství paměti.  
+Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)]) podporuje nestrukturovaných dat na serveru (dokumenty, obrázky a mediální soubory). Databáze SQL serveru můžete ukládat rozsáhlé binární objekty (objekty BLOB), ale načítají se objekty BLOB můžete použít velké množství paměti.  
   
- Podpora na SQL Server a z streamování usnadňuje psaní aplikací datový proud dat, bez nutnosti plně načíst data do paměti, což je méně paměti přetečení výjimky.  
+ Podpora z SQL serveru a streamování zjednodušuje psaní aplikací streamování dat, aniž byste museli plně načíst data do paměti, což vede k méně výjimky přetečení paměti.  
   
- Podpora streamování také povolit vícevrstvé aplikace škálovat lepší, zejména ve scénářích, kde se objekty obchodní připojuje k SQL Azure, aby bylo možné odeslat, načtení a zpracování velkých objektů BLOB.  
+ Podpora streamování vám také umožní aplikace střední vrstvy škálování lepší, zejména ve scénářích, kde se pro obchodní objekty připojit k SQL Azure, aby bylo možné odeslat, načítání a manipulaci s velkých objektů BLOB.  
   
 > [!WARNING]
->  Asynchronní volání nejsou podporovány, pokud aplikace používá také `Context Connection` klíčové slovo připojovacího řetězce.  
+>  Byla zahájena asynchronní volání nejsou podporovány, pokud aplikace také používá `Context Connection` klíčové slovo připojovacího řetězce.  
 >   
->  Členy přidaná kvůli podpoře streamování slouží k načtení dat z dotazy a předat parametry dotazů a uložené procedury. Funkci streamování adresy základní scénáře migrace OLTP a data a používá se pro místní a vypnout migrations.environments místní data.  
+>  Členů přidaná kvůli podpoře streamování se používají k načtení dat z dotazů a předat parametry dotazů a uložených procedur. Funkci streamování řeší základní scénáře migrace, online zpracováním transakcí a dat a vztahuje se na v místním prostředí a vypnout migrations.environments místní data.  
   
-## <a name="streaming-support-from-sql-server"></a>Podporu streamování ze serveru SQL Server  
- Podpora v systému SQL Server streamování zavádí nové funkce v <xref:System.Data.Common.DbDataReader> a v <xref:System.Data.SqlClient.SqlDataReader> třídy mohli <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, a <xref:System.IO.TextReader> objekty a reagovat na ně.  Tyto třídy slouží k načtení dat z dotazy. Podpora Streaming z SQL serveru v důsledku toho adresy OLTP scénáře a platí pro místní i mimo místní prostředí.  
+## <a name="streaming-support-from-sql-server"></a>Podpora streamování z SQL serveru  
+ Streamování podporu – od serveru SQL Server zavádí nové funkce v <xref:System.Data.Common.DbDataReader> a <xref:System.Data.SqlClient.SqlDataReader> třídy zajistí <xref:System.IO.Stream>, <xref:System.Xml.XmlReader>, a <xref:System.IO.TextReader> objekty a reagovat na ně.  Tyto třídy se používají k načtení dat z dotazů. Podpora streamování z SQL serveru v důsledku toho řeší scénáře OLTP a platí pro místní místních i vzdálených prostředích.  
   
- Byly přidány následující členy do <xref:System.Data.SqlClient.SqlDataReader> povolit podporu streamování z SQL serveru:  
+ Následující členy byly přidány do <xref:System.Data.SqlClient.SqlDataReader> povolit podporu streamování z SQL serveru:  
   
 1.  <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>  
   
@@ -38,7 +38,7 @@ Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45]
   
 6.  <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>  
   
- Byly přidány následující členy do <xref:System.Data.Common.DbDataReader> povolit podporu streamování z SQL serveru:  
+ Následující členy byly přidány do <xref:System.Data.Common.DbDataReader> povolit podporu streamování z SQL serveru:  
   
 1.  <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>  
   
@@ -46,18 +46,18 @@ Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45]
   
 3.  <xref:System.Data.Common.DbDataReader.GetTextReader%2A>  
   
-## <a name="streaming-support-to-sql-server"></a>Podporu streamování k systému SQL Server  
- Podpora k systému SQL Server streamování zavádí nové funkce v <xref:System.Data.SqlClient.SqlParameter> třídy, aby mohl přijímat a reagovat na <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, a <xref:System.IO.TextReader> objekty. <xref:System.Data.SqlClient.SqlParameter> slouží k předat parametry dotazů a uložené procedury.  
+## <a name="streaming-support-to-sql-server"></a>Podporu streamování pro SQL Server  
+ Streamování podpory pro SQL Server zavádí nové funkce <xref:System.Data.SqlClient.SqlParameter> třídy, může přijímat a reagovat na ně <xref:System.Xml.XmlReader>, <xref:System.IO.Stream>, a <xref:System.IO.TextReader> objekty. <xref:System.Data.SqlClient.SqlParameter> slouží k předání parametrů do dotazů a uložených procedur.  
   
- Uvolnění <xref:System.Data.SqlClient.SqlCommand> objekt nebo volání <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> musí zrušte všechny operace streamování. Pokud aplikace odešle <xref:System.Threading.CancellationToken>, zrušení není zaručena.  
+ Připravuje se <xref:System.Data.SqlClient.SqlCommand> objektu nebo volání <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> musí zrušit streamování operace. Když aplikace pošle <xref:System.Threading.CancellationToken>, není zaručeno zrušení.  
   
- Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.Stream>:  
+ Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy přijme <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.Stream>:  
   
 -   **Binární**  
   
 -   **VarBinary**  
   
- Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy bude přijímat <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.TextReader>:  
+ Následující <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> typy přijme <xref:System.Data.SqlClient.SqlParameter.Value%2A> z <xref:System.IO.TextReader>:  
   
 -   **Char**  
   
@@ -71,10 +71,10 @@ Podpora mezi SQL serverem a aplikace streamování (novinka v [!INCLUDE[net_v45]
   
  <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> může přijmout hodnoty typu <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, a <xref:System.IO.Stream>.  
   
- <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, A <xref:System.IO.Stream> objektu budou přeneseny až po hodnotu definované <xref:System.Data.SqlClient.SqlParameter.Size%2A>.  
+ <xref:System.Xml.XmlReader>, <xref:System.IO.TextReader>, A <xref:System.IO.Stream> objektu se přesunou do hodnoty definované <xref:System.Data.SqlClient.SqlParameter.Size%2A>.  
   
-## <a name="sample----streaming-from-sql-server"></a>Ukázka – Streamovanými ze systému SQL Server  
- Použijte následující [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
+## <a name="sample----streaming-from-sql-server"></a>Ukázka – Streaming z SQL serveru  
+ Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
   
 ```  
 CREATE DATABASE [Demo]  
@@ -93,17 +93,17 @@ INSERT INTO [Streams] (textdata, bindata, xmldata) VALUES (N'Another row', 0x666
 GO  
 ```  
   
- Ukázka ukazuje, jak provést následující akce:  
+ Vzorek ukazuje, jak provést následující kroky:  
   
--   Zabránění blokování vlákna uživatelského rozhraní tím, že poskytuje asynchronní způsob, jak načíst velkých souborů.  
+-   Vyhněte se blokování vlákna uživatelského rozhraní tím, že poskytuje asynchronní způsob, jak načíst velkých souborů.  
   
--   Přenos velkých textový soubor ze serveru SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   Přenos velkého textového souboru ze serveru SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
 -   Přenos velkých souborů XML z SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
 -   Načtení dat z SQL serveru.  
   
--   Přenos velkých souborů (objektů BLOB) z jedné databáze systému SQL Server na jiný bez nutnosti spustit nedostatek paměti.  
+-   Přenos velkých souborů, (objektů BLOB) z jedné databáze SQL serveru na jiný bez spuštění nedostatek paměti.  
   
 ```  
 using System;  
@@ -241,7 +241,7 @@ namespace StreamingFromServer {
             Async = true,  
             // Since we will immediately wrap the TextReader we are creating in an XmlReader, we will permit the XmlReader to take care of closing\disposing it  
             CloseInput = true,  
-            // If the Xml you are reading is not a valid document (as per http://msdn.microsoft.com/library/6bts1x50.aspx) you will need to set the conformance level to Fragment  
+            // If the Xml you are reading is not a valid document (as per <https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/6bts1x50(v=vs.100)>) you will need to set the conformance level to Fragment  
             ConformanceLevel = ConformanceLevel.Fragment  
          };  
   
@@ -294,8 +294,8 @@ namespace StreamingFromServer {
 }  
 ```  
   
-## <a name="sample----streaming-to-sql-server"></a>Ukázka – Streamování k systému SQL Server  
- Použijte následující [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
+## <a name="sample----streaming-to-sql-server"></a>Ukázka--Streamování do systému SQL Server  
+ Pomocí následujících [!INCLUDE[tsql](../../../../includes/tsql-md.md)] k vytvoření ukázkové databáze:  
   
 ```  
 CREATE DATABASE [Demo2]  
@@ -316,19 +316,19 @@ CREATE TABLE [BinaryStreamsCopy] (
 GO  
 ```  
   
- Ukázka ukazuje, jak provést následující akce:  
+ Vzorek ukazuje, jak provést následující kroky:  
   
--   Přenos velkých objektů BLOB k systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   Přenášení velkých objektů BLOB do SQL serveru v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Přenos velkých textový soubor do systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
+-   Přenos velkého textového souboru do systému SQL Server v [!INCLUDE[net_v45](../../../../includes/net-v45-md.md)].  
   
--   Pomocí nové funkce asynchronní přenos velkých objektů BLOB.  
+-   Pomocí nové asynchronní funkce k přenosu velkých objektů BLOB.  
   
--   Pomocí nové funkce asynchronní a klíčové slovo await přenos velkých objektů BLOB.  
+-   Pomocí nové asynchronní funkce a klíčové slovo await pro přenos velkých objektů BLOB.  
   
--   Zrušení přenos velkých objektů BLOB...  
+-   Ruší se přenos velkých objektů BLOB...  
   
--   Streamování z jednoho serveru SQL na jiný pomocí nové asynchronní funkce.  
+-   Streamovat z jednoho serveru SQL Server na jiný pomocí nové asynchronní funkce.  
   
 ```  
 using System;  
@@ -450,8 +450,8 @@ namespace StreamingToServer {
 }  
 ```  
   
-## <a name="sample----streaming-from-one-sql-server-to-another-sql-server"></a>Ukázka – Streamování z jednoho serveru SQL na jiný Server SQL  
- Tento příklad ukazuje, jak asynchronně stream velkých objektů BLOB z jednoho serveru SQL do jiné, s podporou pro zrušení.  
+## <a name="sample----streaming-from-one-sql-server-to-another-sql-server"></a>Ukázka – Streamovat z jednoho serveru SQL Server na jiný Server SQL  
+ Tento příklad ukazuje, jak asynchronně streamování velkých objektů BLOB z jednoho serveru SQL do druhého, s podporou pro zrušení.  
   
 ```  
 using System;  

@@ -2,13 +2,12 @@
 title: 'Služba: Počet chyb ověřování zabezpečení za sekundu'
 ms.date: 03/30/2017
 ms.assetid: 4af18009-e778-490b-9ba6-e76485285830
-author: BrucePerlerMS
-ms.openlocfilehash: 2e67a2222f3d605fdd7bb408380743203a551dd6
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 97752fbd4ff38c40917c132fddfe3798a7ee6766
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198953"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183630"
 ---
 # <a name="service-security-validation-and-authentication-failures-per-second"></a>Služba: Počet chyb ověřování zabezpečení za sekundu
 Název čítače: ověřování zabezpečení a ověřování chyb za sekundu.  

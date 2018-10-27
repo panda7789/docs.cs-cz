@@ -3,12 +3,12 @@ title: '&lt;komponenty claimsAuthenticationManager&gt;'
 ms.date: 03/30/2017
 ms.assetid: 6d30a450-6d13-4671-81a8-77e0204500c5
 author: BrucePerlerMS
-ms.openlocfilehash: 0ec7e44363f87e54eae97b70352f520fe87540be
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: b0cee2fedb5f90ca2a1f7e379e199cfee66ee745
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48581822"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190967"
 ---
 # <a name="ltclaimsauthenticationmanagergt"></a>&lt;komponenty claimsAuthenticationManager&gt;
 Zaregistruje manažera ověřování deklarací identity pro příchozí deklarace identity.  
@@ -59,5 +59,5 @@ Zaregistruje manažera ověřování deklarací identity pro příchozí deklara
     <identityConfiguration name="MyIdentity">  
       <claimsAuthenticationManager type="MyNamespace.CustomClaimsAuthenticationManager, MyAssembly"/>          
     </identityConfiguration>  
-</microsoft.identityModel>  
+</system.identityModel>  
 ```

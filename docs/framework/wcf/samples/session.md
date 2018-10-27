@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Sessions
 ms.assetid: 36e1db50-008c-4b32-8d09-b56e790b8417
-ms.openlocfilehash: ce91adbb5156eef09221a76773e5a9551f0e8440
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 0f6a06bfb9d1e5274df047e45a5042353515e206
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43517889"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190772"
 ---
 # <a name="session"></a>Relace
 Ukázková relace ukazuje, jak implementovat kontrakt, který vyžaduje relaci. Relace poskytuje kontext pro provádění více operací. To umožňuje službám přidružení stavu dané relace tak, aby následné operace můžete použít stav předchozí operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), který implementuje Kalkulačka služby. `ICalculator` Povolit sadu aritmetické operace, které mají být provedeny, a zajistit přitom ochranu spuštěné výsledek byl změněn kontraktu. Tato funkce je definována `ICalculatorSession` kontraktu. Služba zajišťuje stav na klienty, jako jsou volány více operací služby k provedení výpočtu. Klient může načíst aktuální výsledek voláním `Result()` a zrušte zaškrtnutí výsledek, který má nulovou voláním `Clear()`.  
@@ -21,7 +21,7 @@ Ukázková relace ukazuje, jak implementovat kontrakt, který vyžaduje relaci. 
   
  Nastavení <xref:System.ServiceModel.SessionMode> smlouvy na `Required` zajistí, že pokud kontrakt je přístupná přes konkrétní vazbu, vazba podporuje relací. Pokud se vazba nepodporuje relace je vyvolána výjimka. `ICalculatorSession` Rozhraní je definován tak, že je možné volat jednu nebo více operací, který změní spuštěné výsledek, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples", SessionMode=SessionMode.Required)]  
 public interface ICalculatorSession  
 {  
@@ -42,7 +42,7 @@ public interface ICalculatorSession
   
  Služba používá <xref:System.ServiceModel.InstanceContextMode> z <xref:System.ServiceModel.InstanceContextMode.PerSession> každou příchozí relace vytvořit vazbu kontext instance dané služby. To umožňuje službě udržovat výsledku spuštěný pro každou relaci v místní členské proměnné.  
   
-```  
+```csharp
 [ServiceBehavior(InstanceContextMode=InstanceContextMode.PerSession)]  
 public class CalculatorService : ICalculatorSession  
 {  
@@ -70,7 +70,7 @@ public class CalculatorService : ICalculatorSession
   
  Při spuštění ukázky klient provede několik požadavků na serveru a vyžaduje výsledek, který se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-```  
+```console  
 (((0 + 100) - 50) * 17.65) / 2 = 441.25  
 Press <ENTER> to terminate client.  
 ```  

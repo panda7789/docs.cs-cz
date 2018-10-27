@@ -9,14 +9,12 @@ helpviewer_keywords:
 - -win32resource compiler option [Visual Basic]
 - win32resource compiler option [Visual Basic]
 ms.assetid: e226946d-19ce-4cc9-91f5-aed24f77aa2b
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: ac495e10be2ec1534dc9d9081aef369773d93e17
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: 4ecac4ffe665d724d625aaeb7cc1e008eb13ca54
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42933048"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50186080"
 ---
 # <a name="-win32resource"></a>-win32resource
 Vloží soubor prostředku Win32 do výstupního souboru.  

@@ -4,12 +4,12 @@ description: Zjistěte, jak vytvořit knihovny pro .NET pomocí nástrojů rozhr
 author: cartermp
 ms.author: mairaw
 ms.date: 05/01/2017
-ms.openlocfilehash: a6db7a15c484122600afd54814d19ea11bd1abc1
-ms.sourcegitcommit: fe02afbc39e78afd78cc6050e4a9c12a75f579f8
-ms.translationtype: MT
+ms.openlocfilehash: eb1dc404f9a08940464eca83a6848076b589afa8
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43256193"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188258"
 ---
 # <a name="developing-libraries-with-cross-platform-tools"></a>Vývoj knihoven pomocí nástrojů pro různé platformy
 
@@ -167,7 +167,7 @@ namespace MultitargetLib
         // .NET Framework 4.0 does not have async/await
         public string GetDotNetCount()
         {
-            string url = "http://www.dotnetfoundation.org/";
+            string url = "https://www.dotnetfoundation.org/";
 
             var uri = new Uri(url);
 
@@ -187,7 +187,7 @@ namespace MultitargetLib
         // .NET 4.5+ can use async/await!
         public async Task<string> GetDotNetCountAsync()
         {
-            string url = "http://www.dotnetfoundation.org/";
+            string url = "https://www.dotnetfoundation.org/";
 
             // HttpClient is thread-safe, so no need to explicitly lock here
             var result = await _client.GetStringAsync(url);
@@ -213,7 +213,7 @@ Každý z nich obsahuje `.dll` soubory pro každý cíl.
 
 ## <a name="how-to-test-libraries-on-net-core"></a>Testování knihovny v rozhraní .NET Core
 
-Je důležité mít možnost Testovat napříč platformami. Můžete použít buď [xUnit](http://xunit.github.io/) nebo MSTest úprav. Obě jsou dokonale vhodný pro testování vaší knihovny v .NET Core. Jak nastavit řešení s testovacími projekty, bude záviset na [struktura vašeho řešení](#structuring-a-solution). V následujícím příkladu se předpokládá, že live test a zdrojového adresáře ve stejném adresáři nejvyšší úrovně.
+Je důležité mít možnost Testovat napříč platformami. Můžete použít buď [xUnit](https://xunit.github.io/) nebo MSTest úprav. Obě jsou dokonale vhodný pro testování vaší knihovny v .NET Core. Jak nastavit řešení s testovacími projekty, bude záviset na [struktura vašeho řešení](#structuring-a-solution). V následujícím příkladu se předpokládá, že live test a zdrojového adresáře ve stejném adresáři nejvyšší úrovně.
 
 > [!NOTE]
 > Tento mechanismus využívá některé [příkazy rozhraní příkazového řádku .NET Core](../tools/index.md). Zobrazit [dotnet nové](../tools/dotnet-new.md) a [dotnet sln](../tools/dotnet-sln.md) Další informace.

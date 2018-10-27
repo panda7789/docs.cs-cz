@@ -8,14 +8,12 @@ helpviewer_keywords:
 - authenticationModules element
 - <authenticationModules> element
 ms.assetid: 10fcfaad-82ef-4692-871a-0aec9dfbe75e
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 394a686fe07036d6c3ac2bc51fb3503e1ee4a9e6
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 074f2f0cd2c3ac6c6287db08b22ead07afa58fc5
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873346"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190811"
 ---
 # <a name="ltauthenticationmodulesgt-element-network-settings"></a>&lt;Element authenticationModules&gt; – Element (nastavení sítě)
 Určuje moduly používané k ověření síťové požadavky.  
@@ -72,6 +70,6 @@ Určuje moduly používané k ověření síťové požadavky.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.Net.IAuthenticationModule>  
- <xref:System.Net.AuthenticationManager>  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- <xref:System.Net.IAuthenticationModule>  
+- <xref:System.Net.AuthenticationManager>  
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

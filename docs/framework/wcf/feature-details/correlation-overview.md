@@ -2,12 +2,12 @@
 title: Korelace – přehled
 ms.date: 03/30/2017
 ms.assetid: edcc0315-5d26-44d6-a36d-ea554c418e9f
-ms.openlocfilehash: 1f9e4db4002e53af5cdf91ab9d563764495b30d3
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: cc165bb4b74c70b740632c5cb873ed200b2283bb
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261245"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185859"
 ---
 # <a name="correlation-overview"></a>Korelace – přehled
 Korelace je mechanismus trvalého stavu pracovního postupu zpracování objednávky týkající se zpráv služby pracovního postupu k sobě navzájem, nebo až po stav instance aplikace, jako je například odpovědět na požadavek počáteční nebo ID konkrétní pořadí. Toto téma obsahuje přehled korelace. Další témata v této části poskytují další informace pro každý typ korelace.  
@@ -21,7 +21,7 @@ Korelace je mechanismus trvalého stavu pracovního postupu zpracování objedn�
 
 Korelace na základě protokolu používá přenosový mechanismus k propojení zprávy do sebe navzájem a příslušné instanci. Některé korelace poskytované systémem protokolu zahrnout korelace požadavku a odpovědi a korelace na základě kontextu. Korelace požadavku a odpovědi slouží ke sladění jeden pár aktivit zasílání zpráv a vytvoří obousměrný operace, například <xref:System.ServiceModel.Activities.Send> spárované s <xref:System.ServiceModel.Activities.ReceiveReply>, nebo <xref:System.ServiceModel.Activities.Receive> spárované s <xref:System.ServiceModel.Activities.SendReply>. Návrháři pracovních postupů sady Visual Studio také poskytuje sadu šablony aktivit k rychlé implementaci tohoto modelu. Korelace na základě kontextu je založena na mechanismu místní exchange je popsáno v [specifikace protokolu serveru Exchange kontextu .NET](https://go.microsoft.com/fwlink/?LinkID=166059). Použití korelace na základě kontextu, základě kontextu vazby, jako <xref:System.ServiceModel.BasicHttpContextBinding>, <xref:System.ServiceModel.WSHttpContextBinding> nebo <xref:System.ServiceModel.NetTcpContextBinding> musí být použita na koncovém bodu.  
   
-Další informace o protokolu korelace, najdete v části [trvalý duplexní](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md) a [Request-Reply](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md). Další informace o použití šablon aktivity Návrhář postupu provádění Visual Studio najdete v tématu [zasílání zpráv aktivity](../../../../docs/framework/wcf/feature-details/messaging-activities.md). Ukázkový kód, naleznete v tématu [NetContextExchangeCorrelation](https://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf) vzorku.  
+Další informace o protokolu korelace, najdete v části [trvalý duplexní](../../../../docs/framework/wcf/feature-details/durable-duplex-correlation.md) a [Request-Reply](../../../../docs/framework/wcf/feature-details/request-reply-correlation.md). Další informace o použití šablon aktivity Návrhář postupu provádění Visual Studio najdete v tématu [zasílání zpráv aktivity](../../../../docs/framework/wcf/feature-details/messaging-activities.md). Ukázkový kód, naleznete v tématu [NetContextExchangeCorrelation](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee662963%28v%3dvs.100%29) vzorku.  
   
 ## <a name="content-based-correlation"></a>Korelace na základě obsahu
 
@@ -29,4 +29,4 @@ Korelace na základě obsahu používá některá část informace ve zprávě p
   
 ## <a name="see-also"></a>Viz také  
 
-- [NetContextExchangeCorrelation](https://msdn.microsoft.com/library/93c74a1a-b9e2-46c6-95c0-c9b0e9472caf)
+- [NetContextExchangeCorrelation](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee662963%28v%3dvs.100%29)

@@ -6,14 +6,12 @@ helpviewer_keywords:
 - /errorreport compiler option [Visual Basic]
 - errorreport compiler option [Visual Basic]
 ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: d093b8ce4413a375e79eec239be37e83ac674d05
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5471f0783eee5e2c14cf0f140094d5c292a73756
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509670"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50186773"
 ---
 # <a name="-errorreport"></a>-errorreport
 

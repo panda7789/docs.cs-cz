@@ -2,12 +2,12 @@
 title: 'Hodnota možnosti (F #)'
 description: 'Další informace o typu hodnota možnosti F #, což je struktura verze typu možnosti.'
 ms.date: 06/16/2018
-ms.openlocfilehash: 5647ef61725401b10a6045b14eef11f5b041e3e9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 978bd1713c16f7c050ccb097cb134973d10ef6f5
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041207"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185833"
 ---
 # <a name="value-options"></a>Hodnota možnosti
 
@@ -20,19 +20,14 @@ Ne všechny scénáře náročné na výkon se "Vyřešeno" použití struktur. 
 
 ## <a name="definition"></a>Definice
 
-Možnost Hodnota je definována jako [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions) , který je podobný typ odkazu možnost:
+Možnost Hodnota je definována jako [rozlišovaná sjednocení na základě struktury](discriminated-unions.md#struct-discriminated-unions) , který je podobný typ odkazu možnost. Jeho definice můžete chápat takto:
 
 ```fsharp
 [<StructuralEquality; StructuralComparison>]
-[<CompiledName("FSharpValueOption`1")>]
 [<Struct>]
 type ValueOption<'T> =
-    | ValueNone: 'T voption
-    | ValueSome: 'T -> 'T voption
-
-    member Value : 'T
-
-and 'T voption = ValueOption<'T>
+    | ValueNone
+    | ValueSome of 'T
 ```
 
 Možnost hodnota odpovídá strukturální rovnost a porovnání. Hlavní rozdíl je, že kompilovaný název, název typu a velikosti písmen názvů ukazují, že se jedná o typ hodnoty.

@@ -2,30 +2,30 @@
 title: BindingElement
 ms.date: 03/30/2017
 ms.assetid: fdbfde0c-2e52-4fc5-9eb8-14b42e647263
-ms.openlocfilehash: 11e3686de7efc1402ea1410ed4b8cab9f1bc76a5
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: b1c39dff654f36231cfe229ad9460feeb7990d2f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33483686"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183877"
 ---
 # <a name="bindingelement"></a>BindingElement
 BindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp  
 class BindingElement  
 {  
 };  
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída BindingElement dědí z ale nedefinuje další metody nebo vlastnosti.  
+ Třídu BindingElement dědí z ale nedefinuje další metody nebo vlastnosti.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

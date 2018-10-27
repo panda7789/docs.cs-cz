@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 6bd0187f831db7fd68272e14c022efb45c8260f2
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 4452ad2445f81659d04bca3d64885148895aeb88
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48025594"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188297"
 ---
 # <a name="file-and-stream-io"></a>I/O souborů a proudů
 Vstupem/výstupem souborů a datových proudů se rozumí přenos dat z úložného média nebo na něj. V rozhraní .NET Framework `System.IO` obory názvů obsahují typy, které umožňují čtení a zápis, synchronně i asynchronně, na soubory a datovými proudy. Tyto obory názvů obsahují také typy provádějící kompresi a dekompresi souborů a typy umožňující komunikaci pomocí kanálů a sériových portů.  
@@ -122,7 +122,7 @@ Cesta konvence pojmenování a způsoby, jak vyjádřit cestu k souboru pro syst
 ## <a name="isolated-storage"></a>Izolované úložiště  
  Izolované úložiště je mechanismus pro ukládání dat poskytující izolaci a bezpečnost definováním standardizovaných způsobů asociace kódu s uloženými daty. Úložiště poskytuje virtuální systém souborů izolovaný uživatelem, sestavením a (volitelně) doménou. Izolované úložiště je obzvláště užitečné, nemá-li aplikace oprávnění k přístupu k uživatelským souborům. Lze tak ukládat nastavení nebo soubory aplikace způsobem řízeným zásadami zabezpečení daného počítače.  
   
- Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace; místo toho použít třídy aplikačních dat v [Windows.Storage](/uwp/api/Windows.Storage) oboru názvů. Další informace najdete v tématu [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) Windows Dev Center.  
+ Izolované úložiště není k dispozici pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace; místo toho použít třídy aplikačních dat v <xref:Windows.Storage?displayProperty=nameWithType> oboru názvů. Další informace najdete v tématu [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).  
   
  Při implementaci izolovaného úložiště jsou běžně používány následující třídy:  
   
@@ -139,13 +139,13 @@ Cesta konvence pojmenování a způsoby, jak vyjádřit cestu k souboru pro syst
   
  Některé důležité rozdíly při používání vstupně-výstupních operací v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace:  
   
--   Typy výslovně související s operacemi se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v [Windows.Storage](https://msdn.microsoft.com/library/windows/apps/windows.storage.aspx) obor názvů [!INCLUDE[wrt](../../../includes/wrt-md.md)], jako například [StorageFile](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefile.aspx) a [StorageFolder](https://msdn.microsoft.com/library/windows/apps/windows.storage.storagefolder.aspx).  
+-   Typy výslovně související s operacemi se soubory, jako například <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> a <xref:System.IO.DirectoryInfo>, nejsou součástí [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. Místo toho použít typy v <xref:Windows.Storage?displayProperty=nameWithType> obor názvů [!INCLUDE[wrt](../../../includes/wrt-md.md)], jako například <xref:Windows.Storage.StorageFile> a <xref:Windows.Storage.StorageFolder>.  
   
 -   Izolované úložiště není k dispozici. Místo toho použijte [data aplikací](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)).  
   
 -   Použití asynchronních metod, jako například <xref:System.IO.Stream.ReadAsync%2A> a <xref:System.IO.Stream.WriteAsync%2A>, chcete-li zabránit zablokování vlákna uživatelského rozhraní.  
   
--   Na základě cest kompresní typy <xref:System.IO.Compression.ZipFile> a <xref:System.IO.Compression.ZipFileExtensions> nejsou k dispozici. Místo toho použít typy v [Windows.Storage.Compression](https://msdn.microsoft.com/library/windows/apps/windows.storage.compression.aspx) oboru názvů.  
+-   Na základě cest kompresní typy <xref:System.IO.Compression.ZipFile> a <xref:System.IO.Compression.ZipFileExtensions> nejsou k dispozici. Místo toho použít typy v <xref:Windows.Storage.Compression?displayProperty=nameWithType> oboru názvů.  
   
  V případě potřeby je možné převádět mezi proudy rozhraní .NET Framework a proudy Windows Runtime. Další informace najdete v tématu [postupy: převod mezi streamy rozhraní .NET Framework a datovými proudy Windows Runtime](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md) nebo [System.IO.WindowsRuntimeStreamExtensions](https://msdn.microsoft.com/library/system.io.windowsruntimestreamextensions.aspx). <!--zz TODO: <xref:System.IO.WindowsRuntimeStreamExtensions>--> 
   

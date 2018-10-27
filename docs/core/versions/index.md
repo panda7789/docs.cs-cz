@@ -4,12 +4,12 @@ description: Zjistěte, jak funguje správa verzí rozhraní .NET Core.
 author: bleroy
 ms.author: mairaw
 ms.date: 07/26/2018
-ms.openlocfilehash: 0ce64aa266f8e1de2c2cefd366bcbfa3f5cfc8f0
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9f77709abf59d5346bf5e3c6f512cfabbf9e50de
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518599"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188466"
 ---
 # <a name="net-core-versioning"></a>Správa verzí rozhraní .NET core
 
@@ -43,7 +43,7 @@ Zobrazí se další podrobnosti najdete v počáteční návrh na [dotnet/návrh
 
 ## <a name="semantic-versioning"></a>Sémantické správy verzí
 
-.NET Core *Runtime* zhruba dodržuje [Semantic Versioning (SemVer)](http://semver.org/), přijetí použití `MAJOR.MINOR.PATCH` správy verzí, popsat stupeň a typ pomocí různých částí čísla verze Změňte.
+.NET Core *Runtime* zhruba dodržuje [Semantic Versioning (SemVer)](https://semver.org/), přijetí použití `MAJOR.MINOR.PATCH` správy verzí, popsat stupeň a typ pomocí různých částí čísla verze Změňte.
 
 ```
 MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
