@@ -2,12 +2,12 @@
 title: Služba AJAX, která používá HTTP POST
 ms.date: 03/30/2017
 ms.assetid: 1ac80f20-ac1c-4ed1-9850-7e49569ff44e
-ms.openlocfilehash: c102d9d403cefb1bf3d4ab75859a81172895c2e0
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: df199b40a4a9ebb9a36cea7234b484273348cd9e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "44041106"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192795"
 ---
 # <a name="ajax-service-using-http-post"></a>Služba AJAX, která používá HTTP POST
 Tato ukázka předvádí, jak použít Windows Communication Foundation (WCF) k vytvoření [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] asynchronní JavaScript a XML (AJAX) služby, která používá HTTP POST. Služby AJAX je ten, který se dostanete pomocí základního kódu jazyka JavaScript z webového prohlížeče klienta. Tato ukázka je založena na [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázka; jediným rozdílem mezi dvěma vzorky se používá HTTP POST místo HTTP GET.  
@@ -33,7 +33,7 @@ public interface ICalculator
 
  Vytvořit koncový bod AJAX na službě s použitím <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>, stejně jako v ukázce základní služba AJAX.  
   
- Na rozdíl od požadavků GET nejde vyvolat příspěvek služby z prohlížeče. Například, že přejdete na http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200 způsobí chybu, protože služba příspěvek očekává `n1` a `n2` parametry se mají odeslat v textu zprávy – ve formátu JSON a ne v adrese URL.  
+ Na rozdíl od požadavků GET nejde vyvolat příspěvek služby z prohlížeče. Například, že přejdete na `http://localhost/ServiceModelSamples/service.svc/Add?n1=100&n2=200` způsobí chybu, protože služba příspěvek očekává `n1` a `n2` parametry se mají odeslat v textu zprávy ve formátu JSON a ne v adrese URL.  
   
  Klient PostAjaxClientPage.aspx webová stránka obsahuje kód technologie ASP.NET se vyvolat službu pokaždé, když uživatel klikne jedno z tlačítek operace na stránce. Služba odpoví stejným způsobem jako v [základní služba AJAX](../../../../docs/framework/wcf/samples/basic-ajax-service.md) ukázku s požadavek GET.  
   
@@ -52,6 +52,4 @@ public interface ICalculator
   
 2.  Sestavte řešení PostAjaxService.sln, jak je popsáno v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Přejděte na http://localhost/ServiceModelSamples/PostAjaxClientPage.aspx (neotevírejte PostAjaxClientPage.aspx v prohlížeči z adresáře projektu).  
-  
-## <a name="see-also"></a>Viz také
+3.  Přejděte na `http://localhost/ServiceModelSamples/PostAjaxClientPage.aspx` (neotevírejte PostAjaxClientPage.aspx v prohlížeči z adresáře projektu).

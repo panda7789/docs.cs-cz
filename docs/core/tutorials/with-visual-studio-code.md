@@ -4,12 +4,12 @@ description: Zjistěte, jak vytvářet a ladit vaši první aplikaci .NET Core v
 author: kendrahavens
 ms.author: mairaw
 ms.date: 09/27/2017
-ms.openlocfilehash: 321edcebdea141b7290fa57b47c8d9fc91d3521c
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 74fdd9ce122482a027931405cc9a94011a9c13bb
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45668220"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192576"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Začínáme s C# a Visual Studio Code
 
@@ -58,7 +58,7 @@ Můžete také zhlédnout krátké Výukové video o další pomoc instalační 
 
 ## <a name="debug"></a>Ladit
 
-1. Otevřít *Program.cs* kliknutím na ni. Při prvním otevření souboru C# v sadě Visual Studio Code [OmniSharp](http://www.omnisharp.net/) načte v editoru.
+1. Otevřít *Program.cs* kliknutím na ni. Při prvním otevření souboru C# v sadě Visual Studio Code [OmniSharp](https://www.omnisharp.net/) načte v editoru.
 
     ![Otevřete soubor Program.cs](media/with-visual-studio-code/opencs.png)
 

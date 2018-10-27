@@ -2,30 +2,30 @@
 title: SynchronousReceiveBehavior
 ms.date: 03/30/2017
 ms.assetid: b31a26a9-ae96-4df0-8406-e07d6f59087c
-ms.openlocfilehash: b4281b3b028eef23252396f69f54f706966f3567
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ae44acb4431c9728b2a458febfe0e212366cace4
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33485590"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192106"
 ---
 # <a name="synchronousreceivebehavior"></a>SynchronousReceiveBehavior
 SynchronousReceiveBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class SynchronousReceiveBehavior : Behavior  
 {  
 };  
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída SynchronousReceiveBehavior dědí z chování ale nedefinuje další metody nebo vlastnosti.  
+ Třída SynchronousReceiveBehavior zdědí chování ale nedefinuje další metody nebo vlastnosti.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

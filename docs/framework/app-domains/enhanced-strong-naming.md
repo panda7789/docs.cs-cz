@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: 6cf17a82-62a1-4f6d-8d5a-d7d06dec2bb5
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 659f9ffa8ebb10b34300167e9183f60568279513
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: b33bb37758236c0dcce1fced2e7e7c6cf493ab34
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44187164"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192580"
 ---
 # <a name="enhanced-strong-naming"></a>Vylepšené silné názvy
 Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro identifikaci sestavení. Je digitální podpis veřejného klíče, který se obvykle používá k ověření integrity dat předávaných od příkazce (podepisující) příjemci (ověřovatel). Tento podpis slouží jako jedinečná identita pro sestavení a zajistí, že odkazy na sestavení nejsou nejednoznačné. Sestavení je podepsáno jako součást procesu sestavení a poté ověřeno, pokud je načten.  
@@ -134,4 +134,4 @@ Podpis silného názvu je mechanismus identity v rozhraní .NET Framework pro id
     ```  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)
+- [Vytváření a používání sestavení se silným názvem](../../../docs/framework/app-domains/create-and-use-strong-named-assemblies.md)

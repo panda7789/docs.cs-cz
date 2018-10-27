@@ -1,46 +1,52 @@
 ---
 title: += – operátor (Referenční dokumentace jazyka C#)
-ms.date: 07/20/2015
+ms.date: 10/22/2018
 f1_keywords:
 - +=_CSharpKeyword
 helpviewer_keywords:
 - += operator [C#]
 - addition assignment operator (+=) [C#]
+- event subscription [C#]
 ms.assetid: 9cdf97e6-331d-492b-85e1-3ec3171484e9
-ms.openlocfilehash: bd0997ec5b7d79a41e01f9c2b17533293e412c1e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: ee335e3e2e7d352d4e26b802bad2b08a05c666ab
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857504"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192028"
 ---
 # <a name="-operator-c-reference"></a>+= – operátor (Referenční dokumentace jazyka C#)
-Operátor přiřazení sčítání.  
-  
-## <a name="remarks"></a>Poznámky  
- Pomocí výrazu `+=` operátor přiřazení, jako například  
-  
-```csharp  
-x += y  
-```  
-  
- je ekvivalentem  
-  
-```csharp  
-x = x + y  
-```  
-  
- s tím rozdílem, že `x` se jenom vyhodnotí jednou. Význam [+ – operátor](../../../csharp/language-reference/operators/addition-operator.md) závisí na typech `x` a `y` (součet číselného operandy, zřetězení pro řetězec operandy a tak dále).  
-  
- `+=` Operátor nelze přetížit přímo, ale lze přetěžovat uživatelsky definované typy [+ – operátor](../../../csharp/language-reference/operators/addition-operator.md) (viz [operátor](../../../csharp/language-reference/keywords/operator.md)).  
-  
- `+=` Operátor se používá také k určení metodu, která bude volána v reakci na události; tyto metody jsou volány obslužné rutiny událostí. Použití `+=` operátoru v tomto kontextu se označuje jako *přihlášení k odběru události*. Další informace najdete v tématu [postupy: přihlášení k odběru a zrušit její odběr události](../../../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md) a [delegáti](../../../csharp/programming-guide/delegates/index.md).  
-  
-## <a name="example"></a>Příklad  
- [!code-csharp[csRefOperators#35](../../../csharp/language-reference/operators/codesnippet/CSharp/addition-assignment-operator_1.cs)]  
-  
-## <a name="see-also"></a>Viz také
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Operátory jazyka C#](../../../csharp/language-reference/operators/index.md)
+Operátor přiřazení sčítání.
+
+Pomocí výrazu `+=` operátorů, například  
+
+```csharp
+x += y
+```  
+
+je ekvivalentem  
+
+```csharp
+x = x + y
+```  
+
+s tím rozdílem, že `x` se jenom vyhodnotí jednou.
+  
+Pro číselné typy [operátor sčítání](addition-operator.md) `+` kód vypočítá součet operandů. Pokud je jeden nebo oba operandy typu [řetězec](../keywords/string.md), zřetězí řetězcové reprezentace jeho operandy. Pro typy delegátů `+` operátor vrátí novou instanci delegáta, který je kombinací operandů.
+
+Pokud uživatelský typ [přetížení](../keywords/operator.md) [operátor sčítání](addition-operator.md) `+`, operátor přiřazení sčítání `+=` je implicitně přetížena.
+
+Můžete také použít `+=` operátor zadat metodu obslužné rutiny události, když se přihlásíte k odběru [události](../keywords/event.md). Další informace najdete v tématu [postupy: přihlášení k odběru a zrušit její odběr události](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+
+Následující příklad ukazuje použití `+=` operátor:
+
+[!code-csharp-interactive[+= examples](~/samples/snippets/csharp/language-reference/operators/AdditionExamples.cs#AddAndAssign)]
+  
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Operátory jazyka C#](index.md)
+- [Události](../../programming-guide/events/index.md)
+- [Delegáti](../../programming-guide/delegates/index.md)

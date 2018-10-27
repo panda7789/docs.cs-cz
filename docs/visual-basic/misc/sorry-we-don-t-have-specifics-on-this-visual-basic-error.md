@@ -1,5 +1,5 @@
 ---
-title: Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě jazyka Visual Basic
+title: Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě jazyka Visual Basic
 ms.date: 07/20/2015
 f1_keywords:
 - vbc30234
@@ -3044,30 +3044,30 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 413765a6feebab3be8196552d11ade30bce28496
-ms.sourcegitcommit: 2ad7d06f4f469b5d8a5280ac0e0289a81867fc8e
+ms.openlocfilehash: e3d3ac14c51ef5665aba0879a85e03e662174e68
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35231460"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192782"
 ---
-# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>Bohužel jsme nejsou zobrazeny&#39;nemá podrobnosti o této chybě jazyka Visual Basic
-Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete hledat text chyby číslo a zpráva k nalezení informací na webu. Nebo můžete požádat jinými vývojáři pomocí jedné z těchto fóra:  
+# <a name="sorry-we-don39t-have-specifics-on-this-visual-basic-error"></a>Je nám líto, ale můžeme zadávat&#39;nemá podrobnosti o této chybě jazyka Visual Basic
+Je nám líto, ale nemáme žádné konkrétní informace o této chybě. Můžete vyhledat text chyby číslo a zprávou k nalezení informací o na webu. Nebo můžete požádat o další vývojáři pomocí jedné z těchto fór:  
   
  [Jazyk Visual Basic](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vblanguage)  
- Poskytuje fórum pro dotazy týkající se a obecné diskuse o syntaxi jazyka Visual Basic a kompilátoru.  
+ Poskytuje fórum pro dotazy a obecnou diskusi týkající syntaxe jazyka Visual Basic a kompilátoru.  
   
- [Zprostředkovatel komunikace s objekty jazyka Visual Basic a Upgrade](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbinterop)  
- Poskytuje fórum pro otázky o a problémů s upgradem do jazyka Visual Basic a práci s funkcemi interoperability.  
+ [Vylepšení jazyka Visual Basic](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbinterop)  
+ Poskytuje diskusní fórum pro otázky o a problémy s upgradem do jazyka Visual Basic a práci s funkcemi, vzájemná funkční spolupráce.  
   
- [Visual Basic IDE](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbide)  
- Poskytuje fórum pro dotazy o tom, jak fungují v prostředí Visual Studio.  
+ [Integrované vývojové prostředí jazyka Visual Basic](https://social.msdn.microsoft.com/Forums/en-US/home?forum=vbide)  
+ Poskytuje diskusní fórum pro otázky týkající se postupu při práci v prostředí sady Visual Studio.  
   
  [Obecné jazyka Visual Basic](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=vbgeneral)  
- Poskytuje fórum pro otázky o a problémů s jazykem Visual Basic, které nejsou popsané v dalších fóra.  
+ Poskytuje diskusní fórum pro otázky o a problémy s jazykem Visual Basic, které nejsou popsány na jiných fórech.  
   
- [StackOverflow](http://stackoverflow.com/questions/tagged/vb.net)  
- Poskytuje fórum pro otázky o a problémů s jazykem Visual Basic.  
+ [StackOverflow](https://stackoverflow.com/questions/tagged/vb.net)  
+ Poskytuje diskusní fórum pro otázky o a problémy s jazykem Visual Basic.  
   
  Viz také:  
  [Další zdroje informací pro programátory, kteří používají Visual Basic](../../visual-basic/getting-started/additional-resources.md)  

@@ -10,11 +10,11 @@ helpviewer_keywords:
 - X.509 certificates [WCF], making accessible to WCF
 ms.assetid: a54e407c-c2b5-4319-a648-60e43413664b
 ms.openlocfilehash: 0917569b556c31413b715d75c83a96f3a4b015d7
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48579969"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192197"
 ---
 # <a name="how-to-make-x509-certificates-accessible-to-wcf"></a>Postupy: Zpřístupnění certifikátů X.509 pro WCF
 Zpřístupnit certifikát X.509 do služby Windows Communication Foundation (WCF), musí kód aplikace zadejte název úložiště certifikátu a umístění. V některých případech se identita procesu, musí mít přístup k souboru, který obsahuje privátní klíč spojený s certifikátem X.509. K získání soukromého klíče přidružené k certifikátu v úložišti certifikátů X.509, WCF, musí mít oprávnění k tomuto. Ve výchozím nastavení můžete přístup pouze vlastník a účet System privátní klíč certifikátu.  

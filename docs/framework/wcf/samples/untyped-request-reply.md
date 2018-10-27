@@ -2,12 +2,12 @@
 title: Netypový požadavek odpověď
 ms.date: 03/30/2017
 ms.assetid: 0bf0f9d9-7caf-4d3d-8c9e-2d468cca16a5
-ms.openlocfilehash: 55692282aa06b8e988f44806394bdfcbb6e2f3ec
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b6e93ad0782fcacbc4ce20c0e9bb407abdf2366f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43528590"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195304"
 ---
 # <a name="untyped-requestreply"></a>Netypový požadavek/odpověď
 Tento příklad ukazuje, jak definovat operace kontrakty, používající třídu zpráv.  
@@ -17,14 +17,14 @@ Tento příklad ukazuje, jak definovat operace kontrakty, používající tříd
   
  Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md). Kontrakt služby definuje jednu operaci, která přijímá typ zprávy jako argument a vrátí zprávu. Operace shromažďuje všechna požadovaná data pro výpočet součtu z textu zprávy a poté odešle součet jako text v návratové zprávě.  
   
-```  
+```csharp
 [OperationContract(Action = CalculatorService.RequestAction, ReplyAction = CalculatorService.ReplyAction)]  
 Message ComputeSum(Message request);  
 ```  
   
  Ve službě tato operace načte pole celých čísel předaný vstupní zprávy a pak vypočítá součet. Odeslat zprávu odpovědi, ukázka vytvoří novou zprávu s verzí odpovídající zprávu a akce a přidá vypočítaný součet jako jeho obsah. Následující ukázkový kód ukazuje to.  
   
-```  
+```csharp
 public Message ComputeSum(Message request)  
 {  
     //The body of the message contains a list of numbers which will be   
@@ -45,7 +45,7 @@ public Message ComputeSum(Message request)
   
  Klient používá kód, který je generován [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) vytvořit proxy server ve vzdálené službě. Chcete-li odeslat zprávu požadavku, klient musí mít verzi zprávy, která závisí na základním kanálu. Díky tomu se vytvoří nový <xref:System.ServiceModel.OperationContextScope> vymezený kanál proxy vytvoří, tím se vytvoří <xref:System.ServiceModel.OperationContext> s správná verze v jeho `OutgoingMessageHeaders.MessageVersion` vlastnost. Předá vstupní pole jako text zprávy s požadavkem klienta a poté vyvolá `ComputeSum` na proxy serveru. Klient pak načte součet vstupy jí předán díky přístupu `GetBody<T>` metoda u zprávy s odpovědí. Následující ukázkový kód ukazuje to.  
   
-```  
+```csharp
 using (new OperationContextScope(client.InnerChannel))  
 {  
     // Call the Sum service operation.  
@@ -63,7 +63,7 @@ using (new OperationContextScope(client.InnerChannel))
   
  Tato ukázka je ukázkový Web hostovaný a musí být spuštěn pouze spustitelný soubor pro klienta. Následuje ukázkový výstup na straně klienta.  
   
-```  
+```console  
 Prompt>Client.exe  
 Sum of numbers passed (1,2,3,4,5) = 15  
   

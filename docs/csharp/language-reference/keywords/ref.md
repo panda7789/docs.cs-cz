@@ -1,27 +1,28 @@
 ---
 title: REF – klíčové slovo (referenční dokumentace jazyka C#)
-ms.date: 03/06/2018
+ms.date: 10/24/2018
 f1_keywords:
 - ref_CSharpKeyword
 - ref
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: e0b82de125246e95d8dce2a7afc20119a8a1fe4f
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 9165a388122eeda5ca0499c6d75c2266780a6004
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583110"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195967"
 ---
 # <a name="ref-c-reference"></a>ref (Referenční dokumentace jazyka C#)
 
 `ref` – Klíčové slovo určuje hodnotu, která je předána odkazem. Používá se ve čtyřech různých kontextech:
 
-- V podpisu metody a volání metody, pro předání argumentu podle odkazu na metodu. Zobrazit [předání argumentu podle odkazu](#passing-an-argument-by-reference) Další informace.
-- V podpisu metody, vracet hodnotu odkazem volajícímu. Zobrazit [referenční návratové hodnoty](#reference-return-values) Další informace.
-- V těle členské k označení, že návratová hodnota odkazu uložená místně jako odkaz, který si klade za cíl volajícího k úpravě nebo obecně platí, místní proměnná přistupuje ke jiná hodnota podle odkazu. Zobrazit [místních](#ref-locals) Další informace.
-- V `struct` deklarace deklarovat `ref struct` nebo `ref readonly struct`. Další informace najdete v tématu [referenční sémantika s typy hodnot](../../reference-semantics-with-value-types.md).
+- V podpisu metody a volání metody, pro předání argumentu podle odkazu na metodu. Další informace najdete v tématu [předání argumentu podle odkazu](#passing-an-argument-by-reference).
+- V podpisu metody, vracet hodnotu odkazem volajícímu. Další informace najdete v tématu [referenční návratové hodnoty](#reference-return-values).
+- V těle členské k označení, že návratová hodnota odkazu uložená místně jako odkaz, který si klade za cíl volajícího k úpravě nebo obecně platí, místní proměnná přistupuje ke jiná hodnota podle odkazu. Další informace najdete v tématu [místních](#ref-locals).
+- V `struct` deklarace deklarovat `ref struct` nebo `ref readonly struct`. Další informace najdete v tématu [typy struktury ref](#ref-struct-types).
+
 
 ## <a name="passing-an-argument-by-reference"></a>Předání argumentu podle odkazu
 
@@ -89,6 +90,8 @@ return ref DecimalArray[0];
 
 Aby volající změnit stav objektu, vrátit hodnota musí být uložen do proměnné, která není výslovně uveden jako odkaz [lokální proměnná podle odkazu](#ref-locals).
 
+Volané metody mohou také deklarovat jako návratová hodnota `ref readonly` vracet hodnotu odkazem a vynutit, aby volající kód nelze změnit vrácené hodnoty. Volání metody se můžete vyhnout kopírování vrácené oceňují uložení hodnoty v místním [jen pro čtení ref](#ref-readonly-locals) proměnné.
+
 Příklad najdete v tématu [A návratové a příklad místní hodnoty ref](#a-ref-returns-and-ref-locals-example)
 
 ## <a name="ref-locals"></a>Místní referenční hodnoty
@@ -111,6 +114,10 @@ ref VeryLargeStruct reflocal = ref veryLargeStruct;
 
 Všimněte si, že v obou příkladech `ref` – klíčové slovo musí být použit v obou místech, nebo kompilátor vygeneruje chybu CS8172 "Nelze inicializovat proměnnou podle odkazu s hodnotou".
 
+## <a name="ref-readonly-locals"></a>místních jen pro čtení
+
+Lokální proměnná podle odkazu jen pro čtení se používá k odkazování na hodnoty, vrátí metoda nebo vlastnost, která má `ref readonly` v jeho podpis a používá `return ref`. A `ref readonly` proměnné kombinuje vlastnosti `ref` místní proměnná se `readonly` proměnná: je alias do úložiště je přiřazen, a nemůže být upraven. 
+
 ## <a name="a-ref-returns-and-ref-locals-example"></a>A návratové a příklad místní hodnoty ref
 
 Následující příklad definuje `Book` třídu, která má dvě <xref:System.String> pole, `Title` a `Author`. Definuje také `BookCollection` třídu, která obsahuje privátní pole `Book` objekty. Jednotlivé knihy objekty jsou vráceny ve vztahu voláním jeho `GetBookByTitle` metoda.
@@ -121,13 +128,30 @@ Pokud volající uloží hodnoty vrácené `GetBookByTitle` změny, které umož
 
 [!code-csharp[csrefKeywordsMethodParams#6](~/samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/RefParameterModifier.cs#5)]
 
+## <a name="ref-struct-types"></a>Typy struktury REF
+
+Přidávání `ref` modifikátor `struct` prohlášení definuje, že instance tohoto typu musí být přiděleny. Jinými slovy instancí těchto typů může nikdy být vytvořen na haldě jako člena jiné třídy. Byl primární motivace pro tuto funkci <xref:System.Span%601> a související struktury.
+
+Cílem vedení `ref struct` zadejte jako proměnnou přidělený na zásobník zavádí několik pravidel, které kompilátor vynucuje pro všechny `ref struct` typy.
+
+- Nelze pole `ref struct`. Nelze přiřadit `ref struct` typ proměnné typu `object`, `dynamic`, nebo libovolný typ rozhraní.
+- `ref struct` typy nemůžou implementovat rozhraní.
+- Nelze deklarovat `ref struct` jako člen třídy nebo struktury normální.
+- Nelze deklarovat lokální proměnné, které jsou `ref struct` typy v asynchronních metodách. Můžete je deklarovat v synchronní metody, které vracejí <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601> nebo `Task`– typy, jako je.
+- Nelze deklarovat `ref struct` lokální proměnné iterátory.
+- Nelze zachytit `ref struct` proměnné ve výrazech lambda nebo místní funkce.
+
+Tato omezení zajistit nepoužívejte omylem `ref struct` způsobem, který může převést na spravované haldě.
+
+Můžete kombinovat modifikátory pro deklaraci struktury jako `readonly ref`. A `readonly ref struct` kombinuje výhody a omezení `ref struct` a `readonly struct` deklarace.
+
 ## <a name="c-language-specification"></a>specifikace jazyka C#
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Viz také:
 
-- [Referenční sémantika s typy hodnot](../../reference-semantics-with-value-types.md)  
+- [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)  
 - [Předávání parametrů](../../programming-guide/classes-and-structs/passing-parameters.md)  
 - [Parametry metody](method-parameters.md)  
 - [Referenční dokumentace jazyka C#](../index.md)  

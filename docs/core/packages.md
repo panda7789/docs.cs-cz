@@ -4,16 +4,16 @@ description: Přečtěte si terminologie pro balíčky, metabalíčky a architek
 author: richlander
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: e68c63d26133ac76b718bb3696d16c81bd943dc2
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: e69e9707d3984f37ebc2c1103f9d89f3cbdf5cbd
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45597665"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195278"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Balíčky, metabalíčky a architektury
 
-.NET core je platforma provedené balíčků NuGet. Některé produktu prostředí je výhodné podrobných definice balíčků některá z hrubých. Přizpůsobí tento duality produktu je distribuován jako podrobné sadu balíčků a podle hrubší bloků dat s typem balíček neformálně označované jako "Microsoft.aspnetcore.all".
+.NET core je platforma provedené balíčků NuGet. Některé produktu prostředí je výhodné podrobných definice balíčků některá z hrubých. Přizpůsobí tento duality produktu je distribuován jako podrobné sada balíčků a hrubší bloků dat s neformálně označované jako typ balíčku [Microsoft.aspnetcore.all](#metapackages).
 
 Každý z balíčků .NET Core podporují, běží na několika implementace .NET reprezentovaná jako rozhraní. Některé z těchto rozhraní jsou tradiční architektur, jako je třeba `net46`, představující rozhraní .NET Framework. Další sady je nová rozhraní, které si lze představit jako "na základě balíčku rozhraní", které vytvořit nový model pro definování rozhraní. Tyto architektury využívající balíčky jsou zcela vytvořen a definovány jako balíčky, které tvoří silný vztah mezi balíčky a architektur.
 
@@ -39,7 +39,7 @@ Následuje seznam klíčů balíčky NuGet pro .NET Core:
 - [System.Linq](https://www.nuget.org/packages/System.Linq) -sadu typů objektů, včetně dotazování `Enumerable` a <xref:System.Linq.ILookup%602>.
 - [System.Reflection](https://www.nuget.org/packages/System.Reflection) -sadu typů pro načítání, kontrolu a aktivaci typů, včetně <xref:System.Reflection.Assembly>, <xref:System.Reflection.TypeInfo> a <xref:System.Reflection.MethodInfo>.
 
-Místo včetně balíčků ve vašich projektech na základě balíčku podle, je obvykle mnohem jednodušší zahrnout *Microsoft.aspnetcore.all*, což je sada balíčků, které se často používá společně. (Další informace o metabalíčky, najdete v následující části.) Ale když budete potřebovat jeden balíček, kterou můžete zahrnout jako v příkladu níže, který se odkazuje na [System.Runtime](https://www.nuget.org/packages/System.Runtime/) balíčku. 
+Obvykle místo včetně každý balíček, je jednodušší a robustnější zahrnout [Microsoft.aspnetcore.all](#metapackages). Ale když budete potřebovat jeden balíček, kterou můžete zahrnout jako v následujícím příkladu, který odkazuje [System.Runtime](https://www.nuget.org/packages/System.Runtime/) balíčku. 
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -72,6 +72,7 @@ Existují výhody použití metabalíčky:
 Klíče metabalíčky .NET Core jsou:
 
 - [Balíčky Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) -popisuje knihoven, které jsou součástí distribuce .NET Core. Vytváří [ `.NETCoreApp` framework](https://github.com/dotnet/core-setup/blob/release/1.1.0/pkg/projects/Microsoft.NETCore.App/Microsoft.NETCore.App.pkgproj). Závisí na menší `NETStandard.Library`.
+- [Microsoft.AspNetCore.App](https://www.nuget.org/packages/Microsoft.AspNetCore.App) – zahrnuje všechny podporované balíčky z ASP.NET Core a Entity Framework Core s výjimkou těch, které obsahují závislostí třetích stran. Zobrazit [Microsoft.AspNetCore.App Microsoft.aspnetcore.all pro ASP.NET Core](/aspnet/core/fundamentals/metapackage) Další informace.
 - [Metabalíček](https://www.nuget.org/packages/Microsoft.AspNetCore.All) – zahrnuje všechny podporované balíčky od třetích stran a vnitřní závislosti používat ASP.NET Core a Entity Framework Core, Entity Framework Core a ASP.NET Core. Zobrazit [metabalíček Microsoft.aspnetcore.all pro ASP.NET Core 2.x](/aspnet/core/fundamentals/metapackage) Další informace.
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) -sadu fasády kompatibility, které umožňují na základě mscorlib přenosné knihovny tříd (PCLs) ke spuštění v rozhraní .NET Core.
 
@@ -109,7 +110,7 @@ Dvě primární založené na balíčku architektury použít s .NET Core jsou:
 
 ### <a name="net-standard"></a>.NET standard
 
-.NET Standard (cílové rozhraní framework moniker: `netstandard`) představuje rozhraní API určené a zabudovány nad rámec [.NET Standard](../standard/net-standard.md). Cílem tohoto rozhraní by měl knihovny, které jsou určeny ke spuštění ve více modulů – runtime. Se bude podporovat na jakékoli .NET Standard kompatibilní modul runtime, jako je .NET Core, .NET Framework a Mono/Xamarin. Každá z těchto modulů runtime podporuje .NET Standard verze, v závislosti na tom, které rozhraní API implementovat.
+.NET Standard ([Moniker cílového rozhraní](../standard/frameworks.md): `netstandard`) představuje rozhraní API určené a zabudovány nad rámec [.NET Standard](../standard/net-standard.md). Cílem tohoto rozhraní by měl knihovny, které jsou určeny ke spuštění ve více modulů – runtime. Se bude podporovat na jakékoli .NET Standard kompatibilní modul runtime, jako je .NET Core, .NET Framework a Mono/Xamarin. Každá z těchto modulů runtime podporuje .NET Standard verze, v závislosti na tom, které rozhraní API implementovat.
 
 `netstandard` Framework implicitně odkazuje [ `NETStandard.Library` ](https://www.nuget.org/packages/NETStandard.Library) Microsoft.aspnetcore.all. Například následující soubor projektu MSBuild znamená, že projekt cílí `netstandard1.6`, které odkazuje [ `NETStandard.Library` verze 1.6](https://www.nuget.org/packages/NETStandard.Library/1.6.0) Microsoft.aspnetcore.all.
 
@@ -138,7 +139,7 @@ Naopak autoritou nebude platný: cílení na `netstandard1.6` s 1.3.0 verzi `NET
 
 ### <a name="net-core-application"></a>Aplikace .NET core
 
-Aplikace .NET Core (TFM: `netcoreapp`) framework představuje balíčky a přidružených rozhraní API, které jsou součástí distribuce .NET Core a konzoly aplikační model, který poskytuje. Aplikace pro .NET core musí používat tento systém, kvůli cílené na konzole aplikační model, jako by měl knihovny, které mají být spouštěny pouze v rozhraní .NET Core. Pomocí tohoto rozhraní omezuje aplikací a knihoven ke spuštění pouze v rozhraní .NET Core. 
+.NET Core ([Moniker cílového rozhraní](../standard/frameworks.md): `netcoreapp`) framework představuje balíčky a přidružených rozhraní API, které jsou součástí distribuce .NET Core a konzoly aplikační model, který poskytuje. Aplikace pro .NET core musí používat tento systém, kvůli cílené na konzole aplikační model, jako by měl knihovny, které mají být spouštěny pouze v rozhraní .NET Core. Pomocí tohoto rozhraní omezuje aplikací a knihoven ke spuštění pouze v rozhraní .NET Core. 
 
 `Microsoft.NETCore.App` Microsoft.aspnetcore.all cílí `netcoreapp` rozhraní framework. Poskytuje přístup k knihovny přibližně 60, přibližně 40 poskytované `NETStandard.Library` balíčku a další v přidání přibližně 20. Můžete odkazovat na další knihovny, které se zaměřují `netcoreapp` nebo kompatibilní rozhraní, jako například `netstandard`, abyste získali přístup k další rozhraní API. 
 

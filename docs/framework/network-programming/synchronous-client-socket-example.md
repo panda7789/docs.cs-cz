@@ -9,14 +9,12 @@ helpviewer_keywords:
 - synchronous client sockets
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 55fd8c33f80ecf3b31fdbacec1abd73ebab92396
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 1720d0a476d3eb5586ed8742c377324bc1950cd5
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122670"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192509"
 ---
 # <a name="synchronous-client-socket-example"></a>Příklad synchronního klientského soketu
 Následující ukázkový program vytvoří klienta, která se připojuje k serveru. Klient je sestavena s soket synchronního, takže spuštění klientské aplikace je pozastaveno, dokud server vrátí odpověď. Aplikace odešle řetězec k serveru a pak zobrazí řetězec vrácený funkcí serveru na konzole.  

@@ -3,17 +3,17 @@ title: Portování do .NET Core v rozhraní .NET Framework
 description: Vysvětlení procesu přenosem a zjišťování nástroje, které vám můžou pomoct při přenášení do rozhraní .NET Framework projektu .NET Core.
 author: cartermp
 ms.author: mairaw
-ms.date: 06/20/2016
-ms.openlocfilehash: d273b3abe46de59aa55b5b9a531d3c572a065124
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.date: 10/23/2018
+ms.openlocfilehash: 0c0ec3d8ab09e34e8dae24623903ca571f2cca6c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48835389"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192769"
 ---
 # <a name="porting-to-net-core-from-net-framework"></a>Portování do .NET Core v rozhraní .NET Framework
 
-Pokud máte kód spuštěný na rozhraní .NET Framework, může zajímat spouštění kódu v .NET Core 1.0.  Tento článek obsahuje přehled procesu přenosem a seznam nástrojů, které vám můžou pomoct při přenášení do .NET Core.
+Pokud máte kód spuštěný na rozhraní .NET Framework, může zajímat spouštění kódu v rozhraní .NET Core.  Tento článek obsahuje přehled procesu přenosem a seznam nástrojů, které vám můžou pomoct při přenášení do .NET Core.
 
 ## <a name="overview-of-the-porting-process"></a>Přehled procesu přenos
 
@@ -23,7 +23,7 @@ Doporučený postup pro přenesení následuje následující sérii kroků.  Ka
 
    To bude zahrnovat porozumění jaké závislostí třetích stran se, jak jsou závislé na nich, jak a zjistěte, jestli jsou také běží na .NET Core a kroky můžete provést v případě ne.
    
-2. Přesměrovat všechny projekty, které chcete port pro cílové rozhraní .NET Framework 4.6.2.
+2. Přesměrovat všechny projekty, které chcete port pro cílení na nejnovější verzi rozhraní .NET Framework.
 
    Tím se zajistí, že můžete použít alternativy rozhraní API pro .NET Framework specifické cíle v případech, kdy .NET Core nemůže zajišťovat podporu pro dané rozhraní API.
    
@@ -33,7 +33,7 @@ Doporučený postup pro přenesení následuje následující sérii kroků.  Ka
    
 4. Přeneste kód testy.
 
-   Přenos aplikací .NET Core je velkou změnu do vašeho základu kódu, se důrazně doporučujeme zobrazíte testy přenáší tak, aby jako port kód prostřednictvím je možné spustit testy.  MSTest, xUnit a NUnit podpora .NET Core 1.0 ještě dnes.
+   Přenos aplikací .NET Core je velkou změnu do vašeho základu kódu, se důrazně doporučujeme zobrazíte testy přenáší tak, aby jako port kód prostřednictvím je možné spustit testy.  MSTest, xUnit a NUnit podporovat .NET Core ještě dnes.
    
 6. Spuštění vašeho plánu pro přenos!
 

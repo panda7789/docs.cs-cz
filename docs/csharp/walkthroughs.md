@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: a2efaae7cd861842f92ba3cdedc5ae77beec9f6f
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: ae29c8fbe8d5d87ccee4d6a43a3c9285f0c41ee1
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48583891"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192561"
 ---
 # <a name="c-walkthroughs"></a>Postupy pro C#
 Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobrým začátkem získávání informací o produktu nebo konkrétní oblast.  
@@ -23,7 +23,7 @@ Návody pro poskytují podrobné pokyny pro běžné scénáře, které je dobr�
  [Přístup k webu pomocí modifikátoru Async a operátoru Await](./programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)  
  Ukazuje, jak vytvořit asynchronní řešení pomocí [asynchronní](../csharp/language-reference/keywords/async.md) a [await](../csharp/language-reference/keywords/await.md).  
   
- [Vytvoření komponenty Windows Runtime v jazyce C# nebo Visual Basic a volání komponenty z jazyka JavaScript](https://msdn.microsoft.com/library/windows/apps/hh779077.aspx)  
+ [Vytvoření komponenty Windows Runtime v jazyce C# nebo Visual Basic a volání komponenty z jazyka JavaScript](/windows/uwp/winrt-components/walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript)  
  Ukazuje, jak vytvořit [!INCLUDE[wrt](~/includes/wrt-md.md)] zadejte, zabalíte ji do [!INCLUDE[wrt](~/includes/wrt-md.md)] komponenty a poté zavolá komponentu z [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)] aplikaci, která je vytvořená pro Windows pomocí jazyka JavaScript.  
   
  [Programování pro Office (C# a Visual Basic)](../csharp/programming-guide/interop/walkthrough-office-programming.md)  

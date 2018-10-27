@@ -8,14 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 07e6b201056614237a433ed7a297d40eab23da59
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 5c7786bd0dc8789d156959dcf94ac6bf8f4fb906
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122624"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194056"
 ---
 # <a name="whats-new-for-visual-basic"></a>Co je nového v jazyce Visual Basic
 
@@ -157,7 +155,7 @@ Další informace najdete v tématu [referenční vrátit hodnoty](../programmin
 [Interpolace řetězců](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)  
  Výrazy interpolace řetězců můžete použít k vytvoření řetězce.  Interpolovaný řetězcový výraz vypadá jako řetězec šablony, který obsahuje výrazy.  Interpolované řetězce je lze snáze pochopit s ohledem na argumenty než [složené formátování](../../standard/base-types/composite-format.md).  
   
-[Přístup ke členu podmíněných Null a indexování](../../csharp/language-reference/operators/null-conditional-operators.md)  
+[Přístup ke členu podmíněných Null a indexování](../language-reference/operators/null-conditional-operators.md)  
 Můžete testovat null velmi malé syntaktické způsobem před provedením přístup ke členu (`?.`) nebo indexu (`?[]`) operace.  Tyto operátory usnadňuje psaní méně kód pro zpracování null kontrol, zejména pro sestupné řazení do datové struktury.  Pokud levý operand nebo objekt odkaz má hodnotu null, operace vrátí hodnotu null.  
   
 [Literály víceřádkových řetězců](../../visual-basic/programming-guide/language-features/strings/string-basics.md)  

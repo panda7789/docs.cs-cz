@@ -4,14 +4,12 @@ ms.date: 03/28/2018
 helpviewer_keywords:
 - programming, Visual Basic
 - Visual Basic
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 03c9c118104f6fe3196d0a4bb13d28a6a122d859
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: 716715676100b4a16c4732bef545c1c7a2e0703f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39245716"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192327"
 ---
 # <a name="visual-basic-guide"></a>Průvodce Visual Basicem
 
