@@ -11,51 +11,53 @@ helpviewer_keywords:
 - linear gradient brush [WPF]
 - typography [WPF], outline effects
 ms.assetid: 4aa3cf6e-1953-4f26-8230-7c1409e5f28d
-ms.openlocfilehash: c79f5c1c6812b1175119133664e39995af29bd4f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 046ce6519e55e5782db0fe8adbc2a956251e12e4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33544962"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50088777"
 ---
 # <a name="how-to-create-outlined-text"></a>Postupy: Vytvoření textu osnovy
-Ve většině případů při přidávání dekoru na textové řetězce ve vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace, používáte text z hlediska kolekci diskrétní znaků nebo glyfů. Můžete například vytvořit lineární štětce přechodu a použijte ho k <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost <xref:System.Windows.Controls.TextBox> objektu. Při zobrazení nebo upravte pole, lineární štětce přechodu automaticky použita pro aktuální sadu znaků v textovém řetězci.  
+Ve většině případů při přidávání dekoru na textové řetězce do vaší [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] aplikace, používáte text z hlediska kolekce samostatných znaky nebo glyfů. Například lze vytvořit štětec lineárního přechodu a použít ho k <xref:System.Windows.Controls.Control.Foreground%2A> vlastnost <xref:System.Windows.Controls.TextBox> objektu. Při zobrazení nebo upravte pole štětec lineárního přechodu se automaticky využije na aktuální sady znaků v textovém řetězci.  
   
- ![Text zobrazovaný štětcem lineárního přechodu](../../../../docs/framework/wpf/advanced/media/outlinedtext01.jpg "OutlinedText01")  
-Příklad lineární štětce přechodu použít textového pole  
+ ![Text zobrazený s štětec lineárního přechodu](../../../../docs/framework/wpf/advanced/media/outlinedtext01.jpg "OutlinedText01")  
+Příklad štětec lineárního přechodu u textového pole  
   
- Ale můžete také převést text do <xref:System.Windows.Media.Geometry> objekty, umožňuje vytvářet jiné typy vizuálně formátovaným textem. Například můžete vytvořit <xref:System.Windows.Media.Geometry> objektu podle obrys textového řetězce.  
+ Ale můžete také převést text do <xref:System.Windows.Media.Geometry> objektům, umožňuje vytvářet jiné druhy vizuálně formátovaný text. Například můžete vytvořit <xref:System.Windows.Media.Geometry> objektu podle obrysu textového řetězce.  
   
- ![Osnova text použití štětce přechodu lineární](../../../../docs/framework/wpf/advanced/media/outlinedtext02.jpg "OutlinedText02")  
-Příklad lineární štětce přechodu u geometrie osnovy textu  
+ ![Text osnovy pomocí štětec lineárního přechodu](../../../../docs/framework/wpf/advanced/media/outlinedtext02.jpg "OutlinedText02")  
+Příklad štětec lineárního přechodu u geometrie obrysu textu  
   
- Když se text bude převeden na <xref:System.Windows.Media.Geometry> objektu je již kolekce znaků – nelze upravit znaků v textovém řetězci. Však může ovlivnit vzhled text převedený změnou vlastností tahu a výplně. Tahu odkazuje na obrys text převedený; výplně odkazuje na oblasti uvnitř obrys text převedený.  
+ Pokud je text převést na <xref:System.Windows.Media.Geometry> objektu, není již sadu znaků – nelze upravit znaků v textovém řetězci. Můžete však vliv na vzhled text převedený úpravou jeho vlastností tahu a výplně. Protože byl zdvih odkazuje na osnovy převedený textu. Výplň odkazuje na oblast uvnitř osnovy text převedený.  
   
- Následující příklady znázorňují několika způsoby vytváření vizuálních efektů úpravou tahu a výplně převedený textu.  
+ Následující příklady znázorňují několik způsobů vytváření vizuálních efektů úpravou tahu a zadejte text převedený.  
   
- ![Text pomocí různých barev pro výplně a tahu](../../../../docs/framework/wpf/advanced/media/outlinedtext03.jpg "OutlinedText03")  
-Příklad nastavení tahu a vyplňte pro různé barev  
+ ![Text mají různé barvy výplně a stroke](../../../../docs/framework/wpf/advanced/media/outlinedtext03.jpg "OutlinedText03")  
+Příklad nastavení tahu a výplně různé barvy  
   
- ![Text s štětce bitové kopie u tahu](../../../../docs/framework/wpf/advanced/media/outlinedtext04.jpg "OutlinedText04")  
-Příklad štětce bitové kopie u tahu  
+ ![Text s obrázkový štětec u stroke](../../../../docs/framework/wpf/advanced/media/outlinedtext04.jpg "OutlinedText04")  
+Příklad obrázkový štětec u tahu  
   
- Je také možné upravit ohraničující obdélník pole nebo zvýraznění převedený textu. Následující příklad ilustruje způsob, jak vytváření vizuálních efektů úpravou tahu a zvýraznění převedený textu.  
+ Je také možné změnit ohraničující obdélník pole nebo zvýraznění převedeného textu. Následující příklad ukazuje způsob, jak vytváření vizuálních efektů úpravou tahu a zvýraznit text převedený.  
   
- ![Text s štětce bitové kopie u tahu](../../../../docs/framework/wpf/advanced/media/outlinedtext05.jpg "OutlinedText05")  
-Příklad štětce obrázku použita pro tahu a zvýraznění  
+ ![Text s obrázkový štětec u stroke](../../../../docs/framework/wpf/advanced/media/outlinedtext05.jpg "OutlinedText05")  
+Příklad obrázkový štětec, který je použitý ke stroke a zvýraznění  
   
 ## <a name="example"></a>Příklad  
- Klíč k převodu text, který má <xref:System.Windows.Media.Geometry> objekt, je použít <xref:System.Windows.Media.FormattedText> objektu. Po vytvoření tohoto objektu, můžete použít <xref:System.Windows.Media.FormattedText.BuildGeometry%2A> a <xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A> metody pro převod textu na <xref:System.Windows.Media.Geometry> objekty. Vrátí první metoda geometrie formátovaný text; Druhá metoda vrátí že geometrie formátovaného textu je ohraničujícího pole. Následující příklad kódu ukazuje, jak vytvořit <xref:System.Windows.Media.FormattedText> objektu a k načítání geometrie formátovaného textu a jeho ohraničující pole.  
+ Klíč k převodu textu <xref:System.Windows.Media.Geometry> objektu je použití <xref:System.Windows.Media.FormattedText> objektu. Po vytvoření tohoto objektu můžete použít <xref:System.Windows.Media.FormattedText.BuildGeometry%2A> a <xref:System.Windows.Media.FormattedText.BuildHighlightGeometry%2A> metody pro převod textu na <xref:System.Windows.Media.Geometry> objekty. První metoda vrátí geometrie formátovaného textu. Druhá metoda vrátí geometrie formátovaný text ohraničovacího rámečku. Následující příklad kódu ukazuje, jak vytvořit <xref:System.Windows.Media.FormattedText> objektu a k načtení geometrie formátovaný text a jeho ohraničujícího rámečku.  
   
  [!code-csharp[OutlineTextControlViewer#CreateText](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#createtext)]
  [!code-vb[OutlineTextControlViewer#CreateText](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#createtext)]  
   
- Aby bylo možné zobrazit načtený <xref:System.Windows.Media.Geometry> objekty, je třeba získat přístup <xref:System.Windows.Media.DrawingContext> objektu, který je zobrazení převedeného textového. V těchto příkladech, kódu se provádí tak, že vytvoříte vlastní ovládací prvek objekt, který je odvozen od třídy, která podporuje vlastní vykreslení.  
+ Aby bylo možné zobrazit načtené <xref:System.Windows.Media.Geometry> objekty, budete potřebovat přístup k <xref:System.Windows.Media.DrawingContext> objektu, který zobrazuje text převedený. V těchto příkladech kódu se provádí tak, že vytvoříte vlastní ovládací prvek objekt, který je odvozen ze třídy, která podporuje uživatelem definované vykreslování.  
   
- Chcete-li zobrazit <xref:System.Windows.Media.Geometry> objekty v ovládacím prvku vlastní poskytují přepsání pro <xref:System.Windows.UIElement.OnRender%2A> metoda. Přepsaná metoda by měla použít <xref:System.Windows.Media.DrawingContext.DrawGeometry%2A> metoda kreslení <xref:System.Windows.Media.Geometry> objekty.  
+ Chcete-li zobrazit <xref:System.Windows.Media.Geometry> objekty v ovládacím prvku vlastní poskytují přepsání pro <xref:System.Windows.UIElement.OnRender%2A> metody. Používejte přepsané metody <xref:System.Windows.Media.DrawingContext.DrawGeometry%2A> metody, chcete-li nakreslit <xref:System.Windows.Media.Geometry> objekty.  
   
  [!code-csharp[OutlineTextControlViewer#OnRender](../../../../samples/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs#onrender)]
  [!code-vb[OutlineTextControlViewer#OnRender](../../../../samples/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb#onrender)]  
+  
+  Zdrojový objekt příklad vlastního uživatelského ovládacího prvku, naleznete v tématu [OutlineTextControl.cs pro C# ](https://github.com/dotnet/samples/blob/master/snippets/csharp/VS_Snippets_Wpf/OutlineTextControlViewer/CSharp/OutlineTextControl.cs) a [OutlineTextControl.vb v jazyce Visual Basic](https://github.com/dotnet/samples/blob/master/snippets/visualbasic/VS_Snippets_Wpf/OutlineTextControlViewer/visualbasic/outlinetextcontrol.vb). 
   
 ## <a name="see-also"></a>Viz také  
  [Kreslení formátovaného textu](../../../../docs/framework/wpf/advanced/drawing-formatted-text.md)

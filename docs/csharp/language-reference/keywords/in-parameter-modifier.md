@@ -4,12 +4,12 @@ ms.date: 03/06/2018
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 36bd4ab7cd5ed4ab01a7fda7991df94c26ed5d1a
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 199d2d54a1937b9982131b8cc7f1c777f656d7a9
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873424"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50049448"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>v parametru modifikátor (referenční dokumentace jazyka C#)
 
@@ -124,4 +124,4 @@ Nelze použít `in`, `ref`, a `out` klíčová slova pro následující druhy me
 - [Průvodce programováním v jazyce C#](../../programming-guide/index.md)  
 - [Klíčová slova jazyka C#](index.md)  
 - [Parametry metody](method-parameters.md)  
-- [Referenční sémantika s typy hodnot](../../reference-semantics-with-value-types.md)  
+- [Psát bezpečný kód efektivní](../../write-safe-efficient-code.md)  

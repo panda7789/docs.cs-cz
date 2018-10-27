@@ -10,14 +10,12 @@ helpviewer_keywords:
 - receiving data, pluggable protocols
 - protocols, pluggable
 ms.assetid: 9810c177-973e-43d7-823c-14960bd625ea
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 9f4f1756d42e8931a5265017088021b5f4022044
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: 859593c6c53d9f6dc89047efae1c682a6a9873a7
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49337620"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181261"
 ---
 # <a name="deriving-from-webrequest"></a>Odvození ze žádosti WebRequest
 <xref:System.Net.WebRequest> Třída je abstraktní základní třídu, která poskytuje základní metody a vlastnosti pro vytvoření konkrétní žádost o obslužnou rutinu, která vyhovuje připojitelných protokolů model rozhraní .NET Framework. Aplikace, které používají **WebRequest** třídy můžete žádost o data pomocí libovolného protokolu pro podporované bez nutnosti určit protokol použitý.  

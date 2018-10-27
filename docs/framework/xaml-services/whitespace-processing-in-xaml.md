@@ -7,12 +7,12 @@ helpviewer_keywords:
 - white-space processing in XAML [XAML Services]
 - characters [XAML Services], East Asian
 ms.assetid: cc9cc377-7544-4fd0-b65b-117b90bb0b23
-ms.openlocfilehash: 89f8a4675b3edc23913549bc24f0d9ae16917519
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 3eea3d6c8a28ace0cc79cbfeb7eb3a7a52c9b8ab
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873437"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50047524"
 ---
 # <a name="white-space-processing-in-xaml"></a>Zpracování mezerových znaků v XAML
 Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracovány [!INCLUDE[TLA2#tla_xaml](../../../includes/tla2sharptla-xaml-md.md)] implementace procesoru. Toto téma popisuje tato pravidla jazyka XAML. Také dokumenty prázdných další zpracování, který je definován [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] provádění procesoru XAML a XAML zapisovače pro serializaci.  
@@ -59,7 +59,7 @@ Stav jazykových pravidel pro XAML, že významné mezery, musí být zpracován
   
 <a name="east_asian_characters"></a>   
 ## <a name="east-asian-characters"></a>Východoasijské znaky  
- "Východoasijské znaky" je definován jako sada [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] 20000 U + do U + 2FFFD a U + 30000 U + 3FFFD rozsahy adres znak. Tato podmnožina je někdy označovány jako "Ideografické". Další informace najdete na webu [http://www.unicode.org](http://www.unicode.org/).  
+ "Východoasijské znaky" je definován jako sada [!INCLUDE[TLA2#tla_unicode](../../../includes/tla2sharptla-unicode-md.md)] 20000 U + do U + 2FFFD a U + 30000 U + 3FFFD rozsahy adres znak. Tato podmnožina je někdy označovány jako "Ideografické". Další informace naleznete v tématu <https://www.unicode.org>.  
   
 <a name="whitespace_and_text_content_models"></a>   
 ## <a name="white-space-and-text-content-models"></a>Modely obsahu prázdné znaky a text  

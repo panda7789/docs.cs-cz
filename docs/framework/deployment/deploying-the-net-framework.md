@@ -7,34 +7,34 @@ helpviewer_keywords:
 ms.assetid: 19df26c5-4008-461d-a7d7-18f4506312d2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aa204b9ac604cd4e0f2c1ae75e872f6bb5cdaf22
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ac17993a4980e96cbd05fc2523567138e7b56262
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33391404"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50049305"
 ---
 # <a name="deploying-the-net-framework"></a>Nasazení rozhraní .NET Framework
-V této části dokumentace rozhraní .NET Framework poskytuje informace pro vývojáře, kteří chtějí nainstalovat rozhraní .NET Framework s jejich aplikace a správci, kteří chtějí nasadit rozhraní .NET Framework v síti. Také popisuje aktivace a restartujte problémů, souvisejících s nasazení, jak můžete sledovat průběh instalace rozhraní .NET Framework.  
+Tato část dokumentace k rozhraní .NET Framework obsahuje informace pro vývojáře, kteří chtějí nainstalovat rozhraní .NET Framework pomocí svých aplikací a správce, kteří chtějí nasadit rozhraní .NET Framework přes síť. Také popisuje aktivace a restartujte problémy spojené s nasazením a jak monitorovat průběh instalace rozhraní .NET Framework.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
- Vysvětluje, jak vývojáři můžete nainstalovat rozhraní .NET Framework na své uživatele, počítače s aplikací.  
+ Vysvětluje, jak vývojáři můžete nainstalovat rozhraní .NET Framework na jejich uživatele, počítače s jejich aplikacemi.  
   
  [Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)  
- Vysvětluje, jak správce systému můžete nasadit rozhraní .NET Framework a jeho závislé součásti systému přes síť pomocí System Center Configuration Manager (SCCM).  
+ Vysvětluje, jak může správce systému můžete nasadit rozhraní .NET Framework a jeho systémové závislosti napříč sítí pomocí System Center Configuration Manageru (SCCM).  
   
  [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)  
- Popisuje správce restartovat, aby se zabránilo restartuje, pokud je to možné a vysvětluje, jak aplikace, které instalaci rozhraní .NET Framework, můžete využít výhod ho.  
+ Popisuje správce restartování se zabránilo restartuje kdykoli je to možné a vysvětluje, jak aplikace, které instalace rozhraní .NET Framework můžete využívat jejich výhod.  
   
  [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)  
- Popisuje, jak bezobslužná spustit a sledovat proces instalace rozhraní .NET Framework při zobrazování zobrazení průběh instalačního programu.  
+ Popisuje, jak spustit bez upozornění a sledovat proces instalace rozhraní .NET Framework při vlastním zobrazením průběhu instalace.  
   
  [.NET Framework – chyby inicializace: správa zkušeností uživatele](../../../docs/framework/deployment/initialization-errors-managing-the-user-experience.md)  
- Vysvětluje, co se stane, když aplikace rozhraní .NET Framework požaduje verze CLR, který je neplatná nebo není nainstalována v počítači uživatele, jak vyřešit tyto chyby a jak ovládat chybová zpráva zobrazovat uživateli.  
+ Vysvětluje, co se stane, když aplikace rozhraní .NET Framework požaduje verzi CLR, která je neplatná nebo není nainstalovaná na počítači uživatele, jak tyto chyby vyřešit a jak řídit zobrazí uživateli chybovou zprávu.  
   
  [Postupy: Ladění problémů aktivace CLR](../../../docs/framework/deployment/how-to-debug-clr-activation-issues.md)  
- Vysvětluje, jak můžete zobrazit a ladění protokoly aktivace CLR vyřešit problémy, ke kterým může dojít při získávání aplikace na spouštění s správná verze modulu CLR.  
+ Vysvětluje, jak lze zobrazit a ladění CLR aktivace protokoly k řešení potíží, které můžete narazit při získávání aplikace na spouštění se správnou verzí modulu CLR.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce vývojem](../../../docs/framework/development-guide.md)
+- [Průvodce vývojem](../../../docs/framework/development-guide.md)

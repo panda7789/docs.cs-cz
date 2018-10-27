@@ -17,52 +17,52 @@ helpviewer_keywords:
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: f78df1a85bacae3019fe27857731174796d8a311
-ms.sourcegitcommit: 3d42e1d73e21c35c540dd4adbea23efcbe1b8b0a
+ms.openlocfilehash: 8d83da6e995c35de650c496c5792e55b05dd9095
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36270419"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50088790"
 ---
 # <a name="assembly-security-considerations"></a>Důležité informace o zabezpečení sestavení
-<a name="top"></a> Při vytváření sestavení, můžete sadu oprávnění, která sestavení vyžaduje ke spuštění. Zda jsou některá oprávnění udělit nebo nejsou udělena sestavení je založena na důkaz.  
+<a name="top"></a> Při sestavování sestavení, můžete zadat sadu oprávnění, která vyžaduje sestavení ke spuštění. Legitimace vychází, zda jsou určitá oprávnění udělit nebo nebyla udělena na sestavení.  
   
- Existují dva způsoby distinct, důkaz se používá:  
+ Legitimace se používá dva různé způsoby:  
   
--   Vstupní důkaz je sloučen s důkaz shromáždit zavaděčem vytvořit závěrečnou sadu důkaz slouží k rozlišení zásad. Metody, které používají tuto sémantiku patří **Assembly.Load**, **Assembly.LoadFrom**, a **Activator.CreateInstance**.  
+-   Vstupní legitimace se sloučí s legitimací shromážděné zavaděč, chcete-li vytvořit finální sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load**, **Assembly.LoadFrom**, a **Activator.CreateInstance**.  
   
--   Vstupní důkaz se používá jako závěrečné sady důkaz slouží k rozlišení zásad v nezměněném stavu. Metody, které používají tuto sémantiku patří **Assembly.Load(byte[])** a **AppDomain.DefineDynamicAssembly()**.  
+-   Vstupní legitimace se používá beze změny jako výsledná sada ověření pro řešení zásady. Metody, které používají tuto sémantiku patří **Assembly.Load(byte[])** a **AppDomain.DefineDynamicAssembly()**.  
   
- Volitelné oprávnění můžete udělit pomocí [zásady zabezpečení](../../../docs/framework/misc/code-access-security-basics.md) nastavit v počítači, kde se spustí sestavení. Pokud chcete, aby váš kód zpracovávat všechny potenciální výjimky zabezpečení, můžete provést jednu z těchto možností:  
+ Volitelné oprávnění lze udělit pomocí [zásady zabezpečení](../../../docs/framework/misc/code-access-security-basics.md) nastavit v počítači, ve kterém se spustí sestavení. Pokud chcete svůj kód pro zpracování všechny potenciální výjimky zabezpečení, můžete provést jednu z následujících:  
   
--   Vložte žádost oprávnění pro všechna oprávnění kódu musí mít a zpracovat předem čas načítání selhání, který nastane, pokud nejsou udělena oprávnění.  
+-   Vložte žádost o oprávnění pro všechna oprávnění, musíte mít kód a ještě před zahájením zpracování selhání během načítání, který nastane, pokud nejsou udělena oprávnění.  
   
--   Nepoužívejte žádost o oprávnění k získání oprávnění kódu může být nutné, ale připravte se na zpracování výjimek zabezpečení, pokud nejsou udělena oprávnění.  
+-   Nepoužívejte žádosti o oprávnění k získání oprávnění váš kód může být nutné, ale být připravena ke zpracování bezpečnostním výjimkám, pokud nejsou udělena oprávnění.  
   
     > [!NOTE]
-    >  Zabezpečení je komplexní oblasti a mají mnoho možností pro vybírat. Další informace najdete v tématu [klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md).  
+    >  Zabezpečení je komplexní oblast a můžete vybírat z mnoha různými způsoby. Další informace najdete v tématu [klíčové koncepty zabezpečení](../../../docs/standard/security/key-security-concepts.md).  
   
- V okamžiku načtení sestavení důkaz slouží jako vstup pro zásady zabezpečení. Zásady zabezpečení je vytvořena podle podniku a správce počítače a nastavení zásad pro uživatele a určuje sadu oprávnění udělenou po provedení všech spravovaného kódu. Zásady zabezpečení lze navázat pro vydavatele sestavení (Pokud má podpisový generovaných nástrojem podpis), sestavení pro webový server a zónu (v Internet Exploreru podmínky) byl stažen z nebo pro silný název sestavení. Správce počítače můžete například vytvořit zásady zabezpečení, která umožňuje všechny kód stáhnout z webu a podepsaný daný software společnosti pro přístup k databázi v počítači, ale neposkytuje přístup k zápisu na disku.  
+ V okamžiku načtení legitimaci sestavení používá jako vstup pro zásady zabezpečení. Zásady zabezpečení se stanoví podle podniku a správce počítače a nastavení zásad pro uživatele a určuje sadu oprávnění udělenou všechen spravovaný kód při spuštění. Zásady zabezpečení je možné navázat vydavatele sestavení (Pokud má podpisový generovaných nástrojem pro podpis), webu a zóny (v Internet Exploreru podmínky) sestavení byl stažen z nebo pro sestavení silným názvem. Například správce počítače můžete vytvořit zásady zabezpečení, které umožňuje veškerý kód stáhnout z webu a podepsány dané softwarová společnost pro přístup k databázi v počítači, ale bez možnosti udělovat přístup k zápisu na disk počítače.  
   
-## <a name="strong-named-assemblies-and-signing-tools"></a>Sestavení se silným názvem a podepisování nástroje  
+## <a name="strong-named-assemblies-and-signing-tools"></a>Sestavení se silným názvem a nástroje pro podepisování  
 
  > [!WARNING]
- > Nespoléhejte na silné názvy pro zabezpečení. Obsahují jenom jedinečnou identitu.
+ > Nespoléhejte na silných názvů pro zabezpečení. Poskytují jedinečné identity.
 
- Sestavení můžete přihlásit dva různé ale vzájemně doplňují způsoby: silným názvem nebo pomocí [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md). Podepisování sestavení se silným názvem přidá veřejný šifrovací klíče do souboru, který obsahuje manifest sestavení. Podpis silného názvu pomáhá ověřit jedinečnost názvu, zabránit falšování a poskytnout volající některé identity když odkaz je vyřešený.  
+ Sestavení lze podepsat ve dvou různých ale vzájemně doplňují způsoby: pomocí silného názvu nebo s použitím [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md). Podepisování sestavení silným názvem přidá veřejný šifrovací klíče do souboru, který obsahuje manifest sestavení. Podepisování se silným názvem pomáhá zkontrolujte jedinečnost názvu, bránit falšování a poskytnout volající některé identity, když je vyřešený odkaz.  
   
- Žádná úroveň důvěryhodnosti souvisí se silným názvem, díky čemuž [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) důležité. Tyto podepisovací nástroje vyžadují vydavatele k prokázání své identity autority třetích stran a získat certifikát. Tento certifikát se pak vloží v souboru a můžete použít správce můžete rozhodnout, jestli důvěřovat pravosti kódu.  
+ Žádná úroveň vztahu důvěryhodnosti není přidružená silným názvem, díky čemuž je [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) důležité. Dva podpisový nástroje vyžadují, aby vydavatel prokáže svoji identitu autoritu třetí strany a získat certifikát. Tento certifikát bude poté vložen do souboru a můžou používat Správce rozhodnout, zda důvěřovat pravosti kódu.  
   
- Můžete udělit silným názvem i digitální podpis vytvořený [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) k sestavení, nebo můžete použít buď samostatně. Tyto podepisovací nástroje můžete přihlásit pouze jeden soubor současně; pro vícesouborového sestavení podepsat soubor, který obsahuje manifest sestavení. Silné jméno je uložené v souboru, který obsahuje manifest sestavení, ale podpis vytvořený [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) je uložen v vyhrazené sektoru přenosné spustitelného souboru (PE), který obsahuje manifest sestavení. Podepisování sestavení pomocí [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) lze (s nebo bez silný název) Pokud již máte hierarchie důvěryhodnosti, které jsou závislé na[SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) generované podpisu nebo pokud vaše zásady používá jenom část klíče a nekontroluje řetěz certifikátů.  
+ Můžete udělit silného názvu a digitální podpis vytvořený pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) na sestavení, nebo můžete použít buď samostatně. Dva nástroje pro podepisování se můžete přihlásit pouze jeden soubor najednou. Vícesouborové sestavení podepsat soubor, který obsahuje manifest sestavení. Silný název je uložen v souboru, který obsahuje manifest sestavení, ale signatura vytvořena pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) je uložen v vyhrazené místo v souboru (PE portable executable), který obsahuje manifest sestavení. Podepisování sestavení pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) lze použít (s nebo bez silného názvu) Pokud již máte důvěryhodnost hierarchie, která závisí na[SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) vygeneruje podpisy, nebo když vaše zásady používá pouze část klíče a nekontroluje řetěz certifikátů.  
   
 > [!NOTE]
->  Při použití silným názvem a podepisování podpis nástroj na sestavení, musí být silný název nejprve přiřazen.  
+>  Při použití silným názvem a podpisem podpisový nástroj na sestavení, silný název musí být nejprve přiřazena.  
   
- Modul common language runtime také provede ověření algoritmu hash; manifest sestavení obsahuje seznam všech souborů, které tvoří sestavení, včetně hodnota hash každý soubor, který existoval, když byl vytvořený v manifestu. Po načtení jednotlivých souborů je z obsahu vytvořena hodnota hash a ta je porovnána s hodnotou hash uloženou v manifestu. Pokud se tyto dvě hodnoty hash neshodují, sestavení se nepodaří načíst.  
+ Modul common language runtime také provádí ověření algoritmu hash; manifest sestavení obsahuje seznam všech souborů, které tvoří sestavení, včetně hodnoty hash každého souboru, který existoval, když byla vytvořena v manifestu. Po načtení jednotlivých souborů je z obsahu vytvořena hodnota hash a ta je porovnána s hodnotou hash uloženou v manifestu. Pokud se tyto dvě hodnoty hash neshodují, sestavení se nepodaří načíst.  
   
- Protože silné pojmenování a podepisování pomocí [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) zaručí integritu, zásady zabezpečení přístupu kódu můžete založit na tyto dvě formy důkaz sestavení. Silné názvy a podepisování pomocí [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md) zaručí integritu prostřednictvím digitálních podpisů a certifikátů. Všechny zmíněné technologie – hash ověření, silné názvy a podepisování pomocí [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md)– spolupracují, aby se ujistěte, že sestavení nezměnil žádným způsobem.  
+ Protože silné pojmenovávání a podepisování pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) zaručit integritu, zásady zabezpečení přístupu kódu můžete založit na tyto dvě formy legitimaci sestavení. Silné názvy a podepisování pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md) zaručit integritu prostřednictvím digitálních podpisů a certifikáty. Všechny uvedené technologie – hodnoty hash ověřování, silné názvy a podepisování pomocí [SignTool.exe (nástroj Sign Tool)](../../../docs/framework/tools/signtool-exe.md)– spolupracují, aby se ujistěte, že sestavení nebyl změněn žádným způsobem.  
   
 ## <a name="see-also"></a>Viz také  
- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)  
- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
- [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md)
+- [Sestavení se silným názvem](../../../docs/framework/app-domains/strong-named-assemblies.md)  
+- [Sestavení v modulu CLR (Common Language Runtime)](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md)  
+- [SignTool.exe (nástroj pro podpis)](../../../docs/framework/tools/signtool-exe.md)

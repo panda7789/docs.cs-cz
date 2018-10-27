@@ -2,14 +2,12 @@
 title: '&lt;IDN&gt; – Element (nastavení Uri)'
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 1537c17cb3c16beeb41cfaa4103e0664e93facc7
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 96d70f76f8d29368505dd5054edf3db253b89016
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48027543"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50037006"
 ---
 # <a name="ltidngt-element-uri-settings"></a>&lt;IDN&gt; – Element (nastavení Uri)
 Určuje, pokud analýza mezinárodních názvů domén (IDN) se použije na název domény.  

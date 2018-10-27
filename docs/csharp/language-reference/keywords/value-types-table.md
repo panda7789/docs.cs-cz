@@ -6,12 +6,12 @@ helpviewer_keywords:
 - types [C#], value types
 - types [C#], suffixes
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: bc7143b9f006af20b0bb91203d3093410d4ac0bf
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: aa37e2237ca0cffe7ff2e64aa53739b6ffafd24a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45609720"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182746"
 ---
 # <a name="value-types-table-c-reference"></a>Tabulka typů hodnot (referenční dokumentace jazyka C#)
 
@@ -43,9 +43,9 @@ Použijete příponou podle typu k určení typu číselný literál. Příklad:
 decimal a = 0.1M;
 ```
 
-Pokud [celočíselný literál číselné](/dotnet/csharp/language-reference/language-specification/lexical-structure#integer-literals) nemá žádné příponu má první z těchto typů, ve kterých může být reprezentována jeho hodnota: `int`, `uint`, `long`, `ulong`.
+Pokud [celočíselný literál číselné](~/_csharplang/spec/lexical-structure.md#integer-literals) nemá žádné příponu má první z těchto typů, ve kterých může být reprezentována jeho hodnota: `int`, `uint`, `long`, `ulong`.
 
-Pokud [reálné číselný literál](/dotnet/csharp/language-reference/language-specification/lexical-structure#real-literals) nemá žádné příponu, je typu `double`.
+Pokud [reálné číselný literál](~/_csharplang/spec/lexical-structure.md#real-literals) nemá žádné příponu, je typu `double`.
 
 ## <a name="see-also"></a>Viz také:
 

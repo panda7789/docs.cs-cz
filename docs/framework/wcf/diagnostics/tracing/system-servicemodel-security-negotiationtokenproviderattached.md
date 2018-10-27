@@ -2,13 +2,12 @@
 title: System.ServiceModel.Security.NegotiationTokenProviderAttached
 ms.date: 03/30/2017
 ms.assetid: f5602e5e-aaaf-42ca-9afc-d2c699447db7
-author: BrucePerlerMS
-ms.openlocfilehash: 5fc581bff7d9c5e9217539a26e980f6007169b0a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 591d870660eaa47fbf4e25eaff69c3c5c1c86958
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47197289"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180209"
 ---
 # <a name="systemservicemodelsecuritynegotiationtokenproviderattached"></a>System.ServiceModel.Security.NegotiationTokenProviderAttached
 System.ServiceModel.Security.NegotiationTokenProviderAttached  

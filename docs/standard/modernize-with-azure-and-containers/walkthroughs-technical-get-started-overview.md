@@ -4,12 +4,12 @@ description: Modernizace stávajících aplikací .NET pomocí cloudu Azure a ko
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: 41fbeb3abc201ef03cf0c237a069e7687c98dd18
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 1c23acc16698446bc07c0047b68186e21c2ceb2d
+ms.sourcegitcommit: e42d09e5966dd9fd02847d3e7eeb4ec0877069f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45594008"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49372848"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>Návody a technický přehled Začínáme
 
@@ -203,7 +203,7 @@ Je k dispozici v wiki úložiště GitHub eShopModernizing plnou technickou náz
 
 ### <a name="overview"></a>Přehled
 
-[Azure Container Instances (ACI)](https://docs.microsoft.com/en-us/azure/container-instances/) je nejrychlejší způsob, jak prostředí dev/test/přípravy kontejnerů, kde můžete nasadit jeden instancí kontejnerů.
+[Azure Container Instances (ACI)](https://docs.microsoft.com/azure/container-instances/) je nejrychlejší způsob, jak prostředí dev/test/přípravy kontejnerů, kde můžete nasadit jeden instancí kontejnerů.
 
 ### <a name="goals"></a>Cíle
 

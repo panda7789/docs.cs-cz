@@ -2,19 +2,19 @@
 title: ReliableSessionBindingElement
 ms.date: 03/30/2017
 ms.assetid: effda125-b8d3-4de6-8c0e-f59f5ea8f6eb
-ms.openlocfilehash: 2f04e6794342d7bd0acd51481efcbeceb04fd459
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 2e2e36486c3788cd714ffd0ed545fbb14f831476
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486639"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50038890"
 ---
 # <a name="reliablesessionbindingelement"></a>ReliableSessionBindingElement
 ReliableSessionBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class ReliableSessionBindingElement : BindingElement  
 {  
   datetime AcknowledgementInterval;  
@@ -29,70 +29,70 @@ class ReliableSessionBindingElement : BindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída třídu ReliableSessionBindingElement nedefinuje žádné metody.  
+ Element ReliableSessionBindingElement Třída nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída třídu ReliableSessionBindingElement má následující vlastnosti:  
+ Element ReliableSessionBindingElement třída má následující vlastnosti:  
   
 ### <a name="acknowledgementinterval"></a>AcknowledgementInterval  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Časový interval, který cíl vyčkat před odesláním potvrzení zdroj zprávy na spolehlivé kanály, které jsou vytvořené pomocí objektu pro vytváření.  
+ Časový interval, který místo určení čeká, než odešle oznámení zdroji zprávy ohledně stabilních kanálů, které jsou vytvořeny procesem.  
   
 ### <a name="flowcontrolenabled"></a>FlowControlEnabled  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Logická hodnota, která určuje, zda je povoleno řízení toku.  
+ Logická hodnota určující, zda je povolena kontrola toku.  
   
 ### <a name="inactivitytimeout"></a>InactivityTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Určuje maximální dobu, po které bude kanál povolit druhou stranou komunikuje posílat žádné zprávy před přerušením kanálu.  
+ Určuje maximální dobu, po kterou je kanál povolí druhé komunikující straně nechcete poslat žádnou zprávu před přerušením kanálu.  
   
 ### <a name="maxpendingchannels"></a>MaxPendingChannels  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet kanálů, které může čekat třeba přijmout na naslouchací proces.  
+ Maximální počet kanálů, které mohou čekat na přijetí na naslouchací proces.  
   
 ### <a name="maxretrycount"></a>MaxRetryCount  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet pokusů, kolikrát spolehlivé kanál pokusí znovu pošlou zprávu neobdržel potvrzení, voláním `Send` na jeho základní kanálu.  
+ Maximální počet pokusů bezpečný kanál pokusí znovu poslat zprávu neobdržel potvrzení, voláním `Send` na svém základním kanálu.  
   
 ### <a name="maxtransferwindowsize"></a>MaxTransferWindowSize  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální přenosovou velikost okna pro spolehlivé relace.  
+ Maximální velikost okna přenosu pro bezpečnou relaci.  
   
-### <a name="ordered"></a>řazení  
- Datový typ: logická hodnota  
+### <a name="ordered"></a>Řazení  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Logická hodnota, která určuje, zda jsou zprávy zaručené doručení v pořadí, ve kterém byly odeslány.  
+ Logická hodnota, která určuje, zda je zaručená zprávy doručeny v pořadí, v jakém byly odeslány.  
   
 ### <a name="reliablemessagingversion"></a>ReliableMessagingVersion  
  Datový typ: celé číslo  
   
  Přístup k typu: jen pro čtení  
   
- Celé číslo, které určuje verzi protokolu WS-ReliableMessaging použít v spolehlivé relace.  
+ Celé číslo, které určuje verzi protokolu WS-ReliableMessaging používá ve stabilní relaci.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

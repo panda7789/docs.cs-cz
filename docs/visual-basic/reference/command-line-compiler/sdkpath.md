@@ -9,14 +9,12 @@ helpviewer_keywords:
 - /sdkpath compiler option [Visual Basic]
 - sdkpath compiler option [Visual Basic]
 ms.assetid: fec8a3f1-b791-4a37-8af7-344859f8212d
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 162c7d58350c381ec667e8a4cd11c03e83fcdf44
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: bf665082f079901ec45122ce7797090b7519fafe
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925682"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50046796"
 ---
 # <a name="-sdkpath"></a>-sdkpath
 Určuje umístění knihovny mscorlib.dll a Microsoft.VisualBasic.dll.  

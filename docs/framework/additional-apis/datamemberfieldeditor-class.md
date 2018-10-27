@@ -1,5 +1,5 @@
 ---
-title: DataMemberFieldEditor – třída
+title: Třída DataMemberFieldEditor
 ms.date: 03/30/2017
 ms.technology:
 - dotnet-winforms
@@ -14,16 +14,16 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4ca28c0c440ea67716244670e2b636a3099987e1
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 5146b0756d1aace14a294436a38b8d0e3e689c76
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32741877"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452950"
 ---
-# <a name="datamemberfieldeditor-class"></a>DataMemberFieldEditor – třída
+# <a name="datamemberfieldeditor-class"></a>Třída DataMemberFieldEditor
 
-Poskytuje uživatelské rozhraní pro úpravu vlastností objektů vázané na data tak, že uvedete všechny vlastnosti `DataSource` objektu k výběru zdroje hodnotu z.  
+Poskytuje uživatelské rozhraní pro úpravu vlastnosti objekty vázané na data vypsáním všech vlastností `DataSource` vyberte zdroj hodnoty z.  
   
 ## <a name="syntax"></a>Syntaxe
   
@@ -34,7 +34,7 @@ internal class DataMemberFieldEditor : UITypeEditor
 > [!WARNING]
 > `DataMemberFieldEditor` Třída je interní a nejsou určeny pro použití přímo v kódu.
 > 
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
 
 ## <a name="requirements"></a>Požadavky
 
@@ -44,6 +44,6 @@ internal class DataMemberFieldEditor : UITypeEditor
   
 **Verze rozhraní .NET framework:** dostupné od verze 2.0.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-<xref:System.Windows.Forms.Design?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.Design?displayProperty=nameWithType>

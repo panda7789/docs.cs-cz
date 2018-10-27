@@ -10,19 +10,17 @@ helpviewer_keywords:
 - content cache policies
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: afaa4389940bd16ee2685c2ed64fbec4626d96e1
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: bd115621db369a28a51e7c5de8dd4095eca80901
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193145"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50038916"
 ---
 # <a name="cache-policy"></a>Zásady mezipaměti
 Zásady mezipaměti definuje pravidla, která se používají k určení, zda požadavek, je možné splnit pomocí kopie v mezipaměti požadovaný prostředek. Aplikace určit požadavky klienta mezipaměti na aktuálnosti, ale efektivní mezipaměti zásad se určuje podle požadavků mezipaměti klienta, požadavky na vypršení platnosti obsahu serveru a požadavky na opětovné ověření serveru. Interakce požadavky na zásady a server mezipaměti klienta vždy výsledkem nejrestriktivnější zásady ukládání do mezipaměti, abyste zajistili, že nejčerstvější obsah se vrátí do klientské aplikace.  
   
- Zásady mezipaměti jsou založená na poloze nebo založená na čase. Zásady mezipaměti na základě umístění definuje aktuálnosti založené na požadovaný prostředek mohou být odkud položek v mezipaměti. Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipaměti pomocí času, který prostředek se načetla, záhlaví vrátila zdroj a aktuální čas. Většina aplikací můžete použít výchozí zásady mezipaměti na základě času, který implementuje zásady ukládání do mezipaměti, zadané v dokumentu RFC 2616, k dispozici na [ http://www.ietf.org ](http://www.ietf.org/).  
+ Zásady mezipaměti jsou založená na poloze nebo založená na čase. Zásady mezipaměti na základě umístění definuje aktuálnosti založené na požadovaný prostředek mohou být odkud položek v mezipaměti. Zásady mezipaměti na základě času definuje aktuálnosti položek v mezipaměti pomocí času, který prostředek se načetla, záhlaví vrátila zdroj a aktuální čas. Většina aplikací můžete použít výchozí zásady mezipaměti na základě času, který implementuje zásady ukládání do mezipaměti, zadané v dokumentu RFC 2616, k dispozici na [Engineering Task Force IETF (Internet)](https://www.ietf.org/) webu.  
   
  Třídy jsou popsané v následující tabulce se používají k určení mezipaměti zásad.  
   

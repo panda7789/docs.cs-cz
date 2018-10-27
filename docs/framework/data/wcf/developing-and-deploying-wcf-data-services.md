@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: cf1782eaf54701f0cf93576325b3d46e8bc4d3f1
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: d4b4c776db542b6326fcceb8f2fd057d9caabf94
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261508"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "49415247"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>Vývoj a nasazení služeb WCF Data Services
 
@@ -80,7 +80,7 @@ Při vývoji datových služeb je vhodné zvážit následující faktory:
 
 -   Při ladění datové služby může být velmi užitečný kontrolní program HTTP, který umožňuje kontrolovat obsah zpráv požadavků a odpovědí. K inspekci požadavků HTTP a odpovědí z datové služby lze využít jakýkoli síťový analyzátor paketů, který zobrazuje surové pakety.
 
--   Při ladění datové služby může být užitečné získat o chybě z datové služby více informace než v běžném provozu. Můžete získat další informace o chybě z datové služby tak, že nastavíte <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnost v <xref:System.Data.Services.DataServiceConfiguration> k `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior> atribut ve třídě datové služby na `true`. Další informace najdete v příspěvku [ladění služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=201868). Můžete také povolit trasování ve službě WCF a zobrazit výjimky vyvolané ve vrstvě zasílání zpráv protokolu HTTP. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).
+-   Při ladění datové služby, můžete získat další informace o chybě z datové služby než při běžném provozu. Můžete získat další informace o chybě z datové služby tak, že nastavíte <xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A> vlastnost v <xref:System.Data.Services.DataServiceConfiguration> k `true` a nastavením <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A> vlastnost <xref:System.ServiceModel.Description.ServiceDebugBehavior> atribut ve třídě datové služby na `true`. Další informace najdete v příspěvku [ladění služeb WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=201868). Můžete také povolit trasování ve službě WCF a zobrazit výjimky vyvolané ve vrstvě zasílání zpráv protokolu HTTP. Další informace najdete v tématu [Konfigurace trasování](../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md).
 
 -   Datové služby se obvykle vyvíjí jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] projekt aplikace, ale můžete také vytvořit jako [!INCLUDE[vstecasp](../../../../includes/vstecasp-md.md)] webový projekt v sadě Visual Studio. Informace o rozdílech mezi těmito dvěma typy projektů naleznete v tématu [NIB: Web Application Projects versus webových projektů v sadě Visual Studio](https://msdn.microsoft.com/library/2861815e-f5a2-4378-a2f8-b8a86dc012f5).
 

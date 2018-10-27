@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: fba595cca4d96fc9cd0f0966f45d1668181b2ec9
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.openlocfilehash: ce4580f9fab80cc85a281786d5de262d8de7a679
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46321402"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181511"
 ---
 # <a name="interfaces-c-programming-guide"></a>Rozhraní (Průvodce programováním v C#)
 
@@ -36,13 +36,13 @@ Implementovat člen rozhraní, odpovídající člen implementující třídu mu
   
 Pokud třída nebo struktura implementuje rozhraní, třídy nebo struktury musí poskytnout implementaci pro všechny členy, které definuje rozhraní. Rozhraní samotné poskytuje funkce, které tato třída nebo struktura může dědit tak, jak, že funkce základní třídy lze dědit. Nicméně pokud základní třída implementuje rozhraní, dědí všechny třídy, která je odvozena ze základní třídy tuto implementaci.  
   
-Následující příklad ukazuje implementaci IEquatable < T\> rozhraní. Implementující třída `Car`, musí poskytnout implementaci položky <xref:System.IEquatable%601.Equals%2A> metody.  
+Následující příklad ukazuje implementaci <xref:System.IEquatable%601> rozhraní. Implementující třída `Car`, musí poskytnout implementaci položky <xref:System.IEquatable%601.Equals%2A> metody.  
   
 [!code-csharp[csProgGuideInheritance#48](../classes-and-structs/codesnippet/CSharp/interfaces_2.cs)]  
   
 Vlastnostmi a indexery třídy můžete definovat další přistupující objekty vlastnosti nebo indexovacího člena, který je definován v rozhraní. Například rozhraní může deklarovat vlastnost, která má [získat](../../language-reference/keywords/get.md) přistupujícího objektu. Třída, která implementuje rozhraní může deklarovat stejnou vlastnost s oběma `get` a [nastavit](../../language-reference/keywords/set.md) přistupujícího objektu. Pokud vlastnost nebo indexovací člen používá explicitní implementaci, musí odpovídat přístupové objekty. Další informace o explicitní implementaci, najdete v části [explicitní implementaci rozhraní](explicit-interface-implementation.md) a [vlastností rozhraní](../classes-and-structs/interface-properties.md).  
 
-Rozhraní můžou implementovat jiná rozhraní. Třída může obsahovat rozhraní více než jednou prostřednictvím základní třídy, které dědí nebo rozhraní, které implementují rozhraní. Však třídu poskytnout implementaci rozhraní jenom jeden čas a pouze pokud třída deklaruje rozhraní jako součást definice třídy (`class ClassName : InterfaceName`). Pokud rozhraní se dědí, protože dědí základní třídu, která implementuje rozhraní, poskytuje základní třídy implementace členů rozhraní. Odvozená třída může znovu implementovat členy rozhraní namísto použití zděděná implementace.  
+Rozhraní může dědit z jiných rozhraní. Třída může obsahovat rozhraní více než jednou prostřednictvím základní třídy, které dědí nebo rozhraní, které dědí jinými rozhraními. Však třídu poskytnout implementaci rozhraní jenom jeden čas a pouze pokud třída deklaruje rozhraní jako součást definice třídy (`class ClassName : InterfaceName`). Pokud rozhraní se dědí, protože dědí základní třídu, která implementuje rozhraní, poskytuje základní třídy implementace členů rozhraní. Odvozená třída může znovu implementovat všechny virtuální členy namísto použití zděděná implementace.  
   
 Základní třídu můžete také implementovat členy rozhraní pomocí virtuální členy. Odvozené třídy v takovém případě můžete změnit chování rozhraní tak, že přepíšete virtuální členy. Další informace o virtuální členy v tématu [polymorfismus](../classes-and-structs/polymorphism.md).  
   

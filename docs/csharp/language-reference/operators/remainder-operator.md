@@ -7,16 +7,18 @@ helpviewer_keywords:
 - remainder operator [C#]
 - '% operator [C#]'
 ms.assetid: 3b74f4f9-fd9c-45e7-84fa-c8d71a0dfad7
-ms.openlocfilehash: 9cd2f7ad3856feb34667686979c942ecb21887c2
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: cd6d49b69d40f3b45aae060d46b58632dc8448f8
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/15/2018
-ms.locfileid: "45645915"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50041255"
 ---
 # <a name="-operator-c-reference"></a>% – operátor (Referenční dokumentace jazyka C#)
 
-Operátor zbytku `%` vypočítá zbytek po dělení svůj první operand tak svým druhým operandem. Uživatelem definované typy lze [přetížení](../keywords/operator.md) `%` operátor. Když `%` je přetížena, [operátor přiřazení zbytku](remainder-assignment-operator.md) `%=` je také implicitně přetížená.
+Operátor zbytku `%` vypočítá zbytek po dělení svůj první operand tak svým druhým operandem.
+
+Uživatelem definované typy lze [přetížení](../keywords/operator.md) `%` operátor. Když `%` je přetížena, [operátor přiřazení zbytku](remainder-assignment-operator.md) `%=` je také implicitně přetížená.
 
 Všechny číselné typy podporují operátor zbytku.
 
@@ -33,7 +35,7 @@ Pro [float](../keywords/float.md) a [double](../keywords/double.md) operandy, v�
 - znaménko `z`nenulová, pokud je stejný jako znaménko `x`;
 - absolutní hodnota `z` hodnota vytvořil `|x| - n * |y|` kde `n` je největší možné číslo, které je menší než nebo rovna hodnotě `|x| / |y|` a `|x|` a `|y|` jsou absolutní hodnoty `x` a `y`v uvedeném pořadí.
 
-Informace o chování `%` operátor v případě nekonečnou operandy, najdete v článku [operátor zbytku](/dotnet/csharp/language-reference/language-specification/expressions#remainder-operator) část [specifikace jazyka C#](/dotnet/csharp/language-reference/language-specification/index).
+Informace o chování `%` operátor s nekonečnou operandy, najdete v článku [operátor zbytku](~/_csharplang/spec/expressions.md#remainder-operator) část [ C# specifikace jazyka](../language-specification/index.md).
 
 > [!NOTE]
 > Tato metoda výpočetních zbytek je obdobou, který používá pro celočíselné operandy, ale se liší od IEEE 754. Pokud potřebujete zbývající operace, která splňuje IEEE 754, použijte <xref:System.Math.IEEERemainder%2A?displayProperty=nameWithType> metody.

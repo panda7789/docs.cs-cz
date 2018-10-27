@@ -2,15 +2,15 @@
 title: WCF a ASP.NET Web API
 ms.date: 03/30/2017
 ms.assetid: 08ceded3-fd9a-4467-9715-c4cbd9c7228e
-ms.openlocfilehash: ca44a439fa73b16764725ff56019a1d01cc0c8cd
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 9ff974ca59b5a6448a140cbb1e7d6e8114840bdf
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308384"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50040634"
 ---
 # <a name="wcf-and-aspnet-web-api"></a>WCF a ASP.NET Web API
-WCF je jednotný programovací model pro vytváření aplikací orientovaných na služby od Microsoftu. Umožňuje vývojářům vytvářet zabezpečená, spolehlivá a počet řešení, které se integrují napříč platformami vzájemnou spolupráci se službami stávajících investic. [Rozhraní ASP.NET Web API](http://www.asp.net/web-api) je architektura, která usnadňuje sestavování služeb HTTP, které jsou poskytovány širokému spektru klientů, včetně prohlížečů a mobilních zařízení. ASP.NET Web API je ideální platformu pro sestavování aplikací RESTful v rozhraní .NET Framework. Toto téma představuje některé pokyny, které vám pomohou rozhodnout, technologii, která bude nejlépe vyhovovat vašim potřebám.  
+WCF je jednotný programovací model pro vytváření aplikací orientovaných na služby od Microsoftu. Umožňuje vývojářům vytvářet zabezpečená, spolehlivá a počet řešení, které se integrují napříč platformami vzájemnou spolupráci se službami stávajících investic. [Rozhraní ASP.NET Web API](https://www.asp.net/web-api) je architektura, která usnadňuje sestavování služeb HTTP, které jsou poskytovány širokému spektru klientů, včetně prohlížečů a mobilních zařízení. ASP.NET Web API je ideální platformu pro sestavování aplikací RESTful v rozhraní .NET Framework. Toto téma představuje některé pokyny, které vám pomohou rozhodnout, technologii, která bude nejlépe vyhovovat vašim potřebám.  
   
 ## <a name="choosing-which-technology-to-use"></a>Výběr technologii, která má použít  
  Následující tabulka popisuje hlavní funkce každou technologii.  

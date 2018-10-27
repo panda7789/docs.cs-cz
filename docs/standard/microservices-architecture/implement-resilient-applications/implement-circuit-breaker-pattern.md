@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 343b9cc23f9d72d75a83ad785a3d565b8f5704e7
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: b961ebd186953e614658915c7246e1c83c40e7e9
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842682"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453148"
 ---
 # <a name="implement-the-circuit-breaker-pattern"></a>Implementace vzoru Circuit Breaker
 
@@ -56,7 +56,7 @@ static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy()
 }
 ```
 
-Ve výše uvedeném příkladu kódu jistič nakonfigurované tak, aby přeruší nebo otevře okruh, když byly pět po sobě jdoucích chyb při opakování požadavků Http. Pokud k tomu dojde, je okruh přeruší po dobu 30 sekund: v daném období volání bude možné provést okamžitě jističem-spíše než skutečně umístit.  Zásady automaticky interpretuje [relevantní výjimky a stavové kódy HTTP](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1#handle-transient-faults) jako chyby.  
+Ve výše uvedeném příkladu kódu jistič nakonfigurované tak, aby přeruší nebo otevře okruh, když byly pět po sobě jdoucích chyb při opakování požadavků Http. Pokud k tomu dojde, je okruh přeruší po dobu 30 sekund: v daném období volání bude možné provést okamžitě jističem-spíše než skutečně umístit.  Zásady automaticky interpretuje [relevantní výjimky a stavové kódy HTTP](https://docs.microsoft.com/aspnet/core/fundamentals/http-requests?view=aspnetcore-2.1#handle-transient-faults) jako chyby.  
 
 Jističe by měla také sloužit k přesměrování požadavků na infrastrukturu pro použití náhradní lokality, pokud jste měli problémy v konkrétní prostředek, který je nasazený v jiném prostředí než klientská aplikace nebo služba, která provádí volání HTTP. Tímto způsobem, pokud dojde k výpadku datového centra, který ovlivňuje pouze mikroslužby back-endu, ale ne klientských aplikací, klientské aplikace můžete přesměrovat náhradní služby. Polly je plánování novou zásadu pro tento proces zautomatizovat [zásady převzetí služeb při selhání](https://github.com/App-vNext/Polly/wiki/Polly-Roadmap#failover-policy) scénář. 
 

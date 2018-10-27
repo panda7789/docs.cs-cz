@@ -1,43 +1,46 @@
 ---
 title: Operátory (Visual Basic)
-ms.date: 07/20/2015
+ms.date: 10/17/2018
 helpviewer_keywords:
 - operators [Visual Basic]
 ms.assetid: 3d3421df-fcc5-4888-9249-d78f16774ce6
-ms.openlocfilehash: b6f590d81242d14e808e49c42bce8a4bfdc66f44
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e295d492c8c2e5cbd69f295e83f44b63c74ca553
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33601738"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452518"
 ---
 # <a name="operators-visual-basic"></a>Operátory (Visual Basic)
-## <a name="in-this-section"></a>V tomto oddílu  
- [Priorita operátorů v jazyce Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)  
+## <a name="in-this-section"></a>V tomto oddílu
+
+ [Priorita operátorů v jazyce Visual Basic](operator-precedence.md)  
   
- [Operátory uvedené podle funkce](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)  
+ [Operátory uvedené podle funkce](operators-listed-by-functionality.md)  
   
- [Datové typy výsledků operátoru](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md)  
+ [Datové typy výsledků operátoru](data-types-of-operator-results.md)  
   
- [Operátor DirectCast](../../../visual-basic/language-reference/operators/directcast-operator.md)  
+ [DirectCast – operátor](directcast-operator.md)  
   
- [Operátor TryCast](../../../visual-basic/language-reference/operators/trycast-operator.md)  
+ [TryCast – operátor](trycast-operator.md)  
   
- [Operátor New](../../../visual-basic/language-reference/operators/new-operator.md)  
+ [New – operátor](new-operator.md)  
+
+ [Podmíněné operátory s Null](null-conditional-operators.md)
+
+ [Aritmetické operátory](arithmetic-operators.md)  
   
- [Aritmetické operátory](../../../visual-basic/language-reference/operators/arithmetic-operators.md)  
+ [Operátory přiřazení](assignment-operators.md)  
   
- [Operátory přiřazení](../../../visual-basic/language-reference/operators/assignment-operators.md)  
+ [Bitové posunutí – operátory](bit-shift-operators.md)  
   
- [Operátory bitového posunu](../../../visual-basic/language-reference/operators/bit-shift-operators.md)  
+ [Operátory porovnání](comparison-operators.md)  
   
- [Operátory porovnání](../../../visual-basic/language-reference/operators/comparison-operators.md)  
+ [Operátory zřetězení](concatenation-operators.md)  
   
- [Operátory zřetězení](../../../visual-basic/language-reference/operators/concatenation-operators.md)  
+ [Logické/bitové operátory](logical-bitwise-operators.md)  
   
- [Logické/bitové operátory](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)  
-  
- [Různé operátory](../../../visual-basic/language-reference/operators/miscellaneous-operators.md)  
+ [Různé operátory](miscellaneous-operators.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
  [Referenční dokumentace jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  

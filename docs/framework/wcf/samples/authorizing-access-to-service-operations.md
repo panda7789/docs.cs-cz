@@ -6,20 +6,20 @@ helpviewer_keywords:
 - Authorizing Access To Service Operations Sample [Windows Communication Foundation]
 - authorization, Windows Communication Foundation sample
 ms.assetid: ddcfdaa5-8b2e-4e13-bd85-887209dc6328
-ms.openlocfilehash: b7f8b9b5fc4e6524da49b4d3f23de90a123e92e6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 17148f9f1f8f197963ea97f18548d7e2f0826a8a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33501478"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182109"
 ---
 # <a name="authorizing-access-to-service-operations"></a>Autorizace přístupu k operacím služby
-Tento příklad znázorňuje způsob použití [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) povolit používání <xref:System.Security.Permissions.PrincipalPermissionAttribute> atribut k autorizaci přístupu k operacím služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) ukázka. Klienta a služby jsou konfigurováni pomocí [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). `mode` Atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) byla nastavena na `Message` a `clientCredentialType` byla nastavena na `Windows`. <xref:System.Security.Permissions.PrincipalPermissionAttribute> Je použít pro každou metodu služby a slouží k omezení přístupu na každou operaci. Volající musí být správcem systému Windows pro přístup k jednotlivých operací.  
+Tato ukázka předvádí, jak používat [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) povolit používání <xref:System.Security.Permissions.PrincipalPermissionAttribute> atribut k autorizaci přístupu k operacím služby. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) vzorku. Klienta a služby jsou nakonfigurovány [ \<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md). `mode` Atribut [ \<zabezpečení >](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) byla nastavena na `Message` a `clientCredentialType` byla nastavena na `Windows`. <xref:System.Security.Permissions.PrincipalPermissionAttribute> Je použít pro každou metodu služby a použít k omezení přístupu k jednotlivých operacích. Volající musí být správce Windows pro přístup k každé operace.  
   
- V této ukázce klienta je konzolová aplikace (.exe) a služba je hostovaná Internetové informační služby (IIS).  
+ V této ukázce je konzolová aplikace (.exe) klient a služba je hostována v Internetové informační služby (IIS).  
   
 > [!NOTE]
->  V postupu a sestavení pokynech k instalaci této ukázce jsou umístěné na konci tohoto tématu.  
+>  Postup a sestavení pokynů pro tuto ukázku se nachází na konci tohoto tématu.  
   
  Konfigurační soubor služby používá [ \<serviceAuthorization >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceauthorization-element.md) nastavit `principalPermissionMode` atribut:  
   
@@ -37,11 +37,11 @@ Tento příklad znázorňuje způsob použití [ \<serviceAuthorization >](../..
 </behaviors>  
 ```  
   
- Nastavení `principalPermissionMode` k `UseWindowsGroups` umožňuje použití <xref:System.Security.Permissions.PrincipalPermissionAttribute> podle názvů skupin systému Windows.  
+ Nastavení `principalPermissionMode` k `UseWindowsGroups` umožňuje použití <xref:System.Security.Permissions.PrincipalPermissionAttribute> podle názvu skupiny Windows.  
   
- <xref:System.Security.Permissions.PrincipalPermissionAttribute> Se použijí na každou operaci tak, aby vyžadovala volajícího, aby být součástí skupiny administrators systému Windows, jak je znázorněno v následujícím ukázkovém kódu.  
+ <xref:System.Security.Permissions.PrincipalPermissionAttribute> Platí pro každou operaci tak, aby vyžadovala volajícímu být součástí skupiny administrators Windows, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 [PrincipalPermission(SecurityAction.Demand,   
                              Role = "Builtin\\Administrators")]  
 public double Add(double n1, double n2)  
@@ -51,16 +51,16 @@ public double Add(double n1, double n2)
 }  
 ```  
   
- Když spustíte ukázku, operace požadavky a odpovědi se zobrazí v okně konzoly klienta. Klient úspěšně komunikuje s každou operaci, pokud je spuštěn pod účtem, který je součástí skupiny Administrators; jinak byl odepřen přístup. A experimentovat s selhání autorizace, spusťte klienta pod účtem, který není součástí skupiny Administrators. Stisknutím klávesy ENTER v okně konzoly vypnout klienta.  
+ Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Klient úspěšně komunikuje s každou operaci, pokud je spuštěn pod účtem, který je součástí skupiny Administrators; v opačném případě je přístup odepřen. Můžete experimentovat s selhání autorizace, spusťte klienta pomocí účtu, který není součástí skupiny Administrators. Stisknutím klávesy ENTER v okně konzoly vypnutí klient.  
   
- Službu můžete informováni o selhání ověřování implementací <xref:System.ServiceModel.Dispatcher.IErrorHandler>. V tématu [rozšíření řízení přes zpracování chyb a generování sestav](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md) informace o implementaci `IErrorHandler`.  
+ Služby můžete být upozorněni selhání autorizace implementací <xref:System.ServiceModel.Dispatcher.IErrorHandler>. Zobrazit [rozšíří ovládací prvek průběhu zpracování chyb a vytváření sestav](../../../../docs/framework/wcf/samples/extending-control-over-error-handling-and-reporting.md) informace o implementaci `IErrorHandler`.  
   
-### <a name="to-set-up-build-and-run-the-sample"></a>Pokud chcete nastavit, sestavit a spustit ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že jste provedli [jednorázové postup nastavení pro ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2.  Sestavení C# nebo Visual Basic .NET edice řešení, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
+2.  K sestavení edice řešení C# nebo Visual Basic .NET, postupujte podle pokynů v [vytváření ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-3.  Spustit ukázku v konfiguraci s jednou nebo mezi počítači, postupujte podle pokynů v [spuštění ukázky Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
+3.  Spusťte ukázku v konfiguraci s jedním nebo více počítači, postupujte podle pokynů v [spouštění ukázek Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
 ## <a name="see-also"></a>Viz také

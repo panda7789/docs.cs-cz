@@ -2,12 +2,12 @@
 title: DataContractResolver
 ms.date: 03/30/2017
 ms.assetid: 6c200c02-bc14-4b8d-bbab-9da31185b805
-ms.openlocfilehash: 6b489be65669869352f682ff32d65620cfb9dac2
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 75b8ccdef2ee0c8106edf4d25224bbec989ad966
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840833"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452963"
 ---
 # <a name="datacontractresolver"></a>DataContractResolver
 Tato ukázka předvádí, jak lze přizpůsobit procesů serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy. Tento příklad ukazuje způsob použití modulu DataContractResolver Mapovat typy CLR do a z reprezentaci xsi: type během serializace a deserializace.
@@ -101,7 +101,7 @@ public void deserialize(Type type)
 
  Následující příklad kódu je třídu odvozenou z <xref:System.Runtime.Serialization.DataContractResolver>.
 
-```
+```csharp
 class MyDataContractResolver : DataContractResolver
 {
     private Dictionary<string, XmlDictionaryString> dictionary = new Dictionary<string, XmlDictionaryString>();

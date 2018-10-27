@@ -2,19 +2,19 @@
 title: Binding2
 ms.date: 03/30/2017
 ms.assetid: 09511c6c-5749-4bb0-874e-0f0be36bfe04
-ms.openlocfilehash: 0260b75a0f49e0f6f72d7d1eda642d0a494d2892
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 84e304f3dedcbd785d6238e6cb5eb142c288b995
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487004"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50033830"
 ---
 # <a name="binding"></a>Vazba
 rozhraní WMI vazby  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class Binding  
 {  
   BindingElement BindingElements[];  
@@ -29,24 +29,24 @@ class Binding
 ```  
   
 ## <a name="methods"></a>Metody  
- Třídu vazby nedefinuje žádné metody.  
+ Třídy vazby nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třídu vazby má následující vlastnosti.  
+ Třídy vazby má následující vlastnosti.  
   
 ### <a name="bindingelements"></a>Třídy BindingElements  
  Datový typ: pole BindingElement  
   
  Přístup k typu: jen pro čtení  
   
- Kolekce elementů vazby implementované vazby.  
+ Kolekce elementů, které jsou implementovány vazbou vazby.  
   
-### <a name="closetimeout"></a>Intervalu  
- Datový typ: data a času  
+### <a name="closetimeout"></a>closeTimeout  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Interval čas zadaný pro dokončení operace uzavření.  
+ Časový interval poskytnutý pro dokončení operace uzavření.  
   
 ### <a name="name"></a>Název  
  Datový typ: řetězec  
@@ -60,39 +60,39 @@ class Binding
   
  Přístup k typu: jen pro čtení  
   
- Obor názvů XML vazby.  
+ XML obor názvů vazby.  
   
 ### <a name="opentimeout"></a>openTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Interval čas zadaný pro otevřete na dokončení operace.  
+ Časový interval poskytnutý pro dokončení operace otevření.  
   
 ### <a name="receivetimeout"></a>receiveTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Interval čas zadaný pro na dokončení operace příjmu.  
+ Časový interval poskytnutý pro dokončení operace obdržení.  
   
 ### <a name="scheme"></a>Schéma  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Přenosové schéma identifikátoru URI používaný kanál a naslouchací proces objekty Factory, které jsou vytvořené pomocí vazby.  
+ Schéma přepravy identifikátoru URI, který je používán továren kanálu a posluchače, které jsou vytvořeny vazbou.  
   
-### <a name="sendtimeout"></a>sendTimeout  
- Datový typ: data a času  
+### <a name="sendtimeout"></a>SendTimeout  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Interval čas zadaný pro dokončení operace odeslání.  
+ Časový interval poskytnutý pro dokončení operace odeslání.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

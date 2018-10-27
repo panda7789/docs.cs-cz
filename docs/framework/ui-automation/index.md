@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: e7ec856e-41ee-47b1-9d57-b75a3dad088c
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 12fc92c716cf0ff1ab15786a067ad955caee0d20
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: a99d42b4d61f3270b50e0c4698683cf89458ec9c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205301"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180190"
 ---
 # <a name="accessibility"></a>Usnadnění
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "47205301"
   
  [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] je nový rámec usnadnění pro [!INCLUDE[TLA#tla_win](../../../includes/tlasharptla-win-md.md)]. To řeší potřeby produktů využívajících technologie usnadnění a rozhraní automatizovaných testů tím, že poskytuje programový přístup k informacím o [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)]. Kromě toho [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] umožňuje vývojářům ovládacího prvku a aplikace pro zpřístupnění svých produktů.  
   
- Tato dokumentace popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)] pro spravovaný kód. Informace o programování pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v jazyce C++, naleznete v tématu [automatizace uživatelského rozhraní pro aplikace Win32](https://msdn.microsoft.com/library/ms726294.aspx).  
+ Tato dokumentace popisuje [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] [!INCLUDE[TLA#tla_api](../../../includes/tlasharptla-api-md.md)] pro spravovaný kód. Informace o programování pro [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] v jazyce C++, naleznete v tématu [automatizace uživatelského rozhraní pro aplikace Win32](/windows/desktop/winauto/windows-automation-api-portal).  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [Usnadnění – doporučené postupy](../../../docs/framework/ui-automation/accessibility-best-practices.md)  

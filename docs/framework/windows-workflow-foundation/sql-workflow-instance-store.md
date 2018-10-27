@@ -2,12 +2,12 @@
 title: Store Instance pracovních postupů SQL
 ms.date: 03/30/2017
 ms.assetid: 8cd2f8a5-4bf8-46ea-8909-c7fdb314fabc
-ms.openlocfilehash: 680a233ca721cd8a0c620b797832419f460b13b6
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: d35cf6e94b010291276b5a543df1038715a0d50c
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45594282"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453015"
 ---
 # <a name="sql-workflow-instance-store"></a>Store Instance pracovních postupů SQL
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] Se dodává s SQL Store Instance pracovního postupu, který umožňuje pracovní postupy pro zachování informací o stavu instance pracovního postupu v databázi serveru SQL Server 2005 nebo SQL Server 2008. Tato funkce jsou primárně implementované ve formě <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> třída, která je odvozena z abstraktní <xref:System.Runtime.DurableInstancing.InstanceStore> třídy rozhraní trvalosti. Funkce SQL Store Instance pracovního postupu se považuje za SQL poskytovatele trvalého chování, které je konkrétní implementace rozhraní API, které hostitel používá k odesílání příkazů trvalost do úložiště trvalosti.  
@@ -18,7 +18,7 @@ ms.locfileid: "45594282"
   
  Témata v této části popisují vlastnosti a funkce Store Instance pracovního postupu SQL a poskytují podrobné informace o konfiguraci úložiště.  
   
- Windows Server App Fabric poskytuje své vlastní úložiště instancí a nástrojů pro zjednodušení konfigurace a použití v úložišti instancí. Další informace najdete v tématu naleznete v tématu [systému Windows Server App Fabric Instance Store](https://go.microsoft.com/fwlink/?LinkId=201201). Další informace viz databáze trvalosti SQL serveru v aplikaci Fabric [databáze trvalosti SQL serveru v aplikaci Fabric](https://go.microsoft.com/fwlink/?LinkId=201202)  
+ Windows Server App Fabric poskytuje své vlastní úložiště instancí a nástrojů pro zjednodušení konfigurace a použití v úložišti instancí. Další informace najdete v tématu [systému Windows Server App Fabric Instance Store](https://go.microsoft.com/fwlink/?LinkId=201201). Další informace viz databáze trvalosti SQL serveru v aplikaci Fabric [databáze trvalosti SQL serveru v aplikaci Fabric](https://go.microsoft.com/fwlink/?LinkId=201202)  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
   

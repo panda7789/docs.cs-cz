@@ -4,82 +4,82 @@ ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 046b71a8f1d948a785a15cfc148b93292bf673f7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0a89474ddfe3bcde1c44271818b7e3c730469f48
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395525"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50036005"
 ---
 # <a name="net-native-and-compilation"></a>.NET Native a kompilace
-Aplikace Windows 8.1 a Windows Desktop aplikace, které cílí na rozhraní.NET Framework jsou napsané v konkrétní programovací jazyk a zkompilovat do převodní jazyk (IL). V době běhu kompilátor za běhu (JIT) zodpovídá za kompilace IL do nativního kódu pro místní počítač, těsně před je metoda spuštěna poprvé. Naproti tomu řetězu .NET Native nástroj převede zdrojového kódu do nativního kódu v době kompilace. Toto téma porovnává .NET Native s jinými technologiemi kompilace k dispozici pro aplikace .NET Framework a také poskytuje praktické přehled o tom, jak .NET Native vytváří nativní kód, který vám může pomoct pochopit, proč výjimky, které se objeví v kódu kompilovat s .NET Nativní se nevyskytují v kompilována kódu.  
+Aplikace Windows 8.1 a Windows desktopových aplikací, které jsou cíleny na rozhraní.NET Framework jsou napsané v konkrétním programovacím jazykem a zkompilovány do (IL intermediate language). Za běhu kompilátor just-in-time (JIT) zodpovídá za kompilace IL do nativního kódu pro místní počítač, těsně před prvním je metoda spuštěna. Naproti tomu .NET Native řetězce nástrojů převede zdrojový kód do nativního kódu v době kompilace. Toto téma porovnává .NET Native s jinými technologiemi kompilace k dispozici pro aplikace rozhraní .NET Framework a také poskytuje praktické přehled jak .NET Native vytváří nativní kód, který vám pomůžou pochopit, proč výjimky, ke kterým dochází v kód zkompilovaný s .NET Nativní nedojde v kód zkompilovaný kompilátorem JIT.  
   
-## <a name="net-native-generating-native-binaries"></a>.NET native: Generování nativní binárních souborů  
- Aplikace, není pomocí .NET Native řetězu nástroj zkompilovaná cílů rozhraní .NET Framework a který se skládá z sestavení aplikace, která zahrnuje následující:  
+## <a name="net-native-generating-native-binaries"></a>.NET native: Generování nativní binární soubory  
+ Aplikace, že zaměřené na rozhraní .NET Framework a není zkompilován s použitím .NET Native řetězce nástrojů se skládá z sestavení aplikace, která zahrnuje následující:  
   
--   [Metadata](../../../docs/standard/metadata-and-self-describing-components.md) sestavení, jeho závislé součásti, obsahuje typy a jejich členy, který popisuje. Metadata slouží pro reflexe a pozdní vazby přístup a v některých případech i nástrojů kompilátoru a sestavení.  
+-   [Metadata](../../../docs/standard/metadata-and-self-describing-components.md) , který popisuje sestavení, jeho závislostí, obsahuje typy a jejich členy. Metadata používá reflexi a přístup s pozdní vazbou a v některých případech kompilátor a nástroje sestavení také.  
   
--   Implementace kód. Tento postup se skládá operačních kódů převodní jazyk (IL). V době běhu kompilátoru za běhu (JIT) převede jej do nativního kódu pro cílovou platformu.  
+-   Implementační kód. To se skládá z operační kódy (IL intermediate language). Za běhu kompilátor just-in-time (JIT) přeloží ho do nativního kódu pro cílovou platformu.  
   
- Kromě vaší hlavní aplikace sestavení aplikace vyžaduje, aby následující existuje:  
+ Kromě sestavení hlavní aplikace aplikace vyžaduje, aby následující k dispozici:  
   
--   Žádné další třídy knihovny nebo sestavení třetích stran, které jsou vyžadované vaší aplikace. Tyto sestavení podobně obsahovat metadata, která popisuje sestavení, jeho typy a jejich členy, jakož i IL, který implementuje všechny členy typu.  
+-   Další knihovny tříd nebo sestavení třetích stran, které jsou vyžadované vaší aplikace. Mezi tato sestavení podobně patří metadata, která popisují sestavení, jeho typy a jejich členy, jakož i IL, který implementuje všechny členy typu.  
   
--   Knihovna tříd rozhraní .NET Framework. Toto je kolekce sestavení, která je nainstalována na místní systém s instalace rozhraní .NET Framework. Sestavení zahrnuty v knihovně tříd rozhraní .NET Framework zahrnovat kompletní sadu metadat a provádění kódu.  
+-   Knihovna tříd rozhraní .NET Framework. To je soubor sestavení, který je nainstalován v místním systému s instalací rozhraní .NET Framework. Sestavení součástí knihovny tříd rozhraní .NET Framework obsahují kompletní sadu metadat a implementace kódu.  
   
--   Modul CLR. Toto je kolekce dynamické knihovny, které provádějí takové služby jako načítání sestavení, správu a uvolňování paměti kolekce paměti, výjimek, kompilace za běhu, vzdálenou komunikaci a zprostředkovatel komunikace s objekty. Jako knihovny tříd je nainstalován modul runtime v místním systému jako součást instalace rozhraní .NET Framework.  
+-   Modul common language runtime. Toto je kolekce dynamické knihovny, které provádějí tyto služby jako načítání sestavení, správy a uvolňování paměti kolekce paměti, zpracování výjimek, kompilace just-in-time, vzdálené komunikace a spolupráce. Stejně jako knihovna tříd je nainstalován modul runtime v místním systému jako součást instalace rozhraní .NET Framework.  
   
- Všimněte si, že celý modul common language runtime, jakož i metadata a IL pro všechny typy v sestavení specifické pro aplikaci, sestavení třetích stran a sestavení systému musí být k dispozici pro aplikaci při spuštění.  
+ Všimněte si, že celý modul common language runtime, jakož i metadata a IL pro všechny typy v sestavení specifická pro aplikaci, sestavení třetích stran a systémová sestavení musí být k dispozici pro aplikaci úspěšně vykonat.  
   
-## <a name="net-native-and-just-in-time-compilation"></a>Kompilace .NET native a za běhu  
- Vstup pro .NET Native řetězec nástroj je aplikace pro Windows store vytvořené C# nebo Visual Basic – kompilátor. Jinými slovy řetězu .NET Native nástroj zahájí spuštění po dokončení kompilátor jazyka kompilace aplikace pro Windows Store.  
+## <a name="net-native-and-just-in-time-compilation"></a>Kompilace .NET native a just-in-time  
+ Vstup pro .NET Native řetězce nástrojů je aplikace sestavena ze storu Windows C# nebo kompilátor jazyka Visual Basic. Jinými slovy .NET Native řetězce nástrojů začíná spuštění, když kompilátor jazyka dokončil kompilace aplikace pro Windows Store.  
   
 > [!TIP]
->  Protože vstup .NET Native IL a metadata zapsána do spravované sestavení, můžete přesto provést generace vlastní kód nebo další vlastní operace pomocí události před sestavením nebo po sestavení nebo změnou soubor projektu nástroje MSBuild.  
+>  Vzhledem k tomu, že jazyk IL a metadata zapsaná do spravovaných sestavení vstup do .NET Native se můžete stále provádět vytváření vlastního kódu nebo jiných vlastních operací pomocí události před sestavením nebo po sestavení nebo úpravou souboru projektu MSBuild.  
 >   
->  Kategorie nástroje, které upravit IL a tím zabránit v řetězu .NET nástroj Analýza aplikace IL ale podporované nejsou. Obfuscators jsou nástroje nejdůležitějším tohoto typu.  
+>  Kategorií nástrojů, které upravují IL a tím zabránit řetězce nástrojů .NET v analýze vaší aplikace IL ale podporované nejsou. Obfuscators jsou nejdůležitější nástroje tohoto typu.  
   
- V průběhu převodu aplikace na nativní kód IL, řetězu .NET Native nástroj provádí operace, jako je následující:  
+ .NET Native řetězce nástrojů tím, že převádíte aplikace z IL na nativní kód, provádí operace, jako je následující:  
   
--   Pro určité cesty kódu, se nahradí kód, který závisí na reflexi a metadat pomocí statické nativního kódu. Například, pokud typ hodnoty nepřepisuje <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> metoda, výchozí testování rovnosti pomocí reflexe načíst <xref:System.Reflection.FieldInfo> objekty, které představují typ hodnoty pole, pak porovná dvě instance hodnoty polí. Při kompilování do nativního kódu, nahradí řetězu .NET Native nástroj reflexe kód a metadata statické porovnání hodnot polí.  
+-   Pro některé cesty kódu, nahradí kód, který závisí na reflexi a metadat pomocí statické nativního kódu. Například, pokud nepřepisuje typ hodnoty <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> metody výchozí testování rovnosti používá reflexi k načtení <xref:System.Reflection.FieldInfo> objekty, které představují typ hodnoty polí, potom porovnává hodnoty polí dvě instance. Při kompilaci do nativního kódu, nahradí .NET Native řetězce nástrojů reflexe kódu a metadata statické porovnání hodnot polí.  
   
--   Pokud je to možné, pokusí se odstranit všechna metadata.  
+-   Kde je to možné, pokusí se odstranit všechna metadata.  
   
--   Obsahuje v sestaveních konečné aplikaci pouze implementace kód, který je ve skutečnosti vyvolané aplikace. Tímto je ovlivněn zvlášť kód v knihovnách třetích stran a v knihovně tříd rozhraní .NET Framework. V důsledku toho se aplikace už závisí na knihovny třetích stran nebo úplné Framework knihovně tříd rozhraní .NET; Místo toho v jiných výrobců a knihovny tříd rozhraní .NET Framework je kód místní do aplikace.  
+-   Zahrnuje poslední aplikace sestavení pouze implementační kód, který je ve skutečnosti vyvolala aplikace. Tímto je ovlivněn zejména kód v knihovnách třetích stran a v knihovně tříd rozhraní .NET Framework. V důsledku toho již aplikace závisí na knihovny třetích stran nebo úplné knihovny tříd .NET Framework; Kód třetích stran a knihovny tříd rozhraní .NET Framework je místo toho teď vůči aplikaci lokální.  
   
--   Nahradí úplné CLR refactored modul runtime, který obsahuje především uvolňování paměti. Refactored runtime nachází v knihovně s názvem mrt100_app.dll místní aplikace, který je pouze několik set kilobajtů velikost. To je možné, protože statické propojení eliminuje potřebu mnoho služeb provádí modul common language runtime.  
+-   Nahradí úplné CLR refaktorovaný modulu runtime, která primárně obsahuje systému uvolňování paměti. Refaktorovaný modulu runtime se nachází v knihovně s názvem mrt100_app.dll, který je vůči aplikaci lokální a je jen několik stovek kilobajtů velikost. To je možné, protože statické propojování odstraňuje potřebu řady služeb, prováděné modul common language runtime.  
   
     > [!NOTE]
-    >  .NET native používá stejné uvolňování jako standardní common language runtime. V .NET Native uvolňování paměti je ve výchozím nastavení povolená kolekce paměti na pozadí. Další informace o uvolňování paměti najdete v tématu [základy uvolnění paměti](../../../docs/standard/garbage-collection/fundamentals.md).  
+    >  .NET native používá stejné systému uvolňování paměti jako standard common language runtime. V .NET Native systému uvolňování paměti uvolňování paměti na pozadí ve výchozím nastavení zapnutá. Další informace o uvolňování paměti naleznete v tématu [základy kolekce paměti](../../../docs/standard/garbage-collection/fundamentals.md).  
   
 > [!IMPORTANT]
->  .NET native zkompiluje celý aplikace k nativní aplikaci. Neumožňuje můžete zkompilovat jednoho sestavení obsahující knihovny tříd do nativního kódu tak, aby ji můžete nezávisle volat ze spravovaného kódu.  
+>  .NET native zkompiluje celé aplikace do nativní aplikace. Neumožňuje je pro kompilaci jednoho sestavení, který obsahuje knihovnu tříd do nativního kódu, takže může být volána nezávisle na sobě ze spravovaného kódu.  
   
- Výsledný aplikaci, která je produkovaný řetězu .NET Native nástroj je zapsán do adresář s názvem ilc.out v adresáři ladění nebo verze v adresáři projektu. Obsahuje následující soubory:  
+ Výsledná aplikace, který je vytvořen .NET Native řetězce nástrojů se zapíše do adresáře s názvem ilc.out v adresáři ladění nebo vydání v adresáři projektu. Skládá se z následujících souborů:  
   
--   *\<appName >*.exe, se zakázaným inzerováním spustitelný soubor, který jednoduše převede ovládací prvek speciální `Main` exportovat ve  *\<appName >*.dll.  
+-   *\<název_aplikace >*.exe, zástupná procedura spustitelný soubor, který jednoduše převede ovládací prvek speciální `Main` export v  *\<název_aplikace >*.dll.  
   
--   *\<appName >*.dll, Windows dynamické knihovny, který obsahuje všechny kódu aplikace, stejně jako kód z knihovně tříd rozhraní .NET Framework a všechny knihovny třetích stran, které jsou závislé na.  Také obsahuje kód podpory, jako je kód potřebné pro spolupráci s Windows a k serializaci objektů ve vaší aplikaci.  
+-   *\<název_aplikace >*.dll, dynamickou Windows propojit knihovnu, která obsahuje váš kód aplikace, stejně jako kód z knihovny tříd rozhraní .NET Framework a všechny knihovny třetích stran, které jsou závislé na.  Také obsahuje kód podpory, jako je kód pro spolupráci s Windows a k serializaci objektů ve vaší aplikaci.  
   
--   mrt100_app.dll, refactored modul runtime, který poskytuje služby modulu runtime, jako je například uvolňování paměti.  
+-   mrt100_app.dll, refaktorovaný modulu runtime, který poskytuje služby modulu runtime, jako je například uvolňování paměti.  
   
- Všechny závislosti jsou zachyceny pomocí APPX manifest aplikace.  Kromě aplikací exe, dll a mrt100_app.dll, které jsou seskupeny přímo v balíček appx to zahrnuje další dva soubory:  
+ Všechny závislosti jsou zachyceny manifestu APPX aplikace.  Kromě aplikace exe, dll a mrt100_app.dll, které jsou spojeny přímo v balíčku appx to obsahuje dva další soubory:  
   
--   msvcr140_app.dll, používá mrt100_app.dll knihovny C Runtime (CRT). Je zahrnutý v balíčku odkaz framework.  
+-   msvcr140_app.dll, knihovny C run-time (CRT), používané mrt100_app.dll. Je součástí odkaz na rozhraní v balíčku.  
   
--   mrt100.dll. Tato knihovna obsahuje funkce, které může zvýšit výkon mrt100_app.dll, i když jeho absenci nezabrání mrt100_app.dll funguje. Je načten z adresáře system32 v místním počítači, pokud je k dispozici.  
+-   mrt100.dll. Tuto knihovnu zahrnuje funkce, které může zlepšit výkon mrt100_app.dll, i když neexistuje nebrání mrt100_app.dll fungovat. Načte se v adresáři system32 na místním počítači, pokud je k dispozici.  
   
- Protože řetězu .NET Native nástroj odkazuje implementaci kódu do vaší aplikace jenom v případě, že bude vědět, že aplikace ve skutečnosti vyvolá tento kód a nemusí být součástí aplikace metadata nebo kód implementace vyžaduje v následujících scénářích:  
+ .NET Native řetězce nástrojů odkazy implementační kód do vaší aplikace pouze v případě, že ví, že vaše aplikace ve skutečnosti vyvolá tento kód, takže metadata nebo implementační kód vyžaduje v následujících scénářích nemusí být součástí vaší aplikace:  
   
 -   Reflexe.  
   
--   Dynamické nebo pozdní vazbou volání.  
+-   Volání dynamického nebo s pozdní vazbou.  
   
 -   Serializace a deserializace.  
   
--   Zprostředkovatel komunikace s objekty COM.  
+-   Komunikace s objekty COM  
   
- Chybí-li nutné metadata nebo implementaci kódu v době běhu .NET Native runtime vyvolá výjimku. Můžete zakázat tyto výjimky a ujistěte se, že řetězu .NET Native nástroj zahrnuje požadovaná metadata a implementaci kódu pomocí [souboru direktivy modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md), soubor XML, který určuje elementy program, jehož metadata nebo implementace kód musí být k dispozici v době běhu a přiřadí zásady modulu runtime k nim. Toto je výchozí soubor direktivy modulu runtime, který je přidán do projektu Windows Store, který se zkompiluje .NET Native řetězcem nástroj:  
+ Pokud chybí nezbytné metadata nebo provádění kódu za běhu, modul runtime .NET Native, dojde k výjimce. Můžete zakázat tyto výjimky a ujistěte se, .NET Native řetězce nástrojů obsahuje požadované metadat a implementace kódu s použitím [soubor direktiv modulu runtime](../../../docs/framework/net-native/runtime-directives-rd-xml-configuration-file-reference.md), soubor XML, který určuje prvky programu, jejichž metadat nebo implementační kód musí být k dispozici za běhu a přiřadí zásady modulu runtime k nim. Toto je výchozí soubor direktivy modulu runtime, který je přidán do projektu Windows Store, který je zkompilován s .NET Native řetězce nástrojů:  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">  
@@ -89,19 +89,19 @@ Aplikace Windows 8.1 a Windows Desktop aplikace, které cílí na rozhraní.NET 
 </Directives>  
 ```  
   
- To umožňuje všechny typy, stejně jako všechny jejich členy, ve všech sestaveních ve vašich balíček aplikace pro reflexe a dynamické volání. Však není povolit, reflexe nebo dynamické aktivace typy v sestavení rozhraní .NET Framework – knihovna tříd. V mnoha případech je to dostačující.  
+ Díky tomu všech typů, stejně jako všechny jejich členy, všechna sestavení v balíčku aplikace pro reflexi a dynamické vyvolání. Však neumožňuje reflexe nebo dynamické aktivace typů v sestavení knihovny tříd .NET Framework. V mnoha případech jde dostatečné.  
   
-## <a name="net-native-and-ngen"></a>.NET native a NGEN  
- [(Generátor](../../../docs/framework/tools/ngen-exe-native-image-generator.md) (NGEN) kompiluje sestavení do nativního kódu a nainstaluje je do mezipaměti nativních bitových kopií v místním počítači. Nicméně i když NGEN, jako jsou .NET Native vytváří nativního kódu, se liší od .NET Native některé důležité způsoby:  
+## <a name="net-native-and-ngen"></a>.NET native a technologie NGEN  
+ [(Native Image Generator](../../../docs/framework/tools/ngen-exe-native-image-generator.md) (NGEN) kompiluje sestavení do nativního kódu a nainstaluje je do mezipaměti nativních bitových kopií v místním počítači. Nicméně i když NGEN, jako je .NET Native, vytvoří nativní kód, se liší od .NET Native v některých ohledech významné:  
   
--   Pokud je k dispozici pro konkrétní metody žádné nativních bitových kopií, NGEN spadne zpět na JITing kódu. To znamená, že nativní bitové kopie musí dál zahrnovat metadata a IL v případě, že NGEN musí vrátit zpět k JIT – kompilace. Naproti tomu .NET Native vytváří nativní bitové kopie a nepřecházely k JIT – kompilace. V důsledku toho musí být zachováno pouze metadata jsou požadovaná pro některé úvahy, serializace a spolupráce scénáře.  
+-   Pokud žádné nativní bitové kopie je k dispozici pro konkrétní metody, NGEN spadne zpět na JITing kódu. To znamená, že nativní bitové kopie musí i nadále zahrnují metadata a IL v případě, že je potřeba vrátit zpět k JIT kompilaci NGEN. Naproti tomu .NET Native vytváří nativní bitové kopie a nepřecházel k JIT kompilaci. V důsledku toho musí být zachovány jenom metadata jsou požadovaná pro některé úvahy, serializace a spolupráce scénáře.  
   
--   NGEN nadále spoléhají na úplné common language runtime služby, například sestavení načítání, vzdálenou komunikaci, zprostředkovatel komunikace s objekty, správa paměti, uvolňování paměti a v případě potřeby JIT – kompilace. V rozhraní .NET nativní mnoho z těchto služeb jsou buď nepotřebné (JIT – kompilace) nebo jsou přeložit v čase vytvoření buildu a začlenit i metodu v sestavení aplikace. Zbývající služby, které nejdůležitější je uvolňování paměti, jsou součástí mnohem menší, rozdělili runtime s názvem mrt100_app.dll.  
+-   NGEN nadále Spolehněte se na úplné common language runtime pro služby, jako je vzdálené komunikace, spolupráce, správa paměti, uvolňování paměti, načítání sestavení a v případě potřeby, kompilace JIT. V rozhraní .NET Native mnoho z těchto služeb jsou buď zbytečné (kompilace JIT) nebo jsou vyřešené v okamžiku sestavení a zapojit do sestavení aplikace. Zbývající služeb, z nichž nejdůležitější je uvolňování paměti, jsou zahrnuté v mnohem menší, refaktorovaný modulu runtime s názvem mrt100_app.dll.  
   
--   Obrázky NGEN jsou obvykle křehké. Například opravy nebo změně závislost obvykle vyžaduje, aby sestavení, které ho používají také NGENed znovu. To platí hlavně systému sestavení v knihovně tříd rozhraní .NET Framework. .NET Native naopak umožňuje aplikacím zpracovat nezávisle na sobě.  
+-   Obrázků NGEN bývají křehké. Třeba opravu nebo změňte na závislost obvykle vyžaduje, aby sestavení, které ho používají také re NGENed. To platí hlavně systémová sestavení v knihovně tříd rozhraní .NET Framework. .NET Native naproti tomu umožňuje aplikacím, ke zpracování nezávisle na mezi sebou.  
   
 ## <a name="see-also"></a>Viz také  
  [Metadata a komponenty popisující samy sebe](../../../docs/standard/metadata-and-self-describing-components.md)  
- [Uvnitř .NET Native (Video na kanálu 9)](http://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)  
+ [Uvnitř .NET Native (Video pro kanál 9)](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)  
  [Reflexe a .NET Native](../../../docs/framework/net-native/reflection-and-net-native.md)  
  [Obecné řešení potíží s .NET Native](../../../docs/framework/net-native/net-native-general-troubleshooting.md)

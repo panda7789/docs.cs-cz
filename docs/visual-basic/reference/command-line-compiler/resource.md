@@ -9,14 +9,12 @@ helpviewer_keywords:
 - -res compiler option [Visual Basic]
 - resource compiler option [Visual Basic]
 ms.assetid: eee2f227-91f2-4f2b-a9d6-1c51c5320858
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 2a69d0e15f9094860c4c66f3fe0a195a0a609db9
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+ms.openlocfilehash: ca9aea526d1039c09883696ed2a35ed930c92872
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46321324"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50044785"
 ---
 # <a name="-resource-visual-basic"></a>-prostředku (Visual Basic)
 Vloží spravovaný prostředek sestavení.  

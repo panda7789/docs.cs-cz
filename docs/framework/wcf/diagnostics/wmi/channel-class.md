@@ -2,19 +2,19 @@
 title: Třída Channel
 ms.date: 03/30/2017
 ms.assetid: d9fae2ca-209c-4341-a0f5-6b79d1a67776
-ms.openlocfilehash: 4b7c66560c0c136a258c527d8a681d491eb50aae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 108d5f8e3cd092863dbd48e2bb9d180798b091a4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33485780"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50047368"
 ---
 # <a name="channel-class"></a>Třída Channel
 Kanál  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class Channel  
 {  
   string LocalAddress;  
@@ -26,10 +26,10 @@ class Channel
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída Channel nedefinuje žádné metody.  
+ Třída kanálu nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída Channel má následující vlastnosti.  
+ Třída kanálu má následující vlastnosti.  
   
 ### <a name="localaddress"></a>LocalAddress  
  Datový typ: řetězec  
@@ -39,7 +39,7 @@ class Channel
  Místní koncový bod pro kanál.  
   
 ### <a name="ref"></a>ref  
- Datový typ: koncový bod  
+ Datový typ: koncového bodu  
   
  Přístup k typu: jen pro čtení  
   
@@ -50,14 +50,14 @@ class Channel
   
  Přístup k typu: jen pro čtení  
   
- Vzdálená adresa spojená s kanálem.  
+ Vzdálená adresa připojená ke kanálu.  
   
 ### <a name="sessionid"></a>SessionId  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Aktuální relace Id, pokud existuje.  
+ Id aktuálního procesu, pokud existuje.  
   
 ### <a name="type"></a>Typ  
  Datový typ: řetězec  
@@ -68,7 +68,7 @@ class Channel
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

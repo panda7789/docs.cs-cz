@@ -5,12 +5,12 @@ description: Informace o instalaci rozhraní .NET Framework na Windows 7 SP1.
 author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
-ms.openlocfilehash: 828680c0591f9603d14c57dd9e82fe1f3970ede3
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 091fb93f26695df01f2f95fdec7ed168d96ba90d
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861868"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50034556"
 ---
 # <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Instalace rozhraní .NET Framework na Windows 7 SP1 a Windows Server 2008 R2
 
@@ -18,7 +18,7 @@ Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows.
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) má nejnovější verzi. Podporuje se ve Windows 7 SP1 a Windows Server 2008 R2 a je součástí [Windows 10. dubna 2018 Update](https://www.microsoft.com/software-download/windows10).
+Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) má nejnovější verzi. Podporuje se ve Windows 7 SP1 a Windows Server 2008 R2 a je součástí [Windows 10. října 2018 Update](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update) a [Windows 10. dubna 2018 Update](https://www.microsoft.com/software-download/windows10).
 
 ## <a name="net-framework-472"></a>Rozhraní .NET framework 4.7.2
 

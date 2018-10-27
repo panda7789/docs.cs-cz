@@ -9,14 +9,12 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 6816b22014f9e6669abe0b1aab62d0863e1f895b
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 26b5c53c4983aa392dba7346f357e2700cfe0178
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086476"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50088686"
 ---
 # <a name="asynchronous-server-socket-example"></a>Příklad asynchronního serverového soketu
 Následující ukázkový program vytvoří server, která bude přijímat žádosti o připojení z klientů. Server je sestavena s asynchronní soketu, tak, že není pozastavené spuštění serverové aplikace čeká připojení z klienta. Aplikace přijímá řetězec z klienta, zobrazí řetězec v konzole a potom vrátí řetězec zpět na klienta. Řetězec z klienta musí obsahovat řetězec "\<EOF >" který signalizuje, že konec zprávy.  

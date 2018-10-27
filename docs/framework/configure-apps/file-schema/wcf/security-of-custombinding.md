@@ -2,13 +2,12 @@
 title: '&lt;security&gt; – &lt;customBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 243a5148-bbd1-447f-a8a5-6e7792c0a3f1
-author: BrucePerlerMS
-ms.openlocfilehash: 848dbf56436e1589697ffdb64d617961f29ac506
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: eb8cd4172a83d618f3fd83519a8d9d2f4c864067
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47398008"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50042126"
 ---
 # <a name="ltsecuritygt-of-ltcustombindinggt"></a>&lt;security&gt; – &lt;customBinding&gt;
 Určuje možnosti zabezpečení pro vlastní vazbu.  

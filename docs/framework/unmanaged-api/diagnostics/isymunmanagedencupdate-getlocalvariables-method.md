@@ -17,12 +17,12 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 82e657e91e586d7fe409646ea4fb8946c026e84c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a53493d666cb16fcc9b407ca3a46072afa306b97
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33424336"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182473"
 ---
 # <a name="isymunmanagedencupdategetlocalvariables-method"></a>ISymUnmanagedENCUpdate::GetLocalVariables – metoda
 Získá místní proměnné.  
@@ -38,21 +38,21 @@ HRESULT GetLocalVariables(
     [out] ULONG        *pceltFetched);  
 ```  
   
-#### <a name="parameters"></a>Parametry  
+## <a name="parameters"></a>Parametry  
  `mdMethodToken`  
- [v] Token metadata metody.  
+ [in] Metadata token metody.  
   
  `cLocals`  
- [v] A `ULONG` určující velikost `rgLocals` parametr.  
+ [in] A `ULONG` , který označuje velikost `rgLocals` parametru.  
   
  `rgLocals`  
- [out] Vrácená pole <!--zz<xref:ISymUnmanagedVariable>--> `ISymUnmanagedVariable` instance.  
+ [out] Vrácené pole [isymunmanagedvariable –](isymunmanagedvariable-interface.md) instancí.  
   
  `pceltFetched`  
- [out] Ukazatel `ULONG` která přijme velikost `rgLocals` vyrovnávací paměti musí obsahovat lokální.  
+ [out] Ukazatel `ULONG` , která obdrží velikost `rgLocals` vyrovnávací paměti musí obsahovat oknech místní hodnoty.  
   
 ## <a name="return-value"></a>Návratová hodnota  
- S_OK, pokud metoda úspěšně. v opačném E_FAIL nebo jiný kód chyby.  
+ Pokud metoda uspěje; S_OK v opačném případě E_FAIL nebo jiný kód chyby.  
   
 ## <a name="requirements"></a>Požadavky  
  **Záhlaví:** CorSym.idl, CorSym.h  

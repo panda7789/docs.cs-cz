@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 0d07090c-9b47-4ecc-81d1-29d539603c9b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 192ac28610f596bc6b6f4ebf1c80962ab2d71cbf
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 8d533ac4d4287af551e4fc0c3131c761dbbc135a
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842098"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50034100"
 ---
 # <a name="reflection-in-the-net-framework-for-windows-store-apps"></a>Reflexe v rozhraní .NET Framework pro aplikace pro Windows Store
 Od verze [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] obsahuje rozhraní .NET Framework sadu typů a členů reflexe pro použití v aplikacích pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Tyto typy a členy jsou k dispozici v úplné rozhraní .NET Framework stejně jako v [.NET pro Windows Store apps](https://go.microsoft.com/fwlink/?LinkID=225700). Tento dokument popisuje hlavní rozdíly mezi těmito položkami a jejich protějšky v rozhraní .NET Framework 4 a dřívějších verzích.  
@@ -36,7 +36,7 @@ Od verze [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] obsahuje rozhraní
  V aplikaci pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] je přístup k některým typům a členům rozhraní .NET Framework omezen. Například pomocí objektu [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] nelze volat metody rozhraní .NET Framework, které nejsou zahrnuty v rozhraní <xref:System.Reflection.MethodInfo>. Také některé typy a členy, které nejsou v rámci aplikace pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] považovány za bezpečné, jsou blokovány, jako například typy <xref:System.Runtime.InteropServices.Marshal> a <xref:System.Runtime.InteropServices.WindowsRuntime.WindowsRuntimeMarshal>. Toto omezení se týká pouze typů a členů rozhraní .NET Framework. Váš kód nebo kód třetích stran lze volat jako obvykle.  
   
 ## <a name="example"></a>Příklad  
- Tento příklad používá typy a členy reflexe rozhraní [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] k načtení metod a vlastností typu <xref:System.Globalization.Calendar>, včetně odvozených metod a vlastností. Chcete-li spustit tento kód, vložte ho do souboru s kódem pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] stránky, která obsahuje [Windows.UI.Xaml.Controls.Textblock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) ovládací prvek s názvem `textblock1` v projektu s názvem reflexe. Pokud je vložit tento kód v projektu s jiným názvem, právě Ujistěte se, že změníte název oboru názvů tak, aby odpovídaly váš projekt.  
+ Tento příklad používá typy a členy reflexe rozhraní [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] k načtení metod a vlastností typu <xref:System.Globalization.Calendar>, včetně odvozených metod a vlastností. Chcete-li spustit tento kód, vložte ho do souboru s kódem pro [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] stránky, která obsahuje <xref:Windows.UI.Xaml.Controls.TextBlock?displayProperty=nameWithType> ovládací prvek s názvem `textblock1` v projektu s názvem reflexe. Pokud je vložit tento kód v projektu s jiným názvem, právě Ujistěte se, že změníte název oboru názvů tak, aby odpovídaly váš projekt.  
   
  [!code-csharp[System.ReflectionWinStoreApp#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.reflectionwinstoreapp/cs/mainpage.xaml.cs#1)]
  [!code-vb[System.ReflectionWinStoreApp#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.reflectionwinstoreapp/vb/mainpage.xaml.vb#1)]  

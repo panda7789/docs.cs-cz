@@ -8,13 +8,12 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-author: BrucePerlerMS
-ms.openlocfilehash: 6dbf0e2be0a75fccd84a82fe2b3c8ab41762de83
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: 5926216135429d235593aaf77ee0d29b0bacd8fa
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49087723"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50036499"
 ---
 # <a name="how-to-create-a-security-token-service"></a>Postupy: Vytvoření služby tokenů zabezpečení
 Služba tokenů zabezpečení implementuje protokol definovaných ve specifikaci WS-Trust. Tento protokol definuje formáty zpráv a zpráv exchange vzory pro vystavování, obnovení, zrušení a ověřování tokenů zabezpečení. Služba tokenů zabezpečení obsahuje nejméně jeden z těchto možností. Toto téma vypadá nanejvýš běžný scénář: implementace vystavování tokenů.  

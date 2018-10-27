@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], explicit numeric conversions
 - type conversion [C#], explicit numeric
 ms.assetid: f3bb9e76-6b92-4df7-bc36-f866c24e1dfd
-ms.openlocfilehash: 22bb2117e7b78596e1fb6af63584f51b066564c9
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 948961d19518343c1f8ee14cd48dc33ec72cf23d
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48025555"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49478919"
 ---
 # <a name="explicit-numeric-conversions-table-c-reference"></a>Tabulka explicitních číselných převodů (referenční dokumentace jazyka C#)
 
@@ -61,7 +61,7 @@ V následující tabulce jsou uvedeny předdefinované explicitní převody mezi
   
 - Při převodu `decimal` k `float` nebo `double`, `decimal` hodnota je zaokrouhlená na nejbližší `double` nebo `float` hodnotu.  
   
- Další informace o explicitních převodů, najdete v článku [explicitních převodů](/dotnet/csharp/language-reference/language-specification/conversions#explicit-conversions) část [specifikace jazyka C#](../language-specification/index.md).
+ Další informace o explicitních převodů, najdete v článku [explicitních převodů](~/_csharplang/spec/conversions.md#explicit-conversions) část [specifikace jazyka C#](../language-specification/index.md).
   
 ## <a name="see-also"></a>Viz také:
 

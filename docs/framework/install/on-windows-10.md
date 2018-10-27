@@ -5,12 +5,12 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ms.custom: updateeachrelease
-ms.openlocfilehash: b7c7b8d16463cd66eb8a0a5e383dd3763af323d8
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f456bbe771608258307673337693c1e8a5c45f39
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857190"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49454366"
 ---
 # <a name="install-the-net-framework-on-windows-10-and-windows-server-2016"></a>Instalace rozhraní .NET Framework v systému Windows 10 a Windows Server 2016
 
@@ -23,6 +23,8 @@ Vám může objevit na této stránce po pokusu o spuštění aplikace a zobrazu
 ## <a name="net-framework-472"></a>Rozhraní .NET framework 4.7.2
 
 Rozhraní .NET Framework 4.7.2 je součástí:
+
+* [Windows 10. října 2018 Update](https://support.microsoft.com/help/4028685/windows-10-get-the-update)
 
 * [Aktualizace Windows 10. dubna 2018](https://www.microsoft.com/software-download/windows10)
 

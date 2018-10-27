@@ -2,20 +2,19 @@
 title: ServiceSecurityAuditBehavior
 ms.date: 03/30/2017
 ms.assetid: 2c5809e7-5364-44ce-bc71-848be4672e2a
-author: BrucePerlerMS
-ms.openlocfilehash: 8f43ee752830d95db6bbbdbe311b6d77735e31b5
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: e8b24877c2d76a3f2f90c27ae83374c7bca1328b
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196887"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181157"
 ---
 # <a name="servicesecurityauditbehavior"></a>ServiceSecurityAuditBehavior
 ServiceSecurityAuditBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp  
 class ServiceSecurityAuditBehavior : Behavior  
 {  
   string AuditLogLocation;  

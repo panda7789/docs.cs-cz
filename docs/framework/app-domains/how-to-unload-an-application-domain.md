@@ -12,19 +12,19 @@ helpviewer_keywords:
 ms.assetid: f356116d-e415-4f7c-a332-6e6a60227192
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0a9e5ee865b5e0ac9ec0214a4a0b5194bbcd9f30
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: b8b4cbdff72167cfc063254cf5370d22fb729b0a
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742085"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50088569"
 ---
 # <a name="how-to-unload-an-application-domain"></a>Postupy: Uvolnění domény aplikace
-Po dokončení používání domény aplikace uvolnit pomocí <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> metoda. **Uvolnění** metoda řádně vypne zadanou doménu aplikace. Během procesu uvolnění žádné nové vláken můžete přístup k doméně aplikace a všechny domény – konkrétní datové struktury aplikace jsou uvolněny.  
+Po dokončení používání domény aplikace, odinstalovat ji pomocí <xref:System.AppDomain.Unload%2A?displayProperty=nameWithType> metody. **Uvolnění** metoda řádně ukončí zadanou doménu aplikace. Během procesu uvolnění žádná nová vlákna můžete přístup k doméně aplikace a všechny aplikace domény specifické datové struktury jsou uvolněny.  
   
- Sestavení načtená do domény aplikace se odeberou a již nejsou k dispozici. Pokud je sestavení v doméně aplikace domény jazykově neutrální, zůstane data pro sestavení v paměti, dokud celý proces je vypnutý. Neexistuje žádný mechanismus k uvolnění domény jazykově neutrální sestavení než vypíná celý proces. Existují situacích, kdy požadavek na uvolnění domény aplikace nefunguje a výsledkem <xref:System.CannotUnloadAppDomainException>.  
+ Sestavení načtena do domény aplikace jsou odebrány a nadále již nebudou k dispozici. Pokud je sestavení v aplikační doméně doménově neutrální, zůstávají data pro sestavení v paměti, dokud nebude ukončen celý proces. Neexistuje žádný mechanismus uvolnění sestavení jako doménově neutrální než celý proces ukončen. Existují situace, kdy požadavek na uvolnění domény aplikace nefunguje, výsledkem <xref:System.CannotUnloadAppDomainException>.  
   
- Následující příklad vytvoří novou doménu aplikace nazvanou `MyDomain`, vytiskne některé informace do konzoly a poté uvolní doménu aplikace. Všimněte si, že kód pak pokusí vytisknout popisný název domény odpojen aplikaci do konzoly. Tato akce vygeneruje výjimku, která se zpracovává souborem try/catch – příkazy na konci tohoto programu.  
+ Následující příklad vytvoří novou doménu aplikace volá `MyDomain`, vypíše některé informace o do konzoly a potom uvolnění domény aplikace. Všimněte si, že kód poté se pokusí tisk popisný název uvolněné doméně aplikace do konzoly. Tato akce vygeneruje výjimku, která zpracovává příkazy try/catch – na konci programu.  
   
 ## <a name="example"></a>Příklad  
  [!code-cpp[System.AppDomain.Load#3](../../../samples/snippets/cpp/VS_Snippets_CLR_System/system.appdomain.load/cpp/source3.cpp#3)]
@@ -32,6 +32,6 @@ Po dokončení používání domény aplikace uvolnit pomocí <xref:System.AppDo
  [!code-vb[System.AppDomain.Load#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.appdomain.load/vb/source3.vb#3)]  
   
 ## <a name="see-also"></a>Viz také  
- [Programování s doménami aplikací](application-domains.md#programming-with-application-domains)  
- [Postupy: Vytvoření domény aplikace](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)  
- [Používání domén aplikací](../../../docs/framework/app-domains/use.md)
+- [Programování pomocí domén aplikace](application-domains.md#programming-with-application-domains)  
+- [Postupy: Vytvoření domény aplikace](../../../docs/framework/app-domains/how-to-create-an-application-domain.md)  
+- [Používání domén aplikací](../../../docs/framework/app-domains/use.md)

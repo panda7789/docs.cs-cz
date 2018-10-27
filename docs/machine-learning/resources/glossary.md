@@ -1,16 +1,14 @@
 ---
-title: Glosář strojového učení
+title: Glosář Machine learning
 description: Glosář termínů machine learning.
-author: jralexander
-ms.author: johalex
 ms.date: 05/31/2018
 ms.topic: conceptual
-ms.openlocfilehash: 6b175a8e89479dae81a7e5769e8d10c09a193898
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 22fcd4d2bdf53efd046cd594af42afe50a853f61
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47081095"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453200"
 ---
 # <a name="machine-learning-glossary"></a>Glosář Machine learning
 
@@ -20,13 +18,13 @@ V následujícím seznamu je důležité machine learning termínů, které jsou
 
 V [klasifikace](#classification), přesnost je počet správně klasifikované položky rozdělené tak celkový počet položek v sadě testů. Je v rozsahu 0 (nejméně přesné) na hodnotu 1 (co nejvíce zpřesnili). Přesnost je jedním z metrik výkonu modelu. Zvažte ve spojení s [přesnost](#precision), [spojené s vracením](#recall), a [F skóre](#f-score).
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificationMetrics.Accuracy?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.Accuracy?displayProperty=nameWithType>.
 
 ## <a name="area-under-the-curve-auc"></a>Oblasti pod křivkou (AUC)
 
 V [binární klasifikace](#binary-classification), metriku hodnocení, která je hodnota v oblasti pod křivkou, která ukazuje zeměpisný pravdivě pozitivní rychlost (na ose y) na míru falešně pozitivních výsledků (na ose x). Od 0,5 (nejhorších) do 1 (doporučené). Také oblasti pod křivkou roc s více TŘÍDAMI, například příjemce provozních charakteristik křivky. Další informace najdete v tématu [Receiver operating charakteristiku](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) článku na wikipedii.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificationMetrics.Auc?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.Auc?displayProperty=nameWithType>.
 
 ## <a name="binary-classification"></a>Binární klasifikace
 
@@ -40,7 +38,7 @@ Když se data používá k předpovědi kategorii, [pod dohledem strojového uč
 
 V [regrese](#regression), metriku hodnocení, která určuje, jak dobře zapadá datového modelu. Rozsahu od 0 do 1. Hodnota 0 znamená, že data jsou náhodných nebo jinak nevejde do modelu. Hodnota 1 znamená, že model přesně odpovídá data. To se často označuje jako r<sup>2</sup>, R<sup>2</sup>, nebo spolehlivosti.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.RegressionMetrics.RSquared?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.RegressionMetrics.RSquared?displayProperty=nameWithType>.
 
 ## <a name="feature"></a>Funkce
 
@@ -54,7 +52,7 @@ Vytváření funkcí je proces, který zahrnuje definování sady [funkce](#feat
 
 V [klasifikace](#classification), vyhodnocení metriku, která vyrovnává [přesnost](#precision) a [spojené s vracením](#recall).
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificationMetrics.F1Score?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.F1Score?displayProperty=nameWithType>.
 
 ## <a name="hyperparameter"></a>Hyperparameter
 
@@ -68,13 +66,13 @@ Elementu, který chcete předpovědět s modelem machine learning. Například p
 
 V [klasifikace](#classification), metriku hodnocení, který charakterizuje přesnost třídění. Menší ztráty protokolu je, přesnější třídění.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificationMetrics.LogLoss?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.LogLoss?displayProperty=nameWithType>.
 
 ## <a name="mean-absolute-error-mae"></a>Střední absolutní chyba (MAE)
 
 V [regrese](#regression), vyhodnocení metriky, které je průměrem všechny chyby modelu, kde je chyba modelu vzdálenost mezi předpokládané [popisek](#label) hodnota a hodnota správný popisek.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.RegressionMetrics.L1?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.RegressionMetrics.L1?displayProperty=nameWithType>.
 
 ## <a name="model"></a>Model
 
@@ -100,13 +98,13 @@ Všechny operace nutné přizpůsobit model do datové sady. Kanál se skládá 
 
 V [klasifikace](#classification), přesnost pro třídu je počet položek správně předpovědět jako patřící do této třídy dělený celkový počet položek předpovědět jako patřící do třídy.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificationMetrics.NegativePrecision?displayProperty=nameWithType>, <xref:Microsoft.ML.Models.BinaryClassificationMetrics.PositivePrecision?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.NegativePrecision?displayProperty=nameWithType>, <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.PositivePrecision?displayProperty=nameWithType>.
 
 ## <a name="recall"></a>Odvolání
 
 V [klasifikace](#classification), odvolání pro třídu je počet položek správně předpovědět jako patřící do této třídy dělený celkový počet položek, které ve skutečnosti patří do třídy.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.BinaryClassificationMetrics.NegativeRecall?displayProperty=nameWithType>, <xref:Microsoft.ML.Models.BinaryClassificationMetrics.PositiveRecall?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.NegativeRecall?displayProperty=nameWithType>, <xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics.PositiveRecall?displayProperty=nameWithType>.
 
 ## <a name="regression"></a>Regrese
 
@@ -124,7 +122,7 @@ V [regrese](#regression), metriku hodnocení, která je součet všech spolehliv
 
 V [regrese](#regression), metriku hodnocení, která je druhá odmocnina průměru kvadratických chyb.
 
-Rozhraní API související ML.NET: <xref:Microsoft.ML.Models.RegressionMetrics.Rms?displayProperty=nameWithType>.
+Rozhraní API související ML.NET: <xref:Microsoft.ML.Legacy.Models.RegressionMetrics.Rms?displayProperty=nameWithType>.
 
 ## <a name="supervised-machine-learning"></a>Technik strojového učení
 

@@ -2,12 +2,12 @@
 title: Nerozbalené zprávy
 ms.date: 03/30/2017
 ms.assetid: 019657bd-1f9b-4315-ad74-eaa4e7551ff6
-ms.openlocfilehash: 2c818cc6c37a59f75599afb3eab3290d8525e4bc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 835312101ba9e0daaa7986a78c9a0040535881b9
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43797586"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50044616"
 ---
 # <a name="unwrapped-messages"></a>Nerozbalené zprávy
 V této ukázce nerozbalené zprávy. Ve výchozím nastavení text zprávy je formátováno tak, že jsou zabaleny parametry pro operaci služby. Následující ukázka znázorňuje `Add` zprávy s požadavkem na `ICalculator` služby v režimu zabalené.  
@@ -52,7 +52,7 @@ V této ukázce nerozbalené zprávy. Ve výchozím nastavení text zprávy je f
   
  V této ukázce se vytvoří nerozbalené zprávy použitím <xref:System.ServiceModel.MessageContractAttribute> typ parametru operace služby a typ návratové hodnoty, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface ICalculator  
 {  

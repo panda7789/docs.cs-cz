@@ -2,19 +2,19 @@
 title: ServiceBehaviorAttribute
 ms.date: 03/30/2017
 ms.assetid: 5faa266f-587f-4e03-828d-1c7dd5acfe65
-ms.openlocfilehash: 514af4c6d9eaaf8929ca831e4e786c895d14c67d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c2915c636aec26cfb1f58d12da49151915c52c05
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487196"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182954"
 ---
 # <a name="servicebehaviorattribute"></a>ServiceBehaviorAttribute
 ServiceBehaviorAttribute  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class ServiceBehaviorAttribute : Behavior  
 {  
   boolean AutomaticSessionShutdown;  
@@ -36,23 +36,23 @@ class ServiceBehaviorAttribute : Behavior
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída ServiceBehaviorAttribute nedefinuje žádné metody.  
+ Třídy ServiceBehaviorAttribute nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída ServiceBehaviorAttribute má následující vlastnosti:  
+ Třídy ServiceBehaviorAttribute má následující vlastnosti:  
   
 ### <a name="automaticsessionshutdown"></a>AutomaticSessionShutdown  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Označuje, zda automaticky zavřete relaci, když klient ukončí relaci výstupu.  
+ Označuje, zda automaticky ukončit relaci, když klient ukončí relaci výstupu.  
   
 ### <a name="concurrencymode"></a>Režim ConcurrencyMode  
  Datový typ: řetězec  
 Přístup k typu: jen pro čtení  
   
- Určuje, zda služba podporuje jedno vlákno, více vláken nebo znovu zadaná volání.  
+ Určuje, zda služba podporuje jedno vlákno, několik vláken nebo znovu zadaných volání.  
   
 ### <a name="configurationname"></a>ConfigurationName  
  Datový typ: řetězec  
@@ -62,62 +62,62 @@ Přístup k typu: jen pro čtení
  Název konfigurace služby.  
   
 ### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda chcete odesílat data neznámé serializace drátové síti.  
+ Určuje, zda mají data neznámé serializace přenosu.  
   
 ### <a name="includeexceptiondetailinfaults"></a>Třídu IncludeExceptionDetailInFaults  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda mají být zahrnuty informace o spravovaných výjimce podrobností chyb SOAP vrácených klientům pro účely ladění.  
+ Určuje, jestli se má být řízená informace výjimky zařazená do podrobností chyb SOAP vrácena klientům pro účely ladění.  
   
 ### <a name="instancecontextmode"></a>Režim InstanceContextMode  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, kdy vytvořit nový objekt služby.  
+ Určuje, kdy je vytvořen nový objekt služby.  
   
-### <a name="maxitemsinobjectgraph"></a>maxItemsInObjectGraph  
+### <a name="maxitemsinobjectgraph"></a>MaxItemsInObjectGraph  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet položek v serializovaný objekt povoleny.  
+ Maximální počet položek povolených v serializovaném objektu.  
   
 ### <a name="name"></a>Název  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Atribut názvu služby v jazyce WSDL.  
+ Atribut názvu služby ve WSDL.  
   
 ### <a name="namespace"></a>Obor názvů  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Cílový obor názvů služby v jazyce WSDL.  
+ Cílový obor názvů služby ve WSDL.  
   
 ### <a name="releaseserviceinstanceontransactioncomplete"></a>ReleaseServiceInstanceOnTransactionComplete  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, jestli je objekt služby recykluje po dokončení aktuální transakci.  
+ Určuje, zda je objekt služby vrácen, pokud je aktuální transakce dokončena.  
   
 ### <a name="transactionautocompleteonsessionclose"></a>TransactionAutoCompleteOnSessionClose  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
  Určuje, zda jsou nevyřízené transakce dokončeny zavře aktuální relaci.  
   
-### <a name="transactionisolationlevel"></a>TransactionIsolationLevel  
+### <a name="transactionisolationlevel"></a>Úroveň TransactionIsolationLevel  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
@@ -125,29 +125,29 @@ Přístup k typu: jen pro čtení
  Určuje úroveň izolace transakce.  
   
 ### <a name="transactiontimeout"></a>Vlastnost TransactionTimeout  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
- Období, ve kterém musíte dokončit transakci.  
+ Období, ve kterém musí být transakce dokončena.  
   
 ### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda chcete použít aktuální kontext synchronizace zvolit provádění vlákna.  
+ Určuje, jestli se má použít aktuální synchronizační kontext pro výběr provedení vlákna.  
   
 ### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda je systém nebo aplikace vynucuje zpracování záhlaví SOAP MustUnderstand.  
+ Určuje, zda systém nebo aplikace uplatňuje zpracování záhlaví SOAP MustUnderstand.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

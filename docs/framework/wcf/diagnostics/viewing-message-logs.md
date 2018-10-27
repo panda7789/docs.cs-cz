@@ -2,12 +2,12 @@
 title: Prohlížení protokolů zpráv
 ms.date: 03/30/2017
 ms.assetid: 3012fa13-f650-45fb-aaea-c5cca8c7d372
-ms.openlocfilehash: 025d4020002a56deb9d5b8a2fe628f50cabad4d3
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 5d007efc9667ee5380b69349d6a960554ab0d4fe
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42912085"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50047498"
 ---
 # <a name="viewing-message-logs"></a>Prohlížení protokolů zpráv
 Toto téma popisuje, jak můžete zobrazit protokoly zpráv.  
@@ -33,7 +33,7 @@ Toto téma popisuje, jak můžete zobrazit protokoly zpráv.
   
 -   Pokud si musí zobrazit všechny tři protokoly v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) ve stejnou dobu, můžete upravit se službou Relay vytvoříte tak, že vytvoříte nový <xref:System.ServiceModel.Channels.Message> instance. Tato instance musí být kopie tělo z příchozí zprávy a navíc všechny hlavičky s výjimkou `ActivityId` a `Action` záhlaví. Následující příklad kódu ukazuje, jak to provést.  
   
-```  
+```csharp
 Message outgoingMessage = Message.CreateMessage(incomingMessage.Version, incomingMessage.Headers.Action, incomingMessage.GetReaderAtBodyContents());  
   
 for (int i = 0; i < incomingMessage.Headers.Count; i++)  

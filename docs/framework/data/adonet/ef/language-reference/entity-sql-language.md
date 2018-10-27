@@ -2,19 +2,19 @@
 title: Jazyk Entity SQL
 ms.date: 03/30/2017
 ms.assetid: 9e7d8837-28c5-429d-a824-7bafb59724cf
-ms.openlocfilehash: 1df5372bed2c4c4b026662e0d1912683dd8752e9
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: f12a20f85a0449778614d3098f69d3da90902c95
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509606"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50048436"
 ---
 # <a name="entity-sql-language"></a>Jazyk Entity SQL
 Entita SQL je nezávislý na úložišti dotazovací jazyk podobný SQL. Entita SQL vám umožní provádět dotazy na entity data, jako objekty nebo ve formě tabulky. Měli byste zvážit použití Entity SQL v následujících případech:  
   
 -   Pokud dotaz musí dynamicky zkonstruovat za běhu. V takovém případě byste měli také zvážit použití metody Tvůrce dotazů <xref:System.Data.Objects.ObjectQuery%601> místo vytváření Entity SQL řetězec za běhu dotazu.  
   
--   Pokud chcete definovat dotaz jako součást definice modelu. V datovém modelu se podporuje jenom Entity SQL. Další informace najdete v tématu [Element QueryView (MSL)](https://msdn.microsoft.com/library/f0426b34-45cb-4fd7-9777-e0570c5e0e80)  
+-   Pokud chcete definovat dotaz jako součást definice modelu. V datovém modelu se podporuje jenom Entity SQL. Další informace najdete v tématu [Element QueryView (MSL)](/ef/ef6/modeling/designer/advanced/edmx/msl-spec#queryview-element-msl)  
   
 -   Při použití zprostředkovatel EntityClient pro vrácení dat jen pro čtení entity jako s použitím sady řádků <xref:System.Data.EntityClient.EntityDataReader>. Další informace najdete v tématu [zprostředkovatel EntityClient pro Entity Framework](../../../../../../docs/framework/data/adonet/ef/entityclient-provider-for-the-entity-framework.md).  
   

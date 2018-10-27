@@ -5,12 +5,12 @@ author: rpetrusha
 ms.author: ronpet
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: f5fd156ba25352fb1f816349c5e130267f7da8c2
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: e4a4d58f154116974c7314e84f625b338cbfe204
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42925841"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50038302"
 ---
 # <a name="methods"></a>Metody #
 
@@ -114,7 +114,7 @@ Následující příklad definuje třídu (což je odkazový typ) s názvem `Sam
 <a name="byref"></a>
 ### <a name="passing-parameters-by-reference"></a>Předávání parametrů odkazem. ###
 
-Pokud chcete změnit hodnotu argumentu v metodě a chcete refect tuto změnu při vrátí řízení volající metodě předáte parametr odkazem. Parametr předávání pomocí odkazu, použijte [ `ref` ](language-reference/keywords/ref.md) nebo [ `out` ](language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také předat hodnotu s odkazem na vyhnout kopírování, ale stále zabránit změny pomocí [ `in` ](language-reference/keywords/in-parameter-modifier.md) – klíčové slovo.
+Předávání parametru podle odkazu, pokud chcete změňte hodnotu argumentu v metodě a chcete, aby odrážela tuto změnu, když ovládací prvek vrátí volajícímu metody. Parametr předávání pomocí odkazu, použijte [ `ref` ](language-reference/keywords/ref.md) nebo [ `out` ](language-reference/keywords/out-parameter-modifier.md) – klíčové slovo. Můžete také předat hodnotu s odkazem na vyhnout kopírování, ale stále zabránit změny pomocí [ `in` ](language-reference/keywords/in-parameter-modifier.md) – klíčové slovo.
 
 Následující příklad je stejný jako předchozímu, s tím rozdílem, hodnota je předán odkazem na `ModifyValue` metody. Při změně hodnoty parametru v `ModifyValue` metoda změnu v hodnotě se projeví, když ovládací prvek vrátí volajícímu.
 

@@ -5,12 +5,12 @@ description: Informace o instalaci rozhraní .NET Framework na Windows 8.1
 author: rlander
 ms.author: mairaw
 ms.date: 10/22/2017
-ms.openlocfilehash: a44471e16729468983b76febea7704bf2a0518ff
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b5bf27f0a709e43968fa5f1fdf9b8a17c5dd4ec2
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43526979"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452377"
 ---
 # <a name="install-the-net-framework-on-windows-81-and-windows-server-2012-r2"></a>Instalace rozhraní .NET Framework na Windows 8.1 a Windows Server 2012 R2
 
@@ -18,7 +18,7 @@ Rozhraní .NET Framework je nutná k provozování spoustu aplikací na Windows.
 
 ![Tuto aplikaci nelze spustit.](./media/this-application-could-not-be-started.png)
 
-Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) má nejnovější verzi. Se podporuje na Windows 8.1 a Windows Server 2012 R2 a je součástí [Windows 10. dubna 2018 Update](https://www.microsoft.com/software-download/windows10).
+Tyto pokyny vám pomůže nainstalovat rozhraní .NET Framework verze, které potřebujete. [Rozhraní .NET Framework 4.7.2](https://go.microsoft.com/fwlink/?LinkID=863255) má nejnovější verzi. Se podporuje na Windows 8.1 a Windows Server 2012 R2 a je součástí [Windows 10. října 2018 Update](https://support.microsoft.com/en-us/help/4028685/windows-10-get-the-update) a [Windows 10. dubna 2018 Update](https://www.microsoft.com/software-download/windows10).
 
 ## <a name="net-framework-472"></a>Rozhraní .NET framework 4.7.2
 

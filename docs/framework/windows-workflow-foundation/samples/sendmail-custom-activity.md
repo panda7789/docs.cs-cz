@@ -2,12 +2,12 @@
 title: Vlastní aktivita SendMail
 ms.date: 03/30/2017
 ms.assetid: 947a9ae6-379c-43a3-9cd5-87f573a5739f
-ms.openlocfilehash: f51914ae01ea680ae09be8080cce1aa866bd6ec7
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 4cd2ed8c80bd5ab4c4e784f4c5c86a58ecceda2f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845252"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181287"
 ---
 # <a name="sendmail-custom-activity"></a>Vlastní aktivita SendMail
 Tato ukázka předvádí, jak vytvořit vlastní aktivitu, která je odvozena z <xref:System.Activities.AsyncCodeActivity> k odesílání e-mailu pomocí protokolu SMTP pro použití v rámci aplikace pracovního postupu. Vlastní aktivita používá možnosti <xref:System.Net.Mail.SmtpClient> asynchronní odeslání e-mailu a odesílání e-mailu s ověřováním. Poskytuje také některé funkce koncových uživatelů, jako je režim, nahrazování tokenů, soubor šablony a testujte cestu pro přetažení.  
@@ -84,7 +84,7 @@ new SendMail
 ```  
   
 ### <a name="sending-mails-in-testing-mode"></a>Odesílání e-mailů při testování režimu  
- Tento fragment kódu ukazuje, jak nastavit vlastnosti testování dvě: nastavením `TestMailTo` pro všechny zprávy se odešlou do john.doe@contoso.con (bez ohledu na hodnoty Komu, kopie, skrytá). Nastavením TestDropPath se také zaznamená všechny odchozí e-mailů v zadané cestě. Tyto vlastnosti můžete nastavit samostatně (nesouvisí).  
+ Tento fragment kódu ukazuje, jak nastavit vlastnosti testování dvě: nastavením `TestMailTo` pro všechny zprávy se odešlou do `john.doe@contoso.con` (bez ohledu na hodnoty Komu, kopie, skrytá). Nastavením TestDropPath se také zaznamená všechny odchozí e-mailů v zadané cestě. Tyto vlastnosti můžete nastavit samostatně (nesouvisí).  
   
 ```  
 new SendMail  

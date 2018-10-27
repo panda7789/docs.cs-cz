@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 5b59e0bda45b0b45b49c22d49ec2556fbcfef75d
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2f3bf29b9b4d216483ea0c81cc787c80fc8b9e6f
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44221906"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453356"
 ---
 # <a name="globalization"></a>Globalizace
 Globalizace zahrnuje návrh a vývoj globalizovaných aplikace, která podporuje lokalizovaná uživatelská rozhraní a regionální data pro uživatele ve více jazykových verzích. Před zahájením fáze návrhu, byste měli určit jazykové verze, které bude aplikace podporovat. Přestože aplikace cílí na jednu kulturu nebo oblast jako výchozí, můžete navrhnout a napsat ji tak, aby ho snadno rozšířitelná na uživatele v jiné jazykové verze nebo regiony.  
@@ -116,7 +116,7 @@ Globalizace zahrnuje návrh a vývoj globalizovaných aplikace, která podporuje
   
  Porovnání rovnosti někdy zahrnují vyhledávání nebo porovnání podřetězců, namísto volání <xref:System.String.Equals%2A?displayProperty=nameWithType> metody. V některých případech můžete použít hledání dílčího řetězce k určení, zda tento dílčí řetězec rovná jinému řetězci. Pokud účel nejazykové, vyhledávání by měla být řádové, nikoli zohledňující jazykovou verzi.  
   
- Následující příklad ukazuje nebezpečí při nelingvistických dat vyhledávání zohledňující jazykovou verzi. `AccessesFileSystem` Metody slouží k zákazu přístupu k systému souborů pro identifikátory URI, který začíná pod řetězcem "FILE". Chcete-li to provést, provede porovnání zohledňující jazykovou verzi, velká a malá písmena začátku identifikátoru URI s řetězcem "FILE". Protože identifikátor URI, který má přístup k systému souborů může začínat znakem "souboru:" nebo "souboru:", je implicitní předpoklad, že "i" (U + 0069) je vždy malým ekvivalentem znaku "I" (U + 0049). Ale v turečtině a Ázerbájdžánština, velká písmena verzi "İ" je "i" (U + 0130). Kvůli této nesrovnalosti srovnání citlivé na jazykovou verzi umožňuje přístupu k systému souborů, když by mělo být zakázané.  
+ Následující příklad ukazuje nebezpečí při nelingvistických dat vyhledávání zohledňující jazykovou verzi. `AccessesFileSystem` Metody slouží k zákazu přístupu k systému souborů pro identifikátory URI, který začíná pod řetězcem "FILE". Chcete-li to provést, provede porovnání zohledňující jazykovou verzi, velká a malá písmena začátku identifikátoru URI s řetězcem "FILE". Protože identifikátor URI, který má přístup k systému souborů může začínat znakem "FILE:" nebo "souboru:", je implicitní předpoklad je, že "i" (U + 0069) je vždy malým ekvivalentem znaku "I" (U + 0049). Ale v turečtině a Ázerbájdžánština, velká písmena verzi "İ" je "i" (U + 0130). Kvůli této nesrovnalosti srovnání citlivé na jazykovou verzi umožňuje přístupu k systému souborů, když by mělo být zakázané.  
   
  [!code-csharp[Conceptual.Globalization#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/equals1.cs#12)]
  [!code-vb[Conceptual.Globalization#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/equals1.vb#12)]  

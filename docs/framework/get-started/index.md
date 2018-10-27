@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 99da0b0367270c4cea470a23ea97f0165a712a9b
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 6d241f0f0c10be4a73c7ac55930e5dd24ef0b1e2
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349066"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453132"
 ---
 # <a name="get-started-with-the-net-framework"></a>Začínáme s rozhraním .NET Framework
 
@@ -89,7 +89,7 @@ Další informace o vývoji aplikací určených pro rozhraní .NET Framework, n
 
 ## <a name="see-also"></a>Viz také:
 
-[.NET framework – Průvodce](../../../docs/framework/index.md)   
-[Co je nového](../../../docs/framework/whats-new/index.md)   
-[Prohlížeč rozhraní API .NET](/dotnet/api/)   
-[Průvodce vývojem](../../../docs/framework/development-guide.md)
+- [Průvodce rozhraním .NET Framework](../../../docs/framework/index.md)   
+- [Co je nového](../../../docs/framework/whats-new/index.md)   
+- [Prohlížeč rozhraní API .NET](/dotnet/api/)   
+- [Průvodce vývojem](../../../docs/framework/development-guide.md)

@@ -3,12 +3,12 @@ title: Dynamické určování filtrů predikátů při běhu (LINQ v JAZYKU C#)
 description: Zjistěte, jak dynamické určování filtrů predikátů při běhu pomocí jazyka LINQ v jazyce C#.
 ms.date: 12/1/2016
 ms.assetid: 90238470-0767-497c-916c-52d0d16845e0
-ms.openlocfilehash: 6798b80d482bd6ae2133c0bf861f30c43f6738b1
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: ece5940edd615f30acab06a429de300e27811a66
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43512573"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50038484"
 ---
 # <a name="dynamically-specify-predicate-filters-at-runtime"></a>Dynamické určování filtrů predikátů při běhu
 
@@ -44,7 +44,7 @@ V některých případech neznáte až do běhu je nutné použít na zdrojové 
 
 8. Dalším krokem je spusťte projekt znovu, tentokrát pomocí vstup zadaný v době běhu místo pole `ids`. Změna `QueryByID(ids)` k `QueryByID(args)` v `Main` metody.
 
-9. Spustit projekt s argumenty příkazového řádku `122 117 120 115`. Při spuštění projektu, budou tyto hodnoty prvků `args`, parametr `Main` metoda...
+9. Spustit projekt s argumenty příkazového řádku `122 117 120 115`. Při spuštění projektu, budou tyto hodnoty prvků `args`, parametr `Main` metody.
 
 10. V okně konzoly se zobrazí následující výstup:
 

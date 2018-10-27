@@ -2,12 +2,12 @@
 title: Hello World se směrovací službou
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: 52b5c3b167cbbfb032d8e6104a118c5c9384938e
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 25d0ce0663b60410912be94780fe8e89f6bf0d39
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845772"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182539"
 ---
 # <a name="hello-world-with-the-routing-service"></a>Hello World se směrovací službou
 Tato ukázka předvádí, směrovací služba Windows Communication Foundation (WCF). Směrovací služba je komponenta WCF, která umožňuje snadno do aplikace zahrnout směrovač založené na obsahu. Tato ukázka se přizpůsobí standardní kalkulačky Ukázky WCF na komunikaci pomocí služby směrování. V této ukázce je Kalkulačka klient nakonfigurovaný pro odesílání zpráv do koncového bodu určeného směrovače. Směrovací služba je nakonfigurována tak, aby přijímal všechny zprávy odeslané do ní a předávají do koncového bodu, který odpovídá službu kalkulačky. Proto jsou zpráv odeslaných z klienta přijatých směrovač a přesměrovala do aktuální Kalkulačka služby. Zprávy ze služby Kalkulačka odesílají zpět do směrovač, který je zase předá zpět do klienta kalkulačky.
@@ -29,13 +29,15 @@ Tato ukázka předvádí, směrovací služba Windows Communication Foundation (
 
      Byste měli vidět následující výstup:
 
+    ```console
      Add(100,15.99) = 115.99
 
-     SUBTRACT(145,76.54) = 68.46
+     Subtract(145,76.54) = 68.46
 
-     MULTIPLY(9,81.25) = 731.25
+     Multiply(9,81.25) = 731.25
 
      Divide(22,7) = 3.14285714285714
+    ```
 
 ## <a name="configurable-via-code-or-appconfig"></a>Konfigurovat pomocí kódu nebo souboru App.Config
  Ukázka lodí umožňují definovat chování ve směrovači použít soubor App.config. Můžete také změnit název souboru App.config na něco jiného, tak, aby nebyl rozpoznán a zrušte komentář u volání metod, které ConfigureRouterViaCode(). Některé z metod má za následek stejné chování směrovače.

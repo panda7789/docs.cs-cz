@@ -5,13 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
-author: BrucePerlerMS
-ms.openlocfilehash: c24ced1a3f19297f06404403f1196b8a9139a919
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: dbfcd7ea7b8422c79274e7bc65929080da6f11af
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48837840"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180482"
 ---
 # <a name="message-security-with-a-windows-client"></a>Zabezpečení zprávy s klientem Windows
 Tento scénář popisuje Windows Communication Foundation (WCF) klientem a serverem zabezpečené pomocí režim zabezpečených zpráv. Klient a služba ověření pomocí přihlašovacích údajů Windows.  

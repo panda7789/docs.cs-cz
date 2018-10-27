@@ -2,19 +2,19 @@
 title: ServiceToEndpointAssociation
 ms.date: 03/30/2017
 ms.assetid: 03c3cd15-e1b2-4dc2-bdc2-59fdccdae110
-ms.openlocfilehash: b1e5b87b053e947432cba9f6e716f7d1ea8f013f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3d23a3ee10c47e04ea7bdba202ea5063c0d84fac
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33484326"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452706"
 ---
 # <a name="servicetoendpointassociation"></a>ServiceToEndpointAssociation
-Mapuje na koncový bod služby.  
+Služba se mapuje na koncový bod.  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class ServiceToEndpointAssociation  
 {  
   Service ref;  
@@ -29,23 +29,23 @@ class ServiceToEndpointAssociation
  Třída ServiceToEndpointAssociation má následující vlastnosti:  
   
 ### <a name="ref"></a>ref  
- Datový typ: služby  
+ Datový typ: Služba  
   
  Přístup k typu: jen pro čtení  
 Kvalifikátory: klíč  
   
- Služba přiřazené ke koncovému bodu.  
+ Služba spojená s koncovým bodem.  
   
 ### <a name="ref"></a>ref  
- Datový typ: koncový bod  
+ Datový typ: koncového bodu  
   
  Přístup k typu: jen pro čtení  
 Kvalifikátory: klíč  
   
- Koncový bod spojené s touto službou.  
+ Koncový bod, související se službou.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|

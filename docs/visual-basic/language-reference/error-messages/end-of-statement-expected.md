@@ -7,25 +7,25 @@ f1_keywords:
 helpviewer_keywords:
 - BC30205
 ms.assetid: 53c7f825-a737-4b76-a1fa-f67745b8bd40
-ms.openlocfilehash: 7b91d13cbcb9d211d4ca18c8e48c7494bf6eccc6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8df756009ebe3a0613ec47018d938151829214df
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33588077"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50039020"
 ---
 # <a name="end-of-statement-expected"></a>Byl očekáván konec příkazu.
-Příkaz je syntakticky dokončení, ale další programovací element odpovídá elementu, který dokončí příkaz. Na konci každé příkaz vyžádáním ukončení řádku.
+Příkaz je syntakticky úplný, ale další programovací element dodržovat elementu, který příkaz se dokončí. Vyžaduje na konci každý příkaz se znakem ukončení řádku.
   
- Ukončení řádku rozděluje znaky jazyka Visual Basic zdrojového souboru do řádky. Příkladem konců řádku jsou kódování Unicode znaků CR návratový znak (& HD) kódování Unicode konce řádku znak (& HA), a znak Unicode vrátí znak, za nímž následuje znak Unicode konce řádku. Další informace o konců řádku najdete v tématu [specifikace jazyka Visual Basic](../../../visual-basic/reference/language-specification/index.md).
+ Ukončení řádku rozdělí řádky znaků zdrojový soubor jazyka Visual Basic. Příkladem řádku jsou kódování Unicode návrat na začátek řádku návratový znak (& HD, High Density), Unicode odřádkování znak (& HA), a Unicode návrat znak následovaný znak odřádkování Unicode. Další informace o řádku, najdete v článku [specifikace jazyka Visual Basic](~/_vblang/spec/lexical-grammar.md#line-terminators).
   
  **ID chyby:** BC30205
   
 ## <a name="to-correct-this-error"></a>Oprava této chyby
   
-1.  Zkontrolujte, pokud dva různé příkazy nechtěně byly uvedeny na stejném řádku.
+1.  Zaškrtněte, pokud chcete zobrazit, pokud dva různé příkazy neúmyslně byly uvedeny na stejném řádku.
   
-2.  Po elementu, který dokončí příkaz INSERT a ukončení řádku.
+2.  Vložte a znak ukončení řádku za prvkem, který se příkaz dokončí.
   
 ## <a name="see-also"></a>Viz také  
  [Postupy: Přerušení a kombinace příkazů v kódu](../../../visual-basic/programming-guide/program-structure/how-to-break-and-combine-statements-in-code.md)  

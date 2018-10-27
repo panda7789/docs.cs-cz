@@ -3,12 +3,12 @@ title: 'Postupy: Změna obsahu řetězce – průvodce v C#'
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 23d52a52291b3d5c36fc2ed0f299ab82aa5ffabd
-ms.sourcegitcommit: 4b6490b2529707627ad77c3a43fbe64120397175
+ms.openlocfilehash: 349269f8158f7d4db5e2058791087a258f504460
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/10/2018
-ms.locfileid: "44260175"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453434"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Postupy: Změna obsahu řetězce v jazyce C\#
 

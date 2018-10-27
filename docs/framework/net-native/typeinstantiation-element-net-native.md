@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: a5eada64-075b-4162-9655-ded84e4681f2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: a9fefa302a269e08300f0393434b66ca8738a27b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 5277b056c11de4c3e32d33c72bafc8f64ee17d05
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43777779"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50033862"
 ---
 # <a name="lttypeinstantiationgt-element-net-native"></a>Element &lt;TypeInstantiation&gt; (.NET Native)
 Platí pro Konstruovaný obecný typ zásady reflexe modulu runtime.  
@@ -99,7 +99,7 @@ Platí pro Konstruovaný obecný typ zásady reflexe modulu runtime.
  Pokud `<TypeInstantiation>` element je podřízeným [ \<sestavení >](../../../docs/framework/net-native/assembly-element-net-native.md), [ \<Namespace >](../../../docs/framework/net-native/namespace-element-net-native.md), nebo [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md), elementu přepíše nastavení zásad, které jsou definované v nadřazeném prvku. Pokud [ \<typ >](../../../docs/framework/net-native/type-element-net-native.md) element definuje odpovídající definici obecného typu, `<TypeInstantiation>` přepisuje zásady reflexe modulu runtime pouze pro konkretizací zadané Konstruovaný obecný typ elementu.  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá reflexi k načtení definice obecného typu z vytvořeného <xref:System.Collections.Generic.Dictionary%602> objektu. Také používá reflexi pro zobrazení informací o <xref:System.Type> objekty, které představují sestavené obecné typy a definice obecného typu. Proměnná `b` v tomto příkladu je [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) ovládacího prvku.  
+ Následující příklad používá reflexi k načtení definice obecného typu z vytvořeného <xref:System.Collections.Generic.Dictionary%602> objektu. Také používá reflexi pro zobrazení informací o <xref:System.Type> objekty, které představují sestavené obecné typy a definice obecného typu. Proměnná `b` v tomto příkladu je <xref:Windows.UI.Xaml.Controls.TextBlock> ovládacího prvku.  
   
  [!code-csharp[ProjectN_Reflection#2](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/makegenerictype1.cs#2)]  
   

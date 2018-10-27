@@ -1,34 +1,35 @@
 ---
-title: Příkazy výběru (Referenční dokumentace jazyka C#)
+title: Příkazy výběru (C# odkaz)
 ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [C#], selection
 ms.assetid: cf21cfa2-34fb-48b0-9cbc-8bb4537a9a05
-ms.openlocfilehash: da3132a82e2cb0b3aaa55fbe82898414ebd31c12
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: b4575884acc63489f3e40bd040257a9c6bca5df9
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48026302"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181410"
 ---
-# <a name="selection-statements-c-reference"></a>Příkazy výběru (Referenční dokumentace jazyka C#)
-Výběr příkazu způsobí, že řízení programu, který má být převedena do určitého toku na základě Určuje, zda je podmínka `true` nebo ne.  
-  
- Následující klíčová slova se používají v příkazech výběr:  
-  
--   [if](../../../csharp/language-reference/keywords/if-else.md)  
-  
--   [else](../../../csharp/language-reference/keywords/if-else.md)  
-  
--   [switch](../../../csharp/language-reference/keywords/switch.md)  
-  
--   [případ](../../../csharp/language-reference/keywords/switch.md)  
-  
--   [default](../../../csharp/language-reference/keywords/switch.md)  
+# <a name="selection-statements-c-reference"></a>Příkazy výběru (C# odkaz)
 
-## <a name="see-also"></a>Viz také
+Výběr příkazu způsobí, že řízení programu, který má být převedena do určitého toku na základě Určuje, zda je podmínka `true` nebo ne.
 
-- [Referenční dokumentace jazyka C#](../../../csharp/language-reference/index.md)  
-- [Průvodce programováním v jazyce C#](../../../csharp/programming-guide/index.md)  
-- [Klíčová slova jazyka C#](../../../csharp/language-reference/keywords/index.md)  
-- [Klíčová slova příkazů](../../../csharp/language-reference/keywords/statement-keywords.md)
+Následující klíčová slova se používají v příkazech výběr:
+
+- [if](if-else.md)
+
+- [else](if-else.md)
+
+- [switch](switch.md)
+
+- [case](switch.md)
+
+- [default](switch.md)
+
+## <a name="see-also"></a>Viz také:
+
+- [Referenční dokumentace jazyka C#](../index.md)
+- [Průvodce programováním v jazyce C#](../../programming-guide/index.md)
+- [Klíčová slova jazyka C#](index.md)
+- [Klíčová slova příkazů](statement-keywords.md)

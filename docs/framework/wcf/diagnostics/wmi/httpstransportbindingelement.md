@@ -2,19 +2,19 @@
 title: HttpsTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: e78aa8c6-b53b-4105-a900-d3e7a39670f2
-ms.openlocfilehash: df640202e6702ea8406daa6b1a23bc6feb30229e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6883bab2ed293541d79ac8c5045b0a1853b36e29
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486769"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50032512"
 ---
 # <a name="httpstransportbindingelement"></a>HttpsTransportBindingElement
 HttpsTransportBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp  
 class HttpsTransportBindingElement : HttpTransportBindingElement  
 {  
   boolean RequireClientCertificate;  
@@ -27,16 +27,16 @@ class HttpsTransportBindingElement : HttpTransportBindingElement
 ## <a name="properties"></a>Vlastnosti  
  Třída HttpsTransportBindingElement má následující vlastnost:  
   
-### <a name="requireclientcertificate"></a>RequireClientCertificate  
- Datový typ: logická hodnota  
+### <a name="requireclientcertificate"></a>requireClientCertificate  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která určuje, zda je vyžadováno ověření klienta protokolem SSL.  
+ Hodnota, která určuje, zda je požadováno ověření klienta SSL.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

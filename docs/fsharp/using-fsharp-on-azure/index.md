@@ -3,12 +3,12 @@ title: Použití jazyka F# v Azure
 description: 'Příručka k používání služeb Azure s jazykem F #'
 author: sylvanc
 ms.date: 09/22/2016
-ms.openlocfilehash: b0efa919e846086e2dee131fb5791abc409b5bcb
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 96dec342379b06e997107cc5d6cc05e9fc737452
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48033542"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50033956"
 ---
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 
@@ -23,7 +23,7 @@ V následujících částech najdete prostředky, jak používat škálu služeb
 
 Azure podporuje širokou škálu konfigurací virtuálních počítačů (VM) naleznete v tématu [virtuální počítače Azure s Linuxem a](https://azure.microsoft.com/services/virtual-machines/).
 
-K instalaci F # na virtuální počítač pro spuštění, kompilace a/nebo skriptování viz [pomocí F # v Linuxu](http://fsharp.org/use/linux) a [pomocí F # ve Windows](http://fsharp.org/use/windows).
+K instalaci F # na virtuální počítač pro spuštění, kompilace a/nebo skriptování viz [pomocí F # v Linuxu](https://fsharp.org/use/linux) a [pomocí F # ve Windows](https://fsharp.org/use/windows).
 
 
 ## <a name="using-azure-functions-with-f"></a>Pomocí Azure Functions s jazykem F # #

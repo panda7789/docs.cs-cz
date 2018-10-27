@@ -2,19 +2,19 @@
 title: Služba
 ms.date: 03/30/2017
 ms.assetid: 999806e1-6376-409e-b998-b0af391adfe7
-ms.openlocfilehash: 0cfeb178e26f6c93e29210accf5d7866cc1fca02
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c59672b3b7617d9c28d99f7d534b6e7f2f2e9fbb
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487144"
+ms.lasthandoff: 10/22/2018
+ms.locfileid: "49633940"
 ---
 # <a name="service"></a>Služba
 Služba  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class Service  
 {  
   string BaseAddresses[];  
@@ -33,10 +33,10 @@ class Service
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída služby nedefinuje žádné metody.  
+ Třídu služby nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída služby má následující vlastnosti:  
+ Třídu služby má následující vlastnosti:  
   
 ### <a name="baseaddresses"></a>BaseAddresses  
  Datový typ: pole řetězců  
@@ -64,7 +64,7 @@ class Service
   
  Přístup k typu: jen pro čtení  
   
- Název instance instance čítače výkonu služby.  
+ Instanci název instance čítače výkonu služby.  
   
 ### <a name="distinguishedname"></a>DistinguishedName  
  Datový typ: řetězec  
@@ -85,7 +85,7 @@ class Service
   
  Přístup k typu: jen pro čtení  
   
- Nastavení služby metadat.  
+ Nastavení metadat služby.  
   
 ### <a name="name"></a>Název  
  Datový typ: řetězec  
@@ -102,7 +102,7 @@ class Service
  Obor názvů služby.  
   
 ### <a name="opened"></a>Otevřít  
- Datový typ: data a času  
+ Datový typ: datum a čas  
   
  Přístup k typu: jen pro čtení  
   
@@ -120,10 +120,10 @@ class Service
   
  Přístup k typu: jen pro čtení  
   
- Id procesu procesu, který je hostitelem služby.  
+ Proces id procesu, který je hostitelem služby.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|

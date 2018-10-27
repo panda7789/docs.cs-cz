@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 125aab04b5b323855e44c02e0c576b99618d70df
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 940bd8b7fe0be79ea6448b1eab69359bdb92fdc9
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873606"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "49480041"
 ---
 # <a name="64-bit-applications"></a>64bitové aplikace
 Když kompilujete aplikace, můžete určit, že se má spustit v operačním systému Windows 64-bit buď jako nativní aplikaci nebo v modulu WOW64 (Windows 32-bit na Windows 64-bit). Subsystém WOW64 je prostředí kompatibility, která umožňuje 32-bit aplikaci pro spuštění v 64bitovém systému. Subsystém WOW64 je součástí všech 64bitové verze operačního systému Windows.  
@@ -58,7 +58,7 @@ Když kompilujete aplikace, můžete určit, že se má spustit v operačním sy
 |--------------|---------------------|  
 |Visual Basic|[/ Platform (Visual Basic)](~/docs/visual-basic/reference/command-line-compiler/platform.md)|  
 |Visual C#|[/ Platform (možnosti kompilátoru C#)](~/docs/csharp/language-reference/compiler-options/platform-compiler-option.md)|  
-|Visual C++|Můžete vytvořit více platforem, aplikace Microsoft intermediate language (MSIL) s použitím **/CLR: safe**. Další informace najdete v tématu [/CLR (kompilace Common Language Runtime)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Visual C++ obsahuje samostatný kompilátor pro jednotlivé operační systémy 64-bit. Další informace o tom, jak používat Visual C++ vytvářet nativní aplikace, které běží v operačním systému Windows 64-bit, naleznete v tématu [64bitové programování](https://msdn.microsoft.com/library/h2k70f3s\(v=vs.80\)).|  
+|Visual C++|Můžete vytvořit více platforem, aplikace Microsoft intermediate language (MSIL) s použitím **/CLR: safe**. Další informace najdete v tématu [/CLR (kompilace Common Language Runtime)](/cpp/build/reference/clr-common-language-runtime-compilation).<br /><br /> Visual C++ obsahuje samostatný kompilátor pro jednotlivé operační systémy 64-bit. Další informace o tom, jak používat Visual C++ vytvářet nativní aplikace, které běží v operačním systému Windows 64-bit, naleznete v tématu [64bitové programování](/cpp/build/configuring-programs-for-64-bit-visual-cpp).|  
   
 ## <a name="determining-the-status-of-an-exe-file-or-dll-file"></a>Určení stavu souboru EXE nebo DLL  
  Chcete-li zjistit, zda souboru .exe nebo .dll soubor je určen ke spouštění jenom na konkrétní platformě nebo v modulu WOW64, použijte [CorFlags.exe (corflags – převodní nástroj)](../../docs/framework/tools/corflags-exe-corflags-conversion-tool.md) bez parametrů. CorFlags.exe můžete také použít ke změně stavu platformy souboru .exe nebo .dll soubor. Záhlaví modulu CLR sestavení sady Visual Studio obsahuje verzi modulu runtime hlavní číslo nastavená na hodnotu 2 a dílčí modul runtime verze číslo nastavené na 5. Aplikace, které mají dílčí modul runtime verze nastavena na hodnotu 0 jsou považovány za starší verze aplikací a jsou vždy spouštěny v modulu WOW64.  

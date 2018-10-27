@@ -1,71 +1,69 @@
 ---
-title: 'Klienta: Objekty pro vytváření kanálů a kanály'
+title: 'Klient: Objekty pro vytváření kanálů a kanály'
 ms.date: 03/30/2017
 ms.assetid: ef245191-fdab-4468-a0da-7c6f25d2110f
-ms.openlocfilehash: a42042eaf9a8bc5461f680e3cf8dc5fcc78cebb5
-ms.sourcegitcommit: b7763f3435635850a76d4cbcf09bdce6c019208a
+ms.openlocfilehash: 3f045f56f7b73c5416e7a21a3afde29d22212d68
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/25/2018
-ms.locfileid: "34483551"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182434"
 ---
-# <a name="client-channel-factories-and-channels"></a>Klienta: Objekty pro vytváření kanálů a kanály
-Toto téma popisuje vytvářet objekty pro vytváření kanálů a kanály.  
+# <a name="client-channel-factories-and-channels"></a>Klient: Objekty pro vytváření kanálů a kanály
+Toto téma popisuje vytvoření vytvoření objektů pro vytváření kanálů a kanály.  
   
 ## <a name="channel-factories-and-channels"></a>Objekty pro vytváření kanálů a kanály  
- Objekty Factory kanál jsou zodpovědní za vytváření kanálů. Kanály vytvořený kanál objekty Factory se používají pro odesílání zpráv. Tyto kanály jsou zodpovědní za načtení zprávy z vrstvy výše, provádění, ať zpracování je nezbytné, pak odeslání zprávy do vrstvy níže. Tento proces je znázorněný na následujícím obrázku.  
+ Objekty pro vytváření kanálů zodpovídají za vytváření kanálů. Kanály vytvořené objekty pro vytváření kanálů se používají pro zasílání zpráv. Tyto kanály jsou zodpovědné za z vrstvy výše se zobrazuje zpráva, provádění jakékoli zpracování je nezbytné pak posílání zprávy na vrstvě níže. Tento proces je znázorněný následujícím obrázku.  
   
- ![Objekty Factory klienta a kanály](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure2highlevelfactgoriesc.gif "wcfc_WCFChannelsigure2HIghLevelFactgoriesc")  
-Postup kanálu vytvoří kanály.  
+ ![Klientské objekty pro vytváření a kanály](../../../../docs/framework/wcf/extending/media/wcfc-wcfchannelsigure2highlevelfactgoriesc.gif "wcfc_WCFChannelsigure2HIghLevelFactgoriesc")  
+Vytvoří objekt pro vytváření kanálů kanály.  
   
- Při zavření, objekty Factory kanál jsou zodpovědní za zavřením žádné kanály, které se vytvářely, které nejsou dosud zavřena. Všimněte si, že model asymetrické zde vzhledem k tomu, že při zavření naslouchací proces kanálu pouze zastaví přijetí nové kanály, ale nechá, které existující kanály otevřete tak, aby může i dál přijímání zpráv.  
+ Při zavření, objekty pro vytváření kanálů zodpovídají za zavření všechny kanály, které vytvořili, které ještě nebyly uzavřeny. Upozorňujeme, že model asymetrického zde protože při zavření kanálu naslouchacího procesu se jenom zastaví přijímání nových kanálů, ale ponechá stávajících prodejních kanálů otevřít tak, aby může i dál příjem zpráv.  
   
- WCF poskytuje pomocné rutiny základní třídy pro tento proces. (Diagram kanál pomocných tříd, popsané v tomto tématu, najdete v části [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md).)  
+ WCF poskytuje pomocné rutiny základní třídy pro tento proces. (Diagram tříd pomocných rutin kanál popsané v tomto tématu, naleznete v tématu [přehled modelu kanálu](../../../../docs/framework/wcf/extending/channel-model-overview.md).)  
   
--   <xref:System.ServiceModel.Channels.CommunicationObject> Třída implementuje <xref:System.ServiceModel.ICommunicationObject> a vynucuje stav stavového stroje popsané v kroku 2 [rozvojových kanály](../../../../docs/framework/wcf/extending/developing-channels.md).  
+-   <xref:System.ServiceModel.Channels.CommunicationObject> Implementuje třída <xref:System.ServiceModel.ICommunicationObject> a vynucuje stavového stroje popsaný v kroku 2 z [vývoj kanálů](../../../../docs/framework/wcf/extending/developing-channels.md).  
   
--   <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída implementuje <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotnou základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.ChannelListenerBase?displayProperty=nameWithType>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třída pracuje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídu, která implementuje <xref:System.ServiceModel.Channels.IChannel>.
+-   <xref:System.ServiceModel.Channels.ChannelManagerBase> Implementuje třída <xref:System.ServiceModel.Channels.CommunicationObject> a poskytuje jednotné základní třídu pro <xref:System.ServiceModel.Channels.ChannelFactoryBase?displayProperty=nameWithType> a <xref:System.ServiceModel.Channels.ChannelListenerBase?displayProperty=nameWithType>. <xref:System.ServiceModel.Channels.ChannelManagerBase> Třídy funguje ve spojení s <xref:System.ServiceModel.Channels.ChannelBase>, což je základní třídy, která implementuje <xref:System.ServiceModel.Channels.IChannel>.
   
--   <xref:System.ServiceModel.Channels.ChannelFactoryBase> Třída implementuje <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a dojde ke konsolidaci `CreateChannel` přetížení do jednoho `OnCreateChannel` abstraktní metodu.
+-   <xref:System.ServiceModel.Channels.ChannelFactoryBase> Implementuje třída <xref:System.ServiceModel.Channels.ChannelManagerBase> a <xref:System.ServiceModel.Channels.IChannelFactory> a slučuje `CreateChannel` přetížení do jedné `OnCreateChannel` abstraktní metody.
   
--   <xref:System.ServiceModel.Channels.ChannelListenerBase> Třída implementuje <xref:System.ServiceModel.Channels.IChannelListener>. Se má na starosti správu základních stavu. 
+-   <xref:System.ServiceModel.Channels.ChannelListenerBase> Implementuje třída <xref:System.ServiceModel.Channels.IChannelListener>. Postará se o správu základního stavu. 
   
- Podle následující diskuzi [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) ukázka.  
+ Podle následující diskuse [přenosu: UDP](../../../../docs/framework/wcf/samples/transport-udp.md) vzorku.  
   
-### <a name="creating-a-channel-factory"></a>Vytvoření postupu kanálu  
- `UdpChannelFactory` Je odvozena z <xref:System.ServiceModel.Channels.ChannelFactoryBase>. Ukázka přepsání <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> k poskytování přístupu k zpráva verzi kodér zpráv. Ukázka také přepsání <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A> přerušit naše instanci <xref:System.ServiceModel.Channels.BufferManager> když přejde stav stavového stroje.  
+### <a name="creating-a-channel-factory"></a>Vytvoření objektu pro vytváření kanálů  
+ `UdpChannelFactory` Je odvozena z <xref:System.ServiceModel.Channels.ChannelFactoryBase>. Ukázka přepíše <xref:System.ServiceModel.Channels.ChannelFactoryBase.GetProperty%2A> pro poskytnutí přístupu k verze kodér zprávy. Ukázka také přepisuje <xref:System.ServiceModel.Channels.ChannelFactoryBase.OnClose%2A> k dovolí naše instanci <xref:System.ServiceModel.Channels.BufferManager> když změní stav stavového stroje.  
   
 #### <a name="the-udp-output-channel"></a>Výstupní kanál UDP  
- `UdpOutputChannel` Implementuje <xref:System.ServiceModel.Channels.IOutputChannel>. Ověří argumenty konstruktoru a vytvoří cíl <xref:System.Net.EndPoint> na základě objektu <xref:System.ServiceModel.EndpointAddress> , je předaná.  
+ `UdpOutputChannel` Implementuje <xref:System.ServiceModel.Channels.IOutputChannel>. Konstruktor ověří argumenty a vytvoří cíl <xref:System.Net.EndPoint> objektu na základě <xref:System.ServiceModel.EndpointAddress> , který je předán.  
   
- Přepsané <xref:System.ServiceModel.Channels.CommunicationObject.OnOpen%2A> vytvoří soketu, který se používá k odeslání zprávy do tohoto <xref:System.Net.EndPoint>.  
+ Přepsané <xref:System.ServiceModel.Channels.CommunicationObject.OnOpen%2A> vytvoří soket, který se používá k odesílání zpráv do to <xref:System.Net.EndPoint>.  
   
- `this.socket = new Socket(`  
-  
- `this.remoteEndPoint.AddressFamily,`  
-  
- `SocketType.Dgram,`  
-  
- `ProtocolType.Udp`  
-  
- `);`  
-  
- Kanál je možné uzavřít řádně nebo ungracefully. Pokud je kanál řádně uzavřen soketu se zavře a je volána v základní třídě `OnClose` metoda. Pokud to vyvolá výjimku, zavolá infrastruktury `Abort` zajistit kanál je vyčištěna.  
-  
+ ```csharp 
+this.socket = new Socket(  
+this.remoteEndPoint.AddressFamily,
+   SocketType.Dgram,
+   ProtocolType.Udp
+);  
 ```  
+
+ Kanál můžete zavřít, bez výpadku nebo ungracefully. Pokud kanál je uzavřen řádně soketu se zavře a základní třídy je provedeno volání `OnClose` metoda. Pokud to vyvolá výjimku, zavolá infrastruktury `Abort` zajistit kanál je vyčištěn.  
+  
+```csharp  
 this.socket.Close();  
 base.OnClose(timeout);  
 ```  
   
- Implementace `Send()` a `BeginSend()` / `EndSend()`. To rozdělí na dvě hlavní části. Nejprve serializovat zprávy do bajtového pole:  
+ Implementace `Send()` a `BeginSend()` / `EndSend()`. Tím je prolomen na dvě hlavní části. Nejprve serializovat zprávu do bajtového pole:  
   
-```  
+```csharp  
 ArraySegment<byte> messageBuffer = EncodeMessage(message);  
 ```  
   
- Potom odešlete Výsledná data v drátové síti:  
+ Odešlete na lince Výsledná data:  
   
-```  
+```csharp  
 this.socket.SendTo(  
   messageBuffer.Array,   
   messageBuffer.Offset,   

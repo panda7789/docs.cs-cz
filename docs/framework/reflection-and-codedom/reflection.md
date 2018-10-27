@@ -23,15 +23,15 @@ helpviewer_keywords:
 ms.assetid: d1a58e7f-fb39-4d50-bf84-e3b8f9bf9775
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6a03e6760fbb233c656909fb99b48a84bddedef8
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 24112edc3ac28124953974463233800c51da5cfc
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43509019"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453080"
 ---
 # <a name="reflection-in-the-net-framework"></a>Reflexe v rozhraní .NET Framework
-Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načtených [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) a typy definované v nich, jako například [třídy](https://msdn.microsoft.com/library/ad7d3561-271e-4546-82fc-e00b059f27a9), [rozhraní](https://msdn.microsoft.com/library/fd9d5975-5363-4bc9-b883-609f887895e5), a [typů hodnot](https://msdn.microsoft.com/library/c9c567f8-8ab1-4d88-834d-00f7d92418de). Reflexe můžete také použít k vytvoření instance typu v době běhu a k vyvolání a přistupovat k nim. Témata týkající se konkrétní aspekty reflexe, naleznete v tématu [související témata](#related_topics) na konci tohoto přehledu.  
+Třídy v <xref:System.Reflection> obor názvů, společně s <xref:System.Type?displayProperty=nameWithType>, vám umožní získat informace o načtených [sestavení](../../../docs/framework/app-domains/assemblies-in-the-common-language-runtime.md) a typy definované v nich, jako například [třídy](../../../docs/standard/base-types/common-type-system.md#classes), [rozhraní](../../../docs/standard/base-types/common-type-system.md#interfaces), a [typů hodnot](https://msdn.microsoft.com/library/c9c567f8-8ab1-4d88-834d-00f7d92418de). Reflexe můžete také použít k vytvoření instance typu v době běhu a k vyvolání a přistupovat k nim. Témata týkající se konkrétní aspekty reflexe, naleznete v tématu [související témata](#related_topics) na konci tohoto přehledu.  
   
  [Společného jazykového modulu runtime](../../../docs/standard/clr.md) zavaděč spravuje [aplikačních doménách](../../../docs/framework/app-domains/application-domains.md), které tvoří definované hranice kolem objektů, které mají stejné oboru aplikace. Tato správa zahrnuje načítání každé sestavení do domény příslušné aplikace a řízení rozložení paměti hierarchie typů v rámci každého sestavení.  
   

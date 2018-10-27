@@ -2,19 +2,19 @@
 title: ConcurrencyMode Reentrant
 ms.date: 03/30/2017
 ms.assetid: b2046c38-53d8-4a6c-a084-d6c7091d92b1
-ms.openlocfilehash: c5fa690ca3b8ffe14eb9f19f0bb096b867ab992f
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 94ea62d18fec202a099c2797602224eab43299b4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43740526"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50034125"
 ---
 # <a name="concurrencymode-reentrant"></a>ConcurrencyMode Reentrant
 Tento příklad znázorňuje nutnost a důsledky použití ConcurrencyMode.Reentrant na implementaci služby. ConcurrencyMode.Reentrant znamená, že služba (nebo zpětného volání) zpracovává pouze jednu zprávu v daném okamžiku (obdobná `ConcurencyMode.Single`). K zajištění bezpečnosti vlákna, uzamkne Windows Communication Foundation (WCF) `InstanceContext` zpracovává zprávu tak, aby zpracovat žádné další zprávy. V případě vícenásobné režim `InstanceContext` odemknut těsně před plánovaným začátkem služby umožňuje odchozí volání a tím umožní následných volání (může to být vícenásobné, jak je uvedeno v ukázce) se získat zámek příště je k dispozici ve službě. Abychom si předvedli chování, tato ukázka vysvětluje, jak může klient a služba odesílání zpráv mezi sebou pomocí duplexního kontraktu.  
   
  Duplexní kontrakt s je kontrakt definovaný `Ping` implementování službou a metoda zpětného volání metody `Pong` implementování klientem. Klient vyvolá serveru `Ping` metodu s čárka počítat, a tím inicializace volání. Služba zkontroluje, zda počet impulsů není roven 0 a poté vyvolá tak potřebná zpětná volání `Pong` metoda při dekrementace počtu impulsů. To se provádí v následujícím kódu v ukázce.  
   
-```  
+```csharp
 public void Ping(int ticks)  
 {  
      Console.WriteLine("Ping: Ticks = " + ticks);  
@@ -28,7 +28,7 @@ public void Ping(int ticks)
   
  Při zpětném volání `Pong` implementace má stejnou logikou jako `Ping` implementace. To znamená, zkontroluje, zda počet impulsů není nula a potom vyvolá `Ping` metoda zpětného volání kanálu (v tomto případě je kanál, který jste použili k zaslání původní `Ping` zpráva) pomocí značek počet sníží o 1. V okamžiku, kdy počet impulsů dosáhne hodnoty 0, vrátí tato metoda hodnotu a rozbalení všechny odpovědi zpátky na první volání, která iniciovala volání klienta. To je ukázáno v implementaci zpětného volání.  
   
-```  
+```csharp
 public void Pong(int ticks)  
 {  
     Console.WriteLine("Pong: Ticks = " + ticks);  
@@ -55,7 +55,7 @@ public void Pong(int ticks)
 ## <a name="demonstrates"></a>Demonstruje  
  Ke spuštění ukázky, sestavení projektů klientem a serverem. Pak otevřete dvě okně příkazového řádku a přejděte do adresáře \<ukázka > \CS\Service\bin\debug a \<ukázka > \CS\Client\bin\debug adresáře. Potom spusťte služby zadáním `service.exe` a pak vyvolejte Client.exe s počáteční hodnotou ticks předaný jako vstupní argument. Ukázkový výstup pro 10 impulzech se zobrazí.  
   
-```  
+```console  
 Prompt>Service.exe  
 ServiceHost Started. Press Enter to terminate service.  
 Ping: Ticks = 10  

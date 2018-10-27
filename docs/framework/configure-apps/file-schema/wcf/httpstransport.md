@@ -2,12 +2,12 @@
 title: '&lt;httpsTransport&gt;'
 ms.date: 03/30/2017
 ms.assetid: f6ed4bc0-7e38-4348-9259-30bf61eb9435
-ms.openlocfilehash: 972fc94234d5eeabcdb428bc5f0cff81e69cec9b
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: b31965d5c61969f673dfa5627e40567ea0a189a7
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850306"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181576"
 ---
 # <a name="lthttpstransportgt"></a>&lt;httpsTransport&gt;
 Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastní vazbu.  
@@ -49,7 +49,7 @@ Určuje přenos pomocí protokolu HTTP při odesílání zpráv SOAP pro vlastn�
 |allowCookies|Logická hodnota určující, zda klient přijímá soubory cookie a šíří je v budoucích požadavcích. Výchozí hodnota je `false`.<br /><br /> Tento atribut lze použít při interakci s ASMX webovými službami, které používají soubory cookie. Tímto způsobem máte jistotu, že soubory cookie vrácený ze serveru se automaticky zkopírují do všechny budoucí požadavky za danou službu.|  
 |AuthenticationScheme|Určuje protokol použitý pro ověřování požadavků klientů, jenž jsou zpracovány při naslouchání protokolu HTTP. Platné hodnoty patří:<br /><br /> -Algoritmus Digest: Určuje ověřování hodnotou hash.<br />-Vyjednat: Vyjedná s klientem nástroje k určení schéma ověřování. Pokud klient i server podporovat protokol Kerberos, je použit. v opačném případě je použit protokol NTLM.<br />– Protokol Ntlm: Určuje ověřování protokolem NTLM.<br />-Basic: Určuje základní ověřování.<br />-Anonymní: Určuje anonymní ověřování.<br /><br /> Výchozí hodnota je Anonymous. Tento atribut je typu <xref:System.Net.AuthenticationSchemes>. Tento atribut lze nastavit pouze jednou.|  
 |bypassProxyOnLocal|Logická hodnota určující, zda obejít proxy server pro místní adresy. Výchozí hodnota je `false`.<br /><br /> Místní adresa je ten, který je v místní síti LAN nebo intranet.<br /><br /> Pokud začíná adresu služby Windows Communication Foundation (WCF) vždy ignoruje proxy `http://localhost`.<br /><br /> Pokud chcete klientům přejít přes proxy server, když mluvíme ke službám ve stejném počítači, se musí používat název hostitele místo localhost.|  
-|hostnameComparisonMode|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Platné hodnoty jsou,<br /><br /> -StrongWildcard: ("+") odpovídá všechny možné názvy hostitelů v rámci zadané schéma, port a relativní identifikátor URI.<br />-Přesné: žádné zástupné znaky<br />-WeakWildcard: ("*") shoduje s názvem všech možných hostitele v rámci zadané schéma, port a relativní UIR, nebyly explicitně odpovídající nebo mechanismem silný zástupný znak.<br /><br /> Výchozí hodnota je StrongWildcard. Tento atribut je typu `System.ServiceModel.HostnameComparison`.|  
+|hostnameComparisonMode|Určuje režim porovnání jména hostitele HTTP použít k analýze identifikátoru URI. Platné hodnoty jsou,<br /><br /> -StrongWildcard: ("+") odpovídá všechny možné názvy hostitelů v rámci zadané schéma, port a relativní identifikátor URI.<br />-Přesné: žádné zástupné znaky<br />-WeakWildcard: ("\*") shoduje s názvem všech možných hostitele v rámci zadané schéma, port a relativní UIR, nebyly explicitně odpovídající nebo mechanismem silný zástupný znak.<br /><br /> Výchozí hodnota je StrongWildcard. Tento atribut je typu `System.ServiceModel.HostnameComparison`.|  
 |Vlastnost manualAddressing|Logická hodnota, která umožňuje uživateli řídit adresování zpráv. Tato vlastnost se obvykle používá ve scénářích směrovače, kde aplikace určuje, který z nich několik cílů odeslat zprávu do.<br /><br /> Pokud je nastavena na `true`, kanál se předpokládá zprávu už nemá řešení a k němu nepřidává žádné další informace. Uživatel může pak Adresujte všechny zprávy jednotlivě.<br /><br /> Pokud je nastavena na `false`, výchozího mechanismu adresování Windows Communication Foundation (WCF) automaticky vytvoří adresy pro všechny zprávy.<br /><br /> Výchozí hodnota je `false`.|  
 |maxBufferPoolSize|Kladné celé číslo, které určuje maximální velikost fondu vyrovnávacích pamětí. Výchozí hodnota je 524288.<br /><br /> Mnoho částí WCF pomocí vyrovnávací paměti. Vytváření a ničení pokaždé, když používají se vyrovnávací paměti je nákladné a uvolňování paměti pro vyrovnávací paměť je také náročné. S fondy vyrovnávací paměti může trvat vyrovnávací paměti z fondu, ho použít a vrátit do fondu, až budete hotovi. Proto je vyloučeno režie při vytváření a ničení vyrovnávací paměti.|  
 |Třída maxBufferSize|Kladné celé číslo, které určuje maximální velikost vyrovnávací paměti. Výchozí hodnota je 524288|  

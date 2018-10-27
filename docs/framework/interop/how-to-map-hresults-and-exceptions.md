@@ -13,25 +13,25 @@ helpviewer_keywords:
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0d9825deae22e856cf520e6173d53278539c576c
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 0d5728de1140df51b9c725db0c8c80d21ace6deb
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33393546"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49454470"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>Postupy: Mapování výsledků HRESULT a výjimek
-Metody modelu COM zprávy o chybách vrácením hodnoty HRESULT; metod rozhraní .NET je sestavy vyvoláním výjimek. Modul runtime zpracovává přechod mezi nimi. Každá třída výjimky v rozhraní .NET Framework mapuje HRESULT.  
+Metody modelu COM zprávy o chybách tak, že vrací výsledky HRESULT; metod rozhraní .NET dejte nám o nich vyvoláním výjimky. Modul runtime zpracovává přechod mezi nimi. Každá třída výjimky v rozhraní .NET Framework se mapuje na HRESULT.  
   
- Uživatelem definované výjimky třídy můžete zadat jakékoli HRESULT je vhodné. Tyto třídy výjimek, můžete změnit dynamicky HRESULT má být vrácen, když se vygeneruje výjimka nastavením **HResult** na objekt výjimky. Další informace o výjimce naleznete klientovi prostřednictvím **IErrorInfo** rozhraní, které je implementované v rozhraní .NET objektu v nespravované procesu.  
+ Třídy výjimek definované uživatelem můžete zadat jakékoli HRESULT je vhodné. Tyto třídy výjimek můžete dynamicky měnit hodnota HRESULT, který se má vrátit, když výjimka je vygenerován pomocí nastavení **HResult** pole objektu výjimky. Další informace o výjimce jsou uvedeny do klienta prostřednictvím **IErrorInfo** rozhraní, které je implementované u objektu rozhraní .NET v nespravovaný proces.  
   
- Pokud vytvoříte třídu, která rozšiřuje **System.Exception**, je nutné nastavit pole HRESULT během vytváření. Základní třída přiřadí, jinak hodnota HRESULT. Můžete namapovat nové třídy výjimek na existující HRESULT zadáním hodnoty v konstruktoru v výjimky.  
+ Pokud vytvoříte třídu, která rozšiřuje **System.Exception**, je nutné nastavit pole HRESULT během konstrukce. V opačném případě základní třídy přiřadí hodnotu HRESULT. Nové třídy výjimek můžete namapovat na stávající HRESULT zadáním hodnoty v konstruktoru pro výjimku.  
   
- Všimněte si, že v některých případech bude ignorovat modulu runtime `HRESULT` v případech níž se nachází `IErrorInfo` na vlákno.  K tomuto chování dochází v případech, kde `HRESULT` a `IErrorInfo` nepředstavují ke stejné chybě.  
+ Všimněte si, že modul runtime bude ignorovat někdy `HRESULT` v případech, ve kterých je `IErrorInfo` k dispozici ve vlákně.  K tomuto chování dochází v případech, kde `HRESULT` a `IErrorInfo` část nepředstavují stejnou chybu.  
   
-### <a name="to-create-a-new-exception-class-and-map-it-to-an-hresult"></a>Vytvořte novou třídu výjimky a namapovat je HRESULT  
+### <a name="to-create-a-new-exception-class-and-map-it-to-an-hresult"></a>Chcete-li vytvořit novou třídu výjimky a jejich mapování na HRESULT  
   
-1.  Použít následující kód k vytvoření novou třídu výjimky s názvem `NoAccessException` a namapovat je HRESULT `E_ACCESSDENIED`.  
+1.  Pomocí následujícího kódu vytvořte novou třídu výjimek s názvem `NoAccessException` a jejich mapování na HRESULT `E_ACCESSDENIED`.  
   
     ```cpp  
     Class NoAccessException : public ApplicationException  
@@ -46,7 +46,7 @@ Metody modelu COM zprávy o chybách vrácením hodnoty HRESULT; metod rozhraní
     }  
     ```  
   
- Může dojít k programu (v žádný programovací jazyk), který používá spravovaných i nespravovaných kódu ve stejnou dobu. Například používá vlastní zařazování vláken v následujícím příkladu kódu **Marshal.ThrowExceptionForHR (int HResult)** metoda k vyvolání výjimky s konkrétní hodnotou HRESULT. Metoda vyhledá hodnota HRESULT a generuje typ příslušné výjimky. Například HRESULT v následující fragment kódu vygeneruje **ArgumentException –**.  
+ Může dojít k programu (v libovolném programovacím jazyce), který používá spravovaný a nespravovaný kód ve stejnou dobu. Například používá vlastní zařazovací modul v následujícím příkladu kódu **Marshal.ThrowExceptionForHR (int HResult)** metoda k vyvolání výjimky s konkrétní hodnotou HRESULT. Metoda vyhledá HRESULT a generuje typ příslušné výjimky. Například hodnota HRESULT v následující fragment kódu vygeneruje **ArgumentException**.  
   
 ```cpp  
 CMyClass::MethodThatThrows  
@@ -55,93 +55,93 @@ CMyClass::MethodThatThrows
 }  
 ```  
   
- Následující tabulka obsahuje úplný mapování z každé HRESULT do své třídy porovnatelný z hlediska výjimek v rozhraní .NET Framework.  
+ Následující tabulka obsahuje kompletní mapování z každé HRESULT na jeho třída srovnatelné výjimek v rozhraní .NET Framework.  
   
-|HRESULT|Výjimky rozhraní .NET|  
+|HRESULT|Výjimky .NET|  
 |-------------|--------------------|  
 |**MSEE_E_APPDOMAINUNLOADED**|**Appdomainunloadedexception –**|  
 |**COR_E_APPLICATION**|**ApplicationException –**|  
-|**COR_E_ARGUMENT nebo E_INVALIDARG**|**ArgumentException –**|  
-|**COR_E_ARGUMENTOUTOFRANGE**|**Výjimka ArgumentOutOfRangeException**|  
+|**COR_E_ARGUMENT nebo E_INVALIDARG**|**ArgumentException**|  
+|**COR_E_ARGUMENTOUTOFRANGE**|**ArgumentOutOfRangeException**|  
 |**COR_E_ARITHMETIC nebo ERROR_ARITHMETIC_OVERFLOW**|**Arithmeticexception –**|  
-|**COR_E_ARRAYTYPEMISMATCH**|**ArrayTypeMismatchException**|  
-|**COR_E_BADIMAGEFORMAT nebo ERROR_BAD_FORMAT**|**BadImageFormatException**|  
+|**COR_E_ARRAYTYPEMISMATCH**|**Arraytypemismatchexception –**|  
+|**COR_E_BADIMAGEFORMAT nebo ERROR_BAD_FORMAT**|**BadImageFormatException –**|  
 |**COR_E_COMEMULATE_ERROR**|**COMEmulateException**|  
 |**COR_E_CONTEXTMARSHAL**|**ContextMarshalException**|  
 |**COR_E_CORE**|**CoreException**|  
 |**NTE_FAIL**|**Cryptographicexception –**|  
 |**COR_E_DIRECTORYNOTFOUND nebo ERROR_PATH_NOT_FOUND**|**DirectoryNotFoundException**|  
-|**COR_E_DIVIDEBYZERO**|**DivideByZeroException**|  
-|**COR_E_DUPLICATEWAITOBJECT**|**DuplicateWaitObjectException**|  
-|**COR_E_ENDOFSTREAM**|**EndOfStreamException**|  
+|**COR_E_DIVIDEBYZERO**|**Dividebyzeroexception –**|  
+|**COR_E_DUPLICATEWAITOBJECT**|**Duplicatewaitobjectexception –**|  
+|**COR_E_ENDOFSTREAM**|**EndOfStreamException –**|  
 |**COR_E_TYPELOAD**|**Entrypointnotfoundexception –**|  
 |**COR_E_EXCEPTION**|**Výjimka**|  
 |**COR_E_EXECUTIONENGINE**|**ExecutionEngineException –**|  
-|**COR_E_FIELDACCESS**|**FieldAccessException**|  
+|**COR_E_FIELDACCESS**|**Fieldaccessexception –**|  
 |**COR_E_FILENOTFOUND nebo ERROR_FILE_NOT_FOUND**|**FileNotFoundException**|  
 |**COR_E_FORMAT**|**FormatException**|  
-|**COR_E_INDEXOUTOFRANGE**|**IndexOutOfRangeException**|  
+|**COR_E_INDEXOUTOFRANGE**|**IndexOutOfRangeException –**|  
 |**COR_E_INVALIDCAST nebo E_NOINTERFACE**|**InvalidCastException**|  
 |**COR_E_INVALIDCOMOBJECT**|**InvalidComObjectException –**|  
 |**COR_E_INVALIDFILTERCRITERIA**|**Invalidfiltercriteriaexception –**|  
 |**COR_E_INVALIDOLEVARIANTTYPE**|**InvalidOleVariantTypeException**|  
 |**COR_E_INVALIDOPERATION**|**InvalidOperationException**|  
-|**COR_E_IO**|**Výjimka vstupu/výstupu**|  
+|**COR_E_IO**|**IOException –**|  
 |**COR_E_MEMBERACCESS**|**AccessException**|  
-|**COR_E_METHODACCESS**|**Výjimku MethodAccessException**|  
-|**COR_E_MISSINGFIELD**|**MissingFieldException**|  
+|**COR_E_METHODACCESS**|**Vyvolání výjimky MethodAccessException**|  
+|**COR_E_MISSINGFIELD**|**Missingfieldexception –**|  
 |**COR_E_MISSINGMANIFESTRESOURCE**|**Missingmanifestresourceexception –**|  
-|**COR_E_MISSINGMEMBER**|**MissingMemberException**|  
+|**COR_E_MISSINGMEMBER**|**Missingmemberexception –**|  
 |**COR_E_MISSINGMETHOD**|**MissingMethodException**|  
 |**COR_E_MULTICASTNOTSUPPORTED**|**Multicastnotsupportedexception –**|  
 |**COR_E_NOTFINITENUMBER**|**Notfinitenumberexception –**|  
-|**E_NOTIMPL**|**NotImplementedException –**|  
-|**COR_E_NOTSUPPORTED**|**NotSupportedException**|  
+|**E_NOTIMPL**|**NotImplementedException**|  
+|**COR_E_NOTSUPPORTED**|**NotSupportedException –**|  
 |**COR_E_NULLREFERENCE orE_POINTER**|**NullReferenceException**|  
 |**COR_E_OUTOFMEMORY nebo**<br /><br /> **E_OUTOFMEMORY**|**OutOfMemoryException**|  
-|**COR_E_OVERFLOW**|**OverflowException**|  
-|**COR_E_PATHTOOLONG nebo ERROR_FILENAME_EXCED_RANGE**|**PathTooLongException**|  
-|**COR_E_RANK**|**RankException**|  
-|**COR_E_REFLECTIONTYPELOAD**|**Reflectiontypeloadexception –**|  
+|**COR_E_OVERFLOW**|**OverflowException –**|  
+|**COR_E_PATHTOOLONG nebo ERROR_FILENAME_EXCED_RANGE**|**PathTooLongException –**|  
+|**COR_E_RANK**|**Rankexception –**|  
+|**COR_E_REFLECTIONTYPELOAD**|**Výjimce ReflectionTypeLoadException**|  
 |**COR_E_REMOTING**|**Remotingexception –**|  
 |**COR_E_SAFEARRAYTYPEMISMATCH**|**Safearraytypemismatchexception –**|  
-|**COR_E_SECURITY**|**Výjimka zabezpečení**|  
-|**COR_E_SERIALIZATION**|**Serializationexception –**|  
-|**COR_E_STACKOVERFLOW orERROR_STACK_OVERFLOW**|**StackOverflowException**|  
+|**COR_E_SECURITY**|**SecurityException –**|  
+|**COR_E_SERIALIZATION**|**SerializationException**|  
+|**COR_E_STACKOVERFLOW orERROR_STACK_OVERFLOW**|**StackOverflowException –**|  
 |**COR_E_SYNCHRONIZATIONLOCK**|**Synchronizationlockexception –**|  
-|**COR_E_SYSTEM**|**SystemException –**|  
+|**COR_E_SYSTEM**|**SystemException**|  
 |**COR_E_TARGET**|**Targetexception –**|  
 |**COR_E_TARGETINVOCATION**|**Targetinvocationexception –**|  
 |**COR_E_TARGETPARAMCOUNT**|**Targetparametercountexception –**|  
-|**COR_E_THREADABORTED**|**Výjimka ThreadAbortException**|  
+|**COR_E_THREADABORTED**|**ThreadAbortException**|  
 |**COR_E_THREADINTERRUPTED**|**Threadinterruptedexception –**|  
 |**COR_E_THREADSTATE**|**Threadstateexception –**|  
 |**COR_E_THREADSTOP**|**ThreadStopException**|  
 |**COR_E_TYPELOAD**|**TypeLoadException –**|  
 |**COR_E_TYPEINITIALIZATION**|**Typeinitializationexception –**|  
-|**COR_E_VERIFICATION**|**VerificationException**|  
+|**COR_E_VERIFICATION**|**Verificationexception –**|  
 |**COR_E_WEAKREFERENCE**|**WeakReferenceException**|  
 |**COR_E_VTABLECALLSNOTSUPPORTED**|**VTableCallsNotSupportedException**|  
-|**Všechny ostatní hodnoty HRESULT**|**COMException**|  
+|**Všechny ostatní výsledky HRESULT**|**COMException**|  
   
- Načtení rozšířené informace o chybě, musíte klienta spravovaného prozkoumat pole objekt výjimky, která byla vygenerována. Pro objekt výjimky k poskytují užitečné informace o chybě, musí implementovat objekt COM **IErrorInfo** rozhraní. Modul runtime používá poskytnuté informace o **IErrorInfo** inicializovat objekt výjimky.  
+ Chcete-li získat rozšířené informace o chybě, musíte prozkoumat spravovaného klienta polí objekt výjimky, která byla vygenerována. Pro objekt výjimky k poskytují užitečné informace o chybě, musí implementovat objekt modelu COM **IErrorInfo** rozhraní. Modul runtime používá na základě informací poskytnutých **IErrorInfo** k inicializaci objektu výjimky.  
   
- Pokud objekt COM nepodporuje **IErrorInfo**, modul runtime inicializuje objekt výjimky s výchozími hodnotami. Následující tabulka obsahuje seznam všech polí přidružená k objektu výjimky a identifikuje zdroj výchozí informace o Pokud objekt COM podporuje **IErrorInfo**.  
+ Pokud objekt COM nepodporuje **IErrorInfo**, modul runtime inicializuje objekt výjimky s výchozími hodnotami. Následující tabulka obsahuje seznam všech polí přidružené k objektu výjimky a identifikuje zdroj informací, výchozí, když objekt modelu COM podporuje **IErrorInfo**.  
   
- Všimněte si, že v některých případech bude ignorovat modulu runtime `HRESULT` v případech níž se nachází `IErrorInfo` na vlákno.  K tomuto chování dochází v případech, kde `HRESULT` a `IErrorInfo` nepředstavují ke stejné chybě.  
+ Všimněte si, že modul runtime bude ignorovat někdy `HRESULT` v případech, ve kterých je `IErrorInfo` k dispozici ve vlákně.  K tomuto chování dochází v případech, kde `HRESULT` a `IErrorInfo` část nepředstavují stejnou chybu.  
   
-|Výjimka pole|Zdroj informací z modelu COM|  
+|Pole výjimky|Zdroje informací z modelu COM|  
 |---------------------|------------------------------------|  
 |**Kód chyby**|HRESULT vrácená z volání.|  
-|**HelpLink**|Pokud **IErrorInfo -> HelpContext –** je nenulové hodnoty, je tvořena řetězec zřetězením **IErrorInfo -> GetHelpFile** a "#" a **IErrorInfo -> GetHelpContext**. Jinak bude vrácen řetězec z **IErrorInfo -> GetHelpFile**.|  
-|**Ve vlastnosti InnerException**|Vždy odkaz s hodnotou null (**nic** v jazyce Visual Basic).|  
+|**HelpLink**|Pokud **IErrorInfo -> HelpContext** je nenulová, řetězec je vytvořený zřetězením **IErrorInfo -> GetHelpFile** a "#" a **IErrorInfo -> GetHelpContext**. V opačném případě vrátí řetězec **IErrorInfo -> GetHelpFile**.|  
+|**U třídy InnerException**|Vždy odkaz s hodnotou null (**nic** v jazyce Visual Basic).|  
 |**Zpráva**|Řetězec vrácený z **IErrorInfo -> GetDescription**.|  
 |**Zdroj**|Řetězec vrácený z **IErrorInfo -> GetSource**.|  
 |**StackTrace**|Trasování zásobníku.|  
-|**TargetSite**|Název metody, která vrátila selhání HRESULT.|  
+|**TargetSite**|Název metody, která vrátí selhání HRESULT.|  
   
- Výjimka pole, jako například **zpráva**, **zdroj**, a **trasování zásobníku** nejsou k dispozici pro **StackOverflowException**.  
+ Výjimka pole, jako například **zpráva**, **zdroj**, a **trasování zásobníku** nejsou k dispozici pro **StackOverflowException –**.  
   
 ## <a name="see-also"></a>Viz také  
- [Interoperabilita modelů COM Upřesnit](https://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb(v=vs.100))  
+ [Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  
  [Výjimky](../../standard/exceptions/index.md)

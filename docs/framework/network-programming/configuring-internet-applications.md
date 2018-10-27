@@ -21,14 +21,12 @@ helpviewer_keywords:
 - network resources, configuring Internet applications
 - Internet, default proxy
 ms.assetid: bb707c72-eed2-4a82-8800-c9e68df2fd4f
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 81b0f69306a0f9a4ed6d35e3c8ef95271a779294
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: bdc63064d3f0d809c196e77a890ba697f9d4deea
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122341"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50043104"
 ---
 # <a name="configuring-internet-applications"></a>Konfigurace internetových aplikací
 [ \<System.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) prvek konfigurace obsahuje informace o konfiguraci sítě pro aplikace. Použití [ \<system.Net > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/system-net-element-network-settings.md) element, můžete nastavit proxy servery, nastavit správu parametry připojení a vlastní moduly ověřování a žádosti do aplikace zahrnout.  
@@ -56,7 +54,7 @@ ms.locfileid: "49122341"
 </configuration>  
 ```  
   
- Použití [ \<connectionManagement – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) prvek, který chcete nakonfigurovat počet trvalých připojení, které mohou být provedeny na konkrétní server nebo do všech ostatních serverech. Následující příklad nastaví aplikace pro použití dvou trvalé připojení k serveru www.contoso.com, čtyři trvalé připojení k serveru s IP adresou 192.168.1.2 a jeden trvalé připojení pro všechny ostatní servery.  
+ Použití [ \<connectionManagement – > – Element (nastavení sítě)](../../../docs/framework/configure-apps/file-schema/network/connectionmanagement-element-network-settings.md) prvek, který chcete nakonfigurovat počet trvalých připojení, které mohou být provedeny na konkrétní server nebo do všech ostatních serverech. Následující příklad nastaví aplikace pro použití dvou trvalé připojení k serveru `www.contoso.com`, čtyři trvalé připojení k serveru s IP adresou 192.168.1.2 a jeden trvalé připojení pro všechny ostatní servery.  
   
 ```xml  
 <configuration>  

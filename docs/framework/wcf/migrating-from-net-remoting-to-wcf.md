@@ -2,12 +2,12 @@
 title: Migrace z .NET Remoting do WCF
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: e260ecaf422b5654364143b1fc529112b5ea0656
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 91cbfa33c6645fbc0a8d9b513e3a59799114a710
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857385"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50039592"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>Migrace z .NET Remoting do WCF
 Tento článek popisuje, jak migrovat aplikace, která používá vzdálené komunikace .NET na použití služby Windows Communication Foundation (WCF). Porovná podobné koncepty mezi tyto produkty a pak popisuje, jak provádět několik běžných scénářů vzdálené komunikace v WCF.  
@@ -292,7 +292,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>Proč migrovat Remoting do WCF?  
   
--   **Vzdálené komunikace .NET je starší verze produktu.** Jak je popsáno v [vzdálené komunikace .NET](https://msdn.microsoft.com/library/vstudio/72x4h507\(v=vs.100\).aspx), se považuje za starší verzi produktu a nedoporučuje se používat pro vývoj nových projektů. WCF a ASP.NET Web API se doporučuje pro nová a existující aplikace.  
+-   **Vzdálené komunikace .NET je starší verze produktu.** Jak je popsáno v [vzdálené komunikace .NET](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29), se považuje za starší verzi produktu a nedoporučuje se používat pro vývoj nových projektů. WCF a ASP.NET Web API se doporučuje pro nová a existující aplikace.  
   
 -   **WCF využívá multiplatformní standardy.** WCF byla navržena s vzájemná funkční spolupráce napříč platformami v úvahu a podporuje mnoho oborových standardů (SOAP, WS-Security, WS-Trust, atd.). Služby WCF můžete spolupráci s klienty běžící na jiných operačních systémech než Windows. Vzdálená komunikace je navržená především pro prostředí, kde server i klient aplikace běží, pomocí rozhraní .NET framework v operačním systému Windows.  
   

@@ -2,12 +2,12 @@
 title: Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 ms.date: 03/30/2017
 ms.assetid: fe48738d-e31b-454d-b5ec-24c85c6bf79a
-ms.openlocfilehash: b7c898f1af91f639939e5480687b5967bf57d246
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 91d126eb75c9cac2823b756010351dd692b2e24e
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43856202"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453213"
 ---
 # <a name="using-windows-management-instrumentation-for-diagnostics"></a>Diagnostika prostřednictvím rozhraní WMI (Windows Management Instrumentation)
 Windows Communication Foundation (WCF) poskytuje dat kontroly služby za běhu pomocí zprostředkovatele WCF Windows Management Instrumentation (WMI).  
@@ -171,7 +171,7 @@ Whoami /user
 ### <a name="using-managed-code"></a>Pomocí spravovaného kódu  
  Dostanete také vzdálené instance rozhraní WMI prostřednictvím kódu programu pomocí tříd poskytovaných oborem <xref:System.Management> oboru názvů. Následující příklad kódu ukazuje, jak to provést.  
   
-```  
+```csharp
 String wcfNamespace = String.Format(@"\\{0}\Root\ServiceModel",      
    this.serviceMachineName);  
   

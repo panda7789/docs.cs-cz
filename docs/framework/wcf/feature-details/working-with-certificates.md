@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 147de1cdde79ee29f8f316399ba2e41f93921073
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 4302ee961fcd396c7e6a6ddb0d9bbe1bdb714cfc
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47201111"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453460"
 ---
 # <a name="working-with-certificates"></a>Práce s certifikáty
 Programování zabezpečení Windows Communication Foundation (WCF), digitální certifikáty X.509 běžně slouží k ověřování klientů a serverů, šifrování a digitálnímu podepisování zpráv. V tomto tématu stručně popisuje funkce digitální certifikát X.509 a jak je používat v WCF a obsahuje odkazy na témata, která popisují tyto koncepty další nebo, která ukazují, jak provádět běžné úlohy pomocí WCF a certifikáty.  
@@ -42,7 +42,7 @@ Programování zabezpečení Windows Communication Foundation (WCF), digitální
   
 -   **Osobní**. Toto úložiště se používá pro certifikáty, které jsou spojeny s konkrétním uživatelem počítače. Toto úložiště se obvykle používá pro certifikáty vydané certifikáty certifikační autority v úložišti Důvěryhodné kořenové certifikační autority. Certifikát, najdete tady také může samostatně vydané a důvěryhodné aplikace.  
   
- Další informace o úložištích certifikátů najdete v tématu [úložišť certifikátů](https://go.microsoft.com/fwlink/?LinkId=88912).  
+ Další informace o úložištích certifikátů najdete v tématu [úložišť certifikátů](/windows/desktop/secauthn/certificate-stores).  
   
 ### <a name="selecting-a-store"></a>Výběr Store  
  Výběr umístění pro uložení certifikátu závisí jak a kdy bude spuštěna služba nebo klient. Platí následující obecná pravidla:  

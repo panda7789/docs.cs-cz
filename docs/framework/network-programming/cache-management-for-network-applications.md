@@ -6,14 +6,12 @@ helpviewer_keywords:
 - network resources, caching
 - Internet, caching
 ms.assetid: fc258a40-f370-434f-ae09-4a8cb11ddaeb
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 1e0b3ed66977dd6587789e3d88f532b699653c6f
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 265b4e451ebb76dbabe0d3e0df065504a3891f32
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195573"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50049123"
 ---
 # <a name="cache-management-for-network-applications"></a>Správa mezipaměti pro síťové aplikace
 Toto téma a další související části popisují, ukládání do mezipaměti pro prostředky získané s použitím <xref:System.Net.WebClient>, <xref:System.Net.WebRequest>, <xref:System.Net.HttpWebRequest>, a <xref:System.Net.FtpWebRequest> třídy.  

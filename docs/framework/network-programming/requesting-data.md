@@ -17,14 +17,12 @@ helpviewer_keywords:
 - receiving data, about receiving data
 - Internet, requesting data
 ms.assetid: df6f1e1d-6f2a-45dd-8141-4a85c3dafe1d
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: a163374810cbc06ca048c1bdd304de9519db140c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 026912a2dc8a09fb52e0427fc7bf2dbb1d55413a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195703"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182811"
 ---
 # <a name="requesting-data"></a>Požadavek na Data
 Vývoj aplikací, které běží v distribuované provozní prostředí dnešní Internet vyžaduje metodu efektivní a snadno použitelné pro načítání dat ze všech typů prostředků. Připojitelných protokolů umožňují vyvíjet aplikace, které používají jednotné rozhraní pro načtení dat z více protokolů sítě Internet.  

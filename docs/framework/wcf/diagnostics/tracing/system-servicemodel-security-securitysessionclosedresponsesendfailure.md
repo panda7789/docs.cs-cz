@@ -2,13 +2,12 @@
 title: System.ServiceModel.Security.SecuritySessionClosedResponseSendFailure
 ms.date: 03/30/2017
 ms.assetid: 214e88fe-0476-4604-bca6-1b2f25fe1194
-author: BrucePerlerMS
-ms.openlocfilehash: 49663218e2896b2528f27e7db6f200984f4f7b2e
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: ca7110c765b14838f30afbb38bc4cc33cf8bcc54
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48839816"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50034075"
 ---
 # <a name="systemservicemodelsecuritysecuritysessionclosedresponsesendfailure"></a>System.ServiceModel.Security.SecuritySessionClosedResponseSendFailure
 System.ServiceModel.Security.SecuritySessionClosedResponseSendFailure  

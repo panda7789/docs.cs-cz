@@ -11,24 +11,24 @@ helpviewer_keywords:
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: e0fbf40c6af63cfabe7b35e2bdf3e0998761b801
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 5a104b6c755eb0b97f11e577fb3eeb182e465fe4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43505119"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50135385"
 ---
 # <a name="net-framework-client-profile"></a>Profil klienta rozhraní .NET Framework
 .NET Client Profile je podmnožinou rozhraní .NET Framework, která byla součástí [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a starších verzí a byla optimalizována pro klientské aplikace. Rozhraní .NET Framework je vývojovou platformu pro Windows, Windows Phone a Microsoft Azure a poskytuje prostředí pro spouštění spravovaných aplikací a knihovny tříd rozhraní .NET Framework. [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] a dřívější verze poskytují dvě možnosti nasazení: úplné rozhraní .NET Framework a profil klienta. Profil klienta podporuje rychlejší nasazení a menší instalační balíčky aplikace než plná verze rozhraní .NET Framework.  
   
  Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], už není na profil klienta a je k dispozici pouze úplný redistribuovatelný balíček. Optimalizace poskytované rozhraním [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], jako jsou menší velikost ke stažení a rychlejší nasazení, odstranily potřebu samostatných balíčků nasazení. Jediná verze Redistributable zjednodušuje proces instalace a možnosti nasazení aplikace.  
   
- Nicméně, pokud se zaměřujete na rozhraní .NET Framework 4 nebo 3.5 a chcete získat další informace o klientském profilu a kdy ji použít, najdete v článku [rozhraní .NET Framework Client Profile](https://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx) v dokumentaci k rozhraní .NET Framework 4.  
+ Nicméně, pokud se zaměřujete na rozhraní .NET Framework 4 nebo 3.5 a chcete získat další informace o klientském profilu a kdy ji použít, najdete v článku [rozhraní .NET Framework Client Profile](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29) v dokumentaci k rozhraní .NET Framework 4.  
   
  Při instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], je rozhraní .NET Framework 4 Client Profile aktualizována na plnou verzi rozhraní .NET Framework. Informace o instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], naleznete v tématu [nainstalovat rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md).  
   
 ## <a name="see-also"></a>Viz také  
- [.NET framework Client Profile (.NET Framework 4)](https://msdn.microsoft.com/library/cc656912\(v=vs.100\).aspx)  
- [Přehled cílení na více verzí sady Visual Studio](https://msdn.microsoft.com/library/b1702c33-0672-4ebc-b779-2b324d6ea880)  
- [Řešení potíží s cílením na rozhraní .NET Framework](https://msdn.microsoft.com/library/830e3e45-9a93-4279-a249-75b84599aefb)  
- [Postupy: Cílení na verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)
+- [.NET framework Client Profile (.NET Framework 4)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29)  
+- [Přehled cílení na více verzí sady Visual Studio](/visualstudio/ide/visual-studio-multi-targeting-overview)  
+- [Řešení potíží s cílením na rozhraní .NET Framework](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)  
+- [Postupy: Cílení na verzi rozhraní .NET Framework](/visualstudio/ide/how-to-target-a-version-of-the-dotnet-framework)

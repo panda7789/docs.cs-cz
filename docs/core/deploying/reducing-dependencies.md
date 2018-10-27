@@ -4,12 +4,12 @@ description: Omezte závislosti balíčků, při vytváření knihovny project.j
 author: cartermp
 ms.author: mairaw
 ms.date: 06/20/2016
-ms.openlocfilehash: 67d53b45e5cb02f146f763966d1f76e8a8a469ce
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 6da7404415e8d485533fc1c9a619cb0706a26aca
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49122569"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50040878"
 ---
 # <a name="reducing-package-dependencies-with-projectjson"></a>Omezení závislosti balíčku s project.json
 
@@ -36,7 +36,7 @@ V současné době neexistuje žádné oficiální `dotnet` příkazu, který o�
 Můžete zjistit, které balíčky, není nutné pomocí jedné z následujících způsobů:
 
 1. Došlo k chybě a zkušební verze.  To zahrnuje odebrání balíčku, obnovení, zobrazuje, pokud se stále zkompiluje knihovnu a opakováním tohoto procesu.
-2. Pomocí nástroje, jako například [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) a prohlédněte si odkazy, které chcete zjistit, co váš kód skutečně.  Následně můžete odebrat balíčky, které neodpovídají na typy, které používáte.
+2. Pomocí nástroje, jako například [ILSpy](https://github.com/icsharpcode/ILSpy#ilspy-------) nebo [.NET Reflector](https://www.red-gate.com/products/dotnet-development/reflector) a prohlédněte si odkazy, které chcete zjistit, co váš kód skutečně.  Následně můžete odebrat balíčky, které neodpovídají na typy, které používáte.
 
 ## <a name="example"></a>Příklad 
 
@@ -127,7 +127,7 @@ V dalším kroku zkopírujte odkazy na balíčky do `dependencies` části kniho
 }
 ```
 
-To je poměrně velké balíčky, z nichž mnohá jistě nejsou potřebné pro rozšíření typy kolekcí.  Můžete odebrat balíčky, které ručně nebo pomocí nástroje, jako [ILSpy](http://ilspy.net) nebo [.NET Reflector](http://www.red-gate.com/products/dotnet-development/reflector) používá k identifikaci, který ve skutečnosti balíčky kódu.
+To je poměrně velké balíčky, z nichž mnohá jistě nejsou potřebné pro rozšíření typy kolekcí.  Můžete odebrat balíčky, které ručně nebo pomocí nástroje, jako [ILSpy](https://github.com/icsharpcode/ILSpy#ilspy-------) nebo [.NET Reflector](https://www.red-gate.com/products/dotnet-development/reflector/) používá k identifikaci, který ve skutečnosti balíčky kódu.
 
 Tady je oříznutý balíčku by mohla vypadat:
 

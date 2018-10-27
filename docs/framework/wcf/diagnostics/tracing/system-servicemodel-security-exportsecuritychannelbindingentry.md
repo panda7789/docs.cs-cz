@@ -2,13 +2,12 @@
 title: System.ServiceModel.Security.ExportSecurityChannelBindingEntry
 ms.date: 03/30/2017
 ms.assetid: 043bad66-0a09-47c2-ae90-d1f225f52a24
-author: BrucePerlerMS
-ms.openlocfilehash: fb8c93119fdd9d68daf5a84ed64eda1741a53826
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 92b01ff491ca7ac766c135da78f1d259df8a2aef
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48030707"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181209"
 ---
 # <a name="systemservicemodelsecurityexportsecuritychannelbindingentry"></a>System.ServiceModel.Security.ExportSecurityChannelBindingEntry
 System.ServiceModel.Security.ExportSecurityChannelBindingEntry  

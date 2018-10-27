@@ -3,19 +3,19 @@ title: TransportSecurityBindingElement
 ms.date: 03/30/2017
 ms.assetid: 31b8cd3b-3be5-4b6c-93f0-69d7aaf791d0
 author: BrucePerlerMS
-ms.openlocfilehash: 8cde88433b7d9a32a1822c6f723b349739a450a8
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: ff06502702497360ed4627ecae311a9ae06d727b
+ms.sourcegitcommit: dfc8aa44246a97f4611cc441d9ef71b03cc31260
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086697"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49412314"
 ---
 # <a name="transportsecuritybindingelement"></a>TransportSecurityBindingElement
 TransportSecurityBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class TransportSecurityBindingElement : SecurityBindingElement  
 {  
 };  

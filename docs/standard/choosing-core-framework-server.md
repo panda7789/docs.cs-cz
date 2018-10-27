@@ -4,12 +4,12 @@ description: Průvodce, na kterou implementaci rozhraní .NET, měli byste zvá�
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: ab44cca7c9a832dc7e5f03cfc2972de9d0785fd4
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 01e7222ccd4a764f75481e58d4ac305daadfe1a8
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48777877"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50034283"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Volba mezi .NET Core a .NET Framework pro serverové aplikace
 
@@ -104,7 +104,7 @@ Některé společnosti Microsoft nebo třetích stran platformy .NET Core nepodp
 ## <a name="see-also"></a>Viz také:
 
 * [Zvolte mezi ASP.NET a ASP.NET Core](/aspnet/core/choose-aspnet-framework)
-* [ASP.NET Core, které cílí na rozhraní .NET Framework](/aspnet/core#target-framework)
+* [ASP.NET Core, které cílí na rozhraní .NET Framework](/aspnet/core#aspnet-core-targeting-net-framework)
 * [Cílové verze rozhraní .NET Framework](frameworks.md)
 * [Průvodce platformou .NET Core](../core/index.md)  
 * [Portování z rozhraní .NET Framework do .NET Core](../core/porting/index.md)  

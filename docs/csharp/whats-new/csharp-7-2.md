@@ -2,12 +2,12 @@
 title: Co je nového v jazyce C# 7.2
 description: Přehled nových funkcí v jazyce C# 7.2.
 ms.date: 08/16/2017
-ms.openlocfilehash: 87fd67b37a31a02960334a2b2a325724e0cc2c73
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 93b0a5281db841abdb8de0865dfe4b13be6d9ee2
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261352"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181170"
 ---
 # <a name="whats-new-in-c-72"></a>Co je nového v jazyce C# 7.2
 
@@ -20,7 +20,7 @@ Používá C# 7.2 [výběr verze jazyka](../language-reference/configure-languag
 
 Nové funkce jazyků v této verzi jsou:
 
-* [Referenční sémantika s typy hodnot](#reference-semantics-with-value-types)
+* [Techniky pro psaní bezpečného kódu efektivní](#safe-efficient-code-enhancements)
   - Kombinace syntaxe vylepšení, které umožňují práci s typy hodnot pomocí odkazové sémantiky.
 * [Nekoncové pojmenované argumenty](#non-trailing-named-arguments)
   - Pojmenované argumenty může být následován poziční argumenty.
@@ -29,7 +29,7 @@ Nové funkce jazyků v této verzi jsou:
 * [`private protected` Modifikátor přístupu](#private-protected-access-modifier)
   - `private protected` Modifikátor přístupu umožňuje přístup pro odvozené třídy ve stejném sestavení.
 
-## <a name="reference-semantics-with-value-types"></a>Referenční sémantika s typy hodnot
+## <a name="safe-efficient-code-enhancements"></a>Vylepšení bezpečné efektivní kódu
 
 Jazykových funkcí 7.2 zavedený umožňují pracovat s typy hodnot a zároveň pomocí odkazové sémantiky. Jsou určené ke zvýšení výkonu minimalizací kopírování hodnotové typy bez dalších nákladů na přidělení paměti spojených s použitím typy odkazů. Mezi funkce patří:
 
@@ -38,7 +38,7 @@ Jazykových funkcí 7.2 zavedený umožňují pracovat s typy hodnot a zároveň
  - `readonly struct` Deklarace můžete určit, že struktura je neměnná a mají být předány jako `in` parametr metody jeho členů. Přidání `readonly` modifikátor na existující deklaraci struktury [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
  - `ref struct` Deklarace můžete určit, že typu Struktura přistupuje k nim spravované paměti přímo a musí vždy zásobníku přidělovat. Přidávání `ref` Modifikátor pro stávající `struct` deklarace je [nekompatibilní změna](version-update-considerations.md#incompatible-changes). A `ref struct` nemůže být členem třídy nebo použít v jiných umístěních, kde mohou být přiděleny do haldy.
 
-Můžete si přečíst další informace o všech těchto změn v [pomocí typů hodnot pomocí odkazové sémantiky](../reference-semantics-with-value-types.md).
+Můžete si přečíst další informace o všech těchto změn v [psát bezpečný kód efektivní](../write-safe-efficient-code.md).
 
 ## <a name="non-trailing-named-arguments"></a>Nekoncové pojmenované argumenty
 

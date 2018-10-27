@@ -2,13 +2,12 @@
 title: System.ServiceModel.Security.SecurityClientSessionKeyRenewed
 ms.date: 03/30/2017
 ms.assetid: c99048ee-062b-4b21-bb9b-77c465a318c6
-author: BrucePerlerMS
-ms.openlocfilehash: 51fca7f5ec2e64131343248dffadfa19c397a082
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 248c3091ee7c05414b5d49772990640cd3d6f92c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123251"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181680"
 ---
 # <a name="systemservicemodelsecuritysecurityclientsessionkeyrenewed"></a>System.ServiceModel.Security.SecurityClientSessionKeyRenewed
 System.ServiceModel.Security.SecurityClientSessionKeyRenewed  

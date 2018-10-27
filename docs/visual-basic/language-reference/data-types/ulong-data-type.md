@@ -16,14 +16,12 @@ helpviewer_keywords:
 - ULong data type
 - UL literal type characters [Visual Basic]
 ms.assetid: 017e0702-774e-44ae-bedc-786b424ca84e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 214243f6a8a87f4e4cc15f31be23275fff00d07d
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.openlocfilehash: 13dec9f298655a4bfe6672e2dbba7c7262379cc4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43863592"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50033529"
 ---
 # <a name="ulong-data-type-visual-basic"></a>Ulong – datový typ (Visual Basic)
 

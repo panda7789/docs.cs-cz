@@ -2,100 +2,100 @@
 title: Aktivita
 ms.date: 03/30/2017
 ms.assetid: 70471705-f55f-4da1-919f-4b580f172665
-ms.openlocfilehash: 3100d5bb60dc1b11d23b0705f4d6f23a3675ac51
-ms.sourcegitcommit: 15109844229ade1c6449f48f3834db1b26907824
+ms.openlocfilehash: 00115d51cff40be726ccf94c3cac09242c0bdab8
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33806829"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453343"
 ---
 # <a name="activity"></a>Aktivita
-Toto téma popisuje aktivity trasování v modelu trasování Windows Communication Foundation (WCF). Aktivity jsou zpracování jednotek, které pomůže uživateli zúžit obor selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Operace se například nezdaří, protože zpráva dešifrování se nezdařilo. Trasování pro operace a Chyba při dešifrování zprávy zobrazí ve stejné aktivitě, zobrazující přímé korelace mezi chyby dešifrování a chybu požadavku.  
+Toto téma popisuje trasování aktivit v modelu trasování Windows Communication Foundation (WCF). Aktivity představují zpracování jednotek, které uživatel zúžit rozsah selhání. Chyby, ke kterým dochází ve stejné aktivitě přímo souvisí. Například operace selže, protože zpráva dešifrování se nezdařilo. Zobrazí trasování pro operace a selhání dešifrování zprávy do stejné aktivity zobrazující přímá korelace mezi dešifrování chyba a Chyba žádosti.  
   
 ## <a name="configuring-activity-tracing"></a>Konfigurace trasování aktivity  
- WCF obsahuje předem definovaná aktivity pro zpracování aplikace (viz [seznam aktivit](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md)). Můžete také definovat aktivity prostřednictvím kódu programu ke skupině uživatelů trasování. Další informace najdete v tématu [generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
+ WCF poskytuje předdefinované aktivity pro zpracování aplikací (viz [seznam aktivit](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md)). Můžete také definovat aktivity prostřednictvím kódu programu do skupiny uživatelů trasování. Další informace najdete v tématu [generování trasování v uživatelském kódu](../../../../../docs/framework/wcf/diagnostics/tracing/emitting-user-code-traces.md).  
   
- Pro vydávání trasování aktivity v době běhu, použijte `ActivityTracing` nastavení `System.ServiceModel` trasování zdroje, nebo jiné WCF nebo vlastního trasování zdrojů, jak je ukázáno v následujícím kódu konfigurace.  
+ Chcete-li generovat trasování aktivity za běhu, použijte `ActivityTracing` nastavení pro `System.ServiceModel` trasování zdroj, nebo jiné WCF nebo vlastního trasování zdrojů, jak je ukázáno v následujícím kódu konfigurace.  
   
 ```xml  
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing">  
 ```  
   
- Bližší informace o konfiguraci elementu a atributy, které používá, najdete v článku [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md) tématu.  
+ Informace o tom Další informace o konfiguraci elementu a atributy se používají, najdete v článku [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md) tématu.  
   
-## <a name="viewing-activities"></a>Zobrazení aktivity  
- Můžete zobrazit činnosti a jejich nástroj v [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Pokud je povoleno ActivityTracing, tento nástroj trvá trasování a řadí je na základě aktivity. Můžete také zjistit trasování přenosů. Přenos trasování Určuje, jak různé aktivity jsou vzájemně souvisí. Můžete zobrazit konkrétní aktivitu kvůli jiné spustit. Žádost o zprávu například spuštěn bezpečnostní ověření typu handshake k získání zabezpečené konverzace tokenu.  
+## <a name="viewing-activities"></a>Zobrazení aktivit  
+ Můžete zobrazit činnosti a jejich nástroj [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md). Pokud je povolená ActivityTracing, tento nástroj přebírá trasování a seřadí je podle aktivity. Můžete také zobrazit trasování přenosů. Přenos trasování označuje, jak různé aktivity se vztahují k sobě navzájem. Uvidíte, že konkrétní aktivitu způsobila druhého spuštění. Například požadavek na zprávu spuštěn bezpečnostní ověření typu handshake získat zabezpečené konverzace Token.  
   
-### <a name="correlating-activities-in-service-trace-viewer"></a>Korelace aktivity v prohlížeče trasování služeb  
- Tento nástroj prohlížeče trasování služeb nabízí dvě zobrazení aktivit:  
+### <a name="correlating-activities-in-service-trace-viewer"></a>Korelaci aktivit v prohlížeče trasování služeb  
+ Nástroj prohlížeče trasování služeb poskytuje dvě zobrazení aktivit:  
   
--   **Seznam** zobrazení, kde se ID aktivity slouží ke korelaci přímo trasování napříč procesy. Trasování z různých procesů, například klienta a služby, ale se stejným ID aktivit jsou seskupeny do stejné aktivity. Proto chybu, ke kterým dochází na službu, která pak výsledkem bude chyba na straně klienta se obě zobrazí v zobrazení aktivity v nástroji.  
+-   **Seznam** zobrazení, ve kterém se používá ID aktivity přímo korelovat trasování napříč procesy. Trasování z různých procesů, například klienta a služby, ale se stejným ID aktivit jsou seskupeny do stejné aktivity. Proto chybu, ke kterým dochází ve službě, která poté způsobí chybu na straně klienta i zobrazí ve stejném zobrazení aktivity v nástroji.  
   
--   **Graf** zobrazení, kde jsou aktivity seskupené podle procesy. V tomto zobrazení klienta a služby se stejným ID aktivity mají jejich trasování v různé aktivity. Nástroj ke korelaci aktivity se stejným ID aktivity v různých procesů, zobrazuje zpráva toky napříč souvisejících činností.  
+-   **Graf** zobrazení, ve kterém jsou aktivity seskupené podle procesy. V tomto zobrazení klient a služba se stejným ID aktivity mají jejich trasování v jiné aktivity. Korelovat aktivity se stejným ID aktivity v různých procesů, nástroj ukazuje zpráva toků napříč souvisejících aktivit.  
   
- Další informace a zobrazíte grafické zobrazení nástroje prohlížeče trasování služeb najdete v části [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) a [pomocí prohlížeče trasování služeb pro zobrazení korelační trasování a Řešení potíží s](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
+ Další informace a grafické zobrazení nástroje prohlížeče trasování služeb najdete na stránce [nástroj Prohlížeč trasování služeb (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) a [pomocí prohlížeče trasování služeb k zobrazení korelovaných trasování a Řešení potíží s](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md).  
   
 ## <a name="defining-the-scope-of-an-activity"></a>Definování oboru aktivity  
- Aktivita je definován v době návrhu a označuje logické jednotky práce. Přímo souvisí s emitovaného trasování se stejným identifikátorem aktivity, jsou součástí stejné aktivity. Protože aktivitu můžete napříč hranicemi koncový bod (požadavek), jsou definovány dva obory pro aktivitu.  
+ Aktivita je definován v době návrhu a označuje logickou jednotku práce. Přímo souvisí s vygenerovanou trasování se stejným identifikátorem aktivity, jsou součástí téže aktivity. Protože aktivity můžete překračují hranice koncový bod (požadavek), jsou definovány dva obory pro aktivitu.  
   
--   `Global` obor na aplikaci. V tomto rozsahu aktivita je identifikována jeho 128-bit aktivity globálně jedinečný identifikátor, gAId. GAid je co rozšířena napříč koncovými body.  
+-   `Global` obor na aplikaci. V tomto oboru aktivity je identifikován gAId identifikátoru globálně jedinečný aktivity 128 bitů. GAid je, co se šíří přes koncové body.  
   
--   `Local` obor na jeden koncový bod. V tomto rozsahu aktivita je identifikována jeho gAId, společně s název zdroje trasování generování trasování aktivity a ID procesu Tato trojdílná se považuje za id místní aktivity, umístěné. , Které jsou uvedené se používá k definování hranice (místní) aktivity.  
+-   `Local` rozsah jeden koncový bod. V tomto oboru aktivity je identifikován jeho gAId spolu s názvem zdroje trasování výstupu trasování aktivity a ID procesu. Tato trojici představuje id místní aktivity, vytvoří. Uvedené slouží k definování hranice (místní) aktivity.  
   
-## <a name="trace-schema"></a>Schéma trasování  
- Trasování může vygenerované pomocí žádné schéma a různé platformy Microsoft. "e2e" (pro "koncové") je běžně používané schéma. Toto schéma obsahuje identifikátor 128bitové (gAId), název zdroje trasování a ID procesu. Ve spravovaném kódu <xref:System.Diagnostics.XmlWriterTraceListener> vysílá trasování ve schématu E2E.  
+## <a name="trace-schema"></a>Schéma sledování  
+ Trasování může být generována pomocí žádné schéma a na platformách společnosti Microsoft. "e2e" (pro "začátku do konce") představuje běžně používané schéma. Toto schéma obsahuje identifikátor 128 bitů (gAId), název zdroje trasování a ID procesu. Ve spravovaném kódu <xref:System.Diagnostics.XmlWriterTraceListener> vysílá trasování ve schématu E2E.  
   
- Mohou vývojáři nastavit podpory, které jsou vydávány s trasování nastavením <xref:System.Diagnostics.CorrelationManager.ActivityId%2A> vlastnost s identifikátorem Guid na vláken místní úložiště (TLS). Následující příklad ukazuje to.  
+ Vývojáři můžou nastavit podpory, který je vygenerován pomocí trasování tak, že nastavíte <xref:System.Diagnostics.CorrelationManager.ActivityId%2A> vlastnost s identifikátorem Guid na vlákno místní úložiště (TLS). Následující příklad ukazuje to.  
   
-```  
+```csharp
 // set the current Activity ID to a new GUID.  
 CorrelationManager.ActivityId = Guid.NewGuid();  
-```  
+```
   
- Nastavení gAId v TLS bude zřejmá při trasování jsou vygenerované pomocí zdroj trasování, jak ukazuje následující příklad.  
+ Nastavení gAId v TLS bude zřejmé, při trasování jsou emitovány pomocí zdroje trasování, jak je znázorněno v následujícím příkladu.  
   
-```  
+```csharp
 TraceSource traceSource = new TraceSource("myTraceSource");  
 traceSource.TraceEvent(TraceEventType.Warning, eventId, "Information");  
 ```  
   
- Trasování vygenerované bude obsahovat gAId právě TLS, název zdroje trasování jako parametr předaný konstruktoru zdroj trasování a ID aktuálním procesu.  
+ Trasování, protože ho budou obsahovat gAId aktuálně v protokolu TLS, název zdroje trasování, který je předán jako parametr konstruktoru zdroj trasování a ID aktuálního procesu.  
   
-## <a name="activity-lifetime"></a>Doba platnosti aktivity  
- V nejpřísnějším podmínky důkaz aktivity spustí při prvním ID aktivity se používá v emitovaného trasování a končí, kdy se používá v emitovaného trasování naposledy. Sadu předdefinovaných typů trasování jsou poskytovány <xref:System.Diagnostics>, včetně zahájení a ukončení, explicitně označit hranice životního cyklu aktivity.  
+## <a name="activity-lifetime"></a>Doba života aktivity  
+ Nejpřísnější řečeno doklad o aktivity spustí při prvním ID aktivity se používá v emitovaný trasování a končí poslední čas, který se používá v emitovaný trasování. Poskytuje sadu předdefinovaných typů trasování <xref:System.Diagnostics>, včetně spouštění a zastavování, explicitně označit hranice životního cyklu aktivit.  
   
--   Začátek: Označuje začátek aktivity. "Start" trasování obsahuje záznam od nový milník zpracování. Obsahuje nové ID aktivity pro zdroj daného trasování v dané procesu, s výjimkou případů, kdy je ID aktivity rozšíří napříč koncovými body, v takovém případě vidíte jeden "Start" na jeden koncový bod. Spuštění nové aktivity příklady vytváření nové vlákno pro zpracování, nebo zadat novou veřejnou metodu.  
+-   Začátek: Označuje začátek aktivity. Trasování "Start" obsahuje záznam začínající nový milník zpracování. Obsahuje nové ID aktivity pro zdroj daného trasování v daného procesu, s výjimkou případů, kdy se ID aktivity šíří napříč koncovými body, v takovém případě vidíme jednu "Start" jeden koncový bod. Spouští se nová aktivita příklady vytváření nového vlákna pro zpracování, nebo zadáním nové veřejné metody.  
   
--   Stop: Označuje konec aktivity. Trasování "Stop" poskytuje záznam ukončení existující milník zpracování. Obsahuje existující ID aktivity pro zdroj daného trasování v dané procesu, s výjimkou případů, kdy je ID aktivity rozšíří napříč koncovými body, v takovém případě vidíme na jeden koncový bod jeden "Stop".  Zastavení aktivity příklady ukončuje podproces zpracování nebo ukončení metoda, jejíž začátku byla označený jako s "Start" trasování.  
+-   Stop: Označuje konec aktivity. Trasování "Stop" poskytuje záznam o ukončení existující milník zpracování. Obsahuje existující ID aktivity pro zdroj daného trasování v daného procesu, s výjimkou případů, kdy se ID aktivity šíří napříč koncovými body, v takovém případě vidíme jednu "Stop" jeden koncový bod.  Zastavuje se aktivita příklady ukončuje podproces zpracování a ukončuje se metoda jehož začátku byl označený "Start" trasování.  
   
--   Pozastavit: Označuje pozastavení zpracování aktivity. "Pozastavit" trasování obsahuje existující ID aktivity jejichž zpracování se očekává pokračovat později. Žádné trasování jsou vydávány s tímto ID mezi události pozastavení a obnovení v aktuálním zdroji trasování. Příklady pozastavení aktivitu při volání do funkce vnější knihovny nebo při čekání na prostředek, například k portu dokončení vstupně-výstupní operace.  
+-   Pozastavit: Určuje pozastavení zpracování aktivity. Trasování "Pozastavit" obsahuje existující ID aktivity, jejíž zpracování se očekává pokračovat později. Žádné trasování jsou emitovány s tímto ID mezi událostí pozastavení a obnovení z aktuálního zdroje trasování. Příklady: aktivita pozastavení při volání do funkce vnější knihovny, nebo při čekání na prostředek, jako je port dokončení vstupně-výstupních operací.  
   
--   Obnovení: Označuje obnovení zpracování aktivity. "Obnovit" trasování obsahuje existující id aktivity jejichž poslední emitovaného trasování v aktuálním zdroji trasování byl "Pozastavit" trasování. Mezi příklady patří vrácení z volání funkce vnější knihovny, nebo když signál k obnovení prostředek například k portu dokončení vstupně-výstupní operace.  
+-   Obnovení: Určuje opětovné zpracování aktivity. Trasování "Obnovit" obsahuje existující id aktivity, jejíž poslední trasování vygenerovanou z aktuálního zdroje trasování byl "Pozastavit" trasování. Mezi příklady patří návratu z volání funkce externí knihovny nebo signalizován obnovit zpracování podle prostředků, jako je port dokončení vstupně-výstupních operací.  
   
--   Přenos: Vzhledem k tomu, že některé aktivity jsou způsobeny ostatní, nebo se týkají jiným uživatelům, aktivity může souviset s dalšími aktivitami prostřednictvím "Přenos" trasování. Přenos zaznamenává směrovanou vztah jedné aktivity do jiného  
+-   Přenos: Protože některé aktivity jsou způsobeny jinými uživateli nebo jiné se týkají, aktivity může souviset s další aktivity prostřednictvím "Přenést" trasování. Převod záznamů řízené vztah sady jedné aktivity do druhé  
   
- Spuštění a zastavení trasování nejsou důležité pro korelačního. Však může pomoci zvýšit výkon, profilace a oboru ověření aktivity.  
+ Spuštění a zastavení trasování nejsou důležité pro korelaci. Nicméně mohou pomoci zvýšit výkon, profilace a ověřování obor aktivit.  
   
- Pomocí těchto typů, nástroje můžete optimalizovat navigace protokoly trasování a vyhledejte okamžitě související události téže aktivity, nebo události v související aktivity, pokud nástroj dodržuje přenos trasování. Například nástroje zastaví, analýzy protokolů pro danou aktivitu, když se jim trasování spuštění a zastavení.  
+ Pomocí těchto typů, nástroje můžete optimalizovat navigace protokoly trasování a hledat okamžitě souvisejících událostí do stejné aktivity nebo události v související aktivity, pokud nástroj dodržuje přenos trasování. Například nástroje se zastaví analýzu protokolů pro danou aktivitu, když se jim spuštění/zastavení trasování.  
   
- Tyto typy trasování můžete použít také pro profilaci. Využívání prostředků mezi značky zahájení a ukončení představují aktivity včetně dobu, včetně obsažené logické aktivity. Odečtením časových intervalů mezi pozastavení a obnovení trasování poskytuje čas skutečné aktivity.  
+ Tyto typy trasování lze použít také pro profilování. Prostředky spotřebované mezi značkami spouštění a zastavování představují celkový čas aktivity, včetně logické obsažené aktivity. Odečtením časových intervalů mezi trasování pozastavení a obnovení poskytuje skutečné aktivity čas.  
   
- Zastavit trasování je také užitečné pro ověření oboru implementovaných aktivit. Pokud některé zpracování trasování se zobrazí po zastavení trasování místo uvnitř danou aktivitu, to může navrhuje vadou kódu.  
+ Zastavení trasování je také užitečné hlavně při ověřování oboru implementovaných aktivit. Pokud některá trasování zpracování se zobrazí po zastavení trasování místo uvnitř danou aktivitu, to může naznačuje chybu v kódu.  
   
-## <a name="guidelines-for-using-activity-tracing"></a>Pokyny k používání trasování aktivit  
- Následuje seznam uvádí pomocí trasování ActivityTracing (spuštění, zastavení, pozastavení, opětovné spuštění a přenos).  
+## <a name="guidelines-for-using-activity-tracing"></a>Pokyny k použití trasování činnosti  
+ Následuje seznam uvádí pomocí trasování ActivityTracing (spuštění, zastavení, pozastavení, obnovení a přenos).  
   
--   Trasování je řízené cyklická grafu není stromu. Ovládací prvek může vrátit k aktivitě, která vytvořený aktivitu.  
+-   Trasování je orientovaný graf cyklické, ne stromu. Ovládací prvek může vrátit k aktivitě, která vytvoří podřízený proces aktivity.  
   
--   Aktivita označuje zpracování hranic, která může mít smysl pro správce systému nebo o podpoře.  
+-   Aktivita označuje hranici zpracování, což může být srozumitelné pro správce systému nebo pro možnosti podpory.  
   
--   Každá metoda WCF, jak na klientovi a serveru, je vázaný podle od nová aktivita a pak (po práci) ukončení nová aktivita a vrátilo se do vedlejším aktivity.  
+-   Každá metoda služby WCF, jak na klientovi a serveru, je omezená, když na začátek novou aktivitu a potom (po dokončení práce) končí nová aktivita a vrácení k aktivitě okolí.  
   
--   Dlouho spuštěný (probíhající) aktivity, například naslouchat pro připojení nebo čekání zprávy jsou reprezentované pomocí odpovídající značky spuštění a zastavení.  
+-   Dlouho spuštěný (probíhající) aktivity, například naslouchat pro připojení nebo čeká na zprávy jsou reprezentovány odpovídající značek start/stop.  
   
--   Aktivity aktivovány příjmu nebo zpracování zprávy, které jsou reprezentované pomocí trasování hranice.  
+-   Aktivity aktivované příjmu nebo zpracování zprávy jsou reprezentovány hranice trasování.  
   
--   Aktivity představují aktivity, nikoli nutně objekty. Aktivita by měl být interpretován jako "to se děje při. . . (emisí smysluplný trasování došlo k chybě)."  
+-   Aktivity představují aktivity, ne tedy nutně objekty. Aktivita by měl být interpretován jako "k této situaci docházelo při. . . (emisí smysluplné trasování došlo k chybě)."  
   
 ## <a name="see-also"></a>Viz také  
  [Konfigurace trasování](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  

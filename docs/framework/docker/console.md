@@ -4,12 +4,12 @@ description: Zjistěte, jak využít stávající aplikace konzoly rozhraní .NE
 author: spboyer
 ms.date: 09/28/2016
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
-ms.openlocfilehash: f5a38ac63db969a58e920ea79bf4bf10bcfcf64f
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: bf21357efc234ea99836b190ce34c70f2644ea6a
+ms.sourcegitcommit: e42d09e5966dd9fd02847d3e7eeb4ec0877069f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193327"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49374752"
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Spuštění konzolové aplikace v kontejnerech Windows
 
@@ -46,7 +46,7 @@ Přesun vaší konzolové aplikace je otázkou pár kroků.
 Kontejnery Windows se podporují na [Windows 10 Anniversary Update](https://www.microsoft.com/en-us/software-download/windows10/) nebo [Windows serveru 2016](https://www.microsoft.com/en-us/cloud-platform/windows-server).
 
 > [!NOTE]
->Pokud používáte Windows Server 2016, je nutné kontejnery ručně povolit, protože instalační služba Docker pro Windows nebudou povolení této funkce. Ujistěte se, že všechny aktualizace spustili pro operační systém a pak postupujte podle pokynů v [nasazení hostitele kontejneru](https://msdn.microsoft.com/virtualization/windowscontainers/deployment/deployment) článku a nainstalujte kontejnery a Docker funkce.
+>Pokud používáte Windows Server 2016, je nutné kontejnery ručně povolit, protože instalační služba Docker pro Windows nebudou povolení této funkce. Ujistěte se, že všechny aktualizace spustili pro operační systém a pak postupujte podle pokynů v [nasazení hostitele kontejneru](/virtualization/windowscontainers/deploy-containers/deploy-containers-on-server) článku a nainstalujte kontejnery a Docker funkce.
 
 Musíte mít Docker pro Windows, kontejnery Windows verze 1.12 Beta 26 nebo vyšší pro podporu. Ve výchozím nastavení Docker umožňuje kontejnery založené na Linuxu; Přepnout na kontejnery Windows klikněte pravým tlačítkem myši klikněte na ikonu Dockeru na hlavním panelu systému a vyberte **přepnout na kontejnery Windows**. Docker se spustí proces změny a může vyžadovat restartování.
 

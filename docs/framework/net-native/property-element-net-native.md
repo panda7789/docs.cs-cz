@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: ad4ba56d-3bcb-4c10-ba90-1cc66e2175a1
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47ed75d377814a740edece2b6a69e44acbd8ef0c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 1b4541bc5a878739c17179576739fbe33384445d
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46004348"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50038903"
 ---
 # <a name="ltpropertygt-element-net-native"></a>Element &lt;Property&gt; (.NET Native)
 Vlastnost se týká zásady reflexe modulu runtime.  
@@ -75,7 +75,7 @@ Vlastnost se týká zásady reflexe modulu runtime.
   
  Soubor se vztahuje `All` hodnota, která se `Activate` zásady pro `Book` třídu, která umožňuje přístup ke třídě konstruktory prostřednictvím reflexe. `Browse` Zásady `Book` třída dědí z jeho nadřazeného oboru. Je nastavené na `Required Public`, který zpřístupňuje metadat v době běhu.  
   
- Následující je zdrojový kód pro příklad. `outputBlock` Představuje proměnnou [TextBlock](https://msdn.microsoft.com/library/windows.ui.xaml.controls.textblock.aspx) ovládacího prvku.  
+ Následující je zdrojový kód pro příklad. `outputBlock` Představuje proměnnou <xref:Windows.UI.Xaml.Controls.TextBlock> ovládacího prvku.  
   
  [!code-csharp[ProjectN_Reflection#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/property1.cs#6)]  
   

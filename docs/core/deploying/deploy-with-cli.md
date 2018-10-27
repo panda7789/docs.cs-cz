@@ -7,12 +7,12 @@ ms.date: 09/05/2018
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: a7e810372d831699eae777186385e45fe65cdf45
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 6c0eb82b6be5d65c70287dd601bb97868af1c943
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48266578"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49454444"
 ---
 # <a name="deploying-net-core-apps-with-command-line-interface-cli-tools"></a>Nasazení aplikace .NET Core pomocí nástrojů rozhraní příkazového řádku (CLI)
 
@@ -77,7 +77,7 @@ Nasazení závisí na architektuře bez závislostí třetích stran zahrnuje vy
 
 Nasazení závisí na architektuře se jeden nebo více závislostí třetích stran vyžaduje, aby tyto závislosti k dispozici pro váš projekt. Další dva kroky jsou požadovány, než můžete spustit `dotnet restore` ([viz Poznámka](#dotnet-restore-note)) příkaz:
 
-1. Přidat odkazy na požadované knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` oddíl obsahuje závislost na [Json.NET](http://www.newtonsoft.com/json) jako knihovny třetích stran:
+1. Přidat odkazy na požadované knihovny třetích stran `<ItemGroup>` část vaší *csproj* souboru. Následující `<ItemGroup>` oddíl obsahuje závislost na [Json.NET](https://www.newtonsoft.com/json) jako knihovny třetích stran:
 
       ```xml
       <ItemGroup>

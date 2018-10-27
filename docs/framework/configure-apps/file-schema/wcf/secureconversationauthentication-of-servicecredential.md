@@ -2,13 +2,12 @@
 title: '&lt;secureConversationAuthentication&gt; – &lt;serviceCredential&gt;'
 ms.date: 03/30/2017
 ms.assetid: 0bd3fac7-befd-4a45-ba51-c200b33be0fd
-author: BrucePerlerMS
-ms.openlocfilehash: 3adcf7ba9814bcf494d345cf0e3f47c57df2152c
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 8433ac8f698f3e5569802a8d76f7dedaf22f53c3
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841745"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180374"
 ---
 # <a name="ltsecureconversationauthenticationgt-of-ltservicecredentialgt"></a>&lt;secureConversationAuthentication&gt; – &lt;serviceCredential&gt;
 Určuje nastavení pro služby zabezpečené konverzace.  

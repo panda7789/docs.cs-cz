@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: bc8082175047271c92f9a9a17a49534ffc9546a9
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 9c637d9842c05f47bfcaa0431dd2f9f1ee29cc09
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45677146"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181235"
 ---
 # <a name="how-to-write-text-to-a-file"></a>Postupy: Zápis textu do souboru
 Toto téma ukazuje různé způsoby můžete napsat text do souboru pro aplikace .NET Framework nebo [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Následující třídy a metody se obvykle používají k zápisu textu do souboru:  
@@ -27,7 +27,7 @@ Toto téma ukazuje různé způsoby můžete napsat text do souboru pro aplikace
   
 -   <xref:System.IO.File> – pro použití s aplikací využívajících rozhraní .NET Framework. Poskytuje statické metody pro zápis textu do souboru jako <xref:System.IO.File.WriteAllLines%2A> a <xref:System.IO.File.WriteAllText%2A>, nebo přidat text do souboru (<xref:System.IO.File.AppendAllLines%2A>, <xref:System.IO.File.AppendAllText%2A> nebo <xref:System.IO.File.AppendText%2A>).  
   
--   [FileIO](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.aspx) – Pokud chcete používat s [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Obsahuje asynchronní metody zápisu textu do souboru ([WriteLinesAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.writelinesasync.aspx) nebo [WriteTextAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.writetextasync.aspx)) nebo přidat text do souboru ([AppendLinesAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.appendlinesasync.aspx) nebo [ AppendTextAsync](https://msdn.microsoft.com/library/windows/apps/windows.storage.fileio.appendtextasync.aspx)).  
+-   <xref:Windows.Storage.FileIO> -pro použití s [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Obsahuje asynchronní metody zápisu textu do souboru (<xref:Windows.Storage.FileIO.WriteLinesAsync%2A> nebo <xref:Windows.Storage.FileIO.WriteTextAsync%2A>) nebo přidat text do souboru (<xref:Windows.Storage.FileIO.AppendLinesAsync%2A> nebo <xref:Windows.Storage.FileIO.AppendTextAsync%2A>).  
 
 - <xref:System.IO.Path> -pro použití na řetězce, které obsahují informace o cestě souboru nebo adresáře. Obsahuje <xref:System.IO.Path.Combine%2A> metodu, která umožňuje zřetězení řetězců k sestavení cesty k souboru nebo adresáře.
 
@@ -59,7 +59,7 @@ Toto téma ukazuje různé způsoby můžete napsat text do souboru pro aplikace
  [!code-vb[Conceptual.BasicIO.TextFiles#WriteFile](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source.vb#writefile)]  
   
 ## <a name="example"></a>Příklad  
- Následující příklad ukazuje, jak asynchronního zápisu vstupu uživatele do textového souboru v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Kvůli zabezpečení, otevřete soubor z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace obvykle vyžaduje použití [FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/windows.storage.pickers.fileopenpicker.aspx) ovládacího prvku. V tomto příkladu `FileOpenPicker` se vyfiltruje a zobrazí textové soubory.  
+ Následující příklad ukazuje, jak asynchronního zápisu vstupu uživatele do textového souboru v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace. Kvůli zabezpečení, otevřete soubor z [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace obvykle vyžaduje použití <xref:Windows.Storage.Pickers.FileOpenPicker> ovládacího prvku. V tomto příkladu `FileOpenPicker` se vyfiltruje a zobrazí textové soubory.  
   
 ```xaml  
 <Page  

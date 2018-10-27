@@ -14,72 +14,72 @@ helpviewer_keywords:
 ms.assetid: 5099e549-f4fd-49fb-a290-549edd456c6a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6b1f814b8492120002013a8752caf96ba34785d6
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: bdd610ade931bedc9ee387b65b18efd1909ef58b
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32745614"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50033920"
 ---
 # <a name="resolving-assembly-loads"></a>Řešení načítání sestavení
-Poskytuje rozhraní .NET Framework <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událost pro aplikace, které vyžadují větší kontrolu nad načítání sestavení. Při zpracování této událost, můžete aplikaci načtení sestavení do zatížení kontextu z mimo normální testování cesty vyberte který několik verzí sestavení načíst, Emitování dynamických sestavení a obnoví v něm a tak dále. Toto téma obsahuje pokyny pro zpracování <xref:System.AppDomain.AssemblyResolve> událostí.  
+Rozhraní .NET Framework poskytuje <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí pro aplikace, které vyžadují větší kontrolu nad načítání sestavení. Díky zpracování této události, může vaše aplikace načtení sestavení do zatížení kontextu z mimo normální definovaných cest výběr z několika verzí sestavení načíst, Emitování dynamických sestavení a vrátit ji a tak dále. Toto téma obsahuje pokyny pro zpracování <xref:System.AppDomain.AssemblyResolve> událostí.  
   
 > [!NOTE]
->  Řešení načítání sestavení v kontextu pouze pro reflexi, použijte <xref:System.AppDomain.ReflectionOnlyAssemblyResolve?displayProperty=nameWithType> událostí místo.  
+>  Řešení načítání sestavení do kontextu pouze pro reflexi, použijte <xref:System.AppDomain.ReflectionOnlyAssemblyResolve?displayProperty=nameWithType> události místo.  
   
-## <a name="how-the-assemblyresolve-event-works"></a>Jak funguje AssemblyResolve události  
- Když se zaregistrujete obslužnou rutinu pro <xref:System.AppDomain.AssemblyResolve> událostí, obslužná rutina je volána vždy, když modul runtime nepodaří vytvořit vazbu k sestavení podle názvu. Například může způsobit následující metody volání z uživatelského kódu <xref:System.AppDomain.AssemblyResolve> událost, která má být vyvolána:  
+## <a name="how-the-assemblyresolve-event-works"></a>Jak funguje AssemblyResolve událostí  
+ Při registraci obslužné rutiny pro <xref:System.AppDomain.AssemblyResolve> obslužná rutina události je vyvolána pokaždé, když modulu runtime se nepodařilo vytvořit vazbu sestavení podle názvu. Například může způsobit volání těchto metod z uživatelského kódu <xref:System.AppDomain.AssemblyResolve> události:  
   
--   <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> Přetížení metody nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metody, jejichž první argument je řetězec, který představuje zobrazovaný název sestavení načíst (tedy řetězec vrácený <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> vlastnost).  
+-   <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> Přetížení metody nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metody, jehož první argument je řetězec, který představuje zobrazovaný název sestavení (to znamená, řetězec vrácený funkcí <xref:System.Reflection.Assembly.FullName%2A?displayProperty=nameWithType> vlastnost).  
   
--   <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> Přetížení metody nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metody, jejichž první argument je <xref:System.Reflection.AssemblyName> objekt, který identifikuje sestavení načíst.  
+-   <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> Přetížení metody nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metody, jehož první argument je <xref:System.Reflection.AssemblyName> objekt, který identifikuje načtení sestavení.  
   
 -   <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType> Přetížení metody.  
   
 -   <xref:System.AppDomain.CreateInstance%2A?displayProperty=nameWithType> Nebo <xref:System.AppDomain.CreateInstanceAndUnwrap%2A?displayProperty=nameWithType> přetížení metody, která vytvoří instanci objektu v jiné doméně aplikace.  
   
-### <a name="what-the-event-handler-does"></a>Jaké jsou obslužné rutiny události  
- Obslužná rutina pro <xref:System.AppDomain.AssemblyResolve> událostí obdrží zobrazovaný název sestavení, které má být načteno do <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType> vlastnost. Pokud obslužná rutina nemůže rozpoznat název sestavení, vrátí hodnotu null (`Nothing` v jazyce Visual Basic `nullptr` v jazyce Visual C++).  
+### <a name="what-the-event-handler-does"></a>Co dělá obslužné rutiny události  
+ Obslužná rutina pro <xref:System.AppDomain.AssemblyResolve> události obdrží zobrazovaný název sestavení, které mají být načteny v <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType> vlastnost. Pokud obslužná rutina nedokáže rozpoznat název sestavení, vrátí hodnotu null (`Nothing` v jazyce Visual Basic `nullptr` v jazyce Visual C++).  
   
- Pokud obslužná rutina rozpozná název sestavení, může zatížení a vrátí sestavení, které splňuje požadavek. Následující seznam popisuje několik ukázkových scénářů.  
+ Pokud obslužná rutina rozpozná název sestavení, můžete načíst a vrátit sestavení, která splňuje požadavek. Následující seznam popisuje několik ukázkových scénářů.  
   
--   Pokud obslužná rutina nezná umístění verze sestavení, můžete načíst sestavení pomocí <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType> metody a může vrátit načíst sestavení, pokud bylo úspěšné.  
+-   Pokud obslužná rutina zná umístění verzi sestavení, můžete načíst sestavení pomocí <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType> metody a může vrátit načtené sestavení, pokud je úspěšná.  
   
--   Pokud obslužná rutina má přístup k databázi sestavení uložené jako bajtové pole, je možné načíst pole bajtů pomocí jedné z <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metody, které provést bajtové pole.  
+-   Pokud obslužná rutina má přístup k databázi sestavení uložený jako pole bajtů, je načíst bajtového pole pomocí jedné z <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metod, které trvat bajtové pole.  
   
--   Obslužná rutina může generovat dynamické sestavení a obnoví v něm.  
+-   Obslužná rutina můžete generovat dynamické sestavení a vrátit zpět.  
   
 > [!NOTE]
->  Obslužná rutina musí načíst sestavení do načtení z kontextu, do kontextu zatížení nebo bez kontextu. Pokud obslužná rutina načte sestavení do kontextu pouze pro reflexi pomocí <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType> pokus zatížení metody, která vyvolala <xref:System.AppDomain.AssemblyResolve> události nezdaří.  
+>  Obslužná rutina musí načíst sestavení do načtení z kontextu, v kontextu načtení, nebo bez kontextu. Pokud obslužná rutina načte sestavení do kontextu pouze pro reflexi pomocí <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A?displayProperty=nameWithType> metody pokusí zatížení, která vyvolala <xref:System.AppDomain.AssemblyResolve> události nezdaří.  
   
- Je zodpovědností obslužné rutiny události vrátit vhodný sestavení. Obslužná rutina může analyzovat zobrazovaný název požadované sestavení předáním <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType> hodnotu vlastnosti <xref:System.Reflection.AssemblyName.%23ctor%28System.String%29> konstruktor. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít obslužná rutina <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=nameWithType> vlastnosti k určení, zda je aktuální požadavek závislost sestavení. Tyto informace můžou pomoct identifikovat sestavení, které budou splňovat závislost.  
+ Zodpovídá za obslužné rutiny události k vrácení vhodný sestavení. Obslužná rutina může analyzovat zobrazovaný název požadované sestavení předáním <xref:System.ResolveEventArgs.Name%2A?displayProperty=nameWithType> hodnoty vlastnosti <xref:System.Reflection.AssemblyName.%23ctor%28System.String%29> konstruktoru. Počínaje [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)], můžete použít obslužné rutiny <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=nameWithType> a určí, zda je aktuální požadavek závislost z jiného sestavení. Tyto informace můžou pomoci při identifikaci sestavení, které se bude splňovat závislost.  
   
- Obslužné rutiny události může vrátit jinou verzi než verze, který byl vyžádán sestavení.  
+ Obslužná rutina události může vrátit na jinou verzi než verze, který byl vyžádán sestavení.  
   
- Ve většině případů je sestavení, které se vrátí obslužnou rutinou se zobrazí v kontextu zatížení, bez ohledu na to, které obslužná rutina načte ji do kontextu. Například, pokud obslužná rutina používá <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metodu pro načtení sestavení do kontextu zatížení z, sestavení se zobrazí v kontextu zatížení, když obslužná rutina vrátí ji. Ale v případě, že následující sestavení se zobrazí bez kontextu při obslužná rutina vrátí ji:  
+ Ve většině případů sestavení, který je vrácen rutinou se zobrazí v kontextu načtení, bez ohledu na to, které obslužná rutina načte ji do kontextu. Například, pokud obslužná rutina používá <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metodu pro načtení sestavení do kontextu načtení z, sestavení se zobrazí v kontextu načtení, když obslužná rutina vrátí jej. Ale v následujících případech sestavení se zobrazí bez kontextu při obslužná rutina vrátí jej:  
   
 -   Obslužná rutina načte sestavení bez kontextu.  
   
 -   <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=nameWithType> Vlastnost nemá hodnotu null.  
   
--   Žádajícího sestavení (to znamená, sestavení, které je vrácený <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=nameWithType> vlastnost) byl načten bez kontextu.  
+-   Žádost o sestavení (to znamená, sestavení, který je vrácen <xref:System.ResolveEventArgs.RequestingAssembly%2A?displayProperty=nameWithType> vlastnost) byl načten bez kontextu.  
   
  Informace o kontextu, najdete v článku <xref:System.Reflection.Assembly.LoadFrom%28System.String%29?displayProperty=nameWithType> přetížení metody.  
   
- Několik verzí stejného sestavení je možné načíst do stejné domény aplikace. Tento postup se nedoporučuje, protože může vést k typu přiřazení problémů. V tématu [osvědčené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md).  
+ Více verzí stejného sestavení, je možné načíst do stejné doméně aplikace. Tato praxe se nedoporučuje, protože to může vést k zadejte přiřazení problémy. Zobrazit [osvědčené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md).  
   
-### <a name="what-the-event-handler-should-not-do"></a>Obslužné rutiny události není čemu slouží  
- Primární pravidla pro zpracování <xref:System.AppDomain.AssemblyResolve> událostí je, že by se neměl pokoušet vrátit nepoznáváte sestavení. Když píšete obslužná rutina, byste měli vědět, které sestavení může způsobit událost, která má být vyvolána. Vaší obslužné rutiny pro ostatních sestavení by měl vrátit hodnotu null.  
+### <a name="what-the-event-handler-should-not-do"></a>Co by měla obslužná rutina události není dělat  
+ Primární pravidlo pro zpracování <xref:System.AppDomain.AssemblyResolve> událostí je, že by se neměl pokoušet vrátit sestavení nebyl rozpoznán. Při psaní obslužnou rutinu byste měli vědět, která sestavení může způsobit, že událost, která má být vyvolána. Vaše obslužná rutina musí vrátit hodnotu null pro jiná sestavení.  
   
 > [!IMPORTANT]
->  Od verze [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], <xref:System.AppDomain.AssemblyResolve> událost se vyvolá pro satelitní sestavení. Tato změna ovlivňuje obslužnou rutinu události, který byl vytvořen pro dřívější verzi rozhraní .NET Framework, pokud obslužná rutina se pokusí přeložit všechny požadavky na zatížení v sestavení. Tato změna nemá vliv obslužné rutiny, které ignorovat sestavení nerozpoznají: mohly vrátit hodnotu null a dodržíte normální záložní mechanismy.  
+>  Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], <xref:System.AppDomain.AssemblyResolve> událost se vyvolá pro satelitní sestavení. Tato změna ovlivní obslužnou rutinu události, která byla napsána pro starší verzi rozhraní .NET Framework, pokud obslužná rutina se pokusí přeložit všechny požadavky na zatížení v sestavení. Obslužné rutiny událostí, které ignorovat sestavení nerozpoznají nejsou touto změnou ovlivněny: vrátí hodnotu null a nepoužijí normální mechanismy pro použití náhradní lokality.  
   
- Při načítání sestavení, obslužné rutiny události nesmí používat žádné z <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metody, které můžou způsobit <xref:System.AppDomain.AssemblyResolve> událost, která má být vyvolané rekurzivně, protože to může vést k přetečení zásobníku. (Viz seznam uvedené výše v tomto tématu.) K tomu dojde i v případě, že zadáte zpracování výjimek pro žádost o načtení, protože žádná výjimka je vyvolána, dokud všechny obslužné rutiny událostí, aby vrátil. Proto následující kód vede k přetečení zásobníku Pokud `MyAssembly` nebyl nalezen:  
+ Při načítání sestavení, obslužná rutina události nesmí používat kterýkoli z <xref:System.AppDomain.Load%2A?displayProperty=nameWithType> nebo <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> přetížení metod, které může způsobit, že <xref:System.AppDomain.AssemblyResolve> má být vyvolanou rekurzivně, protože to může vést k přetečení zásobníku. (Viz seznam uvedený výše v tomto tématu.) K tomu dochází, i v případě, že zadáte zpracování výjimek pro žádost o načtení, protože není vyvolána žádná výjimka, dokud se vrátili všechny obslužné rutiny událostí. Proto následující kód za následek přetečení zásobníku Pokud `MyAssembly` nebyl nalezen:  
   
  [!code-cpp[AssemblyResolveRecursive#1](../../../samples/snippets/cpp/VS_Snippets_CLR/assemblyresolverecursive/cpp/example.cpp#1)]
  [!code-csharp[AssemblyResolveRecursive#1](../../../samples/snippets/csharp/VS_Snippets_CLR/assemblyresolverecursive/cs/example.cs#1)]
  [!code-vb[AssemblyResolveRecursive#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/assemblyresolverecursive/vb/example.vb#1)]  
   
 ## <a name="see-also"></a>Viz také  
- [Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
- [Používání domén aplikací](../../../docs/framework/app-domains/use.md)
+- [Doporučené postupy pro načtení sestavení](../../../docs/framework/deployment/best-practices-for-assembly-loading.md)  
+- [Používání domén aplikací](../../../docs/framework/app-domains/use.md)

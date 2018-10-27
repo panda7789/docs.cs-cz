@@ -3,12 +3,12 @@ title: Dokumentace kódu pomocí komentářů XML
 description: Zjistěte, jak váš kód, který se dokumentační komentáře XML dokumentu a generovat soubor dokumentace XML v době kompilace.
 ms.date: 02/14/2017
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: e211543a6a5cc5f6f29d8c195492b474eb24a38d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 09e6b4aa75aababcebba96693d6e73b29a30fc6a
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397056"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453265"
 ---
 # <a name="documenting-your-code-with-xml-comments"></a>Dokumentace kódu pomocí komentářů XML
 
@@ -51,7 +51,7 @@ Zde je kód pro jednoduché matematické knihovny:
 Ukázka knihovny podporuje čtyři hlavní aritmetické operace `add`, `subtract`, `multiply` a `divide` na `int` a `double` datové typy.
 
 Nyní chcete být schopni vytvořit dokument referenční dokumentace rozhraní API z kódu pro vývojáře třetích stran, kteří používají knihovny ale nemají přístup ke zdrojovému kódu.
-Jak jsme už zmínili starší dokumentační značky XML je možné dosáhnout, jste nyní seznámili s standard podporuje kompilátoru značky jazyka C# jazyka XML.
+Jak už bylo zmíněno dříve dokumentační značky XML slouží k dosažení tohoto cíle. Nyní jste se seznámili s standardních tagů XML C# kompilátor podporuje.
 
 ### <a name="ltsummarygt"></a>&lt;Souhrn&gt;
 
@@ -179,7 +179,7 @@ V kódu můžete vygenerovat kompletní s křížovými odkazy kliknout, čímž
 Existuje mnoho informace probrat se, že to bude připomínající každý vývojář, který chce, abyste mohli přispívat na tento kód.
 Naštěstí je značky XML, které vám to vyřešit:
 
-### <a name="ltincludegt"></a>&lt;Zahrnout&gt;
+### <a name="ltincludegt"></a>&lt;include&gt;
 
 `<include>` Značky umožňuje odkazovat na komentáře v samostatném souboru jazyka XML, které popisují typy a členy ve zdrojovém kódu, na rozdíl od uvedení dokumentační komentáře přímo v souboru zdrojového kódu.
 

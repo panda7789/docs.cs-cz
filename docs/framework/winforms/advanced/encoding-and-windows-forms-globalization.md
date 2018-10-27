@@ -19,22 +19,22 @@ helpviewer_keywords:
 - localization [Windows Forms], character sets
 - globalization [Windows Forms], character sets
 ms.assetid: 22e8965d-a712-42b3-8167-3ee346bd70f9
-ms.openlocfilehash: 9257a6b725839d8f433988ab76c4ce9ae349d950
-ms.sourcegitcommit: 6bc4efca63e526ce6f2d257fa870f01f8c459ae4
+ms.openlocfilehash: 1b1ac50bde87b22c3ce9ff7524edbf8750976788
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/19/2018
-ms.locfileid: "36208444"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183110"
 ---
 # <a name="encoding-and-windows-forms-globalization"></a>Kódování a globalizace Windows Forms
-Aplikace Windows Forms jsou zcela kódování Unicode, což znamená, že každý znak je reprezentována jedinečné číslo, bez ohledu na to, jakou platformu, program nebo jazyk. Další informace o kódování Unicode, najdete v článku [Unicode consortium webu](http://www.unicode.org).  
+Aplikace Windows Forms jsou výhradně kódování Unicode, což znamená, že každý znak je reprezentována jedinečné číslo, bez ohledu na to, jaké platformy, program nebo jazyk. Další informace o kódování Unicode naleznete v tématu [Unicode consortium webu](https://www.unicode.org).  
   
-## <a name="benefits-of-unicode"></a>Výhody kódování Unicode  
- Příklady výhod formuláře s podporou Unicode schopnost pracovat s skripty, které jsou výhradně kódování Unicode, jako je například Hindská. Kromě toho můžete použít více jazyků na jednoho formuláře. V kódu Unicode jsou všechny znaky dva bajty, aby bylo možné žádné speciální úsilí představují dvoubajtové znaky. Je také možné zapsat jednu sadu kód, který bude fungovat na všech platformách. Jedná se o změnu z předchozích verzí aplikace Visual Basic, ve kterém jste museli psát jiný kód pro různé platformy, jako je například systému Windows NT a [!INCLUDE[win98](../../../../includes/win98-md.md)].  
+## <a name="benefits-of-unicode"></a>Výhody sady Unicode  
+ Mezi výhody formuláře s podporou kódování Unicode patří možnost spolupracovat se skripty, které jsou výhradně kódování Unicode, jako je například hindština. Kromě toho můžete použít více jazyků na jeden formulář. V kódování Unicode jsou všechny znaky dva bajty, takže žádná zvláštní úsilí je potřeba k reprezentaci dvoubajtové znaky. Můžete také napsat jednu sadu kód, který bude fungovat na všech platformách. Jedná se o změnu z předchozích verzí jazyka Visual Basic, ve kterém jste museli psát jiný kód pro různé platformy, jako je například Windows NT a [!INCLUDE[win98](../../../../includes/win98-md.md)].  
   
- Některé ovládací prvky však nepodporují kódování Unicode v [!INCLUDE[win98](../../../../includes/win98-md.md)] a Windows Millennium Edition. Tyto ovládací prvky, které dědí běžného ovládacího prvku, bude zpracovávat data s Windows znakové stránky, jako [!INCLUDE[vcpransi](../../../../includes/vcpransi-md.md)]. Tyto ovládací prvky jsou: <xref:System.Windows.Forms.TabControl>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.DateTimePicker>, <xref:System.Windows.Forms.MonthCalendar>, <xref:System.Windows.Forms.TrackBar>, <xref:System.Windows.Forms.ProgressBar>, <xref:System.Windows.Forms.ImageList>, <xref:System.Windows.Forms.ToolBar>, a <xref:System.Windows.Forms.StatusBar>. V důsledku toho nelze zobrazit Unicode data v těchto ovládacích prvků v uvedených platformách. Například nelze zobrazit japonské znaky v angličtině [!INCLUDE[win98](../../../../includes/win98-md.md)] operačního systému.  
+ Nicméně některé ovládací prvky nepodporují kódování Unicode v [!INCLUDE[win98](../../../../includes/win98-md.md)] a Windows Millennium Edition. Tyto ovládací prvky, které dědí z běžný ovládací prvek, bude zpracování dat pomocí znakové stránky Windows, jako [!INCLUDE[vcpransi](../../../../includes/vcpransi-md.md)]. Tyto ovládací prvky jsou: <xref:System.Windows.Forms.TabControl>, <xref:System.Windows.Forms.ListView>, <xref:System.Windows.Forms.TreeView>, <xref:System.Windows.Forms.DateTimePicker>, <xref:System.Windows.Forms.MonthCalendar>, <xref:System.Windows.Forms.TrackBar>, <xref:System.Windows.Forms.ProgressBar>, <xref:System.Windows.Forms.ImageList>, <xref:System.Windows.Forms.ToolBar>, a <xref:System.Windows.Forms.StatusBar>. V důsledku toho nelze zobrazit data v kódování Unicode v těchto ovládacích prvků na uvedené platformy. Japonské znaky nelze zobrazit například v anglické [!INCLUDE[win98](../../../../includes/win98-md.md)] operačního systému.  
   
- Kódování Unicode alternativy k <xref:System.Windows.Forms.ToolBar> a <xref:System.Windows.Forms.StatusBar> ovládacích prvků, použijte <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.StatusStrip> ovládací prvky, které nahradí tyto starší ovládací prvky. Chcete-li udržovat podobné vzhled a chování mezi vizuální prvky v aplikaci, použijte <xref:System.Windows.Forms.MenuStrip> řízení pro vykreslování nabídky místo <xref:System.Windows.Forms.MainMenu>. Jako <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.StatusStrip>, <xref:System.Windows.Forms.MenuStrip> může také zpracovat a zobrazit znaky znakové sady Unicode.  
+ S ohledem na Unicode alternativy k <xref:System.Windows.Forms.ToolBar> a <xref:System.Windows.Forms.StatusBar> ovládací prvky, používají <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.StatusStrip> ovládací prvky, které nahradí tyto starší ovládací prvky. Chcete-li udržovat podobá vzhledu a chování mezi vizuální prvky v aplikaci, použijte <xref:System.Windows.Forms.MenuStrip> ovládací prvek pro vykreslování nabídky místo <xref:System.Windows.Forms.MainMenu>. Stejně jako <xref:System.Windows.Forms.ToolStrip> a <xref:System.Windows.Forms.StatusStrip>, <xref:System.Windows.Forms.MenuStrip> může také zpracovávat a zobrazovat znaků Unicode.  
   
 ## <a name="see-also"></a>Viz také:
 

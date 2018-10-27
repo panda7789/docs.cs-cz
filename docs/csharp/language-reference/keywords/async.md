@@ -8,12 +8,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 10f1d62c5aa29f2074106ab102775b9a0283d646
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 021a4291f550eca517cbdc9769c2a9f0aca99d1e
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43510959"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50049097"
 ---
 # <a name="async-c-reference"></a>async (Referenční dokumentace jazyka C#)
 Použití `async` modifikátor určit, že je metoda, [výraz lambda](../../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md), nebo [anonymní metoda](../../../csharp/programming-guide/statements-expressions-operators/anonymous-methods.md) je asynchronní. Pokud použijete tento modifikátor na metodu nebo výraz, to se označuje jako *asynchronní metoda*. Následující příklad definuje asynchronní metodu s názvem `ExampleMethodAsync`: 
@@ -78,7 +78,7 @@ Zadáte `Task<TResult>` jako návratový typ asynchronní metody Pokud [vrátit]
   
 Můžete použít `void` především k definování obslužných rutin událostí, kde je požadován návratový typ. Volající `void`-asynchronní metody vracející ni nemohou čekat a zaznamenat tak výjimky, které metoda vyvolá.  
 
-Od verze C# 7.0, vrátí jiný typ, obvykle hodnota typu, který má `GetAwaiter` metodu miminize přidělení paměti v kritickém pro výkon části kódu. 
+Počínaje C# 7.0, vrátí jiný typ, obvykle hodnota typu, který má `GetAwaiter` metoda minimalizovat přidělení paměti v kritickém pro výkon části kódu. 
 
 Další informace a příklady najdete v tématu [Async Return Types](../../../csharp/programming-guide/concepts/async/async-return-types.md).  
   

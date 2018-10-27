@@ -4,12 +4,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 8ac0d70458d7c3762ae9dc5fc90058f0caafc4ab
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: ea63bedd207a9904a5f6aa656ed19469394290fa
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44184925"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50041645"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Návratové hodnoty Main() (C# Programming Guide)
 
@@ -25,7 +25,7 @@ Pokud se návratová hodnota z `Main` nepoužívá vrácení `void` umožňuje k
 
 ## <a name="example"></a>Příklad
 
-Tento příklad používá [.NET Core](../../../core/index.md) nástroje příkazového řádku. Pokud unfamilar pomocí nástrojů příkazového řádku .NET Core, můžete o nich informace v tomto [tématu Začínáme Get](../../../core/tutorials/using-with-xplat-cli.md).
+Tento příklad používá [.NET Core](../../../core/index.md) nástroje příkazového řádku. Pokud nejste obeznámeni s nástroji příkazového řádku .NET Core, můžete o nich informace v tomto [tématu Začínáme Get](../../../core/tutorials/using-with-xplat-cli.md).
 
 Upravit `Main` metoda *program.cs* následujícím způsobem:
 

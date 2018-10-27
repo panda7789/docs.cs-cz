@@ -2,19 +2,19 @@
 title: CallbackBehavior
 ms.date: 03/30/2017
 ms.assetid: 42acd302-2b62-4849-a2d1-a03084343ecd
-ms.openlocfilehash: 2755ac4f365536366b41e743110ce494063a5ecc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 38a38a71db2927d187ccdd93e5e364b0d4955373
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486935"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452609"
 ---
 # <a name="callbackbehavior"></a>CallbackBehavior
 CallbackBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class CallbackBehavior : Behavior  
 {  
   boolean AutomaticSessionShutdown;  
@@ -34,56 +34,56 @@ class CallbackBehavior : Behavior
  Třída CallbackBehavior má následující vlastnosti:  
   
 ### <a name="automaticsessionshutdown"></a>AutomaticSessionShutdown  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- V případě hodnoty true relace se automaticky zavře po ukončení služby duplexní relace.  
+ V případě hodnoty true relace je automaticky uzavřena poté, co služba uzavře oboustrannou relaci.  
   
 ### <a name="concurrencymode"></a>Režim ConcurrencyMode  
  Datový typ: řetězec  
 Přístup k typu: jen pro čtení  
   
- Určuje, jestli služba podporuje jedno vlákno, více vláken nebo znovu zadaná volání.  
+ Určuje, zda služba podporuje jedno vlákno, několik vláken nebo znovu zadaných volání.  
   
 ### <a name="ignoreextensiondataobject"></a>IgnoreExtensionDataObject  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která určuje, zda chcete odesílat data neznámé serializace drátové síti.  
+ Hodnota, která určuje, zda mají data neznámé serializace přenosu.  
   
 ### <a name="includeexceptiondetailinfaults"></a>Třídu IncludeExceptionDetailInFaults  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Když je povolené, podrobnosti o výjimkách odvolání jsou připojené k chybám vrácených ke službě.  
+ Při povolené, podrobnosti o výjimkách odvolání připojeny k chybám vrácených službě.  
   
-### <a name="maxitemsinobjectgraph"></a>maxItemsInObjectGraph  
- Datový typ: logická hodnota  
+### <a name="maxitemsinobjectgraph"></a>MaxItemsInObjectGraph  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Maximální počet položek v serializovaný objekt povoleny.  
+ Maximální počet položek povolených v serializovaném objektu.  
   
 ### <a name="usesynchronizationcontext"></a>UseSynchronizationContext  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda chcete použít aktuální kontext synchronizace pro vybrání procesu spuštění.  
+ Určuje, jestli se má použít aktuální synchronizační kontext pro výběr vlákna exekuce.  
   
 ### <a name="validatemustunderstand"></a>ValidateMustUnderstand  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, zda je systém nebo aplikace vynucuje zpracování záhlaví SOAP MustUnderstand.  
+ Určuje, zda systém nebo aplikace uplatňuje zpracování záhlaví SOAP MustUnderstand.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

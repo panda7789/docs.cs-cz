@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 80379e46c6482a3e052c1283fb4aaba2c7df282e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 31c99d38cd608e93e9ee3467e0ce425835a3d572
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47207095"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50044889"
 ---
 # <a name="mutexes"></a>Mutex – třídy
 Můžete použít <xref:System.Threading.Mutex> objektu pro výhradní přístup k prostředku. <xref:System.Threading.Mutex> Třída používá více systémových prostředků, než <xref:System.Threading.Monitor> třídy, ale může být zařazována přes hranice aplikační domény, je možné s více čeká a je možné k synchronizaci vláken v různých procesů. Porovnání mechanismy spravované synchronizace najdete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  
@@ -51,11 +51,11 @@ Můžete použít <xref:System.Threading.Mutex> objektu pro výhradní přístup
   
 ## <a name="see-also"></a>Viz také:
 
-- <xref:System.Threading.Mutex>  
-- <xref:System.Threading.Mutex.%23ctor%2A>  
-- <xref:System.Security.AccessControl.MutexSecurity>  
-- <xref:System.Security.AccessControl.MutexAccessRule>  
-- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
-- [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)  
-- [Monitorování](https://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)  
-- [Vlákna a dělení na vlákna](../../../docs/standard/threading/threads-and-threading.md)
+- <xref:System.Threading.Mutex?displayProperty=nameWithType>  
+- <xref:System.Threading.Mutex.%23ctor%2A?displayProperty=nameWithType>  
+- <xref:System.Security.AccessControl.MutexSecurity?displayProperty=nameWithType>  
+- <xref:System.Security.AccessControl.MutexAccessRule?displayProperty=nameWithType>
+- <xref:System.Threading.Monitor?displayProperty=nameWithType>  
+- [Práce s vlákny funkce a objekty](threading-objects-and-features.md)  
+- [Vlákna a dělení na vlákna](threads-and-threading.md)
+- [Dělení na vlákna](index.md)  

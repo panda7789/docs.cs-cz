@@ -3,16 +3,16 @@ title: C# Správa verzí – Průvodce v C#
 description: Pochopení principu správy verzí v C# a .NET
 ms.date: 01/08/2017
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 949b7414116169cada62b48392f37809f26d7ff9
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: af81e5a8ad3165ce99a823f8b263cc798d5b6d2c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46585930"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183227"
 ---
 # <a name="versioning-in-c"></a>Správa verzí v jazyce C# #
 
-V tomto kurzu se dozvíte, jaké správy verzí znamená, že v rozhraní .NET. Dozvíte se víc i faktory vzít v úvahu při správy verzí knihovny, jakož i upgrade na novou verzi knihovny.
+V tomto kurzu se dozvíte, jaké správy verzí znamená, že v rozhraní .NET. Dozvíte se víc i faktory vzít v úvahu při vytváření verzí knihovny, jakož i upgrade na novou verzi knihovny.
 
 ## <a name="authoring-libraries"></a>Vytváření knihovny
 
@@ -20,7 +20,7 @@ Jako vývojář, který byl vytvořen knihovny .NET pro veřejně přístupný, 
 
 ### <a name="semantic-versioning"></a>Semantic Versioning
 
-[Sémantické správy verzí](http://semver.org/) (SemVer zkráceně) je zásady vytváření názvů u verze knihovny místo konkrétní verze události.
+[Sémantické správy verzí](https://semver.org/) (SemVer zkráceně) je zásady vytváření názvů u verze knihovny místo konkrétní verze události.
 V ideálním případě informací o verzi, poskytnete své knihovny by měly pomoci vývojářům zjistit informace o kompatibilitě s jejich projekty, které využívají starší verze, která stejné knihovny.
 
 Nejzákladnější přístup k SemVer je formát 3 komponenty `MAJOR.MINOR.PATCH`, kde:

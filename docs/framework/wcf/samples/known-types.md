@@ -2,12 +2,12 @@
 title: Známé typy
 ms.date: 03/30/2017
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
-ms.openlocfilehash: ec1dfa426c19b5471acb1c359f5068854fa8aa71
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 76e0dadd372df4bc2755db0c3ff7cce5cc31ba20
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44192493"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49454405"
 ---
 # <a name="known-types"></a>Známé typy
 Tento příklad ukazuje, jak zadat informace o odvozených typů v kontraktu dat. Kontrakty dat umožňuje předání strukturovaná data do a ze služby. V objektově orientované programování, typ, který dědí z jiného typu lze namísto původní typu. V service objektově orientovaného programování, schémata spíše než typy se předávají a proto se nezachová se o vztah mezi typy. <xref:System.Runtime.Serialization.KnownTypeAttribute> Atribut umožňuje informace o odvozených typů mají být zahrnuty v kontraktu dat. Pokud není použit tento mechanismus, nelze odeslat ani přijmout, kde je očekávána základní typ odvozený typ.  
@@ -17,7 +17,7 @@ Tento příklad ukazuje, jak zadat informace o odvozených typů v kontraktu dat
   
  Kontrakt služby pro službu používá komplexní čísla, jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 // Define a service contract.  
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface ICalculator  
@@ -35,7 +35,7 @@ public interface ICalculator
   
  <xref:System.Runtime.Serialization.DataContractAttribute> a <xref:System.Runtime.Serialization.DataMemberAttribute> platí pro `ComplexNumber` třídy k označení, která pole třídy mohou být předány mezi klientem a službou. Odvozená `ComplexNumberWithMagnitude` třídu lze použít místo `ComplexNumber`. <xref:System.Runtime.Serialization.KnownTypeAttribute> Atribut na `ComplexNumber` označuje to.  
   
-```  
+```csharp
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 [KnownType(typeof(ComplexNumberWithMagnitude))]  
 public class ComplexNumber  
@@ -55,7 +55,7 @@ public class ComplexNumber
   
  `ComplexNumberWithMagnitude` Typ je odvozen od `ComplexNumber` , ale přidá další datový člen, `Magnitude`.  
   
-```  
+```csharp
 [DataContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public class ComplexNumberWithMagnitude : ComplexNumber  
 {  
@@ -73,7 +73,7 @@ public class ComplexNumberWithMagnitude : ComplexNumber
   
  Abychom si předvedli tuto funkci známé typy, služba se implementuje takovým způsobem, který vrátí `ComplexNumberWithMagnitude` pouze pro sčítání a odčítání. (I v případě, že kontrakt Určuje `ComplexNumber`, je to povoleno z důvodu `KnownTypeAttribute` atributu). Úlohy násobení a dělení stále vracet základní `ComplexNumber` typu.  
   
-```  
+```csharp
 public class DataContractCalculatorService : IDataContractCalculator  
 {  
     public ComplexNumber Add(ComplexNumber n1, ComplexNumber n2)  
@@ -116,14 +116,14 @@ public class DataContractCalculatorService : IDataContractCalculator
   
  Na straně klienta, kontrakt služby a kontrakt dat jsou definovány v generatedClient.cs zdrojového souboru, který je generován [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) z metadat služby. Protože <xref:System.Runtime.Serialization.KnownTypeAttribute> je zadán atribut v kontraktu dat služby, je klient schopný přijímat i `ComplexNumber` a `ComplexNumberWithMagnitude` třídy při použití služby. Klient zjistí, jestli máte `ComplexNumberWithMagnitude` a generovat odpovídající výstup:  
   
-```  
+```csharp
 // Create a client  
 DataContractCalculatorClient client =   
     new DataContractCalculatorClient();  
   
 // Call the Add service operation.  
-ComplexNumber value1 = new ComplexNumber(); value1.real = 1; value1.imaginary = 2;  
-ComplexNumber value2 = new ComplexNumber(); value2.real = 3; value2.imaginary = 4;  
+ComplexNumber value1 = new ComplexNumber() { real = 1, imaginary = 2 };  
+ComplexNumber value2 = new ComplexNumber() { real = 3, imaginary = 4 };  
 ComplexNumber result = client.Add(value1, value2);  
 Console.WriteLine("Add({0} + {1}i, {2} + {3}i) = {4} + {5}i",  
     value1.real, value1.imaginary, value2.real, value2.imaginary,  
@@ -141,7 +141,7 @@ else
   
  Když spustíte ukázku, požadavky a odpovědi z operace se zobrazují v okně konzoly klienta. Všimněte si, že velikost je vytištěna pro sčítání a odčítání, ale pro násobení a dělení vzhledem ke způsobu nebyl implementován. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-```  
+```console  
 Add(1 + 2i, 3 + 4i) = 4 + 6i  
 Magnitude: 7.21110255092798  
 Subtract(1 + 2i, 3 + 4i) = -2 + -2i  

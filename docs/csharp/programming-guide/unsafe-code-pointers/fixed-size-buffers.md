@@ -5,12 +5,12 @@ helpviewer_keywords:
 - fixed size buffers [C#]
 - unsafe buffers [C#]
 - unsafe code [C#], fixed size buffers
-ms.openlocfilehash: 0691c33b551e39b2384950cfcd0be6e8a3a29cee
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 134a219acd02caa2b16c5a6e8716c3245579ecca
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43506898"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50049552"
 ---
 # <a name="fixed-size-buffers-c-programming-guide"></a>Vyrovnávací paměti pevné velikosti (Průvodce programováním v C#)
 
@@ -34,7 +34,7 @@ A `struct` může obsahovat vložené pole v nezabezpečený kód. V následují
 
 Velikost 128 elementu `char` pole je 256 bajtů. Pevná velikost [char](../../language-reference/keywords/char.md) vyrovnávacích pamětí vždy provést dva bajty na znak, bez ohledu na to, kódování. To platí i, když jsou char vyrovnávací paměti zařazeny do metody rozhraní API nebo struktury s `CharSet = CharSet.Auto` nebo `CharSet = CharSet.Ansi`. Další informace naleznete v tématu <xref:System.Runtime.InteropServices.CharSet>.
 
-Předchozí příklad ukazuje `fixed` pole bez Připnutí, které je k dispozici od verze C# 7.3...
+Předchozí příklad ukazuje `fixed` pole bez Připnutí, které je k dispozici od verze C# 7.3.
 
 Další běžné pevnou velikost pole je [bool](../../language-reference/keywords/bool.md) pole. Prvky v `bool` pole jsou vždy jeden bajt velikosti. `bool` pole nejsou vhodné pro vytvoření bitové pole nebo vyrovnávací paměti.
 

@@ -2,12 +2,12 @@
 title: Publikování služby WCF
 ms.date: 03/30/2017
 ms.assetid: c806b253-cd47-4b96-b831-e73cbf08808f
-ms.openlocfilehash: b62b2616233eb81e64945e997a2efe17973dedd2
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 515885658612cf11ecff8e084c466a70ba698625
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48781502"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452984"
 ---
 # <a name="wcf-service-publishing"></a>Publikování služby WCF
 
@@ -21,7 +21,7 @@ Publikování služby WCF podporuje publikování služby WCF vytvořené ze sou
 
 -   Knihovna služby syndikace.
 
-Tyto šablony služeb můžete najít výběrem **souboru** > **nový projekt** > [**jazyka Visual Basic** nebo **Visual C#**] > **WCF**. Pro další šablony WCF v tomto umístění (včetně aplikace služeb pracovního postupu WCF a aplikace služby WCF), které můžete publikovat pomocí [jedním kliknutím pro publikování webových aplikací](https://msdn.microsoft.com/library/dd465337\(v=vs.110\).aspx).
+Tyto šablony služeb můžete najít výběrem **souboru** > **nový projekt** > [**jazyka Visual Basic** nebo **Visual C#** ] > **WCF**. Pro další šablony WCF v tomto umístění (včetně aplikace služeb pracovního postupu WCF a aplikace služby WCF), které můžete publikovat pomocí [jedním kliknutím pro publikování webových aplikací](https://msdn.microsoft.com/library/dd465337\(v=vs.110\).aspx).
 
 Službě mohou být publikovány do následujícího umístění, cíl.
 
@@ -41,9 +41,9 @@ Proveďte následující kroky k nasazení implementaci služby:
 
 3.  **Publikovat** zobrazí se okno. Klikněte na tlačítko **...** . tlačítko k určení, které byste měli nasadit službu do cílového umístění. Můžete vybrat k nasazení aplikace do místní služby IIS, systém souborů nebo FTP. Pokud nasazení aplikace do místní služby IIS, můžete vybrat svůj web a vytvoření webové aplikace v něm, kliknutím **vytvořit novou webovou aplikaci** ikonu v pravém horním rohu.
 
-4.  Po kliknutí na **publikovat** v hlavním okně aplikace Visual Studio nasadí aplikaci do zadané cílové umístění a zkopíruje soubory Web.config, svc a sestavení do cílového adresáře. . Název .svc bude "ProjectName.ServiceName.svc". Po publikování úspěšně, můžete najít hotlink v okně Výstup Visual Studia, který vypadá podobně jako "Připojení k hypertextový odkaz"http://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName ...". Můžete stisknutím klávesy CTRL a klikněte na odkaz a otevřete stránku prohlížeče v sadě Visual Studio, chcete-li zobrazit strukturu adresářů služby.
+4.  Po kliknutí na **publikovat** v hlavním okně aplikace Visual Studio nasadí aplikaci do zadané cílové umístění a zkopíruje soubory Web.config, svc a sestavení do cílového adresáře. . Název .svc bude "ProjectName.ServiceName.svc". Po publikování úspěšně, můžete najít hotlink v okně Výstup Visual Studia, který vypadá podobně jako "připojení k `http://localhost/WebApplicationFolderName...`". Můžete stisknutím klávesy CTRL a klikněte na odkaz a otevřete stránku prohlížeče v sadě Visual Studio, chcete-li zobrazit strukturu adresářů služby.
 
-     Pokud nelze přejít na web, může, protože adresář prohlížeči není povoleno ve službě IIS. Postupujte podle tipy v části "Věcí můžete zkusit", aby je. Alternativně můžete přímo zadat"hypertextový odkaz"http://localhost/WebApplicationFolderName" http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc" Pokud chcete zobrazit stránku vaší služby.
+     Pokud nelze přejít na web, může, protože adresář prohlížeči není povoleno ve službě IIS. Postupujte podle tipy v části "Věcí můžete zkusit", aby je. Alternativně můžete přímo zadat `http://localhost/WebApplicationFolderName/ProjectName.ServiceName.svc` zobrazíte stránku vaší služby.
 
 Můžete použít **publikovat** k určení, pokud chcete zkopírovat sestavení, konfiguraci a souboru .svc pro všechny služby, které jsou definované v projektu do cílového umístění a přepsat existující soubory v cílovém umístění.
 

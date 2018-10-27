@@ -16,14 +16,12 @@ helpviewer_keywords:
 - UShort data type
 - US literal type characters [Visual Basic]
 ms.assetid: 138db892-665d-4ba8-9cae-d8d91c4a8f39
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 038aad2c41f655d0699dab33df276132a70e3ede
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 25ac46217a09d658ceaf92a8ea586259668314c1
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48024555"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50040891"
 ---
 # <a name="ushort-data-type-visual-basic"></a>Ushort – datový typ (Visual Basic)
 

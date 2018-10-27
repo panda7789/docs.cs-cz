@@ -3,12 +3,12 @@ title: Překlad stromů výrazů
 description: Zjistěte, jak chcete navštívit každý uzel ve stromu výrazů při sestavování upravenou kopii tohoto stromu výrazu.
 ms.date: 06/20/2016
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: bd4aec2ef34e4dc972ae867c6b5070f92dcbc498
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 6fe35983119bba443ed9132ff0c52361e1f07da8
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45971889"
+ms.lasthandoff: 10/21/2018
+ms.locfileid: "49480072"
 ---
 # <a name="translating-expression-trees"></a>Překlad stromů výrazů
 
@@ -64,7 +64,7 @@ Stejné uzly je možné v rámci stromu, nebo více stromy výrazů. Protože uz
 
 ## <a name="traversing-and-executing-an-addition"></a>Procházení a provádění doplněk
 
-Můžeme to ověřit tak vytváření druhé návštěvníka, který vás provede přidáním uzlů stromu a vypočítá výsledek. Můžete to provést tak, že několik úprav vistor, které jste zatím viděli. V této nové verzi návštěvníka vrátí částečného součtu operace přidání do této chvíle. Pro konstantní výraz, který je jednoduše hodnotu konstantní výraz. Pro přidání výrazu výsledkem je součet operandů levé a pravé, jakmile byla z těchto stromů provázány.
+Můžeme to ověřit tak vytváření druhé návštěvníka, který vás provede přidáním uzlů stromu a vypočítá výsledek. Můžete to provést tak, že několik úprav návštěvník, který jste zatím viděli. V této nové verzi návštěvníka vrátí částečného součtu operace přidání do této chvíle. Pro konstantní výraz, který je jednoduše hodnotu konstantní výraz. Pro přidání výrazu výsledkem je součet operandů levé a pravé, jakmile byla z těchto stromů provázány.
 
 ```csharp
 var one = Expression.Constant(1, typeof(int));

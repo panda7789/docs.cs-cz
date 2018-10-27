@@ -7,12 +7,12 @@ helpviewer_keywords:
 - ranges of floating-point types [C#]
 - types [C#], floating-point types
 ms.assetid: da886cc5-e01e-4f62-b3ec-6428c8f7a102
-ms.openlocfilehash: 804e6529e67785ed5bcdb0db9efaeccb6b3a1a61
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: c292303d1cf0b72d05ae6269d63a27555d2458b5
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45679541"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50046315"
 ---
 # <a name="floating-point-types-table-c-reference"></a>Tabulka typů s plovoucí desetinnou čárkou (referenční dokumentace jazyka C#)
 
@@ -20,8 +20,8 @@ V následující tabulce jsou uvedeny přesnosti a přibližné rozsahy typů s 
   
 |Typ|Přibližný rozsah|Přesnost|  
 |----------|-----------------------|---------------|  
-|[float](float.md)|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|7 číslic|  
-|[double](double.md)|±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup>|15 až 16 číslic|  
+|[float](float.md)|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|~ 6. až 9 číslic|  
+|[double](double.md)|±5.0 × 10<sup>−324</sup> k ±1.7 × 10<sup>308</sup>|~ 15-17 číslic|  
 |[decimal](decimal.md)|±1.0 x 10<sup>– 28</sup> k ±7.9228 x 10<sup>28</sup>|28 – 29 číslic|  
   
 ## <a name="see-also"></a>Viz také:

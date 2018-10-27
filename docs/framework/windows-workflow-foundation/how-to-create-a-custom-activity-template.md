@@ -3,11 +3,11 @@ title: 'Postupy: vytvoření vlastní šablony aktivity'
 ms.date: 03/30/2017
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
 ms.openlocfilehash: 87acf0d084154c9c3e5cbc97da4af9821709f0a5
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48847599"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50044837"
 ---
 # <a name="how-to-create-a-custom-activity-template"></a>Postupy: vytvoření vlastní šablony aktivity
 

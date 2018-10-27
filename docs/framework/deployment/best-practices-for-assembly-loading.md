@@ -14,159 +14,160 @@ helpviewer_keywords:
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: b05ec604f8493ba773d9de9af19acc70c023b8bf
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 9c43f75dc17d49fe34094829387673b0f1f1d028
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33394150"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50045493"
 ---
 # <a name="best-practices-for-assembly-loading"></a>Doporučené postupy pro načtení sestavení
-Tento článek popisuje způsoby, jak se vyhnout potížím typ identity, který může vést k <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a dalších chyb. Článek popisuje následující doporučení:  
+Tento článek popisuje způsoby, jak se vyhnout problémům identity typu, který může mít za následek <xref:System.InvalidCastException>, <xref:System.MissingMethodException>a další chyby. Tento článek popisuje následující doporučení:  
   
--   [Porozumět výhodám a nevýhodám kontexty zatížení](#load_contexts)  
+-   [Porozumět výhodám a nevýhodám načtení kontextů](#load_contexts)  
   
--   [Vyhněte se vazbu na názvy částečného sestavení](#avoid_partial_names)  
+-   [Vyhněte se vazby pro sestavení částečné názvy](#avoid_partial_names)  
   
--   [Vyhněte se načtení sestavení do více kontexty](#avoid_loading_into_multiple_contexts)  
+-   [Vyhněte se načítání sestavení do více kontextů](#avoid_loading_into_multiple_contexts)  
   
--   [Vyhněte se načtení více verzí sestavení do stejného kontextu](#avoid_loading_multiple_versions)  
+-   [Vyhněte se načítání více verzí sestavení do stejného kontextu](#avoid_loading_multiple_versions)  
   
 -   [Zvažte možnost Výchozí kontext načtení](#switch_to_default)  
   
- První doporučení [pochopit výhody a nevýhody zatížení kontextů](#load_contexts), obsahuje základní informace pro ostatní doporučení, protože jsou všechny závislé na znalost kontexty zatížení.  
+ První doporučení [porozumět výhodám a nevýhodám zatížení kontexty](#load_contexts), poskytuje základní informace pro další doporučení, protože jsou všechny závislé na znalost kontextu zatížení.  
   
 <a name="load_contexts"></a>   
-## <a name="understand-the-advantages-and-disadvantages-of-load-contexts"></a>Porozumět výhodám a nevýhodám kontexty zatížení  
- V doméně aplikace sestavení může být načtena do jednoho ze tří kontextů, nebo je lze načíst bez kontextu:  
+## <a name="understand-the-advantages-and-disadvantages-of-load-contexts"></a>Porozumět výhodám a nevýhodám načtení kontextů  
+ V rámci domény aplikace sestavení lze načíst do jedné ze tří kontexty nebo mohou být načteny bez kontextu:  
   
--   Výchozí kontext načtení obsahuje sestavení nalezena zjišťování globální mezipaměti sestavení, úložišti sestavení hostitele, pokud je modul runtime hostovaná (například v systému SQL Server) a <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> domény aplikace. Většina přetížení <xref:System.Reflection.Assembly.Load%2A> metoda načtení sestavení do tohoto kontextu.  
+-   Výchozím kontextu načtení obsahuje sestavení zjištěných aplikací globální mezipaměti sestavení, úložiště sestavení hostitele, pokud je hostitelem modulu runtime (například v systému SQL Server), zjišťování a <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> domény aplikace. Většina přetížení <xref:System.Reflection.Assembly.Load%2A> metoda zatížení sestavení v tomto kontextu.  
   
--   Načtení z kontextu obsahuje sestavení, které jsou načteny z umístění, které se neprohledávají zavaděčem. Například může být nainstalováno doplňky v adresáři, který není v cestě aplikace. <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>, <xref:System.AppDomain.CreateInstanceFrom%2A?displayProperty=nameWithType>, a <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> jsou příklady metod, které načíst cestou.  
+-   Načtení z kontextu obsahuje sestavení, která jsou načtena z umístění, které se neprohledávají zavaděčem. Doplňky například může být nainstalováno v adresáři, který není v cestě aplikace. <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>, <xref:System.AppDomain.CreateInstanceFrom%2A?displayProperty=nameWithType>, a <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> jsou příklady metod, které načítají podle cesty.  
   
--   Kontext pouze pro reflexi obsahuje sestavení načtená <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> a <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metody. Kód v tomto kontextu nelze provést, takže není zde popsané. Další informace najdete v tématu [postupy: načtení sestavení do kontextu Reflection](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+-   Kontextu pouze pro reflexi obsahuje sestavení načtená <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> a <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A> metody. Kód v tomto kontextu nelze provést, takže tady není probíraná. Další informace najdete v tématu [postupy: načtení sestavení do kontextu Reflection](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
--   Pokud jste vygenerovali přechodný dynamické sestavení pomocí reflexe emitování, sestavení, není v libovolném kontextu. Kromě toho většina sestavení, která jsou načtena pomocí <xref:System.Reflection.Assembly.LoadFile%2A> metoda jsou načteny bez kontextu a sestavení, která jsou načtena z bajtových polí jsou načteny bez kontextu, pokud jejich identity (Pokud je zásada použita) určuje, že jsou v globální mezipaměť sestavení.  
+-   Pokud jste vygenerovali přechodné dynamické sestavení pomocí reflexe generování, sestavení není v libovolném kontextu. Kromě toho většina sestavení, která jsou načtena pomocí <xref:System.Reflection.Assembly.LoadFile%2A> metody jsou načteny bez kontextu a sestavení, která jsou načtena z bajtových polí jsou načteny bez kontextu, pokud svoji identitu (po zásada) zjistí, že jsou v globální mezipaměti sestavení.  
   
- Kontexty provádění mít výhody a nevýhody, jak je popsáno v následujících částech.  
+ Kontexty spuštění mají své výhody a nevýhody, jak je popsáno v následujících částech.  
   
 ### <a name="default-load-context"></a>Výchozí kontext načtení  
- Pokud jsou načtena do výchozí kontext načtení sestavení, závislé načteny automaticky. Pro sestavení v výchozí kontext načtení nebo načtení z kontextu jsou automaticky nalezeny závislosti, které jsou načteny do výchozí kontext načtení. Načítání sestavení identita zvyšuje stabilitu aplikace tím, že zajistí, že se nepoužívají Neznámá verze sestavení (najdete v článku [vyhnout vazby na částečné názvy sestavení](#avoid_partial_names) části).  
+ Jsou-li sestavení načteno do výchozím kontextu načtení, se automaticky načtou jejich závislosti. Závislosti, které se načtou do výchozí kontext načtení pro sestavení ve výchozím kontextu načtení nebo načtení z kontextu nebyly nalezeny automaticky. Načítání podle identity sestavení zvyšuje stability aplikacím tím, že zajišťuje, že nejsou použity Neznámá verze sestavení (najdete v článku [vyhnout vazby na částečné názvy sestavení](#avoid_partial_names) části).  
   
- Použití výchozí kontext načtení má tyto nevýhody:  
+ Použití výchozího kontextu zatížení má následující nevýhody:  
   
 -   Závislosti, které jsou načteny v jiných kontextech nejsou k dispozici.  
   
--   Sestavení nelze načíst z míst mimo testování cestu do výchozí kontext načtení.  
+-   Nelze načíst sestavení z umístění mimo cesta zjišťování do výchozím kontextu načtení.  
   
 ### <a name="load-from-context"></a>Načtení z kontextu  
- Načtení z kontextu umožňuje načíst sestavení z cestu, která není v cestě aplikace a proto není zahrnut v zjišťování. Umožňuje závislosti a jejich načíst z cesty, protože informace o cestě se spravuje pomocí kontextu. Kromě toho můžete sestavení v tomto kontextu použít závislosti, které jsou načteny do výchozí kontext načtení.  
+ Načtení z kontextu umožňuje načíst sestavení z cesty, které nejsou v rámci cesty aplikace a proto není zahrnut v zjišťování. Umožňuje závislosti umístěné a načíst z této cesty, protože kontext udržuje informace o cestě. Kromě toho sestavení v tomto kontextu můžete použít závislosti, které jsou načteny v kontextu načtení výchozí.  
   
- Načtení sestavení pomocí <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metoda nebo jednu z metod, které načítají cestou, má tyto nevýhody:  
+ Načítání sestavení s použitím <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metoda nebo jednu z metod, které načítají podle cesty, má následující nevýhody:  
   
--   Pokud už je načtený, sestavení se stejnou identitou <xref:System.Reflection.Assembly.LoadFrom%2A> vrátí načíst sestavení i v případě, že byl zadán jinou cestu.  
+-   Pokud sestavení se stejnou identitou je již načten, <xref:System.Reflection.Assembly.LoadFrom%2A> vrátí načtené sestavení, i v případě, že byl zadán jinou cestu.  
   
--   Pokud je sestavení načíst s <xref:System.Reflection.Assembly.LoadFrom%2A>a později v výchozí kontext načtení sestavení se pokusí načíst do stejného sestavení podle zobrazovaného názvu, zatížení pokus selže. Tato situace může nastat, když je sestavení rekonstruovat.  
+-   Pokud je sestavení načteno s <xref:System.Reflection.Assembly.LoadFrom%2A>a později pokusí načíst stejné sestavení podle zobrazovaného názvu sestavení ve výchozím kontextu načtení, neúspěšného pokusu o načtení. Tato situace může nastat, když je deserializovat sestavení.  
   
--   Pokud je sestavení načíst s <xref:System.Reflection.Assembly.LoadFrom%2A>, a testování cesta obsahuje sestavení se stejnou identitou, ale v jiném umístění, <xref:System.InvalidCastException>, <xref:System.MissingMethodException>, nebo může dojít k jiné neočekávanému chování.  
+-   Pokud je sestavení načteno s <xref:System.Reflection.Assembly.LoadFrom%2A>, a cesta zjišťování zahrnuje sestavení se stejnou identitou, ale v jiném umístění, <xref:System.InvalidCastException>, <xref:System.MissingMethodException>, nebo jiné neočekávané chování může dojít.  
   
--   <xref:System.Reflection.Assembly.LoadFrom%2A> Požadavky <xref:System.Security.Permissions.FileIOPermissionAccess.Read?displayProperty=nameWithType> a <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery?displayProperty=nameWithType>, nebo <xref:System.Net.WebPermission>, na zadané cestě.  
+-   <xref:System.Reflection.Assembly.LoadFrom%2A> požadavky na <xref:System.Security.Permissions.FileIOPermissionAccess.Read?displayProperty=nameWithType> a <xref:System.Security.Permissions.FileIOPermissionAccess.PathDiscovery?displayProperty=nameWithType>, nebo <xref:System.Net.WebPermission>, na zadané cestě.  
   
--   Pokud existuje nativních bitových kopií pro sestavení, se nepoužije.  
+-   Pokud nativní bitovou kopii pro sestavení existuje, se nepoužívá.  
   
--   Sestavení nelze načíst jako domény jazykově neutrální.  
+-   Sestavení nelze načteno jako doménově neutrální.  
   
--   V rozhraní .NET Framework verze 1.0 a 1.1 není použita zásad.  
+-   V rozhraní .NET Framework verze 1.0 a 1.1 zásady se neuplatní.  
   
 ### <a name="no-context"></a>Žádný kontext.  
- Načítání bez kontextu je jedinou možností pro přechodný sestavení, které jsou generovány pomocí reflexe emitování. Načítání bez kontextu je jediný způsob, jak načíst více sestavení, které mají stejnou identitu do domény jednu aplikaci. Náklady na zkušební fáze se vyhnout.  
+ Načítají se bez kontextu je jedinou možností pro přechodný sestavení, které jsou generovány pomocí reflexe vysílat. Načítání bez kontextu je jediný způsob, jak načítat více sestavení, které mají stejnou identitu do jeden aplikační domény. Náklady na zjišťování je vyloučeno.  
   
- Sestavení, která jsou načtena z bajtových polí jsou načteny bez kontextu, pokud identita sestavení, které naváže, když je zásada použitá, odpovídá identitě sestavení v globální mezipaměti sestavení; v takovém případě je načteno sestavení z globální mezipaměti sestavení.  
+ Sestavení, která jsou načtena z bajtových polí jsou načteny bez kontextu, pokud identitu sestavení, který se stanoví při použití zásad, odpovídá identitě sestavení v globální mezipaměti sestavení; v takovém případě je načteno sestavení z globální mezipaměti sestavení.  
   
- Načtení sestavení bez kontextu má tyto nevýhody:  
+ Načítání sestavení bez kontextu má následující nevýhody:  
   
--   Ostatních sestavení nelze vytvořit vazbu na sestavení, která jsou načtena bez kontextu, pokud zpracováváte <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
+-   Jiná sestavení nelze vytvořit vazbu sestavení, která jsou načtena bez kontextu, pokud zpracováváte <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
   
--   Závislosti automaticky nenačtou. Můžete je přednačtení bez kontextu, přednačtení je do výchozí kontext načtení nebo je načíst pomocí zpracování <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
+-   Závislosti nejsou načteny automaticky. Přednačtení bez kontextu, přednačtení do výchozím kontextu načtení nebo načíst pomocí manipulace <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> událostí.  
   
--   Načtení více sestavení se stejnou identitou bez kontextu může způsobit problémy identity typu podobné těm, které jsou způsobené načtení sestavení se stejnou identitou do více kontexty. V tématu [vyhnout načtení sestavení do více kontexty](#avoid_loading_into_multiple_contexts).  
+-   Načítání více sestavení se stejnou identitou bez kontextu může způsobit problémy identity typu podobné těm, které jsou způsobené načítání sestavení se stejnou identitou do více kontextů. Zobrazit [předejít sestavení do více kontextů](#avoid_loading_into_multiple_contexts).  
   
--   Pokud existuje nativních bitových kopií pro sestavení, se nepoužije.  
+-   Pokud nativní bitovou kopii pro sestavení existuje, se nepoužívá.  
   
--   Sestavení nelze načíst jako domény jazykově neutrální.  
+-   Sestavení nelze načteno jako doménově neutrální.  
   
--   V rozhraní .NET Framework verze 1.0 a 1.1 není použita zásad.  
+-   V rozhraní .NET Framework verze 1.0 a 1.1 zásady se neuplatní.  
   
 <a name="avoid_partial_names"></a>   
-## <a name="avoid-binding-on-partial-assembly-names"></a>Vyhněte se vazby na názvy částečného sestavení  
- Vazba částečný název nastane, když zadáte pouze část zobrazovaný název sestavení (<xref:System.Reflection.Assembly.FullName%2A>) při načtení sestavení. Například může zavolat <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda s jednoduchý název sestavení, vynechejte verze, jazykové verze a tokenu veřejného klíče. Nebo může zavolat <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType> metoda, která první volání <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda a pokud to nepomůže k nalezení sestavení, vyhledá globální mezipaměti sestavení a načte nejnovější verzi sestavení, která je k dispozici.  
+## <a name="avoid-binding-on-partial-assembly-names"></a>Vyhněte se vazby pro sestavení částečné názvy  
+ Částečný název vazby nastane, pokud zadáte pouze část zobrazovaného názvu sestavení (<xref:System.Reflection.Assembly.FullName%2A>) při načtení sestavení. Například můžete volat <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metodu s jednoduchý název sestavení, vynechání verze, jazykovou verzi a token veřejného klíče. Nebo může volat <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType> metody, které první volání <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda a pokud selže k nalezení sestavení, hledá globální mezipaměti sestavení a načte nejnovější verzi sestavení, která je k dispozici.  
   
- Částečný název vazby může způsobit mnoho problémy, včetně následujících:  
+ Částečný název vazby může způsobit, že mnoho problémů, včetně následujících:  
   
--   <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType> Metoda může načíst jiném sestavení s stejný jednoduchý název. Například dvě aplikace může nainstalovat dvě úplně jiné sestavení, že mají jednoduchý název `GraphicsLibrary` do globální mezipaměti sestavení.  
+-   <xref:System.Reflection.Assembly.LoadWithPartialName%2A?displayProperty=nameWithType> Metoda může načíst odlišné sestavení se stejným jednoduchým názvem. Dvě aplikace může například nainstalovat dvě zcela odlišné sestavení, obě mají jednoduchý název `GraphicsLibrary` do globální mezipaměti sestavení.  
   
--   Sestavení, které je ve skutečnosti načteno nemusí být zpětně kompatibilní. Například není určení verze může způsobit načítání mnohem novější verze než verze, že váš program byl původně zapsán používat. Změny v novější verzi může způsobit chyby ve vaší aplikaci.  
+-   Sestavení, které je ve skutečnosti načteno nemusí být zpětně kompatibilní. Například bez zadání verze může způsobit načítání mnohem novější než verze, že váš program byl původně zapsán používat. Změny v novější verzi může způsobit chyby v aplikaci.  
   
--   Sestavení, které je ve skutečnosti načteno nemusí být dopřednou. Například můžete mít vytvořené a testovat aplikaci s nejnovější verzí sestavení, ale částečné vazby může načíst mnohem starší verzi, která nemá funkce, které vaše aplikace používá.  
+-   Sestavení, které je ve skutečnosti načteno nemusí být dopřednou. Například je může mít sestaví a otestují vaši aplikaci s nejnovější verzí sestavení, ale částečné vazbě může načíst mnohem starší verzi, která nemá funkce, které vaše aplikace používá.  
   
--   Instalace nové aplikace může dojít k narušení stávající aplikace. Aplikace, která používá <xref:System.Reflection.Assembly.LoadWithPartialName%2A> metoda možné ho rozdělit nainstalováním novější, nekompatibilní verzi je sdílený sestavení.  
+-   Instalace nové aplikace může dojít k narušení stávající aplikace. Aplikace, která se používá <xref:System.Reflection.Assembly.LoadWithPartialName%2A> metoda může být porušena nainstalovat novější, nekompatibilní verzi sdílené sestavení.  
   
--   Může dojít, načítání neočekávané závislostí. Ji načíst tuto sdílenou složku, závislost, jejich načtení se částečné vazby může dojít v jednom sestavení pomocí komponenty, která nebyla dvou sestavení vytvořené nebo testovány s.  
+-   Může dojít k načítání neočekávané závislostí. Ho načtete dvě sestavení tuto sdílenou složku, závislostí, načtení se částečné vazbě může mít za následek jedno sestavení pomocí komponenty, která nebyla sestavené nebo otestované s.  
   
- Z důvodu problémů, může to způsobit <xref:System.Reflection.Assembly.LoadWithPartialName%2A> metoda má byly označeny jako zastaralé. Doporučujeme vám, že používáte <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda místo toho a zadejte úplný sestavení zobrazované názvy. V tématu [pochopit výhody a nevýhody zatížení kontextů](#load_contexts) a [zvažte výchozí kontext načtení](#switch_to_default).  
+ Z důvodu problémů, může to způsobit <xref:System.Reflection.Assembly.LoadWithPartialName%2A> metoda má byla označena jako zastaralá. Doporučujeme použít <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda místo a zadejte úplný sestavení zobrazované názvy. Zobrazit [porozumět výhodám a nevýhodám kontexty zatížení](#load_contexts) a [zvažte možnost výchozím kontextu načtení](#switch_to_default).  
   
- Pokud chcete použít <xref:System.Reflection.Assembly.LoadWithPartialName%2A> metoda vzhledem k tomu, že umožňuje easy, načítání sestavení zvažte, že aplikaci selhat s chybovou zprávu, která identifikuje chybějící sestavení je může zajistit lepší uživatelské prostředí, než automaticky pomocí Neznámá verze sestavení, což by mohlo způsobit nepředvídatelné chování a zabezpečení díry.  
+ Pokud chcete použít <xref:System.Reflection.Assembly.LoadWithPartialName%2A> metoda totiž sestavení načítání snadné, vezměte v úvahu, že vaše aplikace selhat s chybovou zprávou, která identifikuje chybějící sestavení by mohla poskytovat lepší výkon než automaticky pomocí Neznámá verze sestavení, což by mohlo způsobit nepředvídatelné chování a bezpečnostní díry.  
   
 <a name="avoid_loading_into_multiple_contexts"></a>   
-## <a name="avoid-loading-an-assembly-into-multiple-contexts"></a>Vyhněte se načtení sestavení do více kontexty  
- Načtení sestavení do více kontexty může způsobit problémy identity typu. Pokud je stejný typ načten ze stejného sestavení do dvou různých kontextů, je to, jako kdyby měl načetl dva různé typy se stejným názvem. <xref:System.InvalidCastException> Je vyvolána, pokud se pokusíte převést jeden typ na druhý s matoucí zprávu, která zadejte `MyType` nelze přetypovat na typ `MyType`.  
+## <a name="avoid-loading-an-assembly-into-multiple-contexts"></a>Vyhněte se načítání sestavení do více kontextů  
+ Načtení sestavení do více kontextů může způsobovat problémy identity typu. Pokud stejný typ načten ze stejného sestavení do dvou různých kontextů, je to, jako kdyby měla byly načteny dva různé typy se stejným názvem. <xref:System.InvalidCastException> Je vyvolána, pokud se pokusíte převést jednoho typu na druhý matoucí zprávou, která zadejte `MyType` nejde přetypovat na typ `MyType`.  
   
- Předpokládejme například, že `ICommunicate` rozhraní je deklarován v sestavení s názvem `Utility`, který se odkazuje, podle vašeho programu a také podle dalších sestavení, která načte vašeho programu. Tyto další sestavení obsahuje typy, které implementují `ICommunicate` rozhraní, což váš program používat.  
+ Předpokládejme například, že `ICommunicate` rozhraní je deklarován v sestavení s názvem `Utility`, který se odkazuje váš program a také další sestavení, která načte aplikaci. Tato sestavení obsahují typy, které implementují `ICommunicate` rozhraní, umožňuje váš program k jejich použití.  
   
- Nyní zvažte, co se stane, když je program spustit. Sestavení, které je odkazováno dle vašeho programu jsou načtena do výchozí kontext načtení. Při načítání sestavení cíl podle svou identitu, pomocí <xref:System.Reflection.Assembly.Load%2A> metoda, bude ve výchozím kontextu zatížení, a proto bude jeho závislé součásti. Váš program a cíl sestavení se bude používat stejné `Utility` sestavení.  
+ Teď se podíváme co se stane při spuštění programu. Sestavení, na které odkazuje váš program jsou načtena do výchozím kontextu načtení. Pokud načítáte cílové sestavení jeho identita, pomocí <xref:System.Reflection.Assembly.Load%2A> metody, bude ve výchozím kontextu načtení, a stejně tomu bude u jeho závislosti. Program a cílové sestavení bude používat stejný `Utility` sestavení.  
   
- Předpokládejme však, že načtení sestavení cíl podle cesty k souboru pomocí <xref:System.Reflection.Assembly.LoadFile%2A> metoda. Sestavení je načíst bez kontextu, takže jeho závislé součásti nenačtou automaticky. Můžete mít obslužnou rutinu pro <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> může načíst události má poskytnout závislost a `Utility` sestavení s žádný kontext pomocí <xref:System.Reflection.Assembly.LoadFile%2A> metoda. Teď při vytváření instance typu, který je součástí cílového sestavení a pokuste se ji přiřadit proměnné typu `ICommunicate`, <xref:System.InvalidCastException> je vyvolána, protože modul runtime posuzuje `ICommunicate` rozhraní dvě kopie `Utility` sestavení, které má být různých typů.  
+ Nicméně, Předpokládejme, že načtení cílové sestavení podle cesty k souboru pomocí <xref:System.Reflection.Assembly.LoadFile%2A> metody. Sestavení je načteno bez kontextu, takže jeho závislosti nejsou automaticky nahrány. Můžete mít obslužnou rutinu pro <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType> může načíst události slouží k poskytování závislost a `Utility` sestavení se žádný kontext pomocí <xref:System.Reflection.Assembly.LoadFile%2A> metoda. Teď při vytváření instance typu, který je obsažen v cílové sestavení a zkuste ji přiřadit do proměnné typu `ICommunicate`, <xref:System.InvalidCastException> je vyvolána, protože modul runtime bere v úvahu `ICommunicate` rozhraní v dvě kopie `Utility` sestavení pro různé typy.  
   
- Existuje mnoho dalších scénářů, ve kterých může být načtena do více kontexty sestavení. Nejlepším postupem je aby nedocházelo ke konfliktům přemístění cíl sestavení v cestu vaší aplikace a pomocí <xref:System.Reflection.Assembly.Load%2A> metodu se úplný zobrazovaný název. Sestavení je pak načten do výchozí kontext načtení a obě sestavení použít stejné `Utility` sestavení.  
+ Existuje mnoho dalších scénářů, ve kterých může být sestavení načteno do více kontextů. Nejlepším řešením je, aby nedocházelo ke konfliktům přemístění cílové sestavení ve své cestě aplikace a použitím <xref:System.Reflection.Assembly.Load%2A> metodu se úplný zobrazovaný název. Sestavení se pak načtou do výchozím kontextu načtení, a obě sestavení použít stejné `Utility` sestavení.  
   
- Pokud cílový sestavení musí zůstat mimo cestu vaší aplikace, můžete použít <xref:System.Reflection.Assembly.LoadFrom%2A> metodu pro načtení do načtení z kontextu. Pokud cílový sestavení bylo kompilováno s odkazem k vaší aplikaci `Utility` sestavení, se bude používat `Utility` sestavení, které aplikaci načetl do výchozí kontext načtení. Všimněte si, že problémy může dojít, pokud cílový sestavení je závislý na kopii `Utility` sestavení nacházejících se mimo cestu vaší aplikace. Pokud je toto sestavení načtena do načtení z kontextu před zatížení vaší aplikace `Utility` sestavení, zatížení vaší aplikace se nezdaří.  
+ Pokud cílové sestavení musí zůstat mimo cestu vaší aplikace, můžete použít <xref:System.Reflection.Assembly.LoadFrom%2A> metodu pro načtení do načtení z kontextu. Pokud cílové sestavení bylo zkompilováno pomocí odkazu na vaši aplikaci `Utility` sestavení, se bude používat `Utility` sestavení, které vaše aplikace se načítají do kontextu zatížení výchozí. Všimněte si, že může dojít k problémům pokud cílové sestavení má závislost na kopii `Utility` sestavení nacházejících se mimo vaši cestu aplikace. Pokud toto sestavení je načteno do načtení z kontextu před zatížení vašich aplikací `Utility` sestavení, načtení aplikace se nezdaří.  
   
- [Zvažte přepnutí do kontextu výchozí zatížení](#switch_to_default) část se věnuje alternativy pomocí zatížení cesta k souboru, jako třeba <xref:System.Reflection.Assembly.LoadFile%2A> a <xref:System.Reflection.Assembly.LoadFrom%2A>.  
+ [Zvažte přepnutí do kontextu načtení výchozí](#switch_to_default) část popisuje alternativy k pomocí načte cestu souboru, například <xref:System.Reflection.Assembly.LoadFile%2A> a <xref:System.Reflection.Assembly.LoadFrom%2A>.  
   
 <a name="avoid_loading_multiple_versions"></a>   
-## <a name="avoid-loading-multiple-versions-of-an-assembly-into-the-same-context"></a>Vyhněte se načtení více verzí sestavení do stejného kontextu  
- Načítání více verzí sestavení do kontextu jeden zatížení může způsobit problémy identity typu. Pokud je stejný typ načten z dvě verze stejného sestavení, je to, jako kdyby měl načetl dva různé typy se stejným názvem. <xref:System.InvalidCastException> Je vyvolána, pokud se pokusíte převést jeden typ na druhý s matoucí zprávu, která zadejte `MyType` nelze přetypovat na typ `MyType`.  
+## <a name="avoid-loading-multiple-versions-of-an-assembly-into-the-same-context"></a>Vyhněte se načítání více verzí sestavení do stejného kontextu  
+ Načítání více verzí sestavení do jednoho kontextu zatížení může způsobovat problémy identity typu. Pokud stejný typ je načtena z dvou verzí stejného sestavení, je to, jako kdyby měla byly načteny dva různé typy se stejným názvem. <xref:System.InvalidCastException> Je vyvolána, pokud se pokusíte převést jednoho typu na druhý matoucí zprávou, která zadejte `MyType` nejde přetypovat na typ `MyType`.  
   
- Například váš program může načíst jednu verzi `Utility` sestavení přímo a později ho může načíst jiná sestavení, která načte jinou verzi `Utility` sestavení. Nebo v kódu je chyba může způsobit dvě cesty jiný kód ve vaší aplikaci načíst různé verze sestavení.  
+ Například váš program může načíst jednu verzi `Utility` sestavení přímo a později ji může načíst jiná sestavení, která načte jinou verzi `Utility` sestavení. Nebo chybě kódu může způsobit, že dvě cesty odlišný kód ve vaší aplikaci načíst různé verze sestavení.  
   
- Ve výchozí kontext načtení tento problém může vzniknout při použití <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda a zadejte dokončení sestavení zobrazované názvy, které zahrnují různých čísel verzí. Pro sestavení, které jsou načteny bez kontextu, může být způsobeno problém pomocí <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType> metoda načíst do stejného sestavení z jiné cesty. Modul runtime zvažuje dvou sestavení, které jsou načteny z jiné cesty na různých sestavení, i v případě jejich identity.  
+ Ve výchozím kontextu načtení, tento problém může vzniknout při použití <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metodu a zadejte úplný sestavení zobrazované názvy, které obsahují různá čísla verze. Pro sestavení, které jsou načteny bez kontextu, může být způsobeno problém pomocí <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType> metody k načtení stejné sestavení z různých cest. Modul runtime bere v úvahu dvě sestavení, která jsou načtena z různých cest na jiné sestavení, i v případě jejich identit.  
   
- Kromě typu identity problémy, může způsobit více verzí sestavení <xref:System.MissingMethodException> Pokud typ, který je načten z jedné verze sestavení je předán kód, který očekává typu z jiné verze. Například kód by se dalo očekávat metoda, která byla přidána na novější verzi.  
+ Kromě typu identity problémy, může způsobit více verzí sestavení <xref:System.MissingMethodException> kód, který očekává, že tento typ z jiné verze je předán typ, který je načten z jedné verze sestavení. Například kód může očekávat metodu, která byla přidána na novější verzi.  
   
- Více jemně chyby může dojít, pokud se změní chování typu mezi verzemi. Metoda může být například neočekávanou výjimku nebo vrátit neočekávanou hodnotu.  
+ Více drobným chybám může dojít, pokud mezi verzemi změnit chování typu. Například metoda může být vyvolání neočekávané výjimky, nebo vrátit neočekávanou hodnotu.  
   
- Pečlivě zkontrolujte kód a ujistěte se, že pouze jedna je načíst verzi sestavení. Můžete použít <xref:System.AppDomain.GetAssemblies%2A?displayProperty=nameWithType> metoda k určení, které sestavení jsou načteny v daném okamžiku.  
+ Pečlivě zkontrolujte kód a ujistěte se, že pouze jedna verze sestavení je načtena. Můžete použít <xref:System.AppDomain.GetAssemblies%2A?displayProperty=nameWithType> metodou ke zjištění, která sestavení jsou načteny v daném okamžiku.  
   
 <a name="switch_to_default"></a>   
 ## <a name="consider-switching-to-the-default-load-context"></a>Zvažte možnost Výchozí kontext načtení  
- Zkontrolujte vzory pro načítání a nasazení sestavení vaší aplikace. Můžete eliminovat sestavení, která jsou načtena z bajtových polí? Můžete přesunout do testování cesta sestavení? Pokud sestavení jsou umístěny v globální mezipaměti sestavení nebo v doméně aplikace je zjišťování cesta (který je jeho <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A>), můžete načíst sestavení svou identitu.  
+ Prozkoumejte vzory pro načítání a nasazování sestavení vaší aplikace. Můžete vyloučit sestavení, která jsou načtena z bajtových polí? Můžete přesunout do cesta zjišťování sestavení? Pokud sestavení se nachází v globální mezipaměti sestavení nebo v doméně aplikace na zjišťování cesty (to znamená, že jeho <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A>), můžete načíst sestavení svoji identitu.  
   
- Pokud není možné uvést všechna sestavení v cestě k testování, zvažte možnosti, například pomocí doplňku model rozhraní .NET Framework, umístění sestavení do globální mezipaměti sestavení nebo vytváření domény aplikace.  
+ Pokud není možné vložit vaše sestavení cesta zjišťování, vezměte v úvahu alternativy, třeba pomocí modelu doplňku rozhraní .NET Framework, umístění sestavení do globální mezipaměti sestavení nebo vytváření domény aplikace.  
   
-### <a name="consider-using-the-net-framework-add-in-model"></a>Zvažte použití Model doplňku rozhraní .NET Framework  
- Pokud používáte načtení z kontextu pro implementaci doplňků, které nejsou obvykle nainstalovány v základní aplikace, pomocí rozhraní .NET Framework doplňku modelu. Tento model zajišťuje izolaci na úrovni domény nebo proces aplikace bez nutnosti spravovat aplikační domény sami. Informace týkající se modelu najdete v tématu [doplňky a rozšíření](../../../docs/framework/add-ins/index.md).  
+### <a name="consider-using-the-net-framework-add-in-model"></a>Zvažte použití modelu doplňku rozhraní .NET Framework  
+ Pokud používáte načtení z kontextu pro implementaci doplňků, které nejsou obvykle nainstalovány v základ cesty aplikace, použijte modelu doplňku rozhraní .NET Framework. Tento model zajišťuje izolaci na úrovni domény nebo proces aplikací bez nutnosti spravovat domény aplikace sami. Informace o tomto modelu najdete v tématu [doplňků a rozšíření](../../../docs/framework/add-ins/index.md).  
   
-### <a name="consider-using-the-global-assembly-cache"></a>Zvažte použití globální mezipaměti sestavení  
- Místní sestavení v globální mezipaměti sestavení pro získat výhody sestavení sdílené cesty, která je mimo základ, aplikace bez ztráty výhody výchozí kontext načtení nebo trvá v jiných kontextech nevýhody.  
+### <a name="consider-using-the-global-assembly-cache"></a>Zvažte možnost použít globální mezipaměti sestavení  
+ Získejte výhodu, že cesta sdíleného sestavení místo sestavení v globální mezipaměti sestavení, která je mimo základ cesty, aplikace bez ztráty výhody výchozím kontextu načtení nebo s ohledem na nevýhody jiném kontextu.  
   
-### <a name="consider-using-application-domains"></a>Zvažte použití aplikační domény  
- Pokud určíte, že některé z vašich sestavení nelze nasadit v cestě k testování aplikace, zvažte vytvoření nové domény aplikace pro tyto sestavení. Použijte <xref:System.AppDomainSetup> k vytvoření nové domény aplikace a používat <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType> vlastnosti a určit cestu, která obsahuje sestavení, které chcete zatížení. Pokud máte několik adresářů, testovat, můžete nastavit <xref:System.AppDomainSetup.ApplicationBase%2A> kořenový adresář a používání <xref:System.AppDomainSetup.PrivateBinPath%2A?displayProperty=nameWithType> vlastnost k identifikaci podadresáře testovat. Alternativně můžete vytvořit více domén aplikací a nastavit <xref:System.AppDomainSetup.ApplicationBase%2A> jednotlivých domén aplikace příslušné cestě pro jeho sestavení.  
+### <a name="consider-using-application-domains"></a>Zvažte používání domén aplikací  
+ Pokud zjistíte, že některé z vašich sestavení se nedá nasadit aplikace cesta zjišťování, zvažte možnost vytvořit novou doménu aplikace pro tato sestavení. Použití <xref:System.AppDomainSetup> vytvořit novou doménu aplikace a použít <xref:System.AppDomainSetup.ApplicationBase%2A?displayProperty=nameWithType> vlastnosti a určit cestu, která obsahuje sestavení, který chcete načíst. Pokud máte více adresářů, testovat, můžete nastavit <xref:System.AppDomainSetup.ApplicationBase%2A> do kořenového adresáře a použijte <xref:System.AppDomainSetup.PrivateBinPath%2A?displayProperty=nameWithType> vlastnost k identifikaci podadresáře testovat. Alternativně můžete vytvořit více domén aplikace a nastavení <xref:System.AppDomainSetup.ApplicationBase%2A> z každé aplikační domény na příslušné cesty pro jeho sestavení.  
   
- Všimněte si, že můžete použít <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metodu pro načtení těchto sestavení. Protože teď jsou v cestě k testování, budou načtena do výchozí kontext načtení místo načtení z kontextu. Doporučujeme však, že přejdete na <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metodu a zadejte úplné názvy zobrazení sestavení zajistit, že se vždycky použijí správná verze.  
+ Všimněte si, že můžete použít <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> metodu pro načtení těchto sestavení. Protože teď jsou cesta zjišťování, budou načtena do výchozím kontextu načtení místo načtení z kontextu. Doporučujeme však, že přejdete <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> metoda a dodávky, celé zobrazované názvy sestavení k zajištění, že se vždy používají správné verze.  
   
-## <a name="see-also"></a>Viz také  
- <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
- <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>  
- <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>  
- <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>  
- [Doplňky a rozšíření](../../../docs/framework/add-ins/index.md)
+## <a name="see-also"></a>Viz také:
+
+- <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>
+- <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>
+- <xref:System.Reflection.Assembly.LoadFile%2A?displayProperty=nameWithType>
+- <xref:System.AppDomain.AssemblyResolve?displayProperty=nameWithType>
+- [Doplňky a rozšíření](../../../docs/framework/add-ins/index.md)

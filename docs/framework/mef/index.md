@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8738e8d0f6a74e1b8ba963e487d4c153a0a6a872
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: ae3b72cb5a1281899cdfdb514bbf5a1dc289c949
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47196463"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49454496"
 ---
 # <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -66,7 +66,7 @@ Managed Extensibility Framework nebo MEF je knihovna pro vytváření jednoduch�
 
 Nejjednodušší způsob, jak zobrazit, co můžete dělat MEF je vytvořit jednoduchou aplikaci MEF. V tomto příkladu vytvoříte s názvem SimpleCalculator velmi jednoduchou kalkulačku. Cílem SimpleCalculator je Vytvořte konzolovou aplikaci, která přijímá základní aritmetické příkazy ve tvaru "5 + 3" nebo "6-2" a vrátí správné odpovědi. Pomocí rozhraní MEF, budete moct přidat nové operátory beze změny kódu aplikace.
 
-Stáhnout kompletní kód v tomto příkladu, najdete v článku [SimpleCalculator ukázka](http://code.msdn.microsoft.com/windowsdesktop/Simple-Calculator-MEF-1152654e).
+Stáhnout kompletní kód v tomto příkladu, najdete v článku [SimpleCalculator ukázka](https://code.msdn.microsoft.com/windowsdesktop/Simple-Calculator-MEF-1152654e).
 
 > [!NOTE]
 > Účelem SimpleCalculator je k předvedení konceptů a syntaxe MEF, nikoli nutně poskytnout realistické scénáře jeho použití. Mnoho aplikací, které by měla mít prospěch maximálně využít sílu MEF jsou složitější než SimpleCalculator. Rozsáhlejší příklady najdete v článku [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef) na Githubu.
@@ -485,6 +485,6 @@ public class Mod : SimpleCalculator.IOperation
 
 <a name="where_do_i_go_now"></a>
 ## <a name="where-do-i-go-now"></a>Kam se mám obrátit nyní?
- Stáhnout kompletní kód v tomto příkladu, najdete v článku [SimpleCalculator ukázka](http://code.msdn.microsoft.com/windowsdesktop/Simple-Calculator-MEF-1152654e).
+ Stáhnout kompletní kód v tomto příkladu, najdete v článku [SimpleCalculator ukázka](https://code.msdn.microsoft.com/windowsdesktop/Simple-Calculator-MEF-1152654e).
 
- Další informace a příklady kódu naleznete v tématu [Managed Extensibility Framework](http://go.microsoft.com/fwlink/?LinkId=144282). Seznam typů rozhraní MEF, najdete v článku <xref:System.ComponentModel.Composition?displayProperty=nameWithType> oboru názvů.
+ Další informace a příklady kódu naleznete v tématu [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef). Seznam typů rozhraní MEF, najdete v článku <xref:System.ComponentModel.Composition?displayProperty=nameWithType> oboru názvů.

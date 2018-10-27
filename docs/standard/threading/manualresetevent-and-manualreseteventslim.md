@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 465fdcf9-ba24-4d8d-a43f-d983b7cb0cc6
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 4949540b9f61e71301647a83a1c05d8b4c941412
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: c85d0c5c291743c6daac549e15d479fcf332235c
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46581269"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452820"
 ---
 # <a name="manualresetevent-and-manualreseteventslim"></a>ManualResetEvent a ManualResetEventSlim
 <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> Třída představuje, které musí obnovit ručně po to bylo signalizováno událost popisovač místní čekání. Tato třída představuje zvláštní případ své základní třídy <xref:System.Threading.EventWaitHandle?displayProperty=nameWithType>. Zobrazit [eventwaithandle –](../../../docs/standard/threading/eventwaithandle.md) rámcové dokumentaci pro použití a funkce ruční obnovení události.  
@@ -24,9 +24,10 @@ ms.locfileid: "46581269"
   
 ## <a name="see-also"></a>Viz také:
 
-- [Dělení na vlákna](../../../docs/standard/threading/index.md)  
-- [Funkce a objekty dělení na vlákna](../../../docs/standard/threading/threading-objects-and-features.md)  
-- [Obslužné rutiny čekání](https://msdn.microsoft.com/library/48d10b6f-5fd7-407c-86ab-0179aef72489)  
-- [AutoResetEvent](../../../docs/standard/threading/autoresetevent.md)  
-- [SpinWait](../../../docs/standard/threading/spinwait.md)  
-- [Semaphore a SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)
+- <xref:System.Threading.WaitHandle?displayProperty=nameWithType>
+- [AutoResetEvent](autoresetevent.md)  
+- [SpinWait](spinwait.md)  
+- [Semaphore a SemaphoreSlim](semaphore-and-semaphoreslim.md)
+- [EventWaitHandle, AutoResetEvent, CountdownEvent, ManualResetEvent](eventwaithandle-autoresetevent-countdownevent-manualresetevent.md)  
+- [Práce s vlákny funkce a objekty](threading-objects-and-features.md)  
+- [Dělení na vlákna](index.md)  

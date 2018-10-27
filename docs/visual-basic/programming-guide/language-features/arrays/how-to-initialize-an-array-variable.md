@@ -7,49 +7,49 @@ helpviewer_keywords:
 - arrays [Visual Basic], initializing
 - arrays [Visual Basic], declaring
 ms.assetid: aadd7a60-7ca4-4608-b986-091f19e7fc10
-ms.openlocfilehash: ee8cb91fd2fae9637a0d0e33fca63a4cdb9d2fce
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4ce2e061c5f523fae3020b08034875422a0062a7
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33651567"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50170169"
 ---
 # <a name="how-to-initialize-an-array-variable-in-visual-basic"></a>Postupy: Inicializace proměnné pole v jazyce Visual Basic
-Inicializace proměnné pole zahrnutím literál v pole `New` klauzule a zadat počáteční hodnoty pole. Můžete buď zadat typ nebo umožněte její odvodit z hodnot v poli literálu. Další informace o tom, jak je odvodit typ, najdete v části "Vyplní pole s počáteční hodnoty" v [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+Inicializujte proměnnou pole včetně literálu pole v `New` klauzule a určením počáteční hodnoty pole. Můžete zadat typ nebo umožnit jeho odvození z hodnot v literálu pole. Další informace o tom, jak je odvozený typ, naleznete v tématu "Vyplnění pole počátečními hodnotami" v [pole](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
-### <a name="to-initialize-an-array-variable-by-using-an-array-literal"></a>Inicializace proměnné pole s použitím pole literálu  
+### <a name="to-initialize-an-array-variable-by-using-an-array-literal"></a>Inicializace proměnné pole pomocí literálu pole  
   
--   Buď v `New` klauzuli, nebo když přiřazujete hodnota pole, zadejte hodnoty element uvnitř složené závorky (`{}`). Následující příklad znázorňuje několik způsobů, jak deklarovat, vytvoření a inicializace proměnnou, která bude obsahovat pole, které má elementy typu `Char`.  
+-   Buď `New` klauzuli, nebo když přiřadíte hodnotu pole, zadejte hodnoty elementů uvnitř závorek (`{}`). Následující příklad ukazuje několik způsobů, jak deklarovat, vytvářet a inicializovat proměnnou tak, aby obsahovala pole s prvky typu `Char`.  
   
      [!code-vb[VbVbalrArrays#16](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/how-to-initialize-an-array-variable_1.vb)]  
   
-     Po provedení každého příkazu, pole, která je vytvořena má délku 3 s prvky na pozici 0 prostřednictvím index 2 obsahující počáteční hodnoty. Pokud zadáte horní mez a hodnoty, musí obsahovat hodnotu pro každý element z indexu 0 prostřednictvím horní mez.  
+     Po spuštění všech příkazů má vytvořené pole délku 3, přičemž prvky v indexu 0 až 2 obsahují počáteční hodnoty. Pokud zadáte horní mez a hodnoty, je nutné zahrnout hodnotu pro každý prvek od indexu 0 až po horní mez.  
   
-     Všimněte si, že nemáte zadejte index horní mez, pokud zadáte hodnoty prvků v matici literálu. Pokud není zadaný žádný horní mez, je velikost pole odvodit na základě počtu hodnot v poli literálu.  
+     Všimněte si, že nemusíte určit horní mez indexu, pokud zadáte hodnoty elementu v literálu pole. Pokud není zadána žádná horní mez, velikost pole odvozena na základě počtu hodnot literálu pole.  
   
-### <a name="to-initialize-a-multidimensional-array-variable-by-using-array-literals"></a>K chybě při inicializaci proměnnou multidimenzionálního pole pomocí pole literály  
+### <a name="to-initialize-a-multidimensional-array-variable-by-using-array-literals"></a>Inicializace vícedimenzovaného pole pomocí literálů pole  
   
--   Vnořit hodnoty v závorkách (`{}`) v rámci složené závorky. Zajistěte, aby literály vnořená pole, které všechny odvození jako pole stejného typu a délka. Následující příklad kódu ukazuje několik příkladů, inicializace multidimenzionálního pole.  
+-   Vnořené hodnoty uvnitř složených závorek (`{}`) v závorkách. Ujistěte se, že jsou vnořené literály pole, které všechny odvozené jako pole stejného typu a délky. Následující příklad kódu ukazuje několik příkladů inicializace multidimenzionálního pole.  
   
      [!code-vb[VbVbalrArrays#17](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/how-to-initialize-an-array-variable_2.vb)]  
   
--   Můžete explicitně zadat rozsah pole nebo je vynecháte a mít kompilátoru odvození meze pole na základě hodnot v poli literálu. Pokud zadáte horní hranice a hodnoty, musí obsahovat hodnotu pro každý element z indexu 0 prostřednictvím horní hranice v každé dimenze. Následující příklad znázorňuje několik způsobů, jak deklarovat, vytvoření a inicializace proměnné tak, aby obsahovala dvourozměrná pole, která má elementy typu `Short`  
+-   Můžete explicitně určit hranice pole nebo je vynechat a nechat kompilátor odvodit hranice pole na základě hodnot v literálu pole. Pokud zadáte horní mez a hodnoty, je nutné zahrnout hodnotu pro každý prvek od indexu 0 až po horní mez v každém rozměru. Následující příklad ukazuje několik způsobů, jak deklarovat, vytvářet a inicializovat proměnnou tak, aby obsahovala dvojrozměrné pole obsahující prvky typu `Short`  
   
      [!code-vb[VbVbalrArrays#18](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/how-to-initialize-an-array-variable_3.vb)]  
   
-     Po provedení každého příkazu, vytvořené pole obsahuje šest inicializovaného prvky, které mají indexy `(0,0)`, `(0,1)`, `(0,2)`, `(1,0)`, `(1,1)`, a `(1,2)`. Každé pole umístění obsahuje hodnotu `10`.  
+     Po spuštění všech příkazů obsahuje vytvořené pole šest inicializovaných prvků s indexy `(0,0)`, `(0,1)`, `(0,2)`, `(1,0)`, `(1,1)`, a `(1,2)`. Každé umístění pole obsahuje hodnotu `10`.  
   
--   V následujícím příkladu prochází multidimenzionálního pole. V aplikaci konzoly systému Windows, který je napsán v jazyce Visual Basic, vložte kód do `Sub Main()` metoda. Poslední komentáře zobrazit výstup.  
+-   Následující příklad provede iteraci multidimenzionálního pole. V konzolové aplikaci Windows, která je napsána v jazyce Visual Basic, vložte kód do `Sub Main()` metody. Poslední komentáře popisují výstup.  
   
      [!code-vb[VbVbalrArrays#31](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/how-to-initialize-an-array-variable_4.vb)]  
   
-### <a name="to-initialize-a-jagged-array-variable-by-using-array-literals"></a>K chybě při inicializaci proměnnou Vícenásobná pole pomocí pole literály  
+### <a name="to-initialize-a-jagged-array-variable-by-using-array-literals"></a>Inicializace proměnné vícenásobného pole pomocí literálů pole  
   
--   Vnořit hodnoty objektu uvnitř složené závorky (`{}`). I když lze také vnořit literály pole, které určují pole různých délek, v případě Vícenásobná pole, ujistěte se, že který literály vnořená pole jsou uzavřené v závorkách (`()`). Závorky vynutit vyhodnocení literály vnořená pole a pole výsledné jsou použity jako počáteční hodnoty Vícenásobná pole. Následující příklad kódu ukazuje dva příklady inicializace Vícenásobná pole.  
+-   Hodnoty objektu vložte uvnitř složených závorek (`{}`). Ačkoli lze také vnořit literály pole, které specifikují pole různé délky, v případě vícenásobného pole, ujistěte se, že jsou vnořené literály pole uzavřeny do závorek (`()`). Závorky vynutí vyhodnocení literály vnořeného pole a výsledná pole jsou použita jako počáteční hodnoty vícenásobného pole. Následující příklad kódu ukazuje dva příklady inicializace vícenásobného pole.  
   
      [!code-vb[VbVbalrArrays#19](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/how-to-initialize-an-array-variable_5.vb)]  
   
--   V následujícím příkladu prochází Vícenásobná pole. V aplikaci konzoly systému Windows, který je napsán v jazyce Visual Basic, vložte kód do `Sub Main()` metoda.  Poslední komentáře v kódu zobrazit výstup.  
+-   Následující příklad provede iteraci vícenásobného pole. V konzolové aplikaci Windows, která je napsána v jazyce Visual Basic, vložte kód do `Sub Main()` metody.  Poslední komentáře v kódu popisují výstup.  
   
      [!code-vb[VbVbalrArrays#32](../../../../visual-basic/programming-guide/language-features/arrays/codesnippet/VisualBasic/how-to-initialize-an-array-variable_6.vb)]  
   

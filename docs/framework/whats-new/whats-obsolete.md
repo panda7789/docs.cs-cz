@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: e6835d159c9c30d09892bad8cc1d20753fe6f21c
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 58ef462fdccc31a7694721b3ab9c3bec52d66abe
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43855332"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183474"
 ---
 # <a name="what39s-obsolete-in-the-net-framework-class-library"></a>Co&#39;s zastaralé v knihovně tříd rozhraní .NET Framework
 Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá nové typy a členy typů, které přinášejí nové funkce. Existující typy a členové také v průběhu času měnit. Například některé typy se stanou méně důležité technologie, které podporují je nahrazena novou technologii a některé metody jsou nahrazena novější metody, které jsou vhodnější nebo více plně funkční.  
@@ -25,7 +25,7 @@ Rozhraní .NET Framework mění v průběhu času. Každá nová verze přidá n
 >  Podmínky *zastaralé* a *zastaralé* mají stejný význam při použití k typům a členům rozhraní .NET Framework.  
   
 ## <a name="the-obsoleteattribute-attribute"></a>Atribut ObsoleteAttribute  
- Rozhraní .NET Framework označuje, že ho s označením je zastaralý typ nebo člen typu <xref:System.ObsoleteAttribute> atribut. Použití atributu na typ nebo člen označuje, že typ nebo člen se odebere v některé budoucí verzi rozhraní .NET Framework bez přerušení zkompilován kód, který používá tento člen.  
+ Rozhraní .NET Framework označuje, že ho s označením je zastaralý typ nebo člen typu <xref:System.ObsoleteAttribute> atribut. Použití atributu na typ nebo člen označuje, že typ nebo člen se odebere v některé budoucí verzi rozhraní .NET Framework bez zásadní zkompilovat kód, který používá tento člen.  
   
  Kromě označující, že je zastaralý, typ nebo člen typu <xref:System.ObsoleteAttribute> definuje způsob, jakým kompilátor zpracovává zdrojový kód, který obsahuje tento typ nebo člen. Kompilátor může kompilovat kód, ale generování upozornění nebo užívání tento typ nebo člen může považovat za chybu. V prvním případě kód lze zkompilovat úspěšně, ale upozornění označuje, že tento typ nebo člen je zastaralý. V druhém případě kompilace se nezdaří.  
   

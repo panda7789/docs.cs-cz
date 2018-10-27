@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 47643dfa6eda67c93c54d19da41d705a78c27d8c
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 3f6ad77f93236b524e1cd22bf895312920ca4eec
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43484750"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453473"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Rozhraní .NET framework – Průvodce nasazením pro vývojáře
 Toto téma obsahuje informace pro vývojáře, kteří chtějí nainstalovat z rozhraní .NET Framework 4.5 na žádné verze rozhraní .NET Framework [!INCLUDE[net_current](../../../includes/net-current-version.md)] s aplikacemi.
@@ -51,13 +51,13 @@ Odkazy ke stažení najdete v části [Distribuovatelné balíčky](#redistribut
 
 - Musí mít oprávnění správce k instalaci [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] a jeho verze.
 
-- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Je součástí [!INCLUDE[win8](../../../includes/win8-md.md)] a [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], takže není nutné nasazovat s vaší aplikací v těchto operačních systémech. Podobně platí [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] je součástí [!INCLUDE[win81](../../../includes/win81-md.md)] a Windows Server 2012 R2. Všechny operační systémy není součástí rozhraní .NET Framework 4.5.2. [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] Je součástí systému Windows 10 [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] je součástí systému Windows 10 Listopadové aktualizace a [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] je součástí systému Windows 10 Anniversary Update.  Rozhraní .NET Framework 4.7 je součástí systému Windows 10 Creators Update, rozhraní .NET Framework 4.7.1 je součástí Windows 10 Fall Creators Update a rozhraní .NET Framework 4.7.2 je součástí systému Windows 10. dubna 2018 aktualizovat. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).
+- [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Je součástí [!INCLUDE[win8](../../../includes/win8-md.md)] a [!INCLUDE[winserver8](../../../includes/winserver8-md.md)], takže není nutné nasazovat s vaší aplikací v těchto operačních systémech. Podobně platí [!INCLUDE[net_v451](../../../includes/net-v451-md.md)] je součástí [!INCLUDE[win81](../../../includes/win81-md.md)] a Windows Server 2012 R2. Všechny operační systémy není součástí rozhraní .NET Framework 4.5.2. [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] Je součástí systému Windows 10 [!INCLUDE[net_v461](../../../includes/net-v461-md.md)] je součástí systému Windows 10 Listopadové aktualizace a [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] je součástí systému Windows 10 Anniversary Update.  Rozhraní .NET Framework 4.7 je součástí systému Windows 10 Creators Update, rozhraní .NET Framework 4.7.1 je součástí Windows 10 Fall Creators Update a rozhraní .NET Framework 4.7.2 je součástí systému Windows 10. října 2018 Update a Windows 10. dubna 2018 aktualizace. Úplný seznam požadavků na hardware a software najdete v tématu [požadavky na systém](../../../docs/framework/get-started/system-requirements.md).
 
 - Počínaje [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], vaši uživatelé mohou zobrazit seznam spuštěných aplikací rozhraní .NET Framework během instalace a snadno je zavřít. To může pomoci zabránit restartování systému způsobenému instalací rozhraní .NET Framework. Zobrazit [omezení restartů systému](../../../docs/framework/deployment/reducing-system-restarts.md).
 
 - Odinstalace [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo jeden z jeho bod uvolní také odebere existující [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)] soubory. Pokud chcete přejít zpět [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], nainstalujte ho a všechny aktualizace. (Viz [instalace rozhraní .NET Framework 4](https://msdn.microsoft.com/library/5a4x27ek\(v=vs.100\).aspx).)
 
-- Rozhraní .NET Framework 4.5 redistributable byl aktualizován na 9. října 2012 Chcete-li opravit problém související s nesprávným časovým razítkem v digitálním certifikátu, která způsobila digitální podpis souborů vytvořila a podepsala společnost Microsoft vyprší předčasně ukončen. Pokud jste dříve nainstalovali rozhraní .NET Framework 4.5 redistributable package s datem 16. srpna 2012, doporučujeme aktualizovat kopii nejnovější redistributovatelnou z [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=245484). Další informace o tomto problému najdete v tématu [Microsoft Security Advisory 2749655](https://technet.microsoft.com/security/advisory/2749655).
+- Rozhraní .NET Framework 4.5 redistributable byl aktualizován na 9. října 2012 Chcete-li opravit problém související s nesprávným časovým razítkem v digitálním certifikátu, která způsobila digitální podpis souborů vytvořila a podepsala společnost Microsoft vyprší předčasně ukončen. Pokud jste dříve nainstalovali rozhraní .NET Framework 4.5 redistributable package s datem 16. srpna 2012, doporučujeme aktualizovat kopii nejnovější redistributovatelnou z [Microsoft Download Center](https://go.microsoft.com/fwlink/p/?LinkId=245484). Další informace o tomto problému najdete v tématu [Microsoft Security Advisory 2749655](https://docs.microsoft.com/security-updates/SecurityAdvisories/2012/2749655).
 
  Informace o tom, jak může správce systému nasadit rozhraní .NET Framework a jeho systémové závislosti napříč sítí najdete v tématu [Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md).
 
@@ -247,8 +247,9 @@ dotNetFx45_Full_x86_x64.exe /q /norestart /ChainingPackage Contoso
 
 |Version|Hodnota DWORD verze|
 |-------------|--------------------------------|
+|Rozhraní .NET framework 4.7.2 nainstalované ve Windows 10. října 2018 aktualizovat|461814|
 |Rozhraní .NET framework 4.7.2 nainstalované ve Windows 10. dubna 2018 Update a Windows Server verze 1803|461808|
-|Rozhraní .NET framework nainstalované na všech verzí operačního systému než Windows 10. dubna 2018 4.7.2 Update a Windows Server verze 1803|461814|
+|Rozhraní .NET framework nainstalované na všech verzí operačního systému než Windows 10. října 2018 4.7.2 Update, Windows 10. dubna 2018 Update a Windows Server verze 1803|461814|
 |Rozhraní .NET framework 4.7.1 nainstalovat na Windows 10 Fall Creators Update a na Windows Server verze 1709|461308|
 |Rozhraní .NET framework 4.7.1 nainstalovat na všechny verze operačního systému než Windows 10 Fall Creators Update a Windows Server verze 1709|461310|
 |Rozhraní .NET framework 4.7 nainstalované ve Windows 10 Creators Update|460798|
@@ -403,9 +404,9 @@ Následující tabulka uvádí jazykové sady rozhraní .NET Framework, které j
 |3082|Španělština – Španělsko (mezinárodní řazení)|ES|
 
 ## <a name="see-also"></a>Viz také:
- [Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)  
- [Požadavky na systém](../../../docs/framework/get-started/system-requirements.md)  
- [Instalace rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)  
- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
- [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)  
- [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+- [Příručka nasazení pro administrátory](../../../docs/framework/deployment/guide-for-administrators.md)  
+- [Požadavky na systém](../../../docs/framework/get-started/system-requirements.md)  
+- [Instalace rozhraní .NET Framework pro vývojáře](../../../docs/framework/install/guide-for-developers.md)  
+- [Řešení potíží se zablokovanými instalacemi a odinstalacemi rozhraní .NET Framework](../../../docs/framework/install/troubleshoot-blocked-installations-and-uninstallations.md)  
+- [Omezení restartů systému při instalaci rozhraní .NET Framework 4.5](../../../docs/framework/deployment/reducing-system-restarts.md)  
+- [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)

@@ -8,25 +8,25 @@ helpviewer_keywords:
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1995c367039591c086054a086f2107e4a88ecefb
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: a70548231454991060098908ce954bf699eff838
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33395366"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453252"
 ---
 # <a name="interop-marshaling"></a>Zařazování spolupráce
-<a name="top"></a> Zařazování spolupráce řídí, jak se data předávají v metoda argumentů a návratové hodnoty mezi spravovanými a nespravovanými paměti během volání. Zařazování spolupráce je aktivita běhu zajišťuje služba zařazování modul common language runtime.  
+<a name="top"></a> Zařazování spolupráce řídí, jak se data předaná v metoda argumentů a vrácené hodnoty mezi spravovaným a nespravovaným paměti během volání. Zařazování spolupráce je za běhu aktivity prováděné common language runtime zařazovací služby.  
   
- Většina datových typů mít běžných vyjádření ve spravované i nespravované paměti. Tyto typy zpracovává spolupráce vláken. Jiné typy může být nejednoznačný nebo není reprezentována vůbec v spravované paměti.  
+ Většina datových typů mají společné reprezentací v paměti spravovaných i nespravovaných. Tyto typy interoperační zařazovač zpracuje za vás. Jiné typy mohou být nejednoznačná nebo není zastoupené vůbec ve spravované paměti.  
   
- Typ nejednoznačný může mít buď více nespravované reprezentací, které jsou mapovány na jeden spravovaný typ, nebo chybějící informace o typu, jako je například velikost pole. Nejednoznačný typů poskytuje zařazování znázornění výchozí a alternativní zobrazení, kde existuje více reprezentace. Můžete zadat explicitní pokyny pro zařazování vláken v tom, jak je zařazování nejednoznačným typem.  
+ Nejednoznačný typ, který může mít více nespravované reprezentace, které mapují na jeden spravovaný typ nebo chybějící informace o typu, jako je například velikost pole. Pro dvojznačné typy aby zařazování odvozovalo poskytuje reprezentaci výchozí a alternativní zobrazení, kde existuje více reprezentací. Můžete zadat explicitní pokynů zařazovacího modulu na to, jak je nejednoznačný typ přeuspořádat.  
   
  Tento přehled obsahuje následující části:  
   
--   [Vyvolání platformy a modely zprostředkovatele komunikace s objekty COM](#platform_invoke_and_com_interop_models)  
+-   [Vyvolání platformy a modely spolupráce COM](#platform_invoke_and_com_interop_models)  
   
--   [Marshaling a Apartment COM](#marshaling_and_com_apartments)  
+-   [Zařazování a objekty apartment modelu COM](#marshaling_and_com_apartments)  
   
 -   [Zařazování Vzdálená volání](#marshaling_remote_calls)  
   
@@ -35,108 +35,108 @@ ms.locfileid: "33395366"
 -   [Referenční informace](#reference)  
   
 <a name="platform_invoke_and_com_interop_models"></a>   
-## <a name="platform-invoke-and-com-interop-models"></a>Vyvolání platformy a modely zprostředkovatele komunikace s objekty COM  
+## <a name="platform-invoke-and-com-interop-models"></a>Vyvolání platformy a modely spolupráce COM  
  Modul common language runtime poskytuje dva mechanismy pro spolupráce s nespravovaným kódem:  
   
--   Volání nespravovaného kódu, což umožňuje spravovaného kódu k volání funkce exportované z nespravovaných knihovny.  
+-   Nespravovaného kódu, což umožňuje spravovanému kódu volat exportované funkce z nespravované knihovny.  
   
--   Spoluprací COM, umožňující spravovaného kódu k interakci s objekty modelu COM (Component Object) prostřednictvím rozhraní.  
+-   Komunikace s objekty COM, která umožňuje spravovanému kódu pracovat s objekty modelu COM (Component Object) prostřednictvím rozhraní.  
   
- Vyvolání obě platformy a modelu COM pomocí zprostředkovatele komunikace s objekty zařazování spolupráce přesně metoda argumenty přecházet mezi volající a volaný a zpět, pokud to vyžaduje. Jak ukazuje následující obrázek, platformu vyvolání toky volání metoda ze spravovaného na nespravovaný kód a nikdy jiným způsobem, s výjimkou případů, kdy [funkce zpětného volání](callback-functions.md) se skládá. I když vyvolání platformy volání můžete toku pouze ze spravovaného na nespravovaný kód, můžete toku dat v obou směrech jako vstupní nebo výstupní parametry. Volání metody zprostředkovatele komunikace s objekty COM proudit oběma směry.  
+ Vyvolání obě platformy a modelu COM interop použití zařazování spolupráce přesně argumenty metody přesouvat mezi volajícím a volaný a zpět, pokud vyžaduje. Jak ukazuje následující obrázek, platformu vyvolání toky volání metody ze spravovaného do nespravovaného kódu a nikdy jiným způsobem, kromě případů, kdy [funkce zpětného volání](callback-functions.md) se využívá řada. I v případě vyvolání platformy můžete tok volání pouze ze spravovaného do nespravovaného kódu, může tok dat v obou směrech jako vstupní nebo výstupní parametry. Volání metody vzájemné spolupráce COM můžete tok v obou směrech.  
   
  ![Vyvolání platformy](./media/interopmarshaling.png "interopmarshaling")  
-Vyvolání platformy a toku volání zprostředkovatele komunikace s objekty COM  
+Vyvolání platformy a tok volání interop modelu COM  
   
- Na nejnižší úrovni obou mechanismy používají stejný zprostředkovatel komunikace s objekty zařazování služby; ale některé datové typy jsou podporovány výhradně zprostředkovatel komunikace s objekty COM nebo vyvolání platformy. Podrobnosti najdete v tématu [výchozí chování zařazování](default-marshaling-behavior.md).  
+ Na nejnižší úrovni obou mechanismy používají stejný zprostředkovatel komunikace s objekty zařazování služby; ale některé typy dat podporovaných výhradně ve spolupráci s COM nebo vyvolání platformy. Podrobnosti najdete v tématu [výchozí chování zařazování](default-marshaling-behavior.md).  
   
  [Zpět na začátek](#top)  
   
 <a name="marshaling_and_com_apartments"></a>   
-## <a name="marshaling-and-com-apartments"></a>Marshaling a Apartment COM  
- Spolupráce vláken zařazuje dat mezi běžné haldy runtime jazyka a nespravované haldě. Zařazování dojde vždy, když volající a volaný nemůže pracovat na stejnou instanci data. Spolupráce vláken je umožněno pro volající a volaný vykazuje na stejná data i v případě, že mají své vlastní kopie dat.  
+## <a name="marshaling-and-com-apartments"></a>Zařazování a objekty apartment modelu COM  
+ Interoperační zařazovač zařadí data mezi běžné haldě modulu runtime jazyka a nespravované haldě. Zařazování vyvolá se při každém volajícím a volaným nelze použít ve stejné instanci data. Interoperační zařazovač umožňuje volajícím a volaným provoz na stejná data, i v případě, že mají své vlastní kopie dat se zobrazí.  
   
- COM má také vláken, která zařazuje dat mezi bytů COM nebo jiné procesy COM. Při volání mezi spravovanými a nespravovanými kódu v rámci stejné typu apartment COM, spolupráce vláken je pouze vláken zahrnutých. Při volání mezi spravovaného kódu a nespravovaného kódu v různých oddílu modelu COM nebo jiným procesem, se podílejí spolupráce vláken a COM vláken.  
+ COM také obsahuje zařazovací modul, který zařadí data mezi objekty apartment modelu COM nebo jiné procesy COM. Při volání mezi spravovaný a nespravovaný kód v rámci stejného objektu apartment modelu COM, interoperační zařazovač je potřebný jenom zařazování. Při volání mezi spravovaný kód a nespravovaný kód v různých apartment modelu COM nebo jiným procesem, interoperační zařazovač a zařazovacího modulu COM souvisejí.  
   
-### <a name="com-clients-and-managed-servers"></a>Klienti COM a spravovaných serverů  
- Exportovaný spravovaný server se knihovny typů registrovaných [Regasm.exe (Nástroj registrace sestavení)](../tools/regasm-exe-assembly-registration-tool.md) má `ThreadingModel` položky registru nastavena na `Both`. Tato hodnota označuje, že server může být aktivovaný single-threaded apartment (STA) nebo více vláken typu apartment (MTA). Objekt serveru se vytvoří ve stejné typu apartment jako jeho volajícího, jak je znázorněno v následující tabulce.  
+### <a name="com-clients-and-managed-servers"></a>Klienti modelu COM a spravovaných serverů  
+ Registrovaných exportované spravovaný server pomocí knihovny typů [Regasm.exe (Nástroj registrace sestavení)](../tools/regasm-exe-assembly-registration-tool.md) má `ThreadingModel` záznam v registru nastavte na `Both`. Tato hodnota označuje, že server možné ho aktivovat v jednovláknový apartment (STA) nebo s více vlákny typu apartment (MTA). Objekt serveru se vytvoří ve stejném objektu apartment jako volající funkci, jak je znázorněno v následující tabulce.  
   
-|Klient COM|Rozhraní .NET serveru|Zařazování požadavky|  
+|Klient modelu COM|.NET serveru|Požadavky zařazování|  
 |----------------|-----------------|-----------------------------|  
-|STA|`Both` stane se STA|Zařazování stejné typu apartment.|  
-|MTA|`Both` změní modelu MTA.|Zařazování stejné typu apartment.|  
+|STA|`Both` změní STA.|Zařazování stejného objektu apartment.|  
+|MTA|`Both` změní MTA.|Zařazování stejného objektu apartment.|  
   
- Protože klient a server jsou ve stejné typu apartment, zprostředkovatel komunikace s objekty služby zařazování automaticky zpracovává všechny dat – zařazování. Následující obrázek znázorňuje službu spolupráce zařazování operační mezi spravovanými a nespravovanými haldách v rámci stejné COM stylu typu apartment.  
+ Protože klient a server jsou ve stejném objektu apartment, zprostředkovatel komunikace s objekty zařazování service automaticky zpracovává všechna data zařazování. Následující obrázek znázorňuje spolupráce zařazovací služby provoz mezi spravovanými a nespravovanými haldy v rámci stejného objektu apartment modelu COM-style.  
   
  ![Zařazování spolupráce](./media/interopheap.gif "interopheap")  
-Zařazování procesu stejné objektu apartment  
+Proces zařazování stejného objektu apartment  
   
- Pokud budete chtít exportovat spravovaném serveru, mějte na paměti, že klient COM určuje typu apartment serveru. Spravovaný server volá klient modelu COM v modelu MTA inicializovat musí zajistit bezpečný přístup z více vláken.  
+ Pokud budete chtít exportovat spravovaného serveru, mějte na paměti, určuje klient modelu COM typu apartment serveru. Spravovaný server volá klient modelu COM ve MTA inicializovat, musíte zajistit bezpečný přístup z více vláken.  
   
 ### <a name="managed-clients-and-com-servers"></a>Spravovaných klientů a serverů modelu COM  
- Výchozí nastavení pro klienta spravovaného Apartment je MTA; Typ aplikace klienta rozhraní .NET můžete však změnit výchozí nastavení. Například [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] STA je nastavení klienta objektu apartment Můžete použít <xref:System.STAThreadAttribute?displayProperty=nameWithType>, <xref:System.MTAThreadAttribute?displayProperty=nameWithType>, <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost, nebo <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> vlastnost sloužící ke zkoumání a změňte nastavení typu apartment spravovaného klienta.  
+ Výchozí nastavení pro objekty apartment spravovaného klienta je MTA; aplikace typu klient .NET však můžete změnit výchozí nastavení. Například [!INCLUDE[vbprvblong](../../../includes/vbprvblong-md.md)] objektu apartment nastavení klienta je STA. Můžete použít <xref:System.STAThreadAttribute?displayProperty=nameWithType>, <xref:System.MTAThreadAttribute?displayProperty=nameWithType>, <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType> vlastnost, nebo <xref:System.Web.UI.Page.AspCompatMode%2A?displayProperty=nameWithType> vlastnost sloužící ke zkoumání a změnit nastavení objektu apartment spravovaný klient.  
   
- Autor komponentu nastaví spřažení podprocesu COM serveru. V následující tabulce jsou uvedeny kombinace apartment nastavení pro rozhraní .NET klienty a servery COM. Také ukazuje výsledná zařazování požadavky pro kombinace.  
+ Autor součásti nastaví spřažení vláken COM serveru. V následující tabulce jsou uvedeny kombinace nastavení objektu apartment pro klienty .NET a serverů modelu COM. Profil také ukazuje, výsledná zařazování požadavky pro všechny kombinace.  
   
-|Klient .NET|COM server|Zařazování požadavky|  
+|.NET client|COM server|Požadavky zařazování|  
 |-----------------|----------------|-----------------------------|  
-|Protokol MTA (výchozí)|MTA<br /><br /> STA|Zařazování spolupráce<br /><br /> Zprostředkovatel komunikace s objekty a zařazování COM.|  
-|STA|MTA<br /><br /> STA|Zprostředkovatel komunikace s objekty a zařazování COM.<br /><br /> Zařazování spolupráce|  
+|MTA (výchozí)|MTA<br /><br /> STA|Zařazování spolupráce.<br /><br /> Zprostředkovatel komunikace s objekty a modelu COM zařazování.|  
+|STA|MTA<br /><br /> STA|Zprostředkovatel komunikace s objekty a modelu COM zařazování.<br /><br /> Zařazování spolupráce.|  
   
- Při nespravovanému serveru a klienta spravovaného jsou ve stejné typu apartment, zprostředkovatel komunikace s objekty služby zařazování zpracovává všechny zařazování data. Ale když klient a server se inicializují v různých apartment, COM zařazování je také nutný. Na následujícím obrázku je znázorněno volání mezi apartment.  
+ Když klienta spravovaného a nespravovaného serveru jsou ve stejném objektu apartment, zprostředkovatele komunikace s objekty zařazování služby zpracovává všechny zařazování dat. Ale když klienta a serveru jsou inicializovány v jiné objekty apartment, zařazování COM je také nutný. Následující obrázek znázorňuje prvky volání mezi objektu apartment.  
   
  ![Zařazování COM](./media/singleprocessmultapt.gif "singleprocessmultapt")  
 Volání mezi apartment mezi klient .NET a objekt modelu COM  
   
- Pro zařazování mezi apartment, můžete provést následující:  
+ Pro různé apartment zařazování, máte následující:  
   
--   Přijměte režii zařazování mezi apartment, což je patrné, jenom v případě, že existuje mnoho volání přes hranice. Je nutné zaregistrovat knihovnu typů součásti COM pro volání úspěšně překročit hranice typu apartment.  
+-   Přijměte režie zařazování mezi apartment, což je patrné pouze v případě, že existují mnoho volání přes hranice. Je nutné zaregistrovat knihovnu typů komponenty modelu COM pro volání úspěšně překračují hranice objektu apartment.  
   
--   Změnit nastavení klientské vlákno STA nebo MTA hlavního vlákna. Například pokud váš klient C# volá mnoho STA COM – součásti, se můžete vyhnout mezi apartment zařazování nastavením hlavního vlákna na STA  
+-   Příkaz ALTER hlavního vlákna nastavením klienta vlákna STA nebo MTA. Například pokud vaše C# klient volá řada komponent STA COM, můžete vyhnout tak, že nastavíte hlavního vlákna STA. zařazování mezi objektu apartment  
   
     > [!NOTE]
-    >  Vlákno klienta C# nastavenou na hodnotu STA, bude vyžadovat volání do modelu MTA COM – součásti zařazování mezi apartment.  
+    >  Jednou vlákno C# klienta nastavena na STA, volání součásti MTA COM bude vyžadovat zařazování mezi objektu apartment.  
   
- Pokyny týkající se explicitně výběru apartment model najdete v tématu [spravovaná a nespravovaná vlákna](https://msdn.microsoft.com/library/db425c20-4b2f-4433-bf96-76071c7881e5(v=vs.100)).  
+ Explicitně zvolíte modelu objektu apartment, v tématu [spravovaná a nespravovaná vlákna](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100)).  
   
  [Zpět na začátek](#top)  
   
 <a name="marshaling_remote_calls"></a>   
 ## <a name="marshaling-remote-calls"></a>Zařazování Vzdálená volání  
- Stejně jako u mezi apartment zařazování, COM zařazování je zahrnuta v každé volání mezi spravovanými a nespravovanými kódem vždy, když se objekty nacházejí v oddělených procesech. Příklad:  
+ Stejně jako u zařazování mezi apartment modelu COM zařazování je zahrnuta v každé volání mezi spravovaný a nespravovaný kód pokaždé, když se objekty nacházejí v samostatných procesech. Příklad:  
   
--   Klient COM, který volá spravovaný server na vzdálený hostitel používá distributed COM (DCOM).  
+-   Klient modelu COM, která volá spravovaný server na vzdáleného hostitele používá distributed COM (DCOM).  
   
 -   Spravovaný klient, který volá server COM na vzdáleného hostitele používá model DCOM.  
   
- Následující obrázek znázorňuje, jak spolupráce zařazování a COM zařazování zadejte komunikačních kanálů napříč hranicemi proces a hostitele.  
+ Následující obrázek znázorňuje, jak spolupráce zařazování a zařazování COM poskytují komunikační kanály přes hranice procesu a hostitele.  
   
  ![Zařazování COM](./media/interophost.gif "interophost")  
 Zařazování mezi procesy  
   
 ### <a name="preserving-identity"></a>Zachování Identity  
- Modul common language runtime zachovává identitu spravovanými a nespravovanými odkazy. Následující obrázek znázorňuje tok přímé nespravované odkazy (horní řádek) a přímé odkazy na spravovaného (dolní řádek) napříč hranicemi proces a hostitele.  
+ Modul common language runtime uchovává identity spravovaných a nespravovaných odkazy. Následující obrázek znázorňuje tok nespravované přímé odkazy (horní řádek) a s přímým přístupem spravované odkazy (dolní řádek) přes hranice procesu a hostitele.  
   
  ![Obálka volatelná aplikacemi COM a obálka volatelná za běhu](./media/interopdirectref.gif "interopdirectref")  
 Odkaz na předávání přes hranice procesu a hostitele  
   
- V tomto obrázku:  
+ Na tomto obrázku:  
   
--   Nespravovaný klient získá odkaz na objekt COM ze spravovaného objektu, který získá odkaz na tento od vzdáleného hostitele. Tento mechanismus vzdálené komunikace je model DCOM.  
+-   Nespravovaný klient získá odkaz na objekt modelu COM ze spravovaného objektu, který získá tento odkaz na vzdáleného hostitele. Je mechanismus vzdálenou komunikaci modelu DCOM.  
   
--   Spravovaný klient získá odkaz na objekt spravovaného z objektu COM, který získá odkaz na tento od vzdáleného hostitele. Tento mechanismus vzdálené komunikace je model DCOM.  
+-   Spravovaný klient získá odkaz na spravovaný objekt z objektu COM, který získá tento odkaz na vzdáleného hostitele. Je mechanismus vzdálenou komunikaci modelu DCOM.  
   
     > [!NOTE]
-    >  Knihovna exportovaný typ spravovaného serveru musí být zaregistrován.  
+    >  Exportované knihovny typů spravovaného serveru musí být zaregistrovaný.  
   
- Počet proces hranice mezi volající a volaný je důležité; stejné přímé odkazujícího dochází v procesu a out-of-process volání.  
+ Počet hranice procesů mezi volajícím a volaným je bezvýznamná; stejné přímé odkazování vyvolá pro volání a mimo proces.  
   
 ### <a name="managed-remoting"></a>Spravované vzdálené komunikace  
- Modul runtime také poskytuje spravované vzdálenou komunikaci, která vám pomůže vytvořit komunikační kanál mezi spravované objekty napříč hranicemi proces a hostitele. Spravované vzdálenou komunikaci zvládne brány firewall mezi součástmi komunikuje, jak ukazuje následující obrázek.  
+ Modul runtime poskytuje také spravované vzdálené komunikace, které můžete použít k vytvoření komunikačního kanálu mezi spravovanými objekty přes hranice procesu a hostitele. Spravované vzdálené komunikace zvládne brány firewall mezi komunikujícími komponenty, jako ukazuje následující obrázek.  
   
  ![Protokol SOAP nebo TcpChannel](./media/interopremotesoap.gif "interopremotesoap")  
-Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel – třída  
+Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel třídy  
   
- Některá volání nespravovaného můžete channeled prostřednictvím protokolu SOAP, jako je například volání mezi obsluhované komponenty a COM.  
+ Některá volání nespravovaného můžete channeled prostřednictvím protokolu SOAP, jako je například volání mezi obsluhované komponenty a modelu COM.  
   
  [Zpět na začátek](#top)  
   
@@ -145,15 +145,15 @@ Vzdálená volání přes brány firewall pomocí protokolu SOAP nebo TcpChannel
   
 |Název|Popis|  
 |-----------|-----------------|  
-|[Výchozí chování zařazování](default-marshaling-behavior.md)|Popisuje pravidla, která používá službu zařazování spolupráce zařazování dat.|  
-|[Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)|Popisuje, jak deklarace parametry metody a předání argumentů funkce exportované sadou nespravované knihovny.|  
-|[Zařazování dat se spoluprací COM](marshaling-data-with-com-interop.md)|Popisuje, jak přizpůsobit COM – obálky ke změně chování zařazování.|  
-|[Postup: Migrace spravovaného kódu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje, jak migrovat z modelu DCOM do WCF.|  
-|[Postupy: Mapování výsledků HRESULT a výjimek](how-to-map-hresults-and-exceptions.md)|Popisuje, jak namapovat vlastní výjimky pro hodnoty HRESULT a poskytuje kompletní mapování z každé HRESULT do své třídy porovnatelný z hlediska výjimek v rozhraní .NET Framework.|  
-|[Spolupráce pomocí obecných typů](https://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58(v=vs.100))|Popisuje akce, které jsou podporovány při použití obecných typů pro interoperabilita modelů COM.|  
-|[Spolupráce s nespravovaným kódem](index.md)|Popisuje vzájemná funkční spolupráce služeb poskytovaných tímto modul common language runtime.|  
-|[Interoperabilita modelů COM Upřesnit](https://msdn.microsoft.com/library/3ada36e5-2390-4d70-b490-6ad8de92f2fb(v=vs.100))|Obsahuje odkazy na další informace o zahrnutí komponenty modelu COM do své aplikace rozhraní .NET Framework.|  
-|[Aspekty návrhu pro spolupráci](https://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689(v=vs.100))|Poskytuje tipy pro zápis integrované COM – součásti.|  
+|[Výchozí chování zařazování](default-marshaling-behavior.md)|Popisuje pravidla, která používá službu zařazování interop zařazování dat.|  
+|[Zařazování dat s voláním platformy](marshaling-data-with-platform-invoke.md)|Popisuje, jak deklarovat parametry metody a předání argumentů funkcí exportovaných knihovnou nespravovaných knihoven.|  
+|[Zařazování dat se spoluprací COM](marshaling-data-with-com-interop.md)|Popisuje, jak přizpůsobit COM – obálky změnit chování zařazování.|  
+|[Postup: Migrace spravovaného kódu DCOM do WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|Popisuje postup migrace z modelu DCOM do WCF.|  
+|[Postupy: Mapování výsledků HRESULT a výjimek](how-to-map-hresults-and-exceptions.md)|Popisuje, jak namapovat vlastní výjimky výsledků HRESULT a poskytuje úplné mapování z každé HRESULT na jeho třída srovnatelné výjimek v rozhraní .NET Framework.|  
+|[Spolupráce pomocí obecných typů](https://msdn.microsoft.com/library/26b88e03-085b-4b53-94ba-a5a9c709ce58(v=vs.100))|Popisuje akce, které jsou podporovány při použití obecných typů pro interoperabilitu COM.|  
+|[Spolupráce s nespravovaným kódem](index.md)|Popisuje interoperability poskytované modulem common language runtime.|  
+|[Rozšířená interoperabilita modelu COM](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|Obsahuje odkazy na další informace o začlenění komponenty modelu COM do vaší aplikace rozhraní .NET Framework.|  
+|[Aspekty návrhu pro spolupráci](https://msdn.microsoft.com/library/b59637f6-fe35-40d6-ae72-901e7a707689(v=vs.100))|Poskytuje tipy pro psaní integrované komponenty modelu COM.|  
   
  [Zpět na začátek](#top)  
   

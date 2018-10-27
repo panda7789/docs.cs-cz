@@ -6,48 +6,46 @@ helpviewer_keywords:
 - ref return values [Visual Basic]
 - ref returns [Visual Basic]
 ms.assetid: 5ef0cc69-eb3a-4a67-92a2-78585f223cb5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c2979359f0ffafe46a62696485bbb87b211c1704
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: ba649c4beaf3ec70a8c118f823fe8f25651a05a7
+ms.sourcegitcommit: 4621e67f69e7a9503ea93313ff60d69683207889
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33651237"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49995136"
 ---
-# <a name="support-for-reference-return-values-visual-basic"></a>Podpora pro odkaz návratové hodnoty (Visual Basic)
+# <a name="support-for-reference-return-values-visual-basic"></a>Podpora pro referenční návratové hodnoty (Visual Basic)
 
-Od verze 7.0 C#, podporuje jazyka C# *odkazovat návratové hodnoty*. Jeden způsob, jak pochopit návratové hodnoty odkazu je, že jsou opak argumenty, které se předávají pomocí odkazu na třídu metodě. Při úpravě argument předaný odkazem změny se projeví v hodnotu proměnné na volajícího. Při metodu návratovou hodnotu odkazu poskytne volající, změny provedené návratovou hodnotu odkazu volající projeví v datech zavolat metodu.
+Počínaje C# 7.0, C# jazyk podporuje *referenční návratové hodnoty*. Jedním ze způsobů na pochopení referenční návratové hodnoty je, že jsou opakem argumenty, které jsou předány podle odkazu na metodu. Když se upraví argument předaný odkazem, změny se projeví v hodnotu proměnné na volajícího. Když je metoda nabízí návratovou hodnotu odkazu na volající, změny provedené pro návratovou hodnotu odkaz na volajícím se projeví v data volané metody.
 
-Vám autor metody s odkazem na návratové hodnoty, ale neumožňuje můžete využívat návratové hodnoty referenční dokumentace jazyka Visual Basic není povoleno. Jinými slovy můžete volat metodu s návratovou hodnotou odkaz a upravit že návratová hodnota a změny návratovou hodnotu odkazu se projeví v datech zavolat metodu.
+Visual Basic se nepovoluje, vám autor metody s odkazem na návratové hodnoty, ale umožní vám využívat referenční návratové hodnoty. Jinými slovy můžete volat metodu s návratovou hodnotou odkazu a upravit tuto návratovou hodnotu a návratovou hodnotu odkazu se projeví v datech volané metody.
 
-## <a name="modifying-the-ref-return-value-directly"></a>Návratové hodnoty ref přímém upravování
+## <a name="modifying-the-ref-return-value-directly"></a>Úpravy návratové hodnoty ref přímo
 
-Pro metody, které vždy úspěšné a mají ne `ByRef` parametry, můžete upravit přímo návratovou hodnotu odkazu. To provedete přiřazením nová hodnota výrazů, které vrátí odkaz na návratovou hodnotu. 
+Pro metody, které vždy úspěšné a nemají `ByRef` parametry, návratová hodnota odkazu můžete upravovat přímo. To provedete tak, že přiřadíte novou hodnotu na výrazy, které vrátí odkaz na návratovou hodnotu. 
 
-Definuje následující příklad jazyka C# `NumericValue.IncrementValue` metodu, která zvýší interní hodnotu a vrátí ji jako odkaz vrátit hodnotu. 
+Následující C# příklad definuje `NumericValue.IncrementValue` metodu, která zvýší interní hodnotu a vrátí jej jako odkaz vracet hodnotu. 
 
 [!code-csharp[Ref-Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/procedures/ref-returns1.cs)]
 
-Odkaz na návratové hodnoty je pak upraveném volající v následujícím příkladu jazyka Visual Basic. Všimněte si, že souladu se zásadami `NumericValue.IncrementValue` volání metody nepřiřazuje hodnotu do metody. Místo toho přiřadí hodnotu vrácenou hodnotu odkazu vrácený metodou.
+Odkaz na návratové hodnoty je pak upravit volající v následujícím příkladu jazyka Visual Basic. Všimněte si, že řádek s `NumericValue.IncrementValue` volání metody nepřiřazuje hodnotu metody. Místo toho přiřadí hodnotu odkazu návratovou hodnotu vrácenou metodou.
 
 [!code-vb[Ref-Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/procedures/use-ref-returns1.vb)]
 
-## <a name="using-a-helper-method"></a>Pomocí Pomocná metoda
+## <a name="using-a-helper-method"></a>Použití pomocné metody
 
-V ostatních případech přímém upravování odkaz návratovou hodnotu volání metody nemusí být vždy žádoucí. Například metoda vyhledávání, která vrací řetězec nemusí vždy najít shodu. V takovém případě budete chtít upravit návratovou hodnotu odkazu pouze v případě, že je hledání úspěšné.
+V ostatních případech přímo úpravy odkaz vrácenou hodnotu volání metody nemusí být vždy žádoucí. Například metoda hledání, která vrací řetězec nemusí vždy najít shodu. V takovém případě budete chtít změnit referenční návratové hodnoty pouze v případě, že je hledání úspěšné.
 
-Následující příklad jazyka C# znázorňuje tento scénář. Definuje `Sentence` zahrnuje třídy, které jsou napsané v C# `FindNext` metoda, která vyhledá další aplikace word ve větě, která začíná je určený dílčí řetězec. Řetězec se vrátí jako odkaz vrátí hodnotu a `Boolean` předaná odkazu na metodu proměnná Určuje, zda byla hledání úspěšné. Návratovou hodnotu odkazu označuje volající nelze číst jenom vrácená hodnota; potvrdí také ho upravit, a že změna se odrazí v data obsažená v interně `Sentence` třídy.
+Následující C# příklad ukazuje tento scénář. Definuje `Sentence` třídy napsané v C# zahrnuje `FindNext` metodu, která najde ve větě, která začíná zadaným podřetězcem následující slovo. Řetězec se vrátí jako odkaz vrátí hodnotu a `Boolean` proměnné, které jsou předány podle odkazu na metodu označuje, zda bylo hledání úspěšné. Odkaz návratová hodnota označuje, že volající nelze číst pouze vrácené hodnoty; uživatel můžete také upravit jej a této změny se projeví v data obsažená v interně `Sentence` třídy.
 
 [!code-csharp[Ref-Return](../../../../../samples/snippets/visualbasic/getting-started/ref-returns.cs)]
 
-Hodnota v tomto případě není spolehlivá, protože volání metody, které může selhat pro vyhledání shody a vrácení první slovo ve větě přímou úpravou odkaz na vrácení. V takovém případě volající upraví nechtěně první slovo věty. To může zabránit volající vrácení `null` (nebo `Nothing` v jazyce Visual Basic). Ale v takovém případě se pokouší změnit řetězec, jehož hodnota je `Nothing` vyvolá <xref:System.NullReferenceException>. Pokud může také možné volající vrácení <xref:System.String.Empty?displayProperty=nameWithType>, ale to vyžaduje, aby volající definujte proměnnou řetězec, jehož hodnota je <xref:System.String.Empty?displayProperty=nameWithType>. Při volající můžete upravit tento řetězec, úpravy samotné slouží žádný účel, protože upravené řetězec nemá žádný vztah k slova ve větě uložené `Sentence` třídy.
+Přímou úpravou odkaz na návratové hodnoty v tomto případě není spolehlivé, protože volání metody nemusí najít shodu a vrátí první slovo ve větě. V takovém případě se volající náhodně změnit první slovo věty. To může zabránit volajícím vrátí `null` (nebo `Nothing` v jazyce Visual Basic). Ale v takovém případě se pokus upravit řetězec, jehož hodnota je `Nothing` vyvolá <xref:System.NullReferenceException>. Pokud může také moci volajícím vrátí <xref:System.String.Empty?displayProperty=nameWithType>, ale vyžaduje to, že volající definovat proměnné řetězec, jehož hodnota je <xref:System.String.Empty?displayProperty=nameWithType>. Když volající můžete upravit tento řetězec, úpravy, samotný slouží žádný účel, protože změněný řetězec nemá žádný vztah k slova ve větě ukládaná `Sentence` třídy.
 
-Nejlepší způsob, jak u tohoto scénáře je předat návratovou hodnotu odkazu s odkazem na metodu helper. Pomocná metoda poté obsahuje logiku pro určení, zda bylo úspěšné volání metody, a pokud neodpovídala, k úpravě vrátí odkaz na hodnotu. Následující příklad uvádí možné implementace.
+Nejlepší způsob, jak postupovat v těchto případech je předat vrácenou hodnotu odkazu s odkazem na metodu helper. Pomocná metoda pak obsahuje logiku k určení, zda volání metody bylo úspěšné, a pokud udělal, chcete-li změnit odkaz vrátit hodnotu. Následující příklad uvádí možnou implementaci.
 
 [!code-vb[Ref-Return](../../../../../samples/snippets/visualbasic/getting-started/ref-return-helper.vb#1)]
 
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
 [Předávání argumentů podle hodnoty a podle reference](passing-arguments-by-value-and-by-reference.md)   
 [Procedury v jazyce Visual Basic](index.md)   

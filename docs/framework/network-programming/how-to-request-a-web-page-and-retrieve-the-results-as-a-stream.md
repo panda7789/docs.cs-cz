@@ -5,14 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d32b7f35-29d8-4fb7-ad71-d219edc5e359
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 2ceaa7cbaf2035276a0ba0105f3969f0249c6132
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 6481e923c8daabfcfa94adc45d7d4172e47a779a
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47402601"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50041606"
 ---
 # <a name="how-to-request-a-web-page-and-retrieve-the-results-as-a-stream"></a>Postupy: vyžádání webové stránky a načtení výsledků jako Stream
 Tento příklad ukazuje, jak k vyžádání webové stránky a načtení výsledků v datovém proudu.  

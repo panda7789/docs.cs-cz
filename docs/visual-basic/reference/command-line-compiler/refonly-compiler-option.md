@@ -7,14 +7,12 @@ helpviewer_keywords:
 - /refonly compiler option [Visual Basic]
 - -refonly compiler option [Visual Basic]
 - refonly compiler option [Visual Basic]
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e8f6c15084ac9b1a07aef8a0311edfcc4a93337c
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
+ms.openlocfilehash: b22fb9ae24a04d9fe530811bf764352199c31813
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42932660"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50036057"
 ---
 # <a name="-refonly-visual-basic"></a>-refout (Visual Basic)
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 1874d5512f04f22b9c53bdc9e92d0c96e45d21c8
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 7a8fc72735c5e45fb87c503272871fc687bacd3e
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47199709"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453239"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>Postupy: zjištění nainstalovaných verzí rozhraní .NET Framework
 
@@ -97,7 +97,7 @@ Mohou uživatelé nainstalovat a spustit více verzí rozhraní .NET Framework n
     |V systému Windows 10 Anniversary Update a Windows Server 2016:394802<br /><br /> Na všech ostatních verzí operačního systému: 394806|[!INCLUDE[net_v462](../../../includes/net-v462-md.md)]| 
     |Jenom na Windows 10 Creators Update: 460798<br/><br/> Na všech ostatních verzí operačního systému: 460805 | Rozhraní .NET framework 4.7 |
     |Na Windows 10 Fall Creators Update pouze: 461308<br/><br/> Na všech ostatních verzí operačního systému: 461310 | Rozhraní .NET framework 4.7.1 |
-    |Ve Windows 10. dubna 2018 Update pouze: 461808<br/><br/> Na všech ostatních verzí operačního systému: 461814| Rozhraní .NET framework 4.7.2 |
+    |Ve Windows 10. října 2018 Update pouze: 461814<br/><br/> Ve Windows 10. dubna 2018 Update pouze: 461808<br/><br/> Na všech ostatních verzí operačního systému: 461814| Rozhraní .NET framework 4.7.2 |
     
 <a name="net_c"></a> 
 ## <a name="to-find-net-framework-versions-by-querying-the-registry-in-code-net-framework-1-4"></a>K vyhledání verze rozhraní .NET Framework dotazem na registr v kódu (.NET Framework 1 – 4)
@@ -148,8 +148,9 @@ Mohou uživatelé nainstalovat a spustit více verzí rozhraní .NET Framework n
     |Rozhraní .NET framework 4.7 nainstalovaný na všech ostatních verzí operačního systému Windows|460805|
     |Rozhraní .NET framework 4.7.1 nainstalovat na Windows 10 Fall Creators Update|461308|
     |Rozhraní .NET framework 4.7.1 nainstalovat na všechny ostatní verze operačního systému Windows|461310|
+    |Rozhraní .NET framework 4.7.2 nainstalované ve Windows 10. října 2018 aktualizovat|461814|
     |Rozhraní .NET framework 4.7.2 nainstalované ve Windows 10. dubna 2018 aktualizovat|461808|
-    |Rozhraní .NET framework 4.7.2 nainstalovaný na všech ostatních verzí operačního systému Windows|461814|
+    |Rozhraní .NET framework 4.7.2 nainstalovaný na Windows 10 Fall Creators Update a dřívějších verzích operačních systémů|461814|
     
      Následující příklad kontroly `Release` hodnoty v registru k určení, zda [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nebo je nainstalovaná novější verze rozhraní .NET Framework.
 

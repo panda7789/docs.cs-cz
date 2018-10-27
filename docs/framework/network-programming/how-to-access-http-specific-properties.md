@@ -5,14 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f8848c7e-f5c5-4d42-b86d-9951ff8f4146
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: f008cf82b80e29f8fe741034a0e820b5eae5b0ba
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: c883321d74bb4309f483604d51057390d00189e6
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193743"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50043013"
 ---
 # <a name="how-to-access-http-specific-properties"></a>Postupy: přístup k vlastnostem specifickým pro HTTP
 Tento příklad ukazuje, jak chcete-li vypnout HTTP **Keep-alive** chování a získejte verzi protokolu číslo z webového serveru.  

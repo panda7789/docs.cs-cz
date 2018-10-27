@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 0a1a3ba3-7e46-4df2-afd3-f3a8237e1c4f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 8c27bdb75ef9950d0b2b32f742b38e141cf4981b
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: bec27165d1bfd6a501ba8b96a1eb133276fe7269
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45991581"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50043332"
 ---
 # <a name="how-to-get-progress-from-the-net-framework-45-installer"></a>Postupy: Získání procesu z instalačního programu .NET Framework 4.5
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Je distribuovatelné součásti modulu runtime. Pokud vyvíjíte aplikace pro tuto verzi rozhraní .NET Framework, můžete zahrnout (řetězec) [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalace požadovaných součástí vaší aplikace. Účelem představení prostředí přizpůsobené nebo jednotný instalační program, můžete chtít spustit bezobslužně [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] nastavení a sledovat její průběh při zobrazování průběh instalačního programu vaší aplikace. Umožňuje bezobslužné sledování [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalačního programu (což lze sledovat) definuje protokol pomocí segment mapované paměti / v (MMIO) ke komunikaci s instalačním programem (sledovacích procesů nebo chainer). Definuje způsob, jakým chainer získat informace o průběhu, získat podrobné výsledky, reagovat na zprávy a zrušit tento protokol [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] instalační program.  
@@ -310,5 +310,5 @@ ms.locfileid: "45991581"
  Typický server vytvoří náhodný název souboru MMIO, vytvoří soubor (jak je znázorněno v předchozím příkladu kódu `Server::CreateSection`) a spustí Distribuovatelný pomocí `CreateProcess` metoda a předá kanálu název s `-pipe someFileSectionName` možnost. Server by měly implementovat `OnProgress`, `Send`, a `Finished` metody s kód specifický pro uživatelské rozhraní aplikace.  
   
 ## <a name="see-also"></a>Viz také  
- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
- [Nasazení](../../../docs/framework/deployment/index.md)
+- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
+- [Nasazení](../../../docs/framework/deployment/index.md)

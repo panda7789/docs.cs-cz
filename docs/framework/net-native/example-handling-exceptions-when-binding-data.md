@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: bd63ed96-9853-46dc-ade5-7bd1b0f39110
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 89e7a0929bd5f07c5a1986d885984332d692d3a9
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: a861da011898c3648c66b6a0ea0f97cdb26ff288
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44180290"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452747"
 ---
 # <a name="example-handling-exceptions-when-binding-data"></a>Příklad: Zpracování výjimek při vázání dat
 > [!NOTE]
@@ -39,7 +39,7 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ```  
   
 ## <a name="what-was-the-app-doing"></a>Co dělal aplikace?  
- Základní zásobníku, snímků z [Windows.UI.Xaml](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.aspx) obor názvů znamenat, že byl spuštěn modul vykreslování XAML.   Použití <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> metoda označuje založenými na reflexi vyhledávání hodnoty vlastnosti v typu, jehož metadata byla odebrána.  
+ Základní zásobníku, snímků z <xref:Windows.UI.Xaml?displayProperty=nameWithType> obor názvů znamenat, že byl spuštěn modul vykreslování XAML.   Použití <xref:System.Reflection.PropertyInfo.GetValue%2A?displayProperty=nameWithType> metoda označuje založenými na reflexi vyhledávání hodnoty vlastnosti v typu, jehož metadata byla odebrána.  
   
  Prvním krokem při poskytování metadat směrnice by pro přidání `serialize` metadat pro typ tak, aby její vlastnosti jsou všechny dostupné:  
   
@@ -57,7 +57,7 @@ Windows_UI_Xaml!DirectUI::PropertyPathListener::ConnectPathStep+0x113
 ## <a name="could-the-code-be-rewritten-to-not-use-reflection"></a>Může být kód přepsán nechcete použít reflexe?  
  Datová vazba je náročné na reflexi, změny kódu, aby se zabránilo reflexe není vhodná.  
   
- Existují však způsoby, jak určit `ViewModel` na stránku XAML tak, aby řetězce nástrojů můžete přidružit vlastnost vazby pomocí správného typu v době kompilace a zachovat metadata bez použití direktivy modulu runtime.  Například můžete použít [Windows.UI.Xaml.Data.BindableAttribute](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.data.bindableattribute.aspx) atribut na vlastnosti. To způsobí, že kompilátor XAML generovat informace o požadované vyhledávání a se vyhnete nutnosti direktivy modulu runtime v souboru Default.rd.xml.  
+ Existují však způsoby, jak určit `ViewModel` na stránku XAML tak, aby řetězce nástrojů můžete přidružit vlastnost vazby pomocí správného typu v době kompilace a zachovat metadata bez použití direktivy modulu runtime.  Například můžete použít <xref:Windows.UI.Xaml.Data.BindableAttribute?displayProperty=nameWithType> atribut na vlastnosti. To způsobí, že kompilátor XAML generovat informace o požadované vyhledávání a se vyhnete nutnosti direktivy modulu runtime v souboru Default.rd.xml.  
   
 ## <a name="see-also"></a>Viz také  
  [Začínáme](../../../docs/framework/net-native/getting-started-with-net-native.md)  

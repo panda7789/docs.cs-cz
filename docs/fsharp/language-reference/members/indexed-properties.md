@@ -1,58 +1,48 @@
 ---
 title: Indexované vlastnosti (F#)
-description: 'Další informace o F # indexované vlastnosti, které jsou vlastnosti, které poskytují přístup jako pole k datům seřazené.'
-ms.date: 05/16/2016
-ms.openlocfilehash: e56e4e2ea3f35df4c8ec46012357242cb6ce69f3
-ms.sourcegitcommit: 3ab9254890a52a50762995fa6d7d77a00348db7e
+description: Další informace o indexované vlastnosti v F#, které umožňují pro přístup jako pole k datům seřazené.
+ms.date: 10/17/2018
+ms.openlocfilehash: 3dac60eba3d9e7a9c3e76ad7ee051e6b30b88636
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/19/2018
-ms.locfileid: "46321363"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452245"
 ---
 # <a name="indexed-properties"></a>Indexované vlastnosti
 
-*Indexované vlastnosti* jsou uspořádány ve vlastnosti, které poskytují přístup jako pole na data. Přišli v tři formuláře:
-
-* `Item`
-* `Ordinal`
-* `Cardinal`
-
-Člen F # musí mít název jedné z těchto tří názvů a zajistit tak přístup jako pole. `IndexerName` se používá k reprezentování některý z následujících tří možností:
+Při definování třídy, který získává přes seřazených dat, může být někdy užitečné poskytnout indexovaný přístup k těmto datům bez vystavení se základní implementací. Používá se k tomu `Index` člena.
 
 ## <a name="syntax"></a>Syntaxe
 
 ```fsharp
 // Indexed property that has both get and set defined.
-member self-identifier.IndexerName
-    with get(index-variable) =
-        get-function-body
-    and set index-variablesvalue-variables =
-        set-function-body
+member self-identifier.Index
+    with get(index-values) =
+        get-member-body
+    and set index-values values-to-set =
+        set-member-body
 
-// Indexed property that has get only.
-member self-identifier.IndexerName(index-variable) =
-    get-function-body
-
-// Alternative syntax for indexed property with get only
-member self-identifier.IndexerName
-    with get(index-variables) =
-        get-function-body
+// Indexed property with get only
+member self-identifier.Index
+    with get(index-values) =
+        get-member-body
 
 // Indexed property that has set only.
-member self-identifier.IndexerName
-    with set index-variablesvalue-variables = 
-        set-function-body
+member self-identifier.Index
+    with set index-values values-to-set =
+        set-member-body
 ```
 
 ## <a name="remarks"></a>Poznámky
 
 Formy syntaxe předchozí ukazují, jak definovat indexované vlastnosti, které mají obě `get` a `set` metodu, mají `get` metoda pouze, nebo mít `set` pouze metody. Můžete také zkombinovat obojí tomu syntaxe uvedená jenom příkaz get a syntaxi pro sadu pouze a vytvoří vlastnost, která má get a set. Tento druhý formulář umožňuje umístit různou přístupností. modifikátorů a vlastností atributy na get a set metod.
 
-Když *IndexerName* je `Item`, kompilátor zpracovává vlastnost jako výchozí indexovanou vlastnost. A *výchozí indexovanou vlastnost* vlastností, která může získat přístup pomocí syntaxe pro pole na instanci objektu. Například pokud `obj` je objekt typu, který definuje tato vlastnost syntaxe `obj.[index]` slouží k přístupu k vlastnosti.
+Pomocí názvu `Item`, kompilátor zpracovává vlastnost jako výchozí indexovanou vlastnost. A *výchozí indexovanou vlastnost* vlastností, která může získat přístup pomocí syntaxe pro pole na instanci objektu. Například pokud `o` je objekt typu, který definuje tato vlastnost syntaxe `o.[index]` slouží k přístupu k vlastnosti.
 
-Syntaxe pro přístup k nevýchozí indexované vlastnosti je název vlastnosti a index v závorkách. Například, pokud je vlastnost `Ordinal`, psaní `obj.Ordinal(index)` k němu přistupovat.
+Syntaxe pro přístup k jiné než výchozí indexovaná vlastnost je k poskytnutí názvu vlastnosti a index v závorkách, stejně jako běžný člen. Například pokud vlastnost `o` nazývá `Ordinal`, psaní `o.Ordinal(index)` k němu přistupovat.
 
-Bez ohledu na to, jaký tvar použijete, byste měli vždy používat curryfikované formulář pro `set` metoda indexované vlastnosti. Informace o curryfikované funkce najdete v tématu [funkce](../functions/index.md).
+Bez ohledu na to, jaký tvar používáte měli byste použít vždy curryfikované formuláře pro metodu set indexované vlastnosti. Informace o curryfikované funkce najdete v tématu [funkce](../functions/index.md).
 
 ## <a name="example"></a>Příklad
 
@@ -62,7 +52,7 @@ Následující příklad kódu ukazuje definice a používání výchozích a ji
 
 ## <a name="output"></a>Výstup
 
-```
+```console
 ONE two three four five six seven eight nine ten
 ONE first two second three third four fourth five fifth six 6th
 seven seventh eight eighth nine ninth ten tenth

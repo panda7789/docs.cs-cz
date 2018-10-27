@@ -8,14 +8,12 @@ helpviewer_keywords:
 - compiler options, Visual Basic
 - Visual Basic compiler, options
 ms.assetid: 6b57c444-50c7-4b88-8f59-ed65cff5e05c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1dd00fca2f2b24386773ac4868763cfb868e6b37
-ms.sourcegitcommit: 70c76a12449439bac0f7a359866be5a0311ce960
+ms.openlocfilehash: d5bccab71d790a7a70d012375d3f47676cf83c6d
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39244761"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50044967"
 ---
 # <a name="visual-basic-command-line-compiler"></a>Kompilátor příkazového řádku jazyka Visual Basic
 

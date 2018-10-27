@@ -4,14 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 9f24759d68f007caf5f79096c6d4cebb7c050851
-ms.sourcegitcommit: 2350a091ef6459f0fcfd894301242400374d8558
+ms.openlocfilehash: 98a9295f1a2158e28a699aa6dfb1403542e523b4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/21/2018
-ms.locfileid: "46532478"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50043592"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Abecedně seřazené možnosti kompilátoru jazyka Visual Basic
 Kompilátor příkazového řádku jazyka Visual Basic se poskytuje jako alternativu ke kompilaci programů z integrovaného vývojového prostředí (IDE) sady Visual Studio. Následuje seznam možností příkazového řádku kompilátoru jazyka Visual Basic, seřazená podle abecedy.  

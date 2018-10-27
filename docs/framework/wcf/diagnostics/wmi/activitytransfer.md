@@ -2,19 +2,19 @@
 title: ActivityTransfer
 ms.date: 03/30/2017
 ms.assetid: fc40ef17-2a92-4ce2-853c-6ba8e5d571f3
-ms.openlocfilehash: 480670f19407321eb0928d07752936b2ece1f7e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 936e870c1ec991e2e33acf8a08ccc93975989679
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33484185"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50034419"
 ---
 # <a name="activitytransfer"></a>ActivityTransfer
-Událost přenosu aktivity  
+Aktivita událost přenosu  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class ActivityTransfer : WSAT_TraceEvent  
 {  
   object ActivityID;  
@@ -35,7 +35,7 @@ class ActivityTransfer : WSAT_TraceEvent
   
 -   ID aktivity  
   
-### <a name="relatedactivityid"></a>RelatedActivityID  
+### <a name="relatedactivityid"></a>Mít  
   
 -   Datový typ: objekt  
     Přístup k typu: jen pro čtení  
@@ -44,6 +44,6 @@ class ActivityTransfer : WSAT_TraceEvent
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel.|

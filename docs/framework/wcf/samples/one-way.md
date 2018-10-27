@@ -2,12 +2,12 @@
 title: Jednosměrný
 ms.date: 03/30/2017
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-ms.openlocfilehash: 25720285e29641c3c040444cb643af2790f10d3b
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: 9a8af4bcdc76afd96ada595a7234cbc5e0250dfc
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
-ms.locfileid: "43740724"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180858"
 ---
 # <a name="one-way"></a>Jednosměrný
 Tato ukázka předvádí, služba kontaktovat s operací jednosměrné služby. Klient nečeká servisní operace dokončit, protože v případě obousměrné servisní operace. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a používá `wsHttpBinding` vazby. Služby v této ukázce je aplikace v místním prostředí konzoly, která vám umožní sledovat službu, která přijímá a zpracovává požadavky. Klient je také konzolovou aplikaci.  
@@ -17,7 +17,7 @@ Tato ukázka předvádí, služba kontaktovat s operací jednosměrné služby. 
   
  Vytvoření kontraktu služby jednosměrné, definování váš kontraktu služby, použije <xref:System.ServiceModel.OperationContractAttribute> třídy pro každou operaci a nastavte <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> k `true` jak je znázorněno v následujícím ukázkovém kódu:  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IOneWayCalculator  
 {  
@@ -34,8 +34,8 @@ public interface IOneWayCalculator
   
  Abychom si předvedli, že klient nečeká na dokončení operací služby, implementuje kódu služby v této ukázce zpoždění pěti sekund, jak je znázorněno v následujícím ukázkovém kódu:  
   
-```  
-/ This service class implements the service contract.  
+```csharp
+// This service class implements the service contract.  
 // This code writes output to the console window.  
  [ServiceBehavior(ConcurrencyMode = ConcurrencyMode.Multiple,  
     InstanceContextMode = InstanceContextMode.PerCall)]  
@@ -58,7 +58,7 @@ public class CalculatorService : IOneWayCalculator
   
  Klient dokončí náskok před službu, představením toho, že klient nečeká na dokončení operací jednosměrné služby. Výstup klienta vypadá takto:  
   
-```  
+```console  
 Add(100,15.99)  
 Subtract(145,76.54)  
 Multiply(9,81.25)  
@@ -69,7 +69,7 @@ Press <ENTER> to terminate client.
   
  Se zobrazí následující výstup služby:  
   
-```  
+```console  
 The service is ready.  
 Press <ENTER> to terminate service.  
   

@@ -2,12 +2,12 @@
 title: Povinné argumenty a skupiny přetížení
 ms.date: 03/30/2017
 ms.assetid: 4ca3ed06-b9af-4b85-8b70-88c2186aefa3
-ms.openlocfilehash: d25702e573acd9a0815c232cdf6935d6e9651631
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: d7cfe00d93f1eede77bcda5881c63843722c9a17
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842070"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452898"
 ---
 # <a name="required-arguments-and-overload-groups"></a>Povinné argumenty a skupiny přetížení
 Aktivity lze nastavit tak, aby některé argumenty jsou povinné vázat pro aktivitu platná pro spuštění. `RequiredArgument` Atribut se používá k označení, že se vyžadují některé argumenty pro aktivitu a `OverloadGroup` atribut se používá k seskupení kategorie povinnými argumenty. Pomocí atributů lze aktivity autoři uvádějí aktivitu jednoduchých nebo složitých ověření konfigurace.  
@@ -63,7 +63,7 @@ public sealed class Add : CodeActivity<int>
   
  **Nebyla zadána hodnota pro povinný argument aktivity "Operand1".**  
 > [!NOTE]
-> Další informace o zjišťování a zpracování chyb při ověřování a upozornění, najdete v části [vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
+> Další informace o zjišťování a zpracování chyby a upozornění ověření najdete v tématu [vyvolání ověřování aktivit](../../../docs/framework/windows-workflow-foundation/invoking-activity-validation.md).  
   
 ## <a name="using-overload-groups"></a>Používání skupiny přetížení
 

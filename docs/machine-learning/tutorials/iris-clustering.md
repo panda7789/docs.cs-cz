@@ -6,12 +6,12 @@ ms.author: johalex
 ms.date: 07/02/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: eddafc14de3a38cbf6f238199733ee667e6868b3
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: bb41fd317507c14b46aea94e1ce576e390932a65
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308562"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453187"
 ---
 # <a name="tutorial-use-mlnet-to-cluster-iris-flowers-clustering"></a>Kurz: Použití ML.NET do clusteru květin iris (clustery)
 
@@ -138,19 +138,19 @@ Prvním krokem k provedení je načíst trénovací datové sady. V našem pří
 
 [!code-csharp[Add step to load data](../../../samples/machine-learning/tutorials/IrisClustering/Program.cs#6)]
 
-Dalším krokem je kombinací všech sloupců funkce do **funkce** pomocí sloupce <xref:Microsoft.ML.Transforms.ColumnConcatenator> třídy transformace. Ve výchozím nastavení, algoritmu učení zpracovává pouze funkce **funkce** sloupce. Přidejte následující kód:
+Dalším krokem je kombinací všech sloupců funkce do **funkce** pomocí sloupce <xref:Microsoft.ML.Legacy.Transforms.ColumnConcatenator> třídy transformace. Ve výchozím nastavení, algoritmu učení zpracovává pouze funkce **funkce** sloupce. Přidejte následující kód:
 
 [!code-csharp[Add step to concatenate columns](../../../samples/machine-learning/tutorials/IrisClustering/Program.cs#7)]
 
 ## <a name="choose-a-learning-algorithm"></a>Vyberte algoritmus učení
 
-Po přidání dat do kanálu a jejich transformace na správný formát vstupu, vyberte algoritmus učení (**learner**). Learner trénovat modelu. Poskytuje ML.NET <xref:Microsoft.ML.Trainers.KMeansPlusPlusClusterer> student, který implementuje [algoritmus k-means](https://en.wikipedia.org/wiki/K-means_clustering) vylepšené metodou pro výběr centroids počáteční clusteru.
+Po přidání dat do kanálu a jejich transformace na správný formát vstupu, vyberte algoritmus učení (**learner**). Learner trénovat modelu. Poskytuje ML.NET <xref:Microsoft.ML.Legacy.Trainers.KMeansPlusPlusClusterer> student, který implementuje [algoritmus k-means](https://en.wikipedia.org/wiki/K-means_clustering) vylepšené metodou pro výběr centroids počáteční clusteru.
 
 Přidejte následující kód do `Train` metoda po zpracování dat kód přidaný v předchozím kroku:
 
 [!code-csharp[Add a learner step](../../../samples/machine-learning/tutorials/IrisClustering/Program.cs#8)]
 
-Použití <xref:Microsoft.ML.Trainers.KMeansPlusPlusClusterer.K?displayProperty=nameWithType> vlastnosti a určit tak počet clusterů. Výše uvedený kód určuje, že datová sada by měla lze rozdělit tři clustery.
+Použití <xref:Microsoft.ML.Legacy.Trainers.KMeansPlusPlusClusterer.K?displayProperty=nameWithType> vlastnosti a určit tak počet clusterů. Výše uvedený kód určuje, že datová sada by měla lze rozdělit tři clustery.
 
 ## <a name="train-the-model"></a>Trénování modelu
 

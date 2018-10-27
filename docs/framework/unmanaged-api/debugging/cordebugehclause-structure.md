@@ -14,17 +14,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 40820a805310786eeb0effd7c5284c1a70a6e70b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 83928696fc7fdfaf2eb944f4cdb9eebecdece0b3
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33407597"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452911"
 ---
 # <a name="cordebugehclause-structure"></a>Struktura CorDebugEHClause
 [Podporované v rozhraní .NET Framework 4.5.2 a novějších verzích]  
   
- Představuje výjimku zpracování (EH) klauzuli pro určitou část kód intermediate language (IL).  
+ Představuje výjimku zpracování – klauzule (EH) pro danou část kódu (IL intermediate language).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,30 +44,30 @@ typedef struct _CorDebugEHClause {
   
 |Člen|Popis|  
 |------------|-----------------|  
-|`Flags`|Bitová pole, které popisuje informace o výjimce v klauzuli EH. Další informace najdete v části poznámky.|  
-|`TryOffset`|Posun v bajtech z `try` bloku od začátku těla metody.|  
-|`TryLength`|Délka v bajtech z `try` bloku.|  
-|`HandlerOffset`|Umístění obslužná rutina pro tento `try` bloku.|  
+|`Flags`|Bitové pole, která popisuje informace o výjimce v klauzuli EH. Další informace najdete v části poznámky.|  
+|`TryOffset`|Posun v bajtech, nástroje `try` bloku od samého začátku tělo metody.|  
+|`TryLength`|Délka v bajtech, nástroje `try` bloku.|  
+|`HandlerOffset`|Umístění obslužné rutiny pro tuto `try` bloku.|  
 |`HandlerLength`|Velikost v bajtech kód obslužné rutiny.|  
-|`ClassToken`|Token metadata pro obslužnou rutinu výjimky založený na typu.|  
-|`FilterOffset`|Posun v bajtech, od začátku těla metody pro obslužnou rutinu na základě filtru výjimek.|  
+|`ClassToken`|Token metadat pro obslužnou rutinu na základě typu výjimky.|  
+|`FilterOffset`|Posun v bajtech od začátku tělo metody obslužné rutiny na základě filtru výjimky.|  
   
 ## <a name="remarks"></a>Poznámky  
- Pole `CoreDebugEHClause` hodnoty vrátí [GetEHClauses](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) metoda.  
+ Pole `CoreDebugEHClause` hodnoty vrácené [GetEHClauses](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode-getehclauses-method.md) metody.  
   
- Informace klauzule EH je definován specifikací rozhraní příkazového řádku. Další informace najdete v tématu [standardní ECMA-355: společné jazykové infrastruktury (CLI), 6. Edition](http://www.ecma-international.org/publications/standards/Ecma-335.htm).  
+ Klauzule informace EH je definován specifikací CLI. Další informace najdete v tématu [Standard ECMA-355: společné jazykové infrastruktury (CLI), 6 Edition](https://www.ecma-international.org/publications/standards/Ecma-335.htm).  
   
  `flags` Pole může obsahovat následující příznaky. Všimněte si, že nejsou definovány v CorDebug.idl nebo CorDebug.h.  
   
 |Příznak|Hodnota|Popis|  
 |----------|-----------|-----------------|  
-|`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|Klauzuli typu výjimka.|  
+|`COR_ILEXCEPTION_CLAUSE_EXCEPTION`|0x00000000|Klauzule typovou výjimku.|  
 |`COR_ILEXCEPTION_CLAUSE_FILTER`|0x00000001|Výjimka filtr a obslužné rutiny klauzuli.|  
-|`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|A `finally` klauzule.|  
-|`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|Klauzuli selhání ( `finally` klauzuli, která je volána, pouze když je vyvolána výjimka).|  
+|`COR_ILEXCEPTION_CLAUSE_FINALLY`|0x00000002|A `finally` klauzuli.|  
+|`COR_ILEXCEPTION_CLAUSE_FAULT`|0x00000004|Klauzule fault ( `finally` klauzuli, která je volána, pouze když je vyvolána výjimka).|  
   
 ## <a name="requirements"></a>Požadavky  
- **Platformy:** najdete v části [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
+ **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  
   
  **Záhlaví:** CorDebug.idl, CorDebug.h  
   

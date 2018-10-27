@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/12/2017
-ms.openlocfilehash: 8cf1abb3ce400b72a3b02c705bd29f01b29cbaf0
-ms.sourcegitcommit: fd8d4587cc26e53f0e27e230d6e27d828ef4306b
+ms.openlocfilehash: 663515e0a863ef703006df0f96b4bc8a2976ca78
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/16/2018
-ms.locfileid: "49349147"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50042802"
 ---
 # <a name="implementing-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implementace vrstvy trvalosti infrastruktury pomocí Entity Framework Core
 
@@ -39,7 +39,7 @@ Entity Framework (EF) Core je odlehčený, rozšiřitelné, a multiplatformní v
 
 ## <a name="infrastructure-in-entity-framework-core-from-a-ddd-perspective"></a>Infrastruktura v Entity Framework Core z hlediska DDD
 
-Z DDD hlediska, je důležité funkce EF umožňuje používat entity domény POCO, označuje se taky v, řečeno terminologií EF jako POCO *založeno na kódu entity*. Pokud používáte entity domény POCO, vaše doménové třídy modelu jsou ignorujících, následující [trvalost neznalosti](http://deviq.com/persistence-ignorance/) a [infrastruktury neznalosti](https://ayende.com/blog/3137/infrastructure-ignorance) zásady.
+Z DDD hlediska, je důležité funkce EF umožňuje používat entity domény POCO, označuje se taky v, řečeno terminologií EF jako POCO *založeno na kódu entity*. Pokud používáte entity domény POCO, vaše doménové třídy modelu jsou ignorujících, následující [trvalost neznalosti](https://deviq.com/persistence-ignorance/) a [infrastruktury neznalosti](https://ayende.com/blog/3137/infrastructure-ignorance) zásady.
 
 Za vzorů DDD by měl zapouzdření domény chování a pravidel v rámci třídy entita, takže ho můžete řídit výstupních podmínek, ověření a pravidla při přístupu k žádné kolekce. Proto není vhodné v DDD umožní veřejný přístup ke kolekcím podřízené entity nebo hodnota objekty. Místo toho chcete vystavit metody, které řídí, kdy a jak můžete aktualizovat pole a kolekce vlastností, a jaké chování a akce dojde, pokud k tomu dojde.
 
@@ -467,7 +467,7 @@ I když není doporučenou vrátit IQueryable z úložiště, je naprosto bez pr
     [*https://docs.microsoft.com/ef/core/modeling/shadow-properties*](https://docs.microsoft.com/ef/core/modeling/shadow-properties)
 
 -   **Vzor specifikace**
-    [*http://deviq.com/specification-pattern/*](http://deviq.com/specification-pattern/)
+    [*https://deviq.com/specification-pattern/*](https://deviq.com/specification-pattern/)
     
 
 >[!div class="step-by-step"]

@@ -1,55 +1,55 @@
 ---
 title: Co je Docker?
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/21/2017
-ms.openlocfilehash: 2dfff13f00d4ea0e57161c21d7773eead41c28ee
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 056fb613c078cc407380060dc11890406ac8cffd
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37105382"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50044727"
 ---
 # <a name="what-is-docker"></a>Co je Docker?
 
-[Docker](https://www.docker.com/) je [open source projektu](https://github.com/docker/docker) pro automatizaci nasazení aplikací jako přenosné, soběstačný kontejnery, které můžou běžet v cloudu nebo na místní (viz obrázek 1 – 2). Je také docker [společnosti](https://www.docker.com/) zvýší úroveň a sama vyvinula tuto technologii, práce ve spolupráci s cloudu, Linux a Windows dodavateli, včetně Microsoft.
+[Docker](https://www.docker.com/) je [open source projektu](https://github.com/docker/docker) pro automatizaci nasazení aplikací jako přenosných a soběstační kontejnerů, které můžou běžet v cloudu nebo místně (viz obrázek 1 – 2). Docker je také [společnosti](https://www.docker.com/) , který podporuje a tato technologie funguje ve spolupráci s cloudem, Linux a Windows dodavateli, včetně Microsoft vyvíjí.
 
 ![](./media/image2.png)
 
-Obrázek 1 – 2: Docker nasadí kontejnery na všechny vrstvy hybridního cloudu
+Obrázek 1 – 2: Dockeru nasadí kontejnery na všech úrovních hybridního cloudu
 
-Kontejnery docker bitové kopie můžete spustit nativně na Linuxu a Windows. Ale bitových kopií systému Windows lze spustit pouze na hostitelích systému Windows a Linux Image můžete spustit pouze na hostitelích systému Linux, což znamená hostitelský server nebo na virtuální počítač.
+Image kontejnerů dockeru můžete nativně běžet na systému Linux a Windows. Však imagí Windows můžete spustit pouze na hostitelích s Windows a Linuxové Image lze spustit pouze na hostitelích systému Linux, což znamená hostitelský server nebo virtuální počítač.
 
-Vývojáři mohou použít vývojové prostředí v systému Windows, Linux nebo systému macOS. Vývojář na vývojovém počítači, spouští Docker hostitele, na které Docker jsou nasazené bitové kopie, včetně aplikace a jeho závislosti. Vývojáři, kteří pracují v systému Linux nebo na Mac použijte Docker hostitele, který je založenými na systému Linux, a mohou vytvářet bitové kopie pouze pro kontejnery Linux. (Vývojáře, kteří pracují na Mac můžete upravit kód nebo spustit rozhraní příkazového řádku Dockeru \[rozhraní příkazového řádku\] ze systému macOS, ale době psaní tohoto textu, kontejnery nelze spustit přímo v systému macOS.) Vývojáři, kteří pracují v systému Windows, můžete vytvořit Image pro Linux nebo Windows kontejnery.
+Vývojáři mohou pomocí vývojových prostředích Windows, Linux nebo macOS. Vývojář ve vývojovém počítači, spouští hostitele Docker k Dockeru, které jsou nasazené bitové kopie, včetně aplikace a jeho závislosti. Vývojáři, kteří pracují v Linuxu nebo na počítači Mac pomocí hostitele Docker, která je založené na Linuxu a bude možné vytvořit Image pouze pro kontejnery Linuxu. (Vývojáře, kteří pracují na počítači Mac můžete upravit kód, nebo spusťte rozhraní příkazového řádku Dockeru \[rozhraní příkazového řádku\] ze systému macOS, ale v době psaní tohoto návodu, kontejnery nelze spustit přímo v systému macOS.) Vývojáři, kteří pracují ve Windows můžete vytvořit Image pro kontejnery Windows nebo Linuxem.
 
-Pro hostování kontejnery ve vývojovém prostředí a poskytnout další vývojářské nástroje, dodává Docker [Docker Community Edition (CE)](https://www.docker.com/community-edition) pro systém Windows nebo pro systému macOS. Tyto produkty nainstalujte nezbytné virtuálního počítače (Docker hostitele) k hostování kontejnerů. Docker také zpřístupní [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), který je určený pro vývoj enterprise a je používána týmy IT, kteří sestavení, odeslání a spusťte velké důležitými obchodními aplikacemi v produkčním prostředí.
+K hostování kontejnerů ve vývojových prostředích a poskytují další vývojářské nástroje, Docker dodává [Docker Community Edition (CE)](https://www.docker.com/community-edition) pro Windows nebo macOS. Těchto produktů nainstalujte nezbytné virtuálního počítače (hostitele Dockeru) pro hostování kontejnerů. Docker také zpřístupní [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), která je určená pro vývoj podnikových a používá týmům IT, kteří vytvářejí, dodávat a spouštět velké nejzásadnější aplikace v produkčním prostředí.
 
-Ke spuštění [Windows kontejnery](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview), existují dva typy moduly Runtime:
+Ke spuštění [kontejnery Windows](/virtualization/windowscontainers/about/), existují dva typy modulů runtime:
 
--   **Windows Server kontejneru** tento modul runtime poskytuje izolace aplikací prostřednictvím technologie izolace, proces a obor názvů. Kontejner Windows serveru sdílí jádro s hostitelem kontejneru a všechny kontejnery spuštěných na hostiteli.
+-   **Kontejner Windows Server** tento modul runtime poskytuje izolace aplikací prostřednictvím technologie izolace procesu a obor názvů. Kontejner Windows serveru sdílí jádro s hostitelem kontejneru a všechny kontejnery, které běží na hostiteli.
 
--   **Technologie Hyper-V kontejneru** tím se rozšíří na izolaci poskytované Windows Server kontejnery spuštěním každý kontejner ve vysoce optimalizovaného virtuálního počítače. V této konfiguraci není jádra hostitele kontejneru sdílet s kontejnery technologie Hyper-V, poskytuje lepší izolace.
+-   **Technologie Hyper-V kontejneru** to rozšiřuje možnosti izolace poskytovaná kontejnery Windows serveru spuštěním jednotlivých kontejnerů ve vysoce optimalizovanému virtuálního počítače. V této konfiguraci nesdílí jádro hostitele kontejneru s kontejnery Hyper-V, poskytuje lepší izolace.
 
-Pro obrázky těchto kontejnerů, vytvoří se stejným způsobem a stejné funkce. Rozdíl je v tom, jak se kontejner vytvoří z bitové kopie – spuštění kontejner technologie Hyper-V vyžaduje další parametr. Podrobnosti najdete v tématu [kontejnery technologie Hyper-V](https://msdn.microsoft.com/virtualization/windowscontainers/about/about_overview).
+Image pro tyto kontejnery jsou vytvořeny stejným způsobem a fungovat stejně. Rozdíl je v jak se vytvoří kontejner z image – spouštění kontejneru Hyper-V vyžaduje speciálním parametrem. Podrobnosti najdete v tématu [Hyper-V Containers](/virtualization/windowscontainers/about/).
 
-## <a name="comparing-docker-containers-with-vms"></a>Porovnání Docker kontejnery s virtuálními počítači
+## <a name="comparing-docker-containers-with-vms"></a>Porovnání kontejnerů Dockeru pomocí virtuálních počítačů
 
-Obrázek 1 – 3 uvádí srovnání mezi virtuálními počítači a Docker kontejnerů.
+Obrázek 1 – 3 ukazuje porovnání mezi virtuálními počítači a Docker kontejnery.
 
-Protože kontejnery vyžadují mnohem méně prostředků (například nepotřebují úplném operačním systému), jsou snadno nasadit a rychlé spuštění. Díky tomu je možné mít vyšší hustotu, což znamená, že můžete spustit další služby na stejné jednotce hardwaru, čímž se sníží náklady.
+Vzhledem k tomu, že kontejnery vyžadují mnohem méně prostředků (například nemusí plném operačním systému), je snadné je nasazení a rychlé spuštění. Díky tomu budete moct mít vyšší hustota, což znamená, že můžete spustit další služby na stejné jednotce hardwaru a snižují náklady.
 
-Jako vedlejším účinkem spuštěných na stejné jádra můžete izolujte menší než virtuální počítače.
+Jako vedlejší účinek spuštěných na stejném jádra dosáhnout izolace je menší než virtuální počítače.
 
-Hlavním cílem bitové kopie je, že umožňuje prostředí (závislosti) stejná napříč různých nasazení. To znamená, že můžete ladění na váš počítač a poté ji nasadit do jiného počítače s prostředím stejné zaručit.
+Hlavním cílem obrázku, který je, že je prostředí (závislosti) stejný různých nasazeních. To znamená, že můžete ladění na vašem počítači a potom ji nasadíte do jiného počítače pomocí stejné prostředí zaručeno, že.
 
-Bitovou kopii kontejneru je způsob, jak balíčku aplikace nebo služby a nasaďte ho spolehlivé a reprodukovatelné způsobem. V tomto ohledu Docker není pouze technologie, je také filozofii a proces.
+Image kontejneru je způsob, jak zabalit aplikace nebo služby a ji nasadit spolehlivé a reprodukovatelné způsobem. V tomto ohledu Docker není pouze technologie, je také filozofií a proces.
 
-Při použití Docker, nebude uslyšíte vývojáři Řekněme, "Ho pracuje na můj počítač, proč ne v produkčním prostředí?" Se jednoduše řekněte, "Je spuštěna na Docker," protože zabalené aplikace Docker lze spustit na všech podporovaných Docker prostředí, a způsob, jakým mělo být na všech cílů nasazení (vývoj, kontrolu kvality, pracovní produkční atd.), poběží.
+Při použití Dockeru, Řekněme, že vývojáři nebudou slyšet, "to funguje na mém počítači, případně proč bezpečná není v produkčním prostředí?" Můžete jednoduše slibují, "Se spustí v Dockeru," protože zabalené aplikace Dockeru můžete spustit na všech podporovaných prostředí Docker, a tok se spustí tak, jak bylo zamýšleno na všech cílů nasazení (vývoj, dotazů a odpovědí, Fázování importu, výroby, atd.).
 
 ![](./media/image3.png)
 
-Obrázek 1 – 3: porovnání tradiční virtuálních počítačů do kontejnerů Docker
+Obrázek 1 – 3: porovnání tradičních virtuálních počítačů pro kontejnery Dockeru
 
 
 >[!div class="step-by-step"]

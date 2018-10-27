@@ -4,13 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - secure applications [WCF]
 ms.assetid: 79e4e6f7-0c00-4045-b0f0-e6a7c37c7788
-author: BrucePerlerMS
-ms.openlocfilehash: 4dce8615ba28ddd6054145c282192f75e7817623
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 3cf42ec2734801dfffcd0115f8bb42d0353c7014
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198940"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50044213"
 ---
 # <a name="security-guidance-and-best-practices"></a>Informace o zabezpečení a doporučené postupy
 Témata v této části poskytují pokyny a aspekty ke zvážení při vytváření zabezpečených aplikací Windows Communication Foundation (WCF). Další informace o systému Windows Server AppFabric a zabezpečení naleznete v tématu [zabezpečení modelu pro Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  

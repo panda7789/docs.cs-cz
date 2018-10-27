@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: f4f46f9e-8d08-4e66-a94b-0c69c9b0bbfa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ae36736ac7174ff7f77ae5bba45e1fd3880169c
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 57c47fab98d7def3c3548769da091951819db1b1
+ms.sourcegitcommit: dfc8aa44246a97f4611cc441d9ef71b03cc31260
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45972972"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49413635"
 ---
 # <a name="peverifyexe-peverify-tool"></a>Peverify.exe (nástroj PEVerify)
 Nástroj PEVerify pomáhá vývojářům generujícím Microsoft Intermediate Language (MSIL) (například autorům kompilátorů a vývojářům skriptovacích modulů) zjistit, zda jejich kód MSIL a přidružená metadata splňují požadavky na bezpečnost typů. Některé kompilátory generují kód ověřitelně bezpečného typu pouze tehdy, když se vyhnete určitým jazykovým konstrukcím. Pokud jako vývojář používáte takový kompilátor, můžete chtít ověřit, že nebyla ohrožena bezpečnost typů vašeho kódu. V této situaci můžete spustit nástroj PEVerify pro soubory ke kontrole jazyka MSIL a metadat.  
@@ -57,7 +57,7 @@ peverify filename [options]
 |**/?**|Zobrazí syntaxi příkazu a možnosti nástroje.|  
   
 ## <a name="remarks"></a>Poznámky  
- Modul Common Language Runtime se opírá o typově bezpečné spuštění kódu aplikace k podpoře vynucení bezpečnostních a izolačních mechanismů. Za normálních okolností kód, který není [ověřitelně bezpečnost typů](https://msdn.microsoft.com/library/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc) nelze spustit, nicméně můžete nastavit zásady zabezpečení umožňující spuštění důvěryhodného ale neověřitelný kód.  
+ Modul Common Language Runtime se opírá o typově bezpečné spuštění kódu aplikace k podpoře vynucení bezpečnostních a izolačních mechanismů. Za normálních okolností kód, který není [ověřitelně bezpečnost typů](../../../docs/standard/security/key-security-concepts.md#type-safety-and-security) nelze spustit, nicméně můžete nastavit zásady zabezpečení umožňující spuštění důvěryhodného ale neověřitelný kód.  
   
  Pokud ani **/md** ani **/il** jsou zadány možnosti, Peverify.exe provede oba typy kontrol. PEVerify.exe provádí **/md** nejprve. Pokud zde nejsou žádné chyby **/il** kontroly jsou prováděny. Pokud zadáte obě **/md** a **/il**, **/il** kontroly jsou prováděny, i když nejsou chyby v metadatech. Proto, pokud nejsou žádné chyby metadat **peverify** *filename* je ekvivalentní **peverify** *filename* **/md** **/il**.  
   
@@ -122,6 +122,6 @@ peverify myAssembly.exe /break=100 /ignore@ignoreErrors.rsp
   
 ## <a name="see-also"></a>Viz také  
  [Nástroje](../../../docs/framework/tools/index.md)  
- [NIB: Psát kód Ověřitelně bezpečného typu](https://msdn.microsoft.com/library/d18f10ef-3b48-4f47-8726-96714021547b)  
- [Bezpečnost typů a zabezpečení](https://msdn.microsoft.com/library/095cd1f6-d8db-4c0e-bce2-83ccb34dd5dc)  
+ [Psát kód Ověřitelně bezpečného typu](../../../docs/framework/misc/code-access-security-basics.md#typesafe_code)  
+ [Bezpečnost typů a zabezpečení](../../../docs/standard/security/key-security-concepts.md#type-safety-and-security)  
  [Příkazové řádky](../../../docs/framework/tools/developer-command-prompt-for-vs.md)

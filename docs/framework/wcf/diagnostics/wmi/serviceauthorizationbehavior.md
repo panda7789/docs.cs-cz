@@ -2,18 +2,19 @@
 title: ServiceAuthorizationBehavior
 ms.date: 03/30/2017
 ms.assetid: 77dad8e8-fea4-4d1c-b366-2f01a2a87f78
-ms.openlocfilehash: e03f83927ec5aef7f916b2262c9c8cff1db68ac9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: c916d0820a1eae333384deab7b0619abfbdc8167
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "49415377"
 ---
 # <a name="serviceauthorizationbehavior"></a>ServiceAuthorizationBehavior
 ServiceAuthorizationBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class ServiceAuthorizationBehavior : Behavior  
 {  
   boolean ImpersonateCallerForAllOperations;  
@@ -29,21 +30,21 @@ class ServiceAuthorizationBehavior : Behavior
 ## <a name="properties"></a>Vlastnosti  
  Třída ServiceAuthorizationBehavior má následující vlastnosti:  
   
-### <a name="impersonatecallerforalloperations"></a>impersonateCallerForAllOperations  
- Datový typ: logická hodnota  
+### <a name="impersonatecallerforalloperations"></a>ImpersonateCallerForAllOperations  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která určuje, zda se služba pokusí zosobnit pomocí přihlašovacích údajů zadaných příchozí zprávy.  
+ Hodnota, která určuje, zda se služba pokusí o zosobnění s použitím pověření poskytnutých příchozí zprávy.  
   
 ### <a name="principalpermissionmode"></a>PrincipalPermissionMode  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Objekt používá k provádění operací na serveru.  
+ Objekt zabezpečení použitý k provádění operací na serveru.  
   
-### <a name="roleprovider"></a>RoleProvider  
+### <a name="roleprovider"></a>Třída RoleProvider  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
@@ -55,11 +56,11 @@ class ServiceAuthorizationBehavior : Behavior
   
  Přístup k typu: jen pro čtení  
   
- Správce autorizací, použít pro vlastní ověřování.  
+ Správce autorizace použitý pro autorizace.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

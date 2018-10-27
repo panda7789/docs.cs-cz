@@ -8,12 +8,12 @@ helpviewer_keywords:
 - GC [.NET ], large object heap
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 8dfe3fdbf71918a7ed2b6dccca24f58688bc14f2
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: cdbbf3138cad0a2fae311bf03476eebba23b7320
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003084"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50042438"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 
@@ -66,7 +66,7 @@ Obrázek 3: LOH po 2. generace GC
 
 ## <a name="when-is-a-large-object-collected"></a>Když se shromažďují velké objekty
 
-Obecně platí globální Katalog dojde, pokud jeden z následujících podmínek následující 3 se stane:
+Obecně platí globální Katalog dojde, pokud jeden z následujících podmínek 3 se stane:
 
 - Přidělování překračuje generace 0 nebo velkého objektu prahovou hodnotu.
 
@@ -164,7 +164,7 @@ Obrázek 4: LOH po 2. generace GC
 > [!NOTE]
 > Doporučujeme, abyste místo výkonu použít trasování událostí pro Windows čítače, protože trasování událostí pro Windows poskytuje mnohem bohatší informace.
 
-### <a name="etw"></a>Trasování událostí pro Windows
+### <a name="etw-events"></a>Trasování událostí pro Windows – události
 
 Poskytuje širokou škálu události trasování událostí, které vám pomohou pochopit, co dělá haldy systému uvolňování paměti a proč. V následujících příspěvcích na blogu ukazují, jak shromažďovat a pochopit uvolňování paměti události trasování událostí pro Windows:
 
@@ -204,7 +204,7 @@ Jak je vidět, to je velmi jednoduchý test, který právě přiděluje rozsáhl
 
 ### <a name="a-debugger"></a>Ladicí program
 
-Pokud vše, co musíte je výpis paměti a je třeba podívat, jaké objekty jsou skutečně na LOH, můžete použít [rozšíření ladění SoS](http://msdn2.microsoft.com/ms404370.aspx) poskytované rozhraní .NET.
+Pokud vše, co musíte je výpis paměti a je třeba podívat, jaké objekty jsou skutečně na LOH, můžete použít [rozšíření ladění SoS](../../../docs/framework/tools/sos-dll-sos-debugging-extension.md) poskytované rozhraní .NET.
 
 > [!NOTE]
 > Příkazy ladění, které jsou uvedené v této části se vztahují na [ladicích programů Windows](https://www.microsoft.com/whdc/devtools/debugging/default.mspx).

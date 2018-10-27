@@ -3,11 +3,11 @@ title: Používání delegátů aktivit
 ms.date: 03/30/2017
 ms.assetid: e33cf876-8979-440b-9b23-4a12d1139960
 ms.openlocfilehash: 7ed4032f8f8070648f8a2f0fcfb386101740f1ad
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48580871"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50184881"
 ---
 # <a name="using-activity-delegates"></a>Používání delegátů aktivit
 Delegátů aktivit umožňují autorům aktivity vystavit zpětná volání s konkrétní podpisy, které mohou uživatelé aktivity zadat na základě aktivity obslužné rutiny. K dispozici jsou dva typy delegátů aktivit: <xref:System.Activities.ActivityAction%601> se používá k definování delegátů aktivit, které nemají návratovou hodnotu a <xref:System.Activities.ActivityFunc%601> se používá k definování delegátů aktivit, které nemají návratovou hodnotu.  

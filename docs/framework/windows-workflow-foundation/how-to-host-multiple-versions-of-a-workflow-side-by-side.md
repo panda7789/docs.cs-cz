@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 09c575df-e0a3-4f3b-9e01-a7ac59d65287
-ms.openlocfilehash: 721ab72ab1f67d2dc42574ed0147fa7686e02fd1
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: 04586f22076b6e2cf4175c7d9d985820ef7885c6
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316464"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181615"
 ---
 # <a name="how-to-host-multiple-versions-of-a-workflow-side-by-side"></a>Postupy: hostování několika verzí pracovní postup--vedle sebe
 `WorkflowIdentity` umožňuje vývojářům aplikací pracovní postup přidružit název a verze definice pracovního postupu a tyto informace k trvalé instance práce. Tyto informace identita umožňuje vývojáři aplikace pracovního postupu povolení scénářů, jako je vedle sebe spuštění více verzí modulu definice pracovního postupu a poskytuje základní kámen pro další funkce, jako je například dynamická aktualizace. Tento krok úvodního kurzu ukazuje, jak používat `WorkflowIdentity` k hostování několika verzí pracovního postupu ve stejnou dobu.
@@ -555,14 +555,15 @@ ms.locfileid: "49316464"
 
 2.  Začněte kliknutím na nový pracovní postup **novou hru**. Verze pracovního postupu se zobrazí v okně Stav a zahrnuje aktualizovanou verzi z přidruženého `WorkflowIdentity`. Poznamenejte si `InstanceId` tak můžete zobrazit soubor sledování pracovního postupu po dokončení a až do dokončení hra, zadejte pokusů. Všimněte si, jak odhad uživatele se zobrazí v informace zobrazené v okně Stav na základě aktualizací na `WriteLine` aktivity.
 
- **Zadejte prosím číslo mezi 1 a 10**
-**5 je příliš vysoká.** 
- **Zadejte prosím číslo mezi 1 a 10**
-**3 je příliš vysoká.** 
- **Zadejte prosím číslo mezi 1 a 10**
-**1 je příliš nízká.** 
- **Zadejte prosím číslo mezi 1 a 10**
-**ještě jednou vám Gratulujeme, můžete uhodnout číslo na oplátku 4.**
+ **Zadejte prosím číslo mezi 1 a 10**  
+**5 je příliš vysoká.**  
+**Zadejte prosím číslo mezi 1 a 10**  
+**3 je příliš vysoká.**  
+**Zadejte prosím číslo mezi 1 a 10**  
+**1 je příliš nízká.**  
+**Zadejte prosím číslo mezi 1 a 10**  
+**Blahopřejeme, uhodnout číslo na oplátku 4.**  
+
     > [!NOTE]
     >  Aktualizovaný text z `WriteLine` aktivity se zobrazí, ale výstup finální `WriteLine` je aktivitou, která byla přidána v tomto tématu. Důvodem je, že se aktualizoval stav okna `PersistableIdle` obslužné rutiny. Protože pracovní postup dokončí a nepřekračuje nečinnosti za poslední aktivitu `PersistableIdle` obslužná rutina není volána. Ale podobná zpráva se zobrazí v okně Stav podle `Completed` obslužné rutiny. V případě potřeby kód může být přidán do `Completed` obslužnou rutinu k extrakci textu z `StringWriter` a zobrazí se stavové okno.
 

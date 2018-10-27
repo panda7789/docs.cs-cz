@@ -2,12 +2,12 @@
 title: Tok zpráv – přehled
 ms.date: 03/30/2017
 ms.assetid: fb0899e1-84cc-4d90-b45b-dc5a50063943
-ms.openlocfilehash: 73ad66389d8458c0508c7a8cae28f54ca38ed574
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 54ffd8ec2349b2dd54ca61615b2fb1b997d02932
+ms.sourcegitcommit: e42d09e5966dd9fd02847d3e7eeb4ec0877069f8
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48841979"
+ms.lasthandoff: 10/17/2018
+ms.locfileid: "49372782"
 ---
 # <a name="message-flow-overview"></a>Tok zpráv – přehled
 V distribuovaném systému obsahující propojených služeb je potřeba určit příčinnou vztahy mezi službami. Je důležité pochopit různé součásti, které byly součástí tok požadavku pro podporu důležitých scénářů, jako je stav monitorování, řešení problémů a analýzu kořenových příčin. Chcete-li povolit trasování korelace různých služeb v rozhraní .NET Framework 4 přidali jsme podporu prostřednictvím následujících funkcí:
@@ -52,13 +52,13 @@ V distribuovaném systému obsahující propojených služeb je potřeba určit 
 
 8.  V souboru Program.cs v klientovi přidejte následující příkaz Using.
 
-    ```
+    ```csharp
     using System.Diagnostics;
     ```
 
 9. V hlavní metodě v souboru program.cs v projektu klienta nastavte trasování identifikátor GUID mohly rozšířit v protokolu událostí.
 
-    ```
+    ```csharp
     Guid guid = Guid.NewGuid();
     Trace.CorrelationManager.ActivityId = guid;
     ```

@@ -4,12 +4,12 @@ description: Další informace o .NET Core.
 author: richlander
 ms.author: mairaw
 ms.date: 08/01/2018
-ms.openlocfilehash: d9943246b683c8fd892e7bc5fd09a10b72e31a5f
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
+ms.openlocfilehash: fc4b76df8b71865b14caf27c7e21906cccc88d07
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46577525"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50042321"
 ---
 # <a name="about-net-core"></a>Informace o .NET Core
 
@@ -25,24 +25,19 @@ ms.locfileid: "46577525"
 
 ## <a name="languages"></a>Jazyky
 
-Jazyky C#, Visual Basic a F # umožňuje psát aplikace a knihovny pro .NET Core. Tyto jazyky jsou, nebo je možné integrovat do oblíbených textových editorů a prostředí IDE, včetně [sady Visual Studio](https://visualstudio.microsoft.com/vs/), [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text a Vim. Tato integrace poskytuje, částečně dobrý lidé z [OmniSharp](http://www.omnisharp.net/) a [Ionide](http://ionide.io) projekty.
+Jazyky C#, Visual Basic a F # umožňuje psát aplikace a knihovny pro .NET Core. Tyto jazyky jsou, nebo je možné integrovat do oblíbených textových editorů a prostředí IDE, včetně [sady Visual Studio](https://visualstudio.microsoft.com/vs/), [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp), Sublime Text a Vim. Tato integrace poskytuje, částečně dobrý lidé z [OmniSharp](https://www.omnisharp.net/) a [Ionide](http://ionide.io) projekty.
 
 ## <a name="apis"></a>API
 
 .NET core zveřejňuje rozhraní API pro většinu scénářů, postupujte podle několik z nich:
 
-- Primitivní typy, jako například [bool] [ bool] a [int][int].
+- Primitivní typy, jako například [bool](../csharp/language-reference/keywords/bool.md) a [int](../csharp/language-reference/keywords/int.md).
 - Kolekce, jako například <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> a <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
 - Nástroj pro typy, jako například <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>, a <xref:System.IO.FileStream?displayProperty=nameWithType>.
-- Datové typy, jako například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [DbSet][dbset].
-- Vysoký výkon typy, jako například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály][pipelines].
+- Datové typy, jako například <xref:System.Data.DataSet?displayProperty=nameWithType>, a [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
+- Vysoký výkon typy, jako například <xref:System.Numerics.Vector?displayProperty=nameWithType> a [kanály](https://blogs.msdn.microsoft.com/dotnet/2018/07/09/system-io-pipelines-high-performance-io-in-net/).
 
 .NET core zajišťuje kompatibilitu se rozhraní .NET Framework a rozhraní API Mono implementací [.NET Standard](../standard/net-standard.md) specifikace.
-
-[bool]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/bool
-[int]: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/int
-[pipelines]: https://blogs.msdn.microsoft.com/dotnet/2018/07/09/system-io-pipelines-high-performance-io-in-net/
-[dbset]: https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/
 
 ## <a name="frameworks"></a>Rozhraní
 
@@ -111,7 +106,7 @@ Hlavní rozdíly mezi .NET Core a .NET Framework:
 
 ### <a name="comparison-with-mono"></a>Porovnání s Mono
 
-[Mono](http://www.mono-project.com/) je původní napříč platformami a [opensourcových](https://github.com/mono/mono) implementace .NET, nejprve dodání 2004. To můžete představit jako klon komunity rozhraní .NET Framework. Týmový projekt Mono spoléhal na otevřený [.NET standardy](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (zejména 335 Standard ECMA) vydávaný microsoftem, aby bylo možné poskytovat kompatibilní implementace.
+[Mono](https://www.mono-project.com/) je původní napříč platformami a [opensourcových](https://github.com/mono/mono) implementace .NET, nejprve dodání 2004. To můžete představit jako klon komunity rozhraní .NET Framework. Týmový projekt Mono spoléhal na otevřený [.NET standardy](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) (zejména 335 Standard ECMA) vydávaný microsoftem, aby bylo možné poskytovat kompatibilní implementace.
 
 Hlavní rozdíly mezi Mono a .NET Core:
 

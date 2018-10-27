@@ -8,14 +8,12 @@ helpviewer_keywords:
 - <connectionManagement> element
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 1736dd8fcb308bceee5f100149919ff9ec45510d
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: ff2f895ca50f0d16ee9e16406f92b087b03e391e
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316321"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50049110"
 ---
 # <a name="ltconnectionmanagementgt-element-network-settings"></a>&lt;Element connectionManagement&gt; – Element (nastavení sítě)
 Určuje maximální počet připojení k síti hostitele.  

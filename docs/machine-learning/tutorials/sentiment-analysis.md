@@ -4,12 +4,12 @@ description: Objevte, jak používat ML.NET ve scénáři binární klasifikace 
 ms.date: 06/04/2018
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 7d2935fafe9dbad28205c8a896d97d80474a686f
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: fd0a1ad246c6d50db35e3d0f0332a82b256902c1
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48838820"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49453161"
 ---
 # <a name="tutorial-use-mlnet-in-a-sentiment-analysis-binary-classification-scenario"></a>Kurz: Použití ML.NET ve scénáři binární klasifikace analýzy mínění
 
@@ -175,11 +175,11 @@ public static async Task<PredictionModel<SentimentData, SentimentPrediction>> Tr
 
 ## <a name="ingest-the-data"></a>Zpracování příjmu dat
 
-Inicializuje novou instanci třídy <xref:Microsoft.ML.LearningPipeline> , který bude obsahovat načítání dat, zpracování dat a snadné a modelu. Přidejte následující kód jako první řádek `Train` metody:
+Inicializuje novou instanci třídy <xref:Microsoft.ML.Legacy.LearningPipeline> , který bude obsahovat načítání dat, zpracování dat a snadné a modelu. Přidejte následující kód jako první řádek `Train` metody:
 
 [!code-csharp[LearningPipeline](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#5 "Create a learning pipeline")]
 
-<xref:Microsoft.ML.Data.TextLoader> Objektu je první částí kanálu a načte soubor trénovací data.
+<xref:Microsoft.ML.Legacy.Data.TextLoader> Objektu je první částí kanálu a načte soubor trénovací data.
 
 [!code-csharp[TextLoader](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#6 "Add a text loader to the pipeline")]
 
@@ -187,13 +187,13 @@ Inicializuje novou instanci třídy <xref:Microsoft.ML.LearningPipeline> , kter�
 
 Předběžné zpracování a čištění dat jsou důležité úkoly, ke kterým dochází před použitím datové sady je efektivní pro machine learning. Nezpracovaná data se často aktivní nebo nespolehlivé a může být chybějící hodnoty. Pomocí data, aniž by tyto úlohy modelování můžete vytvářet zavádějící výsledky. ML. NET pro transformace kanály umožňují napsat vlastní sadu transformací, které se použijí pro vaše data před trénování a testování. Hlavním účelem transformace je pro snadné data. Výhodou transformace kanálu, který je po definici kanál transformace, uložit kanálu, který má být použit testovací data.
 
-Použít <xref:Microsoft.ML.Transforms.TextFeaturizer> převést `SentimentText` sloupec [číselné vektoru](../resources/glossary.md#numerical-feature-vector) volá `Features` používá algoritmus strojového učení. Jedná se o krok předběžného zpracování a snadné. Pomocí dalších komponent, které jsou k dispozici v ML.NET můžete povolit lepší výsledky obsahující váš model. Přidat `TextFeaturizer` do kanálu jako další řádek kódu:
+Použít <xref:Microsoft.ML.Legacy.Transforms.TextFeaturizer> převést `SentimentText` sloupec [číselné vektoru](../resources/glossary.md#numerical-feature-vector) volá `Features` používá algoritmus strojového učení. Jedná se o krok předběžného zpracování a snadné. Pomocí dalších komponent, které jsou k dispozici v ML.NET můžete povolit lepší výsledky obsahující váš model. Přidat `TextFeaturizer` do kanálu jako další řádek kódu:
 
 [!code-csharp[TextFeaturizer](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#7 "Add a TextFeaturizer to the pipeline")]
 
 ## <a name="choose-a-learning-algorithm"></a>Vyberte algoritmus učení
 
-<xref:Microsoft.ML.Trainers.FastTreeBinaryClassifier> Je objekt learner stromu rozhodnutí v tomto kanálu použijete. Podobně jako v kroku snadné, vyzkoušejte si různé inteligentních algoritmů k dispozici v ML.NET a změna jejich parametrů vede k jiné výsledky. Pro ladění, můžete nastavit [hyperparameters](../resources/glossary.md#hyperparameter) jako <xref:Microsoft.ML.Trainers.FastTreeBinaryClassifier.NumTrees>, <xref:Microsoft.ML.Trainers.FastTreeBinaryClassifier.NumLeaves>, a <xref:Microsoft.ML.Trainers.FastTreeBinaryClassifier.MinDocumentsInLeafs>. Tyto hyperparameters nastavují před nic ovlivňuje modelu a jsou specifické pro model. Slouží k vyladění rozhodovací strom pro výkon, takže vyšší hodnoty může mít negativní vliv na výkon.
+<xref:Microsoft.ML.Legacy.Trainers.FastTreeBinaryClassifier> Je objekt learner stromu rozhodnutí v tomto kanálu použijete. Podobně jako v kroku snadné, vyzkoušejte si různé inteligentních algoritmů k dispozici v ML.NET a změna jejich parametrů vede k jiné výsledky. Pro ladění, můžete nastavit [hyperparameters](../resources/glossary.md#hyperparameter) jako <xref:Microsoft.ML.Legacy.Trainers.FastTreeBinaryClassifier.NumTrees>, <xref:Microsoft.ML.Legacy.Trainers.FastTreeBinaryClassifier.NumLeaves>, a <xref:Microsoft.ML.Legacy.Trainers.FastTreeBinaryClassifier.MinDocumentsInLeafs>. Tyto hyperparameters nastavují před nic ovlivňuje modelu a jsou specifické pro model. Slouží k vyladění rozhodovací strom pro výkon, takže vyšší hodnoty může mít negativní vliv na výkon.
 
 Přidejte následující kód, který `Train` metody:
 
@@ -201,7 +201,7 @@ Přidejte následující kód, který `Train` metody:
 
 ## <a name="train-the-model"></a>Trénování modelu
 
-Trénování modelu, <xref:Microsoft.ML.PredictionModel%602>založená na datovou sadu, která má načíst a transformovat. `pipeline.Train<SentimentData, SentimentPrediction>()` trénovat kanálu (načítá data, železniční featurizer a learner). Experiment není spuštěn, dokud k tomu dojde.
+Trénování modelu, <xref:Microsoft.ML.Legacy.PredictionModel%602>založená na datovou sadu, která má načíst a transformovat. `pipeline.Train<SentimentData, SentimentPrediction>()` trénovat kanálu (načítá data, železniční featurizer a learner). Experiment není spuštěn, dokud k tomu dojde.
 
 Přidejte následující kód, který `Train` metody:
 
@@ -239,15 +239,15 @@ Přidejte volání do nové metody z `Main` metody, v rámci `Train` volání me
 
 [!code-csharp[CallEvaluate](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#12 "Call the Evaluate method")]
 
-<xref:Microsoft.ML.Data.TextLoader> Třídy načte nová datová sada testů s stejné schéma. Můžete si vyzkoušet modelu s použitím tohoto objektu dataset jako kontrola kvality. Přidejte následující kód, který `Evaluate` metody:
+<xref:Microsoft.ML.Legacy.Data.TextLoader> Třídy načte nová datová sada testů s stejné schéma. Můžete si vyzkoušet modelu s použitím tohoto objektu dataset jako kontrola kvality. Přidejte následující kód, který `Evaluate` metody:
 
 [!code-csharp[LoadText](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#13 "Load the test dataset")]
 
-<xref:Microsoft.ML.Models.BinaryClassificationEvaluator> Vypočítá metrik kvality pro objekt `PredictionModel` pomocí zadané datové sady. Pokud chcete zobrazit tyto metriky, přidejte Chyba při vyhodnocování jako na další řádek v `Evaluate` metodu s následujícím kódem:
+<xref:Microsoft.ML.Legacy.Models.BinaryClassificationEvaluator> Vypočítá metrik kvality pro objekt `PredictionModel` pomocí zadané datové sady. Pokud chcete zobrazit tyto metriky, přidejte Chyba při vyhodnocování jako na další řádek v `Evaluate` metodu s následujícím kódem:
 
 [!code-csharp[BinaryEvaluator](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#14 "Create the binary evaluator")]
 
-<xref:Microsoft.ML.Models.BinaryClassificationMetrics> Obsahuje celkový metriky počítají tak, že nástroje pro vyhodnocení binární klasifikace. Chcete-li zobrazit tyto k určení kvality tohoto modelu, budete muset získat metriky první. Přidejte následující kód:
+<xref:Microsoft.ML.Legacy.Models.BinaryClassificationMetrics> Obsahuje celkový metriky počítají tak, že nástroje pro vyhodnocení binární klasifikace. Chcete-li zobrazit tyto k určení kvality tohoto modelu, budete muset získat metriky první. Přidejte následující kód:
 
 [!code-csharp[CreateMetrics](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#15 "Evaluate the model and create metrics")]
 
@@ -283,7 +283,7 @@ Přidat nějaké komentáře k otestování trénovaného modelu prognózy v `Pr
 
 [!code-csharp[PredictionData](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#18 "Create test data for predictions")]
 
-Teď, když máte model, vám pomůže, která předvídat pozitivní nebo negativní zabarvení komentář dat pomocí <xref:Microsoft.ML.PredictionModel.Predict%2A?displayProperty=nameWithType> metody. Chcete-li získat predikcí, použijte `Predict` na nová data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
+Teď, když máte model, vám pomůže, která předvídat pozitivní nebo negativní zabarvení komentář dat pomocí <xref:Microsoft.ML.Legacy.PredictionModel.Predict%2A?displayProperty=nameWithType> metody. Chcete-li získat predikcí, použijte `Predict` na nová data. Poznamenat, že vstupní data na řetězec a tento model zahrnuje snadné. Kanálu se synchronizuje během trénování a predikcí. Nemáte psát kód předzpracování/snadné speciálně pro předpovědi a stejného rozhraní API se postará o batch i jednorázové předpovědi.
 
 [!code-csharp[Predict](../../../samples/machine-learning/tutorials/SentimentAnalysis/Program.cs#19 "Create predictions of sentiments")]
 

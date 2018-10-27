@@ -5,13 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-author: BrucePerlerMS
-ms.openlocfilehash: f1dae4b9d2976ddbc941e49843324a29ec8885a4
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: e6fbaabb97e4a8de3e4bdbcc0c105b6cf999c0d5
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836349"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50037584"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>Postupy: Zabezpečené koncové body metadat
 Metadata služby mohou obsahovat citlivé údaje o aplikaci, která uživatel se zlými úmysly využívat. Příjemci služby budete možná muset zabezpečené mechanismus pro získání metadat o vaší služby. Proto je někdy nezbytné pro publikování metadata pomocí zabezpečeného koncového bodu.  

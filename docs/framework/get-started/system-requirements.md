@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: b8f9205863ce65b480aa048f99df62d9b522aac9
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: e9d1c6dff4a1a8722a2ca196763756336d512631
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845759"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50047212"
 ---
 # <a name="net-framework-system-requirements"></a>Požadavky na systém rozhraní .NET framework
 
@@ -55,6 +55,7 @@ Rozhraní .NET Framework vyžaduje oprávnění správce pro instalaci. Pokud ne
 
 | Operační systém | Podporované edice | Předinstalované s operačním systémem | Instalovat samostatně |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
+| Windows 10. října 2018 Update | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7.2 |--|
 | Aktualizace Windows 10. dubna 2018 | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7.2 |--|
 | Windows 10 Fall Creators Update | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7.1 | Rozhraní .NET framework 4.7.2 |
 | Windows 10 Creators Update | 32bitová verze a 64bitová verze | Rozhraní .NET framework 4.7 | Rozhraní .NET framework 4.7.1<br/><br/>Rozhraní .NET framework 4.7.2 | 

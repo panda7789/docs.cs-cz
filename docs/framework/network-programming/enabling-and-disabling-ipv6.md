@@ -2,14 +2,12 @@
 title: Povolení a zákaz IPv6
 ms.date: 03/30/2017
 ms.assetid: 6408d3ef-c9ba-49d9-b15e-fe74bd3ef031
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: f63d62c7605d32dfbe97193f8aed53f0fc547cff
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9dbbbbb522628de81be3d3d1382867de99c570d0
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47195606"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183084"
 ---
 # <a name="enabling-and-disabling-ipv6"></a>Povolení a zákaz IPv6
 Pokud chcete použít protokol IPv6, ujistěte se, že používáte verzi operačního systému, který podporuje protokol IPv6 a zajistit správnou konfiguraci operačního systému a síťové třídy.  

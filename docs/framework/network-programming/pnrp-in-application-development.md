@@ -2,14 +2,12 @@
 title: PNRP ve vývoji aplikací
 ms.date: 03/30/2017
 ms.assetid: 265615d6-4423-4b5d-8626-752e456f4f4e
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 0f86b2569b9d4864586a0a7daea0ae5d3b901fd4
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b19138c43185f4d31bef4fe67af48f89dc03eba4
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47205262"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180430"
 ---
 # <a name="pnrp-in-application-development"></a>PNRP ve vývoji aplikací
 Ve Windows Vista, síťové aplikace můžou k název publikace a funkce řešení prostřednictvím zjednodušené PNRP aplikačního programovacího rozhraní (API).  

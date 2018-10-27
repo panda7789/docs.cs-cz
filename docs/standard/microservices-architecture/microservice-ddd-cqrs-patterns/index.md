@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 06/06/2018
-ms.openlocfilehash: bc8ff6262436af6eb49a4ef8635d502e80b74b5a
-ms.sourcegitcommit: 59b51cd7c95c75be85bd6ef715e9ef8c85720bac
+ms.openlocfilehash: 1af53f8f37e516219767fdde49eb7da9927d9e29
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37874384"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182460"
 ---
 # <a name="tackling-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>Zvládnutí firemní složitosti v Mikroslužbě pomocí vzorů DDD a CQRS
 
@@ -66,7 +66,7 @@ DDD je velké téma s širokou škálu materiálů. Můžete začít s knihy ste
 DDD školení
 
 -   **Julie Lerman a Steve Smith. Základy návrhu řízeného doménou**
-    [*http://bit.ly/PS-DDD*](http://bit.ly/PS-DDD)
+    [*https://bit.ly/PS-DDD*](https://bit.ly/PS-DDD)
 
 
 >[!div class="step-by-step"]

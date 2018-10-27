@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 7aa8cb72-dee9-4716-ac54-b17b9ae8218f
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: f7e45a863c46090dd62d5e1c80b5f0149d9460cf
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b24cc4b0ad2839d2c2fa099f963b13a5532d39df
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43530000"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452885"
 ---
 # <a name="reducing-system-restarts-during-net-framework-45-installations"></a>Omezení restartů systému při instalaci rozhraní .NET Framework 4.5
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Použije instalační program [správce restartování](https://go.microsoft.com/fwlink/?LinkId=231425) zabraňuje systému v restartování během instalace. Pokud vaše aplikace Instalační program nainstaluje rozhraní .NET Framework, můžete rozhraní s správce restartování, abyste mohli využít tuto funkci. Další informace najdete v tématu [postupy: získání průběhu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md).  
@@ -35,6 +35,6 @@ Zavření aplikací rozhraní .NET Framework, které se používají k zadání
  Pokud používáte zřetězené instalační program, ale nechcete zadat vlastní okno se zprávou pro uzavření aplikace, můžete použít `/showrmui` a `/passive` nastavení možnosti příkazového řádku při řetězení rozhraní .NET Framework. Použijete-li tyto možnosti společně, instalační program ukazuje okně se zprávou pro uzavření aplikace, pokud jej lze zavřít, aby restartování systému. Toto okno se zprávou se chová stejně v pasivním režimu stejně jako v části úplné uživatelské rozhraní. Zobrazit [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md) pro kompletní sadu možností příkazového řádku pro rozhraní .NET Framework, distribuovatelné součásti.  
   
 ## <a name="see-also"></a>Viz také  
- [Nasazení](../../../docs/framework/deployment/index.md)  
- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
- [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)
+- [Nasazení](../../../docs/framework/deployment/index.md)  
+- [Průvodce nasazením pro vývojáře](../../../docs/framework/deployment/deployment-guide-for-developers.md)  
+- [Postupy: Získání procesu z instalačního programu .NET Framework 4.5](../../../docs/framework/deployment/how-to-get-progress-from-the-dotnet-installer.md)

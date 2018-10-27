@@ -2,13 +2,12 @@
 title: System.ServiceModel.Security.SecuritySessionResponderOperationFailure
 ms.date: 03/30/2017
 ms.assetid: 9ab20767-dac5-49fc-8bff-108bb7b84c87
-author: BrucePerlerMS
-ms.openlocfilehash: 03cbb8c8ae993df0ad48efdc5fdbd0f3faf1ac31
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9144b3bb08b80582f51cb84984bfead6d642eed1
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47236845"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182733"
 ---
 # <a name="systemservicemodelsecuritysecuritysessionresponderoperationfailure"></a>System.ServiceModel.Security.SecuritySessionResponderOperationFailure
 System.ServiceModel.Security.SecuritySessionResponderOperationFailure  

@@ -14,14 +14,12 @@ helpviewer_keywords:
 - data types [Visual Basic], integral
 - SByte data type
 ms.assetid: 5c38374a-18a1-4cc2-b493-299e3dcaa60f
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 94ab72b2ac2678640697e3cfab426e5a7d6d889a
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 1b10379e626c8e53b2e1e6eddaa964f13f9e4b62
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43518582"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50037331"
 ---
 # <a name="sbyte-data-type-visual-basic"></a>SByte – datový typ (Visual Basic)
 

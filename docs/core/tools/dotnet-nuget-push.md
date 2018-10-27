@@ -4,12 +4,12 @@ description: Příkaz dotnet nuget nabízených odešle balíček na server a pu
 author: karann-msft
 ms.author: mairaw
 ms.date: 09/04/2018
-ms.openlocfilehash: 23d27cef29008955850f9ed9f4a8baed9e7ad982
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: b9c0fad886cd1234325c58bf61b1a010bce421d9
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45609999"
+ms.lasthandoff: 10/26/2018
+ms.locfileid: "50045545"
 ---
 # <a name="dotnet-nuget-push"></a>DotNet nuget push
 
@@ -179,9 +179,9 @@ Nabízených oznámení *foo.nupkg* nabízených oznámení na výchozí zdroj u
 
 `dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a`
 
-Push *foo.nupkg* ke zdroji vlastní nabízené `http://customsource`, určení klíče rozhraní API:
+Push *foo.nupkg* ke zdroji vlastní nabízené `https://customsource`, určení klíče rozhraní API:
 
-`dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s http://customsource/`
+`dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/`
 
 Nabízených oznámení *foo.nupkg* pro výchozí zdroj nabízených oznámení:
 

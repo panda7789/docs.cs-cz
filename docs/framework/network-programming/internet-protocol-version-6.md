@@ -8,14 +8,12 @@ helpviewer_keywords:
 - Internet Protocol version 6, improvements
 - Internet Protocol version 6
 ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: fc7aa27c07946b3a3da7e1ede8adaea30c06e58f
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 6f956a8dc3e899012144ccf266a7cbe1c5f9dab4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47201007"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50039163"
 ---
 # <a name="internet-protocol-version-6"></a>Protokol IPv6
 Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro síťové vrstvy z Internetu. Protokol IPv6 je navržená k řešení mnoha problémů je aktuální verze sady Internet Protocol (označují se termínem IPv4) s ohledem na plnění vyčerpávání, zabezpečení, automatickou konfiguraci, rozšíření a tak dále. Protokol IPv6 se rozšiřují možnosti Internetu povolit nové typy aplikací, jako jsou třeba aplikace peer-to-peer a mobilní. Toto jsou hlavní problémy aktuální protokolu IPv4:  
@@ -47,7 +45,7 @@ Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro sí�
  Další informace najdete v tématu [adresování IPv6](../../../docs/framework/network-programming/ipv6-addressing.md), [směrování IPv6](../../../docs/framework/network-programming/ipv6-routing.md), [automatickou konfiguraci protokolu IPv6](../../../docs/framework/network-programming/ipv6-auto-configuration.md), [povolení a zákaz IPv6](../../../docs/framework/network-programming/enabling-and-disabling-ipv6.md), a [Postupy: Úprava konfiguračního souboru počítače na povolení podpory IPv6](../../../docs/framework/network-programming/how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md).  
   
 ## <a name="references"></a>Odkazy  
- Toto jsou vybrané dokumenty RFC, které najdete na webu Internet Engineering Task Force ([http://www.ietf.org](http://www.ietf.org/)):  
+ Toto jsou vybrané dokumenty RFC, na které narazíte na [Engineering Task Force IETF (Internet)](https://www.ietf.org/) webu:  
   
 -   RFC. 1287, směrem k architektuře budoucí Internet.  
   
@@ -57,9 +55,9 @@ Internet Protocol verze 6 (IPv6) je nová sada standardních protokolů pro sí�
   
 -   RFC 2374 formátu agregovatelné globální adresy jednosměrového vysílání IPv6.  
   
- Můžete také najít informace související s IPv6 na [oblasti IPv6 na webu Technet](https://go.microsoft.com/fwlink/?LinkID=179658).  
+ Můžete také najít informace související s IPv6 na [IP verze 6 (IPv6)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498%28v=ws.10%29).  
   
 ## <a name="see-also"></a>Viz také  
- [Ukázka sokety IPv6](https://msdn.microsoft.com/library/ms180981(v=vs.85).aspx)  
+ [Ukázka sokety IPv6](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms180981%28v=vs.85%29)  
  [Ukázky programování sítě](../../../docs/framework/network-programming/network-programming-samples.md)  
  [Sokety](../../../docs/framework/network-programming/sockets.md)
