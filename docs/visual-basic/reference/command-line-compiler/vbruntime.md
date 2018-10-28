@@ -9,14 +9,12 @@ helpviewer_keywords:
 - -vbruntime compiler option [Visual Basic]
 - /vbruntime compiler option [Visual Basic]
 ms.assetid: 1aa0239e-511a-4c29-957d-fd72877b350a
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: e83a85e29eb4447f8d3b9dddc4f6ccdbc771b23c
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 9525eb35041d32c65563e88ad64cd17b60b2a29b
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515613"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193640"
 ---
 # <a name="-vbruntime"></a>-vbruntime
 Určuje, že kompilátor by měl kompilovat bez odkazu do knihovny prostředí Runtime jazyka Visual Basic nebo s odkazem na knihovně modulu runtime specifické.  

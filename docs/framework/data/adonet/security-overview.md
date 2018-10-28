@@ -2,12 +2,12 @@
 title: Overview2 zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 18a7496d39cd08e8b340e23c57fcd10dae5ed281
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: db7b45fef28b0b28e7da550c24d510da73c02aa9
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861855"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183526"
 ---
 # <a name="security-overview"></a>Přehled zabezpečení
 Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář může zaručit, že je aplikace bezpečné útoky, protože není možné předpovědět, jaké druhy nové technologie budoucím útokům přinese. Naopak pouze z důvodu nemá nikdo chybám zabezpečení ještě zjištěných (nebo publikovaná) v systému neznamená, že žádný neexistuje, nebo může existovat. Budete muset plánování zabezpečení během fáze návrhu projektu, jakož i plánování, jak se zachová zabezpečení během životního cyklu aplikace.  
@@ -67,7 +67,7 @@ Zabezpečení aplikace je soustavný proces. Nikdy bude do bodu, kdy vývojář 
 |Prostředek|Popis|  
 |--------------|-----------------|  
 |[Zabezpečení přístupu ke kódu a ADO.NET](../../../../docs/framework/data/adonet/code-access-security.md)|Najdete popis interakcí mezi zabezpečení přístupu kódu, na základě rolí zabezpečení a částečně důvěryhodného prostředí z hlediska aplikaci ADO.NET.|  
-|[Zabezpečení přístupu kódu](https://msdn.microsoft.com/library/23a20143-241d-4fe5-9d9f-3933fd594c03)|Obsahuje odkazy na další témata popisující certifikační Autority v rozhraní .NET Framework.|  
+|[Zabezpečení přístupu kódu](../../../../docs/framework/misc/code-access-security.md)|Obsahuje odkazy na další témata popisující certifikační Autority v rozhraní .NET Framework.|  
   
 ## <a name="database-security"></a>Zabezpečení databáze  
  Princip nejnižších oprávnění platí také pro zdroj dat. Některé obecné pokyny pro zabezpečení databáze patří:  

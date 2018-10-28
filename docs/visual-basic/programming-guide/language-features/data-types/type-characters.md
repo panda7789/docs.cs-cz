@@ -36,14 +36,12 @@ helpviewer_keywords:
 - UL literal type characters [Visual Basic]
 - literal types [Visual Basic], default
 ms.assetid: 6353cb9b-6ee4-4af6-a5a8-88ce39f90cc5
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 31dc703598fa6d92b3f312b2b5f0bf5fadab9c04
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 1922282ece4dd90c8f55c8dea20ef2866d8b357c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42911819"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181392"
 ---
 # <a name="type-characters-visual-basic"></a>Zadejte znaky (Visual Basic)
 

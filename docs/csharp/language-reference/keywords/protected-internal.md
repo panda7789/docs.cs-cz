@@ -2,12 +2,12 @@
 title: chráněné vnitřní (C# Reference)
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: 1a305cb84989f12350e2e7cc28dd18f9d0c7ae5e
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: e5763830a29d4e627dbb8efa0e86fca536bbb26c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47210029"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193770"
 ---
 # <a name="protected-internal-c-reference"></a>chráněné vnitřní (C# Reference)
 
@@ -75,4 +75,4 @@ V souboru druhý pokus o přístup k `myValue` prostřednictvím instance `BaseC
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Zajištění zabezpečení pro klíčových slov internal virtual](https://docs.microsoft.com/en-us/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Zajištění zabezpečení pro klíčových slov internal virtual](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

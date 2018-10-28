@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f9bcd9b-8f8f-47fa-8f1e-0d47236eb800
-ms.openlocfilehash: 2e01d3de6ee7b415c7b3f18a20e840b8ec4ab9b6
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 3de4bb4546d3ee20e961ecf5a9d130e8e6c713a8
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45698442"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193809"
 ---
 # <a name="how-to-access-a-wse-30-service-with-a-wcf-client"></a>Postupy: Přístup ke službě WSE 3.0 pomocí klienta WCF
 Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s Web Services vylepšení (WSE) 3.0 pro služby rozhraní Microsoft .NET, když klienti WCF umožňují použít verzi ze srpna 2004 specifikace WS-Addressing. Ale WSE 3.0 services nepodporuje metadata exchange (MEX) protokol, tak při použití [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pro vytvoření třídy klienta WCF, se nepoužijí nastavení zabezpečení pro generované Klient WCF. Proto je nutné zadat nastavení zabezpečení, že WSE 3.0 služba vyžaduje, aby po vygenerování klienta WCF.  
@@ -27,7 +27,7 @@ Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
   
 2.  Vytvořte třídu, která představuje vazbu, která může komunikovat s WSE 3.0 Web services.  
   
-     Následující třídy je součástí [spolupráce s WSE](https://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41) vzorku:  
+     Následující třídy je součástí [spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29) vzorku:  
   
     1.  Vytvořte třídu, která je odvozena od třídy <xref:System.ServiceModel.Channels.Binding>.  
   
@@ -64,4 +64,4 @@ Klienti Windows Communication Foundation (WCF) jsou přenosový kompatibilní s 
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.ServiceModel.Channels.Binding>  
- [Spolupráce s WSE](https://msdn.microsoft.com/library/f6816861-96a0-45f9-8736-8e4e82cd3a41)
+ [Spolupráce s WSE](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)

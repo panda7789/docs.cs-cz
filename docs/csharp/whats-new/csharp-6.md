@@ -3,12 +3,12 @@ title: Co je nového v jazyce C# 6 – Průvodce v C#
 description: Informace o nových funkcích v jazyce C# verze 6
 ms.date: 09/22/2016
 ms.assetid: 4d879f69-f889-4d3f-a781-75194e143400
-ms.openlocfilehash: 53d9c5e60ac00b4c7c96aa3e42a60253219e1c70
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: ad3515e1fc7d70e1377f007276c369d2884780f0
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308451"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194030"
 ---
 # <a name="whats-new-in-c-6"></a>Co je nového v jazyce C# 6
 
@@ -88,7 +88,7 @@ public class Student
 
 Tato funkce umožňuje true jazykovou podporu pro vytváření typů neměnných a pomocí syntaxe automatickou vlastnost stručnějším a pohodlné.
 
-Pokud přidáte tuto syntaxi není neodebere dostupná metoda, je [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
+Pokud přidáte tuto syntaxi neodebere dostupná metoda, je [binární kompatibilní změnu](version-update-considerations.md#binary-compatible-changes).
 
 ### <a name="auto-property-initializers"></a>Inicializátory automatickou vlastnost
 
@@ -249,7 +249,7 @@ Nejsou k dispozici žádné omezení na výrazy, které můžete umístit mezi z
 Zobrazí se od této ukázky můžete dokonce vnořit řetězcového výrazu interpolace uvnitř jiného výrazu interpolace řetězce. V tomto příkladu je velmi pravděpodobné, byste měli složitější než na kolik máte v produkčním kódu.
 Místo toho je příkladem škálu funkci. Libovolný výraz C# je možné použít ve složených závorkách interpolovaného řetězce.
 
-Chcete-li začít pracovat s interpolace řetězců, zkontrolujte [interpolace v jazyce C#](../quick-starts/interpolated-strings.yml) interaktivní rychlý start.
+Chcete-li začít pracovat s interpolace řetězců, zkontrolujte [interpolace v C# ](../tutorials/intro-to-csharp/interpolated-strings.yml) interaktivního kurzu.
 
 ### <a name="string-interpolation-and-specific-cultures"></a>Interpolace řetězců a specifické jazykové verze
 

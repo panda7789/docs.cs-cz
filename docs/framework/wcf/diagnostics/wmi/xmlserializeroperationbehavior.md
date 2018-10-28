@@ -2,19 +2,19 @@
 title: XmlSerializerOperationBehavior
 ms.date: 03/30/2017
 ms.assetid: 8911aa1b-e34b-4161-a3ae-7468d89a6861
-ms.openlocfilehash: a4c46543ff5bfa562a05f157d826d84c4589da28
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 7c7b53ff8eb8b6bc3dd73e5dea6f4c6a5613ec56
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487656"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193588"
 ---
 # <a name="xmlserializeroperationbehavior"></a>XmlSerializerOperationBehavior
 XmlSerializerOperationBehavior  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class XmlSerializerOperationBehavior : Behavior  
 {  
   string Style;  
@@ -33,7 +33,7 @@ class XmlSerializerOperationBehavior : Behavior
   
  Přístup k typu: jen pro čtení  
   
- Definuje styl zprávu protokolu SOAP.  
+ Definuje styl zprávy SOAP.  
   
 ### <a name="use"></a>Použití  
  Datový typ: řetězec  
@@ -44,7 +44,7 @@ class XmlSerializerOperationBehavior : Behavior
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

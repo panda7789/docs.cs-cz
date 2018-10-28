@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/11/2018
-ms.openlocfilehash: 9e1ff03421f1a5d23878c74f13423cec9625c4c5
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
+ms.openlocfilehash: 128801fbe49a3f7618b1cedc814b7663d57df624
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/14/2018
-ms.locfileid: "45609962"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195330"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>Kdy pro kontejnery Dockeru zvolit .NET Framework
 
@@ -23,9 +23,9 @@ Ve většině případů pro tento scénář nebude nutné migrovat existující
 
 ## <a name="using-third-party-net-libraries-or-nuget-packages-not-available-for-net-core"></a>Pomocí knihovny .NET třetích stran nebo není k dispozici balíčky NuGet pro .NET Core
 
-Rychle využívají knihovny třetích stran [.NET Standard](https://docs.microsoft.com/dotnet/articles/standard/library), což umožňuje sdílení kódu mezi všechny typy .NET, včetně .NET Core. S rozhraním .NET Standard 2.0 knihovny a nad rámec plochy rozhraní API se stal kompatibility přes různá rozhraní výrazně větší a v .NET Core 2.x aplikací můžete také přímo odkazovat na existující knihovny rozhraní .NET Framework (viz [compat překrytí](https://github.com/dotnet/standard/blob/master/docs/netstandard-20/README.md#net-framework-461-supporting-net-standard-20)).
+Rychle využívají knihovny třetích stran [.NET Standard](../../net-standard.md), což umožňuje sdílení kódu mezi všechny typy .NET, včetně .NET Core. S rozhraním .NET Standard 2.0 knihovny a nad rámec plochy rozhraní API se stal kompatibility přes různá rozhraní výrazně větší a v .NET Core 2.x aplikací můžete také přímo odkazovat na existující knihovny rozhraní .NET Framework (viz [compat překrytí](https://github.com/dotnet/standard/blob/master/docs/netstandard-20/README.md#net-framework-461-supporting-net-standard-20)).
 
-Kromě toho [Windows Compatibility Pack](https://docs.microsoft.com/dotnet/core/porting/windows-compat-pack) vydaná v Listopadu 2017 rozšířit plochy rozhraní API dostupné pro .NET Standard 2.0 na Windows. Tato sada umožňuje rekompilace většina stávajícího kódu pro .NET Standard 2.x s žádné nebo téměř žádné úpravy, a spustit na Windows.
+Kromě toho [Windows Compatibility Pack](../../../core/porting/windows-compat-pack.md) vydaná v Listopadu 2017 rozšířit plochy rozhraní API dostupné pro .NET Standard 2.0 na Windows. Tato sada umožňuje rekompilace většina stávajícího kódu pro .NET Standard 2.x s žádné nebo téměř žádné úpravy, a spustit na Windows.
 
 Nicméně i v případě této mimořádné průběh od .NET Standard 2.0 a .NET Core 2.1, mohou existovat případech, kdy některé balíčky NuGet, třeba Windows ke spuštění a nemusí podporovat .NET Core. Pokud tyto balíčky jsou důležité pro vaši aplikaci, je potřeba pomocí rozhraní .NET Framework v kontejnerech Windows.
 
@@ -37,7 +37,7 @@ Následující seznam obsahuje většinu technologie, které nejsou k dispozici 
 
 -   Webové formuláře ASP.NET. Tato technologie je dostupná pouze na rozhraní .NET Framework. Aktuálně nejsou žádné plány zpřístupnit webových formulářů ASP.NET pro .NET Core.
 
--   Služby WCF. I když [knihovna klienta WCF](https://github.com/dotnet/wcf) je k dispozici pro využívání služeb WCF v .NET Core, podle střední 2017, implementaci serveru WCF je k dispozici pouze v rozhraní .NET Framework. Tento scénář může považovat za v budoucích verzích .NET Core, existují i některá rozhraní API zařazena [Windows Compatibility Pack](https://docs.microsoft.com/dotnet/core/porting/windows-compat-pack).
+-   Služby WCF. I když [knihovna klienta WCF](https://github.com/dotnet/wcf) je k dispozici pro využívání služeb WCF v .NET Core, podle střední 2017, implementaci serveru WCF je k dispozici pouze v rozhraní .NET Framework. Tento scénář může považovat za v budoucích verzích .NET Core, existují i některá rozhraní API zařazena [Windows Compatibility Pack](../../../core/porting/windows-compat-pack.md).
 
 -   Související pracovní postup služby. Windows Workflow Foundation (WF), služby pracovních postupů (WCF a WF v jedné službě) a služby WCF Data Services (dříve označované jako služby ADO.NET Data Services) jsou k dispozici pouze v rozhraní .NET Framework. Aktuálně nejsou žádné plány a vrátit je do .NET Core.
 
@@ -54,16 +54,16 @@ Do té doby Pokud jakoukoli platformu nebo služby Azure stále nepodporuje .NET
 ### <a name="additional-resources"></a>Další zdroje
 
 -   **Průvodce platformou .NET Core**  
-    [https://docs.microsoft.com/dotnet/articles/core/index](https://docs.microsoft.com/dotnet/articles/core/index)
+    [https://docs.microsoft.com/dotnet/core/index](../../../core/index.md)
 
 -   **Portování z rozhraní .NET Framework do .NET Core**  
-    [https://docs.microsoft.com/dotnet/articles/core/porting/index](https://docs.microsoft.com/dotnet/articles/core/porting/index)
+    [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)
 
 -   **Průvodce rozhraním .NET Framework v Dockeru**  
-    [https://docs.microsoft.com/dotnet/articles/framework/docker/](https://docs.microsoft.com/dotnet/articles/framework/docker/)
+    [https://docs.microsoft.com/dotnet/framework/docker/](../../../framework/docker/index.md)
 
 -   **.NET – přehled komponenty**  
-    [*https://docs.microsoft.com/dotnet/standard/components*](../../components.md)
+    [https://docs.microsoft.com/dotnet/standard/components](../../components.md)
 
 
 

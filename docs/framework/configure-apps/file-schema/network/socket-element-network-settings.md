@@ -8,14 +8,12 @@ helpviewer_keywords:
 - <socket> element
 - socket element
 ms.assetid: 366c634c-7d16-478f-aedf-053eda94a1a0
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: fb057ab75c31edd7bbdaf5d5115cda2802d3b057
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: ff06fd6518e67020b4d67d4e081307b8e54bae85
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48028259"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194693"
 ---
 # <a name="ltsocketgt-element-network-settings"></a>&lt;soket&gt; – Element (nastavení sítě)
 Určuje, zda operace soketu používat porty dokončení.  
@@ -106,9 +104,9 @@ Určuje, zda operace soketu používat porty dokončení.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.Net?displayProperty=nameWithType>  
- <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>  
- <xref:System.Net.Sockets?displayProperty=nameWithType>  
- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>  
- <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType>  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- <xref:System.Net?displayProperty=nameWithType>  
+- <xref:System.Net.Configuration.SocketElement?displayProperty=nameWithType>  
+- <xref:System.Net.Sockets?displayProperty=nameWithType>  
+- <xref:System.Net.Sockets.IPProtectionLevel?displayProperty=nameWithType>  
+- <xref:System.Net.Sockets.SocketOptionName.IPProtectionLevel?displayProperty=nameWithType>  
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

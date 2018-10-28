@@ -2,13 +2,12 @@
 title: Ukázka zabezpečení zpráv
 ms.date: 03/30/2017
 ms.assetid: 82444166-6288-493a-85d4-85f43f134d19
-author: BrucePerlerMS
-ms.openlocfilehash: 46e17cb2d4fecc8a71988ff61287e6cc682654c9
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 8982e896f6ac383a1fd850bc5814bf99e5c3961d
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48845343"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193744"
 ---
 # <a name="message-security-sample"></a>Ukázka zabezpečení zpráv
 Tato ukázka předvádí, jak implementovat aplikaci, která se používá `basicHttpBinding` a zabezpečení zpráv. Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) službu kalkulačky, která implementuje.  

@@ -1,7 +1,7 @@
 ---
 title: Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 description: Popisuje osvědčené postupy zabezpečení TLS (Transport Layer) pomocí rozhraní .NET Framework
-ms.date: 03/15/2018
+ms.date: 10/22/2018
 helpviewer_keywords:
 - sending data, Internet security
 - protocols, Internet security
@@ -12,17 +12,16 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-author: blowdart
-ms.openlocfilehash: 96d37934b5e852b69c692bb1606d2998dac6f63a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 9cb7dbdfb1ad221e00823d8d55e7fd3c52cabe8b
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47424477"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194134"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>Zabezpečení TLS (Transport Layer) osvědčené postupy s použitím rozhraní .NET Framework
 
-Protokol zabezpečení TLS (Transport Layer) je standardní navržená k ochraně soukromí informace přes Internet. [Protokol TLS 1.2](https://tools.ietf.org/html/rfc5246) je nejnovější vydanou standard a přináší oproti předchozím verzím vylepšení zabezpečení. Protokol TLS 1.2 nakonec se nahradí [TLS 1.3](https://tools.ietf.org/html/draft-ietf-tls-tls13-22). Tento článek představuje doporučení k zabezpečení aplikace rozhraní .NET Framework, které používají protokol TLS.
+Protokol zabezpečení TLS (Transport Layer) je standardní navržená k ochraně soukromí informace přes Internet. [Protokol TLS 1.2](https://tools.ietf.org/html/rfc5246) je standard, která poskytuje vylepšení zabezpečení porovnání s předchozími verzemi. TLS 1.2 se nakonec nahradí nejnovější vydané standard [TLS 1.3](https://tools.ietf.org/html/rfc8446) který je rychlejší a má lepší zabezpečení. Tento článek představuje doporučení k zabezpečení aplikace rozhraní .NET Framework, které používají protokol TLS.
 
 K zajištění toho, zůstaly zabezpečené aplikace rozhraní .NET Framework, verze protokolu TLS by **není** být pevně zakódované. Aplikace rozhraní .NET framework by měly používat protokol TLS verze, kterou podporuje operační systém (OS).
 
@@ -278,7 +277,7 @@ Pokud chcete povolit nebo opětovné povolení protokolu TLS 1.2 a/nebo protokol
 | Windows Server 2008 | Podpora protokolu TLS 1.2 a TLS 1.1 vyžaduje aktualizaci. Zobrazit [aktualizace přidává funkce pro protokol TLS 1.1 a TLS 1.2 v systému Windows Server 2008 SP2](https://support.microsoft.com/help/4019276/update-to-add-support-for-tls-1-1-and-tls-1-2-in-windows-server-2008-s). |
 | Windows Vista | Není podporováno. |
 
-Informace, o které TLS/SSL protokoly jsou povolené ve výchozím nastavení v každé verzi systému Windows najdete v tématu [protokolů TLS/SSL (zprostředkovateli zabezpečení Schannel)](https://msdn.microsoft.com/library/windows/desktop/mt808159).
+Informace, o které TLS/SSL protokoly jsou povolené ve výchozím nastavení v každé verzi systému Windows najdete v tématu [protokolů TLS/SSL (zprostředkovateli zabezpečení Schannel)](/windows/desktop/SecAuthN/protocols-in-tls-ssl--schannel-ssp-).
 
 **Požadavky na podporu protokolu TLS 1.2 v rozhraní .NET Framework 3.5**
 
@@ -305,6 +304,6 @@ Pokud svojí aplikací cílíte na verzi rozhraní .NET Framework, která není 
 
 ### <a name="azure-guest-os-registry-settings"></a>Nastavení registru Azure hostovaného operačního systému
 
-Image operačního systému hosta Azure pro [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) již `SchUseStrongCrypto` klíče registru nastavte na hodnotu 1. Další informace najdete v tématu [SchUseStrongCrypto](#schusestrongcrypto).
+Na obrázku 5 řada operačního systému hosta Azure pro [Azure Cloud Services](https://azure.microsoft.com/services/cloud-services/) již `SchUseStrongCrypto` klíče registru nastavte na hodnotu 1. Další informace najdete v tématu [SchUseStrongCrypto](#schusestrongcrypto).
 
 Nastavte [SystemDefaultTlsVersions](#systemdefaulttlsversions) klíče registru na 1. Zobrazit [konfigurace zabezpečení prostřednictvím registru Windows](#configuring-security-via-the-windows-registry).

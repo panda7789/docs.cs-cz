@@ -2,20 +2,19 @@
 title: PeerTransportSecuritySettings
 ms.date: 03/30/2017
 ms.assetid: 1df08cbb-68c5-4d36-9f88-a776a8117de8
-author: BrucePerlerMS
-ms.openlocfilehash: b49aea0ee78b68f199d1ac9e9a1050960342bcb2
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 7eee0af450b38507a24e1267fd409741d37f027a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836268"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193278"
 ---
 # <a name="peertransportsecuritysettings"></a>PeerTransportSecuritySettings
 PeerTransportSecuritySettings  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class PeerTransportSecuritySettings  
 {  
   string CredentialType;  

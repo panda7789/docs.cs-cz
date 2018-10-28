@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 ms.assetid: 1e88d368-a886-4f1e-8eb6-6127979a9fce
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: aaf5103dfee366466ff701ce3669bbabb97233ac
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 9359d196ecdaa83d7f5f14c3570392d54691be73
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48037466"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195629"
 ---
 # <a name="lttypegt-element-net-native"></a>Element &lt;Type&gt; (.NET Native)
 Použije zásady modulu runtime určitého typu, jako je například třídy nebo struktury.  
@@ -95,10 +95,10 @@ Použije zásady modulu runtime určitého typu, jako je například třídy neb
   
  A `<Type>` element obecného typu své zásady platí pro všechny instance, nesmí být svými vlastními zásadami. Je definována zásada sestavené obecné typy [ \<TypeInstantiation >](../../../docs/framework/net-native/typeinstantiation-element-net-native.md) elementu.  
   
- Pokud je typ obecný typ, jeho název je upravený symbol čárka (\`) následovaný jeho počet obecných parametrů. Například `Name` atribut `<Type>` – element pro <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> třída se objeví jako `Name="System.Collections.Generic.List`1"".  
+ Pokud je typ obecný typ, jeho název je upravený symbol čárka (\`) následovaný jeho počet obecných parametrů. Například `Name` atribut `<Type>` – element pro <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> třída se objeví jako ``Name="System.Collections.Generic.List`1"``.
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá reflexi k zobrazení informací o pole, vlastnosti a metody <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> třídy. Proměnná `b` v tomto příkladu je [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) ovládacího prvku. Protože příklad jednoduše načte informace o typu, se řídí dostupnost metadat `Browse` nastavení zásad.  
+ Následující příklad používá reflexi k zobrazení informací o pole, vlastnosti a metody <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> třídy. Proměnná `b` v tomto příkladu je <xref:Windows.UI.Xaml.Controls.TextBlock> ovládacího prvku. Protože příklad jednoduše načte informace o typu, se řídí dostupnost metadat `Browse` nastavení zásad.  
   
  [!code-csharp[ProjectN_Reflection#3](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/browsegenerictype1.cs#3)]  
   
@@ -116,7 +116,7 @@ Použije zásady modulu runtime určitého typu, jako je například třídy neb
 ```  
   
 ## <a name="example"></a>Příklad  
- Následující příklad používá reflexi k načtení <xref:System.Reflection.PropertyInfo> objekt, který reprezentuje <xref:System.String.Chars%2A?displayProperty=nameWithType> vlastnost. Poté použije <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody k načtení hodnoty sedmého znaku v řetězci a chcete-li zobrazit všechny znaky v řetězci. Proměnná `b` v tomto příkladu je [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) ovládacího prvku.  
+ Následující příklad používá reflexi k načtení <xref:System.Reflection.PropertyInfo> objekt, který reprezentuje <xref:System.String.Chars%2A?displayProperty=nameWithType> vlastnost. Poté použije <xref:System.Reflection.PropertyInfo.GetValue%28System.Object%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> metody k načtení hodnoty sedmého znaku v řetězci a chcete-li zobrazit všechny znaky v řetězci. Proměnná `b` v tomto příkladu je <xref:Windows.UI.Xaml.Controls.TextBlock> ovládacího prvku.  
   
  [!code-csharp[ProjectN_Reflection#1](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn_reflection/cs/propertyinfo1.cs#1)]  
   

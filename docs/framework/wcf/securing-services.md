@@ -6,13 +6,12 @@ helpviewer_keywords:
 - WCF security
 - WCF, security
 ms.assetid: f0ecc6f7-f4b5-42a4-9cb1-b02e28e26620
-author: BrucePerlerMS
-ms.openlocfilehash: a97f1b96d6cf4d166239ba8e0a14f6e3af2bf48b
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: 39b8a44629af42e358d550e0dd7eb6a8895de0ed
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47071056"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195226"
 ---
 # <a name="securing-services"></a>Zabezpečení služeb
 Zabezpečení služby Windows Communication Foundation (WCF) se skládá ze dvou primárních požadavků: přenos zabezpečení a autorizace. (Třetí požadavek auditování událostí zabezpečení, je popsaná v [auditování](../../../docs/framework/wcf/feature-details/auditing-security-events.md).) Stručně řečeno přenos zabezpečení zahrnuje ověření (ověření identity klienta a služby), důvěrnosti (šifrování zpráv) a integritu (digitální podpis umožňuje zjistit případnou manipulaci). Autorizace je řízení přístupu k prostředkům, například povolení pouze uživatelé s oprávněním ke čtení souboru. Pomocí funkce služby WCF, dva primární požadavky se snadno implementují.  

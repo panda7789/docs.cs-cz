@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
 author: mcleblanc
 ms.author: markl
-ms.openlocfilehash: a26fc0bda341e85ca54f3dee4addd14e4164209c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: e8c5021b00de503783adb3f1b1dc11964639afbf
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193954"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193529"
 ---
 # <a name="ltcompilergt-element"></a>&lt;Kompilátor&gt; – Element
 
@@ -105,5 +105,5 @@ Následující příklad ukazuje prvek typické kompilátoru konfigurace:
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
 - [Schéma konfiguračního souboru](../../../../../docs/framework/configure-apps/file-schema/index.md)
 - [\<Kompilátory > – Element](../../../../../docs/framework/configure-apps/file-schema/compiler/compilers-element.md)
-- [Zadání plně kvalifikované názvy typů]-(.. /.. /.. /.. /.. / docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)
+- [Určení úplných názvů typů](../../../../../docs/framework/reflection-and-codedom/specifying-fully-qualified-type-names.md)
 - [Kompilátor – Element pro kompilátory compilation (schéma nastavení technologie ASP.NET)](https://msdn.microsoft.com/library/f7d6b078-5d42-4134-b3f7-62e1aba1df1e(v=vs.100))

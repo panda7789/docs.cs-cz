@@ -2,13 +2,12 @@
 title: Rozšiřitelnost zabezpečení
 ms.date: 03/30/2017
 ms.assetid: 2afe044d-df4a-49a4-9865-38700474c3dd
-author: BrucePerlerMS
-ms.openlocfilehash: 09872b5422d9d66dd4f54753815067954be6c0bb
-ms.sourcegitcommit: 2eb5ca4956231c1a0efd34b6a9cab6153a5438af
+ms.openlocfilehash: afb11d240c25e6b9dbfd5b5c0a63759af8c534f5
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "49086489"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193575"
 ---
 # <a name="security-extensibility"></a>Rozšiřitelnost zabezpečení
 Tato část obsahuje ukázky, které předvádějí vlastní zabezpečení ve Windows Communication Foundation (WCF).  

@@ -2,13 +2,12 @@
 title: '&lt;security&gt; – &lt;netTcpBinding&gt;'
 ms.date: 03/30/2017
 ms.assetid: 286cd191-4fd5-4c4e-a223-9c71cf7fdead
-author: BrucePerlerMS
-ms.openlocfilehash: 8db4fd0a123ac798cae803240b0db98a7057fa97
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 373978857427e16c432cf36d5389e81073e88caf
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48840106"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193172"
 ---
 # <a name="ltsecuritygt-of-ltnettcpbindinggt"></a>&lt;security&gt; – &lt;netTcpBinding&gt;
 Definuje nastavení zabezpečení pro vazbu.  

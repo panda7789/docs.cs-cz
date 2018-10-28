@@ -15,14 +15,12 @@ helpviewer_keywords:
 - Cache Or Next Cache Only policy
 - Refresh policy
 ms.assetid: e41d7f1a-0a6a-4dee-97d1-c6a8b6a07fc2
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 0344bbfc02a66a6f2ec9dace126bfae6811860be
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 1bbaf4fc85fe4d7e3d3737cf62cb63d8e09927cd
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48025357"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194407"
 ---
 # <a name="location-based-cache-policies"></a>Zásady mezipaměti na základě polohy
 Zásady mezipaměti na základě umístění definují aktuálnosti platné položky uložené v mezipaměti založené na požadovaný prostředek mohou být odkud. Prostředek v mezipaměti je platný pokud jeho použití není porušovat požadavky na zadaný server opětovné ověření. Zásady mezipaměti na základě umístění je vytvořená prostřednictvím kódu programu pomocí <xref:System.Net.Cache.RequestCachePolicy> nebo <xref:System.Net.Cache.HttpRequestCachePolicy> konstruktoru třídy. Je předán typ zásady založená na poloze pomocí konstruktoru <xref:System.Net.Cache.RequestCacheLevel> nebo <xref:System.Net.Cache.HttpRequestCacheLevel> hodnota výčtu. Příklady kódu, které vytvářejí zásady mezipaměti na základě polohy, naleznete v tématu [postupy: nastavení zásad mezipaměti na základě umístění pro aplikaci](../../../docs/framework/network-programming/how-to-set-a-location-based-cache-policy-for-an-application.md). Následující části popisují jednotlivé typy zásad mezipaměti na základě umístění pro prostředky protokol HTTP (http a https).  

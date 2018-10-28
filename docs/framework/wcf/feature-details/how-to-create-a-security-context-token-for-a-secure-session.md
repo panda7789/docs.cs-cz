@@ -5,13 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 640676b6-c75a-4ff7-aea4-b1a1524d71b2
-author: BrucePerlerMS
-ms.openlocfilehash: 85954dd89bdb576b68d234a364a406a6e0d2145b
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: ec065854e049e333252003e0ce6e6efad4c6ce6c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261313"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193525"
 ---
 # <a name="how-to-create-a-security-context-token-for-a-secure-session"></a>Postupy: Vytvoření tokenu kontextu zabezpečení pro zabezpečenou relaci
 Pomocí tokenu kontextu zabezpečení stavové (SCT) v zabezpečené relaci dokázal relace neumožňovala recyklaci služby. Například při bezstavové SCT se používá v zabezpečené relaci a obnovit Internetové informační služby (IIS), potom data relace, která souvisí se službou se ztratí. Tato data relace zahrnují SCT mezipaměť tokenu. Proto při příštím klient odešle službě bezstavové SCT vrátí chybu, protože klíč, který je přidružený k SCT nelze načíst. Pokud však použijete stavové SCT, klíč, který je přidružený k SCT obsažené v SCT. Protože klíč je součástí SCT a proto v něm obsažené, nemá vliv službu neumožňovala recyklaci, zabezpečenou relaci. Ve výchozím nastavení používá Windows Communication Foundation (WCF) bezstavové SCTs v zabezpečené relaci. Toto téma podrobně popisuje, jak použít stavová SCTs v zabezpečené relaci.  

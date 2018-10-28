@@ -15,19 +15,19 @@ helpviewer_keywords:
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 3166d6c95532706781188da0c56ebf9022038a50
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 8f2dc9fccf6718c4edebc26efcdda71b41873a3a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33388375"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195239"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>Používání nespravovaných funkcí DLL
-Vyvolání platformy je služba, což umožňuje spravovat kódu volání nespravovaných funkcí, které jsou implementované v dynamické knihovny (DLL), například v rozhraní API Win32. Vyhledá a vyvolá exportované funkce a zařazuje její argumenty (celá čísla, řetězce, pole, struktur a tak dále) přes součinnosti hranice, podle potřeby.  
+Vyvolání platformy je služba, umožňuje spravovaným kódu volat nespravované funkce implementované v dynamické knihovny (DLL), jako například sítě na rozhraní API systému Win32. Vyhledá a volá exportované funkce a zařadí argumenty (celá čísla, řetězce, pole, struktury a tak dále) napříč hranicemi podle potřeby.  
   
- Tato část uvádí úkoly spojené s využívání nespravovaných funkcí DLL a poskytuje další informace o platformě vyvolání. Kromě následující úlohy jsou obecné požadavky a poskytuje další informace a příklady odkaz.  
+ Tato část představuje úloh přidružených k používání nespravovaných funkcí DLL a poskytuje další informace o platformě vyvolat. Kromě následujících úloh jsou obecné požadavky a odkaz Další informace a příklady.  
   
-#### <a name="to-consume-exported-dll-functions"></a>Využívat exportované funkce DLL  
+#### <a name="to-consume-exported-dll-functions"></a>Chcete-li využívají exportované funkce DLL  
   
 1.  [Identifikace funkcí ve knihovnách DLL](../../../docs/framework/interop/identifying-functions-in-dlls.md).  
   
@@ -35,43 +35,43 @@ Vyvolání platformy je služba, což umožňuje spravovat kódu volání nespra
   
 2.  [Vytvoření třídy k umístění funkcí DLL](../../../docs/framework/interop/creating-a-class-to-hold-dll-functions.md).  
   
-     Můžete použít existující třídy, vytvoření jednotlivých tříd pro jednotlivé nespravované funkce nebo vytvořte jednu třídu, která obsahuje sadu související nespravovaných funkcí.  
+     Můžete použít existující třídu, vytvoření jednotlivých tříd pro každou nespravovanou funkci nebo vytvořit jednu třídu, která obsahuje sadu souvisejících nespravované funkce.  
   
 3.  [Vytváření prototypů ve spravovaném kódu](../../../docs/framework/interop/creating-prototypes-in-managed-code.md).  
   
-     [Visual Basic] Použití **Declare** příkaz s **funkce** a **Lib** klíčová slova. Ve výjimečných případech, můžete použít **DllImportAttribute** s **sdílené funkce** klíčová slova. Těchto případech jsou vysvětleny později v této části.  
+     [Visual Basic] Použití **Declare** příkaz **funkce** a **Lib** klíčová slova. Ve výjimečných případech, můžete použít **DllImportAttribute** s **sdílené funkce** klíčová slova. Tyto případy jsou vysvětleny dále v této části.  
   
-     [C#] Použití **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označit metodu s **statické** a **extern** modifikátory.  
+     [C#] Použití **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označení metody **statické** a **extern** modifikátory.  
   
-     [C++] Použití **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označit obálku metody nebo funkce s **extern "C"**.  
+     [C++] Použití **DllImportAttribute** k identifikaci knihovny DLL a funkce. Označit obalující metodu nebo s funkcí **extern "C"**.  
   
 4.  [Volání funkce DLL](../../../docs/framework/interop/calling-a-dll-function.md).  
   
-     Volejte metodu v třídě spravované stejně jako jiné spravované metody. [Předávání struktur](../../../docs/framework/interop/passing-structures.md) a [implementace funkce zpětného volání](../../../docs/framework/interop/callback-functions.md) jsou zvláštní případy.  
+     Volejte metodu na spravovanou třídu, stejně jako jiné spravované metody. [Předávání struktur](../../../docs/framework/interop/passing-structures.md) a [implementace funkcí zpětného volání](../../../docs/framework/interop/callback-functions.md) jsou zvláštní případy.  
   
- Příklady, které ukazují, jak vytvořit. Na základě NET deklarace, který se má použít s platformou vyvolání najdete v tématu [zařazování dat s vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
+ Příklady, které ukazují, jak vytvořit. Na základě NET deklarace pro použití s platformu vyvolání, naleznete v tématu [zařazování dat pomocí vyvolání platformy](../../../docs/framework/interop/marshaling-data-with-platform-invoke.md).  
   
-## <a name="a-closer-look-at-platform-invoke"></a>Vyvolání bližší pohled na platformy  
- Vyvolání platformy spoléhá na metadata pro vyhledání exportovaných funkcí a jejich argumentů zařazování v době běhu. Tento proces je znázorněn na následujícím obrázku.  
+## <a name="a-closer-look-at-platform-invoke"></a>Bližší pohled na vyvolání platformy  
+ Vyvolání platformy spoléhá na metadata k vyhledání exportovaných funkcí a jejich argumenty zařazování v době běhu. Tento proces je znázorněn na následujícím obrázku.  
   
  ![Vyvolání platformy](../../../docs/framework/interop/media/pinvoke.gif "pinvoke")  
-Nespravovaného volání nespravovaného funkce DLL  
+Vyvolání platformy volání nespravovaných funkcí DLL  
   
- Při vyvolání platformy volání nespravované funkce, provede následující posloupnost akcí:  
+ Při vyvolání platformy volá nespravovaná funkce provádí následující posloupnost akcí:  
   
-1.  Vyhledá knihovnu DLL obsahující danou funkci.  
+1.  Vyhledá knihovny DLL obsahující tuto funkci.  
   
 2.  Knihovnu DLL načte do paměti.  
   
-3.  Vyhledá adresu funkce v paměti a nabízených oznámení její argumenty do zásobníku, zařazování dat podle potřeby.  
+3.  Vyhledá adresu funkce v paměti a nabízených oznámení do zásobníku, zařazování dat podle potřeby svých argumentů.  
   
     > [!NOTE]
-    >  Vyhledání a načtení knihovny DLL a adresu funkce vyhledávání v paměti se provádějí pouze při prvním volání funkce.  
+    >  Vyhledání a načtení knihovny DLL a adresu funkce vyhledávání v paměti dojít pouze při prvním volání funkce.  
   
-4.  Ovládací prvek přenos nespravovaného funkce.  
+4.  Přenosy ovládacího prvku nespravované funkci.  
   
- Vyvolání platformy generuje výjimky generované funkci nespravované na spravované volajícího.  
-  
+ Vyvolání platformy vyvolá výjimky generované nespravovanou funkci spravované volajícímu.
+
 ## <a name="see-also"></a>Viz také  
  [Spolupráce s nespravovaným kódem](../../../docs/framework/interop/index.md)  
  [Příklady vyvolání platformy](../../../docs/framework/interop/platform-invoke-examples.md)  

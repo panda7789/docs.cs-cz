@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: c3904ad60df3d9d7ce2b58d5911e4e19a2ebb7e3
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 78c511555065528d1ab34ee3ec9f8859a15bbc61
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47193902"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194101"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern a vložené objekty – přehled
 > [!NOTE]
@@ -45,7 +45,7 @@ Příklad textového datového proudu s vložené objekty a jejich rozsah rozpě
   
  V případě potřeby procházet obsah rozsah textu sérii kroků se podílejí na pozadí, aby <xref:System.Windows.Automation.Text.TextPatternRange.Move%2A> metodu úspěšně provést.  
   
-1.  Rozsah textu je normalizovány; To znamená, je mimo rozsah textu sbaleny do na degenerovanou rozsah <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž je <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečný koncový bod. Tento krok je potřeba odstranit nejednoznačnost v situacích, kdy rozsah textu zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například "{U} RL [ http://www.microsoft.com ](https://www.microsoft.com) je vložený v textu" kde "{" a "}" jsou koncové body rozsah textu.  
+1.  Rozsah textu je normalizovány; To znamená, je mimo rozsah textu sbaleny do na degenerovanou rozsah <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> koncový bod, díky čemuž je <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> nadbytečný koncový bod. Tento krok je potřeba odstranit nejednoznačnost v situacích, kdy rozsah textu zahrnuje <xref:System.Windows.Automation.Text.TextUnit> hranice: například `{The URL https://www.microsoft.com is embedded in text` kde "{" a "}" jsou koncové body rozsah textu.  
   
 2.  Výsledná oblast bude přesunut dozadu <xref:System.Windows.Automation.TextPattern.DocumentRange%2A> začátek požadovanou <xref:System.Windows.Automation.Text.TextUnit> hranic.  
   
@@ -66,22 +66,22 @@ Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()
   
  } = <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End>  
   
-<a name="Hyperlink"></a>   
 ### <a name="hyperlink"></a>Hypertextový odkaz  
- **Příklad 1 - rozsah textu, který obsahuje vložený text hypertextového odkazu**  
+
+**Příklad 1 - rozsah textu, který obsahuje vložený text hypertextového odkazu**
   
- {Adresu URL [ http://www.microsoft.com ](https://www.microsoft.com) vložený text}.  
+`{The URL https://www.microsoft.com is embedded in text}.`
   
 |Metodu s názvem|Výsledek|  
 |-------------------|------------|  
-|<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec "adresa URL http://www.microsoft.com vložený text".|  
+|<xref:System.Windows.Automation.Text.TextPatternRange.GetText%2A>|Vrátí řetězec `The URL https://www.microsoft.com is embedded in text`.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Vrátí nejvnitřnější <xref:System.Windows.Automation.AutomationElement> , který obklopuje rozsah textu; v takovém případě <xref:System.Windows.Automation.AutomationElement> , která představuje samotného poskytovatele textu.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|Vrátí <xref:System.Windows.Automation.AutomationElement> představující ovládací prvek hypertextového odkazu.|  
-|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený rutinou předchozí `GetChildren` metody.|Vrátí rozsah, který představuje "http://www.microsoft.com".|  
+|<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> kde <xref:System.Windows.Automation.AutomationElement> je objekt vrácený rutinou předchozí `GetChildren` metody.|Vrátí rozsah, který představuje "https://www.microsoft.com".|  
   
  **Příklad 2 - rozsah textu, které částečně pokrývá vložený text hypertextového odkazu**  
   
- Adresa URL `http://{[www]}` se vloží do textu.  
+ Adresa URL `https://{[www]}` se vloží do textu.  
   
 |Metodu s názvem|Výsledek|  
 |-------------------|------------|  
@@ -89,9 +89,9 @@ Příklady, jak je upraveno rozsah textu pro Move() a ExpandToEnclosingUnit()
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetEnclosingElement%2A>|Vrátí nejvnitřnější <xref:System.Windows.Automation.AutomationElement> , který obklopuje rozsah textu; v takovém případě ovládací prvek hypertextového odkazu.|  
 |<xref:System.Windows.Automation.Text.TextPatternRange.GetChildren%2A>|Vrátí `null` od rozsah textu nebude zahrnovat celý řetězec adresy URL.|  
   
- **Příklad 3 - rozsah textu, která částečně zahrnuje obsah zásobník textu. Zásobník textu se vložený text hypertextového odkazu, který není součástí rozsah textu.**  
+**Příklad 3 - rozsah textu, která částečně zahrnuje obsah zásobník textu. Zásobník textu se vložený text hypertextového odkazu, který není součástí rozsah textu.**  
   
- {URL} [ http://www.microsoft.com ](https://www.microsoft.com) se vloží do textu.  
+`{The URL} [https://www.microsoft.com](https://www.microsoft.com) is embedded in text.`
   
 |Metodu s názvem|Výsledek|  
 |-------------------|------------|  

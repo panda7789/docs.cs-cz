@@ -1,45 +1,45 @@
 ---
-title: Vzor aktualizované .NET Core událostí
-description: Zjistěte, jak vzor událostí .NET Core umožňuje flexibilitu s zpětné kompatibility a jak implementovat zpracování událostí bezpečné s async odběratele.
+title: Vzor události aktualizované rozhraní .NET Core
+description: Zjistěte, jak vzor události .NET Core umožňuje flexibilitu s zpětné kompatibility a jak implementovat zpracování bezpečné událostí s asynchronní odběrateli.
 ms.date: 06/20/2016
 ms.assetid: 9aa627c3-3222-4094-9ca8-7e88e1071e06
-ms.openlocfilehash: 8f28c3ea9d8cf3e8fc68953c79def5744eb5abe4
-ms.sourcegitcommit: d955cb4c681d68cf301d410925d83f25172ece86
+ms.openlocfilehash: 3cab80a0f4fcd3343fdeff265135f1503c036514
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34827177"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188479"
 ---
-# <a name="the-updated-net-core-event-pattern"></a>Vzor aktualizované .NET Core událostí
+# <a name="the-updated-net-core-event-pattern"></a>Vzor události aktualizované rozhraní .NET Core
 
 [Předchozí](event-pattern.md)
 
-V předchozím článku popsané nejčastější události vzory. .NET core má více volný vzor. V této verzi `EventHandler<TEventArgs>` definice již obsahuje omezení, `TEventArgs` musí být třída odvozená z `System.EventArgs`.
+Předchozí článek byl věnován nejběžnější vzory událostí. .NET core má více volný vzor. V této verzi `EventHandler<TEventArgs>` definice již obsahuje omezení, která `TEventArgs` musí být třída odvozená z `System.EventArgs`.
 
-To zvyšuje flexibilitu pro vás a je zpětně kompatibilní. Začněme flexibilitu. Třída System.EventArgs představuje jedno z těchto metod: `MemberwiseClone()`, která vytvoří kopii objektu bez podstruktury.
-Zda metoda musí používat reflexe kvůli implementaci jeho funkce pro všechny třídy odvozené od `EventArgs`. Které tuto funkci je snazší vytvářet konkrétní odvozené třídy. To efektivně znamená, že odvozování z System.EventArgs je omezení, které omezuje návrhů, ale neposkytuje žádné další výhody.
-Ve skutečnosti, můžete změny definice `FileFoundArgs` a `SearchDirectoryArgs` tak, aby není odvozena od `EventArgs`.
-Tento program bude fungovat stejně.
+To zvyšuje flexibilitu pro vás a je zpětně kompatibilní. Začněme s flexibilitou. Třída System.EventArgs představuje jednu metodu: `MemberwiseClone()`, která vytvoří Mělkou kopii objektu.
+Že metoda musí používat reflexe kvůli implementaci jeho funkce pro všechny třídy odvozené z `EventArgs`. Je snazší vytvářet v konkrétní odvozené třídy, které tuto funkci. Který efektivně znamená, že odvozený od System.EventArgs je omezení, které omezuje vaše návrhy, ale neposkytuje žádné další výhody.
+Ve skutečnosti může změnit definice `FileFoundArgs` a `SearchDirectoryArgs` tak, aby není odvozen od `EventArgs`.
+Program bude fungovat stejně.
 
-Můžete také změnit `SearchDirectoryArgs` do struktury, pokud jste provedli jednu další změny:
+Můžete také změnit `SearchDirectoryArgs` na strukturu, pokud jste provedli jednu další změny:
 
 [!code-csharp[SearchDir](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Define search directory event")]
 
-Další změnou je volat výchozí konstruktor před vstupem konstruktor, který inicializuje všechna pole. Bez přidání by pravidla jazyka C# hlásit, že vlastnosti přistupuje předtím, než byla přiřazena.
+Další změnou je volání výchozího konstruktoru před zadáním konstruktor, který inicializuje všechna pole. Bez tohoto přidání pravidel C# zasílat zprávy, že vlastnosti přistupuje předtím, než jí byla přiřazena.
 
-Byste neměli měnit `FileFoundArgs` z třídy (odkaz) za účelem struktury (typ hodnoty). Je to způsobeno protokol pro zpracování Storno vyžaduje, že jsou argumenty událostí předána odkazem. Pokud jste provedli stejnou změnu, může třída vyhledávání souboru nikdy sledovat veškeré změny provedené žádné události odběratelů. Novou kopii struktura se použije pro každý odběratele a tato kopie bude kopii jiný než ten, který pohledu hledání objektu soubor.
+Byste neměli měnit `FileFoundArgs` ze třídy (odkaz) na strukturu (typ hodnoty). Důvodem je, protokol pro zpracování zrušení vyžaduje, aby událost argumenty jsou předány podle odkazu. Pokud jste provedli stejnou změnu, třída hledání souborů může nikdy sledovat všechny změny provedené ve všech odběratelů událostí. Novou kopii struktura se použije pro každý předplatitel, a tuto kopii by kopii jiný než ten, který viděli vyhledávací objektem file.
 
-Dále zvažte, jak může být tato změna zpětně kompatibilní.
-Odebrání omezení nemá vliv na existující kód. Všechny existující typy argumentů událostí stále odvozena od `System.EventArgs`.
-Zpětné kompatibility je jedním z hlavních důvodů proč budou i nadále odvozena od `System.EventArgs`. Všechny existující události odběratelé nebudou odběratele, kteří mají na událost, která postupovali podle vzoru classic.
+Dále zvažte, jak tato změna může být zpětně kompatibilní.
+Odebrání omezení nemá vliv na žádný existující kód. Všechny existující typy argumentů události stále odvozovat `System.EventArgs`.
+Zpětné kompatibility je jeden hlavní důvod, proč budou i nadále odvozovat `System.EventArgs`. Všechny existující události předplatitelé budou mít Odběratelé událost, která a Klasický model.
 
-Všechny následující podobné logiku základy argumentu události vytvořen nyní neměli všechny odběratele v jakékoli existující kódu. Nové typy událostí, které není odvozena od `System.EventArgs` není zalomení ty základy kódu.
+Po každém podobnou logiku základů kódu vytvořen nyní nemusí všechny předplatitele v jakékoli existující argumentu události. Nové typy událostí, které nejsou odvozeny od `System.EventArgs` není konec ty základů kódu.
 
-## <a name="events-with-async-subscribers"></a>Události se asynchronní odběratele
+## <a name="events-with-async-subscribers"></a>Události Async předplatitele
 
-Máte jeden konečné vzor Další: jak napsat správně události odběratele, které volají asynchronní kódu. Na výzvu je popsána v článku na [async a operátoru await](async.md). Asynchronní metody může mít typ vrácené hodnoty void, ale který se důrazně nedoporučuje. Pokud váš kód odběratele událostí volá asynchronní metody, máte žádná volba však vytvořit `async void` metoda. Podpis obslužné rutiny událostí vyžaduje.
+Máte jeden poslední vzorek Další: jak správně psát odběratelů událostí, které volají asynchronní kód. Na výzvu je popsaný v článku na [async a operátoru await](async.md). Asynchronní metody může mít návratový typ void, ale je důrazně nedoporučuje. Po události odběratele kód volá asynchronní metodu, budete mít žádná volba ale k vytvoření `async void` metody. To vyžaduje podpisu obsluhy události.
 
-Je třeba sjednotit dosáhnout návod. Nějakým způsobem, je nutné vytvořit sejfu `async void` metoda. Základní informace o vzor, který je nutné implementovat jsou níže:
+Je potřeba sloučit tyto dosáhnout doprovodné materiály. Nějakým způsobem, je nutné vytvořit bezpečný `async void` metody. Základní informace, které potřebujete k implementaci vzoru jsou níže:
 
 ```csharp
 worker.StartWorking += async (sender, eventArgs) =>
@@ -57,12 +57,12 @@ worker.StartWorking += async (sender, eventArgs) =>
 };
 ```
 
-Všimněte si nejprve, aby obslužná rutina je označen jako obslužné rutiny asynchronní. Protože je právě přiřazován na obslužnou rutinu události typ delegáta, bude mít typ vrácené hodnoty void. To znamená, že musíte podle vzoru zobrazovaného v obslužné rutině a nepovolíte jakékoli výjimky vyvolání mimo kontext asynchronní obslužné rutiny. Protože nevrátí úlohu, není žádná úloha, která může hlásit chyby zadáním chybný stav. Jelikož metodou, je asynchronní, nelze vyvolat metodu jednoduše výjimka. (Volání metody pokračuje spuštění, protože je `async`.) Skutečné modul runtime chování budou jinak určené pro různá prostředí. Ukončovat vlákno, ukončovat program nebo program může zanechat v neurčeném stavu. Žádný z nich není funkční výstupy.
+Napřed si všimněte, že obslužná rutina je označen jako asynchronní obslužnou rutinu. Protože se přiřazuje k obslužné rutině události typ delegáta, bude mít typ vrácené hodnoty void. To znamená musí postupovat podle vzor, uvedený v obslužné rutině a, aby všechny výjimky, která je vyvolána mimo kontext asynchronní obslužnou rutinu. Protože úloha nevrací, neexistuje žádný úkol, který můžete nahlásit chybu tak, že zadáte chybovém stavu. Vzhledem k tomu, že je metoda asynchronní, nelze metodu jednoduše vyvolat výjimku. (Volání metody pokračuje provádění, protože je `async`.) Chování skutečné za běhu bude být definovány rozdílně pro různá prostředí. Ho může ukončit vlákno, se může ukončit program nebo program může zanechat v neurčeném stavu. Žádná z nich jsou dobré výsledky.
 
-To je důvod, proč má obtékat příkaz await pro asynchronní úlohu v vlastní bloku try. Pokud ho způsobit úlohu chybný, můžou přihlásit k chybě. Jedná se o chybu, ze kterého nelze obnovit vaše aplikace, můžete ukončit program rychle a elegantně
+To je důvod, proč zalamován příkazu await pro asynchronní úlohy ve vlastním bloku try. Pokud to způsobit chybnou úloh, můžete protokolovat chyby. Jedná se o chybu, ze kterého nelze obnovit vaše aplikace, můžete ukončit program snadno a bez výpadku
 
-Ty jsou hlavní aktualizace se vzorem událostí rozhraní .NET. Zobrazí se mnoho příkladů starší verze v knihovnách, se kterými můžete pracovat. Nicméně byste měli porozumět, co nejnovější vzory jsou také.
+Toto jsou hlavní aktualizace vzor události .NET. Mnoho příkladů z dřívějších verzí knihoven, které při práci s se zobrazí. Nicméně byste měli rozumět, co nejnovější vzory jsou také.
 
-Další článek z této série umožňuje rozlišovat pomocí `delegates` a `events` v návrzích. Jsou podobné koncepty a tento článek vám pomůže zajistit nejlepší rozhodnutí pro vaše programy.
+Další článek v této sérii umožňuje rozlišit mezi použitím `delegates` a `events` v návrzích. Jsou podobné koncepty a tento článek vám pomůže vytvořit nejlepší rozhodnutí pro vaše programy.
 
 [Next](distinguish-delegates-events.md)

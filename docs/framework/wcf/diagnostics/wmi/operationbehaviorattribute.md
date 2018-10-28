@@ -2,19 +2,19 @@
 title: OperationBehaviorAttribute
 ms.date: 03/30/2017
 ms.assetid: 8c9b0755-9e83-411f-bdcb-61a586022797
-ms.openlocfilehash: 4f731d146885265d9f956c182f1bebdba5db924b
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 6266713307846ab953299370835726958196fac1
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33486868"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50185336"
 ---
 # <a name="operationbehaviorattribute"></a>OperationBehaviorAttribute
 OperationBehaviorAttribute  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class OperationBehaviorAttribute : Behavior  
 {  
   boolean AutoDisposeParameters;  
@@ -32,35 +32,35 @@ class OperationBehaviorAttribute : Behavior
  Třída OperationBehaviorAttribute má následující vlastnosti:  
   
 ### <a name="autodisposeparameters"></a>AutoDisposeParameters  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Stav funkce automatického uvolnění pro parametry.  
+ Stav funkce automatického dispose pro parametry.  
   
 ### <a name="impersonation"></a>Zosobnění  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Informuje o úrovni zosobnění volající, který podporuje operaci.  
+ Určuje úroveň představení volajícího, kterou operace podporuje.  
   
 ### <a name="releaseinstancemode"></a>ReleaseInstanceMode u atributu  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Určuje, kdy v průběhu k vyvolání operace recyklace objektu.  
+ Označuje, že když průběhu realizace operace má být objekt.  
   
 ### <a name="transactionautocomplete"></a>Vlastnost TransactionAutoComplete  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Označuje, zda automaticky potvrzení aktuální transakce, pokud dojde k žádné neošetřených výjimek.  
+ Označuje, zda aktuální transakce potvrzena automaticky, pokud se nevyskytnou žádné nezpracované výjimky.  
   
 ### <a name="transactionscoperequired"></a>Vlastností TransactionScopeRequired  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
@@ -68,7 +68,7 @@ class OperationBehaviorAttribute : Behavior
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

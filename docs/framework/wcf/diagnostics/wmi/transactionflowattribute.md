@@ -2,18 +2,19 @@
 title: TransactionFlowAttribute
 ms.date: 03/30/2017
 ms.assetid: 0a9c8674-29f7-4f14-aa1f-dc2644ca57e4
-ms.openlocfilehash: 462790688c1be6e1134a892e9197d25eec089fb6
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: e1eef2c1400fa7eabd64939ca131407f94ef48e6
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194914"
 ---
 # <a name="transactionflowattribute"></a>TransactionFlowAttribute
 TransactionFlowAttribute  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class TransactionFlowAttribute : Behavior  
 {  
   string TransactionFlowOption;  
@@ -31,11 +32,11 @@ class TransactionFlowAttribute : Behavior
   
  Přístup k typu: jen pro čtení  
   
- Určuje, jestli tok transakcí.  
+ Určuje, zda transakce proudí.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

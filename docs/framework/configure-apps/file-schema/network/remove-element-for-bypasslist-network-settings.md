@@ -10,14 +10,12 @@ helpviewer_keywords:
 - bypasslist, remove element
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: b6c72d9780088fddcaa59e644ff8069afbb4e43d
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 83449aa2df2b0442f5ba5e1f152232b007bcdc15
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397095"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193705"
 ---
 # <a name="ltremovegt-element-for-bypasslist-network-settings"></a>&lt;Odebrat&gt; – Element pro bypasslist (nastavení sítě)
 Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.  
@@ -81,5 +79,5 @@ Odebere ze seznamu obcházení proxy IP adresu nebo název DNS.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- <xref:System.Net.WebProxy?displayProperty=nameWithType>  
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 08/31/2018
-ms.openlocfilehash: 38f638b76a38c470daf51cb7be8566feb4b6362f
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 7113a229726368a65f4372b14c28da1165c22eee
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121360"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193913"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Mikroslužby .NET: Architektura pro Kontejnerizované aplikace .NET
 
@@ -27,9 +27,9 @@ Aby bylo snazší, abyste mohli začít, průvodce se zaměřuje na odkaz kontej
 
 * Klon/Forku referenční aplikace [aplikaci eShopOnContainers na Githubu](https://github.com/dotnet-architecture/eShopOnContainers)
  
-* Podívejte [úvodní video na Channel 9](http://aka.ms/microservices-video)
+* Podívejte [úvodní video na Channel 9](https://aka.ms/microservices-video)
 
-* Seznamte se [architektury Mikroslužeb](http://aka.ms/MicroservicesArchitecture) hned
+* Seznamte se [architektury Mikroslužeb](https://aka.ms/MicroservicesArchitecture) hned
 
 ## <a name="introduction"></a>Úvod
 

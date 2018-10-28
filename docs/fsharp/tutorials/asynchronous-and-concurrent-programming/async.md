@@ -1,26 +1,26 @@
 ---
-title: 'Asynchronní programování v F #'
-description: 'Zjistěte, jak se provádí F # – programování asynchronních prostřednictvím úroveň jazyka programovací model, který je snadno použitelný a přirozený jazyk.'
+title: 'Asynchronní programování v jazyce F #'
+description: Zjistěte, jak F# asynchronního programování se provádí prostřednictvím programovací model na úrovni jazyka, který se snadno používá a je přirozený jazyk.
 ms.date: 06/20/2016
-ms.openlocfilehash: 93ecd05efc493489435214dcd7ae78fffcccec1f
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: de07f1252df56e3dfec5ea7a34a283b1c9508523
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33566870"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195057"
 ---
-# <a name="async-programming-in-f"></a>Asynchronní programování v F # #
+# <a name="async-programming-in-f"></a>Asynchronní programování v jazyce F # #
 
 > [!NOTE]
-> Některé nepřesnosti byly zjištěny v tomto článku.  Je se přepisuje.  V tématu [problém #666](https://github.com/dotnet/docs/issues/666) Další informace o změnách.
+> Některé nepřesnosti byly zjištěny v tomto článku.  Je právě přepsán.  Zobrazit [problém #666](https://github.com/dotnet/docs/issues/666) Další informace o změnách.
 
-Asynchronní programování v F # lze provést prostřednictvím modelu programovací jazyk úrovni navržený tak, aby se snadno používá a přirozený jazyk.
+Asynchronní programování v F# je možné provádět prostřednictvím úrovni jazyka programovací model navržené tak, aby se snadno používá a přirozený jazyk.
 
-Základní asynchronní programování v F # je `Async<'T>`, znázornění práce, které se aktivuje spuštění na pozadí, kde `'T` je buď typu vrácen prostřednictvím speciální `return` – klíčové slovo nebo `unit` pokud asynchronní pracovní postup neobsahuje žádné výsledek určený k vrácení.
+Základní asynchronní programování v F# je `Async<'T>`, reprezentace práci, která se dá spouštět na spuštěný na pozadí, kde `'T` se vrátí buď typ prostřednictvím speciální `return` – klíčové slovo nebo `unit` Pokud asynchronního pracovního postupu nemá žádný výsledek určený k vrácení.
 
-Klíče koncept pochopit je, že je typ výraz asynchronní `Async<'T>`, která je jenom na _specifikace_ práce v asynchronním kontextu. Nebude provedena, dokud ji explicitně spustit s jedním z výchozí funkce (například `Async.RunSynchronously`). Přestože je toto jiný způsob přemýšlení o pracuje, ukončí až se v praxi poměrně jednoduché.
+Klíčovým konceptem pochopit je, že je typ výrazu asynchronní `Async<'T>`, což je pouze na _specifikace_ práce udělat v asynchronním kontextu. Není spuštěn, dokud ho explicitně spustit s jednou počáteční funkcí (jako například `Async.RunSynchronously`). Přestože je toto různých způsobu přemýšlení o tom, jak pracovní, ukončí nebuďte úplně jednoduché v praxi.
 
-Řekněme například, že chcete stáhnout HTML z dotnetfoundation.org bez blokování hlavního vlákna. Můžete ji provést takto:
+Řekněme například, že chcete stáhnout kód HTML z dotnetfoundation.org bez blokování hlavního vlákna. Můžete provést to takto:
 
 ```fsharp
 open System
@@ -41,23 +41,23 @@ let html = "https://dotnetfoundation.org" |> fetchHtmlAsync |> Async.RunSynchron
 printfn "%s" html
 ```
 
-A je to! Kromě zajištění dostatečného použití `async`, `let!`, a `return`, jedná se jenom normální F # – kód.
+A to je všechno! Kromě použití `async`, `let!`, a `return`, to je jenom normální F# kódu.
 
-Existuje několik syntaktické konstrukce, které jsou vhodné poznamenat:
+Existuje několik syntaktické konstrukce, které stojí za zmínku:
 
-*   `let!` vytvoří vazbu výsledek asynchronní výrazu (který se spouští v jiném kontextu).
-*   `use!` funguje stejným způsobem jako `let!`, ale uvolní její vázané prostředky, když probíhá mimo rozsah.
-*   `do!` počká asynchronní pracovního postupu, které nic nevrací.
-*   `return` jednoduše vrací výsledek z výrazu asynchronní.
-*   `return!` Spustí jiného pracovního postupu asynchronní a v důsledku vrátí hodnoty.
+*   `let!` vytvoří vazbu výsledek výrazu asynchronní (který se spouští v jiném kontextu).
+*   `use!` funguje stejně jako `let!`, ale uvolní prostředky jeho vazby, když dostane mimo rozsah.
+*   `do!` počká na asynchronní pracovní postup, který nic nevrací.
+*   `return` jednoduše vrací výsledek z asynchronní výraz.
+*   `return!` spustí jiný pracovní postup asynchronního a vrátí jeho návratovou hodnotu ve výsledku.
 
-Kromě toho normální `let`, `use`, a `do` klíčová slova můžete používat společně se asynchronních verzích, stejně jako v normálním funkce.
+Kromě toho normální `let`, `use`, a `do` klíčová slova můžete používat společně se asynchronní verze, stejně jako normální funkce.
 
-## <a name="how-to-start-async-code-in-f"></a>Postup spuštění asynchronní kódu v jazyce F # #
+## <a name="how-to-start-async-code-in-f"></a>Jak můžete začít asynchronní kódF# #
 
-Jak už bylo zmíněno dříve, je asynchronní kód specifikace pracovní provést v jiném kontextu, které musí být explicitně spuštěna. K tomu dva primární způsoby:
+Jak už bylo zmíněno dříve, asynchronní kód je specifikace práce udělat v jiném kontextu, který musí být explicitně spuštěna. Tady jsou dva základní způsoby, jak toho dosáhnout:
 
-1.  `Async.RunSynchronously` bude na jiné vlákno spustit pracovní postup async a operátoru await její výsledek.
+1.  `Async.RunSynchronously` Asynchronní pracovní postup spustit v jiném vlákně, který se await jeho výsledek.
 
 ```fsharp
 open System
@@ -78,7 +78,7 @@ let fetchHtmlAsync url =
  printfn "%s" html
  ```
 
-2.  `Async.Start` Asynchronní pracovní postup spustit na jiné vlákno a bude **není** await její výsledek.
+2.  `Async.Start` Asynchronní pracovní postup spustit v jiném vlákně a bude **není** await jeho výsledek.
 
 ```fsharp
 open System
@@ -99,17 +99,17 @@ Async.Start(workflow)
 printfn "%s" "uploadDataAsync is running in the background..."
  ```
 
-Spuštění asynchronních workflow, který je k dispozici pro více konkrétních scénářů i jinými způsoby. Které jsou podrobně popsány [v referenci asynchronní](https://msdn.microsoft.com/library/ee370232.aspx).
+Existují jiné způsoby, jak začít asynchronní workflowu, který je k dispozici pro konkrétnější scénáře. Jsou podrobně popsány [v odkazu asynchronní](https://msdn.microsoft.com/library/ee370232.aspx).
 
-### <a name="a-note-on-threads"></a>Poznámka: na vláken
+### <a name="a-note-on-threads"></a>Poznámka: na vláknech
 
-Fráze "na jiné vlákno" uvedená výše, ale je důležité vědět, že **to neznamená, že asynchronní pracovní postupy jsou průčelí za pro multithreading**. Pracovní postup ve skutečnosti "skáče" mezi vlákny, úvěrové je pro malé množství času užitečné práci. Když pracovním postupu asynchronní efektivně "čeká" (například čekání na něco vrátit volání sítě), všechny vlákno, byla úvěrové v době uvolněno až přejděte užitečné práce na něco jiného. To umožňuje použít systém, který běží na co možná nejefektivněji asynchronní pracovní postupy a jsou pak zejména silné pro scénáře vysoký počet vstupně-výstupní operace.
+Fráze "v jiném vlákně" je uvedeno výše, ale je důležité vědět, že **to neznamená, že asynchronní pracovní postupy jsou průčelím pro multithreading**. Pracovní postup ve skutečnosti "přejde" mezi vlákny vypůjčení pro malé množství času dělat užitečnou práci. Když pracovním postupu asynchronní efektivně "čeká" (např. čekání na síť volání vracely něco), žádné vlákno, byla půjčky v době je uvolněna až přejděte užitečnou práci na něco jiného. Tato možnost povoluje asynchronní pracovní postupy pro využití systému, ve kterém jsou spuštěné na co možná nejefektivněji a je mezi nimi vlastně hlavně silným pro scénáře vysoký počet vstupně-výstupních operací.
 
-## <a name="how-to-add-parallelism-to-async-code"></a>Postup přidání paralelismus asynchronní kódu
+## <a name="how-to-add-parallelism-to-async-code"></a>Postup přidání paralelismu asynchronní kód
 
-Někdy můžete potřebovat k provedení více asynchronních úloh paralelně, shromažďování jejich výsledky a je interpretovat nějakým způsobem. `Async.Parallel` Můžete to provést bez nutnosti použít Task Parallel Library, které by zahrnovat museli coerce `Task<'T>` a `Async<'T>` typy.
+Někdy můžete potřebovat provádět více asynchronních úloh paralelně, shromažďovat jejich výsledky a interpretovat nějakým způsobem. `Async.Parallel` Umožňuje provést bez nutnosti použít Task Parallel Library, což by vyžadovalo museli vynucení `Task<'T>` a `Async<'T>` typy.
 
-Následující příklad použije `Async.Parallel` Pokud chcete stáhnout HTML ze čtyř oblíbených lokalit paralelně, počkejte na dokončení těchto úloh a poté vytiskněte HTML, který byl stažen.
+Následující příklad použije `Async.Parallel` si Pokud chcete stáhnout kód HTML z oblíbených lokalit čtyři paralelně, počkejte na dokončení těchto úloh a poté vytiskněte HTML, který byl stažen.
 
 ```fsharp
 open System
@@ -142,50 +142,50 @@ for html in htmlList do
     printfn "%s" html
 ```
 
-## <a name="important-info-and-advice"></a>Důležité informace a Rady, jak
+## <a name="important-info-and-advice"></a>Důležité informace a Rady
 
-*   Připojte "Asynchronní" konec všechny funkce, které budete používat
+*   Připojte "Async" za účelem všechny funkce, které budete používat
 
- I když je to právě zásady vytváření názvů, je snazší takové věci, jako možnosti rozpoznání rozhraní API. Zejména, pokud jsou synchronní a asynchronní verze stejné rutiny, je vhodné explicitně stavu, která je asynchronní prostřednictvím název.
+ I když je to jenom zásady vytváření názvů, je usnadnit věci jako rozhraní API zjistitelnost. Zejména v případě, že existují synchronní a asynchronní verze stejné rutiny, je vhodné k výslovnému, což je asynchronní prostřednictvím názvu.
 
 *   Naslouchání kompilátoru!
 
- Pro kompilátor jazyka F # je velmi přísná, což téměř znemožní dělat něco troubling jako spustit "asynchronní" kód synchronně. Pokud narazíte na upozornění, která je znak, jak si myslíte, že se bude kód nebude spouštění. Pokud se vám kompilátor radostí, váš kód bude s největší pravděpodobností spustit podle očekávání.
+ F#pro kompilátor je velmi přísná, díky tomu je téměř nemožné něco jako je zneklidňují nové spuštění kódu "async" synchronně. Pokud narazíte na upozornění, který je znak, jak si myslíte, že bude kód nebude spuštěno. Pokud se vás kompilátor šťastný, váš kód spustí pravděpodobně podle očekávání.
 
-## <a name="for-the-cvb-programmer-looking-into-f"></a>Pro programátory C# / VB. vyhledávání do F # #
+## <a name="for-the-cvb-programmer-looking-into-f"></a>Pro C#podívat na programátorovi /VBF# #
 
-V této části se předpokládá, když jste se seznámili s modelem asynchronní v jazyce C# nebo VB. Pokud nemáte, [asynchronní programování v jazyce C#](../../../csharp/async.md) je výchozím bodem.
+V této části se předpokládá, seznamte se s asynchronní model v C#/VB. Pokud nemáte, [asynchronní programování v C# ](../../../csharp/async.md) je výchozím bodem.
 
-Je zásadní rozdíl mezi C# / VB. asynchronní modelu a modelu asynchronní F #.
+Je zásadní rozdíl mezi C#/VB asynchronní model a F# asynchronní model.
 
-Při volání funkce, která vrátí hodnotu `Task` nebo `Task<'T>`, této úlohy je již spuštěno provádění. Vrátí popisovač představuje asynchronní úlohu již spuštěna. Naproti tomu při volání funkce asynchronní v F # `Async<'a>` vrátil představuje úlohu, u které bude **generované** v určitém okamžiku. Vysvětlení tohoto modelu je výkonný, protože umožňuje pro asynchronní úlohy v jazyce F # k zřetězen dohromady snadnější, provést podmíněně a spustit s jemnějšího intervalem ovládacího prvku.
+Při volání funkce, která vrátí `Task` nebo `Task<'T>`, tato úloha už začala spuštění. Popisovač vrácený představuje asynchronní úlohu již spuštěná. Naproti tomu při volání asynchronní funkce F#, `Async<'a>` vrátil představuje úlohu, která bude **generované** v určitém okamžiku. Vysvětlení tohoto modelu je efektivní, protože to umožňuje asynchronní úlohy v F# se seskupují klidní, provádí podmíněně a pracovat s lepší intervalem ovládacího prvku.
 
-Existuje několik podobnosti a rozdíly vhodné poznamenat.
+Existuje několik dalších podobnosti a rozdíly za zmínku.
 
 ### <a name="similarities"></a>Podobnosti
 
-*   `let!`, `use!`, a `do!` se podobá `await` při volání metody úlohu asynchronní uvnitř `async{ }` bloku.
+*   `let!`, `use!`, a `do!` jsou podobná `await` při volání metody na asynchronní úlohy v rámci `async{ }` bloku.
 
- Tři klíčová slova lze použít pouze v rámci `async { }` bloku, podobně jako postupy `await` jde volat jenom uvnitř `async` metoda. Stručně řečeno `let!` je pro, když chcete zaznamenat a použít výsledek, `use!` je něco jehož prostředky by měly získat čištění po se používají stejné ale a `do!` je pro, pokud chcete pro čekání asynchronní pracovní postup s žádnou návratovou hodnotu na dokončení než budete pokračovat.
+ Tři klíčová slova jde použít jenom v rámci `async { }` bloku, podobný postup `await` lze vyvolat pouze uvnitř `async` metoda. Stručně řečeno `let!` je pro, pokud chcete zachytit a používat výsledku `use!` je stejný ale něco jehož prostředky by měl získat čištění po se používá, a `do!` je pro, pokud chcete čekat pro asynchronní pracovní postup s žádnou návratovou hodnotu pro dokončení než budete pokračovat.
 
-*   F # podporuje datový paralelismus podobným způsobem.
+*   F#Datový paralelismus podporuje podobným způsobem.
 
- I když ho pracuje velmi odlišně `Async.Parallel` odpovídá `Task.WhenAll` pro scénáře podmínka mimo výsledky sadu asynchronních úloh po dokončení se všechny.
+ I když to vše je přístupné nějak významně odlišně `Async.Parallel` odpovídá `Task.WhenAll` pro scénář záhlaví výsledky sadu asynchronních úloh po dokončení činnosti všech.
 
 ### <a name="differences"></a>Rozdíly
 
-*   Vnořené `let!` není povolena, na rozdíl od vnořené `await`
+*   Vnořené `let!` není povolené, na rozdíl od vnořené `await`
 
- Na rozdíl od `await`, které mohou být použity po neomezenou dobu, `let!` nelze a musíte mít jeho výsledek vázaný před jeho použitím uvnitř jiného `let!`, `do!`, nebo `use!`.
+ Na rozdíl od `await`, které mohou být vnořené po neomezenou dobu, `let!` nelze a musíte mít jeho výsledek vázán před jeho použitím do druhého `let!`, `do!`, nebo `use!`.
 
-*   Podpora zrušení je jednodušší v jazyce F # než v jazyce C# nebo VB.
+*   Podporu zrušení je jednodušší v F# než C#/VB.
 
- Podpora zrušení úloh polovině prostřednictvím jeho spuštění v C# / VB. vyžaduje kontrolu `IsCancellationRequested` vlastnost nebo volání `ThrowIfCancellationRequested()` na `CancellationToken` objekt, který je předán do asynchronní metody.
+ Podpora zrušení úlohy polovině během C#/VB vyžaduje kontrolu `IsCancellationRequested` vlastností nebo volání `ThrowIfCancellationRequested()` na `CancellationToken` objektu, který je předán do asynchronní metody.
 
-F # asynchronní pracovní postupy jsou naopak více přirozeně zrušit. Zrušení je jednoduchý proces třech krocích.
+Naproti tomu F# asynchronními pracovními postupy jsou přirozeněji zrušit. Zrušení je jednoduchý proces třech krocích.
 
-1.  Vytvořte novou `CancellationTokenSource`.
-2.  Předejte ji do počáteční funkce.
+1.  Vytvořte nový `CancellationTokenSource`.
+2.  Předejte ho do výchozí funkce.
 3.  Volání `Cancel` na tokenu.
 
 Příklad:
@@ -193,6 +193,7 @@ Příklad:
 ```fsharp
 open System
 open System.Net
+open System.Threading
 
 let uploadDataAsync url data = 
     async {
@@ -204,16 +205,16 @@ let uploadDataAsync url data =
 let workflow = uploadDataAsync "https://url-to-upload-to.com" "hello, world!"
 
 let token = new CancellationTokenSource()
-Async.Start (workflow, token)
+Async.Start (workflow, token.Token)
 
 // Immediately cancel uploadDataAsync after it's been started.
 token.Cancel()
 ```
 
-A je to!
+A to je všechno!
 
-## <a name="further-resources"></a>Další prostředky:
+## <a name="further-resources"></a>Další materiály:
 
 *   [Asynchronní pracovní postupy na webu MSDN](https://msdn.microsoft.com/library/dd233250.aspx)
-*   [Asynchronní pořadí pro F #](https://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html)
-*   [Nástroje F # dat protokolu HTTP](https://fsharp.github.io/FSharp.Data/library/Http.html)
+*   [Asynchronní pořadí proF#](https://fsprojects.github.io/FSharp.Control.AsyncSeq/library/AsyncSeq.html)
+*   [F#Nástroje data protokolu HTTP](https://fsharp.github.io/FSharp.Data/library/Http.html)
