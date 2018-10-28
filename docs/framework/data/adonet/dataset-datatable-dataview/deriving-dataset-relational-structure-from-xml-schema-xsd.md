@@ -2,17 +2,17 @@
 title: Odvozování relační struktury datové sady ze schématu XML (XSD)
 ms.date: 03/30/2017
 ms.assetid: 8f6cd04d-6197-4bc4-9096-8c51c7e4acae
-ms.openlocfilehash: fd5c41272d3b050427804f08f7387328012065f4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 76fd0126f32eb2b22a12ee0b67e1f81794ff9445
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43504944"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195291"
 ---
 # <a name="deriving-dataset-relational-structure-from-xml-schema-xsd"></a>Odvozování relační struktury datové sady ze schématu XML (XSD)
 Tato část obsahuje přehled toho, jak relační schéma `DataSet` je sestaven z dokument schématu XML definice jazyk (XSD) schématu. Obecně platí, pro každou `complexType` podřízený prvek element schématu tabulky se vygeneruje v `DataSet`. Struktura tabulky se určuje podle definice komplexního typu. Tabulky vytvářejí `DataSet` pro nejvyšší úrovně elementy ve schématu. Ale tabulku je vytvořen pouze pro nejvyšší úroveň `complexType` element při `complexType` element je vnořit do jiného `complexType` element, ve kterém malá a velká ve vnořeném `complexType` element je namapována na `DataTable` v rámci `DataSet`.  
   
- Další informace o XSD, najdete v části schématu XML World Wide Web Consortium (W3C) 0: Úvod do doporučení, XML schématu část 1: struktury doporučení a XML schématu část 2: datové typy doporučení na [ http://www.w3.org/ ](http://www.w3.org/TR/).  
+ Další informace o XSD, najdete v článku World Wide Web Consortium (W3C) [XML schématu část 0: Úvod do doporučení](https://www.w3.org/TR/xmlschema-0/), [XML schématu část 1: struktury doporučení](https://www.w3.org/TR/xmlschema-1/)a [XML Schéma – část 2: Datové typy doporučení](https://www.w3.org/TR/xmlschema-2/).  
   
  Následující příklad ukazuje schématu XML kde `customers` je podřízený prvek `MyDataSet` element, který je **datovou sadu** elementu.  
   

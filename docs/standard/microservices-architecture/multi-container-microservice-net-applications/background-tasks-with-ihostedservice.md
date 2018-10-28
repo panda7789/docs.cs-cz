@@ -4,12 +4,12 @@ description: Architektura Mikroslužeb .NET pro Kontejnerizované aplikace .NET 
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 12/11/2017
-ms.openlocfilehash: 6ce9e40334e80e8bd17ce2f3d2569a1e3c39d09e
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 981a20ca80f0652a9c3597d36b960d6b44d97912
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003747"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195824"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>Implementace úloh na pozadí v mikroslužbách s IHostedService a BackgroundService třídy
 
@@ -236,7 +236,7 @@ Na následujícím obrázku 8-26 zobrazuje souhrn třídy vizuálu a propojen po
 
 ### <a name="deployment-considerations-and-takeaways"></a>Důležité informace o nasazení a takeaways
 
-Je důležité si uvědomit, že způsob nasazení ASP.NET Core `WebHost` nebo .NET Core `Host` může mít vliv na konečné řešení. Například při nasazení vaší `WebHost` na serveru IIS nebo pravidelné službě Azure App Service, může být vypnut hostitele kvůli recyklace fondu aplikací. Ale pokud nasazujete hostitele jako kontejner do orchestrátoru, jako je Kubernetes nebo Service Fabric, můžete řídit pojištěných počet instancí za provozu z hostitele. Kromě toho zvažte další přístupy v cloudu, zejména provedené pro tyto scénáře, jako je Azure Functions. 
+Je důležité si uvědomit, že způsob nasazení ASP.NET Core `WebHost` nebo .NET Core `Host` může mít vliv na konečné řešení. Například při nasazení vaší `WebHost` na serveru IIS nebo pravidelné službě Azure App Service, může být vypnut hostitele kvůli recyklace fondu aplikací. Ale pokud nasazujete hostitele jako kontejner do orchestrátoru, jako je Kubernetes nebo Service Fabric, můžete řídit pojištěných počet instancí za provozu z hostitele. Kromě toho zvažte další přístupy v cloudu, zejména provedené pro tyto scénáře, jako je Azure Functions. Nakonec pokud potřebujete služby běžet neustále a provádíte nasazení na Windows serveru můžete použít službu Windows.
 
 Ale i pro `WebHost` nasazené do fondu aplikací, jsou scénáře, jako jsou opětovného vyplnění nebo vyprazdňování mezipaměti v paměti aplikace, která bude i nadále použitelná.
 

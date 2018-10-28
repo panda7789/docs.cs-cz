@@ -4,11 +4,11 @@ ms.date: 03/30/2017
 ms.assetid: 9354eee3-f692-4ad6-8427-3169686b8bcc
 author: BrucePerlerMS
 ms.openlocfilehash: a745339cffdada56a9b7f27f3f879b9d437c2da2
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48793224"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195551"
 ---
 # <a name="ltclaimsauthorizationmanagergt"></a>&lt;claimsAuthorizationManager&gt;
 Zaregistruje Správce autorizací deklarace identity pro příchozí deklarace identity.  

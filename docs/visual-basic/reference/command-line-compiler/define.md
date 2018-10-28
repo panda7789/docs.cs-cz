@@ -9,17 +9,15 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 4de37c58543aed9ed13be8b0d2bcec9830ca9082
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 4cab6bc968275bc12af4365fd3da5e3b5ff417f2
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33656097"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195174"
 ---
 # <a name="-define-visual-basic"></a>-definovat (Visual Basic)
-Definuje podmíněného kompilátoru konstanty.  
+Definuje podmíněné konstanty kompilátoru.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,29 +31,29 @@ Definuje podmíněného kompilátoru konstanty.
   
 |Termín|Definice|  
 |---|---|  
-|`symbol`|Požadováno. Symbol, který se má definovat.|  
-|`value`|Volitelné. Hodnota pro přiřazení `symbol`. Pokud `value` je řetězec, musí být uzavřena tak pro pořadí zpětné lomítko /-dvojité uvozovky (\\") namísto uvozovky. Pokud není zadaná žádná hodnota, pak se provede na hodnotu True.|  
+|`symbol`|Požadováno. Symbol definovat.|  
+|`value`|Volitelné. Hodnota pro přiřazení `symbol`. Pokud `value` je řetězec, musí být uzavřen v pořadí zpětné lomítko a znak uvozovek (\\") místo uvozovek. Pokud není zadána žádná hodnota, pak je provedena na hodnotu True.|  
   
 ## <a name="remarks"></a>Poznámky  
- `-define` Má vliv podobný používání `#Const` direktivy preprocesoru zdrojový soubor, s výjimkou tohoto konstanty definovaný s `-define` jsou veřejné a platí pro všechny soubory v projektu.  
+ `-define` Možnost má efekt se používá podobně jako `#Const` direktivy preprocesoru ve zdrojovém souboru, s výjimkou této konstanty definované pomocí `-define` jsou veřejné a použít na všechny soubory v projektu.  
   
- Můžete použít symboly, které jsou vytvořené pomocí této možnosti `#If`... `Then`... `#Else` direktiva k Podmíněná kompilace zdrojové soubory.  
+ Symboly, které jsou vytvořené pomocí této možnosti se můžete `#If`... `Then`... `#Else` direktivy podmíněné kompilace zdrojové soubory.  
   
  `-d` je zkratka pro `-define`.  
   
- Můžete definovat více symbolů s `-define` oddělte čárkou oddělit definice symbolu.  
+ Můžete definovat více symbolů se `-define` s použitím čárky k oddělení definice symbolů.  
   
-|Chcete-li nastavena / definovat v integrovaném vývojovém prostředí sady Visual Studio|  
+|Chcete-li nastavit / define v integrovaném vývojovém prostředí sady Visual Studio|  
 |---|  
-|1.  Máte projekt vybraný v **Průzkumníku řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte **zkompilovat** kartě.<br />3.  Klikněte na tlačítko **rozšířené**.<br />4.  Změňte hodnotu v **vlastní konstanty** pole.|  
+|1.  Mají projekt vybraný v **Průzkumníka řešení**. Na **projektu** nabídky, klikněte na tlačítko **vlastnosti**. <br />2.  Klikněte na tlačítko **kompilaci** kartu.<br />3.  Klikněte na tlačítko **Advanced**.<br />4.  Upravte hodnotu v **konstanty vlastní** pole.|  
   
 ## <a name="example"></a>Příklad  
- Následující kód definuje a pak používá dvě konstanty podmíněného kompilátoru.  
+ Následující kód definuje a pak používá dva podmíněné konstanty kompilátoru.  
   
  [!code-vb[VbVbalrCompiler#45](../../../visual-basic/reference/command-line-compiler/codesnippet/VisualBasic/define_1.vb)]  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Direktivy #If...Then...#Else](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
  [Direktiva #Const](../../../visual-basic/language-reference/directives/const-directive.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

@@ -2,12 +2,12 @@
 title: Aktivace pojmenovaného kanálu
 ms.date: 03/30/2017
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-ms.openlocfilehash: 5f277d2c72822d8828355d3d728864bedb6dc4f4
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: 05dea4e4faa91e4df9fdde8bdafc29473e49214e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48873359"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195473"
 ---
 # <a name="namedpipe-activation"></a>Aktivace pojmenovaného kanálu
 V této ukázce hostování služba, která se používá k aktivaci služby, která komunikuje přes názvy kanálů Windows Process Activation Service (WAS). Tato ukázka je založena na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md) a vyžaduje [!INCLUDE[wv](../../../../includes/wv-md.md)] ke spuštění.  
@@ -29,7 +29,7 @@ V této ukázce hostování služba, která se používá k aktivaci služby, kt
   
  Služba implementuje kontrakt, který definuje vzor komunikace požadavek odpověď. Smlouva je definován `ICalculator` rozhraní, které zveřejňuje matematických operací (přidat, odečítání, násobení a rozdělit), jak je znázorněno v následujícím ukázkovém kódu.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface ICalculator  
 {  
@@ -46,7 +46,7 @@ public interface ICalculator
   
  Klient podá synchronní žádosti dané matematické operace a implementaci služby vypočítá a vrátí odpovídající výsledek.  
   
-```  
+```csharp
 // Service class that implements the service contract.  
 public class CalculatorService : ICalculator  
 {  
@@ -146,7 +146,7 @@ public class CalculatorService : ICalculator
   
  Při spuštění ukázky operace žádosti a odpovědi se zobrazí v okně konzoly klienta. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-```  
+```console
 Add(100,15.99) = 115.99  
 Subtract(145,76.54) = 68.46  
 Multiply(9,81.25) = 731.25  
@@ -155,7 +155,7 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.  
 ```  
   
-#### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
+### <a name="to-set-up-build-and-run-the-sample"></a>Chcete-li nastavit, sestavte a spusťte ukázku  
   
 1.  Ujistěte se, že [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je nainstalována. [!INCLUDE[iisver](../../../../includes/iisver-md.md)] je vyžadován pro aktivaci WAS.  
   
@@ -222,5 +222,6 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         >  Tento příkaz musí být zadán v jako jeden řádek textu.  
   
-## <a name="see-also"></a>Viz také  
- [Hostování AppFabric a ukázky trvalosti](https://go.microsoft.com/fwlink/?LinkId=193961)
+## <a name="see-also"></a>Viz také:
+
+- [Hostování AppFabric a ukázky trvalosti](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

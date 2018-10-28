@@ -2,12 +2,12 @@
 title: Popis služby
 ms.date: 03/30/2017
 ms.assetid: 7034b5d6-d608-45f3-b57d-ec135f83ff24
-ms.openlocfilehash: 1acd82fddd378a379023c7aa46ead2ce36c5b243
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: c31edae952b20823945403dd5aebb438bcbf0c11
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46003337"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195265"
 ---
 # <a name="service-description"></a>Popis služby
 Popis služby ukázka demonstruje, jak může služba načíst jeho informace popisu služby za běhu. Vzorek je založen na [Začínáme](../../../../docs/framework/wcf/samples/getting-started-sample.md), se vrací popisné informace o službě operace další služby. Vrácené informace uvádí základní adresy a koncové body pro službu. Tato služba poskytuje informace pomocí <xref:System.ServiceModel.OperationContext>, <xref:System.ServiceModel.ServiceHost>, a <xref:System.ServiceModel.Description.ServiceDescription> třídy.  
@@ -19,7 +19,7 @@ Popis služby ukázka demonstruje, jak může služba načíst jeho informace po
   
  Tato ukázka má upravenou verzi smlouvy kalkulačky volat `IServiceDescriptionCalculator`. Kontrakt definuje operaci Další službu s názvem `GetServiceDescriptionInfo` Víceřádkový řetězec, který vrátí klientovi, který popisuje základní adresa nebo adresy a koncový bod služby nebo koncové body pro službu.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IServiceDescriptionCalculator  
 {  
@@ -38,7 +38,7 @@ public interface IServiceDescriptionCalculator
   
  Implementace kódu pro `GetServiceDescriptionInfo` používá <xref:System.ServiceModel.Description.ServiceDescription> do seznamu koncových bodů služby. Protože koncové body služby může mít relativní adresy, nejprve uvádí bázové adresy pro službu. Všechny tyto informace získáte kód získá jeho použití kontextu operace <xref:System.ServiceModel.OperationContext.Current%2A>. <xref:System.ServiceModel.ServiceHost> a jeho <xref:System.ServiceModel.Description.ServiceDescription> objektu jsou načteny z kontextu operace. Seznam základních koncové body pro službu, kód Iteruje přes hostitele služby <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A> kolekce. Seznam koncových bodů služby pro službu, kód Iteruje přes kolekci koncové body služby popis.  
   
-```  
+```csharp
 public string GetServiceDescriptionInfo()  
 {  
     string info = "";  
@@ -65,7 +65,7 @@ public string GetServiceDescriptionInfo()
   
  Když spustíte ukázku, uvidíte operace kalkulačky a pak informace o službě vrácené `GetServiceDescriptionInfo` operace. Stisknutím klávesy ENTER v okně Klient vypnutí klient.  
   
-```  
+```console  
 Add(15,3) = 18  
 Subtract(145,76) = 69  
 Multiply(9,81) = 729  

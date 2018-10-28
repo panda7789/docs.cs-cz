@@ -2,12 +2,12 @@
 title: Vytvoření třídy GamePiece
 ms.date: 03/30/2017
 ms.assetid: 37a27a86-ac1c-47be-b477-cb4b819459d3
-ms.openlocfilehash: eb73918cc03e2621d39a98158d40a839dbc69d80
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: f9f08437cda685d2ec1d2d0c8d54d370d9d38341
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43857898"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50195876"
 ---
 # <a name="creating-the-gamepiece-class"></a>Vytvoření třídy GamePiece
 **GamePiece** třída zapouzdří všechny funkce potřebné k načtení bitové kopie Microsoft XNA game část, sledovat stav myši ve vztahu k her jsou části, zachycení myši, poskytují manipulace a nečinnost zpracování, a skákající možnost poskytnout, herní část dosáhne omezení zobrazení.  
@@ -25,7 +25,7 @@ ms.locfileid: "43857898"
 ## <a name="class-constructor"></a>Konstruktor třídy  
  Konstruktor pro **GamePiece** třídy přijímá následující parametry:  
   
--   A [SpriteBatch](https://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.aspx) typu. Odkazu předaného zde je přiřazena k soukromému členu `spriteBatch`a používá se k přístupu [SpriteBatch.Draw](https://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.draw.aspx) metoda při her – počítač se vykreslí. Kromě toho [GraphicsDevice](https://msdn.microsoft.com/library/microsoft.xna.framework.graphics.spritebatch.graphicsdevice.aspx) vlastnost se používá k vytvoření [textury](https://msdn.microsoft.com/library/microsoft.xna.framework.graphics.texture.aspx) objektu souvisejícího s her – počítač a získat velikost zobrazení portu, aby bylo možné rozpoznat, kdy se zaznamená část her okno hranic tak, aby je tímto druhem můžete odraz.  
+-   A [SpriteBatch](https://docs.microsoft.com/previous-versions/windows/xna/bb199034%28v%3dxnagamestudio.41%29) typu. Odkazu předaného zde je přiřazena k soukromému členu `spriteBatch`a používá se k přístupu [SpriteBatch.Draw](https://docs.microsoft.com/previous-versions/windows/xna/bb196426%28v%3dxnagamestudio.41%29) metoda při her – počítač se vykreslí. Kromě toho [GraphicsDevice](https://docs.microsoft.com/previous-versions/windows/xna/bb197338%28v%3dxnagamestudio.41%29) vlastnost se používá k vytvoření [textury](https://docs.microsoft.com/previous-versions/windows/xna/bb199375%28v%3xnagamestudio.41%29) objektu souvisejícího s her – počítač a získat velikost zobrazení portu, aby bylo možné rozpoznat, kdy se zaznamená část her okno hranic tak, aby je tímto druhem můžete odraz.  
   
 -   Řetězec, který určuje název souboru obrázku používaného pro herní část.  
   
@@ -78,11 +78,11 @@ ms.locfileid: "43857898"
   
  [!code-csharp[ManipulationXNA#_GamePiece_OnInertiaCompleted](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_oninertiacompleted)]  
   
- Žádná z logiky doposud předložených skutečně způsobí extrapolaci dojít nečinnost. To lze provést v **ProcessInertia** metody. Této metody, které je voláno opakovaně smyčky her aktualizace ( [Game.Update](https://msdn.microsoft.com/library/microsoft.xna.framework.game.update.aspx) metoda) kontroluje, jestli *processInertia* příznak je nastaven na `true`a pokud ano, zavolá <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Process%2A> Metoda. Volání této metody extrapolaci způsobí, že dojde k a vyvolá <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> událostí.  
+ Žádná z logiky doposud předložených skutečně způsobí extrapolaci dojít nečinnost. To lze provést v **ProcessInertia** metody. Této metody, které je voláno opakovaně smyčky her aktualizace ( [Game.Update](https://docs.microsoft.com/previous-versions/windows/xna/bb199616%28v%3dxnagamestudio.41%29) metoda) kontroluje, jestli *processInertia* příznak je nastaven na `true`a pokud ano, zavolá <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Process%2A> Metoda. Volání této metody extrapolaci způsobí, že dojde k a vyvolá <xref:System.Windows.Input.Manipulations.InertiaProcessor2D.Delta> událostí.  
   
  [!code-csharp[ManipulationXNA#_GamePiece_ProcessInertia](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_processinertia)]  
   
- Herní část není ve skutečnosti vykreslen až do jednoho z přetížení metody vykreslení je volána. První přetížení této metody je volána opakovaně her draw smyčky ( [Game.Draw](https://msdn.microsoft.com/library/microsoft.xna.framework.game.draw.aspx) metoda). Tím zkopírujete her část s aktuální pozici, otočení a faktory měřítka.  
+ Herní část není ve skutečnosti vykreslen až do jednoho z přetížení metody vykreslení je volána. První přetížení této metody je volána opakovaně her draw smyčky ( [Game.Draw](https://docs.microsoft.com/previous-versions/windows/xna/bb196422%28v%3dxnagamestudio.41%29) metoda). Tím zkopírujete her část s aktuální pozici, otočení a faktory měřítka.  
   
  [!code-csharp[ManipulationXNA#_GamePiece_Draw](../../../samples/snippets/csharp/VS_Snippets_Misc/manipulationxna/cs/gamepiece.cs#_gamepiece_draw)]  
   
