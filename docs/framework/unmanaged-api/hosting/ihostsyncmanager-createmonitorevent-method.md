@@ -17,17 +17,17 @@ topic_type:
 - apiref
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: d06f1c93275cb6adf4f1da02ccd5d889cb06c5d0
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: b934816073a48936afca119895488ddf2f0e37d2
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47203667"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50040157"
 ---
-# <a name="ihostsyncmanagercreatemonitorevent-method"></a><span data-ttu-id="3bbab-102">IHostSyncManager::CreateMonitorEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="3bbab-102">IHostSyncManager::CreateMonitorEvent Method</span></span>
-<span data-ttu-id="3bbab-103">Vytvoří objekt monitorovanou událost automatického obnovení.</span><span class="sxs-lookup"><span data-stu-id="3bbab-103">Creates a monitored auto-reset event object.</span></span>  
+# <a name="ihostsyncmanagercreatemonitorevent-method"></a><span data-ttu-id="c453b-102">IHostSyncManager::CreateMonitorEvent – metoda</span><span class="sxs-lookup"><span data-stu-id="c453b-102">IHostSyncManager::CreateMonitorEvent Method</span></span>
+<span data-ttu-id="c453b-103">Vytvoří objekt monitorovanou událost automatického obnovení.</span><span class="sxs-lookup"><span data-stu-id="c453b-103">Creates a monitored auto-reset event object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="3bbab-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3bbab-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c453b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c453b-104">Syntax</span></span>  
   
 ```  
 HRESULT CreateMonitorEvent (  
@@ -36,41 +36,41 @@ HRESULT CreateMonitorEvent (
 );  
 ```  
   
-#### <a name="parameters"></a><span data-ttu-id="3bbab-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="3bbab-105">Parameters</span></span>  
+#### <a name="parameters"></a><span data-ttu-id="c453b-105">Parametry</span><span class="sxs-lookup"><span data-stu-id="c453b-105">Parameters</span></span>  
  `cookie`  
- <span data-ttu-id="3bbab-106">[in] Soubor cookie přidružit k objektu události.</span><span class="sxs-lookup"><span data-stu-id="3bbab-106">[in] A cookie to associate with the event object.</span></span>  
+ <span data-ttu-id="c453b-106">[in] Soubor cookie přidružit k objektu události.</span><span class="sxs-lookup"><span data-stu-id="c453b-106">[in] A cookie to associate with the event object.</span></span>  
   
  `ppEvent`  
- <span data-ttu-id="3bbab-107">[out] Ukazatel na adresu [ihostautoevent –](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instanci, nebo hodnota null, pokud nelze vytvořit objekt události.</span><span class="sxs-lookup"><span data-stu-id="3bbab-107">[out] A pointer to the address of an [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instance, or null if the event object could not be created.</span></span>  
+ <span data-ttu-id="c453b-107">[out] Ukazatel na adresu [ihostautoevent –](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instanci, nebo hodnota null, pokud nelze vytvořit objekt události.</span><span class="sxs-lookup"><span data-stu-id="c453b-107">[out] A pointer to the address of an [IHostAutoEvent](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md) instance, or null if the event object could not be created.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="3bbab-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="3bbab-108">Return Value</span></span>  
+## <a name="return-value"></a><span data-ttu-id="c453b-108">Návratová hodnota</span><span class="sxs-lookup"><span data-stu-id="c453b-108">Return Value</span></span>  
   
-|<span data-ttu-id="3bbab-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="3bbab-109">HRESULT</span></span>|<span data-ttu-id="3bbab-110">Popis</span><span class="sxs-lookup"><span data-stu-id="3bbab-110">Description</span></span>|  
+|<span data-ttu-id="c453b-109">HRESULT</span><span class="sxs-lookup"><span data-stu-id="c453b-109">HRESULT</span></span>|<span data-ttu-id="c453b-110">Popis</span><span class="sxs-lookup"><span data-stu-id="c453b-110">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="3bbab-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="3bbab-111">S_OK</span></span>|<span data-ttu-id="3bbab-112">`CreateMonitorEvent` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="3bbab-112">`CreateMonitorEvent` returned successfully.</span></span>|  
-|<span data-ttu-id="3bbab-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="3bbab-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="3bbab-114">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="3bbab-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
-|<span data-ttu-id="3bbab-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="3bbab-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="3bbab-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="3bbab-116">The call timed out.</span></span>|  
-|<span data-ttu-id="3bbab-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="3bbab-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="3bbab-118">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="3bbab-118">The caller does not own the lock.</span></span>|  
-|<span data-ttu-id="3bbab-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="3bbab-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="3bbab-120">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="3bbab-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
-|<span data-ttu-id="3bbab-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="3bbab-121">E_FAIL</span></span>|<span data-ttu-id="3bbab-122">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="3bbab-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="3bbab-123">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="3bbab-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="3bbab-124">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="3bbab-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
-|<span data-ttu-id="3bbab-125">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="3bbab-125">E_OUTOFMEMORY</span></span>|<span data-ttu-id="3bbab-126">Nedostatek paměti nebyly k dispozici k vytvoření objektu požadovanou událost.</span><span class="sxs-lookup"><span data-stu-id="3bbab-126">Not enough memory was available to create the requested event object.</span></span>|  
+|<span data-ttu-id="c453b-111">S_OK</span><span class="sxs-lookup"><span data-stu-id="c453b-111">S_OK</span></span>|<span data-ttu-id="c453b-112">`CreateMonitorEvent` bylo úspěšně vráceno.</span><span class="sxs-lookup"><span data-stu-id="c453b-112">`CreateMonitorEvent` returned successfully.</span></span>|  
+|<span data-ttu-id="c453b-113">HOST_E_CLRNOTAVAILABLE</span><span class="sxs-lookup"><span data-stu-id="c453b-113">HOST_E_CLRNOTAVAILABLE</span></span>|<span data-ttu-id="c453b-114">Modul CLR (CLR) se nenačetl do procesu nebo modul CLR je ve stavu, ve kterém nelze spouštět spravovaný kód nebo úspěšně zpracovat volání.</span><span class="sxs-lookup"><span data-stu-id="c453b-114">The common language runtime (CLR) has not been loaded into a process, or the CLR is in a state in which it cannot run managed code or process the call successfully.</span></span>|  
+|<span data-ttu-id="c453b-115">HOST_E_TIMEOUT</span><span class="sxs-lookup"><span data-stu-id="c453b-115">HOST_E_TIMEOUT</span></span>|<span data-ttu-id="c453b-116">Vypršel časový limit volání.</span><span class="sxs-lookup"><span data-stu-id="c453b-116">The call timed out.</span></span>|  
+|<span data-ttu-id="c453b-117">HOST_E_NOT_OWNER</span><span class="sxs-lookup"><span data-stu-id="c453b-117">HOST_E_NOT_OWNER</span></span>|<span data-ttu-id="c453b-118">Volající není vlastníkem zámku.</span><span class="sxs-lookup"><span data-stu-id="c453b-118">The caller does not own the lock.</span></span>|  
+|<span data-ttu-id="c453b-119">HOST_E_ABANDONED</span><span class="sxs-lookup"><span data-stu-id="c453b-119">HOST_E_ABANDONED</span></span>|<span data-ttu-id="c453b-120">Událost byla zrušena při zablokování vlákna nebo vlákénka čekal na něj.</span><span class="sxs-lookup"><span data-stu-id="c453b-120">An event was canceled while a blocked thread or fiber was waiting on it.</span></span>|  
+|<span data-ttu-id="c453b-121">E_FAIL</span><span class="sxs-lookup"><span data-stu-id="c453b-121">E_FAIL</span></span>|<span data-ttu-id="c453b-122">Došlo k neznámé katastrofických selhání.</span><span class="sxs-lookup"><span data-stu-id="c453b-122">An unknown catastrophic failure occurred.</span></span> <span data-ttu-id="c453b-123">Po návratu metody E_FAIL, modul CLR už nejsou použitelné v rámci procesu.</span><span class="sxs-lookup"><span data-stu-id="c453b-123">When a method returns E_FAIL, the CLR is no longer usable within the process.</span></span> <span data-ttu-id="c453b-124">Následující volání metody hostování vrací HOST_E_CLRNOTAVAILABLE.</span><span class="sxs-lookup"><span data-stu-id="c453b-124">Subsequent calls to hosting methods return HOST_E_CLRNOTAVAILABLE.</span></span>|  
+|<span data-ttu-id="c453b-125">E_OUTOFMEMORY</span><span class="sxs-lookup"><span data-stu-id="c453b-125">E_OUTOFMEMORY</span></span>|<span data-ttu-id="c453b-126">Nedostatek paměti nebyly k dispozici k vytvoření objektu požadovanou událost.</span><span class="sxs-lookup"><span data-stu-id="c453b-126">Not enough memory was available to create the requested event object.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="3bbab-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="3bbab-127">Remarks</span></span>  
- <span data-ttu-id="3bbab-128">`CreateMonitorEvent` Vrátí `IHostAutoEvent` , který používá modul CLR v rámci příslušné implementace spravovaného <xref:System.Threading.Monitor?displayProperty=nameWithType> typu.</span><span class="sxs-lookup"><span data-stu-id="3bbab-128">`CreateMonitorEvent` returns an `IHostAutoEvent` that the CLR uses in its implementation of the managed <xref:System.Threading.Monitor?displayProperty=nameWithType> type.</span></span> <span data-ttu-id="3bbab-129">Tato metoda zrcadlí Win32 `CreateEvent` funkci s hodnotou `false` zadaný pro `bManualReset` parametru.</span><span class="sxs-lookup"><span data-stu-id="3bbab-129">This method mirrors the Win32 `CreateEvent` function, with a value of `false` specified for the `bManualReset` parameter.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c453b-127">Poznámky</span><span class="sxs-lookup"><span data-stu-id="c453b-127">Remarks</span></span>  
+ <span data-ttu-id="c453b-128">`CreateMonitorEvent` Vrátí `IHostAutoEvent` , který používá modul CLR v rámci příslušné implementace spravovaného <xref:System.Threading.Monitor?displayProperty=nameWithType> typu.</span><span class="sxs-lookup"><span data-stu-id="c453b-128">`CreateMonitorEvent` returns an `IHostAutoEvent` that the CLR uses in its implementation of the managed <xref:System.Threading.Monitor?displayProperty=nameWithType> type.</span></span> <span data-ttu-id="c453b-129">Tato metoda zrcadlí Win32 `CreateEvent` funkci s hodnotou `false` zadaný pro `bManualReset` parametru.</span><span class="sxs-lookup"><span data-stu-id="c453b-129">This method mirrors the Win32 `CreateEvent` function, with a value of `false` specified for the `bManualReset` parameter.</span></span>  
   
- <span data-ttu-id="3bbab-130">Hostitele můžete použít soubor cookie k určení, které úloha čeká na monitorování voláním [iclrsyncmanager::getmonitorowner –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="3bbab-130">The host can use the cookie to determine which task is waiting on the monitor by calling the [ICLRSyncManager::GetMonitorOwner](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md) method.</span></span>  
+ <span data-ttu-id="c453b-130">Hostitele můžete použít soubor cookie k určení, které úloha čeká na monitorování voláním [iclrsyncmanager::getmonitorowner –](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md) metody.</span><span class="sxs-lookup"><span data-stu-id="c453b-130">The host can use the cookie to determine which task is waiting on the monitor by calling the [ICLRSyncManager::GetMonitorOwner](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-getmonitorowner-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="3bbab-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="3bbab-131">Requirements</span></span>  
- <span data-ttu-id="3bbab-132">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3bbab-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c453b-131">Požadavky</span><span class="sxs-lookup"><span data-stu-id="c453b-131">Requirements</span></span>  
+ <span data-ttu-id="c453b-132">**Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c453b-132">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="3bbab-133">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="3bbab-133">**Header:** MSCorEE.h</span></span>  
+ <span data-ttu-id="c453b-133">**Záhlaví:** MSCorEE.h</span><span class="sxs-lookup"><span data-stu-id="c453b-133">**Header:** MSCorEE.h</span></span>  
   
- <span data-ttu-id="3bbab-134">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="3bbab-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
+ <span data-ttu-id="c453b-134">**Knihovna:** zahrnuty jako prostředek v MSCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c453b-134">**Library:** Included as a resource in MSCorEE.dll</span></span>  
   
- <span data-ttu-id="3bbab-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3bbab-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="c453b-135">**Verze rozhraní .NET framework:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c453b-135">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3bbab-136">Viz také</span><span class="sxs-lookup"><span data-stu-id="3bbab-136">See Also</span></span>  
- [<span data-ttu-id="3bbab-137">ICLRSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3bbab-137">ICLRSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
- [<span data-ttu-id="3bbab-138">IHostAutoEvent – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3bbab-138">IHostAutoEvent Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  
- [<span data-ttu-id="3bbab-139">IHostSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="3bbab-139">IHostSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
- [<span data-ttu-id="3bbab-140">Monitorování</span><span class="sxs-lookup"><span data-stu-id="3bbab-140">Monitors</span></span>](https://msdn.microsoft.com/library/33fe4aef-b44b-42fd-9e72-c908e39e75db)
+## <a name="see-also"></a><span data-ttu-id="c453b-136">Viz také</span><span class="sxs-lookup"><span data-stu-id="c453b-136">See Also</span></span>  
+ [<span data-ttu-id="c453b-137">ICLRSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c453b-137">ICLRSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/iclrsyncmanager-interface.md)  
+ [<span data-ttu-id="c453b-138">IHostAutoEvent – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c453b-138">IHostAutoEvent Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostautoevent-interface.md)  
+ [<span data-ttu-id="c453b-139">IHostSyncManager – rozhraní</span><span class="sxs-lookup"><span data-stu-id="c453b-139">IHostSyncManager Interface</span></span>](../../../../docs/framework/unmanaged-api/hosting/ihostsyncmanager-interface.md)  
+ <xref:System.Threading.Monitor>
