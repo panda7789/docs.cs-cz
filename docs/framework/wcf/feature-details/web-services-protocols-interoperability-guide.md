@@ -2,12 +2,12 @@
 title: Průvodce interoperabilitou protokolů webových služeb
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-ms.openlocfilehash: 37416a80c8b6f2ac086dbface1cda37609698bfc
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 9aeceff9dc2b714016d2f7c379e538d885489bb9
+ms.sourcegitcommit: 4621e67f69e7a9503ea93313ff60d69683207889
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842152"
+ms.lasthandoff: 10/24/2018
+ms.locfileid: "49995396"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Průvodce interoperabilitou protokolů webových služeb
 Windows Communication Foundation (WCF) implementuje řadu protokoly webové služby. Mnohé z těchto protokolů zahrnout několik možností a bodů rozšiřitelnosti ponecháno na rozhodnutí implementátora. Toto téma obsahuje seznam protokoly webové služby, které implementuje WCF. Další témata v této části poskytují podrobné informace o implementaci pro každý protokol podporován.  
@@ -36,7 +36,7 @@ Windows Communication Foundation (WCF) implementuje řadu protokoly webové slu�
 |W3C webových služeb adresování Core 1.0-|[Webové služby adresování Core 1.0-](https://go.microsoft.com/fwlink/?LinkId=96688)|  
 |W3C webových služeb adresování 1.0 - vazba SOAP|[Webové služby adresování 1.0 - vazba SOAP](https://go.microsoft.com/fwlink/?LinkId=96689)|  
 |W3C webových služeb adresování 1.0 - WSDL vazby *|[Webové služby adresování 1.0 - Vazba WSDL](https://go.microsoft.com/fwlink/?LinkId=96690)|  
-|Adresování 1.0 metadat W3C webové služby|[Webové služby adresování 1.0 - metadat](http://www.w3.org/TR/ws-addr-metadata/)|  
+|Adresování 1.0 metadat W3C webové služby|[Webové služby adresování 1.0 - metadat](https://www.w3.org/TR/ws-addr-metadata/)|  
 |Vazba WSDL SOAP1.1|[Web Services Description Language (WSDL) 1.1](https://go.microsoft.com/fwlink/?LinkId=96160)|  
 |Vazba WSDL SOAP1.2|[Rozšíření WSDL 1.1 vazbu pro protokol SOAP 1.2](https://go.microsoft.com/fwlink/?LinkId=96691)|  
   

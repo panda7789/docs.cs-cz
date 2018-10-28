@@ -2,12 +2,12 @@
 title: Stream
 ms.date: 03/30/2017
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
-ms.openlocfilehash: 54601b92efcb621d36432d870514fe9a9dc0b46e
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.openlocfilehash: ed77d8231df8a2272e398f5b1a126c6ed8cab354
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43861111"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50191178"
 ---
 # <a name="stream"></a>Stream
 Stream ukázce použití streamování komunikace režim přenosu. Služba zpřístupňuje několik operací, které odesílání a příjem streamů. Tato ukázka je v místním prostředí. Klient a služba se o programy konzoly.  
@@ -20,7 +20,7 @@ Stream ukázce použití streamování komunikace režim přenosu. Služba zpř�
 ## <a name="streaming-and-service-contracts"></a>Streamování a kontrakty služeb  
  Streamování je něco, co vzít v úvahu při navrhování kontraktu služby. Pokud operace přijímá nebo vrací velké množství dat, měli byste zvážit, tato data, aby se zabránilo vysoké využití paměti z důvodu ukládání do vyrovnávací paměti zpráv vstupních nebo výstupních datových proudů. Pro streamování dat, parametr, který obsahuje, data musí být jediným parametrem ve zprávě. Například pokud vstupní zprávy je ten, který má být datovým proudem, operace musí mít přesně jeden vstupní parametr. Podobně při odesílání zprávy výstup operace musí mít právě jeden výstupní parametr nebo návratovou hodnotu. V případě, parametr nebo návratovou hodnotu typu musí být buď `Stream`, `Message`, nebo `IXmlSerializable`. Tady je kontrakt služby používané v tomto příkladu datových proudů.  
   
-```  
+```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples")]  
 public interface IStreamingSample  
 {  
@@ -68,7 +68,7 @@ public interface IStreamingSample
   
  `GetReversedStream` vytvoří a vrátí novou instanci třídy `ReverseStream`. Vlastní zpracování se stane, jak systém přečte od `ReverseStream` objektu. `ReverseStream.Read` Implementace čte blok bajtů ze základního souboru, obrátí je a potom vrátí obrácený bajtů. Toto zpětné celý soubor obsahu; jeden blok bajtů se obrátí najednou. Toto je příklad, chcete-li zobrazit, jak můžete provádět zpracování datového proudu jako obsah se číst nebo zapisovat z a do datového proudu.  
   
-```  
+```csharp
 class ReverseStream : Stream  
 {  
   
@@ -117,7 +117,7 @@ class ReverseStream : Stream
   
  Výstup služby:  
   
-```  
+```console  
 The streaming service is ready.  
 Press <ENTER> to terminate service.  
   
@@ -131,7 +131,7 @@ File D:\...\uploadedfile saved
   
  Výstup klienta:  
   
-```  
+```console  
 Press <ENTER> when service is ready  
 ------ Using HTTP ------   
 Calling GetStream()  

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 9e92c253aa1981065274dc3413f9b8888b5f8849
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: a0ec7b1a91dc701093131b8807b25e66d291a746
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43500660"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188315"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Výjimky a jejich zpracování (Průvodce programováním v C#)
 Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným nebo výjimečné situace, ke kterým dochází při spuštění programu. Používá pro zpracování výjimek `try`, `catch`, a `finally` klíčová slova vyzkoušet akce, které nemusí proběhnout úspěšně, zpracování selhání, pokud se rozhodnete, že je přijatelné, provedete to tak a následně vyčistit prostředky. Výjimky mohou být generovány modulem common language runtime (CLR), rozhraní .NET Framework nebo jakékoli knihovny třetích stran nebo kódem aplikace. Výjimky jsou vytvářeny instalační sadou `throw` – klíčové slovo.  
@@ -43,7 +43,7 @@ Funkce nápovědy pro zpracování výjimek jazyka C# zacházet s nečekaným ne
   
 -   V kódu `finally` blok je spuštěn i v případě, že dojde k výjimce. Použití `finally` bloku k uvolnění prostředků, třeba když chcete zavřít všechny datové proudy nebo soubory, které byly otevřeny `try` bloku.  
   
--   Spravované výjimky v rozhraní .NET Framework se implementuje nad mechanismus zpracování výjimek strukturované Win32. Další informace najdete v tématu [strukturovaného zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [A havárií kurz na Hlubin systému Win32 strukturovaného zpracování výjimek](http://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).  
+-   Spravované výjimky v rozhraní .NET Framework se implementuje nad mechanismus zpracování výjimek strukturované Win32. Další informace najdete v tématu [strukturovaného zpracování výjimek (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) a [A havárií kurz na Hlubin systému Win32 strukturovaného zpracování výjimek](https://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).  
   
 ## <a name="related-sections"></a>Související oddíly  
  Zobrazit další informace o výjimkách a zpracování výjimek v následujících tématech:  

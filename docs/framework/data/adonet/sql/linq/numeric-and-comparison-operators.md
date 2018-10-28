@@ -2,12 +2,12 @@
 title: Číselné a porovnávací operátory
 ms.date: 03/30/2017
 ms.assetid: 25b4a26a-06f2-4f80-87a9-76705ed46197
-ms.openlocfilehash: a7a455730860e2b11a5ceff5a70934502b312e19
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 733c1e494c29f04aa06a4159c3b1dae219f01b44
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43515063"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50180333"
 ---
 # <a name="numeric-and-comparison-operators"></a>Číselné a porovnávací operátory
 Aritmetické operace a porovnání operátory fungovat podle očekávání v modulu common language runtime (CLR) s výjimkou následujícím způsobem:  
@@ -59,5 +59,5 @@ Aritmetické operace a porovnání operátory fungovat podle očekávání v mod
   
 ## <a name="see-also"></a>Viz také  
  [Datové typy a funkce](../../../../../../docs/framework/data/adonet/sql/linq/data-types-and-functions.md)  
- [Operátory jazyka C#](https://msdn.microsoft.com/library/0301e31f-22ad-49af-ac3c-d5eae7f0ac43)  
+ [Operátory jazyka C#](../../../../../../docs/csharp/language-reference/operators/index.md)  
  [Operátory](../../../../../visual-basic/language-reference/operators/index.md)

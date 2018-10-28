@@ -13,24 +13,24 @@ helpviewer_keywords:
 - images [Windows Forms], adding to ImageList component
 - images [Windows Forms], displaying with controls
 ms.assetid: c5eacc56-f769-4e2e-bfb7-f756620913db
-ms.openlocfilehash: e5c563c4f46924a95936bc5a51862230f2cbdb99
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 28dce033064517a427750ef99b1cd4f8bccaaf09
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33527635"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50182967"
 ---
 # <a name="how-to-add-or-remove-images-with-the-windows-forms-imagelist-component"></a>Postupy: Přidání a odebrání obrázků se součástí Windows Forms ImageList
-Windows Forms <xref:System.Windows.Forms.ImageList> součásti obvykle naplněný obrázky dříve, než je přidružena k ovládacímu prvku. Můžete však přidat a odebrat bitové kopie po přidružení seznamu obrázků s ovládacím prvkem.  
+Windows Forms <xref:System.Windows.Forms.ImageList> komponenty se obvykle vyplní imagí dřív, než bude přidružena k ovládacímu prvku. Můžete ale přidávat a odebírat Image po přidružení seznamu obrázků s ovládacím prvkem.  
   
 > [!NOTE]
->  Když odeberete bitové kopie, ověřte, zda <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> vlastnosti všech přidružených ovládacích prvků je stále platný.  
+>  Když odeberete Image, ověřte, že <xref:System.Windows.Forms.ButtonBase.ImageIndex%2A> vlastnosti všech přidružených ovládacích prvků je stále platný.  
   
 ### <a name="to-add-images-programmatically"></a>Přidání bitové kopie prostřednictvím kódu programu  
   
 -   Použití <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> metoda seznamu obrázků <xref:System.Windows.Forms.ImageList.Images%2A> vlastnost.  
   
-     V následujícím příkladu kódu cesta pro umístění image je nastavena **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů, které je spuštěn operační systém Windows bude obsahovat této složky. Výběr toto umístění také umožňuje uživatelům, kteří mají minimální systém úrovně přístupu další aplikaci bezpečně spustit. Následující příklad kódu vyžaduje, abyste měli formuláře se <xref:System.Windows.Forms.ImageList> ovládací prvek již přidán.  
+     V následujícím příkladu kódu nastavena cesta pro umístění image je **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows bude obsahovat této složky. Výběrem tohoto umístění také umožňuje uživatelům, kteří mají minimální systém úrovně přístupu Další bezpečné spuštění aplikace. Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> ovládací prvek již přidán.  
   
     ```vb  
     Public Sub LoadImage()  
@@ -76,9 +76,9 @@ Windows Forms <xref:System.Windows.Forms.ImageList> součásti obvykle naplněn�
   
 ### <a name="to-add-images-with-a-key-value"></a>Přidání bitové kopie s hodnotou klíče.  
   
--   Použijte jednu z <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> metody seznamu obrázků <xref:System.Windows.Forms.ImageList.Images%2A> vlastnost, která přebírá hodnotu klíče.  
+-   Použijte jednu z <xref:System.Windows.Forms.ImageList.ImageCollection.Add%2A> metody ze seznamu obrázků <xref:System.Windows.Forms.ImageList.Images%2A> vlastnost, která přebírá hodnotu klíče.  
   
-     V následujícím příkladu kódu cesta pro umístění image je nastavena **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů, které je spuštěn operační systém Windows bude obsahovat této složky. Výběr toto umístění také umožňuje uživatelům, kteří mají minimální systém úrovně přístupu další aplikaci bezpečně spustit. Následující příklad kódu vyžaduje, abyste měli formuláře se <xref:System.Windows.Forms.ImageList> ovládací prvek již přidán.  
+     V následujícím příkladu kódu nastavena cesta pro umístění image je **dokumenty** složky. Toto umístění se používá, protože můžete předpokládat, že většina počítačů, na kterých běží operační systém Windows bude obsahovat této složky. Výběrem tohoto umístění také umožňuje uživatelům, kteří mají minimální systém úrovně přístupu Další bezpečné spuštění aplikace. Následující příklad kódu vyžaduje, abyste měli formulář s <xref:System.Windows.Forms.ImageList> ovládací prvek již přidán.  
   
     ```vb  
     Public Sub LoadImage()  
@@ -105,11 +105,9 @@ public void addImage()
 }  
 ```  
   
-1.  
+### <a name="to-remove-all-images-programmatically"></a>Chcete-li odebrat všechny bitové kopie prostřednictvím kódu programu  
   
-### <a name="to-remove-all-images-programmatically"></a>Chcete-li odebrat všechny Image prostřednictvím kódu programu  
-  
--   Použití <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> odebrat jedné image – metoda  
+-   Použití <xref:System.Windows.Forms.ImageList.ImageCollection.Remove%2A> metoda odebrání jedné image  
   
      , - nebo -  
   
@@ -129,9 +127,9 @@ imageList1.Images.Remove(myImage);
 imageList1.Images.Clear();  
 ```  
   
-### <a name="to-remove-images-by-key"></a>Chcete-li obrazy pomocí klíče  
+### <a name="to-remove-images-by-key"></a>Chcete-li odebrat imagí pomocí klíče  
   
--   Použití <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> metoda odebrat jedinou bitovou kopii pomocí jeho klíče.  
+-   Použití <xref:System.Windows.Forms.ImageList.ImageCollection.RemoveByKey%2A> metoda odebrání jedné image podle jeho klíče.  
   
     ```vb  
     ' Removes the image named "myPhoto" from the list.  
@@ -144,6 +142,6 @@ imageList1.Images.RemoveByKey("myPhoto");
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Komponenta ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)  
- [Přehled komponenty ImageList](../../../../docs/framework/winforms/controls/imagelist-component-overview-windows-forms.md)  
- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)
+- [Komponenta ImageList](../../../../docs/framework/winforms/controls/imagelist-component-windows-forms.md)
+- [Přehled komponenty ImageList](../../../../docs/framework/winforms/controls/imagelist-component-overview-windows-forms.md)
+- [Obrázky, rastrové obrázky a metasoubory](../../../../docs/framework/winforms/advanced/images-bitmaps-and-metafiles.md)

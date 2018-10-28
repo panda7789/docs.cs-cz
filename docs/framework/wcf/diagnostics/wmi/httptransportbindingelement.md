@@ -2,19 +2,19 @@
 title: HttpTransportBindingElement
 ms.date: 03/30/2017
 ms.assetid: 088a7bce-6bb2-4839-ad74-f68d4b1aa0f9
-ms.openlocfilehash: 1975fd2e04a5c9cdb68bc838802abafbd781b7e9
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 34ad4b8534d082d7f5248d42d70ca5bd0647a5dc
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33487017"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49454314"
 ---
 # <a name="httptransportbindingelement"></a>HttpTransportBindingElement
 HttpTransportBindingElement  
   
 ## <a name="syntax"></a>Syntaxe  
   
-```  
+```csharp
 class HttpTransportBindingElement : TransportBindingElement  
 {  
   boolean AllowCookies;  
@@ -33,98 +33,98 @@ class HttpTransportBindingElement : TransportBindingElement
 ```  
   
 ## <a name="methods"></a>Metody  
- Třída HttpTransportBindingElement nedefinuje žádné metody.  
+ Třída elementu HttpTransportBindingElement nedefinuje žádné metody.  
   
 ## <a name="properties"></a>Vlastnosti  
- Třída HttpTransportBindingElement má následující vlastnosti:  
+ Třída elementu HttpTransportBindingElement má následující vlastnosti:  
   
 ### <a name="allowcookies"></a>allowCookies  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která určuje, jestli klient přijímá soubory cookie a rozšiřuje je na dalších požadavků.  
+ Hodnota, která určuje, zda klient přijímá soubory cookie a šíří je v budoucích požadavcích.  
   
 ### <a name="authenticationscheme"></a>AuthenticationScheme  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Schéma ověřování používá k ověření klientských požadavků zpracovávaných naslouchací proces protokolu HTTP.  
+ Schéma ověření použité pro ověřování požadavků klientů, jenž jsou zpracovány při naslouchání protokolu HTTP.  
   
 ### <a name="bypassproxyonlocal"></a>BypassProxyOnLocal  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která označuje, zda jsou ignorovány proxy pro místní adresy.  
+ Hodnota, která určuje, zda jsou proxy servery pro lokální adresy ignorovány.  
   
 ### <a name="hostnamecomparisonmode"></a>hostNameComparisonMode  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která označuje, zda se ke zpřístupnění služby při shodujícím v identifikátoru URI používá název hostitele.  
+ Hodnota, která určuje, zda je ke zpřístupnění služby při shodě s identifikátoru URI používá název hostitele.  
   
-### <a name="keepaliveenabled"></a>KeepAliveEnabled  
- Datový typ: logická hodnota  
+### <a name="keepaliveenabled"></a>keepAliveEnabled  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Když je povolené, udržely připojení prostřednictvím protokolu HTTP aktivní bez ohledu na úrovni aktivity.  
+ Při povolení připojení protokolu HTTP jsou zachováno bez ohledu na úroveň činnosti.  
   
-### <a name="maxbuffersize"></a>maxBufferSize  
+### <a name="maxbuffersize"></a>Třída maxBufferSize  
  Datový typ: sint32  
   
  Přístup k typu: jen pro čtení  
   
- Maximální velikost fondu vyrovnávací paměti.  
+ Maximální velikost fondu vyrovnávacích pamětí.  
   
 ### <a name="proxyaddress"></a>proxyAddress  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Identifikátor URI, který obsahuje adresu proxy, který chcete použít pro požadavky HTTP.  
+ Identifikátor URI, který obsahuje adresu proxy serveru použitého pro požadavky HTTP.  
   
-### <a name="proxyauthenticationscheme"></a>ProxyAuthenticationScheme  
+### <a name="proxyauthenticationscheme"></a>proxyAuthenticationScheme  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Schéma ověřování používá k ověření klientských požadavků zpracovávaných proxy serveru HTTP.  
+ Schéma ověření použité pro ověřování požadavků klientů zpracovávaných HTTP proxy.  
   
-### <a name="realm"></a>sféry  
+### <a name="realm"></a>Sféra  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
  Sféra ověření.  
   
-### <a name="transfermode"></a>transferMode  
+### <a name="transfermode"></a>režim přenosu  
  Datový typ: řetězec  
   
  Přístup k typu: jen pro čtení  
   
- Hodnotu, která určuje, zda jsou zprávy do vyrovnávací paměti nebo prostřednictvím datového proudu nebo požadavku nebo odpovědi.  
+ Hodnota, která určuje, zda jsou zprávy ukládány do vyrovnávací paměti nebo prostřednictvím datového proudu nebo žádost nebo odpověď.  
   
-### <a name="unsafeconnectionntlmauthentication"></a>UnsafeConnectionNtlmAuthentication  
- Datový typ: logická hodnota  
+### <a name="unsafeconnectionntlmauthentication"></a>unsafeConnectionNtlmAuthentication  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která určuje, zda je na serveru povoleno sdílení nezabezpečené připojení.  
+ Hodnota, která určuje, zda je na serveru povoleno nezabezpečené sdílení připojení.  
   
 ### <a name="usedefaultwebproxy"></a>useDefaultWebProxy  
- Datový typ: logická hodnota  
+ Datový typ: boolean  
   
  Přístup k typu: jen pro čtení  
   
- Hodnota, která určuje, zda jsou nastavení proxy serveru celého systému použít místo nastavení specifická pro uživatele.  
+ Hodnota, která určuje, jestli uživatelovo specifické nastavení jsou upřednostňována nastavení proxy pro celý počítač.  
   
 ## <a name="requirements"></a>Požadavky  
   
-|MOF|Deklarované v Servicemodel.mof.|  
+|SOUBOR MOF|Deklarované v Servicemodel.mof.|  
 |---------|-----------------------------------|  
 |Obor názvů|Definované v root\ServiceModel|  
   

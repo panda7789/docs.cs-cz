@@ -8,12 +8,12 @@ helpviewer_keywords:
 - float keyword [C#]
 - floating-point numbers [C#], float keyword
 ms.assetid: 1e77db7b-dedb-48b7-8dd1-b055e96a9258
-ms.openlocfilehash: 98f89ba3d79f7679b69ce10fd875b3caf69c5257
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: da697aa6f1f429418a69d9f58a13f46a3da9ac74
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47157701"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187176"
 ---
 # <a name="float-c-reference"></a>float (Referenční dokumentace jazyka C#)
 
@@ -21,7 +21,7 @@ ms.locfileid: "47157701"
 
 |Typ|Přibližný rozsah|Přesnost|Typ formátu .NET|  
 |----------|-----------------------|---------------|-------------------------|  
-|`float`|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|7 číslic|<xref:System.Single?displayProperty=nameWithType>|  
+|`float`|±1.5 x 10<sup>−45</sup> k ±3.4 x 10<sup>38</sup>|~ 6. až 9 číslic|<xref:System.Single?displayProperty=nameWithType>|  
 
 ## <a name="literals"></a>Literály
 
@@ -51,7 +51,7 @@ Výraz s plovoucí desetinnou čárkou může obsahovat následující sady hodn
 
 - Konečná sada nenulové hodnoty
 
-Další informace o těchto hodnotách naleznete v části Standard IEEE pro binární aritmetiku, k dispozici na [IEEE](http://www.ieee.org) webu.
+Další informace o těchto hodnotách naleznete v části Standard IEEE pro binární aritmetiku, k dispozici na [IEEE](https://www.ieee.org) webu.
 
 ## <a name="example"></a>Příklad
 

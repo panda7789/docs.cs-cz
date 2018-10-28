@@ -2,12 +2,12 @@
 title: Podrobná syntaxe (F#)
 description: 'Informace o rozdílu mezi syntaxi podrobné a jednoduchý programovací jazyk F #.'
 ms.date: 05/16/2016
-ms.openlocfilehash: b4f2354738da4692cb444e5e7dd9531d80d26664
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: e697c6fe619df7ffe12f7d4e2a234a5a5cb401ff
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45972316"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50044760"
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe
 
@@ -35,7 +35,7 @@ složené výrazy
 ```
 </td><td>
 
-```
+```fsharp
 <expression1>; <expression2>
 ```
 
@@ -43,11 +43,11 @@ složené výrazy
 </tr>
 <tr><td>
 
-
 vnořené `let` vazby
 
 </td><td>
-```
+
+```fsharp
 let f x =
     let a = 1
     let b = 2
@@ -56,7 +56,7 @@ let f x =
 
 </td><td>
 
-```
+```fsharp
 let f x =
     let a = 1 in
     let b = 2 in
@@ -69,7 +69,7 @@ let f x =
 blok kódu
 </td><td>
 
-```
+```fsharp
 (
     <expression1>
     <expression2>
@@ -78,7 +78,7 @@ blok kódu
 
 </td><td>
 
-```
+```fsharp
 begin
     <expression1>;
     <expression2>;
@@ -90,7 +90,7 @@ end
 `for...do`
 </td><td>
 
-```
+```fsharp
 for counter = start to finish do
     ...
 ```
@@ -109,14 +109,14 @@ done
 `while...do`
 </td><td>
 
-```
+```fsharp
 while <condition> do
     ...
 ```
 
 </td><td>
 
-```
+```fsharp
 while <condition> do
     ...
 done
@@ -128,14 +128,14 @@ done
 `for...in`
 </td><td>
 
-```
+```fsharp
 for var in start .. finish do
     ...
 ```
 
 </td><td>
 
-```
+```fsharp
 for var in start .. finish do
     ...
 done
@@ -147,14 +147,14 @@ done
 `do`
 </td><td>
 
-```
+```fsharp
 do
     ...
 ```
 
 </td><td>
 
-```
+```fsharp
 do
     ...
 in
@@ -165,7 +165,7 @@ in
 <tr><td>Záznam
 </td><td>
 
-```
+```fsharp
 type <record-name> =
     {
         <field-declarations>
@@ -175,7 +175,7 @@ type <record-name> =
 
 </td><td>
 
-```
+```fsharp
 type <record-name> =
     {
         <field-declarations>
@@ -189,29 +189,34 @@ type <record-name> =
 </tr>
 <tr><td>třída
 </td><td>
+
+```fsharp
+type <class-name>(<params>) =
+    ...
 ```
-type <class-name>(<params>) = ... ```
 
 </td><td>
 
-```
+```fsharp
 type <class-name>(<params>) =
     class
         ...
     end
 ```
+
 </td>
 </tr>
 <tr><td>– struktura</td><td>
 
-```
+```fsharp
 [<StructAttribute>]
 type <structure-name> =
     ...
 ```
+
 </td><td>
 
-```
+```fsharp
 type <structure-name> =
     struct
         ...
@@ -222,16 +227,17 @@ type <structure-name> =
 </tr>
 <tr><td>rozlišovaná sjednocení</td><td>
 
-```
+```fsharp
 type <union-name> =
     | ...
     | ...
     ...
     <value-or-member definitions>
 ```
+
 </td><td>
 
-```
+```fsharp
 type <union-name> =
     | ...
     | ...
@@ -245,13 +251,13 @@ type <union-name> =
 </tr>
 <tr><td>rozhraní</td><td>
 
-```
+```fsharp
 type <interface-name> =
     ...
 ```
 </td><td>
 
-```
+```fsharp
 type <interface-name> =
     interface
         ...
@@ -262,7 +268,7 @@ type <interface-name> =
 </tr>
 <tr><td>výraz objektu</td><td>
 
-```
+```fsharp
 { new <type-name>
     with
         <value-or-member-definitions>
@@ -272,7 +278,7 @@ type <interface-name> =
 
 </td><td>
 
-```
+```fsharp
 { new <type-name>
     with
         <value-or-member-definitions>
@@ -285,7 +291,7 @@ type <interface-name> =
 </tr>
 <tr><td>implementace rozhraní</td><td>
 
-```
+```fsharp
 interface <interface-name>
     with
         <value-or-member-definitions>
@@ -293,7 +299,7 @@ interface <interface-name>
 
 </td><td>
 
-```
+```fsharp
 interface <interface-name>
     with
         <value-or-member-definitions>
@@ -304,7 +310,7 @@ interface <interface-name>
 </tr>
 <tr><td>Type – rozšíření</td><td>
 
-```
+```fsharp
 type <type-name>
     with
         <value-or-member-definitions>
@@ -312,7 +318,7 @@ type <type-name>
 
 </td><td>
 
-```
+```fsharp
 type <type-name>
     with
         <value-or-member-definitions>
@@ -323,14 +329,14 @@ type <type-name>
 </tr>
 <tr><td>module</td><td>
 
-```
+```fsharp
 module <module-name> =
     ...
 ```
 
 </td><td>
 
-```
+```fsharp
 module <module-name> =
     begin
         ...

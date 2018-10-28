@@ -5,17 +5,15 @@ helpviewer_keywords:
 - highentropyva compiler option (Visual Basic)
 - /highentropyva compiler option (Visual Basic)
 ms.assetid: ff25f20a-6ca2-467b-9e52-5cf439f5028e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: fef3f922d3089eaca1762ffe35fa38cfe94baf22
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 5d948817d4bc71aa31c5890f6740248f4c309588
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33656312"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50181498"
 ---
 # <a name="-highentropyva-visual-basic"></a>-highentropyva (Visual Basic)
-Určuje, zda spustitelný soubor 64-bit nebo jenom spustitelný soubor, která je označena kvalifikátorem [/platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) – možnost kompilátoru podporuje vysokou entropie místo rozložení náhodného přeskupování (technologie ASLR) adres.  
+Označuje, zda spustitelný soubor 64-bit nebo spustitelný soubor, který je označen [/platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) – možnost kompilátoru podporuje vysokou entropie adresu místo rozložení náhodné (ASLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,13 +23,13 @@ Určuje, zda spustitelný soubor 64-bit nebo jenom spustitelný soubor, která j
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Volitelné. Možnost je vypnuta ve výchozím nastavení nebo pokud zadáte `-highentropyva-`. Možnost zapnutý, pokud zadáte `-highentropyva` nebo `-highentropyva+`.  
+ Volitelné. Možnost je vypnuto ve výchozím nastavení nebo pokud zadáte `-highentropyva-`. Možnost zapnutá, pokud zadáte `-highentropyva` nebo `-highentropyva+`.  
   
 ## <a name="remarks"></a>Poznámky  
- Pokud zadáte tuto možnost, můžete kompatibilní verze jádro systému Windows použít vyšší stupňů entropie při jádra randomizes rozložení prostoru adres procesu v rámci technologie ASLR. Pokud jádra používá vyšší stupňů entropie, oblasti paměti, jako je například zásobníky a haldách můžete přidělit větší počet adres. V důsledku toho je obtížnější uhádnout umístění paměti konkrétní oblasti.  
+ Pokud zadáte tuto možnost, kompatibilní verze jádra Windows můžete použít vyšší stupeň entropie při jádra náhodně rozložení prostoru adres procesu určí jako součást technologie ASLR. Pokud jádru používá vyšší stupeň entropie, větší počet adres je možné přidělit paměti oblastech, jako je zásobníky a haldy. V důsledku toho je obtížnější uhádnout umístění konkrétní paměťové oblasti.  
   
- Pokud možnost je na cílový spustitelný soubor a všechny moduly, na které závisí musí být schopen zpracování ukazatele hodnot, které jsou větší než 4 gigabajty (GB), pokud se tyto moduly se spustí jako 64bitové procesy.  
+ Při možnost je pro cílový spustitelný soubor a všechny moduly, na které závisí musí být schopná zpracovat hodnoty ukazatele, které jsou větší než 4 gigabajty (GB), pokud tyto moduly spuštěné jako 64bitové procesy.  
   
 ## <a name="see-also"></a>Viz také  
- [Visual Basic – kompilátor příkazového řádku](../../../visual-basic/reference/command-line-compiler/index.md)  
+ [Kompilátor příkazového řádku jazyka Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)  
  [Příkazové řádky ukázkové kompilace](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)

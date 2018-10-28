@@ -2,12 +2,12 @@
 title: 'Kurz: Vytvoření zprostředkovatele typů (F #)'
 description: 'Zjistěte, jak vytvořit vlastní poskytovatelé typu jazyka F # v jazyce F # 3.0 prozkoumáním několik jednoduchý typ zprostředkovatelů pro ilustraci základních konceptů.'
 ms.date: 05/16/2016
-ms.openlocfilehash: 3c998377b2c3a408d536ef416f3799bf7f04b6bd
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: c9dedbeed3ee081a6b1e1ffffe843fc962d2c60b
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47397956"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183916"
 ---
 # <a name="tutorial-create-a-type-provider"></a>Kurz: Vytvoření zprostředkovatele typů
 
@@ -353,7 +353,7 @@ t.AddMembersDelayed(fun () ->
           p.AddXmlDocDelayed(fun () -> 
               sprintf "This is StaticProperty%d on NestedType" i)
 
-          yield p ]
+          yield p ]
 
     staticPropsInNestedType)
 
@@ -748,7 +748,7 @@ Tato část ukazuje, jak zadat typ, který vám umožní získat řádky s `Dist
 
 - Názvy záhlaví jsou buď jednotky bez nebo mít formát _služba ._protokol "Název" (jednotky) a neobsahují čárky.
 
-- Jednotky jsou všechny jednotky systém mezinárodní (SI) [Microsoft.FSharp.Data.UnitSystems.SI.UnitNames – modul (F #)](https://msdn.microsoft.com/library/3cb43485-11f5-4aa7-a779-558f19d4013b) modul definuje.
+- Jednotky jsou všechny jednotky mezinárodní systému (SI) [Microsoft.FSharp.Data.UnitSystems.SI.UnitNames modulu (F#)](https://msdn.microsoft.com/library/3cb43485-11f5-4aa7-a779-558f19d4013b) modul definuje.
 
 - Jednotky jsou všechny jednoduché (například měřit) spíše než složený (například měřiče za sekundu).
 
@@ -1110,7 +1110,7 @@ Mechanismus poskytovatele typu v jazyce F # má následující omezení:
 
 ## <a name="development-tips"></a>Tipy pro vývoj
 
-Následující tipy mohou být užitečné během procesu vývoje.
+Následující tipy mohou být užitečné během procesu vývoje:
 
 ### <a name="run-two-instances-of-visual-studio"></a>Spusťte dvě instance sady Visual Studio
 

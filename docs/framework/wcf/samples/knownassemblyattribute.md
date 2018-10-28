@@ -2,12 +2,12 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 02d151ee322cb2793df6f31e5e4b72dfb1027aec
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: d17ded99e08fa4fb99fd87e220045c2869a35805
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43522853"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50188232"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
 Tato ukázka předvádí, jak lze přizpůsobit procesů serializace a deserializace pomocí <xref:System.Runtime.Serialization.DataContractResolver> třídy. Tento příklad ukazuje, jak dynamicky přidat známé typy během serializace a deserializace.  
@@ -15,7 +15,7 @@ Tato ukázka předvádí, jak lze přizpůsobit procesů serializace a deseriali
 ## <a name="sample-details"></a>Ukázka podrobnosti  
  Tento příklad se skládá ze čtyř projekty. Jeden z nich odpovídá služby, které budou hostované službou IIS, který definuje následující kontrakt služby.  
   
-```  
+```csharp
 // Definition of a service contract.  
 [ServiceContract(Namespace = "http://Microsoft.Samples.KAA")]  
 [KnownAssembly("Types")]  
@@ -40,7 +40,7 @@ public interface IDataContractCalculator
   
  Jak je znázorněno v následujícím příkladu se implementuje kontrakt služby.  
   
-```  
+```csharp
 // Service class that implements the service contract.  
  public class DataContractCalculatorService : IDataContractCalculator  
  {  
@@ -86,7 +86,7 @@ public interface IDataContractCalculator
   
  Jiný projekt odpovídá danému klienta, který komunikuje se serverem a volá metody, které vystavuje. Definice klienta je znázorněno v následujícím příkladu.  
   
-```  
+```csharp  
  // Client implementation code.  
  class Client  
  {  
@@ -193,7 +193,7 @@ public interface IDataContractCalculator
   
  `DataContractResolver` Definované pro tuto ukázku je znázorněno v následujícím příkladu.  
   
-```  
+```csharp
 public class MyDataContractResolver : DataContractResolver  
     {  
        Dictionary<string, XmlDictionaryString> dictionary = new Dictionary<string, XmlDictionaryString>();  
@@ -277,7 +277,7 @@ public class MyDataContractResolver : DataContractResolver
   
  Knihovnu typů, které jsou používané v tomto příkladu je znázorněno v následujícím příkladu.  
   
-```  
+```csharp 
  [DataContract]  
  public class ComplexNumber  
  {  
@@ -324,7 +324,7 @@ public class ComplexNumberWithMagnitude : ComplexNumber
   
  Pokud vzorek je vytvořené a spuštěn, toto je očekávaný výstup, kterou jste získali v klientovi:  
   
-```  
+```console  
 Add(1 + 2i, 3 + 4i) = 4 + 6i  
 Magnitude: 7.21110255092798  
   

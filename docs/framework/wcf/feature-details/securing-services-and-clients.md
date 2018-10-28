@@ -4,13 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - message security [WCF]
 ms.assetid: e681f3bd-0c09-4a58-b0e4-0ecbdf1aa6c7
-author: BrucePerlerMS
-ms.openlocfilehash: 111a0dd003b0427490b498f895a7e526bafb52b7
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 05dc9c810d2e8ba64c4dcf21d83e91f8a61225a1
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47198227"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50190876"
 ---
 # <a name="securing-services-and-clients"></a>Zabezpečení služeb a klientů
 Informace v této části se zaměřuje na programování zabezpečení ve Windows Communication Foundation (WCF). Obvykle to zahrnuje výběrem příslušné vazeb poskytovaných systémem, nastavení vlastnosti elementu zabezpečení a upravením vlastnosti chování služby, které určují, jak načíst přihlašovací údaje pro použití služba nebo klient. Tyto postupy zahrnují požadavky na zabezpečení většiny uživatelů pro většinu scénářů, jak je znázorněno v [běžné scénáře zabezpečení](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md). Pokud váš scénář vyžaduje další možnosti, nejprve zobrazí [možnosti zabezpečení u vlastních vazeb](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md); Pokud řešení není zřejmé, naleznete v tématu [rozšíření zabezpečení](../../../../docs/framework/wcf/extending/extending-security.md). Při vytváření (nebo spolupráce s) systému, který používá bohaté deklarace identity, najdete v tématech [autorizace](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md).  

@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 51066ab6fb0fa4749befdd0f94790fa45a7ab5cf
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 73f786c8f1080d0046889958e8b3bd3165870569
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/08/2018
-ms.locfileid: "44191063"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50187449"
 ---
 # <a name="xml-type-support-implementation-notes"></a>Poznámky k implementaci podpory typů XML
 Toto téma popisuje některé podrobnosti implementace, které chcete mít na paměti.  
@@ -27,14 +27,14 @@ Toto téma popisuje některé podrobnosti implementace, které chcete mít na pa
  Následující část popisuje určité problémy, které se mohou vyskytnout mezi typy CLR a typy dat XML a jak se zpracovává.  
   
 > [!NOTE]
->  `xs` Předpona je namapována na http://www.w3.org/2001/XMLSchema a identifikátor URI oboru názvů.  
+> `xs` Předpona je namapována na <https://www.w3.org/2001/XMLSchema> a identifikátor URI oboru názvů.
   
 ### <a name="systemtimespan-and-xsduration"></a>Hodnota System.TimeSpan a značku xs: Duration  
  `xs:duration` Typ je částečně seřazených v, které existují ale ekvivalentní určité hodnoty typu duration, které se liší. To znamená, že pro `xs:duration` hodnota typu, jako je například 1 měsíc (P1M) je menší než 32 dní (P32D) větší než 27 dnů (P27D) a je ekvivalentní se 28, 29 nebo 30 dní.  
   
  <xref:System.TimeSpan> Třída nepodporuje částečné řazení. Místo toho použije určitý počet dní pro 1 rok a 1 měsíc; 365 dnů a 30 dnů v uvedeném pořadí.  
   
- Další informace o `xs:duration` zadejte naleznete v části 2 W3C XML schématu: datové typy doporučení na http://www.w3.org/TR/xmlschema-2/.  
+ Další informace o `xs:duration` zadejte naleznete v tématu W3C [XML schématu část 2: datové typy doporučení](https://www.w3.org/TR/xmlschema-2/).
   
 ### <a name="xstime-gregorian-date-types-and-systemdatetime"></a>: Time gregoriánské datum typy a System.DateTime  
  Při `xs:time` hodnota je namapována na <xref:System.DateTime> objektu, <xref:System.DateTime.MinValue> pole slouží k inicializaci vlastnosti datum <xref:System.DateTime> objektu (, jako <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A>, a <xref:System.DateTime.Day%2A>) na nejmenší <xref:System.DateTime> hodnotu.  

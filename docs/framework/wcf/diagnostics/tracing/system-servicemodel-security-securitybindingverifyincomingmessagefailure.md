@@ -2,13 +2,12 @@
 title: System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure
 ms.date: 03/30/2017
 ms.assetid: a4447ad6-7f41-47ef-bdd1-8b4a908e156f
-author: BrucePerlerMS
-ms.openlocfilehash: 6337b3649bf390a510cd3f392c6d4620ed51417d
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 649f241e7225111b9e3eb10253b7ff5369d0b307
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48034243"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50170000"
 ---
 # <a name="systemservicemodelsecuritysecuritybindingverifyincomingmessagefailure"></a>System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure
 System.ServiceModel.Security.SecurityBindingVerifyIncomingMessageFailure  
