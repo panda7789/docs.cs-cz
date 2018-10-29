@@ -2,14 +2,12 @@
 title: Principy problémů a výjimek WebRequest
 ms.date: 03/30/2017
 ms.assetid: 74a361a5-e912-42d3-8f2e-8e9a96880a2b
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 08f4422422724436d5641a72e900611c12e95107
-ms.sourcegitcommit: d88024e6d6d8b242feae5f4007a709379355aa24
+ms.openlocfilehash: 14bce9e9791e74f70f9bd91fc2551f55eaabfc5e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/15/2018
-ms.locfileid: "49316308"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200597"
 ---
 # <a name="understanding-webrequest-problems-and-exceptions"></a>Principy problémů a výjimek WebRequest
 <xref:System.Net.WebRequest> a odvozené třídy (<xref:System.Net.HttpWebRequest>, <xref:System.Net.FtpWebRequest>, a <xref:System.Net.FileWebRequest>) vyvolat výjimky pro signalizaci nestandardní podmínky. Někdy není zřejmé řešení těchto problémů.  

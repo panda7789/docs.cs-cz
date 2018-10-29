@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 675fa143-6a4e-4be3-8afc-673334ab55ec
-ms.openlocfilehash: ce02e562f3c6e92b6dfadbb065730e9f1644b82a
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: b61c8935b785a80f6e3163b3bafd83d3dd84f52f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50042503"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50202078"
 ---
 # <a name="how-to-disable-secure-sessions-on-a-wsfederationhttpbinding"></a>Postupy: Zakázání zabezpečených relací u třídy WSFederationHttpBinding
-Některé služby může vyžadovat federované přihlašovací údaje, ale nepodporuje zabezpečených relací. V takovém případě je nutné zakázat funkci zabezpečenou relaci. Na rozdíl od <<!--zz xref:System.ServiceModel.WsHttpBinding --> `xref:System.ServiceModel.WsHttpBinding`>, <xref:System.ServiceModel.WSFederationHttpBinding> třída neposkytuje způsob, jak zakázání zabezpečených relací při komunikaci se službou. Místo toho musíte vytvořit vlastní vazby, který nahradí nastavení zabezpečenou relaci bootstrap.  
+Některé služby může vyžadovat federované přihlašovací údaje, ale nepodporuje zabezpečených relací. V takovém případě je nutné zakázat funkci zabezpečenou relaci. Na rozdíl od <xref:System.ServiceModel.WSHttpBinding>, <xref:System.ServiceModel.WSFederationHttpBinding> třída neposkytuje způsob, jak zakázání zabezpečených relací při komunikaci se službou. Místo toho musíte vytvořit vlastní vazby, který nahradí nastavení zabezpečenou relaci bootstrap.  
   
  Toto téma ukazuje, jak upravit elementů vazby obsažená v rámci <xref:System.ServiceModel.WSFederationHttpBinding> k vytvoření vlastní vazby. Výsledek je stejný jako <xref:System.ServiceModel.WSFederationHttpBinding> s tím rozdílem, že ho nepoužívá zabezpečených relací.  
   

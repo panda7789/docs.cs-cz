@@ -1,0 +1,99 @@
+### YamlMime:Tutorial
+title: Interpolace řetězců umožňuje vytvářet formátované řetězce
+metadata:
+  title: Interpolace - C# Interaktivní kurz
+  description: V tomto kurzu pomocí prohlížeče interaktivně zkoumat funkce interpolace řetězců C#. Napíšete kód v C# a zobrazovat výsledky kompilace a spuštění prohlédnete přímo v prohlížeči.
+  audience: Developer
+  ms.custom: mvc
+  ms.date: 08/24/2018
+  level: Beginner
+  displayType: two-column
+  interactive: csharp
+  nextTutorialHref: list-collection.yml
+  nextTutorialTitle: Kolekce v jazyce C#
+  ms.openlocfilehash: f1262beab39b78966d2be10fc983dfe1d4be998b
+  ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+  ms.translationtype: MT
+  ms.contentlocale: cs-CZ
+  ms.lasthandoff: 10/28/2018
+  ms.locfileid: "50200216"
+items:
+- durationInMinutes: 2
+  content: >
+    V tomto kurzu se naučíte, jak používat [interpolace](../../language-reference/tokens/interpolated.md) k vložení hodnoty do jednoho řetězce. Také se dozvíte, jak řídit formátování výsledného řetězce. Pomocí prohlížeče pro zápis a spouštění C# kód a hned vidět výsledky.
+- title: Vytvoření interpolovaného řetězce
+  durationInMinutes: 2
+  content: "Spusťte v interaktivním okně následující kód. Chcete-li to mohli udělat, zadejte kód v interaktivním okně (nahradit `<name>` s vaším jménem) a vyberte **spustit**:\n\n```csharp\nvar name = \"<name>\";\nConsole.WriteLine($\"Hello, {name}. It's a pleasure to meet you!\");\n```\n\nPři spuštění kódu, **výstup** zobrazí řetězec, který obsahuje vaše jméno pozdrav. Argument řetězce <xref:System.Console.WriteLine%2A> je volání metody *interpolovaný řetězec*. Je druh šablony, který umožňuje vytvořit jeden řetězec (volá se, *výsledný řetězec*) z řetězce obsahujícího vložený kód. Interpolované řetězce se hodí hlavně k vkládání hodnot do řetězce nebo řetězení (spojování) několik řetězců. \n\nVýše uvedený příklad obsahuje dva elementy, které musí mít každém interpolovaném řetězci povinné: \n\n- Řetězcový literál, který začíná `$` znak, před jeho znakem uvozovek. Nesmí být žádné mezery mezi `$` symbolů a znakem uvozovek. (Pokud jste chtěli naleznete v tématu co se stane, když tak přece, vkládat mezeru po `$` znak v interaktivním okně, a spusťte aktualizovaný kód. Kompilátor jazyka C# si bude stěžovat na \"Neočekávaný znak\"$\"\".) \n\n- Jeden nebo více *interpolovaných výrazů*. Interpolovaný výraz se vyznačuje otevírací a zavírací závorkou (`{` a `}`). Můžete vložit libovolný výraz C#, která vrací hodnotu (včetně `null`) uvnitř složených závorek. \n\nTeď si vyzkoušíme pár dalších příkladů interpolace řetězce, s jinými datovými typy.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Zahrnutí různých datových typů
+  durationInMinutes: 5
+  content: "V předchozím kroku jste použili interpolace řetězců vložili jeden řetězec do druhého. Výsledek interpolovaného výrazu může být libovolného datového typu, ale. Umožňuje zahrnout hodnoty různých datových typů v interpolovaném řetězci. \n\nV následujícím příkladu nejdřív nadefinujeme [třídy](../../programming-guide/classes-and-structs/classes.md) datový typ `Vegetable` , který má `Name` [vlastnost](../../properties.md) a `ToString` [metoda](../../methods.md), které [přepíše](../../language-reference/keywords/override.md) chování <xref:System.Object.ToString?displayProperty=nameWithType> metody. [ `public` Modifikátor přístupu](../../language-reference/keywords/public.md) zpřístupní metody pro jakýkoli kód klienta, k získání řetězcové reprezentace `Vegetable` instance. V příkladu `Vegetable.ToString` metoda vrátí hodnotu `Name` vlastnost, která je inicializována na `Vegetable` [konstruktor](../../programming-guide/classes-and-structs/constructors.md): `Vegetable(string name) => Name = name;`. Pak vytvoříme instanci `Vegetable` třídu s názvem `item` pomocí [ `new` – klíčové slovo](../../language-reference/keywords/new-operator.md) a poskytnutí názvu pro konstruktor `Vegetable`. Nakonec jsme zahrnuli této instance na interpolovaný řetězec, který také obsahuje <xref:System.DateTime> hodnotu, <xref:System.Decimal> hodnotu a `Unit` [výčet](../../programming-guide/enumeration-types.md) hodnotu. Spusťte v interaktivním okně následující kód:\n\n```csharp\npublic class Vegetable\n{\n   public Vegetable(string name) => Name = name;\n\n   public string Name { get; }\n\n   public override string ToString() => Name;\n}\n\npublic enum Unit { item, kilogram, gram, dozen };\n\nvar item = new Vegetable(\"eggplant\");\nvar date = DateTime.Now;\nvar price = 1.99m;\nvar unit = Unit.item;\nConsole.WriteLine($\"On {date}, the price of {item} was {price} per {unit}.\");\n```\n\nVšimněte si, že interpolovaný výraz `item` v interpolovaném řetězci se překládá na text \"eggplant\" ve výsledném řetězci. Je to proto, že pokud typ výsledku výrazu není řetězec, výsledek je přeložen na řetězec následujícím způsobem:\n\n- Pokud interpolovaný výraz vyhodnocen `null`, prázdný řetězec (\"\", nebo <xref:System.String.Empty?displayProperty=nameWithType>) se používá.\n\n- Pokud interpolovaný výraz se nevyhodnocuje na `null`, obvykle `ToString` je volána metoda typ výsledku. Můžete ho otestovat provádění aktualizací `Vegetable.ToString` metody. Ještě není nutné implementovat `ToString` metoda vzhledem k tomu, že každý typ má některé implementace této metody. Abyste to mohli otestovat, okomentujte definici `Vegetable.ToString` metoda v příkladu (stačí vložit symbol komentáře `//`, před). Ve výstupu se řetězec \"eggplant\" nahradí podle plně kvalifikovaného názvu (obor názvů definovaný smyčkou REPL jazyka C# spolu s názvem typu), což je výchozí chování sady <xref:System.Object.ToString?displayProperty=nameWithType> metody. Výchozí chování `ToString` metodou hodnota výčtu je vrátí řetězcovou reprezentaci hodnoty.    \n\nVe výstupu tohoto příkladu je datum zbytečně přesné (cena lilku nemění každou sekundu) a hodnota ceny neuvádí jednotku měny. V dalším kroku se dozvíte, jak tyto problémy napravit prostřednictvím nastavení formátu řetězcové reprezentace výsledku výrazu.\n\n> [!NOTE]\n> Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).\n"
+- title: Ovládací prvek formátu interpolovaných výrazů
+  durationInMinutes: 5
+  content: >
+    V předchozím kroku vložily dva špatně naformátované řetězce do výsledného řetězce. Jedna se hodnoty data a času, pro který byl pouze data odpovídající. Druhým byla cena, která nebyla označení jednotku měny. Jsou oba problémy můžeme snadno vyřešit. Interpolace řetězců umožňuje určit *řetězce formátu* , které nastavují formátování konkrétních typů. Upravte volání `Console.WriteLine` z předchozího příkladu zahrnout formátovací řetězce pro výrazy data a ceny, jak je znázorněno na následujícím řádku:
+
+
+    ```csharp
+
+    Console.WriteLine($"On {date:d}, the price of {item} was {price:C2} per {unit}.");
+
+    ```
+
+
+    Zadejte řetězec formátu podle interpolovaný výraz s čárkou (":") a nakonec formátovací řetězec. "d" je [řetězec formátu data a času](../../../standard/base-types/standard-date-and-time-format-strings.md#the-short-date-d-format-specifier) , která představuje formátu krátkého data. "C2" je [řetězec standardního číselného formátu](../../../standard/base-types/standard-numeric-format-strings.md#the-currency-c-format-specifier) , který představuje číslo jako hodnotu měny se dvěma číslicemi za desetinnou čárkou.
+
+
+    Počet typů v knihovny .NET podporují předdefinovanou množinu řetězců formátu. Patří mezi ně číselné typy a typy data a času. Úplný seznam typů podporujících formátovací řetězce, naleznete v tématu [formátovací řetězce a typy v knihovně tříd rozhraní .NET](../../../standard/base-types/formatting-types.md#stringRef) v [formátovací typy v .NET](../../../standard/base-types/formatting-types.md) článku.
+
+
+    Zkuste upravit formátovací řetězce v příkladu, pokud chcete zobrazit, jaký vliv mají formátování data a času a číselné hodnoty. Změňte "d" v `{date:d}` "t" (pro zobrazení formátu krátkého formátu času), "y" (zobrazí se rok a měsíc) a "yyyy" (zobrazí se rok jako čtyřmístné číslo). Změňte "C2" v `{price:C2}` "e" (pro exponenciální notaci) a "F3" (pro číselnou hodnotu, s třemi číslicemi za desetinnou čárkou).
+
+
+    Vedle nastavení formátování můžete také řídit šířku pole a zarovnání formátovaného řetězce, které jsou obsaženy ve výsledném řetězci. V dalším kroku se dozvíte, jak to udělat.
+
+
+    > [!NOTE]
+
+    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- title: Řídit šířku pole a zarovnání interpolovaných výrazů
+  durationInMinutes: 6
+  content: >
+    Obvykle když výsledek interpolovaného výrazu má formát na řetězec, tento řetězec je součástí výsledného řetězce bez úvodní a koncové mezery. Zejména při práci se sadou dat, nebudou moct řídit šířku pole a zarovnání textu pomáhá lépe čitelný výstup. Příklad zobrazíte spuštěním následujícího kódu:
+
+
+    ```csharp
+      var inventory = new Dictionary<string, int>()
+      {
+          ["hammer, ball pein"] = 18,
+          ["hammer, cross pein"] = 5,
+          ["screwdriver, Phillips #2"] = 14
+      };
+
+      Console.WriteLine($"Inventory on {DateTime.Now:d}");
+      Console.WriteLine(" ");
+      Console.WriteLine($"|{"Item",-25}|{"Quantity",10}|");
+      foreach (var item in inventory)
+         Console.WriteLine($"|{item.Key,-25}|{item.Value,10}|");
+    ```
+
+
+    Názvy položek jsou zarovnané vlevo a jejich množství jsou zarovnaná vpravo. Zarovnání určíte přidáním čárky (",") po interpolovaný výraz a uvedením *minimální* šířku pole. Pokud zadaná hodnota je kladné číslo, pole zarovnané vpravo. Pokud je záporné číslo, pole zarovnané vlevo.
+
+
+    Zkuste odstranit záporná znaménka z `{"Item",-25}` a `{item.Key,-25}` kód a znovu spusťte příklad kódu. Tentokrát, názvy položek jsou zarovnaná vpravo.
+
+
+    Specifikátor zarovnání a řetězec formátu pro jednom interpolovaném výrazu můžete kombinovat. K tomuto účelu Určuje zarovnání nejprve, za nímž následuje dvojtečka a nakonec formátovací řetězec. Vyzkoušejte následující kód, který zobrazí tři zformátované řetězce s určenými šířkami polí:
+
+
+    ```csharp
+
+    Console.WriteLine($"[{DateTime.Now,-20:d}] Hour [{DateTime.Now,-10:HH}] [{1063.342,15:N2}] feet");
+
+    ```
+
+
+    > [!NOTE]
+
+    > Toto online kódovací prostředí je v režimu náhledu. Pokud narazíte na potíže, nahlaste je [v úložišti dotnet/try](https://github.com/dotnet/try/issues).
+- content: "Dokončili jste rychlý start interpolace řetězce. \n\nV těchto rychlých startech můžete pokračovat ve vlastním místním vývojovém prostředí. Seznamte se se základy [místního vývojového](local-environment.md) a potom si vyberte rychlý start. V tomto rychlém startu se stejnou akci, přejít přímo k dalšímu rychlému startu nebo znovu začít [čísla v C#](numbers-in-csharp-local.md) rychlý start.\n\nDalší informace najdete v tématu [interpolace](../../language-reference/tokens/interpolated.md) tématu a [interpolace v jazyce C#](../../tutorials/string-interpolation.md) kurzu."

@@ -9,11 +9,11 @@ helpviewer_keywords:
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: cdbbf3138cad0a2fae311bf03476eebba23b7320
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50042438"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50202904"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Haldy velkých objektů v systémech Windows
 

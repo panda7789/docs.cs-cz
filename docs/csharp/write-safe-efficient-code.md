@@ -3,12 +3,12 @@ title: Zápis bezpečný a účinný C# kódu
 description: Poslední vylepšení C# jazyk umožňují také napsat bezpečného kódu s možností ověření, že výkon bylo dřív přidružené nezabezpečený kód.
 ms.date: 10/23/2018
 ms.custom: mvc
-ms.openlocfilehash: c5505f69a4706ef0f631c82e075e422cb8e13885
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: 8e58a7f870c742f1c0a90a7b5507ac1e5d8074ea
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50043114"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201589"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Zápis bezpečný a účinný C# kódu #
 
@@ -73,7 +73,7 @@ Pokaždé, když máte v úmyslu návrhu, je vytvoření neměnný hodnota typu,
 Pokud je vrácená hodnota není místní pro metodu vracející může vracet hodnoty podle odkazů. Vrácení podle odkazu znamená, že je zkopírován pouze odkaz, není struktury. V následujícím příkladu `Origin` vlastnost nelze použít `ref` vrátit, protože se vrací hodnotu místní proměnné:
 
 ```csharp
-public Point3D Origin {get;} => new Point3D(0,0,0);
+public Point3D Origin => new Point3D(0,0,0);
 ```
 
 Následující definici vlastnosti mohou však vrátit odkazem, protože vrácená hodnota je statický člen:
@@ -84,7 +84,7 @@ public struct Point3D
     private static Point3D origin = new Point3D(0,0,0);
 
     // Dangerous! returning a mutable reference to internal storage
-    public ref Point3D Origin { get; } => ref origin;
+    public ref Point3D Origin => ref origin;
 
     // other members removed for space
 }
@@ -97,13 +97,13 @@ public struct Point3D
 {
     private static Point3D origin = new Point3D(0,0,0);
 
-    public ref readonly Point3D Origin { get; } => ref origin;
+    public ref readonly Point3D Origin => ref origin;
 
     // other members removed for space
 }
 ```
 
-Vrácení podle `readonly ref` umožňuje uložit kopírování větší struktury a zachovat neměnnosti interní datové členy.
+Vrací `ref readonly` umožňuje uložit kopírování větší struktury a zachovat neměnnosti interní datové členy.
 
 V lokalitě volání volající výběru možnosti použít `Origin` vlastnosti jako datový typ `readonly ref` ani jako typ hodnoty:
 
@@ -127,7 +127,11 @@ Typy hodnot se zkopírují po uplynutí volané metody, pokud nezadáte žádné
 - `ref`: Tato metoda může nastavit hodnotu argument použitý jako tento parametr.
 - `in`: Tato metoda nezmění hodnotu argument použitý jako tento parametr.
 
-Přidat `in` modifikátor předat argument odkazem a deklarovat vaším záměrem návrhu předání argumentů odkazem, aby předešel zbytečnému kopírování. Nemáte v úmyslu změnit objekt použitý jako tento argument. Následující kód ukazuje příklad metodu, která vypočítá vzdálenost mezi dvěma body v 3D prostoru.
+Přidat `in` modifikátor předat argument odkazem a deklarovat vaším záměrem návrhu předání argumentů odkazem, aby předešel zbytečnému kopírování. Nemáte v úmyslu změnit objekt použitý jako tento argument.
+
+Tento postup často zvyšuje výkon u typů hodnot jen pro čtení, které jsou větší než <xref:System.IntPtr.Size?displayProperty=nameWithType>. Pro jednoduché typy (`sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` a `bool`, a `enum` typy), jsou minimial všechny potenciální zvýšení výkonu. Ve skutečnosti, může se snížit výkon pomocí pass-by-reference pro typy menší než <xref:System.IntPtr.Size?displayProperty=nameWithType>.
+
+Následující kód ukazuje příklad metodu, která vypočítá vzdálenost mezi dvěma body v 3D prostoru.
 
 [!code-csharp[InArgument](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#InArgument "Specifying an in argument")]
 

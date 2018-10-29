@@ -13,14 +13,12 @@ helpviewer_keywords:
 - receiving data, application protocols
 - requesting data from Internet, application protocols
 ms.assetid: 3aab4bcc-8397-4e1a-a1b6-bbd837a21430
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 9f979b6d065e23b6d448a14d9545327de254dc70
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 191a13d83c77c3c5a13da8b4b4c177046c4e9e77
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48025159"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201974"
 ---
 # <a name="using-application-protocols"></a>Použití aplikačních protokolů
 Rozhraní .NET Framework podporuje běžně používané Internetové protokoly aplikace. Tato část obsahuje informace o použití [HTTP](../../../docs/framework/network-programming/http.md), "TCP" a "UDP" protokoly, a také informace o použití [rozhraní Windows Sockets](../../../docs/framework/network-programming/sockets.md) rozhraní za účelem implementace vlastní protokoly.  

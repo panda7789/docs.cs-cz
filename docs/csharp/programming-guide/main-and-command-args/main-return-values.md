@@ -5,11 +5,11 @@ helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
 ms.openlocfilehash: ea63bedd207a9904a5f6aa656ed19469394290fa
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50041645"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50205205"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Návratové hodnoty Main() (C# Programming Guide)
 

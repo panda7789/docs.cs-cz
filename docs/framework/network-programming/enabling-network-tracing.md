@@ -12,11 +12,11 @@ helpviewer_keywords:
 - destination for tracing output
 ms.assetid: 5fff458c-51a6-4134-ba47-8a6137ddc41e
 ms.openlocfilehash: b289aa2a60deb10ebda0ca8efc3e172caf2df8a6
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50043280"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50202065"
 ---
 # <a name="enabling-network-tracing"></a>Povolení trasování sítě
 Trasování sítě poskytuje přístup k informacím o vyvoláních metody a přenosech v síti generovaných spravovanou aplikací. Je nutné dokončit následující úlohy, jak povolit trasování sítě ve vaší aplikaci:  

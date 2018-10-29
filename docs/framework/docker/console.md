@@ -5,11 +5,11 @@ author: spboyer
 ms.date: 09/28/2016
 ms.assetid: 85cca1d5-c9a4-4eb2-93e6-4f878de07fd7
 ms.openlocfilehash: bf21357efc234ea99836b190ce34c70f2644ea6a
-ms.sourcegitcommit: e42d09e5966dd9fd02847d3e7eeb4ec0877069f8
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/17/2018
-ms.locfileid: "49374752"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200571"
 ---
 # <a name="running-console-applications-in-windows-containers"></a>Spuštění konzolové aplikace v kontejnerech Windows
 

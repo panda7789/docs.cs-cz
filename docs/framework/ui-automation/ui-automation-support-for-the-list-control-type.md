@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 0e959fcb-50f2-413b-948d-7167d279bc11
 author: Xansky
 ms.author: mhopkins
-ms.openlocfilehash: 1ca4e0f0e0d88004d6c2059af4c774c916efd5ac
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 1ae62cca72831b0319243acd9c5bf7a2b86138c3
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48035068"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50205266"
 ---
 # <a name="ui-automation-support-for-the-list-control-type"></a>Podpora automatizace uživatelského rozhraní pro typ ovládacího prvku seznam
 > [!NOTE]
@@ -36,21 +36,19 @@ ms.locfileid: "48035068"
   
  Ovládací prvek zobrazení pro ovládací prvek, který implementuje typ ovládacího prvku seznam (jako je například ovládací prvek seznamu) zahrnuje:  
   
--   Nula nebo více položek v rámci ovládacího prvku seznam (položky může být založen na typy ovládacích prvků datová položka nebo položky seznamu)  
+- Nula nebo více položek v rámci ovládacího prvku seznam (položky může být založen na typy ovládacích prvků datová položka nebo položky seznamu).
   
--   Nula nebo více ovládacích prvků skupiny v rámci ovládacího prvku seznam  
+- Nula nebo více skupin ovládacích prvků v rámci ovládacího prvku seznamu.
   
--   Nula, jeden nebo dva ovládací prvky posuvníku  
+- Nula, jeden nebo dva ovládací prvky posuvníku.
   
--  
+Zobrazení obsahu ovládacího prvku, který implementuje typ ovládacího prvku seznam (jako je například ovládací prvek seznamu) zahrnuje:  
   
- Zobrazení obsahu ovládacího prvku, který implementuje typ ovládacího prvku seznam (jako je například ovládací prvek seznamu) zahrnuje:  
+- Nula nebo více položek v rámci ovládacího prvku seznam (položky může být založen na typy ovládacích prvků datová položka nebo položky seznamu).
   
--   Nula nebo více položek v rámci ovládacího prvku seznam (položky může být založen na typy ovládacích prvků datová položka nebo položky seznamu)  
-  
--   Nula nebo více skupin v rámci ovládacího prvku seznam  
-  
- Ovládací prvek seznamu nesmí obsahovat položky, které mají hierarchický vztah než byla seskupena dohromady. V případě položek obsahuje podřízené položky [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom, pak kontejneru seznamu by měla vycházet z typ ovládacího prvku strom.  
+- Nula nebo více skupin v rámci ovládacího prvku seznam.
+
+Ovládací prvek seznamu nesmí obsahovat položky, které mají hierarchický vztah než byla seskupena dohromady. V případě položek obsahuje podřízené položky [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] strom, pak kontejneru seznamu by měla vycházet z typ ovládacího prvku strom.  
   
  Volitelných položek v ovládacím prvku seznamu budou k dispozici následníků na [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] stromu ovládacího prvku seznamu. Všechny položky v rámci ovládacího prvku seznam musí patřit do stejné skupiny výběru. Volitelných položek v seznamu by měly být vystaveny jako typy ovládacího prvku ListItem (ne datové položky).  
   

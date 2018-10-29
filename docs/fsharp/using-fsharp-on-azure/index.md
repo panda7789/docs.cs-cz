@@ -3,12 +3,12 @@ title: Použití jazyka F# v Azure
 description: 'Příručka k používání služeb Azure s jazykem F #'
 author: sylvanc
 ms.date: 09/22/2016
-ms.openlocfilehash: 96dec342379b06e997107cc5d6cc05e9fc737452
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: 1fbb85a07fc057c1b89a4c4a1ad356066cebf2b8
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50033956"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201501"
 ---
 # <a name="using-f-on-azure"></a>Použití jazyka F# v Azure
 
@@ -40,7 +40,7 @@ Další materiály týkající se používání Azure Functions a F #:
 
 ## <a name="using-azure-storage-with-f"></a>Použití služby Azure Storage s jazykem F # #
 
-Azure Storage je základní vrstvě služby úložiště pro moderní aplikace, které spoléhají na odolnost, dostupnost a škálovatelnost podle potřeb zákazníků. Programy F # můžete pracovat přímo se službami Azure storage, pomocí techinques popsané v následujících článcích.
+Azure Storage je základní vrstvě služby úložiště pro moderní aplikace, které spoléhají na odolnost, dostupnost a škálovatelnost podle potřeb zákazníků. F#programy můžou pracovat přímo s služby Azure storage, pomocí technik popsaných v následujících článcích.
 
 * [Začínáme s Azure Blob Storage s využitím F#](blob-storage.md)
 * [Začínáme s Azure File Storage s využitím F#](file-storage.md)

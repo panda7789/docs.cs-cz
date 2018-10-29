@@ -3,11 +3,11 @@ title: Hledání textu v dokumentech aplikace Word (C#)
 ms.date: 07/20/2015
 ms.assetid: 82f86677-560b-49dc-a089-610409939b2a
 ms.openlocfilehash: 3213855716ebcfc581f213a34417e579c133e385
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50034569"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200494"
 ---
 # <a name="finding-text-in-word-documents-c"></a>Hledání textu v dokumentech aplikace Word (C#)
 Toto téma je rozšířením předchozího dotazy něco užitečné: vyhledání všech výskytů řetězce v dokumentu.  

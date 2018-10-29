@@ -7,11 +7,11 @@ helpviewer_keywords:
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
 ms.openlocfilehash: d713a63c9503581f38048fe79c559883dc96efd2
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50040131"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50202969"
 ---
 # <a name="-libpath"></a>-libpath
 Určuje umístění odkazovaných sestavení.  

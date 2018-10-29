@@ -6,11 +6,11 @@ author: rlander
 ms.author: mairaw
 ms.date: 04/10/2018
 ms.openlocfilehash: 091fb93f26695df01f2f95fdec7ed168d96ba90d
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50034556"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200755"
 ---
 # <a name="install-the-net-framework-on-windows-7-sp1-and-windows-server-2008-r2"></a>Instalace rozhraní .NET Framework na Windows 7 SP1 a Windows Server 2008 R2
 

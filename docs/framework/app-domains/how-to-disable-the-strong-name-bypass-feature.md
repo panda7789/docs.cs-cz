@@ -8,11 +8,11 @@ ms.assetid: 234e088c-3b11-495a-8817-e0962be79d82
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 628bc1f89e5e09b47c70e39e107987753697cdb4
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50047992"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50198325"
 ---
 # <a name="how-to-disable-the-strong-name-bypass-feature"></a>Postupy: Zákaz funkce obejití silného názvu
 Počínaje verzí rozhraní .NET Framework 3.5 Service Pack 1 (SP1), podpisy se silným názvem nejsou ověřovány, pokud je sestavení načteno do plně důvěryhodné <xref:System.AppDomain> objektu, například výchozí <xref:System.AppDomain> pro `MyComputer` zóny. To se označuje jako silného názvu obejít funkce. V prostředí úplného vztahu důvěryhodnosti vyžaduje pro <xref:System.Security.Permissions.StrongNameIdentityPermission> vždy úspěšné pro podepsané sestavení úplného vztahu důvěryhodnosti, bez ohledu na jejich podpisu. Jediným omezením je, že sestavení musí být plně důvěryhodné, protože jeho zóna je plně důvěryhodné. Protože silný název není určujícím faktorem za těchto podmínek, neexistuje žádný důvod pro něj má být ověřen. Vynechání ověřování podpisy se silným názvem poskytuje výrazné zlepšení výkonu.  

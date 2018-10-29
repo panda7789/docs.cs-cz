@@ -4,12 +4,12 @@ description: Zjistěte, jak přenést a podržte klávesu shift a modernizace st
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 04/28/2018
-ms.openlocfilehash: b8c293730b0921924584359ffad32efd2b83a19b
-ms.sourcegitcommit: dfc8aa44246a97f4611cc441d9ef71b03cc31260
+ms.openlocfilehash: 0cfb052daa41264ae00d48906477eae99ea159d8
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/18/2018
-ms.locfileid: "49413934"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200082"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Modernizace stávajících aplikací .NET pomocí cloudu Azure a kontejnery Windows (verze 2.)
 
@@ -25,7 +25,7 @@ Copyright © 2018 Microsoft Corporation
 
 Všechna práva vyhrazena. Žádná část obsahu této knihy může reprodukovat v libovolné formě nebo jakýmikoli prostředky bez písemného souhlasu vydavatele.
 
-Tato kniha je dostupná zdarma ve formě elektronickou knihu (elektronická kniha) k dispozici prostřednictvím více kanálů v Microsoftu, jako <http://dot.net/architecture>.
+Tato kniha je dostupná zdarma ve formě elektronickou knihu (elektronická kniha) k dispozici prostřednictvím více kanálů v Microsoftu, jako <https://dot.net/architecture>.
 
 Pokud máte dotazy týkající se této knihy, e-mailové adrese [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book)
 
@@ -72,7 +72,7 @@ Pro moderní aplikace s nejlepším dlouhodobým flexibilitu a hodnota pro organ
 
 Obrázek 1-1 zobrazuje možné cesty, které můžete provést při přesunu stávajících aplikací .NET do cloudu v přírůstkové fází.
 
- ![Cesty modernizaci stávajících aplikací .NET a služeb](./media/image1-1.png)
+ ![Cesty modernizaci stávajících aplikací .NET a služeb](./media/image1-1.png)
 
 > **Obrázek 1-1**. Cesty modernizaci stávajících aplikací .NET a služeb
 

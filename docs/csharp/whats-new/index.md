@@ -4,11 +4,11 @@ description: Jak je C# vyvíjejí jazyka
 ms.date: 11/13/2017
 ms.assetid: 77deec51-a14d-46d4-9bb3-faf449477149
 ms.openlocfilehash: b079c21ee90a797b038b96ae68123a538464c382
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50047251"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201436"
 ---
 # <a name="whats-new-in-c"></a>Co je nového v jazyce C# #
 

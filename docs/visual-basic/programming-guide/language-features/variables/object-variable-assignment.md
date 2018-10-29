@@ -14,11 +14,11 @@ helpviewer_keywords:
 - Me keyword [Visual Basic], as object variable
 ms.assetid: 3706811d-fd40-44fe-8727-d692e8e55d6d
 ms.openlocfilehash: 571b09a0783ec0dfd09970b000faec39dca682b3
-ms.sourcegitcommit: 4621e67f69e7a9503ea93313ff60d69683207889
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/24/2018
-ms.locfileid: "49995360"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201935"
 ---
 # <a name="object-variable-assignment-visual-basic"></a>Přiřazení proměnné objektu (Visual Basic)
 Normální přiřazovací příkaz použijete k přiřazení objektu k proměnné objektu. Můžete přiřadit výrazu objektu nebo [nic](../../../../visual-basic/language-reference/nothing.md) – klíčové slovo, jako následující příklad ukazuje.  

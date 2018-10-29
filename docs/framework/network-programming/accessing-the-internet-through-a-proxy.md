@@ -13,11 +13,11 @@ helpviewer_keywords:
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
 ms.openlocfilehash: 1c6ca568cae45a54e781c30bf5774015ae09c98a
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50048577"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201883"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>Přístup k Internetu prostřednictvím proxy serveru
 Pokud váš web používá k zajištění přístupu k Internetu proxy server, musíte nakonfigurovat instanci proxy umožňují aplikaci komunikovat se serverem proxy webových.  

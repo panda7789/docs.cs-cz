@@ -8,11 +8,11 @@ helpviewer_keywords:
 - /nologo compiler option [Visual Basic]
 ms.assetid: 25ef54b6-d676-4639-a2d2-a747a158bc07
 ms.openlocfilehash: 21c708ef632cc0ed923713cd49e22d44848b4db3
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50037279"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50199902"
 ---
 # <a name="-nologo-visual-basic"></a>-nologo (Visual Basic)
 Potlačí zobrazení nápisu o autorských právech a informačních zpráv během kompilace.  

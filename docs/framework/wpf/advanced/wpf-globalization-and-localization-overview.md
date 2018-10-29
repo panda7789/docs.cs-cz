@@ -5,24 +5,27 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: fcf5b8f872e2f97497ff5387adb755da1832bf8c
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: e9a9e9295425efaadff4ac1f0b796b2c9a889543
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/28/2018
-ms.locfileid: "47424464"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200950"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Přehled globalizace a lokalizace WPF
+
 Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciálního zákazníka základní zlomek naplnění 6.5 miliard náš svět. Pokud chcete, aby vaše aplikace pro oslovení publika, nákladově efektivní lokalizaci skrytých váš produkt je jedním ze způsobů nejlepší a nejhospodárnějším oslovovat víc zákazníků.  
   
  Tento přehled zavádí globalizace a lokalizace v [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]. Globalizace je návrh a vývoj aplikací, které provádějí v několika umístěních. Například globalizace podporuje lokalizovaná uživatelská rozhraní a regionální data pro uživatele v různé jazykové verze. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] poskytuje funkce pro globalizovaná návrh, včetně automatické rozložení, satelitních sestavení a lokalizované atributy a komentáře.
   
- Lokalizace je převod prostředků aplikace do lokalizované verze pro specifické jazykové verze, které aplikace podporuje. Když lokalizujete ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], používají rozhraní API v <xref:System.Windows.Markup.Localizer> oboru názvů. Tato rozhraní API power [ukázkový locbaml – nástroj](https://go.microsoft.com/fwlink/?LinkID=160016) nástroj příkazového řádku. Informace o tom, jak vytvářet a používat locbaml – najdete v tématu [lokalizace aplikace](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md).    
+ Lokalizace je převod prostředků aplikace do lokalizované verze pro specifické jazykové verze, které aplikace podporuje. Když lokalizujete ve [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], používají rozhraní API v <xref:System.Windows.Markup.Localizer> oboru názvů. Tato rozhraní API power [ukázkový locbaml – nástroj](https://go.microsoft.com/fwlink/?LinkID=160016) nástroj příkazového řádku. Informace o tom, jak vytvářet a používat locbaml – najdete v tématu [lokalizace aplikace](../../../../docs/framework/wpf/advanced/how-to-localize-an-application.md).
   
-## <a name="best-practices-for-globalization-and-localization-in-wpf"></a>Osvědčené postupy pro globalizaci a lokalizaci v subsystému WPF  
+## <a name="best-practices-for-globalization-and-localization-in-wpf"></a>Osvědčené postupy pro globalizaci a lokalizaci v subsystému WPF
+
  Můžete provést z globalizace a lokalizace funkce, která je integrována do [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] podle návrhu uživatelského rozhraní a související lokalizace tipy, které v této části najdete.  
   
-### <a name="best-practices-for-wpf-ui-design"></a>Osvědčené postupy pro návrh uživatelského rozhraní WPF  
+### <a name="best-practices-for-wpf-ui-design"></a>Osvědčené postupy pro návrh uživatelského rozhraní WPF
+
  Při návrhu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– na základě [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)], zvažte implementaci těchto osvědčených postupů:  
   
 -   Zápis vaše [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]; Vyhněte se vytváření [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] v kódu. Při vytváření vašeho [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] pomocí [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], ji zpřístupnit prostřednictvím vestavěné lokalizace rozhraní API.  
@@ -47,7 +50,8 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
 -   Když vytvoříte samostatný navigační aplikace, které jsou hostované mimo prohlížeč, nastavte <xref:System.Windows.Application.StartupUri%2A> počáteční aplikace <xref:System.Windows.Navigation.NavigationWindow> místo na stránku (například `<Application StartupUri="NavigationWindow.xaml">`). Tento návrh umožňuje změnit <xref:System.Windows.FlowDirection> okně a na navigačním panelu. Další informace a příklad najdete v tématu [globalizace Domovská stránka ukázkové](https://go.microsoft.com/fwlink/?LinkID=159990).  
   
-### <a name="best-practices-for-wpf-localization"></a>Osvědčené postupy pro lokalizaci WPF  
+### <a name="best-practices-for-wpf-localization"></a>Osvědčené postupy pro lokalizaci WPF
+
  Když lokalizujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]– aplikace, zvažte implementaci těchto osvědčených postupů:  
   
 -   Lokalizace komentáře použijte k zajištění další kontext Lokalizátoři.  
@@ -64,9 +68,9 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
          Pokud se rozhodnete zahrnout Zdrojový jazyk v hlavním sestavení vynecháním `<UICulture>` značky v souboru projektu, nastavte `UltimateResourceFallback` umístění jako hlavní sestavení namísto satelitní (například `[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.MainAssembly)]`).  
   
-<a name="workflow_to_localize" />   
-## <a name="localize-a-wpf-application"></a>Lokalizace aplikace WPF  
- Když lokalizujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, máte několik možností. Například můžete vytvořit vazbu lokalizovatelné prostředky v aplikaci [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru, uložit Lokalizovatelný text v tabulkách resx, nebo mít vaše lokalizátora použít [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory. Tato část popisuje lokalizace pracovního postupu, který používá formuláře BAML z XAML, který poskytuje několik výhod:  
+## <a name="localize-a-wpf-application"></a>Lokalizace aplikace WPF
+
+Když lokalizujete [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, máte několik možností. Například můžete vytvořit vazbu lokalizovatelné prostředky v aplikaci [!INCLUDE[TLA2#tla_xml](../../../../includes/tla2sharptla-xml-md.md)] souboru, uložit Lokalizovatelný text v tabulkách resx, nebo mít vaše lokalizátora použít [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] soubory. Tato část popisuje lokalizace pracovního postupu, který používá formuláře BAML z XAML, který poskytuje několik výhod:  
   
 -   Je možné lokalizovat po sestavení.  
   
@@ -75,14 +79,16 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
 -   Můžete ověřit původní zdrojové elementy a sémantika v době kompilace vzhledem k tomu, že je formulář BAML z XAML kompilovaný formy [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
 ### <a name="localization-build-process"></a>Lokalizace procesu sestavení  
- Při vývoji [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, proces sestavení pro lokalizaci vypadá takto:  
+
+Při vývoji [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace, proces sestavení pro lokalizaci vypadá takto:  
   
 -   Vývojář vytvoří a globalizuje [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikace. V projektu soubor sady pro vývojáře `<UICulture>en-US</UICulture>` tak, že když bude uložena zkompilovaná aplikace, je generována do hlavního sestavení jazykově neutrální. Toto sestavení obsahuje satelit. resources.dll soubor, který obsahuje všechny lokalizovatelné prostředky. Volitelně můžete zachovat Zdrojový jazyk v hlavním sestavení protože naše lokalizace [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] podporují extrakce z hlavní sestavení.  
   
 -   Když je soubor zkompilovaný do sestavení, [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] je převedena na formuláři BAML z XAML. Jazykově neutrální `MyDialog.exe` a jazykově závislé (v angličtině) `MyDialog.resources.dll` soubory jsou k dispozici pro anglicky mluvící zákazníka.  
   
-### <a name="localization-workflow"></a>Lokalizace pracovního postupu  
- Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení souboru. [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Prvků a vlastností v váš původním [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se extrahují z formuláře BAML z XAML na páry klíč hodnota s použitím [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pod <xref:System.Windows.Markup.Localizer>. Lokalizátoři lokalizovat aplikaci pomocí páry klíč hodnota. Vygenerovat nový. resource.dll z nové hodnoty po dokončení lokalizace.  
+### <a name="localization-workflow"></a>Lokalizace pracovního postupu
+
+Proces lokalizace začne za nelokalizované `MyDialog.resources.dll` sestavení souboru. [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] Prvků a vlastností v váš původním [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] se extrahují z formuláře BAML z XAML na páry klíč hodnota s použitím [!INCLUDE[TLA2#tla_api#plural](../../../../includes/tla2sharptla-apisharpplural-md.md)] pod <xref:System.Windows.Markup.Localizer>. Lokalizátoři lokalizovat aplikaci pomocí páry klíč hodnota. Vygenerovat nový. resource.dll z nové hodnoty po dokončení lokalizace.
   
  Klíče dvojice klíč hodnota jsou `x:Uid` hodnoty, které jsou umístěny vývojář v původní [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Tyto `x:Uid` povolit hodnoty [!INCLUDE[TLA2#tla_api](../../../../includes/tla2sharptla-api-md.md)] ke sledování a sloučení změn, ke kterým dochází mezi vývojáři a lokalizátora při lokalizaci. Například, pokud vývojář změní [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] po zahájení lokalizátora lokalizace tak, aby práce minimální překlad dojde ke ztrátě můžete sloučit změny vývoj s již dokončené lokalizační práce.  
   
@@ -92,11 +98,12 @@ Pokud váš produkt dostupnost pouze jeden jazyk, omezíte vašeho potenciální
   
  ![Nelokalizované pracovní postup](../../../../docs/framework/wpf/advanced/media/localizationworkflow2.png "LocalizationWorkflow2")  
   
-<a name="examples_of_localization" />   
-## <a name="examples-of-wpf-localization"></a>Příklady lokalizace WPF  
+## <a name="examples-of-wpf-localization"></a>Příklady lokalizace WPF
+
  Tato část obsahuje příklady lokalizované aplikace, které vám pomohou pochopit, jak sestavit a lokalizaci [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] aplikací.  
   
-#### <a name="run-dialog-box-example"></a>Spuštění příkladu pole dialogového okna  
+#### <a name="run-dialog-box-example"></a>Spuštění příkladu pole dialogového okna
+
  Následující obrázky znázorňují výstup **spustit** ukázka pole dialogového okna.  
   
  **Angličtina:**  

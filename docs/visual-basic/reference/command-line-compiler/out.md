@@ -7,11 +7,11 @@ helpviewer_keywords:
 - out compiler option [Visual Basic]
 ms.assetid: 9f148c15-0909-4cb8-a2db-777f8a8b45ae
 ms.openlocfilehash: b619505f6e87efd1c3b18e1bed2862d3467984a7
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50041086"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50199926"
 ---
 # <a name="-out-visual-basic"></a>-out (Visual Basic)
 Určuje název výstupního souboru.  

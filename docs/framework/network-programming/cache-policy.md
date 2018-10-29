@@ -11,11 +11,11 @@ helpviewer_keywords:
 - expired content
 ms.assetid: 1a7e04ec-7872-41c2-96c6-52566dcb412b
 ms.openlocfilehash: bd115621db369a28a51e7c5de8dd4095eca80901
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50038916"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50199432"
 ---
 # <a name="cache-policy"></a>Zásady mezipaměti
 Zásady mezipaměti definuje pravidla, která se používají k určení, zda požadavek, je možné splnit pomocí kopie v mezipaměti požadovaný prostředek. Aplikace určit požadavky klienta mezipaměti na aktuálnosti, ale efektivní mezipaměti zásad se určuje podle požadavků mezipaměti klienta, požadavky na vypršení platnosti obsahu serveru a požadavky na opětovné ověření serveru. Interakce požadavky na zásady a server mezipaměti klienta vždy výsledkem nejrestriktivnější zásady ukládání do mezipaměti, abyste zajistili, že nejčerstvější obsah se vrátí do klientské aplikace.  

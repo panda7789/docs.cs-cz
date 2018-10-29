@@ -11,11 +11,11 @@ ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
 author: rpetrusha
 ms.author: ronpet
 ms.openlocfilehash: 31c99d38cd608e93e9ee3467e0ce425835a3d572
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50044889"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201475"
 ---
 # <a name="mutexes"></a>Mutex – třídy
 Můžete použít <xref:System.Threading.Mutex> objektu pro výhradní přístup k prostředku. <xref:System.Threading.Mutex> Třída používá více systémových prostředků, než <xref:System.Threading.Monitor> třídy, ale může být zařazována přes hranice aplikační domény, je možné s více čeká a je možné k synchronizaci vláken v různých procesů. Porovnání mechanismy spravované synchronizace najdete v tématu [přehled primitiv synchronizace](../../../docs/standard/threading/overview-of-synchronization-primitives.md).  

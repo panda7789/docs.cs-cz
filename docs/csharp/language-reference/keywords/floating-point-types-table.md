@@ -8,11 +8,11 @@ helpviewer_keywords:
 - types [C#], floating-point types
 ms.assetid: da886cc5-e01e-4f62-b3ec-6428c8f7a102
 ms.openlocfilehash: c292303d1cf0b72d05ae6269d63a27555d2458b5
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
-ms.locfileid: "50046315"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200467"
 ---
 # <a name="floating-point-types-table-c-reference"></a>Tabulka typů s plovoucí desetinnou čárkou (referenční dokumentace jazyka C#)
 

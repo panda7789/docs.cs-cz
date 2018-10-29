@@ -3,11 +3,11 @@ title: Generování trasování v uživatelském kódu
 ms.date: 03/30/2017
 ms.assetid: fa54186a-8ffa-4332-b0e7-63867126fd49
 ms.openlocfilehash: 0664c11d8020ee5e712ce6d4843c85a1f30b11a3
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50049162"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200584"
 ---
 # <a name="emitting-user-code-traces"></a>Generování trasování v uživatelském kódu
 Kromě povolení trasování v konfiguraci ke shromažďování dat instrumentace vygenerovaných Windows Communication Foundation (WCF), můžete také generování trasování v uživatelském kódu prostřednictvím kódu programu. Tímto způsobem můžete vytvořit proaktivně data instrumentace, který lze později prostudujte pro diagnostické účely. Toto téma popisuje, jak to udělat.  
