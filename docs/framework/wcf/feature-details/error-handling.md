@@ -2,12 +2,12 @@
 title: Zpracování chyb
 ms.date: 03/30/2017
 ms.assetid: c948841a-7db9-40ae-9b78-587d216cbcaf
-ms.openlocfilehash: 64b1af4b557d7792c7285866edc9aed08a0ef667
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.openlocfilehash: 548d93e63440e256ddb54c3ca792a49817c9b059
+ms.sourcegitcommit: b22705f1540b237c566721018f974822d5cd8758
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
-ms.locfileid: "43486151"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49452846"
 ---
 # <a name="error-handling"></a>Zpracování chyb
 ## <a name="error-handling-in-windows-communication-foundation"></a>Zpracování chyb v Windows Communication Foundation  
@@ -30,7 +30,7 @@ ms.locfileid: "43486151"
 ### <a name="dealing-with-unexpected-exceptions-using-an-ierrorhandler"></a>Řešení pomocí IErrorHandler neočekávané výjimky  
  Řešit neočekávané výjimky, je "spojit" IErrorHandler doporučené kurz akce. Obslužné rutiny chyb pouze zachytit výjimky na úrovni modulu runtime WCF (vrstva "model služby"), ne ve vrstvě kanálu. Jediný způsob, jak se připojit IErrorHandler na úrovni kanálu je vytvořte vlastní kanál, který se ve většině scénářů nedoporučuje.  
   
- "Neočekávanou výjimku" není obecně neobnovitelné výjimce ani zpracování výjimek; je místo toho uživatel neočekávané výjimky. Neobnovitelné výjimce (například výjimku paměti) – jedna obecně provádí [obslužná rutina výjimky modelu služby](https://msdn.microsoft.com/library/system.servicemodel.dispatcher.exceptionhandler.aspx) automaticky – nelze obecně zpracovat bez výpadku a jediným důvodem pro zpracování takových výjimky vůbec může být dodatečné protokolování nebo se vraťte do klienta standardní výjimka. Dojde k výjimce zpracování v zpracování zprávy – například serializace, kodér nebo úroveň formátovací modul – obecně nelze zpracovat v IErrorHandler, protože je obecně buď příliš brzy, nebo příliš pozdě pro obslužnou rutinu chyb zasáhnout podle čas, kdy dojde k tyto výjimky. Podobně nelze zpracovat výjimky přenosu IErrorHandler.  
+ "Neočekávanou výjimku" není obecně neobnovitelné výjimce ani zpracování výjimek; je místo toho uživatel neočekávané výjimky. Neobnovitelné výjimce (například výjimku paměti) – jedna obecně provádí [obslužná rutina výjimky modelu služby](xref:System.ServiceModel.Dispatcher.ExceptionHandler) automaticky – nelze obecně zpracovat bez výpadku a jediným důvodem pro zpracování takových výjimky vůbec může být dodatečné protokolování nebo se vraťte do klienta standardní výjimka. Dojde k výjimce zpracování v zpracování zprávy – například serializace, kodér nebo úroveň formátovací modul – obecně nelze zpracovat v IErrorHandler, protože je obecně buď příliš brzy, nebo příliš pozdě pro obslužnou rutinu chyb zasáhnout podle čas, kdy dojde k tyto výjimky. Podobně nelze zpracovat výjimky přenosu IErrorHandler.  
   
  S IErrorHandler můžete explicitně řídit chování aplikace, když dojde k výjimce. Můžete:  
   

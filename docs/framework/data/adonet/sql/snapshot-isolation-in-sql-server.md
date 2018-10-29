@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 52c5dba1a21b0e8d8e5af1dc159941e5f4b4aa5f
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
-ms.translationtype: MT
+ms.openlocfilehash: d2683ead92eb4e76494e3e23bff1c688578a316d
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45970069"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50034296"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>Izolace snímků na SQL serveru
 Izolace snímku vylepšuje souběžnosti pro aplikace s online zpracováním transakcí.  
@@ -24,7 +24,7 @@ Izolace snímku vylepšuje souběžnosti pro aplikace s online zpracováním tra
   
  Nastavením je možnost databáze dále ALLOW_SNAPSHOT_ISOLATION předtím, než je použit v transakcích musí být povolena izolace snímku. Tím dojde k aktivaci mechanismus pro ukládání verze řádků v dočasné databázi (**tempdb**). Je nutné povolit izolaci snímku v každé databázi, která používá s příkazem jazyka Transact-SQL ALTER DATABASE. Izolace snímku se v tomto ohledu liší od úrovně tradiční izolace READ COMMITTED, REPEATABLE READ, SERIALIZABLE a READ UNCOMMITTED, které není potřeba konfigurovat. Následující příkazy aktivovat izolaci snímku a nahraďte výchozí chování READ COMMITTED SNAPSHOT:  
   
-```  
+```sql  
 ALTER DATABASE MyDatabase  
 SET ALLOW_SNAPSHOT_ISOLATION ON  
   
@@ -49,7 +49,7 @@ SET READ_COMMITTED_SNAPSHOT ON
   
 -   SERIALIZOVATELNÝ je nejvíce omezující úroveň izolace, protože uzamkne celých rozsahů klíče a až do dokončení transakce obsahuje zámky. Zahrnuje OPAKOVATELNÉ čtení a přidá omezení, ostatní transakce nelze vložit nové řádky do oblastí, které byly načteny transakce až do dokončení transakce.  
   
- Další informace najdete v tématu "Úrovně izolace" SQL Server Books Online.  
+ Další informace najdete [průvodce Správa verzí řádku a transakce uzamčení](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide).  
   
 ### <a name="snapshot-isolation-level-extensions"></a>Rozšíření úrovni izolace snímku  
  SQL Server zavádí rozšíření na úrovních izolace SQL 92 s po zavedení služby na úrovni izolace SNÍMKU a další provádění READ COMMITTED. Úroveň izolace READ_COMMITTED_SNAPSHOT můžete transparentně nahradit READ COMMITTED pro všechny transakce.  
@@ -132,7 +132,7 @@ SqlTransaction sqlTran =
 ### <a name="using-lock-hints-with-snapshot-isolation"></a>Použití pomocné parametry zámku s izolací snímku  
  V předchozím příkladu vybere první transakce data, a druhá transakce aktualizuje data před první transakce je možné dokončit, způsobí došlo ke konfliktu aktualizací, když se první transakce pokusí aktualizovat na stejném řádku. Zadáním pomocné parametry zámku na začátku transakce můžete snížit pravděpodobnost konfliktů při aktualizacích v dlouhotrvajících transakcí snímku. Následující příkaz SELECT pomocí pomocný parametr UPDLOCK uzamkne vybrané řádky:  
   
-```  
+```sql  
 SELECT * FROM TestSnapshotUpdate WITH (UPDLOCK)   
   WHERE PriKey BETWEEN 1 AND 3  
 ```  
@@ -143,4 +143,5 @@ SELECT * FROM TestSnapshotUpdate WITH (UPDLOCK)
   
 ## <a name="see-also"></a>Viz také  
  [SQL Server a ADO.NET](../../../../../docs/framework/data/adonet/sql/index.md)  
- [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)
+ [ADO.NET spravovaných zprostředkovatelích a datové sady pro vývojáře](https://go.microsoft.com/fwlink/?LinkId=217917)      
+ [Průvodce Správa verzí řádku a transakce uzamčení](/sql/relational-databases/sql-server-transaction-locking-and-row-versioning-guide)

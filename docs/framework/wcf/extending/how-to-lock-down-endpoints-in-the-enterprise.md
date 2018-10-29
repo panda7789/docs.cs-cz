@@ -2,12 +2,12 @@
 title: 'Postupy: uzamknutí koncových bodů v podniku'
 ms.date: 03/30/2017
 ms.assetid: 1b7eaab7-da60-4cf7-9d6a-ec02709cf75d
-ms.openlocfilehash: 032b69c1fae38576b0374b329f1ab6fe90e2b1a0
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 23264159d30790cd54557509b0bc7c62edc1b5b7
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48836901"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50197428"
 ---
 # <a name="how-to-lock-down-endpoints-in-the-enterprise"></a>Postupy: uzamknutí koncových bodů v podniku
 Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásadami zabezpečení organizace. Následující téma popisuje, jak vyvíjet a instalace klienta validátor koncový bod, který slouží k ověření všech klientských aplikací Windows Communication Foundation (WCF) nainstalována na počítačích.  
@@ -39,7 +39,7 @@ Velké podniky často vyžadují, že jsou aplikace vyvíjeny souladu se zásada
   
 1.  Instalaci koncového bodu validátoru pomocí vhodný mechanismus. V podniku tím můžete pomocí zásad skupiny a Systems Management Server (SMS).  
   
-2.  Instalace sestavení se silným názvem do mezipaměti globálního sestavení pomocí [Gacutil.exe (Global Assembly Cache Tool)](https://msdn.microsoft.com/library/ex0ss12c\(v=vs.110\).aspx).  
+2.  Instalace sestavení se silným názvem do mezipaměti globálního sestavení pomocí [Gacutil.exe (Global Assembly Cache Tool)](../../../../docs/framework/tools/gacutil-exe-gac-tool.md).  
   
 3.  Použití <xref:System.Configuration?displayProperty=nameWithType> obor názvů, typy mají:  
   

@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring services [WCF]
 ms.assetid: c9c8cd32-2c9d-4541-ad0d-16dff6bd2a00
-ms.openlocfilehash: 904abff4f3cae5873fe3cc9705dee84f73e2a523
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.openlocfilehash: 11d24bec46cfb190fe1a7c2a7b9ac78ac4d5e799
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46004507"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200859"
 ---
 # <a name="configuring-services-using-configuration-files"></a>Konfigurace služeb pomocí konfiguračních souborů
 Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním souborem dává možnost poskytovat koncový bod a data o chování služby Přejme během nasazení místo v době návrhu. Toto téma popisuje primární techniky, které jsou k dispozici.  
   
  Služba WCF se dají konfigurovat pomocí [!INCLUDE[dnprdnshort](../../../includes/dnprdnshort-md.md)] technologie konfigurace. Nejčastěji jsou přidány elementy XML v souboru Web.config pro web Internetové informační služby (IIS), který je hostitelem služby WCF. Prvky umožňují změnit podrobnosti, jako jsou adresy koncových bodů (skutečné adresy používaný ke komunikaci se službou service) pro počítače podle počítače. Kromě toho WCF obsahuje několik elementů poskytované systémem, které umožňují rychle vybrat většina základních funkcí pro službu. Počínaje [!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)], WCF se dodává s novou výchozí konfiguraci modelu, která zjednodušuje požadavky na konfiguraci WCF. Pokud nezadáte žádnou konfiguraci WCF pro konkrétní službu, modul runtime automaticky nakonfiguruje vaše služba se některé standardní koncové body a výchozí vazby a chování. V praxi, zápis konfigurace je velkou část programování WCF aplikací.  
   
- Další informace najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md). Seznam nejčastějších běžně používají elementy, najdete v části [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
+ Další informace najdete v tématu [Konfigurace vazeb pro služby](../../../docs/framework/wcf/configuring-bindings-for-wcf-services.md). Seznam nejčastěji používaných prvky, naleznete v tématu [System-Provided vazby](../../../docs/framework/wcf/system-provided-bindings.md). Další informace o výchozí koncové body, vazby a chování najdete v tématu [zjednodušená konfigurace](../../../docs/framework/wcf/simplified-configuration.md) a [zjednodušená konfigurace pro služby WCF](../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md).  
   
 > [!IMPORTANT]
 >  Při nasazení vedle sebe scénáře, ve které jsou nasazené dvě různé verze služby, je nutné zadat částečné názvy sestavení odkazovaná v konfiguračních souborech. Je to proto, že konfigurační soubor se sdílí mezi všemi verzemi služby a mohl být spuštěn v různých verzích rozhraní .NET Framework.  
@@ -186,9 +186,9 @@ Konfigurace služby Windows Communication Foundation (WCF) s konfiguračním sou
 ## <a name="behavior-merge"></a>Chování sloučení  
  Slučovací funkce chování usnadňuje správu chování, pokud chcete sadu společné chování, který se má použít konzistentně. Tato funkce umožňuje určit chování na různých úrovních hierarchie configuration a služby dědit z více úrovní hierarchie konfigurace chování. Pro ilustraci jak tohle funguje Předpokládejme, že máte následující virtuální adresář rozložení ve službě IIS:  
   
- ~\Web.config~\Service.svc~\Child\Web.config~\Child\Service.svc  
+ `~\Web.config~\Service.svc~\Child\Web.config~\Child\Service.svc`
   
- A ~\Web.config soubor má následující obsah:  
+ A `~\Web.config` soubor má následující obsah:  
   
 ```xml  
 <configuration>  

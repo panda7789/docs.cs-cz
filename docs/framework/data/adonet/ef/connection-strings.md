@@ -1,32 +1,33 @@
 ---
-title: Připojovací řetězce
-ms.date: 03/30/2017
+title: Připojovací řetězce v ADO.NET Entity Framework
+ms.date: 10/15/2018
 ms.assetid: 78d516bc-c99f-4865-8ff1-d856bc1a01c0
-ms.openlocfilehash: 17d91c9b97e370afe3704d2a58f5228e3fec95f1
-ms.sourcegitcommit: 586dbdcaef9767642436b1e4efbe88fb15473d6f
+ms.openlocfilehash: 99b6b1b7a38477dc17d3960ee5bc0b63ec0cb819
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/06/2018
-ms.locfileid: "48842175"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50193991"
 ---
-# <a name="connection-strings"></a>Připojovací řetězce
+# <a name="connection-strings-in-the-adonet-entity-framework"></a>Připojovací řetězce v ADO.NET Entity Framework
 Připojovací řetězec obsahuje informace o inicializaci, která je předána jako parametr od poskytovatele dat ke zdroji dat. Syntaxe závisí na poskytovateli dat a připojovací řetězec je analyzován při pokusu o otevření připojení. Připojovací řetězec používaný Entity Framework obsahují informace, které slouží pro připojení k podkladové zprostředkovatele dat ADO.NET, který podporuje rozhraní Entity Framework. Obsahují také informace o požadované modelu a souborů mapování.  
   
  Připojovací řetězec se používá zprostředkovatel EntityClient při přístupu k modelu a mapování metadata a připojování k objektu data source. Připojovací řetězec můžete přistupovat ani je nastavit prostřednictvím <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A> vlastnost <xref:System.Data.EntityClient.EntityConnection>. <xref:System.Data.EntityClient.EntityConnectionStringBuilder> Třídy je možné programově vytvořit nebo získat přístup k parametrů v připojovacím řetězci. Další informace najdete v tématu [postupy: sestavení připojovacího řetězce EntityConnection](../../../../../docs/framework/data/adonet/ef/how-to-build-an-entityconnection-connection-string.md).  
   
  [Nástroje modelu Entity Data Model](https://msdn.microsoft.com/library/91076853-0881-421b-837a-f582f36be527) generovat připojovací řetězec, který je uložený v konfiguračním souboru aplikace. <xref:System.Data.Objects.ObjectContext> načte informace o tomto připojení automaticky při vytváření objektu dotazy. <xref:System.Data.EntityClient.EntityConnection> Používané <xref:System.Data.Objects.ObjectContext> instance je přístupný z <xref:System.Data.Objects.ObjectContext.Connection%2A> vlastnost. Další informace najdete v tématu [Správa připojení a transakce](https://msdn.microsoft.com/library/b6659d2a-9a45-4e98-acaa-d7a8029e5b99).  
-  
+
+## <a name="connection-string-syntax"></a>Syntaxe připojovacího řetězce
+
+Další informace o obecnou syntaxi pro připojovací řetězce, naleznete v tématu [syntaxe připojovacího řetězce | Připojovací řetězce v ADO.NET](../connection-strings.md#connection-string-syntax).
+
 ## <a name="connection-string-parameters"></a>Parametry připojovacího řetězce  
- Formát připojovacího řetězce je středníkem oddělený seznam dvojic klíč/hodnota parametru:  
-  
- `keyword1=value; keyword2=value;`  
-  
- Rovnítko (=) připojí každé klíčové slovo a její hodnotu. Klíčová slova nejsou velká a malá písmena a mezery mezi páry klíč/hodnota jsou ignorovány. Hodnoty mohou být velká a malá písmena, v závislosti na zdroji dat. Všechny hodnoty, které obsahují středník, jednoduchých uvozovek nebo dvojité uvozovky musí být uzavřen do dvojitých uvozovek. V následující tabulce jsou uvedeny platné názvy pro hodnoty – klíčové slovo v <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>.  
+
+V následující tabulce jsou uvedeny platné názvy pro hodnoty – klíčové slovo v <xref:System.Data.EntityClient.EntityConnection.ConnectionString%2A>.  
   
 |Klíčové slovo|Popis|  
 |-------------|-----------------|  
 |`Provider`|Požadováno pokud `Name` – klíčové slovo není zadán. Název zprostředkovatele, který se používá k načtení <xref:System.Data.Common.DbProviderFactory> objekt pro příslušný prostředkovatel. Tato hodnota je konstantní.<br /><br /> Když `Name` – klíčové slovo není součástí připojovacího řetězce služby entity, neprázdná hodnota pro `Provider` – klíčové slovo je povinný. Toto klíčové slovo je vzájemně se vylučuje s `Name` – klíčové slovo.|  
-|`Provider Connection String`|Volitelné. Určuje, který je předán do podkladového zdroje dat specifické pro zprostředkovatele připojovací řetězec. Tento připojovací řetězec je vyjádřena pomocí dvojice platný – klíčové slovo/hodnota pro poskytovatele dat. Neplatný `Provider Connection String` způsobí chybu za běhu při vyhodnocování ve zdroji dat.<br /><br /> Toto klíčové slovo je vzájemně se vylučuje s `Name` – klíčové slovo.<br /><br /> Hodnota `Provider Connection String` musí být v uvozovkách. Následuje příklad:<br /><br /> `Provider Connection String ="Server=serverName; User ID = userID";`<br /><br /> V následujícím příkladu není má práce:<br /><br /> `Provider Connection String =Server=serverName; User ID = userID`|  
+|`Provider Connection String`|Volitelné. Určuje, který je předán do podkladového zdroje dat specifické pro zprostředkovatele připojovací řetězec. Tento připojovací řetězec obsahuje dvojice platný – klíčové slovo/hodnota pro poskytovatele dat. Neplatný `Provider Connection String` způsobí chybu za běhu při vyhodnocování ve zdroji dat.<br /><br /> Toto klíčové slovo je vzájemně se vylučuje s `Name` – klíčové slovo.<br /><br /> Ujistěte se, že řídicí hodnotu podle Obecná syntaxe nástroje [připojovací řetězce ADO.NET](../../../../../docs/framework/data/adonet/connection-strings.md). Zvažte například následující připojovací řetězec: `Server=serverName; User ID = userID`. Musí být uvozena, protože obsahuje středníkem. Protože neobsahuje dvojitých uvozovek, mohou být použity pro uvození:<br /><br /> `Provider Connection String ="Server=serverName; User ID = userID";`|  
 |`Metadata`|Požadováno pokud `Name` – klíčové slovo není zadán. Kanál oddělený seznam adresářů, souborů a umístění prostředků, ve kterém se hledá informace mapování a metadat. Následuje příklad:<br /><br /> `Metadata=`<br /><br /> `c:\model &#124; c:\model\sql\mapping.msl;`<br /><br /> Mezer na každé straně kanálu oddělovače jsou ignorovány.<br /><br /> Toto klíčové slovo je vzájemně se vylučuje s `Name` – klíčové slovo.|  
 |`Name`|Aplikace můžete volitelně zadat název připojení v konfiguračním souboru aplikace, který obsahuje hodnoty požadované klíčové slovo/hodnotu připojovacího řetězce. V takovém případě je nelze zadat přímo v připojovacím řetězci. `Name` – Klíčové slovo není povolený v konfiguračním souboru.<br /><br /> Když `Name` – klíčové slovo není zahrnutý v připojovacím řetězci, neprázdný hodnoty pro zprostředkovatele – klíčové slovo je povinný.<br /><br /> Toto klíčové slovo je vzájemně se vylučuje s všechny další připojovací řetězec klíčová slova.|  
   

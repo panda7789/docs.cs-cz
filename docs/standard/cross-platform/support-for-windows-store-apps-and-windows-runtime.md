@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 6fa7d044-ae12-4c54-b8ee-50915607a565
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 18bd35495d1cb7cfffe39efa8f7313b75c7f5378
-ms.sourcegitcommit: 700b9003ea6bdd83a53458bbc436c9b5778344f1
+ms.openlocfilehash: 0476fe7ed731dbb2c6b86cff3255673ecee6f98d
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/03/2018
-ms.locfileid: "48261560"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50198455"
 ---
 # <a name="net-framework-support-for-windows-store-apps-and-windows-runtime"></a>Podpora pro aplikace pro web Windows Store a prostředí Windows Runtime v rozhraní .NET Framework
 [!INCLUDE[net_v45](../../../includes/net-v45-md.md)] Podporuje různé scénáře vývoje softwaru pomocí [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Tyto scénáře spadají do tří kategorií:
@@ -25,7 +25,7 @@ ms.locfileid: "48261560"
 
 -   Vývoj knihoven tříd pro použití v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace, které vytváříte s použitím rozhraní .NET Framework.
 
--   Vývoj [!INCLUDE[wrt](../../../includes/wrt-md.md)] součásti zabalené v. Soubory WinMD, které můžete používat programovací jazyk, který podporuje [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Viz například [vytváření komponent Windows Runtime v jazyce C# a Visual Basic](https://msdn.microsoft.com/library/windows/apps/br230301(v=VS.110).aspx).
+-   Vývoj [!INCLUDE[wrt](../../../includes/wrt-md.md)] součásti zabalené v. Soubory WinMD, které můžete používat programovací jazyk, který podporuje [!INCLUDE[wrt](../../../includes/wrt-md.md)]. Viz například [vytváření komponent Windows Runtime v jazyce C# a Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic).
 
  Toto téma popisuje podporu rozhraní .NET Framework poskytuje pro všechny tři kategorie, který popisuje scénáře pro [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty. První část obsahuje základní informace o vztahu mezi rozhraní .NET Framework a [!INCLUDE[wrt](../../../includes/wrt-md.md)]a vysvětluje některé oddities můžete narazit v systému nápovědy a rozhraní IDE. [Druhé části](#WindowsRuntimeComponents) popisuje scénáře pro vývoj [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty.
 
@@ -84,7 +84,7 @@ ms.locfileid: "48261560"
 
  Rozhraní způsob, jak se zobrazí ve spravovaném kódu ovlivňuje způsob, jak typy, které implementují tato rozhraní se zobrazí. Například `PropertySet` implementuje třída `IMap<K, V>`, která se zobrazí ve spravovaném kódu jako `IDictionary<TKey, TValue>`. `PropertySet` Zobrazí se jako by se implementovat `IDictionary<TKey, TValue>` místo `IMap<K, V>`, takže ve spravovaném kódu zřejmě má `Add` metodu, která se chová jako `Add` metoda v rozhraní .NET Framework slovníky. Nezobrazí mít `Insert` metody.
 
- Další informace o použití rozhraní .NET Framework pro vytváření [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty a návod, který ukazuje, jak používání takové komponenty jazykem JavaScript naleznete v tématu [vytváření komponent Windows Runtime v jazyce C# a Visual Basic](https://msdn.microsoft.com/library/windows/apps/br230301%28v=VS.110%29.aspx).
+ Další informace o použití rozhraní .NET Framework pro vytváření [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty a návod, který ukazuje, jak používání takové komponenty jazykem JavaScript naleznete v tématu [vytváření komponent Windows Runtime v jazyce C# a Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic).
 
 ### <a name="primitive-types"></a>Primitivní typy
  Povolit přirozené používání [!INCLUDE[wrt](../../../includes/wrt-md.md)] primitivní typy rozhraní .NET Framework ve spravovaném kódu se zobrazí místo [!INCLUDE[wrt](../../../includes/wrt-md.md)] primitivní typy ve vašem kódu. V rozhraní .NET Framework, například primitivní typy `Int32` struktury mají mnoho užitečným vlastnostem a metodám, například `Int32.TryParse` metody. Naopak primitivní typy a struktury v [!INCLUDE[wrt](../../../includes/wrt-md.md)] obsahovat pouze pole. Při použití primitivy ve spravovaném kódu zdají být typy rozhraní .NET Framework, můžete si vlastnosti a metody typy rozhraní .NET Framework jako obvykle. Následující seznam obsahuje souhrn:
@@ -149,6 +149,6 @@ ms.locfileid: "48261560"
 |[.NET pro Windows Store apps – přehled](https://msdn.microsoft.com/library/windows/apps/br230302(v=VS.110).aspx)|Popisuje typy rozhraní .NET Framework a členy, které můžete použít k vytvoření [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace a [!INCLUDE[wrt](../../../includes/wrt-md.md)]komponenty. (Ve službě Windows Dev Center.)|
 |[Plán pro aplikace pro Windows Store pomocí jazyka C# nebo Visual Basic](https://docs.microsoft.com/previous-versions/windows/apps/br229583(v=win.10))|Poskytuje klíčové prostředky, které vám pomůžou začít vyvíjet [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí C# nebo Visual Basic, včetně mnoha témat rychlý start, pokyny a osvědčené postupy. (Ve službě Windows Dev Center.)|
 |[Jak tos (XAML)](https://docs.microsoft.com/previous-versions/windows/apps/br229566(v=win.10))|Poskytuje klíčové prostředky, které vám pomůžou začít vyvíjet [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikací pomocí C# nebo Visual Basic, včetně mnoha témat rychlý start, pokyny a osvědčené postupy. (Ve službě Windows Dev Center.)|
-|[Vytváření komponent Windows Runtime v jazyce C# a Visual Basic](https://msdn.microsoft.com/library/windows/apps/br230301%28v=VS.110%29.aspx)|Popisuje, jak vytvořit [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty pomocí rozhraní .NET Framework, vysvětluje, jak ho použít jako součást [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace vytvořené pro Windows pomocí JavaScriptu a popisuje, jak ladit kombinaci pomocí sady Visual Studio. (Ve službě Windows Dev Center.)|
+|[Vytváření komponent Windows Runtime v jazyce C# a Visual Basic](/windows/uwp/winrt-components/creating-windows-runtime-components-in-csharp-and-visual-basic)|Popisuje, jak vytvořit [!INCLUDE[wrt](../../../includes/wrt-md.md)] komponenty pomocí rozhraní .NET Framework, vysvětluje, jak ho použít jako součást [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace vytvořené pro Windows pomocí JavaScriptu a popisuje, jak ladit kombinaci pomocí sady Visual Studio. (Ve službě Windows Dev Center.)|
 |[Referenční příručka prostředí Windows Runtime](/uwp/api/)|Referenční dokumentace pro [!INCLUDE[wrt](../../../includes/wrt-md.md)]. (Ve službě Windows Dev Center.)|
 |[Předávání identifikátorů URI do prostředí Windows Runtime](../../../docs/standard/cross-platform/passing-a-uri-to-the-windows-runtime.md)|Popisuje problém, který může nastat při předání identifikátor URI ze spravovaného kódu do [!INCLUDE[wrt](../../../includes/wrt-md.md)]a o tom, jak jí předcházet.|

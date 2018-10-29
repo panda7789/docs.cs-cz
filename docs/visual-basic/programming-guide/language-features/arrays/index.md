@@ -7,23 +7,22 @@ helpviewer_keywords:
 - arrays [Visual Basic]
 - Visual Basic, arrays
 ms.assetid: dbf29737-b589-4443-bee6-a27588d9c67e
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: 3b6c1db0131f2a150dc1b00dd5e6dafc3a418f05
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: bb6cb846a305e618a4a0cbf1d4b3d2510df14cf7
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183825"
 ---
 # <a name="arrays-in-visual-basic"></a>Pole v jazyce Visual Basic
-Pole je sada hodnot, které jsou označovány jako *elementy*, které logicky se vztahují k sobě navzájem. Například může obsahovat pole počet studentů v každé úrovni ve škole gramatika; Každý element pole je počet studentů v jedné úrovni. Podobně pole může obsahovat Studentova tříd pro třídu; Každý element pole je jedné úrovni.    
+Pole je sada hodnot, které jsou označovány jako *prvky*, která jsou logicky vzájemně souvisí. Například pole může obsahovat počet studentů v každé třídě gymnázia; Každý prvek pole je počet studentů v jedné na podnikové úrovni. Podobně může obsahovat pole student získal známek pro třídy; Každý prvek pole je jeden na podnikové úrovni.    
 
-Je možné jednotlivé proměnné, které chcete uložit všechny naše datové položky. Například pokud aplikace analyzuje známek studentů, jsme můžete používat samostatná proměnná pro každý Studentova úrovni, jako třeba `englishGrade1`, `englishGrade2`atd. Tento přístup má tři hlavní omezení:
-- Máme vědět v době návrhu přesně kolik známek máme pro zpracování.
-- Zpracování velkého počtu tříd rychle stane nepraktické. Díky tomu pak mnohem pravděpodobnější závažné chyby aplikace.
-- Je obtížné. Každé nové třídy, které přidáme vyžaduje, že aplikace se změnil, překompilovat a znovu nasazena.  
+Je možné jednotlivé proměnné pro uložení všech našich datových položek. Například pokud aplikace analyzuje známek studentů, můžeme použít samostatná proměnná pro každého studenta, jako například `englishGrade1`, `englishGrade2`atd. Tento přístup má tři hlavní omezení:
+- Máme vědět v době návrhu přesně kolik známek máme ke zpracování.
+- Zpracování velkého počtu tříd rychle nepraktický. Díky tomu aplikace mnohem větší pravděpodobností mít závažné chyby.
+- Je obtížné udržovat. Každý nový na podnikové úrovni, které přidáme vyžaduje, že aplikace se změnil, znovu zkompilovat a znovu nasadit.  
  
- Pomocí pole můžete odkazovat na tyto hodnoty související se stejným názvem a použití čísla, která je volána *index* nebo *dolní index* k identifikaci jednotlivých element na pozici v poli základě. Indexy pole rozsahu od 0 do jedné menší než celkový počet prvků v poli. Při definování velikost pole pomocí syntaxe jazyka Visual Basic, zadejte jeho nejvyšší index, nebyl celkový počet prvků v poli. Můžete pracovat s polem jako jednotku, a možnost k iteraci v jeho elementy není znáte přesně kolik elementy obsahuje v době návrhu.
+ Pomocí pole můžete odkazovat na tyto související hodnoty se stejným názvem a použít číslo, která je volána *index* nebo *dolní index* k identifikaci jednotlivý element podle jeho pozice v poli. Indexy pole rozsahu od 0 do jednoho nižší než celkový počet prvků v poli. Při použití syntaxe jazyka Visual Basic pro definování velikosti pole zadáte její nejvyšší index není celkový počet prvků v poli. Můžete pracovat s pole jako celek, a možnost iterovat jeho prvky díky které nepotřebuje vědět přesně počet prvků, obsahuje v době návrhu.
   
  Rychlé příklady před vysvětlení:  
   
@@ -52,263 +51,263 @@ Dim sales()() As Double = New Double(11)() {}
   
  ## <a name="in-this-article"></a>V tomto článku
   
-- [Elementy pole v jednoduchých polí](#array-elements-in-a-simple-array)  
+- [Prvky pole v jednoduchém poli](#array-elements-in-a-simple-array)  
   
-- [Vytváření pole](#creating-an-array)  
+- [Vytvoření pole](#creating-an-array)  
   
-- [Ukládání hodnot v matici](#storing-values-in-an-array)  
+- [Ukládání hodnot v poli](#storing-values-in-an-array)  
   
-- [Vyplní pole s literály pole](#populating-an-array-with-array-literals)  
+- [Vyplnění pole pomocí literálů pole](#populating-an-array-with-array-literals)  
   
-- [Iterace v rámci pole](#iterating-through-an-array)  
+- [Procházení skrze pole](#iterating-through-an-array)  
   
 - [Velikost pole](#BKMK_ArraySize)  
 
 - [Typ pole](#the-array-type)  
   
-- [Pole jako parametry a návratové hodnoty](#arrays-as-return-values-and-parameters)  
+- [Pole jako návratové hodnoty a parametry](#arrays-as-return-values-and-parameters)  
 - [Vícenásobná pole](#jagged-arrays)  
   
-- [Pole s nulovou délkou](#zero-length-arrays)  
+- [Pole nulové délky](#zero-length-arrays)  
 
 - [Rozdělení pole](#splitting-an-array)
   
-- [Kolekce jako alternativu k polím](#collections-as-an-alternative-to-arrays)  
+- [Kolekce jako alternativa k polím](#collections-as-an-alternative-to-arrays)  
   
-##  <a name="array-elements-in-a-simple-array"></a>Elementy pole v jednoduchých polí  
+##  <a name="array-elements-in-a-simple-array"></a>Prvky pole v jednoduchém poli  
 
-Umožňuje vytvořit pole s názvem `students` k uložení počet studentů v každé úrovni ve škole gramatika. Indexy elementů rozsahu od 0 do 6. Pomocí tohoto pole je jednodušší než deklarování sedm proměnných.
+Pojďme vytvořit pole s názvem `students` k ukládání počtu studentů z každého stupně ve škole gramatiky. Indexy prvků v rozsahu od 0 do 6. Pomocí tohoto pole je jednodušší než deklarování sedmi proměnných.
 
-Následující obrázek ukazuje `students` pole. Pro každý element pole:  
+Je vidět na následujícím obrázku `students` pole. Pro každý prvek pole:  
   
--   Index elementu představuje úrovni (index 0 představuje mateřské školy).
+-   Index prvku představuje stupeň (index 0 představuje mateřské školy).
   
--   Hodnota, která je obsažena v elementu představuje počet studentů v této úrovni.
+-   Hodnota, která je obsažena v elementu představuje počet studentů v této platové třídě.
   
  ![Obrázek znázorňující počet studentů pole](../../../../visual-basic/programming-guide/language-features/arrays/media/arrayexampleschool.gif "ArrayExampleSchool")  
-Prvky pole "studenty"  
+Elementy pole "studenti"  
  
 Následující příklad obsahuje kód jazyka Visual Basic, které vytváří a používá pole:
 
  [!code-vb[simple-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/simple-array.vb)]  
 
-V příkladu provádí tři věci:
+V příkladu dělá tři věci:
 
-- Deklaruje `students` pole sedm prvků. Číslo `6` v poli deklarace vyplývá poslední index v poli, že je menší než počet elementů v poli.
-- Přiřadí hodnoty do každý prvek v poli. Elementy pole přistupují pomocí názvu pole a včetně index jednotlivý prvek v závorkách.
-- Zobrazí se seznam každou hodnotu pole. V příkladu se používá [ `For` ](../../../language-reference/statements/for-next-statement.md) příkaz, který má přístup každý elementu pole pomocí čísla indexu.
+- Deklaruje `students` pole sedm prvků. Číslo `6` v poli prohlášení znamená poslední index v poli; jeden je menší než počet prvků v poli.
+- Přiřadí hodnoty ke každému prvku v poli. Prvky pole jsou přístupné pomocí názvu pole a včetně index jednotlivý element v závorkách.
+- Uvádí každou hodnotu pole. V příkladu se používá [ `For` ](../../../language-reference/statements/for-next-statement.md) příkaz pro přístup k každý prvek pole pomocí čísla indexu.
   
- `students` Pole v předchozím příkladu je jednorozměrné pole, protože používá jeden index. Pole, které používá více než jeden index nebo dolní index nazývá *multidimenzionální*. Další informace najdete v tématu zbývající části tohoto článku a [rozměry pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
+ `students` Pole v předchozím příkladu je jednorozměrné pole, protože používá jeden index. Pole, která používá více než jeden index nebo dolní index, se nazývá *multidimenzionální*. Další informace najdete v tématu zbývající část tohoto článku a [rozměry pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md).  
   
-##  <a name="creating-an-array"></a>Vytváření pole  
+##  <a name="creating-an-array"></a>Vytvoření pole  
  
-Velikost pole můžete definovat několika způsoby: 
+Můžete definovat velikost pole několika způsoby: 
 
-- Můžete zadat velikost, když je deklarovaná pole:
+- Při deklaraci pole můžete zadat velikost:
   
     [!code-vb[creating1](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#1)]  
   
- - Můžete použít `New` klauzule zadat velikost pole, když je vytvořeno:  
+ - Můžete použít `New` klauzule k zadání velikosti pole při jeho vytváření:  
   
     [!code-vb[creating2](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#2)]  
   
- Pokud máte existující pole, můžete změnit její velikost pomocí [ `Redim` ](../../../../visual-basic/language-reference/statements/redim-statement.md) příkaz. Můžete určit, že `Redim` příkaz zachovat hodnoty, které jsou v poli, nebo můžete zadat, že ho vytvořit prázdné pole. Následující příklad ukazuje použití různých `Redim` příkaz mohli provádět úpravu velikosti pole existujících.  
+ Pokud máte existující pole, můžete změnit jeho velikost pomocí [ `Redim` ](../../../../visual-basic/language-reference/statements/redim-statement.md) příkazu. Můžete určit, že `Redim` příkaz zachovat hodnoty, které jsou v poli, nebo můžete určit, že vytvoří prázdné pole. Následující příklad ukazuje různá použití `Redim` příkaz pro úpravu velikosti existujícího pole.  
   
  [!code-vb[redimensioning](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#3)]  
   
  Další informace najdete v tématu [ReDim – příkaz](../../../../visual-basic/language-reference/statements/redim-statement.md).  
   
-##  <a name="storing-values-in-an-array"></a>Ukládání hodnot v matici
+##  <a name="storing-values-in-an-array"></a>Ukládání hodnot v poli
  
- Mají přístup ke každé umístění v matici pomocí indexu typu `Integer`. Můžete ukládat a načíst hodnoty v pole pod položkou každé pole umístění pomocí jeho index uzavřený v závorkách. Indexů pro vícerozměrná pole se oddělují čárkami (,). Pro každé pole dimenze potřebovat jeden index. 
+ Každé umístění v poli můžete přistupovat pomocí indexu typu `Integer`. Můžete ukládat a načítat hodnoty v matici odkazováním na umístění jednotlivých polí pomocí indexu uvedeného v závorkách. Indexy pro vícerozměrná pole jsou odděleny čárkami (,). Budete potřebovat jeden index pro každou dimenzi pole. 
 
-Následující příklad ukazuje některé příkazy, které ukládají a načítají hodnoty v polích.
+Následující příklad ukazuje některé příkazy, které ukládat a načítat hodnoty v polích.
   
  [!code-vb[store-and-retrieve](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/store-and-retrieve.vb)]  
   
-## <a name="populating-an-array-with-array-literals"></a>Vyplní pole s literály pole
- Pomocí pole literálu může vyplnit pole s počáteční sadu hodnot v době, kdy musíte ji vytvořit. Literál pole sestává ze seznamu hodnot oddělených čárkami, které jsou uzavřené do složených závorek (`{}`).  
+## <a name="populating-an-array-with-array-literals"></a>Vyplnění pole pomocí literálů pole
+ Pomocí literálového pole, která můžete naplnit pole s počáteční sadu hodnot ve stejnou dobu, kterou vytvoříte. Literál pole obsahuje seznam hodnot oddělených čárkami, které jsou uzavřeny ve složených závorkách (`{}`).  
   
- Když vytvoříte pole pomocí pole literálu, můžete zadat typ pole nebo použít odvození typu určit typ pole. Následující příklad ukazuje obě možnosti.  
+ Při vytváření pole pomocí literálu pole můžete zadat typ pole nebo typ pole můžete určit pomocí odvození typu proměnné. Následující příklad ukazuje obě možnosti.  
   
  [!code-vb[create-with-literals](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#4)]  
   
- Pokud používáte odvození typu, je dáno typ pole *dominantní typ* v seznamu hodnot literálu. Dominantní typ je typ, do kterého můžete rozšířit všechny ostatní typy v poli. Pokud tento typ jedinečného nelze určit, dominantní typ je typ jedinečného, do kterého můžete zúžit všechny ostatní typy v poli. Pokud žádná z těchto jedinečný se dá určit, že dominantní typ je `Object`. Například, pokud je seznam hodnot, do pole literál poskytnutý obsahuje hodnoty typu `Integer`, `Long`, a `Double`, výsledné pole je typu `Double`. Protože `Integer` a `Long` rozšířit pouze `Double`, `Double` dominantní typu. Další informace najdete v tématu [Widening a zužující převody](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). 
+ Při použití odvození typu proměnné typu pole závisí *dominantní typ* v seznamu hodnot literálů. Dominantní typ je typ, ke kterému lze rozšířit všechny ostatní typy jako pole. Pokud nelze určit tento jedinečný typ, dominantní typ je jedinečný typ, do kterého můžete zúžit všechny typy v poli. Pokud ani jeden z těchto jedinečných typů nelze určit, dominantní typ je `Object`. Například, pokud seznam hodnot, který je zadaný pro literál pole obsahuje hodnoty typu `Integer`, `Long`, a `Double`, výsledné pole je typu `Double`. Protože `Integer` a `Long` rozšiřují pouze na `Double`, `Double` dominantní typ je. Další informace najdete v tématu [Widening a zúžení převodů](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). 
  
 > [!NOTE] 
-> Odvození typu můžete použít pouze pro pole, které jsou definovány jako místní proměnné v člena typu. Chybí-li definici explicitní typu, pole definované s literály pole na úrovni třídy jsou typu `Object[]`. Další informace najdete v tématu [odvození místního typu](../variables/local-type-inference.md). 
+> Odvození typu můžete použít pouze pro pole, které jsou definovány jako lokální proměnné v člena typu. Pokud chybí definice explicitního typu, pole definované pomocí literály pole na úrovni třídy jsou typu `Object[]`. Další informace najdete v tématu [odvození místního typu](../variables/local-type-inference.md). 
 
-Všimněte si, že předchozí příklad definuje `values` jako pole typu `Double` to i v případě, že jsou všechna pole literály typu `Integer`. Toto pole můžete vytvořit, protože hodnoty v poli literálu můžete rozšířit do `Double` hodnoty. 
+Všimněte si, že v předchozím příkladu je definována `values` jako pole typu `Double` i když jsou všechny literály pole typu `Integer`. Toto pole můžete vytvořit, protože můžou hodnoty v poli literálu rozšířit na `Double` hodnoty. 
   
- Můžete také vytvořit a naplnit multidimenzionálního pole pomocí *vnořená pole literály*. Literály vnořená pole musí mít číslo dimenzí, které je v souladu s výsledné pole. Následující příklad vytvoří dvourozměrná pole celých čísel pomocí literály vnořená pole.  
+ Můžete také vytvořit a naplnit vícedimenzionální pole pomocí *vnořené literály pole*. Literály vnořeného pole musí mít počet rozměrů, která je kompatibilní s výsledným polem. Následující příklad vytvoří dvourozměrné pole celých čísel pomocí literál vnořeného pole.  
   
  [!code-vb[nested-array-literals](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#5)]  
   
-Pokud používáte literály vnořená pole vytvořit a naplnit pole, dojde k chybě, pokud počet elementů v literálech vnořená pole se neshodují. Pokud je explicitně deklarovat proměnnou pole do mají jiný počet dimenzí než literály pole také dojde k chybě. 
+Když vytvořit a naplnit pole pomocí literál vnořeného pole, dojde k chybě, pokud počet prvků v literálech vnořeného pole, které se neshodují. Pokud explicitně deklarujete proměnnou pole mají různý počet rozměrů než literály pole také dojde k chybě. 
   
-Stejně jako lze pro jednorozměrné pole, můžete spolehnout na odvození typu při vytváření multidimenzionálního pole s literály vnořená pole. Odvozené typ je typ dominantní pro všechny hodnoty ve všech literály pole pro všechny úroveň vnoření. Následující příklad vytvoří dvourozměrná pole typu `Double[,]` z hodnoty, které jsou typu `Integer` a `Double`.  
+Stejně jako pro jednorozměrné pole, můžete se spolehnout na odvození typu při vytváření vícedimenzionálního pole pomocí literál vnořeného pole. Je odvozený typ dominantní typ pro všechny hodnoty ve všech literálech pole pro všechny úrovně vnoření. Následující příklad vytvoří dvourozměrné pole typu `Double[,]` z hodnot, které jsou typu `Integer` a `Double`.  
   
  [!code-vb[nested-type-inference](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#6)]  
   
- Další příklady najdete v tématu [postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md).  
+ Další příklady najdete v tématu [jak: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md).  
   
-##  <a name="iterating-through-an-array"></a>Iterace v rámci pole  
- Když jste iteraci v rámci pole, je přístup každý prvek v poli od nejnižší indexu na ty nejvyšší, nebo od nejvyšší nejnižší. Obvykle používají použijte buď [pro... Další příkaz](../../../../visual-basic/language-reference/statements/for-next-statement.md) nebo [pro každou... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) k iteraci v rámci prvků pole. Pokud si nejste jisti horní hranice pole, můžete volat <xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType> metodu k získání nejvyšší hodnoty indexu. I když nejnižší hodnotu indexu je téměř vždy 0, můžete zavolat <xref:System.Array.GetLowerBound%2A?displayProperty=nameWithType> metodu k získání nejnižší hodnoty indexu.   
+##  <a name="iterating-through-an-array"></a>Procházení skrze pole  
+ Při iteraci pole máte přístup každý prvek v poli od nejnižšího indexu k nejvyšší nebo z nejvyšší k nejnižší. Obvykle, použijte buď [pro... Další příkaz](../../../../visual-basic/language-reference/statements/for-next-statement.md) nebo [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) k iteraci v rámci prvků pole. Pokud si nejste jisti horní mez pole, můžete volat <xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType> metodu k získání nejvyšší hodnotě indexu. I když nejnižší hodnota indexu je téměř vždy 0, můžete volat <xref:System.Array.GetLowerBound%2A?displayProperty=nameWithType> metodu k získání nejnižší hodnota indexu.   
   
- V následujícím příkladu prochází jednorozměrné pole s použitím [ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md) příkaz. 
+ Následující příklad provede iteraci jednorozměrového pole použitím [ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md) příkazu. 
   
  [!code-vb[iterate-one-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate1d.vb)]  
   
- V následujícím příkladu prochází multidimenzionálního pole pomocí [ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md) příkaz. <xref:System.Array.GetUpperBound%2A> Metoda má parametr, který určuje dimenzi. `GetUpperBound(0)` Vrátí nejvyšší index první dimenze a `GetUpperBound(1)` vrátí nejvyšší index druhý dimenze.
+ Následující příklad provede iteraci multidimenzionálního pole použitím [ `For...Next` ](../../../../visual-basic/language-reference/statements/for-next-statement.md) příkazu. <xref:System.Array.GetUpperBound%2A> Metoda má parametr, který určuje dimenzi. `GetUpperBound(0)` Vrátí nejvyšší index prvního rozměru a `GetUpperBound(1)` vrátí nejvyšší index druhého rozměru.
   
  [!code-vb[iterate-two-dimensional-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate2d.vb)]  
   
- Následující příklad používá [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)k iteraci v rámci jednorozměrné pole a dvourozměrná pole.  
+ Následující příklad používá [For Each... Další příkaz](../../../../visual-basic/language-reference/statements/for-each-next-statement.md)pro iteraci jednorozměrového pole a dvourozměrné pole.  
   
  [!code-vb[iterate-for-each-next](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate-for-each-next.vb)]  
   
 ## <a name="array-size"></a>Velikost pole  
 
- Velikost pole je produkt délek všechny jeho dimenze. Představuje celkový počet elementů aktuálně obsažených v poli.  Například v následujícím příkladu deklaruje 2 dimenzí pole se čtyřmi prvky v Každá dimenze. Jak ukazuje výstup z příkladu, velikost tohoto pole je 16 (nebo (3 + 1) * (3 + 1).
+ Velikost pole je produktem délek všech jeho rozměrů. Představuje celkový počet prvků, které jsou aktuálně obsaženy v poli.  Například následující příklad deklaruje 2rozměrné pole čtyřech prvcích v každém rozměru. Jak výstup z příkladu ukazuje, velikost tohoto pole je 16 (nebo (3 + 1) * (3 + 1).
 
  [!code-vb[array-size](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-size.vb)]  
 
 > [!NOTE] 
-> Tato diskuse o velikosti pole se nevztahuje na Vícenásobná pole. Informace o Vícenásobná pole a určení velikosti Vícenásobná pole, najdete v článku [Vícenásobná pole](#jagged-arrays) části.
+> Tato diskuse o velikosti pole se nevztahují na Vícenásobná pole. Informace o Vícenásobná pole a určování velikosti vícenásobného pole, najdete v článku [Vícenásobná pole](#jagged-arrays) oddílu.
   
-  Velikost pole můžete najít pomocí <xref:System.Array.Length%2A?displayProperty=nameWithType> vlastnost. Délka Každá dimenze multidimenzionálního pole můžete najít pomocí <xref:System.Array.GetLength%2A?displayProperty=nameWithType> metoda.  
+  Velikost pole můžete najít pomocí <xref:System.Array.Length%2A?displayProperty=nameWithType> vlastnost. Délka každé dimenze vícerozměrného pole můžete najít pomocí <xref:System.Array.GetLength%2A?displayProperty=nameWithType> metody.  
   
- Velikost proměnné pole můžete změnit přiřazením nový objekt pole k němu nebo pomocí [ `ReDim` příkaz](../../../../visual-basic/language-reference/statements/redim-statement.md) příkaz. Následující příklad používá `ReDim` příkaz Změnit 100 element pole k poli 51 elementu.
+ Pomocí přiřazení nového objektu pole do něj nebo můžete změnit velikost proměnné pole [ `ReDim` příkaz](../../../../visual-basic/language-reference/statements/redim-statement.md) příkazu. V následujícím příkladu `ReDim` příkaz Změnit 100 elementu pole na pole 51 elementu.
 
  [!code-vb[resize-an-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-size2.vb)]  
   
- Je třeba vzít v úvahu při plánování práce s velikost pole několik věcí.  
+ Mějte na paměti při zpracování komplexnějších velikost pole několika způsoby.  
   
 |||  
 |---|---|  
-|Délka dimenze|Index Každá dimenze je založené na 0, což znamená, že se pohybuje od 0 do jeho horní mez. Délka dané dimenze je proto jeden znak větší než deklarované horní hranice této dimenze.|  
-|Omezení délky|Délka všech dimenzí pole je omezená na maximální hodnota, která `Integer` datového typu, který je <xref:System.Int32.MaxValue?displayProperty=nameWithType> nebo (2 ^ 31) - 1. Ale celková velikost pole je také omezena paměti k dispozici v systému. Pokud pokus o inicializaci pole, který překračuje množství dostupné paměti, modul runtime vyvolá <xref:System.OutOfMemoryException>.|  
-|Velikost a velikost – Element|Velikost tohoto pole je nezávislé na datový typ jejích elementů. Velikost vždy představuje celkový počet elementů, nikoli počet bajtů, které budou využívat v paměti.|  
-|Paměťové nároky|Není bezpečné, aby všechny předpoklady týkající se uložení pole v paměti. Úložiště se liší na platformy různých datových šířek, takže stejného pole můžete spotřebuje další paměť na 64bitovém systému než v 32bitové verzi systému. V závislosti na konfiguraci systému při inicializaci pole, modul CLR (CLR) můžete přiřadit úložiště jako zavřete společně, nejdříve pack elementy nebo přizpůsobit je všechny na hranicích přirozené hardwaru. Také pole úložiště režie vyžaduje pro své informace o řízení a režijní náklady na tato hodnota se zvyšuje s každá přidané dimenze.|  
+|Délka dimenze|Index každé dimenze je založen na 0, což znamená, že má že rozsah od 0 do horní mez. Délka dané dimenze je proto jeden stupeň větší než deklarovaná horní mez dané dimenzi.|  
+|Omezení délky|Délka každé dimenze pole je omezená na maximální hodnotu `Integer` datového typu, který je <xref:System.Int32.MaxValue?displayProperty=nameWithType> nebo (2 ^ 31) + 1. Celková velikost pole je také omezena pamětí, které jsou k dispozici ve vašem systému. Při pokusu o inicializaci pole, který překračuje množství dostupné paměti, modul runtime vyvolá výjimku <xref:System.OutOfMemoryException>.|  
+|Velikost a velikost elementu|Velikost tohoto pole je nezávislé na typu dat jeho elementů. Velikost vždy představuje celkový počet prvků, nikoli počet bajtů, které spotřebovávají v paměti.|  
+|Využití paměti|Není bezpečné nevyvozujte předpoklady o tom, jak je pole uloženo v paměti. Skladování závisí na platformách s různou šířkou dat, takže stejné pole může spotřebovávat více paměti na 64bitovou verzi systému než v 32bitové verzi systému. V závislosti na konfiguraci systému při inicializaci pole, modul CLR (CLR) může přiřadit úložiště zabalil elementy co co nejblíže k sobě nebo je zarovnal na hranice fyzických hardwarových vazeb. Také pole vyžaduje režii úložiště pro informace o jeho ovládacího prvku a tato režie se zvyšuje s každou přidanou dimenzi.|  
 
 ## <a name="the-array-type"></a>Typ pole 
- Každé pole má datový typ, který se liší od datového typu jejích elementů. Neexistuje žádný single – datový typ pro všechna pole. Místo toho je datový typ pole určuje počet dimenzí, nebo *pořadí*, pole a datový typ elementů v poli. Dvě proměnné pole jsou stejných dat, zadejte pouze, pokud mají stejné pořadí a jejich prvky mít stejný datový typ. Rozměry pole délek neovlivňují datový typ pole.  
+ Každé pole má datový typ, který se liší od typu dat jeho elementů. Neexistuje žádný jednotlivý typ dat pro všechna pole. Místo toho je určen datový typ pole podle počtu rozměrů, nebo *pořadí*, pole a datový typ prvků v poli. Dvě proměnné pole se stejný datový typ, pouze pokud mají stejné pořadí a jejich elementy mají stejný datový typ. Délky dimenzí v poli neovlivňují datový typ pole.  
   
- Každé pole dědí z <xref:System.Array?displayProperty=nameWithType> třídy a můžou deklarovat proměnnou být typu `Array`, ale nelze vytvořit pole typu `Array`. Například i když následující kód deklaruje `arr` proměnná být typu `Array` a volání <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> metoda pro vytvoření instance pole, pole typu prokáže, že se objekt [].
+ Každé pole dědí z <xref:System.Array?displayProperty=nameWithType> třídy a můžete deklarovat proměnnou typu `Array`, ale nemůžete vytvořit pole typu `Array`. Například i když následující kód deklaruje `arr` proměnnou typu `Array` a volá <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> metoda pro vytvoření instance pole, typ pole ukáže Object [].
 
  [!code-vb[array-class](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-class.vb)] 
 
-Navíc [ReDim – příkaz](../../../../visual-basic/language-reference/statements/redim-statement.md) nemůže pracovat na proměnnou deklarován jako typ `Array`. Z těchto důvodů a pro bezpečnost typů je třeba deklarovat každé pole jako specifického typu.  
+Také [ReDim – příkaz](../../../../visual-basic/language-reference/statements/redim-statement.md) nejde použít pro proměnné deklarované jako typ `Array`. Z těchto důvodů a pro bezpečnost typů je vhodné deklarovat každé pole jako specifického typu.  
   
  Můžete zjistit datový typ pole nebo jeho prvky několika způsoby. 
   
--   Můžete volat <xref:System.Object.GetType%2A> metoda na proměnnou, a získat <xref:System.Type> objekt, který představuje typ spuštění proměnné. <xref:System.Type> Objektu obsahuje velké množství informací v její vlastnosti a metody.  
+-   Můžete volat <xref:System.Object.GetType%2A> metoda v proměnné k získání <xref:System.Type> objekt, který reprezentuje za běhu typ proměnné. <xref:System.Type> Objekt obsahuje rozsáhlé informace ve vlastnostech a metodách.  
   
--   Můžete předat proměnnou <xref:Microsoft.VisualBasic.Information.TypeName%2A> funkce pro zjištění `String` s názvem typu v době spuštění.  
+-   Můžete předat proměnnou <xref:Microsoft.VisualBasic.Information.TypeName%2A> funkce získáte `String` s názvem typu za běhu.  
   
- V následujícím příkladu volání obou `GetType` metoda a `TypeName` funkce určit typ pole. Typ pole je `Byte(,)`. Všimněte si, že <xref:System.Type.BaseType%2A?displayProperty=nameWithType> vlastnost také označuje, že je základní typ pole bajtů <xref:System.Array> třídy.  
+ Následující příklad volá obě `GetType` metoda a `TypeName` funkce určit typ pole. Typ pole je `Byte(,)`. Všimněte si, že <xref:System.Type.BaseType%2A?displayProperty=nameWithType> vlastnost také určuje, že je základní typ pole bajtů <xref:System.Array> třídy.  
   
  [!code-vb[array-type](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/array-type.vb)]  
   
-##  <a name="arrays-as-return-values-and-parameters"></a>Pole jako parametry a návratové hodnoty  
- Pro vrácení pole z `Function` postupu zadejte pole datový typ a počet dimenzí jako návratový typ [funkce příkaz](../../../../visual-basic/language-reference/statements/function-statement.md). V rámci funkce deklarujte proměnnou místní pole stejným datový typ a počet dimenzí. V [příkaz Return](../../../../visual-basic/language-reference/statements/return-statement.md), zahrnout proměnnou místní pole bez závorek.  
+##  <a name="arrays-as-return-values-and-parameters"></a>Pole jako návratové hodnoty a parametry  
+ Chcete-li vrátit pole z `Function` postupu, zadejte datový typ pole a počet dimenzí jako návratový typ [Function – příkaz](../../../../visual-basic/language-reference/statements/function-statement.md). V rámci této funkce deklarujte místní proměnnou pole se stejným datovým typem a počtem dimenzí. V [příkaz Return](../../../../visual-basic/language-reference/statements/return-statement.md), zahrnují proměnnou místního pole bez závorek.  
   
- Chcete určit pole jako parametr, který se `Sub` nebo `Function` postupu, definujte parametr jako pole s zadaný datový typ a počet dimenzí. Ve volání postup předejte proměnné pole s stejný datový typ a počet dimenzí.  
+ Chcete-li určit pole jako parametr `Sub` nebo `Function` postupu, definujte parametr jako pole se zadaným datovým polem a počtem dimenzí. Ve volání do procedury předejte proměnnou pole se stejný datový typ a počet rozměrů.  
   
- V následujícím příkladu `GetNumbers` funkce vrátí `Integer()`, jednorozměrné pole typu `Integer`. `ShowNumbers` Přijímá postup `Integer()` argument. 
+ V následujícím příkladu `GetNumbers` vrací funkce `Integer()`, jednorozměrné pole typu `Integer`. `ShowNumbers` Procedury přijímá `Integer()` argument. 
   
  [!code-vb[return-value-and-params](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/return-values-and-params.vb)]  
   
- V následujícím příkladu `GetNumbersMultiDim` funkce vrátí `Integer(,)`, dvourozměrná pole typu `Integer`.  `ShowNumbersMultiDim` Přijímá postup `Integer(,)` argument.  
+ V následujícím příkladu `GetNumbersMultiDim` vrací funkce `Integer(,)`, dvourozměrné pole typu `Integer`.  `ShowNumbersMultiDim` Procedury přijímá `Integer(,)` argument.  
   
  [!code-vb[multidimensional-return-value](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/return-values-and-params-2d.vb)]  
   
 ## <a name="jagged-arrays"></a>Vícenásobná pole  
  
-Struktura dat v aplikaci je někdy dvourozměrná, ale není obdélníkový. Pole může například použít k ukládání dat o vysoké teplota každý den v měsíci. První dimenze pole představuje v měsíci, ale druhá dimenze představuje počet dní, a počet dní v měsíci není uniform. A *Vícenásobná pole*, což se označuje taky jako *pole polí*, je určen pro takové scénáře. Vícenásobná pole je pole, jehož elementy jsou také pole. Vícenásobná pole a každý prvek v Vícenásobná pole může mít jeden nebo více dimenzí.  
+Struktura dat v aplikaci je někdy dvourozměrná, ale nemá tvar obdélníku. Například můžete použít pole k ukládání dat o nejvyšší teplota každý den v měsíci. První rozměr pole představuje měsíc, ale druhého rozměru představuje počet dní, a počet dní v měsíci není jednotné. A *vícenásobného pole*, což se označuje taky jako *pole polí*, je určen pro takové scénáře. Vícenásobné pole je pole, jehož prvky jsou také pole. Vícenásobné pole a každý prvek ve vícenásobném poli může mít jednu nebo více dimenzí.  
   
- Následující příklad používá pole měsíců, je každý element pole dní. Tento příklad používá Vícenásobná pole, protože jiný měsíce mají různý počet dnů.  Tento příklad ukazuje, jak vytvořit Vícenásobná pole, přiřadit hodnoty a načíst a zobrazit jeho hodnoty.
+ Následující příklad používá celou řadu měsíců, jejichž každým prvkem je pole dnů. V příkladu používá vícenásobné pole, vzhledem k tomu, že různé měsíce mají různý počet dnů.  Tento příklad ukazuje, jak vytvořit vícenásobného pole, přiřadit hodnoty, načíst a zobrazit jeho hodnoty.
   
  [!code-vb[jagged-arrays](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged.vb)]  
 
-Předchozí příklad přiřazuje hodnoty Vícenásobná pole na základě elementu pomocí elementu pomocí `For...Next` smyčky. Můžete také přiřadit hodnoty prvky Vícenásobná pole pomocí literály vnořená pole. Ale vnořené pokusu o použití pole literály (například ```Dim valuesjagged = {{1, 2}, {2, 3, 4}}```) vygeneruje Chyba kompilátoru [BC30568](../../../,,/../misc/bc30568.md). Opravte chybu, uzavřete literály vnitřní pole v závorkách. Vynutit závorek literálu výraz pole k vyhodnocení a výsledné hodnoty se používají s poli vnější literálu, jak ukazuje následující příklad.  
+Předchozí příklad přiřazuje hodnoty vícenásobného pole na základě prvek po prvku pomocí `For...Next` smyčky. Můžete také přiřadit hodnoty prvků vícenásobného pole pomocí literál vnořeného pole. Ale pokusem o použití vnořené literály pole (například ```Dim valuesjagged = {{1, 2}, {2, 3, 4}}```) vygeneruje Chyba kompilátoru [BC30568](../../../,,/../misc/bc30568.md). Chcete-li opravit chybu, uzavřete literál vnitřní pole do závorek. Závorky vynutí vyhodnocení literálního výrazu pole a výsledné hodnoty se používají u vnějšího literálu, pole, jak ukazuje následující příklad.  
   
  [!code-vb[jagged-array-initialization](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-assign.vb)] 
 
-Vícenásobná pole je jednorozměrné pole, jehož elementy obsahovat pole. Proto <xref:System.Array.Length%2A?displayProperty=nameWithType> vlastnost a `Array.GetLength(0)` metoda vrátí počet prvků v jednorozměrné pole, a `Array.GetLength(1)` vyvolá <xref:System.IndexOutOfRangeException> protože Vícenásobná pole není multidimenzionální. Určit počet elementů v každé subarray načtením hodnoty jednotlivých subarray <xref:System.Array.Length%2A?displayProperty=nameWithType> vlastnost. Následující příklad ukazuje, jak můžete určit počet elementů v Vícenásobná pole.
+Vícenásobné pole je jednorozměrné pole, jehož prvky obsahovat pole. Proto <xref:System.Array.Length%2A?displayProperty=nameWithType> vlastnost a `Array.GetLength(0)` metoda vrátí počet prvků v jednorozměrné pole, a `Array.GetLength(1)` vyvolá <xref:System.IndexOutOfRangeException> protože vícenásobného pole není multidimenzionální. Určení počtu prvků v každé podpole načtením hodnoty jednotlivých podpole <xref:System.Array.Length%2A?displayProperty=nameWithType> vlastnost. Následující příklad ukazuje, jak určit počet prvků ve vícenásobném poli.
 
 [!code-vb[jagged-array-size](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-length.vb)] 
 
-## <a name="zero-length-arrays"></a>Pole s nulovou délkou  
-Visual Basic rozlišuje Neinicializovaný pole (pole, jehož hodnota je `Nothing`) a *nulová délka pole* nebo prázdné pole (pole, které nemá žádné elementy.) Neinicializovaný pole je ten, který nebyl byla dimenzovány nebo k němu přidělili žádné hodnoty. Příklad:
+## <a name="zero-length-arrays"></a>Pole nulové délky  
+Visual Basic rozlišuje mezi neinicializované pole (pole, jehož hodnota je `Nothing`) a *pole nulové délky* nebo prázdné pole (pole, které neobsahuje žádné prvky.) Neinicializované pole je ten, který nebyl byla dimenzovanými nebo k němu přidělili žádné hodnoty. Příklad:
 
 ```vb
 Dim arr() As String
 ```
-Pole nulovou délkou je deklarovaný s dimenzí-1. Příklad:
+Pole s nulovou délkou je deklarována s rozměrem-1. Příklad:
 
 ```vb
 Dim arrZ(-1) As String
 ```
-Můžete potřebovat pro vytvoření nulová délka pole v následujících případech:  
+Můžete potřebovat vytvořit pole nulové délky za následujících okolností:  
   
--   Bez rizika <xref:System.NullReferenceException> výjimky, kódu musí přístup ke členům v <xref:System.Array> třídy, jako například <xref:System.Array.Length%2A> nebo <xref:System.Array.Rank%2A>, nebo volejte funkci jazyka Visual Basic, jako <xref:Microsoft.VisualBasic.Information.UBound%2A>.  
+-   Bez riskování <xref:System.NullReferenceException> výjimky, váš kód musí přístup ke členům <xref:System.Array> třídy, jako například <xref:System.Array.Length%2A> nebo <xref:System.Array.Rank%2A>, nebo zavolat funkci jazyka Visual Basic jako <xref:Microsoft.VisualBasic.Information.UBound%2A>.  
   
--   Chcete zachovat kódu jednoduchý, protože není nutné kontrolovat `Nothing` zvláštním způsobem.  
+-   Chcete pro zjednodušení kódu tím, že ke kontrole `Nothing` jako speciální případ.  
   
--   Váš kód komunikuje s programovací rozhraní aplikace (API), který vyžaduje, abyste předat nulová délka pole jednoho nebo více procedur nebo vrátí pole nulovou délkou z jednoho nebo více procedur.
+-   Kód spolupracuje s programovací rozhraním aplikace (API), vyžaduje předání pole nulové délky do jednoho nebo více postupů nebo vrátí pole nulové délky z jednoho nebo více postupů.
 
 ## <a name="splitting-an-array"></a>Rozdělení pole
 
-V některých případech můžete rozdělit do jednoho pole na více polí. To zahrnuje identifikace bodů nebo bodů, na kterých je možné rozdělit pole a pak plivání pole do dvou nebo více samostatných pole. 
+V některých případech můžete rozdělit do několika polí jedno pole. To zahrnuje identifikaci bodu nebo bodů, na kterých je možné rozdělit pole a potom plivání pole do dvou nebo více samostatných polích. 
 
 > [!NOTE] 
-> Tato část nezaměřuje rozdělení jednoho řetězce na pole na základě některé oddělovače. Informace o rozdělení řetězec, najdete v článku <xref:System.String.Split%2A?displayProperty=nameWithType> metoda.
+> Tato část neobsahuje informace o rozdělení jeden řetězec do pole řetězců na základě některých oddělovače. Informace o řetězec, najdete v článku <xref:System.String.Split%2A?displayProperty=nameWithType> metody.
 
 Nejběžnější kritéria pro rozdělení pole jsou:
 
-- Počet prvků v poli. Můžete například chtít rozdělit pole více než zadaný počet elementů na číslo přibližně stejné části. Pro tento účel můžete použít hodnoty vrácené buď <xref:System.Array.Length%2A?displayProperty=nameWithType> nebo <xref:System.Array.GetLength%2A?displayProperty=nameWithType> metoda.
+- Počet prvků v poli. Můžete například chtít rozdělit pole větší než zadaný počet prvků na počet přibližně stejné části. K tomuto účelu můžete použít hodnotu vrácenou příkazem buď <xref:System.Array.Length%2A?displayProperty=nameWithType> nebo <xref:System.Array.GetLength%2A?displayProperty=nameWithType> metody.
 
-- Hodnota elementu, který slouží jako oddělovač, který označuje, kde by měl rozdělit pole. Můžete vyhledat konkrétní hodnotu voláním <xref:System.Array.FindIndex%2A?displayProperty=nameWithType> a <xref:System.Array.FindLastIndex%2A?displayProperty=nameWithType> metody.
+- Hodnota elementu, který slouží jako oddělovač, který označuje, kde by měl rozdělit pole. Můžete vyhledat určitou hodnotu při volání <xref:System.Array.FindIndex%2A?displayProperty=nameWithType> a <xref:System.Array.FindLastIndex%2A?displayProperty=nameWithType> metody.
  
-Jakmile jste zjistili, index nebo indexy, na kterých je rozdělit pole, potom můžete vytvořit jednotlivé pole voláním <xref:System.Array.Copy%2A?displayProperty=nameWithType> metoda. 
+Jakmile potvrdíte, index nebo indexů, na kterých je rozdělit pole, potom můžete vytvořit jednotlivé pole voláním <xref:System.Array.Copy%2A?displayProperty=nameWithType> metody. 
 
-Následující příklad rozdělí na dvě pole přibližně stejné velikosti pole. (Pokud je celkový počet elementů pole liché, první pole má jeden prvek více než druhá.) 
+V následujícím příkladu se rozdělí pole do dvou polí přibližně stejnou velikost. (Pokud celkový počet prvků pole je liché, první pole má jeden prvek více než druhý.) 
 
 [!code-vb[splitting-an-array-by-length](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/split1.vb)] 
 
-Následující příklad rozdělí na dvě pole na základě přítomnosti elementu, jehož hodnota je "zzz", který slouží jako oddělovač pole pole řetězců. Nové pole nezahrnují elementu, který obsahuje oddělovač.
+Následující příklad rozdělí dvě pole, podle přítomnosti element, jehož hodnota je "zzz", která slouží jako oddělovač pole řetězců. Nové pole nezahrnují elementu, který obsahuje oddělovač.
 
 [!code-vb[splitting-an-array-by-delimiter](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/split2.vb)] 
 
-## <a name="joining-arrays"></a>Propojení polí
+## <a name="joining-arrays"></a>Připojení k poli
 
-Můžete také kombinovat několik polí do jednoho pole větší. K tomuto účelu můžete také použít <xref:System.Array.Copy%2A?displayProperty=nameWithType> metoda. 
+Můžete také kombinovat několik polí do jediného větší pole. K tomuto účelu můžete také použít <xref:System.Array.Copy%2A?displayProperty=nameWithType> metody. 
 
 > [!NOTE] 
-> Tato část nezaměřuje připojení pole řetězců do jednoho řetězce. Informace o připojení pole řetězců najdete v tématu <xref:System.String.Join%2A?displayProperty=nameWithType> metoda.
+> Tato část neobsahuje informace o spojování pole řetězců do jednoho řetězce. Informace o spojování pole řetězců, najdete v článku <xref:System.String.Join%2A?displayProperty=nameWithType> metody.
 
-Před kopírováním do pole nové prvky každé pole, je třeba nejprve zajistit, že jste inicializovali pole, aby bylo dostatečně velký pro accompodate nové pole. Toto lze provést jedním ze dvou způsobů:
+Před kopírováním prvky jednotlivá pole do nového pole, je nutné nejdříve zkontrolovat, že jste inicializovali pole tak, aby je dostatečně velký, aby accompodate nové pole. Toto lze provést jedním ze dvou způsobů:
 
-- Použití [ `ReDim Preserve` ](../../../../visual-basic/language-reference/statements/redim-statement.md) příkaz dynamicky rozšiřovat pole před přidáním nových elementů do ní. Toto je nejjednodušší techniku, ale to může způsobit snížení výkonu a využití příliš mnoho paměti při kopírování velké pole.
-- Vypočítat celkový počet elementů potřebné pro nové velké pole a pak přidejte do ní prvků každé zdrojové pole.
+- Použití [ `ReDim Preserve` ](../../../../visual-basic/language-reference/statements/redim-statement.md) příkaz dynamicky rozbalte pole před přidáním nových elementů do něj. Toto je nejjednodušší postup, ale může způsobit snížení výkonu a využití využívala příliš mnoho paměti při kopírování velké pole.
+- Vypočítá celkový počet prvků, které jsou potřebné pro nové velké pole a potom k němu přidat prvky pole každý zdroj.
 
-Následující příklad používá druhý přístup k přidání čtyři pole deset elementy do jednoho pole.  
+Druhý přístup k přidání čtyř polí s deset prvky jedno pole v následujícím příkladu.  
 
 [!code-vb[joining-an-array](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/join.vb)] 
 
-Vzhledem k tomu, že v tomto případě jsou všechny malé pole zdroj, jsme také dynamicky rozbalte pole jako přidáme prvky každé nové pole do ní. Následující příklad nemá který.
+Protože zdrojové pole v tomto případě jsou všechny malé, jsme také dynamicky rozbalte pole, protože budeme přidávat prvky každé nové pole do něj. Následující příklad činí.
 
 [!code-vb[joining-an-array-dynamically](../../../../../samples/snippets/visualbasic/programming-guide/language-features/arrays/join2.vb)] 
 
-##  <a name="collections-as-an-alternative-to-arrays"></a>Kolekce jako alternativu k polím  
- Pole jsou velmi užitečné pro vytváření a práci s pevný počet objektů se silným typem. Kolekce poskytují flexibilnější způsob, jak pracovat s skupiny objektů. Na rozdíl od pole, které vyžadují explicitně změnit velikost pole s [ `ReDim` příkaz](../../../../visual-basic/language-reference/statements/redim-statement.md), kolekce zvýšit nebo snížit dynamicky potřebám o změnu aplikace.  
+##  <a name="collections-as-an-alternative-to-arrays"></a>Kolekce jako alternativa k polím  
+ Pole jsou zvláště užitečná pro vytváření a práci s pevným počtem silně typované objekty. Kolekce poskytují pružnější způsob práce se skupinami objektů. Na rozdíl od pole, které vyžadují explicitně změnit velikost pole [ `ReDim` příkaz](../../../../visual-basic/language-reference/statements/redim-statement.md), kolekce zvětšení a zmenšení dynamicky podle potřeb aplikace mění.  
   
- Při použití `ReDim` k redimension pole, Visual Basic vytvoří nové pole a předchozí verze. Tato akce trvá dobu provádění. Proto pokud počet položek, které pracují se často mění, nebo nelze předpovědět maximální počet položek, které potřebujete, budete je obvykle získat lepší výkon pomocí kolekce.  
+ Při použití `ReDim` redimension pole, Visual Basic vytvoří nové pole a uvolní předchozí. Zabírá to čas spuštění. Proto pokud počet položek, které pracujete často mění, nebo nelze předvídat maximální počet položek, které potřebujete, budete obvykle získáte lepší výkon pomocí kolekce.  
   
- Pro některé kolekce můžete přiřadit klíč pro libovolný objekt, který vložíte do kolekce, takže můžete rychle načíst objekt pomocí klíče.  
+ Pro některé kolekce můžete přiřadit klíč na libovolný objekt, který vložíte do kolekce, takže můžete snadno obnovit objekt pomocí klíče.  
   
- Pokud kolekce obsahuje prvky pouze jeden datový typ, můžete použít jednu z tříd ve <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Obecné kolekce vynucuje bezpečnost typů tak, aby žádný datový typ lze přidat do ní.  
+ Pokud kolekce obsahuje prvky pouze jednoho datového typu, můžete použít jednu z tříd v <xref:System.Collections.Generic?displayProperty=nameWithType> oboru názvů. Obecná kolekce vynucuje bezpečnost typů tak, aby žádný jiný typ dat můžete do ní přidá.  
   
  Další informace o kolekcích najdete v tématu [kolekce](../../concepts/collections.md).
   
@@ -316,11 +315,11 @@ Vzhledem k tomu, že v tomto případě jsou všechny malé pole zdroj, jsme tak
   
 |Termín|Definice|  
 |----------|----------------|  
-|[Rozměry pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md)|Popisuje pořadí a dimenzí v polích.|  
-|[Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)|Popisuje, jak k vyplnění polí se počáteční hodnoty.|  
-|[Postupy: řazení pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-sort-an-array.md)|Ukazuje, jak abecedně seřaďte prvků pole.|  
-|[Postupy: Přiřazení jednoho pole k druhému](../../../../visual-basic/programming-guide/language-features/arrays/how-to-assign-one-array-to-another-array.md)|Popisuje pravidla a kroky pro přiřazení k jiné proměnné pole pole.|  
-|[Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)|Popisuje některé běžné problémy, které vznikají při práci s poli.|  
+|[Rozměry pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/array-dimensions.md)|Popisuje pořadí a rozměry v polích.|  
+|[Postupy: Inicializace proměnné pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)|Popisuje, jak naplnit pole počátečními hodnotami.|  
+|[Postupy: řazení pole v jazyce Visual Basic](../../../../visual-basic/programming-guide/language-features/arrays/how-to-sort-an-array.md)|Ukazuje, jak prvky pole seřadit podle abecedy.|  
+|[Postupy: Přiřazení jednoho pole k druhému](../../../../visual-basic/programming-guide/language-features/arrays/how-to-assign-one-array-to-another-array.md)|Popisuje pravidla a postup pro přiřazení pole do jiné proměnné pole.|  
+|[Řešení potíží s poli](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)|Tento článek popisuje některé běžné problémy, které vznikají při práci s poli.|  
   
 ## <a name="see-also"></a>Viz také  
  <xref:System.Array?displayProperty=nameWithType>  

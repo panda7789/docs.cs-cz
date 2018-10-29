@@ -5,12 +5,12 @@ ms.author: ronpet
 author: rpetrusha
 ms.date: 11/22/2016
 ms.assetid: b6a0539a-8ce5-4da7-adcf-44be345a2714
-ms.openlocfilehash: 2469e8a0fbf8181a720201637ab5ac5ef02055d4
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: 74ad1c5ddae69864b85099535e8b83a4504275a7
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43523522"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50183124"
 ---
 # <a name="lambda-expressions"></a>Výrazy lambda #
 

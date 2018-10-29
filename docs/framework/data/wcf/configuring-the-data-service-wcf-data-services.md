@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
-ms.openlocfilehash: 0824a43cba1a21cc9ae92b1f807c6a1369fd63ed
-ms.sourcegitcommit: 213292dfbb0c37d83f62709959ff55c50af5560d
+ms.openlocfilehash: a564d214e933cb91e834191eb5dc5297c733664f
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/25/2018
-ms.locfileid: "47075785"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50202273"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>Konfigurace datové služby (WCF Data Services)
 S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvořit datové služby, která zpřístupňují [!INCLUDE[ssODataFull](../../../../includes/ssodatafull-md.md)] informační kanály. Data v těchto kanálech mohou pocházet z různých datových zdrojů. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] Zprostředkovatelé dat používá k získání těchto dat jako [!INCLUDE[ssODataShort](../../../../includes/ssodatashort-md.md)] informačního kanálu. Tito poskytovatelé patří [!INCLUDE[adonet_ef](../../../../includes/adonet-ef-md.md)] poskytovatele, zprostředkovatel reflexe a sadu vlastních dat rozhraní poskytovatele služeb. Implementace zprostředkovatele definuje datový model pro službu. Další informace najdete v tématu [zprostředkovatelé dat služby](../../../../docs/framework/data/wcf/data-services-providers-wcf-data-services.md).  
@@ -36,8 +36,8 @@ S [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], můžete vytvoři
 |<xref:System.Data.Services.DataServiceBehavior.InvokeInterceptorsOnLinkDelete%2A>|Umožňuje určit, zda zaregistrovaný Změna zachycovacích dotazů jsou vyvolány na související entity při odstranění propojení vztah mezi dvěma entitami.|  
 |<xref:System.Data.Services.DataServiceConfiguration.MaxBatchCount%2A>|Umožňuje omezit počet sad změn a dotazování operací, které jsou povoleny v jedné dávce. Další informace najdete v tématu [OData: dávkové](https://go.microsoft.com/fwlink/?LinkId=185602) a [dávkování operací](../../../../docs/framework/data/wcf/batching-operations-wcf-data-services.md).|  
 |<xref:System.Data.Services.DataServiceConfiguration.MaxChangesetCount%2A>|Umožňuje omezit počet změn, které mohou být součástí jedné sady změn. Další informace najdete v tématu [postupy: povolení stránkování z výsledků datové služby](../../../../docs/framework/data/wcf/how-to-enable-paging-of-data-service-results-wcf-data-services.md).|  
-|<xref:System.Data.Services.DataServiceConfiguration.MaxExpandCount%2A>|Umožňuje omezit tím, že omezíte počet související entity, které mohou být součástí jedné žádosti pomocí velikost odpovědi `$expand` – operátor dotazu. Další informace najdete v tématu naleznete v tématu [OData: identifikátor URI konvence](https://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).|  
-|<xref:System.Data.Services.DataServiceConfiguration.MaxExpandDepth%2A>|Umožňuje omezit tím, že omezíte hloubky grafu související entity, které mohou být součástí jedné žádosti pomocí velikost odpovědi `$expand` – operátor dotazu. Další informace najdete v tématu naleznete v tématu [OData: identifikátor URI konvence](https://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxExpandCount%2A>|Umožňuje omezit tím, že omezíte počet související entity, které mohou být součástí jedné žádosti pomocí velikost odpovědi `$expand` – operátor dotazu. Další informace najdete v tématu [OData: identifikátor URI konvence](https://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).|  
+|<xref:System.Data.Services.DataServiceConfiguration.MaxExpandDepth%2A>|Umožňuje omezit tím, že omezíte hloubky grafu související entity, které mohou být součástí jedné žádosti pomocí velikost odpovědi `$expand` – operátor dotazu. Další informace najdete v tématu [OData: identifikátor URI konvence](https://go.microsoft.com/fwlink/?LinkId=185564) a [načítání odložené obsahu](../../../../docs/framework/data/wcf/loading-deferred-content-wcf-data-services.md).|  
 |<xref:System.Data.Services.DataServiceConfiguration.MaxObjectCountOnInsert%2A>|Umožňuje omezit počet entit, které má být vložen, které mohou být obsaženy v jednom požadavku POST.|  
 |<xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A>|Určuje verzi protokolu Atom, který se používá datová služba. Když hodnoty <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> je nastavena na hodnotu menší než maximální hodnota <xref:System.Data.Services.Common.DataServiceProtocolVersion>, nejnovější funkce [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] není k dispozici klientům přístup k datové službě. Další informace najdete v tématu [Správa verzí datové služby](../../../../docs/framework/data/wcf/data-service-versioning-wcf-data-services.md).|  
 |<xref:System.Data.Services.DataServiceConfiguration.MaxResultsPerCollection%2A>|Umožňuje omezit velikost odpovědi tím, že omezíte počet entit v každé sadě entit, která je vrácena jako datový kanál.|  

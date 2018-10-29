@@ -27,12 +27,12 @@ helpviewer_keywords:
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 2c26f4602623e1eb8979ef08c5d14404cc84e031
-ms.sourcegitcommit: 2eceb05f1a5bb261291a1f6a91c5153727ac1c19
+ms.openlocfilehash: b0185d79d8663d552378248f0e021a7fee8f0522
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/04/2018
-ms.locfileid: "43502212"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50189716"
 ---
 # <a name="formatting-types-in-net"></a>Typy formátování v .NET
 <a name="Introduction"></a> Formátování je proces převodu instance třídy, struktury nebo výčtové hodnoty na řetězcové vyjádření často tak, aby výsledný řetězec, můžete zobrazovaný uživatelům nebo rekonstruován pro obnovení původního datového typu. Tento převod může představovat určité problémy:  
@@ -120,7 +120,7 @@ ms.locfileid: "43502212"
  [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]  
   
 > [!WARNING]
->  Od verze [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[wrt](../../../includes/wrt-md.md)] zahrnuje [IStringable](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.aspx) rozhraní s jedinou metodu [IStringable.ToString](https://msdn.microsoft.com/library/windows/apps/windows.foundation.istringable.tostring.aspx), která poskytuje výchozí podporu formátování. Doporučujeme však, že se spravovanými typy neimplementují `IStringable` rozhraní. Další informace najdete v tématu " [!INCLUDE[wrt](../../../includes/wrt-md.md)] a `IStringable` rozhraní" v části <xref:System.Object.ToString%2A?displayProperty=nameWithType> referenční stránce.  
+>  Od verze [!INCLUDE[win81](../../../includes/win81-md.md)], [!INCLUDE[wrt](../../../includes/wrt-md.md)] zahrnuje <xref:Windows.Foundation.IStringable> rozhraní s jedinou metodu [IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A), která poskytuje výchozí podporu formátování. Doporučujeme však, že se spravovanými typy neimplementují `IStringable` rozhraní. Další informace najdete v tématu " [!INCLUDE[wrt](../../../includes/wrt-md.md)] a `IStringable` rozhraní" v části <xref:System.Object.ToString%2A?displayProperty=nameWithType> referenční stránce.  
   
  Protože všechny typy jiné než rozhraní jsou odvozeny z <xref:System.Object>, tato funkce je automaticky poskytnuta vlastním třídám nebo strukturám. Však nabízí funkce ve výchozím nastavení `ToString` metoda, je omezený: i když se identifikuje typ, není schopna poskytnout žádné informace o instanci typu. Chcete-li poskytnout řetězcovou reprezentaci objektu, který obsahuje informace o tomto objektu, je nutné přepsat `ToString` metody.  
   

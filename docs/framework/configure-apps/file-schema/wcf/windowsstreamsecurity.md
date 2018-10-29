@@ -3,11 +3,11 @@ title: '&lt;zabezpečení windowsstreamsecurity iniciuje&gt;'
 ms.date: 03/30/2017
 ms.assetid: 926bea29-90c7-4a26-9cf0-fb4aa44f6f70
 ms.openlocfilehash: e117c30ba2583158ee21fd11ff4a38b094c18fd9
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50045925"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50197629"
 ---
 # <a name="ltwindowsstreamsecuritygt"></a>&lt;zabezpečení windowsstreamsecurity iniciuje&gt;
 Zadejte nastavení zabezpečení datového proudu Windows pro vlastní vazbu.  

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: dbc5909a3d4ea1ba2747fcc694bf1f34e20e7d2b
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 612550dd2e3cda4e3549bfc14c9ada712c6653bf
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48582785"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50197558"
 ---
 # <a name="regular-expression-options"></a>Možnosti regulárních výrazů
 <a name="Top"></a> Ve výchozím nastavení porovnání vstupního řetězce s jakýmikoli literálními znaky ve vzorku regulárního výrazu je velká a malá písmena, prázdný znak ve vzorku regulárního výrazu je interpretován jako literální prázdné znaky a zachytávajících skupinách v regulárním výrazu jsou pojmenovány implicitně a také explicitně. Můžete změnit tyto a několik jiných aspektů výchozího chování regulárních výrazů zadáním možností regulárních výrazů. Tyto možnosti, které jsou uvedeny v následující tabulce, mohou být zahrnuty vložené jako součást vzorku regulárního výrazu nebo mohou být poskytnuty <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické metodě porovnávání vzorků jako <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnota výčtu.  
@@ -42,7 +42,7 @@ ms.locfileid: "48582785"
   
 -   V `options` parametr <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> konstruktoru třídy nebo statické (`Shared` v jazyce Visual Basic) metodu porovnávání vzorů, jako například <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> nebo <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType>. `options` Parametr je bitová kombinace OR <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> hodnot výčtu.  
   
-     Pokud se poskytne možnosti <xref:System.Text.RegularExpressions.Regex> instance pomocí `options` parametr konstruktoru třídy možnosti jsou jsou přiřazeny k <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost. Ale <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost neodráží vložené možnosti ve vzorku regulárního výrazu, samotného.  
+     Pokud se poskytne možnosti <xref:System.Text.RegularExpressions.Regex> instance pomocí `options` parametr konstruktoru třídy možnosti jsou přiřazeny k <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost. Ale <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> vlastnost neodráží vložené možnosti ve vzorku regulárního výrazu, samotného.  
   
      V následujícím příkladu je uvedena ukázka. Používá `options` parametr <xref:System.Text.RegularExpressions.Regex.Match%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> metodu pro povolení porovnávání velkých a malých písmen a ignorování vzorků prázdných znaků při identifikaci slov začínajících na písmeno "d".  
   

@@ -3,11 +3,11 @@ title: System.ServiceModel.Security.SecurityClientSessionCloseSent
 ms.date: 03/30/2017
 ms.assetid: 6933e77d-ac9b-47cc-bc07-95f957d2299f
 ms.openlocfilehash: c81e548370b01b3411dc915b75f615f3f94be717
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50033447"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50196359"
 ---
 # <a name="systemservicemodelsecuritysecurityclientsessionclosesent"></a>System.ServiceModel.Security.SecurityClientSessionCloseSent
 System.ServiceModel.Security.SecurityClientSessionCloseSent  

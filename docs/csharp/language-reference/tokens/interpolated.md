@@ -12,12 +12,12 @@ helpviewer_keywords:
 - interpolated string [C#]
 author: pkulikov
 ms.author: ronpet
-ms.openlocfilehash: 2009b3620bc4874520221a4ea847222feafca01b
-ms.sourcegitcommit: c7f3e2e9d6ead6cc3acd0d66b10a251d0c66e59d
+ms.openlocfilehash: 2758a724b7e1e410fd1e1ba262db451b7f994164
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/09/2018
-ms.locfileid: "44251729"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50196986"
 ---
 # <a name="---string-interpolation-c-reference"></a>$ – interpolace řetězců (referenční dokumentace jazyka C#)
 
@@ -86,7 +86,7 @@ Následující příklad používá implicitní převod na <xref:System.Formatta
 
 ## <a name="additional-resources"></a>Další zdroje
 
-Pokud jste ještě na interpolaci řetězce, najdete v článku [interpolace v jazyce C#](../../quick-starts/interpolated-strings.yml) rychlý start. Další příklady najdete v článku [interpolace v jazyce C#](../../tutorials/string-interpolation.md) kurzu.
+Pokud jste ještě na interpolaci řetězce, najdete v článku [interpolace v C# ](../../tutorials/intro-to-csharp/interpolated-strings.yml) interaktivního kurzu. Nebo si můžete vyzkoušet [interpolace v C# ](../../tutorials/string-interpolation.md) kurz místně na svém počítači.
 
 ## <a name="see-also"></a>Viz také:
 

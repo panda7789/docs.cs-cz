@@ -16,12 +16,12 @@ topic_type:
 - Reference
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 95ef445d41672c5c2895bd7115afb6a73a57e8f9
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.openlocfilehash: 90af7d01d78cf74cbb304e3b987d5fe58e23f76e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
-ms.locfileid: "44086134"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50196697"
 ---
 # <a name="formatfromrawvalue-function"></a>Funkce FormatFromRawValue
 Převede jednu hodnotu hrubý výkon při zpracování dat pro zadaný formát nebo dvě hodnoty hrubý výkon při zpracování dat, pokud převod formátu podle času.   
@@ -65,11 +65,11 @@ Použijte některou z předchozích hodnot mohou být sloučeny pomocí operáto
 `pTimeBase`  
 [in] Ukazatel na základní čas, pokud je to nutné pro převod formátu. Pokud základní informace o čase není nezbytné pro převod formátu, hodnota tohoto parametru je ignorována.
 
-`pRawValue1` [in] Ukazatel [ `PDH_RAW_COUNTER` ](https://msdn.microsoft.com/library/windows/desktop/aa373060(v=vs.85).aspx) struktura, která představuje hodnotu hrubého výkonu.
+`pRawValue1` [in] Ukazatel [ `PDH_RAW_COUNTER` ](/windows/desktop/api/pdh/ns-pdh-_pdh_raw_counter) struktura, která představuje hodnotu hrubého výkonu.
 
-`pRawValue2` [in] Ukazatel [ `PDH_RAW_COUNTER` ](https://msdn.microsoft.com/library/windows/desktop/aa373060(v=vs.85).aspx) struktura, která představuje hodnotu druhého hrubého výkonu. Pokud druhá hodnota hrubého výkonu není nezbytné, tento parametr by měl být `null`.
+`pRawValue2` [in] Ukazatel [ `PDH_RAW_COUNTER` ](/windows/desktop/api/pdh/ns-pdh-_pdh_raw_counter) struktura, která představuje hodnotu druhého hrubého výkonu. Pokud druhá hodnota hrubého výkonu není nezbytné, tento parametr by měl být `null`.
 
-`pFmtValue` [out] Ukazatel [ `PDH_FMT_COUNTERVALUE` ](https://msdn.microsoft.com/library/windows/desktop/aa373050(v=vs.85).aspx) struktura, která přijímá hodnotu formátovaný výkonu.
+`pFmtValue` [out] Ukazatel [ `PDH_FMT_COUNTERVALUE` ](/windows/desktop/api/pdh/ns-pdh-_pdh_fmt_countervalue) struktura, která přijímá hodnotu formátovaný výkonu.
 
 ## <a name="return-value"></a>Návratová hodnota
 
@@ -83,7 +83,7 @@ Následující hodnoty jsou vráceny pomocí této funkce:
   
 ## <a name="remarks"></a>Poznámky
 
-Tato funkce zalamuje volání na [FormatFromRawValue](https://msdn.microsoft.com/library/ms231047(v=vs.85).aspx) funkce.
+Tato funkce zalamuje volání na [FormatFromRawValue](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms231047%28v=vs.85%29) funkce.
 
 ## <a name="requirements"></a>Požadavky  
  **Platformy:** naleznete v tématu [požadavky na systém](../../../../docs/framework/get-started/system-requirements.md).  

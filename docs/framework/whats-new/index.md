@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 6ab205ad12b60651443e0fc409e890ea93168ebd
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
-ms.translationtype: MT
+ms.openlocfilehash: e9c40b68a67219cd8f24874780281023974886e4
+ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.translationtype: HT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/07/2018
-ms.locfileid: "48848072"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "49414852"
 ---
 # Co je nového v rozhraní .NET Framework <a name="introduction"></a>
 
@@ -162,7 +162,7 @@ End Function
 
 **Podpora pro dočasné klíče**
 
-PFX import můžete volitelně načíst privátního klíče přímo z paměti bez použití pevný disk. Při nové <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> zadán příznak v <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> konstruktor nebo jednoho z přetížení <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType> metoda, se načtou privátní klíče jako dočasné klíče. To brání klíče viditelné na disku. Ale:
+PFX import můžete volitelně načíst privátního klíče přímo z paměti bez použití pevný disk. Při nové <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> zadán příznak v <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> konstruktor nebo jednoho z přetížení <xref:System.Security.Cryptography.X509Certificates.X509Certificate2.Import%2A?displayProperty=nameWithType> metoda, se načtou privátní klíče jako dočasné klíče. To brání klíče viditelné na disku. Ale:
 
 - Protože klíče nejsou uložit trvale na disk, certifikáty načítají s nejsou vhodnými kandidáty pro přidání do X509Store tento příznak.
 
@@ -182,7 +182,7 @@ Počínaje rozhraním .NET Framework 4.7.2, <xref:System.Security.Cryptography.P
 
 **Ponechejte zabalené stream otevřené po vyřazení CryptoStream**
 
-Počínaje rozhraním .NET Framework 4.7.2, <xref:System.Security.Cryptography.CryptoStream> třída má dodatečném konstruktoru, který umožňuje <xref:System.Security.Cryptography.CryptoStream.Dispose%2A> není zavřete zabalené datového proudu. Ponechat otevřené po zabalené datový proud <xref:System.Security.Cryptography.CryptoStream> zrušení instance, zavolat novou <xref:System.Security.Cryptography.CryptoStream> konstruktor následujícím způsobem:
+Počínaje rozhraním .NET Framework 4.7.2, <xref:System.Security.Cryptography.CryptoStream> třída má dodatečném konstruktoru, který umožňuje <xref:System.Security.Cryptography.CryptoStream.Dispose%2A> není zavřete zabalené datového proudu. Ponechat otevřené po zabalené datový proud <xref:System.Security.Cryptography.CryptoStream> zrušení instance, zavolat novou <xref:System.Security.Cryptography.CryptoStream> konstruktor následujícím způsobem:
 
 ```csharp
 var cStream = new CryptoStream(stream, transform, mode, leaveOpen: true);
@@ -321,15 +321,15 @@ Konfigurační soubor aplikace pak určuje konkrétní implementaci abstraktní 
 
 ```xml
 <configuration>
-  <configSections>
-    <section name="SqlColumnEncryptionEnclaveProviders" type="System.Data.SqlClient.SqlColumnEncryptionEnclaveProviderConfigurationSection,System.Data,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089"/> 
-  </configSections>
-  <SqlColumnEncryptionEnclaveProviders>
-    <providers>
+  <configSections>
+    <section name="SqlColumnEncryptionEnclaveProviders" type="System.Data.SqlClient.SqlColumnEncryptionEnclaveProviderConfigurationSection,System.Data,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089"/> 
+  </configSections>
+  <SqlColumnEncryptionEnclaveProviders>
+    <providers>
       <add name="Azure" type="Microsoft.SqlServer.Management.AlwaysEncrypted.AzureEnclaveProvider,MyApp"/>
       <add name="HGS" type="Microsoft.SqlServer.Management.AlwaysEncrypted.HGSEnclaveProvider,MyApp" />
-    </providers>
-  </SqlColumnEncryptionEnclaveProviders >
+    </providers>
+  </SqlColumnEncryptionEnclaveProviders >
 </configuration>
 ```
 
@@ -347,13 +347,13 @@ Základní tok na základě enklávy s funkcí Always Encrypted je:
 
 **Hledání třídách ResourceDictionaries podle zdroje**
 
-Počínaje rozhraním .NET Framework 4.7.2, můžete najít diagnostiku Pomocníka s nastavením <xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries> , které byly vytvořeny z daného zdroje identifikátoru Uri. (Tato funkce je pro použití diagnostických asistenti, nikoli produkčních aplikací.) Diagnostické asistenta, jako je Visual Studio "Edit-and-Continue" zařízení umožňuje uživatel upravit ResourceDictionary se záměrem, že změny se použijí ke spuštěné aplikaci. Jeden krok v dosažení tohoto cíle je vyhledání všech třídách ResourceDictionaries vytvořené běžící aplikaci ze slovníku, který se právě upravuje. Například může aplikace deklarovat ResourceDictionary, jehož obsah je zkopírován z daného zdroje identifikátoru URI:
+Počínaje rozhraním .NET Framework 4.7.2, můžete najít diagnostiku Pomocníka s nastavením <xref:System.Windows.Xps.Packaging.IXpsFixedPageReader.ResourceDictionaries> , které byly vytvořeny z daného zdroje identifikátoru Uri. (Tato funkce je pro použití diagnostických asistenti, nikoli produkčních aplikací.) Diagnostické asistenta, jako je Visual Studio "Edit-and-Continue" zařízení umožňuje uživatel upravit ResourceDictionary se záměrem, že změny se použijí ke spuštěné aplikaci. Jeden krok v dosažení tohoto cíle je vyhledání všech třídách ResourceDictionaries vytvořené běžící aplikaci ze slovníku, který se právě upravuje. Například může aplikace deklarovat ResourceDictionary, jehož obsah je zkopírován z daného zdroje identifikátoru URI:
 
 ```xml
 <ResourceDictionary Source="MyRD.xaml">
 ```
 
-Diagnostické asistent, který upraví původní kód v *MyRD.xaml* nové funkce lze použít k vyhledání slovníku. Tato funkce je implementováno novou statickou metodu <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>. Diagnostické Pomocníka s nastavením volá novou metodu pomocí absolutní identifikátor Uri, který identifikuje původní značek, jak je znázorněno v následujícím kódu:
+Diagnostické asistent, který upraví původní kód v *MyRD.xaml* nové funkce lze použít k vyhledání slovníku. Tato funkce je implementováno novou statickou metodu <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetResourceDictionariesForSource%2A?displayProperty=nameWithType>. Diagnostické Pomocníka s nastavením volá novou metodu pomocí absolutní identifikátor Uri, který identifikuje původní značek, jak je znázorněno v následujícím kódu:
 
 ```csharp
 IEnumerable<ResourceDictionary> dictionaries = ResourceDictionaryDiagnostics.GetResourceDictionariesForSource(new Uri("pack://application:,,,/MyApp;component/MyRD.xaml"));
@@ -362,11 +362,11 @@ IEnumerable<ResourceDictionary> dictionaries = ResourceDictionaryDiagnostics.Get
 Dim dictionaries As IEnumerable(Of ResourceDictionary) = ResourceDictionaryDiagnostics.GetResourceDictionariesForSource(New Uri("pack://application:,,,/MyApp;component/MyRD.xaml"))
 ```
 
-Metoda vrátí prázdnou vyčíslitelné Pokud <xref:System.Windows.Diagnostics.VisualDiagnostics> je povolená a [ `ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO` ](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) nastavení proměnné prostředí.
+Metoda vrátí prázdnou vyčíslitelné Pokud <xref:System.Windows.Diagnostics.VisualDiagnostics> je povolená a [ `ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO` ](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  nastavení proměnné prostředí.
 
 **Vyhledání ResourceDictionary vlastníky**
 
-Počínaje rozhraním .NET Framework 4.7.2, mohou diagnostické Pomocníka s nastavením vyhledat vlastníci daný <xref:Windows.UI.Xaml.ResourceDictionary>. (Tato funkce je pro použití diagnostických Asistenti a ne produkční aplikace.) Vždy, když je provedena změna <xref:Windows.UI.Xaml.ResourceDictionary>, WPF automaticky vyhledá všechny [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) odkazy, které by mohly mít dopad změnu.
+Počínaje rozhraním .NET Framework 4.7.2, mohou diagnostické Pomocníka s nastavením vyhledat vlastníci daný <xref:Windows.UI.Xaml.ResourceDictionary>. (Tato funkce je pro použití diagnostických Asistenti a ne produkční aplikace.) Vždy, když je provedena změna <xref:Windows.UI.Xaml.ResourceDictionary>, WPF automaticky vyhledá všechny [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) odkazy, které by mohly mít dopad změnu.
 
 Diagnostické asistenta, jako je Visual Studio "Edit-and-Continue" zařízení může být vhodné pro rozšíření pro zpracování [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkazy. Prvním krokem v tomto procesu je požadované vlastníky slovníku To znamená Chcete-li vyhledat všechny objekty jehož `Resources` vlastnost odkazuje na adresář (buď přímo nebo nepřímo prostřednictvím <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType> vlastnost). Tři nové statické metody implementovány v <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType> třídy, jeden pro každou ze základních typů, které má `Resources` vlastnost, podporují tento krok:
 
@@ -376,11 +376,11 @@ Diagnostické asistenta, jako je Visual Studio "Edit-and-Continue" zařízení m
 
 - [`public static IEnumerable<Application> GetApplicationOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetApplicationOwners%2A)
 
-Tyto metody vrací prázdný vyčíslitelné Pokud <xref:System.Windows.Diagnostics.VisualDiagnostics> je povolená a [ `ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO` ](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) nastavení proměnné prostředí.
+Tyto metody vrací prázdný vyčíslitelné Pokud <xref:System.Windows.Diagnostics.VisualDiagnostics> je povolená a [ `ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO` ](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  nastavení proměnné prostředí.
 
 **Hledají se odkazy StaticResource**
 
-Diagnostické asistent teď můžou přijímat oznámení pokaždé, když se [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkaz je vyřešený. (Tato funkce je pro použití diagnostických asistenti, nikoli produkčních aplikací.) Diagnostické asistenta, jako je Visual Studio "Edit-and-Continue" zařízení chtít aktualizovat všechny výskyty prostředek při její hodnotu v <xref:Windows.UI.Xaml.ResourceDictionary> změny. WPF se k tomu automaticky [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) odkazy, ale záměrně nenabízí tak [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkazy. Počínaje rozhraním .NET Framework 4.7.2, diagnostických Pomocníka s nastavením lze použít tato oznámení k vyhledání těchto používá statický prostředek.
+Diagnostické asistent teď můžou přijímat oznámení pokaždé, když se [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkaz je vyřešený. (Tato funkce je pro použití diagnostických asistenti, nikoli produkčních aplikací.) Diagnostické asistenta, jako je Visual Studio "Edit-and-Continue" zařízení chtít aktualizovat všechny výskyty prostředek při její hodnotu v <xref:Windows.UI.Xaml.ResourceDictionary> změny. WPF se k tomu automaticky [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) odkazy, ale záměrně nenabízí tak [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkazy. Počínaje rozhraním .NET Framework 4.7.2, diagnostických Pomocníka s nastavením lze použít tato oznámení k vyhledání těchto používá statický prostředek.
 
 Oznámení je implementována pomocí nového <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.StaticResourceResolved?displayProperty=nameWithType> události:
 
@@ -392,7 +392,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
-Tato událost je vyvolána pokaždé, když se odstraňuje modul runtime [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkaz. <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> Argumenty popisují rozlišení a označení objektu a vlastnosti, které hostují [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkaz a <xref:Windows.UI.Xaml.ResourceDictionary> a klíč se používá pro rozlišení:
+Tato událost je vyvolána pokaždé, když se odstraňuje modul runtime [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkaz. <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> Argumenty popisují rozlišení a označení objektu a vlastnosti, které hostují [StaticResource](../wpf/advanced/staticresource-markup-extension.md) odkaz a <xref:Windows.UI.Xaml.ResourceDictionary> a klíč se používá pro rozlišení:
 
 ```csharp
 public class StaticResourceResolvedEventArgs : EventArgs
@@ -407,7 +407,7 @@ public class StaticResourceResolvedEventArgs : EventArgs
 }
 ```
 
-Není vyvolána událost (a jeho `add` přístupový objekt se ignoruje.) Pokud <xref:System.Windows.Diagnostics.VisualDiagnostics> je povolená a [ `ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO` ](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A) nastavení proměnné prostředí.
+Není vyvolána událost (a jeho `add` přístupový objekt se ignoruje.) Pokud <xref:System.Windows.Diagnostics.VisualDiagnostics> je povolená a [ `ENABLE_XAML_DIAGNOSTICS_SOURCE_INFO` ](xref:System.Windows.Diagnostics.VisualDiagnostics.GetXamlSourceInfo%2A)  nastavení proměnné prostředí.
 
 #### <a name="clickonce"></a>ClickOnce
 
@@ -415,7 +415,7 @@ Všechny s ohledem na HDPI aplikace pro Windows Forms, Windows Presentation Foun
 
 ```xml
 <windowsSettings>
-   <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
+   <dpiAware xmlns="http://schemas.microsoft.com/SMI/2005/WindowsSettings">true</dpiAware>
 </windowsSettings>
 ```
 
@@ -517,7 +517,7 @@ Rozhraní .NET Framework 4.7 obsahuje nové funkce v následujících oblastech:
 - [Windows Forms](#wf47)
 - [Windows Presentation Foundation (WPF)](#WPF47)
 
-Seznam nových rozhraní API přidá do rozhraní .NET Framework 4.7, najdete v části [změn rozhraní API aplikace rozhraní .NET Framework 4.7](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-api-changes.md) na Githubu. Seznam vylepšení funkcí a oprav chyb v rozhraní .NET Framework 4.7 najdete v tématu [rozhraní .NET Framework 4.7 změny seznamu](http://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-changes.md) na Githubu.  Další informace najdete v tématu [uvedení rozhraní .NET Framework 4.7](https://blogs.msdn.microsoft.com/dotnet/2017/04/05/announcing-the-net-framework-4-7/) v blogu .NET.
+Seznam nových rozhraní API přidá do rozhraní .NET Framework 4.7, najdete v části [změn rozhraní API aplikace rozhraní .NET Framework 4.7](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-api-changes.md) na Githubu. Seznam vylepšení funkcí a oprav chyb v rozhraní .NET Framework 4.7 najdete v tématu [rozhraní .NET Framework 4.7 změny seznamu](https://github.com/Microsoft/dotnet/blob/master/releases/net47/dotnet47-changes.md) na Githubu.  Další informace najdete v tématu [uvedení rozhraní .NET Framework 4.7](https://blogs.msdn.microsoft.com/dotnet/2017/04/05/announcing-the-net-framework-4-7/) v blogu .NET.
 
 <a name="Core47" />
 
@@ -725,11 +725,11 @@ public interface ISessionStateModule : IHttpModule {
 <a name="Strings" />
 
 ### <a name="character-categories"></a>Kategoriích znaků
- Znaky v [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] jsou klasifikovány podle [Unicode Standard, verze 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], znaky byly klasifikovány podle kategorií znaků Unicode 6.3.
+ Znaky v [!INCLUDE[net_v462](../../../includes/net-v462-md.md)] jsou klasifikovány podle [Unicode Standard, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/). V [!INCLUDE[net_v46](../../../includes/net-v46-md.md)] a [!INCLUDE[net_v461](../../../includes/net-v461-md.md)], znaky byly klasifikovány podle kategorií znaků Unicode 6.3.
 
  Podpora pro Unicode 8.0 je omezena na klasifikaci znaků, o <xref:System.Globalization.CharUnicodeInfo> třídy a typy a metody, které jsou na něm závislí. Patří mezi ně <xref:System.Globalization.StringInfo> třídy přetížené <xref:System.Char.GetUnicodeCategory%2A?displayProperty=nameWithType> metody a [znaku třídy](../../../docs/standard/base-types/character-classes-in-regular-expressions.md) rozpoznávaných modul regulárních výrazů rozhraní .NET Framework.  Znakové a řetězcové porovnání a řazení není touto změnou ovlivněna a Spolehněte se na příslušný operační systém, nebo v systémech Windows 7, v rozhraní .NET Framework poskytuje znaková data i nadále.
 
- Změny v kategoriích znaků Unicode 6.0 do kódování Unicode 7.0, naleznete v tématu [standardu Unicode, verze 7.0.0](http://www.unicode.org/versions/Unicode7.0.0/) na webu Unicode Consortium. Změny z kódování Unicode 7.0 Unicode 8.0, naleznete v tématu [standardu Unicode, verze 8.0.0](http://www.unicode.org/versions/Unicode8.0.0/) na webu Unicode Consortium.
+ Změny v kategoriích znaků Unicode 6.0 do kódování Unicode 7.0, naleznete v tématu [standardu Unicode, verze 7.0.0](https://www.unicode.org/versions/Unicode7.0.0/) na webu Unicode Consortium. Změny z kódování Unicode 7.0 Unicode 8.0, naleznete v tématu [standardu Unicode, verze 8.0.0](https://www.unicode.org/versions/Unicode8.0.0/) na webu Unicode Consortium.
 
 <a name="Crypto462" />
 
@@ -1223,7 +1223,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
      Webové stránky, MVC a webového rozhraní API jsou sjednocené do jednoho rámec volá MVC 6. ASP.NET Core můžete vytvářet aplikace pomocí nástrojů v sadě Visual Studio 2015 nebo novější. Vaše stávající aplikace budou fungovat na nové rozhraní .NET Framework; ale sestavit aplikaci, která používá MVC 6 nebo SignalR 3, musíte použít systém projektu v sadě Visual Studio 2015 nebo novější.
 
-     Informace najdete v tématu [ASP.NET Core](http://go.microsoft.com/fwlink/?LinkId=518238).
+     Informace najdete v tématu [ASP.NET Core](/aspnet/core/).
 
 - **Aktualizace technologie ASP.NET**
 
@@ -1247,18 +1247,18 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
     - **Podpora HTTP/2 (Windows 10)**
 
-         [HTTP/2](http://www.wikipedia.org/wiki/HTTP/2) novou verzi protokolu HTTP, která poskytuje mnohem lepší využití připojení (méně doby odezvy mezi klientem a serverem), výsledkem nižší latencí na webové stránce načítání pro uživatele.  Webové stránky (na rozdíl od služby) využívat na maximum z HTTP/2, protože protokol optimalizuje pro více artefakty, které jsou požadovány v rámci prostředí s jednotným. Byla přidána podpora HTTP/2 technologie ASP.NET v rozhraní .NET Framework 4.6. Protože síťových funkcí existuje na více úrovních, nové funkce byly zapotřebí ve Windows, služby IIS a ASP.NET umožňuje HTTP/2. Musí běžet na Windows 10 pomocí protokolu HTTP/2 technologie ASP.NET.
+         [HTTP/2](https://www.wikipedia.org/wiki/HTTP/2) novou verzi protokolu HTTP, která poskytuje mnohem lepší využití připojení (méně doby odezvy mezi klientem a serverem), výsledkem nižší latencí na webové stránce načítání pro uživatele.  Webové stránky (na rozdíl od služby) využívat na maximum z HTTP/2, protože protokol optimalizuje pro více artefakty, které jsou požadovány v rámci prostředí s jednotným. Byla přidána podpora HTTP/2 technologie ASP.NET v rozhraní .NET Framework 4.6. Protože síťových funkcí existuje na více úrovních, nové funkce byly zapotřebí ve Windows, služby IIS a ASP.NET umožňuje HTTP/2. Musí běžet na Windows 10 pomocí protokolu HTTP/2 technologie ASP.NET.
 
          HTTP/2 je také podporováno a na ve výchozím nastavení pro Windows 10 Universal Windows Platform (UWP) aplikace, které používají <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> rozhraní API.
 
-         Aby bylo možné poskytnout způsob, jak používat [PUSH_PROMISE](http://http2.github.io/http2-spec/#PUSH_PROMISE) funkce v aplikacích ASP.NET, novou metodu s dvě přetížení, <xref:System.Web.HttpResponse.PushPromise%28System.String%29> a <xref:System.Web.HttpResponse.PushPromise%28System.String%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29>, byl přidán do <xref:System.Web.HttpResponse> třídy.
+         Aby bylo možné poskytnout způsob, jak používat [PUSH_PROMISE](https://http2.github.io/http2-spec/#PUSH_PROMISE) funkce v aplikacích ASP.NET, novou metodu s dvě přetížení, <xref:System.Web.HttpResponse.PushPromise%28System.String%29> a <xref:System.Web.HttpResponse.PushPromise%28System.String%2CSystem.String%2CSystem.Collections.Specialized.NameValueCollection%29>, byl přidán do <xref:System.Web.HttpResponse> třídy.
 
         > [!NOTE]
         > I když ASP.NET Core podporuje HTTP/2, podpora pro funkce nabízené PROMISE ještě nejsou přidané.
 
          Všechnu práci udělat v prohlížeči a webový server (IIS na Windows). Nemusíte dělat žádné náročná na výkon nepoužily pro vaše uživatele.
 
-         Většina [nejpoužívanějších prohlížečích podporuje HTTP/2](http://www.wikipedia.org/wiki/HTTP/2), takže je pravděpodobné, že vaši uživatelé budou těžit z podpora HTTP/2, pokud to server podporuje.
+         Většina [nejpoužívanějších prohlížečích podporuje HTTP/2](https://www.wikipedia.org/wiki/HTTP/2), takže je pravděpodobné, že vaši uživatelé budou těžit z podpora HTTP/2, pokud to server podporuje.
 
     - **Podpora pro protokol vazby tokenů**
 
@@ -1681,7 +1681,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
  Vylepšení při ladění aplikací rozhraní .NET Framework v sadě Visual Studio 2013 zahrnují:
 
-- Návratové hodnoty v ladicím programu sady Visual Studio. Při ladění spravované aplikace v sadě Visual Studio 2013, zobrazí okno Automatické hodnoty návratové typy a hodnoty pro metody. Tyto informace jsou k dispozici pro desktop, Windows Store a aplikací Windows Phone. Další informace najdete v tématu [Kontrola návratových hodnot volání metod](https://msdn.microsoft.com/library/e3245b37-8e2e-4200-ba84-133726e95f1f\(v=vs.120\).aspx) v knihovně MSDN.
+- Návratové hodnoty v ladicím programu sady Visual Studio. Při ladění spravované aplikace v sadě Visual Studio 2013, zobrazí okno Automatické hodnoty návratové typy a hodnoty pro metody. Tyto informace jsou k dispozici pro desktop, Windows Store a aplikací Windows Phone. Další informace najdete v tématu [Kontrola návratových hodnot volání metod](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/dn32325728%v=vs.120%29).
 
 - Upravit a pokračovat pro 64bitové aplikace. Visual Studio 2013 podporuje funkce upravit a pokračovat pro 64bitové spravované aplikace pro desktop, Windows Store a Windows Phone. Stávající omezení zůstávají v platnosti pro 32bitové a 64bitové aplikace (viz poslední část [podporované změny kódu (C#)](/visualstudio/debugger/supported-code-changes-csharp) článku).
 
@@ -1707,7 +1707,7 @@ Nespravované rozhraní API profilování bylo vylepšeno následujícím způso
 
 - Lepší výkon pomocí sběru plýtvání na pozadí pro servery. Při použití v uvolňování paměti serveru [!INCLUDE[net_v45](../../../includes/net-v45-md.md)], uvolňování paměti na pozadí je automaticky povolen. Najdete v části uvolňování paměti serveru na pozadí [základy kolekce paměti](../../../docs/standard/garbage-collection/fundamentals.md) tématu.
 
-- Kompilace just-in-time (JIT) na pozadí, která je volitelně k dispozici také u vícejádrových procesorů pro zvýšení výkonu aplikací. Zobrazit <xref:System.Runtime.ProfileOptimization>.
+- Kompilace just-in-time (JIT) na pozadí, která je volitelně k dispozici také u vícejádrových procesorů pro zvýšení výkonu aplikací. Viz <xref:System.Runtime.ProfileOptimization>.
 
 - Možnost omezit jak dlouho modul regulárních výrazů se pokusí o překlad regulárního výrazu před uplynutím časového limitu. Zobrazit <xref:System.Text.RegularExpressions.Regex.MatchTimeout%2A?displayProperty=nameWithType> vlastnost.
 

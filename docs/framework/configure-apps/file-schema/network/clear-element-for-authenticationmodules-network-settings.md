@@ -10,14 +10,12 @@ helpviewer_keywords:
 - <clear> element, authenticationModules
 - authenticationModules, clear element
 ms.assetid: dc522c45-4a80-4831-8955-f7b68a47edfd
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: ef12a475dde103023d3411fb68efb3bdb4f6d116
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 42fa6a44891e012300f61f1a11a47537c6739e2c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47235910"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50205188"
 ---
 # <a name="ltcleargt-element-for-authenticationmodules-network-settings"></a>&lt;Vymazat&gt; – Element pro authenticationModules (nastavení sítě)
 Vymaže všechny moduly ověřování z aplikace.  
@@ -68,6 +66,6 @@ Vymaže všechny moduly ověřování z aplikace.
 ```  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.Net.IAuthenticationModule>  
- <xref:System.Net.AuthenticationManager>  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- <xref:System.Net.IAuthenticationModule>  
+- <xref:System.Net.AuthenticationManager>  
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

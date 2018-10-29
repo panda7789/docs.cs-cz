@@ -2,25 +2,23 @@
 title: 'Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)'
 ms.date: 03/14/2018
 ms.assetid: 229ff9fb-1bd1-403b-946b-526104864c60
-author: rpetrusha
-ms.author: ronpet
-ms.openlocfilehash: c02f694da4e03b666fa88ea6db8ddb2db4c9637d
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 3b9d3c45168020f22f7e263fdf59454e3789dd9e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33643286"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50194654"
 ---
 # <a name="how-to-create-and-use-assemblies-using-the-command-line-visual-basic"></a>Postupy: vytvoření a použití sestavení s pomocí příkazového řádku (Visual Basic)
-Sestavení nebo dynamického propojení knihovna (DLL), je propojen s vaším programem za běhu. Chcete-li ukazují, vytvoření a použití knihovny DLL, zvažte následující scénáře:  
+Sestavení nebo dynamické propojení knihovny (DLL), je propojen s program za běhu. Abychom si předvedli, vytvoření a použití knihovny DLL, zvažte následující scénáře:  
   
--   `MathLibrary.DLL`: Knihovna soubor, který obsahuje metody, která se má volat za běhu. V tomto příkladu knihovnu DLL obsahuje dvě metody, `Add` a `Multiply`.  
+-   `MathLibrary.DLL`: Knihovna soubor, který obsahuje metody pro volaných za běhu. V tomto příkladu knihovna DLL obsahuje dvě metody, `Add` a `Multiply`.  
   
--   `Add`: Zdrojový soubor, který obsahuje metodu `Add`. Vrátí součet její parametry. Třída `AddClass` obsahující metodu `Add` je členem oboru názvů `UtilityMethods`.  
+-   `Add`: Zdrojový soubor, který obsahuje metodu `Add`. Vrátí součet svých parametrů. Třída `AddClass` , který obsahuje metodu `Add` patří do oboru názvů `UtilityMethods`.  
   
--   `Mult`: Zdrojový kód, který obsahuje metodu `Multiply`. Vrátí součin jeho parametry. Třída `MultiplyClass` obsahující metodu `Multiply` je také členem oboru názvů `UtilityMethods`.  
+-   `Mult`: Zdrojový kód, který obsahuje metodu `Multiply`. Vrátí součin její parametry. Třída `MultiplyClass` , který obsahuje metodu `Multiply` je také členem oboru názvů `UtilityMethods`.  
   
--   `TestCode`: Soubor, který obsahuje `Main` metoda. Metody v souboru DLL používá k výpočtu součet a produktu argumenty běhu.  
+-   `TestCode`: Soubor, který obsahuje `Main` metody. Používá metody v souboru knihovny DLL pro výpočet součtu a produktu argumenty za běhu.  
   
 ## <a name="example"></a>Příklad  
   
@@ -81,43 +79,43 @@ End Module
 ' 1234 * 5678 = 7006652  
 ```  
   
- Tento soubor obsahuje algoritmus, který používá metody DLL `Add` a `Multiply`. Začíná Analýza argumentů zadali z příkazového řádku, `num1` a `num2`. Pak se vypočítává součet `Add` metoda na `AddClass` třídy a produktu pomocí `Multiply` metoda na `MultiplyClass` – třída.  
+ Tento soubor obsahuje algoritmus, který používá knihovnu DLL metody `Add` a `Multiply`. Začíná Analýza argumentů z příkazového řádku zadané `num1` a `num2`. Pak vypočítá součet pomocí `Add` metodu `AddClass` třídy a produktu s použitím `Multiply` metodu na `MultiplyClass` třídy.  
   
- Všimněte si, že `Imports` příkaz na začátku souboru umožňuje používat třídu nekvalifikované názvy tak, aby odkazovaly metody DLL při kompilaci, následujícím způsobem:  
+ Všimněte si, že `Imports` příkaz na začátku souboru umožňuje pomocí názvů nekvalifikované tříd k odkazování knihoven DLL metody v době kompilace, následujícím způsobem:  
   
 ```vb  
 MultiplyClass.Multiply(num1, num2)  
 ```  
   
- Jinak budete muset použít plně kvalifikované názvy následujícím způsobem:  
+ V opačném případě je nutné použít plně kvalifikované názvy, následujícím způsobem:  
   
 ```vb  
 UtilityMethods.MultiplyClass.Multiply(num1, num2)  
 ```  
   
 ## <a name="execution"></a>Spuštění  
- Chcete-li spustit program, zadejte název souboru EXE, za nímž následuje dvou čísel, následujícím způsobem:  
+ Chcete-li spustit program, zadejte název souboru EXE, za nímž následuje dvě čísla, následujícím způsobem:  
   
  `TestCode 1234 5678`  
   
 ## <a name="compiling-the-code"></a>Probíhá kompilace kódu  
- K vytvoření souboru `MathLibrary.DLL`, zkompilovat dva soubory `Add` a `Mult` pomocí následující příkazový řádek.  
+ Pro sestavení souboru `MathLibrary.DLL`, zkompilujte příslušné dva soubory `Add` a `Mult` pomocí následující příkazový řádek.  
   
 ```console  
 vbc -target:library -out:MathLibrary.DLL Add.vb Mult.vb  
 ```  
   
- [-Target (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/target.md) – možnost kompilátoru říká kompilátoru výstup knihovny DLL místo soubor EXE. [-Out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md) – možnost kompilátoru a potom podle názvu souboru se používá k určení názvu souboru DLL. Jinak, kompilátor použije první soubor (`Add.vb`) jako název knihovnu DLL.  
+ [-Target (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/target.md) – možnost kompilátoru instruuje kompilátor, aby výstupní knihovnu DLL místo souboru EXE. [-Out (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/out.md) – možnost kompilátoru následovaný názvem souboru se používá k určení názvu souboru knihovny DLL. V opačném případě kompilátor použije první soubor (`Add.vb`) jako název knihovny DLL.  
   
- K vytvoření spustitelný soubor `TestCode.exe`, použijte následující příkazový řádek:  
+ K sestavení spustitelného souboru `TestCode.exe`, použijte následující příkazový řádek:  
   
 ```console  
 vbc -out:TestCode.exe -reference:MathLibrary.DLL TestCode.vb  
 ```  
   
- **-Out** – možnost kompilátoru říká kompilátoru do výstupního souboru EXE a určuje název souboru výstupního souboru (`TestCode.exe`). Tato možnost kompilátoru je volitelné. [– Referenční dokumentace (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) – možnost kompilátoru Určuje soubor knihovny DLL nebo soubory, které tento program používá.  
+ **-Out** – možnost kompilátoru instruuje kompilátor, aby výstupní soubor EXE a určuje název výstupního souboru (`TestCode.exe`). Tato možnost kompilátoru je volitelné. [– Referenční dokumentace (Visual Basic)](../../../../visual-basic/reference/command-line-compiler/reference.md) – možnost kompilátoru Určuje soubor knihovny DLL nebo soubory, které tento program využívá.  
   
- Další informace o sestavení z příkazového řádku najdete v tématu a [sestavení z příkazového řádku](../../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
+ Další informace o sestavování z příkazového řádku najdete v tématu a [sestavení z příkazového řádku](../../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md).  
   
 ## <a name="see-also"></a>Viz také  
  [Koncepty programování](../../../../visual-basic/programming-guide/concepts/index.md)  

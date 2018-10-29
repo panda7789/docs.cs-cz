@@ -1,48 +1,48 @@
 ---
-title: Spravovat produkční prostředí Docker
-description: Kontejnerizované Docker životního cyklu aplikací s Microsoft platforma a nástroje
+title: Správa produkčních prostředí Dockeru
+description: Životní cyklus aplikace kontejnerizovaných Dockeru s platformou a nástroji Microsoft
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 09/22/2017
-ms.openlocfilehash: 169ffa7ba61fa5dff09229410adb534f8e34a35c
-ms.sourcegitcommit: 979597cd8055534b63d2c6ee8322938a27d0c87b
+ms.openlocfilehash: 3bafdd9f6a6aa4f850fd28b6315e68c643d1f8c0
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 06/29/2018
-ms.locfileid: "37104582"
+ms.lasthandoff: 10/29/2018
+ms.locfileid: "50202852"
 ---
-# <a name="manage-production-docker-environments"></a>Spravovat produkční prostředí Docker
+# <a name="manage-production-docker-environments"></a>Správa produkčních prostředí Dockeru
 
-Správa clusteru a orchestration je proces řízení skupinu hostitelů. To může zahrnovat přidání a odebrání hostitele z clusteru, získání informací o aktuálním stavu hostitelů a kontejnerů a spuštění a zastavení procesy. Správa clusteru a orchestraci jsou úzce svázané s plánování, protože plánovač musí mít přístup na každém hostiteli. v clusteru, aby bylo možné naplánovat služby. Z tohoto důvodu se často používá stejný nástroj pro oba účely.
+Správa clusterů a Orchestrace je proces řízení skupiny hostitelů. To může zahrnovat přidání a odebrání hostitele z clusteru, získávání informací o aktuálním stavu hostitelů a kontejnery a spuštěním nebo zastavením procesy. Správa clusterů a Orchestrace jsou úzce vázané na plánování, protože plánovači musí na každém hostiteli v clusteru, abyste měli naplánovat služby. Z tohoto důvodu se často používá stejný nástroj pro oba účely.
 
-## <a name="container-service-and-management-tools"></a>Kontejner služby a nástroje pro správu
+## <a name="container-service-and-management-tools"></a>Nástroje služby a správu kontejnerů
 
-Container Service umožňuje rychlé nasazení oblíbených open-source kontejneru clustering a orchestraci řešení. Zajistěte, aby vaše kontejnery aplikace plně přenositelné pomocí imagí Dockeru. Pomocí Container Service můžete nasadit (používá technologii Mesosphere a Apache Mesos) DC/OS a Docker Swarm clustery s šablon Azure Resource Manageru nebo portálu Azure k zajištění, že je možné škálovat tyto aplikace k tisícům – včetně desetitisíce – nástroje kontejnery.
+Container Service umožňuje rychlé nasazení oblíbených open source kontejneru řešení pro clustering a orchestraci kontejnerů. Používá Image Dockeru k zajištění, že plné přenositelnosti kontejnerů vaší aplikace. Pomocí služby Container Service můžete nasadit (používá technologii Mesosphere a Apache Mesos) DC/OS a Docker Swarm clustery pomocí šablon Azure Resource Manageru nebo webu Azure portal k zajištění, že je můžete tyto aplikace škálovat do tisíců – dokonce desítek tisíců – z kontejnery.
 
-Tyto clustery nasadíte pomocí sady škálování virtuálního počítače Azure, a clustery využívat nabídky Azure sítě a úložiště. K Container Service potřebujete předplatné Azure. S Container Service můžete využít výhod podnikové úrovni funkce Azure současně se zachovává přenositelnost aplikace, včetně na vrstvy orchestration.
+Tyto clustery nasadíte pomocí sad škálování virtuálních počítačů Azure a nich možné využívat nabídky Azure v oblasti sítí a úložišť. Pro přístup k službě Container Service, budete potřebovat předplatné Azure. Se službou Container Service můžete využít výhod funkcí Azure na podnikové úrovni a přitom zachovávat přenositelnost aplikací, včetně v orchestračních vrstvách.
 
-Tabulka 6-1 jsou uvedeny běžné nástroje pro správu související s jejich orchestrators, plánovače a clustering platformy.
+Tabulka 6-1 jsou uvedeny běžné nástroje pro správu týkající se jejich orchestrátorů, plánovače a clusteringu platformy.
 
 Nástroje pro správu Docker Tabulka 6-1:
 
 
-| Nástroje pro správu      | Popis           | Související orchestrators |
+| Nástroje pro správu      | Popis           | Související orchestrátorů |
 |-----------------------|-----------------------|-----------------------|
-| Container Service\(správu uživatelského rozhraní na portálu Azure) | [Službu kontejneru](https://azure.microsoft.com/en-us/services/container-service/) poskytuje snadno získat spuštění způsob, jak [nasadit cluster kontejneru ve službě Azure](https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment) podle oblíbených orchestrators jako Mesosphere DC/OS, Kubernetes a Docker Swarm. <br /><br /> Container Service optimalizuje konfiguraci tyto platformy. Stačí vybrat velikost, počtu hostitelů a volba nástroje orchestrator a kontejner služba zpracovává nic jiného. | Mesosphere DC/OS <br /><br /> Kubernetes <br /><br /> Docker Swarm |
-| Univerzální rovině řízení docker\(na pracovišti nebo v cloudu) | [Univerzální rovině řízení docker](https://docs.docker.com/v1.11/ucp/overview/) je řešení pro správu podnikové úrovni clusteru z Docker. Pomáhá spravovat celý cluster z jednoho místa. <br /><br /> Je součástí komerční produktu Docker datacentru, což poskytuje Docker Swarm, Docker Universal řídicí a Docker důvěryhodné registru s názvem docker Universal rovině řízení. <br /><br /> Docker Datacenter může být nainstalované místně nebo zajištěného z veřejného cloudu, jako je například Azure. | Docker Swarm\(nepodporuje Container Service) |
-| Docker Cloud\(také označované jako Tutum; cloudu SaaS) | [Docker Cloud](https://docs.docker.com/docker-cloud/) je hostované správu služba (SaaS), která poskytuje funkce orchestration a Docker registru sestavení a testování zařízení pro Image aplikací Dockerized, nástroje vám pomůžou nastavit a spravovat infrastrukturu hostitele a nasazení funkce, které vám pomůžou automatizovat nasazení bitové kopie k infrastruktuře konkrétní. Váš účet SaaS Docker cloudu může připojit k vaší infrastruktury v kontejneru služby spuštěné clusteru Docker Swarm. | Docker Swarm\(nepodporuje Container Service) |
-| Mesosphere Marathon\(na pracovišti nebo v cloudu) | [Marathon](https://mesosphere.github.io/marathon/docs/marathon-ui.html) je platforma orchestration a scheduler kontejneru produkční úrovni pro DC/OS a Apache Mesos Mesosphere společnosti. <br /><br /> Funguje s Mesos (DC/OS je založené na Apache Mesos) na ovládací prvek dlouhodobé služby a poskytuje [webové uživatelské rozhraní pro správu procesu a kontejner](https://mesosphere.github.io/marathon/docs/marathon-ui.html). Poskytuje nástroj pro správu webového uživatelského rozhraní | Mesosphere DC/OS\(podle Apache Mesos; nepodporuje Container Service) |
-| Google Kubernetes | [Kubernetes](http://kubernetes.io/docs/user-guide/ui/#dashboard-access) zahrnuje Orchestrace, plánování a infrastruktura clusteru. Je open-source platformu pro automatizaci nasazení, škálování a operace kontejnery aplikací napříč clustery hostitelů, poskytuje zaměřené na kontejner infrastruktury. | Google Kubernetes\(nepodporuje Container Service) |
+| Container Service\(správu uživatelského rozhraní na webu Azure portal) | [Container Service](https://azure.microsoft.com/services/container-service/) poskytuje snadno získat způsob, jak začít [nasazení clusteru kontejneru v Azure](https://docs.microsoft.com/azure/container-service/dcos-swarm/container-service-deployment) podle oblíbených orchestrátorů, jako je Mesosphere DC/OS, Kubernetes a Docker Swarm. <br /><br /> Container Service optimalizuje konfiguraci tyto platformy. Stačí vybrat velikost, počet hostitelů a požadované orchestrační nástroje a služby Container Service se postará o všechno ostatní. | Mesosphere DC/OS <br /><br /> Kubernetes <br /><br /> Docker Swarm |
+| Docker Universal rovina řízení\(místní nebo v cloudu) | [Docker Universal rovina řízení](https://docs.docker.com/v1.11/ucp/overview/) je podnikové řešení pro správu clusteru od Dockeru. To vám pomůže spravovat celý cluster z jednoho místa. <br /><br /> Docker Universal rovina řízení se součástí obchodní produkt s názvem Docker Datacenter, která poskytuje Docker Swarm, Docker Universal rovina řízení a Docker Trusted Registry. <br /><br /> Docker Datacenter můžou být nainstalované na místním nebo zajištěného z veřejného cloudu, jako je Azure. | Docker Swarm\(podporované ve službě Container Service) |
+| Docker cloudu\(označované také jako Tutum; cloudu SaaS) | [Docker cloudu](https://docs.docker.com/docker-cloud/) je služba pro správu hostované (SaaS), který poskytuje možnosti Orchestrace a registr Dockeru pomocí sestavení a testování zařízení pro Dockerized obrázky aplikace, nástroje, které vám pomůžou nastavit a spravovat infrastrukturu hostitele nasazení funkce a které vám pomůžou automatizovat nasazování imagí pro konkrétní infrastrukturu. Propojení účtu Docker cloudu SaaS pro vaši infrastrukturu v Container Service s cluster Docker Swarm. | Docker Swarm\(podporované ve službě Container Service) |
+| Mesosphere Marathon\(místní nebo v cloudu) | [Marathon](https://mesosphere.github.io/marathon/docs/marathon-ui.html) je platforma Plánovač a Orchestrace kontejnerů na produkční úrovni od Mesosphere DC/OS a Apache Mesos. <br /><br /> Funguje s Mesos (DC/OS je založená na Apache Mesos) na ovládací prvek dlouhotrvající služeb a poskytuje [webového uživatelského rozhraní pro správu procesu a kontejneru](https://mesosphere.github.io/marathon/docs/marathon-ui.html). Umožňuje nástroj pro správu webového uživatelského rozhraní | Mesosphere DC/OS\(založené na Apache Mesos; podporované ve službě Container Service) |
+| Google Kubernetes | [Kubernetes](https://kubernetes.io/docs/user-guide/ui/#dashboard-access) orchestraci, plánování a infrastruktura clusteru. Je open source platforma pro automatizaci nasazení, škálování a provoz kontejnerů aplikací napříč clustery hostitelů, poskytuje zaměřené na kontejner infrastruktury. | Google Kubernetes\(podporované ve službě Container Service) |
 
 ## <a name="azure-service-fabric"></a>Azure Service Fabric
 
-Další možnost pro správu a nasazení clusteru je Azure Service Fabric. [Service Fabric](https://azure.microsoft.com/en-us/services/service-fabric/) je mikroslužeb platformu Microsoft, která zahrnuje kontejneru orchestration, jakož i vývojáře programovací modely k vytváření vysoce škálovatelných mikroslužeb aplikací. Service Fabric podporuje Docker v aktuální verze preview Linux, jako v [preview Service Fabric v systému Linux](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-anywhere)a pro Windows kontejnery [v příštím vydání](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview).
+Je další volbou pro správu a nasazení clusteru Azure Service Fabric. [Service Fabric](https://azure.microsoft.com/services/service-fabric/) je platforma mikroslužeb Microsoftu, která zahrnuje Orchestrace kontejnerů, jakož i pro vývojáře programovacích modelů pro vytváření vysoce škálovatelných mikroslužeb aplikací. Service Fabric podporuje Docker v aktuální verzi preview verze Linuxu, jako [náhled Service Fabric v Linuxu](https://docs.microsoft.com/azure/service-fabric/service-fabric-deploy-anywhere)a pro kontejnery Windows [v další vydané verzi](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview).
 
-Toto jsou nástroje pro správu Service Fabric:
+Nástroje pro správu Service Fabric jsou následující:
 
--   [Portál Azure pro Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal) operací souvisejících s clusteru (vytvoření, aktualizace nebo odstranění) clusteru nebo nakonfigurovat svou infrastrukturu (virtuální počítače, nástroj pro vyrovnávání zatížení sítě, atd.)
+-   [Portál Azure portal pro Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal) operace související s clusterem (vytvoření/aktualizace/odstranění) clusteru nebo nakonfigurovat svou infrastrukturu (virtuální počítače, nástroj pro vyrovnávání zatížení, sítě atd.)
 
--   [Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) je nástroj uživatelského rozhraní specializované web, který poskytuje přehled a určité operace na clusteru Service Fabric z hlediska uzly nebo virtuální počítače a z aplikace a služby hlediska.
+-   [Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) je nástroj specializované webové uživatelské rozhraní, které poskytují přehledy a určité operace v clusteru Service Fabric z hlediska uzly nebo virtuální počítače a z aplikace a služby pohledu.
 
 
 >[!div class="step-by-step"]

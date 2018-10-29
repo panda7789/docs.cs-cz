@@ -12,15 +12,15 @@ helpviewer_keywords:
 ms.assetid: 36a98a81-b5b5-4c19-912a-11f91eff7f4e
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: af1db244f02701e6da1604ec406f4fb2940f8f78
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: e1ed022193b4896f91f1096a0bb16c21f5374868
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32752194"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201423"
 ---
 # <a name="setting-assembly-attributes"></a>Nastavování atributů sestavení
-Atributů sestavení jsou hodnoty, které obsahují informace o sestavení. Atributy jsou rozdělené do následujících skupin informací:  
+Atributy sestavení jsou hodnoty, které obsahují informace o sestavení. Atributy jsou rozdělené do následujících skupin informace:  
   
 -   Atributy identity sestavení.  
   
@@ -28,20 +28,20 @@ Atributů sestavení jsou hodnoty, které obsahují informace o sestavení. Atri
   
 -   Atributy manifestu sestavení.  
   
--   Silné jméno atributy.  
+-   Atributy silného názvu.  
   
 ## <a name="assembly-identity-attributes"></a>Atributy Identity sestavení  
- Tři atributy společně se silným názvem (pokud existuje), zjistit identitu sestavení: název, verzi a jazykovou verzi. Tyto atributy tvoří úplný název sestavení a jsou vyžadovány při odkazování na sestavení v kódu. Atributy slouží k nastavení verze sestavení a jazykové verze. Kompilátor nebo [Linker sestavení (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) nastaví hodnotu názvu při vytváření sestavení, založené na souboru, který obsahuje manifest sestavení.  
+ Tři atributy, společně se silným názvem (Pokud je k dispozici), určují identitu sestavení: název, verzi a jazykovou verzi. Tyto atributy tvoří úplný název sestavení, jsou potřeba při odkazování na sestavení v kódu. Atributy lze nastavit jazykovou verzi a verzi sestavení. Kompilátor nebo [Assembly Linker (Al.exe)](../../../docs/framework/tools/al-exe-assembly-linker.md) nastaví hodnotu názvu, když se vytvoří sestavení, na základě souboru obsahujícího manifest sestavení.  
   
- Následující tabulka popisuje atributy verze a jazykové verze.  
+ Následující tabulka popisuje atributy verzi a jazykovou verzi.  
   
 |Atribut identity sestavení|Popis|  
 |---------------------------------|-----------------|  
-|<xref:System.Reflection.AssemblyCultureAttribute>|Položka výčtu označující jazykovou verzi, která podporuje sestavení. Sestavení může také nezávislé na jazykové verzi, která udává, že obsahuje prostředky pro výchozí jazykovou verzi. **Poznámka:** modulu runtime zpracovává všechny sestavení, které nemá atribut jazykové verze nastavte na hodnotu null, jako je satelitní sestavení. Takové sestavení podléhají satelitní sestavení vazbu pravidla. Další informace najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).|  
-|<xref:System.Reflection.AssemblyFlagsAttribute>|Hodnota, která nastaví sestavení atributy, jako je například jestli sestavení lze spustit souběžně.|  
-|<xref:System.Reflection.AssemblyVersionAttribute>|Číselnou hodnotu ve formátu *hlavní*. *méně závažné*. *sestavení*. *Revize* (například 2.4.0.0). Modul CLR používá tato hodnota k provedení vazby operací v sestavení se silným názvem. **Poznámka:** Pokud <xref:System.Reflection.AssemblyInformationalVersionAttribute> atribut není použit k sestavení číslo verze zadané parametrem <xref:System.Reflection.AssemblyVersionAttribute> atribut je používán <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType>, <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType>, a <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> vlastnosti.|  
+|<xref:System.Reflection.AssemblyCultureAttribute>|Položka výčtu označující jazykovou verzi, která podporuje sestavení. Sestavení lze také nezávislé na jazykové verzi, označující, že obsahuje prostředky pro výchozí jazykovou verzi. **Poznámka:** modul runtime zpracovává libovolné sestavení, který nemá atribut culture nastavena na hodnotu null jako satelitní sestavení. Tato sestavení se vztahují pravidel vazby satelitní sestavení. Další informace najdete v tématu [jak modul Runtime vyhledává sestavení](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md).|  
+|<xref:System.Reflection.AssemblyFlagsAttribute>|Hodnota, která nastaví atributy sestavení, například zda sestavení lze spustit vedle sebe.|  
+|<xref:System.Reflection.AssemblyVersionAttribute>|Číselnou hodnotu ve formátu *hlavní*. *vedlejší*. *sestavení*. *Revize* (například 2.4.0.0). Modul common language runtime používá tuto hodnotu k provádění operací vazby v sestavení se silným názvem. **Poznámka:** Pokud <xref:System.Reflection.AssemblyInformationalVersionAttribute> atribut není použit k sestavení, číslo verze určená <xref:System.Reflection.AssemblyVersionAttribute> používá atribut <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType>, <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType>, a <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> vlastnosti.|  
   
- Následující příklad kódu ukazuje, jak se má použít k sestavení atributy verze a jazykovou verzi.  
+ Následující příklad kódu ukazuje, jak použít atributy verzi a jazykovou verzi sestavení.  
   
  [!code-cpp[AssemblyDelaySignAttribute#3](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cpp/source2.cpp#3)]
  [!code-csharp[AssemblyDelaySignAttribute#3](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#3)]
@@ -52,40 +52,40 @@ Atributů sestavení jsou hodnoty, které obsahují informace o sestavení. Atri
   
 |Informační atribut|Popis|  
 |-----------------------------|-----------------|  
-|<xref:System.Reflection.AssemblyCompanyAttribute>|Řetězcová hodnota určující název společnosti.|  
-|<xref:System.Reflection.AssemblyCopyrightAttribute>|Řetězec hodnota, která určuje informace o autorských právech.|  
-|<xref:System.Reflection.AssemblyFileVersionAttribute>|Řetězcová hodnota zadání čísla verze souboru Win32. To obvykle výchozí verze sestavení.|  
-|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|Řetězec hodnota, která určuje informace o verzi, kterou nepoužívá modul common language runtime, jako je například číslo verze plnou verzi produktu. **Poznámka:** Pokud tento atribut se používá k sestavení, určující řetězec lze získat v době běhu pomocí <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> vlastnost. Řetězec se používá také v cestě a registru klíči poskytované <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> vlastnosti.|  
-|<xref:System.Reflection.AssemblyProductAttribute>|Řetězec hodnota, která určuje informace o produktu.|  
-|<xref:System.Reflection.AssemblyTrademarkAttribute>|Řetězec hodnota, která určuje informace o ochranných známkách.|  
+|<xref:System.Reflection.AssemblyCompanyAttribute>|Řetězec určující název společnosti.|  
+|<xref:System.Reflection.AssemblyCopyrightAttribute>|Řetězec, hodnota, která určuje informace o autorských právech.|  
+|<xref:System.Reflection.AssemblyFileVersionAttribute>|Zadáním čísla verze souboru Win32 řetězcovou hodnotu. Obvykle je výchozí hodnota verze sestavení.|  
+|<xref:System.Reflection.AssemblyInformationalVersionAttribute>|Řetězcová hodnota zadání informací o verzi, která není používána modul common language runtime, jako je číslo verze plného produktu. **Poznámka:** Pokud tento atribut je použit k sestavení, určuje řetězec lze získat v době běhu pomocí <xref:System.Windows.Forms.Application.ProductVersion%2A?displayProperty=nameWithType> vlastnost. Řetězec se používá také v cestě a registru key určeného tímto <xref:System.Windows.Forms.Application.UserAppDataPath%2A?displayProperty=nameWithType> a <xref:System.Windows.Forms.Application.UserAppDataRegistry%2A?displayProperty=nameWithType> vlastnosti.|  
+|<xref:System.Reflection.AssemblyProductAttribute>|Řetězcová hodnota zadání informací o produktu.|  
+|<xref:System.Reflection.AssemblyTrademarkAttribute>|Řetězec, hodnota, která určuje informace o ochranných známkách.|  
   
- Tyto atributy lze zobrazit na stránce vlastností sestavení nebo je můžete přepsat pomocí **/win32res** – možnost kompilátoru k určení vlastního souboru Win32 prostředků.  
+ Tyto atributy lze zobrazit na stránce vlastností Windows sestavení, nebo je můžete přepsat pomocí **/win32res** – možnost kompilátoru zadat vlastní soubor prostředků Win32.  
   
 ## <a name="assembly-manifest-attributes"></a>Atributy manifestu sestavení  
- Atributy manifestu sestavení můžete použít k poskytování informací v manifestu sestavení, včetně názvu, popisu, výchozí alias a konfigurace. Následující tabulka popisuje atributy manifestu sestavení.  
+ Atributy manifestu sestavení můžete použít k zadání informací v manifestu sestavení, včetně názvu, popisu, výchozí aliasu a konfiguraci. Následující tabulka popisuje atributy manifestu sestavení.  
   
 |Atribut manifestu sestavení|Popis|  
 |---------------------------------|-----------------|  
-|<xref:System.Reflection.AssemblyConfigurationAttribute>|Řetězec hodnotu, která určuje konfiguraci sestavení, např. prodejní nebo verze pro ladění. Modul runtime tuto hodnotu nepoužívá.|  
-|<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Řetězcová hodnota určující výchozí alias, který se má použít při odkazování na sestavení. Tuto hodnotu poskytuje popisný název, pokud není název sestavení, samotné popisný (například hodnota identifikátoru GUID). Tuto hodnotu můžete použít také jako krátkou verzi úplného názvu sestavení.|  
-|<xref:System.Reflection.AssemblyDescriptionAttribute>|Řetězcová hodnota zadání krátký popis, který shrnuje povahu a účel sestavení.|  
-|<xref:System.Reflection.AssemblyTitleAttribute>|Řetězcová hodnota zadat popisný název sestavení. Sestavení s názvem comdlg například může mít název Microsoft běžného ovládacího prvku dialogové okno.|  
+|<xref:System.Reflection.AssemblyConfigurationAttribute>|Řetězcová hodnota, která konfigurace sestavení, jako je například prodejní nebo ladicí. Modul runtime tuto hodnotu nepoužívá.|  
+|<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Řetězec určující výchozí alias použitého při odkazování na sestavení. Tuto hodnotu poskytuje popisný název, pokud není název samotného sestavení popisný (jako je například hodnota identifikátoru GUID). Tato hodnota může také sloužit jako krátká forma výrazu úplného názvu sestavení.|  
+|<xref:System.Reflection.AssemblyDescriptionAttribute>|Řetězec určující krátký popis, který shrnuje povahu a účel rozhraní sestavení.|  
+|<xref:System.Reflection.AssemblyTitleAttribute>|Hodnota řetězce, zadejte popisný název sestavení. Sestavení s názvem comdlg může mít například název společnosti Microsoft běžný ovládací prvek dialogového okna.|  
   
 ## <a name="strong-name-attributes"></a>Atributy silného názvu  
- Silné jméno atributy slouží k nastavení silný název sestavení. Následující tabulka popisuje atributy silného názvu.  
+ Nastavit silný název sestavení, můžete použít atributy silného názvu. Následující tabulka popisuje atributy silného názvu.  
   
 |Atributy silného názvu|Popis|  
 |----------------------------|-----------------|  
-|<xref:System.Reflection.AssemblyDelaySignAttribute>|Logická hodnota, která určuje, že je použit zpoždění podepsání.|  
-|<xref:System.Reflection.AssemblyKeyFileAttribute>|Řetězcová hodnota, která udává název souboru, který obsahuje veřejný klíč (Pokud se používá, zpoždění podepsání) nebo veřejné a soukromé klíče jako parametr předaný konstruktoru tohoto atributu. Všimněte si, název souboru je relativní k cestě výstupní soubor (.exe nebo .dll), není cestu ke zdrojovému souboru.|  
-|<xref:System.Reflection.AssemblyKeyNameAttribute>|Označuje kontejner klíče, který obsahuje pár klíčů jako parametr předaný konstruktoru tohoto atributu.|  
+|<xref:System.Reflection.AssemblyDelaySignAttribute>|Logická hodnota označující, že je použit dodatečném podepisování.|  
+|<xref:System.Reflection.AssemblyKeyFileAttribute>|Řetězec určující název souboru, který obsahuje veřejný klíč (Pokud se používá dodatečném podepisování) nebo veřejné a privátní klíče jako parametr předaný konstruktoru tohoto atributu. Všimněte si, že název souboru není vzhledem k výstupní cesta souboru (.exe nebo .dll), cesta ke zdrojovému souboru.|  
+|<xref:System.Reflection.AssemblyKeyNameAttribute>|Určuje kontejner klíčů, který obsahuje pár klíčů, který je předán jako parametr do konstruktoru tohoto atributu.|  
   
- Následující příklad kódu ukazuje atributy, které se použijí při použití zpoždění podepsání sestavení se silným názvem vytvořit s soubor veřejného klíče volání `myKey.snk`.  
+ Následující příklad kódu ukazuje atributy, které se použijí při použití zpoždění podepsání k vytvoření sestavení se silným názvem pomocí souboru veřejného klíče volání `myKey.snk`.  
   
  [!code-cpp[AssemblyDelaySignAttribute#4](../../../samples/snippets/cpp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cpp/source2.cpp#4)]
  [!code-csharp[AssemblyDelaySignAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CLR/AssemblyDelaySignAttribute/cs/source2.cs#4)]
  [!code-vb[AssemblyDelaySignAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/AssemblyDelaySignAttribute/vb/source2.vb#4)]  
   
 ## <a name="see-also"></a>Viz také  
- [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)  
- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)
+- [Vytváření sestavení](../../../docs/framework/app-domains/create-assemblies.md)  
+- [Programování se sestaveními](../../../docs/framework/app-domains/programming-with-assemblies.md)

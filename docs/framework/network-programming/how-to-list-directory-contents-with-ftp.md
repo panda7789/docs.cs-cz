@@ -7,11 +7,11 @@ dev_langs:
 - vb
 ms.assetid: 130c64c9-7b7f-4672-9b3b-d946bd2616c5
 ms.openlocfilehash: 924e6731ce585f127af319fdbfbdc8c12e61c46d
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50048174"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50197311"
 ---
 # <a name="how-to-list-directory-contents-with-ftp"></a>Postupy: výpisy obsahu adresářů přes FTP
 

@@ -8,14 +8,12 @@ helpviewer_keywords:
 - system.Net element
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
-author: mcleblanc
-ms.author: markl
-ms.openlocfilehash: 25663774c639e9fea13ced54a9aa7f456922fa1a
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
+ms.openlocfilehash: 82e022e28d3559791be3236fb80081807426a456
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/26/2018
-ms.locfileid: "47209935"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192535"
 ---
 # <a name="ltsystemnetgt-element-network-settings"></a>&lt;system.Net&gt; – Element (nastavení sítě)
 Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k síti.  
@@ -95,4 +93,4 @@ Obsahuje nastavení, která určují, jak rozhraní .NET Framework připojí k s
 ```  
   
 ## <a name="see-also"></a>Viz také  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

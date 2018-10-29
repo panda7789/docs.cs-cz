@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 12/15/2017
 ms.custom: vs-dotnet
-ms.openlocfilehash: 4623f4efa8637bd30f378006a92bfc4965429182
-ms.sourcegitcommit: ea00c05e0995dae928d48ead99ddab6296097b4c
+ms.openlocfilehash: 53e4549f4790bc0756cd0ad0b903b3dc25d2f66a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/02/2018
-ms.locfileid: "48036114"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200121"
 ---
 # <a name="debug-your-hello-world-application-with-visual-studio-2017"></a>Ladění aplikace Hello World pomocí sady Visual Studio 2017
 
@@ -166,7 +166,7 @@ Pokud chcete nastavit podmíněné zarážky a otestovat, co se stane, když už
 ---
 ## <a name="stepping-through-a-program"></a>Krokování pomocí programu
 
-Visual Studio také umožňuje kroku řádek po řádku prostřednictvím programu a sledovat jeho výkon. Obvykle by nastavte zarážku a použít tuto funkci Pokud chcete postupovat podle toku programu, i když malou část programového kódu. Protože je malý program, můžete procházet celý program následujícím způsobem:
+Visual Studio také umožňuje kroku řádek po řádku prostřednictvím programu a sledovat jeho výkon. Obvykle by nastavte zarážku a použít tuto funkci použít tok programu pomocí malou část programového kódu. Protože je malý program, můžete procházet celý program následujícím způsobem:
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 1. V panelu nabídky zvolte **ladění** > **Krokovat s vnořením** nebo stiskněte klávesy F11. Visual Studio zvýrazní a zobrazí šipky vedle položky na další řádek provádění.

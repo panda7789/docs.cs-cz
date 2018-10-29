@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: b782bcb8-da6a-4c6a-805f-2eb46d504309
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 0ba4eb0308665e82042510b74fd8210642e09c53
-ms.sourcegitcommit: 8c28ab17c26bf08abbd004cc37651985c68841b8
+ms.openlocfilehash: f4d1010069e9d95488a99133f949ca112dc08f0e
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850847"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50201595"
 ---
 # <a name="overview-of-synchronization-primitives"></a>Přehled primitiv synchronizace
 
@@ -79,7 +79,7 @@ Další informace o výhody a nevýhody použití uzamčení, najdete v článku
 
 ### <a name="readerwriterlockslim-class"></a>Třída ReaderWriterLockSlim
 
-<xref:System.Threading.ReaderWriterLockSlim?displayProperty=nameWithType> Třídy udělí se výhradní přístup ke sdíleným prostředkům pro zápis a umožňuje přístup k více vláken prostředku současně pro čtení. Můžete chtít použít <xref:System.Threading.ReaderWriterLockSlim> k synchronizaci přístupu k sdíleným datům strukturu, která podporuje operace čtení bezpečným pro vlákno, ale vyžaduje výhradní přístup k provedení operace zápisu. Když vlákno vyžaduje výhradní přístup (například voláním <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A?displayProperty=nameWithType> metoda), následné čtečky požadavky bloku, dokud všechny existující čtenáři odpojili zámek a zapisovač, který má zadaný a byla ukončena, zámek.
+<xref:System.Threading.ReaderWriterLockSlim?displayProperty=nameWithType> Třídy udělí se výhradní přístup ke sdíleným prostředkům pro zápis a umožňuje více vláken pro přístup k prostředku současně pro čtení. Můžete chtít použít <xref:System.Threading.ReaderWriterLockSlim> k synchronizaci přístupu k sdíleným datům strukturu, která podporuje operace čtení bezpečným pro vlákno, ale vyžaduje výhradní přístup k provedení operace zápisu. Když vlákno vyžaduje výhradní přístup (například voláním <xref:System.Threading.ReaderWriterLockSlim.EnterWriteLock%2A?displayProperty=nameWithType> metoda), následné čtečky požadavky bloku, dokud všechny existující čtenáři odpojili zámek a zapisovač, který má zadaný a byla ukončena, zámek.
   
 Další informace najdete v tématu [zámky pro čtení a zápis](reader-writer-locks.md) článku a <xref:System.Threading.ReaderWriterLockSlim> reference k rozhraní API.
 

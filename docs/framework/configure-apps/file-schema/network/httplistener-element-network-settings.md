@@ -2,12 +2,12 @@
 title: '&lt;httpListener&gt; – Element (nastavení sítě)'
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-ms.openlocfilehash: 3daf18fab81ea481be8e45e4d9ad682047ada6f3
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.openlocfilehash: 58228eed71dd6a5f5af8e26c02db9633da6ceef6
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50042633"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50197779"
 ---
 # <a name="lthttplistenergt-element-network-settings"></a>&lt;httpListener&gt; – Element (nastavení sítě)
 Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.  
@@ -138,7 +138,7 @@ Přizpůsobí parametrů používaných <xref:System.Net.HttpListener> třídy.
 |Může být prázdné.||  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.Net.Configuration.HttpListenerElement>  
- <xref:System.Net.HttpListener>  
- <xref:System.Net.HttpListenerRequest.Url%2A>  
- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)
+- <xref:System.Net.Configuration.HttpListenerElement>  
+- <xref:System.Net.HttpListener>  
+- <xref:System.Net.HttpListenerRequest.Url%2A>  
+- [Schéma nastavení sítě](../../../../../docs/framework/configure-apps/file-schema/network/index.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c4fea49a3200ca58264eb7c1bc1ead0a8ddc5914
-ms.sourcegitcommit: 69229651598b427c550223d3c58aba82e47b3f82
+ms.openlocfilehash: 68593509e384b2acd33fad0f476b6f300f2dbd92
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/04/2018
-ms.locfileid: "48584195"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50202175"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe (Nástroj pro optimalizaci spravovaného kódu na základě profilu)
 
@@ -100,7 +100,7 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
  Tento proces zajišťuje, že všechna sestavení mají optimalizační data. Při častějším zavádění aktualizovaných optimalizovaných sestavení (kroky 1 a 2) bude výkon během celého vývoje produktu konzistentnější.  
   
 ## <a name="using-mpgoexe-from-visual-studio"></a>Použití nástroje Mpgo.exe ze sady Visual Studio  
- Mpgo.exe lze spustit ze sady Visual Studio (přečtěte si článek [jak: Specify Build Events (C#)](https://msdn.microsoft.com/library/b4ce1ad9-5215-4b6f-b6a2-798b249aa335)) s následujícími omezeními:  
+ Mpgo.exe lze spustit ze sady Visual Studio (přečtěte si článek [jak: Specify Build Events (C#)](/visualstudio/ide/how-to-specify-build-events-csharp)) s následujícími omezeními:  
   
 -   Nelze použít cesty v uvozovkách ukončené lomítkem, protože makra sady Visual Studio ve výchozím nastavení také používají koncová lomítka. (Například `–OutDir "C:\Output Folder\"` je neplatný.) Chcete-li toto omezení obejít, je možné koncové lomítko zapsat s řídicími znaky. (Například použít `-OutDir "$(OutDir)\"` místo.)  
   

@@ -4,12 +4,12 @@ description: Zjistěte, jak implementovat brány rozhraní API s Ocelot a použi
 author: CESARDELATORRE
 ms.author: wiwagn
 ms.date: 07/03/2018
-ms.openlocfilehash: 6e03909074fbf1d72dace35f38996a761f1a437d
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 26b3c3510aa06fb1c7aa4c3a44f23c8e526fe60c
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49121425"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50200023"
 ---
 # <a name="implementing-api-gateways-with-ocelot"></a>Implementace brány rozhraní API s Ocelot
 
@@ -271,7 +271,7 @@ DownstreamHostAndPorts je pole, která obsahuje hostitele a port příjem dat, k
 
 UpstreamPathTemplate je adresa URL, kterou Ocelot použije k identifikaci DownstreamPathTemplate, které chcete použít pro daný požadavek od klienta. Nakonec UpstreamHttpMethod se používá, takže můžete Ocelot rozlišovat mezi různými požadavky (GET, POST, PUT) na stejnou adresu URL.
 
-V tomto okamžiku můžete mít jednu Ocelot rozhraní API brány (hostitele ASP.NET Core) pomocí některého nebo [více sloučit soubory configuration.json](http://ocelot.readthedocs.io/en/latest/features/configuration.html#merging-configuration-files) nebo také můžete uložit [konfigurace v úložišti konzul KV](http://ocelot.readthedocs.io/en/latest/features/configuration.html#store-configuration-in-consul). 
+V tomto okamžiku můžete mít jednu Ocelot rozhraní API brány (hostitele ASP.NET Core) pomocí některého nebo [více sloučit soubory configuration.json](https://ocelot.readthedocs.io/en/latest/features/configuration.html#merging-configuration-files) nebo také můžete uložit [konfigurace v úložišti konzul KV](https://ocelot.readthedocs.io/en/latest/features/configuration.html#store-configuration-in-consul).
 
 Ale zavedení v částech architektury a návrhu, pokud Opravdu chcete mít autonomní mikroslužeb, může být lepší rozdělit jeden monolitické Brána rozhraní API do více bran rozhraní API a/nebo BFF (back-endu pro front-endu). Pro tento účel Podívejme se na tom, jak implementovat tento přístup se kontejnery Dockeru.
 
@@ -417,7 +417,7 @@ Nicméně Ocelot podporuje také se vám sedět identita a ověřování mikrosl
 
 Protože aplikace aplikaci eShopOnContainers rozdělil brány rozhraní API do více BFF (back-endu pro front-endu) a by obchodní oblasti brány rozhraní API, Další možností je vytvořit další bránu rozhraní API pro vyskytující aspekty. Volba bude veletrh v mikroslužbě složitější na základě architektury s různými mikroslužbami vyskytující aspekty. Vzhledem k tomu, že existuje pouze jeden problém vyskytující v aplikaci eShopOnContainers, rozhodla se právě zpracování služby zabezpečení ze sféry Brána rozhraní API pro jednoduchost společnosti saké.
 
-V každém případě aplikace je zabezpečena na úrovni rozhraní API brány, modul ověřování brány rozhraní API Ocelot návštěvě zpočátku při pokusu o použití jakékoli zabezpečené mikroslužeb. Znovu, který přesměruje požadavek HTTP na web nebo ověření Identity mikroslužeb k získání tokenu přístupu proto tedy že můžete navštívit chráněným službám s access_token.
+V každém případě aplikace je zabezpečena na úrovni rozhraní API brány, modul ověřování brány rozhraní API Ocelot návštěvě zpočátku při pokusu o použití jakékoli zabezpečené mikroslužeb. Znovu, který přesměruje požadavek HTTP na web nebo ověření Identity mikroslužeb pro získání přístupového tokenu, takže můžete navštívit chráněným službám s access_token.
 
 Způsob zabezpečení pomocí ověřování jakékoli služby na úrovni rozhraní API brány je tak, že nastavíte AuthenticationProviderKey v jeho související nastavení na configuration.json.
 
@@ -564,19 +564,19 @@ V souborech zdrojového kódu aplikaci eShopOnContainers, původní soubory "con
 Existují další důležité funkce pro výzkum a použít, při použití brány rozhraní API Ocelot popsané v následujících odkazů.
 
 -   **Zjišťování služby na straně klienta Ocelot integrování konzul nebo Eureka** 
-    [*http://ocelot.readthedocs.io/en/latest/features/servicediscovery.html*](http://ocelot.readthedocs.io/en/latest/features/servicediscovery.html)
+    [*https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html*](https://ocelot.readthedocs.io/en/latest/features/servicediscovery.html)
 
 -   **Ukládání do mezipaměti na úrovni rozhraní API brány** 
-    [*http://ocelot.readthedocs.io/en/latest/features/caching.html*](http://ocelot.readthedocs.io/en/latest/features/caching.html)
+    [*https://ocelot.readthedocs.io/en/latest/features/caching.html*](https://ocelot.readthedocs.io/en/latest/features/caching.html)
 
 -   **Protokolování na úrovni rozhraní API brány** 
-    [*http://ocelot.readthedocs.io/en/latest/features/logging.html*](http://ocelot.readthedocs.io/en/latest/features/logging.html)
+    [*https://ocelot.readthedocs.io/en/latest/features/logging.html*](https://ocelot.readthedocs.io/en/latest/features/logging.html)
 
 -   **Kvalita služby (opakovaných pokusů a jističe) na úrovni rozhraní API brány** 
-    [*http://ocelot.readthedocs.io/en/latest/features/qualityofservice.html*](http://ocelot.readthedocs.io/en/latest/features/qualityofservice.html)
+    [*https://ocelot.readthedocs.io/en/latest/features/qualityofservice.html*](https://ocelot.readthedocs.io/en/latest/features/qualityofservice.html)
 
 -   **Omezení četnosti** 
-    [*http://ocelot.readthedocs.io/en/latest/features/ratelimiting.html*](http://ocelot.readthedocs.io/en/latest/features/ratelimiting.html )
+    [*https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html*](https://ocelot.readthedocs.io/en/latest/features/ratelimiting.html )
 
 >[!div class="step-by-step"]
 [Předchozí](background-tasks-with-ihostedservice.md) [Další](../microservice-ddd-cqrs-patterns/index.md)

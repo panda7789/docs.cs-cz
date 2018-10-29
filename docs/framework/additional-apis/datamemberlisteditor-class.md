@@ -1,5 +1,5 @@
 ---
-title: DataMemberListEditor – třída
+title: Třída DataMemberListEditor
 ms.date: 03/30/2017
 ms.technology:
 - dotnet-winforms
@@ -14,16 +14,16 @@ topic_type:
 - apiref
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: ade78154e9911dfe8c837c8667eaca7d3a366431
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 8b934e5ee69c2e6ebd5cf4da7de2790669c68986
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32742046"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50191807"
 ---
-# <a name="datamemberlisteditor-class"></a>DataMemberListEditor – třída
+# <a name="datamemberlisteditor-class"></a>Třída DataMemberListEditor
 
-Poskytuje rozevíracího seznamu uživatelské rozhraní pro úpravu vlastností objektů vázané na data (objekty, které mají jinou hodnotu než null `DataSource` vlastnost) tak, že uvedete všechny vlastnosti `DataSource` objektu k výběru zdroje hodnotu z.  
+Poskytuje rozevíracího seznamu uživatelského rozhraní pro úpravu vlastnosti objekty vázané na data (objekty, které mají jinou hodnotu než null `DataSource` vlastnost) vypsáním všech vlastností `DataSource` vyberte zdroj hodnoty z.  
   
 ## <a name="syntax"></a>Syntaxe
   
@@ -34,7 +34,7 @@ internal class DataMemberListEditor : UITypeEditor
 > [!WARNING]
 > `DataMemberListEditor` Třída je interní a nejsou určeny pro použití přímo v kódu.
 > 
-> Společnost Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
+> Microsoft nepodporuje použití této třídy v produkční aplikace za žádných okolností.
   
 ## <a name="requirements"></a>Požadavky
 
@@ -44,6 +44,6 @@ internal class DataMemberListEditor : UITypeEditor
   
 **Verze rozhraní .NET framework:** dostupné od verze 2.0.  
   
-## <a name="see-also"></a>Viz také
+## <a name="see-also"></a>Viz také:
 
-<xref:System.Windows.Forms.Design?displayProperty=nameWithType>
+- <xref:System.Windows.Forms.Design?displayProperty=nameWithType>

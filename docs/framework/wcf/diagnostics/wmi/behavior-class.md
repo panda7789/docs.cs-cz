@@ -3,11 +3,11 @@ title: Behavior – třída
 ms.date: 03/30/2017
 ms.assetid: 75d117f5-87f9-40fb-84c6-9e2fef6da6af
 ms.openlocfilehash: bf7d7f4ae4340cd8aee9a200015255820ac140f4
-ms.sourcegitcommit: 9bd8f213b50f0e1a73e03bd1e840c917fbd6d20a
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50034366"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50197129"
 ---
 # <a name="behavior-class"></a>Behavior – třída
 ## <a name="syntax"></a>Syntaxe  

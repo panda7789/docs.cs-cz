@@ -2,15 +2,15 @@
 title: Modifikátory (Visual Basic)
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 5e4a37a53d04174c53fdbdc30139d61ecd9998cc
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.openlocfilehash: 466d69ec966037ae3a980bba381fc61be52f30e6
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33600630"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192821"
 ---
 # <a name="modifiers-visual-basic"></a>Modifikátory (Visual Basic)
-Témata v této části dokumentů modifikátory runtime jazyka Visual Basic.  
+Témata v této části dokumentu modifikátory za běhu jazyka Visual Basic.  
   
 ## <a name="in-this-section"></a>V tomto oddílu  
  [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)  
@@ -49,7 +49,7 @@ Témata v této části dokumentů modifikátory runtime jazyka Visual Basic.
   
  [Optional](../../../visual-basic/language-reference/modifiers/optional.md)  
   
- [na více systémů](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
+ [navýšení kapacity](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
   
  [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
@@ -63,7 +63,11 @@ Témata v této části dokumentů modifikátory runtime jazyka Visual Basic.
   
  [Private](../../../visual-basic/language-reference/modifiers/private.md)  
   
+ [Privátní, chráněné](../../../visual-basic/language-reference/modifiers/private-protected.md)  
+  
  [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
+
+ [Chráněné typu Friend](../../../visual-basic/language-reference/modifiers/protected-friend.md)  
   
  [Public](../../../visual-basic/language-reference/modifiers/public.md)  
   
@@ -84,6 +88,6 @@ Témata v této části dokumentů modifikátory runtime jazyka Visual Basic.
  [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
   
 ## <a name="related-sections"></a>Související oddíly  
- [Referenční dokumentace jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
+ [Referenční příručka jazyka Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

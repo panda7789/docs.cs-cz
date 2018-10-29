@@ -2,12 +2,12 @@
 title: Výkon Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 78e9ac1cc350fe8c04222b2698569412961d3b52
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: ba6120284b3ab189b0f34e2d3ef25f6967f04e5d
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123810"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50202286"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Výkon Windows Workflow Foundation 4
 Dustinu Metzgar
@@ -424,7 +424,7 @@ public class Workflow1 : Activity
 
  Zatímco WF4 nemá zprostředkovatele SQL sledování, nemá AppFabric.  Postup sledování AppFabric SQL je přihlášení k odběru událostí trasování událostí pro Windows pomocí služby Windows, která seskupuje události do dávek a zapisuje je do tabulky SQL navržený pro rychlé vkládání.  Samostatná úloha se vyprázdní data z této tabulky a reforms do tabulky, které lze zobrazit na řídicím panelu AppFabric sestav.  To znamená, že zpracovává nezávisle na pracovní postup pochází a proto nebude muset čekat na stálost bod zaznamenávány dávku sledování událostí.
 
- Pomocí nástrojů, jako je logman nebo xperf lze zaznamenat události trasování událostí pro Windows.  Komprimovat soubor ETL můžete zobrazit pomocí některého nástroje, například xperfview nebo převést na přehlednějším tvaru, jako jsou XML, s tracerpt.  V WF3 je jedinou možností, jak získat sledování událostí bez databáze SQL k vytvoření vlastní sledování služby. Další informace o trasování událostí pro Windows najdete v tématu [služby WCF a události trasování pro Windows](../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md) a [události trasování pro Windows](https://msdn.microsoft.com/library/ff190903.aspx\)).
+ Pomocí nástrojů, jako je logman nebo xperf lze zaznamenat události trasování událostí pro Windows.  Komprimovat soubor ETL můžete zobrazit pomocí některého nástroje, například xperfview nebo převést na přehlednějším tvaru, jako jsou XML, s tracerpt.  V WF3 je jedinou možností, jak získat sledování událostí bez databáze SQL k vytvoření vlastní sledování služby. Další informace o trasování událostí pro Windows najdete v tématu [služby WCF a události trasování pro Windows](../../../docs/framework/wcf/samples/wcf-services-and-event-tracing-for-windows.md) a [události trasování pro Windows](https://msdn.microsoft.com/library/ff190903.aspx).
 
  Povolení pracovního postupu pro sledování bude mít vliv na výkon v různých úrovních.  Níže srovnávacích testů pomocí nástroje logman využívat trasování událostí pro Windows Sledování událostí a zapisuje je do souboru ETL.  Náklady na SQL sledování v AppFabric není v rámci tohoto článku.  Základní sledování profil, používá se také v AppFabric, se zobrazí v tomto testu výkonnosti.  Obsahuje taky jsou náklady pouze událostech monitorování stavu sledování.  Tyto události jsou užitečné při řešení potíží a určení průměrná propustnost systému.
 

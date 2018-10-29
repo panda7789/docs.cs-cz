@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: daf9d9d5-84ac-4bd9-a864-27665ffd0f5c
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: 96e3ae8bf826931f39fab58fc2b7ad3f58f8e431
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 8d78549d2822ad6c660fae39d458a98f23eca390
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/13/2018
-ms.locfileid: "49308575"
+ms.lasthandoff: 10/28/2018
+ms.locfileid: "50199887"
 ---
 # <a name="install-the-net-framework-for-developers"></a>Instalace rozhraní .NET Framework pro vývojáře
 
@@ -37,7 +37,7 @@ Použijte následující tabulku pro rychlé odkazy nebo si přečtěte další 
 
 |Verze rozhraní .NET Framework|Instalace pro vývojáře|Distribuovatelné součásti instalace|Podpora platforem|
 |----------------------------|----------------------------|----------------------------------|----------------------|
-|**4.7.2**|[Rozhraní .NET framework 4.7.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=874338)|[Webová instalační služba Stažení softwaru 4.7.2](https://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[Stažení softwaru 4.7.2 offline instalační program](https://go.microsoft.com/fwlink/?LinkId=863265)|Součástí: <br/>Aktualizace Windows 10. dubna 2018<br /><br /> Můžete nainstalovat na:<br/> <br/>Windows 10 Fall Creators Update<br/>Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server verze 1709 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
+|**4.7.2**|[Rozhraní .NET framework 4.7.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=874338)|[Webová instalační služba Stažení softwaru 4.7.2](https://go.microsoft.com/fwlink/?LinkId=863262)<br/><br/>[Stažení softwaru 4.7.2 offline instalační program](https://go.microsoft.com/fwlink/?LinkId=863265)|Součástí: <br/>Windows 10. října 2018 Update<br/>Aktualizace Windows 10. dubna 2018<br /><br /> Můžete nainstalovat na:<br/> <br/>Windows 10 Fall Creators Update<br/>Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server verze 1709 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
 |**4.7.1**|[.NET Framework 4.7.1 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=852105)|[Stránka pro 4.7.1 stažení webové instalační služby systému](https://go.microsoft.com/fwlink/?LinkId=852095)<br /><br /> [Stránka pro 4.7.1 stažení offline instalační program](https://go.microsoft.com/fwlink/?LinkId=852107)|Součástí: <br/>Windows 10 Fall Creators Update<br/>Windows Server verze 1709<br /><br /> Můžete nainstalovat na:<br/> Windows 10 Creators Update <br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
 |**4.7**|[.NET Framework 4.7 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=825319)|[Stáhněte si stránku pro 4.7 Webová instalační služba](https://go.microsoft.com/fwlink/?LinkId=825299)<br /><br /> [Stáhněte si stránku pro 4.7 offline instalační program](https://go.microsoft.com/fwlink/?LinkId=825303)|Součástí: <br/>Windows 10 Creators Update<br /><br /> Můžete nainstalovat na:<br /> Windows 10 Anniversary Update<br /> Windows 8.1 a starší<br /> Windows Server 2016 a starší<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))||
 |**4.6.2**|[.NET Framework 4.6.2 Developer Pack](https://go.microsoft.com/fwlink/?LinkId=780617)|[Stránka pro 4.6.2 stažení webové instalační služby systému](https://go.microsoft.com/fwlink/?LinkId=780597)<br /><br /> [Stránka pro 4.6.2 stažení offline instalační program](https://go.microsoft.com/fwlink/?LinkId=780601)|Součástí: <br /> Windows 10 Anniversary Update<br /><br /> Můžete nainstalovat na:<br /> Aktualizace Windows 10. listopadu <br/> Windows 10 <br /> Windows 8.1 a starší<br /> Windows Server 2012 R2 a dřívějších verzí<br /> (Úplný seznam najdete v tématu [požadavky na systém](~/docs/framework/get-started/system-requirements.md))|
