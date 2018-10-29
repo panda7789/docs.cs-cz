@@ -8,78 +8,78 @@ helpviewer_keywords:
 ms.assetid: de8b8759-fca7-4260-896b-5a4973157672
 author: rpetrusha
 ms.author: ronpet
-ms.openlocfilehash: ea7c85e956828e918e3cfe205b980e543e257eb4
-ms.sourcegitcommit: 11f11ca6cefe555972b3a5c99729d1a7523d8f50
+ms.openlocfilehash: 572291fa5674c541136e587bc40818da85f71a65
+ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/03/2018
-ms.locfileid: "32743950"
+ms.lasthandoff: 10/27/2018
+ms.locfileid: "50192730"
 ---
 # <a name="shadow-copying-assemblies"></a>Stínové kopírování sestavení
-Stínové kopírování sestavení povoluje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je zvlášť užitečné pro aplikace, které musí být k dispozici nepřetržitě, jako je například weby technologie ASP.NET.  
+Stínové kopírování sestavení umožňuje, které se používají v doméně aplikace aktualizovat bez uvolnění domény aplikace. To je užitečné hlavně pro aplikace, které musí být k dispozici nepřetržitě, jako jsou weby ASP.NET.  
   
 > [!IMPORTANT]
->  Stínové kopírování sestavení není podporována v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
+>  Stínové kopírování sestavení se nepodporuje v [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] aplikace.  
   
- Modul common language runtime uzamkne soubor sestavení, když je sestavení načíst, takže soubor nelze aktualizovat, dokud sestavení je odpojen. Jediný způsob, jak uvolnit sestavení z domény aplikace je uvolnění domény aplikace, takže za normálních podmínek sestavení nelze aktualizovat, na disku dokud všechny domény aplikace, které používají ho byly odstraněny.  
+ Modul common language runtime uzamkne soubor sestavení, když je sestavení načteno, proto ho nejde aktualizovat, dokud sestavení není uvolněn. Jediný způsob, jak odinstalovat sestavení z domény aplikace je uvolnění domény aplikace, takže za normálních okolností sestavení nelze do všech doménách aplikace, které používají aktualizovat na disku mají byl uvolněn.  
   
- Pokud domény aplikace je nakonfigurovaná pro stínové kopie souborů, sestavení z cesta k aplikaci zkopírovány do jiného umístění a načíst z tohoto umístění. Kopie uzamčeno, ale původní soubor sestavení je odemčený a může být aktualizován.  
+ Pokud domény aplikace je nakonfigurovaná pro stínové kopie souborů, jsou sestavení z cesty aplikace zkopírován do jiného umístění a načíst z tohoto umístění. Kopie zašifrovaná, ale původní soubor sestavení je odemknutá a je možné aktualizovat.  
   
 > [!IMPORTANT]
->  Pouze sestavení, které mohou být stínové kopie jsou ty, uložené v adresáři aplikace nebo jeho podadresářů, určeného <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastnosti při konfiguraci domény aplikace. Sestavení, které jsou uložené v globální mezipaměti sestavení nejsou stínové kopie.  
+>  Pouze sestavení, které mohou být stínové kopie jsou ty uložené v adresáři aplikace nebo jeho podadresářů, které jsou určené <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastnosti, pokud je nakonfigurované domény aplikace. Sestavení, které jsou uloženy v globální mezipaměti sestavení nejsou stínové kopie.  
   
  Tento článek obsahuje následující části:  
   
 -   [Povolení a používání stínové kopírování sestavení](#EnablingAndUsing) popisuje základní použití a možnosti, které jsou k dispozici pro stínové kopírování sestavení.  
   
--   [Výkon při spouštění](#StartupPerformance) popisuje změny, které jsou vytvářeny stínovém kopírování v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] ke zlepšení výkonu spuštění a jak se vrátit k chování starší verze.  
+-   [Výkon při spouštění](#StartupPerformance) jsou zde popsány změny, které jsou provedeny stínovém kopírování v [!INCLUDE[net_v40_long](../../../includes/net-v40-long-md.md)] zlepšit výkon při spouštění a jak se vrátit k chování z předchozích verzí.  
   
--   [Zastaralé metody](#ObsoleteMethods) popisuje změny, které byly provedeny vlastnosti a metody, které řídí stínové kopírování v [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
+-   [Zastaralé metody](#ObsoleteMethods) jsou zde popsány změny, které byly provedeny k vlastnostem a metodám, které řídí stínové kopírování v [!INCLUDE[dnprdnlong](../../../includes/dnprdnlong-md.md)].  
   
 <a name="EnablingAndUsing"></a>   
 ## <a name="enabling-and-using-shadow-copying"></a>Povolení a používání stínové kopírování sestavení  
  Můžete použít vlastnosti <xref:System.AppDomainSetup> třídy následujícím způsobem, aby konfigurace domény aplikace pro stínové kopírování sestavení:  
   
--   Povolte stínové kopírování nastavením <xref:System.AppDomainSetup.ShadowCopyFiles%2A> vlastnost na hodnotu řetězce `"true"`.  
+-   Povolit stínové kopírování tak, že nastavíte <xref:System.AppDomainSetup.ShadowCopyFiles%2A> vlastnost na hodnotu řetězce `"true"`.  
   
-     Ve výchozím nastavení toto nastavení způsobí, že všechna sestavení v cestě aplikace před načtením zkopírovány do mezipaměti pro stahování. Toto je stejný mezipaměti udržované modul common language runtime ukládat soubory stahované z jiných počítačů a modul common language runtime automaticky odstraní soubory, když už nejsou potřeba.  
+     Ve výchozím nastavení toto nastavení způsobí, že všechna sestavení v cesta aplikace, které se mají zkopírovat do mezipaměti pro stahování před načtením. Jedná se o stejné mezipaměti udržuje modul common language runtime k ukládání souborů stažených z jiných počítačů, a modul common language runtime automaticky odstraní soubory, pokud už nepotřebujete.  
   
--   Volitelně můžete nastavit vlastní umístění souborů služby stínové kopie vytvořené pomocí <xref:System.AppDomainSetup.CachePath%2A> vlastnost a <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost.  
+-   Volitelně můžete nastavit pomocí vlastní umístění pro soubory stínové kopie <xref:System.AppDomainSetup.CachePath%2A> vlastnost a <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost.  
   
-     Základní cesta pro umístění je tvořena zřetězením <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost, která má <xref:System.AppDomainSetup.CachePath%2A> jako podadresáře. Sestavení jsou zkopírována do podadresáře této cesty, ne pro samotné základní cesty.  
-  
-    > [!NOTE]
-    >  Pokud <xref:System.AppDomainSetup.ApplicationName%2A> není vlastnost nastavena, <xref:System.AppDomainSetup.CachePath%2A> vlastnost je ignorována a je použita mezipaměť pro stahování. Nedojde k výjimce.  
-  
-     Pokud zadáte do vlastního umístění, jsou zodpovědní za vyčištění adresářů a zkopírovat soubory, když už nejsou potřeba. Nejsou automaticky odstraněny.  
-  
-     Existuje několik důvodů, proč můžete chtít nastavit vlastní umístění pro soubory stínové kopie. Můžete chtít nastavit vlastní umístění pro soubory stínové kopie, pokud vaše aplikace generuje velký počet kopií. Mezipaměť pro stahování je omezená, velikost, nikoli životnost, takže je možné, že bude modul common language runtime pokusu o odstranění souboru, který je stále používáno. Dalším důvodem pro nastavení vlastního umístění je při spuštění aplikace uživatelé nebudou mít přístup pro zápis k umístění adresáře, který používá modul common language runtime pro mezipaměť pro stahování.  
-  
--   Volitelně můžete omezit sestavení, které jsou stínové kopie pomocí <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost.  
-  
-     Když povolíte stínové kopírování sestavení pro doménu aplikace, ve výchozím nastavení se zkopírovat všechna sestavení v cesta k aplikaci – to znamená adresáře určené pomocí <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastnosti. Můžete omezit kopírování na vybrané adresáře vytvořením řetězec, který obsahuje pouze adresáře, které chcete stínové kopie a přiřadit řetězec, který má <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost. Adresáře oddělte středníky. Pouze sestavení, které jsou stínové kopie jsou zadány ve vybraných složkách.  
+     Základní cesta pro umístění je vytvořený zřetězením <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost <xref:System.AppDomainSetup.CachePath%2A> jako podadresáře. Sestavení jsou stínové zkopírovány do podsložek této cesty, ne pro samotné základní cesty.  
   
     > [!NOTE]
-    >  Pokud nepřiřadíte řetězec tak, aby <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost, nebo pokud tuto vlastnost nastavíte na `null`, všechna sestavení v adresáři určeného <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastnosti jsou stínové kopie.  
+    >  Pokud <xref:System.AppDomainSetup.ApplicationName%2A> vlastnost není nastavená, <xref:System.AppDomainSetup.CachePath%2A> vlastnost se ignoruje, a je použita mezipaměť pro stahování. Není vyvolána žádná výjimka.  
+  
+     Pokud chcete zadat vlastní umístění, zodpovídají za čištění adresáře a soubory zkopírovány, pokud už nepotřebujete. Se neodstraní automaticky.  
+  
+     Existuje několik důvodů, proč můžete chtít nastavit vlastní umístění pro soubory stínové kopie. Můžete nastavit vlastní umístění pro soubory stínové kopie, pokud vaše aplikace generuje mnoho kopií. Mezipaměť pro stahování má omezenou velikost, nikoli podle doby života, takže je možné, že se pokusí odstranit soubor, který je stále používán common language runtime. Dalším důvodem pro nastavení vlastního umístění je, pokud uživatelé používají vaše aplikace nemá oprávnění k zápisu do adresáře, který používá modul common language runtime pro mezipaměť pro stahování.  
+  
+-   Volitelně omezte sestavení, které jsou stínové kopie pomocí <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost.  
+  
+     Když povolíte stínové kopírování sestavení aplikační domény, výchozí hodnota je zkopírovat všechna sestavení v cestě aplikace – to znamená, že v adresářích určené <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastnosti. Můžete omezit kopírování do vybraného adresáře vytváření řetězec, který obsahuje jenom adresáře, které chcete stínové kopie a přiřazování řetězec, který má <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost. Adresáře oddělte středníkem. Pouze sestavení, které jsou stínové kopie jsou ty, které ve vybraných složkách.  
+  
+    > [!NOTE]
+    >  Pokud nepřiřadíte řetězec <xref:System.AppDomainSetup.ShadowCopyDirectories%2A> vlastnost, nebo pokud nastavíte tuto vlastnost na `null`, všechna sestavení v adresářích určených <xref:System.AppDomainSetup.ApplicationBase%2A> a <xref:System.AppDomainSetup.PrivateBinPath%2A> vlastnosti jsou stínové kopie.  
   
     > [!IMPORTANT]
-    >  Cesty k adresáři nesmí obsahovat středníky, protože je středník oddělovací znak. Neexistuje žádný řídicí znak pro středníky.  
+    >  Cesty k adresářům nesmí obsahovat středníky, protože je znak oddělovač středník. Neexistuje žádný řídicí znak pro středníky.  
   
 <a name="StartupPerformance"></a>   
-## <a name="startup-performance"></a>Výkon při spouštění  
- Když se spustí doménu aplikace, která používá stínové kopírování sestavení, dochází ke zpoždění při sestavení v adresáři aplikace jsou zkopírovány do adresáře stínové kopie nebo ověřit, zda jsou již v tomto umístění. Před [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], všechny sestavení, které byly zkopírovány do dočasného adresáře. Každé sestavení bylo otevřeno pro ověření název sestavení a byl ověřen silný název. Každé sestavení zkontroloval se zda bylo aktualizováno později, než kopie v adresáři stínové kopie. Pokud ano, byl zkopírován do adresáře stínové kopie. Nakonec dočasná kopie byly zrušeny.  
+## <a name="startup-performance"></a>Výkon při spuštění  
+ Při spuštění aplikační doménu, která používá stínové kopírování sestavení, dochází ke zpoždění při sestavení v adresáři aplikace jsou zkopírovány do adresáře stínové kopie nebo ověřit, zda jsou již v tomto umístění. Před [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], všechna sestavení, které byly zkopírovány do dočasného adresáře. Každé sestavení byl otevřen kvůli ověření názvu sestavení a byl ověřen silný název. Pokud chcete zobrazit, zda bylo aktualizováno později, než kopírování v adresáři stínové kopie došlo k zaškrtnutí každé sestavení. Pokud ano, byl zkopírován do adresáře stínové kopie. A konečně byly zrušeny dočasné kopie.  
   
- Od verze [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], výchozí chování při spuštění je přímo porovnat soubor datum a čas každé sestavení v adresáři aplikace s souboru datum a čas kopie v adresáři stínové kopie. Pokud sestavení byl aktualizován, se zkopíruje pomocí stejného postupu jako v předchozích verzích rozhraní .NET Framework; jinak je načten kopie v adresáři stínové kopie.  
+ Počínaje [!INCLUDE[net_v40_short](../../../includes/net-v40-short-md.md)], můžete přímo porovnat soubor datum a čas každého sestavení v adresáři aplikace pomocí souboru datum a čas kopie v adresáři stínové kopie je výchozí chování při spuštění. Pokud sestavení se aktualizovala, je zkopírován pomocí stejného postupu jako v předchozích verzích rozhraní .NET Framework. v opačném případě je načtena kopie v adresáři stínové kopie.  
   
- Výsledné zlepšení výkonu je největší pro aplikace, ve kterých sestavení často nemění a změny jsou obvykle prováděny v malou podmnožinu sestavení. Pokud se většina sestavení v o změnu aplikace často, nové výchozí chování může způsobit snížení výkonu. Chování při spuštění z předchozí verze rozhraní .NET Framework můžete obnovit tak, že přidáte [ \<shadowCopyVerifyByTimestamp > element](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) do konfiguračního souboru s `enabled="false"`.  
+ Výsledný zlepšení výkonu je největší pro aplikace, ve kterých sestavení se nemění často, a obvykle změn v malou podmnožinu sestavení. Pokud většinou sestavení v aplikace často mění, nový výchozí chování může způsobit snížení výkonu. Chování při spuštění z předchozích verzí rozhraní .NET Framework můžete obnovit tak, že přidáte [ \<shadowCopyVerifyByTimestamp > element](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md) do konfiguračního souboru, s `enabled="false"`.  
   
 <a name="ObsoleteMethods"></a>   
 ## <a name="obsolete-methods"></a>Zastaralé metody  
- <xref:System.AppDomain> Třída obsahuje několik metod, jako například <xref:System.AppDomain.SetShadowCopyFiles%2A> a <xref:System.AppDomain.ClearShadowCopyPath%2A>, který lze použít k řízení stínové kopírování na doménu aplikace, ale tyto byly označeny jako zastaralé v rozhraní .NET Framework verze 2.0. Doporučený způsob konfigurace domény aplikace pro stínové kopírování sestavení je použití vlastnosti <xref:System.AppDomainSetup> třídy.  
+ <xref:System.AppDomain> Třída má několik metod, jako například <xref:System.AppDomain.SetShadowCopyFiles%2A> a <xref:System.AppDomain.ClearShadowCopyPath%2A>, který lze použít k řízení stínové kopírování sestavení na doménu aplikace, ale ty jsou označené za zastaralé v rozhraní .NET Framework verze 2.0. Doporučeným způsobem, jak nakonfigurovat doménu aplikace pro stínové kopírování sestavení, je použít vlastnosti <xref:System.AppDomainSetup> třídy.  
   
 ## <a name="see-also"></a>Viz také  
- <xref:System.AppDomainSetup.ShadowCopyFiles%2A?displayProperty=nameWithType>  
- <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>  
- <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>  
- <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=nameWithType>  
- [\<shadowCopyVerifyByTimestamp > elementu](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)
+- <xref:System.AppDomainSetup.ShadowCopyFiles%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomainSetup.CachePath%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomainSetup.ApplicationName%2A?displayProperty=nameWithType>  
+- <xref:System.AppDomainSetup.ShadowCopyDirectories%2A?displayProperty=nameWithType>  
+- [\<shadowCopyVerifyByTimestamp > – Element](../../../docs/framework/configure-apps/file-schema/runtime/shadowcopyverifybytimestamp-element.md)
