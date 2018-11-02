@@ -3,10 +3,10 @@ title: Porovnávání vzorů (F#)
 description: 'Zjistěte, jak se používají vzory v F # k porovnání dat s logické struktury, jak rozložit data na základní části nebo extrahovat informace z dat.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 5ad3d3e1a78246afdfa2948fd0fb84fa04686d30
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/18/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "45991421"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů

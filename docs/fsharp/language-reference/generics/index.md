@@ -3,10 +3,10 @@ title: Obecné typy (F#)
 description: 'Další informace o použití F # obecné funkce a typy, které umožňují také napsat kód, který funguje s různými typy bez opakující se kód.'
 ms.date: 05/16/2016
 ms.openlocfilehash: fc061f19c6c7fa737f7ca05aae83fd42c0010b37
-ms.sourcegitcommit: 64f4baed249341e5bf64d1385bf48e3f2e1a0211
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/07/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "44084959"
 ---
 # <a name="generics"></a>Obecné typy
