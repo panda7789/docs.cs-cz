@@ -3,10 +3,10 @@ title: Moduly (F#)
 description: 'Zjistěte, jak modulu F # je seskupení kódu jazyka F #, jako jsou hodnoty, typy a hodnoty funkcí v programu F #.'
 ms.date: 04/24/2017
 ms.openlocfilehash: fb0aa1d508d1141933b4fbdf10633f67ed078dc7
-ms.sourcegitcommit: 76a304c79a32aa13889ebcf4b9789a4542b48e3e
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/13/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "45528523"
 ---
 # <a name="modules"></a>Moduly

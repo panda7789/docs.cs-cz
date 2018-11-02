@@ -2,11 +2,11 @@
 title: 'Průvodce správným stylem F #'
 description: 'Dozvíte se pět zásady dobré kódu jazyka F #.'
 ms.date: 05/14/2018
-ms.openlocfilehash: 6d8c1336ca991040a8f6e13290d209cb3b70054d
-ms.sourcegitcommit: 78bcb629abdbdbde0e295b4e81f350a477864aba
+ms.openlocfilehash: 1d0f4e2a946f0cc91f376ba624f847549a830bc7
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/08/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "34235902"
 ---
 # <a name="f-style-guide"></a>Průvodce správným stylem F #

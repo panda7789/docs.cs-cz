@@ -2,12 +2,12 @@
 title: Parametry a argumenty (F#)
 description: 'Další informace o podpora jazyka F # pro definování parametrů a předávání argumentů do funkce, metody a vlastnosti.'
 ms.date: 05/16/2016
-ms.openlocfilehash: a1e2a70ca560bbb09d2cd10f47485cbe5c5e029d
-ms.sourcegitcommit: 15d99019aea4a5c3c91ddc9ba23692284a7f61f3
+ms.openlocfilehash: 6ccef89fe411096ed66f481dd4ae2d91259fe1c4
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/12/2018
-ms.locfileid: "49123355"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50744454"
 ---
 # <a name="parameters-and-arguments"></a>Parametry a argumenty
 
@@ -111,6 +111,8 @@ Další informace najdete v tématu [konstruktory (F #)](https://msdn.microsoft.
 
 Můžete zadat volitelný parametr pro metodu s použitím otazník před název parametru. Volitelné parametry jsou interpretovány jako typ možnost jazyka F #, proto dotazování těchto běžným způsobem, že typy možností jsou dotazovat, pomocí `match` výraz s `Some` a `None`. Volitelné parametry jsou povolené jenom na členy, nikoli na funkce, které jsou vytvářeny instalační sadou `let` vazby.
 
+Můžete předat existující volitelné hodnoty metoda podle názvu parametru, jako například `?arg=None` nebo `?arg=Some(3)` nebo `?arg=arg`. To může být užitečné při sestavování metodu, která předá volitelné argumenty na jinou metodu.
+
 Můžete použít také funkci `defaultArg`, která nastaví výchozí hodnota je nepovinný argument. `defaultArg` Funkce přebírá volitelný parametr jako první argument a výchozí hodnotu jako druhý.
 
 Následující příklad ukazuje použití nepovinných parametrů.
@@ -123,7 +125,29 @@ Výstup je následující.
 Baud Rate: 9600 Duplex: Full Parity: false
 Baud Rate: 4800 Duplex: Half Parity: false
 Baud Rate: 300 Duplex: Half Parity: true
+Baud Rate: 9600 Duplex: Full Parity: false
+Baud Rate: 9600 Duplex: Full Parity: false
+Baud Rate: 4800 Duplex: Half Parity: false
 ```
+
+Pro účely C# a spolupráce jazyka Visual Basic můžete použít atributy `[<Optional; DefaultParameterValue<(...)>]` v F#tak, aby volající uvidí argument jako volitelné. Jedná se o ekvivalent k definování argument jako volitelný v C# stejně jako v `MyMethod(int i = 3)`.
+
+```fsharp
+open System
+open System.Runtime.InteropServices
+type C = 
+    static member Foo([<Optional; DefaultParameterValue("Hello world")>] message) =
+        printfn "%s" message
+```
+
+Hodnota zadaná jako argument pro `DefaultParameterValue` musí odpovídat typu parametru, například následující není povoleno:
+
+```fsharp
+type C =
+    static member Wrong([<Optional; DefaultParameterValue("string")>] i:int) = ()
+```
+
+V tomto případě kompilátor vygeneruje upozornění a bude ignorovat oba atributy úplně se vynechá. Všimněte si, že výchozí hodnota `null` musí být opatřeny poznámkami typu, v opačném případě kompilátor odvodí chybného typu, tedy `[<Optional; DefaultParameterValue(null:obj)>] o:obj`.
 
 ## <a name="passing-by-reference"></a>Předávání odkazem.
 

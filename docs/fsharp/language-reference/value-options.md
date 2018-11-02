@@ -3,10 +3,10 @@ title: 'Hodnota možnosti (F #)'
 description: 'Další informace o typu hodnota možnosti F #, což je struktura verze typu možnosti.'
 ms.date: 06/16/2018
 ms.openlocfilehash: 978bd1713c16f7c050ccb097cb134973d10ef6f5
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "50185833"
 ---
 # <a name="value-options"></a>Hodnota možnosti

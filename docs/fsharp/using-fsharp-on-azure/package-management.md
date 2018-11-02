@@ -1,30 +1,30 @@
 ---
-title: 'Pomocí správy balíčků F # pro Azure.'
-description: 'Ke správě závislosti F # Azure použijte stáhnout nebo Nuget'
+title: Pomocí správy balíčků s F# pro Azure
+description: Umožňuje spravovat stáhnout nebo Nuget F# Azure závislosti
 author: sylvanc
 ms.date: 09/20/2016
 ms.openlocfilehash: fd9c4a15ab0741d44d6d5cf909b7219d310affb0
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "33566965"
 ---
-# <a name="package-management-for-f-azure-dependencies"></a>Balíček správy pro závislosti Azure F #
+# <a name="package-management-for-f-azure-dependencies"></a>Balíček správy pro F# Azure závislosti
 
-Získání balíčky pro vývoj pro Azure je snadný při použití Správce balíčků. Dvě možnosti jsou [Stáhnout](https://fsprojects.github.io/Paket/) a [NuGet](https://www.nuget.org/).
+Získání balíčky pro vývoj pro Azure je jednoduché, když pomocí Správce balíčků. Jsou dvě možnosti [Stáhnout](https://fsprojects.github.io/Paket/) a [NuGet](https://www.nuget.org/).
 
-## <a name="using-paket"></a>Pomocí stáhnout
+## <a name="using-paket"></a>Použití stáhnout
 
-Pokud používáte [Stáhnout](https://fsprojects.github.io/Paket/) jako závislost nadřízeného, můžete použít `paket.exe` nástroje pro přidání Azure závislosti. Příklad:
+Pokud používáte [Stáhnout](https://fsprojects.github.io/Paket/) jako správce závislostí můžete použít `paket.exe` nástroj Přidat závislosti Azure. Příklad:
 
     > paket add nuget WindowsAzure.Storage
 
-Nebo, pokud používáte [Mono](https://www.mono-project.com/) pro vývoj pro různé platformy .NET:
+Nebo v případě, že používáte [Mono](https://www.mono-project.com/) pro vývoj pro různé platformy .NET:
 
     > mono paket.exe add nuget WindowsAzure.Storage
 
-Bude přidáno `WindowsAzure.Storage` množina závislosti balíčků pro projekt v aktuálním adresáři, upravte `paket.dependencies` souboru a stáhněte si balíček. Pokud jste dříve nastavili závislosti nebo práci s projektem kde závislosti již byly vytvořeny pomocí jiné vývojáře, můžete vyřešit a instalaci závislostí místně takto:
+Tato možnost přidá `WindowsAzure.Storage` sady závislosti balíčků pro projekt v aktuálním adresáři, chcete-li upravit `paket.dependencies` souboru a stáhněte balíček. Pokud jste dříve nastavili závislosti nebo jsou práci s projektem, ve kterém byly nastaveny závislosti jiný vývojář, můžete vyřešit a nainstalujte závislosti místně takto:
 
     > paket install
 
@@ -42,7 +42,7 @@ Nebo pro Mono vývoj:
 
 ## <a name="using-nuget"></a>Pomocí nástroje Nuget
 
-Pokud používáte [NuGet](https://www.nuget.org/) jako závislost nadřízeného, můžete použít `nuget.exe` nástroje pro přidání Azure závislosti. Příklad:
+Pokud používáte [NuGet](https://www.nuget.org/) jako správce závislostí můžete použít `nuget.exe` nástroj Přidat závislosti Azure. Příklad:
 
     > nuget install WindowsAzure.Storage -ExcludeVersion
 
@@ -50,7 +50,7 @@ Nebo pro Mono vývoj:
 
     > mono nuget.exe install WindowsAzure.Storage -ExcludeVersion
 
-Bude přidáno `WindowsAzure.Storage` množina závislosti balíčků pro projekt v aktuálním adresáři a stažení balíčku. Pokud jste dříve nastavili závislosti nebo práci s projektem kde závislosti již byly vytvořeny pomocí jiné vývojáře, můžete vyřešit a instalaci závislostí místně takto:
+Tato možnost přidá `WindowsAzure.Storage` do sady závislosti balíčků pro projekt v aktuálním adresáři a stažení balíčku. Pokud jste dříve nastavili závislosti nebo jsou práci s projektem, ve kterém byly nastaveny závislosti jiný vývojář, můžete vyřešit a nainstalujte závislosti místně takto:
 
     > nuget restore 
 
@@ -68,17 +68,17 @@ Nebo pro Mono vývoj:
 
 ## <a name="referencing-assemblies"></a>Odkazování na sestavení
 
-Chcete-li použít vlastních balíčků ve vašem skriptu F #, je třeba odkazovat sestavení součástí balíčků pomocí `#r` – direktiva. Příklad:
+Chcete-li použít své balíčky do vašeho F# skriptu, musíte odkazovat sestavení součástí balíčků pomocí `#r` – direktiva. Příklad:
 
     > #r "packages/WindowsAzure.Storage/lib/net40/Microsoft.WindowsAzure.Storage.dll"
 
-Jak vidíte, budete muset zadat relativní cestu k knihovnu DLL a úplný název knihovny DLL, která nemusí být přesně stejný jako název balíčku. Cesta bude obsahovat framework verze a případně číslo verze balíčku. Pokud chcete vyhledat všechny nainstalované sestavení, můžete použít přibližně takto na příkazovém řádku Windows:
+Jak je vidět, bude nutné zadat relativní cestu knihovny DLL a úplný název knihovny DLL, která nemusí být přesně stejný jako název balíčku. Verze rozhraní framework a případně číslo verze balíčku, bude obsahovat cestu. Najít nainstalovaná sestavení, můžete použít asi takhle nějak. na příkazovém řádku Windows:
 
     > cd packages/WindowsAzure.Storage
     > dir /s/b *.dll
 
-Nebo v prostředí Unix něco podobné výjimky:
+Nebo v prostředí systému Unix, přibližně takto:
 
     > find packages/WindowsAzure.Storage -name "*.dll"
 
-Tím získáte cesty na nainstalovaných sestavení. Odtud můžete vybrat správnou cestu pro vaši verzi framework.
+Tím získáte cesty k nainstalovaná sestavení. Odtud můžete vybrat správnou cestu pro vaši verzi rozhraní framework.

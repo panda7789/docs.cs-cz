@@ -3,10 +3,10 @@ title: Podrobná syntaxe (F#)
 description: 'Informace o rozdílu mezi syntaxi podrobné a jednoduchý programovací jazyk F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: e697c6fe619df7ffe12f7d4e2a234a5a5cb401ff
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/28/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "50196762"
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe

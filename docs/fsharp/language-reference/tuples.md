@@ -3,10 +3,10 @@ title: Řazené kolekce členů (F#)
 description: 'Další informace o F # záznam, seskupení nepojmenované ale seřazené hodnoty, může být různých typů.'
 ms.date: 05/16/2016
 ms.openlocfilehash: e7628e4c4b538c2fe52fca25d2597b10fec28d1c
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "43749220"
 ---
 # <a name="tuples"></a>Řazené kolekce členů

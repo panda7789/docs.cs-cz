@@ -3,10 +3,10 @@ title: 'Začínáme s jazykem F # v sadě Visual Studio Code'
 description: 'Další informace o použití F # s Visual Studio Code a Ionide suite modulu plug-in.'
 ms.date: 05/28/2018
 ms.openlocfilehash: e962be2796cf0d6eb90d459730659e492f864716
-ms.sourcegitcommit: c93fd5139f9efcf6db514e3474301738a6d1d649
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 10/27/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "50192665"
 ---
 # <a name="get-started-with-f-in-visual-studio-code"></a>Začínáme s jazykem F # v sadě Visual Studio Code

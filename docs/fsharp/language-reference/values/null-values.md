@@ -3,10 +3,10 @@ title: Hodnoty Null (F#)
 description: 'Zjistěte, jak se v programovacím jazyce F # používá hodnotu null.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 8751ac402c43ddb07fb62e08b6c6d5403cbe9acc
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "43787894"
 ---
 # <a name="null-values"></a>Hodnoty Null

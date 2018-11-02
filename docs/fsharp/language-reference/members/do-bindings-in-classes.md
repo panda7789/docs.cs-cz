@@ -3,10 +3,10 @@ title: Vazby do ve třídách (F#)
 description: 'Další informace o použití jazyka F # udělat vazby v definici třídy, které provádí akce, když je objekt vytvořen nebo při prvním použití typu.'
 ms.date: 05/16/2016
 ms.openlocfilehash: e54a5bde52bf6973cc338c929ba99e6fd5b53127
-ms.sourcegitcommit: 3c1c3ba79895335ff3737934e39372555ca7d6d0
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/05/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "43801521"
 ---
 # <a name="do-bindings-in-classes"></a>Vazby do ve třídách

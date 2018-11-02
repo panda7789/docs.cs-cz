@@ -1,23 +1,23 @@
 ---
-title: Prohlídka jazyka F#
-description: Prozkoumejte některé klíčové funkce programovací jazyk v této ukázky s ukázkami kódu F#.
+title: 'Prohlídka jazyka F #'
+description: 'Prozkoumejte některé klíčové funkce programovací jazyk v této ukázky s ukázkami kódu F #.'
 ms.date: 02/28/2018
-ms.openlocfilehash: d129e2312ae3da64f04b3bbb0bbd0b4d77aad36e
-ms.sourcegitcommit: 412bbc2e43c3b6ca25b358cdf394be97336f0c24
+ms.openlocfilehash: 7a512b5fead8de69f025e791b6086c60dbfc1b24
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 08/25/2018
-ms.locfileid: "42924518"
+ms.lasthandoff: 11/02/2018
+ms.locfileid: "50235710"
 ---
-# <a name="tour-of-f"></a>Prohlídka jazyka F# #
+# <a name="tour-of-f"></a>Prohlídka jazyka F # #
 
-Nejlepší způsob, jak získat informace o jazyce F# je pro čtení a zápis kódu jazyka F#.  Tento článek bude fungovat jako seznámíte některé klíčové funkce jazyka F# a získáte některé fragmenty kódu, které můžete spustit na svém počítači.  Další informace o nastavení vývojového prostředí, projděte si [Začínáme](tutorials/getting-started/index.md).
+Nejlepší způsob, jak získat informace o jazyce F # je pro čtení a zápis kódu jazyka F #.  Tento článek bude fungovat jako seznámíte některé klíčové funkce jazyka F # a získáte některé fragmenty kódu, které můžete spustit na svém počítači.  Další informace o nastavení vývojového prostředí, projděte si [Začínáme](tutorials/getting-started/index.md).
 
-V jazyce F# existují dva hlavní koncepty: funkcí a typů.  Tato ukázka se zvýraznit funkce jazyka, které spadají do těchto dvou konceptů.
+V jazyce F # existují dva hlavní koncepty: funkcí a typů.  Tato ukázka se zvýraznit funkce jazyka, které spadají do těchto dvou konceptů.
 
 ## <a name="functions-and-modules"></a>Funkce a moduly
 
-Většina základních částí žádný program F# jsou ***funkce*** uspořádají ***moduly***.  [Funkce](language-reference/functions/index.md) provádějí práci na vstupy pro vytvoření výstupy a jsou uspořádané pod [moduly](language-reference/modules.md), které jsou hlavní způsob, jak seskupit věci v jazyce F#.  Jsou definovány pomocí [ `let` vazby](language-reference/functions/let-bindings.md), které funkce pojmenujte a definovat jeho argumenty.
+Většina základních částí žádný program F # jsou ***funkce*** uspořádají ***moduly***.  [Funkce](language-reference/functions/index.md) provádějí práci na vstupy pro vytvoření výstupy a jsou uspořádané pod [moduly](language-reference/modules.md), které jsou hlavní způsob, jak seskupit věci v jazyce F #.  Jsou definovány pomocí [ `let` vazby](language-reference/functions/let-bindings.md), které funkce pojmenujte a definovat jeho argumenty.
 
 [!code-fsharp[BasicFunctions](../../samples/snippets/fsharp/tour.fs#L101-L133)]
 
@@ -27,9 +27,9 @@ Většina základních částí žádný program F# jsou ***funkce*** uspořáda
 
 ## <a name="numbers-booleans-and-strings"></a>Řetězce, čísla a logické hodnoty
 
-Stejně jako jazyk platformy .NET, F# podporuje stejné základní [primitivní typy](language-reference/primitive-types.md) , která existují v rozhraní .NET.
+Stejně jako jazyk platformy .NET, F # podporuje stejné základní [primitivní typy](language-reference/primitive-types.md) , která existují v rozhraní .NET.
 
-Zde je, jak různé číselné typy jsou reprezentovány v jazyce F#:
+Zde je, jak různé číselné typy jsou reprezentovány v jazyce F #:
 
 [!code-fsharp[Numbers](../../samples/snippets/fsharp/tour.fs#L49-L68)]
 
@@ -43,11 +43,11 @@ A tady je co basic [řetězec](language-reference/strings.md) manipulaci s bude 
 
 ## <a name="tuples"></a>Řazené kolekce členů
 
-[Řazené kolekce členů](language-reference/tuples.md) je to důležitá záležitost v jazyce F#.  Jsou to seskupení nepojmenované, ale seřazený hodnot, které lze považovat za samotné hodnoty.  Představte si je jako hodnoty, které se shromažďují od jiné hodnoty.  Mají mnoho účelů, jako je například jednoduše vrátí více hodnot z funkce nebo seskupení hodnot ke zvýšení pohodlí některé ad-hoc.
+[Řazené kolekce členů](language-reference/tuples.md) je to důležitá záležitost v jazyce F #.  Jsou to seskupení nepojmenované, ale seřazený hodnot, které lze považovat za samotné hodnoty.  Představte si je jako hodnoty, které se shromažďují od jiné hodnoty.  Mají mnoho účelů, jako je například jednoduše vrátí více hodnot z funkce nebo seskupení hodnot ke zvýšení pohodlí některé ad-hoc.
 
 [!code-fsharp[Tuples](../../samples/snippets/fsharp/tour.fs#L186-L203)]
 
-Od verze F# 4.1, můžete také vytvořit `struct` řazené kolekce členů.  Tyto také plně spolupracovat s C# 7/jazyka Visual Basic 15 řazených kolekcí členů, které jsou také `struct` řazených kolekcí členů:
+Od verze F # 4.1, můžete také vytvořit `struct` řazené kolekce členů.  Tyto také plně spolupracovat s C# 7/jazyka Visual Basic 15 řazených kolekcí členů, které jsou také `struct` řazených kolekcí členů:
 
 [!code-fsharp[Tuples](../../samples/snippets/fsharp/tour.fs#L205-L218)]
 
@@ -55,21 +55,21 @@ Je důležité si uvědomit, že protože `struct` řazených kolekcí členů j
 
 ## <a name="pipelines-and-composition"></a>Kanály a skládání
 
-Operátory kanálu jako `|>` jsou často používány při zpracování dat v jazyce F#. Tyto operátory jsou funkce, které umožňují vytvořit "kanály" funkcí, pružným způsobem. Následující příklad vás provede jak můžete využít tyto operátory k vytváření jednoduchých funkční kanál:
+Operátory kanálu jako `|>` jsou často používány při zpracování dat v jazyce F #. Tyto operátory jsou funkce, které umožňují vytvořit "kanály" funkcí, pružným způsobem. Následující příklad vás provede jak můžete využít tyto operátory k vytváření jednoduchých funkční kanál:
 
 [!code-fsharp[Pipelines](../../samples/snippets/fsharp/tour.fs#L227-L282)]
 
-Provedené předchozí ukázce použití mnoha funkcí jazyka F#, včetně funkcí pro zpracování seznamu, funkce první třídy, a [částečné použití argumentů](language-reference/functions/index.md#partial-application-of-arguments). I když hlubší porozumění tyto koncepty můžete stát poněkud rozšířené, by mělo být jasné funkce jak snadno lze použít ke zpracování dat při sestavování kanálů.
+Provedené předchozí ukázce použití mnoha funkcí jazyka F #, včetně funkcí pro zpracování seznamu, funkce první třídy, a [částečné použití argumentů](language-reference/functions/index.md#partial-application-of-arguments). I když hlubší porozumění tyto koncepty můžete stát poněkud rozšířené, by mělo být jasné funkce jak snadno lze použít ke zpracování dat při sestavování kanálů.
 
 ## <a name="lists-arrays-and-sequences"></a>Seznamů, polí a pořadí
 
-Seznamů, polí a pořadí jsou tři primární kolekci typů v základní knihovně F#.
+Seznamů, polí a pořadí jsou tři primární kolekci typů v základní knihovně F #.
 
 [Obsahuje seznam](language-reference/lists.md) jsou seřazené, neměnné kolekce elementů stejného typu.  Jsou jednotlivě propojený seznam, což znamená, že jsou určeny pro výčet, ale špatně zvolená pro náhodný přístup a zřetězení, pokud jsou velké.  Tento rozdíl od seznamy v dalších oblíbených jazyků, které obvykle nevyužívají jednotlivě propojený seznam představující seznamy.
 
 [!code-fsharp[Lists](../../samples/snippets/fsharp/tour.fs#L309-L359)]
 
-[Pole](language-reference/arrays.md) jsou pevné velikosti, *proměnlivé* kolekce elementů stejného typu.  Podporují rychlý náhodný přístup prvků a jsou rychlejší než seznamy F# protože jsou pouze souvislých bloků paměti.
+[Pole](language-reference/arrays.md) jsou pevné velikosti, *proměnlivé* kolekce elementů stejného typu.  Podporují rychlý náhodný přístup prvků a jsou rychlejší než seznamy F # protože jsou pouze souvislých bloků paměti.
 
 [!code-fsharp[Arrays](../../samples/snippets/fsharp/tour.fs#L368-L407)]
 
@@ -79,24 +79,24 @@ Seznamů, polí a pořadí jsou tři primární kolekci typů v základní kniho
 
 ## <a name="recursive-functions"></a>Rekurzivní funkce
 
-Zpracování kolekce nebo pořadí prvků se obvykle provádí pomocí [rekurze](language-reference/functions/index.md#recursive-functions) v jazyce F#.  I když F# obsahuje podporu pro smyčky a imperativní programování, je rekurze upřednostňované, protože je jednodušší zajistit správnost.
+Zpracování kolekce nebo pořadí prvků se obvykle provádí pomocí [rekurze](language-reference/functions/index.md#recursive-functions) v jazyce F #.  I když F # obsahuje podporu pro smyčky a imperativní programování, je rekurze upřednostňované, protože je jednodušší zajistit správnost.
 
 >[!NOTE]
 Následující příklad používá porovnávání vzorů přes `match` výrazu.  Tento základní konstruktor se věnujeme dále v tomto článku.
 
 [!code-fsharp[RecursiveFunctions](../../samples/snippets/fsharp/tour.fs#L461-L500)]
 
-F# rovněž má plnou podporu pro volání optimalizaci funkce Tail, což je způsob, jak optimalizovat rekurzivní volání jsou stejně rychlé jako konstrukci smyčky.
+F # rovněž má plnou podporu pro volání optimalizaci funkce Tail, což je způsob, jak optimalizovat rekurzivní volání jsou stejně rychlé jako konstrukci smyčky.
 
 ## <a name="record-and-discriminated-union-types"></a>Záznam a typy rozlišených sjednocení
 
-Záznam a sjednocovacích typů jsou dvě základní datové typy používané v kódu F# a jsou obvykle nejlepší způsob, jak reprezentaci dat v aplikaci F#.  I když se díky tomu je podobný třídy v jiných jazycích, jedním z primárních rozdíly mezi nimi je, ke kterým mají sémantiku strukturální rovnost.  To znamená, že jsou "nativní" srovnatelné a rovnost je jednoduchá – jenom zkontrolujte, jestli jedna je rovná druhé.
+Záznam a sjednocovacích typů jsou dvě základní datové typy používané v kódu F # a jsou obvykle nejlepší způsob, jak reprezentaci dat v aplikaci F #.  I když se díky tomu je podobný třídy v jiných jazycích, jedním z primárních rozdíly mezi nimi je, ke kterým mají sémantiku strukturální rovnost.  To znamená, že jsou "nativní" srovnatelné a rovnost je jednoduchá – jenom zkontrolujte, jestli jedna je rovná druhé.
 
 [Záznamy](language-reference/records.md) jsou agregátem pojmenovaných hodnot s volitelnými členy (jako jsou metody).  Pokud jste obeznámeni s použitím jazyka C# nebo Java, pak tyto měli pocit, že podobný POCOs nebo objektů Pojo – pouze s strukturální rovnost a méně procedury.
 
 [!code-fsharp[Records](../../samples/snippets/fsharp/tour.fs#L507-L559)]
 
-Od verze F# 4.1, může také představovat záznamy jako `struct`s.  Používá se k tomu `[<Struct>]` atribut:
+Od verze F # 4.1, může také představovat záznamy jako `struct`s.  Používá se k tomu `[<Struct>]` atribut:
 
 [!code-fsharp[Records](../../samples/snippets/fsharp/tour.fs#L561-L568)]
 
@@ -129,7 +129,7 @@ Pokud nedodržíte výše způsobí chybu kompilace.
 
 ## <a name="pattern-matching"></a>Porovnávání vzorů
 
-[Vzor odpovídající](language-reference/pattern-matching.md) je funkce jazyka F#, která umožňuje správnosti provozu na typy F#.  Ve výše uvedené ukázky, budete si pravděpodobně všimli hodně `match x with ...` syntaxe.  Tento konstruktor umožňuje kompilátoru, který by rozuměla "tvar" datové typy, chcete-li požadovat, abyste pro účet pro všechny případy, je to možné, používáte-li datový typ prostřednictvím, která se označuje jako vyčerpávající porovnávání vzorů.  To je velmi efektivní správnost a cleverly umožňuje "přenést" co bude obvykle runtime problém v době kompilace.
+[Vzor odpovídající](language-reference/pattern-matching.md) je funkce jazyka F #, která umožňuje správnosti provozu na typy F #.  Ve výše uvedené ukázky, budete si pravděpodobně všimli hodně `match x with ...` syntaxe.  Tento konstruktor umožňuje kompilátoru, který by rozuměla "tvar" datové typy, chcete-li požadovat, abyste pro účet pro všechny případy, je to možné, používáte-li datový typ prostřednictvím, která se označuje jako vyčerpávající porovnávání vzorů.  To je velmi efektivní správnost a cleverly umožňuje "přenést" co bude obvykle runtime problém v době kompilace.
 
 [!code-fsharp[PatternMatching](../../samples/snippets/fsharp/tour.fs#L705-L742)]
 
@@ -145,7 +145,7 @@ Možná jste si je použití `_` vzor.  To se označuje jako [zástupných](lang
 
 ## <a name="optional-types"></a>Doplňkové typy
 
-Jeden zvláštní případ rozlišovaného sjednocení s typy je typ možnosti, což je užitečné, že je součástí základní knihovny F#.
+Jeden zvláštní případ rozlišovaného sjednocení s typy je typ možnosti, což je užitečné, že je součástí základní knihovny F #.
 
 [Typ možnosti](language-reference/options.md) je typ, který představuje jednu ze dvou případů: hodnotu, nebo nic vůbec.  Používá se ve všech scénářích, kde hodnota může nebo nemusí dojít z konkrétní operace.  To potom vynutí pro oba případy, takže obavy za kompilace než modul runtime žádný problém.  Ty se často používají v rozhraních API kde `null` se používá k reprezentování "hodnotu nothing" místo toho tedy tím eliminuje nutnost starat o `NullReferenceException` v mnoha případech platí.
 
@@ -153,17 +153,17 @@ Jeden zvláštní případ rozlišovaného sjednocení s typy je typ možnosti, 
 
 ## <a name="units-of-measure"></a>Měrné jednotky
 
-Jeden jedinečné funkce systém typů F# je schopnost poskytovat kontext pro číselné literály prostřednictvím měrné jednotky.
+Jeden jedinečné funkce systém typů F # je schopnost poskytovat kontext pro číselné literály prostřednictvím měrné jednotky.
 
 [Měrné jednotky](language-reference/units-of-measure.md) umožňují přiřaďte číselný typ jednotek, jako je například měřičů, a mít funkce provádějí práci na jednotky spíše než číselné literály.  To umožňuje kompilátoru ověřte, že typy číselné literály předaný dávat smysl v určitém kontextu, čímž se zmenšuje chyby za běhu přidružené k tento druh pracovní.
 
 [!code-fsharp[UnitsOfMeasure](../../samples/snippets/fsharp/tour.fs#L817-L842)]
 
-Knihovny F# Core definuje mnoho SI typy jednotek a převody jednotek.  Další informace, podívejte se [Microsoft.fsharp.data.unitsystems.si – Namespace](https://msdn.microsoft.com/visualfsharpdocs/conceptual/microsoft.fsharp.data.unitsystems.si-namespace-%5bfsharp%5d).
+Knihovny F # Core definuje mnoho SI typy jednotek a převody jednotek.  Další informace, podívejte se [Microsoft.fsharp.data.unitsystems.si – Namespace](https://msdn.microsoft.com/visualfsharpdocs/conceptual/microsoft.fsharp.data.unitsystems.si-namespace-%5bfsharp%5d).
 
 ## <a name="classes-and-interfaces"></a>Třídy a rozhraní
 
-F# obsahuje také plnou podporu pro třídy .NET [rozhraní](language-reference/interfaces.md), [abstraktní třídy](language-reference/abstract-classes.md), [dědičnosti](language-reference/inheritance.md), a tak dále.
+F # obsahuje také plnou podporu pro třídy .NET [rozhraní](language-reference/interfaces.md), [abstraktní třídy](language-reference/abstract-classes.md), [dědičnosti](language-reference/inheritance.md), a tak dále.
 
 [Třídy](language-reference/classes.md) jsou typy, které představují objekty .NET, který může mít vlastnosti, metody a události jako jeho [členy](language-reference/members/index.md).
 
@@ -191,8 +191,8 @@ Třídy jsou velmi vhodné pro velký počet úmyslů, například když potřeb
 
 ## <a name="next-steps"></a>Další kroky
 
-Teď, když jste viděli některé z primární funkce jazyka, měli byste napsat první programy F#!  Podívejte se na [Začínáme](tutorials/getting-started/index.md) informace o nastavení vývojového prostředí a napsání kódu.
+Teď, když jste viděli některé z primární funkce jazyka, měli byste napsat první programy F #!  Podívejte se na [Začínáme](tutorials/getting-started/index.md) informace o nastavení vývojového prostředí a napsání kódu.
 
-Další kroky pro získání informací může být cokoli, co chcete, ale doporučujeme [funguje jako hodnoty první třídy](introduction-to-functional-programming/functions-as-first-class-values.md) <!--[Introduction to Functional Programming in F#](introduction-to-functional-programming/index.md)--> k blíž se seznámit s základní koncepty Funkcionálního programování.  To budou důležité při vytváření robustních aplikací v jazyce F#.
+Další kroky pro získání informací může být cokoli, co chcete, ale doporučujeme [Úvod do funkčního programování v F# ](introduction-to-functional-programming/index.md) k blíž se seznámit s základní koncepty Funkcionálního programování.  To budou důležité při vytváření robustních aplikací v jazyce F #.
 
-Také, podívejte se [referenční dokumentace jazyka F#](language-reference/index.md) zobrazíte ucelená kolekce koncepční obsah v F#.
+Také, podívejte se [referenční dokumentace jazyka F #](language-reference/index.md) zobrazíte ucelená kolekce koncepční obsah v F #.

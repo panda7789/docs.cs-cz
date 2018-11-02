@@ -1,73 +1,73 @@
 ---
-title: 'Začínáme s Azure Queue storage pomocí F #'
-description: Azure fronty poskytují spolehlivé, asynchronní zasílání zpráv mezi součástmi aplikace. Cloud zasílání zpráv umožňuje nezávisle škálovat součásti vaší aplikace.
+title: 'Začínáme s Azure Queue storage s využitím F #'
+description: Fronty Azure Queue poskytují spolehlivý asynchronní přenos zpráv mezi součástmi aplikace. Cloudový přenos zpráv umožňuje nezávislé škálování součástí vaší aplikace.
 author: sylvanc
 ms.date: 09/20/2016
 ms.openlocfilehash: 14bbc657f965fc262d2a83b1fdf982fe5e75d55e
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "33569411"
 ---
-# <a name="get-started-with-azure-queue-storage-using-f"></a>Začínáme s Azure Queue storage pomocí F # #
+# <a name="get-started-with-azure-queue-storage-using-f"></a>Začínáme s Azure Queue storage s využitím F # #
 
-Azure Queue storage poskytuje cloudu zasílání zpráv mezi součástmi aplikace. Při navrhování aplikací pro škálování, součásti aplikace jsou často odpojené, tak, aby bylo možné škálovat nezávisle. Fronty úložiště poskytuje asynchronní zasílání zpráv pro komunikaci mezi součástmi aplikací, zda jsou spuštěny v cloudu, na ploše, na místním serveru nebo na mobilním zařízení. Queue storage také podporuje správu asynchronních úloh a pracovní toky procesu vytváření.
+Úložiště Azure Queue zajišťuje cloudový přenos zpráv mezi součástmi aplikace. Při navrhování aplikací pro škálování, komponenty aplikace bývají často oddělené, tak, aby se mohly škálovat nezávisle. Queue storage zajišťuje asynchronní přenos zpráv pro komunikaci mezi komponentami aplikace, ať už jsou spuštěné v cloudu, v klientských počítačích, na místním serveru nebo na mobilním zařízení. Queue storage také podporuje správu asynchronních úloh a vytváření pracovních postupů pro procesy.
 
-### <a name="about-this-tutorial"></a>O tomto kurzu
+### <a name="about-this-tutorial"></a>Informace o tomto kurzu
 
-Tento kurz ukazuje, jak napsat kód F # pro některé běžné úlohy pomocí Azure Queue storage. Úlohy popsané zahrnují vytváření a odstraňování front a přidávání, čtení a odstraňování front zpráv.
+Tento kurz ukazuje, jak napsat F# kód pro některé běžné úlohy pomocí Azure Queue storage. Úlohy popsané patří vytváření a odstraňování front a přidávání, čtení a odstraňování front zpráv.
 
-Koncepční přehled služby queue storage, najdete v tématu [v příručce .NET pro úložiště](/azure/storage/storage-dotnet-how-to-use-queues).
+Koncepční přehled služby queue storage, najdete v tématu [v příručce .NET pro úložiště fronty](/azure/storage/storage-dotnet-how-to-use-queues).
 
 ## <a name="prerequisites"></a>Požadavky
 
-Chcete-li tohoto průvodce použijte, je nutné nejprve [vytvořit účet úložiště Azure](/azure/storage/storage-create-storage-account).
+K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account).
 Budete také potřebovat přístupový klíč k úložišti pro tento účet.
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvoření F # skript a spusťte F # interaktivní
+## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F # a začněte jazyka F # Interactive
 
-Ukázky v tomto článku slouží v aplikaci F # nebo skriptu F #. Chcete-li vytvořit skript F #, vytvořte soubor s `.fsx` příponu, třeba `queues.fsx`, ve vašem vývojovém prostředí F #.
+Ukázky v tomto článku je možné v F # aplikace nebo skript F #. Chcete-li vytvořit skript F #, vytvořte soubor s `.fsx` příponu, třeba `queues.fsx`, ve vašem vývojovém prostředí F #.
 
-Pak pomocí [Správce balíčků](package-management.md) například [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` balíčku a referenční dokumentace `WindowsAzure.Storage.dll` ve vašem skriptu, použití `#r`– direktiva.
+Pak pomocí [Správce balíčků](package-management.md) jako [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` balíčku a odkaz na `WindowsAzure.Storage.dll` ve skriptu pomocí `#r`směrnice.
 
-### <a name="add-namespace-declarations"></a>Přidání deklarace oborů názvů
+### <a name="add-namespace-declarations"></a>Přidání deklarací oboru názvů
 
-Přidejte následující `open` příkazů do horní části `queues.fsx` souboru:
+Přidejte následující `open` příkazy k hornímu okraji `queues.fsx` souboru:
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L1-L3)]
 
-### <a name="get-your-connection-string"></a>Získat připojovací řetězec
+### <a name="get-your-connection-string"></a>Získání připojovacího řetězce
 
-Pro účely tohoto kurzu budete potřebovat připojovací řetězec službě Azure Storage. Další informace o připojovacích řetězcích najdete v tématu [nakonfigurování připojovacích řetězců Storage](/azure/storage/storage-configure-connection-string).
+Pro účely tohoto kurzu budete potřebovat připojovací řetězec služby Azure Storage. Další informace o připojovacích řetězcích najdete v tématu [nakonfigurovat připojovací řetězce úložiště](/azure/storage/storage-configure-connection-string).
 
-Pro tento kurz zadáte připojovacího řetězce ve vašem skriptu, například takto:
+Pro tento kurz zadáte svůj připojovací řetězec ve vašem skriptu, například takto:
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L9-L9)]
 
-Je to ale **nedoporučuje** skutečných projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Vždycky pečlivě k ochraně klíče účtu úložiště. Nedávejte ho jiným uživatelům, nezakódovávejte ho nebo ho uložit v souboru formátu prostého textu, který je přístupný ostatním uživatelům. Můžete znovu vygenerovat klíč pomocí portálu Azure, pokud se domníváte, že by může ohrožení.
+Je to ale **ale nedoporučený krok** skutečných projekty. Klíč účtu úložiště je podobný kořenovému heslu vašeho účtu úložiště. Pečlivě vždy chránit váš klíč účtu úložiště. Nedávejte ho jiným uživatelům pevného kódování, nebo ho uložili na soubor s prostým textem, který je přístupný ostatním uživatelům. Můžete znovu vygenerovat klíč pomocí webu Azure Portal, pokud se domníváte, že je možná ohrožené.
 
-Skutečných aplikace, je nejlepší způsob, jak udržovat připojovací řetězec úložiště v konfiguračním souboru. K načtení připojovacího řetězce z konfiguračního souboru, můžete to udělat:
+Pro skutečné aplikace, je nejlepší způsob, jak udržovat připojovací řetězec úložiště v konfiguračním souboru. K načtení připojovacího řetězce z konfiguračního souboru, můžete udělat toto:
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L11-L13)]
 
-Použití nástroje Azure Configuration Manager není povinné. Můžete také použít API jako třeba rozhraní .NET Framework `ConfigurationManager` typu.
+Použití nástroje Azure Configuration Manager není povinné. Můžete také použít rozhraní API, jako je například rozhraní .NET Framework `ConfigurationManager` typu.
 
 ### <a name="parse-the-connection-string"></a>Analýza připojovacího řetězce
 
-Chcete-li analyzovat připojovací řetězec, použijte:
+K analýze připojovacího řetězce, použijte:
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L19-L20)]
 
-Tato možnost vrátí `CloudStorageAccount`.
+Vrátí `CloudStorageAccount`.
 
 ### <a name="create-the-queue-service-client"></a>Vytvoření klienta služby front
 
-`CloudQueueClient` Vám umožňuje načíst fronty uložené v rámci Queue storage. Tady je jeden způsob, jak vytvořit klienta služby:
+`CloudQueueClient` Třída umožňuje načíst fronty uložené v rámci Queue storage. Tady je jeden způsob, jak vytvořit klienta služby:
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L26-L26)]
 
-Teď jste připravení psát kód, který načítá a zapisuje data do fronty úložiště.
+Nyní jste připraveni napsat kód, který čte data z a zapisuje data do fronty úložiště.
 
 ## <a name="create-a-queue"></a>Vytvoření fronty
 
@@ -77,67 +77,67 @@ Tento příklad ukazuje, jak vytvořit frontu, pokud ještě neexistuje:
 
 ## <a name="insert-a-message-into-a-queue"></a>Vložit zprávu do fronty
 
-Pokud chcete vložit zprávu do existující fronty, vytvořte nejdříve novou `CloudQueueMessage`. Pak zavolejte `AddMessage` metoda. A `CloudQueueMessage` můžete vytvořit buď z řetězce (ve formátu UTF-8) nebo `byte` pole takto:
+Chcete-li vložit zprávu do existující fronty, vytvořte nejdřív nový `CloudQueueMessage`. Pak zavolejte `AddMessage` metody. A `CloudQueueMessage` lze vytvořit buď z řetězce (ve formátu UTF-8) nebo `byte` pole, například takto:
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L42-L44)]
 
 ## <a name="peek-at-the-next-message"></a>Zobrazení náhledu další zprávy
 
-Můžete prohlížet zprávy ve frontě, bez odebere ji z fronty voláním `PeekMessage` metoda.
+Můžete prohlížet zprávy ve frontě, bez odebrání z fronty, voláním `PeekMessage` metody.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L50-L52)]
 
 ## <a name="get-the-next-message-for-processing"></a>Získat další zprávy pro zpracování
 
-Můžete načíst zprávu na popředí fronty pro zpracování voláním `GetMessage` metoda.
+Můžete získat zprávu na začátku fronty pro zpracování voláním `GetMessage` metody.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L58-L59)]
 
-Později označuje úspěšné zpracování zprávy pomocí `DeleteMessage`.
+Později označují úspěšné zpracování zprávy s použitím `DeleteMessage`.
 
 ## <a name="change-the-contents-of-a-queued-message"></a>Změna obsahu zpráv zařazených ve frontě
 
-Můžete změnit obsah načtené zprávy přímo ve frontě. Pokud zpráva představuje pracovní úlohu, můžete tuto funkci použít k aktualizaci stavu pracovních úloh. Následující kód aktualizuje zprávy ve frontě o nový obsah a nastaví limit viditelnosti na jiné 60 sekund. Uloží stav práce spojený se zprávou a klient získá další minutu, aby pokračovat v práci na zprávě. Tímto způsobem může sledovat vícekrokového pracovní postupy pro zprávy ve frontě, aniž by bylo nutné začít znovu od začátku, pokud se nezdaří krok zpracování z důvodu selhání hardwaru nebo softwaru. Obvykle byste udržovali také počet opakování, a pokud zpráva je více než některé počet opakovat, odstranili byste ji. Je to ochrana proti zprávu, která nevyvolala chyby aplikace pokaždé, když je zpracován.
+Můžete změnit obsah načtených zpráv na místě ve frontě. Pokud zpráva představuje pracovní úlohu, můžete tuto funkci použít k aktualizaci stavu pracovních úloh. Následující kód aktualizuje zprávy ve frontě o nový obsah a nastaví časový limit viditelnosti na jiné 60 sekund. Uloží stav práce spojený se zprávou a klient získá další minutu chcete pokračovat v práci na zprávu. Tímto způsobem může sledovat vícekrokového pracovní postupy zprávy ve frontě, aniž by bylo nutné začít znovu od začátku, pokud se nezdaří krok zpracování z důvodu selhání hardwaru nebo softwaru. Obvykle byste udržovali také hodnotu počtu opakování, a pokud zpráva je více než několik počet, kolikrát opakovat, odstranili byste ji. Je to ochrana proti zprávu, která nevyvolala chyby aplikace pokaždé, když se zpracovává.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L65-L69)]
 
-## <a name="de-queue-the-next-message"></a>Zrušte další zprávy z fronty
+## <a name="de-queue-the-next-message"></a>Zrušit další zprávy z fronty
 
-Váš kód vyřazuje z fronty zpráv z fronty ve dvou krocích. Při volání `GetMessage`, získáte další zprávu ve frontě. Zpráva vrácená metodou `GetMessage` stane neviditelnou pro jakýkoli jiný kód čtení zpráv z této fronty. Ve výchozím nastavení tato zpráva zůstává neviditelná po dobu 30 sekund. K dokončení odebrání zprávy z fronty, musíte také zavolat `DeleteMessage`. Tento dvoukrokový proces odebrání zprávy zaručuje, pokud se váš kód se nepodaří zpracovat zprávu z důvodu selhání hardwaru nebo softwaru, jiná instance vašeho kódu můžete stejnou zprávu získat a zkuste to znovu. Váš kód zavolá metodu `DeleteMessage` pravým po zpracování zprávy.
+Váš kód zrušení fronty zpráv z fronty ve dvou krocích. Při volání `GetMessage`, získáte další zprávu ve frontě. Zpráva vrácená metodou `GetMessage` stane neviditelnou pro jakýkoli jiný kód přečte zprávy z této fronty. Ve výchozím nastavení tato zpráva zůstává neviditelná po dobu 30 sekund. K dokončení odebrání zprávy z fronty, musíte také zavolat `DeleteMessage`. Tento dvoukrokový proces odebrání zprávy zaručuje, že pokud váš kód se nepodaří zpracovat zprávu z důvodu selhání hardwaru nebo softwaru, jiná instance vašeho kódu můžete získat stejná zpráva a zkuste to znovu. Váš kód zavolá `DeleteMessage` hned po zpracování zprávy.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L75-L76)]
 
-## <a name="use-async-workflows-with-common-queue-storage-apis"></a>Asynchronní pracovní postupy použít s běžnými rozhraním API Queue storage
+## <a name="use-async-workflows-with-common-queue-storage-apis"></a>Použití asynchronní pracovní postupy s běžnými rozhraním API Queue storage
 
-Tento příklad ukazuje způsob použití pracovním postupu asynchronní s běžnými rozhraním API Queue storage.
+Tento příklad ukazuje způsob použití asynchronního pracovního postupu s běžnými rozhraním API Queue storage.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L82-L91)]
 
 ## <a name="additional-options-for-de-queuing-messages"></a>Další možností pro vyřazování zpráv z fronty
 
-Existují dva způsoby, jak můžete přizpůsobit načítání zpráv z fronty.
-Nejprve můžete načíst dávku zpráv (až 32). Druhý můžete nastavit časový limit neviditelnosti delší nebo kratší, aby měl váš kód více nebo méně času na úplné zpracování jednotlivých zpráv. Následující příklad kódu používá `GetMessages` získat 20 zpráv v jednom volání a poté je zpracovává každou zprávu. Také nastaví časový limit neviditelnosti 5 minut pro každou zprávu. Všimněte si, že 5 minut začíná pro všechny zprávy ve stejnou dobu, takže po 5 minutách mít předán od volání `GetMessages`, všechny zprávy, které nebyly odstraněny, opět viditelné.
+Existují dva způsoby, jak můžete přizpůsobit načtení zprávy z fronty.
+Nejprve můžete načíst dávku zpráv (až 32). Za druhé můžete nastavit časový limit neviditelnosti delší nebo kratší, umožňuje váš kód více nebo méně času na úplné zpracování jednotlivých zpráv. Následující příklad kódu používá `GetMessages` 20 zpráv v jednom volání a poté zpracuje každou zprávu. Také nastaví časový limit neviditelnosti 5 minut pro každou zprávu. Všimněte si, že začíná pro všechny zprávy ve stejnou dobu, tak po mít 5 minut předané od posledního volání `GetMessages`, všechny zprávy, které nebyly odstraněny, opět viditelné.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L97-L99)]
 
 ## <a name="get-the-queue-length"></a>Získání délky fronty
 
-Můžete získat odhadovaný počet zpráv ve frontě. `FetchAttributes` Metoda požádá službu front o načtení atributů fronty, včetně počtu zpráv. `ApproximateMessageCount` Vlastnost vrací poslední hodnotu načtenou `FetchAttributes` metoda bez volání služby front.
+Můžete získat odhadovaný počet zpráv ve frontě. `FetchAttributes` Metoda požádá službu front o načtení atributů fronty, včetně počtu zpráv. `ApproximateMessageCount` Vlastnost vrací poslední hodnotu načtenou `FetchAttributes` metody, bez volání služby front.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L105-L106)]
 
 ## <a name="delete-a-queue"></a>Odstranění fronty
 
-Chcete-li odstranit frontu se všemi zprávami, které v ní, zavolejte `Delete` metoda pro objekt fronty.
+Chcete-li odstranit frontu se všemi zprávami, které v ní, zavolejte `Delete` metodu na objekt fronty.
 
 [!code-fsharp[QueueStorage](../../../samples/snippets/fsharp/azure/queue-storage.fsx#L112-L113)]
 
 ## <a name="next-steps"></a>Další kroky
 
-Teď, když jste se naučili základy používání služby Queue storage, postupujte podle následujících odkazech na další informace o složitějších úlohách úložiště.
+Teď, když jste se naučili základy používání služby Queue storage, použijte tyto odkazy na další informace o složitějších úlohách úložiště.
 
-- [Rozhraní API úložiště Azure pro .NET](/dotnet/api/overview/azure/storage)
-- [Typ zprostředkovatele úložiště Azure](https://github.com/fsprojects/AzureStorageTypeProvider)
+- [Rozhraní API služby Azure Storage pro .NET](/dotnet/api/overview/azure/storage)
+- [Typ zprostředkovatele služby Azure Storage](https://github.com/fsprojects/AzureStorageTypeProvider)
 - [Blog týmu Azure Storage](https://blogs.msdn.microsoft.com/windowsazurestorage/)
-- [Konfigurace připojovacích řetězců Azure Storage](/azure/storage/common/storage-configure-connection-string)
-- [Referenční dokumentace rozhraní API REST služby Azure Storage](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)
+- [Nakonfigurování připojovacích řetězců Azure Storage](/azure/storage/common/storage-configure-connection-string)
+- [Reference k rozhraní REST API služby Azure Storage](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

@@ -3,10 +3,10 @@ title: 'Výjimky: Funkce failwith (F#)'
 description: 'Zjistěte, jak "failwith" funkce generuje výjimku F #.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 69a2eb69e0157d3bde8cb8884cb0ae960634dddc
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/06/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "43863426"
 ---
 # <a name="exceptions-the-failwith-function"></a>Výjimky: Funkce failwith

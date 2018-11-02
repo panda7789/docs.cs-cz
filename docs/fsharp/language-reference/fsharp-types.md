@@ -1,56 +1,56 @@
 ---
 title: Typy F#
-description: 'Další informace o typy, které se používají v F # a jak jsou s názvem a popsané typů F #.'
+description: Další informace o typech, které se používají v F# a jak F# jsou typy s názvem a popsané.
 ms.date: 05/16/2016
 ms.openlocfilehash: bdbb89dc751970ac31fe102df009f0bff6388e52
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 05/04/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "33565581"
 ---
 # <a name="f-types"></a>Typy F#
 
-Toto téma popisuje typy, které se používají v F # a jak jsou s názvem a popsané typů F #.
+Toto téma popisuje typy, které se používají v F# a jak F# jsou typy s názvem a popsané.
 
 
-## <a name="summary-of-f-types"></a>Souhrn typů F #
-Některé typy jsou považovány za *primitivní typy*, jako je například typ Boolean `bool` a typy bodů plovoucí a integrální různých velikostí, které zahrnují typy znaků a bajtů. Tyto typy jsou popsané v [primitivní typy](primitive-types.md).
+## <a name="summary-of-f-types"></a>Souhrn F# typy
+Některé typy se považují za *primitivní typy*, jako je například typ Boolean `bool` a typy s plovoucí desetinnou čárkou a integrální bodů různých velikostí, mezi které patří typy bajtů a znaků. Tyto typy jsou popsány v [primitivní typy](primitive-types.md).
 
-Jiné typy, které jsou integrované do jazyka zahrnují řazené kolekce členů, seznamy, pole, pořadí, záznamy a rozlišované sjednocení. Pokud máte zkušenosti s jinými jazyky rozhraní .NET a jsou učení F #, přečtěte si témata pro každou z těchto typů. Odkazy na další informace o těchto typech jsou součástí [Příbuzná témata](https://msdn.microsoft.com/library/#rel) části tohoto tématu. Tyto F # – konkrétní typy podporují styly programování, které jsou společné pro funkční programovací jazyky. Mnoho z těchto typů mít přidružené moduly v knihovně F #, které podporují běžných operací pro tyto typy.
+Jiné typy, které jsou integrované do jazyka zahrnují řazených kolekcí členů, seznamů, polí, sekvencí, záznamů a rozlišovaná sjednocení. Pokud máte zkušenosti s jinými jazyky rozhraní .NET a budou learning F#, byste si měli přečíst témata pro každý z těchto typů. Odkazy na další informace o těchto typech jsou součástí [související témata](https://msdn.microsoft.com/library/#rel) části tohoto tématu. Tyto F#-konkrétní typy podporují styly programování, které jsou společné pro funkčních programovacích jazyků. Mnohé z těchto typů mít přidružené moduly ve službě F# knihovnu, která podporují běžné operace u těchto typů.
 
-Typ funkce obsahuje informace o typy parametrů a návratovým typem.
+Typ funkce zahrnuje informace o typech parametrů a návratový typ.
 
-Rozhraní .NET Framework je zdrojem typy objektů, rozhraní typy, typy delegáta a ostatní. Můžete definovat vlastní typy objektů, stejně jako v kterémkoli jazyce platformy .NET.
+Rozhraní .NET Framework je zdrojem typy objektů, rozhraní typy, typy delegátů a dalších. Můžete definovat vlastní typy objektů, stejně jako v kterémkoli jazyce platformy .NET.
 
-F # – kód můžete navíc definovat aliasy, které jsou s názvem *typ – zkratky*, které jsou pro typy alternativní názvy. Zkratky typů může použít, když typ může v budoucnu změnit a vy chcete vyhnout změně kód, který závisí na typu. Nebo můžete použít jako popisný název pro typ, který může usnadnit kódu ke čtení a pochopení zkratka typu.
+Navíc F# kódu můžete definovat aliasy, které jsou pojmenovány *typ – zkratky*, které jsou alternativní názvy typů. Zkratky typů můžete použít, když typ může být v budoucnu změnit a chcete se vyhnout změnou kódu, který závisí na typu. Nebo můžete použít jako popisný název pro typ, který mohou učinit kód čitelnější a pochopit – zkratka typu.
 
-F # obsahuje typy užitečné kolekce, které jsou navrženy s funkčního programování v paměti. Pomocí těchto typů kolekce umožňuje psát kód, který je v styl více funkční. Další informace najdete v tématu [typy kolekcí F #](fsharp-collection-types.md).
+F#poskytuje typy užitečné kolekcí, které jsou navržené tak, funkční programování v paměti. Pomocí těchto typů kolekce umožňuje napsat kód, který je ve stylu více funkcí. Další informace najdete v tématu [ F# typy kolekcí](fsharp-collection-types.md).
 
 
 ## <a name="syntax-for-types"></a>Syntaxe pro typy
-V F # – kód budete muset často zapsat názvy typů. Každý typ má syntaktické formuláře a použijte tyto syntaktické formulářů v typu poznámky, abstraktní metodu deklarací, delegát deklarace, podpisy a jiných objektů. Vždy, když je deklarovat nové konstrukce program v překladač, vytiskne překladač název konstruktu a syntaxe pro jeho typu. Tuto syntaxi může být právě identifikátor pro uživatelem definovaný typ nebo integrované identifikátor takové jako u `int` nebo `string`, ale pro složitější typy syntaxe je složitější.
+V F# kódu, je často nutné vypsat názvy typů. Každý typ má syntaktické formuláře a tyto syntaktické formuláře v anotace typu deklarace abstraktní metody, deklarace delegáta, podpisy a jiných objektů, které používáte. Pokaždé, když deklarujete konstrukci program novou interpreta, překladač vytiskne název konstrukce a syntaxe jeho typu. Tato syntaxe může být pouze identifikátor uživatelem definovaného typu nebo integrované identifikátor takové jako u `int` nebo `string`, ale pro složitější typy, syntaxe je složitější.
 
-V následující tabulce jsou uvedeny aspektů typ syntaxe typů F #.
+V následující tabulce jsou uvedeny aspekty syntaxe typu pro F# typy.
 
 
 
-|Typ|Typ syntaxe|Příklady|
+|Typ|Syntaxe typu|Příklady|
 |----|-----------|--------|
 |primitivní typ|*Název typu*|`int`<br /><br />`float`<br /><br />`string`|
-|Agregační typ (třídy, struktury, sjednocení, záznam, výčtu a tak dále)|*Název typu*|`System.DateTime`<br /><br />`Color`|
+|požadovaný typ agregace (třída, struktura, sjednocení, záznamu, výčet a tak dále)|*Název typu*|`System.DateTime`<br /><br />`Color`|
 |– Zkratka typu|*Název – zkratka typu*|`bigint`|
-|plně kvalifikovaný typ|*Název namespaces.Type*<br /><br />or<br /><br />*Název Modules.Type*<br /><br />or<br /><br />*Název namespaces.Modules.Type*|`System.IO.StreamWriter`|
+|plně kvalifikovaný typ|*namespaces.Type – název*<br /><br />or<br /><br />*Modules.Type – název*<br /><br />or<br /><br />*namespaces.Modules.Type – název*|`System.IO.StreamWriter`|
 |pole|*Název typu*[] nebo<br /><br />*Název typu* pole|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
-|Dvourozměrná pole|*Název typu*[,]|`int[,]`<br /><br />`float[,]`|
-|trojrozměrné pole|*Název typu*[,]|`float[,,]`|
-|řazené kolekce členů|*Typ name1* &#42; *typ name2* ...|Například `(1,'b',3)` má typ `int * char * int`|
-|Obecný typ|*parametr typu* *název obecného typu*<br /><br />or<br /><br />*název obecného typu*&lt;*seznam parametrů typu*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
-|vytvořený typ (obecného typu, který má zadaný argument konkrétního typu)|*argument typu* *název obecného typu*<br /><br />or<br /><br />*název obecného typu*&lt;*seznam typu argumentů*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
-|typ funkce, který má jeden parametr|*Parametr type1*  - &gt; *návratový typ*|Funkce, která přebírá `int` a vrátí `string` má typ `int -> string`|
-|typ funkce, která má několik parametrů|*Parametr type1*  - &gt; *parametr type2*  - &gt; ... -&gt; *návratový typ*|Funkce, která přebírá `int` a `float` a vrátí `string` má typ `int -> float -> string`|
-|vyšší pořadí funkce jako parametr|(*typ funkce*)|`List.map` má typ `('a -> 'b) -> 'a list -> 'b list`|
-|delegát|Delegovat z *typ funkce*|`delegate of unit -> int`|
+|dvourozměrné pole|*Název typu*[,]|`int[,]`<br /><br />`float[,]`|
+|trojrozměrného pole|*Název typu*[,]|`float[,,]`|
+|Řazené kolekce členů|*Typ name1* &#42; *typ name2* ...|Například `(1,'b',3)` má typ `int * char * int`|
+|Obecný typ|*parametr typu* *název obecného typu*<br /><br />or<br /><br />*Název typu pro obecný*&lt;*seznam parametrů typu*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
+|konstruovaný typ. (obecný typ, který má konkrétní typ argumentu zadaný)|*argument typu* *název obecného typu*<br /><br />or<br /><br />*Název typu pro obecný*&lt;*seznam argumentů typu*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
+|typ funkce, která má jeden parametr|*Parametr type1*  - &gt; *návratový typ*|Funkce, která přebírá `int` a vrátí `string` má typ `int -> string`|
+|typ funkce, která má více parametrů|*Parametr type1*  - &gt; *parametr type2*  - &gt; ... –&gt; *návratový typ*|Funkce, která přebírá `int` a `float` a vrátí `string` má typ `int -> float -> string`|
+|vyšší funkcí jako parametr|(*typ funkce*)|`List.map` má typ `('a -> 'b) -> 'a list -> 'b list`|
+|delegát|delegování z *typ funkce*|`delegate of unit -> int`|
 |flexibilní typu|#*Název typu*|`#System.Windows.Forms.Control`<br /><br />`#seq<int>`|
 
 ## <a name="related-topics"></a>Související témata
@@ -58,20 +58,20 @@ V následující tabulce jsou uvedeny aspektů typ syntaxe typů F #.
 
 |Téma|Popis|
 |-----|-----------|
-|[Primitivní typy](primitive-types.md)|Popisuje předdefinované jednoduché typy, jako je například integrální typy, typem logická hodnota a typů znaků.|
-|[Typ jednotky](unit-type.md)|Popisuje `unit` typu, typ, který má jednu hodnotu a je indikován (); ekvivalent `void` v jazyce C# a `Nothing` v jazyce Visual Basic.|
-|[Řazené kolekce členů](tuples.md)|Popisuje typ řazené kolekce členů, typ, který se skládá z přidružené hodnoty libovolného typu seskupené do párů, triples, quadruples a tak dále.|
+|[Primitivní typy](primitive-types.md)|Popisuje předdefinované jednoduché typy, například celočíselných typů, typu Boolean a typů znaků.|
+|[Typ jednotky](unit-type.md)|Popisuje `unit` typ, typ, který má jednu hodnotu a je indikován (); ekvivalent `void` v C# a `Nothing` v jazyce Visual Basic.|
+|[Řazené kolekce členů](tuples.md)|Popisuje typ řazené kolekce členů, typ, který se skládá z přidružené hodnoty libovolného typu, které jsou seskupené ve dvojicích, trojic, quadruples a tak dále.|
 |[Možnosti](options.md)|Popisuje typ možnosti, typ, který může mít hodnotu nebo být prázdný.|
-|[Seznamy](lists.md)|Popisuje seznamy, které jsou seřazené, neměnné řadu elementy všechny stejného typu.|
-|[Pole](arrays.md)|Popisuje pole, které jsou seřazené sady měnitelný elementů stejného typu, které zabírají blok souvislé paměti a mají pevnou velikost.|
-|[Sekvence](sequences.md)|Popisuje pořadí typu, který představuje řadu logických hodnot. jednotlivé hodnoty se vypočítávají pouze v případě potřeby.|
-|[Záznamy](records.md)|Popisuje typ záznamu, malé agregace s názvem hodnot.|
-|[Rozlišovaná sjednocení](discriminated-unions.md)|Popisuje rozlišovaná sjednocení typu, typ, jejichž hodnoty může být jakýkoli sadu možné typy.|
-|[Funkce](functions/index.md)|Popisuje funkce hodnot.|
-|[Třídy](classes.md)|Popisuje typ třída typ objektu, který odpovídá typu odkazu rozhraní .NET. Typy tříd může obsahovat členy, vlastnosti, implementovaných a základního typu.|
-|[Struktury](structures.md)|Popisuje `struct` typu, typ objektu, který odpovídá typu .NET hodnoty. `struct` Typ obvykle reprezentuje malé agregaci dat.|
-|[Rozhraní](interfaces.md)|Popisuje typy rozhraní, které jsou typy, které představují sadu členů, které poskytují určité funkce, ale které neobsahují žádná data. Typ rozhraní musí implementovat typ objektu, který bude funkční.|
+|[Seznamy](lists.md)|Popisuje, seznamy, které jsou seřazené, neměnné řadu prvků všechny stejného typu.|
+|[Pole](arrays.md)|Popisuje pole, která jsou seřazené sady proměnlivé prvků stejného typu, které zabírají blok souvislé paměti a mají pevnou velikost.|
+|[Sekvence](sequences.md)|Popisuje pořadí typ, který představuje logické řady hodnot. jednotlivé hodnoty se vypočítávají pouze v případě potřeby.|
+|[Záznamy](records.md)|Popisuje typ záznamu, malé agregace pojmenovaných hodnot.|
+|[Rozlišovaná sjednocení](discriminated-unions.md)|Popisuje diskriminovaného typu sjednocení, typ, jehož hodnoty může nabývat kterékoliv sadu možných typů.|
+|[Funkce](functions/index.md)|Popisuje funkce hodnoty.|
+|[Třídy](classes.md)|Popisuje typ třídy, typ objektu, který odpovídá typu odkaz na rozhraní .NET. Typy tříd může obsahovat členy, vlastnosti, implementovaná rozhraní a základního typu.|
+|[Struktury](structures.md)|Popisuje `struct` typ, typ objektu, který odpovídá typu hodnoty .NET. `struct` Typ obvykle představuje malé agregace data.|
+|[Rozhraní](interfaces.md)|Popisuje typy rozhraní, které jsou typy, které představují sadu členů, které poskytují určité funkce, ale která neobsahují žádná data. Typ rozhraní musí být implementované podle typu objektu, aby byla užitečná.|
 |[Delegáti](delegates.md)|Popisuje typ delegáta, který reprezentuje funkce jako objekt.|
-|[Výčty](enumerations.md)|Popisuje výčtové typy, jejichž hodnoty patří do skupiny s názvem hodnot.|
+|[Výčty](enumerations.md)|Popisuje typy výčtu, jehož hodnoty patří do sady pojmenovaných hodnot.|
 |[Atributy](attributes.md)|Popisuje atributy, které se používají k určení metadata pro jiného typu.|
 |[Typy výjimek](exception-handling/exception-types.md)|Popisuje výjimky, které určují informace o chybě.|

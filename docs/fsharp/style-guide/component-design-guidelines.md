@@ -3,10 +3,10 @@ title: 'Pokyny pro návrh komponentu F #'
 description: 'Přečtěte si pokyny pro zápis F # součásti určené pro využití dalších volajícími.'
 ms.date: 05/14/2018
 ms.openlocfilehash: 446cba0f810af9517b655ef5741ddf7a919676d5
-ms.sourcegitcommit: efff8f331fd9467f093f8ab8d23a203d6ecb5b60
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/03/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "43488284"
 ---
 # <a name="f-component-design-guidelines"></a>Pokyny pro návrh komponentu F #

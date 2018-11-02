@@ -3,10 +3,10 @@ title: do – vazby (F#)
 description: 'Zjistěte, jak jazyka F # udělat vazby se používá k provádění kódu bez definování funkce nebo hodnota.'
 ms.date: 05/16/2016
 ms.openlocfilehash: 78dbf8da0fe40b5af566ad98693df1109eede7e4
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
+ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
 ms.translationtype: MT
 ms.contentlocale: cs-CZ
-ms.lasthandoff: 09/17/2018
+ms.lasthandoff: 11/02/2018
 ms.locfileid: "45973141"
 ---
 # <a name="do-bindings"></a>do – vazby
