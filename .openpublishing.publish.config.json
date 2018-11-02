@@ -123,12 +123,12 @@
     {
       "path_to_root": "_csharplang",
       "url": "https://github.com/dotnet/csharplang.cs-cz",
-      "branch": "live"
+      "branch": "live-sxs"
     },
     {
       "path_to_root": "_vblang",
       "url": "https://github.com/dotnet/vblang.cs-cz",
-      "branch": "live"
+      "branch": "live-sxs"
     },
     {
       "path_to_root": "_repo.en-us",
