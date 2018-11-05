@@ -1,6 +1,6 @@
 ---
-title: 'Kód F # pokyny k formátování'
-description: 'Přečtěte si pokyny pro formátování kódu jazyka F #.'
+title: Kód F# pokyny k formátování
+description: Přečtěte si pokyny pro formátování kódu jazyka F#.
 ms.date: 05/14/2018
 ms.openlocfilehash: 0d7d2d1771710db55bf990f3a06079b2aec48fd7
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -9,19 +9,19 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "43858002"
 ---
-# <a name="f-code-formatting-guidelines"></a>Kód F # pokyny k formátování
+# <a name="f-code-formatting-guidelines"></a>Kód F# pokyny k formátování
 
-Tento článek nabízí pokyny k formátování kódu tak, aby váš kód F #:
+Tento článek nabízí pokyny k formátování kódu tak, aby váš kód F#:
 
 * Obecně zobrazit jako čitelnější
 * Je v souladu s konvencí použil(a) formátování nástroje v sadě Visual Studio a ostatní editory
 * Podobně jako další kód online
 
-Tyto pokyny jsou založeny na [komplexní pokyny k formátování konvence F #](https://github.com/dungpa/fantomas/blob/master/docs/FormattingConventions.md) podle [Anh-Dung Phan](https://github.com/dungpa).
+Tyto pokyny jsou založeny na [komplexní pokyny k formátování konvence F#](https://github.com/dungpa/fantomas/blob/master/docs/FormattingConventions.md) podle [Anh-Dung Phan](https://github.com/dungpa).
 
 ## <a name="general-rules-for-indentation"></a>Obecná pravidla pro odsazení
 
-F # ve výchozím nastavení používá významných mezer. Následující pokyny jsou určeny a přidal se návod, jak některé běžné problémy, které to může často znamenat výrazný přehlednější.
+F# ve výchozím nastavení používá významných mezer. Následující pokyny jsou určeny a přidal se návod, jak některé běžné problémy, které to může často znamenat výrazný přehlednější.
 
 ### <a name="using-spaces"></a>Použití prostorů
 
@@ -62,7 +62,7 @@ let f x = x + 1 // Increment by one.
 
 ### <a name="use-camelcase-for-class-bound-expression-bound-and-pattern-bound-values-and-functions"></a>Hodnoty vázané na třídu, vázané na výrazu a vzor vázané a funkcí pomocí camelCase
 
-Je běžné a přijaté F # stylu camelCase používat pro všechny názvy vázaný jako lokální proměnné nebo v porovnávání vzorů a definice funkcí.
+Je běžné a přijaté F# stylu camelCase používat pro všechny názvy vázaný jako lokální proměnné nebo v porovnávání vzorů a definice funkcí.
 
 ```fsharp
 // OK
@@ -165,13 +165,13 @@ Obory názvů, výjimky, události a projekt /`.dll` názvy mělo používat tak
 
 ### <a name="avoid-underscores-in-names"></a>Vyhněte se podtržítka v názvech
 
-V minulosti použili některé knihovny F # v názvech podtržítka. Ale to je přijat už široce, částečně proto, že je v konfliktu s zásady vytváření názvů .NET. Nicméně některé programátory F # pomocí podtržítka silně, částečně z historických důvodů a odolnosti proti chybám a ohledu je důležité. Nezapomínejte, že styl je často disliked jinými uživateli, kteří rozhodnout o tom, jestli ji používat.
+V minulosti použili některé knihovny F# v názvech podtržítka. Ale to je přijat už široce, částečně proto, že je v konfliktu s zásady vytváření názvů .NET. Nicméně některé programátory F# pomocí podtržítka silně, částečně z historických důvodů a odolnosti proti chybám a ohledu je důležité. Nezapomínejte, že styl je často disliked jinými uživateli, kteří rozhodnout o tom, jestli ji používat.
 
 Některé výjimky zahrnuje spolupráce s nativními komponentami, kde jsou velmi běžné podtržítka.
 
-### <a name="use-standard-f-operators"></a>Použít standardní operátory F #
+### <a name="use-standard-f-operators"></a>Použít standardní operátory F#
 
-Následující operátory jsou definovány ve standardní knihovně F # a by měla sloužit místo definování ekvivalenty. Jak je obvykle, aby byl kód čitelnější a idiomatickou, doporučuje se použití těchto operátorů. Vývojáři a má zázemí ve OCaml nebo jiných funkcionálním programovacím jazyce může být na různých idiomy zvyklí. Následující seznam shrnuje doporučené operátory F #.
+Následující operátory jsou definovány ve standardní knihovně F# a by měla sloužit místo definování ekvivalenty. Jak je obvykle, aby byl kód čitelnější a idiomatickou, doporučuje se použití těchto operátorů. Vývojáři a má zázemí ve OCaml nebo jiných funkcionálním programovacím jazyce může být na různých idiomy zvyklí. Následující seznam shrnuje doporučené operátory F#.
 
 ```fsharp
 x |> f // Forward pipeline
@@ -193,11 +193,11 @@ x ^^^ y // Bitwise xor, also for working with “flags” enumeration
 
 ### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>Použijte předponu syntaxi pro obecné typy (`Foo<T>`) před syntaxe přípony (`T Foo`)
 
-F # dědí obě přípony ML styl pojmenování obecných typů (například `int list`) stejně jako předpona .NET stylu (například `list<int>`). Preferovat stylu .NET, s výjimkou čtyři konkrétní typy:
+F# dědí obě přípony ML styl pojmenování obecných typů (například `int list`) stejně jako předpona .NET stylu (například `list<int>`). Preferovat stylu .NET, s výjimkou čtyři konkrétní typy:
 
-1. Pro seznamy F #, použijte příponový tvar: `int list` spíše než `list<int>`.
-2. Možnosti F #, použijte příponový tvar: `int option` spíše než `option<int>`.
-3. Pole F #, použijte syntaxi název `int[]` spíše než `int array` nebo `array<int>`.
+1. Pro seznamy F#, použijte příponový tvar: `int list` spíše než `list<int>`.
+2. Možnosti F#, použijte příponový tvar: `int option` spíše než `option<int>`.
+3. Pole F#, použijte syntaxi název `int[]` spíše než `int array` nebo `array<int>`.
 4. Odkazové buňky pomocí `int ref` spíše než `ref<int>` nebo `Ref<int>`.
 
 Pro všechny ostatní typy použijte prefixová podoba.
@@ -591,7 +591,7 @@ let comparer =
 
 ### <a name="formatting-white-space-in-expressions"></a>Formátování prázdných ve výrazech
 
-Nepoužívejte nadbytečné prázdné místo v výrazy jazyka F #.
+Nepoužívejte nadbytečné prázdné místo v výrazy jazyka F#.
 
 ```fsharp
 // OK

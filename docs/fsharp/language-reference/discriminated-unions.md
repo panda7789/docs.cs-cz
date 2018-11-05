@@ -1,6 +1,6 @@
 ---
 title: Rozlišovaná sjednocení (F#)
-description: 'Další informace o použití F # rozlišovaná sjednocení.'
+description: Další informace o použití F# rozlišovaná sjednocení.
 ms.date: 05/16/2016
 ms.openlocfilehash: 06d6c154790f659c0c7ff73290357ab50a134362
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -51,7 +51,7 @@ let prism = Prism(5., 2.0, height = 3.0)
 
 Tento kód ukazuje, že můžete použít buď pojmenovaná pole v inicializaci, nebo můžete spoléhat na pořadí polí v deklaraci a stačí zadat hodnoty pro každé pole zase. Volání konstruktoru pro `rect` v předcházejícím kódu používá pojmenovaná pole, ale volání konstruktoru pro `circ` používá řazení. Můžete kombinovat objednaná pole a pojmenovaná pole jako v konstrukci `prism`.
 
-`option` Typ je jednoduchým diskriminovaným sjednocením v základní knihovně F #. `option` Typ je deklarován následujícím způsobem.
+`option` Typ je jednoduchým diskriminovaným sjednocením v základní knihovně F#. `option` Typ je deklarován následujícím způsobem.
 
 ```fsharp
 // The option type is a discriminated union.
@@ -84,7 +84,7 @@ Za normálních okolností lze identifikátory velikosti písmen použít bez je
 
 ### <a name="unwrapping-discriminated-unions"></a>Rozbalení rozlišovaná sjednocení
 
-V Rozlišované sjednocení F # se často používají v doméně modelování pro obtékání jednoho typu. Je snadné získání základní hodnoty přes porovnávání vzorů také. Není nutné použít odpovídající výraz pro jeden případ:
+V Rozlišované sjednocení F# se často používají v doméně modelování pro obtékání jednoho typu. Je snadné získání základní hodnoty přes porovnávání vzorů také. Není nutné použít odpovídající výraz pro jeden případ:
 
 ```fsharp
 let ([UnionCaseName] [values]) = [UnionValue]
@@ -103,7 +103,7 @@ let someMethodUsingShaderProgram shaderProgram =
 
 ## <a name="struct-discriminated-unions"></a>Rozlišovaná sjednocení – struktura
 
-Od verze F # 4.1, může také představovat Rozlišované sjednocení jako struktury.  Používá se k tomu `[<Struct>]` atribut.
+Od verze F# 4.1, může také představovat Rozlišované sjednocení jako struktury.  Používá se k tomu `[<Struct>]` atribut.
 
 ```fsharp
 [<Struct>]

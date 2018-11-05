@@ -1,6 +1,6 @@
 ---
 title: 'Výjimky: Výraz try...finally (F#)'
-description: "Zjistěte, jak F # ' try... finally \"výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku."
+description: Zjistěte, jak F# ' try... finally "výraz umožňuje spuštění kódu čištění i v případě, že blok kódu vyvolá výjimku.
 ms.date: 05/16/2016
 ms.openlocfilehash: 546a6b0619de6f51044600dc1ead73c6d5211299
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2

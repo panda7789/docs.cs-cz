@@ -1,6 +1,6 @@
 ---
-title: 'ByRef (F #)'
-description: 'Další informace o typu byref a předávané typy v jazyce F #, které se používají pro programování nízké úrovně.'
+title: ByRef (F#)
+description: Další informace o typu byref a předávané typy v jazyce F#, které se používají pro programování nízké úrovně.
 ms.date: 09/02/2018
 ms.openlocfilehash: 6131104e4325f77da84368c337f998c6b2b5309b
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "48836878"
 ---
 # <a name="byrefs"></a>Parametry ByRef
 
-F # obsahuje dva hlavním oblastem funkcí, které pracují v prostoru nízké úrovně programování:
+F# obsahuje dva hlavním oblastem funkcí, které pracují v prostoru nízké úrovně programování:
 
 * `byref` / `inref` / `outref` Typy, které jsou spravované ukazatele. Mají omezení týkající se použití tak, aby program, který není platný v době běhu nelze zkompilovat.
 * A `byref`– například struktura, která je [struktura](structures.md) , který má podobnou sémantikou a omezení kompilace jako `byref<'T>`. Jedním z příkladů je <xref:System.Span%601>.
@@ -97,7 +97,7 @@ Toto je také true:
 * Neexistuje žádné nepřímo další vlákna nebo aliasy nemáte oprávnění k zápisu do `x`.
 * Neexistuje žádné nepřímo, který `SomeStruct` je neměnný základě `x` právě `inref`.
 
-Ale jazyka F # hodnotové typy, které **jsou** neměnné, `this` odvozena jako ukazatel `inref`.
+Ale jazyka F# hodnotové typy, které **jsou** neměnné, `this` odvozena jako ukazatel `inref`.
 
 Všechna tato pravidla společně znamenají, že držitele `inref` ukazatel nesmíte upravovat okamžité obsah paměti, který ukazatel ukazuje.
 
@@ -107,18 +107,18 @@ Všechna tato pravidla společně znamenají, že držitele `inref` ukazatel nes
 
 ### <a name="interop-with-c"></a>Interoperabilita s C# #
 
-C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí. Následující tabulka ukazuje, jak F # interpretuje co C# vydává:
+C# podporuje `in ref` a `out ref` klíčová slova, kromě `ref` vrátí. Následující tabulka ukazuje, jak F# interpretuje co C# vydává:
 
-|Konstrukce jazyka C#|F # odvodí|
+|Konstrukce jazyka C#|F# odvodí|
 |------------|---------|
 |`ref` Návratová hodnota|`outref<'T>`|
 |`ref readonly` Návratová hodnota|`inref<'T>`|
 |`in ref` Parametr|`inref<'T>`|
 |`out ref` Parametr|`outref<'T>`|
 
-V následující tabulce jsou uvedeny co F # vydává:
+V následující tabulce jsou uvedeny co F# vydává:
 
-|Konstrukce F #|Emitovaný konstrukce|
+|Konstrukce F#|Emitovaný konstrukce|
 |------------|-----------------|
 |`inref<'T>` Argument|`[In]` atribut na argumentu|
 |`inref<'T>` Vrátí|`modreq` atribut na hodnotu|
@@ -127,7 +127,7 @@ V následující tabulce jsou uvedeny co F # vydává:
 
 ### <a name="type-inference-and-overloading-rules"></a>Odvození typu proměnné a přetížení pravidla
 
-`inref<'T>` Typ je odvozen kompilátorem F # v následujících případech:
+`inref<'T>` Typ je odvozen kompilátorem F# v následujících případech:
 
 1. Parametr nebo návratový typ .NET, který má `IsReadOnly` atribut.
 2. `this` Ukazatel na strukturu typu, který nemá žádné proměnlivé pole.
@@ -165,20 +165,20 @@ type S(count1: Span<int>, count2: Span<int>) =
 
 `IsByRefLike` neznamená `Struct`. Oba musí být k dispozici u typu.
 
-Objekt "`byref`– stejně jako" struktura v jazyce F # je typ hodnoty vázané na zásobníku. Přiděluje se nikdy na spravované haldě. A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků. Pravidla jsou:
+Objekt "`byref`– stejně jako" struktura v jazyce F# je typ hodnoty vázané na zásobníku. Přiděluje se nikdy na spravované haldě. A `byref`– jako – struktura je užitečné pro vysoce výkonné programování, jak se vynucuje sadu silné kontroly o životnost a zachycení snímků. Pravidla jsou:
 
 * Se může sloužit jako parametry funkce, parametry metody, místní proměnné, metoda vrátí.
 * Nemohou být statické nebo členy třídy či struktury normální instance.
 * Nemůže být zachyceno libovolné konstrukce uzavření (`async` metodách a výrazech lambda).
 * Nelze je použít jako na generický parametr.
 
-Tento poslední bod je zásadní pro kanál – vizuální styl programování v F #, jako `|>` je obecný, který parametrizuje vstupní typy. funkce. Toto omezení mohou být zmírněny pro `|>` v budoucnu, jako je vložená a nepoužívá všechna volání do jiných vložených obecné funkce v těle.
+Tento poslední bod je zásadní pro kanál – vizuální styl programování v F#, jako `|>` je obecný, který parametrizuje vstupní typy. funkce. Toto omezení mohou být zmírněny pro `|>` v budoucnu, jako je vložená a nepoužívá všechna volání do jiných vložených obecné funkce v těle.
 
 I když tato pravidla omezují velmi silného využití, dělají to ke splnění uskutečnění vysokovýkonného výpočetního prostředí bezpečným způsobem.
 
 ## <a name="byref-returns"></a>Hodnoty typu ByRef
 
-ByRef vrátí z funkcí F # nebo členy můžete vytvořen a využívat. Při využívání `byref`– vrátí metoda hodnotu přistoupí implicitně přes ukazatel. Příklad:
+ByRef vrátí z funkcí F# nebo členy můžete vytvořen a využívat. Při využívání `byref`– vrátí metoda hodnotu přistoupí implicitně přes ukazatel. Příklad:
 
 ```fsharp
 let safeSum(bytes: Span<byte>) =

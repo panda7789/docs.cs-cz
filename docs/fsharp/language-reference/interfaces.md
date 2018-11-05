@@ -1,6 +1,6 @@
 ---
 title: Rozhraní (F#)
-description: 'Zjistěte, jak určit sadu souvisejících členů, které implementují jiné třídy rozhraní F #.'
+description: Zjistěte, jak určit sadu souvisejících členů, které implementují jiné třídy rozhraní F#.
 ms.date: 05/16/2016
 ms.openlocfilehash: 6d7f8ee9ea17d2294933f88577c30a96975ae5d4
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -47,7 +47,7 @@ Deklarace rozhraní vypadat podobně jako deklarace tříd s tím rozdílem, že
 
 Výchozí dostupnost pro rozhraní je `public`.
 
-Můžete volitelně zadejte každý parametr metody název pomocí syntaxe normální F #:
+Můžete volitelně zadejte každý parametr metody název pomocí syntaxe normální F#:
 
 [!code-fsharp[Main](../../../samples/snippets/fsharp/lang-ref-1/snippet24032.fs)]
 

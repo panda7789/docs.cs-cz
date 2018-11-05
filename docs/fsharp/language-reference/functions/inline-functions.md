@@ -1,6 +1,6 @@
 ---
 title: Vložené funkce (F#)
-description: 'Další informace o použití F # vložené funkce, které jsou integrované přímo do kódu volajícího.'
+description: Další informace o použití F# vložené funkce, které jsou integrované přímo do kódu volajícího.
 ms.date: 05/16/2016
 ms.openlocfilehash: 47fca0fe34630792aeb0908b0cee02a927e2567d
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2

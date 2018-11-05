@@ -1,5 +1,5 @@
 ---
-title: 'Začínáme s Azure Table storage s využitím F #'
+title: Začínáme s Azure Table storage s využitím F#
 description: Store strukturovaných dat v cloudu pomocí služby Azure Table storage nebo Azure Cosmos DB.
 author: sylvanc
 ms.date: 03/26/2018
@@ -10,7 +10,7 @@ ms.contentlocale: cs-CZ
 ms.lasthandoff: 11/02/2018
 ms.locfileid: "43519532"
 ---
-# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table storage a Azure Cosmos DB Table API pomocí F # # 
+# <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>Začínáme s Azure Table storage a Azure Cosmos DB Table API pomocí F# # 
 
 Azure Table storage je služba, která ukládá strukturovaná data NoSQL v cloudu. Úložiště Table je úložiště klíčů/atributů s návrhem. Vzhledem k tomu, že je Table storage bez schématu, je snadné data přizpůsobovat měnícím potřebám vaší aplikace. Přístup k datům je rychlý a cenově výhodný pro všechny typy aplikací. Table storage je obvykle znamená výrazně nižší náklady než tradiční SQL pro podobné objemy dat.
 
@@ -30,16 +30,16 @@ Další informace najdete v tématu [Úvod do služby Azure Cosmos DB Table API]
 
 ## <a name="about-this-tutorial"></a>Informace o tomto kurzu
 
-Tento kurz ukazuje, jak napsat kód F # pro některé běžné úlohy pomocí služby Azure Table storage nebo rozhraní Azure Cosmos DB Table API, včetně vytváření a odstraní tabulka a vložení, aktualizace, odstranění nebo dotazování tabulkových dat.
+Tento kurz ukazuje, jak napsat kód F# pro některé běžné úlohy pomocí služby Azure Table storage nebo rozhraní Azure Cosmos DB Table API, včetně vytváření a odstraní tabulka a vložení, aktualizace, odstranění nebo dotazování tabulkových dat.
 
 ## <a name="prerequisites"></a>Požadavky
 
 K použití tohoto průvodce, musíte nejdřív [vytvoření účtu služby Azure storage](/azure/storage/storage-create-storage-account) nebo [účtu služby Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/).
 
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F # a začněte jazyka F # Interactive
+## <a name="create-an-f-script-and-start-f-interactive"></a>Vytvořit skript F# a začněte jazyka F# Interactive
 
-Ukázky v tomto článku je možné v F # aplikace nebo skript F #. Chcete-li vytvořit skript F #, vytvořte soubor s `.fsx` příponu, třeba `tables.fsx`, ve vašem vývojovém prostředí F #.
+Ukázky v tomto článku je možné v F# aplikace nebo skript F#. Chcete-li vytvořit skript F#, vytvořte soubor s `.fsx` příponu, třeba `tables.fsx`, ve vašem vývojovém prostředí F#.
 
 Pak pomocí [Správce balíčků](package-management.md) jako [Stáhnout](https://fsprojects.github.io/Paket/) nebo [NuGet](https://www.nuget.org/) k instalaci `WindowsAzure.Storage` balíčku a odkaz na `WindowsAzure.Storage.dll` ve skriptu pomocí `#r`směrnice. Proveďte znovu `Microsoft.WindowsAzure.ConfigurationManager` zajistí Microsoft.Azure oboru názvů.
 

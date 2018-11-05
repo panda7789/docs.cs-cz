@@ -1,6 +1,6 @@
 ---
 title: Události (F#)
-description: 'Zjistěte, jak F # události umožňují přiřadit funkce volání akce uživatelů, které jsou důležité pro programování grafického uživatelského rozhraní.'
+description: Zjistěte, jak F# události umožňují přiřadit funkce volání akce uživatelů, které jsou důležité pro programování grafického uživatelského rozhraní.
 ms.date: 05/16/2016
 ms.openlocfilehash: ce547bc9ec7b5e0ef9a7492c0889bb690e3040c2
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -18,7 +18,7 @@ Události umožňují přiřadit funkce volání a akce uživatele a jsou důl
 
 ## <a name="handling-events"></a>Zpracování událostí
 
-Pokud použijete knihovnu grafického uživatelského rozhraní, jako jsou formuláře Windows Forms nebo Windows Presentation Foundation (WPF), je většina kódu v aplikaci spuštěna jako odpověď na události, které byly předdefinovány knihovnou. Tyto předdefinované události jsou členy tříd grafického uživatelského rozhraní, jako jsou formuláře a ovládací prvky. Můžete přidat vlastní chování k dříve existující události, jako je kliknutí na tlačítko, odkaz na konkrétní pojmenované události zájmu (například `Click` událost `Form` třídy) a vyvolání `Add` způsob, jak je znázorněno v následujícím kódu . Pokud při spuštění z jazyka F # Interactive, vynechejte volání `System.Windows.Forms.Application.Run(System.Windows.Forms.Form)`.
+Pokud použijete knihovnu grafického uživatelského rozhraní, jako jsou formuláře Windows Forms nebo Windows Presentation Foundation (WPF), je většina kódu v aplikaci spuštěna jako odpověď na události, které byly předdefinovány knihovnou. Tyto předdefinované události jsou členy tříd grafického uživatelského rozhraní, jako jsou formuláře a ovládací prvky. Můžete přidat vlastní chování k dříve existující události, jako je kliknutí na tlačítko, odkaz na konkrétní pojmenované události zájmu (například `Click` událost `Form` třídy) a vyvolání `Add` způsob, jak je znázorněno v následujícím kódu . Pokud při spuštění z jazyka F# Interactive, vynechejte volání `System.Windows.Forms.Application.Run(System.Windows.Forms.Form)`.
 
 [!code-fsharp[Main](../../../../samples/snippets/fsharp/lang-ref-2/snippet3601.fs)]
 
@@ -28,7 +28,7 @@ Typ `Add` je metoda `('a -> unit) -> unit`. Proto se metody obslužné rutiny ud
 
 ## <a name="creating-custom-events"></a>Vytváření vlastních událostí
 
-Události F # jsou reprezentovány F # [události](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) třídy, která implementuje [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) rozhraní. `IEvent` je sama o sobě rozhraní, které kombinuje funkce dvou dalších rozhraní `System.IObservable<'T>` a [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Proto `Event`y mají obdobné funkce delegátů v jiných jazycích a navíc další funkce `IObservable`, což znamená, že události F # podporují filtrování událostí a používání funkce první třídy F # a výrazů lambda jako obslužné rutiny událostí. Tato funkce je součástí [modul událostí](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
+Události F# jsou reprezentovány F# [události](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9) třídy, která implementuje [IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862) rozhraní. `IEvent` je sama o sobě rozhraní, které kombinuje funkce dvou dalších rozhraní `System.IObservable<'T>` a [IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a). Proto `Event`y mají obdobné funkce delegátů v jiných jazycích a navíc další funkce `IObservable`, což znamená, že události F# podporují filtrování událostí a používání funkce první třídy F# a výrazů lambda jako obslužné rutiny událostí. Tato funkce je součástí [modul událostí](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7).
 
 Vytvořit událost třídy, která funguje stejně jako ostatní události rozhraní .NET Framework, přidejte do třídy `let` vazbu, která definuje `Event` jako pole v třídě. Můžete zadat požadovaný typ argumentu události jako typ argumentu, nebo jej ponechat prázdný a odvodit odpovídající typ pomocí kompilátoru. Musíte také definovat člen události, který zpřístupňuje událost jako událost typu CLI. Tento člen by měl mít [CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333) atribut. Je deklarován jako vlastnost a příslušnou implementací je pouhé volání [publikovat](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e) vlastnosti události. Uživatelé třídy mohou používat `Add` metoda publikované události pro přidání obslužné rutiny. Argument pro `Add` metoda může být výraz lambda. Můžete použít `Trigger` vlastnosti události, aby se vyvolala událost a předáte argumenty funkci ovladače. Následující příklad kódu to dokládá. V tomto příkladu je odvozeným argumentem typu události řazená kolekce, která představuje argumenty pro výraz lambda.
 

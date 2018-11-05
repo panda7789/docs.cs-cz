@@ -1,6 +1,6 @@
 ---
 title: Porovnávání vzorů (F#)
-description: 'Zjistěte, jak se používají vzory v F # k porovnání dat s logické struktury, jak rozložit data na základní části nebo extrahovat informace z dat.'
+description: Zjistěte, jak se používají vzory v F# k porovnání dat s logické struktury, jak rozložit data na základní části nebo extrahovat informace z dat.
 ms.date: 05/16/2016
 ms.openlocfilehash: 5ad3d3e1a78246afdfa2948fd0fb84fa04686d30
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,7 +11,7 @@ ms.locfileid: "45991421"
 ---
 # <a name="pattern-matching"></a>Porovnávání vzorů
 
-Vzorky jsou pravidla pro transformování vstupních dat. Používají se v celém jazyce F # k porovnání dat s logickou strukturou nebo strukturami, rozložení dat na základní části nebo extrahovat informace z dat různými způsoby.
+Vzorky jsou pravidla pro transformování vstupních dat. Používají se v celém jazyce F# k porovnání dat s logickou strukturou nebo strukturami, rozložení dat na základní části nebo extrahovat informace z dat různými způsoby.
 
 ## <a name="remarks"></a>Poznámky
 

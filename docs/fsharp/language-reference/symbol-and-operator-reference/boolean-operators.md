@@ -1,6 +1,6 @@
 ---
 title: Logické operátory (F#)
-description: 'Další informace o logické operátory, které jsou k dispozici v programovacím jazyce F #.'
+description: Další informace o logické operátory, které jsou k dispozici v programovacím jazyce F#.
 ms.date: 05/16/2016
 ms.openlocfilehash: faa181090efa7c4064a30b42d83afa4888e98b82
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,11 +11,11 @@ ms.locfileid: "45638477"
 ---
 # <a name="boolean-operators"></a>Logické operátory
 
-Toto téma popisuje podporu pro logické operátory v jazyce F #.
+Toto téma popisuje podporu pro logické operátory v jazyce F#.
 
 ## <a name="summary-of-boolean-operators"></a>Souhrnné informace o logické operátory
 
-Následující tabulka shrnuje logické operátory, které jsou k dispozici v jazyce F #. Je jediným typem podporuje tyto operátory `bool` typu.
+Následující tabulka shrnuje logické operátory, které jsou k dispozici v jazyce F#. Je jediným typem podporuje tyto operátory `bool` typu.
 
 |Operátor|Popis|
 |--------|-----------|

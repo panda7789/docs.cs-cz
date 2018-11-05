@@ -1,6 +1,6 @@
 ---
 title: let – vazby (F#)
-description: 'Další informace o použití jazyka F # nechat vazbu, která přidruží hodnotě nebo funkci identifikátor.'
+description: Další informace o použití jazyka F# nechat vazbu, která přidruží hodnotě nebo funkci identifikátor.
 ms.date: 05/16/2016
 ms.openlocfilehash: 1a35b5a39f2768a18665b5c7fe768af0e7714577
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -110,7 +110,7 @@ let function3 x =
     function1 x
 ```
 
-Některé moduly mají atribut [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15), což znamená, že funkce, které vystavují musí být kvalifikován s názvem modulu. Tento atribut má například modulu F # seznam.
+Některé moduly mají atribut [RequireQualifiedAccess](https://msdn.microsoft.com/library/8b9b6ade-0471-4413-ac5d-638cd0de5f15), což znamená, že funkce, které vystavují musí být kvalifikován s názvem modulu. Tento atribut má například modulu F# seznam.
 
 Další informace o modulů a řízení přístupu najdete v tématu [moduly](../modules.md) a [řízení přístupu](../access-control.md).
 

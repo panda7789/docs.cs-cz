@@ -1,6 +1,6 @@
 ---
 title: Bitové operátory (F#)
-description: 'Další informace o bitové operátory, které jsou k dispozici v programovacím jazyce F #.'
+description: Další informace o bitové operátory, které jsou k dispozici v programovacím jazyce F#.
 ms.date: 07/20/2018
 ms.openlocfilehash: ed76fcf5f9c569a2f288cf260e99dc29fd65ef3b
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,11 +11,11 @@ ms.locfileid: "48581505"
 ---
 # <a name="bitwise-operators"></a>Bitové operátory
 
-Toto téma popisuje bitové operátory, které jsou k dispozici v jazyce F #.
+Toto téma popisuje bitové operátory, které jsou k dispozici v jazyce F#.
 
 ## <a name="summary-of-bitwise-operators"></a>Souhrnné informace o bitové operátory
 
-Následující tabulka popisuje bitové operátory, které jsou podporovány pro bez unboxingu integrální typy v jazyce F #.
+Následující tabulka popisuje bitové operátory, které jsou podporovány pro bez unboxingu integrální typy v jazyce F#.
 
 |Operátor|Poznámky|
 |--------|-----|

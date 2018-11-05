@@ -1,6 +1,6 @@
 ---
 title: Podrobná syntaxe (F#)
-description: 'Informace o rozdílu mezi syntaxi podrobné a jednoduchý programovací jazyk F #.'
+description: Informace o rozdílu mezi syntaxi podrobné a jednoduchý programovací jazyk F#.
 ms.date: 05/16/2016
 ms.openlocfilehash: e697c6fe619df7ffe12f7d4e2a234a5a5cb401ff
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,11 +11,11 @@ ms.locfileid: "50196762"
 ---
 # <a name="verbose-syntax"></a>Podrobná syntaxe
 
-Pro mnoho konstrukcí v jazyce F # existují dvě formy syntaxe: *podrobná syntaxe* a *nenáročném syntaxi*. Podrobná syntaxe nepoužívá tak často, ale nabízí výhodu v podobě jsou méně citlivé na odsazení. Prostá syntaxe je kratší a používá odsazení který signalizuje, že začátku a konce konstrukce, spíše než další klíčová slova, jako jsou `begin`, `end`, `in`, a tak dále. Výchozí syntaxe je nenáročném syntaxi. Toto téma popisuje syntaxe konstrukce jazyka F #, pokud není povolené nenáročném syntaxi. Podrobná syntaxe je vždy povolena, tak i v případě, že povolíte nenáročném syntaxi, můžete stále použít podrobné syntaxi pro některé konstruktory. Prostá syntaxe můžete zakázat s použitím `#light "off"` směrnice.
+Pro mnoho konstrukcí v jazyce F# existují dvě formy syntaxe: *podrobná syntaxe* a *nenáročném syntaxi*. Podrobná syntaxe nepoužívá tak často, ale nabízí výhodu v podobě jsou méně citlivé na odsazení. Prostá syntaxe je kratší a používá odsazení který signalizuje, že začátku a konce konstrukce, spíše než další klíčová slova, jako jsou `begin`, `end`, `in`, a tak dále. Výchozí syntaxe je nenáročném syntaxi. Toto téma popisuje syntaxe konstrukce jazyka F#, pokud není povolené nenáročném syntaxi. Podrobná syntaxe je vždy povolena, tak i v případě, že povolíte nenáročném syntaxi, můžete stále použít podrobné syntaxi pro některé konstruktory. Prostá syntaxe můžete zakázat s použitím `#light "off"` směrnice.
 
 ## <a name="table-of-constructs"></a>Tabulka konstrukce
 
-Následující tabulka ukazuje jednoduchý a podrobné syntaxe konstrukce jazyka F # v kontextech tam, kde existuje rozdíl mezi dvě různými formami. V této tabulce úhel hranaté závorky (&lt;&gt;) uzavřete syntaxe uživatelem zadané elementy. Naleznete v dokumentaci pro každý konstrukce jazyka podrobnější informace o syntaxi použít v rámci těchto konstruktorů.
+Následující tabulka ukazuje jednoduchý a podrobné syntaxe konstrukce jazyka F# v kontextech tam, kde existuje rozdíl mezi dvě různými formami. V této tabulce úhel hranaté závorky (&lt;&gt;) uzavřete syntaxe uživatelem zadané elementy. Naleznete v dokumentaci pro každý konstrukce jazyka podrobnější informace o syntaxi použít v rámci těchto konstruktorů.
 
 <table>
 <tr>

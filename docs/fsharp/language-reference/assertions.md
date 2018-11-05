@@ -1,6 +1,6 @@
 ---
 title: Kontrolní výrazy (F#)
-description: 'Zjistěte, jak použít výraz "výraz" jako funkce ladění pro testování výrazů v programovacím jazyce F #.'
+description: Zjistěte, jak použít výraz "výraz" jako funkce ladění pro testování výrazů v programovacím jazyce F#.
 ms.date: 05/16/2016
 ms.openlocfilehash: 85b1e839bfd19bada48b7f1821d15ddd8fa77754
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -27,7 +27,7 @@ V předchozí syntaxi *podmínku* představuje logický výraz, který se má te
 
 Kontrolní výraz je povolená kontrola jenom při kompilaci v režimu ladění. To znamená pokud konstanty `DEBUG` je definována. V systému projektu, ve výchozím nastavení `DEBUG` – konstanta je definován v konfiguraci ladění, ale ne v konfiguraci vydané verze.
 
-Chyba kontrolního výrazu nejde zachytit pomocí zpracování výjimek v F #.
+Chyba kontrolního výrazu nejde zachytit pomocí zpracování výjimek v F#.
 
 >[!NOTE]
 `assert` Funkce se překládá na <xref:System.Diagnostics.Debug.Assert*?displayProperty=nameWithType>.

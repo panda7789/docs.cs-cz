@@ -1,6 +1,6 @@
 ---
 title: Typy kolekcí F#
-description: 'Další informace o typy kolekcí F # a jak se liší od typy kolekcí v rozhraní .NET Framework.'
+description: Další informace o typy kolekcí F# a jak se liší od typy kolekcí v rozhraní .NET Framework.
 ms.date: 05/16/2016
 ms.openlocfilehash: a3cfc3f06582c31a79dce43b583eca39f69ddf1e
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -11,13 +11,13 @@ ms.locfileid: "43864758"
 ---
 # <a name="f-collection-types"></a>Typy kolekcí F#
 
-V tomto tématu můžete určit, které typ jazyka F # kolekce nejlepší vyhovuje konkrétní požadavky. Tyto typy kolekcí se liší od typy kolekcí v rozhraní .NET Framework, jako například sítě na `System.Collections.Generic` obor názvů, v tom, že typy kolekcí F # jsou navržené tak z hlediska funkčního programování, nikoli objektově orientované perspektivy. Přesněji řečeno pouze kolekce pole má proměnlivé elementy. Proto při úpravě kolekce, vytvořit instanci upravené kolekce, místo aby se změna původní kolekci.
+V tomto tématu můžete určit, které typ jazyka F# kolekce nejlepší vyhovuje konkrétní požadavky. Tyto typy kolekcí se liší od typy kolekcí v rozhraní .NET Framework, jako například sítě na `System.Collections.Generic` obor názvů, v tom, že typy kolekcí F# jsou navržené tak z hlediska funkčního programování, nikoli objektově orientované perspektivy. Přesněji řečeno pouze kolekce pole má proměnlivé elementy. Proto při úpravě kolekce, vytvořit instanci upravené kolekce, místo aby se změna původní kolekci.
 
 Typy kolekcí se liší v typu datové struktury, ve kterém jsou uložené objekty. Datové struktury, například zatřiďovacích tabulek, propojené seznamy a pole mají jiné výkonové charakteristiky a jinou množinu dostupných operací.
 
 ## <a name="f-collection-types"></a>Typy kolekcí F#
 
-V následující tabulce jsou uvedeny typy kolekcí F #.
+V následující tabulce jsou uvedeny typy kolekcí F#.
 
 |Typ|Popis|Související odkazy|
 |----|-----------|-------------|
@@ -25,11 +25,11 @@ V následující tabulce jsou uvedeny typy kolekcí F #.
 |[Pole](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Pevné velikosti, založený na nule, proměnlivé kolekce po sobě jdoucích datové prvky, které jsou všechny stejného typu.|[Pole](arrays.md)<br /><br />[Array – modul](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Array2d – modul](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Array3d – modul](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
 |[SEQ](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Logické řady elementů, které jsou jednoho typu. Sekvence jsou zvlášť užitečné, když máte velké, seřazené kolekce dat, ale Neočekáváme, že nemusí používat všechny prvky. Jednotlivé pořadí, které prvky se zpracovávají pouze jako požadované, takže sekvenci může mít lepší výkon než seznamu, není-li všechny prvky se používají. Sekvence jsou reprezentovány `seq<'T>` typu, což je alias pro `IEnumerable<T>`. Proto libovolný typ rozhraní .NET Framework, který implementuje `System.Collections.Generic.IEnumerable<'T>` může sloužit jako sekvenci.|[Sekvence](sequences.md)<br /><br />[SEQ – modul](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
 |[Mapa](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Neměnné slovník elementů. Prvky jsou přístupné pomocí klíče.|[Map – modul](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
-|[Nastavit](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Neměnné sady založené na binárních stromech, kde je porovnáním funkce strukturálního porovnání F #, potenciálně využívající implementace `System.IComparable` rozhraní klíčových hodnot.|[Set – modul](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
+|[Nastavit](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Neměnné sady založené na binárních stromech, kde je porovnáním funkce strukturálního porovnání F#, potenciálně využívající implementace `System.IComparable` rozhraní klíčových hodnot.|[Set – modul](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
 
 ### <a name="table-of-functions"></a>Tabulka funkcí
 
-Tato část porovnává funkce, které jsou k dispozici na typy kolekcí F #. Je zadaný výpočetní složitost funkce, kde N je velikost první kolekce, a M je velikost druhá kolekce, pokud existuje. Pomlčkou (-) označuje, že tato funkce není dostupná pro kolekci. Sekvence se vyhodnocují laxně, funkce, jako je například Seq.distinct může být O(1) vzhledem k tomu, že se vrátí okamžitě, ale stále ovlivňuje výkon pořadí při výčtu.
+Tato část porovnává funkce, které jsou k dispozici na typy kolekcí F#. Je zadaný výpočetní složitost funkce, kde N je velikost první kolekce, a M je velikost druhá kolekce, pokud existuje. Pomlčkou (-) označuje, že tato funkce není dostupná pro kolekci. Sekvence se vyhodnocují laxně, funkce, jako je například Seq.distinct může být O(1) vzhledem k tomu, že se vrátí okamžitě, ale stále ovlivňuje výkon pořadí při výčtu.
 
 |Funkce|Pole|Seznam|Pořadí|Mapa|Nastavit|Popis|
 |--------|-----|----|--------|---|---|-----------|

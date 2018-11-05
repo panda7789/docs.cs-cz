@@ -1,6 +1,6 @@
 ---
 title: Omezení (F#)
-description: 'Další informace o F # omezení, které se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkce.'
+description: Další informace o F# omezení, které se vztahují na parametry obecného typu k určení požadavků pro argument typu v obecném typu nebo funkce.
 ms.date: 05/16/2016
 ms.openlocfilehash: 9534db4ffd195022366af8c993658bd94f375f53
 ms.sourcegitcommit: db8b83057d052c1f9f249d128b08d4423af0f7c2
@@ -26,7 +26,7 @@ Existuje několik jiná omezení, které lze použít k omezení typů, které j
 |Omezení|Syntaxe|Popis|
 |----------|------|-----------|
 |Omezení typu|*parametr typu* :&gt; *typu*|Zadaný typ musí být větší nebo odvozené od typu určeného nebo, pokud je typ rozhraní, zadaný typ musí implementovat rozhraní.|
-|Omezení s hodnotou Null|*parametr typu* : null|Zadaný typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů .NET, ale není F # seznamu, řazené kolekce členů, funkce, třídy, záznamu nebo typy sjednocení.|
+|Omezení s hodnotou Null|*parametr typu* : null|Zadaný typ musí podporovat literál s hodnotou null. To zahrnuje všechny typy objektů .NET, ale není F# seznamu, řazené kolekce členů, funkce, třídy, záznamu nebo typy sjednocení.|
 |Omezení explicitního člena|[(]*parametr typu* [nebo... nebo *parametr typu*)]: (*signatura člena*)|Nejméně jeden z argumentů typu, který je k dispozici musí mít člena, který má zadaný podpis; nejsou určené pro obecné použití. Členy musí být buď explicitně definované u typu nebo součást rozšíření implicitních typů, bude platné cíle pro explicitní člen omezení.|
 |Omezení konstruktoru|*parametr typu* : (nové: jednotka –&gt; :)|Zadaný typ musí mít výchozí konstruktor.|
 |Omezení typu hodnoty|: – struktura|Zadaný typ musí být typem hodnoty .NET.|
@@ -40,7 +40,7 @@ Je nutné přidat omezení, pokud má váš kód používat funkce, která je ob
 
 Určení omezení je to někdy nezbytné při zápisu parametry typu explicitně, protože bez omezení, kompilátor neobsahuje nijak ověřit, že bude k dispozici na libovolný typ, který může být zadán v době běhu pro typ funkce, které používáte parametr.
 
-Nejběžnější omezení, které můžete použít v kódu F # se omezení typu, které určují základní třídy nebo rozhraní. Další omezení buď používají knihovny F # pro některé funkce, jako je například omezení explicitního člena, který se používá k implementaci pro aritmetické operátory přetížení operátoru nebo jsou k dispozici zejména proto, že jazyk F # podporuje úplnou implementaci Sada omezení, která je podporována modulem common language runtime.
+Nejběžnější omezení, které můžete použít v kódu F# se omezení typu, které určují základní třídy nebo rozhraní. Další omezení buď používají knihovny F# pro některé funkce, jako je například omezení explicitního člena, který se používá k implementaci pro aritmetické operátory přetížení operátoru nebo jsou k dispozici zejména proto, že jazyk F# podporuje úplnou implementaci Sada omezení, která je podporována modulem common language runtime.
 
 Během procesu odvození typu jsou některá omezení vyvozena na základě kompilátor automaticky. Například, pokud použijete `+` operátor ve funkci, kompilátor odvodí omezením explicitního člena na tyto typy proměnných, které se používají ve výrazu.
 
